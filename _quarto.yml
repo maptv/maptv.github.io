@@ -6,12 +6,16 @@ website:
   title: "Martin Laptev"
   navbar:
     right:
+      - icon: house
+        href: https://maptv.github.io
       - icon: pencil
         href: https://maptv.github.io/blog
       - icon: github
         href: https://github.com/maptv
       - icon: linkedin
         href: https://linkedin.com/in/maptv
+      - icon: envelope
+        href: mailto:maptv@vt.edu
 format:
   html:
     theme: cosmo

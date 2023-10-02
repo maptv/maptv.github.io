@@ -4,6 +4,8 @@ image: "docs/martin.png"
 about:
   template: jolla
   links:
+    - icon: house
+      href: https://maptv.github.io
     - icon: pencil
       text: Blog
       href: https://maptv.github.io/blog
@@ -13,6 +15,8 @@ about:
     - icon: github
       text: Github
       href: https://github.com/maptv
+    - icon: envelope
+      href: mailto:maptv@vt.edu
       
 ---
 
