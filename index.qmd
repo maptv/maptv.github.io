@@ -5,6 +5,7 @@ about:
   template: jolla
   links:
     - icon: house
+      text: Home
       href: https://maptv.github.io
     - icon: pencil
       text: Blog
@@ -16,6 +17,7 @@ about:
       text: Github
       href: https://github.com/maptv
     - icon: envelope
+      text: Email
       href: mailto:maptv@vt.edu
       
 ---
