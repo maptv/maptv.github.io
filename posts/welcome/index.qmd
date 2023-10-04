@@ -1,12 +1,13 @@
 ---
-title: "Welcome To My Blog"
-author: "Tristan O'Malley"
-date: "2023-09-29"
-categories: [news]
+title: "Classification Performance Metrics"
+author: "Martin Laptev"
+date: "2023+217"
+categories: 
+  - news
+  - code
+  - analysis
 ---
 
-This is the first post in a Quarto blog. Welcome!
+This is the first post in the Quarto blog of Martin Laptev. Welcome!
 
-![](thumbnail.jpg)
-
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+![](https://static.vecteezy.com/system/resources/previews/012/598/212/original/currency-coin-cartoon-png.png)In this post, I will discuss classification model performance metrics.
