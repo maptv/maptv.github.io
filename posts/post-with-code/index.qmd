@@ -7,15 +7,34 @@ categories:
   - code
   - analysis
 image: image.jpg
-jupyter: python3
+jupyter:
+  jupytext:
+    formats: 'ipynb,qmd'
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.15.2
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
 ---
+
+```{python}
+#| echo: false
+#| output: false
+# testing a change in jupyter notebook
+# Thanks to JupyText, I no longer have to convert manually.
+# I am writing this in RStudio.
+# I am writing this in JupyterLab.
+```
 
 The plot below is from the [Seaborn Python library documoentation](https://seaborn.pydata.org/examples/horizontal_boxplot.html).
 
 ```{python}
 #| echo: false
 #| output: false
-#| tags: []
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -36,7 +55,6 @@ x
 ```
 
 ```{python}
-#| tags: []
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -62,4 +80,18 @@ sns.stripplot(planets, x="distance", y="method", size=4, color=".3")
 ax.xaxis.grid(True)
 ax.set(ylabel="")
 sns.despine(trim=True, left=True)
+```
+
+```{python}
+from yellowbrick.datasets import load_concrete
+from yellowbrick.features import JointPlotVisualizer
+
+# Load the dataset
+X, y = load_concrete()
+
+# Instantiate the visualizer
+visualizer = JointPlotVisualizer(columns="cement")
+
+visualizer.fit_transform(X, y)        # Fit and transform the data
+visualizer.show()                     # Finalize and render the figure
 ```
