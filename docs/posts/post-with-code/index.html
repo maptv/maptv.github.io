@@ -224,6 +224,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>5</code></pre>
 </div>
 </div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"ticks"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the figure with a logarithmic x axis</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>f, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">6</span>))</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>ax.set_xscale(<span class="st">"log"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the example planets dataset</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>planets <span class="op">=</span> sns.load_dataset(<span class="st">"planets"</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the orbital period with horizontal boxes</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>sns.boxplot(</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    planets, x<span class="op">=</span><span class="st">"distance"</span>, y<span class="op">=</span><span class="st">"method"</span>, hue<span class="op">=</span><span class="st">"method"</span>,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    whis<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">100</span>], width<span class="op">=</span><span class="fl">.6</span>, palette<span class="op">=</span><span class="st">"vlag"</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Add in points to show each observation</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>sns.stripplot(planets, x<span class="op">=</span><span class="st">"distance"</span>, y<span class="op">=</span><span class="st">"method"</span>, size<span class="op">=</span><span class="dv">4</span>, color<span class="op">=</span><span class="st">".3"</span>)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Tweak the visual presentation</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>ax.xaxis.grid(<span class="va">True</span>)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(ylabel<span class="op">=</span><span class="st">""</span>)</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>sns.despine(trim<span class="op">=</span><span class="va">True</span>, left<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+
+/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+
+/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+
+/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+
+/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+
+/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+
+/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+
+/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+
+/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+
+/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+
+/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+
+/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning:
+
+use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+
+/opt/homebrew/Caskroom/mambaforge/base/envs/py/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning:
+
+use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-5-output-2.png" width="746" height="515"></p>
+</div>
+</div>
 
 
 
