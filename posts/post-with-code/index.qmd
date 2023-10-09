@@ -10,29 +10,33 @@ image: image.jpg
 jupyter: python3
 ---
 
-Testing Python code in RStudio:
+The plot below is from the [Seaborn Python library documoentation](https://seaborn.pydata.org/examples/horizontal_boxplot.html).
 
 ```{python}
+#| echo: false
+#| output: false
 #| tags: []
+import warnings
+
+warnings.filterwarnings("ignore")
+
+# Testing Python code in RStudio:
+
 for i in range(9):
     print(i)
-```
 
-Here some more simple Python code:
+# Here some more simple Python code:
 
-```{python}
-#| tags: []
 1 + 1
-```
 
-And even more Python code:
+# And even more Python code:
 
-```{python}
-#| tags: []
 x = 5
 x
 ```
+
 ```{python}
+#| tags: []
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -59,5 +63,3 @@ ax.xaxis.grid(True)
 ax.set(ylabel="")
 sns.despine(trim=True, left=True)
 ```
-
-
