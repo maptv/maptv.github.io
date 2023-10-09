@@ -18,7 +18,7 @@
     "href": "posts/post-with-code/index.html",
     "title": "Post With Code",
     "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+    "text": "Here is some simple R code.\n\n1 + 1\n\n[1] 2\n\n\nBut we also want to run Python:\n\nfor i in range(9):\n  print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n\n\n\nx = 5\nx\n\n5"
   },
   {
     "objectID": "about.html",
@@ -102,6 +102,6 @@
     "href": "blog.html",
     "title": "Martin Laptev",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 2, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nClassification Performance Metrics\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nMartin Laptev\n\n\n\n\n\n\nNo matching items"
+    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 9, 2023\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nClassification Performance Metrics\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nMartin Laptev\n\n\n\n\n\n\nNo matching items"
   }
 ]
