@@ -18,7 +18,7 @@
     "href": "posts/post-with-code/index.html",
     "title": "Post With Code",
     "section": "",
-    "text": "Here is some simple R code.\n\n1 + 1\n\n[1] 2\n\n\nBut we also want to run Python:\n\nfor i in range(9):\n  print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n\n\n\nx = 5\nx\n\n5"
+    "text": "Testing Python code in RStudio:\n\nfor i in range(9):\n    print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n\n\nHere some more simple Python code:\n\n1 + 1\n\n2\n\n\nAnd even more Python code:\n\nx = 5\nx\n\n5"
   },
   {
     "objectID": "about.html",

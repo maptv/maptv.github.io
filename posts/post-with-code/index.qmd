@@ -1,27 +1,36 @@
 ---
-title: "Post With Code"
-author: "Martin Laptev"
-date: "now"
-categories: [news, code, analysis]
-image: "image.jpg"
+title: Post With Code
+author: Martin Laptev
+date: now
+categories:
+  - news
+  - code
+  - analysis
+image: image.jpg
+jupyter: python3
 ---
 
-Here is some simple R code.
+Testing Python code in RStudio:
 
-```{r}
+```{python}
+#| tags: []
+for i in range(9):
+    print(i)
+```
+
+Here some more simple Python code:
+
+```{python}
+#| tags: []
 1 + 1
 ```
 
-But we also want to run Python:
-
-
-```{python}
-for i in range(9):
-  print(i)
-```
+And even more Python code:
 
 ```{python}
+#| tags: []
 x = 5
 x
 ```
+
 
