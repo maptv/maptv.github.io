@@ -6,10 +6,11 @@ categories:
   - news
   - code
   - analysis
+  - data visualization
 image: image.jpg
 jupyter:
   jupytext:
-    formats: 'ipynb,qmd,py:percent,md'
+    formats: 'qmd:quarto,py:percent,md,ipynb'
     text_representation:
       extension: .qmd
       format_name: quarto
