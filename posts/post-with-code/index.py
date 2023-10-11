@@ -1,37 +1,51 @@
----
-title: Post With Code
-author: Martin Laptev
-date: now
-categories:
-  - news
-  - code
-  - analysis
-image: image.jpg
-jupyter:
-  jupytext:
-    formats: 'ipynb,qmd,py:percent,md'
-    text_representation:
-      extension: .qmd
-      format_name: quarto
-      format_version: '1.0'
-      jupytext_version: 1.15.2
-  kernelspec:
-    display_name: Python 3 (ipykernel)
-    language: python
-    name: python3
----
+# ---
+# title: Post With Code
+# author: Martin Laptev
+# date: now
+# categories:
+#   - news
+#   - code
+#   - analysis
+# image: image.jpg
+# jupyter:
+#   jupytext:
+#     formats: ipynb,qmd,py:percent,md
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.15.2
+#   kernelspec:
+#     display_name: Python 3 (ipykernel)
+#     language: python
+#     name: python3
+# ---
 
-```{python}
+# %% [markdown]
+# The plot below is from the [Seaborn Python library documentation](https://seaborn.pydata.org/examples/horizontal_boxplot.html).
+
+# %%
 #| echo: false
 #| output: false
 import warnings
 
 warnings.filterwarnings("ignore")
-```
 
-The plot below is from the [Seaborn Python library documentation](https://seaborn.pydata.org/examples/horizontal_boxplot.html).
+# Testing Python code in RStudio:
 
-```{python}
+for i in range(9):
+    print(i)
+
+# Here some more simple Python code:
+
+1 + 1
+
+# And even more Python code:
+
+x = 5
+x
+
+# %%
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -57,11 +71,8 @@ sns.stripplot(planets, x="distance", y="method", size=4, color=".3")
 ax.xaxis.grid(True)
 ax.set(ylabel="")
 sns.despine(trim=True, left=True)
-```
 
-The plot below is from the [Yellowbrick Python library documentation](https://www.scikit-yb.org/en/latest/api/features/jointplot.html?highlight=joint%20plot#joint-plot-visualization).
-
-```{python}
+# %%
 from yellowbrick.datasets import load_concrete
 from yellowbrick.features import JointPlotVisualizer
 
@@ -73,4 +84,3 @@ visualizer = JointPlotVisualizer(columns="cement")
 
 visualizer.fit_transform(X, y)        # Fit and transform the data
 visualizer.show()                     # Finalize and render the figure
-```
