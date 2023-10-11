@@ -31,7 +31,7 @@ import warnings
 warnings.filterwarnings("ignore")
 ```
 
-The plot below is from the [Seaborn Python library documentation](https://seaborn.pydata.org/examples/horizontal_boxplot.html).
+The plot below is from the [Seaborn Python library documentation](https://seaborn.pydata.org/examples/horizontal_boxplot.html):
 
 ```{python}
 import seaborn as sns
@@ -61,7 +61,7 @@ ax.set(ylabel="")
 sns.despine(trim=True, left=True)
 ```
 
-The plot below is from the [Yellowbrick Python library documentation](https://www.scikit-yb.org/en/latest/api/features/jointplot.html?highlight=joint%20plot#joint-plot-visualization).
+The plot below is from the [Yellowbrick Python library documentation](https://www.scikit-yb.org/en/latest/api/features/jointplot.html?highlight=joint%20plot#joint-plot-visualization):
 
 ```{python}
 from yellowbrick.datasets import load_concrete
@@ -74,5 +74,5 @@ X, y = load_concrete()
 visualizer = JointPlotVisualizer(columns="cement")
 
 visualizer.fit_transform(X, y)        # Fit and transform the data
-visualizer.show();                     # Finalize and render the figure
+visualizer.show()                     # Finalize and render the figure
 ```
