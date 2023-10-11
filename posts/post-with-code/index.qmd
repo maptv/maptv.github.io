@@ -74,5 +74,5 @@ X, y = load_concrete()
 visualizer = JointPlotVisualizer(columns="cement")
 
 visualizer.fit_transform(X, y)        # Fit and transform the data
-visualizer.show()                     # Finalize and render the figure
+visualizer.show();                     # Finalize and render the figure
 ```
