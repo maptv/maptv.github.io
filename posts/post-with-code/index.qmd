@@ -7,7 +7,7 @@ categories:
   - news
   - code
   - analysis
-  - data visualization
+  - "data visualization"
 image: image.jpg
 jupyter:
   jupytext:
