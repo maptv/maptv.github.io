@@ -2,6 +2,7 @@
 title: Post With Code
 author: Martin Laptev
 date: now
+cache: true
 categories:
   - news
   - code
