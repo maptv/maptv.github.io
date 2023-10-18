@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Martin Laptev",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 11, 2023\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nClassification Performance Metrics\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nMartin Laptev\n\n\n\n\n\n\nNo matching items"
+    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nbrand-new-post\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nClassification Performance Metrics\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nMartin Laptev\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -18,7 +18,7 @@
     "href": "posts/post-with-code/index.html",
     "title": "Post With Code",
     "section": "",
-    "text": "The plot below is from the Seaborn Python library documentation:\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.set_theme(style=\"ticks\")\n\n# Initialize the figure with a logarithmic x axis\nf, ax = plt.subplots(figsize=(7, 6))\nax.set_xscale(\"log\")\n\n# Load the example planets dataset\nplanets = sns.load_dataset(\"planets\")\n\n# Plot the orbital period with horizontal boxes\nsns.boxplot(\n    planets, x=\"distance\", y=\"method\", hue=\"method\",\n    whis=[0, 100], width=.6, palette=\"vlag\"\n)\n\n# Add in points to show each observation\nsns.stripplot(planets, x=\"distance\", y=\"method\", size=4, color=\".3\")\n\n# Tweak the visual presentation\nax.xaxis.grid(True)\nax.set(ylabel=\"\")\nsns.despine(trim=True, left=True)\n\n\n\n\nThe plot below is from the Yellowbrick Python library documentation:\n\nfrom yellowbrick.datasets import load_concrete\nfrom yellowbrick.features import JointPlotVisualizer\n\n# Load the dataset\nX, y = load_concrete()\n\n# Instantiate the visualizer\nvisualizer = JointPlotVisualizer(columns=\"cement\")\n\nvisualizer.fit_transform(X, y)        # Fit and transform the data\nvisualizer.show()                     # Finalize and render the figure\n\n\n\n\n&lt;Axes: xlabel='cement', ylabel='target'&gt;"
+    "text": "The plot below is from the Seaborn Python library documentation:\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.set_theme(style=\"ticks\")\n\n# Initialize the figure with a logarithmic x axis\nf, ax = plt.subplots(figsize=(7, 6))\nax.set_xscale(\"log\")\n\n# Load the example planets dataset\nplanets = sns.load_dataset(\"planets\")\n\n# Plot the orbital period with horizontal boxes\nsns.boxplot(\n    planets, x=\"distance\", y=\"method\", hue=\"method\",\n    whis=[0, 100], width=.6, palette=\"vlag\"\n)\n\n# Add in points to show each observation\nsns.stripplot(planets, x=\"distance\", y=\"method\", size=4, color=\".3\")\n\n# Tweak the visual presentation\nax.xaxis.grid(True)\nax.set(ylabel=\"\")\nsns.despine(trim=True, left=True)\n\n\n\n\nThe plot below is from the Yellowbrick Python library documentation:\n\nfrom yellowbrick.datasets import load_concrete\nfrom yellowbrick.features import JointPlotVisualizer\n\n# Load the dataset\nX, y = load_concrete()\n\n# Instantiate the visualizer\nvisualizer = JointPlotVisualizer(columns=\"cement\")\n\nvisualizer.fit_transform(X, y)        # Fit and transform the data\nvisualizer.show()                     # Finalize and render the figure\n\n\n\n\n&lt;Axes: xlabel='cement', ylabel='target'&gt;\n\n\nThis is a change to the markdown text."
   },
   {
     "objectID": "index.html",
@@ -61,5 +61,19 @@
     "title": "Martin Laptev",
     "section": "Mission🚀",
     "text": "Mission🚀\nMy primary research interest is in understanding health risk factors by combining scientific expertise from diverse fields with machine intelligence.\nI believe I am uniquely equipped to bridge the gaps between scientific disciplines and deliver on the promise of data science in health research.\nMy preferred tools are Python and R, open source programming languages kept on the cutting edge by their active and supportive communities.\nThrough research and teaching, I am constantly improving my ability to obtain, tidy, explore, transform, visualize, model, and communicate data.\nI aim to utilize my technical skills and science background to become a leader among the next generation of multidisciplinary data scientists."
+  },
+  {
+    "objectID": "posts/brand-new-post/index.html",
+    "href": "posts/brand-new-post/index.html",
+    "title": "brand-new-post",
+    "section": "",
+    "text": "Here is a new blog post with R and Python code.\n\n0:8\n\n[1] 0 1 2 3 4 5 6 7 8\n\n\n\nlist(range(9))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8]"
+  },
+  {
+    "objectID": "brand-new.html",
+    "href": "brand-new.html",
+    "title": "brand-new-post",
+    "section": "",
+    "text": "Here is a new blog post with R and Python code.\n\n0:8\n\n[1] 0 1 2 3 4 5 6 7 8\n\n\n\nlist(range(9))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8]"
   }
 ]

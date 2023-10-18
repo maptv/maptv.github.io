@@ -7,7 +7,7 @@ categories:
   - news
   - code
   - analysis
-  - "data visualization"
+  - data visualization
 image: image.jpg
 jupyter:
   jupytext:
@@ -32,6 +32,32 @@ warnings.filterwarnings("ignore")
 ```
 
 The plot below is from the [Seaborn Python library documentation](https://seaborn.pydata.org/examples/horizontal_boxplot.html):
+
+1.  5 blog posts, not 3
+
+2.  Topics are pre-defined:
+
+    1.  Probability theory and random variables
+
+    -   Histogram
+
+    2.  Clustering
+
+    -   DBSCAN labels for scatter plot
+
+    3.  Linear and nonlinear regression
+
+    -   line on scatter plot
+
+    4.  Classification
+
+    -   ROC, PR, Confusion Matrix
+
+    5.  Anomaly/outlier detection
+
+    -   DBSCAN labels for scatter plot
+
+Learning objectives: 1. Use various techniques related to preprocessing prior to the use of machine learning models. 2. Describe the probability theory and random variables. 3. Identify the common tasks in machine learning/data mining models for clustering. 4. Analyze multiple linear and nonlinear regression. 5. Describe the algorithms, theories, and applications related to machine learning/data mining for classification. 6. Detect anomaly/outlier behavior and the treatment techniques.
 
 ```{python}
 import seaborn as sns
@@ -76,3 +102,7 @@ visualizer = JointPlotVisualizer(columns="cement")
 visualizer.fit_transform(X, y)        # Fit and transform the data
 visualizer.show()                     # Finalize and render the figure
 ```
+
+The example below shows tuning of the regularization strength $\alpha$. ![image.png](attachment:3f6e174e-eca2-47a0-bc3b-605681c448ea.png) ![image.png](attachment:822e2379-4768-4f25-93c5-1ecfea0b84b7.png)
+
+This is a change to the markdown text.

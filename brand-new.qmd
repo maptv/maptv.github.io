@@ -1,0 +1,22 @@
+---
+title: "brand-new-post"
+author: Martin Laptev
+date: now
+cache: true
+categories:
+  - news
+  - code
+  - analysis
+  - data visualization
+image: image.jpg
+---
+
+Here is a new blog post with R and Python code.
+
+```{r}
+0:8
+```
+
+```{python}
+list(range(9))
+```
