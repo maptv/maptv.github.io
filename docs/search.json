@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Martin Laptev",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nbrand-new-post\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nClassification Performance Metrics\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nMartin Laptev\n\n\n\n\n\n\nNo matching items"
+    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2023\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nbrand-new-post\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2023\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nClassification Performance Metrics\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nMartin Laptev\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -67,7 +67,7 @@
     "href": "posts/brand-new-post/index.html",
     "title": "brand-new-post",
     "section": "",
-    "text": "Here is a new blog post with R and Python code.\n\n0:8\n\n[1] 0 1 2 3 4 5 6 7 8\n\n\n\nlist(range(9))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8]"
+    "text": "Here is a new blog post with R and Python code.\n\n```{r}\n0:8\n```\n\n[1] 0 1 2 3 4 5 6 7 8\n\n\n\n```{python}\nlist(range(9))\n```\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8]"
   },
   {
     "objectID": "brand-new.html",
@@ -75,5 +75,12 @@
     "title": "brand-new-post",
     "section": "",
     "text": "Here is a new blog post with R and Python code.\n\n0:8\n\n[1] 0 1 2 3 4 5 6 7 8\n\n\n\nlist(range(9))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8]"
+  },
+  {
+    "objectID": "posts/post-with-code/Untitled.html",
+    "href": "posts/post-with-code/Untitled.html",
+    "title": "",
+    "section": "",
+    "text": "# %% [markdown]\n# ---\n# title: Weekly and Pently Schedule Comparison\n# author: Martin Laptev\n# date: now\n# date-format: x\n# filters:\n#   - date.lua\n# ---\n\n# %%\nimport matplotlib.pyplot as plt\nimport matplotlib.patheffects as pe\n\nplt.rcParams.update(\n    {\n        \"legend.fontsize\": \"x-large\",\n        \"axes.labelsize\": \"x-large\",\n        \"axes.titlesize\": \"xx-large\",\n        \"xtick.labelsize\" : \"large\",\n        \"ytick.labelsize\" : \"large\",\n        'figure.dpi': 300,\n        'figure.figsize': [6, 4],\n\n    }\n)\n\n# %%\n# | tags: [fig-schedules]\n# | label: fig-schedules\n# | fig-cap: \"Weekly schedule and Schedule 3 comparison\"\n# | fig-cap-location: margin\n# | fig-subcap:\n# |   - \"Proportion of the day spent working and resting every day of the week\"\n# |   - \"Proportion of the day spent working and resting every day of the pent\"\n# | fig-alt:\n# |   - \"Bar chart showing work in red and rest in blue across 7 days\"\n# |   - \"Bar chart showing work in red and rest in blue across 5 days\"\n# | layout-ncol: 2\nimport pandas as pd\n\nax = (\n    pd.DataFrame(\n        {\n            \"Days\": [\"Mon\", \"Tue\", \"Wed\", \"Thur\", \"Fri\", \"Sat\", \"Sun\"],\n            \"Morning rest\": [3 / 8] * 5 + [1] * 2,\n            \"Work\": [1 / 3] * 5 + [0] * 2,\n            \"Evening rest\": [7 / 24] * 5 + [0] * 2,\n        }\n    )\n    .set_index(\"Days\")\n    .plot.bar(\n        stacked=True,\n        color=[\"#377eb8\", \"#e41a1c\", \"#377eb8\"],\n        title=\"Weekly schedule\",\n        legend=False,\n        xlabel=\"Days of the week\",\n        ylabel=\"Proportion of the day\",\n        rot=0,\n        width=0.8,\n    )\n)\nax.invert_yaxis()\nax.legend([\"Rest\", \"Work\"], loc=\"upper right\")\nax.patch.set_alpha(0)\n\nfor c in ax.containers:\n    labels = [round(v.get_height(), 3) if v.get_height() &gt; 0 else \"\" for v in c]\n    labels = [str(l)[1:] for l in labels if l != 1]\n    ax.bar_label(c, labels=labels, label_type=\"center\", color=\"black\", path_effects=[pe.withStroke(linewidth=3, foreground=\"white\")], fontsize=15)\n\nax = (\n    pd.DataFrame(\n        {\n            \"Days\": [\"0 or 5\", \"1 or 6\", \"2 or 7\", \"3 or 8\", \"4 or 9\"],\n            \"Morning rest\": [0.3] * 3 + [1] * 2,\n            \"Work\": [0.4] * 3 + [0] * 2,\n            \"Evening rest\": [0.3] * 3 + [0] * 2,\n        }\n    )\n    .set_index(\"Days\")\n    .plot.bar(\n        stacked=True,\n        color=[\"#377eb8\", \"#e41a1c\", \"#377eb8\"],\n        title=\"Schedule 3\",\n        legend=False,\n        xlabel=\"Days of the dek\",\n        ylabel=\"Proportion of the day\",\n        rot=0,\n        width=0.8,\n    )\n)\nax.invert_yaxis()\nax.legend([\"Rest\", \"Work\"], loc=\"upper right\")\nax.patch.set_alpha(0)\n\nfor c in ax.containers[:-1]:\n    labels = [round(v.get_height(), 1) if v.get_height() &gt; 0 else \"\" for v in c]\n    labels = [str(l)[1:] for l in labels if l != 1]\n    ax.bar_label(c, labels=labels, label_type=\"center\", color=\"black\", path_effects=[pe.withStroke(linewidth=3, foreground=\"white\")], fontsize=18)"
   }
 ]
