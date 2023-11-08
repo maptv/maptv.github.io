@@ -2,16 +2,16 @@
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "Martin Laptev",
+    "title": "",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2023\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nbrand-new-post\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\nNov 7, 2023\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nClassification Performance Metrics\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nMartin Laptev\n\n\n\n\n\n\nNo matching items"
+    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\n1699475402000\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nWelcome\n\n\n\n\n\n\n\ndec\n\n\ndecalendar\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\n1699475402000\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nbrand-new-post\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\n1699475402000\n\n\nMartin Laptev\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
-    "title": "Classification Performance Metrics",
+    "title": "Welcome",
     "section": "",
-    "text": "This is the first post in the Quarto blog of Martin Laptev. Welcome!\nIn this post, I will discuss classification model performance metrics."
+    "text": "This is the first post in the blog of Martin Laptev. Welcome!\nI created my blog using the Quarto, which is the bee’s🐝knees. Quarto makes it easy to create pretty much any kind of publication including articles, books, blogs, dashboards, presentations, reports, and websites.\n\n\n\n\n\nQuarto logo\n\n\nPromoting the use of Quarto is one of the goals of my blog. Therefore, many of posts will be tagged with the “QUARTO” category and provide some information on how I accomplished a task with Quarto.\nFor example, I used a Lua script called date.lua to modify the date format for every blog post. Lua is programming language that is named after the Portuguese word for moon🌕!\n\n\n\n\n\nLua logo\n\n\n\n\ndate.lua\n\nlocal function unix2deco(ms)\n    local days = ms / 86400000 + 719468\n    local era = (days &gt;= 0 and days or days - 146096) // 146097\n    local doe = days - era * 146097\n    local year = math.floor((doe - doe / 1460 + doe / 36524 - doe / 146096) / 365) + era * 400\n    local doty = days - math.floor(year * 365 + year / 4 - year / 100 + year / 400)\n    return string.format(\"%s+%s\", math.floor(year), math.floor(doty))\nend\n\nlocal function to_decalendar(date)\n  local date = pandoc.utils.stringify(date)\n  local unix = date:match(\"(%d+)\")\n  return date:gsub(unix, unix2deco(unix))\nend\n\nfunction Meta(m)\n  m.date = to_decalendar(m.date)\n  return m\nend\n\nconvert the date in this blog post from UNIX time to a Dec calendar (Decalendar) date.\nI created a decimal calendar and time standard called Dec. Throughout my blog, I use and many of my posts focus on or at least mention Dec.\nTo use the blog listing page and in every blog post it contains, I dates"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -25,14 +25,14 @@
     "href": "index.html",
     "title": "Martin Laptev",
     "section": "",
-    "text": "My name is Martin Laptev.\nI am a data📊 scientist👨‍🔬 and machine🤖 learning🧠 engineer👨‍💻 with a broad scientific background that ranges from biochemistry to epidemiology. I use the JavaScript🕸 Python🐍 and R®️ programming languages along with UNIX shell🐚 tools🛠 to extract and convey insights from data.\nI write✏️ about topics related to data science, machine learning, and computer programming on my blog.\nMy professional information is summarized in my Résumé / Curriculum Vitae."
+    "text": "My name is Martin Laptev.\nI am a data scientist and software engineer with a broad scientific background that ranges from biochemistry to epidemiology. I use the JavaScript, Python, and R programming languages along with the UNIX shell to build useful things like cloud☁️infrastructure, data📊visualizations, machine🤖learning🧠models, and web🕸sites.\nI created a calendar and timekeeping system called Dec. I write about Dec and many other topics on my blog\nMy professional information is summarized in my Résumé / Curriculum Vitae."
   },
   {
     "objectID": "index.html#greetings",
     "href": "index.html#greetings",
     "title": "Martin Laptev",
     "section": "",
-    "text": "My name is Martin Laptev.\nI am a data📊 scientist👨‍🔬 and machine🤖 learning🧠 engineer👨‍💻 with a broad scientific background that ranges from biochemistry to epidemiology. I use the JavaScript🕸 Python🐍 and R®️ programming languages along with UNIX shell🐚 tools🛠 to extract and convey insights from data.\nI write✏️ about topics related to data science, machine learning, and computer programming on my blog.\nMy professional information is summarized in my Résumé / Curriculum Vitae."
+    "text": "My name is Martin Laptev.\nI am a data scientist and software engineer with a broad scientific background that ranges from biochemistry to epidemiology. I use the JavaScript, Python, and R programming languages along with the UNIX shell to build useful things like cloud☁️infrastructure, data📊visualizations, machine🤖learning🧠models, and web🕸sites.\nI created a calendar and timekeeping system called Dec. I write about Dec and many other topics on my blog\nMy professional information is summarized in my Résumé / Curriculum Vitae."
   },
   {
     "objectID": "index.html#technologies",

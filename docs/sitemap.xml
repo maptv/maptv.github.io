@@ -2,18 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://maptv.github.io/index.html</loc>
-    <lastmod>2023-11-07T23:44:49.311Z</lastmod>
+    <lastmod>2023-11-08T21:00:03.551Z</lastmod>
   </url>
   <url>
     <loc>https://maptv.github.io/blog.html</loc>
-    <lastmod>2023-11-07T23:41:51.383Z</lastmod>
+    <lastmod>2023-11-08T20:30:02.994Z</lastmod>
   </url>
   <url>
     <loc>https://maptv.github.io/posts/post-with-code/Untitled.html</loc>
-    <lastmod>2023-11-07T23:41:50.662Z</lastmod>
+    <lastmod>2023-11-08T00:58:59.880Z</lastmod>
   </url>
   <url>
     <loc>https://maptv.github.io/posts/brand-new-post/index.html</loc>
-    <lastmod>2023-11-07T23:41:50.958Z</lastmod>
+    <lastmod>2023-11-08T05:54:03.136Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/posts/welcome/index.html</loc>
+    <lastmod>2023-11-08T20:49:38.315Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/posts/post-with-code/index.html</loc>
+    <lastmod>2023-11-08T05:54:16.661Z</lastmod>
   </url>
 </urlset>

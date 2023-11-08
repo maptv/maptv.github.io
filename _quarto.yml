@@ -1,10 +1,14 @@
 project:
   type: website
   output-dir: docs
+  post-render: fix-dates.py
 
 website:
-  title: "Martin Laptev"
+  favicon: media/dec.png
   navbar:
+    title: Martin Laptev
+    logo: media/dec.png
+    logo-alt: "10-point star made up of 100 triangles"
     right:
       - icon: house
         href: https://maptv.github.io
@@ -16,7 +20,17 @@ website:
         href: https://linkedin.com/in/maptv
       - icon: envelope
         href: mailto:maptv@vt.edu
+  twitter-card: true
+  site-url: https://maptv.github.io
+  sidebar:
+    style: "floating"
+    search: true
+    contents: auto
 format:
   html:
-    theme: cosmo
+    page-layout: full
+    theme:
+      light: [flatly, light.scss]
+      dark: [darkly, dark.scss]
     css: styles.css
+    

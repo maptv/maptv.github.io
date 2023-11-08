@@ -1,0 +1,86 @@
+---
+title: "Welcome"
+author: "Martin Laptev"
+categories: 
+  - dec
+  - decalendar
+  - quarto
+order: 0
+date: now
+date-format: x
+filters:
+  - date.lua
+format:
+  html:
+    grid:
+      sidebar-width: 200px
+      body-width: 1800px
+      margin-width: 200px
+    highlight-style: a11y
+    anchor-sections: true
+    tbl-cap-location: margin
+    code-block-background: false
+    code-block-border-left: false
+    citations-hover: true
+    footnote-hover: true
+    code-copy: true
+    code-fold: true
+    code-link: true
+    code-tools: true
+    link-external-icon: true
+    link-external-newwindow: true
+    output-file: index.html
+---
+
+
+This is the first post in the blog of Martin Laptev. Welcome!
+
+I created my blog using the [Quarto](https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system), which is the [bee's🐝knees](https://en.wiktionary.org/wiki/the_bee%27s_knees#:~:text=Something%20or%20someone%20excellent%2C%20surpassingly%20wonderful%2C%20or%20cool). Quarto makes it easy to create pretty much any kind of publication including articles, books, blogs, dashboards, presentations, reports, and websites.
+
+::: column-margin
+![Quarto logo](quarto.png)
+:::
+
+Promoting the use of Quarto is one of the goals of my blog. Therefore, many of posts will be tagged with the "QUARTO" category and provide some information on how I accomplished a task with Quarto.
+
+For example, I used a Lua script called `date.lua` to modify the date format for every blog post. Lua is programming language that is named after the Portuguese word for moon🌕!
+
+::: column-margin
+![Lua logo](lua.png){width=100}
+:::
+
+```{.lua filename="date.lua"}
+local function unix2deco(ms)
+    local days = ms / 86400000 + 719468
+    local era = (days >= 0 and days or days - 146096) // 146097
+    local doe = days - era * 146097
+    local year = math.floor((doe - doe / 1460 + doe / 36524 - doe / 146096) / 365) + era * 400
+    local doty = days - math.floor(year * 365 + year / 4 - year / 100 + year / 400)
+    return string.format("%s+%s", math.floor(year), math.floor(doty))
+end
+
+local function to_decalendar(date)
+  local date = pandoc.utils.stringify(date)
+  local unix = date:match("(%d+)")
+  return date:gsub(unix, unix2deco(unix))
+end
+
+function Meta(m)
+  m.date = to_decalendar(m.date)
+  return m
+end
+```
+
+The `date.lua` script is an example of a [Pandoc filter](https://quarto.org/docs/extensions/filters.html). [Pandoc](https://pandoc.org/) is a program that converts document into practically any format. The pan in Pandoc comes from the Ancient Greek word for [*all*](https://en.wiktionary.org/wiki/pan-#:~:text=pan%2D-,all,-Usage%20notes%5B). Pandoc strives to work for all document formats, just like Pangea was one continent with *all* the land and a panadea is a cure for *all* diseases!
+
+That converts the date in this blog post from [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.) to a Dec calendar (Decalendar) date. Dec is a decimal calendar and time standard that I created.
+
+To make the [blog listing page](https://maptv.github.io/blog) and in every blog post it contains, I dates
+
+```{=html}
+<style>
+.figure-caption{
+   text-align: center;
+}
+</style>
+```
