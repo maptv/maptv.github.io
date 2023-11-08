@@ -14,5 +14,5 @@ for div in soup.find_all("div", {"class": "listing-date"}):
         y, d = unix2doty(int(div.text))
         div.string.replace_with(f"{y:>04}+{d.__floor__():>03}")
 
-with open("docs/blog.html", "w") as outfile:
+with open("docs/posts.html", "w") as outfile:
     outfile.write(str(soup))
