@@ -220,8 +220,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Blog</span></a>
+  <a href="../../posts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Posts</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -322,9 +322,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="va">m</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>convert the date in this blog post from <a href="https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.">UNIX time</a> to a Dec calendar (Decalendar) date.</p>
-<p>I created a decimal calendar and time standard called Dec.&nbsp;Throughout my blog, I use and many of my posts focus on or at least mention Dec.</p>
-<p>To use the <a href="https://maptv.github.io/blog">blog listing page</a> and in every blog post it contains, I dates</p>
+<p>The <code>date.lua</code> script is an example of a <a href="https://quarto.org/docs/extensions/filters.html">Pandoc filter</a>. <a href="https://pandoc.org/">Pandoc</a> is a program that converts document into practically any format. The pan in Pandoc comes from the Ancient Greek word for <a href="https://en.wiktionary.org/wiki/pan-#:~:text=pan%2D-,all,-Usage%20notes%5B"><em>all</em></a>. Pandoc strives to work for all document formats, just like Pangea was one continent with <em>all</em> the land and a panadea is a cure for <em>all</em> diseases!</p>
+<p>That converts the date in this blog post from <a href="https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.">UNIX time</a> to a Dec calendar (Decalendar) date. Dec is a decimal calendar and time standard that I created.</p>
+<p>To make the <a href="https://maptv.github.io/blog">blog listing page</a> and in every blog post it contains, I dates</p>
 <style>
 .figure-caption{
    text-align: center;
@@ -824,11 +824,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
 <span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>convert the date in this blog post from <span class="co">[</span><span class="ot">UNIX time</span><span class="co">](https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.)</span> to a Dec calendar (Decalendar) date.</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>The <span class="in">`date.lua`</span> script is an example of a <span class="co">[</span><span class="ot">Pandoc filter</span><span class="co">](https://quarto.org/docs/extensions/filters.html)</span>. <span class="co">[</span><span class="ot">Pandoc</span><span class="co">](https://pandoc.org/)</span> is a program that converts document into practically any format. The pan in Pandoc comes from the Ancient Greek word for <span class="co">[</span><span class="ot">*all*</span><span class="co">](https://en.wiktionary.org/wiki/pan-#:~:text=pan%2D-,all,-Usage%20notes%5B)</span>. Pandoc strives to work for all document formats, just like Pangea was one continent with *all* the land and a panadea is a cure for *all* diseases!</span>
 <span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>I created a decimal calendar and time standard called Dec. Throughout my blog, I use and many of my posts focus on or at least mention Dec.</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>That converts the date in this blog post from <span class="co">[</span><span class="ot">UNIX time</span><span class="co">](https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.)</span> to a Dec calendar (Decalendar) date. Dec is a decimal calendar and time standard that I created.</span>
 <span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>To use the <span class="co">[</span><span class="ot">blog listing page</span><span class="co">](https://maptv.github.io/blog)</span> and in every blog post it contains, I dates</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>To make the <span class="co">[</span><span class="ot">blog listing page</span><span class="co">](https://maptv.github.io/blog)</span> and in every blog post it contains, I dates</span>
 <span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
 <span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;style&gt;</span></span>

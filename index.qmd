@@ -18,6 +18,6 @@ My name is Martin Laptev.
 
 I am a data scientist and software engineer with a broad scientific background that ranges from biochemistry to epidemiology. I use the JavaScript, Python, and R programming languages along with the UNIX shell to build useful things like cloud☁️infrastructure, data📊visualizations, machine🤖learning🧠models, and web🕸sites.
 
-I created a calendar and timekeeping system called `Dec`. I write about `Dec` and many other topics on my [blog](blog.qmd)
+I created a calendar and timekeeping system called `Dec`. I write about `Dec` and many other topics on my [blog](posts.qmd)
 
 My professional information is summarized in <a href = "https://mskar.github.io/cv">my Résumé / Curriculum Vitae</a><i class="fa fa-address-card"></i>.

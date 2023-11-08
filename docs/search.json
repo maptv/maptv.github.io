@@ -1,17 +1,17 @@
 [
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
+    "objectID": "posts.html",
+    "href": "posts.html",
     "title": "",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\n1699475402000\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nWelcome\n\n\n\n\n\n\n\ndec\n\n\ndecalendar\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\n1699475402000\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nbrand-new-post\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\n1699475402000\n\n\nMartin Laptev\n\n\n\n\n\n\nNo matching items"
+    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\n1699478676000\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nWelcome\n\n\n\n\n\n\n\ndec\n\n\ndecalendar\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\n1699478676000\n\n\nMartin Laptev\n\n\n\n\n\n\n  \n\n\n\n\nbrand-new-post\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\ndata visualization\n\n\n\n\n\n\n\n\n\n\n\n1699478676000\n\n\nMartin Laptev\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
     "title": "Welcome",
     "section": "",
-    "text": "This is the first post in the blog of Martin Laptev. Welcome!\nI created my blog using the Quarto, which is the bee’s🐝knees. Quarto makes it easy to create pretty much any kind of publication including articles, books, blogs, dashboards, presentations, reports, and websites.\n\n\n\n\n\nQuarto logo\n\n\nPromoting the use of Quarto is one of the goals of my blog. Therefore, many of posts will be tagged with the “QUARTO” category and provide some information on how I accomplished a task with Quarto.\nFor example, I used a Lua script called date.lua to modify the date format for every blog post. Lua is programming language that is named after the Portuguese word for moon🌕!\n\n\n\n\n\nLua logo\n\n\n\n\ndate.lua\n\nlocal function unix2deco(ms)\n    local days = ms / 86400000 + 719468\n    local era = (days &gt;= 0 and days or days - 146096) // 146097\n    local doe = days - era * 146097\n    local year = math.floor((doe - doe / 1460 + doe / 36524 - doe / 146096) / 365) + era * 400\n    local doty = days - math.floor(year * 365 + year / 4 - year / 100 + year / 400)\n    return string.format(\"%s+%s\", math.floor(year), math.floor(doty))\nend\n\nlocal function to_decalendar(date)\n  local date = pandoc.utils.stringify(date)\n  local unix = date:match(\"(%d+)\")\n  return date:gsub(unix, unix2deco(unix))\nend\n\nfunction Meta(m)\n  m.date = to_decalendar(m.date)\n  return m\nend\n\nconvert the date in this blog post from UNIX time to a Dec calendar (Decalendar) date.\nI created a decimal calendar and time standard called Dec. Throughout my blog, I use and many of my posts focus on or at least mention Dec.\nTo use the blog listing page and in every blog post it contains, I dates"
+    "text": "This is the first post in the blog of Martin Laptev. Welcome!\nI created my blog using the Quarto, which is the bee’s🐝knees. Quarto makes it easy to create pretty much any kind of publication including articles, books, blogs, dashboards, presentations, reports, and websites.\n\n\n\n\n\nQuarto logo\n\n\nPromoting the use of Quarto is one of the goals of my blog. Therefore, many of posts will be tagged with the “QUARTO” category and provide some information on how I accomplished a task with Quarto.\nFor example, I used a Lua script called date.lua to modify the date format for every blog post. Lua is programming language that is named after the Portuguese word for moon🌕!\n\n\n\n\n\nLua logo\n\n\n\n\ndate.lua\n\nlocal function unix2deco(ms)\n    local days = ms / 86400000 + 719468\n    local era = (days &gt;= 0 and days or days - 146096) // 146097\n    local doe = days - era * 146097\n    local year = math.floor((doe - doe / 1460 + doe / 36524 - doe / 146096) / 365) + era * 400\n    local doty = days - math.floor(year * 365 + year / 4 - year / 100 + year / 400)\n    return string.format(\"%s+%s\", math.floor(year), math.floor(doty))\nend\n\nlocal function to_decalendar(date)\n  local date = pandoc.utils.stringify(date)\n  local unix = date:match(\"(%d+)\")\n  return date:gsub(unix, unix2deco(unix))\nend\n\nfunction Meta(m)\n  m.date = to_decalendar(m.date)\n  return m\nend\n\nThe date.lua script is an example of a Pandoc filter. Pandoc is a program that converts document into practically any format. The pan in Pandoc comes from the Ancient Greek word for all. Pandoc strives to work for all document formats, just like Pangea was one continent with all the land and a panadea is a cure for all diseases!\nThat converts the date in this blog post from UNIX time to a Dec calendar (Decalendar) date. Dec is a decimal calendar and time standard that I created.\nTo make the blog listing page and in every blog post it contains, I dates"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -19,6 +19,13 @@
     "title": "Post With Code",
     "section": "",
     "text": "The plot below is from the Seaborn Python library documentation:\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.set_theme(style=\"ticks\")\n\n# Initialize the figure with a logarithmic x axis\nf, ax = plt.subplots(figsize=(7, 6))\nax.set_xscale(\"log\")\n\n# Load the example planets dataset\nplanets = sns.load_dataset(\"planets\")\n\n# Plot the orbital period with horizontal boxes\nsns.boxplot(\n    planets, x=\"distance\", y=\"method\", hue=\"method\",\n    whis=[0, 100], width=.6, palette=\"vlag\"\n)\n\n# Add in points to show each observation\nsns.stripplot(planets, x=\"distance\", y=\"method\", size=4, color=\".3\")\n\n# Tweak the visual presentation\nax.xaxis.grid(True)\nax.set(ylabel=\"\")\nsns.despine(trim=True, left=True)\n\n\n\n\nThe plot below is from the Yellowbrick Python library documentation:\n\nfrom yellowbrick.datasets import load_concrete\nfrom yellowbrick.features import JointPlotVisualizer\n\n# Load the dataset\nX, y = load_concrete()\n\n# Instantiate the visualizer\nvisualizer = JointPlotVisualizer(columns=\"cement\")\n\nvisualizer.fit_transform(X, y)        # Fit and transform the data\nvisualizer.show()                     # Finalize and render the figure\n\n\n\n\n&lt;Axes: xlabel='cement', ylabel='target'&gt;\n\n\nThis is a change to the markdown text."
+  },
+  {
+    "objectID": "posts/brand-new-post/index.html",
+    "href": "posts/brand-new-post/index.html",
+    "title": "brand-new-post",
+    "section": "",
+    "text": "Here is a new blog post with R and Python code.\n\n```{r}\n0:8\n```\n\n[1] 0 1 2 3 4 5 6 7 8\n\n\n\n```{python}\nlist(range(9))\n```\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8]"
   },
   {
     "objectID": "index.html",
@@ -33,54 +40,5 @@
     "title": "Martin Laptev",
     "section": "",
     "text": "My name is Martin Laptev.\nI am a data scientist and software engineer with a broad scientific background that ranges from biochemistry to epidemiology. I use the JavaScript, Python, and R programming languages along with the UNIX shell to build useful things like cloud☁️infrastructure, data📊visualizations, machine🤖learning🧠models, and web🕸sites.\nI created a calendar and timekeeping system called Dec. I write about Dec and many other topics on my blog\nMy professional information is summarized in my Résumé / Curriculum Vitae."
-  },
-  {
-    "objectID": "index.html#technologies",
-    "href": "index.html#technologies",
-    "title": "Martin Laptev",
-    "section": "Technologies💻",
-    "text": "Technologies💻"
-  },
-  {
-    "objectID": "index.html#languages",
-    "href": "index.html#languages",
-    "title": "Martin Laptev",
-    "section": "Languages😛",
-    "text": "Languages😛\nI speak\n\nEnglish🇺🇸\nFrench🇫🇷\nPolish🇵🇱\nRussian🇷🇺\nSpanish🇪🇸"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Martin Laptev",
-    "section": "Education🎓",
-    "text": "Education🎓\nI hold\n\nan MPH in Epidemiologic and Biostatistical Methods for Public Health and Clinical Research and a certificate in Data Science from Johns Hopkins University,\na PhD in Tumor Biology and a teaching certificate from Georgetown University,\nan MS in Biotechnology from Jagiellonian University in Poland, and\na BA in Biology from St. Mary’s College of Maryland."
-  },
-  {
-    "objectID": "index.html#mission",
-    "href": "index.html#mission",
-    "title": "Martin Laptev",
-    "section": "Mission🚀",
-    "text": "Mission🚀\nMy primary research interest is in understanding health risk factors by combining scientific expertise from diverse fields with machine intelligence.\nI believe I am uniquely equipped to bridge the gaps between scientific disciplines and deliver on the promise of data science in health research.\nMy preferred tools are Python and R, open source programming languages kept on the cutting edge by their active and supportive communities.\nThrough research and teaching, I am constantly improving my ability to obtain, tidy, explore, transform, visualize, model, and communicate data.\nI aim to utilize my technical skills and science background to become a leader among the next generation of multidisciplinary data scientists."
-  },
-  {
-    "objectID": "posts/brand-new-post/index.html",
-    "href": "posts/brand-new-post/index.html",
-    "title": "brand-new-post",
-    "section": "",
-    "text": "Here is a new blog post with R and Python code.\n\n```{r}\n0:8\n```\n\n[1] 0 1 2 3 4 5 6 7 8\n\n\n\n```{python}\nlist(range(9))\n```\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8]"
-  },
-  {
-    "objectID": "brand-new.html",
-    "href": "brand-new.html",
-    "title": "brand-new-post",
-    "section": "",
-    "text": "Here is a new blog post with R and Python code.\n\n0:8\n\n[1] 0 1 2 3 4 5 6 7 8\n\n\n\nlist(range(9))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8]"
-  },
-  {
-    "objectID": "posts/post-with-code/Untitled.html",
-    "href": "posts/post-with-code/Untitled.html",
-    "title": "",
-    "section": "",
-    "text": "# %% [markdown]\n# ---\n# title: Weekly and Pently Schedule Comparison\n# author: Martin Laptev\n# date: now\n# date-format: x\n# filters:\n#   - date.lua\n# ---\n\n# %%\nimport matplotlib.pyplot as plt\nimport matplotlib.patheffects as pe\n\nplt.rcParams.update(\n    {\n        \"legend.fontsize\": \"x-large\",\n        \"axes.labelsize\": \"x-large\",\n        \"axes.titlesize\": \"xx-large\",\n        \"xtick.labelsize\" : \"large\",\n        \"ytick.labelsize\" : \"large\",\n        'figure.dpi': 300,\n        'figure.figsize': [6, 4],\n\n    }\n)\n\n# %%\n# | tags: [fig-schedules]\n# | label: fig-schedules\n# | fig-cap: \"Weekly schedule and Schedule 3 comparison\"\n# | fig-cap-location: margin\n# | fig-subcap:\n# |   - \"Proportion of the day spent working and resting every day of the week\"\n# |   - \"Proportion of the day spent working and resting every day of the pent\"\n# | fig-alt:\n# |   - \"Bar chart showing work in red and rest in blue across 7 days\"\n# |   - \"Bar chart showing work in red and rest in blue across 5 days\"\n# | layout-ncol: 2\nimport pandas as pd\n\nax = (\n    pd.DataFrame(\n        {\n            \"Days\": [\"Mon\", \"Tue\", \"Wed\", \"Thur\", \"Fri\", \"Sat\", \"Sun\"],\n            \"Morning rest\": [3 / 8] * 5 + [1] * 2,\n            \"Work\": [1 / 3] * 5 + [0] * 2,\n            \"Evening rest\": [7 / 24] * 5 + [0] * 2,\n        }\n    )\n    .set_index(\"Days\")\n    .plot.bar(\n        stacked=True,\n        color=[\"#377eb8\", \"#e41a1c\", \"#377eb8\"],\n        title=\"Weekly schedule\",\n        legend=False,\n        xlabel=\"Days of the week\",\n        ylabel=\"Proportion of the day\",\n        rot=0,\n        width=0.8,\n    )\n)\nax.invert_yaxis()\nax.legend([\"Rest\", \"Work\"], loc=\"upper right\")\nax.patch.set_alpha(0)\n\nfor c in ax.containers:\n    labels = [round(v.get_height(), 3) if v.get_height() &gt; 0 else \"\" for v in c]\n    labels = [str(l)[1:] for l in labels if l != 1]\n    ax.bar_label(c, labels=labels, label_type=\"center\", color=\"black\", path_effects=[pe.withStroke(linewidth=3, foreground=\"white\")], fontsize=15)\n\nax = (\n    pd.DataFrame(\n        {\n            \"Days\": [\"0 or 5\", \"1 or 6\", \"2 or 7\", \"3 or 8\", \"4 or 9\"],\n            \"Morning rest\": [0.3] * 3 + [1] * 2,\n            \"Work\": [0.4] * 3 + [0] * 2,\n            \"Evening rest\": [0.3] * 3 + [0] * 2,\n        }\n    )\n    .set_index(\"Days\")\n    .plot.bar(\n        stacked=True,\n        color=[\"#377eb8\", \"#e41a1c\", \"#377eb8\"],\n        title=\"Schedule 3\",\n        legend=False,\n        xlabel=\"Days of the dek\",\n        ylabel=\"Proportion of the day\",\n        rot=0,\n        width=0.8,\n    )\n)\nax.invert_yaxis()\nax.legend([\"Rest\", \"Work\"], loc=\"upper right\")\nax.patch.set_alpha(0)\n\nfor c in ax.containers[:-1]:\n    labels = [round(v.get_height(), 1) if v.get_height() &gt; 0 else \"\" for v in c]\n    labels = [str(l)[1:] for l in labels if l != 1]\n    ax.bar_label(c, labels=labels, label_type=\"center\", color=\"black\", path_effects=[pe.withStroke(linewidth=3, foreground=\"white\")], fontsize=18)"
   }
 ]

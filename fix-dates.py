@@ -6,7 +6,7 @@ def unix2doty(ms=0):
     year = int((dote - dote / 1460 + dote / 36524 - dote / 146096) // 365 + era * 400)
     return year, days - (year * 365 + year / 4 - year / 100 + year / 400).__floor__()
 
-with open("docs/blog.html") as infile:
+with open("docs/posts.html") as infile:
     txt = infile.read()
     soup = bs4.BeautifulSoup(txt, features="html.parser")
 for div in soup.find_all("div", {"class": "listing-date"}):
