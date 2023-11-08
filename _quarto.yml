@@ -4,6 +4,9 @@ project:
   post-render: fix-dates.py
 
 website:
+  back-to-top-navigation: true
+  reader-mode: true
+  page-navigation: true
   favicon: media/dec.png
   navbar:
     title: Martin Laptev
@@ -13,7 +16,7 @@ website:
       - icon: house
         href: https://maptv.github.io
       - icon: pencil
-        href: https://maptv.github.io/blog
+        href: https://maptv.github.io/posts
       - icon: github
         href: https://github.com/maptv
       - icon: linkedin
@@ -28,6 +31,7 @@ website:
     contents: auto
 format:
   html:
+    # title-block-style: plain
     page-layout: full
     theme:
       light: [flatly, light.scss]

@@ -9,6 +9,9 @@ categories:
   - analysis
   - data visualization
 image: image.jpg
+format:
+  html:
+    code-fold: true
 jupyter:
   jupytext:
     formats: 'qmd:quarto,py:percent,md,ipynb'

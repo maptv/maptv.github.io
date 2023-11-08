@@ -99,6 +99,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 <meta name="twitter:title" content="Post With Code">
@@ -133,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://maptv.github.io/blog" rel="" target=""><i class="bi bi-pencil" role="img">
+    <a class="nav-link" href="https://maptv.github.io/posts" rel="" target=""><i class="bi bi-pencil" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -174,41 +176,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-right">
-      <h1 class="title">Post With Code</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">news</div>
-                <div class="quarto-category">code</div>
-                <div class="quarto-category">analysis</div>
-                <div class="quarto-category">data visualization</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
+<header id="title-block-header">
+<h1 class="title display-7">Post With Code</h1>
+<p class="author">Martin Laptev</p>
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Martin Laptev </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">November 8, 2023</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<p class="date">2023-11-08</p>
+</header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -275,9 +248,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-
 <p>The plot below is from the <a href="https://seaborn.pydata.org/examples/horizontal_boxplot.html">Seaborn Python library documentation</a>:</p>
+<ol type="1">
+<li><p>5 blog posts, not 3</p></li>
+<li><p>Topics are pre-defined:</p>
+<ol type="1">
+<li>Probability theory and random variables</li>
+</ol>
+<ul>
+<li>Histogram</li>
+</ul>
+<ol start="2" type="1">
+<li>Clustering</li>
+</ol>
+<ul>
+<li>DBSCAN labels for scatter plot</li>
+</ul>
+<ol start="3" type="1">
+<li>Linear and nonlinear regression</li>
+</ol>
+<ul>
+<li>line on scatter plot</li>
+</ul>
+<ol start="4" type="1">
+<li>Classification</li>
+</ol>
+<ul>
+<li>ROC, PR, Confusion Matrix</li>
+</ul>
+<ol start="5" type="1">
+<li>Anomaly/outlier detection</li>
+</ol>
+<ul>
+<li>DBSCAN labels for scatter plot</li>
+</ul></li>
+</ol>
+<p>Learning objectives: 1. Use various techniques related to preprocessing prior to the use of machine learning models. 2. Describe the probability theory and random variables. 3. Identify the common tasks in machine learning/data mining models for clustering. 4. Analyze multiple linear and nonlinear regression. 5. Describe the algorithms, theories, and applications related to machine learning/data mining for classification. 6. Detect anomaly/outlier behavior and the treatment techniques.</p>
 <div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -303,12 +312,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>ax.xaxis.grid(<span class="va">True</span>)</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(ylabel<span class="op">=</span><span class="st">""</span>)</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>sns.despine(trim<span class="op">=</span><span class="va">True</span>, left<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-3-output-1.png" width="746" height="515"></p>
 </div>
 </div>
 <p>The plot below is from the <a href="https://www.scikit-yb.org/en/latest/api/features/jointplot.html?highlight=joint%20plot#joint-plot-visualization">Yellowbrick Python library documentation</a>:</p>
 <div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> yellowbrick.datasets <span class="im">import</span> load_concrete</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> yellowbrick.features <span class="im">import</span> JointPlotVisualizer</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -320,6 +332,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>visualizer.fit_transform(X, y)        <span class="co"># Fit and transform the data</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>visualizer.show()                     <span class="co"># Finalize and render the figure</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-4-output-1.png" width="753" height="513"></p>
 </div>
@@ -327,6 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;Axes: xlabel='cement', ylabel='target'&gt;</code></pre>
 </div>
 </div>
+<p>The example below shows tuning of the regularization strength <span class="math inline">\(\alpha\)</span>. <img src="attachment:3f6e174e-eca2-47a0-bc3b-605681c448ea.png" class="img-fluid" alt="image.png"> <img src="attachment:822e2379-4768-4f25-93c5-1ecfea0b84b7.png" class="img-fluid" alt="image.png"></p>
 <p>This is a change to the markdown text.</p>
 
 
