@@ -23,11 +23,11 @@ I created my blog using the [Quarto](https://quarto.org/#:~:text=An%20open%2Dsou
 Promoting the use of Quarto is one of the goals of my blog. Therefore, many of posts will provide some information on how I accomplished a specific task with Quarto.
 
 ::: column-margin
-![Lua logo](lua.png){width=100}
+![Python logo](python.png){width=100}
 :::
 
 ::: column-margin
-![Python logo](python.png){width=100}
+![Lua logo](lua.png){width=100}
 :::
 
 For example, I used a Python script to customize the date format in the [listing page of my blog](https://maptv.github.io/posts) and a Lua script to make the same change in every blog post.
