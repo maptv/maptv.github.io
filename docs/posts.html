@@ -200,6 +200,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 <script>
+// https://howardhinnant.github.io/date_algorithms.html#days_from_civil
 function dote2doty(days = 719468) {
     const era = Math.floor((days >= 0 ? days : days - 146096) / 146097),
         dotc = days - era * 146097,
@@ -209,7 +210,6 @@ function dote2doty(days = 719468) {
 function unix2doty(ms = 0) {
   return dote2doty(ms / 86400000 + 719468)
 }
-// https://howardhinnant.github.io/date_algorithms.html#days_from_civil
 function doty2dote(year = 1969, doty = 0, zone = 0) {
     const cycle = Math.floor((year >= 0 ? year : year - 399) / 400),
     yote = year - cycle * 400;
@@ -231,14 +231,23 @@ function unix2deco(ms = 0) {
 };
 const nbc = document.getElementsByClassName("navbar-brand-container")
 const div = document.createElement("div")
+const cal = document.createElement("i")
+cal.classList.add("bi", "bi-calendar")
+cal.setAttribute("role", "img")
+const tik = document.createElement("i")
+tik.classList.add("bi", "bi-clock")
+tik.setAttribute("role", "img")
 div.setAttribute("id", "deco");
+nbc[0].appendChild(cal)
 nbc[0].appendChild(div)
+nbc[0].appendChild(tik)
 setInterval(
-  () => document.getElementById("deco").innerText = unix2deco(Date.now()).slice(0, 14), 8.64);
+  () => document.getElementById("deco").innerText =
+  unix2deco(Date.now()).slice(0, 14), 8.64);
 </script>
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-categories="news,code,analysis,data visualization" data-index="0" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699510904000" data-listing-file-modified-sort="1699510858020" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-categories="news,code,analysis,data visualization" data-index="0" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699512180000" data-listing-file-modified-sort="1699510858020" data-listing-reading-time-sort="4">
 <div class="thumbnail">
 <p><a href="./posts/post-with-code/index.html"> <img class="thumbnail-image" src="./posts/post-with-code/image.jpg"/> </a></p>
 </div>
@@ -279,7 +288,7 @@ Martin Laptev
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-categories="news,code,analysis,data visualization" data-index="1" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699510904000" data-listing-file-modified-sort="1699510876510" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-categories="news,code,analysis,data visualization" data-index="1" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699512180000" data-listing-file-modified-sort="1699510876510" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="./posts/brand-new-post/index.html"> <img class="thumbnail-image" src="./posts/brand-new-post/image.png"/> </a></p>
 </div>
@@ -320,7 +329,7 @@ Martin Laptev
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-categories="dec,decalendar,quarto" data-index="2" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699510904000" data-listing-file-modified-sort="1699510866108" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-categories="dec,decalendar,quarto" data-index="2" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699512180000" data-listing-file-modified-sort="1699510866108" data-listing-reading-time-sort="5">
 <div class="thumbnail">
 <p><a href="./posts/introduction/index.html"> <img class="thumbnail-image" src="./posts/introduction/dec.png"/> </a></p>
 </div>
