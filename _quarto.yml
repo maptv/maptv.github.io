@@ -1,8 +1,7 @@
 project:
   type: website
   output-dir: docs
-  post-render:
-    - date.py
+  post-render: date.py
 
 website:
   back-to-top-navigation: true

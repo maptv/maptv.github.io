@@ -31,58 +31,61 @@ Promoting the use of Quarto is one of the goals of my blog. Therefore, many of p
 
 For example, I used JavaScript to added a custom timestamp to the navigation bar (navbar), Python to customize the date format in the [listing page](https://maptv.github.io/posts), and Lua to customize the date format in every blog post.
 
-JavaScript, Python, and Lua are programming languages that have all have interesting origins to their names. JavaScript is named after Java☕, Python🐍is named after the [Monty Python](https://en.wikipedia.org/wiki/Monty_Python#:~:text=Monty%20Python%20(also%20collectively%20known%20as%20the%20Pythons)%5B2%5D%5B3%5D%20were%20a%20British%20comedy%20troupe%20formed%20in%201969) comedy troupe, and Lua is the Portuguese🇵🇹word for moon🌕!
+JavaScript, Python, and Lua are programming languages that have all have interesting origins to their names. JavaScript is named after the Java☕programming language, Python🐍is named after the [Monty Python](https://en.wikipedia.org/wiki/Monty_Python#:~:text=Monty%20Python%20(also%20collectively%20known%20as%20the%20Pythons)%5B2%5D%5B3%5D%20were%20a%20British%20comedy%20troupe%20formed%20in%201969) comedy troupe, and Lua is the Portuguese🇵🇹word for moon🌕!
 
 ::: panel-tabset
-### JavaScript
+### Quarto
+``` {.yaml filename="_quarto.yml"}
+project:
+  type: website
+  output-dir: docs
+  post-render: date.py
+```
 
-``` {.javascript filename="index.qmd"}
-<script>
+``` {.yaml filename="_metadata.yml"}
+date: now
+date-format: x
+filters: date.lua
+```
+
+```` {.html filename="index.qmd"}
+```{=html}
+<script src="time.js"></script>
+```
+````
+
+### JavaScript
+``` {.javascript filename="time.js"}
 // https://howardhinnant.github.io/date_algorithms.html#days_from_civil
 function dote2doty(days = 719468) {
     const era = Math.floor((days >= 0 ? days : days - 146096) / 146097),
         dotc = days - era * 146097,
-        yotc = Math.floor((dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
-    return [yotc + era * 400, dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4)];
-}
-function unix2doty(ms = 0) {
-  return dote2doty(ms / 86400000 + 719468)
-}
-function doty2dote(year = 1969, doty = 0, zone = 0) {
-    const cycle = Math.floor((year >= 0 ? year : year - 399) / 400),
-    yote = year - cycle * 400;
-    return cycle * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty - zone
-}
-function doty2deco(yearDoty = [1969, 306], zone = 0) {
-    const yd = dote2doty(doty2dote(yearDoty[0], Math.floor(yearDoty[1])));
-    return `${yd[0]}+${(yd[1]).toString().padStart(3, "0")}${
-        yearDoty[1].toString().includes(".") ? "." + (
-            (yearDoty[1] > 0) ? (yearDoty[1] - zone).toString().split(".").pop()
-            : [...(yearDoty[1] - zone).toString().split(".").pop()].map(
-                (e, i, a) => (i + 1 === a.length) ? 10 - e : 9 - e
-            ).join("")
-        ) : ""
-    }`
-}
-function unix2deco(ms = 0) {
-    return doty2deco(unix2doty(ms));
+        yotc = Math.floor((dotc - Math.floor(dotc / 1460)
+        + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
+    return [yotc + era * 400, dotc + Math.floor(yotc / 100)
+        - yotc * 365 - Math.floor(yotc / 4)];
 };
-const nbc = document.getElementsByClassName("navbar-brand-container")
-const div = document.createElement("div")
-const cal = document.createElement("i")
-cal.classList.add("bi", "bi-calendar")
-cal.setAttribute("role", "img")
-const tik = document.createElement("i")
-tik.classList.add("bi", "bi-clock")
-tik.setAttribute("role", "img")
+function unix2doty(ms = 0) { return dote2doty(ms / 86400000 + 719468) };
+function doty2deco(year = 1969, doty = 306, zone = 0) {
+    [date, time] = doty.toString().split(".")
+    return `${year}+${date.toString().padStart(3, "0")}.${
+    time.toString().slice(0, 5).padStart(5, "0")}`;
+};
+function unix2deco(ms = 0) { return doty2deco(...unix2doty(ms)) };
+const nbc = document.getElementsByClassName("navbar-brand-container");
+const div = document.createElement("div");
+const cal = document.createElement("i");
+cal.classList.add("bi", "bi-calendar");
+cal.setAttribute("role", "img");
+const tik = document.createElement("i");
+tik.classList.add("bi", "bi-clock");
+tik.setAttribute("role", "img");
 div.setAttribute("id", "deco");
-nbc[0].appendChild(cal)
-nbc[0].appendChild(div)
-nbc[0].appendChild(tik)
-setInterval(
-  () => document.getElementById("deco").innerText =
+nbc[0].appendChild(cal);
+nbc[0].appendChild(div);
+nbc[0].appendChild(tik);
+setInterval(() => document.getElementById("deco").innerText =
   unix2deco(Date.now()).slice(0, 14), 8.64);
-</script>
 ```
 
 ### Python
@@ -140,57 +143,5 @@ That converts the date in this blog post from [UNIX time](https://en.wikipedia.o
 To make the [blog listing page](https://maptv.github.io/blog) and in every blog post it contains, I dates
 
 ```{=html}
-<style>
-.figure-caption{
-   text-align: center;
-}
-</style>
-```
-```{=html}
-<script>
-// https://howardhinnant.github.io/date_algorithms.html#days_from_civil
-function dote2doty(days = 719468) {
-    const era = Math.floor((days >= 0 ? days : days - 146096) / 146097),
-        dotc = days - era * 146097,
-        yotc = Math.floor((dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
-    return [yotc + era * 400, dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4)];
-}
-function unix2doty(ms = 0) {
-  return dote2doty(ms / 86400000 + 719468)
-}
-function doty2dote(year = 1969, doty = 0, zone = 0) {
-    const cycle = Math.floor((year >= 0 ? year : year - 399) / 400),
-    yote = year - cycle * 400;
-    return cycle * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty - zone
-}
-function doty2deco(yearDoty = [1969, 306], zone = 0) {
-    const yd = dote2doty(doty2dote(yearDoty[0], Math.floor(yearDoty[1])));
-    return `${yd[0]}+${(yd[1]).toString().padStart(3, "0")}${
-        yearDoty[1].toString().includes(".") ? "." + (
-            (yearDoty[1] > 0) ? (yearDoty[1] - zone).toString().split(".").pop()
-            : [...(yearDoty[1] - zone).toString().split(".").pop()].map(
-                (e, i, a) => (i + 1 === a.length) ? 10 - e : 9 - e
-            ).join("")
-        ) : ""
-    }`
-}
-function unix2deco(ms = 0) {
-    return doty2deco(unix2doty(ms));
-};
-const nbc = document.getElementsByClassName("navbar-brand-container")
-const div = document.createElement("div")
-const cal = document.createElement("i")
-cal.classList.add("bi", "bi-calendar")
-cal.setAttribute("role", "img")
-const tik = document.createElement("i")
-tik.classList.add("bi", "bi-clock")
-tik.setAttribute("role", "img")
-div.setAttribute("id", "deco");
-nbc[0].appendChild(cal)
-nbc[0].appendChild(div)
-nbc[0].appendChild(tik)
-setInterval(
-  () => document.getElementById("deco").innerText =
-  unix2deco(Date.now()).slice(0, 14), 8.64);
-</script>
+<script src="../../time.js"></script>
 ```
