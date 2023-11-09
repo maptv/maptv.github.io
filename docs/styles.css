@@ -5,4 +5,16 @@ p, ul {
 
 .quarto-title-banner { background-color:transparent; }
 
-/* ul.list-unstyled.mt-1:first-child { display: none} */
+@media only screen and (max-width: 493px) {
+    a.navbar-brand, span.navbar-title {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 345px) {
+    div#quarto-search, i.bi-calendar, i.bi-clock {
+        display: none;
+    }
+    div.navbar-container.container-fluid {
+    -webkit-justify-content: flex-start;
+}
