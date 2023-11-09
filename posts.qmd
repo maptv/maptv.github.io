@@ -1,7 +1,7 @@
 ---
 listing:
   contents: posts
-  sort: date
+  sort: false
   type: default
   categories: true
 page-layout: full

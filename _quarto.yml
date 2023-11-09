@@ -32,7 +32,7 @@ website:
     contents:
       - section: Introduction to
         contents: 
-          - posts/introduction/myblog.qmd
+          - posts/intro/myblog.qmd
 format:
   html:
     page-layout: full
@@ -44,3 +44,5 @@ format:
       sidebar-width: 200px
       body-width: 1800px
       margin-width: 200px
+execute: 
+  freeze: true

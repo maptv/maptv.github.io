@@ -18,3 +18,23 @@ p, ul {
     div.navbar-container.container-fluid {
     -webkit-justify-content: flex-start;
 }
+
+/* https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html#lets-see-how-it-works */
+section {
+  scroll-margin-top: 4rem;
+}
+
+/* https://stackoverflow.com/questions/73570277/how-to-change-title-banner-size-in-quarto */
+/* #title-block-header { */
+/*   margin-block-end: 1rem; */
+/*   position: relative; */
+/*   margin-top: -1px; */
+/*   height: 75px; */
+/* } */
+
+/* div.quarto-title-banner { */
+/*   margin-block-end: 1rem; */
+/*   position: relative; */
+/*   margin-top: -30px; */
+/*   height: 85%; */
+/* } */
