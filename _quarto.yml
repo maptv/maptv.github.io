@@ -1,7 +1,7 @@
 project:
   type: website
   output-dir: docs
-  post-render: fix-dates.py
+  post-render: date.py
 
 website:
   back-to-top-navigation: true
@@ -26,15 +26,21 @@ website:
   twitter-card: true
   site-url: https://maptv.github.io
   sidebar:
+    title: none
     style: "floating"
     search: true
-    contents: auto
+    contents:
+      - section: Introduction to
+        contents: 
+          - posts/introduction/myblog.qmd
 format:
   html:
-    # title-block-style: plain
     page-layout: full
     theme:
       light: [flatly, light.scss]
       dark: [darkly, dark.scss]
     css: styles.css
-    
+    grid:
+      sidebar-width: 200px
+      body-width: 1800px
+      margin-width: 200px

@@ -3,8 +3,16 @@
     "listing": "/posts.html",
     "items": [
       "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html",
-      "/posts/brand-new-post/index.html"
+      "/posts/brand-new-post/index.html",
+      "/posts/introduction/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/post-with-code/index.html",
+      "/posts/brand-new-post/index.html",
+      "/posts/welcome/index.html"
     ]
   }
 ]

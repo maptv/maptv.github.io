@@ -1,0 +1,99 @@
+---
+title: My blog
+author: Martin Laptev
+image: dec.png
+categories: 
+  - dec
+  - decalendar
+  - quarto
+order: 1
+format: 
+  html: 
+    output-file: index.html
+---
+
+This is the first post in the blog of Martin Laptev. Welcome!
+
+::: column-margin
+![Quarto logo](quarto.png)
+:::
+
+I created my blog using the [Quarto](https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system), which is the [bee's🐝knees](https://en.wiktionary.org/wiki/the_bee%27s_knees#:~:text=Something%20or%20someone%20excellent%2C%20surpassingly%20wonderful%2C%20or%20cool). Quarto makes it easy to create pretty much any kind of publication including articles, books, blogs, dashboards, presentations, reports, and websites.
+
+Promoting the use of Quarto is one of the goals of my blog. Therefore, many of posts will provide some information on how I accomplished a specific task with Quarto.
+
+::: column-margin
+![Lua logo](lua.png){width=100}
+:::
+
+::: column-margin
+![Python logo](python.png){width=100}
+:::
+
+For example, I used a Python script to customize the date format in the [listing page of my blog](https://maptv.github.io/posts) and a Lua script to make the same change in every blog post.
+
+Python and Lua are programming languages that have interesting origins to their names. Lua is the Portuguese🇵🇹word for moon🌕and Python🐍is named after the [Monty Python](https://en.wikipedia.org/wiki/Monty_Python#:~:text=Monty%20Python%20(also%20collectively%20known%20as%20the%20Pythons)%5B2%5D%5B3%5D%20were%20a%20British%20comedy%20troupe%20formed%20in%201969) comedy troupe!
+
+::: {.panel-tabset}
+
+### Python
+```{.python filename="date.py"}
+import bs4
+
+def unix2doty(ms=0):
+    days = ms / 86400000 + 719468
+    dote = days - (era := (days if days >= 0 else days - 146096) // 146097) * 146097
+    year = int((dote - dote / 1460 + dote / 36524 - dote / 146096) // 365 + era * 400)
+    return year, days - (year * 365 + year / 4 - year / 100 + year / 400).__floor__()
+
+with open("docs/posts.html") as infile:
+    txt = infile.read()
+    soup = bs4.BeautifulSoup(txt, features="html.parser")
+for div in soup.find_all("div", {"class": "listing-date"}):
+    if "+" not in div.text:
+        y, d = unix2doty(int(div.text))
+        div.string.replace_with(f"{y:>04}+{d.__floor__():>03}")
+
+with open("docs/posts.html", "w") as outfile:
+    outfile.write(str(soup))
+```
+
+### Lua
+```{.lua filename="date.lua"}
+local function unix2deco(ms)
+    local days = ms / 86400000 + 719468
+    local era = (days >= 0 and days or days - 146096) // 146097
+    local doe = days - era * 146097
+    local year = math.floor((doe - doe / 1460 + doe / 36524 - doe / 146096) / 365) + era * 400
+    local doty = days - math.floor(year * 365 + year / 4 - year / 100 + year / 400)
+    return string.format("%s+%s", math.floor(year), math.floor(doty))
+end
+
+local function to_decalendar(date)
+  local date = pandoc.utils.stringify(date)
+  local unix = date:match("(%d+)")
+  return date:gsub(unix, unix2deco(unix))
+end
+
+function Meta(m)
+  m.date = to_decalendar(m.date)
+  return m
+end
+```
+
+:::
+
+I only need this script to run for the posts
+The `date.lua` script is an example of a [Pandoc filter](https://quarto.org/docs/extensions/filters.html). [Pandoc](https://pandoc.org/) is a program that converts document into practically any format. The pan in Pandoc comes from the Ancient Greek word for [*all*](https://en.wiktionary.org/wiki/pan-#:~:text=pan%2D-,all,-Usage%20notes%5B). Pandoc strives to work for all document formats, just like Pangea was one continent with *all* the land and a panadea is a cure for *all* diseases!
+
+That converts the date in this blog post from [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.) to a Dec calendar (Decalendar) date. Dec is a decimal calendar and time standard that I created.
+
+To make the [blog listing page](https://maptv.github.io/blog) and in every blog post it contains, I dates
+
+```{=html}
+<style>
+.figure-caption{
+   text-align: center;
+}
+</style>
+```

@@ -4,3 +4,5 @@ p, ul {
 }
 
 .quarto-title-banner { background-color:transparent; }
+
+/* ul.list-unstyled.mt-1:first-child { display: none} */

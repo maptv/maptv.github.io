@@ -1,8 +1,7 @@
 ---
-title: "brand-new-post"
+title: Brand New Post
 author: Martin Laptev
-date: now
-cache: true
+order: 3
 categories:
   - news
   - code

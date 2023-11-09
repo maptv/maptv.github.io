@@ -1,15 +1,10 @@
 ---
 listing:
   contents: posts
-  sort: "title"
+  sort: date
   type: default
   categories: true
-  sort-ui: false
-  filter-ui: false
 page-layout: full
-title-block-banner: true
 date: now
 date-format: x
-filters:
-  - date.lua
 ---
