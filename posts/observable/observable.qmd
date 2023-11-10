@@ -1477,3 +1477,16 @@ set(viewof sliceString, setSliceDotd(sliceDotd))
 :::
 
 # Appendix {#appendix}
+
+```{=html}
+<script src="../../time.js"></script>
+<style>
+#title-block-header > div.quarto-title-banner.page-columns.page-full {
+  margin: 0px;
+  padding: 0px;
+}
+#title-block-header {
+  margin: 0px;
+}
+</style>
+```

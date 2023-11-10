@@ -60,6 +60,8 @@ svg#fig-1.mermaid-js .marker {
 .blue { color: deepskyblue }
 .gray { color: gray }
 
+.quarto-title-banner h1, div.quarto-categories { color: #ffffff !important; }
+
 button.btn.btn-quarto, div.observablehq > div.button-switch {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

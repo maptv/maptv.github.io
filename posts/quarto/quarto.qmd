@@ -1,11 +1,11 @@
 ---
 title: Quarto
 image: logos.png
-categories: 
+categories:
   - dec🗓️🕓
   - quarto
-format: 
-  html: 
+format:
+  html:
     mermaid:
       theme: default
 ---
@@ -20,6 +20,8 @@ I created my blog using the [Quarto](https://quarto.org/#:~:text=An%20open%2Dsou
 
 Promoting the use of Quarto is one of the goals of my blog. Therefore, many of posts will provide some information on how I accomplished specific tasks with Quarto.
 
+For example, I used [JavaScript](https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(/%CB%88d%CA%92%C9%91%CB%90v%C9%99skr%C9%AApt/)%2C%20often%20abbreviated%20as%20JS%2C%20is%20a%20programming%20language%20that%20is%20one%20of%20the%20core%20technologies%20of%20the%20World%20Wide%20Web%2C%20alongside%20HTML%20and%20CSS.) to add a custom timestamp to the navigation bar (navbar), [Python](https://en.wikipedia.org/wiki/Python_(programming_language)#:~:text=Python%20is%20a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language.) to customize the date format in the my blog's [listing page](https://maptv.github.io/posts), and [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=Lua%20(/%CB%88lu%CB%90%C9%99/%20LOO%2D%C9%99%3B%20from%20Portuguese%3A%20lua%20%5B%CB%88lu(w)%C9%90%5D%20meaning%20moon)%20is%20a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20primarily%20for%20embedded%20use%20in%20applications.) to customize the date format in every blog post.
+
 ::: column-margin
 ![JavaScript](js.png){width="100"}
 :::
@@ -31,8 +33,6 @@ Promoting the use of Quarto is one of the goals of my blog. Therefore, many of p
 ::: column-margin
 ![Lua](lua.png){width="100"}
 :::
-
-For example, I used [JavaScript](https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(/%CB%88d%CA%92%C9%91%CB%90v%C9%99skr%C9%AApt/)%2C%20often%20abbreviated%20as%20JS%2C%20is%20a%20programming%20language%20that%20is%20one%20of%20the%20core%20technologies%20of%20the%20World%20Wide%20Web%2C%20alongside%20HTML%20and%20CSS.) to add a custom timestamp to the navigation bar (navbar), [Python](https://en.wikipedia.org/wiki/Python_(programming_language)#:~:text=Python%20is%20a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language.) to customize the date format in the my blog's [listing page](https://maptv.github.io/posts), and [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=Lua%20(/%CB%88lu%CB%90%C9%99/%20LOO%2D%C9%99%3B%20from%20Portuguese%3A%20lua%20%5B%CB%88lu(w)%C9%90%5D%20meaning%20moon)%20is%20a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20primarily%20for%20embedded%20use%20in%20applications.) to customize the date format in every blog post.
 
 JavaScript, Python, and Lua are programming languages that have all have interesting name origins. JavaScript is named after the Java☕programming language, Python🐍is named after the [Monty Python](https://en.wikipedia.org/wiki/Monty_Python#:~:text=Monty%20Python%20(also%20collectively%20known%20as%20the%20Pythons)%5B2%5D%5B3%5D%20were%20a%20British%20comedy%20troupe%20formed%20in%201969) comedy troupe, and Lua is the Portuguese🇵🇹word for moon🌕.
 
@@ -50,13 +50,17 @@ Quarto uses Pandoc to convert markdown files into target format(s) like `html` o
 ![Knitr](knitr.svg){.knitr width="100"}
 :::
 
+::: column-margin
+![Mermaid](mermaid.png){width="100"}
+:::
+
 ```{mermaid fig-align="center"}
 %%| label: fig-1
 %%| fig-cap: Quarto workflow
 %%| fig-align: center
 %%| fig-width: 9
 flowchart LR
-    A[qmd<br/>ipynb]-.Knitr<br/>Jupyter.->B((md))-.Pandoc with<br/>Lua filters.->C(html<br/>pdf<br/>docx<br/>etc.)
+   A[qmd<br/>ipynb]-.Knitr<br/>Jupyter.->B((md))-.Pandoc with<br/>Lua filters.->C(html<br/>pdf<br/>docx<br/>etc.)
 ```
 
 Mine Çetinkaya-Rundel's Quarto tip series includes a similar [Quarto workflow mermaid diagram](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/21-diagrams/#fig-mermaid) and her ["Hello, Quarto!"](https://mine.quarto.pub/hello-quarto) rstudio::conf(2022) keynote with [Julia Stewart Lowndes](https://jules32.github.io) contains truly beautiful Quarto workflow images by [Allison Horst](https://allisonhorst.com): [1](https://mine.quarto.pub/hello-quarto/#/publishing-system-2), [2](https://mine.quarto.pub/hello-quarto/#/quarto-flattens-the-learning-curve), [3](https://mine.quarto.pub/hello-quarto/#/quarto-can-grow-with-learners-in-a-profound-way), and [4](https://mine.quarto.pub/hello-quarto/#/quarto-cli-orchestrates-each-step-of-rendering).
@@ -79,7 +83,7 @@ The navbar timestamp is also derived from millisecond UNIX time, which I obtaine
 
 While `time.js` is sourced by Quarto when it reads the HTML block in all of my blog `.qmd` files, `date.lua` is run as a [Pandoc filter](https://quarto.org/docs/extensions/filters.html) during the creation of the output `.html` files, and `date.py` is executed as a [post-render script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render). @exm-date speaks to the power and versatility of Quarto.
 
-Coming up next on my blog is [a post](dec.qmd) that introduces `Dec` with [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
+Coming up next on my blog is [a post](../observable/observable.qmd) that introduces `Dec` with [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
 
 ::: {#exm-date}
 :::
@@ -203,6 +207,6 @@ end
 #title-block-header {
   margin: 0px;
 }
-.figure-caption{ text-align: center; }
+figcaption { text-align: center; }
 </style>
 ```

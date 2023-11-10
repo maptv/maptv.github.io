@@ -18,6 +18,7 @@ date: now
 date-format: x
 filters:
   - date.lua
+lightbox: true
 format:
   html:
     highlight-style: a11y

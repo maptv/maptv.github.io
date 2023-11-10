@@ -2,38 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://maptv.github.io/posts.html</loc>
-    <lastmod>2023-11-10T04:36:40.428Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/posts/introduction/index.html</loc>
-    <lastmod>2023-11-09T21:25:14.733Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/posts/post-with-code/index.html</loc>
-    <lastmod>2023-11-10T00:30:33.130Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/posts/brand-new-post/index.html</loc>
-    <lastmod>2023-11-09T15:35:17.640Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/index.html</loc>
-    <lastmod>2023-11-10T04:31:32.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/posts/intro/index.html</loc>
-    <lastmod>2023-11-10T03:00:59.613Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/posts/dec/index.html</loc>
-    <lastmod>2023-11-10T02:56:47.353Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/posts/observable/index.html</loc>
-    <lastmod>2023-11-10T04:31:25.534Z</lastmod>
+    <lastmod>2023-11-09T21:32:27.749Z</lastmod>
   </url>
   <url>
     <loc>https://maptv.github.io/posts/quarto/index.html</loc>
-    <lastmod>2023-11-10T04:31:02.968Z</lastmod>
+    <lastmod>2023-11-10T04:59:04.231Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/posts/observable/index.html</loc>
+    <lastmod>2023-11-10T05:10:31.629Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/index.html</loc>
+    <lastmod>2023-11-09T14:31:16.825Z</lastmod>
   </url>
 </urlset>
