@@ -209,5 +209,7 @@ end
   margin: 0px;
 }
 figcaption { text-align: center; }
+#fig-1 > figure > figcaption.figure { text-align: center; }
+#fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca { text-align: center; }
 </style>
 ```

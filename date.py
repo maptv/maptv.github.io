@@ -6,6 +6,7 @@ def unix2doty(ms=0):
     year = int((dote - dote / 1460 + dote / 36524 - dote / 146096) // 365 + era * 400)
     return year, days - (year * 365 + year / 4 - year / 100 + year / 400).__floor__()
 
+#title-block-header > div.quarto-title-meta.column-body > div > div.quarto-title-meta-contents > p
 with open("docs/posts.html") as infile:
     txt = infile.read()
     soup = bs4.BeautifulSoup(txt, features="html.parser")
@@ -13,6 +14,10 @@ for div in soup.find_all("div", {"class": "listing-date"}):
     if "+" not in div.text:
         y, d = unix2doty(int(div.text))
         div.string.replace_with(f"{y:>04}+{d.__floor__():>03}")
+for p in soup.find_all("p", {"class": "date"}):
+    if "+" not in p.text:
+        y, d = unix2doty(int(p.text))
+        p.string.replace_with(f"{y:>04}+{d.__floor__():>03}")
 
 with open("docs/posts.html", "w") as outfile:
     outfile.write(str(soup))
