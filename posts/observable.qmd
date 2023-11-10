@@ -1,6 +1,7 @@
 ---
 title: Observable
 order: 2
+image: horst_quarto_schematic.png
 categories:
   - dec🗓️🕓
   - observable

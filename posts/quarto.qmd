@@ -1,7 +1,7 @@
 ---
 title: Quarto
 order: 1
-image: logos.png
+image: many-qmd-to-output.png
 categories:
   - dec🗓️🕓
   - quarto
