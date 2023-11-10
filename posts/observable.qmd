@@ -1,5 +1,6 @@
 ---
 title: Observable
+order: 2
 categories:
   - dec🗓️🕓
   - observable

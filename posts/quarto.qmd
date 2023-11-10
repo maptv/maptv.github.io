@@ -1,5 +1,6 @@
 ---
 title: Quarto
+order: 1
 image: logos.png
 categories:
   - dec🗓️🕓
@@ -83,7 +84,7 @@ The navbar timestamp is also derived from millisecond UNIX time, which I obtaine
 
 While `time.js` is sourced by Quarto when it reads the HTML block in each of my blog `.qmd` files, `date.lua` is run as a [Pandoc filter](https://quarto.org/docs/extensions/filters.html) during the creation of the output `.html` files, and `date.py` is executed as a [post-render script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render). @exm-date speaks to the power and versatility of Quarto.
 
-Coming up next on my blog is [a post](../observable/observable.qmd) that introduces `Dec` with [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
+Coming up next on my blog is [a post](observable.qmd) that introduces `Dec` with [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
 
 ::: {#exm-date}
 

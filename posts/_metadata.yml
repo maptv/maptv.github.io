@@ -37,4 +37,3 @@ format:
     crossref:
       lst-title: List
       lst-prefix: List
-    output-file: index.html

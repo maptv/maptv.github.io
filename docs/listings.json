@@ -2,8 +2,8 @@
   {
     "listing": "/posts.html",
     "items": [
-      "/posts/observable/index.html",
-      "/posts/quarto/index.html"
+      "/posts/quarto.html",
+      "/posts/observable.html"
     ]
   }
 ]

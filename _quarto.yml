@@ -27,6 +27,7 @@ website:
   sidebar:
     title: none
     style: "floating"
+    sort: order
     search: true
     contents:
       - auto: posts
