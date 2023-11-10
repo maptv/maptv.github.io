@@ -105,6 +105,6 @@ svg.date-selector g[aria-label="text"] text {
     padding-top: .03em;
 }
 
-svg {
+svg:not(.aa-SubmitIcon) {
     background: #ffffff !important;
 }
