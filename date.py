@@ -13,10 +13,6 @@ for div in soup.find_all("div", {"class": "listing-date"}):
     if "+" not in div.text:
         y, d = unix2doty(int(div.text))
         div.string.replace_with(f"{y:>04}+{d.__floor__():>03}")
-for p in soup.find_all("p", {"class": "date"}):
-    if "+" not in p.text:
-        y, d = unix2doty(int(p.text))
-        p.string.replace_with(f"{y:>04}+{d.__floor__():>03}")
 
 with open("docs/posts.html", "w") as outfile:
     outfile.write(str(soup))

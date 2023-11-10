@@ -5,15 +5,14 @@ listing:
   type: grid
   categories: true
 page-layout: full
-date: now
 date-format: x
 ---
 
+
 ```{=html}
 <script src="time.js"></script>
-<style>
-header#title-block-header.quarto-title-block.default div.quarto-title-meta.column-body {
-  display: none;
-}
-</style>
 ```
+
+#### Attributions {.appendix}
+
+Artwork by [@allison_horst](https://twitter.com/allison_horst)
