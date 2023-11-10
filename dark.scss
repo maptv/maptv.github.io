@@ -31,13 +31,19 @@ nav.navbar {
 svg#fig-1.mermaid-js path#L-A-B-0, path#L-B-C-0 {
     stroke: #ffffff !important;
 }
-svg#fig-1.mermaid-js tspan.row {
-    fill: #ffffff !important;
+
+svg#fig-1.mermaid-js  span.edgeLabel {
+    color: #ffffff !important;
+    background: #000000 !important;
 }
-svg#fig-1.mermaid-js  g#flowchart-A-3 > rect.basic.label-container, g#flowchart-B-4 > circle, g#flowchart-C-5 > rect.basic.label-container {
+
+svg#fig-1.mermaid-js  circle, rect.basic.label-container {
     fill: #880088 !important;
 }
 
+svg#fig-1.mermaid-js  span.nodeLabel {
+    color: #ffffff !important;
+}
 
 svg#fig-1.mermaid-js .marker {
     fill: #ffffff !important;
@@ -51,7 +57,6 @@ svg#fig-1.mermaid-js .marker {
 // #title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-categories {
 //   color: #fff !important;
 // }
-
 
 
 // color classes

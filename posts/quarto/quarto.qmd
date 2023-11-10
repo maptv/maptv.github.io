@@ -73,7 +73,7 @@ Normally, [formatting dates in Quarto](https://quarto.org/docs/reference/dates#u
 ![Dec](dec.png){width="100"}
 :::
 
-I set `date-format` to `x` in `_metadata.yml`, which converts the date of each blog post to millisecond [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.). I wanted to calculate the `Dec` calendar (`Decalendar`) dates from UNIX time, so that I could work with a single number and not have to deal with Gregorian calendar date formats or time zones.
+As shown in @exm-date, I set `date-format` to `x` in `_metadata.yml`, which converts the date of each blog post to millisecond [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.). I wanted to calculate the `Dec` calendar (`Decalendar`) dates from UNIX time, so that I could work with a single number and not have to deal with Gregorian calendar date formats or time zones.
 
 The `Decalendar` dates in my blog are called `Decalendar` ordinal (`deco`) dates, because they are similar to [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=ISO%208601%20is%20an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data.) [ordinal](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates) (`isoo`) dates. Like `isoo` dates, `deco` dates consist of a year and a day-of-the-year (`doty`).
 
@@ -81,12 +81,11 @@ The `Decalendar` dates in my blog are called `Decalendar` ordinal (`deco`) dates
 
 The navbar timestamp is also derived from millisecond UNIX time, which I obtained in `time.js` by calling `Date.now()`. In essence, all three of the scripts in @exm-date convert millisecond UNIX time into a `deco` date or timestamp.
 
-While `time.js` is sourced by Quarto when it reads the HTML block in all of my blog `.qmd` files, `date.lua` is run as a [Pandoc filter](https://quarto.org/docs/extensions/filters.html) during the creation of the output `.html` files, and `date.py` is executed as a [post-render script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render). @exm-date speaks to the power and versatility of Quarto.
+While `time.js` is sourced by Quarto when it reads the HTML block in each of my blog `.qmd` files, `date.lua` is run as a [Pandoc filter](https://quarto.org/docs/extensions/filters.html) during the creation of the output `.html` files, and `date.py` is executed as a [post-render script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render). @exm-date speaks to the power and versatility of Quarto.
 
 Coming up next on my blog is [a post](../observable/observable.qmd) that introduces `Dec` with [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
 
 ::: {#exm-date}
-:::
 
 ::: panel-tabset
 #### `*.qmd`
@@ -195,6 +194,8 @@ function Meta(m)
   return m
 end
 ```
+:::
+
 :::
 
 ```{=html}

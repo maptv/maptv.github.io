@@ -19,6 +19,7 @@ p, ul {
     -webkit-justify-content: flex-start;
 }
 
+
 /* https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html#lets-see-how-it-works */
 /* html { */
 /*   scroll-margin-top: 40rem; */
