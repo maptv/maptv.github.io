@@ -4,9 +4,8 @@ categories:
   - dec🗓️🕓
   - observable
   - quarto
+toc: true
 ---
-
-# Introduction {#sec-intro}
 
 ## Day-of-the-year {#sec-intro-doty}
 
@@ -1495,8 +1494,6 @@ main#quarto-document-content {
     padding: 0px;
 }
 
-header#title-block-header {
-  margin: 0px;
-}
+// header#title-block-header { margin: 0px; }
 </style>
 ```
