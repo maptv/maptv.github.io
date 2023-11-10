@@ -1,5 +1,5 @@
 ---
-title: Dec🗓️🕓
+title: Observable
 categories:
   - dec🗓️🕓
   - observable

@@ -2,10 +2,8 @@
   {
     "listing": "/posts.html",
     "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/intro/index.html",
-      "/posts/brand-new-post/index.html",
-      "/posts/dec/index.html"
+      "/posts/observable/index.html",
+      "/posts/quarto/index.html"
     ]
   }
 ]

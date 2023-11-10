@@ -1,5 +1,5 @@
 ---
-title: My blog
+title: Quarto
 image: logos.png
 categories: 
   - dec🗓️🕓
@@ -40,18 +40,15 @@ To create the navbar timestamp, I put a `<script>` tag that sources `time.js` in
 
 [Pandoc](https://pandoc.org/) is a program that converts documents into practically any format. The pan in Pandoc comes from the Ancient Greek word for [*all*](https://en.wiktionary.org/wiki/pan-#:~:text=pan%2D-,all,-Usage%20notes%5B). Pandoc strives to convert *all* document formats, just like [Pangea](https://en.wikipedia.org/wiki/Pangaea#:~:text=Pangaea%20or%20Pangea%20(/p%C3%A6n%CB%88d%CA%92i%CB%90.%C9%99/)%5B1%5D%20was%20a%20supercontinent%20that%20existed%20during%20the%20late%20Paleozoic%20and%20early%20Mesozoic%20eras.) contained *all* the land and a [panacea](https://en.wiktionary.org/wiki/panacea#English:~:text=A%20solution%20to%20all%20problems.) solves *all* problems.
 
-Quarto uses Pandoc to convert markdown files into target format(s) like `html` or `pdf`. If the source files contain executable code, Quarto executes the code via one of two computational engines: [Jupyter](https://jupyter.org/#:~:text=Free%20software%2C%20open%20standards%2C%20and%20web%20services%20for%20interactive%20computing%20across%20all%20programming%20languages) or [Knitr](https://yihui.org/knitr/#:~:text=the%20knitr%20package%20was%20designed%20to%20be%20a%20transparent%20engine%20for%20dynamic%20report%20generation%20with%20R). @fig-1 is a [mermaid.js](https://mermaid.js.org/#/:~:text=JavaScript%20based%20diagramming,Get%20Started) diagram of the Quarto workflow.
-
+Quarto uses Pandoc to convert markdown files into target format(s) like `html` or `pdf`. If the source files contain executable code, Quarto executes the code via one of two computational engines: [Jupyter](https://jupyter.org/#:~:text=Free%20software%2C%20open%20standards%2C%20and%20web%20services%20for%20interactive%20computing%20across%20all%20programming%20languages) or [Knitr](https://yihui.org/knitr/#:~:text=the%20knitr%20package%20was%20designed%20to%20be%20a%20transparent%20engine%20for%20dynamic%20report%20generation%20with%20R). @fig-1 is a [mermaid.js](https://mermaid.js.org/#/:~:text=JavaScript%20based%20diagramming,Get%20Started)🧜‍♀️diagram of the Quarto workflow.
 
 ::: column-margin
 ![Jupyter](jupyter.png){width="100"}
 :::
 
 ::: column-margin
-![Knitr](knitr.svg){width="100" .knitr}
+![Knitr](knitr.svg){.knitr width="100"}
 :::
-
-
 
 ```{mermaid fig-align="center"}
 %%| label: fig-1
@@ -62,7 +59,7 @@ flowchart LR
     A[qmd<br/>ipynb]-.Knitr<br/>Jupyter.->B((md))-.Pandoc with<br/>Lua filters.->C(html<br/>pdf<br/>docx<br/>etc.)
 ```
 
-Mine Çetinkaya-Rundel's Quarto tip series includes a similar [Quarto workflow mermaid diagram](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/21-diagrams/#fig-mermaid) and her ["Hello, Quarto!"](https://mine.quarto.pub/hello-quarto) rstudio::conf(2022) keynote with [Julia Stewart Lowndes](https://jules32.github.io) contains truly beautiful Quarto workflow images by [Allison Horst](https://allisonhorst.com): [1](https://mine.quarto.pub/hello-quarto/#/publishing-system-2),  [2](https://mine.quarto.pub/hello-quarto/#/quarto-flattens-the-learning-curve), [3](https://mine.quarto.pub/hello-quarto/#/quarto-can-grow-with-learners-in-a-profound-way), and [4](https://mine.quarto.pub/hello-quarto/#/quarto-cli-orchestrates-each-step-of-rendering).
+Mine Çetinkaya-Rundel's Quarto tip series includes a similar [Quarto workflow mermaid diagram](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/21-diagrams/#fig-mermaid) and her ["Hello, Quarto!"](https://mine.quarto.pub/hello-quarto) rstudio::conf(2022) keynote with [Julia Stewart Lowndes](https://jules32.github.io) contains truly beautiful Quarto workflow images by [Allison Horst](https://allisonhorst.com): [1](https://mine.quarto.pub/hello-quarto/#/publishing-system-2), [2](https://mine.quarto.pub/hello-quarto/#/quarto-flattens-the-learning-curve), [3](https://mine.quarto.pub/hello-quarto/#/quarto-can-grow-with-learners-in-a-profound-way), and [4](https://mine.quarto.pub/hello-quarto/#/quarto-cli-orchestrates-each-step-of-rendering).
 
 Quarto controls Pandoc, Jupyter, and Knitr in two ways: 1) with arguments passed to the [Quarto CLI](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.) commands and 2) with [YAML](https://yaml.org/) key-value pairs in `.qmd`, `.ipynb`, or `.yml` files.
 
@@ -76,34 +73,37 @@ I set `date-format` to `x` in `_metadata.yml`, which converts the date of each b
 
 The `Decalendar` dates in my blog are called `Decalendar` ordinal (`deco`) dates, because they are similar to [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=ISO%208601%20is%20an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data.) [ordinal](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates) (`isoo`) dates. Like `isoo` dates, `deco` dates consist of a year and a day-of-the-year (`doty`).
 
-`Doty` values (`doties`) in `Decalendar` dates count the number of days that have passed since March 1, which is `Day` `0` in `Decalendar`, and can optionally include a `Dec` clock (`Declock`) time. The timestamp in the navbar of my blog is an example of a `Decalendar` date combined with a  `Declock` time.
+`Doty` values (`doties`) in `Decalendar` dates count the number of days that have passed since March 1, which is `Day` `0` in `Decalendar`, and can optionally include a `Dec` clock (`Declock`) time. The timestamp in the navbar of my blog is an example of a `Decalendar` date combined with a `Declock` time.
 
-The navbar timestamp is also derived from millisecond UNIX time, which I obtained in `time.js` by calling `Date.now()`. In essence, all three of the scripts in @exm-date convert millisecond UNIX time into a `deco` date or timestamp. 
+The navbar timestamp is also derived from millisecond UNIX time, which I obtained in `time.js` by calling `Date.now()`. In essence, all three of the scripts in @exm-date convert millisecond UNIX time into a `deco` date or timestamp.
 
 While `time.js` is sourced by Quarto when it reads the HTML block in all of my blog `.qmd` files, `date.lua` is run as a [Pandoc filter](https://quarto.org/docs/extensions/filters.html) during the creation of the output `.html` files, and `date.py` is executed as a [post-render script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render). @exm-date speaks to the power and versatility of Quarto.
 
-Coming up next on my blog is [a post](dec.qmd) that introduces `Dec` with [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza! 
+Coming up next on my blog is [a post](dec.qmd) that introduces `Dec` with [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
 
 ::: {#exm-date}
 :::
 
 ::: panel-tabset
 #### `*.qmd`
-```` {.html}
+
+```` html
 ```{=html}
 <script src="time.js"></script>
 ```
 ````
 
 #### `_metadata.yml`
-``` {.yaml}
+
+``` yaml
 date: now
 date-format: x
 filters: date.lua
 ```
 
 #### `_quarto.yml`
-``` {.yaml}
+
+``` yaml
 project:
   type: website
   output-dir: docs
@@ -111,7 +111,8 @@ project:
 ```
 
 #### `time.js`
-``` {.javascript}
+
+``` javascript
 // https://howardhinnant.github.io/date_algorithms.html#days_from_civil
 function dote2doty(days = 719468) {
     const era = Math.floor((days >= 0 ? days : days - 146096) / 146097),
@@ -145,7 +146,8 @@ setInterval(() => document.getElementById("deco").innerText =
 ```
 
 #### `date.py`
-``` {.python}
+
+``` python
 import bs4
 
 def unix2doty(ms=0):
@@ -167,7 +169,8 @@ with open("docs/posts.html", "w") as outfile:
 ```
 
 #### `date.lua`
-``` {.lua}
+
+``` lua
 local function unix2deco(ms)
     local days = ms / 86400000 + 719468
     local era = (days >= 0 and days or days - 146096) // 146097
@@ -203,4 +206,3 @@ end
 .figure-caption{ text-align: center; }
 </style>
 ```
-

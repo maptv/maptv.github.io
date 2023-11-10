@@ -31,8 +31,8 @@ website:
     contents:
       - section: Intro to
         contents: 
-          - posts/intro/intro.qmd
-          - posts/dec/dec.qmd
+          - posts/quarto/quarto.qmd
+          - posts/observable/observable.qmd
 format:
   html:
     page-layout: full
