@@ -6,7 +6,6 @@ def unix2doty(ms=0):
     year = int((dote - dote / 1460 + dote / 36524 - dote / 146096) // 365 + era * 400)
     return year, days - (year * 365 + year / 4 - year / 100 + year / 400).__floor__()
 
-#title-block-header > div.quarto-title-meta.column-body > div > div.quarto-title-meta-contents > p
 with open("docs/posts.html") as infile:
     txt = infile.read()
     soup = bs4.BeautifulSoup(txt, features="html.parser")

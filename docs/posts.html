@@ -75,9 +75,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -224,21 +224,23 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </header>
 <script src="time.js"></script>
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-categories="dec🗓️🕓,quarto" data-index="0" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699632286000" data-listing-file-modified-sort="1699632143037" data-listing-reading-time-sort="6" data-listing-word-count-sort="1137">
-<div class="thumbnail">
-<p><a class="no-external" href="./posts/quarto.html"></a></p><a class="no-external" href="./posts/quarto.html">
-<p><img class="thumbnail-image" src="./posts/logos.png"/></p>
-</a><p><a class="no-external" href="./posts/quarto.html"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a class="no-external" href="./posts/quarto.html">Quarto</a>
-</h3>
-<div class="listing-subtitle">
-<a class="no-external" href="./posts/quarto.html"></a>
-</div>
+<style>
+header#title-block-header.quarto-title-block.default div.quarto-title-meta.column-body {
+  display: none;
+}
+</style>
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-categories="dec🗓️🕓,quarto" data-index="0" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699634362000" data-listing-file-modified-sort="1699633377213" data-listing-reading-time-sort="6" data-listing-word-count-sort="1158">
+<a class="quarto-grid-link" href="./posts/quarto.html">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img class="thumbnail-image card-img" src="./posts/logos.png" style="height: 150px;"/>
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Quarto
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('dec🗓️🕓'); return false;">
 dec🗓️🕓
@@ -247,32 +249,27 @@ dec🗓️🕓
 quarto
 </div>
 </div>
-<div class="listing-description">
-<a class="no-external" href="./posts/quarto.html">This is the first post in the blog of Martin Laptev. Welcome!</a>
+<div class="card-text listing-description">
+I created my blog using the Quarto, which is the bee’s🐝knees. Quarto makes it easy to create pretty much any kind of publication including articles, books, blogs…
 </div>
-</div>
-<div class="metadata">
-<a class="no-external" href="./posts/quarto.html">
-<div class="listing-date">2023+254</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Martin Laptev
 </div>
+<div class="listing-date">2023+254</div>
+</div>
+</div>
+</div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-categories="dec🗓️🕓,observable,quarto" data-index="1" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699632286000" data-listing-file-modified-sort="1699632284300" data-listing-reading-time-sort="45" data-listing-word-count-sort="8853">
-<div class="thumbnail">
-<p><a class="no-external" href="./posts/observable.html"></a></p><a class="no-external" href="./posts/observable.html">
-<div class="listing-item-img-placeholder card-img-top"> </div>
-</a><p><a class="no-external" href="./posts/observable.html"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a class="no-external" href="./posts/observable.html">Observable</a>
-</h3>
-<div class="listing-subtitle">
-<a class="no-external" href="./posts/observable.html"></a>
-</div>
+<div class="g-col-1" data-categories="dec🗓️🕓,observable,quarto" data-index="1" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699634362000" data-listing-file-modified-sort="1699632284300" data-listing-reading-time-sort="45" data-listing-word-count-sort="8853">
+<a class="quarto-grid-link" href="./posts/observable.html">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;"> </div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Observable
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('dec🗓️🕓'); return false;">
 dec🗓️🕓
@@ -284,18 +281,18 @@ observable
 quarto
 </div>
 </div>
-<div class="listing-description">
-<a class="no-external" href="./posts/observable.html"><code>Decalendar</code><sup>1</sup> is a decimal calendar🗓️system and <code>Declock</code><sup>2</sup> is a decimal timekeeping⏳system. Instead of months, weeks, hours, minutes, and seconds, <code>Decalendar</code> and <code>Declock</code> use a…<code></code><sup></sup><code></code><span><span id="ojs-element-id-1"></span></span><code></code><code></code><sup></sup><span><span id="ojs-element-id-16"></span></span><code></code><sup></sup><span><span id="ojs-element-id-17"></span></span></a>
+<div class="card-text listing-description">
+<code>Decalendar</code><sup>1</sup> is a decimal calendar🗓️system and <code>Declock</code><sup>2</sup> is a decimal timekeeping⏳system. Instead of months, weeks, hours, minutes, and seconds, <code>Decalendar</code> and <code>Declock</code> use a…<code></code><sup></sup><code></code><span><span id="ojs-element-id-1"></span></span><code></code><code></code><sup></sup><span><span id="ojs-element-id-16"></span></span><code></code><sup></sup><span><span id="ojs-element-id-17"></span></span>
 </div>
-</div>
-<div class="metadata">
-<a class="no-external" href="./posts/observable.html">
-<div class="listing-date">2023+254</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Martin Laptev
 </div>
-</a>
+<div class="listing-date">2023+254</div>
 </div>
+</div>
+</div>
+</a>
 </div>
 </div>
 <div class="listing-no-matching d-none">

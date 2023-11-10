@@ -44,3 +44,4 @@ format:
       margin-width: 200px
 execute: 
   freeze: true
+bread-crumbs: false
