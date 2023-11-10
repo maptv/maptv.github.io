@@ -6,7 +6,13 @@ freeze: true
 
 # Enable banner style title blocks
 title-block-banner: true
-
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
+citation:
+  url: https://maptv.github.io
+  issued: 2023
+license: "CC BY-SA"
 cache: true
 date: now
 date-format: x

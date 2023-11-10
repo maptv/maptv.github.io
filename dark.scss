@@ -28,15 +28,17 @@ nav.navbar {
     background: #2C3E50 !important;
 }
 
-path#L-A-B-0, path#L-B-C-0 {
+svg#fig-1.mermaid-js path#L-A-B-0, path#L-B-C-0 {
     stroke: #ffffff !important;
 }
-tspan.row {
+svg#fig-1.mermaid-js tspan.row {
     fill: #ffffff !important;
 }
 svg#fig-1.mermaid-js  circle, rect, polygon.label-container {
     fill: #880088 !important;
 }
+// #flowchart-C-5 > rect
+// #flowchart-B-4 > circle
 svg#fig-1.mermaid-js .marker {
     fill: #ffffff !important;
     stroke: none !important;

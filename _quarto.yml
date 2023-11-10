@@ -2,7 +2,6 @@ project:
   type: website
   output-dir: docs
   post-render: date.py
-
 website:
   back-to-top-navigation: true
   reader-mode: true
@@ -30,9 +29,10 @@ website:
     style: "floating"
     search: true
     contents:
-      - section: Introduction to
+      - section: Intro to
         contents: 
-          - posts/intro/myblog.qmd
+          - posts/intro/intro.qmd
+          - posts/dec/dec.qmd
 format:
   html:
     page-layout: full

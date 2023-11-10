@@ -20,9 +20,10 @@ p, ul {
 }
 
 /* https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html#lets-see-how-it-works */
-section {
-  scroll-margin-top: 4rem;
-}
+/* html { */
+/*   scroll-margin-top: 40rem; */
+/* } */
+
 
 /* https://stackoverflow.com/questions/73570277/how-to-change-title-banner-size-in-quarto */
 /* #title-block-header { */
@@ -37,4 +38,11 @@ section {
 /*   position: relative; */
 /*   margin-top: -30px; */
 /*   height: 85%; */
+/* } */
+/* #title-block-header > div.quarto-title-banner.page-columns.page-full { */
+/*   margin: 0px; */
+/*   padding: 0px; */
+/* } */
+/* #title-block-header { */
+/*   margin: 0px; */
 /* } */
