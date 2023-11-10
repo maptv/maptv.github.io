@@ -125,12 +125,21 @@ svg g g.tick text {
     font-size: 20px !important;
 }
 
-svg.schedule-explorer g[aria-label="x-axis"] g.tick text {
+svg.schedule-explorer g[aria-label="x-axis tick label"] text {
     color: #ffffff !important;
     font-size: 28px !important;
 }
-svg.date-selector g[aria-label="text"] text {
-    padding-top: .03em;
+svg.schedule-explorer g[aria-label="y-axis tick label"] text {
+    color: #ffffff !important;
+    font-size: 22px !important;
+}
+svg.date-selector g[aria-label="x-axis tick label"] text {
+    color: #ffffff !important;
+    font-size: 22px !important;
+}
+svg.date-selector g[aria-label="y-axis tick label"] text {
+    color: #ffffff !important;
+    font-size: 18px !important;
 }
 
 svg:not(.aa-SubmitIcon) {

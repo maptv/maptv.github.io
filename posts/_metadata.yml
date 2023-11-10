@@ -34,4 +34,7 @@ format:
     code-tools: true
     link-external-icon: true
     link-external-newwindow: true
+    crossref:
+      lst-title: List
+      lst-prefix: List
     output-file: index.html
