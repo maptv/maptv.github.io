@@ -29,10 +29,7 @@ website:
     style: "floating"
     search: true
     contents:
-      - section: Intro to
-        contents: 
-          - posts/quarto/quarto.qmd
-          - posts/observable/observable.qmd
+      - auto: posts
 format:
   html:
     page-layout: full
