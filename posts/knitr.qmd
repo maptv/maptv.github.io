@@ -1,6 +1,6 @@
 ---
 title: Knitr
-order: 3
+order: 4
 image: horst_knitr.png
 categories:
   - dec🗓️🕓
