@@ -1,29 +1,43 @@
 ---
 title: Quarto
-order: 1
+order: 0
 image: horst_many-qmd-to-output.png
 categories:
   - dec🗓️🕓
   - quarto
+  - web dev
 format:
   html:
     mermaid:
       theme: default
 ---
 
-I created my blog using the [Quarto](https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system), which is the [bee's🐝knees](https://en.wiktionary.org/wiki/the_bee%27s_knees#:~:text=Something%20or%20someone%20excellent%2C%20surpassingly%20wonderful%2C%20or%20cool). Quarto makes it easy to create pretty much any kind of publication including articles, books, blogs, dashboards, presentations, reports, and websites.
+[Quarto](https://quarto.org) is an [open-source software](https://en.wikipedia.org/wiki/Open-source_software#:~:text=Open%2Dsource%20software%20(OSS)%20is%20computer%20software%20that%20is%20released%20under%20a%20license%20in%20which%20the%20copyright%20holder%20grants%20users%20the%20rights%20to%20use%2C%20study%2C%20change%2C%20and%20distribute%20the%20software%20and%20its%20source%20code%20to%20anyone%20and%20for%20any%20purpose.) system for creating articles, books, blogs, dashboards, presentations, reports, websites, and other kinds of digital [deliverables](https://en.wikipedia.org/wiki/Deliverable#:~:text=A%20deliverable%20is%20a%20tangible%20or%20intangible%20good%20or%20service%20produced%20as%20a%20result%20of%20a%20project). [Announced on `2022+149`](https://posit.co/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system) by [Posit](https://posit.co) CEO [JJ Allaire](https://www.rstudio.com/authors/j.j.-allaire/), Quarto is already taking the world🌐by storm⛈️!
 
-I taught web development  
+I strongly believe that everyone, regardless of their background and current technical skill level, can learn and benefit from Quarto. [Getting start with Quarto](https://quarto.org/docs/get-started/) is easy thanks to its [excellent documentation](https://quarto.org/docs/guide/) and vibrant community of enthusiastic users and developers.
+
+Rather than repeat the basic information already available elsewhere, I will share some advanced techniques along with the fundamental knowledge needed to understand how they work. The topics covered are technical in nature, but my goal is to make the content on my blog as accessible as possible.
+
+I followed the Quarto documentation to [create a blog](https://quarto.org/docs/websites/website-blog.html) and [publish it](https://quarto.org/docs/publishing/) to [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html), Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html), and [Netlify](https://quarto.org/docs/publishing/netlify.html). All three of these are awesome free hosting options, but Quarto Pub is easiest to set up, while Netlify and GitHub offer additional features such as [Continuous Integration](https://quarto.org/docs/publishing/netlify.html#continuous-integration) and [GitHub Actions](https://quarto.org/docs/publishing/github-pages.html#github-action).
+
+so the major differentiating factor is the domain: <https://maptv.github.io>, <https://maptv.quarto.pub>, or <https://maptv.netlify.app>. GitHub Pages may be more difficult if you are not already comfortable using the [git version control system](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.), but 
+
+publish in two different places?  then  instructions. and was 
+show explain how  barriers to benefit from Quarto regarit is easy to combine code, the output of the code, and text describing both the code and the output. in the form of It's the [bee's🐝knees](https://en.wiktionary.org/wiki/the_bee%27s_knees#:~:text=Something%20or%20someone%20excellent%2C%20surpassingly%20wonderful%2C%20or%20cool), because it
+
+I created my blog using the [Quarto](https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system), which is the
+
+I taught web development
 
 inline styles, like those in Quarto HTML blocks have the highest priority.
 
 Quarto website navigation:
 
-- Navigation bar (navbar)
-- Sidebar
-- Table of contents
-- Dark mode toggle
-- Reader mode toggle
+-   Navigation bar (navbar)
+-   Sidebar
+-   Table of contents
+-   Dark mode toggle
+-   Reader mode toggle
 
 Promoting the use of Quarto is one of the goals of my blog. Therefore, many of posts will provide some information on how I accomplished specific tasks with Quarto.
 
@@ -97,7 +111,6 @@ While `time.js` is sourced by Quarto when it reads the HTML block in each of my 
 Coming up next on my blog is [a post](observable.qmd) that introduces `Dec` with [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
 
 ::: {#exm-date}
-
 ::: panel-tabset
 #### `*.qmd`
 
@@ -210,7 +223,6 @@ function Meta(m)
 end
 ```
 :::
-
 :::
 
 ```{=html}

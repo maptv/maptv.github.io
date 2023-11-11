@@ -1,0 +1,7 @@
+- source: project
+  quarto-pub:
+    - id: 4fc6a5d7-b98b-4a93-9f84-5e0ee66d111e
+      url: 'https://maptv.quarto.pub/maptv'
+  netlify:
+    - id: 39629c76-a4da-4206-9266-b3e234b61ff6
+      url: 'https://maptv.netlify.app'

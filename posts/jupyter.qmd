@@ -1,6 +1,6 @@
 ---
 title: Jupyter
-order: 3
+order: 2
 image: horst_jupyter.png
 categories:
   - dec🗓️🕓
