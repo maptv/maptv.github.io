@@ -1,7 +1,7 @@
 ---
 title: Quarto
 order: 1
-image: many-qmd-to-output.png
+image: horst_many-qmd-to-output.png
 categories:
   - dec🗓️🕓
   - quarto
@@ -14,6 +14,9 @@ format:
 I created my blog using the [Quarto](https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system), which is the [bee's🐝knees](https://en.wiktionary.org/wiki/the_bee%27s_knees#:~:text=Something%20or%20someone%20excellent%2C%20surpassingly%20wonderful%2C%20or%20cool). Quarto makes it easy to create pretty much any kind of publication including articles, books, blogs, dashboards, presentations, reports, and websites.
 
 I taught web development  
+
+inline styles, like those in Quarto HTML blocks have the highest priority.
+
 Quarto website navigation:
 
 - Navigation bar (navbar)
@@ -217,11 +220,10 @@ end
   margin: 0px;
   padding: 0px;
 }
-#title-block-header {
-  margin: 0px;
-}
+#title-block-header { margin: 0px; }
 figcaption { text-align: center; }
 #fig-1 > figure > figcaption.figure { text-align: center; }
 #fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca { text-align: center; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 </style>
 ```

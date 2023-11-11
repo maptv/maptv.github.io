@@ -2,8 +2,10 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/jupyter.html",
       "/posts/quarto.html",
-      "/posts/observable.html"
+      "/posts/observable.html",
+      "/posts/knitr.html"
     ]
   }
 ]

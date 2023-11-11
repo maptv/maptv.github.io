@@ -1,0 +1,12 @@
+---
+title: Jupyter
+order: 4
+image: horst_jupyter.png
+categories:
+  - dec🗓️🕓
+  - knitr
+  - jupyter
+  - quarto
+toc: true
+---
+

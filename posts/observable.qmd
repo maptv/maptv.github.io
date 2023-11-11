@@ -1,7 +1,7 @@
 ---
 title: Observable
 order: 2
-image: many-lang-qmd-to-output.png
+image: horst_many-lang-qmd-to-output.png
 categories:
   - dec🗓️🕓
   - observable
@@ -1497,5 +1497,6 @@ main#quarto-document-content {
 }
 
 // header#title-block-header { margin: 0px; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 </style>
 ```

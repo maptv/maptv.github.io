@@ -1,0 +1,11 @@
+---
+title: Knitr
+order: 3
+image: horst_knitr.png
+categories:
+  - dec🗓️🕓
+  - knitr
+  - quarto
+toc: true
+---
+

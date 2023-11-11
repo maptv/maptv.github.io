@@ -11,6 +11,10 @@ date-format: x
 
 ```{=html}
 <script src="time.js"></script>
+
+<style>
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+</style>
 ```
 
 #### Attributions {.appendix}

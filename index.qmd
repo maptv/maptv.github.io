@@ -24,4 +24,7 @@ My professional information is summarized in <a href = "https://mskar.github.io/
 
 ```{=html}
 <script src="time.js"></script>
+<style>
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+</style>
 ```

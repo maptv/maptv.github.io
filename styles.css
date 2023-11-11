@@ -17,24 +17,8 @@ p, ul {
     }
     div.navbar-container.container-fluid {
     -webkit-justify-content: flex-start;
+    -webkit-flex-direction: row !important;
 }
-
-/* div.navbar-collapse.show { */
-/*     display: flex !important; */
-/*     flex-direction: row !important; */
-/* } */
-
-/* div.navbar-collapse > ul.navbar-nav.navbar-nav-scroll { */
-/*     display: flex !important; */
-/*     flex-direction: row !important; */
-/*     -webkit-flex-direction: row !important; */
-/* } */
-
-/* ul.navbar-nav.navbar-nav-scroll { */
-/*     display: flex !important; */
-/*     flex-direction: row !important; */
-/*     -webkit-flex-direction: row !important; */
-/* } */
 
 /* https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html#lets-see-how-it-works */
 /* html { */
