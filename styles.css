@@ -20,6 +20,12 @@ p, ul {
     -webkit-flex-direction: row !important;
 }
 
+@media only screen and (max-width: 310px) {
+    div.quarto-navbar-tools {
+        display: none;
+    }
+}
+
 /* https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html#lets-see-how-it-works */
 /* html { */
 /*   scroll-margin-top: 40rem; */
