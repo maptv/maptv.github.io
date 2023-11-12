@@ -12,10 +12,12 @@ website:
     logo: media/dec.png
     logo-alt: "10-point star made up of 100 triangles"
     right:
-      - icon: house
+      - icon: person-circle
         href: https://maptv.github.io
       - icon: pencil
-        href: https://maptv.github.io/posts
+        href: https://maptv.github.io/blog
+      - icon: file-earmark-person
+        href: https://maptv.github.io/cv
       - icon: github
         href: https://github.com/maptv
       - icon: linkedin
@@ -25,16 +27,24 @@ website:
   twitter-card: true
   site-url: https://maptv.github.io
   sidebar:
-    title: none
-    style: "floating"
-    sort: order
     search: true
+    sort: order
+    style: floating
+    title: none
     contents:
-      - text: "About"
+      - text: About
         file: index.qmd
-      - section: "Blog"
+      - section: Blog
         file: blog.qmd
         contents: blog/*.qmd
+      - text: Curriculum Vitae
+        file: cv.qmd
+      - text: GitHub
+        href: https://github.com/maptv
+      - text: LinkedIn
+        href: https://linkedin.com/in/maptv
+      - text: Mail
+        href: mailto:maptv@vt.edu
 format:
   html:
     page-layout: full

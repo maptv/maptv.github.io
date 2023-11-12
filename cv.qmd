@@ -1,0 +1,22 @@
+---
+title: "Curriculum Vitae"
+format:
+  html:
+    toc: true
+  pdf:
+    author: Martin Laptev
+css: cv.css
+format-links: [pdf]
+---
+
+::: {.print-only .contact-block}
+maptv@vt.edu
+:::
+
+## Summary
+
+My goal is to train and lead the next generation of data scientists to integrate substantive expertise from diverse fields with machine intelligence.
+Through research and teaching, I am constantly improving my ability to obtain, tidy, explore, transform, visualize, model, and communicate data.
+My preferred tools are JavaScript, Python, and R, open source programming languages kept on the cutting edge by their energetic communities.
+In addition to their utility in common data science tasks, these languages serve as accessible interfaces to deep learning libraries like TensorFlow.
+I aim to leverage my background in science and education to help shape the future of data science and deliver on the promise of machine learning
