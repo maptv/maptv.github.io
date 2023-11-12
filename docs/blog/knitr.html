@@ -1,10 +1,14 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
-<meta charset="utf-8"/>
-<meta content="quarto-1.4.489" name="generator"/>
-<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
-<title>posts</title>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.489">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Martin Laptev">
+
+<title>Knitr</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,30 +21,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta content="./" name="quarto:offset"/>
-<link href="./posts/quarto.html" rel="next"/>
-<link href="./index.html" rel="prev"/>
-<link href="./media/dec.png" rel="icon" type="image/png"/>
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet"/>
-<link class="quarto-color-scheme" href="site_libs/quarto-html/quarto-syntax-highlighting.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
-<link class="quarto-color-scheme quarto-color-alternate" href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" id="quarto-text-highlighting-styles" rel="prefetch"/>
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
-<link class="quarto-color-scheme" data-mode="light" href="site_libs/bootstrap/bootstrap.min.css" id="quarto-bootstrap" rel="stylesheet"/>
-<link class="quarto-color-scheme quarto-color-alternate" data-mode="dark" href="site_libs/bootstrap/bootstrap-dark.min.css" id="quarto-bootstrap" rel="prefetch"/>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../blog/jupyter.html" rel="prev">
+<link href="../media/dec.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,334 +104,203 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-<link href="styles.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css">
+<meta name="twitter:title" content="Knitr">
+<meta name="twitter:image" content="https://maptv.github.io/blog/horst_knitr.png">
+<meta name="twitter:image-height" content="729">
+<meta name="twitter:image-width" content="1806">
+<meta name="twitter:card" content="summary_large_image">
 </head>
+
 <body class="nav-sidebar floating nav-fixed">
+
 <div id="quarto-search-results"></div>
-<header class="headroom fixed-top" id="quarto-header">
-<nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-<div class="navbar-container container-fluid">
-<div class="navbar-brand-container mx-auto">
-<a class="navbar-brand navbar-brand-logo" href="./index.html">
-<img alt="10-point star made up of 100 triangles" class="navbar-logo" src="./media/dec.png"/>
-</a>
-<a class="navbar-brand" href="./index.html">
-<span class="navbar-title">Martin Laptev</span>
-</a>
-</div>
-<div class="" id="quarto-search" title="Search"></div>
-<button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarCollapse" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" type="button">
-<span class="navbar-toggler-icon"></span>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../media/dec.png" alt="10-point star made up of 100 triangles" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Martin Laptev</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
 </button>
-<div class="collapse navbar-collapse" id="navbarCollapse">
-<ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item compact">
-<a class="nav-link" href="https://maptv.github.io"> <i class="bi bi-house" role="img">
-</i>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://maptv.github.io"> <i class="bi bi-house" role="img">
+</i> 
 <span class="menu-text"></span></a>
-</li>
-<li class="nav-item compact">
-<a class="nav-link" href="https://maptv.github.io/posts"> <i class="bi bi-pencil" role="img">
-</i>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://maptv.github.io/posts"> <i class="bi bi-pencil" role="img">
+</i> 
 <span class="menu-text"></span></a>
-</li>
-<li class="nav-item compact">
-<a class="nav-link" href="https://github.com/maptv"> <i class="bi bi-github" role="img">
-</i>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/maptv"> <i class="bi bi-github" role="img">
+</i> 
 <span class="menu-text"></span></a>
-</li>
-<li class="nav-item compact">
-<a class="nav-link" href="https://linkedin.com/in/maptv"> <i class="bi bi-linkedin" role="img">
-</i>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/maptv"> <i class="bi bi-linkedin" role="img">
+</i> 
 <span class="menu-text"></span></a>
-</li>
-<li class="nav-item compact">
-<a class="nav-link" href="mailto:maptv@vt.edu"> <i class="bi bi-envelope" role="img">
-</i>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:maptv@vt.edu"> <i class="bi bi-envelope" role="img">
+</i> 
 <span class="menu-text"></span></a>
-</li>
+  </li>  
 </ul>
-</div> <!-- /navcollapse -->
-<div class="quarto-navbar-tools">
-<a class="quarto-color-scheme-toggle quarto-navigation-tool px-1" href="" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-<a class="quarto-reader-toggle quarto-navigation-tool px-1" href="" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
-<div class="quarto-reader-toggle-btn">
-<i class="bi"></i>
-</div>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
 </a>
 </div>
-</div> <!-- /container-fluid -->
-</nav>
-<nav class="quarto-secondary-nav">
-<div class="container-fluid d-flex">
-<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" type="button">
-<i class="bi bi-layout-text-sidebar-reverse"></i>
-</button>
-<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./posts.html">Listing</a></li></ol></nav>
-<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button">
-</a>
-<button aria-label="" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
-<i class="bi bi-search"></i>
-</button>
-</div>
-</nav>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../blog.html">Blog</a></li><li class="breadcrumb-item"><a href="../blog/knitr.html">Knitr</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div class="quarto-container page-columns page-rows-contents page-layout-full page-navbar" id="quarto-content">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../blog.html">Blog</a></li><li class="breadcrumb-item"><a href="../blog/knitr.html">Knitr</a></li></ol></nav>
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-right">
+      <div class="quarto-title-block"><div><h1 class="title">Knitr</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+                                <div class="quarto-categories">
+                <div class="quarto-category">dec🗓️🕓</div>
+                <div class="quarto-category">knitr</div>
+                <div class="quarto-category">quarto</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-right">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p><a href="https://maptv.github.io">Martin Laptev</a> </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">2023+256</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
-<div class="mt-2 flex-shrink-0 align-items-center">
-<div class="sidebar-search">
-<div class="" id="quarto-search" title="Search"></div>
-</div>
-</div>
-<div class="sidebar-menu-container">
-<ul class="list-unstyled mt-1">
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="./index.html">
-<span class="menu-text">About</span></a>
-</div>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
 </li>
-<li class="sidebar-item sidebar-item-section">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link active" href="./posts.html">
-<span class="menu-text">Listing</span></a>
-<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse">
-<i class="bi bi-chevron-right ms-2"></i>
-</a>
-</div>
-<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="./posts/quarto.html">
-<span class="menu-text">Quarto</span></a>
-</div>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../blog.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blog</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto</span></a>
+  </div>
 </li>
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="./posts/observable.html">
-<span class="menu-text">Observable</span></a>
-</div>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/observable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Observable</span></a>
+  </div>
 </li>
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="./posts/jupyter.html">
-<span class="menu-text">Jupyter</span></a>
-</div>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/jupyter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jupyter</span></a>
+  </div>
 </li>
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="./posts/knitr.html">
-<span class="menu-text">Knitr</span></a>
-</div>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/knitr.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Knitr</span></a>
+  </div>
 </li>
-</ul>
-</li>
-</ul>
-</div>
+      </ul>
+  </li>
+    </ul>
+    </div>
 </nav>
-<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
-<h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="dec🗓️🕓">dec🗓️🕓 <span class="quarto-category-count">(4)</span></div><div class="category" data-category="jupyter">jupyter <span class="quarto-category-count">(1)</span></div><div class="category" data-category="knitr">knitr <span class="quarto-category-count">(2)</span></div><div class="category" data-category="observable">observable <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(4)</span></div><div class="category" data-category="web dev">web dev <span class="quarto-category-count">(1)</span></div></div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
-<script src="time.js"></script>
-<style>
-ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
-</style>
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-categories="dec🗓️🕓,knitr,jupyter,quarto" data-index="0" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699738212000" data-listing-file-modified-sort="1699715204281" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<a class="quarto-grid-link" href="./posts/jupyter.html">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img class="thumbnail-image card-img" src="./posts/horst_jupyter.png" style="height: 150px;"/>
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Jupyter
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('dec🗓️🕓'); return false;">
-dec🗓️🕓
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('knitr'); return false;">
-knitr
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('jupyter'); return false;">
-jupyter
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
-quarto
-</div>
-</div>
-<div class="card-text listing-description">
-<section class="quarto-appendix-contents"><div class="quarto-appendix-contents" id="quarto-reuse"><div>CC BY-SA 4.0</div></div></section><section class="quarto-appendix-contents"><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{laptev2023,
-  author = {Laptev, Martin},
-  title = {Jupyter},
-  pages = {undefined},
-  date = {2023},
-  url = {https://maptv.github.io},
-…</code></pre><div class="quarto-appendix-secondary-label"></div><div class="csl-entry quarto-appendix-citeas" id="ref-laptev2023"><span></span></div></div></section>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Martin Laptev
-</div>
-<div class="listing-date">2023+255</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-categories="dec🗓️🕓,quarto,web dev" data-index="1" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699738212000" data-listing-file-modified-sort="1699736651018" data-listing-reading-time-sort="8" data-listing-word-count-sort="1428">
-<a class="quarto-grid-link" href="./posts/quarto.html">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img class="thumbnail-image card-img" src="./posts/horst_many-qmd-to-output.png" style="height: 150px;"/>
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Quarto
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('dec🗓️🕓'); return false;">
-dec🗓️🕓
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
-quarto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('web dev'); return false;">
-web dev
-</div>
-</div>
-<div class="card-text listing-description">
-Quarto is an open-source software system for creating articles, books, blogs, dashboards, presentations, reports, websites, and other kinds of digital deliverables. Announced…<code></code>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Martin Laptev
-</div>
-<div class="listing-date">2023+255</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-categories="dec🗓️🕓,observable,quarto" data-index="2" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699738212000" data-listing-file-modified-sort="1699715204262" data-listing-reading-time-sort="45" data-listing-word-count-sort="8858">
-<a class="quarto-grid-link" href="./posts/observable.html">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img class="thumbnail-image card-img" src="./posts/horst_many-lang-qmd-to-output.png" style="height: 150px;"/>
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Observable
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('dec🗓️🕓'); return false;">
-dec🗓️🕓
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('observable'); return false;">
-observable
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
-quarto
-</div>
-</div>
-<div class="card-text listing-description">
-<code>Decalendar</code><sup>1</sup> is a decimal calendar🗓️system and <code>Declock</code><sup>2</sup> is a decimal timekeeping⏳system. Instead of months, weeks, hours, minutes, and seconds, <code>Decalendar</code> and <code>Declock</code> use a…<code></code><sup></sup><code></code><span><span id="ojs-element-id-1"></span></span><code></code><code></code><sup></sup><span><span id="ojs-element-id-16"></span></span><code></code><sup></sup><span><span id="ojs-element-id-17"></span></span>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Martin Laptev
-</div>
-<div class="listing-date">2023+255</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-categories="dec🗓️🕓,knitr,quarto" data-index="3" data-listing-date-modified-sort="NaN" data-listing-date-sort="1699738212000" data-listing-file-modified-sort="1699715225077" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<a class="quarto-grid-link" href="./posts/knitr.html">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img class="thumbnail-image card-img" src="./posts/horst_knitr.png" style="height: 150px;"/>
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Knitr
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('dec🗓️🕓'); return false;">
-dec🗓️🕓
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('knitr'); return false;">
-knitr
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
-quarto
-</div>
-</div>
-<div class="card-text listing-description">
-<section class="quarto-appendix-contents"><div class="quarto-appendix-contents" id="quarto-reuse"><div>CC BY-SA 4.0</div></div></section><section class="quarto-appendix-contents"><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{laptev2023,
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
+
+
+
+
+
+
+
+<!-- -->
+
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{laptev2023,
   author = {Laptev, Martin},
   title = {Knitr},
   pages = {undefined},
   date = {2023},
   url = {https://maptv.github.io},
- …</code></pre><div class="quarto-appendix-secondary-label"></div><div class="csl-entry quarto-appendix-citeas" id="ref-laptev2023"><span></span></div></div></section>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Martin Laptev
-</div>
-<div class="listing-date">2023+255</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><a id="quarto-back-to-top" onclick="window.scrollTo(0, 0); return false;" role="button"><i class="bi bi-arrow-up"></i> Back to top</a><div class="default" id="quarto-appendix"><section class="level4 appendix" id="attributions"><h2 class="anchored quarto-appendix-heading">Attributions</h2><div class="quarto-appendix-contents">
-<p>Artwork by <a href="https://twitter.com/allison_horst"><span class="citation" data-cites="allison_horst">@allison_horst</span></a></p>
-</div></section></div></main> <!-- /main -->
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-laptev2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Laptev, Martin. 2023. <span>“Knitr.”</span> 2023. <a href="https://maptv.github.io">https://maptv.github.io</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -618,6 +524,77 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/maptv\.github\.io");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -929,17 +906,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
-<div class="nav-page nav-page-previous">
-<a about"="" class="pagination-link aria-label=" href="./index.html">
-<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About</span>
-</a>
-</div>
-<div class="nav-page nav-page-next">
-<a aria-label="Quarto" class="pagination-link" href="./posts/quarto.html">
-<span class="nav-page-text">Quarto</span> <i class="bi bi-arrow-right-short"></i>
-</a>
-</div>
-</nav>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="../blog/jupyter.html" class="pagination-link  aria-label=" jupyter"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Jupyter</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Knitr</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">order:</span><span class="co"> 3</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> horst_knitr.png</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  - dec🗓️🕓</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  - knitr</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  - quarto</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
+
+
+
+
 </body></html>

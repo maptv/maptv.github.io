@@ -1,1 +1,1 @@
-Sitemap: https://maptv.netlify.app/sitemap.xml
+Sitemap: https://maptv.github.io/sitemap.xml

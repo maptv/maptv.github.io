@@ -32,9 +32,9 @@ website:
     contents:
       - text: "About"
         file: index.qmd
-      - section: "Listing"
-        file: posts.qmd
-        contents: posts/*.qmd
+      - section: "Blog"
+        file: blog.qmd
+        contents: blog/*.qmd
 format:
   html:
     page-layout: full

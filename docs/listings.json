@@ -1,11 +1,11 @@
 [
   {
-    "listing": "/posts.html",
+    "listing": "/blog.html",
     "items": [
-      "/posts/jupyter.html",
-      "/posts/quarto.html",
-      "/posts/observable.html",
-      "/posts/knitr.html"
+      "/blog/jupyter.html",
+      "/blog/quarto.html",
+      "/blog/observable.html",
+      "/blog/knitr.html"
     ]
   }
 ]

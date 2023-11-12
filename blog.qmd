@@ -1,6 +1,6 @@
 ---
 listing:
-  contents: posts
+  contents: blog
   sort: false
   type: grid
   categories: true
