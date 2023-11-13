@@ -34,7 +34,7 @@ GitLab Pages is not officially supported by Quarto! If you are just starting out
 
 The Quarto documentation does not discuss [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/), but you can follow the [GitHub Pages instructions](https://quarto.org/docs/publishing/github-pages.html) and then add a `.gitlab-ci.yml` file, like the one below, to the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) (repo) containing your Quarto-rendered site. After pushing to a GitLab remote repo, uncheck **Use unique domain** under `Deploy > Pages` in the GitLab sidebar to have a shorter [URL](https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web).
 
-```{.yaml include=".gitlab-ci.yml"}
+```{.yaml filename=".gitlab-ci.yml"}
 image: busybox
 pages:
   stage: deploy

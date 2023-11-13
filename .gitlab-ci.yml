@@ -1,7 +1,6 @@
 # https://stackoverflow.com/a/68149684/22223251
 # https://docs.gitlab.com/ee/user/project/pages/introduction.html#gitlab-ciyml-for-plain-html-websites
 image: busybox
-
 pages:
   stage: deploy
   script:

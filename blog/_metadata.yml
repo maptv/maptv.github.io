@@ -34,6 +34,5 @@ format:
       lst-title: List
       lst-prefix: List
 comments:
-  hypothesis: true
   giscus:
     repo: maptv/maptv.github.io
