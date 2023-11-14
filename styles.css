@@ -3,12 +3,6 @@ p, ul {
   text-align: left;
 }
 
-.quarto-title-banner { background-color:transparent; }
-
-header#quarto-header div#navbarCollapse span.menu-text {
-    display: none;
-}
-
 @media only screen and (max-width: 544px) {
     a.navbar-brand, span.navbar-title {
         display: none;
@@ -29,31 +23,3 @@ header#quarto-header div#navbarCollapse span.menu-text {
         display: none;
     }
 }
-
-/* https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html#lets-see-how-it-works */
-/* html { */
-/*   scroll-margin-top: 40rem; */
-/* } */
-
-
-/* https://stackoverflow.com/questions/73570277/how-to-change-title-banner-size-in-quarto */
-/* #title-block-header { */
-/*   margin-block-end: 1rem; */
-/*   position: relative; */
-/*   margin-top: -1px; */
-/*   height: 75px; */
-/* } */
-
-/* div.quarto-title-banner { */
-/*   margin-block-end: 1rem; */
-/*   position: relative; */
-/*   margin-top: -30px; */
-/*   height: 85%; */
-/* } */
-/* #title-block-header > div.quarto-title-banner.page-columns.page-full { */
-/*   margin: 0px; */
-/*   padding: 0px; */
-/* } */
-/* #title-block-header { */
-/*   margin: 0px; */
-/* } */

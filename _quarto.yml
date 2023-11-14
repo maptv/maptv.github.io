@@ -14,10 +14,13 @@ website:
     right:
       - icon: person-circle
         file: about.qmd
+        text: About
       - icon: pencil
         file: blog/blog.qmd
+        text: Blog
       - icon: file-earmark-person
         file: cv/cv.qmd
+        text: CV
       - icon: github
         href: https://github.com/maptv
       - icon: linkedin

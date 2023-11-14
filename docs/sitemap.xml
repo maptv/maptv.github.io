@@ -33,11 +33,17 @@
   <url>
     <loc>https://maptv.github.io/index.html</loc>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <lastmod>2023-11-14T09:36:15.991Z</lastmod>
 ||||||| parent of a9ac2d7 (navbar links should not be hardcoded)
     <lastmod>2023-11-14T08:45:09.046Z</lastmod>
 =======
     <lastmod>2023-11-14T08:59:20.339Z</lastmod>
 >>>>>>> a9ac2d7 (navbar links should not be hardcoded)
+||||||| parent of 5fde999 (decided to allow text next to first three navbar icons)
+    <lastmod>2023-11-14T08:59:20.339Z</lastmod>
+=======
+    <lastmod>2023-11-14T09:25:38.685Z</lastmod>
+>>>>>>> 5fde999 (decided to allow text next to first three navbar icons)
   </url>
 </urlset>
