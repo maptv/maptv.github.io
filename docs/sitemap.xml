@@ -10,7 +10,13 @@
   </url>
   <url>
     <loc>https://maptv.github.io/blog/quarto/index.html</loc>
+<<<<<<< HEAD
     <lastmod>2023-11-14T09:58:10.527Z</lastmod>
+||||||| parent of a9ac2d7 (navbar links should not be hardcoded)
+    <lastmod>2023-11-14T08:44:31.510Z</lastmod>
+=======
+    <lastmod>2023-11-14T08:59:20.413Z</lastmod>
+>>>>>>> a9ac2d7 (navbar links should not be hardcoded)
   </url>
   <url>
     <loc>https://maptv.github.io/blog/knitr/index.html</loc>
@@ -26,6 +32,12 @@
   </url>
   <url>
     <loc>https://maptv.github.io/index.html</loc>
+<<<<<<< HEAD
     <lastmod>2023-11-14T09:36:15.991Z</lastmod>
+||||||| parent of a9ac2d7 (navbar links should not be hardcoded)
+    <lastmod>2023-11-14T08:45:09.046Z</lastmod>
+=======
+    <lastmod>2023-11-14T08:59:20.339Z</lastmod>
+>>>>>>> a9ac2d7 (navbar links should not be hardcoded)
   </url>
 </urlset>

@@ -13,11 +13,11 @@ website:
     logo-alt: "10-point star made up of 100 triangles"
     right:
       - icon: person-circle
-        href: https://maptv.github.io
+        file: about.qmd
       - icon: pencil
-        href: https://maptv.github.io/blog
+        file: blog/blog.qmd
       - icon: file-earmark-person
-        href: https://maptv.github.io/cv
+        file: cv/cv.qmd
       - icon: github
         href: https://github.com/maptv
       - icon: linkedin
