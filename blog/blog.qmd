@@ -1,13 +1,14 @@
 ---
 listing:
-  contents: blog
+  contents:
+    - quarto/*.qmd
+    - observable/*.qmd
+    - jupyter/*.qmd
+    - knitr/*.qmd
   sort: false
   type: grid
   categories: true
-page-layout: full
-date-format: x
 ---
-
 
 ```{=html}
 <script src="time.js"></script>

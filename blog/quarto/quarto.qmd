@@ -1,6 +1,9 @@
 ---
 title: Quarto
-order: 0
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
+date: now
 image: horst_many-qmd-to-output.png
 categories:
   - dec🗓️🕓
@@ -10,8 +13,13 @@ format:
   html:
     mermaid:
       theme: default
+    code-tools: true
 filters:
-   - include-code-files
+  - ../date.lua
+  - include-code-files
+comments:
+  giscus:
+    repo: maptv/maptv.github.io
 ---
 
 [Quarto](https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system) is an [open-source software](https://en.wikipedia.org/wiki/Open-source_software#:~:text=Open%2Dsource%20software%20(OSS)%20is%20computer%20software%20that%20is%20released%20under%20a%20license%20in%20which%20the%20copyright%20holder%20grants%20users%20the%20rights%20to%20use%2C%20study%2C%20change%2C%20and%20distribute%20the%20software%20and%20its%20source%20code%20to%20anyone%20and%20for%20any%20purpose.) system for creating articles, books, blogs, dashboards, presentations, reports, websites, and other kinds of digital [deliverables](https://en.wikipedia.org/wiki/Deliverable#:~:text=A%20deliverable%20is%20a%20tangible%20or%20intangible%20good%20or%20service%20produced%20as%20a%20result%20of%20a%20project). [Announced](https://posit.co/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system) on `2022+149`[^1] by [Posit](https://posit.co) CEO [JJ Allaire](https://www.rstudio.com/authors/j.j.-allaire/), Quarto is already taking the world🌐by storm⛈️!
@@ -26,30 +34,25 @@ The first topic I will delve into is creating and publishing a website with Quar
 
 # Publishing a Quarto site
 
-To demonstrate some of the many free website hosting options, I published four identical blogs using different hosts: <https://maptv.quarto.pub>, <https://maptv.netlify.app>, <https://maptv.github.io>, and <https://maptv.gitlab.io>. If you want to host your site on [Quarto Pub](https://quartopub.com), [Netlify](https://www.netlify.com), or [GitHub Pages](https://pages.github.com), the Quarto [publishing documentation](https://quarto.org/docs/publishing/#getting-started) is all you need.
+To demonstrate some of the many free website hosting options, I published four identical blogs using different hosts: [Quarto Pub](https://maptv.quarto.pub), [Netlify](https://maptv.netlify.app), [GitHub Pages](https://maptv.github.io), and [GitLab Pages](https://maptv.gitlab.io). You can use the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) command to publish to all of these except GitLab Pages.
 
+Publishing to [GitHub Pages](https://maptv.github.io) with `quarto` `publish` requires setting up your site to be built from a `gh-pages` branch instead of `main`, which for me was a dealbreaker.
+
+
+
+If you do not plan to use the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.), you may prefer to host your site on [Quarto Pubs](https://quarto.org/docs/publishing/quarto-pub.html) or [Netlify](https://quarto.org/docs/publishing/netlify.html). On the other hand, if you are are already using `git` and hosting your site on GitHub or GitLab Pages, you have no need for the `quarto` `publish`.
+
+ If you want to host your site on [Quarto Pub](https://quartopub.com), [Netlify](https://www.netlify.com), or [GitHub Pages](https://pages.github.com), the Quarto [publishing documentation](https://quarto.org/docs/publishing/#getting-started) is all you need.
 ::: {.callout-warning}
-GitLab Pages is not officially supported by Quarto! If you are just starting out, you should choose one of the other options and skip down to @sec-nav.
+The rest of this section focuses on GitLab Pages. Quarto does not officially supported by GitLab Pages, so if you are just starting out, you should choose one of the other options and skip down to @sec-nav.
 :::
 
 The Quarto documentation does not discuss [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/), but you can follow the [GitHub Pages instructions](https://quarto.org/docs/publishing/github-pages.html) and then add a `.gitlab-ci.yml` file, like the one below, to the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) (repo) containing your Quarto-rendered site. After pushing to a GitLab remote repo, uncheck **Use unique domain** under `Deploy > Pages` in the GitLab sidebar to have a shorter [URL](https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web).
 
-```{.yaml filename=".gitlab-ci.yml"}
-image: busybox
-pages:
-  stage: deploy
-  script:
-    - echo "The site will be deployed to $CI_PAGES_URL"
-    - mkdir public
-    - cp -r docs/* public
-  artifacts:
-    paths:
-      - public
-  only:
-    - main
+```{.yaml include="../../.gitlab-ci.yml"}
 ```
 
-If your site is published on [Quarto Pub](https://quarto.org/docs/publishing/netlify.html#publish-command), [Netlify](https://quarto.org/docs/publishing/quarto-pub.html#publish-command), or [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#publish-command), you can use the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) command to update it. The `quarto` `publish`command does not work for GitLab Pages, but GitHub and GitLab Pages-hosted sites can be updated using the standard Git workflow shown in @fig-git.
+If your site is published on [Quarto Pub](https://quarto.org/docs/publishing/netlify.html#publish-command), [Netlify](https://quarto.org/docs/publishing/quarto-pub.html#publish-command), or [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#publish-command), you can use the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) command to update it. The `quarto` `publish` command does not work for GitLab Pages, but GitHub and GitLab Pages-hosted sites can be updated using the standard Git workflow shown in @fig-git.
 
 ```{mermaid fig-align="center"}
 %%| label: fig-git
@@ -76,7 +79,12 @@ To make the `git` workflow displayed in @fig-git easier, I use the [shell](https
 
 ::: {#exm-aacmp}
 ```{.sh}
-alias aacmp="func() { git add --all && git commit --message \"$(echo '${*:-Changed files: $(echo $(git status --porcelain | grep -v "?" | cut -c4- | tr "\n" " "))}')\" && git push; }; func"
+alias aacmp='(
+    "func() { git add --all && git commit --message
+    \"$(echo '${*:-Changed files: $(echo $(git status --porcelain
+    | grep -v "?" | cut -c4- | tr "\n" " "))}')\"
+    && git push; }; func"
+)'
 ```
 :::
 
@@ -88,7 +96,11 @@ Un-escaped special characters in the commit message following the `aacmp` alias 
 
 ::: {#exm-qp}
 ```{.sh}
-alias qp="quarto publish --no-prompt --no-browser --no-render quarto-pub; quarto publish --no-prompt --no-browser --no-render netlify; quarto publish --no-prompt --no-browser --no-render gh-pages;"
+alias qp='(
+quarto publish --no-prompt --no-browser --no-render quarto-pub;
+quarto publish --no-prompt --no-browser --no-render netlify;
+quarto publish --no-prompt --no-browser --no-render gh-pages;
+)'
 ```
 :::
 
@@ -119,37 +131,7 @@ To add a custom [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20
 ````
 
 #### `time.js`
-```{.javascript include="../time.js"}
-// https://howardhinnant.github.io/date_algorithms.html#days_from_civil
-function dote2doty(days = 719468) {
-    const era = Math.floor((days >= 0 ? days : days - 146096) / 146097),
-        dotc = days - era * 146097,
-        yotc = Math.floor((dotc - Math.floor(dotc / 1460)
-        + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
-    return [yotc + era * 400, dotc + Math.floor(yotc / 100)
-        - yotc * 365 - Math.floor(yotc / 4)];
-};
-function unix2doty(ms = 0) { return dote2doty(ms / 86400000 + 719468) };
-function doty2deco(year = 1969, doty = 306, zone = 0) {
-    [date, time] = doty.toString().split(".")
-    return `${year}+${date.toString().padStart(3, "0")}.${
-    time.toString().slice(0, 5).padStart(5, "0")}`;
-};
-function unix2deco(ms = 0) { return doty2deco(...unix2doty(ms)) };
-const nbc = document.getElementsByClassName("navbar-brand-container");
-const div = document.createElement("div");
-const cal = document.createElement("i");
-cal.classList.add("bi", "bi-calendar");
-cal.setAttribute("role", "img");
-const tik = document.createElement("i");
-tik.classList.add("bi", "bi-clock");
-tik.setAttribute("role", "img");
-div.setAttribute("id", "deco");
-nbc[0].appendChild(cal);
-nbc[0].appendChild(div);
-nbc[0].appendChild(tik);
-setInterval(() => document.getElementById("deco").innerText =
-  unix2deco(Date.now()).slice(0, 14), 8.64);
+```{.javascript include="../../time.js"}
 ```
 :::
 :::
@@ -197,7 +179,7 @@ The navbar timestamp is also derived from millisecond UNIX time, which I obtaine
 
 While `time.js` is sourced by Quarto when it reads the HTML block in each of my blog `.qmd` files, `date.lua` is run as a [Pandoc filter](https://quarto.org/docs/extensions/filters.html) during the creation of the output `.html` files, and `date.py` is executed as a [post-render script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render). @exm-date speaks to the power and versatility of Quarto.
 
-Coming up next on my blog is [a post](observable.qmd) that introduces `Dec` with [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
+Coming up next on my blog is [a post](../observable/observable.qmd) that introduces `Dec` with [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
 
 ::: {#exm-date}
 ::: panel-tabset

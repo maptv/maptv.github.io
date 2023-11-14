@@ -33,12 +33,16 @@ website:
     title: none
     contents:
       - text: About
-        file: index.qmd
+        file: about.qmd
       - section: Blog
-        file: blog.qmd
-        contents: blog/*.qmd
+        file: blog/blog.qmd
+        contents:
+          - blog/quarto/quarto.qmd
+          - blog/observable/observable.qmd
+          - blog/jupyter/jupyter.qmd
+          - blog/knitr/knitr.qmd
       - text: Curriculum Vitae
-        file: cv.qmd
+        file: cv/cv.qmd
       - text: GitHub
         href: https://github.com/maptv
       - text: LinkedIn
@@ -56,5 +60,6 @@ format:
       sidebar-width: 200px
       body-width: 1800px
       margin-width: 200px
-execute: 
+execute:
   freeze: true
+  cache: true

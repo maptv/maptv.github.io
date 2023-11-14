@@ -1,22 +1,14 @@
 # options specified here will apply to all posts in this folder
-
-# freeze computational output
-# (see https://quarto.org/docs/projects/code-execution.html#freeze)
 freeze: true
-
-# Enable banner style title blocks
-title-block-banner: true
-author:
-  - name: Martin Laptev
-    url: https://maptv.github.io
 cache: true
-date: now
+title-block-banner: false
 date-format: x
-filters:
-  - date.lua
 lightbox: true
+toc: true
+page-layout: full
 format:
   html:
+    output-file: index.html
     highlight-style: a11y
     anchor-sections: true
     tbl-cap-location: margin
@@ -27,12 +19,8 @@ format:
     code-copy: true
     code-fold: true
     code-link: true
-    code-tools: true
     link-external-icon: true
     link-external-newwindow: true
     crossref:
       lst-title: List
       lst-prefix: List
-comments:
-  giscus:
-    repo: maptv/maptv.github.io

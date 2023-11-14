@@ -8,13 +8,14 @@ format:
   html:
     grid:
       body-width: 1800px
+    output-file: index.html
 ---
 
 Greetings! My name is Martin Laptev. <img src="media/wave.gif" width="40px"/>
 
 I am a data scientist and software engineer with a broad scientific background that ranges from biochemistry to epidemiology. I use the JavaScript, Python, and R programming languages along with the UNIX shell to build digital deliverables like cloud[]{.bi .bi-cloud}infrastructure, data[]{.bi .bi-bar-chart-line}dashboards, and machine[]{.bi .bi-robot}learning models.
 
-You are currently on the about[]{.bi .bi-person-circle}page of my site. The arrow[](blog.qmd){.bi .bi-arrow-right-short}at the bottom right of this page and the pencil[](blog.qmd){.bi .bi-pencil}icon in the navigation bar (navbar) will take you to my [blog](blog.qmd). Similarly, the other navbar icons lead to my [Curriculum Vitae (CV)](cv.qmd)[]{.bi .bi-file-earmark-person}, [GitHub](https://github.com/maptv)[]{.bi .bi-github}, and [LinkedIn](https://www.linkedin.com/in/maptv)[]{.bi .bi-linkedin}.
+You are currently on the about[]{.bi .bi-person-circle}page of my site. The arrow[](blog/blog.qmd){.bi .bi-arrow-right-short}at the bottom right of this page and the pencil[](blog/blog.qmd){.bi .bi-pencil}icon in the navigation bar (navbar) will take you to my [blog](blog/blog.qmd). Similarly, the other navbar icons lead to my [Curriculum Vitae (CV)](cv/cv.qmd)[]{.bi .bi-file-earmark-person}, [GitHub](https://github.com/maptv)[]{.bi .bi-github}, and [LinkedIn](https://www.linkedin.com/in/maptv)[]{.bi .bi-linkedin}.
 
 The timestamp in the navbar shows the current `Dec` date[]{.bi .bi-calendar}(\${styledDecoYear}+\${styledDecoDate}) and time[]{.bi .bi-clock}(\${styledDecoTime}). `Dec` is a calendar and timekeeping system that I created. Briefly, Dec dates (`year+day`) count the [years since 1 BC](https://en.wikipedia.org/wiki/ISO_8601#:~:text=year%200000%20being%20equal%20to%201%20BC) and the [days since March 1st](https://howardhinnant.github.io/date_algorithms.html#civil_from_days:~:text=These%20algorithms%20internally%20assume%20that%20March%201%20is%20the%20first%20day%20of%20the%20year.), while `Dec` times count [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=The%20time%20of%20day%20is%20sometimes%20represented%20as%20a%20decimal%20fraction%20of%20a%20day%20in%20science%20and%20computers.) since midnight. In addition to displaying the time of day, fractional days can also be used to measure durations, such as the time since this webpage was loaded: \${styledTickTime}.
 

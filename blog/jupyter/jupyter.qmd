@@ -1,0 +1,22 @@
+---
+title: Jupyter
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
+date: now
+filters:
+  - ../date.lua
+image: horst_jupyter.png
+categories:
+  - dec🗓️🕓
+  - knitr
+  - jupyter
+  - quarto
+format:
+  html:
+    code-tools: true
+comments:
+  giscus:
+    repo: maptv/maptv.github.io
+---
+

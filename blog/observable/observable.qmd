@@ -1,12 +1,22 @@
 ---
 title: Observable
-order: 1
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
+date: now
+filters:
+  - ../date.lua
 image: horst_many-lang-qmd-to-output.png
 categories:
   - dec🗓️🕓
   - observable
   - quarto
-toc: true
+format:
+  html:
+    code-tools: true
+comments:
+  giscus:
+    repo: maptv/maptv.github.io
 ---
 
 ## Day-of-the-year {#sec-intro-doty}
