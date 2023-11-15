@@ -1,14 +1,8 @@
-# https://stackoverflow.com/a/68149684/22223251
-# https://docs.gitlab.com/ee/user/project/pages/introduction.html#gitlab-ciyml-for-plain-html-websites
-image: busybox
+# https://docs.gitlab.com/ee/user/project/pages/introduction.html#customize-the-default-folder
 pages:
-  stage: deploy
-  script:
-    - echo "The site will be deployed to $CI_PAGES_URL"
-    - mkdir public
-    - cp -r docs/* public
   artifacts:
     paths:
-      - public
+      - ./
+  publish: ./
   only:
     - gh-pages
