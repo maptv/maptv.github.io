@@ -31,17 +31,44 @@ I strongly believe that everyone, regardless of their background and current tec
 
 Rather than repeat the basic information already available elsewhere, I will share some advanced techniques along with the fundamental knowledge needed to understand how they work. The topics I cover are very technical, but my goal is to make the content on my blog as accessible as possible.
 
-The first topic I will delve into is creating and publishing a website with Quarto. To get started, follow the Quarto documentation on [creating a blog](https://quarto.org/docs/websites/website-blog.html). As soon as you create the starter template, you can set it up to be publicly available using one of the many available publishing services.
+The first topic I will delve into is creating and publishing a website with Quarto. To get started, follow the Quarto documentation on [creating a blog](https://quarto.org/docs/websites/website-blog.html). As soon as you create the starter template, you can set it up to be publicly available using one of the many available [publishing services](https://quarto.org/docs/publishing/#getting-started).
 
 # Publishing a Quarto site
 
-To demonstrate some of the many free website hosting options, I published my personal website to four different hosts: [Quarto Pub](https://maptv.quarto.pub), [Netlify](https://maptv.netlify.app), [GitHub Pages](https://maptv.github.io), and [GitLab Pages](https://maptv.gitlab.io). I used these four sites to explore different publishing workflows.
+To demonstrate some of the many free website hosting options, I published my personal website to four different hosts: [Quarto Pub](https://maptv.quarto.pub), [Netlify](https://maptv.netlify.app), [GitHub Pages](https://maptv.github.io), and [GitLab Pages](https://maptv.gitlab.io). I used these four sites to explore and assess different publishing workflows.
 
-The main method to deploy Quarto sites is the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) command, which can render and deploy your site in one fell swoop and then open it a browser so you can view the latest version.
+The main method to deploy Quarto sites is the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) command, which can render and deploy your site in one fell swoop and then open it a browser so you can view the latest version. You should first set up your Quarto project to work with `quarto` `publish` and only then try publishing with [GitHub Actions](https://quarto.org/docs/publishing/github-pages.html#github-action).
 
+When I run `quarto` `publish` `--no-prompt` `--no-browser` `gh-pages`, Quarto renders my site into my output directory (`docs`), copies the output directory contents to the `gh-pages` [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control)of my local [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) (repo), and then [commits](https://git-scm.com/docs/git-commit) and [pushes](https://git-scm.com/docs/git-push) the changes to my remote repositories (repos) on [GitHub](https://github.com/maptv/maptv.github.io) and [GitLab](https://gitlab.com/maptv/maptv.gitlab.io). To get `quarto` `publish` `gh-pages` to work with both GitHub Pages and GitLab Pages, I followed the Quarto documentation on [publishing to GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#publish-command), added a second `origin` [URL](https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web) to my local repo using the [`git` `remote`](https://git-scm.com/docs/git-remote) shell commands, created a GitLab repo called `maptv.gitlab.io` with a `gh-pages` branch, created a `.gitlab-ci.yml` file, and modified my `_quarto.yml`, as shown in @exm-remote.
 
-When you run `quarto` `publish` in your does not officially support GitLab Pages, you can  for cleaner commits if you are using GitHub Pages.
+::: {#exm-remote}
+```{.sh}
+git remote add lab git@gitlab.com:maptv/maptv.gitlab.io
+git remote add hub git@github.com:maptv/maptv.github.io
+git remote set-url --add origin $(git remote get-url lab)
+```
 
+```{.yaml include="../../.gitlab-ci.yml"}
+```
+
+```{.yaml include="../../_quarto.yml" start-line=1 end-line=4}
+```
+:::
+
+You can also configure Netlify to deploy your site based on the latest [commit](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) in your repo on either GitHub or GitLab, by selecting `Site` `configuration`, `Build` `&` `deploy`, `Link` `repository`, choosing between `Deploy` `with` `GitHub` or `Deploy` `with` `GitLab`, and then specifying the repo and branch. This approach works similar to [`quarto` `publish` `netlify`](https://quarto.org/docs/publishing/netlify.html#publish-command) but has the added benefit of using the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control system behind the scenes to track changes in the content.
+
+With the settings described above, running `quarto` `publish` `gh-pages` updates my site on [GitHub](https://pages.github.com), [GitLab](https://docs.gitlab.com/ee/user/project/pages), and [Netlify](https://www.netlify.com). To also deploy to my site to [Quarto Pub](https://quarto.pub), I need to run `quarto` `publish` `quarto-pub`.
+
+I can use a shell [alias](https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.) to combine both steps 
+
+::: {#exm-qp}
+```{.sh}
+alias qp='(
+quarto publish --no-prompt --no-browser gh-pages;
+quarto publish --no-prompt --no-render quarto-pub;
+)'
+```
+:::
 
 This easier than instead of running [`quarto` `render`]() and then the three commands in the shown in @fig-git. 
 To set up GitHub Pages site to work with `quarto` `publish`, your [source](https://quarto.org/docs/publishing/github-pages.html#source-branch) [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control) must be set to `gh-pages`. Importantly, you cannot be on the `gh-pages` branch when running `quarto` `publish` or else you will get an error: `fatal: 'gh-pages' is already checked out at...`.
@@ -119,16 +146,6 @@ Un-escaped special characters in the commit message following the `aacmp` alias 
 :::
 
 @exm-qp contains an analogous shell alias for `quarto` `publish` that updates site content on Quarto Pub, Netlify, and GitHub Pages. For more shell aliases, check out my [`.zshrc`](https://github.com/maptv/setup/blob/main/.zshrc#L85) in my [setup repo](https://github.com/maptv/setup#this-repo-contains-my-setup-files-for-mac-local-and-linux-remote).
-
-::: {#exm-qp}
-```{.sh}
-alias qp='(
-quarto publish --no-prompt --no-browser --no-render quarto-pub;
-quarto publish --no-prompt --no-browser --no-render netlify;
-quarto publish --no-prompt --no-browser --no-render gh-pages;
-)'
-```
-:::
 
 For more information on the git, the tool used by 93% of software developers worldwide, according to [survey results](https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.) published by [StackOverflow](https://stackoverflow.com/tour) on `2022+314`[^2], take a look at the ["GitHub for supporting, reusing, contributing, and failing safely"](https://openscapes.org/blog/2022-05-27-github-illustrated-series/) post by [Allison Horst](https://allisonhorst.com) and [Julie Lowndes](https://jules32.github.io) on the [Openscapes](https://openscapes.org/) [blog](https://openscapes.org/blog). If you are just getting started with Git, I suggest using a standalone Git [graphical user interface (GUI)](https://git-scm.com/downloads/guis) like [GitHub Desktop](https://desktop.github.com/) or the Git interface that comes with a code editor such as [Visual Studio Code](https://quarto.org/docs/tools/vscode.html) or [RStudio](https://quarto.org/docs/tools/rstudio.html).
 
