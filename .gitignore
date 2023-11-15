@@ -3,4 +3,6 @@
 .RData
 .Ruserdata
 _freeze
+_extensions
+docs/
 /.quarto/
