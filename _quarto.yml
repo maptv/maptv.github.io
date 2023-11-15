@@ -2,7 +2,8 @@ project:
   type: website
   output-dir: docs
   post-render: date.py
-  resources: ".gitlab.ci.yml"
+  resources:
+    - ".gitlab-ci.yml"
 website:
   back-to-top-navigation: true
   reader-mode: true
