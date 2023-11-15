@@ -37,7 +37,7 @@ The first topic I will delve into is creating and publishing a website with Quar
 
 To demonstrate some of the many free website hosting options, I published my personal website to four different hosts: [Quarto Pub](https://maptv.quarto.pub), [Netlify](https://maptv.netlify.app), [GitHub Pages](https://maptv.github.io), and [GitLab Pages](https://maptv.gitlab.io). I used these four sites to explore different publishing workflows.
 
-The main method to deploy Quarto sites is the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) command, which can render and deploy your site in one fell swoop and then open it a browser you can view the latest version.
+The main method to deploy Quarto sites is the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) command, which can render and deploy your site in one fell swoop and then open it a browser so you can view the latest version.
 
 
 When you run `quarto` `publish` in your does not officially support GitLab Pages, you can  for cleaner commits if you are using GitHub Pages.
