@@ -1,6 +1,7 @@
 # https://docs.gitlab.com/ee/user/project/pages/introduction.html#customize-the-default-folder
 pages:
   artifacts:
+    script:  echo "The site will be deployed to $CI_PAGES_URL"
     paths:
       - ./
   publish: ./
