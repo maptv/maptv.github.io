@@ -56,20 +56,20 @@ Using a [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=
 
 ## Publishing method overview {#sec-meth}
 
-Once you are done setting up your computer and creating the [Quarto website template](https://quarto.org/docs/websites/#quick-start:~:text=This%20will%20create%20the%20scaffolding%20for%20a%20simple%20website%20in%20the%20mysite%20sub%2Ddirectory.), you can make your site publicly available on the internet using one of the many available [publishing services](https://quarto.org/docs/publishing/#getting-started). To explore and assess different publishing workflows and free website hosting options, I set up my personal website on four different web hosts: [Quarto Pub](https://maptv.quarto.pub), [Netlify](https://maptv.netlify.app), [GitHub Pages](https://maptv.github.io), and [GitLab Pages](https://maptv.gitlab.io).
+Once you are done setting up your computer and creating the [Quarto website template](https://quarto.org/docs/websites/#quick-start:~:text=This%20will%20create%20the%20scaffolding%20for%20a%20simple%20website%20in%20the%20mysite%20sub%2Ddirectory.), you can make your site publicly available on the internet using one of the many available [publishing services](https://quarto.org/docs/publishing/#getting-started). To explore and assess different publishing [workflows](https://en.wikipedia.org/wiki/Workflow#:~:text=A%20workflow%20is%20a%20generic%20term%20for%20orchestrated%20and%20repeatable%20patterns%20of%20activity%2C%20enabled%20by%20the%20systematic%20organization%20of%20resources%20into%20processes%20that%20transform%20materials%2C%20provide%20services%2C%20or%20process%20information.) and free website hosting options, I set up my personal website on four different [web hosts](https://en.wikipedia.org/wiki/Web_hosting_service#:~:text=Companies%20providing%20web%20hosting%20services%20are%20sometimes%20called%20web%20hosts.): [Quarto Pub](https://maptv.quarto.pub), [Netlify](https://maptv.netlify.app), [GitHub Pages](https://maptv.github.io), and [GitLab Pages](https://maptv.gitlab.io).
 
-@tbl-pub summarizes the different publishing strategies that I discuss in this blog post. All of the approaches targeting [GitHub Pages] can be adapted to work for [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages).
+@tbl-pub uses a `Code` derived from numbered lists in the Quarto publishing documentation to identify different publishing strategies that I discuss in this blog post. All of the approaches targeting [GitHub Pages] can be adapted to work for [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages).
 
-| Code  | Host           | Render | Command          |
-| ----- | ----------     | ------ | ---------------- |
-| [Q1]  | [Quarto Pub]   | Local  | `quarto publish` |
-| [Q2]  | [Quarto Pub]   | Remote | `git push`       |
-| [N1]  | [Netlify]      | Local  | `quarto publish` |
-| [N2]  | [Netlify]      | Local  | `git push`       |
-| [N3]  | [Netlify]      | Remote | `git push`       |
-| [G1]  | [GitHub Pages] | Local  | `git push`       |
-| [G2]  | [GitHub Pages] | Local  | `quarto publish` |
-| [G3]  | [GitHub Pages] | Remote | `git push`       |
+| Code  | Web Host     | Render | Shell Command    |
+| ----- | ------------ | ------ | ---------------- |
+| [Q1]  | Quarto Pub   | Local  | `quarto publish` |
+| [Q2]  | Quarto Pub   | Remote | `git push`       |
+| [N1]  | Netlify      | Local  | `quarto publish` |
+| [N2]  | Netlify      | Local  | `git push`       |
+| [N3]  | Netlify      | Remote | `git push`       |
+| [G1]  | GitHub Pages | Local  | `git push`       |
+| [G2]  | GitHub Pages | Local  | `quarto publish` |
+| [G3]  | GitHub Pages | Remote | `git push`       |
 
 : Quarto website publishing methods {#tbl-pub}
 
@@ -81,9 +81,6 @@ Once you are done setting up your computer and creating the [Quarto website temp
 [G1]: https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.
 [G2]: https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.
 [G3]: https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.
-[Quarto Pub]: https://quarto.pub
-[Netlify]: https://netlify.com
-[GitHub Pages]: https://pages.github.com
 
 The main method to deploy Quarto sites is the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) command, which can [render](https://quarto.org/docs/websites/index.html#website-render) and deploy your site in one fell swoop and then open it a browser so you can view the latest version. The [Q1], [N1], and [G2] publishing methods in @tbl-pub all use `quarto` `publish.`
 
@@ -107,19 +104,14 @@ To address this issue, I switched to [G2] by adding the `quarto` `publish` to my
 
 [N2] can be combined with [G1], [G2], and any other publishing method that uses Git. When I run `quarto` `publish` `gh-pages`, Quarto renders my site into my output directory, copies the output directory contents to the `gh-pages` branch of my local repo, and then [commits](https://git-scm.com/docs/git-commit) and [pushes](https://git-scm.com/docs/git-push) the changes to my remote repos on [GitHub](https://github.com/maptv/maptv.github.io) and [GitLab](https://gitlab.com/maptv/maptv.gitlab.io), which then triggers Netlify to build my site from the `gh-pages` branch.
 
-::: {.callout-warning}
-If you run `quarto` `publish` `gh-pages` while on the `gh-pages` branch, you will get an error: `fatal:` `'gh-pages'` `is` `already` `checked` `out` `at...`.
-To avoid this error, switch to the `main` branch with `git` `checkout` `main` or `git` `switch` `main` before running `quarto` `publish` `gh-pages`.
-:::
-
 The only disadvantage of [G2] is that there are many commands to run, because running `quarto` `publish` `gh-pages` only updates the output files on my `gh-pages` and I still have run the `git` shell commands shown in @fig-git to update the source files on my `main` branch. To make it easier to make incremental changes to my website and frequently release new content, I combined all of the [G2] shell commands with a shell [alias](https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.) like the one shown in @exm-qp.
 
 ::: {#exm-qp}
 ```{.sh}
 alias qp='(
-quarto publish --no-prompt --no-browser gh-pages;
+quarto publish --no-prompt gh-pages;
 git add --all;
-git commit -m 'Update source files for gh-pages site';
+git commit -m 'Edit source files';
 git push;
 )'
 ```
@@ -137,12 +129,21 @@ In @sec-ghp, I will walk through the setup for [G2] and [G3] from scratch. Along
 
 ## GitHub Pages setup {#sec-ghp}
 
-In contrast, deploying a site to GitHub or GitLab Pages with [`quarto` `publish` `gh-pages`](https://quarto.org/docs/publishing/github-pages.html#publish-command) requires Git and much more configuration than Netlify or Quarto Pub.
-
 Before you can publish your site on GitHub or GitLab Pages, you need a [GitHub](https://github.com/signup) or [GitLab](https://gitlab.com/users/sign_up) account and a repo like my [`maptv.github.io`](https://github.com/maptv/maptv.github.io) and [`maptv.gitlab.io`](https://gitlab.com/maptv/maptv.gitlab.io) repos. Each of these repos has a default [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control), which by default is called `main`, and another branch that must be called `gh-pages`.
 
-You can create the repo and the `gh-pages` branch using the web interface of <https://github.com> or <https://gitlab.com> in your browser, but the easiest way is certainly using the [command line interface (CLI)](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.) for [GitHub](https://cli.github.com) or [GitLab](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/) in your [terminal](https://en.wikipedia.org/wiki/Terminal_emulator). First, run `gh auth login` or `glab auth login` and follow the prompts to authenticate via your browser, then run `gh repo create SITENAME --add-readme --clone --public` or `glab repo create SITENAME --readme`.
+You can create the repo and the `gh-pages` branch using the web interface of <https://github.com> or <https://gitlab.com> in your browser, but the best way to start a new project is using the [command line interface (CLI)](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.) for [GitHub](https://cli.github.com) or [GitLab](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/) in your [terminal](https://en.wikipedia.org/wiki/Terminal_emulator). First, run `gh auth login` or `glab auth login` and follow the prompts to authenticate via your web browser or with an authentication token.
 
+After authentication, you can run the code in either of the code chunks in @exm-git to set up your local and remote repos.
+
+::: {#exm-git}
+```{.sh}
+gh repo create SITENAME --add-readme --clone --public
+```
+
+```{.sh}
+glab repo create SITENAME --readme
+```
+:::
 
 Next, clone the repo you created using the shell commands like [git clone](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository#_git_cloning), [`gh` `repo` `clone`](https://cli.github.com/manual/gh_repo_clone), or [`glab` `repo` `clone`](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/), a Git [graphical user interface (GUI)](https://git-scm.com/downloads/guis) like [GitHub Desktop](https://desktop.github.com/), or the Git interface of a code editor such as [Visual Studio Code](https://quarto.org/docs/tools/vscode.html) or [RStudio](https://quarto.org/docs/tools/rstudio.html).
 
