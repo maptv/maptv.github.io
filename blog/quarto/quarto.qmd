@@ -60,7 +60,7 @@ Once you are done setting up your computer and creating the [Quarto website temp
 
 @tbl-pub uses a `Code` derived from numbered lists in the Quarto publishing documentation to identify different publishing strategies that I discuss in this blog post. All of the approaches targeting [GitHub Pages] can be adapted to work for [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages).
 
-| Code  | Web Host | Render | Command   |
+| Code  | Host     | Render | Command   |
 | ----- | -------- | ------ | --------- |
 | [Q1]  | Quarto   | Local  | `publish` |
 | [Q2]  | Quarto   | Remote | `push`    |
