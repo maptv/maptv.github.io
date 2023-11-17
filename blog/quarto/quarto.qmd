@@ -23,7 +23,7 @@ comments:
     repo: maptv/maptv.github.io
 ---
 
-[Quarto](https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system) is an [open-source software](https://en.wikipedia.org/wiki/Open-source_software#:~:text=Open%2Dsource%20software%20(OSS)%20is%20computer%20software%20that%20is%20released%20under%20a%20license%20in%20which%20the%20copyright%20holder%20grants%20users%20the%20rights%20to%20use%2C%20study%2C%20change%2C%20and%20distribute%20the%20software%20and%20its%20source%20code%20to%20anyone%20and%20for%20any%20purpose.) system for creating articles, books, blogs, dashboards, presentations, reports, websites, and other kinds of outputs from simple plain-text source files. [Announced](https://posit.co/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system) on [`2022+149`](#){data-bs-toggle="tooltip" data-bs-title="2022-07-28"} by [Posit](https://posit.co) CEO [JJ Allaire](https://www.rstudio.com/authors/j.j.-allaire/), Quarto is already taking the world🌐by storm⛈️!
+[Quarto](https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system) is an [open-source software](https://en.wikipedia.org/wiki/Open-source_software#:~:text=Open%2Dsource%20software%20(OSS)%20is%20computer%20software%20that%20is%20released%20under%20a%20license%20in%20which%20the%20copyright%20holder%20grants%20users%20the%20rights%20to%20use%2C%20study%2C%20change%2C%20and%20distribute%20the%20software%20and%20its%20source%20code%20to%20anyone%20and%20for%20any%20purpose.) system for turning plain-text source files into outputs like articles, books, blogs, dashboards, presentations, reports, and websites. [Announced](https://posit.co/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system) on [`2022+149`](#){data-bs-toggle="tooltip" data-bs-title="2022-07-28"} by [Posit](https://posit.co) CEO [JJ Allaire](https://www.rstudio.com/authors/j.j.-allaire/), Quarto is already taking the world🌐by storm⛈️!
 
 I strongly believe that everyone, regardless of their background and current technical skill level, can learn and benefit from Quarto. [Getting start with Quarto](https://quarto.org/docs/get-started/) is easy thanks to its [excellent documentation](https://quarto.org/docs/guide/) and vibrant community of enthusiastic users and developers.
 
@@ -31,9 +31,9 @@ Rather than repeat the basic information already available elsewhere, I will sha
 
 The first topic I will delve into is creating and publishing a website with Quarto. To follow the Quarto documentation on creating a [website](https://quarto.org/docs/websites/), you will need [Visual Studio Code (VCSode)](https://code.visualstudio.com), [RStudio](https://posit.co/download/rstudio-desktop), or a [terminal](https://en.wikipedia.org/wiki/Terminal_emulator).
 
-# Setup
+# Installation
 
-If you use [macOS](https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.), [Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems), or the [Windows Subsystem for Linux (WSL)](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.), you can install all of the aforementioned tools with the [Homebrew](https://brew.sh) package manager. To install everything you will need to follow along with this blog post, you can run `brew` `bundle` in a directory that contains the [Brewfile](https://homebrew-file.readthedocs.io/en/latest/usage.html) in @exm-brew.
+If you use [macOS](https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.), [Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems), or the [Windows Subsystem for Linux (WSL)](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.), you can install all of the aforementioned tools with the [Homebrew](https://brew.sh) package manager. To install everything you will need to follow along with this blog post, you can first [install Homebrew](https://brew.sh/#install) and then run `brew` `bundle` in a directory that contains the [Brewfile](https://homebrew-file.readthedocs.io/en/latest/usage.html) shown in @exm-brew.
 
 ::: {#exm-brew}
 ```{.ruby filename="Brewfile"}
@@ -50,15 +50,90 @@ vscode "REditorSupport.r"
 ```
 :::
 
-You can of course install whatever you want without Homebrew, but using a package manager like Homebrew to install all the requirements with a single [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) command like `brew` `bundle` is the fastest and easiest way to set up your computer. If you are curious, you can take a look at my personal Brewfile and other configuration files in my `setup` [repository (repo)](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) on [GitHub](https://github.com/maptv/setup) and [GitHub](https://gitlab.com/maptv/setup).
+Using a [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=A%20package%20manager%20or%20package%2Dmanagement%20system%20is%20a%20collection%20of%20software%20tools%20that%20automates%20the%20process%20of%20installing%2C%20upgrading%2C%20configuring%2C%20and%20removing%20computer%20programs%20for%20a%20computer%20in%20a%20consistent%20manner.) like Homebrew to install all the requirements with a single [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) command like `brew` `bundle` is the fastest and easiest way to set up your computer. If you are curious about how I set up my computer, you can take a look at [my Brewfile](https://github.com/maptv/setup/blob/main/Brewfile) and other configuration files in my `setup` [repository (repo)](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) on [GitHub](https://github.com/maptv/setup) and [GitHub](https://gitlab.com/maptv/setup).
 
-# Publishing a Quarto site
+# Publishing
 
-Once you are done setting up your computer and creating the [Quarto website template](https://quarto.org/docs/websites/#quick-start:~:text=This%20will%20create%20the%20scaffolding%20for%20a%20simple%20website%20in%20the%20mysite%20sub%2Ddirectory.), you can make your site publicly available using one of the many available [publishing services](https://quarto.org/docs/publishing/#getting-started). To explore and assess different publishing workflows and free website hosting options, I set up my personal website on four different hosts: [Quarto Pub](https://maptv.quarto.pub), [Netlify](https://maptv.netlify.app), [GitHub Pages](https://maptv.github.io), and [GitLab Pages](https://maptv.gitlab.io).
+Once you are done setting up your computer and creating the [Quarto website template](https://quarto.org/docs/websites/#quick-start:~:text=This%20will%20create%20the%20scaffolding%20for%20a%20simple%20website%20in%20the%20mysite%20sub%2Ddirectory.), you can make your site publicly available on the internet using one of the many available [publishing services](https://quarto.org/docs/publishing/#getting-started). To explore and assess different publishing workflows and free website hosting options, I set up my personal website on four different web hosts: [Quarto Pub](https://maptv.quarto.pub), [Netlify](https://maptv.netlify.app), [GitHub Pages](https://maptv.github.io), and [GitLab Pages](https://maptv.gitlab.io).
 
-The main method to deploy Quarto sites is the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) command, which can render and deploy your site in one fell swoop and then open it a browser so you can view the latest version. If you do not plan to use the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control system or the advanced features offered by [GitHub](https://github.com), [GitLab](https://gitlab.com), or [Netlify](https://netlify.com), then I recommend deploying your site to [Quarto Pub](https://quarto.pub) by running [`quarto` `publish` `quarto-pub`](https://quarto.org/docs/publishing/quarto-pub.html#publish-command).
+@tbl-pub summarizes the different publishing strategies that I discuss in this blog post. All of the approaches targeting [GitHub Pages] can be adapted to work for [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages).
 
-Similarly, publishing to Netlify with [`quarto` `publish` `netlify`](https://quarto.org/docs/publishing/netlify.html#publish-command) is easy and does not require Git. In contrast, deploying a site to GitHub or GitLab Pages with [`quarto` `publish` `gh-pages`](https://quarto.org/docs/publishing/github-pages.html#publish-command) requires Git and much more configuration than Netlify or Quarto Pub.
+| Code  | Host           | Render | Command          |
+| ----- | ----------     | ------ | ---------------- |
+| [Q1]  | [Quarto Pub]   | Local  | `quarto publish` |
+| [Q2]  | [Quarto Pub]   | Remote | `git push`       |
+| [N1]  | [Netlify]      | Local  | `quarto publish` |
+| [N2]  | [Netlify]      | Local  | `git push`       |
+| [N3]  | [Netlify]      | Remote | `git push`       |
+| [G1]  | [GitHub Pages] | Local  | `git push`       |
+| [G2]  | [GitHub Pages] | Local  | `quarto publish` |
+| [G3]  | [GitHub Pages] | Remote | `git push`       |
+
+: Quarto website publishing methods {#tbl-pub}
+
+[Q1]: https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine
+[Q2]: https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.
+[N1]: https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.
+[N2]: https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20GitLab%2C%20Bitbucket%2C%20or%20Azure%20DevOps%2C%20you%20can%20point%20Netlify%20at%20your%20site%E2%80%99s%20source%20code%20and%20have%20it%20deployed%20whenever%20your%20code%20changes.
+[N3]: https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.
+[G1]: https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.
+[G2]: https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.
+[G3]: https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.
+[Quarto Pub]: https://quarto.pub
+[Netlify]: https://netlify.com
+[GitHub Pages]: https://pages.github.com
+
+The main method to deploy Quarto sites is the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) command, which can [render](https://quarto.org/docs/websites/index.html#website-render) and deploy your site in one fell swoop and then open it a browser so you can view the latest version. The [Q1], [N1], and [G2] publishing methods in @tbl-pub all use `quarto` `publish.`
+
+If you do not plan to use the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control system or the advanced features offered by [GitHub](https://github.com), [GitLab](https://gitlab.com), or [Netlify](https://netlify.com), then I recommend deploying your site to [Quarto Pub](https://quarto.pub) by running [`quarto` `publish` `quarto-pub`](https://quarto.org/docs/publishing/quarto-pub.html#publish-command) ([Q1] in @tbl-pub).
+
+Like [Q1], [N1] is a deployment method that does not require Git and makes it possible to deploy our site with a single shell command: [`quarto` `publish` `netlify`](https://quarto.org/docs/publishing/netlify.html#publish-command). The advantage of [N1] over [Q1] is that we can gain access to the advanced web hosting features offered by Netlify.
+
+The first publishing method I tried for my personal site was [G1], which requires the use of Git to [push](https://github.com/git-guides/git-push#what-does-git-push-do) all website files to a Git provider like GitHub or GitLab. After I set up [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#render-to-docs), [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/), and [Netlify](https://quarto.org/docs/publishing/netlify.html#publish-from-git-provider) ([N2]), I could update my website on all 3 of these web hosts just by going through the standard Git workflow shown in @fig-git.
+
+```{mermaid fig-align="center"}
+%%| label: fig-git
+%%| fig-cap: Quarto workflow
+%%| fig-align: center
+%%| fig-width: 9
+flowchart LR
+   A[working<br/>directory]-.git<br/>add.->B[/staging<br/>area/]-.git<br/>commit.->C(local<br/>repo)-.git<br/>push.->D(remote<br/>repo)
+```
+
+[G1] is convenient for experienced Git users like me, but leads to messy [commits](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) that contain changes to both source and output files.
+To address this issue, I switched to [G2] by adding the `quarto` `publish` to my publishing workflow. With [G2], I can track changes to my source files on my `main` [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control) and publish my output files from my `gh-pages` branch.
+
+[N2] works with both [G1] and [G2]. When I run `quarto` `publish` `gh-pages`, Quarto renders my site into my output directory, copies the output directory contents to the `gh-pages` branch of my local repo, and then [commits](https://git-scm.com/docs/git-commit) and [pushes](https://git-scm.com/docs/git-push) the changes to my remote repos on [GitHub](https://github.com/maptv/maptv.github.io) and [GitLab](https://gitlab.com/maptv/maptv.gitlab.io), which then triggers Netlify to build my site from the `gh-pages` branch.
+
+::: {.callout-warning}
+If you run `quarto` `publish` `gh-pages` while on the `gh-pages` branch, you will get an error: `fatal:` `'gh-pages'` `is` `already` `checked` `out` `at...`.
+To avoid this error, switch to the `main` branch with `git` `checkout` `main` or `git` `switch` `main` before running `quarto` `publish` `gh-pages`.
+:::
+
+The only disadvantage of [G2] is that there are many commands to run, because running `quarto` `publish` `gh-pages` only updates the output files on my `gh-pages` and I still have run the `git` shell commands shown in @fig-git to update the source files on my `main` branch. To make it easier to make incremental changes to my website and frequently release new content, I combined all of the [G2] shell commands with a shell [alias](https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.) like the one shown in @exm-qp.
+
+::: {#exm-qp}
+```{.sh}
+alias qp='(
+quarto publish --no-prompt --no-browser gh-pages;
+git add --all;
+git commit -m 'Update source files for gh-pages site';
+git push;
+)'
+```
+:::
+
+You can add aliases to a [shell configuration file](https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.) like `.bashrc` or `.zshrc` on your computer to shorten commands or combine any sequence of commands into one step. The [`qp` alias](https://github.com/maptv/setup/blob/7ff404b4f6e9bca4af93e124808eb66f14464498/.zshrc#L600) in my [`.zshrc`](https://github.com/maptv/setup/blob/main/.zshrc) in my [`setup`](https://github.com/maptv/setup) repo is much more sophisticated than the one in @exm-qp, because it allows users to enter a free-form [commit message](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27) directly on the command line without quotes, e.g. `qp` `edit` `first` `blog`, but must be used with extreme caution as any un-[escaped] [special characters](https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter) in the commit message will be interpreted as shell operators!
+
+To summarize the Quarto publishing methods I discussed so far, [Q1] and [N1] are easy to configure and use, [G1] is not recommended because it pollutes commits with output file changes, [N2] can be combined with any publishing method that uses Git, and [G2] is more difficult to set up and use but provides clean commits and a nice separation of source and output files. All of these publishing methods require us to generate output files locally with rendering.
+
+In contrast, [Q2], [G3], and [N3] require the most configuration but make it possible to skip local rendering and rely on [GitHub Actions](https://quarto.org/docs/publishing/quarto-pub.html#github-action) to handle all of the necessary steps.
+
+
+
+## Configuration
+
+In contrast, deploying a site to GitHub or GitLab Pages with [`quarto` `publish` `gh-pages`](https://quarto.org/docs/publishing/github-pages.html#publish-command) requires Git and much more configuration than Netlify or Quarto Pub.
 
 Before you can publish your site on GitHub or GitLab Pages, you need a [GitHub](https://github.com/signup) or [GitLab](https://gitlab.com/users/sign_up) account and a repo like my [`maptv.github.io`](https://github.com/maptv/maptv.github.io) and [`maptv.gitlab.io`](https://gitlab.com/maptv/maptv.gitlab.io) repos. Each of these repos has a default [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control), which by default is called `main`, and another branch that must be called `gh-pages`.
 
@@ -68,8 +143,6 @@ You can create the repo and the `gh-pages` branch using the web interface of <ht
 Next, clone the repo you created using the shell commands like [git clone](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository#_git_cloning), [`gh` `repo` `clone`](https://cli.github.com/manual/gh_repo_clone), or [`glab` `repo` `clone`](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/), a Git [graphical user interface (GUI)](https://git-scm.com/downloads/guis) like [GitHub Desktop](https://desktop.github.com/), or the Git interface of a code editor such as [Visual Studio Code](https://quarto.org/docs/tools/vscode.html) or [RStudio](https://quarto.org/docs/tools/rstudio.html).
 
 Cloning an empty repo may seem odd, but in my experience this is the easiest way to set up a repo. Inside your cloned repo, you can run `quarto` `create` `project` `website` to generate the starter template and then immediately run `quarto` `publish` `gh-pages`.
-
-You can also publish your site on Quarto Pub with [GitHub Actions](https://quarto.org/docs/publishing/quarto-pub.html#github-action), but that requires a great deal more configuration that I will cover later in this post.
 
 When I run `quarto` `publish` `--no-prompt` `--no-browser` `gh-pages`, Quarto renders my site into my output directory (`docs`), copies the output directory contents to the `gh-pages` [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control)of my local [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) (repo), and then [commits](https://git-scm.com/docs/git-commit) and [pushes](https://git-scm.com/docs/git-push) the changes to my remote repositories (repos) on [GitHub](https://github.com/maptv/maptv.github.io) and [GitLab](https://gitlab.com/maptv/maptv.gitlab.io).
 
@@ -87,10 +160,6 @@ git remote set-url --add origin $(git remote get-url lab)
 
 ```{.yaml include="../../_quarto.yml" start-line=1 end-line=4}
 ```
-:::
-
-::: {.callout-warning}
-If you run `quarto` `publish` `gh-pages` while on the `gh-pages` branch, you will get an error: `fatal:` `'gh-pages'` `is` `already` `checked` `out` `at...`.
 :::
 
 You can also configure Netlify to deploy your site based on the latest [commit](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) in your repo on either GitHub or GitLab, by selecting `Site` `configuration`, `Build` `&` `deploy`, `Link` `repository`, choosing between `Deploy` `with` `GitHub` or `Deploy` `with` `GitLab`, and then specifying the repo and branch. This approach works similar to [`quarto` `publish` `netlify`](https://quarto.org/docs/publishing/netlify.html#publish-command) but has the added benefit of using the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control system behind the scenes to track changes in the content.
@@ -116,15 +185,6 @@ If you do not plan to use Git, I recommend deploying your site to [Quarto Pubs](
 does not have a gives you no control over the [commit](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) message for each update, no commit messages If you use `quarto` `publish` with GitHub Pages, the only disadvantages are that you must select your source branch to be `gh-pages`
 
  and/or the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control workflow shown in @fig-git.
-
-```{mermaid fig-align="center"}
-%%| label: fig-git
-%%| fig-cap: Quarto workflow
-%%| fig-align: center
-%%| fig-width: 9
-flowchart LR
-   A[working<br/>directory]-.git<br/>add.->B[/staging<br/>area/]-.git<br/>commit.->C(local<br/>repo)-.git<br/>push.->D(remote<br/>repo)
-```
 
 Netlify git workflow setup: Site configuration > Build & deploy > Link repository > Deploy with GitHub|GitLab, and then select the repo and branch.
 GitLab Pages git workflow setup:
@@ -176,9 +236,6 @@ alias aacmp='(
 ```
 :::
 
-::: {.callout-warning}
-Un-escaped special characters in the commit message following the `aacmp` alias will be interpreted as shell command operators! If you don't know what this means, I advise against trying to use this alias!
-:::
 
 @exm-qp contains an analogous shell alias for `quarto` `publish` that updates site content on Quarto Pub, Netlify, and GitHub Pages. For more shell aliases, check out my [`.zshrc`](https://github.com/maptv/setup/blob/main/.zshrc#L85) in my [setup repo](https://github.com/maptv/setup#this-repo-contains-my-setup-files-for-mac-local-and-linux-remote).
 
