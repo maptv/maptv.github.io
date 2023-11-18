@@ -1,6 +1,5 @@
 project:
   type: website
-  output-dir: docs
   resources: .gitlab-ci.yml
   post-render: date.py
 website:
