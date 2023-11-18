@@ -8,7 +8,6 @@ toc: true
 page-layout: full
 format:
   html:
-    output-file: index.html
     highlight-style: a11y
     anchor-sections: true
     tbl-cap-location: margin

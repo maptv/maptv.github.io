@@ -1,9 +1,0 @@
-# https://docs.gitlab.com/ee/user/project/pages/introduction.html#customize-the-default-folder
-pages:
-  script: echo "The site will be deployed to $CI_PAGES_URL"
-  artifacts:
-    paths:
-      - "."
-  publish: "."
-  only:
-    - gh-pages

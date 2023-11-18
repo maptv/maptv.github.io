@@ -15,6 +15,7 @@ format:
       theme: default
     code-tools: true
     link-external-icon: true
+    output-file: index.html
 filters:
   - ../date.lua
   - include-code-files
@@ -183,6 +184,7 @@ By default, GitLab Pages includes a random hash in site [URLs](https://en.wikipe
 
 At this point, we have completed [G2] setup and you should be able to run `quarto` `publish` `gh-pages` from your `main` branch to render your site and deploy it to GitHub and/or GitLab Pages. If you are curious to learn about GitHub Actions and [G3] setup, you can continue to follow along, but otherwise feel free to skip down to @sec-cust to learn about customizing your Quarto site instead.
 
+To set up [G3] for my [`maptv.github.io` repo](https://github.com/maptv/maptv.github.io), I 
 
 mkdir -p .github/workflows
 .github/workflows/publish.yml

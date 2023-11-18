@@ -8,6 +8,9 @@ listing:
   sort: false
   type: grid
   categories: true
+format:
+  html:
+    output-file: index.html
 ---
 
 ```{=html}
