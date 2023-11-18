@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://maptv.github.io/cv/index.html</loc>
-    <lastmod>2023-11-15T05:43:34.506Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/blog/index.html</loc>
-    <lastmod>2023-11-15T21:26:06.912Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/blog/quarto/index.html</loc>
-    <lastmod>2023-11-17T23:03:57.964Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/blog/knitr/index.html</loc>
-    <lastmod>2023-11-15T05:43:34.500Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/blog/observable/index.html</loc>
-    <lastmod>2023-11-15T05:43:34.503Z</lastmod>
+    <loc>https://maptv.github.io/index.html</loc>
+    <lastmod>2023-11-18T02:02:53.034Z</lastmod>
   </url>
   <url>
     <loc>https://maptv.github.io/blog/jupyter/index.html</loc>
-    <lastmod>2023-11-15T05:43:34.497Z</lastmod>
+    <lastmod>2023-11-18T02:02:51.262Z</lastmod>
   </url>
   <url>
-    <loc>https://maptv.github.io/index.html</loc>
-    <lastmod>2023-11-15T05:43:34.454Z</lastmod>
+    <loc>https://maptv.github.io/blog/quarto/index.html</loc>
+    <lastmod>2023-11-18T02:02:46.702Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/blog/knitr/index.html</loc>
+    <lastmod>2023-11-18T02:02:43.866Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/blog/observable/index.html</loc>
+    <lastmod>2023-11-18T02:02:50.622Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/blog/index.html</loc>
+    <lastmod>2023-11-18T02:02:51.906Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/cv/index.html</loc>
+    <lastmod>2023-11-18T02:02:56.842Z</lastmod>
   </url>
 </urlset>
