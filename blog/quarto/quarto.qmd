@@ -199,15 +199,7 @@ curl -O https://raw.githubusercontent.com/maptv/maptv.github.io/main/.github/wor
 ```
 :::
 
-
-The `publish.yml` file in @exm-pub installs both 
-you are curious to learn about GitHub Actions and [G3] setup, you can continue to follow along, but otherwise feel free to skip down to @sec-cust to learn about customizing your Quarto site instead.
-
-To set up [G3] for my [`maptv.github.io` repo](https://github.com/maptv/maptv.github.io), I 
-
-mkdir -p .github/workflows
-
-.github/workflows/publish.yml
+The `publish.yml` file in @exm-pub installs R, Python, and the packages in the `renv.lock` and `requirements.txt` files.
 
 # Customizing Quarto sites {#sec-cust}
 
