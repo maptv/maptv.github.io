@@ -3,7 +3,7 @@ USER root
 RUN apt update \
     && apt install -y curl \
     && rm -rf /var/lib/apt/lists/* \
-    && curl -L https://quarto.org/download/latest/quarto-linux-arm64.deb -o /tmp/quarto.deb \
+    && curl -L https://quarto.org/download/latest/quarto-linux-amd64.deb -o /tmp/quarto.deb \
     && dpkg -i /tmp/quarto.deb \
     && rm /tmp/quarto.deb
 
