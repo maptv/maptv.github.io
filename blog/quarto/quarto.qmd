@@ -162,12 +162,20 @@ quarto create project website USERNAME.gitlab.io
 
 If you want to have your website hosted on GitHub Pages, you will need to [set `gh-pages` as your source branch](https://quarto.org/docs/publishing/github-pages.html#source-branch). For GitLab Pages, you will need to add a `.gitlab-ci.yml` file to your repo and update your `_quarto.yml` file as shown in @exm-yml.
 
+::: {.panel-tabset}
+
+#### `.gitlab-ci.yml`
+
 ::: {#exm-yml}
 ```{.yaml include="../../.gitlab-ci.yml"}
 ```
 
+#### `_quarto.yml`
+
 ```{.yaml include="../../_quarto.yml" start-line=1 end-line=3}
 ```
+:::
+
 :::
 
 To make it easier to maintain my site on both GitHub and GitLab Pages, I set up my local repo cloned to have two `origin` remote URLs using the code as shown in @exm-remote. Now, running `quarto` `publish` or `git` `push` in my local repo, updates my content on both GitHub and GitLab.
@@ -186,10 +194,9 @@ At this point, we have completed [G2] setup and you should be able to run `quart
 
 To set up [G3] alongside [G2], all we have to do is create a `.github/workflows` directory and add a `publish.yml` file, like the one displayed in @exm-pub. To create the required directory and obtain the `publish.yml` I use for my site, you can use the shell shown in @exm-curl.
 
-::: {#exm-pub}
-```{.yaml include="../../.github/workflows/publish.yml"}
-```
-:::
+::: {.panel-tabset}
+
+#### `curl`
 
 ::: {#exm-curl}
 ```{.sh}
@@ -197,6 +204,15 @@ mkdir -p .github/workflows
 cd .github/workflows
 curl -O https://raw.githubusercontent.com/maptv/maptv.github.io/main/.github/workflows/publish.yml
 ```
+:::
+
+#### `.github/workflows/publish.yml`
+
+::: {#exm-pub}
+```{.yaml="" include="../../.github/workflows/publish.yml"}
+```
+:::
+
 :::
 
 The `publish.yml` file in @exm-pub installs R, Python, and the packages in the `renv.lock` and `requirements.txt` files.
@@ -215,7 +231,7 @@ To add a custom [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20
 
 ::: {#exm-html}
 
-::: panel-tabset
+::: {.panel-tabset}
 
 #### `*.qmd`
 
@@ -277,7 +293,7 @@ While `time.js` is sourced by Quarto when it reads the HTML block in each of my 
 Coming up next on my blog is [a post](../observable/observable.qmd) that introduces `Dec` with [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
 
 ::: {#exm-date}
-::: panel-tabset
+::: {.panel-tabset}
 #### `*.qmd`
 
 ```` html
