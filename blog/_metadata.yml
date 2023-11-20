@@ -21,7 +21,7 @@ format:
     code-tools: true
     link-external-icon: true
     link-external-newwindow: true
-    link-external-filter: ^(?:http:|https:)\/\/www\.maptv\.(github\.io|gitlab\.io|netlify\.app|quarto\.pub)
+    link-external-filter: '^(?:http:|https:)\/\/www\.maptv\.(github\.io|gitlab\.io|netlify\.app|quarto\.pub)'
     crossref:
       lst-title: List
       lst-prefix: List
