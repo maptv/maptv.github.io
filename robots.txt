@@ -1,1 +1,1 @@
-Sitemap: https://maptv.github.io/sitemap.xml
+Sitemap: https://github.com/maptv/maptv.github.io/sitemap.xml
