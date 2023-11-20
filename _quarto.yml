@@ -28,6 +28,7 @@ website:
       - icon: envelope
         href: mailto:maptv@vt.edu
   twitter-card: true
+  site-url: https://maptv.github.io
   sidebar:
     search: true
     sort: order
