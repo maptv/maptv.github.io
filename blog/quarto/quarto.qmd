@@ -13,15 +13,10 @@ format:
   html:
     mermaid:
       theme: default
-    code-tools: true
-    link-external-icon: true
     output-file: index.html
 filters:
   - ../date.lua
   - include-code-files
-comments:
-  giscus:
-    repo: maptv/maptv.github.io
 ---
 
 [Quarto](https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system) is an [open-source software](https://en.wikipedia.org/wiki/Open-source_software#:~:text=Open%2Dsource%20software%20(OSS)%20is%20computer%20software%20that%20is%20released%20under%20a%20license%20in%20which%20the%20copyright%20holder%20grants%20users%20the%20rights%20to%20use%2C%20study%2C%20change%2C%20and%20distribute%20the%20software%20and%20its%20source%20code%20to%20anyone%20and%20for%20any%20purpose.) system for turning plain-text source files into outputs like articles, books, blogs, dashboards, presentations, reports, and websites. [Announced](https://posit.co/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system) on [`2022+149`](#){data-bs-toggle="tooltip" data-bs-title="2022-07-28"} by [Posit](https://posit.co) CEO [JJ Allaire](https://www.rstudio.com/authors/j.j.-allaire/), Quarto is already taking the world🌐by storm⛈️!
@@ -63,11 +58,7 @@ Once you are done setting up your computer and creating the [Quarto website temp
 
 There are so many different ways to publish a Quarto site that I decided to come up with a naming system for Quarto publishing methods. The naming system derives a code for each publishing method from the numbered lists in the Quarto publishing documentation. For example, I refer to the [two methods to publish to Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto,your%20code%20changes.) as [Q1] and [Q2]:
 
-> There are two ways to publish content to Quarto Pub (both are covered in more detail below):
-> 1. Use the quarto publish command to publish content rendered on your local machine (this is the recommend approach when you are getting started).
-> 2. If you are using GitHub, you can use a GitHub Action to automatically render your project and publish the resulting content whenever your code changes.
-
-I use this naming system in the `Code` column of @tbl-pub. The publishing methods in @tbl-pub each target a particular web `Host`, `Render` content locally or on a remote server, and deploy sites using either the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) or the [`git` `push`](https://git-scm.com/docs/git-push) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) `Command`.
+@tbl-pub uses this naming system in its `Code` column to identify the publishing methods I discuss in this blog post. Each publishing method targets a particular web `Host`, `Render`s content locally or on a remote server, and deploys sites using either the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) or the [`git` `push`](https://git-scm.com/docs/git-push) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) `Command`.
 
 | Code  | Host     | Render | Command   |
 | ----- | -------- | ------ | --------- |
@@ -132,7 +123,7 @@ To summarize the Quarto publishing methods I discussed so far, [Q1] and [N1] are
 
 In contrast, [Q2], [G3], and [N3] make it possible to skip local rendering in favor of relying on [GitHub Actions](https://quarto.org/docs/publishing/quarto-pub.html#github-action) to handle all of the necessary steps. Before trying to use GitHub Actions or any [other continuous integration systems](https://quarto.org/docs/publishing/ci.html) in your publishing workflow, I suggest getting used to working with `quarto` `publish`.
 
-In @sec-ghp, I will walk through the setup of both [G2] and [G3] to provide the option of rendering locally by running `quarto` `publish` or rendering remotely with GitHub Actions by pushing to the `main` branch. Along the way, I will share many practical tips for working with Quarto and general advice that you can apply to any project.
+In @sec-ghp, I will walk through the setup of both [G2] and [G3] to provide the option of rendering locally by running `quarto` `publish` or rendering remotely with GitHub Actions by pushing to the `main` branch. Along the way, I will share many practical tips and general advice that you can apply to any project.
 
 ## GitHub Pages setup {#sec-ghp}
 

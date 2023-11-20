@@ -11,6 +11,9 @@ listing:
 format:
   html:
     output-file: index.html
+    code-tools: false
+    link-external-icon: false
+comments: false
 ---
 
 ```{=html}

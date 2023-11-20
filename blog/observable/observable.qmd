@@ -13,12 +13,7 @@ categories:
   - quarto
 format:
   html:
-    code-tools: true
-    link-external-icon: true
     output-file: index.html
-comments:
-  giscus:
-    repo: maptv/maptv.github.io
 ---
 
 ## Day-of-the-year {#sec-intro-doty}

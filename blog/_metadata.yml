@@ -18,7 +18,13 @@ format:
     code-copy: true
     code-fold: true
     code-link: true
+    code-tools: true
+    link-external-icon: true
     link-external-newwindow: true
+    link-external-filter: ^(?:http:|https:)\/\/www\.maptv\.(github\.io|gitlab\.io|netlify\.app|quarto\.pub)
     crossref:
       lst-title: List
       lst-prefix: List
+comments:
+  giscus:
+    repo: maptv/maptv.github.io
