@@ -1492,19 +1492,13 @@ set(viewof sliceString, setSliceDotd(sliceDotd))
 ```{=html}
 <script src="../../time.js"></script>
 <style>
-#title-block-header > div.quarto-title-banner.page-columns.page-full {
-  margin: 0px;
-  padding: 0px;
-}
-main#quarto-document-content {
-    margin: 0px;
-    padding: 0px;
-}
-
-// header#title-block-header { margin: 0px; }
-ul.navbar-nav.navbar-nav-scroll {
-    -webkit-flex-direction: row !important;
-    -webkit-justify-content: center !important;
-    }
+#title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
+#title-block-header { margin: 0px; }
+main#quarto-document-content { margin: 0px; padding: 0px; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row; }
+#quarto-sidebar { padding: 0px; }
+#quarto-sidebar > * { padding: 0px; }
+#quarto-margin-sidebar { padding: 17px; }
+div.quarto-title-meta { padding-bottom: 8px; }
 </style>
 ```

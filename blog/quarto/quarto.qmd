@@ -435,22 +435,13 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 </script>
 <style>
-#title-block-header > div.quarto-title-banner.page-columns.page-full {
-  margin: 0px;
-  padding: 0px;
-}
+#title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
 #title-block-header { margin: 0px; }
-figcaption { text-align: center; }
-#fig-1 > figure > figcaption.figure { text-align: center; }
-#fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca { text-align: center; }
-
-#quarto-header > nav.navbar.navbar-expand-lg.navbar-dark > div {
-    -webkit-justify-content: space-between;
-}
-
-ul.navbar-nav.navbar-nav-scroll {
-    -webkit-flex-direction: row !important;
-    -webkit-justify-content: center !important;
-    }
+main#quarto-document-content { margin: 0px; padding: 0px; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row; }
+#quarto-sidebar { padding: 0px; }
+#quarto-sidebar > * { padding: 0px; }
+#quarto-margin-sidebar { padding: 17px; }
+div.quarto-title-meta { padding-bottom: 8px; }
 </style>
 ```
