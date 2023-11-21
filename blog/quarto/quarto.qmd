@@ -124,10 +124,12 @@ To summarize the Quarto publishing methods I discussed so far, [Q1] and [N1] are
 
 In my experience, GitHub Pages is the only web host that properly differentiates between internal and [external links](https://quarto.org/docs/output-formats/html-basics.html#external-links). All of the other web hosts include the [external link icon](#){.external} on all links regardless of whether they target my site or an external site.
 
-To solve this issue, I tried to set the [`link-external-filter`](https://quarto.org/docs/output-formats/html-basics.html#external-links:~:text=the%20current%20tab).-,link%2Dexternal%2Dfilter,-A%20regular%20expression) property to the following [regular expression](https://en.wikipedia.org/wiki/Regular_expression#:~:text=A%20regular%20expression%20(shortened%20as%20regex%20or%20regexp)%2C%5B1%5D%20sometimes%20referred%20to%20as%20rational%20expression%2C%5B2%5D%5B3%5D%20is%20a%20sequence%20of%20characters%20that%20specifies%20a%20match%20pattern%20in%20text.): `'^(?:http:|https:)\/\/maptv\.(?:github|gitlab|netlify|quarto).*'`. Unfortunately, this did not resolve the issue, so if you notice a problem with the `link-external-icon` feature on other web hosts, I suggest switching to GitHub Pages.
+I tried unsuccessfully to solve this issue by setting the [`link-external-filter`](https://quarto.org/docs/output-formats/html-basics.html#external-links) property to a [regular expression](https://en.wikipedia.org/wiki/Regular_expression#:~:text=A%20regular%20expression%20(shortened%20as%20regex%20or%20regexp)%2C%5B1%5D%20sometimes%20referred%20to%20as%20rational%20expression%2C%5B2%5D%5B3%5D%20is%20a%20sequence%20of%20characters%20that%20specifies%20a%20match%20pattern%20in%20text.). If you notice a problem with the `link-external-icon` feature on other web hosts, I suggest switching to GitHub Pages.
 
 All of the publishing methods I have discussed so far require us to generate output files locally by rendering our source files.
 In contrast, [Q2], [G3], and [N3] make it possible to skip local rendering in favor of relying on [GitHub Actions](https://quarto.org/docs/publishing/quarto-pub.html#github-action) to handle all of the necessary steps.
+
+[G3] is noteworthy, because it offers the same convenience of [G1] but without the messy commits. An added bonus of [G3] is that rendering with GitHub Actions provides a reproducible computational environment that is not dependent on what you have installed on your computer.
 
 Before trying to use GitHub Actions or any [other continuous integration systems](https://quarto.org/docs/publishing/ci.html) in your publishing workflow, I suggest getting used to working with `quarto` `publish` ([Q1], [G2], or [N1]). You can always set up other publishing methods later with sacrificing anything, because [G1] is the only deployment method cannot be combined with all of the others.
 
@@ -206,11 +208,9 @@ git remote set-url --add origin $(git remote get-url lab)
 
 By default, GitLab Pages includes a random hash in site [URLs](https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web). To shorten the URL of my GitLab Pages site to <maptv.gitlab.io>, I had to uncheck **Use unique domain** under `Deploy > Pages` in the GitLab sidebar.
 
-At this point, we have completed [G2] setup and you should be able to run `quarto` `publish` `gh-pages` from your `main` branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with `quarto` `publish` at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions.
+At this point, we have completed [G2] setup and you should be able to run `quarto` `publish` `gh-pages` from your `main` branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with `quarto` `publish` at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions, because `quarto` `publish` creates a `_publish.yml` file in the root of your project that is required for publishing via GitHub Actions
 
-Next, we will set up [G3], a Quarto publishing method that offers the same convenience of [G1] but without the messy commits. An added bonus of [G3] is that rendering with GitHub Actions provides a reproducible computational environment that is defined by our `publish.yml` file.
-
-[G3] setup only requires that we create a `.github/workflows` directory and add a `publish.yml` file to that directory. @exm-curl contains the `publish.yml` file I use for my own site and the shell code that can used to obtain this file.
+[G3] setup only requires that we create a `.github/workflows` directory and add a `publish.yml` file (not to be confused with `_publish.yml`) to that directory. @exm-curl contains the `publish.yml` file I use for my own site and the shell code that can used to obtain this file.
 
 ::: {#exm-curl}
 
@@ -236,7 +236,20 @@ The `publish.yml` file in @exm-curl installs Quarto, the R and Python programmin
 
 To modify the Python files that are installed by GitHub Actions, you can edit the `requirements.txt` file in your repo. To update your `renv.lock` file so that it includes all of the R packages your site requires, run [`renv::snapshot()`](https://rstudio.github.io/renv/reference/snapshot.html) in an R session or `Rscript` `-e` `renv::snapshot()` in a shell.
 
-After pushing the `.github/workflows/publish.yml` file, you can check the GitHub Actions tab in GitHub to see 
+After pushing the `.github/workflows/publish.yml` file, you can visit the Actions tab in your remote repo on GitHub to check the progress of the deployment of your site. If your site did not build successfully, you can go through the logs to try to diagnose the problem.
+
+I configured my `publish.yml` to have GitHub Actions push my remote `gh-pages` to GitLab so that my site is kept in sync on both GitHub and GitLab Pages. This required manually creating a token on GitLab and adding it to GitHub, which I accomplished using the GitHub CLI as shown in @exm-secret.
+
+::: {#exm-secret}
+
+```{.sh}
+gh secret set GITLAB_AUTH_TOKEN
+```
+:::
+
+Instead of using GitHub Actions, I could have expanded my `.gitlab-ci.yml` file to have [GitLab CI/CD](https://docs.gitlab.com/ee/ci) build my site. I decided not to go down this route because the Quarto dev team has many [GitHub Actions workflows](https://github.com/quarto-dev/quarto-actions) available but no official support yet for GitLab CI/CD.
+
+To summarize, I have two options for publishing my site: 1) running `quarto` `publish` and 2) running `git push` ([G2]) + [N2]
 
 # Customizing Quarto sites {#sec-cust}
 
