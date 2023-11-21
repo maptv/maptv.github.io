@@ -451,7 +451,7 @@ Table&nbsp;1: Quarto website publishing methods
 <div aria-describedby="fig-git-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-git">flowchart LR
-   A[working&lt;br/&gt;directory]-.git&lt;br/&gt;add.-&gt;B[/staging&lt;br/&gt;area/]-.git&lt;br/&gt;commit.-&gt;C(local&lt;br/&gt;repo)-.git&lt;br/&gt;push.-&gt;D(remote&lt;br/&gt;repo)
+   A[working&lt;br/&gt;directory]-.git&lt;br/&gt;add.-&gt;B{{staging&lt;br/&gt;area}}-.git&lt;br/&gt;commit.-&gt;C([local&lt;br/&gt;repo])-.git&lt;br/&gt;push.-&gt;D(remote&lt;br/&gt;repo)
 </pre>
 </div>
 </div>
@@ -1550,7 +1550,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-94"><a href="#cb18-94" aria-hidden="true" tabindex="-1"></a><span class="in">%%| fig-align: center</span></span>
 <span id="cb18-95"><a href="#cb18-95" aria-hidden="true" tabindex="-1"></a><span class="in">%%| fig-width: 9</span></span>
 <span id="cb18-96"><a href="#cb18-96" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
-<span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a><span class="in">   A[working&lt;br/&gt;directory]-.git&lt;br/&gt;add.-&gt;B[/staging&lt;br/&gt;area/]-.git&lt;br/&gt;commit.-&gt;C(local&lt;br/&gt;repo)-.git&lt;br/&gt;push.-&gt;D(remote&lt;br/&gt;repo)</span></span>
+<span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a><span class="in">   A[working&lt;br/&gt;directory]-.git&lt;br/&gt;add.-&gt;B{{staging&lt;br/&gt;area}}-.git&lt;br/&gt;commit.-&gt;C([local&lt;br/&gt;repo])-.git&lt;br/&gt;push.-&gt;D(remote&lt;br/&gt;repo)</span></span>
 <span id="cb18-98"><a href="#cb18-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-99"><a href="#cb18-99" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-100"><a href="#cb18-100" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">G1</span><span class="co">]</span> is convenient for experienced Git users like me, but leads to messy <span class="co">[</span><span class="ot">commits</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) that contain changes to both source and output files. Also, <span class="co">[</span><span class="ot">G1</span><span class="co">]</span> cannot be combined with <span class="co">[</span><span class="ot">Q2</span><span class="co">]</span>, <span class="co">[</span><span class="ot">G3</span><span class="co">]</span>, or <span class="co">[</span><span class="ot">N3</span><span class="co">]</span>, whereas the other publishing methods are not mutually exclusive.</span>
