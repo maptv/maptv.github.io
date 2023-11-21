@@ -84,10 +84,6 @@ There are so many different ways to publish a Quarto site that I decided to come
 
 [Q1], [N1], and [G2] all use `quarto` `publish` to [render](https://quarto.org/docs/websites/index.html#website-render) website content locally and then deploy it in one fell swoop. If you do not plan to use the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control system or the advanced features offered by [GitHub](https://github.com), [GitLab](https://gitlab.com), or [Netlify](https://netlify.com), then I recommend deploying your site to [Quarto Pub](https://quarto.pub) by running [`quarto` `publish` `quarto-pub`](https://quarto.org/docs/publishing/quarto-pub.html#publish-command) ([Q1] in @tbl-pub).
 
-In my experience, GitHub Pages is the only web host that properly differentiates between internal and [external links](https://quarto.org/docs/output-formats/html-basics.html#external-links). All of the other web hosts include the "external link icon" on all links regardless of whether they target my site or an external site.
-
-To solve this issue, I tried to set the [`link-external-filter`](https://quarto.org/docs/output-formats/html-basics.html#external-links:~:text=the%20current%20tab).-,link%2Dexternal%2Dfilter,-A%20regular%20expression) property to the following [regular expression](https://en.wikipedia.org/wiki/Regular_expression#:~:text=A%20regular%20expression%20(shortened%20as%20regex%20or%20regexp)%2C%5B1%5D%20sometimes%20referred%20to%20as%20rational%20expression%2C%5B2%5D%5B3%5D%20is%20a%20sequence%20of%20characters%20that%20specifies%20a%20match%20pattern%20in%20text.): `'^(?:http:|https:)\/\/maptv\.(github|gitlab|netlify|quarto).*'`. Unfortunately, it did not seem to work, so if you notice a problem with the `link-external-icon` feature on other web hosts, I suggest switching to GitHub Pages.
-
 Like [Q1], [N1] is a deployment method that does not require Git and makes it possible to deploy our site with a single shell command: [`quarto` `publish` `netlify`](https://quarto.org/docs/publishing/netlify.html#publish-command). [N1] provides access to the advanced web hosting features offered by Netlify and can even [render content](https://quarto.org/docs/publishing/netlify.html#rendering-on-netlify) as long as code execution is [frozen](https://quarto.org/docs/publishing/netlify.html#freezing-computations).
 
 The first publishing method I tried for my personal site was [G1], which requires the use of Git to [push](https://github.com/git-guides/git-push#what-does-git-push-do) all website content to a Git provider like GitHub or GitLab. After I set up [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#render-to-docs) and [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/), I could update my website on both of these web hosts just by going through the standard Git workflow shown in @fig-git.
@@ -101,10 +97,11 @@ flowchart LR
    A[working<br/>directory]-.git<br/>add.->B[/staging<br/>area/]-.git<br/>commit.->C(local<br/>repo)-.git<br/>push.->D(remote<br/>repo)
 ```
 
-[G1] is convenient for experienced Git users like me, but leads to messy [commits](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) that contain changes to both source and output files.
-To address this issue, I switched to [G2] by adding the `quarto` `publish` to my publishing workflow. With [G2], I can track changes to my source files on my `main` [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control) and publish my output files to GitHub Pages and GitLab Pages from my `gh-pages` branch.
+[G1] is convenient for experienced Git users like me, but leads to messy [commits](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) that contain changes to both source and output files. Also, [G1] cannot be combined with [Q2], [G3], or [N3], whereas the other publishing methods are not mutually exclusive.
 
-To deploy my site to GitHub Pages, GitLab Pages, and Netlify, I use [G2] and [N2]. When I run `quarto` `publish` `gh-pages`, Quarto renders my site into my output directory, copies the output directory contents to the `gh-pages` branch of my local repo, and then [commits](https://git-scm.com/docs/git-commit) and [pushes](https://git-scm.com/docs/git-push) the changes to my remote repos on [GitHub](https://github.com/maptv/maptv.github.io) and [GitLab](https://gitlab.com/maptv/maptv.gitlab.io), which triggers Netlify to [build my site](https://quarto.org/docs/publishing/netlify.html#publish-from-git-provider) from the `gh-pages` branch.
+To have cleaner commits and more flexibility in choosing publish approaches, I switched from [G1] to [G2] by adding `quarto` `publish` to my publishing workflow. With [G2], I can track changes to my source files on my `main` [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control) and publish my output files to GitHub Pages and GitLab Pages from my `gh-pages` branch.
+
+To deploy my site to GitHub Pages, GitLab Pages, and Netlify, I combined  [G2] and [N2]. When I run `quarto` `publish` `gh-pages`, Quarto renders my site into my output directory, copies the output directory contents to the `gh-pages` branch of my local repo, and then [commits](https://git-scm.com/docs/git-commit) and [pushes](https://git-scm.com/docs/git-push) the changes to my remote repos on [GitHub](https://github.com/maptv/maptv.github.io) and [GitLab](https://gitlab.com/maptv/maptv.gitlab.io), which triggers Netlify to [build my site](https://quarto.org/docs/publishing/netlify.html#publish-from-git-provider) from the `gh-pages` branch.
 
 The only disadvantage of [G2] is that there are many commands to run, because running `quarto` `publish` `gh-pages` only updates the output files on my `gh-pages` and I still have to run the `git` shell commands shown in @fig-git to update the source files on my `main` branch. To make it easier to make incremental changes to my website and frequently release new content, I combined all of the [G2] shell commands into a shell [alias](https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.) like the one shown in @exm-qp.
 
@@ -123,13 +120,18 @@ You can add shell aliases to a [shell configuration file](https://en.wikipedia.o
 
 If you decide to try my `qp` alias, please exercise extreme caution as any un-[escaped](https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.) or un-quoted [metacharacters](https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter) may yield surprising effects instead of being included verbatim in the commit message. For example, `qp *` will list the contents of the current directory in the commit message in place of the asterisk!
 
-To summarize the Quarto publishing methods I discussed so far, [Q1] and [N1] are easy to configure and use, [N2] automatically builds sites from Git repos, [G1] is not recommended because it pollutes commits with output file changes, and [G2] is more difficult to set up and use but provides clean commits and a nice separation of source and output files. All of these publishing methods require us to generate output files locally by rendering our source files.
+To summarize the Quarto publishing methods I discussed so far, [Q1] and [N1] are easy to configure and use, [N2] automatically builds sites from Git repos, [G1] is not recommended because it pollutes commits with output file changes, and [G2] is more difficult to set up and use but provides clean commits and a nice separation of source and output files.
 
-In contrast, [Q2], [G3], and [N3] make it possible to skip local rendering in favor of relying on [GitHub Actions](https://quarto.org/docs/publishing/quarto-pub.html#github-action) to handle all of the necessary steps. Before trying to use GitHub Actions or any [other continuous integration systems](https://quarto.org/docs/publishing/ci.html) in your publishing workflow, I suggest getting used to working with `quarto` `publish`.
+In my experience, GitHub Pages is the only web host that properly differentiates between internal and [external links](https://quarto.org/docs/output-formats/html-basics.html#external-links). All of the other web hosts include the [external link icon](#){.external} on all links regardless of whether they target my site or an external site.
 
-In @sec-ghp, I will walk through the setup of both [G2] and [G3] to provide the option of rendering locally by running `quarto` `publish` or rendering remotely with GitHub Actions by pushing to the `main` branch. [G3] can easily be combined [Q2] and [N3], but I decided to stick with [N2].
+To solve this issue, I tried to set the [`link-external-filter`](https://quarto.org/docs/output-formats/html-basics.html#external-links:~:text=the%20current%20tab).-,link%2Dexternal%2Dfilter,-A%20regular%20expression) property to the following [regular expression](https://en.wikipedia.org/wiki/Regular_expression#:~:text=A%20regular%20expression%20(shortened%20as%20regex%20or%20regexp)%2C%5B1%5D%20sometimes%20referred%20to%20as%20rational%20expression%2C%5B2%5D%5B3%5D%20is%20a%20sequence%20of%20characters%20that%20specifies%20a%20match%20pattern%20in%20text.): `'^(?:http:|https:)\/\/maptv\.(?:github|gitlab|netlify|quarto).*'`. Unfortunately, this did not resolve the issue, so if you notice a problem with the `link-external-icon` feature on other web hosts, I suggest switching to GitHub Pages.
 
-Along the way, I will share many practical tips and general advice that you can apply to any project.
+All of the publishing methods I have discussed so far require us to generate output files locally by rendering our source files.
+In contrast, [Q2], [G3], and [N3] make it possible to skip local rendering in favor of relying on [GitHub Actions](https://quarto.org/docs/publishing/quarto-pub.html#github-action) to handle all of the necessary steps.
+
+Before trying to use GitHub Actions or any [other continuous integration systems](https://quarto.org/docs/publishing/ci.html) in your publishing workflow, I suggest getting used to working with `quarto` `publish` ([Q1], [G2], or [N1]). You can always set up other publishing methods later with sacrificing anything, because [G1] is the only deployment method cannot be combined with all of the others.
+
+In @sec-ghp, I will walk through the setup of both [G2] and [G3] to provide the option of rendering locally by running `quarto` `publish` or rendering remotely with GitHub Actions by pushing to the `main` branch. Along the way, I will share many practical tips and general advice that you can apply to any project.
 
 ## GitHub Pages setup {#sec-ghp}
 
@@ -141,7 +143,13 @@ The GitHub CLI allows you to add an SSH key to your account during or [after aut
 
 After authentication and SSH key setup, you can run the code in either of the code chunks in @exm-git to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my [`.zshrc`](https://github.com/maptv/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630).
 
+### Repo setup
+
 ::: {#exm-git}
+::: {.panel-tabset}
+
+#### GitHub
+
 ```{.sh}
 cd # start in home directory
 mkdir -p USERNAME
@@ -150,6 +158,8 @@ gh repo create USERNAME.github.io --add-readme --clone --public
 cd SITENAME
 quarto create project website USERNAME.github.io
 ```
+
+#### GitLab
 
 ```{.sh}
 cd # start in home directory
@@ -162,14 +172,16 @@ git branch --set-upstream-to=origin/main main
 quarto create project website USERNAME.gitlab.io
 ```
 :::
+:::
 
 If you want to have your website hosted on GitHub Pages, you will need to [set `gh-pages` as your source branch](https://quarto.org/docs/publishing/github-pages.html#source-branch). For GitLab Pages, you will need to add a `.gitlab-ci.yml` file to your repo and update your `_quarto.yml` file as shown in @exm-yml.
+
+::: {#exm-yml}
 
 ::: {.panel-tabset}
 
 #### `.gitlab-ci.yml`
 
-::: {#exm-yml}
 ```{.yaml include="../../.gitlab-ci.yml"}
 ```
 
@@ -177,6 +189,7 @@ If you want to have your website hosted on GitHub Pages, you will need to [set `
 
 ```{.yaml include="../../_quarto.yml" start-line=1 end-line=3}
 ```
+
 :::
 
 :::
@@ -195,30 +208,31 @@ By default, GitLab Pages includes a random hash in site [URLs](https://en.wikipe
 
 At this point, we have completed [G2] setup and you should be able to run `quarto` `publish` `gh-pages` from your `main` branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with `quarto` `publish` at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions.
 
-To set up [G3] alongside [G2], all we have to do is create a `.github/workflows` directory and add a `publish.yml` file, like the one displayed in @exm-pub. To create the required directory and obtain the `publish.yml` I use for my site, you can use the shell shown in @exm-curl.
+To set up [G3] alongside [G2], all we have to do is create a `.github/workflows` directory and add a `publish.yml` file. @exm-curl contains the `publish.yml` file I use for my own site and the shell code that can used to obtain this file..
+
+::: {#exm-curl}
 
 ::: {.panel-tabset}
 
 #### `curl`
 
-::: {#exm-curl}
 ```{.sh}
 mkdir -p .github/workflows
 cd .github/workflows
 curl -O https://raw.githubusercontent.com/maptv/maptv.github.io/main/.github/workflows/publish.yml
 ```
-:::
 
 #### `.github/workflows/publish.yml`
 
-::: {#exm-pub}
-```{.yaml="" include="../../.github/workflows/publish.yml"}
+```{.yaml include="../../.github/workflows/publish.yml"}
 ```
-:::
 
 :::
+:::
 
-The `publish.yml` file in @exm-pub installs R, Python, and the packages in the `renv.lock` and `requirements.txt` files.
+The `publish.yml` file in @exm-curl installs Quarto, the R and Python programming languages, and the packages in the `renv.lock` and `requirements.txt` files. If you do not need R and/or Python, you can remove any unnecessary portions of the file.
+
+To modify the Python files that are installed by GitHub Actions, you can edit the `requirements.txt` file in your repo. To update your `renv.lock` file so that it includes all of the R packages your site requires, run [`renv::snapshot()`](https://rstudio.github.io/renv/reference/snapshot.html) in an R session or `Rscript -e renv::snapshot()` in a shell.
 
 # Customizing Quarto sites {#sec-cust}
 
