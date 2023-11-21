@@ -816,23 +816,14 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 </script>
 <style>
-#title-block-header > div.quarto-title-banner.page-columns.page-full {
-  margin: 0px;
-  padding: 0px;
-}
+#title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
 #title-block-header { margin: 0px; }
-figcaption { text-align: center; }
-#fig-1 > figure > figcaption.figure { text-align: center; }
-#fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca { text-align: center; }
-
-#quarto-header > nav.navbar.navbar-expand-lg.navbar-dark > div {
-    -webkit-justify-content: space-between;
-}
-
-ul.navbar-nav.navbar-nav-scroll {
-    -webkit-flex-direction: row !important;
-    -webkit-justify-content: center !important;
-    }
+main#quarto-document-content { margin: 0px; padding: 0px; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row; }
+#quarto-sidebar { padding: 0px; }
+#quarto-sidebar > * { padding: 0px; }
+#quarto-margin-sidebar { padding: 17px; }
+div.quarto-title-meta { padding-bottom: 8px; }
 </style>
 
 
@@ -1900,25 +1891,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-435"><a href="#cb18-435" aria-hidden="true" tabindex="-1"></a><span class="in">const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl =&gt; new bootstrap.Tooltip(tooltipTriggerEl))</span></span>
 <span id="cb18-436"><a href="#cb18-436" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/script&gt;</span></span>
 <span id="cb18-437"><a href="#cb18-437" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;style&gt;</span></span>
-<span id="cb18-438"><a href="#cb18-438" aria-hidden="true" tabindex="-1"></a><span class="in">#title-block-header &gt; div.quarto-title-banner.page-columns.page-full {</span></span>
-<span id="cb18-439"><a href="#cb18-439" aria-hidden="true" tabindex="-1"></a><span class="in">  margin: 0px;</span></span>
-<span id="cb18-440"><a href="#cb18-440" aria-hidden="true" tabindex="-1"></a><span class="in">  padding: 0px;</span></span>
-<span id="cb18-441"><a href="#cb18-441" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb18-442"><a href="#cb18-442" aria-hidden="true" tabindex="-1"></a><span class="in">#title-block-header { margin: 0px; }</span></span>
-<span id="cb18-443"><a href="#cb18-443" aria-hidden="true" tabindex="-1"></a><span class="in">figcaption { text-align: center; }</span></span>
-<span id="cb18-444"><a href="#cb18-444" aria-hidden="true" tabindex="-1"></a><span class="in">#fig-1 &gt; figure &gt; figcaption.figure { text-align: center; }</span></span>
-<span id="cb18-445"><a href="#cb18-445" aria-hidden="true" tabindex="-1"></a><span class="in">#fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca { text-align: center; }</span></span>
-<span id="cb18-446"><a href="#cb18-446" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-447"><a href="#cb18-447" aria-hidden="true" tabindex="-1"></a><span class="in">#quarto-header &gt; nav.navbar.navbar-expand-lg.navbar-dark &gt; div {</span></span>
-<span id="cb18-448"><a href="#cb18-448" aria-hidden="true" tabindex="-1"></a><span class="in">    -webkit-justify-content: space-between;</span></span>
-<span id="cb18-449"><a href="#cb18-449" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb18-450"><a href="#cb18-450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-451"><a href="#cb18-451" aria-hidden="true" tabindex="-1"></a><span class="in">ul.navbar-nav.navbar-nav-scroll {</span></span>
-<span id="cb18-452"><a href="#cb18-452" aria-hidden="true" tabindex="-1"></a><span class="in">    -webkit-flex-direction: row !important;</span></span>
-<span id="cb18-453"><a href="#cb18-453" aria-hidden="true" tabindex="-1"></a><span class="in">    -webkit-justify-content: center !important;</span></span>
-<span id="cb18-454"><a href="#cb18-454" aria-hidden="true" tabindex="-1"></a><span class="in">    }</span></span>
-<span id="cb18-455"><a href="#cb18-455" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/style&gt;</span></span>
-<span id="cb18-456"><a href="#cb18-456" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-438"><a href="#cb18-438" aria-hidden="true" tabindex="-1"></a><span class="in">#title-block-header &gt; div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }</span></span>
+<span id="cb18-439"><a href="#cb18-439" aria-hidden="true" tabindex="-1"></a><span class="in">#title-block-header { margin: 0px; }</span></span>
+<span id="cb18-440"><a href="#cb18-440" aria-hidden="true" tabindex="-1"></a><span class="in">main#quarto-document-content { margin: 0px; padding: 0px; }</span></span>
+<span id="cb18-441"><a href="#cb18-441" aria-hidden="true" tabindex="-1"></a><span class="in">ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row; }</span></span>
+<span id="cb18-442"><a href="#cb18-442" aria-hidden="true" tabindex="-1"></a><span class="in">#quarto-sidebar { padding: 0px; }</span></span>
+<span id="cb18-443"><a href="#cb18-443" aria-hidden="true" tabindex="-1"></a><span class="in">#quarto-sidebar &gt; * { padding: 0px; }</span></span>
+<span id="cb18-444"><a href="#cb18-444" aria-hidden="true" tabindex="-1"></a><span class="in">#quarto-margin-sidebar { padding: 17px; }</span></span>
+<span id="cb18-445"><a href="#cb18-445" aria-hidden="true" tabindex="-1"></a><span class="in">div.quarto-title-meta { padding-bottom: 8px; }</span></span>
+<span id="cb18-446"><a href="#cb18-446" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/style&gt;</span></span>
+<span id="cb18-447"><a href="#cb18-447" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
