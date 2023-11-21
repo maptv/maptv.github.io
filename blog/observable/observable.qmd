@@ -1502,6 +1502,9 @@ main#quarto-document-content {
 }
 
 // header#title-block-header { margin: 0px; }
-ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+ul.navbar-nav.navbar-nav-scroll {
+    -webkit-flex-direction: row !important;
+    -webkit-justify-content: center !important;
+    }
 </style>
 ```

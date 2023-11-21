@@ -23,7 +23,3 @@ p, ul {
         display: none;
     }
 }
-
-div#navbarCollapse.navbarCollapse.collapse.show > ul.navbar-nav.navbar-nav-scroll {
-    -webkit-justify-content: center !important;
-}
