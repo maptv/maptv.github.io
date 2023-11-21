@@ -208,7 +208,9 @@ By default, GitLab Pages includes a random hash in site [URLs](https://en.wikipe
 
 At this point, we have completed [G2] setup and you should be able to run `quarto` `publish` `gh-pages` from your `main` branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with `quarto` `publish` at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions.
 
-To set up [G3] alongside [G2], all we have to do is create a `.github/workflows` directory and add a `publish.yml` file. @exm-curl contains the `publish.yml` file I use for my own site and the shell code that can used to obtain this file.
+Next, we will set up [G3], a Quarto publishing method that offers the same convenience of [G1] but without the messy commits. An added bonus of [G3] is that rendering with GitHub Actions provides a reproducible computational environment that is defined by our `publish.yml` file.
+
+[G3] setup only requires that we create a `.github/workflows` directory and add a `publish.yml` file to that directory. @exm-curl contains the `publish.yml` file I use for my own site and the shell code that can used to obtain this file.
 
 ::: {#exm-curl}
 
@@ -234,7 +236,7 @@ The `publish.yml` file in @exm-curl installs Quarto, the R and Python programmin
 
 To modify the Python files that are installed by GitHub Actions, you can edit the `requirements.txt` file in your repo. To update your `renv.lock` file so that it includes all of the R packages your site requires, run [`renv::snapshot()`](https://rstudio.github.io/renv/reference/snapshot.html) in an R session or `Rscript` `-e` `renv::snapshot()` in a shell.
 
-After pushing the `.github/workflows/publish.yml` file, you can check the GitHub Actions :e
+After pushing the `.github/workflows/publish.yml` file, you can check the GitHub Actions 
 
 # Customizing Quarto sites {#sec-cust}
 
@@ -441,6 +443,11 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 figcaption { text-align: center; }
 #fig-1 > figure > figcaption.figure { text-align: center; }
 #fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca { text-align: center; }
+
+#quarto-header > nav.navbar.navbar-expand-lg.navbar-dark > div {
+    -webkit-justify-content: space-between;
+}
+
 ul.navbar-nav.navbar-nav-scroll {
     -webkit-flex-direction: row !important;
     -webkit-justify-content: center !important;

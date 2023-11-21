@@ -28,24 +28,24 @@ nav.navbar {
     background: #2C3E50 !important;
 }
 
-svg#fig-1.mermaid-js path#L-A-B-0, path#L-B-C-0 {
+svg.mermaid-js path {
     stroke: #ffffff !important;
 }
 
-svg#fig-1.mermaid-js  span.edgeLabel {
+svg.mermaid-js g.edgeLabels span.edgeLabel {
     color: #ffffff !important;
     background: #000000 !important;
 }
 
-svg#fig-1.mermaid-js  circle, rect.basic.label-container {
+svg.mermaid-js  circle, rect.basic.label-container {
     fill: #880088 !important;
 }
 
-svg#fig-1.mermaid-js  span.nodeLabel {
+svg.mermaid-js  span.nodeLabel {
     color: #ffffff !important;
 }
 
-svg#fig-1.mermaid-js .marker {
+svg.mermaid-js .marker {
     fill: #ffffff !important;
     stroke: none !important;
 }
