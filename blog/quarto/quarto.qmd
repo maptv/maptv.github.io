@@ -236,7 +236,7 @@ The `publish.yml` file in @exm-curl installs Quarto, the R and Python programmin
 
 To modify the Python files that are installed by GitHub Actions, you can edit the `requirements.txt` file in your repo. To update your `renv.lock` file so that it includes all of the R packages your site requires, run [`renv::snapshot()`](https://rstudio.github.io/renv/reference/snapshot.html) in an R session or `Rscript` `-e` `renv::snapshot()` in a shell.
 
-After pushing the `.github/workflows/publish.yml` file, you can check the GitHub Actions 
+After pushing the `.github/workflows/publish.yml` file, you can check the GitHub Actions tab in GitHub to see 
 
 # Customizing Quarto sites {#sec-cust}
 
