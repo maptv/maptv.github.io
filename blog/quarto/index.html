@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.489">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -85,7 +85,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -114,13 +120,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed slimcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../media/dec.png" alt="10-point star made up of 100 triangles" class="navbar-logo">
     </a>
@@ -135,37 +141,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../index.html" rel="" target="" aria-current="page"><i class="bi bi-person-circle" role="img">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> <i class="bi bi-person-circle" role="img">
 </i> 
- <span class="menu-text">About</span></a>
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog/index.html" rel="" target=""><i class="bi bi-pencil" role="img">
+    <a class="nav-link" href="../../blog/index.html"> <i class="bi bi-pencil" role="img">
 </i> 
- <span class="menu-text">Blog</span></a>
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv/index.html" rel="" target=""><i class="bi bi-file-earmark-person" role="img">
+    <a class="nav-link" href="../../cv/index.html"> <i class="bi bi-file-earmark-person" role="img">
 </i> 
- <span class="menu-text">CV</span></a>
+<span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/maptv" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/maptv"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/maptv" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/maptv"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:maptv@vt.edu" rel="" target=""><i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="mailto:maptv@vt.edu"> <i class="bi bi-envelope" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -173,17 +180,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog/index.html">Blog</a></li><li class="breadcrumb-item"><a href="../../blog/quarto/index.html">Quarto</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog/index.html">Blog</a></li><li class="breadcrumb-item"><a href="../../blog/quarto/index.html">Quarto</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -193,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -269,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -293,9 +299,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog/index.html">Blog</a></li><li class="breadcrumb-item"><a href="../../blog/quarto/index.html">Quarto</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Quarto</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
   <div class="quarto-categories">
@@ -307,7 +313,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -327,24 +333,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <p><a href="https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system">Quarto</a> is an <a href="https://en.wikipedia.org/wiki/Open-source_software#:~:text=Open%2Dsource%20software%20(OSS)%20is%20computer%20software%20that%20is%20released%20under%20a%20license%20in%20which%20the%20copyright%20holder%20grants%20users%20the%20rights%20to%20use%2C%20study%2C%20change%2C%20and%20distribute%20the%20software%20and%20its%20source%20code%20to%20anyone%20and%20for%20any%20purpose.">open-source software</a> system for turning plain-text source files into outputs like articles, books, blogs, dashboards, presentations, reports, and websites. <a href="https://posit.co/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system">Announced</a> on <a href="#" data-bs-toggle="tooltip" data-bs-title="2022-07-28"><code>2022+149</code></a> by <a href="https://posit.co">Posit</a> CEO <a href="https://www.rstudio.com/authors/j.j.-allaire/">JJ Allaire</a>, Quarto is already taking the world🌐by storm⛈️!</p>
 <p>I strongly believe that everyone, regardless of their background and current technical skill level, can learn and benefit from Quarto. <a href="https://quarto.org/docs/get-started/">Getting start with Quarto</a> is easy thanks to its <a href="https://quarto.org/docs/guide/">excellent documentation</a> and vibrant community of enthusiastic users and developers.</p>
 <p>Rather than repeat the basic information already available elsewhere, I will share some advanced techniques along with the fundamental knowledge needed to understand how they work. The topics I cover are very technical, but my goal is to make the content on <a href="../../blog/index.html">my blog</a> as accessible as possible.</p>
 <p>The first topic I will delve into is creating and publishing a website with Quarto. To follow the Quarto documentation on creating a <a href="https://quarto.org/docs/websites/">website</a>, you will need <a href="https://code.visualstudio.com">Visual Studio Code (VSCode)</a>, <a href="https://vscodium.com/#:~:text=VSCodium%20is%20a%20community%2Ddriven%2C%20freely%2Dlicensed%20binary%20distribution%20of%20Microsoft%E2%80%99s%20editor%20VS%20Code.">VSCodium</a>, <a href="https://posit.co/download/rstudio-desktop">RStudio</a>, or a <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>.</p>
-<section id="sec-pub" class="level1 page-columns page-full">
+<section id="sec-pub" class="level1">
 <h1>Publishing Quarto websites</h1>
 <section id="sec-inst" class="level2">
 <h2 class="anchored" data-anchor-id="sec-inst">Installing necessary tools</h2>
-<p>If you use <a href="https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.">macOS</a>, <a href="https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems">Linux</a>, or the <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.">Windows Subsystem for Linux (WSL)</a>, you can install all of the aforementioned tools with the <a href="https://brew.sh">Homebrew</a> package manager. To install everything you will need to follow along with this blog post, you can first <a href="https://brew.sh/#install">install Homebrew</a> and then run <code>brew</code> <code>bundle</code> in a directory that contains the <a href="https://homebrew-file.readthedocs.io/en/latest/usage.html">Brewfile</a> shown in <a href="#exm-brew">Example&nbsp;1</a>.</p>
+<p>If you use <a href="https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.">macOS</a>, <a href="https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems">Linux</a>, or the <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.">Windows Subsystem for Linux (WSL)</a>, you can install all of the aforementioned tools with the <a href="https://brew.sh">Homebrew</a> package manager. To install everything you will need to follow along with this blog post, you can first <a href="https://brew.sh/#install">install Homebrew</a> and then run <code>brew</code> <code>bundle</code> in a directory that contains the <a href="https://homebrew-file.readthedocs.io/en/latest/usage.html">Brewfile</a> shown in <a href="#exm-brew" class="quarto-xref">Example&nbsp;1</a>.</p>
 <div id="exm-brew" class="theorem example">
 <p><span class="theorem-title"><strong>Example 1 </strong></span>&nbsp;</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Brewfile</strong></pre>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode ruby code-with-copy"><code class="sourceCode ruby"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>brew <span class="st">"gh"</span></span>
+<div class="sourceCode" id="cb1" data-filename="Brewfile"><pre class="sourceCode ruby code-with-copy"><code class="sourceCode ruby"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>brew <span class="st">"gh"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>brew <span class="st">"git"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>brew <span class="st">"glab"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>cask <span class="st">"github"</span></span>
@@ -357,16 +365,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Using a <a href="https://en.wikipedia.org/wiki/Package_manager#:~:text=A%20package%20manager%20or%20package%2Dmanagement%20system%20is%20a%20collection%20of%20software%20tools%20that%20automates%20the%20process%20of%20installing%2C%20upgrading%2C%20configuring%2C%20and%20removing%20computer%20programs%20for%20a%20computer%20in%20a%20consistent%20manner.">package manager</a> like Homebrew to install all the requirements with a single <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.">shell</a> command like <code>brew</code> <code>bundle</code> is the fastest and easiest way to get ready to follow along with this blog post. If you are curious about how I set up my computer, you can take a look at <a href="https://github.com/maptv/setup/blob/main/Brewfile">my Brewfile</a> and other configuration files in my <code>setup</code> <a href="https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.">repository (repo)</a> on <a href="https://github.com/maptv/setup">GitHub</a> and <a href="https://gitlab.com/maptv/setup">GitHub</a>.</p>
-<p>Apart from RStudio, VSCode, and VSCodium, the Brewfile in <a href="#exm-brew">Example&nbsp;1</a> will install the <a href="https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.">Git</a> version control system, the GitHub and GitLab <a href="https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.">command line interfaces (CLIs)</a>, and <a href="https://desktop.github.com"><code>GitHub Desktop</code></a>, a <a href="https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac">Git Graphical User Interface (GUI)</a>. For more information on Git, a tool used by 93% of software developers worldwide according to <a href="https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.">survey results</a> published by <a href="https://stackoverflow.com/tour">StackOverflow</a> on <a href="#" data-bs-toggle="tooltip" data-bs-title="2023-01-09"><code>2022+314</code></a>, take a look at the <a href="https://openscapes.org/blog/2022-05-27-github-illustrated-series/">“GitHub for supporting, reusing, contributing, and failing safely”</a> post by <a href="https://allisonhorst.com">Allison Horst</a> and <a href="https://jules32.github.io">Julie Lowndes</a> on the <a href="https://openscapes.org/">Openscapes</a> <a href="https://openscapes.org/blog">blog</a>.</p>
+<p>Apart from RStudio, VSCode, and VSCodium, the Brewfile in <a href="#exm-brew" class="quarto-xref">Example&nbsp;1</a> will install the <a href="https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.">Git</a> version control system, the GitHub and GitLab <a href="https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.">command line interfaces (CLIs)</a>, and <a href="https://desktop.github.com"><code>GitHub Desktop</code></a>, a <a href="https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac">Git Graphical User Interface (GUI)</a>. For more information on Git, a tool used by 93% of software developers worldwide according to <a href="https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.">survey results</a> published by <a href="https://stackoverflow.com/tour">StackOverflow</a> on <a href="#" data-bs-toggle="tooltip" data-bs-title="2023-01-09"><code>2022+314</code></a>, take a look at the <a href="https://openscapes.org/blog/2022-05-27-github-illustrated-series/">“GitHub for supporting, reusing, contributing, and failing safely”</a> post by <a href="https://allisonhorst.com">Allison Horst</a> and <a href="https://jules32.github.io">Julie Lowndes</a> on the <a href="https://openscapes.org/">Openscapes</a> <a href="https://openscapes.org/blog">blog</a>.</p>
 </section>
-<section id="sec-meth" class="level2 page-columns page-full">
+<section id="sec-meth" class="level2">
 <h2 class="anchored" data-anchor-id="sec-meth">Publishing method overview</h2>
 <p>Once you are done setting up your computer and creating the <a href="https://quarto.org/docs/websites/#quick-start:~:text=This%20will%20create%20the%20scaffolding%20for%20a%20simple%20website%20in%20the%20mysite%20sub%2Ddirectory.">Quarto website template</a>, you can make your site publicly available on the internet using one of the many available <a href="https://quarto.org/docs/publishing/#getting-started">publishing services</a>. To explore and assess different publishing <a href="https://en.wikipedia.org/wiki/Workflow#:~:text=A%20workflow%20is%20a%20generic%20term%20for%20orchestrated%20and%20repeatable%20patterns%20of%20activity%2C%20enabled%20by%20the%20systematic%20organization%20of%20resources%20into%20processes%20that%20transform%20materials%2C%20provide%20services%2C%20or%20process%20information.">workflows</a> and free website hosting options, I set up my personal website on four different <a href="https://en.wikipedia.org/wiki/Web_hosting_service#:~:text=Companies%20providing%20web%20hosting%20services%20are%20sometimes%20called%20web%20hosts.">web hosts</a>: <a href="https://maptv.quarto.pub">Quarto Pub</a>, <a href="https://maptv.netlify.app">Netlify</a>, <a href="https://maptv.github.io">GitHub Pages</a>, and <a href="https://maptv.gitlab.io">GitLab Pages</a>.</p>
 <p>There are so many different ways to publish a Quarto site that I decided to come up with a naming system for Quarto publishing methods. The naming system derives a code for each publishing method from the numbered lists in the Quarto publishing documentation. For example, I refer to the <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto,your%20code%20changes.">two methods to publish to Quarto Pub</a> as <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a> and <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>:</p>
-<p><a href="#tbl-pub">Table&nbsp;1</a> uses this naming system in its <code>Code</code> column to identify the publishing methods I discuss in this blog post. Each publishing method targets a particular web <code>Host</code>, <code>Render</code>s content locally or on a remote server, and deploys sites using either the <a href="https://quarto.org/docs/output-formats/html-publishing.html#publish-command"><code>quarto</code> <code>publish</code></a> or the <a href="https://git-scm.com/docs/git-push"><code>git</code> <code>push</code></a> <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.">shell</a> <code>Command</code>.</p>
-<div id="tbl-pub" class="anchored page-columns page-full">
+<p><a href="#tbl-pub" class="quarto-xref">Table&nbsp;1</a> uses this naming system in its <code>Code</code> column to identify the publishing methods I discuss in this blog post. Each publishing method targets a particular web <code>Host</code>, <code>Render</code>s content locally or on a remote server, and deploys sites using either the <a href="https://quarto.org/docs/output-formats/html-publishing.html#publish-command"><code>quarto</code> <code>publish</code></a> or the <a href="https://git-scm.com/docs/git-push"><code>git</code> <code>push</code></a> <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.">shell</a> <code>Command</code>.</p>
+<div id="tbl-pub" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-pub-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-
 <thead>
 <tr class="header">
 <th>Code</th>
@@ -426,20 +435,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<div class="quarto-table-caption margin-caption">Table&nbsp;1: Quarto website publishing methods</div></div>
-<p><a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a>, <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a>, and <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> all use <code>quarto</code> <code>publish</code> to <a href="https://quarto.org/docs/websites/index.html#website-render">render</a> website content locally and then deploy it in one fell swoop. If you do not plan to use the <a href="https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.">Git</a> version control system or the advanced features offered by <a href="https://github.com">GitHub</a>, <a href="https://gitlab.com">GitLab</a>, or <a href="https://netlify.com">Netlify</a>, then I recommend deploying your site to <a href="https://quarto.pub">Quarto Pub</a> by running <a href="https://quarto.org/docs/publishing/quarto-pub.html#publish-command"><code>quarto</code> <code>publish</code> <code>quarto-pub</code></a> (<a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a> in <a href="#tbl-pub">Table&nbsp;1</a>).</p>
+</div>
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-pub-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Quarto website publishing methods
+</figcaption>
+</figure>
+</div>
+<p><a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a>, <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a>, and <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> all use <code>quarto</code> <code>publish</code> to <a href="https://quarto.org/docs/websites/index.html#website-render">render</a> website content locally and then deploy it in one fell swoop. If you do not plan to use the <a href="https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.">Git</a> version control system or the advanced features offered by <a href="https://github.com">GitHub</a>, <a href="https://gitlab.com">GitLab</a>, or <a href="https://netlify.com">Netlify</a>, then I recommend deploying your site to <a href="https://quarto.pub">Quarto Pub</a> by running <a href="https://quarto.org/docs/publishing/quarto-pub.html#publish-command"><code>quarto</code> <code>publish</code> <code>quarto-pub</code></a> (<a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a> in <a href="#tbl-pub" class="quarto-xref">Table&nbsp;1</a>).</p>
 <p>Like <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a>, <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a> is a deployment method that does not require Git and makes it possible to deploy our site with a single shell command: <a href="https://quarto.org/docs/publishing/netlify.html#publish-command"><code>quarto</code> <code>publish</code> <code>netlify</code></a>. <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a> provides access to the advanced web hosting features offered by Netlify and can even <a href="https://quarto.org/docs/publishing/netlify.html#rendering-on-netlify">render content</a> as long as code execution is <a href="https://quarto.org/docs/publishing/netlify.html#freezing-computations">frozen</a>.</p>
-<p>The first publishing method I tried for my personal site was <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a>, which requires the use of Git to <a href="https://github.com/git-guides/git-push#what-does-git-push-do">push</a> all website content to a Git provider like GitHub or GitLab. After I set up <a href="https://quarto.org/docs/publishing/github-pages.html#render-to-docs">GitHub Pages</a> and <a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab Pages</a>, I could update my website on both of these web hosts just by going through the standard Git workflow shown in <a href="#fig-git">Figure&nbsp;1</a>.</p>
+<p>The first publishing method I tried for my personal site was <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a>, which requires the use of Git to <a href="https://github.com/git-guides/git-push#what-does-git-push-do">push</a> all website content to a Git provider like GitHub or GitLab. After I set up <a href="https://quarto.org/docs/publishing/github-pages.html#render-to-docs">GitHub Pages</a> and <a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab Pages</a>, I could update my website on both of these web hosts just by going through the standard Git workflow shown in <a href="#fig-git" class="quarto-xref">Figure&nbsp;1</a>.</p>
 <div class="cell" data-fig-width="9" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-git" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-git-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-git">flowchart LR
    A[working&lt;br/&gt;directory]-.git&lt;br/&gt;add.-&gt;B[/staging&lt;br/&gt;area/]-.git&lt;br/&gt;commit.-&gt;C(local&lt;br/&gt;repo)-.git&lt;br/&gt;push.-&gt;D(remote&lt;br/&gt;repo)
 </pre>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;1: Quarto workflow</figcaption>
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-git-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Quarto workflow
+</figcaption>
 </figure>
 </div>
 </div>
@@ -447,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> is convenient for experienced Git users like me, but leads to messy <a href="https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.">commits</a> that contain changes to both source and output files. Also, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> cannot be combined with <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a>, or <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">N3</a>, whereas the other publishing methods are not mutually exclusive.</p>
 <p>To have cleaner commits and more flexibility in choosing publish approaches, I switched from <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> to <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> by adding <code>quarto</code> <code>publish</code> to my publishing workflow. With <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a>, I can track changes to my source files on my <code>main</code> <a href="https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control">branch</a> and publish my output files to GitHub Pages and GitLab Pages from my <code>gh-pages</code> branch.</p>
 <p>To deploy my site to GitHub Pages, GitLab Pages, and Netlify, I combined <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> and <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20GitLab%2C%20Bitbucket%2C%20or%20Azure%20DevOps%2C%20you%20can%20point%20Netlify%20at%20your%20site%E2%80%99s%20source%20code%20and%20have%20it%20deployed%20whenever%20your%20code%20changes.">N2</a>. When I run <code>quarto</code> <code>publish</code> <code>gh-pages</code>, Quarto renders my site into my output directory, copies the output directory contents to the <code>gh-pages</code> branch of my local repo, and then <a href="https://git-scm.com/docs/git-commit">commits</a> and <a href="https://git-scm.com/docs/git-push">pushes</a> the changes to my remote repos on <a href="https://github.com/maptv/maptv.github.io">GitHub</a> and <a href="https://gitlab.com/maptv/maptv.gitlab.io">GitLab</a>, which triggers Netlify to <a href="https://quarto.org/docs/publishing/netlify.html#publish-from-git-provider">build my site</a> from the <code>gh-pages</code> branch.</p>
-<p>The only disadvantage of <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> is that there are many commands to run, because running <code>quarto</code> <code>publish</code> <code>gh-pages</code> only updates the output files on my <code>gh-pages</code> and I still have to run the <code>git</code> shell commands shown in <a href="#fig-git">Figure&nbsp;1</a> to update the source files on my <code>main</code> branch. To make it easier to make incremental changes to my website and frequently release new content, I combined all of the <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> shell commands into a shell <a href="https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.">alias</a> like the one shown in <a href="#exm-qp">Example&nbsp;2</a>.</p>
+<p>The only disadvantage of <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> is that there are many commands to run, because running <code>quarto</code> <code>publish</code> <code>gh-pages</code> only updates the output files on my <code>gh-pages</code> and I still have to run the <code>git</code> shell commands shown in <a href="#fig-git" class="quarto-xref">Figure&nbsp;1</a> to update the source files on my <code>main</code> branch. To make it easier to make incremental changes to my website and frequently release new content, I combined all of the <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> shell commands into a shell <a href="https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.">alias</a> like the one shown in <a href="#exm-qp" class="quarto-xref">Example&nbsp;2</a>.</p>
 <div id="exm-qp" class="theorem example">
 <p><span class="theorem-title"><strong>Example 2 </strong></span>&nbsp;</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> qp=<span class="st">'(</span></span>
@@ -457,21 +475,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">git push;</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="st">)'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You can add shell aliases to a <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.">shell configuration file</a> like <code>.bashrc</code> or <code>.zshrc</code> on your computer to shorten commands or combine any sequence of commands into one step. The <a href="https://github.com/maptv/setup/blob/7ff404b4f6e9bca4af93e124808eb66f14464498/.zshrc#L600"><code>qp</code> alias</a> in the <a href="https://github.com/maptv/setup/blob/main/.zshrc"><code>.zshrc</code></a> file in my <a href="https://github.com/maptv/setup"><code>setup</code></a> repo is much more sophisticated than the alias in <a href="#exm-qp">Example&nbsp;2</a>, because it allows me to enter a free-form <a href="https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27">commit message</a> directly on the command line without quotes, e.g.&nbsp;<code>qp</code> <code>edit</code> <code>first</code> <code>blog</code>.</p>
+<p>You can add shell aliases to a <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.">shell configuration file</a> like <code>.bashrc</code> or <code>.zshrc</code> on your computer to shorten commands or combine any sequence of commands into one step. The <a href="https://github.com/maptv/setup/blob/7ff404b4f6e9bca4af93e124808eb66f14464498/.zshrc#L600"><code>qp</code> alias</a> in the <a href="https://github.com/maptv/setup/blob/main/.zshrc"><code>.zshrc</code></a> file in my <a href="https://github.com/maptv/setup"><code>setup</code></a> repo is much more sophisticated than the alias in <a href="#exm-qp" class="quarto-xref">Example&nbsp;2</a>, because it allows me to enter a free-form <a href="https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27">commit message</a> directly on the command line without quotes, e.g.&nbsp;<code>qp</code> <code>edit</code> <code>first</code> <code>blog</code>.</p>
 <p>If you decide to try my <code>qp</code> alias, please exercise extreme caution as any un-<a href="https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.">escaped</a> or un-quoted <a href="https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter">metacharacters</a> may yield surprising effects instead of being included verbatim in the commit message. For example, <code>qp</code> <code>*</code> will list the contents of the current directory in the commit message in place of the asterisk!</p>
 <p>To summarize the Quarto publishing methods I discussed so far, <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a> and <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a> are easy to configure and use, <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20GitLab%2C%20Bitbucket%2C%20or%20Azure%20DevOps%2C%20you%20can%20point%20Netlify%20at%20your%20site%E2%80%99s%20source%20code%20and%20have%20it%20deployed%20whenever%20your%20code%20changes.">N2</a> automatically builds sites from Git repos, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> is not recommended because it pollutes commits with output file changes, and <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> is more difficult to set up and use but provides clean commits and a nice separation of source and output files.</p>
 <p>In my experience, GitHub Pages is the only web host that properly differentiates between internal and <a href="https://quarto.org/docs/output-formats/html-basics.html#external-links">external links</a>. All of the other web hosts include the <a href="#" class="external">external link icon</a> on all links regardless of whether they target my site or an external site.</p>
 <p>To solve this issue, I tried to set the <a href="https://quarto.org/docs/output-formats/html-basics.html#external-links:~:text=the%20current%20tab"><code>link-external-filter</code></a>.-,link%2Dexternal%2Dfilter,-A%20regular%20expression) property to the following <a href="https://en.wikipedia.org/wiki/Regular_expression#:~:text=A%20regular%20expression%20(shortened%20as%20regex%20or%20regexp)%2C%5B1%5D%20sometimes%20referred%20to%20as%20rational%20expression%2C%5B2%5D%5B3%5D%20is%20a%20sequence%20of%20characters%20that%20specifies%20a%20match%20pattern%20in%20text.">regular expression</a>: <code>'^(?:http:|https:)\/\/maptv\.(?:github|gitlab|netlify|quarto).*'</code>. Unfortunately, this did not resolve the issue, so if you notice a problem with the <code>link-external-icon</code> feature on other web hosts, I suggest switching to GitHub Pages.</p>
 <p>All of the publishing methods I have discussed so far require us to generate output files locally by rendering our source files. In contrast, <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a>, and <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">N3</a> make it possible to skip local rendering in favor of relying on <a href="https://quarto.org/docs/publishing/quarto-pub.html#github-action">GitHub Actions</a> to handle all of the necessary steps.</p>
 <p>Before trying to use GitHub Actions or any <a href="https://quarto.org/docs/publishing/ci.html">other continuous integration systems</a> in your publishing workflow, I suggest getting used to working with <code>quarto</code> <code>publish</code> (<a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a>, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a>, or <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a>). You can always set up other publishing methods later with sacrificing anything, because <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> is the only deployment method cannot be combined with all of the others.</p>
-<p>In <a href="#sec-ghp">Section&nbsp;1.3</a>, I will walk through the setup of both <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> and <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> to provide the option of rendering locally by running <code>quarto</code> <code>publish</code> or rendering remotely with GitHub Actions by pushing to the <code>main</code> branch. Along the way, I will share many practical tips and general advice that you can apply to any project.</p>
+<p>In <a href="#sec-ghp" class="quarto-xref">Section&nbsp;1.3</a>, I will walk through the setup of both <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> and <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> to provide the option of rendering locally by running <code>quarto</code> <code>publish</code> or rendering remotely with GitHub Actions by pushing to the <code>main</code> branch. Along the way, I will share many practical tips and general advice that you can apply to any project.</p>
 </section>
 <section id="sec-ghp" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ghp">GitHub Pages setup</h2>
 <p>Before you can publish your site on GitHub or GitLab Pages, you need a <a href="https://github.com/signup">GitHub</a> or <a href="https://gitlab.com/users/sign_up">GitLab</a> account, an <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account">SSH key</a>, and a repo like my <a href="https://github.com/maptv/maptv.github.io"><code>maptv.github.io</code></a> and <a href="https://gitlab.com/maptv/maptv.gitlab.io"><code>maptv.gitlab.io</code></a> repos. Each of these repos has a default <a href="https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control">branch</a> called <code>main</code> and another branch which must be called <code>gh-pages</code>.</p>
 <p>You can create the repo and the <code>gh-pages</code> branch using the web interface of <a href="https://github.com" class="uri">https://github.com</a> or <a href="https://gitlab.com" class="uri">https://gitlab.com</a> in your browser, but the best way to start a new project is using the CLI for <a href="https://cli.github.com">GitHub</a> or <a href="https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/">GitLab</a> in your <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>. First, run <code>gh</code> <code>auth</code> <code>login</code> or <code>glab</code> <code>auth</code> <code>login</code> and follow the prompts to authenticate via your web browser or with an authentication token.</p>
 <p>The GitHub CLI allows you to add an SSH key to your account during or <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli#adding-a-new-ssh-key-to-your-account">after authentication</a>. The GitLab CLI does not handle SSH keys during authentication, but has a similar command for <a href="https://gitlab.com/gitlab-org/cli/-/blob/main/docs/source/ssh-key/add.md">adding an SSH key to your GitLab account</a>.</p>
-<p>After authentication and SSH key setup, you can run the code in either of the code chunks in <a href="#exm-git">Example&nbsp;3</a> to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my <a href="https://github.com/maptv/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630"><code>.zshrc</code></a>.</p>
+<p>After authentication and SSH key setup, you can run the code in either of the code chunks in <a href="#exm-git" class="quarto-xref">Example&nbsp;3</a> to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my <a href="https://github.com/maptv/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630"><code>.zshrc</code></a>.</p>
 <section id="repo-setup" class="level3">
 <h3 class="anchored" data-anchor-id="repo-setup">Repo setup</h3>
 <div id="exm-git" class="theorem example">
@@ -500,7 +518,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>If you want to have your website hosted on GitHub Pages, you will need to <a href="https://quarto.org/docs/publishing/github-pages.html#source-branch">set <code>gh-pages</code> as your source branch</a>. For GitLab Pages, you will need to add a <code>.gitlab-ci.yml</code> file to your repo and update your <code>_quarto.yml</code> file as shown in <a href="#exm-yml">Example&nbsp;4</a>.</p>
+<p>If you want to have your website hosted on GitHub Pages, you will need to <a href="https://quarto.org/docs/publishing/github-pages.html#source-branch">set <code>gh-pages</code> as your source branch</a>. For GitLab Pages, you will need to add a <code>.gitlab-ci.yml</code> file to your repo and update your <code>_quarto.yml</code> file as shown in <a href="#exm-yml" class="quarto-xref">Example&nbsp;4</a>.</p>
 <div id="exm-yml" class="theorem example">
 <p><span class="theorem-title"><strong>Example 4 </strong></span>&nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -525,7 +543,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>To make it easier to maintain my site on both GitHub and GitLab Pages, I set up my local repo cloned to have two <code>origin</code> remote URLs using the code as shown in <a href="#exm-remote">Example&nbsp;5</a>. Now, running <code>quarto</code> <code>publish</code> or <code>git</code> <code>push</code> in my local repo, updates my content on both GitHub and GitLab.</p>
+<p>To make it easier to maintain my site on both GitHub and GitLab Pages, I set up my local repo cloned to have two <code>origin</code> remote URLs using the code as shown in <a href="#exm-remote" class="quarto-xref">Example&nbsp;5</a>. Now, running <code>quarto</code> <code>publish</code> or <code>git</code> <code>push</code> in my local repo, updates my content on both GitHub and GitLab.</p>
 <div id="exm-remote" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5 </strong></span>&nbsp;</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add lab git@gitlab.com:maptv/maptv.gitlab.io</span>
@@ -535,7 +553,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>By default, GitLab Pages includes a random hash in site <a href="https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web">URLs</a>. To shorten the URL of my GitLab Pages site to &lt;maptv.gitlab.io&gt;, I had to uncheck <strong>Use unique domain</strong> under <code>Deploy &gt; Pages</code> in the GitLab sidebar.</p>
 <p>At this point, we have completed <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> setup and you should be able to run <code>quarto</code> <code>publish</code> <code>gh-pages</code> from your <code>main</code> branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with <code>quarto</code> <code>publish</code> at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions.</p>
 <p>Next, we will set up <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a>, a Quarto publishing method that offers the same convenience of <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> but without the messy commits. An added bonus of <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> is that rendering with GitHub Actions provides a reproducible computational environment that is defined by our <code>publish.yml</code> file.</p>
-<p><a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> setup only requires that we create a <code>.github/workflows</code> directory and add a <code>publish.yml</code> file to that directory. <a href="#exm-curl">Example&nbsp;6</a> contains the <code>publish.yml</code> file I use for my own site and the shell code that can used to obtain this file.</p>
+<p><a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> setup only requires that we create a <code>.github/workflows</code> directory and add a <code>publish.yml</code> file to that directory. <a href="#exm-curl" class="quarto-xref">Example&nbsp;6</a> contains the <code>publish.yml</code> file I use for my own site and the shell code that can used to obtain this file.</p>
 <div id="exm-curl" class="theorem example">
 <p><span class="theorem-title"><strong>Example 6 </strong></span>&nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -566,8 +584,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Quarto</span></span>
 <span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> quarto-dev/quarto-actions/setup@v2</span></span>
 <span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">quarto-version</span><span class="kw">:</span><span class="at"> </span><span class="st">'1.4.489'</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">run</span><span class="kw">:</span><span class="at"> quarto install tinytex</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">'1.4.489'</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">tinytex</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install R</span></span>
 <span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> r-lib/actions/setup-r@v2</span></span>
@@ -604,9 +622,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>The <code>publish.yml</code> file in <a href="#exm-curl">Example&nbsp;6</a> installs Quarto, the R and Python programming languages, and the packages in the <code>renv.lock</code> and <code>requirements.txt</code> files. If you do not need R and/or Python, you can remove any unnecessary portions of the file.</p>
+<p>The <code>publish.yml</code> file in <a href="#exm-curl" class="quarto-xref">Example&nbsp;6</a> installs Quarto, the R and Python programming languages, and the packages in the <code>renv.lock</code> and <code>requirements.txt</code> files. If you do not need R and/or Python, you can remove any unnecessary portions of the file.</p>
 <p>To modify the Python files that are installed by GitHub Actions, you can edit the <code>requirements.txt</code> file in your repo. To update your <code>renv.lock</code> file so that it includes all of the R packages your site requires, run <a href="https://rstudio.github.io/renv/reference/snapshot.html"><code>renv::snapshot()</code></a> in an R session or <code>Rscript</code> <code>-e</code> <code>renv::snapshot()</code> in a shell.</p>
-<p>After pushing the <code>.github/workflows/publish.yml</code> file, you can check the GitHub Actions</p>
+<p>After pushing the <code>.github/workflows/publish.yml</code> file, you can check the GitHub Actions tab in GitHub to see</p>
 </section>
 </section>
 </section>
@@ -617,7 +635,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Once your site is <a href="https://quarto.org/docs/websites/website-blog.html#quick-start">built</a> and <a href="https://quarto.org/docs/websites/website-blog.html#publishing">published</a>, you can make it easier to navigate with a customized navigation bar (navbar) and sidebar, as described in the <a href="https://quarto.org/docs/websites/website-navigation.html">Quarto documentation</a>. Check out the <code>_quarto.yml</code> files for <a href="https://github.com/maptv/maptv.github.io/blob/main/_quarto.yml">my site</a> and the Quarto <a href="https://github.com/quarto-dev/quarto-web/blob/main/_quarto.yml">documentation site</a> to see how the navigation components are set up.</p>
 <p>In my navbar, I added a toggle buttons for <a href="https://quarto.org/docs/websites/website-navigation.html#reader-mode">reader mode</a> and <a href="https://quarto.org/docs/output-formats/html-themes.html#dark-mode">dark mode</a>. The other icons on right side of the navbar are spelled out in the sidebar.</p>
 <p>My navbar also provides the current date and time in <code>Dec</code> ordinal (<code>deco</code>) format, which counts the <a href="https://en.wikipedia.org/wiki/ISO_8601#:~:text=year%200000%20being%20equal%20to%201%20BC">years since 1 BC</a> and the days since March 1. <code>Dec</code> is a calendar and time system that I created and use throughout my blog.</p>
-<p>To add a custom <a href="https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20timestamp%20is%20a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred%2C%20usually%20giving%20date%20and%20time%20of%20day%2C%20sometimes%20accurate%20to%20a%20small%20fraction%20of%20a%20second.">timestamp</a> to the navbar, I put a <code>&lt;script&gt;</code> <a href="https://en.wikipedia.org/wiki/HTML_element#:~:text=An%20HTML%20element%20is%20a%20type%20of%20HTML%20(HyperText%20Markup%20Language)%20document%20component">element</a> that runs <code>time.js</code> in an <a href="https://en.wikipedia.org/wiki/HTML#:~:text=The%20HyperText%20Markup%20Language%20or%20HTML%20is%20the%20standard%20markup%20language%20for%20documents%20designed%20to%20be%20displayed%20in%20a%20web%20browser.">HTML</a> <a href="https://quarto.org/docs/authoring/tables.html#html-tables">block</a> in every Quarto markdown (<code>.qmd</code>) file, as shown in <a href="#exm-html">Example&nbsp;7</a>. <a href="https://mine-cr.com/">Mine Çetinkaya-Rundel</a> wrote about <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/12-html-block/">HTML blocks</a> as part of her <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/about.html">A Quarto tip a day</a> project.</p>
+<p>To add a custom <a href="https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20timestamp%20is%20a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred%2C%20usually%20giving%20date%20and%20time%20of%20day%2C%20sometimes%20accurate%20to%20a%20small%20fraction%20of%20a%20second.">timestamp</a> to the navbar, I put a <code>&lt;script&gt;</code> <a href="https://en.wikipedia.org/wiki/HTML_element#:~:text=An%20HTML%20element%20is%20a%20type%20of%20HTML%20(HyperText%20Markup%20Language)%20document%20component">element</a> that runs <code>time.js</code> in an <a href="https://en.wikipedia.org/wiki/HTML#:~:text=The%20HyperText%20Markup%20Language%20or%20HTML%20is%20the%20standard%20markup%20language%20for%20documents%20designed%20to%20be%20displayed%20in%20a%20web%20browser.">HTML</a> <a href="https://quarto.org/docs/authoring/tables.html#html-tables">block</a> in every Quarto markdown (<code>.qmd</code>) file, as shown in <a href="#exm-html" class="quarto-xref">Example&nbsp;7</a>. <a href="https://mine-cr.com/">Mine Çetinkaya-Rundel</a> wrote about <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/12-html-block/">HTML blocks</a> as part of her <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/about.html">A Quarto tip a day</a> project.</p>
 <div id="exm-html" class="theorem example">
 <p><span class="theorem-title"><strong>Example 7 </strong></span>&nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -625,7 +643,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>```{=html}</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"time.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"time.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
@@ -670,17 +688,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)#:~:text=Python%20is%20a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language.">Python</a> to customize the date format in the my blog’s <a href="https://maptv.github.io/blog">listing page</a>, and <a href="https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=Lua%20(/%CB%88lu%CB%90%C9%99/%20LOO%2D%C9%99%3B%20from%20Portuguese%3A%20lua%20%5B%CB%88lu(w)%C9%90%5D%20meaning%20moon)%20is%20a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20primarily%20for%20embedded%20use%20in%20applications.">Lua</a> to customize the date format in every blog post.</p>
 <p>JavaScript, Python, and Lua are programming languages that have all have interesting name origins. JavaScript is named after the Java☕programming language, Python🐍is named after the <a href="https://en.wikipedia.org/wiki/Monty_Python#:~:text=Monty%20Python%20(also%20collectively%20known%20as%20the%20Pythons)%5B2%5D%5B3%5D%20were%20a%20British%20comedy%20troupe%20formed%20in%201969">Monty Python</a> comedy troupe, and Lua is the Portuguese🇵🇹word for moon🌕.</p>
 <p><a href="https://pandoc.org/">Pandoc</a> is a program that converts documents into practically any format. The pan in Pandoc comes from the Ancient Greek word for <a href="https://en.wiktionary.org/wiki/pan-#:~:text=pan%2D-,all,-Usage%20notes%5B"><em>all</em></a>. Pandoc strives to convert <em>all</em> document formats, just like <a href="https://en.wikipedia.org/wiki/Pangaea#:~:text=Pangaea%20or%20Pangea%20(/p%C3%A6n%CB%88d%CA%92i%CB%90.%C9%99/)%5B1%5D%20was%20a%20supercontinent%20that%20existed%20during%20the%20late%20Paleozoic%20and%20early%20Mesozoic%20eras.">Pangea</a> contained <em>all</em> the land and a <a href="https://en.wiktionary.org/wiki/panacea#English:~:text=A%20solution%20to%20all%20problems.">panacea</a> solves <em>all</em> problems.</p>
-<p>Quarto uses Pandoc to convert markdown files into target format(s) like <code>html</code> or <code>pdf</code>. If the source files contain executable code, Quarto executes the code via one of two computational engines: <a href="https://jupyter.org/#:~:text=Free%20software%2C%20open%20standards%2C%20and%20web%20services%20for%20interactive%20computing%20across%20all%20programming%20languages">Jupyter</a> or <a href="https://yihui.org/knitr/#:~:text=the%20knitr%20package%20was%20designed%20to%20be%20a%20transparent%20engine%20for%20dynamic%20report%20generation%20with%20R">Knitr</a>. <a href="#fig-render">Figure&nbsp;2</a> shows the Quarto workflow.</p>
+<p>Quarto uses Pandoc to convert markdown files into target format(s) like <code>html</code> or <code>pdf</code>. If the source files contain executable code, Quarto executes the code via one of two computational engines: <a href="https://jupyter.org/#:~:text=Free%20software%2C%20open%20standards%2C%20and%20web%20services%20for%20interactive%20computing%20across%20all%20programming%20languages">Jupyter</a> or <a href="https://yihui.org/knitr/#:~:text=the%20knitr%20package%20was%20designed%20to%20be%20a%20transparent%20engine%20for%20dynamic%20report%20generation%20with%20R">Knitr</a>. <a href="#fig-render" class="quarto-xref">Figure&nbsp;2</a> shows the Quarto workflow.</p>
 <div class="cell" data-fig-width="9" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-render" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-render">flowchart LR
    A[qmd&lt;br/&gt;ipynb]-.Knitr&lt;br/&gt;Jupyter.-&gt;B((md))-.Pandoc with&lt;br/&gt;Lua filters.-&gt;C(html&lt;br/&gt;pdf&lt;br/&gt;docx&lt;br/&gt;etc.)
 </pre>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;2: Quarto workflow</figcaption>
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Quarto workflow
+</figcaption>
 </figure>
 </div>
 </div>
@@ -688,11 +710,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Mine Çetinkaya-Rundel’s Quarto tip series includes a similar <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/21-diagrams/#fig-mermaid">Quarto workflow mermaid diagram</a> and her <a href="https://mine.quarto.pub/hello-quarto">“Hello, Quarto!”</a> rstudio::conf(2022) keynote with <a href="https://jules32.github.io">Julia Stewart Lowndes</a> contains truly beautiful Quarto workflow images by <a href="https://allisonhorst.com">Allison Horst</a>: <a href="https://mine.quarto.pub/hello-quarto/#/publishing-system-2">1</a>, <a href="https://mine.quarto.pub/hello-quarto/#/quarto-flattens-the-learning-curve">2</a>, <a href="https://mine.quarto.pub/hello-quarto/#/quarto-can-grow-with-learners-in-a-profound-way">3</a>, and <a href="https://mine.quarto.pub/hello-quarto/#/quarto-cli-orchestrates-each-step-of-rendering">4</a>.</p>
 <p>Quarto controls Pandoc, Jupyter, and Knitr in two ways: 1) with arguments passed to the <a href="https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.">Quarto CLI</a> commands and 2) with <a href="https://yaml.org/">YAML</a> key-value pairs in <code>.qmd</code>, <code>.ipynb</code>, or <code>.yml</code> files.</p>
 <p>Normally, <a href="https://quarto.org/docs/reference/dates#using-a-date-format">formatting dates in Quarto</a> is as easy as setting the <code>date-format</code> YAML property. In my case it was more difficult, because I wanted dates based on <code>Dec</code>, a calendar and time system I created, instead of the ubiquitous <a href="https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=The%20Gregorian%20calendar%20is%20the%20calendar%20used%20in%20most%20parts%20of%20the%20world.">Gregorian calendar</a>.</p>
-<p>As shown in <a href="#exm-date">Example&nbsp;8</a>, I set <code>date-format</code> to <code>x</code> in <code>_metadata.yml</code>, which converts the date of each blog post to millisecond <a href="https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.">UNIX time</a>. I wanted to calculate the <code>Dec</code> calendar (<code>Decalendar</code>) dates from UNIX time, so that I could work with a single number and not have to deal with Gregorian calendar date formats or time zones.</p>
+<p>As shown in <a href="#exm-date" class="quarto-xref">Example&nbsp;8</a>, I set <code>date-format</code> to <code>x</code> in <code>_metadata.yml</code>, which converts the date of each blog post to millisecond <a href="https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.">UNIX time</a>. I wanted to calculate the <code>Dec</code> calendar (<code>Decalendar</code>) dates from UNIX time, so that I could work with a single number and not have to deal with Gregorian calendar date formats or time zones.</p>
 <p>The <code>Decalendar</code> dates in my blog are called <code>Decalendar</code> ordinal (<code>deco</code>) dates, because they are similar to <a href="https://en.wikipedia.org/wiki/ISO_8601#:~:text=ISO%208601%20is%20an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data.">ISO-8601</a> <a href="https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates">ordinal</a> (<code>isoo</code>) dates. Like <code>isoo</code> dates, <code>deco</code> dates consist of a year and a day-of-the-year (<code>doty</code>).</p>
 <p><code>Doty</code> values (<code>doties</code>) in <code>Decalendar</code> dates count the number of days that have passed since March 1, which is <code>Day</code> <code>0</code> in <code>Decalendar</code>, and can optionally include a <code>Dec</code> clock (<code>Declock</code>) time. The timestamp in the navbar of my blog is an example of a <code>Decalendar</code> date combined with a <code>Declock</code> time.</p>
-<p>The navbar timestamp is also derived from millisecond UNIX time, which I obtained in <code>time.js</code> by calling <code>Date.now()</code>. In essence, all three of the scripts in <a href="#exm-date">Example&nbsp;8</a> convert millisecond UNIX time into a <code>deco</code> date or timestamp.</p>
-<p>While <code>time.js</code> is sourced by Quarto when it reads the HTML block in each of my blog <code>.qmd</code> files, <code>date.lua</code> is run as a <a href="https://quarto.org/docs/extensions/filters.html">Pandoc filter</a> during the creation of the output <code>.html</code> files, and <code>date.py</code> is executed as a <a href="https://quarto.org/docs/projects/scripts.html#pre-and-post-render">post-render script</a>. <a href="#exm-date">Example&nbsp;8</a> speaks to the power and versatility of Quarto.</p>
+<p>The navbar timestamp is also derived from millisecond UNIX time, which I obtained in <code>time.js</code> by calling <code>Date.now()</code>. In essence, all three of the scripts in <a href="#exm-date" class="quarto-xref">Example&nbsp;8</a> convert millisecond UNIX time into a <code>deco</code> date or timestamp.</p>
+<p>While <code>time.js</code> is sourced by Quarto when it reads the HTML block in each of my blog <code>.qmd</code> files, <code>date.lua</code> is run as a <a href="https://quarto.org/docs/extensions/filters.html">Pandoc filter</a> during the creation of the output <code>.html</code> files, and <code>date.py</code> is executed as a <a href="https://quarto.org/docs/projects/scripts.html#pre-and-post-render">post-render script</a>. <a href="#exm-date" class="quarto-xref">Example&nbsp;8</a> speaks to the power and versatility of Quarto.</p>
 <p>Coming up next on my blog is <a href="../../blog/observable/index.html">a post</a> that introduces <code>Dec</code> with <a href="https://observablehq.com/">Observable</a> graphics. Get ready for an animated and interactive data visualization extravaganza!</p>
 <div id="exm-date" class="theorem example">
 <p><span class="theorem-title"><strong>Example 8 </strong></span>&nbsp;</p>
@@ -701,7 +723,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <div class="sourceCode" id="cb12"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>```{=html}</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"time.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"time.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
@@ -870,6 +892,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -936,13 +985,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1072,10 +1123,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/maptv\.github\.io");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1085,8 +1155,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1099,6 +1178,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1142,6 +1343,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1167,6 +1369,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1224,34 +1452,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/maptv\.github\.io");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          // default icon
-          link.classList.add("external");
-      }
-    }
 });
 </script>
 <script src="https://giscus.app/client.js" data-repo="maptv/maptv.github.io" data-repo-id="R_kgDOKbInnA" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../../blog/index.html" class="pagination-link">
+      <a href="../../blog/index.html" class="pagination-link  aria-label=" blog"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Blog</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../blog/observable/index.html" class="pagination-link">
+      <a href="../../blog/observable/index.html" class="pagination-link" aria-label="Observable">
         <span class="nav-page-text">Observable</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1293,16 +1507,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>::: {#exm-brew}</span>
 <span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{.ruby filename="Brewfile"}</span></span>
-<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>brew <span class="st">"gh"</span></span>
-<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>brew <span class="st">"git"</span></span>
-<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>brew <span class="st">"glab"</span></span>
-<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>cask <span class="st">"github"</span></span>
-<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>cask <span class="st">"quarto"</span></span>
-<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>cask <span class="st">"rstudio"</span></span>
-<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>cask <span class="st">"vscodium"</span></span>
-<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>cask <span class="st">"visual-studio-code"</span></span>
-<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a>vscode <span class="st">"quarto.quarto"</span></span>
-<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a>vscode <span class="st">"REditorSupport.r"</span></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a><span class="in">brew "gh"</span></span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a><span class="in">brew "git"</span></span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a><span class="in">brew "glab"</span></span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a><span class="in">cask "github"</span></span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a><span class="in">cask "quarto"</span></span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a><span class="in">cask "rstudio"</span></span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a><span class="in">cask "vscodium"</span></span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a><span class="in">cask "visual-studio-code"</span></span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a><span class="in">vscode "quarto.quarto"</span></span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a><span class="in">vscode "REditorSupport.r"</span></span>
 <span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a></span>
@@ -1347,12 +1561,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-89"><a href="#cb18-89" aria-hidden="true" tabindex="-1"></a>The first publishing method I tried for my personal site was <span class="co">[</span><span class="ot">G1</span><span class="co">]</span>, which requires the use of Git to <span class="co">[</span><span class="ot">push</span><span class="co">](https://github.com/git-guides/git-push#what-does-git-push-do)</span> all website content to a Git provider like GitHub or GitLab. After I set up <span class="co">[</span><span class="ot">GitHub Pages</span><span class="co">](https://quarto.org/docs/publishing/github-pages.html#render-to-docs)</span> and <span class="co">[</span><span class="ot">GitLab Pages</span><span class="co">](https://docs.gitlab.com/ee/user/project/pages/)</span>, I could update my website on both of these web hosts just by going through the standard Git workflow shown in @fig-git.</span>
 <span id="cb18-90"><a href="#cb18-90" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-91"><a href="#cb18-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid fig-align="center"}</span></span>
-<span id="cb18-92"><a href="#cb18-92" aria-hidden="true" tabindex="-1"></a>%%| label: fig<span class="ot">-g</span>it</span>
-<span id="cb18-93"><a href="#cb18-93" aria-hidden="true" tabindex="-1"></a>%%| fig<span class="ot">-c</span>ap: Quarto workflow</span>
-<span id="cb18-94"><a href="#cb18-94" aria-hidden="true" tabindex="-1"></a>%%| fig-align: center</span>
-<span id="cb18-95"><a href="#cb18-95" aria-hidden="true" tabindex="-1"></a>%%| fig<span class="ot">-w</span>idth: <span class="dv">9</span></span>
-<span id="cb18-96"><a href="#cb18-96" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
-<span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a>   A[working&lt;br/&gt;directory]-.git&lt;br/&gt;add.-&gt;B[<span class="ot">/staging&lt;br/</span>&gt;area/]-.git&lt;br/&gt;commit.-&gt;C(<span class="kw">local</span>&lt;br/&gt;repo)-.git&lt;br/&gt;<span class="fu">push</span>.-&gt;D(remote&lt;br/&gt;repo)</span>
+<span id="cb18-92"><a href="#cb18-92" aria-hidden="true" tabindex="-1"></a><span class="in">%%| label: fig-git</span></span>
+<span id="cb18-93"><a href="#cb18-93" aria-hidden="true" tabindex="-1"></a><span class="in">%%| fig-cap: Quarto workflow</span></span>
+<span id="cb18-94"><a href="#cb18-94" aria-hidden="true" tabindex="-1"></a><span class="in">%%| fig-align: center</span></span>
+<span id="cb18-95"><a href="#cb18-95" aria-hidden="true" tabindex="-1"></a><span class="in">%%| fig-width: 9</span></span>
+<span id="cb18-96"><a href="#cb18-96" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a><span class="in">   A[working&lt;br/&gt;directory]-.git&lt;br/&gt;add.-&gt;B[/staging&lt;br/&gt;area/]-.git&lt;br/&gt;commit.-&gt;C(local&lt;br/&gt;repo)-.git&lt;br/&gt;push.-&gt;D(remote&lt;br/&gt;repo)</span></span>
 <span id="cb18-98"><a href="#cb18-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-99"><a href="#cb18-99" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-100"><a href="#cb18-100" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">G1</span><span class="co">]</span> is convenient for experienced Git users like me, but leads to messy <span class="co">[</span><span class="ot">commits</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) that contain changes to both source and output files. Also, <span class="co">[</span><span class="ot">G1</span><span class="co">]</span> cannot be combined with <span class="co">[</span><span class="ot">Q2</span><span class="co">]</span>, <span class="co">[</span><span class="ot">G3</span><span class="co">]</span>, or <span class="co">[</span><span class="ot">N3</span><span class="co">]</span>, whereas the other publishing methods are not mutually exclusive.</span>
@@ -1365,12 +1579,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-107"><a href="#cb18-107" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-108"><a href="#cb18-108" aria-hidden="true" tabindex="-1"></a>::: {#exm-qp}</span>
 <span id="cb18-109"><a href="#cb18-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{.sh}</span></span>
-<span id="cb18-110"><a href="#cb18-110" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> qp=<span class="st">'(</span></span>
-<span id="cb18-111"><a href="#cb18-111" aria-hidden="true" tabindex="-1"></a><span class="st">quarto publish --no-prompt gh-pages;</span></span>
-<span id="cb18-112"><a href="#cb18-112" aria-hidden="true" tabindex="-1"></a><span class="st">git add --all;</span></span>
-<span id="cb18-113"><a href="#cb18-113" aria-hidden="true" tabindex="-1"></a><span class="st">git commit -m '</span>Edit source files<span class="st">';</span></span>
-<span id="cb18-114"><a href="#cb18-114" aria-hidden="true" tabindex="-1"></a><span class="st">git push;</span></span>
-<span id="cb18-115"><a href="#cb18-115" aria-hidden="true" tabindex="-1"></a><span class="st">)'</span></span>
+<span id="cb18-110"><a href="#cb18-110" aria-hidden="true" tabindex="-1"></a><span class="in">alias qp='(</span></span>
+<span id="cb18-111"><a href="#cb18-111" aria-hidden="true" tabindex="-1"></a><span class="in">quarto publish --no-prompt gh-pages;</span></span>
+<span id="cb18-112"><a href="#cb18-112" aria-hidden="true" tabindex="-1"></a><span class="in">git add --all;</span></span>
+<span id="cb18-113"><a href="#cb18-113" aria-hidden="true" tabindex="-1"></a><span class="in">git commit -m 'Edit source files';</span></span>
+<span id="cb18-114"><a href="#cb18-114" aria-hidden="true" tabindex="-1"></a><span class="in">git push;</span></span>
+<span id="cb18-115"><a href="#cb18-115" aria-hidden="true" tabindex="-1"></a><span class="in">)'</span></span>
 <span id="cb18-116"><a href="#cb18-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-117"><a href="#cb18-117" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb18-118"><a href="#cb18-118" aria-hidden="true" tabindex="-1"></a></span>
@@ -1409,25 +1623,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-151"><a href="#cb18-151" aria-hidden="true" tabindex="-1"></a><span class="fu">#### GitHub</span></span>
 <span id="cb18-152"><a href="#cb18-152" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-153"><a href="#cb18-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{.sh}</span></span>
-<span id="cb18-154"><a href="#cb18-154" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="co"># start in home directory</span></span>
-<span id="cb18-155"><a href="#cb18-155" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> USERNAME</span>
-<span id="cb18-156"><a href="#cb18-156" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> USERNAME</span>
-<span id="cb18-157"><a href="#cb18-157" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo create USERNAME.github.io <span class="at">--add-readme</span> <span class="at">--clone</span> <span class="at">--public</span></span>
-<span id="cb18-158"><a href="#cb18-158" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> SITENAME</span>
-<span id="cb18-159"><a href="#cb18-159" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project website USERNAME.github.io</span>
+<span id="cb18-154"><a href="#cb18-154" aria-hidden="true" tabindex="-1"></a><span class="in">cd # start in home directory</span></span>
+<span id="cb18-155"><a href="#cb18-155" aria-hidden="true" tabindex="-1"></a><span class="in">mkdir -p USERNAME</span></span>
+<span id="cb18-156"><a href="#cb18-156" aria-hidden="true" tabindex="-1"></a><span class="in">cd USERNAME</span></span>
+<span id="cb18-157"><a href="#cb18-157" aria-hidden="true" tabindex="-1"></a><span class="in">gh repo create USERNAME.github.io --add-readme --clone --public</span></span>
+<span id="cb18-158"><a href="#cb18-158" aria-hidden="true" tabindex="-1"></a><span class="in">cd SITENAME</span></span>
+<span id="cb18-159"><a href="#cb18-159" aria-hidden="true" tabindex="-1"></a><span class="in">quarto create project website USERNAME.github.io</span></span>
 <span id="cb18-160"><a href="#cb18-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-161"><a href="#cb18-161" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-162"><a href="#cb18-162" aria-hidden="true" tabindex="-1"></a><span class="fu">#### GitLab</span></span>
 <span id="cb18-163"><a href="#cb18-163" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-164"><a href="#cb18-164" aria-hidden="true" tabindex="-1"></a><span class="in">```{.sh}</span></span>
-<span id="cb18-165"><a href="#cb18-165" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="co"># start in home directory</span></span>
-<span id="cb18-166"><a href="#cb18-166" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> USERNAME</span>
-<span id="cb18-167"><a href="#cb18-167" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> USERNAME</span>
-<span id="cb18-168"><a href="#cb18-168" aria-hidden="true" tabindex="-1"></a><span class="ex">glab</span> repo create USERNAME.gitlab.io <span class="at">--readme</span> <span class="at">--defaultBranch</span> main <span class="at">--public</span></span>
-<span id="cb18-169"><a href="#cb18-169" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> SITENAME</span>
-<span id="cb18-170"><a href="#cb18-170" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main</span>
-<span id="cb18-171"><a href="#cb18-171" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">--set-upstream-to</span><span class="op">=</span>origin/main main</span>
-<span id="cb18-172"><a href="#cb18-172" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project website USERNAME.gitlab.io</span>
+<span id="cb18-165"><a href="#cb18-165" aria-hidden="true" tabindex="-1"></a><span class="in">cd # start in home directory</span></span>
+<span id="cb18-166"><a href="#cb18-166" aria-hidden="true" tabindex="-1"></a><span class="in">mkdir -p USERNAME</span></span>
+<span id="cb18-167"><a href="#cb18-167" aria-hidden="true" tabindex="-1"></a><span class="in">cd USERNAME</span></span>
+<span id="cb18-168"><a href="#cb18-168" aria-hidden="true" tabindex="-1"></a><span class="in">glab repo create USERNAME.gitlab.io --readme --defaultBranch main --public</span></span>
+<span id="cb18-169"><a href="#cb18-169" aria-hidden="true" tabindex="-1"></a><span class="in">cd SITENAME</span></span>
+<span id="cb18-170"><a href="#cb18-170" aria-hidden="true" tabindex="-1"></a><span class="in">git pull origin main</span></span>
+<span id="cb18-171"><a href="#cb18-171" aria-hidden="true" tabindex="-1"></a><span class="in">git branch --set-upstream-to=origin/main main</span></span>
+<span id="cb18-172"><a href="#cb18-172" aria-hidden="true" tabindex="-1"></a><span class="in">quarto create project website USERNAME.gitlab.io</span></span>
 <span id="cb18-173"><a href="#cb18-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-174"><a href="#cb18-174" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb18-175"><a href="#cb18-175" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1456,13 +1670,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-198"><a href="#cb18-198" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-199"><a href="#cb18-199" aria-hidden="true" tabindex="-1"></a>::: {#exm-remote}</span>
 <span id="cb18-200"><a href="#cb18-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{.sh}</span></span>
-<span id="cb18-201"><a href="#cb18-201" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add lab git@gitlab.com:maptv/maptv.gitlab.io</span>
-<span id="cb18-202"><a href="#cb18-202" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add hub git@github.com:maptv/maptv.github.io</span>
-<span id="cb18-203"><a href="#cb18-203" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url <span class="at">--add</span> origin <span class="va">$(</span><span class="fu">git</span> remote get-url lab<span class="va">)</span></span>
+<span id="cb18-201"><a href="#cb18-201" aria-hidden="true" tabindex="-1"></a><span class="in">git remote add lab git@gitlab.com:maptv/maptv.gitlab.io</span></span>
+<span id="cb18-202"><a href="#cb18-202" aria-hidden="true" tabindex="-1"></a><span class="in">git remote add hub git@github.com:maptv/maptv.github.io</span></span>
+<span id="cb18-203"><a href="#cb18-203" aria-hidden="true" tabindex="-1"></a><span class="in">git remote set-url --add origin $(git remote get-url lab)</span></span>
 <span id="cb18-204"><a href="#cb18-204" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-205"><a href="#cb18-205" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb18-206"><a href="#cb18-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-207"><a href="#cb18-207" aria-hidden="true" tabindex="-1"></a>By default, GitLab Pages includes a random hash in site <span class="co">[</span><span class="ot">URLs</span><span class="co">]</span>(https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web). To shorten the URL of my GitLab Pages site to <span class="kw">&lt;maptv.gitlab.io&gt;</span>, I had to uncheck **Use unique domain** under <span class="in">`Deploy &gt; Pages`</span> in the GitLab sidebar.</span>
+<span id="cb18-207"><a href="#cb18-207" aria-hidden="true" tabindex="-1"></a>By default, GitLab Pages includes a random hash in site <span class="co">[</span><span class="ot">URLs</span><span class="co">]</span>(https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web). To shorten the URL of my GitLab Pages site to &lt;maptv.gitlab.io&gt;, I had to uncheck **Use unique domain** under <span class="in">`Deploy &gt; Pages`</span> in the GitLab sidebar.</span>
 <span id="cb18-208"><a href="#cb18-208" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-209"><a href="#cb18-209" aria-hidden="true" tabindex="-1"></a>At this point, we have completed <span class="co">[</span><span class="ot">G2</span><span class="co">]</span> setup and you should be able to run <span class="in">`quarto`</span> <span class="in">`publish`</span> <span class="in">`gh-pages`</span> from your <span class="in">`main`</span> branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with <span class="in">`quarto`</span> <span class="in">`publish`</span> at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions.</span>
 <span id="cb18-210"><a href="#cb18-210" aria-hidden="true" tabindex="-1"></a></span>
@@ -1477,9 +1691,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-219"><a href="#cb18-219" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `curl`</span></span>
 <span id="cb18-220"><a href="#cb18-220" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-221"><a href="#cb18-221" aria-hidden="true" tabindex="-1"></a><span class="in">```{.sh}</span></span>
-<span id="cb18-222"><a href="#cb18-222" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> .github/workflows</span>
-<span id="cb18-223"><a href="#cb18-223" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> .github/workflows</span>
-<span id="cb18-224"><a href="#cb18-224" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> https://raw.githubusercontent.com/maptv/maptv.github.io/main/.github/workflows/publish.yml</span>
+<span id="cb18-222"><a href="#cb18-222" aria-hidden="true" tabindex="-1"></a><span class="in">mkdir -p .github/workflows</span></span>
+<span id="cb18-223"><a href="#cb18-223" aria-hidden="true" tabindex="-1"></a><span class="in">cd .github/workflows</span></span>
+<span id="cb18-224"><a href="#cb18-224" aria-hidden="true" tabindex="-1"></a><span class="in">curl -O https://raw.githubusercontent.com/maptv/maptv.github.io/main/.github/workflows/publish.yml</span></span>
 <span id="cb18-225"><a href="#cb18-225" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-226"><a href="#cb18-226" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-227"><a href="#cb18-227" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `.github/workflows/publish.yml`</span></span>
@@ -1494,7 +1708,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-236"><a href="#cb18-236" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-237"><a href="#cb18-237" aria-hidden="true" tabindex="-1"></a>To modify the Python files that are installed by GitHub Actions, you can edit the <span class="in">`requirements.txt`</span> file in your repo. To update your <span class="in">`renv.lock`</span> file so that it includes all of the R packages your site requires, run <span class="co">[</span><span class="ot">`renv::snapshot()`</span><span class="co">](https://rstudio.github.io/renv/reference/snapshot.html)</span> in an R session or <span class="in">`Rscript`</span> <span class="in">`-e`</span> <span class="in">`renv::snapshot()`</span> in a shell.</span>
 <span id="cb18-238"><a href="#cb18-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-239"><a href="#cb18-239" aria-hidden="true" tabindex="-1"></a>After pushing the <span class="in">`.github/workflows/publish.yml`</span> file, you can check the GitHub Actions </span>
+<span id="cb18-239"><a href="#cb18-239" aria-hidden="true" tabindex="-1"></a>After pushing the <span class="in">`.github/workflows/publish.yml`</span> file, you can check the GitHub Actions tab in GitHub to see </span>
 <span id="cb18-240"><a href="#cb18-240" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-241"><a href="#cb18-241" aria-hidden="true" tabindex="-1"></a><span class="fu"># Customizing Quarto sites {#sec-cust}</span></span>
 <span id="cb18-242"><a href="#cb18-242" aria-hidden="true" tabindex="-1"></a></span>
@@ -1515,8 +1729,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-257"><a href="#cb18-257" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `*.qmd`</span></span>
 <span id="cb18-258"><a href="#cb18-258" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-259"><a href="#cb18-259" aria-hidden="true" tabindex="-1"></a><span class="in">```` html</span></span>
-<span id="cb18-260"><a href="#cb18-260" aria-hidden="true" tabindex="-1"></a>```<span class="op">{=</span>html<span class="op">}</span></span>
-<span id="cb18-261"><a href="#cb18-261" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>script src<span class="op">=</span><span class="st">"time.js"</span><span class="op">&gt;&lt;/</span>script<span class="op">&gt;</span></span>
+<span id="cb18-260"><a href="#cb18-260" aria-hidden="true" tabindex="-1"></a>```{=html}</span>
+<span id="cb18-261"><a href="#cb18-261" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"time.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb18-262"><a href="#cb18-262" aria-hidden="true" tabindex="-1"></a>```</span>
 <span id="cb18-263"><a href="#cb18-263" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
 <span id="cb18-264"><a href="#cb18-264" aria-hidden="true" tabindex="-1"></a></span>
@@ -1545,12 +1759,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-287"><a href="#cb18-287" aria-hidden="true" tabindex="-1"></a>Quarto uses Pandoc to convert markdown files into target format(s) like <span class="in">`html`</span> or <span class="in">`pdf`</span>. If the source files contain executable code, Quarto executes the code via one of two computational engines: <span class="co">[</span><span class="ot">Jupyter</span><span class="co">](https://jupyter.org/#:~:text=Free%20software%2C%20open%20standards%2C%20and%20web%20services%20for%20interactive%20computing%20across%20all%20programming%20languages)</span> or <span class="co">[</span><span class="ot">Knitr</span><span class="co">](https://yihui.org/knitr/#:~:text=the%20knitr%20package%20was%20designed%20to%20be%20a%20transparent%20engine%20for%20dynamic%20report%20generation%20with%20R)</span>. @fig-render shows the Quarto workflow.</span>
 <span id="cb18-288"><a href="#cb18-288" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-289"><a href="#cb18-289" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid fig-align="center"}</span></span>
-<span id="cb18-290"><a href="#cb18-290" aria-hidden="true" tabindex="-1"></a>%%| label: fig<span class="ot">-r</span>ender</span>
-<span id="cb18-291"><a href="#cb18-291" aria-hidden="true" tabindex="-1"></a>%%| fig<span class="ot">-c</span>ap: Quarto workflow</span>
-<span id="cb18-292"><a href="#cb18-292" aria-hidden="true" tabindex="-1"></a>%%| fig-align: center</span>
-<span id="cb18-293"><a href="#cb18-293" aria-hidden="true" tabindex="-1"></a>%%| fig<span class="ot">-w</span>idth: <span class="dv">9</span></span>
-<span id="cb18-294"><a href="#cb18-294" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
-<span id="cb18-295"><a href="#cb18-295" aria-hidden="true" tabindex="-1"></a>   A[qmd&lt;br/&gt;ipynb]-.Knitr&lt;br/&gt;Jupyter.-&gt;B((md))-.Pandoc with&lt;br/&gt;Lua filters.-&gt;C(html&lt;br/&gt;pdf&lt;br/&gt;docx&lt;br/&gt;etc.)</span>
+<span id="cb18-290"><a href="#cb18-290" aria-hidden="true" tabindex="-1"></a><span class="in">%%| label: fig-render</span></span>
+<span id="cb18-291"><a href="#cb18-291" aria-hidden="true" tabindex="-1"></a><span class="in">%%| fig-cap: Quarto workflow</span></span>
+<span id="cb18-292"><a href="#cb18-292" aria-hidden="true" tabindex="-1"></a><span class="in">%%| fig-align: center</span></span>
+<span id="cb18-293"><a href="#cb18-293" aria-hidden="true" tabindex="-1"></a><span class="in">%%| fig-width: 9</span></span>
+<span id="cb18-294"><a href="#cb18-294" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb18-295"><a href="#cb18-295" aria-hidden="true" tabindex="-1"></a><span class="in">   A[qmd&lt;br/&gt;ipynb]-.Knitr&lt;br/&gt;Jupyter.-&gt;B((md))-.Pandoc with&lt;br/&gt;Lua filters.-&gt;C(html&lt;br/&gt;pdf&lt;br/&gt;docx&lt;br/&gt;etc.)</span></span>
 <span id="cb18-296"><a href="#cb18-296" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-297"><a href="#cb18-297" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-298"><a href="#cb18-298" aria-hidden="true" tabindex="-1"></a>Mine Çetinkaya-Rundel's Quarto tip series includes a similar <span class="co">[</span><span class="ot">Quarto workflow mermaid diagram</span><span class="co">](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/21-diagrams/#fig-mermaid)</span> and her <span class="co">[</span><span class="ot">"Hello, Quarto!"</span><span class="co">](https://mine.quarto.pub/hello-quarto)</span> rstudio::conf(2022) keynote with <span class="co">[</span><span class="ot">Julia Stewart Lowndes</span><span class="co">](https://jules32.github.io)</span> contains truly beautiful Quarto workflow images by <span class="co">[</span><span class="ot">Allison Horst</span><span class="co">](https://allisonhorst.com)</span>: <span class="co">[</span><span class="ot">1</span><span class="co">](https://mine.quarto.pub/hello-quarto/#/publishing-system-2)</span>, <span class="co">[</span><span class="ot">2</span><span class="co">](https://mine.quarto.pub/hello-quarto/#/quarto-flattens-the-learning-curve)</span>, <span class="co">[</span><span class="ot">3</span><span class="co">](https://mine.quarto.pub/hello-quarto/#/quarto-can-grow-with-learners-in-a-profound-way)</span>, and <span class="co">[</span><span class="ot">4</span><span class="co">](https://mine.quarto.pub/hello-quarto/#/quarto-cli-orchestrates-each-step-of-rendering)</span>.</span>
@@ -1576,8 +1790,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-318"><a href="#cb18-318" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `*.qmd`</span></span>
 <span id="cb18-319"><a href="#cb18-319" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-320"><a href="#cb18-320" aria-hidden="true" tabindex="-1"></a><span class="in">```` html</span></span>
-<span id="cb18-321"><a href="#cb18-321" aria-hidden="true" tabindex="-1"></a>```<span class="op">{=</span>html<span class="op">}</span></span>
-<span id="cb18-322"><a href="#cb18-322" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>script src<span class="op">=</span><span class="st">"time.js"</span><span class="op">&gt;&lt;/</span>script<span class="op">&gt;</span></span>
+<span id="cb18-321"><a href="#cb18-321" aria-hidden="true" tabindex="-1"></a>```{=html}</span>
+<span id="cb18-322"><a href="#cb18-322" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"time.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb18-323"><a href="#cb18-323" aria-hidden="true" tabindex="-1"></a>```</span>
 <span id="cb18-324"><a href="#cb18-324" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
 <span id="cb18-325"><a href="#cb18-325" aria-hidden="true" tabindex="-1"></a></span>
@@ -1602,118 +1816,119 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-344"><a href="#cb18-344" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-345"><a href="#cb18-345" aria-hidden="true" tabindex="-1"></a><span class="in">``` javascript</span></span>
 <span id="cb18-346"><a href="#cb18-346" aria-hidden="true" tabindex="-1"></a><span class="co">// https://howardhinnant.github.io/date_algorithms.html#days_from_civil</span></span>
-<span id="cb18-347"><a href="#cb18-347" aria-hidden="true" tabindex="-1"></a>function <span class="fu">dote2doty</span><span class="op">(</span>days <span class="op">=</span> <span class="dv">719468</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb18-348"><a href="#cb18-348" aria-hidden="true" tabindex="-1"></a>    <span class="dt">const</span> era <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span><span class="op">((</span>days <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> days <span class="op">:</span> days <span class="op">-</span> <span class="dv">146096</span><span class="op">)</span> <span class="op">/</span> <span class="dv">146097</span><span class="op">),</span></span>
+<span id="cb18-347"><a href="#cb18-347" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">dote2doty</span>(days <span class="op">=</span> <span class="dv">719468</span>) {</span>
+<span id="cb18-348"><a href="#cb18-348" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> era <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((days <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> days <span class="op">:</span> days <span class="op">-</span> <span class="dv">146096</span>) <span class="op">/</span> <span class="dv">146097</span>)<span class="op">,</span></span>
 <span id="cb18-349"><a href="#cb18-349" aria-hidden="true" tabindex="-1"></a>        dotc <span class="op">=</span> days <span class="op">-</span> era <span class="op">*</span> <span class="dv">146097</span><span class="op">,</span></span>
-<span id="cb18-350"><a href="#cb18-350" aria-hidden="true" tabindex="-1"></a>        yotc <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span><span class="op">((</span>dotc <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span><span class="op">(</span>dotc <span class="op">/</span> <span class="dv">1460</span><span class="op">)</span></span>
-<span id="cb18-351"><a href="#cb18-351" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span><span class="op">(</span>dotc <span class="op">/</span> <span class="dv">36524</span><span class="op">)</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span><span class="op">(</span>dotc <span class="op">/</span> <span class="dv">146096</span><span class="op">))</span> <span class="op">/</span> <span class="dv">365</span><span class="op">);</span></span>
-<span id="cb18-352"><a href="#cb18-352" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">[</span>yotc <span class="op">+</span> era <span class="op">*</span> <span class="dv">400</span><span class="op">,</span> dotc <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span><span class="op">(</span>yotc <span class="op">/</span> <span class="dv">100</span><span class="op">)</span></span>
-<span id="cb18-353"><a href="#cb18-353" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span> yotc <span class="op">*</span> <span class="dv">365</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span><span class="op">(</span>yotc <span class="op">/</span> <span class="dv">4</span><span class="op">)];</span></span>
-<span id="cb18-354"><a href="#cb18-354" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
-<span id="cb18-355"><a href="#cb18-355" aria-hidden="true" tabindex="-1"></a>function <span class="fu">unix2doty</span><span class="op">(</span>ms <span class="op">=</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span> <span class="cf">return</span> <span class="fu">dote2doty</span><span class="op">(</span>ms <span class="op">/</span> <span class="dv">86400000</span> <span class="op">+</span> <span class="dv">719468</span><span class="op">)</span> <span class="op">};</span></span>
-<span id="cb18-356"><a href="#cb18-356" aria-hidden="true" tabindex="-1"></a>function <span class="fu">doty2deco</span><span class="op">(</span>year <span class="op">=</span> <span class="dv">1969</span><span class="op">,</span> doty <span class="op">=</span> <span class="dv">306</span><span class="op">,</span> zone <span class="op">=</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb18-357"><a href="#cb18-357" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>date<span class="op">,</span> time<span class="op">]</span> <span class="op">=</span> doty<span class="op">.</span><span class="fu">toString</span><span class="op">().</span><span class="fu">split</span><span class="op">(</span><span class="st">"."</span><span class="op">)</span></span>
-<span id="cb18-358"><a href="#cb18-358" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> `$<span class="op">{</span>year<span class="op">}+</span>$<span class="op">{</span>date<span class="op">.</span><span class="fu">toString</span><span class="op">().</span><span class="fu">padStart</span><span class="op">(</span><span class="dv">3</span><span class="op">,</span> <span class="st">"0"</span><span class="op">)}.</span>$<span class="op">{</span></span>
-<span id="cb18-359"><a href="#cb18-359" aria-hidden="true" tabindex="-1"></a>    time<span class="op">.</span><span class="fu">toString</span><span class="op">().</span><span class="fu">slice</span><span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">5</span><span class="op">).</span><span class="fu">padStart</span><span class="op">(</span><span class="dv">5</span><span class="op">,</span> <span class="st">"0"</span><span class="op">)}</span>`<span class="op">;</span></span>
-<span id="cb18-360"><a href="#cb18-360" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
-<span id="cb18-361"><a href="#cb18-361" aria-hidden="true" tabindex="-1"></a>function <span class="fu">unix2deco</span><span class="op">(</span>ms <span class="op">=</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span> <span class="cf">return</span> <span class="fu">doty2deco</span><span class="op">(</span><span class="kw">...</span><span class="fu">unix2doty</span><span class="op">(</span>ms<span class="op">))</span> <span class="op">};</span></span>
-<span id="cb18-362"><a href="#cb18-362" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> nbc <span class="op">=</span> document<span class="op">.</span><span class="fu">getElementsByClassName</span><span class="op">(</span><span class="st">"navbar-brand-container"</span><span class="op">);</span></span>
-<span id="cb18-363"><a href="#cb18-363" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> div <span class="op">=</span> document<span class="op">.</span><span class="fu">createElement</span><span class="op">(</span><span class="st">"div"</span><span class="op">);</span></span>
-<span id="cb18-364"><a href="#cb18-364" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> cal <span class="op">=</span> document<span class="op">.</span><span class="fu">createElement</span><span class="op">(</span><span class="st">"i"</span><span class="op">);</span></span>
-<span id="cb18-365"><a href="#cb18-365" aria-hidden="true" tabindex="-1"></a>cal<span class="op">.</span><span class="fu">classList</span><span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="st">"bi"</span><span class="op">,</span> <span class="st">"bi-calendar"</span><span class="op">);</span></span>
-<span id="cb18-366"><a href="#cb18-366" aria-hidden="true" tabindex="-1"></a>cal<span class="op">.</span><span class="fu">setAttribute</span><span class="op">(</span><span class="st">"role"</span><span class="op">,</span> <span class="st">"img"</span><span class="op">);</span></span>
-<span id="cb18-367"><a href="#cb18-367" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> tik <span class="op">=</span> document<span class="op">.</span><span class="fu">createElement</span><span class="op">(</span><span class="st">"i"</span><span class="op">);</span></span>
-<span id="cb18-368"><a href="#cb18-368" aria-hidden="true" tabindex="-1"></a>tik<span class="op">.</span><span class="fu">classList</span><span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="st">"bi"</span><span class="op">,</span> <span class="st">"bi-clock"</span><span class="op">);</span></span>
-<span id="cb18-369"><a href="#cb18-369" aria-hidden="true" tabindex="-1"></a>tik<span class="op">.</span><span class="fu">setAttribute</span><span class="op">(</span><span class="st">"role"</span><span class="op">,</span> <span class="st">"img"</span><span class="op">);</span></span>
-<span id="cb18-370"><a href="#cb18-370" aria-hidden="true" tabindex="-1"></a>div<span class="op">.</span><span class="fu">setAttribute</span><span class="op">(</span><span class="st">"id"</span><span class="op">,</span> <span class="st">"deco"</span><span class="op">);</span></span>
-<span id="cb18-371"><a href="#cb18-371" aria-hidden="true" tabindex="-1"></a>nbc<span class="op">[</span><span class="dv">0</span><span class="op">].</span><span class="fu">appendChild</span><span class="op">(</span>cal<span class="op">);</span></span>
-<span id="cb18-372"><a href="#cb18-372" aria-hidden="true" tabindex="-1"></a>nbc<span class="op">[</span><span class="dv">0</span><span class="op">].</span><span class="fu">appendChild</span><span class="op">(</span>div<span class="op">);</span></span>
-<span id="cb18-373"><a href="#cb18-373" aria-hidden="true" tabindex="-1"></a>nbc<span class="op">[</span><span class="dv">0</span><span class="op">].</span><span class="fu">appendChild</span><span class="op">(</span>tik<span class="op">);</span></span>
-<span id="cb18-374"><a href="#cb18-374" aria-hidden="true" tabindex="-1"></a><span class="fu">setInterval</span><span class="op">(()</span> <span class="op">=&gt;</span> document<span class="op">.</span><span class="fu">getElementById</span><span class="op">(</span><span class="st">"deco"</span><span class="op">).</span><span class="fu">innerText</span> <span class="op">=</span></span>
-<span id="cb18-375"><a href="#cb18-375" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unix2deco</span><span class="op">(</span><span class="bu">Date</span><span class="op">.</span><span class="fu">now</span><span class="op">()).</span><span class="fu">slice</span><span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">14</span><span class="op">),</span> <span class="fl">8.64</span><span class="op">);</span></span>
-<span id="cb18-376"><a href="#cb18-376" aria-hidden="true" tabindex="-1"></a>```</span>
+<span id="cb18-350"><a href="#cb18-350" aria-hidden="true" tabindex="-1"></a>        yotc <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((dotc <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">1460</span>)</span>
+<span id="cb18-351"><a href="#cb18-351" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">36524</span>) <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">146096</span>)) <span class="op">/</span> <span class="dv">365</span>)<span class="op">;</span></span>
+<span id="cb18-352"><a href="#cb18-352" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [yotc <span class="op">+</span> era <span class="op">*</span> <span class="dv">400</span><span class="op">,</span> dotc <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">100</span>)</span>
+<span id="cb18-353"><a href="#cb18-353" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span> yotc <span class="op">*</span> <span class="dv">365</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">4</span>)]<span class="op">;</span></span>
+<span id="cb18-354"><a href="#cb18-354" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb18-355"><a href="#cb18-355" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">unix2doty</span>(ms <span class="op">=</span> <span class="dv">0</span>) { <span class="cf">return</span> <span class="fu">dote2doty</span>(ms <span class="op">/</span> <span class="dv">86400000</span> <span class="op">+</span> <span class="dv">719468</span>) }<span class="op">;</span></span>
+<span id="cb18-356"><a href="#cb18-356" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">doty2deco</span>(year <span class="op">=</span> <span class="dv">1969</span><span class="op">,</span> doty <span class="op">=</span> <span class="dv">306</span><span class="op">,</span> zone <span class="op">=</span> <span class="dv">0</span>) {</span>
+<span id="cb18-357"><a href="#cb18-357" aria-hidden="true" tabindex="-1"></a>    [date<span class="op">,</span> time] <span class="op">=</span> doty<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">split</span>(<span class="st">"."</span>)</span>
+<span id="cb18-358"><a href="#cb18-358" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="vs">`</span><span class="sc">${</span>year<span class="sc">}</span><span class="vs">+</span><span class="sc">${</span>date<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">3</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}</span><span class="vs">.</span><span class="sc">${</span></span>
+<span id="cb18-359"><a href="#cb18-359" aria-hidden="true" tabindex="-1"></a>    time<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">5</span>)<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">5</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}</span><span class="vs">`</span><span class="op">;</span></span>
+<span id="cb18-360"><a href="#cb18-360" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb18-361"><a href="#cb18-361" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">unix2deco</span>(ms <span class="op">=</span> <span class="dv">0</span>) { <span class="cf">return</span> <span class="fu">doty2deco</span>(<span class="op">...</span><span class="fu">unix2doty</span>(ms)) }<span class="op">;</span></span>
+<span id="cb18-362"><a href="#cb18-362" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> nbc <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementsByClassName</span>(<span class="st">"navbar-brand-container"</span>)<span class="op">;</span></span>
+<span id="cb18-363"><a href="#cb18-363" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> div <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"div"</span>)<span class="op">;</span></span>
+<span id="cb18-364"><a href="#cb18-364" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> cal <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"i"</span>)<span class="op">;</span></span>
+<span id="cb18-365"><a href="#cb18-365" aria-hidden="true" tabindex="-1"></a>cal<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"bi"</span><span class="op">,</span> <span class="st">"bi-calendar"</span>)<span class="op">;</span></span>
+<span id="cb18-366"><a href="#cb18-366" aria-hidden="true" tabindex="-1"></a>cal<span class="op">.</span><span class="fu">setAttribute</span>(<span class="st">"role"</span><span class="op">,</span> <span class="st">"img"</span>)<span class="op">;</span></span>
+<span id="cb18-367"><a href="#cb18-367" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> tik <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">"i"</span>)<span class="op">;</span></span>
+<span id="cb18-368"><a href="#cb18-368" aria-hidden="true" tabindex="-1"></a>tik<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">"bi"</span><span class="op">,</span> <span class="st">"bi-clock"</span>)<span class="op">;</span></span>
+<span id="cb18-369"><a href="#cb18-369" aria-hidden="true" tabindex="-1"></a>tik<span class="op">.</span><span class="fu">setAttribute</span>(<span class="st">"role"</span><span class="op">,</span> <span class="st">"img"</span>)<span class="op">;</span></span>
+<span id="cb18-370"><a href="#cb18-370" aria-hidden="true" tabindex="-1"></a>div<span class="op">.</span><span class="fu">setAttribute</span>(<span class="st">"id"</span><span class="op">,</span> <span class="st">"deco"</span>)<span class="op">;</span></span>
+<span id="cb18-371"><a href="#cb18-371" aria-hidden="true" tabindex="-1"></a>nbc[<span class="dv">0</span>]<span class="op">.</span><span class="fu">appendChild</span>(cal)<span class="op">;</span></span>
+<span id="cb18-372"><a href="#cb18-372" aria-hidden="true" tabindex="-1"></a>nbc[<span class="dv">0</span>]<span class="op">.</span><span class="fu">appendChild</span>(div)<span class="op">;</span></span>
+<span id="cb18-373"><a href="#cb18-373" aria-hidden="true" tabindex="-1"></a>nbc[<span class="dv">0</span>]<span class="op">.</span><span class="fu">appendChild</span>(tik)<span class="op">;</span></span>
+<span id="cb18-374"><a href="#cb18-374" aria-hidden="true" tabindex="-1"></a><span class="pp">setInterval</span>(() <span class="kw">=&gt;</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"deco"</span>)<span class="op">.</span><span class="at">innerText</span> <span class="op">=</span></span>
+<span id="cb18-375"><a href="#cb18-375" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unix2deco</span>(<span class="bu">Date</span><span class="op">.</span><span class="fu">now</span>())<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">14</span>)<span class="op">,</span> <span class="fl">8.64</span>)<span class="op">;</span></span>
+<span id="cb18-376"><a href="#cb18-376" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-377"><a href="#cb18-377" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-378"><a href="#cb18-378" aria-hidden="true" tabindex="-1"></a>#### `date<span class="op">.</span><span class="fu">py</span>`</span>
+<span id="cb18-378"><a href="#cb18-378" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `date.py`</span></span>
 <span id="cb18-379"><a href="#cb18-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-380"><a href="#cb18-380" aria-hidden="true" tabindex="-1"></a>``` python</span>
-<span id="cb18-381"><a href="#cb18-381" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">bs4</span></span>
+<span id="cb18-380"><a href="#cb18-380" aria-hidden="true" tabindex="-1"></a><span class="in">``` python</span></span>
+<span id="cb18-381"><a href="#cb18-381" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> bs4</span>
 <span id="cb18-382"><a href="#cb18-382" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-383"><a href="#cb18-383" aria-hidden="true" tabindex="-1"></a>def <span class="fu">unix2doty</span><span class="op">(</span>ms<span class="op">=</span><span class="dv">0</span><span class="op">):</span></span>
+<span id="cb18-383"><a href="#cb18-383" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unix2doty(ms<span class="op">=</span><span class="dv">0</span>):</span>
 <span id="cb18-384"><a href="#cb18-384" aria-hidden="true" tabindex="-1"></a>    days <span class="op">=</span> ms <span class="op">/</span> <span class="dv">86400000</span> <span class="op">+</span> <span class="dv">719468</span></span>
-<span id="cb18-385"><a href="#cb18-385" aria-hidden="true" tabindex="-1"></a>    dote <span class="op">=</span> days <span class="op">-</span> <span class="op">(</span>era <span class="op">:=</span> <span class="op">(</span>days <span class="cf">if</span> days <span class="op">&gt;=</span> <span class="dv">0</span> <span class="cf">else</span> days <span class="op">-</span> <span class="dv">146096</span><span class="op">)</span> <span class="co">// 146097) * 146097</span></span>
-<span id="cb18-386"><a href="#cb18-386" aria-hidden="true" tabindex="-1"></a>    year <span class="op">=</span> <span class="dt">int</span><span class="op">((</span>dote <span class="op">-</span> dote <span class="op">/</span> <span class="dv">1460</span> <span class="op">+</span> dote <span class="op">/</span> <span class="dv">36524</span> <span class="op">-</span> dote <span class="op">/</span> <span class="dv">146096</span><span class="op">)</span> <span class="co">// 365 + era * 400)</span></span>
-<span id="cb18-387"><a href="#cb18-387" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> year<span class="op">,</span> days <span class="op">-</span> <span class="op">(</span>year <span class="op">*</span> <span class="dv">365</span> <span class="op">+</span> year <span class="op">/</span> <span class="dv">4</span> <span class="op">-</span> year <span class="op">/</span> <span class="dv">100</span> <span class="op">+</span> year <span class="op">/</span> <span class="dv">400</span><span class="op">).</span><span class="fu">__floor__</span><span class="op">()</span></span>
+<span id="cb18-385"><a href="#cb18-385" aria-hidden="true" tabindex="-1"></a>    dote <span class="op">=</span> days <span class="op">-</span> (era <span class="op">:=</span> (days <span class="cf">if</span> days <span class="op">&gt;=</span> <span class="dv">0</span> <span class="cf">else</span> days <span class="op">-</span> <span class="dv">146096</span>) <span class="op">//</span> <span class="dv">146097</span>) <span class="op">*</span> <span class="dv">146097</span></span>
+<span id="cb18-386"><a href="#cb18-386" aria-hidden="true" tabindex="-1"></a>    year <span class="op">=</span> <span class="bu">int</span>((dote <span class="op">-</span> dote <span class="op">/</span> <span class="dv">1460</span> <span class="op">+</span> dote <span class="op">/</span> <span class="dv">36524</span> <span class="op">-</span> dote <span class="op">/</span> <span class="dv">146096</span>) <span class="op">//</span> <span class="dv">365</span> <span class="op">+</span> era <span class="op">*</span> <span class="dv">400</span>)</span>
+<span id="cb18-387"><a href="#cb18-387" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> year, days <span class="op">-</span> (year <span class="op">*</span> <span class="dv">365</span> <span class="op">+</span> year <span class="op">/</span> <span class="dv">4</span> <span class="op">-</span> year <span class="op">/</span> <span class="dv">100</span> <span class="op">+</span> year <span class="op">/</span> <span class="dv">400</span>).<span class="fu">__floor__</span>()</span>
 <span id="cb18-388"><a href="#cb18-388" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-389"><a href="#cb18-389" aria-hidden="true" tabindex="-1"></a>with <span class="fu">open</span><span class="op">(</span><span class="st">"docs/blog.html"</span><span class="op">)</span> as infile<span class="op">:</span></span>
-<span id="cb18-390"><a href="#cb18-390" aria-hidden="true" tabindex="-1"></a>    txt <span class="op">=</span> infile<span class="op">.</span><span class="fu">read</span><span class="op">()</span></span>
-<span id="cb18-391"><a href="#cb18-391" aria-hidden="true" tabindex="-1"></a>    soup <span class="op">=</span> bs4<span class="op">.</span><span class="fu">BeautifulSoup</span><span class="op">(</span>txt<span class="op">,</span> features<span class="op">=</span><span class="st">"html.parser"</span><span class="op">)</span></span>
-<span id="cb18-392"><a href="#cb18-392" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> div in soup<span class="op">.</span><span class="fu">find_all</span><span class="op">(</span><span class="st">"div"</span><span class="op">,</span> <span class="op">{</span><span class="st">"class"</span><span class="op">:</span> <span class="st">"listing-date"</span><span class="op">}):</span></span>
-<span id="cb18-393"><a href="#cb18-393" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"+"</span> not in div<span class="op">.</span><span class="fu">text</span><span class="op">:</span></span>
-<span id="cb18-394"><a href="#cb18-394" aria-hidden="true" tabindex="-1"></a>        y<span class="op">,</span> d <span class="op">=</span> <span class="fu">unix2doty</span><span class="op">(</span><span class="dt">int</span><span class="op">(</span>div<span class="op">.</span><span class="fu">text</span><span class="op">))</span></span>
-<span id="cb18-395"><a href="#cb18-395" aria-hidden="true" tabindex="-1"></a>        div<span class="op">.</span><span class="fu">string</span><span class="op">.</span><span class="fu">replace_with</span><span class="op">(</span>f<span class="st">"{y:&gt;04}+{d.__floor__():&gt;03}"</span><span class="op">)</span></span>
-<span id="cb18-396"><a href="#cb18-396" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p in soup<span class="op">.</span><span class="fu">find_all</span><span class="op">(</span><span class="st">"p"</span><span class="op">,</span> <span class="op">{</span><span class="st">"class"</span><span class="op">:</span> <span class="st">"date"</span><span class="op">}):</span></span>
-<span id="cb18-397"><a href="#cb18-397" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"+"</span> not in p<span class="op">.</span><span class="fu">text</span><span class="op">:</span></span>
-<span id="cb18-398"><a href="#cb18-398" aria-hidden="true" tabindex="-1"></a>        y<span class="op">,</span> d <span class="op">=</span> <span class="fu">unix2doty</span><span class="op">(</span><span class="dt">int</span><span class="op">(</span>p<span class="op">.</span><span class="fu">text</span><span class="op">))</span></span>
-<span id="cb18-399"><a href="#cb18-399" aria-hidden="true" tabindex="-1"></a>        p<span class="op">.</span><span class="fu">string</span><span class="op">.</span><span class="fu">replace_with</span><span class="op">(</span>f<span class="st">"{y:&gt;04}+{d.__floor__():&gt;03}"</span><span class="op">)</span></span>
+<span id="cb18-389"><a href="#cb18-389" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"docs/blog.html"</span>) <span class="im">as</span> infile:</span>
+<span id="cb18-390"><a href="#cb18-390" aria-hidden="true" tabindex="-1"></a>    txt <span class="op">=</span> infile.read()</span>
+<span id="cb18-391"><a href="#cb18-391" aria-hidden="true" tabindex="-1"></a>    soup <span class="op">=</span> bs4.BeautifulSoup(txt, features<span class="op">=</span><span class="st">"html.parser"</span>)</span>
+<span id="cb18-392"><a href="#cb18-392" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> div <span class="kw">in</span> soup.find_all(<span class="st">"div"</span>, {<span class="st">"class"</span>: <span class="st">"listing-date"</span>}):</span>
+<span id="cb18-393"><a href="#cb18-393" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"+"</span> <span class="kw">not</span> <span class="kw">in</span> div.text:</span>
+<span id="cb18-394"><a href="#cb18-394" aria-hidden="true" tabindex="-1"></a>        y, d <span class="op">=</span> unix2doty(<span class="bu">int</span>(div.text))</span>
+<span id="cb18-395"><a href="#cb18-395" aria-hidden="true" tabindex="-1"></a>        div.string.replace_with(<span class="ss">f"</span><span class="sc">{</span>y<span class="sc">:&gt;04}</span><span class="ss">+</span><span class="sc">{</span>d<span class="sc">.</span><span class="fu">__floor__</span>()<span class="sc">:&gt;03}</span><span class="ss">"</span>)</span>
+<span id="cb18-396"><a href="#cb18-396" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p <span class="kw">in</span> soup.find_all(<span class="st">"p"</span>, {<span class="st">"class"</span>: <span class="st">"date"</span>}):</span>
+<span id="cb18-397"><a href="#cb18-397" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"+"</span> <span class="kw">not</span> <span class="kw">in</span> p.text:</span>
+<span id="cb18-398"><a href="#cb18-398" aria-hidden="true" tabindex="-1"></a>        y, d <span class="op">=</span> unix2doty(<span class="bu">int</span>(p.text))</span>
+<span id="cb18-399"><a href="#cb18-399" aria-hidden="true" tabindex="-1"></a>        p.string.replace_with(<span class="ss">f"</span><span class="sc">{</span>y<span class="sc">:&gt;04}</span><span class="ss">+</span><span class="sc">{</span>d<span class="sc">.</span><span class="fu">__floor__</span>()<span class="sc">:&gt;03}</span><span class="ss">"</span>)</span>
 <span id="cb18-400"><a href="#cb18-400" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-401"><a href="#cb18-401" aria-hidden="true" tabindex="-1"></a>with <span class="fu">open</span><span class="op">(</span><span class="st">"docs/blog.html"</span><span class="op">,</span> <span class="st">"w"</span><span class="op">)</span> as outfile<span class="op">:</span></span>
-<span id="cb18-402"><a href="#cb18-402" aria-hidden="true" tabindex="-1"></a>    outfile<span class="op">.</span><span class="fu">write</span><span class="op">(</span><span class="fu">str</span><span class="op">(</span>soup<span class="op">))</span></span>
-<span id="cb18-403"><a href="#cb18-403" aria-hidden="true" tabindex="-1"></a>```</span>
+<span id="cb18-401"><a href="#cb18-401" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"docs/blog.html"</span>, <span class="st">"w"</span>) <span class="im">as</span> outfile:</span>
+<span id="cb18-402"><a href="#cb18-402" aria-hidden="true" tabindex="-1"></a>    outfile.write(<span class="bu">str</span>(soup))</span>
+<span id="cb18-403"><a href="#cb18-403" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb18-404"><a href="#cb18-404" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-405"><a href="#cb18-405" aria-hidden="true" tabindex="-1"></a>#### `date<span class="op">.</span><span class="fu">lua</span>`</span>
+<span id="cb18-405"><a href="#cb18-405" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `date.lua`</span></span>
 <span id="cb18-406"><a href="#cb18-406" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-407"><a href="#cb18-407" aria-hidden="true" tabindex="-1"></a>``` lua</span>
-<span id="cb18-408"><a href="#cb18-408" aria-hidden="true" tabindex="-1"></a>local function <span class="fu">unix2deco</span><span class="op">(</span>ms<span class="op">)</span></span>
-<span id="cb18-409"><a href="#cb18-409" aria-hidden="true" tabindex="-1"></a>    local days <span class="op">=</span> ms <span class="op">/</span> <span class="dv">86400000</span> <span class="op">+</span> <span class="dv">719468</span></span>
-<span id="cb18-410"><a href="#cb18-410" aria-hidden="true" tabindex="-1"></a>    local era <span class="op">=</span> <span class="op">(</span>days <span class="op">&gt;=</span> <span class="dv">0</span> and days or days <span class="op">-</span> <span class="dv">146096</span><span class="op">)</span> <span class="co">// 146097</span></span>
-<span id="cb18-411"><a href="#cb18-411" aria-hidden="true" tabindex="-1"></a>    local doe <span class="op">=</span> days <span class="op">-</span> era <span class="op">*</span> <span class="dv">146097</span></span>
-<span id="cb18-412"><a href="#cb18-412" aria-hidden="true" tabindex="-1"></a>    local year <span class="op">=</span> math<span class="op">.</span><span class="fu">floor</span><span class="op">((</span>doe <span class="op">-</span> doe <span class="op">/</span> <span class="dv">1460</span> <span class="op">+</span> doe <span class="op">/</span> <span class="dv">36524</span> <span class="op">-</span> doe <span class="op">/</span> <span class="dv">146096</span><span class="op">)</span> <span class="op">/</span> <span class="dv">365</span><span class="op">)</span> <span class="op">+</span> era <span class="op">*</span> <span class="dv">400</span></span>
-<span id="cb18-413"><a href="#cb18-413" aria-hidden="true" tabindex="-1"></a>    local doty <span class="op">=</span> days <span class="op">-</span> math<span class="op">.</span><span class="fu">floor</span><span class="op">(</span>year <span class="op">*</span> <span class="dv">365</span> <span class="op">+</span> year <span class="op">/</span> <span class="dv">4</span> <span class="op">-</span> year <span class="op">/</span> <span class="dv">100</span> <span class="op">+</span> year <span class="op">/</span> <span class="dv">400</span><span class="op">)</span></span>
-<span id="cb18-414"><a href="#cb18-414" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> string<span class="op">.</span><span class="fu">format</span><span class="op">(</span><span class="st">"</span><span class="sc">%s</span><span class="st">+</span><span class="sc">%s</span><span class="st">"</span><span class="op">,</span> math<span class="op">.</span><span class="fu">floor</span><span class="op">(</span>year<span class="op">),</span> math<span class="op">.</span><span class="fu">floor</span><span class="op">(</span>doty<span class="op">))</span></span>
-<span id="cb18-415"><a href="#cb18-415" aria-hidden="true" tabindex="-1"></a>end</span>
+<span id="cb18-407"><a href="#cb18-407" aria-hidden="true" tabindex="-1"></a><span class="in">``` lua</span></span>
+<span id="cb18-408"><a href="#cb18-408" aria-hidden="true" tabindex="-1"></a><span class="in">local function unix2deco(ms)</span></span>
+<span id="cb18-409"><a href="#cb18-409" aria-hidden="true" tabindex="-1"></a><span class="in">    local days = ms / 86400000 + 719468</span></span>
+<span id="cb18-410"><a href="#cb18-410" aria-hidden="true" tabindex="-1"></a><span class="in">    local era = (days &gt;= 0 and days or days - 146096) // 146097</span></span>
+<span id="cb18-411"><a href="#cb18-411" aria-hidden="true" tabindex="-1"></a><span class="in">    local doe = days - era * 146097</span></span>
+<span id="cb18-412"><a href="#cb18-412" aria-hidden="true" tabindex="-1"></a><span class="in">    local year = math.floor((doe - doe / 1460 + doe / 36524 - doe / 146096) / 365) + era * 400</span></span>
+<span id="cb18-413"><a href="#cb18-413" aria-hidden="true" tabindex="-1"></a><span class="in">    local doty = days - math.floor(year * 365 + year / 4 - year / 100 + year / 400)</span></span>
+<span id="cb18-414"><a href="#cb18-414" aria-hidden="true" tabindex="-1"></a><span class="in">    return string.format("%s+%s", math.floor(year), math.floor(doty))</span></span>
+<span id="cb18-415"><a href="#cb18-415" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
 <span id="cb18-416"><a href="#cb18-416" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-417"><a href="#cb18-417" aria-hidden="true" tabindex="-1"></a>local function <span class="fu">to_decalendar</span><span class="op">(</span>date<span class="op">)</span></span>
-<span id="cb18-418"><a href="#cb18-418" aria-hidden="true" tabindex="-1"></a>  local date <span class="op">=</span> pandoc<span class="op">.</span><span class="fu">utils</span><span class="op">.</span><span class="fu">stringify</span><span class="op">(</span>date<span class="op">)</span></span>
-<span id="cb18-419"><a href="#cb18-419" aria-hidden="true" tabindex="-1"></a>  local unix <span class="op">=</span> date<span class="op">:</span><span class="fu">match</span><span class="op">(</span><span class="st">"(%d+)"</span><span class="op">)</span></span>
-<span id="cb18-420"><a href="#cb18-420" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> date<span class="op">:</span><span class="fu">gsub</span><span class="op">(</span>unix<span class="op">,</span> <span class="fu">unix2deco</span><span class="op">(</span>unix<span class="op">))</span></span>
-<span id="cb18-421"><a href="#cb18-421" aria-hidden="true" tabindex="-1"></a>end</span>
+<span id="cb18-417"><a href="#cb18-417" aria-hidden="true" tabindex="-1"></a><span class="in">local function to_decalendar(date)</span></span>
+<span id="cb18-418"><a href="#cb18-418" aria-hidden="true" tabindex="-1"></a><span class="in">  local date = pandoc.utils.stringify(date)</span></span>
+<span id="cb18-419"><a href="#cb18-419" aria-hidden="true" tabindex="-1"></a><span class="in">  local unix = date:match("(%d+)")</span></span>
+<span id="cb18-420"><a href="#cb18-420" aria-hidden="true" tabindex="-1"></a><span class="in">  return date:gsub(unix, unix2deco(unix))</span></span>
+<span id="cb18-421"><a href="#cb18-421" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
 <span id="cb18-422"><a href="#cb18-422" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-423"><a href="#cb18-423" aria-hidden="true" tabindex="-1"></a>function <span class="fu">Meta</span><span class="op">(</span>m<span class="op">)</span></span>
-<span id="cb18-424"><a href="#cb18-424" aria-hidden="true" tabindex="-1"></a>  m<span class="op">.</span><span class="fu">date</span> <span class="op">=</span> <span class="fu">to_decalendar</span><span class="op">(</span>m<span class="op">.</span><span class="fu">date</span><span class="op">)</span></span>
-<span id="cb18-425"><a href="#cb18-425" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> m</span>
-<span id="cb18-426"><a href="#cb18-426" aria-hidden="true" tabindex="-1"></a>end</span>
-<span id="cb18-427"><a href="#cb18-427" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb18-428"><a href="#cb18-428" aria-hidden="true" tabindex="-1"></a><span class="op">:::</span></span>
-<span id="cb18-429"><a href="#cb18-429" aria-hidden="true" tabindex="-1"></a><span class="op">:::</span></span>
+<span id="cb18-423"><a href="#cb18-423" aria-hidden="true" tabindex="-1"></a><span class="in">function Meta(m)</span></span>
+<span id="cb18-424"><a href="#cb18-424" aria-hidden="true" tabindex="-1"></a><span class="in">  m.date = to_decalendar(m.date)</span></span>
+<span id="cb18-425"><a href="#cb18-425" aria-hidden="true" tabindex="-1"></a><span class="in">  return m</span></span>
+<span id="cb18-426"><a href="#cb18-426" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
+<span id="cb18-427"><a href="#cb18-427" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-428"><a href="#cb18-428" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb18-429"><a href="#cb18-429" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb18-430"><a href="#cb18-430" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-431"><a href="#cb18-431" aria-hidden="true" tabindex="-1"></a>```<span class="op">{=</span>html<span class="op">}</span></span>
-<span id="cb18-432"><a href="#cb18-432" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>script src<span class="op">=</span><span class="st">"../../time.js"</span><span class="op">&gt;&lt;/</span>script<span class="op">&gt;</span></span>
-<span id="cb18-433"><a href="#cb18-433" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>script<span class="op">&gt;</span></span>
-<span id="cb18-434"><a href="#cb18-434" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> tooltipTriggerList <span class="op">=</span> document<span class="op">.</span><span class="fu">querySelectorAll</span><span class="op">(</span><span class="er">'</span><span class="op">[</span>data<span class="op">-</span>bs<span class="op">-</span>toggle<span class="op">=</span><span class="st">"tooltip"</span><span class="op">]</span><span class="er">'</span><span class="op">)</span></span>
-<span id="cb18-435"><a href="#cb18-435" aria-hidden="true" tabindex="-1"></a><span class="dt">const</span> tooltipList <span class="op">=</span> <span class="op">[</span><span class="kw">...</span>tooltipTriggerList<span class="op">].</span><span class="fu">map</span><span class="op">(</span>tooltipTriggerEl <span class="op">=&gt;</span> <span class="kw">new</span> bootstrap<span class="op">.</span><span class="fu">Tooltip</span><span class="op">(</span>tooltipTriggerEl<span class="op">))</span></span>
-<span id="cb18-436"><a href="#cb18-436" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span>
-<span id="cb18-437"><a href="#cb18-437" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>style<span class="op">&gt;</span></span>
-<span id="cb18-438"><a href="#cb18-438" aria-hidden="true" tabindex="-1"></a>#title<span class="op">-</span>block<span class="op">-</span>header <span class="op">&gt;</span> div<span class="op">.</span><span class="fu">quarto</span><span class="op">-</span>title<span class="op">-</span>banner<span class="op">.</span><span class="fu">page</span><span class="op">-</span>columns<span class="op">.</span><span class="fu">page</span><span class="op">-</span>full <span class="op">{</span></span>
-<span id="cb18-439"><a href="#cb18-439" aria-hidden="true" tabindex="-1"></a>  margin<span class="op">:</span> <span class="dv">0</span>px<span class="op">;</span></span>
-<span id="cb18-440"><a href="#cb18-440" aria-hidden="true" tabindex="-1"></a>  padding<span class="op">:</span> <span class="dv">0</span>px<span class="op">;</span></span>
-<span id="cb18-441"><a href="#cb18-441" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb18-442"><a href="#cb18-442" aria-hidden="true" tabindex="-1"></a>#title<span class="op">-</span>block<span class="op">-</span>header <span class="op">{</span> margin<span class="op">:</span> <span class="dv">0</span>px<span class="op">;</span> <span class="op">}</span></span>
-<span id="cb18-443"><a href="#cb18-443" aria-hidden="true" tabindex="-1"></a>figcaption <span class="op">{</span> text<span class="op">-</span>align<span class="op">:</span> center<span class="op">;</span> <span class="op">}</span></span>
-<span id="cb18-444"><a href="#cb18-444" aria-hidden="true" tabindex="-1"></a>#fig<span class="op">-</span><span class="dv">1</span> <span class="op">&gt;</span> figure <span class="op">&gt;</span> figcaption<span class="op">.</span><span class="fu">figure</span> <span class="op">{</span> text<span class="op">-</span>align<span class="op">:</span> center<span class="op">;</span> <span class="op">}</span></span>
-<span id="cb18-445"><a href="#cb18-445" aria-hidden="true" tabindex="-1"></a>#fig<span class="op">-</span><span class="dv">1</span><span class="op">-</span>caption<span class="op">-</span><span class="dv">0</span>ceaefa1<span class="op">-</span><span class="er">69</span>ba<span class="op">-</span><span class="dv">4598</span><span class="op">-</span>a22c<span class="op">-</span><span class="dv">0</span><span class="er">9</span>a6ac19f8ca <span class="op">{</span> text<span class="op">-</span>align<span class="op">:</span> center<span class="op">;</span> <span class="op">}</span></span>
+<span id="cb18-431"><a href="#cb18-431" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb18-432"><a href="#cb18-432" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;script src="../../time.js"&gt;&lt;/script&gt;</span></span>
+<span id="cb18-433"><a href="#cb18-433" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;script&gt;</span></span>
+<span id="cb18-434"><a href="#cb18-434" aria-hidden="true" tabindex="-1"></a><span class="in">const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')</span></span>
+<span id="cb18-435"><a href="#cb18-435" aria-hidden="true" tabindex="-1"></a><span class="in">const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl =&gt; new bootstrap.Tooltip(tooltipTriggerEl))</span></span>
+<span id="cb18-436"><a href="#cb18-436" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/script&gt;</span></span>
+<span id="cb18-437"><a href="#cb18-437" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;style&gt;</span></span>
+<span id="cb18-438"><a href="#cb18-438" aria-hidden="true" tabindex="-1"></a><span class="in">#title-block-header &gt; div.quarto-title-banner.page-columns.page-full {</span></span>
+<span id="cb18-439"><a href="#cb18-439" aria-hidden="true" tabindex="-1"></a><span class="in">  margin: 0px;</span></span>
+<span id="cb18-440"><a href="#cb18-440" aria-hidden="true" tabindex="-1"></a><span class="in">  padding: 0px;</span></span>
+<span id="cb18-441"><a href="#cb18-441" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb18-442"><a href="#cb18-442" aria-hidden="true" tabindex="-1"></a><span class="in">#title-block-header { margin: 0px; }</span></span>
+<span id="cb18-443"><a href="#cb18-443" aria-hidden="true" tabindex="-1"></a><span class="in">figcaption { text-align: center; }</span></span>
+<span id="cb18-444"><a href="#cb18-444" aria-hidden="true" tabindex="-1"></a><span class="in">#fig-1 &gt; figure &gt; figcaption.figure { text-align: center; }</span></span>
+<span id="cb18-445"><a href="#cb18-445" aria-hidden="true" tabindex="-1"></a><span class="in">#fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca { text-align: center; }</span></span>
 <span id="cb18-446"><a href="#cb18-446" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-447"><a href="#cb18-447" aria-hidden="true" tabindex="-1"></a>#quarto<span class="op">-</span>header <span class="op">&gt;</span> nav<span class="op">.</span><span class="fu">navbar</span><span class="op">.</span><span class="fu">navbar</span><span class="op">-</span>expand<span class="op">-</span>lg<span class="op">.</span><span class="fu">navbar</span><span class="op">-</span>dark <span class="op">&gt;</span> div <span class="op">{</span></span>
-<span id="cb18-448"><a href="#cb18-448" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span>webkit<span class="op">-</span>justify<span class="op">-</span>content<span class="op">:</span> space<span class="op">-</span>between<span class="op">;</span></span>
-<span id="cb18-449"><a href="#cb18-449" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb18-447"><a href="#cb18-447" aria-hidden="true" tabindex="-1"></a><span class="in">#quarto-header &gt; nav.navbar.navbar-expand-lg.navbar-dark &gt; div {</span></span>
+<span id="cb18-448"><a href="#cb18-448" aria-hidden="true" tabindex="-1"></a><span class="in">    -webkit-justify-content: space-between;</span></span>
+<span id="cb18-449"><a href="#cb18-449" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
 <span id="cb18-450"><a href="#cb18-450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-451"><a href="#cb18-451" aria-hidden="true" tabindex="-1"></a>ul<span class="op">.</span><span class="fu">navbar</span><span class="op">-</span>nav<span class="op">.</span><span class="fu">navbar</span><span class="op">-</span>nav<span class="op">-</span>scroll <span class="op">{</span></span>
-<span id="cb18-452"><a href="#cb18-452" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span>webkit<span class="op">-</span>flex<span class="op">-</span>direction<span class="op">:</span> row <span class="op">!</span>important<span class="op">;</span></span>
-<span id="cb18-453"><a href="#cb18-453" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span>webkit<span class="op">-</span>justify<span class="op">-</span>content<span class="op">:</span> center <span class="op">!</span>important<span class="op">;</span></span>
-<span id="cb18-454"><a href="#cb18-454" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb18-455"><a href="#cb18-455" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>style<span class="op">&gt;</span></span>
-<span id="cb18-456"><a href="#cb18-456" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-451"><a href="#cb18-451" aria-hidden="true" tabindex="-1"></a><span class="in">ul.navbar-nav.navbar-nav-scroll {</span></span>
+<span id="cb18-452"><a href="#cb18-452" aria-hidden="true" tabindex="-1"></a><span class="in">    -webkit-flex-direction: row !important;</span></span>
+<span id="cb18-453"><a href="#cb18-453" aria-hidden="true" tabindex="-1"></a><span class="in">    -webkit-justify-content: center !important;</span></span>
+<span id="cb18-454"><a href="#cb18-454" aria-hidden="true" tabindex="-1"></a><span class="in">    }</span></span>
+<span id="cb18-455"><a href="#cb18-455" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/style&gt;</span></span>
+<span id="cb18-456"><a href="#cb18-456" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
+
 
 
 
