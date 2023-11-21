@@ -238,7 +238,7 @@ To modify the Python files that are installed by GitHub Actions, you can edit th
 
 After pushing the `.github/workflows/publish.yml` file, you can visit the Actions tab in your remote repo on GitHub to check the progress of the deployment of your site. If your site did not build successfully, you can go through the logs to try to diagnose the problem.
 
-I configured my `publish.yml` to have GitHub Actions push my remote `gh-pages` to GitLab so that my site is kept in sync on both GitHub and GitLab Pages. This required manually creating a token on GitLab and adding it to GitHub, which I accomplished using the GitHub CLI as shown in @exm-secret.
+I added a "Push to GitLab" step to my `publish.yml` to make GitHub Actions push my remote `gh-pages` to GitLab so that my site is kept in sync on both GitHub and GitLab Pages. This required manually creating a token on GitLab and adding it to GitHub, which I accomplished using the GitHub CLI as shown in @exm-secret.
 
 ::: {#exm-secret}
 
@@ -247,9 +247,9 @@ gh secret set GITLAB_AUTH_TOKEN
 ```
 :::
 
-Instead of using GitHub Actions, I could have expanded my `.gitlab-ci.yml` file to have [GitLab CI/CD](https://docs.gitlab.com/ee/ci) build my site. I decided not to go down this route because the Quarto dev team has many [GitHub Actions workflows](https://github.com/quarto-dev/quarto-actions) available but no official support yet for GitLab CI/CD.
+After the setup described above, I now have two options for publishing my Quarto site: `quarto` `publish` and 2) `git push`. In addition to GitHub and GitLab Pages, both of these options automatically update my site on Netlify via [N2].
 
-To summarize, I have two options for publishing my site: 1) running `quarto` `publish` and 2) running `git push` ([G2]) + [N2]
+To also automatically update my site on Quarto Pub, I added a "Publish to Quarto Pub" step to `publish.yml` file as per [Q2]. With this change, my GitHub Actions workflow is capable of publishing my site on all four web hosts every time I push to `main`!
 
 # Customizing Quarto sites {#sec-cust}
 
