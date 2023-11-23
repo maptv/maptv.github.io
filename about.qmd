@@ -92,5 +92,11 @@ styledTickTime = setStyle(tickTime, d3.schemePaired[2])
 ```
 
 ```{=html}
-<style>div#quarto-sidebar-glass { display: none !important; }</style>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+#quarto-sidebar { padding: 0px; }
+#quarto-sidebar > * { padding: 0px; }
+#quarto-margin-sidebar { padding: 17px; }
+</style>
 ```
