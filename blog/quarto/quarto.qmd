@@ -255,7 +255,7 @@ After the setup described above, I now have two options for publishing my Quarto
 
 ## Quarto Pub setup {#sec-qpub}
 
-To also automatically update my site on Quarto Pub, I added a `quarto-pub.yml` file to my `.github/workflows`. Unlike `gh-pages.yml`, `quarto-pub.yml`  upon a push to the `gh-pages` per [Q2]. With this change, my GitHub Actions workflow is capable of publishing my site on all four web hosts every time I push to `main`!
+To also automatically update my site on Quarto Pub, I added a `quarto-pub.yml` file to my `.github/workflows`. Unlike `gh-pages.yml`, `quarto-pub.yml` runs upon completion of the `pages-build-deployment` workflow, does not render, and only the `gh-pages` per [Q2]. With this change, my GitHub Actions workflow is capable of publishing my site on all four web hosts every time I push to `main`!
 
 # Customizing Quarto sites {#sec-cust}
 
