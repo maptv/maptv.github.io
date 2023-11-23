@@ -280,7 +280,7 @@ My `quarto-pub.yml` file is based on [Q2], but it runs upon completion of the `p
 
 ### Summary {#sec-ghp-sum}
 
-With the setup described in @sec-act, I can publish my site on all four web hosts every time I run `quarto` `publish` `gh-pages` ([G2]) or `git` `push` ([G3])! @fig-meth summarizes all of the steps that occur during my Quarto publishing workflow.
+@fig-meth summarizes all of the steps that occur during my Quarto publishing workflow. This workflow allows me to publish my site on four web hosts every time I run `quarto` `publish` `gh-pages` ([G2]) or `git` `push` ([G3])!
 
 ```{mermaid fig-align="center"}
 %%| label: fig-meth
@@ -295,8 +295,6 @@ flowchart LR
     C[GitHub<br/>gh-pages]-.N2.->E[Netlify]
     C[GitHub<br/>gh-pages]-.Q2.->H[Quarto<br/>Pub]
 ```
-
-If typically only use [G3], but if I want to switch to [G2], I have to run `git` `fetch` `origin` `gh-pages:gh-pages` to update my local `gh-pages` branch with any commits created remotely. Otherwise, I would have conflicting local and remote histories in my `gh-pages` branch and might have to fix a merge conflict.
 
 # Customizing Quarto sites {#sec-cust}
 
