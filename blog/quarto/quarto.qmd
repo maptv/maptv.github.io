@@ -113,12 +113,6 @@ To deploy my site to GitHub Pages, GitLab Pages, and Netlify, I combined  [G2] a
 
 To summarize the Quarto publishing methods I discussed so far, [Q1] and [N1] are easy to configure and use, [N2] automatically builds sites from Git repos, [G1] is not recommended because it pollutes commits with output file changes, and [G2] is more difficult to set up and use but provides clean commits and a nice separation of source and output files.
 
-### Web hosts {#sec-host}
-
-So far I have only noticed one difference between the 4 web hosts I use for my site: GitHub Pages is the only web host that properly differentiates between internal and [external links](https://quarto.org/docs/output-formats/html-basics.html#external-links). All of the other web hosts include the [external link icon](#){.external} on all links regardless of whether they target my site or an external site.
-
-I tried unsuccessfully to solve this issue by setting the [`link-external-filter`](https://quarto.org/docs/output-formats/html-basics.html#external-links) property to a [regular expression](https://en.wikipedia.org/wiki/Regular_expression#:~:text=A%20regular%20expression%20(shortened%20as%20regex%20or%20regexp)%2C%5B1%5D%20sometimes%20referred%20to%20as%20rational%20expression%2C%5B2%5D%5B3%5D%20is%20a%20sequence%20of%20characters%20that%20specifies%20a%20match%20pattern%20in%20text.). If you notice a problem with the `link-external-icon` feature on other web hosts, I suggest switching to GitHub Pages.
-
 ### GitHub Actions {#sec-ga}
 
 All of the publishing methods I have discussed so far require us to generate output files locally by rendering our source files.
@@ -286,6 +280,10 @@ flowchart LR
     C[GitHub<br/>gh-pages]-.N2.->E[Netlify]
     C[GitHub<br/>gh-pages]-.Q2.->H[Quarto<br/>Pub]
 ```
+
+So far I have only noticed one difference between the four web hosts I use for my site: GitHub Pages is the only web host that properly differentiates between internal and [external links](https://quarto.org/docs/output-formats/html-basics.html#external-links). All of the other web hosts include the [external link icon](#){.external} on all links regardless of whether they target my site or an external site.
+
+I tried unsuccessfully to solve this issue by setting the [`link-external-filter`](https://quarto.org/docs/output-formats/html-basics.html#external-links) property to a [regular expression](https://en.wikipedia.org/wiki/Regular_expression#:~:text=A%20regular%20expression%20(shortened%20as%20regex%20or%20regexp)%2C%5B1%5D%20sometimes%20referred%20to%20as%20rational%20expression%2C%5B2%5D%5B3%5D%20is%20a%20sequence%20of%20characters%20that%20specifies%20a%20match%20pattern%20in%20text.). If you notice a problem with the `link-external-icon` feature on other web hosts, I suggest switching to GitHub Pages.
 
 # Customizing Quarto sites {#sec-cust}
 
