@@ -60,9 +60,9 @@ format:
       dark: [darkly, dark.scss]
     css: styles.css
     grid:
-      sidebar-width: 200px
+      sidebar-width: 150px
       body-width: 1800px
-      margin-width: 200px
+      margin-width: 250px
 execute:
   freeze: true
   cache: true

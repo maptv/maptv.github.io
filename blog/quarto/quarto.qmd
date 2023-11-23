@@ -27,9 +27,9 @@ Rather than repeat the basic information already available elsewhere, I will sha
 
 The first topic I will delve into is creating and publishing a website with Quarto. To follow the Quarto documentation on creating a [website](https://quarto.org/docs/websites/), you will need [Visual Studio Code (VSCode)](https://code.visualstudio.com), [VSCodium](https://vscodium.com/#:~:text=VSCodium%20is%20a%20community%2Ddriven%2C%20freely%2Dlicensed%20binary%20distribution%20of%20Microsoft%E2%80%99s%20editor%20VS%20Code.), [RStudio](https://posit.co/download/rstudio-desktop), or a [terminal](https://en.wikipedia.org/wiki/Terminal_emulator).
 
-# Publishing Quarto websites {#sec-pub}
+# Publishing Quarto sites {#sec-pub}
 
-## Installing necessary tools {#sec-inst}
+## Installing tools {#sec-inst}
 
 If you use [macOS](https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.), [Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems), or the [Windows Subsystem for Linux (WSL)](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.), you can install all of the aforementioned tools with the [Homebrew](https://brew.sh) package manager. To install everything you will need to follow along with this blog post, you can first [install Homebrew](https://brew.sh/#install) and then run `brew` `bundle` in a directory that contains the [Brewfile](https://homebrew-file.readthedocs.io/en/latest/usage.html) shown in @exm-brew.
 
@@ -52,7 +52,7 @@ Using a [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=
 
 Apart from RStudio, VSCode, and VSCodium, the Brewfile in @exm-brew will install the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control system, the GitHub and GitLab [command line interfaces (CLIs)](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.), and [`GitHub Desktop`](https://desktop.github.com), a [Git Graphical User Interface (GUI)](https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac). For more information on Git, a tool used by 93% of software developers worldwide according to [survey results](https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.) published by [StackOverflow](https://stackoverflow.com/tour) on [`2022+314`](#){data-bs-toggle="tooltip" data-bs-title="2023-01-09"}, take a look at the ["GitHub for supporting, reusing, contributing, and failing safely"](https://openscapes.org/blog/2022-05-27-github-illustrated-series/) post by [Allison Horst](https://allisonhorst.com) and [Julie Lowndes](https://jules32.github.io) on the [Openscapes](https://openscapes.org/) [blog](https://openscapes.org/blog).
 
-## Publishing method overview {#sec-meth}
+## Method overview {#sec-meth}
 
 Once you are done setting up your computer and creating the [Quarto website template](https://quarto.org/docs/websites/#quick-start:~:text=This%20will%20create%20the%20scaffolding%20for%20a%20simple%20website%20in%20the%20mysite%20sub%2Ddirectory.), you can make your site publicly available on the internet using one of the many available [publishing services](https://quarto.org/docs/publishing/#getting-started). To explore and assess different publishing [workflows](https://en.wikipedia.org/wiki/Workflow#:~:text=A%20workflow%20is%20a%20generic%20term%20for%20orchestrated%20and%20repeatable%20patterns%20of%20activity%2C%20enabled%20by%20the%20systematic%20organization%20of%20resources%20into%20processes%20that%20transform%20materials%2C%20provide%20services%2C%20or%20process%20information.) and free website hosting options, I set up my personal website on four different [web hosts](https://en.wikipedia.org/wiki/Web_hosting_service#:~:text=Companies%20providing%20web%20hosting%20services%20are%20sometimes%20called%20web%20hosts.): [Quarto Pub](https://maptv.quarto.pub), [Netlify](https://maptv.netlify.app), [GitHub Pages](https://maptv.github.io), and [GitLab Pages](https://maptv.gitlab.io).
 
@@ -82,9 +82,7 @@ There are so many different ways to publish a Quarto site that I decided to come
 [G2]: https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.
 [G3]: https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.
 
-[Q1], [N1], and [G2] all use `quarto` `publish` to [render](https://quarto.org/docs/websites/index.html#website-render) website content locally and then deploy it in one fell swoop. If you do not plan to use the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control system or the advanced features offered by [GitHub](https://github.com), [GitLab](https://gitlab.com), or [Netlify](https://netlify.com), then I recommend deploying your site to [Quarto Pub](https://quarto.pub) by running [`quarto` `publish` `quarto-pub`](https://quarto.org/docs/publishing/quarto-pub.html#publish-command) ([Q1] in @tbl-pub).
-
-Like [Q1], [N1] is a deployment method that does not require Git and makes it possible to deploy our site with a single shell command: [`quarto` `publish` `netlify`](https://quarto.org/docs/publishing/netlify.html#publish-command). [N1] provides access to the advanced web hosting features offered by Netlify and can even [render content](https://quarto.org/docs/publishing/netlify.html#rendering-on-netlify) as long as code execution is [frozen](https://quarto.org/docs/publishing/netlify.html#freezing-computations).
+### Git workflow {#sec-git}
 
 The first publishing method I tried for my personal site was [G1], which requires the use of Git to [push](https://github.com/git-guides/git-push#what-does-git-push-do) all website content to a Git provider like GitHub or GitLab. After I set up [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#render-to-docs) and [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/), I could update my website on both of these web hosts just by going through the standard Git workflow shown in @fig-git.
 
@@ -97,34 +95,31 @@ flowchart LR
    A[working<br/>directory]-.git<br/>add.->B{{staging<br/>area}}-.git<br/>commit.->C([local<br/>repo])-.git<br/>push.->D(remote<br/>repo)
 ```
 
+To make it easier to make incremental changes to my website and frequently release new content, I combined all of the `git` shell commands in @fig-git into a shell [alias](https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.). You can add shell aliases to a [shell configuration file](https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.) like `.bashrc` or `.zshrc` on your computer to shorten commands or combine any sequence of commands into one step.
+
+The [`aacmp` alias](https://github.com/maptv/setup/blob/936ae9e222b0fe0648d88675db2d4718568a93f2/.zshrc#L134) in the [`.zshrc`](https://github.com/maptv/setup/blob/main/.zshrc) file in my [`setup`](https://github.com/maptv/setup) repo allows me to enter a free-form [commit message](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27) directly on the command line without quotes, e.g. `qp` `edit` `first` `blog`. If you decide to try my `aacmp` alias, please exercise extreme caution as any un-[escaped](https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.) or un-quoted [metacharacters](https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter) may yield surprising effects instead of being included verbatim in the commit message. For example, `qp` `*` will list the contents of the current directory in the commit message in place of the asterisk!
+
 [G1] is convenient for experienced Git users like me, but leads to messy [commits](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) that contain changes to both source and output files. Also, [G1] cannot be combined with [Q2], [G3], or [N3], whereas the other publishing methods are not mutually exclusive.
+
+### `quarto` `publish` {#sec-qp}
 
 To have cleaner commits and more flexibility in choosing publish approaches, I switched from [G1] to [G2] by adding `quarto` `publish` to my publishing workflow. With [G2], I can track changes to my source files on my `main` [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control) and publish my output files to GitHub Pages and GitLab Pages from my `gh-pages` branch.
 
+[Q1], [N1], and [G2] all use `quarto` `publish` to [render](https://quarto.org/docs/websites/index.html#website-render) website content locally and then deploy it in one fell swoop. If you do not plan to use the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control system or the advanced features offered by [GitHub](https://github.com), [GitLab](https://gitlab.com), or [Netlify](https://netlify.com), then I recommend deploying your site to [Quarto Pub](https://quarto.pub) by running [`quarto` `publish` `quarto-pub`](https://quarto.org/docs/publishing/quarto-pub.html#publish-command) ([Q1] in @tbl-pub).
+
+Like [Q1], [N1] is a deployment method that does not require Git and makes it possible to deploy our site with a single shell command: [`quarto` `publish` `netlify`](https://quarto.org/docs/publishing/netlify.html#publish-command). [N1] provides access to the advanced web hosting features offered by Netlify and can even [render content](https://quarto.org/docs/publishing/netlify.html#rendering-on-netlify) as long as code execution is [frozen](https://quarto.org/docs/publishing/netlify.html#freezing-computations).
+
 To deploy my site to GitHub Pages, GitLab Pages, and Netlify, I combined  [G2] and [N2]. When I run `quarto` `publish` `gh-pages`, Quarto renders my site into my output directory, copies the output directory contents to the `gh-pages` branch of my local repo, and then [commits](https://git-scm.com/docs/git-commit) and [pushes](https://git-scm.com/docs/git-push) the changes to my remote repos on [GitHub](https://github.com/maptv/maptv.github.io) and [GitLab](https://gitlab.com/maptv/maptv.gitlab.io), which triggers Netlify to [build my site](https://quarto.org/docs/publishing/netlify.html#publish-from-git-provider) from the `gh-pages` branch.
-
-The only disadvantage of [G2] is that there are many commands to run, because running `quarto` `publish` `gh-pages` only updates the output files on my `gh-pages` and I still have to run the `git` shell commands shown in @fig-git to update the source files on my `main` branch. To make it easier to make incremental changes to my website and frequently release new content, I combined all of the [G2] shell commands into a shell [alias](https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.) like the one shown in @exm-qp.
-
-::: {#exm-qp}
-```{.sh}
-alias qp='(
-quarto publish --no-prompt gh-pages;
-git add --all;
-git commit -m 'Edit source files';
-git push;
-)'
-```
-:::
-
-You can add shell aliases to a [shell configuration file](https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.) like `.bashrc` or `.zshrc` on your computer to shorten commands or combine any sequence of commands into one step. The [`qp` alias](https://github.com/maptv/setup/blob/7ff404b4f6e9bca4af93e124808eb66f14464498/.zshrc#L600) in the [`.zshrc`](https://github.com/maptv/setup/blob/main/.zshrc) file in my [`setup`](https://github.com/maptv/setup) repo is much more sophisticated than the alias in @exm-qp, because it allows me to enter a free-form [commit message](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27) directly on the command line without quotes, e.g. `qp` `edit` `first` `blog`.
-
-If you decide to try my `qp` alias, please exercise extreme caution as any un-[escaped](https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.) or un-quoted [metacharacters](https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter) may yield surprising effects instead of being included verbatim in the commit message. For example, `qp` `*` will list the contents of the current directory in the commit message in place of the asterisk!
 
 To summarize the Quarto publishing methods I discussed so far, [Q1] and [N1] are easy to configure and use, [N2] automatically builds sites from Git repos, [G1] is not recommended because it pollutes commits with output file changes, and [G2] is more difficult to set up and use but provides clean commits and a nice separation of source and output files.
 
-In my experience, GitHub Pages is the only web host that properly differentiates between internal and [external links](https://quarto.org/docs/output-formats/html-basics.html#external-links). All of the other web hosts include the [external link icon](#){.external} on all links regardless of whether they target my site or an external site.
+### Web hosts {#sec-host}
+
+So far I have only noticed one difference between the 4 web hosts I use for my site: GitHub Pages is the only web host that properly differentiates between internal and [external links](https://quarto.org/docs/output-formats/html-basics.html#external-links). All of the other web hosts include the [external link icon](#){.external} on all links regardless of whether they target my site or an external site.
 
 I tried unsuccessfully to solve this issue by setting the [`link-external-filter`](https://quarto.org/docs/output-formats/html-basics.html#external-links) property to a [regular expression](https://en.wikipedia.org/wiki/Regular_expression#:~:text=A%20regular%20expression%20(shortened%20as%20regex%20or%20regexp)%2C%5B1%5D%20sometimes%20referred%20to%20as%20rational%20expression%2C%5B2%5D%5B3%5D%20is%20a%20sequence%20of%20characters%20that%20specifies%20a%20match%20pattern%20in%20text.). If you notice a problem with the `link-external-icon` feature on other web hosts, I suggest switching to GitHub Pages.
+
+### GitHub Actions {#sec-ga}
 
 All of the publishing methods I have discussed so far require us to generate output files locally by rendering our source files.
 In contrast, [Q2], [G3], and [N3] make it possible to skip local rendering in favor of relying on [GitHub Actions](https://quarto.org/docs/publishing/quarto-pub.html#github-action) to handle all of the necessary steps.
@@ -135,9 +130,9 @@ Instead of using GitHub Actions, I could have used [GitLab CI/CD](https://docs.g
 
 Before trying to use GitHub Actions or any [other continuous integration systems](https://quarto.org/docs/publishing/ci.html) in your publishing workflow, I suggest getting used to working with `quarto` `publish` ([Q1], [G2], or [N1]). You can always set up other publishing methods later without sacrificing anything, because all of the publishing methods except [G1] can be combined together.
 
-In @sec-act, I will walk through the setup of both [G2] and [G3] to provide the option of rendering locally by running `quarto` `publish` or rendering remotely with GitHub Actions by pushing to the `main` branch. Along the way, I will share many practical tips and general advice that you can apply to any project.
+In @sec-pub, I will walk through the setup of both [G2] and [G3] to provide the option of rendering locally by running `quarto` `publish` or rendering remotely with GitHub Actions by pushing to the `main` branch. Along the way, I will share many practical tips and general advice that you can apply to any project.
 
-## GitHub Actions setup {#sec-act}
+## Method setup {#sec-setup}
 
 ### Repo setup {#sec-repo}
 
@@ -212,7 +207,7 @@ By default, GitLab Pages includes a random hash in site [URLs](https://en.wikipe
 
 At this point, we have completed [G2] setup and you should be able to run `quarto` `publish` `gh-pages` from your `main` branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with `quarto` `publish` at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions, because `quarto` `publish` creates a `_publish.yml` file in the root of your project that is required for publishing via GitHub Actions.
 
-### Workflow setup {#sec-work}
+### GitHub Actions setup {#sec-act}
 
 In addition to the steps described above, [G3] setup requires that we create a `.github/workflows` directory and add a [YAML](https://en.wikipedia.org/wiki/YAML#:~:text=YAML%20(/%CB%88j%C3%A6m%C9%99l/)%20(see%20%C2%A7%C2%A0History%20and%20name)%20is%20a%20human%2Dreadable%20data%20serialization%20language.) file to that directory. @exm-curl contains the `gh-pages.yml` file I use for my own site and the shell code that can used to obtain this file.
 
@@ -253,8 +248,6 @@ gh secret set GITLAB_AUTH_TOKEN
 
 After the setup described above, I now have two options for publishing my Quarto site: `quarto` `publish` and 2) `git push`. In addition to GitHub and GitLab Pages, both of these options automatically update my site on Netlify via [N2].
 
-### Quarto Pub setup {#sec-qpub}
-
 To also automatically update my site on Quarto Pub, I created a separate GitHub Actions workflow by adding another YAML file to the `.github/workflows` directory in my repo. @exm-qpub shows my `quarto-pub.yml` file and the shell code that can be used to obtain it.
 
 ::: {#exm-qpub}
@@ -278,13 +271,11 @@ curl -O https://raw.githubusercontent.com/maptv/maptv.github.io/main/.github/wor
 
 My `quarto-pub.yml` file is based on [Q2], but it runs upon completion of the `pages-build-deployment` workflow instead of a push to `main`. I changed the workflow trigger so that it runs after my GitHub Pages site is built, regardless of how I triggered the build.
 
-### Summary {#sec-ghp-sum}
-
 @fig-meth summarizes all of the steps that occur during my Quarto publishing workflow. This workflow allows me to publish my site on four web hosts every time I run `quarto` `publish` `gh-pages` ([G2]) or `git` `push` ([G3])!
 
 ```{mermaid fig-align="center"}
 %%| label: fig-meth
-%%| fig-cap: Quarto workflow
+%%| fig-cap: Quarto publishing workflow
 %%| fig-align: center
 %%| fig-width: 9
 flowchart LR
@@ -298,7 +289,7 @@ flowchart LR
 
 # Customizing Quarto sites {#sec-cust}
 
-## Customizing site navigation {#sec-nav}
+## Site navigation {#sec-nav}
 
 Once your site is [built](https://quarto.org/docs/websites/website-blog.html#quick-start) and [published](https://quarto.org/docs/websites/website-blog.html#publishing), you can make it easier to navigate with a customized navigation bar (navbar) and sidebar, as described in the [Quarto documentation](https://quarto.org/docs/websites/website-navigation.html). Check out the `_quarto.yml` files for [my site](https://github.com/maptv/maptv.github.io/blob/main/_quarto.yml) and the Quarto [documentation site](https://github.com/quarto-dev/quarto-web/blob/main/_quarto.yml) to see how the navigation components are set up.
 
@@ -328,13 +319,39 @@ To add a custom [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20
 :::
 :::
 
-HTML blocks are useful for running [JavaScript](https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(/%CB%88d%CA%92%C9%91%CB%90v%C9%99skr%C9%AApt/)%2C%20often%20abbreviated%20as%20JS%2C%20is%20a%20programming%20language%20that%20is%20one%20of%20the%20core%20technologies%20of%20the%20World%20Wide%20Web%2C%20alongside%20HTML%20and%20CSS) code in the context of a single page on your site without affecting the others. I also add `<style>` tags in HTML blocks in my `.qmd` files as a last ditch effort to change the style of my site.
+HTML blocks are useful for running [JavaScript](https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(/%CB%88d%CA%92%C9%91%CB%90v%C9%99skr%C9%AApt/)%2C%20often%20abbreviated%20as%20JS%2C%20is%20a%20programming%20language%20that%20is%20one%20of%20the%20core%20technologies%20of%20the%20World%20Wide%20Web%2C%20alongside%20HTML%20and%20CSS) code in the context of a single page on your site without affecting the others. I also add a `<style>` element in HTML blocks in my `.qmd` files as a last ditch effort to fine tune the style of my site.
 
-Before I resort to `<style>` tags, I try writing [CSS](https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML) in my [`styles.css`](https://quarto.org/docs/visual-editor/content.html#defining-styles), `light.css`, and [`dark.css`](https://quarto.org/docs/output-formats/html-themes.html#customizing-themes) files. So far, this approach has been sufficient to make any styling changes I want, but if it every fails, I can use JavaScript to override the default styling provided by Quarto by modifying `style` attributes, which have the highest [specificity](https://en.wikipedia.org/wiki/CSS#Specificity:~:text=Specificity%20refers%20to%20the%20relative%20weights%20of%20various%20rules.) in [CSS](https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML).
+Before I resort to the `<style>` element approach, I try writing [CSS](https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML) in my [`styles.css`](https://quarto.org/docs/visual-editor/content.html#defining-styles), `light.css`, and [`dark.css`](https://quarto.org/docs/output-formats/html-themes.html#customizing-themes) files. So far, this approach has been sufficient to make any styling changes I want, but if it every fails, I can use JavaScript to override the default styling provided by Quarto by modifying `style` attributes, which have the highest [specificity](https://en.wikipedia.org/wiki/CSS#Specificity:~:text=Specificity%20refers%20to%20the%20relative%20weights%20of%20various%20rules.) in [CSS](https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML).
 
-## Custom date format {#sec-date}
+## Post-render script {#sec-post}
 
-[Python](https://en.wikipedia.org/wiki/Python_(programming_language)#:~:text=Python%20is%20a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language.) to customize the date format in the my blog's [listing page](https://maptv.github.io/blog), and [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=Lua%20(/%CB%88lu%CB%90%C9%99/%20LOO%2D%C9%99%3B%20from%20Portuguese%3A%20lua%20%5B%CB%88lu(w)%C9%90%5D%20meaning%20moon)%20is%20a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20primarily%20for%20embedded%20use%20in%20applications.) to customize the date format in every blog post.
+I wanted to my blog's [listing page](https://maptv.github.io/blog) to show dates in the same format as the navbar timestamp. To accomplish this, I used a [post-render](#){data-bs-toggle="tooltip" data-bs-title='The word "post" in "post-render" means "after" as in after all rendering steps are completed instead of a blog "post".'} script written in the [Python programming language](https://en.wikipedia.org/wiki/Python_(programming_language)#:~:text=Python%20is%20a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language.).
+
+[Pre- and post-render scripts](https://quarto.org/docs/projects/scripts.html#pre-and-post-render) are set as `project` options in the `_quarto.yml` file in the root of your [Quarto project](https://quarto.org/docs/projects/quarto-projects.html). @exm-post shows the `date.py` post-render script and how this script is referenced in `_quarto.yml`.
+
+::: {#exm-post}
+
+::: {.panel-tabset}
+
+#### `_quarto.yml`
+
+```{.yaml include="../../_quarto.yml" start-line=1 end-line=4}
+```
+
+#### `date.py`
+
+```{.yaml include="../../date.py"}
+```
+
+:::
+
+:::
+
+Normally, [formatting dates in Quarto](https://quarto.org/docs/reference/dates#using-a-date-format) is as easy as setting the `date-format` YAML property. In my case it was more difficult, because I wanted dates based on `Dec`, the calendar and time system I created, instead of the ubiquitous [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=The%20Gregorian%20calendar%20is%20the%20calendar%20used%20in%20most%20parts%20of%20the%20world.).
+
+To facilitate the calculations in `date.py`, I set `date-format` to `x` in my `_metadata.yml` file so all of the dates would be in millisecond [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.) and I would not have to deal with Gregorian calendar date formats or time zones. After all of the dates are generated, my `date.py` script traverses the HTML in the output directory using [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/#:~:text=Beautiful%20Soup%20is%20a%20Python%20library%20designed%20for%20quick%20turnaround%20projects%20like%20screen%2Dscraping.) and converts millisecond UNIX time dates into `Dec` dates (`year+day`).
+
+to customize the date format in the my blog's [listing page](https://maptv.github.io/blog), and [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=Lua%20(/%CB%88lu%CB%90%C9%99/%20LOO%2D%C9%99%3B%20from%20Portuguese%3A%20lua%20%5B%CB%88lu(w)%C9%90%5D%20meaning%20moon)%20is%20a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20primarily%20for%20embedded%20use%20in%20applications.) to customize the date format in every blog post.
 
 
 JavaScript, Python, and Lua are programming languages that have all have interesting name origins. JavaScript is named after the Java☕programming language, Python🐍is named after the [Monty Python](https://en.wikipedia.org/wiki/Monty_Python#:~:text=Monty%20Python%20(also%20collectively%20known%20as%20the%20Pythons)%5B2%5D%5B3%5D%20were%20a%20British%20comedy%20troupe%20formed%20in%201969) comedy troupe, and Lua is the Portuguese🇵🇹word for moon🌕.
@@ -345,7 +362,7 @@ Quarto uses Pandoc to convert markdown files into target format(s) like `html` o
 
 ```{mermaid fig-align="center"}
 %%| label: fig-render
-%%| fig-cap: Quarto workflow
+%%| fig-cap: Quarto rendering workflow
 %%| fig-align: center
 %%| fig-width: 9
 flowchart LR
@@ -355,10 +372,6 @@ flowchart LR
 Mine Çetinkaya-Rundel's Quarto tip series includes a similar [Quarto workflow mermaid diagram](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/21-diagrams/#fig-mermaid) and her ["Hello, Quarto!"](https://mine.quarto.pub/hello-quarto) rstudio::conf(2022) keynote with [Julia Stewart Lowndes](https://jules32.github.io) contains truly beautiful Quarto workflow images by [Allison Horst](https://allisonhorst.com): [1](https://mine.quarto.pub/hello-quarto/#/publishing-system-2), [2](https://mine.quarto.pub/hello-quarto/#/quarto-flattens-the-learning-curve), [3](https://mine.quarto.pub/hello-quarto/#/quarto-can-grow-with-learners-in-a-profound-way), and [4](https://mine.quarto.pub/hello-quarto/#/quarto-cli-orchestrates-each-step-of-rendering).
 
 Quarto controls Pandoc, Jupyter, and Knitr in two ways: 1) with arguments passed to the [Quarto CLI](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.) commands and 2) with [YAML](https://yaml.org/) key-value pairs in `.qmd`, `.ipynb`, or `.yml` files.
-
-Normally, [formatting dates in Quarto](https://quarto.org/docs/reference/dates#using-a-date-format) is as easy as setting the `date-format` YAML property. In my case it was more difficult, because I wanted dates based on `Dec`, a calendar and time system I created, instead of the ubiquitous [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=The%20Gregorian%20calendar%20is%20the%20calendar%20used%20in%20most%20parts%20of%20the%20world.).
-
-As shown in @exm-date, I set `date-format` to `x` in `_metadata.yml`, which converts the date of each blog post to millisecond [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.). I wanted to calculate the `Dec` calendar (`Decalendar`) dates from UNIX time, so that I could work with a single number and not have to deal with Gregorian calendar date formats or time zones.
 
 The `Decalendar` dates in my blog are called `Decalendar` ordinal (`deco`) dates, because they are similar to [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=ISO%208601%20is%20an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data.) [ordinal](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates) (`isoo`) dates. Like `isoo` dates, `deco` dates consist of a year and a day-of-the-year (`doty`).
 
