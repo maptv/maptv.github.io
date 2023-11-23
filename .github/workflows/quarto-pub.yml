@@ -1,8 +1,7 @@
 on:
   workflow_run:
-    workflows: [pages build and deployment]
-    types:
-      - completed
+    workflows: [pages-build-deployment]
+    types: [completed]
 
 name: Update Quarto Pub
 
