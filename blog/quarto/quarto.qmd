@@ -131,21 +131,23 @@ In contrast, [Q2], [G3], and [N3] make it possible to skip local rendering in fa
 
 [G3] is noteworthy, because it offers the same convenience of [G1] but without the messy commits. An added bonus of [G3] is that rendering with GitHub Actions provides a reproducible computational environment that is not dependent on what you have installed on your computer.
 
-Before trying to use GitHub Actions or any [other continuous integration systems](https://quarto.org/docs/publishing/ci.html) in your publishing workflow, I suggest getting used to working with `quarto` `publish` ([Q1], [G2], or [N1]). You can always set up other publishing methods later with sacrificing anything, because [G1] is the only deployment method cannot be combined with all of the others.
+Instead of using GitHub Actions, I could have used [GitLab CI/CD](https://docs.gitlab.com/ee/ci) to build my site. I decided not to go down this route because the Quarto dev team has many [GitHub Actions workflows](https://github.com/quarto-dev/quarto-actions) available but currently no official support for GitLab CI/CD.
 
-In @sec-ghp, I will walk through the setup of both [G2] and [G3] to provide the option of rendering locally by running `quarto` `publish` or rendering remotely with GitHub Actions by pushing to the `main` branch. Along the way, I will share many practical tips and general advice that you can apply to any project.
+Before trying to use GitHub Actions or any [other continuous integration systems](https://quarto.org/docs/publishing/ci.html) in your publishing workflow, I suggest getting used to working with `quarto` `publish` ([Q1], [G2], or [N1]). You can always set up other publishing methods later without sacrificing anything, because all of the publishing methods except [G1] can be combined together.
 
-## GitHub Pages setup {#sec-ghp}
+In @sec-pages, I will walk through the setup of both [G2] and [G3] to provide the option of rendering locally by running `quarto` `publish` or rendering remotely with GitHub Actions by pushing to the `main` branch. Along the way, I will share many practical tips and general advice that you can apply to any project.
 
-Before you can publish your site on GitHub or GitLab Pages, you need a [GitHub](https://github.com/signup) or [GitLab](https://gitlab.com/users/sign_up) account, an [SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account), and a repo like my [`maptv.github.io`](https://github.com/maptv/maptv.github.io) and [`maptv.gitlab.io`](https://gitlab.com/maptv/maptv.gitlab.io) repos. Each of these repos has a default [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control) called `main` and another branch which must be called `gh-pages`.
+## GitHub and GitLab Pages setup {#sec-pages}
+
+### Repo setup
+
+Before you can GitHub Actions to publish your site on GitHub Pages, you will need a [GitHub](https://github.com/signup), an [SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account), and a repo like [`maptv.github.io`](https://github.com/maptv/maptv.github.io) that has a default [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control) called `main` and another branch which must be called `gh-pages`. If you want to publish on GitLab Pages, you will also need a [GitLab](https://gitlab.com/users/sign_up) account and an analogous GitLab repo like [`maptv.gitlab.io`](https://gitlab.com/maptv/maptv.gitlab.io).
 
 You can create the repo and the `gh-pages` branch using the web interface of <https://github.com> or <https://gitlab.com> in your browser, but the best way to start a new project is using the CLI for [GitHub](https://cli.github.com) or [GitLab](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/) in your [terminal](https://en.wikipedia.org/wiki/Terminal_emulator). First, run `gh` `auth` `login` or `glab` `auth` `login` and follow the prompts to authenticate via your web browser or with an authentication token.
 
 The GitHub CLI allows you to add an SSH key to your account during or [after authentication](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli#adding-a-new-ssh-key-to-your-account). The GitLab CLI does not handle SSH keys during authentication, but  has a similar command for [adding an SSH key to your GitLab account](https://gitlab.com/gitlab-org/cli/-/blob/main/docs/source/ssh-key/add.md).
 
 After authentication and SSH key setup, you can run the code in either of the code chunks in @exm-git to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my [`.zshrc`](https://github.com/maptv/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630).
-
-### Repo setup
 
 ::: {#exm-git}
 ::: {.panel-tabset}
@@ -176,7 +178,17 @@ quarto create project website USERNAME.gitlab.io
 :::
 :::
 
-If you want to have your website hosted on GitHub Pages, you will need to [set `gh-pages` as your source branch](https://quarto.org/docs/publishing/github-pages.html#source-branch). For GitLab Pages, you will need to add a `.gitlab-ci.yml` file to your repo and update your `_quarto.yml` file as shown in @exm-yml.
+To make it easier to maintain my site on both GitHub and GitLab Pages, I set up my local repo cloned to have two `origin` remote URLs using the code as shown in @exm-remote. Now, running `quarto` `publish` or `git` `push` in my local repo, updates my content on both GitHub and GitLab.
+
+::: {#exm-remote}
+```{.sh}
+git remote add lab git@gitlab.com:maptv/maptv.gitlab.io
+git remote add hub git@github.com:maptv/maptv.github.io
+git remote set-url --add origin $(git remote get-url lab)
+```
+:::
+
+If you want to have your website hosted on GitHub Pages, you will need to [set `gh-pages` as your source branch](https://quarto.org/docs/publishing/github-pages.html#source-branch) in your repo settings. For GitLab Pages, you will need to add a `.gitlab-ci.yml` file to your repo and update your `_quarto.yml` file as shown in @exm-yml to include `.gitlab-ci.yml` as a `resource` in your output directory.
 
 ::: {#exm-yml}
 
@@ -196,21 +208,13 @@ If you want to have your website hosted on GitHub Pages, you will need to [set `
 
 :::
 
-To make it easier to maintain my site on both GitHub and GitLab Pages, I set up my local repo cloned to have two `origin` remote URLs using the code as shown in @exm-remote. Now, running `quarto` `publish` or `git` `push` in my local repo, updates my content on both GitHub and GitLab.
-
-::: {#exm-remote}
-```{.sh}
-git remote add lab git@gitlab.com:maptv/maptv.gitlab.io
-git remote add hub git@github.com:maptv/maptv.github.io
-git remote set-url --add origin $(git remote get-url lab)
-```
-:::
-
 By default, GitLab Pages includes a random hash in site [URLs](https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web). To shorten the URL of my GitLab Pages site to <maptv.gitlab.io>, I had to uncheck **Use unique domain** under `Deploy > Pages` in the GitLab sidebar.
 
-At this point, we have completed [G2] setup and you should be able to run `quarto` `publish` `gh-pages` from your `main` branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with `quarto` `publish` at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions, because `quarto` `publish` creates a `_publish.yml` file in the root of your project that is required for publishing via GitHub Actions
+At this point, we have completed [G2] setup and you should be able to run `quarto` `publish` `gh-pages` from your `main` branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with `quarto` `publish` at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions, because `quarto` `publish` creates a `_publish.yml` file in the root of your project that is required for publishing via GitHub Actions.
 
-[G3] setup only requires that we create a `.github/workflows` directory and add a `publish.yml` file (not to be confused with `_publish.yml`) to that directory. @exm-curl contains the `publish.yml` file I use for my own site and the shell code that can used to obtain this file.
+### GitHub Actions setup
+
+After the steps described above, to set up [G3] we only need to create a `.github/workflows` directory and add a [YAML](https://en.wikipedia.org/wiki/YAML#:~:text=YAML%20(/%CB%88j%C3%A6m%C9%99l/)%20(see%20%C2%A7%C2%A0History%20and%20name)%20is%20a%20human%2Dreadable%20data%20serialization%20language.) file to that directory. @exm-curl contains the `gh-pages.yml` file I use for my own site and the shell code that can used to obtain this file.
 
 ::: {#exm-curl}
 
@@ -221,24 +225,24 @@ At this point, we have completed [G2] setup and you should be able to run `quart
 ```{.sh}
 mkdir -p .github/workflows
 cd .github/workflows
-curl -O https://raw.githubusercontent.com/maptv/maptv.github.io/main/.github/workflows/publish.yml
+curl -O https://raw.githubusercontent.com/maptv/maptv.github.io/main/.github/workflows/gh-pages.yml
 ```
 
-#### `.github/workflows/publish.yml`
+#### `gh-pages.yml`
 
-```{.yaml include="../../.github/workflows/publish.yml"}
+```{.yaml include="../../.github/workflows/gh-pages.yml"}
 ```
 
 :::
 :::
 
-The `publish.yml` file in @exm-curl installs Quarto, the R and Python programming languages, and the packages in the `renv.lock` and `requirements.txt` files. If you do not need R and/or Python, you can remove any unnecessary portions of the file.
+The `gh-pages.yml` file in @exm-curl installs Quarto, the R and Python programming languages, and the packages in the `renv.lock` and `requirements.txt` files. If you do not need R and/or Python, you can remove any unnecessary portions of the file.
 
 To modify the Python files that are installed by GitHub Actions, you can edit the `requirements.txt` file in your repo. To update your `renv.lock` file so that it includes all of the R packages your site requires, run [`renv::snapshot()`](https://rstudio.github.io/renv/reference/snapshot.html) in an R session or `Rscript` `-e` `renv::snapshot()` in a shell.
 
-After pushing the `.github/workflows/publish.yml` file, you can visit the Actions tab in your remote repo on GitHub to check the progress of the deployment of your site. If your site did not build successfully, you can go through the logs to try to diagnose the problem.
+After pushing the `gh-pages.yml` file, you can visit the Actions tab in your remote repo on GitHub to check the progress of the deployment of your site. If your site did not build successfully, you can go through the logs to try to diagnose the problem.
 
-I added a "Push to GitLab" step to my `publish.yml` to make GitHub Actions push my remote `gh-pages` to GitLab so that my site is kept in sync on both GitHub and GitLab Pages. This required manually creating a token on GitLab and adding it to GitHub, which I accomplished using the GitHub CLI as shown in @exm-secret.
+I added a "Push to GitLab" step to my `gh-pages.yml` to make GitHub Actions push my remote `gh-pages` to GitLab so that my site is kept in sync on both GitHub and GitLab Pages. This required manually creating a token on GitLab and adding it to GitHub, which I accomplished using the GitHub CLI as shown in @exm-secret.
 
 ::: {#exm-secret}
 
@@ -249,7 +253,9 @@ gh secret set GITLAB_AUTH_TOKEN
 
 After the setup described above, I now have two options for publishing my Quarto site: `quarto` `publish` and 2) `git push`. In addition to GitHub and GitLab Pages, both of these options automatically update my site on Netlify via [N2].
 
-To also automatically update my site on Quarto Pub, I added a "Publish to Quarto Pub" step to `publish.yml` file as per [Q2]. With this change, my GitHub Actions workflow is capable of publishing my site on all four web hosts every time I push to `main`!
+## Quarto Pub setup {#sec-qpub}
+
+To also automatically update my site on Quarto Pub, I added a `quarto-pub.yml` file to my `.github/workflows`. Unlike  per [Q2]. With this change, my GitHub Actions workflow is capable of publishing my site on all four web hosts every time I push to `main`!
 
 # Customizing Quarto sites {#sec-cust}
 
