@@ -1,0 +1,10 @@
+{
+  "tasks": [
+    {
+      "label": "sync to main",
+      "type": "shell",
+      "command": "./update.sh",
+      "group": "build"
+    }
+  ]
+}

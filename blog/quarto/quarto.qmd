@@ -99,7 +99,29 @@ To make it easier to make incremental changes to my website and frequently relea
 
 The [`aacmp` alias](https://github.com/maptv/setup/blob/936ae9e222b0fe0648d88675db2d4718568a93f2/.zshrc#L134) in the [`.zshrc`](https://github.com/maptv/setup/blob/main/.zshrc) file in my [`setup`](https://github.com/maptv/setup) repo allows me to enter a free-form [commit message](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27) directly on the command line without quotes, e.g. `qp` `edit` `first` `blog`. If you decide to try my `aacmp` alias, please exercise extreme caution as any un-[escaped](https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.) or un-quoted [metacharacters](https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter) may yield surprising effects instead of being included verbatim in the commit message. For example, `qp` `*` will list the contents of the current directory in the commit message in place of the asterisk!
 
-Shell aliases can greatly facilitate [G1], but this publishing method leads to messy [commits](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) that contain changes to both source and output files. Also, [G1] cannot be combined with [Q2], [G3], or [N3], whereas the other deployment methods are not mutually exclusive.
+An alternative to a shell alias that combines `git` commands is a keyboard shortcut in Git-enabled GUI. @exm-key shows two files, `tasks.json` and `update.sh`, that we can use to set up VSCode, VSCodium, and [GitHub Codespaces](https://github.com/features/codespaces) to go through the Git workflow whenever we press Ctrl+Shift+B on Linux/Windows or ⌘+Shift+B on Mac (mnemonic: B is for Build).
+
+::: {#exm-key}
+
+::: {.panel-tabset}
+
+#### `update.sh`
+
+```{.yaml include="../../update.sh"}
+```
+
+#### `tasks.json`
+
+```{.yaml include="../../.vscode/tasks.json"}
+```
+
+:::
+
+:::
+
+This mechanism is called [Tasks](https://code.visualstudio.com/docs/editor/tasks) and is used to [automate](https://en.wikipedia.org/wiki/Build_automation#:~:text=Build%20automation%20is%20the%20process%20of%20automating%20the%20creation%20of%20a%20software%20build) a series of [software build](https://en.wikipedia.org/wiki/Software_build#:~:text=In%20software%20development%2C%20a%20build%20is%20the%20process%20of%20converting%20source%20code%20files%20into%20standalone%20software%20artifact(s)%20that%20can%20be%20run%20on%20a%20computer%2C%20or%20the%20result%20of%20doing%20so.) tasks, so adding commands that build a website, such as `quarto` `render`, to `update.sh` would be very appropriate. Importantly, the `tasks.json` file must be added to the `.vscode` directory and the `update.sh` file should be in the project root.
+
+Shell aliases and keyboard shortcuts can greatly facilitate [G1], but this publishing method leads to messy [commits](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) that contain changes to both source and output files. Also, [G1] cannot be combined with [Q2], [G3], or [N3], whereas the other deployment methods are not mutually exclusive.
 
 ### `quarto` `publish` {#sec-over-qp}
 
