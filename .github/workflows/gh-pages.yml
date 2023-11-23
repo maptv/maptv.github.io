@@ -54,9 +54,3 @@ jobs:
           git config user.email "129316885+maptv@users.noreply.github.com"
           git remote set-url origin "https://oauth2:${token}@gitlab.com/maptv/maptv.gitlab.io"
           git push origin gh-pages
-      # - name: Publish to Quarto Pub
-      #   uses: quarto-dev/quarto-actions/publish@v2
-      #   with:
-      #     target: quarto-pub
-      #     render: false
-      #     QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}

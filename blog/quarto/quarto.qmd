@@ -90,7 +90,7 @@ The first publishing method I tried for my personal site was [G1], which require
 
 ```{mermaid fig-align="center"}
 %%| label: fig-git
-%%| fig-cap: Quarto workflow
+%%| fig-cap: Git workflow
 %%| fig-align: center
 %%| fig-width: 9
 flowchart LR
@@ -135,11 +135,11 @@ Instead of using GitHub Actions, I could have used [GitLab CI/CD](https://docs.g
 
 Before trying to use GitHub Actions or any [other continuous integration systems](https://quarto.org/docs/publishing/ci.html) in your publishing workflow, I suggest getting used to working with `quarto` `publish` ([Q1], [G2], or [N1]). You can always set up other publishing methods later without sacrificing anything, because all of the publishing methods except [G1] can be combined together.
 
-In @sec-pages, I will walk through the setup of both [G2] and [G3] to provide the option of rendering locally by running `quarto` `publish` or rendering remotely with GitHub Actions by pushing to the `main` branch. Along the way, I will share many practical tips and general advice that you can apply to any project.
+In @sec-act, I will walk through the setup of both [G2] and [G3] to provide the option of rendering locally by running `quarto` `publish` or rendering remotely with GitHub Actions by pushing to the `main` branch. Along the way, I will share many practical tips and general advice that you can apply to any project.
 
-## GitHub and GitLab Pages setup {#sec-pages}
+## GitHub Actions setup {#sec-act}
 
-### Repo setup
+### Repo setup {#sec-repo}
 
 Before you can GitHub Actions to publish your site on GitHub Pages, you will need a [GitHub](https://github.com/signup), an [SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account), and a repo like [`maptv.github.io`](https://github.com/maptv/maptv.github.io) that has a default [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control) called `main` and another branch which must be called `gh-pages`. If you want to publish on GitLab Pages, you will also need a [GitLab](https://gitlab.com/users/sign_up) account and an analogous GitLab repo like [`maptv.gitlab.io`](https://gitlab.com/maptv/maptv.gitlab.io).
 
@@ -212,9 +212,9 @@ By default, GitLab Pages includes a random hash in site [URLs](https://en.wikipe
 
 At this point, we have completed [G2] setup and you should be able to run `quarto` `publish` `gh-pages` from your `main` branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with `quarto` `publish` at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions, because `quarto` `publish` creates a `_publish.yml` file in the root of your project that is required for publishing via GitHub Actions.
 
-### GitHub Actions setup
+### Workflow setup {#sec-work}
 
-After the steps described above, to set up [G3] we only need to create a `.github/workflows` directory and add a [YAML](https://en.wikipedia.org/wiki/YAML#:~:text=YAML%20(/%CB%88j%C3%A6m%C9%99l/)%20(see%20%C2%A7%C2%A0History%20and%20name)%20is%20a%20human%2Dreadable%20data%20serialization%20language.) file to that directory. @exm-curl contains the `gh-pages.yml` file I use for my own site and the shell code that can used to obtain this file.
+In addition to the steps described above, [G3] setup requires that we create a `.github/workflows` directory and add a [YAML](https://en.wikipedia.org/wiki/YAML#:~:text=YAML%20(/%CB%88j%C3%A6m%C9%99l/)%20(see%20%C2%A7%C2%A0History%20and%20name)%20is%20a%20human%2Dreadable%20data%20serialization%20language.) file to that directory. @exm-curl contains the `gh-pages.yml` file I use for my own site and the shell code that can used to obtain this file.
 
 ::: {#exm-curl}
 
@@ -253,9 +253,50 @@ gh secret set GITLAB_AUTH_TOKEN
 
 After the setup described above, I now have two options for publishing my Quarto site: `quarto` `publish` and 2) `git push`. In addition to GitHub and GitLab Pages, both of these options automatically update my site on Netlify via [N2].
 
-## Quarto Pub setup {#sec-qpub}
+### Quarto Pub setup {#sec-qpub}
 
-To also automatically update my site on Quarto Pub, I added a `quarto-pub.yml` file to my `.github/workflows`. Unlike `gh-pages.yml`, `quarto-pub.yml` runs upon completion of the `pages-build-deployment` workflow, does not render, and only the `gh-pages` per [Q2]. With this change, my GitHub Actions workflow is capable of publishing my site on all four web hosts every time I push to `main`!
+To also automatically update my site on Quarto Pub, I created a separate GitHub Actions workflow by adding another YAML file to the `.github/workflows` directory in my repo. @exm-qpub shows my `quarto-pub.yml` file and the shell code that can be used to obtain it.
+
+::: {#exm-qpub}
+
+::: {.panel-tabset}
+
+#### `curl`
+
+```{.sh}
+mkdir -p .github/workflows
+cd .github/workflows
+curl -O https://raw.githubusercontent.com/maptv/maptv.github.io/main/.github/workflows/gh-pages.yml
+```
+
+#### `quarto-pub.yml`
+
+```{.yaml include="../../.github/workflows/quarto-pub.yml"}
+```
+:::
+:::
+
+My `quarto-pub.yml` file is based on [Q2], but it runs upon completion of the `pages-build-deployment` workflow instead of a push to `main`. I changed the workflow trigger so that it runs after my GitHub Pages site is built, regardless of how I triggered the build.
+
+### Summary {#sec-ghp-sum}
+
+With the setup described in @sec-act, I can publish my site on all four web hosts every time I run `quarto` `publish` `gh-pages` ([G2]) or `git` `push` ([G3])! @fig-meth summarizes all of the steps that occur during my Quarto publishing workflow.
+
+```{mermaid fig-align="center"}
+%%| label: fig-meth
+%%| fig-cap: Quarto workflow
+%%| fig-align: center
+%%| fig-width: 9
+flowchart LR
+    A[local<br/>main]-.G2.->B[local<br/>gh-pages]-.G2.->C[GitHub<br/>gh-pages]
+    B[local<br/>gh-pages]-.G2.->D[GitLab<br/>gh-pages]
+    A[local<br/>main]-.G3.->F[GitHub<br/>main]-.G3.->C[GitHub<br/>gh-pages]-.G3.->D[GitLab<br/>gh-pages]
+    A[local<br/>main]-.G3.->G[GitLab<br/>main]
+    C[GitHub<br/>gh-pages]-.N2.->E[Netlify]
+    C[GitHub<br/>gh-pages]-.Q2.->H[Quarto<br/>Pub]
+```
+
+If typically only use [G3], but if I want to switch to [G2], I have to run `git` `fetch` `origin` `gh-pages:gh-pages` to update my local `gh-pages` branch with any commits created remotely. Otherwise, I would have conflicting local and remote histories in my `gh-pages` branch and might have to fix a merge conflict.
 
 # Customizing Quarto sites {#sec-cust}
 
