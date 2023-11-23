@@ -1,7 +1,6 @@
 on:
   workflow_dispatch:
-  push:
-    branches: [gh-pages]
+  page_build:
 
 name: Update Quarto Pub
 
