@@ -62,14 +62,14 @@ There are so many different ways to publish a Quarto site that I decided to come
 
 | Code  | Host     | Render | Command   |
 | ----- | -------- | ------ | --------- |
-| [Q1]  | Quarto   | Local  | `publish` |
-| [Q2]  | Quarto   | Remote | `push`    |
-| [N1]  | Netlify  | Local  | `publish` |
-| [N2]  | Netlify  | Local  | `push`    |
-| [N3]  | Netlify  | Remote | `push`    |
 | [G1]  | GitHub   | Local  | `push`    |
 | [G2]  | GitHub   | Local  | `publish` |
 | [G3]  | GitHub   | Remote | `push`    |
+| [N1]  | Netlify  | Local  | `publish` |
+| [N2]  | Netlify  | Local  | `push`    |
+| [N3]  | Netlify  | Remote | `push`    |
+| [Q1]  | Quarto   | Local  | `publish` |
+| [Q2]  | Quarto   | Remote | `push`    |
 
 : Quarto website publishing methods {#tbl-pub}
 
@@ -119,13 +119,13 @@ An alternative to a shell alias that combines `git` commands is a keyboard short
 
 :::
 
-This mechanism is called [Tasks](https://code.visualstudio.com/docs/editor/tasks) and is used to [automate](https://en.wikipedia.org/wiki/Build_automation#:~:text=Build%20automation%20is%20the%20process%20of%20automating%20the%20creation%20of%20a%20software%20build) a series of [software build](https://en.wikipedia.org/wiki/Software_build#:~:text=In%20software%20development%2C%20a%20build%20is%20the%20process%20of%20converting%20source%20code%20files%20into%20standalone%20software%20artifact(s)%20that%20can%20be%20run%20on%20a%20computer%2C%20or%20the%20result%20of%20doing%20so.) tasks, so adding commands that build a website, such as `quarto` `render`, to `update.sh` would be very appropriate. Importantly, the `tasks.json` file must be added to the `.vscode` directory, the `update.sh` file should be in the project root, and we need to run `chmod` `+x` `update.sh` to allow it to be executed.
+This mechanism is called [Tasks](https://code.visualstudio.com/docs/editor/tasks) and is used to [automate](https://en.wikipedia.org/wiki/Build_automation#:~:text=Build%20automation%20is%20the%20process%20of%20automating%20the%20creation%20of%20a%20software%20build) [software build](https://en.wikipedia.org/wiki/Software_build#:~:text=In%20software%20development%2C%20a%20build%20is%20the%20process%20of%20converting%20source%20code%20files%20into%20standalone%20software%20artifact(s)%20that%20can%20be%20run%20on%20a%20computer%2C%20or%20the%20result%20of%20doing%20so.) tasks, which can include any steps required to build and publish a website. Importantly, the Tasks mechanism requires that the `tasks.json` file be added to the `.vscode` directory and that we enable execution of the `update.sh` script by running `chmod` `+x` `update.sh` in our project root.
 
-Shell aliases and keyboard shortcuts can greatly facilitate [G1], but this publishing method leads to messy [commits](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) that contain changes to both source and output files. Also, [G1] cannot be combined with [Q2], [G3], or [N3], whereas the other deployment methods are not mutually exclusive.
+Shell aliases and keyboard shortcuts can greatly facilitate the Git workflow which is essential not only for [G1], but also [G3], [N3], and [Q2]. Unlike these other publishing methods, [G1] leads to messy [commits](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) that contain changes to both source and output files.
 
 ### `quarto` `publish` {#sec-over-qp}
 
-To have cleaner commits and more flexibility in choosing publish approaches, I switched from [G1] to [G2] by adding `quarto` `publish` to my publishing workflow. With [G2], I can track changes to my source files on my `main` [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control) and publish my output files to GitHub Pages and GitLab Pages from my `gh-pages` branch.
+To have cleaner commits, I switched from [G1] to [G2] by adding `quarto` `publish` to my publishing workflow. With [G2], I can track changes to my source files on my `main` [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control) and publish my output files to GitHub Pages and GitLab Pages from my `gh-pages` branch.
 
 [Q1], [N1], and [G2] all use `quarto` `publish` to [render](https://quarto.org/docs/websites/index.html#website-render) website content locally and then deploy it in one fell swoop. If you do not plan to use the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control system or the advanced features offered by [GitHub](https://github.com), [GitLab](https://gitlab.com), or [Netlify](https://netlify.com), then I recommend deploying your site to [Quarto Pub](https://quarto.pub) by running [`quarto` `publish` `quarto-pub`](https://quarto.org/docs/publishing/quarto-pub.html#publish-command) ([Q1] in @tbl-pub).
 
@@ -140,7 +140,7 @@ To summarize the Quarto publishing methods I discussed so far, [Q1] and [N1] are
 All of the publishing methods I have discussed so far require us to generate output files locally by rendering our source files.
 In contrast, [Q2], [G3], and [N3] make it possible to skip local rendering in favor of relying on [GitHub Actions](https://quarto.org/docs/publishing/quarto-pub.html#github-action) to handle all of the necessary steps.
 
-[G3] is noteworthy, because it offers the same convenience of [G1] but without the messy commits. An added bonus of [G3] is that rendering with GitHub Actions provides a reproducible computational environment that is not dependent on what you have installed on your computer.
+[G3] is noteworthy, because it offers the same convenience of [G1] but without messy commits that mix changes to source and output files. An added bonus of [G3] is that rendering with GitHub Actions provides a reproducible computational environment that is not dependent on what you have installed on your computer.
 
 Instead of using GitHub Actions, I could have used [GitLab CI/CD](https://docs.gitlab.com/ee/ci) to build my site. I decided not to go down this route because the Quarto dev team has many [GitHub Actions workflows](https://github.com/quarto-dev/quarto-actions) available but currently no official support for GitLab CI/CD.
 
@@ -285,7 +285,7 @@ curl -O https://raw.githubusercontent.com/maptv/maptv.github.io/main/.github/wor
 :::
 :::
 
-My `quarto-pub.yml` file is based on [Q2], but it runs upon completion of the `pages-build-deployment` workflow instead of a push to `main`. I changed the workflow trigger so that it runs after my GitHub Pages site is built, regardless of how I triggered the build.
+My `quarto-pub.yml` file is based on [Q2], but it runs upon completion of the `pages-build-deployment` workflow instead of a push to `main`. I changed the workflow trigger so that it runs after my GitHub Pages site is built, regardless of whether I triggered the build by running `quarto` `publish` `gh-pages` or pushing to `main`.
 
 @fig-meth summarizes all of the steps that occur during my Quarto publishing workflow. This workflow allows me to publish my site on four web hosts every time I run `quarto` `publish` `gh-pages` ([G2]) or `git` `push` ([G3])!
 
