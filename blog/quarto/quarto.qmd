@@ -52,9 +52,20 @@ Using a [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=
 
 Apart from RStudio, VSCode, and VSCodium, the Brewfile in @exm-brew will install the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control system, the GitHub and GitLab [command line interfaces (CLIs)](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.), and [`GitHub Desktop`](https://desktop.github.com), a [Git Graphical User Interface (GUI)](https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac). For more information on Git, a tool used by 93% of software developers worldwide according to [survey results](https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.) published by [StackOverflow](https://stackoverflow.com/tour) on [`2022+314`](#){data-bs-toggle="tooltip" data-bs-title="2023-01-09"}, take a look at the ["GitHub for supporting, reusing, contributing, and failing safely"](https://openscapes.org/blog/2022-05-27-github-illustrated-series/) post by [Allison Horst](https://allisonhorst.com) and [Julie Lowndes](https://jules32.github.io) on the [Openscapes](https://openscapes.org/) [blog](https://openscapes.org/blog).
 
+As an alternative to installing tools on your computer, you can use the web interface provided by [GitHub Codespaces](https://github.com/features/codespaces). To set up a Codespace, you can remove the lines that start with `cask` from the Brewfile provided in @exm-brew and add the file to a repo called [`dotfiles`](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) and along with a `setup.sh` file like the one shown in @exm-set.
+
+::: {#exm-set}
+```{.sh filename="setup.sh"}
+echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/codespace/.profile
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+brew bundle
+```
+:::
+
 ## Publishing overview {#sec-over}
 
-Once you are done setting up your computer and creating the [Quarto website template](https://quarto.org/docs/websites/#quick-start:~:text=This%20will%20create%20the%20scaffolding%20for%20a%20simple%20website%20in%20the%20mysite%20sub%2Ddirectory.), you can make your site publicly available on the internet using one of the many available [publishing services](https://quarto.org/docs/publishing/#getting-started). To explore and assess different publishing [workflows](https://en.wikipedia.org/wiki/Workflow#:~:text=A%20workflow%20is%20a%20generic%20term%20for%20orchestrated%20and%20repeatable%20patterns%20of%20activity%2C%20enabled%20by%20the%20systematic%20organization%20of%20resources%20into%20processes%20that%20transform%20materials%2C%20provide%20services%2C%20or%20process%20information.) and free website hosting options, I set up my personal website on four different [web hosts](https://en.wikipedia.org/wiki/Web_hosting_service#:~:text=Companies%20providing%20web%20hosting%20services%20are%20sometimes%20called%20web%20hosts.): [Quarto Pub](https://maptv.quarto.pub), [Netlify](https://maptv.netlify.app), [GitHub Pages](https://maptv.github.io), and [GitLab Pages](https://maptv.gitlab.io).
+Once you are done setting up your computer or Codespace, you create a [Quarto website template](https://quarto.org/docs/websites/#quick-start:~:text=This%20will%20create%20the%20scaffolding%20for%20a%20simple%20website%20in%20the%20mysite%20sub%2Ddirectory.) and make your site publicly available on the internet using one of the many available [publishing services](https://quarto.org/docs/publishing/#getting-started). To explore and assess different publishing [workflows](https://en.wikipedia.org/wiki/Workflow#:~:text=A%20workflow%20is%20a%20generic%20term%20for%20orchestrated%20and%20repeatable%20patterns%20of%20activity%2C%20enabled%20by%20the%20systematic%20organization%20of%20resources%20into%20processes%20that%20transform%20materials%2C%20provide%20services%2C%20or%20process%20information.) and free website hosting options, I set up my personal website on four different [web hosts](https://en.wikipedia.org/wiki/Web_hosting_service#:~:text=Companies%20providing%20web%20hosting%20services%20are%20sometimes%20called%20web%20hosts.): [Quarto Pub](https://maptv.quarto.pub), [Netlify](https://maptv.netlify.app), [GitHub Pages](https://maptv.github.io), and [GitLab Pages](https://maptv.gitlab.io).
 
 There are so many different ways to publish a Quarto site that I decided to come up with a naming system for Quarto publishing methods. The naming system derives a code for each publishing method from the numbered lists in the Quarto publishing documentation. For example, I refer to the [two methods to publish to Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto,your%20code%20changes.) as [Q1] and [Q2]:
 
@@ -99,7 +110,7 @@ To make it easier to make incremental changes to my website and frequently relea
 
 The [`aacmp` alias](https://github.com/maptv/setup/blob/936ae9e222b0fe0648d88675db2d4718568a93f2/.zshrc#L134) in the [`.zshrc`](https://github.com/maptv/setup/blob/main/.zshrc) file in my [`setup`](https://github.com/maptv/setup) repo allows me to enter a free-form [commit message](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27) directly on the command line without quotes, e.g. `qp` `edit` `first` `blog`. If you decide to try my `aacmp` alias, please exercise extreme caution as any un-[escaped](https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.) or un-quoted [metacharacters](https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter) may yield surprising effects instead of being included verbatim in the commit message. For example, `qp` `*` will list the contents of the current directory in the commit message in place of the asterisk!
 
-An alternative to a shell alias that combines `git` commands is a keyboard shortcut in Git-enabled GUI. @exm-key shows two files, `tasks.json` and `update.sh`, that we can use to set up VSCode, VSCodium, and [GitHub Codespaces](https://github.com/features/codespaces) to go through the Git workflow whenever we press Ctrl+Shift+B on Linux/Windows or ⌘+Shift+B on Mac (mnemonic: B is for Build).
+An alternative to a shell alias that combines `git` commands is a keyboard shortcut in Git-enabled GUI. @exm-key shows two files, `tasks.json` and `update.sh`, that we can use to set up VSCode, VSCodium, and GitHub Codespaces to go through the Git workflow whenever we press Ctrl+Shift+B on Linux/Windows or ⌘+Shift+B on Mac (mnemonic: B is for Build).
 
 ::: {#exm-key}
 
@@ -339,7 +350,7 @@ To add a custom [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20
 :::
 :::
 
-HTML blocks are useful for running [JavaScript](https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(/%CB%88d%CA%92%C9%91%CB%90v%C9%99skr%C9%AApt/)%2C%20often%20abbreviated%20as%20JS%2C%20is%20a%20programming%20language%20that%20is%20one%20of%20the%20core%20technologies%20of%20the%20World%20Wide%20Web%2C%20alongside%20HTML%20and%20CSS) code in the context of a single page on your site without affecting the others. I also add a `<style>` element in HTML blocks in my `.qmd` files as a last ditch effort to fine tune the style of my site.
+HTML blocks are useful for running [JavaScript](https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(/%CB%88d%CA%92%C9%91%CB%90v%C9%99skr%C9%AApt/)%2C%20often%20abbreviated%20as%20JS%2C%20is%20a%20programming%20language%20that%20is%20one%20of%20the%20core%20technologies%20of%20the%20World%20Wide%20Web%2C%20alongside%20HTML%20and%20CSS) code in the context of a single page on your site without affecting the others. I also use HTML blocks to add a `<style>` element to my `.qmd` files as a last ditch effort to fine tune the style of my site.
 
 Before I resort to the `<style>` element approach, I try writing [CSS](https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML) in my [`styles.css`](https://quarto.org/docs/visual-editor/content.html#defining-styles), `light.css`, and [`dark.css`](https://quarto.org/docs/output-formats/html-themes.html#customizing-themes) files. So far, this approach has been sufficient to make any styling changes I want, but if it every fails, I can use JavaScript to override the default styling provided by Quarto by modifying `style` attributes, which have the highest [specificity](https://en.wikipedia.org/wiki/CSS#Specificity:~:text=Specificity%20refers%20to%20the%20relative%20weights%20of%20various%20rules.) in [CSS](https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML).
 
@@ -375,7 +386,7 @@ To facilitate the calculations in `date.py`, I set `date-format` to `x` in my `_
 
 In addition to customizing dates on the [listing page](https://maptv.github.io/blog) of my blog, I wanted to customize the date format in every blog post. To complete this task, I used a [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=Lua%20(/%CB%88lu%CB%90%C9%99/%20LOO%2D%C9%99%3B%20from%20Portuguese%3A%20lua%20%5B%CB%88lu(w)%C9%90%5D%20meaning%20moon)%20is%20a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20primarily%20for%20embedded%20use%20in%20applications.) script as a [Pandoc filter](https://quarto.org/docs/extensions/filters.html).
 
-[Pandoc](https://pandoc.org/) is a program that converts documents into practically any format. The pan in Pandoc comes from the Ancient Greek word for [*all*](https://en.wiktionary.org/wiki/pan-#:~:text=pan%2D-,all,-Usage%20notes%5B). Pandoc strives to convert *all* document formats, just like [Pangea](https://en.wikipedia.org/wiki/Pangaea#:~:text=Pangaea%20or%20Pangea%20(/p%C3%A6n%CB%88d%CA%92i%CB%90.%C9%99/)%5B1%5D%20was%20a%20supercontinent%20that%20existed%20during%20the%20late%20Paleozoic%20and%20early%20Mesozoic%20eras.) contained *all* the land and a [panacea](https://en.wiktionary.org/wiki/panacea#English:~:text=A%20solution%20to%20all%20problems.) solves *all* problems.
+[Pandoc](https://pandoc.org/) is a program that converts documents into practically any format. The "pan" in Pandoc comes from the Ancient Greek word for [*all*](https://en.wiktionary.org/wiki/pan-#:~:text=pan%2D-,all,-Usage%20notes%5B). Pandoc strives to convert *all* document formats, just like [Pangea](https://en.wikipedia.org/wiki/Pangaea#:~:text=Pangaea%20or%20Pangea%20(/p%C3%A6n%CB%88d%CA%92i%CB%90.%C9%99/)%5B1%5D%20was%20a%20supercontinent%20that%20existed%20during%20the%20late%20Paleozoic%20and%20early%20Mesozoic%20eras.) contained *all* the land and a [panacea](https://en.wiktionary.org/wiki/panacea#English:~:text=A%20solution%20to%20all%20problems.) solves *all* problems.
 
 Quarto uses Pandoc to convert markdown files into target format(s) like `html` or `pdf`. If the source files contain executable code, Quarto executes the code via one of two computational engines: [Jupyter](https://jupyter.org/#:~:text=Free%20software%2C%20open%20standards%2C%20and%20web%20services%20for%20interactive%20computing%20across%20all%20programming%20languages) or [Knitr](https://yihui.org/knitr/#:~:text=the%20knitr%20package%20was%20designed%20to%20be%20a%20transparent%20engine%20for%20dynamic%20report%20generation%20with%20R). @fig-render shows the Quarto workflow.
 
@@ -416,135 +427,9 @@ filters: date.lua
 
 :::
 
+All three of the customizations I described above convert millisecond UNIX time into a custom date format, but you can adapt these approaches to make all sorts of edits to your Quarto site. HTML blocks can run JavaScript which excels at making content dynamic and interactive, pre- and post-render scripts can be in any programming language, while Pandoc filters are written in Lua and modify output during rendering.
 
-
-
-JavaScript, Python, and Lua are programming languages that have all have interesting name origins. JavaScript is named after the Java☕programming language, Python🐍is named after the [Monty Python](https://en.wikipedia.org/wiki/Monty_Python#:~:text=Monty%20Python%20(also%20collectively%20known%20as%20the%20Pythons)%5B2%5D%5B3%5D%20were%20a%20British%20comedy%20troupe%20formed%20in%201969) comedy troupe, and Lua is the Portuguese🇵🇹word for moon🌕.
-
-The `Decalendar` dates in my blog are called `Decalendar` ordinal (`deco`) dates, because they are similar to [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=ISO%208601%20is%20an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data.) [ordinal](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates) (`isoo`) dates. Like `isoo` dates, `deco` dates consist of a year and a day-of-the-year (`doty`).
-
-`Doty` values (`doties`) in `Decalendar` dates count the number of days that have passed since March 1, which is `Day` `0` in `Decalendar`, and can optionally include a `Dec` clock (`Declock`) time. The timestamp in the navbar of my blog is an example of a `Decalendar` date combined with a `Declock` time.
-
-The navbar timestamp is also derived from millisecond UNIX time, which I obtained in `time.js` by calling `Date.now()`. In essence, all three of the scripts in @exm-date convert millisecond UNIX time into a `deco` date or timestamp.
-
-While `time.js` is sourced by Quarto when it reads the HTML block in each of my blog `.qmd` files, `date.lua` is run as a [Pandoc filter](https://quarto.org/docs/extensions/filters.html) during the creation of the output `.html` files, and `date.py` is executed as a [post-render script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render). @exm-date speaks to the power and versatility of Quarto.
-
-Coming up next on my blog is [a post](../observable/observable.qmd) that introduces `Dec` with [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
-
-::: {#exm-date}
-::: {.panel-tabset}
-#### `*.qmd`
-
-```` html
-```{=html}
-<script src="time.js"></script>
-```
-````
-
-#### `_metadata.yml`
-
-``` yaml
-date: now
-date-format: x
-filters: date.lua
-```
-
-#### `_quarto.yml`
-
-``` yaml
-project:
-  type: website
-  output-dir: docs
-  post-render: date.py
-```
-
-#### `time.js`
-
-``` javascript
-// https://howardhinnant.github.io/date_algorithms.html#days_from_civil
-function dote2doty(days = 719468) {
-    const era = Math.floor((days >= 0 ? days : days - 146096) / 146097),
-        dotc = days - era * 146097,
-        yotc = Math.floor((dotc - Math.floor(dotc / 1460)
-        + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
-    return [yotc + era * 400, dotc + Math.floor(yotc / 100)
-        - yotc * 365 - Math.floor(yotc / 4)];
-};
-function unix2doty(ms = 0) { return dote2doty(ms / 86400000 + 719468) };
-function doty2deco(year = 1969, doty = 306, zone = 0) {
-    [date, time] = doty.toString().split(".")
-    return `${year}+${date.toString().padStart(3, "0")}.${
-    time.toString().slice(0, 5).padStart(5, "0")}`;
-};
-function unix2deco(ms = 0) { return doty2deco(...unix2doty(ms)) };
-const nbc = document.getElementsByClassName("navbar-brand-container");
-const div = document.createElement("div");
-const cal = document.createElement("i");
-cal.classList.add("bi", "bi-calendar");
-cal.setAttribute("role", "img");
-const tik = document.createElement("i");
-tik.classList.add("bi", "bi-clock");
-tik.setAttribute("role", "img");
-div.setAttribute("id", "deco");
-nbc[0].appendChild(cal);
-nbc[0].appendChild(div);
-nbc[0].appendChild(tik);
-setInterval(() => document.getElementById("deco").innerText =
-  unix2deco(Date.now()).slice(0, 14), 8.64);
-```
-
-#### `date.py`
-
-``` python
-import bs4
-
-def unix2doty(ms=0):
-    days = ms / 86400000 + 719468
-    dote = days - (era := (days if days >= 0 else days - 146096) // 146097) * 146097
-    year = int((dote - dote / 1460 + dote / 36524 - dote / 146096) // 365 + era * 400)
-    return year, days - (year * 365 + year / 4 - year / 100 + year / 400).__floor__()
-
-with open("docs/blog.html") as infile:
-    txt = infile.read()
-    soup = bs4.BeautifulSoup(txt, features="html.parser")
-for div in soup.find_all("div", {"class": "listing-date"}):
-    if "+" not in div.text:
-        y, d = unix2doty(int(div.text))
-        div.string.replace_with(f"{y:>04}+{d.__floor__():>03}")
-for p in soup.find_all("p", {"class": "date"}):
-    if "+" not in p.text:
-        y, d = unix2doty(int(p.text))
-        p.string.replace_with(f"{y:>04}+{d.__floor__():>03}")
-
-with open("docs/blog.html", "w") as outfile:
-    outfile.write(str(soup))
-```
-
-#### `date.lua`
-
-``` lua
-local function unix2deco(ms)
-    local days = ms / 86400000 + 719468
-    local era = (days >= 0 and days or days - 146096) // 146097
-    local doe = days - era * 146097
-    local year = math.floor((doe - doe / 1460 + doe / 36524 - doe / 146096) / 365) + era * 400
-    local doty = days - math.floor(year * 365 + year / 4 - year / 100 + year / 400)
-    return string.format("%s+%s", math.floor(year), math.floor(doty))
-end
-
-local function to_decalendar(date)
-  local date = pandoc.utils.stringify(date)
-  local unix = date:match("(%d+)")
-  return date:gsub(unix, unix2deco(unix))
-end
-
-function Meta(m)
-  m.date = to_decalendar(m.date)
-  return m
-end
-```
-:::
-:::
+Coming up next on my blog is [a post](../observable/observable.qmd) that [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
 
 ```{=html}
 <script src="../../time.js"></script>
