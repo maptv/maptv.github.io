@@ -145,3 +145,20 @@ svg.date-selector g[aria-label="y-axis tick label"] text {
 svg:not(.aa-SubmitIcon) {
     background: #000000 !important;
 }
+
+#listing-listing > div.list.grid.quarto-listing-cols-3 > div > a > div > p > img.thumbnail-image.card-img {
+    border: 1px solid rgba(150,150,150,.125) !important;
+    border-bottom: 0 !important;
+}
+
+div.card-body {
+    border: 1px solid rgba(150,150,150,.125) !important;
+    border-top: 0 !important;
+}
+
+div.card-footer {
+    background: #0d0d0d !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(150,150,150,.125) !important;
+    border-top: 0;
+}
