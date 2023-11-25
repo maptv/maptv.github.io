@@ -1,7 +1,6 @@
 {
   "listing": "/blog/index.html",
   "items": [
-    "/blog/quarto/index.html",
     "/blog/observable/index.html",
     "/blog/jupyter/index.html",
     "/blog/knitr/index.html"
