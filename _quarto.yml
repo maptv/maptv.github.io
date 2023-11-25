@@ -2,9 +2,6 @@ project:
   type: website
   resources: .gitlab-ci.yml
   post-render: date.py
-  render:
-  - "*.qmd"
-  - "!quarto/"
 website:
   back-to-top-navigation: true
   reader-mode: true
