@@ -8,6 +8,7 @@ listing:
   sort: false
   type: grid
   categories: true
+  fields: [image, title, description, file-modified, categories]
 format:
   html:
     output-file: index.html

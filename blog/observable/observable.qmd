@@ -3,7 +3,7 @@ title: Observable
 author:
   - name: Martin Laptev
     url: https://maptv.github.io
-date: now
+date: last-modified
 filters:
   - ../date.lua
 image: horst_many-lang-qmd-to-output.png

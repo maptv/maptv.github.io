@@ -9,10 +9,10 @@ def unix2doty(ms=0):
 with open("_site/blog/index.html") as infile:
     txt = infile.read()
     soup = bs4.BeautifulSoup(txt, features="html.parser")
-for div in soup.find_all("div", {"class": "listing-date"}):
-    if "+" not in div.text:
+for div in soup.find_all("div", {"class": "card-file-modified"}):
+    elem = div.find("p")
+    if "+" not in elem.text:
         y, d = unix2doty(int(div.text))
-        div.string.replace_with(f"{y:>04}+{d.__floor__():>03}")
-
+        elem.string.replace_with(f"{y:>04}+{d.__floor__():>03}")
 with open("_site/blog/index.html", "w") as outfile:
     outfile.write(str(soup))
