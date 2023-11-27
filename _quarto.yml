@@ -3,6 +3,8 @@ project:
   resources: .gitlab-ci.yml
   post-render: date.py
 website:
+  repo-url: https://github.com/maptv/maptv.github.io
+  repo-actions: [source]
   back-to-top-navigation: true
   reader-mode: true
   page-navigation: true
