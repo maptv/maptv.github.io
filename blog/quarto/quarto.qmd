@@ -7,9 +7,9 @@ date: last-modified
 date-format: x
 image: horst_many-qmd-to-output.png
 categories:
-  - dec🗓️🕓
   - quarto
   - web dev
+  - git
 format:
   html:
     mermaid:

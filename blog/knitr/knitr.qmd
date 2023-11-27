@@ -8,7 +8,6 @@ filters:
   - ../date.lua
 image: horst_knitr.png
 categories:
-  - dec🗓️🕓
   - knitr
   - quarto
 format:

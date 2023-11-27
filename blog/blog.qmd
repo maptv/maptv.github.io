@@ -5,6 +5,7 @@ listing:
     - observable/*.qmd
     - jupyter/*.qmd
     - knitr/*.qmd
+    - prob/*.qmd
   sort: false
   type: grid
   categories: true

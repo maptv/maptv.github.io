@@ -1,0 +1,46 @@
+---
+title: Probability
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
+date: last-modified
+date-format: x
+image: horst_hist-samples.png
+categories:
+  - quarto
+  - web dev
+format:
+  html:
+    mermaid:
+      theme: default
+    output-file: index.html
+filters:
+  - ../date.lua
+  - include-code-files
+---
+
+In this blog post I will discuss a few examples of [probability](https://en.wikipedia.org/wiki/Probability#:~:text=Probability%20is%20the%20branch%20of,event%20and%201%20indicates%20certainty.) in [machine learning](https://en.wikipedia.org/wiki/Machine_learning#:~:text=Machine%20learning%20(ML)%20is%20a%20field%20of%20study%20in%20artificial%20intelligence%20concerned%20with%20the%20development%20and%20study%20of%20statistical%20algorithms%20that%20can%20effectively%20generalize%20and%20thus%20perform%20tasks%20without%20explicit%20instructions.). If you are new to probability, I recommend one of great textbooks that cover the topic and are available for free online, such as [Think Bayes](https://allendowney.github.io/ThinkBayes2) by [Allen Downey](https://www.allendowney.com) and [Bayes Rules!](https://www.bayesrulesbook.com) by [Alicia A. Johnson](https://ajohns24.github.io), Miles Q. Ott, and [Mine Dogucu](https://www.minedogucu.com).
+
+[Classification](https://en.wikipedia.org/wiki/Statistical_classification) [algorithms](https://en.wikipedia.org/wiki/Algorithm) algorithms can estimate $n \times k$ class membership probabilities for each dataset, where n is the number of data points in the dataset and k is the number of classes in the [training dataset](https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets#:~:text=training%20data%20set%2C%5B3%5D%20which%20is%20a%20set%20of%20examples%20used%20to%20fit%20the%20parameters%20(e.g.%20weights%20of%20connections%20between%20neurons%20in%20artificial%20neural%20networks)%20of%20the%20model.). Similarly, the [Gaussian Mixtures](https://scikit-learn.org/stable/modules/mixture.html) [clustering](https://scikit-learn.org/stable/modules/clustering.html) algorithm can generate $n \times k$ cluster label probabilities.
+
+Besides  a data point and the Gaussian Mixtures models can estimate cluster membership probability. point , especially [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) and [Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier). Every classification algorithm can estimate probabilities of belonging to each class.
+
+
+
+```{=html}
+<script src="../../time.js"></script>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+#title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
+#title-block-header { margin: 0px; }
+main#quarto-document-content { margin: 0px; padding: 0px; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row; }
+#quarto-sidebar { padding: 0px; }
+#quarto-sidebar > * { padding: 0px; }
+#quarto-margin-sidebar { padding: 17px; }
+div.quarto-title-meta { padding-bottom: 8px; }
+</style>
+```

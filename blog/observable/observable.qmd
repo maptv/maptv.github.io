@@ -8,7 +8,6 @@ filters:
   - ../date.lua
 image: horst_many-lang-qmd-to-output.png
 categories:
-  - dec🗓️🕓
   - observable
   - quarto
 format:
