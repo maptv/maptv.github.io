@@ -42,10 +42,15 @@ website:
       - section: Blog
         file: blog/blog.qmd
         contents:
-          - blog/quarto/quarto.qmd
-          - blog/observable/observable.qmd
-          - blog/jupyter/jupyter.qmd
-          - blog/knitr/knitr.qmd
+          - section: Tools
+            contents:
+              - blog/quarto/quarto.qmd
+              - blog/observable/observable.qmd
+              - blog/jupyter/jupyter.qmd
+              - blog/knitr/knitr.qmd
+          - section: Machine Learning
+            contents:
+              - blog/prob/prob.qmd
       - text: Curriculum Vitae
         file: cv/cv.qmd
       - text: GitHub
