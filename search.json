@@ -54,24 +54,21 @@
     ]
   },
   {
-    "objectID": "blog/knitr/index.html",
-    "href": "blog/knitr/index.html",
-    "title": "Knitr",
+    "objectID": "blog/prob/index.html",
+    "href": "blog/prob/index.html",
+    "title": "Probability",
+    "section": "",
+    "text": "In this blog post I will discuss a few examples of probability in machine learning. If you are new to probability, I recommend one of great textbooks that cover the topic and are available for free online, such as Think Bayes by Allen Downey and Bayes Rules! by Alicia A. Johnson, Miles Q. Ott, and Mine Dogucu.\nClassification algorithms algorithms can estimate \\(n \\times k\\) class membership probabilities for each dataset, where n is the number of data points in the dataset and k is the number of classes in the training dataset. Similarly, the Gaussian Mixtures clustering algorithm can generate \\(n \\times k\\) cluster label probabilities.\nBesides a data point and the Gaussian Mixtures models can estimate cluster membership probability. point , especially Logistic Regression and Naive Bayes. Every classification algorithm can estimate probabilities of belonging to each class.\n\n\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog/jupyter/index.html",
+    "href": "blog/jupyter/index.html",
+    "title": "Jupyter",
     "section": "",
     "text": "Back to top",
     "crumbs": [
       "Blog",
-      "Knitr"
-    ]
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "",
-    "section": "",
-    "text": "Quarto\n\n\n\ndec🗓️🕓\n\n\nquarto\n\n\nweb dev\n\n\n\n\n\n\n\n\n1700942984880\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservable\n\n\n\ndec🗓️🕓\n\n\nobservable\n\n\nquarto\n\n\n\n\n\n\n\n\n1700942984876\n\n\n\n\n\n\n\n\n\n\n\n\n\nJupyter\n\n\n\ndec🗓️🕓\n\n\nknitr\n\n\njupyter\n\n\nquarto\n\n\n\n\n\n\n\n\n1700942984872\n\n\n\n\n\n\n\n\n\n\n\n\n\nKnitr\n\n\n\ndec🗓️🕓\n\n\nknitr\n\n\nquarto\n\n\n\n\n\n\n\n\n1700942984876\n\n\n\n\n\n\n\nNo matching items\n\n Back to topAttributions\n\nArtwork by @allison_horst",
-    "crumbs": [
-      "Blog"
+      "Jupyter"
     ]
   },
   {
@@ -95,14 +92,24 @@
     ]
   },
   {
-    "objectID": "blog/jupyter/index.html",
-    "href": "blog/jupyter/index.html",
-    "title": "Jupyter",
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "",
+    "section": "",
+    "text": "Quarto\n\n\n\nquarto\n\n\nweb dev\n\n\ngit\n\n\n\n\n\n\n\n\n1701119483699\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservable\n\n\n\nobservable\n\n\nquarto\n\n\n\n\n\n\n\n\n1701119483695\n\n\n\n\n\n\n\n\n\n\n\n\n\nJupyter\n\n\n\nknitr\n\n\njupyter\n\n\nquarto\n\n\n\n\n\n\n\n\n1701119483687\n\n\n\n\n\n\n\n\n\n\n\n\n\nKnitr\n\n\n\nknitr\n\n\nquarto\n\n\n\n\n\n\n\n\n1701119483691\n\n\n\n\n\n\n\n\n\n\n\n\n\nProbability\n\n\n\nquarto\n\n\nweb dev\n\n\n\n\n\n\n\n\n1701119483695\n\n\n\n\n\n\n\nNo matching items\n\n Back to topAttributions\n\nArtwork by @allison_horst",
+    "crumbs": [
+      "Blog"
+    ]
+  },
+  {
+    "objectID": "blog/knitr/index.html",
+    "href": "blog/knitr/index.html",
+    "title": "Knitr",
     "section": "",
     "text": "Back to top",
     "crumbs": [
       "Blog",
-      "Jupyter"
+      "Knitr"
     ]
   },
   {
