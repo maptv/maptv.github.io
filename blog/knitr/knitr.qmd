@@ -8,6 +8,7 @@ filters:
   - ../date.lua
 image: horst_knitr.png
 categories:
+  - tool
   - knitr
   - quarto
 format:

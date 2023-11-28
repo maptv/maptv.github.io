@@ -8,6 +8,7 @@ filters:
   - ../date.lua
 image: horst_many-lang-qmd-to-output.png
 categories:
+  - tool
   - observable
   - quarto
 format:

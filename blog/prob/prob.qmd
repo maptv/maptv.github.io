@@ -7,8 +7,7 @@ date: last-modified
 date-format: x
 image: horst_hist-samples.png
 categories:
-  - quarto
-  - web dev
+  - ml
 format:
   html:
     mermaid:

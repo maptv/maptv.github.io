@@ -8,6 +8,7 @@ filters:
   - ../date.lua
 image: horst_jupyter.png
 categories:
+  - tool
   - knitr
   - jupyter
   - quarto
