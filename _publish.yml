@@ -2,3 +2,6 @@
   netlify:
     - id: 39629c76-a4da-4206-9266-b3e234b61ff6
       url: 'https://maptv.netlify.app'
+  quarto-pub:
+    - id: 7bc5030e-2362-4a27-b778-2353e5c60805
+      url: 'https://maptv.quarto.pub/test'
