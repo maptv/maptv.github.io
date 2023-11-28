@@ -19,11 +19,11 @@ filters:
   - include-code-files
 ---
 
-[Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) is a [version control](https://en.wikipedia.org/wiki/Version_control#:~:text=version%20control%20(also%20known%20as%20revision%20control%2C%20source%20control%2C%20or%20source%20code%20management)%20is%20a%20class%20of%20systems%20responsible%20for%20managing%20changes%20to%20computer%20programs%2C%20documents%2C%20large%20web%20sites%2C%20or%20other%20collections%20of%20information.) system used by 93% of [software](https://en.wikipedia.org/wiki/Software#:~:text=Software%20is%20a%20set%20of%20computer%20programs%20and%20associated%20documentation%20and%20data.) developers worldwide according to [survey results](https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.) published by [StackOverflow](https://stackoverflow.com/tour) on [`2022+314`](#){data-bs-toggle="tooltip" data-bs-title="2023-01-09"}. Thanks to Git, I can sleep soundly at night, reassured by the knowledge that all of my work is safely stored by a [Git repository hosting service](https://en.wikipedia.org/wiki/Git#:~:text=Git%20repository%20services%2C%20including%20GitHub%2C%20SourceForge%2C%20Bitbucket%20and%20GitLab.%5B) such as [GitHub](https://en.wikipedia.org/wiki/GitHub#:~:text=GitHub%2C%20Inc.%20(/%CB%88%C9%A1%C9%AAth%CA%8Cb/%5Ba%5D)%20is%20a%20platform%20and%20cloud%2Dbased%20service%20for%20software%20development%20and%20version%20control%2C%20allowing%20developers%20to%20store%20and%20manage%20their%20code.) and [GitLab](https://en.wikipedia.org/wiki/GitLab).
+[Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) is a [version control](https://en.wikipedia.org/wiki/Version_control#:~:text=version%20control%20(also%20known%20as%20revision%20control%2C%20source%20control%2C%20or%20source%20code%20management)%20is%20a%20class%20of%20systems%20responsible%20for%20managing%20changes%20to%20computer%20programs%2C%20documents%2C%20large%20web%20sites%2C%20or%20other%20collections%20of%20information.) system used by 93% of [software](https://en.wikipedia.org/wiki/Software#:~:text=Software%20is%20a%20set%20of%20computer%20programs%20and%20associated%20documentation%20and%20data.) developers worldwide according to [survey results](https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.) published by [StackOverflow](https://stackoverflow.com/tour) on [`2022+314`](#){data-bs-toggle="tooltip" data-bs-title="2023-01-09"}. Thanks to Git, I can sleep💤soundly at night, reassured by the knowledge that all of my work is safely stored by a [Git repository hosting service](https://en.wikipedia.org/wiki/Git#:~:text=Git%20repository%20services%2C%20including%20GitHub%2C%20SourceForge%2C%20Bitbucket%20and%20GitLab.%5B) such as [GitHub](https://en.wikipedia.org/wiki/GitHub#:~:text=GitHub%2C%20Inc.%20(/%CB%88%C9%A1%C9%AAth%CA%8Cb/%5Ba%5D)%20is%20a%20platform%20and%20cloud%2Dbased%20service%20for%20software%20development%20and%20version%20control%2C%20allowing%20developers%20to%20store%20and%20manage%20their%20code.) and [GitLab](https://en.wikipedia.org/wiki/GitLab).
 
 A Git [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) (repo) is a [directory](https://en.wikipedia.org/wiki/Directory_(computing)#:~:text=a%20directory%20is%20a%20file%20system%20cataloging%20structure%20which%20contains%20references%20to%20other%20computer%20files%2C%20and%20possibly%20other%20directories.) that tracks the changes made to its contents. GitHub and GitLab do not only host repos, but also websites via [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#render-to-docs) and [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/).
 
-My personal site is hosted on both [GitHub Pages](https://maptv.github.io) and [GitLab Pages](https://maptv.gitlab.io). To add or update the content on my site, I go through the steps in the standard Git workflow shown in @fig-git.
+My personal site is hosted on both [GitHub Pages](https://maptv.github.io) and [GitLab Pages](https://maptv.gitlab.io). When I want to add or update the content on my site, I go through the steps in the standard Git workflow shown in @fig-git.
 
 ```{mermaid fig-align="center"}
 %%| label: fig-git
@@ -36,9 +36,36 @@ flowchart LR
 
 To make it easier to make incremental changes to my website and frequently release new content, I combined all of the `git` [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) commands in @fig-git into a shell [alias](https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.). You can add shell aliases to a [shell configuration file](https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.) like `.bashrc` or `.zshrc` on your computer to shorten one or more commands and any associated command [arguments](https://en.wikipedia.org/wiki/Command-line_interface#Arguments:~:text=A%20command%2Dline%20argument%20or%20parameter%20is%20an%20item%20of%20information%20provided%20to%20a%20program%20when%20it%20is%20started.).
 
+An alternative to a shell alias that combines `git` commands is to use keyboard shortcuts in a [Git Graphical User Interface (GUI)](https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac) such as [`GitHub Desktop`](https://desktop.github.com) or the Git interface in a [source code editor](https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.) like [Visual Studio Code (VSCode)](https://code.visualstudio.com), [VSCodium](https://vscodium.com/#:~:text=VSCodium%20is%20a%20community%2Ddriven%2C%20freely%2Dlicensed%20binary%20distribution%20of%20Microsoft%E2%80%99s%20editor%20VS%20Code.), or  [RStudio](https://posit.co/download/rstudio-desktop). @exm-key shows two files, `tasks.json` and `update.sh`, that we can use to set up VSCode and VSCodium to go through the Git workflow whenever we press Ctrl+Shift+B on Linux/Windows or ⌘+Shift+B on Mac (mnemonic: B is for Build).
+
+::: {#exm-key}
+
+::: {.panel-tabset}
+
+#### `update.sh`
+
+```{.yaml include="../../update.sh"}
+```
+
+#### `tasks.json`
+
+```{.yaml include="../../.vscode/tasks.json"}
+```
+
+:::
+
+:::
+
+This mechanism is called [Tasks](https://code.visualstudio.com/docs/editor/tasks) and is used to [automate](https://en.wikipedia.org/wiki/Build_automation#:~:text=Build%20automation%20is%20the%20process%20of%20automating%20the%20creation%20of%20a%20software%20build) [software build](https://en.wikipedia.org/wiki/Software_build#:~:text=In%20software%20development%2C%20a%20build%20is%20the%20process%20of%20converting%20source%20code%20files%20into%20standalone%20software%20artifact(s)%20that%20can%20be%20run%20on%20a%20computer%2C%20or%20the%20result%20of%20doing%20so.) tasks. Importantly, the Tasks mechanism requires that the `tasks.json` file be added to the `.vscode` directory and that we enable execution of the `update.sh` script by running `chmod` `+x` `update.sh` in our project root.
+
+The only disadvantage of this mechanism is that it is difficult
+
+When I push a collection of changes called a [commit](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) to my [maptv.github.io](https://github.com/maptv.github.io) repo on GitHub, a continuous integration (CI) mechanism called GitHub Actions automatically completes the steps required to build and publish my website.
+
+If you are new to Git, I recommend starting out using 
 
 Git breaks down the process of making a change into multiple steps: `add` and `commit`.
-Briefly, `git` `add` labels changes to be included in a collection called a [commit](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) by `git` `commit` and sent to a  `push`, which is . Commits can 
+Briefly, `git` `add` labels changes to be included in a collection `git` `commit` and sent to a  `push`, which is . Commits can 
 
 The first topic I will delve into is creating and publishing a website with Quarto. To follow the Quarto documentation on [creating a website](https://quarto.org/docs/websites/), you will need [Visual Studio Code (VSCode)](https://code.visualstudio.com), [VSCodium](https://vscodium.com/#:~:text=VSCodium%20is%20a%20community%2Ddriven%2C%20freely%2Dlicensed%20binary%20distribution%20of%20Microsoft%E2%80%99s%20editor%20VS%20Code.), [RStudio](https://posit.co/download/rstudio-desktop), or a [terminal](https://en.wikipedia.org/wiki/Terminal_emulator).
 
@@ -115,28 +142,6 @@ The first publishing method I tried for my personal site was [G1], which require
 To make it easier to make incremental changes to my website and frequently release new content, I combined all of the `git` shell commands in @fig-git into a shell [alias](https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.). You can add shell aliases to a [shell configuration file](https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.) like `.bashrc` or `.zshrc` on your computer to shorten commands or combine any sequence of commands into one step.
 
 The [`aacmp` alias](https://github.com/maptv/setup/blob/936ae9e222b0fe0648d88675db2d4718568a93f2/.zshrc#L134) in the [`.zshrc`](https://github.com/maptv/setup/blob/main/.zshrc) file in my [`setup`](https://github.com/maptv/setup) repo allows me to enter a free-form [commit message](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27) directly on the command line without quotes, e.g. `qp` `edit` `first` `blog`. If you decide to try my `aacmp` alias, please exercise extreme caution as any un-[escaped](https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.) or un-quoted [metacharacters](https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter) may yield surprising effects instead of being included verbatim in the commit message. For example, `qp` `*` will list the contents of the current directory in the commit message in place of the asterisk!
-
-An alternative to a shell alias that combines `git` commands is a keyboard shortcut in Git-enabled GUI. @exm-key shows two files, `tasks.json` and `update.sh`, that we can use to set up VSCode, VSCodium, and GitHub Codespaces to go through the Git workflow whenever we press Ctrl+Shift+B on Linux/Windows or ⌘+Shift+B on Mac (mnemonic: B is for Build).
-
-::: {#exm-key}
-
-::: {.panel-tabset}
-
-#### `update.sh`
-
-```{.yaml include="../../update.sh"}
-```
-
-#### `tasks.json`
-
-```{.yaml include="../../.vscode/tasks.json"}
-```
-
-:::
-
-:::
-
-This mechanism is called [Tasks](https://code.visualstudio.com/docs/editor/tasks) and is used to [automate](https://en.wikipedia.org/wiki/Build_automation#:~:text=Build%20automation%20is%20the%20process%20of%20automating%20the%20creation%20of%20a%20software%20build) [software build](https://en.wikipedia.org/wiki/Software_build#:~:text=In%20software%20development%2C%20a%20build%20is%20the%20process%20of%20converting%20source%20code%20files%20into%20standalone%20software%20artifact(s)%20that%20can%20be%20run%20on%20a%20computer%2C%20or%20the%20result%20of%20doing%20so.) tasks, which can include any steps required to build and publish a website. Importantly, the Tasks mechanism requires that the `tasks.json` file be added to the `.vscode` directory and that we enable execution of the `update.sh` script by running `chmod` `+x` `update.sh` in our project root.
 
 Shell aliases and keyboard shortcuts can greatly facilitate the Git workflow which is essential not only for [G1], but also [G3], [N3], and [Q2]. Unlike these other publishing methods, [G1] leads to messy [commits](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) that contain changes to both source and output files.
 
