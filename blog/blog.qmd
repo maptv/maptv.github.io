@@ -1,6 +1,7 @@
 ---
 listing:
   contents:
+    - git/*.qmd
     - quarto/*.qmd
     - observable/*.qmd
     - jupyter/*.qmd
