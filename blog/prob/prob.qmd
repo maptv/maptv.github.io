@@ -29,6 +29,7 @@ $\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$
 ```{python}
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.impute import KNNImputer
@@ -274,9 +275,6 @@ df["body_mass_g"] > df["body_mass_g"].mean()
 ```{python}
 gnb.fit(df["body_mass_g"] > df["body_mass_g"].mean(), y)
 ```
-
-$\Huge \theta$
-
 
 ```{=html}
 <script src="../../time.js"></script>
