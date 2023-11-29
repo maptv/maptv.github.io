@@ -264,7 +264,7 @@ $\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$
 
 ```{python}
 #| tags: []
-likelihood * prior / norm
+result = likelihood * prior / norm
 ```
 
 ```{python}
