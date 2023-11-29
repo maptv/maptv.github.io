@@ -1,4 +1,4 @@
 #!/bin/bash
 git add . && \
-git commit -m "Update remote repo" --allow-empty && \
+git commit --reuse-message --reset-author && \
 git push origin main
