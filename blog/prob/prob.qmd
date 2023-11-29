@@ -24,7 +24,7 @@ In this blog post I will discuss a few examples of [probability](https://en.wiki
 
 Besides  a data point and the Gaussian Mixtures models can estimate cluster membership probability. point , especially [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) and [Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier). Every classification algorithm can estimate probabilities of belonging to each class.
 
-
+$\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$
 
 ```{python}
 import matplotlib.pyplot as plt
@@ -146,11 +146,13 @@ sns.displot(df, x="bill_length_mm", kde=True, hue="species", stat="count");
 ```{python}
 #| tags: []
 sns.displot(df, x="bill_length_mm", kde=True, hue="species", stat="density");
+plt.show()
 ```
 
 ```{python}
 #| tags: []
 sns.displot(df, x="bill_length_mm", kde=True, rug=True, hue="species", stat="proportion");
+plt.show()
 ```
 
 ```{python}
@@ -160,6 +162,7 @@ fig.suptitle('PDF and CDF comparision')
 sns.histplot(df[["bill_length_mm", "flipper_length_mm"]], kde=True, ax=axes[0]);
 sns.ecdfplot(df[["bill_length_mm", "flipper_length_mm"]], stat="count", ax=axes[1], legend=False)
 plt.ylim((0, 375));
+plt.show()
 ```
 
 ```{python}
@@ -168,19 +171,12 @@ import pathlib
 ```
 
 ```{python}
-pd.read_csv("")
-```
-
-```{python}
-pd.read_excel
-```
-
-```{python}
 #| tags: []
 lr = LogisticRegression(max_iter=10000)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
 lr.fit(X_train, y_train)
 cmd = ConfusionMatrixDisplay.from_estimator(lr, X_test, y_test)
+plt.show()
 ```
 
 # Logistic function visualization
@@ -226,6 +222,7 @@ $\Huge p=\frac{1}{1+e^{-(\beta_0+\beta_1 x_1+...+\beta_n x_n)}}$
 gnb = GaussianNB()
 gnb.fit(X_train, y_train)
 cmd = ConfusionMatrixDisplay.from_estimator(gnb, X_test, y_test)
+plt.show()
 ```
 
 ```{python}
