@@ -14,13 +14,6 @@ jobs:
         with:
           ref: gh-pages
 
-      - name: Check out _publish.yml
-        uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            _publish.yml
-          sparse-checkout-cone-mode: false
-
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
