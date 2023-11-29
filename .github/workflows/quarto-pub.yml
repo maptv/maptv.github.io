@@ -9,10 +9,14 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
+      - name: Check out main repository
+        uses: actions/checkout@v4
+
+      - name: Check out _site
         uses: actions/checkout@v4
         with:
           ref: gh-pages
+          path: _site
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
