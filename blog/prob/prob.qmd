@@ -273,7 +273,7 @@ df["body_mass_g"] > df["body_mass_g"].mean()
 ```
 
 ```{python}
-gnb.fit(df["body_mass_g"] > df["body_mass_g"].mean(), y)
+# gnb.fit([df["body_mass_g"] > df["body_mass_g"].mean()], y)
 ```
 
 ```{=html}
