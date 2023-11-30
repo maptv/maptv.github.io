@@ -27,3 +27,4 @@ jobs:
           target: quarto-pub
           render: false
           QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
+          GITHUB_USERNAME: maptv
