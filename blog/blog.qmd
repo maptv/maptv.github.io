@@ -30,5 +30,5 @@ ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 ```
 
 #### Attributions {.appendix}
-
+external
 Artwork by [@allison_horst](https://twitter.com/allison_horst)
