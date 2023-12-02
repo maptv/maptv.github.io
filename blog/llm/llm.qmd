@@ -1,0 +1,41 @@
+---
+title: LLM
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
+date: last-modified
+date-format: x
+image: dalle_llm-guru.png
+categories:
+  - tool
+  - git
+  - llm
+  - ml
+format:
+  html:
+    mermaid:
+      theme: default
+    output-file: index.html
+filters:
+  - ../date.lua
+  - include-code-files
+---
+
+
+```{=html}
+<script src="../../time.js"></script>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+#title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
+#title-block-header { margin: 0px; }
+main#quarto-document-content { margin: 0px; padding: 0px; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row; }
+#quarto-sidebar { padding: 0px; }
+#quarto-sidebar > * { padding: 0px; }
+#quarto-margin-sidebar { padding: 17px; }
+div.quarto-title-meta { padding-bottom: 8px; }
+</style>
+```

@@ -55,6 +55,7 @@ website:
             href: blog/#category=ml
             contents:
               - blog/prob/prob.qmd
+              - blog/llm/llm.qmd
       - text: Curriculum Vitae
         file: cv/cv.qmd
       - text: GitHub
