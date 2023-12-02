@@ -21,13 +21,13 @@ filters:
 
 [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) is a [version control](https://en.wikipedia.org/wiki/Version_control#:~:text=version%20control%20(also%20known%20as%20revision%20control%2C%20source%20control%2C%20or%20source%20code%20management)%20is%20a%20class%20of%20systems%20responsible%20for%20managing%20changes%20to%20computer%20programs%2C%20documents%2C%20large%20web%20sites%2C%20or%20other%20collections%20of%20information.) system created by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds#:~:text=Linus%20Benedict%20Torvalds%20(,control%20system%20Git.)), who is also the creator of [Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems%20based%20on%20the%20Linux%20kernel%2C%5B12%5D%20an%20operating%20system%20kernel%20first%20released%20on%20September%2017%2C%201991%2C%20by%20Linus%20Torvalds.). Since its first release in [`2005+037`](#){data-bs-toggle="tooltip" data-bs-title="2005-04-07"}, Git has largely replaced other version control systems and is used by 93% of [software](https://en.wikipedia.org/wiki/Software#:~:text=Software%20is%20a%20set%20of%20computer%20programs%20and%20associated%20documentation%20and%20data.) developers worldwide, according to [survey results](https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.) published by [StackOverflow](https://stackoverflow.com/tour) on [`2022+314`](#){data-bs-toggle="tooltip" data-bs-title="2023-01-09"}.
 
-## Git repo hosts {#sec-host}
-
 Thanks to Git, I can sleep💤soundly at night, reassured by the knowledge that all of my progress on all of my ongoing project is recorded. My progress is not only stored on my local computer, but also on [Git repository hosting services](https://en.wikipedia.org/wiki/Git#:~:text=Git%20repository%20services%2C%20including%20GitHub%2C%20SourceForge%2C%20Bitbucket%20and%20GitLab.%5B) such as [GitHub](https://en.wikipedia.org/wiki/GitHub#:~:text=GitHub%2C%20Inc.%20(/%CB%88%C9%A1%C9%AAth%CA%8Cb/%5Ba%5D)%20is%20a%20platform%20and%20cloud%2Dbased%20service%20for%20software%20development%20and%20version%20control%2C%20allowing%20developers%20to%20store%20and%20manage%20their%20code.) and [GitLab](https://en.wikipedia.org/wiki/GitLab).
 
 A Git [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) (repo) is a [directory](https://en.wikipedia.org/wiki/Directory_(computing)#:~:text=a%20directory%20is%20a%20file%20system%20cataloging%20structure%20which%20contains%20references%20to%20other%20computer%20files%2C%20and%20possibly%20other%20directories.) that tracks the changes made to its contents. For more information on GitHub, the largest Git repo host, take a look at the ["GitHub for supporting, reusing, contributing, and failing safely"](https://openscapes.org/blog/2022-05-27-github-illustrated-series/) post by [Allison Horst](https://allisonhorst.com) and [Julie Lowndes](https://jules32.github.io) on the [Openscapes](https://openscapes.org/) [blog](https://openscapes.org/blog).
 
 GitHub and GitLab do not only host repos, but also websites via [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#render-to-docs) and [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/). My personal site is hosted for free on both [GitHub Pages](https://maptv.github.io) and [GitLab Pages](https://maptv.gitlab.io).
+
+## Git workflow {#sec-workflow}
 
 When I want to add or update the content on my site, I go through the steps in the standard Git workflow shown in @fig-git. Every time I "push" a collection of changes called a [commit](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) to my [maptv.github.io](https://github.com/maptv.github.io) repo on GitHub, a [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration#:~:text=In%20software%20engineering%2C%20continuous%20integration%20(CI)%20is%20the%20practice%20of%20merging%20all%20developers%27%20working%20copies%20to%20a%20shared%20mainline%20several%20times%20a%20day.) (CI) system called [GitHub Actions](https://docs.github.com/en/actions) automatically completes the steps required to build and publish my website.
 
@@ -40,7 +40,7 @@ flowchart LR
    A[working<br/>directory]-.git<br/>add.->B{{staging<br/>area}}-.git<br/>commit.->C([local<br/>repo])-.git<br/>push.->D(remote<br/>repo)
 ```
 
-## Shell aliases {#sec-alias}
+### Shell aliases {#sec-alias}
 
 To make it easier to make incremental changes to my website and frequently release new content, I combined all of the `git` [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) commands in @fig-git into shell [aliases](https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.). You can add shell aliases to a [shell configuration file](https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.) like `.bashrc` or `.zshrc` on your computer to shorten one or more commands and any associated command [arguments](https://en.wikipedia.org/wiki/Command-line_interface#Arguments:~:text=A%20command%2Dline%20argument%20or%20parameter%20is%20an%20item%20of%20information%20provided%20to%20a%20program%20when%20it%20is%20started.).
 
@@ -50,7 +50,7 @@ Some of my aliases allow me to enter free-form [commit messages](https://en.wiki
 
 If no commit message is provided after the aliases, a generic commit message is created that includes the [change type](https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---diff-filterACDMRTUXB82308203) and name of each changed file. In @sec-key, I describe how I used this generic commit message approach to further simplify the Git workflow.
 
-## Keybindings {#sec-key}
+### Keybindings {#sec-key}
 
 An alternative to a shell alias that combines `git` commands is to use a keyboard shortcut in a [Git Graphical User Interface (GUI)](https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac) such as [`GitHub Desktop`](https://desktop.github.com) or the Git interface in a [code editor](https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.) like [Visual Studio Code (VSCode)](https://code.visualstudio.com), [VSCodium](https://vscodium.com/#:~:text=VSCodium%20is%20a%20community%2Ddriven%2C%20freely%2Dlicensed%20binary%20distribution%20of%20Microsoft%E2%80%99s%20editor%20VS%20Code.), or [RStudio](https://posit.co/download/rstudio-desktop). I use keyboard shortcuts in VSCode and VSCodium to send shell commands to the [integrated terminal](https://code.visualstudio.com/docs/terminal/basics) without moving my focus away from the files I am editing.
 
@@ -71,7 +71,7 @@ nnoremap <A-S-f> :Gw<bar>G! commit -m "M "%<bar>G! push<CR>
 
 The drawback of my keyboard shortcut approach for the Git workflow is that it produces generic commit messages. To remedy this, we can use a [Large Language Model](https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.) (LLM) to automatically generate more informative commit messages based on the currently staged changes.
 
-I will save my adventures with LLMs for a [future post](../llm/llm.qmd). For now, I focus on tips for installing tools and setting up a project to use Git version control.
+I will save my adventures with LLMs for a [different post](../llm/llm.qmd). For now, I focus on tips for installing tools and setting up a project to use Git version control.
 
 ## Setup {#sec-setup}
 
@@ -97,7 +97,7 @@ Using a [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=
 
 ### Codespaces {#sec-set-code}
 
-As an alternative to installing tools on your computer, you can use the web interface provided by [GitHub Codespaces](https://github.com/features/codespaces). To set up a Codespace, you can remove the lines that start with `cask` from the Brewfile provided in @exm-brew and add the file to a repo called [`dotfiles`](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) and along with a `setup.sh` file like the one shown in @exm-set.
+As an alternative to installing tools on your computer, you can use the web interface provided by [GitHub Codespaces](https://github.com/features/codespaces). To set up a Codespace with command line tools discussed in this post, you can remove the lines that start with `cask` from the Brewfile provided in @exm-brew and add the file to a repo called [`dotfiles`](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) and along with a `setup.sh` file like the one shown in @exm-set.
 
 ::: {#exm-set}
 ```{.sh filename="setup.sh"}
@@ -107,6 +107,8 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew bundle
 ```
 :::
+
+Every Codespaces instance is pre-equipped with many commonly used tools, but we can use scripts like `setup.sh` to add anything that may be missing. [Codespaces](https://docs.github.com/en/codespaces) can allow to stay productive even when you are not on your own computer and you can keep your settings consistent across your remote and local development environments with [Settings Sync](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#settings-sync).
 
 ### Repo setup {#sec-set-repo}
 
