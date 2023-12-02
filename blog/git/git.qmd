@@ -71,7 +71,7 @@ nnoremap <A-S-f> :Gw<bar>G! commit -m "M "%<bar>G! push<CR>
 
 The drawback of my keyboard shortcut approach for the Git workflow is that it produces generic commit messages. To remedy this, we can use a [Large Language Model](https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.) (LLM) to automatically generate more informative commit messages based on the currently staged changes.
 
-I will save my adventures with LLM for a [future post](llm.qmd). For now, I focus on tips for installing tools and setting up a project to use Git version control.
+I will save my adventures with LLMs for a [future post](llm.qmd). For now, I focus on tips for installing tools and setting up a project to use Git version control.
 
 # Setup {#sec-setup}
 
