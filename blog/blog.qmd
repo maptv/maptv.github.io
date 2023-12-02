@@ -27,6 +27,7 @@ ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 #quarto-sidebar { padding: 0px; }
 #quarto-sidebar > * { padding: 0px; }
 #quarto-margin-sidebar { padding: 17px; }
+code { padding: 0px; }
 </style>
 ```
 
