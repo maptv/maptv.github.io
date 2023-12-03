@@ -97,18 +97,32 @@ Using a [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=
 
 ### Codespaces {#sec-set-code}
 
-As an alternative to installing tools on your computer, you can use the web interface provided by [GitHub Codespaces](https://github.com/features/codespaces). To set up a Codespace with command line tools discussed in this post, you can remove the lines that start with `cask` from the Brewfile provided in @exm-brew and add the file to a repo called [`dotfiles`](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) and along with a `setup.sh` file like the one shown in @exm-set.
+As an alternative to installing tools on your computer, you can use the web interface provided by [GitHub Codespaces](https://github.com/features/codespaces). To set up a Codespace with command line tools discussed in this post, you can remove the lines that start with `cask` from the Brewfile provided in @exm-brew and add the file to a repo called [`dotfiles`](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) and along with a `setup.sh` file like [mine](https://github.com/maptv/dotfiles/blob/main/setup.sh).
+
+::: {.callout-warning}
+`setup.sh` must be added to Git as an executable script!
+:::
 
 ::: {#exm-set}
-```{.sh filename="setup.sh"}
-echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/codespace/.profile
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-brew bundle
+```{.sh}
+git add setup.sh --chmod=+x
 ```
 :::
 
-Every Codespaces instance is pre-equipped with many commonly used tools, but we can use scripts like `setup.sh` to add anything that may be missing. [Codespaces](https://docs.github.com/en/codespaces) can allow to stay productive even when you are not on your own computer and you can keep your settings consistent across your remote and local development environments with [Settings Sync](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#settings-sync).
+Every Codespaces instance is pre-equipped with many commonly used tools, but we can add anything that may be missing with a script like `setup.sh`. We can also keep our settings consistent across our remote and local development environments by enabling [Settings Sync](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#settings-sync).
+
+Maintaining local and remote settings may be challenging, but Homebrew makes it easier with the `$HOMEBREW_PREFIX` environment variable. This variable contains the Homebrew installation path, which is `/opt/homebrew/` on Apple Silicon and `/home/linuxbrew/.linuxbrew` on Linux.
+
+Before you can use `$HOMEBREW_PREFIX`, the `brew` command needs to be added to your path. To ensure my path with set up correctly in Codespaces, I added the code in @exm-path to my `.zshrc`.
+
+::: {#exm-path}
+```{.sh}
+if [[ "$(uname)" == 'Linux' ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+```
+
+To prevent conflicts with [web browser](https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.) keybindings, you can install Codespaces as a [Progressive Web App](https://code.visualstudio.com/docs/remote/codespaces#_known-limitations-and-adaptations) (PWA) by clicking on the "Install Codespaces" icon at the end of the [URL bar in Chrome](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#:~:text=a%20browser%20might%20include%20an%20%22Install%22%20icon%20in%20the%20URL%20bar%20when%20the%20user%20navigates%20to%20the%20page%3A) or any [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser)#:~:text=Chromium%20is%20a%20free%20and%20open%2Dsource%20web%20browser%20project%2C%20primarily%20developed%20and%20maintained%20by%20Google.)-based web browser. When running as a PWA, Codespaces behaves like a desktop application and can thus provide a familiar user experience on any computer!
 
 ### Repo setup {#sec-set-repo}
 
