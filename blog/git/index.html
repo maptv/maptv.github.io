@@ -466,11 +466,13 @@ Warning
 </div>
 <p>Every Codespaces instance is pre-equipped with many commonly used tools, but we can add anything that may be missing with a script like <code>setup.sh</code>. We can also keep our settings consistent across our remote and local development environments by enabling <a href="https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#settings-sync">Settings Sync</a>.</p>
 <p>Maintaining local and remote settings may be challenging, but Homebrew makes it easier with the <code>$HOMEBREW_PREFIX</code> environment variable. This variable contains the Homebrew installation path, which is <code>/opt/homebrew/</code> on Apple Silicon and <code>/home/linuxbrew/.linuxbrew</code> on Linux.</p>
-<p>Before you can use <code>$HOMEBREW_PREFIX</code>, the <code>brew</code> command needs to be added to your path. To ensure my path with set up correctly in Codespaces, I added the code in <strong>?@exm-path</strong> to my <code>.zshrc</code>.</p>
-<p>::: {#exm-path}</p>
+<p>Before you can use <code>$HOMEBREW_PREFIX</code>, the <code>brew</code> command needs to be added to your path. To ensure my path with set up correctly in Codespaces, I added the code in <a href="#exm-path" class="quarto-xref">Example&nbsp;4</a> to my <code>.zshrc</code>.</p>
+<div id="exm-path" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4 </strong></span>&nbsp;</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="st">"</span><span class="va">$(</span><span class="fu">uname</span><span class="va">)</span><span class="st">"</span> <span class="ot">==</span> <span class="st">'Linux'</span> <span class="kw">]];</span> <span class="cf">then</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="ex">/home/linuxbrew/.linuxbrew/bin/brew</span> shellenv<span class="va">)</span><span class="st">"</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>To prevent conflicts with <a href="https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.">web browser</a> keybindings, you can install Codespaces as a <a href="https://code.visualstudio.com/docs/remote/codespaces#_known-limitations-and-adaptations">Progressive Web App</a> (PWA) by clicking on the “Install Codespaces” icon at the end of the <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#:~:text=a%20browser%20might%20include%20an%20%22Install%22%20icon%20in%20the%20URL%20bar%20when%20the%20user%20navigates%20to%20the%20page%3A">URL bar in Chrome</a> or any <a href="https://en.wikipedia.org/wiki/Chromium_(web_browser)#:~:text=Chromium%20is%20a%20free%20and%20open%2Dsource%20web%20browser%20project%2C%20primarily%20developed%20and%20maintained%20by%20Google.">Chromium</a>-based web browser. When running as a PWA, Codespaces behaves like a desktop application and can thus provide a familiar user experience on any computer!</p>
 </section>
 <section id="sec-set-repo" class="level3">
@@ -478,9 +480,9 @@ Warning
 <p>Before you can benefit from everything GitHub and GitLab offer, you will need a <a href="https://github.com/signup">GitHub</a> and/or <a href="https://gitlab.com/users/sign_up">GitLab</a> account and an <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account">SSH key</a>.</p>
 <p>You can create a repo and using the web interface of <a href="https://github.com" class="uri">https://github.com</a> or <a href="https://gitlab.com" class="uri">https://gitlab.com</a> in your browser, but the best way to start a new project is using the CLI for <a href="https://cli.github.com">GitHub</a> or <a href="https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/">GitLab</a> in your <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>. First, run <code>gh</code> <code>auth</code> <code>login</code> or <code>glab</code> <code>auth</code> <code>login</code> and follow the prompts to authenticate via your web browser or with an <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">authentication token</a>.</p>
 <p>The GitHub CLI allows you to add an SSH key to your account during or <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli#adding-a-new-ssh-key-to-your-account">after authentication</a>. The GitLab CLI does not handle SSH keys during authentication, but has a similar command for <a href="https://gitlab.com/gitlab-org/cli/-/blob/main/docs/source/ssh-key/add.md">adding an SSH key to your GitLab account</a>.</p>
-<p>After authentication and SSH key setup, you can run the code in either of the code chunks in <a href="#exm-git" class="quarto-xref">Example&nbsp;4</a> to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my <a href="https://github.com/maptv/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630"><code>.zshrc</code></a>.</p>
+<p>After authentication and SSH key setup, you can run the code in either of the code chunks in <a href="#exm-git" class="quarto-xref">Example&nbsp;5</a> to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my <a href="https://github.com/maptv/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630"><code>.zshrc</code></a>.</p>
 <div id="exm-git" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 5 </strong></span>&nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">GitHub</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">GitLab</a></li></ul>
 <div class="tab-content">
@@ -503,9 +505,9 @@ Warning
 </div>
 </div>
 </div>
-<p>To make it easier to backup my repos on both GitHub and GitLab, I set up each local repo to have two <code>origin</code> remote URLs using the code as shown in <a href="#exm-remote" class="quarto-xref">Example&nbsp;5</a>. With this setting, running <code>git</code> <code>push</code> in my local repo updates my remote repos on both GitHub and GitLab.</p>
+<p>To make it easier to backup my repos on both GitHub and GitLab, I set up each local repo to have two <code>origin</code> remote URLs using the code as shown in <a href="#exm-remote" class="quarto-xref">Example&nbsp;6</a>. With this setting, running <code>git</code> <code>push</code> in my local repo updates my remote repos on both GitHub and GitLab.</p>
 <div id="exm-remote" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 6 </strong></span>&nbsp;</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add lab git@gitlab.com:maptv/maptv.gitlab.io</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add hub git@github.com:maptv/maptv.github.io</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url <span class="at">--add</span> origin <span class="va">$(</span><span class="fu">git</span> remote get-url lab<span class="va">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1278,75 +1280,76 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a><span class="in">    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"</span></span>
 <span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a><span class="in">fi</span></span>
 <span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a>To prevent conflicts with <span class="co">[</span><span class="ot">web browser</span><span class="co">](https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.)</span> keybindings, you can install Codespaces as a <span class="co">[</span><span class="ot">Progressive Web App</span><span class="co">](https://code.visualstudio.com/docs/remote/codespaces#_known-limitations-and-adaptations)</span> (PWA) by clicking on the "Install Codespaces" icon at the end of the <span class="co">[</span><span class="ot">URL bar in Chrome</span><span class="co">](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#:~:text=a%20browser%20might%20include%20an%20%22Install%22%20icon%20in%20the%20URL%20bar%20when%20the%20user%20navigates%20to%20the%20page%3A)</span> or any <span class="co">[</span><span class="ot">Chromium</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Chromium_(web_browser)#:~:text=Chromium%20is%20a%20free%20and%20open%2Dsource%20web%20browser%20project%2C%20primarily%20developed%20and%20maintained%20by%20Google.)-based web browser. When running as a PWA, Codespaces behaves like a desktop application and can thus provide a familiar user experience on any computer!</span>
-<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### Repo setup {#sec-set-repo}</span></span>
-<span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a>Before you can benefit from everything GitHub and GitLab offer, you will need a <span class="co">[</span><span class="ot">GitHub</span><span class="co">](https://github.com/signup)</span> and/or <span class="co">[</span><span class="ot">GitLab</span><span class="co">](https://gitlab.com/users/sign_up)</span> account and an <span class="co">[</span><span class="ot">SSH key</span><span class="co">](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account)</span>.</span>
-<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a>You can create a repo and using the web interface of <span class="ot">&lt;https://github.com&gt;</span> or <span class="ot">&lt;https://gitlab.com&gt;</span> in your browser, but the best way to start a new project is using the CLI for <span class="co">[</span><span class="ot">GitHub</span><span class="co">](https://cli.github.com)</span> or <span class="co">[</span><span class="ot">GitLab</span><span class="co">](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/)</span> in your <span class="co">[</span><span class="ot">terminal</span><span class="co">](https://en.wikipedia.org/wiki/Terminal_emulator)</span>. First, run <span class="in">`gh`</span> <span class="in">`auth`</span> <span class="in">`login`</span> or <span class="in">`glab`</span> <span class="in">`auth`</span> <span class="in">`login`</span> and follow the prompts to authenticate via your web browser or with an <span class="co">[</span><span class="ot">authentication token</span><span class="co">](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)</span>.</span>
-<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a>The GitHub CLI allows you to add an SSH key to your account during or <span class="co">[</span><span class="ot">after authentication</span><span class="co">](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli#adding-a-new-ssh-key-to-your-account)</span>. The GitLab CLI does not handle SSH keys during authentication, but has a similar command for <span class="co">[</span><span class="ot">adding an SSH key to your GitLab account</span><span class="co">](https://gitlab.com/gitlab-org/cli/-/blob/main/docs/source/ssh-key/add.md)</span>.</span>
-<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a>After authentication and SSH key setup, you can run the code in either of the code chunks in @exm-git to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my <span class="co">[</span><span class="ot">`.zshrc`</span><span class="co">](https://github.com/maptv/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630)</span>.</span>
-<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a>::: {#exm-git}</span>
-<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
-<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-140"><a href="#cb8-140" aria-hidden="true" tabindex="-1"></a><span class="fu">#### GitHub</span></span>
-<span id="cb8-141"><a href="#cb8-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-142"><a href="#cb8-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{.sh}</span></span>
-<span id="cb8-143"><a href="#cb8-143" aria-hidden="true" tabindex="-1"></a><span class="in">cd # start in home directory</span></span>
-<span id="cb8-144"><a href="#cb8-144" aria-hidden="true" tabindex="-1"></a><span class="in">mkdir USERNAME</span></span>
-<span id="cb8-145"><a href="#cb8-145" aria-hidden="true" tabindex="-1"></a><span class="in">cd USERNAME</span></span>
-<span id="cb8-146"><a href="#cb8-146" aria-hidden="true" tabindex="-1"></a><span class="in">gh repo create REPONAME --add-readme --clone --public</span></span>
-<span id="cb8-147"><a href="#cb8-147" aria-hidden="true" tabindex="-1"></a><span class="in">cd REPONAME</span></span>
-<span id="cb8-148"><a href="#cb8-148" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a><span class="fu">#### GitLab</span></span>
-<span id="cb8-151"><a href="#cb8-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{.sh}</span></span>
-<span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a><span class="in">cd # start in home directory</span></span>
-<span id="cb8-154"><a href="#cb8-154" aria-hidden="true" tabindex="-1"></a><span class="in">mkdir USERNAME</span></span>
-<span id="cb8-155"><a href="#cb8-155" aria-hidden="true" tabindex="-1"></a><span class="in">cd USERNAME</span></span>
-<span id="cb8-156"><a href="#cb8-156" aria-hidden="true" tabindex="-1"></a><span class="in">glab repo create REPONAME --readme --defaultBranch main --public</span></span>
-<span id="cb8-157"><a href="#cb8-157" aria-hidden="true" tabindex="-1"></a><span class="in">cd REPONAME</span></span>
-<span id="cb8-158"><a href="#cb8-158" aria-hidden="true" tabindex="-1"></a><span class="in">git pull origin main</span></span>
-<span id="cb8-159"><a href="#cb8-159" aria-hidden="true" tabindex="-1"></a><span class="in">git branch --set-upstream-to=origin/main main</span></span>
-<span id="cb8-160"><a href="#cb8-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-161"><a href="#cb8-161" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a>To prevent conflicts with <span class="co">[</span><span class="ot">web browser</span><span class="co">](https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.)</span> keybindings, you can install Codespaces as a <span class="co">[</span><span class="ot">Progressive Web App</span><span class="co">](https://code.visualstudio.com/docs/remote/codespaces#_known-limitations-and-adaptations)</span> (PWA) by clicking on the "Install Codespaces" icon at the end of the <span class="co">[</span><span class="ot">URL bar in Chrome</span><span class="co">](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#:~:text=a%20browser%20might%20include%20an%20%22Install%22%20icon%20in%20the%20URL%20bar%20when%20the%20user%20navigates%20to%20the%20page%3A)</span> or any <span class="co">[</span><span class="ot">Chromium</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Chromium_(web_browser)#:~:text=Chromium%20is%20a%20free%20and%20open%2Dsource%20web%20browser%20project%2C%20primarily%20developed%20and%20maintained%20by%20Google.)-based web browser. When running as a PWA, Codespaces behaves like a desktop application and can thus provide a familiar user experience on any computer!</span>
+<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a><span class="fu">### Repo setup {#sec-set-repo}</span></span>
+<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a>Before you can benefit from everything GitHub and GitLab offer, you will need a <span class="co">[</span><span class="ot">GitHub</span><span class="co">](https://github.com/signup)</span> and/or <span class="co">[</span><span class="ot">GitLab</span><span class="co">](https://gitlab.com/users/sign_up)</span> account and an <span class="co">[</span><span class="ot">SSH key</span><span class="co">](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account)</span>.</span>
+<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a>You can create a repo and using the web interface of <span class="ot">&lt;https://github.com&gt;</span> or <span class="ot">&lt;https://gitlab.com&gt;</span> in your browser, but the best way to start a new project is using the CLI for <span class="co">[</span><span class="ot">GitHub</span><span class="co">](https://cli.github.com)</span> or <span class="co">[</span><span class="ot">GitLab</span><span class="co">](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/)</span> in your <span class="co">[</span><span class="ot">terminal</span><span class="co">](https://en.wikipedia.org/wiki/Terminal_emulator)</span>. First, run <span class="in">`gh`</span> <span class="in">`auth`</span> <span class="in">`login`</span> or <span class="in">`glab`</span> <span class="in">`auth`</span> <span class="in">`login`</span> and follow the prompts to authenticate via your web browser or with an <span class="co">[</span><span class="ot">authentication token</span><span class="co">](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)</span>.</span>
+<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a>The GitHub CLI allows you to add an SSH key to your account during or <span class="co">[</span><span class="ot">after authentication</span><span class="co">](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli#adding-a-new-ssh-key-to-your-account)</span>. The GitLab CLI does not handle SSH keys during authentication, but has a similar command for <span class="co">[</span><span class="ot">adding an SSH key to your GitLab account</span><span class="co">](https://gitlab.com/gitlab-org/cli/-/blob/main/docs/source/ssh-key/add.md)</span>.</span>
+<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a>After authentication and SSH key setup, you can run the code in either of the code chunks in @exm-git to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my <span class="co">[</span><span class="ot">`.zshrc`</span><span class="co">](https://github.com/maptv/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630)</span>.</span>
+<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a>::: {#exm-git}</span>
+<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
+<span id="cb8-140"><a href="#cb8-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-141"><a href="#cb8-141" aria-hidden="true" tabindex="-1"></a><span class="fu">#### GitHub</span></span>
+<span id="cb8-142"><a href="#cb8-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-143"><a href="#cb8-143" aria-hidden="true" tabindex="-1"></a><span class="in">```{.sh}</span></span>
+<span id="cb8-144"><a href="#cb8-144" aria-hidden="true" tabindex="-1"></a><span class="in">cd # start in home directory</span></span>
+<span id="cb8-145"><a href="#cb8-145" aria-hidden="true" tabindex="-1"></a><span class="in">mkdir USERNAME</span></span>
+<span id="cb8-146"><a href="#cb8-146" aria-hidden="true" tabindex="-1"></a><span class="in">cd USERNAME</span></span>
+<span id="cb8-147"><a href="#cb8-147" aria-hidden="true" tabindex="-1"></a><span class="in">gh repo create REPONAME --add-readme --clone --public</span></span>
+<span id="cb8-148"><a href="#cb8-148" aria-hidden="true" tabindex="-1"></a><span class="in">cd REPONAME</span></span>
+<span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-151"><a href="#cb8-151" aria-hidden="true" tabindex="-1"></a><span class="fu">#### GitLab</span></span>
+<span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{.sh}</span></span>
+<span id="cb8-154"><a href="#cb8-154" aria-hidden="true" tabindex="-1"></a><span class="in">cd # start in home directory</span></span>
+<span id="cb8-155"><a href="#cb8-155" aria-hidden="true" tabindex="-1"></a><span class="in">mkdir USERNAME</span></span>
+<span id="cb8-156"><a href="#cb8-156" aria-hidden="true" tabindex="-1"></a><span class="in">cd USERNAME</span></span>
+<span id="cb8-157"><a href="#cb8-157" aria-hidden="true" tabindex="-1"></a><span class="in">glab repo create REPONAME --readme --defaultBranch main --public</span></span>
+<span id="cb8-158"><a href="#cb8-158" aria-hidden="true" tabindex="-1"></a><span class="in">cd REPONAME</span></span>
+<span id="cb8-159"><a href="#cb8-159" aria-hidden="true" tabindex="-1"></a><span class="in">git pull origin main</span></span>
+<span id="cb8-160"><a href="#cb8-160" aria-hidden="true" tabindex="-1"></a><span class="in">git branch --set-upstream-to=origin/main main</span></span>
+<span id="cb8-161"><a href="#cb8-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb8-162"><a href="#cb8-162" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb8-163"><a href="#cb8-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-164"><a href="#cb8-164" aria-hidden="true" tabindex="-1"></a>To make it easier to backup my repos on both GitHub and GitLab, I set up each local repo to have two <span class="in">`origin`</span> remote URLs using the code as shown in @exm-remote. With this setting, running <span class="in">`git`</span> <span class="in">`push`</span> in my local repo updates my remote repos on both GitHub and GitLab.</span>
-<span id="cb8-165"><a href="#cb8-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-166"><a href="#cb8-166" aria-hidden="true" tabindex="-1"></a>::: {#exm-remote}</span>
-<span id="cb8-167"><a href="#cb8-167" aria-hidden="true" tabindex="-1"></a><span class="in">```{.sh}</span></span>
-<span id="cb8-168"><a href="#cb8-168" aria-hidden="true" tabindex="-1"></a><span class="in">git remote add lab git@gitlab.com:maptv/maptv.gitlab.io</span></span>
-<span id="cb8-169"><a href="#cb8-169" aria-hidden="true" tabindex="-1"></a><span class="in">git remote add hub git@github.com:maptv/maptv.github.io</span></span>
-<span id="cb8-170"><a href="#cb8-170" aria-hidden="true" tabindex="-1"></a><span class="in">git remote set-url --add origin $(git remote get-url lab)</span></span>
-<span id="cb8-171"><a href="#cb8-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-172"><a href="#cb8-172" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb8-173"><a href="#cb8-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-174"><a href="#cb8-174" aria-hidden="true" tabindex="-1"></a>I really enjoy using Git, especially with shell aliases in my terminal and keyboard shortcuts in my favorite text editors. If we ever collaborate on a project together, you can be sure that I will insist on using Git!</span>
-<span id="cb8-175"><a href="#cb8-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-176"><a href="#cb8-176" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
-<span id="cb8-177"><a href="#cb8-177" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;script src="../../time.js"&gt;&lt;/script&gt;</span></span>
-<span id="cb8-178"><a href="#cb8-178" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;script&gt;</span></span>
-<span id="cb8-179"><a href="#cb8-179" aria-hidden="true" tabindex="-1"></a><span class="in">const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')</span></span>
-<span id="cb8-180"><a href="#cb8-180" aria-hidden="true" tabindex="-1"></a><span class="in">const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl =&gt; new bootstrap.Tooltip(tooltipTriggerEl))</span></span>
-<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/script&gt;</span></span>
-<span id="cb8-182"><a href="#cb8-182" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;style&gt;</span></span>
-<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a><span class="in">#title-block-header &gt; div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }</span></span>
-<span id="cb8-184"><a href="#cb8-184" aria-hidden="true" tabindex="-1"></a><span class="in">#title-block-header { margin: 0px; }</span></span>
-<span id="cb8-185"><a href="#cb8-185" aria-hidden="true" tabindex="-1"></a><span class="in">main#quarto-document-content { margin: 0px; padding: 0px; }</span></span>
-<span id="cb8-186"><a href="#cb8-186" aria-hidden="true" tabindex="-1"></a><span class="in">ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row; }</span></span>
-<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a><span class="in">#quarto-sidebar { padding: 0px; }</span></span>
-<span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a><span class="in">#quarto-sidebar &gt; * { padding: 0px; }</span></span>
-<span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a><span class="in">#quarto-margin-sidebar { padding: 17px; }</span></span>
-<span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a><span class="in">div.quarto-title-meta { padding-bottom: 8px; }</span></span>
-<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/style&gt;</span></span>
-<span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-163"><a href="#cb8-163" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-164"><a href="#cb8-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-165"><a href="#cb8-165" aria-hidden="true" tabindex="-1"></a>To make it easier to backup my repos on both GitHub and GitLab, I set up each local repo to have two <span class="in">`origin`</span> remote URLs using the code as shown in @exm-remote. With this setting, running <span class="in">`git`</span> <span class="in">`push`</span> in my local repo updates my remote repos on both GitHub and GitLab.</span>
+<span id="cb8-166"><a href="#cb8-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-167"><a href="#cb8-167" aria-hidden="true" tabindex="-1"></a>::: {#exm-remote}</span>
+<span id="cb8-168"><a href="#cb8-168" aria-hidden="true" tabindex="-1"></a><span class="in">```{.sh}</span></span>
+<span id="cb8-169"><a href="#cb8-169" aria-hidden="true" tabindex="-1"></a><span class="in">git remote add lab git@gitlab.com:maptv/maptv.gitlab.io</span></span>
+<span id="cb8-170"><a href="#cb8-170" aria-hidden="true" tabindex="-1"></a><span class="in">git remote add hub git@github.com:maptv/maptv.github.io</span></span>
+<span id="cb8-171"><a href="#cb8-171" aria-hidden="true" tabindex="-1"></a><span class="in">git remote set-url --add origin $(git remote get-url lab)</span></span>
+<span id="cb8-172"><a href="#cb8-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-173"><a href="#cb8-173" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-174"><a href="#cb8-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-175"><a href="#cb8-175" aria-hidden="true" tabindex="-1"></a>I really enjoy using Git, especially with shell aliases in my terminal and keyboard shortcuts in my favorite text editors. If we ever collaborate on a project together, you can be sure that I will insist on using Git!</span>
+<span id="cb8-176"><a href="#cb8-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-177"><a href="#cb8-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb8-178"><a href="#cb8-178" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;script src="../../time.js"&gt;&lt;/script&gt;</span></span>
+<span id="cb8-179"><a href="#cb8-179" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;script&gt;</span></span>
+<span id="cb8-180"><a href="#cb8-180" aria-hidden="true" tabindex="-1"></a><span class="in">const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')</span></span>
+<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a><span class="in">const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl =&gt; new bootstrap.Tooltip(tooltipTriggerEl))</span></span>
+<span id="cb8-182"><a href="#cb8-182" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/script&gt;</span></span>
+<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;style&gt;</span></span>
+<span id="cb8-184"><a href="#cb8-184" aria-hidden="true" tabindex="-1"></a><span class="in">#title-block-header &gt; div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }</span></span>
+<span id="cb8-185"><a href="#cb8-185" aria-hidden="true" tabindex="-1"></a><span class="in">#title-block-header { margin: 0px; }</span></span>
+<span id="cb8-186"><a href="#cb8-186" aria-hidden="true" tabindex="-1"></a><span class="in">main#quarto-document-content { margin: 0px; padding: 0px; }</span></span>
+<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a><span class="in">ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row; }</span></span>
+<span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a><span class="in">#quarto-sidebar { padding: 0px; }</span></span>
+<span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a><span class="in">#quarto-sidebar &gt; * { padding: 0px; }</span></span>
+<span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a><span class="in">#quarto-margin-sidebar { padding: 17px; }</span></span>
+<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a><span class="in">div.quarto-title-meta { padding-bottom: 8px; }</span></span>
+<span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/style&gt;</span></span>
+<span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
