@@ -48,11 +48,13 @@ The `git` `commit` aliases in the `.zshrc` file in my `setup` repo on [GitHub](h
 
 @exm-alias shows the `aacmp` alias as an example of the shell alias syntax. The mnemonic device for this alias is **a**dd **a**ll, **c**ommit with a **m**essage, and **p**ush.
 
+::: {#exm-alias}
 ```{.sh}
 alias aacmp="func() { git add --all && git commit --message \
     \"$(echo '${*:-$(echo $(git diff --name-status --cached \
     | tr "[:space:]" " "))}')\" && git push; }; func"
 ```
+:::
 
 Aliases like `aacmp` allow me to enter free-form [commit messages](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27) directly on the command line without quotes, e.g. `aacmp` `edit` `first` `post`. If you decide to try one of these aliases, please exercise extreme caution as any un-[escaped](https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.) or un-quoted [metacharacters](https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter) may yield surprising effects instead of being included verbatim in the commit message, e.g. `*` is replaced by all of the file and directory names in the current directory!
 
@@ -71,13 +73,11 @@ I created different shortcuts to control which files are included in each commit
 {
   "key": "shift+alt+f",
   "command": "workbench.action.terminal.sendSequence", "args": { "text":
-  "git add ${file} && git commit --message \"M ${relativeFile}\" && git push\u000D",
+    "git add ${file} && git commit -m \"M ${relativeFile}\" && git push\u000D" },
   "when": "terminalIsOpen"
-  }
 }
 ```
 :::
-
 
 If you want to set up similar shortcuts for yourself, take a look at [my keybindings.json](https://github.com/maptv/setup/blob/main/keybindings.json) in my `setup` repo on [GitHub](https://github.com/maptv/setup) and [GitLab](https://gitlab.com/maptv/setup). As you create keyboard shortcuts, please be mindful of [keybinding conflicts](https://code.visualstudio.com/docs/getstarted/keybindings#_detecting-keybinding-conflicts) that may arise.
 
