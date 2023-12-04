@@ -18,14 +18,12 @@ I am a data scientist and software engineer with a broad scientific background t
 
 You are currently on the About[]{.bi .bi-person-circle}page of my site. The arrow[](blog/blog.qmd){.bi .bi-arrow-right-short}at the bottom right of this page and the pencil[](blog/blog.qmd){.bi .bi-pencil}icon in the navigation bar (navbar) will take you to my [Blog](blog/blog.qmd). Similarly, the other navbar icons lead to my [Curriculum Vitae (CV)](cv/cv.qmd)[]{.bi .bi-file-earmark-person}, [GitHub](https://github.com/maptv)[]{.bi .bi-github}, and [LinkedIn](https://www.linkedin.com/in/maptv)[]{.bi .bi-linkedin}.
 
-The timestamp in the navbar shows the current `Dec` date[]{.bi .bi-calendar}(\${styledDecoYear}+\${styledDecoDate}) and time[]{.bi .bi-clock}(\${styledDecoTime}). `Dec` is a calendar and timekeeping system that I created. Briefly, Dec dates (`year+day`) count the [years since 1 BC](https://en.wikipedia.org/wiki/ISO_8601#:~:text=year%200000%20being%20equal%20to%201%20BC) and the [days since March 1st](https://howardhinnant.github.io/date_algorithms.html#civil_from_days:~:text=These%20algorithms%20internally%20assume%20that%20March%201%20is%20the%20first%20day%20of%20the%20year.), while `Dec` times count [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=The%20time%20of%20day%20is%20sometimes%20represented%20as%20a%20decimal%20fraction%20of%20a%20day%20in%20science%20and%20computers.) since midnight. In addition to displaying the time of day, fractional days can also be used to measure durations, such as the time since this webpage was loaded: \${styledTickTime}.
 
-```{=html}
-<script src="time.js"></script>
-<style>
-ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
-</style>
-```
+The timestamp in the navbar shows the current `Dec` calendar (`Decalendar`) date[]{.bi .bi-calendar}(\${styledDecoYear}+\${styledDecoDate}) and `Dec` clock (`Declock`) time[]{.bi .bi-clock}(\${styledDecoTime}). `Dec` is a calendar and timekeeping system that I created.
+
+Briefly, `Decalendar` dates (`year+day`) show the [years since 1 BC](https://en.wikipedia.org/wiki/ISO_8601#:~:text=year%200000%20being%20equal%20to%201%20BC) and the [days since March 1st](https://howardhinnant.github.io/date_algorithms.html#civil_from_days:~:text=These%20algorithms%20internally%20assume%20that%20March%201%20is%20the%20first%20day%20of%20the%20year.) separated by a plus sign (`+`). To see the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=ISO%208601%20is%20an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data.) [calendar date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) equivalent of any underlined `Decalendar` date on my site, e.g. [`1969+306`](#){data-bs-toggle="tooltip" data-bs-title="1970-01-01"}, simply click on or hover over the date.
+
+While `Decalendar` dates count years and days, `Declock` times count [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=The%20time%20of%20day%20is%20sometimes%20represented%20as%20a%20decimal%20fraction%20of%20a%20day%20in%20science%20and%20computers.) since midnight. In addition to displaying the time of day, fractional days can also be used to measure durations, such as the time since this webpage was loaded: \${styledTickTime}.
 
 ```{ojs}
 //| echo: false
@@ -92,6 +90,11 @@ styledTickTime = setStyle(tickTime, d3.schemePaired[2])
 ```
 
 ```{=html}
+<script src="time.js"></script>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
 <style>
 div#quarto-sidebar-glass { display: none !important; }
 ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
