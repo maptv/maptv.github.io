@@ -49,7 +49,7 @@ The `git` `commit` aliases in the `.zshrc` file in my `setup` repo on [GitHub](h
 @exm-alias shows the `aacmp` alias as an example of the shell alias syntax. The mnemonic device for this alias is **a**dd **a**ll, **c**ommit with a **m**essage, and **p**ush.
 
 ::: {#exm-alias}
-```{.sh filename=".zshrc"}
+``` {.sh filename=".zshrc"}
 alias aacmp="func() { git add --all && git commit --message \
     \"$(echo '${*:-$(echo $(git diff --name-status --cached \
     | tr "[:space:]" " "))}')\" && git push; }; func"
@@ -69,7 +69,7 @@ I created different shortcuts to control which files are included in each commit
 @exm-key displays the ⌥⇧F shortcut as an example of the VSCode/VSCodium shortcut syntax. This shortcut uses the [escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#C0_control_codes) for the [return key](https://en.wikipedia.org/wiki/ANSI_escape_code#C0_control_codes:~:text=0x0D,Carriage%20Return) (`\u000D`) to run several `git` commands and [predefined variables](https://code.visualstudio.com/docs/editor/variables-reference#_predefined-variables) to insert the absolute (`${file}`) and relative (`${relativeFile}`) path to the currently open file.
 
 ::: {#exm-key}
-```{.json filename="keybindings.json"}
+``` {.json filename="keybindings.json"}
 {
   "key": "shift+alt+f",
   "command": "workbench.action.terminal.sendSequence", "args": { "text":
@@ -85,9 +85,8 @@ To set up a keyboard shortcut that runs a series of steps rather than a single l
 
 If you use a text editor like [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)#:~:text=Vim%20(/v%C9%AAm/%3B%5B5%5D%20a%20contraction%20of%20Vi%20IMproved)%20is%20a%20free%20and%20open%2Dsource%2C%20screen%2Dbased%20text%20editor%20program.) or [Emacs](https://en.wikipedia.org/wiki/Emacs#:~:text=Emacs%20/%CB%88i%CB%90m%C3%A6ks/%2C%20originally%20named%20EMACS%20(an%20acronym%20for%20%22Editor%20Macros%22)%2C%5B1%5D%5B2%5D%5B3%5D%20is%20a%20family%20of%20text%20editors%20that%20are%20characterized%20by%20their%20extensibility.), you can create keybindings for Vim plugins like [fugitive](https://github.com/tpope/vim-fugitive) or Emacs packages like [magit](https://magit.vc/) that run through the entire Git workflow. @exm-vim shows the Vim+fugitive equivalent of my ⌥⇧F VSCode/VSCodium keybinding.
 
-
 ::: {#exm-vim}
-```{.vim filename=".vimrc"}
+```sh {filename=".vimrc"}
 nnoremap <A-S-f> :Gw<bar>G! commit -m "M "%<bar>G! push<CR>
 ```
 :::
@@ -105,7 +104,7 @@ To easily make changes to files, you can use code editors such as VSCode, VSCodi
 If you use [macOS](https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.), [Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems), or the [Windows Subsystem for Linux (WSL)](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.), you can install all of the aforementioned tools with the [Homebrew](https://brew.sh) package manager. To install everything you will need to follow along with this blog post, you can first [install Homebrew](https://brew.sh/#install) and then run `brew` `bundle` in a directory that contains the [Brewfile](https://homebrew-file.readthedocs.io/en/latest/usage.html) shown in @exm-brew.
 
 ::: {#exm-brew}
-```{.ruby filename="Brewfile"}
+``` {.ruby filename="Brewfile"}
 brew "gh"
 brew "git"
 brew "glab"
@@ -123,7 +122,7 @@ Using a [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=
 As an alternative to installing tools on your computer, you can use the web interface provided by [GitHub Codespaces](https://github.com/features/codespaces). To set up a Codespace with command line tools discussed in this post, you can remove the lines that start with `cask` from the Brewfile provided in @exm-brew and add the file to a repo called [`dotfiles`](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) and along with a `setup.sh` file like [mine](https://github.com/maptv/dotfiles/blob/main/setup.sh).
 
 ::: {#exm-set}
-```{.sh}
+``` sh
 git add setup.sh --chmod=+x
 ```
 :::
@@ -137,7 +136,7 @@ Maintaining local and remote settings may be challenging, but Homebrew makes it 
 Before you can use `$HOMEBREW_PREFIX`, the `brew` command needs to be added to your path. To ensure my path with set up correctly in Codespaces, I added the code in @exm-path to my `.zshrc`.
 
 ::: {#exm-path}
-```{.sh filename=".zshrc"}
+``` {.sh filename=".zshrc"}
 if [[ "$(uname)" == 'Linux' ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
@@ -157,11 +156,10 @@ The GitHub CLI allows you to add an SSH key to your account during or [after aut
 After authentication and SSH key setup, you can run the code in either of the code chunks in @exm-git to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my [`.zshrc`](https://github.com/maptv/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630).
 
 ::: {#exm-git}
-::: {.panel-tabset}
-
+::: panel-tabset
 #### GitHub
 
-```{.sh}
+``` sh
 cd # start in home directory
 mkdir USERNAME
 cd USERNAME
@@ -171,7 +169,7 @@ cd REPONAME
 
 #### GitLab
 
-```{.sh}
+``` sh
 cd # start in home directory
 mkdir USERNAME
 cd USERNAME
@@ -186,7 +184,7 @@ git branch --set-upstream-to=origin/main main
 To make it easier to backup my repos on both GitHub and GitLab, I set up each local repo to have two `origin` remote URLs using the code as shown in @exm-remote. With this setting, running `git` `push` in my local repo updates my remote repos on both GitHub and GitLab.
 
 ::: {#exm-remote}
-```{.sh}
+``` sh
 git remote add lab git@gitlab.com:maptv/maptv.gitlab.io
 git remote add hub git@github.com:maptv/maptv.github.io
 git remote set-url --add origin $(git remote get-url lab)
