@@ -49,7 +49,7 @@ The `git` `commit` aliases in the `.zshrc` file in my `setup` repo on [GitHub](h
 @exm-alias shows the `aacmp` alias as an example of the shell alias syntax. The mnemonic device for this alias is **a**dd **a**ll, **c**ommit with a **m**essage, and **p**ush.
 
 ::: {#exm-alias}
-```{.sh}
+```{.sh filename=".zshrc"}
 alias aacmp="func() { git add --all && git commit --message \
     \"$(echo '${*:-$(echo $(git diff --name-status --cached \
     | tr "[:space:]" " "))}')\" && git push; }; func"
@@ -69,7 +69,7 @@ I created different shortcuts to control which files are included in each commit
 @exm-key displays the ⌥⇧F shortcut as an example of the VSCode/VSCodium shortcut syntax. This shortcut uses the [escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#C0_control_codes) for the [return key](https://en.wikipedia.org/wiki/ANSI_escape_code#C0_control_codes:~:text=0x0D,Carriage%20Return) (`\u000D`) to run several `git` commands and [predefined variables](https://code.visualstudio.com/docs/editor/variables-reference#_predefined-variables) to insert the absolute (`${file}`) and relative (`${relativeFile}`) path to the currently open file.
 
 ::: {#exm-key}
-```{.json}
+```{.json filename="keybindings.json"}
 {
   "key": "shift+alt+f",
   "command": "workbench.action.terminal.sendSequence", "args": { "text":
@@ -87,7 +87,7 @@ If you use a text editor like [Vim](https://en.wikipedia.org/wiki/Vim_(text_edit
 
 
 ::: {#exm-vim}
-```{.vim}
+```{.vim filename=".vimrc"}
 nnoremap <A-S-f> :Gw<bar>G! commit -m "M "%<bar>G! push<CR>
 ```
 :::
@@ -137,7 +137,7 @@ Maintaining local and remote settings may be challenging, but Homebrew makes it 
 Before you can use `$HOMEBREW_PREFIX`, the `brew` command needs to be added to your path. To ensure my path with set up correctly in Codespaces, I added the code in @exm-path to my `.zshrc`.
 
 ::: {#exm-path}
-```{.sh}
+```{.sh filename=".zshrc"}
 if [[ "$(uname)" == 'Linux' ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
