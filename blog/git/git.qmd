@@ -145,7 +145,7 @@ fi
 
 To prevent conflicts with [web browser](https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.) keybindings, you can install Codespaces as a [Progressive Web App](https://code.visualstudio.com/docs/remote/codespaces#_known-limitations-and-adaptations) (PWA) by clicking on the "Install Codespaces" icon at the end of the [URL bar in Chrome](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#:~:text=a%20browser%20might%20include%20an%20%22Install%22%20icon%20in%20the%20URL%20bar%20when%20the%20user%20navigates%20to%20the%20page%3A) or any [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser)#:~:text=Chromium%20is%20a%20free%20and%20open%2Dsource%20web%20browser%20project%2C%20primarily%20developed%20and%20maintained%20by%20Google.)-based web browser. When running as a PWA, Codespaces behaves like a desktop application and can thus provide a familiar user experience on any computer!
 
-### Repo setup {#sec-set-repo}
+### Repository {#sec-set-repo}
 
 Before you can benefit from everything GitHub and GitLab have to offer, you will need a [GitHub](https://github.com/signup) and/or [GitLab](https://gitlab.com/users/sign_up) account and an [SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account). Even though there are other [authentication methods](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github#about-authentication-to-github), SSH keys are still the easiest way to authenticate to GitHub and GitLab.
 
