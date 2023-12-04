@@ -70,9 +70,8 @@ I created different shortcuts to control which files are included in each commit
 ```{.json}
 {
   "key": "shift+alt+f",
-  "command": "workbench.action.terminal.sendSequence",
-  "args": { "text":
-    "git add ${file} && git commit --message \"M ${relativeFile}\" && git push\u000D",
+  "command": "workbench.action.terminal.sendSequence", "args": { "text":
+  "git add ${file} && git commit --message \"M ${relativeFile}\" && git push\u000D",
   "when": "terminalIsOpen"
   }
 }
