@@ -212,9 +212,9 @@ nnoremap <A-S-f> :Gw<bar>G! commit -m "M "%<bar>G! push<CR>
 ```
 :::
 
-The drawback of my keyboard shortcut approach for the Git workflow is that it produces generic commit messages. To remedy this, we can use a [Large Language Model](https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.) (LLM) to automatically generate more informative commit messages based on the currently staged changes.
+The drawback of my keyboard shortcut approach for the Git workflow is that it produces generic commit messages that are no very informative. Anyone reading the messages will not be able to tell what changes were made and more importantly why the changes were made.
 
-I will save my adventures with LLMs for a [different post](../llm/llm.qmd). For now, I focus on tips for installing tools and setting up a project to use Git version control.
+To automatically generate commit messages based on the currently staged changes, we can use a [Large Language Model](https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.) (LLM). [Generative artificial intelligence](https://en.wikipedia.org/wiki/Generative_artificial_intelligence#:~:text=Generative%20artificial%20intelligence%20(also%20generative%20AI%20or%20GenAI%5B1%5D)%20is%20artificial%20intelligence%20capable%20of%20generating%20text%2C%20images%2C%20or%20other%20media) models like LLMs tend to be large in size and have atypical computational requirements, so I will save my adventures with LLMs for a [different post](../llm/llm.qmd).
 
 I really enjoy using Git, especially with shell aliases in my terminal and keyboard shortcuts in my favorite text editors. If we ever collaborate on a project together, you can be sure that I will insist on using Git!
 
