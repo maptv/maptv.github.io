@@ -27,18 +27,21 @@ A Git [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~
 
 GitHub and GitLab do not only host repos, but also websites via [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#render-to-docs) and [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/). My personal site is hosted for free on both [GitHub Pages](https://maptv.github.io) and [GitLab Pages](https://maptv.gitlab.io).
 
-Before you can benefit from everything GitHub and/or GitLab have to offer, you will need to set up your computer so that you can work locally and/or configure a service like [GitHub Codespaces](https://github.com/features/codespaces) so you can work remotely in your [web browser](https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.%5B). I discuss the use of the [Homebrew](https://brew.sh) [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=A%20package%20manager%20or%20package%2Dmanagement%20system%20is%20a%20collection%20of%20software%20tools%20that%20automates%20the%20process%20of%20installing%2C%20upgrading%2C%20configuring%2C%20and%20removing%20computer%20programs%20for%20a%20computer%20in%20a%20consistent%20manner.) for local development environment setup in @sec-setup-brew and Codespaces setup in @sec-setup-code.
+Before you can benefit from everything GitHub and/or GitLab have to offer, you will need to set up your computer so that you can work locally and/or configure a service like [GitHub Codespaces](https://github.com/features/codespaces) or [GitLab Web IDE](https://docs.gitlab.com/ee/user/project/web_ide) so you can work remotely in your [web browser](https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.%5B). In this post, I discuss local development environment setup with the [Homebrew](https://brew.sh) [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=A%20package%20manager%20or%20package%2Dmanagement%20system%20is%20a%20collection%20of%20software%20tools%20that%20automates%20the%20process%20of%20installing%2C%20upgrading%2C%20configuring%2C%20and%20removing%20computer%20programs%20for%20a%20computer%20in%20a%20consistent%20manner.) and repo setup with the GitHub and GitLab CLI.
+
+If you follow along to end of this post, you will have a repo called `dotfiles` that can be used for Codespaces setup. I cover how to set up Codespaces in my [next blog post](../vscode/vscode.qmd), which focuses on the [Visual Studio Code](https://code.visualstudio.com) (VSCode) [source-code editor](https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.).
 
 ## Setup {#sec-setup}
 
 ### Homebrew {#sec-setup-brew}
 
-[Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems), [macOS](https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.), or [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.) (WSL) users can use Homebrew to install everything needed to follow along with this blog post. First, [install Homebrew](https://brew.sh/#install) with the latest [`.pkg` installer](https://github.com/Homebrew/brew/releases) for macOS or by running the @exm-brew [Unix](https://en.wikipedia.org/wiki/Unix#:~:text=Unix%20(/%CB%88ju%CB%90n%C9%AAks/%2C%20YOO%2Dniks%3B%20trademarked%20as%20UNIX)%20is%20a%20family%20of%20multitasking%2C%20multi%2Duser%20computer%20operating%20systems) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) code in your [terminal](https://en.wikipedia.org/wiki/Terminal_emulator#:~:text=A%20terminal%20emulator%2C%20or%20terminal%20application%2C%20is%20a%20computer%20program%20that%20emulates%20a%20video%20terminal%20within%20some%20other%20display%20architecture.).
+[Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems), [macOS](https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.), or [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.) (WSL) users can use Homebrew to install everything needed to work through all of the examples in this blog post. First, [install Homebrew](https://brew.sh/#install) itself with the latest [`.pkg` installer](https://github.com/Homebrew/brew/releases) for macOS or by running the @exm-brew [Unix](https://en.wikipedia.org/wiki/Unix#:~:text=Unix%20(/%CB%88ju%CB%90n%C9%AAks/%2C%20YOO%2Dniks%3B%20trademarked%20as%20UNIX)%20is%20a%20family%20of%20multitasking%2C%20multi%2Duser%20computer%20operating%20systems) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) code in your [terminal](https://en.wikipedia.org/wiki/Terminal_emulator#:~:text=A%20terminal%20emulator%2C%20or%20terminal%20application%2C%20is%20a%20computer%20program%20that%20emulates%20a%20video%20terminal%20within%20some%20other%20display%20architecture.).
 
 ::: {#exm-brew}
 ``` sh
-/bin/bash -c "$(curl -fsSL https://raw.github\
-usercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://\
+raw.githubusercontent.com/Homebrew/\
+install/HEAD/install.sh)"
 ```
 :::
 
@@ -50,9 +53,8 @@ Once Homebrew is ready, you can run the shell code in @exm-echo to create a file
 
 ::: {#exm-echo}
 ``` {.sh}
-echo 'brew "gh"\nbrew "git"\nbrew "glab"
-cask "github"\ncask "rstudio"\ncask "vscodium"
-cask "visual-studio-code"' > Brewfile
+echo 'brew "gh"\nbrew "git"
+brew "glab"\ncask "github"' > Brewfile
 brew bundle
 ```
 :::
@@ -62,101 +64,19 @@ The `Brewfile` created by the shell code in @exm-echo installs:
 - Git,
 - the [command line interfaces](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.) (CLIs) for
   - [GitHub](https://cli.github.com) and
-  - [GitLab](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/),
-- the [GitHub Desktop](https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac) Git [Graphical User Interface](https://en.wikipedia.org/wiki/Graphical_user_interface#:~:text=A%20graphical%20user%20interface%2C%20or%20GUI%20(/%CB%88%C9%A1u%CB%90i/%5B1%5D%5B2%5D%20GOO%2Dee)%2C%20is%20a%20form%20of%20user%20interface%20that%20allows%20users%20to%20interact%20with%20electronic%20devices%20through%20graphical%20icons%20and%20audio%20indicators%20such%20as%20primary%20notation.) (GUI), and
-- three source-code editors:
-  - [Visual Studio Code (VSCode)](https://code.visualstudio.com),
-  - [VSCodium](https://vscodium.com/#:~:text=VSCodium%20is%20a%20community%2Ddriven%2C%20freely%2Dlicensed%20binary%20distribution%20of%20Microsoft%E2%80%99s%20editor%20VS%20Code.), and
-  - [RStudio](https://posit.co/download/rstudio-desktop).
+  - [GitLab](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/), and
+- the [GitHub Desktop](https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac) Git [Graphical User Interface](https://en.wikipedia.org/wiki/Graphical_user_interface#:~:text=A%20graphical%20user%20interface%2C%20or%20GUI%20(/%CB%88%C9%A1u%CB%90i/%5B1%5D%5B2%5D%20GOO%2Dee)%2C%20is%20a%20form%20of%20user%20interface%20that%20allows%20users%20to%20interact%20with%20electronic%20devices%20through%20graphical%20icons%20and%20audio%20indicators%20such%20as%20primary%20notation.) (GUI).
 
 If you are curious about how I set up my computer, you can take a look at my [`Brewfile`](https://github.com/maptv/setup/blob/main/Brewfile) and other configuration files in my `setup` repo on [GitHub](https://github.com/maptv/setup) and [GitLab](https://gitlab.com/maptv/setup). I will highlight a few configuration files in @sec-workflow.
 
-### Codespaces {#sec-setup-code}
-
-As an alternative to installing tools on your computer, you can use [GitHub Codespaces](https://github.com/features/codespaces) to perform all development tasks remotely. To get a feel for Codespaces, I recommend you first try the [`github.dev` editor](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor).
-
-Both Codespaces and `github.dev` allow you to edit files in any GitHub repository via VSCode in your browser and load your VSCode settings automatically via [Settings Sync](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#settings-sync), but `github.dev` can be started by going to any repo on GitHub and pressing `.` or changing the `.com` in the [URL](https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web) to `.dev`, [e.g.](https://en.wikipedia.org/wiki/List_of_Latin_phrases_(E)#exempli_gratia) <https://github.com/maptv/maptv.github.io> to <https://github.dev/maptv/maptv.github.io>. The `github.dev` editor starts up fast and is completely free, but comes with restrictions that prevent us from running code, building software, accessing the [integrated terminal](https://code.visualstudio.com/docs/terminal/basics), or using [non-web extensions](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor#using-extensions:~:text=The%20github.dev%20editor%20supports%20VS%20Code%20extensions%20that%20have%20been%20specifically%20created%20or%20updated%20to%20run%20in%20the%20web.).
-
-In addition to being free of these restrictions, Codespaces allows us to use JupyterLab as the web interface instead of VSCode by appending `/?editor=jupyter` to the Codespaces URL. If you use a [JetBrains](https://www.jetbrains.com) [integrated development environment](https://en.wikipedia.org/wiki/Integrated_development_environment#:~:text=An%20integrated%20development%20environment%20(IDE)%20is%20a%20software%20application%20that%20provides%20comprehensive%20facilities%20for%20software%20development.)products, such as [PyCharm](https://www.jetbrains.com/pycharm) (IDE), you can also try appending `/?editor=jetbrains` to the Codespaces URL and accessing Codespaces via [JetBrains Gateway](https://www.jetbrains.com/remote-development/gateway).
-
-Every Codespaces instance ([codespace](https://docs.github.com/en/codespaces/overview#:~:text=A%20codespace%20is%20a%20development%20environment%20that%27s%20hosted%20in%20the%20cloud.)) is pre-equipped with commonly used tools. If you want your codespaces to start with additional tools or settings for any tools other than VSCode, you will need to create a repo called [`dotfiles`](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) and [enable automatic installation](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#enabling-your-dotfiles-repository-for-codespaces) of your configuration files into every codespace you create.
-
-["Dotfiles"](https://en.wiktionary.org/wiki/dotfile#:~:text=A%20file%20or%20directory%20whose%20name%20begins%20with%20a%20dot%20(period%20or%20full%20stop)%2C%20typically%20hidden%20from%20view%20and%20sometimes%20used%20to%20store%20configuration%20settings.) is a general term for files that contain [user settings](https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Unix_and_Unix-like_environments:~:text=A%20convention%20arose%20of%20using%20dotfiles%20in%20the%20user%27s%20home%20directory%20to%20store%20per%2Duser%20configuration). The term "dotfiles" is derived from [hidden files](https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Unix_and_Unix-like_environments) in Unix and Unix-like environments, which have names that start with a dot (`.`). Despite the origin of the term, not all dotfiles are hidden files.
-
-In fact, there is a [new convention](https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Unix_and_Unix-like_environments:~:text=the%20Unix/Linux%20freedesktop.org%20XDG%20Base%20Directory%20Specification%20aims%20to%20migrate%20user%20config%20files%20from%20individual%20dotfiles%20in%20%24HOME%20to%20non%2Dhidden%20files%20in%20the%20hidden%20directory%20%24HOME/.config.) that places non-hidden configuration files in a hidden directory called `.config`. Despite the growing popularity of this new convention, many dotfiles are still stored according to the old convention, [i.e.](https://en.wikipedia.org/wiki/List_of_Latin_phrases_(I)#id_est) as hidden files in the [home directory](https://en.wikipedia.org/wiki/Home_directory#:~:text=A%20home%20directory%20is%20a%20file%20system%20directory%20on%20a%20multi%2Duser%20operating%20system%20containing%20files%20for%20a%20given%20user%20of%20the%20system.).
-
-@exm-tree shows how the [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)#Neovim:~:text=Vim%20(/v%C9%AAm/%3B%5B5%5D%20a%20contraction%20of%20Vi%20IMproved)%20is%20a%20free%20and%20open%2Dsource%2C%20screen%2Dbased%20text%20editor%20program.) and [Neovim](https://en.wikipedia.org/wiki/Vim_(text_editor)#Neovim:~:text=Neovim%5B62%5D%20is%20a%20fork%20of%20Vim%20that%20strives%20to%20improve%20the%20extensibility%20and%20maintainability%20of%20Vim.) [text editors](https://en.wikipedia.org/wiki/Text_editor#:~:text=A%20text%20editor%20is%20a%20type%20of%20computer%20program%20that%20edits%20plain%20text.) differ in their approach to dotfile storage. The Vim configuration file `~/.vimrc` follows the old convention, while the Neovim configuration file (`~/.config/nvim/init.vim`) follows the new convention, where [`~`](https://en.wikipedia.org/wiki/Home_directory#:~:text=the%20~%20(tilde)%20character%20is%20equivalent%20to%20specifying%20the%20current%20user%27s%20home%20directory) represents the home directory and `/` is [directory delimiter](https://en.wikipedia.org/wiki/Path_(computing)#:~:text=Around%201970%2C%20Unix%20introduced%20the%20slash%20character%20(%22/%22)%20as%20its%20directory%20separator.) used in Unix [paths](https://en.wikipedia.org/wiki/Path_(computing)#:~:text=A%20path%20is%20a%20string%20of%20characters%20used%20to%20uniquely%20identify%20a%20location%20in%20a%20directory%20structure.).
-
-::: {#exm-tree}
-```
-~
-├── .config
-│   └── nvim
-│       └── init.vim
-└── .vimrc
-```
-:::
-
-If do not have configuration files for any tool other than VSCode and do not need to install anything as part of Codespaces setup, you can forego creating a `dotfiles` repo and simply enable Settings Sync.
-
-
-
-you can simply include all of your configuration files in your `dotfiles` repo with the desired directory structure, e.g. as in @exm-tree. This way, whenever a codespace is created, its home directory (`/home/codespace`) will be set up to match your `dotfiles` repo using [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link#:~:text=a%20symbolic%20link%20(also%20symlink%20or%20soft%20link)%20is%20a%20file%20whose%20purpose%20is%20to%20point%20to%20a%20file%20or%20directory%20(called%20the%20%22target%22)%20by%20specifying%20a%20path%20thereto.).
-
-
-While this automatic dotfile setup approach does not allow you to install any additional tools, it is simple and avoids any installation steps that can significantly slow down build times. Importantly, if GitHub determines that your `dotfiles` repo contains a setup script based on its [naming convention](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#:~:text=install.sh,script/setup), it will not run the setup script and ignore any other files in the repo, because of the expectation that users with setup scripts will want to organize their configuration files themselves.
-
-
-
-
-For more information on dotfiles, check out the resources at <https://dotfiles.github.io>. Regardless o you do have way to configure VSCode, you do not have to set up Codespaces. Instead you can any of the steps below
-https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#settings-sync
-
-
-The setup script can install 
-
-Regardless of whether you have a `dotfiles` repo, you can use [Settings Sync](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#settings-sync) to maintain consistency between your local and remote development environments. keep all of your configuration files in a repo called [`dotfiles`](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles). Instead 
-
-
-but we can add anything that may be missing with a `Brewfile` and a setup [script](https://en.wikipedia.org/wiki/Shell_script#:~:text=A%20shell%20script%20is%20a%20computer%20program%20designed%20to%20be%20run%20by%20a%20Unix%20shell%2C%20a%20command%2Dline%20interpreter.%5B).
-
-In other words, we have the option to simply put configuration files in our `dotfiles` repo and not install anything.
-
-My configuration files have dependencies that are not included in the default Codespaces image, so the configuration-files-only approach would not work for me. Codespaces of the expectation
-
-I chose `setup.sh` as the name of [my setup script](https://github.com/maptv/dotfiles/blob/main/setup.sh) because it was shortest name that followed the naming convention set by GitHub and had the `.sh` [filename extension](https://en.wikipedia.org/wiki/Filename_extension#:~:text=A%20filename%20extension%2C%20file%20name%20extension%20or%20file%20extension%20is%20a%20suffix%20to%20the%20name%20of%20a%20computer%20file%20(for%20example%2C%20.txt%2C%20.docx%2C%20.md).).
-
-For my configurationI need at very least  convenient feature is disabled when we include a setup script in our `dotfiles` repo, because
-
-The tools listed in the `Brewfile` can be installed with a shell script that GitHub will run when building the Codespace.
-
-It is essential that your setup script be added to Git as an [executable](https://en.wikipedia.org/wiki/Executable#:~:text=In%20computing%2C,to%20be%20meaningful.) script! I only needed to run the shell code in @exm-set once for Git to [change the mode](https://en.wikipedia.org/wiki/Chmod#:~:text=chmod%20was%20chosen%20as%20an%20abbreviation%20of%20change%20mode.) of `setup.sh` and remember forever that its [access permissions](https://en.wikipedia.org/wiki/File-system_permissions) include execution (`x`).
-
-::: {#exm-set}
-``` sh
-git add setup.sh --chmod=+x
-```
-:::
-
-Maintaining local and remote settings may be challenging, but Homebrew makes it easier with the `$HOMEBREW_PREFIX` environment variable. This variable contains the Homebrew installation path that matches your [computer hardware and OS](https://docs.brew.sh/Installation#:~:text=/opt/homebrew%20for%20Apple%20Silicon%2C%20/usr/local%20for%20macOS%20Intel%20and%20/home/linuxbrew/.linuxbrew%20for%20Linux).
-
-Before you can use `$HOMEBREW_PREFIX`, the `brew` command needs to be added to your PATH. To ensure Codespaces setup, I added the code in @exm-path to my `.zshrc`.
-
-::: {#exm-path}
-``` {.sh filename=".zshrc"}
-if [[ "$(uname)" == 'Linux' ]]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-```
-:::
-
-To prevent conflicts with [web browser](https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.) keybindings, you can install Codespaces as a [Progressive Web App](https://code.visualstudio.com/docs/remote/codespaces#_known-limitations-and-adaptations) (PWA) by clicking on the "Install Codespaces" icon at the end of the [URL bar in Chrome](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#:~:text=a%20browser%20might%20include%20an%20%22Install%22%20icon%20in%20the%20URL%20bar%20when%20the%20user%20navigates%20to%20the%20page%3A) or any [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser)#:~:text=Chromium%20is%20a%20free%20and%20open%2Dsource%20web%20browser%20project%2C%20primarily%20developed%20and%20maintained%20by%20Google.)-based web browser. When running as a PWA, Codespaces behaves like a desktop application and can thus provide a familiar user experience on any computer!
-
-On macOS, the PWA installation location is `~/Applications/Chrome Apps.localized`. 
-
 ### Repository {#sec-setup-repo}
 
-Before you can benefit from everything GitHub and GitLab have to offer, you will need a [GitHub](https://github.com/signup) and/or [GitLab](https://gitlab.com/users/sign_up) account and an [SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account). Even though there are other [authentication methods](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github#about-authentication-to-github), SSH keys are still the easiest way to authenticate to GitHub and GitLab.
+Before we get started, you will need a [GitHub](https://github.com/signup) and/or [GitLab](https://gitlab.com/users/sign_up) account and a way to authenticate into your account(s).
+
+Of the many [authentication methods](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github#about-authentication-to-github), passkeys stand out because they can function as both a password and [two-factor authentication](https://en.wikipedia.org/wiki/Multi-factor_authentication#:~:text=two%2Dfactor%20authentication%2C%20or%202FA%2C%20along%20with%20similar%20terms)%20is%20an%20electronic%20authentication%20method%20in%20which%20a%20user%20is%20granted%20access%20to%20a%20website%20or%20application%20only%20after%20successfully%20presenting%20two%20or%20more%20pieces%20of%20evidence%20(or%20factors)%20to%20an%20authentication%20mechanism.) (2FA), thus combining the two steps in the 2FA sign-in process into one. Passkeys will certaily GitHub recently announced its plan to make [2FA mandatory](https://github.blog/2023-03-09-raising-the-bar-for-software-security-github-2fa-begins-march-13) for code contributors, which will make passkeys .
+[SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account).
+
+satisfy both requirements, including  SSH keys are still the easiest way to authenticate to GitHub and GitLab in my honest opinion.
 
 You can create a repo using the web interface of <https://github.com> or <https://gitlab.com> in your browser, but the best way to start a new project is using the CLI for [GitHub](https://cli.github.com) or [GitLab](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/) in your [terminal](https://en.wikipedia.org/wiki/Terminal_emulator). First, run `gh` `auth` `login` or `glab` `auth` `login` and follow the prompts to authenticate via your web browser or with an [authentication token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
