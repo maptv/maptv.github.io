@@ -2,6 +2,7 @@
 listing:
   contents:
     - git/*.qmd
+    - vscode/*.qmd
     - quarto/*.qmd
     - observable/*.qmd
     - jupyter/*.qmd

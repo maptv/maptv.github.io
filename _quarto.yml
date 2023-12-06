@@ -47,6 +47,7 @@ website:
             href: blog/#category=tool
             contents:
               - blog/git/git.qmd
+              - blog/vscode/vscode.qmd
               - blog/quarto/quarto.qmd
               - blog/observable/observable.qmd
               - blog/jupyter/jupyter.qmd
