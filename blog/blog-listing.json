@@ -2,6 +2,7 @@
   "listing": "/blog/index.html",
   "items": [
     "/blog/git/index.html",
+    "/blog/vscode/index.html",
     "/blog/quarto/index.html",
     "/blog/observable/index.html",
     "/blog/jupyter/index.html",
