@@ -89,7 +89,7 @@ For authentication during the typical Git workflow displayed in @fig-git, I reco
 
 You can use one key for both GitHub and GitLab, but if you have more than one account on the same Git repo host, you will need to create a separate key for each account and include each identity file in your `~/.ssh/config` file as shown in @exm-ssh. If you have an identity file in your `~/.ssh/` directory that follows the [naming convention](https://man7.org/linux/man-pages/man1/ssh-add.1.html#:~:text=~/.ssh/id_rsa%2C%20~/.ssh/id_ecdsa%2C%20~/.ssh/id_ecdsa_sk%2C%0A%20%20%20%20%20~/.ssh/id_ed25519%2C%20~/.ssh/id_ed25519_sk%2C%20and%20~/.ssh/id_dsa), you can add it to your current shell session by running `ssh-add`, otherwise provide the identity file as an argument, e.g. `ssh-add ~/.ssh/USERNAME1`.
 
-```{#exm-ssh}
+```sh {#exm-ssh}
 Host github-USERNAME1
    HostName github.com
    IdentityFile ~/.ssh/USERNAME1

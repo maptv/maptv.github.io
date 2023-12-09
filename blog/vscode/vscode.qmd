@@ -24,7 +24,7 @@ filters:
 
 #### [Goal]{.bi .bi-bullseye}
 
-Set up GitHub Codespaces for remote development using our `dotfiles` repository.
+Configure GitHub Codespaces with a setup script and a `Brewfile` in your `dotfiles` repository.
 
 :::
 
