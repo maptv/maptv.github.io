@@ -21,6 +21,14 @@ filters:
   - include-code-files
 ---
 
+::: {.callout-note icon=false}
+
+#### [Goal]{.bi .bi-bullseye}
+
+Create a Quarto website and publish it on GitHub/GitLab Pages, Netlify, and Quarto Pub.
+
+:::
+
 [Quarto](https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system) is an [open-source software](https://en.wikipedia.org/wiki/Open-source_software#:~:text=Open%2Dsource%20software%20(OSS)%20is%20computer%20software%20that%20is%20released%20under%20a%20license%20in%20which%20the%20copyright%20holder%20grants%20users%20the%20rights%20to%20use%2C%20study%2C%20change%2C%20and%20distribute%20the%20software%20and%20its%20source%20code%20to%20anyone%20and%20for%20any%20purpose.) system for turning plain-text source files into outputs like articles, books, blogs, dashboards, presentations, reports, and websites. [Announced](https://posit.co/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system) on [`2022+149`]{.underline data-bs-toggle="tooltip" data-bs-title="2022-07-28"} by [Posit](https://posit.co) CEO [JJ Allaire](https://www.rstudio.com/authors/j.j.-allaire/), Quarto is already taking the world🌐by storm⛈️!
 
 I strongly believe that everyone, regardless of their background and current technical skill level, can learn and benefit from Quarto. [Getting started with Quarto](https://quarto.org/docs/get-started/) is easy thanks to its [excellent documentation](https://quarto.org/docs/guide/) and vibrant community of enthusiastic users and developers.
