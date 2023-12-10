@@ -1,7 +1,7 @@
 project:
   type: website
   resources: .gitlab-ci.yml
-  post-render: date.py
+  post-render: scripts/date.py
 website:
   repo-url: https://github.com/maptv/maptv.github.io
   repo-actions: [source]

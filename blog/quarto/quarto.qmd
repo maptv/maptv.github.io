@@ -355,7 +355,7 @@ To add a custom [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20
 ````
 
 #### `time.js`
-```{.javascript include="../../time.js"}
+```{.javascript include="../../scripts/time.js"}
 ```
 :::
 :::
@@ -381,7 +381,7 @@ I wanted to my blog's [listing page](https://maptv.github.io/blog) to show dates
 
 #### `date.py`
 
-```{.yaml include="../../date.py"}
+```{.yaml include="../../scripts/date.py"}
 ```
 
 :::
@@ -430,7 +430,7 @@ filters: date.lua
 
 #### `date.lua`
 
-```{.lua include="../date.lua"}
+```{.lua include="../../scripts/date.lua"}
 ```
 
 :::
