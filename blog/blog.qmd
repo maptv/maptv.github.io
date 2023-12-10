@@ -22,7 +22,7 @@ comments: false
 ---
 
 ```{=html}
-<script src="../time.js"></script>
+<script src="../scripts/time.js"></script>
 <style>
 ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 #quarto-sidebar { padding: 0px; }

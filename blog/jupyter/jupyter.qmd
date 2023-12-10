@@ -5,7 +5,7 @@ author:
     url: https://maptv.github.io
 date: last-modified
 filters:
-  - ../date.lua
+  - ../../scripts/date.lua
 image: horst_jupyter.png
 categories:
   - tool

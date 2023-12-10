@@ -90,7 +90,7 @@ styledTickTime = setStyle(tickTime, d3.schemePaired[2])
 ```
 
 ```{=html}
-<script src="time.js"></script>
+<script src="scripts/time.js"></script>
 <script>
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
