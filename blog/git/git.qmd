@@ -30,8 +30,8 @@ In this blog post, I show how to use the [Git](https://en.wikipedia.org/wiki/Git
 flowchart TB
    A[Git]-->B[VSCode]-->C[Quarto]
    C-->D[Observable]
-   C-->E[Knitr]
-   C-->F[Jupyter]
+   C-->E[Jupyter]
+   C-->F[Knitr]
    click A "../git"
    click B "../vscode"
    click C "../quarto"

@@ -31,8 +31,8 @@ The goal of this blog post, the second in the [Tools](..#category=tool) blog pos
 flowchart TB
    A[Git]-->B[VSCode]-->C[Quarto]
    C-->D[Observable]
-   C-->E[Knitr]
-   C-->F[Jupyter]
+   C-->E[Jupyter]
+   C-->F[Knitr]
    click A "../git"
    click B "../vscode"
    click C "../quarto"
