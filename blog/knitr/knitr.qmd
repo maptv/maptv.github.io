@@ -52,7 +52,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 #title-block-header { margin: 0px; }
 main#quarto-document-content { margin: 0px; padding: 0px; }
 ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row; }
-#quarto-sidebar { padding: 0px; }
+#quarto-sidebar { padding: 0px; overflow-x: hidden !important; }
 #quarto-sidebar > * { padding: 0px; }
 #quarto-margin-sidebar { padding: 17px; }
 div.quarto-title-meta { padding-bottom: 8px; }
