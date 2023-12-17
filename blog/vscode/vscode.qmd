@@ -20,23 +20,31 @@ filters:
   - include-code-files
 ---
 
-::: {.callout-note icon=false}
+## [TL;DR]{.underline .blue data-bs-toggle="tooltip" data-bs-title="too long; didn't read"}
 
-#### [Goal]{.bi .bi-bullseye}
+The goal of this blog post, the second in my [Tools](..#category=tool) blog post series, is to set up the [Visual Studio Code](https://code.visualstudio.com) (VSCode) [source-code editor](https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.) to run in the remote development environments provided by the [Codespaces](https://github.com/features/codespaces) and [GitPod](https://www.gitpod.io) [computing platforms](https://en.wikipedia.org/wiki/Computing_platform#:~:text=A%20computing%20platform%2C%20digital%20platform%2C%5B1%5D%20or%20software%20platform%20is%20an%20environment%20in%20which%20software%20is%20executed.). To accomplish this goal, we will use VSCode to edit a setup [script](https://en.wikipedia.org/wiki/Shell_script#:~:text=A%20shell%20script%20is%20a%20computer%20program%20designed%20to%20be%20run%20by%20a%20Unix%20shell%2C%20a%20command%2Dline%20interpreter.%5B) and configuration files in a Git [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) (repo) named `dotfiles`.
 
-Configure GitHub Codespaces with a setup script and a `Brewfile` in your `dotfiles` repository.
+```{mermaid}
+%%| column: margin
+%%| label: fig-navchart
+%%| fig-cap: Tools series navigation chart
+flowchart TB
+   A[Git]-->B[VSCode]-->C[Quarto]
+   C-->D[Observable]
+   C-->E[Knitr]
+   C-->F[Jupyter]
+   click A "../git"
+   click B "../vscode"
+   click C "../quarto"
+   click D "../observable"
+   click E "../knitr"
+   click F "../jupyter"
+   style B stroke:#99f,stroke-width:4px
+```
 
-:::
+## Introduction {#sec-intro}
 
-[Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) is a [version control](https://en.wikipedia.org/wiki/Version_control#:~:text=version%20control%20(also%20known%20as%20revision%20control%2C%20source%20control%2C%20or%20source%20code%20management)%20is%20a%20class%20of%20systems%20responsible%20for%20managing%20changes%20to%20computer%20programs%2C%20documents%2C%20large%20web%20sites%2C%20or%20other%20collections%20of%20information.) system created by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds#:~:text=Linus%20Benedict%20Torvalds%20(,control%20system%20Git.)), who is also the creator of [Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems%20based%20on%20the%20Linux%20kernel%2C%5B12%5D%20an%20operating%20system%20kernel%20first%20released%20on%20September%2017%2C%201991%2C%20by%20Linus%20Torvalds.). Since its first release in [`2005+037`]{.underline .blue data-bs-toggle="tooltip" data-bs-title="2005-04-07"}, Git has largely replaced other version control systems and is used by 93% of [software](https://en.wikipedia.org/wiki/Software#:~:text=Software%20is%20a%20set%20of%20computer%20programs%20and%20associated%20documentation%20and%20data.) developers worldwide, according to [survey results](https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.) published by [StackOverflow](https://stackoverflow.com/tour) on [`2022+314`]{.underline .blue data-bs-toggle="tooltip" data-bs-title="2023-01-09"}.
-
-Thanks to Git, I can sleep💤soundly at night, reassured by the knowledge that all of my progress on all of my ongoing project is recorded. My progress is not only stored on my local computer, but also on [Git repository hosting services](https://en.wikipedia.org/wiki/Git#:~:text=Git%20repository%20services%2C%20including%20GitHub%2C%20SourceForge%2C%20Bitbucket%20and%20GitLab.%5B) such as [GitHub](https://en.wikipedia.org/wiki/GitHub#:~:text=GitHub%2C%20Inc.%20(/%CB%88%C9%A1%C9%AAth%CA%8Cb/%5Ba%5D)%20is%20a%20platform%20and%20cloud%2Dbased%20service%20for%20software%20development%20and%20version%20control%2C%20allowing%20developers%20to%20store%20and%20manage%20their%20code.) and [GitLab](https://en.wikipedia.org/wiki/GitLab).
-
-A Git [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) (repo) is a [directory](https://en.wikipedia.org/wiki/Directory_(computing)#:~:text=a%20directory%20is%20a%20file%20system%20cataloging%20structure%20which%20contains%20references%20to%20other%20computer%20files%2C%20and%20possibly%20other%20directories.) that tracks the changes made to its contents. For more information on GitHub, the largest Git repo host, take a look at the ["GitHub for supporting, reusing, contributing, and failing safely"](https://openscapes.org/blog/2022-05-27-github-illustrated-series/) post by [Allison Horst](https://allisonhorst.com) and [Julie Lowndes](https://jules32.github.io) on the [Openscapes](https://openscapes.org/) [blog](https://openscapes.org/blog).
-
-GitHub and GitLab do not only host repos, but also websites via [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#render-to-docs) and [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/). My personal site is hosted for free on both [GitHub Pages](https://maptv.github.io) and [GitLab Pages](https://maptv.gitlab.io).
-
-Before you can benefit from everything GitHub and/or GitLab have to offer, you will need to set up your computer so that you can work locally and/or configure a service like [GitHub Codespaces](https://github.com/features/codespaces) so you can work remotely in your [web browser](https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.%5B). I discuss the use of the [Homebrew](https://brew.sh) [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=A%20package%20manager%20or%20package%2Dmanagement%20system%20is%20a%20collection%20of%20software%20tools%20that%20automates%20the%20process%20of%20installing%2C%20upgrading%2C%20configuring%2C%20and%20removing%20computer%20programs%20for%20a%20computer%20in%20a%20consistent%20manner.) for local development environment setup in @sec-setup-brew and Codespaces setup in @sec-setup-code.
+If you do not have such a repo, you can create one by following along with the [previous post](../git) in my [tools](..#category=tool) blog post series, which is shown in @fig-navchart.
 
 ## Setup {#sec-setup}
 
@@ -295,5 +303,10 @@ ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row; }
 #quarto-sidebar > * { padding: 0px; }
 #quarto-margin-sidebar { padding: 17px; }
 div.quarto-title-meta { padding-bottom: 8px; }
+g.node.clickable.flowchart-label:hover { rect.basic.label-container { stroke: green!important; stroke-width:5px!important; } }
+h2 { margin: 0px !important; }
+div.cell.page-columns.page-full { height: 0px !important; }
+@media only screen and (max-width: 991px) { #quarto-search { display: none !important; } #quarto-sidebar { padding: 0px 9px 0px 9px !important; } }
+@media only screen and (max-width: 767px) { div.cell.page-columns.page-full { display: none !important; } }
 </style>
 ```

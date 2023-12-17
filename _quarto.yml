@@ -43,6 +43,7 @@ website:
       - section: Blog
         file: blog/blog.qmd
         contents:
+          - text: "---"
           - section: Tools
             href: blog/#category=tool
             contents:
@@ -52,6 +53,7 @@ website:
               - blog/observable/observable.qmd
               - blog/jupyter/jupyter.qmd
               - blog/knitr/knitr.qmd
+          - text: "---"
           - section: Machine Learning
             href: blog/#category=ml
             contents:
