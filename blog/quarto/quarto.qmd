@@ -38,8 +38,8 @@ flowchart TB
    click B "../vscode"
    click C "../quarto"
    click D "../observable"
-   click E "../knitr"
-   click F "../jupyter"
+   click E "../jupyter"
+   click F "../knitr"
    style C stroke:#99f,stroke-width:4px
 ```
 

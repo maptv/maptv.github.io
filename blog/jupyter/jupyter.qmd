@@ -34,9 +34,9 @@ flowchart TB
    click B "../vscode"
    click C "../quarto"
    click D "../observable"
-   click E "../knitr"
-   click F "../jupyter"
-   style F stroke:#99f,stroke-width:4px
+   click E "../jupyter"
+   click F "../knitr"
+   style E stroke:#99f,stroke-width:4px
 ```
 
 ## Introduction {#sec-intro}
