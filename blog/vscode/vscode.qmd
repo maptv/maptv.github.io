@@ -39,7 +39,7 @@ flowchart TB
    click D "../observable"
    click E "../knitr"
    click F "../jupyter"
-   style B stroke:#99f,stroke-width:4px
+   style B stroke:#99f,stroke-width:5px
 ```
 
 ## Introduction {#sec-intro}

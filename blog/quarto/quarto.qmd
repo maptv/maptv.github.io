@@ -40,7 +40,7 @@ flowchart TB
    click D "../observable"
    click E "../jupyter"
    click F "../knitr"
-   style C stroke:#99f,stroke-width:4px
+   style C stroke:#99f,stroke-width:5px
 ```
 
 If you do not have such a repo, you can create one by following along with the [previous post](../git) in my [tools](..#category=tool) blog post series, which is shown in @fig-navchart.
