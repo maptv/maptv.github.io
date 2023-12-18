@@ -44,6 +44,10 @@ flowchart TB
 
 ## Introduction {#sec-intro}
 
+Even more Web-based editors can even run code and build software if equipped with computational resources via a  service such as [GitHub Codespaces](https://github.com/features/codespaces) and [GitPod](https://www.gitpod.io).  have free tiers that should be sufficient for most . in [cloud](https://en.wikipedia.org/wiki/Cloud_computing#:~:text=Cloud%20computing%5B1%5D%20is%20the%20on%2Ddemand%20availability%20of%20computer%20system%20resources%2C%20especially%20data%20storage%20(cloud%20storage)%20and%20computing%20power%2C%20without%20direct%20active%20management%20by%20the%20user.)-based environments, which facilitates [reproducibility](https://en.wikipedia.org/wiki/Reproducibility#:~:text=reproducibility%20has%20been%20introduced%20in%20computational%20sciences%3A%20Any%20results%20should%20be%20documented%20by%20making%20all%20data%20and%20code%20available%20in%20such%20a%20way%20that%20the%20computations%20can%20be%20executed%20again%20with%20identical%20results.). Notably, 
+
+Like [vscode.dev](https://vscode.dev), these web-based editors provide access to the [Visual Studio Code](https://code.visualstudio.com) (VSCode) [source-code editor](https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.) via a [web browser](https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.%5B), but distinguish themselves from editors that  instead of the local file system. from other services that such as by 
+
 If you do not have such a repo, you can create one by following along with the [previous post](../git) in my [tools](..#category=tool) blog post series, which is shown in @fig-navchart.
 
 ## Setup {#sec-setup}

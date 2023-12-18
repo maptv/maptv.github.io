@@ -18,7 +18,7 @@ format:
 
 ## [TL;DR]{.underline .blue data-bs-toggle="tooltip" data-bs-title="too long; didn't read"}
 
-The goal of this blog post, the fourth in my [Tools](..#category=tool) blog post series, is to set up the [Visual Studio Code](https://code.visualstudio.com) (VSCode) [source-code editor](https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.) to run in the remote development environments provided by the [Codespaces](https://github.com/features/codespaces) and [GitPod](https://www.gitpod.io) [computing platforms](https://en.wikipedia.org/wiki/Computing_platform#:~:text=A%20computing%20platform%2C%20digital%20platform%2C%5B1%5D%20or%20software%20platform%20is%20an%20environment%20in%20which%20software%20is%20executed.). To accomplish this goal, we will use VSCode to edit a setup [script](https://en.wikipedia.org/wiki/Shell_script#:~:text=A%20shell%20script%20is%20a%20computer%20program%20designed%20to%20be%20run%20by%20a%20Unix%20shell%2C%20a%20command%2Dline%20interpreter.%5B) and configuration files in a Git [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) (repo) named `dotfiles`.
+The goal of this blog post, the last (index: -1) in my [Tools](..#category=tool) blog post series, is to
 
 ```{mermaid}
 %%| column: margin
@@ -39,7 +39,6 @@ flowchart TB
 ```
 
 ## Introduction {#sec-intro}
-
 
 ```{=html}
 <script src="../../scripts/time.js"></script>
