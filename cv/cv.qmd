@@ -1,23 +1,91 @@
 ---
-title: "Curriculum Vitae"
+title: "Martin Skarzynski Laptev"
 format:
   html:
-    output-file: index.html
     toc: true
   pdf:
-    author: Martin Laptev
+    pdf-engine: weasyprint
 css: cv.css
 format-links: [pdf]
 ---
 
-::: {.print-only .contact-block}
-maptv@vt.edu
-:::
+#### [240-595-3460](tel:240-595-3460){.bi .bi-phone} []{.bi .bi-dot} [maptv@engineer.com](mailto:maptv@engineer.com){.bi .bi-envelope} []{.bi .bi-dot} [maptv.github.io](https://maptv.github.io){.bi .bi-house} []{.bi .bi-dot} [maptv](https://github.com/maptv){.bi .bi-github} []{.bi .bi-dot} [maptv](https://linkedin.com/in/maptv){.bi .bi-linkedin} {.centered}  
 
-## Summary
+####### Cloud Computing []{.bi .bi-dot .blue} Data Science []{.bi .bi-dot} Machine Learning []{.bi .bi-dot} Technical Management []{.bi .bi-dot} Software Engineering []{.bi .bi-dot} Solution Architecture {.centered}  
 
-My goal is to train and lead the next generation of data scientists to integrate substantive expertise from diverse fields with machine intelligence.
-Through research and teaching, I am constantly improving my ability to obtain, tidy, explore, transform, visualize, model, and communicate data.
-My preferred tools are JavaScript, Python, and R, open source programming languages kept on the cutting edge by their energetic communities.
-In addition to their utility in common data science tasks, these languages serve as accessible interfaces to deep learning libraries like TensorFlow.
-I aim to leverage my background in science and education to help shape the future of data science and deliver on the promise of machine learning
+
+### Goal
+
+My goal is to lead the next generation of scientists and engineers in building solutions that integrate substantive expertise from diverse fields with machine intelligence.
+Through my work, I strive to promote open source software, such as the Quarto publishing system, which I use to build dashboards, presentations, reports, websites, and other digital deliverables.
+Overall, I aim to leverage my broad scientific background and technical expertise to help transform the promises of science and technology into a better future for all of humanity.
+
+### Recent Experience
+
+##### [Lead Instructor]{style="font-weight: 900;"}, General Assembly [July 2019 ‑ Present]{.cvdate}
+
+- Teaches [various courses](https://generalassemb.ly/instructors/martin-skarzynski/23420) such as:
+  - [Data Analytics](https://generalassemb.ly/education/data-analytics)
+  - [Front-End Web Development](https://generalassemb.ly/education/front-end-web-development)
+  - [Tech Excellence Data Science](https://www.boozallen.com/e/insight/blog/path-to-technical-success)
+  - [Python Programming](https://generalassemb.ly/education/python-programming)
+  - [React Development](https://generalassemb.ly/education/react-development)
+
+##### [Lead Instructor]{style="font-weight: 900;"}, Data Society [October 2019 ‑ Present]{.cvdate}
+
+- Teaches workshops such as:
+  - Machine Learning
+  - Data Science Bootcamp
+  - Natural Language Processing
+  - Deep Learning
+  - Data Science Academy
+  - Python Programming
+  - DevOps
+  - Data Visualization
+  - R Programming
+
+##### [Adjunct Professor]{style="font-weight: 900;"}, Virginia Tech [September 2021 ‑ December 2023]{.cvdate}
+
+- Taught two graduate courses for the Computer Science and Statistics Departments:
+  - [Machine Learning](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205805%2D6%20%2D%20Machine%20Learning%C2%A0)
+  - [Data Analytics](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205525%2D6%20(STAT%205525%2D6)%20%2D%20Data%20Analytics)
+
+##### [Senior Domain Lead]{style="font-weight: 900;"}, Amazon Web Services [April 2022 ‑ February 2023]{.cvdate}
+
+- Provided customers with scientific and technical expertise in:
+  - [Computer Vision](https://aws.amazon.com/health/solutions/medicalimaging)
+  - [Data Architecture](https://aws.amazon.com/big-data/datalakes-and-analytics/modern-data-architecture)
+  - [Data Visualization](https://docs.aws.amazon.com/wellarchitected/latest/analytics-lens/data-visualization)
+  - [Genomics](https://aws.amazon.com/health/genomics)
+  - [Machine Learning](https://aws.amazon.com/health/machine-learning)
+  - [Real World Evidence](https://aws.amazon.com/marketplace/solutions/healthcare/health-records)
+- Built Artificial Intelligence (AI) solutions and Machine Learning Operations (MLOps) systems using:
+  - [Amazon SageMaker](https://aws.amazon.com/sagemaker)
+  - [AWS Developer Tools](https://aws.amazon.com/developer/tools##Browse_by_Tool_Type)
+  - [AWS Lambda](https://aws.amazon.com/lambda)
+  - [Amazon EventBridge](https://aws.amazon.com/eventbridge)
+  - [AWS CloudFormation](https://aws.amazon.com/cloudformation)
+  - [AWS IAM](https://aws.amazon.com/iam)
+  - [Amazon EMR](https://aws.amazon.com/emr)
+  - [AWS Databases](https://aws.amazon.com/products/databases)
+  - [AWS Service Catalog](https://aws.amazon.com/servicecatalog)
+- Obtained 3 AWS certification
+  - [Solutions Architect Associate](https://www.credly.com/badges/1ae81600-c0cb-47b4-8610-e0c58bff6741/public_url)
+  - [Cloud Practitioner](https://www.credly.com/badges/c3143f03-6ebb-4f16-827c-c89f8db2a3cf/public_url)
+  - [Practical Data Science](https://www.coursera.org/account/accomplishments/specialization/certificate/MU388FKRUUL3)
+
+##### AI Engineering Manager, Booz Allen Hamilton [October 2019 ‑ March 2022]{.cvdate}
+
+- Led a team of data scientists and software developers working on a cyber intelligence application
+- Spearheaded interdisciplinary COVID‑19 visualization, genomics, and statistical modeling efforts
+- Obtained the [Microsoft Azure Data Scientist Associate](https://www.credly.com/badges/99aa294a-2b69-40f2-a607-0e7b91ffb5f6/public_url){.italic} certification
+  
+##### Vice President, Data Community DC [April 2022 ‑ Present]{.cvdate}
+
+- Leads a non‑profit organization that supports [elecen Meetup groups](https://www.datacommunitydc.org/meetups-overview)
+
+##### [Adjunct Professor]{style="font-weight: 900;"}, George Washington University [September 2021 ‑ December 2023]{.cvdate}
+
+- Taught two graduate courses for the Computer Science and Statistics Departments:
+  - [Machine Learning](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205805%2D6%20%2D%20Machine%20Learning%C2%A0)
+  - [Data Analytics](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205525%2D6%20(STAT%205525%2D6)%20%2D%20Data%20Analytics)

@@ -9,7 +9,6 @@ format:
   html:
     grid:
       body-width: 1800px
-    output-file: index.html
 ---
 
 Greetings! My name is Martin Laptev. <img src="media/wave.gif" width="40px"/>
