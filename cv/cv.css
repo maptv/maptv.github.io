@@ -19,12 +19,12 @@ h1.title {
   font-style: italic;
 }
 
-ul > li > ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+section > ul > li > ul {
+  display: grid;
+  grid-row-gap: -20px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-ul > li > ul > li {
-  margin: 5px;
+section > ul > li > ul > li {
+  margin: 1px;
 }
