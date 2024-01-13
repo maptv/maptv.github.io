@@ -69,7 +69,6 @@ website:
         href: mailto:maptv@vt.edu
 format:
   html:
-    output-file: index.html
     page-layout: full
     theme:
       light: [flatly, light.scss]
