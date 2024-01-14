@@ -3,14 +3,18 @@ title: "Martin Skarzynski Laptev"
 format:
   html:
     output-file: index.html
-    toc: true
+    page-layout: full
 css: cv.css
-format-links: [pdf]
 ---
 
-#### [240-595-3460](tel:240-595-3460){.bi .bi-phone} []{.bi .bi-dot} [maptv@engineer.com](mailto:maptv@engineer.com){.bi .bi-envelope} []{.bi .bi-dot} [maptv.github.io](https://maptv.github.io){.bi .bi-house} []{.bi .bi-dot} [maptv](https://github.com/maptv){.bi .bi-github} []{.bi .bi-dot} [maptv](https://linkedin.com/in/maptv){.bi .bi-linkedin} {.centered}  
 
-####### Cloud Computing []{.bi .bi-dot .blue} Data Science []{.bi .bi-dot} Machine Learning []{.bi .bi-dot} Technical Management []{.bi .bi-dot} Software Engineering []{.bi .bi-dot} Solution Architecture {.centered}  
+::: {.contact}
+- [240-595-3460](tel:240-595-3460){.bi .bi-telephone}
+- [maptv@engineer.com](mailto:maptv@engineer.com){.bi .bi-envelope}
+- [maptv.github.io](https://maptv.github.io){.bi .bi-house}
+- [maptv](https://github.com/maptv){.bi .bi-github}
+- [maptv](https://linkedin.com/in/maptv){.bi .bi-linkedin}
+:::
 
 ### Mission
 
@@ -18,11 +22,72 @@ My goal is to lead the next generation of scientists and engineers in building s
 Through my work, I strive to promote open source software, such as the Quarto publishing system, which I use to build dashboards, presentations, reports, websites, and other digital deliverables.
 Overall, I aim to leverage my broad scientific background and technical expertise to help transform the promises of science and technology into a better future for all of humanity.
 
+### Technologies
+
+![](https://img.shields.io/badge/-API_Gateway-blue?logo=amazonapigateway&logoColor=white)
+![](https://img.shields.io/badge/-Airflow-blue?logo=apacheairflow&logoColor=white)
+![](https://img.shields.io/badge/-Alacritty-blue?logo=Alacritty&logoColor=white)
+![](https://img.shields.io/badge/-Anaconda-blue?logo=Anaconda&logoColor=white)
+![](https://img.shields.io/badge/-Artifacts-blue?logo=azureartifacts&logoColor=white)
+![](https://img.shields.io/badge/-Bash-blue?logo=gnu-bash&logoColor=white)
+![](https://img.shields.io/badge/-Bootstrap-blue?logo=bootstrap&logoColor=white)
+![](https://img.shields.io/badge/-CloudWatch-blue?logo=amazoncloudwatch&logoColor=white)
+![](https://img.shields.io/badge/-D3-blue?logo=d3dotjs&logoColor=white)
+![](https://img.shields.io/badge/-Data_Explorer-blue?logo=azuredataexplorer&logoColor=white)
+![](https://img.shields.io/badge/-DevOps-blue?logo=azuredevops&logoColor=white)
+![](https://img.shields.io/badge/-DocumentDB-blue?logo=amazondocumentdb&logoColor=white)
+![](https://img.shields.io/badge/-Dash-blue?logo=dash&logoColor=white)
+![](https://img.shields.io/badge/-Dask-blue?logo=dask&logoColor=white)
+![](https://img.shields.io/badge/-DynamoDB-blue?logo=amazondynamodb&logoColor=white)
+![](https://img.shields.io/badge/-EC2-blue?logo=amazonec2&logoColor=white)
+![](https://img.shields.io/badge/-ECS-blue?logo=amazonecs&logoColor=white)
+![](https://img.shields.io/badge/-EKS-blue?logo=amazoneks&logoColor=white)
+![](https://img.shields.io/badge/-Emacs-blue?logo=gnuemacs&logoColor=white)
+![](https://img.shields.io/badge/-Fargate-blue?logo=awsfargate&logoColor=white)
+![](https://img.shields.io/badge/-Functions-blue?logo=azurefunctions&logoColor=white)
+![](https://img.shields.io/badge/-GIMP-blue?logo=gimp&logoColor=white)
+![](https://img.shields.io/badge/-GNU-blue?logo=gnu&logoColor=white)
+![](https://img.shields.io/badge/-Git-blue?logo=git&logoColor=white)
+![](https://img.shields.io/badge/-GitHub-blue?logo=github&logoColor=white)
+![](https://img.shields.io/badge/-GitLab-blue?logo=gitlab&logoColor=white)
+![](https://img.shields.io/badge/-Homebrew-blue?logo=homebrew&logoColor=white)
+![](https://img.shields.io/badge/-IAM-blue?logo=amazoniam&logoColor=white)
+![](https://img.shields.io/badge/-Inkscape-blue?logo=inkscape&logoColor=white)
+![](https://img.shields.io/badge/-JavaScript-blue?logo=javascript&logoColor=white)
+![](https://img.shields.io/badge/-Jupyter-blue?logo=jupyter&logoColor=white)
+![](https://img.shields.io/badge/-Keras-blue?logo=keras&logoColor=white)
+![](https://img.shields.io/badge/-Lambda-blue?logo=awslambda&logoColor=white)
+![](https://img.shields.io/badge/-Linux-blue?logo=linux&logoColor=white)
+![](https://img.shields.io/badge/-Miniforge-blue?logo=conda-forge&logoColor=white)
+![](https://img.shields.io/badge/-Neovim-blue?logo=neovim&logoColor=white)
+![](https://img.shields.io/badge/-NumPy-blue?logo=numpy&logoColor=white)
+![](https://img.shields.io/badge/-Pandas-blue?logo=pandas&logoColor=white)
+![](https://img.shields.io/badge/-Pipelines-blue?logo=azurepipelines&logoColor=white)
+![](https://img.shields.io/badge/-PyCharm-blue?logo=pycharm&logoColor=white)
+![](https://img.shields.io/badge/-PyTorch-blue?logo=pytorch&logoColor=white)
+![](https://img.shields.io/badge/-R-blue?logo=r&logoColor=white)
+![](https://img.shields.io/badge/-RDS-blue?logo=amazonrds&logoColor=white)
+![](https://img.shields.io/badge/-RStudio-blue?logo=rstudio&logoColor=white)
+![](https://img.shields.io/badge/-React-blue?logo=react&logoColor=white)
+![](https://img.shields.io/badge/-Redshift-blue?logo=amazonredshift&logoColor=white)
+![](https://img.shields.io/badge/-Route_53-blue?logo=amazonroute53&logoColor=white)
+![](https://img.shields.io/badge/-S3-blue?logo=amazons3&logoColor=white)
+![](https://img.shields.io/badge/-SQS-blue?logo=amazonsqs&logoColor=white)
+![](https://img.shields.io/badge/-SciPy-blue?logo=scipy&logoColor=white)
+![](https://img.shields.io/badge/-Sklearn-blue?logo=scikit-learn&logoColor=white)
+![](https://img.shields.io/badge/-Spacemacs-blue?logo=spacemacs&logoColor=white)
+![](https://img.shields.io/badge/-Spark-blue?logo=apachespark&logoColor=white)
+![](https://img.shields.io/badge/-TensorFlow-blue?logo=tensorflow&logoColor=white)
+![](https://img.shields.io/badge/-Vim-blue?logo=vim&logoColor=white)
+![](https://img.shields.io/badge/-WebStorm-blue?logo=webstorm&logoColor=white)
+![](https://img.shields.io/badge/-macOS-blue?logo=apple&logoColor=white)
+![](https://img.shields.io/badge/-zsh-blue?logo=zsh&logoColor=white)
+
 ### Recent Experience
 
 ##### [Lead Instructor]{style="font-weight: 900;"}, [General Assembly](https://generalassemb.ly) [July 2019 ‑ Present]{.cvdate}
 
-- Teaches [various courses](https://generalassemb.ly/instructors/martin-skarzynski/23420) such as:
+- Teaches [open-enrollment](https://generalassemb.ly/instructors/martin-skarzynski/23420) and enterprise courses such as:
   - [Data Analytics](https://generalassemb.ly/education/data-analytics)
   - [Front-End Web Development](https://generalassemb.ly/education/front-end-web-development)
   - [Tech Excellence Data Science](https://www.boozallen.com/e/insight/blog/path-to-technical-success)
@@ -31,18 +96,15 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 
 ##### [Lead Instructor]{style="font-weight: 900;"}, [Data Society](https://datasociety.com) [October 2019 ‑ Present]{.cvdate}
 
-- Teaches workshops such as:
+- Provides enterprise clients with training in:
   - Machine Learning
-  - Data Science Bootcamp
   - Natural Language Processing
-  - Deep Learning
-  - Data Science Academy
   - Python Programming
-  - DevOps
-  - Data Visualization
   - R Programming
+  - Graph Analytics
+  - DevOps
 
-##### Vice President, [Data Community DC](https://www.datacommunitydc.org) [April 2022 ‑ Present]{.cvdate}
+##### [Vice President]{style="font-weight: 900;"}, [Data Community DC](https://www.datacommunitydc.org) [April 2022 ‑ Present]{.cvdate}
 
 - Leads a non‑profit organization that supports [eleven Meetup groups](https://www.datacommunitydc.org/meetups-overview)
 
@@ -76,7 +138,7 @@ Overall, I aim to leverage my broad scientific background and technical expertis
   - [Cloud Practitioner](https://www.credly.com/badges/c3143f03-6ebb-4f16-827c-c89f8db2a3cf/public_url)
   - [Practical Data Science](https://www.coursera.org/account/accomplishments/specialization/certificate/MU388FKRUUL3)
 
-##### AI Engineering Manager, [Booz Allen Hamilton](https://www.boozallen.com) [October 2019 ‑ March 2022]{.cvdate}
+##### [AI Engineering Manager]{style="font-weight: 900;"}, [Booz Allen Hamilton](https://www.boozallen.com) [October 2019 ‑ March 2022]{.cvdate}
 
 - Led a team of data scientists and software developers working on a cyber intelligence application
 - Spearheaded interdisciplinary COVID‑19 [visualization](https://www.boozallen.com/c/insight/blog/epimaps-data-visualization-for-healthcare), [genomics](https://mskar.github.io/var), and statistical modeling efforts
@@ -96,10 +158,10 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 - Developed and tested pharmaceutical and immunotherapeutic agents
 - Quantified cancer cell signaling pathways
 - Mentored trainees from four different NIH training programs:
-  - [Summer Internship Program](https://www.training.nih.gov/research-training/pb/sip)
-  - [Medical Research Scholars Program](https://clinicalcenter.nih.gov/training/mrsp)
-  - [NIH HiSTEP](https://www.training.nih.gov/research-training/hs/hs-sip/histep)
-  - Biomedical Research Training Program for Individuals from Underrepresented Groups
+  - [SIP]{data-bs-toggle="tooltip" data-bs-title="Summer Internship Program"}
+  - [MRSP]{data-bs-toggle="tooltip" data-bs-title="Medical Research Scholars Program"}
+  - [HiSTEP]{data-bs-toggle="tooltip" data-bs-title="High School Scientific Training and Enrichment Program"}
+  - [BRTPUG]{data-bs-toggle="tooltip" data-bs-title="Biomedical Research Training Program for Individuals from Underrepresented Groups"}
 
 ##### [Bioinformatics and Data Science Co-Chair]{style="font-weight: 900;"}, [FAES](https://faes.org) [January 2014 ‑ May 2020]{.cvdate}
 
@@ -119,28 +181,6 @@ Overall, I aim to leverage my broad scientific background and technical expertis
   - Cancer Prevention
   - Flow Cytometry
 
-### Select Publications
-
-##### [JAMA Netw Open]{style="font-weight: 900;"}, [[...] a deep learning model [...] to inform lung cancer screening intervals](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2802522) [March 2023]{.cvdate}
-
-##### [Glob Health Epidemiol Genom]{style="font-weight: 900;"}, [SARS‐CoV‐2 genome‐based severity predictions correspond to [...] higher viral load](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9173902) [February 2023]{.cvdate}
-
-##### [Virological]{style="font-weight: 900;"}, [Linking genotype to phenotype [...] in SARS‐CoV‐2 [...]](https://virological.org/t/linking-genotype-to-phenotype-further-exploration-of-mutations-in-sars-cov-2-associated-with-mild-or-severe-outcomes/794) [April 2022]{.cvdate}
-
-##### [Evol Med Public Health]{style="font-weight: 900;"}, [Variants in SARS-CoV-2 associated with mild or severe outcome](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8385248) [June 2021]{.cvdate}
-
-##### [J Natl Cancer Inst]{style="font-weight: 900;"}, [Using prediction models to reduce [...] disparities in [...] lung cancer screening [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8562965) [January 2021]{.cvdate}
-
-##### [Clin Cancer Res]{style="font-weight: 900;"}, [Interactions between ibrutinib and anti‐CD20 antibodies [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4703510) [January 2016]{.cvdate}
-
-##### [Bioconjug Chem]{style="font-weight: 900;"}, [Designing the furin‐cleavable linker in recombinant immunotoxins [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7724502) [May 2015]{.cvdate}
-
-##### [Front Public Health]{style="font-weight: 900;"}, [Health disparities in the immunoprevention of [HPV] [...] associated malignancies](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4682020) [December 2015]{.cvdate}
-
-##### [Blood]{style="font-weight: 900;"}, [Pathogenic role of [BCR] signaling and canonical NF-κB activation in [MCL]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4937360) [July 2016]{.cvdate}
-
-##### [Cancer Res]{style="font-weight: 900;"}, [Harnessing the Fcμ receptor for [...] therapy of [CLL]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4268434) [October 2014]{.cvdate}
-
 ### Education
 
 ##### [MPH]{style="font-weight: 900;"}, Epidemiology and Biostatistics [May 2018]{.cvdate}
@@ -151,19 +191,42 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 
 ##### [BA]{style="font-weight: 900;"}, Biology [May 2007]{.cvdate}
 
+### Natural Languages
+
+::: {.langs}
+- English: Native
+- Polish: Native
+- Spanish: Professional
+- Russian: Professional
+- French: Working
+- Portuguese: Limited
+:::
+
+### Select Publications
+
+::: {.pubs}
+- [JAMA Netw Open]{style="font-weight: 900;"}, [Recalibration of a deep learning model [...] to inform lung cancer screening intervals](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2802522) [March 2023]{.cvdate}
+- [Glob Health Epidemiol Genom]{style="font-weight: 900;"}, [SARS‐CoV‐2 genome‐based severity predictions correspond to [...] higher viral load](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9173902) [May 2022]{.cvdate}
+- [Virological]{style="font-weight: 900;"}, [Linking genotype to phenotype [...] in SARS‐CoV‐2 [...]](https://virological.org/t/linking-genotype-to-phenotype-further-exploration-of-mutations-in-sars-cov-2-associated-with-mild-or-severe-outcomes/794) [April 2022]{.cvdate}
+- [Evol Med Public Health]{style="font-weight: 900;"}, [Variants in SARS-CoV-2 associated with mild or severe outcome](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8385248) [June 2021]{.cvdate}
+- [J Natl Cancer Inst]{style="font-weight: 900;"}, [Using prediction models to reduce [...] disparities in [...] lung cancer screening [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8562965) [January 2021]{.cvdate}
+- [Clin Cancer Res]{style="font-weight: 900;"}, [Interactions between ibrutinib and anti‐CD20 antibodies [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4703510) [January 2016]{.cvdate}
+- [Bioconjug Chem]{style="font-weight: 900;"}, [Designing the furin‐cleavable linker in recombinant immunotoxins [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7724502) [May 2015]{.cvdate}
+- [Front Public Health]{style="font-weight: 900;"}, [Health disparities in the immunoprevention of [HPV] [...] associated malignancies](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4682020) [December 2015]{.cvdate}
+- [Blood]{style="font-weight: 900;"}, [Pathogenic role of [BCR] signaling and canonical NF-κB activation in [MCL]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4937360) [July 2016]{.cvdate}
+- [Cancer Res]{style="font-weight: 900;"}, [Harnessing the Fcμ receptor for [...] therapy of [CLL]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4268434) [October 2014]{.cvdate}
+:::
+
 ### Select Awards
 
-##### [Community Contribution of the Year Category Finalist]{style="font-weight: 900;"}, AWS Builder Awards [February 2023]{.cvdate}
-
-##### [Artificial Intelligence Solutions Architect Award]{style="font-weight: 900;"}, BAH Emergent Skills Program [January 2022]{.cvdate}
-
-##### [Trans‐Fellowship Research Award]{style="font-weight: 900;"}, Cancer Prevention Fellowship Program [June 2019]{.cvdate}
-
-##### [Fellows Award for Research Excellence]{style="font-weight: 900;"}, National Institutes of Health [June 2015]{.cvdate}
-
-##### [Orloff Science Award]{style="font-weight: 900;"}, National Heart, Lung, Blood Institute [October 2014]{.cvdate}
-
-##### [Director's Science Award]{style="font-weight: 900;"}, National Heart, Lung, Blood Institute [January 2014]{.cvdate}
+::: {.awards}
+- [Community Contribution of the Year Category Finalist]{style="font-weight: 900;"}, AWS Builder Awards [February 2023]{.cvdate}
+- [Artificial Intelligence Solutions Architect Award]{style="font-weight: 900;"}, BAH Emergent Skills Program [January 2022]{.cvdate}
+- [Trans‐Fellowship Research Award]{style="font-weight: 900;"}, Cancer Prevention Fellowship Program [June 2019]{.cvdate}
+- [Fellows Award for Research Excellence]{style="font-weight: 900;"}, National Institutes of Health [June 2015]{.cvdate}
+- [Orloff Science Award]{style="font-weight: 900;"}, National Heart, Lung, Blood Institute [October 2014]{.cvdate}
+- [Director's Science Award]{style="font-weight: 900;"}, National Heart, Lung, Blood Institute [January 2014]{.cvdate}
+:::
 
 ```{=html}
 <script src="../scripts/time.js"></script>

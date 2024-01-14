@@ -6,25 +6,39 @@ h1.title {
   text-align: center;
 }
 
-.cvdate {
-  float: right;
-  font-style: italic;
+@media only screen and (min-width: 900px) {
+  .cvdate {
+    float: right;
+    font-style: italic;
+  }
 }
 
 .italic {
   font-style: italic;
 }
 
-.italic {
-  font-style: italic;
+.tooltip {
+  color: italic;
 }
 
-section > ul > li > ul {
-  display: grid;
-  grid-row-gap: -20px;
-  grid-template-columns: 1fr 1fr 1fr;
+@media only screen and (min-width: 900px) {
+  section > ul > li > ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
-section > ul > li > ul > li {
-  margin: 1px;
+@media only screen and (min-width: 900px) {
+  div.contact > ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  div.langs > ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
