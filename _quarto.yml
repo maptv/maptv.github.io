@@ -59,8 +59,11 @@ website:
             contents:
               - blog/prob/prob.qmd
               - blog/llm/llm.qmd
-      - text: Curriculum Vitae
+      - section: Curriculum Vitae
         file: cv/cv.qmd
+        contents:
+          - file: cv/pdf/pdf.qmd
+            text: "CV PDF"
       - text: GitHub
         href: https://github.com/maptv
       - text: LinkedIn
