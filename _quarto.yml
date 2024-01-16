@@ -63,7 +63,9 @@ website:
         file: cv/cv.qmd
         contents:
           - file: cv/pdf/pdf.qmd
-            text: "CV PDF"
+            text: "PDF"
+          - file: cv/word/word.qmd
+            text: "Word"
       - text: GitHub
         href: https://github.com/maptv
       - text: LinkedIn
