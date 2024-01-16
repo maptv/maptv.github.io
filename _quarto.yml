@@ -32,7 +32,7 @@ website:
   twitter-card: true
   site-url: https://maptv.github.io
   sidebar:
-    collapse-level: 3
+    collapse-level: -1
     search: true
     sort: order
     style: floating

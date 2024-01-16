@@ -2,6 +2,7 @@
 title: "Martin Skarzynski Laptev"
 format:
   html:
+    page-navigation: false
     output-file: index.html
     page-layout: full
 css: cv.css
@@ -193,12 +194,6 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 - Spearheaded interdisciplinary COVID‑19 [visualization](https://www.boozallen.com/c/insight/blog/epimaps-data-visualization-for-healthcare), [genomics](https://mskar.github.io/var), and statistical modeling efforts
 - Obtained the [Microsoft Azure Data Scientist Associate](https://www.credly.com/badges/99aa294a-2b69-40f2-a607-0e7b91ffb5f6/public_url){.italic} certification
 
-##### [Adjunct Professor]{style="font-weight: 900;"}, [George Washington University](https://www.gwu.edu) [January 2015 ‑ May 2015]{.cvdate}
-
-- Taught two undergraduate courses for the [Women's Leadership Program](https://wlp.gwu.edu):
-  - [Biology of Organisms](https://wlp.gwu.edu/science-health-and-medicine#:~:text=Introductory%20Biology%3A%20Biology%20of%20Organisms)
-  - [Women and Leadership](https://wlp.gwu.edu/science-health-and-medicine#:~:text=Biology%20of%20Organisms-,Symposium,-The%20weekly%20symposia)
-
 ##### [Biomedical Scientist]{style="font-weight: 900;"}, [National Institutes of Health](https://www.nih.gov) [June 2009 ‑ April 2021]{.cvdate}
 
 - Integrated clinical, laboratory, epidemiologic, genomic, and medical imaging data
@@ -222,6 +217,12 @@ Overall, I aim to leverage my broad scientific background and technical expertis
   - [Pharmacometrics](https://education.faes.org/search/publicCourseSearchDetails.do?method=load&courseId=1059989)
   - [Cellular Immunology](https://education.faes.org/search/publicCourseSearchDetails.do?method=load&courseId=1409949)
   - [Flow Cytometry](https://education.faes.org/search/publicCourseSearchDetails.do?method=load&courseId=1424281)
+
+##### [Adjunct Professor]{style="font-weight: 900;"}, [George Washington University](https://www.gwu.edu) [January 2015 ‑ May 2015]{.cvdate}
+
+- Taught two undergraduate courses for the [Women's Leadership Program](https://wlp.gwu.edu):
+  - [Biology of Organisms](https://wlp.gwu.edu/science-health-and-medicine#:~:text=Introductory%20Biology%3A%20Biology%20of%20Organisms)
+  - [Women and Leadership](https://wlp.gwu.edu/science-health-and-medicine#:~:text=Biology%20of%20Organisms-,Symposium,-The%20weekly%20symposia)
 
 ### Education
 
