@@ -225,10 +225,10 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 
 ### Education
 
-- [MPH]{style="font-weight: 900;"}, Epidemiology and Biostatistics [May 2018]{.cvdate}
-- [PhD]{style="font-weight: 900;"}, Tumor Biology [May 2015]{.cvdate}
-- [MS]{style="font-weight: 900;"}, Biotechnology [June 2009]{.cvdate}
-- [BA]{style="font-weight: 900;"}, Biology [May 2007]{.cvdate}
+- [MPH]{style="font-weight: 900;"}, Epidemiology and Biostatistics, [Johns Hopkins University](https://www.jhu.edu) [May 2018]{.cvdate}
+- [PhD]{style="font-weight: 900;"}, Tumor Biology, [Georgetown University](https://www.georgetown.edu) [May 2015]{.cvdate}
+- [MS]{style="font-weight: 900;"}, Biotechnology, [Jagiellonian University](https://en.uj.edu.pl) [June 2009]{.cvdate}
+- [BA]{style="font-weight: 900;"}, Biology, [St. Mary's College of Maryland](https://www.smcm.edu) [May 2007]{.cvdate}
 
 ### Select Publications
 
