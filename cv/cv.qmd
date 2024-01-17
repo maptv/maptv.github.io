@@ -22,7 +22,7 @@ My goal is to lead the next generation of scientists and engineers in building s
 Through my work, I strive to promote open source software, such as the Quarto publishing system, which I use to build dashboards, presentations, reports, websites, and other digital deliverables.
 Overall, I aim to leverage my broad scientific background and technical expertise to help transform the promises of science and technology into a better future for all of humanity.
 
-### Technologies
+### Skills
 
 ![](https://img.shields.io/badge/-API_Gateway-blue?logo=amazonapigateway&logoColor=white&color)
 ![](https://img.shields.io/badge/-Airflow-blue?logo=apacheairflow&logoColor=white&color)
@@ -259,12 +259,9 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 ### Natural Languages
 
 ::: {.langs}
-- [English]{style="font-weight: 900;"}: Native
-- [Polish]{style="font-weight: 900;"}: Native
-- [Spanish]{style="font-weight: 900;"}: Professional
-- [Russian]{style="font-weight: 900;"}: Professional
-- [French]{style="font-weight: 900;"}: Working
-- [Portuguese]{style="font-weight: 900;"}: Limited
+- [Native]{style="font-weight: 900;"}: English, Polish
+- [Professional]{style="font-weight: 900;"}: Spanish, Russian
+- [Working]{style="font-weight: 900;"}: French, Portuguese
 :::
 
 ```{=html}
