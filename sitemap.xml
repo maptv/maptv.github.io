@@ -2,46 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://maptv.github.io/cv/index.html</loc>
-    <lastmod>2024-01-14T17:53:52.372Z</lastmod>
+    <lastmod>2024-01-17T01:13:30.991Z</lastmod>
   </url>
   <url>
-    <loc>https://maptv.github.io/blog/index.html</loc>
-    <lastmod>2023-12-18T00:38:59.915Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/blog/jupyter/index.html</loc>
-    <lastmod>2023-12-18T00:36:48.956Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/blog/quarto/index.html</loc>
-    <lastmod>2023-12-18T00:36:48.966Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/blog/knitr/index.html</loc>
-    <lastmod>2023-12-18T00:36:48.959Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/blog/prob/index.html</loc>
-    <lastmod>2023-12-18T00:36:48.964Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/blog/llm/index.html</loc>
-    <lastmod>2023-12-18T00:36:48.960Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/blog/observable/index.html</loc>
-    <lastmod>2023-12-18T00:36:48.963Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/blog/vscode/index.html</loc>
-    <lastmod>2023-12-18T00:36:48.969Z</lastmod>
+    <loc>https://maptv.github.io/index.html</loc>
+    <lastmod>2024-01-13T19:53:55.729Z</lastmod>
   </url>
   <url>
     <loc>https://maptv.github.io/blog/git/index.html</loc>
     <lastmod>2023-12-18T00:36:48.941Z</lastmod>
   </url>
   <url>
-    <loc>https://maptv.github.io/index.html</loc>
-    <lastmod>2024-01-13T19:53:55.729Z</lastmod>
+    <loc>https://maptv.github.io/blog/vscode/index.html</loc>
+    <lastmod>2023-12-18T00:36:48.969Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/blog/observable/index.html</loc>
+    <lastmod>2023-12-18T00:36:48.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/blog/llm/index.html</loc>
+    <lastmod>2023-12-18T00:36:48.960Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/blog/prob/index.html</loc>
+    <lastmod>2023-12-18T00:36:48.964Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/blog/knitr/index.html</loc>
+    <lastmod>2023-12-18T00:36:48.959Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/blog/quarto/index.html</loc>
+    <lastmod>2023-12-18T00:36:48.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/blog/jupyter/index.html</loc>
+    <lastmod>2023-12-18T00:36:48.956Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/blog/index.html</loc>
+    <lastmod>2023-12-18T00:38:59.915Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/cv/pdf/index.html</loc>
+    <lastmod>2024-01-16T21:11:45.353Z</lastmod>
   </url>
 </urlset>
