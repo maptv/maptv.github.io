@@ -4,7 +4,7 @@ format:
   html:
     page-navigation: false
     output-file: index.html
-    page-layout: full
+    toc: true
 css: cv.css
 ---
 
@@ -231,17 +231,6 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 - [MS]{style="font-weight: 900;"}, Biotechnology [June 2009]{.cvdate}
 - [BA]{style="font-weight: 900;"}, Biology [May 2007]{.cvdate}
 
-### Natural Languages
-
-::: {.langs}
-- English: Native
-- Polish: Native
-- Spanish: Professional
-- Russian: Professional
-- French: Working
-- Portuguese: Limited
-:::
-
 ### Select Publications
 
 ::: {.pubs}
@@ -266,6 +255,17 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 - [Fellows Award for Research Excellence]{style="font-weight: 900;"}, National Institutes of Health [June 2015]{.cvdate}
 - [Orloff Science Award]{style="font-weight: 900;"}, National Heart, Lung, Blood Institute [October 2014]{.cvdate}
 - [Director's Science Award]{style="font-weight: 900;"}, National Heart, Lung, Blood Institute [January 2014]{.cvdate}
+:::
+
+### Natural Languages
+
+::: {.langs}
+- [English]{style="font-weight: 900;"}: Native
+- [Polish]{style="font-weight: 900;"}: Native
+- [Spanish]{style="font-weight: 900;"}: Professional
+- [Russian]{style="font-weight: 900;"}: Professional
+- [French]{style="font-weight: 900;"}: Working
+- [Portuguese]{style="font-weight: 900;"}: Limited
 :::
 
 ```{=html}

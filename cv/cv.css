@@ -6,7 +6,7 @@ h1.title {
   text-align: center;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1300px) {
   .cvdate {
     float: right;
   }
@@ -20,26 +20,33 @@ h1.title {
   font-style: italic;
 }
 
-.tooltip {
-  color: italic;
-}
-
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1300px) {
   section > ul > li > ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media only screen and (min-width: 900px) {
-  div.contact > ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-  }
+div.contact > ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (max-width: 1300px) {
+div.contact > ul {
+  flex-direction: column;
+}
+div.contact > ul > li {
+  text-align: center;
+}
+}
+
+p, li {
+  text-align: left;
+}
+
+@media only screen and (min-width: 1300px) {
   div.langs > ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
