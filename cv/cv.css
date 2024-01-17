@@ -6,9 +6,17 @@ h1.title {
   text-align: center;
 }
 
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 840px) {
   .cvdate {
     float: right;
+  }
+  section > ul > li > ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  div.langs > ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -20,20 +28,13 @@ h1.title {
   font-style: italic;
 }
 
-@media only screen and (min-width: 1300px) {
-  section > ul > li > ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
 div.contact > ul {
   display: flex;
   list-style: none;
   justify-content: space-between;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 840px) {
 div.contact > ul {
   flex-direction: column;
 }
@@ -42,13 +43,10 @@ div.contact > ul > li {
 }
 }
 
-p, li {
-  text-align: left;
+h3.anchored {
+    margin: 8px 0px;
 }
 
-@media only screen and (min-width: 1300px) {
-  div.langs > ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+p, li {
+  text-align: left;
 }

@@ -4,7 +4,6 @@ format:
   html:
     page-navigation: false
     output-file: index.html
-    toc: true
 css: cv.css
 ---
 
@@ -138,21 +137,21 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 ##### [Lead Instructor]{style="font-weight: 900;"}, [General Assembly](https://generalassemb.ly) [July 2019 ‑ Present]{.cvdate}
 
 - Teaches [open-enrollment](https://generalassemb.ly/instructors/martin-skarzynski/23420) and enterprise courses such as:
+  - [React Development](https://generalassemb.ly/education/react-development)
   - [Data Analytics](https://generalassemb.ly/education/data-analytics)
-  - [Front-End Web Development](https://generalassemb.ly/education/front-end-web-development)
   - [Tech Excellence Data Science](https://www.boozallen.com/e/insight/blog/path-to-technical-success)
   - [Python Programming](https://generalassemb.ly/education/python-programming)
-  - [React Development](https://generalassemb.ly/education/react-development)
+  - [Front-End Web Development](https://generalassemb.ly/education/front-end-web-development)
 
 ##### [Lead Instructor]{style="font-weight: 900;"}, [Data Society](https://datasociety.com) [October 2019 ‑ Present]{.cvdate}
 
 - Provides enterprise clients with training in:
   - Machine Learning
-  - Natural Language Processing
+  - DevOps
   - Python Programming
   - R Programming
   - Graph Analytics
-  - DevOps
+  - Natural Language Processing
 
 ##### [Vice President]{style="font-weight: 900;"}, [Data Community DC](https://www.datacommunitydc.org) [April 2022 ‑ Present]{.cvdate}
 
