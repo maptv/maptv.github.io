@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.489">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -100,6 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -120,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed slimcontent">
+<body class="floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -409,10 +410,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="tldr" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="tldr"><span class="blue" data-bs-toggle="tooltip" data-bs-title="too long; didn't read"><u>TL;DR</u></span></h2>
 <p>This blog post is the most important post in my <a href="..#category=tool">Tools</a> blog post series, as indicated by its <a href="https://en.wikipedia.org/wiki/Centrality">centrality</a> in <a href="#fig-navchart" class="quarto-xref">Figure&nbsp;1</a>, node of the netw focuses on the use of <a href="https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system">Quarto</a> to author and publish digital content. As the third post in my , which is summarized by <a href="#fig-navchart" class="quarto-xref">Figure&nbsp;1</a>, and depends on the. is my blog post on <a href="https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system">Quarto</a>. The subsequent posts in the series demonstrate how to use <a href="https://quarto.org/docs/computations/ojs">Observable</a>, <a href="https://quarto.org/docs/reference/cells/cells-jupyter">Jupyter</a>, and <a href="https://quarto.org/docs/reference/cells/cells-knitr">Knitr</a> to execute code in Quarto documents.</p>
-<div class="cell page-columns page-full">
+<div class="cell page-columns page-full" data-layout-align="default">
 
 <div class="no-row-height column-margin column-container"><div class="cell-output-display">
-<div id="fig-navchart" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-navchart" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-navchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -431,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </pre>
 </div>
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-navchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-navchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Tools series navigation chart
 </figcaption>
 </figure>
@@ -446,13 +447,13 @@ Figure&nbsp;1: Tools series navigation chart
 <p>Rather than repeat the basic information already available elsewhere, I will share some advanced techniques along with the fundamental knowledge needed to understand how they work. The topics I cover are very technical, but my goal is to make the content on <a href="../../blog/index.html">my blog</a> as accessible as possible.</p>
 <p>The first topic I will delve into is creating and publishing a website with Quarto. To follow the Quarto documentation on <a href="https://quarto.org/docs/websites/">creating a website</a>, you will need <a href="https://code.visualstudio.com">Visual Studio Code (VSCode)</a>, <a href="https://vscodium.com/#:~:text=VSCodium%20is%20a%20community%2Ddriven%2C%20freely%2Dlicensed%20binary%20distribution%20of%20Microsoft%E2%80%99s%20editor%20VS%20Code.">VSCodium</a>, <a href="https://posit.co/download/rstudio-desktop">RStudio</a>, or a <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>.</p>
 </section>
-<section id="sec-pub" class="level2">
+<section id="sec-pub" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="sec-pub">Publishing Quarto sites</h2>
 <section id="sec-inst" class="level3">
 <h3 class="anchored" data-anchor-id="sec-inst">Installing tools</h3>
 <p>If you use <a href="https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.">macOS</a>, <a href="https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems">Linux</a>, or the <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.">Windows Subsystem for Linux (WSL)</a>, you can install all of the aforementioned tools with the <a href="https://brew.sh">Homebrew</a> package manager. To install everything you will need to follow along with this blog post, you can first <a href="https://brew.sh/#install">install Homebrew</a> and then run <code>brew</code> <code>bundle</code> in a directory that contains the <a href="https://homebrew-file.readthedocs.io/en/latest/usage.html">Brewfile</a> shown in <a href="#exm-brew" class="quarto-xref">Example&nbsp;1</a>.</p>
 <div id="exm-brew" class="theorem example">
-<p><span class="theorem-title"><strong>Example 1 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 1</strong></span> &nbsp;</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Brewfile</strong></pre>
@@ -473,7 +474,7 @@ Figure&nbsp;1: Tools series navigation chart
 <p>Apart from RStudio, VSCode, and VSCodium, the Brewfile in <a href="#exm-brew" class="quarto-xref">Example&nbsp;1</a> will install the <a href="https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.">Git</a> version control system, the GitHub and GitLab <a href="https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.">command line interfaces (CLIs)</a>, and <a href="https://desktop.github.com"><code>GitHub Desktop</code></a>, a <a href="https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac">Git Graphical User Interface (GUI)</a>. For more information on Git, a tool used by 93% of software developers worldwide according to <a href="https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.">survey results</a> published by <a href="https://stackoverflow.com/tour">StackOverflow</a> on <span class="blue" data-bs-toggle="tooltip" data-bs-title="2023-01-09"><u><code>2022+314</code></u></span>, take a look at the <a href="https://openscapes.org/blog/2022-05-27-github-illustrated-series/">“GitHub for supporting, reusing, contributing, and failing safely”</a> post by <a href="https://allisonhorst.com">Allison Horst</a> and <a href="https://jules32.github.io">Julie Lowndes</a> on the <a href="https://openscapes.org/">Openscapes</a> <a href="https://openscapes.org/blog">blog</a>.</p>
 <p>As an alternative to installing tools on your computer, you can use the web interface provided by <a href="https://github.com/features/codespaces">GitHub Codespaces</a>. To set up a Codespace, you can remove the lines that start with <code>cask</code> from the Brewfile provided in <a href="#exm-brew" class="quarto-xref">Example&nbsp;1</a> and add the file to a repo called <a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles"><code>dotfiles</code></a> and along with a <code>setup.sh</code> file like the one shown in <a href="#exm-set" class="quarto-xref">Example&nbsp;2</a>.</p>
 <div id="exm-set" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 2</strong></span> &nbsp;</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>setup.sh</strong></pre>
@@ -485,13 +486,13 @@ Figure&nbsp;1: Tools series navigation chart
 </div>
 </div>
 </section>
-<section id="sec-over" class="level3">
+<section id="sec-over" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="sec-over">Publishing overview</h3>
 <p>Once you are done setting up your computer or Codespace, you create a <a href="https://quarto.org/docs/websites/#quick-start:~:text=This%20will%20create%20the%20scaffolding%20for%20a%20simple%20website%20in%20the%20mysite%20sub%2Ddirectory.">Quarto website template</a> and make your site publicly available on the internet using one of the many available <a href="https://quarto.org/docs/publishing/#getting-started">publishing services</a>. To explore and assess different publishing <a href="https://en.wikipedia.org/wiki/Workflow#:~:text=A%20workflow%20is%20a%20generic%20term%20for%20orchestrated%20and%20repeatable%20patterns%20of%20activity%2C%20enabled%20by%20the%20systematic%20organization%20of%20resources%20into%20processes%20that%20transform%20materials%2C%20provide%20services%2C%20or%20process%20information.">workflows</a> and free website hosting options, I set up my personal website on four different <a href="https://en.wikipedia.org/wiki/Web_hosting_service#:~:text=Companies%20providing%20web%20hosting%20services%20are%20sometimes%20called%20web%20hosts.">web hosts</a>: <a href="https://maptv.quarto.pub">Quarto Pub</a>, <a href="https://maptv.netlify.app">Netlify</a>, <a href="https://maptv.github.io">GitHub Pages</a>, and <a href="https://maptv.gitlab.io">GitLab Pages</a>.</p>
 <p>There are so many different ways to publish a Quarto site that I decided to come up with a naming system for Quarto publishing methods. The naming system derives a code for each publishing method from the numbered lists in the Quarto publishing documentation. For example, I refer to the <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto,your%20code%20changes.">two methods to publish to Quarto Pub</a> as <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a> and <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>:</p>
 <p><a href="#tbl-pub" class="quarto-xref">Table&nbsp;1</a> uses this naming system in its <code>Code</code> column to identify the publishing methods I discuss in this blog post. Each publishing method targets a particular web <code>Host</code>, <code>Render</code>s content locally or on a remote server, and deploys sites using either the <a href="https://quarto.org/docs/output-formats/html-publishing.html#publish-command"><code>quarto</code> <code>publish</code></a> or the <a href="https://git-scm.com/docs/git-push"><code>git</code> <code>push</code></a> <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.">shell</a> <code>Command</code>.</p>
-<div id="tbl-pub" class="anchored">
-<figure class="quarto-float quarto-float-tbl figure">
+<div id="tbl-pub" class="quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-tbl figure page-columns page-full">
 <div aria-describedby="tbl-pub-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
 <thead>
@@ -554,7 +555,7 @@ Figure&nbsp;1: Tools series navigation chart
 </tbody>
 </table>
 </div>
-<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-pub-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-tbl margin-caption" id="tbl-pub-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Quarto website publishing methods
 </figcaption>
 </figure>
@@ -565,7 +566,7 @@ Table&nbsp;1: Quarto website publishing methods
 <p>The first publishing method I tried for my personal site was <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a>, which requires the use of Git to <a href="https://github.com/git-guides/git-push#what-does-git-push-do">push</a> all website content to a Git provider like GitHub or GitLab. After I set up <a href="https://quarto.org/docs/publishing/github-pages.html#render-to-docs">GitHub Pages</a> and <a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab Pages</a>, I could update my website on both of these web hosts just by going through the standard Git workflow shown in <a href="#fig-git" class="quarto-xref">Figure&nbsp;2</a>.</p>
 <div class="cell" data-fig-width="9" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-git" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-git" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-git-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -574,7 +575,7 @@ Table&nbsp;1: Quarto website publishing methods
 </pre>
 </div>
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-git-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-git-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Git workflow
 </figcaption>
 </figure>
@@ -585,7 +586,7 @@ Figure&nbsp;2: Git workflow
 <p>The <a href="https://github.com/maptv/setup/blob/936ae9e222b0fe0648d88675db2d4718568a93f2/.zshrc#L134"><code>aacmp</code> alias</a> in the <a href="https://github.com/maptv/setup/blob/main/.zshrc"><code>.zshrc</code></a> file in my <a href="https://github.com/maptv/setup"><code>setup</code></a> repo allows me to enter a free-form <a href="https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27">commit message</a> directly on the command line without quotes, e.g.&nbsp;<code>qp</code> <code>edit</code> <code>first</code> <code>blog</code>. If you decide to try my <code>aacmp</code> alias, please exercise extreme caution as any un-<a href="https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.">escaped</a> or un-quoted <a href="https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter">metacharacters</a> may yield surprising effects instead of being included verbatim in the commit message. For example, <code>qp</code> <code>*</code> will list the contents of the current directory in the commit message in place of the asterisk!</p>
 <p>An alternative to a shell alias that combines <code>git</code> commands is a keyboard shortcut in Git-enabled GUI. <a href="#exm-key" class="quarto-xref">Example&nbsp;3</a> shows two files, <code>tasks.json</code> and <code>update.sh</code>, that we can use to set up VSCode, VSCodium, and GitHub Codespaces to go through the Git workflow whenever we press Ctrl+Shift+B on Linux/Windows or ⌘+Shift+B on Mac (mnemonic: B is for Build).</p>
 <div id="exm-key" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 3</strong></span> &nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><code>update.sh</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><code>tasks.json</code></a></li></ul>
 <div class="tab-content">
@@ -627,7 +628,7 @@ Figure&nbsp;2: Git workflow
 <p>The GitHub CLI allows you to add an SSH key to your account during or <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli#adding-a-new-ssh-key-to-your-account">after authentication</a>. The GitLab CLI does not handle SSH keys during authentication, but has a similar command for <a href="https://gitlab.com/gitlab-org/cli/-/blob/main/docs/source/ssh-key/add.md">adding an SSH key to your GitLab account</a>.</p>
 <p>After authentication and SSH key setup, you can run the code in either of the code chunks in <a href="#exm-git" class="quarto-xref">Example&nbsp;4</a> to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my <a href="https://github.com/maptv/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630"><code>.zshrc</code></a>.</p>
 <div id="exm-git" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 4</strong></span> &nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">GitHub</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">GitLab</a></li></ul>
 <div class="tab-content">
@@ -654,14 +655,14 @@ Figure&nbsp;2: Git workflow
 </div>
 <p>To make it easier to maintain my site on both GitHub and GitLab Pages, I set up my local repo cloned to have two <code>origin</code> remote URLs using the code as shown in <a href="#exm-remote" class="quarto-xref">Example&nbsp;5</a>. Now, running <code>quarto</code> <code>publish</code> or <code>git</code> <code>push</code> in my local repo, updates my content on both GitHub and GitLab.</p>
 <div id="exm-remote" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 5</strong></span> &nbsp;</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add lab git@gitlab.com:maptv/maptv.gitlab.io</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add hub git@github.com:maptv/maptv.github.io</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url <span class="at">--add</span> origin <span class="va">$(</span><span class="fu">git</span> remote get-url lab<span class="va">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you want to have your website hosted on GitHub Pages, you will need to <a href="https://quarto.org/docs/publishing/github-pages.html#source-branch">set <code>gh-pages</code> as your source branch</a> in your repo settings. For GitLab Pages, you will need to add a <code>.gitlab-ci.yml</code> file to your repo and update your <code>_quarto.yml</code> file as shown in <a href="#exm-yml" class="quarto-xref">Example&nbsp;6</a> to include <code>.gitlab-ci.yml</code> as a <code>resource</code> in your output directory.</p>
 <div id="exm-yml" class="theorem example">
-<p><span class="theorem-title"><strong>Example 6 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 6</strong></span> &nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><code>.gitlab-ci.yml</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><code>_quarto.yml</code></a></li></ul>
 <div class="tab-content">
@@ -691,7 +692,7 @@ Figure&nbsp;2: Git workflow
 <h3 class="anchored" data-anchor-id="sec-set-act">GitHub Actions</h3>
 <p>In addition to the steps described above, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> setup requires that we create a <code>.github/workflows</code> directory and add a <a href="https://en.wikipedia.org/wiki/YAML#:~:text=YAML%20(/%CB%88j%C3%A6m%C9%99l/)%20(see%20%C2%A7%C2%A0History%20and%20name)%20is%20a%20human%2Dreadable%20data%20serialization%20language.">YAML</a> file to that directory. <a href="#exm-curl" class="quarto-xref">Example&nbsp;7</a> contains the <code>gh-pages.yml</code> file I use for my own site and the shell code that can used to obtain this file.</p>
 <div id="exm-curl" class="theorem example">
-<p><span class="theorem-title"><strong>Example 7 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 7</strong></span> &nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true"><code>curl</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false"><code>gh-pages.yml</code></a></li></ul>
 <div class="tab-content">
@@ -766,13 +767,13 @@ Figure&nbsp;2: Git workflow
 <p>After pushing the <code>gh-pages.yml</code> file, you can visit the Actions tab in your remote repo on GitHub to check the progress of the deployment of your site. If your site did not build successfully, you can go through the logs to try to diagnose the problem.</p>
 <p>I added a “Push to GitLab” step to my <code>gh-pages.yml</code> to make GitHub Actions push my remote <code>gh-pages</code> to GitLab so that my site is kept in sync on both GitHub and GitLab Pages. This required manually creating a token on GitLab and adding it to GitHub, which I accomplished using the GitHub CLI as shown in <a href="#exm-secret" class="quarto-xref">Example&nbsp;8</a>.</p>
 <div id="exm-secret" class="theorem example">
-<p><span class="theorem-title"><strong>Example 8 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 8</strong></span> &nbsp;</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> secret set GITLAB_AUTH_TOKEN</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>After the setup described above, I now have two options for publishing my Quarto site: <code>quarto</code> <code>publish</code> and 2) <code>git push</code>. In addition to GitHub and GitLab Pages, both of these options automatically update my site on Netlify via <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20GitLab%2C%20Bitbucket%2C%20or%20Azure%20DevOps%2C%20you%20can%20point%20Netlify%20at%20your%20site%E2%80%99s%20source%20code%20and%20have%20it%20deployed%20whenever%20your%20code%20changes.">N2</a>.</p>
 <p>To also automatically update my site on Quarto Pub, I created a separate GitHub Actions workflow by adding another YAML file to the <code>.github/workflows</code> directory in my repo. <a href="#exm-qpub" class="quarto-xref">Example&nbsp;9</a> shows my <code>quarto-pub.yml</code> file and the shell code that can be used to obtain it.</p>
 <div id="exm-qpub" class="theorem example">
-<p><span class="theorem-title"><strong>Example 9 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 9</strong></span> &nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true"><code>curl</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false"><code>quarto-pub.yml</code></a></li></ul>
 <div class="tab-content">
@@ -820,7 +821,7 @@ Figure&nbsp;2: Git workflow
 <p><a href="#fig-meth" class="quarto-xref">Figure&nbsp;3</a> summarizes all of the steps that occur during my Quarto publishing workflow. This workflow allows me to publish my site on four web hosts every time I run <code>quarto</code> <code>publish</code> <code>gh-pages</code> (<a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a>) or <code>git</code> <code>push</code> (<a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a>)!</p>
 <div class="cell" data-fig-width="9" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-meth" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-meth" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-meth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -834,7 +835,7 @@ Figure&nbsp;2: Git workflow
 </pre>
 </div>
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-meth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-meth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Quarto publishing workflow
 </figcaption>
 </figure>
@@ -857,7 +858,7 @@ Figure&nbsp;3: Quarto publishing workflow
 <p>My navbar also provides the current date and time in <code>Dec</code> ordinal (<code>deco</code>) format, which counts the <a href="https://en.wikipedia.org/wiki/ISO_8601#:~:text=year%200000%20being%20equal%20to%201%20BC">years since 1 BC</a> and the days since March 1. <code>Dec</code> is a calendar and time system that I created and use throughout my blog.</p>
 <p>To add a custom <a href="https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20timestamp%20is%20a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred%2C%20usually%20giving%20date%20and%20time%20of%20day%2C%20sometimes%20accurate%20to%20a%20small%20fraction%20of%20a%20second.">timestamp</a> to the navbar, I put a <code>&lt;script&gt;</code> <a href="https://en.wikipedia.org/wiki/HTML_element#:~:text=An%20HTML%20element%20is%20a%20type%20of%20HTML%20(HyperText%20Markup%20Language)%20document%20component">element</a> that runs <code>time.js</code> in an <a href="https://en.wikipedia.org/wiki/HTML#:~:text=The%20HyperText%20Markup%20Language%20or%20HTML%20is%20the%20standard%20markup%20language%20for%20documents%20designed%20to%20be%20displayed%20in%20a%20web%20browser.">HTML</a> <a href="https://quarto.org/docs/authoring/tables.html#html-tables">block</a> in every Quarto markdown (<code>.qmd</code>) file, as shown in <a href="#exm-html" class="quarto-xref">Example&nbsp;10</a>. <a href="https://mine-cr.com/">Mine Çetinkaya-Rundel</a> wrote about <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/12-html-block/">HTML blocks</a> as part of her <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/about.html">A Quarto tip a day</a> project.</p>
 <div id="exm-html" class="theorem example">
-<p><span class="theorem-title"><strong>Example 10 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 10</strong></span> &nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true"><code>*.qmd</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false"><code>time.js</code></a></li></ul>
 <div class="tab-content">
@@ -909,7 +910,7 @@ Figure&nbsp;3: Quarto publishing workflow
 <p>I wanted to my blog’s <a href="https://maptv.github.io/blog">listing page</a> to show dates in the same format as the navbar timestamp. To accomplish this, I used a <span data-bs-toggle="tooltip" data-bs-title="The word &quot;post&quot; in &quot;post-render&quot; means &quot;after&quot; as in after all rendering steps are completed instead of a blog &quot;post&quot;."><u>post-render</u></span> script written in the <a href="https://en.wikipedia.org/wiki/Python_(programming_language)#:~:text=Python%20is%20a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language.">Python programming language</a>.</p>
 <p><a href="https://quarto.org/docs/projects/scripts.html#pre-and-post-render">Pre- and post-render scripts</a> are set as <code>project</code> options in the <code>_quarto.yml</code> file in the root of your <a href="https://quarto.org/docs/projects/quarto-projects.html">Quarto project</a>. <a href="#exm-post" class="quarto-xref">Example&nbsp;11</a> shows the <code>date.py</code> post-render script and how this script is referenced in <code>_quarto.yml</code>.</p>
 <div id="exm-post" class="theorem example">
-<p><span class="theorem-title"><strong>Example 11 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 11</strong></span> &nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true"><code>_quarto.yml</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false"><code>date.py</code></a></li></ul>
 <div class="tab-content">
@@ -952,7 +953,7 @@ Figure&nbsp;3: Quarto publishing workflow
 <p>Quarto uses Pandoc to convert markdown files into target format(s) like <code>html</code> or <code>pdf</code>. If the source files contain executable code, Quarto executes the code via one of two computational engines: <a href="https://jupyter.org/#:~:text=Free%20software%2C%20open%20standards%2C%20and%20web%20services%20for%20interactive%20computing%20across%20all%20programming%20languages">Jupyter</a> or <a href="https://yihui.org/knitr/#:~:text=the%20knitr%20package%20was%20designed%20to%20be%20a%20transparent%20engine%20for%20dynamic%20report%20generation%20with%20R">Knitr</a>. <a href="#fig-render" class="quarto-xref">Figure&nbsp;4</a> shows the Quarto workflow.</p>
 <div class="cell" data-fig-width="9" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-render" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-render" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -961,7 +962,7 @@ Figure&nbsp;3: Quarto publishing workflow
 </pre>
 </div>
 </div>
-<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Quarto rendering workflow
 </figcaption>
 </figure>
@@ -972,7 +973,7 @@ Figure&nbsp;4: Quarto rendering workflow
 <p>Quarto controls Pandoc, Jupyter, and Knitr in two ways: 1) with arguments passed to the <a href="https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.">Quarto CLI</a> commands and 2) with <a href="https://yaml.org/">YAML</a> key-value pairs in <code>.qmd</code>, <code>.ipynb</code>, or <code>.yml</code> files.</p>
 <p><a href="#exm-filt" class="quarto-xref">Example&nbsp;12</a> shows how I set up every <code>qmd</code> file to generate the current date in millisecond UNIX time and designated <code>date.lua</code> as a Pandoc filter. Unlike post-render scripts, Pandoc filters are executed during the creation of the output files.</p>
 <div id="exm-filt" class="theorem example">
-<p><span class="theorem-title"><strong>Example 12 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Example 12</strong></span> &nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true"><code>*.qmd</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false"><code>date.lua</code></a></li></ul>
 <div class="tab-content">
@@ -1378,38 +1379,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -1418,8 +1409,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -2146,4 +2144,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/maptv/maptv.github.io/blob/main/blog/quarto/quarto.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>

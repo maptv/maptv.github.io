@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.489">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -97,6 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -115,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -333,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-solana column-page-right">
+<div class="quarto-about-solana content column-page-right">
   <div class="about-entity">
     <div class="entity-contents">
       <div class="about-contents"><main class="content column-page-right" id="quarto-document-content">
@@ -518,13 +519,7 @@ ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 
 <div class="ojs-auto-generated hidden">
 <script type="ojs-module-contents">
-{"contents":[
-  {"methodName":"interpret","inline":"true","source":"htl.html`<span>${styledDecoYear}+${styledDecoDate}</span>`", "cellName":"ojs-element-id-1"}
-,
-  {"methodName":"interpret","inline":"true","source":"htl.html`<span>${styledDecoTime}</span>`", "cellName":"ojs-element-id-2"}
-,
-  {"methodName":"interpret","inline":"true","source":"htl.html`<span>${styledTickTime}</span>`", "cellName":"ojs-element-id-3"}
-]}
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3R5bGVkRGVjb1llYXJ9KyR7c3R5bGVkRGVjb0RhdGV9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtzdHlsZWREZWNvVGltZX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZFRpY2tUaW1lfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMyJ9XX0=
 </script>
 </div>
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main></div>
@@ -535,7 +530,7 @@ ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 </div>
  <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"unix = {\n  while(true) {\n    yield Date.now();\n  }\n}\ntick = {\n  let i = 0;\n  while (true) {\n    yield Promises.tick(864, ++i);\n  }\n}\ntickTime = tick % 1e5\n// http://howardhinnant.github.io/date_algorithms.html#civil_from_days\nfunction dote2doty(days = 719468) {\n    const era = Math.floor((days >= 0 ? days : days - 146096) / 146097),\n        dotc = days - era * 146097,\n        yotc = Math.floor((dotc - Math.floor(dotc / 1460)\n        + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);\n    return [yotc + era * 400, dotc + Math.floor(yotc / 100)\n        - yotc * 365 - Math.floor(yotc / 4)];\n};\nfunction unix2doty(ms = 0) { return dote2doty(ms / 86400000 + 719468) };\nfunction doty2deco(year = 1969, doty = 306, zone = 0) {\n    const [date, time] = doty.toString().split(\".\")\n    return `${year}+${date.toString().padStart(3, \"0\")}.${\n    time.toString().slice(0, 5).padStart(5, \"0\")}`;\n};\nfunction unix2deco(ms = 0) { return doty2deco(...unix2doty(ms)) };\n// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor\nfunction setStyle(content, style = {}) {\n  function yiq(color) {\n    const {r, g, b} = d3.rgb(color);\n    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1\n  }\n  const {\n    background,\n    color = yiq(background) >= 0.6 ? \"#111\" : \"white\",\n    padding = \"0 1px\",\n    borderRadius = \"4px\",\n    fontWeight = 900,\n    fontSize = \"1em\",\n    ...rest\n  } = typeof style === \"string\" ? {background: style} : style;\n  return htl.html`<span style=${{\n    background,\n    color,\n    padding,\n    borderRadius,\n    fontWeight,\n    ...rest\n  }}>${content}</span>`;\n}\ndeco = unix2deco(unix).slice(0, 14)\ndecoYear = deco.slice(0, 4)\ndecoDate = deco.slice(5, 8)\ndecoTime = deco.slice(9, 14)\nstyledDecoYear = setStyle(decoYear, d3.schemePaired[10])\nstyledDecoDate = setStyle(decoDate, d3.schemePaired[1])\nstyledDecoTime = setStyle(decoTime, d3.schemePaired[2])\nstyledTickTime = setStyle(tickTime, d3.schemePaired[2])\n"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InVuaXggPSB7XG4gIHdoaWxlKHRydWUpIHtcbiAgICB5aWVsZCBEYXRlLm5vdygpO1xuICB9XG59XG50aWNrID0ge1xuICBsZXQgaSA9IDA7XG4gIHdoaWxlICh0cnVlKSB7XG4gICAgeWllbGQgUHJvbWlzZXMudGljayg4NjQsICsraSk7XG4gIH1cbn1cbnRpY2tUaW1lID0gdGljayAlIDFlNVxuLy8gaHR0cDovL2hvd2FyZGhpbm5hbnQuZ2l0aHViLmlvL2RhdGVfYWxnb3JpdGhtcy5odG1sI2NpdmlsX2Zyb21fZGF5c1xuZnVuY3Rpb24gZG90ZTJkb3R5KGRheXMgPSA3MTk0NjgpIHtcbiAgICBjb25zdCBlcmEgPSBNYXRoLmZsb29yKChkYXlzID49IDAgPyBkYXlzIDogZGF5cyAtIDE0NjA5NikgLyAxNDYwOTcpLFxuICAgICAgICBkb3RjID0gZGF5cyAtIGVyYSAqIDE0NjA5NyxcbiAgICAgICAgeW90YyA9IE1hdGguZmxvb3IoKGRvdGMgLSBNYXRoLmZsb29yKGRvdGMgLyAxNDYwKVxuICAgICAgICArIE1hdGguZmxvb3IoZG90YyAvIDM2NTI0KSAtIE1hdGguZmxvb3IoZG90YyAvIDE0NjA5NikpIC8gMzY1KTtcbiAgICByZXR1cm4gW3lvdGMgKyBlcmEgKiA0MDAsIGRvdGMgKyBNYXRoLmZsb29yKHlvdGMgLyAxMDApXG4gICAgICAgIC0geW90YyAqIDM2NSAtIE1hdGguZmxvb3IoeW90YyAvIDQpXTtcbn07XG5mdW5jdGlvbiB1bml4MmRvdHkobXMgPSAwKSB7IHJldHVybiBkb3RlMmRvdHkobXMgLyA4NjQwMDAwMCArIDcxOTQ2OCkgfTtcbmZ1bmN0aW9uIGRvdHkyZGVjbyh5ZWFyID0gMTk2OSwgZG90eSA9IDMwNiwgem9uZSA9IDApIHtcbiAgICBjb25zdCBbZGF0ZSwgdGltZV0gPSBkb3R5LnRvU3RyaW5nKCkuc3BsaXQoXCIuXCIpXG4gICAgcmV0dXJuIGAke3llYXJ9KyR7ZGF0ZS50b1N0cmluZygpLnBhZFN0YXJ0KDMsIFwiMFwiKX0uJHtcbiAgICB0aW1lLnRvU3RyaW5nKCkuc2xpY2UoMCwgNSkucGFkU3RhcnQoNSwgXCIwXCIpfWA7XG59O1xuZnVuY3Rpb24gdW5peDJkZWNvKG1zID0gMCkgeyByZXR1cm4gZG90eTJkZWNvKC4uLnVuaXgyZG90eShtcykpIH07XG4vLyBodHRwczovL29ic2VydmFibGVocS5jb20vQG9ic2VydmFibGVocS90ZXh0LWNvbG9yLWFubm90YXRpb25zLWluLW1hcmtkb3duI3RleHRjb2xvclxuZnVuY3Rpb24gc2V0U3R5bGUoY29udGVudCwgc3R5bGUgPSB7fSkge1xuICBmdW5jdGlvbiB5aXEoY29sb3IpIHtcbiAgICBjb25zdCB7ciwgZywgYn0gPSBkMy5yZ2IoY29sb3IpO1xuICAgIHJldHVybiAociAqIDI5OSArIGcgKiA1ODcgKyBiICogMTE0KSAvIDEwMDAgLyAyNTU7IC8vIHJldHVybnMgdmFsdWVzIGJldHdlZW4gMCBhbmQgMVxuICB9XG4gIGNvbnN0IHtcbiAgICBiYWNrZ3JvdW5kLFxuICAgIGNvbG9yID0geWlxKGJhY2tncm91bmQpID49IDAuNiA/IFwiIzExMVwiIDogXCJ3aGl0ZVwiLFxuICAgIHBhZGRpbmcgPSBcIjAgMXB4XCIsXG4gICAgYm9yZGVyUmFkaXVzID0gXCI0cHhcIixcbiAgICBmb250V2VpZ2h0ID0gOTAwLFxuICAgIGZvbnRTaXplID0gXCIxZW1cIixcbiAgICAuLi5yZXN0XG4gIH0gPSB0eXBlb2Ygc3R5bGUgPT09IFwic3RyaW5nXCIgPyB7YmFja2dyb3VuZDogc3R5bGV9IDogc3R5bGU7XG4gIHJldHVybiBodGwuaHRtbGA8c3BhbiBzdHlsZT0ke3tcbiAgICBiYWNrZ3JvdW5kLFxuICAgIGNvbG9yLFxuICAgIHBhZGRpbmcsXG4gICAgYm9yZGVyUmFkaXVzLFxuICAgIGZvbnRXZWlnaHQsXG4gICAgLi4ucmVzdFxuICB9fT4ke2NvbnRlbnR9PC9zcGFuPmA7XG59XG5kZWNvID0gdW5peDJkZWNvKHVuaXgpLnNsaWNlKDAsIDE0KVxuZGVjb1llYXIgPSBkZWNvLnNsaWNlKDAsIDQpXG5kZWNvRGF0ZSA9IGRlY28uc2xpY2UoNSwgOClcbmRlY29UaW1lID0gZGVjby5zbGljZSg5LCAxNClcbnN0eWxlZERlY29ZZWFyID0gc2V0U3R5bGUoZGVjb1llYXIsIGQzLnNjaGVtZVBhaXJlZFsxMF0pXG5zdHlsZWREZWNvRGF0ZSA9IHNldFN0eWxlKGRlY29EYXRlLCBkMy5zY2hlbWVQYWlyZWRbMV0pXG5zdHlsZWREZWNvVGltZSA9IHNldFN0eWxlKGRlY29UaW1lLCBkMy5zY2hlbWVQYWlyZWRbMl0pXG5zdHlsZWRUaWNrVGltZSA9IHNldFN0eWxlKHRpY2tUaW1lLCBkMy5zY2hlbWVQYWlyZWRbMl0pXG4ifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -810,38 +805,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -850,8 +835,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
