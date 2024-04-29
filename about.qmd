@@ -10,19 +10,18 @@ format:
     output-file: index.html
     grid:
       body-width: 1800px
+    back-to-top-navigation: false
 ---
 
 Greetings! My name is Martin Laptev. <img src="media/wave.gif" width="40px"/>
 
 I am a data scientist and software engineer with a broad scientific background that ranges from biochemistry to epidemiology. I use the JavaScript, Python, and R programming languages along with the UNIX shell to build digital deliverables like cloud[]{.bi .bi-cloud}infrastructure, data[]{.bi .bi-bar-chart-line}dashboards, and machine[]{.bi .bi-robot}learning models.
 
-You are currently on the About[]{.bi .bi-person-circle}page of my site. The arrow[](blog){.bi .bi-arrow-right-short}at the bottom right of this page and the pencil[](blog){.bi .bi-pencil}icon in the navigation bar (navbar) will take you to my [Blog](blog). Similarly, the other navbar icons lead to my [Curriculum Vitae (CV)](cv)[]{.bi .bi-file-earmark-person}, [GitHub](https://github.com/maptv)[]{.bi .bi-github}, and [LinkedIn](https://www.linkedin.com/in/maptv)[]{.bi .bi-linkedin}.
+You are currently on the About[]{.bi .bi-person-circle}page of my site. The arrow[](blog){.bi .bi-arrow-right-short}at the bottom right of this page and the pencil[](blog){.bi .bi-pencil}icon in the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) (navbar) will take you to my [Blog](blog). Similarly, the other navbar icons lead to my[]{.bi .bi-file-earmark-person}[Curriculum Vitae (CV)](cv),[]{.bi .bi-github}[GitHub](https://github.com/maptv), and[]{.bi .bi-linkedin}[LinkedIn](https://www.linkedin.com/in/maptv).
 
-The timestamp in the navbar shows the current `Dec` calendar (`Decalendar`) date[]{.bi .bi-calendar}(\${styledDecoYear}+\${styledDecoDate}) and `Dec` clock (`Declock`) time[]{.bi .bi-clock}(\${styledDecoTime}). `Dec` is a calendar and timekeeping system that I created.
+The [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) (\${styledDecoYear0}+\${styledDecoDate0}.\${styledDecoTime0}.\${styledTimeZone0}) in the navbar is based on Dec, a measurement system I created, which measures[]{.bi .bi-hourglass}time,[]{.bi .bi-geo}position,[]{.bi .bi-compass}orientation,[]{.bi .bi-arrow-clockwise}angles, and[]{.bi .bi-arrow-repeat}cycles in units called [turns](https://en.wikipedia.org/wiki/Turn_(angle)#:~:text=corresponds%20to%20one%20cycle%20(symbol%20cyc%20or%20c)%5B1%5D%20or%20to%20one%20revolution%20(symbol%20rev%20or%20r)). Dec timestamps show the [years]{.underline data-bs-toggle="tooltip" data-bs-title="Earth’s turns around the Sun"} since [Year 0](https://en.wikipedia.org/wiki/ISO_8601#:~:text=year%200000%20being%20equal%20to%201%20BC){.underline data-bs-toggle="tooltip" data-bs-title="1 BCE"} (\${styledDecoYear1}) and the [days]{.underline data-bs-toggle="tooltip" data-bs-title="Earth’s turns on its axis"} since [Day 0](https://howardhinnant.github.io/date_algorithms.html#civil_from_days:~:text=These%20algorithms%20internally%20assume%20that%20March%201%20is%20the%20first%20day%20of%20the%20year.){.underline data-bs-toggle="tooltip" data-bs-title="March 1"} (\${styledDecoDate1}.\${styledDecoTime1}), which provide both the date (\${styledDecoDate2}) and the time of day (\${styledDecoTime2}).
 
-Briefly, `Decalendar` dates (`year+day`) show the [years since 1 BC](https://en.wikipedia.org/wiki/ISO_8601#:~:text=year%200000%20being%20equal%20to%201%20BC) and the [days since March 1st](https://howardhinnant.github.io/date_algorithms.html#civil_from_days:~:text=These%20algorithms%20internally%20assume%20that%20March%201%20is%20the%20first%20day%20of%20the%20year.) separated by a plus sign (`+`). To see a [tooltip](https://en.wikipedia.org/wiki/Tooltip#:~:text=The%20tooltip%2C%20also%20known%20as%20infotip%20or%20hint%2C%20is%20a%20common%20graphical%20user%20interface%20(GUI)%20element%20in%20which%2C%20when%20hovering%20over%20a%20screen%20element%20or%20component%2C%20a%20text%20box%20displays%20information%20about%20that%20element) with the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=ISO%208601%20is%20an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data.) [calendar date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) equivalent of any underlined `Decalendar` date on my site, e.g. [`1969+306`]{.underline data-bs-toggle="tooltip" data-bs-title="1970-01-01"}, [hover](https://en.wikipedia.org/wiki/Cursor_(user_interface)#:~:text=The%20mouse%2Dover%20or%20hover%20gesture%20can%20also%20show%20a%20tooltip%2C%20which%20presents%20information%20about%20what%20the%20pointer%20is%20hovering%20over) your [pointer](https://en.wikipedia.org/wiki/Cursor_(user_interface)#:~:text=a%20pointer%20or%20mouse%20pointer%20(as%20part%20of%20a%20personal%20computer%20WIMP%20style%20of%20interaction)%5B10%5D%5B11%5D%5B12%5D%20is%20a%20symbol%20or%20graphical%20image%20on%20the%20computer%20monitor%20or%20other%20display%20device%20that%20echoes%20movements%20of%20the%20pointing%20device%2C%20commonly%20a%20mouse%2C%20touchpad%2C%20or%20stylus%20pen.) over the date or [tap](https://en.wikipedia.org/wiki/Tooltip#:~:text=a%20tooltip%20is%20displayed%20upon%20long%2Dpressing%E2%80%94i.e.%2C%20tapping%20and%20holding%E2%80%94an%20element.) the date on a touchscreen.
-
-While `Decalendar` dates count years and days, `Declock` times count [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=The%20time%20of%20day%20is%20sometimes%20represented%20as%20a%20decimal%20fraction%20of%20a%20day%20in%20science%20and%20computers.) since midnight. In addition to displaying the time of day, fractional days can also be used to measure durations, such as the time since this webpage was loaded: \${styledTickTime}.
+Optionally, timestamps can also include the [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%E2%80%93west%20position){.underline data-bs-toggle="tooltip" data-bs-title="Eastward turns on the Earth's surface"} from [Meridian 0](https://en.wikipedia.org/wiki/144th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole){.underline data-bs-toggle="tooltip" data-bs-title="144th meridian west"}, the [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20coordinate%20that%20specifies%20the%20north%E2%80%93south%20position){.underline data-bs-toggle="tooltip" data-bs-title="Northward turns on the Earth's surface"} from the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=a%20circle%20of%20latitude%20that%20divides%20a%20spheroid%2C%20such%20as%20Earth%2C%20into%20the%20Northern%20and%20Southern%20hemispheres), and the [azimuth](https://en.wikipedia.org/wiki/Cardinal_direction#Azimuth){.underline data-bs-toggle="tooltip" data-bs-title="Clockwise turns on a compass"} from [North](https://en.wikipedia.org/wiki/North#:~:text=North%20is%20one%20of%20the,adverb%20indicating%20direction%20or%20geography.). Importantly, the longitude (.\${styledTimeZone1}) rounded to the nearest [deciturn](https://en.wikipedia.org/wiki/Turn_(angle)#:~:text=metric%20prefixes%20can%20also%20be%20used%20as%20in%2C%20e.g.%2C%20centiturns%20(ctr)%2C%20milliturns%20(mtr)%2C%20etc.){.underline data-bs-toggle="tooltip" data-bs-title="a tenth of a turn"} is the Dec time zone (\${styledTimeZone2}) and can be added to the time of day (\${styledDecoTime3}.\${styledTimeZone3}), but not durations, e.g. the [centimilliturns](https://en.wikipedia.org/wiki/Turn_(angle)#:~:text=metric%20prefixes%20can%20also%20be%20used%20as%20in%2C%20e.g.%2C%20centiturns%20(ctr)%2C%20milliturns%20(mtr)%2C%20etc.){.underline data-bs-toggle="tooltip" data-bs-title="a hundredth thousandth of a turn"} since this webpage was loaded: \${styledTickTime}.
 
 ```{ojs}
 //| echo: false
@@ -39,21 +38,18 @@ tick = {
 }
 tickTime = tick % 1e5
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
-function dote2doty(days = 719468) {
-    const era = Math.floor((days >= 0 ? days : days - 146096) / 146097),
-        dotc = days - era * 146097,
-        yotc = Math.floor((dotc - Math.floor(dotc / 1460)
-        + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
-    return [yotc + era * 400, dotc + Math.floor(yotc / 100)
-        - yotc * 365 - Math.floor(yotc / 4)];
-};
-function unix2doty(ms = 0) { return dote2doty(ms / 86400000 + 719468) };
+function unix2dote(unix, zone) {
+  return [(unix ?? Date.now()) / 86400000 + 719467.6 + (zone = zone ?? 4 - Math.round((new Date).getTimezoneOffset() / 144)) / 10, zone]
+}
+function dote2doty(dote = 719468, zone = 0) {
+  const cykl = Math.floor((dote >= 0 ? dote : dote - 146096) / 146097), dotc = dote - cykl * 146097,
+        yotc = Math.floor((dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
+  return [yotc + cykl * 400, dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4), zone];
+}
 function doty2deco(year = 1969, doty = 306, zone = 0) {
-    const [date, time] = doty.toString().split(".")
-    return `${year}+${date.toString().padStart(3, "0")}.${
-    time.toString().slice(0, 5).padStart(5, "0")}`;
-};
-function unix2deco(ms = 0) { return doty2deco(...unix2doty(ms)) };
+  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1).slice(1, 7)}.${zone}`
+}
+deco = doty2deco(...dote2doty(...unix2dote(unix)))
 // https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor
 function setStyle(content, style = {}) {
   function yiq(color) {
@@ -78,14 +74,24 @@ function setStyle(content, style = {}) {
     ...rest
   }}>${content}</span>`;
 }
-deco = unix2deco(unix).slice(0, 14)
 decoYear = deco.slice(0, 4)
 decoDate = deco.slice(5, 8)
 decoTime = deco.slice(9, 14)
-styledDecoYear = setStyle(decoYear, d3.schemePaired[10])
-styledDecoDate = setStyle(decoDate, d3.schemePaired[1])
-styledDecoTime = setStyle(decoTime, d3.schemePaired[2])
-styledTickTime = setStyle(tickTime, d3.schemePaired[2])
+decoTimeZone = deco[15]
+styledDecoYear0 = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])
+styledDecoDate0 = setStyle(decoDate, d3.schemePaired[1])
+styledDecoDate1 = setStyle(decoDate, d3.schemePaired[1])
+styledDecoDate2 = setStyle(decoDate, d3.schemePaired[1])
+styledDecoTime0 = setStyle(decoTime, d3.schemePaired[2])
+styledDecoTime1 = setStyle(decoTime, d3.schemePaired[2])
+styledDecoTime2 = setStyle(decoTime, d3.schemePaired[2])
+styledDecoTime3 = setStyle(decoTime, d3.schemePaired[2])
+styledTimeZone0 = setStyle(decoTimeZone, d3.schemePaired[3])
+styledTimeZone1 = setStyle(decoTimeZone, d3.schemePaired[3])
+styledTimeZone2 = setStyle(decoTimeZone, d3.schemePaired[3])
+styledTimeZone3 = setStyle(decoTimeZone, d3.schemePaired[3])
+styledTickTime = setStyle(tickTime, d3.schemePastel2[0])
 ```
 
 ```{=html}
