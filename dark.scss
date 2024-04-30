@@ -20,6 +20,11 @@ $code-padding: 0px !default;
 
 .quarto-title-banner   { color: #ffffff !important; }
 
+
+div.contact > ul > li > a > img {
+  filter: invert(100%);
+}
+
 div.navbar-brand-container {
     color: #DEE2E6 !important;
 }
