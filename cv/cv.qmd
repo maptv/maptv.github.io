@@ -262,10 +262,11 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 ## Select Publications
 
 ::: {.pubs}
+- Potentiating [mAb] therapy by targeting complement C3 [...] on lymphoma cells [Submitted]{.cvdate}
 - [Recalibration of a deep learning model [...] to inform lung cancer screening intervals](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2802522) [2023]{.cvdate}
-- [SARS‐CoV‐2 genome‐based severity predictions correspond to [...] higher viral load](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9173902) [2022]{.cvdate}
-- [Linking genotype to phenotype [...] in SARS‐CoV‐2 [...]](https://virological.org/t/linking-genotype-to-phenotype-further-exploration-of-mutations-in-sars-cov-2-associated-with-mild-or-severe-outcomes/794) [2022]{.cvdate}
-- [Variants in SARS-CoV-2 associated with mild or severe outcome](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8385248) [2021]{.cvdate}
+- [[COVID] genome‐based severity predictions correspond to [...] higher viral load](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9173902) [2022]{.cvdate}
+- [Linking genotype to phenotype [...] in [COVID] [...]](https://virological.org/t/linking-genotype-to-phenotype-further-exploration-of-mutations-in-sars-cov-2-associated-with-mild-or-severe-outcomes/794) [2022]{.cvdate}
+- [Variants in [COVID] associated with mild or severe outcome](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8385248) [2021]{.cvdate}
 - [Using prediction models to reduce [...] disparities in [...] lung cancer screening [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8562965) [2021]{.cvdate}
 - [Pathogenic role of [BCR] signaling and canonical NF-κB activation in [MCL]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4937360) [2016]{.cvdate}
 - [Interactions between ibrutinib and anti‐CD20 antibodies [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4703510) [2016]{.cvdate}
