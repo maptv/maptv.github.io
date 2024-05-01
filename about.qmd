@@ -13,7 +13,7 @@ format:
     back-to-top-navigation: false
 ---
 
-Greetings! My name is Martin Laptev. <img src="media/wave.gif" width="40px"/>
+Greetings! My name is Martin Laptev. <img src="media/wave.gif" width="25px"/>
 
 I am a data scientist and software engineer with a broad scientific background that ranges from biochemistry to epidemiology. I use the JavaScript, Python, and R programming languages along with the UNIX shell to build digital deliverables such as cloud[]{.bi .bi-cloud}infrastructure, data[]{.bi .bi-bar-chart-line}dashboards, and machine[]{.bi .bi-robot}learning models.
 
