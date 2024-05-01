@@ -6,7 +6,7 @@ h1.title {
   text-align: center;
 }
 
-@media only screen and (min-width: 840px) {
+@media only screen and (min-width: 1110px) {
   .cvdate {
     float: right;
   }
@@ -14,14 +14,41 @@ h1.title {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+@media only screen and (min-width: 1275px) {
   div.langs > ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
+div.lang > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.lang > ul > li {
+  width: 32%
+}
+
+.horizontal > ul > li > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.horizontal > ul > li > ul > li{
+  width: 32%
+}
+
 .cvdate {
   font-style: italic;
+  float: right;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1em;
 }
 
 .italic {
@@ -32,9 +59,10 @@ div.contact > ul {
   display: flex;
   list-style: none;
   justify-content: space-between;
+  align-items: center;
 }
 
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 1110px) {
 div.contact > ul {
   flex-direction: column;
 }
