@@ -56,7 +56,7 @@ website:
         text: About
         href: about/index.qmd
       - icon: file-earmark-person
-        text: Résumé
+        text: CV/Résumé
         href: cv/index.qmd
       - icon: pencil
         section: Blog
