@@ -108,11 +108,50 @@ ul.task-list li input[type="checkbox"] {
 </i> 
 <span class="menu-text"></span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="../../blog"> <i class="bi bi-pencil" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-pencil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-pencil" role="img">
 </i> 
-<span class="menu-text"></span></a>
+ <span class="menu-text"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-pencil">    
+        <li>
+    <a class="dropdown-item" href="../../blog/git/index.html"><i class="bi bi-git" role="img">
+</i> 
+ <span class="dropdown-text">Git</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog/vscode/index.html"><i class="bi bi-code" role="img">
+</i> 
+ <span class="dropdown-text">VSCode</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog/jupyter/index.html"><i class="bi bi-journal-richtext" role="img">
+</i> 
+ <span class="dropdown-text">Jupyter</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog/quarto/index.html"><i class="bi bi-markdown" role="img">
+</i> 
+ <span class="dropdown-text">Quarto Markdown</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog/observable/index.html"><i class="bi bi-0-circle" role="img">
+</i> 
+ <span class="dropdown-text">Observable</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog/prob/index.html"><i class="bi bi-dice-5" role="img">
+</i> 
+ <span class="dropdown-text">Probablity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog/llm/index.html"><i class="bi bi-translate" role="img">
+</i> 
+ <span class="dropdown-text">Language Models</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
@@ -178,6 +217,7 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../blog/#category=tool" class="sidebar-item-text sidebar-link"><i class="bi bi-tools" role="img">
@@ -190,42 +230,42 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog/git/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../blog/git/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-git" role="img">
+</i> 
  <span class="menu-text">Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog/vscode/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../blog/vscode/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-code" role="img">
+</i> 
  <span class="menu-text">VSCode</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog/quarto/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../blog/observable/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Observable</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../blog/jupyter/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../blog/jupyter/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-journal-richtext" role="img">
+</i> 
  <span class="menu-text">Jupyter</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog/knitr/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Knitr</span></a>
+  <a href="../../blog/quarto/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-markdown" role="img">
+</i> 
+ <span class="menu-text">Quarto Markdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../blog/observable/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-0-circle" role="img">
+</i> 
+ <span class="menu-text">Observable</span></a>
   </div>
 </li>
       </ul>
   </li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../blog/#category=ml" class="sidebar-item-text sidebar-link"><i class="bi bi-robot" role="img">
@@ -238,14 +278,16 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog/prob/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probability</span></a>
+  <a href="../../blog/prob/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-dice-5" role="img">
+</i> 
+ <span class="menu-text">Probablity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog/llm/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LLM</span></a>
+  <a href="../../blog/llm/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-translate" role="img">
+</i> 
+ <span class="menu-text">Language Models</span></a>
   </div>
 </li>
       </ul>
