@@ -94,6 +94,7 @@ format:
       sidebar-width: 161px
       body-width: 1800px
       margin-width: 240px
+    css: styles.css
 execute:
   freeze: true
   cache: true
