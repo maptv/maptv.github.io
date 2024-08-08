@@ -2,6 +2,12 @@ project:
   type: website
   resources: .gitlab-ci.yml
 website:
+  search:
+    location: sidebar
+    type: overlay
+    keyboard-shortcut: ["/", "?", "h", "f", "s"]
+    copy-button: true
+    show-item-context: tree
   page-navigation: true
   site-url: https://maptv.github.io
   repo-url: https://github.com/maptv/maptv.github.io
