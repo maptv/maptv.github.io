@@ -17,7 +17,7 @@ website:
       - icon: house-door
         file: index.qmd
         text: Home
-      - icon: person-circle
+      - icon: info-circle
         file: about/index.qmd
         text: About
       - icon: pencil
