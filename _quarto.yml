@@ -1,49 +1,47 @@
 project:
   type: website
   resources: .gitlab-ci.yml
-  post-render: scripts/date.py
 website:
+  page-navigation: true
+  site-url: https://maptv.github.io
   repo-url: https://github.com/maptv/maptv.github.io
   repo-actions: [source]
   back-to-top-navigation: true
   reader-mode: true
-  page-navigation: true
-  favicon: media/dec.png
+  favicon: media/deidek.svg
   navbar:
     title: Martin Laptev
-    logo: media/dec.png
-    logo-alt: "10-point star made up of 100 triangles"
+    logo: media/deidek.svg
+    logo-alt: "Decagon made up of 100 triangles"
     right:
+      - icon: house-door
+        file: index.qmd
+        text: Home
       - icon: person-circle
-        file: about.qmd
+        file: about/index.qmd
         text: About
       - icon: pencil
-        file: blog/blog.qmd
+        file: blog/index.qmd
         text: Blog
       - icon: file-earmark-person
-        file: cv/cv.qmd
+        file: cv/index.qmd
         text: CV
       - icon: github
         href: https://github.com/maptv
+        target: _blank
       - icon: linkedin
         href: https://linkedin.com/in/maptv
+        target: _blank
       - icon: envelope
         href: mailto:maptv@engineer.com
-  twitter-card: true
-  site-url: https://maptv.github.io
   sidebar:
-    collapse-level: -1
-    search: true
-    sort: order
-    style: floating
-    title: none
+    collapse-level: 2
     contents:
       - text: About
-        file: about.qmd
+        href: about
       - section: Blog
-        file: blog/blog.qmd
+        href: blog
         contents:
-          - text: "---"
           - section: Tools
             href: blog/#category=tool
             contents:
@@ -53,30 +51,36 @@ website:
               - blog/observable/observable.qmd
               - blog/jupyter/jupyter.qmd
               - blog/knitr/knitr.qmd
-          - text: "---"
           - section: Machine Learning
             href: blog/#category=ml
             contents:
               - blog/prob/prob.qmd
               - blog/llm/llm.qmd
-      - section: Curriculum Vitae
-        file: cv/cv.qmd
-        contents:
-          - file: cv/pdf/pdf.qmd
-            text: "PDF"
+      - text: Curriculum Vitae
+        href: cv
       - text: GitHub
         href: https://github.com/maptv
       - text: LinkedIn
         href: https://linkedin.com/in/maptv
       - text: Mail
         href: mailto:maptv@engineer.com
+  twitter-card: true
+  page-footer:
+    background: light
+    left: © Copyright 2024, Martin Laptev
+    right:
+      - icon: github
+        href: https://www.github.com/maptv
+      - icon: linkedin
+        href: https://www.linkedin.com/in/maptv
 format:
   html:
     page-layout: full
+    mainfont: Lato
+    toc: true
     theme:
       light: [flatly, light.scss]
       dark: [darkly, dark.scss]
-    css: styles.css
     grid:
       sidebar-width: 150px
       body-width: 1800px

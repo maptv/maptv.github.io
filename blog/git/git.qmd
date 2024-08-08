@@ -1,5 +1,6 @@
 ---
 title: Git
+draft: true
 author:
   - name: Martin Laptev
     url: https://maptv.github.io

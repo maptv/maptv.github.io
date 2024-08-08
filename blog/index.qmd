@@ -15,7 +15,7 @@ listing:
   fields: [image, title, description, file-modified, categories]
 format:
   html:
-    output-file: index.html
+    repo-actions: false
     code-tools: false
     link-external-icon: false
 comments: false

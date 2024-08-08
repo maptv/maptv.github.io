@@ -12,11 +12,11 @@ css: cv.css
 ---
 
 ::: {.contact}
-- [![](https://icons.getbootstrap.com/assets/icons/telephone.svg)240-595-3460](tel:240-595-3460)
-- [![](https://icons.getbootstrap.com/assets/icons/envelope-at.svg)maptv@engineer.com](mailto:maptv@engineer.com)
-- [![](https://icons.getbootstrap.com/assets/icons/house.svg)maptv.github.io](https://maptv.github.io)
-- [![](https://icons.getbootstrap.com/assets/icons/github.svg)maptv](https://github.com/maptv)
-- [![](https://icons.getbootstrap.com/assets/icons/linkedin.svg)maptv](https://linkedin.com/in/maptv)
+- ![](https://icons.getbootstrap.com/assets/icons/telephone.svg){.phone} [240-595-3460](tel:240-595-3460)
+- ![](https://icons.getbootstrap.com/assets/icons/envelope-at.svg){.shiftup} [maptv@engineer.com](mailto:maptv@engineer.com)
+- ![](https://icons.getbootstrap.com/assets/icons/house.svg){.shiftup} [maptv.github.io](https://maptv.github.io)
+- ![](https://icons.getbootstrap.com/assets/icons/github.svg){.shiftup} [maptv](https://github.com/maptv)
+- ![](https://icons.getbootstrap.com/assets/icons/linkedin.svg){.linkedin} [maptv](https://linkedin.com/in/maptv)
 :::
 
 ## Mission
@@ -53,18 +53,6 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 ### [Vice President]{style="font-weight: 900;"}, [Data Community DC](https://www.datacommunitydc.org) [2022:]{.cvdate}
 
 - Leads a non‑profit organization that supports [eleven Meetup groups](https://www.datacommunitydc.org/meetups-overview)
-
-### [Freelance Consultant]{style="font-weight: 900;"}, Plan Forward [2024:]{.cvdate}
-
-::: {.horizontal}
-- Automates transformer model training and evaluation
-- Builds command-line interfaces
-- Creates dashboards for data and model exploration
-:::
-
-### [Freelance Consultant]{style="font-weight: 900;"}, CityDance [2023:]{.cvdate}
-
-- Deploys templates to parametrize student and teacher agreements
 
 ### [Adjunct Professor]{style="font-weight: 900;"}, Virginia Tech [2021:2024]{.cvdate}
 

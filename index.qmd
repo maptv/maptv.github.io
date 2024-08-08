@@ -1,0 +1,36 @@
+---
+image: images/martin.png
+toc: false
+format:
+  html:
+    repo-actions: false
+    grid:
+      body-width: 1800px
+    back-to-top-navigation: false
+about:
+  template: solana
+  image-shape: round
+  image-width: 16em
+---
+
+Greetings! <img src="media/wave.gif" width="25px"/>
+
+Welcome to my personal website, which I created using the [Quarto](https://quarto.org) publishing system. You are currently on the [Home](){.bi .bi-house-door} page of my site. You can use the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) above or the [sidebar](https://en.wikipedia.org/wiki/Sidebar_(computing)#:~:text=a%20graphical%20control%20element%20that%20displays%20various%20forms%20of%20information%20to%20the%20right%20or%20left%20side) on the left to go to the [About](about){.bi .bi-person-circle}, [Blog](blog){.bi .bi-pencil}, and [Curriculum Vitae (CV)](cv){.bi .bi-file-earmark-person} pages of my site or my profile pages on [GitHub](https://github.com/maptv){.bi .bi-github} and [LinkedIn](https://www.linkedin.com/in/maptv){.bi .bi-linkedin}.
+
+Have fun looking around!
+
+```{=html}
+<script src="scripts/time.js"></script>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+#quarto-sidebar { padding: 0px; overflow-x: hidden !important; }
+#quarto-sidebar > * { padding: 0px; }
+@media only screen and (max-width: 991px) { #quarto-search { display: none !important; } #quarto-sidebar { padding: 0px 9px 0px 9px !important; } }
+@media only screen and (max-width: 767px) { div.cell.page-columns.page-full { display: none !important; } }
+</style>
+```
