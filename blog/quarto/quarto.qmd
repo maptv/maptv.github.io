@@ -52,7 +52,7 @@ If you do not have such a repo, you can create one by following along with the [
 
 I strongly believe that everyone, regardless of their background and current technical skill level, can learn and benefit from Quarto. [Getting started with Quarto](https://quarto.org/docs/get-started/) is easy thanks to its [excellent documentation](https://quarto.org/docs/guide/) and vibrant community of enthusiastic users and developers.
 
-Rather than repeat the basic information already available elsewhere, I will share some advanced techniques along with the fundamental knowledge needed to understand how they work. The topics I cover are very technical, but my goal is to make the content on [my blog](../blog.qmd) as accessible as possible.
+Rather than repeat the basic information already available elsewhere, I will share some advanced techniques along with the fundamental knowledge needed to understand how they work. The topics I cover are very technical, but my goal is to make the content on [my blog](../index.qmd) as accessible as possible.
 
 The first topic I will delve into is creating and publishing a website with Quarto. To follow the Quarto documentation on [creating a website](https://quarto.org/docs/websites/), you will need [Visual Studio Code (VSCode)](https://code.visualstudio.com), [VSCodium](https://vscodium.com/#:~:text=VSCodium%20is%20a%20community%2Ddriven%2C%20freely%2Dlicensed%20binary%20distribution%20of%20Microsoft%E2%80%99s%20editor%20VS%20Code.), [RStudio](https://posit.co/download/rstudio-desktop), or a [terminal](https://en.wikipedia.org/wiki/Terminal_emulator).
 
