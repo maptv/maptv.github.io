@@ -48,18 +48,73 @@ div.lang > ul > li {
 }
 
 h3 {
-  font-size: 1em;
+  font-size: 1.3em;
+  margin: 8px 0px;
 }
 
-.italic {
-  font-style: italic;
+h5 {
+  font-size: 1.1em;
+  margin: 3px 3px;
+  font-weight: normal;
+}
+
+p, li {
+  text-align: justify !important;
+}
+
+@media print {
+  h5 {
+  margin-bottom: -10px;
+}
+  ul {
+  padding-left: 18px;
+}
+  h1.title {
+  margin-top: -18px;
+  }
+  p, li {
+    line-height: 1.2;
+  }
 }
 
 div.contact > ul {
   display: flex;
   list-style: none;
   justify-content: space-between;
-  align-items: center;
+}
+
+.phone {
+  width: 15px;
+  margin-bottom: 1.2px;
+}
+
+.linkedin {
+  width: 14px;
+}
+
+@media print {
+  .shiftup {
+  margin-bottom: -3.7px;
+  width: 14px;
+}
+.phone {
+  width: 13.2px;
+  margin-bottom: -2.6px;
+}
+.linkedin {
+  width: 12px;
+  margin-bottom: -2.7px;
+}
+}
+
+@media screen {
+main#quarto-document-content > div.contact > ul > li > a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1.5px;
+}
+ul {
+  padding-left: 24px;
+}
 }
 
 @media only screen and (max-width: 1110px) {
