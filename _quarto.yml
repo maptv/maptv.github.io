@@ -90,7 +90,7 @@ format:
     grid:
       sidebar-width: 161px
       body-width: 1800px
-      margin-width: 240px
+      margin-width: 161px
     css: styles.css
 execute:
   freeze: true

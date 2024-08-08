@@ -4,7 +4,7 @@ format:
   html:
     output-file: index.html
     toc: true
-    toc-depth: 2
+    toc-depth: 3
   pdf:
     pdf-engine: weasyprint
 css: cv.css
@@ -112,8 +112,8 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 ::: {.horizontal}
 - Co‑administered an academic program with over twenty faculty members
 - Taught three graduate data science courses:
-  - [Introduction to Python](https://github.com/biof309)
-  - [Introduction to Text Mining](https://github.com/biof395)
+  - [Python Programming](https://github.com/biof309)
+  - [Text Mining](https://github.com/biof395)
   - [Applied Machine Learning](https://biof509.github.io)
 - Taught graduate biotechnology workshops on various topics including:
   - [Pharmacometrics](https://education.faes.org/search/publicCourseSearchDetails.do?method=load&courseId=1059989)
