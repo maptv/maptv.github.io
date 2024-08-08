@@ -13,30 +13,6 @@ website:
     title: Martin Laptev
     logo: media/deidek.svg
     logo-alt: "Decagon made up of 100 triangles"
-    right:
-      - icon: pencil
-        menu:
-          - icon: git
-            text: Git
-            href: blog/git/git.qmd
-          - icon: code
-            text: VSCode
-            href: blog/vscode/vscode.qmd
-          - icon: journal-richtext
-            text: Jupyter
-            href: blog/jupyter/jupyter.qmd
-          - icon: markdown
-            text: Quarto Markdown
-            href: blog/quarto/quarto.qmd
-          - icon: 0-circle
-            text: Observable
-            href: blog/observable/observable.qmd
-          - icon: dice-5
-            text: Probablity
-            href: blog/prob/prob.qmd
-          - icon: translate
-            text: Language Models
-            href: blog/llm/llm.qmd
   sidebar:
     tools:
       - icon: github
