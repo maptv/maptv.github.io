@@ -18,29 +18,37 @@ website:
         href: .
       - icon: info-circle
         href: about
-      - icon: pencil
-        href: blog
       - icon: file-earmark-person
         href: cv
+      - icon: pencil
+        href: blog
+  sidebar:
+    tools:
       - icon: github
-        href: https://github.com/maptv
+        href: https://www.github.com/maptv
         target: _blank
       - icon: linkedin
-        href: https://linkedin.com/in/maptv
+        href: https://www.linkedin.com/in/maptv
         target: _blank
       - icon: envelope
         href: mailto:maptv@engineer.com
-  sidebar:
     collapse-level: 2
     contents:
-      - text: Home
+      - icon: house-door
+        text: Home
         href: index.qmd
-      - text: About
+      - icon: info-circle
+        text: About
         href: about/index.qmd
-      - section: Blog
+      - icon: file-earmark-person
+        text: Curriculum Vitae
+        href: cv/index.qmd
+      - icon: pencil
+        section: Blog
         href: blog/index.qmd
         contents:
           - section: Tools
+            icon: tools
             href: blog/#category=tool
             contents:
               - blog/git/git.qmd
@@ -50,27 +58,24 @@ website:
               - blog/jupyter/jupyter.qmd
               - blog/knitr/knitr.qmd
           - section: Machine Learning
+            icon: robot
             href: blog/#category=ml
             contents:
               - blog/prob/prob.qmd
               - blog/llm/llm.qmd
-      - text: Curriculum Vitae
-        href: cv/index.qmd
-      - text: GitHub
-        href: https://github.com/maptv
-      - text: LinkedIn
-        href: https://linkedin.com/in/maptv
-      - text: Mail
-        href: mailto:maptv@engineer.com
   twitter-card: true
   page-footer:
     background: light
     left: © Copyright 2024, Martin Laptev
     right:
       - icon: github
-        href: https://www.github.com/maptv
+        href: https://github.com/maptv
+        target: _blank
       - icon: linkedin
-        href: https://www.linkedin.com/in/maptv
+        href: https://linkedin.com/in/maptv
+        target: _blank
+      - icon: envelope
+        href: mailto:maptv@engineer.com
 format:
   html:
     page-layout: full
@@ -80,9 +85,9 @@ format:
       light: [flatly, light.scss]
       dark: [darkly, dark.scss]
     grid:
-      sidebar-width: 150px
+      sidebar-width: 161px
       body-width: 1800px
-      margin-width: 250px
+      margin-width: 240px
 execute:
   freeze: true
   cache: true
