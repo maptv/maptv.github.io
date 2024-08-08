@@ -2,7 +2,6 @@
 title: "Martin Skarzynski Laptev"
 format:
   html:
-    page-navigation: false
     output-file: index.html
     toc: true
     toc-depth: 2
