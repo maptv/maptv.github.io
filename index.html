@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title></title>
+<title>index</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./blog/index.html" rel="next">
-<link href="./media/dec.png" rel="icon" type="image/png">
+<link href="./media/deidek.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -103,49 +68,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://maptv.github.io/media/martin.png">
-<meta name="twitter:image-height" content="350">
-<meta name="twitter:image-width" content="350">
-<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -153,7 +80,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./media/dec.png" alt="10-point star made up of 100 triangles" class="navbar-logo">
+    <img src="./media/deidek.svg" alt="Decagon made up of 100 triangles" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Martin Laptev</span>
@@ -166,7 +93,12 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-person-circle" role="img">
+    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house-door" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about/index.html"> <i class="bi bi-info-circle" role="img">
 </i> 
 <span class="menu-text">About</span></a>
   </li>  
@@ -181,12 +113,12 @@ window.Quarto = {
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/maptv"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/maptv" target="_blank"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/maptv"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/maptv" target="_blank"> <i class="bi bi-linkedin" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -212,12 +144,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">About</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
@@ -225,29 +154,23 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./about" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./blog/index.html" class="sidebar-item-text sidebar-link">
+            <a href="./blog" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Blog</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="px-0"><hr class="sidebar-divider hi "></li>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./blog/#category=tool" class="sidebar-item-text sidebar-link">
@@ -295,7 +218,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-          <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./blog/#category=ml" class="sidebar-item-text sidebar-link">
@@ -321,23 +243,12 @@ window.Quarto = {
   </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./cv/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Curriculum Vitae</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cv/pdf/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PDF</span></a>
+  <a href="./cv" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curriculum Vitae</span></a>
   </div>
 </li>
-      </ul>
-  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/maptv" class="sidebar-item-text sidebar-link">
@@ -367,259 +278,9 @@ window.Quarto = {
   <div class="about-entity">
     <div class="entity-contents">
       <div class="about-contents"><main class="content column-page-right" id="quarto-document-content">
-<p>Greetings! My name is Martin Laptev. <img src="media/wave.gif" width="25px"></p>
-<p>I am a data scientist and software engineer with a broad scientific background that ranges from biochemistry to epidemiology. I use the JavaScript, Python, and R programming languages along with the UNIX shell to build digital deliverables such as cloud<span class="bi bi-cloud"></span>infrastructure, data<span class="bi bi-bar-chart-line"></span>dashboards, and machine<span class="bi bi-robot"></span>learning models.</p>
-<p>You are currently on the<span class="bi bi-person-circle"></span>About page of my site. The arrow<a href="blog" class="bi bi-arrow-right-short"></a>at the bottom right of this page and the pencil<a href="blog" class="bi bi-pencil"></a>icon in the <a href="https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information">navigation bar</a> (navbar) will take you to my <a href="blog">Blog</a>. Similarly, the other navbar icons lead to my<span class="bi bi-file-earmark-person"></span><a href="cv">Curriculum Vitae (CV)</a>,<span class="bi bi-github"></span><a href="https://github.com/maptv">GitHub</a>, and<span class="bi bi-linkedin"></span><a href="https://www.linkedin.com/in/maptv">LinkedIn</a>.</p>
-<p>The <a href="https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred">timestamp</a> <span>(<span id="ojs-element-id-1"></span>)</span> in the navbar is based on Dec, a measurement system I created. Dec timestamps are inspired by this equation: <span class="math inline">\(\texttt{y=\lfloor{y}\rfloor+}\frac{\texttt{d-z}}{\texttt{n}}\)</span>, where <span class="math inline">\(\texttt{y}\)</span> is <a href="https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=decimal%20years%20divide%20the%20year%20into%2010%C2%A0equal%20parts" class="underline" data-bs-toggle="tooltip" data-bs-title="Turns of the Earth around the Sun">decimal years</a> <span>(<span id="ojs-element-id-2"></span>),</span> <span class="math inline">\(\texttt{\lfloor{y}\rfloor}\)</span> is <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x">floored</a> years <span>(<span id="ojs-element-id-3"></span>),</span> <span class="math inline">\(\texttt{d}\)</span> is <a href="https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays" class="underline" data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth’s axis">decidays</a> <span>(<span id="ojs-element-id-4"></span>),</span> <span class="math inline">\(\texttt{z}\)</span> is the <a href="https://observablehq.com/@dec/lock" class="underline" data-bs-toggle="tooltip" data-bs-title="Floored deciturns of longitude">Dec time zone</a> <span>(<span id="ojs-element-id-5"></span>),</span> and <span class="math inline">\(\texttt{n}\)</span> is the total number of days in the year <span>(<span id="ojs-element-id-6"></span>).</span></p>
-<p>In addition to time, Dec also measures<span class="bi bi-globe"></span><a href="https://en.wikipedia.org/wiki/Geographic_coordinate_system">geographic</a> and<span class="bi bi-moon-stars"></span><a href="https://en.wikipedia.org/wiki/Celestial_coordinate_system">celestial</a> coordinates: <a href="https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%E2%80%93west%20position" class="underline" data-bs-toggle="tooltip" data-bs-title="Eastward turns from Meridian 0 (162nd meridian west) on the Earth's surface">longitude</a> , <a href="https://en.wikipedia.org/wiki/Latitude#:~:text=a%20coordinate%20that%20specifies%20the%20north%E2%80%93south%20position" class="underline" data-bs-toggle="tooltip" data-bs-title="Northward turns from Parallel 0 (the Equator) on the Earth's surface">latitude</a>, <a href="https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20of%20the%20object%20around%20the%20horizon" class="underline" data-bs-toggle="tooltip" data-bs-title="Eastward turns from Azimuth 0 (North) on the horizon">azimuth</a>, <a href="https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20between%20the%20object%20and%20the%20observer%27s%20local%20horizon" class="underline" data-bs-toggle="tooltip" data-bs-title="Upward turns from Altitude 0 (the horizon)">altitude</a>, etc. Importantly, Dec time zones are derived from floored <a href="https://observablehq.com/@dec/alc" class="underline" data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth's surface parallel to the Equator">decidays of longitude</a> (<span class="math inline">\(\texttt{z=\lfloor{λ}\rfloor}\)</span>) and can be appended to the time of day <span>(<span id="ojs-element-id-7"></span>),</span> but not to durations, e.g.&nbsp;the <a href="https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays%20and%20100%20centidays" class="underline" data-bs-toggle="tooltip" data-bs-title="Hundred thousands of a turn on the Earth's axis">centimillidays</a> since this webpage was loaded: <span><span id="ojs-element-id-8"></span>.</span></p>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="28" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 27;"><span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>unix <span class="op">=</span> {</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span>(<span class="kw">true</span>) {</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="kw">yield</span> <span class="bu">Date</span><span class="op">.</span><span class="fu">now</span>()<span class="op">;</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>tick <span class="op">=</span> {</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (<span class="kw">true</span>) {</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">yield</span> Promises<span class="op">.</span><span class="fu">tick</span>(<span class="dv">864</span><span class="op">,</span> <span class="op">++</span>i)<span class="op">;</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>tickTime <span class="op">=</span> tick <span class="op">%</span> <span class="fl">1e5</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co">// http://howardhinnant.github.io/date_algorithms.html#civil_from_days</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">unix2dote</span>(unix<span class="op">,</span> zone) {</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [(unix <span class="op">??</span> <span class="bu">Date</span><span class="op">.</span><span class="fu">now</span>()) <span class="op">/</span> <span class="dv">86400000</span> <span class="op">+</span> <span class="fl">719467.6</span> <span class="op">+</span> (zone <span class="op">=</span> zone <span class="op">??</span> <span class="dv">4</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>((<span class="kw">new</span> <span class="bu">Date</span>)<span class="op">.</span><span class="fu">getTimezoneOffset</span>() <span class="op">/</span> <span class="dv">144</span>)) <span class="op">/</span> <span class="dv">10</span><span class="op">,</span> zone]</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">dote2doty</span>(dote <span class="op">=</span> <span class="dv">719468</span><span class="op">,</span> zone <span class="op">=</span> <span class="dv">0</span>) {</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> cykl <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((dote <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> dote <span class="op">:</span> dote <span class="op">-</span> <span class="dv">146096</span>) <span class="op">/</span> <span class="dv">146097</span>)<span class="op">,</span> dotc <span class="op">=</span> dote <span class="op">-</span> cykl <span class="op">*</span> <span class="dv">146097</span><span class="op">,</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        yotc <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((dotc <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">1460</span>) <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">36524</span>) <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">146096</span>)) <span class="op">/</span> <span class="dv">365</span>)<span class="op">;</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [yotc <span class="op">+</span> cykl <span class="op">*</span> <span class="dv">400</span><span class="op">,</span> dotc <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">100</span>) <span class="op">-</span> yotc <span class="op">*</span> <span class="dv">365</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">4</span>)<span class="op">,</span> zone]<span class="op">;</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">doty2deco</span>(year <span class="op">=</span> <span class="dv">1969</span><span class="op">,</span> doty <span class="op">=</span> <span class="dv">306</span><span class="op">,</span> zone <span class="op">=</span> <span class="dv">0</span>) {</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="vs">`</span><span class="sc">${</span>year<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">4</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}</span><span class="vs">+</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(doty)<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">3</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}${</span><span class="bu">String</span>(doty <span class="op">%</span> <span class="dv">1</span> <span class="op">*</span> <span class="dv">10</span>)<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">6</span>)<span class="sc">}</span><span class="vs">-</span><span class="sc">${</span>zone<span class="sc">}</span><span class="vs">`</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>ydz <span class="op">=</span> <span class="fu">dote2doty</span>(<span class="op">...</span><span class="fu">unix2dote</span>(unix))</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>deco <span class="op">=</span> <span class="fu">doty2deco</span>(<span class="op">...</span>ydz)</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setStyle</span>(content<span class="op">,</span> style <span class="op">=</span> {}) {</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">yiq</span>(color) {</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> {r<span class="op">,</span> g<span class="op">,</span> b} <span class="op">=</span> d3<span class="op">.</span><span class="fu">rgb</span>(color)<span class="op">;</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (r <span class="op">*</span> <span class="dv">299</span> <span class="op">+</span> g <span class="op">*</span> <span class="dv">587</span> <span class="op">+</span> b <span class="op">*</span> <span class="dv">114</span>) <span class="op">/</span> <span class="dv">1000</span> <span class="op">/</span> <span class="dv">255</span><span class="op">;</span> <span class="co">// returns values between 0 and 1</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> {</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    background<span class="op">,</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="fu">yiq</span>(background) <span class="op">&gt;=</span> <span class="fl">0.6</span> <span class="op">?</span> <span class="st">"#111"</span> <span class="op">:</span> <span class="st">"white"</span><span class="op">,</span></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    padding <span class="op">=</span> <span class="st">"0 1px"</span><span class="op">,</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    borderRadius <span class="op">=</span> <span class="st">"4px"</span><span class="op">,</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    fontWeight <span class="op">=</span> <span class="dv">900</span><span class="op">,</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    fontSize <span class="op">=</span> <span class="st">"1em"</span><span class="op">,</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>rest</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  } <span class="op">=</span> <span class="kw">typeof</span> style <span class="op">===</span> <span class="st">"string"</span> <span class="op">?</span> {<span class="dt">background</span><span class="op">:</span> style} <span class="op">:</span> style<span class="op">;</span></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> htl<span class="op">.</span><span class="fu">html</span><span class="vs">`&lt;span style=</span><span class="sc">${</span>{</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    background<span class="op">,</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    color<span class="op">,</span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    padding<span class="op">,</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    borderRadius<span class="op">,</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    fontWeight<span class="op">,</span></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>rest</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>  }<span class="sc">}</span><span class="vs">&gt;</span><span class="sc">${</span>content<span class="sc">}</span><span class="vs">&lt;/span&gt;`</span><span class="op">;</span></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">year2bool</span>(year <span class="op">=</span> <span class="dv">1970</span>) {</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> year <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span> <span class="op">||</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>decoYear <span class="op">=</span> deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">4</span>)</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>decoDate <span class="op">=</span> deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">5</span><span class="op">,</span> <span class="dv">8</span>)</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>decoTime <span class="op">=</span> deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">8</span><span class="op">,</span> <span class="dv">14</span>)</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>decoTimeZone <span class="op">=</span> deco[<span class="dv">15</span>]</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>nDaysInYear <span class="op">=</span> <span class="dv">365</span> <span class="op">+</span> <span class="fu">year2bool</span>(ydz[<span class="dv">0</span>] <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>fracYear <span class="op">=</span> (ydz[<span class="dv">0</span>] <span class="op">+</span> (ydz[<span class="dv">1</span>] <span class="op">-</span> ydz[<span class="dv">2</span>]) <span class="op">/</span> nDaysInYear)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">8</span>)</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>styledDecoYear0 <span class="op">=</span> <span class="fu">setStyle</span>(decoYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>styledDecoYear1 <span class="op">=</span> <span class="fu">setStyle</span>(decoYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>styledFracYear <span class="op">=</span> <span class="fu">setStyle</span>(fracYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>styledDecoDate0 <span class="op">=</span> <span class="fu">setStyle</span>(decoDate<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>styledDecoDate1 <span class="op">=</span> <span class="fu">setStyle</span>(decoDate<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>styledNdays <span class="op">=</span> <span class="fu">setStyle</span>(nDaysInYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>styledDecoTime0 <span class="op">=</span> <span class="fu">setStyle</span>(decoTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>styledDecoTime1 <span class="op">=</span> <span class="fu">setStyle</span>(decoTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>styledDecoTime2 <span class="op">=</span> <span class="fu">setStyle</span>(decoTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>styledTimeZone0 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>styledTimeZone1 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>styledTimeZone2 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>styledTickTime <span class="op">=</span> <span class="fu">setStyle</span>(tickTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePastel2</span>[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-3" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-4" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-5" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-6" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-7" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-8" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-9" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-10" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-11" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-12" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-13" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-14" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-15" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-16" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-17" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-18" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-19" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-20" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-21" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-22" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-23" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-24" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-25" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-26" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-27" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-28" data-nodetype="declaration">
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-29" data-nodetype="declaration">
-</div>
-</div>
-</div>
-</div>
+<p>Greetings! <img src="media/wave.gif" width="25px"></p>
+<p>Welcome to my personal website, which I created using the <a href="https://quarto.org">Quarto</a> publishing system. You are currently on the <a href="" class="bi bi-house-door">Home</a> page of my site. You can use the <a href="https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information">navigation bar</a> above or the <a href="https://en.wikipedia.org/wiki/Sidebar_(computing)#:~:text=a%20graphical%20control%20element%20that%20displays%20various%20forms%20of%20information%20to%20the%20right%20or%20left%20side">sidebar</a> on the left to go to the <a href="about" class="bi bi-info-circle">About</a>, <a href="blog" class="bi bi-pencil">Blog</a>, and <a href="cv" class="bi bi-file-earmark-person">Curriculum Vitae (CV)</a> pages of my site or my profile pages on <a href="https://github.com/maptv" class="bi bi-github">GitHub</a> and <a href="https://www.linkedin.com/in/maptv" class="bi bi-linkedin">LinkedIn</a>.</p>
+<p>Have fun looking around!</p>
 <script src="scripts/time.js"></script>
 <script>
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -635,29 +296,13 @@ ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 </style>
 
 
-<div class="ojs-auto-generated hidden">
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3R5bGVkRGVjb1llYXIwfSske3N0eWxlZERlY29EYXRlMH0ke3N0eWxlZERlY29UaW1lMH0tJHtzdHlsZWRUaW1lWm9uZTB9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtzdHlsZWRGcmFjWWVhcn08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZERlY29ZZWFyMX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTMifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZERlY29EYXRlMX0ke3N0eWxlZERlY29UaW1lMX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTQifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZFRpbWVab25lMX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTUifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZE5kYXlzfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3R5bGVkRGVjb1RpbWUyfS0ke3N0eWxlZFRpbWVab25lMn08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTcifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZFRpY2tUaW1lfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtOCJ9XX0=
-</script>
-</div>
 </main></div>
     </div>
-    <img src="media/martin.png" class="about-image
-  round " style="height: 20em; width: 20em;">
+    <img src="images/martin.png" class="about-image
+  round " style="height: 16em; width: 16em;">
   </div>
 </div>
  <!-- /main -->
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InVuaXggPSB7XG4gIHdoaWxlKHRydWUpIHtcbiAgICB5aWVsZCBEYXRlLm5vdygpO1xuICB9XG59XG50aWNrID0ge1xuICBsZXQgaSA9IDA7XG4gIHdoaWxlICh0cnVlKSB7XG4gICAgeWllbGQgUHJvbWlzZXMudGljayg4NjQsICsraSk7XG4gIH1cbn1cbnRpY2tUaW1lID0gdGljayAlIDFlNVxuLy8gaHR0cDovL2hvd2FyZGhpbm5hbnQuZ2l0aHViLmlvL2RhdGVfYWxnb3JpdGhtcy5odG1sI2NpdmlsX2Zyb21fZGF5c1xuZnVuY3Rpb24gdW5peDJkb3RlKHVuaXgsIHpvbmUpIHtcbiAgcmV0dXJuIFsodW5peCA/PyBEYXRlLm5vdygpKSAvIDg2NDAwMDAwICsgNzE5NDY3LjYgKyAoem9uZSA9IHpvbmUgPz8gNCAtIE1hdGgucm91bmQoKG5ldyBEYXRlKS5nZXRUaW1lem9uZU9mZnNldCgpIC8gMTQ0KSkgLyAxMCwgem9uZV1cbn1cbmZ1bmN0aW9uIGRvdGUyZG90eShkb3RlID0gNzE5NDY4LCB6b25lID0gMCkge1xuICBjb25zdCBjeWtsID0gTWF0aC5mbG9vcigoZG90ZSA+PSAwID8gZG90ZSA6IGRvdGUgLSAxNDYwOTYpIC8gMTQ2MDk3KSwgZG90YyA9IGRvdGUgLSBjeWtsICogMTQ2MDk3LFxuICAgICAgICB5b3RjID0gTWF0aC5mbG9vcigoZG90YyAtIE1hdGguZmxvb3IoZG90YyAvIDE0NjApICsgTWF0aC5mbG9vcihkb3RjIC8gMzY1MjQpIC0gTWF0aC5mbG9vcihkb3RjIC8gMTQ2MDk2KSkgLyAzNjUpO1xuICByZXR1cm4gW3lvdGMgKyBjeWtsICogNDAwLCBkb3RjICsgTWF0aC5mbG9vcih5b3RjIC8gMTAwKSAtIHlvdGMgKiAzNjUgLSBNYXRoLmZsb29yKHlvdGMgLyA0KSwgem9uZV07XG59XG5mdW5jdGlvbiBkb3R5MmRlY28oeWVhciA9IDE5NjksIGRvdHkgPSAzMDYsIHpvbmUgPSAwKSB7XG4gIHJldHVybiBgJHt5ZWFyLnRvU3RyaW5nKCkucGFkU3RhcnQoNCwgXCIwXCIpfSske01hdGguZmxvb3IoZG90eSkudG9TdHJpbmcoKS5wYWRTdGFydCgzLCBcIjBcIil9JHtTdHJpbmcoZG90eSAlIDEgKiAxMCkuc2xpY2UoMCwgNil9LSR7em9uZX1gXG59XG55ZHogPSBkb3RlMmRvdHkoLi4udW5peDJkb3RlKHVuaXgpKVxuZGVjbyA9IGRvdHkyZGVjbyguLi55ZHopXG4vLyBodHRwczovL29ic2VydmFibGVocS5jb20vQG9ic2VydmFibGVocS90ZXh0LWNvbG9yLWFubm90YXRpb25zLWluLW1hcmtkb3duI3RleHRjb2xvclxuZnVuY3Rpb24gc2V0U3R5bGUoY29udGVudCwgc3R5bGUgPSB7fSkge1xuICBmdW5jdGlvbiB5aXEoY29sb3IpIHtcbiAgICBjb25zdCB7ciwgZywgYn0gPSBkMy5yZ2IoY29sb3IpO1xuICAgIHJldHVybiAociAqIDI5OSArIGcgKiA1ODcgKyBiICogMTE0KSAvIDEwMDAgLyAyNTU7IC8vIHJldHVybnMgdmFsdWVzIGJldHdlZW4gMCBhbmQgMVxuICB9XG4gIGNvbnN0IHtcbiAgICBiYWNrZ3JvdW5kLFxuICAgIGNvbG9yID0geWlxKGJhY2tncm91bmQpID49IDAuNiA/IFwiIzExMVwiIDogXCJ3aGl0ZVwiLFxuICAgIHBhZGRpbmcgPSBcIjAgMXB4XCIsXG4gICAgYm9yZGVyUmFkaXVzID0gXCI0cHhcIixcbiAgICBmb250V2VpZ2h0ID0gOTAwLFxuICAgIGZvbnRTaXplID0gXCIxZW1cIixcbiAgICAuLi5yZXN0XG4gIH0gPSB0eXBlb2Ygc3R5bGUgPT09IFwic3RyaW5nXCIgPyB7YmFja2dyb3VuZDogc3R5bGV9IDogc3R5bGU7XG4gIHJldHVybiBodGwuaHRtbGA8c3BhbiBzdHlsZT0ke3tcbiAgICBiYWNrZ3JvdW5kLFxuICAgIGNvbG9yLFxuICAgIHBhZGRpbmcsXG4gICAgYm9yZGVyUmFkaXVzLFxuICAgIGZvbnRXZWlnaHQsXG4gICAgLi4ucmVzdFxuICB9fT4ke2NvbnRlbnR9PC9zcGFuPmA7XG59XG5mdW5jdGlvbiB5ZWFyMmJvb2woeWVhciA9IDE5NzApIHtcbiAgICByZXR1cm4geWVhciAlIDQgPT0gMCAmJiB5ZWFyICUgMTAwICE9IDAgfHwgeWVhciAlIDQwMCA9PSAwO1xufVxuZGVjb1llYXIgPSBkZWNvLnNsaWNlKDAsIDQpXG5kZWNvRGF0ZSA9IGRlY28uc2xpY2UoNSwgOClcbmRlY29UaW1lID0gZGVjby5zbGljZSg4LCAxNClcbmRlY29UaW1lWm9uZSA9IGRlY29bMTVdXG5uRGF5c0luWWVhciA9IDM2NSArIHllYXIyYm9vbCh5ZHpbMF0gKyAxKVxuZnJhY1llYXIgPSAoeWR6WzBdICsgKHlkelsxXSAtIHlkelsyXSkgLyBuRGF5c0luWWVhcikudG9GaXhlZCg4KVxuc3R5bGVkRGVjb1llYXIwID0gc2V0U3R5bGUoZGVjb1llYXIsIGQzLnNjaGVtZVBhaXJlZFsxMF0pXG5zdHlsZWREZWNvWWVhcjEgPSBzZXRTdHlsZShkZWNvWWVhciwgZDMuc2NoZW1lUGFpcmVkWzEwXSlcbnN0eWxlZEZyYWNZZWFyID0gc2V0U3R5bGUoZnJhY1llYXIsIGQzLnNjaGVtZVBhaXJlZFsxMF0pXG5zdHlsZWREZWNvRGF0ZTAgPSBzZXRTdHlsZShkZWNvRGF0ZSwgZDMuc2NoZW1lUGFpcmVkWzFdKVxuc3R5bGVkRGVjb0RhdGUxID0gc2V0U3R5bGUoZGVjb0RhdGUsIGQzLnNjaGVtZVBhaXJlZFsxXSlcbnN0eWxlZE5kYXlzID0gc2V0U3R5bGUobkRheXNJblllYXIsIGQzLnNjaGVtZVBhaXJlZFsxXSlcbnN0eWxlZERlY29UaW1lMCA9IHNldFN0eWxlKGRlY29UaW1lLCBkMy5zY2hlbWVQYWlyZWRbMl0pXG5zdHlsZWREZWNvVGltZTEgPSBzZXRTdHlsZShkZWNvVGltZSwgZDMuc2NoZW1lUGFpcmVkWzJdKVxuc3R5bGVkRGVjb1RpbWUyID0gc2V0U3R5bGUoZGVjb1RpbWUsIGQzLnNjaGVtZVBhaXJlZFsyXSlcbnN0eWxlZFRpbWVab25lMCA9IHNldFN0eWxlKGRlY29UaW1lWm9uZSwgZDMuc2NoZW1lUGFpcmVkWzNdKVxuc3R5bGVkVGltZVpvbmUxID0gc2V0U3R5bGUoZGVjb1RpbWVab25lLCBkMy5zY2hlbWVQYWlyZWRbM10pXG5zdHlsZWRUaW1lWm9uZTIgPSBzZXRTdHlsZShkZWNvVGltZVpvbmUsIGQzLnNjaGVtZVBhaXJlZFszXSlcbnN0eWxlZFRpY2tUaW1lID0gc2V0U3R5bGUodGlja1RpbWUsIGQzLnNjaGVtZVBhc3RlbDJbMF0pXG4ifV19
-</script>
-<script type="module">
-if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../..";
-window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "";
-window._ojs.selfContained = false;
-window._ojs.runtime.interpretFromScriptTags();
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1204,18 +849,35 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-page-right">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./blog/index.html" class="pagination-link" aria-label="Blog">
-        <span class="nav-page-text">Blog</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2024, Martin Laptev</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.github.com/maptv">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/maptv">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/maptv/maptv.github.io/blob/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>
+</body></html>
