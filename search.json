@@ -4,77 +4,110 @@
     "href": "cv/index.html",
     "title": "Martin Skarzynski Laptev",
     "section": "",
-    "text": "240-595-3460\n maptv@engineer.com\n maptv.github.io\n maptv\n maptv"
+    "text": "240-595-3460\n maptv@engineer.com\n maptv.github.io\n maptv\n maptv",
+    "crumbs": [
+      "Curriculum Vitae"
+    ]
   },
   {
     "objectID": "cv/index.html#mission",
     "href": "cv/index.html#mission",
     "title": "Martin Skarzynski Laptev",
     "section": "Mission",
-    "text": "Mission\nMy goal is to lead the next generation of scientists and engineers in building solutions that integrate substantive expertise from diverse fields with machine intelligence. Through my work, I strive to promote open source software, such as the Quarto publishing system, which I use to build dashboards, presentations, reports, websites, and other digital deliverables. Overall, I aim to leverage my broad scientific background and technical expertise to help transform the promises of science and technology into a better future for all of humanity."
+    "text": "Mission\nMy goal is to lead the next generation of scientists and engineers in building solutions that integrate substantive expertise from diverse fields with machine intelligence. Through my work, I strive to promote open source software, such as the Quarto publishing system, which I use to build dashboards, presentations, reports, websites, and other digital deliverables. Overall, I aim to leverage my broad scientific background and technical expertise to help transform the promises of science and technology into a better future for all of humanity.",
+    "crumbs": [
+      "Curriculum Vitae"
+    ]
   },
   {
     "objectID": "cv/index.html#recent-experience",
     "href": "cv/index.html#recent-experience",
     "title": "Martin Skarzynski Laptev",
     "section": "Recent Experience",
-    "text": "Recent Experience\n\nLead Instructor, General Assembly 2019:\n\n\nTeaches open-enrollment and enterprise courses such as:\n\nReact Development\nData Analytics\nData Science\nPython Programming\nWeb Development\n\n\n\n\n\nLead Instructor, Data Society 2019:\n\n\nProvides enterprise clients with training in:\n\nMachine Learning\nDevOps & MLOps\nPython & R Programming\nGenerative AI\nGraph Analytics\nText Analysis & NLP\n\n\n\n\n\nVice President, Data Community DC 2022:\n\nLeads a non‑profit organization that supports eleven Meetup groups\n\n\n\nAdjunct Professor, Virginia Tech 2021:2024\n\n\nTaught two graduate courses for the Computer Science and Statistics Departments:\n\nMachine Learning\nData Analytics\n\n\n\n\n\nSenior Domain Lead, Amazon Web Services 2022:2024\n\n\nProvided customers with scientific and technical expertise in:\n\nComputer Vision\nData Architecture\nData Visualization\nGenomics\nMachine Learning\nReal World Evidence\n\nBuilt Artificial Intelligence (AI) solutions and Machine Learning Operations (MLOps) systems using:\n\nAmazon SageMaker\nAWS Developer Tools\nAWS Lambda\nAmazon EventBridge\nAWS CloudFormation\nAWS IAM\nAmazon EMR\nAWS Databases\nAWS Service Catalog\n\nObtained 3 AWS certification\n\nSolutions Architect Associate\nCloud Practitioner\nPractical Data Science\n\n\n\n\n\nAI Engineering Manager, Booz Allen Hamilton 2019:2023\n\nLed a team of data scientists and software developers working on a cyber intelligence application\nSpearheaded interdisciplinary COVID‑19 visualization, genomics, and statistical modeling efforts\nObtained the Microsoft Azure Data Scientist Associate certification\n\n\n\nBiomedical Scientist, National Institutes of Health 2009:2022\n\n\nIntegrated clinical, laboratory, epidemiologic, genomic, and medical imaging data\nCombined deep learning and statistical inference using stacked ensembles\nConducted genomic analysis of immune and cancer cells\nDeveloped and tested pharmaceutical and immunotherapeutic agents\nQuantified cancer cell signaling pathways\nMentored trainees from various NIH training programs including:\n\nSIP\nMRSP\nHiSTEP\n\n\n\n\n\nBioinformatics and Data Science Co-Chair, FAES 2014:2021\n\n\nCo‑administered an academic program with over twenty faculty members\nTaught three graduate data science courses:\n\nIntroduction to Python\nIntroduction to Text Mining\nApplied Machine Learning\n\nTaught graduate biotechnology workshops on various topics including:\n\nPharmacometrics\nCellular Immunology\nFlow Cytometry\n\n\n\n\n\nAdjunct Professor, George Washington University 2015:2016\n\n\nTaught two undergraduate courses for the Women’s Leadership Program:\n\nBiology of Organisms\nWomen and Leadership"
+    "text": "Recent Experience\n\nLead Instructor, General Assembly 2019:\n\n\nTeaches open-enrollment and enterprise courses such as:\n\nReact Development\nData Analytics\nData Science\nPython Programming\nWeb Development\n\n\n\n\n\nLead Instructor, Data Society 2019:\n\n\nProvides enterprise clients with training in:\n\nMachine Learning\nDevOps & MLOps\nPython & R Programming\nGenerative AI\nGraph Analytics\nText Analysis & NLP\n\n\n\n\n\nVice President, Data Community DC 2022:\n\nLeads a non‑profit organization that supports eleven Meetup groups\n\n\n\nAdjunct Professor, Virginia Tech 2021:2024\n\n\nTaught two graduate courses for the Computer Science and Statistics Departments:\n\nMachine Learning\nData Analytics\n\n\n\n\n\nSenior Domain Lead, Amazon Web Services 2022:2024\n\n\nProvided customers with scientific and technical expertise in:\n\nComputer Vision\nData Architecture\nData Visualization\nGenomics\nMachine Learning\nReal World Evidence\n\nBuilt Artificial Intelligence (AI) solutions and Machine Learning Operations (MLOps) systems using:\n\nAmazon SageMaker\nAWS Developer Tools\nAWS Lambda\nAmazon EventBridge\nAWS CloudFormation\nAWS IAM\nAmazon EMR\nAWS Databases\nAWS Service Catalog\n\nObtained 3 AWS certification\n\nSolutions Architect Associate\nCloud Practitioner\nPractical Data Science\n\n\n\n\n\nAI Engineering Manager, Booz Allen Hamilton 2019:2023\n\nLed a team of data scientists and software developers working on a cyber intelligence application\nSpearheaded interdisciplinary COVID‑19 visualization, genomics, and statistical modeling efforts\nObtained the Microsoft Azure Data Scientist Associate certification\n\n\n\nBiomedical Scientist, National Institutes of Health 2009:2022\n\n\nIntegrated clinical, laboratory, epidemiologic, genomic, and medical imaging data\nCombined deep learning and statistical inference using stacked ensembles\nConducted genomic analysis of immune and cancer cells\nDeveloped and tested pharmaceutical and immunotherapeutic agents\nQuantified cancer cell signaling pathways\nMentored trainees from various NIH training programs including:\n\nSIP\nMRSP\nHiSTEP\n\n\n\n\n\nBioinformatics and Data Science Co-Chair, FAES 2014:2021\n\n\nCo‑administered an academic program with over twenty faculty members\nTaught three graduate data science courses:\n\nIntroduction to Python\nIntroduction to Text Mining\nApplied Machine Learning\n\nTaught graduate biotechnology workshops on various topics including:\n\nPharmacometrics\nCellular Immunology\nFlow Cytometry\n\n\n\n\n\nAdjunct Professor, George Washington University 2015:2016\n\n\nTaught two undergraduate courses for the Women’s Leadership Program:\n\nBiology of Organisms\nWomen and Leadership",
+    "crumbs": [
+      "Curriculum Vitae"
+    ]
   },
   {
     "objectID": "cv/index.html#education",
     "href": "cv/index.html#education",
     "title": "Martin Skarzynski Laptev",
     "section": "Education",
-    "text": "Education\n\nMPH, Epidemiology and Biostatistics, Johns Hopkins University 2018\nPhD, Tumor Biology, Georgetown University 2015\nMS, Biotechnology, Jagiellonian University 2009\nBA, Biology, St. Mary’s College of Maryland 2007"
+    "text": "Education\n\nMPH, Epidemiology and Biostatistics, Johns Hopkins University 2018\nPhD, Tumor Biology, Georgetown University 2015\nMS, Biotechnology, Jagiellonian University 2009\nBA, Biology, St. Mary’s College of Maryland 2007",
+    "crumbs": [
+      "Curriculum Vitae"
+    ]
   },
   {
     "objectID": "cv/index.html#skills",
     "href": "cv/index.html#skills",
     "title": "Martin Skarzynski Laptev",
     "section": "Skills",
-    "text": "Skills"
+    "text": "Skills",
+    "crumbs": [
+      "Curriculum Vitae"
+    ]
   },
   {
     "objectID": "cv/index.html#select-publications",
     "href": "cv/index.html#select-publications",
     "title": "Martin Skarzynski Laptev",
     "section": "Select Publications",
-    "text": "Select Publications\n\n\nPotentiating [mAb] therapy by targeting complement C3 […] on lymphoma cells Submitted\nRecalibration of a deep learning model […] to inform lung cancer screening intervals 2023\n[COVID] genome‐based severity predictions correspond to […] higher viral load 2022\nLinking genotype to phenotype […] in [COVID] […] 2022\nVariants in [COVID] associated with mild or severe outcome 2021\nUsing prediction models to reduce […] disparities in […] lung cancer screening […] 2021\nPathogenic role of [BCR] signaling and canonical NF-κB activation in [MCL] 2016\nInteractions between ibrutinib and anti‐CD20 antibodies […] 2016\nHealth disparities in the immunoprevention of [HPV] […] associated malignancies 2015\nDesigning the furin‐cleavable linker in recombinant immunotoxins […] 2015\nHarnessing the Fcμ receptor for […] therapy of [CLL] 2014"
+    "text": "Select Publications\n\n\nPotentiating [mAb] therapy by targeting complement C3 […] on lymphoma cells Submitted\nRecalibration of a deep learning model […] to inform lung cancer screening intervals 2023\n[COVID] genome‐based severity predictions correspond to […] higher viral load 2022\nLinking genotype to phenotype […] in [COVID] […] 2022\nVariants in [COVID] associated with mild or severe outcome 2021\nUsing prediction models to reduce […] disparities in […] lung cancer screening […] 2021\nPathogenic role of [BCR] signaling and canonical NF-κB activation in [MCL] 2016\nInteractions between ibrutinib and anti‐CD20 antibodies […] 2016\nHealth disparities in the immunoprevention of [HPV] […] associated malignancies 2015\nDesigning the furin‐cleavable linker in recombinant immunotoxins […] 2015\nHarnessing the Fcμ receptor for […] therapy of [CLL] 2014",
+    "crumbs": [
+      "Curriculum Vitae"
+    ]
   },
   {
     "objectID": "cv/index.html#select-awards",
     "href": "cv/index.html#select-awards",
     "title": "Martin Skarzynski Laptev",
     "section": "Select Awards",
-    "text": "Select Awards\n\n\nCommunity Contribution of the Year Category Finalist, AWS Builder Awards 2023\nArtificial Intelligence Solutions Architect Award, BAH Emergent Skills Program 2022\nFellowship Research Award, Cancer Prevention Fellowship Program 2019\nFellows Award for Research Excellence, National Institutes of Health 2015\nOrloff Science Award, National Heart, Lung, Blood Institute 2014\nDirector’s Science Award, National Heart, Lung, Blood Institute 2014"
+    "text": "Select Awards\n\n\nCommunity Contribution of the Year Category Finalist, AWS Builder Awards 2023\nArtificial Intelligence Solutions Architect Award, BAH Emergent Skills Program 2022\nFellowship Research Award, Cancer Prevention Fellowship Program 2019\nFellows Award for Research Excellence, National Institutes of Health 2015\nOrloff Science Award, National Heart, Lung, Blood Institute 2014\nDirector’s Science Award, National Heart, Lung, Blood Institute 2014",
+    "crumbs": [
+      "Curriculum Vitae"
+    ]
   },
   {
     "objectID": "cv/index.html#natural-languages",
     "href": "cv/index.html#natural-languages",
     "title": "Martin Skarzynski Laptev",
     "section": "Natural Languages",
-    "text": "Natural Languages\n\n\nILR 5: English, Polish\nILR 4: Spanish, Russian\nILR 3: French, Portuguese"
+    "text": "Natural Languages\n\n\nILR 5: English, Polish\nILR 4: Spanish, Russian\nILR 3: French, Portuguese",
+    "crumbs": [
+      "Curriculum Vitae"
+    ]
   },
   {
     "objectID": "about/index.html",
     "href": "about/index.html",
     "title": "",
     "section": "",
-    "text": "I am a data scientist and software engineer with a broad scientific background that ranges from biochemistry to epidemiology.\nI use the JavaScript, Python, and R programming languages along with the UNIX shell to build digital deliverables such as cloudinfrastructure, datadashboards, and machinelearning models.\nIn addition to programming languages, I also like natural languages! I speak English, Polish, Spanish, Russian, French, and Portuguese.\nThe timestamp () in the navbar is based on Dec, a measurement system I created.\nDec timestamps are inspired by this equation: \\(\\texttt{y=\\lfloor{y}\\rfloor+}\\frac{\\texttt{d-z}}{\\texttt{n}}\\), where \\(\\texttt{y}\\) is decimal years (), \\(\\texttt{\\lfloor{y}\\rfloor}\\) is floored years (), \\(\\texttt{d}\\) is decidays (), \\(\\texttt{z}\\) is the Dec time zone (), and \\(\\texttt{n}\\) is the total number of decidays in the year ().\nIn addition to time, Dec also measuresgeographic andcelestial coordinates: longitude , latitude, azimuth, altitude, etc.\nImportantly, Dec time zones are derived from floored decidays of longitude (\\(\\texttt{z=\\lfloor{λ}\\rfloor}\\)) and can be appended to the time of day (), but not to durations, e.g. the centimillidays since this webpage was loaded: .\n\nunix = {\n  while(true) {\n    yield Date.now();\n  }\n}\ntick = {\n  let i = 0;\n  while (true) {\n    yield Promises.tick(864, ++i);\n  }\n}\ntickTime = tick % 1e5\n// http://howardhinnant.github.io/date_algorithms.html#civil_from_days\nfunction unix2dote(unix, zone, offset = 719468) {\n  return [\n    (unix ?? Date.now()) / 86400000\n    + (zone = zone ?? (10 - Math.round(\n        (new Date).getTimezoneOffset() / 144)) % 10\n      ) / 10 + offset, zone]\n}\nfunction dote2doty(days = 719468, zone = 0) {\n  const era = Math.floor((days &gt;= 0 ? days : days - 146096) / 146097), dotc = days - era * 146097,\n      yotc = Math.floor((dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);\n  return [yotc + era * 400, dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4), zone];\n}\nfunction doty2deco(year = 1969, doty = 306, zone = 0) {\n  return `${year.toString().padStart(4, \"0\")}+${Math.floor(doty).toString().padStart(3, \"0\")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`\n}\nydz = dote2doty(...unix2dote(unix))\ndeco = doty2deco(...ydz)\n// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor\nfunction setStyle(content, style = {}) {\n  function yiq(color) {\n    const {r, g, b} = d3.rgb(color);\n    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1\n  }\n  const {\n    background,\n    color = yiq(background) &gt;= 0.6 ? \"#111\" : \"white\",\n    padding = \"0 1px\",\n    borderRadius = \"4px\",\n    fontWeight = 900,\n    fontSize = \"1em\",\n    ...rest\n  } = typeof style === \"string\" ? {background: style} : style;\n  return htl.html`&lt;span style=${{\n    background,\n    color,\n    padding,\n    borderRadius,\n    fontWeight,\n    ...rest\n  }}&gt;${content}&lt;/span&gt;`;\n}\nfunction year2bool(year = 1970) {\n    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;\n}\ndecoYear = deco.slice(0, 4)\ndecoDate = deco.slice(5, 8)\ndecoTime = deco.slice(8, 14)\ndecoTimeZone = deco[15]\nnDaysInYear = 365 + year2bool(ydz[0] + 1)\nfracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(8)\nstyledDecoYear0 = setStyle(decoYear, d3.schemePaired[10])\nstyledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])\nstyledFracYear = setStyle(fracYear, d3.schemePaired[10])\nstyledDecoDate0 = setStyle(decoDate, d3.schemePaired[1])\nstyledDecoDate1 = setStyle(decoDate, d3.schemePaired[1])\nstyledNdays = setStyle(nDaysInYear * 10, d3.schemePaired[1])\nstyledDecoTime0 = setStyle(decoTime, d3.schemePaired[2])\nstyledDecoTime1 = setStyle(decoTime, d3.schemePaired[2])\nstyledDecoTime2 = setStyle(decoTime, d3.schemePaired[2])\nstyledTimeZone0 = setStyle(decoTimeZone, d3.schemePaired[3])\nstyledTimeZone1 = setStyle(decoTimeZone, d3.schemePaired[3])\nstyledTimeZone2 = setStyle(decoTimeZone, d3.schemePaired[3])\nstyledTickTime = setStyle(tickTime, d3.schemePastel2[0])"
+    "text": "I am a data scientist and software engineer with a broad scientific background that ranges from biochemistry to epidemiology.\nI use the JavaScript, Python, and R programming languages along with the UNIX shell to build digital deliverables such as cloudinfrastructure, datadashboards, and machinelearning models.\nIn addition to programming languages, I also like natural languages! I speak English, Polish, Spanish, Russian, French, and Portuguese.\nThe timestamp () in the navbar is based on Dec, a measurement system I created.\nDec timestamps are inspired by this equation: \\(\\texttt{y=\\lfloor{y}\\rfloor+}\\frac{\\texttt{d-z}}{\\texttt{n}}\\), where \\(\\texttt{y}\\) is decimal years (), \\(\\texttt{\\lfloor{y}\\rfloor}\\) is floored years (), \\(\\texttt{d}\\) is decidays (), \\(\\texttt{z}\\) is the Dec time zone (), and \\(\\texttt{n}\\) is the total number of decidays in the year ().\nIn addition to time, Dec also measuresgeographic andcelestial coordinates: longitude , latitude, azimuth, altitude, etc.\nImportantly, Dec time zones are derived from floored decidays of longitude (\\(\\texttt{z=\\lfloor{λ}\\rfloor}\\)) and can be appended to the time of day (), but not to durations, e.g. the centimillidays since this webpage was loaded: .\n\nunix = {\n  while(true) {\n    yield Date.now();\n  }\n}\ntick = {\n  let i = 0;\n  while (true) {\n    yield Promises.tick(864, ++i);\n  }\n}\ntickTime = tick % 1e5\n// http://howardhinnant.github.io/date_algorithms.html#civil_from_days\nfunction unix2dote(unix, zone, offset = 719468) {\n  return [\n    (unix ?? Date.now()) / 86400000\n    + (zone = zone ?? (10 - Math.round(\n        (new Date).getTimezoneOffset() / 144)) % 10\n      ) / 10 + offset, zone]\n}\nfunction dote2doty(days = 719468, zone = 0) {\n  const era = Math.floor((days &gt;= 0 ? days : days - 146096) / 146097), dotc = days - era * 146097,\n      yotc = Math.floor((dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);\n  return [yotc + era * 400, dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4), zone];\n}\nfunction doty2deco(year = 1969, doty = 306, zone = 0) {\n  return `${year.toString().padStart(4, \"0\")}+${Math.floor(doty).toString().padStart(3, \"0\")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`\n}\nydz = dote2doty(...unix2dote(unix))\ndeco = doty2deco(...ydz)\n// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor\nfunction setStyle(content, style = {}) {\n  function yiq(color) {\n    const {r, g, b} = d3.rgb(color);\n    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1\n  }\n  const {\n    background,\n    color = yiq(background) &gt;= 0.6 ? \"#111\" : \"white\",\n    padding = \"0 1px\",\n    borderRadius = \"4px\",\n    fontWeight = 900,\n    fontSize = \"1em\",\n    ...rest\n  } = typeof style === \"string\" ? {background: style} : style;\n  return htl.html`&lt;span style=${{\n    background,\n    color,\n    padding,\n    borderRadius,\n    fontWeight,\n    ...rest\n  }}&gt;${content}&lt;/span&gt;`;\n}\nfunction year2bool(year = 1970) {\n    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;\n}\ndecoYear = deco.slice(0, 4)\ndecoDate = deco.slice(5, 8)\ndecoTime = deco.slice(8, 14)\ndecoTimeZone = deco[15]\nnDaysInYear = 365 + year2bool(ydz[0] + 1)\nfracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(8)\nstyledDecoYear0 = setStyle(decoYear, d3.schemePaired[10])\nstyledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])\nstyledFracYear = setStyle(fracYear, d3.schemePaired[10])\nstyledDecoDate0 = setStyle(decoDate, d3.schemePaired[1])\nstyledDecoDate1 = setStyle(decoDate, d3.schemePaired[1])\nstyledNdays = setStyle(nDaysInYear * 10, d3.schemePaired[1])\nstyledDecoTime0 = setStyle(decoTime, d3.schemePaired[2])\nstyledDecoTime1 = setStyle(decoTime, d3.schemePaired[2])\nstyledDecoTime2 = setStyle(decoTime, d3.schemePaired[2])\nstyledTimeZone0 = setStyle(decoTimeZone, d3.schemePaired[3])\nstyledTimeZone1 = setStyle(decoTimeZone, d3.schemePaired[3])\nstyledTimeZone2 = setStyle(decoTimeZone, d3.schemePaired[3])\nstyledTickTime = setStyle(tickTime, d3.schemePastel2[0])",
+    "crumbs": [
+      "About"
+    ]
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "",
     "section": "",
-    "text": "Greetings! \nWelcome to my personal website, which I created using the Quarto publishing system. You are currently on the Home page of my site. You can use the navigation bar above or the sidebar on the left to go to the About, Blog, and Curriculum Vitae (CV) pages of my site or my profile pages on GitHub and LinkedIn.\nHave fun looking around!"
+    "text": "Greetings! \nWelcome to my personal website, which I created using the Quarto publishing system. You are currently on the Home page of my site. You can use the navigation bar above or the sidebar on the left to go to the About, Blog, and Curriculum Vitae (CV) pages of my site or my profile pages on GitHub and LinkedIn. You can also use the arrows at the bottom to move between specific pages on my site.\nHave fun looking around!",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "blog/index.html",
     "href": "blog/index.html",
     "title": "",
     "section": "",
-    "text": "No matching items\n\n Back to topAttributions\n\nAll artwork by @allison_horst except for the images related to the following blogs:\n\nVSCode, which combines the VSCode and VSCodium logos\nLLM, which was generated by DALL·E 3 with the following prompt:\n\n\na cartoon image of a person climbing a mountain to obtain answers to their questions from an omniscient robotic guru with a glowing positronic brain"
+    "text": "No matching items\n\n Back to topAttributions\n\nAll artwork by @allison_horst except for the images related to the following blogs:\n\nVSCode, which combines the VSCode and VSCodium logos\nLLM, which was generated by DALL·E 3 with the following prompt:\n\n\na cartoon image of a person climbing a mountain to obtain answers to their questions from an omniscient robotic guru with a glowing positronic brain",
+    "crumbs": [
+      "Blog"
+    ]
   },
   {
     "objectID": "cv/pdf/index.html",

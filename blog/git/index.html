@@ -169,41 +169,65 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> <i class="bi bi-house-door" role="img">
-</i> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about/index.html"> <i class="bi bi-info-circle" role="img">
-</i> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../blog/index.html"> <i class="bi bi-pencil" role="img">
-</i> 
-<span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../cv/index.html"> <i class="bi bi-file-earmark-person" role="img">
-</i> 
-<span class="menu-text">CV</span></a>
-  </li>  
   <li class="nav-item compact">
-    <a class="nav-link active" href="https://github.com/maptv" target="_blank" aria-current="page"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="../../."> <i class="bi bi-house-door" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/maptv" target="_blank"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="../../about"> <i class="bi bi-info-circle" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:maptv@engineer.com"> <i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="../../cv"> <i class="bi bi-file-earmark-person" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-pencil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-pencil" role="img">
+</i> 
+ <span class="menu-text"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-pencil">    
+        <li>
+    <a class="dropdown-item" href="../../blog/git/index.html"><i class="bi bi-git" role="img">
+</i> 
+ <span class="dropdown-text">Git</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog/vscode/index.html"><i class="bi bi-code" role="img">
+</i> 
+ <span class="dropdown-text">VSCode</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog/jupyter/index.html"><i class="bi bi-journal-richtext" role="img">
+</i> 
+ <span class="dropdown-text">Jupyter</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog/quarto/index.html"><i class="bi bi-markdown" role="img">
+</i> 
+ <span class="dropdown-text">Quarto Markdown</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog/observable/index.html"><i class="bi bi-0-circle" role="img">
+</i> 
+ <span class="dropdown-text">Observable</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog/prob/index.html"><i class="bi bi-dice-5" role="img">
+</i> 
+ <span class="dropdown-text">Probablity</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog/llm/index.html"><i class="bi bi-translate" role="img">
+</i> 
+ <span class="dropdown-text">Language Models</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
@@ -221,7 +245,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog">Blog</a></li><li class="breadcrumb-item"><a href="../../blog/#category=tool">Tools</a></li><li class="breadcrumb-item"><a href="../../blog/git/index.html">Git</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog/index.html">Blog</a></li><li class="breadcrumb-item"><a href="../../blog/#category=tool">Tools</a></li><li class="breadcrumb-item"><a href="../../blog/git/index.html">Git</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -231,26 +255,49 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://www.github.com/maptv" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://www.linkedin.com/in/maptv" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-linkedin"></i></a>
+    <a href="mailto:maptv@engineer.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope"></i></a>
+</div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../about" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house-door" role="img">
+</i> 
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../about/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-info-circle" role="img">
+</i> 
  <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cv/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-earmark-person" role="img">
+</i> 
+ <span class="menu-text">Curriculum Vitae</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../blog" class="sidebar-item-text sidebar-link">
+            <a href="../../blog/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-pencil" role="img">
+</i> 
  <span class="menu-text">Blog</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../blog/#category=tool" class="sidebar-item-text sidebar-link">
+            <a href="../../blog/#category=tool" class="sidebar-item-text sidebar-link"><i class="bi bi-tools" role="img">
+</i> 
  <span class="menu-text">Tools</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -259,45 +306,46 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog/git/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../blog/git/index.html" class="sidebar-item-text sidebar-link active"><i class="bi bi-git" role="img">
+</i> 
  <span class="menu-text">Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog/vscode/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../blog/vscode/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-code" role="img">
+</i> 
  <span class="menu-text">VSCode</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog/quarto/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../blog/observable/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Observable</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../blog/jupyter/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../blog/jupyter/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-journal-richtext" role="img">
+</i> 
  <span class="menu-text">Jupyter</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog/knitr/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Knitr</span></a>
+  <a href="../../blog/quarto/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-markdown" role="img">
+</i> 
+ <span class="menu-text">Quarto Markdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../blog/observable/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-0-circle" role="img">
+</i> 
+ <span class="menu-text">Observable</span></a>
   </div>
 </li>
       </ul>
   </li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../blog/#category=ml" class="sidebar-item-text sidebar-link">
+            <a href="../../blog/#category=ml" class="sidebar-item-text sidebar-link"><i class="bi bi-robot" role="img">
+</i> 
  <span class="menu-text">Machine Learning</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -306,44 +354,22 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog/prob/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probability</span></a>
+  <a href="../../blog/prob/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-dice-5" role="img">
+</i> 
+ <span class="menu-text">Probablity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../blog/llm/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LLM</span></a>
+  <a href="../../blog/llm/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-translate" role="img">
+</i> 
+ <span class="menu-text">Language Models</span></a>
   </div>
 </li>
       </ul>
   </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cv" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Curriculum Vitae</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://github.com/maptv" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://linkedin.com/in/maptv" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LinkedIn</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="mailto:maptv@engineer.com" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Mail</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -374,7 +400,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog">Blog</a></li><li class="breadcrumb-item"><a href="../../blog/#category=tool">Tools</a></li><li class="breadcrumb-item"><a href="../../blog/git/index.html">Git</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog/index.html">Blog</a></li><li class="breadcrumb-item"><a href="../../blog/#category=tool">Tools</a></li><li class="breadcrumb-item"><a href="../../blog/git/index.html">Git</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Git</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
   <div class="quarto-categories">
@@ -489,7 +515,7 @@ Figure&nbsp;1: Tools series navigation chart
 <div id="exm-editor" class="theorem example">
 <p><span class="theorem-title"><strong>Example 3</strong></span> &nbsp;</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Shell</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><code>.gitconfig</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Shell</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><code>.gitconfig</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> core.editor <span class="st">"codium --wait"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1652,14 +1678,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://www.github.com/maptv">
+    <a class="nav-link" href="https://github.com/maptv" target="_blank">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/maptv">
+    <a class="nav-link" href="https://linkedin.com/in/maptv" target="_blank">
       <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:maptv@engineer.com">
+      <i class="bi bi-envelope" role="img">
 </i> 
     </a>
   </li>  
