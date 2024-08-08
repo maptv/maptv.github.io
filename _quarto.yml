@@ -15,17 +15,13 @@ website:
     logo-alt: "Decagon made up of 100 triangles"
     right:
       - icon: house-door
-        file: index.qmd
-        text: Home
+        href: .
       - icon: info-circle
-        file: about/index.qmd
-        text: About
+        href: about
       - icon: pencil
-        file: blog/index.qmd
-        text: Blog
+        href: blog
       - icon: file-earmark-person
-        file: cv/index.qmd
-        text: CV
+        href: cv
       - icon: github
         href: https://github.com/maptv
         target: _blank
@@ -37,10 +33,12 @@ website:
   sidebar:
     collapse-level: 2
     contents:
+      - text: Home
+        href: index.qmd
       - text: About
-        href: about
+        href: about/index.qmd
       - section: Blog
-        href: blog
+        href: blog/index.qmd
         contents:
           - section: Tools
             href: blog/#category=tool
@@ -57,7 +55,7 @@ website:
               - blog/prob/prob.qmd
               - blog/llm/llm.qmd
       - text: Curriculum Vitae
-        href: cv
+        href: cv/index.qmd
       - text: GitHub
         href: https://github.com/maptv
       - text: LinkedIn
