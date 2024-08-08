@@ -94,7 +94,7 @@
     "href": "index.html",
     "title": "",
     "section": "",
-    "text": "Greetings! \nWelcome to my personal website, which I created using the Quarto publishing system. You are currently on the Home page of my site. You can use the navigation bar above or the sidebar on the left to go to the About, Blog, and Curriculum Vitae (CV) pages of my site or my profile pages on GitHub and LinkedIn. You can also use the arrows at the bottom to move between specific pages on my site.\nHave fun looking around!",
+    "text": "Greetings! \nWelcome to my personal website, which I created using the Quarto publishing system. You are currently on the Home page of my site. You can use the sidebar on the left to go to the About, Blog, and Curriculum Vitae (CV) pages of my site or my profile pages on GitHub and LinkedIn. You can also use the arrows at the bottom to move between specific pages on my site.\nHave fun looking around!",
     "crumbs": [
       "Home"
     ]
