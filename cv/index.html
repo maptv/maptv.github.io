@@ -45,18 +45,20 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
+  "location": "sidebar",
+  "copy-button": true,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
-    "f",
     "/",
+    "?",
+    "h",
+    "f",
     "s"
   ],
-  "show-item-context": false,
+  "show-item-context": true,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -102,7 +104,6 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </a>
 </div>
-          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
@@ -113,6 +114,9 @@ ul.task-list li input[type="checkbox"] {
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../cv/index.html">CV/Résumé</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
     </div>
   </nav>
 </header>
@@ -120,11 +124,11 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://www.github.com/maptv" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-github"></i></a>
-    <a href="https://www.linkedin.com/in/maptv" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-linkedin"></i></a>
-    <a href="mailto:maptv@engineer.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope-at"></i></a>
-</div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -244,16 +248,16 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul class="collapse">
+  <ul>
   <li><a href="#mission" id="toc-mission" class="nav-link active" data-scroll-target="#mission">Mission</a></li>
-  <li><a href="#recent-experience" id="toc-recent-experience" class="nav-link" data-scroll-target="#recent-experience">Recent Experience</a></li>
+  <li><a href="#experience" id="toc-experience" class="nav-link" data-scroll-target="#experience">Experience</a></li>
   <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
   <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">Skills</a></li>
-  <li><a href="#select-publications" id="toc-select-publications" class="nav-link" data-scroll-target="#select-publications">Select Publications</a></li>
-  <li><a href="#select-awards" id="toc-select-awards" class="nav-link" data-scroll-target="#select-awards">Select Awards</a></li>
-  <li><a href="#natural-languages" id="toc-natural-languages" class="nav-link" data-scroll-target="#natural-languages">Natural Languages</a></li>
+  <li><a href="#publications" id="toc-publications" class="nav-link" data-scroll-target="#publications">Publications</a></li>
+  <li><a href="#awards" id="toc-awards" class="nav-link" data-scroll-target="#awards">Awards</a></li>
+  <li><a href="#languages" id="toc-languages" class="nav-link" data-scroll-target="#languages">Languages</a></li>
   </ul>
-<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/maptv/maptv.github.io/blob/main/cv/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/maptv/maptv.github.io/blob/main/cv/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
@@ -286,14 +290,14 @@ ul.task-list li input[type="checkbox"] {
 <li><img src="https://icons.getbootstrap.com/assets/icons/linkedin.svg" class="linkedin img-fluid"> <a href="https://linkedin.com/in/maptv">maptv</a></li>
 </ul>
 </div>
-<section id="mission" class="level2">
-<h2 class="anchored" data-anchor-id="mission">Mission</h2>
+<section id="mission" class="level3">
+<h3 class="anchored" data-anchor-id="mission">Mission</h3>
 <p>My goal is to lead the next generation of scientists and engineers in building solutions that integrate substantive expertise from diverse fields with machine intelligence. Through my work, I strive to promote open source software, such as the <a href="https://quarto.org">Quarto</a> publishing system, which I use to build dashboards, presentations, reports, websites, and other digital deliverables. Overall, I aim to leverage my broad scientific background and technical expertise to help transform the promises of science and technology into a better future for all of humanity.</p>
 </section>
-<section id="recent-experience" class="level2">
-<h2 class="anchored" data-anchor-id="recent-experience">Recent Experience</h2>
-<section id="lead-instructor-general-assembly-2019" class="level3">
-<h3 class="anchored" data-anchor-id="lead-instructor-general-assembly-2019"><span style="font-weight: 900;">Lead Instructor</span>, <a href="https://generalassemb.ly">General Assembly</a> <span class="cvdate">2019:</span></h3>
+<section id="experience" class="level3">
+<h3 class="anchored" data-anchor-id="experience">Experience</h3>
+<section id="lead-instructor-general-assembly-2019" class="level5">
+<h5 class="anchored" data-anchor-id="lead-instructor-general-assembly-2019"><span style="font-weight: 900;">Lead Instructor</span>, <a href="https://generalassemb.ly">General Assembly</a> <span class="cvdate">2019:</span></h5>
 <div class="horizontal">
 <ul>
 <li>Teaches <a href="https://generalassemb.ly/instructors/martin-skarzynski/23420">open-enrollment</a> and enterprise courses such as:
@@ -307,8 +311,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="lead-instructor-data-society-2019" class="level3">
-<h3 class="anchored" data-anchor-id="lead-instructor-data-society-2019"><span style="font-weight: 900;">Lead Instructor</span>, <a href="https://datasociety.com">Data Society</a> <span class="cvdate">2019:</span></h3>
+<section id="lead-instructor-data-society-2019" class="level5">
+<h5 class="anchored" data-anchor-id="lead-instructor-data-society-2019"><span style="font-weight: 900;">Lead Instructor</span>, <a href="https://datasociety.com">Data Society</a> <span class="cvdate">2019:</span></h5>
 <div class="horizontal">
 <ul>
 <li>Provides enterprise clients with training in:
@@ -323,14 +327,14 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="vice-president-data-community-dc-2022" class="level3">
-<h3 class="anchored" data-anchor-id="vice-president-data-community-dc-2022"><span style="font-weight: 900;">Vice President</span>, <a href="https://www.datacommunitydc.org">Data Community DC</a> <span class="cvdate">2022:</span></h3>
+<section id="vice-president-data-community-dc-2022" class="level5">
+<h5 class="anchored" data-anchor-id="vice-president-data-community-dc-2022"><span style="font-weight: 900;">Vice President</span>, <a href="https://www.datacommunitydc.org">Data Community DC</a> <span class="cvdate">2022:</span></h5>
 <ul>
 <li>Leads a non‑profit organization that supports <a href="https://www.datacommunitydc.org/meetups-overview">eleven Meetup groups</a></li>
 </ul>
 </section>
-<section id="adjunct-professor-virginia-tech-20212024" class="level3">
-<h3 class="anchored" data-anchor-id="adjunct-professor-virginia-tech-20212024"><span style="font-weight: 900;">Adjunct Professor</span>, Virginia Tech <span class="cvdate">2021:2024</span></h3>
+<section id="adjunct-professor-virginia-tech-20212024" class="level5">
+<h5 class="anchored" data-anchor-id="adjunct-professor-virginia-tech-20212024"><span style="font-weight: 900;">Adjunct Professor</span>, Virginia Tech <span class="cvdate">2021:2024</span></h5>
 <div class="horizontal">
 <ul>
 <li>Taught two graduate courses for the Computer Science and Statistics Departments:
@@ -341,8 +345,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="senior-domain-lead-amazon-web-services-20222024" class="level3">
-<h3 class="anchored" data-anchor-id="senior-domain-lead-amazon-web-services-20222024"><span style="font-weight: 900;">Senior Domain Lead</span>, <a href="https://aws.amazon.com">Amazon Web Services</a> <span class="cvdate">2022:2024</span></h3>
+<section id="senior-domain-lead-amazon-web-services-20222024" class="level5">
+<h5 class="anchored" data-anchor-id="senior-domain-lead-amazon-web-services-20222024"><span style="font-weight: 900;">Senior Domain Lead</span>, <a href="https://aws.amazon.com">Amazon Web Services</a> <span class="cvdate">2022:2024</span></h5>
 <div class="horizontal">
 <ul>
 <li>Provided customers with scientific and technical expertise in:
@@ -375,16 +379,16 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="ai-engineering-manager-booz-allen-hamilton-20192023" class="level3">
-<h3 class="anchored" data-anchor-id="ai-engineering-manager-booz-allen-hamilton-20192023"><span style="font-weight: 900;">AI Engineering Manager</span>, <a href="https://www.boozallen.com">Booz Allen Hamilton</a> <span class="cvdate">2019:2023</span></h3>
+<section id="ai-engineering-manager-booz-allen-hamilton-20192023" class="level5">
+<h5 class="anchored" data-anchor-id="ai-engineering-manager-booz-allen-hamilton-20192023"><span style="font-weight: 900;">AI Engineering Manager</span>, <a href="https://www.boozallen.com">Booz Allen Hamilton</a> <span class="cvdate">2019:2023</span></h5>
 <ul>
 <li>Led a team of data scientists and software developers working on a cyber intelligence application</li>
 <li>Spearheaded interdisciplinary COVID‑19 <a href="https://www.boozallen.com/c/insight/blog/epimaps-data-visualization-for-healthcare">visualization</a>, <a href="https://mskar.github.io/var">genomics</a>, and statistical modeling efforts</li>
 <li>Obtained the <a href="https://www.credly.com/badges/99aa294a-2b69-40f2-a607-0e7b91ffb5f6/public_url" class="italic">Microsoft Azure Data Scientist Associate</a> certification</li>
 </ul>
 </section>
-<section id="biomedical-scientist-national-institutes-of-health-20092022" class="level3">
-<h3 class="anchored" data-anchor-id="biomedical-scientist-national-institutes-of-health-20092022"><span style="font-weight: 900;">Biomedical Scientist</span>, <a href="https://www.nih.gov">National Institutes of Health</a> <span class="cvdate">2009:2022</span></h3>
+<section id="biomedical-scientist-national-institutes-of-health-20092022" class="level5">
+<h5 class="anchored" data-anchor-id="biomedical-scientist-national-institutes-of-health-20092022"><span style="font-weight: 900;">Biomedical Scientist</span>, <a href="https://www.nih.gov">National Institutes of Health</a> <span class="cvdate">2009:2022</span></h5>
 <div class="horizontal">
 <ul>
 <li>Integrated clinical, laboratory, epidemiologic, genomic, and medical imaging data</li>
@@ -401,15 +405,15 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="bioinformatics-and-data-science-co-chair-faes-20142021" class="level3">
-<h3 class="anchored" data-anchor-id="bioinformatics-and-data-science-co-chair-faes-20142021"><span style="font-weight: 900;">Bioinformatics and Data Science Co-Chair</span>, <a href="https://faes.org">FAES</a> <span class="cvdate">2014:2021</span></h3>
+<section id="bioinformatics-and-data-science-co-chair-faes-20142021" class="level5">
+<h5 class="anchored" data-anchor-id="bioinformatics-and-data-science-co-chair-faes-20142021"><span style="font-weight: 900;">Bioinformatics and Data Science Co-Chair</span>, <a href="https://faes.org">FAES</a> <span class="cvdate">2014:2021</span></h5>
 <div class="horizontal">
 <ul>
 <li>Co‑administered an academic program with over twenty faculty members</li>
 <li>Taught three graduate data science courses:
 <ul>
-<li><a href="https://github.com/biof309">Introduction to Python</a></li>
-<li><a href="https://github.com/biof395">Introduction to Text Mining</a></li>
+<li><a href="https://github.com/biof309">Python Programming</a></li>
+<li><a href="https://github.com/biof395">Text Mining</a></li>
 <li><a href="https://biof509.github.io">Applied Machine Learning</a></li>
 </ul></li>
 <li>Taught graduate biotechnology workshops on various topics including:
@@ -421,8 +425,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="adjunct-professor-george-washington-university-20152016" class="level3">
-<h3 class="anchored" data-anchor-id="adjunct-professor-george-washington-university-20152016"><span style="font-weight: 900;">Adjunct Professor</span>, <a href="https://www.gwu.edu">George Washington University</a> <span class="cvdate">2015:2016</span></h3>
+<section id="adjunct-professor-george-washington-university-20152016" class="level5">
+<h5 class="anchored" data-anchor-id="adjunct-professor-george-washington-university-20152016"><span style="font-weight: 900;">Adjunct Professor</span>, <a href="https://www.gwu.edu">George Washington University</a> <span class="cvdate">2015:2016</span></h5>
 <div class="horizontal">
 <ul>
 <li>Taught two undergraduate courses for the <a href="https://wlp.gwu.edu">Women’s Leadership Program</a>:
@@ -434,8 +438,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="education" class="level2">
-<h2 class="anchored" data-anchor-id="education">Education</h2>
+<section id="education" class="level3">
+<h3 class="anchored" data-anchor-id="education">Education</h3>
 <ul>
 <li><span style="font-weight: 900;">MPH</span>, Epidemiology and Biostatistics, <a href="https://www.jhu.edu">Johns Hopkins University</a> <span class="cvdate">2018</span></li>
 <li><span style="font-weight: 900;">PhD</span>, Tumor Biology, <a href="https://www.georgetown.edu">Georgetown University</a> <span class="cvdate">2015</span></li>
@@ -443,12 +447,12 @@ ul.task-list li input[type="checkbox"] {
 <li><span style="font-weight: 900;">BA</span>, Biology, <a href="https://www.smcm.edu">St.&nbsp;Mary’s College of Maryland</a> <span class="cvdate">2007</span></li>
 </ul>
 </section>
-<section id="skills" class="level2" style="page-break-before: always">
-<h2 style="page-break-before: always" class="anchored" data-anchor-id="skills">Skills</h2>
+<section id="skills" class="level3" style="page-break-before: always">
+<h3 style="page-break-before: always" class="anchored" data-anchor-id="skills">Skills</h3>
 <p><img src="https://img.shields.io/badge/-Airflow-blue?logo=apacheairflow&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Alacritty-blue?logo=Alacritty&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Anaconda-blue?logo=Anaconda&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-API_Gateway-blue?logo=amazonapigateway&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Artifacts-blue?logo=azureartifacts&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Azure-blue?logo=microsoftazure&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Bash-blue?logo=gnu-bash&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Bootstrap-blue?logo=bootstrap&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-CloudWatch-blue?logo=amazoncloudwatch&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-conda--forge-blue?logo=conda-forge&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-D3-blue?logo=d3dotjs&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Dask-blue?logo=dask&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Data_Explorer-blue?logo=azuredataexplorer&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Databricks-blue?logo=databricks&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-DataGrip-blue?logo=datagrip&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-DevOps-blue?logo=azuredevops&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Django-blue?logo=django&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Docker-blue?logo=docker&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-DocumentDB-blue?logo=amazondocumentdb&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-DVC-blue?logo=dvc&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-DynamoDB-blue?logo=amazondynamodb&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-EC2-blue?logo=amazonec2&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-ECS-blue?logo=amazonecs&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-EKS-blue?logo=amazoneks&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Emacs-blue?logo=gnuemacs&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Fargate-blue?logo=awsfargate&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-FastAPI-blue?logo=fastapi&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Flask-blue?logo=flask&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Functions-blue?logo=azurefunctions&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-GIMP-blue?logo=gimp&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Git-blue?logo=git&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-GitHub-blue?logo=github&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-GitHub_Actions-blue?logo=githubactions&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-GitLab-blue?logo=gitlab&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-GNU-blue?logo=gnu&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Homebrew-blue?logo=homebrew&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-HTML-blue?logo=html5&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-HTTPie-blue?logo=httpie&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Hyper-blue?logo=hyper&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-IAM-blue?logo=amazoniam&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Inkscape-blue?logo=inkscape&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-iTerm-blue?logo=iterm2&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-JavaScript-blue?logo=javascript&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Jira-blue?logo=jirasoftware&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-JSON-blue?logo=json&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Julia-blue?logo=julia&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Jupyter-blue?logo=jupyter&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Keras-blue?logo=keras&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Kubernetes-blue?logo=kubernetes&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Lambda-blue?logo=awslambda&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-LaTeX-blue?logo=latex&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Linux-blue?logo=linux&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Lua-blue?logo=lua&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-macOS-blue?logo=apple&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Markdown-blue?logo=markdown&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Mermaid-blue?logo=mermaid&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-MongoDB-blue?logo=mongodb&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-MySQL-blue?logo=mysql&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Neovim-blue?logo=neovim&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Node-blue?logo=nodedotjs&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-NPM-blue?logo=npm&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-NumPy-blue?logo=numpy&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-OBS-blue?logo=obsstudio&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Observable-blue?logo=observable&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Obsidian-blue?logo=obsidian&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-OpenCV-blue?logo=opencv&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Pandas-blue?logo=pandas&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Pipelines-blue?logo=azurepipelines&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Plotly-blue?logo=plotly&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-PostgreSQL-blue?logo=postgresql&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-PyCharm-blue?logo=pycharm&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Pydantic-blue?logo=pydantic&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-PyPI-blue?logo=pypi&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-PyScaffold-blue?logo=pyscaffold&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Pytest-blue?logo=pytest&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Python-informational?logo=python&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-PyTorch-blue?logo=pytorch&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Quip-blue?logo=quip&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-R-blue?logo=r&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-RDS-blue?logo=amazonrds&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-React-blue?logo=react&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Redshift-blue?logo=amazonredshift&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Reveal-blue?logo=revealdotjs&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Route_53-blue?logo=amazonroute53&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-RStudio-blue?logo=rstudio&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-S3-blue?logo=amazons3&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-SciPy-blue?logo=scipy&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Selenium-blue?logo=selenium&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Sklearn-blue?logo=scikit-learn&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Spacemacs-blue?logo=spacemacs&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-spaCy-blue?logo=spacy&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Spark-blue?logo=apachespark&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-SQLAlchemy-blue?logo=sqlalchemy&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-SQLite-blue?logo=sqlite&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-SQS-blue?logo=amazonsqs&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Streamlit-blue?logo=streamlit&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Swift-blue?logo=swift&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-TensorFlow-blue?logo=tensorflow&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Tidyverse-blue?logo=tidyverse&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-tmux-blue?logo=tmux&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-Vim-blue?logo=vim&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-VSCode-blue?logo=visualstudiocode&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-VSCodium-blue?logo=vscodium&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-WebStorm-blue?logo=webstorm&amp;logoColor=white&amp;color.png" class="img-fluid"> <img src="https://img.shields.io/badge/-zsh-blue?logo=zsh&amp;logoColor=white&amp;color.png" class="img-fluid"></p>
 </section>
-<section id="select-publications" class="level2">
-<h2 class="anchored" data-anchor-id="select-publications">Select Publications</h2>
+<section id="publications" class="level3">
+<h3 class="anchored" data-anchor-id="publications">Publications</h3>
 <div class="pubs">
 <ul>
 <li>Potentiating [mAb] therapy by targeting complement C3 […] on lymphoma cells <span class="cvdate">Submitted</span></li>
@@ -465,8 +469,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="select-awards" class="level2">
-<h2 class="anchored" data-anchor-id="select-awards">Select Awards</h2>
+<section id="awards" class="level3">
+<h3 class="anchored" data-anchor-id="awards">Awards</h3>
 <div class="awards">
 <ul>
 <li><span style="font-weight: 900;">Community Contribution of the Year Category Finalist</span>, AWS Builder Awards <span class="cvdate">2023</span></li>
@@ -478,8 +482,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 </section>
-<section id="natural-languages" class="level2">
-<h2 class="anchored" data-anchor-id="natural-languages">Natural Languages</h2>
+<section id="languages" class="level3">
+<h3 class="anchored" data-anchor-id="languages">Languages</h3>
 <div class="lang">
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_5_%E2%80%93_Native_or_bilingual_proficiency" style="font-weight: 900;">ILR 5</a>: English, Polish</li>
@@ -1094,7 +1098,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link active" href="mailto:maptv@engineer.com" aria-current="page">
+    <a class="nav-link" href="mailto:maptv@engineer.com">
       <i class="bi bi-envelope-at" role="img">
 </i> 
     </a>
