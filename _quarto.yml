@@ -4,7 +4,7 @@ project:
 website:
   search:
     location: sidebar
-    type: textbox
+    type: overlay
     keyboard-shortcut: ["/", "?", "h", "f", "s"]
     copy-button: true
     show-item-context: true
@@ -20,6 +20,15 @@ website:
     logo: media/deidek.svg
     logo-alt: "Decagon made up of 100 triangles"
   sidebar:
+    tools:
+    - icon: github
+      href: https://www.github.com/maptv
+      target: _blank
+    - icon: linkedin
+      href: https://www.linkedin.com/in/maptv
+      target: _blank
+    - icon: envelope-at
+      href: mailto:maptv@engineer.com
     collapse-level: 2
     contents:
       - icon: house-door
