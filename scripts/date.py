@@ -4,7 +4,7 @@ def unix2doty(ms=0):
     days = ms / 86400000 + 719468
     dote = days - (era := (days if days >= 0 else days - 146096) // 146097) * 146097
     year = int((dote - dote / 1460 + dote / 36524 - dote / 146096) // 365 + era * 400)
-    return year, days - (year * 365 + year / 4 - year / 100 + year / 400).__floor__()
+    return year, days - (year * 365 + year / 4 - year / 100 + year / 400) // 1
 
 with open("_site/blog/index.html") as infile:
     txt = infile.read()
