@@ -4,10 +4,10 @@ project:
 website:
   search:
     location: sidebar
-    type: overlay
+    type: textbox
     keyboard-shortcut: ["/", "?", "h", "f", "s"]
     copy-button: true
-    show-item-context: tree
+    show-item-context: true
   page-navigation: true
   site-url: https://maptv.github.io
   repo-url: https://github.com/maptv/maptv.github.io
