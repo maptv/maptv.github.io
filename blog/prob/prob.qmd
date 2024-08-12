@@ -1,0 +1,301 @@
+---
+title: Probability
+draft: true
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
+date: last-modified
+date-format: x
+image: horst_hist-samples.png
+categories:
+  - ml
+format:
+  html:
+    mermaid:
+      theme: default
+    output-file: index.html
+filters:
+  - ../../scripts/date.lua
+  - include-code-files
+---
+
+In this blog post I will discuss a few examples of [probability](https://en.wikipedia.org/wiki/Probability#:~:text=Probability%20is%20the%20branch%20of,event%20and%201%20indicates%20certainty.) in [machine learning](https://en.wikipedia.org/wiki/Machine_learning#:~:text=Machine%20learning%20(ML)%20is%20a%20field%20of%20study%20in%20artificial%20intelligence%20concerned%20with%20the%20development%20and%20study%20of%20statistical%20algorithms%20that%20can%20effectively%20generalize%20and%20thus%20perform%20tasks%20without%20explicit%20instructions.). If you are new to probability, I recommend one of great textbooks that cover the topic and are available for free online, such as [Think Bayes](https://allendowney.github.io/ThinkBayes2) by [Allen Downey](https://www.allendowney.com) and [Bayes Rules!](https://www.bayesrulesbook.com) by [Alicia A. Johnson](https://ajohns24.github.io), Miles Q. Ott, and [Mine Dogucu](https://www.minedogucu.com).
+
+[Classification](https://en.wikipedia.org/wiki/Statistical_classification) [algorithms](https://en.wikipedia.org/wiki/Algorithm) algorithms can estimate $n \times k$ class membership probabilities for each dataset, where n is the number of data points in the dataset and k is the number of classes in the [training dataset](https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets#:~:text=training%20data%20set%2C%5B3%5D%20which%20is%20a%20set%20of%20examples%20used%20to%20fit%20the%20parameters%20(e.g.%20weights%20of%20connections%20between%20neurons%20in%20artificial%20neural%20networks)%20of%20the%20model.). Similarly, the [Gaussian Mixtures](https://scikit-learn.org/stable/modules/mixture.html) [clustering](https://scikit-learn.org/stable/modules/clustering.html) algorithm can generate $n \times k$ cluster label probabilities.
+
+Besides  a data point and the Gaussian Mixtures models can estimate cluster membership probability. point , especially [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) and [Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier). Every classification algorithm can estimate probabilities of belonging to each class.
+
+$\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$
+
+```{python}
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+import pandas as pd
+from sklearn.decomposition import PCA
+from sklearn.impute import KNNImputer
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import ConfusionMatrixDisplay
+from sklearn.model_selection import train_test_split
+```
+
+```{python}
+df = sns.load_dataset("penguins")
+df.head()
+```
+
+```{python}
+y = df["species"]
+X = df.drop("species", axis=1)
+X = pd.get_dummies(X, columns=["island", "sex"])
+```
+
+```{python}
+knni = KNNImputer()
+colnames = X.columns
+X = knni.fit_transform(X)
+X = pd.DataFrame(X, columns=colnames)
+```
+
+
+
+```{python}
+# https://blog.4dcu.be/programming/2021/03/19/Code-Nugget-PCA-with-loadings.html
+pipeline = Pipeline([
+    ("scaler", StandardScaler()),
+    ("pca", PCA(n_components=2)),
+])
+
+pca_data = pd.DataFrame(
+    pipeline.fit_transform(X),
+    columns=["PC1", "PC2"],
+    index=df.index,
+)
+pca_data["species"] = df["species"]
+
+pca_step = pipeline.steps[1][1]
+loadings = pd.DataFrame(
+    pca_step.components_.T,
+    columns=["PC1", "PC2"],
+    index=X.columns,
+)
+
+def loading_plot(
+    coeff, labels, scale=1, text_x=None, text_y=None, colors=None, visible=None, ax=plt, arrow_size=0.5
+):
+    for i, label in enumerate(labels):
+        if visible is None or visible[i]:
+            ax.arrow(
+                0,
+                0,
+                coeff[i, 0] * scale,
+                coeff[i, 1] * scale,
+                head_width=arrow_size * scale,
+                head_length=arrow_size * scale,
+                color="#000" if colors is None else colors[i],
+            )
+            ax.text(
+                text_x[i] if text_x.all() else coeff[i, 0] * 1.2 * scale,
+                text_y[i] if text_y.all() else coeff[i, 1] * 1.2 * scale,
+                label,
+                color="#000" if colors is None else colors[i],
+                ha="center",
+                va="center",
+            )
+
+loadings = loadings * 3.2
+
+text_x = loadings["PC1"] * 2.4
+text_y = loadings["PC2"] * 2.4
+
+text_y["sex_Male"] -= .5
+text_y["bill_depth_mm"] -= .4
+text_x["bill_depth_mm"] -= .4
+text_y["sex_Female"] += .5
+text_y["island_Torgersen"] += .1
+text_x["island_Dream"] -= .5
+text_y["island_Dream"] -= .3
+text_y["island_Biscoe"] += .3
+text_x["island_Biscoe"] += .3
+text_x["flipper_length_mm"] += .55
+text_x["body_mass_g"] += .95
+text_y["body_mass_g"] -= .05
+
+# https://seaborn.pydata.org/generated/seaborn.jointplot.html
+g = sns.jointplot(data=pca_data, x="PC1", y="PC2", hue="species", ratio=4, marginal_ticks=True, height=8)
+g.plot_joint(sns.kdeplot, zorder=0, levels=6)
+g.plot_marginals(sns.rugplot, height=-.025, clip_on=False)
+# Add loadings
+loading_plot(loadings[["PC1", "PC2"]].values, loadings.index, text_x=text_x, text_y=text_y, scale=2, arrow_size=0.02)
+
+# Add variance explained by the
+plt.xlabel(f"PC1 ({pca_step.explained_variance_ratio_[0]*100:.2f} %)")
+plt.ylabel(f"PC2 ({pca_step.explained_variance_ratio_[1]*100:.2f} %)")
+
+plt.tight_layout()
+plt.savefig("PCA_with_loadings.png", dpi=300)
+plt.show()
+```
+
+```{python}
+#| tags: []
+sns.displot(df, x="bill_length_mm", kde=True, hue="species", stat="count");
+```
+
+```{python}
+#| tags: []
+sns.displot(df, x="bill_length_mm", kde=True, hue="species", stat="density");
+plt.show()
+```
+
+```{python}
+#| tags: []
+sns.displot(df, x="bill_length_mm", kde=True, rug=True, hue="species", stat="proportion");
+plt.show()
+```
+
+```{python}
+#| tags: []
+fig, axes = plt.subplots(1, 2, sharey=True)
+fig.suptitle('PDF and CDF comparision')
+sns.histplot(df[["bill_length_mm", "flipper_length_mm"]], kde=True, ax=axes[0]);
+sns.ecdfplot(df[["bill_length_mm", "flipper_length_mm"]], stat="count", ax=axes[1], legend=False)
+plt.ylim((0, 375));
+plt.show()
+```
+
+```{python}
+#| tags: []
+import pathlib
+```
+
+```{python}
+#| tags: []
+lr = LogisticRegression(max_iter=10000)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+lr.fit(X_train, y_train)
+cmd = ConfusionMatrixDisplay.from_estimator(lr, X_test, y_test)
+plt.show()
+```
+
+# Logistic function visualization
+
+```{python}
+#| tags: []
+# https://github.com/ageron/handson-ml3/blob/main/04_training_linear_models.ipynb
+lim = 6
+t = np.linspace(-lim, lim, 100)
+sig = 1 / (1 + np.exp(-t))
+
+plt.figure(figsize=(8, 3))
+plt.plot([-lim, lim], [0, 0], "k-")
+plt.plot([-lim, lim], [0.5, 0.5], "k:")
+plt.plot([-lim, lim], [1, 1], "k:")
+plt.plot([0, 0], [-1.1, 1.1], "k-")
+plt.plot(t, sig, "b-", linewidth=2, label=r"$\sigma(t) = \dfrac{1}{1 + e^{-t}}$")
+plt.xlabel("t")
+plt.legend(loc="upper left")
+plt.axis([-lim, lim, -0.1, 1.1])
+plt.gca().set_yticks([0, 0.25, 0.5, 0.75, 1])
+plt.grid()
+plt.show()
+```
+
+# Obtain the logistic function mathematically
+
+## Step 1. Write out the linear regression equation
+$\Huge y=\beta_0+\beta_1 x_1+...+\beta_n x_n$
+## Step 2. The logistic regression equation is the same as above except output is log odds
+$\Huge log(odds)=\beta_0+\beta_1 x_1+...+\beta_n x_n$
+## Step 3. Exponentiate both sides of the logistic regression equation to get odds
+$\Huge odds=e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}$
+## Step 4. Write out the probability equation
+$\Huge p=\frac{odds}{1+odds}$
+## Step 5. Plug odds (from step 3) into the probability equation
+$\Huge p=\frac{e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}{1+e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}$
+## Step 6. Divide the numerator and denominator by the odds (from step 3)
+$\Huge p=\frac{1}{1+e^{-(\beta_0+\beta_1 x_1+...+\beta_n x_n)}}$
+
+```{python}
+#| tags: []
+gnb = GaussianNB()
+gnb.fit(X_train, y_train)
+cmd = ConfusionMatrixDisplay.from_estimator(gnb, X_test, y_test)
+plt.show()
+```
+
+```{python}
+#| tags: []
+ct = pd.crosstab(df["species"], df["body_mass_g"] > df["body_mass_g"].mean(), margins=True)
+```
+
+```{python}
+#| tags: []
+ct
+```
+
+```{python}
+#| tags: []
+likelihood = ct.iloc[0, 0] / ct.iloc[0, 2]
+likelihood
+```
+
+```{python}
+#| tags: []
+prior = ct.iloc[0, 2] / ct.iloc[3, 2]
+prior
+```
+
+```{python}
+#| tags: []
+norm =  ct.iloc[3, 0] / ct.iloc[3, 2]
+norm
+```
+
+```{python}
+#| tags: []
+posterior = ct.iloc[0, 0] / ct.iloc[3, 0]
+posterior
+```
+
+$\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$
+
+```{python}
+#| tags: []
+result = likelihood * prior / norm
+```
+
+```{python}
+#| tags: []
+df["body_mass_g"] > df["body_mass_g"].mean()
+```
+
+```{python}
+# gnb.fit([df["body_mass_g"] > df["body_mass_g"].mean()], y)
+```
+
+```{=html}
+<script src="../../scripts/time.js"></script>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+#title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
+#title-block-header { margin: 0px; }
+main#quarto-document-content { margin: 0px; padding: 0px; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row; }
+#quarto-sidebar { padding: 0px; overflow-x: hidden !important; }
+#quarto-sidebar > * { padding: 0px; }
+div.quarto-title-meta { padding-bottom: 8px; }
+g.node.clickable.flowchart-label:hover { rect.basic.label-container { stroke: green!important; stroke-width:5px!important; } }
+h2, h3 { margin: 0px !important; }
+h3 { margin-top: 17px !important; }
+div.cell.page-columns.page-full { height: 0px !important; }
+@media only screen and (max-width: 991px) { #quarto-search { display: none !important; } #quarto-sidebar { padding: 0px 9px 0px 9px !important; } }
+@media only screen and (max-width: 767px) { div.cell.page-columns.page-full { display: none !important; } }
+</style>
+```
