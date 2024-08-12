@@ -1,6 +1,7 @@
 project:
   type: website
   resources: .gitlab-ci.yml
+  post-render: scripts/date.py
 website:
   search:
     location: sidebar
@@ -81,6 +82,7 @@ website:
         href: mailto:maptv@engineer.com
 format:
   html:
+    pagetitle: Martin Laptev
     page-layout: full
     mainfont: Lato
     toc: true
