@@ -1,16 +1,16 @@
 ---
-image: images/martin.png
+image: media/martin.png
 toc: false
 format:
   html:
+    page-layout: full
     repo-actions: false
-    grid:
-      body-width: 1800px
     back-to-top-navigation: false
 about:
-  template: solana
+  template: trestles
   image-shape: round
   image-width: 16em
+  image-title: headshot
 ---
 
 Greetings! <img src="media/wave.gif" width="25px"/>

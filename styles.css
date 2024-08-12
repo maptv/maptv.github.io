@@ -49,3 +49,35 @@ ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
   padding-left: 0px;
   margin-left: -3px;
 }
+
+div.quarto-about-trestles .about-entity:has(img[title="headshot"]):after {
+  content: "Martin Laptev";
+  text-align: center;
+  margin: -20px 0px 20px 0px;
+  font-size: .75em;
+}
+
+
+div.quarto-about-trestles .about-contents {
+  border-left: none;
+  padding-right: 10px;
+}
+
+@media only screen and (min-width: 992px) {
+  div.quarto-about-trestles .about-entity:has(img[title="headshot"]) {
+    order: 2;
+    margin: 0px -60px 0px -60px;
+  }
+}
+
+div.quarto-about-trestles .about-entity:has(img[title="desk"]):after {
+  content: "My workstation";
+  text-align: center;
+  margin: -20px 0px 20px 0px;
+  font-size: .75em;
+}
+
+
+#quarto-content > div.quarto-about-trestles.column-page-right:has(img[title="desk"]) {
+  padding-top: 12px !important;
+}
