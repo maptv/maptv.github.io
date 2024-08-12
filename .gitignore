@@ -4,5 +4,6 @@
 .Ruserdata
 _site
 _extensions
+_freeze
 docs/
 /.quarto/

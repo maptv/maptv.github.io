@@ -14,6 +14,7 @@ website:
   repo-actions: [source]
   back-to-top-navigation: true
   reader-mode: true
+  draft-mode: visible
   favicon: media/deidek.svg
   navbar:
     title: Martin Laptev
@@ -44,11 +45,6 @@ website:
         section: Blog
         href: blog/index.qmd
         contents:
-          - text: "---"
-          - section: Tools
-            icon: tools
-            href: blog/#category=tool
-            contents:
               - icon: git
                 text: Git
                 href: blog/git/git.qmd
@@ -64,11 +60,6 @@ website:
               - icon: 0-circle
                 text: Observable
                 href: blog/observable/observable.qmd
-          - text: "---"
-          - section: Machine Learning
-            icon: robot
-            href: blog/#category=ml
-            contents:
               - icon: dice-5
                 text: Probablity
                 href: blog/prob/prob.qmd
