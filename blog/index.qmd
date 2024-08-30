@@ -19,8 +19,8 @@ format:
     code-tools: false
     link-external-icon: false
     include-after-body:
-      - ../../scripts/timestamp.html
-      - ../../scripts/blog.html
+      - ../scripts/timestamp.html
+      - ../scripts/blog.html
 comments: false
 ---
 

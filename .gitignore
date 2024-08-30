@@ -5,5 +5,6 @@
 _site
 _extensions
 _freeze
+site_libs
 docs/
 /.quarto/
