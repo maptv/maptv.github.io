@@ -3,6 +3,23 @@ p, ul {
   text-align: left;
 }
 
+/* start order list at 0 */
+
+ol {
+  list-style-type: none;
+  counter-reset: listitem -1;
+}
+
+ol li {
+  counter-increment: listitem;
+}
+
+ol li::before {
+  content: counter(listitem) ". ";
+}
+
+/* improve responsiveness of navbar elements */
+
 @media only screen and (max-width: 558px) {
     a.navbar-brand, span.navbar-title {
         display: none;
