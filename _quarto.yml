@@ -1,7 +1,8 @@
 project:
   type: website
   resources: .gitlab-ci.yml
-  post-render: scripts/date.py
+  post-render:
+    - scripts/date.py
 website:
   search:
     location: sidebar

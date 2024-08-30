@@ -12,7 +12,7 @@ listing:
   sort: false
   type: grid
   categories: true
-  fields: [image, title, description, file-modified, categories]
+  fields: [image, title, description, file-modified, categories, reading-time]
 format:
   html:
     repo-actions: false

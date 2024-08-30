@@ -10,11 +10,20 @@ image: horst_git-hug.png
 categories:
   - tool
   - git
+citation:
+  accessed: 2024
+  issued: 2024
+  url: https://maptv.github.io/blog/git
 format:
   html:
     mermaid:
       theme: default
     output-file: index.html
+    include-after-body:
+      - ../../scripts/timestamp.html
+      - ../../scripts/style.html
+      - ../../scripts/tooltip.html
+      - ../../scripts/cite.html
 filters:
   - ../../scripts/date.lua
   - include-code-files
@@ -291,26 +300,3 @@ The drawback of my keyboard shortcut approach for the Git workflow is that it pr
 To automatically generate commit messages based on the currently staged changes, we can use a [Large Language Model](https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.) (LLM). [Generative artificial intelligence](https://en.wikipedia.org/wiki/Generative_artificial_intelligence#:~:text=Generative%20artificial%20intelligence%20(also%20generative%20AI%20or%20GenAI%5B1%5D)%20is%20artificial%20intelligence%20capable%20of%20generating%20text%2C%20images%2C%20or%20other%20media) models like LLMs tend to be large in size and have atypical computational requirements, so I will save my adventures with LLMs for a [different post](../llm).
 
 I really enjoy using Git, especially with shell aliases in my terminal and keyboard shortcuts in my favorite text editors. If we ever collaborate on a project together, you can be sure that I will insist on using Git!
-
-```{=html}
-<script src="../../scripts/time.js"></script>
-<script>
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-</script>
-<style>
-#title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
-#title-block-header { margin: 0px; }
-main#quarto-document-content { margin: 0px; padding: 0px; }
-ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row; }
-#quarto-sidebar { padding: 0px; overflow-x: hidden !important; }
-#quarto-sidebar > * { padding: 0px; }
-div.quarto-title-meta { padding-bottom: 8px; }
-g.node.clickable.flowchart-label:hover { rect.basic.label-container { stroke: green!important; stroke-width:5px!important; } }
-h2, h3 { margin: 0px !important; }
-h3 { margin-top: 17px !important; }
-div.cell.page-columns.page-full { height: 0px !important; }
-@media only screen and (max-width: 991px) { #quarto-search { display: none !important; } #quarto-sidebar { padding: 0px 9px 0px 9px !important; } }
-@media only screen and (max-width: 767px) { div.cell.page-columns.page-full { display: none !important; } }
-</style>
-```
