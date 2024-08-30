@@ -16,6 +16,6 @@ for div in soup.find_all("div", {"class": "card-file-modified"}):
         elem.string.replace_with(f"{y:>04}+{d.__floor__():>03}")
 for div in soup.find_all("div", {"class": "listing-reading-time"}):
     if "min" in div.text:
-        div.string.replace_with(f"{(int(div.text.split()[0]) * 1.44).__floor__()} milliday")
+        div.string.replace_with(f"{(int(div.text.split()[0]) / 1.44).__floor__()} milliday")
 with open("_site/blog/index.html", "w") as outfile:
     outfile.write(str(soup))
