@@ -228,12 +228,64 @@ ul.task-list li input[type="checkbox"] {
   </div>
   <div class="about-contents"><main class="content column-page-right" id="quarto-document-content">
 <p>Greetings! <img src="media/wave.gif" width="25px"></p>
-<p>Welcome to my personal website, which I created using the <a href="https://quarto.org">Quarto</a> publishing system. You are currently on the <a href="" class="bi bi-house-door">Home</a> page of my site. You can use the <a href="https://en.wikipedia.org/wiki/Sidebar_(computing)#:~:text=a%20graphical%20control%20element%20that%20displays%20various%20forms%20of%20information%20to%20the%20right%20or%20left%20side">sidebar</a> on the left to go to the <a href="about" class="bi bi-info-circle">About</a>, <a href="blog" class="bi bi-pencil">Blog</a>, and <a href="cv" class="bi bi-file-earmark-person">Curriculum Vitae (CV)</a> pages of my site or my profile pages on <a href="https://github.com/maptv" class="bi bi-github">GitHub</a> and <a href="https://www.linkedin.com/in/maptv" class="bi bi-linkedin">LinkedIn</a>. You can also use the <span class="bi bi-arrow-left-short">arrows<span class="bi bi-arrow-right-short"></span></span> at the bottom to move between specific pages on my site.</p>
+<p>Welcome to my personal website, which I created using the <a href="https://quarto.org">Quarto</a> publishing system. You are currently on the <a href="" class="bi bi-house-door">Home</a> page of my site. You can use the <a href="https://en.wikipedia.org/wiki/Sidebar_(computing)#:~:text=a%20graphical%20control%20element%20that%20displays%20various%20forms%20of%20information%20to%20the%20right%20or%20left%20side" class="bi bi-layout-text-sidebar-reverse">Sidebar</a> on the left to go to the <a href="about" class="bi bi-info-circle">About</a>, <a href="blog" class="bi bi-pencil">Blog</a>, and <a href="cv" class="bi bi-file-earmark-person">Curriculum Vitae (CV)</a> pages of my site or my profile pages on <a href="https://github.com/maptv" class="bi bi-github">GitHub</a> and <a href="https://www.linkedin.com/in/maptv" class="bi bi-linkedin">LinkedIn</a>. You can also use the <span class="bi bi-arrow-left-short">arrows<span class="bi bi-arrow-right-short"></span></span> at the bottom to move between specific pages on my site.</p>
 <p>Have fun looking around!</p>
-<script src="scripts/time.js"></script>
+
+
+</main></div>
+</div>
+ <!-- /main -->
 <script>
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+// https://howardhinnant.github.io/date_algorithms.html#days_from_civil
+function unix2dote(unix, zone, offset = 719468) {
+  return [
+    (unix ?? Date.now()) / 86400000
+    + (zone = zone ?? (10 - Math.round(
+        (new Date).getTimezoneOffset() / 144)) % 10
+      ) / 10 + offset, zone]
+}
+function dote2doty(dote = 719468, zone = 0) {
+  const socy = Math.floor((dote >= 0 ? dote : dote - 146096) / 146097), dotc = dote - socy * 146097,
+    yotc = Math.floor((dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
+  return [yotc + socy * 400, dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4), zone];
+}
+function doty2date(year = 1969, doty = 306) {
+  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}`
+}
+function doty2time(year = 1969, doty = 306, zone = 0) {
+  return `${String(doty % 1 * 10).slice(0, 6)}-${zone}`
+}
+function setStamp() {
+  document.getElementById("date").innerText = doty2date(...dote2doty(...unix2dote()));
+  document.getElementById("time").innerText = doty2time(...dote2doty(...unix2dote()));
+}
+
+const nbc = document.getElementsByClassName("navbar-brand-container"),
+  dat = document.createElement("div"),
+  tim = document.createElement("div"),
+  cal = document.createElement("i"),
+  tik = document.createElement("i"),
+  dot = document.createElement("i"),
+  url = new URLSearchParams(window.location.search),
+  key = url.keys().filter(v => !isNaN(v) && !isNaN(parseFloat(v)) && isFinite(v)).toArray(),
+  val = url.values().filter(v => !isNaN(v) && !isNaN(parseFloat(v)) && isFinite(v)).toArray();
+console.log("k", [...url.keys()])
+console.log("v", [...url.values()])
+console.log("v", val)
+console.log("k", key)
+cal.classList.add("bi", "bi-calendar");
+cal.setAttribute("role", "img");
+tik.classList.add("bi", "bi-clock");
+tik.setAttribute("role", "img");
+dat.setAttribute("id", "date");
+tim.setAttribute("id", "time");
+dot.setAttribute("id", "dote");
+nbc[0].appendChild(cal);
+nbc[0].appendChild(dat);
+nbc[0].appendChild(tik);
+nbc[0].appendChild(tim);
+nbc[0].appendChild(dot);
+setInterval(setStamp);
 </script>
 <style>
 div#quarto-sidebar-glass { display: none !important; }
@@ -243,11 +295,10 @@ ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 @media only screen and (max-width: 991px) { #quarto-search { display: none !important; } #quarto-sidebar { padding: 0px 9px 0px 9px !important; } }
 @media only screen and (max-width: 767px) { div.cell.page-columns.page-full { display: none !important; } }
 </style>
-
-
-</main></div>
-</div>
- <!-- /main -->
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
