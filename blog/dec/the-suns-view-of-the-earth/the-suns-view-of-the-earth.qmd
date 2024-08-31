@@ -1,0 +1,114 @@
+---
+title: 'The Sun’s View of Earth'
+author: 'Martin Laptev'
+format: html
+echo: false
+observable: 'https://observablehq.com/@dec/the-suns-view-of-the-earth'
+---
+
+```{ojs}
+md`# The Sun’s View of Earth
+
+The Sun is directly overhead the red dot on the map. The visible area is the unshaded portion of the [solar terminator map](/@dec/solar-terminator). The vertical lines on the map below are [Dec graticules](/@dec/irc) that separate the 10 [Dec time zones](/@dec/lock).
+Dec is a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created to measure⏳time,📍position,🧭orientation,📐angles, and🔄cycles in [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([${tex`\tau`}](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) instead of months, weeks, hours, minutes, seconds, and degrees. For time measurement, Dec uses days and years, which are turns of a [celestial body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole) and around [the point it orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit), respectively.`
+```
+
+```{ojs}
+map = {
+  const context = DOM.context2d(width, height);
+  const path = d3.geoPath(projection, context);
+  context.beginPath(), path(graticule), context.strokeStyle = "#ccc", context.stroke();
+  context.beginPath(), path(land), context.fillStyle = "#000", context.fill();
+  context.beginPath(), path(borders), context.strokeStyle = "#fff", context.stroke();
+  context.beginPath(), path({type: "Point", coordinates: sun}), context.fillStyle = "#f00", context.fill();
+  context.beginPath(), path(sphere), context.strokeStyle = "#000", context.stroke();
+  return context.canvas;
+}
+```
+
+```{ojs}
+md`The grey vertical lines on the map above separate the 10 Dec time zones, which are each 1 deciturn (10% of a turn) wide and are numbered 0 through 9, like the [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of) that separate them. For more Dec maps, click the links below:
+- [Decalendar](/@dec/al)
+- [Decalc](/@dec/alc)
+- [Decaliper](/@dec/ali)
+- [Decirc](/@dec/irc)
+- [Declock](/@dec/loc)
+- [Solar terminator](/@dec/solar-terminator)`
+```
+
+```{ojs}
+height = width
+```
+
+```{ojs}
+projection = d3.geoOrthographic()
+    .rotate([-sun[0], -sun[1]])
+    .fitExtent([[1, 1], [width - 1, height - 1]], sphere)
+    .precision(0.1)
+```
+
+```{ojs}
+sun = {
+  const now = new Date;
+  const day = new Date(+now).setUTCHours(0, 0, 0, 0);
+  const t = solar.century(now);
+  const x = (day - now) / 864e5 * 360 - 180 - solar.equationOfTime(t) / 4;
+  const y = solar.declination(t);
+  return [x % 360, y];
+}
+```
+
+```{ojs}
+sphere = ({type: "Sphere"})
+```
+
+```{ojs}
+graticule = d3.geoGraticule().stepMinor([36,36]).stepMajor([36,36])()
+```
+
+```{ojs}
+ TZ0end = -126
+```
+
+```{ojs}
+graticule.coordinates.forEach((part, index, theArray) => {
+  if (theArray[index].length === 3) {
+    theArray[index][0][0] = TZ0end + 36 * index;
+    theArray[index][1][0] = TZ0end + 36 * index;
+    theArray[index][2][0] = TZ0end + 36 * index;
+  }
+});
+```
+
+```{ojs}
+graticule.coordinates
+```
+
+```{ojs}
+land = topojson.feature(world, world.objects.land)
+```
+
+```{ojs}
+borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
+```
+
+```{ojs}
+countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
+```
+
+```{ojs}
+world = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/land-50m.json").then(response => response.json())
+```
+
+```{ojs}
+topojson = require("topojson-client@3")
+```
+
+```{ojs}
+d3 = require("d3-geo@1")
+```
+
+```{ojs}
+solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
+```
+

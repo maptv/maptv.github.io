@@ -1,0 +1,1924 @@
+---
+title: 'Decalendar'
+author: 'Martin Laptev'
+format: html
+echo: false
+observable: 'https://observablehq.com/@dec/al'
+---
+
+```{ojs}
+md`# Decalendar`
+```
+
+```{ojs}
+md`The table below shows the current Zone 0 [Timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) and the [Leap Cycle](https://en.wikipedia.org/wiki/Solar_cycle_%28calendar%29) Length of twelve Dec calendars (decalendars), sorted by [Epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era). Dec is a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created to measure⏳time,📍position,🧭orientation,📐angles, and🔄cycles in [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([${tex`\tau`}](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) instead of months, weeks, hours, minutes, seconds, and degrees.`
+```
+
+```{ojs}
+md`| Calendar     | Timestamp     | Leap Cycle Length                                    | Epoch          | Symbol | 
+| ------------ | ------------- | ---------------------------------------------------- | -------------- | --- | 
+| Thai         | `${thaiDeco}` | <code>365 x 303 + 366 x 97</code>                    | `${thaiEpoch}` | 🇹🇭  |
+| Nepali       | `${nepaDeco}` | <code>365 x 303 + 366 x 97</code>                    | `${nepaEpoch}` | 🇳🇵  |
+| Gregorian    | `${gregDeco}` | <code>365 x 303 + 366 x 97</code>                    | `0`            | ︎♁   |
+| Ethiopian    | `${ethiDeco}` | <code>365 x 3&nbsp;&nbsp; + 366 x 1</code>           | `${ethiEpoch}` | ︎🇪🇹  |
+| Indian       | `${indiDeco}` | <code>365 x 303 + 366 x 97</code>                    | `${indiEpoch}` | 🇮🇳  |
+| Bengali      | `${bengDeco}` | <code>365 x 303 + 366 x 97</code>                    | `${bengEpoch}` | 🇧🇩︎  |
+| Solar Hijiri | `${soHiDeco}` | <code>365 x 25&nbsp; + 366 x 8</code>                | `${sohiEpoch}` | ☫   | 
+| Lunar Hijiri | `${luHiDeco}` | <code>354 x 19&nbsp; + 355 x 11</code>               | `${luhiEpoch}` | ☪   | 
+| Minguo       | `${mingDeco}` | <code>365 x 303 + 366 x 97</code>                    | `${mingEpoch}` | 🇹🇼  |
+| Japanese     | `${japaDeco}` | <code>365 x 303 + 366 x 97</code>                    | `${japaEpoch}` | 🇯🇵︎  |
+| Martian      | `${marsDeco}` | <code>668 x 8&nbsp;&nbsp; + 669 x 13</code>          | `${marsEpochDote.toFixed(5)}` | ♂   | 
+| Lunar        | `${moonDeco}` | <code>28 &nbsp;x 7&nbsp;&nbsp; + 29&nbsp; x 9</code> | `${moonEpoch.toFixed(5)}` | ☾   | `
+```
+
+```{ojs}
+md`The timestamp format in the table above is described in the [Dec calculations (Decalc) notebook](/@dec/alc) and can be summarized as `year+dday.dday-z`, where `year` is the current year, `dday.dday` is the [decidays](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays) since the year started, and `z` is the time zone.`
+```
+
+```{ojs}
+md`The map below shows countries where the Gregorian calendar is not the only official calendar. Even though it emphasizes Gregorian calendar alternatives, the map demonstrates the near total dominance of the Gregorian calendar.`
+```
+
+```{ojs}
+// https://observablehq.com/@mikima/wikipedia-grey-green-orthographic-projections-maps-gener/2?collection=@mikima/wikipedia-locator-maps
+// https://observablehq.com/d/ae1fd7593b805eeb
+// https://observablehq.com/d/87ba6f2ef516421a
+// https://observablehq.com/@bayre/svg-swatches
+globe = {
+  const div = d3
+    .create("div")
+    .style("width", width)
+    .style("height", width)
+    .style("position", "static");
+
+  const svg = div
+    .append("svg")
+    .attr("width", width)
+    .attr("height", width)
+    .style("margin-top", "20px")
+    .style("margin-bottom", `-${width / 80}px`)
+    // .attr("viewBox", `0 0 ${width < 700 ? width * 1.5 : width} ${width < 700 ? width * 1.5 : width}`)
+    // .style("border", "solid 1px black");
+  
+  let p1 = [0,0];
+  let p2 = [0,0];
+  
+  countries.features.forEach(d => {d.selected = false})
+  
+  let path = d3.geoPath(projection)
+  
+  // create the radial gradient
+  let radialGradient = svg.append("defs")
+    .append("radialGradient")
+    .attr("cx", width * 0.48)
+    .attr("cy", width * 0.35)
+    .attr("r", width * 0.64)
+    .attr("id", "grSea")
+    .attr("gradientUnits","userSpaceOnUse")
+
+  radialGradient.append("stop")
+        .attr("offset", "0")
+        .style("stop-color", "#000000") 
+        .style("stop-opacity", 0)
+  
+  radialGradient.append("stop")
+        .attr("offset", "0.5")
+        .style("stop-color", "#000000") 
+        .style("stop-opacity", 0.006)
+  
+  radialGradient.append("stop")
+        .attr("offset", "0.56")
+        .style("stop-color", "#000000") 
+        .style("stop-opacity", 0.009)
+
+  radialGradient.append("stop")
+        .attr("offset", "0.64")
+        .style("stop-color", "#000000") 
+        .style("stop-opacity", 0.017)
+  
+  radialGradient.append("stop")
+        .attr("offset", "0.7")
+        .style("stop-color", "#000000") 
+        .style("stop-opacity", 0.039)
+  
+  radialGradient.append("stop")
+        .attr("offset", "0.74")
+        .style("stop-color", "#000000") 
+        .style("stop-opacity", 0.055)
+  
+  radialGradient.append("stop")
+        .attr("offset", "1")
+        .style("stop-color", "#000000") 
+        .style("stop-opacity", 0.142)
+  
+  // create background cicle
+  svg.append("circle")
+    .attr("cx", width/2)
+    .attr("cy", width/2)
+    .attr("r",width/2)
+    .attr("fill", "#C7E7FB")
+    .attr("stroke", "none")
+
+  const luhiGreg = [
+    "Afghanistan",
+    "Libya",
+    "Yemen",
+    "Algeria",
+    "Saudi Arabia",
+    "Egypt",
+    "Somalia",
+    "Iraq",
+    "Jordan",
+    "Libya",
+    "Mauritania",
+    "Morocco",
+    "Oman",
+    "Pakistan",
+    "Saudi Arabia",
+    "Somalia",
+    "Tunisia",
+    "United Arab Emirates",
+  ]
+  const colors = d3.schemeCategory10.concat(d3.schemeDark2);
+  const countriesPath = svg.append("g")
+      .attr("id", "countries")
+      .selectAll("path")
+      .data(countries.features)
+      .join("path")
+      .attr("id", d=>d.properties.formal_en)
+      .attr("d", path)
+      .attr("stroke", "#656565")
+      .attr("fill", d => d.selected ? "#C12838" : "#FDFBEA")
+      .attr("fill", d => luhiGreg.includes(d.properties.name_en) ? colors[0] : d.properties.name_en === "Ethiopia" ? colors[1] : d.properties.name_en === "Israel" ? colors[2] : d.properties.name_en === "Iran" ? colors[3] : d.properties.name_en === "India" ? colors[4] : d.properties.name_en === "Nepal" ? colors[5] : d.properties.name_en === "Bangladesh" ? colors[6] : d.properties.name_en === "Myanmar" ? colors[7] : d.properties.name_en === "Thailand" ? colors[8] : d.properties.name_en === "Taiwan" ? colors [9] : d.properties.name_en === "North Korea" ? colors[10] : d.properties.name_en === "Japan" ? colors[11] : "#FDFBEA")
+      .attr("stroke-width", d => d.selected ? "2" : "1")
+      .on("click", function(d){
+        // invert selection
+        d.selected = !d.selected;
+        console.log(d);
+        countriesPath.attr("fill", d => luhiGreg.includes(d.properties.name_en) ? colors[0] : d.properties.name_en === "Ethiopia" ? colors[1] : d.properties.name_en === "Israel" ? colors[2] : d.properties.name_en === "Iran" ? colors[3] : d.properties.name_en === "India" ? colors[4] : d.properties.name_en === "Nepal" ? colors[5] : d.properties.name_en === "Bangladesh" ? colors[6] : d.properties.name_en === "Myanmar" ? colors[7] : d.properties.name_en === "Thailand" ? colors[8] : d.properties.name_en === "Taiwan" ? colors [9] : d.properties.name_en === "North Korea" ? colors[10] : d.properties.name_en === "Japan" ? colors[11] : "#FDFBEA")
+          .attr("stroke", d => d.selected ? "#C12838" : "#656565")
+          .attr("stroke-width", d => d.selected ? "2" : "1")
+          .each(function(d) {
+                              if(d.selected){
+                                 // bring on top
+                                 d3.select(this).raise()
+                              }
+                            })
+        // show disputed zones
+        if(showDisputed){
+          const selected = d.properties.adm0_a3;
+          disputedPath.attr("display","none");
+          disputedPath.filter(e => e.properties['disputed-territories_Claimants_ISO'].includes(selected))
+            .attr("display", d=>{console.log(d); return null})
+        }
+        if(showDisputed){
+          const selected = d.properties.adm0_a3;
+          disputedPath.attr("display","none");
+          disputedPath.filter(e => e.properties['disputed-territories_Claimants_ISO'].includes(selected))
+            .attr("display", d=>{console.log(d); return null})
+        }
+        
+        // set up transition
+        let newCentroid = d3.geoCentroid(d).map(v => -v)
+        
+        projection.rotate(newCentroid);
+        path = d3.geoPath(projection);
+        graticulePath.attr("d", path);
+        countriesPath.attr("d", path);
+        disputedPath.attr("d", path);
+      })
+      .on("mouseover", function() {
+        d3.select(this).attr("stroke", d=>d.selected ? "#C12838" : "#656565").attr("stroke-width", d=>d.selected ? "3" : "2").raise(); 
+      })
+      .on("mouseout", function() { 
+        d3.select(this).attr("stroke", d=>d.selected ? "#C12838" : "#656565").attr("stroke-width", d=>d.selected ? "2" : "1")
+      })
+                               
+ const disputedPath = svg.append("g")
+      .attr("id", "disputed areas")
+      .attr("stroke", "white")
+      .selectAll("path")
+      .data(disputed.features)
+      .join("path")
+      .attr("id", d=>d.properties.geometry)
+      .attr("d", path)
+      .attr("fill", "#C12838AA")
+      .attr("stroke-width",0.5)
+      .attr("display", "none")
+ 
+ function render() {
+    console.log("Render")
+    path = d3.geoPath(projection)
+    graticulePath.attr("d", path)
+    countriesPath.attr("d", path)
+  }
+
+    // add graticule
+ const graticulePath = svg.append("path")
+      .datum(graticule)
+      .attr("id", "graticule")
+          .attr("stroke", "#656565")
+          .attr("opacity", 0.8)
+          .attr("stroke-width", 0.3)
+          .attr("fill", "none")
+          .attr("d", path)
+          .attr("pointer-events","none")
+  
+  // append shaded circle and outer line
+  
+  svg.append("circle")
+    .attr("cx", width/2)
+    .attr("cy", width/2)
+    .attr("r",width/2)
+    .attr("fill", "url(#grSea)")
+    .attr("stroke", "none")
+    //.attr("stroke-width",1.5)
+    .attr("pointer-events","none")
+    
+    svg
+    .call(drag(projection)
+        .on("drag.render", () => render()))
+    .call(() => render())
+
+  
+   div
+    .append("div")
+    .style("position", "absolute")
+    .style("top", "-20px")
+    .style("left", "0px")
+    .append(() =>
+      Swatches(
+        d3.scaleOrdinal(
+          ["Lunar Hijiri", "Ethiopian", "Hebrew", "Solar Hijiri", "Indian", "Nepali", "Bengali", "Burmese", "Thai", "Minguo", "Juche", "Japanese"],
+          colors
+        )
+      )
+    ); 
+    return div.node();
+}
+```
+
+```{ojs}
+md`For more Dec maps like the one above, check out these notebooks:
+- [Decalc](/@dec/alc)
+- [Decaliper](/@dec/ali)
+- [Decirc](/@dec/irc)
+- [Declock](/@dec/loc)
+- [Solar terminator](/@dec/solar-terminator)
+- [The Sun's view of the Earth](/@dec/the-suns-view-of-the-earth)`
+```
+
+```{ojs}
+md`Dec measures time using year and days. A year is a turn of one [celestial body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity) around [the point it orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit) and a day is a turn of a celestial body on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole). The Earth (the blue circle labeled ${tex`\raisebox{2pt}{🜨}`} below) makes 365.24 turns on its axis in a year and Mars (red circle labeled ♂ below) turns on its axis 668.59 times per year.`
+```
+
+```{ojs}
+md`In the case of [tidally locked](https://en.wikipedia.org/wiki/Tidal_locking#:~:text=the%20objects%20reaches-,a%20state%20where%20there%20is%20no%20longer%20any%20net%20change%20in%20its%20rotation%20rate%20over%20the%20course%20of%20a%20complete%20orbit,-.%20In%20the%20case) moons, such as the [Earth's moon](https://en.wikipedia.org/wiki/Moon#:~:text=Earth%27s%20only%20natural%20satellite) (☾), Decalendar uses [tidal days](https://oceanservice.noaa.gov/education/tutorial_tides/tides05_lunarday.html#:~:text=the%20time%20it%20takes%20for%20a%20specific%20site%20on%20the%20Earth%20to%20rotate%20from%20an%20exact%20point%20under%20the%20moon%20to%20the%20same%20point%20under%20the%20moon),   instead of [synodic](https://en.wikipedia.org/wiki/Synodic_day#:~:text=the%20period%20for%20a%20celestial%20object%20to%20rotate%20once%20in%20relation%20to%20the%20star%20it%20is%20orbiting) or [sidereal](https://en.wikipedia.org/wiki/Sidereal_time#:~:text=a%20star%20seen%20at%20one%20position%20in%20the%20sky%20will%20be%20seen%20at%20the%20same%20position%20on%20another%20night%20at%20the%20same%20time%20of%20day%20%28or%20night%29%2C%20if%20the%20day%20is%20defined%20as%20a%20sidereal%20day) days, because tidal locking causes synodic days to be infinite and sidereal days to have the same duration as a year.`
+```
+
+```{ojs}
+chart = {
+  const svg = d3.create("svg")
+    .attr("viewBox", [0, 0, system_width, height / 1.5])
+    .attr("width", system_width * 1.6)     
+    .attr("height", height / 1.4)
+    .attr("id", "SVGchart");
+
+  // Dark background
+  svg.append("rect")
+    .attr("width", "320%")
+    .attr("height", "120%")
+    .attr("transform", "translate(" + -width/3 + "," + -height/128.02 + ")")
+    .attr("fill", dark_background? "#000":"#FFF");  
+  
+  // Planet group
+  const container = svg.append("g")
+    .attr("id", "orbit_container")
+    .attr("transform", "translate(" + width/4.4 + "," + height/3.02 + ")");
+
+  // Draw planets and moons
+  container.selectAll("g.planet").data(system_model == 1 ? solar_system : tychnonic_model).enter().append("g")
+    .attr("class", "planet_cluster")
+    .each(function(d, i) {
+      d3.select(this).append("circle")
+         .attr("class", "orbit")
+         .attr("r", d.R);
+      d3.select(this).append("circle")
+         .attr("r", d.r)
+         .attr("cx",d.R)
+         .attr("cy",0)
+         .attr("id", d.name)
+         .attr("class", "planet");
+     d3.select(this).append("g")
+       .attr("transform", "translate(" + d.R + ",0)")
+       .call(g => g.append("text")
+         .attr("fill", dark_background? "white": "black")
+         .attr("dx", `${d.name == "Jupiter" ? 2.46 - (width < 400) * .65 : d.name == "Earth" ? .87 : d.name == "Saturn" ? 1 - (width < 400) * .65 : d.name == "Mars" ? 1.5 : d.name == "Sun" ? .5 : .3}em`)
+         .attr("dy", "0.25em")
+         .attr("font-size", 14)
+         .attr("font-face", "Open Sans")
+         .text(d.symbol));
+
+     d3.select(this).append("g")
+       .attr("transform", "translate(" + d.R + ",0)")             
+       .selectAll("g.moon").data(d.moons).enter().append("g")
+       .attr("transform", "translate(" + d.R + ",0)")
+         .attr("class", "moon_cluster")
+         .each(function(d, i) {
+           // Conditions to display planets' moons. For the Earth, we always display the Moon
+           if(!system_model ||  heliocentric_options.display_moons || d.name=="Moon" || d.name=="Sun_path") {    
+
+     // Orbits are displayed
+     if(!(d.name=="Sun_path" && !heliocentric_options.Sun_path)){
+       d3.select(this).append("circle")
+           .attr("class", "orbit_moon")
+           .attr("r", d.R)
+     }
+     d3.select(this).append("circle")
+         .attr("r", d.r)
+         .attr("cx",d.R)
+         .attr("cy", 0)
+         .attr("id", d.name)
+         .attr("class", "moon");
+     d3.select(this).append("g")
+         .attr("transform", "translate(" + d.R + ",0)")
+         .call(g => g.append("text")
+           .attr("fill", dark_background? "white": "black")
+           .attr("dx", "0.5em")
+           .attr("dy", "0.5em")
+           .attr("font-size", 14)
+           .attr("font-face", "Open Sans")
+           .text(d.symbol));
+           }
+         });
+     
+  });
+
+  
+  // throttle animation
+  setInterval(function(){
+    var delta = (Date.now() - new Date().setHours(0,0,0,0));
+    
+    svg.selectAll(".planet_cluster, .moon_cluster")
+      .attr("transform", function(d) {
+      return "rotate(" + (d.phi0 + (delta * (d.speed * speed_factor/1000))) + ")";
+    });
+
+    // We do not rotate symbols
+    svg.selectAll("text")
+      .attr("transform", function(d) {
+        if((system_model == 1) || (d.symbol == "⊙") || (d.symbol == "🜨") || (d.symbol == "☾")){
+          if(d.symbol == "🜨"){
+            // Earth symbol translated above the planet
+            if(system_model == 0)
+              return "translate(-16,-20)";  
+            else
+              return "rotate(" + (-d.phi0 + (-delta * d.speed * speed_factor/1000)) + ") translate(-16,-20)"; 
+          }
+          else if((system_model == 1) && d.symbol == "☾")
+            return "rotate(" + (-angle_90 - d.phi0 + delta * (Earth_speed - d.speed) * (speed_factor/1000) )  + ") translate(0,-2)"; 
+          else
+            return "rotate(" + (-d.phi0 + (-delta * d.speed * speed_factor/1000)) + ")";
+        }
+        else
+          return "rotate(" + (angle_90 - d.phi0 + delta * (Earth_speed - d.speed) * (speed_factor/1000) )  + ") translate(4,-3)";
+    });
+
+     
+  }, 0);                       
+                      
+
+  return svg.node(); 
+}
+
+```
+
+```{ojs}
+md`### Day of the era`
+```
+
+```{ojs}
+md`#### Get dote from UNIX time
+Most Dec calendar (Decalendar) calculations require us to obtain a day of the era (dote), which is simply the number of days since a [calendar epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era). The Gregorian Decalendar era starts exactly 60 days later than the [Common Era](https://en.wikipedia.org/wiki/Common_Era).
+
+The `unix2dote` function below 1) translates [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=a%20date%20and%20time%20representation%20widely%20used%20in%20computing) into a dote by converting (milli)seconds of UNIX time into days and 2) adds an offset that shifts the [UNIX epoch](https://en.wikipedia.org/wiki/Epoch_%28computing%29#:~:text=a%20fixed%20date%20and%20time%20used%20as%20a%20reference%20from%20which%20a%20computer%20measures%20system%20time) to the epoch for a given calendar. The default offset is 719468, the number of days between the UNIX epoch and the Dec Gregorian calendar epoch. `
+```
+
+```{ojs}
+unix = {
+  while(true) {
+    yield Date.now();
+  }
+}
+```
+
+```{ojs}
+function unix2dote(unix, zone, offset = 719468) {
+  return [
+    (unix ?? Date.now()) / 86400000
+    + (zone = zone ?? (10 - Math.round(
+        (new Date).getTimezoneOffset() / 144)) % 10
+      ) / 10 + offset, zone]
+}
+```
+
+```{ojs}
+current = unix2dote(unix)
+```
+
+```{ojs}
+function doty2dote(year = 1969, doty = 306) {
+    return doty + Math.floor(year * 365 + Math.floor(year / 4) - Math.floor(year / 100) + Math.floor(year / 400));
+}
+```
+
+```{ojs}
+unixEpoch = doty2dote(1969, 306)
+```
+
+```{ojs}
+md`Other than providing a dote, `unix2dote` also returns the provided Dec time zone and can infer the time zone if it is not provided. The time zone inference method is described in the [Dec clock (Declock) notebook](/@dec/lock). Time zone inference is not exact. Unequivocal Dec time zone determination requires knowing your longitude. To obtain a Dec time zone from a given longitude, the functions below first add 18 degrees (half a turn) to align the longitude in degrees with [Meridian 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole), which is the start of Zone 0, the [Prime Meridian](https://en.wikipedia.org/wiki/Prime_meridian), and the [International Date Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) in Dec.`
+```
+
+```{ojs}
+md`Once 0 turns is set to Meridian 0, `long2turn` converts degrees to deciturns (tenths of a turn). The `long2zone` function then simply [floors](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=gives%20as%20output%20the%20greatest%20integer%20less%20than%20or%20equal%20to%20x) the deciturns provided by `long2turn`. Alternatively, we can convert degrees to deciturns and round. This alternative conversion method is simpler but can cause confusion because it sets 0 turns to Meridian 05, the middle of Zone 0 (5 [ctr](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=in%2C%20e.g.%2C-,centiturns%20%28ctr%29,-%2C%20milliturns%20%28mtr%29%2C%20etc)). Regardless of which conversion method we use, Dec time zones always range from 0 to 9, even if the provided degree value for longitude is outside the typical range (${tex`-180° \le \lambda \le 180°`}).`
+```
+
+```{ojs}
+md`It is possible to subtract 10 from the Dec times zones to convert them from positive to negative. Regardless of their sign, Dec time zone numbers work like [array indexes](https://en.wikipedia.org/wiki/Array_%28data_structure%29#Element_identifier_and_addressing_formulas:~:text=The%20first%20element%20of%20the%20array%20is%20indexed%20by%20subscript%20of%200). We can also use positive and negative time zone indexes as time zone offsets to obtain the time in the desired time zone. Sometimes it easier to use a negative offset than a positive offset. For example. when converting Zone 0 time to Zone 8 time, we can subtract 2, rather than add 8, to the Zone 0 time in decidays. Adding positive offsets works for both times and dates with times (datetimes), but adding a negative offset to a datetime will give us the previous date rather than the current one. In short, we have to increment a date if we add a negative index to it. `
+```
+
+```{ojs}
+function long2turn(degrees = -180, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return (((degrees %= 360) < 0 ? degrees + 360 : degrees) + 18) / (360 / 10**e) % 10**e;
+}
+```
+
+```{ojs}
+function long2zone(degrees = -180) {
+  return Math.floor(long2turn(degrees, 1));
+}
+```
+
+```{ojs}
+md`#### Degrees to milliturns from Meridian 0`
+```
+
+```{ojs}
+Object.fromEntries([-180, -90, 0, 9, 18, 36, 45, 90, 162].map(x => [x, long2turn(x, 3)]))
+```
+
+```{ojs}
+md`## Calculate Decalendar dates from UNIX time`
+```
+
+```{ojs}
+md`To obtain the components of a Dec timestamp, we first calculate the dote from UNIX time, as described above.`
+```
+
+```{ojs}
+zone0dote = unix / 86400000 + 719468 
+```
+
+```{ojs}
+zone0deco = dote2deco(zone0dote)
+```
+
+```{ojs}
+md`The dote allows us to calculate the the solar cycle (socy), the day of the cycle (dotc), and the year of the cycle (yotc). A socy in the Gregorian calendar is [400 years](https://en.wikipedia.org/wiki/Solar_cycle_%28calendar%29#:~:text=400%2Dyear%20cycle%20of%20the%20Gregorian%20calendar).
+The socy calculations below were developed by [Howard Hinnant](https://howardhinnant.github.io), who uses the term [*era*](https://howardhinnant.github.io/date_algorithms.html#:~:text=era%20is%20a%20400%20year%20period) to refer to a solar cycle in the associated [publication](https://howardhinnant.github.io/date_algorithms.html) and [C++ library](https://howardhinnant.github.io/date/date.html).`
+```
+
+```{ojs}
+md`#### Cycle`
+```
+
+```{ojs}
+socy = Math.floor(zone0dote / 146097)
+```
+
+```{ojs}
+md`#### Day of the cycle`
+```
+
+```{ojs}
+dotc = zone0dote - socy * 146097
+```
+
+```{ojs}
+md`#### Year of the cycle`
+```
+
+```{ojs}
+yotc = Math.floor((dotc
+  - Math.floor(dotc / 1460)
+  + Math.floor(dotc / 36524)
+  - Math.floor(dotc / 146096)
+) / 365)
+```
+
+```{ojs}
+md`We then use the socy, dotc, and yotc to calculate a year and day of the year (doty). The doty is both the calendar date and the time of day. If we floor a doty, it is like an [array index](https://en.wikipedia.org/wiki/Array_%28data_structure%29#Element_identifier_and_addressing_formulas:~:text=When%20data%20objects%20are%20stored%20in%20an%20array%2C%20individual%20objects%20are%20selected%20by%20an%20index) that can unequivocally identify any month and day of the month (dotm) in the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world) or any of the other calendar systems discussed below.`
+```
+
+```{ojs}
+md`#### Year`
+```
+
+```{ojs}
+year = yotc + socy * 400
+```
+
+```{ojs}
+zone0datetime = dotc - yotc * 365 - Math.floor(yotc / 4) + Math.floor(yotc / 100)
+```
+
+```{ojs}
+md`#### Day of the year`
+```
+
+```{ojs}
+zone0doty = Math.floor(zone0datetime)
+```
+
+```{ojs}
+md`#### Current Decalendar date`
+```
+
+```{ojs}
+`${year}+${zone0doty.toString().padStart(3, "0")}`
+```
+
+```{ojs}
+md`If we are going to do a calculation more than once, it is useful to create a function. The `dote2greg` function below combines the calculation described above.`
+```
+
+```{ojs}
+function dote2greg(dote = 719468) {
+  const socy = Math.floor((dote >= 0 ? dote : dote - 146096) / 146097), dotc = dote - socy * 146097,
+        yotc = Math.floor((dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
+  return [yotc + socy * 400, dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4)];
+}
+```
+
+```{ojs}
+dote2greg(...unix2dote(unix))
+```
+
+```{ojs}
+md`#### Get timestamp from year and doty
+It is a good idea to put the time zone at the end of every timestamp. The `doty2deco` function formats the provided year, doty, and time zone into a Dec timestamp.`
+```
+
+```{ojs}
+gregDeco = doty2deco(...dote2greg(...unix2dote(unix, 0)), null, "0", true)
+```
+
+```{ojs}
+doty2deco(...dote2greg(...unix2dote(unix, 0)), null, "0", true, true)
+```
+
+```{ojs}
+function doty2deco(year = 1969, doty = 306, zone = 0, lead = "0", emoji = false, minus = false) {
+  return dote2deco(doty2dote(year, doty), zone, lead, emoji, minus);
+}
+```
+
+```{ojs}
+function dote2deco(dote = 719468, zone = 0, lead = "0", emoji = false, minus = false) {
+let [year, doty] = dote2doty(dote);
+return `${emoji ? "🗓️" : ""}${
+    (year + minus).toString().padStart(4, lead)}${minus ? "-" : "+"}${
+    Math.abs(Math.floor(doty = doty - (365 + year2leap(year + 1)) * Number(minus))
+    ).toString().padStart(3, lead)}${emoji ? "🕰️" : ""}️${
+    Math.abs(doty % 1 * 10).toFixed(4)}${zone != null ? (minus ? "+" : "-") + String(zone) : ""}`
+}
+```
+
+```{ojs}
+function year2leap(year = 1970) {
+    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+}
+```
+
+```{ojs}
+function greg2leap(year = 1970) {
+    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+}
+```
+
+```{ojs}
+function dote2doty(days = 719468) {
+    const cykl = Math.floor((days >= 0 ? days : days - 146096) / 146097), dotc = days - cykl * 146097,
+        yotc = Math.floor((dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
+    return [yotc + cykl * 400, dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4)];
+}
+```
+
+```{ojs}
+md`## Convert a Decalendar date to an ISO calendar date`
+```
+
+```{ojs}
+month_index = Math.floor((5 * zone0doty + 2) / 153);
+```
+
+```{ojs}
+month_day = [
+  Math.floor(month_index < 10 ? month_index + 3 : month_index - 9),
+  Math.floor(zone0doty - (153 * month_index + 2) / 5 + 2)
+];
+```
+
+```{ojs}
+`${
+  year + (zone0doty > 305)}-${
+  month_day[0].toString().padStart(2, "0")}-${
+  month_day[1].toString().padStart(2, "0")
+}`
+```
+
+```{ojs}
+md`## Convert a year and a month to a Decalendar date`
+```
+
+```{ojs}
+`${
+  new Date().getUTCFullYear() - (month_day[0] < 3)}+${
+  String(Math.floor((153 * (
+    month_day[0] > 2 ? month_day[0] - 3 : month_day[0] + 9
+  ) + 2) / 5) + month_day[1] - 1).padStart(3, "0")}`
+```
+
+```{ojs}
+md`## Solar Hijiri calendar`
+```
+
+```{ojs}
+md`Dec focuses on the Gregorian calendar, because it is by far the most widely used calendar system. Other than its ubiquity, another major strength of the Gregorian calender is an intercalation system that is easy to understand and quite accurate. The Gregorian calendar leap years are always divisible by 4, and thus are always even numbers, e.g. 2000, 2004, 2008, 2012, 2016, 2020, 2024, 2028, 2032, 2036, 2040, 2044, and 2048, and are grouped into cycles of 400 years.
+`
+```
+
+```{ojs}
+md`In contrast, the Solar Hijiri calendar is [“only in official use in Iran”](https://en.wikipedia.org/wiki/Solar_Hijri_calendar#:~:text=solar%20hijri%20calendar%20itself%20remains%20only%20in%20official%20use%20in%20iran) and its [33-year cycle](http://aramis.obspm.fr/~heydari/divers/ir-cal-eng.html#:~:text=%20the%20first%20leap%20year%20of%20the%2033%2Dyear%20cycle%20is%20quinquennial%20and%20the%20seven%20others%20quadrennial) intercalation system does not yield instantly recognizable leap years. Within any cycle, Solar Hijiri leap years will be either all even or all odd, but this pattern flips with every cycle. Similarly, 33-year cycles are hard to recognize instantly because the start and end years also flip back and forth between event and odd every cycle, 0 to 32, 33 to 65, 66 to 98, etc.`
+```
+
+```{ojs}
+md`On the other hand, the Solar Hijiri calendar is much more accurate. A more accurate intercalation system means that the calendar can be used for longer before additional intercalation rules have to be created. The Solar Hijiri calendar also avoids the two major flaws of the Gregorian calendar: 1. Leap Day is not at the end of the year and 2. New Year Day is an arbitrary day that is not connected to any seasonal event like a [solstice](https://en.wikipedia.org/wiki/Solstice#:~:text=the%20time%20when%20the%20sun%20reaches%20its%20most%20northerly%20or%20southerly%20excursion%20relative%20to%20the%20celestial%20equator) or [equinox](https://en.wikipedia.org/wiki/Equinox#:~:text=a%20moment%20in%20time%20when%20the%20sun%20crosses%20the%20earth's%20equator). In the Solar Hijiri calendar, Leap Day is at [the end of the year](https://iran-times.com/persian-calendar-skips-leap-day-this-year-so-your-birthday-comes-a-day-early-the-next-12-months/#:~:text=iranians%20added%20their%20leap%20day%20three%20weeks%20later%20at%20the%20end%20of%20the%20month%20of%20esfand) (1) and New Year Day is the [Northward Equinox](https://en.wikipedia.org/wiki/March_equinox#:~:text=the%20equinox%20on%20the%20earth%20when%20the%20subsolar%20point%20appears%20to%20leave%20the%20southern%20hemisphere%20and%20cross%20the%20celestial%20equator) (2).`
+```
+
+```{ojs}
+md`Decalendar addresses the two major flaws of the Gregorian calendar by moving the start of the year to March 1. When Leap Day is the last day of the year, the day numbers (indexes) used by Decalendar remain constant year to year. Starting the year on March 1 also brings Decalendar in alignment with the [metereological seasons](https://en.wikipedia.org/wiki/Season#:~:text=meteorological%20seasons%20are%20reckoned%20by%20temperature%2C%20with%20summer%20being%20the%20hottest%20quarter%20of%20the%20year%20and%20winter%20the%20coldest%20quarter%20of%20the%20year). In contrast, the Solar Hijiri calendar starts its year on the Northward Equinox and is designed to match the [Northward Equinox year](https://en.wikipedia.org/wiki/Tropical_year#:~:text=between%20two%20march%20equinoxes) rather than the [mean tropical year](https://en.wikipedia.org/wiki/Tropical_year#:~:text=365.242740-,mean%20tropical%20year), and thus more closely matches the [astronomical seasons](https://en.wikipedia.org/wiki/Season#Astronomical).`
+```
+
+```{ojs}
+md`The Northward equinox in Year 621 was on Day 19 at Dot 90486 in Zone 0 (0621+0199.0486-0, 0621-03-20T21:43+00:00, March 20 621 CE at 9:43 PM) according to [data.giss.nasa.gov](https://data.giss.nasa.gov/modelE/ar5plots/srvernal.html). In Zone 5, the SH epoch deco is 0621+0200.0486-5.
+The SH epochal dote is therefore 226835. The UNIX epochal dote is 719468.
+The number of days that need to be added to UNIX time to more the epoch from Year 1969 Day 306 to Year 622 Day 20 is therefore 492633.`
+```
+
+```{ojs}
+sohiEpoch = doty2dote(621, 20)
+```
+
+```{ojs}
+md`[The modern northward equinox year length](https://en.wikipedia.org/wiki/Tropical_year#:~:text=365.242137%20days-,365.242374%20days,-Between%20two%20June) is 365.242374. The error with the 33-year cycle is ${((365+8/33)-365.242374)*1e6} microdays (millionths of a sol) per year, which is much better than the Gregorian calendar yearly error of ${(365.2425-365.242374)*1e6} microdays.`
+```
+
+```{ojs}
+719468 - 226835
+```
+
+```{ojs}
+dote2greg(226835, 4)
+```
+
+```{ojs}
+zone0doteSH = unix / 86400000 + 492633
+```
+
+```{ojs}
+md`The Solar Hijiri calendar has 33-year cycles with 8 leap years and 25 common years. The total number of days in a cycle is 33 * 365 + 8 = 12053.`
+```
+
+```{ojs}
+33 * 365 + 8
+```
+
+```{ojs}
+socySH = Math.floor(zone0doteSH / 12053)
+```
+
+```{ojs}
+dotcSH = zone0doteSH - socySH * 12053
+```
+
+```{ojs}
+yotcSH = Math.floor((dotcSH - Math.floor(dotcSH / 1460)) / 365)
+```
+
+```{ojs}
+yearSH = yotcSH + socySH * 33
+```
+
+```{ojs}
+zone0datetimeSH = dotcSH - yotcSH * 365 - Math.floor(yotcSH / 4)
+```
+
+```{ojs}
+zone0dotySH = ~~zone0datetimeSH
+```
+
+```{ojs}
+zone0timeSH = zone0datetimeSH % 1
+```
+
+```{ojs}
+719468 - 226835
+```
+
+```{ojs}
+md`The leap year rule below differs from [this Wikipedia table](https://en.wikipedia.org/wiki/Solar_Hijri_calendar#Comparison_with_Gregorian_calendar) by 18 years. I believe the table is based on [this paper](https://wwwold.astro.umk.pl/~kb/Papers/EMP/PersianC-EMP.htm). It also differs from the [`solar_hijiri.h`](https://github.com/HowardHinnant/date/blob/master/include/date/solar_hijri.h) file in Howard Hinnant's [date library](https://github.com/HowardHinnant/date#date). but I have instead implemented the leap year approach described on [this webpage](http://aramis.obspm.fr/~heydari/divers/ir-cal-eng.html), because I am convinced that it is not only far superior but also the best possible solar calendar design. I based the 22-year cycle of the Martian calendar below on the 33-year cycle of the Solar Hijiri calendar.`
+```
+
+```{ojs}
+function dote2sohi(dote = 492633) {
+  const socy = Math.floor((dote >= 0 ? dote : dote - 12052) / 12053),
+  dotc = dote - socy * 12053, yotc = Math.floor((dotc - Math.floor(dotc / 1461)) / 365)
+  return [yotc + socy * 33, dotc - (yotc * 365 + Math.trunc((yotc - 1) / 4))]
+}
+```
+
+```{ojs}
+soHiDeco = doty2deco(...dote2sohi(unix / 86400000 + 492633), null, "0", true)
+```
+
+```{ojs}
+dote2sohi(unix / 86400000 + 492633)
+```
+
+```{ojs}
+md`- Solar Hijiri New Year Example:
+  - Gregorian Decalendar:
+    - year: 2024
+    - doty: 019
+    - dote: 739270
+  - Solar Hijiri Decalendar:
+    - year: 1403
+    - doty: 0
+    - dote: 512435`
+```
+
+```{ojs}
+doty2dote(2024, 19)
+```
+
+```{ojs}
+dote2sohi(512435)
+```
+
+```{ojs}
+dote2sohi(492633)
+```
+
+```{ojs}
+dote2greg(512435 + 226835)
+```
+
+```{ojs}
+719468 - 492633
+```
+
+```{ojs}
+md`## Lunar Hijiri calendar
+The main difference between the Lunar Hijiri and other Decalendars is its year length, 354 or 355 days, which comes from following the Moon instead of the Sun. The Lunar and Solar Hijiri calendars should have the same epoch, but there is a difference of 485 days in the values needed to make the output match expectations. The difference between the UNIX epoch and the Solar Hijiri calendar epoch is 719468 - 226835 = 492633, while the difference between the UNIX epoch and the Lunar Hijiri epoch is 719468 - 227320 = 492148. The Lunar Hijiri calendar cycle is 30 years long and consists of 19 common years and 11 leap years.`
+```
+
+```{ojs}
+function dote2luhi(dote = 492148) {
+  const socy = Math.floor((dote >= 0 ? dote : dote - 10630) / 10631),
+  dotc = dote - socy * 10631, yotc = Math.floor((30 * dotc + 10646) / 10631) - 1
+  return [yotc + socy * 30 + 1, dotc - (yotc * 354 + Math.floor((11 * (yotc + 1) + 3) / 30))]
+}
+```
+
+```{ojs}
+luHiDeco = doty2deco(...dote2luhi(unix / 86400000 + 492148), null, "0", true)
+```
+
+```{ojs}
+dote2luhi(unix / 86400000 + 492148)
+```
+
+```{ojs}
+luhiEpoch = doty2dote(622, 140)
+```
+
+```{ojs}
+dote2doty(227320)
+```
+
+```{ojs}
+md`- Lunar Hijiri New Year Example:
+  - Gregorian Decalendar:
+    - year: 2023
+    - doty: 140
+    - dote: 739025
+  - Lunar Hijiri Decalendar:
+    - year: 1445
+    - doty: 0
+    - dote: 511705`
+```
+
+```{ojs}
+doty2dote(2023, 140)
+```
+
+```{ojs}
+doty2dote(2023, 140)
+```
+
+```{ojs}
+dote2luhi(511705)
+```
+
+```{ojs}
+dote2luhi(739025 - 227320)
+```
+
+```{ojs}
+739025 - 227320
+```
+
+```{ojs}
+dote2greg(511705 + 227320)
+```
+
+```{ojs}
+md`## Calendars synchronized to the Gregorian calendar
+The Bengali, Indian National, Japanese, Nepali, North Korean, Taiwanese (Minguo), and Thai decalendars only differ from the Gregorian decalendar in their epochs. The dates of all of these calendars can be obtained by entering the correct offset to the `unix2dote` function. These other decalendars will not have the same Leap Day and New Year Day as the main Decalendar and thus the conversion of their day of the year numbers to Gregorian calendar dates will differ between common and leap years. In every decalendar, Leap Day is always followed by New Year Day and all days begin at midnight.`
+```
+
+```{ojs}
+bengEpoch = doty2dote(593, 44)
+```
+
+```{ojs}
+bengDeco = doty2deco(...dote2greg(...unix2dote(unix, 0, unixEpoch - bengEpoch)), null, "0", true)
+```
+
+```{ojs}
+indiEpoch = doty2dote(78, 20)
+```
+
+```{ojs}
+indiDeco = doty2deco(...dote2greg(...unix2dote(unix, 0, unixEpoch - indiEpoch)), null, "0", true)
+```
+
+```{ojs}
+thaiEpoch = doty2dote(-543, 19)
+```
+
+```{ojs}
+thaiDeco = doty2deco(...dote2greg(...unix2dote(unix, 0, unixEpoch - thaiEpoch)), null, "0", true)
+```
+
+```{ojs}
+mingEpoch = doty2dote(1910, 306)
+```
+
+```{ojs}
+mingDeco = doty2deco(...dote2greg(...unix2dote(unix, 0, unixEpoch - mingEpoch)), null, "0", true)
+```
+
+```{ojs}
+nepaEpoch = doty2dote(-57, 44)
+```
+
+```{ojs}
+nepaDeco = doty2deco(...dote2greg(...unix2dote(unix, 0, unixEpoch - nepaEpoch)), null, "0", true)
+```
+
+```{ojs}
+japaEpoch = doty2dote(2018, 306)
+```
+
+```{ojs}
+japaDeco = doty2deco(...dote2greg(...unix2dote(unix, 0, unixEpoch - japaEpoch)), null, "0", true)
+```
+
+```{ojs}
+md`## Julian calendar`
+```
+
+```{ojs}
+function dote2juli(days) {
+  const socy = Math.floor((days >= 0 ? days : days - 1460) / 1461);
+  const dotc = days - socy * 1461;                                  // [0, 1460]
+  const yotc = Math.floor((dotc - Math.floor(dotc / 1460)) / 365);  // [0, 3]
+  const year = yotc + socy * 4;
+  const doty = dotc - 365 * yotc;                                   // [0, 365]
+  return [year, doty]
+}
+```
+
+```{ojs}
+dote2juli(unix / 86400000 + 719470)
+```
+
+```{ojs}
+md`The [Ethiopian calendar](https://en.wikipedia.org/wiki/Ethiopian_calendar#:~:text=the%20official%20state%20civil%20calendar%20of%20Ethiopia) follows the same rules as the Julian calendar, but have a different [epoch](https://en.wikipedia.org/wiki/Ethiopian_calendar#:~:text=months%20earlier%20on-,29%20August%20AD%208,-.%20Meanwhile%2C%20Europeans%20eventually).`
+```
+
+```{ojs}
+ethiEpoch = doty2dote(7, 181)
+```
+
+```{ojs}
+dote2juli(2737)
+```
+
+```{ojs}
+ethiDeco = doty2deco(...dote2juli(unix / 86400000 + 719470 - 2737), null, "0", true)
+```
+
+```{ojs}
+md`## Julian date`
+```
+
+```{ojs}
+md`Add 1721119.5 (2440587.5 - 719468) to the dote to get [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) (UT) [Julian Date](https://en.wikipedia.org/wiki/Julian_day#:~:text=any%20instant%20is%20the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon%20in%20Universal%20Time) (JD).`
+```
+
+```{ojs}
+2440587.5 - 719468
+```
+
+```{ojs}
+JDut = zone0dote + 1721119.5
+```
+
+```{ojs}
+md`Subtract 1721119.5 (2440587.5 - 719468) from the UT JD to get the dote`
+```
+
+```{ojs}
+JDut - 1721119.5
+```
+
+```{ojs}
+md`Add 69.184 seconds to UNIX time, divide by 86400 seconds, and add 2440587.5 days to get Terrestrial Time (TT) JD.`
+```
+
+```{ojs}
+JDtt = (unix + 69184) / 86400000 + 2440587.5
+```
+
+```{ojs}
+md`## Mars`
+```
+
+```{ojs}
+md`Adapting Decalendar to measure time on Mars can illustrate how Decalendar works. We want the Martian Decalendar time to match the [Martian Sol Date](https://en.wikipedia.org/wiki/Timekeeping_on_Mars#Mars_Sol_Date). Sol is the word for a [Martian solar day](https://en.wikipedia.org/wiki/Mars_sol). The Martian Sol Date is [calculated from the Julian Date](https://en.wikipedia.org/wiki/Timekeeping_on_Mars#Formulas_to_compute_MSD_and_MTC).`
+```
+
+```{ojs}
+md`### Martian Sol Date`
+```
+
+```{ojs}
+md`${
+tex`
+MSD = (JDTT − 2451549.5) / 1.0274912517 + 44796.0 − 0.0009626
+\\
+MSD = (JDTT − 2451549.5 + (44796.0 - 0.0009626) * 1.0274912517) / 1.0274912517 + 44796.0 − 0.0009626
+\\
+MSD = (JDTT − 2405522.0028779097) / 1.0274912517
+`}`
+```
+
+```{ojs}
+2451549.5 - (44796.0 - 0.0009626) * 1.0274912517
+```
+
+```{ojs}
+msd = (JDtt - 2405522.0028779097) / 1.0274912517
+```
+
+```{ojs}
+md`### Sol of the era
+The Mars Sol Date and is similar to Julian Date in that we have to adjust their respective epochs to calculate dates. To calculate the Earth year and day of the year (doty) from the Julian Date, we first have to subtract 1721119.5 from the Julian Date to get the day of the era (dote). Similarly, to calculate the Mars year and sol of the year (soty) from the Mars Sol Date, we first have to subtract 28224 from the Martian Sol Date to get the sol of the era (sote).`
+```
+
+```{ojs}
+msd - 28224 
+```
+
+```{ojs}
+md`We can also calculate the sote from UNIX time and the dote. To calculate the sote from UNIX time, we first have to shift the UNIX epoch (`1969+3060.0000-4`) to the Mars Epoch (`1953+0844.1516515-4`) by adding 6065.58483485 days to UNIX time and dividing by 1.0274912517 to convert days to sols.`
+```
+
+```{ojs}
+(unix / 86400000 + 6065.58483485) / 1.0274912517
+```
+
+```{ojs}
+md`Likewise, to calculate the sote from the dote, we first have to shift the Decalendar epoch (0000+0000.0000-4) to the Mars Epoch (1953+0844.1516515-4) by subtracting 713402.41516515 days from the dote and dividing by 1.0274912517 to convert days to sols.`
+```
+
+```{ojs}
+sote = (zone0dote - 713402.41516515) / 1.0274912517
+```
+
+```{ojs}
+md`### Mars epoch`
+```
+
+```{ojs}
+marsEpochDote = 719468 - 6065.58483485
+```
+
+```{ojs}
+marsEpochJD = marsEpochDote + 1721119.5
+```
+
+```{ojs}
+marsEpochDoty = dote2greg(marsEpochDote)
+```
+
+```{ojs}
+md`The Mars epoch (Year 0 Sol 0) is `2434521.91516515` as a Julian Date, `1953-05-24T09:57:50.3+00:00` in ISO8601 calendar date format, and `1953+0844.1516515-4` in Decalendar. This epoch yields matching numbers after the decimal (fractional day time) in the sol of the era (sote), sol of the year (soty), and Martian Sol Date (msd). In other words, the difference between sote time and msd time is negligible.`
+```
+
+```{ojs}
+(sote - msd) % 1 * 1e18
+```
+
+```{ojs}
+md`The Mars epoch is also the beginning of the Northward Spring Equinox ([Solar longitude (Ls) = 0](https://en.wikipedia.org/wiki/Timekeeping_on_Mars#Definition_of_year_and_seasons)) in [Martian Year 0](https://en.wikipedia.org/wiki/Timekeeping_on_Mars#Year_numbering), a fact I confirmed using [an online Martian time calculator](https://www-mars.lmd.jussieu.fr/mars/time/martian_time.html), as shown in the screenshot below:
+![image.png](${await FileAttachment("image.png").url()})`
+```
+
+```{ojs}
+md`The calculations for Ls are described on the following webpages:
+- https://marsclock.com
+- https://www.giss.nasa.gov/tools/mars24/help/algorithm.html
+
+I decided not to recreate these calculations here. Ls is great at marking the seasons, but not useful for timekeeping because it ["does not increase linearly with time"](https://en.wikipedia.org/wiki/Solar_longitude#:~:text=does%20not%20increase%20linearly%20with%20time).`
+```
+
+```{ojs}
+md`Instead of the exact Mars epoch, it may be easier to work with Julian Date ${tex`2434521.91\overline6`}, which is 1953-05-24T10:00:00+00:00 in ISO8601 calendar date format and ${tex`1953{+}0844.1\overline6{-}4`} in Decalendar. This number is only 1.5 mils (2.16 minutes) more than the exact Mars epoch and thus should be sufficient for situations that do not require a high level of precision.`
+```
+
+```{ojs}
+md`### Martian years`
+```
+
+```{ojs}
+md`Martian years are grouped in cycles of 22 years (14709 sols). In a cycle, there are 9 short years that have 668 sols and 13 long years that have 669 sols. Years that are not evenly divisible by 2 always have 669 sols. This is easy to remember because odd years have an odd number of sols. In addition, there are two even years with 669 sols every cycle that  are always 10 years apart within a cycle and 12 years apart between cycles, e.g. 10, 20, 32, 42, 54, 64, etc.`
+```
+
+```{ojs}
+668 * 22 + 13
+```
+
+```{ojs}
+(668 * 9 + 13 * 669) / 22
+```
+
+```{ojs}
+md`Martian year length averaged over a cycle is 668.5909 sols which is more than the [time between northward spring equinoxes on Mars](https://en.wikipedia.org/wiki/Timekeeping_on_Mars#:~:text=northward%20equinox%20year%20is%20668.5907%20sols) (668.5907), but will eventually be too short as the Martian year grows longer over the course of thousands of years. The error with the 22-year cycle is ${((668*22+13)/22-668.5907)*1e6} microsols (millionths of a sol) per year. This error rate will eventually be overtaken by the increase in the length of the Martian year. After 10000 years with a Martian year length increase of .07% per Martian millenium, 6685911.68 days will pass instead of 6685909.09 according to 22-year cycle.`
+```
+
+```{ojs}
+668.5907 * 10000 * 1.0000007
+```
+
+```{ojs}
+668.590909090909 * 10000
+```
+
+```{ojs}
+md`After 3862.158321 years based on a Martian year length increase of .07% per Martian millenium, an additional day will be needed to account for the lengthening of the Martian year.`
+```
+
+```{ojs}
+668.5907 * 3862.158321 * 1.0000007 - (668 + 13 / 22) * 3862.158321
+```
+
+```{ojs}
+md`Instead of decreasing the cycle length to adjust to the fact that the Martian year is getting longer and an extra day will be needed sooner, we can introduce the concept of a supercycle. Based on the calculations above a supercycle can consist of 111 cycles of 33 Martian years each. This supercycle will add a day at the end of Year 3663, a year which would otherwise 668. The length of the (super)cycle only affects the timing of the bonus day that is added as the last day of the (super)cycle.`
+```
+
+```{ojs}
+3682 / 33
+```
+
+```{ojs}
+md`People living on Mars in the future may decide to change the epoch from 1953+0844.1516514995601-4, which is [arbitrary](https://en.wikipedia.org/wiki/Timekeeping_on_Mars#:~:text=the%20choice%20as-,%22arbitrary%22,-%2C%20the%20great%20dust), to a more meaningful moment like the first human landing on Mars or the first seed planted in Martian soil. Regardless of the epoch, the calculations below should keep the northward spring equinox stable as Sol 0 without adjustment for thousands of years. The implementation of a supercycle (or some other mechanism of adding another day) will eventually be needed to maintain the start of Martian spring in the Northern Hemisphere as Sol 0. In the future, we may learn something new about Mar’s orbit around the Sun that informs the decision of how best to add extra days to the Martian Decalendar.`
+```
+
+```{ojs}
+marsSocy = Math.floor(sote / 14709)
+```
+
+```{ojs}
+sotc = sote - marsSocy * 14709
+```
+
+```{ojs}
+function dote2sote(dote = 719468) {
+    return (dote - 713402.41516515) / 1.0274912517
+}
+```
+
+```{ojs}
+function dote2soty(dote = 719468) {
+    return sote2soty(dote2sote(dote))
+}
+```
+
+```{ojs}
+function sote2soty(sote = 719468) {
+    const socy = Math.floor((sote >= 0 ? sote : sote - 14708) / 14709), sotc = sote - socy * 14709,
+    yotc = Math.floor((sotc - Math.floor(sotc / 1336) - Math.floor(sotc / 6686)) / 668);
+    return [yotc + socy * 22, sotc - (yotc * 668 + Math.floor(yotc / 2) + Math.trunc((yotc - 1) / 10))]
+}
+```
+
+```{ojs}
+md`- Mars Epoch Example:
+  - Gregorian Decalendar:
+    - year: 1953
+    - doty: 84.41516515
+    - dote: 713402.41516515
+  - Mars Decalendar:
+    - year: 0
+    - doty: 0
+    - dote: 0`
+```
+
+```{ojs}
+doty2dote(1953, 84.41516515)
+```
+
+```{ojs}
+dote2soty(713402.41516515)
+```
+
+```{ojs}
+mars = dote2soty(unix / 86400000 + 719468)
+```
+
+```{ojs}
+marsDeco = `🗓️️${mars[0].toString().padStart(4, "0")}+${Math.floor(mars[1]).toString().padStart(3, "0")}🕰${(mars[1] % 1 * 10).toFixed(4)}`
+```
+
+```{ojs}
+md`For a direct calculation of Martian and Earth time, check out the [Declock notebook](/@dec/declock).`
+```
+
+```{ojs}
+md`## Moon
+
+In the future, the Moon and its
+[Lagrange points](https://en.wikipedia.org/wiki/Lagrange_point#:~:text=points%20of%20equilibrium%20for%20small%2Dmass%20objects%20under%20the%20gravitational%20influence%20of%20two%20massive%20orbiting%20bodies)
+could be important staging areas for space travel. Humans living on the surface
+of the Moon will need a time system that relates to their environment.
+Decalendar measures time on the Moon in lunar years and lunar days. Just as a Martian solar day can be called a sol, a lunar day can be called a tel, which comes from the ancient Roman name [Tellus](https://en.wikipedia.org/wiki/Terra_%28mythology%29#Tellus_and_Terra_in_science_fiction:~:text=the%20name%20of%20the%20original%20earth%20goddess%20in%20the%20religious%20practices%20of%20the%20Republic) and is short for [tellurian or telluric](https://en.wikipedia.org/wiki/List_of_adjectivals_and_demonyms_of_astronomical_bodies#:~:text=Tellurian%2C%5B3%5D%20Telluric). A lunar year in Decalendar is a turn of the Moon around the Earth, which has the same duration as a turn of the Moon on its axis, because the Moon is [tidally locked](https://en.wikipedia.org/wiki/Tidal_locking#:~:text=the%20objects%20reaches-,a%20state%20where%20there%20is%20no%20longer%20any%20net%20change%20in%20its%20rotation%20rate%20over%20the%20course%20of%20a%20complete%20orbit,-.%20In%20the%20case) to the Earth.
+The animation below shows how tidal locking synchronizes the Moon's turns on its axis and around the Earth.`
+```
+
+```{ojs}
+// https://observablehq.com/@jhhamer/moon-earth-system
+// https://observablehq.com/@jhhamer/tides-in-hot-jupiter-systems
+{
+  const h = w;
+    
+  const svg = d3.select(DOM.svg(w, h));
+  
+  svg.append("rect")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("fill", "black");
+  
+  //Earth
+  var earth = svg.append("ellipse")
+    .attr("rx", earth_radius*scale)
+    .attr("ry", earth_radius*scale)
+    .attr("fill", d3.color("steelblue"))
+    .attr("cx", w/2)
+    .attr("cy", h/2)
+    .attr("id", "earth");
+  
+  var earth_midline = svg.append("line")
+    .attr("x1", w/2-earth_radius*scale)
+    .attr("y1", h/2)
+    .attr("x2", w/2+earth_radius*scale)
+    .attr("y2", h/2)
+    .attr("stroke-width", 5)
+    .attr("stroke", "black");
+  
+  //Moon
+  var moonOrbit = svg.append("g")
+    .attr("x", w/2)
+    .attr("y", h/2)
+  
+  var moonorbitpath = svg.append("circle")
+   .attr("cx", w/2)
+   .attr("cy", h/2)
+   .attr("r", earth_moon_dist)
+   .attr("id", "moon")
+   .attr("fill", "None")
+   .attr("stroke", d3.color('white'))
+   .attr("stroke-width", 1);
+    
+  var moon = moonOrbit.append("circle")
+    .attr("r", moon_radius*scale)
+    .attr("cx", w/2 - earth_moon_dist)
+    .attr("cy", h/2)
+    .attr("fill", d3.color("lightgray"));
+  var tidal_midline = svg.append("line")
+    .attr("x1", w/2-earth_moon_dist)
+    .attr("y1", h/2)
+    .attr("x2", w/2+earth_moon_dist-50+(width < 800)*10+(width < 400)*3)
+    .attr("y2", h/2)
+    .attr("stroke-width", 5)
+    .attr("stroke", "white");
+  // var moon_midline = svg.append("line")
+  //   .attr("x1", w/2-earth_moon_dist)
+  //   .attr("y1", h/2)
+  //   .attr("x2", w/2+earth_moon_dist-943)
+  //   .attr("y2", h/2)
+  //   .attr("stroke-width", 4)
+  //   .attr("stroke", "black");
+  
+  d3.timer(animate);
+  
+  function animate(elapsed){
+    var moondegrees = ((elapsed/16.2)*.0365)%360;
+    var earthdegrees = (elapsed/16.2)%360;
+    moon
+      .attr("transform", `rotate(-${moondegrees} ${w/2} ${h/2})`);
+    earth
+      .attr("transform", `rotate(-${moondegrees} ${w/2} ${h/2})`);
+    earth_midline
+      .attr("transform", `rotate(-${earthdegrees} ${w/2} ${h/2})`);
+    tidal_midline
+      .attr("transform", `rotate(-${moondegrees} ${w/2} ${h/2})`);
+    // moon_midline
+    //   .attr("transform", `rotate(-${moondegrees} ${w/2} ${h/2})`);
+    
+  };
+  
+  return svg.node();
+}
+```
+
+```{ojs}
+md`Tidal locking also affects the length of a tel (`d`), which is defined in terms of the duration of the lunar year (`y`): ${tex`d = 1 + 1 \div y`}. The average lunar year length in a time period from the new moon on 1999+311 to the new moon 2500+325 is 29.53023507695045 days according to [astropixels.com](https://astropixels.com/ephemeris/moon/synodicmonth2001.html) data. Based on this lunar year length, the length of a tel is ${1+1/29.53023507695045} days, which is [the time it takes the Moon to return to the same location above the Earth](https://en.wikipedia.org/wiki/Lunar_day#:~:text=the%20period%20between%20moonrises%20or%20high%20moon%20in%20a%20particular%20location%20on%20Earth). The number of tels in a lunar year is therefore ${29.53023507695045/1.0338635976785888} days. Decimal tels provide the time on the Moon. The [center of Zone 0 on the Moon](https://en.wikipedia.org/wiki/Selenographic_coordinate_system#:~:text=the%20midpoint%20of%20the%20visible%20moon%20as%20seen%20from%20the%20earth) is a [Meridian](https://en.wikipedia.org/wiki/Meridian_%28geography%28#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude) 05, a line that separates the [near side of the Moon](https://en.wikipedia.org/wiki/Near_side_of_the_Moon#:~:text=the%20lunar%20hemisphere%20that%20always%20faces%20towards%20Earth) into two equal West and East halves.`
+```
+
+```{ojs}
+md`Decalendar years typically start with the [Northward Equinox](https://en.wikipedia.org/wiki/March_equinox#:~:text=the%20equinox%20on%20the%20earth%20when%20the%20subsolar%20point%20appears%20to%20leave%20the%20southern%20hemisphere%20and%20cross%20the%20celestial%20equator%2C%20heading%20northward), but the Moon does
+not have noticeable seasons because it is
+[tilted by only about ${tex`4.1\overline6`} microturns on it axis](https://www.space.com/55-earths-moon-formation-composition-and-orbit.html#:~:text=tilted%20by%20only%20about%201.5%20degrees), which is more than 10000 times smaller than the Earth’s ${tex`65.\overline1`} milliturn [tilt](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=axial%20tilt%20of-,about%2023.44%C2%B0,-.%5B7%5D%20This%20value%20remains). Therefore,
+instead of following the seasons, we should follow the [Moon phases](https://en.wikipedia.org/wiki/Lunar_phase#:~:text=the%20apparent%20shape%20of%20the%20Moon%27s%20directly%20sunlit%20portion%20as%20viewed%20from%20the%20Earth).
+Decalendar defines the lunar epoch to be
+[1999+311.75972-0](https://en.wikipedia.org/wiki/New_moon#:~:text=18%3A14%20UTC%2C%206%20January%202000),
+the first new moon after
+[J2000](https://en.wikipedia.org/wiki/Epoch_%28astronomy%29#:~:text=currently%20used%20standard%20epoch%20%22J2000%22).
+The number of days after this epoch is the lunar day of the era (dote). To obtain the current lunar year and tel of the year (toty), we first divide the lunar dote by 1.0338635976785888 to get the tel of
+the era (tote). Then, after we split up the tote into lunar years, we can convert the remainder into the toty or a decimal lunar year,  which provides the Moon phase as shown by visualization and slider below.`
+```
+
+```{ojs}
+moon(universe(width / 4000 + (width < 400) * .9, "black"), moonFraction / 100, "white", "black")
+```
+
+```{ojs}
+viewof moonFraction = Scrubber(d3.range(101), {
+  delay: 86.4
+})
+```
+
+```{ojs}
+md`The lunar leap cycle is determined by the
+[fractional part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
+of the lunar year length, which is close to the fraction ${tex`9/16=.5625`}. The
+numerator in this fraction is the number of 29-tel long lunar years in the
+cycle, while the denominator is the leap cycle length in lunar years. Inside a
+lunar leap cycle, lunar years are numbered 0 through 15. Even-numbered lunar
+years except for Year 10 have 28 tels. Year 10 and all odd-numbered years have
+29 tels. This is easy to remember because with the exception of Year 10 in the
+cycle, even-numbered years have an even number of tels (28) and odd-numbered
+years have an odd number of tels (29).
+`
+```
+
+```{ojs}
+md`The lunar leap cycle is designed to follow the lunar day-night cycle and the
+Moon
+and
+[Earth
+phases](https://en.wikipedia.org/wiki/Earth_phase#:~:text=the%20shape%20of%20the%20directly%20sunlit%20portion%20of%20Earth%20as%20viewed%20from%20the%20Moon), keeping the new moon close to Tel 0 and full moon close to Tel 14. The
+error rate of the lunar leap cycle is -0.0004894922859186579 tels per lunar
+year, which means we will have to add a tel before the Year 2042 to avoid
+falling a tel behind the start of the lunar year.
+A nice potential intercalation
+point for this additional tel may be the Year 2000 which has 28 tels and is the
+first year in Cycle 125.
+Altogether in one cycle, there are 457 tels, which are numbered 0 to 456,
+but Cycle 125 could be the first cycle to have 458 days, numbered 0 to 457.`
+```
+
+```{ojs}
+moonDote = zone0dote - doty2dote(1999, 311.75+14/60/24)
+```
+
+```{ojs}
+moonTote = moonDote / 1.0338635976785888
+```
+
+```{ojs}
+moonEpoch = doty2dote(1999, 311.75+14/60/24)
+```
+
+```{ojs}
+daysSinceJ2000 = JDtt - 2451545
+```
+
+```{ojs}
+function tote2toty(tote = 719468) {
+    const socy = Math.floor((tote >= 0 ? tote : tote - 456) / 457), totc = tote - socy * 457,
+    yotc = Math.floor((totc - Math.floor(totc / 56) - Math.floor(totc / 286)) / 28);
+    return [yotc + socy * 16, totc - (yotc * 28 + Math.floor(yotc / 2) + Math.trunc((yotc - 1) / 10))]
+}
+```
+
+```{ojs}
+yt = tote2toty(moonTote)
+```
+
+```{ojs}
+moonYear = yt[0]
+```
+
+```{ojs}
+moonToty = yt[1]
+```
+
+```{ojs}
+moonTime = moonToty % 1 * 10
+```
+
+```{ojs}
+moonDeco = `🗓${String(moonYear).padStart(5, "0")}+${String(Math.floor(moonToty)).padStart(2, "0")}🕰${moonTime.toFixed(4)}`
+```
+
+```{ojs}
+md`## Appendix`
+```
+
+```{ojs}
+md`Gravity is far lower on the Moon, which slightly speeds up the passage
+of time. The increase in speed is about 648
+(${tex`56.0199 \div .0864 = 648.37847\overline2`}) picodays (${tex`10^{-12}`}
+days) per day (pdpd)
+[faster on the Moon than on Earth](https://arxiv.org/html/2402.11150v1#:~:text=a%20time%20difference%20per%20day).
+This difference is
+[even greater](https://arxiv.org/html/2402.11150v1#:~:text=computed%20rates%20for%20various%20points%20of%20interest)
+at the Moon's Lagrange points in the
+[microgravity](https://www.nasa.gov/centers-and-facilities/glenn/what-is-microgravity)
+of lunar orbit. To account for faster time on the Moon, we multiply time by the [fold change](https://en.wikipedia.org/wiki/Fold_change#:~:text=the%20ratio%20between%20the%20two%20quantities) (${tex`1+\frac{56.0199}{864\times10^{8}}`}) in the speed of time when moving from one place to another. I decided to not include this correction in the calculations above. The faster rate of time on the Moon slightly decreases the lunar year duration on the Moon. A shorter lunar year will slightly decrease the error rate in the Lunar leap year scheme. In contrast, the error rate will increase more significantly with time as the Moon drifts further from the Earth, causing its orbital velocity to decrease and the lunar year to become longer.`
+```
+
+```{ojs}
+md`### Solar Hijiri Leap Cycle
+| Yotc | Start | Stop  | N-365 |
+| ---- | ----- | ----- | ----- |
+| 0    | 0     | 365   | 0     |
+| 1    | 365   | 730   | 0     |
+| 2    | 730   | 1095  | 0     |
+| 3    | 1095  | 1460  | 0     |
+| 4    | 1460  | 1826  | 1     |
+| 5    | 1826  | 2191  | 0     |
+| 6    | 2191  | 2556  | 0     |
+| 7    | 2556  | 2921  | 0     |
+| 8    | 2921  | 3287  | 1     |
+| 9    | 3287  | 3652  | 0     |
+| 10   | 3652  | 4017  | 0     |
+| 11   | 4017  | 4382  | 0     |
+| 12   | 4382  | 4748  | 1     |
+| 13   | 4748  | 5113  | 0     |
+| 14   | 5113  | 5478  | 0     |
+| 15   | 5478  | 5843  | 0     |
+| 16   | 5843  | 6209  | 1     |
+| 17   | 6209  | 6574  | 0     |
+| 18   | 6574  | 6939  | 0     |
+| 19   | 6939  | 7304  | 0     |
+| 20   | 7304  | 7670  | 1     |
+| 21   | 7670  | 8035  | 0     |
+| 22   | 8035  | 8400  | 0     |
+| 23   | 8400  | 8765  | 0     |
+| 24   | 8765  | 9131  | 1     |
+| 25   | 9131  | 9496  | 0     |
+| 26   | 9496  | 9861  | 0     |
+| 27   | 9861  | 10226 | 0     |
+| 28   | 10226 | 10592 | 1     |
+| 29   | 10592 | 10957 | 0     |
+| 30   | 10957 | 11322 | 0     |
+| 31   | 11322 | 11687 | 0     |
+| 32   | 11687 | 12053 | 1     |`
+```
+
+```{ojs}
+md`### Mars Leap Cycle
+| Yotc | Start | Stop  | N-668 |
+| ---- | ----- | ----- | ----- |
+| 0    | 0     | 668   | 0     |
+| 1    | 668   | 1337  | 1     |
+| 2    | 1337  | 2005  | 0     |
+| 3    | 2005  | 2674  | 1     |
+| 4    | 2674  | 3342  | 0     |
+| 5    | 3342  | 4011  | 1     |
+| 6    | 4011  | 4679  | 0     |
+| 7    | 4679  | 5348  | 1     |
+| 8    | 5348  | 6016  | 0     |
+| 9    | 6016  | 6685  | 1     |
+| 10   | 6685  | 7354  | 1     |
+| 11   | 7354  | 8023  | 1     |
+| 12   | 8023  | 8691  | 0     |
+| 13   | 8691  | 9360  | 1     |
+| 14   | 9360  | 10028 | 0     |
+| 15   | 10028 | 10697 | 1     |
+| 16   | 10697 | 11365 | 0     |
+| 17   | 11365 | 12034 | 1     |
+| 18   | 12034 | 12702 | 0     |
+| 19   | 12702 | 13371 | 1     |
+| 20   | 13371 | 14040 | 1     |
+| 21   | 14040 | 14709 | 1     |`
+```
+
+```{ojs}
+md`### Moon Leap Cycle
+| Yotc | Start | Stop | N-28 |
+| ---- | ----- | ---- |----- |
+| 0    | 0     | 28   | 0    |
+| 1    | 28    | 57   | 1    |
+| 2    | 57    | 85   | 0    |
+| 3    | 85    | 114  | 1    |
+| 4    | 114   | 142  | 0    |
+| 5    | 142   | 171  | 1    |
+| 6    | 171   | 199  | 0    |
+| 7    | 199   | 228  | 1    |
+| 8    | 228   | 256  | 0    |
+| 9    | 256   | 285  | 1    |
+| 10   | 285   | 314  | 1    |
+| 11   | 314   | 343  | 1    |
+| 12   | 343   | 371  | 0    |
+| 13   | 371   | 400  | 1    |
+| 14   | 400   | 428  | 0    |
+| 15   | 428   | 457  | 1    |`
+```
+
+```{ojs}
+import {slider} from "@jashkenas/inputs"
+```
+
+```{ojs}
+function moon(canvas, fraction, colorOfTheSun, colorOfTheDarkness) {
+  const       moonPhase = Math.trunc(fraction * 4) % 4; // %4 so fraction == 1 results in phase == 0
+  const          waxing = moonPhase < 2; // implies waning = !waxing
+  const        crescent = moonPhase % 2 == 0;
+  const         gibbous = !crescent;
+  const backgroundColor = waxing ? colorOfTheDarkness : colorOfTheSun;
+  const      coverColor = (moonPhase == 0 || moonPhase == 3) ? colorOfTheDarkness : colorOfTheSun;
+  const     revealColor = waxing ? colorOfTheSun : colorOfTheDarkness;
+  const quarterFraction = 4 * (fraction % .25);
+  const snakeEyeClosing = gibbous  ? 0 : 1 - quarterFraction;
+  const snakeEyeOpening = crescent ? 0 :     quarterFraction;
+  
+  // set up clipping rectangle for the crescent (right) half
+  const defs = canvas.appendChild(DOM.element("svg:defs"));
+  const showRightHalf = DOM.uid("showRightHalf"); // to ensure uid is unique across all cells and notebooks
+  const clipper = defs.appendChild(DOM.element("svg:clipPath", {id: showRightHalf.id}));  
+  clipper.appendChild(DOM.element("svg:rect",   { y: -1, width: "50%", height: "100%"}));
+  
+  // bottom layer; shows when nothing is painted on top
+  canvas.appendChild(DOM.element("svg:circle",  { fill: backgroundColor, r: 1}));
+  
+  // paint the next layer: the waxing crescent and waning gibbous
+  const group = canvas.appendChild(DOM.element("svg:g", { 'clip-path': showRightHalf }));
+  group.appendChild(DOM.element("svg:circle",   { fill: revealColor,  r: 1 }));
+  group.appendChild(DOM.element("svg:ellipse",  { fill: coverColor,  ry: 1, rx: snakeEyeClosing }));
+  
+  // finally, top it off with the gibbous half
+  canvas.appendChild(DOM.element("svg:ellipse", { fill: revealColor, ry: 1, rx: snakeEyeOpening }));
+  
+  return canvas;
+}
+```
+
+```{ojs}
+function universe(w, colorOfTheUniverse) {
+  return DOM.element("svg:svg", {
+    viewBox: "-1 -1 2 2", 
+    width: 100 * w + "%", 
+    style: "background-color: " + colorOfTheUniverse + ";"
+  });
+}
+```
+
+```{ojs}
+solar_system = [
+  { name: "Sun",     symbol: "⊙", R: 0,                r: 4, speed: 0, phi0:  0, moons: []},                           // Sun
+  { name: "Mercury", symbol: "☿", R: 40*factor_size,   r: 3, speed: -8, phi0:  -120, moons: []},                       // Mercury
+  { name: "Venus",   symbol: "♀", R: 70*factor_size,   r: 3, speed: -3, phi0: -50, moons: []},                         // Venus
+  { name: "Earth",   symbol: "🜨", R: 100*factor_size,  r: 12 - (width < 400) * 6, speed: -Earth_speed, phi0: angle_90, // Earth
+    moons: [ { name: "Moon", symbol: "☾",  R: 25*factor_size, r:   6 - (width < 400) * 3, speed: -20, phi0: 40 },      // the Moon
+             { name: "Sun_path",  R: 100*factor_size,  r: 0, speed: 0, phi0: 0} ]},                                    // Earth-Sun orbit
+  { name: "Mars", symbol: "♂",    R: 150*factor_size,  r: 6, speed: -1.13, phi0: 20,                                   // Mars
+    moons: [ { R:   12*factor_size + (width<400) * 6,  r: 1, speed: -200, phi0:  25 },                                 // Phobos
+             { R:   20*factor_size + (width<400) * 10, r: 1, speed: -100, phi0: 100 } ]},                              // Deimos   
+  { name: "Jupiter", symbol: "♃", R: 280*factor_size,  r: 15 - (width < 400) * 9, speed: -0.5, phi0: 60,               // Jupiter
+    moons: [ { R:  20*factor_size, r: 1,   speed: -100, phi0: 0 },                                                     // Io
+             { R:  32*factor_size, r: 1,   speed: -50, phi0:  15 },                                                    // Europa
+             { R:  48*factor_size, r: 1,   speed: -25, phi0: 100 },                                                    // Ganymede
+             { R:  80*factor_size, r: 1,   speed: -10, phi0: 300 } ]},                                                 // Callisto  
+  { name: "Saturn", symbol: "♄",  R: 380*factor_size,  r: 9 - (width < 400) * 4, speed: -0.2, phi0: 160,               // Saturn
+    moons: [ { R:  28*factor_size, r: 0.5, speed: -500, phi0:  0 },                                                    // Saturn rings
+             { R:  30*factor_size, r: 0.5, speed: -400, phi0:  0 },
+             { R:  36*factor_size, r: 0.5, speed: -400, phi0:  0 },
+             { R:  38*factor_size, r: 0.5, speed: -400, phi0:  0 },
+             ]},        
+];
+```
+
+```{ojs}
+tychnonic_model = [ 
+  { name: "Earth",   symbol: "🜨", R: 0,               r: 8,  speed: 0, phi0: 0,                            // Earth
+    moons: [  
+  { name: "Moon",    symbol: "☾", R: 10*factor_size,  r: 4,  speed: -25, phi0: 40+angle_90 },              // the Moon 
+  { name: "Sun_path",             R: 100*factor_size, r: 0,  speed: 0, phi0: 0},                           // Earth-Sun orbit
+          ]},    
+  { name: "Sun",     symbol: "⊙", R: 100*factor_size, r: 10, speed: -Earth_speed, phi0:  -angle_90,        // Sun 
+    moons: [ 
+  { name: "Earth_path",           R: 100*factor_size, r: 0,  speed: -2+Earth_speed, phi0: 0},              // Earth-Sun orbit           
+  { name: "Mercury", symbol: "☿", R: 40*factor_size,  r: 3,  speed: -8+Earth_speed, phi0: -120+angle_90},  // Mercury    
+  { name: "Venus",   symbol: "♀", R: 70*factor_size,  r: 3,  speed: -3+Earth_speed, phi0: -50+angle_90},   // Venus
+  { name: "Mars",    symbol: "♂", R: 150*factor_size, r: 6,  speed: -1.13+Earth_speed, phi0: 20+angle_90}, // Mars
+  { name: "Jupiter", symbol: "♃", R: 280*factor_size, r: 3,  speed: -0.5+Earth_speed, phi0: 60+angle_90},  // Jupiter
+  { name: "Saturn",  symbol: "♄", R: 380*factor_size, r: 3,  speed: -0.2+Earth_speed, phi0: 160+angle_90}, // Saturn
+]}];
+```
+
+```{ojs}
+Earth_speed = 2
+```
+
+```{ojs}
+angle_90 = 90
+```
+
+```{ojs}
+viewof heliocentric_options = columns({
+  Sun_path: Inputs.toggle({label: '"Sun path" inherited from Tychonic model', value: false}),  
+  display_moons: Inputs.toggle({label: "Display the moons of other planets", value: true}),
+})
+```
+
+```{ojs}
+html`<style>
+  #Sun {
+        stroke: #666;
+        fill: #f2ba42;
+      }
+
+  #Moon {
+        stroke: #ccc;
+        fill: #f2e4d6;
+      }
+
+  #Mars {
+        fill: #ff7700;
+  }
+  #Jupiter {
+        fill: #ffa500;
+  }
+  #Saturn {
+        fill: #cc9966;
+  }
+  #Earth {
+        fill: #00a5ff;
+  }
+
+  .planet {
+        stroke: #aac;
+        fill: #85b6c5;
+      }
+  .moon {
+        stroke: #aac;
+        fill: #fff;
+      }
+  
+  .orbit {
+        stroke: #aac;
+        stroke-opacity: 0.8;
+        fill: transparent;
+      }
+
+  .orbit_moon {
+        stroke: #aaa;
+        stroke-opacity: 0.5;
+        fill: transparent;
+      }  
+  
+</style>`
+```
+
+```{ojs}
+// https://observablehq.com/@bcardiff/observable-columns
+columns = (args) => {
+  const form = html`<form></form>`
+  form.value = {}
+
+  let cols = 0
+  for (const key in args) {
+    form.appendChild(args[key])
+    cols++
+  }
+  
+  form.style = `width:200px; display: grid; grid-gap: 10px 100px; grid-template-columns: repeat(${cols}, auto); grid-auto-flow: row;`
+  
+  form.oninput = () => {
+    form.value = Object.keys(args).reduce((result, key) => {
+      result[key] = args[key].value
+      return result
+    }, Array.isArray(args) ? [] : {})
+  }
+  form.oninput()
+  
+  return form
+}
+```
+
+```{ojs}
+factor_size = system_width / initial_width
+```
+
+```{ojs}
+height = width
+```
+
+```{ojs}
+system_width = Math.min(initial_width,Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)-20);
+```
+
+```{ojs}
+initial_width = 800;
+```
+
+```{ojs}
+display_checkbox = {
+  const html = system_model? htl.html`${viewof heliocentric_options}`: htl.html`<div style="height:40.5px;"></div>`;
+  yield html
+}
+```
+
+```{ojs}
+viewof system_model  = Inputs.radio(new Map([["Heliocentric model", 1], ["Tychonic model (geo-heliocentric)", 0]]), {value: 1, label: "System"})
+```
+
+```{ojs}
+viewof speed_factor = slider({
+  title: "Animation speed",
+  min: 0,
+  max: 100,
+  step: 1,
+  value: 15,
+  format: v => html`${v == 0? 'Stopped' : (v < 20? 'Slow ' : (v < 60? 'Medium' : 'Fast' ) )} (${v}%)<br/>`,
+});
+```
+
+```{ojs}
+viewof scale = slider({
+  min: 1, 
+  max: 100, 
+  step: 1, 
+  value: 90, 
+  title: "Scale", 
+})
+```
+
+```{ojs}
+// w  = window.innerWidth / 2 + (width < 400) * 165
+w  = width / 2 + (width < 400) * 165
+```
+
+```{ojs}
+fontsize = {
+  if (width>450){
+  return 18;
+};
+if (width<451){
+  return 14;
+};
+}
+```
+
+```{ojs}
+moon_orbit = width/2-width/13+(width < 400)*135;
+```
+
+```{ojs}
+earth_moon_dist = moon_orbit/2;
+```
+
+```{ojs}
+earth_radius = earth_moon_dist/120.75;
+```
+
+```{ojs}
+moon_radius = earth_radius/3.667;
+```
+
+```{ojs}
+html`<style>
+#SVGchart {
+  margin:  ${-10 - Number(width < 400) * 3}px 0px ${-80 + Number(width < 400) * 56}px ${Number(width < 400) * 5}px;
+}
+</style>`
+```
+
+```{ojs}
+viewof dark_background = Inputs.toggle({label: "Dark background", value: false})
+```
+
+```{ojs}
+{
+  // Full screen mode not successfully tested with Firefox v. 125 (April 2024)
+  let firefoxAgent = navigator.userAgent.indexOf("Firefox") > -1; 
+  if(!firefoxAgent) {
+    // See also: https://observablehq.com/@mbostock/fullscreen-canvas
+      return htl.html`<button onclick=${({currentTarget}) => {
+      const currentCell = currentTarget.parentElement;
+      const previousCell = currentCell.previousElementSibling;
+      previousCell.requestFullscreen ? previousCell.requestFullscreen()
+        : previousCell.webkitRequestFullscreen ? previousCell.webkitRequestFullscreen()
+        : (() => { throw new Error("Fullscreen API not supported"); });
+    }}>Full screen</button>`
+  }
+  else
+    return htl.html`<br/>`
+}
+```
+
+```{ojs}
+import { Scrubber } from "@mbostock/scrubber"
+```
+
+```{ojs}
+projection = d3.geoOrthographic().fitSize([width, width], { type: "Sphere" }).rotate([-54, -36])
+```
+
+```{ojs}
+disputed = await FileAttachment("disputed-territories-1.geojson").json()
+```
+
+```{ojs}
+viewof showDisputed = html`<input type=checkbox>`
+```
+
+```{ojs}
+function drag(projection) {
+  let v0, q0, r0;
+  
+  function dragstarted() {
+    v0 = versor.cartesian(projection.invert([d3.event.x, d3.event.y]));
+    q0 = versor(r0 = projection.rotate());
+  }
+  
+  function dragged() {
+    const v1 = versor.cartesian(projection.rotate(r0).invert([d3.event.x, d3.event.y]));
+    const q1 = versor.multiply(q0, versor.delta(v0, v1));
+    projection.rotate(versor.rotation(q1));
+  }
+  
+  return d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged);
+}
+```
+
+```{ojs}
+graticule = d3.geoGraticule().stepMinor([36,36]).stepMajor([36,36])()
+```
+
+```{ojs}
+graticule.coordinates = graticule.coordinates.map(
+  i => i.map(j => j.map((k, index, arr) => i.length === 3 && index === 0 ? k - 18 : k))
+)
+```
+
+```{ojs}
+countries = fetch(
+  "https://unpkg.com/visionscarto-world-atlas@0.0.6/world/50m_countries.geojson"
+).then(d => d.json())
+```
+
+```{ojs}
+world = fetch(
+  "https://unpkg.com/visionscarto-world-atlas@0.0.6/world/50m.json"
+).then(d => d.json())
+```
+
+```{ojs}
+versor = require("versor@0.0.3")
+```
+
+```{ojs}
+d3 = require("d3@5", "d3-geo@1", "d3-geo-projection@2")
+```
+
+```{ojs}
+// Copyright 2021, Observable Inc.
+// Released under the ISC license.
+// https://observablehq.com/@d3/color-legend
+function Swatches(color, {
+  columns = null,
+  format,
+  unknown: formatUnknown,
+  swatchSize = 15,
+  swatchWidth = swatchSize,
+  swatchHeight = swatchSize,
+  marginLeft = 0
+} = {}) {
+  const id = `-swatches-${Math.random().toString(16).slice(2)}`;
+  const unknown = formatUnknown == null ? undefined : color.unknown();
+  const unknowns = unknown == null || unknown === d3.scaleImplicit ? [] : [unknown];
+  const domain = color.domain().concat(unknowns);
+  if (format === undefined) format = x => x === unknown ? formatUnknown : x;
+
+  function entity(character) {
+    return `&#${character.charCodeAt(0).toString()};`;
+  }
+
+  if (columns !== null) return htl.html`<div style="display: flex; align-items: center; margin-left: ${+marginLeft}px; min-height: 33px; font: 10px sans-serif;">
+  <style>
+
+.${id}-item {
+  break-inside: avoid;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1px;
+}
+
+.${id}-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - ${+swatchWidth}px - 0.5em);
+}
+
+.${id}-swatch {
+  width: ${+swatchWidth}px;
+  height: ${+swatchHeight}px;
+  margin: 0 0.5em 0 0;
+}
+
+  </style>
+  <div style=${{width: "100%", columns}}>${domain.map(value => {
+    const label = `${format(value)}`;
+    return htl.html`<div class=${id}-item>
+      <div class=${id}-swatch style=${{background: color(value)}}></div>
+      <div class=${id}-label title=${label}>${label}</div>
+    </div>`;
+  })}
+  </div>
+</div>`;
+
+  return htl.html`<div style="display: flex; align-items: center; min-height: 33px; margin-left: ${+marginLeft}px; font: 10px sans-serif;">
+  <style>
+
+.${id} {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.${id}::before {
+  content: "";
+  width: ${+swatchWidth}px;
+  height: ${+swatchHeight}px;
+  margin-right: 0.5em;
+  background: var(--color);
+}
+
+  </style>
+  <div>${domain.map(value => htl.html`<span class="${id}" style="--color: ${color(value)}">${format(value)}</span>`)}</div>`;
+}
+```
+
