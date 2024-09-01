@@ -1,4 +1,3 @@
-date: last-modified
 date-format: x
 freeze: true
 cache: true
@@ -30,9 +29,6 @@ format:
 comments:
   giscus:
     repo: maptv/maptv.github.io
-author:
-  - name: Martin Laptev
-    url: https://maptv.github.io
 citation:
   accessed: 2024
   issued: 2024

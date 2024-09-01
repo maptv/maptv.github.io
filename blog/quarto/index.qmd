@@ -5,7 +5,6 @@ author:
   - name: Martin Laptev
     url: https://maptv.github.io
 date: last-modified
-date-format: x
 image: horst_many-qmd-to-output.png
 categories:
   - tool
@@ -14,9 +13,6 @@ categories:
   - git
 format:
   html:
-    mermaid:
-      theme: default
-    output-file: index.html
     include-after-body:
       - ../../assets/timestamp.html
       - ../../assets/style.html
@@ -462,4 +458,4 @@ filters: date.lua
 
 All three of the customizations I described above convert millisecond UNIX time into a custom date format, but you can adapt these approaches to make all sorts of edits to your Quarto site. HTML blocks can run JavaScript which excels at making content dynamic and interactive, pre- and post-render scripts can be in any programming language, while Pandoc filters are written in Lua and modify output during rendering.
 
-Coming up next on my blog is [a post](../observable/observable.qmd) that [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!
+Coming up next on my blog is [a post](../observable/index.qmd) that [Observable](https://observablehq.com/) graphics. Get ready for an animated and interactive data visualization extravaganza!

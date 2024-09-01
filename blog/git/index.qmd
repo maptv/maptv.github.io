@@ -5,14 +5,11 @@ author:
   - name: Martin Laptev
     url: https://maptv.github.io
 date: last-modified
-date-format: x
 image: horst_git-hug.png
 categories:
   - tool
   - git
 citation:
-  accessed: 2024
-  issued: 2024
   url: https://maptv.github.io/blog/git
 format:
   html:

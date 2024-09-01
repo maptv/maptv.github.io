@@ -17,10 +17,10 @@ website:
   back-to-top-navigation: true
   reader-mode: true
   draft-mode: visible
-  favicon: media/deidek.svg
+  favicon: assets/deidek.svg
   navbar:
     title: Martin Laptev
-    logo: media/deidek.svg
+    logo: assets/deidek.svg
     logo-alt: "Decagon made up of 100 triangles"
   sidebar:
     tools:

@@ -6,7 +6,6 @@ format:
   html:
     page-layout: full
     repo-actions: false
-    output-file: index.html
     back-to-top-navigation: false
     include-after-body:
       - ../assets/timestamp.html

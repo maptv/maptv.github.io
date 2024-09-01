@@ -5,15 +5,11 @@ author:
   - name: Martin Laptev
     url: https://maptv.github.io
 date: last-modified
-date-format: x
 image: horst_hist-samples.png
 categories:
   - ml
 format:
   html:
-    mermaid:
-      theme: default
-    output-file: index.html
     include-after-body:
       - ../../assets/timestamp.html
       - ../../assets/style.html

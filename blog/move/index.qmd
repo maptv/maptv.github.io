@@ -5,7 +5,6 @@ author:
   - name: Martin Laptev
     url: https://maptv.github.io
 date: last-modified
-date-format: x
 categories:
   - dec
 citation:
@@ -14,9 +13,6 @@ citation:
   url: https://maptv.github.io/blog/move
 format:
   html:
-    mermaid:
-      theme: default
-    output-file: index.html
     include-after-body:
       - ../../assets/timestamp.html
       - ../../assets/style.html

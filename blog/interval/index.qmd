@@ -1,6 +1,10 @@
 ---
 title: The Dec measurement system
 draft: true
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
+date: last-modified
 image: ../../assets/deidek.svg
 categories:
   - dec

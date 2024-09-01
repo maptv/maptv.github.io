@@ -14,7 +14,6 @@ categories:
   - quarto
 format:
   html:
-    output-file: index.html
     include-after-body:
       - ../../assets/timestamp.html
       - ../../assets/style.html
