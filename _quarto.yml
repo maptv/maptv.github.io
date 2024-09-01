@@ -43,9 +43,6 @@ website:
     - icon: file-earmark-person
       text: CV/Résumé
       href: cv/index.qmd
-    - section: Geolocation
-      icon: geo
-      href: blog/geo/index.qmd
     - icon: pencil
       section: Blog
       href: blog/index.qmd
