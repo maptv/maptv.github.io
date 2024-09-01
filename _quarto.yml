@@ -71,7 +71,6 @@ website:
           href: blog/nav/index.qmd
         - text: Movement
           icon: arrows-move
-          href: blog/move/index.qmd
         - text: Size
           icon: bounding-box-circles
           href: blog/size/index.qmd
