@@ -2,7 +2,7 @@ project:
   type: website
   resources: .gitlab-ci.yml
   post-render:
-    - scripts/date.py
+  - scripts/date.py
 website:
   search:
     location: sidebar
@@ -32,55 +32,92 @@ website:
       target: _blank
     - icon: envelope-at
       href: mailto:maptv@engineer.com
-    collapse-level: 2
+    collapse-level: 3
     contents:
-      - icon: house-door
-        text: Home
-        href: index.qmd
-      - icon: info-circle
-        text: About
-        href: about/index.qmd
-      - icon: file-earmark-person
-        text: CV/Résumé
-        href: cv/index.qmd
-      - icon: pencil
-        section: Blog
-        href: blog/index.qmd
+    - icon: house-door
+      text: Home
+      href: index.qmd
+    - icon: info-circle
+      text: About
+      href: about/index.qmd
+    - icon: file-earmark-person
+      text: CV/Résumé
+      href: cv/index.qmd
+    - section: Geolocation
+      icon: geo
+      href: blog/geo/index.qmd
+    - icon: pencil
+      section: Blog
+      href: blog/index.qmd
+      contents:
+      - section: Measurement
+        icon: rulers
+        href: blog/dec/index.qmd
         contents:
-              - icon: git
-                text: Git
-                href: blog/git/git.qmd
-              - icon: code
-                text: VSCode
-                href: blog/vscode/vscode.qmd
-              - icon: journal-richtext
-                text: Jupyter
-                href: blog/jupyter/jupyter.qmd
-              - icon: markdown
-                text: Quarto Markdown
-                href: blog/quarto/quarto.qmd
-              - icon: 0-circle
-                text: Observable
-                href: blog/observable/observable.qmd
-              - icon: dice-5
-                text: Probablity
-                href: blog/prob/prob.qmd
-              - icon: translate
-                text: Language Models
-                href: blog/llm/llm.qmd
+        - text: Geolocation
+          icon: geo
+          href: blog/geo/index.qmd
+        - text: Decimal time
+          icon: hourglass-split
+          href: blog/time/index.qmd
+        - text: Ordinal date
+          icon: calendar-event
+          href: blog/date/index.qmd
+        - text: Daylight duration
+          icon: sun
+          href: blog/day/index.qmd
+        - text: Time interval
+          icon: calendar-range
+          href: blog/interval/index.qmd
+        - text: Navigation
+          icon: compass
+          href: blog/nav/index.qmd
+        - text: Movement
+          icon: arrows-move
+          href: blog/move/index.qmd
+        - text: Size
+          icon: bounding-box-circles
+          href: blog/size/index.qmd
+      - section: Software Tools
+        icon: tools
+        contents:
+        - icon: git
+          text: Git
+          href: blog/git/index.qmd
+        - icon: code
+          text: VSCode
+          href: blog/vscode/index.qmd
+        - icon: journal-richtext
+          text: Jupyter
+          href: blog/jupyter/index.qmd
+        - icon: markdown
+          text: Quarto Markdown
+          href: blog/quarto/index.qmd
+        - icon: 0-circle
+          text: Observable
+          href: blog/observable/index.qmd
+      - section: Machine Learning
+        icon: robot
+        contents:
+        - icon: dice-5
+          text: Probablity
+          href: blog/prob/index.qmd
+        - icon: translate
+          text: Language Models
+          href: blog/llm/index.qmd
   twitter-card: true
   page-footer:
     background: light
     left: © Copyright 2024, Martin Laptev
     right:
-      - icon: github
-        href: https://github.com/maptv
-        target: _blank
-      - icon: linkedin
-        href: https://linkedin.com/in/maptv
-        target: _blank
-      - icon: envelope-at
-        href: mailto:maptv@engineer.com
+    - icon: github
+      href: https://github.com/maptv
+      target: _blank
+    - icon: linkedin
+      href: https://linkedin.com/in/maptv
+      target: _blank
+    - icon: envelope-at
+      href: mailto:maptv@engineer.com
 format:
   html:
     pagetitle: Martin Laptev

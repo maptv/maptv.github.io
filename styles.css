@@ -5,17 +5,21 @@ p, ul {
 
 /* start order list at 0 */
 
-ol {
+div.zerobased > ol {
   list-style-type: none;
   counter-reset: listitem -1;
 }
 
-ol li {
+div.zerobased > ol li {
   counter-increment: listitem;
 }
 
-ol li::before {
+div.zerobased > ol li::before {
   content: counter(listitem) ". ";
+}
+
+#quarto-header > nav.navbar.navbar-expand-lg {
+  padding: 6px 17px 6px 17px;
 }
 
 /* improve responsiveness of navbar elements */
