@@ -1,16 +1,15 @@
 [
   {
-    "listing": "/blog/index.html",
+    "listing": "/list/index.html",
     "items": [
-      "/blog/git/index.html",
-      "/blog/vscode/index.html",
-      "/blog/quarto/index.html",
-      "/blog/observable/index.html",
-      "/blog/jupyter/index.html",
-      "/blog/knitr/index.html",
-      "/blog/prob/index.html",
-      "/blog/llm/index.html",
-      "/blog/geo/index.html"
+      "/software/git/index.html",
+      "/software/quarto/index.html",
+      "/software/observable/index.html",
+      "/software/jupyter/index.html",
+      "/software/knitr/index.html",
+      "/ml/prob/index.html",
+      "/ml/llm/index.html",
+      "/dec/geo/index.html"
     ]
   }
 ]
