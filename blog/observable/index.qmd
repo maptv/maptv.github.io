@@ -6,7 +6,7 @@ author:
     url: https://maptv.github.io
 date: last-modified
 filters:
-  - ../../scripts/date.lua
+  - ../../assets/date.lua
 image: horst_many-lang-qmd-to-output.png
 categories:
   - tool
@@ -16,9 +16,9 @@ format:
   html:
     output-file: index.html
     include-after-body:
-      - ../../scripts/timestamp.html
-      - ../../scripts/style.html
-      - ../../scripts/tooltip.html
+      - ../../assets/timestamp.html
+      - ../../assets/style.html
+      - ../../assets/tooltip.html
 ---
 
 ## [TL;DR]{.underline .blue data-bs-toggle="tooltip" data-bs-title="too long; didn't read"}

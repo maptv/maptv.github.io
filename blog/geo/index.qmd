@@ -1,7 +1,7 @@
 ---
 title: The Dec geolocation system
 draft: true
-image: ../../media/deidek.svg
+image: ../../assets/deidek.svg
 categories:
   - dec
 citation:
@@ -9,12 +9,12 @@ citation:
 format:
   html:
     include-after-body:
-    - ../../scripts/timestamp.html
-    - ../../scripts/style.html
-    - ../../scripts/tooltip.html
-    - ../../scripts/cite.html
+    - ../../assets/timestamp.html
+    - ../../assets/style.html
+    - ../../assets/tooltip.html
+    - ../../assets/cite.html
 filters:
-  - ../../scripts/date.lua
+  - ../../assets/date.lua
 ---
 
 This section of my blog focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created to measure⏳time,📍position,🧭orientation,📐angles, and🔄cycles in [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([${tex`\tau`}](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) instead of months, weeks, hours, minutes, seconds, and degrees. For time measurement, Dec uses days and years, which are turns of a [celestial body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole) and around [the point it orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit), respectively.

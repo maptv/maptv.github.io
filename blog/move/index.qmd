@@ -18,12 +18,12 @@ format:
       theme: default
     output-file: index.html
     include-after-body:
-      - ../../scripts/timestamp.html
-      - ../../scripts/style.html
-      - ../../scripts/tooltip.html
-      - ../../scripts/cite.html
+      - ../../assets/timestamp.html
+      - ../../assets/style.html
+      - ../../assets/tooltip.html
+      - ../../assets/cite.html
 filters:
-  - ../../scripts/date.lua
+  - ../../assets/date.lua
   - include-code-files
 ---
 

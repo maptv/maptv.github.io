@@ -1,5 +1,5 @@
 ---
-image: media/martin.png
+image: assets/martin.png
 toc: false
 format:
   html:
@@ -7,9 +7,9 @@ format:
     repo-actions: false
     back-to-top-navigation: false
     include-after-body:
-      - scripts/timestamp.html
-      - scripts/home.html
-      - scripts/tooltip.html
+      - assets/timestamp.html
+      - assets/home.html
+      - assets/tooltip.html
 about:
   template: trestles
   image-shape: round

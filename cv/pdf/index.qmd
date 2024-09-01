@@ -4,9 +4,9 @@ format:
     output-file: index.html
     page-layout: full
     include-after-body:
-      - ../../scripts/timestamp.html
-      - ../../scripts/style.html
-      - ../../scripts/tooltip.html
+      - ../../assets/timestamp.html
+      - ../../assets/style.html
+      - ../../assets/tooltip.html
 ---
 
 ```{=html}

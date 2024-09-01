@@ -20,10 +20,10 @@ format:
     code-tools: false
     link-external-icon: false
     include-after-body:
-      - ../scripts/timestamp.html
-      - ../scripts/blog.html
+      - ../assets/timestamp.html
+      - ../assets/blog.html
 filters:
-  - ../scripts/date.lua
+  - ../assets/date.lua
 comments: false
 ---
 

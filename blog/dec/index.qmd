@@ -1,7 +1,7 @@
 ---
 title: The Dec measurement system
 draft: true
-image: ../../media/deidek.svg
+image: ../../assets/deidek.svg
 categories:
   - dec
 citation:

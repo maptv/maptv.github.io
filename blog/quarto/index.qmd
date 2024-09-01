@@ -18,11 +18,11 @@ format:
       theme: default
     output-file: index.html
     include-after-body:
-      - ../../scripts/timestamp.html
-      - ../../scripts/style.html
-      - ../../scripts/tooltip.html
+      - ../../assets/timestamp.html
+      - ../../assets/style.html
+      - ../../assets/tooltip.html
 filters:
-  - ../../scripts/date.lua
+  - ../../assets/date.lua
   - include-code-files
 ---
 
@@ -378,7 +378,7 @@ To add a custom [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20
 ````
 
 #### `time.js`
-```{.javascript include="../../scripts/time.js"}
+```{.javascript include="../../assets/time.js"}
 ```
 :::
 :::
@@ -404,7 +404,7 @@ I wanted to my blog's [listing page](https://maptv.github.io/blog) to show dates
 
 #### `date.py`
 
-```{.yaml include="../../scripts/date.py"}
+```{.yaml include="../../assets/date.py"}
 ```
 
 :::
@@ -453,7 +453,7 @@ filters: date.lua
 
 #### `date.lua`
 
-```{.lua include="../../scripts/date.lua"}
+```{.lua include="../../assets/date.lua"}
 ```
 
 :::
