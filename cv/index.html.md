@@ -2,7 +2,6 @@
 title: "Martin Skarzynski Laptev"
 format:
   html:
-    output-file: index.html
     toc: true
     toc-depth: 3
     keep-md: true
@@ -15,15 +14,6 @@ format:
   commonmark: default
 css: ../assets/cv.css
 ---
-
-
-
-
-
-
-
-
-
 
 
 
