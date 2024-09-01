@@ -1,0 +1,125 @@
+h1.title {
+  text-align: center;
+}
+
+div.contact > ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+@media screen {
+  div.contact > ul > li > a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 1.5px;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  div.contact > ul {
+    flex-direction: column;
+  }
+  div.contact > ul > li {
+    text-align: center;
+  }
+}
+
+.phone {
+  width: 15px;
+  margin-bottom: 1.2px;
+}
+
+.linkedin {
+  width: 14px;
+}
+
+@media print {
+  .shiftup {
+    margin-bottom: -3.7px;
+    width: 14px;
+  }
+  .phone {
+    width: 13.2px;
+    margin-bottom: -2.6px;
+  }
+  .linkedin {
+    width: 12px;
+    margin-bottom: -2.7px;
+  }
+}
+
+@media only screen and (min-width: 1055px) {
+  div.lang > ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  div.lang > ul > li {
+    width: 32%
+  }
+}
+
+@media only screen and (min-width: 755px) {
+  .horizontal > ul > li > ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .horizontal > ul > li > ul > li{
+    width: 49%
+  }
+}
+
+@media only screen and (min-width: 1175px) {
+  .horizontal > ul > li > ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .horizontal > ul > li > ul > li{
+    width: 32%
+  }
+}
+
+@media only screen and (min-width: 1122px) {
+  .cvdate {
+    float: right;
+  }
+}
+
+.cvdate {
+  font-style: italic;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+h3.anchored {
+  font-size: 1.3em;
+  margin: 8px 0px;
+}
+
+h6.anchored {
+  font-size: 1em;
+  margin: 3px 3px;
+  font-weight: normal;
+}
+
+p, li {
+  text-align: justify;
+}
+
+@media print {
+  h6.anchored {
+  margin-bottom: -10px;
+}
+  ul {
+  padding-left: 18px;
+}
+  h1.title {
+  margin-top: -18px;
+  }
+  p, li {
+    line-height: 1.2;
+  }
+  .cvdate {
+    float: right;
+  }
+}
+

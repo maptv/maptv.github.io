@@ -1,0 +1,130 @@
+/*-- scss:defaults --*/
+$font-family-sans-serif: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+// Base document colors
+$body-bg: #FFFFFF !default;
+$body-color: #000000 !default;
+
+// Inline code
+$code-bg: #FFFFFF !default;
+$link-color: #003399 !default;
+$code-color: #339900 !default;
+$code-font-size: .9em !default;
+$code-padding: 0px !default;
+
+// color classes
+.orange { color: darkorange }
+.green { color: darkgreen }
+.blue { color: blue }
+.gray { color: dimgray }
+
+.quarto-title-banner h1, div.quarto-categories { color: #000000 !important; }
+
+div.navbar-brand-container {
+    color: #CCD1D5 !important;
+}
+
+nav.navbar {
+    background: #375A7F !important;
+}
+
+svg#fig-1.mermaid-js span.edgeLabel {
+    fill: #000000 !important;
+    background: #ffffff !important;
+}
+
+// #title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-categories {
+//   color: #000 !important;
+// }
+//
+
+// color classes
+.orange { color: darkorange }
+.green { color: darkgreen }
+.blue { color: blue }
+.gray { color: dimgray }
+
+button.btn.btn-quarto, div.observablehq > div.button-switch {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    border-radius: 2px !important;
+    background-color: #EFEFEF !important;
+    text-align: center !important;
+    border: 1px solid grey !important;
+    padding: 0px 7px !important;
+    line-height: 1.5;
+    width: auto !important;
+    color: #1c1c1c !important;
+    font-size: 14px !important;
+    font-family: sans-serif !important;
+    text-decoration: none !important;
+}
+button.btn.btn-quarto:hover, div.observablehq > div.button-switch:hover {
+    background-color: #E5E5E5 !important;
+    border: 1px solid #454545 !important;
+}
+button.btn.btn-quarto:active, div.observablehq > div.button-switch:active {
+    background-color: #f5f5f5 !important;
+    border: 1px solid grey !important;
+}
+.btn-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin: 0px;
+}
+
+form.oi-ec050e.oi-ec050e-toggle {
+    --label-width: 60px;
+    --input-width: 30px;
+}
+
+// div.ojs-in-a-box-waiting-for-module-import.observablehq > form.oi-ec050e {
+form.oi-ec050e {
+    --label-width: 60px;
+    --input-width: 450px;
+}
+
+svg g g.tick text {
+    font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #000000 !important;
+    font-size: 18px !important;
+}
+
+svg.schedule-explorer g[aria-label="x-axis tick label"] text {
+    color: #000 !important;
+    font-size: 28px !important;
+}
+svg.schedule-explorer g[aria-label="y-axis tick label"] text {
+    color: #000 !important;
+    font-size: 22px !important;
+}
+svg.date-selector g[aria-label="x-axis tick label"] text {
+    color: #000 !important;
+    font-size: 22px !important;
+}
+svg.date-selector g[aria-label="y-axis tick label"] text {
+    color: #000 !important;
+    font-size: 18px !important;
+}
+
+svg:not(.aa-SubmitIcon) {
+    background: #ffffff !important;
+}
+
+span.edgeLabel { background: white !important; }
+
+div.card-footer {
+    background: #ffffff !important;
+}
