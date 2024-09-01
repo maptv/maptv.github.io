@@ -22,8 +22,8 @@ format:
     code-tools: false
     link-external-icon: false
     include-after-body:
-      - ../assets/timestamp.html
-      - ../assets/blog.html
+      - ../asset/timestamp.html
+      - ../asset/blog.html
 comments: false
 ---
 

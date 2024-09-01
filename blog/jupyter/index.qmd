@@ -6,7 +6,7 @@ author:
     url: https://maptv.github.io
 date: last-modified
 filters:
-  - ../../assets/date.lua
+  - ../../asset/date.lua
 image: horst_jupyter.png
 categories:
   - tool
@@ -16,9 +16,9 @@ categories:
 format:
   html:
     include-after-body:
-      - ../../assets/timestamp.html
-      - ../../assets/style.html
-      - ../../assets/tooltip.html
+      - ../../asset/timestamp.html
+      - ../../asset/style.html
+      - ../../asset/tooltip.html
 ---
 
 ## [TL;DR]{.underline .blue data-bs-toggle="tooltip" data-bs-title="too long; didn't read"}

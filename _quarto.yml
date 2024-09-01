@@ -2,7 +2,7 @@ project:
   type: website
   resources: .gitlab-ci.yml
   post-render:
-  - assets/date.py
+  - asset/date.py
 website:
   search:
     location: sidebar
@@ -17,10 +17,10 @@ website:
   back-to-top-navigation: true
   reader-mode: true
   draft-mode: visible
-  favicon: assets/deidek.svg
+  favicon: asset/deidek.svg
   navbar:
     title: Martin Laptev
-    logo: assets/deidek.svg
+    logo: asset/deidek.svg
     logo-alt: "Decagon made up of 100 triangles"
   sidebar:
     tools:
@@ -122,13 +122,13 @@ format:
     mainfont: Lato
     toc: true
     theme:
-      light: [flatly, assets/light.scss]
-      dark: [darkly, assets/dark.scss]
+      light: [flatly, asset/light.scss]
+      dark: [darkly, asset/dark.scss]
     grid:
       sidebar-width: 161px
       body-width: 1800px
       margin-width: 161px
-    css: assets/styles.css
+    css: asset/style.css
 execute:
   freeze: true
   cache: true

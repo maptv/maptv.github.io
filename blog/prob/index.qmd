@@ -11,11 +11,11 @@ categories:
 format:
   html:
     include-after-body:
-      - ../../assets/timestamp.html
-      - ../../assets/style.html
-      - ../../assets/tooltip.html
+      - ../../asset/timestamp.html
+      - ../../asset/style.html
+      - ../../asset/tooltip.html
 filters:
-  - ../../assets/date.lua
+  - ../../asset/date.lua
   - include-code-files
 ---
 

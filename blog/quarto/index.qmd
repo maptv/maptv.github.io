@@ -14,11 +14,11 @@ categories:
 format:
   html:
     include-after-body:
-      - ../../assets/timestamp.html
-      - ../../assets/style.html
-      - ../../assets/tooltip.html
+      - ../../asset/timestamp.html
+      - ../../asset/style.html
+      - ../../asset/tooltip.html
 filters:
-  - ../../assets/date.lua
+  - ../../asset/date.lua
   - include-code-files
 ---
 
@@ -374,14 +374,14 @@ To add a custom [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=A%20
 ````
 
 #### `time.js`
-```{.javascript include="../../assets/time.js"}
+```{.javascript include="../../asset/time.js"}
 ```
 :::
 :::
 
 HTML blocks are useful for running [JavaScript](https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(/%CB%88d%CA%92%C9%91%CB%90v%C9%99skr%C9%AApt/)%2C%20often%20abbreviated%20as%20JS%2C%20is%20a%20programming%20language%20that%20is%20one%20of%20the%20core%20technologies%20of%20the%20World%20Wide%20Web%2C%20alongside%20HTML%20and%20CSS) code in the context of a single page on your site without affecting the others. I also use HTML blocks to add a `<style>` element to my `.qmd` files as a last ditch effort to fine tune the style of my site.
 
-Before I resort to the `<style>` element approach, I try writing [CSS](https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML) in my [`styles.css`](https://quarto.org/docs/visual-editor/content.html#defining-styles), `light.css`, and [`dark.css`](https://quarto.org/docs/output-formats/html-themes.html#customizing-themes) files. So far, this approach has been sufficient to make any styling changes I want, but if it every fails, I can use JavaScript to override the default styling provided by Quarto by modifying `style` attributes, which have the highest [specificity](https://en.wikipedia.org/wiki/CSS#Specificity:~:text=Specificity%20refers%20to%20the%20relative%20weights%20of%20various%20rules.) in [CSS](https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML).
+Before I resort to the `<style>` element approach, I try writing [CSS](https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML) in my [`style.css`](https://quarto.org/docs/visual-editor/content.html#defining-styles), `light.css`, and [`dark.css`](https://quarto.org/docs/output-formats/html-themes.html#customizing-themes) files. So far, this approach has been sufficient to make any styling changes I want, but if it every fails, I can use JavaScript to override the default styling provided by Quarto by modifying `style` attributes, which have the highest [specificity](https://en.wikipedia.org/wiki/CSS#Specificity:~:text=Specificity%20refers%20to%20the%20relative%20weights%20of%20various%20rules.) in [CSS](https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML).
 
 ### Post-render script {#sec-post}
 
@@ -400,7 +400,7 @@ I wanted to my blog's [listing page](https://maptv.github.io/blog) to show dates
 
 #### `date.py`
 
-```{.yaml include="../../assets/date.py"}
+```{.yaml include="../../asset/date.py"}
 ```
 
 :::
@@ -449,7 +449,7 @@ filters: date.lua
 
 #### `date.lua`
 
-```{.lua include="../../assets/date.lua"}
+```{.lua include="../../asset/date.lua"}
 ```
 
 :::

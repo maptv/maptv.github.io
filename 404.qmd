@@ -6,9 +6,9 @@ format:
     repo-actions: false
     back-to-top-navigation: false
     include-after-body:
-      - assets/timestamp.html
-      - assets/style.html
-      - assets/tooltip.html
+      - asset/timestamp.html
+      - asset/style.html
+      - asset/tooltip.html
 ---
 
 The page you requested cannot be found.

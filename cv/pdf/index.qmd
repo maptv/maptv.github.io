@@ -3,9 +3,9 @@ format:
   html:
     page-layout: full
     include-after-body:
-      - ../../assets/timestamp.html
-      - ../../assets/style.html
-      - ../../assets/tooltip.html
+      - ../../asset/timestamp.html
+      - ../../asset/style.html
+      - ../../asset/tooltip.html
 ---
 
 ```{=html}
