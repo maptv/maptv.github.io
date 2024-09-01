@@ -398,9 +398,3 @@ for all of humanity.
   French, Portuguese
 
 </div>
-
-<script src="../scripts/time.js"></script>
-<script>
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-</script>
