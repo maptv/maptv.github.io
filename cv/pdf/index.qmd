@@ -1,7 +1,6 @@
 ---
 format:
   html:
-    output-file: index.html
     page-layout: full
     include-after-body:
       - ../../assets/timestamp.html
