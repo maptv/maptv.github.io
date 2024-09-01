@@ -6,26 +6,15 @@ format:
     toc: true
     toc-depth: 3
     keep-md: true
+    include-after-body:
+      - ../assets/timestamp.html
+      - ../assets/style.html
+      - ../assets/tooltip.html
   pdf:
     pdf-engine: weasyprint
   commonmark: default
-css: cv.css
+css: ../assets/cv.css
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -323,40 +312,3 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 - [**ILR 4**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_4_%E2%80%93_Full_professional_proficiency): Spanish, Russian
 - [**ILR 3**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_3_%E2%80%93_Professional_working_proficiency): French, Portuguese
 :::
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```{=html}
-<script src="../scripts/time.js"></script>
-<script>
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-</script>
-```

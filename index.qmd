@@ -1,5 +1,5 @@
 ---
-image: media/martin.png
+image: assets/martin.png
 toc: false
 format:
   html:
@@ -7,9 +7,9 @@ format:
     repo-actions: false
     back-to-top-navigation: false
     include-after-body:
-      - scripts/timestamp.html
-      - scripts/home.html
-      - scripts/tooltip.html
+      - assets/timestamp.html
+      - assets/home.html
+      - assets/tooltip.html
 about:
   template: trestles
   image-shape: round
@@ -17,7 +17,7 @@ about:
   image-title: headshot
 ---
 
-Greetings! <img src="media/wave.gif" width="25px"/>
+Greetings! <img src="assets/wave.gif" width="25px"/>
 
 Welcome to my personal website, which I created using the [Quarto](https://quarto.org) publishing system. You are currently on the [Home](){.bi .bi-house-door} page of my site. You can use the [Sidebar](https://en.wikipedia.org/wiki/Sidebar_(computing)#:~:text=a%20graphical%20control%20element%20that%20displays%20various%20forms%20of%20information%20to%20the%20right%20or%20left%20side){.bi .bi-layout-text-sidebar-reverse} on the left to go to the [About](about){.bi .bi-info-circle}, [Blog](blog){.bi .bi-pencil}, and [Curriculum Vitae (CV)](cv){.bi .bi-file-earmark-person} pages of my site or my profile pages on [GitHub](https://github.com/maptv){.bi .bi-github} and [LinkedIn](https://www.linkedin.com/in/maptv){.bi .bi-linkedin}. You can also use the [arrows[]{.bi .bi-arrow-right-short}]{.bi .bi-arrow-left-short} at the bottom to move between specific pages on my site.
 

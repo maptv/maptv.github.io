@@ -2,18 +2,17 @@
 title: "Martin Skarzynski Laptev"
 format:
   html:
-    output-file: index.html
     toc: true
     toc-depth: 3
     keep-md: true
     include-after-body:
-      - ../scripts/timestamp.html
-      - ../scripts/style.html
-      - ../scripts/tooltip.html
+      - ../assets/timestamp.html
+      - ../assets/style.html
+      - ../assets/tooltip.html
   pdf:
     pdf-engine: weasyprint
   commonmark: default
-css: cv.css
+css: ../assets/cv.css
 ---
 
 ::: {.contact}

@@ -13,6 +13,9 @@ format:
     code-block-background: false
     code-block-border-left: false
     citations-hover: true
+    crossref:
+      lst-title: List
+      lst-prefix: List
     footnote-hover: true
     code-copy: true
     code-fold: true
@@ -20,9 +23,8 @@ format:
     code-tools: true
     link-external-icon: true
     link-external-newwindow: true
-    crossref:
-      lst-title: List
-      lst-prefix: List
+    mermaid:
+      theme: default
 comments:
   giscus:
     repo: maptv/maptv.github.io
