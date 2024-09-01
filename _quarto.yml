@@ -43,65 +43,74 @@ website:
     - icon: file-earmark-person
       text: CV/Résumé
       href: cv/index.qmd
-    - icon: pencil
-      section: Blog
-      href: blog/index.qmd
+    - icon: grid-3x3-gap
+      text: Listing
+      href: list/index.qmd
+    - section: Art
+      icon: brush
+    - section: Cloud
+      icon: cloud
+    - section: History
+      icon: hourglass-split
+    - section: Machine Learning
+      icon: robot
       contents:
-      - section: Measurement
-        icon: rulers
-        href: blog/dec/index.qmd
-        contents:
-        - text: Geolocation
-          icon: geo
-          href: blog/geo/index.qmd
-        - text: Decimal time
-          icon: hourglass-split
-          href: blog/time/index.qmd
-        - text: Ordinal date
-          icon: calendar-event
-          href: blog/date/index.qmd
-        - text: Daylight duration
-          icon: sun
-          href: blog/day/index.qmd
-        - text: Time interval
-          icon: calendar-range
-          href: blog/interval/index.qmd
-        - text: Navigation
-          icon: compass
-          href: blog/nav/index.qmd
-        - text: Movement
-          icon: arrows-move
-          href: blog/move/index.qmd
-        - text: Size
-          icon: bounding-box-circles
-          href: blog/size/index.qmd
-      - section: Software Tools
-        icon: tools
-        contents:
-        - icon: git
-          text: Git
-          href: blog/git/index.qmd
-        - icon: code
-          text: VSCode
-          href: blog/vscode/index.qmd
-        - icon: journal-richtext
-          text: Jupyter
-          href: blog/jupyter/index.qmd
-        - icon: markdown
-          text: Quarto Markdown
-          href: blog/quarto/index.qmd
-        - icon: 0-circle
-          text: Observable
-          href: blog/observable/index.qmd
-      - section: Machine Learning
-        icon: robot
-        contents:
-        - icon: dice-5
-          text: Probablity
-          href: blog/prob/index.qmd
-        - icon: translate
-          text: Language Models
-          href: blog/llm/index.qmd
+      - icon: dice-5
+        text: Probablity
+        href: ml/prob/index.qmd
+      - icon: translate
+        text: Language Models
+        href: ml/llm/index.qmd
+    - section: Measurement
+      icon: rulers
+      href: dec/index.qmd
+      contents:
+      - text: Geoposition
+        icon: geo
+        href: dec/geo/index.qmd
+      - text: Decimal time
+        icon: clock
+        href: dec/time/index.qmd
+      - text: Ordinal date
+        icon: calendar-event
+        href: dec/date/index.qmd
+      - text: Daylight duration
+        icon: sun
+        href: dec/day/index.qmd
+      - text: Time span
+        icon: calendar-range
+        href: dec/span/index.qmd
+      - text: Navigation
+        icon: compass
+        href: dec/nav/index.qmd
+      - text: Movement
+        icon: arrows-move
+        href: dec/move/index.qmd
+      - text: Size
+        icon: bounding-box-circles
+        href: dec/size/index.qmd
+    - section: Science
+      icon: stars
+    - section: Software
+      icon: laptop
+      contents:
+      - icon: gear
+        text: Setup
+      - icon: git
+        text: Git
+        href: software/git/index.qmd
+      - icon: p-square
+        text: Positron
+        href: software/positron/index.qmd
+      - icon: journal-richtext
+        text: Jupyter
+        href: software/jupyter/index.qmd
+      - icon: markdown
+        text: Quarto Markdown
+        href: software/quarto/index.qmd
+      - icon: 0-circle
+        text: Observable
+        href: software/observable/index.qmd
   twitter-card: true
   page-footer:
     background: light

@@ -1,0 +1,46 @@
+---
+title: Knitr
+draft: true
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
+date: last-modified
+filters:
+  - ../../asset/date.lua
+image: horst_knitr.png
+categories:
+  - tool
+  - knitr
+  - quarto
+date-format: x
+format:
+  html:
+    include-after-body:
+      - ../../asset/stamp.html
+      - ../../asset/style.html
+      - ../../asset/tooltip.html
+---
+
+## [TL;DR]{.underline .blue data-bs-toggle="tooltip" data-bs-title="too long; didn't read"}
+
+The goal of this blog post, the last (index: -1) in my [Tools](..#category=tool) blog post series, is to
+
+```{mermaid}
+%%| column: margin
+%%| label: fig-navchart
+%%| fig-cap: Tools series navigation chart
+flowchart TB
+   A[Git]-->B[VSCode]-->C[Quarto]
+   C-->D[Observable]
+   C-->E[Jupyter]
+   C-->F[Knitr]
+   click A "../git"
+   click B "../vscode"
+   click C "../quarto"
+   click D "../observable"
+   click E "../jupyter"
+   click F "../knitr"
+   style F stroke:#99f,stroke-width:5px
+```
+
+## Introduction {#sec-intro}

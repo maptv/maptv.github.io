@@ -1,13 +1,14 @@
 ---
 image: asset/martin.png
 toc: false
+date-format: x
 format:
   html:
     page-layout: full
     repo-actions: false
     back-to-top-navigation: false
     include-after-body:
-      - asset/timestamp.html
+      - asset/stamp.html
       - asset/home.html
       - asset/tooltip.html
 about:

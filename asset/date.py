@@ -6,7 +6,7 @@ def unix2doty(ms=0):
     year = int((dote - dote / 1460 + dote / 36524 - dote / 146096) // 365 + cykl * 400)
     return year, days - (year * 365 + year / 4 - year / 100 + year / 400) // 1
 
-with open("_site/blog/index.html") as infile:
+with open("_site/list/index.html") as infile:
     txt = infile.read()
     soup = bs4.BeautifulSoup(txt, features="html.parser")
 for div in soup.find_all("div", {"class": "card-file-modified"}):
@@ -17,5 +17,5 @@ for div in soup.find_all("div", {"class": "card-file-modified"}):
 for div in soup.find_all("div", {"class": "listing-reading-time"}):
     if "min" in div.text:
         div.string.replace_with(f"{(int(div.text.split()[0]) / 1.44).__floor__()} milliday")
-with open("_site/blog/index.html", "w") as outfile:
+with open("_site/list/index.html", "w") as outfile:
     outfile.write(str(soup))

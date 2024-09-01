@@ -1,12 +1,13 @@
 ---
 title: "Martin Skarzynski Laptev"
+date-format: x
 format:
   html:
     toc: true
     toc-depth: 3
     keep-md: true
     include-after-body:
-      - ../asset/timestamp.html
+      - ../asset/stamp.html
       - ../asset/style.html
       - ../asset/tooltip.html
   pdf:

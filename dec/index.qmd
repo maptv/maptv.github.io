@@ -1,0 +1,116 @@
+---
+title: The Dec measurement system
+draft: true
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
+date: last-modified
+image: ../asset/deidek.svg
+categories:
+  - dec
+citation:
+  url: https://maptv.github.io/blog/dec
+date-format: x
+format:
+  html:
+    include-after-body:
+      - ../asset/cite.html
+      - ../asset/style.html
+      - ../asset/stamp.html
+      - ../asset/tooltip.html
+filters:
+  - ../asset/date.lua
+  - include-code-files
+---
+
+This section of my blog focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created to measure⏳time,📍position,🧭orientation,📐angles, and🔄cycles in [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) instead of months, weeks, hours, minutes, seconds, and degrees. For time measurement, Dec uses days and years, which are turns of a [celestial body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole) and around [the point it orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit), respectively.
+
+### Timestamps
+
+The numbers in the top left of the [navigation bar (navbar)](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) are components of a Dec [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) that shows the current time: \${styledDecoYear0}+\${styledDecoDate0}\${styledDecoTime0}-\${styledTimeZone0}.
+
+Dec timestamps are inspired by this equation: $\texttt{y=\lfloor{y}\rfloor+}\frac{\texttt{d-z}}{\texttt{n}}$, where $\texttt{y}$ is [decimal years](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=decimal%20years%20divide%20the%20year%20into%2010%C2%A0equal%20parts){.underline data-bs-toggle="tooltip" data-bs-title="Turns of the Earth around the Sun"} (\${styledFracYear}), $\texttt{\lfloor{y}\rfloor}$ is [floored](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x) years (\${styledDecoYear1}), $\texttt{d}$ is [decidays](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays){.underline data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth’s axis"} (\${styledDecoDate1}\${styledDecoTime1}), $\texttt{z}$ is the [Dec time zone](https://observablehq.com/@dec/lock){.underline data-bs-toggle="tooltip" data-bs-title="Floored deciturns of longitude"} (\${styledTimeZone1}), and $\texttt{n}$ is the total number of decidays in the year (\${styledNdays}).
+
+In addition to time, Dec also measures[]{.bi .bi-globe}[geographic](https://en.wikipedia.org/wiki/Geographic_coordinate_system) and[]{.bi .bi-moon-stars}[celestial](https://en.wikipedia.org/wiki/Celestial_coordinate_system) coordinates: [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%E2%80%93west%20position){.underline data-bs-toggle="tooltip" data-bs-title="Eastward turns from Meridian 0 (162nd meridian west) on the Earth's surface"} , [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20coordinate%20that%20specifies%20the%20north%E2%80%93south%20position){.underline data-bs-toggle="tooltip" data-bs-title="Northward turns from Parallel 0 (the Equator) on the Earth's surface"}, [azimuth](https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20of%20the%20object%20around%20the%20horizon){.underline data-bs-toggle="tooltip" data-bs-title="Eastward turns from Azimuth 0 (North) on the horizon"}, [altitude](https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20between%20the%20object%20and%20the%20observer%27s%20local%20horizon){.underline data-bs-toggle="tooltip" data-bs-title="Upward turns from Altitude 0 (the horizon)"}, etc.
+
+Importantly, Dec time zones are derived from floored [decidays of longitude](https://observablehq.com/@dec/alc){.underline data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth's surface parallel to the Equator"} ($\texttt{z=\lfloor{λ}\rfloor}$) and can be appended to the time of day (\${styledDecoTime2}-\${styledTimeZone2}), but not to durations, e.g. the [centimillidays](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays%20and%20100%20centidays){.underline data-bs-toggle="tooltip" data-bs-title="Hundred thousands of a turn on the Earth's axis"} since this webpage was loaded: \${styledTickTime}.
+
+```{ojs}
+//| echo: false
+unix = {
+  while(true) {
+    yield Date.now();
+  }
+}
+tick = {
+  let i = 0;
+  while (true) {
+    yield Promises.tick(864, ++i);
+  }
+}
+tickTime = tick % 1e5
+// http://howardhinnant.github.io/date_algorithms.html#civil_from_days
+function unix2dote(unix, zone, offset = 719468) {
+  return [
+    (unix ?? Date.now()) / 86400000
+    + (zone = zone ?? (10 - Math.round(
+        (new Date).getTimezoneOffset() / 144)) % 10
+      ) / 10 + offset, zone]
+}
+function dote2doty(days = 719468, zone = 0) {
+  const era = Math.floor((days >= 0 ? days : days - 146096) / 146097), dotc = days - era * 146097,
+      yotc = Math.floor((dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
+  return [yotc + era * 400, dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4), zone];
+}
+function doty2deco(year = 1969, doty = 306, zone = 0) {
+  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`
+}
+ydz = dote2doty(...unix2dote(unix))
+deco = doty2deco(...ydz)
+// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor
+function setStyle(content, style = {}) {
+  function yiq(color) {
+    const {r, g, b} = d3.rgb(color);
+    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
+  }
+  const {
+    background,
+    color = yiq(background) >= 0.6 ? "#111" : "white",
+    padding = "0 1px",
+    borderRadius = "4px",
+    fontWeight = 900,
+    fontSize = "1em",
+    ...rest
+  } = typeof style === "string" ? {background: style} : style;
+  return htl.html`<span style=${{
+    background,
+    color,
+    padding,
+    borderRadius,
+    fontWeight,
+    ...rest
+  }}>${content}</span>`;
+}
+function year2bool(year = 1970) {
+    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+}
+decoYear = deco.slice(0, 4)
+decoDate = deco.slice(5, 8)
+decoTime = deco.slice(8, 14)
+decoTimeZone = deco[15]
+nDaysInYear = 365 + year2bool(ydz[0] + 1)
+fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(8)
+styledDecoYear0 = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])
+styledFracYear = setStyle(fracYear, d3.schemePaired[10])
+styledDecoDate0 = setStyle(decoDate, d3.schemePaired[1])
+styledDecoDate1 = setStyle(decoDate, d3.schemePaired[1])
+styledNdays = setStyle(nDaysInYear * 10, d3.schemePaired[1])
+styledDecoTime0 = setStyle(decoTime, d3.schemePaired[2])
+styledDecoTime1 = setStyle(decoTime, d3.schemePaired[2])
+styledDecoTime2 = setStyle(decoTime, d3.schemePaired[2])
+styledTimeZone0 = setStyle(decoTimeZone, d3.schemePaired[3])
+styledTimeZone1 = setStyle(decoTimeZone, d3.schemePaired[3])
+styledTimeZone2 = setStyle(decoTimeZone, d3.schemePaired[3])
+styledTickTime = setStyle(tickTime, d3.schemePastel2[0])
+```
