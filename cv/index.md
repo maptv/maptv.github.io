@@ -3,15 +3,15 @@
 
 <div class="contact">
 
-- <img src="https://icons.getbootstrap.com/asset/icons/telephone.svg"
+- <img src="https://icons.getbootstrap.com/assets/icons/telephone.svg"
   class="phone" /> [240-207-1654](tel:240-207-1654)
-- <img src="https://icons.getbootstrap.com/asset/icons/envelope-at.svg"
+- <img src="https://icons.getbootstrap.com/assets/icons/envelope-at.svg"
   class="shiftup" /> <maptv@engineer.com>
-- <img src="https://icons.getbootstrap.com/asset/icons/house.svg"
+- <img src="https://icons.getbootstrap.com/assets/icons/house.svg"
   class="shiftup" /> [maptv.github.io](https://maptv.github.io)
-- <img src="https://icons.getbootstrap.com/asset/icons/github.svg"
+- <img src="https://icons.getbootstrap.com/assets/icons/github.svg"
   class="shiftup" /> [maptv](https://github.com/maptv)
-- <img src="https://icons.getbootstrap.com/asset/icons/linkedin.svg"
+- <img src="https://icons.getbootstrap.com/assets/icons/linkedin.svg"
   class="linkedin" /> [maptv](https://linkedin.com/in/maptv)
 
 </div>
