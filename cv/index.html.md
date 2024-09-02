@@ -21,6 +21,21 @@ css: ../asset/cv.css
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ::: {.contact}
 - ![](https://icons.getbootstrap.com/asset/icons/telephone.svg){.phone} [240-207-1654](tel:240-207-1654)
 - ![](https://icons.getbootstrap.com/asset/icons/envelope-at.svg){.shiftup} [maptv@engineer.com](mailto:maptv@engineer.com)
