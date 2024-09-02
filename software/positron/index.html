@@ -213,9 +213,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Cloud</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start"><i class="bi bi-hourglass-split" role="img">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true"><i class="bi bi-hourglass-split" role="img">
 </i> 
- <span class="menu-text">History</span></span>
+ <span class="menu-text">History</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../history/ww2/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-hourglass-split" role="img">
+</i> 
+ <span class="menu-text">World War 2</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -421,7 +435,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024+184</p>
+      <p class="date">2024+185</p>
     </div>
   </div>
   
@@ -670,7 +684,7 @@ Figure&nbsp;2: Git workflow
 </div>
 </div>
 <p>The drawback of my keyboard shortcut approach for the Git workflow is that it produces generic commit messages that are no very informative. Anyone reading the messages will not be able to tell what changes were made and more importantly why the changes were made.</p>
-<p>To automatically generate commit messages based on the currently staged changes, we can use a <a href="https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.">Large Language Model</a> (LLM). <a href="https://en.wikipedia.org/wiki/Generative_artificial_intelligence#:~:text=Generative%20artificial%20intelligence%20(also%20generative%20AI%20or%20GenAI%5B1%5D)%20is%20artificial%20intelligence%20capable%20of%20generating%20text%2C%20images%2C%20or%20other%20media">Generative artificial intelligence</a> models like LLMs tend to be large in size and have atypical computational requirements, so I will save my adventures with LLMs for a <a href="../llm/index.qmd">different post</a>.</p>
+<p>To automatically generate commit messages based on the currently staged changes, we can use a <a href="https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.">Large Language Model</a> (LLM). <a href="https://en.wikipedia.org/wiki/Generative_artificial_intelligence#:~:text=Generative%20artificial%20intelligence%20(also%20generative%20AI%20or%20GenAI%5B1%5D)%20is%20artificial%20intelligence%20capable%20of%20generating%20text%2C%20images%2C%20or%20other%20media">Generative artificial intelligence</a> models like LLMs tend to be large in size and have atypical computational requirements, so I will save my adventures with LLMs for a <a href="../../ml/llm/index.html">different post</a>.</p>
 <p>I really enjoy using Git, especially with shell aliases in my terminal and keyboard shortcuts in my favorite text editors. If we ever collaborate on a project together, you can be sure that I will insist on using Git!</p>
 
 
@@ -1679,7 +1693,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb12-292"><a href="#cb12-292" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-293"><a href="#cb12-293" aria-hidden="true" tabindex="-1"></a>The drawback of my keyboard shortcut approach for the Git workflow is that it produces generic commit messages that are no very informative. Anyone reading the messages will not be able to tell what changes were made and more importantly why the changes were made.</span>
 <span id="cb12-294"><a href="#cb12-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-295"><a href="#cb12-295" aria-hidden="true" tabindex="-1"></a>To automatically generate commit messages based on the currently staged changes, we can use a <span class="co">[</span><span class="ot">Large Language Model</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.) (LLM). <span class="co">[</span><span class="ot">Generative artificial intelligence</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Generative_artificial_intelligence#:~:text=Generative%20artificial%20intelligence%20(also%20generative%20AI%20or%20GenAI%5B1%5D)%20is%20artificial%20intelligence%20capable%20of%20generating%20text%2C%20images%2C%20or%20other%20media) models like LLMs tend to be large in size and have atypical computational requirements, so I will save my adventures with LLMs for a <span class="co">[</span><span class="ot">different post</span><span class="co">](../llm/index.qmd)</span>.</span>
+<span id="cb12-295"><a href="#cb12-295" aria-hidden="true" tabindex="-1"></a>To automatically generate commit messages based on the currently staged changes, we can use a <span class="co">[</span><span class="ot">Large Language Model</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.) (LLM). <span class="co">[</span><span class="ot">Generative artificial intelligence</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Generative_artificial_intelligence#:~:text=Generative%20artificial%20intelligence%20(also%20generative%20AI%20or%20GenAI%5B1%5D)%20is%20artificial%20intelligence%20capable%20of%20generating%20text%2C%20images%2C%20or%20other%20media) models like LLMs tend to be large in size and have atypical computational requirements, so I will save my adventures with LLMs for a <span class="co">[</span><span class="ot">different post</span><span class="co">](../../ml/llm/index.qmd)</span>.</span>
 <span id="cb12-296"><a href="#cb12-296" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-297"><a href="#cb12-297" aria-hidden="true" tabindex="-1"></a>I really enjoy using Git, especially with shell aliases in my terminal and keyboard shortcuts in my favorite text editors. If we ever collaborate on a project together, you can be sure that I will insist on using Git!</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
