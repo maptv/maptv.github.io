@@ -52,6 +52,10 @@ website:
       icon: cloud
     - section: History
       icon: hourglass-split
+      contents:
+        text: World War 2
+        icon: hourglass-split
+        href: history/ww2/index.qmd
     - section: Machine Learning
       icon: robot
       contents:
