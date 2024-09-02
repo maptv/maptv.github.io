@@ -54,7 +54,7 @@ website:
       icon: hourglass-split
       contents:
         text: World War 2
-        icon: hourglass-split
+        icon: 2-square
         href: history/ww2/index.qmd
     - section: Machine Learning
       icon: robot

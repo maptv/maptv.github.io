@@ -27,21 +27,12 @@ css: ../asset/cv.css
 
 
 
-
-
-
-
-
-
-
-
-
 ::: {.contact}
-- ![](https://icons.getbootstrap.com/asset/icons/telephone.svg){.phone} [240-207-1654](tel:240-207-1654)
-- ![](https://icons.getbootstrap.com/asset/icons/envelope-at.svg){.shiftup} [maptv@engineer.com](mailto:maptv@engineer.com)
-- ![](https://icons.getbootstrap.com/asset/icons/house.svg){.shiftup} [maptv.github.io](https://maptv.github.io)
-- ![](https://icons.getbootstrap.com/asset/icons/github.svg){.shiftup} [maptv](https://github.com/maptv)
-- ![](https://icons.getbootstrap.com/asset/icons/linkedin.svg){.linkedin} [maptv](https://linkedin.com/in/maptv)
+- ![](https://icons.getbootstrap.com/assets/icons/telephone.svg){.phone} [240-207-1654](tel:240-207-1654)
+- ![](https://icons.getbootstrap.com/assets/icons/envelope-at.svg){.shiftup} [maptv@engineer.com](mailto:maptv@engineer.com)
+- ![](https://icons.getbootstrap.com/assets/icons/house.svg){.shiftup} [maptv.github.io](https://maptv.github.io)
+- ![](https://icons.getbootstrap.com/assets/icons/github.svg){.shiftup} [maptv](https://github.com/maptv)
+- ![](https://icons.getbootstrap.com/assets/icons/linkedin.svg){.linkedin} [maptv](https://linkedin.com/in/maptv)
 :::
 
 ### Mission
