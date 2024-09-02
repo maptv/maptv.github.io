@@ -1,3 +1,9 @@
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
+categories:
+  - history
+date: last-modified
 date-format: x
 freeze: true
 cache: true
@@ -5,6 +11,9 @@ title-block-banner: false
 lightbox: true
 toc: true
 page-layout: full
+citation:
+  issued: 2024
+  accessed: 2024
 format:
   html:
     highlight-style: a11y

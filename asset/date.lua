@@ -1,10 +1,10 @@
 local function unix2deco(ms)
-    local days = ms / 86400000 + 719468
-    local era = (days >= 0 and days or days - 146096) // 146097
-    local doe = days - era * 146097
-    local year = (doe - doe // 1460 + doe // 36524 - doe // 146096) // 365 + era * 400
-    local doty = days - math.floor(year * 365 + year // 4 - year // 100 + year // 400)
-    return string.format("%s+%s", math.floor(year), math.floor(doty))
+    local dote = ms / 86400000 + 719468
+    local cykl = (dote >= 0 and dote or dote - 146096) // 146097
+    local dotc = dote - cykl * 146097
+    local yotc = (dotc - dotc // 1460 + dotc // 36524 - dotc // 146096) // 365
+    local doty = dotc - (yotc * 365 + yotc // 4 - yotc // 100)
+    return string.format("%s+%s", math.floor(yotc + cykl * 400), math.floor(doty))
 end
 
 local function to_decalendar(date)

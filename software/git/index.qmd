@@ -11,6 +11,8 @@ categories:
   - git
 citation:
   url: https://maptv.github.io/blog/git
+  issued: 2024
+  accessed: 2024
 date-format: x
 format:
   html:

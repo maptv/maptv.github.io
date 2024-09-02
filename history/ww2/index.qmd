@@ -1,15 +1,8 @@
 ---
 title: World War 2
-author:
-  - name: Martin Laptev
-    url: https://maptv.github.io
-date: last-modified
 image: /asset/ww2europe1939+2.svg
-categories:
-  - history
 citation:
   url: https://maptv.github.io/blog/ww2
-date-format: x
 format:
   html:
     include-after-body:
@@ -19,7 +12,6 @@ format:
       - ../../asset/tooltip.html
 filters:
   - ../../asset/date.lua
-  - include-code-files
 ---
 
 Yesterday, [2024+184]{.underline .blue data-bs-toggle="tooltip" data-bs-title="2024-09-01"}, marked 85 years since the start of [World War 2](https://en.wikipedia.org/wiki/World_War_II#:~:text=a%20global%20conflict%20between%20two%20coalitions%3A%20the%20Allies%20and%20the%20Axis%20powers) on [1939+184]{.underline .blue data-bs-toggle="tooltip" data-bs-title="1939-09-01"} with the German invasion of Poland. On [1939+200]{.underline .blue data-bs-toggle="tooltip" data-bs-title="1939-09-17"}, sixteen days after the start of the war, the Soviet Union invaded Poland from the East. Germany and the Soviet Union split Poland according to the [Molotov–Ribbentrop Pact](https://en.wikipedia.org/wiki/Molotov%E2%80%93Ribbentrop_Pact#Secret_protocol:~:text=a%20non%2Daggression%20pact%20between%20Nazi%20Germany%20and%20the%20Soviet%20Union) signed on [1939+175]{.underline .blue data-bs-toggle="tooltip" data-bs-title="1939-08-23"}. The map below shows the German and Soviet invasions of Poland on Days 184 and 200, respectively, of Year 1939, as well as other military movements over the course of the subsequent 1.83 years before Germany ended the Pact on [1941+113]{.underline .blue data-bs-toggle="tooltip" data-bs-title="1941-06-22"} with its invasion of the Soviet Union as part of [Operation Barbarossa](https://en.wikipedia.org/wiki/Operation_Barbarossa#:~:text=the%20invasion%20of%20the%20Soviet%20Union%20by%20Nazi%20Germany%20and%20many%20of%20its%20Axis%20allies).

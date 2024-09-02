@@ -1,15 +1,16 @@
 ---
 listing:
   contents:
-    - ../../software/git/*.qmd
-    - ../../software/vscode/*.qmd
-    - ../../software/quarto/*.qmd
-    - ../../software/observable/*.qmd
-    - ../../software/jupyter/*.qmd
-    - ../../software/knitr/*.qmd
-    - ../../ml/prob/*.qmd
-    - ../../ml/llm/*.qmd
-    - ../../dec/geo/*.qmd
+    - ../../history/ww2/index.qmd
+    - ../../software/git/index.qmd
+    - ../../software/vscode/index.qmd
+    - ../../software/quarto/index.qmd
+    - ../../software/observable/index.qmd
+    - ../../software/jupyter/index.qmd
+    - ../../software/knitr/index.qmd
+    - ../../ml/prob/index.qmd
+    - ../../ml/llm/index.qmd
+    - ../../dec/geo/index.qmd
   sort: false
   type: grid
   categories: true
