@@ -1,4 +1,6 @@
 ---
+author: ""
+date: ""
 jupyter: python3
 ---
 

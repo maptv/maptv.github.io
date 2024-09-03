@@ -1,11 +1,18 @@
----
-jupyter: xlua
----
+-- ---
+-- jupyter:
+--   jupytext:
+--     text_representation:
+--       extension: .lua
+--       format_name: light
+--       format_version: '1.5'
+--       jupytext_version: 1.16.4
+--   kernelspec:
+--     display_name: Lua  (XLua)
+--     language: lua
+--     name: xlua
+-- ---
 
-```{lua}
---| editable: true
---| slideshow: {slide_type: ''}
---| tags: []
+-- + editable=true slideshow={"slide_type": ""}
 function unix2doty(unix)
   local dote = unix / 86400 + 719468
   local cykl = (
@@ -25,16 +32,9 @@ function unix2doty(unix)
       - yotc // 100
   )}
 end
-```
 
-```{lua}
---| editable: true
---| slideshow: {slide_type: ''}
---| tags: []
+-- + editable=true slideshow={"slide_type": ""}
 unix2doty(1728000000)
-```
+-- -
 
-```{lua}
 unix2doty(1890000000)
-```
-

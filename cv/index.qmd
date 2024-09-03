@@ -1,12 +1,11 @@
 ---
 author: ""
 date: ""
-title: "Martin Skarzynski Laptev"
 comments: false
+title: "Martin Skarzynski Laptev"
 format:
   html:
     toc-depth: 3
-    keep-md: true
     include-after-body:
       - ../asset/stamp.html
       - ../asset/style.html

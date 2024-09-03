@@ -1,6 +1,8 @@
 author:
   - name: Martin Laptev
     url: https://maptv.github.io
+date-format: x
+date: last-modified
 project:
   type: website
   resources: .gitlab-ci.yml
@@ -164,6 +166,10 @@ format:
       lst-prefix: List
     mermaid:
       theme: default
+  commonmark: default
+citation:
+  accessed: 2024
+  issued: 2024
 title-block-banner: false
 execute:
   freeze: true
@@ -171,8 +177,6 @@ execute:
 freeze: true
 cache: true
 lightbox: true
-date-format: x
-date: last-modified
 toc: true
 comments:
   giscus:

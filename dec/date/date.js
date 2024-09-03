@@ -1,11 +1,18 @@
----
-jupyter: deno
----
+// ---
+// jupyter:
+//   jupytext:
+//     text_representation:
+//       extension: .js
+//       format_name: light
+//       format_version: '1.5'
+//       jupytext_version: 1.16.4
+//   kernelspec:
+//     display_name: Deno
+//     language: typescript
+//     name: deno
+// ---
 
-```{typescript}
-#| editable: true
-#| slideshow: {slide_type: ''}
-#| tags: []
+// + editable=true slideshow={"slide_type": ""}
 function unix2doty(unix) {
   const dote = unix / 86400 + 719468,
     cykl = Math.floor((
@@ -25,9 +32,6 @@ function unix2doty(unix) {
       - Math.floor(yotc / 100)
   )]}
 unix2doty(1728000000)
-```
+// -
 
-```{typescript}
 unix2doty(1890000000)
-```
-
