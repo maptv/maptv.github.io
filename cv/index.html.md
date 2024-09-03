@@ -1,8 +1,10 @@
 ---
+author: ""
+date: ""
 title: "Martin Skarzynski Laptev"
+comments: false
 format:
   html:
-    toc: true
     toc-depth: 3
     keep-md: true
     include-after-body:
@@ -15,12 +17,6 @@ format:
   commonmark: default
 css: ../asset/cv.css
 ---
-
-
-
-
-
-
 
 
 

@@ -1,0 +1,4 @@
+jupyter: deno
+format: ipynb
+cache: false
+number-sections: false
