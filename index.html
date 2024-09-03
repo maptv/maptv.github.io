@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="">
 
 <title>Martin Laptev</title>
 <style>
@@ -19,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -352,13 +387,15 @@ ul.task-list li input[type="checkbox"] {
     <img src="asset/martin.png" class="about-image
   round " style="height: 16em; width: 16em;" title="headshot">
   </div>
-  <div class="about-contents"><main class="content column-page-right" id="quarto-document-content">
+  <div class="about-contents"><main class="content column-page-right" id="quarto-document-content"><div class="quarto-title-block"><div class="quarto-title-tools-only"><h1></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p>Greetings! <img src="asset/wave.gif" width="25px"></p>
-<p>Welcome to my personal website, which I created using the <a href="https://quarto.org">Quarto</a> publishing system. You are currently on the <a href="" class="bi bi-house-door">Home</a> page of my site. You can use the <a href="https://en.wikipedia.org/wiki/Sidebar_(computing)#:~:text=a%20graphical%20control%20element%20that%20displays%20various%20forms%20of%20information%20to%20the%20right%20or%20left%20side" class="bi bi-layout-text-sidebar-reverse">Sidebar</a> on the left to go to the <a href="about" class="bi bi-info-circle">About</a>, <a href="blog" class="bi bi-pencil">Blog</a>, and <a href="cv" class="bi bi-file-earmark-person">Curriculum Vitae (CV)</a> pages of my site or my profile pages on <a href="https://github.com/maptv" class="bi bi-github">GitHub</a> and <a href="https://www.linkedin.com/in/maptv" class="bi bi-linkedin">LinkedIn</a>. You can also use the <span class="bi bi-arrow-left-short">arrows<span class="bi bi-arrow-right-short"></span></span> at the bottom to move between specific pages on my site.</p>
+<p>Welcome to my personal website, which I created using the <a href="https://quarto.org">Quarto</a> publishing system.</p>
+<p>You are currently on the <a href="" class="bi bi-house-door">Home</a> page of my site. You can use the <a href="https://en.wikipedia.org/wiki/Sidebar_(computing)#:~:text=a%20graphical%20control%20element%20that%20displays%20various%20forms%20of%20information%20to%20the%20right%20or%20left%20side" class="bi bi-layout-text-sidebar-reverse">Sidebar</a> on the left to go to the <a href="about" class="bi bi-info-circle">About</a>, <a href="list" class="bi bi-grid-3x3-gap">Listing</a>, and <a href="cv" class="bi bi-file-earmark-person">Curriculum Vitae (CV)</a> pages of my site or my profile pages on <a href="https://github.com/maptv" class="bi bi-github">GitHub</a> and <a href="https://www.linkedin.com/in/maptv" class="bi bi-linkedin">LinkedIn</a>. The remaining items in the sidebar are sections that cover topics like <a href="art" class="bi bi-brush">art</a>, <a href="art" class="bi bi-hourglass-split">history</a>, and <a href="art" class="bi bi-stars">science</a>. In addition to the sidebar, you can also use the <span class="bi bi-arrow-left-short">arrows<span class="bi bi-arrow-right-short"></span></span> at the bottom to move between specific pages on my site.</p>
 <p>Have fun looking around!</p>
 
 
-</main></div>
+<!-- -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main></div>
 </div>
  <!-- /main -->
 <script>
@@ -652,6 +689,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
     clipboardModal.on('success', onCopySuccess);
   }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/maptv\.github\.io");
@@ -668,6 +756,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -990,7 +1083,36 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         <span class="nav-page-text">About</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> ""</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> ""</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">comments:</span><span class="co"> false</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> asset/martin.png</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">      - asset/stamp.html</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      - asset/home.html</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">      - asset/tooltip.html</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="an">about:</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">  template: trestles</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">  image-shape: round</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">  image-width: 16em</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">  image-title: headshot</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Greetings! &lt;img src="asset/wave.gif" width="25px"/&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Welcome to my personal website, which I created using the <span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org)</span> publishing system.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>You are currently on the <span class="co">[</span><span class="ot">Home</span><span class="co">]()</span>{.bi .bi-house-door} page of my site.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>You can use the <span class="co">[</span><span class="ot">Sidebar</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Sidebar_(computing)#:~:text=a%20graphical%20control%20element%20that%20displays%20various%20forms%20of%20information%20to%20the%20right%20or%20left%20side){.bi .bi-layout-text-sidebar-reverse} on the left to go to the <span class="co">[</span><span class="ot">About</span><span class="co">](about)</span>{.bi .bi-info-circle}, <span class="co">[</span><span class="ot">Listing</span><span class="co">](list)</span>{.bi .bi-grid-3x3-gap}, and <span class="co">[</span><span class="ot">Curriculum Vitae (CV)</span><span class="co">](cv)</span>{.bi .bi-file-earmark-person} pages of my site or my profile pages on <span class="co">[</span><span class="ot">GitHub</span><span class="co">](https://github.com/maptv)</span>{.bi .bi-github} and <span class="co">[</span><span class="ot">LinkedIn</span><span class="co">](https://www.linkedin.com/in/maptv)</span>{.bi .bi-linkedin}.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>The remaining items in the sidebar are sections that cover topics like <span class="co">[</span><span class="ot">art</span><span class="co">](art)</span>{.bi .bi-brush}, <span class="co">[</span><span class="ot">history</span><span class="co">](art)</span>{.bi .bi-hourglass-split}, and <span class="co">[</span><span class="ot">science</span><span class="co">](art)</span>{.bi .bi-stars}.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>In addition to the sidebar, you can also use the <span class="co">[</span><span class="ot">arrows[]{.bi .bi-arrow-right-short}</span><span class="co">]</span>{.bi .bi-arrow-left-short} at the bottom to move between specific pages on my site.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Have fun looking around!</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -999,7 +1121,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/maptv/maptv.github.io/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

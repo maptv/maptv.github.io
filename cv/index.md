@@ -1,6 +1,14 @@
 # Martin Skarzynski Laptev
 
 
+- [Mission](#mission)
+- [Experience](#experience)
+- [Education](#education)
+- [Skills](#skills)
+- [Publications](#publications)
+- [Awards](#awards)
+- [Languages](#languages)
+
 <div class="contact">
 
 - <img src="https://icons.getbootstrap.com/assets/icons/telephone.svg"

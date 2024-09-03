@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="">
 
 <title>Martin Laptev</title>
 <style>
@@ -19,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -365,7 +400,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Martin Skarzynski Laptev</h1>
+<div class="quarto-title-block"><div><h1 class="title">Martin Skarzynski Laptev</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -593,6 +628,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </div>
 
+
+<!-- -->
 
 </section>
 
@@ -902,6 +939,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
     clipboardModal.on('success', onCopySuccess);
   }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/maptv\.github\.io");
@@ -918,6 +1006,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1243,7 +1336,310 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         <span class="nav-page-text">Listing</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> ""</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> ""</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Martin Skarzynski Laptev"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">comments:</span><span class="co"> false</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    keep-md: true</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../asset/stamp.html</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../asset/style.html</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../asset/tooltip.html</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: false</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">    pdf-engine: weasyprint</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">  commonmark: default</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="an">css:</span><span class="co"> ../asset/cv.css</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>::: {.contact}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="al">![](https://icons.getbootstrap.com/assets/icons/telephone.svg)</span>{.phone} <span class="co">[</span><span class="ot">240-207-1654</span><span class="co">](tel:240-207-1654)</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="al">![](https://icons.getbootstrap.com/assets/icons/envelope-at.svg)</span>{.shiftup} <span class="co">[</span><span class="ot">maptv@engineer.com</span><span class="co">](mailto:maptv@engineer.com)</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="al">![](https://icons.getbootstrap.com/assets/icons/house.svg)</span>{.shiftup} <span class="co">[</span><span class="ot">maptv.github.io</span><span class="co">](https://maptv.github.io)</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="al">![](https://icons.getbootstrap.com/assets/icons/github.svg)</span>{.shiftup} <span class="co">[</span><span class="ot">maptv</span><span class="co">](https://github.com/maptv)</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="al">![](https://icons.getbootstrap.com/assets/icons/linkedin.svg)</span>{.linkedin} <span class="co">[</span><span class="ot">maptv</span><span class="co">](https://linkedin.com/in/maptv)</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### Mission</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>My goal is to lead the next generation of scientists and engineers in building solutions that integrate substantive expertise from diverse fields with machine intelligence.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Through my work, I strive to promote open source software, such as the <span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org)</span> publishing system, which I use to build dashboards, presentations, reports, websites, and other digital deliverables.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Overall, I aim to leverage my broad scientific background and technical expertise to help transform the promises of science and technology into a better future for all of humanity.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### Experience</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">###### **Lead Instructor**, [General Assembly](https://generalassemb.ly) [2019:]{.cvdate}</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>::: {.horizontal}</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Teaches <span class="co">[</span><span class="ot">open-enrollment</span><span class="co">](https://generalassemb.ly/instructors/martin-skarzynski/23420)</span> and enterprise courses such as:</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">React Development</span><span class="co">](https://generalassemb.ly/education/react-development)</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Data Analytics</span><span class="co">](https://generalassemb.ly/education/data-analytics)</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Data Science</span><span class="co">](https://www.boozallen.com/e/insight/blog/path-to-technical-success)</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Python Programming</span><span class="co">](https://generalassemb.ly/education/python-programming)</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Web Development</span><span class="co">](https://generalassemb.ly/education/front-end-web-development)</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">###### **Lead Instructor**, [Data Society](https://datasociety.com) [2019:]{.cvdate}</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>::: {.horizontal}</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Provides enterprise clients with training in:</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Machine Learning</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>DevOps &amp; MLOps</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Python &amp; R Programming</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Generative AI</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Graph Analytics</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Text Analysis &amp; NLP</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">###### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) [2022:]{.cvdate}</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Leads a non‑profit organization that supports <span class="co">[</span><span class="ot">eleven Meetup groups</span><span class="co">](https://www.datacommunitydc.org/meetups-overview)</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="fu">###### **Adjunct Professor**, Virginia Tech [2021:2024]{.cvdate}</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>::: {.horizontal}</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Taught two graduate courses for the Computer Science and Statistics Departments:</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Machine Learning</span><span class="co">](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205805%2D6%20%2D%20Machine%20Learning%C2%A0)</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Data Analytics</span><span class="co">]</span>(https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205525%2D6%20(STAT%205525%2D6)%20%2D%20Data%20Analytics)</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="fu">###### **Senior Domain Lead**, [Amazon Web Services](https://aws.amazon.com) [2022:2024]{.cvdate}</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>::: {.horizontal}</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Provided customers with scientific and technical expertise in:</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Computer Vision</span><span class="co">](https://aws.amazon.com/health/solutions/medicalimaging)</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Data Architecture</span><span class="co">](https://aws.amazon.com/big-data/datalakes-and-analytics/modern-data-architecture)</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Data Visualization</span><span class="co">](https://docs.aws.amazon.com/wellarchitected/latest/analytics-lens/data-visualization)</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Genomics</span><span class="co">](https://aws.amazon.com/health/genomics)</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Machine Learning</span><span class="co">](https://aws.amazon.com/health/machine-learning)</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Real World Evidence</span><span class="co">](https://aws.amazon.com/marketplace/solutions/healthcare/health-records)</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Built Artificial Intelligence (AI) solutions and Machine Learning Operations (MLOps) systems using:</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Amazon SageMaker</span><span class="co">](https://aws.amazon.com/sagemaker)</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">AWS Developer Tools</span><span class="co">](https://aws.amazon.com/developer/tools##Browse_by_Tool_Type)</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">AWS Lambda</span><span class="co">](https://aws.amazon.com/lambda)</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Amazon EventBridge</span><span class="co">](https://aws.amazon.com/eventbridge)</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">AWS CloudFormation</span><span class="co">](https://aws.amazon.com/cloudformation)</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">AWS IAM</span><span class="co">](https://aws.amazon.com/iam)</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Amazon EMR</span><span class="co">](https://aws.amazon.com/emr)</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">AWS Databases</span><span class="co">](https://aws.amazon.com/products/databases)</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">AWS Service Catalog</span><span class="co">](https://aws.amazon.com/servicecatalog)</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Obtained 3 AWS certification</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Practical Data Science</span><span class="co">](https://www.coursera.org/account/accomplishments/specialization/certificate/MU388FKRUUL3)</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Cloud Practitioner</span><span class="co">](https://www.credly.com/badges/c3143f03-6ebb-4f16-827c-c89f8db2a3cf/public_url)</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Solutions Architect Associate</span><span class="co">](https://www.credly.com/badges/1ae81600-c0cb-47b4-8610-e0c58bff6741/public_url)</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="fu">###### **AI Engineering Manager**, [Booz Allen Hamilton](https://www.boozallen.com) [2019:2023]{.cvdate}</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Led a team of data scientists and software developers working on a cyber intelligence application</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Spearheaded interdisciplinary COVID‑19 <span class="co">[</span><span class="ot">visualization</span><span class="co">](https://www.boozallen.com/c/insight/blog/epimaps-data-visualization-for-healthcare)</span>, <span class="co">[</span><span class="ot">genomics</span><span class="co">](https://mskar.github.io/var)</span>, and statistical modeling efforts</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Obtained the <span class="co">[</span><span class="ot">Microsoft Azure Data Scientist Associate</span><span class="co">](https://www.credly.com/badges/99aa294a-2b69-40f2-a607-0e7b91ffb5f6/public_url)</span>{.italic} certification</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="fu">###### **Biomedical Scientist**, [National Institutes of Health](https://www.nih.gov) [2009:2022]{.cvdate}</span></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>::: {.horizontal}</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Integrated clinical, laboratory, epidemiologic, genomic, and medical imaging data</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Combined deep learning and statistical inference using stacked ensembles</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Conducted genomic analysis of immune and cancer cells</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Developed and tested pharmaceutical and immunotherapeutic agents</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quantified cancer cell signaling pathways</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mentored trainees from various NIH training programs including:</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">SIP</span><span class="co">](https://www.training.nih.gov/research-training/pb/sip)</span>{data-bs-toggle="tooltip" data-bs-title="Summer Internship Program"}</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">MRSP</span><span class="co">](https://clinicalcenter.nih.gov/training/mrsp)</span>{data-bs-toggle="tooltip" data-bs-title="Medical Research Scholars Program"}</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">HiSTEP</span><span class="co">](https://www.training.nih.gov/research-training/hs/hs-sip/histep)</span>{data-bs-toggle="tooltip" data-bs-title="High School Scientific Training and Enrichment Program"}</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="fu">###### **Bioinformatics and Data Science Co-Chair**, [FAES](https://faes.org) [2014:2021]{.cvdate}</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>::: {.horizontal}</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Co‑administered an academic program with over twenty faculty members</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Taught three graduate data science courses:</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Python Programming</span><span class="co">](https://github.com/biof309)</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Text Mining</span><span class="co">](https://github.com/biof395)</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Applied Machine Learning</span><span class="co">](https://biof509.github.io)</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Taught graduate biotechnology workshops on various topics including:</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Pharmacometrics</span><span class="co">](https://education.faes.org/search/publicCourseSearchDetails.do?method=load&amp;courseId=1059989)</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Cellular Immunology</span><span class="co">](https://education.faes.org/search/publicCourseSearchDetails.do?method=load&amp;courseId=1409949)</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Flow Cytometry</span><span class="co">](https://education.faes.org/search/publicCourseSearchDetails.do?method=load&amp;courseId=1424281)</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="fu">###### **Adjunct Professor**, [George Washington University](https://www.gwu.edu) [2015:2016]{.cvdate}</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>::: {.horizontal}</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Taught two undergraduate courses for the <span class="co">[</span><span class="ot">Women's Leadership Program</span><span class="co">](https://wlp.gwu.edu)</span>:</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Biology of Organisms</span><span class="co">](https://wlp.gwu.edu/science-health-and-medicine#:~:text=Introductory%20Biology%3A%20Biology%20of%20Organisms)</span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="co">[</span><span class="ot">Women and Leadership</span><span class="co">](https://wlp.gwu.edu/science-health-and-medicine#:~:text=Biology%20of%20Organisms-,Symposium,-The%20weekly%20symposia)</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="fu">### Education</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**MPH**, Epidemiology and Biostatistics, <span class="co">[</span><span class="ot">Johns Hopkins University</span><span class="co">](https://www.jhu.edu)</span> <span class="co">[</span><span class="ot">2018</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**PhD**, Tumor Biology, <span class="co">[</span><span class="ot">Georgetown University</span><span class="co">](https://www.georgetown.edu)</span> <span class="co">[</span><span class="ot">2015</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**MS**, Biotechnology, <span class="co">[</span><span class="ot">Jagiellonian University</span><span class="co">](https://en.uj.edu.pl)</span> <span class="co">[</span><span class="ot">2009</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**BA**, Biology, <span class="co">[</span><span class="ot">St. Mary's College of Maryland</span><span class="co">](https://www.smcm.edu)</span> <span class="co">[</span><span class="ot">2007</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="fu">### Skills{style="page-break-before: always"}</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Airflow-blue?logo=apacheairflow&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Alacritty-blue?logo=Alacritty&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Amazon_Web_Services-blue?logo=amazonwebservices&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Anaconda-blue?logo=Anaconda&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-API_Gateway-blue?logo=amazonapigateway&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Asana-blue?logo=asana&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Bash-blue?logo=gnu-bash&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Blender-blue?logo=gnu-blender&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Bootstrap-blue?logo=bootstrap&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Chartjs-blue?logo=chartdotjs&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-CodePen-blue?logo=codepen&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-CloudWatch-blue?logo=amazoncloudwatch&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-conda--forge-blue?logo=conda-forge&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-CSS-blue?logo=css3&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-D3-blue?logo=d3dotjs&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Dask-blue?logo=dask&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Databricks-blue?logo=databricks&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-DataGrip-blue?logo=datagrip&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Django-blue?logo=django&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Docker-blue?logo=docker&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-DocumentDB-blue?logo=amazondocumentdb&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-DVC-blue?logo=dvc&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-DynamoDB-blue?logo=amazondynamodb&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-EC2-blue?logo=amazonec2&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-ECS-blue?logo=amazonecs&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-EKS-blue?logo=amazoneks&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Elasticache-blue?logo=amazonelasticache&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Elastic_Load_Balancing-blue?logo=awselasticloadbalancing&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Emacs-blue?logo=gnuemacs&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Express-blue?logo=express&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Fargate-blue?logo=awsfargate&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-FastAPI-blue?logo=fastapi&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Flask-blue?logo=flask&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-GIMP-blue?logo=gimp&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Git-blue?logo=git&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-GitHub-blue?logo=github&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-GitHub_Actions-blue?logo=githubactions&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-GitLab-blue?logo=gitlab&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-GitPod-blue?logo=gitpod&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-GNU-blue?logo=gnu&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Homebrew-blue?logo=homebrew&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-HTML-blue?logo=html5&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-HTTPie-blue?logo=httpie&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-HuggingFace-blue?logo=huggingface&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Hyper-blue?logo=hyper&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-IAM-blue?logo=amazoniam&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Inkscape-blue?logo=inkscape&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-iTerm-blue?logo=iterm2&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-JavaScript-blue?logo=javascript&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Jira-blue?logo=jirasoftware&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-JSON-blue?logo=json&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Julia-blue?logo=julia&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Jupyter-blue?logo=jupyter&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Keras-blue?logo=keras&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Kubernetes-blue?logo=kubernetes&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Lambda-blue?logo=awslambda&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-LaTeX-blue?logo=latex&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Linux-blue?logo=linux&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Lua-blue?logo=lua&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-macOS-blue?logo=apple&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Markdown-blue?logo=markdown&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Mermaid-blue?logo=mermaid&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-MongoDB-blue?logo=mongodb&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-MySQL-blue?logo=mysql&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Neovim-blue?logo=neovim&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Node-blue?logo=nodedotjs&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-NPM-blue?logo=npm&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-NumPy-blue?logo=numpy&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-OBS-blue?logo=obsstudio&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Observable-blue?logo=observable&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Obsidian-blue?logo=obsidian&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-OpenCV-blue?logo=opencv&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Pandas-blue?logo=pandas&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Plotly-blue?logo=plotly&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-PostgreSQL-blue?logo=postgresql&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-PyCharm-blue?logo=pycharm&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Pydantic-blue?logo=pydantic&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-PyPI-blue?logo=pypi&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-PyScaffold-blue?logo=pyscaffold&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Pytest-blue?logo=pytest&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Python-informational?logo=python&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-PyTorch-blue?logo=pytorch&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Quip-blue?logo=quip&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-R-blue?logo=r&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-RDS-blue?logo=amazonrds&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-React-blue?logo=react&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-README-blue?logo=readme&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Read_The_Docs-blue?logo=readthedocs&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Redshift-blue?logo=amazonredshift&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Reveal-blue?logo=revealdotjs&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Route_53-blue?logo=amazonroute53&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-RStudio-blue?logo=rstudioide&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-S3-blue?logo=amazons3&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Sass-blue?logo=sass&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-SciPy-blue?logo=scipy&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Secrets Manager-blue?logo=awssecretsmanager&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Selenium-blue?logo=selenium&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Sklearn-blue?logo=scikit-learn&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Slack-blue?logo=slack&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Spacemacs-blue?logo=spacemacs&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-spaCy-blue?logo=spacy&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Spark-blue?logo=apachespark&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Sphinx-blue?logo=sphinx&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-SQLAlchemy-blue?logo=sqlalchemy&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-SQLite-blue?logo=sqlite&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-SES-blue?logo=amazonsimpleemailservice&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-SQS-blue?logo=amazonsqs&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Streamlit-blue?logo=streamlit&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Swift-blue?logo=swift&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-TensorFlow-blue?logo=tensorflow&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Tidyverse-blue?logo=tidyverse&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-tmux-blue?logo=tmux&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Typescript-blue?logo=typescript&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-Vim-blue?logo=vim&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-VSCode-blue?logo=visualstudiocode&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-VSCodium-blue?logo=vscodium&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-WebStorm-blue?logo=webstorm&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-YAML-blue?logo=yaml&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://img.shields.io/badge/-zsh-blue?logo=zsh&amp;logoColor=white&amp;color)</span></span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a><span class="fu">### Publications</span></span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>::: {.pubs}</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Potentiating <span class="co">[</span><span class="ot">mAb</span><span class="co">]</span> therapy by targeting complement C3 <span class="co">[</span><span class="ot">...</span><span class="co">]</span> on lymphoma cells <span class="co">[</span><span class="ot">Submitted</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Recalibration of a deep learning model [...] to inform lung cancer screening intervals</span><span class="co">](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2802522)</span> <span class="co">[</span><span class="ot">2023</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>[<span class="co">[</span><span class="ot">COVID</span><span class="co">]</span> genome‐based severity predictions correspond to <span class="co">[</span><span class="ot">...</span><span class="co">]</span> higher viral load](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9173902) <span class="co">[</span><span class="ot">2022</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Linking genotype to phenotype [...] in [COVID] [...]</span><span class="co">](https://virological.org/t/linking-genotype-to-phenotype-further-exploration-of-mutations-in-sars-cov-2-associated-with-mild-or-severe-outcomes/794)</span> <span class="co">[</span><span class="ot">2022</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Variants in [COVID] associated with mild or severe outcome</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8385248)</span> <span class="co">[</span><span class="ot">2021</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Using prediction models to reduce [...] disparities in [...] lung cancer screening [...]</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8562965)</span> <span class="co">[</span><span class="ot">2021</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Pathogenic role of [BCR] signaling and canonical NF-κB activation in [MCL]</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4937360)</span> <span class="co">[</span><span class="ot">2016</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Interactions between ibrutinib and anti‐CD20 antibodies [...]</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4703510)</span> <span class="co">[</span><span class="ot">2016</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Health disparities in the immunoprevention of [HPV] [...] associated malignancies</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4682020)</span> <span class="co">[</span><span class="ot">2015</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Designing the furin‐cleavable linker in recombinant immunotoxins [...]</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7724502)</span> <span class="co">[</span><span class="ot">2015</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Harnessing the Fcμ receptor for [...] therapy of [CLL]</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4268434)</span> <span class="co">[</span><span class="ot">2014</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a><span class="fu">### Awards</span></span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>::: {.awards}</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Community Contribution of the Year Category Finalist**, AWS Builder Awards <span class="co">[</span><span class="ot">2023</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Artificial Intelligence Solutions Architect Award**, BAH Emergent Skills Program <span class="co">[</span><span class="ot">2022</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Fellowship Research Award**, Cancer Prevention Fellowship Program <span class="co">[</span><span class="ot">2019</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Fellows Award for Research Excellence**, National Institutes of Health <span class="co">[</span><span class="ot">2015</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Orloff Science Award**, National Heart, Lung, Blood Institute <span class="co">[</span><span class="ot">2014</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Director's Science Award**, National Heart, Lung, Blood Institute <span class="co">[</span><span class="ot">2014</span><span class="co">]</span>{.cvdate}</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a><span class="fu">### Languages</span></span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>::: {.lang}</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">**ILR 5**</span><span class="co">](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_5_%E2%80%93_Native_or_bilingual_proficiency)</span>: English, Polish</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">**ILR 4**</span><span class="co">](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_4_%E2%80%93_Full_professional_proficiency)</span>: Spanish, Russian</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">**ILR 3**</span><span class="co">](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_3_%E2%80%93_Professional_working_proficiency)</span>: French, Portuguese</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
