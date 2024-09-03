@@ -6,8 +6,6 @@ author:
     url: https://maptv.github.io
 date: last-modified
 image: ../asset/deidek.svg
-categories:
-  - dec
 citation:
   url: https://maptv.github.io/blog/dec
 date-format: x

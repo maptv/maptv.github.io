@@ -1,6 +1,8 @@
 project:
   type: website
   resources: .gitlab-ci.yml
+  render:
+    - "**/index.qmd"
   post-render:
   - asset/date.py
 website:
@@ -69,15 +71,15 @@ website:
       icon: rulers
       href: dec/index.qmd
       contents:
+      - text: Ordinal date
+        icon: calendar-event
+        href: dec/date/index.qmd
       - text: Geoposition
         icon: geo
         href: dec/geo/index.qmd
       - text: Decimal time
         icon: clock
         href: dec/time/index.qmd
-      - text: Ordinal date
-        icon: calendar-event
-        href: dec/date/index.qmd
       - text: Daylight duration
         icon: sun
         href: dec/day/index.qmd
@@ -138,9 +140,9 @@ format:
       light: [flatly, asset/light.scss]
       dark: [darkly, asset/dark.scss]
     grid:
-      sidebar-width: 161px
+      sidebar-width: 162px
       body-width: 1800px
-      margin-width: 161px
+      margin-width: 162px
     css: asset/style.css
 execute:
   freeze: true

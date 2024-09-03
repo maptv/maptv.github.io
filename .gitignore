@@ -2,6 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+.jupyter
 _site
 _extensions
 _freeze

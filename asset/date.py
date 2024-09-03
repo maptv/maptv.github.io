@@ -1,10 +1,24 @@
 import bs4
 
-def unix2doty(ms=0):
-    days = ms / 86400000 + 719468
-    dote = days - (cykl := (days if days >= 0 else days - 146096) // 146097) * 146097
-    year = int((dote - dote / 1460 + dote / 36524 - dote / 146096) // 365 + cykl * 400)
-    return year, days - (year * 365 + year / 4 - year / 100 + year / 400) // 1
+def unix2doty(ms):
+    dote = ms / 86400000 + 719468
+    cykl = (
+        dote if dote >= 0
+        else dote - 146096
+    ) // 146097
+    dotc = dote - cykl * 146097
+    yotc = (dotc
+        - dotc // 1460
+        + dotc // 36524
+        - dotc // 146096
+    ) // 365
+    return [
+        int(yotc + cykl * 400),
+        dotc - (yotc * 365
+            + yotc // 4
+            - yotc // 100
+        )
+    ]
 
 with open("_site/list/index.html") as infile:
     txt = infile.read()
