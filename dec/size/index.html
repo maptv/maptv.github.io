@@ -294,6 +294,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../dec/date/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-calendar-event" role="img">
+</i> 
+ <span class="menu-text">Ordinal date</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../dec/geo/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-geo" role="img">
 </i> 
  <span class="menu-text">Geoposition</span></a>
@@ -304,13 +311,6 @@ window.Quarto = {
   <a href="../../dec/time/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-clock" role="img">
 </i> 
  <span class="menu-text">Decimal time</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../dec/date/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-calendar-event" role="img">
-</i> 
- <span class="menu-text">Ordinal date</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -426,7 +426,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../dec/index.html">Measurement</a></li><li class="breadcrumb-item"><a href="../../dec/size/index.html">Size</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">The Dec measurement system</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">The Dec measurement system</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
   <div class="quarto-categories">
     <div class="quarto-category">dec</div>
   </div>
@@ -466,8 +466,6 @@ window.Quarto = {
 <p>In addition to time, Dec also measures<span class="bi bi-globe"></span><a href="https://en.wikipedia.org/wiki/Geographic_coordinate_system">geographic</a> and<span class="bi bi-moon-stars"></span><a href="https://en.wikipedia.org/wiki/Celestial_coordinate_system">celestial</a> coordinates: <a href="https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%E2%80%93west%20position" class="underline" data-bs-toggle="tooltip" data-bs-title="Eastward turns from Meridian 0 (162nd meridian west) on the Earth's surface">longitude</a> , <a href="https://en.wikipedia.org/wiki/Latitude#:~:text=a%20coordinate%20that%20specifies%20the%20north%E2%80%93south%20position" class="underline" data-bs-toggle="tooltip" data-bs-title="Northward turns from Parallel 0 (the Equator) on the Earth's surface">latitude</a>, <a href="https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20of%20the%20object%20around%20the%20horizon" class="underline" data-bs-toggle="tooltip" data-bs-title="Eastward turns from Azimuth 0 (North) on the horizon">azimuth</a>, <a href="https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20between%20the%20object%20and%20the%20observer%27s%20local%20horizon" class="underline" data-bs-toggle="tooltip" data-bs-title="Upward turns from Altitude 0 (the horizon)">altitude</a>, etc.</p>
 <p>Importantly, Dec time zones are derived from floored <a href="https://observablehq.com/@dec/alc" class="underline" data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth's surface parallel to the Equator">decidays of longitude</a> (<span class="math inline">\(\texttt{z=\lfloor{λ}\rfloor}\)</span>) and can be appended to the time of day <span>(<span id="ojs-element-id-7"></span>),</span> but not to durations, e.g.&nbsp;the <a href="https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays%20and%20100%20centidays" class="underline" data-bs-toggle="tooltip" data-bs-title="Hundred thousands of a turn on the Earth's axis">centimillidays</a> since this webpage was loaded: <span><span id="ojs-element-id-8"></span>.</span></p>
 <div class="cell">
-<details class="code-fold hidden">
-<summary>Code</summary>
 <div class="sourceCode cell-code hidden" id="cb1" data-startfrom="40" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 39;"><span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>unix <span class="op">=</span> {</span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span>(<span class="kw">true</span>) {</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="kw">yield</span> <span class="bu">Date</span><span class="op">.</span><span class="fu">now</span>()<span class="op">;</span></span>
@@ -544,7 +542,6 @@ window.Quarto = {
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>styledTimeZone1 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>styledTimeZone2 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>styledTickTime <span class="op">=</span> <span class="fu">setStyle</span>(tickTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePastel2</span>[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -763,13 +760,14 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{laptev2024,
   author = {Laptev, Martin},
   title = {The {Dec} Measurement System},
-  date = {2024-09-01},
+  date = {2024},
+  urldate = {2024},
   url = {https://maptv.github.io/blog/dec},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-laptev2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Laptev, Martin. 2024. <span>“The Dec Measurement System.”</span>
-September 1, 2024. <a href="https://maptv.github.io/blog/dec">https://maptv.github.io/blog/dec</a>.
+Laptev, Martin. 2024. <span>“The Dec Measurement System.”</span> 2024.
+<a href="https://maptv.github.io/blog/dec">https://maptv.github.io/blog/dec</a>.
 </div></div></section></div></main> <!-- /main -->
 <script>
 // https://howardhinnant.github.io/date_algorithms.html#days_from_civil

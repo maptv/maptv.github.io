@@ -18,6 +18,10 @@ div.zerobased > ol li::before {
   content: counter(listitem) ". ";
 }
 
+#quarto-header > nav.navbar.navbar-expand-lg {
+  padding: 6px 17px 6px 17px;
+}
+
 /* improve responsiveness of navbar elements */
 
 @media only screen and (max-width: 558px) {
@@ -48,7 +52,10 @@ div#quarto-search {
     }
 }
 
-code { padding: 0px; }
+code {
+  padding: 0px;
+  font-size: .95em;
+}
 
 div#quarto-sidebar-glass { display: none !important; }
 ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }

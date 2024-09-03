@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../dec/geo/index.html" rel="next">
+<link href="../dec/date/index.html" rel="next">
 <link href="../ml/llm/index.html" rel="prev">
 <link href="../asset/deidek.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -294,6 +294,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../dec/date/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-calendar-event" role="img">
+</i> 
+ <span class="menu-text">Ordinal date</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../dec/geo/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-geo" role="img">
 </i> 
  <span class="menu-text">Geoposition</span></a>
@@ -304,13 +311,6 @@ window.Quarto = {
   <a href="../dec/time/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-clock" role="img">
 </i> 
  <span class="menu-text">Decimal time</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../dec/date/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-calendar-event" role="img">
-</i> 
- <span class="menu-text">Ordinal date</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -426,9 +426,9 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">The Dec measurement system</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">The Dec measurement system</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
   <div class="quarto-categories">
-    <div class="quarto-category">dec</div>
+    <div class="quarto-category">measurement</div>
   </div>
   </div>
 
@@ -446,7 +446,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024+184</p>
+      <p class="date">2024+186</p>
     </div>
   </div>
   
@@ -466,85 +466,82 @@ window.Quarto = {
 <p>In addition to time, Dec also measures<span class="bi bi-globe"></span><a href="https://en.wikipedia.org/wiki/Geographic_coordinate_system">geographic</a> and<span class="bi bi-moon-stars"></span><a href="https://en.wikipedia.org/wiki/Celestial_coordinate_system">celestial</a> coordinates: <a href="https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%E2%80%93west%20position" class="underline" data-bs-toggle="tooltip" data-bs-title="Eastward turns from Meridian 0 (162nd meridian west) on the Earth's surface">longitude</a> , <a href="https://en.wikipedia.org/wiki/Latitude#:~:text=a%20coordinate%20that%20specifies%20the%20north%E2%80%93south%20position" class="underline" data-bs-toggle="tooltip" data-bs-title="Northward turns from Parallel 0 (the Equator) on the Earth's surface">latitude</a>, <a href="https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20of%20the%20object%20around%20the%20horizon" class="underline" data-bs-toggle="tooltip" data-bs-title="Eastward turns from Azimuth 0 (North) on the horizon">azimuth</a>, <a href="https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20between%20the%20object%20and%20the%20observer%27s%20local%20horizon" class="underline" data-bs-toggle="tooltip" data-bs-title="Upward turns from Altitude 0 (the horizon)">altitude</a>, etc.</p>
 <p>Importantly, Dec time zones are derived from floored <a href="https://observablehq.com/@dec/alc" class="underline" data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth's surface parallel to the Equator">decidays of longitude</a> (<span class="math inline">\(\texttt{z=\lfloor{λ}\rfloor}\)</span>) and can be appended to the time of day <span>(<span id="ojs-element-id-7"></span>),</span> but not to durations, e.g.&nbsp;the <a href="https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays%20and%20100%20centidays" class="underline" data-bs-toggle="tooltip" data-bs-title="Hundred thousands of a turn on the Earth's axis">centimillidays</a> since this webpage was loaded: <span><span id="ojs-element-id-8"></span>.</span></p>
 <div class="cell">
-<details class="code-fold hidden">
-<summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="40" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 39;"><span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>unix <span class="op">=</span> {</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span>(<span class="kw">true</span>) {</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="kw">yield</span> <span class="bu">Date</span><span class="op">.</span><span class="fu">now</span>()<span class="op">;</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>tick <span class="op">=</span> {</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (<span class="kw">true</span>) {</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">yield</span> Promises<span class="op">.</span><span class="fu">tick</span>(<span class="dv">864</span><span class="op">,</span> <span class="op">++</span>i)<span class="op">;</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>tickTime <span class="op">=</span> tick <span class="op">%</span> <span class="fl">1e5</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="co">// http://howardhinnant.github.io/date_algorithms.html#civil_from_days</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">unix2dote</span>(unix<span class="op">,</span> zone<span class="op">,</span> offset <span class="op">=</span> <span class="dv">719468</span>) {</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    (unix <span class="op">??</span> <span class="bu">Date</span><span class="op">.</span><span class="fu">now</span>()) <span class="op">/</span> <span class="dv">86400000</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> (zone <span class="op">=</span> zone <span class="op">??</span> (<span class="dv">10</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">new</span> <span class="bu">Date</span>)<span class="op">.</span><span class="fu">getTimezoneOffset</span>() <span class="op">/</span> <span class="dv">144</span>)) <span class="op">%</span> <span class="dv">10</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      ) <span class="op">/</span> <span class="dv">10</span> <span class="op">+</span> offset<span class="op">,</span> zone]</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">dote2doty</span>(days <span class="op">=</span> <span class="dv">719468</span><span class="op">,</span> zone <span class="op">=</span> <span class="dv">0</span>) {</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> era <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((days <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> days <span class="op">:</span> days <span class="op">-</span> <span class="dv">146096</span>) <span class="op">/</span> <span class="dv">146097</span>)<span class="op">,</span> dotc <span class="op">=</span> days <span class="op">-</span> era <span class="op">*</span> <span class="dv">146097</span><span class="op">,</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>      yotc <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((dotc <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">1460</span>) <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">36524</span>) <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">146096</span>)) <span class="op">/</span> <span class="dv">365</span>)<span class="op">;</span></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [yotc <span class="op">+</span> era <span class="op">*</span> <span class="dv">400</span><span class="op">,</span> dotc <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">100</span>) <span class="op">-</span> yotc <span class="op">*</span> <span class="dv">365</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">4</span>)<span class="op">,</span> zone]<span class="op">;</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">doty2deco</span>(year <span class="op">=</span> <span class="dv">1969</span><span class="op">,</span> doty <span class="op">=</span> <span class="dv">306</span><span class="op">,</span> zone <span class="op">=</span> <span class="dv">0</span>) {</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="vs">`</span><span class="sc">${</span>year<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">4</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}</span><span class="vs">+</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(doty)<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">3</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}${</span><span class="bu">String</span>(doty <span class="op">%</span> <span class="dv">1</span> <span class="op">*</span> <span class="dv">10</span>)<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">6</span>)<span class="sc">}</span><span class="vs">-</span><span class="sc">${</span>zone<span class="sc">}</span><span class="vs">`</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>ydz <span class="op">=</span> <span class="fu">dote2doty</span>(<span class="op">...</span><span class="fu">unix2dote</span>(unix))</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>deco <span class="op">=</span> <span class="fu">doty2deco</span>(<span class="op">...</span>ydz)</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setStyle</span>(content<span class="op">,</span> style <span class="op">=</span> {}) {</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">yiq</span>(color) {</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> {r<span class="op">,</span> g<span class="op">,</span> b} <span class="op">=</span> d3<span class="op">.</span><span class="fu">rgb</span>(color)<span class="op">;</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (r <span class="op">*</span> <span class="dv">299</span> <span class="op">+</span> g <span class="op">*</span> <span class="dv">587</span> <span class="op">+</span> b <span class="op">*</span> <span class="dv">114</span>) <span class="op">/</span> <span class="dv">1000</span> <span class="op">/</span> <span class="dv">255</span><span class="op">;</span> <span class="co">// returns values between 0 and 1</span></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> {</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    background<span class="op">,</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="fu">yiq</span>(background) <span class="op">&gt;=</span> <span class="fl">0.6</span> <span class="op">?</span> <span class="st">"#111"</span> <span class="op">:</span> <span class="st">"white"</span><span class="op">,</span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    padding <span class="op">=</span> <span class="st">"0 1px"</span><span class="op">,</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    borderRadius <span class="op">=</span> <span class="st">"4px"</span><span class="op">,</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    fontWeight <span class="op">=</span> <span class="dv">900</span><span class="op">,</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    fontSize <span class="op">=</span> <span class="st">"1em"</span><span class="op">,</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>rest</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>  } <span class="op">=</span> <span class="kw">typeof</span> style <span class="op">===</span> <span class="st">"string"</span> <span class="op">?</span> {<span class="dt">background</span><span class="op">:</span> style} <span class="op">:</span> style<span class="op">;</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> htl<span class="op">.</span><span class="fu">html</span><span class="vs">`&lt;span style=</span><span class="sc">${</span>{</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    background<span class="op">,</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    color<span class="op">,</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    padding<span class="op">,</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    borderRadius<span class="op">,</span></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    fontWeight<span class="op">,</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>rest</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>  }<span class="sc">}</span><span class="vs">&gt;</span><span class="sc">${</span>content<span class="sc">}</span><span class="vs">&lt;/span&gt;`</span><span class="op">;</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">year2bool</span>(year <span class="op">=</span> <span class="dv">1970</span>) {</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> year <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span> <span class="op">||</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>decoYear <span class="op">=</span> deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">4</span>)</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>decoDate <span class="op">=</span> deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">5</span><span class="op">,</span> <span class="dv">8</span>)</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>decoTime <span class="op">=</span> deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">8</span><span class="op">,</span> <span class="dv">14</span>)</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>decoTimeZone <span class="op">=</span> deco[<span class="dv">15</span>]</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>nDaysInYear <span class="op">=</span> <span class="dv">365</span> <span class="op">+</span> <span class="fu">year2bool</span>(ydz[<span class="dv">0</span>] <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>fracYear <span class="op">=</span> (ydz[<span class="dv">0</span>] <span class="op">+</span> (ydz[<span class="dv">1</span>] <span class="op">-</span> ydz[<span class="dv">2</span>]) <span class="op">/</span> nDaysInYear)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">8</span>)</span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>styledDecoYear0 <span class="op">=</span> <span class="fu">setStyle</span>(decoYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>styledDecoYear1 <span class="op">=</span> <span class="fu">setStyle</span>(decoYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>styledFracYear <span class="op">=</span> <span class="fu">setStyle</span>(fracYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>styledDecoDate0 <span class="op">=</span> <span class="fu">setStyle</span>(decoDate<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>styledDecoDate1 <span class="op">=</span> <span class="fu">setStyle</span>(decoDate<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>styledNdays <span class="op">=</span> <span class="fu">setStyle</span>(nDaysInYear <span class="op">*</span> <span class="dv">10</span><span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>styledDecoTime0 <span class="op">=</span> <span class="fu">setStyle</span>(decoTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>styledDecoTime1 <span class="op">=</span> <span class="fu">setStyle</span>(decoTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>styledDecoTime2 <span class="op">=</span> <span class="fu">setStyle</span>(decoTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>styledTimeZone0 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>styledTimeZone1 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>styledTimeZone2 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>styledTickTime <span class="op">=</span> <span class="fu">setStyle</span>(tickTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePastel2</span>[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="38" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 37;"><span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>unix <span class="op">=</span> {</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span>(<span class="kw">true</span>) {</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="kw">yield</span> <span class="bu">Date</span><span class="op">.</span><span class="fu">now</span>()<span class="op">;</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>tick <span class="op">=</span> {</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (<span class="kw">true</span>) {</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="kw">yield</span> Promises<span class="op">.</span><span class="fu">tick</span>(<span class="dv">864</span><span class="op">,</span> <span class="op">++</span>i)<span class="op">;</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>tickTime <span class="op">=</span> tick <span class="op">%</span> <span class="fl">1e5</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="co">// http://howardhinnant.github.io/date_algorithms.html#civil_from_days</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">unix2dote</span>(unix<span class="op">,</span> zone<span class="op">,</span> offset <span class="op">=</span> <span class="dv">719468</span>) {</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    (unix <span class="op">??</span> <span class="bu">Date</span><span class="op">.</span><span class="fu">now</span>()) <span class="op">/</span> <span class="dv">86400000</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> (zone <span class="op">=</span> zone <span class="op">??</span> (<span class="dv">10</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">new</span> <span class="bu">Date</span>)<span class="op">.</span><span class="fu">getTimezoneOffset</span>() <span class="op">/</span> <span class="dv">144</span>)) <span class="op">%</span> <span class="dv">10</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>      ) <span class="op">/</span> <span class="dv">10</span> <span class="op">+</span> offset<span class="op">,</span> zone]</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">dote2doty</span>(days <span class="op">=</span> <span class="dv">719468</span><span class="op">,</span> zone <span class="op">=</span> <span class="dv">0</span>) {</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> era <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((days <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> days <span class="op">:</span> days <span class="op">-</span> <span class="dv">146096</span>) <span class="op">/</span> <span class="dv">146097</span>)<span class="op">,</span> dotc <span class="op">=</span> days <span class="op">-</span> era <span class="op">*</span> <span class="dv">146097</span><span class="op">,</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>      yotc <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((dotc <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">1460</span>) <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">36524</span>) <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">146096</span>)) <span class="op">/</span> <span class="dv">365</span>)<span class="op">;</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [yotc <span class="op">+</span> era <span class="op">*</span> <span class="dv">400</span><span class="op">,</span> dotc <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">100</span>) <span class="op">-</span> yotc <span class="op">*</span> <span class="dv">365</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">4</span>)<span class="op">,</span> zone]<span class="op">;</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">doty2deco</span>(year <span class="op">=</span> <span class="dv">1969</span><span class="op">,</span> doty <span class="op">=</span> <span class="dv">306</span><span class="op">,</span> zone <span class="op">=</span> <span class="dv">0</span>) {</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="vs">`</span><span class="sc">${</span>year<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">4</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}</span><span class="vs">+</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(doty)<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">3</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}${</span><span class="bu">String</span>(doty <span class="op">%</span> <span class="dv">1</span> <span class="op">*</span> <span class="dv">10</span>)<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">6</span>)<span class="sc">}</span><span class="vs">-</span><span class="sc">${</span>zone<span class="sc">}</span><span class="vs">`</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>ydz <span class="op">=</span> <span class="fu">dote2doty</span>(<span class="op">...</span><span class="fu">unix2dote</span>(unix))</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>deco <span class="op">=</span> <span class="fu">doty2deco</span>(<span class="op">...</span>ydz)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setStyle</span>(content<span class="op">,</span> style <span class="op">=</span> {}) {</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">yiq</span>(color) {</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> {r<span class="op">,</span> g<span class="op">,</span> b} <span class="op">=</span> d3<span class="op">.</span><span class="fu">rgb</span>(color)<span class="op">;</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (r <span class="op">*</span> <span class="dv">299</span> <span class="op">+</span> g <span class="op">*</span> <span class="dv">587</span> <span class="op">+</span> b <span class="op">*</span> <span class="dv">114</span>) <span class="op">/</span> <span class="dv">1000</span> <span class="op">/</span> <span class="dv">255</span><span class="op">;</span> <span class="co">// returns values between 0 and 1</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> {</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    background<span class="op">,</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="fu">yiq</span>(background) <span class="op">&gt;=</span> <span class="fl">0.6</span> <span class="op">?</span> <span class="st">"#111"</span> <span class="op">:</span> <span class="st">"white"</span><span class="op">,</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    padding <span class="op">=</span> <span class="st">"0 1px"</span><span class="op">,</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    borderRadius <span class="op">=</span> <span class="st">"4px"</span><span class="op">,</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    fontWeight <span class="op">=</span> <span class="dv">900</span><span class="op">,</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    fontSize <span class="op">=</span> <span class="st">"1em"</span><span class="op">,</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>rest</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>  } <span class="op">=</span> <span class="kw">typeof</span> style <span class="op">===</span> <span class="st">"string"</span> <span class="op">?</span> {<span class="dt">background</span><span class="op">:</span> style} <span class="op">:</span> style<span class="op">;</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> htl<span class="op">.</span><span class="fu">html</span><span class="vs">`&lt;span style=</span><span class="sc">${</span>{</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    background<span class="op">,</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    color<span class="op">,</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    padding<span class="op">,</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    borderRadius<span class="op">,</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    fontWeight<span class="op">,</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>rest</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>  }<span class="sc">}</span><span class="vs">&gt;</span><span class="sc">${</span>content<span class="sc">}</span><span class="vs">&lt;/span&gt;`</span><span class="op">;</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">year2bool</span>(year <span class="op">=</span> <span class="dv">1970</span>) {</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> year <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span> <span class="op">||</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>decoYear <span class="op">=</span> deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">4</span>)</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>decoDate <span class="op">=</span> deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">5</span><span class="op">,</span> <span class="dv">8</span>)</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>decoTime <span class="op">=</span> deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">8</span><span class="op">,</span> <span class="dv">14</span>)</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>decoTimeZone <span class="op">=</span> deco[<span class="dv">15</span>]</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>nDaysInYear <span class="op">=</span> <span class="dv">365</span> <span class="op">+</span> <span class="fu">year2bool</span>(ydz[<span class="dv">0</span>] <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>fracYear <span class="op">=</span> (ydz[<span class="dv">0</span>] <span class="op">+</span> (ydz[<span class="dv">1</span>] <span class="op">-</span> ydz[<span class="dv">2</span>]) <span class="op">/</span> nDaysInYear)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">8</span>)</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>styledDecoYear0 <span class="op">=</span> <span class="fu">setStyle</span>(decoYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>styledDecoYear1 <span class="op">=</span> <span class="fu">setStyle</span>(decoYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>styledFracYear <span class="op">=</span> <span class="fu">setStyle</span>(fracYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>styledDecoDate0 <span class="op">=</span> <span class="fu">setStyle</span>(decoDate<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>styledDecoDate1 <span class="op">=</span> <span class="fu">setStyle</span>(decoDate<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>styledNdays <span class="op">=</span> <span class="fu">setStyle</span>(nDaysInYear <span class="op">*</span> <span class="dv">10</span><span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>styledDecoTime0 <span class="op">=</span> <span class="fu">setStyle</span>(decoTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>styledDecoTime1 <span class="op">=</span> <span class="fu">setStyle</span>(decoTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>styledDecoTime2 <span class="op">=</span> <span class="fu">setStyle</span>(decoTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>styledTimeZone0 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>styledTimeZone1 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>styledTimeZone2 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>styledTickTime <span class="op">=</span> <span class="fu">setStyle</span>(tickTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePastel2</span>[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -763,13 +760,14 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{laptev2024,
   author = {Laptev, Martin},
   title = {The {Dec} Measurement System},
-  date = {2024-09-01},
+  date = {2024},
+  urldate = {2024},
   url = {https://maptv.github.io/blog/dec},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-laptev2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Laptev, Martin. 2024. <span>“The Dec Measurement System.”</span>
-September 1, 2024. <a href="https://maptv.github.io/blog/dec">https://maptv.github.io/blog/dec</a>.
+Laptev, Martin. 2024. <span>“The Dec Measurement System.”</span> 2024.
+<a href="https://maptv.github.io/blog/dec">https://maptv.github.io/blog/dec</a>.
 </div></div></section></div></main> <!-- /main -->
 <script>
 // https://howardhinnant.github.io/date_algorithms.html#days_from_civil
@@ -1509,8 +1507,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../dec/geo/index.html" class="pagination-link" aria-label="Geoposition">
-        <span class="nav-page-text">Geoposition</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../dec/date/index.html" class="pagination-link" aria-label="Ordinal date">
+        <span class="nav-page-text">Ordinal date</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
@@ -1522,114 +1520,112 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">    url: https://maptv.github.io</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> last-modified</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> ../asset/deidek.svg</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - dec</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">  url: https://maptv.github.io/blog/dec</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> x</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body:</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../asset/cite.html</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../asset/style.html</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../asset/stamp.html</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../asset/tooltip.html</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">  - ../asset/date.lua</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">  - include-code-files</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">  url: https://maptv.github.io/blog/dec</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> x</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body:</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../asset/cite.html</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../asset/style.html</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../asset/stamp.html</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../asset/tooltip.html</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">  - ../asset/date.lua</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">  - include-code-files</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>This section of my blog focuses on Dec, a <span class="co">[</span><span class="ot">measurement system</span><span class="co">](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)</span> that <span class="co">[</span><span class="ot">I</span><span class="co">](https://maptv.github.io)</span> created to measure⏳time,📍position,🧭orientation,📐angles, and🔄cycles in <span class="co">[</span><span class="ot">turns</span><span class="co">](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span> (<span class="co">[</span><span class="ot">$\tau$</span><span class="co">](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)</span>) instead of months, weeks, hours, minutes, seconds, and degrees. For time measurement, Dec uses days and years, which are turns of a <span class="co">[</span><span class="ot">celestial body</span><span class="co">](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity)</span> on <span class="co">[</span><span class="ot">its axis</span><span class="co">](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole)</span> and around <span class="co">[</span><span class="ot">the point it orbits</span><span class="co">](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit)</span>, respectively.</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>This section of my blog focuses on Dec, a <span class="co">[</span><span class="ot">measurement system</span><span class="co">](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)</span> that <span class="co">[</span><span class="ot">I</span><span class="co">](https://maptv.github.io)</span> created to measure⏳time,📍position,🧭orientation,📐angles, and🔄cycles in <span class="co">[</span><span class="ot">turns</span><span class="co">](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span> (<span class="co">[</span><span class="ot">$\tau$</span><span class="co">](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)</span>) instead of months, weeks, hours, minutes, seconds, and degrees. For time measurement, Dec uses days and years, which are turns of a <span class="co">[</span><span class="ot">celestial body</span><span class="co">](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity)</span> on <span class="co">[</span><span class="ot">its axis</span><span class="co">](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole)</span> and around <span class="co">[</span><span class="ot">the point it orbits</span><span class="co">](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit)</span>, respectively.</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### Timestamps</span></span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### Timestamps</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>The numbers in the top left of the <span class="co">[</span><span class="ot">navigation bar (navbar)</span><span class="co">](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)</span> are components of a Dec <span class="co">[</span><span class="ot">timestamp</span><span class="co">](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred)</span> that shows the current time: \${styledDecoYear0}+\${styledDecoDate0}\${styledDecoTime0}-\${styledTimeZone0}.</span>
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>The numbers in the top left of the <span class="co">[</span><span class="ot">navigation bar (navbar)</span><span class="co">](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)</span> are components of a Dec <span class="co">[</span><span class="ot">timestamp</span><span class="co">](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred)</span> that shows the current time: \${styledDecoYear0}+\${styledDecoDate0}\${styledDecoTime0}-\${styledTimeZone0}.</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>Dec timestamps are inspired by this equation: $\texttt{y=\lfloor{y}\rfloor+}\frac{\texttt{d-z}}{\texttt{n}}$, where $\texttt{y}$ is <span class="co">[</span><span class="ot">decimal years</span><span class="co">](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=decimal%20years%20divide%20the%20year%20into%2010%C2%A0equal%20parts)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Turns of the Earth around the Sun"} (\${styledFracYear}), $\texttt{\lfloor{y}\rfloor}$ is <span class="co">[</span><span class="ot">floored</span><span class="co">](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)</span> years (\${styledDecoYear1}), $\texttt{d}$ is <span class="co">[</span><span class="ot">decidays</span><span class="co">](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth’s axis"} (\${styledDecoDate1}\${styledDecoTime1}), $\texttt{z}$ is the <span class="co">[</span><span class="ot">Dec time zone</span><span class="co">](https://observablehq.com/@dec/lock)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Floored deciturns of longitude"} (\${styledTimeZone1}), and $\texttt{n}$ is the total number of decidays in the year (\${styledNdays}).</span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>Dec timestamps are inspired by this equation: $\texttt{y=\lfloor{y}\rfloor+}\frac{\texttt{d-z}}{\texttt{n}}$, where $\texttt{y}$ is <span class="co">[</span><span class="ot">decimal years</span><span class="co">](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=decimal%20years%20divide%20the%20year%20into%2010%C2%A0equal%20parts)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Turns of the Earth around the Sun"} (\${styledFracYear}), $\texttt{\lfloor{y}\rfloor}$ is <span class="co">[</span><span class="ot">floored</span><span class="co">](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)</span> years (\${styledDecoYear1}), $\texttt{d}$ is <span class="co">[</span><span class="ot">decidays</span><span class="co">](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth’s axis"} (\${styledDecoDate1}\${styledDecoTime1}), $\texttt{z}$ is the <span class="co">[</span><span class="ot">Dec time zone</span><span class="co">](https://observablehq.com/@dec/lock)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Floored deciturns of longitude"} (\${styledTimeZone1}), and $\texttt{n}$ is the total number of decidays in the year (\${styledNdays}).</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>In addition to time, Dec also measures[]{.bi .bi-globe}<span class="co">[</span><span class="ot">geographic</span><span class="co">](https://en.wikipedia.org/wiki/Geographic_coordinate_system)</span> and[]{.bi .bi-moon-stars}<span class="co">[</span><span class="ot">celestial</span><span class="co">](https://en.wikipedia.org/wiki/Celestial_coordinate_system)</span> coordinates: <span class="co">[</span><span class="ot">longitude</span><span class="co">](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%E2%80%93west%20position)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Eastward turns from Meridian 0 (162nd meridian west) on the Earth's surface"} , <span class="co">[</span><span class="ot">latitude</span><span class="co">](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20coordinate%20that%20specifies%20the%20north%E2%80%93south%20position)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Northward turns from Parallel 0 (the Equator) on the Earth's surface"}, <span class="co">[</span><span class="ot">azimuth</span><span class="co">](https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20of%20the%20object%20around%20the%20horizon)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Eastward turns from Azimuth 0 (North) on the horizon"}, <span class="co">[</span><span class="ot">altitude</span><span class="co">](https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20between%20the%20object%20and%20the%20observer%27s%20local%20horizon)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Upward turns from Altitude 0 (the horizon)"}, etc.</span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>In addition to time, Dec also measures[]{.bi .bi-globe}<span class="co">[</span><span class="ot">geographic</span><span class="co">](https://en.wikipedia.org/wiki/Geographic_coordinate_system)</span> and[]{.bi .bi-moon-stars}<span class="co">[</span><span class="ot">celestial</span><span class="co">](https://en.wikipedia.org/wiki/Celestial_coordinate_system)</span> coordinates: <span class="co">[</span><span class="ot">longitude</span><span class="co">](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%E2%80%93west%20position)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Eastward turns from Meridian 0 (162nd meridian west) on the Earth's surface"} , <span class="co">[</span><span class="ot">latitude</span><span class="co">](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20coordinate%20that%20specifies%20the%20north%E2%80%93south%20position)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Northward turns from Parallel 0 (the Equator) on the Earth's surface"}, <span class="co">[</span><span class="ot">azimuth</span><span class="co">](https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20of%20the%20object%20around%20the%20horizon)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Eastward turns from Azimuth 0 (North) on the horizon"}, <span class="co">[</span><span class="ot">altitude</span><span class="co">](https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20between%20the%20object%20and%20the%20observer%27s%20local%20horizon)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Upward turns from Altitude 0 (the horizon)"}, etc.</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>Importantly, Dec time zones are derived from floored <span class="co">[</span><span class="ot">decidays of longitude</span><span class="co">](https://observablehq.com/@dec/alc)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth's surface parallel to the Equator"} ($\texttt{z=\lfloor{λ}\rfloor}$) and can be appended to the time of day (\${styledDecoTime2}-\${styledTimeZone2}), but not to durations, e.g. the <span class="co">[</span><span class="ot">centimillidays</span><span class="co">](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays%20and%20100%20centidays)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Hundred thousands of a turn on the Earth's axis"} since this webpage was loaded: \${styledTickTime}.</span>
 <span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>Importantly, Dec time zones are derived from floored <span class="co">[</span><span class="ot">decidays of longitude</span><span class="co">](https://observablehq.com/@dec/alc)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth's surface parallel to the Equator"} ($\texttt{z=\lfloor{λ}\rfloor}$) and can be appended to the time of day (\${styledDecoTime2}-\${styledTimeZone2}), but not to durations, e.g. the <span class="co">[</span><span class="ot">centimillidays</span><span class="co">](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays%20and%20100%20centidays)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Hundred thousands of a turn on the Earth's axis"} since this webpage was loaded: \${styledTickTime}.</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="in">unix = {</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="in">  while(true) {</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="in">    yield Date.now();</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="in">tick = {</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="in">  let i = 0;</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="in">  while (true) {</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="in">    yield Promises.tick(864, ++i);</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="in">tickTime = tick % 1e5</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="in">// http://howardhinnant.github.io/date_algorithms.html#civil_from_days</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="in">function unix2dote(unix, zone, offset = 719468) {</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="in">  return [</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="in">    (unix ?? Date.now()) / 86400000</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="in">    + (zone = zone ?? (10 - Math.round(</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="in">        (new Date).getTimezoneOffset() / 144)) % 10</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="in">      ) / 10 + offset, zone]</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="in">function dote2doty(days = 719468, zone = 0) {</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="in">  const era = Math.floor((days &gt;= 0 ? days : days - 146096) / 146097), dotc = days - era * 146097,</span></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in">      yotc = Math.floor((dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="in">  return [yotc + era * 400, dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4), zone];</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="in">function doty2deco(year = 1969, doty = 306, zone = 0) {</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="in">  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`</span></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="in">ydz = dote2doty(...unix2dote(unix))</span></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="in">deco = doty2deco(...ydz)</span></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="in">// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor</span></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="in">function setStyle(content, style = {}) {</span></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="in">  function yiq(color) {</span></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="in">    const {r, g, b} = d3.rgb(color);</span></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="in">    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1</span></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="in">  const {</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="in">    background,</span></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="in">    color = yiq(background) &gt;= 0.6 ? "#111" : "white",</span></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="in">    padding = "0 1px",</span></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="in">    borderRadius = "4px",</span></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="in">    fontWeight = 900,</span></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="in">    fontSize = "1em",</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="in">    ...rest</span></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="in">  } = typeof style === "string" ? {background: style} : style;</span></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="in">  return htl.html`&lt;span style=${{</span></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="in">    background,</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="in">    color,</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="in">    padding,</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="in">    borderRadius,</span></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="in">    fontWeight,</span></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="in">    ...rest</span></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="in">  }}&gt;${content}&lt;/span&gt;`;</span></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="in">function year2bool(year = 1970) {</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="in">    return year % 4 == 0 &amp;&amp; year % 100 != 0 || year % 400 == 0;</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="in">decoYear = deco.slice(0, 4)</span></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="in">decoDate = deco.slice(5, 8)</span></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="in">decoTime = deco.slice(8, 14)</span></span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="in">decoTimeZone = deco[15]</span></span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="in">nDaysInYear = 365 + year2bool(ydz[0] + 1)</span></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="in">fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(8)</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoYear0 = setStyle(decoYear, d3.schemePaired[10])</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])</span></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="in">styledFracYear = setStyle(fracYear, d3.schemePaired[10])</span></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoDate0 = setStyle(decoDate, d3.schemePaired[1])</span></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoDate1 = setStyle(decoDate, d3.schemePaired[1])</span></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="in">styledNdays = setStyle(nDaysInYear * 10, d3.schemePaired[1])</span></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoTime0 = setStyle(decoTime, d3.schemePaired[2])</span></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoTime1 = setStyle(decoTime, d3.schemePaired[2])</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoTime2 = setStyle(decoTime, d3.schemePaired[2])</span></span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="in">styledTimeZone0 = setStyle(decoTimeZone, d3.schemePaired[3])</span></span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="in">styledTimeZone1 = setStyle(decoTimeZone, d3.schemePaired[3])</span></span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="in">styledTimeZone2 = setStyle(decoTimeZone, d3.schemePaired[3])</span></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="in">styledTickTime = setStyle(tickTime, d3.schemePastel2[0])</span></span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="in">unix = {</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="in">  while(true) {</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="in">    yield Date.now();</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="in">tick = {</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="in">  let i = 0;</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="in">  while (true) {</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="in">    yield Promises.tick(864, ++i);</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="in">tickTime = tick % 1e5</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="in">// http://howardhinnant.github.io/date_algorithms.html#civil_from_days</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="in">function unix2dote(unix, zone, offset = 719468) {</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="in">  return [</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="in">    (unix ?? Date.now()) / 86400000</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="in">    + (zone = zone ?? (10 - Math.round(</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="in">        (new Date).getTimezoneOffset() / 144)) % 10</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="in">      ) / 10 + offset, zone]</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="in">function dote2doty(days = 719468, zone = 0) {</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="in">  const era = Math.floor((days &gt;= 0 ? days : days - 146096) / 146097), dotc = days - era * 146097,</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="in">      yotc = Math.floor((dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="in">  return [yotc + era * 400, dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4), zone];</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="in">function doty2deco(year = 1969, doty = 306, zone = 0) {</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="in">  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="in">ydz = dote2doty(...unix2dote(unix))</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="in">deco = doty2deco(...ydz)</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="in">// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="in">function setStyle(content, style = {}) {</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="in">  function yiq(color) {</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="in">    const {r, g, b} = d3.rgb(color);</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="in">    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="in">  const {</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="in">    background,</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="in">    color = yiq(background) &gt;= 0.6 ? "#111" : "white",</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="in">    padding = "0 1px",</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="in">    borderRadius = "4px",</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="in">    fontWeight = 900,</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="in">    fontSize = "1em",</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="in">    ...rest</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="in">  } = typeof style === "string" ? {background: style} : style;</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="in">  return htl.html`&lt;span style=${{</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="in">    background,</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="in">    color,</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="in">    padding,</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="in">    borderRadius,</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="in">    fontWeight,</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="in">    ...rest</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="in">  }}&gt;${content}&lt;/span&gt;`;</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="in">function year2bool(year = 1970) {</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="in">    return year % 4 == 0 &amp;&amp; year % 100 != 0 || year % 400 == 0;</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="in">decoYear = deco.slice(0, 4)</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="in">decoDate = deco.slice(5, 8)</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="in">decoTime = deco.slice(8, 14)</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="in">decoTimeZone = deco[15]</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="in">nDaysInYear = 365 + year2bool(ydz[0] + 1)</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="in">fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(8)</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoYear0 = setStyle(decoYear, d3.schemePaired[10])</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="in">styledFracYear = setStyle(fracYear, d3.schemePaired[10])</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoDate0 = setStyle(decoDate, d3.schemePaired[1])</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoDate1 = setStyle(decoDate, d3.schemePaired[1])</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="in">styledNdays = setStyle(nDaysInYear * 10, d3.schemePaired[1])</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoTime0 = setStyle(decoTime, d3.schemePaired[2])</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoTime1 = setStyle(decoTime, d3.schemePaired[2])</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoTime2 = setStyle(decoTime, d3.schemePaired[2])</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="in">styledTimeZone0 = setStyle(decoTimeZone, d3.schemePaired[3])</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="in">styledTimeZone1 = setStyle(decoTimeZone, d3.schemePaired[3])</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="in">styledTimeZone2 = setStyle(decoTimeZone, d3.schemePaired[3])</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="in">styledTickTime = setStyle(tickTime, d3.schemePastel2[0])</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

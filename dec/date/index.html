@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../dec/day/index.html" rel="next">
-<link href="../../dec/time/index.html" rel="prev">
+<link href="../../dec/geo/index.html" rel="next">
+<link href="../../dec/index.html" rel="prev">
 <link href="../../asset/deidek.svg" rel="icon" type="image/svg+xml">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -108,39 +108,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <meta name="quarto:status" content="draft">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../asset/style.css">
 <meta name="twitter:title" content="Martin Laptev">
@@ -294,6 +263,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../dec/date/index.html" class="sidebar-item-text sidebar-link active"><i class="bi bi-calendar-event" role="img">
+</i> 
+ <span class="menu-text">Ordinal date</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../dec/geo/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-geo" role="img">
 </i> 
  <span class="menu-text">Geoposition</span></a>
@@ -304,13 +280,6 @@ window.Quarto = {
   <a href="../../dec/time/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-clock" role="img">
 </i> 
  <span class="menu-text">Decimal time</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../dec/date/index.html" class="sidebar-item-text sidebar-link active"><i class="bi bi-calendar-event" role="img">
-</i> 
- <span class="menu-text">Ordinal date</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -417,18 +386,26 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#timestamps" id="toc-timestamps" class="nav-link active" data-scroll-target="#timestamps">Timestamps</a></li>
+  <li><a href="#javascript" id="toc-javascript" class="nav-link active" data-scroll-target="#javascript">Javascript</a></li>
+  <li><a href="#lua" id="toc-lua" class="nav-link" data-scroll-target="#lua">Lua</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#javascript-1" id="toc-javascript-1" class="nav-link" data-scroll-target="#javascript-1">Javascript</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#lua-1" id="toc-lua-1" class="nav-link" data-scroll-target="#lua-1">Lua</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  <li><a href="#python-1" id="toc-python-1" class="nav-link" data-scroll-target="#python-1">Python</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/maptv/maptv.github.io/blob/main/dec/date/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/maptv/maptv.github.io/blob/main/dec/date/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div><div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="../../asset/date.js.embed-preview.html"><i class="bi bi-journal-code"></i>date.js.ipynb</a></li><li><a href="../../asset/date.lua.embed-preview.html"><i class="bi bi-journal-code"></i>date.lua.ipynb</a></li><li><a href="../../asset/date.py.embed-preview.html"><i class="bi bi-journal-code"></i>date.py.ipynb</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../dec/index.html">Measurement</a></li><li class="breadcrumb-item"><a href="../../dec/date/index.html">Ordinal date</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">The Dec measurement system</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Ordinal date</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
   <div class="quarto-categories">
-    <div class="quarto-category">dec</div>
+    <div class="quarto-category">measurement</div>
   </div>
   </div>
 
@@ -446,7 +423,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024+184</p>
+      <p class="date">2024+186</p>
     </div>
   </div>
   
@@ -458,318 +435,246 @@ window.Quarto = {
 </header>
 
 
-<p>This section of my blog focuses on Dec, a <a href="https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other">measurement system</a> that <a href="https://maptv.github.io">I</a> created to measure⏳time,📍position,🧭orientation,📐angles, and🔄cycles in <a href="https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees">turns</a> (<a href="https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn"><span class="math inline">\(\tau\)</span></a>) instead of months, weeks, hours, minutes, seconds, and degrees. For time measurement, Dec uses days and years, which are turns of a <a href="https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity">celestial body</a> on <a href="https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole">its axis</a> and around <a href="https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit">the point it orbits</a>, respectively.</p>
-<section id="timestamps" class="level3">
-<h3 class="anchored" data-anchor-id="timestamps">Timestamps</h3>
-<p>The numbers in the top left of the <a href="https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information">navigation bar (navbar)</a> are components of a Dec <a href="https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred">timestamp</a> that shows the current time: <span><span id="ojs-element-id-1"></span>.</span></p>
-<p>Dec timestamps are inspired by this equation: <span class="math inline">\(\texttt{y=\lfloor{y}\rfloor+}\frac{\texttt{d-z}}{\texttt{n}}\)</span>, where <span class="math inline">\(\texttt{y}\)</span> is <a href="https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=decimal%20years%20divide%20the%20year%20into%2010%C2%A0equal%20parts" class="underline" data-bs-toggle="tooltip" data-bs-title="Turns of the Earth around the Sun">decimal years</a> <span>(<span id="ojs-element-id-2"></span>),</span> <span class="math inline">\(\texttt{\lfloor{y}\rfloor}\)</span> is <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x">floored</a> years <span>(<span id="ojs-element-id-3"></span>),</span> <span class="math inline">\(\texttt{d}\)</span> is <a href="https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays" class="underline" data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth’s axis">decidays</a> <span>(<span id="ojs-element-id-4"></span>),</span> <span class="math inline">\(\texttt{z}\)</span> is the <a href="https://observablehq.com/@dec/lock" class="underline" data-bs-toggle="tooltip" data-bs-title="Floored deciturns of longitude">Dec time zone</a> <span>(<span id="ojs-element-id-5"></span>),</span> and <span class="math inline">\(\texttt{n}\)</span> is the total number of decidays in the year <span>(<span id="ojs-element-id-6"></span>).</span></p>
-<p>In addition to time, Dec also measures<span class="bi bi-globe"></span><a href="https://en.wikipedia.org/wiki/Geographic_coordinate_system">geographic</a> and<span class="bi bi-moon-stars"></span><a href="https://en.wikipedia.org/wiki/Celestial_coordinate_system">celestial</a> coordinates: <a href="https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%E2%80%93west%20position" class="underline" data-bs-toggle="tooltip" data-bs-title="Eastward turns from Meridian 0 (162nd meridian west) on the Earth's surface">longitude</a> , <a href="https://en.wikipedia.org/wiki/Latitude#:~:text=a%20coordinate%20that%20specifies%20the%20north%E2%80%93south%20position" class="underline" data-bs-toggle="tooltip" data-bs-title="Northward turns from Parallel 0 (the Equator) on the Earth's surface">latitude</a>, <a href="https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20of%20the%20object%20around%20the%20horizon" class="underline" data-bs-toggle="tooltip" data-bs-title="Eastward turns from Azimuth 0 (North) on the horizon">azimuth</a>, <a href="https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20between%20the%20object%20and%20the%20observer%27s%20local%20horizon" class="underline" data-bs-toggle="tooltip" data-bs-title="Upward turns from Altitude 0 (the horizon)">altitude</a>, etc.</p>
-<p>Importantly, Dec time zones are derived from floored <a href="https://observablehq.com/@dec/alc" class="underline" data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth's surface parallel to the Equator">decidays of longitude</a> (<span class="math inline">\(\texttt{z=\lfloor{λ}\rfloor}\)</span>) and can be appended to the time of day <span>(<span id="ojs-element-id-7"></span>),</span> but not to durations, e.g.&nbsp;the <a href="https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays%20and%20100%20centidays" class="underline" data-bs-toggle="tooltip" data-bs-title="Hundred thousands of a turn on the Earth's axis">centimillidays</a> since this webpage was loaded: <span><span id="ojs-element-id-8"></span>.</span></p>
-<div class="cell">
-<details class="code-fold hidden">
-<summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="40" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 39;"><span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>unix <span class="op">=</span> {</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span>(<span class="kw">true</span>) {</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="kw">yield</span> <span class="bu">Date</span><span class="op">.</span><span class="fu">now</span>()<span class="op">;</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>tick <span class="op">=</span> {</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (<span class="kw">true</span>) {</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">yield</span> Promises<span class="op">.</span><span class="fu">tick</span>(<span class="dv">864</span><span class="op">,</span> <span class="op">++</span>i)<span class="op">;</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>tickTime <span class="op">=</span> tick <span class="op">%</span> <span class="fl">1e5</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="co">// http://howardhinnant.github.io/date_algorithms.html#civil_from_days</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">unix2dote</span>(unix<span class="op">,</span> zone<span class="op">,</span> offset <span class="op">=</span> <span class="dv">719468</span>) {</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    (unix <span class="op">??</span> <span class="bu">Date</span><span class="op">.</span><span class="fu">now</span>()) <span class="op">/</span> <span class="dv">86400000</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> (zone <span class="op">=</span> zone <span class="op">??</span> (<span class="dv">10</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">new</span> <span class="bu">Date</span>)<span class="op">.</span><span class="fu">getTimezoneOffset</span>() <span class="op">/</span> <span class="dv">144</span>)) <span class="op">%</span> <span class="dv">10</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      ) <span class="op">/</span> <span class="dv">10</span> <span class="op">+</span> offset<span class="op">,</span> zone]</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">dote2doty</span>(days <span class="op">=</span> <span class="dv">719468</span><span class="op">,</span> zone <span class="op">=</span> <span class="dv">0</span>) {</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> era <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((days <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> days <span class="op">:</span> days <span class="op">-</span> <span class="dv">146096</span>) <span class="op">/</span> <span class="dv">146097</span>)<span class="op">,</span> dotc <span class="op">=</span> days <span class="op">-</span> era <span class="op">*</span> <span class="dv">146097</span><span class="op">,</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>      yotc <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((dotc <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">1460</span>) <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">36524</span>) <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">146096</span>)) <span class="op">/</span> <span class="dv">365</span>)<span class="op">;</span></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [yotc <span class="op">+</span> era <span class="op">*</span> <span class="dv">400</span><span class="op">,</span> dotc <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">100</span>) <span class="op">-</span> yotc <span class="op">*</span> <span class="dv">365</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">4</span>)<span class="op">,</span> zone]<span class="op">;</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">doty2deco</span>(year <span class="op">=</span> <span class="dv">1969</span><span class="op">,</span> doty <span class="op">=</span> <span class="dv">306</span><span class="op">,</span> zone <span class="op">=</span> <span class="dv">0</span>) {</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="vs">`</span><span class="sc">${</span>year<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">4</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}</span><span class="vs">+</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(doty)<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">3</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}${</span><span class="bu">String</span>(doty <span class="op">%</span> <span class="dv">1</span> <span class="op">*</span> <span class="dv">10</span>)<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">6</span>)<span class="sc">}</span><span class="vs">-</span><span class="sc">${</span>zone<span class="sc">}</span><span class="vs">`</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>ydz <span class="op">=</span> <span class="fu">dote2doty</span>(<span class="op">...</span><span class="fu">unix2dote</span>(unix))</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>deco <span class="op">=</span> <span class="fu">doty2deco</span>(<span class="op">...</span>ydz)</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">setStyle</span>(content<span class="op">,</span> style <span class="op">=</span> {}) {</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">yiq</span>(color) {</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> {r<span class="op">,</span> g<span class="op">,</span> b} <span class="op">=</span> d3<span class="op">.</span><span class="fu">rgb</span>(color)<span class="op">;</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (r <span class="op">*</span> <span class="dv">299</span> <span class="op">+</span> g <span class="op">*</span> <span class="dv">587</span> <span class="op">+</span> b <span class="op">*</span> <span class="dv">114</span>) <span class="op">/</span> <span class="dv">1000</span> <span class="op">/</span> <span class="dv">255</span><span class="op">;</span> <span class="co">// returns values between 0 and 1</span></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> {</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    background<span class="op">,</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="fu">yiq</span>(background) <span class="op">&gt;=</span> <span class="fl">0.6</span> <span class="op">?</span> <span class="st">"#111"</span> <span class="op">:</span> <span class="st">"white"</span><span class="op">,</span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    padding <span class="op">=</span> <span class="st">"0 1px"</span><span class="op">,</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    borderRadius <span class="op">=</span> <span class="st">"4px"</span><span class="op">,</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    fontWeight <span class="op">=</span> <span class="dv">900</span><span class="op">,</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    fontSize <span class="op">=</span> <span class="st">"1em"</span><span class="op">,</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>rest</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>  } <span class="op">=</span> <span class="kw">typeof</span> style <span class="op">===</span> <span class="st">"string"</span> <span class="op">?</span> {<span class="dt">background</span><span class="op">:</span> style} <span class="op">:</span> style<span class="op">;</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> htl<span class="op">.</span><span class="fu">html</span><span class="vs">`&lt;span style=</span><span class="sc">${</span>{</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    background<span class="op">,</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    color<span class="op">,</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    padding<span class="op">,</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    borderRadius<span class="op">,</span></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    fontWeight<span class="op">,</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>rest</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>  }<span class="sc">}</span><span class="vs">&gt;</span><span class="sc">${</span>content<span class="sc">}</span><span class="vs">&lt;/span&gt;`</span><span class="op">;</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">year2bool</span>(year <span class="op">=</span> <span class="dv">1970</span>) {</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> year <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span> <span class="op">||</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>decoYear <span class="op">=</span> deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">4</span>)</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>decoDate <span class="op">=</span> deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">5</span><span class="op">,</span> <span class="dv">8</span>)</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>decoTime <span class="op">=</span> deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">8</span><span class="op">,</span> <span class="dv">14</span>)</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>decoTimeZone <span class="op">=</span> deco[<span class="dv">15</span>]</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>nDaysInYear <span class="op">=</span> <span class="dv">365</span> <span class="op">+</span> <span class="fu">year2bool</span>(ydz[<span class="dv">0</span>] <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>fracYear <span class="op">=</span> (ydz[<span class="dv">0</span>] <span class="op">+</span> (ydz[<span class="dv">1</span>] <span class="op">-</span> ydz[<span class="dv">2</span>]) <span class="op">/</span> nDaysInYear)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">8</span>)</span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>styledDecoYear0 <span class="op">=</span> <span class="fu">setStyle</span>(decoYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>styledDecoYear1 <span class="op">=</span> <span class="fu">setStyle</span>(decoYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>styledFracYear <span class="op">=</span> <span class="fu">setStyle</span>(fracYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>styledDecoDate0 <span class="op">=</span> <span class="fu">setStyle</span>(decoDate<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>styledDecoDate1 <span class="op">=</span> <span class="fu">setStyle</span>(decoDate<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>styledNdays <span class="op">=</span> <span class="fu">setStyle</span>(nDaysInYear <span class="op">*</span> <span class="dv">10</span><span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>styledDecoTime0 <span class="op">=</span> <span class="fu">setStyle</span>(decoTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>styledDecoTime1 <span class="op">=</span> <span class="fu">setStyle</span>(decoTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>styledDecoTime2 <span class="op">=</span> <span class="fu">setStyle</span>(decoTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>styledTimeZone0 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>styledTimeZone1 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>styledTimeZone2 <span class="op">=</span> <span class="fu">setStyle</span>(decoTimeZone<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">3</span>])</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>styledTickTime <span class="op">=</span> <span class="fu">setStyle</span>(tickTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePastel2</span>[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<p>My blog is full of dates in the <code>year+day</code> format. The major advantage of this format is that the <code>day</code> component can unequivocally identify any date and time in a given year and thus can replace months, days of the month, hours, minutes, and seconds. In essence, the <code>day</code> number can To create all of the dates, I use three different programming languages: Python for the <a href="../../list">listing page</a>, Lua for the Published date at the top of each article, and JavaScript for the citation information at the bottom of each article.</p>
+<p>To test the code, I will create a separate Quarto markdown (<code>qmd</code>) file for each of these 3 programming languages and <a href="https://quarto.org/docs/authoring/notebook-embed.html#overview">embed</a> them into this <code>qmd</code> file.</p>
+<section id="javascript" class="level1">
+<h1>Javascript</h1>
+<div class="quarto-embed-nb-cell">
+<div id="cell-0" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode typescript code-with-copy"><code class="sourceCode typescript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">unix2doty</span>(unix) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> dote <span class="op">=</span> unix <span class="op">/</span> <span class="dv">86400</span> <span class="op">+</span> <span class="dv">719468</span><span class="op">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    cykl <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>      dote <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> dote</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>      <span class="op">:</span> dote <span class="op">-</span> <span class="dv">146096</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">/</span> <span class="dv">146097</span>)<span class="op">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  dotc <span class="op">=</span> dote <span class="op">-</span> cykl <span class="op">*</span> <span class="dv">146097</span><span class="op">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  yotc <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((dotc</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">1460</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">36524</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">146096</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="op">/</span> <span class="dv">365</span>)<span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    yotc <span class="op">+</span> cykl <span class="op">*</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    dotc <span class="op">-</span> (yotc <span class="op">*</span> <span class="dv">365</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">4</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">100</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  )]}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">unix2doty</span>(<span class="dv">1728000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="ansi-escaped-output">
+<pre>[ <span class="ansi-yellow-fg">2024</span>, <span class="ansi-yellow-fg">217</span> ]</pre>
+</div>
+</div>
+</div>
+<div id="cell-1" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode typescript code-with-copy"><code class="sourceCode typescript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unix2doty</span>(<span class="dv">1890000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="ansi-escaped-output">
+<pre>[ <span class="ansi-yellow-fg">2029</span>, <span class="ansi-yellow-fg">266</span> ]</pre>
+</div>
+</div>
+</div>
+<a class="quarto-notebook-link" id="nblink-1" href="../../asset/date.js.embed-preview.html#cell-0">Source: date.js.ipynb</a></div>
+</section>
+<section id="lua" class="level1">
+<h1>Lua</h1>
+<div class="quarto-embed-nb-cell">
+<div id="cell-0" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> unix2doty<span class="op">(</span><span class="va">unix</span><span class="op">)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">dote</span> <span class="op">=</span> <span class="va">unix</span> <span class="op">/</span> <span class="dv">86400</span> <span class="op">+</span> <span class="dv">719468</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">cykl</span> <span class="op">=</span> <span class="op">(</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">dote</span> <span class="op">&gt;=</span> <span class="dv">0</span> <span class="kw">and</span> <span class="va">dote</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">or</span> <span class="va">dote</span> <span class="op">-</span> <span class="dv">146096</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">)</span> <span class="op">//</span> <span class="dv">146097</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">dotc</span> <span class="op">=</span> <span class="va">dote</span> <span class="op">-</span> <span class="va">cykl</span> <span class="op">*</span> <span class="dv">146097</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">yotc</span> <span class="op">=</span> <span class="op">(</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">dotc</span> <span class="op">-</span> <span class="va">dotc</span> <span class="op">//</span> <span class="dv">1460</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="va">dotc</span> <span class="op">//</span> <span class="dv">36524</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> <span class="va">dotc</span> <span class="op">//</span> <span class="dv">146096</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">)</span> <span class="op">//</span> <span class="dv">365</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">{</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">math.floor</span><span class="op">(</span><span class="va">yotc</span> <span class="op">+</span> <span class="va">cykl</span> <span class="op">*</span> <span class="dv">400</span><span class="op">),</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="va">dotc</span> <span class="op">-</span> <span class="op">(</span><span class="va">yotc</span> <span class="op">*</span> <span class="dv">365</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>      <span class="op">+</span> <span class="va">yotc</span> <span class="op">//</span> <span class="dv">4</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>      <span class="op">-</span> <span class="va">yotc</span> <span class="op">//</span> <span class="dv">100</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="op">)}</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-1" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>unix2doty<span class="op">(</span><span class="dv">1728000000</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{ 2024, 217.0 } </code></pre>
+</div>
+</div>
+<div id="cell-2" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>unix2doty<span class="op">(</span><span class="dv">1890000000</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{ 2029, 266.0 } </code></pre>
+</div>
+</div>
+<a class="quarto-notebook-link" id="nblink-2" href="../../asset/date.lua.embed-preview.html#cell-0">Source: date.lua.ipynb</a></div>
+</section>
+<section id="python" class="level1">
+<h1>Python</h1>
+<div class="quarto-embed-nb-cell">
+<div id="7e8773bb-2923-4806-b39d-d450eaaee222" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unix2doty(unix):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    dote <span class="op">=</span> unix <span class="op">/</span> <span class="dv">86400</span> <span class="op">+</span> <span class="dv">719468</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    cykl <span class="op">=</span> (</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        dote <span class="cf">if</span> dote <span class="op">&gt;=</span> <span class="dv">0</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span> dote <span class="op">-</span> <span class="dv">146096</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">//</span> <span class="dv">146097</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    dotc <span class="op">=</span> dote <span class="op">-</span> cykl <span class="op">*</span> <span class="dv">146097</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    yotc <span class="op">=</span> (dotc</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span> dotc <span class="op">//</span> <span class="dv">1460</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> dotc <span class="op">//</span> <span class="dv">36524</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span> dotc <span class="op">//</span> <span class="dv">146096</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">//</span> <span class="dv">365</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">int</span>(yotc <span class="op">+</span> cykl <span class="op">*</span> <span class="dv">400</span>),</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        dotc <span class="op">-</span> (yotc <span class="op">*</span> <span class="dv">365</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>            <span class="op">+</span> yotc <span class="op">//</span> <span class="dv">4</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>            <span class="op">-</span> yotc <span class="op">//</span> <span class="dv">100</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    )]</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>unix2doty(<span class="dv">1728000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>[2024, 217.0]</code></pre>
+</div>
+</div>
+<div id="bf432a86-a4ed-4616-abbc-40afb03eb91d" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>unix2doty(<span class="dv">1890000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>[2029, 266.0]</code></pre>
+</div>
+</div>
+<a class="quarto-notebook-link" id="nblink-3" href="../../asset/date.py.embed-preview.html#7e8773bb-2923-4806-b39d-d450eaaee222">Source: date.py.ipynb</a></div>
+</section>
+<section id="javascript-1" class="level1">
+<h1>Javascript</h1>
+</section>
+<section id="section" class="level1 quarto-embed-nb-cell">
+<h1></h1>
+<div id="bda28bb1" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode typescript code-with-copy"><code class="sourceCode typescript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">unix2doty</span>(unix) {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> dote <span class="op">=</span> unix <span class="op">/</span> <span class="dv">86400</span> <span class="op">+</span> <span class="dv">719468</span><span class="op">,</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    cykl <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>      dote <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> dote</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>      <span class="op">:</span> dote <span class="op">-</span> <span class="dv">146096</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">/</span> <span class="dv">146097</span>)<span class="op">,</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  dotc <span class="op">=</span> dote <span class="op">-</span> cykl <span class="op">*</span> <span class="dv">146097</span><span class="op">,</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  yotc <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((dotc</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">1460</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">36524</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">146096</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="op">/</span> <span class="dv">365</span>)<span class="op">;</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    yotc <span class="op">+</span> cykl <span class="op">*</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    dotc <span class="op">-</span> (yotc <span class="op">*</span> <span class="dv">365</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>      <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">4</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>      <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">100</span>)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  )]}</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="fu">unix2doty</span>(<span class="dv">1728000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
-
+<pre>[ <span class="ansi-yellow-fg">2024</span>, <span class="ansi-yellow-fg">217</span> ]</pre>
 </div>
 </div>
-</div>
+<div id="8077d601" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode typescript code-with-copy"><code class="sourceCode typescript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unix2doty</span>(<span class="dv">1890000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="declaration">
-
+<pre>[ <span class="ansi-yellow-fg">2029</span>, <span class="ansi-yellow-fg">266</span> ]</pre>
 </div>
 </div>
+<a class="quarto-notebook-link" id="nblink-4" href="../../asset/date.js.embed-preview.html#6ef59de8-3229-44f7-b35a-f54ba3dc51ff">Source: date.js.qmd</a></section>
+<section id="lua-1" class="level1">
+<h1>Lua</h1>
+</section>
+<section id="section-1" class="level1 quarto-embed-nb-cell">
+<h1></h1>
+<div id="57296f55" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> unix2doty<span class="op">(</span><span class="va">unix</span><span class="op">)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">dote</span> <span class="op">=</span> <span class="va">unix</span> <span class="op">/</span> <span class="dv">86400</span> <span class="op">+</span> <span class="dv">719468</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">cykl</span> <span class="op">=</span> <span class="op">(</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">dote</span> <span class="op">&gt;=</span> <span class="dv">0</span> <span class="kw">and</span> <span class="va">dote</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">or</span> <span class="va">dote</span> <span class="op">-</span> <span class="dv">146096</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">)</span> <span class="op">//</span> <span class="dv">146097</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">dotc</span> <span class="op">=</span> <span class="va">dote</span> <span class="op">-</span> <span class="va">cykl</span> <span class="op">*</span> <span class="dv">146097</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">yotc</span> <span class="op">=</span> <span class="op">(</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">dotc</span> <span class="op">-</span> <span class="va">dotc</span> <span class="op">//</span> <span class="dv">1460</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="va">dotc</span> <span class="op">//</span> <span class="dv">36524</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> <span class="va">dotc</span> <span class="op">//</span> <span class="dv">146096</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">)</span> <span class="op">//</span> <span class="dv">365</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">{</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">math.floor</span><span class="op">(</span><span class="va">yotc</span> <span class="op">+</span> <span class="va">cykl</span> <span class="op">*</span> <span class="dv">400</span><span class="op">),</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="va">dotc</span> <span class="op">-</span> <span class="op">(</span><span class="va">yotc</span> <span class="op">*</span> <span class="dv">365</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>      <span class="op">+</span> <span class="va">yotc</span> <span class="op">//</span> <span class="dv">4</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>      <span class="op">-</span> <span class="va">yotc</span> <span class="op">//</span> <span class="dv">100</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="op">)}</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div id="9d79e651" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>unix2doty<span class="op">(</span><span class="dv">1728000000</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{ 2024, 217.0 } </code></pre>
+</div>
+</div>
+<div id="cdf82f8f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>unix2doty<span class="op">(</span><span class="dv">1890000000</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{ 2029, 266.0 } </code></pre>
+</div>
+</div>
+<a class="quarto-notebook-link" id="nblink-5" href="../../asset/date.lua.embed-preview.html#9ed7697d-1c81-4514-9304-e25a4701365d">Source: date.lua.qmd</a></section>
+<section id="python-1" class="level1">
+<h1>Python</h1>
+</section>
+<section id="section-2" class="level1 quarto-embed-nb-cell">
+<h1></h1>
+<div id="d11fc51c" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unix2doty(unix):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    dote <span class="op">=</span> unix <span class="op">/</span> <span class="dv">86400</span> <span class="op">+</span> <span class="dv">719468</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    cykl <span class="op">=</span> (</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        dote <span class="cf">if</span> dote <span class="op">&gt;=</span> <span class="dv">0</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span> dote <span class="op">-</span> <span class="dv">146096</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">//</span> <span class="dv">146097</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    dotc <span class="op">=</span> dote <span class="op">-</span> cykl <span class="op">*</span> <span class="dv">146097</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    yotc <span class="op">=</span> (dotc</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span> dotc <span class="op">//</span> <span class="dv">1460</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> dotc <span class="op">//</span> <span class="dv">36524</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span> dotc <span class="op">//</span> <span class="dv">146096</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">//</span> <span class="dv">365</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">int</span>(yotc <span class="op">+</span> cykl <span class="op">*</span> <span class="dv">400</span>),</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>        dotc <span class="op">-</span> (yotc <span class="op">*</span> <span class="dv">365</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>            <span class="op">+</span> yotc <span class="op">//</span> <span class="dv">4</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>            <span class="op">-</span> yotc <span class="op">//</span> <span class="dv">100</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    )]</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>unix2doty(<span class="dv">1728000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-3" data-nodetype="declaration">
-
+<pre><code>[2024, 217.0]</code></pre>
 </div>
 </div>
-</div>
+<div id="a060c1e8" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>unix2doty(<span class="dv">1890000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-4" data-nodetype="declaration">
-
+<pre><code>[2029, 266.0]</code></pre>
 </div>
 </div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-5" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-6" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-7" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-8" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-9" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-10" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-11" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-12" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-13" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-14" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-15" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-16" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-17" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-18" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-19" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-20" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-21" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-22" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-23" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-24" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-25" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-26" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-27" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-28" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-29" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
+<a class="quarto-notebook-link" id="nblink-6" href="../../asset/date.py.embed-preview.html#ff2511b0-ef64-43ce-8471-a3960e1b8b30">Source: date.py.qmd</a></section>
 
 
 <!-- -->
 
-<div class="ojs-auto-generated hidden">
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3R5bGVkRGVjb1llYXIwfSske3N0eWxlZERlY29EYXRlMH0ke3N0eWxlZERlY29UaW1lMH0tJHtzdHlsZWRUaW1lWm9uZTB9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtzdHlsZWRGcmFjWWVhcn08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZERlY29ZZWFyMX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTMifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZERlY29EYXRlMX0ke3N0eWxlZERlY29UaW1lMX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTQifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZFRpbWVab25lMX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTUifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZE5kYXlzfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3R5bGVkRGVjb1RpbWUyfS0ke3N0eWxlZFRpbWVab25lMn08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTcifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZFRpY2tUaW1lfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtOCJ9XX0=
-</script>
-</div>
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{laptev2024,
   author = {Laptev, Martin},
-  title = {The {Dec} Measurement System},
-  date = {2024-09-01},
-  url = {https://maptv.github.io/blog/dec},
+  title = {Ordinal Date},
+  date = {2024},
+  urldate = {2024},
+  url = {https://maptv.github.io/dec/date},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-laptev2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Laptev, Martin. 2024. <span>“The Dec Measurement System.”</span>
-September 1, 2024. <a href="https://maptv.github.io/blog/dec">https://maptv.github.io/blog/dec</a>.
+Laptev, Martin. 2024. <span>“Ordinal Date.”</span> 2024. <a href="https://maptv.github.io/dec/date">https://maptv.github.io/dec/date</a>.
 </div></div></section></div></main> <!-- /main -->
 <script>
 // https://howardhinnant.github.io/date_algorithms.html#days_from_civil
@@ -866,17 +771,6 @@ setInterval(setStamp);
 <script>
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-</script>
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InVuaXggPSB7XG4gIHdoaWxlKHRydWUpIHtcbiAgICB5aWVsZCBEYXRlLm5vdygpO1xuICB9XG59XG50aWNrID0ge1xuICBsZXQgaSA9IDA7XG4gIHdoaWxlICh0cnVlKSB7XG4gICAgeWllbGQgUHJvbWlzZXMudGljayg4NjQsICsraSk7XG4gIH1cbn1cbnRpY2tUaW1lID0gdGljayAlIDFlNVxuLy8gaHR0cDovL2hvd2FyZGhpbm5hbnQuZ2l0aHViLmlvL2RhdGVfYWxnb3JpdGhtcy5odG1sI2NpdmlsX2Zyb21fZGF5c1xuZnVuY3Rpb24gdW5peDJkb3RlKHVuaXgsIHpvbmUsIG9mZnNldCA9IDcxOTQ2OCkge1xuICByZXR1cm4gW1xuICAgICh1bml4ID8/IERhdGUubm93KCkpIC8gODY0MDAwMDBcbiAgICArICh6b25lID0gem9uZSA/PyAoMTAgLSBNYXRoLnJvdW5kKFxuICAgICAgICAobmV3IERhdGUpLmdldFRpbWV6b25lT2Zmc2V0KCkgLyAxNDQpKSAlIDEwXG4gICAgICApIC8gMTAgKyBvZmZzZXQsIHpvbmVdXG59XG5mdW5jdGlvbiBkb3RlMmRvdHkoZGF5cyA9IDcxOTQ2OCwgem9uZSA9IDApIHtcbiAgY29uc3QgZXJhID0gTWF0aC5mbG9vcigoZGF5cyA+PSAwID8gZGF5cyA6IGRheXMgLSAxNDYwOTYpIC8gMTQ2MDk3KSwgZG90YyA9IGRheXMgLSBlcmEgKiAxNDYwOTcsXG4gICAgICB5b3RjID0gTWF0aC5mbG9vcigoZG90YyAtIE1hdGguZmxvb3IoZG90YyAvIDE0NjApICsgTWF0aC5mbG9vcihkb3RjIC8gMzY1MjQpIC0gTWF0aC5mbG9vcihkb3RjIC8gMTQ2MDk2KSkgLyAzNjUpO1xuICByZXR1cm4gW3lvdGMgKyBlcmEgKiA0MDAsIGRvdGMgKyBNYXRoLmZsb29yKHlvdGMgLyAxMDApIC0geW90YyAqIDM2NSAtIE1hdGguZmxvb3IoeW90YyAvIDQpLCB6b25lXTtcbn1cbmZ1bmN0aW9uIGRvdHkyZGVjbyh5ZWFyID0gMTk2OSwgZG90eSA9IDMwNiwgem9uZSA9IDApIHtcbiAgcmV0dXJuIGAke3llYXIudG9TdHJpbmcoKS5wYWRTdGFydCg0LCBcIjBcIil9KyR7TWF0aC5mbG9vcihkb3R5KS50b1N0cmluZygpLnBhZFN0YXJ0KDMsIFwiMFwiKX0ke1N0cmluZyhkb3R5ICUgMSAqIDEwKS5zbGljZSgwLCA2KX0tJHt6b25lfWBcbn1cbnlkeiA9IGRvdGUyZG90eSguLi51bml4MmRvdGUodW5peCkpXG5kZWNvID0gZG90eTJkZWNvKC4uLnlkeilcbi8vIGh0dHBzOi8vb2JzZXJ2YWJsZWhxLmNvbS9Ab2JzZXJ2YWJsZWhxL3RleHQtY29sb3ItYW5ub3RhdGlvbnMtaW4tbWFya2Rvd24jdGV4dGNvbG9yXG5mdW5jdGlvbiBzZXRTdHlsZShjb250ZW50LCBzdHlsZSA9IHt9KSB7XG4gIGZ1bmN0aW9uIHlpcShjb2xvcikge1xuICAgIGNvbnN0IHtyLCBnLCBifSA9IGQzLnJnYihjb2xvcik7XG4gICAgcmV0dXJuIChyICogMjk5ICsgZyAqIDU4NyArIGIgKiAxMTQpIC8gMTAwMCAvIDI1NTsgLy8gcmV0dXJucyB2YWx1ZXMgYmV0d2VlbiAwIGFuZCAxXG4gIH1cbiAgY29uc3Qge1xuICAgIGJhY2tncm91bmQsXG4gICAgY29sb3IgPSB5aXEoYmFja2dyb3VuZCkgPj0gMC42ID8gXCIjMTExXCIgOiBcIndoaXRlXCIsXG4gICAgcGFkZGluZyA9IFwiMCAxcHhcIixcbiAgICBib3JkZXJSYWRpdXMgPSBcIjRweFwiLFxuICAgIGZvbnRXZWlnaHQgPSA5MDAsXG4gICAgZm9udFNpemUgPSBcIjFlbVwiLFxuICAgIC4uLnJlc3RcbiAgfSA9IHR5cGVvZiBzdHlsZSA9PT0gXCJzdHJpbmdcIiA/IHtiYWNrZ3JvdW5kOiBzdHlsZX0gOiBzdHlsZTtcbiAgcmV0dXJuIGh0bC5odG1sYDxzcGFuIHN0eWxlPSR7e1xuICAgIGJhY2tncm91bmQsXG4gICAgY29sb3IsXG4gICAgcGFkZGluZyxcbiAgICBib3JkZXJSYWRpdXMsXG4gICAgZm9udFdlaWdodCxcbiAgICAuLi5yZXN0XG4gIH19PiR7Y29udGVudH08L3NwYW4+YDtcbn1cbmZ1bmN0aW9uIHllYXIyYm9vbCh5ZWFyID0gMTk3MCkge1xuICAgIHJldHVybiB5ZWFyICUgNCA9PSAwICYmIHllYXIgJSAxMDAgIT0gMCB8fCB5ZWFyICUgNDAwID09IDA7XG59XG5kZWNvWWVhciA9IGRlY28uc2xpY2UoMCwgNClcbmRlY29EYXRlID0gZGVjby5zbGljZSg1LCA4KVxuZGVjb1RpbWUgPSBkZWNvLnNsaWNlKDgsIDE0KVxuZGVjb1RpbWVab25lID0gZGVjb1sxNV1cbm5EYXlzSW5ZZWFyID0gMzY1ICsgeWVhcjJib29sKHlkelswXSArIDEpXG5mcmFjWWVhciA9ICh5ZHpbMF0gKyAoeWR6WzFdIC0geWR6WzJdKSAvIG5EYXlzSW5ZZWFyKS50b0ZpeGVkKDgpXG5zdHlsZWREZWNvWWVhcjAgPSBzZXRTdHlsZShkZWNvWWVhciwgZDMuc2NoZW1lUGFpcmVkWzEwXSlcbnN0eWxlZERlY29ZZWFyMSA9IHNldFN0eWxlKGRlY29ZZWFyLCBkMy5zY2hlbWVQYWlyZWRbMTBdKVxuc3R5bGVkRnJhY1llYXIgPSBzZXRTdHlsZShmcmFjWWVhciwgZDMuc2NoZW1lUGFpcmVkWzEwXSlcbnN0eWxlZERlY29EYXRlMCA9IHNldFN0eWxlKGRlY29EYXRlLCBkMy5zY2hlbWVQYWlyZWRbMV0pXG5zdHlsZWREZWNvRGF0ZTEgPSBzZXRTdHlsZShkZWNvRGF0ZSwgZDMuc2NoZW1lUGFpcmVkWzFdKVxuc3R5bGVkTmRheXMgPSBzZXRTdHlsZShuRGF5c0luWWVhciAqIDEwLCBkMy5zY2hlbWVQYWlyZWRbMV0pXG5zdHlsZWREZWNvVGltZTAgPSBzZXRTdHlsZShkZWNvVGltZSwgZDMuc2NoZW1lUGFpcmVkWzJdKVxuc3R5bGVkRGVjb1RpbWUxID0gc2V0U3R5bGUoZGVjb1RpbWUsIGQzLnNjaGVtZVBhaXJlZFsyXSlcbnN0eWxlZERlY29UaW1lMiA9IHNldFN0eWxlKGRlY29UaW1lLCBkMy5zY2hlbWVQYWlyZWRbMl0pXG5zdHlsZWRUaW1lWm9uZTAgPSBzZXRTdHlsZShkZWNvVGltZVpvbmUsIGQzLnNjaGVtZVBhaXJlZFszXSlcbnN0eWxlZFRpbWVab25lMSA9IHNldFN0eWxlKGRlY29UaW1lWm9uZSwgZDMuc2NoZW1lUGFpcmVkWzNdKVxuc3R5bGVkVGltZVpvbmUyID0gc2V0U3R5bGUoZGVjb1RpbWVab25lLCBkMy5zY2hlbWVQYWlyZWRbM10pXG5zdHlsZWRUaWNrVGltZSA9IHNldFN0eWxlKHRpY2tUaW1lLCBkMy5zY2hlbWVQYXN0ZWwyWzBdKVxuIn1dfQ==
-</script>
-<script type="module">
-if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../../dec/date";
-window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "../..";
-window._ojs.selfContained = false;
-window._ojs.runtime.interpretFromScriptTags();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1504,133 +1398,61 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <input type="hidden" id="giscus-alt-theme" value="dark">
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../../dec/time/index.html" class="pagination-link" aria-label="Decimal time">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Decimal time</span>
+      <a href="../../dec/index.html" class="pagination-link" aria-label="Measurement">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Measurement</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../dec/day/index.html" class="pagination-link" aria-label="Daylight duration">
-        <span class="nav-page-text">Daylight duration</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../dec/geo/index.html" class="pagination-link" aria-label="Geoposition">
+        <span class="nav-page-text">Geoposition</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> The Dec measurement system</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: Martin Laptev</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">    url: https://maptv.github.io</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> last-modified</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> ../../asset/deidek.svg</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - dec</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">  url: https://maptv.github.io/blog/dec</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> x</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body:</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/cite.html</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/style.html</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/stamp.html</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/tooltip.html</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">  - ../../asset/date.lua</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">  - include-code-files</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>This section of my blog focuses on Dec, a <span class="co">[</span><span class="ot">measurement system</span><span class="co">](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)</span> that <span class="co">[</span><span class="ot">I</span><span class="co">](https://maptv.github.io)</span> created to measure⏳time,📍position,🧭orientation,📐angles, and🔄cycles in <span class="co">[</span><span class="ot">turns</span><span class="co">](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span> (<span class="co">[</span><span class="ot">$\tau$</span><span class="co">](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)</span>) instead of months, weeks, hours, minutes, seconds, and degrees. For time measurement, Dec uses days and years, which are turns of a <span class="co">[</span><span class="ot">celestial body</span><span class="co">](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity)</span> on <span class="co">[</span><span class="ot">its axis</span><span class="co">](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole)</span> and around <span class="co">[</span><span class="ot">the point it orbits</span><span class="co">](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit)</span>, respectively.</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### Timestamps</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>The numbers in the top left of the <span class="co">[</span><span class="ot">navigation bar (navbar)</span><span class="co">](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)</span> are components of a Dec <span class="co">[</span><span class="ot">timestamp</span><span class="co">](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred)</span> that shows the current time: \${styledDecoYear0}+\${styledDecoDate0}\${styledDecoTime0}-\${styledTimeZone0}.</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>Dec timestamps are inspired by this equation: $\texttt{y=\lfloor{y}\rfloor+}\frac{\texttt{d-z}}{\texttt{n}}$, where $\texttt{y}$ is <span class="co">[</span><span class="ot">decimal years</span><span class="co">](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=decimal%20years%20divide%20the%20year%20into%2010%C2%A0equal%20parts)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Turns of the Earth around the Sun"} (\${styledFracYear}), $\texttt{\lfloor{y}\rfloor}$ is <span class="co">[</span><span class="ot">floored</span><span class="co">](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)</span> years (\${styledDecoYear1}), $\texttt{d}$ is <span class="co">[</span><span class="ot">decidays</span><span class="co">](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth’s axis"} (\${styledDecoDate1}\${styledDecoTime1}), $\texttt{z}$ is the <span class="co">[</span><span class="ot">Dec time zone</span><span class="co">](https://observablehq.com/@dec/lock)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Floored deciturns of longitude"} (\${styledTimeZone1}), and $\texttt{n}$ is the total number of decidays in the year (\${styledNdays}).</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>In addition to time, Dec also measures[]{.bi .bi-globe}<span class="co">[</span><span class="ot">geographic</span><span class="co">](https://en.wikipedia.org/wiki/Geographic_coordinate_system)</span> and[]{.bi .bi-moon-stars}<span class="co">[</span><span class="ot">celestial</span><span class="co">](https://en.wikipedia.org/wiki/Celestial_coordinate_system)</span> coordinates: <span class="co">[</span><span class="ot">longitude</span><span class="co">](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%E2%80%93west%20position)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Eastward turns from Meridian 0 (162nd meridian west) on the Earth's surface"} , <span class="co">[</span><span class="ot">latitude</span><span class="co">](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20coordinate%20that%20specifies%20the%20north%E2%80%93south%20position)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Northward turns from Parallel 0 (the Equator) on the Earth's surface"}, <span class="co">[</span><span class="ot">azimuth</span><span class="co">](https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20of%20the%20object%20around%20the%20horizon)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Eastward turns from Azimuth 0 (North) on the horizon"}, <span class="co">[</span><span class="ot">altitude</span><span class="co">](https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20between%20the%20object%20and%20the%20observer%27s%20local%20horizon)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Upward turns from Altitude 0 (the horizon)"}, etc.</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>Importantly, Dec time zones are derived from floored <span class="co">[</span><span class="ot">decidays of longitude</span><span class="co">](https://observablehq.com/@dec/alc)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth's surface parallel to the Equator"} ($\texttt{z=\lfloor{λ}\rfloor}$) and can be appended to the time of day (\${styledDecoTime2}-\${styledTimeZone2}), but not to durations, e.g. the <span class="co">[</span><span class="ot">centimillidays</span><span class="co">](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays%20and%20100%20centidays)</span>{.underline data-bs-toggle="tooltip" data-bs-title="Hundred thousands of a turn on the Earth's axis"} since this webpage was loaded: \${styledTickTime}.</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="in">unix = {</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="in">  while(true) {</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="in">    yield Date.now();</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="in">tick = {</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="in">  let i = 0;</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="in">  while (true) {</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="in">    yield Promises.tick(864, ++i);</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="in">tickTime = tick % 1e5</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="in">// http://howardhinnant.github.io/date_algorithms.html#civil_from_days</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="in">function unix2dote(unix, zone, offset = 719468) {</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="in">  return [</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="in">    (unix ?? Date.now()) / 86400000</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="in">    + (zone = zone ?? (10 - Math.round(</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="in">        (new Date).getTimezoneOffset() / 144)) % 10</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="in">      ) / 10 + offset, zone]</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="in">function dote2doty(days = 719468, zone = 0) {</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="in">  const era = Math.floor((days &gt;= 0 ? days : days - 146096) / 146097), dotc = days - era * 146097,</span></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in">      yotc = Math.floor((dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="in">  return [yotc + era * 400, dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4), zone];</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="in">function doty2deco(year = 1969, doty = 306, zone = 0) {</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="in">  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`</span></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="in">ydz = dote2doty(...unix2dote(unix))</span></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="in">deco = doty2deco(...ydz)</span></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="in">// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor</span></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="in">function setStyle(content, style = {}) {</span></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="in">  function yiq(color) {</span></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="in">    const {r, g, b} = d3.rgb(color);</span></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="in">    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1</span></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="in">  const {</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="in">    background,</span></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="in">    color = yiq(background) &gt;= 0.6 ? "#111" : "white",</span></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="in">    padding = "0 1px",</span></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="in">    borderRadius = "4px",</span></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="in">    fontWeight = 900,</span></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="in">    fontSize = "1em",</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="in">    ...rest</span></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="in">  } = typeof style === "string" ? {background: style} : style;</span></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="in">  return htl.html`&lt;span style=${{</span></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="in">    background,</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="in">    color,</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="in">    padding,</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="in">    borderRadius,</span></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="in">    fontWeight,</span></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="in">    ...rest</span></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="in">  }}&gt;${content}&lt;/span&gt;`;</span></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="in">function year2bool(year = 1970) {</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="in">    return year % 4 == 0 &amp;&amp; year % 100 != 0 || year % 400 == 0;</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="in">decoYear = deco.slice(0, 4)</span></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="in">decoDate = deco.slice(5, 8)</span></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="in">decoTime = deco.slice(8, 14)</span></span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="in">decoTimeZone = deco[15]</span></span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="in">nDaysInYear = 365 + year2bool(ydz[0] + 1)</span></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="in">fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(8)</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoYear0 = setStyle(decoYear, d3.schemePaired[10])</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])</span></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="in">styledFracYear = setStyle(fracYear, d3.schemePaired[10])</span></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoDate0 = setStyle(decoDate, d3.schemePaired[1])</span></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoDate1 = setStyle(decoDate, d3.schemePaired[1])</span></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="in">styledNdays = setStyle(nDaysInYear * 10, d3.schemePaired[1])</span></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoTime0 = setStyle(decoTime, d3.schemePaired[2])</span></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoTime1 = setStyle(decoTime, d3.schemePaired[2])</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="in">styledDecoTime2 = setStyle(decoTime, d3.schemePaired[2])</span></span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="in">styledTimeZone0 = setStyle(decoTimeZone, d3.schemePaired[3])</span></span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="in">styledTimeZone1 = setStyle(decoTimeZone, d3.schemePaired[3])</span></span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="in">styledTimeZone2 = setStyle(decoTimeZone, d3.schemePaired[3])</span></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="in">styledTickTime = setStyle(tickTime, d3.schemePastel2[0])</span></span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Ordinal date</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> /asset/deidek.svg</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">  url: https://maptv.github.io/dec/date</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body:</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/cite.html</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/style.html</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/stamp.html</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/tooltip.html</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="co">  - ../../asset/date.lua</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="co">  - include-code-files</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>My blog is full of dates in the <span class="in">`year+day`</span> format. The major advantage of this format is that the <span class="in">`day`</span> component can unequivocally identify any date and time in a given year and thus can replace months, days of the month, hours, minutes, and seconds. In essence, the <span class="in">`day`</span> number can  To create all of the dates, I use three different programming languages: Python for the <span class="co">[</span><span class="ot">listing page</span><span class="co">](/list)</span>, Lua for the Published date at the top of each article, and JavaScript for the citation information at the bottom of each article.</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>To test the code, I will create a separate Quarto markdown (<span class="in">`qmd`</span>) file for each of these 3 programming languages and <span class="co">[</span><span class="ot">embed</span><span class="co">](https://quarto.org/docs/authoring/notebook-embed.html#overview)</span> them into this <span class="in">`qmd`</span> file.</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="fu"># Javascript</span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>{{&lt; embed /asset/date.js.ipynb echo=true &gt;}}</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lua</span></span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>{{&lt; embed /asset/date.lua.ipynb echo=true &gt;}}</span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a><span class="fu"># Python</span></span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>{{&lt; embed /asset/date.py.ipynb echo=true &gt;}}</span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a><span class="fu"># Javascript</span></span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>{{&lt; embed /asset/date.js.qmd echo=true &gt;}}</span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lua</span></span>
+<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>{{&lt; embed /asset/date.lua.qmd echo=true &gt;}}</span>
+<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a><span class="fu"># Python</span></span>
+<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a>{{&lt; embed /asset/date.py.qmd echo=true &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
