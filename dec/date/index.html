@@ -389,14 +389,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#javascript" id="toc-javascript" class="nav-link active" data-scroll-target="#javascript">Javascript</a></li>
   <li><a href="#lua" id="toc-lua" class="nav-link" data-scroll-target="#lua">Lua</a></li>
   <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
-  <li><a href="#javascript-1" id="toc-javascript-1" class="nav-link" data-scroll-target="#javascript-1">Javascript</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  <li><a href="#lua-1" id="toc-lua-1" class="nav-link" data-scroll-target="#lua-1">Lua</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
-  <li><a href="#python-1" id="toc-python-1" class="nav-link" data-scroll-target="#python-1">Python</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/maptv/maptv.github.io/blob/main/dec/date/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div><div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="../../asset/date.js.embed-preview.html"><i class="bi bi-journal-code"></i>date.js.ipynb</a></li><li><a href="../../asset/date.lua.embed-preview.html"><i class="bi bi-journal-code"></i>date.lua.ipynb</a></li><li><a href="../../asset/date.py.embed-preview.html"><i class="bi bi-journal-code"></i>date.py.ipynb</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/maptv/maptv.github.io/blob/main/dec/date/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="date.js.ipynb"><i class="bi bi-journal-code"></i>Jupyter (js)</a></li><li><a href="date.py.ipynb"><i class="bi bi-journal-code"></i>Jupyter (py)</a></li><li><a href="date.lua.ipynb"><i class="bi bi-journal-code"></i>Jupyter (lua)</a></li><li><a href="date.js"><i class="bi bi-filetype-js"></i>Script (js)</a></li><li><a href="date.py"><i class="bi bi-filetype-py"></i>Script (py)</a></li><li><a href="date.lua"><i class="bi bi-moon"></i>Script (lua)</a></li><li><a href="index.md"><i class="bi bi-file-code"></i>CommonMark</a></li></ul></div><div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="date.js.embed-preview.html"><i class="bi bi-journal-code"></i>JavaScript</a></li><li><a href="date.lua.embed-preview.html"><i class="bi bi-journal-code"></i>Lua</a></li><li><a href="date.py.embed-preview.html"><i class="bi bi-journal-code"></i>Python</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
@@ -471,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-1" href="../../asset/date.js.embed-preview.html#cell-0">Source: date.js.ipynb</a></div>
+<a class="quarto-notebook-link" id="nblink-1" href="date.js.embed-preview.html#cell-0">Source: JavaScript</a></div>
 </section>
 <section id="lua" class="level1">
 <h1>Lua</h1>
@@ -509,7 +503,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>{ 2029, 266.0 } </code></pre>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-2" href="../../asset/date.lua.embed-preview.html#cell-0">Source: date.lua.ipynb</a></div>
+<a class="quarto-notebook-link" id="nblink-2" href="date.lua.embed-preview.html#cell-0">Source: Lua</a></div>
 </section>
 <section id="python" class="level1">
 <h1>Python</h1>
@@ -544,133 +538,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[2029, 266.0]</code></pre>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-3" href="../../asset/date.py.embed-preview.html#7e8773bb-2923-4806-b39d-d450eaaee222">Source: date.py.ipynb</a></div>
-</section>
-<section id="javascript-1" class="level1">
-<h1>Javascript</h1>
-</section>
-<section id="section" class="level1 quarto-embed-nb-cell">
-<h1></h1>
-<div id="bda28bb1" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode typescript code-with-copy"><code class="sourceCode typescript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">unix2doty</span>(unix) {</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> dote <span class="op">=</span> unix <span class="op">/</span> <span class="dv">86400</span> <span class="op">+</span> <span class="dv">719468</span><span class="op">,</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    cykl <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>      dote <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> dote</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>      <span class="op">:</span> dote <span class="op">-</span> <span class="dv">146096</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">/</span> <span class="dv">146097</span>)<span class="op">,</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  dotc <span class="op">=</span> dote <span class="op">-</span> cykl <span class="op">*</span> <span class="dv">146097</span><span class="op">,</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  yotc <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((dotc</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">1460</span>)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">36524</span>)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(dotc <span class="op">/</span> <span class="dv">146096</span>)</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="op">/</span> <span class="dv">365</span>)<span class="op">;</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> [</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    yotc <span class="op">+</span> cykl <span class="op">*</span> <span class="dv">400</span><span class="op">,</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    dotc <span class="op">-</span> (yotc <span class="op">*</span> <span class="dv">365</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>      <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">4</span>)</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>      <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(yotc <span class="op">/</span> <span class="dv">100</span>)</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  )]}</span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="fu">unix2doty</span>(<span class="dv">1728000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<pre>[ <span class="ansi-yellow-fg">2024</span>, <span class="ansi-yellow-fg">217</span> ]</pre>
-</div>
-</div>
-<div id="8077d601" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode typescript code-with-copy"><code class="sourceCode typescript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unix2doty</span>(<span class="dv">1890000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<pre>[ <span class="ansi-yellow-fg">2029</span>, <span class="ansi-yellow-fg">266</span> ]</pre>
-</div>
-</div>
-<a class="quarto-notebook-link" id="nblink-4" href="../../asset/date.js.embed-preview.html#6ef59de8-3229-44f7-b35a-f54ba3dc51ff">Source: date.js.qmd</a></section>
-<section id="lua-1" class="level1">
-<h1>Lua</h1>
-</section>
-<section id="section-1" class="level1 quarto-embed-nb-cell">
-<h1></h1>
-<div id="57296f55" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> unix2doty<span class="op">(</span><span class="va">unix</span><span class="op">)</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">dote</span> <span class="op">=</span> <span class="va">unix</span> <span class="op">/</span> <span class="dv">86400</span> <span class="op">+</span> <span class="dv">719468</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">cykl</span> <span class="op">=</span> <span class="op">(</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">dote</span> <span class="op">&gt;=</span> <span class="dv">0</span> <span class="kw">and</span> <span class="va">dote</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">or</span> <span class="va">dote</span> <span class="op">-</span> <span class="dv">146096</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">)</span> <span class="op">//</span> <span class="dv">146097</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">dotc</span> <span class="op">=</span> <span class="va">dote</span> <span class="op">-</span> <span class="va">cykl</span> <span class="op">*</span> <span class="dv">146097</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">local</span> <span class="va">yotc</span> <span class="op">=</span> <span class="op">(</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">dotc</span> <span class="op">-</span> <span class="va">dotc</span> <span class="op">//</span> <span class="dv">1460</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="va">dotc</span> <span class="op">//</span> <span class="dv">36524</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">-</span> <span class="va">dotc</span> <span class="op">//</span> <span class="dv">146096</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">)</span> <span class="op">//</span> <span class="dv">365</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">{</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">math.floor</span><span class="op">(</span><span class="va">yotc</span> <span class="op">+</span> <span class="va">cykl</span> <span class="op">*</span> <span class="dv">400</span><span class="op">),</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="va">dotc</span> <span class="op">-</span> <span class="op">(</span><span class="va">yotc</span> <span class="op">*</span> <span class="dv">365</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>      <span class="op">+</span> <span class="va">yotc</span> <span class="op">//</span> <span class="dv">4</span></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>      <span class="op">-</span> <span class="va">yotc</span> <span class="op">//</span> <span class="dv">100</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="op">)}</span></span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="9d79e651" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>unix2doty<span class="op">(</span><span class="dv">1728000000</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{ 2024, 217.0 } </code></pre>
-</div>
-</div>
-<div id="cdf82f8f" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>unix2doty<span class="op">(</span><span class="dv">1890000000</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{ 2029, 266.0 } </code></pre>
-</div>
-</div>
-<a class="quarto-notebook-link" id="nblink-5" href="../../asset/date.lua.embed-preview.html#9ed7697d-1c81-4514-9304-e25a4701365d">Source: date.lua.qmd</a></section>
-<section id="python-1" class="level1">
-<h1>Python</h1>
-</section>
-<section id="section-2" class="level1 quarto-embed-nb-cell">
-<h1></h1>
-<div id="d11fc51c" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unix2doty(unix):</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    dote <span class="op">=</span> unix <span class="op">/</span> <span class="dv">86400</span> <span class="op">+</span> <span class="dv">719468</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    cykl <span class="op">=</span> (</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        dote <span class="cf">if</span> dote <span class="op">&gt;=</span> <span class="dv">0</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span> dote <span class="op">-</span> <span class="dv">146096</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">//</span> <span class="dv">146097</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    dotc <span class="op">=</span> dote <span class="op">-</span> cykl <span class="op">*</span> <span class="dv">146097</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    yotc <span class="op">=</span> (dotc</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span> dotc <span class="op">//</span> <span class="dv">1460</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>        <span class="op">+</span> dotc <span class="op">//</span> <span class="dv">36524</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span> dotc <span class="op">//</span> <span class="dv">146096</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">//</span> <span class="dv">365</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">int</span>(yotc <span class="op">+</span> cykl <span class="op">*</span> <span class="dv">400</span>),</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>        dotc <span class="op">-</span> (yotc <span class="op">*</span> <span class="dv">365</span></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>            <span class="op">+</span> yotc <span class="op">//</span> <span class="dv">4</span></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>            <span class="op">-</span> yotc <span class="op">//</span> <span class="dv">100</span></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    )]</span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>unix2doty(<span class="dv">1728000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<pre><code>[2024, 217.0]</code></pre>
-</div>
-</div>
-<div id="a060c1e8" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>unix2doty(<span class="dv">1890000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<pre><code>[2029, 266.0]</code></pre>
-</div>
-</div>
-<a class="quarto-notebook-link" id="nblink-6" href="../../asset/date.py.embed-preview.html#ff2511b0-ef64-43ce-8471-a3960e1b8b30">Source: date.py.qmd</a></section>
+<a class="quarto-notebook-link" id="nblink-3" href="date.py.embed-preview.html#7e8773bb-2923-4806-b39d-d450eaaee222">Source: Python</a></div>
 
 
 <!-- -->
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{laptev2024,
   author = {Laptev, Martin},
   title = {Ordinal Date},
-  date = {2024-09-03},
+  date = {2024},
+  urldate = {2024},
   url = {https://maptv.github.io/dec/date},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-laptev2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Laptev, Martin. 2024. <span>“Ordinal Date.”</span> September 3, 2024. <a href="https://maptv.github.io/dec/date">https://maptv.github.io/dec/date</a>.
+Laptev, Martin. 2024. <span>“Ordinal Date.”</span> 2024. <a href="https://maptv.github.io/dec/date">https://maptv.github.io/dec/date</a>.
 </div></div></section></div></main> <!-- /main -->
 <script>
 // https://howardhinnant.github.io/date_algorithms.html#days_from_civil
@@ -1404,51 +1288,70 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb23" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Ordinal date</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> /asset/deidek.svg</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">  url: https://maptv.github.io/dec/date</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body:</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/cite.html</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/style.html</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/stamp.html</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/tooltip.html</span></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="co">  - ../../asset/date.lua</span></span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="co">  - include-code-files</span></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>My blog is full of dates in the <span class="in">`year+day`</span> format. The major advantage of this format is that the <span class="in">`day`</span> component can unequivocally identify any date and time in a given year and thus can replace months, days of the month, hours, minutes, and seconds. In essence, the <span class="in">`day`</span> number can  To create all of the dates, I use three different programming languages: Python for the <span class="co">[</span><span class="ot">listing page</span><span class="co">](/list)</span>, Lua for the Published date at the top of each article, and JavaScript for the citation information at the bottom of each article.</span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>To test the code, I will create a separate Quarto markdown (<span class="in">`qmd`</span>) file for each of these 3 programming languages and <span class="co">[</span><span class="ot">embed</span><span class="co">](https://quarto.org/docs/authoring/notebook-embed.html#overview)</span> them into this <span class="in">`qmd`</span> file.</span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="fu"># Javascript</span></span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>{{&lt; embed /asset/date.js.ipynb echo=true &gt;}}</span>
-<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lua</span></span>
-<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>{{&lt; embed /asset/date.lua.ipynb echo=true &gt;}}</span>
-<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a><span class="fu"># Python</span></span>
-<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>{{&lt; embed /asset/date.py.ipynb echo=true &gt;}}</span>
-<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a><span class="fu"># Javascript</span></span>
-<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>{{&lt; embed /asset/date.js.qmd echo=true &gt;}}</span>
-<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lua</span></span>
-<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>{{&lt; embed /asset/date.lua.qmd echo=true &gt;}}</span>
-<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a><span class="fu"># Python</span></span>
-<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a>{{&lt; embed /asset/date.py.qmd echo=true &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Ordinal date</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> /asset/deidek.svg</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">  url: https://maptv.github.io/dec/date</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">    keep-md: true</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body:</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/cite.html</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/style.html</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/stamp.html</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/tooltip.html</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co">  commonmark: default</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="an">format-links:</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co">  - text: Jupyter (js)</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co">    href: date.js.ipynb</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co">    icon: journal-code</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co">  - text: Jupyter (py)</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co">    href: date.py.ipynb</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co">    icon: journal-code</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co">  - text: Jupyter (lua)</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="co">    href: date.lua.ipynb</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co">    icon: journal-code</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="co">  - text: Script (js)</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="co">    href: date.js</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="co">    icon: filetype-js</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co">  - text: Script (py)</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="co">    href: date.py</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="co">    icon: filetype-py</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="co">  - text: Script (lua)</span></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="co">    href: date.lua</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="co">    icon: moon</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="an">notebook-view:</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="co">  - notebook: date.py.ipynb</span></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="co">    title: Python</span></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="co">    url: date.py.ipynb</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="co">  - notebook: date.js.ipynb</span></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="co">    title: JavaScript</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="co">    url: date.js.ipynb</span></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="co">  - notebook: date.lua.ipynb</span></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="co">    title: Lua</span></span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="co">    url: date.lua.ipynb</span></span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a><span class="co">  - ../../asset/date.lua</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a><span class="co">  - include-code-files</span></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>My blog is full of dates in the <span class="in">`year+day`</span> format. The major advantage of this format is that the <span class="in">`day`</span> component can unequivocally identify any date and time in a given year and thus can replace months, days of the month, hours, minutes, and seconds. In essence, the <span class="in">`day`</span> number can  To create all of the dates, I use three different programming languages: Python for the <span class="co">[</span><span class="ot">listing page</span><span class="co">](/list)</span>, Lua for the Published date at the top of each article, and JavaScript for the citation information at the bottom of each article.</span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>To test the code, I will create a separate Quarto markdown (<span class="in">`qmd`</span>) file for each of these 3 programming languages and <span class="co">[</span><span class="ot">embed</span><span class="co">](https://quarto.org/docs/authoring/notebook-embed.html#overview)</span> them into this <span class="in">`qmd`</span> file.</span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a><span class="fu"># Javascript</span></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>{{&lt; embed date.js.ipynb echo=true &gt;}}</span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lua</span></span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>{{&lt; embed date.lua.ipynb echo=true &gt;}}</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a><span class="fu"># Python</span></span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>{{&lt; embed date.py.ipynb echo=true &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
