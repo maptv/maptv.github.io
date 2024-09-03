@@ -1,13 +1,10 @@
 ---
-title: ""
-image: ../asset/desk.png
-title-block-banner: false
-date-format: x
+author: ""
+date: ""
+comments: false
+image: /asset/desk.png
 format:
   html:
-    page-layout: full
-    repo-actions: false
-    back-to-top-navigation: false
     include-after-body:
       - ../asset/stamp.html
       - ../asset/style.html

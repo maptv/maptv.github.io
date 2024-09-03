@@ -1,9 +1,10 @@
 ---
+author: ""
+date: ""
 title: "Martin Skarzynski Laptev"
-date-format: x
+comments: false
 format:
   html:
-    toc: true
     toc-depth: 3
     keep-md: true
     include-after-body:
@@ -11,6 +12,7 @@ format:
       - ../asset/style.html
       - ../asset/tooltip.html
   pdf:
+    toc: false
     pdf-engine: weasyprint
   commonmark: default
 css: ../asset/cv.css

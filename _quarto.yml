@@ -1,3 +1,6 @@
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
 project:
   type: website
   resources: .gitlab-ci.yml
@@ -144,6 +147,33 @@ format:
       body-width: 1800px
       margin-width: 162px
     css: asset/style.css
+    anchor-sections: true
+    tbl-cap-location: margin
+    code-block-background: false
+    code-block-border-left: false
+    citations-hover: true
+    footnote-hover: true
+    code-copy: true
+    code-fold: false
+    code-link: true
+    code-tools: true
+    link-external-icon: false
+    link-external-newwindow: true
+    crossref:
+      lst-title: List
+      lst-prefix: List
+    mermaid:
+      theme: default
+title-block-banner: false
 execute:
   freeze: true
   cache: true
+freeze: true
+cache: true
+lightbox: true
+date-format: x
+date: last-modified
+toc: true
+comments:
+  giscus:
+    repo: maptv/maptv.github.io

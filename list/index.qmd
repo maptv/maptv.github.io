@@ -1,4 +1,6 @@
 ---
+author: ""
+date: ""
 listing:
   contents:
     - ../../history/ww2/index.qmd
@@ -15,9 +17,6 @@ listing:
   type: grid
   categories: true
   fields: [image, title, description, file-modified, categories, reading-time]
-citation: false
-format-links: false
-date-format: x
 format:
   html:
     repo-actions: false

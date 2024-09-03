@@ -1,6 +1,5 @@
 ---
 title: "Martin Skarzynski Laptev"
-date-format: x
 format:
   html:
     toc: true
@@ -11,10 +10,17 @@ format:
       - ../asset/style.html
       - ../asset/tooltip.html
   pdf:
+    toc: false
     pdf-engine: weasyprint
   commonmark: default
 css: ../asset/cv.css
 ---
+
+
+
+
+
+
 
 
 
