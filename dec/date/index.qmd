@@ -1,6 +1,5 @@
 ---
 title: Ordinal date
-draft: true
 image: /asset/deidek.svg
 citation:
   url: https://maptv.github.io/dec/date

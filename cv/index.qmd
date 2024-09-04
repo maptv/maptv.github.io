@@ -2,6 +2,8 @@
 author: ""
 date: ""
 comments: false
+citation: false
+code-tools: false
 title: "Martin Skarzynski Laptev"
 format:
   html:
@@ -297,5 +299,5 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 ::: {.lang}
 - [**ILR 5**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_5_%E2%80%93_Native_or_bilingual_proficiency): English, Polish
 - [**ILR 4**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_4_%E2%80%93_Full_professional_proficiency): Spanish, Russian
-- [**ILR 3**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_3_%E2%80%93_Professional_working_proficiency): French, Portuguese
+- [**ILR 2**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_3_%E2%80%93_Professional_working_proficiency): French, Portuguese
 :::

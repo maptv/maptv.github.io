@@ -2,6 +2,8 @@
 author: ""
 date: ""
 comments: false
+citation: false
+code-tools: false
 image: /asset/desk.png
 format:
   html:
