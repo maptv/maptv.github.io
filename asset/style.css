@@ -105,3 +105,22 @@ div.quarto-about-trestles .about-entity:has(img[title="desk"]):after {
 #quarto-content > div.quarto-about-trestles.column-page-right:has(img[title="desk"]) {
   padding-top: 12px !important;
 }
+
+
+main#quarto-document-content {
+  padding-top: 0px !important;
+  margin-top: 0px !important;
+}
+
+nav#quarto-sidebar {
+  padding-top: 3px !important;
+}
+
+div#quarto-margin-sidebar {
+  padding-top: 10px !important;
+}
+
+div.quarto-listing > div.list.grid {
+  padding-top: 18px !important;
+  margin-top: 8px !important;
+}

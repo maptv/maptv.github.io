@@ -3,6 +3,8 @@ author: ""
 date: ""
 comments: false
 jupyter: deno
+include-before-body:
+  - ../../asset/header.html
 ---
 
 ```{typescript}
@@ -32,4 +34,15 @@ unix2doty(1728000000)
 
 ```{typescript}
 unix2doty(1890000000)
+```
+
+```{=html}
+<style>
+main#quarto-document-content {
+  padding: 0px;
+}
+nav#quarto-sidebar {
+  padding: 0px;
+}
+</style>
 ```

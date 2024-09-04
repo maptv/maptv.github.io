@@ -402,7 +402,7 @@ for all of humanity.
   4**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_4_%E2%80%93_Full_professional_proficiency):
   Spanish, Russian
 - [**ILR
-  3**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_3_%E2%80%93_Professional_working_proficiency):
+  2**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_3_%E2%80%93_Professional_working_proficiency):
   French, Portuguese
 
 </div>
