@@ -95,7 +95,7 @@ h3.anchored {
   margin: 8px 0px;
 }
 
-h6.anchored {
+h4.anchored {
   font-size: 1em;
   margin: 3px 3px;
   font-weight: normal;
@@ -106,8 +106,14 @@ p, li {
 }
 
 @media print {
-  h6.anchored {
-  margin-bottom: -10px;
+  h3 {
+  margin: -8px 0px -12px 0px;
+}
+  h4 {
+  margin: 0px 0px -10px 0px;
+}
+  h4:first-of-type {
+  margin: 20px 0px -10px 0px;
 }
   ul {
   padding-left: 18px;

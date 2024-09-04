@@ -35,7 +35,7 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 
 ### Experience
 
-###### **Lead Instructor**, [General Assembly](https://generalassemb.ly) [2019:]{.cvdate}
+#### **Lead Instructor**, [General Assembly](https://generalassemb.ly) [2019:]{.cvdate}
 
 ::: {.horizontal}
 - Teaches [open-enrollment](https://generalassemb.ly/instructors/martin-skarzynski/23420) and enterprise courses such as:
@@ -46,7 +46,7 @@ Overall, I aim to leverage my broad scientific background and technical expertis
   - [Web Development](https://generalassemb.ly/education/front-end-web-development)
 :::
 
-###### **Lead Instructor**, [Data Society](https://datasociety.com) [2019:]{.cvdate}
+#### **Lead Instructor**, [Data Society](https://datasociety.com) [2019:]{.cvdate}
 
 ::: {.horizontal}
 - Provides enterprise clients with training in:
@@ -58,11 +58,11 @@ Overall, I aim to leverage my broad scientific background and technical expertis
   - Text Analysis & NLP
 :::
 
-###### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) [2022:]{.cvdate}
+#### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) [2022:]{.cvdate}
 
 - Leads a non‑profit organization that supports [eleven Meetup groups](https://www.datacommunitydc.org/meetups-overview)
 
-###### **Adjunct Professor**, Virginia Tech [2021:2024]{.cvdate}
+#### **Adjunct Professor**, Virginia Tech [2021:2024]{.cvdate}
 
 ::: {.horizontal}
 - Taught two graduate courses for the Computer Science and Statistics Departments:
@@ -70,7 +70,7 @@ Overall, I aim to leverage my broad scientific background and technical expertis
   - [Data Analytics](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205525%2D6%20(STAT%205525%2D6)%20%2D%20Data%20Analytics)
 :::
 
-###### **Senior Domain Lead**, [Amazon Web Services](https://aws.amazon.com) [2022:2024]{.cvdate}
+#### **Senior Domain Lead**, [Amazon Web Services](https://aws.amazon.com) [2022:2024]{.cvdate}
 
 ::: {.horizontal}
 - Provided customers with scientific and technical expertise in:
@@ -96,13 +96,13 @@ Overall, I aim to leverage my broad scientific background and technical expertis
   - [Solutions Architect Associate](https://www.credly.com/badges/1ae81600-c0cb-47b4-8610-e0c58bff6741/public_url)
 :::
 
-###### **AI Engineering Manager**, [Booz Allen Hamilton](https://www.boozallen.com) [2019:2023]{.cvdate}
+#### **AI Engineering Manager**, [Booz Allen Hamilton](https://www.boozallen.com) [2019:2023]{.cvdate}
 
 - Led a team of data scientists and software developers working on a cyber intelligence application
 - Spearheaded interdisciplinary COVID‑19 [visualization](https://www.boozallen.com/c/insight/blog/epimaps-data-visualization-for-healthcare), [genomics](https://mskar.github.io/var), and statistical modeling efforts
 - Obtained the [Microsoft Azure Data Scientist Associate](https://www.credly.com/badges/99aa294a-2b69-40f2-a607-0e7b91ffb5f6/public_url){.italic} certification
 
-###### **Biomedical Scientist**, [National Institutes of Health](https://www.nih.gov) [2009:2022]{.cvdate}
+#### **Biomedical Scientist**, [National Institutes of Health](https://www.nih.gov) [2009:2022]{.cvdate}
 
 ::: {.horizontal}
 - Integrated clinical, laboratory, epidemiologic, genomic, and medical imaging data
@@ -116,7 +116,7 @@ Overall, I aim to leverage my broad scientific background and technical expertis
   - [HiSTEP](https://www.training.nih.gov/research-training/hs/hs-sip/histep){data-bs-toggle="tooltip" data-bs-title="High School Scientific Training and Enrichment Program"}
 :::
 
-###### **Bioinformatics and Data Science Co-Chair**, [FAES](https://faes.org) [2014:2021]{.cvdate}
+#### **Bioinformatics and Data Science Co-Chair**, [FAES](https://faes.org) [2014:2021]{.cvdate}
 
 ::: {.horizontal}
 - Co‑administered an academic program with over twenty faculty members
@@ -130,7 +130,7 @@ Overall, I aim to leverage my broad scientific background and technical expertis
   - [Flow Cytometry](https://education.faes.org/search/publicCourseSearchDetails.do?method=load&courseId=1424281)
 :::
 
-###### **Adjunct Professor**, [George Washington University](https://www.gwu.edu) [2015:2016]{.cvdate}
+#### **Adjunct Professor**, [George Washington University](https://www.gwu.edu) [2015:2016]{.cvdate}
 
 ::: {.horizontal}
 - Taught two undergraduate courses for the [Women's Leadership Program](https://wlp.gwu.edu):
