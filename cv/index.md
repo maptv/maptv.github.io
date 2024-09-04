@@ -38,7 +38,7 @@ for all of humanity.
 
 ### Experience
 
-###### **Lead Instructor**, [General Assembly](https://generalassemb.ly) <span class="cvdate">2019:</span>
+#### **Lead Instructor**, [General Assembly](https://generalassemb.ly) <span class="cvdate">2019:</span>
 
 <div class="horizontal">
 
@@ -57,7 +57,7 @@ for all of humanity.
 
 </div>
 
-###### **Lead Instructor**, [Data Society](https://datasociety.com) <span class="cvdate">2019:</span>
+#### **Lead Instructor**, [Data Society](https://datasociety.com) <span class="cvdate">2019:</span>
 
 <div class="horizontal">
 
@@ -71,12 +71,12 @@ for all of humanity.
 
 </div>
 
-###### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) <span class="cvdate">2022:</span>
+#### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) <span class="cvdate">2022:</span>
 
 - Leads a non‑profit organization that supports [eleven Meetup
   groups](https://www.datacommunitydc.org/meetups-overview)
 
-###### **Adjunct Professor**, Virginia Tech <span class="cvdate">2021:2024</span>
+#### **Adjunct Professor**, Virginia Tech <span class="cvdate">2021:2024</span>
 
 <div class="horizontal">
 
@@ -89,7 +89,7 @@ for all of humanity.
 
 </div>
 
-###### **Senior Domain Lead**, [Amazon Web Services](https://aws.amazon.com) <span class="cvdate">2022:2024</span>
+#### **Senior Domain Lead**, [Amazon Web Services](https://aws.amazon.com) <span class="cvdate">2022:2024</span>
 
 <div class="horizontal">
 
@@ -126,7 +126,7 @@ for all of humanity.
 
 </div>
 
-###### **AI Engineering Manager**, [Booz Allen Hamilton](https://www.boozallen.com) <span class="cvdate">2019:2023</span>
+#### **AI Engineering Manager**, [Booz Allen Hamilton](https://www.boozallen.com) <span class="cvdate">2019:2023</span>
 
 - Led a team of data scientists and software developers working on a
   cyber intelligence application
@@ -139,7 +139,7 @@ for all of humanity.
   class="italic">Microsoft Azure Data Scientist Associate</a>
   certification
 
-###### **Biomedical Scientist**, [National Institutes of Health](https://www.nih.gov) <span class="cvdate">2009:2022</span>
+#### **Biomedical Scientist**, [National Institutes of Health](https://www.nih.gov) <span class="cvdate">2009:2022</span>
 
 <div class="horizontal">
 
@@ -164,7 +164,7 @@ for all of humanity.
 
 </div>
 
-###### **Bioinformatics and Data Science Co-Chair**, [FAES](https://faes.org) <span class="cvdate">2014:2021</span>
+#### **Bioinformatics and Data Science Co-Chair**, [FAES](https://faes.org) <span class="cvdate">2014:2021</span>
 
 <div class="horizontal">
 
@@ -182,7 +182,7 @@ for all of humanity.
 
 </div>
 
-###### **Adjunct Professor**, [George Washington University](https://www.gwu.edu) <span class="cvdate">2015:2016</span>
+#### **Adjunct Professor**, [George Washington University](https://www.gwu.edu) <span class="cvdate">2015:2016</span>
 
 <div class="horizontal">
 
