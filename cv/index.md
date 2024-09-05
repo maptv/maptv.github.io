@@ -71,24 +71,6 @@ for all of humanity.
 
 </div>
 
-#### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) <span class="cvdate">2022:</span>
-
-- Leads a non‑profit organization that supports [eleven Meetup
-  groups](https://www.datacommunitydc.org/meetups-overview)
-
-#### **Adjunct Professor**, Virginia Tech <span class="cvdate">2021:2024</span>
-
-<div class="horizontal">
-
-- Taught two graduate courses for the Computer Science and Statistics
-  Departments:
-  - [Machine
-    Learning](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205805%2D6%20%2D%20Machine%20Learning%C2%A0)
-  - [Data
-    Analytics](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205525%2D6%20(STAT%205525%2D6)%20%2D%20Data%20Analytics)
-
-</div>
-
 #### **Senior Domain Lead**, [Amazon Web Services](https://aws.amazon.com) <span class="cvdate">2022:2024</span>
 
 <div class="horizontal">
@@ -125,6 +107,24 @@ for all of humanity.
     Associate](https://www.credly.com/badges/1ae81600-c0cb-47b4-8610-e0c58bff6741/public_url)
 
 </div>
+
+#### **Adjunct Professor**, Virginia Tech <span class="cvdate">2021:2024</span>
+
+<div class="horizontal">
+
+- Taught two graduate courses for the Computer Science and Statistics
+  Departments:
+  - [Machine
+    Learning](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205805%2D6%20%2D%20Machine%20Learning%C2%A0)
+  - [Data
+    Analytics](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205525%2D6%20(STAT%205525%2D6)%20%2D%20Data%20Analytics)
+
+</div>
+
+#### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) <span class="cvdate">2022:</span>
+
+- Leads a non‑profit organization that supports [eleven Meetup
+  groups](https://www.datacommunitydc.org/meetups-overview)
 
 #### **AI Engineering Manager**, [Booz Allen Hamilton](https://www.boozallen.com) <span class="cvdate">2019:2023</span>
 
