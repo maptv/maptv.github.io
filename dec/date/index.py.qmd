@@ -32,69 +32,6 @@ for each of these 3 programming languages and
 [embed](https://quarto.org/docs/authoring/notebook-embed.html#overview)
 them into this `qmd` file.
 
-# JavaScript
-
-``` {typescript}
-function unix2doty(unix) {
-  const dote = unix / 86400 + 719468,
-    cykl = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
-  dotc = dote - cykl * 146097,
-  yotc = Math.floor((dotc
-    - Math.floor(dotc / 1460)
-    + Math.floor(dotc / 36524)
-    - Math.floor(dotc / 146096)
-  ) / 365);
-  return [
-    yotc + cykl * 400,
-    dotc - (yotc * 365
-      + Math.floor(yotc / 4)
-      - Math.floor(yotc / 100)
-  )]}
-```
-
-``` {typescript}
-unix2doty(1728000000)
-```
-
-``` {typescript}
-unix2doty(1890000000)
-```
-
-# Lua
-
-``` {lua}
-function unix2doty(unix)
-  local dote = unix / 86400 + 719468
-  local cykl = (
-    dote >= 0 and dote
-    or dote - 146096
-  ) // 146097
-  local dotc = dote - cykl * 146097
-  local yotc = (
-    dotc - dotc // 1460
-    + dotc // 36524
-    - dotc // 146096
-  ) // 365
-  return {
-    math.floor(yotc + cykl * 400),
-    dotc - (yotc * 365
-      + yotc // 4
-      - yotc // 100
-  )}
-end
-```
-
-``` {lua}
-unix2doty(1728000000)
-```
-
-``` {lua}
-unix2doty(1890000000)
-```
-
 # Python
 
 
