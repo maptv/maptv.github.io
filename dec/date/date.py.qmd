@@ -1,9 +1,15 @@
 ---
-author: ""
-date: ""
-jupyter: python3
-include-before-body:
-  - ../../asset/header.html
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.16.4
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
 ---
 
 ```{python}
@@ -30,16 +36,4 @@ unix2doty(1728000000)
 
 ```{python}
 unix2doty(1890000000)
-```
-
-
-```{=html}
-<style>
-main#quarto-document-content {
-  padding: 0px;
-}
-nav#quarto-sidebar {
-  padding: 0px;
-}
-</style>
 ```

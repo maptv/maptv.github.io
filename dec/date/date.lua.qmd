@@ -1,15 +1,20 @@
 ---
-author: ""
-date: ""
-jupyter: xlua
-include-before-body:
-  - ../../asset/header.html
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.16.4
+  kernelspec:
+    display_name: Lua  (XLua)
+    language: lua
+    name: xlua
 ---
 
 ```{lua}
 --| editable: true
 --| slideshow: {slide_type: ''}
---| tags: []
 function unix2doty(unix)
   local dote = unix / 86400 + 719468
   local cykl = (
@@ -34,21 +39,9 @@ end
 ```{lua}
 --| editable: true
 --| slideshow: {slide_type: ''}
---| tags: []
 unix2doty(1728000000)
 ```
 
 ```{lua}
 unix2doty(1890000000)
-```
-
-```{=html}
-<style>
-main#quarto-document-content {
-  padding: 0px;
-}
-nav#quarto-sidebar {
-  padding: 0px;
-}
-</style>
 ```
