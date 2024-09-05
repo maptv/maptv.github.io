@@ -10,7 +10,6 @@
 //     display_name: Deno
 //     language: typescript
 //     name: deno
-//     path: /Users/martinlaptev/Library/Jupyter/kernels/deno
 // ---
 
 // # Ordinal date

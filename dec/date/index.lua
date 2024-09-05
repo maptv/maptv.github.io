@@ -10,7 +10,6 @@
 --     display_name: Lua  (XLua)
 --     language: lua
 --     name: xlua
---     path: /opt/homebrew/Caskroom/miniforge/base/envs/py/share/jupyter/kernels/xlua
 -- ---
 
 -- # Ordinal date

@@ -10,7 +10,6 @@
 #     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
-#     path: /opt/homebrew/Caskroom/miniforge/base/envs/py/share/jupyter/kernels/python3
 # ---
 
 # # Ordinal date
