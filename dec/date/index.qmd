@@ -91,7 +91,7 @@ unix2doty(1728000000)
 unix2doty(1890000000)
 ```
 
-{{< embed date.js.ipynb >}}
+{{< embed index.js.ipynb >}}
 
 # Lua
 
@@ -125,7 +125,7 @@ unix2doty(1728000000)
 unix2doty(1890000000)
 ```
 
-{{< embed date.lua.ipynb >}}
+{{< embed index.lua.ipynb >}}
 
 # Python
 
@@ -158,7 +158,7 @@ unix2doty(1728000000)
 unix2doty(1890000000)
 ```
 
-{{< embed date.py.ipynb >}}
+{{< embed index.py.ipynb >}}
 
 :::
 :::
