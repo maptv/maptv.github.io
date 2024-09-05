@@ -145,7 +145,42 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 - **MS**, Biotechnology, [Jagiellonian University](https://en.uj.edu.pl) [2009]{.cvdate}
 - **BA**, Biology, [St. Mary's College of Maryland](https://www.smcm.edu) [2007]{.cvdate}
 
-### Skills{style="page-break-before: always"}
+### Publications
+
+::: {.pubs}
+- Potentiating [mAb] therapy by targeting complement C3 [...] on lymphoma cells [Submitted]{.cvdate}
+- [Recalibration of a deep learning model [...] to inform lung cancer screening intervals](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2802522) [2023]{.cvdate}
+- [[COVID] genome‐based severity predictions correspond to [...] higher viral load](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9173902) [2022]{.cvdate}
+- [Linking genotype to phenotype [...] in [COVID] [...]](https://virological.org/t/linking-genotype-to-phenotype-further-exploration-of-mutations-in-sars-cov-2-associated-with-mild-or-severe-outcomes/794) [2022]{.cvdate}
+- [Variants in [COVID] associated with mild or severe outcome](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8385248) [2021]{.cvdate}
+- [Using prediction models to reduce [...] disparities in [...] lung cancer screening [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8562965) [2021]{.cvdate}
+- [Pathogenic role of [BCR] signaling and canonical NF-κB activation in [MCL]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4937360) [2016]{.cvdate}
+- [Interactions between ibrutinib and anti‐CD20 antibodies [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4703510) [2016]{.cvdate}
+- [Health disparities in the immunoprevention of [HPV] [...] associated malignancies](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4682020) [2015]{.cvdate}
+- [Designing the furin‐cleavable linker in recombinant immunotoxins [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7724502) [2015]{.cvdate}
+- [Harnessing the Fcμ receptor for [...] therapy of [CLL]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4268434) [2014]{.cvdate}
+:::
+
+### Awards
+
+::: {.awards}
+- **Community Contribution of the Year Category Finalist**, AWS Builder Awards [2023]{.cvdate}
+- **Artificial Intelligence Solutions Architect Award**, BAH Emergent Skills Program [2022]{.cvdate}
+- **Fellowship Research Award**, Cancer Prevention Fellowship Program [2019]{.cvdate}
+- **Fellows Award for Research Excellence**, National Institutes of Health [2015]{.cvdate}
+- **Orloff Science Award**, National Heart, Lung, Blood Institute [2014]{.cvdate}
+- **Director's Science Award**, National Heart, Lung, Blood Institute [2014]{.cvdate}
+:::
+
+### Languages
+
+::: {.lang}
+- [**ILR 5**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_5_%E2%80%93_Native_or_bilingual_proficiency): English, Polish
+- [**ILR 4**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_4_%E2%80%93_Full_professional_proficiency): Spanish, Russian
+- [**ILR 2**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_3_%E2%80%93_Professional_working_proficiency): French, Portuguese
+:::
+
+### Skills
 
 ![](https://img.shields.io/badge/-Airflow-blue?logo=apacheairflow&logoColor=white&color)
 ![](https://img.shields.io/badge/-Alacritty-blue?logo=Alacritty&logoColor=white&color)
@@ -266,38 +301,3 @@ Overall, I aim to leverage my broad scientific background and technical expertis
 ![](https://img.shields.io/badge/-WebStorm-blue?logo=webstorm&logoColor=white&color)
 ![](https://img.shields.io/badge/-YAML-blue?logo=yaml&logoColor=white&color)
 ![](https://img.shields.io/badge/-zsh-blue?logo=zsh&logoColor=white&color)
-
-### Publications
-
-::: {.pubs}
-- Potentiating [mAb] therapy by targeting complement C3 [...] on lymphoma cells [Submitted]{.cvdate}
-- [Recalibration of a deep learning model [...] to inform lung cancer screening intervals](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2802522) [2023]{.cvdate}
-- [[COVID] genome‐based severity predictions correspond to [...] higher viral load](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9173902) [2022]{.cvdate}
-- [Linking genotype to phenotype [...] in [COVID] [...]](https://virological.org/t/linking-genotype-to-phenotype-further-exploration-of-mutations-in-sars-cov-2-associated-with-mild-or-severe-outcomes/794) [2022]{.cvdate}
-- [Variants in [COVID] associated with mild or severe outcome](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8385248) [2021]{.cvdate}
-- [Using prediction models to reduce [...] disparities in [...] lung cancer screening [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8562965) [2021]{.cvdate}
-- [Pathogenic role of [BCR] signaling and canonical NF-κB activation in [MCL]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4937360) [2016]{.cvdate}
-- [Interactions between ibrutinib and anti‐CD20 antibodies [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4703510) [2016]{.cvdate}
-- [Health disparities in the immunoprevention of [HPV] [...] associated malignancies](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4682020) [2015]{.cvdate}
-- [Designing the furin‐cleavable linker in recombinant immunotoxins [...]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7724502) [2015]{.cvdate}
-- [Harnessing the Fcμ receptor for [...] therapy of [CLL]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4268434) [2014]{.cvdate}
-:::
-
-### Awards
-
-::: {.awards}
-- **Community Contribution of the Year Category Finalist**, AWS Builder Awards [2023]{.cvdate}
-- **Artificial Intelligence Solutions Architect Award**, BAH Emergent Skills Program [2022]{.cvdate}
-- **Fellowship Research Award**, Cancer Prevention Fellowship Program [2019]{.cvdate}
-- **Fellows Award for Research Excellence**, National Institutes of Health [2015]{.cvdate}
-- **Orloff Science Award**, National Heart, Lung, Blood Institute [2014]{.cvdate}
-- **Director's Science Award**, National Heart, Lung, Blood Institute [2014]{.cvdate}
-:::
-
-### Languages
-
-::: {.lang}
-- [**ILR 5**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_5_%E2%80%93_Native_or_bilingual_proficiency): English, Polish
-- [**ILR 4**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_4_%E2%80%93_Full_professional_proficiency): Spanish, Russian
-- [**ILR 2**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_3_%E2%80%93_Professional_working_proficiency): French, Portuguese
-:::
