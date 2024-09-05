@@ -57,25 +57,6 @@ My site is full of dates in the `year+day` format. The major advantage of this f
 To test the code, I will create a separate Quarto markdown (`qmd`) file for each of these 3 programming languages and [embed](https://quarto.org/docs/authoring/notebook-embed.html#overview) them into this `qmd` file.
 
 
-::: {.content-hidden unless-format="html"}
-::: {.panel-tabset }
-
-# JavaScript
-
-{{< embed index.js.ipynb echo=true >}}
-
-# Lua
-
-{{< embed index.lua.ipynb echo=true >}}
-
-# Python
-
-{{< embed index.py.ipynb echo=true >}}
-
-:::
-:::
-
-
 ::: {.content-hidden unless-profile="javascript"}
 
 # JavaScript
@@ -145,6 +126,7 @@ unix2doty(1890000000)
 ```
 
 :::
+
 ::: {.content-hidden unless-profile="python"}
 
 # Python
@@ -177,5 +159,22 @@ unix2doty(1728000000)
 ```{python}
 unix2doty(1890000000)
 ```
+
+:::
+
+
+::: {.panel-tabset .content-hidden unless-format="html"}
+
+# JavaScript
+
+{{< embed index.js.ipynb echo=true >}}
+
+# Lua
+
+{{< embed index.lua.ipynb echo=true >}}
+
+# Python
+
+{{< embed index.py.ipynb echo=true >}}
 
 :::
