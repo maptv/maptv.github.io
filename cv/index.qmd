@@ -58,18 +58,6 @@ Overall, I aim to leverage my broad scientific background and technical expertis
   - Text Analysis & NLP
 :::
 
-#### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) [2022:]{.cvdate}
-
-- Leads a non‑profit organization that supports [eleven Meetup groups](https://www.datacommunitydc.org/meetups-overview)
-
-#### **Adjunct Professor**, Virginia Tech [2021:2024]{.cvdate}
-
-::: {.horizontal}
-- Taught two graduate courses for the Computer Science and Statistics Departments:
-  - [Machine Learning](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205805%2D6%20%2D%20Machine%20Learning%C2%A0)
-  - [Data Analytics](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205525%2D6%20(STAT%205525%2D6)%20%2D%20Data%20Analytics)
-:::
-
 #### **Senior Domain Lead**, [Amazon Web Services](https://aws.amazon.com) [2022:2024]{.cvdate}
 
 ::: {.horizontal}
@@ -95,6 +83,18 @@ Overall, I aim to leverage my broad scientific background and technical expertis
   - [Cloud Practitioner](https://www.credly.com/badges/c3143f03-6ebb-4f16-827c-c89f8db2a3cf/public_url)
   - [Solutions Architect Associate](https://www.credly.com/badges/1ae81600-c0cb-47b4-8610-e0c58bff6741/public_url)
 :::
+
+#### **Adjunct Professor**, Virginia Tech [2021:2024]{.cvdate}
+
+::: {.horizontal}
+- Taught two graduate courses for the Computer Science and Statistics Departments:
+  - [Machine Learning](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205805%2D6%20%2D%20Machine%20Learning%C2%A0)
+  - [Data Analytics](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205525%2D6%20(STAT%205525%2D6)%20%2D%20Data%20Analytics)
+:::
+
+#### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) [2022:]{.cvdate}
+
+- Leads a non‑profit organization that supports [eleven Meetup groups](https://www.datacommunitydc.org/meetups-overview)
 
 #### **AI Engineering Manager**, [Booz Allen Hamilton](https://www.boozallen.com) [2019:2023]{.cvdate}
 
