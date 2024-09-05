@@ -4,10 +4,10 @@
 - [Mission](#mission)
 - [Experience](#experience)
 - [Education](#education)
-- [Skills](#skills)
 - [Publications](#publications)
 - [Awards](#awards)
 - [Languages](#languages)
+- [Skills](#skills)
 
 <div class="contact">
 
@@ -207,6 +207,84 @@ for all of humanity.
 - **BA**, Biology, [St. Mary’s College of
   Maryland](https://www.smcm.edu) <span class="cvdate">2007</span>
 
+### Publications
+
+<div class="pubs">
+
+- Potentiating \[mAb\] therapy by targeting complement C3 \[…\] on
+  lymphoma cells <span class="cvdate">Submitted</span>
+- [Recalibration of a deep learning model \[…\] to inform lung cancer
+  screening
+  intervals](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2802522)
+  <span class="cvdate">2023</span>
+- [\[COVID\] genome‐based severity predictions correspond to \[…\]
+  higher viral
+  load](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9173902)
+  <span class="cvdate">2022</span>
+- [Linking genotype to phenotype \[…\] in \[COVID\]
+  \[…\]](https://virological.org/t/linking-genotype-to-phenotype-further-exploration-of-mutations-in-sars-cov-2-associated-with-mild-or-severe-outcomes/794)
+  <span class="cvdate">2022</span>
+- [Variants in \[COVID\] associated with mild or severe
+  outcome](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8385248)
+  <span class="cvdate">2021</span>
+- [Using prediction models to reduce \[…\] disparities in \[…\] lung
+  cancer screening
+  \[…\]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8562965)
+  <span class="cvdate">2021</span>
+- [Pathogenic role of \[BCR\] signaling and canonical NF-κB activation
+  in \[MCL\]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4937360)
+  <span class="cvdate">2016</span>
+- [Interactions between ibrutinib and anti‐CD20 antibodies
+  \[…\]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4703510)
+  <span class="cvdate">2016</span>
+- [Health disparities in the immunoprevention of \[HPV\] \[…\]
+  associated
+  malignancies](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4682020)
+  <span class="cvdate">2015</span>
+- [Designing the furin‐cleavable linker in recombinant immunotoxins
+  \[…\]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7724502)
+  <span class="cvdate">2015</span>
+- [Harnessing the Fcμ receptor for \[…\] therapy of
+  \[CLL\]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4268434)
+  <span class="cvdate">2014</span>
+
+</div>
+
+### Awards
+
+<div class="awards">
+
+- **Community Contribution of the Year Category Finalist**, AWS Builder
+  Awards <span class="cvdate">2023</span>
+- **Artificial Intelligence Solutions Architect Award**, BAH Emergent
+  Skills Program <span class="cvdate">2022</span>
+- **Fellowship Research Award**, Cancer Prevention Fellowship Program
+  <span class="cvdate">2019</span>
+- **Fellows Award for Research Excellence**, National Institutes of
+  Health <span class="cvdate">2015</span>
+- **Orloff Science Award**, National Heart, Lung, Blood Institute
+  <span class="cvdate">2014</span>
+- **Director’s Science Award**, National Heart, Lung, Blood Institute
+  <span class="cvdate">2014</span>
+
+</div>
+
+### Languages
+
+<div class="lang">
+
+- [**ILR
+  5**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_5_%E2%80%93_Native_or_bilingual_proficiency):
+  English, Polish
+- [**ILR
+  4**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_4_%E2%80%93_Full_professional_proficiency):
+  Spanish, Russian
+- [**ILR
+  2**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_3_%E2%80%93_Professional_working_proficiency):
+  French, Portuguese
+
+</div>
+
 ### Skills
 
 ![](https://img.shields.io/badge/-Airflow-blue?logo=apacheairflow&logoColor=white&color.png)
@@ -328,81 +406,3 @@ for all of humanity.
 ![](https://img.shields.io/badge/-WebStorm-blue?logo=webstorm&logoColor=white&color.png)
 ![](https://img.shields.io/badge/-YAML-blue?logo=yaml&logoColor=white&color.png)
 ![](https://img.shields.io/badge/-zsh-blue?logo=zsh&logoColor=white&color.png)
-
-### Publications
-
-<div class="pubs">
-
-- Potentiating \[mAb\] therapy by targeting complement C3 \[…\] on
-  lymphoma cells <span class="cvdate">Submitted</span>
-- [Recalibration of a deep learning model \[…\] to inform lung cancer
-  screening
-  intervals](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2802522)
-  <span class="cvdate">2023</span>
-- [\[COVID\] genome‐based severity predictions correspond to \[…\]
-  higher viral
-  load](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9173902)
-  <span class="cvdate">2022</span>
-- [Linking genotype to phenotype \[…\] in \[COVID\]
-  \[…\]](https://virological.org/t/linking-genotype-to-phenotype-further-exploration-of-mutations-in-sars-cov-2-associated-with-mild-or-severe-outcomes/794)
-  <span class="cvdate">2022</span>
-- [Variants in \[COVID\] associated with mild or severe
-  outcome](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8385248)
-  <span class="cvdate">2021</span>
-- [Using prediction models to reduce \[…\] disparities in \[…\] lung
-  cancer screening
-  \[…\]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8562965)
-  <span class="cvdate">2021</span>
-- [Pathogenic role of \[BCR\] signaling and canonical NF-κB activation
-  in \[MCL\]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4937360)
-  <span class="cvdate">2016</span>
-- [Interactions between ibrutinib and anti‐CD20 antibodies
-  \[…\]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4703510)
-  <span class="cvdate">2016</span>
-- [Health disparities in the immunoprevention of \[HPV\] \[…\]
-  associated
-  malignancies](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4682020)
-  <span class="cvdate">2015</span>
-- [Designing the furin‐cleavable linker in recombinant immunotoxins
-  \[…\]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7724502)
-  <span class="cvdate">2015</span>
-- [Harnessing the Fcμ receptor for \[…\] therapy of
-  \[CLL\]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4268434)
-  <span class="cvdate">2014</span>
-
-</div>
-
-### Awards
-
-<div class="awards">
-
-- **Community Contribution of the Year Category Finalist**, AWS Builder
-  Awards <span class="cvdate">2023</span>
-- **Artificial Intelligence Solutions Architect Award**, BAH Emergent
-  Skills Program <span class="cvdate">2022</span>
-- **Fellowship Research Award**, Cancer Prevention Fellowship Program
-  <span class="cvdate">2019</span>
-- **Fellows Award for Research Excellence**, National Institutes of
-  Health <span class="cvdate">2015</span>
-- **Orloff Science Award**, National Heart, Lung, Blood Institute
-  <span class="cvdate">2014</span>
-- **Director’s Science Award**, National Heart, Lung, Blood Institute
-  <span class="cvdate">2014</span>
-
-</div>
-
-### Languages
-
-<div class="lang">
-
-- [**ILR
-  5**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_5_%E2%80%93_Native_or_bilingual_proficiency):
-  English, Polish
-- [**ILR
-  4**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_4_%E2%80%93_Full_professional_proficiency):
-  Spanish, Russian
-- [**ILR
-  2**](https://en.wikipedia.org/wiki/ILR_scale#ILR_Level_3_%E2%80%93_Professional_working_proficiency):
-  French, Portuguese
-
-</div>
