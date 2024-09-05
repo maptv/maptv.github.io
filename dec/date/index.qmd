@@ -14,31 +14,31 @@ format:
 format-links:
   - html
   - text: JavaScript Jupyter
-    href: date.js.ipynb
+    href: index.js.ipynb
     icon: journal-richtext
   - text: JavaScript Quarto
-    href: date.js.qmd
+    href: index.js.qmd
     icon: journal-code
   - text: Python Jupyter
-    href: date.py.ipynb
+    href: index.py.ipynb
     icon: journal-richtext
   - text: Python Quarto
-    href: date.py.qmd
+    href: index.py.qmd
     icon: journal-code
   - text: Lua Jupyter
-    href: date.lua.ipynb
+    href: index.lua.ipynb
     icon: journal-richtext
   - text: Lua Quarto
-    href: date.lua.qmd
+    href: index.lua.qmd
     icon: journal-code
   - text: JavaScript Script
-    href: date.js
+    href: index.js
     icon: filetype-js
   - text: Python script
-    href: date.py
+    href: index.py
     icon: filetype-py
   - text: Lua Script
-    href: date.lua
+    href: index.lua
     icon: moon
   - format: commonmark
     text: Markdown
@@ -62,109 +62,21 @@ To test the code, I will create a separate Quarto markdown (`qmd`) file for each
 
 # JavaScript
 
-```{typescript}
-function unix2doty(unix) {
-  const dote = unix / 86400 + 719468,
-    cykl = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
-  dotc = dote - cykl * 146097,
-  yotc = Math.floor((dotc
-    - Math.floor(dotc / 1460)
-    + Math.floor(dotc / 36524)
-    - Math.floor(dotc / 146096)
-  ) / 365);
-  return [
-    yotc + cykl * 400,
-    dotc - (yotc * 365
-      + Math.floor(yotc / 4)
-      - Math.floor(yotc / 100)
-  )]}
-```
-
-```{typescript}
-unix2doty(1728000000)
-```
-
-```{typescript}
-unix2doty(1890000000)
-```
-
-{{< embed index.js.ipynb >}}
+{{< embed index.js.ipynb echo=true >}}
 
 # Lua
 
-```{lua}
-function unix2doty(unix)
-  local dote = unix / 86400 + 719468
-  local cykl = (
-    dote >= 0 and dote
-    or dote - 146096
-  ) // 146097
-  local dotc = dote - cykl * 146097
-  local yotc = (
-    dotc - dotc // 1460
-    + dotc // 36524
-    - dotc // 146096
-  ) // 365
-  return {
-    math.floor(yotc + cykl * 400),
-    dotc - (yotc * 365
-      + yotc // 4
-      - yotc // 100
-  )}
-end
-```
-
-```{lua}
-unix2doty(1728000000)
-```
-
-```{lua}
-unix2doty(1890000000)
-```
-
-{{< embed index.lua.ipynb >}}
+{{< embed index.lua.ipynb echo=true >}}
 
 # Python
 
-```{python}
-def unix2doty(unix):
-    dote = unix / 86400 + 719468
-    cykl = (
-        dote if dote >= 0
-        else dote - 146096
-    ) // 146097
-    dotc = dote - cykl * 146097
-    yotc = (dotc
-        - dotc // 1460
-        + dotc // 36524
-        - dotc // 146096
-    ) // 365
-    return [
-        int(yotc + cykl * 400),
-        dotc - (yotc * 365
-            + yotc // 4
-            - yotc // 100
-    )]
-```
-
-```{python}
-unix2doty(1728000000)
-```
-
-```{python}
-unix2doty(1890000000)
-```
-
-{{< embed index.py.ipynb >}}
+{{< embed index.py.ipynb echo=true >}}
 
 :::
 :::
 
 
-::: {.content-hidden unless-format="ipynb"}
+::: {.content-hidden unless-profile="javascript"}
 
 # JavaScript
 
@@ -197,6 +109,9 @@ unix2doty(1728000000)
 unix2doty(1890000000)
 ```
 
+:::
+::: {.content-hidden unless-profile="lua"}
+
 # Lua
 
 ```{lua}
@@ -228,6 +143,9 @@ unix2doty(1728000000)
 ```{lua}
 unix2doty(1890000000)
 ```
+
+:::
+::: {.content-hidden unless-profile="python"}
 
 # Python
 
