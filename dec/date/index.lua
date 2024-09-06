@@ -34,6 +34,7 @@
 --
 -- # Lua
 
+-- + tags=["lua-func"]
 function unix2doty(unix)
   local dote = unix / 86400 + 719468
   local cykl = (
@@ -54,8 +55,8 @@ function unix2doty(unix)
   )}
 end
 
+-- + tags=["lua-out0"]
 unix2doty(1728000000)
 
+-- + tags=["lua-out1"]
 unix2doty(1890000000)
-
--- This is a test.

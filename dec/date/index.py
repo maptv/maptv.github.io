@@ -34,6 +34,7 @@
 #
 # # Python
 
+# + tags=["py-func"]
 def unix2doty(unix):
     dote = unix / 86400 + 719468
     cykl = (
@@ -54,8 +55,8 @@ def unix2doty(unix):
     )]
 
 
+# + tags=["py-out0"]
 unix2doty(1728000000)
 
+# + tags=["py-out1"]
 unix2doty(1890000000)
-
-# This is a test.

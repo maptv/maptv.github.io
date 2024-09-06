@@ -34,6 +34,7 @@
 //
 // # JavaScript
 
+// + tags=["func"]
 function unix2doty(unix) {
   const dote = unix / 86400 + 719468,
     cykl = Math.floor((
@@ -53,8 +54,8 @@ function unix2doty(unix) {
       - Math.floor(yotc / 100)
   )]}
 
+// + tags=["out0"]
 unix2doty(1728000000)
 
+// + tags=["out1"]
 unix2doty(1890000000)
-
-// This is a test.
