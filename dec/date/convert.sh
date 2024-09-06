@@ -1,6 +1,6 @@
 quarto render index.qmd --profile javascript --cache-refresh --metadata engine:jupyter --to ipynb --output - > temp.js.ipynb
 
-jupytext temp.js.ipynb --to js --output index.js --set-kernel deno
+jupytext temp.js.ipynb --to js:percent --output index.js --set-kernel deno
 
 jupytext index.js --to qmd --output index.js.qmd --set-kernel deno
 

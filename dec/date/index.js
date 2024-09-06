@@ -3,8 +3,8 @@
 //   jupytext:
 //     text_representation:
 //       extension: .js
-//       format_name: light
-//       format_version: '1.5'
+//       format_name: percent
+//       format_version: '1.3'
 //       jupytext_version: 1.16.4
 //   kernelspec:
 //     display_name: Deno
@@ -13,6 +13,7 @@
 //     path: /Users/martinlaptev/Library/Jupyter/kernels/deno
 // ---
 
+// %% [markdown]
 // # Ordinal date
 //
 // \| [Martin Laptev]()  
@@ -34,7 +35,7 @@
 //
 // # JavaScript
 
-// + tags=["func"]
+// %% tags=["func"]
 function unix2doty(unix) {
   const dote = unix / 86400 + 719468,
     cykl = Math.floor((
@@ -54,8 +55,8 @@ function unix2doty(unix) {
       - Math.floor(yotc / 100)
   )]}
 
-// + tags=["out0"]
+// %% tags=["out0"]
 unix2doty(1728000000)
 
-// + tags=["out1"]
+// %% tags=["out1"]
 unix2doty(1890000000)
