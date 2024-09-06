@@ -47,10 +47,8 @@ notebook-links: false
 filters:
   - ../../asset/date.lua
   - include-code-files
-engine: knitr
 execute:
   output: false
-profile: knitr
 ---
 
 My site is full of dates in the `year+day` format. The major advantage of this format is that the `day` component can unequivocally identify any date and time in a given year and thus can replace months, days of the month, hours, minutes, and seconds. In essence, the `day` number can  To create all of the dates, I use three different programming languages: Python for the [listing page](/list), Lua for the Published date at the top of each article, and JavaScript for the citation information at the bottom of each article.
@@ -166,11 +164,23 @@ unix2doty(1890000000)
 
 This is a test.
 
-::: {.content-hidden when-profile="python"}
+::: {.content-hidden unless-profile="knitr"}
+::: {.content-hidden unless-format="html"}
 
-{{< include tabset.qmd >}}
+::: {.panel-tabset }
+
+# JavaScript
+
+{{< embed index.js.ipynb echo=true >}}
+
+# Lua
+
+{{< embed index.lua.ipynb echo=true >}}
+
+# Python
+
+{{< embed index.py.ipynb echo=true >}}
 
 :::
-
-This is a test.
-
+:::
+:::

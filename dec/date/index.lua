@@ -10,12 +10,13 @@
 --     display_name: Lua  (XLua)
 --     language: lua
 --     name: xlua
+--     path: /opt/homebrew/Caskroom/miniforge/base/envs/py/share/jupyter/kernels/xlua
 -- ---
 
 -- # Ordinal date
 --
 -- \| [Martin Laptev]()  
--- 2024+188
+-- 2024+189
 --
 -- My site is full of dates in the `year+day` format. The major advantage
 -- of this format is that the `day` component can unequivocally identify
@@ -56,3 +57,5 @@ end
 unix2doty(1728000000)
 
 unix2doty(1890000000)
+
+-- This is a test.

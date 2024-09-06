@@ -10,12 +10,13 @@
 #     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
+#     path: /opt/homebrew/Caskroom/miniforge/base/envs/py/share/jupyter/kernels/python3
 # ---
 
 # # Ordinal date
 #
 # \| [Martin Laptev]()  
-# 2024+188
+# 2024+189
 #
 # My site is full of dates in the `year+day` format. The major advantage
 # of this format is that the `day` component can unequivocally identify
@@ -56,3 +57,5 @@ def unix2doty(unix):
 unix2doty(1728000000)
 
 unix2doty(1890000000)
+
+# This is a test.
