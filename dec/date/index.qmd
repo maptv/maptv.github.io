@@ -19,29 +19,35 @@ format-links:
   - text: JavaScript Quarto
     href: index.js.qmd
     icon: journal-code
-  - text: Python Jupyter
-    href: index.py.ipynb
-    icon: journal-richtext
-  - text: Python Quarto
-    href: index.py.qmd
-    icon: journal-code
+  - text: JavaScript Script
+    href: index.js
+    icon: filetype-js
+  - text: JavaScript Markdown
+    href: index.js.md
+    icon: markdown
   - text: Lua Jupyter
     href: index.lua.ipynb
     icon: journal-richtext
   - text: Lua Quarto
     href: index.lua.qmd
     icon: journal-code
-  - text: JavaScript Script
-    href: index.js
-    icon: filetype-js
-  - text: Python script
-    href: index.py
-    icon: filetype-py
   - text: Lua Script
     href: index.lua
     icon: moon
-  - format: commonmark
-    text: Markdown
+  - text: Lua Markdown
+    href: index.lua.md
+    icon: markdown
+  - text: Python Jupyter
+    href: index.py.ipynb
+    icon: journal-richtext
+  - text: Python Quarto
+    href: index.py.qmd
+    icon: journal-code
+  - text: Python Script
+    href: index.py
+    icon: filetype-py
+  - text: Python Markdown
+    href: index.py.md
     icon: markdown
 notebook-links: false
 filters:
