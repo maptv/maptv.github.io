@@ -1,4 +1,6 @@
 jupyter: julia-1.10
 format: ipynb
+engine: jupyter
+knitr: false
 cache: false
 number-sections: false

@@ -1,2 +1,3 @@
 engine: knitr
 knitr: true
+jupyter: false

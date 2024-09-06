@@ -1,4 +1,6 @@
 jupyter: ir
 format: ipynb
+engine: jupyter
+knitr: false
 cache: false
 number-sections: false
