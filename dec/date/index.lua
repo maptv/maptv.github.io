@@ -3,8 +3,8 @@
 --   jupytext:
 --     text_representation:
 --       extension: .lua
---       format_name: light
---       format_version: '1.5'
+--       format_name: percent
+--       format_version: '1.3'
 --       jupytext_version: 1.16.4
 --   kernelspec:
 --     display_name: Lua  (XLua)
@@ -13,6 +13,7 @@
 --     path: /opt/homebrew/Caskroom/miniforge/base/envs/py/share/jupyter/kernels/xlua
 -- ---
 
+-- %% [markdown]
 -- # Ordinal date
 --
 -- \| [Martin Laptev]()  
@@ -34,7 +35,7 @@
 --
 -- # Lua
 
--- + tags=["lua-func"]
+-- %% tags=["lua-func"]
 function unix2doty(unix)
   local dote = unix / 86400 + 719468
   local cykl = (
@@ -55,8 +56,8 @@ function unix2doty(unix)
   )}
 end
 
--- + tags=["lua-out0"]
+-- %% tags=["lua-out0"]
 unix2doty(1728000000)
 
--- + tags=["lua-out1"]
+-- %% tags=["lua-out1"]
 unix2doty(1890000000)

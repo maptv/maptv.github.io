@@ -3,8 +3,8 @@
 #   jupytext:
 #     text_representation:
 #       extension: .py
-#       format_name: light
-#       format_version: '1.5'
+#       format_name: percent
+#       format_version: '1.3'
 #       jupytext_version: 1.16.4
 #   kernelspec:
 #     display_name: Python 3 (ipykernel)
@@ -13,6 +13,7 @@
 #     path: /opt/homebrew/Caskroom/miniforge/base/envs/py/share/jupyter/kernels/python3
 # ---
 
+# %% [markdown]
 # # Ordinal date
 #
 # \| [Martin Laptev]()  
@@ -34,7 +35,7 @@
 #
 # # Python
 
-# + tags=["py-func"]
+# %% tags=["py-func"]
 def unix2doty(unix):
     dote = unix / 86400 + 719468
     cykl = (
@@ -55,8 +56,8 @@ def unix2doty(unix):
     )]
 
 
-# + tags=["py-out0"]
+# %% tags=["py-out0"]
 unix2doty(1728000000)
 
-# + tags=["py-out1"]
+# %% tags=["py-out1"]
 unix2doty(1890000000)
