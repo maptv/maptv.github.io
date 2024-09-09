@@ -1,18 +1,17 @@
 ---
-title: Ordinal date
-jupyter:
-  jupytext:
-    text_representation:
-      extension: .qmd
-      format_name: quarto
-      format_version: '1.0'
-      jupytext_version: 1.16.4
-  kernelspec:
-    display_name: Deno
-    language: typescript
-    name: deno
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.16.4
+kernelspec:
+  display_name: R
+  language: R
+  name: ir
 ---
 
+# Ordinal date
 
 \| [Martin Laptev]()  
 2024+192
@@ -31,37 +30,39 @@ for each of these 3 programming languages and
 [embed](https://quarto.org/docs/authoring/notebook-embed.html#overview)
 them into this `qmd` file.
 
-# JavaScript
+# R
 
+```{code-cell}
+:tags: [r, func]
 
-```{typescript}
-#| tags: [js, func]
-function unix2doty(unix) {
-  const dote = unix / 86400 + 719468,
-    cykl = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
-  dotc = dote - cykl * 146097,
-  yotc = Math.floor((dotc
-    - Math.floor(dotc / 1460)
-    + Math.floor(dotc / 36524)
-    - Math.floor(dotc / 146096)
-  ) / 365);
-  return [
+unix2doty <- function(unix) {
+  dote = unix / 86400 + 719468
+  cykl = ifelse(
+    dote >= 0, dote,
+    dote - 146096
+  ) %/% 146097
+  dotc = dote - cykl * 146097
+  yotc = (
+    dotc - dotc %/% 1460
+    + dotc %/% 36524
+    - dotc %/% 146096
+  ) %/% 365
+  c(
     yotc + cykl * 400,
     dotc - (yotc * 365
-      + Math.floor(yotc / 4)
-      - Math.floor(yotc / 100)
-  )]}
+      + yotc %/% 4
+      - yotc %/% 100
+))}
 ```
 
-```{typescript}
-#| tags: [js, out0]
+```{code-cell}
+:tags: [r, out0]
+
 unix2doty(1728000000)
 ```
 
-```{typescript}
-#| tags: [js, out1]
+```{code-cell}
+:tags: [r, out1]
+
 unix2doty(1890000000)
 ```

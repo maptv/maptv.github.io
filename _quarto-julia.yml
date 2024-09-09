@@ -1,6 +1,8 @@
 jupyter: julia-1.10
 format: ipynb
-engine: jupyter
+engine: julia
 knitr: false
+execute:
+  eval: false
 cache: false
 number-sections: false

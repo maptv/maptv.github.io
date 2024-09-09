@@ -2,5 +2,7 @@ jupyter: ir
 format: ipynb
 engine: jupyter
 knitr: false
+execute:
+  eval: false
 cache: false
 number-sections: false

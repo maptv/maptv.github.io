@@ -9,13 +9,12 @@ kernelspec:
   display_name: Deno
   language: typescript
   name: deno
-  path: /Users/martinlaptev/Library/Jupyter/kernels/deno
 ---
 
 # Ordinal date
 
 \| [Martin Laptev]()  
-2024+189
+2024+192
 
 My site is full of dates in the `year+day` format. The major advantage
 of this format is that the `day` component can unequivocally identify
@@ -34,7 +33,7 @@ them into this `qmd` file.
 # JavaScript
 
 ```{code-cell}
-:tags: [func]
+:tags: [js, func]
 
 function unix2doty(unix) {
   const dote = unix / 86400 + 719468,
@@ -57,13 +56,13 @@ function unix2doty(unix) {
 ```
 
 ```{code-cell}
-:tags: [out0]
+:tags: [js, out0]
 
 unix2doty(1728000000)
 ```
 
 ```{code-cell}
-:tags: [out1]
+:tags: [js, out1]
 
 unix2doty(1890000000)
 ```

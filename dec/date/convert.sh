@@ -1,3 +1,14 @@
+quarto render index.qmd --profile bash --cache-refresh --metadata engine:jupyter --to ipynb --output - > temp.sh.ipynb
+
+jupytext temp.sh.ipynb --to r:percent --output index.sh --set-kernel ir
+
+jupytext index.sh --to qmd --output index.sh.qmd --set-kernel ir
+
+jupytext index.sh --to md:myst --output index.sh.md --set-kernel ir
+
+jupytext index.r --output index.r.ipynb --execute --update --set-kernel ir
+
+
 quarto render index.qmd --profile javascript --cache-refresh --metadata engine:jupyter --to ipynb --output - > temp.js.ipynb
 
 jupytext temp.js.ipynb --to js:percent --output index.js --set-kernel deno
@@ -29,3 +40,14 @@ jupytext index.py --to qmd --output index.py.qmd --set-kernel python3
 jupytext index.py --to md:myst --output index.py.md --set-kernel python3
 
 jupytext index.py --output index.py.ipynb --execute --update --set-kernel python3
+
+
+quarto render index.qmd --profile r --cache-refresh --metadata engine:jupyter --to ipynb --output - > temp.r.ipynb
+
+jupytext temp.r.ipynb --to r:percent --output index.r --set-kernel ir
+
+jupytext index.r --to qmd --output index.r.qmd --set-kernel ir
+
+jupytext index.r --to md:myst --output index.r.md --set-kernel ir
+
+jupytext index.r --output index.r.ipynb --execute --update --set-kernel ir

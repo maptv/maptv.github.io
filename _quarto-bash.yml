@@ -1,4 +1,4 @@
-jupyter: python3
+jupyter: bash
 format: ipynb
 engine: jupyter
 knitr: false

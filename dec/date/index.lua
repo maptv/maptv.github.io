@@ -10,14 +10,13 @@
 --     display_name: Lua  (XLua)
 --     language: lua
 --     name: xlua
---     path: /opt/homebrew/Caskroom/miniforge/base/envs/py/share/jupyter/kernels/xlua
 -- ---
 
 -- %% [markdown]
 -- # Ordinal date
 --
 -- \| [Martin Laptev]()  
--- 2024+189
+-- 2024+192
 --
 -- My site is full of dates in the `year+day` format. The major advantage
 -- of this format is that the `day` component can unequivocally identify
@@ -35,7 +34,7 @@
 --
 -- # Lua
 
--- %% tags=["lua-func"]
+-- %% tags=["lua", "func"]
 function unix2doty(unix)
   local dote = unix / 86400 + 719468
   local cykl = (
@@ -56,8 +55,8 @@ function unix2doty(unix)
   )}
 end
 
--- %% tags=["lua-out0"]
+-- %% tags=["lua", "out0"]
 unix2doty(1728000000)
 
--- %% tags=["lua-out1"]
+-- %% tags=["lua", "out1"]
 unix2doty(1890000000)
