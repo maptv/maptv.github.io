@@ -1,12 +1,12 @@
 quarto render index.qmd --profile bash --cache-refresh --metadata engine:jupyter --to ipynb --output - > temp.sh.ipynb
 
-jupytext temp.sh.ipynb --to r:percent --output index.sh --set-kernel ir
+jupytext temp.sh.ipynb --to sh:percent --output index.sh --set-kernel bash
 
-jupytext index.sh --to qmd --output index.sh.qmd --set-kernel ir
+jupytext index.sh --to qmd --output index.sh.qmd --set-kernel bash
 
-jupytext index.sh --to md:myst --output index.sh.md --set-kernel ir
+jupytext index.sh --to md:myst --output index.sh.md --set-kernel bash
 
-jupytext index.r --output index.r.ipynb --execute --update --set-kernel ir
+jupytext index.sh --output index.sh.ipynb --execute --update --set-kernel bash
 
 
 quarto render index.qmd --profile javascript --cache-refresh --metadata engine:jupyter --to ipynb --output - > temp.js.ipynb
