@@ -77,15 +77,37 @@ notebook-links: false
 filters:
   - ../../asset/date.lua
   - include-code-files
-execute:
-  eval: false
 ---
 
-My site is full of dates in the `year+day` format. The major advantage of this format is that the `day` component can unequivocally identify any date and time in a given year and thus can replace months, days of the month, hours, minutes, and seconds. In essence, the `day` number can  To create all of the dates, I use three different programming languages: Python for the [listing page](/list), Lua for the Published date at the top of each article, and JavaScript for the citation information at the bottom of each article.
+My site serves as a demonstration of both the [Quarto](https://quarto.org) publishing system and the [Dec](/dec) measurement system. I use several clever hacks to get Quarto to display all of the dates on my site in the Dec `year+day` format. Even if you are not interested in Dec dates, you may still benefit from learning about different ways to customize Quarto.
+
+The `day` in `year+day` dates is called the Dec calendar (Decalendar) date and a single number that can identify specific days of the year (like months and days of the month) and coordinate schedules of work and rest days (like weeks and days of the week). Essentially, Dec greatly simplifies the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world) by replacing months and weeks with units called deks.
+
+Unlike months and weeks, deks are 10 days long and thus work well with our decimal number system. The current dek and day of the dek are provided by the first two digits and the last digit of the 3-digit `day` number in Dec dates, respectively. For example, the current Dec date is Dek `{ojs} deco.slice(5, 7)` Day `{ojs} deco[7]` or simply Day `{ojs} deco.slice(5, 8)`.
+
+The most prominent Dec date on my site is the one in the Dec [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) in [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) (navbar) above.
+
+The numbers in the top left of the [navigation bar (navbar)](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) are components of a Dec [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) that shows the current time: \${styledDecoYear0}+\${styledDecoDate0}\${styledDecoTime0}-\${styledTimeZone0}.
+
+Dec timestamps are inspired by this equation: $\texttt{y=\lfloor{y}\rfloor+}\frac{\texttt{d-z}}{\texttt{n}}$, where $\texttt{y}$ is [decimal years](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=decimal%20years%20divide%20the%20year%20into%2010%C2%A0equal%20parts){.underline data-bs-toggle="tooltip" data-bs-title="Turns of the Earth around the Sun"} (\${styledFracYear}), $\texttt{\lfloor{y}\rfloor}$ is [floored](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x) years (\${styledDecoYear1}), $\texttt{d}$ is [decidays](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays){.underline data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth’s axis"} (\${styledDecoDate1}\${styledDecoTime1}), $\texttt{z}$ is the [Dec time zone](https://observablehq.com/@dec/lock){.underline data-bs-toggle="tooltip" data-bs-title="Floored deciturns of longitude"} (\${styledTimeZone1}), and $\texttt{n}$ is the total number of decidays in the year (\${styledNdays}).
+
+In addition to time, Dec also measures[]{.bi .bi-globe}[geographic](https://en.wikipedia.org/wiki/Geographic_coordinate_system) and[]{.bi .bi-moon-stars}[celestial](https://en.wikipedia.org/wiki/Celestial_coordinate_system) coordinates: [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%E2%80%93west%20position){.underline data-bs-toggle="tooltip" data-bs-title="Eastward turns from Meridian 0 (162nd meridian west) on the Earth's surface"} , [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20coordinate%20that%20specifies%20the%20north%E2%80%93south%20position){.underline data-bs-toggle="tooltip" data-bs-title="Northward turns from Parallel 0 (the Equator) on the Earth's surface"}, [azimuth](https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20of%20the%20object%20around%20the%20horizon){.underline data-bs-toggle="tooltip" data-bs-title="Eastward turns from Azimuth 0 (North) on the horizon"}, [altitude](https://en.wikipedia.org/wiki/Horizontal_coordinate_system#:~:text=the%20angle%20between%20the%20object%20and%20the%20observer%27s%20local%20horizon){.underline data-bs-toggle="tooltip" data-bs-title="Upward turns from Altitude 0 (the horizon)"}, etc.
+
+Importantly, Dec time zones are derived from floored [decidays of longitude](https://observablehq.com/@dec/alc){.underline data-bs-toggle="tooltip" data-bs-title="Tenths of a turn on the Earth's surface parallel to the Equator"} ($\texttt{z=\lfloor{λ}\rfloor}$) and can be appended to the time of day (\${styledDecoTime2}-\${styledTimeZone2}), but not to durations, e.g. the [centimillidays](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=dividing%20the%20day%20into%2010%20decidays%20and%20100%20centidays){.underline data-bs-toggle="tooltip" data-bs-title="Hundred thousands of a turn on the Earth's axis"} since this webpage was loaded: \${styledTickTime}.
 
 
-To test the code, I will create a separate Quarto markdown (`qmd`) file for each of these 3 programming languages and [embed](https://quarto.org/docs/authoring/notebook-embed.html#overview) them into this `qmd` file.
+perhaps not immediately apparent. Which is based on the decimal year date equation: $\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}{\div}\colorbox{orange}{n}{=}\colorbox{yellow}{y}$. In this equation, $\lfloor\colorbox{yellow}{y}\rfloor$ is the year, $\colorbox{cyan}{d}$ is the day of the year, $\colorbox{orange}{n}$ is the total number of days in the year, and the $\colorbox{yellow}{y}$ is the decimal year. Dates in the `year+day` format only include the first two terms from the decimal year date equation ($\colorbox{yellow}{y}$ and $\colorbox{cyan}{d}$), because $\colorbox{orange}{n}$ is not needed to identify a specific date in time, only has 2 possible values (365 or 366), remains constant for long periods of time (366, 1095, or 2920 days), and can be determined by applying the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world) [leap year rule](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400) to the subsequent year ($\lfloor\colorbox{yellow}{y}\rfloor{+}1$):
 
+$\colorbox{orange}{n}=\begin{cases}
+  366&{\begin{align}\text{if } (\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }4=0\\
+  \land(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }100\neq0\\
+  \lor(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }400=0\end{align}}\\
+  365&{\text{otherwise.}}\end{cases}$
+
+
+I generate all of the dates on my site from [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201st%C2%A0January%201970%2C%20the%20Unix%20epoch) using calculations that I adapted from the [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days) function in [Howard Hinnant](https://howardhinnant.github.io)'s [`date` library](https://howardhinnant.github.io/date/date.html).
+Each tab in the [tabset panel](https://quarto.org/docs/interactive/layout.html#:~:text=Tabset%20Panel,-If%20you%20want%20to%20allow) below shows a different implementation of a function called `unix2date` which converts UNIX time into `year+day` dates.
+In this function, `socy` is an abbreviation for solar cycle and `dote`, `dotc`,  and `yotc` are acronyms for "day of the era", "day of the cycle", and "day of the cycle", respectively. A solar cycle in the Gregorian calendar is [400 years](https://en.wikipedia.org/wiki/Solar_cycle_%28calendar%29#:~:text=400%2Dyear%20cycle%20of%20the%20Gregorian%20calendar). An era is the time that has passed since a starting point called an epoch. The Gregorian decalendar epoch is ``
 
 ::: {.content-hidden unless-profile="javascript"}
 ::: {.content-hidden unless-format="ipynb"}
@@ -94,21 +116,22 @@ To test the code, I will create a separate Quarto markdown (`qmd`) file for each
 # JavaScript
 
 ```{typescript}
-#| tags: [js, func]
+//| eval: false
+//| tags: [js, func]
 function unix2doty(unix) {
   const dote = unix / 86400 + 719468,
-    cykl = Math.floor((
+    socy = Math.floor((
       dote >= 0 ? dote
       : dote - 146096
     ) / 146097),
-  dotc = dote - cykl * 146097,
+  dotc = dote - socy * 146097,
   yotc = Math.floor((dotc
     - Math.floor(dotc / 1460)
     + Math.floor(dotc / 36524)
     - Math.floor(dotc / 146096)
   ) / 365);
   return [
-    yotc + cykl * 400,
+    yotc + socy * 400,
     dotc - (yotc * 365
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
@@ -116,12 +139,14 @@ function unix2doty(unix) {
 ```
 
 ```{typescript}
-#| tags: [js, out0]
+//| eval: false
+//| tags: [js, out0]
 unix2doty(1728000000)
 ```
 
 ```{typescript}
-#| tags: [js, out1]
+//| eval: false
+//| tags: [js, out1]
 unix2doty(1890000000)
 ```
 
@@ -136,21 +161,22 @@ unix2doty(1890000000)
 # Lua
 
 ```{lua}
+--| eval: false
 --| tags: [lua, func]
 function unix2doty(unix)
   local dote = unix / 86400 + 719468
-  local cykl = (
+  local socy = (
     dote >= 0 and dote
     or dote - 146096
   ) // 146097
-  local dotc = dote - cykl * 146097
+  local dotc = dote - socy * 146097
   local yotc = (
     dotc - dotc // 1460
     + dotc // 36524
     - dotc // 146096
   ) // 365
   return {
-    math.floor(yotc + cykl * 400),
+    math.floor(yotc + socy * 400),
     dotc - (yotc * 365
       + yotc // 4
       - yotc // 100
@@ -159,11 +185,13 @@ end
 ```
 
 ```{lua}
+--| eval: false
 --| tags: [lua, out0]
 unix2doty(1728000000)
 ```
 
 ```{lua}
+--| eval: false
 --| tags: [lua, out1]
 unix2doty(1890000000)
 ```
@@ -179,21 +207,22 @@ unix2doty(1890000000)
 # Python
 
 ```{python}
+#| eval: false
 #| tags: [py, func]
 def unix2doty(unix):
     dote = unix / 86400 + 719468
-    cykl = (
+    socy = (
         dote if dote >= 0
         else dote - 146096
     ) // 146097
-    dotc = dote - cykl * 146097
+    dotc = dote - socy * 146097
     yotc = (dotc
         - dotc // 1460
         + dotc // 36524
         - dotc // 146096
     ) // 365
     return [
-        int(yotc + cykl * 400),
+        int(yotc + socy * 400),
         dotc - (yotc * 365
             + yotc // 4
             - yotc // 100
@@ -201,11 +230,13 @@ def unix2doty(unix):
 ```
 
 ```{python}
+#| eval: false
 #| tags: [py, out0]
 unix2doty(1728000000)
 ```
 
 ```{python}
+#| eval: false
 #| tags: [py, out1]
 unix2doty(1890000000)
 ```
@@ -221,21 +252,22 @@ unix2doty(1890000000)
 # R
 
 ```{r}
+#| eval: false
 #| tags: [r, func]
 unix2doty <- function(unix) {
   dote = unix / 86400 + 719468
-  cykl = ifelse(
+  socy = ifelse(
     dote >= 0, dote,
     dote - 146096
   ) %/% 146097
-  dotc = dote - cykl * 146097
+  dotc = dote - socy * 146097
   yotc = (
     dotc - dotc %/% 1460
     + dotc %/% 36524
     - dotc %/% 146096
   ) %/% 365
   c(
-    yotc + cykl * 400,
+    yotc + socy * 400,
     dotc - (yotc * 365
       + yotc %/% 4
       - yotc %/% 100
@@ -244,11 +276,13 @@ unix2doty <- function(unix) {
 
 ```{r}
 #| tags: [r, out0]
+#| eval: false
 unix2doty(1728000000)
 ```
 
 ```{r}
 #| tags: [r, out1]
+#| eval: false
 unix2doty(1890000000)
 ```
 
@@ -263,27 +297,30 @@ unix2doty(1890000000)
 # Bash
 
 ```{bash}
+#| eval: false
 #| tags: [bash, func]
 unix2doty() {
     local unix=${1:-$(date +%s)}
     local dote=$(echo "scale=0; $unix / 86400 + 719468" | bc)
     if [ $(echo "$dote >= 0" | bc) -eq 1 ]; then
-        local cykl=$(echo "scale=0; $dote / 146097" | bc)
+        local socy=$(echo "scale=0; $dote / 146097" | bc)
     else
-        local cykl=$(echo "scale=0; ($dote - 146096) / 146097" | bc)
+        local socy=$(echo "scale=0; ($dote - 146096) / 146097" | bc)
     fi
-    local dotc=$(echo "scale=0; $dote - $cykl * 146097" | bc)
+    local dotc=$(echo "scale=0; $dote - $socy * 146097" | bc)
     local yotc=$(echo "scale=0; ($dotc - $dotc / 1460 + $dotc / 36524 - $dotc / 146096) / 365" | bc)
-    echo "$(echo "$yotc + $cykl * 400" | bc) $(echo "$dotc - ($yotc * 365 + $yotc / 4 - $yotc / 100)" | bc)"
+    echo "$(echo "$yotc + $socy * 400" | bc) $(echo "$dotc - ($yotc * 365 + $yotc / 4 - $yotc / 100)" | bc)"
 }
 ```
 
 ```{bash}
+#| eval: false
 #| tags: [bash, out0]
 unix2doty 1728000000
 ```
 
 ```{bash}
+#| eval: false
 #| tags: [bash, out1]
 unix2doty 1890000000
 ```
@@ -333,3 +370,97 @@ unix2doty 1890000000
 :::
 :::
 :::
+
+I use different programming languages to convert UNIX time in various places on my site. More specifically, I use a [Python](https://en.wikipedia.org/wiki/Python_%28programming_language%29#:~:text=a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language) [post-render script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render) ([date.py](/asset/date.py)) for the dates on the [page that lists all of the articles on my site](/list), a [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20mainly%20for%20embedded%20use%20in%20applications) [filter](https://quarto.org/docs/extensions/filters.html) ([date.lua](/asset/date.lua)) for the PUBLISHED date at the top of each article, and an [include-after-body file](https://quarto.org/docs/output-formats/html-basics.html#includes) that sources a [JavaScript](https://en.wikipedia.org/wiki/JavaScript#:~:text=a%20programming%20language%20and%20core%20technology%20of%20the%20Web) file ([stamp.js](/asset/stamp.js)) for the date in the  above. [citation](http://localhost:4207/dec/date/#citation) information at the bottom of each article.
+
+```{ojs}
+//| echo: false
+unix = {
+  while(true) {
+    yield Date.now();
+  }
+}
+tick = {
+  let i = 0;
+  while (true) {
+    yield Promises.tick(864, ++i);
+  }
+}
+tickTime = tick % 1e5
+// http://howardhinnant.github.io/date_algorithms.html#civil_from_days
+function unix2dote(unix, zone) {
+  return [
+    (unix ?? Date.now()) / 86400000
+    + (zone = zone ?? (
+      10 - Math.round((new Date)
+        .getTimezoneOffset() / 144)
+    ) % 10) / 10 + 719468, zone]}
+function dote2doty(dote, zone = 0) {
+  const socy = Math.floor((
+      dote >= 0 ? dote
+      : dote - 146096
+    ) / 146097),
+  dotc = dote - socy * 146097,
+  yotc = Math.floor((dotc
+    - Math.floor(dotc / 1460)
+    + Math.floor(dotc / 36524)
+    - Math.floor(dotc / 146096)
+  ) / 365);
+  return [
+    yotc + socy * 400,
+    dotc - (yotc * 365
+      + Math.floor(yotc / 4)
+      - Math.floor(yotc / 100)
+  ), zone]}
+function doty2deco(year = 1969, doty = 306, zone = 0) {
+  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`
+}
+ydz = dote2doty(...unix2dote(unix))
+deco = doty2deco(...ydz)
+// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor
+function setStyle(content, style = {}) {
+  function yiq(color) {
+    const {r, g, b} = d3.rgb(color);
+    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
+  }
+  const {
+    background,
+    color = yiq(background) >= 0.6 ? "#111" : "white",
+    padding = "0 1px",
+    borderRadius = "4px",
+    fontWeight = 900,
+    fontSize = "1em",
+    ...rest
+  } = typeof style === "string" ? {background: style} : style;
+  return htl.html`<span style=${{
+    background,
+    color,
+    padding,
+    borderRadius,
+    fontWeight,
+    ...rest
+  }}>${content}</span>`;
+}
+function year2bool(year = 1970) {
+    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+}
+decoYear = deco.slice(0, 4)
+decoDate = deco.slice(5, 8)
+decoTime = deco.slice(8, 14)
+decoTimeZone = deco[15]
+nDaysInYear = 365 + year2bool(ydz[0] + 1)
+fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(8)
+styledDecoYear0 = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])
+styledFracYear = setStyle(fracYear, d3.schemePaired[10])
+styledDecoDate0 = setStyle(decoDate, d3.schemePaired[1])
+styledDecoDate1 = setStyle(decoDate, d3.schemePaired[1])
+styledNdays = setStyle(nDaysInYear * 10, d3.schemePaired[1])
+styledDecoTime0 = setStyle(decoTime, d3.schemePaired[2])
+styledDecoTime1 = setStyle(decoTime, d3.schemePaired[2])
+styledDecoTime2 = setStyle(decoTime, d3.schemePaired[2])
+styledTimeZone0 = setStyle(decoTimeZone, d3.schemePaired[3])
+styledTimeZone1 = setStyle(decoTimeZone, d3.schemePaired[3])
+styledTimeZone2 = setStyle(decoTimeZone, d3.schemePaired[3])
+styledTickTime = setStyle(tickTime, d3.schemePastel2[0])
+```

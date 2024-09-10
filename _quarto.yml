@@ -79,12 +79,12 @@ website:
       - text: Ordinal date
         icon: calendar-event
         href: dec/date/index.qmd
-      - text: Geoposition
-        icon: geo
-        href: dec/geo/index.qmd
       - text: Decimal time
         icon: clock
         href: dec/time/index.qmd
+      - text: Geoposition
+        icon: geo
+        href: dec/geo/index.qmd
       - text: Daylight duration
         icon: sun
         href: dec/day/index.qmd
