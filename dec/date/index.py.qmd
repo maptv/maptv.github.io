@@ -14,7 +14,7 @@ jupyter:
 ---
 
 ```{python}
-#| tags: [py, func]
+#| tags: [py, func, unix2date]
 def unix2date(unix):
     dote = unix / 86400 + 719468
     socy = (
@@ -33,15 +33,7 @@ def unix2date(unix):
             + yotc // 4
             - yotc // 100
     )]
-```
-
-```{python}
-#| tags: [py, out0]
 unix2date(1728000000)
-```
-
-```{python}
-#| tags: [py, out1]
 unix2date(1890000000)
 ```
 
@@ -63,73 +55,6 @@ file ([stamp.js](../../asset/stamp.js)) for the date in the above.
 [citation](http://localhost:4207/dec/date/#citation) information at the
 bottom of each article.
 
-```{python}
-transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
-  if (source === undefined) {
-    source = target;
-    target = html`<div>${source}</div>`;
-  }
-  function sourceInputHandler() {
-    target.removeEventListener("input", targetInputHandler);
-    setTransform(target).to(transform(source.value)).andDispatchEvent();
-    target.addEventListener("input", targetInputHandler);
-  }
-  function targetInputHandler() {
-    source.removeEventListener("input", sourceInputHandler);
-    setTransform(source).to(invert(target.value)).andDispatchEvent();
-    source.addEventListener("input", sourceInputHandler);
-  }
-  source.addEventListener("input", sourceInputHandler);
-  target.addEventListener("input", targetInputHandler);
-  invalidation.then(() => {
-    source.removeEventListener("input", sourceInputHandler);
-    target.removeEventListener("input", targetInputHandler);
-  });
-  sourceInputHandler();
-  return target;
-}
-setTransform = (input) => ({to: (value) => (input.value = value, {andDispatchEvent: (event = new Event("input")) => input.dispatchEvent(event)})});
-function inverse(f) {
-  switch (f) {
-    case identity:  return identity;
-    case Math.sqrt: return square;
-    case Math.log:  return Math.exp;
-    case Math.exp:  return Math.log;
-    default:        return (x => solve(f, x, x));
-  }
-  function solve(f, y, x = 0) {
-    const dx = 1e-6;
-    let steps = 100, deltax, fx, dfx;
-    do {
-      fx = f(x)
-      dfx = (f(x + dx) - fx) || dx;
-      deltax = dx * (fx - y)/dfx
-      x -= deltax;
-    } while (Math.abs(deltax) > dx && --steps > 0);
-    return steps === 0 ? NaN : x;
-  }
-function square(x) {
-    return x * x;
-  }
-}
-function identity(x) {
-  return x;
-}
-function doty2month(doty = 0) {
-    const m = Math.floor((5 * doty + 2) / 153);
-    return Math.floor(m < 10 ? m + 3 : m - 9);
-}
-function month2doty(month = 1) {
-    return Math.floor(
-        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5
-)}
-function doty2dotm(doty = 0) {
-    const m = Math.floor((5 * doty + 2) / 153);
-    return doty - Math.floor((153 * m + 2) / 5) + 1;
-}
-numbers = Array.from({length: 366}, (_, i) => i)
-set(viewof inputDoty, scrubberDoty)
-```
 
 <script type='ojs-module-contents'>
 eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3R5bGVkVGlja1RpbWV9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtkZWNvRGF0ZX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2RlY29bN119PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0zIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtzdHlsZWREZWNvWWVhcjB9KyR7c3R5bGVkRGVjb0RhdGUwfSR7c3R5bGVkRGVjb1RpbWUwfS0ke3N0eWxlZFRpbWVab25lMH08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTQifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZERlY29ZZWFyMX0rJHtzdHlsZWREZWNvRGF0ZTF9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC01In0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtzdHlsZWREZWNvVGltZTF9LSR7c3R5bGVkVGltZVpvbmUxfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7ZGVjby5zbGljZSg1LCA3KX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTcifV19

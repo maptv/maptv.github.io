@@ -26,6 +26,18 @@ format-links:
   - text: JavaScript Markdown
     href: index.js.md
     icon: markdown
+  - text: Julia Jupyter
+    href: index.jl.ipynb
+    icon: journal-richtext
+  - text: Julia Quarto
+    href: index.jl.qmd
+    icon: journal-code
+  - text: Julia Script
+    href: index.jl
+    icon: file-earmark
+  - text: JavaScript Markdown
+    href: index.js.md
+    icon: markdown
   - text: Lua Jupyter
     href: index.lua.ipynb
     icon: journal-richtext
@@ -93,9 +105,9 @@ $$\colorbox{orange}{n}=\begin{cases}
   \lor(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }400=0\end{align}}\\\\
   365&{\text{otherwise.}}\end{cases}$$
 
-In the Dec year length equation, `%` is the [modulo](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) operator, $\land$ is the logical [conjunction](https://en.wikipedia.org/wiki/Logical_conjunction) operator, and $\lor$ is the logical [disjunction](https://en.wikipedia.org/wiki/Logical_disjunction) operator, and $\lfloor\colorbox{yellow}{y}\rfloor{+}1$ is the subsequent year. The easiest way to explain this equation is in terms of the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world): the length of a Dec year is 366 days if the subsequent year is a Gregorian calendar [leap year](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400) and 365 days otherwise.
+In the Dec year length equation, `%` is the [modulo](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) operator, $\land$ is the logical [conjunction](https://en.wikipedia.org/wiki/Logical_conjunction) operator, and $\lor$ is the logical [disjunction](https://en.wikipedia.org/wiki/Logical_disjunction) operator. The easiest way to explain this equation is in terms of the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world): the length of a Dec year is 366 days if the subsequent year ($\lfloor\colorbox{yellow}{y}\rfloor{+}1$ ) is a Gregorian calendar [leap year](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400) and 365 days otherwise.
 
-Dec dates look almost identical to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) [ordinal dates](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year). On the surface, it appears that the only difference is their [delimiter](https://en.wikipedia.org/wiki/Delimiter#:~:text=a%20sequence%20of%20one%20or%20more%20characters%20for%20specifying%20the%20boundary%20between%20separate%2C%20independent%20regions%20in%20plain%20text) (`+` versus `-`), but they also have different [starting values](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) (0 versus 1), [epochs](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era) (Year 0 [Day 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1"} versus Year -1 [Day 306]{.underline .blue data-bs-toggle="tooltip" data-bs-title="January 1"}), and [year length](https://en.wikipedia.org/wiki/Intercalation_(timekeeping)#:~:text=the%20insertion%20of%20a%20leap%20day%2C%20week%2C%20or%20month) equations.
+Dec dates look almost identical to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) [ordinal dates](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year). On the surface, it appears that the only difference is their [delimiter](https://en.wikipedia.org/wiki/Delimiter#:~:text=a%20sequence%20of%20one%20or%20more%20characters%20for%20specifying%20the%20boundary%20between%20separate%2C%20independent%20regions%20in%20plain%20text) (`+` versus `-`), but they also have different [starting values](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) (0 versus 1), [epochs](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era) (Year 0 [Day 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1"} versus Year -1 [Day 306]{.underline .blue data-bs-toggle="tooltip" data-bs-title="January 1"}), and [year length](https://en.wikipedia.org/wiki/Intercalation_(timekeeping)#:~:text=the%20insertion%20of%20a%20leap%20day%2C%20week%2C%20or%20month) equations ($\lfloor\colorbox{yellow}{y}\rfloor{+}1$ versus $\lfloor\colorbox{yellow}{y}\rfloor$).
 
 60-day shift
 
@@ -174,7 +186,7 @@ In this function, `socy` is an abbreviation for solar cycle and `dote`, `dotc`, 
 
 ```{typescript}
 //| eval: false
-//| tags: [js, func]
+//| tags: [js, func, unix2date]
 function unix2date(unix) {
   const dote = unix / 86400 + 719468,
     socy = Math.floor((
@@ -193,19 +205,44 @@ function unix2date(unix) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   )]}
-```
-
-```{typescript}
-//| eval: false
-//| tags: [js, out0]
 unix2date(1728000000)
-```
-
-```{typescript}
-//| eval: false
-//| tags: [js, out1]
 unix2date(1890000000)
 ```
+
+:::
+:::
+:::
+
+::: {.content-hidden unless-profile="julia"}
+::: {.content-hidden unless-format="ipynb"}
+::: {.content-hidden when-meta="knitr"}
+
+<!-- # Julia -->
+
+<!-- ```{julia} -->
+<!-- #| eval: false -->
+<!-- #| tags: [jl, func, unix2date] -->
+<!-- function unix2date(unix) -->
+<!--     dote = unix / 86400 + 719468 -->
+<!--     socy = ( -->
+<!--         dote >= 0 ? dote -->
+<!--         : dote - 146096 -->
+<!--         ) ÷ 146097 -->
+<!--     dotc = dote - socy * 146097 -->
+<!--     yotc = ( -->
+<!--         dotc - dotc ÷ 1460 -->
+<!--         + dotc ÷ 36524 -->
+<!--         - dotc ÷ 146096 -->
+<!--     ) ÷ 365 -->
+<!--     return Int( -->
+<!--         yotc + socy * 400), -->
+<!--     dotc - (yotc * 365 -->
+<!--         + yotc ÷ 4 -->
+<!--         - yotc ÷ 100) -->
+<!-- end -->
+<!-- unix2date(1728000000) -->
+<!-- unix2date(1890000000) -->
+<!-- ``` -->
 
 :::
 :::
@@ -219,7 +256,7 @@ unix2date(1890000000)
 
 ```{lua}
 --| eval: false
---| tags: [lua, func]
+--| tags: [lua, func, unix2date]
 function unix2date(unix)
   local dote = unix / 86400 + 719468
   local socy = (
@@ -239,17 +276,7 @@ function unix2date(unix)
       - yotc // 100
   )}
 end
-```
-
-```{lua}
---| eval: false
---| tags: [lua, out0]
 unix2date(1728000000)
-```
-
-```{lua}
---| eval: false
---| tags: [lua, out1]
 unix2date(1890000000)
 ```
 
@@ -265,7 +292,7 @@ unix2date(1890000000)
 
 ```{python}
 #| eval: false
-#| tags: [py, func]
+#| tags: [py, func, unix2date]
 def unix2date(unix):
     dote = unix / 86400 + 719468
     socy = (
@@ -284,17 +311,7 @@ def unix2date(unix):
             + yotc // 4
             - yotc // 100
     )]
-```
-
-```{python}
-#| eval: false
-#| tags: [py, out0]
 unix2date(1728000000)
-```
-
-```{python}
-#| eval: false
-#| tags: [py, out1]
 unix2date(1890000000)
 ```
 
@@ -310,7 +327,7 @@ unix2date(1890000000)
 
 ```{r}
 #| eval: false
-#| tags: [r, func]
+#| tags: [r, func, unix2date]
 unix2date <- function(unix) {
   dote = unix / 86400 + 719468
   socy = ifelse(
@@ -329,17 +346,7 @@ unix2date <- function(unix) {
       + yotc %/% 4
       - yotc %/% 100
 ))}
-```
-
-```{r}
-#| tags: [r, out0]
-#| eval: false
 unix2date(1728000000)
-```
-
-```{r}
-#| tags: [r, out1]
-#| eval: false
 unix2date(1890000000)
 ```
 
@@ -355,7 +362,7 @@ unix2date(1890000000)
 
 ```{bash}
 #| eval: false
-#| tags: [bash, func]
+#| tags: [sh, func, unix2date]
 unix2date() {
     local unix=${1:-$(date +%s)}
     local dote=$(echo "scale=0; $unix / 86400 + 719468" | bc)
@@ -368,17 +375,7 @@ unix2date() {
     local yotc=$(echo "scale=0; ($dotc - $dotc / 1460 + $dotc / 36524 - $dotc / 146096) / 365" | bc)
     echo "$(echo "$yotc + $socy * 400" | bc) $(echo "$dotc - ($yotc * 365 + $yotc / 4 - $yotc / 100)" | bc)"
 }
-```
-
-```{bash}
-#| eval: false
-#| tags: [bash, out0]
 unix2date 1728000000
-```
-
-```{bash}
-#| eval: false
-#| tags: [bash, out1]
 unix2date 1890000000
 ```
 
@@ -393,35 +390,23 @@ unix2date 1890000000
 
 # JavaScript
 
-{{< embed index.js.ipynb#func echo=true >}}
+{{< embed index.js.ipynb#unix2date echo=true >}}
 
-{{< embed index.js.ipynb#out0 echo=true >}}
+# Julia
 
-{{< embed index.js.ipynb#out1 echo=true >}}
+{{< embed index.jl.ipynb#unix2date echo=true >}}
 
 # Lua
 
-{{< embed index.lua.ipynb#func echo=true >}}
-
-{{< embed index.lua.ipynb#out0 echo=true >}}
-
-{{< embed index.lua.ipynb#out1 echo=true >}}
+{{< embed index.lua.ipynb#unix2date echo=true >}}
 
 # Python
 
-{{< embed index.py.ipynb#func echo=true >}}
-
-{{< embed index.py.ipynb#out0 echo=true >}}
-
-{{< embed index.py.ipynb#out1 echo=true >}}
+{{< embed index.py.ipynb#unix2date echo=true >}}
 
 # R
 
-{{< embed index.r.ipynb#func echo=true >}}
-
-{{< embed index.r.ipynb#out0 echo=true >}}
-
-{{< embed index.r.ipynb#out1 echo=true >}}
+{{< embed index.r.ipynb#unix2date echo=true >}}
 
 :::
 :::

@@ -11,68 +11,127 @@
 #     display_name: R
 #     language: R
 #     name: ir
-#     path: /Users/martinlaptev/Library/Jupyter/kernels/ir
 # ---
 
 # %% [markdown]
 # # Ordinal date
 #
 # \| [Martin Laptev]()  
-# 2024+194
+# 2024+197
 #
 # My website serves as a demonstration of both the
 # [Quarto](https://quarto.org) publishing system and the [Dec](../../dec)
 # measurement system. I use several clever hacks to get Quarto to display
-# all of the dates on my website in the Dec `year+day` format. Even if you
-# are not interested in Dec dates, you may still benefit from learning
-# about Quarto document customization via
-# [filters](https://quarto.org/docs/extensions/filters.html), [render
+# all of the dates on my website in the Dec `year+day` format. If you are
+# not interested in Dec dates, you may want to skip to the section on
+# Quarto [filters](https://quarto.org/docs/extensions/filters.html),
+# [render
 # scripts](https://quarto.org/docs/projects/scripts.html#pre-and-post-render),
 # and [include
 # files](https://quarto.org/docs/output-formats/html-basics.html#includes).
 #
 # ### Dec dates
 #
-# Dec dates are similar to [ISO
+# The `year+day` format of Dec dates is derived from the year of the era
+# equation:
+# $\colorbox{yellow}{y}{=}\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}{\div}\colorbox{orange}{n}$.
+# In this equation, $\colorbox{yellow}{y}$ is the decimal years since the
+# Dec epoch (Year 0 <span class="blue" data-bs-toggle="tooltip"
+# data-bs-title="March 1"><u>Day 0</u></span>),
+# $\lfloor\colorbox{yellow}{y}\rfloor$ is $\colorbox{yellow}{y}$
+# [floored](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
+# to obtain an
+# [integer](https://en.wikipedia.org/wiki/Integer#:~:text=the%20number%20zero%20%280%29%2C%20a%20positive%20natural%20number%20%281%2C%202%2C%203%2C%20.%20.%20.%29%2C%20or%20the%20negation%20of%20a%20positive%20natural%20number%20%28%E2%88%921%2C%20%E2%88%922%2C%20%E2%88%923%2C%20.%20.%20.%29)
+# year, $\colorbox{cyan}{d}$ is the
+# [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
+# day of the year, and $\colorbox{orange}{n}$ is the total number of days
+# in the year.
+#
+# Dec dates only include the first two terms from the equation above
+# ($\colorbox{yellow}{y}$ and $\colorbox{cyan}{d}$), because
+# $\colorbox{orange}{n}$ is not needed to identify a specific date in
+# time, only has 2 possible values (365 or 366), remains constant for long
+# periods of time (366, 1095, or 2920 days), and can be calculated using
+# the Dec year length equation:
+#
+# $$\colorbox{orange}{n}=\begin{cases}
+#   366&{\begin{align}\text{if } (\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }4=0\\
+#   \land(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }100\neq0\\
+#   \lor(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }400=0\end{align}}\\\\
+#   365&{\text{otherwise.}}\end{cases}$$
+#
+# In the Dec year length equation, `%` is the
+# [modulo](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+# operator, $\land$ is the logical
+# [conjunction](https://en.wikipedia.org/wiki/Logical_conjunction)
+# operator, and $\lor$ is the logical
+# [disjunction](https://en.wikipedia.org/wiki/Logical_disjunction)
+# operator, and $\lfloor\colorbox{yellow}{y}\rfloor{+}1$ is the subsequent
+# year. The easiest way to explain this equation is in terms of the
+# [Gregorian
+# calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world):
+# the length of a Dec year is 366 days if the subsequent year is a
+# Gregorian calendar [leap
+# year](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400)
+# and 365 days otherwise.
+#
+# Dec dates look almost identical to [ISO
 # 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
 # [ordinal
-# dates](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year)
-# in that both count the days since the start of the year. Despite this
-# similarity, ISO 8601 and Dec dates differ in their
-# [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era),
-# [intercalation](https://en.wikipedia.org/wiki/Intercalation_(timekeeping)#:~:text=the%20insertion%20of%20a%20leap%20day%2C%20week%2C%20or%20month)
-# system, and choice of
-# [delimiter](https://en.wikipedia.org/wiki/Delimiter#:~:text=a%20sequence%20of%20one%20or%20more%20characters%20for%20specifying%20the%20boundary%20between%20separate%2C%20independent%20regions%20in%20plain%20text).
+# dates](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year).
+# On the surface, it appears that the only difference is their
+# [delimiter](https://en.wikipedia.org/wiki/Delimiter#:~:text=a%20sequence%20of%20one%20or%20more%20characters%20for%20specifying%20the%20boundary%20between%20separate%2C%20independent%20regions%20in%20plain%20text)
+# (`+` versus `-`), but they also have different [starting
+# values](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
+# (0 versus 1),
+# [epochs](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era)
+# (Year 0 <span class="blue" data-bs-toggle="tooltip"
+# data-bs-title="March 1"><u>Day 0</u></span> versus Year -1
+# <span class="blue" data-bs-toggle="tooltip"
+# data-bs-title="January 1"><u>Day 306</u></span>), and [year
+# length](https://en.wikipedia.org/wiki/Intercalation_(timekeeping)#:~:text=the%20insertion%20of%20a%20leap%20day%2C%20week%2C%20or%20month)
+# equations.
 #
-# The Dec epoch, <span class="blue" data-bs-toggle="tooltip"
-# data-bs-title="0000-03-01"><u>Year 0 Day 0</u></span>, is 60 days after
-# the ISO 8601 epoch, <span class="blue" data-bs-toggle="tooltip"
-# data-bs-title="0000-01-01"><u>Year -1 Day 306</u></span>. This 60-day
-# shift enables the `day` in `year+day` to function independently of the
-# `year` as the date of annual events such as anniversaries.
+# 60-day shift
+#
+# Animation
+#
+# Conversion functions year to year, doty to month and dotm, and vice
+# versa. Conclusion: it is easier to work with unix time.
+#
+# Can we also find the day of the week? First, use dote2dotw function.
+# Conclusion: it is easier to work with deks instead of weeks.
+#
+# days of the dek
+#
+# Dec finger counting method svg
+#
+# The Dec epoch, . This 60-day shift enables the `day` in `year+day` to
+# function independently of the `year` as the date of annual events such
+# as anniversaries.
 #
 # Use the sliders below to select a special date like your birthday🎂! You
-# can also press the Play▶️button and then sit back and watch the sliders
-# cycle🔄back and forth through every day of the year and see the
-# corresponding month and day of the month values.
-#
-# The sliders cycle through an entire year in 36.5 beats, a million times
-# faster🏎️than the actual speed of time! A Dec beat is a centimilliday (1%
-# of a milliday) and 86.4% as long as a second and can be thought of as a
-# heart❤️beat or
+# can also press the Play▶️button to make the sliders cycle🔄back and
+# forth through every day of the year and its corresponding month and day
+# of the month.
+
+# %%
+
+# %% [markdown]
+# The animation above goes through an entire year in 36.5 beats, a million
+# times faster🏎️than the actual speed of time! A Dec beat is a
+# centimilliday (1% of a milliday, $10^{-5}$ of a day, or 86.4% of a
+# second), which can be thought of as a heart❤️beat or
 # musical🎵[beat](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=the%20beat%20is%20the%20basic%20unit%20of%20time)
 # with a constant
 # [rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=The%20American%20Heart%20Association%20states%20the%20normal%20resting%20adult%20human%20heart%20rate%20is%2060%2D100%20bpm.)
 # or
 # [tempo](https://en.wikipedia.org/wiki/Tempo#Basic_tempo_markings:~:text=Adagietto%20%E2%80%93%20slower%20than,56%E2%80%93108%C2%A0bpm)
 # of 69.4̅ beats per minute. In addition to displaying time on
-# clocks🕰️and⌚️watches, `beats` can be used to measure durations, such as
+# clocks🕰️and⌚️watches, beats can be used to measure durations, such as
 # the time since this webpage was loaded:
 # <span id="ojs-element-id-1"></span>.
-
-# %%
-
-# %% [markdown]
+#
 # For example, the current day of the year (doty) is Day
 # <span id="ojs-element-id-2"></span>.
 #
@@ -82,24 +141,6 @@
 # but any calendar with fixed rules can be turned in a Dec calendar
 # (Decalendar) by expressing its dates as zero-based moving its starting
 # point ().
-#
-# The various Decalendars can have different
-# [epochs](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era),
-# [year
-# lengths](https://en.wikipedia.org/wiki/Year#:~:text=the%20mean%20length%20of%20the%20Gregorian%20calendar%20year%20is%20365.2425%20days),
-# and [leap year
-# rules](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400).
-# It should be possible to decalenderize any
-# [rule-based](https://en.wikipedia.org/wiki/Rule-based_system#:~:text=a%20computer%20system%20in%20which%20domain%2Dspecific%20knowledge%20is%20represented%20in%20the%20form%20of%20rules%20and%20general%2Dpurpose%20reasoning%20is%20used%20to%20solve%20problems%20in%20the%20domain)
-# calendar system, but
-# [lunisolar](https://en.wikipedia.org/wiki/Lunisolar_calendar#:~:text=indicates%20both%20the%20Moon%20phase%20and%20the%20time%20of%20the%20solar%20year)
-# decalendars are likely to be more difficult to implement than
-# [solar](https://en.wikipedia.org/wiki/Solar_calendar#:~:text=a%20calendar%20whose%20dates%20indicate%20the%20season)
-# and
-# [lunar](https://en.wikipedia.org/wiki/Lunar_calendar#:~:text=a%20calendar%20based%20on%20the%20monthly%20cycles%20of%20the%20Moon%27s%20phases)
-# decalendars because of the complexity of their
-# [intercalation](https://en.wikipedia.org/wiki/Intercalation_%28timekeeping%29#:~:text=the%20insertion%20of%20a%20leap%20day%2C%20week%2C%20or%20month%20into%20some%20calendar%20years%20to%20make%20the%20calendar%20follow%20the%20seasons%20or%20moon%20phases)
-# calculations.
 #
 # with simple arithmetic, Decalendar is
 # [perennial](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=applies%20to%20any%20year%2C%20keeping%20the%20same%20dates),
@@ -172,30 +213,6 @@
 # I will discuss Dec times (<span id="ojs-element-id-6"></span>) in the
 # [next article](../../dec/time) in the [Measurement section](../../dec).
 #
-# Dec dates are based on the decimal year date equation:
-# $\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}{\div}\colorbox{orange}{n}{=}\colorbox{yellow}{y}$.
-# In this equation, $\lfloor\colorbox{yellow}{y}\rfloor$ is the year,
-# $\colorbox{cyan}{d}$ is the day of the year, $\colorbox{orange}{n}$ is
-# the total number of days in the year, and the $\colorbox{yellow}{y}$ is
-# the decimal year.
-#
-# Dates in the `year+day` format only include the first two terms from the
-# decimal year date equation ($\colorbox{yellow}{y}$ and
-# $\colorbox{cyan}{d}$), because $\colorbox{orange}{n}$ is not needed to
-# identify a specific date in time, only has 2 possible values (365 or
-# 366), remains constant for long periods of time (366, 1095, or 2920
-# days), and can be determined by applying the [Gregorian
-# calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
-# [leap year
-# rule](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400)
-# to the subsequent year ($\lfloor\colorbox{yellow}{y}\rfloor{+}1$):
-#
-# $\colorbox{orange}{n}=\begin{cases}
-#   366&{\begin{align}\text{if } (\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }4=0\\
-#   \land(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }100\neq0\\
-#   \lor(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }400=0\end{align}}\\
-#   365&{\text{otherwise.}}\end{cases}$
-#
 # I generate all of the dates on my site from [UNIX
 # time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201st%C2%A0January%201970%2C%20the%20Unix%20epoch)
 # using calculations that I adapted from the
@@ -221,7 +238,7 @@
 #
 # # R
 
-# %% tags=["r", "func"]
+# %% tags=["r", "func", "unix2date"]
 unix2date <- function(unix) {
   dote = unix / 86400 + 719468
   socy = ifelse(
@@ -240,11 +257,7 @@ unix2date <- function(unix) {
       + yotc %/% 4
       - yotc %/% 100
 ))}
-
-# %% tags=["r", "out0"]
 unix2date(1728000000)
-
-# %% tags=["r", "out1"]
 unix2date(1890000000)
 
 # %% [markdown]
@@ -267,73 +280,6 @@ unix2date(1890000000)
 # bottom of each article.
 
 # %%
-
-# %%
-transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
-  if (source === undefined) {
-    source = target;
-    target = html`<div>${source}</div>`;
-  }
-  function sourceInputHandler() {
-    target.removeEventListener("input", targetInputHandler);
-    setTransform(target).to(transform(source.value)).andDispatchEvent();
-    target.addEventListener("input", targetInputHandler);
-  }
-  function targetInputHandler() {
-    source.removeEventListener("input", sourceInputHandler);
-    setTransform(source).to(invert(target.value)).andDispatchEvent();
-    source.addEventListener("input", sourceInputHandler);
-  }
-  source.addEventListener("input", sourceInputHandler);
-  target.addEventListener("input", targetInputHandler);
-  invalidation.then(() => {
-    source.removeEventListener("input", sourceInputHandler);
-    target.removeEventListener("input", targetInputHandler);
-  });
-  sourceInputHandler();
-  return target;
-}
-setTransform = (input) => ({to: (value) => (input.value = value, {andDispatchEvent: (event = new Event("input")) => input.dispatchEvent(event)})});
-function inverse(f) {
-  switch (f) {
-    case identity:  return identity;
-    case Math.sqrt: return square;
-    case Math.log:  return Math.exp;
-    case Math.exp:  return Math.log;
-    default:        return (x => solve(f, x, x));
-  }
-  function solve(f, y, x = 0) {
-    const dx = 1e-6;
-    let steps = 100, deltax, fx, dfx;
-    do {
-      fx = f(x)
-      dfx = (f(x + dx) - fx) || dx;
-      deltax = dx * (fx - y)/dfx
-      x -= deltax;
-    } while (Math.abs(deltax) > dx && --steps > 0);
-    return steps === 0 ? NaN : x;
-  }
-function square(x) {
-    return x * x;
-  }
-}
-function identity(x) {
-  return x;
-}
-function doty2month(doty = 0) {
-    const m = Math.floor((5 * doty + 2) / 153);
-    return Math.floor(m < 10 ? m + 3 : m - 9);
-}
-function month2doty(month = 1) {
-    return Math.floor(
-        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5
-)}
-function doty2dotm(doty = 0) {
-    const m = Math.floor((5 * doty + 2) / 153);
-    return doty - Math.floor((153 * m + 2) / 5) + 1;
-}
-numbers = Array.from({length: 366}, (_, i) => i)
-set(viewof inputDoty, scrubberDoty)
 
 # %% [markdown]
 # <script type='ojs-module-contents'>
