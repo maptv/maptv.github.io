@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -307,16 +307,16 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../dec/geo/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-geo" role="img">
+  <a href="../../dec/time/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-clock" role="img">
 </i> 
- <span class="menu-text">Geoposition</span></a>
+ <span class="menu-text">Decimal time</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../dec/time/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-clock" role="img">
+  <a href="../../dec/geo/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-geo" role="img">
 </i> 
- <span class="menu-text">Decimal time</span></a>
+ <span class="menu-text">Geoposition</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -472,7 +472,7 @@ window.Quarto = {
 <p><a href="https://en.wikipedia.org/wiki/Statistical_classification">Classification</a> <a href="https://en.wikipedia.org/wiki/Algorithm">algorithms</a> algorithms can estimate <span class="math inline">\(n \times k\)</span> class membership probabilities for each dataset, where n is the number of data points in the dataset and k is the number of classes in the <a href="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets#:~:text=training%20data%20set%2C%5B3%5D%20which%20is%20a%20set%20of%20examples%20used%20to%20fit%20the%20parameters%20(e.g.%20weights%20of%20connections%20between%20neurons%20in%20artificial%20neural%20networks)%20of%20the%20model.">training dataset</a>. Similarly, the <a href="https://scikit-learn.org/stable/modules/mixture.html">Gaussian Mixtures</a> <a href="https://scikit-learn.org/stable/modules/clustering.html">clustering</a> algorithm can generate <span class="math inline">\(n \times k\)</span> cluster label probabilities.</p>
 <p>Besides a data point and the Gaussian Mixtures models can estimate cluster membership probability. point , especially <a href="https://en.wikipedia.org/wiki/Logistic_regression">Logistic Regression</a> and <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes</a>. Every classification algorithm can estimate probabilities of belonging to each class.</p>
 <p><span class="math inline">\(\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}\)</span></p>
-<div id="a5051c74" class="cell" data-execution_count="1">
+<div id="a5051c74" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -486,7 +486,7 @@ window.Quarto = {
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> ConfusionMatrixDisplay</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="e7e4c73d" class="cell" data-execution_count="2">
+<div id="e7e4c73d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -563,18 +563,18 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="52f1f6eb" class="cell" data-execution_count="3">
+<div id="52f1f6eb" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">"species"</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.drop(<span class="st">"species"</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.get_dummies(X, columns<span class="op">=</span>[<span class="st">"island"</span>, <span class="st">"sex"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3e7643a4" class="cell" data-execution_count="4">
+<div id="3e7643a4" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knni <span class="op">=</span> KNNImputer()</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>colnames <span class="op">=</span> X.columns</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> knni.fit_transform(X)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.DataFrame(X, columns<span class="op">=</span>colnames)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cfcee4fa" class="cell" data-execution_count="5">
+<div id="cfcee4fa" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://blog.4dcu.be/programming/2021/03/19/Code-Nugget-PCA-with-loadings.html</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pipeline <span class="op">=</span> Pipeline([</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"scaler"</span>, StandardScaler()),</span>
@@ -664,7 +664,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="4b8e34d5" class="cell" data-tags="[]" data-execution_count="6">
+<div id="4b8e34d5" class="cell" data-tags="[]" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"count"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -674,7 +674,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="9b50cdde" class="cell" data-tags="[]" data-execution_count="7">
+<div id="9b50cdde" class="cell" data-tags="[]" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"density"</span>)<span class="op">;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -685,7 +685,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="bdf1ed4c" class="cell" data-tags="[]" data-execution_count="8">
+<div id="bdf1ed4c" class="cell" data-tags="[]" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, rug<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"proportion"</span>)<span class="op">;</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -696,7 +696,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="4bcb587c" class="cell" data-tags="[]" data-execution_count="9">
+<div id="4bcb587c" class="cell" data-tags="[]" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'PDF and CDF comparision'</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(df[[<span class="st">"bill_length_mm"</span>, <span class="st">"flipper_length_mm"</span>]], kde<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>])<span class="op">;</span></span>
@@ -711,10 +711,10 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="e7aa8bd3" class="cell" data-tags="[]" data-execution_count="10">
+<div id="e7aa8bd3" class="cell" data-tags="[]" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pathlib</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f5daf153" class="cell" data-tags="[]" data-execution_count="11">
+<div id="f5daf153" class="cell" data-tags="[]" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">10000</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.33</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>lr.fit(X_train, y_train)</span>
@@ -730,7 +730,7 @@ window.Quarto = {
 </div>
 <section id="logistic-function-visualization" class="level1">
 <h1>Logistic function visualization</h1>
-<div id="4969eb21" class="cell" data-tags="[]" data-execution_count="12">
+<div id="4969eb21" class="cell" data-tags="[]" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://github.com/ageron/handson-ml3/blob/main/04_training_linear_models.ipynb</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>lim <span class="op">=</span> <span class="dv">6</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="op">-</span>lim, lim, <span class="dv">100</span>)</span>
@@ -762,7 +762,7 @@ window.Quarto = {
 <section id="step-1.-write-out-the-linear-regression-equation" class="level2">
 <h2 class="anchored" data-anchor-id="step-1.-write-out-the-linear-regression-equation">Step 1. Write out the linear regression equation</h2>
 <p><span class="math inline">\(\Huge y=\beta_0+\beta_1 x_1+...+\beta_n x_n\)</span> ## Step 2. The logistic regression equation is the same as above except output is log odds <span class="math inline">\(\Huge log(odds)=\beta_0+\beta_1 x_1+...+\beta_n x_n\)</span> ## Step 3. Exponentiate both sides of the logistic regression equation to get odds <span class="math inline">\(\Huge odds=e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}\)</span> ## Step 4. Write out the probability equation <span class="math inline">\(\Huge p=\frac{odds}{1+odds}\)</span> ## Step 5. Plug odds (from step 3) into the probability equation <span class="math inline">\(\Huge p=\frac{e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}{1+e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}\)</span> ## Step 6. Divide the numerator and denominator by the odds (from step 3) <span class="math inline">\(\Huge p=\frac{1}{1+e^{-(\beta_0+\beta_1 x_1+...+\beta_n x_n)}}\)</span></p>
-<div id="b8b76b01" class="cell" data-tags="[]" data-execution_count="13">
+<div id="b8b76b01" class="cell" data-tags="[]" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>gnb <span class="op">=</span> GaussianNB()</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>gnb.fit(X_train, y_train)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> ConfusionMatrixDisplay.from_estimator(gnb, X_test, y_test)</span>
@@ -775,10 +775,10 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="fdc85ad0" class="cell" data-tags="[]" data-execution_count="14">
+<div id="fdc85ad0" class="cell" data-tags="[]" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ct <span class="op">=</span> pd.crosstab(df[<span class="st">"species"</span>], df[<span class="st">"body_mass_g"</span>] <span class="op">&gt;</span> df[<span class="st">"body_mass_g"</span>].mean(), margins<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="8e830f53" class="cell" data-tags="[]" data-execution_count="15">
+<div id="8e830f53" class="cell" data-tags="[]" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ct</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <div>
@@ -830,28 +830,28 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="2c6f22b5" class="cell" data-tags="[]" data-execution_count="16">
+<div id="2c6f22b5" class="cell" data-tags="[]" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>likelihood <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">0</span>, <span class="dv">2</span>]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>likelihood</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>0.8355263157894737</code></pre>
 </div>
 </div>
-<div id="1599688c" class="cell" data-tags="[]" data-execution_count="17">
+<div id="1599688c" class="cell" data-tags="[]" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>prior <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">2</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">2</span>]</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>prior</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>0.4418604651162791</code></pre>
 </div>
 </div>
-<div id="d4d59f0b" class="cell" data-tags="[]" data-execution_count="18">
+<div id="d4d59f0b" class="cell" data-tags="[]" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span>  ct.iloc[<span class="dv">3</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">2</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>norm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>0.5668604651162791</code></pre>
 </div>
 </div>
-<div id="1b8c4315" class="cell" data-tags="[]" data-execution_count="19">
+<div id="1b8c4315" class="cell" data-tags="[]" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>posterior <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">0</span>]</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>posterior</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
@@ -859,10 +859,10 @@ window.Quarto = {
 </div>
 </div>
 <p><span class="math inline">\(\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}\)</span></p>
-<div id="0f51d484" class="cell" data-tags="[]" data-execution_count="20">
+<div id="0f51d484" class="cell" data-tags="[]" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> likelihood <span class="op">*</span> prior <span class="op">/</span> norm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b7099ec1" class="cell" data-tags="[]" data-execution_count="21">
+<div id="b7099ec1" class="cell" data-tags="[]" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"body_mass_g"</span>] <span class="op">&gt;</span> df[<span class="st">"body_mass_g"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>0      False
@@ -879,7 +879,7 @@ window.Quarto = {
 Name: body_mass_g, Length: 344, dtype: bool</code></pre>
 </div>
 </div>
-<div id="775a6756" class="cell" data-execution_count="22">
+<div id="775a6756" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gnb.fit([df["body_mass_g"] &gt; df["body_mass_g"].mean()], y)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
@@ -900,64 +900,7 @@ Name: body_mass_g, Length: 344, dtype: bool</code></pre>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-laptev2024" class="csl-entry quarto-appendix-citeas" role="listitem">
 Laptev, Martin. 2024. <span>“Probability.”</span> 2024. <a href="https://maptv.github.io/ml/prob/">https://maptv.github.io/ml/prob/</a>.
 </div></div></section></div></main> <!-- /main -->
-<script>
-// https://howardhinnant.github.io/date_algorithms.html#days_from_civil
-function unix2doty() {
-  const dote = Date.now() / 86400000 + 719468,
-    cykl = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
-  dotc = dote - cykl * 146097,
-  yotc = Math.floor((dotc
-    - Math.floor(dotc / 1460)
-    + Math.floor(dotc / 36524)
-    - Math.floor(dotc / 146096)
-  ) / 365);
-  return [
-    yotc + cykl * 400,
-    dotc - (yotc * 365
-      + Math.floor(yotc / 4)
-      - Math.floor(yotc / 100)
-)]}
-function doty2date(year = 1969, doty = 306) {
-  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}`
-}
-function doty2time(year = 1969, doty = 306, zone = 0) {
-  return `${String(doty % 1 * 10).slice(0, 6)}-${zone}`
-}
-function setStamp() {
-  document.getElementById("date").innerText = doty2date(...unix2doty());
-  document.getElementById("time").innerText = doty2time(...unix2doty());
-}
-
-const nbc = document.getElementsByClassName("navbar-brand-container"),
-  dat = document.createElement("div"),
-  tim = document.createElement("div"),
-  cal = document.createElement("i"),
-  tik = document.createElement("i"),
-  dot = document.createElement("i"),
-  url = new URLSearchParams(window.location.search),
-  key = url.keys().filter(v => !isNaN(v) && !isNaN(parseFloat(v)) && isFinite(v)).toArray(),
-  val = url.values().filter(v => !isNaN(v) && !isNaN(parseFloat(v)) && isFinite(v)).toArray();
-console.log("k", [...url.keys()])
-console.log("v", [...url.values()])
-console.log("v", val)
-console.log("k", key)
-cal.classList.add("bi", "bi-calendar");
-cal.setAttribute("role", "img");
-tik.classList.add("bi", "bi-clock");
-tik.setAttribute("role", "img");
-dat.setAttribute("id", "date");
-tim.setAttribute("id", "time");
-dot.setAttribute("id", "dote");
-nbc[0].appendChild(cal);
-nbc[0].appendChild(dat);
-nbc[0].appendChild(tik);
-nbc[0].appendChild(tim);
-nbc[0].appendChild(dot);
-setInterval(setStamp);
-</script>
+<script src="../../asset/stamp.js"></script>
 <style>
 #title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
 #title-block-header { margin: 0px; }
@@ -1927,7 +1870,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

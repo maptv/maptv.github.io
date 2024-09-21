@@ -2,16 +2,17 @@
 title: Ordinal date
 jupyter:
   jupytext:
-    encoding: '-- -*- coding: utf-8 -*-'
+    encoding: '# -*- coding: utf-8 -*-'
     text_representation:
       extension: .qmd
       format_name: quarto
       format_version: '1.0'
       jupytext_version: 1.16.4
   kernelspec:
-    display_name: Lua  (XLua)
-    language: lua
-    name: xlua
+    display_name: Bash
+    language: bash
+    name: bash
+    path: /Users/martinlaptev/Library/Jupyter/kernels/bash
 ---
 
 
@@ -234,31 +235,24 @@ epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20ch
 The Dec epoch is <span class="blue" data-bs-toggle="tooltip"
 data-bs-title="0000-03-01"><u>Year 0 Day 0</u></span>.
 
-# Lua
+# Bash
 
-```{lua}
---| tags: [lua, func, unix2date]
-function unix2date(unix)
-  local dote = unix / 86400 + 719468
-  local socy = (
-    dote >= 0 and dote
-    or dote - 146096
-  ) // 146097
-  local dotc = dote - socy * 146097
-  local yotc = (
-    dotc - dotc // 1460
-    + dotc // 36524
-    - dotc // 146096
-  ) // 365
-  return {
-    math.floor(yotc + socy * 400),
-    dotc - (yotc * 365
-      + yotc // 4
-      - yotc // 100
-  )}
-end
-unix2date(1728000000)
-unix2date(1890000000)
+```{bash}
+#| tags: [sh, func, unix2date]
+unix2date() {
+    local unix=${1:-$(date +%s)}
+    local dote=$(echo "scale=0; $unix / 86400 + 719468" | bc)
+    if [ $(echo "$dote >= 0" | bc) -eq 1 ]; then
+        local socy=$(echo "scale=0; $dote / 146097" | bc)
+    else
+        local socy=$(echo "scale=0; ($dote - 146096) / 146097" | bc)
+    fi
+    local dotc=$(echo "scale=0; $dote - $socy * 146097" | bc)
+    local yotc=$(echo "scale=0; ($dotc - $dotc / 1460 + $dotc / 36524 - $dotc / 146096) / 365" | bc)
+    echo "$(echo "$yotc + $socy * 400" | bc) $(echo "$dotc - ($yotc * 365 + $yotc / 4 - $yotc / 100)" | bc)"
+}
+unix2date 1728000000
+unix2date 1890000000
 ```
 
 I use different programming languages to convert UNIX time in various

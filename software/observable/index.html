@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -325,16 +325,16 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../dec/geo/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-geo" role="img">
+  <a href="../../dec/time/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-clock" role="img">
 </i> 
- <span class="menu-text">Geoposition</span></a>
+ <span class="menu-text">Decimal time</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../dec/time/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-clock" role="img">
+  <a href="../../dec/geo/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-geo" role="img">
 </i> 
- <span class="menu-text">Decimal time</span></a>
+ <span class="menu-text">Geoposition</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -2922,64 +2922,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-laptev2024" class="csl-entry quarto-appendix-citeas" role="listitem">
 Laptev, Martin. 2024. <span>“Observable.”</span> 2024. <a href="https://maptv.github.io/software/observable/">https://maptv.github.io/software/observable/</a>.
 </div></div></section></div></main> <!-- /main -->
-<script>
-// https://howardhinnant.github.io/date_algorithms.html#days_from_civil
-function unix2doty() {
-  const dote = Date.now() / 86400000 + 719468,
-    cykl = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
-  dotc = dote - cykl * 146097,
-  yotc = Math.floor((dotc
-    - Math.floor(dotc / 1460)
-    + Math.floor(dotc / 36524)
-    - Math.floor(dotc / 146096)
-  ) / 365);
-  return [
-    yotc + cykl * 400,
-    dotc - (yotc * 365
-      + Math.floor(yotc / 4)
-      - Math.floor(yotc / 100)
-)]}
-function doty2date(year = 1969, doty = 306) {
-  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}`
-}
-function doty2time(year = 1969, doty = 306, zone = 0) {
-  return `${String(doty % 1 * 10).slice(0, 6)}-${zone}`
-}
-function setStamp() {
-  document.getElementById("date").innerText = doty2date(...unix2doty());
-  document.getElementById("time").innerText = doty2time(...unix2doty());
-}
-
-const nbc = document.getElementsByClassName("navbar-brand-container"),
-  dat = document.createElement("div"),
-  tim = document.createElement("div"),
-  cal = document.createElement("i"),
-  tik = document.createElement("i"),
-  dot = document.createElement("i"),
-  url = new URLSearchParams(window.location.search),
-  key = url.keys().filter(v => !isNaN(v) && !isNaN(parseFloat(v)) && isFinite(v)).toArray(),
-  val = url.values().filter(v => !isNaN(v) && !isNaN(parseFloat(v)) && isFinite(v)).toArray();
-console.log("k", [...url.keys()])
-console.log("v", [...url.values()])
-console.log("v", val)
-console.log("k", key)
-cal.classList.add("bi", "bi-calendar");
-cal.setAttribute("role", "img");
-tik.classList.add("bi", "bi-clock");
-tik.setAttribute("role", "img");
-dat.setAttribute("id", "date");
-tim.setAttribute("id", "time");
-dot.setAttribute("id", "dote");
-nbc[0].appendChild(cal);
-nbc[0].appendChild(dat);
-nbc[0].appendChild(tik);
-nbc[0].appendChild(tim);
-nbc[0].appendChild(dot);
-setInterval(setStamp);
-</script>
+<script src="../../asset/stamp.js"></script>
 <style>
 #title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
 #title-block-header { margin: 0px; }

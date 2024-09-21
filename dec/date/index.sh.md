@@ -1,19 +1,19 @@
 ---
-title: Ordinal date
-jupyter:
-  jupytext:
-    encoding: '-- -*- coding: utf-8 -*-'
-    text_representation:
-      extension: .qmd
-      format_name: quarto
-      format_version: '1.0'
-      jupytext_version: 1.16.4
-  kernelspec:
-    display_name: Lua  (XLua)
-    language: lua
-    name: xlua
+jupytext:
+  encoding: '# -*- coding: utf-8 -*-'
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.16.4
+kernelspec:
+  display_name: Bash
+  language: bash
+  name: bash
+  path: /Users/martinlaptev/Library/Jupyter/kernels/bash
 ---
 
+# Ordinal date
 
 \| [Martin Laptev]()  
 2024+197
@@ -114,7 +114,9 @@ can also press the Play▶️button to make the sliders cycle🔄back and
 forth through every day of the year and its corresponding month and day
 of the month.
 
+```{code-cell}
 
+```
 
 The animation above goes through an entire year in 36.5 beats, a million
 times faster🏎️than the actual speed of time! A Dec beat is a
@@ -234,31 +236,25 @@ epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20ch
 The Dec epoch is <span class="blue" data-bs-toggle="tooltip"
 data-bs-title="0000-03-01"><u>Year 0 Day 0</u></span>.
 
-# Lua
+# Bash
 
-```{lua}
---| tags: [lua, func, unix2date]
-function unix2date(unix)
-  local dote = unix / 86400 + 719468
-  local socy = (
-    dote >= 0 and dote
-    or dote - 146096
-  ) // 146097
-  local dotc = dote - socy * 146097
-  local yotc = (
-    dotc - dotc // 1460
-    + dotc // 36524
-    - dotc // 146096
-  ) // 365
-  return {
-    math.floor(yotc + socy * 400),
-    dotc - (yotc * 365
-      + yotc // 4
-      - yotc // 100
-  )}
-end
-unix2date(1728000000)
-unix2date(1890000000)
+```{code-cell}
+:tags: [sh, func, unix2date]
+
+unix2date() {
+    local unix=${1:-$(date +%s)}
+    local dote=$(echo "scale=0; $unix / 86400 + 719468" | bc)
+    if [ $(echo "$dote >= 0" | bc) -eq 1 ]; then
+        local socy=$(echo "scale=0; $dote / 146097" | bc)
+    else
+        local socy=$(echo "scale=0; ($dote - 146096) / 146097" | bc)
+    fi
+    local dotc=$(echo "scale=0; $dote - $socy * 146097" | bc)
+    local yotc=$(echo "scale=0; ($dotc - $dotc / 1460 + $dotc / 36524 - $dotc / 146096) / 365" | bc)
+    echo "$(echo "$yotc + $socy * 400" | bc) $(echo "$dotc - ($yotc * 365 + $yotc / 4 - $yotc / 100)" | bc)"
+}
+unix2date 1728000000
+unix2date 1890000000
 ```
 
 I use different programming languages to convert UNIX time in various
@@ -279,6 +275,9 @@ file ([stamp.js](../../asset/stamp.js)) for the date in the above.
 [citation](http://localhost:4207/dec/date/#citation) information at the
 bottom of each article.
 
+```{code-cell}
+
+```
 
 <script type='ojs-module-contents'>
 eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3R5bGVkVGlja1RpbWV9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0xIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtkZWNvRGF0ZX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2RlY29bN119PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC0zIn0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtzdHlsZWREZWNvWWVhcjB9KyR7c3R5bGVkRGVjb0RhdGUwfSR7c3R5bGVkRGVjb1RpbWUwfS0ke3N0eWxlZFRpbWVab25lMH08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTQifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3N0eWxlZERlY29ZZWFyMX0rJHtzdHlsZWREZWNvRGF0ZTF9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC01In0sICB7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOiJ0cnVlIiwic291cmNlIjoiaHRsLmh0bWxgPHNwYW4+JHtzdHlsZWREZWNvVGltZTF9LSR7c3R5bGVkVGltZVpvbmUxfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7ZGVjby5zbGljZSg1LCA3KX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTcifV19

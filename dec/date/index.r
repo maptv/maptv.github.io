@@ -1,15 +1,16 @@
+# -*- coding: utf-8 -*-
 # ---
 # jupyter:
 #   jupytext:
 #     text_representation:
-#       extension: .py
+#       extension: .r
 #       format_name: percent
 #       format_version: '1.3'
 #       jupytext_version: 1.16.4
 #   kernelspec:
-#     display_name: Python 3 (ipykernel)
-#     language: python
-#     name: python3
+#     display_name: R
+#     language: R
+#     name: ir
 # ---
 
 # %% [markdown]
@@ -235,27 +236,27 @@
 # The Dec epoch is <span class="blue" data-bs-toggle="tooltip"
 # data-bs-title="0000-03-01"><u>Year 0 Day 0</u></span>.
 #
-# # Python
+# # R
 
-# %% tags=["py", "func", "unix2date"]
-def unix2date(unix):
-    dote = unix / 86400 + 719468
-    socy = (
-        dote if dote >= 0
-        else dote - 146096
-    ) // 146097
-    dotc = dote - socy * 146097
-    yotc = (dotc
-        - dotc // 1460
-        + dotc // 36524
-        - dotc // 146096
-    ) // 365
-    return [
-        int(yotc + socy * 400),
-        dotc - (yotc * 365
-            + yotc // 4
-            - yotc // 100
-    )]
+# %% tags=["r", "func", "unix2date"]
+unix2date <- function(unix) {
+  dote = unix / 86400 + 719468
+  socy = ifelse(
+    dote >= 0, dote,
+    dote - 146096
+  ) %/% 146097
+  dotc = dote - socy * 146097
+  yotc = (
+    dotc - dotc %/% 1460
+    + dotc %/% 36524
+    - dotc %/% 146096
+  ) %/% 365
+  c(
+    yotc + socy * 400,
+    dotc - (yotc * 365
+      + yotc %/% 4
+      - yotc %/% 100
+))}
 unix2date(1728000000)
 unix2date(1890000000)
 

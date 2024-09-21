@@ -2,7 +2,7 @@
 
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta charset="utf-8"/>
-<meta content="quarto-1.5.56" name="generator"/>
+<meta content="quarto-1.5.57" name="generator"/>
 <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
 <meta content="" name="author"/>
 <title>Martin Laptev</title>
@@ -284,16 +284,16 @@ window.Quarto = {
 </li>
 <li class="sidebar-item">
 <div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="../dec/geo/index.html"><i class="bi bi-geo" role="img">
+<a class="sidebar-item-text sidebar-link" href="../dec/time/index.html"><i class="bi bi-clock" role="img">
 </i>
-<span class="menu-text">Geoposition</span></a>
+<span class="menu-text">Decimal time</span></a>
 </div>
 </li>
 <li class="sidebar-item">
 <div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="../dec/time/index.html"><i class="bi bi-clock" role="img">
+<a class="sidebar-item-text sidebar-link" href="../dec/geo/index.html"><i class="bi bi-geo" role="img">
 </i>
-<span class="menu-text">Decimal time</span></a>
+<span class="menu-text">Geoposition</span></a>
 </div>
 </li>
 <li class="sidebar-item">
@@ -401,7 +401,7 @@ window.Quarto = {
 <main class="content column-body" id="quarto-document-content">
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207465" data-listing-reading-time-sort="2" data-listing-word-count-sort="364">
+<div class="g-col-1" data-index="0" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725860445000" data-listing-file-modified-sort="1725860445106" data-listing-reading-time-sort="3" data-listing-word-count-sort="409">
 <a class="quarto-grid-link" href="../history/ww2/index.html">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -411,14 +411,14 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 World War 2
 </h5>
-<div class="listing-reading-time card-text text-muted">1 milliday</div>
+<div class="listing-reading-time card-text text-muted">2 milliday</div>
 <div class="card-text listing-description">
-<span class="blue" data-bs-title="September 1" data-bs-toggle="tooltip"><u>Day 184</u></span> in the Gregorian Decalendar is the first day of <span class="blue" data-bs-title="Fall in the Northern Hemisphere and Spring in the Southern Hemisphere" data-bs-toggle="tooltip"><u>Season 2</u></span> by meteorological reckoning and also the anniversary of the start of the World War 2. On <span class="blue" data-bs-title="1939-09-01" data-bs-toggle="tooltip"><u>1939+184</u></span>, World War…<span class="blue" data-bs-title="1939-09-17" data-bs-toggle="tooltip"><u></u></span><span class="blue" data-bs-title="1939-08-23" data-bs-toggle="tooltip"><u></u></span><span class="blue" data-bs-title="1941-06-22" data-bs-toggle="tooltip"><u></u></span>
+<span class="blue" data-bs-title="September 1" data-bs-toggle="tooltip"><u>Day 184</u></span> in the Gregorian Decalendar is the first day of <span class="blue" data-bs-title="Fall in the Northern Hemisphere and Spring in the Southern Hemisphere" data-bs-toggle="tooltip"><u>Season 2</u></span> by meteorological reckoning and also the anniversary of the start of the World War 2. On <span class="blue" data-bs-title="1939-09-01" data-bs-toggle="tooltip"><u>1939+184</u></span>, World War…<span class="blue" data-bs-title="1939-09-17" data-bs-toggle="tooltip"><u></u></span><span class="blue" data-bs-title="1939-08-23" data-bs-toggle="tooltip"><u></u></span><span class="blue" data-bs-title="September 1" data-bs-toggle="tooltip"><u></u></span><span class="blue" data-bs-title="September 17" data-bs-toggle="tooltip"><u></u></span><span class="blue" data-bs-title="1941-06-22" data-bs-toggle="tooltip"><u></u></span>
 </div>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
-<p>2024+189</p>
+<p>2024+192</p>
 </div>
 </div>
 </div>
@@ -713,64 +713,7 @@ No matching items
 </code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div class="csl-entry quarto-appendix-citeas" id="ref-laptev2024" role="listitem">
 Laptev, Martin. 2024. 2024. <a href="https://maptv.github.io/list/">https://maptv.github.io/list/</a>.
 </div></div></section></div></main> <!-- /main -->
-<script>
-// https://howardhinnant.github.io/date_algorithms.html#days_from_civil
-function unix2doty() {
-  const dote = Date.now() / 86400000 + 719468,
-    cykl = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
-  dotc = dote - cykl * 146097,
-  yotc = Math.floor((dotc
-    - Math.floor(dotc / 1460)
-    + Math.floor(dotc / 36524)
-    - Math.floor(dotc / 146096)
-  ) / 365);
-  return [
-    yotc + cykl * 400,
-    dotc - (yotc * 365
-      + Math.floor(yotc / 4)
-      - Math.floor(yotc / 100)
-)]}
-function doty2date(year = 1969, doty = 306) {
-  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}`
-}
-function doty2time(year = 1969, doty = 306, zone = 0) {
-  return `${String(doty % 1 * 10).slice(0, 6)}-${zone}`
-}
-function setStamp() {
-  document.getElementById("date").innerText = doty2date(...unix2doty());
-  document.getElementById("time").innerText = doty2time(...unix2doty());
-}
-
-const nbc = document.getElementsByClassName("navbar-brand-container"),
-  dat = document.createElement("div"),
-  tim = document.createElement("div"),
-  cal = document.createElement("i"),
-  tik = document.createElement("i"),
-  dot = document.createElement("i"),
-  url = new URLSearchParams(window.location.search),
-  key = url.keys().filter(v => !isNaN(v) && !isNaN(parseFloat(v)) && isFinite(v)).toArray(),
-  val = url.values().filter(v => !isNaN(v) && !isNaN(parseFloat(v)) && isFinite(v)).toArray();
-console.log("k", [...url.keys()])
-console.log("v", [...url.values()])
-console.log("v", val)
-console.log("k", key)
-cal.classList.add("bi", "bi-calendar");
-cal.setAttribute("role", "img");
-tik.classList.add("bi", "bi-clock");
-tik.setAttribute("role", "img");
-dat.setAttribute("id", "date");
-tim.setAttribute("id", "time");
-dot.setAttribute("id", "dote");
-nbc[0].appendChild(cal);
-nbc[0].appendChild(dat);
-nbc[0].appendChild(tik);
-nbc[0].appendChild(tim);
-nbc[0].appendChild(dot);
-setInterval(setStamp);
-</script>
+<script src="../asset/stamp.js"></script>
 <style>
 ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 #quarto-sidebar { padding: 0px; overflow-x: hidden !important; }

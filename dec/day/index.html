@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../dec/span/index.html" rel="next">
-<link href="../../dec/time/index.html" rel="prev">
+<link href="../../dec/geo/index.html" rel="prev">
 <link href="../../asset/deidek.svg" rel="icon" type="image/svg+xml">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -301,16 +301,16 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../dec/geo/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-geo" role="img">
+  <a href="../../dec/time/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-clock" role="img">
 </i> 
- <span class="menu-text">Geoposition</span></a>
+ <span class="menu-text">Decimal time</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../dec/time/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-clock" role="img">
+  <a href="../../dec/geo/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-geo" role="img">
 </i> 
- <span class="menu-text">Decimal time</span></a>
+ <span class="menu-text">Geoposition</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -769,37 +769,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 Laptev, Martin. 2024. <span>“The Dec Measurement System.”</span> 2024.
 <a href="https://maptv.github.io/blog/dec">https://maptv.github.io/blog/dec</a>.
 </div></div></section></div></main> <!-- /main -->
-<script>
-// https://howardhinnant.github.io/date_algorithms.html#days_from_civil
-function unix2doty() {
-  const dote = Date.now() / 86400000 + 719468,
-    cykl = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
-  dotc = dote - cykl * 146097,
-  yotc = Math.floor((dotc
-    - Math.floor(dotc / 1460)
-    + Math.floor(dotc / 36524)
-    - Math.floor(dotc / 146096)
-  ) / 365);
-  return [
-    yotc + cykl * 400,
-    dotc - (yotc * 365
-      + Math.floor(yotc / 4)
-      - Math.floor(yotc / 100)
-)]}
-function doty2date(year = 1969, doty = 306) {
-  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}`
-}
-const qac = document.querySelector("div.csl-entry.quarto-appendix-citeas"),
-  bib = document.querySelector("code.sourceCode.bibtex"),
-  pub = document.querySelector("div.quarto-title-meta-contents > p.date")
-  now = doty2date(...unix2doty()),
-  arr = [pub.innerText, now];
-let counter = 0; bib.innerText = bib.innerText.replace(/2024/g, match => ++counter > 1 ? arr[counter - 2] : match);
-qac.innerText = qac.innerText.replace(/2024/g, match => ++counter === 4 ? pub.innerText : now);
-</script>
+<script src="../../asset/cite.js"></script>
 <style>
 #title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
 #title-block-header { margin: 0px; }
@@ -815,64 +785,7 @@ div.cell.page-columns.page-full { height: 0px !important; }
 @media only screen and (max-width: 991px) { #quarto-search { display: none !important; } #quarto-sidebar { padding: 0px 9px 0px 9px !important; } }
 @media only screen and (max-width: 767px) { div.cell.page-columns.page-full { display: none !important; } }
 </style>
-<script>
-// https://howardhinnant.github.io/date_algorithms.html#days_from_civil
-function unix2doty() {
-  const dote = Date.now() / 86400000 + 719468,
-    cykl = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
-  dotc = dote - cykl * 146097,
-  yotc = Math.floor((dotc
-    - Math.floor(dotc / 1460)
-    + Math.floor(dotc / 36524)
-    - Math.floor(dotc / 146096)
-  ) / 365);
-  return [
-    yotc + cykl * 400,
-    dotc - (yotc * 365
-      + Math.floor(yotc / 4)
-      - Math.floor(yotc / 100)
-)]}
-function doty2date(year = 1969, doty = 306) {
-  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}`
-}
-function doty2time(year = 1969, doty = 306, zone = 0) {
-  return `${String(doty % 1 * 10).slice(0, 6)}-${zone}`
-}
-function setStamp() {
-  document.getElementById("date").innerText = doty2date(...unix2doty());
-  document.getElementById("time").innerText = doty2time(...unix2doty());
-}
-
-const nbc = document.getElementsByClassName("navbar-brand-container"),
-  dat = document.createElement("div"),
-  tim = document.createElement("div"),
-  cal = document.createElement("i"),
-  tik = document.createElement("i"),
-  dot = document.createElement("i"),
-  url = new URLSearchParams(window.location.search),
-  key = url.keys().filter(v => !isNaN(v) && !isNaN(parseFloat(v)) && isFinite(v)).toArray(),
-  val = url.values().filter(v => !isNaN(v) && !isNaN(parseFloat(v)) && isFinite(v)).toArray();
-console.log("k", [...url.keys()])
-console.log("v", [...url.values()])
-console.log("v", val)
-console.log("k", key)
-cal.classList.add("bi", "bi-calendar");
-cal.setAttribute("role", "img");
-tik.classList.add("bi", "bi-clock");
-tik.setAttribute("role", "img");
-dat.setAttribute("id", "date");
-tim.setAttribute("id", "time");
-dot.setAttribute("id", "dote");
-nbc[0].appendChild(cal);
-nbc[0].appendChild(dat);
-nbc[0].appendChild(tik);
-nbc[0].appendChild(tim);
-nbc[0].appendChild(dot);
-setInterval(setStamp);
-</script>
+<script src="../../asset/stamp.js"></script>
 <script>
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
@@ -1514,8 +1427,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <input type="hidden" id="giscus-alt-theme" value="dark">
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../../dec/time/index.html" class="pagination-link" aria-label="Decimal time">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Decimal time</span>
+      <a href="../../dec/geo/index.html" class="pagination-link" aria-label="Geoposition">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Geoposition</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

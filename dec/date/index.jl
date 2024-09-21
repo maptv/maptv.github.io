@@ -1,15 +1,17 @@
+# -*- coding: utf-8 -*-
 # ---
 # jupyter:
 #   jupytext:
 #     text_representation:
-#       extension: .py
+#       extension: .jl
 #       format_name: percent
 #       format_version: '1.3'
 #       jupytext_version: 1.16.4
 #   kernelspec:
-#     display_name: Python 3 (ipykernel)
-#     language: python
-#     name: python3
+#     display_name: Julia 1.10.2
+#     language: julia
+#     name: julia-1.10
+#     path: /Users/martinlaptev/Library/Jupyter/kernels/julia-1.10
 # ---
 
 # %% [markdown]
@@ -235,27 +237,27 @@
 # The Dec epoch is <span class="blue" data-bs-toggle="tooltip"
 # data-bs-title="0000-03-01"><u>Year 0 Day 0</u></span>.
 #
-# # Python
+# # Julia
 
-# %% tags=["py", "func", "unix2date"]
-def unix2date(unix):
+# %% tags=["jl", "func", "unix2date"]
+function unix2date(unix)
     dote = unix / 86400 + 719468
     socy = (
-        dote if dote >= 0
-        else dote - 146096
-    ) // 146097
+        dote >= 0 ? dote
+        : dote - 146096
+        ) ÷ 146097
     dotc = dote - socy * 146097
-    yotc = (dotc
-        - dotc // 1460
-        + dotc // 36524
-        - dotc // 146096
-    ) // 365
-    return [
-        int(yotc + socy * 400),
-        dotc - (yotc * 365
-            + yotc // 4
-            - yotc // 100
-    )]
+    yotc = (
+        dotc - dotc ÷ 1460
+        + dotc ÷ 36524
+        - dotc ÷ 146096
+    ) ÷ 365
+    return Int(
+        yotc + socy * 400),
+    dotc - (yotc * 365
+        + yotc ÷ 4
+        - yotc ÷ 100)
+end
 unix2date(1728000000)
 unix2date(1890000000)
 
