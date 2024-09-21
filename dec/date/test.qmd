@@ -1,0 +1,355 @@
+---
+title: Ordinal date
+image: /asset/deidek.svg
+citation:
+  url: 'https://maptv.github.io/dec/date'
+format:
+  html:
+    include-after-body:
+      - ../../asset/cite.html
+      - ../../asset/style.html
+      - ../../asset/stamp.html
+      - ../../asset/tooltip.html
+  commonmark: default
+format-links:
+  - html
+  - text: JavaScript Jupyter
+    href: index.js.ipynb
+    icon: journal-richtext
+  - text: JavaScript Quarto
+    href: index.js.qmd
+    icon: journal-code
+  - text: JavaScript Script
+    href: index.js
+    icon: filetype-js
+  - text: JavaScript Markdown
+    href: index.js.md
+    icon: markdown
+  - text: Lua Jupyter
+    href: index.lua.ipynb
+    icon: journal-richtext
+  - text: Lua Quarto
+    href: index.lua.qmd
+    icon: journal-code
+  - text: Lua Script
+    href: index.lua
+    icon: moon
+  - text: Lua Markdown
+    href: index.lua.md
+    icon: markdown
+  - text: Python Jupyter
+    href: index.py.ipynb
+    icon: journal-richtext
+  - text: Python Quarto
+    href: index.py.qmd
+    icon: journal-code
+  - text: Python Script
+    href: index.py
+    icon: filetype-py
+  - text: Python Markdown
+    href: index.py.md
+    icon: markdown
+notebook-links: false
+filters:
+  - ../../asset/date.lua
+  - include-code-files
+execute:
+  eval: false
+---
+
+My site is full of dates in the `year+day` format. The major advantage of this format is that the `day` component can unequivocally identify any date and time in a given year and thus can replace months, days of the month, hours, minutes, and seconds. In essence, the `day` number can  To create all of the dates, I use three different programming languages: Python for the [listing page](/list), Lua for the Published date at the top of each article, and JavaScript for the citation information at the bottom of each article.
+
+
+To test the code, I will create a separate Quarto markdown (`qmd`) file for each of these 3 programming languages and [embed](https://quarto.org/docs/authoring/notebook-embed.html#overview) them into this `qmd` file.
+
+
+::: {.content-hidden unless-profile="javascript"}
+::: {.content-hidden unless-format="ipynb"}
+
+# JavaScript
+
+```{typescript}
+#| tags: [js-func]
+function unix2doty(unix) {
+  const dote = unix / 86400 + 719468,
+    cykl = Math.floor((
+      dote >= 0 ? dote
+      : dote - 146096
+    ) / 146097),
+  dotc = dote - cykl * 146097,
+  yotc = Math.floor((dotc
+    - Math.floor(dotc / 1460)
+    + Math.floor(dotc / 36524)
+    - Math.floor(dotc / 146096)
+  ) / 365);
+  return [
+    yotc + cykl * 400,
+    dotc - (yotc * 365
+      + Math.floor(yotc / 4)
+      - Math.floor(yotc / 100)
+  )]}
+```
+
+```{typescript}
+#| tags: [js-out0]
+unix2doty(1728000000)
+```
+
+```{typescript}
+#| tags: [js-out1]
+unix2doty(1890000000)
+```
+
+:::
+:::
+
+::: {.content-hidden unless-profile="lua"}
+::: {.content-hidden unless-format="ipynb"}
+
+# Lua
+
+```{lua}
+--| tags: [lua-func]
+function unix2doty(unix)
+  local dote = unix / 86400 + 719468
+  local cykl = (
+    dote >= 0 and dote
+    or dote - 146096
+  ) // 146097
+  local dotc = dote - cykl * 146097
+  local yotc = (
+    dotc - dotc // 1460
+    + dotc // 36524
+    - dotc // 146096
+  ) // 365
+  return {
+    math.floor(yotc + cykl * 400),
+    dotc - (yotc * 365
+      + yotc // 4
+      - yotc // 100
+  )}
+end
+```
+
+```{lua}
+--| tags: [lua-out0]
+unix2doty(1728000000)
+```
+
+```{lua}
+--| tags: [lua-out1]
+unix2doty(1890000000)
+```
+
+:::
+:::
+
+::: {.content-hidden unless-profile="python"}
+::: {.content-hidden unless-format="ipynb"}
+
+# Python
+
+```{python}
+#| tags: [py-func]
+def unix2doty(unix):
+    dote = unix / 86400 + 719468
+    cykl = (
+        dote if dote >= 0
+        else dote - 146096
+    ) // 146097
+    dotc = dote - cykl * 146097
+    yotc = (dotc
+        - dotc // 1460
+        + dotc // 36524
+        - dotc // 146096
+    ) // 365
+    return [
+        int(yotc + cykl * 400),
+        dotc - (yotc * 365
+            + yotc // 4
+            - yotc // 100
+    )]
+```
+
+```{python}
+#| tags: [py-out0]
+unix2doty(1728000000)
+```
+
+```{python}
+#| tags: [py-out1]
+unix2doty(1890000000)
+```
+
+:::
+:::
+
+::: {.content-hidden unless-profile="julia"}
+::: {.content-hidden unless-format="ipynb"}
+
+# Julia
+
+```{julia}
+#| tags: [jl-func]
+function unix2doty(unix)
+    dote = unix / 86400 + 719468
+    cykl = (
+        dote >= 0 ? dote
+        : dote - 146096
+        ) ÷ 146097
+    dotc = dote - cykl * 146097
+    yotc = (
+        dotc - dotc ÷ 1460
+        + dotc ÷ 36524
+        - dotc ÷ 146096
+    ) ÷ 365
+    return Int(
+        yotc + cykl * 400),
+    dotc - (yotc * 365
+        + yotc ÷ 4
+        - yotc ÷ 100)
+end
+```
+
+```{julia}
+#| tags: [jl-out0]
+unix2doty(1728000000)
+```
+
+```{julia}
+#| tags: [jl-out1]
+unix2doty(1890000000)
+```
+
+:::
+:::
+
+
+::: {.content-hidden unless-profile="r"}
+::: {.content-hidden unless-format="ipynb"}
+
+# R
+
+```{r}
+#| tags: [r-func]
+unix2doty <- function(unix) {
+  dote = unix / 86400 + 719468
+  cykl = ifelse(
+    dote >= 0, dote,
+    dote - 146096
+  ) %/% 146097
+  dotc = dote - cykl * 146097
+  yotc = (
+    dotc - dotc %/% 1460
+    + dotc %/% 36524
+    - dotc %/% 146096
+  ) %/% 365
+  c(
+    yotc + cykl * 400,
+    dotc - (yotc * 365
+      + yotc %/% 4
+      - yotc %/% 100
+))}
+```
+
+```{r}
+#| tags: [r-out0]
+unix2doty(1728000000)
+```
+
+```{r}
+#| tags: [r-out1]
+unix2doty(1890000000)
+```
+
+:::
+:::
+
+::: {.content-hidden unless-profile="bash"}
+::: {.content-hidden unless-format="ipynb"}
+
+# Bash
+
+```{bash}
+#| tags: [bash-func]
+unix2doty() {
+    local unix=${1:-$(date +%s)}
+    local dote=$(echo "scale=0; $unix / 86400 + 719468" | bc)
+    if [ $(echo "$dote >= 0" | bc) -eq 1 ]; then
+        local cykl=$(echo "scale=0; $dote / 146097" | bc)
+    else
+        local cykl=$(echo "scale=0; ($dote - 146096) / 146097" | bc)
+    fi
+    local dotc=$(echo "scale=0; $dote - $cykl * 146097" | bc)
+    local yotc=$(echo "scale=0; ($dotc - $dotc / 1460 + $dotc / 36524 - $dotc / 146096) / 365" | bc)
+    echo "$(echo "$yotc + $cykl * 400" | bc) $(echo "$dotc - ($yotc * 365 + $yotc / 4 - $yotc / 100)" | bc)"
+}
+```
+
+```{bash}
+#| tags: [bash-out0]
+unix2doty 1728000000
+```
+
+```{bash}
+#| tags: [bash-out1]
+unix2doty 1890000000
+```
+
+:::
+:::
+
+::: {.content-hidden unless-profile="knitr"}
+::: {.content-hidden unless-format="html"}
+::: {.panel-tabset }
+
+<!-- # JavaScript -->
+
+<!-- {{< embed index.js.ipynb#func echo=true >}} -->
+
+<!-- {{< embed index.js.ipynb#out0 echo=true >}} -->
+
+<!-- {{< embed index.js.ipynb#out1 echo=true >}} -->
+
+<!-- # Lua -->
+
+<!-- {{< embed index.lua.ipynb#lua-func echo=true >}} -->
+
+<!-- {{< embed index.lua.ipynb#lua-out0 echo=true >}} -->
+
+<!-- {{< embed index.lua.ipynb#lua-out1 echo=true >}} -->
+
+<!-- # Python -->
+
+<!-- {{< embed index.py.ipynb#py-func echo=true >}} -->
+
+<!-- {{< embed index.py.ipynb#py-out0 echo=true >}} -->
+
+<!-- {{< embed index.py.ipynb#py-out1 echo=true >}} -->
+
+<!-- # Julia -->
+
+<!-- {{< embed index.jl.ipynb#jl-func echo=true >}} -->
+
+<!-- {{< embed index.jl.ipynb#jl-out0 echo=true >}} -->
+
+<!-- {{< embed index.jl.ipynb#jl-out1 echo=true >}} -->
+
+<!-- # R -->
+
+<!-- {{< embed index.r.ipynb#r-func echo=true >}} -->
+
+<!-- {{< embed index.r.ipynb#r-out0 echo=true >}} -->
+
+<!-- {{< embed index.r.ipynb#r-out1 echo=true >}} -->
+
+<!-- # Python -->
+
+<!-- {{< embed index.sh.ipynb#bash-func echo=true >}} -->
+
+<!-- {{< embed index.sh.ipynb#bash-out0 echo=true >}} -->
+
+<!-- {{< embed index.sh.ipynb#bash-out1 echo=true >}} -->
+:::
+:::
+:::

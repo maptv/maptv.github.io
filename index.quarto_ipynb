@@ -1,0 +1,52 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "author: \"\"\n",
+        "date: \"\"\n",
+        "comments: false\n",
+        "citation: false\n",
+        "code-tools: false\n",
+        "image: asset/martin.png\n",
+        "format:\n",
+        "  html:\n",
+        "    include-after-body:\n",
+        "      - asset/stamp.html\n",
+        "      - asset/home.html\n",
+        "      - asset/tooltip.html\n",
+        "about:\n",
+        "  template: trestles\n",
+        "  image-shape: round\n",
+        "  image-width: 16em\n",
+        "  image-title: headshot\n",
+        "---\n",
+        "\n",
+        "\n",
+        "Greetings! <img src=\"asset/wave.gif\" width=\"25px\"/>\n",
+        "\n",
+        "Welcome to my personal website, which I created using the [Quarto](https://quarto.org) publishing system.\n",
+        "\n",
+        "You are currently on the [Home](){.bi .bi-house-door} page of my site.\n",
+        "You can use the [Sidebar](https://en.wikipedia.org/wiki/Sidebar_(computing)#:~:text=a%20graphical%20control%20element%20that%20displays%20various%20forms%20of%20information%20to%20the%20right%20or%20left%20side){.bi .bi-layout-text-sidebar-reverse} on the left to go to the [About](about){.bi .bi-info-circle}, [Listing](list){.bi .bi-grid-3x3-gap}, and [Curriculum Vitae (CV)](cv){.bi .bi-file-earmark-person} pages of my site or my profile pages on [GitHub](https://github.com/maptv){.bi .bi-github} and [LinkedIn](https://www.linkedin.com/in/maptv){.bi .bi-linkedin}.\n",
+        "The remaining items in the sidebar are sections that cover topics like [art](art){.bi .bi-brush}, [history](art){.bi .bi-hourglass-split}, and [science](art){.bi .bi-stars}.\n",
+        "In addition to the sidebar, you can also use the [arrows[]{.bi .bi-arrow-right-short}]{.bi .bi-arrow-left-short} at the bottom to move between specific pages on my site.\n",
+        "\n",
+        "Have fun looking around!"
+      ],
+      "id": "6d694ba9"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/opt/homebrew/Caskroom/miniforge/base/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
