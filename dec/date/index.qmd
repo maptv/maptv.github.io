@@ -166,9 +166,6 @@ The `day` in `year+day` dates is a single number that can identify specific days
 
 Unlike months and weeks, deks are 10 days long and thus work well with our decimal number system. The dek and day of the dek are provided by the first two digits and the last digit of the 3-digit `day` number in Dec dates, respectively. For example, the current dek is Dek `{ojs} deco.slice(5, 7)` and the current day of the dek is Day `{ojs} deco[7]`.
 
-The most prominent Dec date on my site is the one in the Dec [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) in [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) (navbar) above: \${styledDecoYear0}+\${styledDecoDate0}\${styledDecoTime0}-\${styledTimeZone0}. In this article, I will focus only on Dec dates (\${styledDecoYear1}+\${styledDecoDate1}), but I will discuss Dec times (\${styledDecoTime1}-\${styledTimeZone1}) in the [next article](/dec/time) in the [Measurement section](/dec).
-
-
 I generate all of the dates on my site from [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201st%C2%A0January%201970%2C%20the%20Unix%20epoch) using calculations that I adapted from the [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days) function in [Howard Hinnant](https://howardhinnant.github.io)'s [`date` library](https://howardhinnant.github.io/date/date.html).
 Each tab in the [tabset panel](https://quarto.org/docs/interactive/layout.html#:~:text=Tabset%20Panel,-If%20you%20want%20to%20allow) below shows a different implementation of a function called `unix2date` which converts UNIX time into `year+day` dates.
 

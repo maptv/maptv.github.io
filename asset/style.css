@@ -120,3 +120,7 @@ div.quarto-listing > div.list.grid {
   padding-top: 18px !important;
   margin-top: 8px !important;
 }
+
+#quarto-header > nav.navbar.navbar-expand-lg > div > div.navbar-brand-container.mx-auto > div#time {
+  white-space: nowrap;
+}
