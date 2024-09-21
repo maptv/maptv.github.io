@@ -166,3 +166,11 @@ div.card-footer {
     border: 1px solid rgba(150,150,150,.125) !important;
     border-top: 0;
 }
+
+#dec-dates > p > span > mjx-container > mjx-math > mjx-mpadded > mjx-block > mjx-rbox > mjx-mtext > mjx-c::before {
+    color: black;
+}
+
+#dec-dates > p > span > mjx-container > mjx-math > mjx-mrow > mjx-mtable > mjx-table > mjx-itable > mjx-mtr > mjx-mtd > mjx-texatom > mjx-mtable > mjx-table > mjx-itable > mjx-mtr > mjx-mtd > mjx-mpadded > mjx-block > mjx-rbox > mjx-mtext > mjx-c::before {
+    color: black;
+}

@@ -95,7 +95,7 @@ filters:
 My website serves as a demonstration of both the [Quarto](https://quarto.org) publishing system and the [Dec](/dec) measurement system. I use several clever hacks to get Quarto to display all of the dates on my website in the Dec `year+day` format. If you are not interested in Dec dates, you may want to skip to the section on Quarto [filters](https://quarto.org/docs/extensions/filters.html), [render scripts](https://quarto.org/docs/projects/scripts.html#pre-and-post-render), and [include files](https://quarto.org/docs/output-formats/html-basics.html#includes).
 
 ### Dec dates
-The `year+day` format of Dec dates is derived from the year of the era equation: $\colorbox{yellow}{y}{=}\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}{\div}\colorbox{orange}{n}$. In this equation, $\colorbox{yellow}{y}$ is the decimal years since the Dec epoch (Year 0 [Day 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1"}), $\lfloor\colorbox{yellow}{y}\rfloor$ is $\colorbox{yellow}{y}$ [floored](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x) to obtain an [integer](https://en.wikipedia.org/wiki/Integer#:~:text=the%20number%20zero%20%280%29%2C%20a%20positive%20natural%20number%20%281%2C%202%2C%203%2C%20.%20.%20.%29%2C%20or%20the%20negation%20of%20a%20positive%20natural%20number%20%28%E2%88%921%2C%20%E2%88%922%2C%20%E2%88%923%2C%20.%20.%20.%29) year, $\colorbox{cyan}{d}$ is the [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) day of the year, and $\colorbox{orange}{n}$ is the total number of days in the year.
+The `year+day` format of Dec dates is derived from the year of the era equation: $\colorbox{yellow}{y}{=}\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}{\div}\colorbox{orange}{n}$. In this equation, $\colorbox{yellow}{y}$ is the decimal years since the Dec epoch (Year 0 [Day 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1"}), $\lfloor\colorbox{yellow}{y}\rfloor$ is the [integer](https://en.wikipedia.org/wiki/Integer#:~:text=the%20number%20zero%20%280%29%2C%20a%20positive%20natural%20number%20%281%2C%202%2C%203%2C%20.%20.%20.%29%2C%20or%20the%20negation%20of%20a%20positive%20natural%20number%20%28%E2%88%921%2C%20%E2%88%922%2C%20%E2%88%923%2C%20.%20.%20.%29) year obtained by [flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x) $\colorbox{yellow}{y}$, $\colorbox{cyan}{d}$ is the [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) day of the year, and $\colorbox{orange}{n}$ is the total number of days in the year.
 
 Dec dates only include the first two terms from the equation above ($\colorbox{yellow}{y}$ and $\colorbox{cyan}{d}$), because $\colorbox{orange}{n}$ is not needed to identify a specific date in time, only has 2 possible values (365 or 366), remains constant for long periods of time (366, 1095, or 2920 days), and can be calculated using the Dec year length equation:
 
@@ -105,25 +105,11 @@ $$\colorbox{orange}{n}=\begin{cases}
   \lor(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }400=0\end{align}}\\\\
   365&{\text{otherwise.}}\end{cases}$$
 
-In the Dec year length equation, `%` is the [modulo](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) operator, $\land$ is the logical [conjunction](https://en.wikipedia.org/wiki/Logical_conjunction) operator, and $\lor$ is the logical [disjunction](https://en.wikipedia.org/wiki/Logical_disjunction) operator. The easiest way to explain this equation is in terms of the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world): the length of a Dec year is 366 days if the subsequent year ($\lfloor\colorbox{yellow}{y}\rfloor{+}1$ ) is a Gregorian calendar [leap year](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400) and 365 days otherwise.
+In the Dec year length equation, $\text\%$ is the [modulo](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) operator, $\land$ is the logical [conjunction](https://en.wikipedia.org/wiki/Logical_conjunction) operator, and $\lor$ is the logical [disjunction](https://en.wikipedia.org/wiki/Logical_disjunction) operator. The easiest way to explain this equation is in terms of the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world): the length of a Dec year is 366 days if the subsequent year ($\lfloor\colorbox{yellow}{y}\rfloor{+}1$ ) is a Gregorian calendar [leap year](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400) and 365 days otherwise.
 
 Dec dates look almost identical to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) [ordinal dates](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year). On the surface, it appears that the only difference is their [delimiter](https://en.wikipedia.org/wiki/Delimiter#:~:text=a%20sequence%20of%20one%20or%20more%20characters%20for%20specifying%20the%20boundary%20between%20separate%2C%20independent%20regions%20in%20plain%20text) (`+` versus `-`), but they also have different [starting values](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) (0 versus 1), [epochs](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era) (Year 0 [Day 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1"} versus Year -1 [Day 306]{.underline .blue data-bs-toggle="tooltip" data-bs-title="January 1"}), and [year length](https://en.wikipedia.org/wiki/Intercalation_(timekeeping)#:~:text=the%20insertion%20of%20a%20leap%20day%2C%20week%2C%20or%20month) equations ($\lfloor\colorbox{yellow}{y}\rfloor{+}1$ versus $\lfloor\colorbox{yellow}{y}\rfloor$).
 
-60-day shift
-
-Animation
-
-Conversion functions year to year, doty to month and dotm, and vice versa. Conclusion: it is easier to work with unix time.
-
-Can we also find the day of the week? First, use dote2dotw function. Conclusion: it is easier to work with deks instead of weeks.
-
-days of the dek
-
-Dec finger counting method svg
-
-The Dec epoch, . This 60-day shift enables the `day` in  `year+day` to function independently of the `year` as the date of annual events such as anniversaries.
-
-Use the sliders below to select a special date like your birthday🎂! You can also press the Play▶️button to make the sliders cycle🔄back and forth through every day of the year and its corresponding month and day of the month.
+Unlike ISO 8601 dates, Dec dates can omit the year and track annual events such as anniversaries. Use the sliders below to select a special date like your birthday🎂! You can also press the Play▶️button below to make the sliders cycle🔄back and forth through every day of the year and its corresponding month and day of the month.
 
 ```{ojs}
 //| echo: false
@@ -143,16 +129,26 @@ viewof dotmInput = transformInput(
 ))});
 ```
 
-The animation above goes through an entire year in 36.5 beats, a million times faster🏎️than the actual speed of time!
+The animations above goes through an entire year in 36.5 beats, a million times faster🏎️than the actual speed of time!
 A Dec beat is a centimilliday (1% of a milliday, $10^{-5}$ of a day, or 86.4% of a second), which can be thought of as a heart❤️beat or musical🎵[beat](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=the%20beat%20is%20the%20basic%20unit%20of%20time) with a constant [rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=The%20American%20Heart%20Association%20states%20the%20normal%20resting%20adult%20human%20heart%20rate%20is%2060%2D100%20bpm.) or [tempo](https://en.wikipedia.org/wiki/Tempo#Basic_tempo_markings:~:text=Adagietto%20%E2%80%93%20slower%20than,56%E2%80%93108%C2%A0bpm) of 69.4̅ beats per minute. In addition to displaying time on clocks🕰️and⌚️watches, beats can be used to measure durations, such as the time since this webpage was loaded: \${styledTickTime}.
 
-For example, the current day of the year (doty) is Day `{ojs} decoDate`.
+The Dec epoch, . This 60-day shift enables 
+
+60-day shift
+
+Animation
+
+Conversion functions year to year, doty to month and dotm, and vice versa. Conclusion: it is easier to work with unix time.
+
+Can we also find the day of the week? First, use dote2dotw function. Conclusion: it is easier to work with deks instead of weeks.
+
+days of the dek
+
+Dec finger counting method svg
 
 simplest way to describe Dec dates my website are based on the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world), but any calendar with fixed  rules can be turned in a Dec calendar (Decalendar) by expressing its dates as zero-based moving its starting point (). 
 
 with simple arithmetic, Decalendar is [perennial](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=applies%20to%20any%20year%2C%20keeping%20the%20same%20dates), meaning that its features remain the same every year. Any 
-
-Unlike ISO 8601 ordinal dates, Dec dates are based on the Dec calendar (Decalendar), a [perennial calendar](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=applies%20to%20any%20year%2C%20keeping%20the%20same%20dates), meaning that they are the same in every year, and thus can omit the year without becoming ambiguous. In contrast, ISO 8601 ordinal dates  is omitted, susceptible to [off-by-one errors](https://en.wikipedia.org/wiki/Off-by-one_error#:~:text=a%20logic%20error%20that%20involves%20a%20number%20that%20differs%20from%20its%20intended%20value%20by%20%2B1%20or%20%E2%88%921). For example, the current day of the year.
 
 This major Dec dates can be omit the year and still be unequivocally converted into a month and a day [start counting days from zero](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) and do not need omit the year .
 
@@ -648,6 +644,28 @@ function Scrubber(values, {
   else stop();
   Inputs.disposal(form).then(stop);
   return form;
+}
+function unix2deco(ms = 0) {
+    return doty2deco(unix2doty(ms));
+};
+function deco2doty(timestamp = "1969+306.00000Z") {
+    const arr = timestamp.toString().split(/(?=[+-]|[a-zA-Z])/, 3);
+    switch (arr.length) {
+        case 1: return [unix2doty(Date.now())[0], parseFloat(arr[0]), 0];
+        case 2: return (/^[a-zA-Z]+$/.test(arr[1]))
+            ? [unix2doty(Date.now())[0], parseFloat(arr[0]), zone2hour(arr[1]) / 24]
+            : [parseFloat(arr[0]), parseFloat(arr[1]), 0];
+    };
+    return [parseFloat(arr[0]), parseFloat(arr[1]), /^[a-zA-Z]+$/.test(arr[2])
+        ? zone2hour(arr[2]) / 24
+        : parseFloat(arr[2].replace(/([+-])/, "$1\."))];
+}
+function zone2hour(zone = "Z") {
+    return (zone = zone.toUpperCase()) == "Z" ? 0
+        : zone > "@" && zone < "J" ? zone.charCodeAt() - 64
+        : zone > "J" && zone < "N" ? zone.charCodeAt() - 65
+        : zone < "Z" && zone > "M" ? -(zone.charCodeAt() - 77)
+        : zone;
 }
 ```
 
