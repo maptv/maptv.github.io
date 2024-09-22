@@ -124,3 +124,7 @@ div.quarto-listing > div.list.grid {
 #quarto-header > nav.navbar.navbar-expand-lg > div > div.navbar-brand-container.mx-auto > div#time {
   white-space: nowrap;
 }
+
+div > form > label {
+  --label-width: 125px;
+}
