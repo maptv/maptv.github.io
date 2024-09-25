@@ -125,6 +125,10 @@ div.quarto-listing > div.list.grid {
   white-space: nowrap;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 div > form > label {
   --label-width: 125px;
 }

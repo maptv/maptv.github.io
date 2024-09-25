@@ -95,9 +95,10 @@ filters:
 My website serves as a demonstration of both the [Quarto](https://quarto.org) publishing system and the [Dec](/dec) measurement system. I use several clever hacks to get Quarto to display all of the dates on my website in the Dec `year+day` format. If you are not interested in Dec dates, you may want to skip to the section on Quarto [filters](https://quarto.org/docs/extensions/filters.html), [render scripts](https://quarto.org/docs/projects/scripts.html#pre-and-post-render), and [include files](https://quarto.org/docs/output-formats/html-basics.html#includes).
 
 ### Dec dates
-The `year+day` format of Dec dates is derived from the year of the era equation: $\colorbox{yellow}{y}{=}\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}{\div}\colorbox{orange}{n}$, where $\colorbox{yellow}{y}$ is the decimal years since the Dec epoch (Year 0 [Day 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1"}), $\lfloor\colorbox{yellow}{y}\rfloor$ is the [integer](https://en.wikipedia.org/wiki/Integer#:~:text=the%20number%20zero%20%280%29%2C%20a%20positive%20natural%20number%20%281%2C%202%2C%203%2C%20.%20.%20.%29%2C%20or%20the%20negation%20of%20a%20positive%20natural%20number%20%28%E2%88%921%2C%20%E2%88%922%2C%20%E2%88%923%2C%20.%20.%20.%29) year obtained by [flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x) $\colorbox{yellow}{y}$, $\colorbox{cyan}{d}$ is the [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) day of the year, and $\colorbox{orange}{n}$ is the total number of days in the year.
+The `year+day` format of Dec dates is based on the year of the era (yote) equation: $\colorbox{yellow}{y}{=}\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}{\div}\colorbox{orange}{n}$, where $\colorbox{yellow}{y}$ is the decimal years since the Dec epoch (Year 0 [Day 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1"}), $\lfloor\colorbox{yellow}{y}\rfloor$ is the [integer](https://en.wikipedia.org/wiki/Integer#:~:text=the%20number%20zero%20%280%29%2C%20a%20positive%20natural%20number%20%281%2C%202%2C%203%2C%20.%20.%20.%29%2C%20or%20the%20negation%20of%20a%20positive%20natural%20number%20%28%E2%88%921%2C%20%E2%88%922%2C%20%E2%88%923%2C%20.%20.%20.%29) year obtained by [flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x) $\colorbox{yellow}{y}$, $\colorbox{cyan}{d}$ is the [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) day of the year (doty), and $\colorbox{orange}{n}$ is the total number of days in the year (dity).
+The current yote equation values are: \${styledFracYear}=\${styledDecoYear}+\${styledDecoDate}/\${styledNdays}.
 
-Dec dates only include the first two terms from the equation above ($\colorbox{yellow}{y}$ and $\colorbox{cyan}{d}$), because $\colorbox{orange}{n}$ is not needed to identify a specific date, only has 2 possible values (365 or 366), remains constant for long periods of time (366, 1095, or 2920 days), and can be obtained from the Dec year length equation:
+Dec dates only include the first two terms from the right-hand side of the equation above ($\lfloor\colorbox{yellow}{y}\rfloor$ and $\colorbox{cyan}{d}$), because $\colorbox{orange}{n}$ is not needed to identify a specific date, only has 2 possible values (365 or 366), remains constant for long periods of time (366, 1095, or 2920 days), and is determined by $\lfloor\colorbox{yellow}{y}\rfloor$:
 
 $$\colorbox{orange}{n}=\begin{cases}
   366&{\begin{align}\text{if } (\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }4=0\\
@@ -105,12 +106,155 @@ $$\colorbox{orange}{n}=\begin{cases}
   \lor(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \% }400=0\end{align}}\\\\
   365&{\text{otherwise.}}\end{cases}$$
 
-In the Dec year length equation, $\text\%$ is the [modulo](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) operator, $\land$ is the logical [conjunction](https://en.wikipedia.org/wiki/Logical_conjunction) operator, and $\lor$ is the logical [disjunction](https://en.wikipedia.org/wiki/Logical_disjunction) operator. The easiest way to explain this equation is in terms of the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world): the length of a Dec year is 366 days if the subsequent year ($\lfloor\colorbox{yellow}{y}\rfloor{+}1$ ) is a Gregorian calendar [leap year](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400) and 365 days otherwise.
+In the Dec year length equation above, $\text\%$ is the [modulo](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) operator, $\land$ is the logical [conjunction](https://en.wikipedia.org/wiki/Logical_conjunction) operator (and), and $\lor$ is the logical [disjunction](https://en.wikipedia.org/wiki/Logical_disjunction) operator (or). The easiest way to explain this equation is in terms of the [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world): the length of a Dec year ($\colorbox{orange}{n}$) is 366 days if the subsequent year [($\lfloor\colorbox{yellow}{y}\rfloor{+}1$)]{.nowrap} is a Gregorian calendar [leap year](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400) and 365 days otherwise.
 
-Dec dates look almost identical to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) [ordinal dates](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year). On the surface, it appears that the only difference is their [delimiter](https://en.wikipedia.org/wiki/Delimiter#:~:text=a%20sequence%20of%20one%20or%20more%20characters%20for%20specifying%20the%20boundary%20between%20separate%2C%20independent%20regions%20in%20plain%20text) (`+` versus `-`), but they also have different [starting values](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) (0 versus 1), [epochs](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era) (Year 0 [Day 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1"} versus Year -1 [Day 306]{.underline .blue data-bs-toggle="tooltip" data-bs-title="January 1"}), and [year length](https://en.wikipedia.org/wiki/Intercalation_(timekeeping)#:~:text=the%20insertion%20of%20a%20leap%20day%2C%20week%2C%20or%20month) equations ($\lfloor\colorbox{yellow}{y}\rfloor{+}1$ versus $\lfloor\colorbox{yellow}{y}\rfloor$).
+The `leap` function below determines whether the given year is a Gregorian calendar leap year and is useful for calculating $\colorbox{orange}{n}$ and converting Dec dates to and from the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) [ordinal date format](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year).
+On the surface, the only difference between Dec and ISO 8601 ordinal dates appears to be their [delimiters](https://en.wikipedia.org/wiki/Delimiter#:~:text=a%20sequence%20of%20one%20or%20more%20characters%20for%20specifying%20the%20boundary%20between%20separate%2C%20independent%20regions%20in%20plain%20text) (`+` versus `-`), but they also have different [starting values](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) (0 versus 1), [epochs](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era) ([0000+000]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1st, 1 BCE"} versus [-0001+306]{.underline .blue data-bs-toggle="tooltip" data-bs-title="January 1st, 1 BCE"}), and year length equations ($\lfloor\colorbox{yellow}{y}\rfloor{+}1$ versus $\lfloor\colorbox{yellow}{y}\rfloor$).
 
-Unlike ISO 8601 dates, Dec dates can represent annual events such as anniversaries. Press the Play▶️button below to cycle🔄through every day of the year and its corresponding month and day of the month. You can also use the [range inputs](https://observablehq.com/documentation/inputs/overview#range) to select a special date like your birthday🎂!
+::: {.content-hidden unless-profile="javascript"}
+::: {.content-hidden unless-format="ipynb"}
+::: {.content-hidden when-meta="knitr"}
 
+# JavaScript
+
+```{typescript}
+//| eval: false
+//| tags: [js, func, leap]
+function leap(year) {
+  return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+}
+function year2dity(year) {
+  return 365 + leap(year + 1)
+}
+year2dity(2024)
+function doty2isoo(year = 1969, doty = 306) {
+  return [
+    year + (doty > 305),
+    doty + 60 + leap(year + 1)) % 365
+  ]
+}
+function isoo2doty(year = 1970, doty = 1) {
+  return [
+    year - (day < (60 + leap(year - 1))),
+    (day + 305 - leap(year)) % 365
+  ]
+}
+```
+
+:::
+:::
+:::
+
+::: {.content-hidden unless-profile="julia"}
+::: {.content-hidden unless-format="ipynb"}
+::: {.content-hidden when-meta="knitr"}
+
+<!-- # Julia -->
+
+<!-- ```{julia} -->
+<!-- #| eval: false -->
+<!-- #| tags: [jl, func, leap] -->
+<!-- function leap(year) -->
+<!--     year % 4 == 0 && year % 100 != 0 || year % 400 == 0 -->
+<!-- end -->
+<!-- function year2dity(year) -->
+<!--     return 365 + leap(year + 1) -->
+<!-- end -->
+<!-- year2dity(2024) -->
+<!-- ``` -->
+
+:::
+:::
+:::
+
+::: {.content-hidden unless-profile="lua"}
+::: {.content-hidden unless-format="ipynb"}
+::: {.content-hidden when-meta="knitr"}
+
+# Lua
+
+```{lua}
+--| eval: false
+--| tags: [lua, func, leap]
+function leap(year) {
+  return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+}
+function year2dity(year) {
+  return 365 + leap(year + 1)
+}
+year2dity(2024)
+```
+
+:::
+:::
+:::
+
+::: {.content-hidden unless-profile="python"}
+::: {.content-hidden unless-format="ipynb"}
+::: {.content-hidden when-meta="knitr"}
+
+# Python
+
+```{python}
+#| eval: false
+#| tags: [py, func, leap]
+def leap(year):
+    return year % 4 == 0 and year % 100 != 0 or year % 400 == 0
+def year2dity(year):
+    return 365 + leap(year + 1)
+year2dity(2024)
+```
+
+:::
+:::
+:::
+
+::: {.content-hidden unless-profile="r"}
+::: {.content-hidden unless-format="ipynb"}
+::: {.content-hidden when-meta="knitr"}
+
+# R
+
+```{r}
+#| eval: false
+#| tags: [r, func, leap]
+leap <- function(year) {
+    year %% 4 == 0 & year %% 100 != 0 | year %% 400 == 0
+}
+year2dity <- function(year) {
+    365 + leap(year + 1)
+}
+year2dity(2024)
+```
+
+:::
+:::
+:::
+
+::: {.content-hidden unless-profile="bash"}
+::: {.content-hidden unless-format="ipynb"}
+::: {.content-hidden when-meta="knitr"}
+
+# Bash
+
+```{bash}
+#| eval: false
+#| tags: [sh, func, leap]
+leap() {
+    echo $(( (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0) ))
+}
+year2dity() {
+    echo "365 + $(leap $1 + 1)" | bc
+}
+```
+
+:::
+:::
+:::
+
+Dec defines different calendar systems solely by their epoch and year length equations. The Dec epoch is 60 days later than the [Gregorian calendar epoch](https://en.wikipedia.org/wiki/ISO_8601#:~:text=year%200000%20being%20equal%20to%201%20BC). This 60-day difference puts the Gregorian calendar leap day at the end of the preceding Dec year and allows the Dec day of the year (the `day` in `year+day`) to represent dates that occur on the same day every year.
+
+Press the Play▶️button below to cycle🔄through every Dec day of the year (doty) and its corresponding month and day of the month (dotm) in the Gregorian calendar. Or use the [range inputs](https://observablehq.com/documentation/inputs/overview#range) to select a date with personal significance like your birthday🎂 or a historical date like [Day 110](https://en.wikipedia.org/wiki/Juneteenth#:~:text=celebrated%20annually%20on%20June%2019%20to%20commemorate%20the%20ending%20of%20slavery%20in%20the%20United%20States){data-bs-toggle="tooltip" data-bs-title="Juneteenth"}.
 
 ```{ojs}
 //| echo: false
@@ -130,8 +274,99 @@ viewof dotmInput = transformInput(
 ))});
 ```
 
-The animations above goes through an entire year in 36.5 beats, a million times faster🏎️than the actual speed of time!
-A Dec beat is a centimilliday (1% of a milliday, $10^{-5}$ of a day, or 86.4% of a second), which can be thought of as a heart❤️beat or musical🎵[beat](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=the%20beat%20is%20the%20basic%20unit%20of%20time) with a constant [rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=The%20American%20Heart%20Association%20states%20the%20normal%20resting%20adult%20human%20heart%20rate%20is%2060%2D100%20bpm.) or [tempo](https://en.wikipedia.org/wiki/Tempo#Basic_tempo_markings:~:text=Adagietto%20%E2%80%93%20slower%20than,56%E2%80%93108%C2%A0bpm) of $69.\overline4$ beats per minute. While Dec times are shown on clocks🕰️and⌚️watches in decidays (tenths of a day), beats can be used to measure durations, such as the time since this webpage was loaded: \${styledTickTime}.
+Range inputs, like the ones above, are great for selecting a doty but typically do not work well with months. In the example above, users can select [non-standard month and dotm combinations](https://en.wikipedia.org/wiki/List_of_non-standard_dates). If we want dates that include a year, we can use numeric or text inputs for Dec dates and specialized interfaces like [date inputs](https://observablehq.com/documentation/inputs/overview#date) [based on HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) for Gregorian calendar dates, as shown below.
+
+```{ojs}
+//| echo: false
+viewof yd = Inputs.form([
+  Inputs.number({label: "year", value: "2024"}),
+  Inputs.number({label: "day", value: "306"})
+])
+viewof decoOutput = transformInput(
+  Inputs.text({label: "date", placeholder: "year+day"}),
+  {bind: viewof yd, transform: doty2deco, invert: deco2doty});
+```
+
+```{ojs}
+//| echo: false
+function doty2dote(year = 1969, doty = 0, zone = 0) {
+    const cycle = Math.floor((year >= 0 ? year : year - 399) / 400),
+    yote = year - cycle * 400;
+    return cycle * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty - zone
+}
+function doty2deco(yearDoty = [1969, 306], zone = 0) {
+    const yd = dote2doty(doty2dote(yearDoty[0], Math.floor(yearDoty[1])));
+    return `${yd[0]}+${(yd[1]).toString().padStart(3, "0")}${
+        yearDoty[1].toString().includes(".") ? "." + (
+            (yearDoty[1] > 0) ? (yearDoty[1] - zone).toString().split(".").pop()
+            : [...(yearDoty[1] - zone).toString().split(".").pop()].map(
+                (e, i, a) => (i + 1 === a.length) ? 10 - e : 9 - e
+            ).join("")
+        ) : ""
+    }`
+}
+function deco2doty(timestamp = "1969+306.00000Z") {
+    const arr = timestamp.toString().split(/(?=[+-]|[a-zA-Z])/, 3);
+    switch (arr.length) {
+        case 1: return [unix2doty(Date.now())[0], parseFloat(arr[0]), 0];
+        case 2: return (/^[a-zA-Z]+$/.test(arr[1]))
+            ? [unix2doty(Date.now())[0], parseFloat(arr[0]), zone2hour(arr[1]) / 24]
+            : [parseFloat(arr[0]), parseFloat(arr[1]), 0];
+    };
+    return [parseFloat(arr[0]), parseFloat(arr[1]), /^[a-zA-Z]+$/.test(arr[2])
+        ? zone2hour(arr[2]) / 24
+        : parseFloat(arr[2].replace(/([+-])/, "$1\."))];
+}
+function zone2hour(zone = "Z") {
+    return (zone = zone.toUpperCase()) == "Z" ? 0
+        : zone > "@" && zone < "J" ? zone.charCodeAt() - 64
+        : zone > "J" && zone < "N" ? zone.charCodeAt() - 65
+        : zone < "Z" && zone > "M" ? -(zone.charCodeAt() - 77)
+        : zone;
+}
+```
+
+```{ojs}
+//| echo: false
+// https://observablehq.com/@dmaynard/date-range-inputs
+viewof calInput = transformInput(
+    Inputs.date({label: "mm/dd/yyyy", value: beginDate}),
+    {bind: viewof yd, transform: doty2isoc, invert: isoc2doty}
+);
+function doty2unix(year = 1969, doty = 306, zone = 0) {
+    return (doty2dote(year, doty, zone) - 719468) * 86400000;
+}
+function doty2isoc(yd) {
+    return new Date(doty2unix(...yd))
+}
+function doty2greg(doty = 306) {
+    const m = Math.floor((5 * doty + 2) / 153);
+    return [
+      Math.floor(m < 10 ? m + 3 : m - 9),
+      Math.floor(doty - (153 * m + 2) / 5 + 2)
+    ];
+}
+function greg2doty(month = 1, day = 1) {
+    return Math.floor(
+        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5 + day - 1
+)}
+function greg2year(year = 1970, month = 1) { return year - (month < 3) }
+function isoc2doty(isoc) {
+  return [greg2year(isoc.getFullYear(), isoc.getUTCMonth() + 1), greg2doty(isoc.getUTCMonth() + 1, isoc.getUTCDate())];
+}
+function doty2year(year = 1969, doty = 306) { return year + (doty > 305) }
+```
+
+
+
+range Dec dates facilitate date arithmetic and are less error-prone than month-based dates because days of the month have different maximums (28, 29, 30, or 31) that do not follow a clear pattern. To remember  you know them all? In contrast, days of the year (doties) have a sensible range ($0 \le d \lt n$) can represent dates in the previous or next year. 
+
+ As of [2004+275]{.underline .blue data-bs-toggle="tooltip" data-bs-title="December 1st, 2004 CE"}, ISO 8601 no longer provides any means for [displaying annual dates](https://en.wikipedia.org/wiki/ISO_8601#Truncated_representations_(deprecated)). As a result, there is no international standard for displaying the equivalent of Dec annual dates. month and day of the month In Dec,  there is no In contrast, Dec dates can be truncated from both sides and each digit has it left to yield the day of the year
+Therefore, leap day is always the last day of the year in Dec. In contrast, leap shifts the ordinal number of all of the subsequent days in Gregorian calendar leap years. cannot leap day from shifting the by one day in leap years. Ending the year after leap day makes ordinal dates. To maintain synchronization with the Gregorian calendar, Dec uses same leap year rule as the Gregorian calendar but replaces the current year ($\lfloor\colorbox{yellow}{y}\rfloor$) with the subsequent year ($\lfloor\colorbox{yellow}{y}\rfloor{+}1$) to account for the 60-day difference in epochs.
+
+ISO 8601 describes 3 date formats: ordinal, week, and calendar. is the most commonly used ISO 8601 date format is 
+Unlike ISO 8601 dates, Dec dates can 
+
 
 The day of the year 
 The Dec epoch, . This 60-day shift enables 
@@ -412,18 +647,12 @@ I use different programming languages to convert UNIX time in various places on 
 
 ```{ojs}
 //| echo: false
+//| output: false
 unix = {
   while(true) {
     yield Date.now();
   }
 }
-tick = {
-  let i = 0;
-  while (true) {
-    yield Promises.tick(864, ++i);
-  }
-}
-tickTime = tick % 1e5
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone) {
   return [
@@ -449,11 +678,11 @@ function dote2doty(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
-function doty2deco(year = 1969, doty = 306, zone = 0) {
+function doty2deco0(year = 1969, doty = 306, zone = 0) {
   return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`
 }
 ydz = dote2doty(...unix2dote(unix))
-deco = doty2deco(...ydz)
+deco = doty2deco0(...ydz)
 // https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor
 function setStyle(content, style = {}) {
   function yiq(color) {
@@ -478,28 +707,17 @@ function setStyle(content, style = {}) {
     ...rest
   }}>${content}</span>`;
 }
-function year2bool(year = 1970) {
+function year2leap(year = 1970) {
     return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
 }
 decoYear = deco.slice(0, 4)
 decoDate = deco.slice(5, 8)
-decoTime = deco.slice(8, 14)
-decoTimeZone = deco[15]
-nDaysInYear = 365 + year2bool(ydz[0] + 1)
-fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(8)
-styledDecoYear0 = setStyle(decoYear, d3.schemePaired[10])
-styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])
+nDaysInYear = 365 + year2leap(ydz[0] + 1)
+fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(3)
+styledDecoYear = setStyle(decoYear, d3.schemePaired[10])
 styledFracYear = setStyle(fracYear, d3.schemePaired[10])
-styledDecoDate0 = setStyle(decoDate, d3.schemePaired[1])
-styledDecoDate1 = setStyle(decoDate, d3.schemePaired[1])
-styledNdays = setStyle(nDaysInYear * 10, d3.schemePaired[1])
-styledDecoTime0 = setStyle(decoTime, d3.schemePaired[2])
-styledDecoTime1 = setStyle(decoTime, d3.schemePaired[2])
-styledDecoTime2 = setStyle(decoTime, d3.schemePaired[2])
-styledTimeZone0 = setStyle(decoTimeZone, d3.schemePaired[3])
-styledTimeZone1 = setStyle(decoTimeZone, d3.schemePaired[3])
-styledTimeZone2 = setStyle(decoTimeZone, d3.schemePaired[3])
-styledTickTime = setStyle(tickTime, d3.schemePastel2[0])
+styledDecoDate = setStyle(decoDate, d3.color("cyan").formatHex())
+styledNdays = setStyle(nDaysInYear, d3.schemePaired[6])
 // https://observablehq.com/@juang1744/transform-input/1
 transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
   if (source === undefined) {
@@ -644,27 +862,7 @@ function Scrubber(values, {
   Inputs.disposal(form).then(stop);
   return form;
 }
-function unix2deco(ms = 0) {
-    return doty2deco(unix2doty(ms));
-};
-function deco2doty(timestamp = "1969+306.00000Z") {
-    const arr = timestamp.toString().split(/(?=[+-]|[a-zA-Z])/, 3);
-    switch (arr.length) {
-        case 1: return [unix2doty(Date.now())[0], parseFloat(arr[0]), 0];
-        case 2: return (/^[a-zA-Z]+$/.test(arr[1]))
-            ? [unix2doty(Date.now())[0], parseFloat(arr[0]), zone2hour(arr[1]) / 24]
-            : [parseFloat(arr[0]), parseFloat(arr[1]), 0];
-    };
-    return [parseFloat(arr[0]), parseFloat(arr[1]), /^[a-zA-Z]+$/.test(arr[2])
-        ? zone2hour(arr[2]) / 24
-        : parseFloat(arr[2].replace(/([+-])/, "$1\."))];
-}
-function zone2hour(zone = "Z") {
-    return (zone = zone.toUpperCase()) == "Z" ? 0
-        : zone > "@" && zone < "J" ? zone.charCodeAt() - 64
-        : zone > "J" && zone < "N" ? zone.charCodeAt() - 65
-        : zone < "Z" && zone > "M" ? -(zone.charCodeAt() - 77)
-        : zone;
-}
+beginDate = "2024-03-01"
+endDate = "2025-02-28"
 ```
 
