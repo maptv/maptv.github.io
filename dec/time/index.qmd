@@ -96,6 +96,7 @@ My website serves as a demonstration of both the [Quarto](https://quarto.org) pu
 
 ### Dec dates
 The `year+day` format of Dec dates is derived from the year of the era equation: $\colorbox{yellow}{y}{=}\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}{\div}\colorbox{orange}{n}$. In this equation, $\colorbox{yellow}{y}$ is the decimal years since the Dec epoch (Year 0 [Day 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1"}), $\lfloor\colorbox{yellow}{y}\rfloor$ is $\colorbox{yellow}{y}$ [floored](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x) to obtain an [integer](https://en.wikipedia.org/wiki/Integer#:~:text=the%20number%20zero%20%280%29%2C%20a%20positive%20natural%20number%20%281%2C%202%2C%203%2C%20.%20.%20.%29%2C%20or%20the%20negation%20of%20a%20positive%20natural%20number%20%28%E2%88%921%2C%20%E2%88%922%2C%20%E2%88%923%2C%20.%20.%20.%29) year, $\colorbox{cyan}{d}$ is the [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) day of the year, and $\colorbox{orange}{n}$ is the total number of days in the year.
+The current values in this equation are: `{ojs} styledDecoYear0`
 
 Dec dates only include the first two terms from the equation above ($\colorbox{yellow}{y}$ and $\colorbox{cyan}{d}$), because $\colorbox{orange}{n}$ is not needed to identify a specific date in time, only has 2 possible values (365 or 366), remains constant for long periods of time (366, 1095, or 2920 days), and can be calculated using the Dec year length equation:
 
@@ -161,6 +162,10 @@ viewof inputDatetime = Inputs.datetime({label: "date", value: `${decoYear}-03-01
 2.  \${styledOutputDatetimeYear}
 :::
 :::
+
+A Dec beat is a centimilliday ($10^{-5}$ of a day), which can be thought of as a heart❤️beat or musical🎵[beat](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=the%20beat%20is%20the%20basic%20unit%20of%20time) with a constant [rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=The%20American%20Heart%20Association%20states%20the%20normal%20resting%20adult%20human%20heart%20rate%20is%2060%2D100%20bpm.) or [tempo](https://en.wikipedia.org/wiki/Tempo#Basic_tempo_markings:~:text=Adagietto%20%E2%80%93%20slower%20than,56%E2%80%93108%C2%A0bpm) of $69.\overline4$ beats per minute.
+
+Dec dates and times are measured in days. The [subsequent article](/dec/time) on my website covers Dec times. While Dec dates The units for both Dec dates and times are days, but on different scales. decidays (tenths of a day), and beats, respectively. An example of a duration is the time since this webpage was loaded: \${styledTickTime}.
 
 
 Dec does not use months or days of the month, but dates can be  include a year can be entered using numeric or text inputs.  Similarly, the second Play▶️button below will go through every day of the year in the current year. The `day` in `year+day` dates can therefore function independently to represent the date of an event that occurs on the same day of the year on an annual basis. 
