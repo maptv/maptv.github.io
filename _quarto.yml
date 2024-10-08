@@ -145,9 +145,8 @@ format:
       light: [flatly, asset/light.scss]
       dark: [darkly, asset/dark.scss]
     grid:
-      sidebar-width: 162px
-      body-width: 1800px
-      margin-width: 162px
+      sidebar-width: 205px
+      body-width: 760px
     css: asset/style.css
     anchor-sections: true
     tbl-cap-location: margin

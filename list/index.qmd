@@ -19,6 +19,9 @@ listing:
   fields: [image, title, description, file-modified, categories, reading-time]
 format:
   html:
+    grid:
+      body-width: 1900px
+      margin-width: 120px
     repo-actions: false
     code-tools: false
     link-external-icon: false

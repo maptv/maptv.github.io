@@ -167,16 +167,16 @@ div.card-footer {
     border-top: 0;
 }
 
-#dec-dates > p > span > mjx-container > mjx-math > mjx-mpadded > mjx-block > mjx-rbox > mjx-mtext > mjx-c::before {
-    color: black;
+p > span > mjx-container > mjx-math > mjx-mpadded > mjx-block > mjx-rbox > mjx-mtext > mjx-c::before {
+  color: black;
 }
 
-#dec-dates > p > span > mjx-container > mjx-math > mjx-mrow > mjx-mtable > mjx-table > mjx-itable > mjx-mtr > mjx-mtd > mjx-texatom > mjx-mtable > mjx-table > mjx-itable > mjx-mtr > mjx-mtd > mjx-mpadded > mjx-block > mjx-rbox > mjx-mtext > mjx-c::before {
-    color: black;
+p > span > mjx-container > mjx-math > mjx-mrow > mjx-mtable > mjx-table > mjx-itable > mjx-mtr > mjx-mtd > mjx-texatom > mjx-mtable > mjx-table > mjx-itable > mjx-mtr > mjx-mtd > mjx-mpadded > mjx-block > mjx-rbox > mjx-mtext > mjx-c::before {
+  color: black;
 }
 
-#dec-dates > p:nth-child(5) > span.nowrap > span > mjx-container > mjx-math > mjx-mpadded > mjx-block > mjx-rbox > mjx-mtext > mjx-c::before {
-    color: black;
+p > span.nowrap > span > mjx-container > mjx-math > mjx-mpadded > mjx-block > mjx-rbox > mjx-mtext > mjx-c::before {
+  color: black;
 }
 
 div.observablehq > form > div > input {
@@ -185,4 +185,8 @@ div.observablehq > form > div > input {
 
 div.observablehq > div > form > div > input {
   background-color: darkslategray;
+}
+
+#quarto-document-content > div.quarto-figure.quarto-figure-center > figure > p > a > img {
+  filter: invert(1);
 }
