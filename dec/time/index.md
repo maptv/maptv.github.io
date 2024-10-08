@@ -1,6 +1,6 @@
 # Ordinal date
 Martin Laptev
-2024+204
+2024+208
 
 - [Dec dates](#dec-dates)
 
@@ -30,7 +30,8 @@ to obtain an
 year, $\colorbox{cyan}{d}$ is the
 [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
 day of the year, and $\colorbox{orange}{n}$ is the total number of days
-in the year.
+in the year. The current values in this equation are:
+`{ojs} styledDecoYear0`
 
 Dec dates only include the first two terms from the equation above
 ($\colorbox{yellow}{y}$ and $\colorbox{cyan}{d}$), because
@@ -144,6 +145,22 @@ viewof inputDatetime = Inputs.datetime({label: "date", value: `${decoYear}-03-01
 </div>
 
 </div>
+
+A Dec beat is a centimilliday (10<sup>−5</sup> of a day), which can be
+thought of as a heart❤️beat or
+musical🎵[beat](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=the%20beat%20is%20the%20basic%20unit%20of%20time)
+with a constant
+[rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=The%20American%20Heart%20Association%20states%20the%20normal%20resting%20adult%20human%20heart%20rate%20is%2060%2D100%20bpm.)
+or
+[tempo](https://en.wikipedia.org/wiki/Tempo#Basic_tempo_markings:~:text=Adagietto%20%E2%80%93%20slower%20than,56%E2%80%93108%C2%A0bpm)
+of $69.\overline4$ beats per minute.
+
+Dec dates and times are measured in days. The [subsequent
+article](../../dec/time) on my website covers Dec times. While Dec dates
+The units for both Dec dates and times are days, but on different
+scales. decidays (tenths of a day), and beats, respectively. An example
+of a duration is the time since this webpage was loaded:
+${styledTickTime}.
 
 Dec does not use months or days of the month, but dates can be include a
 year can be entered using numeric or text inputs. Similarly, the second
