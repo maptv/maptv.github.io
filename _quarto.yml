@@ -76,10 +76,10 @@ website:
       icon: rulers
       href: dec/index.qmd
       contents:
-      - text: Ordinal date
+      - text: Date
         icon: calendar-event
         href: dec/date/index.qmd
-      - text: Decimal time
+      - text: Time
         icon: clock
         href: dec/time/index.qmd
       - text: Geoposition
