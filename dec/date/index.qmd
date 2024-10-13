@@ -203,8 +203,6 @@ $$\text{year} = \text{yotc} + \text{cote} * 400$$
 $$\text{doty} = \text{dotc} - (365 \cdot \text{yotc} + \lfloor \text{yotc}{\div}{4} \rfloor - \lfloor \text{yotc}{\div}{100} \rfloor + \lfloor \text{yotc}{\div}{400} \rfloor)$$
 
 
-alternate form called  T plus (T+), T minus (T-), The `date` function creates Dec dates using part of an elegant algorithm in the [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days) function from the [`date` library](https://howardhinnant.github.io/date/date.html) developed by [Howard Hinnant](https://howardhinnant.github.io). Dec uses the full algorithm in the `isom` function that is described in the [month](#month) section of this article.
-
 # ISO 8601
 
 ## Ordinal
