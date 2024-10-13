@@ -18,6 +18,32 @@ div.zerobased > ol li::before {
   content: counter(listitem) ". ";
 }
 
+/* h1.title { */
+/*   counter-reset: refitem -1; */
+/* } */
+
+/* mjx-mtable > mjx-labels > mjx-itable > mjx-mtr > mjx-mtd > mjx-mtext > mjx-c:nth-child(1) { */
+/*   counter-increment: refitem; */
+/* } */
+
+/* mjx-mtable > mjx-labels > mjx-itable > mjx-mtr > mjx-mtd > mjx-mtext > mjx-c { */
+/*   counter-increment: refitem; */
+/* } */
+
+/* mjx-mtable > mjx-labels > mjx-itable > mjx-mtr > mjx-mtd > mjx-mtext > mjx-c:not(.mjx-c28):not(.mjx-c29)::before { */
+/*   content: counter(refitem) !important; */
+/* } */
+
+mjx-mtd#mjx-eqn\:1 > mjx-mtext.mjx-n > mjx-c:not(.mjx-c28):not(.mjx-c29)::before {
+  content: "0";
+}
+
+mjx-mtd#mjx-eqn\:2 > mjx-mtext.mjx-n > mjx-c:not(.mjx-c28):not(.mjx-c29)::before {
+  content: "1";
+}
+
+
+
 /* improve responsiveness of navbar elements */
 
 @media only screen and (max-width: 558px) {
@@ -50,7 +76,7 @@ div#quarto-search {
 
 code {
   padding: 0px;
-  font-size: .95em;
+  font-size: .9em !important;
 }
 
 div#quarto-sidebar-glass { display: none !important; }
