@@ -95,7 +95,7 @@ filters:
 
 My website serves as a demonstration of both the [Quarto](https://quarto.org) publishing system and the [Dec](/dec) measurement system. I use several clever hacks to get Quarto to display all of the dates on my website in the Dec `year+day` format. Knowing the basics of Dec dates will help you to understand the Quarto [filter](https://quarto.org/docs/extensions/filters.html), [render script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render), and [include file](https://quarto.org/docs/output-formats/html-basics.html#includes) examples in my [Quarto article](/software/quarto).
 
-Even though it does not use months or weeks, Dec supports [round-trip conversion](https://en.wikipedia.org/wiki/Round-trip_format_conversion#:~:text=converting%20from%20any%20data%20representation%20and%20back%20again) to all three [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) date formats, including ISO [month](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) and [week](https://en.wikipedia.org/wiki/ISO_week_date#:~:text=a%20leap%20week%20calendar%20system) dates. Dec dates can be directly converted into ISO month and [ordinal](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year) dates, but conversion to ISO week dates requires the intermediate step of turning a Dec date into a Dec day of the [era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar) (dote).
+This article, along with the subsequent article on my site, are part of a series focusing on Dec time measurement. To measure time, Dec uses years and days. Even though it does not need months or weeks, Dec supports [round-trip conversion](https://en.wikipedia.org/wiki/Round-trip_format_conversion#:~:text=converting%20from%20any%20data%20representation%20and%20back%20again) of all three [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) date formats, including ISO 8601 [month](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) and [week](https://en.wikipedia.org/wiki/ISO_week_date#:~:text=a%20leap%20week%20calendar%20system) dates, as shown in the [Mermaid](https://mermaid.js.org) flowchart  below.
 
 ```{mermaid}
 flowchart LR
@@ -109,30 +109,31 @@ flowchart LR
    end
    subgraph decalendar[Dec]
    B<-->E[date\n2029+266]
+   H
+   I
    end
    E<-->F[month date\n2029-11-22]
    E<-->G[ordinal date\n2029-326]
-   H((dotw\n4))-->B
-   H-->I[week date\n2029-W47-4]
+   B~~~H((leap\n0)):::empty-->B
+   H---G
+   B~~~I((dotw\n4)):::empty-->B
+   I-->J[week date\n2029-W47-4]
    subgraph iso[ISO 8601]
    F
    G
-   I
+   J
    end
-   B---H
+   classDef empty stroke:none,fill:none;
    %% B-->H[HH:MM:SS\n00:00:00]
-   %% C-->H
-   linkStyle 8 stroke-width:0px;
-   style decalendar y:110px,x:190px,width:270px,height:140px;
-   style H stroke:none,fill:none;
+   style decalendar y:50px,x:190px,width:270px,height:250px;
    click A "#unix-time"
    click B "#dote"
    click C "#rata-die"
    click D "#julian-date"
    click E "#date"
-   click F "#ordinal"
-   click G "#month"
-   click I "#week"
+   click F "#month"
+   click G "#ordinal"
+   click J "#week"
 ```
 
 It is easy to convert a dote into a day of the week (dotw), [UNIX](https://en.wikipedia.org/wiki/Unix#:~:text=a%20family%20of%20multitasking%2C%20multi%2Duser%20computer%20operating%20systems) [timestamp](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970), [Julian date](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon%20in%20Universal%20Time), or [Rata Die](https://en.wikipedia.org/wiki/Rata_Die#:~:text=a%20system%20for%20assigning%20numbers%20to%20calendar%20days) [fractional day](https://en.wikipedia.org/wiki/Rata_Die#Fractional_days:~:text=a%20continuously%2Dincreasing%20fractional%20number).
@@ -170,7 +171,7 @@ $$\text{dote} = \text{JD} - 1721119.5$$
 
 ## Dote
 
-Dec days of the era (dotes) are useful for [calendrical calculations](https://en.wikipedia.org/wiki/Calendrical_calculation#:~:text=calculation%20concerning%20calendar%20dates) such as obtaining the number of days in between two dates. To create a dote from a UNIX timestamp, Dec date, or ISO month date, we can use the `dote` function shown below. Unlike the `dote` function, the `isow2dote` and `isoo2dote` functions create dotes from ISO week and ordinal dates, respectively.
+Dec days of the era (dotes) are useful for [calendrical calculations](https://en.wikipedia.org/wiki/Calendrical_calculation#:~:text=calculation%20concerning%20calendar%20dates) such as obtaining the number of days in between two dates. To create a dote from a UNIX timestamp, Dec date, or ISO month date, we can use the `dote` function shown below. Unlike the `dote` function, the `isow2dote` and `isoo2dote` functions can create dotes from ISO week and ordinal dates, respectively.
 
 ## Date
 
@@ -428,7 +429,7 @@ Dec dates can also be easily converted to and from ISO 8601 month dates.
 ```{=html}
 <style>
    #decalendar > g.cluster-label {
-     transform: translate(305px, 110px) !important;
+     transform: translate(305px, 50px) !important;
    }
    span.cal-swatch {
      font-size: 14px !important;
