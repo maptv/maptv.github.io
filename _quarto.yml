@@ -177,8 +177,8 @@ freeze: true
 cache: true
 lightbox: true
 toc: true
-comments:
-  giscus:
-    repo: maptv/maptv.github.io
+# comments:
+#   giscus:
+#     repo: maptv/maptv.github.io
 profile:
   default: knitr

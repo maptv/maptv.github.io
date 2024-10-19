@@ -41,10 +41,21 @@ svg.mermaid-js g.edgeLabels span.edgeLabel {
     background: #000000 !important;
 }
 
-svg.mermaid-js  circle, rect, polygon {
+svg.mermaid-js g#decalendar > rect {
     fill: #880088 !important;
 }
 
+svg.mermaid-js g#ana > rect {
+    fill: #880088 !important;
+}
+
+svg.mermaid-js g#iso > rect {
+    fill: #880088 !important;
+}
+
+g.node.clickable.flowchart-label.default > rect {
+    fill: #888800 !important;
+}
 svg.mermaid-js  span.nodeLabel {
     color: #ffffff !important;
 }
@@ -187,6 +198,9 @@ div.observablehq > div > form > div > input {
   background-color: darkslategray;
 }
 
+#quarto-document-content > div.quarto-figure.quarto-figure-center > figure > p > a > img {
+  filter: invert(1);
+}
 #quarto-document-content > div.quarto-figure.quarto-figure-center > figure > p > a > img {
   filter: invert(1);
 }

@@ -95,7 +95,74 @@ filters:
 
 My website serves as a demonstration of both the [Quarto](https://quarto.org) publishing system and the [Dec](/dec) measurement system. I use several clever hacks to get Quarto to display all of the dates on my website in the Dec `year+day` format. Knowing the basics of Dec dates will help you to understand the Quarto [filter](https://quarto.org/docs/extensions/filters.html), [render script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render), and [include file](https://quarto.org/docs/output-formats/html-basics.html#includes) examples in my [Quarto article](/software/quarto).
 
-This article, along with the subsequent article on my site, are part of a series focusing on Dec time measurement. To measure time, Dec uses years and days. Even though it does not need months or weeks, Dec supports [round-trip conversion](https://en.wikipedia.org/wiki/Round-trip_format_conversion#:~:text=converting%20from%20any%20data%20representation%20and%20back%20again) of all three [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) date formats, including ISO 8601 [month](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) and [week](https://en.wikipedia.org/wiki/ISO_week_date#:~:text=a%20leap%20week%20calendar%20system) dates, as shown in the [Mermaid](https://mermaid.js.org) flowchart  below.
+There's much more to Dec than just dates but learning about the Dec calendar (Decalendar) is a great place to start. In essence, Dec treats years like [arrays](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=a%20data%20structure%20consisting%20of%20a%20collection%20of%20elements%20(values%20or%20variables)%2C%20of%20same%20memory%20size%2C%20each%20identified%20by%20at%20least%20one%20array%20index) and days of the year as array elements that can be identified with [indexes](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=individual%20objects%20are%20selected%20by%20an%20index) or combined via [slicing](https://en.wikipedia.org/wiki/Array_slicing#:~:text=an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array). Dec dates and slices are similar to, but immeasurably more useful than, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)  [ordinal dates](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year) and [time intervals](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=the%20intervening%20time%20between%20two%20time%20points).
+
+Both Dec and ISO ordinal dates consist of a year and a day of the year separated by a [delimiter](https://en.wikipedia.org/wiki/Delimiter#:~:text=a%20sequence%20of%20one%20or%20more%20characters%20for%20specifying%20the%20boundary%20between%20separate%2C%20independent%20regions%20in%20plain%20text). Dec dates differ from ISO ordinal dates in their first day of the year value ([0 versus 1](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)), epoch ([`0000+000`]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1st, 1 BCE"} versus [`00-1+306`]{.underline .blue data-bs-toggle="tooltip" data-bs-title="January 1st, 1 BCE"}), and method for determining the length of a year (applying the Gregorian calendar leap year rule to the subsequent year versus the given year).
+
+The Dec epoch and year length determination method allow Dec days of the year to function as the equivalent of months and days of the month. Notably, Dec days of the year can represent annual events, such as [birthdays](https://en.wikipedia.org/wiki/Birthday#:~:text=the%20anniversary%20of%20the%20birth%20of%20a%20person). In contrast, ISO 8601 does not allow the year to be omitted and thus clumsily expresses annual events as intervals that include the full start date.
+
+The Play▶️button below cycles🔄the [range
+inputs](https://observablehq.com/documentation/inputs/overview#range) beneath it through every day of the year (doty), month, and day of the month. The calendar plot beneath the range inputs highlights the doty in the top range input with a red box, distinguishes months with color, and shows the days of the week and ISO week numbers of the current year on its x- and y-axes, respectively.
+
+```{ojs}
+//| echo: false
+viewof scrubberDoty = Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"})
+viewof dotyInput = Inputs.range([0, 365], {value: 306, step: 1, label: "day of the year"});
+viewof monthInput = transformInput(
+    Inputs.range([1, 12], {step: 1, label: "month"}),
+    {bind: viewof dotyInput, transform: doty2month, invert: month2doty}
+);
+viewof dotmInput = transformInput(
+    Inputs.range([1, 31], {step: 1, label: "day of the month"}),
+    {bind: viewof dotyInput, transform: doty2dotm, invert: (x => Math.floor(( 153 * (
+        viewof monthInput.value > 2
+        ? viewof monthInput.value - 3
+        : viewof monthInput.value + 9) + 2
+    ) / 5 + x - 1
+))});
+calPlot = Plot.plot({
+  padding: 0,
+  className: "calplot",
+  x: {tickFormat: Plot.formatWeekday("en", "long"), tickSize: 0, axis: "top"},
+  //fx: {tickFormat: ""},
+  style: { fontSize: 14 },
+  color: {
+    scheme: "Pastel2",
+    legend: true,
+    domain: months.slice(monthInput > 1 ? monthInput - 2: monthInput - 1, monthInput + 1),
+    className: "cal",
+  },
+  marks: [
+    Plot.cell(datesCal, {
+      y: d => d3.utcWeek.count(d3.utcYear(d), d),
+      x: d => d.getUTCDay(),
+      //fx: d => d.getUTCFullYear(),
+      fill: d => months[d.getUTCMonth()],
+      stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "red" : "none",
+      strokeWidth: 3,
+      inset: 0.5,
+    }),
+    Plot.text(datesCal, {
+    y: d => d3.utcWeek.count(d3.utcYear(d), d),
+    x: d => d.getUTCDay(),
+    //fx: d => d.getUTCFullYear(),
+    fill: "black",
+    //stroke: "white",
+    text: d => Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
+    monospace: true,
+    fontSize: 16})
+  ]
+})
+move = {
+  d3.select(calPlot)
+    .select("div.cal-swatches")
+    .raise() // Places swatch below the plot
+    .style("float", "right"); // Floats the swatch on the right.
+}
+```
+
+Even though some its features are incompatible with ISO 8601, Dec supports [round-trip conversion](https://en.wikipedia.org/wiki/Round-trip_format_conversion#:~:text=converting%20from%20any%20data%20representation%20and%20back%20again) to all three [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) date formats.
+The [Mermaid](https://mermaid.js.org) [flowchart](https://mermaid.js.org/syntax/flowchart.html#flowcharts-basic-syntax) below shows how the Dec date `2029+226` can be converted into many different formats. You can jump to the section dedicated to a given format by clicking on its corresponding rectangle in the flowchart.
 
 ```{mermaid}
 flowchart LR
@@ -137,7 +204,6 @@ flowchart LR
 ```
 
 It is easy to convert a dote into a day of the week (dotw), [UNIX](https://en.wikipedia.org/wiki/Unix#:~:text=a%20family%20of%20multitasking%2C%20multi%2Duser%20computer%20operating%20systems) [timestamp](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970), [Julian date](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon%20in%20Universal%20Time), or [Rata Die](https://en.wikipedia.org/wiki/Rata_Die#:~:text=a%20system%20for%20assigning%20numbers%20to%20calendar%20days) [fractional day](https://en.wikipedia.org/wiki/Rata_Die#Fractional_days:~:text=a%20continuously%2Dincreasing%20fractional%20number).
-The [Mermaid](https://mermaid.js.org) flowchart above shows how the dote `741343` can be converted into many different formats. You can jump to the subsection in this article that focuses on a given format by clicking on its corresponding rectangle in the flowchart.
 
 Each of the [Dec](#dec) and [ISO 8601](#iso-8601) subsections showcases a function that converts one of three possible inputs, typically dote, Dec date, or ISO month date, into its eponymous format using [algorithms](https://howardhinnant.github.io/date_algorithms.html) developed by [Howard Hinnant](https://howardhinnant.github.io). Dote analogs, like UNIX time and Julian dates, do not have their own function because they can be created from dotes via simple arithmetic.
 
@@ -441,65 +507,6 @@ Dec dates can also be easily converted to and from ISO 8601 month dates.
 </style>
 ```
 
-Press the Play▶️button below to cycle🔄through every Dec day of the year (doty) and its corresponding month and day of the month (dotm). Or use the [range inputs](https://observablehq.com/documentation/inputs/overview#range) below to select a doty of personal or historical significance, like your birthday🎂 or [Day 110](https://en.wikipedia.org/wiki/Juneteenth#:~:text=celebrated%20annually%20on%20June%2019%20to%20commemorate%20the%20ending%20of%20slavery%20in%20the%20United%20States){.underline .blue data-bs-toggle="tooltip" data-bs-title="Juneteenth"}. The calendar plot below highlights the selected doty with a red box, distinguishes months with colors, and shows the week of the year (woty) and day of the week (dotw) on its y- and x-axes, respectively.
-
-```{ojs}
-//| echo: false
-viewof scrubberDoty = Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"})
-viewof dotyInput = Inputs.range([0, 365], {value: 306, step: 1, label: "day of the year"});
-viewof monthInput = transformInput(
-    Inputs.range([1, 12], {step: 1, label: "month"}),
-    {bind: viewof dotyInput, transform: doty2month, invert: month2doty}
-);
-viewof dotmInput = transformInput(
-    Inputs.range([1, 31], {step: 1, label: "day of the month"}),
-    {bind: viewof dotyInput, transform: doty2dotm, invert: (x => Math.floor(( 153 * (
-        viewof monthInput.value > 2
-        ? viewof monthInput.value - 3
-        : viewof monthInput.value + 9) + 2
-    ) / 5 + x - 1
-))});
-calPlot = Plot.plot({
-  padding: 0,
-  className: "calplot",
-  x: {tickFormat: Plot.formatWeekday("en", "long"), tickSize: 0, axis: "top"},
-  //fx: {tickFormat: ""},
-  style: { fontSize: 14 },
-  color: {
-    scheme: "Pastel2",
-    legend: true,
-    domain: months.slice(monthInput > 1 ? monthInput - 2: monthInput - 1, monthInput + 1),
-    className: "cal",
-  },
-  marks: [
-    Plot.cell(datesCal, {
-      y: d => d3.utcWeek.count(d3.utcYear(d), d),
-      x: d => d.getUTCDay(),
-      //fx: d => d.getUTCFullYear(),
-      fill: d => months[d.getUTCMonth()],
-      stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "red" : "none",
-      strokeWidth: 3,
-      inset: 0.5,
-    }),
-    Plot.text(datesCal, {
-    y: d => d3.utcWeek.count(d3.utcYear(d), d),
-    x: d => d.getUTCDay(),
-    //fx: d => d.getUTCFullYear(),
-    fill: "black",
-    //stroke: "white",
-    text: d => Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
-    monospace: true,
-    fontSize: 16})
-  ]
-})
-move = {
-  d3.select(calPlot)
-    .select("div.cal-swatches")
-    .raise() // Places swatch below the plot
-    .style("float", "right"); // Floats the swatch on the right.
-}
-```
-
 Week and dotw values vary from year to year in a pattern called the solar cycle. Dec has no need for weeks, but uses solar cycles to convert Dec dates into days of the era (dotes). A day of the era (dote) is a continuous count of days since the Dec epoch which can be used for [calendrical calculations](https://en.wikipedia.org/wiki/Calendrical_calculation#:~:text=calculation%20concerning%20calendar%20dates) or converted into a dotw or an ISO 8601 [week date](https://en.wikipedia.org/wiki/ISO_week_date#:~:text=a%20leap%20week%20calendar%20system) as shown below.
 
 ::: {.content-hidden unless-profile="knitr"}
@@ -534,7 +541,7 @@ Week and dotw values vary from year to year in a pattern called the solar cycle.
 
 If we ever need to convert between a doty and a Gregorian calendar month and day of the month without any conversion tools, we can use the Dec finger mnemonic, which is similar to the [knuckle mnemonic](https://en.wikipedia.org/wiki/Knuckle_mnemonic#:~:text=a%20mnemonic%20device%20for%20remembering%20the%20number%20of%20days%20in%20the%20months%20of%20the%20Julian%20and%20Gregorian%20calendars). The numbers above the fingers in the image below indicate the doty of the last day of each Gregorian calendar month. The thumb, middle finger, and pinky represent months with 31 days, whereas the index and ring fingers stand for 30-day months.
 
-![Dec finger mnemonic](/asset/finger.svg)
+![Dec finger mnemonic](/asset/finger.svg){.knitr}
 
 The [southward equinox](https://en.wikipedia.org/wiki/September_equinox#:~:text=the%20moment%20when%20the%20Sun%20appears%20to%20cross%20the%20celestial%20equator%2C%20heading%20southward) falls on Day 205 in Year 2024, 2025, 2028, and 2029. We can determine that Day 205 is September 22 by subtracting the Dec date of the last day of August (Day 183), the month preceding September, from the southward equinox doty: $205{-}183{=}22$. To convert in the other direction, we would sum the doty and the day of the month: $183{+}22{=}205$.
 
