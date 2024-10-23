@@ -76,9 +76,12 @@ website:
       icon: rulers
       href: dec/index.qmd
       contents:
-      - text: Date
-        icon: calendar-event
+      - text: Dec Date
+        icon: calendar-date
         href: dec/date/index.qmd
+      - text: ISO Date
+        icon: calendar-month
+        href: iso/date/index.qmd
       - text: Time
         icon: clock
         href: dec/time/index.qmd
