@@ -1,6 +1,17 @@
-# Dec Date
+# Date
 Martin Laptev
 2024+236
+
+- [Dote analogs](#dote-analogs)
+  - [UNIX time](#unix-time)
+  - [Rata Die](#rata-die)
+  - [Julian date](#julian-date)
+- [Dec](#dec)
+  - [Dote](#dote)
+  - [Date](#date)
+- [ISO 8601](#iso-8601)
+  - [Ordinal](#ordinal)
+  - [Week](#week)
 
 My website serves as a demonstration of both the
 [Quarto](https://quarto.org) publishing system and the [Dec](../../dec)
@@ -251,6 +262,248 @@ calPlot1 = Plot.plot({
 })
 ```
 
+Dec dates and slices are similar to, but immeasurably more useful than,
+[ISO
+8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
+[ordinal
+dates](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year)
+and [time
+intervals](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=the%20intervening%20time%20between%20two%20time%20points).
+
+Both Dec and ISO ordinal dates consist of a year and a day of the year
+separated by a
+[delimiter](https://en.wikipedia.org/wiki/Delimiter#:~:text=a%20sequence%20of%20one%20or%20more%20characters%20for%20specifying%20the%20boundary%20between%20separate%2C%20independent%20regions%20in%20plain%20text).
+ISO dates use Dec dates differ from ISO ordinal dates in their first day
+of the year value ([0 versus
+1](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)),
+epoch (<span class="blue" data-bs-toggle="tooltip"
+data-bs-title="March 1st, 1 BCE"><u>`0000+000`</u></span> versus
+<span class="blue" data-bs-toggle="tooltip"
+data-bs-title="January 1st, 1 BCE"><u>`00-1+306`</u></span>), and method
+for determining the length of a year (applying the Gregorian calendar
+leap year rule to the subsequent year versus the given year).
+
+The Dec epoch and year length determination method allow Dec days of the
+year to function as the equivalent of months and days of the month.
+Notably, Dec days of the year can represent annual events, such as
+[birthdays](https://en.wikipedia.org/wiki/Birthday#:~:text=the%20anniversary%20of%20the%20birth%20of%20a%20person).
+In contrast, ISO 8601 does not allow the year to be omitted and thus
+clumsily expresses annual events as intervals that include the full
+start date.
+
+Even though some its features are incompatible with ISO 8601, Dec
+supports [round-trip
+conversion](https://en.wikipedia.org/wiki/Round-trip_format_conversion#:~:text=converting%20from%20any%20data%20representation%20and%20back%20again)
+to all three [ISO
+8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
+date formats. The [Mermaid](https://mermaid.js.org)
+[flowchart](https://mermaid.js.org/syntax/flowchart.html#flowcharts-basic-syntax)
+below shows how the Dec date `2029+226` can be converted into many
+different formats. You can jump to the section dedicated to a given
+format by clicking on its corresponding rectangle in the flowchart.
+
+<div>
+
+<figure class=''>
+
+<div>
+
+<img src="index_files/figure-commonmark/mermaid-figure-1.png"
+style="width:6.92in;height:3.98in" />
+
+</div>
+
+</figure>
+
+</div>
+
+It is easy to convert a dote into a day of the week (dotw),
+[UNIX](https://en.wikipedia.org/wiki/Unix#:~:text=a%20family%20of%20multitasking%2C%20multi%2Duser%20computer%20operating%20systems)
+[timestamp](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970),
+[Julian
+date](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon%20in%20Universal%20Time),
+or [Rata
+Die](https://en.wikipedia.org/wiki/Rata_Die#:~:text=a%20system%20for%20assigning%20numbers%20to%20calendar%20days)
+[fractional
+day](https://en.wikipedia.org/wiki/Rata_Die#Fractional_days:~:text=a%20continuously%2Dincreasing%20fractional%20number).
+
+Each of the [Dec](#dec) and [ISO 8601](#iso-8601) subsections showcases
+a function that converts one of three possible inputs, typically dote,
+Dec date, or ISO month date, into its eponymous format using
+[algorithms](https://howardhinnant.github.io/date_algorithms.html)
+developed by [Howard Hinnant](https://howardhinnant.github.io). Dote
+analogs, like UNIX time and Julian dates, do not have their own function
+because they can be created from dotes via simple arithmetic.
+
+# Dote analogs
+
+## UNIX time
+
+UNIX time is the number of seconds since the [UNIX
+epoch](https://en.wikipedia.org/wiki/Epoch_(computing)#:~:text=Thursday%201%20January%201970%2000%3A00%3A00%20UT%2C%20a%20point%20in%20time%20known%20as%20the%20Unix%20epoch).
+Dec uses days instead of seconds and has a different
+[epoch](https://en.wikipedia.org/wiki/Epoch_(computing)#:~:text=a%20fixed%20date%20and%20time%20used%20as%20a%20reference).
+To work with UNIX timestamps, Dec converts them into days of the era
+(dotes) by first turning seconds into days and then shifting the epoch
+to <span class="blue" data-bs-toggle="tooltip"
+data-bs-title="March 1, 1 BCE"><u>`0000+000`</u></span>. The reverse
+conversion first shifts the epoch to <span class="blue"
+data-bs-toggle="tooltip"
+data-bs-title="January 1, 1970 CE"><u>`1969+306`</u></span> and then
+turns days into seconds.
+
+dote = UNIX ÷ 86400 + 719468
+
+UNIX = (dote − 719468) × 86400
+
+## Rata Die
+
+Rata Die (RD) fractional days are almost identical to dotes. The only
+difference is that the RD epoch, <span class="blue"
+data-bs-toggle="tooltip"
+data-bs-title="December 31, 1 BCE"><u>`0000+305`</u></span>, is 305 days
+after the Dec epoch, <span class="blue" data-bs-toggle="tooltip"
+data-bs-title="March 1, 1 BCE"><u>`0000+000`</u></span>. Therefore,
+conversion between dotes and RD fractional days is as simple as adding
+or subtracting 305. For more information on RD fractional days, take a
+look at the book entitled “[Calendrical
+Calculations](https://en.wikipedia.org/wiki/Calendrical_Calculations#:~:text=a%20book%20on%20calendar%20systems%20and%20algorithms%20for%20computers%20to%20convert%20between%20them)”.
+
+RD = dote − 305
+
+dote = RD + 305
+
+## Julian date
+
+A Julian date is a continuous count of days since <span class="blue"
+data-bs-toggle="tooltip"
+data-bs-title="noon on November 24, 4714 BCE"><u>`-4713+298.5`</u></span>.
+Julian dates are commonly used in astronomy. To convert a dote to a
+Julian date, we add 1721119.5 days to the dote to shift the epoch to
+<span class="blue" data-bs-toggle="tooltip"
+data-bs-title="4714 BCE"><u>Year -4713</u></span> <span class="blue"
+data-bs-toggle="tooltip" data-bs-title="noon on November 24"><u>Day
+298</u></span> <span class="blue" data-bs-toggle="tooltip"
+data-bs-title="noon"><u>Dot 5</u></span>. To convert a dote to a Julian
+date, we subtract 1721119.5 days from the Julian date to shift the epoch
+to <span class="blue" data-bs-toggle="tooltip"
+data-bs-title="1 BC"><u>Year 0</u></span> <span class="blue"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
+<span class="blue" data-bs-toggle="tooltip"
+data-bs-title="midnight"><u>Dot 0</u></span>.
+
+JD = dote + 1721119.5
+
+dote = JD − 1721119.5
+
+# Dec
+
+## Dote
+
+Dec days of the era (dotes) are useful for [calendrical
+calculations](https://en.wikipedia.org/wiki/Calendrical_calculation#:~:text=calculation%20concerning%20calendar%20dates)
+such as obtaining the number of days in between two dates. To create a
+dote from a UNIX timestamp, Dec date, or ISO month date, we can use the
+`dote` function shown below. Unlike the `dote` function, the `isow2dote`
+and `isoo2dote` functions can create dotes from ISO week and ordinal
+dates, respectively.
+
+## Date
+
+As shown in the code above and the equations below, the `date` function
+uses a dote to determine the
+[cycle](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years)
+of the era (cote). The cote is used to calculated the day of the cycle
+(dotc), year of the cycle (yotc), year, and day of the year (doty). Head
+to the [month](#month) and [ordinal](#ordinal) sections to see how the
+year and doty can be used to obtain ISO month and ordinal dates.
+
+$$\text{cote} = \Biggl \lfloor \frac{\begin{cases}\text{dote}&{\text{if } \text{dote} \geq 0;}\\\text{dote}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$
+
+dotc = dote − cote ⋅ 146097
+
+$$\text{yotc} = \biggl \lfloor \frac{\text{dotc} - \lfloor \text{dotc}{\div}{1460} \rfloor + \lfloor \text{dotc}{\div}{36524} \rfloor - \lfloor \text{dotc}{\div}{146096} \rfloor}{365} \biggr \rfloor$$
+
+year = yotc + cote \* 400
+
+doty = dotc − (365 ⋅ yotc + ⌊yotc ÷ 4⌋ − ⌊yotc ÷ 100⌋ + ⌊yotc ÷ 400⌋)
+
+# ISO 8601
+
+## Ordinal
+
+On the surface, the only difference between Dec and ISO ordinal dates
+appears to be their
+[delimiters](https://en.wikipedia.org/wiki/Delimiter#:~:text=a%20sequence%20of%20one%20or%20more%20characters%20for%20specifying%20the%20boundary%20between%20separate%2C%20independent%20regions%20in%20plain%20text)
+(`+` versus `-`), but they also have different first day of the year
+values (\[0 versus
+1\](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:h
+
+## Week
+
+In addition to calculating $\colorbox{orange}{n}$, Dec uses the
+Gregorian calendar leap year rule to convert Dec dates to and from
+[ordinal
+dates](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year),
+as shown in the code below.
+
+Dec dates can also be easily converted to and from ISO 8601 month dates.
+
+<style>
+h6.relative.anchored {
+  margin-top: -25px;
+  margin-bottom: -2px;
+  text-align: center;
+}
+<!-- .calplot { -->
+<!--   margin-top: -15px; -->
+<!--   margin-bottom: -15px; -->
+<!-- } -->
+#decalendar > g.cluster-label {
+  transform: translate(305px, 50px) !important;
+}
+span.cal-swatch {
+  font-size: 14px !important;
+}
+form.oi-3a86ea-checkbox {
+  max-width: 700px;
+}
+div.cell:has(form.oi-3a86ea-toggle) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+div.observablehq > div:has(form.oi-3a86ea-toggle) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+form.oi-3a86ea-toggle {
+  max-width: 50% !important;
+  --label-width: 90px;
+}
+form.oi-3a86ea {
+  --input-width: 200px;
+  padding-right: 9px;
+}
+form.oi-3a86ea-toggle > label {
+  width: 78px;
+}
+div > form > label {
+  --label-width: 130px;
+}
+</style>
+
+Week and dotw values vary from year to year in a pattern called the
+solar cycle. Dec has no need for weeks, but uses solar cycles to convert
+Dec dates into days of the era (dotes). A day of the era (dote) is a
+continuous count of days since the Dec epoch which can be used for
+[calendrical
+calculations](https://en.wikipedia.org/wiki/Calendrical_calculation#:~:text=calculation%20concerning%20calendar%20dates)
+or converted into a dotw or an ISO 8601 [week
+date](https://en.wikipedia.org/wiki/ISO_week_date#:~:text=a%20leap%20week%20calendar%20system)
+as shown below.
+
 If we ever need to convert between a doty and a Gregorian calendar month
 and day of the month without any conversion tools, we can use the Dec
 finger mnemonic, which is similar to the [knuckle
@@ -297,6 +550,47 @@ variable-length months with [fixed-length
 months](https://en.wikipedia.org/wiki/Calendar_reform#13-month_calendars),
 Dec forgoes the use of months entirely and instead uses groups of ten
 days called deks.
+
+I generate all of the dates on my site from [UNIX
+time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201st%C2%A0January%201970%2C%20the%20Unix%20epoch)
+using calculations that I adapted from the
+[`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days)
+function in [Howard Hinnant](https://howardhinnant.github.io)’s [`date`
+library](https://howardhinnant.github.io/date/date.html). Each tab in
+the [tabset
+panel](https://quarto.org/docs/interactive/layout.html#:~:text=Tabset%20Panel,-If%20you%20want%20to%20allow)
+below shows a different implementation of a function called `unix2date`
+which converts UNIX time into `year+day` dates.
+
+In this function, `socy` is an abbreviation for solar cycle and `dote`,
+`dotc`, and `yotc` are acronyms for “day of the era”, “day of the
+cycle”, and “day of the cycle”, respectively. A solar cycle in the
+Gregorian calendar is [400
+years](https://en.wikipedia.org/wiki/Solar_cycle_%28calendar%29#:~:text=400%2Dyear%20cycle%20of%20the%20Gregorian%20calendar).
+A [calendar
+era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
+is the time that has passed since a starting point called a [calendar
+epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
+The Dec epoch is <span class="blue" data-bs-toggle="tooltip"
+data-bs-title="0000-03-01"><u>Year 0 Day 0</u></span>.
+
+I use different programming languages to convert UNIX time in various
+places on my site. More specifically, I use a
+[Python](https://en.wikipedia.org/wiki/Python_%28programming_language%29#:~:text=a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language)
+[post-render
+script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render)
+([date.py](../../asset/date.py)) for the dates on the [page that lists
+all of the articles on my site](../../list), a
+[Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20mainly%20for%20embedded%20use%20in%20applications)
+[filter](https://quarto.org/docs/extensions/filters.html)
+([date.lua](../../asset/date.lua)) for the PUBLISHED date at the top of
+each article, and an [include-after-body
+file](https://quarto.org/docs/output-formats/html-basics.html#includes)
+that sources a
+[JavaScript](https://en.wikipedia.org/wiki/JavaScript#:~:text=a%20programming%20language%20and%20core%20technology%20of%20the%20Web)
+file ([stamp.js](../../asset/stamp.js)) for the date in the above.
+[citation](http://localhost:4207/dec/date/#citation) information at the
+bottom of each article.
 
 ``` {ojs}
 //| echo: false
@@ -609,48 +903,3 @@ leapInput = leapscrub[0]
 function addN(d) { return d + 365 + leapInput }
 function subN(d) { return d - 365 - leapInput }
 ```
-
-<style>
-h6.relative.anchored {
-  margin-top: -25px;
-  margin-bottom: -2px;
-  text-align: center;
-}
-<!-- .calplot { -->
-<!--   margin-top: -15px; -->
-<!--   margin-bottom: -15px; -->
-<!-- } -->
-#decalendar > g.cluster-label {
-  transform: translate(305px, 50px) !important;
-}
-span.cal-swatch {
-  font-size: 14px !important;
-}
-form.oi-3a86ea-checkbox {
-  max-width: 700px;
-}
-div.cell:has(form.oi-3a86ea-toggle) {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-div.observablehq > div:has(form.oi-3a86ea-toggle) {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-form.oi-3a86ea-toggle {
-  max-width: 50% !important;
-  --label-width: 90px;
-}
-form.oi-3a86ea {
-  --input-width: 200px;
-  padding-right: 9px;
-}
-form.oi-3a86ea-toggle > label {
-  width: 78px;
-}
-div > form > label {
-  --label-width: 130px;
-}
-</style>
