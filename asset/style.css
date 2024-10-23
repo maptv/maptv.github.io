@@ -4,6 +4,13 @@ p, ul {
 }
 
 /* start order list at 0 */
+.centered {
+  text-align: center;
+}
+
+.floatright {
+  float: right;
+}
 
 div.zerobased > ol {
   list-style-type: none;
@@ -34,13 +41,13 @@ div.zerobased > ol li::before {
 /*   content: counter(refitem) !important; */
 /* } */
 
-mjx-mtd#mjx-eqn\:1 > mjx-mtext.mjx-n > mjx-c:not(.mjx-c28):not(.mjx-c29)::before {
-  content: "0";
-}
+/* mjx-mtd#mjx-eqn\:1 > mjx-mtext.mjx-n > mjx-c:not(.mjx-c28):not(.mjx-c29)::before { */
+/*   content: "0"; */
+/* } */
 
-mjx-mtd#mjx-eqn\:2 > mjx-mtext.mjx-n > mjx-c:not(.mjx-c28):not(.mjx-c29)::before {
-  content: "1";
-}
+/* mjx-mtd#mjx-eqn\:2 > mjx-mtext.mjx-n > mjx-c:not(.mjx-c28):not(.mjx-c29)::before { */
+/*   content: "1"; */
+/* } */
 
 
 
