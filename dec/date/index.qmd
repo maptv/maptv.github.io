@@ -120,36 +120,61 @@ inputs](https://observablehq.com/documentation/inputs/overview#range) beneath it
 
 ```{ojs}
 //| echo: false
-viewof scrubberDoty = Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"})
-viewof dotyInput = Inputs.range([0, 365], {value: 306, step: 1, label: "day of the year"});
+viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: "Day of the year"});
 viewof monthInput = transformInput(
-    Inputs.range([1, 12], {step: 1, label: "month"}),
-    {bind: viewof dotyInput, transform: doty2month, invert: month2doty}
+  Inputs.range([1, 12], {step: 1, label: "Month"}),
+  {bind: viewof dotyInput, transform: doty2month, invert: month2doty}
+);
+viewof dotyInput1 = transformInput(
+  Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of the year"}),
+  {bind: viewof dotyInput, transform: subN, invert: addN}
 );
 viewof dotmInput = transformInput(
-    Inputs.range([1, 31], {step: 1, label: "day of the month"}),
-    {bind: viewof dotyInput, transform: doty2dotm, invert: (x => Math.floor(( 153 * (
-        viewof monthInput.value > 2
-        ? viewof monthInput.value - 3
-        : viewof monthInput.value + 9) + 2
-    ) / 5 + x - 1
+  Inputs.range([1, 31], {step: 1, label: "Day of the month"}),
+  {bind: viewof dotyInput, transform: doty2dotm, invert: (x => Math.floor(( 153 * (
+    viewof monthInput.value > 2
+    ? viewof monthInput.value - 3
+    : viewof monthInput.value + 9) + 2
+  ) / 5 + x - 1
 ))});
+viewof leapscrub = Inputs.form([
+  Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
+  Inputs.toggle({label: "Leap year", value: false}),
+])
+```
+
+
+#### First day of the week of the year{.relative}
+
+```{ojs}
+//| echo: false
+viewof dotwInput = Inputs.radio([
+  "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+  ], {value: "Sunday"})
+```
+
+```{ojs}
+//| echo: false
 calPlot = Plot.plot({
   padding: 0,
+  width: 1000,
   className: "calplot",
-  x: {tickFormat: Plot.formatWeekday("en", "long"), tickSize: 0, axis: "top"},
+  y: {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
+      domain: [-1, 0, 1, 2, 3, 4, 5, 6],
+      ticks: [0, 1, 2, 3, 4, 5, 6],
+  },
+  x: {interval: 1, label: "Week", type: "band", tickSize: 0, tickPadding: 2, labelOffset: 24},
   //fx: {tickFormat: ""},
-  style: { fontSize: 14 },
+  style: { fontSize: 13 },
   color: {
-    scheme: "Pastel2",
-    legend: true,
-    domain: months.slice(monthInput > 1 ? monthInput - 2: monthInput - 1, monthInput + 1),
+    range: d3.schemePastel1.concat(d3.schemePastel2),
+    domain: months,
     className: "cal",
   },
   marks: [
     Plot.cell(datesCal, {
-      y: d => d3.utcWeek.count(d3.utcYear(d), d),
-      x: d => d.getUTCDay(),
+      x: d => d3.utcWeek.count(d3.utcYear(d), d),
+      y: d => d.getUTCDay(),
       //fx: d => d.getUTCFullYear(),
       fill: d => months[d.getUTCMonth()],
       stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "red" : "none",
@@ -157,22 +182,25 @@ calPlot = Plot.plot({
       inset: 0.5,
     }),
     Plot.text(datesCal, {
-    y: d => d3.utcWeek.count(d3.utcYear(d), d),
-    x: d => d.getUTCDay(),
+    x: d => d3.utcWeek.count(d3.utcYear(d), d),
+    y: d => d.getUTCDay(),
+    //fx: d => d.getUTCFullYear(),
+    text: d => d.getUTCDate() === 8 ? months[d.getUTCMonth()].slice(0, 3) : "",
+      y: -1,
+      frameAnchor: "left",
+    monospace: true,
+    fontSize: 13}),
+    Plot.text(datesCal, {
+    x: d => d3.utcWeek.count(d3.utcYear(d), d),
+    y: d => d.getUTCDay(),
     //fx: d => d.getUTCFullYear(),
     fill: "black",
     //stroke: "white",
-    text: d => Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
+    text: d => d.getUTCDate(), //Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
     monospace: true,
-    fontSize: 16})
+    fontSize: 13})
   ]
 })
-move = {
-  d3.select(calPlot)
-    .select("div.cal-swatches")
-    .raise() // Places swatch below the plot
-    .style("float", "right"); // Floats the swatch on the right.
-}
 ```
 
 Dec dates and slices are similar to, but immeasurably more useful than, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)  [ordinal dates](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year) and [time intervals](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=the%20intervening%20time%20between%20two%20time%20points).
@@ -493,21 +521,56 @@ isoo2date
 :::
 :::
 
-Dec dates can also be easily converted to and from ISO 8601 month dates. 
+Dec dates can also be easily converted to and from ISO 8601 month dates.
 
 
 ```{=html}
 <style>
-   #decalendar > g.cluster-label {
-     transform: translate(305px, 50px) !important;
-   }
-   span.cal-swatch {
-     font-size: 14px !important;
-     margin-bottom: -25px;
-  }
-  .calplot {
-     margin-bottom: -40px;
-  }
+h6.relative.anchored {
+  margin-top: -25px;
+  margin-bottom: -2px;
+  text-align: center;
+}
+.calplot {
+  margin-top: -15px;
+  margin-bottom: -15px;
+}
+#decalendar > g.cluster-label {
+  transform: translate(305px, 50px) !important;
+}
+span.cal-swatch {
+  font-size: 14px !important;
+}
+.cal-swatches {
+  max-width: 550px;
+}
+form.oi-3a86ea-checkbox {
+  max-width: 700px;
+}
+div.cell:has(form.oi-3a86ea-toggle) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+div.observablehq > div:has(form.oi-3a86ea-toggle) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+form.oi-3a86ea-toggle {
+  max-width: 50% !important;
+  --label-width: 90px;
+}
+form.oi-3a86ea {
+  --input-width: 200px;
+  padding-right: 9px;
+}
+form.oi-3a86ea-toggle > label {
+  width: 78px;
+}
+div > form > label {
+  --label-width: 130px;
+}
 </style>
 ```
 
@@ -922,7 +985,7 @@ function doty2dotm(doty = 0) {
     return doty - Math.floor((153 * m + 2) / 5) + 1;
 }
 numbers = Array.from({length: 366}, (_, i) => i)
-set(viewof dotyInput, scrubberDoty)
+set(viewof dotyInput, leapscrub[1])
 // https://observablehq.com/@observablehq/synchronized-inputs
 function set(input, value) {
   input.value = value;
@@ -952,7 +1015,7 @@ function Scrubber(values, {
   let timer = null;
   let interval = null;
   function start() {
-    form.b.textContent = "Pause";
+    form.b.textContent = "Stop";
     if (delay === null) frame = requestAnimationFrame(tick);
     else interval = setInterval(tick, delay);
   }
@@ -1001,9 +1064,9 @@ function Scrubber(values, {
   Inputs.disposal(form).then(stop);
   return form;
 }
-
-startCal = new Date(monthInput < 3 ? decoYear + 1 : decoYear, monthInput > 1 ? monthInput - 2 : monthInput - 1, 0);
-endCal = new Date(monthInput < 3 ? decoYear + 1 : decoYear, monthInput < 12 ? monthInput + 1 : monthInput, 0);
+calYear = !leapInput && dotwInput == "Monday" ? 6 : !leapInput && dotwInput == "Tuesday" ? 7 : !leapInput && dotwInput == "Wednesday" ? 2 : !leapInput && dotwInput == "Thursday" ? 3 : !leapInput && dotwInput == "Friday" ? 9 : !leapInput && dotwInput == "Saturday" ? 10 : !leapInput && dotwInput == "Sunday" ? 11 : leapInput && dotwInput == "Monday" ? 12 : leapInput && dotwInput == "Tuesday" ? 24 : leapInput && dotwInput == "Wednesday" ? 8 : leapInput && dotwInput == "Thursday" ? 20 : leapInput && dotwInput == "Friday" ? 4 : leapInput && dotwInput == "Saturday" ? 16 : leapInput && dotwInput == "Sunday" ? 28 : 0;
+startCal = new Date(calYear, 0, 0);
+endCal = new Date(calYear, 12, 0);
 datesCal = d3.utcDays(startCal, endCal);
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function unix2doty(unix) {
@@ -1081,5 +1144,8 @@ function greg2year(year = 1970, month = 1) { return year - (month < 3) }
 function isoc2doty(isoc) {
   return [greg2year(isoc.getFullYear(), isoc.getUTCMonth() + 1), greg2doty(isoc.getUTCMonth() + 1, isoc.getUTCDate())];
 }
+leapInput = leapscrub[0]
+function addN(d) { return d + 365 + leapInput }
+function subN(d) { return d - 365 - leapInput }
 ```
 
