@@ -268,7 +268,21 @@ calPlot1 = Plot.plot({
 })
 ```
 
-Dec does not use weeks The first day of the week of the year.
+Even though it only uses years and days, Dec can display dates based on
+months or weeks by modifying $\colorbox{cyan}{d}$. The equation for Dec
+week dates is
+$\lfloor\colorbox{yellow}{y}\rfloor{+}7{\times}\colorbox{pink}{U}{+}\text{\textcolor{blue}{w}}{-}\text{\textcolor{blue}{w}}\_
+\text{\textcolor{blue}{d=0}}{=}\colorbox{yellow}{y}$, where
+$\colorbox{pink}{U}$ is the week number, $\text{\textcolor{blue}{w}}$ is
+the day of the week number, and
+$\text{\textcolor{blue}{w}}\_\text{\textcolor{blue}{d=0}}$ is
+$\text{\textcolor{blue}{w}}$ on the first day of the year
+($\colorbox{cyan}{d}{=}0$). The Dec week date equation for today is .
+
+We can truncate the Dec week date equation to remove
+$\text{\textcolor{blue}{w}}\_\text{\textcolor{blue}{d=0}}$, which can be
+determined from $\lfloor\colorbox{yellow}{y}\rfloor$ and is not needed
+to identify a date. The truncated Dec week date equation for today is .
 
 If we ever need to convert between a doty and a Gregorian calendar month
 and day of the month without any conversion tools, we can use the Dec
