@@ -34,24 +34,24 @@ $$\colorbox{orange}{n}=\begin{cases}
   \lor(\lfloor \colorbox{yellow}{y}\rfloor+1)\vcenter{\text{ \% }}400=0\end{align}}\\\\
   365&{\text{otherwise.}}\end{cases}$$
 
-In addition to calculating $\colorbox{yellow}{y}$, $\colorbox{orange}{n}$ is needed to convert between `year+day` and `year-day` Dec dates. The `year-day` version of the Dec date equation is $\lfloor\colorbox{yellow}{y}\rfloor{+}1{-}(\colorbox{orange}{n}{-}\colorbox{cyan}{d}){\div}\colorbox{orange}{n}{=}\colorbox{yellow}{y}$. In essence, $\colorbox{orange}{n}{-}\colorbox{cyan}{d}$ is a ["T-minus" countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event) of the days until the start of Year $\lfloor\colorbox{yellow}{y}\rfloor{+}1$. The current `year-day` date, \${styledNextYear}-\${styledDecoTminus}, tells us that Year \${nextYear} will begin in \${Tminus} days.
+In addition to calculating $\colorbox{yellow}{y}$, $\colorbox{orange}{n}$ is needed to convert between `year+day` and `year-day` Dec dates. The `year-day` version of the Dec date equation is $\lfloor\colorbox{yellow}{y}\rfloor{+}1{-}(\colorbox{cyan}{d}{-}\colorbox{orange}{n}){\div}\colorbox{orange}{n}{=}\colorbox{yellow}{y}$. In essence, $\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ is a ["T-minus" countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event) of the days until the start of Year $\lfloor\colorbox{yellow}{y}\rfloor{+}1$. The current `year-day` date, \${styledNextYear}-\${styledDecoTminus}, tells us that Year \${nextYear} will begin in \${Tminus} days.
 
-The difference between $\colorbox{cyan}{d}$ and $\colorbox{orange}{n}{-}\colorbox{cyan}{d}$ can also be explained in terms of computer programming. If we think of years as [arrays](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=a%20data%20structure%20consisting%20of%20a%20collection%20of%20elements%20(values%20or%20variables)%2C%20of%20same%20memory%20size%2C%20each%20identified%20by%20at%20least%20one%20array%20index), $\colorbox{cyan}{d}$ and $\colorbox{orange}{n}{-}\colorbox{cyan}{d}$ are like array [indexes](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=individual%20objects%20are%20selected%20by%20an%20index) that can be used to identify array elements or combine them via [slicing](https://en.wikipedia.org/wiki/Array_slicing#:~:text=an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array). In this analogy, $\colorbox{cyan}{d}$ is a [positive index](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) with a range of $0$ to $\colorbox{orange}{n}{-}1$ and $\colorbox{orange}{n}{-}\colorbox{cyan}{d}$ is a [negative index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array) that ranges from ${-}\colorbox{orange}{n}$ to ${-}1$.
+The difference between $\colorbox{cyan}{d}$ and $\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ can also be explained in terms of computer programming. If we think of years as [arrays](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=a%20data%20structure%20consisting%20of%20a%20collection%20of%20elements%20(values%20or%20variables)%2C%20of%20same%20memory%20size%2C%20each%20identified%20by%20at%20least%20one%20array%20index), $\colorbox{cyan}{d}$ and $\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ are like array [indexes](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=individual%20objects%20are%20selected%20by%20an%20index) that can be used to identify array elements or combine them via [slicing](https://en.wikipedia.org/wiki/Array_slicing#:~:text=an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array). In this analogy, $\colorbox{cyan}{d}$ is a [positive index](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) with a range of $0$ to $\colorbox{orange}{n}{-}1$ and $\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ is a [negative index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array) that ranges from ${-}\colorbox{orange}{n}$ to ${-}1$.
 
-To extend the array index analogy, imagine that we can use a single number to look up all of the required information for any day in the current year.
+We can express the [bounds](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20upper%20bound%20or%20majorant%5B1%5D%20of%20a%20subset%20S%20of%20some%20preordered%20set%20(K%2C%20%E2%89%A4)%20is%20an%20element%20of%20K%20that%20is%20greater%20than%20or%20equal%20to%20every%20element%20of%20S.%5B2%5D%5B3%5D%20Dually%2C%20a%20lower%20bound%20or%20minorant%20of%20S%20is%20defined%20to%20be%20an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S) for $\colorbox{cyan}{d}$ values with the [interval](https://en.wikipedia.org/wiki/Interval_(mathematics)#:~:text=the%20set%20of%20all%20real%20numbers%20lying%20between%20two%20fixed%20endpoints) $\left [0,\colorbox{orange}{n} \right )$, the [inequality](https://en.wikipedia.org/wiki/Inequality_(mathematics)#:~:text=a%20non%2Dequal%20comparison) $0{\le}\colorbox{cyan}{d}{\lt} \colorbox{orange}{n}$, or the Dec range $0{=}$. Similarly, the analogous interval, inequality, and Dec range for $\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ are $[{-}\colorbox{orange}{n},0)$, ${-}\colorbox{orange}{n}{\le}\colorbox{cyan}{d}{-}\colorbox{orange}{n}{\lt}0$, and ${-}\colorbox{orange}{n}{=}$, respectively. Use the [Observable](https://observablehq.com/) [range🎚️inputs](https://observablehq.com/@observablehq/input-range) below to chose which day is surrounded by a red🟥box in the [calendar🗓️plot](https://observablehq.com/@observablehq/plot-calendar) beneath the inputs.
 
-The Play▶️button below cycles🔄the [range
-inputs](https://observablehq.com/documentation/inputs/overview#range) beneath it through every day of the year (doty), month, and day of the month. The calendar plot beneath the range inputs highlights the doty in the top range input with a red box, distinguishes months with color, and shows the days of the week and ISO week numbers of the current year on its x- and y-axes, respectively.
+The Play▶️button above the plot cycles🔄through
+every $\colorbox{cyan}{d}$, $\colorbox{cyan}{d}{-}\colorbox{orange}{n}$, month, and day of the month value so that each day gets its turn to be inside the red🟥box. The [toggle✅input](https://observablehq.com/framework/inputs/toggle#:~:text=choose%20one%20of%20two%20values) next to the button determines whether the plot shows a leap ($\colorbox{orange}{n}{=}366$) or a common ($\colorbox{orange}{n}{=}365$) year. The [radio🔘input](https://observablehq.com/framework/inputs/radio#:~:text=choose%20one%20of%20a%20given%20set%20of%20values) beneath the toggle input sets the day of the week that starts the year.
 
 ```{ojs}
 //| echo: false
-viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: "Day of the year"});
+viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: tex`\colorbox{cyan}{d}`});
 viewof monthInput = transformInput(
   Inputs.range([1, 12], {step: 1, label: "Month"}),
   {bind: viewof dotyInput, transform: doty2month, invert: month2doty}
 );
 viewof dotyInput1 = transformInput(
-  Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of the year"}),
+  Inputs.range([-365 - leapInput, -1], {step: 1, label: tex`\colorbox{cyan}{d}{-}\colorbox{orange}{n}`}),
   {bind: viewof dotyInput, transform: subN, invert: addN}
 );
 viewof dotmInput = transformInput(
@@ -185,6 +185,8 @@ calPlot1 = Plot.plot({
   ]
 })
 ```
+
+Dec does not use weeks The first day of the week of the year.
 
 If we ever need to convert between a doty and a Gregorian calendar month and day of the month without any conversion tools, we can use the Dec finger mnemonic, which is similar to the [knuckle mnemonic](https://en.wikipedia.org/wiki/Knuckle_mnemonic#:~:text=a%20mnemonic%20device%20for%20remembering%20the%20number%20of%20days%20in%20the%20months%20of%20the%20Julian%20and%20Gregorian%20calendars). The numbers above the fingers in the image below indicate the doty of the last day of each Gregorian calendar month. The thumb, middle finger, and pinky represent months with 31 days, whereas the index and ring fingers stand for 30-day months.
 
@@ -343,7 +345,7 @@ function doty2dotm(doty = 0) {
     return doty - Math.floor((153 * m + 2) / 5) + 1;
 }
 numbers = Array.from({length: 366}, (_, i) => i)
-set(viewof dotyInput, leapscrub[1])
+set(viewof dotyInput, leapscrub[0])
 // https://observablehq.com/@observablehq/synchronized-inputs
 function set(input, value) {
   input.value = value;
@@ -504,7 +506,7 @@ function greg2year(year = 1970, month = 1) { return year - (month < 3) }
 function isoc2doty(isoc) {
   return [greg2year(isoc.getFullYear(), isoc.getUTCMonth() + 1), greg2doty(isoc.getUTCMonth() + 1, isoc.getUTCDate())];
 }
-leapInput = leapscrub[0]
+leapInput = leapscrub[1]
 function addN(d) { return d + 365 + leapInput }
 function subN(d) { return d - 365 - leapInput }
 ```
@@ -552,6 +554,12 @@ form.oi-3a86ea-toggle > label {
 }
 div > form > label {
   --label-width: 130px;
+}
+#ojs-cell-1-1 > div:nth-child(1) > form:nth-child(1) > label {
+  --label-width: 60px;
+}
+#ojs-cell-1-3 > div:nth-child(1) > form:nth-child(1) > label {
+  --label-width: 60px;
 }
 </style>
 ```
