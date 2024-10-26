@@ -1,6 +1,6 @@
 # Ordinal date
 Martin Laptev
-2024+208
+2024+239
 
 - [Dec dates](#dec-dates)
 
@@ -23,15 +23,14 @@ $\colorbox{yellow}{y}{=}\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}{
 In this equation, $\colorbox{yellow}{y}$ is the decimal years since the
 Dec epoch (Year 0 <span class="blue" data-bs-toggle="tooltip"
 data-bs-title="March 1"><u>Day 0</u></span>),
-$\lfloor\colorbox{yellow}{y}\rfloor$ is $\colorbox{yellow}{y}$
-[floored](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-to obtain an
+$\lfloor\colorbox{yellow}{y}\rfloor$ is the
 [integer](https://en.wikipedia.org/wiki/Integer#:~:text=the%20number%20zero%20%280%29%2C%20a%20positive%20natural%20number%20%281%2C%202%2C%203%2C%20.%20.%20.%29%2C%20or%20the%20negation%20of%20a%20positive%20natural%20number%20%28%E2%88%921%2C%20%E2%88%922%2C%20%E2%88%923%2C%20.%20.%20.%29)
-year, $\colorbox{cyan}{d}$ is the
+year obtained by
+[flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
+$\colorbox{yellow}{y}$, $\colorbox{cyan}{d}$ is the
 [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
 day of the year, and $\colorbox{orange}{n}$ is the total number of days
-in the year. The current values in this equation are:
-`{ojs} styledDecoYear0`
+in the year.
 
 Dec dates only include the first two terms from the equation above
 ($\colorbox{yellow}{y}$ and $\colorbox{cyan}{d}$), because
@@ -103,72 +102,6 @@ viewof dotmInput = transformInput(
 ))});
 ```
 
-<div class="grid">
-
-<div class="g-col-7">
-
-``` {ojs}
-//| echo: false
-viewof yd = Inputs.form([
-  Inputs.number({label: "year", value: "1969"}),
-  Inputs.number({label: "doty", value: "306"})
-])
-```
-
-``` {ojs}
-//| echo: false
-viewof decoOutput = transformInput(
-  Inputs.text({label: "deco", placeholder: "year+day.ddd", value: "1969+306"}),
-  {bind: viewof yd, transform: doty2deco, invert: deco2doty});
-```
-
-</div>
-
-</div>
-
-<div class="grid">
-
-<div class="g-col-7">
-
-``` {ojs}
-//| echo: false
-viewof inputDatetime = Inputs.datetime({label: "date", value: `${decoYear}-03-01T00:00`})
-```
-
-</div>
-
-<div class="g-col-5">
-
-1.  ${dtYear}+${dtDotyDate}${dtDotyTimeDelimiter}${dtDotyTime}
-2.  ${styledOutputDatetimeYear}
-
-</div>
-
-</div>
-
-A Dec beat is a centimilliday (10<sup>−5</sup> of a day), which can be
-thought of as a heart❤️beat or
-musical🎵[beat](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=the%20beat%20is%20the%20basic%20unit%20of%20time)
-with a constant
-[rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=The%20American%20Heart%20Association%20states%20the%20normal%20resting%20adult%20human%20heart%20rate%20is%2060%2D100%20bpm.)
-or
-[tempo](https://en.wikipedia.org/wiki/Tempo#Basic_tempo_markings:~:text=Adagietto%20%E2%80%93%20slower%20than,56%E2%80%93108%C2%A0bpm)
-of $69.\overline4$ beats per minute.
-
-Dec dates and times are measured in days. The [subsequent
-article](../../dec/time) on my website covers Dec times. While Dec dates
-The units for both Dec dates and times are days, but on different
-scales. decidays (tenths of a day), and beats, respectively. An example
-of a duration is the time since this webpage was loaded:
-${styledTickTime}.
-
-Dec does not use months or days of the month, but dates can be include a
-year can be entered using numeric or text inputs. Similarly, the second
-Play▶️button below will go through every day of the year in the current
-year. The `day` in `year+day` dates can therefore function independently
-to represent the date of an event that occurs on the same day of the
-year on an annual basis.
-
 The animations above goes through an entire year in 36.5 beats, a
 million times faster🏎️than the actual speed of time! A Dec beat is a
 centimilliday (1% of a milliday, 10<sup>−5</sup> of a day, or 86.4% of a
@@ -182,15 +115,7 @@ of 69.4̅ beats per minute. In addition to displaying time on
 clocks🕰️and⌚️watches, beats can be used to measure durations, such as
 the time since this webpage was loaded: ${styledTickTime}.
 
-Using the [Observable](https://observablehq.com/about) [datetime
-input](https://observablehq.com/@observablehq/input-date#cell-111) in
-**?@exm-intro-date**, you can select a year, month, `dotm`, hour, and
-minute to see the equivalent 1) `deco` timestamp (`year+day.clock`) and
-2) year date (`year.yyy`) in **?@lst-intro-date**. For comparison, the
-current `deco` timestamp is
-${styledYear}+${styledDotyDate1}.${styledDotyTime1}.
-
-For example, the current day of the year (doty) is Day `{ojs} decoDate`.
+The Dec epoch, . This 60-day shift enables
 
 60-day shift
 
@@ -206,8 +131,8 @@ days of the dek
 
 Dec finger counting method svg
 
-The Dec epoch, . This 60-day shift enables simplest way to describe Dec
-dates my website are based on the [Gregorian
+simplest way to describe Dec dates my website are based on the
+[Gregorian
 calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world),
 but any calendar with fixed rules can be turned in a Dec calendar
 (Decalendar) by expressing its dates as zero-based moving its starting
@@ -299,6 +224,24 @@ is the time that has passed since a starting point called a [calendar
 epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
 The Dec epoch is <span class="blue" data-bs-toggle="tooltip"
 data-bs-title="0000-03-01"><u>Year 0 Day 0</u></span>.
+
+I use different programming languages to convert UNIX time in various
+places on my site. More specifically, I use a
+[Python](https://en.wikipedia.org/wiki/Python_%28programming_language%29#:~:text=a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language)
+[post-render
+script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render)
+([date.py](../../asset/date.py)) for the dates on the [page that lists
+all of the articles on my site](../../list), a
+[Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20mainly%20for%20embedded%20use%20in%20applications)
+[filter](https://quarto.org/docs/extensions/filters.html)
+([date.lua](../../asset/date.lua)) for the PUBLISHED date at the top of
+each article, and an [include-after-body
+file](https://quarto.org/docs/output-formats/html-basics.html#includes)
+that sources a
+[JavaScript](https://en.wikipedia.org/wiki/JavaScript#:~:text=a%20programming%20language%20and%20core%20technology%20of%20the%20Web)
+file ([stamp.js](../../asset/stamp.js)) for the date in the above.
+[citation](http://localhost:4207/dec/date/#citation) information at the
+bottom of each article.
 
 ``` {ojs}
 //| echo: false
