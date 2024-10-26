@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+237
+2024+239
 
 My website serves as a demonstration of both the
 [Quarto](https://quarto.org) publishing system and the [Dec](../../dec)
@@ -12,6 +12,198 @@ script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render),
 and [include
 file](https://quarto.org/docs/output-formats/html-basics.html#includes)
 examples in my [Quarto article](../../software/quarto).
+
+Among its many features, Quarto offers support for the
+[Observable](https://observablehq.com/) data analysis and visualization
+system. In the Observable
+[calendar🗓️plots](https://observablehq.com/@observablehq/plot-calendar)
+below, [Gregorian
+calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
+months are identified by
+[color](https://observablehq.com/@d3/color-schemes) and each day of the
+year has its own [cell](https://observablehq.com/plot/marks/cell).
+Despite these similarities, the two plots illustrate how the Dec (top)
+and Gregorian (bottom) calendars differ.
+
+The Dec calendar (Decalendar) starts on <span class="blue"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
+instead of <span class="blue" data-bs-toggle="tooltip"
+data-bs-title="January 1"><u>Day 306</u></span> and uses groups of 10
+days called deks in place of weeks and days of the dek (dotd) in lieu of
+days of the week. When combined, a dek and dotd form a Dec day of the
+year ($\colorbox{cyan}{d}$). The current $\colorbox{cyan}{d}$ is
+${styledDecoDoty}. The $\colorbox{cyan}{d}$ selected by the
+[Observable](https://observablehq.com/)
+[range🎚️inputs](https://observablehq.com/@observablehq/input-range)
+below and highlighted in the calendar plots is ${styledDotyInput}.
+
+``` {ojs}
+//| echo: false
+decPlot = Plot.plot({
+  padding: 0,
+  width: 1080,
+  height: 240,
+  className: "calplot",
+  marginTop: -20,
+  marginBottom: 29,
+  marginLeft: 28,
+  y: {tickSize: 0,
+      label: "Day of the dek",
+      domain: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      tickPadding: 2,
+      labelOffset: 28,
+  },
+  x: {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: 2, labelOffset: 28},
+  //fx: {tickFormat: ""},
+  style: { fontSize: "16px" },
+  color: {
+    range: d3.schemePastel1.concat(d3.schemePastel2.slice(4, 7)).concat(d3.schemeSet1[0]),
+    domain: months.concat("selected"),
+    className: "cal",
+  },
+  marks: [
+    Plot.cell(dates, {
+      x: (d, i) => Math.floor(i / 10),
+      y: (d, i) => i % 10,
+      //fx: d => d.getUTCFullYear(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[d.getUTCMonth()],
+      stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "darkorange" : "none",
+      strokeWidth: 3,
+      inset: 0.75,
+    }),
+    Plot.text(dates, {
+      x: (d, i) => Math.floor(i / 10),
+      y: (d, i) => i % 10,
+      //fx: d => d.getUTCFullYear(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "white" : "black",
+      //stroke: "white",
+      text: (d, i) => String(i),//.padStart(3, "0").slice(1),
+      monospace: true,
+      fontSize: "13px"})
+  ]
+})
+```
+
+``` {ojs}
+//| echo: false
+dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
+```
+
+``` {ojs}
+//| echo: false
+viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: "Day of the year"});
+viewof monthInput = transformInput(
+  Inputs.range([1, 12], {step: 1, label: "Month"}),
+  {bind: viewof dotyInput, transform: doty2month, invert: month2doty}
+);
+viewof dotyInput1 = transformInput(
+  Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of the year"}),
+  {bind: viewof dotyInput, transform: subN, invert: addN}
+);
+viewof dotmInput = transformInput(
+  Inputs.range([1, 31], {step: 1, label: "Day of the month"}),
+  {bind: viewof dotyInput, transform: doty2dotm, invert: (x => Math.floor(( 153 * (
+    viewof monthInput.value > 2
+    ? viewof monthInput.value - 3
+    : viewof monthInput.value + 9) + 2
+  ) / 5 + x - 1
+))});
+viewof leapscrub = Inputs.form([
+  Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
+  Inputs.toggle({label: "Leap year", value: false}),
+])
+```
+
+#### First day of the week of the Gregorian calendar year
+
+``` {ojs}
+//| echo: false
+viewof dotwInput = Inputs.radio([
+  "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+  ], {value: "Sunday"})
+```
+
+``` {ojs}
+//| echo: false
+calPlot = Plot.plot({
+  padding: 0,
+  width: 1000,
+  height: 200,
+  className: "calplot",
+  marginBottom: 36,
+  marginLeft: 42,
+  y: {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
+      domain: [-1, 0, 1, 2, 3, 4, 5, 6],
+      ticks: [0, 1, 2, 3, 4, 5, 6],
+      tickPadding: 2,
+  },
+  x: {interval: 1, ticks: 26, label: "Week", type: "band", tickSize: 0, tickPadding: 2, labelOffset: 34},
+  //fx: {tickFormat: ""},
+  style: { fontSize: "20px" },
+  color: {
+    range: d3.schemePastel1.concat(d3.schemePastel2.slice(4, 7)).concat(d3.schemeSet1[0]),
+    domain: months.concat("selected"),
+    className: "cal",
+  },
+  marks: [
+    Plot.cell(datesCal, {
+      x: d => d3.utcWeek.count(d3.utcYear(d), d),
+      y: d => d.getUTCDay(),
+      //fx: d => d.getUTCFullYear(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[d.getUTCMonth()],
+      stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "darkorange" : "none",
+      strokeWidth: 3,
+      inset: .35,
+    }),
+    Plot.text(datesCal, {
+      x: d => d3.utcWeek.count(d3.utcYear(d), d),
+      y: d => d.getUTCDay(),
+      //fx: d => d.getUTCFullYear(),
+      text: d => d.getUTCDate() === 7 ? months[d.getUTCMonth()].slice(0, 3) : "",
+      y: -1,
+      frameAnchor: "left",
+      dy: -4,
+      monospace: true,
+      fontSize: "22px"}),
+    Plot.text(datesCal, {
+      x: d => d3.utcWeek.count(d3.utcYear(d), d),
+      y: d => d.getUTCDay(),
+      //fx: d => d.getUTCFullYear(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "white" : "black",
+      //stroke: "white",
+      text: d => d.getUTCDate(), //Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
+      monospace: true,
+      fontSize: "13px"})
+  ]
+})
+```
+
+The Play▶️button in between the plots above cycles🔄through every doty,
+month, and day of the month value so that each day gets its turn to have
+a red🟥background. The
+[toggle✅input](https://observablehq.com/framework/inputs/toggle#:~:text=choose%20one%20of%20two%20values)
+next to the button determines whether the plots show a leap
+($\colorbox{orange}{n}{=}366$) or a common
+($\colorbox{orange}{n}{=}365$) year. The
+[radio🔘input](https://observablehq.com/framework/inputs/radio#:~:text=choose%20one%20of%20a%20given%20set%20of%20values)
+beneath the toggle input sets the day of the week on <span class="blue"
+data-bs-toggle="tooltip" data-bs-title="January 1"><u>Day
+306</u></span>.
+
+Apart from adding a single day (<span class="blue"
+data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day
+365</u></span>) to the end of leap years, Decalendar [remains the same
+every
+year](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=a%20calendar%20that%20applies%20to%20any%20year).
+In contrast, leap day (<span class="blue" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>Day 365</u></span>) shifts 306 Gregorian
+calendar dates forward by one day in leap years. Even it does not use
+weeks,
+
+Also, the Gregorian calendar varies greatly depending on the days of the
+week. In total, there are 14 different Gregorian calendar variants that
+repeat in a [400-year cycle]().
 
 The `year+day` format is based on the Dec date equation:
 $\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}{\div}\colorbox{orange}{n}{=}\colorbox{yellow}{y}$,
@@ -31,7 +223,7 @@ the
 [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
 day of the year, and $\colorbox{orange}{n}$ is the number of days in
 $\lfloor\colorbox{yellow}{y}\rfloor$. The Dec date equation for today is
-${styledDecoYear}+${styledDecoDoty}÷${styledNdays}=${styledFracYear}.
+${styledDecoYear}+${styledDecoDoty1}÷${styledNdays}=${styledFracYear}.
 
 Dec dates only include the first two terms from the [left-hand
 side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20expression%20on%20the%20left%20of%20the%20%22%3D%22%20is%20the%20left%20side%20of%20the%20equation)
@@ -108,165 +300,7 @@ $0{\le}\colorbox{cyan}{d}{\lt} \colorbox{orange}{n}$, or the Dec range
 $\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ are
 $\[{-}\colorbox{orange}{n},0)$,
 ${-}\colorbox{orange}{n}{\le}\colorbox{cyan}{d}{-}\colorbox{orange}{n}{\lt}0$,
-and ${-}\colorbox{orange}{n}{=}$, respectively. Use the
-[Observable](https://observablehq.com/)
-[range🎚️inputs](https://observablehq.com/@observablehq/input-range)
-below to chose which day is surrounded by a red🟥box in the
-[calendar🗓️plot](https://observablehq.com/@observablehq/plot-calendar)
-beneath the inputs.
-
-The Play▶️button above the plot cycles🔄through every
-$\colorbox{cyan}{d}$, $\colorbox{cyan}{d}{-}\colorbox{orange}{n}$,
-month, and day of the month value so that each day gets its turn to be
-inside the red🟥box. The
-[toggle✅input](https://observablehq.com/framework/inputs/toggle#:~:text=choose%20one%20of%20two%20values)
-next to the button determines whether the plot shows a leap
-($\colorbox{orange}{n}{=}366$) or a common
-($\colorbox{orange}{n}{=}365$) year. The
-[radio🔘input](https://observablehq.com/framework/inputs/radio#:~:text=choose%20one%20of%20a%20given%20set%20of%20values)
-beneath the toggle input sets the day of the week that starts the year.
-
-``` {ojs}
-//| echo: false
-viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: tex`\colorbox{cyan}{d}`});
-viewof monthInput = transformInput(
-  Inputs.range([1, 12], {step: 1, label: "Month"}),
-  {bind: viewof dotyInput, transform: doty2month, invert: month2doty}
-);
-viewof dotyInput1 = transformInput(
-  Inputs.range([-365 - leapInput, -1], {step: 1, label: tex`\colorbox{cyan}{d}{-}\colorbox{orange}{n}`}),
-  {bind: viewof dotyInput, transform: subN, invert: addN}
-);
-viewof dotmInput = transformInput(
-  Inputs.range([1, 31], {step: 1, label: "Day of the month"}),
-  {bind: viewof dotyInput, transform: doty2dotm, invert: (x => Math.floor(( 153 * (
-    viewof monthInput.value > 2
-    ? viewof monthInput.value - 3
-    : viewof monthInput.value + 9) + 2
-  ) / 5 + x - 1
-))});
-viewof leapscrub = Inputs.form([
-  Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
-  Inputs.toggle({label: "Leap year", value: false}),
-])
-```
-
-#### First day of the week of the year
-
-``` {ojs}
-//| echo: false
-viewof dotwInput = Inputs.radio([
-  "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
-  ], {value: "Sunday"})
-```
-
-``` {ojs}
-//| echo: false
-calPlot0 = Plot.plot({
-  padding: 0,
-  width: 1000,
-  height: 300,
-  className: "calplot",
-  marginBottom: 36,
-  marginLeft: 48,
-  y: {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
-      domain: [-1, 0, 1, 2, 3, 4, 5, 6],
-      ticks: [0, 1, 2, 3, 4, 5, 6],
-      tickPadding: 2,
-  },
-  x: {interval: 1, label: "Week", type: "band", tickSize: 0, tickPadding: 2, labelOffset: 36},
-  //fx: {tickFormat: ""},
-  style: { fontSize: "22px" },
-  color: {
-    range: d3.schemePastel1.concat(d3.schemePastel2),
-    domain: months,
-    className: "cal",
-  },
-  marks: [
-    Plot.cell(datesCal0, {
-      x: d => d3.utcWeek.count(d3.utcYear(d), d),
-      y: d => d.getUTCDay(),
-      //fx: d => d.getUTCFullYear(),
-      fill: d => months[d.getUTCMonth()],
-      stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "red" : "none",
-      strokeWidth: 3,
-      inset: 0.5,
-    }),
-    Plot.text(datesCal0, {
-    x: d => d3.utcWeek.count(d3.utcYear(d), d),
-    y: d => d.getUTCDay(),
-    //fx: d => d.getUTCFullYear(),
-    text: d => d.getUTCDate() === 8 ? months[d.getUTCMonth()] : "",
-      y: -1,
-      frameAnchor: "left",
-    monospace: true,
-    fontSize: "22px"}),
-    Plot.text(datesCal0, {
-    x: d => d3.utcWeek.count(d3.utcYear(d), d),
-    y: d => d.getUTCDay(),
-    //fx: d => d.getUTCFullYear(),
-    fill: "black",
-    //stroke: "white",
-    text: d => d.getUTCDate(), //Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
-    monospace: true,
-    fontSize: "22px"})
-  ]
-})
-```
-
-``` {ojs}
-//| echo: false
-calPlot1 = Plot.plot({
-  padding: 0,
-  width: 1000,
-  height: 300,
-  className: "calplot",
-  marginBottom: 36,
-  marginLeft: 48,
-  y: {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
-      domain: [-1, 0, 1, 2, 3, 4, 5, 6],
-      ticks: [0, 1, 2, 3, 4, 5, 6],
-      tickPadding: 2,
-  },
-  x: {interval: 1, label: "Week", type: "band", tickSize: 0, tickPadding: 2, labelOffset: 36},
-  //fx: {tickFormat: ""},
-  style: { fontSize: "22px" },
-  color: {
-    range: d3.schemePastel1.concat(d3.schemePastel2),
-    domain: months,
-    className: "cal",
-  },
-  marks: [
-    Plot.cell(datesCal1, {
-      x: d => d3.utcWeek.count(d3.utcYear(d), d),
-      y: d => d.getUTCDay(),
-      //fx: d => d.getUTCFullYear(),
-      fill: d => months[d.getUTCMonth()],
-      stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "red" : "none",
-      strokeWidth: 3,
-      inset: 0.5,
-    }),
-    Plot.text(datesCal1, {
-    x: d => d3.utcWeek.count(d3.utcYear(d), d),
-    y: d => d.getUTCDay(),
-    //fx: d => d.getUTCFullYear(),
-    text: d => d.getUTCDate() === 8 ? months[d.getUTCMonth()] : "",
-      y: -1,
-      frameAnchor: "left",
-    monospace: true,
-    fontSize: "22px"}),
-    Plot.text(datesCal1, {
-    x: d => d3.utcWeek.count(d3.utcYear(d), d),
-    y: d => d.getUTCDay(),
-    //fx: d => d.getUTCFullYear(),
-    fill: "black",
-    //stroke: "white",
-    text: d => d.getUTCDate(), //Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
-    monospace: true,
-    fontSize: "22px"})
-  ]
-})
-```
+and ${-}\colorbox{orange}{n}{=}$, respectively.
 
 Even though it only uses years and days, Dec can display dates based on
 months or weeks by modifying $\colorbox{cyan}{d}$. The equation for Dec
@@ -407,6 +441,7 @@ styledNextYear = setStyle(nextYear, d3.schemePaired[10])
 styledFracYear = setStyle(fracYear, d3.schemePaired[10])
 styledDecoDoty = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty1 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDotyInput = setStyle(dotyInput, d3.color("cyan").formatHex())
 styledDecoTminus = setStyle(Tminus, d3.color("pink").formatHex())
 styledDecoDek = setStyle(decoDoty.slice(0, 2), d3.color("cyan").formatHex())
 styledDecoDotd = setStyle(decoDoty[2], d3.color("cyan").formatHex())
@@ -557,11 +592,7 @@ function Scrubber(values, {
   return form;
 }
 calYear = !leapInput && dotwInput == "Monday" ? 6 : !leapInput && dotwInput == "Tuesday" ? 7 : !leapInput && dotwInput == "Wednesday" ? 2 : !leapInput && dotwInput == "Thursday" ? 3 : !leapInput && dotwInput == "Friday" ? 9 : !leapInput && dotwInput == "Saturday" ? 10 : !leapInput && dotwInput == "Sunday" ? 11 : leapInput && dotwInput == "Monday" ? 12 : leapInput && dotwInput == "Tuesday" ? 24 : leapInput && dotwInput == "Wednesday" ? 8 : leapInput && dotwInput == "Thursday" ? 20 : leapInput && dotwInput == "Friday" ? 4 : leapInput && dotwInput == "Saturday" ? 16 : leapInput && dotwInput == "Sunday" ? 28 : 0;
-startCal0 = new Date(calYear, 0, 0);
-startCal1 = new Date(calYear, 6, 0);
-startCal2 = new Date(calYear, 12, 0);
-datesCal0 = d3.utcDays(startCal0, startCal1);
-datesCal1 = d3.utcDays(startCal1, startCal2);
+datesCal = d3.utcDays(new Date(calYear, 0, 0), new Date(calYear, 12, 0));
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function unix2doty(unix) {
   const dote = (
