@@ -1,12 +1,13 @@
 # Dec Date
 Martin Laptev
-2024+239
+2024+240
 
 My website serves as a demonstration of both the
 [Quarto](https://quarto.org) publishing system and the [Dec](../../dec)
 measurement system. I use several clever hacks to get Quarto to display
-all of the dates on my website in the Dec `year+day` format. Knowing the
-basics of Dec dates will help you to understand the Quarto
+all of the dates on my website in the Dec
+<span class="yellow">year</span>+<span class="cyan">day</span> format.
+Knowing the basics of Dec dates will help you to understand the Quarto
 [filter](https://quarto.org/docs/extensions/filters.html), [render
 script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render),
 and [include
@@ -31,9 +32,8 @@ instead of <span class="blue" data-bs-toggle="tooltip"
 data-bs-title="January 1"><u>Day 306</u></span> and uses groups of 10
 days called deks in place of weeks and days of the dek (dotd) in lieu of
 days of the week. When combined, a dek and dotd form a Dec day of the
-year ($\colorbox{cyan}{d}$). The current $\colorbox{cyan}{d}$ is
-${styledDecoDoty}. The $\colorbox{cyan}{d}$ selected by the
-[Observable](https://observablehq.com/)
+year (doty). The current doty is ${styledDecoDoty}. The doty selected by
+the [Observable](https://observablehq.com/)
 [range🎚️inputs](https://observablehq.com/@observablehq/input-range)
 below and highlighted in the calendar plots is ${styledDotyInput}.
 
@@ -115,7 +115,7 @@ viewof leapscrub = Inputs.form([
 ])
 ```
 
-#### First day of the week of the Gregorian calendar year
+#### First day of the Gregorian calendar year (<span class="blue" data-bs-toggle="tooltip" data-bs-title="January 1"><u>Day 306</u></span>)
 
 ``` {ojs}
 //| echo: false
@@ -191,15 +191,60 @@ beneath the toggle input sets the day of the week on <span class="blue"
 data-bs-toggle="tooltip" data-bs-title="January 1"><u>Day
 306</u></span>.
 
-Apart from adding a single day (<span class="blue"
+The Gregorian calendar [changes every
+year](https://en.wikipedia.org/wiki/Annual_calendar#:~:text=a%20representation%20of%20the%20year%20that%20expires%20with%20the%20year%20represented)
+to adapt to the days of the week. In contrast, Decalendar [remains the
+same every
+year](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=a%20calendar%20that%20applies%20to%20any%20year)
+except leaps years. The addition of <span class="blue"
 data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day
-365</u></span>) to the end of leap years, Decalendar [remains the same
-every
-year](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=a%20calendar%20that%20applies%20to%20any%20year).
-In contrast, leap day (<span class="blue" data-bs-toggle="tooltip"
-data-bs-title="February 29"><u>Day 365</u></span>) shifts 306 Gregorian
-calendar dates forward by one day in leap years. Even it does not use
-weeks,
+365</u></span> to leap years shifts 306 Gregorian calendar dates forward
+by one day, but does not affect the order of Decalendar dates, because
+<span class="blue" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>Day 365</u></span> is the last day of
+Decalendar leap years.
+
+Even though Dec does not use weeks, Dec dates can be modified to include
+[POSIX weekday
+numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)).
+The current Dec date, , can be turned into the current day of the week
+(dotw) date, |y|+d-w+w, by isolating the current POSIX weekday number, ,
+from the current doty. To convert a Dec dotw date into a normal Dec
+date, we solve for the doty: d-w+w=d.
+
+Dec dotw dates can be further modified to include [POSIX week
+numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.).
+To find the current Dec week number, , we add the POSIX weekday number
+of Day 0, , to the current doty and divide by 7. To convert the current
+Dec week date, , into a normal Dec date, we subtract the POSIX weekday
+number of Day 0: 7\*U+w-w=d.
+
+Following the pattern for the Dec week dates, we can adapt Dec dates to
+use 20-day
+[dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit)s,
+30-day
+[tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A)s,
+40-day
+[kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A)s,
+73-day
+[sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A)s,
+or any other silly calendar unit you can imagine. No other calendar unit
+will be as convenient as 10-day
+[dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B)s,
+because our [decimal numeral
+system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
+allows us to naturally combine a dek and a day of the dek into a single
+number.
+
+Dec can also be modified to display Dec month numbers and day of the
+month (dotm) numbers. The current Dec month date, |y|+d-m+m, is
+pronounced Year … Day … Plus …. We use the doty of the last day of the
+previous month to represent the current month so we can use a [POSIX
+dotm
+number](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D).
+Of course, we can also use the doty of the first day of the current
+month and the current zero-based dotm: |y|+d-m+m. To convert a Dec month
+date into a normal Dec date, we solve for the doty: d-m+m=d.
 
 Also, the Gregorian calendar varies greatly depending on the days of the
 week. In total, there are 14 different Gregorian calendar variants that
@@ -716,11 +761,5 @@ form.oi-3a86ea-toggle > label {
 }
 div > form > label {
   --label-width: 130px;
-}
-#ojs-cell-1-1 > div:nth-child(1) > form:nth-child(1) > label {
-  --label-width: 60px;
-}
-#ojs-cell-1-3 > div:nth-child(1) > form:nth-child(1) > label {
-  --label-width: 60px;
 }
 </style>
