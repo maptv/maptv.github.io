@@ -26,16 +26,7 @@ year has its own [cell](https://observablehq.com/plot/marks/cell).
 Despite these similarities, the two plots illustrate how the Dec (top)
 and Gregorian (bottom) calendars differ.
 
-The Dec calendar (Decalendar) starts on <span class="blue"
-data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
-instead of <span class="blue" data-bs-toggle="tooltip"
-data-bs-title="January 1"><u>Day 306</u></span> and uses groups of 10
-days called deks in place of weeks and days of the dek (dotd) in lieu of
-days of the week. When combined, a dek and dotd form a Dec day of the
-year (doty). The current doty is ${styledDecoDoty}. The doty selected by
-the [Observable](https://observablehq.com/)
-[range🎚️inputs](https://observablehq.com/@observablehq/input-range)
-below and highlighted in the calendar plots is ${styledDotyInput}.
+<div class="column-page-right">
 
 ``` {ojs}
 //| echo: false
@@ -46,15 +37,15 @@ decPlot = Plot.plot({
   className: "calplot",
   marginTop: -20,
   marginLeft: 31,
-  marginBottom: 34,
+  marginBottom: 35,
   y: {tickSize: 0,
-      label: "Day of the dek",
+      label: "Day of the dek    ",
       domain: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       tickPadding: -12,
       labelOffset: 22,
   },
-  x: {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: 0, labelOffset: 34},
+  x: {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: 1, labelOffset: 34},
   //fx: {tickFormat: ""},
   style: { fontSize: "21px" },
   color: {
@@ -70,7 +61,7 @@ decPlot = Plot.plot({
       fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[d.getUTCMonth()],
       stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "darkorange" : "none",
       strokeWidth: 3,
-      inset: 0.75,
+      inset: 0.5,
     }),
     Plot.text(dates, {
       x: (d, i) => Math.floor(i / 10),
@@ -87,8 +78,61 @@ decPlot = Plot.plot({
 
 ``` {ojs}
 //| echo: false
-dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
+calPlot = Plot.plot({
+  padding: 0,
+  width: 1000,
+  height: 200,
+  className: "calplot",
+  marginTop: 0,
+  marginBottom: 40,
+  marginLeft: 42,
+  y: {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
+      domain: [-1, 0, 1, 2, 3, 4, 5, 6],
+      ticks: [0, 1, 2, 3, 4, 5, 6],
+      tickPadding: 2,
+  },
+  x: {interval: 1, ticks: 26, label: "Week", type: "band", tickSize: 0, tickPadding: 1, labelOffset: 34},
+  //fx: {tickFormat: ""},
+  style: { fontSize: "20px" },
+  color: {
+    range: d3.schemePastel1.concat(d3.schemePastel2.slice(4, 7)).concat(d3.schemeSet1[0]),
+    domain: months.concat("selected"),
+    className: "cal",
+  },
+  marks: [
+    Plot.cell(datesCal, {
+      x: d => d3.utcWeek.count(d3.utcYear(d), d),
+      y: d => d.getUTCDay(),
+      //fx: d => d.getUTCFullYear(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[d.getUTCMonth()],
+      stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "darkorange" : "none",
+      strokeWidth: 3,
+      inset: .5,
+    }),
+    Plot.text(datesCal, {
+      x: d => d3.utcWeek.count(d3.utcYear(d), d),
+      y: d => d.getUTCDay(),
+      //fx: d => d.getUTCFullYear(),
+      text: d => d.getUTCDate() === 7 ? months[d.getUTCMonth()].slice(0, 3) : "",
+      y: -1,
+      frameAnchor: "left",
+      dy: 2,
+      monospace: true,
+      fontSize: "18px"}),
+    Plot.text(datesCal, {
+      x: d => d3.utcWeek.count(d3.utcYear(d), d),
+      y: d => d.getUTCDay(),
+      //fx: d => d.getUTCFullYear(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "white" : "black",
+      //stroke: "white",
+      text: d => d.getUTCDate(), //Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
+      monospace: true,
+      fontSize: "13px"})
+  ]
+})
 ```
+
+</div>
 
 ``` {ojs}
 //| echo: false
@@ -124,64 +168,20 @@ viewof dotwInput = Inputs.radio([
   ], {value: "Sunday"})
 ```
 
-``` {ojs}
-//| echo: false
-calPlot = Plot.plot({
-  padding: 0,
-  width: 1000,
-  height: 200,
-  className: "calplot",
-  marginBottom: 36,
-  marginLeft: 42,
-  y: {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
-      domain: [-1, 0, 1, 2, 3, 4, 5, 6],
-      ticks: [0, 1, 2, 3, 4, 5, 6],
-      tickPadding: 2,
-  },
-  x: {interval: 1, ticks: 26, label: "Week", type: "band", tickSize: 0, tickPadding: 2, labelOffset: 34},
-  //fx: {tickFormat: ""},
-  style: { fontSize: "20px" },
-  color: {
-    range: d3.schemePastel1.concat(d3.schemePastel2.slice(4, 7)).concat(d3.schemeSet1[0]),
-    domain: months.concat("selected"),
-    className: "cal",
-  },
-  marks: [
-    Plot.cell(datesCal, {
-      x: d => d3.utcWeek.count(d3.utcYear(d), d),
-      y: d => d.getUTCDay(),
-      //fx: d => d.getUTCFullYear(),
-      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[d.getUTCMonth()],
-      stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "darkorange" : "none",
-      strokeWidth: 3,
-      inset: .35,
-    }),
-    Plot.text(datesCal, {
-      x: d => d3.utcWeek.count(d3.utcYear(d), d),
-      y: d => d.getUTCDay(),
-      //fx: d => d.getUTCFullYear(),
-      text: d => d.getUTCDate() === 7 ? months[d.getUTCMonth()].slice(0, 3) : "",
-      y: -1,
-      frameAnchor: "left",
-      dy: -4,
-      monospace: true,
-      fontSize: "22px"}),
-    Plot.text(datesCal, {
-      x: d => d3.utcWeek.count(d3.utcYear(d), d),
-      y: d => d.getUTCDay(),
-      //fx: d => d.getUTCFullYear(),
-      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "white" : "black",
-      //stroke: "white",
-      text: d => d.getUTCDate(), //Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
-      monospace: true,
-      fontSize: "13px"})
-  ]
-})
-```
+The Dec calendar (Decalendar) starts on <span class="blue"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
+instead of <span class="blue" data-bs-toggle="tooltip"
+data-bs-title="January 1"><u>Day 306</u></span> and uses groups of 10
+days called deks in place of weeks and days of the dek (dotd) in lieu of
+days of the week. When combined, a dek and dotd form a Dec day of the
+year (doty). The current doty is ${styledDecoDoty}. The doty selected by
+the [Observable](https://observablehq.com/)
+[range🎚️inputs](https://observablehq.com/@observablehq/input-range)
+above and highlighted in the calendar plots is ${styledDotyInput}.
 
-The Play▶️button in between the plots above cycles🔄through every doty,
-month, and day of the month value so that each day gets its turn to have
-a red🟥background. The
+The Play▶️button above cycles🔄through every doty, month, and day of the
+month value so that each day gets its turn to be highlighted with a
+red🟥background. The
 [toggle✅input](https://observablehq.com/framework/inputs/toggle#:~:text=choose%20one%20of%20two%20values)
 next to the button determines whether the plots show a leap
 ($\colorbox{orange}{n}{=}366$) or a common
@@ -219,18 +219,17 @@ of Day 0, , to the current doty and divide by 7. To convert the current
 Dec week date, , into a normal Dec date, we subtract the POSIX weekday
 number of Day 0: 7\*U+w-w=d.
 
-Following the pattern for the Dec week dates, we can adapt Dec dates to
-use 20-day
-[dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit)s,
+Following the Dec week date pattern, we can adapt Dec dates to use any
+other fixed-length calendar unit, including the 20-day
+[dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit),
 30-day
-[tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A)s,
+[tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A),
 40-day
-[kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A)s,
-73-day
-[sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A)s,
-or any other silly calendar unit you can imagine. No other calendar unit
-will be as convenient as 10-day
-[dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B)s,
+[kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A),
+or 73-day
+[sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A).
+No other calendar unit can be as convenient as the 10-day
+[dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B),
 because our [decimal numeral
 system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
 allows us to naturally combine a dek and a day of the dek into a single
@@ -717,6 +716,7 @@ function isoc2doty(isoc) {
 leapInput = leapscrub[1]
 function addN(d) { return d + 365 + leapInput }
 function subN(d) { return d - 365 - leapInput }
+dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
 ```
 
 <style>
@@ -762,8 +762,8 @@ div > form > label {
   --label-width: 130px;
 }
 p:has(.radiotitle) {
-  margin-top: -25px !important;
-  margin-bottom: -5px;
+  margin-top: -8px !important;
+  margin-bottom: -8px;
   text-align: center;
 }
 </style>
