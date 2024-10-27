@@ -45,18 +45,18 @@ decPlot = Plot.plot({
   height: 240,
   className: "calplot",
   marginTop: -20,
-  marginBottom: 29,
-  marginLeft: 28,
+  marginLeft: 31,
+  marginBottom: 34,
   y: {tickSize: 0,
       label: "Day of the dek",
       domain: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-      tickPadding: 2,
-      labelOffset: 28,
+      tickPadding: -12,
+      labelOffset: 22,
   },
-  x: {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: 2, labelOffset: 28},
+  x: {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: 0, labelOffset: 34},
   //fx: {tickFormat: ""},
-  style: { fontSize: "16px" },
+  style: { fontSize: "21px" },
   color: {
     range: d3.schemePastel1.concat(d3.schemePastel2.slice(4, 7)).concat(d3.schemeSet1[0]),
     domain: months.concat("selected"),
@@ -115,7 +115,7 @@ viewof leapscrub = Inputs.form([
 ])
 ```
 
-#### First day of the Gregorian calendar year (<span class="blue" data-bs-toggle="tooltip" data-bs-title="January 1"><u>Day 306</u></span>)
+<span class="radiotitle">First day of the Gregorian calendar year</span>
 
 ``` {ojs}
 //| echo: false
@@ -723,7 +723,6 @@ function subN(d) { return d - 365 - leapInput }
 h6.relative.anchored {
   margin-top: -25px;
   margin-bottom: -2px;
-  text-align: center;
 }
 <!-- .calplot { -->
 <!--   margin-top: -15px; -->
@@ -761,5 +760,10 @@ form.oi-3a86ea-toggle > label {
 }
 div > form > label {
   --label-width: 130px;
+}
+p:has(.radiotitle) {
+  margin-top: -25px !important;
+  margin-bottom: -5px;
+  text-align: center;
 }
 </style>

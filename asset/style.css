@@ -12,12 +12,11 @@ p, ul {
   float: right;
 }
 
-.relative {
-  position: relative;
-  top: -10px;
-  left: 100px;
+p:has(.relative) {
+  margin-top: -25px !important;
+  margin-bottom: -5px;
+  text-align: center;
 }
-
 div.zerobased > ol {
   list-style-type: none;
   counter-reset: listitem -1;
@@ -172,14 +171,14 @@ div > form > label {
   --label-width: 125px;
 }
 
-/* .cyan { */
-/*   background-color: cyan; */
-/*   color: black; */
-/*   padding: 0px 2px 0px 2px; */
-/* } */
+.cyan {
+  background-color: cyan;
+  color: black;
+  padding: 0px 2px 0px 2px;
+}
 
-/* .yellow { */
-/*   background-color: yellow; */
-/*   color: black; */
-/*   padding: 0px 2px 0px 2px; */
-/* } */
+.yellow {
+  background-color: yellow;
+  color: black;
+  padding: 0px 2px 0px 2px;
+}
