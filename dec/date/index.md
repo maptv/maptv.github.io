@@ -208,16 +208,16 @@ Even though Dec does not use weeks, Dec dates can be modified to include
 [POSIX weekday
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)).
 The current Dec date, , can be turned into the current day of the week
-(dotw) date, |y|+d-w+w, by isolating the current POSIX weekday number, ,
-from the current doty. To convert a Dec dotw date into a normal Dec
-date, we solve for the doty: d-w+w=d.
+(dotw) date, |y|+d-w+w, by subtracting the POSIX weekday number, , from
+the doty, , and leaving the addition of the difference and the POSIX
+weekday number, , unsolved.
 
 Dec dotw dates can be further modified to include [POSIX week
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.).
 To find the current Dec week number, , we add the POSIX weekday number
-of Day 0, , to the current doty and divide by 7. To convert the current
-Dec week date, , into a normal Dec date, we subtract the POSIX weekday
-number of Day 0: 7\*U+w-w=d.
+of Day 0, , to the current doty and [floor divide]() by 7. To convert
+the current Dec week date, , into a normal Dec date, we subtract the
+POSIX weekday number of Day 0: 7\*U+w-w=d.
 
 Following the Dec week date pattern, we can adapt Dec dates to use any
 other fixed-length calendar unit, including the 20-day
@@ -236,14 +236,12 @@ allows us to naturally combine a dek and a day of the dek into a single
 number.
 
 Dec can also be modified to display Dec month numbers and day of the
-month (dotm) numbers. The current Dec month date, |y|+d-m+m, is
-pronounced Year … Day … Plus …. We use the doty of the last day of the
-previous month to represent the current month so we can use a [POSIX
-dotm
-number](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D).
-Of course, we can also use the doty of the first day of the current
-month and the current zero-based dotm: |y|+d-m+m. To convert a Dec month
-date into a normal Dec date, we solve for the doty: d-m+m=d.
+month (dotm) numbers. The current Dec month date is |y|+d-m+m. We
+represent the current month with the last doty of the previous month so
+we can use one-based [POSIX dotm
+numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D).
+If we represent the current month with its first doty, we have to use a
+zero-based dotm number: |y|+d-m+m.
 
 Also, the Gregorian calendar varies greatly depending on the days of the
 week. In total, there are 14 different Gregorian calendar variants that
