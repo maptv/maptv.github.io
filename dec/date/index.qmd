@@ -168,17 +168,23 @@ The current doty is \${styledDecoDoty}. The doty selected by the [Observable](ht
 above and highlighted in the calendar plots is \${styledDotyInput}.
 
 The Play▶️button above cycles🔄through
-every doty, month, and day of the month value so that each day gets its turn to be highlighted with a red🟥background. The [toggle✅input](https://observablehq.com/framework/inputs/toggle#:~:text=choose%20one%20of%20two%20values) next to the button determines whether the plots show a leap ($\colorbox{orange}{n}{=}366$) or a common ($\colorbox{orange}{n}{=}365$) year. The [radio🔘input](https://observablehq.com/framework/inputs/radio#:~:text=choose%20one%20of%20a%20given%20set%20of%20values) beneath the toggle input sets the day of the week on [Day 306]{.underline .blue data-bs-toggle="tooltip" data-bs-title="January 1"}.
+every doty, month, and day of the month value so that each day gets its turn to be highlighted with a red🟥background. The [toggle✅input](https://observablehq.com/framework/inputs/toggle#:~:text=choose%20one%20of%20two%20values) next to the button determines whether the plots show a leap ([n]{.orange}=366) or a common ([n]{.orange}=365) year. The [radio🔘input](https://observablehq.com/framework/inputs/radio#:~:text=choose%20one%20of%20a%20given%20set%20of%20values) beneath the toggle input sets the day of the week on [Day 306]{.underline .blue data-bs-toggle="tooltip" data-bs-title="January 1"}.
 
-The Gregorian calendar [changes every year](https://en.wikipedia.org/wiki/Annual_calendar#:~:text=a%20representation%20of%20the%20year%20that%20expires%20with%20the%20year%20represented) to adapt to the days of the week. In contrast, Decalendar [remains the same every year](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=a%20calendar%20that%20applies%20to%20any%20year) except leaps years. The addition of [Day 365]{.underline .blue data-bs-toggle="tooltip" data-bs-title="February 29"} to leap years shifts 306 Gregorian calendar dates forward by one day, but does not affect the order of Decalendar dates, because [Day 365]{.underline .blue data-bs-toggle="tooltip" data-bs-title="February 29"} is the last day of Decalendar leap years.
+The Gregorian calendar [changes every year](https://en.wikipedia.org/wiki/Annual_calendar#:~:text=a%20representation%20of%20the%20year%20that%20expires%20with%20the%20year%20represented) to adapt to the days of the week. In contrast, Decalendar [remains the same every year](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=a%20calendar%20that%20applies%20to%20any%20year) except leaps years. The addition of [Day 365]{.underline .blue data-bs-toggle="tooltip" data-bs-title="February 29"} to leap years shifts 306 Gregorian calendar dates forward by one day, but does not affect the order of Dec dates, because [Day 365]{.underline .blue data-bs-toggle="tooltip" data-bs-title="February 29"} is the last day of Dec leap years.
 
-Even though Dec does not use weeks, Dec dates can be modified to include [POSIX weekday numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)). The current Dec date, , can be turned into the current day of the week (dotw) date, |y|+d-w+w, by subtracting the POSIX weekday number, , from the doty, , and leaving the addition of the difference and the POSIX weekday number, , unsolved.
+Even though Dec does not use weeks, Dec dates can be modified to include [POSIX weekday numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)). The current Dec date, \${styledDecoYear}+\${styledDecoDoty1}, can be converted into the current day of the week (dotw) date, \${styledDecoYear1}\${dotw0sign}\${styledDotw0doty}+\${styledDotw}, by separating the current doty, \${styledDecoDoty2}, into the doty of the first day of the current week, \${styledDotw0doty1}, and the current POSIX weekday number: \${styledDotw1}.
+
+leaving the addition of the difference and the POSIX weekday number, , [unsolved](https://en.wikipedia.org/wiki/Equation_solving#:~:text=to%20solve%20an%20equation%20is%20to%20find%20its%20solutions).
 
 Dec dotw dates can be further modified to include [POSIX week numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.). To find the current Dec week number, , we add the POSIX weekday number of Day 0, , to the current doty and [floor divide]() by 7. To convert the current Dec week date, , into a normal Dec date, we subtract the POSIX weekday number of Day 0: 7*U+w-w=d.
 
 Following the Dec week date pattern, we can adapt Dec dates to use any other fixed-length calendar unit, including the 20-day [dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit), 30-day [tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A), 40-day [kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A), or 73-day [sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A). No other calendar unit can be as convenient as the 10-day [dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B), because our [decimal numeral system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers) allows us to naturally combine a dek and a day of the dek into a single number.
 
-Dec can also be modified to display Dec month numbers and day of the month (dotm) numbers. The current Dec month date is |y|+d-m+m. We represent the current month with the last doty of the previous month so we can use one-based [POSIX dotm numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D). If we represent the current month with its first doty, we have to use a zero-based dotm number: |y|+d-m+m.
+Dec can also be modified to display Dec month numbers and [POSIX day of the month (dotm) numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D). The current Dec month date is |y|+d-m+m. We represent the current month with the last doty of the previous month because POSIX dotm numbers are one-based. If we represent the current month with its first doty, we have to use a zero-based dotm number: |y|+d-m+m.
+
+We can combine the patterns above to create hybrid Dec day of the month and week (dotmaw) dates. The current Dec dotmaw date, |y|+d-m-w+m+w, Of course, this is getting a bit complicated and more than a bit silly, but Dec meek dates can be convenient if you want both the dotm and the dotw. To go back to a normal Dec date… you guessed it… we solve for the doty: d-m-w+m+w=d. 
+
+Essentially, you can show whatever number(s) you want to show as part of a Dec date. All it takes is a little bit of arithmetic! All of the math above may have lead you to the conclusion that Dec dates have a mathematical basis. Indeed, all of the date formats above have their own equations.
 
 Also, the Gregorian calendar varies greatly depending on the days of the week. In total, there are 14 different Gregorian calendar variants that repeat in a [400-year cycle]().
 
@@ -229,13 +235,12 @@ unix = {
   }
 }
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
-function unix2dote(unix, zone) {
-  return [
-    (unix ?? Date.now()) / 86400000
-    + (zone = zone ?? (
-      10 - Math.round((new Date)
-        .getTimezoneOffset() / 144)
-    ) % 10) / 10 + 719468, zone]}
+function unix2dote(unix, zone, offset = 719468) {
+  return [(unix ?? Date.now()) / 86400000 + (
+    zone = zone ?? -Math.round(
+      (new Date).getTimezoneOffset() / 144)
+    ) / 10 + offset, zone]
+}
 function dote2doty(dote, zone = 0) {
   const socy = Math.floor((
       dote >= 0 ? dote
@@ -256,7 +261,8 @@ function dote2doty(dote, zone = 0) {
 function doty2deco0(year = 1969, doty = 306, zone = 0) {
   return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`
 }
-ydz = dote2doty(...unix2dote(unix))
+dz = unix2dote(unix)
+ydz = dote2doty(...dz)
 deco = doty2deco0(...ydz)
 // https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor
 function setStyle(content, style = {}) {
@@ -283,19 +289,31 @@ function setStyle(content, style = {}) {
   }}>${content}</span>`;
 }
 function year2leap(year = 1970) {
-    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+  return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+}
+function dote2dotw(d = 719468) {
+  return d >= -3 ? (d + 3) % 7 : (d + 4) % 7 + 6
 }
 decoYear = deco.slice(0, 4)
 nextYear = parseInt(decoYear) + 1
 decoDoty = deco.slice(5, 8)
+dotw = Math.floor(dote2dotw(dz[0]))
+dotw0doty = Math.floor(ydz[1]) - dotw
+dotw0sign = dotw0doty < 0 ? "-" : "+"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
 Tminus = nDaysInYear - decoDoty
 fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(3)
 styledDecoYear = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])
 styledNextYear = setStyle(nextYear, d3.schemePaired[10])
 styledFracYear = setStyle(fracYear, d3.schemePaired[10])
 styledDecoDoty = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty1 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty2 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDotw = setStyle(dotw, d3.color("blue").formatHex())
+styledDotw1 = setStyle(dotw, d3.color("blue").formatHex())
+styledDotw0doty = setStyle(Math.abs(dotw0doty), d3.color("cyan").formatHex())
+styledDotw0doty1 = setStyle(Math.abs(dotw0doty), d3.color("cyan").formatHex())
 styledDotyInput = setStyle(dotyInput, d3.color("cyan").formatHex())
 styledDecoTminus = setStyle(Tminus, d3.color("pink").formatHex())
 styledDecoDek = setStyle(decoDoty.slice(0, 2), d3.color("cyan").formatHex())
