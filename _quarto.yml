@@ -79,12 +79,15 @@ website:
       - text: Dec Date
         icon: calendar-date
         href: dec/date/index.qmd
+      - text: Dec Time
+        icon: clock
+        href: dec/time/index.qmd
       - text: ISO Date
         icon: calendar-month
         href: iso/date/index.qmd
-      - text: Time
-        icon: clock
-        href: dec/time/index.qmd
+      - text: ISO Time
+        icon: hourglass
+        href: iso/time/index.qmd
       - text: Geoposition
         icon: geo
         href: dec/geo/index.qmd
