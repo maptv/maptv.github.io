@@ -172,11 +172,11 @@ every doty, month, and day of the month value so that each day gets its turn to 
 
 The Gregorian calendar [changes every year](https://en.wikipedia.org/wiki/Annual_calendar#:~:text=a%20representation%20of%20the%20year%20that%20expires%20with%20the%20year%20represented) to adapt to the days of the week. In contrast, Decalendar [remains the same every year](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=a%20calendar%20that%20applies%20to%20any%20year) except leaps years. The addition of [Day 365]{.underline .blue data-bs-toggle="tooltip" data-bs-title="February 29"} to leap years shifts 306 Gregorian calendar dates forward by one day, but does not affect the order of Dec dates, because [Day 365]{.underline .blue data-bs-toggle="tooltip" data-bs-title="February 29"} is the last day of Dec leap years.
 
-Even though Dec does not use weeks, Dec dates can be modified to include [POSIX weekday numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)). The current Dec date, \${styledDecoYear}+\${styledDecoDoty1}, can be converted into the current day of the week (dotw) date, \${styledDecoYear1}\${dotw0sign}\${styledDotw0doty}+\${styledDotw}, by separating the current doty, \${styledDecoDoty2}, into the doty of the first day of the current week, \${styledDotw0doty1}, and the current POSIX weekday number: \${styledDotw1}.
+Even though Dec does not use weeks, Dec dates can be modified to include [POSIX weekday numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)). To convert the current Dec date, \${styledDecoYear}+\${styledDecoDoty1}, into the current Dec day of the week (dotw) date, \${styledDecoYear1}\${dotw0sign}\${styledDotw0doty}+\${styledDotw}, we split the current doty, \${styledDecoDoty2}, into the doty of the first day of the current week, \${styledDotw0doty1}, and the current POSIX weekday number: \${styledDotw1}.
 
-leaving the addition of the difference and the POSIX weekday number, , [unsolved](https://en.wikipedia.org/wiki/Equation_solving#:~:text=to%20solve%20an%20equation%20is%20to%20find%20its%20solutions).
+Dec dotw dates can be further modified to also include [POSIX week numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.). The current week number, \${styledWeek1}, is the result of adding the middle number in the Dec dotw date, \${styledDotw0doty2}, to the Day 0 dotw number, \${styledDoty0dotw}, and then floor dividing by 7. The current Dec week date, \${styledDecoYear2}+7&times;\${styledWeek}+\${styledDotw2}, shows how we can obtain the sum of the current doty and the Day 0 dotw number: 7&times;\${styledWeek2}+\${styledDotw4}=\${styledDecoDoty3}+\${styledDoty0dotw1}.
 
-Dec dotw dates can be further modified to include [POSIX week numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.). To find the current Dec week number, , we add the POSIX weekday number of Day 0, , to the current doty and [floor divide]() by 7. To convert the current Dec week date, , into a normal Dec date, we subtract the POSIX weekday number of Day 0: 7*U+w-w=d.
+From the Dec dotw and week date examples above, you can see a pattern start to emerge: Dec uses [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler) math expressions to display various pieces of information about a date. Essentially, you can show whatever number(s) as part of a Dec date. All it takes is a little bit of arithmetic!
 
 Following the Dec week date pattern, we can adapt Dec dates to use any other fixed-length calendar unit, including the 20-day [dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit), 30-day [tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A), 40-day [kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A), or 73-day [sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A). No other calendar unit can be as convenient as the 10-day [dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B), because our [decimal numeral system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers) allows us to naturally combine a dek and a day of the dek into a single number.
 
@@ -241,7 +241,7 @@ function unix2dote(unix, zone, offset = 719468) {
       (new Date).getTimezoneOffset() / 144)
     ) / 10 + offset, zone]
 }
-function dote2doty(dote, zone = 0) {
+function dote2date(dote, zone = 0) {
   const socy = Math.floor((
       dote >= 0 ? dote
       : dote - 146096
@@ -262,7 +262,7 @@ function doty2deco0(year = 1969, doty = 306, zone = 0) {
   return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`
 }
 dz = unix2dote(unix)
-ydz = dote2doty(...dz)
+ydz = dote2date(...dz)
 deco = doty2deco0(...ydz)
 // https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor
 function setStyle(content, style = {}) {
@@ -298,22 +298,36 @@ decoYear = deco.slice(0, 4)
 nextYear = parseInt(decoYear) + 1
 decoDoty = deco.slice(5, 8)
 dotw = Math.floor(dote2dotw(dz[0]))
+week = Math.floor((ydz[1] + doty0dotw) / 7)
 dotw0doty = Math.floor(ydz[1]) - dotw
+doty0dote = date2dote(ydz[0], 0, ydz[2])
+doty0dotw = dote2dotw(...doty0dote)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
 Tminus = nDaysInYear - decoDoty
 fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(3)
 styledDecoYear = setStyle(decoYear, d3.schemePaired[10])
 styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear2 = setStyle(decoYear, d3.schemePaired[10])
 styledNextYear = setStyle(nextYear, d3.schemePaired[10])
 styledFracYear = setStyle(fracYear, d3.schemePaired[10])
 styledDecoDoty = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty1 = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty2 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty3 = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDotw = setStyle(dotw, d3.color("blue").formatHex())
 styledDotw1 = setStyle(dotw, d3.color("blue").formatHex())
+styledDotw2 = setStyle(dotw, d3.color("blue").formatHex())
+styledDotw3 = setStyle(dotw, d3.color("blue").formatHex())
+styledDotw4 = setStyle(dotw, d3.color("blue").formatHex())
+styledWeek = setStyle(week, d3.color("purple").formatHex())
+styledWeek1 = setStyle(week, d3.color("purple").formatHex())
+styledWeek2 = setStyle(week, d3.color("purple").formatHex())
+styledDoty0dotw = setStyle(doty0dotw, d3.color("blue").formatHex())
+styledDoty0dotw1 = setStyle(doty0dotw, d3.color("blue").formatHex())
 styledDotw0doty = setStyle(Math.abs(dotw0doty), d3.color("cyan").formatHex())
-styledDotw0doty1 = setStyle(Math.abs(dotw0doty), d3.color("cyan").formatHex())
+styledDotw0doty1 = setStyle(dotw0doty, d3.color("cyan").formatHex())
+styledDotw0doty2 = setStyle(dotw0doty, d3.color("cyan").formatHex())
 styledDotyInput = setStyle(dotyInput, d3.color("cyan").formatHex())
 styledDecoTminus = setStyle(Tminus, d3.color("pink").formatHex())
 styledDecoDek = setStyle(decoDoty.slice(0, 2), d3.color("cyan").formatHex())
@@ -486,13 +500,13 @@ function unix2doty(unix) {
       - Math.floor(yotc / 100)
   )}
 
-function doty2dote(year = 1969, doty = 0, zone = 0) {
-    const cycle = Math.floor((year >= 0 ? year : year - 399) / 400),
-    yote = year - cycle * 400;
-    return cycle * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty - zone
+function date2dote(year = 1969, doty = 306, zone = 0) {
+    const socy = Math.floor((year >= 0 ? year : year - 399) / 400),
+      yote = year - socy * 400;
+    return [socy * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
 }
 function doty2deco(yearDoty = [1969, 306], zone = 0) {
-    const yd = dote2doty(doty2dote(yearDoty[0], Math.floor(yearDoty[1])));
+    const yd = dote2date(...date2dote(yearDoty[0], Math.floor(yearDoty[1]), zone));
     return `${yd[0].toString().padStart(4, "0")}+${yd[1].toString().padStart(3, "0")}${
         yearDoty[1].toString().includes(".") ? "." + (
             (yearDoty[1] > 0) ? (yearDoty[1] - zone).toString().split(".").pop()
@@ -522,7 +536,7 @@ function zone2hour(zone = "Z") {
         : zone;
 }
 function doty2unix(year = 1969, doty = 306, zone = 0) {
-    return (doty2dote(year, doty, zone) - 719468) * 86400000;
+    return (date2dote(year, doty, zone) - 719468) * 86400000;
 }
 function doty2isoc(yd) {
     return new Date(doty2unix(...yd))
