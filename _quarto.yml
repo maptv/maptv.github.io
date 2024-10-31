@@ -145,6 +145,8 @@ format:
   html:
     pagetitle: Martin Laptev
     page-layout: full
+    header-includes: |
+      <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Lato" type="text/css"/>
     mainfont: Lato
     toc: true
     theme:

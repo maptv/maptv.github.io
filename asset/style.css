@@ -163,6 +163,10 @@ div.quarto-listing > div.list.grid {
   white-space: nowrap;
 }
 
+#quarto-header > nav {
+  padding: .5em 1em .5em 1em;
+}
+
 .nowrap {
   white-space: nowrap;
 }
