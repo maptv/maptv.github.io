@@ -199,6 +199,12 @@ div > form > label {
   padding: 0px 2px 0px 2px;
 }
 
+.pink {
+  background-color: pink;
+  color: black;
+  padding: 0px 2px 0px 2px;
+}
+
 .orange {
   background-color: orange;
   color: black;

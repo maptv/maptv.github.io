@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+244
+2024+245
 
 My website serves as a demonstration of both the
 [Quarto](https://quarto.org) publishing system and the [Dec](../../dec)
@@ -187,7 +187,7 @@ negative doty values typically range from -<span class="orange">n</span>
 to -1, where <span class="orange">n</span> is the number of days in the
 year. Doty values outside these
 [bounds](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20upper%20bound%20or%20majorant%5B1%5D%20of%20a%20subset%20S%20of%20some%20preordered%20set%20(K%2C%20%E2%89%A4)%20is%20an%20element%20of%20K%20that%20is%20greater%20than%20or%20equal%20to%20every%20element%20of%20S.%5B2%5D%5B3%5D%20Dually%2C%20a%20lower%20bound%20or%20minorant%20of%20S%20is%20defined%20to%20be%20an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S)
-simply belong to a previous or a subsequent year.
+represent days in previous or subsequent years.
 
 The Play▶️button above cycles🔄through every doty, month, and day of the
 month in the plots so that each day gets its turn to be highlighted with
@@ -293,12 +293,13 @@ want. All it takes is a little bit of arithmetic! This incredible
 versatility is possible thanks to the mathematical basis of Dec dates.
 Every Dec date format is defined by an equation.
 
-The Dec date equation is
+The Dec date equation,
 ⌊<span class="yellow">y</span>⌋+<span class="cyan">d</span>÷<span class="orange">n</span>=<span class="yellow">y</span>,
 where ⌊<span class="yellow">y</span>⌋+<span class="cyan">d</span> is the
-Dec date, ⌊<span class="yellow">y</span>⌋ is the year obtained by
-[flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-<span class="yellow">y</span>, the
+Dec date, ⌊<span class="yellow">y</span>⌋ is the year,
+<span class="cyan">d</span> is the doty, <span class="orange">n</span>
+is the number of days in Year ⌊<span class="yellow">y</span>⌋, and
+<span class="yellow">y</span> is the
 [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=denoting%20integer%20and-,non%2Dinteger%20numbers,-.%20It%20is%20the)
 years that have passed since the Dec
 [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era)
@@ -306,18 +307,17 @@ years that have passed since the Dec
 data-bs-title="1 BC"><u>Year 0</u></span> <span class="blue"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 <span class="blue" data-bs-toggle="tooltip"
-data-bs-title="midnight"><u>Dot 0</u></span>),
-<span class="cyan">d</span> is the
-[zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
-doty, and <span class="orange">n</span> is the number of days in
-⌊<span class="yellow">y</span>⌋. We can transform the Dec date equation
-into the Dec doty equation,
+data-bs-title="midnight"><u>Dot 0</u></span>), can be rearranged into
+the Dec doty equation,
 <span class="cyan">d</span>=<span class="yellow">y</span>%1×<span class="orange">n</span>,
-where <span class="yellow">y</span>%1 is
-<span class="yellow">y</span>-⌊<span class="yellow">y</span>⌋ or
+which defines <span class="cyan">d</span> as the product of
+<span class="orange">n</span> and the [decimal
+part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
+of <span class="yellow">y</span> (<span class="yellow">y</span>%1,
+<span class="yellow">y</span>-⌊<span class="yellow">y</span>⌋, or
 <span class="yellow">y</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-1.
+1).
 
 Dec dotw dates express <span class="cyan">d</span> as
 <span class="cyan">d</span>-<span class="azul">w<sub>d</sub></span>+<span class="azul">w<sub>d</sub></span>,
@@ -335,83 +335,18 @@ In both cases, we evaluate the subtraction to get
 addition, so we can see <span class="azul">w<sub>d</sub></span> or
 <span class="magenta">m</span>.
 
-Dec hybrid dotm and dotw dates follow this same pattern of evaluating
-both subtractions but not additions to express
-<span class="cyan">d</span> as
-<span class="cyan">d</span>-<span class="magenta">m</span>-<span class="azul">w<sub>d</sub></span>+<span class="magenta">m</span>+<span class="azul">w<sub>d</sub></span>.
 Dec week dates turn
 <span class="cyan">d</span>-<span class="azul">w<sub>d</sub></span> into
 7×<span class="wheat">W</span>-<span class="azul">w<sub>0</sub></span>,
 where <span class="wheat">W</span> is the week number and
-<span class="azul">w<sub>0</sub></span> is the dotw number on Day 0, but
-then omit the subtraction.
-
-To show the dotw, we can add and subtract he various forms of
-<span class="cyan">d</span> include
-<span class="cyan">d</span>-<span class="orange">n</span>+<span class="orange">n</span>,
-<span class="cyan">d</span>-<span class="azul">w<sub>d</sub></span>+<span class="azul">w<sub>d</sub></span>,
-7×<span class="wheat">W</span>+<span class="azul">w<sub>d</sub></span>-<span class="azul">w<sub>0</sub></span>,
-<span class="cyan">d</span>-<span class="magenta">m</span>+<span class="magenta">m</span>,
-<span class="cyan">d</span>-<span class="magenta">m</span>-<span class="azul">w<sub>d</sub></span>+<span class="magenta">m</span>+<span class="azul">w<sub>d</sub></span>,
-and <span class="yellow">y</span>%1×<span class="orange">n</span>, where
-<span class="azul">w<sub>d</sub></span> is the dotw, and
-<span class="magenta">m</span> is the dotm. The current Dec date
-equation variant values are: all have the same
-<span class="yellow">y</span> and <span class="orange">n</span> and $$$$
-
-The Dec date equation is
-⌊<span class="yellow">y</span>⌋+<span class="cyan">d</span>÷<span class="orange">n</span>=<span class="yellow">y</span>,
-where ⌊<span class="yellow">y</span>⌋+<span class="cyan">d</span> is the
-Dec date, ⌊<span class="yellow">y</span>⌋ is the year obtained by
-[flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-<span class="yellow">y</span>, the
-[decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=denoting%20integer%20and-,non%2Dinteger%20numbers,-.%20It%20is%20the)
-years that have passed since the Dec
-[epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era)
-(<span class="blue" data-bs-toggle="tooltip"
-data-bs-title="1 BC"><u>Year 0</u></span> <span class="blue"
-data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
-<span class="blue" data-bs-toggle="tooltip"
-data-bs-title="midnight"><u>Dot 0</u></span>),
-<span class="cyan">d</span> is the
-[zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
-day of the year, and <span class="orange">n</span> is the number of days
-in ⌊<span class="yellow">y</span>⌋. We can rewrite this equation as
-⌊<span class="yellow">y</span>⌋+1+(<span class="cyan">d</span>-<span class="orange">n</span>)÷<span class="orange">n</span>=<span class="yellow">y</span>,
-where ⌊<span class="yellow">y</span>⌋+1 is the subsequent year and
-<span class="cyan">d</span>-<span class="orange">n</span> is the
-negative doty.
-
-Dec dates only include the first two terms from the [left-hand
-side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20expression%20on%20the%20left%20of%20the%20%22%3D%22%20is%20the%20left%20side%20of%20the%20equation)
-of the Dec date equation: $\lfloor\colorbox{yellow}{y}\rfloor$ and
-$\colorbox{cyan}{d}$. The right-hand side of the equation,
-$\colorbox{yellow}{y}$, can also be used as a date. We need
-$\colorbox{orange}{n}$ to calculate $\colorbox{yellow}{y}$ via the Dec
-date equation above and to obtain $\colorbox{cyan}{d}$ using the Dec day
-of the year equation:
-$\colorbox{cyan}{d}{=}\colorbox{yellow}{y}\vcenter{\text{\\}}1{\times}\colorbox{orange}{n}$.
-In simple terms, $\colorbox{cyan}{d}$ is the [decimal
-part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
-of $\colorbox{yellow}{y}$ multiplied by $\colorbox{orange}{n}$.
-
-To find $\colorbox{orange}{n}$, we plug
-$\lfloor\colorbox{yellow}{y}\rfloor$ into the Dec year length equation
-below, where $\vcenter{\text\\}$ is the
-[modulo](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-operator, ∧ is the logical
-[conjunction](https://en.wikipedia.org/wiki/Logical_conjunction)
-operator (and), and ∨ is the logical
-[disjunction](https://en.wikipedia.org/wiki/Logical_disjunction)
-operator (or). According to this equation, $\colorbox{orange}{n}$ is 366
-if the subsequent year <span class="nowrap">(Year
-$\lfloor\colorbox{yellow}{y}\rfloor{+}1$)</span> is a [Gregorian
-calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
-[leap
-year](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400)
-and 365 if Year $\lfloor\colorbox{yellow}{y}\rfloor{+}1$ is a Gregorian
-calendar [common
-year](https://en.wikipedia.org/wiki/Common_year#:~:text=a%20calendar%20year%20with%20365%20days).
+<span class="azul">w<sub>0</sub></span> is the dotw number on Day 0. In
+this case, the subtraction is omitted, because
+<span class="azul">w<sub>0</sub></span> is not necessary to identify a
+date and can be calculated from a given ⌊<span class="yellow">y</span>⌋.
+Likewise, <span class="orange">n</span> is not included in dates for the
+same reasons. To find <span class="orange">n</span>, we plug the
+subsequent year (⌊<span class="yellow">y</span>⌋+1) into the Dec year
+length equation:
 
 $$\colorbox{orange}{n}=\begin{cases}
   366&{\begin{align}\text{if } (\lfloor \colorbox{yellow}{y}\rfloor+1)\vcenter{\text{ \\ }}4=0\\
@@ -419,66 +354,59 @@ $$\colorbox{orange}{n}=\begin{cases}
   \lor(\lfloor \colorbox{yellow}{y}\rfloor+1)\vcenter{\text{ \\ }}400=0\end{align}}\\\\
   365&{\text{otherwise.}}\end{cases}$$
 
-In addition to calculating $\colorbox{yellow}{y}$,
-$\colorbox{orange}{n}$ is needed to convert between `year+day` and
-`year-day` Dec dates. The `year-day` version of the Dec date equation is
-$\lfloor\colorbox{yellow}{y}\rfloor{+}1{-}(\colorbox{cyan}{d}{-}\colorbox{orange}{n}){\div}\colorbox{orange}{n}{=}\colorbox{yellow}{y}$.
-In essence, $\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ is a [“T-minus”
-countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event)
-of the days until the start of Year
-$\lfloor\colorbox{yellow}{y}\rfloor{+}1$. The current `year-day` date,
-${styledNextYear}-${styledDecoTminus}, tells us that Year ${nextYear}
-will begin in ${Tminus} days.
-
-The difference between $\colorbox{cyan}{d}$ and
-$\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ can also be explained in
-terms of computer programming. If we think of years as
-[arrays](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=a%20data%20structure%20consisting%20of%20a%20collection%20of%20elements%20(values%20or%20variables)%2C%20of%20same%20memory%20size%2C%20each%20identified%20by%20at%20least%20one%20array%20index),
-$\colorbox{cyan}{d}$ and $\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ are
-like array
-[indexes](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=individual%20objects%20are%20selected%20by%20an%20index)
-that can be used to identify array elements or combine them via
-[slicing](https://en.wikipedia.org/wiki/Array_slicing#:~:text=an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array).
-In this analogy, $\colorbox{cyan}{d}$ is a [positive
-index](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
-with a range of 0 to $\colorbox{orange}{n}{-}1$ and
-$\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ is a [negative
-index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array)
-that ranges from ${-}\colorbox{orange}{n}$ to −1.
-
-The Dec dates only include a year and a doty the equation above
-($\colorbox{yellow}{y}$ and $\colorbox{cyan}{d}$), because
-$\colorbox{orange}{n}$ is not needed to identify a specific date in
-time, only has 2 possible values (365 or 366), remains constant for long
-periods of time (366, 1095, or 2920 days), and can be calculated using
-the Dec year length equation:
-
-$$\colorbox{orange}{n}=\begin{cases}
-  366&{\begin{align}\text{if } (\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \\ }4=0\\
-  \land(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \\ }100\neq0\\
-  \lor(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \\ }400=0\end{align}}\\\\
-  365&{\text{otherwise.}}\end{cases}$$
-
-In the Dec year length equation, $\text\\$ is the
+In the equation above, $\vcenter{\text\\}$ is the
 [modulo](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 operator, ∧ is the logical
 [conjunction](https://en.wikipedia.org/wiki/Logical_conjunction)
-operator, and ∨ is the logical
+operator (and), and ∨ is the logical
 [disjunction](https://en.wikipedia.org/wiki/Logical_disjunction)
-operator. The easiest way to explain this equation is in terms of the
-[Gregorian
-calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world):
-the length of a Dec year is 366 days if the subsequent year
-($\lfloor\colorbox{yellow}{y}\rfloor{+}1$ ) is a Gregorian calendar
+operator (or). According to this equation, <span class="orange">n</span>
+has only 2 possible values, 366 if Year
+⌊<span class="yellow">y</span>⌋+1 is a [Gregorian
+calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
 [leap
 year](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400)
-and 365 days otherwise.
+and 365 if Year ⌊<span class="yellow">y</span>⌋+1 is a Gregorian
+calendar [common
+year](https://en.wikipedia.org/wiki/Common_year#:~:text=a%20calendar%20year%20with%20365%20days),
+and remains constant for 366, 1095, or 2920 days.
 
-The Dec date equation has a negative doty version:
-⌊<span class="yellow">y</span>⌋+1+(<span class="cyan">d</span>-<span class="orange">n</span>)÷<span class="orange">n</span>=<span class="yellow">y</span>,
-where
+Apart from its role in the Dec date and doty equations,
+<span class="orange">n</span> is needed to convert between
+<span class="yellow">year</span>+<span class="cyan">day</span> and
+<span class="yellow">year</span>-<span class="pink">day</span> Dec
+dates. The
+<span class="yellow">year</span>-<span class="pink">day</span> version
+of the Dec date equation is
+⌊<span class="yellow">y</span>⌋+1+(<span class="cyan">d</span>-<span class="orange">n</span>)÷<span class="orange">n</span>=<span class="yellow">y</span>.
+In essence, <span class="cyan">d</span>-<span class="orange">n</span> is
+a [“T-minus”
+countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event)
+of the days until the start of Year ⌊<span class="yellow">y</span>⌋+1.
+The current
+<span class="yellow">year</span>-<span class="pink">day</span> date,
+${styledNextYear}-${styledDecoTminus}, tells us that Year ${nextYear}
+will begin in ${Tminus} days.
 
-If we
+The difference between <span class="cyan">d</span> and
+<span class="cyan">d</span>-<span class="orange">n</span> can also be
+explained in terms of computer programming. If we think of years as
+[arrays](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=a%20data%20structure%20consisting%20of%20a%20collection%20of%20elements%20(values%20or%20variables)%2C%20of%20same%20memory%20size%2C%20each%20identified%20by%20at%20least%20one%20array%20index),
+<span class="cyan">d</span> and
+<span class="cyan">d</span>-<span class="orange">n</span> are like array
+[indexes](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=individual%20objects%20are%20selected%20by%20an%20index)
+that can be used to identify array elements or combine them into groups
+via
+[slicing](https://en.wikipedia.org/wiki/Array_slicing#:~:text=an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array).
+In this analogy, <span class="orange">n</span> is the number of elements
+in the array, <span class="cyan">d</span> is a [positive
+index](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00),
+and <span class="cyan">d</span>-<span class="orange">n</span> is a
+[negative
+index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array).
+
+The array analogy is useful for understanding how Dec spans work. Dec
+spans
 
 ``` {ojs}
 //| echo: false
