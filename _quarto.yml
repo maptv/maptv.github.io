@@ -82,6 +82,9 @@ website:
       - text: Dec Time
         icon: clock
         href: dec/time/index.qmd
+      - text: Dec Span
+        icon: calendar-range
+        href: dec/span/index.qmd
       - text: ISO Date
         icon: calendar-month
         href: iso/date/index.qmd
@@ -94,9 +97,6 @@ website:
       - text: Daylight duration
         icon: sun
         href: dec/day/index.qmd
-      - text: Time span
-        icon: calendar-range
-        href: dec/span/index.qmd
       - text: Navigation
         icon: compass
         href: dec/nav/index.qmd
