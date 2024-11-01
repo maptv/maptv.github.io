@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+240
+2024+245
 
 My website serves as a demonstration of both the
 [Quarto](https://quarto.org) publishing system and the [Dec](../../dec)
@@ -174,18 +174,28 @@ instead of <span class="blue" data-bs-toggle="tooltip"
 data-bs-title="January 1"><u>Day 306</u></span> and uses groups of 10
 days called deks in place of weeks and days of the dek (dotd) in lieu of
 days of the week. When combined, a dek and dotd form a Dec day of the
-year (doty). The current doty is ${styledDecoDoty}. The doty selected by
-the [Observable](https://observablehq.com/)
+year (doty), the <span class="cyan">day</span> in
+<span class="yellow">year</span>+<span class="cyan">day</span>. The doty
+selected by the [Observable](https://observablehq.com/)
 [range🎚️inputs](https://observablehq.com/@observablehq/input-range)
-above and highlighted in the calendar plots is ${styledDotyInput}.
+above and highlighted in the plots is ${styledDotyInput}.
+
+There are two “day of the year” range🎚️inputs because every doty can be
+expressed as both a positive and a negative number. The typical range
+for positive doty values is 0 to <span class="orange">n</span>-1, and
+negative doty values typically range from -<span class="orange">n</span>
+to -1, where <span class="orange">n</span> is the number of days in the
+year. Doty values outside these
+[bounds](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20upper%20bound%20or%20majorant%5B1%5D%20of%20a%20subset%20S%20of%20some%20preordered%20set%20(K%2C%20%E2%89%A4)%20is%20an%20element%20of%20K%20that%20is%20greater%20than%20or%20equal%20to%20every%20element%20of%20S.%5B2%5D%5B3%5D%20Dually%2C%20a%20lower%20bound%20or%20minorant%20of%20S%20is%20defined%20to%20be%20an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S)
+represent days in previous or subsequent years.
 
 The Play▶️button above cycles🔄through every doty, month, and day of the
-month value so that each day gets its turn to be highlighted with a
-red🟥background. The
+month in the plots so that each day gets its turn to be highlighted with
+a red🟥background. The
 [toggle✅input](https://observablehq.com/framework/inputs/toggle#:~:text=choose%20one%20of%20two%20values)
 next to the button determines whether the plots show a leap
-($\colorbox{orange}{n}{=}366$) or a common
-($\colorbox{orange}{n}{=}365$) year. The
+(<span class="orange">n</span>=366) or a common
+(<span class="orange">n</span>=365) year. The
 [radio🔘input](https://observablehq.com/framework/inputs/radio#:~:text=choose%20one%20of%20a%20given%20set%20of%20values)
 beneath the toggle input sets the day of the week on <span class="blue"
 data-bs-toggle="tooltip" data-bs-title="January 1"><u>Day
@@ -199,25 +209,38 @@ year](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=a%20calendar%20th
 except leaps years. The addition of <span class="blue"
 data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day
 365</u></span> to leap years shifts 306 Gregorian calendar dates forward
-by one day, but does not affect the order of Decalendar dates, because
+by one day, but does not affect the order of Dec dates, because
 <span class="blue" data-bs-toggle="tooltip"
-data-bs-title="February 29"><u>Day 365</u></span> is the last day of
-Decalendar leap years.
+data-bs-title="February 29"><u>Day 365</u></span> is the last day of Dec
+leap years.
 
 Even though Dec does not use weeks, Dec dates can be modified to include
 [POSIX weekday
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)).
-The current Dec date, , can be turned into the current day of the week
-(dotw) date, |y|+d-w+w, by subtracting the POSIX weekday number, , from
-the doty, , and leaving the addition of the difference and the POSIX
-weekday number, , unsolved.
+To convert the current Dec date, ${styledDecoYear}+${styledDecoDoty1},
+into the current Dec day of the week (dotw) date,
+${styledDecoYear6}${dotw0sign}${styledDotw0doty}+${styledDotw}, we split
+the current doty, ${styledDecoDoty2}, into the doty of the first day of
+the current week, ${styledDotw0doty1}, and the current POSIX weekday
+number: ${styledDotw1}.
 
 Dec dotw dates can be further modified to include [POSIX week
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.).
-To find the current Dec week number, , we add the POSIX weekday number
-of Day 0, , to the current doty and [floor divide]() by 7. To convert
-the current Dec week date, , into a normal Dec date, we subtract the
-POSIX weekday number of Day 0: 7\*U+w-w=d.
+The current week number, ${styledWeek1}, is the result of adding the
+middle number in the Dec dotw date, ${styledDotw0doty2}, to the Day 0
+dotw number, ${styledDoty0dotw}, and then floor dividing by 7. The
+current Dec week date,
+${styledDecoYear2}+7×${styledWeek}+${styledDotw2}, shows how we can
+obtain the sum of the current doty and the Day 0 dotw number:
+7×${styledWeek2}+${styledDotw4}=${styledDecoDoty3}+${styledDoty0dotw1}.
+
+The Dec dotw and week date examples above demonstrate how Dec uses
+[unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
+math expressions to display various pieces of information about a date.
+While Dec dotw dates provide all of the information needed to identify
+specific dates and coordinate schedules based on deks or weeks, Dec week
+dates may be useful for [week-based
+accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week).
 
 Following the Dec week date pattern, we can adapt Dec dates to use any
 other fixed-length calendar unit, including the 20-day
@@ -233,141 +256,26 @@ No other calendar unit can be as convenient as the 10-day
 because our [decimal numeral
 system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
 allows us to naturally combine a dek and a day of the dek into a single
-number.
+doty number.
 
-Dec can also be modified to display Dec month numbers and day of the
-month (dotm) numbers. The current Dec month date is |y|+d-m+m. We
-represent the current month with the last doty of the previous month so
-we can use one-based [POSIX dotm
+Dec dates can also be modified to display Dec month numbers and [POSIX
+day of the month (dotm)
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D).
-If we represent the current month with its first doty, we have to use a
-zero-based dotm number: |y|+d-m+m.
-
-Also, the Gregorian calendar varies greatly depending on the days of the
-week. In total, there are 14 different Gregorian calendar variants that
-repeat in a [400-year cycle]().
-
-The `year+day` format is based on the Dec date equation:
-$\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}{\div}\colorbox{orange}{n}{=}\colorbox{yellow}{y}$,
-where $\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}$ is the
-Dec date, $\lfloor\colorbox{yellow}{y}\rfloor$ is the year obtained by
-[flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-$\colorbox{yellow}{y}$, the
-[decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=denoting%20integer%20and-,non%2Dinteger%20numbers,-.%20It%20is%20the)
-years that have passed since the Dec
-[epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era)
-(<span class="blue" data-bs-toggle="tooltip"
-data-bs-title="1 BC"><u>Year 0</u></span> <span class="blue"
-data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
-<span class="blue" data-bs-toggle="tooltip"
-data-bs-title="midnight"><u>Dot 0</u></span>), $\colorbox{cyan}{d}$ is
-the
+The current Dec dotm date is
+${styledDecoYear3}+${styledMonthNumber1}+${styledDotm1}. Dec dotm dates
+represent each month with the last doty of the previous month because
+POSIX dotm numbers are one-based. For
 [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
-day of the year, and $\colorbox{orange}{n}$ is the number of days in
-$\lfloor\colorbox{yellow}{y}\rfloor$. The Dec date equation for today is
-${styledDecoYear}+${styledDecoDoty1}÷${styledNdays}=${styledFracYear}.
+dotm numbers, we represent each month with its first doty:
+${styledDecoYear4}+${styledMonthNumber0}+${styledDotm0}.
 
-Dec dates only include the first two terms from the [left-hand
-side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20expression%20on%20the%20left%20of%20the%20%22%3D%22%20is%20the%20left%20side%20of%20the%20equation)
-of the Dec date equation: $\lfloor\colorbox{yellow}{y}\rfloor$ and
-$\colorbox{cyan}{d}$. The right-hand side of the equation,
-$\colorbox{yellow}{y}$, can also be used as a date. We need
-$\colorbox{orange}{n}$ to calculate $\colorbox{yellow}{y}$ via the Dec
-date equation above and to obtain $\colorbox{cyan}{d}$ using the Dec day
-of the year equation:
-$\colorbox{cyan}{d}{=}\colorbox{yellow}{y}\vcenter{\text{\\}}1{\times}\colorbox{orange}{n}$.
-In simple terms, $\colorbox{cyan}{d}$ is the [decimal
-part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
-of $\colorbox{yellow}{y}$ multiplied by $\colorbox{orange}{n}$.
+We can obtain Dec month numbers by counting index and ring fingers as 30
+days and other fingers as 31 days. The image below shows the Dec month
+numbers that work with one-based dotm numbers. For zero-based dotm
+numbers, add 1 to each Dec month number. To spread 12 months across 10
+fingers, the first and last fingers each represent 2 months.
 
-To find $\colorbox{orange}{n}$, we plug
-$\lfloor\colorbox{yellow}{y}\rfloor$ into the Dec year length equation
-below, where $\vcenter{\text\\}$ is the
-[modulo](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-operator, ∧ is the logical
-[conjunction](https://en.wikipedia.org/wiki/Logical_conjunction)
-operator (and), and ∨ is the logical
-[disjunction](https://en.wikipedia.org/wiki/Logical_disjunction)
-operator (or). According to this equation, $\colorbox{orange}{n}$ is 366
-if the subsequent year <span class="nowrap">(Year
-$\lfloor\colorbox{yellow}{y}\rfloor{+}1$)</span> is a [Gregorian
-calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
-[leap
-year](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400)
-and 365 if Year $\lfloor\colorbox{yellow}{y}\rfloor{+}1$ is a Gregorian
-calendar [common
-year](https://en.wikipedia.org/wiki/Common_year#:~:text=a%20calendar%20year%20with%20365%20days).
-
-$$\colorbox{orange}{n}=\begin{cases}
-  366&{\begin{align}\text{if } (\lfloor \colorbox{yellow}{y}\rfloor+1)\vcenter{\text{ \\ }}4=0\\
-  \land(\lfloor \colorbox{yellow}{y}\rfloor+1)\vcenter{\text{ \\ }}100\neq0\\
-  \lor(\lfloor \colorbox{yellow}{y}\rfloor+1)\vcenter{\text{ \\ }}400=0\end{align}}\\\\
-  365&{\text{otherwise.}}\end{cases}$$
-
-In addition to calculating $\colorbox{yellow}{y}$,
-$\colorbox{orange}{n}$ is needed to convert between `year+day` and
-`year-day` Dec dates. The `year-day` version of the Dec date equation is
-$\lfloor\colorbox{yellow}{y}\rfloor{+}1{-}(\colorbox{cyan}{d}{-}\colorbox{orange}{n}){\div}\colorbox{orange}{n}{=}\colorbox{yellow}{y}$.
-In essence, $\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ is a [“T-minus”
-countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event)
-of the days until the start of Year
-$\lfloor\colorbox{yellow}{y}\rfloor{+}1$. The current `year-day` date,
-${styledNextYear}-${styledDecoTminus}, tells us that Year ${nextYear}
-will begin in ${Tminus} days.
-
-The difference between $\colorbox{cyan}{d}$ and
-$\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ can also be explained in
-terms of computer programming. If we think of years as
-[arrays](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=a%20data%20structure%20consisting%20of%20a%20collection%20of%20elements%20(values%20or%20variables)%2C%20of%20same%20memory%20size%2C%20each%20identified%20by%20at%20least%20one%20array%20index),
-$\colorbox{cyan}{d}$ and $\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ are
-like array
-[indexes](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=individual%20objects%20are%20selected%20by%20an%20index)
-that can be used to identify array elements or combine them via
-[slicing](https://en.wikipedia.org/wiki/Array_slicing#:~:text=an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array).
-In this analogy, $\colorbox{cyan}{d}$ is a [positive
-index](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
-with a range of 0 to $\colorbox{orange}{n}{-}1$ and
-$\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ is a [negative
-index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array)
-that ranges from ${-}\colorbox{orange}{n}$ to −1.
-
-We can express the
-[bounds](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20upper%20bound%20or%20majorant%5B1%5D%20of%20a%20subset%20S%20of%20some%20preordered%20set%20(K%2C%20%E2%89%A4)%20is%20an%20element%20of%20K%20that%20is%20greater%20than%20or%20equal%20to%20every%20element%20of%20S.%5B2%5D%5B3%5D%20Dually%2C%20a%20lower%20bound%20or%20minorant%20of%20S%20is%20defined%20to%20be%20an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S)
-for $\colorbox{cyan}{d}$ values with the
-[interval](https://en.wikipedia.org/wiki/Interval_(mathematics)#:~:text=the%20set%20of%20all%20real%20numbers%20lying%20between%20two%20fixed%20endpoints)
-$\left \[0,\colorbox{orange}{n} \right )$, the
-[inequality](https://en.wikipedia.org/wiki/Inequality_(mathematics)#:~:text=a%20non%2Dequal%20comparison)
-$0{\le}\colorbox{cyan}{d}{\lt} \colorbox{orange}{n}$, or the Dec range
-0=. Similarly, the analogous interval, inequality, and Dec range for
-$\colorbox{cyan}{d}{-}\colorbox{orange}{n}$ are
-$\[{-}\colorbox{orange}{n},0)$,
-${-}\colorbox{orange}{n}{\le}\colorbox{cyan}{d}{-}\colorbox{orange}{n}{\lt}0$,
-and ${-}\colorbox{orange}{n}{=}$, respectively.
-
-Even though it only uses years and days, Dec can display dates based on
-months or weeks by modifying $\colorbox{cyan}{d}$. The equation for Dec
-week dates is
-$\lfloor\colorbox{yellow}{y}\rfloor{+}7{\times}\colorbox{pink}{U}{+}\text{\textcolor{blue}{w}}{-}\text{\textcolor{blue}{w}}\_
-\text{\textcolor{blue}{d=0}}{=}\colorbox{yellow}{y}$, where
-$\colorbox{pink}{U}$ is the week number, $\text{\textcolor{blue}{w}}$ is
-the day of the week number, and
-$\text{\textcolor{blue}{w}}\_\text{\textcolor{blue}{d=0}}$ is
-$\text{\textcolor{blue}{w}}$ on the first day of the year
-($\colorbox{cyan}{d}{=}0$). The Dec week date equation for today is .
-
-We can truncate the Dec week date equation to remove
-$\text{\textcolor{blue}{w}}\_\text{\textcolor{blue}{d=0}}$, which can be
-determined from $\lfloor\colorbox{yellow}{y}\rfloor$ and is not needed
-to identify a date. The truncated Dec week date equation for today is .
-
-If we ever need to convert between a doty and a Gregorian calendar month
-and day of the month without any conversion tools, we can use the Dec
-finger mnemonic, which is similar to the [knuckle
-mnemonic](https://en.wikipedia.org/wiki/Knuckle_mnemonic#:~:text=a%20mnemonic%20device%20for%20remembering%20the%20number%20of%20days%20in%20the%20months%20of%20the%20Julian%20and%20Gregorian%20calendars).
-The numbers above the fingers in the image below indicate the doty of
-the last day of each Gregorian calendar month. The thumb, middle finger,
-and pinky represent months with 31 days, whereas the index and ring
-fingers stand for 30-day months.
+<div class="column-page-right">
 
 <figure>
 <img src="../../asset/finger.svg" class="knitr"
@@ -375,37 +283,130 @@ alt="Dec finger mnemonic" />
 <figcaption aria-hidden="true">Dec finger mnemonic</figcaption>
 </figure>
 
-The [southward
-equinox](https://en.wikipedia.org/wiki/September_equinox#:~:text=the%20moment%20when%20the%20Sun%20appears%20to%20cross%20the%20celestial%20equator%2C%20heading%20southward)
-falls on Day 205 in Year 2024, 2025, 2028, and 2029. We can determine
-that Day 205 is September 22 by subtracting the Dec date of the last day
-of August (Day 183), the month preceding September, from the southward
-equinox doty: 205 − 183 = 22. To convert in the other direction, we
-would sum the doty and the day of the month: 183 + 22 = 205.
+</div>
 
-The finger mnemonic highlights a major difference between Dec and the
-Gregorian calendar: the Dec year starts on <span class="blue"
+We can combine the patterns above to create hybrid Dec dotm and dotw
+dates:
+${styledDecoYear5}+${hybridMonthNumber}+${styledDotm2}+${styledDotw5}.
+Essentially, you can modify a Dec date to show whatever number(s) you
+want. All it takes is a little bit of arithmetic! This incredible
+versatility is possible thanks to the mathematical basis of Dec dates.
+Every Dec date format is defined by an equation.
+
+The Dec date equation,
+⌊<span class="yellow">y</span>⌋+<span class="cyan">d</span>÷<span class="orange">n</span>=<span class="yellow">y</span>,
+where ⌊<span class="yellow">y</span>⌋+<span class="cyan">d</span> is the
+Dec date, ⌊<span class="yellow">y</span>⌋ is the year,
+<span class="cyan">d</span> is the doty, <span class="orange">n</span>
+is the number of days in Year ⌊<span class="yellow">y</span>⌋, and
+<span class="yellow">y</span> is the
+[decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=denoting%20integer%20and-,non%2Dinteger%20numbers,-.%20It%20is%20the)
+years that have passed since the Dec
+[epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era)
+(<span class="blue" data-bs-toggle="tooltip"
+data-bs-title="1 BC"><u>Year 0</u></span> <span class="blue"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
-just like the [Roman
-calendar](https://en.wikipedia.org/wiki/Roman_calendar#:~:text=the%20calendar%20used%20by%20the%20Roman%20Kingdom%20and%20Roman%20Republic),
-the predecessor of the Gregorian and Julian calendars. For this reason,
-the Latin [numeral
-prefixes](https://en.wikipedia.org/wiki/Numeral_prefix#:~:text=prefixes%20derived%20from%20numerals)
-in the names of the months of
-[Septem](https://en.wikipedia.org/wiki/Numeral_prefix#:~:text=7-,septem,-%2D%2C%20septi%2D%5B)ber,
-[Octo](https://en.wikipedia.org/wiki/Numeral_prefix#:~:text=8-,octo,-%2D%5Bu)ber,
-[Novem](https://en.wikipedia.org/wiki/Numeral_prefix#:~:text=9-,novem,-%2D%5Bx)ber,
-and
-[Decem](https://en.wikipedia.org/wiki/Numeral_prefix#:~:text=10-,decem,-%2D%2C%20dec%2D%5B)ber
-match their one-based indexes (7, 8, 9, and 10) in Dec and the Roman
-calendar, but not in the Julian or Gregorian calendars.
+<span class="blue" data-bs-toggle="tooltip"
+data-bs-title="midnight"><u>Dot 0</u></span>), can be rearranged into
+the Dec doty equation,
+<span class="cyan">d</span>=<span class="yellow">y</span>%1×<span class="orange">n</span>,
+which defines <span class="cyan">d</span> as the product of
+<span class="orange">n</span> and the [decimal
+part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
+of <span class="yellow">y</span> (<span class="yellow">y</span>%1,
+<span class="yellow">y</span>-⌊<span class="yellow">y</span>⌋, or
+<span class="yellow">y</span>
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1).
 
-The knuckle and finger mnemonics attempt to make sense of the irregular
-pattern of month lengths in the Gregorian calendar. Rather than replace
-variable-length months with [fixed-length
-months](https://en.wikipedia.org/wiki/Calendar_reform#13-month_calendars),
-Dec forgoes the use of months entirely and instead uses groups of ten
-days called deks.
+Dec dotw dates express <span class="cyan">d</span> as
+<span class="cyan">d</span>-<span class="azul">w<sub>d</sub></span>+<span class="azul">w<sub>d</sub></span>,
+where
+<span class="cyan">d</span>-<span class="azul">w<sub>d</sub></span> is
+the first doty of the current week and
+<span class="azul">w<sub>d</sub></span> is the dotw number. Similarly,
+<span class="cyan">d</span> in Dec dotm dates is expressed as
+<span class="cyan">d</span>-<span class="magenta">m</span>+<span class="magenta">m</span>,
+where <span class="cyan">d</span>-<span class="magenta">m</span> is the
+Dec month number and <span class="magenta">m</span> is the dotm number.
+In both cases, we evaluate the subtraction to get
+<span class="cyan">d</span>-<span class="azul">w<sub>d</sub></span> or
+<span class="cyan">d</span>-<span class="magenta">m</span>, but not the
+addition, so we can see <span class="azul">w<sub>d</sub></span> or
+<span class="magenta">m</span>.
+
+Dec week dates turn
+<span class="cyan">d</span>-<span class="azul">w<sub>d</sub></span> into
+7×<span class="wheat">W</span>-<span class="azul">w<sub>0</sub></span>,
+where <span class="wheat">W</span> is the week number and
+<span class="azul">w<sub>0</sub></span> is the dotw number on Day 0. In
+this case, the subtraction is omitted, because
+<span class="azul">w<sub>0</sub></span> is not necessary to identify a
+date and can be calculated from a given ⌊<span class="yellow">y</span>⌋.
+Likewise, <span class="orange">n</span> is not included in dates for the
+same reasons. To find <span class="orange">n</span>, we plug the
+subsequent year (⌊<span class="yellow">y</span>⌋+1) into the Dec year
+length equation:
+
+$$\colorbox{orange}{n}=\begin{cases}
+  366&{\begin{align}\text{if } (\lfloor \colorbox{yellow}{y}\rfloor+1)\vcenter{\text{ \\ }}4=0\\
+  \land(\lfloor \colorbox{yellow}{y}\rfloor+1)\vcenter{\text{ \\ }}100\neq0\\
+  \lor(\lfloor \colorbox{yellow}{y}\rfloor+1)\vcenter{\text{ \\ }}400=0\end{align}}\\\\
+  365&{\text{otherwise.}}\end{cases}$$
+
+In the equation above, $\vcenter{\text\\}$ is the
+[modulo](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+operator, ∧ is the logical
+[conjunction](https://en.wikipedia.org/wiki/Logical_conjunction)
+operator (and), and ∨ is the logical
+[disjunction](https://en.wikipedia.org/wiki/Logical_disjunction)
+operator (or). According to this equation, <span class="orange">n</span>
+has only 2 possible values, 366 if Year
+⌊<span class="yellow">y</span>⌋+1 is a [Gregorian
+calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
+[leap
+year](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400)
+and 365 if Year ⌊<span class="yellow">y</span>⌋+1 is a Gregorian
+calendar [common
+year](https://en.wikipedia.org/wiki/Common_year#:~:text=a%20calendar%20year%20with%20365%20days),
+and remains constant for 366, 1095, or 2920 days.
+
+Apart from its role in the Dec date and doty equations,
+<span class="orange">n</span> is needed to convert between
+<span class="yellow">year</span>+<span class="cyan">day</span> and
+<span class="yellow">year</span>-<span class="pink">day</span> Dec
+dates. The
+<span class="yellow">year</span>-<span class="pink">day</span> version
+of the Dec date equation is
+⌊<span class="yellow">y</span>⌋+1+(<span class="cyan">d</span>-<span class="orange">n</span>)÷<span class="orange">n</span>=<span class="yellow">y</span>.
+In essence, <span class="cyan">d</span>-<span class="orange">n</span> is
+a [“T-minus”
+countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event)
+of the days until the start of Year ⌊<span class="yellow">y</span>⌋+1.
+The current
+<span class="yellow">year</span>-<span class="pink">day</span> date,
+${styledNextYear}-${styledDecoTminus}, tells us that Year ${nextYear}
+will begin in ${Tminus} days.
+
+The difference between <span class="cyan">d</span> and
+<span class="cyan">d</span>-<span class="orange">n</span> can also be
+explained in terms of computer programming. If we think of years as
+[arrays](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=a%20data%20structure%20consisting%20of%20a%20collection%20of%20elements%20(values%20or%20variables)%2C%20of%20same%20memory%20size%2C%20each%20identified%20by%20at%20least%20one%20array%20index),
+<span class="cyan">d</span> and
+<span class="cyan">d</span>-<span class="orange">n</span> are like array
+[indexes](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=individual%20objects%20are%20selected%20by%20an%20index)
+that can be used to identify array elements or combine them into groups
+via
+[slicing](https://en.wikipedia.org/wiki/Array_slicing#:~:text=an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array).
+In this analogy, <span class="orange">n</span> is the number of elements
+in the array, <span class="cyan">d</span> is a [positive
+index](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00),
+and <span class="cyan">d</span>-<span class="orange">n</span> is a
+[negative
+index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array).
+
+The array analogy is useful for understanding how Dec spans work. Dec
+spans
 
 ``` {ojs}
 //| echo: false
@@ -416,14 +417,13 @@ unix = {
   }
 }
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
-function unix2dote(unix, zone) {
-  return [
-    (unix ?? Date.now()) / 86400000
-    + (zone = zone ?? (
-      10 - Math.round((new Date)
-        .getTimezoneOffset() / 144)
-    ) % 10) / 10 + 719468, zone]}
-function dote2doty(dote, zone = 0) {
+function unix2dote(unix, zone, offset = 719468) {
+  return [(unix ?? Date.now()) / 86400000 + (
+    zone = zone ?? -Math.round(
+      (new Date).getTimezoneOffset() / 144)
+    ) / 10 + offset, zone]
+}
+function dote2date(dote, zone = 0) {
   const socy = Math.floor((
       dote >= 0 ? dote
       : dote - 146096
@@ -443,7 +443,8 @@ function dote2doty(dote, zone = 0) {
 function doty2deco0(year = 1969, doty = 306, zone = 0) {
   return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`
 }
-ydz = dote2doty(...unix2dote(unix))
+dz = unix2dote(unix)
+ydz = dote2date(...dz)
 deco = doty2deco0(...ydz)
 // https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor
 function setStyle(content, style = {}) {
@@ -470,25 +471,71 @@ function setStyle(content, style = {}) {
   }}>${content}</span>`;
 }
 function year2leap(year = 1970) {
-    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+  return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+}
+function dote2dotw(d = 719468) {
+  return d >= -3 ? (d + 3) % 7 : (d + 4) % 7 + 6
 }
 decoYear = deco.slice(0, 4)
 nextYear = parseInt(decoYear) + 1
 decoDoty = deco.slice(5, 8)
+dotw = Math.floor(dote2dotw(dz[0]))
+week = Math.floor((ydz[1] + doty0dotw) / 7)
+dotm = doty2dotm(Math.floor(ydz[1]))
+dotm0 = String(dotm - 1).padStart(2, "0")
+dotm1 = dotm.toString().padStart(2, "0")
+monthNumber = Math.floor(ydz[1] - dotm)
+monthNumber0 = String(monthNumber + 1).padStart(3, "0")
+monthNumber1 = monthNumber.toString().padStart(3, "0")
+dotw0doty = Math.floor(ydz[1]) - dotw
+doty0dote = date2dote(ydz[0], 0, ydz[2])
+doty0dotw = dote2dotw(...doty0dote)
+dotw0sign = dotw0doty < 0 ? "-" : "+"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
 Tminus = nDaysInYear - decoDoty
 fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(3)
 styledDecoYear = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear2 = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear3 = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear4 = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear5 = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear6 = setStyle(decoYear, d3.schemePaired[10])
 styledNextYear = setStyle(nextYear, d3.schemePaired[10])
 styledFracYear = setStyle(fracYear, d3.schemePaired[10])
 styledDecoDoty = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty1 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty2 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty3 = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDotyInput = setStyle(dotyInput, d3.color("cyan").formatHex())
 styledDecoTminus = setStyle(Tminus, d3.color("pink").formatHex())
 styledDecoDek = setStyle(decoDoty.slice(0, 2), d3.color("cyan").formatHex())
 styledDecoDotd = setStyle(decoDoty[2], d3.color("cyan").formatHex())
 styledNdays = setStyle(nDaysInYear, d3.schemePaired[6])
 styledNdays1 = setStyle(nDaysInYear, d3.schemePaired[6])
+styledDotw = setStyle(dotw, d3.color("blue").formatHex())
+styledDotw1 = setStyle(dotw, d3.color("blue").formatHex())
+styledDotw2 = setStyle(dotw, d3.color("blue").formatHex())
+styledDotw3 = setStyle(dotw, d3.color("blue").formatHex())
+styledDotw4 = setStyle(dotw, d3.color("blue").formatHex())
+styledDotw5 = setStyle(dotw, d3.color("blue").formatHex())
+styledDotw6 = setStyle(dotw, d3.color("blue").formatHex())
+styledWeek = setStyle(week, d3.color("wheat").formatHex())
+styledWeek1 = setStyle(week, d3.color("wheat").formatHex())
+styledWeek2 = setStyle(week, d3.color("wheat").formatHex())
+styledDoty0dotw = setStyle(doty0dotw, d3.color("blue").formatHex())
+styledDoty0dotw1 = setStyle(doty0dotw, d3.color("blue").formatHex())
+styledDotw0doty = setStyle(Math.abs(dotw0doty).toString().padStart(3, "0"), d3.color("cyan").formatHex())
+styledDotw0doty1 = setStyle(dotw0doty.toString().padStart(3, "0"), d3.color("cyan").formatHex())
+styledDotw0doty2 = setStyle(dotw0doty.toString().padStart(3, "0"), d3.color("cyan").formatHex())
+styledDotw0doty3 = setStyle(Math.abs(dotw0doty).toString().padStart(3, "0"), d3.color("cyan").formatHex())
+styledDotw0doty4 = setStyle(Math.abs(dotw0doty).toString().padStart(3, "0"), d3.color("cyan").formatHex())
+styledDotm0 = setStyle(dotm0, d3.color("darkmagenta").formatHex())
+styledDotm1 = setStyle(dotm1, d3.color("darkmagenta").formatHex())
+styledDotm2 = setStyle(dotm1, d3.color("darkmagenta").formatHex())
+styledMonthNumber0 = setStyle(monthNumber0, d3.color("cyan").formatHex())
+styledMonthNumber1 = setStyle(monthNumber1, d3.color("cyan").formatHex())
+hybridMonthNumber = setStyle(monthNumber - dotw, d3.color("cyan").formatHex())
 // https://observablehq.com/@juang1744/transform-input/1
 transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
   if (source === undefined) {
@@ -655,13 +702,13 @@ function unix2doty(unix) {
       - Math.floor(yotc / 100)
   )}
 
-function doty2dote(year = 1969, doty = 0, zone = 0) {
-    const cycle = Math.floor((year >= 0 ? year : year - 399) / 400),
-    yote = year - cycle * 400;
-    return cycle * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty - zone
+function date2dote(year = 1969, doty = 306, zone = 0) {
+    const socy = Math.floor((year >= 0 ? year : year - 399) / 400),
+      yote = year - socy * 400;
+    return [socy * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
 }
 function doty2deco(yearDoty = [1969, 306], zone = 0) {
-    const yd = dote2doty(doty2dote(yearDoty[0], Math.floor(yearDoty[1])));
+    const yd = dote2date(...date2dote(yearDoty[0], Math.floor(yearDoty[1]), zone));
     return `${yd[0].toString().padStart(4, "0")}+${yd[1].toString().padStart(3, "0")}${
         yearDoty[1].toString().includes(".") ? "." + (
             (yearDoty[1] > 0) ? (yearDoty[1] - zone).toString().split(".").pop()
@@ -691,7 +738,7 @@ function zone2hour(zone = "Z") {
         : zone;
 }
 function doty2unix(year = 1969, doty = 306, zone = 0) {
-    return (doty2dote(year, doty, zone) - 719468) * 86400000;
+    return (date2dote(year, doty, zone) - 719468) * 86400000;
 }
 function doty2isoc(yd) {
     return new Date(doty2unix(...yd))

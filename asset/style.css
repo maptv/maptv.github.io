@@ -163,6 +163,10 @@ div.quarto-listing > div.list.grid {
   white-space: nowrap;
 }
 
+#quarto-header > nav {
+  padding: .5em 1em .5em 1em;
+}
+
 .nowrap {
   white-space: nowrap;
 }
@@ -171,8 +175,38 @@ div > form > label {
   --label-width: 125px;
 }
 
+.azul {
+  background-color: blue;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
+.magenta {
+  background-color: darkmagenta;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
+.wheat {
+  background-color: wheat;
+  color: black;
+  padding: 0px 2px 0px 2px;
+}
+
 .cyan {
   background-color: cyan;
+  color: black;
+  padding: 0px 2px 0px 2px;
+}
+
+.pink {
+  background-color: pink;
+  color: black;
+  padding: 0px 2px 0px 2px;
+}
+
+.orange {
+  background-color: orange;
   color: black;
   padding: 0px 2px 0px 2px;
 }

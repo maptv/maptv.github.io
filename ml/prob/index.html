@@ -114,6 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Lato" type="text/css">
 <meta name="quarto:status" content="draft">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -307,6 +308,13 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../dec/time/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-clock" role="img">
+</i> 
+ <span class="menu-text">Dec Time</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../iso/date/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-calendar-month" role="img">
 </i> 
  <span class="menu-text">ISO Date</span></a>
@@ -314,9 +322,9 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../dec/time/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-clock" role="img">
+  <a href="../../iso/time/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-hourglass" role="img">
 </i> 
- <span class="menu-text">Time</span></a>
+ <span class="menu-text">ISO Time</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1873,7 +1881,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
