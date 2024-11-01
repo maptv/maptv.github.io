@@ -405,8 +405,28 @@ and <span class="cyan">d</span>-<span class="orange">n</span> is a
 [negative
 index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array).
 
-The array analogy is useful for understanding how Dec spans work. Dec
-spans
+The array analogy can be extended beyond Dec dates to Dec times if
+indexes can be floating-point numbers
+([floats](https://en.wikipedia.org/wiki/Floating-point_arithmetic#:~:text=an%20integer%20with%20a%20fixed%20precision%2C%20called%20the%20significand%2C%20scaled%20by%20an%20integer%20exponent%20of%20a%20fixed%20base))
+in addition to integers. In Dec, the [integer
+part](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=truncation%20towards%20zero)
+of a float represents a date whereas the decimal part represents a time.
+While the
+[Python](https://en.wikipedia.org/wiki/Python_%28programming_language%29#:~:text=a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language)
+programming language [requires indexes to be
+integers](https://docs.python.org/3/library/exceptions.html#IndexError:~:text=if%20an%20index%20is%20not%20an%20integer%2C%20TypeError%20is%20raised),
+the [`pandas`](https://pandas.pydata.org) Python library allows for
+[partial string
+indexing](https://pandas.pydata.org/docs/user_guide/timeseries.html#partial-string-indexing)
+indexes that include hours . of `pandas` data structures with how the
+`arange` function from the `numpy` library can by used to create `numpy`
+n-dimensional arrays (ndarrays) with floating decimal point numbers
+(floats) instead of integers. Therefore, for understanding how Dec spans
+work. Dec spans can be used to group dates together or find the interval
+between two dates. In addition to Dec dates, Dec spans also work with
+Dec times. The recommended learning path is to first If you are not yet
+ready to delve deeper into Dec, you can learning about Dec spans, you
+should
 
 ``` {ojs}
 //| echo: false
