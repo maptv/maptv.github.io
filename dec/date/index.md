@@ -1,18 +1,17 @@
 # Dec Date
 Martin Laptev
-2024+245
+2024+247
 
 My website serves as a demonstration of both the
 [Quarto](https://quarto.org) publishing system and the [Dec](../../dec)
 measurement system. I use several clever hacks to get Quarto to display
 all of the dates on my website in the Dec
 <span class="yellow">year</span>+<span class="cyan">day</span> format.
-Knowing the basics of Dec dates will help you to understand the Quarto
-[filter](https://quarto.org/docs/extensions/filters.html), [render
-script](https://quarto.org/docs/projects/scripts.html#pre-and-post-render),
-and [include
-file](https://quarto.org/docs/output-formats/html-basics.html#includes)
-examples in my [Quarto article](../../software/quarto).
+Knowing the basics of Dec dates will help you to understand the articles
+on [filter](https://quarto.org/docs/extensions/filters.html),
+[script](https://quarto.org/docs/projects/scripts.html), and
+[include](https://quarto.org/docs/output-formats/html-basics.html#includes)
+files in the [Quarto section](../../quarto) of my site.
 
 Among its many features, Quarto offers support for the
 [Observable](https://observablehq.com/) data analysis and visualization
@@ -35,7 +34,7 @@ decPlot = Plot.plot({
   width: 1080,
   height: 240,
   className: "calplot",
-  marginTop: -20,
+  marginTop: -3,
   marginLeft: 31,
   marginBottom: 35,
   y: {tickSize: 0,
@@ -63,6 +62,16 @@ decPlot = Plot.plot({
       strokeWidth: 3,
       inset: 0.5,
     }),
+    Plot.text(dates, {
+      x: (d, i) => Math.floor(i / 10),
+      y: (d, i) => i % 10,
+      //fx: d => d.getUTCFullYear(),
+      text: d => d.getUTCDate() === 7 ? months[d.getUTCMonth()].slice(0, 3) : "",
+      y: -1,
+      frameAnchor: "left",
+      dy: -1,
+      monospace: true,
+      fontSize: "18px"}),
     Plot.text(dates, {
       x: (d, i) => Math.floor(i / 10),
       y: (d, i) => i % 10,
@@ -116,7 +125,7 @@ calPlot = Plot.plot({
       text: d => d.getUTCDate() === 7 ? months[d.getUTCMonth()].slice(0, 3) : "",
       y: -1,
       frameAnchor: "left",
-      dy: 2,
+      dy: -1,
       monospace: true,
       fontSize: "18px"}),
     Plot.text(datesCal, {
@@ -217,10 +226,10 @@ leap years.
 Even though Dec does not use weeks, Dec dates can be modified to include
 [POSIX weekday
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)).
-To convert the current Dec date, ${styledDecoYear}+${styledDecoDoty1},
+To convert the current Dec date, ${styledDecoYear}+${styledDecoDoty},
 into the current Dec day of the week (dotw) date,
 ${styledDecoYear6}${dotw0sign}${styledDotw0doty}+${styledDotw}, we split
-the current doty, ${styledDecoDoty2}, into the doty of the first day of
+the current doty, ${styledDecoDoty1}, into the doty of the first day of
 the current week, ${styledDotw0doty1}, and the current POSIX weekday
 number: ${styledDotw1}.
 
@@ -232,7 +241,7 @@ dotw number, ${styledDoty0dotw}, and then floor dividing by 7. The
 current Dec week date,
 ${styledDecoYear2}+7×${styledWeek}+${styledDotw2}, shows how we can
 obtain the sum of the current doty and the Day 0 dotw number:
-7×${styledWeek2}+${styledDotw4}=${styledDecoDoty3}+${styledDoty0dotw1}.
+7×${styledWeek2}+${styledDotw4}=${styledDecoDoty2}+${styledDoty0dotw1}.
 
 The Dec dotw and week date examples above demonstrate how Dec uses
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
@@ -275,15 +284,11 @@ numbers that work with one-based dotm numbers. For zero-based dotm
 numbers, add 1 to each Dec month number. To spread 12 months across 10
 fingers, the first and last fingers each represent 2 months.
 
-<div class="column-page-right">
-
 <figure>
 <img src="../../asset/finger.svg" class="knitr"
 alt="Dec finger mnemonic" />
 <figcaption aria-hidden="true">Dec finger mnemonic</figcaption>
 </figure>
-
-</div>
 
 We can combine the patterns above to create hybrid Dec dotm and dotw
 dates:
@@ -406,27 +411,78 @@ and <span class="cyan">d</span>-<span class="orange">n</span> is a
 index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array).
 
 The array analogy can be extended beyond Dec dates to Dec times if
-indexes can be floating-point numbers
-([floats](https://en.wikipedia.org/wiki/Floating-point_arithmetic#:~:text=an%20integer%20with%20a%20fixed%20precision%2C%20called%20the%20significand%2C%20scaled%20by%20an%20integer%20exponent%20of%20a%20fixed%20base))
-in addition to integers. In Dec, the [integer
-part](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=truncation%20towards%20zero)
-of a float represents a date whereas the decimal part represents a time.
-While the
+indexes can be
+[floating-point](https://en.wikipedia.org/wiki/Floating-point_arithmetic#:~:text=an%20integer%20with%20a%20fixed%20precision%2C%20called%20the%20significand%2C%20scaled%20by%20an%20integer%20exponent%20of%20a%20fixed%20base)
+[decimal
+numbers](https://en.wikipedia.org/wiki/Decimal#Decimal_notation:~:text=a%20number%20in%20the%20decimal%20numeral%20system)
+(floats) in addition to integers. In Dec, the decimal part of a doty
+represents represents a time of day. While the
 [Python](https://en.wikipedia.org/wiki/Python_%28programming_language%29#:~:text=a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language)
 programming language [requires indexes to be
 integers](https://docs.python.org/3/library/exceptions.html#IndexError:~:text=if%20an%20index%20is%20not%20an%20integer%2C%20TypeError%20is%20raised),
-the [`pandas`](https://pandas.pydata.org) Python library allows for
-[partial string
-indexing](https://pandas.pydata.org/docs/user_guide/timeseries.html#partial-string-indexing)
-indexes that include hours . of `pandas` data structures with how the
-`arange` function from the `numpy` library can by used to create `numpy`
-n-dimensional arrays (ndarrays) with floating decimal point numbers
-(floats) instead of integers. Therefore, for understanding how Dec spans
-work. Dec spans can be used to group dates together or find the interval
-between two dates. In addition to Dec dates, Dec spans also work with
-Dec times. The recommended learning path is to first If you are not yet
-ready to delve deeper into Dec, you can learning about Dec spans, you
-should
+the
+[Pandas](https://en.wikipedia.org/wiki/Pandas_(software)#:~:text=a%20software%20library%20written%20for%20the%20Python%20programming%20language%20for%20data%20manipulation%20and%20analysis)
+Python
+[library](https://en.wikipedia.org/wiki/Library_(computing)#:~:text=a%20collection%20of%20resources%20that%20is%20leveraged%20during%20software%20development)
+permits [indexing with a date and a
+time](https://pandas.pydata.org/docs/user_guide/timeseries.html#slice-vs-exact-match:~:text=series_minute%5B%22-,2011%2D12%2D31%2023%3A59,-%22%5D%0AOut).
+
+The combination of a Dec date and a Dec time is a called a snap. A Dec
+date is essentially a Dec snap that has been
+[truncated](https://en.wikipedia.org/wiki/Truncation#:~:text=limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point)
+until the time is no longer specified. Truncation of both positive and
+negative doty values in Dec snaps can be accomplished with the [floor
+function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x):
+⌊<span class="cyan">d</span>⌋. Unlike Pandas
+[string](https://en.wikipedia.org/wiki/String_(computer_science)#:~:text=a%20sequence%20of%20characters)
+indexes, Dec snaps cannot be shortened to a [year and a
+month](https://pandas.pydata.org/docs/user_guide/timeseries.html#partial-string-indexing:~:text=the%20year%20or-,year%20and%20month,-as%20strings%3A).
+
+Instead of Gregorian calendar month names or [POSIX month
+numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=Day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D),
+Dec expresses months as Dec spans that show the first doty of the given
+and subsequent month, with the exception of March, which is expressed as
+a [empty
+string](https://en.wikipedia.org/wiki/Empty_string#:~:text=no%20symbols%20in%20the%20string).
+Like a Python
+[slice](https://en.wikipedia.org/wiki/Array_slicing#1991:_Python:~:text=nums%5B%3A3%5D%20%20%23%20from%20index%200%20(inclusive)%20until%20index%203%20(exclusive))
+or [range](), a Dec span is a
+[right-open](https://en.wikipedia.org/wiki/Interval_(mathematics)#:~:text=open%20if%20it-,contains%20no%20maximum,-%3B%20and%20open%20if)
+interval. The current month, ${monthName}, is represented by the Dec
+span ${styledCurrMonth}=${styledNextMonth}.
+
+Dec spans are based on the Dec span equation,
+<span class="cyan">d<sub>m</sub></span>=<span class="cyan">d<sub>s</sub></span>+<span class="cyan">d<sub>d</sub></span>,
+where <span class="cyan">d<sub>d</sub></span> is the difference between
+<span class="cyan">d<sub>m</sub></span> and
+<span class="cyan">d<sub>s</sub></span>. The Dec span equation for
+${monthName}, ${styledCurrMonth1}=${styledNextMonth1}+${styledDiff},
+tells us that there are ${Math.abs(diff)} days in ${monthName}.
+Typically, <span class="cyan">d<sub>d</sub></span> is omitted, but we
+can omit <span class="cyan">d<sub>s</sub></span> instead:
+${styledCurrMonth2}=${styledDiff1}. Showing
+<span class="cyan">d<sub>d</sub></span> by itself also works if we
+specify a year on the left-hand side:
+${styledDecoYear7}+${styledCurrMonth3}=${styledDiff2}.
+
+The subsequent articles on my site build on this article to further
+describe Dec [times](../../dec/time), [snaps](../../dec/span), and
+[spans](../../dec/span). A basic understanding of the Dec
+<span class="yellow">year</span>+<span class="cyan">day</span> date
+format is enough to understand the examples in the
+[filter](../../quarto/filter) and [script](../../quarto/script) articles
+in the [Quarto section](../../quarto) of my site, but it might be
+helpful to read my [Dec time article](../../dec/time) before moving on
+to my Quarto [include article](../../quarto/include).
+
+Thank you for your interest in Dec. You will find citation information
+for this article below. Please note that this article does not describe
+the algorithms underlying Dec dates and cite the original source of the
+algorithms as [Hinnant, Howard](https://howardhinnant.github.io).
+<span class="blue" data-bs-toggle="tooltip"
+data-bs-title="2021-09-01"><u>2021+184</u></span>. “`chrono`-Compatible
+Low-Level Date Algorithms.” ${styledDecoYear8}+${styledDecoDoty3}.
+<https://howardhinnant.github.io/date_algorithms.html>.
 
 ``` {ojs}
 //| echo: false
@@ -444,18 +500,18 @@ function unix2dote(unix, zone, offset = 719468) {
     ) / 10 + offset, zone]
 }
 function dote2date(dote, zone = 0) {
-  const socy = Math.floor((
+  const cote = Math.floor((
       dote >= 0 ? dote
       : dote - 146096
     ) / 146097),
-  dotc = dote - socy * 146097,
+  dotc = dote - cote * 146097,
   yotc = Math.floor((dotc
     - Math.floor(dotc / 1460)
     + Math.floor(dotc / 36524)
     - Math.floor(dotc / 146096)
   ) / 365);
   return [
-    yotc + socy * 400,
+    yotc + cote * 400,
     dotc - (yotc * 365
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
@@ -514,6 +570,24 @@ dotw0sign = dotw0doty < 0 ? "-" : "+"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
 Tminus = nDaysInYear - decoDoty
 fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(3)
+months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+monthNums = ["305", "336", "", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
+today = new Date()
+monthName = today.toLocaleString('default', { month: 'long' });
+monthNumJS = today.getMonth();
+currMonth = monthNums[monthNumJS]
+nextMonth = monthNums[(monthNumJS + 1) % 12]
+diff = parseInt(currMonth || 0) - parseInt(nextMonth || nDaysInYear)
+  //currMonth === "" ? 0 : parseInt(currMonth) - nextMonth === "" ? nDaysInYear : parseInt(nextMonth)
+styledCurrMonth = setStyle(currMonth, d3.color("cyan").formatHex())
+styledCurrMonth1 = setStyle(currMonth, d3.color("cyan").formatHex())
+styledCurrMonth2 = setStyle(currMonth, d3.color("cyan").formatHex())
+styledCurrMonth3 = setStyle(currMonth, d3.color("cyan").formatHex())
+styledNextMonth = setStyle(nextMonth, d3.color("cyan").formatHex())
+styledNextMonth1 = setStyle(nextMonth, d3.color("cyan").formatHex())
+styledDiff = setStyle(diff, d3.color("cyan").formatHex())
+styledDiff1 = setStyle(diff, d3.color("cyan").formatHex())
+styledDiff2 = setStyle(diff, d3.color("cyan").formatHex())
 styledDecoYear = setStyle(decoYear, d3.schemePaired[10])
 styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])
 styledDecoYear2 = setStyle(decoYear, d3.schemePaired[10])
@@ -521,6 +595,8 @@ styledDecoYear3 = setStyle(decoYear, d3.schemePaired[10])
 styledDecoYear4 = setStyle(decoYear, d3.schemePaired[10])
 styledDecoYear5 = setStyle(decoYear, d3.schemePaired[10])
 styledDecoYear6 = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear7 = setStyle(decoYear, d3.schemePaired[10])
+styledDecoYear8 = setStyle(decoYear, d3.schemePaired[10])
 styledNextYear = setStyle(nextYear, d3.schemePaired[10])
 styledFracYear = setStyle(fracYear, d3.schemePaired[10])
 styledDecoDoty = setStyle(decoDoty, d3.color("cyan").formatHex())
@@ -702,16 +778,15 @@ function Scrubber(values, {
 }
 calYear = !leapInput && dotwInput == "Monday" ? 6 : !leapInput && dotwInput == "Tuesday" ? 7 : !leapInput && dotwInput == "Wednesday" ? 2 : !leapInput && dotwInput == "Thursday" ? 3 : !leapInput && dotwInput == "Friday" ? 9 : !leapInput && dotwInput == "Saturday" ? 10 : !leapInput && dotwInput == "Sunday" ? 11 : leapInput && dotwInput == "Monday" ? 12 : leapInput && dotwInput == "Tuesday" ? 24 : leapInput && dotwInput == "Wednesday" ? 8 : leapInput && dotwInput == "Thursday" ? 20 : leapInput && dotwInput == "Friday" ? 4 : leapInput && dotwInput == "Saturday" ? 16 : leapInput && dotwInput == "Sunday" ? 28 : 0;
 datesCal = d3.utcDays(new Date(calYear, 0, 0), new Date(calYear, 12, 0));
-months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function unix2doty(unix) {
   const dote = (
     unix ?? Date.now()
   ) / 86400000 + 719468,
-    socy = Math.floor((
+    cote = Math.floor((
       dote >= 0 ? dote
       : dote - 146096
     ) / 146097),
-  dotc = dote - socy * 146097,
+  dotc = dote - cote * 146097,
   yotc = Math.floor((dotc
     - Math.floor(dotc / 1460)
     + Math.floor(dotc / 36524)
@@ -721,11 +796,10 @@ function unix2doty(unix) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   )}
-
 function date2dote(year = 1969, doty = 306, zone = 0) {
-    const socy = Math.floor((year >= 0 ? year : year - 399) / 400),
-      yote = year - socy * 400;
-    return [socy * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
+    const cote = Math.floor((year >= 0 ? year : year - 399) / 400),
+      yote = year - cote * 400;
+    return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
 }
 function doty2deco(yearDoty = [1969, 306], zone = 0) {
     const yd = dote2date(...date2dote(yearDoty[0], Math.floor(yearDoty[1]), zone));

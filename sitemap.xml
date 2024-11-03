@@ -13,63 +13,27 @@
     <lastmod>2024-10-30T18:26:11.142Z</lastmod>
   </url>
   <url>
-    <loc>https://maptv.github.io/software/quarto/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.491Z</lastmod>
+    <loc>https://maptv.github.io/dec/snap/index.html</loc>
+    <lastmod>2024-11-03T19:09:25.836Z</lastmod>
   </url>
   <url>
-    <loc>https://maptv.github.io/software/git/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.475Z</lastmod>
+    <loc>https://maptv.github.io/quarto/script/index.html</loc>
+    <lastmod>2024-11-03T15:39:00.708Z</lastmod>
   </url>
   <url>
-    <loc>https://maptv.github.io/software/jupyter/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.479Z</lastmod>
+    <loc>https://maptv.github.io/quarto/include/index.html</loc>
+    <lastmod>2024-11-03T15:39:07.099Z</lastmod>
   </url>
   <url>
-    <loc>https://maptv.github.io/dec/size/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.465Z</lastmod>
+    <loc>https://maptv.github.io/software/positron/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.490Z</lastmod>
   </url>
   <url>
-    <loc>https://maptv.github.io/dec/move/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.465Z</lastmod>
+    <loc>https://maptv.github.io/software/knitr/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.488Z</lastmod>
   </url>
   <url>
-    <loc>https://maptv.github.io/dec/day/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.461Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/ml/llm/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.466Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.465Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/dec/index.html</loc>
-    <lastmod>2024-09-09T08:46:30.349Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/about/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.426Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/cv/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.457Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/history/ww2/index.html</loc>
-    <lastmod>2024-09-09T05:40:45.106Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/list/index.html</loc>
-    <lastmod>2024-09-30T22:27:39.847Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/cv/pdf/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.459Z</lastmod>
-  </url>
-  <url>
-    <loc>https://maptv.github.io/dec/geo/index.html</loc>
+    <loc>https://maptv.github.io/dec/span/index.html</loc>
     <lastmod>2024-09-06T00:06:47.465Z</lastmod>
   </url>
   <url>
@@ -77,16 +41,72 @@
     <lastmod>2024-09-06T00:06:47.465Z</lastmod>
   </url>
   <url>
-    <loc>https://maptv.github.io/dec/span/index.html</loc>
+    <loc>https://maptv.github.io/dec/geo/index.html</loc>
     <lastmod>2024-09-06T00:06:47.465Z</lastmod>
   </url>
   <url>
-    <loc>https://maptv.github.io/software/knitr/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.488Z</lastmod>
+    <loc>https://maptv.github.io/cv/pdf/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.459Z</lastmod>
   </url>
   <url>
-    <loc>https://maptv.github.io/software/positron/index.html</loc>
-    <lastmod>2024-09-06T00:06:47.490Z</lastmod>
+    <loc>https://maptv.github.io/list/index.html</loc>
+    <lastmod>2024-09-30T22:27:39.847Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/history/ww2/index.html</loc>
+    <lastmod>2024-09-09T05:40:45.106Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/cv/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.457Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/about/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.426Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/dec/index.html</loc>
+    <lastmod>2024-09-09T08:46:30.349Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.465Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/ml/llm/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.466Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/dec/day/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.461Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/dec/move/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.465Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/dec/size/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.465Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/software/jupyter/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.479Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/software/git/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.475Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/quarto/filter/index.html</loc>
+    <lastmod>2024-11-03T15:39:12.594Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/quarto/index.html</loc>
+    <lastmod>2024-11-03T19:11:04.489Z</lastmod>
+  </url>
+  <url>
+    <loc>https://maptv.github.io/software/quarto/index.html</loc>
+    <lastmod>2024-09-06T00:06:47.491Z</lastmod>
   </url>
   <url>
     <loc>https://maptv.github.io/dec/time/index.html</loc>
@@ -94,7 +114,7 @@
   </url>
   <url>
     <loc>https://maptv.github.io/dec/date/index.html</loc>
-    <lastmod>2024-11-01T17:41:06.719Z</lastmod>
+    <lastmod>2024-11-03T19:04:07.682Z</lastmod>
   </url>
   <url>
     <loc>https://maptv.github.io/ml/prob/index.html</loc>
