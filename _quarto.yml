@@ -82,6 +82,9 @@ website:
       - text: Dec Time
         icon: clock
         href: dec/time/index.qmd
+      - text: Dec Snap
+        icon: postage
+        href: dec/snap/index.qmd
       - text: Dec Span
         icon: calendar-range
         href: dec/span/index.qmd
@@ -122,9 +125,19 @@ website:
       - icon: journal-richtext
         text: Jupyter
         href: software/jupyter/index.qmd
-      - icon: markdown
-        text: Quarto Markdown
-        href: software/quarto/index.qmd
+      - section: Quarto
+        icon: markdown
+        href: quarto/index.qmd
+        contents:
+        - text: Filter
+          icon: funnel
+          href: quarto/filter/index.qmd
+        - text: Script
+          icon: file-code
+          href: quarto/script/index.qmd
+        - text: Include
+          icon: file-earmark-plus
+          href: quarto/include/index.qmd
       - icon: 0-circle
         text: Observable
         href: software/observable/index.qmd
