@@ -285,7 +285,7 @@ numbers, add 1 to each Dec month number. To spread 12 months across 10
 fingers, the first and last fingers each represent 2 months.
 
 <figure>
-<img src="../../asset/finger.svg" class="knitr"
+<img src="../../asset/fingermnemonic.svg" class="knitr"
 alt="Dec finger mnemonic" />
 <figcaption aria-hidden="true">Dec finger mnemonic</figcaption>
 </figure>
