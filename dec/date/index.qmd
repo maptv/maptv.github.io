@@ -198,7 +198,7 @@ Dec dates can also be modified to display Dec month numbers and [POSIX day of th
 
 We can obtain Dec month numbers by counting index and ring fingers as 30 days and other fingers as 31 days. The image below shows the Dec month numbers that work with one-based dotm numbers. For zero-based dotm numbers, add 1 to each Dec month number. To spread 12 months across 10 fingers, the first and last fingers each represent 2 months.
 
-![Dec finger mnemonic](/asset/fingermnemonic.svg){.knitr}
+{{< include _finger.qmd >}}
 
 We can combine the patterns above to create hybrid Dec dotm and dotw dates: \${styledDecoYear5}+\${hybridMonthNumber}+\${styledDotm2}+\${styledDotw5}. Essentially, you can modify a Dec date to show whatever number(s) you want. All it takes is a little bit of arithmetic! This incredible versatility is possible thanks to the mathematical basis of Dec dates. Every Dec date format is defined by an equation.
 
@@ -654,6 +654,9 @@ p:has(.radiotitle) {
   margin-top: -8px !important;
   margin-bottom: -8px;
   text-align: center;
+}
+svg#finger {
+  max-width: 760px;
 }
 </style>
 ```

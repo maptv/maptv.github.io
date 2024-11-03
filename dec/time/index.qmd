@@ -3,7 +3,7 @@ title: Dec Time
 image: /asset/deidek.svg
 draft: true
 citation:
-  url: https://maptv.github.io/dec/date
+  url: https://maptv.github.io/dec/time
 license: CC BY-SA
 format:
   html:
@@ -30,4 +30,612 @@ unix = {
     yield Date.now();
   }
 }
+// https://observablehq.com/@fheyen/barchart-clock
+barChart = {
+const W = width > 1250 ? width * 2 / 3 : width > 1150 ? width * 3 / 4 : width > 1050 ? width * 4 / 5 : width > 950 ? width * 5 / 6 : width > 850 ? width : width > 750 ? width * 1.02 : width > 650 ? width * 1.06 : width > 550 ? width * 1.1 : width > 450 ? width * 1.14 : width * 1.18;
+  const H = 88;
+  const barX = 1;
+  const firstBarY = 1;
+  const svg = d3
+    .create("svg")
+    .attr("width", W)
+    .attr("viewBox", [0, 0, W, H]);
+  const xRange = [0, W - 100];
+  const scaleDD = d3.scaleLinear()
+    .domain([0, 10])
+    .range(xRange);
+  const scaleMandB = d3.scaleLinear()
+    .domain([0, 100])
+    .range(xRange);
+  // const scaleDek = d3.scaleLinear()
+  //  .domain([0, 37])
+  //  .range(xRange);
+  // Background bars to show where 100% lies
+  svg.selectAll('.background')
+    .data([
+      // 'dek', 'dotd',
+      'dd', "mils", 'beats'])
+    .enter()
+    .append('rect')
+    .attr('class', 'background timeBar')
+    .attr('width', W-100)
+    .attr('y', (d,i)=>i*30+firstBarY)
+  // // Dek/Dotd
+  // svg
+  //   .append('rect')
+  //   .attr('class', 'timeBar')
+  //   .attr('y', firstBarY)
+  //   .attr('width', d => scaleDek(Number(dotyDek)+Number(dotyDotd)/10+Number(barCents)/1000))
+  // svg
+  //   .append('rect')
+  //   .attr('class', 'timeBarFull')
+  //   .attr('y', firstBarY)
+  //   .attr('width', d => scaleDek(dotyDek))
+  // svg
+  //   .append('rect')
+  //   .attr('class', 'timeBar')
+  //   .attr('y', firstBarY+30)
+  //   .attr('width', d => scaleM(Number(dotyDotd)+Number(barCents)/100+Number(barMils)/1000))
+  // svg
+  //   .append('rect')
+  //   .attr('class', 'timeBarFull')
+  //   .attr('y', firstBarY+30)
+  //   .attr('width', d => scaleM(dotyDotd))
+  // svg.selectAll('.tickDek')
+  //   .data(d3.range(width > 500 ? 4: 6, 37))
+  //   .enter()
+  //   .append('rect')
+  //   .attr('class', 'tickDek')
+  //   .attr('x', d=>scaleDek(d)+barX)
+  //   .attr('y', firstBarY)
+  //   .attr('height', d=>d%(width > 500 ? 2 : 3)===0? 6:4)
+  // Cent ticks
+  // svg.selectAll('.tickDotd')
+  //   .data(d3.range(width > 500 ? 1: 2, 10))
+  //   .enter()
+  //   .append('rect')
+  //   .attr('class', 'tickDotd')
+  //   .attr('x', d=>scaleM(d)+barX)
+  //   .attr('y', firstBarY+49)
+  //   .attr('height', 6)
+  // svg.selectAll('.tickLabel')
+  //   .data(d3.range(width > 500 ? 4: 6, width > 500 ? 37: 35, width > 500 ? 2: 3))
+  //   .enter()
+  //   .append('text')
+  //   .attr('class', 'tickLabel')
+  //   .attr('x', d=>scaleDek(d)+barX+.5)
+  //   .attr('y', firstBarY+22)
+  //   .text(d=>d)
+  // Beats
+  svg
+    .append('rect')
+    .attr('class', 'timeBar')
+    .attr('y', firstBarY+60)
+    .attr('width', d => scaleMandB(Number(barBeats)+Number(barMb)/1000))
+  svg
+    .append('rect')
+    .attr('class', 'timeBarFull')
+    .attr('y', firstBarY+60)
+    .attr('width', d => scaleMandB(barBeats))
+  // Cents/Mils
+  svg
+    .append('rect')
+    .attr('class', 'timeBar')
+    .attr('y', firstBarY)
+    .attr('width', d => scaleDD(Number(barDD)+Number(barMils)/100+Number(barBeats)/10000+Number(barMb)/10000000))
+  svg
+    .append('rect')
+    .attr('class', 'timeBarFull')
+    .attr('y', firstBarY)
+    .attr('width', d => scaleDD(barDD))
+  svg
+    .append('rect')
+    .attr('class', 'timeBar')
+    .attr('y', firstBarY+30)
+    .attr('width', d => scaleMandB(Number(barMils)/10+Number(barBeats)/1000))
+  svg
+    .append('rect')
+    .attr('class', 'timeBarFull')
+    .attr('y', firstBarY+30)
+    .attr('width', d => scaleMandB(barMils))
+  // Cent ticks
+  svg.selectAll('.tickC')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickC')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', firstBarY+30)
+    .attr('height', d=>d%2===0? 8:5)
+  svg.selectAll('.tickB1')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickB1')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', d=>d%2===0? firstBarY+77:firstBarY+80)
+    .attr('height', d=>d%2===0? 8:5)
+  svg.selectAll('.tickC1')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickC1')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', d=>d%2===0? firstBarY+47:firstBarY+50)
+    .attr('height', d=>d%2===0? 8:5)
+  // Mil ticks
+  svg.selectAll('.tickM')
+    .data(d3.range(width > 500 ? 1 : 1, 10))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickM')
+    .attr('x', d=>scaleDD(d)+barX)
+    .attr('y', firstBarY+20)
+    .attr('height', 6)
+  // svg.selectAll('.tickM1')
+  //   .data(d3.range(width > 500 ? 1 : 2, 10))
+  //   .enter()
+  //   .append('rect')
+  //   .attr('class', 'tickM1')
+  //   .attr('x', d=>scaleM(d)+barX)
+  //   .attr('y', firstBarY+32.5)
+  //   .attr('height', 2.5)
+  svg.selectAll('.tickLabel1')
+    .data(d3.range(width > 500 ? 1 : 1, 10))
+    .enter()
+    .append('text')
+    .attr('class', 'tickLabel1')
+    .attr('x', d=>scaleDD(d)+barX+.5)
+    .attr('y', firstBarY+18)
+    .text(d=>d)
+  // svg.selectAll('.tickLabel2')
+  //   .data(d3.range(width > 500 ? 1 : 2, 10))
+  //   .enter()
+  //   .append('text')
+  //   .attr('class', 'tickLabel2')
+  //   .attr('x', d=>scaleM(d)+barX+.5)
+  //   .attr('y', firstBarY+112)
+  //   .text(d=>d)
+  // Cent ticks
+  svg.selectAll('.tickC2')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickC2')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', firstBarY+10)
+    .attr('height', d=>d%2===0? 9:6)
+  // Beat ticks
+  svg.selectAll('.tickB')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickB')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', firstBarY+60)
+    .attr('height', d=>d%2===0? 9:6)
+  // Labels
+  svg.selectAll('.timeLabel')
+    .data([
+      // `${dotyDek}旬`, `${dotyDotd}日`,
+      `${barDD}`, `${barMils}`, `${barBeats}`])
+    .enter()
+    .append('text')
+    .attr('class', 'timeLabel')
+    .attr('x', barX+2)
+    .attr('y', (d,i)=>i*30+firstBarY+20)
+    .text(d=>d);
+  svg.attr("id", "barClock");
+  return svg.node();
+}
+// https://observablehq.com/@d3/simple-clock
+// https://observablehq.com/@drio/lets-build-an-analog-clock
+clock = {
+  const clockRadius = 200,
+    margin = 50,
+    w = (clockRadius + margin) * 2,
+    h = (clockRadius + margin) * 2,
+    hourHandLength = (2 * clockRadius) / 3,
+    minuteHandLength = clockRadius,
+    secondHandLength = clockRadius - 12,
+    secondHandBalance = 30,
+    secondTickStart = clockRadius,
+    secondTickLength = -10,
+    hourTickStart = clockRadius,
+    hourTickLength = -18,
+    secondLabelRadius = clockRadius + 16,
+    secondLabelYOffset = 5,
+    hourLabelRadius = clockRadius - 40,
+    hourLabelYOffset = 7,
+    radians = Math.PI / 180;
+
+  const ten = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 10]);
+
+  const sto = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 100]);
+
+  const handData = [
+    {
+      type: "hour",
+      value: 0,
+      length: -hourHandLength,
+      scale: ten
+    },
+    {
+      type: "minute",
+      value: 0,
+      length: -minuteHandLength,
+      scale: sto
+    },
+    {
+      type: "second",
+      value: 0,
+      length: -secondHandLength,
+      scale: sto,
+      balance: secondHandBalance
+    }
+  ];
+
+  function drawClock() {
+    // create all the clock elements
+    updateData(); //draw them in the correct starting position
+    const face = svg
+      .append("g")
+      .attr("id", "clock-face")
+      .attr("transform", `translate(${[w / 2, h / 2]})`);
+
+    // add marks for seconds
+    face
+      .selectAll(".second-tick")
+      .data(d3.range(0, 100))
+      .enter()
+      .append("line")
+      .attr("class", "second-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", secondTickStart)
+      .attr("y2", secondTickStart + secondTickLength)
+      .attr("transform", d => `rotate(${sto(d)})`);
+
+    // and labels...
+    face
+      .selectAll(".second-label")
+      .data(d3.range(0, 100, 5))
+      .enter()
+      .append("text")
+      .attr("class", "second-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
+      .attr(
+        "y",
+        d =>
+          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
+      )
+      .text(d => d);
+
+    // ... and hours
+    face
+      .selectAll(".hour-tick")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("line")
+      .attr("class", "hour-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", hourTickStart)
+      .attr("y2", hourTickStart + hourTickLength)
+      .attr("transform", d => `rotate(${ten(d)})`);
+
+    face
+      .selectAll(".hour-label")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("text")
+      .attr("class", "hour-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
+      .attr(
+        "y",
+        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
+      )
+      .text(d => d);
+
+    const hands = face.append("g").attr("id", "clock-hands");
+
+    hands
+      .selectAll("line")
+      .data(handData)
+      .enter()
+      .append("line")
+      .attr("class", d => d.type + "-hand")
+      .attr("x1", 0)
+      .attr("y1", d => d.balance || 0)
+      .attr("x2", 0)
+      .attr("y2", d => d.length)
+      .attr("transform", d => `rotate(${d.scale(d.value)})`);
+
+    face
+      .append("g")
+      .attr("id", "face-overlay")
+      .append("circle")
+      .attr("class", "hands-cover")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("r", clockRadius / 20);
+  }
+
+  function moveHands() {
+    const sel = d3
+      .select("#clock-hands-final")
+      .selectAll("line")
+      .data(handData)
+      .transition();
+
+    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
+    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
+  }
+
+  function updateData() {
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : declock[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : declock.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : declock.slice(4, 6);
+  }
+
+  const svg = d3
+    .create("svg")
+    .attr("viewBox", [0, 0, w, h])
+    .style("max-width", "425px")
+    .attr("class", "clock-top")
+    .attr("id", "clock");
+
+  svg
+    .append("text")
+    .text("+" + selected)
+    .attr("x", clockRadius + margin)
+    .attr("y", clockRadius * 2 + margin * 1.975)
+    .attr("text-anchor", "middle")
+    .attr("font-size", 32)
+    .attr("font-family", "monospace");
+
+  drawClock();
+
+  // Animation
+  const interval = setInterval(
+    () => {
+      updateData();
+      moveHands();
+    },
+    !fancySecondsOFF ? 10 : 864
+  );
+  invalidation.then(() => clearInterval(interval));
+
+  return svg.node();
+}
+
+clock1 = {
+  const clockRadius = 200,
+    margin = 50,
+    w = (clockRadius + margin) * 2,
+    h = (clockRadius + margin) * 2,
+    hourHandLength = (2 * clockRadius) / 3,
+    minuteHandLength = clockRadius,
+    secondHandLength = clockRadius - 12,
+    secondHandBalance = 30,
+    secondTickStart = clockRadius,
+    secondTickLength = -10,
+    hourTickStart = clockRadius,
+    hourTickLength = -18,
+    secondLabelRadius = clockRadius + 16,
+    secondLabelYOffset = 5,
+    hourLabelRadius = clockRadius - 40,
+    hourLabelYOffset = 7,
+    radians = Math.PI / 180;
+
+  const ten = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 10]);
+
+  const sto = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 100]);
+
+  const handData = [
+    {
+      type: "hour",
+      value: 0,
+      length: -hourHandLength,
+      scale: ten
+    },
+    {
+      type: "minute",
+      value: 0,
+      length: -minuteHandLength,
+      scale: sto
+    },
+    {
+      type: "second",
+      value: 0,
+      length: -secondHandLength,
+      scale: sto,
+      balance: secondHandBalance
+    }
+  ];
+
+  function drawClock() {
+    // create all the clock elements
+    updateData(); //draw them in the correct starting position
+    const face = svg
+      .append("g")
+      .attr("id", "clock-face")
+      .attr("transform", `translate(${[w / 2, h / 2]})`);
+
+    // add marks for seconds
+    face
+      .selectAll(".second-tick")
+      .data(d3.range(0, 100))
+      .enter()
+      .append("line")
+      .attr("class", "second-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", secondTickStart)
+      .attr("y2", secondTickStart + secondTickLength)
+      .attr("transform", d => `rotate(${sto(d)})`);
+
+    // and labels...
+    face
+      .selectAll(".second-label")
+      .data(d3.range(0, 100, 5))
+      .enter()
+      .append("text")
+      .attr("class", "second-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
+      .attr(
+        "y",
+        d =>
+          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
+      )
+      .text(d => d);
+
+    // ... and hours
+    face
+      .selectAll(".hour-tick")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("line")
+      .attr("class", "hour-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", hourTickStart)
+      .attr("y2", hourTickStart + hourTickLength)
+      .attr("transform", d => `rotate(${ten(d)})`);
+
+    face
+      .selectAll(".hour-label")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("text")
+      .attr("class", "hour-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
+      .attr(
+        "y",
+        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
+      )
+      .text(d => d);
+
+    const hands = face.append("g").attr("id", "clock-hands");
+
+    hands
+      .selectAll("line")
+      .data(handData)
+      .enter()
+      .append("line")
+      .attr("class", d => d.type + "-hand")
+      .attr("x1", 0)
+      .attr("y1", d => d.balance || 0)
+      .attr("x2", 0)
+      .attr("y2", d => d.length)
+      .attr("transform", d => `rotate(${d.scale(d.value)})`);
+
+    face
+      .append("g")
+      .attr("id", "face-overlay")
+      .append("circle")
+      .attr("class", "hands-cover")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("r", clockRadius / 20);
+  }
+
+  function moveHands() {
+    const sel = d3
+      .select("#clock-hands-final")
+      .selectAll("line")
+      .data(handData)
+      .transition();
+
+    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
+    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
+  }
+
+  function updateData() {
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10) : declockM[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10 % 1 * 100) : declockM.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExactM * 10 % 1 * 100 % 1 * 100 : declockM.slice(4, 6);
+  }
+
+  const svg = d3
+    .create("svg")
+    .attr("viewBox", [0, 0, w, h])
+    .style("max-width", "425px")
+    .attr("class", "clock-btm")
+    .attr("id", "clock");
+
+
+  svg
+    .append("text")
+    .text("-" + selectedM)
+    .attr("x", clockRadius + margin)
+    .attr("y", clockRadius * 2 + margin * 1.975)
+    .attr("text-anchor", "middle")
+    .attr("font-size", 32)
+    .attr("font-family", "monospace");
+
+  drawClock();
+
+  // Animation
+  const interval = setInterval(
+    () => {
+      updateData();
+      moveHands();
+    },
+    !fancySecondsOFF ? 10 : 864
+  );
+  invalidation.then(() => clearInterval(interval));
+
+  return svg.node();
+}
+
+viewof coordinates = worldMapCoordinates([162, 0], [width, Math.round((210 / 400) * width)])
+plot = Plot.plot({
+  style: `overflow: visible;font-size:12px;margin-top:${-3 + (width < 400) * 3}px`,
+  width: width * .96,
+  y: {domain: [0, .92], grid: false},
+  color: {legend: true, range: ["#ff6c00", "#009cff"]},
+  marks: [
+    Plot.ruleY([0]),
+    Plot.lineY(times, {x: "date", y: "rise", stroke: "symbol", strokeWidth: 16, strokeOpacity: .6}),
+    Plot.lineY(times, {x: "date", y: "noon", stroke: "symbol", strokeWidth: 16, strokeOpacity: .6}),
+    Plot.lineY(times, {x: "date", y: "set", stroke: "symbol", strokeWidth: 16, strokeOpacity: .6}),
+    Plot.text(times, Plot.selectLast({x: "date", y: "rise", z: "symbol", text: d => `sunrise`, textAnchor: "start", dx: 9})),
+    Plot.text(times, Plot.selectLast({x: "date", y: "noon", z: "symbol", text: d => `noon`, textAnchor: "start", dx: 9})),
+    Plot.text(times, Plot.selectLast({x: "date", y: "set", z: "symbol", text: d => `sunset`, textAnchor: "start", dx: 9})),
+  ]
+})
+
+plot = Plot.plot({
+  style: `overflow: visible;font-size:12px;margin-top:${-3 + (width < 400) * 3}px`,
+  width: width * .96,
+  y: {label: "time of day", domain: [0, .92], grid: false},
+  x: {label: "day of the year"},
+  color: {legend: true, range: ["#ff6c00", "#009cff"]},
+  marks: [
+    Plot.ruleY([0]),
+    Plot.lineY(times, {x: "date", y: "rise", stroke: "symbol", strokeWidth: 16, strokeOpacity: .6}),
+    Plot.lineY(times, {x: "date", y: "noon", stroke: "symbol", strokeWidth: 16, strokeOpacity: .6}),
+    Plot.lineY(times, {x: "date", y: "set", stroke: "symbol", strokeWidth: 16, strokeOpacity: .6}),
+    Plot.text(times, Plot.selectLast({x: "date", y: "rise", z: "symbol", text: d => `sunrise`, textAnchor: "start", dx: 9})),
+    Plot.text(times, Plot.selectLast({x: "date", y: "noon", z: "symbol", text: d => `noon`, textAnchor: "start", dx: 9})),
+    Plot.text(times, Plot.selectLast({x: "date", y: "set", z: "symbol", text: d => `sunset`, textAnchor: "start", dx: 9})),
+  ]
+})
 ```
