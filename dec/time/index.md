@@ -1,304 +1,13 @@
-# Ordinal date
+# Dec Time
 Martin Laptev
-2024+247
+2024+248
 
-- [Dec dates](#dec-dates)
-
-My website serves as a demonstration of both the
-[Quarto](https://quarto.org) publishing system and the [Dec](../../dec)
-measurement system. I use several clever hacks to get Quarto to display
-all of the dates on my website in the Dec `year+day` format. If you are
-not interested in Dec dates, you may want to skip to the section on
-Quarto [filters](https://quarto.org/docs/extensions/filters.html),
-[render
-scripts](https://quarto.org/docs/projects/scripts.html#pre-and-post-render),
-and [include
-files](https://quarto.org/docs/output-formats/html-basics.html#includes).
-
-### Dec dates
-
-The `year+day` format of Dec dates is derived from the year of the era
-equation:
-$\colorbox{yellow}{y}{=}\lfloor\colorbox{yellow}{y}\rfloor{+}\colorbox{cyan}{d}{\div}\colorbox{orange}{n}$.
-In this equation, $\colorbox{yellow}{y}$ is the decimal years since the
-Dec epoch (Year 0 <span class="blue" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span>),
-$\lfloor\colorbox{yellow}{y}\rfloor$ is $\colorbox{yellow}{y}$
-[floored](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-to obtain an
-[integer](https://en.wikipedia.org/wiki/Integer#:~:text=the%20number%20zero%20%280%29%2C%20a%20positive%20natural%20number%20%281%2C%202%2C%203%2C%20.%20.%20.%29%2C%20or%20the%20negation%20of%20a%20positive%20natural%20number%20%28%E2%88%921%2C%20%E2%88%922%2C%20%E2%88%923%2C%20.%20.%20.%29)
-year, $\colorbox{cyan}{d}$ is the
-[zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
-day of the year, and $\colorbox{orange}{n}$ is the total number of days
-in the year. The current values in this equation are:
-`{ojs} styledDecoYear0`
-
-Dec dates only include the first two terms from the equation above
-($\colorbox{yellow}{y}$ and $\colorbox{cyan}{d}$), because
-$\colorbox{orange}{n}$ is not needed to identify a specific date in
-time, only has 2 possible values (365 or 366), remains constant for long
-periods of time (366, 1095, or 2920 days), and can be calculated using
-the Dec year length equation:
-
-$$\colorbox{orange}{n}=\begin{cases}
-  366&{\begin{align}\text{if } (\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \\ }4=0\\
-  \land(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \\ }100\neq0\\
-  \lor(\lfloor \colorbox{yellow}{y}\rfloor+1)\text{ \\ }400=0\end{align}}\\\\
-  365&{\text{otherwise.}}\end{cases}$$
-
-In the Dec year length equation, $\text\\$ is the
-[modulo](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-operator, ∧ is the logical
-[conjunction](https://en.wikipedia.org/wiki/Logical_conjunction)
-operator, and ∨ is the logical
-[disjunction](https://en.wikipedia.org/wiki/Logical_disjunction)
-operator. The easiest way to explain this equation is in terms of the
-[Gregorian
-calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world):
-the length of a Dec year is 366 days if the subsequent year
-($\lfloor\colorbox{yellow}{y}\rfloor{+}1$ ) is a Gregorian calendar
-[leap
-year](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400)
-and 365 days otherwise.
-
-Dec dates look almost identical to [ISO
-8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
-[ordinal
-dates](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=an%20ordinal%20format%20for%20the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year).
-On the surface, it appears that the only difference is their
-[delimiter](https://en.wikipedia.org/wiki/Delimiter#:~:text=a%20sequence%20of%20one%20or%20more%20characters%20for%20specifying%20the%20boundary%20between%20separate%2C%20independent%20regions%20in%20plain%20text)
-(`+` versus `-`), but they also have different [starting
-values](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
-(0 versus 1),
-[epochs](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era)
-(Year 0 <span class="blue" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span> versus Year -1
-<span class="blue" data-bs-toggle="tooltip"
-data-bs-title="January 1"><u>Day 306</u></span>), and [year
-length](https://en.wikipedia.org/wiki/Intercalation_(timekeeping)#:~:text=the%20insertion%20of%20a%20leap%20day%2C%20week%2C%20or%20month)
-equations ($\lfloor\colorbox{yellow}{y}\rfloor{+}1$ versus
-$\lfloor\colorbox{yellow}{y}\rfloor$).
-
-Unlike ISO 8601 dates, Dec dates can omit the year and track annual
-events such as anniversaries. Use the sliders below to select a special
-date like your birthday🎂! You can also press the Play▶️button below to
-make the sliders cycle🔄back and forth through every day of the year and
-its corresponding month and day of the month.
-
-``` {ojs}
-//| echo: false
-viewof scrubberDoty = Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"})
-viewof inputDoty = Inputs.range([0, 365], {value: 306, step: 1, label: "day of the year"});
-viewof monthInput = transformInput(
-    Inputs.range([1, 12], {step: 1, label: "month"}),
-    {bind: viewof inputDoty, transform: doty2month, invert: month2doty}
-);
-viewof dotmInput = transformInput(
-    Inputs.range([1, 31], {step: 1, label: "day of the month"}),
-    {bind: viewof inputDoty, transform: doty2dotm, invert: (x => Math.floor(( 153 * (
-        viewof monthInput.value > 2
-        ? viewof monthInput.value - 3
-        : viewof monthInput.value + 9) + 2
-    ) / 5 + x - 1
-))});
-```
-
-<div class="grid">
-
-<div class="g-col-7">
-
-``` {ojs}
-//| echo: false
-viewof yd = Inputs.form([
-  Inputs.number({label: "year", value: "1969"}),
-  Inputs.number({label: "doty", value: "306"})
-])
-```
-
-``` {ojs}
-//| echo: false
-viewof decoOutput = transformInput(
-  Inputs.text({label: "deco", placeholder: "year+day.ddd", value: "1969+306"}),
-  {bind: viewof yd, transform: doty2deco, invert: deco2doty});
-```
-
-</div>
-
-</div>
-
-<div class="grid">
-
-<div class="g-col-7">
-
-``` {ojs}
-//| echo: false
-viewof inputDatetime = Inputs.datetime({label: "date", value: `${decoYear}-03-01T00:00`})
-```
-
-</div>
-
-<div class="g-col-5">
-
-1.  ${dtYear}+${dtDotyDate}${dtDotyTimeDelimiter}${dtDotyTime}
-2.  ${styledOutputDatetimeYear}
-
-</div>
-
-</div>
-
-A Dec beat is a centimilliday (10<sup>−5</sup> of a day), which can be
-thought of as a heart❤️beat or
-musical🎵[beat](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=the%20beat%20is%20the%20basic%20unit%20of%20time)
-with a constant
-[rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=The%20American%20Heart%20Association%20states%20the%20normal%20resting%20adult%20human%20heart%20rate%20is%2060%2D100%20bpm.)
-or
-[tempo](https://en.wikipedia.org/wiki/Tempo#Basic_tempo_markings:~:text=Adagietto%20%E2%80%93%20slower%20than,56%E2%80%93108%C2%A0bpm)
-of $69.\overline4$ beats per minute.
-
-Dec dates and times are measured in days. The [subsequent
-article](../../dec/time) on my website covers Dec times. While Dec dates
-The units for both Dec dates and times are days, but on different
-scales. decidays (tenths of a day), and beats, respectively. An example
-of a duration is the time since this webpage was loaded:
-${styledTickTime}.
-
-Dec does not use months or days of the month, but dates can be include a
-year can be entered using numeric or text inputs. Similarly, the second
-Play▶️button below will go through every day of the year in the current
-year. The `day` in `year+day` dates can therefore function independently
-to represent the date of an event that occurs on the same day of the
-year on an annual basis.
-
-The animations above goes through an entire year in 36.5 beats, a
-million times faster🏎️than the actual speed of time! A Dec beat is a
-centimilliday (1% of a milliday, 10<sup>−5</sup> of a day, or 86.4% of a
-second), which can be thought of as a heart❤️beat or
-musical🎵[beat](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=the%20beat%20is%20the%20basic%20unit%20of%20time)
-with a constant
-[rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=The%20American%20Heart%20Association%20states%20the%20normal%20resting%20adult%20human%20heart%20rate%20is%2060%2D100%20bpm.)
-or
-[tempo](https://en.wikipedia.org/wiki/Tempo#Basic_tempo_markings:~:text=Adagietto%20%E2%80%93%20slower%20than,56%E2%80%93108%C2%A0bpm)
-of 69.4̅ beats per minute. In addition to displaying time on
-clocks🕰️and⌚️watches, beats can be used to measure durations, such as
-the time since this webpage was loaded: ${styledTickTime}.
-
-Using the [Observable](https://observablehq.com/about) [datetime
-input](https://observablehq.com/@observablehq/input-date#cell-111) in
-**?@exm-intro-date**, you can select a year, month, `dotm`, hour, and
-minute to see the equivalent 1) `deco` timestamp (`year+day.clock`) and
-2) year date (`year.yyy`) in **?@lst-intro-date**. For comparison, the
-current `deco` timestamp is
-${styledYear}+${styledDotyDate1}.${styledDotyTime1}.
-
-For example, the current day of the year (doty) is Day `{ojs} decoDate`.
-
-60-day shift
-
-Animation
-
-Conversion functions year to year, doty to month and dotm, and vice
-versa. Conclusion: it is easier to work with unix time.
-
-Can we also find the day of the week? First, use dote2dotw function.
-Conclusion: it is easier to work with deks instead of weeks.
-
-days of the dek
-
-Dec finger counting method svg
-
-The Dec epoch, . This 60-day shift enables simplest way to describe Dec
-dates my website are based on the [Gregorian
-calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world),
-but any calendar with fixed rules can be turned in a Dec calendar
-(Decalendar) by expressing its dates as zero-based moving its starting
-point ().
-
-with simple arithmetic, Decalendar is
-[perennial](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=applies%20to%20any%20year%2C%20keeping%20the%20same%20dates),
-meaning that its features remain the same every year. Any
-
-This major Dec dates can be omit the year and still be unequivocally
-converted into a month and a day [start counting days from
-zero](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
-and do not need omit the year .
-
-The first of the Dec year, [Day 0](), corresponds to Day 59 or Day 60
-have a different starting point while ISO 8601 ordinal dates start
-counting [from one](). Unlike ISO 8601 ordinal dates, Dec dates can omit
-the year and still be useful. are zero-based and can the ordinal day
-component of Dec dates can be unequivocally converted into [Gregorian
-calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
-dates Dec addresses the two major flaws of the by moving the start of
-the year to March 1. When Leap Day is the last day of the year, the day
-numbers (indexes) used by Decalendar remain constant year to year.
-Starting the year on March 1 also brings Decalendar in better alignment
-with the [metereological
-seasons](https://en.wikipedia.org/wiki/Season#:~:text=meteorological%20seasons%20are%20reckoned%20by%20temperature%2C%20with%20summer%20being%20the%20hottest%20quarter%20of%20the%20year%20and%20winter%20the%20coldest%20quarter%20of%20the%20year).
-
-Dec dates overcome several major flaws with the Gregorian calendar. The
-`day` in `year+day` dates is referred to as the “day of the year” or
-doty.
-
-a single number that can identify specific days of the year (like months
-and days of the month) and coordinate schedules of work and rest days
-(like weeks and days of the week). Essentially, Dec greatly simplifies
-the [Gregorian
-calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
-by replacing months and weeks with units called deks.
-
-[Gregorian
-calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
-dates are not aligned with the days of the week. In contrast, the day of
-the dek (dotd) is simply the last digit of the `day` number in the .y
-format.
-
-The `day` in `year+day` dates is a single number that can identify
-specific days of the year (like months and days of the month) and
-coordinate schedules of work and rest days (like weeks and days of the
-week). Essentially, Dec greatly simplifies the [Gregorian
-calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
-by replacing months and weeks with units called deks.
-
-Unlike months and weeks, deks are 10 days long and thus work well with
-our decimal number system. The dek and day of the dek are provided by
-the first two digits and the last digit of the 3-digit `day` number in
-Dec dates, respectively. For example, the current dek is Dek
-`{ojs} deco.slice(5, 7)` and the current day of the dek is Day
-`{ojs} deco[7]`.
-
-The most prominent Dec date on my site is the one in the Dec
-[timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred)
-in [navigation
-bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
-(navbar) above:
-${styledDecoYear0}+${styledDecoDate0}${styledDecoTime0}-${styledTimeZone0}.
-In this article, I will focus only on Dec dates
-(${styledDecoYear1}+${styledDecoDate1}), but I will discuss Dec times
-(${styledDecoTime1}-${styledTimeZone1}) in the [next
-article](../../dec/time) in the [Measurement section](../../dec).
-
-I generate all of the dates on my site from [UNIX
-time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201st%C2%A0January%201970%2C%20the%20Unix%20epoch)
-using calculations that I adapted from the
-[`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days)
-function in [Howard Hinnant](https://howardhinnant.github.io)’s [`date`
-library](https://howardhinnant.github.io/date/date.html). Each tab in
-the [tabset
-panel](https://quarto.org/docs/interactive/layout.html#:~:text=Tabset%20Panel,-If%20you%20want%20to%20allow)
-below shows a different implementation of a function called `unix2date`
-which converts UNIX time into `year+day` dates.
-
-In this function, `socy` is an abbreviation for solar cycle and `dote`,
-`dotc`, and `yotc` are acronyms for “day of the era”, “day of the
-cycle”, and “day of the cycle”, respectively. A solar cycle in the
-Gregorian calendar is [400
-years](https://en.wikipedia.org/wiki/Solar_cycle_%28calendar%29#:~:text=400%2Dyear%20cycle%20of%20the%20Gregorian%20calendar).
-A [calendar
-era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
-is the time that has passed since a starting point called a [calendar
-epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
-The Dec epoch is <span class="blue" data-bs-toggle="tooltip"
-data-bs-title="0000-03-01"><u>Year 0 Day 0</u></span>.
+My website provides many examples of the [Quarto](https://quarto.org)
+publishing and the [Dec](../../dec) measurement systems in action. I
+leverage Quarto support for the [Observable](https://observablehq.com/)
+data analysis and visualization system to display animated or
+interactive plots like the bar chart, clocks, solar terminator map, and
+line chart below.
 
 ``` {ojs}
 //| echo: false
@@ -307,253 +16,1173 @@ unix = {
     yield Date.now();
   }
 }
-tick = {
-  let i = 0;
-  while (true) {
-    yield Promises.tick(864, ++i);
-  }
+// https://observablehq.com/@fheyen/barchart-clock
+barChart = {
+const W = width > 1250 ? width * 2 / 3 : width > 1150 ? width * 3 / 4 : width > 1050 ? width * 4 / 5 : width > 950 ? width * 5 / 6 : width > 850 ? width : width > 750 ? width * 1.02 : width > 650 ? width * 1.06 : width > 550 ? width * 1.1 : width > 450 ? width * 1.14 : width * 1.18;
+  const H = 88;
+  const barX = 1;
+  const firstBarY = 1;
+  const svg = d3
+    .create("svg")
+    .attr("width", W)
+    .attr("viewBox", [0, 0, W, H]);
+  const xRange = [0, W - 100];
+  const scaleDD = d3.scaleLinear()
+    .domain([0, 10])
+    .range(xRange);
+  const scaleMandB = d3.scaleLinear()
+    .domain([0, 100])
+    .range(xRange);
+  // const scaleDek = d3.scaleLinear()
+  //  .domain([0, 37])
+  //  .range(xRange);
+  // Background bars to show where 100% lies
+  svg.selectAll('.background')
+    .data([
+      // 'dek', 'dotd',
+      'dd', "mils", 'beats'])
+    .enter()
+    .append('rect')
+    .attr('class', 'background timeBar')
+    .attr('width', W-100)
+    .attr('y', (d,i)=>i*30+firstBarY)
+  // // Dek/Dotd
+  // svg
+  //   .append('rect')
+  //   .attr('class', 'timeBar')
+  //   .attr('y', firstBarY)
+  //   .attr('width', d => scaleDek(Number(dotyDek)+Number(dotyDotd)/10+Number(barCents)/1000))
+  // svg
+  //   .append('rect')
+  //   .attr('class', 'timeBarFull')
+  //   .attr('y', firstBarY)
+  //   .attr('width', d => scaleDek(dotyDek))
+  // svg
+  //   .append('rect')
+  //   .attr('class', 'timeBar')
+  //   .attr('y', firstBarY+30)
+  //   .attr('width', d => scaleM(Number(dotyDotd)+Number(barCents)/100+Number(barMils)/1000))
+  // svg
+  //   .append('rect')
+  //   .attr('class', 'timeBarFull')
+  //   .attr('y', firstBarY+30)
+  //   .attr('width', d => scaleM(dotyDotd))
+  // svg.selectAll('.tickDek')
+  //   .data(d3.range(width > 500 ? 4: 6, 37))
+  //   .enter()
+  //   .append('rect')
+  //   .attr('class', 'tickDek')
+  //   .attr('x', d=>scaleDek(d)+barX)
+  //   .attr('y', firstBarY)
+  //   .attr('height', d=>d%(width > 500 ? 2 : 3)===0? 6:4)
+  // Cent ticks
+  // svg.selectAll('.tickDotd')
+  //   .data(d3.range(width > 500 ? 1: 2, 10))
+  //   .enter()
+  //   .append('rect')
+  //   .attr('class', 'tickDotd')
+  //   .attr('x', d=>scaleM(d)+barX)
+  //   .attr('y', firstBarY+49)
+  //   .attr('height', 6)
+  // svg.selectAll('.tickLabel')
+  //   .data(d3.range(width > 500 ? 4: 6, width > 500 ? 37: 35, width > 500 ? 2: 3))
+  //   .enter()
+  //   .append('text')
+  //   .attr('class', 'tickLabel')
+  //   .attr('x', d=>scaleDek(d)+barX+.5)
+  //   .attr('y', firstBarY+22)
+  //   .text(d=>d)
+  // Beats
+  svg
+    .append('rect')
+    .attr('class', 'timeBar')
+    .attr('y', firstBarY+60)
+    .attr('width', d => scaleMandB(Number(barBeats)+Number(barMb)/1000))
+  svg
+    .append('rect')
+    .attr('class', 'timeBarFull')
+    .attr('y', firstBarY+60)
+    .attr('width', d => scaleMandB(barBeats))
+  // Cents/Mils
+  svg
+    .append('rect')
+    .attr('class', 'timeBar')
+    .attr('y', firstBarY)
+    .attr('width', d => scaleDD(Number(barDD)+Number(barMils)/100+Number(barBeats)/10000+Number(barMb)/10000000))
+  svg
+    .append('rect')
+    .attr('class', 'timeBarFull')
+    .attr('y', firstBarY)
+    .attr('width', d => scaleDD(barDD))
+  svg
+    .append('rect')
+    .attr('class', 'timeBar')
+    .attr('y', firstBarY+30)
+    .attr('width', d => scaleMandB(Number(barMils)/10+Number(barBeats)/1000))
+  svg
+    .append('rect')
+    .attr('class', 'timeBarFull')
+    .attr('y', firstBarY+30)
+    .attr('width', d => scaleMandB(barMils))
+  // Cent ticks
+  svg.selectAll('.tickC')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickC')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', firstBarY+30)
+    .attr('height', d=>d%2===0? 8:5)
+  svg.selectAll('.tickB1')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickB1')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', d=>d%2===0? firstBarY+77:firstBarY+80)
+    .attr('height', d=>d%2===0? 8:5)
+  svg.selectAll('.tickC1')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickC1')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', d=>d%2===0? firstBarY+47:firstBarY+50)
+    .attr('height', d=>d%2===0? 8:5)
+  // Mil ticks
+  svg.selectAll('.tickM')
+    .data(d3.range(width > 500 ? 1 : 1, 10))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickM')
+    .attr('x', d=>scaleDD(d)+barX)
+    .attr('y', firstBarY+20)
+    .attr('height', 6)
+  // svg.selectAll('.tickM1')
+  //   .data(d3.range(width > 500 ? 1 : 2, 10))
+  //   .enter()
+  //   .append('rect')
+  //   .attr('class', 'tickM1')
+  //   .attr('x', d=>scaleM(d)+barX)
+  //   .attr('y', firstBarY+32.5)
+  //   .attr('height', 2.5)
+  svg.selectAll('.tickLabel1')
+    .data(d3.range(width > 500 ? 1 : 1, 10))
+    .enter()
+    .append('text')
+    .attr('class', 'tickLabel1')
+    .attr('x', d=>scaleDD(d)+barX+.5)
+    .attr('y', firstBarY+18)
+    .text(d=>d)
+  // svg.selectAll('.tickLabel2')
+  //   .data(d3.range(width > 500 ? 1 : 2, 10))
+  //   .enter()
+  //   .append('text')
+  //   .attr('class', 'tickLabel2')
+  //   .attr('x', d=>scaleM(d)+barX+.5)
+  //   .attr('y', firstBarY+112)
+  //   .text(d=>d)
+  // Cent ticks
+  svg.selectAll('.tickC2')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickC2')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', firstBarY+10)
+    .attr('height', d=>d%2===0? 9:6)
+  // Beat ticks
+  svg.selectAll('.tickB')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickB')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', firstBarY+60)
+    .attr('height', d=>d%2===0? 9:6)
+  // Labels
+  svg.selectAll('.timeLabel')
+    .data([
+      // `${dotyDek}旬`, `${dotyDotd}日`,
+      `${barDD}`, `${barMils}`, `${barBeats}`])
+    .enter()
+    .append('text')
+    .attr('class', 'timeLabel')
+    .attr('x', barX+2)
+    .attr('y', (d,i)=>i*30+firstBarY+20)
+    .text(d=>d);
+  svg.attr("id", "barClock");
+  return svg.node();
 }
-tickTime = tick % 1e5
-// http://howardhinnant.github.io/date_algorithms.html#civil_from_days
-function unix2dote(unix, zone) {
-  return [
-    (unix ?? Date.now()) / 86400000
-    + (zone = zone ?? (
-      10 - Math.round((new Date)
-        .getTimezoneOffset() / 144)
-    ) % 10) / 10 + 719468, zone]}
-function dote2doty(dote, zone = 0) {
-  const socy = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
-  dotc = dote - socy * 146097,
-  yotc = Math.floor((dotc
-    - Math.floor(dotc / 1460)
-    + Math.floor(dotc / 36524)
-    - Math.floor(dotc / 146096)
-  ) / 365);
-  return [
-    yotc + socy * 400,
-    dotc - (yotc * 365
-      + Math.floor(yotc / 4)
-      - Math.floor(yotc / 100)
-  ), zone]}
-function doty2deco(year = 1969, doty = 306, zone = 0) {
-  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`
-}
-ydz = dote2doty(...unix2dote(unix))
-deco = doty2deco(...ydz)
-// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor
-function setStyle(content, style = {}) {
-  function yiq(color) {
-    const {r, g, b} = d3.rgb(color);
-    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
-  }
-  const {
-    background,
-    color = yiq(background) >= 0.6 ? "#111" : "white",
-    padding = "0 1px",
-    borderRadius = "4px",
-    fontWeight = 900,
-    fontSize = "1em",
-    ...rest
-  } = typeof style === "string" ? {background: style} : style;
-  return htl.html`<span style=${{
-    background,
-    color,
-    padding,
-    borderRadius,
-    fontWeight,
-    ...rest
-  }}>${content}</span>`;
-}
-function year2bool(year = 1970) {
-    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
-}
-decoYear = deco.slice(0, 4)
-decoDate = deco.slice(5, 8)
-decoTime = deco.slice(8, 14)
-decoTimeZone = deco[15]
-nDaysInYear = 365 + year2bool(ydz[0] + 1)
-fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(8)
-styledDecoYear0 = setStyle(decoYear, d3.schemePaired[10])
-styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])
-styledFracYear = setStyle(fracYear, d3.schemePaired[10])
-styledDecoDate0 = setStyle(decoDate, d3.schemePaired[1])
-styledDecoDate1 = setStyle(decoDate, d3.schemePaired[1])
-styledNdays = setStyle(nDaysInYear * 10, d3.schemePaired[1])
-styledDecoTime0 = setStyle(decoTime, d3.schemePaired[2])
-styledDecoTime1 = setStyle(decoTime, d3.schemePaired[2])
-styledDecoTime2 = setStyle(decoTime, d3.schemePaired[2])
-styledTimeZone0 = setStyle(decoTimeZone, d3.schemePaired[3])
-styledTimeZone1 = setStyle(decoTimeZone, d3.schemePaired[3])
-styledTimeZone2 = setStyle(decoTimeZone, d3.schemePaired[3])
-styledTickTime = setStyle(tickTime, d3.schemePastel2[0])
-// https://observablehq.com/@juang1744/transform-input/1
-transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
-  if (source === undefined) {
-    source = target;
-    target = html`<div>${source}</div>`;
-  }
-  function sourceInputHandler() {
-    target.removeEventListener("input", targetInputHandler);
-    setTransform(target).to(transform(source.value)).andDispatchEvent();
-    target.addEventListener("input", targetInputHandler);
-  }
-  function targetInputHandler() {
-    source.removeEventListener("input", sourceInputHandler);
-    setTransform(source).to(invert(target.value)).andDispatchEvent();
-    source.addEventListener("input", sourceInputHandler);
-  }
-  source.addEventListener("input", sourceInputHandler);
-  target.addEventListener("input", targetInputHandler);
-  invalidation.then(() => {
-    source.removeEventListener("input", sourceInputHandler);
-    target.removeEventListener("input", targetInputHandler);
-  });
-  sourceInputHandler();
-  return target;
-}
-setTransform = (input) => ({to: (value) => (input.value = value, {andDispatchEvent: (event = new Event("input")) => input.dispatchEvent(event)})});
-function inverse(f) {
-  switch (f) {
-    case identity:  return identity;
-    case Math.sqrt: return square;
-    case Math.log:  return Math.exp;
-    case Math.exp:  return Math.log;
-    default:        return (x => solve(f, x, x));
-  }
-  function solve(f, y, x = 0) {
-    const dx = 1e-6;
-    let steps = 100, deltax, fx, dfx;
-    do {
-      fx = f(x)
-      dfx = (f(x + dx) - fx) || dx;
-      deltax = dx * (fx - y)/dfx
-      x -= deltax;
-    } while (Math.abs(deltax) > dx && --steps > 0);
-    return steps === 0 ? NaN : x;
-  }
-function square(x) {
-    return x * x;
-  }
-}
-function identity(x) {
-  return x;
-}
-function doty2month(doty = 0) {
-    const m = Math.floor((5 * doty + 2) / 153);
-    return Math.floor(m < 10 ? m + 3 : m - 9);
-}
-function month2doty(month = 1) {
-    return Math.floor(
-        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5
-)}
-function doty2dotm(doty = 0) {
-    const m = Math.floor((5 * doty + 2) / 153);
-    return doty - Math.floor((153 * m + 2) / 5) + 1;
-}
-numbers = Array.from({length: 366}, (_, i) => i)
-set(viewof inputDoty, scrubberDoty)
-// https://observablehq.com/@observablehq/synchronized-inputs
-function set(input, value) {
-  input.value = value;
-  input.dispatchEvent(new Event("input", {bubbles: true}));
-}
-// https://observablehq.com/@mbostock/scrubber
-function Scrubber(values, {
-  format = value => value,
-  initial = 0,
-  direction = 1,
-  delay = null,
-  autoplay = true,
-  loop = true,
-  loopDelay = null,
-  alternate = false,
-  inputStyle = ""
-} = {}) {
-  values = Array.from(values);
-  const form = html`<form style="font: 18px var(--monospace); font-variant-numeric: tabular-nums; display: flex; height: 33px; align-items: center;">
-  <button name=b type=button style="margin-right: 0.4em; width: 5em;"></button>
-  <label style="display: flex; align-items: center;">
-    <input name=i type=range min=0 max=${values.length - 1} value=${initial} step=1 style=${inputStyle}>
-    <output name=o style="margin-left: 0.4em;"></output>
-  </label>
-</form>`;
-  let frame = null;
-  let timer = null;
-  let interval = null;
-  function start() {
-    form.b.textContent = "Pause";
-    if (delay === null) frame = requestAnimationFrame(tick);
-    else interval = setInterval(tick, delay);
-  }
-  function stop() {
-    form.b.textContent = "Play";
-    if (frame !== null) cancelAnimationFrame(frame), frame = null;
-    if (timer !== null) clearTimeout(timer), timer = null;
-    if (interval !== null) clearInterval(interval), interval = null;
-  }
-  function running() {
-    return frame !== null || timer !== null || interval !== null;
-  }
-  function tick() {
-    if (form.i.valueAsNumber === (direction > 0 ? values.length - 1 : direction < 0 ? 0 : NaN)) {
-      if (!loop) return stop();
-      if (alternate) direction = -direction;
-      if (loopDelay !== null) {
-        if (frame !== null) cancelAnimationFrame(frame), frame = null;
-        if (interval !== null) clearInterval(interval), interval = null;
-        timer = setTimeout(() => (step(), start()), loopDelay);
-        return;
-      }
+// https://observablehq.com/@d3/simple-clock
+// https://observablehq.com/@drio/lets-build-an-analog-clock
+clock = {
+  const clockRadius = 200,
+    margin = 50,
+    w = (clockRadius + margin) * 2,
+    h = (clockRadius + margin) * 2,
+    hourHandLength = (2 * clockRadius) / 3,
+    minuteHandLength = clockRadius,
+    secondHandLength = clockRadius - 12,
+    secondHandBalance = 30,
+    secondTickStart = clockRadius,
+    secondTickLength = -10,
+    hourTickStart = clockRadius,
+    hourTickLength = -18,
+    secondLabelRadius = clockRadius + 16,
+    secondLabelYOffset = 5,
+    hourLabelRadius = clockRadius - 40,
+    hourLabelYOffset = 7,
+    radians = Math.PI / 180;
+
+  const ten = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 10]);
+
+  const sto = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 100]);
+
+  const handData = [
+    {
+      type: "hour",
+      value: 0,
+      length: -hourHandLength,
+      scale: ten
+    },
+    {
+      type: "minute",
+      value: 0,
+      length: -minuteHandLength,
+      scale: sto
+    },
+    {
+      type: "second",
+      value: 0,
+      length: -secondHandLength,
+      scale: sto,
+      balance: secondHandBalance
     }
-    if (delay === null) frame = requestAnimationFrame(tick);
-    step();
+  ];
+
+  function drawClock() {
+    // create all the clock elements
+    updateData(); //draw them in the correct starting position
+    const face = svg
+      .append("g")
+      .attr("id", "clock-face")
+      .attr("transform", `translate(${[w / 2, h / 2]})`);
+
+    // add marks for seconds
+    face
+      .selectAll(".second-tick")
+      .data(d3.range(0, 100))
+      .enter()
+      .append("line")
+      .attr("class", "second-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", secondTickStart)
+      .attr("y2", secondTickStart + secondTickLength)
+      .attr("transform", d => `rotate(${sto(d)})`);
+
+    // and labels...
+    face
+      .selectAll(".second-label")
+      .data(d3.range(0, 100, 5))
+      .enter()
+      .append("text")
+      .attr("class", "second-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
+      .attr(
+        "y",
+        d =>
+          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
+      )
+      .text(d => d);
+
+    // ... and hours
+    face
+      .selectAll(".hour-tick")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("line")
+      .attr("class", "hour-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", hourTickStart)
+      .attr("y2", hourTickStart + hourTickLength)
+      .attr("transform", d => `rotate(${ten(d)})`);
+
+    face
+      .selectAll(".hour-label")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("text")
+      .attr("class", "hour-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
+      .attr(
+        "y",
+        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
+      )
+      .text(d => d);
+
+    const hands = face.append("g").attr("id", "clock-hands");
+
+    hands
+      .selectAll("line")
+      .data(handData)
+      .enter()
+      .append("line")
+      .attr("class", d => d.type + "-hand")
+      .attr("x1", 0)
+      .attr("y1", d => d.balance || 0)
+      .attr("x2", 0)
+      .attr("y2", d => d.length)
+      .attr("transform", d => `rotate(${d.scale(d.value)})`);
+
+    face
+      .append("g")
+      .attr("id", "face-overlay")
+      .append("circle")
+      .attr("class", "hands-cover")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("r", clockRadius / 20);
   }
-  function step() {
-    form.i.valueAsNumber = (form.i.valueAsNumber + direction + values.length) % values.length;
-    form.i.dispatchEvent(new CustomEvent("input", {bubbles: true}));
+
+  function moveHands() {
+    const sel = d3
+      .select("#clock-hands-final")
+      .selectAll("line")
+      .data(handData)
+      .transition();
+
+    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
+    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
-  form.i.oninput = event => {
-    if (event && event.isTrusted && running()) stop();
-    form.value = values[form.i.valueAsNumber];
-    form.o.value = format(form.value, form.i.valueAsNumber, values);
-  };
-  form.b.onclick = () => {
-    if (running()) return stop();
-    direction = alternate && form.i.valueAsNumber === values.length - 1 ? -1 : 1;
-    form.i.valueAsNumber = (form.i.valueAsNumber + direction) % values.length;
-    form.i.dispatchEvent(new CustomEvent("input", {bubbles: true}));
-    start();
-  };
-  form.i.oninput();
-  if (autoplay) start();
-  else stop();
-  Inputs.disposal(form).then(stop);
-  return form;
+
+  function updateData() {
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : declock[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : declock.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : declock.slice(4, 6);
+  }
+
+  const svg = d3
+    .create("svg")
+    .attr("viewBox", [0, 0, w, h])
+    .style("max-width", "425px")
+    .attr("class", "clock-top")
+    .attr("id", "clock");
+
+  svg
+    .append("text")
+    .text("+" + selected)
+    .attr("x", clockRadius + margin)
+    .attr("y", clockRadius * 2 + margin * 1.975)
+    .attr("text-anchor", "middle")
+    .attr("font-size", 32)
+    .attr("font-family", "monospace");
+
+  drawClock();
+
+  // Animation
+  const interval = setInterval(
+    () => {
+      updateData();
+      moveHands();
+    },
+    !fancySecondsOFF ? 10 : 864
+  );
+  invalidation.then(() => clearInterval(interval));
+
+  return svg.node();
 }
-function unix2deco(ms = 0) {
-    return doty2deco(unix2doty(ms));
-};
-function deco2doty(timestamp = "1969+306.00000Z") {
-    const arr = timestamp.toString().split(/(?=[+-]|[a-zA-Z])/, 3);
-    switch (arr.length) {
-        case 1: return [unix2doty(Date.now())[0], parseFloat(arr[0]), 0];
-        case 2: return (/^[a-zA-Z]+$/.test(arr[1]))
-            ? [unix2doty(Date.now())[0], parseFloat(arr[0]), zone2hour(arr[1]) / 24]
-            : [parseFloat(arr[0]), parseFloat(arr[1]), 0];
-    };
-    return [parseFloat(arr[0]), parseFloat(arr[1]), /^[a-zA-Z]+$/.test(arr[2])
-        ? zone2hour(arr[2]) / 24
-        : parseFloat(arr[2].replace(/([+-])/, "$1\."))];
+
+clock1 = {
+  const clockRadius = 200,
+    margin = 50,
+    w = (clockRadius + margin) * 2,
+    h = (clockRadius + margin) * 2,
+    hourHandLength = (2 * clockRadius) / 3,
+    minuteHandLength = clockRadius,
+    secondHandLength = clockRadius - 12,
+    secondHandBalance = 30,
+    secondTickStart = clockRadius,
+    secondTickLength = -10,
+    hourTickStart = clockRadius,
+    hourTickLength = -18,
+    secondLabelRadius = clockRadius + 16,
+    secondLabelYOffset = 5,
+    hourLabelRadius = clockRadius - 40,
+    hourLabelYOffset = 7,
+    radians = Math.PI / 180;
+
+  const ten = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 10]);
+
+  const sto = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 100]);
+
+  const handData = [
+    {
+      type: "hour",
+      value: 0,
+      length: -hourHandLength,
+      scale: ten
+    },
+    {
+      type: "minute",
+      value: 0,
+      length: -minuteHandLength,
+      scale: sto
+    },
+    {
+      type: "second",
+      value: 0,
+      length: -secondHandLength,
+      scale: sto,
+      balance: secondHandBalance
+    }
+  ];
+
+  function drawClock() {
+    // create all the clock elements
+    updateData(); //draw them in the correct starting position
+    const face = svg
+      .append("g")
+      .attr("id", "clock-face")
+      .attr("transform", `translate(${[w / 2, h / 2]})`);
+
+    // add marks for seconds
+    face
+      .selectAll(".second-tick")
+      .data(d3.range(0, 100))
+      .enter()
+      .append("line")
+      .attr("class", "second-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", secondTickStart)
+      .attr("y2", secondTickStart + secondTickLength)
+      .attr("transform", d => `rotate(${sto(d)})`);
+
+    // and labels...
+    face
+      .selectAll(".second-label")
+      .data(d3.range(0, 100, 5))
+      .enter()
+      .append("text")
+      .attr("class", "second-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
+      .attr(
+        "y",
+        d =>
+          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
+      )
+      .text(d => d);
+
+    // ... and hours
+    face
+      .selectAll(".hour-tick")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("line")
+      .attr("class", "hour-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", hourTickStart)
+      .attr("y2", hourTickStart + hourTickLength)
+      .attr("transform", d => `rotate(${ten(d)})`);
+
+    face
+      .selectAll(".hour-label")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("text")
+      .attr("class", "hour-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
+      .attr(
+        "y",
+        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
+      )
+      .text(d => d);
+
+    const hands = face.append("g").attr("id", "clock-hands");
+
+    hands
+      .selectAll("line")
+      .data(handData)
+      .enter()
+      .append("line")
+      .attr("class", d => d.type + "-hand")
+      .attr("x1", 0)
+      .attr("y1", d => d.balance || 0)
+      .attr("x2", 0)
+      .attr("y2", d => d.length)
+      .attr("transform", d => `rotate(${d.scale(d.value)})`);
+
+    face
+      .append("g")
+      .attr("id", "face-overlay")
+      .append("circle")
+      .attr("class", "hands-cover")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("r", clockRadius / 20);
+  }
+
+  function moveHands() {
+    const sel = d3
+      .select("#clock-hands-final")
+      .selectAll("line")
+      .data(handData)
+      .transition();
+
+    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
+    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
+  }
+
+  function updateData() {
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10) : declockM[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10 % 1 * 100) : declockM.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExactM * 10 % 1 * 100 % 1 * 100 : declockM.slice(4, 6);
+  }
+
+  const svg = d3
+    .create("svg")
+    .attr("viewBox", [0, 0, w, h])
+    .style("max-width", "425px")
+    .attr("class", "clock-btm")
+    .attr("id", "clock");
+
+
+  svg
+    .append("text")
+    .text("-" + selectedM)
+    .attr("x", clockRadius + margin)
+    .attr("y", clockRadius * 2 + margin * 1.975)
+    .attr("text-anchor", "middle")
+    .attr("font-size", 32)
+    .attr("font-family", "monospace");
+
+  drawClock();
+
+  // Animation
+  const interval = setInterval(
+    () => {
+      updateData();
+      moveHands();
+    },
+    !fancySecondsOFF ? 10 : 864
+  );
+  invalidation.then(() => clearInterval(interval));
+
+  return svg.node();
 }
-function zone2hour(zone = "Z") {
-    return (zone = zone.toUpperCase()) == "Z" ? 0
-        : zone > "@" && zone < "J" ? zone.charCodeAt() - 64
-        : zone > "J" && zone < "N" ? zone.charCodeAt() - 65
-        : zone < "Z" && zone > "M" ? -(zone.charCodeAt() - 77)
-        : zone;
+viewof coordinates = worldMapCoordinates([162, 0], [width, Math.round((210 / 400) * width)])
+plot = Plot.plot({
+  marginLeft: 50,
+  marginRight: 65,
+  marginBottom: 50,
+  style: `overflow: visible;font-size:12px;margin-top:${-3 + (width < 400) * 3}px`,
+  width: width * .96,
+  y: {label: "time of day", domain: [0, .92], grid: false, labelAnchor: "center"},
+  x: {label: "day of the year", labelAnchor: "center", labelOffset: 36},
+  color: {legend: true, range: ["#ff6c00", "#009cff"], className: "lineplotlegend"},
+  style: {fontSize: "16px"},
+  marks: [
+    Plot.ruleY([0]),
+    Plot.lineY(times, {x: "date", y: "rise", stroke: "symbol", strokeWidth: 16, strokeOpacity: .6}),
+    Plot.lineY(times, {x: "date", y: "noon", stroke: "symbol", strokeWidth: 16, strokeOpacity: .6}),
+    Plot.lineY(times, {x: "date", y: "set", stroke: "symbol", strokeWidth: 16, strokeOpacity: .6}),
+    Plot.text(times, Plot.selectLast({x: "date", y: "rise", z: "symbol", text: d => `sunrise`, textAnchor: "start", dx: 9})),
+    Plot.text(times, Plot.selectLast({x: "date", y: "noon", z: "symbol", text: d => `noon`, textAnchor: "start", dx: 9})),
+    Plot.text(times, Plot.selectLast({x: "date", y: "set", z: "symbol", text: d => `sunset`, textAnchor: "start", dx: 9})),
+  ]
+})
+app = {
+  const svg = d3.select(DOM.svg(width, height));
+
+  svg.style("user-select", "none")
+     .style("-webkit-user-select", "none");
+
+  const margin = {top: 0, left: 16, right: 16, bottom: 0, inner: 32};
+  const contentWidth = width - margin.left - margin.right - margin.inner;
+  const columnWidth = contentWidth / 2;
+
+  let selection = {
+    date: this != null ? this.value.date : new Date(),
+    hour: this != null ? this.value.hour : new Date().getHours()
+  }
+
+  const renderPlot = () => {
+    svg.selectAll("#plot *").remove();
+    svg.select("#plot").call(daylightPlot, {
+      width: columnWidth,
+      height: height - margin.top - margin.bottom,
+      year: new Date().getFullYear(),
+      latitude: location[1],
+      defaultDate: selection.date,
+      defaultHour: selection.hour
+    })
+  }
+
+  const renderSolarSystem = () => {
+    svg.selectAll("#solar-system *").remove();
+    svg.selectAll("#solar-system").call(solarSystem,
+                                        columnWidth,
+                                        location,
+                                        selection.date,
+                                        selection.hour);
+  }
+
+  const renderGlobe = () => {
+    svg.selectAll("#globe *").remove();
+    svg.selectAll("#globe").call(globe, { width: columnWidth / 1.08, location, ...selection });
+  }
+
+  const setSelection = (newSelection, forceRender = false) => {
+    const prev = {...selection};
+    selection = newSelection;
+
+    svg.node().value = selection;
+
+    if (forceRender) {
+      renderPlot();
+      renderSolarSystem();
+      renderGlobe();
+    } else if (prev.hour !== selection.hour || prev.date !== selection.date) {
+      renderSolarSystem();
+      renderGlobe();
+    }
+  }
+
+  const plot = svg.append("g")
+    .attr("id", "plot")
+    .attr("transform", `translate(${margin.left})`);
+
+  svg.append("g")
+    .attr("id", "solar-system")
+    .attr("transform", `translate(${margin.left + margin.inner + columnWidth}, ${margin.top + height / 7.5})`);
+
+  svg.append("g")
+    .attr("id", "globe")
+    .attr("transform", `translate(${margin.left + margin.inner + 1.04 * columnWidth}, ${margin.top + height / 3.05 + Number(columnWidth < 300) * 16})`);
+
+  setSelection(selection, true);
+
+  const handleDateHourChange = ({ target, detail: { date, hour }}) => {
+    if (date != null && hour != null) setSelection({...selection, date, hour});
+  }
+
+  svg.node().addEventListener(EventType.DateHourChange, handleDateHourChange, false);
+
+  return svg.node();
 }
 ```
+
+``` {ojs}
+//| echo: false
+//| output: false
+declock = (selectedExact * 10).toFixed(4);
+
+declockM = (Math.abs(selectedExact - 1) * 10).toFixed(4);
+
+viewof fancySecondsOFF = Toggle({
+  label: "Ticking clock",
+  value: false
+})
+
+import { Toggle } from "@observablehq/inputs"
+
+import { slider } from "@jashkenas/inputs"
+
+selected = `${declock}-${selectedZone}`
+
+selectedM = `${declockM}-${selectedZone}`
+
+selectedDote = unix2dote(unix, long2zone(coordinates[0]))
+
+selectedExactM = Math.abs(selectedExact - 1)
+
+selectedExact = selectedDote[0] % 1
+
+selectedZone = selectedDote[1]
+
+selectedZoneM = (10 - selectedZone) % 10
+
+function long2zone(degrees = -180) {
+  return Math.floor(long2turn(degrees, 1));
+}
+
+function long2turn(degrees = -180, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return (((degrees %= 360) < 0 ? degrees + 360 : degrees) + 18) / (360 / 10**e) % 10**e;
+}
+
+function lati2turn(degrees = -180, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return ((degrees %= 360) < 0 ? degrees + 360 : degrees) / (360 / 10**e) % 10**e;
+}
+
+function lati2turn1(degrees = -180, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return (degrees %= 360) / (360 / 10**e) % 10**e;
+}
+
+solar1 = (await require("solar-calculator@0.2"))(coordinates)
+
+borders = topojson.mesh(countryBorders, countryBorders.objects.countries, (a, b) => a !== b)
+
+countryBorders = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
+
+boundaries = topojson.mesh(world,world.objects.countries, (a, b) => a !== b);
+
+sun = {
+  const now = new Date;
+  const day = new Date(+now).setUTCHours(0, 0, 0, 0);
+  const t = solar.century(now);
+  const longitude = (day - now) / 864e5 * 360 - 180;
+  return [longitude - solar.equationOfTime(t) / 4, solar.declination(t)];
+}
+
+night = d3.geoCircle()
+    .radius(90)
+    .center(antipode(sun))
+  ()
+
+antipode = ([longitude, latitude]) => [longitude + 180, -latitude]
+
+solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
+
+SunCalc = require("suncalc3")
+
+pos = SunCalc.getPosition(Date.now(), coordinates[1], coordinates[0])
+
+pos["azimuth"] * 180 / Math.PI
+
+pos["azimuth"] / (2 * Math.PI)
+
+pos["declination"] * 180 / Math.PI
+
+pos["zenith"] * 180 / Math.PI
+
+dateRange = d3.utcDay.range(new Date("2024-03-02"), new Date("2025-03-02"))
+
+noons = dateRange.map(d => SunCalc.getSunTimes(d, coordinates[1], coordinates[0])["solarNoon"]["value"])
+
+rises = dateRange.map(d => SunCalc.getSunTimes(d, coordinates[1], coordinates[0])["sunriseStart"]["value"])
+
+sets = dateRange.map(d => SunCalc.getSunTimes(d, coordinates[1], coordinates[0])["sunsetEnd"]["value"])
+
+zonalNoons = noons.map(d => d.getTime() / 86400000 - .4 + Math.round((144 + coordinates[0]) / 36) / 10).map(d => d % 1)
+
+zonalRises = rises.map(d => d.getTime() / 86400000 - .4 + Math.round((144 + coordinates[0]) / 36) / 10).map(d => d % 1).map(d => d >= .5 || d <= .05 ? NaN : d)
+
+zonalSets = sets.map(d => d.getTime() / 86400000 - .4 + Math.round((144 + coordinates[0]) / 36) / 10).map(d => d % 1).map(d => d <= .5 || d >= .95 ? NaN : d)
+
+localNoons = noons.map(d => ((d.getTime() / 86400000 - .4 + (144 + coordinates[0]) / 360))).map(d => d % 1)
+
+localRises = rises.map(d => ((d.getTime() / 86400000 - .4 + (144 + coordinates[0]) / 360))).map(d => d % 1).map(d => d >= .5 || d <= 0.05 ? NaN : d)
+
+localSets = sets.map(d => ((d.getTime() / 86400000 - .4 + (144 + coordinates[0]) / 360))).map(d => d % 1).map(d => d <= .5 || d >= .95 ? NaN : d)
+
+zonals = zonalNoons.map((d, i) => ({date: i, rise: zonalRises[i], noon: d, set: zonalSets[i]}))
+
+locals = localNoons.map((d, i) => ({date: i, rise: localRises[i], noon: d, set: localSets[i]}))
+
+times = [
+  ["zonal", locals],
+  ["local", zonals],
+].flatMap(([symbol, values]) => values.map(d => ({symbol, ...d})))
+
+graticule = d3.geoGraticule().stepMinor([36,36]).stepMajor([36,36])()
+
+graticule.coordinates = graticule.coordinates.map(
+  i => i.map(j => j.map((k, index, arr) => i.length === 3 && index === 0 ? k - 18 : k))
+)
+
+land = topojson.feature(world, world.objects.land)
+
+world = (await fetch("https://cdn.jsdelivr.net/npm/world-atlas@1/world/110m.json")).json()
+
+countries = topojson.feature(world, world.objects.countries)
+
+topojson = require("topojson-client@3")
+
+colors = ({
+  night: "#91afd6",
+  day: "#ffe438",
+  grid: "#4b6a79",
+  ocean: "#adeeff",
+  land: "#f5f1dc",
+  sun: "#ffe438"
+})
+
+label_style = `font: 13px/1.2 var(--sans-serif); width: 120px; font-size: ${label_size};`
+
+label_size = '80%'
+
+function input(config) {
+  let {
+    form,
+    type = "text",
+    attributes = {},
+    action,
+    getValue,
+    title,
+    description,
+    format,
+    display,
+    submit,
+    options
+  } = config;
+  const wrapper = html`<div></div>`;
+  if (!form)
+    form = html`<form>
+    <input name=input type=${type} />
+  </form>`;
+  Object.keys(attributes).forEach(key => {
+    const val = attributes[key];
+    if (val != null) form.input.setAttribute(key, val);
+  });
+  if (submit)
+    form.append(
+      html`<input name=submit type=submit style="margin: 0 0.75em" value="${
+        typeof submit == "string" ? submit : "Submit"
+      }" />`
+    );
+  form.append(
+    html`<output name=output style="font: 14px Menlo, Consolas, monospace; margin-left: 0.5em;"></output>`
+  );
+  if (title)
+    form.prepend(
+      html`<div style="font: 700 0.9rem sans-serif; margin-bottom: 3px;">${title}</div>`
+    );
+  if (description)
+    form.append(
+      html`<div style="font-size: 0.85rem; font-style: italic; margin-top: 3px;">${description}</div>`
+    );
+  if (format)
+    format = typeof format === "function" ? format : d3format.format(format);
+  if (action) {
+    action(form);
+  } else {
+    const verb = submit
+      ? "onsubmit"
+      : type == "button"
+      ? "onclick"
+      : type == "checkbox" || type == "radio"
+      ? "onchange"
+      : "oninput";
+    form[verb] = e => {
+      e && e.preventDefault();
+      const value = getValue ? getValue(form.input) : form.input.value;
+      if (form.output) {
+        const out = display ? display(value) : format ? format(value) : value;
+        if (out instanceof window.Element) {
+          while (form.output.hasChildNodes()) {
+            form.output.removeChild(form.output.lastChild);
+          }
+          form.output.append(out);
+        } else {
+          form.output.value = out;
+        }
+      }
+      form.value = value;
+      if (verb !== "oninput")
+        form.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+    };
+    if (verb !== "oninput")
+      wrapper.oninput = e => e && e.stopPropagation() && e.preventDefault();
+    if (verb !== "onsubmit") form.onsubmit = e => e && e.preventDefault();
+    form[verb]();
+  }
+  while (form.childNodes.length) {
+    wrapper.appendChild(form.childNodes[0]);
+  }
+  form.append(wrapper);
+  return form;
+}
+
+d3format = require("d3-format@1")
+
+// https://talk.observablehq.com/t/legend-placement-options/8407/3
+move = {
+  d3.select(plot)
+    .select("div")
+    .raise() // Places swatch below the plot
+    .style("float", "right"); // Floats the swatch on the right.
+}
+
+// https://observablehq.com/@enjalot/draggable-world-map-coordinates-input
+function worldMapCoordinates(config = {}, dimensions) {
+  const {
+    value = [], title, description, width = dimensions[0]
+  } = Array.isArray(config) ? {value: config} : config;
+  const height = dimensions[1];
+  let [lon, lat] = value;
+  lon = lon != null ? lon : null;
+  lat = lat != null ? lat : null;
+  const formEl = html`<form style="width: ${width}px;"></form>`;
+  const context = DOM.context2d(width, height-width/11.5);
+  const canvas = context.canvas;
+  canvas.style.margin = `-6px 0 ${width > 400 ? -86 : -24}px`;
+  const projection = d3
+    .geoEquirectangular()
+    .precision(0.1)
+    .fitSize([width, height], { type: "Sphere" }).rotate([-153, 0]);
+  const path = d3.geoPath(projection, context).pointRadius(2.5);
+  formEl.append(canvas);
+
+  function draw() {
+    context.fillStyle = "#fff";
+    context.fillRect(0, 0, width, height);
+    context.beginPath(); path({type: "Sphere"});
+    context.fillStyle = colors.ocean; context.fill();
+    context.beginPath();
+    path(graticule);
+    context.lineWidth = 0.95;
+    context.strokeStyle = `#aaa`;
+    context.stroke();
+    context.beginPath();
+    path(land);
+    context.fillStyle = colors.land;
+    context.fill();
+    context.beginPath();
+    path(countries);
+    context.lineWidth = .95;
+    context.strokeStyle = `#000`;
+    context.stroke();
+    context.fillStyle = `#000`;
+    context.font = width < 760 ? "12px serif" : width < 990 ? "11.6px serif" : "18px serif";
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 84.5 - (width < 400) * 3.6])));
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -62])));
+    context.beginPath(), path(night), context.fillStyle = "rgba(0,0,255,0.1)", context.fill();
+    context.beginPath(); path.pointRadius(17); path({type: "Point", coordinates: sun}); context.strokeStyle = "#0008"; context.fillStyle = "#ff0a"; context.lineWidth = 1; context.stroke(); context.fill();
+    if (lon != null && lat != null) {
+      path.pointRadius(17); context.strokeStyle = "black";
+      context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.lineWidth = 1; context.stroke();
+      context.lineWidth = 6; 
+      path.pointRadius(14); context.strokeStyle = "red";
+      context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.stroke();
+    }
+  }
+
+  let drag = d3.drag()
+    .on("drag", (event) => {
+      let coords = projection.invert([event.x, event.y]);
+      lon = +coords[0].toFixed(2);
+      lat = +coords[1].toFixed(2);
+      draw();
+      canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+    })
+
+  d3.select(canvas).call(drag)
+
+  canvas.onclick = function(ev) {
+    const { offsetX, offsetY } = ev;
+    let coords = projection.invert([offsetX, offsetY]);
+    lon = +coords[0].toFixed(2);
+    lat = +coords[1].toFixed(2);
+    draw();
+    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+  };
+
+  draw();
+  const form = input({
+    type: "worldMapCoordinates",
+    title,
+    description,
+    display: v => (width > 400) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: 18px monospace; position: relative; top: 58px; margin-bottom: 48px;">
+        <span style="color: #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
+        &nbsp; &nbsp; 
+        <span style="color: #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
+        &nbsp; &nbsp; 
+        <span style="color: #000;">Latitude:</span> ${lat != null ? ((lati2turn1(lat))).toFixed(0) : ""} 
+      </div>` : '',
+    getValue: () => [lon != null ? lon : null, lat != null ? lat : null],
+    form: formEl
+  });
+  return form;
+}
+
+function dote({ year = 0, day = 0, month = 3, dotm = 1, week = 0, dotw = 3,
+                hour = 0, minute = 0, second = 0, millisecond = 0,
+                zone = 0, utc = -9, degree = -162 } = {}) {
+  const cycle = Math.floor((year >= 0 ? year : year - 399) / 400),
+    yote = year - cycle * 400;
+  return (
+    yote * 365 + cycle * 146097 + Math.floor(yote / 4) - Math.floor(yote / 100)
+    + day + Math.floor((153 * (month > 2 ? month - 3 : month + 9) + 2) / 5) + dotm - 1
+    + week * 7 + dotw - 3 + (hour + minute / 60 + second / 3600 + millisecond / 3600000)
+    / 24 - (zone + Math.floor(utc / 2.4) + 4 + Math.floor((degree + 162) / 36)) / 10
+  );
+}
+
+function doty(args) {
+    const days = dote(args),
+      cycle = Math.floor((days >= 0 ? days : days - 146096) / 146097),
+      dotc = days - cycle * 146097,
+      yotc = Math.floor((dotc - Math.floor(dotc / 1460)
+        + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
+    return [yotc + cycle * 400,
+            dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4)];
+}
+
+function year(args) {
+    const days = dote(args),
+      cycle = Math.floor((days >= 0 ? days : days - 146096) / 146097),
+      dotc = days - cycle * 146097;
+    return (
+        dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524)
+        - Math.floor(dotc / 146096)) / 365 + cycle * 400;
+}
+
+function leap(year = 1970) {
+    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+}
+
+function deco(args, {lead = "0", minus = false, emoji = false} = {}) {
+  let zone = args.zone, utc = args.utc, degree = args.degree;
+  args.zone = 0; args.utc = -9; args.degree = -162;
+  zone = zone ?? 0 + Math.floor((utc ?? -9) / 2.4) + 4 + Math.floor(
+    ((degree ?? -162) + 162) / 36);
+  let [year, days] = doty(args);
+  return `${emoji ? "🗓️" : ""}${
+  (year + minus).toString().padStart(4, lead)}${minus ? "-" : "+"}${
+  Math.abs(Math.floor(days = days - (365 + leap(year + 1)) * minus)
+  ).toString().padStart(3, lead)}${emoji ? "🕰️" : ""}️${
+  Math.abs(days % 1 * 10).toFixed(4)}${zone ? (minus ? "+" : "-") + String(zone) : ""}`
+}
+
+currentDeco = deco({day: 719468, millisecond: unix, zone: long2zone(coordinates[0])})
+
+currentDoty = currentDeco.slice(5)
+
+dotyDate = currentDoty.slice(0, 3)
+
+dotyDek = currentDoty.slice(0, 2)
+
+dotyDotd = currentDoty[2]
+
+barTime = (unix2dote(unix, long2zone(coordinates[0]))[0]).toString().split(".")[1].slice(0, 8)
+
+barCents = barTime.slice(0, 2)
+
+barDD = barTime[0]
+
+barMils = barTime.slice(1, 3)
+
+barBeats = barTime.slice(3, 5)
+
+barMb = barTime.slice(5)
+```
+
+<style>
+  .tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
+    fill: #000;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-anchor: middle;
+  }
+  .timeLabel {
+    text-anchor: start;
+  }
+  .timeBar, .timeBarFull {
+    x: 1px;
+    height: 25px;
+    rx: 5px;
+    stroke: #aaa;
+  }
+  .timeBar {
+    fill: #e8e8e8;
+  }
+  .timeBarFull {
+    fill: #ccffff;
+  }
+  .background {
+    fill: white;
+  }
+  .tickDek, .tickDotd, .tickDotd1, .tickC, .tickC1, .tickM, .tickM1, .tickB, .tickB1 {
+    stroke: none;
+    fill: #666;
+    width: 1px;
+  }
+&#10;  div.observablehq:has(> svg#barClock) {
+    text-align: center;
+    margin-top: -12px;
+  }
+  div.observablehq:has(> svg#clock) {
+    text-align: center;
+    margin-top: -46px;
+  }
+  body > div > div:nth-child(6) > form {
+    margin-top: -60px;
+  }
+&#10;
+#clock {
+  stroke: #000;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+&#10;#clock #rim {
+  fill: none;
+  stroke: #999;
+  stroke-width: 3px;
+}
+&#10;#clock .second-hand {
+  stroke-width:3;
+}
+&#10;#clock .minute-hand {
+  stroke-width:8;
+  stroke-linecap:round;
+}
+&#10;#clock .hour-hand {
+  stroke-width:12;
+  stroke-linecap:round;
+}
+&#10;#clock .hands-cover {
+  stroke-width:3;
+  fill:#fff;
+}
+&#10;#clock .second-tick {
+  stroke-width:3;
+  fill:#000;
+}
+&#10;#clock .hour-tick {
+  stroke-width:8; // same as the minute hand
+}
+&#10;#clock .second-label {
+  font-size: 12px;
+}
+&#10;#clock .hour-label {
+  font-size: 24px;
+}
+&#10;svg.clock-btm {
+  position: relative;
+  left: ${width > 700 ? 198 : 0}px;
+  top: ${width > 700 ? -475.5 : 0}px;
+  margin-bottom: ${width > 700 ? -479 : 0}px;
+}
+svg.clock-top {
+  position: relative;
+  left: ${width > 700 ? -195 : 0}px;
+}
+body > div > div > form > div > canvas {
+  margin-top: ${width > 700 ? -21 : 0}px !important;
+}
+.lineplotlegend-swatch {
+  font-size: 15px;
+}
+</style>
