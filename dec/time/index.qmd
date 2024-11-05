@@ -25,7 +25,7 @@ My website provides many examples of the [Quarto](https://quarto.org) publishing
 ::: {.column-page-right}
 ```{ojs}
 //| echo: false
-viewof location = worldMapCoordinates([162, 0], [960, 580])
+viewof location = worldMapCoordinates([162, 0], [width * 2 / 3, width / 2.5])
 ```
 :::
 
@@ -302,7 +302,7 @@ globe = (root, { width, location, date, hour }) => {
     .attr("x", width / 2)
     .attr("y", -24 + (width < 400) * 4)
     .attr("text-anchor", "middle")
-    .attr("font-size", fontSize * (width < 600 ? 1 : 1.2) + 3)
+    .attr("font-size", fontSize * (width < 400 ? .8 : width < 500 ? 1 : 1.2))
     .attr("font-family", "monospace")
     .attr("fill", "black");
   root
@@ -311,7 +311,7 @@ globe = (root, { width, location, date, hour }) => {
     .attr("x", width / 2)
     .attr("y", -4 + (width < 400) * 1)
     .attr("text-anchor", "middle")
-    .attr("font-size", fontSize * (width < 600 ? 1 : 1.2) + 3)
+    .attr("font-size", fontSize * (width < 400 ? .8 : width < 500 ? 1 : 1.2))
     .attr("font-family", "monospace")
     .attr("fill", "black");
   background.append("path")
@@ -748,7 +748,7 @@ function worldMapCoordinates(config = {}, dimensions) {
   const formEl = html`<form style="width: ${width}px;"></form>`;
   const context = DOM.context2d(width, height-width/11.5);
   const canvas = context.canvas;
-  canvas.style.margin = `-50px 10px -26px 10px`;
+  canvas.style.margin = `-45px 2px -26px 2px`;
   const projection = d3
     .geoEquirectangular()
     .precision(0.1)
@@ -775,9 +775,9 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.strokeStyle = `#000`;
     context.stroke();
     context.fillStyle = `#000`;
-    context.font = width < 760 ? "12px serif" : width < 990 ? "11.6px serif" : "18px serif";
+    context.font = width < 760 ? "15px serif" : width < 990 ? "18px serif" : "24px serif";
     d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 84.5 - (width < 400) * 3.6])));
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -62])));
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -65])));
     context.beginPath(), path(night), context.fillStyle = "rgba(0,0,255,0.1)", context.fill();
     context.beginPath(); path.pointRadius(17); path({type: "Point", coordinates: sun}); context.strokeStyle = "#0008"; context.fillStyle = "#ff08"; context.lineWidth = 1; context.stroke(); context.fill();
     if (lon != null && lat != null) {
@@ -810,7 +810,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     type: "worldMapCoordinates",
     title,
     description,
-    display: v => (width > 400) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: 18px monospace; position: relative; top: -3.1em;  margin-bottom: -.4em;">
+    display: v => (width > 400) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: ${width / 50}px monospace; position: relative; top: -${width / 20}px;  margin-bottom: -.4em;">
             <span style="color: #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
             &nbsp; &nbsp;
             <span style="color: #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
