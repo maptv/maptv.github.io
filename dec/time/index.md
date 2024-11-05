@@ -13,7 +13,7 @@ line chart below.
 
 ``` {ojs}
 //| echo: false
-viewof location = worldMapCoordinates([162, 0], [width * 2 / 3, width / 2.5])
+viewof location = worldMapCoordinates([162, 0], [width < 400 ? width : width * 2 / 3, width / 2.5])
 ```
 
 </div>
@@ -37,7 +37,7 @@ app = {
     svg.selectAll("#plot *").remove();
     svg.select("#plot").call(daylightPlot, {
       width: columnWidth / 1.8,
-      height: (height - margin.top - margin.bottom) / 1.69,
+      height: (height - margin.top - margin.bottom) / 2.5,
       year: new Date().getFullYear(),
       latitude: location[1],
       defaultDate: selection.date,
@@ -51,7 +51,7 @@ app = {
   const renderSolarSystem = () => {
     svg.selectAll("#solar-system *").remove();
     svg.selectAll("#solar-system").call(solarSystem,
-                                        columnWidth * 1.3,
+                                        columnWidth / 1.6,
                                         location,
                                         selection.date,
                                         selection.hour);
@@ -74,10 +74,10 @@ app = {
     .attr("transform", `translate(${margin.left})`);
   svg.append("g")
     .attr("id", "globe")
-    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 1.78}, ${margin.top + height / 98.85 + Number(columnWidth < 300) * 16})`);
+    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 1.78}, ${margin.top + height / 198.85 + Number(columnWidth < 300) * 16})`);
   svg.append("g")
     .attr("id", "solar-system")
-    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 98.8}, ${margin.top + height / 1.28})`);
+    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 35}, ${margin.top + height / 1.9})`);
   setSelection(selection, true);
   const handleDateHourChange = ({ target, detail: { date, hour }}) => {
     if (date != null && hour != null) setSelection({...selection, date, hour});
@@ -135,13 +135,11 @@ solarSystem = (root, width, location, date, hour) => {
   const sunRadius = 0.08 * width;
   const solarSystemRadius = width / 2 - 20;
   const stretch = 0.3;
-
   const solarAngle = getSolarAngle(date);
   const solarAngleDeg = (solarAngle * 180) / Math.PI;
   const x = solarSystemRadius * Math.sin(solarAngle);
   const y = stretch * solarSystemRadius * Math.cos(solarAngle);
   const spin = 180 + -location[0] + solarAngleDeg + 360 * ((hour + 12) / 24);
-
   const earthGeo = { type: "Sphere" };
   const projection = d3
     .geoOrthographic()
@@ -155,6 +153,24 @@ solarSystem = (root, width, location, date, hour) => {
     .translate([0, 0]);
   const path = d3.geoPath(projection).pointRadius(1.5);
   const staticPath = d3.geoPath(staticProjection);
+  root
+    .append("text")
+    .text(`${dote2deco(date.setUTCHours(0, 0, 0, 0) / 86400000 + 719468 + hour / 24, null, "0", true)}`)
+    .attr("x", width / 2)
+    .attr("y", -104 + (width < 400) * 4)
+    .attr("text-anchor", "middle")
+    .attr("font-size", fontSize * (width < 400 ? .8 : width < 500 ? 1 : 1.2))
+    .attr("font-family", "monospace")
+    .attr("fill", "black");
+  root
+    .append("text")
+    .text(`${dote2deco(date.setUTCHours(0, 0, 0, 0) / 86400000 + 719468 + hour / 24, null, "0", true, true)}`)
+    .attr("x", width / 2)
+    .attr("y", -84 + (width < 400) * 1)
+    .attr("text-anchor", "middle")
+    .attr("font-size", fontSize * (width < 400 ? .8 : width < 500 ? 1 : 1.2))
+    .attr("font-family", "monospace")
+    .attr("fill", "black");
 
   const solarSystem = root
     .append("g")
@@ -287,24 +303,6 @@ globe = (root, { width, location, date, hour }) => {
     .attr("stroke-width", "1")
     .attr("fill", "none")
     .attr("stroke", "#000");
-  root
-    .append("text")
-    .text(`${dote2deco(date.setUTCHours(0, 0, 0, 0) / 86400000 + 719468 + hour / 24, null, "0", true)}`)
-    .attr("x", width / 2)
-    .attr("y", -24 + (width < 400) * 4)
-    .attr("text-anchor", "middle")
-    .attr("font-size", fontSize * (width < 400 ? .8 : width < 500 ? 1 : 1.2))
-    .attr("font-family", "monospace")
-    .attr("fill", "black");
-  root
-    .append("text")
-    .text(`${dote2deco(date.setUTCHours(0, 0, 0, 0) / 86400000 + 719468 + hour / 24, null, "0", true, true)}`)
-    .attr("x", width / 2)
-    .attr("y", -4 + (width < 400) * 1)
-    .attr("text-anchor", "middle")
-    .attr("font-size", fontSize * (width < 400 ? .8 : width < 500 ? 1 : 1.2))
-    .attr("font-family", "monospace")
-    .attr("fill", "black");
   background.append("path")
     .attr("d", unClippedPath({type: "Point", coordinates: location}))
     .attr("fill", "red");
