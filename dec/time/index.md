@@ -9,655 +9,57 @@ data analysis and visualization system to display animated or
 interactive plots like the bar chart, clocks, solar terminator map, and
 line chart below.
 
+<div class="column-page-right">
+
 ``` {ojs}
 //| echo: false
-unix = {
-  while(true) {
-    yield Date.now();
-  }
-}
-// https://observablehq.com/@fheyen/barchart-clock
-barChart = {
-const W = width > 1250 ? width * 2 / 3 : width > 1150 ? width * 3 / 4 : width > 1050 ? width * 4 / 5 : width > 950 ? width * 5 / 6 : width > 850 ? width : width > 750 ? width * 1.02 : width > 650 ? width * 1.06 : width > 550 ? width * 1.1 : width > 450 ? width * 1.14 : width * 1.18;
-  const H = 88;
-  const barX = 1;
-  const firstBarY = 1;
-  const svg = d3
-    .create("svg")
-    .attr("width", W)
-    .attr("viewBox", [0, 0, W, H]);
-  const xRange = [0, W - 100];
-  const scaleDD = d3.scaleLinear()
-    .domain([0, 10])
-    .range(xRange);
-  const scaleMandB = d3.scaleLinear()
-    .domain([0, 100])
-    .range(xRange);
-  // const scaleDek = d3.scaleLinear()
-  //  .domain([0, 37])
-  //  .range(xRange);
-  // Background bars to show where 100% lies
-  svg.selectAll('.background')
-    .data([
-      // 'dek', 'dotd',
-      'dd', "mils", 'beats'])
-    .enter()
-    .append('rect')
-    .attr('class', 'background timeBar')
-    .attr('width', W-100)
-    .attr('y', (d,i)=>i*30+firstBarY)
-  // // Dek/Dotd
-  // svg
-  //   .append('rect')
-  //   .attr('class', 'timeBar')
-  //   .attr('y', firstBarY)
-  //   .attr('width', d => scaleDek(Number(dotyDek)+Number(dotyDotd)/10+Number(barCents)/1000))
-  // svg
-  //   .append('rect')
-  //   .attr('class', 'timeBarFull')
-  //   .attr('y', firstBarY)
-  //   .attr('width', d => scaleDek(dotyDek))
-  // svg
-  //   .append('rect')
-  //   .attr('class', 'timeBar')
-  //   .attr('y', firstBarY+30)
-  //   .attr('width', d => scaleM(Number(dotyDotd)+Number(barCents)/100+Number(barMils)/1000))
-  // svg
-  //   .append('rect')
-  //   .attr('class', 'timeBarFull')
-  //   .attr('y', firstBarY+30)
-  //   .attr('width', d => scaleM(dotyDotd))
-  // svg.selectAll('.tickDek')
-  //   .data(d3.range(width > 500 ? 4: 6, 37))
-  //   .enter()
-  //   .append('rect')
-  //   .attr('class', 'tickDek')
-  //   .attr('x', d=>scaleDek(d)+barX)
-  //   .attr('y', firstBarY)
-  //   .attr('height', d=>d%(width > 500 ? 2 : 3)===0? 6:4)
-  // Cent ticks
-  // svg.selectAll('.tickDotd')
-  //   .data(d3.range(width > 500 ? 1: 2, 10))
-  //   .enter()
-  //   .append('rect')
-  //   .attr('class', 'tickDotd')
-  //   .attr('x', d=>scaleM(d)+barX)
-  //   .attr('y', firstBarY+49)
-  //   .attr('height', 6)
-  // svg.selectAll('.tickLabel')
-  //   .data(d3.range(width > 500 ? 4: 6, width > 500 ? 37: 35, width > 500 ? 2: 3))
-  //   .enter()
-  //   .append('text')
-  //   .attr('class', 'tickLabel')
-  //   .attr('x', d=>scaleDek(d)+barX+.5)
-  //   .attr('y', firstBarY+22)
-  //   .text(d=>d)
-  // Beats
-  svg
-    .append('rect')
-    .attr('class', 'timeBar')
-    .attr('y', firstBarY+60)
-    .attr('width', d => scaleMandB(Number(barBeats)+Number(barMb)/1000))
-  svg
-    .append('rect')
-    .attr('class', 'timeBarFull')
-    .attr('y', firstBarY+60)
-    .attr('width', d => scaleMandB(barBeats))
-  // Cents/Mils
-  svg
-    .append('rect')
-    .attr('class', 'timeBar')
-    .attr('y', firstBarY)
-    .attr('width', d => scaleDD(Number(barDD)+Number(barMils)/100+Number(barBeats)/10000+Number(barMb)/10000000))
-  svg
-    .append('rect')
-    .attr('class', 'timeBarFull')
-    .attr('y', firstBarY)
-    .attr('width', d => scaleDD(barDD))
-  svg
-    .append('rect')
-    .attr('class', 'timeBar')
-    .attr('y', firstBarY+30)
-    .attr('width', d => scaleMandB(Number(barMils)/10+Number(barBeats)/1000))
-  svg
-    .append('rect')
-    .attr('class', 'timeBarFull')
-    .attr('y', firstBarY+30)
-    .attr('width', d => scaleMandB(barMils))
-  // Cent ticks
-  svg.selectAll('.tickC')
-    .data(d3.range(width > 500 ? 10 : 10, 100))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickC')
-    .attr('x', d=>scaleDD(d/10)+barX)
-    .attr('y', firstBarY+30)
-    .attr('height', d=>d%2===0? 8:5)
-  svg.selectAll('.tickB1')
-    .data(d3.range(width > 500 ? 10 : 10, 100))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickB1')
-    .attr('x', d=>scaleDD(d/10)+barX)
-    .attr('y', d=>d%2===0? firstBarY+77:firstBarY+80)
-    .attr('height', d=>d%2===0? 8:5)
-  svg.selectAll('.tickC1')
-    .data(d3.range(width > 500 ? 10 : 10, 100))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickC1')
-    .attr('x', d=>scaleDD(d/10)+barX)
-    .attr('y', d=>d%2===0? firstBarY+47:firstBarY+50)
-    .attr('height', d=>d%2===0? 8:5)
-  // Mil ticks
-  svg.selectAll('.tickM')
-    .data(d3.range(width > 500 ? 1 : 1, 10))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickM')
-    .attr('x', d=>scaleDD(d)+barX)
-    .attr('y', firstBarY+20)
-    .attr('height', 6)
-  // svg.selectAll('.tickM1')
-  //   .data(d3.range(width > 500 ? 1 : 2, 10))
-  //   .enter()
-  //   .append('rect')
-  //   .attr('class', 'tickM1')
-  //   .attr('x', d=>scaleM(d)+barX)
-  //   .attr('y', firstBarY+32.5)
-  //   .attr('height', 2.5)
-  svg.selectAll('.tickLabel1')
-    .data(d3.range(width > 500 ? 1 : 1, 10))
-    .enter()
-    .append('text')
-    .attr('class', 'tickLabel1')
-    .attr('x', d=>scaleDD(d)+barX+.5)
-    .attr('y', firstBarY+18)
-    .text(d=>d)
-  // svg.selectAll('.tickLabel2')
-  //   .data(d3.range(width > 500 ? 1 : 2, 10))
-  //   .enter()
-  //   .append('text')
-  //   .attr('class', 'tickLabel2')
-  //   .attr('x', d=>scaleM(d)+barX+.5)
-  //   .attr('y', firstBarY+112)
-  //   .text(d=>d)
-  // Cent ticks
-  svg.selectAll('.tickC2')
-    .data(d3.range(width > 500 ? 10 : 10, 100))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickC2')
-    .attr('x', d=>scaleDD(d/10)+barX)
-    .attr('y', firstBarY+10)
-    .attr('height', d=>d%2===0? 9:6)
-  // Beat ticks
-  svg.selectAll('.tickB')
-    .data(d3.range(width > 500 ? 10 : 10, 100))
-    .enter()
-    .append('rect')
-    .attr('class', 'tickB')
-    .attr('x', d=>scaleDD(d/10)+barX)
-    .attr('y', firstBarY+60)
-    .attr('height', d=>d%2===0? 9:6)
-  // Labels
-  svg.selectAll('.timeLabel')
-    .data([
-      // `${dotyDek}旬`, `${dotyDotd}日`,
-      `${barDD}`, `${barMils}`, `${barBeats}`])
-    .enter()
-    .append('text')
-    .attr('class', 'timeLabel')
-    .attr('x', barX+2)
-    .attr('y', (d,i)=>i*30+firstBarY+20)
-    .text(d=>d);
-  svg.attr("id", "barClock");
-  return svg.node();
-}
-// https://observablehq.com/@d3/simple-clock
-// https://observablehq.com/@drio/lets-build-an-analog-clock
-clock = {
-  const clockRadius = 200,
-    margin = 50,
-    w = (clockRadius + margin) * 2,
-    h = (clockRadius + margin) * 2,
-    hourHandLength = (2 * clockRadius) / 3,
-    minuteHandLength = clockRadius,
-    secondHandLength = clockRadius - 12,
-    secondHandBalance = 30,
-    secondTickStart = clockRadius,
-    secondTickLength = -10,
-    hourTickStart = clockRadius,
-    hourTickLength = -18,
-    secondLabelRadius = clockRadius + 16,
-    secondLabelYOffset = 5,
-    hourLabelRadius = clockRadius - 40,
-    hourLabelYOffset = 7,
-    radians = Math.PI / 180;
+viewof location = worldMapCoordinates([162, 0], [width * 2 / 3, width / 2.5])
+```
 
-  const ten = d3
-    .scaleLinear()
-    .range([0, 360])
-    .domain([0, 10]);
+</div>
 
-  const sto = d3
-    .scaleLinear()
-    .range([0, 360])
-    .domain([0, 100]);
+<div class="column-page-right">
 
-  const handData = [
-    {
-      type: "hour",
-      value: 0,
-      length: -hourHandLength,
-      scale: ten
-    },
-    {
-      type: "minute",
-      value: 0,
-      length: -minuteHandLength,
-      scale: sto
-    },
-    {
-      type: "second",
-      value: 0,
-      length: -secondHandLength,
-      scale: sto,
-      balance: secondHandBalance
-    }
-  ];
-
-  function drawClock() {
-    // create all the clock elements
-    updateData(); //draw them in the correct starting position
-    const face = svg
-      .append("g")
-      .attr("id", "clock-face")
-      .attr("transform", `translate(${[w / 2, h / 2]})`);
-
-    // add marks for seconds
-    face
-      .selectAll(".second-tick")
-      .data(d3.range(0, 100))
-      .enter()
-      .append("line")
-      .attr("class", "second-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", secondTickStart)
-      .attr("y2", secondTickStart + secondTickLength)
-      .attr("transform", d => `rotate(${sto(d)})`);
-
-    // and labels...
-    face
-      .selectAll(".second-label")
-      .data(d3.range(0, 100, 5))
-      .enter()
-      .append("text")
-      .attr("class", "second-label")
-      .attr("text-anchor", "middle")
-      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
-      .attr(
-        "y",
-        d =>
-          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
-      )
-      .text(d => d);
-
-    // ... and hours
-    face
-      .selectAll(".hour-tick")
-      .data(d3.range(0, 10, 1))
-      .enter()
-      .append("line")
-      .attr("class", "hour-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", hourTickStart)
-      .attr("y2", hourTickStart + hourTickLength)
-      .attr("transform", d => `rotate(${ten(d)})`);
-
-    face
-      .selectAll(".hour-label")
-      .data(d3.range(0, 10, 1))
-      .enter()
-      .append("text")
-      .attr("class", "hour-label")
-      .attr("text-anchor", "middle")
-      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
-      .attr(
-        "y",
-        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
-      )
-      .text(d => d);
-
-    const hands = face.append("g").attr("id", "clock-hands");
-
-    hands
-      .selectAll("line")
-      .data(handData)
-      .enter()
-      .append("line")
-      .attr("class", d => d.type + "-hand")
-      .attr("x1", 0)
-      .attr("y1", d => d.balance || 0)
-      .attr("x2", 0)
-      .attr("y2", d => d.length)
-      .attr("transform", d => `rotate(${d.scale(d.value)})`);
-
-    face
-      .append("g")
-      .attr("id", "face-overlay")
-      .append("circle")
-      .attr("class", "hands-cover")
-      .attr("x", 0)
-      .attr("y", 0)
-      .attr("r", clockRadius / 20);
-  }
-
-  function moveHands() {
-    const sel = d3
-      .select("#clock-hands-final")
-      .selectAll("line")
-      .data(handData)
-      .transition();
-
-    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
-    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
-  }
-
-  function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : declock[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : declock.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : declock.slice(4, 6);
-  }
-
-  const svg = d3
-    .create("svg")
-    .attr("viewBox", [0, 0, w, h])
-    .style("max-width", "425px")
-    .attr("class", "clock-top")
-    .attr("id", "clock");
-
-  svg
-    .append("text")
-    .text("+" + selected)
-    .attr("x", clockRadius + margin)
-    .attr("y", clockRadius * 2 + margin * 1.975)
-    .attr("text-anchor", "middle")
-    .attr("font-size", 32)
-    .attr("font-family", "monospace");
-
-  drawClock();
-
-  // Animation
-  const interval = setInterval(
-    () => {
-      updateData();
-      moveHands();
-    },
-    !fancySecondsOFF ? 10 : 864
-  );
-  invalidation.then(() => clearInterval(interval));
-
-  return svg.node();
-}
-
-clock1 = {
-  const clockRadius = 200,
-    margin = 50,
-    w = (clockRadius + margin) * 2,
-    h = (clockRadius + margin) * 2,
-    hourHandLength = (2 * clockRadius) / 3,
-    minuteHandLength = clockRadius,
-    secondHandLength = clockRadius - 12,
-    secondHandBalance = 30,
-    secondTickStart = clockRadius,
-    secondTickLength = -10,
-    hourTickStart = clockRadius,
-    hourTickLength = -18,
-    secondLabelRadius = clockRadius + 16,
-    secondLabelYOffset = 5,
-    hourLabelRadius = clockRadius - 40,
-    hourLabelYOffset = 7,
-    radians = Math.PI / 180;
-
-  const ten = d3
-    .scaleLinear()
-    .range([0, 360])
-    .domain([0, 10]);
-
-  const sto = d3
-    .scaleLinear()
-    .range([0, 360])
-    .domain([0, 100]);
-
-  const handData = [
-    {
-      type: "hour",
-      value: 0,
-      length: -hourHandLength,
-      scale: ten
-    },
-    {
-      type: "minute",
-      value: 0,
-      length: -minuteHandLength,
-      scale: sto
-    },
-    {
-      type: "second",
-      value: 0,
-      length: -secondHandLength,
-      scale: sto,
-      balance: secondHandBalance
-    }
-  ];
-
-  function drawClock() {
-    // create all the clock elements
-    updateData(); //draw them in the correct starting position
-    const face = svg
-      .append("g")
-      .attr("id", "clock-face")
-      .attr("transform", `translate(${[w / 2, h / 2]})`);
-
-    // add marks for seconds
-    face
-      .selectAll(".second-tick")
-      .data(d3.range(0, 100))
-      .enter()
-      .append("line")
-      .attr("class", "second-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", secondTickStart)
-      .attr("y2", secondTickStart + secondTickLength)
-      .attr("transform", d => `rotate(${sto(d)})`);
-
-    // and labels...
-    face
-      .selectAll(".second-label")
-      .data(d3.range(0, 100, 5))
-      .enter()
-      .append("text")
-      .attr("class", "second-label")
-      .attr("text-anchor", "middle")
-      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
-      .attr(
-        "y",
-        d =>
-          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
-      )
-      .text(d => d);
-
-    // ... and hours
-    face
-      .selectAll(".hour-tick")
-      .data(d3.range(0, 10, 1))
-      .enter()
-      .append("line")
-      .attr("class", "hour-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", hourTickStart)
-      .attr("y2", hourTickStart + hourTickLength)
-      .attr("transform", d => `rotate(${ten(d)})`);
-
-    face
-      .selectAll(".hour-label")
-      .data(d3.range(0, 10, 1))
-      .enter()
-      .append("text")
-      .attr("class", "hour-label")
-      .attr("text-anchor", "middle")
-      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
-      .attr(
-        "y",
-        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
-      )
-      .text(d => d);
-
-    const hands = face.append("g").attr("id", "clock-hands");
-
-    hands
-      .selectAll("line")
-      .data(handData)
-      .enter()
-      .append("line")
-      .attr("class", d => d.type + "-hand")
-      .attr("x1", 0)
-      .attr("y1", d => d.balance || 0)
-      .attr("x2", 0)
-      .attr("y2", d => d.length)
-      .attr("transform", d => `rotate(${d.scale(d.value)})`);
-
-    face
-      .append("g")
-      .attr("id", "face-overlay")
-      .append("circle")
-      .attr("class", "hands-cover")
-      .attr("x", 0)
-      .attr("y", 0)
-      .attr("r", clockRadius / 20);
-  }
-
-  function moveHands() {
-    const sel = d3
-      .select("#clock-hands-final")
-      .selectAll("line")
-      .data(handData)
-      .transition();
-
-    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
-    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
-  }
-
-  function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10) : declockM[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10 % 1 * 100) : declockM.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExactM * 10 % 1 * 100 % 1 * 100 : declockM.slice(4, 6);
-  }
-
-  const svg = d3
-    .create("svg")
-    .attr("viewBox", [0, 0, w, h])
-    .style("max-width", "425px")
-    .attr("class", "clock-btm")
-    .attr("id", "clock");
-
-
-  svg
-    .append("text")
-    .text("-" + selectedM)
-    .attr("x", clockRadius + margin)
-    .attr("y", clockRadius * 2 + margin * 1.975)
-    .attr("text-anchor", "middle")
-    .attr("font-size", 32)
-    .attr("font-family", "monospace");
-
-  drawClock();
-
-  // Animation
-  const interval = setInterval(
-    () => {
-      updateData();
-      moveHands();
-    },
-    !fancySecondsOFF ? 10 : 864
-  );
-  invalidation.then(() => clearInterval(interval));
-
-  return svg.node();
-}
-viewof coordinates = worldMapCoordinates([162, 0], [width, Math.round((210 / 400) * width)])
-plot = Plot.plot({
-  marginLeft: 50,
-  marginRight: 65,
-  marginBottom: 50,
-  style: `overflow: visible;font-size:12px;margin-top:${-3 + (width < 400) * 3}px`,
-  width: width * .96,
-  y: {label: "time of day", domain: [0, .92], grid: false, labelAnchor: "center"},
-  x: {label: "day of the year", labelAnchor: "center", labelOffset: 36},
-  color: {legend: true, range: ["#ff6c00", "#009cff"], className: "lineplotlegend"},
-  style: {fontSize: "16px"},
-  marks: [
-    Plot.ruleY([0]),
-    Plot.lineY(times, {x: "date", y: "rise", stroke: "symbol", strokeWidth: 16, strokeOpacity: .6}),
-    Plot.lineY(times, {x: "date", y: "noon", stroke: "symbol", strokeWidth: 16, strokeOpacity: .6}),
-    Plot.lineY(times, {x: "date", y: "set", stroke: "symbol", strokeWidth: 16, strokeOpacity: .6}),
-    Plot.text(times, Plot.selectLast({x: "date", y: "rise", z: "symbol", text: d => `sunrise`, textAnchor: "start", dx: 9})),
-    Plot.text(times, Plot.selectLast({x: "date", y: "noon", z: "symbol", text: d => `noon`, textAnchor: "start", dx: 9})),
-    Plot.text(times, Plot.selectLast({x: "date", y: "set", z: "symbol", text: d => `sunset`, textAnchor: "start", dx: 9})),
-  ]
-})
+``` {ojs}
+//| echo: false
 app = {
-  const svg = d3.select(DOM.svg(width, height));
-
+  const svg = d3.select(DOM.svg(width / 1.5, height / 1.18));
   svg.style("user-select", "none")
      .style("-webkit-user-select", "none");
-
-  const margin = {top: 0, left: 16, right: 16, bottom: 0, inner: 32};
+  const margin = {top: 0, left: 10, right: 6, bottom: 0, inner: 3};
   const contentWidth = width - margin.left - margin.right - margin.inner;
   const columnWidth = contentWidth / 2;
-
   let selection = {
-    date: this != null ? this.value.date : new Date(),
-    hour: this != null ? this.value.hour : new Date().getHours()
+    date: new Date(),
+    hour: new Date().getHours()
   }
-
   const renderPlot = () => {
     svg.selectAll("#plot *").remove();
     svg.select("#plot").call(daylightPlot, {
-      width: columnWidth,
-      height: height - margin.top - margin.bottom,
+      width: columnWidth / 1.8,
+      height: (height - margin.top - margin.bottom) / 1.19,
       year: new Date().getFullYear(),
       latitude: location[1],
       defaultDate: selection.date,
       defaultHour: selection.hour
     })
   }
-
   const renderSolarSystem = () => {
     svg.selectAll("#solar-system *").remove();
     svg.selectAll("#solar-system").call(solarSystem,
-                                        columnWidth,
+                                        columnWidth / 1.3,
                                         location,
                                         selection.date,
                                         selection.hour);
   }
-
   const renderGlobe = () => {
     svg.selectAll("#globe *").remove();
-    svg.selectAll("#globe").call(globe, { width: columnWidth / 1.08, location, ...selection });
+    svg.selectAll("#globe").call(globe, { width: columnWidth / 1.3, location, ...selection });
   }
-
   const setSelection = (newSelection, forceRender = false) => {
     const prev = {...selection};
     selection = newSelection;
-
     svg.node().value = selection;
-
     if (forceRender) {
       renderPlot();
       renderSolarSystem();
@@ -667,162 +69,565 @@ app = {
       renderGlobe();
     }
   }
-
   const plot = svg.append("g")
     .attr("id", "plot")
     .attr("transform", `translate(${margin.left})`);
-
   svg.append("g")
     .attr("id", "solar-system")
-    .attr("transform", `translate(${margin.left + margin.inner + columnWidth}, ${margin.top + height / 7.5})`);
-
+    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 1.8}, ${margin.top + height / 9.2})`);
   svg.append("g")
     .attr("id", "globe")
-    .attr("transform", `translate(${margin.left + margin.inner + 1.04 * columnWidth}, ${margin.top + height / 3.05 + Number(columnWidth < 300) * 16})`);
-
+    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 1.78}, ${margin.top + height / 3.85 + Number(columnWidth < 300) * 16})`);
   setSelection(selection, true);
-
   const handleDateHourChange = ({ target, detail: { date, hour }}) => {
     if (date != null && hour != null) setSelection({...selection, date, hour});
   }
-
   svg.node().addEventListener(EventType.DateHourChange, handleDateHourChange, false);
-
   return svg.node();
 }
 ```
 
+</div>
+
 ``` {ojs}
 //| echo: false
 //| output: false
-declock = (selectedExact * 10).toFixed(4);
-
-declockM = (Math.abs(selectedExact - 1) * 10).toFixed(4);
-
-viewof fancySecondsOFF = Toggle({
-  label: "Ticking clock",
-  value: false
-})
-
-import { Toggle } from "@observablehq/inputs"
-
-import { slider } from "@jashkenas/inputs"
-
-selected = `${declock}-${selectedZone}`
-
-selectedM = `${declockM}-${selectedZone}`
-
-selectedDote = unix2dote(unix, long2zone(coordinates[0]))
-
-selectedExactM = Math.abs(selectedExact - 1)
-
-selectedExact = selectedDote[0] % 1
-
-selectedZone = selectedDote[1]
-
-selectedZoneM = (10 - selectedZone) % 10
-
-function long2zone(degrees = -180) {
-  return Math.floor(long2turn(degrees, 1));
-}
-
-function long2turn(degrees = -180, e = 3) {
-  // turns: e=0, deciturns: e=1, etc.
-  return (((degrees %= 360) < 0 ? degrees + 360 : degrees) + 18) / (360 / 10**e) % 10**e;
-}
-
-function lati2turn(degrees = -180, e = 3) {
-  // turns: e=0, deciturns: e=1, etc.
-  return ((degrees %= 360) < 0 ? degrees + 360 : degrees) / (360 / 10**e) % 10**e;
-}
-
 function lati2turn1(degrees = -180, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
   return (degrees %= 360) / (360 / 10**e) % 10**e;
 }
-
-solar1 = (await require("solar-calculator@0.2"))(coordinates)
-
-borders = topojson.mesh(countryBorders, countryBorders.objects.countries, (a, b) => a !== b)
-
-countryBorders = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
-
-boundaries = topojson.mesh(world,world.objects.countries, (a, b) => a !== b);
-
-sun = {
-  const now = new Date;
-  const day = new Date(+now).setUTCHours(0, 0, 0, 0);
-  const t = solar.century(now);
-  const longitude = (day - now) / 864e5 * 360 - 180;
-  return [longitude - solar.equationOfTime(t) / 4, solar.declination(t)];
+function dote2deco(dote = 719468, zone = 0, lead = "0", emoji = false, minus = false) {
+let [year, doty] = dote2date(dote);
+  if (minus) {
+    doty = Math.abs(doty - (365 + Number(year2leap(year + 1))));
+    if (zone != null) {
+      zone = (10 - zone) % 10;
+    }
+  }
+return `${
+    (year + minus).toString().padStart(4, lead)}${minus ? "-" : "+"}${
+    Math.floor(doty).toString().padStart(3, lead)}${emoji ? "🗓️" : ""}${(doty % 1 * 10).toFixed(4)}${
+    zone != null ? (minus ? "+" : "-") + String(zone) : ""}${emoji ? "🕰️" : ""}`
 }
-
-night = d3.geoCircle()
-    .radius(90)
-    .center(antipode(sun))
-  ()
-
-antipode = ([longitude, latitude]) => [longitude + 180, -latitude]
-
-solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
-
-SunCalc = require("suncalc3")
-
-pos = SunCalc.getPosition(Date.now(), coordinates[1], coordinates[0])
-
-pos["azimuth"] * 180 / Math.PI
-
-pos["azimuth"] / (2 * Math.PI)
-
-pos["declination"] * 180 / Math.PI
-
-pos["zenith"] * 180 / Math.PI
-
-dateRange = d3.utcDay.range(new Date("2024-03-02"), new Date("2025-03-02"))
-
-noons = dateRange.map(d => SunCalc.getSunTimes(d, coordinates[1], coordinates[0])["solarNoon"]["value"])
-
-rises = dateRange.map(d => SunCalc.getSunTimes(d, coordinates[1], coordinates[0])["sunriseStart"]["value"])
-
-sets = dateRange.map(d => SunCalc.getSunTimes(d, coordinates[1], coordinates[0])["sunsetEnd"]["value"])
-
-zonalNoons = noons.map(d => d.getTime() / 86400000 - .4 + Math.round((144 + coordinates[0]) / 36) / 10).map(d => d % 1)
-
-zonalRises = rises.map(d => d.getTime() / 86400000 - .4 + Math.round((144 + coordinates[0]) / 36) / 10).map(d => d % 1).map(d => d >= .5 || d <= .05 ? NaN : d)
-
-zonalSets = sets.map(d => d.getTime() / 86400000 - .4 + Math.round((144 + coordinates[0]) / 36) / 10).map(d => d % 1).map(d => d <= .5 || d >= .95 ? NaN : d)
-
-localNoons = noons.map(d => ((d.getTime() / 86400000 - .4 + (144 + coordinates[0]) / 360))).map(d => d % 1)
-
-localRises = rises.map(d => ((d.getTime() / 86400000 - .4 + (144 + coordinates[0]) / 360))).map(d => d % 1).map(d => d >= .5 || d <= 0.05 ? NaN : d)
-
-localSets = sets.map(d => ((d.getTime() / 86400000 - .4 + (144 + coordinates[0]) / 360))).map(d => d % 1).map(d => d <= .5 || d >= .95 ? NaN : d)
-
-zonals = zonalNoons.map((d, i) => ({date: i, rise: zonalRises[i], noon: d, set: zonalSets[i]}))
-
-locals = localNoons.map((d, i) => ({date: i, rise: localRises[i], noon: d, set: localSets[i]}))
-
-times = [
-  ["zonal", locals],
-  ["local", zonals],
-].flatMap(([symbol, values]) => values.map(d => ({symbol, ...d})))
-
 graticule = d3.geoGraticule().stepMinor([36,36]).stepMajor([36,36])()
-
 graticule.coordinates = graticule.coordinates.map(
   i => i.map(j => j.map((k, index, arr) => i.length === 3 && index === 0 ? k - 18 : k))
 )
-
-land = topojson.feature(world, world.objects.land)
-
-world = (await fetch("https://cdn.jsdelivr.net/npm/world-atlas@1/world/110m.json")).json()
+function long2turn(degrees = -180, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return (((degrees %= 360) < 0 ? degrees + 360 : degrees) + 18) / (360 / 10**e) % 10**e;
+}
+// https://github.com/topojson/world-atlas
+world = d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
 
 countries = topojson.feature(world, world.objects.countries)
 
 topojson = require("topojson-client@3")
+function long2zone(degrees = -180) {
+  return Math.floor(long2turn(degrees, 1));
+}
+function year2leap(year = 1970) {
+    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+}
+// https://observablehq.com/@dbridges/visualizing-seasonal-daylight
+solarSystem = (root, width, location, date, hour) => {
+  const earthRadius = 0.04 * width;
+  const sunRadius = 0.08 * width;
+  const solarSystemRadius = width / 2 - 20;
+  const stretch = 0.3;
+
+  const solarAngle = getSolarAngle(date);
+  const solarAngleDeg = (solarAngle * 180) / Math.PI;
+  const x = solarSystemRadius * Math.sin(solarAngle);
+  const y = stretch * solarSystemRadius * Math.cos(solarAngle);
+  const spin = 180 + -location[0] + solarAngleDeg + 360 * ((hour + 12) / 24);
+
+  const earthGeo = { type: "Sphere" };
+  const projection = d3
+    .geoOrthographic()
+    .fitWidth(earthRadius * 2, earthGeo)
+    .rotate([spin, 0, 23.5])
+    .translate([0, 0]);
+  const staticProjection = d3
+    .geoOrthographic()
+    .fitWidth(earthRadius * 2, earthGeo)
+    .rotate([solarAngleDeg - 90, 0])
+    .translate([0, 0]);
+  const path = d3.geoPath(projection).pointRadius(1.5);
+  const staticPath = d3.geoPath(staticProjection);
+
+  const solarSystem = root
+    .append("g")
+    .attr("transform", `translate(${width / 2})`);
+
+  solarSystem.append("circle").attr("r", sunRadius).attr("fill", colors.sun);
+
+  /* Draw orbit */
+  solarSystem
+    .append("ellipse")
+    .attr("rx", solarSystemRadius)
+    .attr("ry", stretch * solarSystemRadius)
+    .attr("fill", "none")
+    .attr("stroke", "black");
+
+  /* Draw month ticks */
+  d3.range(12).map((m) => {
+    const d = new Date(date.getFullYear(), m, 1);
+    const angle = getSolarAngle(d);
+
+    solarSystem
+      .append("line")
+      .attr("x1", (solarSystemRadius + 6) * Math.sin(angle))
+      .attr("y1", (solarSystemRadius + 6) * stretch * Math.cos(angle))
+      .attr("x2", (solarSystemRadius - 6) * Math.sin(angle))
+      .attr("y2", (solarSystemRadius - 6) * stretch * Math.cos(angle))
+      .attr("stroke", "black");
+
+    const startMonthAngle = getSolarAngle(new Date(date.getFullYear(), m, 1));
+
+    solarSystem
+      .append("text")
+      .text(date2doty(d))
+      .attr("x", (solarSystemRadius + 18) * Math.sin(startMonthAngle))
+      .attr(
+        "y",
+        (solarSystemRadius + 18) * 1.18 * stretch * Math.cos(startMonthAngle)
+      )
+      .attr("text-anchor", "middle")
+      .attr("font-size", fontSize)
+      .attr("dominant-baseline", "middle")
+      .attr("font-size", fontSize * 1.08)
+      .attr("font-family", "sans-serif")
+      .attr("fill", "black");
+  });
+
+  const earth = solarSystem
+    .append("g")
+    .attr("transform", `translate(${x}, ${y})`);
+
+  earth
+    .append("line")
+    .attr("y1", -1.5 * earthRadius)
+    .attr("y2", 1.5 * earthRadius)
+    .attr("stroke", "blue")
+    .attr("transform", `rotate(-23.5)`);
+  earth.append("path").attr("d", path(earthGeo)).attr("fill", colors.ocean);
+  earth.append("path").attr("d", path(land)).attr("fill", colors.land);
+  earth.append("path")
+  .attr("d", path(countries))
+  .attr("stroke-width", ".075")
+  .attr("fill", "none")
+  .attr("stroke", "#555");
+  const shadowPolygon = [
+    [0, -90],
+    [0, 0],
+    [0, 90],
+    [180, 0],
+    [0, -90]
+  ];
+  earth
+    .append("path")
+    .attr("d", staticPath({ type: "Polygon", coordinates: [shadowPolygon] }))
+    .attr("fill", "rgba(0, 0, 0, 0.5)");
+  earth
+    .append("path")
+    .attr("d", path({ type: "Point", coordinates: location }))
+    .attr("r", 18)
+    .attr("stroke-width", .3)
+    .attr("stroke", "black")
+    .attr("fill", "red");
+}
+
+function greg2doty(month = 1, day = 1) {
+    return Math.floor(
+        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5 + day - 1
+)}
+
+function date2doty(date) {
+  return greg2doty(date.getMonth() + 1, date.getDate())
+}
+
+function date2doty1(date) {
+  const doty = greg2doty(date.getMonth() + 1, date.getDate())
+  return doty === 31 ? "Day " + String(doty) : doty
+}
+
+// https://observablehq.com/@dbridges/visualizing-seasonal-daylight
+globe = (root, { width, location, date, hour }) => {
+  const solarAngle = getSolarAngle(date);
+  const solarAngleDeg = toDegrees(solarAngle);
+  const hourSpin = 360 * ((hour + 12) / 24);
+  const spin = (180 + -location[0] + solarAngleDeg + hourSpin);
+  const tilt = -15;
+  const projection = d3.geoOrthographic()
+                       .fitWidth(width, graticule)
+                       .rotate([spin, tilt, 23.5]);
+  const path = d3.geoPath(projection);
+  const unClippedProjection = d3.geoOrthographic()
+                                .clipAngle(null)
+                                .fitWidth(width, graticule)
+                                .rotate([spin, tilt, 23.5]);
+  const unClippedPath = d3.geoPath(unClippedProjection);
+  const staticProjection = d3.geoOrthographic()
+                             .fitWidth(width, graticule)
+                             .rotate([solarAngleDeg - 90, tilt]);
+  const staticPath = d3.geoPath(staticProjection);
+  const background = root.append("g");
+  const earth = root.append("g").style("opacity", 0.75);
+  const foreground = root.append("g");
+  earth.append("path")
+    .attr("d", path({type: "Sphere"}))
+    .attr("fill", colors.ocean)
+    .attr("stroke", "#9ecbda");
+  earth.append("path")
+    .attr("d", path(land))
+    .attr("fill", colors.land);
+  earth.append("path")
+    .attr("d", path(countries))
+    .attr("stroke-width", "1")
+    .attr("fill", "none")
+    .attr("stroke", "#000");
+  root
+    .append("text")
+    .text(`${dote2deco(date.setUTCHours(0, 0, 0, 0) / 86400000 + 719468 + hour / 24, null, "0", true)}`)
+    .attr("x", width / 2)
+    .attr("y", -24 + (width < 400) * 4)
+    .attr("text-anchor", "middle")
+    .attr("font-size", fontSize * (width < 400 ? .8 : width < 500 ? 1 : 1.2))
+    .attr("font-family", "monospace")
+    .attr("fill", "black");
+  root
+    .append("text")
+    .text(`${dote2deco(date.setUTCHours(0, 0, 0, 0) / 86400000 + 719468 + hour / 24, null, "0", true, true)}`)
+    .attr("x", width / 2)
+    .attr("y", -4 + (width < 400) * 1)
+    .attr("text-anchor", "middle")
+    .attr("font-size", fontSize * (width < 400 ? .8 : width < 500 ? 1 : 1.2))
+    .attr("font-family", "monospace")
+    .attr("fill", "black");
+  background.append("path")
+    .attr("d", unClippedPath({type: "Point", coordinates: location}))
+    .attr("fill", "red");
+  const latitudeCoords = (latitude, start, end) => {
+    const longitudes = d3.range(start, end, 2).concat(end);
+    return longitudes.map(d => [d, latitude]);
+  }
+  const correctSpin = d3.geoRotation([-hourSpin, 0]);
+  const correctTilt = d3.geoRotation([6, 0, 0]);
+  /* total angular extent of day/night */
+  const dayExtent = 360 * dayLength(date, location[1]) / 24;
+  const nightExtent = 360 - dayExtent;
+  const dayLine = {
+    type: "LineString",
+    coordinates: latitudeCoords(location[1],
+                                location[0] - dayExtent / 2,
+                                location[0] + dayExtent / 2).map(d => correctSpin(d))
+  };
+  const nightLine = {
+    type: "LineString",
+    coordinates: latitudeCoords(location[1],
+                                location[0] - dayExtent / 2 - nightExtent,
+                                location[0] - dayExtent / 2).map(d => correctSpin(d))
+  };
+  background.append("path")
+    .attr("d", unClippedPath(dayLine))
+    .attr("fill", "none")
+    .attr("stroke", colors.day)
+    .attr("stroke-width", 3);
+  background.append("path")
+    .attr("d", unClippedPath(nightLine))
+    .attr("fill", "none")
+    .attr("stroke", colors.night)
+    .attr("stroke-width", 3);
+  foreground.append("path")
+    .attr("d", path(dayLine))
+    .attr("fill", "none")
+    .attr("stroke", colors.day)
+    .attr("stroke-width", 3);
+  foreground.append("path")
+    .attr("d", path(nightLine))
+    .attr("fill", "none")
+    .attr("stroke", colors.night)
+    .attr("stroke-width", 3);
+  foreground.append("path")
+    .attr("d", path({type: "Point", coordinates: location}))
+    .attr("stroke-width", .5)
+    .attr("stroke", "black")
+    .attr("fill", "red");
+  const shadowPolygon = [[0, -90], [0, 0], [0, 90], [180, 0], [0, -90]].map(d => correctTilt(d));
+  foreground.append("path")
+    .attr("d", staticPath({type: "Polygon", coordinates: [shadowPolygon]}))
+    .attr("fill", "rgba(0, 0, 0, 0.25)");
+}
+
+dayOfYear = (date) => {
+  const yearStart = new Date(date.getFullYear(), 0, 1+60);
+  return Math.floor((date.getTime() - yearStart.getTime())/86400000) + 1
+}
+
+// https://observablehq.com/@dbridges/visualizing-seasonal-daylight
+daylightPlot = (
+  root,
+  { width, height, year, latitude, defaultDate, defaultHour }
+) => {
+  const margin = { top: 24, bottom: 32, left: 48, right: 0 };
+  const chartWidth = width - margin.left - margin.right;
+  const chartHeight = height - margin.top - margin.bottom;
+
+  const xTickValues =
+    width > 380 ? [3, 6, 9, 12, 15, 18, 21] : width > 240 ? [6, 12, 18] : [12];
+
+  const xScale = d3
+    .scaleLinear()
+    .domain([0, 24])
+    .range([margin.left, margin.left + chartWidth])
+    .clamp(true);
+
+  // y-axis scale
+  const yScale = d3
+    .scaleTime()
+    .domain([new Date(year, 0, 1+60), new Date(year, 11, 31+60)])
+    .range([margin.top, margin.top + chartHeight])
+    .clamp(true);
+
+  // y-axis labels
+  const yAxis = d3
+    .axisLeft(yScale)
+    .tickValues(d3.timeMonth.range(new Date(year, 1, 1+60), new Date(year, 12, 1+57)))
+    .tickSize(chartWidth)
+    .tickFormat(date2doty1);
+
+  const xAxis = d3
+    .axisBottom(xScale)
+    .tickValues(xTickValues)
+    .tickSize(chartHeight)
+    .tickFormat((d) => {
+      return `${d / .024}`;
+    });
+
+
+  let date = defaultDate || new Date();
+  let hour = defaultHour != null ? defaultHour : date.getHours();
+
+  const handleMouseMove = (e) => {};
+
+  root
+    .append("rect")
+    .attr("x", margin.left)
+    .attr("y", margin.top)
+    .attr("width", chartWidth)
+    .attr("height", chartHeight)
+    .attr("rx", 0.05 * width)
+    .attr("fill", colors.night);
+
+  root
+    .append("g")
+    .attr("transform", `translate(${margin.left + chartWidth}, 0)`)
+    .call(yAxis)
+    .call((g) => g.select(".domain").remove())
+    .call((g) => g.selectAll(".tick").attr("color", colors.grid))
+    .call((g) => g.selectAll(".tick text").attr("font-size", 1.1 * fontSize))
+    .call((g) => g.selectAll(".tick text").attr("color", "black"))
+    .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
+
+  root
+    .append("g")
+    .attr("transform", `translate(0, ${margin.top})`)
+    .call(xAxis)
+    .call((g) => g.select(".domain").remove())
+    .call((g) => g.selectAll(".tick").attr("color", colors.grid))
+    .call((g) => g.selectAll(".tick text").attr("font-size", 1.1 * fontSize))
+    .call((g) => g.selectAll(".tick text").attr("color", "black"))
+    .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
+
+  root
+    .append("text")
+    .text("Local Solar Time")
+    .attr("x", margin.left + chartWidth / 2)
+    .attr("y", margin.top + chartHeight + margin.bottom - 2)
+    .attr("text-anchor", "middle")
+    .attr("font-size", fontSize * 1.2)
+    .attr("font-family", "sans-serif")
+    .attr("fill", "black");
+
+  const data = yearDates(year)
+    .map((d) => [d, dayLength(d, latitude)])
+    .filter(([_, d]) => d > 0);
+
+  /* Render separate polygons for each continuous sequence of
+   * days with more than 0 hours of day light
+   */
+  const polys = [];
+  let currentPoly = [];
+
+  for (let i = 0; i < data.length; i++) {
+    const currentDate = data[i][0];
+    const prevDate = (data[i - 1] || [])[0];
+
+    if (
+      i === 0 ||
+      currentDate.getTime() - prevDate.getTime() < 3600 * 24 * 1000 * 1.5
+    ) {
+      currentPoly.push(data[i]);
+    } else {
+      polys.push(currentPoly);
+      currentPoly = [data[i]];
+    }
+  }
+
+  polys.push(currentPoly);
+
+  polys.forEach((p) => {
+    const points = [
+      ...p.map(([d, l]) => `${xScale(12 - l / 2)},${yScale(d)}`),
+      ...p.reverse().map(([d, l]) => `${xScale(12 + l / 2)},${yScale(d)}`)
+    ].join(" ");
+
+    root.append("polygon").attr("points", points).attr("fill", colors.day);
+  });
+
+  /* Legend */
+  const legend = root
+    .append("g")
+    .attr("transform", `translate(${margin.left + chartWidth / 2 - 64})`);
+
+  legend
+    .append("rect")
+    .attr("rx", 5)
+    .attr("width", 1.4 * fontSize)
+    .attr("height", 1.4 * fontSize)
+    .attr("fill", colors.day);
+
+  legend
+    .append("text")
+    .attr("x", 24)
+    .attr("y", 17)
+    .attr("font-size", 1.4 * fontSize)
+    .attr("font-family", "sans-serif")
+    .text("Day");
+
+  legend
+    .append("rect")
+    .attr("x", 72)
+    .attr("rx", 5)
+    .attr("width", 1.4 * fontSize)
+    .attr("height", 1.4 * fontSize)
+    .attr("fill", colors.night);
+
+  legend
+    .append("text")
+    .attr("x", 96)
+    .attr("y", 17)
+    .attr("font-size", 1.4 * fontSize)
+    .attr("font-family", "sans-serif")
+    .text("Night");
+
+  /* Time and date controls */
+
+  const dateLine = root.append("g");
+
+  const updateControlPositions = () => {
+    dateLine
+      .select("line")
+      .attr("x1", xScale(0))
+      .attr("y1", yScale(date))
+      .attr("x2", xScale(24))
+      .attr("y2", yScale(date));
+
+    dateLine
+      .select("rect")
+      .attr("x", xScale(0))
+      .attr("y", yScale(date) - 4);
+
+    root
+      .select("#time-control")
+      .attr("cx", xScale(hour))
+      .attr("cy", yScale(date));
+  };
+
+  const dispatchDateHourChange = () => {
+    const detail = { date, hour };
+    const changeEvent = new CustomEvent(EventType.DateHourChange, {
+      detail,
+      bubbles: true
+    });
+    root.node().dispatchEvent(changeEvent);
+  };
+
+  const handleDateLineDrag = ({ y }) => {
+    date = yScale.invert(y);
+    updateControlPositions();
+    dispatchDateHourChange();
+  };
+
+  const handleTimeCircleDrag = ({ x }) => {
+    hour = xScale.invert(x);
+    updateControlPositions();
+    dispatchDateHourChange();
+  };
+
+  dateLine.append("line").attr("stroke-width", 4).attr("stroke", "red");
+
+  dateLine
+    .append("rect")
+    .attr("width", chartWidth)
+    .attr("height", 8)
+    .attr("fill", "rgba(0, 0, 0, 0)")
+    .style("cursor", "row-resize")
+    .call(d3.drag().on("drag", handleDateLineDrag));
+
+  root
+    .append("circle")
+    .attr("id", "time-control")
+    .attr("r", 12)
+    .attr("fill", "red")
+    .attr("stroke-width", .6)
+    .attr("stroke", "black")
+    .style("cursor", "pointer")
+    .call(d3.drag().on("drag", handleTimeCircleDrag));
+
+  updateControlPositions();
+}
+
+fontSize = 15;
+
+getSolarAngle = (date) => (dayOfYear(date) + 10) / 365 * Math.PI * 2 - Math.PI / 2;
+
+/*
+ * Formulas uses the CBM model as reviewed here:
+ * https://www.ikhebeenvraag.be/mediastorage/FSDocument/171/Forsythe+-+A+model+comparison+for+daylength+as+a+function+of+latitude+and+day+of+year+-+1995.pdf
+ */
+dayLength = (date, latitude) => {
+  const yearStart = new Date(date.getFullYear(), 0, 1);
+  const dayOfYear = Math.floor((date.getTime() - yearStart.getTime())/86400000) + 1;
+  const revAngle = 0.2163108 + 2 * Math.atan(0.9671396 * Math.tan(0.00860 * (dayOfYear - 186)));
+  const decAngle = Math.asin(0.39795 * Math.cos(revAngle));
+  /* daylight coefficient selected for apparent sunrise/sunset */
+  const p = 0.8333
+  const intResult =
+    (Math.sin((p * Math.PI) / 180) +
+      Math.sin((latitude * Math.PI) / 180) * Math.sin(decAngle)) /
+    (Math.cos((latitude * Math.PI) / 180) * Math.cos(decAngle));
+  if (intResult >= 1) return 24;
+  if (intResult <= -1) return 0;
+  return 24 - 24 * Math.acos(intResult) / Math.PI;
+}
+
+yearDates = (year) => {
+  const startDate = new Date(year, 0, 1+60);
+  const endDate = new Date(year + 1, 0, 1+60);
+  return d3.timeDay.range(startDate, endDate);
+}
+
+height = 0.65 * width;
+
+EventType = ({
+  LocationChange: "LOCATION_CHANGE",
+  DateHourChange: "DATE_HOUR_CHANGE"
+})
 
 colors = ({
-  night: "#91afd6",
+  night: "#719fb6",
   day: "#ffe438",
   grid: "#4b6a79",
   ocean: "#adeeff",
@@ -830,9 +635,13 @@ colors = ({
   sun: "#ffe438"
 })
 
-label_style = `font: 13px/1.2 var(--sans-serif); width: 120px; font-size: ${label_size};`
+toRadians = (val) => val * Math.PI / 180
 
-label_size = '80%'
+toDegrees = (val) => val * 180 / Math.PI;
+
+land = topojson.feature(world, world.objects.land);
+
+d3 = require("d3@7", "d3-geo-projection@3")
 
 function input(config) {
   let {
@@ -864,7 +673,7 @@ function input(config) {
       }" />`
     );
   form.append(
-    html`<output name=output style="font: 14px Menlo, Consolas, monospace; margin-left: 0.5em;"></output>`
+    html`<output name=output style="font: 14px Menlo, Consolas, monospace; margin-left: 0.1em; text-align:center;"></output>`
   );
   if (title)
     form.prepend(
@@ -918,14 +727,6 @@ function input(config) {
 
 d3format = require("d3-format@1")
 
-// https://talk.observablehq.com/t/legend-placement-options/8407/3
-move = {
-  d3.select(plot)
-    .select("div")
-    .raise() // Places swatch below the plot
-    .style("float", "right"); // Floats the swatch on the right.
-}
-
 // https://observablehq.com/@enjalot/draggable-world-map-coordinates-input
 function worldMapCoordinates(config = {}, dimensions) {
   const {
@@ -938,14 +739,13 @@ function worldMapCoordinates(config = {}, dimensions) {
   const formEl = html`<form style="width: ${width}px;"></form>`;
   const context = DOM.context2d(width, height-width/11.5);
   const canvas = context.canvas;
-  canvas.style.margin = `-6px 0 ${width > 400 ? -86 : -24}px`;
+  canvas.style.margin = `-45px 2px -26px 2px`;
   const projection = d3
     .geoEquirectangular()
     .precision(0.1)
     .fitSize([width, height], { type: "Sphere" }).rotate([-153, 0]);
   const path = d3.geoPath(projection, context).pointRadius(2.5);
   formEl.append(canvas);
-
   function draw() {
     context.fillStyle = "#fff";
     context.fillRect(0, 0, width, height);
@@ -966,20 +766,19 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.strokeStyle = `#000`;
     context.stroke();
     context.fillStyle = `#000`;
-    context.font = width < 760 ? "12px serif" : width < 990 ? "11.6px serif" : "18px serif";
+    context.font = width < 760 ? "15px serif" : width < 990 ? "18px serif" : "24px serif";
     d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 84.5 - (width < 400) * 3.6])));
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -62])));
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -65])));
     context.beginPath(), path(night), context.fillStyle = "rgba(0,0,255,0.1)", context.fill();
-    context.beginPath(); path.pointRadius(17); path({type: "Point", coordinates: sun}); context.strokeStyle = "#0008"; context.fillStyle = "#ff0a"; context.lineWidth = 1; context.stroke(); context.fill();
+    context.beginPath(); path.pointRadius(17); path({type: "Point", coordinates: sun}); context.strokeStyle = "#0008"; context.fillStyle = "#ff08"; context.lineWidth = 1; context.stroke(); context.fill();
     if (lon != null && lat != null) {
       path.pointRadius(17); context.strokeStyle = "black";
       context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.lineWidth = 1; context.stroke();
-      context.lineWidth = 6; 
+      context.lineWidth = 6;
       path.pointRadius(14); context.strokeStyle = "red";
       context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.stroke();
     }
   }
-
   let drag = d3.drag()
     .on("drag", (event) => {
       let coords = projection.invert([event.x, event.y]);
@@ -988,9 +787,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       draw();
       canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
     })
-
   d3.select(canvas).call(drag)
-
   canvas.onclick = function(ev) {
     const { offsetX, offsetY } = ev;
     let coords = projection.invert([offsetX, offsetY]);
@@ -999,190 +796,38 @@ function worldMapCoordinates(config = {}, dimensions) {
     draw();
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   };
-
   draw();
   const form = input({
     type: "worldMapCoordinates",
     title,
     description,
-    display: v => (width > 400) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: 18px monospace; position: relative; top: 58px; margin-bottom: 48px;">
-        <span style="color: #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
-        &nbsp; &nbsp; 
-        <span style="color: #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
-        &nbsp; &nbsp; 
-        <span style="color: #000;">Latitude:</span> ${lat != null ? ((lati2turn1(lat))).toFixed(0) : ""} 
-      </div>` : '',
+    display: v => (width > 400) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: ${width / 50}px monospace; position: relative; top: -${width / 20}px;  margin-bottom: -.4em;">
+            <span style="color: #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
+            &nbsp; &nbsp;
+            <span style="color: #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
+            &nbsp; &nbsp;
+            <span style="color: #000;">Latitude:</span> ${lat != null ? ((lati2turn1(lat))).toFixed(0) : ""}
+          </div>` : '',
     getValue: () => [lon != null ? lon : null, lat != null ? lat : null],
     form: formEl
   });
   return form;
 }
 
-function dote({ year = 0, day = 0, month = 3, dotm = 1, week = 0, dotw = 3,
-                hour = 0, minute = 0, second = 0, millisecond = 0,
-                zone = 0, utc = -9, degree = -162 } = {}) {
-  const cycle = Math.floor((year >= 0 ? year : year - 399) / 400),
-    yote = year - cycle * 400;
-  return (
-    yote * 365 + cycle * 146097 + Math.floor(yote / 4) - Math.floor(yote / 100)
-    + day + Math.floor((153 * (month > 2 ? month - 3 : month + 9) + 2) / 5) + dotm - 1
-    + week * 7 + dotw - 3 + (hour + minute / 60 + second / 3600 + millisecond / 3600000)
-    / 24 - (zone + Math.floor(utc / 2.4) + 4 + Math.floor((degree + 162) / 36)) / 10
-  );
+sun = {
+  const now = new Date;
+  const day = new Date(+now).setUTCHours(0, 0, 0, 0);
+  const t = solar.century(now);
+  const longitude = (day - now) / 864e5 * 360 - 180;
+  return [longitude - solar.equationOfTime(t) / 4, solar.declination(t)];
 }
 
-function doty(args) {
-    const days = dote(args),
-      cycle = Math.floor((days >= 0 ? days : days - 146096) / 146097),
-      dotc = days - cycle * 146097,
-      yotc = Math.floor((dotc - Math.floor(dotc / 1460)
-        + Math.floor(dotc / 36524) - Math.floor(dotc / 146096)) / 365);
-    return [yotc + cycle * 400,
-            dotc + Math.floor(yotc / 100) - yotc * 365 - Math.floor(yotc / 4)];
-}
+night = d3.geoCircle()
+    .radius(90)
+    .center(antipode(sun))
+  ()
 
-function year(args) {
-    const days = dote(args),
-      cycle = Math.floor((days >= 0 ? days : days - 146096) / 146097),
-      dotc = days - cycle * 146097;
-    return (
-        dotc - Math.floor(dotc / 1460) + Math.floor(dotc / 36524)
-        - Math.floor(dotc / 146096)) / 365 + cycle * 400;
-}
+antipode = ([longitude, latitude]) => [longitude + 180, -latitude]
 
-function leap(year = 1970) {
-    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
-}
-
-function deco(args, {lead = "0", minus = false, emoji = false} = {}) {
-  let zone = args.zone, utc = args.utc, degree = args.degree;
-  args.zone = 0; args.utc = -9; args.degree = -162;
-  zone = zone ?? 0 + Math.floor((utc ?? -9) / 2.4) + 4 + Math.floor(
-    ((degree ?? -162) + 162) / 36);
-  let [year, days] = doty(args);
-  return `${emoji ? "🗓️" : ""}${
-  (year + minus).toString().padStart(4, lead)}${minus ? "-" : "+"}${
-  Math.abs(Math.floor(days = days - (365 + leap(year + 1)) * minus)
-  ).toString().padStart(3, lead)}${emoji ? "🕰️" : ""}️${
-  Math.abs(days % 1 * 10).toFixed(4)}${zone ? (minus ? "+" : "-") + String(zone) : ""}`
-}
-
-currentDeco = deco({day: 719468, millisecond: unix, zone: long2zone(coordinates[0])})
-
-currentDoty = currentDeco.slice(5)
-
-dotyDate = currentDoty.slice(0, 3)
-
-dotyDek = currentDoty.slice(0, 2)
-
-dotyDotd = currentDoty[2]
-
-barTime = (unix2dote(unix, long2zone(coordinates[0]))[0]).toString().split(".")[1].slice(0, 8)
-
-barCents = barTime.slice(0, 2)
-
-barDD = barTime[0]
-
-barMils = barTime.slice(1, 3)
-
-barBeats = barTime.slice(3, 5)
-
-barMb = barTime.slice(5)
+solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
 ```
-
-<style>
-  .tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
-    fill: #000;
-    font-family: sans-serif;
-    font-size: 20px;
-    text-anchor: middle;
-  }
-  .timeLabel {
-    text-anchor: start;
-  }
-  .timeBar, .timeBarFull {
-    x: 1px;
-    height: 25px;
-    rx: 5px;
-    stroke: #aaa;
-  }
-  .timeBar {
-    fill: #e8e8e8;
-  }
-  .timeBarFull {
-    fill: #ccffff;
-  }
-  .background {
-    fill: white;
-  }
-  .tickDek, .tickDotd, .tickDotd1, .tickC, .tickC1, .tickM, .tickM1, .tickB, .tickB1 {
-    stroke: none;
-    fill: #666;
-    width: 1px;
-  }
-&#10;  div.observablehq:has(> svg#barClock) {
-    text-align: center;
-    margin-top: -12px;
-  }
-  div.observablehq:has(> svg#clock) {
-    text-align: center;
-    margin-top: -46px;
-  }
-  body > div > div:nth-child(6) > form {
-    margin-top: -60px;
-  }
-&#10;
-#clock {
-  stroke: #000;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
-&#10;#clock #rim {
-  fill: none;
-  stroke: #999;
-  stroke-width: 3px;
-}
-&#10;#clock .second-hand {
-  stroke-width:3;
-}
-&#10;#clock .minute-hand {
-  stroke-width:8;
-  stroke-linecap:round;
-}
-&#10;#clock .hour-hand {
-  stroke-width:12;
-  stroke-linecap:round;
-}
-&#10;#clock .hands-cover {
-  stroke-width:3;
-  fill:#fff;
-}
-&#10;#clock .second-tick {
-  stroke-width:3;
-  fill:#000;
-}
-&#10;#clock .hour-tick {
-  stroke-width:8; // same as the minute hand
-}
-&#10;#clock .second-label {
-  font-size: 12px;
-}
-&#10;#clock .hour-label {
-  font-size: 24px;
-}
-&#10;svg.clock-btm {
-  position: relative;
-  left: ${width > 700 ? 198 : 0}px;
-  top: ${width > 700 ? -475.5 : 0}px;
-  margin-bottom: ${width > 700 ? -479 : 0}px;
-}
-svg.clock-top {
-  position: relative;
-  left: ${width > 700 ? -195 : 0}px;
-}
-body > div > div > form > div > canvas {
-  margin-top: ${width > 700 ? -21 : 0}px !important;
-}
-.lineplotlegend-swatch {
-  font-size: 15px;
-}
-</style>
