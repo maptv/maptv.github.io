@@ -23,7 +23,7 @@ viewof location = worldMapCoordinates([162, 0], [width * 2 / 3, width / 2.5])
 ``` {ojs}
 //| echo: false
 app = {
-  const svg = d3.select(DOM.svg(width / 1.5, height / 1.18));
+  const svg = d3.select(DOM.svg(width / 1.5, height / 1.03));
   svg.style("user-select", "none")
      .style("-webkit-user-select", "none");
   const margin = {top: 0, left: 10, right: 6, bottom: 0, inner: 3};
@@ -37,24 +37,24 @@ app = {
     svg.selectAll("#plot *").remove();
     svg.select("#plot").call(daylightPlot, {
       width: columnWidth / 1.8,
-      height: (height - margin.top - margin.bottom) / 1.19,
+      height: (height - margin.top - margin.bottom) / 1.69,
       year: new Date().getFullYear(),
       latitude: location[1],
       defaultDate: selection.date,
       defaultHour: selection.hour
     })
   }
-  const renderSolarSystem = () => {
-    svg.selectAll("#solar-system *").remove();
-    svg.selectAll("#solar-system").call(solarSystem,
-                                        columnWidth / 1.3,
-                                        location,
-                                        selection.date,
-                                        selection.hour);
-  }
   const renderGlobe = () => {
     svg.selectAll("#globe *").remove();
     svg.selectAll("#globe").call(globe, { width: columnWidth / 1.3, location, ...selection });
+  }
+  const renderSolarSystem = () => {
+    svg.selectAll("#solar-system *").remove();
+    svg.selectAll("#solar-system").call(solarSystem,
+                                        columnWidth * 1.3,
+                                        location,
+                                        selection.date,
+                                        selection.hour);
   }
   const setSelection = (newSelection, forceRender = false) => {
     const prev = {...selection};
@@ -73,11 +73,11 @@ app = {
     .attr("id", "plot")
     .attr("transform", `translate(${margin.left})`);
   svg.append("g")
-    .attr("id", "solar-system")
-    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 1.8}, ${margin.top + height / 9.2})`);
-  svg.append("g")
     .attr("id", "globe")
-    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 1.78}, ${margin.top + height / 3.85 + Number(columnWidth < 300) * 16})`);
+    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 1.78}, ${margin.top + height / 98.85 + Number(columnWidth < 300) * 16})`);
+  svg.append("g")
+    .attr("id", "solar-system")
+    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 98.8}, ${margin.top + height / 1.28})`);
   setSelection(selection, true);
   const handleDateHourChange = ({ target, detail: { date, hour }}) => {
     if (date != null && hour != null) setSelection({...selection, date, hour});
@@ -737,9 +737,9 @@ function worldMapCoordinates(config = {}, dimensions) {
   lon = lon != null ? lon : null;
   lat = lat != null ? lat : null;
   const formEl = html`<form style="width: ${width}px;"></form>`;
-  const context = DOM.context2d(width, height-width/11.5);
+  const context = DOM.context2d(width, height-width/8.2);
   const canvas = context.canvas;
-  canvas.style.margin = `-45px 2px -26px 2px`;
+  canvas.style.margin = `-40px 2px -26px 2px`;
   const projection = d3
     .geoEquirectangular()
     .precision(0.1)
@@ -766,9 +766,9 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.strokeStyle = `#000`;
     context.stroke();
     context.fillStyle = `#000`;
-    context.font = width < 760 ? "15px serif" : width < 990 ? "18px serif" : "24px serif";
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 84.5 - (width < 400) * 3.6])));
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -65])));
+    context.font = width < 760 ? "14px serif" : width < 990 ? "17px serif" : "23px serif";
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 82.5 - (width < 400) * 3.6])));
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -62])));
     context.beginPath(), path(night), context.fillStyle = "rgba(0,0,255,0.1)", context.fill();
     context.beginPath(); path.pointRadius(17); path({type: "Point", coordinates: sun}); context.strokeStyle = "#0008"; context.fillStyle = "#ff08"; context.lineWidth = 1; context.stroke(); context.fill();
     if (lon != null && lat != null) {
@@ -801,7 +801,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     type: "worldMapCoordinates",
     title,
     description,
-    display: v => (width > 400) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: ${width / 50}px monospace; position: relative; top: -${width / 20}px;  margin-bottom: -.4em;">
+    display: v => (width > 400) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: ${width / 50}px monospace; position: relative; top: -${width / 36}px;  margin-bottom: -.4em;">
             <span style="color: #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
             &nbsp; &nbsp;
             <span style="color: #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
