@@ -1,68 +1,64 @@
----
-title: Dec Time
-image: /asset/deidek.svg
-draft: true
-citation:
-  url: https://maptv.github.io/dec/time
-license: CC BY-SA
-format:
-  html:
-    shift-heading-level-by: 2
-    include-after-body:
-      - ../../asset/cite.html
-      - ../../asset/style.html
-      - ../../asset/stamp.html
-      - ../../asset/tooltip.html
-  commonmark: default
-filters:
-  - ../../asset/date.lua
-  - include-code-files
----
+# Dec Snap
+Martin Laptev
+2024+249
 
-My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to display animated or interactive plots like the bar chart, clocks, solar terminator map, and line chart below.
+My website provides many examples of the [Quarto](https://quarto.org)
+publishing and the [Dec](../../dec) measurement systems in action. I
+leverage Quarto support for the [Observable](https://observablehq.com/)
+data analysis and visualization system to display animated or
+interactive plots like the bar chart, clocks, solar terminator map, and
+line chart below.
 
-
-```{ojs}
+``` {ojs}
 //| echo: false
-viewof location = worldMapCoordinates([162, 0], [width * .998, Math.round((21 / 40) * width)])
+viewof location = worldMapCoordinates([162, 0], [width, Math.round((21 / 40) * width)])
 app = {
   const svg = d3.select(DOM.svg(width, height));
+  
   svg.style("user-select", "none")
      .style("-webkit-user-select", "none");
-  const margin = {top: 0, left: 10, right: 10, bottom: 0, inner: 3};
+  
+  const margin = {top: 0, left: 16, right: 16, bottom: 0, inner: 32};
   const contentWidth = width - margin.left - margin.right - margin.inner;
   const columnWidth = contentWidth / 2;
+    
   let selection = {
     date: new Date(),
     hour: new Date().getHours()
   }
+  
   const renderPlot = () => {
     svg.selectAll("#plot *").remove();
     svg.select("#plot").call(daylightPlot, {
-      width: columnWidth / 1.28,
-      height: height / 1.51 - margin.top - margin.bottom,
+      width: columnWidth,
+      height: height - margin.top - margin.bottom,
       year: new Date().getFullYear(),
       latitude: location[1],
       defaultDate: selection.date,
       defaultHour: selection.hour
     })
   }
-  const renderGlobe = () => {
-    svg.selectAll("#globe *").remove();
-    svg.selectAll("#globe").call(globe, { width: columnWidth * 1.22, location, ...selection });
-  }
+  
   const renderSolarSystem = () => {
     svg.selectAll("#solar-system *").remove();
     svg.selectAll("#solar-system").call(solarSystem,
-                                        columnWidth / 1.08,
+                                        columnWidth,
                                         location,
                                         selection.date,
                                         selection.hour);
   }
+  
+  const renderGlobe = () => {
+    svg.selectAll("#globe *").remove();
+    svg.selectAll("#globe").call(globe, { width: columnWidth / 1.08, location, ...selection });
+  }
+  
   const setSelection = (newSelection, forceRender = false) => {
     const prev = {...selection};
     selection = newSelection;
+    
     svg.node().value = selection;
+    
     if (forceRender) {
       renderPlot();
       renderSolarSystem();
@@ -72,25 +68,32 @@ app = {
       renderGlobe();
     }
   }
-  svg.append("g")
-    .attr("id", "solar-system")
-    .attr("transform", `translate(${margin.left}, ${margin.top + height / 7.6})`);
+  
   const plot = svg.append("g")
     .attr("id", "plot")
-    .attr("transform", `translate(${margin.left}, ${margin.top + height / 4})`);
+    .attr("transform", `translate(${margin.left})`);
+  
+  svg.append("g")
+    .attr("id", "solar-system")
+    .attr("transform", `translate(${margin.left + margin.inner + columnWidth}, ${margin.top + height / 7.5})`);
+  
   svg.append("g")
     .attr("id", "globe")
-    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 1.25}, ${margin.top + Number(columnWidth < 300) * 16})`);
+    .attr("transform", `translate(${margin.left + margin.inner + 1.04 * columnWidth}, ${margin.top + height / 3.05 + Number(columnWidth < 300) * 16})`);
+
   setSelection(selection, true);
+  
   const handleDateHourChange = ({ target, detail: { date, hour }}) => {
     if (date != null && hour != null) setSelection({...selection, date, hour});
   }
+  
   svg.node().addEventListener(EventType.DateHourChange, handleDateHourChange, false);
+    
   return svg.node();
 }
 ```
 
-```{ojs}
+``` {ojs}
 //| echo: false
 //| output: false
 function lati2turn1(degrees = -180, e = 3) {
@@ -133,14 +136,16 @@ function year2leap(year = 1970) {
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 solarSystem = (root, width, location, date, hour) => {
   const earthRadius = 0.04 * width;
-  const sunRadius = 0.08 * width;
+  const sunRadius = 0.06 * width;
   const solarSystemRadius = width / 2 - 20;
   const stretch = 0.3;
+
   const solarAngle = getSolarAngle(date);
   const solarAngleDeg = (solarAngle * 180) / Math.PI;
   const x = solarSystemRadius * Math.sin(solarAngle);
   const y = stretch * solarSystemRadius * Math.cos(solarAngle);
   const spin = 180 + -location[0] + solarAngleDeg + 360 * ((hour + 12) / 24);
+
   const earthGeo = { type: "Sphere" };
   const projection = d3
     .geoOrthographic()
@@ -154,6 +159,7 @@ solarSystem = (root, width, location, date, hour) => {
     .translate([0, 0]);
   const path = d3.geoPath(projection).pointRadius(1.5);
   const staticPath = d3.geoPath(staticProjection);
+
   const solarSystem = root
     .append("g")
     .attr("transform", `translate(${width / 2})`);
@@ -192,9 +198,9 @@ solarSystem = (root, width, location, date, hour) => {
         (solarSystemRadius + 18) * 1.18 * stretch * Math.cos(startMonthAngle)
       )
       .attr("text-anchor", "middle")
-      .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
+      .attr("font-size", fontSize)
       .attr("dominant-baseline", "middle")
-      .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
+      .attr("font-size", fontSize)
       .attr("font-family", "sans-serif")
       .attr("fill", "black");
   });
@@ -209,13 +215,17 @@ solarSystem = (root, width, location, date, hour) => {
     .attr("y2", 1.5 * earthRadius)
     .attr("stroke", "blue")
     .attr("transform", `rotate(-23.5)`);
+
   earth.append("path").attr("d", path(earthGeo)).attr("fill", colors.ocean);
+
   earth.append("path").attr("d", path(land)).attr("fill", colors.land);
+  
   earth.append("path")
   .attr("d", path(countries))
   .attr("stroke-width", ".075")
   .attr("fill", "none")
   .attr("stroke", "#555");
+
   const shadowPolygon = [
     [0, -90],
     [0, 0],
@@ -223,10 +233,12 @@ solarSystem = (root, width, location, date, hour) => {
     [180, 0],
     [0, -90]
   ];
+
   earth
     .append("path")
     .attr("d", staticPath({ type: "Polygon", coordinates: [shadowPolygon] }))
     .attr("fill", "rgba(0, 0, 0, 0.5)");
+
   earth
     .append("path")
     .attr("d", path({ type: "Point", coordinates: location }))
@@ -257,84 +269,125 @@ globe = (root, { width, location, date, hour }) => {
   const hourSpin = 360 * ((hour + 12) / 24);
   const spin = (180 + -location[0] + solarAngleDeg + hourSpin);
   const tilt = -15;
+    
   const projection = d3.geoOrthographic()
                        .fitWidth(width, graticule)
                        .rotate([spin, tilt, 23.5]);
   const path = d3.geoPath(projection);
+  
   const unClippedProjection = d3.geoOrthographic()
                                 .clipAngle(null)
                                 .fitWidth(width, graticule)
                                 .rotate([spin, tilt, 23.5]);
   const unClippedPath = d3.geoPath(unClippedProjection);
+  
   const staticProjection = d3.geoOrthographic()
                              .fitWidth(width, graticule)
                              .rotate([solarAngleDeg - 90, tilt]);
   const staticPath = d3.geoPath(staticProjection);
-  const background = root.append("g");
+  
+  const background = root.append("g");  
   const earth = root.append("g").style("opacity", 0.75);
   const foreground = root.append("g");
+ 
   earth.append("path")
     .attr("d", path({type: "Sphere"}))
     .attr("fill", colors.ocean)
     .attr("stroke", "#9ecbda");
+  
   earth.append("path")
     .attr("d", path(land))
     .attr("fill", colors.land);
+  
   earth.append("path")
     .attr("d", path(countries))
     .attr("stroke-width", "1")
     .attr("fill", "none")
     .attr("stroke", "#000");
+  
+  root
+    .append("text")
+    .text(`${dote2deco(date.setUTCHours(0, 0, 0, 0) / 86400000 + 719468 + hour / 24, null, "0", true)}`)
+    .attr("x", width / 2)
+    .attr("y", -24 + (width < 400) * 4)
+    .attr("text-anchor", "middle")
+    .attr("font-size", fontSize * (width < 600 ? 1 : 1.2))
+    .attr("font-family", "monospace")
+    .attr("fill", "black");
+  
+  root
+    .append("text")
+    .text(`${dote2deco(date.setUTCHours(0, 0, 0, 0) / 86400000 + 719468 + hour / 24, null, "0", true, true)}`)
+    .attr("x", width / 2)
+    .attr("y", -4 + (width < 400) * 1)
+    .attr("text-anchor", "middle")
+    .attr("font-size", fontSize * (width < 600 ? 1 : 1.2))
+    .attr("font-family", "monospace")
+    .attr("fill", "black");
+  
   background.append("path")
     .attr("d", unClippedPath({type: "Point", coordinates: location}))
     .attr("fill", "red");
+  
   const latitudeCoords = (latitude, start, end) => {
     const longitudes = d3.range(start, end, 2).concat(end);
     return longitudes.map(d => [d, latitude]);
   }
+  
   const correctSpin = d3.geoRotation([-hourSpin, 0]);
   const correctTilt = d3.geoRotation([6, 0, 0]);
+  
   /* total angular extent of day/night */
   const dayExtent = 360 * dayLength(date, location[1]) / 24;
   const nightExtent = 360 - dayExtent;
+    
   const dayLine = {
     type: "LineString",
     coordinates: latitudeCoords(location[1],
                                 location[0] - dayExtent / 2,
                                 location[0] + dayExtent / 2).map(d => correctSpin(d))
   };
+  
   const nightLine = {
     type: "LineString",
     coordinates: latitudeCoords(location[1],
                                 location[0] - dayExtent / 2 - nightExtent,
                                 location[0] - dayExtent / 2).map(d => correctSpin(d))
   };
+  
   background.append("path")
     .attr("d", unClippedPath(dayLine))
     .attr("fill", "none")
     .attr("stroke", colors.day)
     .attr("stroke-width", 3);
+  
   background.append("path")
     .attr("d", unClippedPath(nightLine))
     .attr("fill", "none")
     .attr("stroke", colors.night)
     .attr("stroke-width", 3);
+  
   foreground.append("path")
     .attr("d", path(dayLine))
     .attr("fill", "none")
     .attr("stroke", colors.day)
     .attr("stroke-width", 3);
+  
   foreground.append("path")
     .attr("d", path(nightLine))
     .attr("fill", "none")
     .attr("stroke", colors.night)
     .attr("stroke-width", 3);
+  
   foreground.append("path")
     .attr("d", path({type: "Point", coordinates: location}))
     .attr("stroke-width", .5)
     .attr("stroke", "black")
     .attr("fill", "red");
+  
+    
   const shadowPolygon = [[0, -90], [0, 0], [0, 90], [180, 0], [0, -90]].map(d => correctTilt(d));
+  
   foreground.append("path")
     .attr("d", staticPath({type: "Polygon", coordinates: [shadowPolygon]}))
     .attr("fill", "rgba(0, 0, 0, 0.25)");
@@ -406,7 +459,7 @@ daylightPlot = (
     .call(yAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    //.call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 265 ? 1 : 1.2)))
+    .call((g) => g.selectAll(".tick text").attr("font-size", 1.1 * fontSize))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
 
@@ -416,7 +469,7 @@ daylightPlot = (
     .call(xAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    //.call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 265 ? 1 : 1.2)))
+    .call((g) => g.selectAll(".tick text").attr("font-size", 1.1 * fontSize))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
 
@@ -426,7 +479,7 @@ daylightPlot = (
     .attr("x", margin.left + chartWidth / 2)
     .attr("y", margin.top + chartHeight + margin.bottom - 2)
     .attr("text-anchor", "middle")
-    .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
+    .attr("font-size", fontSize * 1.2)
     .attr("font-family", "sans-serif")
     .attr("fill", "black");
 
@@ -474,36 +527,33 @@ daylightPlot = (
   legend
     .append("rect")
     .attr("rx", 5)
-    .attr("x", -25)
-    .attr("y", 6)
-    .attr("width", fontSize * (width < 265 ? 1 : 1.2))
-    .attr("height", fontSize * (width < 265 ? 1 : 1.2))
-    .attr("fill", colors.night);
-
-  legend
-    .append("text")
-    .attr("x", -8)
-    .attr("y", 19)
-    .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
-    .attr("font-family", "sans-serif")
-    .text("Nighttime");
-
-  legend
-    .append("rect")
-    .attr("x", 58)
-    .attr("rx", 5)
-    .attr("y", 6)
-    .attr("width", fontSize * (width < 265 ? 1 : 1.2))
-    .attr("height", fontSize * (width < 265 ? 1 : 1.2))
+    .attr("width", 1.4 * fontSize)
+    .attr("height", 1.4 * fontSize)
     .attr("fill", colors.day);
 
   legend
     .append("text")
-    .attr("x", 75)
-    .attr("y", 19)
-    .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
+    .attr("x", 24)
+    .attr("y", 17)
+    .attr("font-size", 1.4 * fontSize)
     .attr("font-family", "sans-serif")
-    .text("Daytime");
+    .text("Day");
+
+  legend
+    .append("rect")
+    .attr("x", 72)
+    .attr("rx", 5)
+    .attr("width", 1.4 * fontSize)
+    .attr("height", 1.4 * fontSize)
+    .attr("fill", colors.night);
+
+  legend
+    .append("text")
+    .attr("x", 96)
+    .attr("y", 17)
+    .attr("font-size", 1.4 * fontSize)
+    .attr("font-family", "sans-serif")
+    .text("Night");
 
   /* Time and date controls */
 
@@ -572,7 +622,7 @@ daylightPlot = (
   updateControlPositions();
 }
 
-fontSize = 12;
+fontSize = 14;
 
 getSolarAngle = (date) => (dayOfYear(date) + 10) / 365 * Math.PI * 2 - Math.PI / 2;
 
@@ -585,20 +635,25 @@ dayLength = (date, latitude) => {
   const dayOfYear = Math.floor((date.getTime() - yearStart.getTime())/86400000) + 1;
   const revAngle = 0.2163108 + 2 * Math.atan(0.9671396 * Math.tan(0.00860 * (dayOfYear - 186)));
   const decAngle = Math.asin(0.39795 * Math.cos(revAngle));
+  
   /* daylight coefficient selected for apparent sunrise/sunset */
   const p = 0.8333
+
   const intResult =
     (Math.sin((p * Math.PI) / 180) +
       Math.sin((latitude * Math.PI) / 180) * Math.sin(decAngle)) /
     (Math.cos((latitude * Math.PI) / 180) * Math.cos(decAngle));
+  
   if (intResult >= 1) return 24;
   if (intResult <= -1) return 0;
+    
   return 24 - 24 * Math.acos(intResult) / Math.PI;
 }
 
 yearDates = (year) => {
   const startDate = new Date(year, 0, 1+60);
   const endDate = new Date(year + 1, 0, 1+60);
+  
   return d3.timeDay.range(startDate, endDate);
 }
 
@@ -643,7 +698,7 @@ function input(config) {
   const wrapper = html`<div></div>`;
   if (!form)
     form = html`<form>
-	<input name=input type=${type} />
+    <input name=input type=${type} />
   </form>`;
   Object.keys(attributes).forEach(key => {
     const val = attributes[key];
@@ -720,15 +775,16 @@ function worldMapCoordinates(config = {}, dimensions) {
   lon = lon != null ? lon : null;
   lat = lat != null ? lat : null;
   const formEl = html`<form style="width: ${width}px;"></form>`;
-  const context = DOM.context2d(width, height-width/13.2);
+  const context = DOM.context2d(width, height-width/11.5);
   const canvas = context.canvas;
-  canvas.style.margin = `0px 0px -26px 0px`;
+  canvas.style.margin = `-21px 0 ${width < 400 ? -48 : width < 800 ? -86 : -90}px`;
   const projection = d3
     .geoEquirectangular()
     .precision(0.1)
     .fitSize([width, height], { type: "Sphere" }).rotate([-153, 0]);
   const path = d3.geoPath(projection, context).pointRadius(2.5);
   formEl.append(canvas);
+
   function draw() {
     context.fillStyle = "#fff";
     context.fillRect(0, 0, width, height);
@@ -749,19 +805,20 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.strokeStyle = `#000`;
     context.stroke();
     context.fillStyle = `#000`;
-    context.font = width < 760 ? "14px serif" : width < 990 ? "17px serif" : "23px serif";
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 84 - (width < 400) * 3.6])));
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -66])));
+    context.font = width < 760 ? "12px serif" : width < 990 ? "11.6px serif" : "18px serif";
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 84.5 - (width < 400) * 3.6])));
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -62])));
     context.beginPath(), path(night), context.fillStyle = "rgba(0,0,255,0.1)", context.fill();
     context.beginPath(); path.pointRadius(17); path({type: "Point", coordinates: sun}); context.strokeStyle = "#0008"; context.fillStyle = "#ff08"; context.lineWidth = 1; context.stroke(); context.fill();
     if (lon != null && lat != null) {
       path.pointRadius(17); context.strokeStyle = "black";
       context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.lineWidth = 1; context.stroke();
-      context.lineWidth = 6;
+      context.lineWidth = 6; 
       path.pointRadius(14); context.strokeStyle = "red";
       context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.stroke();
     }
   }
+
   let drag = d3.drag()
     .on("drag", (event) => {
       let coords = projection.invert([event.x, event.y]);
@@ -770,7 +827,9 @@ function worldMapCoordinates(config = {}, dimensions) {
       draw();
       canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
     })
+
   d3.select(canvas).call(drag)
+
   canvas.onclick = function(ev) {
     const { offsetX, offsetY } = ev;
     let coords = projection.invert([offsetX, offsetY]);
@@ -779,17 +838,19 @@ function worldMapCoordinates(config = {}, dimensions) {
     draw();
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   };
+
   draw();
+
   const form = input({
     type: "worldMapCoordinates",
     title,
     description,
-    display: v => (width > 400) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: ${width / 50}px monospace; position: relative; top: -${width / 36}px;  margin-bottom: -.4em;">
+    display: v => (width > 400) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: 18px monospace; position: relative; top: 3.5em;  margin-bottom: 2.6em;">
             <span style="color: #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
-            &nbsp; &nbsp;
+            &nbsp; &nbsp; 
             <span style="color: #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
-            &nbsp; &nbsp;
-            <span style="color: #000;">Latitude:</span> ${lat != null ? ((lati2turn1(lat))).toFixed(0) : ""}
+            &nbsp; &nbsp; 
+            <span style="color: #000;">Latitude:</span> ${lat != null ? ((lati2turn1(lat))).toFixed(0) : ""} 
           </div>` : '',
     getValue: () => [lon != null ? lon : null, lat != null ? lat : null],
     form: formEl
@@ -813,12 +874,4 @@ night = d3.geoCircle()
 antipode = ([longitude, latitude]) => [longitude + 180, -latitude]
 
 solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
-```
-
-```{=html}
-<style>
-svg g g.tick text {
-  font-size: 1.5em !important;
-}
-</style>
 ```
