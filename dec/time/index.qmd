@@ -21,12 +21,11 @@ filters:
 
 My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to display animated or interactive plots like the bar chart, clocks, solar terminator map, and line chart below.
 
-
 ```{ojs}
 //| echo: false
 // https://observablehq.com/@fheyen/barchart-clock
 barChart = {
-const W = width > 1250 ? width * 2 / 3 : width > 1150 ? width * 3 / 4 : width > 1050 ? width * 4 / 5 : width > 950 ? width * 5 / 6 : width > 850 ? width : width > 750 ? width * 1.02 : width > 650 ? width * 1.06 : width > 550 ? width * 1.1 : width > 450 ? width * 1.14 : width * 1.18;
+const W = width;
   const H = 88;
   const barX = 1;
   const firstBarY = 1;
@@ -156,7 +155,7 @@ const W = width > 1250 ? width * 2 / 3 : width > 1150 ? width * 3 / 4 : width > 
   return svg.node();
 }
 barChart1 = {
-const W = width > 1250 ? width * 2 / 3 : width > 1150 ? width * 3 / 4 : width > 1050 ? width * 4 / 5 : width > 950 ? width * 5 / 6 : width > 850 ? width : width > 750 ? width * 1.02 : width > 650 ? width * 1.06 : width > 550 ? width * 1.1 : width > 450 ? width * 1.14 : width * 1.18;
+const W = width;
   const H = 88;
   const barX = 1;
   const firstBarY = 1;
@@ -288,7 +287,16 @@ const W = width > 1250 ? width * 2 / 3 : width > 1150 ? width * 3 / 4 : width > 
   svg.attr("id", "barClock");
   return svg.node();
 }
+```
+
+:::{.clocks}
+\${clock}\${clock1}
+:::
+
+```{ojs}
+//| echo: false
 viewof location = worldMapCoordinates([162, 0], [width * .998, Math.round((21 / 40) * width)])
+// https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 app = {
   const svg = d3.select(DOM.svg(width, height));
   svg.style("user-select", "none")
@@ -350,6 +358,346 @@ app = {
     if (date != null && hour != null) setSelection({...selection, date, hour});
   }
   svg.node().addEventListener(EventType.DateHourChange, handleDateHourChange, false);
+  return svg.node();
+}
+```
+
+```{ojs}
+//| echo: false
+// https://observablehq.com/@d3/simple-clock
+// https://observablehq.com/@drio/lets-build-an-analog-clock
+clock = {
+  const clockRadius = 200,
+    margin = 50,
+    w = (clockRadius + margin) * 2,
+    h = (clockRadius + margin) * 2,
+    hourHandLength = (2 * clockRadius) / 3,
+    minuteHandLength = clockRadius,
+    secondHandLength = clockRadius - 12,
+    secondHandBalance = 30,
+    secondTickStart = clockRadius,
+    secondTickLength = -10,
+    hourTickStart = clockRadius,
+    hourTickLength = -18,
+    secondLabelRadius = clockRadius + 16,
+    secondLabelYOffset = 5,
+    hourLabelRadius = clockRadius - 40,
+    hourLabelYOffset = 7,
+    radians = Math.PI / 180;
+  const ten = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 10]);
+  const sto = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 100]);
+  const handData = [
+    {
+      type: "hour",
+      value: 0,
+      length: -hourHandLength,
+      scale: ten
+    },
+    {
+      type: "minute",
+      value: 0,
+      length: -minuteHandLength,
+      scale: sto
+    },
+    {
+      type: "second",
+      value: 0,
+      length: -secondHandLength,
+      scale: sto,
+      balance: secondHandBalance
+    }
+  ];
+  function drawClock() {
+    // create all the clock elements
+    updateData(); //draw them in the correct starting position
+    const face = svg
+      .append("g")
+      .attr("id", "clock-face")
+      .attr("transform", `translate(${[w / 2, h / 2]})`);
+    // add marks for seconds
+    face
+      .selectAll(".second-tick")
+      .data(d3.range(0, 100))
+      .enter()
+      .append("line")
+      .attr("class", "second-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", secondTickStart)
+      .attr("y2", secondTickStart + secondTickLength)
+      .attr("transform", d => `rotate(${sto(d)})`);
+    // and labels...
+    face
+      .selectAll(".second-label")
+      .data(d3.range(0, 100, 5))
+      .enter()
+      .append("text")
+      .attr("class", "second-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
+      .attr(
+        "y",
+        d =>
+          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
+      )
+      .text(d => d);
+    // ... and hours
+    face
+      .selectAll(".hour-tick")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("line")
+      .attr("class", "hour-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", hourTickStart)
+      .attr("y2", hourTickStart + hourTickLength)
+      .attr("transform", d => `rotate(${ten(d)})`);
+    face
+      .selectAll(".hour-label")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("text")
+      .attr("class", "hour-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
+      .attr(
+        "y",
+        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
+      )
+      .text(d => d);
+    const hands = face.append("g").attr("id", "clock-hands");
+    hands
+      .selectAll("line")
+      .data(handData)
+      .enter()
+      .append("line")
+      .attr("class", d => d.type + "-hand")
+      .attr("x1", 0)
+      .attr("y1", d => d.balance || 0)
+      .attr("x2", 0)
+      .attr("y2", d => d.length)
+      .attr("transform", d => `rotate(${d.scale(d.value)})`);
+    face
+      .append("g")
+      .attr("id", "face-overlay")
+      .append("circle")
+      .attr("class", "hands-cover")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("r", clockRadius / 20);
+  }
+  function moveHands() {
+    const sel = d3
+      .select("#clock-hands-final")
+      .selectAll("line")
+      .data(handData)
+      .transition();
+    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
+    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
+  }
+  function updateData() {
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : declock[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : declock.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : declock.slice(4, 6);
+  }
+  const svg = d3
+    .create("svg")
+    .attr("viewBox", [0, 0, w, h])
+    .style("max-width", "325px")
+    .attr("class", "clock-top")
+    .attr("id", "clock");
+  svg
+    .append("text")
+    .text("+" + selected)
+    .attr("x", clockRadius + margin)
+    .attr("y", clockRadius * 2 + margin * 1.975)
+    .attr("text-anchor", "middle")
+    .attr("font-size", 32)
+    .attr("font-family", "monospace");
+  drawClock();
+  // Animation
+  const interval = setInterval(
+    () => {
+      updateData();
+      moveHands();
+    },
+    !fancySecondsOFF ? 10 : 864
+  );
+  invalidation.then(() => clearInterval(interval));
+  return svg.node();
+}
+clock1 = {
+  const clockRadius = 200,
+    margin = 50,
+    w = (clockRadius + margin) * 2,
+    h = (clockRadius + margin) * 2,
+    hourHandLength = (2 * clockRadius) / 3,
+    minuteHandLength = clockRadius,
+    secondHandLength = clockRadius - 12,
+    secondHandBalance = 30,
+    secondTickStart = clockRadius,
+    secondTickLength = -10,
+    hourTickStart = clockRadius,
+    hourTickLength = -18,
+    secondLabelRadius = clockRadius + 16,
+    secondLabelYOffset = 5,
+    hourLabelRadius = clockRadius - 40,
+    hourLabelYOffset = 7,
+    radians = Math.PI / 180;
+  const ten = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 10]);
+  const sto = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 100]);
+  const handData = [
+    {
+      type: "hour",
+      value: 0,
+      length: -hourHandLength,
+      scale: ten
+    },
+    {
+      type: "minute",
+      value: 0,
+      length: -minuteHandLength,
+      scale: sto
+    },
+    {
+      type: "second",
+      value: 0,
+      length: -secondHandLength,
+      scale: sto,
+      balance: secondHandBalance
+    }
+  ];
+  function drawClock() {
+    // create all the clock elements
+    updateData(); //draw them in the correct starting position
+    const face = svg
+      .append("g")
+      .attr("id", "clock-face")
+      .attr("transform", `translate(${[w / 2, h / 2]})`);
+    // add marks for seconds
+    face
+      .selectAll(".second-tick")
+      .data(d3.range(0, 100))
+      .enter()
+      .append("line")
+      .attr("class", "second-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", secondTickStart)
+      .attr("y2", secondTickStart + secondTickLength)
+      .attr("transform", d => `rotate(${sto(d)})`);
+    // and labels...
+    face
+      .selectAll(".second-label")
+      .data(d3.range(0, 100, 5))
+      .enter()
+      .append("text")
+      .attr("class", "second-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
+      .attr(
+        "y",
+        d =>
+          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
+      )
+      .text(d => d);
+    // ... and hours
+    face
+      .selectAll(".hour-tick")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("line")
+      .attr("class", "hour-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", hourTickStart)
+      .attr("y2", hourTickStart + hourTickLength)
+      .attr("transform", d => `rotate(${ten(d)})`);
+    face
+      .selectAll(".hour-label")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("text")
+      .attr("class", "hour-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
+      .attr(
+        "y",
+        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
+      )
+      .text(d => d);
+    const hands = face.append("g").attr("id", "clock-hands");
+    hands
+      .selectAll("line")
+      .data(handData)
+      .enter()
+      .append("line")
+      .attr("class", d => d.type + "-hand")
+      .attr("x1", 0)
+      .attr("y1", d => d.balance || 0)
+      .attr("x2", 0)
+      .attr("y2", d => d.length)
+      .attr("transform", d => `rotate(${d.scale(d.value)})`);
+    face
+      .append("g")
+      .attr("id", "face-overlay")
+      .append("circle")
+      .attr("class", "hands-cover")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("r", clockRadius / 20);
+  }
+  function moveHands() {
+    const sel = d3
+      .select("#clock-hands-final")
+      .selectAll("line")
+      .data(handData)
+      .transition();
+    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
+    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
+  }
+  function updateData() {
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10) : declockM[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10 % 1 * 100) : declockM.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExactM * 10 % 1 * 100 % 1 * 100 : declockM.slice(4, 6);
+  }
+  const svg = d3
+    .create("svg")
+    .attr("viewBox", [0, 0, w, h])
+    .style("max-width", "325px")
+    .attr("class", "clock-btm")
+    .attr("id", "clock");
+  svg
+    .append("text")
+    .text("-" + selectedM)
+    .attr("x", clockRadius + margin)
+    .attr("y", clockRadius * 2 + margin * 1.975)
+    .attr("text-anchor", "middle")
+    .attr("font-size", 32)
+    .attr("font-family", "monospace");
+  drawClock();
+  // Animation
+  const interval = setInterval(
+    () => {
+      updateData();
+      moveHands();
+    },
+    !fancySecondsOFF ? 10 : 864
+  );
+  invalidation.then(() => clearInterval(interval));
   return svg.node();
 }
 ```
@@ -1040,6 +1388,15 @@ night = d3.geoCircle()
   ()
 antipode = ([longitude, latitude]) => [longitude + 180, -latitude]
 solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
+viewof fancySecondsOFF = Inputs.toggle({
+  label: "Ticking clock",
+  value: false
+})
+declock = (selectedExact * 10).toFixed(4);
+declockM = (Math.abs(selectedExact - 1) * 10).toFixed(4);
+selected = `${declock}-${selectedZone}`
+selectedM = `${declockM}-${selectedZone}`
+selectedZone = selectedDote[1]
 ```
 
 ```{=html}
@@ -1079,5 +1436,46 @@ svg g g.tick text {
     fill: #666;
     width: 1px;
   }
+#clock {
+  stroke: #000;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+#clock #rim {
+  fill: none;
+  stroke: #999;
+  stroke-width: 3px;
+}
+#clock .second-hand {
+  stroke-width:3;
+}
+#clock .minute-hand {
+  stroke-width:8;
+  stroke-linecap:round;
+}
+#clock .hour-hand {
+  stroke-width:12;
+  stroke-linecap:round;
+}
+#clock .hands-cover {
+  stroke-width:3;
+  fill:#fff;
+}
+#clock .second-tick {
+  stroke-width:3;
+  fill:#000;
+}
+#clock .hour-tick {
+  stroke-width:8; // same as the minute hand
+}
+#clock .second-label {
+  font-size: 12px;
+}
+#clock .hour-label {
+  font-size: 24px;
+}
+.clocks * {
+  margin: 0px;
+  padding: 0px;
+}
 </style>
 ```
