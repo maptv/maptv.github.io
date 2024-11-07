@@ -1734,6 +1734,12 @@ theme_Flat = `
   right: calc(-1px - var(--thumb-radius));
 }
 `
+move = {
+  d3.select(pentBar)
+    .select("div")
+    .raise() // Places swatch below the plot
+    .style("float", "right"); // Floats the swatch on the right.
+}
 ```
 
 <style>
@@ -1812,5 +1818,8 @@ svg g g.tick text {
 .clocks * {
   margin: 0px;
   padding: 0px;
+}
+.pentbarlegend-swatch {
+  font-size: 19px;
 }
 </style>
