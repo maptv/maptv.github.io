@@ -1,39 +1,15 @@
----
-title: Dec Time
-image: /asset/deidek.svg
-draft: true
-citation:
-  url: https://maptv.github.io/dec/time
-license: CC BY-SA
-format:
-  html:
-    shift-heading-level-by: 2
-    include-after-body:
-      - ../../asset/cite.html
-      - ../../asset/style.html
-      - ../../asset/stamp.html
-      - ../../asset/tooltip.html
-  commonmark: default
-filters:
-  - ../../asset/date.lua
-  - include-code-files
----
+# Dec Time
+Martin Laptev
+2024+251
 
-My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the clocks🕓and bar📊charts below, which show the Dec time since the start, \${styledTime}, and until the end, \${styledTimeN}, of today.
+My website provides many examples of the [Quarto](https://quarto.org)
+publishing and the [Dec](../../dec) measurement systems in action. I
+leverage Quarto support for the [Observable](https://observablehq.com/)
+data analysis and visualization system to display animated or
+interactive plots like the bar chart, clocks, solar terminator map, and
+line chart below.
 
-Dec uses [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) to create [submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20) of days, such as the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays), millidays, and centimillidays indicated by the shortest, longest, and thinnest clock🕓hands below, respectively. The Dec times beneath the clocks🕓combine these submultiples with the Dec time zone, \${styledZone}, selected by the red⭕️circle on the [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺️further below.
-
-Drag the red⭕️circle across the [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of) (vertical↕️gray lines) on the map🗺️to see how changing time zones affects the time.
-Only the first digit of the Dec time, the deciday, varies across time zones, because the 10 Dec time zones, numbered 0 through 9 on the map🗺️, are each 1 decday wide. Subtracting the time zone from the time yields the time in Zone 0.
-
-The plot to the lower left of the map🗺️visualizes the nighttime (blue) and daytime (yellow) time of day (x-axis) throughout every day of the year (y-axis) at the latitude of the red⭕️circle on the map🗺️. The↕️vertical position of the red<font color=red>—</font>line (time of day) and the↔️horizontal position of the red🔴dot (day of the year)
-on the plot control the🌐globes above and to the right of the plot.
-
-:::{.clocks}
-\${clock}\${clock1}
-:::
-
-```{ojs}
+``` {ojs}
 //| echo: false
 // https://observablehq.com/@fheyen/barchart-clock
 barChart = {
@@ -55,6 +31,7 @@ const W = width;
   // Background bars to show where 100% lies
   svg.selectAll('.background')
     .data([
+      // 'dek', 'dotd',
       'dd', "mils", 'beats'])
     .enter()
     .append('rect')
@@ -155,7 +132,7 @@ const W = width;
     .attr('height', d=>d%2===0? 9:6)
   // Labels
   svg.selectAll('.timeLabel')
-    .data([`+${barDD}.`, `${barMils}`, `${barBeats}`])
+    .data([`${barDD}`, `${barMils}`, `${barBeats}`])
     .enter()
     .append('text')
     .attr('class', 'timeLabel')
@@ -288,7 +265,7 @@ const W = width;
     .attr('height', d=>d%2===0? 9:6)
   // Labels
   svg.selectAll('.timeLabel')
-    .data([`-${barDDN}.`, `${barMilsN}`, `${barBeatsN}`])
+    .data([`${barDDN}`, `${barMilsN}`, `${barBeatsN}`])
     .enter()
     .append('text')
     .attr('class', 'timeLabel')
@@ -298,6 +275,16 @@ const W = width;
   svg.attr("id", "barClock");
   return svg.node();
 }
+```
+
+<div class="clocks">
+
+${clock}${clock1}
+
+</div>
+
+``` {ojs}
+//| echo: false
 viewof location = worldMapCoordinates([162, 0], [width * .998, Math.round((21 / 40) * width)])
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 app = {
@@ -365,7 +352,49 @@ app = {
 }
 ```
 
-```{ojs}
+``` {ojs}
+//| echo: false
+viewof schedule = Inputs.radio([2, 3, 4, 5], {label: "Workdays per pent", value: 3})
+viewof intervals = Inputs.form([
+  interval([0, 1], {step: .01, value: [.3, .7], label: '0 or 5', width: 195, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}=${formatDecimal(end)}`}),
+  interval([0, 1], {step: .01, value: [.3, .7], label: '1 or 6', width: 195, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}=${formatDecimal(end)}`}),
+  interval([0, 1], {step: .01, value: [.3, .7], label: '2 or 7', width: 195, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}=${formatDecimal(end)}`}),
+  interval([0, 1], {step: .01, value: [0, 0], label: '3 or 8', width: 195, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}=${formatDecimal(end)}`}),
+  interval([0, 1], {step: .01, value: [0, 0], label: '4 or 9', width: 195, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}=${formatDecimal(end)}`}),
+])
+pentBar = Plot.plot({
+  x: {label: "Day of the dek", labelOffset: 36, labelArrow: true, labelAnchor: "center"},
+  style: {fontSize: "16px"},
+  marginBottom: 40,
+  marginLeft: 45,
+  width: width,
+  className: "pentbar",
+  color: {scheme: "Set1", legend: "swatches", reverse: true, className: "pentbarlegend"},
+  y: {label: "Proportion of the day", domain: [1, 0], tickPadding: 6, tickSize: -4, labelOffset: 44, labelArrow: true, labelAnchor: "center"},
+  marks: [
+  Plot.barY(durations, {x: "label", y: "duration", fill: "group"}),
+  Plot.textY(
+      durations,
+      Plot.stackY(
+        Plot.groupX(
+          { y: "first", text: "first",
+          },
+          {
+            x: "label",
+            z: "group",
+            y: "duration",
+            text: (d) => (d.duration < .0001 ? null : formatDecimal(d.duration)),
+            fill: "white",
+            stroke: "black",
+            fontSize: 28,
+          }
+        )
+      )
+    ),
+  ]})
+```
+
+``` {ojs}
 //| echo: false
 // https://observablehq.com/@d3/simple-clock
 // https://observablehq.com/@drio/lets-build-an-analog-clock
@@ -506,9 +535,9 @@ clock = {
     sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : barTime[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : barTime.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : barTime.slice(4, 6);
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : declock[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : declock.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : declock.slice(4, 6);
   }
   const svg = d3
     .create("svg")
@@ -518,7 +547,7 @@ clock = {
     .attr("id", "clock");
   svg
     .append("text")
-    .text(`+${barTime[0]}.${barTime.slice(1, 5)}-${selectedZone}`)
+    .text("+" + selected)
     .attr("x", clockRadius + margin)
     .attr("y", clockRadius * 2 + margin * 1.975)
     .attr("text-anchor", "middle")
@@ -673,9 +702,9 @@ clock1 = {
     sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10) : barTimeN[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10 % 1 * 100) : barTimeN.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExactM * 10 % 1 * 100 % 1 * 100 : barTimeN.slice(4, 6);
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10) : declockM[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10 % 1 * 100) : declockM.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExactM * 10 % 1 * 100 % 1 * 100 : declockM.slice(4, 6);
   }
   const svg = d3
     .create("svg")
@@ -685,7 +714,7 @@ clock1 = {
     .attr("id", "clock");
   svg
     .append("text")
-    .text(`-${barTimeN[0]}.${barTimeN.slice(1, 5)}-${selectedZone}`)
+    .text("-" + selectedM)
     .attr("x", clockRadius + margin)
     .attr("y", clockRadius * 2 + margin * 1.975)
     .attr("text-anchor", "middle")
@@ -705,7 +734,7 @@ clock1 = {
 }
 ```
 
-```{ojs}
+``` {ojs}
 //| echo: false
 //| output: false
 unix = {
@@ -729,7 +758,6 @@ function unix2dote1(unix, zone, offset = 719468) {
 selectedDote = unix2dote(unix, long2zone(location[0]))
 selectedExact = selectedDote[0] % 1
 selectedExactM = Math.abs(selectedExact - 1)
-selectedZone = selectedDote[1]
 barTime = selectedExact.toString().slice(2)
 barTimeN = selectedExactM.toString().slice(2)
 barCents = barTime.slice(0, 2)
@@ -913,11 +941,6 @@ globe = (root, { width, location, date, hour }) => {
     .attr("fill", colors.ocean)
     .attr("stroke", "#9ecbda");
   earth.append("path")
-    .attr("d", path(graticule))
-    .attr("stroke-width", "1")
-    .attr("fill", "none")
-    .attr("stroke", "#888");
-  earth.append("path")
     .attr("d", path(land))
     .attr("fill", colors.land);
   earth.append("path")
@@ -1048,7 +1071,7 @@ daylightPlot = (
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
     .append("text")
-    .text("Time of day (millidays)")
+    .text("Local Solar Time")
     .attr("x", margin.left + chartWidth / 2)
     .attr("y", margin.top + chartHeight + margin.bottom - 2)
     .attr("text-anchor", "middle")
@@ -1233,7 +1256,7 @@ function input(config) {
   const wrapper = html`<div></div>`;
   if (!form)
     form = html`<form>
-	<input name=input type=${type} />
+    <input name=input type=${type} />
   </form>`;
   Object.keys(attributes).forEach(key => {
     const val = attributes[key];
@@ -1401,35 +1424,318 @@ viewof fancySecondsOFF = Inputs.toggle({
   label: "Ticking clock",
   value: false
 })
-function setStyle(content, style = {}) {
-  function yiq(color) {
-    const {r, g, b} = d3.rgb(color);
-    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
-  }
+declock = (selectedExact * 10).toFixed(4);
+declockM = (Math.abs(selectedExact - 1) * 10).toFixed(4);
+selected = `${declock}-${selectedZone}`
+selectedM = `${declockM}-${selectedZone}`
+selectedZone = selectedDote[1]
+durations = [].concat(...nested)
+nested = Array.from({length: intervals.length}, (_, i) => ([
+  {
+  label: `${i} or ${i+5}`,
+  duration: intervals[i][1] !== intervals[i][0] ? intervals[i][0] : 1,
+  group: "Rest"
+},
+  {
+  label: `${i} or ${i+5}`,
+  duration: intervals[i][1]-intervals[i][0],
+  group: "Work"
+},
+  {
+  label: `${i} or ${i+5}`,
+  duration: intervals[i][1] !== intervals[i][0] ? 1-intervals[i][1] : null,
+  group: "Rest"
+  }]))
+schedules = [
+  [[.2, .8], [.2, .8], [0, 0], [0, 0], [0, 0]],
+  [[.3, .7], [.3, .7], [.3, .7], [0, 0], [0, 0]],
+  [[.35, .65], [.35, .65], [.35, .65], [.35, .65], [0, 0]],
+  [[.38, .62], [.38, .62], [.38, .62], [.38, .62], [.38, .62]],
+]
+set(viewof intervals, schedules[schedule-2])
+function interval(range = [], options = {}) {
+  const [min = 0, max = 1] = range;
   const {
-    background,
-    color = yiq(background) >= 0.6 ? "#111" : "white",
-    padding = "0 1px",
-    borderRadius = "4px",
-    fontWeight = 900,
-    fontSize = "1em",
-    ...rest
-  } = typeof style === "string" ? {background: style} : style;
-  return htl.html`<span style=${{
-    background,
+    step = .001,
+    label = null,
+    value = [min, max],
+    format = ([start, end]) => `${start} … ${end}`,
     color,
-    padding,
-    borderRadius,
-    fontWeight,
-    ...rest
-  }}>${content}</span>`;
+    width,
+    theme,
+  } = options;
+  const __ns__ = DOM.uid('scope').id;
+  const css = `
+#${__ns__} {
+  font: 13px/1.2 var(--sans-serif);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: auto;
 }
-styledZone = setStyle(selectedZone, d3.color("chartreuse").formatHex())
-styledTime = setStyle(`+${barTime[0]}.${barTime.slice(1, 5)}`, d3.color("cyan").formatHex())
-styledTimeN = setStyle(`-${barTimeN[0]}.${barTimeN.slice(1, 5)}`, d3.color("pink").formatHex())
+@media only screen and (min-width: 30em) {
+  #${__ns__} {
+    flex-wrap: nowrap;
+    width: 360px;
+  }
+}
+#${__ns__} .label {
+  width: 60px;
+  padding: 5px 0 4px 0;
+  margin-right: .5px;
+  flex-shrink: 0;
+}
+#${__ns__} .form {
+  display: flex;
+  width: 100%;
+}
+#${__ns__} .range {
+  flex-shrink: 1;
+  width: 100%;
+}
+#${__ns__} .range-slider {
+  width: 100%;
+}
+  `;
+  const $range = rangeInput({min, max, value: [value[0], value[1]], step, color, width, theme});
+  const $output = html`<output>`;
+  const $view = html`<div id=${__ns__}>
+${label == null ? '' : html`<div class="label">${label}`}
+<div class=form>
+  <div class=range>
+    ${$range}<div class=range-output style="display: inline-block;">${$output}</div>
+  </div>
+</div>
+${html`<style>${css}`}
+  `;
+  const update = () => {
+    const content = format([$range.value[0], $range.value[1]]);
+    if(typeof content === 'string') $output.value = content;
+    else {
+      while($output.lastChild) $output.lastChild.remove();
+      $output.appendChild(content);
+    }
+  };
+  $range.oninput = update;
+  update();
+  return Object.defineProperty($view, 'value', {
+    get: () => $range.value,
+    set: ([a, b]) => {
+      $range.value = [a, b];
+      update();
+    },
+  });
+}
+function rangeInput(options = {}) {
+  const {
+    min = 0,
+    max = 100,
+    step = 'any',
+    value: defaultValue = [min, max],
+    color,
+    width,
+    theme = theme_Flat,
+  } = options;
+  const controls = {};
+  const scope = randomScope();
+  const clamp = (a, b, v) => v < a ? a : v > b ? b : v;
+  const html = htl.html;
+  // Will be used to sanitize values while avoiding floating point issues.
+  const input = html`<input type=range ${{min, max, step}}>`;
+  const dom = html`<div class=${`${scope} range-slider`} style=${{
+    color,
+    width: cssLength(width),
+  }}>
+  ${controls.track = html`<div class="range-track">
+    ${controls.zone = html`<div class="range-track-zone">
+      ${controls.range = html`<div class="range-select" tabindex=0>
+        ${controls.min = html`<div class="thumb thumb-min" tabindex=0>`}
+        ${controls.max = html`<div class="thumb thumb-max" tabindex=0>`}
+      `}
+    `}
+  `}
+  ${html`<style>${theme.replace(/:scope\b/g, '.'+scope)}`}
+</div>`;
+  let value = [], changed = false;
+  Object.defineProperty(dom, 'value', {
+    get: () => [...value],
+    set: ([a, b]) => {
+      value = sanitize(a, b);
+      updateRange();
+    },
+  });
+  const sanitize = (a, b) => {
+    a = isNaN(a) ? min : ((input.value = a), input.valueAsNumber);
+    b = isNaN(b) ? max : ((input.value = b), input.valueAsNumber);
+    return [Math.min(a, b), Math.max(a, b)];
+  }
+  const updateRange = () => {
+    const ratio = v => (v - min) / (max - min);
+    dom.style.setProperty('--range-min', `${ratio(value[0]) * 100}%`);
+    dom.style.setProperty('--range-max', `${ratio(value[1]) * 100}%`);
+  };
+  const dispatch = name => {
+    dom.dispatchEvent(new Event(name, {bubbles: true}));
+  };
+  const setValue = (vmin, vmax) => {
+    const [pmin, pmax] = value;
+    value = sanitize(vmin, vmax);
+    updateRange();
+    // Only dispatch if values have changed.
+    if(pmin === value[0] && pmax === value[1]) return;
+    dispatch('input');
+    changed = true;
+  };
+  setValue(...defaultValue);
+  // Mousemove handlers.
+  const handlers = new Map([
+    [controls.min, (dt, ov) => {
+      const v = clamp(min, ov[1], ov[0] + dt * (max - min));
+      setValue(v, ov[1]);
+    }],
+    [controls.max, (dt, ov) => {
+      const v = clamp(ov[0], max, ov[1] + dt * (max - min));
+      setValue(ov[0], v);
+    }],
+    [controls.range, (dt, ov) => {
+      const d = ov[1] - ov[0];
+      const v = clamp(min, max - d, ov[0] + dt * (max - min));
+      setValue(v, v + d);
+    }],
+  ]);
+  // Returns client offset object.
+  const pointer = e => e.touches ? e.touches[0] : e;
+  // Note: Chrome defaults "passive" for touch events to true.
+  const on  = (e, fn) => e.split(' ').map(e => document.addEventListener(e, fn, {passive: false}));
+  const off = (e, fn) => e.split(' ').map(e => document.removeEventListener(e, fn, {passive: false}));
+  let initialX, initialV, target, dragging = false;
+  function handleDrag(e) {
+    // Gracefully handle exit and reentry of the viewport.
+    if(!e.buttons && !e.touches) {
+      handleDragStop();
+      return;
+    }
+    dragging = true;
+    const w = controls.zone.getBoundingClientRect().width;
+    e.preventDefault();
+    handlers.get(target)((pointer(e).clientX - initialX) / w, initialV);
+  }
+  function handleDragStop(e) {
+    off('mousemove touchmove', handleDrag);
+    off('mouseup touchend', handleDragStop);
+    if(changed) dispatch('change');
+  }
+  invalidation.then(handleDragStop);
+  dom.ontouchstart = dom.onmousedown = e => {
+    dragging = false;
+    changed = false;
+    if(!handlers.has(e.target)) return;
+    on('mousemove touchmove', handleDrag);
+    on('mouseup touchend', handleDragStop);
+    e.preventDefault();
+    e.stopPropagation();
+    target = e.target;
+    initialX = pointer(e).clientX;
+    initialV = value.slice();
+  };
+  controls.track.onclick = e => {
+    if(dragging) return;
+    changed = false;
+    const r = controls.zone.getBoundingClientRect();
+    const t = clamp(0, 1, (pointer(e).clientX - r.left) / r.width);
+    const v = min + t * (max - min);
+    const [vmin, vmax] = value, d = vmax - vmin;
+    if(v < vmin) setValue(v, v + d);
+    else if(v > vmax) setValue(v - d, v);
+    if(changed) dispatch('change');
+  };
+  return dom;
+}
+function randomScope(prefix = 'scope-') {
+  return prefix + (performance.now() + Math.random()).toString(32).replace('.', '-');
+}
+function formatDecimal(number) {
+  return number == 1 ? number : (Math.round(number * 100) / 100).toString().slice(1)
+}
+cssLength = v => v == null ? null : typeof v === 'number' ? `${v}px` : `${v}`
+theme_Flat = `
+/* Options */
+:scope {
+  color: #3b99fc;
+  width: 240px;
+}
+
+:scope {
+  position: relative;
+  display: inline-block;
+  --thumb-size: 15px;
+  --thumb-radius: calc(var(--thumb-size) / 2);
+  padding: var(--thumb-radius) 0;
+  margin: 2px;
+  vertical-align: middle;
+}
+:scope .range-track {
+  box-sizing: border-box;
+  position: relative;
+  height: 7px;
+  background-color: hsl(0, 0%, 80%);
+  overflow: visible;
+  border-radius: 4px;
+  padding: 0 var(--thumb-radius);
+}
+:scope .range-track-zone {
+  box-sizing: border-box;
+  position: relative;
+}
+:scope .range-select {
+  box-sizing: border-box;
+  position: relative;
+  left: var(--range-min);
+  width: calc(var(--range-max) - var(--range-min));
+  cursor: ew-resize;
+  background: currentColor;
+  height: 7px;
+  border: inherit;
+}
+/* Expands the hotspot area. */
+:scope .range-select:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: var(--thumb-size);
+  left: 0;
+  top: calc(2px - var(--thumb-radius));
+}
+:scope .range-select:focus,
+:scope .thumb:focus {
+  outline: none;
+}
+:scope .thumb {
+  box-sizing: border-box;
+  position: absolute;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+
+  background: #fcfcfc;
+  top: -4px;
+  border-radius: 100%;
+  border: 1px solid hsl(0,0%,55%);
+  cursor: default;
+  margin: 0;
+}
+:scope .thumb:active {
+  box-shadow: inset 0 var(--thumb-size) #0002;
+}
+:scope .thumb-min {
+  left: calc(-1px - var(--thumb-radius));
+}
+:scope .thumb-max {
+  right: calc(-1px - var(--thumb-radius));
+}
+`
 ```
 
-```{=html}
 <style>
 svg g g.tick text {
   font-size: 1.5em !important;
@@ -1504,8 +1810,7 @@ svg g g.tick text {
   font-size: 24px
 }
 .clocks * {
-  margin: -10px 0px 10px 0px;
+  margin: 0px;
   padding: 0px;
 }
 </style>
-```

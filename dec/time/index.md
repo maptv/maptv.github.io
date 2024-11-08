@@ -1,39 +1,48 @@
----
-title: Dec Time
-image: /asset/deidek.svg
-draft: true
-citation:
-  url: https://maptv.github.io/dec/time
-license: CC BY-SA
-format:
-  html:
-    shift-heading-level-by: 2
-    include-after-body:
-      - ../../asset/cite.html
-      - ../../asset/style.html
-      - ../../asset/stamp.html
-      - ../../asset/tooltip.html
-  commonmark: default
-filters:
-  - ../../asset/date.lua
-  - include-code-files
----
+# Dec Time
+Martin Laptev
+2024+252
 
-My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the clocks🕓and bar📊charts below, which show the Dec time since the start, \${styledTime}, and until the end, \${styledTimeN}, of today.
+My website provides many examples of the [Quarto](https://quarto.org)
+publishing and the [Dec](../../dec) measurement systems in action. I
+leverage Quarto support for the [Observable](https://observablehq.com/)
+data analysis and visualization system to create animated and
+interactive plots like the clocks and bar charts below, which show the
+Dec🕰️️time since the start (top or left) and until the end (bottom or
+right) of today.
 
-Dec uses [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) to create [submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20) of days, such as the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays), millidays, and centimillidays indicated by the shortest, longest, and thinnest clock🕓hands below, respectively. The Dec times beneath the clocks🕓combine these submultiples with the Dec time zone, \${styledZone}, selected by the red⭕️circle on the [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺️further below.
+The clocks and bar charts all break the Dec🕰️️time into 3 parts:
+[decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays)
+(shortest clock hands and top bars), millidays (longest clock hands and
+middle bars), and centimillidays (thinnest clock hand and bottom bars).
 
-Drag the red⭕️circle across the [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of) (vertical↕️gray lines) on the map🗺️to see how changing time zones affects the time.
-Only the first digit of the Dec time, the deciday, varies across time zones, because the 10 Dec time zones, numbered 0 through 9 on the map🗺️, are each 1 decday wide. Subtracting the time zone from the time yields the time in Zone 0.
+the current time at the longitude of the red circle on the [solar
+terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
+map beneath the clock. Drag the red circle across the time zone borders
+(vertical gray lines) on the map to see how changing time zones affects
+the time.and digits in a Dec🕰️️time can be displayed together or
+separately. The bar chart and clocks below
 
-The plot to the lower left of the map🗺️visualizes the nighttime (blue) and daytime (yellow) time of day (x-axis) throughout every day of the year (y-axis) at the latitude of the red⭕️circle on the map🗺️. The↕️vertical position of the red<font color=red>—</font>line (time of day) and the↔️horizontal position of the red🔴dot (day of the year)
-on the plot control the🌐globes above and to the right of the plot.
+Each digit in a Dec🕰️️time has a name the decidays. used below the clocks
+is the shown below the clocks be displayed as a single number or as
 
-:::{.clocks}
-\${clock}\${clock1}
-:::
+in the Dec time zone selected by the red⭕️circle on the
+[solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)🗺️map
+further below.
 
-```{ojs}
+The plot to the lower left of the map visualizes the nighttime (blue)
+and daytime (yellow) time of day (x-axis) throughout every day of the
+year (y-axis) at the latitude of the red⭕️circle on the map.
+The↕️vertical position of the red<font color=red>—</font>line (time of
+day) and the↔️horizontal position of the red🔴dot (day of the year) on
+the plot control the🌐globes above and to the right of the plot.
+
+<div class="clocks">
+
+${clock}${clock1}
+
+</div>
+
+``` {ojs}
 //| echo: false
 // https://observablehq.com/@fheyen/barchart-clock
 barChart = {
@@ -55,6 +64,7 @@ const W = width;
   // Background bars to show where 100% lies
   svg.selectAll('.background')
     .data([
+      // 'dek', 'dotd',
       'dd', "mils", 'beats'])
     .enter()
     .append('rect')
@@ -155,7 +165,7 @@ const W = width;
     .attr('height', d=>d%2===0? 9:6)
   // Labels
   svg.selectAll('.timeLabel')
-    .data([`+${barDD}.`, `${barMils}`, `${barBeats}`])
+    .data([`${barDD}`, `${barMils}`, `${barBeats}`])
     .enter()
     .append('text')
     .attr('class', 'timeLabel')
@@ -288,7 +298,7 @@ const W = width;
     .attr('height', d=>d%2===0? 9:6)
   // Labels
   svg.selectAll('.timeLabel')
-    .data([`-${barDDN}.`, `${barMilsN}`, `${barBeatsN}`])
+    .data([`${barDDN}`, `${barMilsN}`, `${barBeatsN}`])
     .enter()
     .append('text')
     .attr('class', 'timeLabel')
@@ -365,7 +375,7 @@ app = {
 }
 ```
 
-```{ojs}
+``` {ojs}
 //| echo: false
 // https://observablehq.com/@d3/simple-clock
 // https://observablehq.com/@drio/lets-build-an-analog-clock
@@ -705,7 +715,7 @@ clock1 = {
 }
 ```
 
-```{ojs}
+``` {ojs}
 //| echo: false
 //| output: false
 unix = {
@@ -1233,7 +1243,7 @@ function input(config) {
   const wrapper = html`<div></div>`;
   if (!form)
     form = html`<form>
-	<input name=input type=${type} />
+    <input name=input type=${type} />
   </form>`;
   Object.keys(attributes).forEach(key => {
     const val = attributes[key];
@@ -1401,35 +1411,8 @@ viewof fancySecondsOFF = Inputs.toggle({
   label: "Ticking clock",
   value: false
 })
-function setStyle(content, style = {}) {
-  function yiq(color) {
-    const {r, g, b} = d3.rgb(color);
-    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
-  }
-  const {
-    background,
-    color = yiq(background) >= 0.6 ? "#111" : "white",
-    padding = "0 1px",
-    borderRadius = "4px",
-    fontWeight = 900,
-    fontSize = "1em",
-    ...rest
-  } = typeof style === "string" ? {background: style} : style;
-  return htl.html`<span style=${{
-    background,
-    color,
-    padding,
-    borderRadius,
-    fontWeight,
-    ...rest
-  }}>${content}</span>`;
-}
-styledZone = setStyle(selectedZone, d3.color("chartreuse").formatHex())
-styledTime = setStyle(`+${barTime[0]}.${barTime.slice(1, 5)}`, d3.color("cyan").formatHex())
-styledTimeN = setStyle(`-${barTimeN[0]}.${barTimeN.slice(1, 5)}`, d3.color("pink").formatHex())
 ```
 
-```{=html}
 <style>
 svg g g.tick text {
   font-size: 1.5em !important;
@@ -1508,4 +1491,3 @@ svg g g.tick text {
   padding: 0px;
 }
 </style>
-```
