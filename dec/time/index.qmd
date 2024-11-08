@@ -363,10 +363,6 @@ app = {
   svg.node().addEventListener(EventType.DateHourChange, handleDateHourChange, false);
   return svg.node();
 }
-```
-
-```{ojs}
-//| echo: false
 // https://observablehq.com/@d3/simple-clock
 // https://observablehq.com/@drio/lets-build-an-analog-clock
 clock = {
