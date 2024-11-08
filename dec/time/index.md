@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2024+251
+2024+252
 
 My website provides many examples of the [Quarto](https://quarto.org)
 publishing and the [Dec](../../dec) measurement systems in action. I
