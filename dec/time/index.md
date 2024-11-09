@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2024+252
+2024+253
 
 My website provides many examples of the [Quarto](https://quarto.org)
 publishing and the [Dec](../../dec) measurement systems in action. I
@@ -166,7 +166,7 @@ const W = width;
     .attr('height', d=>d%2===0? 9:6)
   // Labels
   svg.selectAll('.timeLabel')
-    .data([`+${barDD}.`, `${barMils}`, `${barBeats}`])
+    .data([`+${decTime[0]}.`, `${decTime.slice(2, 4)}`, `${decTime.slice(4, 6)}`])
     .enter()
     .append('text')
     .attr('class', 'timeLabel')
@@ -299,7 +299,7 @@ const W = width;
     .attr('height', d=>d%2===0? 9:6)
   // Labels
   svg.selectAll('.timeLabel')
-    .data([`-${barDDN}.`, `${barMilsN}`, `${barBeatsN}`])
+    .data([`-${decTimeN[0]}.`, `${decTimeN.slice(2, 4)}`, `${decTimeN.slice(4, 6)}`])
     .enter()
     .append('text')
     .attr('class', 'timeLabel')
@@ -525,7 +525,7 @@ clock = {
     .attr("id", "clock");
   svg
     .append("text")
-    .text(`+${barTime[0]}.${barTime.slice(1, 5)}-${selectedZone}`)
+    .text(`+${decTime}-${selectedZone}`)
     .attr("x", clockRadius + margin)
     .attr("y", clockRadius * 2 + margin * 1.975)
     .attr("text-anchor", "middle")
@@ -680,9 +680,9 @@ clock1 = {
     sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10) : barTimeN[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10 % 1 * 100) : barTimeN.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExactM * 10 % 1 * 100 % 1 * 100 : barTimeN.slice(4, 6);
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10) : barTimeN[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10 % 1 * 100) : barTimeN.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExactN * 10 % 1 * 100 % 1 * 100 : barTimeN.slice(4, 6);
   }
   const svg = d3
     .create("svg")
@@ -692,7 +692,7 @@ clock1 = {
     .attr("id", "clock");
   svg
     .append("text")
-    .text(`-${barTimeN[0]}.${barTimeN.slice(1, 5)}-${selectedZone}`)
+    .text(`-${decTimeN}-${selectedZone}`)
     .attr("x", clockRadius + margin)
     .attr("y", clockRadius * 2 + margin * 1.975)
     .attr("text-anchor", "middle")
@@ -735,10 +735,12 @@ function unix2dote1(unix, zone, offset = 719468) {
 }
 selectedDote = unix2dote(unix, long2zone(location[0]))
 selectedExact = selectedDote[0] % 1
-selectedExactM = Math.abs(selectedExact - 1)
+selectedExactN = (1 - selectedExact) % 1
 selectedZone = selectedDote[1]
-barTime = selectedExact.toString().slice(2)
-barTimeN = selectedExactM.toString().slice(2)
+decTime = (selectedExact * 10).toFixed(4)
+decTimeN = (selectedExactN * 10).toFixed(4)
+barTime = selectedExact.toFixed(8).slice(2)
+barTimeN = selectedExactN.toFixed(8).slice(2)
 barCents = barTime.slice(0, 2)
 barCentsN = barTimeN.slice(0, 2)
 barDD = barTime[0]
@@ -747,8 +749,8 @@ barMils = barTime.slice(1, 3)
 barMilsN = barTimeN.slice(1, 3)
 barBeats = barTime.slice(3, 5)
 barBeatsN = barTimeN.slice(3, 5)
-barMb = barTime.slice(5, 8)
-barMbN = barTimeN.slice(5, 8)
+barMb = selectedExact.toString().slice(2).slice(5, 8)
+barMbN = selectedExactN.toString().slice(2).slice(5, 8)
 function lati2turn1(degrees = -180, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
   return (degrees %= 360) / (360 / 10**e) % 10**e;
@@ -1432,8 +1434,8 @@ function setStyle(content, style = {}) {
   }}>${content}</span>`;
 }
 styledZone = setStyle(selectedZone, d3.color("chartreuse").formatHex())
-styledTime = setStyle(`+${barTime[0]}.${barTime.slice(1, 5)}`, d3.color("cyan").formatHex())
-styledTimeN = setStyle(`-${barTimeN[0]}.${barTimeN.slice(1, 5)}`, d3.color("pink").formatHex())
+styledTime = setStyle(`+${decTime}`, d3.color("cyan").formatHex())
+styledTimeN = setStyle(`-${decTimeN}`, d3.color("pink").formatHex())
 ```
 
 <style>
@@ -1442,7 +1444,7 @@ svg g g.tick text {
 }
   .tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
     fill: #000;
-    font-family: sans-serif;
+    font-family: monospace;
     font-size: 20px;
     text-anchor: middle;
   }
