@@ -159,6 +159,10 @@ div.quarto-listing > div.list.grid {
   margin-top: 8px !important;
 }
 
+#quarto-header > nav.navbar.navbar-expand-lg {
+  padding: 0px;
+}
+
 #quarto-header > nav.navbar.navbar-expand-lg > div > div.navbar-brand-container.mx-auto > div#time {
   white-space: nowrap;
 }
@@ -213,6 +217,12 @@ div > form > label {
 
 .yellow {
   background-color: yellow;
+  color: black;
+  padding: 0px 2px 0px 2px;
+}
+
+.red {
+  background-color: red;
   color: black;
   padding: 0px 2px 0px 2px;
 }
