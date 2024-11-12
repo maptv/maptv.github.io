@@ -1,6 +1,11 @@
 # Dec Date
 Martin Laptev
-2024+247
+2024+256
+
+- [Week](#week)
+- [Month](#month)
+- [Math](#math)
+- [Index](#index)
 
 My website serves as a demonstration of both the
 [Quarto](https://quarto.org) publishing system and the [Dec](../../dec)
@@ -44,7 +49,7 @@ decPlot = Plot.plot({
       tickPadding: -12,
       labelOffset: 22,
   },
-  x: {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: 1, labelOffset: 34},
+  x: {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: -2, labelOffset: 32},
   //fx: {tickFormat: ""},
   style: { fontSize: "21px" },
   color: {
@@ -100,7 +105,7 @@ calPlot = Plot.plot({
       ticks: [0, 1, 2, 3, 4, 5, 6],
       tickPadding: 2,
   },
-  x: {interval: 1, ticks: 26, label: "Week", type: "band", tickSize: 0, tickPadding: 1, labelOffset: 34},
+  x: {interval: 1, ticks: 26, label: "Week", type: "band", tickSize: 0, tickPadding: 2, labelOffset: 36},
   //fx: {tickFormat: ""},
   style: { fontSize: "20px" },
   color: {
@@ -180,56 +185,76 @@ viewof dotwInput = Inputs.radio([
 The Dec calendar (Decalendar) starts on <span class="blue"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 instead of <span class="blue" data-bs-toggle="tooltip"
-data-bs-title="January 1"><u>Day 306</u></span> and uses groups of 10
-days called deks in place of weeks and days of the dek (dotd) in lieu of
-days of the week. When combined, a dek and dotd form a Dec day of the
-year (doty), the <span class="cyan">day</span> in
-<span class="yellow">year</span>+<span class="cyan">day</span>. The doty
-selected by the [Observable](https://observablehq.com/)
-[range🎚️inputs](https://observablehq.com/@observablehq/input-range)
-above and highlighted in the plots is ${styledDotyInput}.
+data-bs-title="January 1"><u>Day 306</u></span> and uses a single number
+called the day of the year (doty), the <span class="cyan">day</span> in
+<span class="yellow">year</span>+<span class="cyan">day</span>, to serve
+the same purpose as months and weeks in the Gregorian calendar. The
+current doty and the doty selected by the
+[Observable](https://observablehq.com/)
+[range](https://observablehq.com/@observablehq/input-range)🎚️inputs
+above to be highlighted in the calendar🗓️plots are ${styledDecoDoty} and
+${styledDotyInput}, respectively.
 
-There are two “day of the year” range🎚️inputs because every doty can be
-expressed as both a positive and a negative number. The typical range
-for positive doty values is 0 to <span class="orange">n</span>-1, and
-negative doty values typically range from -<span class="orange">n</span>
-to -1, where <span class="orange">n</span> is the number of days in the
-year. Doty values outside these
+There are two range🎚️inputs labeled as “day of the year” because every
+doty can be expressed as both a positive and a negative number. The
+typical range for positive doty values is 0 to
+<span class="orange">n</span>-1, and negative doty values typically
+range from -<span class="orange">n</span> to -1, where
+<span class="orange">n</span> is the number of days in the year. Doty
+values outside these
 [bounds](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20upper%20bound%20or%20majorant%5B1%5D%20of%20a%20subset%20S%20of%20some%20preordered%20set%20(K%2C%20%E2%89%A4)%20is%20an%20element%20of%20K%20that%20is%20greater%20than%20or%20equal%20to%20every%20element%20of%20S.%5B2%5D%5B3%5D%20Dually%2C%20a%20lower%20bound%20or%20minorant%20of%20S%20is%20defined%20to%20be%20an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S)
 represent days in previous or subsequent years.
 
 The Play▶️button above cycles🔄through every doty, month, and day of the
 month in the plots so that each day gets its turn to be highlighted with
-a red🟥background. The
-[toggle✅input](https://observablehq.com/framework/inputs/toggle#:~:text=choose%20one%20of%20two%20values)
-next to the button determines whether the plots show a leap
-(<span class="orange">n</span>=366) or a common
-(<span class="orange">n</span>=365) year. The
-[radio🔘input](https://observablehq.com/framework/inputs/radio#:~:text=choose%20one%20of%20a%20given%20set%20of%20values)
-beneath the toggle input sets the day of the week on <span class="blue"
-data-bs-toggle="tooltip" data-bs-title="January 1"><u>Day
-306</u></span>.
+a red🟥background. The appearance of the bottom plot depends on the
+[toggle](https://observablehq.com/framework/inputs/toggle#:~:text=choose%20one%20of%20two%20values)✅and
+[radio](https://observablehq.com/framework/inputs/radio#:~:text=choose%20one%20of%20a%20given%20set%20of%20values)🔘inputs,
+which determine whether <span class="orange">n</span> is 365 (common
+year) or 366 (leap year) and the day of the week that starts the year,
+respectively.
 
-The Gregorian calendar [changes every
-year](https://en.wikipedia.org/wiki/Annual_calendar#:~:text=a%20representation%20of%20the%20year%20that%20expires%20with%20the%20year%20represented)
-to adapt to the days of the week. In contrast, Decalendar [remains the
-same every
-year](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=a%20calendar%20that%20applies%20to%20any%20year)
-except leaps years. The addition of <span class="blue"
-data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day
-365</u></span> to leap years shifts 306 Gregorian calendar dates forward
-by one day, but does not affect the order of Dec dates, because
+The toggle✅input shifts 306 dates, <span class="blue"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span> to
 <span class="blue" data-bs-toggle="tooltip"
-data-bs-title="February 29"><u>Day 365</u></span> is the last day of Dec
-leap years.
+data-bs-title="December 31"><u>Day 305</u></span>, in the Gregorian
+calendar by one day, but does not change the order of any Dec dates,
+because [leap
+day](https://en.wikipedia.org/wiki/February_29#:~:text=intercalary%20date%20added%20periodically)
+(<span class="blue" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>Day 365</u></span>) is the last day of
+the Dec leap years and the doty resets to zero at the start of every
+year. The radio🔘input shifts every Gregorian calendar date by 1 to 6
+days, but has no effect on Decalendar whatsoever.
 
-Even though Dec does not use weeks, Dec dates can be modified to include
-[POSIX weekday
+The x-axes of the calendar🗓️plots are labeled with dek (top) and week
+(bottom) numbers. Deks are groups of 10 days that are well-aligned with
+the Dec year. Every Dec year starts on <span class="blue"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>,
+the first day of Dek 0, which is the first dek of the year. Common years
+end on <span class="blue" data-bs-toggle="tooltip"
+data-bs-title="February 28"><u>Day 364</u></span>, exactly halfway
+through Dek 36, whereas leap years end on the sixth day of Dek 36:
+<span class="blue" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>Day 365</u></span>.
+
+Dek 36 includes 4 to 5 days of the subsequent year and thus overlaps
+with Week 0, the first week of the Dec year, because Week 0 includes 0
+to 6 days from the previous year. Week numbering in Dec behaves like the
+bottom calendar🗓️plot. The Dec year can start on any day of Week 0 and
+can end on any day of Week 52 or even on the first day of Week 53.
+
+# Week
+
+Even though Dec uses deks instead of weeks, Dec dates can be modified to
+include
+[POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems)
+[Sunday-based weekday
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)).
-To convert the current Dec date, ${styledDecoYear}+${styledDecoDoty},
+To convert the current Dec date, ${styledDecoYear}+${styledDecoDoty1},
 into the current Dec day of the week (dotw) date,
 ${styledDecoYear6}${dotw0sign}${styledDotw0doty}+${styledDotw}, we split
-the current doty, ${styledDecoDoty1}, into the doty of the first day of
+the current doty, ${styledDecoDoty2}, into the doty of the first day of
 the current week, ${styledDotw0doty1}, and the current POSIX weekday
 number: ${styledDotw1}.
 
@@ -241,7 +266,7 @@ dotw number, ${styledDoty0dotw}, and then floor dividing by 7. The
 current Dec week date,
 ${styledDecoYear2}+7×${styledWeek}+${styledDotw2}, shows how we can
 obtain the sum of the current doty and the Day 0 dotw number:
-7×${styledWeek2}+${styledDotw4}=${styledDecoDoty2}+${styledDoty0dotw1}.
+7×${styledWeek2}+${styledDotw4}=${styledDecoDoty3}+${styledDoty0dotw1}.
 
 The Dec dotw and week date examples above demonstrate how Dec uses
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
@@ -249,10 +274,10 @@ math expressions to display various pieces of information about a date.
 While Dec dotw dates provide all of the information needed to identify
 specific dates and coordinate schedules based on deks or weeks, Dec week
 dates may be useful for [week-based
-accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week).
+accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
 
-Following the Dec week date pattern, we can adapt Dec dates to use any
-other fixed-length calendar unit, including the 20-day
+Following the Dec week date pattern, we can base Dec dates on any
+fixed-length calendar unit, including the 20-day
 [dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit),
 30-day
 [tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A),
@@ -264,8 +289,10 @@ No other calendar unit can be as convenient as the 10-day
 [dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B),
 because our [decimal numeral
 system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
-allows us to naturally combine a dek and a day of the dek into a single
-doty number.
+allows us to naturally combine a dek, ${styledDek}, and a day of the dek
+(dotd), ${styledDotd}, into a doty: ${styledDecoDoty4}.
+
+# Month
 
 Dec dates can also be modified to display Dec month numbers and [POSIX
 day of the month (dotm)
@@ -279,10 +306,10 @@ dotm numbers, we represent each month with its first doty:
 ${styledDecoYear4}+${styledMonthNumber0}+${styledDotm0}.
 
 We can obtain Dec month numbers by counting index and ring fingers as 30
-days and other fingers as 31 days. The image below shows the Dec month
-numbers that work with one-based dotm numbers. For zero-based dotm
-numbers, add 1 to each Dec month number. To spread 12 months across 10
-fingers, the first and last fingers each represent 2 months.
+days and other fingers as 31 days. For zero-based dotm numbers, we start
+counting from 0 For one-based dotm numbers, we start counting from -1,
+as shown in the image below. To spread 12 months across 10 fingers, the
+first and last fingers each represent 2 months.
 
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="finger" enable-background="new 0 0 838.332 516.951" overflow="visible" ns:pagebounds="-124 716 716 124" ns:rulerorigin="124 -124" ns:vieworigin="-123.4824 642.7246" version="1.1" viewBox="0 -5 531.09 270" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns="&#38;#38;#38;ns_ai;" xmlns:ns1="&#38;#38;#38;ns_sfw;" xmlns:ns2="&#38;#38;#38;ns_vars;" xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:x="adobe:ns:meta/" xmlns:xap="http://ns.adobe.com/xap/1.0/" xmlns:xapgimg="http://ns.adobe.com/xap/1.0/g/img/" xmlns:xapmm="http://ns.adobe.com/xap/1.0/mm/">
@@ -628,13 +655,41 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
         <g transform="translate(275 25.452)"><path d="m104.83 115.39c6.404-2.645-8.252-81.105-10.439-94.6-3.708-22.874 20.403-27.359 24.219-4.037 2.169 13.249 13.406 91.545 19.883 92.723" fill="#cff" ns:knockout="Off"/><path d="m77.572 137.87c6.351-6.543-36.331-73.707-43.051-83.852-10.573-15.957 10.541-26.844 19.885-13.199 5.886 8.594 44.021 77.211 50.424 74.564" fill="#c0dbfc" ns:knockout="Off"/><path d="m61.288 163.93c-12.38-12.268-42.161-34.516-50.955-40.324-16.419-10.842-8.151-28.834 9.289-19.791 11.855 6.146 51.601 40.602 57.951 34.057" fill="#befc75" ns:knockout="Off"/><path d="m180.69 146.27c2.476-0.215 5.742-3.523 10.661-9.414 26.474-31.705 55.667-34.346 63.162-17.869-17.557 10.336-45.352 33.574-50.785 56.691" fill="#e9befc" ns:knockout="Off"/><path d="m138.49 109.47c6.477 1.178 26.692-67.762 31.054-82.859 5.918-20.479 27.516-13.883 22.155 6.934-3.078 11.955-15.788 56.023-17.843 84.938" fill="#ff6" ns:knockout="Off"/><path d="m71.329 145.83c21.224-35.646 55.968-37.51 81.838-34.816" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2.2742" ns:knockout="Off"/><path d="m203.41 176.23c-4.001 17.025-13.369 32.77-24.92 43.295-12.778 11.641-27.906 5.285-41.088 9.52-9.404 3.021-17.9 6.805-28.715 3.371-16.236-5.16-38.154-46.174-42.324-61.123-2.028-7.266-45.412-39.908-56.348-47.131-16.419-10.84-8.151-28.834 9.288-19.791 11.856 6.146 51.603 40.602 57.953 34.059 6.351-6.545-36.33-73.709-43.052-83.854-10.573-15.957 10.54-26.844 19.885-13.198 5.885 8.593 44.021 77.212 50.424 74.565 6.404-2.646-8.252-81.106-10.44-94.601-3.708-22.874 20.403-27.36 24.22-4.038 2.168 13.25 13.406 91.547 19.882 92.723 6.477 1.178 26.693-67.762 31.055-82.859 5.918-20.478 27.515-13.883 22.154 6.934-3.876 15.059-23.037 81.07-16.934 103.57 3.519 12.973 6.746 11.52 16.583-0.262 26.473-31.705 55.666-34.346 63.162-17.869-17.557 10.335-45.353 33.575-50.785 56.691z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2.2742" ns:knockout="Off"/></g><g transform="translate(-275.39 26.165)"><path d="m425.07 115.77c-6.403-2.646 8.252-81.105 10.439-94.6 3.707-22.875-20.402-27.36-24.219-4.038-2.17 13.249-13.407 91.546-19.884 92.724" fill="#cff" ns:knockout="Off"/><path d="m452.33 138.26c-6.352-6.543 36.33-73.709 43.051-83.852 10.572-15.957-10.541-26.845-19.885-13.199-5.885 8.592-44.021 77.211-50.424 74.564" fill="#c0dbfc" ns:knockout="Off"/><path d="m468.61 164.32c12.381-12.268 42.16-34.516 50.957-40.324 16.418-10.842 8.15-28.834-9.289-19.791-11.855 6.146-51.602 40.602-57.951 34.057" fill="#befc75" ns:knockout="Off"/><path d="m349.21 146.65c-2.476-0.213-5.742-3.521-10.661-9.414-26.474-31.703-55.667-34.346-63.162-17.867 17.557 10.336 45.352 33.574 50.786 56.691" fill="#e9befc" ns:knockout="Off"/><path d="m391.41 109.86c-6.477 1.178-26.692-67.763-31.054-82.86-5.917-20.478-27.515-13.882-22.155 6.934 3.078 11.954 15.788 56.024 17.843 84.938" fill="#ff6" ns:knockout="Off"/><path d="m327.84 175.51c4.001 17.025 13.369 32.77 24.919 43.293 12.779 11.641 27.907 5.285 41.089 9.52 9.405 3.021 17.901 6.807 28.714 3.371 16.238-5.16 38.154-46.172 42.324-61.123 2.029-7.266 45.414-39.908 56.35-47.131 16.418-10.84 8.15-28.834-9.289-19.791-11.855 6.148-51.602 40.602-57.951 34.059s36.33-73.709 43.051-83.852c10.572-15.958-10.541-26.846-19.885-13.199-5.885 8.592-44.021 77.211-50.424 74.564-6.403-2.646 8.253-81.105 10.439-94.6 3.707-22.875-20.402-27.361-24.219-4.039-2.169 13.25-13.406 91.547-19.883 92.725s-26.692-67.764-31.054-82.861c-5.918-20.477-27.516-13.882-22.155 6.934 3.877 15.059 23.037 81.072 16.934 103.57-3.519 12.971-6.746 11.518-16.583-0.264-26.474-31.703-55.667-34.346-63.162-17.869 17.557 10.337 45.352 33.576 50.785 56.693z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2.2742" ns:knockout="Off"/><path d="m459.92 145.12c-21.223-35.648-55.966-37.51-81.839-34.818" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2.2742" ns:knockout="Off"/></g>
         &#10;    <text transform="translate(-4,18.354)" fill="#000000" font-family="Tahoma" font-size="13.333px" style="line-height:1;shape-inside:url(#rect109);white-space:pre" xml:space="preserve"/><text x="74.959618" y="20.693985" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="74.959618" y="20.693985"><tspan x="74.959618" y="20.693985" font-family="Tahoma" font-size="13.333px" style="line-height:1">May</tspan></tspan><tspan x="74.959618" y="35.762753"><tspan x="74.959618" y="35.762753" font-family="Tahoma" font-size="13.333px" style="line-height:1">60</tspan></tspan></text><text x="151.14308" y="7.6939859" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="151.14308" y="7.6939859" style="line-height:1">June</tspan><tspan x="151.14308" y="22.762749" style="line-height:1">91</tspan></text><text x="214.66582" y="42.130184" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="214.66582" y="42.130184"><tspan x="214.66582" y="42.130184" font-family="Tahoma" font-size="13.333px" style="line-height:1">July</tspan></tspan><tspan x="214.66582" y="57.198948"><tspan x="214.66582" y="57.198948" font-family="Tahoma" font-size="13.333px" style="line-height:1">121</tspan></tspan></text><text x="230.51364" y="110.2179" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="230.51364" y="110.2179"><tspan x="230.51364" y="110.2179" font-family="Tahoma" font-size="13.333px" style="line-height:1">August</tspan></tspan><tspan x="230.51364" y="125.28667"><tspan x="230.51364" y="125.28667" font-family="Tahoma" font-size="13.333px" style="line-height:1">152</tspan></tspan></text><text x="501.76001" y="115.98518" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="501.76001" y="115.98518" font-family="Tahoma" font-size="13.333px" style="line-height:1"/></text><text x="287.47159" y="108.20547" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="287.47159" y="108.20547" style="line-height:1">September</tspan><tspan x="287.47159" y="123.27423" style="line-height:1">183</tspan></text><text x="317.61273" y="42.130184" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="317.61273" y="42.130184" style="line-height:1">October</tspan><tspan x="317.61273" y="57.198948" style="line-height:1">213</tspan></text><text x="381.24997" y="8.1301823" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="381.24997" y="8.1301823" style="line-height:1">November</tspan><tspan x="381.24997" y="23.198946" style="line-height:1">244</tspan></text><text x="459.61121" y="21.130182" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="459.61121" y="21.130182" style="line-height:1">December</tspan><tspan x="459.61121" y="36.198944" style="line-height:1">274</tspan></text><text x="501.9632" y="85.693985" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="0" y="-0.15816404"><tspan x="501.9632" y="85.693985" font-family="Tahoma" font-size="13.333px" style="line-height:1"/></tspan><tspan x="0" y="13.175136"/><tspan x="501.9632" y="85.693985" font-family="Tahoma" font-size="13.333px"><tspan x="501.9632" y="85.693985" style="line-height:1">January</tspan><tspan x="501.9632" y="100.76275" style="line-height:1">305</tspan><tspan x="501.9632" y="115.83151" style="line-height:1"/></tspan><tspan x="501.9632" y="115.83151" font-family="Tahoma" font-size="13.333px"><tspan x="501.9632" y="115.83151" style="line-height:1">February</tspan><tspan x="501.9632" y="130.90027" style="line-height:1">336</tspan></tspan></text><text x="515.56207" y="226.96729" fill="#ffffff" font-family="Tahoma" font-size="13.333px" stroke="#000000" stroke-linejoin="round" stroke-width=".378" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="515.56207" y="226.96729" font-family="Tahoma" font-size="13.333px" style="line-height:1"/></text><text x="21.274513" y="86.13018" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="0" y="-0.075284496"><tspan x="21.274513" y="86.13018" font-family="Tahoma" font-size="13.333px" style="line-height:1"/></tspan><tspan x="0" y="13.258015"/><tspan x="21.274513" y="86.13018"><tspan x="21.274513" y="86.13018" font-family="Tahoma" font-size="13.333px" style="line-height:1">March</tspan></tspan><tspan x="21.274513" y="101.19894"><tspan x="21.274513" y="101.19894" font-family="Tahoma" font-size="13.333px" style="line-height:1">-1</tspan></tspan><tspan x="21.274513" y="116.26772"><tspan x="21.274513" y="116.26772" font-family="Tahoma" font-size="13.333px" style="line-height:1">April</tspan></tspan><tspan x="21.274513" y="131.33647"><tspan x="21.274513" y="131.33647" font-family="Tahoma" font-size="13.333px" style="line-height:1">30</tspan></tspan></text></svg>
 
-We can combine the patterns above to create hybrid Dec dotm and dotw
+# Math
+
+We can combine the dotm and dotw patterns above to create hybrid Dec
 dates:
 ${styledDecoYear5}+${hybridMonthNumber}+${styledDotm2}+${styledDotw5}.
 Essentially, you can modify a Dec date to show whatever number(s) you
 want. All it takes is a little bit of arithmetic! This incredible
 versatility is possible thanks to the mathematical basis of Dec dates.
-Every Dec date format is defined by an equation.
+In fact, everything in Decalendar is based on an equation.
+
+Dec expresses months as
+[right-open](https://en.wikipedia.org/wiki/Interval_(mathematics)#:~:text=open%20if%20it-,contains%20no%20maximum,-%3B%20and%20open%20if)
+intervals called spans, which are similar to
+[slices](https://en.wikipedia.org/wiki/Array_slicing#1991:_Python:~:text=nums%5B%3A3%5D%20%20%23%20from%20index%200%20(inclusive)%20until%20index%203%20(exclusive))
+or
+[ranges](https://docs.python.org/3/library/stdtypes.html#typesseq-range:~:text=an%20immutable%20sequence%20of%20numbers)
+in the
+[Python](https://en.wikipedia.org/wiki/Python_%28programming_language%29#:~:text=a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language)
+programming language. Dec spans are based on the Dec span equation,
+<span class="cyan">M</span>=<span class="cyan">S</span>+<span class="cyan">Δ</span>,
+where <span class="cyan">Δ</span> is the difference between the minuend
+<span class="cyan">M</span> and the subtrahend
+<span class="cyan">S</span>. The Dec span equation for ${monthName} is
+${styledCurrMonth}=${styledNextMonth}+${styledDiff}.
+
+Typically, <span class="cyan">Δ</span> is omitted:
+${styledCurrMonth1}=${styledNextMonth1}, but we can omit
+<span class="cyan">S</span> instead: ${styledCurrMonth2}=${styledDiff1}.
+If <span class="cyan">M</span> is omitted, it is assumed to be 0. If
+both <span class="cyan">S</span> and <span class="cyan">Δ</span> are
+omitted, <span class="cyan">S</span> can be 365 or 366 and
+<span class="cyan">Δ</span> can be 28 or 29. can also be omitted,
+Showing <span class="cyan">Δ</span> by itself also works if we specify a
+year on the left-hand side:
+${styledDecoYear7}+${styledCurrMonth3}=${styledDiff2}.
 
 The Dec date equation,
 ⌊<span class="yellow">y</span>⌋+<span class="cyan">d</span>÷<span class="orange">n</span>=<span class="yellow">y</span>,
@@ -731,6 +786,8 @@ The current
 ${styledNextYear}-${styledDecoTminus}, tells us that Year ${nextYear}
 will begin in ${Tminus} days.
 
+# Index
+
 The difference between <span class="cyan">d</span> and
 <span class="cyan">d</span>-<span class="orange">n</span> can also be
 explained in terms of computer programming. If we think of years as
@@ -754,9 +811,8 @@ indexes can be
 [decimal
 numbers](https://en.wikipedia.org/wiki/Decimal#Decimal_notation:~:text=a%20number%20in%20the%20decimal%20numeral%20system)
 (floats) in addition to integers. In Dec, the decimal part of a doty
-represents represents a time of day. While the
-[Python](https://en.wikipedia.org/wiki/Python_%28programming_language%29#:~:text=a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language)
-programming language [requires indexes to be
+represents represents a time of day. While the Python programming
+language [requires indexes to be
 integers](https://docs.python.org/3/library/exceptions.html#IndexError:~:text=if%20an%20index%20is%20not%20an%20integer%2C%20TypeError%20is%20raised),
 the
 [Pandas](https://en.wikipedia.org/wiki/Pandas_(software)#:~:text=a%20software%20library%20written%20for%20the%20Python%20programming%20language%20for%20data%20manipulation%20and%20analysis)
@@ -776,33 +832,6 @@ function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%
 indexes, Dec snaps cannot be shortened to a [year and a
 month](https://pandas.pydata.org/docs/user_guide/timeseries.html#partial-string-indexing:~:text=the%20year%20or-,year%20and%20month,-as%20strings%3A).
 
-Instead of Gregorian calendar month names or [POSIX month
-numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=Day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D),
-Dec expresses months as Dec spans that show the first doty of the given
-and subsequent month, with the exception of March, which is expressed as
-a [empty
-string](https://en.wikipedia.org/wiki/Empty_string#:~:text=no%20symbols%20in%20the%20string).
-Like a Python
-[slice](https://en.wikipedia.org/wiki/Array_slicing#1991:_Python:~:text=nums%5B%3A3%5D%20%20%23%20from%20index%200%20(inclusive)%20until%20index%203%20(exclusive))
-or [range](), a Dec span is a
-[right-open](https://en.wikipedia.org/wiki/Interval_(mathematics)#:~:text=open%20if%20it-,contains%20no%20maximum,-%3B%20and%20open%20if)
-interval. The current month, ${monthName}, is represented by the Dec
-span ${styledCurrMonth}=${styledNextMonth}.
-
-Dec spans are based on the Dec span equation,
-<span class="cyan">d<sub>m</sub></span>=<span class="cyan">d<sub>s</sub></span>+<span class="cyan">d<sub>d</sub></span>,
-where <span class="cyan">d<sub>d</sub></span> is the difference between
-<span class="cyan">d<sub>m</sub></span> and
-<span class="cyan">d<sub>s</sub></span>. The Dec span equation for
-${monthName}, ${styledCurrMonth1}=${styledNextMonth1}+${styledDiff},
-tells us that there are ${Math.abs(diff)} days in ${monthName}.
-Typically, <span class="cyan">d<sub>d</sub></span> is omitted, but we
-can omit <span class="cyan">d<sub>s</sub></span> instead:
-${styledCurrMonth2}=${styledDiff1}. Showing
-<span class="cyan">d<sub>d</sub></span> by itself also works if we
-specify a year on the left-hand side:
-${styledDecoYear7}+${styledCurrMonth3}=${styledDiff2}.
-
 The subsequent articles on my site build on this article to further
 describe Dec [times](../../dec/time), [snaps](../../dec/span), and
 [spans](../../dec/span). A basic understanding of the Dec
@@ -819,7 +848,7 @@ the algorithms underlying Dec dates and cite the original source of the
 algorithms as [Hinnant, Howard](https://howardhinnant.github.io).
 <span class="blue" data-bs-toggle="tooltip"
 data-bs-title="2021-09-01"><u>2021+184</u></span>. “`chrono`-Compatible
-Low-Level Date Algorithms.” ${styledDecoYear8}+${styledDecoDoty3}.
+Low-Level Date Algorithms.” ${styledDecoYear8}+${styledDecoDoty5}.
 <https://howardhinnant.github.io/date_algorithms.html>.
 
 ``` {ojs}
@@ -926,6 +955,8 @@ styledNextMonth1 = setStyle(nextMonth, d3.color("cyan").formatHex())
 styledDiff = setStyle(diff, d3.color("cyan").formatHex())
 styledDiff1 = setStyle(diff, d3.color("cyan").formatHex())
 styledDiff2 = setStyle(diff, d3.color("cyan").formatHex())
+styledDek = setStyle(decoDoty.slice(0, 2), d3.color("cyan").formatHex())
+styledDotd = setStyle(decoDoty[2], d3.color("cyan").formatHex())
 styledDecoYear = setStyle(decoYear, d3.schemePaired[10])
 styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])
 styledDecoYear2 = setStyle(decoYear, d3.schemePaired[10])
@@ -941,6 +972,8 @@ styledDecoDoty = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty1 = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty2 = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty3 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty4 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty5 = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDotyInput = setStyle(dotyInput, d3.color("cyan").formatHex())
 styledDecoTminus = setStyle(Tminus, d3.color("pink").formatHex())
 styledDecoDek = setStyle(decoDoty.slice(0, 2), d3.color("cyan").formatHex())
@@ -1227,23 +1260,32 @@ div.observablehq > div:has(form.oi-3a86ea-toggle) {
 form.oi-3a86ea-toggle {
   max-width: 50% !important;
   --label-width: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 form.oi-3a86ea {
   --input-width: 200px;
   padding-right: 9px;
 }
 form.oi-3a86ea-toggle > label {
-  width: 78px;
+  width: 75px;
+}
+input.oi-3a86ea-input[type="checkbox"] {
+  margin: 6px 0px 0px 0px;
 }
 div > form > label {
   --label-width: 130px;
 }
 p:has(.radiotitle) {
   margin-top: -8px !important;
-  margin-bottom: -8px;
+  margin-bottom: -4px;
   text-align: center;
 }
 svg#finger {
   max-width: 760px;
+}
+h4.anchored {
+  margin: 8px 0px 8px 0px;
 }
 </style>

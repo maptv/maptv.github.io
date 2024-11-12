@@ -10,6 +10,10 @@ interactive graphics like the clocks🕓and bar📊charts below, which show
 the Dec time since the start, ${styledTime}, and until the end,
 ${styledTimeN}, of today.
 
+``` {ojs}
+width
+```
+
 Dec uses [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
 to create
@@ -77,7 +81,7 @@ const W = width;
     .append('rect')
     .attr('class', 'timeBar')
     .attr('y', firstBarY+60)
-    .attr('width', d => scaleMandB(Number(barBeats)+Number(barMb)/1000))
+    .attr('width', d => scaleMandB(Number(barBeats)))
   svg
     .append('rect')
     .attr('class', 'timeBarFull')
@@ -88,7 +92,7 @@ const W = width;
     .append('rect')
     .attr('class', 'timeBar')
     .attr('y', firstBarY)
-    .attr('width', d => scaleDD(Number(barDD)+Number(barMils)/100+Number(barBeats)/10000+Number(barMb)/10000000))
+    .attr('width', d => scaleDD(Number(barDD)+Number(barMils)/100+Number(barBeats)/10000))
   svg
     .append('rect')
     .attr('class', 'timeBarFull')
@@ -146,6 +150,7 @@ const W = width;
     .attr('x', d=>scaleDD(d)+barX+.5)
     .attr('y', firstBarY+18)
     .text(d=>d)
+    .style("font-size", `{width < 350 ? 12 : 20}px`)
   // Cent ticks
   svg.selectAll('.tickC2')
     .data(d3.range(width > 500 ? 10 : 10, 100))
@@ -166,7 +171,7 @@ const W = width;
     .attr('height', d=>d%2===0? 9:6)
   // Labels
   svg.selectAll('.timeLabel')
-    .data([`+${decTime[0]}.`, `${decTime.slice(2, 4)}`, `${decTime.slice(4, 6)}`])
+    .data([`+${barDD}`, `${barMils}`, `${barBeats}`])
     .enter()
     .append('text')
     .attr('class', 'timeLabel')
@@ -210,7 +215,7 @@ const W = width;
     .append('rect')
     .attr('class', 'timeBar')
     .attr('y', firstBarY+60)
-    .attr('width', d => scaleMandB(Number(barBeatsN)+Number(barMbN)/1000))
+    .attr('width', d => scaleMandB(Number(barBeatsN)))
   svg
     .append('rect')
     .attr('class', 'timeBarFullN')
@@ -221,7 +226,7 @@ const W = width;
     .append('rect')
     .attr('class', 'timeBar')
     .attr('y', firstBarY)
-    .attr('width', d => scaleDD(Number(barDDN)+Number(barMilsN)/100+Number(barBeatsN)/10000+Number(barMbN)/10000000))
+    .attr('width', d => scaleDD(Number(barDDN)+Number(barMilsN)/100+Number(barBeatsN)/10000))
   svg
     .append('rect')
     .attr('class', 'timeBarFullN')
@@ -299,7 +304,7 @@ const W = width;
     .attr('height', d=>d%2===0? 9:6)
   // Labels
   svg.selectAll('.timeLabel')
-    .data([`-${decTimeN[0]}.`, `${decTimeN.slice(2, 4)}`, `${decTimeN.slice(4, 6)}`])
+    .data([`-${barDDN}`, `${barMilsN}`, `${barBeatsN}`])
     .enter()
     .append('text')
     .attr('class', 'timeLabel')
@@ -513,9 +518,9 @@ clock = {
     sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : barTime[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : barTime.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : barTime.slice(4, 6);
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : decTime[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : decTime.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : decTime.slice(4, 6);
   }
   const svg = d3
     .create("svg")
@@ -680,9 +685,9 @@ clock1 = {
     sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10) : barTimeN[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10 % 1 * 100) : barTimeN.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExactN * 10 % 1 * 100 % 1 * 100 : barTimeN.slice(4, 6);
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10) : decTimeN[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10 % 1 * 100) : decTimeN.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExactN * 10 % 1 * 100 % 1 * 100 : decTimeN.slice(4, 6);
   }
   const svg = d3
     .create("svg")
@@ -739,18 +744,12 @@ selectedExactN = (1 - selectedExact) % 1
 selectedZone = selectedDote[1]
 decTime = (selectedExact * 10).toFixed(4)
 decTimeN = (selectedExactN * 10).toFixed(4)
-barTime = selectedExact.toFixed(8).slice(2)
-barTimeN = selectedExactN.toFixed(8).slice(2)
-barCents = barTime.slice(0, 2)
-barCentsN = barTimeN.slice(0, 2)
-barDD = barTime[0]
-barDDN = barTimeN[0]
-barMils = barTime.slice(1, 3)
-barMilsN = barTimeN.slice(1, 3)
-barBeats = barTime.slice(3, 5)
-barBeatsN = barTimeN.slice(3, 5)
-barMb = selectedExact.toString().slice(2).slice(5, 8)
-barMbN = selectedExactN.toString().slice(2).slice(5, 8)
+barDD = decTime[0]
+barDDN = decTimeN[0]
+barMils = decTime.slice(2, 4)
+barMilsN = decTimeN.slice(2, 4)
+barBeats = decTime.slice(4, 6)
+barBeatsN = decTimeN.slice(4, 6)
 function lati2turn1(degrees = -180, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
   return (degrees %= 360) / (360 / 10**e) % 10**e;
@@ -1408,7 +1407,7 @@ antipode = ([longitude, latitude]) => [longitude + 180, -latitude]
 solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
 viewof fancySecondsOFF = Inputs.toggle({
   label: "Ticking clock",
-  value: false
+  value: true,
 })
 function setStyle(content, style = {}) {
   function yiq(color) {
@@ -1445,7 +1444,6 @@ svg g g.tick text {
   .tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
     fill: #000;
     font-family: monospace;
-    font-size: 20px;
     text-anchor: middle;
   }
   .timeLabel {
@@ -1506,10 +1504,10 @@ svg g g.tick text {
   stroke-width:8; // same as the minute hand
 }
 #clock .second-label {
-  font-size: 12px;
+  font-size: 18px;
 }
 #clock .hour-label {
-  font-size: 24px
+  font-size: 32px
 }
 .clocks * {
   margin: -10px 0px 10px 0px;
