@@ -158,16 +158,14 @@ format:
   html:
     pagetitle: Martin Laptev
     page-layout: full
-    header-includes: |
-      <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Lato" type="text/css"/>
-    mainfont: Lato
+    mainfont: Tahoma, Palatino, Verdana, Times New Roman
     toc: true
     theme:
       light: [flatly, asset/light.scss]
       dark: [darkly, asset/dark.scss]
     grid:
       sidebar-width: 205px
-      body-width: 760px
+      body-width: 800px
     css: asset/style.css
     anchor-sections: true
     tbl-cap-location: margin

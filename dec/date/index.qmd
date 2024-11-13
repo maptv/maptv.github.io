@@ -202,17 +202,36 @@ Following the Dec week date pattern, we can base Dec dates on any fixed-length c
 
 Dec dates can also be modified to display Dec month numbers and [POSIX day of the month (dotm) numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D). The current Dec dotm date is \${styledDecoYear3}+\${styledMonthNumber1}+\${styledDotm1}. Dec dotm dates represent each month with the last doty of the previous month because POSIX dotm numbers are one-based. For [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) dotm numbers, we represent each month with its first doty: \${styledDecoYear4}+\${styledMonthNumber0}+\${styledDotm0}.
 
-We can obtain Dec month numbers by counting index and ring fingers as 30 days and other fingers as 31 days. For zero-based dotm numbers, we start counting from 0 For one-based dotm numbers, we start counting from -1, as shown in the image below. To spread 12 months across 10 fingers, the first and last fingers each represent 2 months.
+We can obtain Dec month numbers using only a pair of hands by counting index and ring fingers as 30 days and other fingers as 31 days. For zero-based dotm numbers, we start counting from 0 For one-based dotm numbers, we start counting from -1, as shown in the image below. To spread 12 months across 10 fingers, the first and last fingers each represent 2 months.
 
 {{< include _finger.qmd >}}
 
 # Math
 
-We can combine the dotm and dotw patterns above to create hybrid Dec dates: \${styledDecoYear5}+\${hybridMonthNumber}+\${styledDotm2}+\${styledDotw5}. Essentially, you can modify a Dec date to show whatever number(s) you want. All it takes is a little bit of arithmetic! This incredible versatility is possible thanks to the mathematical basis of Dec dates. In fact, everything in Decalendar is based on an equation.
+We can combine the dotm and dotw patterns above to create hybrid Dec dates: \${styledDecoYear5}+\${hybridMonthNumber}+\${styledDotm2}+\${styledDotw5}. Essentially, you can modify a Dec date to show whatever numbers you want. All it takes is a little bit of arithmetic! This incredible versatility is possible thanks to the mathematical basis of the notation Dec uses for Dec dates and groups of consecutive Dec dates expressed as Dec spans.
 
-Dec expresses months as [right-open](https://en.wikipedia.org/wiki/Interval_(mathematics)#:~:text=open%20if%20it-,contains%20no%20maximum,-%3B%20and%20open%20if) intervals called spans, which are similar to [slices](https://en.wikipedia.org/wiki/Array_slicing#1991:_Python:~:text=nums%5B%3A3%5D%20%20%23%20from%20index%200%20(inclusive)%20until%20index%203%20(exclusive)) or [ranges](https://docs.python.org/3/library/stdtypes.html#typesseq-range:~:text=an%20immutable%20sequence%20of%20numbers) in the [Python](https://en.wikipedia.org/wiki/Python_%28programming_language%29#:~:text=a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language) programming language. Dec spans are based on the Dec span equation, [M]{.cyan}=[S]{.cyan}+[Δ]{.cyan}, where [Δ]{.cyan} is the difference between the minuend [M]{.cyan} and the subtrahend [S]{.cyan}. The Dec span equation for ${monthName} is \${styledCurrMonth}=\${styledNextMonth}+\${styledDiff}.
+Like [slices](https://en.wikipedia.org/wiki/Array_slicing#1991:_Python:~:text=nums%5B%3A3%5D%20%20%23%20from%20index%200%20(inclusive)%20until%20index%203%20(exclusive)) or [ranges](https://docs.python.org/3/library/stdtypes.html#typesseq-range:~:text=an%20immutable%20sequence%20of%20numbers) in the [Python](https://en.wikipedia.org/wiki/Python_%28programming_language%29#:~:text=a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language) programming language, Dec spans are as [right-open](https://en.wikipedia.org/wiki/Interval_(mathematics)#:~:text=open%20if%20it-,contains%20no%20maximum,-%3B%20and%20open%20if) intervals. Dec spans are based on the Dec span equation, M=S+Δ, where Δ is the difference between the [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted) M and the [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted) S. If the Dec span equation contains only doty values, [d~M~]{.cyan}=[d~S~]{.cyan}+[d~Δ~]{.cyan}, it represents spans that can apply to any year and are thus called floating, flexible, or **fluid** spans.
 
-Typically, [Δ]{.cyan} is omitted: \${styledCurrMonth1}=\${styledNextMonth1}, but we can omit [S]{.cyan} instead: \${styledCurrMonth2}=\${styledDiff1}. If [M]{.cyan} is omitted, it is assumed to be 0. If both [S]{.cyan} and [Δ]{.cyan} are omitted, [S]{.cyan} can be 365 or 366 and [Δ]{.cyan} can be  28 or 29. can also be omitted, Showing [Δ]{.cyan} by itself also works if we specify a year on the left-hand side: \${styledDecoYear7}+\${styledCurrMonth3}=\${styledDiff2}.
+The Dec fluid span equation for ${monthName}, \${styledCurrMonth}=\${styledNextMonth}+\${styledDiff}, tells us that ${monthName} starts on Day \${styledCurrMonth1}, ends before Day \${styledNextMonth1}, and has \${styledDiff1} days. We can choose to omit any one of the three parts of any fluid span without changing its meaning. The [d~M~]{.cyan}=[d~S~]{.cyan}, [d~M~]{.cyan}=[d~Δ~]{.cyan}, and =[d~S~]{.cyan}+[d~Δ~]{.cyan} formats of the span for ${monthName} are \${styledCurrMonth2}=\${styledNextMonth2}, \${styledCurrMonth3}=\${styledDiff2}, and =\${styledNextMonth3}+\${styledDiff3}, respectively.
+
+Dec spans that include at least one year are called **fixed** spans because they represent a single set of dates instead of a subset of dates in every year. The short format of fixed spans, [y~M~]{.yellow}+[d~M~]{.cyan}=[y~S~]{.yellow}+[d~S~]{.cyan}, where  The full form of fixed spans only have two forms: the full form [y~M~]{.yellow}+[d~M~]{.cyan}=[y~S~]{.yellow}+[d~S~]{.cyan}+[y~Δ~]{.yellow}+[d~Δ~]{.cyan} and the truncated form 
+
+Unlike fluid spans, fixed spans can only omit Δ or both not S. Therefore, all fixed spans have the The fixed span equation, [y~M~]{.yellow}+[d~M~]{.cyan}&div;[n~M~]{.orange}=[y~S~]{.yellow}+[d~S~]{.cyan}&div;[n~S~]{.orange}+[y~Δ~]{.yellow}+[d~Δ~]{.cyan}&div;[n~Δ~]{.orange}, is quite long but fixed spans are much shorter because they omit the divisors: [y~M~]{.yellow}+[d~M~]{.cyan}=[y~S~]{.yellow}+[d~S~]{.cyan}+[y~Δ~]{.yellow}+[d~Δ~]{.cyan}.
+
+A missing M is interpreted as [0]{.cyan} and an empty [right-hand side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20right%20side%20of%20the%20equation) implies that S+Δ=[n]{.orange}.
+Fluid spans can omit [d~S~]{.cyan}, because the plus (+) or minus (-) sign preceding [d~Δ~]{.cyan} in [d~M~]{.cyan}=[d~Δ~]{.cyan}, \${styledCurrMonth3}=\${styledDiff2}, differentiates it from [d~M~]{.cyan}=[d~S~]{.cyan}: \${styledCurrMonth4}=\${styledNextMonth2}. 
+
+The Dec span equation for the current week is \${styledDotw0doty3}=\${styledDotw7doty}+\${styledSeven}. 
+
+According to these rules, an entire year can be represented by several different spans: [0]{.cyan}=[n]{.orange}, [0]{.cyan}=, =[n]{.orange}, or simply =.
+
+If we omit S instead, Δ needs a + or - sign.
+
+The current week, dek, and month can thus be expressed as \${styledDotw0doty4}=\${styledDotw7doty1} or \${styledDotw0doty5}=\${styledSeven1}, \${styledDekStart}=\${styledDekEnd} or \${styledDekStart1}=\${styledTen}, and \${styledCurrMonth5}=\${styledNextMonth4} or \${styledCurrMonth6}=\${styledDiff4}, respectively.
+
+The spans above are all called . In contrast, a includes at least one year. Similarly, a doty by itself is a fluid date and a [year]{.yellow}+[day]{.cyan} date is a fixed date. If there is a year on only one side of the equals sign, [y~M~]{.yellow}+[d~M~]{.cyan}=[y~S~]{.cyan} or [d~M~]{.cyan}=[y~S~]{.yellow}+[d~S~]{.cyan}, the year is assumed to be the same on the other side.
+
+There are two main forms of the span equation, fluid: , into the fixed span equation, by including years and dividing each doty by the appropriate [n]{.orange} value. [y~M~]{.yellow}+[d~M~]{.cyan} and [y~S~]{.yellow}+[d~S~]{.cyan} are the minuend and subtrahend Dec dates, [n~M~]{.orange} and [n~S~]{.orange} are the lengths of Year [y~M~]{.yellow} and [y~S~]{.yellow}, [y~Δ~]{.yellow} is [y~M~]{.yellow}-[y~S~]{.yellow}, [d~Δ~]{.cyan} is [d~M~]{.cyan}-[d~S~]{.cyan}, and [n~Δ~]{.orange} is the length of the latest year in the equation, respectively.
 
 The Dec date equation, &LeftFloor;[y]{.yellow}&RightFloor;+[d]{.cyan}&div;[n]{.orange}=[y]{.yellow}, where &LeftFloor;[y]{.yellow}&RightFloor;+[d]{.cyan} is the Dec date, &LeftFloor;[y]{.yellow}&RightFloor; is the year, [d]{.cyan} is the doty, [n]{.orange} is the number of days in Year &LeftFloor;[y]{.yellow}&RightFloor;, and [y]{.yellow} is the [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=denoting%20integer%20and-,non%2Dinteger%20numbers,-.%20It%20is%20the) years that have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era) ([Year 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="1 BC"} [Day 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1"} [Dot 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="midnight"}), can be rearranged into the Dec doty equation, [d]{.cyan}=[y]{.yellow}%1&times;[n]{.orange}, which defines [d]{.cyan} as the product of [n]{.orange} and the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of [y]{.yellow} ([y]{.yellow}%1, [y]{.yellow}-&LeftFloor;[y]{.yellow}&RightFloor;, or [y]{.yellow} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1).
 
@@ -291,7 +310,7 @@ function setStyle(content, style = {}) {
     color = yiq(background) >= 0.6 ? "#111" : "white",
     padding = "0 1px",
     borderRadius = "4px",
-    fontWeight = 900,
+    fontWeight = 400,
     fontSize = "1em",
     ...rest
   } = typeof style === "string" ? {background: style} : style;
@@ -335,18 +354,26 @@ monthName = today.toLocaleString('default', { month: 'long' });
 monthNumJS = today.getMonth();
 currMonth = monthNums[monthNumJS]
 nextMonth = monthNums[(monthNumJS + 1) % 12]
+dekStart = Math.floor(decoDoty / 10) * 10
 diff = parseInt(currMonth || 0) - parseInt(nextMonth || nDaysInYear)
   //currMonth === "" ? 0 : parseInt(currMonth) - nextMonth === "" ? nDaysInYear : parseInt(nextMonth)
 styledCurrMonth = setStyle(currMonth, d3.color("cyan").formatHex())
 styledCurrMonth1 = setStyle(currMonth, d3.color("cyan").formatHex())
 styledCurrMonth2 = setStyle(currMonth, d3.color("cyan").formatHex())
 styledCurrMonth3 = setStyle(currMonth, d3.color("cyan").formatHex())
+styledCurrMonth4 = setStyle(currMonth, d3.color("cyan").formatHex())
 styledNextMonth = setStyle(nextMonth, d3.color("cyan").formatHex())
 styledNextMonth1 = setStyle(nextMonth, d3.color("cyan").formatHex())
+styledNextMonth2 = setStyle(nextMonth, d3.color("cyan").formatHex())
+styledNextMonth3 = setStyle(nextMonth, d3.color("cyan").formatHex())
 styledDiff = setStyle(diff, d3.color("cyan").formatHex())
-styledDiff1 = setStyle(diff, d3.color("cyan").formatHex())
+styledDiff1 = setStyle(Math.abs(diff), d3.color("cyan").formatHex())
 styledDiff2 = setStyle(diff, d3.color("cyan").formatHex())
+styledDiff3 = setStyle(diff, d3.color("cyan").formatHex())
 styledDek = setStyle(decoDoty.slice(0, 2), d3.color("cyan").formatHex())
+styledDekStart = setStyle(dekStart, d3.color("cyan").formatHex())
+styledDekStart1 = setStyle(dekStart, d3.color("cyan").formatHex())
+styledDekEnd = setStyle(dekStart + 10, d3.color("cyan").formatHex())
 styledDotd = setStyle(decoDoty[2], d3.color("cyan").formatHex())
 styledDecoYear = setStyle(decoYear, d3.schemePaired[10])
 styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])
@@ -388,6 +415,12 @@ styledDotw0doty1 = setStyle(dotw0doty.toString().padStart(3, "0"), d3.color("cya
 styledDotw0doty2 = setStyle(dotw0doty.toString().padStart(3, "0"), d3.color("cyan").formatHex())
 styledDotw0doty3 = setStyle(Math.abs(dotw0doty).toString().padStart(3, "0"), d3.color("cyan").formatHex())
 styledDotw0doty4 = setStyle(Math.abs(dotw0doty).toString().padStart(3, "0"), d3.color("cyan").formatHex())
+styledDotw0doty5 = setStyle(Math.abs(dotw0doty).toString().padStart(3, "0"), d3.color("cyan").formatHex())
+styledDotw7doty = setStyle(String(dotw0doty + 7).padStart(3, "0"), d3.color("cyan").formatHex())
+styledDotw7doty1 = setStyle(String(dotw0doty + 7).padStart(3, "0"), d3.color("cyan").formatHex())
+styledSeven = setStyle(-7, d3.color("cyan").formatHex())
+styledSeven1 = setStyle(-7, d3.color("cyan").formatHex())
+styledTen = setStyle(-10, d3.color("cyan").formatHex())
 styledDotm0 = setStyle(dotm0, d3.color("darkmagenta").formatHex())
 styledDotm1 = setStyle(dotm1, d3.color("darkmagenta").formatHex())
 styledDotm2 = setStyle(dotm1, d3.color("darkmagenta").formatHex())
@@ -668,6 +701,9 @@ input.oi-3a86ea-input[type="checkbox"] {
 }
 div > form > label {
   --label-width: 130px;
+}
+input[type="radio"], input[type="checkbox"] {
+  margin: 2px 0px 0px 0px;
 }
 p:has(.radiotitle) {
   margin-top: -8px !important;
