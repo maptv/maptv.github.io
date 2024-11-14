@@ -206,7 +206,7 @@ We can obtain Dec month numbers using only a pair of hands by counting index and
 
 {{< include _finger.qmd >}}
 
-# Math
+# Span
 
 We can combine the dotm and dotw patterns above to create hybrid Dec dates: \${styledDecoYear5}+\${hybridMonthNumber}+\${styledDotm2}+\${styledDotw5}. Essentially, you can modify a Dec date to show whatever numbers you want. All it takes is a little bit of arithmetic! This incredible versatility is possible thanks to the mathematical basis of the notation Dec uses for Dec dates and groups of consecutive Dec dates expressed as Dec spans.
 
@@ -214,11 +214,21 @@ Like [slices](https://en.wikipedia.org/wiki/Array_slicing#1991:_Python:~:text=nu
 
 The Dec fluid span equation for ${monthName}, \${styledCurrMonth}=\${styledNextMonth}+\${styledDiff}, tells us that ${monthName} starts on Day \${styledCurrMonth1}, ends before Day \${styledNextMonth1}, and has \${styledDiff1} days. We can choose to omit any one of the three parts of any fluid span without changing its meaning. The [d~M~]{.cyan}=[d~S~]{.cyan}, [d~M~]{.cyan}=[d~Δ~]{.cyan}, and =[d~S~]{.cyan}+[d~Δ~]{.cyan} formats of the span for ${monthName} are \${styledCurrMonth2}=\${styledNextMonth2}, \${styledCurrMonth3}=\${styledDiff2}, and =\${styledNextMonth3}+\${styledDiff3}, respectively.
 
-Dec spans that include at least one year are called **fixed** spans because they represent a single set of dates instead of a subset of dates in every year. The short format of fixed spans, [y~M~]{.yellow}+[d~M~]{.cyan}=[y~S~]{.yellow}+[d~S~]{.cyan}, where  The full form of fixed spans only have two forms: the full form [y~M~]{.yellow}+[d~M~]{.cyan}=[y~S~]{.yellow}+[d~S~]{.cyan}+[y~Δ~]{.yellow}+[d~Δ~]{.cyan} and the truncated form 
+Dec spans that include at least one year are called **fixed** spans because they represent a single set of dates instead of a subset of dates in every year. The short format of fixed spans consists only of the minuend [y~M~]{.yellow}+[d~M~]{.cyan} and subtrahend [y~S~]{.yellow}+[d~S~]{.cyan} Dec dates separated by an equals sign. The full format of fixed spans appends the sum of [y~Δ~]{.yellow} and [d~Δ~]{.cyan}, which are [y~M~]{.yellow}-[y~S~]{.yellow} and [d~M~]{.cyan}-[d~S~]{.cyan}, respectively:
 
-Unlike fluid spans, fixed spans can only omit Δ or both not S. Therefore, all fixed spans have the The fixed span equation, [y~M~]{.yellow}+[d~M~]{.cyan}&div;[n~M~]{.orange}=[y~S~]{.yellow}+[d~S~]{.cyan}&div;[n~S~]{.orange}+[y~Δ~]{.yellow}+[d~Δ~]{.cyan}&div;[n~Δ~]{.orange}, is quite long but fixed spans are much shorter because they omit the divisors: [y~M~]{.yellow}+[d~M~]{.cyan}=[y~S~]{.yellow}+[d~S~]{.cyan}+[y~Δ~]{.yellow}+[d~Δ~]{.cyan}.
+$$\begin{align}
+\texttt{\colorbox{yellow}{$y_M$}+\colorbox{cyan}{$d_M$}=\colorbox{yellow}{$y_S$}+\colorbox{cyan}{$d_S$}+\colorbox{yellow}{$y_\Delta$}+\colorbox{cyan}{$d_\Delta$}} \\
+\texttt{=\colorbox{yellow}{$y_S$}+\colorbox{cyan}{$d_S$}+\colorbox{yellow}{$y_M$}-\colorbox{yellow}{$y_S$}+\colorbox{cyan}{$d_M$}-\colorbox{cyan}{$d_S$}}
+\end{align}$$
 
-A missing M is interpreted as [0]{.cyan} and an empty [right-hand side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20right%20side%20of%20the%20equation) implies that S+Δ=[n]{.orange}.
+
+Unlike fluid spans, fixed spans can omit Δ, both S and Δ, but not S on its own. In a fixed span, a missing M is interpreted as [y~S~]{.yellow}+[0]{.cyan} and an empty [right-hand side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20right%20side%20of%20the%20equation) implies that S+Δ=[y~M~]{.yellow}[n]{.orange}. If neither [y~M~]{.yellow} and [y~S~]{.yellow}, 
+
+In addition to [truncation](https://en.wikipedia.org/wiki/Truncation#:~:text=limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point) of their right-hand side, fixed spans can be. Therefore, all fixed spans have the The fixed span equation, [y~M~]{.yellow}+[d~M~]{.cyan}&div;[n~M~]{.orange}=[y~S~]{.yellow}+[d~S~]{.cyan}&div;[n~S~]{.orange}+[y~Δ~]{.yellow}+[d~Δ~]{.cyan}&div;[n~Δ~]{.orange}, is quite long but fixed spans are much shorter because they omit the divisors: [y~M~]{.yellow}+[d~M~]{.cyan}=[y~S~]{.yellow}+[d~S~]{.cyan}+[y~Δ~]{.yellow}+[d~Δ~]{.cyan}.
+
+full form [y~M~]{.yellow}+[d~M~]{.cyan}=[y~S~]{.yellow}+[d~S~]{.cyan}+[y~Δ~]{.yellow}+[d~Δ~]{.cyan} and the truncated form 
+
+
 Fluid spans can omit [d~S~]{.cyan}, because the plus (+) or minus (-) sign preceding [d~Δ~]{.cyan} in [d~M~]{.cyan}=[d~Δ~]{.cyan}, \${styledCurrMonth3}=\${styledDiff2}, differentiates it from [d~M~]{.cyan}=[d~S~]{.cyan}: \${styledCurrMonth4}=\${styledNextMonth2}. 
 
 The Dec span equation for the current week is \${styledDotw0doty3}=\${styledDotw7doty}+\${styledSeven}. 
