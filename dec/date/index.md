@@ -1,10 +1,10 @@
 # Dec Date
 Martin Laptev
-2024+257
+2024+258
 
 - [Week](#week)
 - [Month](#month)
-- [Math](#math)
+- [Span](#span)
 - [Index](#index)
 
 My website serves as a demonstration of both the
@@ -656,7 +656,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
         <g transform="translate(275 25.452)"><path d="m104.83 115.39c6.404-2.645-8.252-81.105-10.439-94.6-3.708-22.874 20.403-27.359 24.219-4.037 2.169 13.249 13.406 91.545 19.883 92.723" fill="#cff" ns:knockout="Off"/><path d="m77.572 137.87c6.351-6.543-36.331-73.707-43.051-83.852-10.573-15.957 10.541-26.844 19.885-13.199 5.886 8.594 44.021 77.211 50.424 74.564" fill="#c0dbfc" ns:knockout="Off"/><path d="m61.288 163.93c-12.38-12.268-42.161-34.516-50.955-40.324-16.419-10.842-8.151-28.834 9.289-19.791 11.855 6.146 51.601 40.602 57.951 34.057" fill="#befc75" ns:knockout="Off"/><path d="m180.69 146.27c2.476-0.215 5.742-3.523 10.661-9.414 26.474-31.705 55.667-34.346 63.162-17.869-17.557 10.336-45.352 33.574-50.785 56.691" fill="#e9befc" ns:knockout="Off"/><path d="m138.49 109.47c6.477 1.178 26.692-67.762 31.054-82.859 5.918-20.479 27.516-13.883 22.155 6.934-3.078 11.955-15.788 56.023-17.843 84.938" fill="#ff6" ns:knockout="Off"/><path d="m71.329 145.83c21.224-35.646 55.968-37.51 81.838-34.816" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2.2742" ns:knockout="Off"/><path d="m203.41 176.23c-4.001 17.025-13.369 32.77-24.92 43.295-12.778 11.641-27.906 5.285-41.088 9.52-9.404 3.021-17.9 6.805-28.715 3.371-16.236-5.16-38.154-46.174-42.324-61.123-2.028-7.266-45.412-39.908-56.348-47.131-16.419-10.84-8.151-28.834 9.288-19.791 11.856 6.146 51.603 40.602 57.953 34.059 6.351-6.545-36.33-73.709-43.052-83.854-10.573-15.957 10.54-26.844 19.885-13.198 5.885 8.593 44.021 77.212 50.424 74.565 6.404-2.646-8.252-81.106-10.44-94.601-3.708-22.874 20.403-27.36 24.22-4.038 2.168 13.25 13.406 91.547 19.882 92.723 6.477 1.178 26.693-67.762 31.055-82.859 5.918-20.478 27.515-13.883 22.154 6.934-3.876 15.059-23.037 81.07-16.934 103.57 3.519 12.973 6.746 11.52 16.583-0.262 26.473-31.705 55.666-34.346 63.162-17.869-17.557 10.335-45.353 33.575-50.785 56.691z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2.2742" ns:knockout="Off"/></g><g transform="translate(-275.39 26.165)"><path d="m425.07 115.77c-6.403-2.646 8.252-81.105 10.439-94.6 3.707-22.875-20.402-27.36-24.219-4.038-2.17 13.249-13.407 91.546-19.884 92.724" fill="#cff" ns:knockout="Off"/><path d="m452.33 138.26c-6.352-6.543 36.33-73.709 43.051-83.852 10.572-15.957-10.541-26.845-19.885-13.199-5.885 8.592-44.021 77.211-50.424 74.564" fill="#c0dbfc" ns:knockout="Off"/><path d="m468.61 164.32c12.381-12.268 42.16-34.516 50.957-40.324 16.418-10.842 8.15-28.834-9.289-19.791-11.855 6.146-51.602 40.602-57.951 34.057" fill="#befc75" ns:knockout="Off"/><path d="m349.21 146.65c-2.476-0.213-5.742-3.521-10.661-9.414-26.474-31.703-55.667-34.346-63.162-17.867 17.557 10.336 45.352 33.574 50.786 56.691" fill="#e9befc" ns:knockout="Off"/><path d="m391.41 109.86c-6.477 1.178-26.692-67.763-31.054-82.86-5.917-20.478-27.515-13.882-22.155 6.934 3.078 11.954 15.788 56.024 17.843 84.938" fill="#ff6" ns:knockout="Off"/><path d="m327.84 175.51c4.001 17.025 13.369 32.77 24.919 43.293 12.779 11.641 27.907 5.285 41.089 9.52 9.405 3.021 17.901 6.807 28.714 3.371 16.238-5.16 38.154-46.172 42.324-61.123 2.029-7.266 45.414-39.908 56.35-47.131 16.418-10.84 8.15-28.834-9.289-19.791-11.855 6.148-51.602 40.602-57.951 34.059s36.33-73.709 43.051-83.852c10.572-15.958-10.541-26.846-19.885-13.199-5.885 8.592-44.021 77.211-50.424 74.564-6.403-2.646 8.253-81.105 10.439-94.6 3.707-22.875-20.402-27.361-24.219-4.039-2.169 13.25-13.406 91.547-19.883 92.725s-26.692-67.764-31.054-82.861c-5.918-20.477-27.516-13.882-22.155 6.934 3.877 15.059 23.037 81.072 16.934 103.57-3.519 12.971-6.746 11.518-16.583-0.264-26.474-31.703-55.667-34.346-63.162-17.869 17.557 10.337 45.352 33.576 50.785 56.693z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2.2742" ns:knockout="Off"/><path d="m459.92 145.12c-21.223-35.648-55.966-37.51-81.839-34.818" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2.2742" ns:knockout="Off"/></g>
         &#10;    <text transform="translate(-4,18.354)" fill="#000000" font-family="Tahoma" font-size="13.333px" style="line-height:1;shape-inside:url(#rect109);white-space:pre" xml:space="preserve"/><text x="74.959618" y="20.693985" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="74.959618" y="20.693985"><tspan x="74.959618" y="20.693985" font-family="Tahoma" font-size="13.333px" style="line-height:1">May</tspan></tspan><tspan x="74.959618" y="35.762753"><tspan x="74.959618" y="35.762753" font-family="Tahoma" font-size="13.333px" style="line-height:1">60</tspan></tspan></text><text x="151.14308" y="7.6939859" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="151.14308" y="7.6939859" style="line-height:1">June</tspan><tspan x="151.14308" y="22.762749" style="line-height:1">91</tspan></text><text x="214.66582" y="42.130184" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="214.66582" y="42.130184"><tspan x="214.66582" y="42.130184" font-family="Tahoma" font-size="13.333px" style="line-height:1">July</tspan></tspan><tspan x="214.66582" y="57.198948"><tspan x="214.66582" y="57.198948" font-family="Tahoma" font-size="13.333px" style="line-height:1">121</tspan></tspan></text><text x="230.51364" y="110.2179" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="230.51364" y="110.2179"><tspan x="230.51364" y="110.2179" font-family="Tahoma" font-size="13.333px" style="line-height:1">August</tspan></tspan><tspan x="230.51364" y="125.28667"><tspan x="230.51364" y="125.28667" font-family="Tahoma" font-size="13.333px" style="line-height:1">152</tspan></tspan></text><text x="501.76001" y="115.98518" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="501.76001" y="115.98518" font-family="Tahoma" font-size="13.333px" style="line-height:1"/></text><text x="287.47159" y="108.20547" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="287.47159" y="108.20547" style="line-height:1">September</tspan><tspan x="287.47159" y="123.27423" style="line-height:1">183</tspan></text><text x="317.61273" y="42.130184" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="317.61273" y="42.130184" style="line-height:1">October</tspan><tspan x="317.61273" y="57.198948" style="line-height:1">213</tspan></text><text x="381.24997" y="8.1301823" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="381.24997" y="8.1301823" style="line-height:1">November</tspan><tspan x="381.24997" y="23.198946" style="line-height:1">244</tspan></text><text x="459.61121" y="21.130182" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="459.61121" y="21.130182" style="line-height:1">December</tspan><tspan x="459.61121" y="36.198944" style="line-height:1">274</tspan></text><text x="501.9632" y="85.693985" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="0" y="-0.15816404"><tspan x="501.9632" y="85.693985" font-family="Tahoma" font-size="13.333px" style="line-height:1"/></tspan><tspan x="0" y="13.175136"/><tspan x="501.9632" y="85.693985" font-family="Tahoma" font-size="13.333px"><tspan x="501.9632" y="85.693985" style="line-height:1">January</tspan><tspan x="501.9632" y="100.76275" style="line-height:1">305</tspan><tspan x="501.9632" y="115.83151" style="line-height:1"/></tspan><tspan x="501.9632" y="115.83151" font-family="Tahoma" font-size="13.333px"><tspan x="501.9632" y="115.83151" style="line-height:1">February</tspan><tspan x="501.9632" y="130.90027" style="line-height:1">336</tspan></tspan></text><text x="515.56207" y="226.96729" fill="#ffffff" font-family="Tahoma" font-size="13.333px" stroke="#000000" stroke-linejoin="round" stroke-width=".378" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="515.56207" y="226.96729" font-family="Tahoma" font-size="13.333px" style="line-height:1"/></text><text x="21.274513" y="86.13018" fill="#000000" font-family="Tahoma" font-size="13.333px" text-align="center" text-anchor="middle" style="line-height:1" xml:space="preserve"><tspan x="0" y="-0.075284496"><tspan x="21.274513" y="86.13018" font-family="Tahoma" font-size="13.333px" style="line-height:1"/></tspan><tspan x="0" y="13.258015"/><tspan x="21.274513" y="86.13018"><tspan x="21.274513" y="86.13018" font-family="Tahoma" font-size="13.333px" style="line-height:1">March</tspan></tspan><tspan x="21.274513" y="101.19894"><tspan x="21.274513" y="101.19894" font-family="Tahoma" font-size="13.333px" style="line-height:1">-1</tspan></tspan><tspan x="21.274513" y="116.26772"><tspan x="21.274513" y="116.26772" font-family="Tahoma" font-size="13.333px" style="line-height:1">April</tspan></tspan><tspan x="21.274513" y="131.33647"><tspan x="21.274513" y="131.33647" font-family="Tahoma" font-size="13.333px" style="line-height:1">30</tspan></tspan></text></svg>
 
-# Math
+# Span
 
 We can combine the dotm and dotw patterns above to create hybrid Dec
 dates:
@@ -702,25 +702,50 @@ ${styledCurrMonth3}=${styledDiff2}, and
 
 Dec spans that include at least one year are called **fixed** spans
 because they represent a single set of dates instead of a subset of
-dates in every year. The short format of fixed spans,
-<span class="yellow">y<sub>M</sub></span>+<span class="cyan">d<sub>M</sub></span>=<span class="yellow">y<sub>S</sub></span>+<span class="cyan">d<sub>S</sub></span>,
-where The full form of fixed spans only have two forms: the full form
-<span class="yellow">y<sub>M</sub></span>+<span class="cyan">d<sub>M</sub></span>=<span class="yellow">y<sub>S</sub></span>+<span class="cyan">d<sub>S</sub></span>+<span class="yellow">y<sub>Δ</sub></span>+<span class="cyan">d<sub>Δ</sub></span>
-and the truncated form
+dates in every year. The short format of fixed spans consists only of
+the minuend
+<span class="yellow">y<sub>M</sub></span>+<span class="cyan">d<sub>M</sub></span>
+and subtrahend
+<span class="yellow">y<sub>S</sub></span>+<span class="cyan">d<sub>S</sub></span>
+Dec dates separated by an equals sign. The full format of fixed spans
+appends the sum of <span class="yellow">y<sub>Δ</sub></span> and
+<span class="cyan">d<sub>Δ</sub></span>, which are
+<span class="yellow">y<sub>M</sub></span>-<span class="yellow">y<sub>S</sub></span>
+and
+<span class="cyan">d<sub>M</sub></span>-<span class="cyan">d<sub>S</sub></span>,
+respectively:
 
-Unlike fluid spans, fixed spans can only omit Δ or both not S.
-Therefore, all fixed spans have the The fixed span equation,
+$$\begin{align}
+\texttt{\colorbox{yellow}{$y_M$}+\colorbox{cyan}{$d_M$}=\colorbox{yellow}{$y_S$}+\colorbox{cyan}{$d_S$}+\colorbox{yellow}{$y\_\Delta$}+\colorbox{cyan}{$d\_\Delta$}} \\
+\texttt{=\colorbox{yellow}{$y_S$}+\colorbox{cyan}{$d_S$}+\colorbox{yellow}{$y_M$}-\colorbox{yellow}{$y_S$}+\colorbox{cyan}{$d_M$}-\colorbox{cyan}{$d_S$}}
+\end{align}$$
+
+Unlike fluid spans, fixed spans can omit Δ, both S and Δ, but not S on
+its own. In a fixed span, a missing M is interpreted as
+<span class="yellow">y<sub>S</sub></span>+<span class="cyan">0</span>
+and an empty [right-hand
+side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20right%20side%20of%20the%20equation)
+implies that
+S+Δ=<span class="yellow">y<sub>M</sub></span><span class="orange">n</span>.
+If neither <span class="yellow">y<sub>M</sub></span> and
+<span class="yellow">y<sub>S</sub></span>,
+
+In addition to
+[truncation](https://en.wikipedia.org/wiki/Truncation#:~:text=limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point)
+of their right-hand side, fixed spans can be. Therefore, all fixed spans
+have the The fixed span equation,
 <span class="yellow">y<sub>M</sub></span>+<span class="cyan">d<sub>M</sub></span>÷<span class="orange">n<sub>M</sub></span>=<span class="yellow">y<sub>S</sub></span>+<span class="cyan">d<sub>S</sub></span>÷<span class="orange">n<sub>S</sub></span>+<span class="yellow">y<sub>Δ</sub></span>+<span class="cyan">d<sub>Δ</sub></span>÷<span class="orange">n<sub>Δ</sub></span>,
 is quite long but fixed spans are much shorter because they omit the
 divisors:
 <span class="yellow">y<sub>M</sub></span>+<span class="cyan">d<sub>M</sub></span>=<span class="yellow">y<sub>S</sub></span>+<span class="cyan">d<sub>S</sub></span>+<span class="yellow">y<sub>Δ</sub></span>+<span class="cyan">d<sub>Δ</sub></span>.
 
-A missing M is interpreted as <span class="cyan">0</span> and an empty
-[right-hand
-side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20right%20side%20of%20the%20equation)
-implies that S+Δ=<span class="orange">n</span>. Fluid spans can omit
-<span class="cyan">d<sub>S</sub></span>, because the plus (+) or minus
-(-) sign preceding <span class="cyan">d<sub>Δ</sub></span> in
+full form
+<span class="yellow">y<sub>M</sub></span>+<span class="cyan">d<sub>M</sub></span>=<span class="yellow">y<sub>S</sub></span>+<span class="cyan">d<sub>S</sub></span>+<span class="yellow">y<sub>Δ</sub></span>+<span class="cyan">d<sub>Δ</sub></span>
+and the truncated form
+
+Fluid spans can omit <span class="cyan">d<sub>S</sub></span>, because
+the plus (+) or minus (-) sign preceding
+<span class="cyan">d<sub>Δ</sub></span> in
 <span class="cyan">d<sub>M</sub></span>=<span class="cyan">d<sub>Δ</sub></span>,
 ${styledCurrMonth3}=${styledDiff2}, differentiates it from
 <span class="cyan">d<sub>M</sub></span>=<span class="cyan">d<sub>S</sub></span>:
