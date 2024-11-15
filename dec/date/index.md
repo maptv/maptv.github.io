@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+258
+2024+259
 
 - [Week](#week)
 - [Month](#month)
@@ -720,63 +720,20 @@ $$\begin{align}
 \texttt{=\colorbox{yellow}{$y_S$}+\colorbox{cyan}{$d_S$}+\colorbox{yellow}{$y_M$}-\colorbox{yellow}{$y_S$}+\colorbox{cyan}{$d_M$}-\colorbox{cyan}{$d_S$}}
 \end{align}$$
 
-Unlike fluid spans, fixed spans can omit Δ, both S and Δ, but not S on
-its own. In a fixed span, a missing M is interpreted as
-<span class="yellow">y<sub>S</sub></span>+<span class="cyan">0</span>
-and an empty [right-hand
+Unlike fluid spans, fixed spans cannot omit S without also omitting Δ.
+In a fixed span, a missing [left-hand
+side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20expression%20on%20the%20left%20of%20the%20%22%3D%22)
+indicates that M is the Day <span class="cyan">0</span> of Year
+<span class="yellow">yS</span>
+(M=<span class="yellow">yS</span>+<span class="cyan">0</span>), whereas
+an empty [right-hand
 side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20right%20side%20of%20the%20equation)
-implies that
-S+Δ=<span class="yellow">y<sub>M</sub></span><span class="orange">n</span>.
-If neither <span class="yellow">y<sub>M</sub></span> and
-<span class="yellow">y<sub>S</sub></span>,
-
-In addition to
-[truncation](https://en.wikipedia.org/wiki/Truncation#:~:text=limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point)
-of their right-hand side, fixed spans can be. Therefore, all fixed spans
-have the The fixed span equation,
-<span class="yellow">y<sub>M</sub></span>+<span class="cyan">d<sub>M</sub></span>÷<span class="orange">n<sub>M</sub></span>=<span class="yellow">y<sub>S</sub></span>+<span class="cyan">d<sub>S</sub></span>÷<span class="orange">n<sub>S</sub></span>+<span class="yellow">y<sub>Δ</sub></span>+<span class="cyan">d<sub>Δ</sub></span>÷<span class="orange">n<sub>Δ</sub></span>,
-is quite long but fixed spans are much shorter because they omit the
-divisors:
-<span class="yellow">y<sub>M</sub></span>+<span class="cyan">d<sub>M</sub></span>=<span class="yellow">y<sub>S</sub></span>+<span class="cyan">d<sub>S</sub></span>+<span class="yellow">y<sub>Δ</sub></span>+<span class="cyan">d<sub>Δ</sub></span>.
-
-full form
-<span class="yellow">y<sub>M</sub></span>+<span class="cyan">d<sub>M</sub></span>=<span class="yellow">y<sub>S</sub></span>+<span class="cyan">d<sub>S</sub></span>+<span class="yellow">y<sub>Δ</sub></span>+<span class="cyan">d<sub>Δ</sub></span>
-and the truncated form
-
-Fluid spans can omit <span class="cyan">d<sub>S</sub></span>, because
-the plus (+) or minus (-) sign preceding
-<span class="cyan">d<sub>Δ</sub></span> in
-<span class="cyan">d<sub>M</sub></span>=<span class="cyan">d<sub>Δ</sub></span>,
-${styledCurrMonth3}=${styledDiff2}, differentiates it from
-<span class="cyan">d<sub>M</sub></span>=<span class="cyan">d<sub>S</sub></span>:
-${styledCurrMonth4}=${styledNextMonth2}.
-
-The Dec span equation for the current week is
-${styledDotw0doty3}=${styledDotw7doty}+${styledSeven}.
-
-According to these rules, an entire year can be represented by several
-different spans:
-<span class="cyan">0</span>=<span class="orange">n</span>,
-<span class="cyan">0</span>=, =<span class="orange">n</span>, or simply
-=.
-
-If we omit S instead, Δ needs a + or - sign.
-
-The current week, dek, and month can thus be expressed as
-${styledDotw0doty4}=${styledDotw7doty1} or
-${styledDotw0doty5}=${styledSeven1}, ${styledDekStart}=${styledDekEnd}
-or ${styledDekStart1}=${styledTen}, and
-${styledCurrMonth5}=${styledNextMonth4} or
-${styledCurrMonth6}=${styledDiff4}, respectively.
-
-The spans above are all called . In contrast, a includes at least one
-year. Similarly, a doty by itself is a fluid date and a
-<span class="yellow">year</span>+<span class="cyan">day</span> date is a
-fixed date. If there is a year on only one side of the equals sign,
-<span class="yellow">y<sub>M</sub></span>+<span class="cyan">d<sub>M</sub></span>=<span class="cyan">y<sub>S</sub></span>
-or
-<span class="cyan">d<sub>M</sub></span>=<span class="yellow">y<sub>S</sub></span>+<span class="cyan">d<sub>S</sub></span>,
-the year is assumed to be the same on the other side.
+implies that S is the Day <span class="orange">nM</span> of Year
+<span class="yellow">yM</span>
+(S=<span class="yellow">yM</span>+<span class="orange">nM</span>), which
+means that Δ is the negative doty on Day <span class="cyan">dM</span>
+(Δ=<span class="cyan">dM</span>-<span class="orange">nM</span>). In
+short, spans are bound within the given year by default.
 
 There are two main forms of the span equation, fluid: , into the fixed
 span equation, by including years and dividing each doty by the
