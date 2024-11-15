@@ -221,25 +221,8 @@ $$\begin{align}
 \texttt{=\colorbox{yellow}{$y_S$}+\colorbox{cyan}{$d_S$}+\colorbox{yellow}{$y_M$}-\colorbox{yellow}{$y_S$}+\colorbox{cyan}{$d_M$}-\colorbox{cyan}{$d_S$}}
 \end{align}$$
 
+Unlike fluid spans, fixed spans cannot omit S without also omitting Δ. In a fixed span, a missing [left-hand side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20expression%20on%20the%20left%20of%20the%20%22%3D%22) indicates that M is the Day [0]{.cyan} of Year [yS]{.yellow} (M=[yS]{.yellow}+[0]{.cyan}), whereas an empty [right-hand side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20right%20side%20of%20the%20equation) implies that S is the Day [nM]{.orange} of Year [yM]{.yellow} (S=[yM]{.yellow}+[nM]{.orange}), which means that Δ is the negative doty on Day [dM]{.cyan} (Δ=[dM]{.cyan}-[nM]{.orange}). In short, spans are bound within the given year by default.
 
-Unlike fluid spans, fixed spans can omit Δ, both S and Δ, but not S on its own. In a fixed span, a missing M is interpreted as [y~S~]{.yellow}+[0]{.cyan} and an empty [right-hand side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20right%20side%20of%20the%20equation) implies that S+Δ=[y~M~]{.yellow}[n]{.orange}. If neither [y~M~]{.yellow} and [y~S~]{.yellow}, 
-
-In addition to [truncation](https://en.wikipedia.org/wiki/Truncation#:~:text=limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point) of their right-hand side, fixed spans can be. Therefore, all fixed spans have the The fixed span equation, [y~M~]{.yellow}+[d~M~]{.cyan}&div;[n~M~]{.orange}=[y~S~]{.yellow}+[d~S~]{.cyan}&div;[n~S~]{.orange}+[y~Δ~]{.yellow}+[d~Δ~]{.cyan}&div;[n~Δ~]{.orange}, is quite long but fixed spans are much shorter because they omit the divisors: [y~M~]{.yellow}+[d~M~]{.cyan}=[y~S~]{.yellow}+[d~S~]{.cyan}+[y~Δ~]{.yellow}+[d~Δ~]{.cyan}.
-
-full form [y~M~]{.yellow}+[d~M~]{.cyan}=[y~S~]{.yellow}+[d~S~]{.cyan}+[y~Δ~]{.yellow}+[d~Δ~]{.cyan} and the truncated form 
-
-
-Fluid spans can omit [d~S~]{.cyan}, because the plus (+) or minus (-) sign preceding [d~Δ~]{.cyan} in [d~M~]{.cyan}=[d~Δ~]{.cyan}, \${styledCurrMonth3}=\${styledDiff2}, differentiates it from [d~M~]{.cyan}=[d~S~]{.cyan}: \${styledCurrMonth4}=\${styledNextMonth2}. 
-
-The Dec span equation for the current week is \${styledDotw0doty3}=\${styledDotw7doty}+\${styledSeven}. 
-
-According to these rules, an entire year can be represented by several different spans: [0]{.cyan}=[n]{.orange}, [0]{.cyan}=, =[n]{.orange}, or simply =.
-
-If we omit S instead, Δ needs a + or - sign.
-
-The current week, dek, and month can thus be expressed as \${styledDotw0doty4}=\${styledDotw7doty1} or \${styledDotw0doty5}=\${styledSeven1}, \${styledDekStart}=\${styledDekEnd} or \${styledDekStart1}=\${styledTen}, and \${styledCurrMonth5}=\${styledNextMonth4} or \${styledCurrMonth6}=\${styledDiff4}, respectively.
-
-The spans above are all called . In contrast, a includes at least one year. Similarly, a doty by itself is a fluid date and a [year]{.yellow}+[day]{.cyan} date is a fixed date. If there is a year on only one side of the equals sign, [y~M~]{.yellow}+[d~M~]{.cyan}=[y~S~]{.cyan} or [d~M~]{.cyan}=[y~S~]{.yellow}+[d~S~]{.cyan}, the year is assumed to be the same on the other side.
 
 There are two main forms of the span equation, fluid: , into the fixed span equation, by including years and dividing each doty by the appropriate [n]{.orange} value. [y~M~]{.yellow}+[d~M~]{.cyan} and [y~S~]{.yellow}+[d~S~]{.cyan} are the minuend and subtrahend Dec dates, [n~M~]{.orange} and [n~S~]{.orange} are the lengths of Year [y~M~]{.yellow} and [y~S~]{.yellow}, [y~Δ~]{.yellow} is [y~M~]{.yellow}-[y~S~]{.yellow}, [d~Δ~]{.cyan} is [d~M~]{.cyan}-[d~S~]{.cyan}, and [n~Δ~]{.orange} is the length of the latest year in the equation, respectively.
 

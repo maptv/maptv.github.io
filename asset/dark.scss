@@ -69,6 +69,14 @@ svg.mermaid-js .marker {
   filter: invert(1);
 }
 
+svg#finger tspan {
+  fill: white;
+}
+
+svg#finger path {
+  stroke: white;
+}
+
 // #title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-categories {
 //   color: #fff !important;
 // }
@@ -187,6 +195,10 @@ p > span > mjx-container > mjx-math > mjx-mrow > mjx-mtable > mjx-table > mjx-it
 }
 
 p > span.nowrap > span > mjx-container > mjx-math > mjx-mpadded > mjx-block > mjx-rbox > mjx-mtext > mjx-c::before {
+  color: black;
+}
+
+p > span.math.display mjx-mpadded {
   color: black;
 }
 
