@@ -192,9 +192,15 @@ Dek 36 includes 4 to 5 days of the subsequent year and thus overlaps with Week 0
 
 Even though Dec uses deks instead of weeks, Dec dates can be modified to include [POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems) [Sunday-based weekday numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)). To convert the current Dec date, \${styledDecoYear}+\${styledDecoDoty1}, into the current Dec day of the week (dotw) date, \${styledDecoYear6}\${dotw0sign}\${styledDotw0doty}+\${styledDotw}, we split the current doty, \${styledDecoDoty2}, into the doty of the first day of the current week, \${styledDotw0doty1}, and the current POSIX weekday number: \${styledDotw1}.
 
+Dec uses [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler) math expressions to display information about a date, such as its dotw, as shown above. All Dec dates can be simplified into [y]{.yellow}, the [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=denoting%20integer%20and-,non%2Dinteger%20numbers,-.%20It%20is%20the) years that have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era) ([Year 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="1 BC"} [Day 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1"} [Dot 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="midnight"}). We can convert the current value of [y]{.yellow}, \${styledFracYear}, into the current doty [d]{.cyan} by multiplying the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of [y]{.yellow} by the year length [n]{.orange}: \${styledDecoDoty6}=\${styledFracYear1}&times;\${styledNdays1}.
+
+Instead of the doty [d]{.cyan}, Dec dotw dates display [d]{.cyan}-[w~d~]{.azul}+[w~d~]{.azul}, where [d]{.cyan}-[w~d~]{.azul} is the first doty of the current week and [w~d~]{.azul} is the dotw number associated with the doty [d]{.cyan}. We evaluate the subtraction, but leave the addition unsimplified so we can see [w~d~]{.azul}.
+
 Dec dotw dates can be further modified to include [POSIX week numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.). The current week number, \${styledWeek1}, is the result of adding the middle number in the Dec dotw date, \${styledDotw0doty2}, to the Day 0 dotw number, \${styledDoty0dotw}, and then floor dividing by 7. The current Dec week date, \${styledDecoYear2}+7&times;\${styledWeek}+\${styledDotw2}, shows how we can obtain the sum of the current doty and the Day 0 dotw number: 7&times;\${styledWeek2}+\${styledDotw4}=\${styledDecoDoty3}+\${styledDoty0dotw1}.
 
-The Dec dotw and week date examples above demonstrate how Dec uses [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler) math expressions to display various pieces of information about a date. While Dec dotw dates provide all of the information needed to identify specific dates and coordinate schedules based on deks or weeks, Dec week dates may be useful for [week-based accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
+Dec week dates turn [d]{.cyan}-[w~d~]{.azul} into 7&times;[W]{.wheat}-[w~0~]{.azul}, where [W]{.wheat} is the week number and [w~0~]{.azul} is the dotw number on Day 0. In this case, the subtraction is omitted, because [w~0~]{.azul} is not necessary to identify a date and can be calculated from a given &LeftFloor;[y]{.yellow}&RightFloor;.
+
+While Dec dotw dates provide all of the information needed to identify specific dates and coordinate schedules based on deks or weeks, Dec week dates may be useful for [week-based accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
 
 Following the Dec week date pattern, we can base Dec dates on any fixed-length calendar unit, including the 20-day [dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit), 30-day [tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A), 40-day [kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A), or 73-day [sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A). No other calendar unit can be as convenient as the 10-day [dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B), because our [decimal numeral system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers) allows us to naturally combine a dek, \${styledDek}, and a day of the dek (dotd), \${styledDotd}, into a doty: \${styledDecoDoty4}.
 
@@ -228,7 +234,7 @@ There are two main forms of the span equation, fluid: , into the fixed span equa
 
 The Dec date equation, &LeftFloor;[y]{.yellow}&RightFloor;+[d]{.cyan}&div;[n]{.orange}=[y]{.yellow}, where &LeftFloor;[y]{.yellow}&RightFloor;+[d]{.cyan} is the Dec date, &LeftFloor;[y]{.yellow}&RightFloor; is the year, [d]{.cyan} is the doty, [n]{.orange} is the number of days in Year &LeftFloor;[y]{.yellow}&RightFloor;, and [y]{.yellow} is the [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=denoting%20integer%20and-,non%2Dinteger%20numbers,-.%20It%20is%20the) years that have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era) ([Year 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="1 BC"} [Day 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="March 1"} [Dot 0]{.underline .blue data-bs-toggle="tooltip" data-bs-title="midnight"}), can be rearranged into the Dec doty equation, [d]{.cyan}=[y]{.yellow}%1&times;[n]{.orange}, which defines [d]{.cyan} as the product of [n]{.orange} and the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of [y]{.yellow} ([y]{.yellow}%1, [y]{.yellow}-&LeftFloor;[y]{.yellow}&RightFloor;, or [y]{.yellow} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1).
 
-Dec dotw dates express [d]{.cyan} as [d]{.cyan}-[w~d~]{.azul}+[w~d~]{.azul}, where [d]{.cyan}-[w~d~]{.azul} is the first doty of the current week and [w~d~]{.azul} is the dotw number. Similarly, [d]{.cyan} in Dec dotm dates is expressed as [d]{.cyan}-[m]{.magenta}+[m]{.magenta}, where [d]{.cyan}-[m]{.magenta} is the Dec month number and [m]{.magenta} is the dotm number. In both cases, we evaluate the subtraction to get [d]{.cyan}-[w~d~]{.azul} or [d]{.cyan}-[m]{.magenta}, but not the addition, so we can see [w~d~]{.azul} or [m]{.magenta}.
+Similarly, [d]{.cyan} in Dec dotm dates is expressed as [d]{.cyan}-[m]{.magenta}+[m]{.magenta}, where [d]{.cyan}-[m]{.magenta} is the Dec month number and [m]{.magenta} is the dotm number. In both cases, we evaluate the subtraction to get [d]{.cyan}-[w~d~]{.azul} or [d]{.cyan}-[m]{.magenta}, but not the addition, so we can see [w~d~]{.azul} or [m]{.magenta}.
 
 Dec week dates turn [d]{.cyan}-[w~d~]{.azul} into 7&times;[W]{.wheat}-[w~0~]{.azul}, where [W]{.wheat} is the week number and [w~0~]{.azul} is the dotw number on Day 0. In this case, the subtraction is omitted, because [w~0~]{.azul} is not necessary to identify a date and can be calculated from a given &LeftFloor;[y]{.yellow}&RightFloor;. Likewise, [n]{.orange} is not included in dates for the same reasons. To find [n]{.orange}, we plug the subsequent year (&LeftFloor;[y]{.yellow}&RightFloor;+1) into the Dec year length equation:
 
@@ -339,7 +345,7 @@ doty0dotw = dote2dotw(...doty0dote)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
 Tminus = nDaysInYear - decoDoty
-fracYear = (ydz[0] + (ydz[1] - ydz[2]) / nDaysInYear).toFixed(3)
+fracYear = (ydz[0] + ydz[1] / nDaysInYear).toFixed(4)
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 monthNums = ["305", "336", "", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
 today = new Date()
@@ -368,23 +374,25 @@ styledDekStart = setStyle(dekStart, d3.color("cyan").formatHex())
 styledDekStart1 = setStyle(dekStart, d3.color("cyan").formatHex())
 styledDekEnd = setStyle(dekStart + 10, d3.color("cyan").formatHex())
 styledDotd = setStyle(decoDoty[2], d3.color("cyan").formatHex())
-styledDecoYear = setStyle(decoYear, d3.schemePaired[10])
-styledDecoYear1 = setStyle(decoYear, d3.schemePaired[10])
-styledDecoYear2 = setStyle(decoYear, d3.schemePaired[10])
-styledDecoYear3 = setStyle(decoYear, d3.schemePaired[10])
-styledDecoYear4 = setStyle(decoYear, d3.schemePaired[10])
-styledDecoYear5 = setStyle(decoYear, d3.schemePaired[10])
-styledDecoYear6 = setStyle(decoYear, d3.schemePaired[10])
-styledDecoYear7 = setStyle(decoYear, d3.schemePaired[10])
-styledDecoYear8 = setStyle(decoYear, d3.schemePaired[10])
-styledNextYear = setStyle(nextYear, d3.schemePaired[10])
-styledFracYear = setStyle(fracYear, d3.schemePaired[10])
+styledDecoYear = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear1 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear2 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear3 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear4 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear5 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear6 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear7 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear8 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledNextYear = setStyle(nextYear, d3.color("yellow").formatHex())
+styledFracYear = setStyle(fracYear, d3.color("yellow").formatHex())
+styledFracYear1 = setStyle(fracYear.slice(4), d3.color("yellow").formatHex())
 styledDecoDoty = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty1 = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty2 = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty3 = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty4 = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDecoDoty5 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty6 = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDotyInput = setStyle(dotyInput, d3.color("cyan").formatHex())
 styledDecoTminus = setStyle(Tminus, d3.color("pink").formatHex())
 styledDecoDek = setStyle(decoDoty.slice(0, 2), d3.color("cyan").formatHex())
