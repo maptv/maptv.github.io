@@ -192,8 +192,8 @@ the same purpose as months and weeks in the Gregorian calendar. The
 current doty and the doty selected by the
 [Observable](https://observablehq.com/)
 [range](https://observablehq.com/@observablehq/input-range)🎚️inputs
-above to be highlighted in the calendar🗓️plots are ${styledDecoDoty} and
-${styledDotyInput}, respectively.
+above to be highlighted in the calendar🗓️plots are ${setStyle(decoDoty,
+cyan)} and ${styledDotyInput}, respectively.
 
 There are two range🎚️inputs labeled as “day of the year” because every
 doty can be expressed as both a positive and a negative number. The
@@ -251,12 +251,13 @@ include
 [POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems)
 [Sunday-based weekday
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)).
-To convert the current Dec date, ${styledDecoYear}+${styledDecoDoty1},
-into the current Dec day of the week (dotw) date,
+To convert the current Dec date, ${styledDecoYear}+${setStyle(decoDoty,
+d3.color(“cyan”).formatHex())}, into the current Dec day of the week
+(dotw) date,
 ${styledDecoYear6}${dotw0sign}${styledDotw0doty}+${styledDotw}, we split
-the current doty, ${styledDecoDoty2}, into the doty of the first day of
-the current week, ${styledDotw0doty1}, and the current POSIX weekday
-number: ${styledDotw1}.
+the current doty, ${setStyle(decoDoty, cyan)}, into the doty of the
+first day of the current week, ${styledDotw0doty1}, and the current
+POSIX weekday number: ${styledDotw1}.
 
 Dec uses
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
@@ -271,12 +272,13 @@ data-bs-title="1 BC"><u>Year 0</u></span> <span class="blue"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 <span class="blue" data-bs-toggle="tooltip"
 data-bs-title="midnight"><u>Dot 0</u></span>). We can convert the
-current value of <span class="yellow">y</span>, ${styledFracYear}, into
-the current doty <span class="cyan">d</span> by multiplying the [decimal
+current <span class="yellow">y</span>, ${styledFracYear}, into the
+current doty <span class="cyan">d</span>, ${setStyle(decoDoty, cyan)},
+by flooring the product of the [decimal
 part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
-of <span class="yellow">y</span> by the year length
-<span class="orange">n</span>:
-${styledDecoDoty6}=${styledFracYear1}×${styledNdays1}.
+of <span class="yellow">y</span>, ${styledFracYear1}, and the year
+length <span class="orange">n</span>: ${setStyle(decoDoty,
+cyan)}=${styledFracYear2}×${styledNdays1}.
 
 Instead of the doty <span class="cyan">d</span>, Dec dotw dates display
 <span class="cyan">d</span>-<span class="azul">w<sub>d</sub></span>+<span class="azul">w<sub>d</sub></span>,
@@ -296,7 +298,8 @@ dotw number, ${styledDoty0dotw}, and then floor dividing by 7. The
 current Dec week date,
 ${styledDecoYear2}+7×${styledWeek}+${styledDotw2}, shows how we can
 obtain the sum of the current doty and the Day 0 dotw number:
-7×${styledWeek2}+${styledDotw4}=${styledDecoDoty3}+${styledDoty0dotw1}.
+7×${styledWeek2}+${styledDotw4}=${setStyle(decoDoty,
+cyan)}+${styledDoty0dotw1}.
 
 Dec week dates turn
 <span class="cyan">d</span>-<span class="azul">w<sub>d</sub></span> into
@@ -326,7 +329,7 @@ No other calendar unit can be as convenient as the 10-day
 because our [decimal numeral
 system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
 allows us to naturally combine a dek, ${styledDek}, and a day of the dek
-(dotd), ${styledDotd}, into a doty: ${styledDecoDoty4}.
+(dotd), ${styledDotd}, into a doty: ${setStyle(decoDoty, cyan)}.
 
 # Month
 
@@ -940,8 +943,8 @@ the algorithms underlying Dec dates and cite the original source of the
 algorithms as [Hinnant, Howard](https://howardhinnant.github.io).
 <span class="blue" data-bs-toggle="tooltip"
 data-bs-title="2021-09-01"><u>2021+184</u></span>. “`chrono`-Compatible
-Low-Level Date Algorithms.” ${styledDecoYear8}+${styledDecoDoty5}.
-<https://howardhinnant.github.io/date_algorithms.html>.
+Low-Level Date Algorithms.” ${styledDecoYear8}+${setStyle(decoDoty,
+cyan)}. <https://howardhinnant.github.io/date_algorithms.html>.
 
 ``` {ojs}
 //| echo: false
@@ -1057,25 +1060,20 @@ styledDekStart = setStyle(dekStart, d3.color("cyan").formatHex())
 styledDekStart1 = setStyle(dekStart, d3.color("cyan").formatHex())
 styledDekEnd = setStyle(dekStart + 10, d3.color("cyan").formatHex())
 styledDotd = setStyle(decoDoty[2], d3.color("cyan").formatHex())
-styledDecoYear = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear1 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear2 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear3 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear4 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear5 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear6 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear7 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear8 = setStyle(decoYear, d3.color("yellow").formatHex())
+yellow = d3.color("yellow").formatHex()
+styledDecoYear = setStyle(decoYear, yellow)
+styledDecoYear1 = setStyle(decoYear, yellow)
+styledDecoYear2 = setStyle(decoYear, yellow)
+styledDecoYear3 = setStyle(decoYear, yellow)
+styledDecoYear4 = setStyle(decoYear, yellow)
+styledDecoYear5 = setStyle(decoYear, yellow)
+styledDecoYear6 = setStyle(decoYear, yellow)
+styledDecoYear7 = setStyle(decoYear, yellow)
+styledDecoYear8 = setStyle(decoYear, yellow)
 styledNextYear = setStyle(nextYear, d3.color("yellow").formatHex())
 styledFracYear = setStyle(fracYear, d3.color("yellow").formatHex())
 styledFracYear1 = setStyle(fracYear.slice(4), d3.color("yellow").formatHex())
-styledDecoDoty = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty1 = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty2 = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty3 = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty4 = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty5 = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty6 = setStyle(decoDoty, d3.color("cyan").formatHex())
+cyan = d3.color("cyan").formatHex()
 styledDotyInput = setStyle(dotyInput, d3.color("cyan").formatHex())
 styledDecoTminus = setStyle(Tminus, d3.color("pink").formatHex())
 styledDecoDek = setStyle(decoDoty.slice(0, 2), d3.color("cyan").formatHex())
