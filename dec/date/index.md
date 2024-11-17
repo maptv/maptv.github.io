@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+260
+2024+261
 
 - [Week](#week)
 - [Month](#month)
@@ -192,8 +192,9 @@ the same purpose as months and weeks in the Gregorian calendar. The
 current doty and the doty selected by the
 [Observable](https://observablehq.com/)
 [range](https://observablehq.com/@observablehq/input-range)🎚️inputs
-above to be highlighted in the calendar🗓️plots are ${setStyle(decoDoty,
-cyan)} and ${styledDotyInput}, respectively.
+above to be highlighted in the calendar🗓️plots are
+<span class="cyan">${decoDoty}</span> and
+<span class="cyan">${dotyInput}</span>, respectively.
 
 There are two range🎚️inputs labeled as “day of the year” because every
 doty can be expressed as both a positive and a negative number. The
@@ -251,13 +252,14 @@ include
 [POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems)
 [Sunday-based weekday
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)).
-To convert the current Dec date, ${styledDecoYear}+${setStyle(decoDoty,
-d3.color(“cyan”).formatHex())}, into the current Dec day of the week
-(dotw) date,
-${styledDecoYear6}${dotw0sign}${styledDotw0doty}+${styledDotw}, we split
-the current doty, ${setStyle(decoDoty, cyan)}, into the doty of the
-first day of the current week, ${styledDotw0doty1}, and the current
-POSIX weekday number: ${styledDotw1}.
+To convert the current Dec date,
+<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>,
+into the current Dec day of the week (dotw) date,
+<span class="yellow">${decoYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="azul">${dotw}</span>,
+we split the current doty, <span class="cyan">${decoDoty}</span>, into
+the doty of the first day of the current week,
+<span class="cyan">${dotw0doty}</span>, and the current POSIX weekday
+number: <span class="azul">${dotw}</span>.
 
 Dec uses
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
@@ -272,13 +274,15 @@ data-bs-title="1 BC"><u>Year 0</u></span> <span class="blue"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 <span class="blue" data-bs-toggle="tooltip"
 data-bs-title="midnight"><u>Dot 0</u></span>). We can convert the
-current <span class="yellow">y</span>, ${styledFracYear}, into the
-current doty <span class="cyan">d</span>, ${setStyle(decoDoty, cyan)},
-by flooring the product of the [decimal
+current <span class="yellow">y</span>,
+<span class="yellow">${fracYear}</span>, into the current doty
+<span class="cyan">d</span>, <span class="cyan">${decoDoty}</span>, by
+flooring the product of the [decimal
 part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
-of <span class="yellow">y</span>, ${styledFracYear1}, and the year
-length <span class="orange">n</span>: ${setStyle(decoDoty,
-cyan)}=${styledFracYear2}×${styledNdays1}.
+of <span class="yellow">y</span>,
+<span class="yellow">${fracYear}</span>, and the year length
+<span class="orange">n</span>:
+<span class="cyan">${decoDoty}</span>=<span class="yellow">${fracYear}</span>×<span class="orange">${nDaysInYear}</span>.
 
 Instead of the doty <span class="cyan">d</span>, Dec dotw dates display
 <span class="cyan">d</span>-<span class="azul">w<sub>d</sub></span>+<span class="azul">w<sub>d</sub></span>,
@@ -292,14 +296,14 @@ but leave the addition unsimplified so we can see
 
 Dec dotw dates can be further modified to include [POSIX week
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.).
-The current week number, ${styledWeek1}, is the result of adding the
-middle number in the Dec dotw date, ${styledDotw0doty2}, to the Day 0
-dotw number, ${styledDoty0dotw}, and then floor dividing by 7. The
-current Dec week date,
-${styledDecoYear2}+7×${styledWeek}+${styledDotw2}, shows how we can
-obtain the sum of the current doty and the Day 0 dotw number:
-7×${styledWeek2}+${styledDotw4}=${setStyle(decoDoty,
-cyan)}+${styledDoty0dotw1}.
+The current week number, ${week}, is the result of adding the middle
+number in the Dec dotw date, <span class="cyan">${dotw0doty}</span>, to
+the Day 0 dotw number, <span class="azul">${doty0dotw}</span>, and then
+floor dividing by 7. The current Dec week date,
+<span class="yellow">${decoYear}</span>+7×<span class="wheat">${week}</span>+<span class="azul">${dotw}</span>,
+shows how we can obtain the sum of the current doty and the Day 0 dotw
+number:
+7×<span class="wheat">${week}</span>+<span class="azul">${dotw}</span>=<span class="cyan">${decoDoty}</span>+<span class="azul">${doty0dotw}</span>.
 
 Dec week dates turn
 <span class="cyan">d</span>-<span class="azul">w<sub>d</sub></span> into
@@ -328,21 +332,22 @@ No other calendar unit can be as convenient as the 10-day
 [dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B),
 because our [decimal numeral
 system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
-allows us to naturally combine a dek, ${styledDek}, and a day of the dek
-(dotd), ${styledDotd}, into a doty: ${setStyle(decoDoty, cyan)}.
+allows us to naturally combine a dek,
+<span class="cyan">${decoDoty.slice(0, 2)}</span>, and a day of the dek
+(dotd), <span class="cyan">${decoDoty\[2\]}</span>, into a doty:
+<span class="cyan">${decoDoty}</span>.
 
 # Month
 
 Dec dates can also be modified to display Dec month numbers and [POSIX
 day of the month (dotm)
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D).
-The current Dec dotm date is
-${styledDecoYear3}+${styledMonthNumber1}+${styledDotm1}. Dec dotm dates
-represent each month with the last doty of the previous month because
-POSIX dotm numbers are one-based. For
+The current Dec dotm date is ${decoYear}+${monthNumber}+${dotm}. Dec
+dotm dates represent each month with the last doty of the previous month
+because POSIX dotm numbers are one-based. For
 [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
 dotm numbers, we represent each month with its first doty:
-${styledDecoYear4}+${styledMonthNumber0}+${styledDotm0}.
+${decoYear}+${monthNumber0}+${dotm0}.
 
 We can obtain Dec month numbers using only a pair of hands by counting
 index and ring fingers as 30 days and other fingers as 31 days. For
@@ -699,7 +704,8 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 
 We can combine the dotm and dotw patterns above to create hybrid Dec
 dates:
-${styledDecoYear5}+${hybridMonthNumber}+${styledDotm2}+${styledDotw5}.
+<span class="yellow">${decoYear}</span>+<span class="cyan">${monthNumber -
+dotw}</span>+<span class="magenta">${dotm}</span>+<span class="azul">${dotw}</span>.
 Essentially, you can modify a Dec date to show whatever numbers you
 want. All it takes is a little bit of arithmetic! This incredible
 versatility is possible thanks to the mathematical basis of the notation
@@ -725,19 +731,22 @@ it represents spans that can apply to any year and are thus called
 floating, flexible, or **fluid** spans.
 
 The Dec fluid span equation for ${monthName},
-${styledCurrMonth}=${styledNextMonth}+${styledDiff}, tells us that
-${monthName} starts on Day ${styledCurrMonth1}, ends before Day
-${styledNextMonth1}, and has ${styledDiff1} days. We can choose to omit
-any one of the three parts of any fluid span without changing its
-meaning. The
+<span class="cyan">${currMonth}</span>=<span class="cyan">${nextMonth}</span>+<span class="cyan">${diff}</span>,
+tells us that ${monthName} starts on Day
+<span class="cyan">${currMonth}</span>, ends before Day
+<span class="cyan">${nextMonth}</span>, and has
+<span class="cyan">${diff}</span> days. We can choose to omit any one of
+the three parts of any fluid span without changing its meaning. The
 <span class="cyan">d<sub>M</sub></span>=<span class="cyan">d<sub>S</sub></span>,
 <span class="cyan">d<sub>M</sub></span>=<span class="cyan">d<sub>Δ</sub></span>,
 and
 =<span class="cyan">d<sub>S</sub></span>+<span class="cyan">d<sub>Δ</sub></span>
 formats of the span for ${monthName} are
-${styledCurrMonth2}=${styledNextMonth2},
-${styledCurrMonth3}=${styledDiff2}, and
-=${styledNextMonth3}+${styledDiff3}, respectively.
+<span class="cyan">${currMonth}</span>=<span class="cyan">${nextMonth}</span>,
+<span class="cyan">${currMonth}</span>=<span class="cyan">${diff}</span>,
+and
+=<span class="cyan">${nextMonth}</span>+<span class="cyan">${diff}</span>,
+respectively.
 
 Dec spans that include at least one year are called **fixed** spans
 because they represent a single set of dates instead of a subset of
@@ -878,8 +887,9 @@ countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=backward%20counting%2
 of the days until the start of Year ⌊<span class="yellow">y</span>⌋+1.
 The current
 <span class="yellow">year</span>-<span class="pink">day</span> date,
-${styledNextYear}-${styledDecoTminus}, tells us that Year ${nextYear}
-will begin in ${Tminus} days.
+<span class="yellow">${nextYear}</span>-<span class="pink">${Tminus}</span>,
+tells us that Year <span class="yellow">${nextYear}</span> will begin in
+<span class="pink">${Tminus}</span> days.
 
 # Index
 
@@ -943,8 +953,8 @@ the algorithms underlying Dec dates and cite the original source of the
 algorithms as [Hinnant, Howard](https://howardhinnant.github.io).
 <span class="blue" data-bs-toggle="tooltip"
 data-bs-title="2021-09-01"><u>2021+184</u></span>. “`chrono`-Compatible
-Low-Level Date Algorithms.” ${styledDecoYear8}+${setStyle(decoDoty,
-cyan)}. <https://howardhinnant.github.io/date_algorithms.html>.
+Low-Level Date Algorithms.” ${styledDecoYear8}+${styledDecoDoty5}.
+<https://howardhinnant.github.io/date_algorithms.html>.
 
 ``` {ojs}
 //| echo: false
@@ -1042,6 +1052,7 @@ nextMonth = monthNums[(monthNumJS + 1) % 12]
 dekStart = Math.floor(decoDoty / 10) * 10
 diff = parseInt(currMonth || 0) - parseInt(nextMonth || nDaysInYear)
   //currMonth === "" ? 0 : parseInt(currMonth) - nextMonth === "" ? nDaysInYear : parseInt(nextMonth)
+cyan = d3.color("cyan").formatHex()
 styledCurrMonth = setStyle(currMonth, d3.color("cyan").formatHex())
 styledCurrMonth1 = setStyle(currMonth, d3.color("cyan").formatHex())
 styledCurrMonth2 = setStyle(currMonth, d3.color("cyan").formatHex())
@@ -1060,20 +1071,26 @@ styledDekStart = setStyle(dekStart, d3.color("cyan").formatHex())
 styledDekStart1 = setStyle(dekStart, d3.color("cyan").formatHex())
 styledDekEnd = setStyle(dekStart + 10, d3.color("cyan").formatHex())
 styledDotd = setStyle(decoDoty[2], d3.color("cyan").formatHex())
-yellow = d3.color("yellow").formatHex()
-styledDecoYear = setStyle(decoYear, yellow)
-styledDecoYear1 = setStyle(decoYear, yellow)
-styledDecoYear2 = setStyle(decoYear, yellow)
-styledDecoYear3 = setStyle(decoYear, yellow)
-styledDecoYear4 = setStyle(decoYear, yellow)
-styledDecoYear5 = setStyle(decoYear, yellow)
-styledDecoYear6 = setStyle(decoYear, yellow)
-styledDecoYear7 = setStyle(decoYear, yellow)
-styledDecoYear8 = setStyle(decoYear, yellow)
+styledDecoYear = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear1 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear2 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear3 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear4 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear5 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear6 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear7 = setStyle(decoYear, d3.color("yellow").formatHex())
+styledDecoYear8 = setStyle(decoYear, d3.color("yellow").formatHex())
 styledNextYear = setStyle(nextYear, d3.color("yellow").formatHex())
 styledFracYear = setStyle(fracYear, d3.color("yellow").formatHex())
 styledFracYear1 = setStyle(fracYear.slice(4), d3.color("yellow").formatHex())
-cyan = d3.color("cyan").formatHex()
+styledDecoDoty = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty1 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty2 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty3 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty4 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty5 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty6 = setStyle(decoDoty, d3.color("cyan").formatHex())
+styledDecoDoty7 = setStyle(decoDoty, d3.color("cyan").formatHex())
 styledDotyInput = setStyle(dotyInput, d3.color("cyan").formatHex())
 styledDecoTminus = setStyle(Tminus, d3.color("pink").formatHex())
 styledDecoDek = setStyle(decoDoty.slice(0, 2), d3.color("cyan").formatHex())
@@ -1108,7 +1125,6 @@ styledDotm1 = setStyle(dotm1, d3.color("darkmagenta").formatHex())
 styledDotm2 = setStyle(dotm1, d3.color("darkmagenta").formatHex())
 styledMonthNumber0 = setStyle(monthNumber0, d3.color("cyan").formatHex())
 styledMonthNumber1 = setStyle(monthNumber1, d3.color("cyan").formatHex())
-hybridMonthNumber = setStyle(monthNumber - dotw, d3.color("cyan").formatHex())
 // https://observablehq.com/@juang1744/transform-input/1
 transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
   if (source === undefined) {
@@ -1381,7 +1397,7 @@ input.oi-3a86ea-input[type="checkbox"] {
   margin: 6px 0px 0px 0px;
 }
 div > form > label {
-  --label-width: 130px;
+  --label-width: 140px;
 }
 input[type="radio"], input[type="checkbox"] {
   margin: 2px 0px 0px 0px;
@@ -1396,5 +1412,18 @@ svg#finger {
 }
 h4.anchored {
   margin: 8px 0px 8px 0px;
+}
+&#10;<!-- https://explorebiology.org/collections/genetics/the-structure-of-dnaHHMI -->
+div > form > div > input[type="range"] {
+  background-color: darkslategray !important;
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 5px; /* Specified height */
+  background: #a4a4a4; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
 }
 </style>

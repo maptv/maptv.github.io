@@ -180,48 +180,56 @@ div > form > label {
 }
 
 .azul {
+  border-radius: 4px;
   background-color: blue;
   color: white;
   padding: 0px 2px 0px 2px;
 }
 
 .magenta {
+  border-radius: 4px;
   background-color: darkmagenta;
   color: white;
   padding: 0px 2px 0px 2px;
 }
 
 .wheat {
+  border-radius: 4px;
   background-color: wheat;
   color: black;
   padding: 0px 2px 0px 2px;
 }
 
 .cyan {
+  border-radius: 4px;
   background-color: cyan;
   color: black;
   padding: 0px 2px 0px 2px;
 }
 
 .pink {
+  border-radius: 4px;
   background-color: pink;
   color: black;
   padding: 0px 2px 0px 2px;
 }
 
 .orange {
+  border-radius: 4px;
   background-color: orange;
   color: black;
   padding: 0px 2px 0px 2px;
 }
 
 .yellow {
+  border-radius: 4px;
   background-color: yellow;
   color: black;
   padding: 0px 2px 0px 2px;
 }
 
 .red {
+  border-radius: 4px;
   background-color: red;
   color: black;
   padding: 0px 2px 0px 2px;
