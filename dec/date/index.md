@@ -1,7 +1,8 @@
 # Dec Date
 Martin Laptev
-2024+261
+2024+262
 
+- [Doty](#doty)
 - [Week](#week)
 - [Month](#month)
 - [Span](#span)
@@ -29,6 +30,22 @@ months are identified by
 year has its own [cell](https://observablehq.com/plot/marks/cell).
 Despite these similarities, the two plots illustrate how the Dec (top)
 and Gregorian (bottom) calendars differ.
+
+# Doty
+
+The Dec calendar (Decalendar) starts on <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
+instead of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="January 1"><u>Day 306</u></span> and uses a single number
+called the day of the year (doty), the <span class="cyan">day</span> in
+<span class="yellow">year</span>+<span class="cyan">day</span>, to serve
+the same purpose as months and weeks in the Gregorian calendar. The
+current doty and the doty selected by the
+[Observable](https://observablehq.com/)
+[range](https://observablehq.com/@observablehq/input-range)🎚️inputs
+below to be highlighted in the calendar🗓️plots are
+<span class="cyan">${decoDoty}</span> and
+<span class="cyan">${dotyInput}</span>, respectively.
 
 <div class="column-page-right">
 
@@ -182,20 +199,6 @@ viewof dotwInput = Inputs.radio([
   ], {value: "Sunday"})
 ```
 
-The Dec calendar (Decalendar) starts on <span class="blue"
-data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
-instead of <span class="blue" data-bs-toggle="tooltip"
-data-bs-title="January 1"><u>Day 306</u></span> and uses a single number
-called the day of the year (doty), the <span class="cyan">day</span> in
-<span class="yellow">year</span>+<span class="cyan">day</span>, to serve
-the same purpose as months and weeks in the Gregorian calendar. The
-current doty and the doty selected by the
-[Observable](https://observablehq.com/)
-[range](https://observablehq.com/@observablehq/input-range)🎚️inputs
-above to be highlighted in the calendar🗓️plots are
-<span class="cyan">${decoDoty}</span> and
-<span class="cyan">${dotyInput}</span>, respectively.
-
 There are two range🎚️inputs labeled as “day of the year” because every
 doty can be expressed as both a positive and a negative number. The
 typical range for positive doty values is 0 to
@@ -215,28 +218,29 @@ which determine whether <span class="orange">n</span> is 365 (common
 year) or 366 (leap year) and the day of the week that starts the year,
 respectively.
 
-The toggle✅input shifts 306 dates, <span class="blue"
+The toggle✅input shifts 306 dates, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span> to
-<span class="blue" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="December 31"><u>Day 305</u></span>, in the Gregorian
 calendar by one day, but does not change the order of any Dec dates,
 because [leap
 day](https://en.wikipedia.org/wiki/February_29#:~:text=intercalary%20date%20added%20periodically)
-(<span class="blue" data-bs-toggle="tooltip"
+(<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29"><u>Day 365</u></span>) is the last day of
 the Dec leap years and the doty resets to zero at the start of every
 year. The radio🔘input shifts every Gregorian calendar date by 1 to 6
 days, but has no effect on Decalendar whatsoever.
 
-The x-axes of the calendar🗓️plots are labeled with dek (top) and week
-(bottom) numbers. Deks are groups of 10 days that are well-aligned with
-the Dec year. Every Dec year starts on <span class="blue"
-data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>,
-the first day of Dek 0, which is the first dek of the year. Common years
-end on <span class="blue" data-bs-toggle="tooltip"
-data-bs-title="February 28"><u>Day 364</u></span>, exactly halfway
-through Dek 36, whereas leap years end on the sixth day of Dek 36:
-<span class="blue" data-bs-toggle="tooltip"
+The current doty, <span class="cyan">${decoDoty}</span>, combines the
+current dek, <span class="cyan">${decoDoty.slice(0, 2)}</span>, and day
+of the dek, <span class="cyan">${decoDoty\[2\]}</span>. Deks are groups
+of 10 days that are well-aligned with the Dec year. Every Dec year
+starts on <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span>, the first day of first dek
+of the year, Dek 0. Common years end on <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="February 28"><u>Day
+364</u></span>, exactly halfway through Dek 36, whereas leap years end
+on the sixth day of Dek 36: <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29"><u>Day 365</u></span>.
 
 Dek 36 includes 4 to 5 days of the subsequent year and thus overlaps
@@ -269,20 +273,47 @@ as shown above. All Dec dates can be simplified into
 [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=denoting%20integer%20and-,non%2Dinteger%20numbers,-.%20It%20is%20the)
 years that have passed since the Dec
 [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era)
-(<span class="blue" data-bs-toggle="tooltip"
-data-bs-title="1 BC"><u>Year 0</u></span> <span class="blue"
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="1 BC"><u>Year 0</u></span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
-<span class="blue" data-bs-toggle="tooltip"
-data-bs-title="midnight"><u>Dot 0</u></span>). We can convert the
-current <span class="yellow">y</span>,
-<span class="yellow">${fracYear}</span>, into the current doty
-<span class="cyan">d</span>, <span class="cyan">${decoDoty}</span>, by
-flooring the product of the [decimal
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="midnight"><u>Dot 0</u></span>). Storing dates in the form
+of <span class="yellow">y</span> can be very convenient if we need to be
+able to see the year associated with each date, but not the doty or
+dotw.
+
+To convert a Dec date into <span class="yellow">y</span>, we solve the
+Dec date equation,
+⌊<span class="yellow">y</span>⌋+<span class="cyan">d</span>÷<span class="orange">n</span>=<span class="yellow">y</span>,
+where ⌊<span class="yellow">y</span>⌋+<span class="cyan">d</span> is the
+Dec date, ⌊<span class="yellow">y</span>⌋ is the year,
+<span class="cyan">d</span> is the doty, and
+<span class="orange">n</span> is the number of days in Year
+⌊<span class="yellow">y</span>⌋. The Dec date equation can be rearranged
+into the Dec doty equation,
+<span class="cyan">d</span>=<span class="yellow">y</span>%1×<span class="orange">n</span>,
+which defines <span class="cyan">d</span> as the product of
+<span class="orange">n</span> and <span class="yellow">y</span>%1, the
+[decimal
 part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
-of <span class="yellow">y</span>,
-<span class="yellow">${fracYear}</span>, and the year length
+of <span class="yellow">y</span>
+(<span class="yellow">y</span>-⌊<span class="yellow">y</span>⌋ or
+<span class="yellow">y</span>
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1).
+
+The Dec date equation We can convert the current
+<span class="yellow">y</span> into the current doty
+<span class="cyan">d</span> by
+[flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
+the product of the [decimal
+part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
+of <span class="yellow">y</span> and the year length
 <span class="orange">n</span>:
-<span class="cyan">${decoDoty}</span>=<span class="yellow">${fracYear}</span>×<span class="orange">${nDaysInYear}</span>.
+<span class="cyan">${decoDoty}</span>=⌊<span class="yellow">${mod1FracYear}</span>×<span class="orange">${nDaysInYear}</span>⌋.
+Working with the doty independently of the year makes it easier to
+compare Dec date formats, because most Dec date formats modify the doty
+without affecting the year.
 
 Instead of the doty <span class="cyan">d</span>, Dec dotw dates display
 <span class="cyan">d</span>-<span class="azul">w<sub>d</sub></span>+<span class="azul">w<sub>d</sub></span>,
@@ -811,10 +842,10 @@ is the number of days in Year ⌊<span class="yellow">y</span>⌋, and
 [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=denoting%20integer%20and-,non%2Dinteger%20numbers,-.%20It%20is%20the)
 years that have passed since the Dec
 [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era)
-(<span class="blue" data-bs-toggle="tooltip"
-data-bs-title="1 BC"><u>Year 0</u></span> <span class="blue"
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="1 BC"><u>Year 0</u></span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
-<span class="blue" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="midnight"><u>Dot 0</u></span>), can be rearranged into
 the Dec doty equation,
 <span class="cyan">d</span>=<span class="yellow">y</span>%1×<span class="orange">n</span>,
@@ -951,9 +982,10 @@ Thank you for your interest in Dec. You will find citation information
 for this article below. Please note that this article does not describe
 the algorithms underlying Dec dates and cite the original source of the
 algorithms as [Hinnant, Howard](https://howardhinnant.github.io).
-<span class="blue" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="2021-09-01"><u>2021+184</u></span>. “`chrono`-Compatible
-Low-Level Date Algorithms.” ${styledDecoYear8}+${styledDecoDoty5}.
+Low-Level Date Algorithms.”
+<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>.
 <https://howardhinnant.github.io/date_algorithms.html>.
 
 ``` {ojs}
@@ -994,30 +1026,6 @@ function doty2deco0(year = 1969, doty = 306, zone = 0) {
 dz = unix2dote(unix)
 ydz = dote2date(...dz)
 deco = doty2deco0(...ydz)
-// https://observablehq.com/@observablehq/text-color-annotations-in-markdown#textcolor
-function setStyle(content, style = {}) {
-  function yiq(color) {
-    const {r, g, b} = d3.rgb(color);
-    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
-  }
-  const {
-    background,
-    color = yiq(background) >= 0.6 ? "#111" : "white",
-    padding = "0 1px",
-    borderRadius = "4px",
-    fontWeight = 400,
-    fontSize = "1em",
-    ...rest
-  } = typeof style === "string" ? {background: style} : style;
-  return htl.html`<span style=${{
-    background,
-    color,
-    padding,
-    borderRadius,
-    fontWeight,
-    ...rest
-  }}>${content}</span>`;
-}
 function year2leap(year = 1970) {
   return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
 }
@@ -1041,7 +1049,9 @@ doty0dotw = dote2dotw(...doty0dote)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
 Tminus = nDaysInYear - decoDoty
-fracYear = (ydz[0] + ydz[1] / nDaysInYear).toFixed(4)
+fracYear = ydz[0] + ydz[1] / nDaysInYear
+fullfracYear = (fracYear).toFixed(4)
+mod1FracYear = (fracYear % 1).toFixed(4)
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 monthNums = ["305", "336", "", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
 today = new Date()
@@ -1052,79 +1062,6 @@ nextMonth = monthNums[(monthNumJS + 1) % 12]
 dekStart = Math.floor(decoDoty / 10) * 10
 diff = parseInt(currMonth || 0) - parseInt(nextMonth || nDaysInYear)
   //currMonth === "" ? 0 : parseInt(currMonth) - nextMonth === "" ? nDaysInYear : parseInt(nextMonth)
-cyan = d3.color("cyan").formatHex()
-styledCurrMonth = setStyle(currMonth, d3.color("cyan").formatHex())
-styledCurrMonth1 = setStyle(currMonth, d3.color("cyan").formatHex())
-styledCurrMonth2 = setStyle(currMonth, d3.color("cyan").formatHex())
-styledCurrMonth3 = setStyle(currMonth, d3.color("cyan").formatHex())
-styledCurrMonth4 = setStyle(currMonth, d3.color("cyan").formatHex())
-styledNextMonth = setStyle(nextMonth, d3.color("cyan").formatHex())
-styledNextMonth1 = setStyle(nextMonth, d3.color("cyan").formatHex())
-styledNextMonth2 = setStyle(nextMonth, d3.color("cyan").formatHex())
-styledNextMonth3 = setStyle(nextMonth, d3.color("cyan").formatHex())
-styledDiff = setStyle(diff, d3.color("cyan").formatHex())
-styledDiff1 = setStyle(Math.abs(diff), d3.color("cyan").formatHex())
-styledDiff2 = setStyle(diff, d3.color("cyan").formatHex())
-styledDiff3 = setStyle(diff, d3.color("cyan").formatHex())
-styledDek = setStyle(decoDoty.slice(0, 2), d3.color("cyan").formatHex())
-styledDekStart = setStyle(dekStart, d3.color("cyan").formatHex())
-styledDekStart1 = setStyle(dekStart, d3.color("cyan").formatHex())
-styledDekEnd = setStyle(dekStart + 10, d3.color("cyan").formatHex())
-styledDotd = setStyle(decoDoty[2], d3.color("cyan").formatHex())
-styledDecoYear = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear1 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear2 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear3 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear4 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear5 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear6 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear7 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledDecoYear8 = setStyle(decoYear, d3.color("yellow").formatHex())
-styledNextYear = setStyle(nextYear, d3.color("yellow").formatHex())
-styledFracYear = setStyle(fracYear, d3.color("yellow").formatHex())
-styledFracYear1 = setStyle(fracYear.slice(4), d3.color("yellow").formatHex())
-styledDecoDoty = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty1 = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty2 = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty3 = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty4 = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty5 = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty6 = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDecoDoty7 = setStyle(decoDoty, d3.color("cyan").formatHex())
-styledDotyInput = setStyle(dotyInput, d3.color("cyan").formatHex())
-styledDecoTminus = setStyle(Tminus, d3.color("pink").formatHex())
-styledDecoDek = setStyle(decoDoty.slice(0, 2), d3.color("cyan").formatHex())
-styledDecoDotd = setStyle(decoDoty[2], d3.color("cyan").formatHex())
-styledNdays = setStyle(nDaysInYear, d3.schemePaired[6])
-styledNdays1 = setStyle(nDaysInYear, d3.schemePaired[6])
-styledDotw = setStyle(dotw, d3.color("blue").formatHex())
-styledDotw1 = setStyle(dotw, d3.color("blue").formatHex())
-styledDotw2 = setStyle(dotw, d3.color("blue").formatHex())
-styledDotw3 = setStyle(dotw, d3.color("blue").formatHex())
-styledDotw4 = setStyle(dotw, d3.color("blue").formatHex())
-styledDotw5 = setStyle(dotw, d3.color("blue").formatHex())
-styledDotw6 = setStyle(dotw, d3.color("blue").formatHex())
-styledWeek = setStyle(week, d3.color("wheat").formatHex())
-styledWeek1 = setStyle(week, d3.color("wheat").formatHex())
-styledWeek2 = setStyle(week, d3.color("wheat").formatHex())
-styledDoty0dotw = setStyle(doty0dotw, d3.color("blue").formatHex())
-styledDoty0dotw1 = setStyle(doty0dotw, d3.color("blue").formatHex())
-styledDotw0doty = setStyle(Math.abs(dotw0doty).toString().padStart(3, "0"), d3.color("cyan").formatHex())
-styledDotw0doty1 = setStyle(dotw0doty.toString().padStart(3, "0"), d3.color("cyan").formatHex())
-styledDotw0doty2 = setStyle(dotw0doty.toString().padStart(3, "0"), d3.color("cyan").formatHex())
-styledDotw0doty3 = setStyle(Math.abs(dotw0doty).toString().padStart(3, "0"), d3.color("cyan").formatHex())
-styledDotw0doty4 = setStyle(Math.abs(dotw0doty).toString().padStart(3, "0"), d3.color("cyan").formatHex())
-styledDotw0doty5 = setStyle(Math.abs(dotw0doty).toString().padStart(3, "0"), d3.color("cyan").formatHex())
-styledDotw7doty = setStyle(String(dotw0doty + 7).padStart(3, "0"), d3.color("cyan").formatHex())
-styledDotw7doty1 = setStyle(String(dotw0doty + 7).padStart(3, "0"), d3.color("cyan").formatHex())
-styledSeven = setStyle(-7, d3.color("cyan").formatHex())
-styledSeven1 = setStyle(-7, d3.color("cyan").formatHex())
-styledTen = setStyle(-10, d3.color("cyan").formatHex())
-styledDotm0 = setStyle(dotm0, d3.color("darkmagenta").formatHex())
-styledDotm1 = setStyle(dotm1, d3.color("darkmagenta").formatHex())
-styledDotm2 = setStyle(dotm1, d3.color("darkmagenta").formatHex())
-styledMonthNumber0 = setStyle(monthNumber0, d3.color("cyan").formatHex())
-styledMonthNumber1 = setStyle(monthNumber1, d3.color("cyan").formatHex())
 // https://observablehq.com/@juang1744/transform-input/1
 transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
   if (source === undefined) {
@@ -1412,18 +1349,5 @@ svg#finger {
 }
 h4.anchored {
   margin: 8px 0px 8px 0px;
-}
-&#10;<!-- https://explorebiology.org/collections/genetics/the-structure-of-dnaHHMI -->
-div > form > div > input[type="range"] {
-  background-color: darkslategray !important;
-  -webkit-appearance: none;  /* Override default CSS styles */
-  appearance: none;
-  width: 100%; /* Full-width */
-  height: 5px; /* Specified height */
-  background: #a4a4a4; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
 }
 </style>
