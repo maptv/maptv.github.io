@@ -493,7 +493,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024+262</p>
+      <p class="date">2024+263</p>
     </div>
   </div>
   
@@ -705,7 +705,7 @@ window.Quarto = {
 <p>The Play▶️button above cycles🔄through every doty, month, and day of the month in the plots so that each day gets its turn to be highlighted with a red🟥background. The appearance of the bottom plot depends on the <a href="https://observablehq.com/framework/inputs/toggle#:~:text=choose%20one%20of%20two%20values">toggle</a>✅and <a href="https://observablehq.com/framework/inputs/radio#:~:text=choose%20one%20of%20a%20given%20set%20of%20values">radio</a>🔘inputs, which determine whether <span class="orange">n</span> is 365 (common year) or 366 (leap year) and the day of the week that starts the year, respectively.</p>
 <p>The toggle✅input shifts 306 dates, <span class="tool" data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span> to <span class="tool" data-bs-toggle="tooltip" data-bs-title="December 31"><u>Day 305</u></span>, in the Gregorian calendar by one day, but does not change the order of any Dec dates, because <a href="https://en.wikipedia.org/wiki/February_29#:~:text=intercalary%20date%20added%20periodically">leap day</a> (<span class="tool" data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day 365</u></span>) is the last day of the Dec leap years and the doty resets to zero at the start of every year. The radio🔘input shifts every Gregorian calendar date by 1 to 6 days, but has no effect on Decalendar whatsoever.</p>
 <p>The current doty, <span class="cyan"><span><span id="ojs-element-id-3"></span></span></span>, combines the current dek, <span class="cyan"><span><span id="ojs-element-id-55"></span></span></span>, and day of the dek, <span class="cyan"><span><span id="ojs-element-id-4"></span></span></span>. Deks are groups of 10 days that are well-aligned with the Dec year. Every Dec year starts on <span class="tool" data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>, the first day of first dek of the year, Dek 0. Common years end on <span class="tool" data-bs-toggle="tooltip" data-bs-title="February 28"><u>Day 364</u></span>, exactly halfway through Dek 36, whereas leap years end on the sixth day of Dek 36: <span class="tool" data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day 365</u></span>.</p>
-<p>Dek 36 includes 4 to 5 days of the subsequent year and thus overlaps with Week 0, the first week of the Dec year, because Week 0 includes 0 to 6 days from the previous year. Week numbering in Dec behaves like the bottom calendar🗓️plot. The Dec year can start on any day of Week 0 and can end on any day of Week 52 or even on the first day of Week 53.</p>
+<p>The last day of the year, <span class="tool" data-bs-toggle="tooltip" data-bs-title="February 28 in common years, February 29 in leap years"><u>Day -1</u></span> is always followed by <span class="tool" data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>, regardless of the last 4 or 5 days of Dec 36 that extend past the end of the year. While the doty functions within the bounds of a given year, the day of the era (dote), a continuous count of days since the Dec epoch, provides an unbroken sequence of deks that is analogous to the weeks in the Gregorian calendar.</p>
 </section>
 <section id="week" class="level4">
 <h4 class="anchored" data-anchor-id="week">Week</h4>
@@ -1893,8 +1893,8 @@ div.observablehq > div:has(form.oi-3a86ea-toggle) {
   align-items: center;
 }
 form.oi-3a86ea-toggle {
-  max-width: 50% !important;
-  --label-width: 90px;
+  max-width: 100% !important;
+  --label-width: 100px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -2802,7 +2802,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>The current doty, <span class="co">[</span><span class="ot">\${decoDoty}</span><span class="co">]</span>{.cyan}, combines the current dek, <span class="co">[</span><span class="ot">\${decoDoty.slice(0, 2)}</span><span class="co">]</span>{.cyan}, and day of the dek, <span class="co">[</span><span class="ot">\${decoDoty[2]}</span><span class="co">]</span>{.cyan}. Deks are groups of 10 days that are well-aligned with the Dec year. Every Dec year starts on <span class="co">[</span><span class="ot">Day 0</span><span class="co">]</span>{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"}, the first day of first dek of the year, Dek 0. Common years end on <span class="co">[</span><span class="ot">Day 364</span><span class="co">]</span>{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 28"}, exactly halfway through Dek 36, whereas leap years end on the sixth day of Dek 36: <span class="co">[</span><span class="ot">Day 365</span><span class="co">]</span>{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"}.</span>
 <span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>Dek 36 includes 4 to 5 days of the subsequent year and thus overlaps with Week 0, the first week of the Dec year, because Week 0 includes 0 to 6 days from the previous year. Week numbering in Dec behaves like the bottom calendar🗓️plot. The Dec year can start on any day of Week 0 and can end on any day of Week 52 or even on the first day of Week 53.</span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>The last day of the year, <span class="co">[</span><span class="ot">Day -1</span><span class="co">]</span>{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 28 in common years, February 29 in leap years"} is always followed by <span class="co">[</span><span class="ot">Day 0</span><span class="co">]</span>{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"}, regardless of the last 4 or 5 days of Dec 36 that extend past the end of the year. While the doty functions within the bounds of a given year, the day of the era (dote), a continuous count of days since the Dec epoch, provides an unbroken sequence of deks that is analogous to the weeks in the Gregorian calendar.</span>
 <span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="fu"># Week</span></span>
 <span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a></span>
@@ -3211,8 +3211,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb7-606"><a href="#cb7-606" aria-hidden="true" tabindex="-1"></a><span class="in">  align-items: center;</span></span>
 <span id="cb7-607"><a href="#cb7-607" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
 <span id="cb7-608"><a href="#cb7-608" aria-hidden="true" tabindex="-1"></a><span class="in">form.oi-3a86ea-toggle {</span></span>
-<span id="cb7-609"><a href="#cb7-609" aria-hidden="true" tabindex="-1"></a><span class="in">  max-width: 50% !important;</span></span>
-<span id="cb7-610"><a href="#cb7-610" aria-hidden="true" tabindex="-1"></a><span class="in">  --label-width: 90px;</span></span>
+<span id="cb7-609"><a href="#cb7-609" aria-hidden="true" tabindex="-1"></a><span class="in">  max-width: 100% !important;</span></span>
+<span id="cb7-610"><a href="#cb7-610" aria-hidden="true" tabindex="-1"></a><span class="in">  --label-width: 100px;</span></span>
 <span id="cb7-611"><a href="#cb7-611" aria-hidden="true" tabindex="-1"></a><span class="in">  display: flex;</span></span>
 <span id="cb7-612"><a href="#cb7-612" aria-hidden="true" tabindex="-1"></a><span class="in">  flex-wrap: wrap;</span></span>
 <span id="cb7-613"><a href="#cb7-613" aria-hidden="true" tabindex="-1"></a><span class="in">  align-items: center;</span></span>

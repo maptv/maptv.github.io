@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+262
+2024+263
 
 - [Doty](#doty)
 - [Week](#week)
@@ -243,11 +243,15 @@ data-bs-toggle="tooltip" data-bs-title="February 28"><u>Day
 on the sixth day of Dek 36: <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29"><u>Day 365</u></span>.
 
-Dek 36 includes 4 to 5 days of the subsequent year and thus overlaps
-with Week 0, the first week of the Dec year, because Week 0 includes 0
-to 6 days from the previous year. Week numbering in Dec behaves like the
-bottom calendar🗓️plot. The Dec year can start on any day of Week 0 and
-can end on any day of Week 52 or even on the first day of Week 53.
+The last day of the year, <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 28 in common years, February 29 in leap years"><u>Day
+-1</u></span> is always followed by <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>,
+regardless of the last 4 or 5 days of Dec 36 that extend past the end of
+the year. While the doty functions within the bounds of a given year,
+the day of the era (dote), a continuous count of days since the Dec
+epoch, provides an unbroken sequence of deks that is analogous to the
+weeks in the Gregorian calendar.
 
 # Week
 
@@ -1317,8 +1321,8 @@ div.observablehq > div:has(form.oi-3a86ea-toggle) {
   align-items: center;
 }
 form.oi-3a86ea-toggle {
-  max-width: 50% !important;
-  --label-width: 90px;
+  max-width: 100% !important;
+  --label-width: 100px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
