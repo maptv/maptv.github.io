@@ -245,13 +245,31 @@ data-bs-title="February 29"><u>Day 365</u></span>.
 
 The last day of the year, <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 28 in common years, February 29 in leap years"><u>Day
--1</u></span> is always followed by <span class="tool"
+-1</u></span>, is always followed by <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>,
 regardless of the last 4 or 5 days of Dec 36 that extend past the end of
-the year. While the doty functions within the bounds of a given year,
-the day of the era (dote), a continuous count of days since the Dec
-epoch, provides an unbroken sequence of deks that is analogous to the
-weeks in the Gregorian calendar.
+the year. While doty values cannot provide dek count past Dek 36, the
+day of the
+[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
+(dote), a continuous count of days since the Dec
+[epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="1 BC"><u>Year 0</u></span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="midnight"><u>Dot 0</u></span>), offers an unbroken
+sequence of deks that is analogous to the weeks in the Gregorian
+calendar.
+
+Dec uses
+[unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
+math expressions to display information about a date, such as its doty.
+All Dec dates can be simplified into a year of the era (yote) or a dote
+which count the
+[decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=denoting%20integer%20and-,non%2Dinteger%20numbers,-.%20It%20is%20the)
+years and days since the Dec epoch, respectively. it into
+<span class="yellow">y</span>, the years that have passed since the Dec
+epoch.
 
 # Week
 
@@ -269,22 +287,9 @@ the doty of the first day of the current week,
 <span class="cyan">${dotw0doty}</span>, and the current POSIX weekday
 number: <span class="azul">${dotw}</span>.
 
-Dec uses
-[unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
-math expressions to display information about a date, such as its dotw,
-as shown above. All Dec dates can be simplified into
-<span class="yellow">y</span>, the
-[decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=denoting%20integer%20and-,non%2Dinteger%20numbers,-.%20It%20is%20the)
-years that have passed since the Dec
-[epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era)
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="1 BC"><u>Year 0</u></span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="midnight"><u>Dot 0</u></span>). Storing dates in the form
-of <span class="yellow">y</span> can be very convenient if we need to be
-able to see the year associated with each date, but not the doty or
-dotw.
+Storing dates in the form of <span class="yellow">y</span> can be very
+convenient if we need to be able to see the year associated with each
+date, but not the doty or dotw.
 
 To convert a Dec date into <span class="yellow">y</span>, we solve the
 Dec date equation,
