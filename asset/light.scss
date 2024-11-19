@@ -7,8 +7,8 @@ $body-color: #000000 !default;
 
 // Inline code
 $code-bg: #FFFFFF !default;
-$link-color: #0033FF !default;
-$code-color: #33AA00 !default;
+$link-color: #03C !default;
+$code-color: #999900 !default;
 $code-font-size: .9em !default;
 $code-padding: 0px !default;
 
@@ -19,7 +19,7 @@ $code-padding: 0px !default;
 .gray { color: dimgray }
 
 .tool {
-  color: #AA33AA;
+  color: #811B92;
 }
 
 .quarto-title-banner h1, div.quarto-categories { color: #000000 !important; }

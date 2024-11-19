@@ -187,7 +187,7 @@ The toggle✅input shifts 306 dates, [Day 0]{.underline .tool data-bs-toggle="to
 
 The current doty, [\${decoDoty}]{.cyan}, combines the current dek, [\${decoDoty.slice(0, 2)}]{.cyan}, and day of the dek, [\${decoDoty[2]}]{.cyan}. Deks are groups of 10 days that are well-aligned with the Dec year. Every Dec year starts on [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"}, the first day of first dek of the year, Dek 0. Common years end on [Day 364]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 28"}, exactly halfway through Dek 36, whereas leap years end on the sixth day of Dek 36: [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"}.
 
-Dek 36 includes 4 to 5 days of the subsequent year and thus overlaps with Week 0, the first week of the Dec year, because Week 0 includes 0 to 6 days from the previous year. Week numbering in Dec behaves like the bottom calendar🗓️plot. The Dec year can start on any day of Week 0 and can end on any day of Week 52 or even on the first day of Week 53.
+The last day of the year, [Day -1]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 28 in common years, February 29 in leap years"} is always followed by [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"}, regardless of the last 4 or 5 days of Dec 36 that extend past the end of the year. While the doty functions within the bounds of a given year, the day of the era (dote), a continuous count of days since the Dec epoch, provides an unbroken sequence of deks that is analogous to the weeks in the Gregorian calendar.
 
 # Week
 
@@ -596,8 +596,8 @@ div.observablehq > div:has(form.oi-3a86ea-toggle) {
   align-items: center;
 }
 form.oi-3a86ea-toggle {
-  max-width: 50% !important;
-  --label-width: 90px;
+  max-width: 100% !important;
+  --label-width: 100px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
