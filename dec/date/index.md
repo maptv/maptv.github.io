@@ -274,7 +274,7 @@ any calculation because the dotd is simply the last digit of the doty.
 
 <div>
 
-> **Pun warning**
+> **Bad Pun Alert**
 >
 > [Dek the
 > halls](https://en.wikipedia.org/wiki/Deck_the_Halls#:~:text=a%20traditional%20Christmas%20carol.)
@@ -285,35 +285,30 @@ any calculation because the dotd is simply the last digit of the doty.
 Christmas🎄is a fixed holiday because it occurs on the same doty,
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="December 25"><u>Day 299</u></span>, every year. Unlike
-fixed holidays, floating holidays like
-[Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃,
-happen on a different doty every year so that their dotw can remain
-constant. In the United States and Brazil,
-[Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃,
-is the fourth Thursday in November. To determine the date of a floating
-holiday, Dec first obtains its dote.
+fixed holidays, Gregorian calendar floating holidays happen on a
+different doty every year so that their dotw can remain constant. Dec
+uses dotes and the dotw equation to determine which of the seven
+possible dates for each floating holiday corresponds to the given year.
 
-The dote of Thanksgiving🦃in the United States and Brazil is the sum of
-the dote on Day 245, the number of days from Day 245 to Thursday, and
-21: .
-
-can occur as early as <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="November 22"><u>Day 266</u></span> and as late as
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="November 28"><u>Day 272</u></span>. Right in the middle
-of this range is <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="November 25"><u>Day 269</u></span>, which is exactly 30
-days before Christmas🎄and could be a sensible fixed date for
-Thanksgiving🦃.
+To obtain the doty of
+[Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃
+in the United States and Brazil, we use the dote of the first day of
+November to get the number of days until the first Thursday in November
+and then add 266, the earliest possible doty of the fourth Thursday in
+November: <span class="azul">${dotwDiff}</span> + 266 =
+<span class="cyan">${dotwDiff + 266}</span>. The first and last numbers
+in this equation range from 0 to 6 and <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="November 22"><u>266</u></span>
+to <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="November 28"><u>272</u></span>, respectively.
 
 Converting between dates and dotes requires multiple steps, so it is
 easier to explain how Dec dates work in terms of the year of the era
 (yote), which is just like a dote except that it counts years instead of
 days. Both dotes and yotes allow us to store dates as a single number.
-Dec does not use yotes for calendrical calculations. The advantage of
-yotes is that they display the year and can easily be converted into
-dates or doties using the Dec date equation, , or the Dec doty equation:
-.
+Dec does not use yotes for calculations, but the advantage of yotes is
+that they display the year and can easily be converted into dates or
+doties using the Dec date equation, , or the Dec doty equation: .
 
 Dec uses
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
@@ -1086,6 +1081,10 @@ function dote2date(dote, zone = 0) {
 function doty2deco0(year = 1969, doty = 306, zone = 0) {
   return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`
 }
+function dotw2diff(x, y) {
+    x -= y;
+    return x <= 6 ? x : x + 7;
+}
 dz = unix2dote(unix)
 ydz = dote2date(...dz)
 deco = doty2deco0(...ydz)
@@ -1101,6 +1100,7 @@ decoDoty = deco.slice(5, 8)
 xmasDote = date2dote(ydz[0], 299)[0]
 xmasDotw = dote2dotw(xmasDote)
 dotw = Math.floor(dote2dotw(dz[0]))
+dotwDiff = dotw2diff(dote2dotw(date2dote(ydz[0], 245)[0]), 4)
 week = Math.floor((ydz[1] + doty0dotw) / 7)
 dotm = doty2dotm(Math.floor(ydz[1]))
 dotm0 = String(dotm - 1).padStart(2, "0")
