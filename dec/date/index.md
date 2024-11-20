@@ -1,8 +1,9 @@
 # Dec Date
 Martin Laptev
-2024+263
+2024+264
 
 - [Doty](#doty)
+- [Dote](#dote)
 - [Week](#week)
 - [Month](#month)
 - [Span](#span)
@@ -201,11 +202,11 @@ viewof dotwInput = Inputs.radio([
 
 There are two range🎚️inputs labeled as “day of the year” because every
 doty can be expressed as both a positive and a negative number. The
-typical range for positive doty values is 0 to
-<span class="orange">n</span>-1, and negative doty values typically
-range from -<span class="orange">n</span> to -1, where
-<span class="orange">n</span> is the number of days in the year. Doty
-values outside these
+typical range for days of the year (doties) is 0 to
+<span class="orange">n</span>-1, but negative doties typically range
+from -<span class="orange">n</span> to -1, where
+<span class="orange">n</span> is the number of days in the year. Doties
+outside these
 [bounds](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20upper%20bound%20or%20majorant%5B1%5D%20of%20a%20subset%20S%20of%20some%20preordered%20set%20(K%2C%20%E2%89%A4)%20is%20an%20element%20of%20K%20that%20is%20greater%20than%20or%20equal%20to%20every%20element%20of%20S.%5B2%5D%5B3%5D%20Dually%2C%20a%20lower%20bound%20or%20minorant%20of%20S%20is%20defined%20to%20be%20an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S)
 represent days in previous or subsequent years.
 
@@ -231,7 +232,7 @@ the Dec leap years and the doty resets to zero at the start of every
 year. The radio🔘input shifts every Gregorian calendar date by 1 to 6
 days, but has no effect on Decalendar whatsoever.
 
-The current doty, <span class="cyan">${decoDoty}</span>, combines the
+The current doty, <span class="cyan">${decoDoty}</span>, consists of the
 current dek, <span class="cyan">${decoDoty.slice(0, 2)}</span>, and day
 of the dek, <span class="cyan">${decoDoty\[2\]}</span>. Deks are groups
 of 10 days that are well-aligned with the Dec year. Every Dec year
@@ -243,23 +244,76 @@ data-bs-toggle="tooltip" data-bs-title="February 28"><u>Day
 on the sixth day of Dek 36: <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29"><u>Day 365</u></span>.
 
+# Dote
+
 The last day of the year, <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 28 in common years, February 29 in leap years"><u>Day
 -1</u></span>, is always followed by <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>,
 regardless of the last 4 or 5 days of Dec 36 that extend past the end of
-the year. While doty values cannot provide dek count past Dek 36, the
-day of the
+the year. While doties do not count deks past Dek 36, days of the
 [era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
-(dote), a continuous count of days since the Dec
+(dotes), continuous counts of days since the Dec
 [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="1 BC"><u>Year 0</u></span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="midnight"><u>Dot 0</u></span>), offers an unbroken
+data-bs-title="midnight"><u>Dot 0</u></span>), provide an unbroken
 sequence of deks that is analogous to the weeks in the Gregorian
 calendar.
+
+Dec uses dotes for calculations, such as finding the day of the week
+(dotw) associated with a given date. This year, Christmas🎄falls on a
+Wednesday, according to the Dec dotw equation:
+(<span class="cyan">${xmasDote}</span> + 3)
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+7 = <span class="azul">${xmasDotw}</span>. In contrast to the dotw,
+finding the day of the dek (dotd) of a given Dec date does not require
+any calculation because the dotd is simply the last digit of the doty.
+
+<div>
+
+> **Pun warning**
+>
+> [Dek the
+> halls](https://en.wikipedia.org/wiki/Deck_the_Halls#:~:text=a%20traditional%20Christmas%20carol.)
+> with boughs of doty! Fa la la la la la la la la!
+
+</div>
+
+Christmas🎄is a fixed holiday because it occurs on the same doty,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="December 25"><u>Day 299</u></span>, every year. Unlike
+fixed holidays, floating holidays like
+[Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃,
+happen on a different doty every year so that their dotw can remain
+constant. In the United States and Brazil,
+[Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃,
+is the fourth Thursday in November. To determine the date of a floating
+holiday, Dec first obtains its dote.
+
+The dote of Thanksgiving🦃in the United States and Brazil is the sum of
+the dote on Day 245, the number of days from Day 245 to Thursday, and
+21: .
+
+can occur as early as <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="November 22"><u>Day 266</u></span> and as late as
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="November 28"><u>Day 272</u></span>. Right in the middle
+of this range is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="November 25"><u>Day 269</u></span>, which is exactly 30
+days before Christmas🎄and could be a sensible fixed date for
+Thanksgiving🦃.
+
+Converting between dates and dotes requires multiple steps, so it is
+easier to explain how Dec dates work in terms of the year of the era
+(yote), which is just like a dote except that it counts years instead of
+days. Both dotes and yotes allow us to store dates as a single number.
+Dec does not use yotes for calendrical calculations. The advantage of
+yotes is that they display the year and can easily be converted into
+dates or doties using the Dec date equation, , or the Dec doty equation:
+.
 
 Dec uses
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
@@ -1044,6 +1098,8 @@ function dote2dotw(d = 719468) {
 decoYear = deco.slice(0, 4)
 nextYear = parseInt(decoYear) + 1
 decoDoty = deco.slice(5, 8)
+xmasDote = date2dote(ydz[0], 299)[0]
+xmasDotw = dote2dotw(xmasDote)
 dotw = Math.floor(dote2dotw(dz[0]))
 week = Math.floor((ydz[1] + doty0dotw) / 7)
 dotm = doty2dotm(Math.floor(ydz[1]))
