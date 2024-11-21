@@ -192,19 +192,21 @@ The current doty, [\${decoDoty}]{.cyan}, consists of the current dek, [\${decoDo
 
 The last day of the year, [Day -1]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 28 in common years, February 29 in leap years"}, is always followed by [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"}, regardless of the last 4 or 5 days of Dec 36 that extend past the end of the year. While doties do not count deks past Dek 36, days of the [era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar) (dotes), continuous counts of days since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era) ([Year 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="1 BC"} [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} [Dot 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="midnight"}), provide an unbroken sequence of deks that is analogous to the weeks in the Gregorian calendar.
 
-Dec uses dotes for calculations, such as finding the day of the week (dotw) associated with a given date. This year, Christmas🎄falls on a Wednesday, according to the Dec dotw equation: ([\${xmasDote}]{.cyan} + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7 = [\${xmasDotw}]{.azul}. In contrast to the dotw, finding the day of the dek (dotd) of a given Dec date does not require any calculation because the dotd is simply the last digit of the doty.
+Dec uses dotes for calculations, such as finding the [POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems) [Sunday-based](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)) day of the week (dotw) of a given date. This year, the dotw of Christmas🎄is [\${xmasDotw}]{.azul}, according to the Dec dotw equation: ([\${xmasDote}]{.cyan} + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7 = [\${xmasDotw}]{.azul}. In contrast to the dotw, finding the day of the dek (dotd) of a given Dec date does not require any calculation because the dotd is simply the last digit of the doty.
 
 ::: {.callout-warning}
 # Bad Pun Alert
-[Dek the halls](https://en.wikipedia.org/wiki/Deck_the_Halls#:~:text=a%20traditional%20Christmas%20carol.) with boughs of doty! Fa la la la la la la la la!
+[Dek the halls](https://en.wikipedia.org/wiki/Deck_the_Halls#:~:text=a%20traditional%20Christmas%20carol.) with boughs of doty! Fa + la &times; 8!
 :::
 
-Christmas🎄is a fixed holiday because it occurs on the same doty, [Day 299]{.underline .tool data-bs-toggle="tooltip" data-bs-title="December 25"}, every year. Unlike fixed holidays, Gregorian calendar floating holidays happen on a different doty every year so that their dotw can remain constant. Dec uses dotes and the dotw equation to determine which of the seven possible dates for each floating holiday corresponds to the given year.
+Christmas🎄is a fixed holiday because it occurs on the same doty, [Day 299]{.underline .tool data-bs-toggle="tooltip" data-bs-title="December 25"}, every year. Unlike fixed holidays, Gregorian calendar floating holidays happen on a different doty every year so that their dotw can remain constant. Dec uses the dotw difference equation, ([w~M~]{.azul} - [w~S~]{.azul} + 7) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7 = [w~Δ~]{.azul}, to determine which of the seven possible floating holiday dates corresponds to the given year.
 
 
-To obtain the doty of [Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃 in the United States and Brazil, we use the dote of the first day of November to get the number of days until the first Thursday in November and then add 266, the earliest possible doty of the fourth Thursday in November: [\${dotwDiff}]{.azul} + 266 = [\${dotwDiff + 266}]{.cyan}. The first and last numbers in this equation range from 0 to 6 and [266]{.underline .tool data-bs-toggle="tooltip" data-bs-title="November 22"} to [272]{.underline .tool data-bs-toggle="tooltip" data-bs-title="November 28"}, respectively.
+In the dotw difference equation, [w~M~]{.azul} is the [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted) dotw at which we want to arrive and [w~S~]{.azul} is [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted) dotw from which we start. To get the doty of [Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃in the United States and Brazil, we plug [4]{.azul} as [w~M~]{.azul} and [\${day266dotw}]{.azul}, the dotw of [Day 266]{.underline .tool data-bs-toggle="tooltip" data-bs-title="November 22"} this year, as [w~S~]{.azul} into the dotw difference equation, ([4]{.azul} - [\${day266dotw}]{.azul} + 7) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7 = [\${day266dotwDiff}]{.azul}, and then add the resulting [w~Δ~]{.azul} to 266: [\${day266dotwDiff}]{.azul} + 266 = [\${day266dotwDiff + 266}]{.cyan}.
 
-Converting between dates and dotes requires multiple steps, so it is easier to explain how Dec dates work in terms of the year of the era (yote), which is just like a dote except that it counts years instead of days. Both dotes and yotes allow us to store dates as a single number. Dec does not use yotes for calculations, but the advantage of yotes is that they display the year and can easily be converted into dates or doties using the Dec date equation, , or the Dec doty equation: .
+Apart from calculations, dotes can be useful for storing dates as a single number. Dotes allow us to the see the transition between days but not the transition between years.
+
+Converting between dates and dotes requires multiple steps, so it is easier to explain how Dec dates work in terms of the year of the era (yote), which is just like a dote except that it counts years instead of days. Both dotes and yotes allow us to store dates. Dec does not use yotes for calculations, but the advantage of yotes is that they display the year and can easily be converted into dates or doties using the Dec date equation, , or the Dec doty equation: .
 
 Dec uses [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler) math expressions to display information about a date, such as its doty. All Dec dates can be simplified into a year of the era (yote) or a dote which count the [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=denoting%20integer%20and-,non%2Dinteger%20numbers,-.%20It%20is%20the) years and days since the Dec epoch, respectively. it  into [y]{.yellow}, the years that have passed since the Dec epoch.
 
@@ -321,8 +323,7 @@ function doty2deco0(year = 1969, doty = 306, zone = 0) {
   return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`
 }
 function dotw2diff(x, y) {
-    x -= y;
-    return x <= 6 ? x : x + 7;
+  return (x - y + 7) % 7;
 }
 dz = unix2dote(unix)
 ydz = dote2date(...dz)
@@ -339,7 +340,8 @@ decoDoty = deco.slice(5, 8)
 xmasDote = date2dote(ydz[0], 299)[0]
 xmasDotw = dote2dotw(xmasDote)
 dotw = Math.floor(dote2dotw(dz[0]))
-dotwDiff = dotw2diff(dote2dotw(date2dote(ydz[0], 245)[0]), 4)
+day266dotw = dote2dotw(date2dote(ydz[0], 266)[0])
+day266dotwDiff = dotw2diff(4, day266dotw)
 week = Math.floor((ydz[1] + doty0dotw) / 7)
 dotm = doty2dotm(Math.floor(ydz[1]))
 dotm0 = String(dotm - 1).padStart(2, "0")
