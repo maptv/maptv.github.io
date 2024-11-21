@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+264
+2024+265
 
 - [Doty](#doty)
 - [Dote](#dote)
@@ -263,10 +263,12 @@ data-bs-title="midnight"><u>Dot 0</u></span>), provide an unbroken
 sequence of deks that is analogous to the weeks in the Gregorian
 calendar.
 
-Dec uses dotes for calculations, such as finding the day of the week
-(dotw) associated with a given date. This year, Christmas🎄falls on a
-Wednesday, according to the Dec dotw equation:
-(<span class="cyan">${xmasDote}</span> + 3)
+Dec uses dotes for calculations, such as finding the
+[POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems)
+[Sunday-based](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday))
+day of the week (dotw) of a given date. This year, the dotw of
+Christmas🎄is <span class="azul">${xmasDotw}</span>, according to the
+Dec dotw equation: (<span class="cyan">${xmasDote}</span> + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7 = <span class="azul">${xmasDotw}</span>. In contrast to the dotw,
 finding the day of the dek (dotd) of a given Dec date does not require
@@ -278,7 +280,7 @@ any calculation because the dotd is simply the last digit of the doty.
 >
 > [Dek the
 > halls](https://en.wikipedia.org/wiki/Deck_the_Halls#:~:text=a%20traditional%20Christmas%20carol.)
-> with boughs of doty! Fa la la la la la la la la!
+> with boughs of doty! Fa + la × 8!
 
 </div>
 
@@ -287,28 +289,45 @@ Christmas🎄is a fixed holiday because it occurs on the same doty,
 data-bs-title="December 25"><u>Day 299</u></span>, every year. Unlike
 fixed holidays, Gregorian calendar floating holidays happen on a
 different doty every year so that their dotw can remain constant. Dec
-uses dotes and the dotw equation to determine which of the seven
-possible dates for each floating holiday corresponds to the given year.
+uses the dotw difference equation,
+(<span class="azul">w<sub>M</sub></span> -
+<span class="azul">w<sub>S</sub></span> + 7)
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+7 = <span class="azul">w<sub>Δ</sub></span>, to determine which of the
+seven possible floating holiday dates corresponds to the given year.
 
-To obtain the doty of
-[Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃
-in the United States and Brazil, we use the dote of the first day of
-November to get the number of days until the first Thursday in November
-and then add 266, the earliest possible doty of the fourth Thursday in
-November: <span class="azul">${dotwDiff}</span> + 266 =
-<span class="cyan">${dotwDiff + 266}</span>. The first and last numbers
-in this equation range from 0 to 6 and <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="November 22"><u>266</u></span>
-to <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="November 28"><u>272</u></span>, respectively.
+In the dotw difference equation, <span class="azul">w<sub>M</sub></span>
+is the
+[minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted)
+dotw at which we want to arrive and
+<span class="azul">w<sub>S</sub></span> is
+[subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted)
+dotw from which we start. To get the doty of
+[Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃in
+the United States and Brazil, we plug <span class="azul">4</span> as
+<span class="azul">w<sub>M</sub></span> and
+<span class="azul">${day266dotw}</span>, the dotw of <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="November 22"><u>Day
+266</u></span> this year, as <span class="azul">w<sub>S</sub></span>
+into the dotw difference equation, (<span class="azul">4</span> -
+<span class="azul">${day266dotw}</span> + 7)
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+7 = <span class="azul">${day266dotwDiff}</span>, and then add the
+resulting <span class="azul">w<sub>Δ</sub></span> to 266:
+<span class="azul">${day266dotwDiff}</span> + 266 =
+<span class="cyan">${day266dotwDiff + 266}</span>.
+
+Apart from calculations, dotes can be useful for storing dates as a
+single number. Dotes allow us to the see the transition between days but
+not the transition between years.
 
 Converting between dates and dotes requires multiple steps, so it is
 easier to explain how Dec dates work in terms of the year of the era
 (yote), which is just like a dote except that it counts years instead of
-days. Both dotes and yotes allow us to store dates as a single number.
-Dec does not use yotes for calculations, but the advantage of yotes is
-that they display the year and can easily be converted into dates or
-doties using the Dec date equation, , or the Dec doty equation: .
+days. Both dotes and yotes allow us to store dates. Dec does not use
+yotes for calculations, but the advantage of yotes is that they display
+the year and can easily be converted into dates or doties using the Dec
+date equation, , or the Dec doty equation: .
 
 Dec uses
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
@@ -1082,8 +1101,7 @@ function doty2deco0(year = 1969, doty = 306, zone = 0) {
   return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`
 }
 function dotw2diff(x, y) {
-    x -= y;
-    return x <= 6 ? x : x + 7;
+  return (x - y + 7) % 7;
 }
 dz = unix2dote(unix)
 ydz = dote2date(...dz)
@@ -1100,7 +1118,8 @@ decoDoty = deco.slice(5, 8)
 xmasDote = date2dote(ydz[0], 299)[0]
 xmasDotw = dote2dotw(xmasDote)
 dotw = Math.floor(dote2dotw(dz[0]))
-dotwDiff = dotw2diff(dote2dotw(date2dote(ydz[0], 245)[0]), 4)
+day266dotw = dote2dotw(date2dote(ydz[0], 266)[0])
+day266dotwDiff = dotw2diff(4, day266dotw)
 week = Math.floor((ydz[1] + doty0dotw) / 7)
 dotm = doty2dotm(Math.floor(ydz[1]))
 dotm0 = String(dotm - 1).padStart(2, "0")
