@@ -6,7 +6,7 @@ citation:
 license: CC BY-SA
 lightbox: false
 toc: true
-toc-depth: 5
+toc-depth: 4
 format:
   html:
     shift-heading-level-by: 3
@@ -201,10 +201,29 @@ Dec uses dotes for calculations, such as finding the [POSIX](https://en.wikipedi
 
 Christmas🎄is a fixed holiday because it occurs on the same doty, [Day 299]{.underline .tool data-bs-toggle="tooltip" data-bs-title="December 25"}, every year. Unlike fixed holidays, Gregorian calendar floating holidays happen on a different doty every year so that their dotw can remain constant. Dec uses the dotw difference equation, ([w~M~]{.azul} - [w~S~]{.azul} + 7) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7 = [w~Δ~]{.azul}, to determine which of the seven possible floating holiday dates corresponds to the given year.
 
-
 In the dotw difference equation, [w~M~]{.azul} is the [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted) dotw at which we want to arrive and [w~S~]{.azul} is [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted) dotw from which we start. To get the doty of [Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃in the United States and Brazil, we plug [4]{.azul} as [w~M~]{.azul} and [\${day266dotw}]{.azul}, the dotw of [Day 266]{.underline .tool data-bs-toggle="tooltip" data-bs-title="November 22"} this year, as [w~S~]{.azul} into the dotw difference equation, ([4]{.azul} - [\${day266dotw}]{.azul} + 7) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7 = [\${day266dotwDiff}]{.azul}, and then add the resulting [w~Δ~]{.azul} to 266: [\${day266dotwDiff}]{.azul} + 266 = [\${day266dotwDiff + 266}]{.cyan}.
 
-Conversion between dotes and dates relies on algorithms created by [Hinnant, Howard](https://howardhinnant.github.io) and described in his manuscript entitled [`chrono`-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html).
+Conversion between dotes and dates relies on algorithms created by [Hinnant, Howard](https://howardhinnant.github.io) and described in his manuscript entitled [`chrono`-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html). The steps in the conversion include calculating the [cycle](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years) of the era (cote), day of the cycle (dotc), and year of the cycle (yotc) associated with the input, as shown in the equations below.
+
+# Dote to date{.centered .unnumbered .unlisted .underline}
+
+$$\text{cote} = \Biggl \lfloor \frac{\begin{cases}\text{year}&{\text{if } \text{year} \geq 0;}\\\text{year}-399&{\text{otherwise.}}\end{cases}}{400} \Biggr \rfloor$$
+
+$$\text{yotc} = \text{year} - \text{cote} \times 400$$
+
+$$\text{dote} = \text{cote}\times146097 + \text{yotc}\times365 + \lfloor\text{yotc}\div4\rfloor - \lfloor\text{yotc}\div100\rfloor + \text{doty}$$
+
+# Date to dote{.centered .unnumbered .unlisted .underline}
+
+$$\text{cote} = \Biggl \lfloor \frac{\begin{cases}\text{dote}&{\text{if } \text{dote} \geq 0;}\\\text{dote}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$
+
+$$\text{dotc} = \text{dote} - \text{cote} \times 146097$$
+
+$$\text{yotc} = \biggl \lfloor \frac{\text{dotc} - \lfloor \text{dotc}{\div}{1460} \rfloor + \lfloor \text{dotc}{\div}{36524} \rfloor - \lfloor \text{dotc}{\div}{146096} \rfloor}{365} \biggr \rfloor$$
+
+$$\text{year} = \text{yotc} + \text{cote} \times  400$$
+
+$$\text{doty} = \text{dotc} - (365 \times \text{yotc} + \lfloor \text{yotc}{\div}{4} \rfloor - \lfloor \text{yotc}{\div}{100} \rfloor)$$
 
 # Yote
 
@@ -288,7 +307,7 @@ The combination of a Dec date and a Dec time is a called a snap. A Dec date is e
 
 The subsequent articles on my site build on this article to further describe Dec [times](/dec/time), [snaps](/dec/span), and [spans](/dec/span). A basic understanding of the Dec [year]{.yellow}+[day]{.cyan} date format is enough to understand the examples in the [filter](/quarto/filter) and [script](/quarto/script) articles in the [Quarto section](/quarto) of my site, but it might be helpful to read my [Dec time article](/dec/time) before moving on to my Quarto [include article](/quarto/include).
 
-Thank you for your interest in Dec. You will find citation information for this article below. Please note that the original source of the algorithms underlying Dec dates is [Hinnant, Howard](https://howardhinnant.github.io). [2021+184]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2021-09-01"}. “`chrono`-Compatible Low-Level Date Algorithms.” [\${decoYear}]{.yellow}+[\${decoDoty}]{.cyan}. <https://howardhinnant.github.io/date_algorithms.html>.
+Thank you for your interest in Dec. You will find citation information for this article below. Please note that the original source of the algorithms underlying Dec dates is [Howard Hinnant](https://howardhinnant.github.io). [2021+184]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2021-09-01"}. “`chrono`-Compatible Low-Level Date Algorithms.” [\${decoYear}]{.yellow}+[\${decoDoty}]{.cyan}. <https://howardhinnant.github.io/date_algorithms.html>.
 
 ```{ojs}
 //| echo: false
