@@ -321,7 +321,31 @@ resulting <span class="azul">w<sub>Δ</sub></span> to 266:
 Conversion between dotes and dates relies on algorithms created by
 [Hinnant, Howard](https://howardhinnant.github.io) and described in his
 manuscript entitled [`chrono`-Compatible Low-Level Date
-Algorithms](https://howardhinnant.github.io/date_algorithms.html).
+Algorithms](https://howardhinnant.github.io/date_algorithms.html). The
+steps in the conversion include calculating the
+[cycle](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years)
+of the era (cote), day of the cycle (dotc), and year of the cycle (yotc)
+associated with the input, as shown in the equations below.
+
+# Dote to date
+
+$$\text{cote} = \Biggl \lfloor \frac{\begin{cases}\text{year}&{\text{if } \text{year} \geq 0;}\\\text{year}-399&{\text{otherwise.}}\end{cases}}{400} \Biggr \rfloor$$
+
+yotc = year − cote × 400
+
+dote = cote × 146097 + yotc × 365 + ⌊yotc ÷ 4⌋ − ⌊yotc ÷ 100⌋ + doty
+
+# Date to dote
+
+$$\text{cote} = \Biggl \lfloor \frac{\begin{cases}\text{dote}&{\text{if } \text{dote} \geq 0;}\\\text{dote}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$
+
+dotc = dote − cote × 146097
+
+$$\text{yotc} = \biggl \lfloor \frac{\text{dotc} - \lfloor \text{dotc}{\div}{1460} \rfloor + \lfloor \text{dotc}{\div}{36524} \rfloor - \lfloor \text{dotc}{\div}{146096} \rfloor}{365} \biggr \rfloor$$
+
+year = yotc + cote × 400
+
+doty = dotc − (365 × yotc + ⌊yotc ÷ 4⌋ − ⌊yotc ÷ 100⌋)
 
 # Yote
 
@@ -1064,8 +1088,8 @@ to my Quarto [include article](../../quarto/include).
 
 Thank you for your interest in Dec. You will find citation information
 for this article below. Please note that the original source of the
-algorithms underlying Dec dates is [Hinnant,
-Howard](https://howardhinnant.github.io). <span class="tool"
+algorithms underlying Dec dates is [Howard
+Hinnant](https://howardhinnant.github.io). <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="2021-09-01"><u>2021+184</u></span>. “`chrono`-Compatible
 Low-Level Date Algorithms.”

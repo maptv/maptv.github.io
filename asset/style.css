@@ -234,3 +234,7 @@ div > form > label {
   color: black;
   padding: 0px 2px 0px 2px;
 }
+
+.underline {
+  text-decoration: underline;
+}
