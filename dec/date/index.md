@@ -4,6 +4,7 @@ Martin Laptev
 
 - [Doty](#doty)
 - [Dote](#dote)
+- [Yote](#yote)
 - [Week](#week)
 - [Month](#month)
 - [Span](#span)
@@ -317,17 +318,23 @@ resulting <span class="azul">w<sub>Δ</sub></span> to 266:
 <span class="azul">${day266dotwDiff}</span> + 266 =
 <span class="cyan">${day266dotwDiff + 266}</span>.
 
-Apart from calculations, dotes can be useful for storing dates as a
-single number. Dotes allow us to the see the transition between days but
-not the transition between years.
+Conversion between dotes and dates relies on algorithms created by
+[Hinnant, Howard](https://howardhinnant.github.io) and described in his
+manuscript entitled [`chrono`-Compatible Low-Level Date
+Algorithms](https://howardhinnant.github.io/date_algorithms.html).
 
-Converting between dates and dotes requires multiple steps, so it is
-easier to explain how Dec dates work in terms of the year of the era
-(yote), which is just like a dote except that it counts years instead of
-days. Both dotes and yotes allow us to store dates. Dec does not use
-yotes for calculations, but the advantage of yotes is that they display
-the year and can easily be converted into dates or doties using the Dec
-date equation, , or the Dec doty equation: .
+# Yote
+
+Dec years of the era (yotes) are a continuous count of years since the
+Dec epoch. allow us to store date information as a single number, but
+unlike dotes, yotes can be converted into a date or Converting between
+dates and dotes requires multiple steps, so it is easier to explain how
+Dec dates work in terms of the year of the era (yote), which is just
+like a dote except that it counts years instead of days. Both dotes and
+yotes allow us to store dates. Dec does not use yotes for calculations,
+but the advantage of yotes is that they display the year and can easily
+be converted into dates or doties using the Dec date equation, , or the
+Dec doty equation: .
 
 Dec uses
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
@@ -1056,10 +1063,10 @@ helpful to read my [Dec time article](../../dec/time) before moving on
 to my Quarto [include article](../../quarto/include).
 
 Thank you for your interest in Dec. You will find citation information
-for this article below. Please note that this article does not describe
-the algorithms underlying Dec dates and cite the original source of the
-algorithms as [Hinnant, Howard](https://howardhinnant.github.io).
-<span class="tool" data-bs-toggle="tooltip"
+for this article below. Please note that the original source of the
+algorithms underlying Dec dates is [Hinnant,
+Howard](https://howardhinnant.github.io). <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="2021-09-01"><u>2021+184</u></span>. “`chrono`-Compatible
 Low-Level Date Algorithms.”
 <span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>.
