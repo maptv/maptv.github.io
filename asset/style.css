@@ -88,7 +88,6 @@ div#quarto-search {
 
 code {
   padding: 0px;
-  font-size: .9em !important;
 }
 
 div#quarto-sidebar-glass { display: none !important; }
@@ -236,5 +235,6 @@ div > form > label {
 }
 
 .underline {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: .5px;
 }
