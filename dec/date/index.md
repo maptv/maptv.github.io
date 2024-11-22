@@ -339,15 +339,15 @@ yotc = year − cote × 400
 
 dote = cote × 146097 + yotc × 365 + ⌊yotc ÷ 4⌋ − ⌊yotc ÷ 100⌋ + doty
 
-The
+The Dec date equation, the
 [inverse](https://en.wikipedia.org/wiki/Inverse#:~:text=Inverse%20function%2C-,a%20function%20that%20%22reverses%22%20another%20function,-Generalized%20inverse%2C%20a)🔁of
-the Dec dote equation is the Dec date equation, which is based on the
-[`days_from_civil`
-algorithm](https://howardhinnant.github.io/date_algorithms.html#days_from_civil),
-the
-[inverse](https://en.wikipedia.org/wiki/Inverse#:~:text=Inverse%20function%2C-,a%20function%20that%20%22reverses%22%20another%20function,-Generalized%20inverse%2C%20a)🔁of
-the [`civil_from_days`
-algorithm](https://howardhinnant.github.io/date_algorithms.html#civil_from_days).
+the Dec dote equation above, is based on the [`days_from_civil`
+algorithm](https://howardhinnant.github.io/date_algorithms.html#days_from_civil)
+and is useful for obtaining Dec dates from dotes and dote equivalents
+like [Unix
+timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970)
+and [Julian
+days](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20continuous%20count%20of%20days%20from%20the%20beginning%20of%20the%20Julian%20period).
 In addition to the cote and yotc, the Dec date equation uses the day of
 the cycle (dotc) of a dote to produce the year and doty of its
 corresponding date:
@@ -373,7 +373,9 @@ consecutively. This allows Dec to handle Dec dates with a non-integer
 outside the typical range of <span class="cyan">0</span> ≤
 <span class="cyan">day</span> ≤ <span class="cyan">365</span>.
 
-Conversion between dotes and dates relies on algorithms created by
+A dote is essentially a Dec date with a <span class="yellow">year</span>
+of 0 and a <span class="cyan">day</span> not bound within the typical
+range.
 
 # Yote
 
