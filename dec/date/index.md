@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+266
+2024+267
 
 - [Doty](#doty)
 - [Dote](#dote)
@@ -373,22 +373,37 @@ consecutively. This allows Dec to handle Dec dates with a non-integer
 outside the typical range of <span class="cyan">0</span> ≤
 <span class="cyan">day</span> ≤ <span class="cyan">365</span>.
 
-A dote is essentially a Dec date with a <span class="yellow">year</span>
-of 0 and a <span class="cyan">day</span> not bound within the typical
-range.
-
 # Yote
 
-Dec years of the era (yotes) are a continuous count of years since the
-Dec epoch. allow us to store date information as a single number, but
-unlike dotes, yotes can be converted into a date or Converting between
-dates and dotes requires multiple steps, so it is easier to explain how
-Dec dates work in terms of the year of the era (yote), which is just
-like a dote except that it counts years instead of days. Both dotes and
-yotes allow us to store dates. Dec does not use yotes for calculations,
-but the advantage of yotes is that they display the year and can easily
-be converted into dates or doties using the Dec date equation, , or the
-Dec doty equation: .
+A dote is essentially a Dec date with a <span class="yellow">year</span>
+that is always equal to <span class="yellow">0</span> and a
+<span class="cyan">day</span> that is
+[unbounded](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded).
+Similarly, a Dec year of the era (yote) is basically a Dec with a
+non-integer <span class="yellow">year</span> and a
+<span class="cyan">day</span> permanently set to
+<span class="cyan">0</span>. Both dotes and yotes allow us to represent
+a date as a single number. We can convert dates to yotes and vice versa
+with the Dec yote equation:
+<span class="yellow">y</span>=⌊<span class="yellow">y</span>⌋+<span class="cyan">d</span>÷<span class="orange">n</span>.
+
+In the Dec yote equation, <span class="yellow">y</span> is the yote,
+⌊<span class="yellow">y</span>⌋+<span class="cyan">d</span> is the Dec
+date, ⌊<span class="yellow">y</span>⌋ is the year,
+<span class="cyan">d</span> is the doty, and
+<span class="orange">n</span> is the number of days in Year
+⌊<span class="yellow">y</span>⌋. The Dec yote equation can be rearranged
+into the Dec doty equation,
+<span class="cyan">d</span>=<span class="yellow">y</span>%1×<span class="orange">n</span>,
+which defines <span class="cyan">d</span> as the product of
+<span class="orange">n</span> and <span class="yellow">y</span>%1, the
+[decimal
+part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
+of <span class="yellow">y</span>
+(<span class="yellow">y</span>-⌊<span class="yellow">y</span>⌋ or
+<span class="yellow">y</span>
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1).
 
 Dec uses
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
