@@ -13,14 +13,12 @@ $code-font-size: .9em !default;
 $code-padding: 0px !default;
 
 // color classes
-.orange { color: darkorange }
-.green { color: darkgreen }
-.blue { color: blue }
-.gray { color: dimgray }
-
-.tool {
-  color: #811B92;
-}
+.orange { color: darkorange; }
+.green { color: darkgreen; }
+.blue { color: blue; }
+.gray { color: dimgray; }
+.mono > a { color: #999900 !important; }
+.tool { color: #811B92; }
 
 .quarto-title-banner h1, div.quarto-categories { color: #000000 !important; }
 

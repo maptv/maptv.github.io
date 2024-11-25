@@ -90,6 +90,14 @@ code {
   padding: 0px;
 }
 
+#quarto-header > nav.navbar.navbar-expand-lg > div > div.navbar-brand-container.mx-auto > i.bi.bi-calendar {
+  margin: 0px 1px 0px 1px;
+}
+
+#quarto-header > nav.navbar.navbar-expand-lg > div > div.navbar-brand-container.mx-auto > i.bi.bi-clock {
+  margin-left: 1px;
+}
+
 div#quarto-sidebar-glass { display: none !important; }
 ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
 #quarto-sidebar { padding: 0px; overflow-x: hidden !important; }
