@@ -242,7 +242,7 @@ div > form > label {
   padding: 0px 2px 0px 2px;
 }
 
-.underline {
+.under {
   text-decoration-line: underline;
-  text-decoration-thickness: .5px;
+  text-decoration-thickness: .7px;
 }
