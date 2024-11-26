@@ -214,6 +214,13 @@ div > form > label {
   padding: 0px 2px 0px 2px;
 }
 
+.lime {
+  border-radius: 4px;
+  background-color: lime;
+  color: black;
+  padding: 0px 2px 0px 2px;
+}
+
 .pink {
   border-radius: 4px;
   background-color: pink;

@@ -2,16 +2,12 @@
 Martin Laptev
 2024+270
 
-- [<span data-bs-toggle="tooltip"
-  data-bs-title="day-of-year">Doy</span>](#doy)
-- [<span data-bs-toggle="tooltip"
-  data-bs-title="day-of-era">Doe</span>](#doe)
-- [<span data-bs-toggle="tooltip"
-  data-bs-title="year-of-era">Yoe</span>](#yoe)
-- [<span data-bs-toggle="tooltip"
-  data-bs-title="day-of-week">Dow</span>](#dow)
-- [<span data-bs-toggle="tooltip"
-  data-bs-title="day-of-month">Dom</span>](#dom)
+- [Day of year (doy)](#doy)
+- [Day of era (doe)](#doe)
+- [Year of era (yoe)](#yoe)
+- [Day of week (dow)](#dow)
+- [Day of month (dom)](#dom)
+- [Time of day (tod)](#tod)
 - [Cite](#cite)
 
 My website serves as a demonstration of both the
@@ -37,7 +33,7 @@ year has its own [cell](https://observablehq.com/plot/marks/cell).
 Despite these similarities, the two plots illustrate how the Dec (top)
 and Gregorian (bottom) calendars differ.
 
-# <span data-bs-toggle="tooltip" data-bs-title="day-of-year">Doy</span>
+# Day of year (doy)
 
 The Dec calendar (Decalendar) starts on <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
@@ -273,7 +269,7 @@ data-bs-title="day-of-dek">dod</span>, Dod 5, of Dek 36:
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29"><u>Day 365</u></span>.
 
-# <span data-bs-toggle="tooltip" data-bs-title="day-of-era">Doe</span>
+# Day of era (doe)
 
 In contrast to weeks in the Gregorian calendar, <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="days-of-year">doys</span> and
@@ -367,8 +363,9 @@ data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> every
 year so that their <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> can remain constant. Dec uses the
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> difference equation,
-<span class="azul">w<sub>Δ</sub></span> =
+data-bs-title="day-of-week">dow</span>
+[delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
+equation, <span class="azul">w<sub>Δ</sub></span> =
 (<span class="azul">w<sub>M</sub></span> -
 <span class="azul">w<sub>S</sub></span> + 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
@@ -376,8 +373,9 @@ data-bs-title="day-of-week">dow</span> difference equation,
 corresponds to the given year.
 
 In the <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> difference equation,
-<span class="azul">w<sub>M</sub></span> is the
+data-bs-title="day-of-week">dow</span>
+[delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
+equation, <span class="azul">w<sub>M</sub></span> is the
 [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted)
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> at which we want to arrive and
@@ -396,8 +394,9 @@ data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> of
 data-bs-title="November 22"><u>Day 266</u></span> this year, as
 <span class="azul">w<sub>S</sub></span> into the
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> difference equation,
-<span class="azul">${day266dotwDiff}</span> =
+data-bs-title="day-of-week">dow</span>
+[delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
+equation, <span class="azul">${day266dotwDiff}</span> =
 (<span class="azul">4</span> - <span class="azul">${day266dotw}</span> +
 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
@@ -408,8 +407,9 @@ data-bs-title="day-of-week">dow</span> difference equation,
 Apart from the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> and <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>
-difference equations, the Thanksgiving🦃calculation above relies on the
-Dec <span class="under tool" data-bs-toggle="tooltip"
+[delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
+equations, the Thanksgiving🦃calculation above relies on the Dec
+<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-era">doe</span> equation, which is based on the <a
 href="https://howardhinnant.github.io/date_algorithms.html#days_from_civil"
 class="mono under"><code>days_from_civil</code></a> algorithm created by
@@ -488,7 +488,7 @@ This allows Dec to handle Dec dates with a non-integer
 outside the typical range of <span class="cyan">0</span> ≤
 <span class="cyan">day</span> ≤ <span class="cyan">365</span>.
 
-# <span data-bs-toggle="tooltip" data-bs-title="year-of-era">Yoe</span>
+# Year of era (yoe)
 
 A <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-era">doe</span> is essentially a Dec date with a
@@ -573,7 +573,7 @@ The current
 tells us that Year <span class="yellow">${nextYear}</span> will begin in
 <span class="pink">${Tminus}</span> days.
 
-The difference between <span class="cyan">d</span> and
+The distinction between <span class="cyan">d</span> and
 <span class="cyan">d</span>-<span class="orange">n</span> can also be
 explained in terms of computer programming. If we think of years as
 [arrays](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=a%20data%20structure%20consisting%20of%20a%20collection%20of%20elements%20(values%20or%20variables)%2C%20of%20same%20memory%20size%2C%20each%20identified%20by%20at%20least%20one%20array%20index),
@@ -623,7 +623,7 @@ show whatever numbers🔢you want. All it takes is a little bit of
 arithmetic! This incredible versatility is possible thanks to the
 mathematical basis of Dec date notation.
 
-# <span data-bs-toggle="tooltip" data-bs-title="day-of-week">Dow</span>
+# Day of week (dow)
 
 Even though Dec uses deks instead of weeks, Dec dates can be modified to
 include POSIX Sunday-based <span class="under tool"
@@ -657,7 +657,7 @@ data-bs-title="day-of-year">doy</span> <span class="cyan">d</span>. We
 evaluate the subtraction, but leave the addition unsimplified so we can
 see <span class="azul">w</span>. Dec <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> dates
-provide all of the information needed to identify specific dates and
+supply all of the information needed to identify specific dates and
 coordinate schedules based on deks or weeks.
 
 Dec <span class="under tool" data-bs-toggle="tooltip"
@@ -717,7 +717,7 @@ data-bs-title="day-of-dek">dod</span>,
 data-bs-title="day-of-year">doy</span>:
 <span class="cyan">${decoDoty}</span>.
 
-# <span data-bs-toggle="tooltip" data-bs-title="day-of-month">Dom</span>
+# Day of month (dom)
 
 Dec dates can also be modified to display Dec month and [POSIX
 <span class="under tool" data-bs-toggle="tooltip"
@@ -1123,31 +1123,65 @@ described above is similar to the
 keyboard🎹](https://en.wikipedia.org/wiki/Month#:~:text=this%20cyclical%20pattern%20of%20month%20lengths%20matches%20the%20musical%20keyboard%20alternation%20of%20wide%20white%20keys%20(31%20days)%20and%20narrow%20black%20keys%20(30%20days))mnemonics.
 These mnemonics attempt to make sense of the irregular pattern of [month
 lengths](https://en.wikipedia.org/wiki/Month#:~:text=Name-,Number,of%20days)
-in the Gregorian calendar. Unlike months, we do not need mnemonics,
-tables, or mental calculations to use deks, because all of the required
-information is plainly visible in the <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>.
+in the Gregorian calendar. As opposed to months, we do not need
+mnemonics, tables, or mental calculations to use deks, because all of
+the required information is plainly visible in the
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span>.
 
-In addition to the dek and dod, doys can also provide the time-of-day
-(tod). The dek, dod, and tod are all just different part of the doy. If
-we floor a doy, we get its integer part, which is a floating date that
-provides the dek and dod, and if we obtain the remainder after dividing
-a doy or a doe by 1, we get its decimal part, which is a tod.
+# Time of day (tod)
 
-The combination of a Dec date and a Dec time is a called a snap. A Dec
-date is essentially a Dec snap that has been
-[truncated](https://en.wikipedia.org/wiki/Truncation#:~:text=limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point)
-until the time is no longer specified.
+In addition to the dek and <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-dek">dod</span>,
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-year">doys</span> can also provide the
+time-of-day (<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span>). The dek,
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">dod</span>, and <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> are all
+just different parts of the <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>. If we
+floor a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span>, ⌊<span class="cyan">d</span>⌋,
+we get its integer part, which is a floating date that provides the dek
+and <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">dod</span>, and if we obtain the remainder
+after dividing a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> or a <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-era">doe</span> by 1,
+<span class="cyan">d</span>
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1, we get its decimal part, which is a <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>.
 
-The subsequent articles on my site build on this article to further
-describe Dec [times](../../dec/time), [snaps](../../dec/span), and
-[spans](../../dec/span). A basic understanding of the Dec
-<span class="yellow">year</span>+<span class="cyan">day</span> date
-format is enough to understand the examples in the
-[filter](../../quarto/filter) and [script](../../quarto/script) articles
-in the [Quarto section](../../quarto) of my site, but it might be
-helpful to read my [Dec time article](../../dec/time) before moving on
-to my Quarto [include article](../../quarto/include).
+The combination of a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> and a Dec time zone
+<span class="lime">z</span> is called a Dec time:
+.<span class="cyan">tod</span>-<span class="lime">z</span>. Dec times
+can be appended to Dec dates to form
+[timestamps](https://en.wikipedia.org/wiki/Timestamp#:~:text=information%20identifying%20when%20a%20certain%20event%20occurred)
+called Dec snaps:
+<span class="yellow">year</span>+<span class="cyan">day</span>.<span class="cyan">tod</span>-<span class="lime">z</span>.
+The Dec timestamp on the left side of the [navigation
+bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
+(navbar) of my site multiplies the <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> by 10 so
+it is in the same
+[deciday](https://en.wiktionary.org/wiki/deciday#:~:text=One%20tenth%20of%20one%20day)
+units as the time zone:
+<span class="cyan">${decidayTime}</span>${zoneSign}<span class="lime">${Math.abs(zone)}</span>.
+
+After reading this article, you should be ready to tackle my [ISO
+8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
+[date](../../iso/date) article and the examples in the
+[filter](../../quarto/filter), [script](../../quarto/script), and
+[include](../../quarto/include) articles in the [Quarto
+section](../../quarto) of my site. To understand the full extent of the
+benefits that Decalendar can provide, you should continue on through the
+[Dec section]() of my site to the [time](../../dec/time),
+[snap](../../dec/snap), and [span](../../dec/span) articles. In
+particular understand the My article is notable because it reveals .
 
 # Cite
 
@@ -1229,6 +1263,9 @@ dotw0doty = Math.floor(ydz[1]) - dotw
 doty0dote = date2dote(ydz[0], 0, ydz[2])
 doty0dotw = dote2dotw(...doty0dote)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
+decidayTime = (dz[0] % 1 * 10).toFixed(4)
+zone = dz[1]
+zoneSign = zone < 0 ? "+" : "-"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
 Tminus = nDaysInYear - decoDoty
 fracYear = ydz[0] + ydz[1] / nDaysInYear
