@@ -1,9 +1,9 @@
 # Dec Date
 Martin Laptev
-2024+269
+2024+270
 
-- [Doty](#doty)
-- [Dote](#dote)
+- [Doy](#doy)
+- [Doe](#doe)
 - [Yote](#yote)
 - [Week](#week)
 - [Month](#month)
@@ -31,16 +31,16 @@ year has its own [cell](https://observablehq.com/plot/marks/cell).
 Despite these similarities, the two plots illustrate how the Dec (top)
 and Gregorian (bottom) calendars differ.
 
-# Doty
+# Doy
 
 The Dec calendar (Decalendar) starts on <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 instead of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="January 1"><u>Day 306</u></span> and uses a single number
-called the day of the year (doty), the <span class="cyan">day</span> in
+called the day-of-year (doy), the <span class="cyan">day</span> in
 <span class="yellow">year</span>+<span class="cyan">day</span>, to serve
 the same purpose as months and weeks in the Gregorian calendar. The
-current doty and the doty selected by the
+current doy and the doy selected by the
 [Observable](https://observablehq.com/)
 [range](https://observablehq.com/@observablehq/input-range)🎚️inputs
 below to be highlighted in the calendar🗓️plots are
@@ -200,16 +200,15 @@ viewof dotwInput = Inputs.radio([
 ```
 
 There are two range🎚️inputs labeled as “day of the year” because every
-doty can be expressed as both a positive and a negative number. The
-typical range for days of the year (doties) is 0 to
-<span class="orange">n</span>-1, but negative doties typically range
-from -<span class="orange">n</span> to -1, where
-<span class="orange">n</span> is the number of days in the year. Doties
-outside these
+doy can be expressed as both a positive and a negative number. The
+typical range for doys is 0 to <span class="orange">n</span>-1, but
+negative doys typically range from -<span class="orange">n</span> to -1,
+where <span class="orange">n</span> is the number of days in the year. A
+doy outside these
 [bounds](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20upper%20bound%20or%20majorant%5B1%5D%20of%20a%20subset%20S%20of%20some%20preordered%20set%20(K%2C%20%E2%89%A4)%20is%20an%20element%20of%20K%20that%20is%20greater%20than%20or%20equal%20to%20every%20element%20of%20S.%5B2%5D%5B3%5D%20Dually%2C%20a%20lower%20bound%20or%20minorant%20of%20S%20is%20defined%20to%20be%20an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S)
-represent days in previous or subsequent years.
+represents a day in a previous or subsequent year.
 
-The Play▶️button above cycles🔄through every doty, month, and day of the
+The Play▶️button above cycles🔄through every doy, month, and day of the
 month in the plots so that each day gets its turn to be highlighted with
 a red🟥background. The appearance of the bottom plot depends on the
 [toggle](https://observablehq.com/framework/inputs/toggle#:~:text=choose%20one%20of%20two%20values)✅and
@@ -227,11 +226,11 @@ because [leap
 day](https://en.wikipedia.org/wiki/February_29#:~:text=intercalary%20date%20added%20periodically)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29"><u>Day 365</u></span>) is the last day of
-the Dec leap years and the doty resets to zero at the start of every
+the Dec leap years and the doy resets to zero at the start of every
 year. The radio🔘input shifts every Gregorian calendar date by 1 to 6
 days, but has no effect on Decalendar whatsoever.
 
-The current doty, <span class="cyan">${decoDoty}</span>, consists of the
+The current doy, <span class="cyan">${decoDoty}</span>, consists of the
 current dek, <span class="cyan">${decoDoty.slice(0, 2)}</span>, and day
 of the dek, <span class="cyan">${decoDoty\[2\]}</span>. Deks are groups
 of 10 days that are well-aligned with the Dec year. Every Dec year
@@ -243,35 +242,38 @@ data-bs-toggle="tooltip" data-bs-title="February 28"><u>Day
 on the sixth day of Dek 36: <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29"><u>Day 365</u></span>.
 
-# Dote
+# Doe
 
 The last day of the year, <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 28 in common years, February 29 in leap years"><u>Day
 -1</u></span>, is always followed by <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>,
 regardless of the last 4 or 5 days of Dec 36 that extend past the end of
-the year. While doties do not count deks past Dek 36, days of the
-[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
-(dotes), continuous counts of days since the Dec
+the year. While doys do not count deks past Dek 36, each
+<span class="yellow">year</span>+<span class="cyan">day</span> date can
+be converted into an
+[unbounded](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded)
+count of days since the Dec
 [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="1 BC"><u>Year 0</u></span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="midnight"><u>Dot 0</u></span>), provide an unbroken
-sequence of deks that is analogous to the weeks in the Gregorian
-calendar.
+data-bs-title="midnight"><u>Dot 0</u></span>) called a
+day-of-[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
+(doe). , provide an unbroken sequence of deks that is analogous to the
+weeks in the Gregorian calendar.
 
 Dec uses dotes for calculations, such as finding the
 [POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems)
 [Sunday-based](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday))
-day of the week (dotw) of a given date. This year, the dotw of
-Christmas🎄is <span class="azul">${xmasDotw}</span>, according to the
-Dec dotw equation: (<span class="cyan">${xmasDote}</span> + 3)
+day-of-week (dow) of a given date. This year, the dow of Christmas🎄is
+<span class="azul">${xmasDotw}</span>, according to the Dec dow
+equation: (<span class="cyan">${xmasDote}</span> + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-7 = <span class="azul">${xmasDotw}</span>. In contrast to the dotw,
+7 = <span class="azul">${xmasDotw}</span>. In contrast to the dow,
 finding the day of the dek (dotd) of a given Dec date does not require
-any calculation because the dotd is simply the last digit of the doty.
+any calculation because the dotd is simply the last digit of the doy.
 
 <div>
 
@@ -279,37 +281,36 @@ any calculation because the dotd is simply the last digit of the doty.
 >
 > [Dek the
 > halls](https://en.wikipedia.org/wiki/Deck_the_Halls#:~:text=a%20traditional%20Christmas%20carol.)
-> with boughs of doty! Fa + la × 8!
+> with boughs of doy! Fa + la × 8!
 
 </div>
 
-Christmas🎄is a fixed holiday because it occurs on the same doty,
+Christmas🎄is a fixed holiday because it occurs on the same doy,
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="December 25"><u>Day 299</u></span>, every year. Unlike
 fixed holidays, Gregorian calendar floating holidays happen on a
-different doty every year so that their dotw can remain constant. Dec
-uses the dotw difference equation,
-<span class="azul">w<sub>Δ</sub></span> =
+different doy every year so that their dow can remain constant. Dec uses
+the dow difference equation, <span class="azul">w<sub>Δ</sub></span> =
 (<span class="azul">w<sub>M</sub></span> -
 <span class="azul">w<sub>S</sub></span> + 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7, to determine which of the seven possible floating holiday dates
 corresponds to the given year.
 
-In the dotw difference equation, <span class="azul">w<sub>M</sub></span>
+In the dow difference equation, <span class="azul">w<sub>M</sub></span>
 is the
 [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted)
-dotw at which we want to arrive and
+dow at which we want to arrive and
 <span class="azul">w<sub>S</sub></span> is
 [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted)
-dotw from which we start. To get the doty of
+dow from which we start. To get the doy of
 [Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃in
 the United States and Brazil, we plug <span class="azul">4</span> as
 <span class="azul">w<sub>M</sub></span> and
-<span class="azul">${day266dotw}</span>, the dotw of <span class="tool"
+<span class="azul">${day266dotw}</span>, the dow of <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="November 22"><u>Day
 266</u></span> this year, as <span class="azul">w<sub>S</sub></span>
-into the dotw difference equation,
+into the dow difference equation,
 <span class="azul">${day266dotwDiff}</span> =
 (<span class="azul">4</span> - <span class="azul">${day266dotw}</span> +
 7)
@@ -318,7 +319,7 @@ into the dotw difference equation,
 266: <span class="cyan">${day266dotwDiff + 266}</span> =
 <span class="azul">${day266dotwDiff}</span> + 266.
 
-Apart from the dotw and dotw difference equations, the
+Apart from the dow and dow difference equations, the
 Thanksgiving🦃calculation above relies on the Dec dote equation, which
 is based on the <a
 href="https://howardhinnant.github.io/date_algorithms.html#days_from_civil"
@@ -328,18 +329,18 @@ manuscript entitled [<span class="mono">`chrono`</span>-Compatible
 Low-Level Date
 Algorithms](https://howardhinnant.github.io/date_algorithms.html), to
 convert the
-[cycle](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years)
-of the era (cote), year of the cycle (yotc), and doty of
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="November 22"><u>Day 266</u></span> into its dote:
+[cycle](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years)-of-era
+(coe), year-of-cycle (yoc), and doy of <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="November 22"><u>Day
+266</u></span> into its dote:
 
 <div style="overflow-x:auto;overflow-y:hidden;">
 
-$$\text{cote} = \Biggl \lfloor \frac{\begin{cases}\text{year}&{\text{if } \text{year} \geq 0;}\\\text{year}-399&{\text{otherwise.}}\end{cases}}{400} \Biggr \rfloor$$
+$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{year}&{\text{if } \text{year} \geq 0;}\\\text{year}-399&{\text{otherwise.}}\end{cases}}{400} \Biggr \rfloor$$
 
-yotc = year − cote × 400
+yoc = year − coe × 400
 
-$$\text{dote} = \text{cote}\times146097 + \text{yotc}\times365 + \lfloor\frac{\text{yotc}}{4}\rfloor - \lfloor\frac{\text{yotc}}{100}\rfloor + \text{doty}$$
+$$\text{dote} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{doty}$$
 
 </div>
 
@@ -352,21 +353,20 @@ for obtaining Dec dates from dotes and dote equivalents like [Unix
 timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970)
 and [Julian
 days](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20continuous%20count%20of%20days%20from%20the%20beginning%20of%20the%20Julian%20period).
-Apart from cote and yotc, the Dec date equations use the day of the
-cycle (dotc) of a dote to produce the dote’s corresponding year and
-doty:
+Apart from coe and yoc, the Dec date equations use the day-of-cycle
+(doc) of a dote to produce the dote’s corresponding year and doy:
 
 <div style="overflow-x:auto;overflow-y:hidden;">
 
-$$\text{cote} = \Biggl \lfloor \frac{\begin{cases}\text{dote}&{\text{if } \text{dote} \geq 0;}\\\text{dote}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$
+$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{dote}&{\text{if } \text{dote} \geq 0;}\\\text{dote}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$
 
-dotc = dote − cote × 146097
+doc = dote − coe × 146097
 
-$$\text{yotc} = \biggl \lfloor \frac{\text{dotc} - \lfloor \frac{\text{dotc}}{1460} \rfloor + \lfloor \frac{\text{dotc}}{36524} \rfloor - \lfloor \frac{\text{dotc}}{146096} \rfloor}{365} \biggr \rfloor$$
+$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$
 
-year = yotc + cote × 400
+year = yoc + coe × 400
 
-$$\text{doty} = \text{dotc} - \text{yotc} \times 365 - \lfloor \frac{\text{yotc}}{4} \rfloor + \lfloor \frac{\text{yotc}}{100} \rfloor$$
+$$\text{doty} = \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor$$
 
 </div>
 
@@ -384,14 +384,13 @@ outside the typical range of <span class="cyan">0</span> ≤
 
 A dote is essentially a Dec date with a <span class="yellow">year</span>
 that is always equal to <span class="yellow">0</span> and a
-<span class="cyan">day</span> that is
-[unbounded](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded).
-Similarly, a Dec year of the era (yote) is basically a Dec with a
-non-integer <span class="yellow">year</span> and a
-<span class="cyan">day</span> permanently set to
-<span class="cyan">0</span>. Both dotes and yotes allow us to represent
-a date as a single number and obtain the difference between two dates,
-either in days (<span class="cyan">d<sub>M</sub></span> -
+<span class="cyan">day</span> that is unbounded. Similarly, a Dec year
+of the era (yote) is basically a Dec with a non-integer
+<span class="yellow">year</span> and a <span class="cyan">day</span>
+permanently set to <span class="cyan">0</span>. Both dotes and yotes
+allow us to represent a date as a single number and obtain the
+difference between two dates, either in days
+(<span class="cyan">d<sub>M</sub></span> -
 <span class="cyan">d<sub>S</sub></span>) or years
 (<span class="yellow">y<sub>M</sub></span> -
 <span class="yellow">y<sub>S</sub></span>).
@@ -403,7 +402,7 @@ convert dates to yotes and vice versa with the Dec yote equation:
 yote equation, <span class="yellow">y</span> is the yote,
 ⌊<span class="yellow">y</span>⌋ + <span class="cyan">d</span> is the Dec
 date, ⌊<span class="yellow">y</span>⌋ is the year,
-<span class="cyan">d</span> is the doty, and
+<span class="cyan">d</span> is the doy, and
 <span class="orange">n</span> is the number of days in Year
 ⌊<span class="yellow">y</span>⌋. The current yote equation values are
 <span class="yellow">${fullfracYear}</span> =
@@ -432,7 +431,7 @@ $$\text{n}=\begin{cases}
   \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}(\lfloor \text{y}\rfloor+1)\text{ mod }400=0\end{align}}\\\\
   365&{\text{otherwise.}}\end{cases}$$
 
-Apart from its role in the Dec date and doty equations,
+Apart from its role in the Dec date and doy equations,
 <span class="orange">n</span> is needed to convert between
 <span class="yellow">year</span>+<span class="cyan">day</span> and
 <span class="yellow">year</span>-<span class="pink">day</span> Dec
@@ -467,17 +466,17 @@ and <span class="cyan">d</span>-<span class="orange">n</span> is a
 [negative
 index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array).
 
-The yote equation can be rearranged into the Dec doty equation,
+The yote equation can be rearranged into the Dec doy equation,
 <span class="cyan">d</span> = ⌊<span class="yellow">y</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × <span class="orange">n</span>⌋, where <span class="yellow">y</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 is the [decimal
 part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
-of <span class="yellow">y</span>. The current doty equation values are
+of <span class="yellow">y</span>. The current doy equation values are
 <span class="cyan">${decoDoty}</span> =
 ⌊<span class="yellow">${mod1FracYear}</span> ×
-<span class="orange">${nDaysInYear}</span>⌋. We can refer to a doty
+<span class="orange">${nDaysInYear}</span>⌋. We can refer to a doy
 without a year as a floating date and a
 <span class="yellow">year</span>+<span class="cyan">day</span> date as a
 fixed date. Unlike other types of dates, floating dates do not specify
@@ -486,10 +485,10 @@ the year and thus apply to any year.
 Fixed dates are essentially
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
 math expressions. Dec uses unsimplified math expressions to display
-information about a date, such as its doty <span class="cyan">d</span>
-or POSIX dotw <span class="azul">w</span>. Essentially, you can modify a
-Dec date to show whatever numbers🔢you want. All it takes is a little
-bit of arithmetic! This incredible versatility is possible thanks to the
+information about a date, such as its doy <span class="cyan">d</span> or
+POSIX dow <span class="azul">w</span>. Essentially, you can modify a Dec
+date to show whatever numbers🔢you want. All it takes is a little bit of
+arithmetic! This incredible versatility is possible thanks to the
 mathematical basis of Dec date notation.
 
 # Week
@@ -501,43 +500,42 @@ include
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)).
 To convert the current Dec date,
 <span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>,
-into the current Dec day of the week (dotw) date,
+into the current Dec dow date,
 <span class="yellow">${decoYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="azul">${dotw}</span>,
-we split the current doty, <span class="cyan">${decoDoty}</span>, into
-the doty of the first day of the current week,
+we split the current doy, <span class="cyan">${decoDoty}</span>, into
+the doy of the first day of the current week,
 <span class="cyan">${dotw0doty}</span>, and the current POSIX weekday
 number: <span class="azul">${dotw}</span>.
 
-Instead of the doty <span class="cyan">d</span>, Dec dotw dates display
+Instead of the doy <span class="cyan">d</span>, Dec dow dates display
 <span class="cyan">d</span>-<span class="azul">w</span>+<span class="azul">w</span>,
 where <span class="cyan">d</span>-<span class="azul">w</span> is the
-first doty of the current week and <span class="azul">w</span> is the
-dotw number associated with the doty <span class="cyan">d</span>. We
-evaluate the subtraction, but leave the addition unsimplified so we can
-see <span class="azul">w</span>. Dec dotw dates provide all of the
+first doy of the current week and <span class="azul">w</span> is the dow
+number associated with the doy <span class="cyan">d</span>. We evaluate
+the subtraction, but leave the addition unsimplified so we can see
+<span class="azul">w</span>. Dec dow dates provide all of the
 information needed to identify specific dates and coordinate schedules
 based on deks or weeks.
 
-Dec dotw dates can be further modified to include [POSIX week
+Dec dow dates can be further modified to include [POSIX week
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.).
 The current week number, ${week}, is the result of adding the middle
-number in the Dec dotw date, <span class="cyan">${dotw0doty}</span>, to
-the Day 0 dotw number, <span class="azul">${doty0dotw}</span>, and then
-floor dividing by 7. The current Dec week date,
-<span class="yellow">${decoYear}</span>+7×<span class="wheat">${week}</span>+<span class="azul">${dotw}</span>,
-shows how we can obtain the sum of the current doty and the Day 0 dotw
-number:
+number in the Dec dow date, <span class="cyan">${dotw0doty}</span>, to
+the Day 0 dow number, <span class="azul">${doty0dotw}</span>, and then
+floor dividing by 7. The current Dec floating week date,
+7×<span class="wheat">${week}</span>+<span class="azul">${dotw}</span>,
+is equal to the sum of the current doy and the Day 0 dow number:
 7×<span class="wheat">${week}</span>+<span class="azul">${dotw}</span>=<span class="cyan">${decoDoty}</span>+<span class="azul">${doty0dotw}</span>.
 
 Dec week dates turn
 <span class="cyan">d</span>-<span class="azul">w</span> into
 7×<span class="wheat">W</span>-<span class="azul">w<sub>0</sub></span>,
 where <span class="wheat">W</span> is the week number and
-<span class="azul">w<sub>0</sub></span> is the dotw number on Day 0. In
+<span class="azul">w<sub>0</sub></span> is the dow number on Day 0. In
 this case, the subtraction is omitted, because
 <span class="azul">w<sub>0</sub></span> is not necessary to identify a
 date and can be calculated from a given <span class="yellow">y</span> by
-flooring it, turning it into a dote, and passing it into the dotw
+flooring it, turning it into a dote, and passing it into the dow
 equation. POSIX week numbers may be useful for [week-based
 accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
 
@@ -562,33 +560,33 @@ allows us to naturally combine a dek,
 # Month
 
 Dec dates can also be modified to display Dec month numbers and [POSIX
-day of the month (dotm)
+day-of-month (dom)
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D).
-The current Dec dotm date is
+The current Dec dom date is
 <span class="yellow">${decoYear}</span>+<span class="cyan">${monthNumber}</span>+<span class="magenta">${dotm}</span>.
-Dec dotm dates represent each month with the last doty of the previous
-month because POSIX dotm numbers are one-based. For
+Dec dom dates represent each month with the last doy of the previous
+month because POSIX dom numbers are one-based. For
 [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
-dotm numbers, we represent each month with its first doty:
+dom numbers, we represent each month with its first doy:
 <span class="yellow">${decoYear}</span>+<span class="cyan">${monthNumber0}</span>+<span class="magenta">${dotm0}</span>.
 
-Dec dotm dates replace the doty <span class="cyan">d</span> from Dec
-dates with
+Dec dom dates replace the doy <span class="cyan">d</span> from Dec dates
+with
 <span class="cyan">d</span>-<span class="magenta">m</span>+<span class="magenta">m</span>.
 We evaluate the subtraction to get
 <span class="cyan">d</span>-<span class="magenta">m</span>, the Dec
 month number, but not the addition, so we can see
-<span class="magenta">m</span>, the dotm number. If we combine the dotm
-and dotw patterns above, we can create hybrid Dec dates:
+<span class="magenta">m</span>, the dom number. If we combine the dom
+and dow patterns above, we can create hybrid Dec dates:
 <span class="yellow">${decoYear}</span>+<span class="cyan">${monthNumber -
 dotw}</span>+<span class="magenta">${dotm}</span>+<span class="azul">${dotw}</span>,
 where <span class="cyan">${monthNumber - dotw}</span> is
 <span class="cyan">d</span>-<span class="magenta">m</span>-<span class="azul">w</span>,
-the doty of the last Sunday before the beginning of the month.
+the doy of the last Sunday before the beginning of the month.
 
 We can obtain Dec month numbers using only a pair of hands🤲by counting
 index☝️and ring💍fingers as 30 days and other fingers as 31 days. For
-zero-based dotm numbers, we start counting from 0. For one-based dotm
+zero-based dom numbers, we start counting from 0. For one-based dom
 numbers, we start counting from -1, as shown in the image below. To
 spread 12 months across 10 fingers, the first and last fingers each
 represent 2 months.
@@ -941,7 +939,7 @@ The combination of a Dec date and a Dec time is a called a snap. A Dec
 date is essentially a Dec snap that has been
 [truncated](https://en.wikipedia.org/wiki/Truncation#:~:text=limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point)
 until the time is no longer specified. Truncation of both positive and
-negative doty values in Dec snaps can be accomplished with the [floor
+negative doy values in Dec snaps can be accomplished with the [floor
 function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x):
 ⌊<span class="cyan">d</span>⌋. Unlike Pandas
 [string](https://en.wikipedia.org/wiki/String_(computer_science)#:~:text=a%20sequence%20of%20characters)
