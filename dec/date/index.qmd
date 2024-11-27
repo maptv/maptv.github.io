@@ -1,6 +1,8 @@
 ---
 title: Dec Date
-image: /asset/deidek.svg
+image: /asset/cal16.svg
+description: >
+  Introducing Decalendar, a timekeeping system that displays dates and times using math notation and tracks time using years and days, without the need for months, weeks, hours, minutes or seconds.
 citation:
   url: https://maptv.github.io/dec/date
 license: CC BY-SA
@@ -27,7 +29,7 @@ Among its many features, Quarto offers support for the [Observable](https://obse
 
 # Day of year (doy){id="doy"}
 
-The Dec calendar (Decalendar) starts on [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} instead of [Day 306]{.underline .tool data-bs-toggle="tooltip" data-bs-title="January 1"} and uses a single number called the day-of-year ([doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}), the [day]{.cyan} in [year]{.yellow}+[day]{.cyan}, to serve the same purpose as months and weeks in the Gregorian calendar. The current [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} and the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} selected by the [Observable](https://observablehq.com/) [range](https://observablehq.com/@observablehq/input-range)🎚️inputs below to be highlighted in the calendar🗓️plots are [\${decoDoty}]{.cyan} and [\${dotyInput}]{.cyan}, respectively.
+The Dec calendar (Decalendar) starts on [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} instead of [Day 306]{.underline .tool data-bs-toggle="tooltip" data-bs-title="January 1"} and uses a single number called the day-of-year ([doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}), which is the [day]{.cyan} in [year]{.yellow}+[day]{.cyan}, to serve the same purpose as months and weeks in the Gregorian calendar. The current [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} and the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} selected by the [Observable](https://observablehq.com/) [range](https://observablehq.com/@observablehq/input-range)🎚️inputs below to be highlighted in the calendar🗓️plots are [\${decoDoty}]{.cyan} and [\${dotyInput}]{.cyan}, respectively.
 
 ::: {.column-page-right}
 ```{ojs}
@@ -284,7 +286,7 @@ In addition to the dek and [dod]{.under .tool data-bs-toggle="tooltip" data-bs-t
 
 The combination of a [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} and a Dec time zone [z]{.lime} is called a Dec time: .[tod]{.cyan}-[z]{.lime}. Dec times can be appended to Dec dates to form [timestamps](https://en.wikipedia.org/wiki/Timestamp#:~:text=information%20identifying%20when%20a%20certain%20event%20occurred) called Dec snaps: [year]{.yellow}+[day]{.cyan}.[tod]{.cyan}-[z]{.lime}. The Dec timestamp on the left side of the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) (navbar) of my site multiplies the [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} by 10 so it is in the same [deciday](https://en.wiktionary.org/wiki/deciday#:~:text=One%20tenth%20of%20one%20day) units as the time zone: [\${decidayTime}]{.cyan}\${zoneSign}[\${Math.abs(zone)}]{.lime}.
 
-After reading this article, you should be ready to tackle my [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) [date](/iso/date) article and the examples in the [filter](/quarto/filter), [script](/quarto/script), and [include](/quarto/include) articles in the [Quarto section](/quarto) of my site. To understand the full extent of the benefits that Decalendar can provide, you should continue on through the [Dec section]() of my site to the [time](/dec/time), [snap](/dec/snap), and [span](/dec/span) articles. In particular understand the My article is notable because it reveals .
+After reading this article, you should be ready to tackle my [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) [date](/iso/date) article and the examples in the [filter](/quarto/filter), [script](/quarto/script), and [include](/quarto/include) articles in the [Quarto section](/quarto) of my site. To see the full extent of the benefits that Decalendar can provide, you should continue on through the [Dec section](/dec) of my site to the [time](/dec/time), [snap](/dec/snap), and [span](/dec/span) articles.
 
 # Cite
 

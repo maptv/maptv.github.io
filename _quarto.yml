@@ -53,10 +53,10 @@ website:
     - icon: grid-3x3-gap
       text: Listing
       href: list/index.qmd
-    - section: Art
-      icon: brush
-    - section: Cloud
-      icon: cloud
+    # - section: Art
+    #   icon: brush
+    # - section: Cloud
+    #   icon: cloud
     - section: History
       icon: hourglass-split
       contents:
@@ -72,50 +72,58 @@ website:
       - icon: translate
         text: Language Models
         href: ml/llm/index.qmd
-    - section: Measurement
+    - section: Measure
       icon: rulers
-      href: dec/index.qmd
+      href: measure.qmd
       contents:
-      - text: Dec Date
-        icon: calendar-date
-        href: dec/date/index.qmd
-      - text: Dec Time
-        icon: clock
-        href: dec/time/index.qmd
-      - text: Dec Snap
-        icon: postage
-        href: dec/snap/index.qmd
-      - text: Dec Span
-        icon: calendar-range
-        href: dec/span/index.qmd
-      - text: ISO Date
-        icon: calendar-month
-        href: iso/date/index.qmd
-      - text: ISO Time
-        icon: hourglass
-        href: iso/time/index.qmd
-      - text: Geoposition
-        icon: geo
-        href: dec/geo/index.qmd
-      - text: Daylight duration
-        icon: sun
-        href: dec/day/index.qmd
-      - text: Navigation
-        icon: compass
-        href: dec/nav/index.qmd
-      - text: Movement
-        icon: arrows-move
-        href: dec/move/index.qmd
-      - text: Size
-        icon: bounding-box-circles
-        href: dec/size/index.qmd
-    - section: Science
-      icon: stars
+      - section: Dec
+        icon: arrow-repeat
+        href: dec/index.qmd
+        contents:
+        - text: Date
+          icon: calendar-date
+          href: dec/date/index.qmd
+        - text: Time
+          icon: clock
+          href: dec/time/index.qmd
+        - text: Snap
+          icon: postage
+          href: dec/snap/index.qmd
+        - text: Span
+          icon: calendar-range
+          href: dec/span/index.qmd
+      - section: Dec
+        icon: arrow-repeat
+        href: dec/index.qmd
+        contents:
+        - text: ISO Date
+          icon: calendar-month
+          href: iso/date/index.qmd
+        - text: ISO Time
+          icon: hourglass
+          href: iso/time/index.qmd
+      # - text: Geoposition
+      #   icon: geo
+      #   href: dec/geo/index.qmd
+      # - text: Daylight duration
+      #   icon: sun
+      #   href: dec/day/index.qmd
+      # - text: Navigation
+      #   icon: compass
+      #   href: dec/nav/index.qmd
+      # - text: Movement
+      #   icon: arrows-move
+      #   href: dec/move/index.qmd
+      # - text: Size
+      #   icon: bounding-box-circles
+      #   href: dec/size/index.qmd
+    # - section: Science
+    #   icon: stars
     - section: Software
       icon: laptop
       contents:
-      - icon: gear
-        text: Setup
+      # - icon: gear
+      #   text: Setup
       - icon: git
         text: Git
         href: software/git/index.qmd
