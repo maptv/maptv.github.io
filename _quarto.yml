@@ -92,14 +92,14 @@ website:
         - text: Span
           icon: calendar-range
           href: dec/span/index.qmd
-      - section: Dec
-        icon: arrow-repeat
+      - section: ISO
+        icon: globe
         href: dec/index.qmd
         contents:
-        - text: ISO Date
+        - text: Date
           icon: calendar-month
           href: iso/date/index.qmd
-        - text: ISO Time
+        - text: Time
           icon: hourglass
           href: iso/time/index.qmd
       # - text: Geoposition

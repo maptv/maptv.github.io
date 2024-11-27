@@ -2,7 +2,7 @@
 title: Dec Date
 image: /asset/cal16.svg
 description: >
-  Introducing Decalendar, a timekeeping system that displays dates and times using math notation and tracks time using years and days, without the need for months, weeks, hours, minutes or seconds.
+  Introducing Decalendar, a timekeeping system that displays dates and times in years and days using math notation without the need for months, weeks, hours, minutes or seconds.
 citation:
   url: https://maptv.github.io/dec/date
 license: CC BY-SA
