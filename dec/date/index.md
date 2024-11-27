@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+270
+2024+271
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -40,8 +40,8 @@ data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 instead of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="January 1"><u>Day 306</u></span> and uses a single number
 called the day-of-year (<span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>), the
-<span class="cyan">day</span> in
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>), which
+is the <span class="cyan">day</span> in
 <span class="yellow">year</span>+<span class="cyan">day</span>, to serve
 the same purpose as months and weeks in the Gregorian calendar. The
 current <span class="under tool" data-bs-toggle="tooltip"
@@ -1177,11 +1177,10 @@ After reading this article, you should be ready to tackle my [ISO
 [date](../../iso/date) article and the examples in the
 [filter](../../quarto/filter), [script](../../quarto/script), and
 [include](../../quarto/include) articles in the [Quarto
-section](../../quarto) of my site. To understand the full extent of the
+section](../../quarto) of my site. To see the full extent of the
 benefits that Decalendar can provide, you should continue on through the
-[Dec section]() of my site to the [time](../../dec/time),
-[snap](../../dec/snap), and [span](../../dec/span) articles. In
-particular understand the My article is notable because it reveals .
+[Dec section](../../dec) of my site to the [time](../../dec/time),
+[snap](../../dec/snap), and [span](../../dec/span) articles.
 
 # Cite
 

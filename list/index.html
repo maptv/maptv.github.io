@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-title','listing-description','listing-file-modified','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-title','listing-description','listing-file-modified','listing-categories','listing-word-count','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
@@ -211,25 +211,15 @@ window.Quarto = {
 </div>
 </li>
 <li class="sidebar-item sidebar-item-section">
-<span class="sidebar-item-text sidebar-link text-start"><i class="bi bi-brush" role="img">
-</i>
-<span class="menu-text">Art</span></span>
-</li>
-<li class="sidebar-item sidebar-item-section">
-<span class="sidebar-item-text sidebar-link text-start"><i class="bi bi-cloud" role="img">
-</i>
-<span class="menu-text">Cloud</span></span>
-</li>
-<li class="sidebar-item sidebar-item-section">
 <div class="sidebar-item-container">
-<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-3" data-bs-toggle="collapse" role="navigation"><i class="bi bi-hourglass-split" role="img">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation"><i class="bi bi-hourglass-split" role="img">
 </i>
 <span class="menu-text">History</span></a>
-<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-3" data-bs-toggle="collapse" role="navigation">
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
 <i class="bi bi-chevron-right ms-2"></i>
 </a>
 </div>
-<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-3">
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
 <li class="sidebar-item">
 <div class="sidebar-item-container">
 <a class="sidebar-item-text sidebar-link" href="../history/ww2/index.html"><i class="bi bi-2-square" role="img">
@@ -241,14 +231,14 @@ window.Quarto = {
 </li>
 <li class="sidebar-item sidebar-item-section">
 <div class="sidebar-item-container">
-<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-4" data-bs-toggle="collapse" role="navigation"><i class="bi bi-robot" role="img">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-2" data-bs-toggle="collapse" role="navigation"><i class="bi bi-robot" role="img">
 </i>
 <span class="menu-text">Machine Learning</span></a>
-<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-4" data-bs-toggle="collapse" role="navigation">
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-2" data-bs-toggle="collapse" role="navigation">
 <i class="bi bi-chevron-right ms-2"></i>
 </a>
 </div>
-<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-4">
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-2">
 <li class="sidebar-item">
 <div class="sidebar-item-container">
 <a class="sidebar-item-text sidebar-link" href="../ml/prob/index.html"><i class="bi bi-dice-5" role="img">
@@ -267,42 +257,64 @@ window.Quarto = {
 </li>
 <li class="sidebar-item sidebar-item-section">
 <div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="../dec/index.html"><i class="bi bi-rulers" role="img">
+<a class="sidebar-item-text sidebar-link" href="../measure.qmd"><i class="bi bi-rulers" role="img">
 </i>
-<span class="menu-text">Measurement</span></a>
-<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-5" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Measure</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-3" data-bs-toggle="collapse" role="navigation">
 <i class="bi bi-chevron-right ms-2"></i>
 </a>
 </div>
-<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-5">
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-3">
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../dec/index.html"><i class="bi bi-arrow-repeat" role="img">
+</i>
+<span class="menu-text">Dec</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-4" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth2 show" id="quarto-sidebar-section-4">
 <li class="sidebar-item">
 <div class="sidebar-item-container">
 <a class="sidebar-item-text sidebar-link" href="../dec/date/index.html"><i class="bi bi-calendar-date" role="img">
 </i>
-<span class="menu-text">Dec Date</span></a>
+<span class="menu-text">Date</span></a>
 </div>
 </li>
 <li class="sidebar-item">
 <div class="sidebar-item-container">
 <a class="sidebar-item-text sidebar-link" href="../dec/time/index.html"><i class="bi bi-clock" role="img">
 </i>
-<span class="menu-text">Dec Time</span></a>
+<span class="menu-text">Time</span></a>
 </div>
 </li>
 <li class="sidebar-item">
 <div class="sidebar-item-container">
 <a class="sidebar-item-text sidebar-link" href="../dec/snap/index.html"><i class="bi bi-postage" role="img">
 </i>
-<span class="menu-text">Dec Snap</span></a>
+<span class="menu-text">Snap</span></a>
 </div>
 </li>
 <li class="sidebar-item">
 <div class="sidebar-item-container">
 <a class="sidebar-item-text sidebar-link" href="../dec/span/index.html"><i class="bi bi-calendar-range" role="img">
 </i>
-<span class="menu-text">Dec Span</span></a>
+<span class="menu-text">Span</span></a>
 </div>
 </li>
+</ul>
+</li>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../dec/index.html"><i class="bi bi-arrow-repeat" role="img">
+</i>
+<span class="menu-text">Dec</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-5" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth2 show" id="quarto-sidebar-section-5">
 <li class="sidebar-item">
 <div class="sidebar-item-container">
 <a class="sidebar-item-text sidebar-link" href="../iso/date/index.html"><i class="bi bi-calendar-month" role="img">
@@ -317,63 +329,20 @@ window.Quarto = {
 <span class="menu-text">ISO Time</span></a>
 </div>
 </li>
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="../dec/geo/index.html"><i class="bi bi-geo" role="img">
-</i>
-<span class="menu-text">Geoposition</span></a>
-</div>
-</li>
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="../dec/day/index.html"><i class="bi bi-sun" role="img">
-</i>
-<span class="menu-text">Daylight duration</span></a>
-</div>
-</li>
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="../dec/nav/index.html"><i class="bi bi-compass" role="img">
-</i>
-<span class="menu-text">Navigation</span></a>
-</div>
-</li>
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="../dec/move/index.html"><i class="bi bi-arrows-move" role="img">
-</i>
-<span class="menu-text">Movement</span></a>
-</div>
-</li>
-<li class="sidebar-item">
-<div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="../dec/size/index.html"><i class="bi bi-bounding-box-circles" role="img">
-</i>
-<span class="menu-text">Size</span></a>
-</div>
+</ul>
 </li>
 </ul>
 </li>
 <li class="sidebar-item sidebar-item-section">
-<span class="sidebar-item-text sidebar-link text-start"><i class="bi bi-stars" role="img">
-</i>
-<span class="menu-text">Science</span></span>
-</li>
-<li class="sidebar-item sidebar-item-section">
 <div class="sidebar-item-container">
-<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-7" data-bs-toggle="collapse" role="navigation"><i class="bi bi-laptop" role="img">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-6" data-bs-toggle="collapse" role="navigation"><i class="bi bi-laptop" role="img">
 </i>
 <span class="menu-text">Software</span></a>
-<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-7" data-bs-toggle="collapse" role="navigation">
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-6" data-bs-toggle="collapse" role="navigation">
 <i class="bi bi-chevron-right ms-2"></i>
 </a>
 </div>
-<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-7">
-<li class="sidebar-item">
-<i class="bi bi-gear" role="img">
-</i>
-<span class="menu-text">Setup</span>
-</li>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-6">
 <li class="sidebar-item">
 <div class="sidebar-item-container">
 <a class="sidebar-item-text sidebar-link" href="../software/git/index.html"><i class="bi bi-git" role="img">
@@ -400,11 +369,11 @@ window.Quarto = {
 <a class="sidebar-item-text sidebar-link" href="../quarto/index.html"><i class="bi bi-markdown" role="img">
 </i>
 <span class="menu-text">Quarto</span></a>
-<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-8" data-bs-toggle="collapse" role="navigation">
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-7" data-bs-toggle="collapse" role="navigation">
 <i class="bi bi-chevron-right ms-2"></i>
 </a>
 </div>
-<ul class="collapse list-unstyled sidebar-section depth2 show" id="quarto-sidebar-section-8">
+<ul class="collapse list-unstyled sidebar-section depth2 show" id="quarto-sidebar-section-7">
 <li class="sidebar-item">
 <div class="sidebar-item-container">
 <a class="sidebar-item-text sidebar-link" href="../quarto/filter/index.html"><i class="bi bi-funnel" role="img">
@@ -443,12 +412,78 @@ window.Quarto = {
 <div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
 <div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
-<h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="dec">dec <span class="quarto-category-count">(1)</span></div><div class="category" data-category="git">git <span class="quarto-category-count">(3)</span></div><div class="category" data-category="jupyter">jupyter <span class="quarto-category-count">(1)</span></div><div class="category" data-category="knitr">knitr <span class="quarto-category-count">(2)</span></div><div class="category" data-category="llm">llm <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ml">ml <span class="quarto-category-count">(2)</span></div><div class="category" data-category="observable">observable <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(4)</span></div><div class="category" data-category="tool">tool <span class="quarto-category-count">(6)</span></div><div class="category" data-category="web dev">web dev <span class="quarto-category-count">(1)</span></div></div></div>
+<h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="git">git <span class="quarto-category-count">(3)</span></div><div class="category" data-category="jupyter">jupyter <span class="quarto-category-count">(1)</span></div><div class="category" data-category="knitr">knitr <span class="quarto-category-count">(2)</span></div><div class="category" data-category="llm">llm <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ml">ml <span class="quarto-category-count">(2)</span></div><div class="category" data-category="observable">observable <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(4)</span></div><div class="category" data-category="tool">tool <span class="quarto-category-count">(6)</span></div><div class="category" data-category="web dev">web dev <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725860445000" data-listing-file-modified-sort="1725860445106" data-listing-reading-time-sort="3" data-listing-word-count-sort="409">
+<div class="g-col-1" data-index="0" data-listing-date-modified-sort="NaN" data-listing-date-sort="1732743285000" data-listing-file-modified-sort="1732743285736" data-listing-reading-time-sort="31" data-listing-word-count-sort="6033">
+<a class="quarto-grid-link" href="../dec/date/index.html">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img class="thumbnail-image card-img" loading="lazy" src="../asset/cal16.svg" style="height: 150px;"/>
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Dec Date
+</h5>
+<div class="listing-reading-time card-text text-muted">21 milliday</div>
+<div class="card-text listing-description">
+Introducing Decalendar, a timekeeping system that displays dates and times using math notation and tracks time using years and days, without the need for months, weeks…
+</div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Word Count
+</td>
+<td class="word-count">
+6,033 words
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>2024+271</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-date-modified-sort="NaN" data-listing-date-sort="1731179114000" data-listing-file-modified-sort="1731179114716" data-listing-reading-time-sort="46" data-listing-word-count-sort="9133">
+<a class="quarto-grid-link" href="../dec/time/index.html">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img class="thumbnail-image card-img" loading="lazy" src="../asset/deidek.svg" style="height: 150px;"/>
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Dec Time
+</h5>
+<div class="listing-reading-time card-text text-muted">31 milliday</div>
+<div class="card-text listing-description">
+My website provides many examples of the Quarto publishing and the Dec measurement systems in action. I leverage Quarto support for the Observable data analysis and…<span><span id="ojs-element-id-1"></span></span><span><span id="ojs-element-id-2"></span></span>
+</div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Word Count
+</td>
+<td class="word-count">
+9,133 words
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>2024+253</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725860445000" data-listing-file-modified-sort="1725860445106" data-listing-reading-time-sort="3" data-listing-word-count-sort="409">
 <a class="quarto-grid-link" href="../history/ww2/index.html">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -462,6 +497,16 @@ World War 2
 <div class="card-text listing-description">
 <span class="blue" data-bs-title="September 1" data-bs-toggle="tooltip"><u>Day 184</u></span> in the Gregorian Decalendar is the first day of <span class="blue" data-bs-title="Fall in the Northern Hemisphere and Spring in the Southern Hemisphere" data-bs-toggle="tooltip"><u>Season 2</u></span> by meteorological reckoning and also the anniversary of the start of the World War 2. On <span class="blue" data-bs-title="1939-09-01" data-bs-toggle="tooltip"><u>1939+184</u></span>, World War…<span class="blue" data-bs-title="1939-09-17" data-bs-toggle="tooltip"><u></u></span><span class="blue" data-bs-title="1939-08-23" data-bs-toggle="tooltip"><u></u></span><span class="blue" data-bs-title="September 1" data-bs-toggle="tooltip"><u></u></span><span class="blue" data-bs-title="September 17" data-bs-toggle="tooltip"><u></u></span><span class="blue" data-bs-title="1941-06-22" data-bs-toggle="tooltip"><u></u></span>
 </div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Word Count
+</td>
+<td class="word-count">
+409 words
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
@@ -471,7 +516,7 @@ World War 2
 </div>
 </a>
 </div>
-<div class="g-col-1" data-categories="tool,git" data-index="1" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207475" data-listing-reading-time-sort="14" data-listing-word-count-sort="2659">
+<div class="g-col-1" data-categories="tool,git" data-index="3" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207475" data-listing-reading-time-sort="14" data-listing-word-count-sort="2659">
 <a class="quarto-grid-link" href="../software/git/index.html">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -493,6 +538,16 @@ git
 <div class="card-text listing-description">
 In this blog post, I show how to use the Git version control system and the command line interfaces (CLIs) for the GitHub and GitLab Git repository hosts to create a Git repo…
 </div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Word Count
+</td>
+<td class="word-count">
+2,659 words
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
@@ -502,7 +557,7 @@ In this blog post, I show how to use the Git version control system and the comm
 </div>
 </a>
 </div>
-<div class="g-col-1" data-categories="tool,quarto,web dev,git" data-index="2" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207491" data-listing-reading-time-sort="19" data-listing-word-count-sort="3763">
+<div class="g-col-1" data-categories="tool,quarto,web dev,git" data-index="4" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207491" data-listing-reading-time-sort="19" data-listing-word-count-sort="3763">
 <a class="quarto-grid-link" href="../software/quarto/index.html">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -530,6 +585,16 @@ git
 <div class="card-text listing-description">
 This blog post is the most important post in my Tools blog post series, as indicated by its centrality in Figure 1, node of the netw focuses on the use of Quarto to author…
 </div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Word Count
+</td>
+<td class="word-count">
+3,763 words
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
@@ -539,7 +604,7 @@ This blog post is the most important post in my Tools blog post series, as indic
 </div>
 </a>
 </div>
-<div class="g-col-1" data-categories="tool,observable,quarto" data-index="3" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207489" data-listing-reading-time-sort="45" data-listing-word-count-sort="8966">
+<div class="g-col-1" data-categories="tool,observable,quarto" data-index="5" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207489" data-listing-reading-time-sort="45" data-listing-word-count-sort="8966">
 <a class="quarto-grid-link" href="../software/observable/index.html">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -564,6 +629,16 @@ quarto
 <div class="card-text listing-description">
 The goal of this blog post, the fourth in my Tools blog post series, is to set up the Visual Studio Code (VSCode) source-code editor to run in the remote development…<code></code>
 </div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Word Count
+</td>
+<td class="word-count">
+8,966 words
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
@@ -573,7 +648,7 @@ The goal of this blog post, the fourth in my Tools blog post series, is to set u
 </div>
 </a>
 </div>
-<div class="g-col-1" data-categories="tool,knitr,jupyter,quarto" data-index="4" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207479" data-listing-reading-time-sort="1" data-listing-word-count-sort="79">
+<div class="g-col-1" data-categories="tool,knitr,jupyter,quarto" data-index="6" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207479" data-listing-reading-time-sort="1" data-listing-word-count-sort="79">
 <a class="quarto-grid-link" href="../software/jupyter/index.html">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -601,6 +676,16 @@ quarto
 <div class="card-text listing-description">
 The goal of this blog post, the second to last (index: -2) in my Tools blog post series, is to
 </div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Word Count
+</td>
+<td class="word-count">
+79 words
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
@@ -610,7 +695,7 @@ The goal of this blog post, the second to last (index: -2) in my Tools blog post
 </div>
 </a>
 </div>
-<div class="g-col-1" data-categories="tool,knitr,quarto" data-index="5" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207488" data-listing-reading-time-sort="1" data-listing-word-count-sort="77">
+<div class="g-col-1" data-categories="tool,knitr,quarto" data-index="7" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207488" data-listing-reading-time-sort="1" data-listing-word-count-sort="77">
 <a class="quarto-grid-link" href="../software/knitr/index.html">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -635,6 +720,16 @@ quarto
 <div class="card-text listing-description">
 The goal of this blog post, the last (index: -1) in my Tools blog post series, is to
 </div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Word Count
+</td>
+<td class="word-count">
+77 words
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
@@ -644,7 +739,7 @@ The goal of this blog post, the last (index: -1) in my Tools blog post series, i
 </div>
 </a>
 </div>
-<div class="g-col-1" data-categories="ml" data-index="6" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207474" data-listing-reading-time-sort="5" data-listing-word-count-sort="913">
+<div class="g-col-1" data-categories="ml" data-index="8" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207474" data-listing-reading-time-sort="5" data-listing-word-count-sort="913">
 <a class="quarto-grid-link" href="../ml/prob/index.html">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -663,6 +758,16 @@ ml
 <div class="card-text listing-description">
 In this blog post I will discuss a few examples of probability in machine learning. If you are new to probability, I recommend one of great textbooks that cover the topic…
 </div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Word Count
+</td>
+<td class="word-count">
+913 words
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
@@ -672,7 +777,7 @@ In this blog post I will discuss a few examples of probability in machine learni
 </div>
 </a>
 </div>
-<div class="g-col-1" data-categories="tool,git,llm,ml" data-index="7" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207466" data-listing-reading-time-sort="1" data-listing-word-count-sort="21">
+<div class="g-col-1" data-categories="tool,git,llm,ml" data-index="9" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207466" data-listing-reading-time-sort="1" data-listing-word-count-sort="21">
 <a class="quarto-grid-link" href="../ml/llm/index.html">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -700,34 +805,16 @@ ml
 <div class="card-text listing-description">
 Large Language Models (LLMs) are a way to automatically generate text. more informative commit messages based on the currently staged changes.
 </div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>2024+189</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-categories="dec" data-index="8" data-listing-date-modified-sort="NaN" data-listing-date-sort="1725581207000" data-listing-file-modified-sort="1725581207465" data-listing-reading-time-sort="4" data-listing-word-count-sort="669">
-<a class="quarto-grid-link" href="../dec/geo/index.html">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img class="thumbnail-image card-img" loading="lazy" src="../asset/deidek.svg" style="height: 150px;"/>
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-The Dec measurement system
-</h5>
-<div class="listing-reading-time card-text text-muted">2 milliday</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('dec'); return false;">
-dec
-</div>
-</div>
-<div class="card-text listing-description">
-This section of my blog focuses on Dec, a measurement system that I created to measure⏳time,📍position,🧭orientation,📐angles, and🔄cycles in turns (<span class="math inline">\(\tau\)</span>) instead of…
-</div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Word Count
+</td>
+<td class="word-count">
+21 words
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
@@ -744,6 +831,8 @@ No matching items
 </div><a id="quarto-back-to-top" onclick="window.scrollTo(0, 0); return false;" role="button"><i class="bi bi-arrow-up"></i> Back to top</a><div class="default" id="quarto-appendix"><section class="level4 appendix" id="attributions"><h2 class="anchored quarto-appendix-heading">Attributions</h2><div class="quarto-appendix-contents">
 <p>All artwork by <a href="https://twitter.com/allison_horst"><span class="citation" data-cites="allison_horst">@allison_horst</span></a> except for the images related to the following blogs:</p>
 <ul>
+<li><a href="../dec/date/index.html">Dec date</a>, which shows <a href="https://observablehq.com">Observable</a> <a href="https://observablehq.com/@observablehq/plot-calendar">calendar🗓️plots</a></li>
+<li><a href="../dec/time/index.html">Dec time</a>, which shows <a href="https://observablehq.com">Observable</a> <a href="https://observablehq.com/@fheyen/barchart-clock">bar📊charts</a>, <a href="https://observablehq.com/@d3/simple-clock">clocks🕰️</a>, a <a href="https://observablehq.com/@enjalot/draggable-world-map-coordinates-input">map🗺️</a>, and a <a href="https://observablehq.com/@dbridges/visualizing-seasonal-daylight">daylight☀️plot with globes🌍</a></li>
 <li><a href="../software/positron/index.html">VSCode</a>, which combines the <a href="https://commons.wikimedia.org/wiki/File:Visual_Studio_Code_1.35_icon.svg">VSCode</a> and <a href="https://commons.wikimedia.org/wiki/File:VSCodium_Logo.png">VSCodium</a> logos</li>
 <li><a href="../ml/llm/index.html">LLM</a>, which was generated by <code>DALL·E</code> <code>3</code> with the following prompt:</li>
 </ul>

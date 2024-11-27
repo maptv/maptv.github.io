@@ -253,3 +253,7 @@ div > form > label {
   text-decoration-line: underline;
   text-decoration-thickness: .7px;
 }
+
+#title-block-header.quarto-title-block.default .description>p:last-of-type {
+  display: none;
+}
