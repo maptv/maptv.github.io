@@ -238,3 +238,7 @@ div > form > div > input[type="range"] {
 #solar-system ellipse, line {
   stroke: #fff;
 }
+
+#daylightplot > g:nth-child(7) > rect {
+  fill: #f00;
+}
