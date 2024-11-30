@@ -1,18 +1,14 @@
 # Dec Time
 Martin Laptev
-2024+253
+2024+274
 
 My website provides many examples of the [Quarto](https://quarto.org)
 publishing and the [Dec](../../dec) measurement systems in action. I
 leverage Quarto support for the [Observable](https://observablehq.com/)
 data analysis and visualization system to create animated and
 interactive graphics like the clocks🕓and bar📊charts below, which show
-the Dec time since the start, ${styledTime}, and until the end,
-${styledTimeN}, of today.
-
-``` {ojs}
-width
-```
+the Dec time since the start, <span class="cyan">+${decTime}</span>, and
+until the end, <span class="pink">+${decTimeN}</span>, of today.
 
 Dec uses [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
@@ -32,7 +28,7 @@ Drag the red⭕️circle across the
 (vertical↕️gray lines) on the map🗺️to see how changing time zones
 affects the time. Only the first digit of the Dec time, the deciday,
 varies across time zones, because the 10 Dec time zones, numbered 0
-through 9 on the map🗺️, are each 1 decday wide. Subtracting the time
+through 9 on the map🗺️, are each 1 deciday wide. Subtracting the time
 zone from the time yields the time in Zone 0.
 
 The plot to the lower left of the map🗺️visualizes the nighttime (blue)
@@ -328,8 +324,8 @@ app = {
     hour: new Date().getHours()
   }
   const renderPlot = () => {
-    svg.selectAll("#plot *").remove();
-    svg.select("#plot").call(daylightPlot, {
+    svg.selectAll("#daylightplot *").remove();
+    svg.select("#daylightplot").call(daylightPlot, {
       width: columnWidth / 1.28,
       height: height / 1.51 - margin.top - margin.bottom,
       year: new Date().getFullYear(),
@@ -367,7 +363,7 @@ app = {
     .attr("id", "solar-system")
     .attr("transform", `translate(${margin.left}, ${margin.top + height / 7.6})`);
   const plot = svg.append("g")
-    .attr("id", "plot")
+    .attr("id", "daylightplot")
     .attr("transform", `translate(${margin.left}, ${margin.top + height / 4})`);
   svg.append("g")
     .attr("id", "globe")
@@ -1318,7 +1314,7 @@ function worldMapCoordinates(config = {}, dimensions) {
   const formEl = html`<form style="width: ${width}px;"></form>`;
   const context = DOM.context2d(width, height-width/13.2);
   const canvas = context.canvas;
-  canvas.style.margin = `0px 0px -26px 0px`;
+  canvas.style.margin = `-10px 0px -26px 0px`;
   const projection = d3
     .geoEquirectangular()
     .precision(0.1)
@@ -1514,3 +1510,37 @@ svg g g.tick text {
   padding: 0px;
 }
 </style>
+
+The map shows how [Meridian
+0](https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole),
+the Dec [International Date
+Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
+and [prime
+meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0),
+cuts across the Atlantic Ocean just West of Africa and marks the start
+of Zone 0, the leftmost Dec time zone on the map. Dec has 10 time zones
+which are each 1 deciturn (10% of a turn) wide and are numbered 0
+through 9, like the
+[meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of)
+that separate them.
+
+The leftmost↕vertical line on the map is [Meridian
+0](https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole),
+the Dec [International Date
+Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
+and [prime
+meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0),
+which cuts across the Atlantic Ocean just West of🌍Africa and marks the
+start of Zone 0.
+
+Zonal times can be displayed in decidays with a time zone
+(*s**e**l**e**c**t**e**d*)*o**r**w**i**t**h**o**u**t**a**t**i**m**e**z**o**n**e**i**n**o**t**h**e**r**u**n**i**t**s**s**u**c**h**a**s**m**i**l**l**i**d**a**y**s*({Math.floor(selected.slice(0,
+6)*100)}) or centimillidays
+(*M**a**t**h*.*f**l**o**o**r*(*s**e**l**e**c**t**e**d*.*s**l**i**c**e*(0, 6) \* 10000)).*C**e**n**t**i**m**i**l**l**i**d**a**y**s**a**r**e**s**i**m**i**l**a**r**i**n**d**u**r**a**t**i**o**n**t**o**h**e**a**r**t**b**e**a**t**s**o**r**m**u**s**i**c**a**l**b**e**a**t**s**a**n**d**t**h**u**s**a**r**e**a**l**s**o**k**n**o**w**n**a**s**b**e**a**t**s*.*T**h**e**l**o**c**a**l**a**n**d**s**o**l**a**r**t**i**m**e**e**q**u**i**v**a**l**e**n**t**o**f**a**t**i**m**e**z**o**n**e**i**s**t**h**e**l**o**n**g**i**t**u**d**e**i**n**t**h**e**s**a**m**e**u**n**i**t**s**a**n**d**a**t**t**h**e**s**a**m**e**l**e**v**e**l**o**f**p**r**e**c**i**s**i**o**n**a**s**t**h**e**t**i**m**e*({String(unix2dote(unix,
+long2zone(coordinates\[0\]))\[0\] % 1 * 10).slice(0,
+6)}-${long2turn(coordinates\[0\], 1).toFixed(4)}). A centimilliturn of
+longitude [at the
+equator](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude)
+is 400.75017 meters, which is a hundred thousandth (0.001%) of the
+[Earth’s equatorial
+circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=Measured%20around%20the%20equator%2C%20it%20is%2040%2C075.017%C2%A0km).

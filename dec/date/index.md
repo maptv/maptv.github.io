@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+271
+2024+274
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -1174,7 +1174,7 @@ units as the time zone:
 
 After reading this article, you should be ready to tackle my [ISO
 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
-[date](../../iso/date) article and the examples in the
+[date](../../iso/date) article and understand the examples in the
 [filter](../../quarto/filter), [script](../../quarto/script), and
 [include](../../quarto/include) articles in the [Quarto
 section](../../quarto) of my site. To see the full extent of the
@@ -1186,7 +1186,8 @@ benefits that Decalendar can provide, you should continue on through the
 
 Thank you for your interest in Dec. You will find citation information
 for this article below. Please note that the original source of the
-algorithms underlying the conversion of Dec dates and
+algorithms underlying the conversion of Dec
+<span class="yellow">year</span>+<span class="cyan">day</span> dates and
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-era">does</span> is [Hinnant,
 Howard](https://howardhinnant.github.io). <span class="tool"
