@@ -113,35 +113,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <meta name="quarto:status" content="draft">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../asset/style.css">
 <meta name="twitter:title" content="Martin Laptev">
@@ -2367,14 +2338,13 @@ svg g g.tick text {
 </style>
 <p>The map shows how <a href="https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole">Meridian 0</a>, the Dec <a href="https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next">International Date Line</a> and <a href="https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0">prime meridian</a>, cuts across the Atlantic Ocean just West of Africa and marks the start of Zone 0, the leftmost Dec time zone on the map. Dec has 10 time zones which are each 1 deciturn (10% of a turn) wide and are numbered 0 through 9, like the <a href="https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of">meridians</a> that separate them.</p>
 <p>The leftmost↕vertical line on the map is <a href="https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole">Meridian 0</a>, the Dec <a href="https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next">International Date Line</a> and <a href="https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0">prime meridian</a>, which cuts across the Atlantic Ocean just West of🌍Africa and marks the start of Zone 0.</p>
-<p>Zonal times can be displayed in decidays with a time zone (<span class="math inline">\({selected}) or without a time zone in other units such as millidays (\)</span>{Math.floor(selected.slice(0, 6)<em>100)}) or centimillidays (<span class="math inline">\({Math.floor(selected.slice(0, 6)*10000)}). Centimillidays are similar in duration to heartbeats or musical beats and thus are also known as beats. The local and solar time equivalent of a time zone is the longitude in the same units and at the same level of precision as the time (\)</span>{String(unix2dote(unix, long2zone(coordinates[0]))[0] % 1 </em> 10).slice(0, <span>6)}-<span id="ojs-element-id-5"></span>-${long2turn(coordinates[0],</span>1).toFixed(4)}). A centimilliturn of longitude <a href="https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude">at the equator</a> is 400.75017 meters, which is a hundred thousandth (0.001%) of the <a href="https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=Measured%20around%20the%20equator%2C%20it%20is%2040%2C075.017%C2%A0km">Earth’s equatorial circumference</a>.</p>
 
 
 <!-- -->
 
 <div class="ojs-auto-generated hidden">
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7ZGVjVGltZX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTEifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2RlY1RpbWVOfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3R5bGVkWm9uZX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTMifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2Nsb2NrfSR7Y2xvY2sxfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNCJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7bG9uZzJ0dXJuKGNvb3JkaW5hdGVzWzBdLDYpfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNSJ9XX0=
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7ZGVjVGltZX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTEifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2RlY1RpbWVOfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3R5bGVkWm9uZX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTMifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2Nsb2NrfSR7Y2xvY2sxfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNCJ9XX0=
 </script>
 </div>
 
@@ -4568,8 +4538,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-1517"><a href="#cb4-1517" aria-hidden="true" tabindex="-1"></a>The map shows how <span class="co">[</span><span class="ot">Meridian 0</span><span class="co">](https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)</span>, the Dec <span class="co">[</span><span class="ot">International Date Line</span><span class="co">](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)</span> and <span class="co">[</span><span class="ot">prime meridian</span><span class="co">](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)</span>, cuts across the Atlantic Ocean just West of Africa and marks the start of Zone 0, the leftmost Dec time zone on the map. Dec has 10 time zones which are each 1 deciturn (10% of a turn) wide and are numbered 0 through 9, like the <span class="co">[</span><span class="ot">meridians</span><span class="co">](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of)</span> that separate them.</span>
 <span id="cb4-1518"><a href="#cb4-1518" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-1519"><a href="#cb4-1519" aria-hidden="true" tabindex="-1"></a>The leftmost↕vertical line on the map is <span class="co">[</span><span class="ot">Meridian 0</span><span class="co">](https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)</span>, the Dec <span class="co">[</span><span class="ot">International Date Line</span><span class="co">](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)</span> and <span class="co">[</span><span class="ot">prime meridian</span><span class="co">](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)</span>, which cuts across the Atlantic Ocean just West of🌍Africa and marks the start of Zone 0.</span>
-<span id="cb4-1520"><a href="#cb4-1520" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-1521"><a href="#cb4-1521" aria-hidden="true" tabindex="-1"></a>Zonal times can be displayed in decidays with a time zone (${selected}) or without a time zone in other units such as millidays (${Math.floor(selected.slice(0, 6)*100)}) or centimillidays (${Math.floor(selected.slice(0, 6)*10000)}). Centimillidays are similar in duration to heartbeats or musical beats and thus are also known as beats. The local and solar time equivalent of a time zone is the longitude in the same units and at the same level of precision as the time (${String(unix2dote(unix, long2zone(coordinates<span class="co">[</span><span class="ot">0</span><span class="co">]</span>))<span class="co">[</span><span class="ot">0</span><span class="co">]</span> % 1 * 10).slice(0, 6)}-${long2turn(coordinates<span class="co">[</span><span class="ot">0</span><span class="co">]</span>, 1).toFixed(4)}). A centimilliturn of longitude <span class="co">[</span><span class="ot">at the equator</span><span class="co">](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude)</span> is 400.75017 meters, which is a hundred thousandth (0.001%) of the <span class="co">[</span><span class="ot">Earth's equatorial circumference</span><span class="co">](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=Measured%20around%20the%20equator%2C%20it%20is%2040%2C075.017%C2%A0km)</span>.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

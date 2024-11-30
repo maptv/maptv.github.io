@@ -1532,15 +1532,3 @@ and [prime
 meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0),
 which cuts across the Atlantic Ocean just West of🌍Africa and marks the
 start of Zone 0.
-
-Zonal times can be displayed in decidays with a time zone
-(*s**e**l**e**c**t**e**d*)*o**r**w**i**t**h**o**u**t**a**t**i**m**e**z**o**n**e**i**n**o**t**h**e**r**u**n**i**t**s**s**u**c**h**a**s**m**i**l**l**i**d**a**y**s*({Math.floor(selected.slice(0,
-6)*100)}) or centimillidays
-(*M**a**t**h*.*f**l**o**o**r*(*s**e**l**e**c**t**e**d*.*s**l**i**c**e*(0, 6) \* 10000)).*C**e**n**t**i**m**i**l**l**i**d**a**y**s**a**r**e**s**i**m**i**l**a**r**i**n**d**u**r**a**t**i**o**n**t**o**h**e**a**r**t**b**e**a**t**s**o**r**m**u**s**i**c**a**l**b**e**a**t**s**a**n**d**t**h**u**s**a**r**e**a**l**s**o**k**n**o**w**n**a**s**b**e**a**t**s*.*T**h**e**l**o**c**a**l**a**n**d**s**o**l**a**r**t**i**m**e**e**q**u**i**v**a**l**e**n**t**o**f**a**t**i**m**e**z**o**n**e**i**s**t**h**e**l**o**n**g**i**t**u**d**e**i**n**t**h**e**s**a**m**e**u**n**i**t**s**a**n**d**a**t**t**h**e**s**a**m**e**l**e**v**e**l**o**f**p**r**e**c**i**s**i**o**n**a**s**t**h**e**t**i**m**e*({String(unix2dote(unix,
-long2zone(coordinates\[0\]))\[0\] % 1 * 10).slice(0,
-6)}-${long2turn(coordinates\[0\], 1).toFixed(4)}). A centimilliturn of
-longitude [at the
-equator](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude)
-is 400.75017 meters, which is a hundred thousandth (0.001%) of the
-[Earth’s equatorial
-circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=Measured%20around%20the%20equator%2C%20it%20is%2040%2C075.017%C2%A0km).

@@ -609,7 +609,7 @@ values are <span class="cyan">${decoDoty}</span> =
 data-bs-title="day-of-year">doy</span> without a year as a floating date
 and a <span class="yellow">year</span>+<span class="cyan">day</span>
 date as a fixed date. Unlike other types of dates, floating dates do not
-specify the year and thus apply to any year.
+specify the year and thus can apply to any year.
 
 Fixed dates are essentially
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
@@ -627,18 +627,24 @@ mathematical basis of Dec date notation.
 
 Even though Dec uses deks instead of weeks, Dec dates can be modified to
 include POSIX Sunday-based <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-week">dows</span>. To
-convert the current Dec date,
+data-bs-toggle="tooltip" data-bs-title="days-of-week">dows</span>.
+Instead of the current Dec date,
 <span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>,
-into the current Dec <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> date,
+the [navigation
+bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
+(navbar) of my site displays the current Dec <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> date,
 <span class="yellow">${decoYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="azul">${dotw}</span>,
-we split the current <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>,
+by splitting the current <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>,
 <span class="cyan">${decoDoty}</span>, into the <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> of the
-first day of the current week, <span class="cyan">${dotw0doty}</span>,
-and the current POSIX <span class="under tool" data-bs-toggle="tooltip"
+first day of the current week (<span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="Sunday">Dow 0</span>
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span>),
+<span class="cyan">${dotw0doty}</span>, and the current POSIX
+<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>:
 <span class="azul">${dotw}</span>.
 
@@ -648,55 +654,70 @@ data-bs-title="day-of-year">doy</span> <span class="cyan">d</span>, Dec
 data-bs-title="day-of-week">dow</span> dates display
 <span class="cyan">d</span>-<span class="azul">w</span>+<span class="azul">w</span>,
 where <span class="cyan">d</span>-<span class="azul">w</span> is the
-first <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> of the current week and
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span> 0 <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and
 <span class="azul">w</span> is the <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>
-associated with the <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> <span class="cyan">d</span>. We
-evaluate the subtraction, but leave the addition unsimplified so we can
-see <span class="azul">w</span>. Dec <span class="under tool"
+associated with <span class="cyan">d</span>. We evaluate the
+subtraction, <span class="cyan">d</span>-<span class="azul">w</span>, to
+obtain the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="Sunday">Dow 0</span> <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>, but
+leave the addition unsimplified so we can see
+<span class="azul">w</span>. Dec <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> dates
 supply all of the information needed to identify specific dates and
 coordinate schedules based on deks or weeks.
 
-Dec <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> dates can be further modified to
-include [POSIX week
-numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.).
-The current week number, ${week}, is the result of adding the middle
-number in the Dec <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> date,
-<span class="cyan">${dotw0doty}</span>, to the Day 0
+Dec dates can be further modified to include [POSIX week
+numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.):
+<span class="yellow">${decoYear}</span>+7×<span class="wheat">${week}</span>+<span class="azul">${dotw}</span>.
+The current week number, <span class="wheat">${week}</span>, is the sum
+of the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="Sunday">Dow 0</span> <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>,
+<span class="cyan">${dotw0doty}</span>, and the first
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>,
-<span class="azul">${doty0dotw}</span>, and then floor dividing by 7.
-The current Dec floating week date,
+data-bs-title="day-of-week">dow</span> of the year (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span>),
+<span class="azul">${doty0dotw}</span>, divided by 7:
+<span class="wheat">${week}</span> =
+(<span class="cyan">${dotw0doty}</span> +
+<span class="azul">${doty0dotw}</span>) ÷ 7. The current Dec floating
+week date,
 7×<span class="wheat">${week}</span>+<span class="azul">${dotw}</span>,
-is equal to the sum of the current <span class="under tool"
+is therefore equal to the sum of the current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and the
-Day 0 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>:
-7×<span class="wheat">${week}</span>+<span class="azul">${dotw}</span>=<span class="cyan">${decoDoty}</span>+<span class="azul">${doty0dotw}</span>.
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span> <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>: 7 ×
+<span class="wheat">${week}</span> + <span class="azul">${dotw}</span> =
+<span class="cyan">${decoDoty}</span> +
+<span class="azul">${doty0dotw}</span>.
 
 Dec week dates turn
 <span class="cyan">d</span>-<span class="azul">w</span> into
 7×<span class="wheat">W</span>-<span class="azul">w<sub>0</sub></span>,
 where <span class="wheat">W</span> is the week number and
-<span class="azul">w<sub>0</sub></span> is the <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> on Day
-0. In this case, the subtraction is omitted, because
-<span class="azul">w<sub>0</sub></span> is not necessary to identify a
-date and can be calculated from a given <span class="yellow">y</span> by
-flooring it, turning it into a <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-era">doe</span>, and
-passing it into the <span class="under tool" data-bs-toggle="tooltip"
+<span class="azul">w<sub>0</sub></span> is the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span>. In this case, the subtraction is
+omitted, because <span class="azul">w<sub>0</sub></span> is not
+necessary to identify a date and can be calculated from a given
+<span class="yellow">y</span> by flooring it, turning it into a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-era">doe</span>, and passing it into the
+<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> equation. POSIX week numbers may
 be useful for [week-based
 accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
 
-Following the Dec week date pattern, we can base Dec dates on any
-fixed-length calendar unit, including the 20-day
+Following the Dec week date pattern described above, we can base Dec
+dates on any fixed-length calendar unit, including the 20-day
 [dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit),
 30-day
 [tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A),
@@ -730,7 +751,8 @@ data-bs-title="day-of-month">dom</span> dates represent each month with
 the last <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> of the previous month because
 POSIX <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-month">doms</span> are one-based. For
+data-bs-title="days-of-month">doms</span> start from one instead of
+zero. For
 [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-month">doms</span>, we represent each month with
@@ -1163,11 +1185,9 @@ can be appended to Dec dates to form
 [timestamps](https://en.wikipedia.org/wiki/Timestamp#:~:text=information%20identifying%20when%20a%20certain%20event%20occurred)
 called Dec snaps:
 <span class="yellow">year</span>+<span class="cyan">day</span>.<span class="cyan">tod</span>-<span class="lime">z</span>.
-The Dec timestamp on the left side of the [navigation
-bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
-(navbar) of my site multiplies the <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> by 10 so
-it is in the same
+The Dec timestamp on the left side of the navbar of my site multiplies
+the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> by 10 so it is in the same
 [deciday](https://en.wiktionary.org/wiki/deciday#:~:text=One%20tenth%20of%20one%20day)
 units as the time zone:
 <span class="cyan">${decidayTime}</span>${zoneSign}<span class="lime">${Math.abs(zone)}</span>.
