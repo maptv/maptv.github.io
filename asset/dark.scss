@@ -214,6 +214,27 @@ div > form > div > input[type="range"] {
   background: #c4c4c4; /* Grey background */
 }
 
-#listing-listing > div.list.grid > div > a > div > p > img[src="../asset/cal20.svg"] {
+#listing-listing > div.list.grid > div > a > div > p > img[src="../asset/cal16.svg"] {
   filter: invert(1);
+}
+
+#listing-listing > div.list.grid > div > a > div > p > img[src="../asset/daywide.svg"] {
+  filter: invert(1);
+}
+
+#clock * {
+  fill: #fff;
+  stroke: #fff;
+}
+
+#daylightplot text {
+  fill: #fff;
+}
+
+#solar-system text {
+  fill: #fff;
+}
+
+#solar-system ellipse, line {
+  stroke: #fff;
 }

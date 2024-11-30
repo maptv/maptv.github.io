@@ -2,9 +2,13 @@
 title: Dec Date
 image: /asset/cal16.svg
 description: >
-  Introducing Decalendar, a timekeeping system that displays dates and times in years and days using math notation without the need for months, weeks, hours, minutes or seconds.
+  Introducing the Dec calendar (Decalendar), which displays dates in years and days using math notation without the need for months or weeks.
 citation:
   url: https://maptv.github.io/dec/date
+aliases:
+  - /measure/dec/date
+  - /date
+  - /d8
 license: CC BY-SA
 lightbox: false
 toc: true
@@ -286,11 +290,11 @@ In addition to the dek and [dod]{.under .tool data-bs-toggle="tooltip" data-bs-t
 
 The combination of a [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} and a Dec time zone [z]{.lime} is called a Dec time: .[tod]{.cyan}-[z]{.lime}. Dec times can be appended to Dec dates to form [timestamps](https://en.wikipedia.org/wiki/Timestamp#:~:text=information%20identifying%20when%20a%20certain%20event%20occurred) called Dec snaps: [year]{.yellow}+[day]{.cyan}.[tod]{.cyan}-[z]{.lime}. The Dec timestamp on the left side of the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) (navbar) of my site multiplies the [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} by 10 so it is in the same [deciday](https://en.wiktionary.org/wiki/deciday#:~:text=One%20tenth%20of%20one%20day) units as the time zone: [\${decidayTime}]{.cyan}\${zoneSign}[\${Math.abs(zone)}]{.lime}.
 
-After reading this article, you should be ready to tackle my [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) [date](/iso/date) article and the examples in the [filter](/quarto/filter), [script](/quarto/script), and [include](/quarto/include) articles in the [Quarto section](/quarto) of my site. To see the full extent of the benefits that Decalendar can provide, you should continue on through the [Dec section](/dec) of my site to the [time](/dec/time), [snap](/dec/snap), and [span](/dec/span) articles.
+After reading this article, you should be ready to tackle my [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) [date](/iso/date) article and understand the examples in the [filter](/quarto/filter), [script](/quarto/script), and [include](/quarto/include) articles in the [Quarto section](/quarto) of my site. To see the full extent of the benefits that Decalendar can provide, you should continue on through the [Dec section](/dec) of my site to the [time](/dec/time), [snap](/dec/snap), and [span](/dec/span) articles.
 
 # Cite
 
-Thank you for your interest in Dec. You will find citation information for this article below. Please note that the original source of the algorithms underlying the conversion of Dec dates and [does]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-era"} is [Hinnant, Howard](https://howardhinnant.github.io). [2021+184]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2021-09-01"}. “`chrono`-Compatible Low-Level Date Algorithms.” [\${decoYear}]{.yellow}+[\${decoDoty}]{.cyan}. <https://howardhinnant.github.io/date_algorithms.html>.
+Thank you for your interest in Dec. You will find citation information for this article below. Please note that the original source of the algorithms underlying the conversion of Dec [year]{.yellow}+[day]{.cyan} dates and [does]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-era"} is [Hinnant, Howard](https://howardhinnant.github.io). [2021+184]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2021-09-01"}. “`chrono`-Compatible Low-Level Date Algorithms.” [\${decoYear}]{.yellow}+[\${decoDoty}]{.cyan}. <https://howardhinnant.github.io/date_algorithms.html>.
 
 ```{ojs}
 //| echo: false

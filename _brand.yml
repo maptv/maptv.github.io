@@ -1,0 +1,15 @@
+logo:
+  medium: asset/deidek.png
+
+typography:
+  fonts:
+    - family: Tahoma
+      source: common
+    - family: Ewka
+      source: file
+      files: asset/ewka.ttf
+  base: Tahoma
+  headings: Tahoma
+  monospace: Ewka
+  monospace-inline: Ewka
+  monospace-block: Ewka

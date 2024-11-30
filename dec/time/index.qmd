@@ -1,13 +1,20 @@
 ---
 title: Dec Time
-image: /asset/deidek.svg
-draft: true
+image: /asset/daywide.svg
+description: >
+  Introducing Declock, a timekeeping system that displays time in decimal days using math notation without the need for hours, minutes, or seconds.
 citation:
   url: https://maptv.github.io/dec/time
+aliases:
+  - /measure/dec/time
+  - /time
 license: CC BY-SA
+lightbox: false
+toc: true
+toc-depth: 4
 format:
   html:
-    shift-heading-level-by: 2
+    shift-heading-level-by: 3
     include-after-body:
       - ../../asset/cite.html
       - ../../asset/style.html
@@ -17,18 +24,15 @@ format:
 filters:
   - ../../asset/date.lua
   - include-code-files
+draft: true
 ---
 
-My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the clocks🕓and bar📊charts below, which show the Dec time since the start, \${styledTime}, and until the end, \${styledTimeN}, of today.
-
-```{ojs}
-width
-```
+My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the clocks🕓and bar📊charts below, which show the Dec time since the start, [+\${decTime}]{.cyan}, and until the end, [+\${decTimeN}]{.pink}, of today.
 
 Dec uses [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) to create [submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20) of days, such as the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays), millidays, and centimillidays indicated by the shortest, longest, and thinnest clock🕓hands below, respectively. The Dec times beneath the clocks🕓combine these submultiples with the Dec time zone, \${styledZone}, selected by the red⭕️circle on the [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺️further below.
 
 Drag the red⭕️circle across the [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of) (vertical↕️gray lines) on the map🗺️to see how changing time zones affects the time.
-Only the first digit of the Dec time, the deciday, varies across time zones, because the 10 Dec time zones, numbered 0 through 9 on the map🗺️, are each 1 decday wide. Subtracting the time zone from the time yields the time in Zone 0.
+Only the first digit of the Dec time, the deciday, varies across time zones, because the 10 Dec time zones, numbered 0 through 9 on the map🗺️, are each 1 deciday wide. Subtracting the time zone from the time yields the time in Zone 0.
 
 The plot to the lower left of the map🗺️visualizes the nighttime (blue) and daytime (yellow) time of day (x-axis) throughout every day of the year (y-axis) at the latitude of the red⭕️circle on the map🗺️. The↕️vertical position of the red<font color=red>—</font>line (time of day) and the↔️horizontal position of the red🔴dot (day of the year)
 on the plot control the🌐globes above and to the right of the plot.
@@ -317,8 +321,8 @@ app = {
     hour: new Date().getHours()
   }
   const renderPlot = () => {
-    svg.selectAll("#plot *").remove();
-    svg.select("#plot").call(daylightPlot, {
+    svg.selectAll("#daylightplot *").remove();
+    svg.select("#daylightplot").call(daylightPlot, {
       width: columnWidth / 1.28,
       height: height / 1.51 - margin.top - margin.bottom,
       year: new Date().getFullYear(),
@@ -356,7 +360,7 @@ app = {
     .attr("id", "solar-system")
     .attr("transform", `translate(${margin.left}, ${margin.top + height / 7.6})`);
   const plot = svg.append("g")
-    .attr("id", "plot")
+    .attr("id", "daylightplot")
     .attr("transform", `translate(${margin.left}, ${margin.top + height / 4})`);
   svg.append("g")
     .attr("id", "globe")
@@ -1307,7 +1311,7 @@ function worldMapCoordinates(config = {}, dimensions) {
   const formEl = html`<form style="width: ${width}px;"></form>`;
   const context = DOM.context2d(width, height-width/13.2);
   const canvas = context.canvas;
-  canvas.style.margin = `0px 0px -26px 0px`;
+  canvas.style.margin = `-10px 0px -26px 0px`;
   const projection = d3
     .geoEquirectangular()
     .precision(0.1)
@@ -1505,3 +1509,9 @@ svg g g.tick text {
 }
 </style>
 ```
+
+The map shows how [Meridian 0](https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole), the Dec [International Date Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) and [prime meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0), cuts across the Atlantic Ocean just West of Africa and marks the start of Zone 0, the leftmost Dec time zone on the map. Dec has 10 time zones which are each 1 deciturn (10% of a turn) wide and are numbered 0 through 9, like the [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of) that separate them.
+
+The leftmost↕vertical line on the map is [Meridian 0](https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole), the Dec [International Date Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) and [prime meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0), which cuts across the Atlantic Ocean just West of🌍Africa and marks the start of Zone 0.
+
+Zonal times can be displayed in decidays with a time zone (${selected}) or without a time zone in other units such as millidays (${Math.floor(selected.slice(0, 6)*100)}) or centimillidays (${Math.floor(selected.slice(0, 6)*10000)}). Centimillidays are similar in duration to heartbeats or musical beats and thus are also known as beats. The local and solar time equivalent of a time zone is the longitude in the same units and at the same level of precision as the time (${String(unix2dote(unix, long2zone(coordinates[0]))[0] % 1 * 10).slice(0, 6)}-${long2turn(coordinates[0], 1).toFixed(4)}). A centimilliturn of longitude [at the equator](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude) is 400.75017 meters, which is a hundred thousandth (0.001%) of the [Earth's equatorial circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=Measured%20around%20the%20equator%2C%20it%20is%2040%2C075.017%C2%A0km).

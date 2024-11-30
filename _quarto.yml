@@ -74,7 +74,7 @@ website:
         href: ml/llm/index.qmd
     - section: Measure
       icon: rulers
-      href: measure.qmd
+      # href: measure.qmd
       contents:
       - section: Dec
         icon: arrow-repeat
@@ -94,7 +94,7 @@ website:
           href: dec/span/index.qmd
       - section: ISO
         icon: globe
-        href: dec/index.qmd
+        # href: dec/index.qmd
         contents:
         - text: Date
           icon: calendar-month
