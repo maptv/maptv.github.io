@@ -709,34 +709,36 @@ clock1 = {
 width
 ```
 
-The plot to the lower left of the map🗺️visualizes the nighttime (blue) and daytime (yellow) time of day (x-axis) throughout every day of the year (y-axis) at the latitude of the red⭕️circle on the map🗺️. The↕vertical position of the red<font color=red>—</font>line (time of day) and the↔️horizontal position of the red🔴dot (day of the year)
-on the plot control the🌐globes above and to the right of the plot.
+The plot to the lower left of the map🗺️visualizes the nighttime (blue) and daytime (yellow) time of day (x-axis) throughout every day of the year (y-axis) at the latitude of the red⭕️circle on the map🗺️. The↕vertical position of the red<font color=red>—</font>line (time of day) and the↔️horizontal position of the red🔴dot (day of the year) on the plot control the🌐globes above and to the right of the plot.
 
-Dec uses [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) to create [submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20) of days, such as the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays), millidays, and centimillidays indicated by the shortest, longest, and thinnest clock🕓hands and the top, middle, and bottom bars📊above, respectively. Dec times can be displayed in days, decidays, millidays, centimillidays, or any other submultiples of days simply by moving↔︎️the decimal.
+Dec uses [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) to create [submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20), such as the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays), millidays, and centimillidays indicated by the shortest, longest, and thinnest clock🕓hands and the top, middle, and bottom bars📊above, respectively.
+The Dec times beneath the clocks🕓are in decidays, but any Dec time can be converted into days or any submultiple of days simply by moving↔︎️the decimal.
 
 Drag the red⭕️circle across the [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of) (vertical↕gray lines) on the map🗺️to see how changing time zones affects the time.
-Only the first digit of the Dec time, the deciday, varies across time zones, because the 10 Dec time zones, numbered 0 through 9 on the map🗺️, are each 1 deci[turn](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)   (d[$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) wide. Subtracting the time zone from the time yields the time in Zone 0.
+Only the first digit of the Dec times shown above, the deciday, varies across time zones, because the 10 Dec time zones, numbered 0 through 9 on the map🗺️, are each 1 deci[turn](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)   (d[$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) wide.
+Simply put, a deciturn of longitude translates into a deciday of time.
 
-The leftmost↕vertical line on the map🗺️is [Meridian 0](https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole), the Dec [International Date Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) and [prime meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0), which cuts across the Atlantic Ocean just West of🌍Africa and marks the start of Zone 0, the leftmost Dec time zone on the map🗺️. People living closer to time zone midpoints enjoy a closer match between clock noon and [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=when%20the%20Sun%20reaches%20its%20apparent%20highest%20point%20in%20the%20sky) and thus may find it easier to track sunlight throughout the day.
+The leftmost↕vertical line on the map🗺️is [Meridian 0](https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole), the Dec [International Date Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) and [prime meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0), which cuts across the Atlantic Ocean just West of🌍Africa and marks the boundary between Zone 9 and Zone 0, the rightmost and leftmost Dec time zones on the map🗺️, respectively. Subtracting the time zone from a deciday time yields the time in Zone 0.
 
-While only positive Dec time zones are shown on the map🗺️, every Dec time zone can be expressed as a negative number that is simply its positive number minus 10. Each Dec time zone number pair yields the same Dec time, but negative Dec time zone numbers can be useful for getting [Dec dates](/dec/date)🗓️to match [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)🗓️dates with negative [UTC offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets#:~:text=the%20difference%20in%20hours%20and%20minutes%20from%20Coordinated%20Universal%20Time%20(UTC)).
+While only positive Dec time zones are shown on the map🗺️, every Dec time zone can also be expressed as a negative number.
+Each pair of time zone numbers produces the same Dec time, but result in [Dec dates](/dec/date)🗓️ that are 1 day apart. Negative time zone numbers can be useful for getting [Dec dates](/dec/date)🗓️to match [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)🗓️dates with negative [UTC offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets#:~:text=the%20difference%20in%20hours%20and%20minutes%20from%20Coordinated%20Universal%20Time%20(UTC)).
 
 There are more than 24 UTC offsets, but only 10 Dec time zones. Conversion between Dec time zones and UTC offsets is not exact, because UTC offsets are determined by geographic and political boundaries whereas Dec time zones are determined solely by longitude. If you know your longitude in degrees (°) or centi[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)  (c[$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)), you can look up your Dec time zone in the table below.
 
 | TZ<br>+ | TZ<br>- | Start<br>° | Mid<br>° | End<br>° | Start<br>c$\tau$ | Mid<br>c$\tau$ | End<br>c$\tau$ |
-| :---:   | :---:   | :---:      | :---:    | :---:    | :---:       | :---:     | :---:     |
-| 9       | -1      | -54        | -36      | -18      | 90          | 95        | 100       |
-| 8       | -2      | -90        | -72      | -54      | 80          | 85        | 90        |
-| 7       | -3      | -126       | -108     | -90      | 70          | 75        | 80        |
-| 6       | -4      | -162       | -144     | -126     | 60          | 65        | 70        |
-| 5       | -5      | 162        | 180      | -162     | 50          | 55        | 60        |
-| 4       | -6      | 126        | 144      | 162      | 40          | 45        | 50        |
-| 3       | -7      | 90         | 108      | 126      | 30          | 35        | 40        |
-| 2       | -8      | 54         | 72       | 90       | 20          | 25        | 30        |
-| 1       | -9      | 18         | 36       | 54       | 10          | 15        | 20        |
-| 0       | -10     | -18        | 0        | 18       | 0           | 5         | 10        |
+| :---:   | :---:   | :---:      | :---:    | :---:    | :---:            | :---:          | :---:          |
+| 9       | -1      | -54        | -36      | -18      | 90               | 95             | 100            |
+| 8       | -2      | -90        | -72      | -54      | 80               | 85             | 90             |
+| 7       | -3      | -126       | -108     | -90      | 70               | 75             | 80             |
+| 6       | -4      | -162       | -144     | -126     | 60               | 65             | 70             |
+| 5       | -5      | 162        | 180      | -162     | 50               | 55             | 60             |
+| 4       | -6      | 126        | 144      | 162      | 40               | 45             | 50             |
+| 3       | -7      | 90         | 108      | 126      | 30               | 35             | 40             |
+| 2       | -8      | 54         | 72       | 90       | 20               | 25             | 30             |
+| 1       | -9      | 18         | 36       | 54       | 10               | 15             | 20             |
+| 0       | -10     | -18        | 0        | 18       | 0                | 5              | 10             |
 
-The advantage of decidays is that the time and the time zone are both in deciday units. Centimillidays are similar in duration to heartbeats or musical beats and thus are also known as beats. 
+
 
 ```{ojs}
 //| echo: false
