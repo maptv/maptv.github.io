@@ -254,6 +254,15 @@ div > form > label {
   text-decoration-thickness: .7px;
 }
 
+.over {
+  text-decoration-line: overline;
+  text-decoration-thickness: .7px;
+}
+
+.hide {
+  display: none;
+}
+
 #title-block-header.quarto-title-block.default .description>p:last-of-type {
   display: none;
 }
