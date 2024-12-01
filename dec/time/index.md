@@ -2,6 +2,9 @@
 Martin Laptev
 2024+275
 
+- [Time](#time)
+- [Zone](#zone)
+
 My website provides many examples of the [Quarto](https://quarto.org)
 publishing and the [Dec](../../dec) measurement systems in action. I
 leverage Quarto support for the [Observable](https://observablehq.com/)
@@ -18,7 +21,9 @@ whereas the clocks🕓and bar📊charts show the time since the start,
 <span class="cyan">+${decTime}</span>, and until the end,
 <span class="pink">-${decTimeN}</span>, of the day in the Dec time zone,
 <span class="lime">${selectedZone}</span>, selected by the red⭕️circle
-on the solar☀️terminator map🗺️further below.
+on the
+[solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
+map🗺️further below.
 
 <div class="clocks">
 
@@ -711,24 +716,41 @@ Dec uses [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
 to create
 [submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20),
-such as the
-[decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays),
-millidays, and centimillidays indicated by the shortest, longest, and
-thinnest clock🕓hands and the top, middle, and bottom bars📊above,
-respectively. The Dec times beneath the clocks🕓are in decidays, but any
-Dec time can be converted into days or any submultiple of days simply by
-moving↔︎️the decimal.
+such as the <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a>, <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a day">millidays</span>, and
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="hundred thousandths of a day">centimillidays</span>
+indicated by the shortest, longest, and thinnest clock🕓hands and the
+top, middle, and bottom bars📊above, respectively. The Dec times beneath
+the clocks🕓are in <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a>, but any Dec time can be
+converted into days or any submultiple of days simply by moving↔︎️the
+decimal.
+
+# Time
+
+# Zone
 
 Drag the red⭕️circle across the
 [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of)
 (vertical↕gray lines) on the map🗺️to see how changing time zones affects
 the time. Only the first digit of the Dec times shown above, the
-deciday, varies across time zones, because the 10 Dec time zones,
-numbered 0 through 9 on the map🗺️, are each 1
-deci[turn](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a day">deciday</span>, varies across time
+zones, because the 10 Dec time zones, numbered 0 through 9 on the map🗺️,
+are each 1 <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a turn">deci[turn](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span>
 (d[*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
-wide. Simply put, a deciturn of longitude translates into a deciday of
-time.
+wide. Simply put, a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a turn">deciturn</span> of longitude
+translates into a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a day">deciday</span> of time.
 
 The leftmost↕vertical line on the map🗺️is [Meridian
 0](https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole),
@@ -738,8 +760,11 @@ and [prime
 meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0),
 which cuts across the Atlantic Ocean just West of🌍Africa and marks the
 boundary between Zone 9 and Zone 0, the rightmost and leftmost Dec time
-zones on the map🗺️, respectively. Subtracting the time zone from a
-deciday time yields the time in Zone 0.
+zones on the map🗺️, respectively. Subtracting the time zone from a <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a day">deciday</a> time yields the time in
+Zone 0.
 
 While only positive Dec time zones are shown on the map🗺️, every Dec
 time zone can also be expressed as a negative number. Each pair of time
@@ -751,12 +776,13 @@ calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calenda
 with negative [UTC
 offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets#:~:text=the%20difference%20in%20hours%20and%20minutes%20from%20Coordinated%20Universal%20Time%20(UTC)).
 
-There are more than 24 UTC offsets, but only 10 Dec time zones.
-Conversion between Dec time zones and UTC offsets is not exact, because
-UTC offsets are determined by geographic and political boundaries
-whereas Dec time zones are determined solely by longitude. If you know
-your longitude in degrees (°) or
-centi[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
+There are 26 UTC offsets, but only 10 Dec time zones. Conversion between
+Dec time zones and UTC offsets is not straightforward, because UTC
+offsets are determined by geographic and political boundaries whereas
+Dec time zones are determined solely by longitude. If you know your
+longitude in degrees (°) or <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundredths of a turn">centi[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span>
 (c[*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)),
 you can look up your Dec time zone in the table below.
 
@@ -890,9 +916,13 @@ class="math inline"><em>τ</em></span></th>
 </tbody>
 </table>
 
-The advantage of decidays is that the time and the time zone are both in
-deciday units. Centimillidays are similar in duration to heartbeats or
-musical beats and thus are also known as beats.
+Dec times in Zone 0 and 5 can be directly converted to and from UTC
+times with an offset of +00:00 and +12:00, respectively. The other Dec
+time zones will differ from their closest UTC time by
+8.<span class="over">3</span>, 16.<span class="over">6</span>, 25,
+33.<span class="over">3</span>, 41.<span class="over">6</span> or 50
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of a day">millidays</span>. To find this
 
 ``` {ojs}
 //| echo: false
