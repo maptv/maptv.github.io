@@ -1,29 +1,32 @@
 # Dec Time
 Martin Laptev
-2024+275
+2024+276
 
 - [Time](#time)
 - [Zone](#zone)
+- [Unit](#unit)
+
+# Time
 
 My website provides many examples of the [Quarto](https://quarto.org)
 publishing and the [Dec](../../dec) measurement systems in action. I
 leverage Quarto support for the [Observable](https://observablehq.com/)
 data analysis and visualization system to create animated and
-interactive graphics like the clocks🕓and bar📊charts below, which are
-synchronized with the Dec time on the left side of the [navigation
+interactive graphics like the clocks🕓and bar📊charts below, which
+display a Dec time like the one on the left side of the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
 (navbar) above.
 
 The navbar shows the time that has passed since the start of the day,
-<span class="cyan">+${browserTime}</span>, in the Dec time zone,
-<span class="lime">${browserZone}</span>, provided by your web browser,
-whereas the clocks🕓and bar📊charts show the time since the start,
-<span class="cyan">+${decTime}</span>, and until the end,
+<span class="cyan">+${browserTime.toFixed(4)}</span>, in the Dec time
+zone, <span class="lime">${browserZone}</span>, provided by your web
+browser, whereas the clocks🕓and bar📊charts show the time since the
+start, <span class="cyan">+${decTime}</span>, and until the end,
 <span class="pink">-${decTimeN}</span>, of the day in the Dec time zone,
 <span class="lime">${selectedZone}</span>, selected by the red⭕️circle
 on the
 [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
-map🗺️further below.
+map🗺️beneath the bars📊.
 
 <div class="clocks">
 
@@ -712,29 +715,6 @@ The↕vertical position of the red<font color=red>—</font>line (time of
 day) and the↔️horizontal position of the red🔴dot (day of the year) on
 the plot control the🌐globes above and to the right of the plot.
 
-Dec uses [metric
-prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
-to create
-[submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20),
-such as the <a
-href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</a>, <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a day">millidays</span>, and
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="hundred thousandths of a day">centimillidays</span>
-indicated by the shortest, longest, and thinnest clock🕓hands and the
-top, middle, and bottom bars📊above, respectively. The Dec times beneath
-the clocks🕓are in <a
-href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</a>, but any Dec time can be
-converted into days or any submultiple of days simply by moving↔︎️the
-decimal.
-
-# Time
-
 # Zone
 
 Drag the red⭕️circle across the
@@ -752,19 +732,18 @@ data-bs-title="a tenth of a turn">deciturn</span> of longitude
 translates into a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</span> of time.
 
-The leftmost↕vertical line on the map🗺️is [Meridian
+The leftmost vertical↕line on the map🗺️is [Meridian
 0](https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole),
 the Dec [International Date
 Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
 and [prime
 meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0),
-which cuts across the Atlantic Ocean just West of🌍Africa and marks the
-boundary between Zone 9 and Zone 0, the rightmost and leftmost Dec time
-zones on the map🗺️, respectively. Subtracting the time zone from a <a
-href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a day">deciday</a> time yields the time in
-Zone 0.
+which cuts across the Atlantic Ocean through Iceland🇮🇸just West of
+Africa🌍and is the boundary between Zone 9 and Zone 0, the rightmost and
+leftmost Dec time zones on the map🗺️, respectively. Arranging Dec time
+zones from 0 to 9 yields a
+[Pacific-centric](https://en.wikipedia.org/wiki/World_map#:~:text=south%2Dup%20map-,Pacific%2Dcentric%20map,-(more%20commonly%20used))
+map🗺️.
 
 While only positive Dec time zones are shown on the map🗺️, every Dec
 time zone can also be expressed as a negative number. Each pair of time
@@ -774,16 +753,17 @@ numbers can be useful for getting [Dec dates](../../dec/date)🗓️to match
 [Gregorian
 calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)🗓️dates
 with negative [UTC
-offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets#:~:text=the%20difference%20in%20hours%20and%20minutes%20from%20Coordinated%20Universal%20Time%20(UTC)).
+offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20local%20time).
 
-There are 26 UTC offsets, but only 10 Dec time zones. Conversion between
-Dec time zones and UTC offsets is not straightforward, because UTC
-offsets are determined by geographic and political boundaries whereas
-Dec time zones are determined solely by longitude. If you know your
-longitude in degrees (°) or <span class="under tool"
-data-bs-toggle="tooltip"
+There are [37 UTC
+offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets), but only 10
+Dec time zones. Conversion between Dec time zones and UTC offsets is not
+straightforward, because UTC offsets are determined by geographic and
+political boundaries, whereas Dec time zones are determined solely by
+longitude. If you know your longitude in degrees (°) or
+<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="hundredths of a turn">centi[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span>
-(c[*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)),
+([*c**τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)),
 you can look up your Dec time zone in the table below.
 
 <table>
@@ -804,12 +784,12 @@ you can look up your Dec time zone in the table below.
 <th style="text-align: center;">Start<br>°</th>
 <th style="text-align: center;">Mid<br>°</th>
 <th style="text-align: center;">End<br>°</th>
-<th style="text-align: center;">Start<br>c<span
-class="math inline"><em>τ</em></span></th>
-<th style="text-align: center;">Mid<br>c<span
-class="math inline"><em>τ</em></span></th>
-<th style="text-align: center;">End<br>c<span
-class="math inline"><em>τ</em></span></th>
+<th style="text-align: center;">Start<br><span
+class="math inline"><em>c</em><em>τ</em></span></th>
+<th style="text-align: center;">Mid<br><span
+class="math inline"><em>c</em><em>τ</em></span></th>
+<th style="text-align: center;">End<br><span
+class="math inline"><em>c</em><em>τ</em></span></th>
 </tr>
 </thead>
 <tbody>
@@ -917,12 +897,95 @@ class="math inline"><em>τ</em></span></th>
 </table>
 
 Dec times in Zone 0 and 5 can be directly converted to and from UTC
-times with an offset of +00:00 and +12:00, respectively. The other Dec
-time zones will differ from their closest UTC time by
+times with an offset of 0 and 12 hours, respectively. The other Dec time
+zones will differ from the closest UTC time by
 8.<span class="over">3</span>, 16.<span class="over">6</span>, 25,
 33.<span class="over">3</span>, 41.<span class="over">6</span> or 50
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of a day">millidays</span>. To find this
+data-bs-title="thousands of a day">millidays</span>. To find the
+difference δ, convert the UTC offset hours
+<span class="cyan">o<sub>h</sub></span> and minutes
+<span class="cyan">o<sub>m</sub></span> into <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="tenths of a turn">deci[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span>
+of the longitude λ and then subtract the Dec zone number
+<span class="lime">z</span>:
+
+*λ* = *o*<sub>*h*</sub> ÷ 2.4 + *o*<sub>*m*</sub> ÷ 144
+
+*z* = ⌊*λ* + 1 ÷ 2⌋
+
+*δ* = *λ* − *z*
+
+We can avoid dealing with the time zone difference by shifting the time
+zone so that we always convert between Zone 0 and
+[UTC+00:00](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+00:00,_Z)
+or Zone 5 and
+[UTC+12:00](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+12:00,_M).
+To obtain the Zone 0 time, we evaluate a Dec time as a math expression,
+add 10, and get the remainder after dividing by 10 to make sure the
+result is less than 10 <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a>:
+(<span class="cyan">${browserTime.toFixed(4)}</span> ${browserSign}
+<span class="lime">${Math.abs(browserZone)}</span> + 10)
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+10 = <span class="cyan">${zone0time.toFixed(4)}</span>.
+
+# Unit
+
+Dec uses [metric
+prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
+to create
+[submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20),
+such as the <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a>, <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a day">millidays</span>, and
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="hundred thousandths of a day">centimillidays</span>
+indicated by the shortest, longest, and thinnest clock🕓hands and the
+top, middle, and bottom bars📊above, respectively. The Dec times beneath
+the clocks🕓are in <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a>. Conversion into days or
+any submultiple of a day simply requires moving↔︎️or removing❌the
+[decimal
+separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number).
+
+Dec uses only
+[decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
+submultiples of a day because they can naturally be combined together
+into a single decimal number:
+<span class="cyan">${browserTime.toFixed(4)}</span>. Hours, minutes, and
+seconds are also submultiples of a day, but are not decimal units and
+thus would typically be expressed as a [mixed-radix
+number](https://en.wikipedia.org/wiki/Mixed_radix#:~:text=non%2Dstandard%20positional%20numeral%20systems%20in%20which%20the%20numerical%20base%20varies%20from%20position%20to%20position).
+Instead, Dec displays non-decimal units using math expressions:
+${Math.floor(hours).toString().padStart(2, “0”)} ÷ 2.4 +
+${Math.floor(minutes).toString().padStart(2, “0”)} ÷ 144 +
+${Math.floor(seconds).toString().padStart(2, “0”)} ÷ 8640.
+
+The expression above is the right-hand side of the equation for
+converting hours, minutes, and seconds into <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a>: d = h ÷ 2.4 + m ÷ 144 + s
+÷ 8640, where d is decidays, h is hours, m is minutes, and s is seconds.
+Thanks to math notation Dec uses to display times we can represent the
+time using any numbers we like. Inversely, we can convert <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a> into hours: h = d × 2.4,
+minutes: m = h
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1 × 60, and seconds: s = m
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1 × 60.
 
 ``` {ojs}
 //| echo: false
@@ -946,8 +1009,13 @@ function unix2dote1(unix, zone, offset = 719468) {
       ) / 10 + offset, zone]
 }
 browserDote = unix2dote(unix)
-browserTime = (browserDote[0] % 1 * 10).toFixed(4)
+browserTime = browserDote[0] % 1 * 10
 browserZone = browserDote[1]
+browserSign = browserZone > 0 ? "-" : "+"
+zone0time = (browserTime - browserZone + 10) % 10
+hours = browserTime * 2.4
+minutes = hours % 1 * 60
+seconds = minutes % 1 * 60
 selectedDote = unix2dote(unix, long2zone(location[0]))
 selectedExact = selectedDote[0] % 1
 selectedExactN = (1 - selectedExact) % 1
