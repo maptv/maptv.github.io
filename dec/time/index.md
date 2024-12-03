@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2024+276
+2024+277
 
 - [Time](#time)
 - [Zone](#zone)
@@ -753,12 +753,12 @@ numbers can be useful for getting [Dec dates](../../dec/date)🗓️to match
 [Gregorian
 calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)🗓️dates
 with negative [UTC
-offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20local%20time).
+offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20local%20solar%20time).
 
 There are [37 UTC
 offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets), but only 10
 Dec time zones. Conversion between Dec time zones and UTC offsets is not
-straightforward, because UTC offsets are determined by geographic and
+straightforward, because UTC offsets are influenced by geographic and
 political boundaries, whereas Dec time zones are determined solely by
 longitude. If you know your longitude in degrees (°) or
 <span class="under tool" data-bs-toggle="tooltip"
@@ -948,44 +948,77 @@ data-bs-title="thousandths of a day">millidays</span>, and
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span>
 indicated by the shortest, longest, and thinnest clock🕓hands and the
-top, middle, and bottom bars📊above, respectively. The Dec times beneath
-the clocks🕓are in <a
+top, middle, and bottom bars📊above, respectively. A <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</a>. Conversion into days or
-any submultiple of a day simply requires moving↔︎️or removing❌the
-[decimal
-separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number).
+data-bs-title="a tenth of a day">deciday</a> is 10
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of a day">centidays</span>, a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a hundredth of a day">centiday</span> is close to a
+quarter hour, a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a thousandth of a day">milliday</span> is nearly a minute
+and a half, and <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a hundred thousandth of a day">centimilliday</span> is a
+bit less then a second.
 
 Dec uses only
 [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
 submultiples of a day because they can naturally be combined together
 into a single decimal number:
-<span class="cyan">${browserTime.toFixed(4)}</span>. Hours, minutes, and
-seconds are also submultiples of a day, but are not decimal units and
-thus would typically be expressed as a [mixed-radix
-number](https://en.wikipedia.org/wiki/Mixed_radix#:~:text=non%2Dstandard%20positional%20numeral%20systems%20in%20which%20the%20numerical%20base%20varies%20from%20position%20to%20position).
-Instead, Dec displays non-decimal units using math expressions:
-${Math.floor(hours).toString().padStart(2, “0”)} ÷ 2.4 +
-${Math.floor(minutes).toString().padStart(2, “0”)} ÷ 144 +
-${Math.floor(seconds).toString().padStart(2, “0”)} ÷ 8640.
+<span class="cyan">${browserTime.toFixed(4)}</span>. Conversion between
+decimal units is as simple as moving↔︎️or removing❌the [decimal
+separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number).
+In contrast, times in hours, minutes, and seconds are typically
+expressed as [mixed-radix
+numbers](https://en.wikipedia.org/wiki/Mixed_radix#:~:text=non%2Dstandard%20positional%20numeral%20systems%20in%20which%20the%20numerical%20base%20varies%20from%20position%20to%20position)
+that are harder to work with than decimal numbers.
 
-The expression above is the right-hand side of the equation for
-converting hours, minutes, and seconds into <a
+To convert the hour h, minute <span class="magenta">m</span>, and second
+<span class="seagreen">s</span> into the <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</a>: d = h ÷ 2.4 + m ÷ 144 + s
-÷ 8640, where d is decidays, h is hours, m is minutes, and s is seconds.
-Thanks to math notation Dec uses to display times we can represent the
-time using any numbers we like. Inversely, we can convert <a
+data-bs-title="a tenth of a day">deciday</a>
+<span class="cyan">d</span>, Dec uses the following equation:
+<span class="cyan">d</span> = <span class="honeydew">h</span> ÷ 2.4 +
+<span class="magenta">m</span> ÷ 144 + <span class="seagreen">s</span> ÷
+8640. The current equation values in Zone
+<span class="lime">${browserZone}</span> are:
+<span class="cyan">${browserTime.toFixed(4)}</span> =
+<span class="honeydew">${Math.floor(hours).toString().padStart(2,
+“0”)}</span> ÷ 2.4 +
+<span class="magenta">${Math.floor(minutes).toString().padStart(2,
+“0”)}</span> ÷ 144 +
+<span class="seagreen">${Math.floor(seconds).toString().padStart(2,
+“0”)}</span> ÷ 8640. Inversely, we can convert <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</a> into hours: h = d × 2.4,
-minutes: m = h
+data-bs-title="tenths of a day">decidays</a> into hours:
+<span class="honeydew">h</span> = <span class="cyan">d</span> × 2.4,
+minutes: <span class="magenta">m</span> =
+<span class="honeydew">h</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-1 × 60, and seconds: s = m
+1 × 60, and seconds: <span class="seagreen">s</span> =
+<span class="magenta">m</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × 60.
+
+Obtain Dec time from [UNIX
+time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970)
+is better than dealing with hours, minutes, and seconds. To obtain the
+Dec time <span class="cyan">d</span>+<span class="lime">0</span> from
+the UNIX timestamp <span class="yellow">u</span>, we divide
+<span class="yellow">u</span> by 86400 to convert seconds to days,
+isolate the decimal part of the quotient, and then multiply by 10:
+<span class="cyan">d</span> + <span class="lime">0</span> =
+<span class="yellow">u</span> ÷ 86400
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1 × 10. The current values in this equation are
+<span class="cyan">${browserTime.toFixed(4)}</span> +
+<span class="lime">0</span> = <span class="yellow">${(unix /
+1000).toFixed(0)}</span> ÷ 86400
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1 × 10.
 
 ``` {ojs}
 //| echo: false
