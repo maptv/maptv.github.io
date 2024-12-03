@@ -200,6 +200,20 @@ div > form > label {
   padding: 0px 2px 0px 2px;
 }
 
+.honeydew {
+  border-radius: 4px;
+  background-color: honeydew;
+  color: black;
+  padding: 0px 2px 0px 2px;
+}
+
+.seagreen {
+  border-radius: 4px;
+  background-color: seagreen;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
 .wheat {
   border-radius: 4px;
   background-color: wheat;
@@ -265,11 +279,6 @@ div > form > label {
 
 h4.hiddenheading {
   display: none;
-}
-
-h4.hiddenheading > a {
-  pointer-events: none;
-  color: transparent;
 }
 
 #title-block-header.quarto-title-block.default .description>p:last-of-type {
