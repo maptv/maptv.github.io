@@ -200,6 +200,13 @@ div > form > label {
   padding: 0px 2px 0px 2px;
 }
 
+.maroon {
+  border-radius: 4px;
+  background-color: maroon;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
 .honeydew {
   border-radius: 4px;
   background-color: honeydew;
@@ -252,6 +259,13 @@ div > form > label {
 .yellow {
   border-radius: 4px;
   background-color: yellow;
+  color: black;
+  padding: 0px 2px 0px 2px;
+}
+
+.urobilin {
+  border-radius: 4px;
+  background-color: #E1AD21;
   color: black;
   padding: 0px 2px 0px 2px;
 }
