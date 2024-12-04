@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2024+277
+2024+278
 
 - [Time](#time)
 - [Zone](#zone)
@@ -974,20 +974,21 @@ expressed as [mixed-radix
 numbers](https://en.wikipedia.org/wiki/Mixed_radix#:~:text=non%2Dstandard%20positional%20numeral%20systems%20in%20which%20the%20numerical%20base%20varies%20from%20position%20to%20position)
 that are harder to work with than decimal numbers.
 
-To convert the hour h, minute <span class="magenta">m</span>, and second
+To convert the hour <span class="honeydew">h</span>, minute
+<span class="maroon">m</span>, and second
 <span class="seagreen">s</span> into the <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</a>
 <span class="cyan">d</span>, Dec uses the following equation:
 <span class="cyan">d</span> = <span class="honeydew">h</span> ÷ 2.4 +
-<span class="magenta">m</span> ÷ 144 + <span class="seagreen">s</span> ÷
+<span class="maroon">m</span> ÷ 144 + <span class="seagreen">s</span> ÷
 8640. The current equation values in Zone
 <span class="lime">${browserZone}</span> are:
 <span class="cyan">${browserTime.toFixed(4)}</span> =
 <span class="honeydew">${Math.floor(hours).toString().padStart(2,
 “0”)}</span> ÷ 2.4 +
-<span class="magenta">${Math.floor(minutes).toString().padStart(2,
+<span class="maroon">${Math.floor(minutes).toString().padStart(2,
 “0”)}</span> ÷ 144 +
 <span class="seagreen">${Math.floor(seconds).toString().padStart(2,
 “0”)}</span> ÷ 8640. Inversely, we can convert <a
@@ -995,11 +996,10 @@ href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20
 class="under tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</a> into hours:
 <span class="honeydew">h</span> = <span class="cyan">d</span> × 2.4,
-minutes: <span class="magenta">m</span> =
-<span class="honeydew">h</span>
+minutes: <span class="maroon">m</span> = <span class="honeydew">h</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × 60, and seconds: <span class="seagreen">s</span> =
-<span class="magenta">m</span>
+<span class="maroon">m</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × 60.
 
@@ -1007,18 +1007,68 @@ Obtain Dec time from [UNIX
 time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970)
 is better than dealing with hours, minutes, and seconds. To obtain the
 Dec time <span class="cyan">d</span>+<span class="lime">0</span> from
-the UNIX timestamp <span class="yellow">u</span>, we divide
-<span class="yellow">u</span> by 86400 to convert seconds to days,
+the UNIX timestamp <span class="urobilin">u</span>, we divide
+<span class="urobilin">u</span> by 86400 to convert seconds to days,
 isolate the decimal part of the quotient, and then multiply by 10:
 <span class="cyan">d</span> + <span class="lime">0</span> =
-<span class="yellow">u</span> ÷ 86400
+<span class="urobilin">u</span> ÷ 86400
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × 10. The current values in this equation are
 <span class="cyan">${browserTime.toFixed(4)}</span> +
-<span class="lime">0</span> = <span class="yellow">${(unix /
+<span class="lime">0</span> = <span class="urobiliurobilin">${(unix /
 1000).toFixed(0)}</span> ÷ 86400
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × 10.
+
+The concept of measuring time in decimal days is not novel. In the late
+1700s, the [French Republican
+calendar](https://en.wikipedia.org/wiki/French_Republican_calendar#:~:text=a%20calendar%20created%20and%20implemented%20during%20the%20French%20Revolution)
+time system referred to <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a> as decimal hours,
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a day">millidays</span> as decimal
+minutes, and <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="hundred thousandths of a day">centimillidays</span> as
+decimal seconds. Similarly, [Swatch Internet
+Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time#:~:text=a%20decimal%20time%20system%20introduced%20in%201998%20by%20the%20Swatch%20corporation),
+a decimal time system introduced in 1998, uses the term “.beats” for
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a day">millidays</span>.
+
+Swatch Internet Time differs from Dec in that it [has no time
+zones](https://en.wikipedia.org/wiki/Swatch_Internet_Time#Calculation_from_UTC+1:~:text=There%20are%20no%20time%20zones%20in%20Swatch%20Internet%20Time)
+and is obtained from
+[UTC+01:00](https://en.wikipedia.org/wiki/UTC%2B01:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B01%3A00)
+[hours, minutes, and
+seconds](https://en.wikipedia.org/wiki/Swatch_Internet_Time#Calculation_from_UTC+1:~:text=The%20formula%20for%20calculating%20the%20time%20in%20.beats%20from%20UTC%2B1).
+The major innovations described in this article are the Dec time zone
+system and the simple equation for obtaining Zone 0 Dec time from UNIX
+time, but Dec has much more to offer than <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a day">deciday</a> times and zones.
+
+The next article in the [Dec section](../../dec) compares Dec to the
+[ISO
+8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
+international standard for dates and times. The Dec equivalents of ISO
+8601 [time
+intervals](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=the%20intervening%20time%20between%20two%20time%20points),
+Dec spans, are composed of 2 Dec
+[timestamps](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred)
+called Dec spans. Full potential of Dec is revealed in my Dec
+[snap](../../dec/span) and [span](../../dec/span) articles, which
+demonstrate how a Dec
+<span class="yellow">year</span>+<span class="cyan">day</span> date and
+a Dec <span class="cyan">.day</span>-<span class="lime">z</span> time
+can be combined to make a
+<span class="yellow">year</span>+<span class="cyan">day.day</span>-<span class="lime">z</span>
+and how two such timestamps can be combined to represent a time
+interval. For more on Dec dates and times, you read about they can be
+converted to and from their ISO 8601 equivalents in my ISO
+[date](../../iso/date) and [time](../../iso/time) articles.
 
 ``` {ojs}
 //| echo: false
