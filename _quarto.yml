@@ -68,7 +68,7 @@ website:
         icon: clock
         href: dec/time/index.qmd
       - text: ISO 8601
-        icon: calendar-month
+        icon: globe
         href: dec/iso/index.qmd
       - text: Snap
         icon: postage
