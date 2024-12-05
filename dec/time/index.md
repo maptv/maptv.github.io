@@ -54,7 +54,7 @@ const W = width;
   const svg = d3
     .create("svg")
     .attr("width", W)
-    .attr("viewBox", [0, 0, W * .87, H]);
+    .attr("viewBox", [0, 0, W * (W < 370 ? .75 : W < 420 ? .76 : W < 470 ? .79 : W < 520 ? .81 : W < 570 ? .83 : W < 620 ? .84 : W < 670 ? .85 : W < 720 ? .86 : .87), H]);
   const xRange = [0, W - 100];
   const scaleDD = d3.scaleLinear()
     .domain([0, 10])
@@ -145,7 +145,7 @@ const W = width;
     .attr('x', d=>scaleDD(d)+barX+.5)
     .attr('y', firstBarY+18)
     .text(d=>d)
-    .style("font-size", `{width < 350 ? 12 : 20}px`)
+    .style("font-size", `{width < 350 ? 12 : width < 450 ? 14 : width < 550 ? 16 : width < 650 ? 18 : 20}px`)
   // Cent ticks
   svg.selectAll('.tickC2')
     .data(d3.range(width > 500 ? 10 : 10, 100))
@@ -184,7 +184,7 @@ const W = width;
   const svg = d3
     .create("svg")
     .attr("width", W)
-    .attr("viewBox", [0, 0, W * .87, H]);
+    .attr("viewBox", [0, 0, W * (W < 370 ? .75 : W < 420 ? .76 : W < 470 ? .79 : W < 520 ? .81 : W < 570 ? .83 : W < 620 ? .84 : W < 670 ? .85 : W < 720 ? .86 : .87), H]);
   const xRange = [0, W - 100];
   const scaleDD = d3.scaleLinear()
     .domain([0, 10])
@@ -312,9 +312,10 @@ const W = width;
 viewof location = worldMapCoordinates([162, 0], [width * .998, Math.round((21 / 40) * width)])
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 app = {
-  const svg = d3.select(DOM.svg(width, height));
+const svg = d3.select(DOM.svg(width, height - (width < 400 ? 10 : width < 600 ? 15 : width < 700 ? 30 : 40)));
   svg.style("user-select", "none")
      .style("-webkit-user-select", "none");
+  svg.attr("id", "daylightapp")
   const margin = {top: 0, left: 10, right: 10, bottom: 0, inner: 3};
   const contentWidth = width - margin.left - margin.right - margin.inner;
   const columnWidth = contentWidth / 2;
@@ -325,7 +326,7 @@ app = {
   const renderPlot = () => {
     svg.selectAll("#daylightplot *").remove();
     svg.select("#daylightplot").call(daylightPlot, {
-      width: columnWidth / 1.28,
+      width: columnWidth / 1.26,
       height: height / 1.51 - margin.top - margin.bottom,
       year: new Date().getFullYear(),
       latitude: location[1],
@@ -335,7 +336,7 @@ app = {
   }
   const renderGlobe = () => {
     svg.selectAll("#globe *").remove();
-    svg.selectAll("#globe").call(globe, { width: columnWidth * 1.22, location, ...selection });
+    svg.selectAll("#globe").call(globe, { width: columnWidth * 1.2, location, ...selection });
   }
   const renderSolarSystem = () => {
     svg.selectAll("#solar-system *").remove();
@@ -366,7 +367,7 @@ app = {
     .attr("transform", `translate(${margin.left}, ${margin.top + height / 4})`);
   svg.append("g")
     .attr("id", "globe")
-    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 1.25}, ${margin.top + Number(columnWidth < 300) * 16})`);
+    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 1.25}, ${margin.top + Number(columnWidth < 300) * 12})`);
   setSelection(selection, true);
   const handleDateHourChange = ({ target, detail: { date, hour }}) => {
     if (date != null && hour != null) setSelection({...selection, date, hour});
@@ -520,7 +521,7 @@ clock = {
   const svg = d3
     .create("svg")
     .attr("viewBox", [0, 0, w, h])
-    .style("max-width", "350px")
+    .style("max-width", `${width / 2.1}px`)
     .attr("class", "clock-top")
     .attr("id", "clock");
   svg
@@ -687,7 +688,7 @@ clock1 = {
   const svg = d3
     .create("svg")
     .attr("viewBox", [0, 0, w, h])
-    .style("max-width", "350px")
+    .style("max-width", `${width / 2.1}px`)
     .attr("class", "clock-btm")
     .attr("id", "clock");
   svg
@@ -1253,9 +1254,9 @@ solarSystem = (root, width, location, date, hour) => {
         (solarSystemRadius + 18) * 1.18 * stretch * Math.cos(startMonthAngle)
       )
       .attr("text-anchor", "middle")
-      .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
+      .attr("font-size", fontSize * (width < 465 ? 1 : 1.2))
       .attr("dominant-baseline", "middle")
-      .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
+      .attr("font-size", fontSize * (width < 465 ? 1 : 1.2))
       .attr("font-family", "sans-serif")
       .attr("fill", "black");
   });
@@ -1412,7 +1413,7 @@ daylightPlot = (
   const chartWidth = width - margin.left - margin.right;
   const chartHeight = height - margin.top - margin.bottom;
   const xTickValues =
-    width > 380 ? [3, 6, 9, 12, 15, 18, 21] : width > 240 ? [6, 12, 18] : [12];
+    width > 280 ? [3, 6, 9, 12, 15, 18, 21] : width > 140 ? [6, 12, 18] : [12];
   const xScale = d3
     .scaleLinear()
     .domain([0, 24])
@@ -1454,7 +1455,7 @@ daylightPlot = (
     .call(yAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    //.call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 265 ? 1 : 1.2)))
+    //.call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 465 ? 1 : 1.2)))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
@@ -1463,7 +1464,7 @@ daylightPlot = (
     .call(xAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    //.call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 265 ? 1 : 1.2)))
+    //.call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 465 ? 1 : 1.2)))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
@@ -1472,7 +1473,7 @@ daylightPlot = (
     .attr("x", margin.left + chartWidth / 2)
     .attr("y", margin.top + chartHeight + margin.bottom - 2)
     .attr("text-anchor", "middle")
-    .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
+    .attr("font-size", fontSize * (width < 465 ? 1 : 1.2))
     .attr("font-family", "sans-serif")
     .attr("fill", "black");
   const data = yearDates(year)
@@ -1513,14 +1514,14 @@ daylightPlot = (
     .attr("rx", 5)
     .attr("x", -25)
     .attr("y", 6)
-    .attr("width", fontSize * (width < 265 ? 1 : 1.2))
-    .attr("height", fontSize * (width < 265 ? 1 : 1.2))
+    .attr("width", fontSize * (width < 465 ? 1 : 1.2))
+    .attr("height", fontSize * (width < 465 ? 1 : 1.2))
     .attr("fill", colors.night);
   legend
     .append("text")
     .attr("x", -8)
     .attr("y", 19)
-    .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
+    .attr("font-size", fontSize * (width < 465 ? 1 : 1.2))
     .attr("font-family", "sans-serif")
     .text("Nighttime");
   legend
@@ -1528,14 +1529,14 @@ daylightPlot = (
     .attr("x", 58)
     .attr("rx", 5)
     .attr("y", 6)
-    .attr("width", fontSize * (width < 265 ? 1 : 1.2))
-    .attr("height", fontSize * (width < 265 ? 1 : 1.2))
+    .attr("width", fontSize * (width < 465 ? 1 : 1.2))
+    .attr("height", fontSize * (width < 465 ? 1 : 1.2))
     .attr("fill", colors.day);
   legend
     .append("text")
     .attr("x", 75)
     .attr("y", 19)
-    .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
+    .attr("font-size", fontSize * (width < 465 ? 1 : 1.2))
     .attr("font-family", "sans-serif")
     .text("Daytime");
   /* Time and date controls */
@@ -1850,9 +1851,12 @@ styledTimeN = setStyle(`-${decTimeN}`, d3.color("pink").formatHex())
 ```
 
 <style>
-svg g g.tick text {
-  font-size: 1.5em !important;
-}
+  #barClock {
+    width: 100%;
+  }
+  svg g g.tick text {
+    font-size: 1.1em !important;
+  }
   .tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
     fill: #000;
     font-family: monospace;

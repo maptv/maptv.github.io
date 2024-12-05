@@ -8,6 +8,7 @@ Martin Laptev
 - [Day of week (dow)](#dow)
 - [Day of month (dom)](#dom)
 - [Time of day (tod)](#tod)
+- [Next](#next)
 - [Cite](#cite)
 
 My website serves as a demonstration of both the
@@ -1185,25 +1186,27 @@ The combination of a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="time-of-day">tod</span> and a Dec time zone
 <span class="lime">z</span> is called a Dec time:
 .<span class="cyan">tod</span>-<span class="lime">z</span>. Dec times
-can be appended to Dec dates to form
-[timestamps](https://en.wikipedia.org/wiki/Timestamp#:~:text=information%20identifying%20when%20a%20certain%20event%20occurred)
-called Dec snaps:
+can be appended to Dec dates to form Dec snaps🫰:
 <span class="yellow">year</span>+<span class="cyan">day</span>.<span class="cyan">tod</span>-<span class="lime">z</span>.
-The Dec timestamp on the left side of the navbar of my site multiplies
-the <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> by 10 so it is in the same
+The Dec snap on the left side of the navbar of my site,
+<span class="yellow">${decoYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="winedregs">${dotw}</span>🗓️<span class="cyan">${decidayTime}</span>${zoneSign}<span class="lime">${Math.abs(zone)}</span>🕓,
+multiplies the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> by 10,
+<span class="cyan">${dayTime.toFixed(5)}</span> × 10 =
+<span class="cyan">${decidayTime}</span>, so it is in the same
 [deciday](https://en.wiktionary.org/wiki/deciday#:~:text=One%20tenth%20of%20one%20day)
-units as the time zone:
-<span class="cyan">${decidayTime}</span>${zoneSign}<span class="lime">${Math.abs(zone)}</span>.
+units as the time zone.
+
+# Next
 
 After reading this article, you should be able to understand the
 examples in the [filter](../../quarto/filter),
 [script](../../quarto/script), and [include](../../quarto/include)
 articles in the [Quarto section](../../quarto) of my site. To see the
-full extent of the benefits that Decalendar can provide, you should
-continue on through the [Dec section](../../dec) of my site to the
-[time](../../dec/time), [ISO 8601](../../dec/iso),
-[snap](../../dec/snap), and [span](../../dec/span) articles.
+full extent of the benefits that Decalendar can provide, I recommend
+that you continue on through the [Dec section](../../dec) of my site to
+the [time](../../dec/time)🕰️, [ISO 8601](../../dec/iso)🌐,
+[snap](../../dec/snap)🫰, and [span](../../dec/span)🌈articles.
 
 # Cite
 
@@ -1286,7 +1289,8 @@ dotw0doty = Math.floor(ydz[1]) - dotw
 doty0dote = date2dote(ydz[0], 0, ydz[2])
 doty0dotw = dote2dotw(...doty0dote)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
-decidayTime = (dz[0] % 1 * 10).toFixed(4)
+dayTime = dz[0] % 1
+decidayTime = (dayTime * 10).toFixed(4)
 zone = dz[1]
 zoneSign = zone < 0 ? "+" : "-"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
