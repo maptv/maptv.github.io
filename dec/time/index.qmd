@@ -137,8 +137,8 @@ const W = width;
     .attr('class', 'tickLabel1')
     .attr('x', d=>scaleDD(d)+barX+.5)
     .attr('y', firstBarY+18)
+    //.style("font-size", `{W < 550 ? 12 : W < 650 ? 14 : W < 750 ? 16 : W < 850 ? 18 : 20}px`)
     .text(d=>d)
-    .style("font-size", `{width < 350 ? 12 : width < 450 ? 14 : width < 550 ? 16 : width < 650 ? 18 : 20}px`)
   // Cent ticks
   svg.selectAll('.tickC2')
     .data(d3.range(width > 500 ? 10 : 10, 100))
@@ -165,6 +165,7 @@ const W = width;
     .attr('class', 'timeLabel')
     .attr('x', barX+2)
     .attr('y', (d,i)=>i*30+firstBarY+20)
+    .style("font-size", `${W < 300 ? 14 : W < 400 ? 16 : W < 500 ? 18 : W < 600 ? 20 : 22}px`)
     .text(d=>d);
   svg.attr("id", "barClock");
   return svg.node();
@@ -271,6 +272,7 @@ const W = width;
     .attr('class', 'tickLabel1')
     .attr('x', d=>scaleDD(d)+barX+.5)
     .attr('y', firstBarY+18)
+    //.style("font-size", `{W < 350 ? 12 : W < 450 ? 14 : W < 550 ? 16 : W < 650 ? 18 : 20}px`)
     .text(d=>d)
   // Cent ticks
   svg.selectAll('.tickC2')
@@ -298,6 +300,7 @@ const W = width;
     .attr('class', 'timeLabel')
     .attr('x', barX+2)
     .attr('y', (d,i)=>i*30+firstBarY+20)
+    .style("font-size", `${W < 300 ? 14 : W < 400 ? 16 : W < 500 ? 18 : W < 600 ? 20 : 22}px`)
     .text(d=>d);
   svg.attr("id", "barClock");
   return svg.node();
@@ -1164,21 +1167,21 @@ daylightPlot = (
   legend
     .append("rect")
     .attr("rx", 5)
-    .attr("x", -35)
+    .attr("x", -34 + 34 * (width < 205))
     .attr("y", 4.5 * (width < 205 ? 1.4 : 1))
     .attr("width", fontSize * (width < 205 ? 1.2 : 1.4))
     .attr("height", fontSize * (width < 205 ? 1.2 : 1.4))
     .attr("fill", colors.night);
   legend
     .append("text")
-    .attr("x", -16)
+    .attr("x", -16 + 34 * (width < 205))
     .attr("y", 19)
     .attr("font-size", fontSize * (width < 205 ? 1.2 : 1.4))
     .attr("font-family", "sans-serif")
     .text("Night");
   legend
     .append("rect")
-    .attr("x", 34)
+    .attr("x", 34 + 26 * (width < 205))
     .attr("rx", 5)
     .attr("y", 4.5 * (width < 205 ? 1.4 : 1))
     .attr("width", fontSize * (width < 205 ? 1.2 : 1.4))
@@ -1186,7 +1189,7 @@ daylightPlot = (
     .attr("fill", colors.day);
   legend
     .append("text")
-    .attr("x", 52)
+    .attr("x", 52 + 26 * (width < 205))
     .attr("y", 19)
     .attr("font-size", fontSize * (width < 205 ? 1.2 : 1.4))
     .attr("font-family", "sans-serif")
