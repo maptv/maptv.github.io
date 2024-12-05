@@ -772,7 +772,7 @@ If you know your longitude in degrees (°) or <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundredths of a turn">centi[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span>
 ([*c**τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)),
-you can look up your Dec time zone in the table below.
+you can look up your Dec time zone (TZ) in the table below.
 
 <table>
 <colgroup>
