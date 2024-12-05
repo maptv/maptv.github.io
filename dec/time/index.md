@@ -5,6 +5,8 @@ Martin Laptev
 - [Time](#time)
 - [Zone](#zone)
 - [Unit](#unit)
+- [Next](#next)
+- [Cite](#cite)
 
 # Time
 
@@ -1081,6 +1083,8 @@ href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20
 class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</a> times and zones.
 
+# Next
+
 The next article in the [Dec section](../../dec) compares Dec to the
 [ISO
 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
@@ -1089,19 +1093,30 @@ for [combined date and time
 representations](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations)
 that can be paired up to express [time
 intervals](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=the%20intervening%20time%20between%20two%20time%20points).
-In Dec, the combination of a date and time is called
-[snap](../../dec/span) and a time interval expressed as a pair of snaps
-is called a [span](../../dec/span).
+In Dec, the combination of a date and time is called a snap and a time
+interval expressed as a pair of snaps is called a span.
 
-Each Dec span consists of a Dec
-<span class="yellow">year</span>+<span class="cyan">day</span> date and
-a Dec <span class="cyan">.day</span>-<span class="lime">z</span> time a
-revealed in , which demonstrate how can be combined to make a
-<span class="yellow">year</span>+<span class="cyan">day.day</span>-<span class="lime">z</span>
-and how two such timestamps can be combined to represent a time
-interval. For more on Dec dates and times, you read about they can be
-converted to and from their ISO 8601 equivalents in my ISO
-[date](../../iso/date) and [time](../../iso/time) articles.
+My [ISO 8601 article](../../dec/iso) is unique because it avoids the use
+of Observable in favor of leveraging [Jupyter](https://jupyter.org)
+support in Quarto to make the code underlying Dec available in multiple
+programming languages. Observable is a great visualization tool but does
+not translate well into Jupyter notebooks. After my ISO article, I
+return to the use of Observable in my Dec [snap](../../dec/span) and
+[span](../../dec/span) articles.
+
+# Cite
+
+Thank you for your interest in Dec. You will find citation information
+for this article below. Despite what I consider to be very exhaustive
+research into the literature on decimal time, I did not find any
+relevant sources that could hold a candle🕯️to the article describing the
+algorithms underlying [Dec dates](../../dec/date): [Hinnant,
+Howard](https://howardhinnant.github.io). <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="2021-09-01"><u>2021+184</u></span>. “`chrono`-Compatible
+Low-Level Date Algorithms.”
+<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>.
+<https://howardhinnant.github.io/date_algorithms.html>.
 
 ``` {ojs}
 //| echo: false
