@@ -6,7 +6,6 @@ Martin Laptev
 - [Zone](#zone)
 - [Unit](#unit)
 - [Next](#next)
-- [Cite](#cite)
 
 # Time
 
@@ -1103,20 +1102,6 @@ programming languages. Observable is a great visualization tool but does
 not translate well into Jupyter notebooks. After my ISO article, I
 return to the use of Observable in my Dec [snap](../../dec/span) and
 [span](../../dec/span) articles.
-
-# Cite
-
-Thank you for your interest in Dec. You will find citation information
-for this article below. Despite what I consider to be very exhaustive
-research into the literature on decimal time, I did not find any
-relevant sources that could hold a candle🕯️to the article describing the
-algorithms underlying [Dec dates](../../dec/date): [Hinnant,
-Howard](https://howardhinnant.github.io). <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="2021-09-01"><u>2021+184</u></span>. “`chrono`-Compatible
-Low-Level Date Algorithms.”
-<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>.
-<https://howardhinnant.github.io/date_algorithms.html>.
 
 ``` {ojs}
 //| echo: false
