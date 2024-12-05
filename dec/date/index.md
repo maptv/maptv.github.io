@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+274
+2024+279
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -325,12 +325,12 @@ data-bs-title="day-of-week">dow</span>](https://pubs.opengroup.org/onlinepubs/00
 of a given date. This year, the <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> of
 [Christmas](https://en.wikipedia.org/wiki/Christmas#:~:text=annual%20festival%20commemorating%20the%20birth%20of%20Jesus%20Christ)🎄is
-<span class="azul">${xmasDotw}</span>, according to the Dec
+<span class="winedregs">${xmasDotw}</span>, according to the Dec
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> equation:
 (<span class="cyan">${xmasDote}</span> + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-7 = <span class="azul">${xmasDotw}</span>. In contrast to the
+7 = <span class="winedregs">${xmasDotw}</span>. In contrast to the
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>, finding the
 <span class="under tool" data-bs-toggle="tooltip"
@@ -365,9 +365,9 @@ data-bs-title="day-of-week">dow</span> can remain constant. Dec uses the
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
-equation, <span class="azul">w<sub>Δ</sub></span> =
-(<span class="azul">w<sub>M</sub></span> -
-<span class="azul">w<sub>S</sub></span> + 7)
+equation, <span class="winedregs">w<sub>Δ</sub></span> =
+(<span class="winedregs">w<sub>M</sub></span> -
+<span class="winedregs">w<sub>S</sub></span> + 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7, to determine which of the seven possible floating holiday dates
 corresponds to the given year.
@@ -375,34 +375,36 @@ corresponds to the given year.
 In the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
-equation, <span class="azul">w<sub>M</sub></span> is the
+equation, <span class="winedregs">w<sub>M</sub></span> is the
 [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted)
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> at which we want to arrive and
-<span class="azul">w<sub>S</sub></span> is
+<span class="winedregs">w<sub>S</sub></span> is
 [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted)
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> from which we start. To get the
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> of
 [Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃in
-the United States and Brazil, we plug <span class="azul">4</span> as
-<span class="azul">w<sub>M</sub></span> and
-<span class="azul">${day266dotw}</span>, the <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> of
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="November 22"><u>Day 266</u></span> this year, as
-<span class="azul">w<sub>S</sub></span> into the
+the United States and Brazil, we plug <span class="winedregs">4</span>
+as <span class="winedregs">w<sub>M</sub></span> and
+<span class="winedregs">${day266dotw}</span>, the
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span> of <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="November 22"><u>Day
+266</u></span> this year, as
+<span class="winedregs">w<sub>S</sub></span> into the
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
-equation, <span class="azul">${day266dotwDiff}</span> =
-(<span class="azul">4</span> - <span class="azul">${day266dotw}</span> +
-7)
+equation, <span class="winedregs">${day266dotwDiff}</span> =
+(<span class="winedregs">4</span> -
+<span class="winedregs">${day266dotw}</span> + 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-7, and then add the resulting <span class="azul">w<sub>Δ</sub></span> to
-266: <span class="cyan">${day266dotwDiff + 266}</span> =
-<span class="azul">${day266dotwDiff}</span> + 266.
+7, and then add the resulting
+<span class="winedregs">w<sub>Δ</sub></span> to 266:
+<span class="cyan">${day266dotwDiff + 266}</span> =
+<span class="winedregs">${day266dotwDiff}</span> + 266.
 
 Apart from the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> and <span class="under tool"
@@ -618,8 +620,8 @@ information about a date, such as its <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>
 <span class="cyan">d</span> or POSIX <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>
-<span class="azul">w</span>. Essentially, you can modify a Dec date to
-show whatever numbers🔢you want. All it takes is a little bit of
+<span class="winedregs">w</span>. Essentially, you can modify a Dec date
+to show whatever numbers🔢you want. All it takes is a little bit of
 arithmetic! This incredible versatility is possible thanks to the
 mathematical basis of Dec date notation.
 
@@ -634,7 +636,7 @@ the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
 (navbar) of my site displays the current Dec <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> date,
-<span class="yellow">${decoYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="azul">${dotw}</span>,
+<span class="yellow">${decoYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="winedregs">${dotw}</span>,
 by splitting the current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>,
 <span class="cyan">${decoDoty}</span>, into the <span class="under tool"
@@ -646,33 +648,34 @@ data-bs-title="day-of-year">doy</span>),
 <span class="cyan">${dotw0doty}</span>, and the current POSIX
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>:
-<span class="azul">${dotw}</span>.
+<span class="winedregs">${dotw}</span>.
 
 Instead of the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> <span class="cyan">d</span>, Dec
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> dates display
-<span class="cyan">d</span>-<span class="azul">w</span>+<span class="azul">w</span>,
-where <span class="cyan">d</span>-<span class="azul">w</span> is the
-<span class="under tool" data-bs-toggle="tooltip"
+<span class="cyan">d</span>-<span class="winedregs">w</span>+<span class="winedregs">w</span>,
+where <span class="cyan">d</span>-<span class="winedregs">w</span> is
+the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> 0 <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and
-<span class="azul">w</span> is the <span class="under tool"
+<span class="winedregs">w</span> is the <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>
 associated with <span class="cyan">d</span>. We evaluate the
-subtraction, <span class="cyan">d</span>-<span class="azul">w</span>, to
-obtain the <span class="under tool" data-bs-toggle="tooltip"
+subtraction,
+<span class="cyan">d</span>-<span class="winedregs">w</span>, to obtain
+the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="Sunday">Dow 0</span> <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>, but
 leave the addition unsimplified so we can see
-<span class="azul">w</span>. Dec <span class="under tool"
+<span class="winedregs">w</span>. Dec <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> dates
 supply all of the information needed to identify specific dates and
 coordinate schedules based on deks or weeks.
 
 Dec dates can be further modified to include [POSIX week
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.):
-<span class="yellow">${decoYear}</span>+7×<span class="wheat">${week}</span>+<span class="azul">${dotw}</span>.
+<span class="yellow">${decoYear}</span>+7×<span class="wheat">${week}</span>+<span class="winedregs">${dotw}</span>.
 The current week number, <span class="wheat">${week}</span>, is the sum
 of the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="Sunday">Dow 0</span> <span class="under tool"
@@ -683,30 +686,31 @@ data-bs-title="day-of-week">dow</span> of the year (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>),
-<span class="azul">${doty0dotw}</span>, divided by 7:
+<span class="winedregs">${doty0dotw}</span>, divided by 7:
 <span class="wheat">${week}</span> =
 (<span class="cyan">${dotw0doty}</span> +
-<span class="azul">${doty0dotw}</span>) ÷ 7. The current Dec floating
-week date,
-7×<span class="wheat">${week}</span>+<span class="azul">${dotw}</span>,
+<span class="winedregs">${doty0dotw}</span>) ÷ 7. The current Dec
+floating week date,
+7×<span class="wheat">${week}</span>+<span class="winedregs">${dotw}</span>,
 is therefore equal to the sum of the current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and the
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="March 1"><u>Day 0</u></span> <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>: 7 ×
-<span class="wheat">${week}</span> + <span class="azul">${dotw}</span> =
+<span class="wheat">${week}</span> +
+<span class="winedregs">${dotw}</span> =
 <span class="cyan">${decoDoty}</span> +
-<span class="azul">${doty0dotw}</span>.
+<span class="winedregs">${doty0dotw}</span>.
 
 Dec week dates turn
-<span class="cyan">d</span>-<span class="azul">w</span> into
-7×<span class="wheat">W</span>-<span class="azul">w<sub>0</sub></span>,
+<span class="cyan">d</span>-<span class="winedregs">w</span> into
+7×<span class="wheat">W</span>-<span class="winedregs">w<sub>0</sub></span>,
 where <span class="wheat">W</span> is the week number and
-<span class="azul">w<sub>0</sub></span> is the <span class="tool"
+<span class="winedregs">w<sub>0</sub></span> is the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>. In this case, the subtraction is
-omitted, because <span class="azul">w<sub>0</sub></span> is not
+omitted, because <span class="winedregs">w<sub>0</sub></span> is not
 necessary to identify a date and can be calculated from a given
 <span class="yellow">y</span> by flooring it, turning it into a
 <span class="under tool" data-bs-toggle="tooltip"
@@ -776,9 +780,9 @@ data-bs-title="day-of-month">dom</span> and <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> patterns
 above, we can create hybrid Dec dates:
 <span class="yellow">${decoYear}</span>+<span class="cyan">${monthNumber -
-dotw}</span>+<span class="magenta">${dotm}</span>+<span class="azul">${dotw}</span>,
+dotw}</span>+<span class="magenta">${dotm}</span>+<span class="winedregs">${dotw}</span>,
 where <span class="cyan">${monthNumber - dotw}</span> is
-<span class="cyan">d</span>-<span class="magenta">m</span>-<span class="azul">w</span>,
+<span class="cyan">d</span>-<span class="magenta">m</span>-<span class="winedregs">w</span>,
 the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> of the last
 <span class="under tool" data-bs-toggle="tooltip"
@@ -1192,14 +1196,13 @@ data-bs-title="time-of-day">tod</span> by 10 so it is in the same
 units as the time zone:
 <span class="cyan">${decidayTime}</span>${zoneSign}<span class="lime">${Math.abs(zone)}</span>.
 
-After reading this article, you should be ready to tackle my [ISO
-8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
-[date](../../iso/date) article and understand the examples in the
-[filter](../../quarto/filter), [script](../../quarto/script), and
-[include](../../quarto/include) articles in the [Quarto
-section](../../quarto) of my site. To see the full extent of the
-benefits that Decalendar can provide, you should continue on through the
-[Dec section](../../dec) of my site to the [time](../../dec/time),
+After reading this article, you should be able to understand the
+examples in the [filter](../../quarto/filter),
+[script](../../quarto/script), and [include](../../quarto/include)
+articles in the [Quarto section](../../quarto) of my site. To see the
+full extent of the benefits that Decalendar can provide, you should
+continue on through the [Dec section](../../dec) of my site to the
+[time](../../dec/time), [ISO 8601](../../dec/iso),
 [snap](../../dec/snap), and [span](../../dec/span) articles.
 
 # Cite
