@@ -144,8 +144,8 @@ const W = width;
     .attr('class', 'tickLabel1')
     .attr('x', d=>scaleDD(d)+barX+.5)
     .attr('y', firstBarY+18)
+    //.style("font-size", `{W < 550 ? 12 : W < 650 ? 14 : W < 750 ? 16 : W < 850 ? 18 : 20}px`)
     .text(d=>d)
-    .style("font-size", `{width < 350 ? 12 : width < 450 ? 14 : width < 550 ? 16 : width < 650 ? 18 : 20}px`)
   // Cent ticks
   svg.selectAll('.tickC2')
     .data(d3.range(width > 500 ? 10 : 10, 100))
@@ -172,6 +172,7 @@ const W = width;
     .attr('class', 'timeLabel')
     .attr('x', barX+2)
     .attr('y', (d,i)=>i*30+firstBarY+20)
+    .style("font-size", `${W < 300 ? 14 : W < 400 ? 16 : W < 500 ? 18 : W < 600 ? 20 : 22}px`)
     .text(d=>d);
   svg.attr("id", "barClock");
   return svg.node();
@@ -278,6 +279,7 @@ const W = width;
     .attr('class', 'tickLabel1')
     .attr('x', d=>scaleDD(d)+barX+.5)
     .attr('y', firstBarY+18)
+    //.style("font-size", `{W < 350 ? 12 : W < 450 ? 14 : W < 550 ? 16 : W < 650 ? 18 : 20}px`)
     .text(d=>d)
   // Cent ticks
   svg.selectAll('.tickC2')
@@ -305,6 +307,7 @@ const W = width;
     .attr('class', 'timeLabel')
     .attr('x', barX+2)
     .attr('y', (d,i)=>i*30+firstBarY+20)
+    .style("font-size", `${W < 300 ? 14 : W < 400 ? 16 : W < 500 ? 18 : W < 600 ? 20 : 22}px`)
     .text(d=>d);
   svg.attr("id", "barClock");
   return svg.node();
@@ -341,7 +344,7 @@ const svg = d3.select(DOM.svg(width, height - (width < 400 ? 10 : width < 600 ? 
   const renderSolarSystem = () => {
     svg.selectAll("#solar-system *").remove();
     svg.selectAll("#solar-system").call(solarSystem,
-                                        columnWidth / 1.08,
+                                        columnWidth / 1.1,
                                         location,
                                         selection.date,
                                         selection.hour);
@@ -361,7 +364,7 @@ const svg = d3.select(DOM.svg(width, height - (width < 400 ? 10 : width < 600 ? 
   }
   svg.append("g")
     .attr("id", "solar-system")
-    .attr("transform", `translate(${margin.left}, ${margin.top + height / 7.6})`);
+    .attr("transform", `translate(${margin.left + 2}, ${margin.top + height / 7.5})`);
   const plot = svg.append("g")
     .attr("id", "daylightplot")
     .attr("transform", `translate(${margin.left}, ${margin.top + height / 4})`);
@@ -1254,9 +1257,9 @@ solarSystem = (root, width, location, date, hour) => {
         (solarSystemRadius + 18) * 1.18 * stretch * Math.cos(startMonthAngle)
       )
       .attr("text-anchor", "middle")
-      .attr("font-size", fontSize * (width < 465 ? 1.2 : 1.4))
+      .attr("font-size", fontSize * (width < 205 ? 1.1 : 1.2))
       .attr("dominant-baseline", "middle")
-      .attr("font-size", fontSize * (width < 465 ? 1.2 : 1.4))
+      .attr("font-size", fontSize * (width < 205 ? 1.1 : 1.2))
       .attr("font-family", "sans-serif")
       .attr("fill", "black");
   });
@@ -1455,7 +1458,7 @@ daylightPlot = (
     .call(yAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    .call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 465 ? .1 : .2)))
+    .call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 205 ? .96 : 1.3)))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
@@ -1464,7 +1467,7 @@ daylightPlot = (
     .call(xAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    .call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 465 ? .1 : .1)))
+    .call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 165 ? 1.1 : 1.3)))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
@@ -1512,31 +1515,31 @@ daylightPlot = (
   legend
     .append("rect")
     .attr("rx", 5)
-    .attr("x", -35)
-    .attr("y", 4.5)
-    .attr("width", fontSize * (width < 465 ? 1.4 : 1.8))
-    .attr("height", fontSize * (width < 465 ? 1.4 : 1.8))
+    .attr("x", -34 + 34 * (width < 205))
+    .attr("y", 4.5 * (width < 205 ? 1.4 : 1))
+    .attr("width", fontSize * (width < 205 ? 1.2 : 1.4))
+    .attr("height", fontSize * (width < 205 ? 1.2 : 1.4))
     .attr("fill", colors.night);
   legend
     .append("text")
-    .attr("x", -16)
+    .attr("x", -16 + 34 * (width < 205))
     .attr("y", 19)
-    .attr("font-size", fontSize * (width < 465 ? 1.4 : 1.8))
+    .attr("font-size", fontSize * (width < 205 ? 1.2 : 1.4))
     .attr("font-family", "sans-serif")
     .text("Night");
   legend
     .append("rect")
-    .attr("x", 34)
+    .attr("x", 34 + 26 * (width < 205))
     .attr("rx", 5)
-    .attr("y", 4.5)
-    .attr("width", fontSize * (width < 465 ? 1.4 : 1.8))
-    .attr("height", fontSize * (width < 465 ? 1.4 : 1.8))
+    .attr("y", 4.5 * (width < 205 ? 1.4 : 1))
+    .attr("width", fontSize * (width < 205 ? 1.2 : 1.4))
+    .attr("height", fontSize * (width < 205 ? 1.2 : 1.4))
     .attr("fill", colors.day);
   legend
     .append("text")
-    .attr("x", 52)
+    .attr("x", 52 + 26 * (width < 205))
     .attr("y", 19)
-    .attr("font-size", fontSize * (width < 465 ? 1.4 : 1.8))
+    .attr("font-size", fontSize * (width < 205 ? 1.2 : 1.4))
     .attr("font-family", "sans-serif")
     .text("Day");
   /* Time and date controls */
@@ -1759,8 +1762,8 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.stroke();
     context.fillStyle = `#000`;
     context.font = width < 760 ? "14px serif" : width < 990 ? "17px serif" : "23px serif";
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 84 - (width < 400) * 3.6])));
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -66])));
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 84 - (width < 500) * 8.8])));
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -66 + (width < 500) * 1.1])));
     context.beginPath(), path(night), context.fillStyle = "rgba(0,0,255,0.1)", context.fill();
     context.beginPath(); path.pointRadius(17); path({type: "Point", coordinates: sun}); context.strokeStyle = "#0008"; context.fillStyle = "#ff08"; context.lineWidth = 1; context.stroke(); context.fill();
     if (lon != null && lat != null) {
@@ -1793,7 +1796,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     type: "worldMapCoordinates",
     title,
     description,
-    display: v => (width > 400) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: ${width / 50}px monospace; position: relative; top: -${width / 36}px;  margin-bottom: -.4em;">
+    display: v => (width > 300) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: ${width / 50}px monospace; position: relative; top: -${width / 30}px;  margin-bottom: -.4em;">
             <span style="color: #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
             &nbsp; &nbsp;
             <span style="color: #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
@@ -1892,26 +1895,26 @@ function setStyle(content, style = {}) {
   stroke-width: 3px;
 }
 #clock .second-hand {
-  stroke-width:3;
+  stroke-width: 3;
 }
 #clock .minute-hand {
-  stroke-width:8;
-  stroke-linecap:round;
+  stroke-width: 8;
+  stroke-linecap: round;
 }
 #clock .hour-hand {
-  stroke-width:12;
-  stroke-linecap:round;
+  stroke-width: 12;
+  stroke-linecap: round;
 }
 #clock .hands-cover {
-  stroke-width:3;
-  fill:#fff;
+  stroke-width: 3;
+  fill: #fff;
 }
 #clock .second-tick {
-  stroke-width:3;
-  fill:#000;
+  stroke-width: 3;
+  fill: #000;
 }
 #clock .hour-tick {
-  stroke-width:8; // same as the minute hand
+  stroke-width: 8; // same as the minute hand
 }
 #clock .second-label {
   font-size: 18px;
