@@ -761,7 +761,7 @@ can be useful for getting [Dec dates](../../dec/date)🗓️to match
 [Gregorian
 calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
 dates🗓️with negative [UTC
-offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20local%20solar%20time).
+offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place).
 
 There are [37 UTC
 offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets), but only 10
