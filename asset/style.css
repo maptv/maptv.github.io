@@ -207,6 +207,13 @@ div > form > label {
   padding: 0px 2px 0px 2px;
 }
 
+.orchid {
+  border-radius: 4px;
+  background-color: darkorchid;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
 .orangered {
   border-radius: 4px;
   background-color: orangered;
