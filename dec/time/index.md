@@ -713,12 +713,12 @@ clock1 = {
 }
 ```
 
-The plot to the lower left of the map🗺️visualizes the nighttime (blue)
-and daytime (yellow) time of day (x-axis) throughout every day of the
-year (y-axis) at the latitude of the red⭕️circle on the map🗺️.
-The↕vertical position of the red<font color=red>—</font>line (time of
-day) and the↔️horizontal position of the red🔴dot (day of the year) on
-the plot control the🌐globes above and to the right of the plot.
+The plot to the lower left of the map🗺️visualizes the night (blue) and
+day (yellow) time of day (x-axis) throughout every day of the year
+(y-axis) at the latitude of the red⭕️circle on the map🗺️. The↕vertical
+position of the red<font color=red>—</font>line (time of day) and
+the↔️horizontal position of the red🔴dot (day of the year) on the plot
+control the🌐globes above and to the right of the plot.
 
 # Zone
 
@@ -1254,9 +1254,9 @@ solarSystem = (root, width, location, date, hour) => {
         (solarSystemRadius + 18) * 1.18 * stretch * Math.cos(startMonthAngle)
       )
       .attr("text-anchor", "middle")
-      .attr("font-size", fontSize * (width < 465 ? 1 : 1.2))
+      .attr("font-size", fontSize * (width < 465 ? 1.2 : 1.4))
       .attr("dominant-baseline", "middle")
-      .attr("font-size", fontSize * (width < 465 ? 1 : 1.2))
+      .attr("font-size", fontSize * (width < 465 ? 1.2 : 1.4))
       .attr("font-family", "sans-serif")
       .attr("fill", "black");
   });
@@ -1455,7 +1455,7 @@ daylightPlot = (
     .call(yAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    //.call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 465 ? 1 : 1.2)))
+    .call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 465 ? .1 : .2)))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
@@ -1464,16 +1464,16 @@ daylightPlot = (
     .call(xAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    //.call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 465 ? 1 : 1.2)))
+    .call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 465 ? .1 : .1)))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
     .append("text")
     .text("Time of day (millidays)")
     .attr("x", margin.left + chartWidth / 2)
-    .attr("y", margin.top + chartHeight + margin.bottom - 2)
+    .attr("y", margin.top + chartHeight + margin.bottom - 1)
     .attr("text-anchor", "middle")
-    .attr("font-size", fontSize * (width < 465 ? 1 : 1.2))
+    .attr("font-size", fontSize * (width < 365 ? 1.4 : 1.8))
     .attr("font-family", "sans-serif")
     .attr("fill", "black");
   const data = yearDates(year)
@@ -1512,33 +1512,33 @@ daylightPlot = (
   legend
     .append("rect")
     .attr("rx", 5)
-    .attr("x", -25)
-    .attr("y", 6)
-    .attr("width", fontSize * (width < 465 ? 1 : 1.2))
-    .attr("height", fontSize * (width < 465 ? 1 : 1.2))
+    .attr("x", -35)
+    .attr("y", 4.5)
+    .attr("width", fontSize * (width < 465 ? 1.4 : 1.8))
+    .attr("height", fontSize * (width < 465 ? 1.4 : 1.8))
     .attr("fill", colors.night);
   legend
     .append("text")
-    .attr("x", -8)
+    .attr("x", -16)
     .attr("y", 19)
-    .attr("font-size", fontSize * (width < 465 ? 1 : 1.2))
+    .attr("font-size", fontSize * (width < 465 ? 1.4 : 1.8))
     .attr("font-family", "sans-serif")
-    .text("Nighttime");
+    .text("Night");
   legend
     .append("rect")
-    .attr("x", 58)
+    .attr("x", 34)
     .attr("rx", 5)
-    .attr("y", 6)
-    .attr("width", fontSize * (width < 465 ? 1 : 1.2))
-    .attr("height", fontSize * (width < 465 ? 1 : 1.2))
+    .attr("y", 4.5)
+    .attr("width", fontSize * (width < 465 ? 1.4 : 1.8))
+    .attr("height", fontSize * (width < 465 ? 1.4 : 1.8))
     .attr("fill", colors.day);
   legend
     .append("text")
-    .attr("x", 75)
+    .attr("x", 52)
     .attr("y", 19)
-    .attr("font-size", fontSize * (width < 465 ? 1 : 1.2))
+    .attr("font-size", fontSize * (width < 465 ? 1.4 : 1.8))
     .attr("font-family", "sans-serif")
-    .text("Daytime");
+    .text("Day");
   /* Time and date controls */
   const dateLine = root.append("g");
   const updateControlPositions = () => {
@@ -1845,17 +1845,11 @@ function setStyle(content, style = {}) {
     ...rest
   }}>${content}</span>`;
 }
-styledZone = setStyle(selectedZone, d3.color("chartreuse").formatHex())
-styledTime = setStyle(`+${decTime}`, d3.color("cyan").formatHex())
-styledTimeN = setStyle(`-${decTimeN}`, d3.color("pink").formatHex())
 ```
 
 <style>
   #barClock {
     width: 100%;
-  }
-  svg g g.tick text {
-    font-size: 1.1em !important;
   }
   .tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
     fill: #000;
