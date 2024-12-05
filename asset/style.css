@@ -193,9 +193,23 @@ div > form > label {
   padding: 0px 2px 0px 2px;
 }
 
+.winedregs {
+  border-radius: 4px;
+  background-color: #673147;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
 .magenta {
   border-radius: 4px;
   background-color: darkmagenta;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
+.orangered {
+  border-radius: 4px;
+  background-color: orangered;
   color: white;
   padding: 0px 2px 0px 2px;
 }
@@ -263,10 +277,10 @@ div > form > label {
   padding: 0px 2px 0px 2px;
 }
 
-.urobilin {
+.ultramarine {
   border-radius: 4px;
-  background-color: #E1AD21;
-  color: black;
+  background-color: #120A8F;
+  color: white;
   padding: 0px 2px 0px 2px;
 }
 
