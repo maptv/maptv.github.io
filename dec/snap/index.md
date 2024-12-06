@@ -1,42 +1,15 @@
----
-title: Dec Time
-image: /asset/daywide.svg
-description: >
-  Introducing Declock, a timekeeping system that displays time in decimal days using math notation without the need for hours, minutes, or seconds.
-citation:
-  url: https://maptv.github.io/dec/time
-aliases:
-  - /measure/dec/time
-  - /time
-license: CC BY-SA
-lightbox: false
-toc: true
-toc-depth: 4
-format:
-  html:
-    shift-heading-level-by: 3
-    include-after-body:
-      - ../../asset/cite.html
-      - ../../asset/style.html
-      - ../../asset/stamp.html
-      - ../../asset/tooltip.html
-  commonmark: default
-filters:
-  - ../../asset/date.lua
-  - include-code-files
----
+# Dec Time
+Martin Laptev
+2024+251
 
-# Time {.hiddenheading}
+My website provides many examples of the [Quarto](https://quarto.org)
+publishing and the [Dec](../../dec) measurement systems in action. I
+leverage Quarto support for the [Observable](https://observablehq.com/)
+data analysis and visualization system to display animated or
+interactive plots like the bar chart, clocks, solar terminator map, and
+line chart below.
 
-My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the clocks🕓and bar📊charts below, which display a Dec time like the one on the left side of the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) (navbar) above.
-
-Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day). The shortest, longest, and thinnest clock🕓hands and the top, middle, and bottom bars📊indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, [+\${decTime}]{.cyan}, or until the end, [-\${decTimeN}]{.pink}, of the day in the Dec time zone, [\${selectedZone}]{.lime}, selected by the red⭕️circle on the [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺️beneath the  bars📊.
-
-:::{.clocks}
-\${clock}\${clock1}
-:::
-
-```{ojs}
+``` {ojs}
 //| echo: false
 // https://observablehq.com/@fheyen/barchart-clock
 barChart = {
@@ -47,7 +20,7 @@ const W = width;
   const svg = d3
     .create("svg")
     .attr("width", W)
-    .attr("viewBox", [0, 0, W * (W < 370 ? .73 : W < 420 ? .76 : W < 470 ? .79 : W < 520 ? .81 : W < 570 ? .83 : W < 620 ? .84 : W < 670 ? .85 : W < 720 ? .86 : .87), H]);
+    .attr("viewBox", [0, 0, W * .87, H]);
   const xRange = [0, W - 100];
   const scaleDD = d3.scaleLinear()
     .domain([0, 10])
@@ -58,6 +31,7 @@ const W = width;
   // Background bars to show where 100% lies
   svg.selectAll('.background')
     .data([
+      // 'dek', 'dotd',
       'dd', "mils", 'beats'])
     .enter()
     .append('rect')
@@ -69,7 +43,7 @@ const W = width;
     .append('rect')
     .attr('class', 'timeBar')
     .attr('y', firstBarY+60)
-    .attr('width', d => scaleMandB(Number(barBeats)))
+    .attr('width', d => scaleMandB(Number(barBeats)+Number(barMb)/1000))
   svg
     .append('rect')
     .attr('class', 'timeBarFull')
@@ -80,7 +54,7 @@ const W = width;
     .append('rect')
     .attr('class', 'timeBar')
     .attr('y', firstBarY)
-    .attr('width', d => scaleDD(Number(barDD)+Number(barMils)/100+Number(barBeats)/10000))
+    .attr('width', d => scaleDD(Number(barDD)+Number(barMils)/100+Number(barBeats)/10000+Number(barMb)/10000000))
   svg
     .append('rect')
     .attr('class', 'timeBarFull')
@@ -137,7 +111,6 @@ const W = width;
     .attr('class', 'tickLabel1')
     .attr('x', d=>scaleDD(d)+barX+.5)
     .attr('y', firstBarY+18)
-    //.style("font-size", `{W < 550 ? 12 : W < 650 ? 14 : W < 750 ? 16 : W < 850 ? 18 : 20}px`)
     .text(d=>d)
   // Cent ticks
   svg.selectAll('.tickC2')
@@ -159,13 +132,12 @@ const W = width;
     .attr('height', d=>d%2===0? 9:6)
   // Labels
   svg.selectAll('.timeLabel')
-    .data([`+${barDD}`, `${barMils}`, `${barBeats}`])
+    .data([`${barDD}`, `${barMils}`, `${barBeats}`])
     .enter()
     .append('text')
     .attr('class', 'timeLabel')
     .attr('x', barX+2)
     .attr('y', (d,i)=>i*30+firstBarY+20)
-    .style("font-size", `${W < 300 ? 14 : W < 400 ? 16 : W < 500 ? 18 : W < 600 ? 20 : 22}px`)
     .text(d=>d);
   svg.attr("id", "barClock");
   return svg.node();
@@ -178,7 +150,7 @@ const W = width;
   const svg = d3
     .create("svg")
     .attr("width", W)
-    .attr("viewBox", [0, 0, W * (W < 370 ? .73 : W < 420 ? .76 : W < 470 ? .79 : W < 520 ? .81 : W < 570 ? .83 : W < 620 ? .84 : W < 670 ? .85 : W < 720 ? .86 : .87), H]);
+    .attr("viewBox", [0, 0, W * .87, H]);
   const xRange = [0, W - 100];
   const scaleDD = d3.scaleLinear()
     .domain([0, 10])
@@ -204,7 +176,7 @@ const W = width;
     .append('rect')
     .attr('class', 'timeBar')
     .attr('y', firstBarY+60)
-    .attr('width', d => scaleMandB(Number(barBeatsN)))
+    .attr('width', d => scaleMandB(Number(barBeatsN)+Number(barMbN)/1000))
   svg
     .append('rect')
     .attr('class', 'timeBarFullN')
@@ -215,7 +187,7 @@ const W = width;
     .append('rect')
     .attr('class', 'timeBar')
     .attr('y', firstBarY)
-    .attr('width', d => scaleDD(Number(barDDN)+Number(barMilsN)/100+Number(barBeatsN)/10000))
+    .attr('width', d => scaleDD(Number(barDDN)+Number(barMilsN)/100+Number(barBeatsN)/10000+Number(barMbN)/10000000))
   svg
     .append('rect')
     .attr('class', 'timeBarFullN')
@@ -272,7 +244,6 @@ const W = width;
     .attr('class', 'tickLabel1')
     .attr('x', d=>scaleDD(d)+barX+.5)
     .attr('y', firstBarY+18)
-    //.style("font-size", `{W < 350 ? 12 : W < 450 ? 14 : W < 550 ? 16 : W < 650 ? 18 : 20}px`)
     .text(d=>d)
   // Cent ticks
   svg.selectAll('.tickC2')
@@ -294,24 +265,32 @@ const W = width;
     .attr('height', d=>d%2===0? 9:6)
   // Labels
   svg.selectAll('.timeLabel')
-    .data([`-${barDDN}`, `${barMilsN}`, `${barBeatsN}`])
+    .data([`${barDDN}`, `${barMilsN}`, `${barBeatsN}`])
     .enter()
     .append('text')
     .attr('class', 'timeLabel')
     .attr('x', barX+2)
     .attr('y', (d,i)=>i*30+firstBarY+20)
-    .style("font-size", `${W < 300 ? 14 : W < 400 ? 16 : W < 500 ? 18 : W < 600 ? 20 : 22}px`)
     .text(d=>d);
   svg.attr("id", "barClock");
   return svg.node();
 }
+```
+
+<div class="clocks">
+
+${clock}${clock1}
+
+</div>
+
+``` {ojs}
+//| echo: false
 viewof location = worldMapCoordinates([162, 0], [width * .998, Math.round((21 / 40) * width)])
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 app = {
-const svg = d3.select(DOM.svg(width, height - (width < 400 ? 10 : width < 600 ? 15 : width < 700 ? 30 : 40)));
+  const svg = d3.select(DOM.svg(width, height));
   svg.style("user-select", "none")
      .style("-webkit-user-select", "none");
-  svg.attr("id", "daylightapp")
   const margin = {top: 0, left: 10, right: 10, bottom: 0, inner: 3};
   const contentWidth = width - margin.left - margin.right - margin.inner;
   const columnWidth = contentWidth / 2;
@@ -320,9 +299,9 @@ const svg = d3.select(DOM.svg(width, height - (width < 400 ? 10 : width < 600 ? 
     hour: new Date().getHours()
   }
   const renderPlot = () => {
-    svg.selectAll("#daylightplot *").remove();
-    svg.select("#daylightplot").call(daylightPlot, {
-      width: columnWidth / 1.26,
+    svg.selectAll("#plot *").remove();
+    svg.select("#plot").call(daylightPlot, {
+      width: columnWidth / 1.28,
       height: height / 1.51 - margin.top - margin.bottom,
       year: new Date().getFullYear(),
       latitude: location[1],
@@ -332,12 +311,12 @@ const svg = d3.select(DOM.svg(width, height - (width < 400 ? 10 : width < 600 ? 
   }
   const renderGlobe = () => {
     svg.selectAll("#globe *").remove();
-    svg.selectAll("#globe").call(globe, { width: columnWidth * 1.2, location, ...selection });
+    svg.selectAll("#globe").call(globe, { width: columnWidth * 1.22, location, ...selection });
   }
   const renderSolarSystem = () => {
     svg.selectAll("#solar-system *").remove();
     svg.selectAll("#solar-system").call(solarSystem,
-                                        columnWidth / 1.1,
+                                        columnWidth / 1.08,
                                         location,
                                         selection.date,
                                         selection.hour);
@@ -357,13 +336,13 @@ const svg = d3.select(DOM.svg(width, height - (width < 400 ? 10 : width < 600 ? 
   }
   svg.append("g")
     .attr("id", "solar-system")
-    .attr("transform", `translate(${margin.left + 2}, ${margin.top + height / 7.5})`);
+    .attr("transform", `translate(${margin.left}, ${margin.top + height / 7.6})`);
   const plot = svg.append("g")
-    .attr("id", "daylightplot")
+    .attr("id", "plot")
     .attr("transform", `translate(${margin.left}, ${margin.top + height / 4})`);
   svg.append("g")
     .attr("id", "globe")
-    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 1.25}, ${margin.top + Number(columnWidth < 300) * 12})`);
+    .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 1.25}, ${margin.top + Number(columnWidth < 300) * 16})`);
   setSelection(selection, true);
   const handleDateHourChange = ({ target, detail: { date, hour }}) => {
     if (date != null && hour != null) setSelection({...selection, date, hour});
@@ -371,6 +350,52 @@ const svg = d3.select(DOM.svg(width, height - (width < 400 ? 10 : width < 600 ? 
   svg.node().addEventListener(EventType.DateHourChange, handleDateHourChange, false);
   return svg.node();
 }
+```
+
+``` {ojs}
+//| echo: false
+viewof schedule = Inputs.radio([2, 3, 4, 5], {label: "Workdays per pent", value: 3})
+viewof intervals = Inputs.form([
+  interval([0, 1], {step: .01, value: [.3, .7], label: '0 or 5', width: 195, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}=${formatDecimal(end)}`}),
+  interval([0, 1], {step: .01, value: [.3, .7], label: '1 or 6', width: 195, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}=${formatDecimal(end)}`}),
+  interval([0, 1], {step: .01, value: [.3, .7], label: '2 or 7', width: 195, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}=${formatDecimal(end)}`}),
+  interval([0, 1], {step: .01, value: [0, 0], label: '3 or 8', width: 195, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}=${formatDecimal(end)}`}),
+  interval([0, 1], {step: .01, value: [0, 0], label: '4 or 9', width: 195, format: ([start, end]) => start === end ? "" : `${formatDecimal(start)}=${formatDecimal(end)}`}),
+])
+pentBar = Plot.plot({
+  x: {label: "Day of the dek", labelOffset: 36, labelArrow: true, labelAnchor: "center"},
+  style: {fontSize: "16px"},
+  marginBottom: 40,
+  marginLeft: 45,
+  width: width,
+  className: "pentbar",
+  color: {scheme: "Set1", legend: "swatches", reverse: true, className: "pentbarlegend"},
+  y: {label: "Proportion of the day", domain: [1, 0], tickPadding: 6, tickSize: -4, labelOffset: 44, labelArrow: true, labelAnchor: "center"},
+  marks: [
+  Plot.barY(durations, {x: "label", y: "duration", fill: "group"}),
+  Plot.textY(
+      durations,
+      Plot.stackY(
+        Plot.groupX(
+          { y: "first", text: "first",
+          },
+          {
+            x: "label",
+            z: "group",
+            y: "duration",
+            text: (d) => (d.duration < .0001 ? null : formatDecimal(d.duration)),
+            fill: "white",
+            stroke: "black",
+            fontSize: 28,
+          }
+        )
+      )
+    ),
+  ]})
+```
+
+``` {ojs}
+//| echo: false
 // https://observablehq.com/@d3/simple-clock
 // https://observablehq.com/@drio/lets-build-an-analog-clock
 clock = {
@@ -510,19 +535,19 @@ clock = {
     sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : decTime[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : decTime.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : decTime.slice(4, 6);
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : declock[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : declock.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : declock.slice(4, 6);
   }
   const svg = d3
     .create("svg")
     .attr("viewBox", [0, 0, w, h])
-    .style("max-width", `${width / 2.1}px`)
+    .style("max-width", "350px")
     .attr("class", "clock-top")
     .attr("id", "clock");
   svg
     .append("text")
-    .text(`+${decTime}-${selectedZone}`)
+    .text("+" + selected)
     .attr("x", clockRadius + margin)
     .attr("y", clockRadius * 2 + margin * 1.975)
     .attr("text-anchor", "middle")
@@ -677,19 +702,19 @@ clock1 = {
     sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
   }
   function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10) : decTimeN[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10 % 1 * 100) : decTimeN.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExactN * 10 % 1 * 100 % 1 * 100 : decTimeN.slice(4, 6);
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10) : declockM[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactM * 10 % 1 * 100) : declockM.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExactM * 10 % 1 * 100 % 1 * 100 : declockM.slice(4, 6);
   }
   const svg = d3
     .create("svg")
     .attr("viewBox", [0, 0, w, h])
-    .style("max-width", `${width / 2.1}px`)
+    .style("max-width", "350px")
     .attr("class", "clock-btm")
     .attr("id", "clock");
   svg
     .append("text")
-    .text(`-${decTimeN}-${selectedZone}`)
+    .text("-" + selectedM)
     .attr("x", clockRadius + margin)
     .attr("y", clockRadius * 2 + margin * 1.975)
     .attr("text-anchor", "middle")
@@ -709,75 +734,7 @@ clock1 = {
 }
 ```
 
-The plot to the lower left of the map🗺️visualizes the night (blue) and day (yellow) time of day (x-axis) throughout every day of the year (y-axis) at the latitude of the red⭕️circle on the map🗺️. The↕vertical position of the red<font color=red>—</font>line (time of day) and the↔️horizontal position of the red🔴dot (day of the year) on the plot control the🌐globes above and to the right of the plot.
-
-# Zone
-
-Drag the red⭕️circle across the [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of) (vertical↕gray lines) on the map🗺️to see how changing time zones affects the time. Only the first digit of the Dec times shown above, the [deciday]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"}, varies across time zones, because the 10 Dec time zones, numbered 0 through 9 on the map🗺️, are each 1 [deci[turn](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a turn"} (d[$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) wide. Simply put, a [deciturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a turn"} of longitude translates into a [deciday]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"} of time.
-
-The leftmost vertical↕line on the map🗺️is [Meridian 0](https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole), the Dec [International Date Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) and [prime meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0), which cuts across the Atlantic Ocean through Iceland🇮🇸just West of Africa🌍and is the boundary between Zone 9 and Zone 0, the rightmost and leftmost Dec time zones on the map🗺️, respectively. Arranging Dec time zones from 0 to 9 yields
-a [Pacific-centric](https://en.wikipedia.org/wiki/World_map#:~:text=south%2Dup%20map-,Pacific%2Dcentric%20map,-(more%20commonly%20used)) map🗺️.
-
-While only positive Dec time zones are shown on the map🗺️, every Dec time zone can also be expressed as a negative number. Each pair of time zone numbers produces the same Dec time, but result in [Dec dates](/dec/date)🗓️that are 1 day apart. Negative time zone numbers can be useful for getting [Dec dates](/dec/date)🗓️to match [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world) dates🗓️with negative [UTC offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place).
-
-There are [37 UTC offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets), but only 10 Dec time zones. Conversion between Dec time zones and UTC offsets is inexact, because UTC offsets depend on geographic and political boundaries, whereas Dec time zones are determined solely by longitude. If you know your longitude in degrees (°) or [centi[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of a turn"}  ([$c\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)), you can look up your Dec time zone (TZ) in the table below.
-
-| TZ<br>+ | TZ<br>- | Start<br>° | Mid<br>° | End<br>° | Start<br>$c\tau$ | Mid<br>$c\tau$ | End<br>$c\tau$ |
-| :---:   | :---:   | :---:      | :---:    | :---:    | :---:            | :---:          | :---:          |
-| 9       | -1      | -54        | -36      | -18      | 90               | 95             | 100            |
-| 8       | -2      | -90        | -72      | -54      | 80               | 85             | 90             |
-| 7       | -3      | -126       | -108     | -90      | 70               | 75             | 80             |
-| 6       | -4      | -162       | -144     | -126     | 60               | 65             | 70             |
-| 5       | -5      | 162        | 180      | -162     | 50               | 55             | 60             |
-| 4       | -6      | 126        | 144      | 162      | 40               | 45             | 50             |
-| 3       | -7      | 90         | 108      | 126      | 30               | 35             | 40             |
-| 2       | -8      | 54         | 72       | 90       | 20               | 25             | 30             |
-| 1       | -9      | 18         | 36       | 54       | 10               | 15             | 20             |
-| 0       | -10     | -18        | 0        | 18       | 0                | 5              | 10             |
-
-Dec times in Zone 0 and 5 can be directly converted to and from UTC times with an offset of 0 and 12 hours, respectively. The other Dec time zones will differ from the closest UTC time by 8.[3]{.over}, 16.[6]{.over}, 25, 33.[3]{.over}, 41.[6]{.over} or 50 [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of a day"}. To find the difference &delta;, convert the UTC offset hours [o~h~]{.cyan} and minutes [o~m~]{.cyan} into [deci[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a turn"} of the longitude &lambda; and then subtract the Dec zone number [z]{.lime}:
-
-$$\lambda = o_h \div 2.4 + o_m \div 144$$
-
-$$z = \lfloor\lambda + 1 \div 2\rfloor$$
-
-$$\delta = \lambda - z$$
-
-We can avoid dealing with the time zone difference by shifting the time zone so that we always convert between Zone 0 and [UTC+00:00](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+00:00,_Z) or Zone 5 and [UTC+12:00](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+12:00,_M). To obtain the Zone 0 time, we evaluate a Dec time as a math expression, add 10, and get the remainder after dividing by 10 to make sure the result is less than 10 [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}: ([\${browserTime.toFixed(4)}]{.cyan} \${browserSign} [\${Math.abs(browserZone)}]{.lime} + 10) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 10 = [\${zone0time.toFixed(4)}]{.cyan}.
-
-::: {.callout-warning}
-# Bad Pun Alert
-Sorry if reading this takes a long [time]{.cyan}; I hope you don’t [zone]{.lime} out!
-:::
-
-# Unit
-
-Dec uses [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) to create [submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20) of a day that can naturally be combined together into a single [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers) number. Conversion between decimal units is as simple as moving↔︎️or removing❌the [decimal separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number). In contrast, an `hh:mm:ss` time is a [mixed-radix](https://en.wikipedia.org/wiki/Mixed_radix#:~:text=non%2Dstandard%20positional%20numeral%20systems%20in%20which%20the%20numerical%20base%20varies%20from%20position%20to%20position) number, where `hh` is the [base-12](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=12-,Duodecimal,-%2C%20dozenal) or [base-24](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D) hour, `mm` is the [base-60](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=60-,Sexagesimal,-Babylonian%20numerals%20and) minute, and `ss` is the base-60 second.
-
-| Prefix     | Power | Day    | hh:mm:ss.sss |
-| ---------- | ----- | ------ | ------------ |
-|            |  0    | 1      | 24:00:00.000 |
-| deci       | -1    | .1     | 02:24:00.000 |
-| centi      | -2    | .01    | 00:14:24.000 |
-| milli      | -3    | .001   | 00:01:26.400 |
-| decimilli  | -4    | .0001  | 00:00:08.640 |
-| centimilli | -5    | .00001 | 00:00:00.864 |
-
-To convert the hour [h]{.orchid}, minute [m]{.maroon}, and second [s]{.seagreen} into the [deciday](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"} [d]{.cyan}, Dec uses the following equation: [d]{.cyan} = [h]{.orchid} &div; 2.4 + [m]{.maroon} &div; 144 + [s]{.seagreen} &div; 8640. The current equation values in Zone [\${browserZone}]{.lime} are: [\${browserTime.toFixed(4)}]{.cyan} = [\${Math.floor(hours).toString().padStart(2, "0")}]{.orchid} &div; 2.4 + [\${Math.floor(minutes).toString().padStart(2, "0")}]{.maroon} &div; 144 + [\${Math.floor(seconds).toString().padStart(2, "0")}]{.seagreen} &div; 8640. Inversely, we can convert [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} into hours: [h]{.orchid} = [d]{.cyan} &times; 2.4, minutes: [m]{.maroon} = [h]{.orchid} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 &times; 60, and seconds: [s]{.seagreen} = [m]{.maroon} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 &times; 60.
-
-Instead of dealing with hours, minutes, and seconds, we can convert the [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970) [u]{.azul} into the Dec time [d]{.cyan}+[0]{.lime}. First, we divide [u]{.azul} by 86400 to convert seconds to days, then isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers), and finally multiply by 10: [d]{.cyan} + [0]{.lime} = [u]{.azul} &div; 86400 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 &times; 10. The current values in this equation are [\${browserTime.toFixed(4)}]{.cyan} + [0]{.lime} = [\${(unix / 1000).toFixed(0)}]{.azul} &div; 86400 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 &times; 10.
-
-The concept of measuring time in decimal days is not novel. In the late 1700s, the [French Republican calendar](https://en.wikipedia.org/wiki/French_Republican_calendar#:~:text=a%20calendar%20created%20and%20implemented%20during%20the%20French%20Revolution) time system referred to [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} as decimal hours, [centidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"} as [décimes](https://en.wikipedia.org/wiki/Decimal_time#:~:text=into%20tenths%2C%20or-,d%C3%A9cimes,-%2C%20instead%20of%20minutes), [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} as decimal minutes, and [centimillidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"} as decimal seconds. Similarly, [Swatch Internet Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time#:~:text=a%20decimal%20time%20system%20introduced%20in%201998%20by%20the%20Swatch%20corporation), a [decimal time](https://en.wikipedia.org/wiki/Decimal_time#:~:text=the%20representation%20of%20the%20time%20of%20day%20using%20units%20which%20are%20decimally%20related) system introduced in 1998, uses the term ".beats" for [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}.
-
-Swatch Internet Time differs from Dec in that it [has no time zones](https://en.wikipedia.org/wiki/Swatch_Internet_Time#Calculation_from_UTC+1:~:text=There%20are%20no%20time%20zones%20in%20Swatch%20Internet%20Time) and is obtained from the [hours, minutes, and seconds](https://en.wikipedia.org/wiki/Swatch_Internet_Time#Calculation_from_UTC+1:~:text=The%20formula%20for%20calculating%20the%20time%20in%20.beats%20from%20UTC%2B1) of [UTC+01:00](https://en.wikipedia.org/wiki/UTC%2B01:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B01%3A00). The major innovations described in this article are the Dec time zone system and the simple equation for obtaining the Dec time in Zone 0 from a UNIX timestamp, but Dec has much more to offer than [deciday](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"} times and zones.
-
-# Next
-
-The next article in the [Dec section](/dec) of my site compares Dec to the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) international standard for dates and times. Like ISO 8601, Dec allows for [combined date and time representations](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) that can be paired up to express [time intervals](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=the%20intervening%20time%20between%20two%20time%20points). In Dec, the combination of a date and time is called a snap🫰and a time interval expressed as a pair of snaps is called a span🌈.
-
-My [ISO 8601 article](/dec/iso) is unique because it avoids the use of Observable in favor of leveraging [Jupyter](https://jupyter.org) support in Quarto to make the code underlying Dec available in multiple programming languages. Observable is a great visualization tool but does not translate well into Jupyter notebooks. After the next article, I return to the use of Observable in my Dec [snap](/dec/span)🫰and [span](/dec/span)🌈articles.
-
-```{ojs}
+``` {ojs}
 //| echo: false
 //| output: false
 unix = {
@@ -798,26 +755,21 @@ function unix2dote1(unix, zone, offset = 719468) {
         (new Date).getTimezoneOffset() / 144)) % 10
       ) / 10 + offset, zone]
 }
-browserDote = unix2dote(unix)
-browserTime = browserDote[0] % 1 * 10
-browserZone = browserDote[1]
-browserSign = browserZone > 0 ? "-" : "+"
-zone0time = (browserTime - browserZone + 10) % 10
-hours = browserTime * 2.4
-minutes = hours % 1 * 60
-seconds = minutes % 1 * 60
 selectedDote = unix2dote(unix, long2zone(location[0]))
 selectedExact = selectedDote[0] % 1
-selectedExactN = (1 - selectedExact) % 1
-selectedZone = selectedDote[1]
-decTime = (selectedExact * 10).toFixed(4)
-decTimeN = (selectedExactN * 10).toFixed(4)
-barDD = decTime[0]
-barDDN = decTimeN[0]
-barMils = decTime.slice(2, 4)
-barMilsN = decTimeN.slice(2, 4)
-barBeats = decTime.slice(4, 6)
-barBeatsN = decTimeN.slice(4, 6)
+selectedExactM = Math.abs(selectedExact - 1)
+barTime = selectedExact.toString().slice(2)
+barTimeN = selectedExactM.toString().slice(2)
+barCents = barTime.slice(0, 2)
+barCentsN = barTimeN.slice(0, 2)
+barDD = barTime[0]
+barDDN = barTimeN[0]
+barMils = barTime.slice(1, 3)
+barMilsN = barTimeN.slice(1, 3)
+barBeats = barTime.slice(3, 5)
+barBeatsN = barTimeN.slice(3, 5)
+barMb = barTime.slice(5, 8)
+barMbN = barTimeN.slice(5, 8)
 function lati2turn1(degrees = -180, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
   return (degrees %= 360) / (360 / 10**e) % 10**e;
@@ -909,9 +861,9 @@ solarSystem = (root, width, location, date, hour) => {
         (solarSystemRadius + 18) * 1.18 * stretch * Math.cos(startMonthAngle)
       )
       .attr("text-anchor", "middle")
-      .attr("font-size", fontSize * (width < 165 ? .9 : width < 265 ? 1 : width < 365 ? 1.1 : 1.2))
+      .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
       .attr("dominant-baseline", "middle")
-      .attr("font-size", fontSize * (width < 165 ? .9 : width < 265 ? 1 : width < 365 ? 1.1 : 1.2))
+      .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
       .attr("font-family", "sans-serif")
       .attr("fill", "black");
   });
@@ -989,11 +941,6 @@ globe = (root, { width, location, date, hour }) => {
     .attr("fill", colors.ocean)
     .attr("stroke", "#9ecbda");
   earth.append("path")
-    .attr("d", path(graticule))
-    .attr("stroke-width", "1")
-    .attr("fill", "none")
-    .attr("stroke", "#888");
-  earth.append("path")
     .attr("d", path(land))
     .attr("fill", colors.land);
   earth.append("path")
@@ -1068,7 +1015,7 @@ daylightPlot = (
   const chartWidth = width - margin.left - margin.right;
   const chartHeight = height - margin.top - margin.bottom;
   const xTickValues =
-    width > 280 ? [3, 6, 9, 12, 15, 18, 21] : width > 140 ? [6, 12, 18] : [12];
+    width > 380 ? [3, 6, 9, 12, 15, 18, 21] : width > 240 ? [6, 12, 18] : [12];
   const xScale = d3
     .scaleLinear()
     .domain([0, 24])
@@ -1110,7 +1057,7 @@ daylightPlot = (
     .call(yAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    .call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 165 ? .7 : width < 265 ? .9 : width < 365 ? 1.3 : 1.4)))
+    //.call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 265 ? 1 : 1.2)))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
@@ -1119,16 +1066,16 @@ daylightPlot = (
     .call(xAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    .call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 165 ? .9 : width < 265 ? 1.1 : width < 365 ? 1.2 : 1.3)))
+    //.call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 265 ? 1 : 1.2)))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
     .append("text")
-    .text("Time of day (millidays)")
+    .text("Local Solar Time")
     .attr("x", margin.left + chartWidth / 2)
-    .attr("y", margin.top + chartHeight + margin.bottom - (width < 165 ? 9 : width < 265 ? 6 : width < 365 ? 2 : 0))
+    .attr("y", margin.top + chartHeight + margin.bottom - 2)
     .attr("text-anchor", "middle")
-    .attr("font-size", fontSize * (width < 165 ? .85 : width < 265 ? 1.15 : width < 365 ? 1.5 : 1.6))
+    .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
     .attr("font-family", "sans-serif")
     .attr("fill", "black");
   const data = yearDates(year)
@@ -1167,33 +1114,33 @@ daylightPlot = (
   legend
     .append("rect")
     .attr("rx", 5)
-    .attr("x", -34 + 4 * (width < 165 ? 12.7 : width < 265 ? 5.5 : width < 365 ? 3 : 0))
-    .attr("y", 4.5 * (width < 165 ? 1.9 : width < 265 ? 1.4 : width < 365 ? .9 : .8))
-    .attr("width", fontSize * (width < 165 ? 1 : width < 265 ? 1.2 : width < 365 ? 1.4 : 1.6))
-    .attr("height", fontSize * (width < 165 ? 1 : width < 265 ? 1.2 : width < 365 ? 1.4 : 1.6))
+    .attr("x", -25)
+    .attr("y", 6)
+    .attr("width", fontSize * (width < 265 ? 1 : 1.2))
+    .attr("height", fontSize * (width < 265 ? 1 : 1.2))
     .attr("fill", colors.night);
   legend
     .append("text")
-    .attr("x", -16 + 4 * (width < 165 ? 11.8 : width < 265 ? 4.9 : width < 365 ? 2.8 : 0))
+    .attr("x", -8)
     .attr("y", 19)
-    .attr("font-size", fontSize * (width < 165 ? 1 : width < 265 ? 1.2 : width < 365 ? 1.4 : 1.6))
+    .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
     .attr("font-family", "sans-serif")
-    .text("Night");
+    .text("Nighttime");
   legend
     .append("rect")
-    .attr("x", 34 + 4 * (width < 165 ? 7.8 : width < 265 ? 8.2 : width < 365 ? 6.9 : 4.2))
+    .attr("x", 58)
     .attr("rx", 5)
-    .attr("y", 4.5 * (width < 165 ? 1.9 : width < 265 ? 1.4 : width < 365 ? .9 : .8))
-    .attr("width", fontSize * (width < 165 ? 1 : width < 265 ? 1.2 : width < 365 ? 1.4 : 1.6))
-    .attr("height", fontSize * (width < 165 ? 1 : width < 265 ? 1.2 : width < 365 ? 1.4 : 1.6))
+    .attr("y", 6)
+    .attr("width", fontSize * (width < 265 ? 1 : 1.2))
+    .attr("height", fontSize * (width < 265 ? 1 : 1.2))
     .attr("fill", colors.day);
   legend
     .append("text")
-    .attr("x", 52 + 4 * (width < 165 ? 6.8 : width < 265 ? 7.8 : width < 365 ? 6.9 : 4.2))
+    .attr("x", 75)
     .attr("y", 19)
-    .attr("font-size", fontSize * (width < 165 ? 1 : width < 265 ? 1.2 : width < 365 ? 1.4 : 1.6))
+    .attr("font-size", fontSize * (width < 265 ? 1 : 1.2))
     .attr("font-family", "sans-serif")
-    .text("Day");
+    .text("Daytime");
   /* Time and date controls */
   const dateLine = root.append("g");
   const updateControlPositions = () => {
@@ -1309,7 +1256,7 @@ function input(config) {
   const wrapper = html`<div></div>`;
   if (!form)
     form = html`<form>
-	<input name=input type=${type} />
+    <input name=input type=${type} />
   </form>`;
   Object.keys(attributes).forEach(key => {
     const val = attributes[key];
@@ -1386,7 +1333,7 @@ function worldMapCoordinates(config = {}, dimensions) {
   const formEl = html`<form style="width: ${width}px;"></form>`;
   const context = DOM.context2d(width, height-width/13.2);
   const canvas = context.canvas;
-  canvas.style.margin = `-10px 0px -26px 0px`;
+  canvas.style.margin = `0px 0px -26px 0px`;
   const projection = d3
     .geoEquirectangular()
     .precision(0.1)
@@ -1414,8 +1361,8 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.stroke();
     context.fillStyle = `#000`;
     context.font = width < 760 ? "14px serif" : width < 990 ? "17px serif" : "23px serif";
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 84 - (width < 500) * 8.8])));
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -66 + (width < 500) * 1.1])));
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 84 - (width < 400) * 3.6])));
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -66])));
     context.beginPath(), path(night), context.fillStyle = "rgba(0,0,255,0.1)", context.fill();
     context.beginPath(); path.pointRadius(17); path({type: "Point", coordinates: sun}); context.strokeStyle = "#0008"; context.fillStyle = "#ff08"; context.lineWidth = 1; context.stroke(); context.fill();
     if (lon != null && lat != null) {
@@ -1448,7 +1395,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     type: "worldMapCoordinates",
     title,
     description,
-    display: v => (width > 300) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: ${width / 50}px monospace; position: relative; top: -${width / 30}px;  margin-bottom: -.4em;">
+    display: v => (width > 400) ? html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: ${width / 50}px monospace; position: relative; top: -${width / 36}px;  margin-bottom: -.4em;">
             <span style="color: #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
             &nbsp; &nbsp;
             <span style="color: #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
@@ -1475,41 +1422,334 @@ antipode = ([longitude, latitude]) => [longitude + 180, -latitude]
 solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
 viewof fancySecondsOFF = Inputs.toggle({
   label: "Ticking clock",
-  value: true,
+  value: false
 })
-function setStyle(content, style = {}) {
-  function yiq(color) {
-    const {r, g, b} = d3.rgb(color);
-    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
-  }
+declock = (selectedExact * 10).toFixed(4);
+declockM = (Math.abs(selectedExact - 1) * 10).toFixed(4);
+selected = `${declock}-${selectedZone}`
+selectedM = `${declockM}-${selectedZone}`
+selectedZone = selectedDote[1]
+durations = [].concat(...nested)
+nested = Array.from({length: intervals.length}, (_, i) => ([
+  {
+  label: `${i} or ${i+5}`,
+  duration: intervals[i][1] !== intervals[i][0] ? intervals[i][0] : 1,
+  group: "Rest"
+},
+  {
+  label: `${i} or ${i+5}`,
+  duration: intervals[i][1]-intervals[i][0],
+  group: "Work"
+},
+  {
+  label: `${i} or ${i+5}`,
+  duration: intervals[i][1] !== intervals[i][0] ? 1-intervals[i][1] : null,
+  group: "Rest"
+  }]))
+schedules = [
+  [[.2, .8], [.2, .8], [0, 0], [0, 0], [0, 0]],
+  [[.3, .7], [.3, .7], [.3, .7], [0, 0], [0, 0]],
+  [[.35, .65], [.35, .65], [.35, .65], [.35, .65], [0, 0]],
+  [[.38, .62], [.38, .62], [.38, .62], [.38, .62], [.38, .62]],
+]
+set(viewof intervals, schedules[schedule-2])
+function interval(range = [], options = {}) {
+  const [min = 0, max = 1] = range;
   const {
-    background,
-    color = yiq(background) >= 0.6 ? "#111" : "white",
-    padding = "0 1px",
-    borderRadius = "4px",
-    fontWeight = 900,
-    fontSize = "1em",
-    ...rest
-  } = typeof style === "string" ? {background: style} : style;
-  return htl.html`<span style=${{
-    background,
+    step = .001,
+    label = null,
+    value = [min, max],
+    format = ([start, end]) => `${start} … ${end}`,
     color,
-    padding,
-    borderRadius,
-    fontWeight,
-    ...rest
-  }}>${content}</span>`;
+    width,
+    theme,
+  } = options;
+  const __ns__ = DOM.uid('scope').id;
+  const css = `
+#${__ns__} {
+  font: 13px/1.2 var(--sans-serif);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: auto;
+}
+@media only screen and (min-width: 30em) {
+  #${__ns__} {
+    flex-wrap: nowrap;
+    width: 360px;
+  }
+}
+#${__ns__} .label {
+  width: 60px;
+  padding: 5px 0 4px 0;
+  margin-right: .5px;
+  flex-shrink: 0;
+}
+#${__ns__} .form {
+  display: flex;
+  width: 100%;
+}
+#${__ns__} .range {
+  flex-shrink: 1;
+  width: 100%;
+}
+#${__ns__} .range-slider {
+  width: 100%;
+}
+  `;
+  const $range = rangeInput({min, max, value: [value[0], value[1]], step, color, width, theme});
+  const $output = html`<output>`;
+  const $view = html`<div id=${__ns__}>
+${label == null ? '' : html`<div class="label">${label}`}
+<div class=form>
+  <div class=range>
+    ${$range}<div class=range-output style="display: inline-block;">${$output}</div>
+  </div>
+</div>
+${html`<style>${css}`}
+  `;
+  const update = () => {
+    const content = format([$range.value[0], $range.value[1]]);
+    if(typeof content === 'string') $output.value = content;
+    else {
+      while($output.lastChild) $output.lastChild.remove();
+      $output.appendChild(content);
+    }
+  };
+  $range.oninput = update;
+  update();
+  return Object.defineProperty($view, 'value', {
+    get: () => $range.value,
+    set: ([a, b]) => {
+      $range.value = [a, b];
+      update();
+    },
+  });
+}
+function rangeInput(options = {}) {
+  const {
+    min = 0,
+    max = 100,
+    step = 'any',
+    value: defaultValue = [min, max],
+    color,
+    width,
+    theme = theme_Flat,
+  } = options;
+  const controls = {};
+  const scope = randomScope();
+  const clamp = (a, b, v) => v < a ? a : v > b ? b : v;
+  const html = htl.html;
+  // Will be used to sanitize values while avoiding floating point issues.
+  const input = html`<input type=range ${{min, max, step}}>`;
+  const dom = html`<div class=${`${scope} range-slider`} style=${{
+    color,
+    width: cssLength(width),
+  }}>
+  ${controls.track = html`<div class="range-track">
+    ${controls.zone = html`<div class="range-track-zone">
+      ${controls.range = html`<div class="range-select" tabindex=0>
+        ${controls.min = html`<div class="thumb thumb-min" tabindex=0>`}
+        ${controls.max = html`<div class="thumb thumb-max" tabindex=0>`}
+      `}
+    `}
+  `}
+  ${html`<style>${theme.replace(/:scope\b/g, '.'+scope)}`}
+</div>`;
+  let value = [], changed = false;
+  Object.defineProperty(dom, 'value', {
+    get: () => [...value],
+    set: ([a, b]) => {
+      value = sanitize(a, b);
+      updateRange();
+    },
+  });
+  const sanitize = (a, b) => {
+    a = isNaN(a) ? min : ((input.value = a), input.valueAsNumber);
+    b = isNaN(b) ? max : ((input.value = b), input.valueAsNumber);
+    return [Math.min(a, b), Math.max(a, b)];
+  }
+  const updateRange = () => {
+    const ratio = v => (v - min) / (max - min);
+    dom.style.setProperty('--range-min', `${ratio(value[0]) * 100}%`);
+    dom.style.setProperty('--range-max', `${ratio(value[1]) * 100}%`);
+  };
+  const dispatch = name => {
+    dom.dispatchEvent(new Event(name, {bubbles: true}));
+  };
+  const setValue = (vmin, vmax) => {
+    const [pmin, pmax] = value;
+    value = sanitize(vmin, vmax);
+    updateRange();
+    // Only dispatch if values have changed.
+    if(pmin === value[0] && pmax === value[1]) return;
+    dispatch('input');
+    changed = true;
+  };
+  setValue(...defaultValue);
+  // Mousemove handlers.
+  const handlers = new Map([
+    [controls.min, (dt, ov) => {
+      const v = clamp(min, ov[1], ov[0] + dt * (max - min));
+      setValue(v, ov[1]);
+    }],
+    [controls.max, (dt, ov) => {
+      const v = clamp(ov[0], max, ov[1] + dt * (max - min));
+      setValue(ov[0], v);
+    }],
+    [controls.range, (dt, ov) => {
+      const d = ov[1] - ov[0];
+      const v = clamp(min, max - d, ov[0] + dt * (max - min));
+      setValue(v, v + d);
+    }],
+  ]);
+  // Returns client offset object.
+  const pointer = e => e.touches ? e.touches[0] : e;
+  // Note: Chrome defaults "passive" for touch events to true.
+  const on  = (e, fn) => e.split(' ').map(e => document.addEventListener(e, fn, {passive: false}));
+  const off = (e, fn) => e.split(' ').map(e => document.removeEventListener(e, fn, {passive: false}));
+  let initialX, initialV, target, dragging = false;
+  function handleDrag(e) {
+    // Gracefully handle exit and reentry of the viewport.
+    if(!e.buttons && !e.touches) {
+      handleDragStop();
+      return;
+    }
+    dragging = true;
+    const w = controls.zone.getBoundingClientRect().width;
+    e.preventDefault();
+    handlers.get(target)((pointer(e).clientX - initialX) / w, initialV);
+  }
+  function handleDragStop(e) {
+    off('mousemove touchmove', handleDrag);
+    off('mouseup touchend', handleDragStop);
+    if(changed) dispatch('change');
+  }
+  invalidation.then(handleDragStop);
+  dom.ontouchstart = dom.onmousedown = e => {
+    dragging = false;
+    changed = false;
+    if(!handlers.has(e.target)) return;
+    on('mousemove touchmove', handleDrag);
+    on('mouseup touchend', handleDragStop);
+    e.preventDefault();
+    e.stopPropagation();
+    target = e.target;
+    initialX = pointer(e).clientX;
+    initialV = value.slice();
+  };
+  controls.track.onclick = e => {
+    if(dragging) return;
+    changed = false;
+    const r = controls.zone.getBoundingClientRect();
+    const t = clamp(0, 1, (pointer(e).clientX - r.left) / r.width);
+    const v = min + t * (max - min);
+    const [vmin, vmax] = value, d = vmax - vmin;
+    if(v < vmin) setValue(v, v + d);
+    else if(v > vmax) setValue(v - d, v);
+    if(changed) dispatch('change');
+  };
+  return dom;
+}
+function randomScope(prefix = 'scope-') {
+  return prefix + (performance.now() + Math.random()).toString(32).replace('.', '-');
+}
+function formatDecimal(number) {
+  return number == 1 ? number : (Math.round(number * 100) / 100).toString().slice(1)
+}
+cssLength = v => v == null ? null : typeof v === 'number' ? `${v}px` : `${v}`
+theme_Flat = `
+/* Options */
+:scope {
+  color: #3b99fc;
+  width: 240px;
+}
+
+:scope {
+  position: relative;
+  display: inline-block;
+  --thumb-size: 15px;
+  --thumb-radius: calc(var(--thumb-size) / 2);
+  padding: var(--thumb-radius) 0;
+  margin: 2px;
+  vertical-align: middle;
+}
+:scope .range-track {
+  box-sizing: border-box;
+  position: relative;
+  height: 7px;
+  background-color: hsl(0, 0%, 80%);
+  overflow: visible;
+  border-radius: 4px;
+  padding: 0 var(--thumb-radius);
+}
+:scope .range-track-zone {
+  box-sizing: border-box;
+  position: relative;
+}
+:scope .range-select {
+  box-sizing: border-box;
+  position: relative;
+  left: var(--range-min);
+  width: calc(var(--range-max) - var(--range-min));
+  cursor: ew-resize;
+  background: currentColor;
+  height: 7px;
+  border: inherit;
+}
+/* Expands the hotspot area. */
+:scope .range-select:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: var(--thumb-size);
+  left: 0;
+  top: calc(2px - var(--thumb-radius));
+}
+:scope .range-select:focus,
+:scope .thumb:focus {
+  outline: none;
+}
+:scope .thumb {
+  box-sizing: border-box;
+  position: absolute;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+
+  background: #fcfcfc;
+  top: -4px;
+  border-radius: 100%;
+  border: 1px solid hsl(0,0%,55%);
+  cursor: default;
+  margin: 0;
+}
+:scope .thumb:active {
+  box-shadow: inset 0 var(--thumb-size) #0002;
+}
+:scope .thumb-min {
+  left: calc(-1px - var(--thumb-radius));
+}
+:scope .thumb-max {
+  right: calc(-1px - var(--thumb-radius));
+}
+`
+move = {
+  d3.select(pentBar)
+    .select("div")
+    .raise() // Places swatch below the plot
+    .style("float", "right"); // Floats the swatch on the right.
 }
 ```
 
-```{=html}
 <style>
-  #barClock {
-    width: 100%;
-  }
+svg g g.tick text {
+  font-size: 1.5em !important;
+}
   .tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
     fill: #000;
-    font-family: monospace;
+    font-family: sans-serif;
+    font-size: 20px;
     text-anchor: middle;
   }
   .timeLabel {
@@ -1548,36 +1788,38 @@ function setStyle(content, style = {}) {
   stroke-width: 3px;
 }
 #clock .second-hand {
-  stroke-width: 3;
+  stroke-width:3;
 }
 #clock .minute-hand {
-  stroke-width: 8;
-  stroke-linecap: round;
+  stroke-width:8;
+  stroke-linecap:round;
 }
 #clock .hour-hand {
-  stroke-width: 12;
-  stroke-linecap: round;
+  stroke-width:12;
+  stroke-linecap:round;
 }
 #clock .hands-cover {
-  stroke-width: 3;
-  fill: #fff;
+  stroke-width:3;
+  fill:#fff;
 }
 #clock .second-tick {
-  stroke-width: 3;
-  fill: #000;
+  stroke-width:3;
+  fill:#000;
 }
 #clock .hour-tick {
-  stroke-width: 8; // same as the minute hand
+  stroke-width:8; // same as the minute hand
 }
 #clock .second-label {
-  font-size: 18px;
+  font-size: 12px;
 }
 #clock .hour-label {
-  font-size: 32px
+  font-size: 24px
 }
 .clocks * {
-  margin: -10px 0px 10px 0px;
+  margin: 0px;
   padding: 0px;
 }
+.pentbarlegend-swatch {
+  font-size: 19px;
+}
 </style>
-```
