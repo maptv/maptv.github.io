@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2024+279
+2024+280
 
 - [Time](#time)
 - [Zone](#zone)
@@ -54,7 +54,7 @@ const W = width;
   const svg = d3
     .create("svg")
     .attr("width", W)
-    .attr("viewBox", [0, 0, W * (W < 370 ? .75 : W < 420 ? .76 : W < 470 ? .79 : W < 520 ? .81 : W < 570 ? .83 : W < 620 ? .84 : W < 670 ? .85 : W < 720 ? .86 : .87), H]);
+    .attr("viewBox", [0, 0, W * (W < 370 ? .73 : W < 420 ? .76 : W < 470 ? .79 : W < 520 ? .81 : W < 570 ? .83 : W < 620 ? .84 : W < 670 ? .85 : W < 720 ? .86 : .87), H]);
   const xRange = [0, W - 100];
   const scaleDD = d3.scaleLinear()
     .domain([0, 10])
@@ -185,7 +185,7 @@ const W = width;
   const svg = d3
     .create("svg")
     .attr("width", W)
-    .attr("viewBox", [0, 0, W * (W < 370 ? .75 : W < 420 ? .76 : W < 470 ? .79 : W < 520 ? .81 : W < 570 ? .83 : W < 620 ? .84 : W < 670 ? .85 : W < 720 ? .86 : .87), H]);
+    .attr("viewBox", [0, 0, W * (W < 370 ? .73 : W < 420 ? .76 : W < 470 ? .79 : W < 520 ? .81 : W < 570 ? .83 : W < 620 ? .84 : W < 670 ? .85 : W < 720 ? .86 : .87), H]);
   const xRange = [0, W - 100];
   const scaleDD = d3.scaleLinear()
     .domain([0, 10])
@@ -1257,9 +1257,9 @@ solarSystem = (root, width, location, date, hour) => {
         (solarSystemRadius + 18) * 1.18 * stretch * Math.cos(startMonthAngle)
       )
       .attr("text-anchor", "middle")
-      .attr("font-size", fontSize * (width < 205 ? 1.1 : 1.2))
+      .attr("font-size", fontSize * (width < 165 ? .9 : width < 265 ? 1 : width < 365 ? 1.1 : 1.2))
       .attr("dominant-baseline", "middle")
-      .attr("font-size", fontSize * (width < 205 ? 1.1 : 1.2))
+      .attr("font-size", fontSize * (width < 165 ? .9 : width < 265 ? 1 : width < 365 ? 1.1 : 1.2))
       .attr("font-family", "sans-serif")
       .attr("fill", "black");
   });
@@ -1458,7 +1458,7 @@ daylightPlot = (
     .call(yAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    .call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 205 ? .96 : 1.3)))
+    .call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 165 ? .7 : width < 265 ? .9 : width < 365 ? 1.3 : 1.4)))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
@@ -1467,16 +1467,16 @@ daylightPlot = (
     .call(xAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    .call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 165 ? 1.1 : 1.3)))
+    .call((g) => g.selectAll(".tick text").attr("font-size", fontSize * (width < 165 ? .9 : width < 265 ? 1.1 : width < 365 ? 1.2 : 1.3)))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
     .append("text")
     .text("Time of day (millidays)")
     .attr("x", margin.left + chartWidth / 2)
-    .attr("y", margin.top + chartHeight + margin.bottom - 1)
+    .attr("y", margin.top + chartHeight + margin.bottom - (width < 165 ? 9 : width < 265 ? 6 : width < 365 ? 2 : 0))
     .attr("text-anchor", "middle")
-    .attr("font-size", fontSize * (width < 365 ? 1.4 : 1.8))
+    .attr("font-size", fontSize * (width < 165 ? .85 : width < 265 ? 1.15 : width < 365 ? 1.5 : 1.6))
     .attr("font-family", "sans-serif")
     .attr("fill", "black");
   const data = yearDates(year)
@@ -1515,31 +1515,31 @@ daylightPlot = (
   legend
     .append("rect")
     .attr("rx", 5)
-    .attr("x", -34 + 34 * (width < 205))
-    .attr("y", 4.5 * (width < 205 ? 1.4 : 1))
-    .attr("width", fontSize * (width < 205 ? 1.2 : 1.4))
-    .attr("height", fontSize * (width < 205 ? 1.2 : 1.4))
+    .attr("x", -34 + 4 * (width < 165 ? 12.7 : width < 265 ? 5.5 : width < 365 ? 3 : 0))
+    .attr("y", 4.5 * (width < 165 ? 1.9 : width < 265 ? 1.4 : width < 365 ? .9 : .8))
+    .attr("width", fontSize * (width < 165 ? 1 : width < 265 ? 1.2 : width < 365 ? 1.4 : 1.6))
+    .attr("height", fontSize * (width < 165 ? 1 : width < 265 ? 1.2 : width < 365 ? 1.4 : 1.6))
     .attr("fill", colors.night);
   legend
     .append("text")
-    .attr("x", -16 + 34 * (width < 205))
+    .attr("x", -16 + 4 * (width < 165 ? 11.8 : width < 265 ? 4.9 : width < 365 ? 2.8 : 0))
     .attr("y", 19)
-    .attr("font-size", fontSize * (width < 205 ? 1.2 : 1.4))
+    .attr("font-size", fontSize * (width < 165 ? 1 : width < 265 ? 1.2 : width < 365 ? 1.4 : 1.6))
     .attr("font-family", "sans-serif")
     .text("Night");
   legend
     .append("rect")
-    .attr("x", 34 + 26 * (width < 205))
+    .attr("x", 34 + 4 * (width < 165 ? 7.8 : width < 265 ? 8.2 : width < 365 ? 6.9 : 4.2))
     .attr("rx", 5)
-    .attr("y", 4.5 * (width < 205 ? 1.4 : 1))
-    .attr("width", fontSize * (width < 205 ? 1.2 : 1.4))
-    .attr("height", fontSize * (width < 205 ? 1.2 : 1.4))
+    .attr("y", 4.5 * (width < 165 ? 1.9 : width < 265 ? 1.4 : width < 365 ? .9 : .8))
+    .attr("width", fontSize * (width < 165 ? 1 : width < 265 ? 1.2 : width < 365 ? 1.4 : 1.6))
+    .attr("height", fontSize * (width < 165 ? 1 : width < 265 ? 1.2 : width < 365 ? 1.4 : 1.6))
     .attr("fill", colors.day);
   legend
     .append("text")
-    .attr("x", 52 + 26 * (width < 205))
+    .attr("x", 52 + 4 * (width < 165 ? 6.8 : width < 265 ? 7.8 : width < 365 ? 6.9 : 4.2))
     .attr("y", 19)
-    .attr("font-size", fontSize * (width < 205 ? 1.2 : 1.4))
+    .attr("font-size", fontSize * (width < 165 ? 1 : width < 265 ? 1.2 : width < 365 ? 1.4 : 1.6))
     .attr("font-family", "sans-serif")
     .text("Day");
   /* Time and date controls */
