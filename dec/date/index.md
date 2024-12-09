@@ -54,14 +54,14 @@ data-bs-title="day-of-year">doy</span> chosen by the
 [Observable](https://observablehq.com/)
 [range](https://observablehq.com/@observablehq/input-range)🎚️inputs
 below to be highlighted with a red🟥background in the calendar🗓️plots,
-<span class="cyan">${decoDotyInput}</span>, functions as a pair of
+<span class="cyan">${dotyInput}</span>, functions as a pair of
 coordinates in the top calendar🗓️plot by selecting a dek on the
-x-axis↔️with its first 2 digits,
-<span class="cyan">${decoDotyInputDek}</span>, and a day-of-dek
+x-axis↔️via the dek equation, <span class="cyan">${dekInput}</span> =
+⌊<span class="cyan">${dotyInput}</span> × 10⌋, and a day-of-dek
 (<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">dod</span>) on the y-axis↕with its last
-digit, <span class="cyan">${decoDotyInputDod}</span>. A dek is a group
-of ten days and an alternative to months and weeks.
+digit, <span class="cyan">${dodInput}</span>. A dek is a group of ten
+days and an alternative to months and weeks.
 
 The Play▶️button beneath the
 [range](https://observablehq.com/@observablehq/input-range)🎚️inputs
@@ -1274,9 +1274,9 @@ function dote2dotw(d = 719468) {
 decoYear = deco.slice(0, 4)
 nextYear = parseInt(decoYear) + 1
 decoDoty = deco.slice(5, 8)
-decoDotyInput = String(dotyInput).padStart(3, "0")
-decoDotyInputDek = decoDotyInput.slice(0, 2)
-decoDotyInputDod = decoDotyInput[2]
+dotyInputStr = String(dotyInput).padStart(3, "0")
+dekInput = parseInt(dotyInputStr.slice(0, 2))
+dodInput = dotyInputStr[2]
 xmasDote = date2dote(ydz[0], 299)[0]
 xmasDotw = dote2dotw(xmasDote)
 dotw = Math.floor(dote2dotw(dz[0]))

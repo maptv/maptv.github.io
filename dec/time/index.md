@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2024+280
+2024+283
 
 - [Time](#time)
 - [Zone](#zone)
@@ -322,16 +322,17 @@ const svg = d3.select(DOM.svg(width, height - (width < 400 ? 10 : width < 600 ? 
   const margin = {top: 0, left: 10, right: 10, bottom: 0, inner: 3};
   const contentWidth = width - margin.left - margin.right - margin.inner;
   const columnWidth = contentWidth / 2;
+  const date2002 = new Date(2002, new Date().getMonth(), new Date().getDate(), new Date().getHours())
   let selection = {
-    date: new Date(),
-    hour: new Date().getHours()
+    date: date2002,
+    hour: date2002.getHours()
   }
   const renderPlot = () => {
     svg.selectAll("#daylightplot *").remove();
     svg.select("#daylightplot").call(daylightPlot, {
       width: columnWidth / 1.26,
       height: height / 1.51 - margin.top - margin.bottom,
-      year: new Date().getFullYear(),
+      year: date2002.getFullYear(),
       latitude: location[1],
       defaultDate: selection.date,
       defaultHour: selection.hour
@@ -1431,7 +1432,7 @@ daylightPlot = (
   // y-axis labels
   const yAxis = d3
     .axisLeft(yScale)
-    .tickValues(d3.timeMonth.range(new Date(year, 1, 1+60), new Date(year, 12, 1+57)))
+    .tickValues(d3.timeMonth.range(new Date(year, 0, 1+60), new Date(year, 12, 1+57)))
     .tickSize(chartWidth)
     .tickFormat(date2doty1);
   const xAxis = d3
