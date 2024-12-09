@@ -34,7 +34,7 @@ In the Gregorian calendar, a month and a day-of-month ([dom]{.under .tool data-b
 
 # Day of year (doy){id="doy"}
 
-The [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} chosen by the [Observable](https://observablehq.com/) [range](https://observablehq.com/@observablehq/input-range)🎚️inputs below to be highlighted with a red🟥background in the calendar🗓️plots, [\${decoDotyInput}]{.cyan}, functions as a pair of coordinates in the top calendar🗓️plot by selecting a dek on the x-axis↔️with its first 2 digits, [\${decoDotyInputDek}]{.cyan}, and a day-of-dek ([dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}) on the y-axis↕with its last digit, [\${decoDotyInputDod}]{.cyan}. A dek is a group of ten days and an alternative to months and weeks.
+The [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} chosen by the [Observable](https://observablehq.com/) [range](https://observablehq.com/@observablehq/input-range)🎚️inputs below to be highlighted with a red🟥background in the calendar🗓️plots, [\${dotyInput}]{.cyan}, functions as a pair of coordinates in the top calendar🗓️plot by selecting a dek on the x-axis↔️via the dek equation, [\${dekInput}]{.cyan} = &LeftFloor;[\${dotyInput}]{.cyan} &times; 10&RightFloor;, and a day-of-dek ([dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}) on the y-axis↕with its last digit, [\${dodInput}]{.cyan}. A dek is a group of ten days and an alternative to months and weeks.
 
 The Play▶️button beneath the [range](https://observablehq.com/@observablehq/input-range)🎚️inputs cycles🔄through the year so that every [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} gets its turn to have a red🟥background. All Dec years start on the first day, [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"}, of the first dek of the year, Dek 0. [Common years](https://en.wikipedia.org/wiki/Common_year#:~:text=a%20calendar%20year%20with%20365%20days) end on [Day 364]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 28"}, the midpoint of Dek 36, whereas [leap years](https://en.wikipedia.org/wiki/Leap_year#:~:text=a%20calendar%20year%20that%20contains%20an%20additional%20day) end on [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"}, the Dec and Gregorian calendar [leap day](https://en.wikipedia.org/wiki/February_29#:~:text=intercalary%20date%20added%20periodically).
 
@@ -347,9 +347,9 @@ function dote2dotw(d = 719468) {
 decoYear = deco.slice(0, 4)
 nextYear = parseInt(decoYear) + 1
 decoDoty = deco.slice(5, 8)
-decoDotyInput = String(dotyInput).padStart(3, "0")
-decoDotyInputDek = decoDotyInput.slice(0, 2)
-decoDotyInputDod = decoDotyInput[2]
+dotyInputStr = String(dotyInput).padStart(3, "0")
+dekInput = parseInt(dotyInputStr.slice(0, 2))
+dodInput = dotyInputStr[2]
 xmasDote = date2dote(ydz[0], 299)[0]
 xmasDotw = dote2dotw(xmasDote)
 dotw = Math.floor(dote2dotw(dz[0]))
