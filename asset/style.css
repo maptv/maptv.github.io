@@ -200,6 +200,13 @@ div > form > label {
   padding: 0px 2px 0px 2px;
 }
 
+.wine {
+  border-radius: 4px;
+  background-color: #722F37;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
 .magenta {
   border-radius: 4px;
   background-color: darkmagenta;
