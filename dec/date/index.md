@@ -54,14 +54,14 @@ data-bs-title="day-of-year">doy</span> chosen by the
 [Observable](https://observablehq.com/)
 [range](https://observablehq.com/@observablehq/input-range)🎚️inputs
 below to be highlighted with a red🟥background in the calendar🗓️plots,
-<span class="cyan">${dotyInput}</span>, functions as a pair of
-coordinates in the top calendar🗓️plot by selecting a dek on the
-x-axis↔️via the dek equation, <span class="cyan">${dekInput}</span> =
+<span class="cyan">${dotyInput}</span>, functions like a pair of
+coordinates in the top calendar🗓️plot by selecting a group of 10 days
+called a dek on the x-axis↔️via the dek equation,
+<span class="cyan">${dekInput}</span> =
 ⌊<span class="cyan">${dotyInput}</span> × 10⌋, and a day-of-dek
 (<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">dod</span>) on the y-axis↕with its last
-digit, <span class="cyan">${dodInput}</span>. A dek is a group of ten
-days and an alternative to months and weeks.
+digit, <span class="cyan">${dodInput}</span>.
 
 The Play▶️button beneath the
 [range](https://observablehq.com/@observablehq/input-range)🎚️inputs
@@ -88,7 +88,7 @@ dates, <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="March 1"><u>Day 0</u></span> to <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="December 31"><u>Day
 305</u></span>, in the bottom calendar🗓️plot by one day, but does not
-change the order of any top calendar🗓️plot dates, because
+change the order of any dates in the top calendar🗓️plot, because
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29"><u>Day 365</u></span> is the last day of Dec
 leap years and the <span class="under tool" data-bs-toggle="tooltip"
@@ -252,12 +252,13 @@ The radio🔘input beneath the calendar🗓️plots picks the
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> for <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="January 1">Day 306</span>, the
-first day of the Gregorian calendar year, and has no effect on the top
-calendar🗓️plot, but can shift every day in the bottom calendar🗓️plot by
-one to six days. The bottom calendar🗓️plot has week numbers on its
-x-axis↔️and day-of-week (<span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>) numbers
-on its y-axis↕.
+first day of the Gregorian calendar year. Changing the
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="January 1">Day 306</span> <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> does not
+affect the top calendar🗓️plot, but shifts every date in the bottom
+calendar🗓️plot by one to six days depending on the number of days that
+Week 0, the first week of the year, contributes to the year.
 
 There are two range🎚️inputs labeled as “day of year” because every
 <span class="under tool" data-bs-toggle="tooltip"
@@ -743,6 +744,31 @@ data-bs-title="day-of-dek">dod</span>,
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span>:
 <span class="cyan">${decoDoty}</span>.
+
+While weeks are not evenly divisible by two, a dek can be cut✂️into two
+equal halves. Each half of a dek is called a pent and can be used to
+schedule work and rest days. If we designate the first 3 days of each
+pent as work days and the remaining 2 days as a group of rest days
+called the pentend, we would work on <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-dek">Dods</span> 0, 1,
+2, 5, 6, and 7, and rest on <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-dek">Dods</span> 3, 4,
+8, and 9.
+
+<div>
+
+<figure class=''>
+
+<div>
+
+<img src="index_files/figure-commonmark/mermaid-figure-1.png"
+style="width:5.66in;height:2.5in" />
+
+</div>
+
+</figure>
+
+</div>
 
 # Day of month (dom)
 
