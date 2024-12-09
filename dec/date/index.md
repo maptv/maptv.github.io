@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+279
+2024+283
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -34,25 +34,91 @@ year has its own [cell](https://observablehq.com/plot/marks/cell).
 Despite these similarities, the two plots illustrate how the Dec (top)
 and Gregorian (bottom) calendars differ.
 
+In the Gregorian calendar, a month and a day-of-month
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-month">dom</span>) identify a specific day in a
+given year like a pair of coordinates, such as longitude and latitude in
+the [geographic🌐coordinate
+system](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=a%20spherical%20or%20geodetic%20coordinate%20system%20for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude)
+or x and y in the [Cartesian coordinate
+system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system#:~:text=a%20coordinate%20system%20that%20specifies%20each%20point%20uniquely%20by%20a%20pair%20of%20real%20numbers%20called%20coordinates).
+Instead of months and <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-month">doms</span>, the Dec calendar (Decalendar)
+uses a single number: the day-of-year (<span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>).
+
 # Day of year (doy)
 
-The Dec calendar (Decalendar) starts on <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
-instead of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="January 1"><u>Day 306</u></span> and uses a single number
-called the day-of-year (<span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>), which
-is the <span class="cyan">day</span> in
-<span class="yellow">year</span>+<span class="cyan">day</span>, to serve
-the same purpose as months and weeks in the Gregorian calendar. The
-current <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> and the <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> selected
-by the [Observable](https://observablehq.com/)
+The <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> chosen by the
+[Observable](https://observablehq.com/)
 [range](https://observablehq.com/@observablehq/input-range)🎚️inputs
-below to be highlighted in the calendar🗓️plots are
-<span class="cyan">${decoDoty}</span> and
-<span class="cyan">${dotyInput}</span>, respectively.
+below to be highlighted with a red🟥background in the calendar🗓️plots,
+<span class="cyan">${decoDotyInput}</span>, functions as a pair of
+coordinates in the top calendar🗓️plot by selecting a dek on the
+x-axis↔️with its first 2 digits,
+<span class="cyan">${decoDotyInputDek}</span>, and a day-of-dek
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">dod</span>) on the y-axis↕with its last
+digit, <span class="cyan">${decoDotyInputDod}</span>. A dek is a group
+of ten days and an alternative to months and weeks.
+
+The Play▶️button beneath the
+[range](https://observablehq.com/@observablehq/input-range)🎚️inputs
+cycles🔄through the year so that every <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> gets its
+turn to have a red🟥background. All Dec years start on the first day,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span>, of the first dek of the
+year, Dek 0. [Common
+years](https://en.wikipedia.org/wiki/Common_year#:~:text=a%20calendar%20year%20with%20365%20days)
+end on <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 28"><u>Day 364</u></span>, the midpoint of Dek
+36, whereas [leap
+years](https://en.wikipedia.org/wiki/Leap_year#:~:text=a%20calendar%20year%20that%20contains%20an%20additional%20day)
+end on <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>Day 365</u></span>, the Dec and Gregorian
+calendar [leap
+day](https://en.wikipedia.org/wiki/February_29#:~:text=intercalary%20date%20added%20periodically).
+
+The toggle✅input labelled “Leap year” to the right of the Play▶️button
+adds or removes <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>Day 365</u></span>, and thus shifts 306
+dates, <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span> to <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="December 31"><u>Day
+305</u></span>, in the bottom calendar🗓️plot by one day, but does not
+change the order of any top calendar🗓️plot dates, because
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>Day 365</u></span> is the last day of Dec
+leap years and the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> resets to zero at the start of
+every year.
+
+``` {ojs}
+//| echo: false
+viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: "Day of year"});
+viewof monthInput = transformInput(
+  Inputs.range([1, 12], {step: 1, label: "Month"}),
+  {bind: viewof dotyInput, transform: doty2month, invert: month2doty}
+);
+viewof dotyInput1 = transformInput(
+  Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of year"}),
+  {bind: viewof dotyInput, transform: subN, invert: addN}
+);
+viewof dotmInput = transformInput(
+  Inputs.range([1, 31], {step: 1, label: "Day of month"}),
+  {bind: viewof dotyInput, transform: doty2dotm, invert: (x => Math.floor(( 153 * (
+    viewof monthInput.value > 2
+    ? viewof monthInput.value - 3
+    : viewof monthInput.value + 9) + 2
+  ) / 5 + x - 1
+))});
+viewof leapscrub = Inputs.form([
+  Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
+  Inputs.toggle({label: "Leap year", value: false}),
+])
+```
 
 <div class="column-page-right">
 
@@ -172,39 +238,26 @@ calPlot = Plot.plot({
 
 </div>
 
-``` {ojs}
-//| echo: false
-viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: "Day of year"});
-viewof monthInput = transformInput(
-  Inputs.range([1, 12], {step: 1, label: "Month"}),
-  {bind: viewof dotyInput, transform: doty2month, invert: month2doty}
-);
-viewof dotyInput1 = transformInput(
-  Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of year"}),
-  {bind: viewof dotyInput, transform: subN, invert: addN}
-);
-viewof dotmInput = transformInput(
-  Inputs.range([1, 31], {step: 1, label: "Day of month"}),
-  {bind: viewof dotyInput, transform: doty2dotm, invert: (x => Math.floor(( 153 * (
-    viewof monthInput.value > 2
-    ? viewof monthInput.value - 3
-    : viewof monthInput.value + 9) + 2
-  ) / 5 + x - 1
-))});
-viewof leapscrub = Inputs.form([
-  Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
-  Inputs.toggle({label: "Leap year", value: false}),
-])
-```
-
 <span class="radiotitle">First day of the Gregorian calendar year</span>
 
 ``` {ojs}
 //| echo: false
+//| id: radiobuttons
 viewof dotwInput = Inputs.radio([
   "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
   ], {value: "Sunday"})
 ```
+
+The radio🔘input beneath the calendar🗓️plots picks the
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span> for <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="January 1">Day 306</span>, the
+first day of the Gregorian calendar year, and has no effect on the top
+calendar🗓️plot, but can shift every day in the bottom calendar🗓️plot by
+one to six days. The bottom calendar🗓️plot has week numbers on its
+x-axis↔️and day-of-week (<span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>) numbers
+on its y-axis↕.
 
 There are two range🎚️inputs labeled as “day of year” because every
 <span class="under tool" data-bs-toggle="tooltip"
@@ -221,63 +274,10 @@ data-bs-title="day-of-year">doy</span> outside these
 [bounds](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20upper%20bound%20or%20majorant%5B1%5D%20of%20a%20subset%20S%20of%20some%20preordered%20set%20(K%2C%20%E2%89%A4)%20is%20an%20element%20of%20K%20that%20is%20greater%20than%20or%20equal%20to%20every%20element%20of%20S.%5B2%5D%5B3%5D%20Dually%2C%20a%20lower%20bound%20or%20minorant%20of%20S%20is%20defined%20to%20be%20an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S)
 represents a day in a previous or subsequent year.
 
-The Play▶️button above cycles🔄through every <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>, month,
-and day-of-month (<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span>) so that each day gets its turn
-to be highlighted with a red🟥background. Both calendar🗓️plots are
-affected by the
-[toggle](https://observablehq.com/framework/inputs/toggle#:~:text=choose%20one%20of%20two%20values)✅input,
-which determines whether <span class="orange">n</span> is 365 or 366,
-but only the bottom plot reacts to the
-[radio](https://observablehq.com/framework/inputs/radio#:~:text=choose%20one%20of%20a%20given%20set%20of%20values)🔘input,
-which sets the first day-of-week (<span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>) of the
-Gregorian calendar year.
-
-The toggle✅input shifts 306 dates, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span> to
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="December 31"><u>Day 305</u></span>, in the Gregorian
-calendar by one day, but does not change the order of any Dec dates,
-because [leap
-day](https://en.wikipedia.org/wiki/February_29#:~:text=intercalary%20date%20added%20periodically)
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="February 29"><u>Day 365</u></span>) is the last day of
-Dec leap years and the <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> resets to zero at the start of
-every year. The radio🔘input shifts every Gregorian calendar date by 1
-to 6 days, but has no effect on Decalendar whatsoever.
-
-The current <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>,
-<span class="cyan">${decoDoty}</span>, consists of the current dek,
-<span class="cyan">${decoDoty.slice(0, 2)}</span>, and day-of-dek
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span>),
-<span class="cyan">${decoDoty\[2\]}</span>. Deks are groups of 10 days
-that are well-aligned with the Dec year. Every Dec year starts on
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span>, the first day of the first
-dek of the year, Dek 0. [Common
-years](https://en.wikipedia.org/wiki/Common_year#:~:text=a%20calendar%20year%20with%20365%20days)
-end on <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="February 28"><u>Day 364</u></span>, exactly halfway
-through Dek 36, whereas [leap
-years](https://en.wikipedia.org/wiki/Leap_year#:~:text=a%20calendar%20year%20that%20contains%20an%20additional%20day)
-end on the sixth <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span>, Dod 5, of Dek 36:
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="February 29"><u>Day 365</u></span>.
-
-# Day of era (doe)
-
-In contrast to weeks in the Gregorian calendar, <span class="under tool"
+Unlike weeks in the Gregorian calendar, <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="days-of-year">doys</span> and
-deks do not need to continue in an unbroken sequence. The last day of
-the year, <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="February 28 in common years, February 29 in leap years"><u>Day
--1</u></span>, is always followed by <span class="tool"
+deks do not need to continue in an infinite unbroken sequence. The last
+day of the year, Day -1, is always followed by <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>,
 regardless of the last 4 or 5 days of Dek 36 that extend past the end of
 the year. If we want to track days seamlessly across years, we can use a
@@ -285,6 +285,8 @@ continuous count of days called the
 day-of-[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
 (<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-era">doe</span>).
+
+# Day of era (doe)
 
 A <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-era">doe</span> is essentially a [Julian
@@ -304,7 +306,9 @@ data-bs-title="1 BC">0000</span>+<span class="under cyan"
 data-bs-toggle="tooltip"
 data-bs-title="March 1">000</span>.<span class="under cyan"
 data-bs-toggle="tooltip" data-bs-title="midnight">0</span>. To turn a
-UNIX timestamp into a <span class="under tool" data-bs-toggle="tooltip"
+[UNIX
+timestamp](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970)
+into a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-era">doe</span>, we divide by
 [86400](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day)
 to convert seconds to days and then add
@@ -326,12 +330,12 @@ data-bs-title="day-of-week">dow</span>](https://pubs.opengroup.org/onlinepubs/00
 of a given date. This year, the <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> of
 [Christmas](https://en.wikipedia.org/wiki/Christmas#:~:text=annual%20festival%20commemorating%20the%20birth%20of%20Jesus%20Christ)🎄is
-<span class="winedregs">${xmasDotw}</span>, according to the Dec
+<span class="wine">${xmasDotw}</span>, according to the Dec
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> equation:
 (<span class="cyan">${xmasDote}</span> + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-7 = <span class="winedregs">${xmasDotw}</span>. In contrast to the
+7 = <span class="wine">${xmasDotw}</span>. In contrast to the
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>, finding the
 <span class="under tool" data-bs-toggle="tooltip"
@@ -366,9 +370,9 @@ data-bs-title="day-of-week">dow</span> can remain constant. Dec uses the
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
-equation, <span class="winedregs">w<sub>Δ</sub></span> =
-(<span class="winedregs">w<sub>M</sub></span> -
-<span class="winedregs">w<sub>S</sub></span> + 7)
+equation, <span class="wine">w<sub>Δ</sub></span> =
+(<span class="wine">w<sub>M</sub></span> -
+<span class="wine">w<sub>S</sub></span> + 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7, to determine which of the seven possible floating holiday dates
 corresponds to the given year.
@@ -376,36 +380,34 @@ corresponds to the given year.
 In the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
-equation, <span class="winedregs">w<sub>M</sub></span> is the
+equation, <span class="wine">w<sub>M</sub></span> is the
 [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted)
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> at which we want to arrive and
-<span class="winedregs">w<sub>S</sub></span> is
+<span class="wine">w<sub>S</sub></span> is
 [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted)
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> from which we start. To get the
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> of
 [Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃in
-the United States and Brazil, we plug <span class="winedregs">4</span>
-as <span class="winedregs">w<sub>M</sub></span> and
-<span class="winedregs">${day266dotw}</span>, the
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> of <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="November 22"><u>Day
-266</u></span> this year, as
-<span class="winedregs">w<sub>S</sub></span> into the
+the United States and Brazil, we plug <span class="wine">4</span> as
+<span class="wine">w<sub>M</sub></span> and
+<span class="wine">${day266dotw}</span>, the <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> of
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="November 22"><u>Day 266</u></span> this year, as
+<span class="wine">w<sub>S</sub></span> into the
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
-equation, <span class="winedregs">${day266dotwDiff}</span> =
-(<span class="winedregs">4</span> -
-<span class="winedregs">${day266dotw}</span> + 7)
+equation, <span class="wine">${day266dotwDiff}</span> =
+(<span class="wine">4</span> - <span class="wine">${day266dotw}</span> +
+7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-7, and then add the resulting
-<span class="winedregs">w<sub>Δ</sub></span> to 266:
-<span class="cyan">${day266dotwDiff + 266}</span> =
-<span class="winedregs">${day266dotwDiff}</span> + 266.
+7, and then add the resulting <span class="wine">w<sub>Δ</sub></span> to
+266: <span class="cyan">${day266dotwDiff + 266}</span> =
+<span class="wine">${day266dotwDiff}</span> + 266.
 
 Apart from the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> and <span class="under tool"
@@ -621,8 +623,8 @@ information about a date, such as its <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>
 <span class="cyan">d</span> or POSIX <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>
-<span class="winedregs">w</span>. Essentially, you can modify a Dec date
-to show whatever numbers🔢you want. All it takes is a little bit of
+<span class="wine">w</span>. Essentially, you can modify a Dec date to
+show whatever numbers🔢you want. All it takes is a little bit of
 arithmetic! This incredible versatility is possible thanks to the
 mathematical basis of Dec date notation.
 
@@ -637,7 +639,7 @@ the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
 (navbar) of my site displays the current Dec <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> date,
-<span class="yellow">${decoYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="winedregs">${dotw}</span>,
+<span class="yellow">${decoYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="wine">${dotw}</span>,
 by splitting the current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>,
 <span class="cyan">${decoDoty}</span>, into the <span class="under tool"
@@ -649,34 +651,33 @@ data-bs-title="day-of-year">doy</span>),
 <span class="cyan">${dotw0doty}</span>, and the current POSIX
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>:
-<span class="winedregs">${dotw}</span>.
+<span class="wine">${dotw}</span>.
 
 Instead of the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> <span class="cyan">d</span>, Dec
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> dates display
-<span class="cyan">d</span>-<span class="winedregs">w</span>+<span class="winedregs">w</span>,
-where <span class="cyan">d</span>-<span class="winedregs">w</span> is
-the <span class="under tool" data-bs-toggle="tooltip"
+<span class="cyan">d</span>-<span class="wine">w</span>+<span class="wine">w</span>,
+where <span class="cyan">d</span>-<span class="wine">w</span> is the
+<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> 0 <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and
-<span class="winedregs">w</span> is the <span class="under tool"
+<span class="wine">w</span> is the <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>
 associated with <span class="cyan">d</span>. We evaluate the
-subtraction,
-<span class="cyan">d</span>-<span class="winedregs">w</span>, to obtain
-the <span class="under tool" data-bs-toggle="tooltip"
+subtraction, <span class="cyan">d</span>-<span class="wine">w</span>, to
+obtain the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="Sunday">Dow 0</span> <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>, but
 leave the addition unsimplified so we can see
-<span class="winedregs">w</span>. Dec <span class="under tool"
+<span class="wine">w</span>. Dec <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> dates
 supply all of the information needed to identify specific dates and
 coordinate schedules based on deks or weeks.
 
 Dec dates can be further modified to include [POSIX week
 numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.):
-<span class="yellow">${decoYear}</span>+7×<span class="wheat">${week}</span>+<span class="winedregs">${dotw}</span>.
+<span class="yellow">${decoYear}</span>+7×<span class="wheat">${week}</span>+<span class="wine">${dotw}</span>.
 The current week number, <span class="wheat">${week}</span>, is the sum
 of the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="Sunday">Dow 0</span> <span class="under tool"
@@ -687,31 +688,30 @@ data-bs-title="day-of-week">dow</span> of the year (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>),
-<span class="winedregs">${doty0dotw}</span>, divided by 7:
+<span class="wine">${doty0dotw}</span>, divided by 7:
 <span class="wheat">${week}</span> =
 (<span class="cyan">${dotw0doty}</span> +
-<span class="winedregs">${doty0dotw}</span>) ÷ 7. The current Dec
-floating week date,
-7×<span class="wheat">${week}</span>+<span class="winedregs">${dotw}</span>,
+<span class="wine">${doty0dotw}</span>) ÷ 7. The current Dec floating
+week date,
+7×<span class="wheat">${week}</span>+<span class="wine">${dotw}</span>,
 is therefore equal to the sum of the current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and the
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="March 1"><u>Day 0</u></span> <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>: 7 ×
-<span class="wheat">${week}</span> +
-<span class="winedregs">${dotw}</span> =
+<span class="wheat">${week}</span> + <span class="wine">${dotw}</span> =
 <span class="cyan">${decoDoty}</span> +
-<span class="winedregs">${doty0dotw}</span>.
+<span class="wine">${doty0dotw}</span>.
 
 Dec week dates turn
-<span class="cyan">d</span>-<span class="winedregs">w</span> into
-7×<span class="wheat">W</span>-<span class="winedregs">w<sub>0</sub></span>,
+<span class="cyan">d</span>-<span class="wine">w</span> into
+7×<span class="wheat">W</span>-<span class="wine">w<sub>0</sub></span>,
 where <span class="wheat">W</span> is the week number and
-<span class="winedregs">w<sub>0</sub></span> is the <span class="tool"
+<span class="wine">w<sub>0</sub></span> is the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>. In this case, the subtraction is
-omitted, because <span class="winedregs">w<sub>0</sub></span> is not
+omitted, because <span class="wine">w<sub>0</sub></span> is not
 necessary to identify a date and can be calculated from a given
 <span class="yellow">y</span> by flooring it, turning it into a
 <span class="under tool" data-bs-toggle="tooltip"
@@ -728,9 +728,10 @@ dates on any fixed-length calendar unit, including the 20-day
 [tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A),
 40-day
 [kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A),
-or 73-day
-[sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A).
-No other calendar unit can be as convenient as the 10-day
+73-day
+[sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A),
+or 90-day [naŭdek](https://en.wiktionary.org/wiki/na%C5%ADdek). No other
+calendar unit can be as convenient as the 10-day
 [dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B),
 because our [decimal numeral
 system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
@@ -781,9 +782,9 @@ data-bs-title="day-of-month">dom</span> and <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> patterns
 above, we can create hybrid Dec dates:
 <span class="yellow">${decoYear}</span>+<span class="cyan">${monthNumber -
-dotw}</span>+<span class="magenta">${dotm}</span>+<span class="winedregs">${dotw}</span>,
+dotw}</span>+<span class="magenta">${dotm}</span>+<span class="wine">${dotw}</span>,
 where <span class="cyan">${monthNumber - dotw}</span> is
-<span class="cyan">d</span>-<span class="magenta">m</span>-<span class="winedregs">w</span>,
+<span class="cyan">d</span>-<span class="magenta">m</span>-<span class="wine">w</span>,
 the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> of the last
 <span class="under tool" data-bs-toggle="tooltip"
@@ -1189,7 +1190,7 @@ data-bs-title="time-of-day">tod</span> and a Dec time zone
 can be appended to Dec dates to form Dec snaps🫰:
 <span class="yellow">year</span>+<span class="cyan">day</span>.<span class="cyan">tod</span>-<span class="lime">z</span>.
 The Dec snap on the left side of the navbar of my site,
-<span class="yellow">${decoYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="winedregs">${dotw}</span>🗓️<span class="cyan">${decidayTime}</span>${zoneSign}<span class="lime">${Math.abs(zone)}</span>🕓,
+<span class="yellow">${decoYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="wine">${dotw}</span>🗓️<span class="cyan">${decidayTime}</span>${zoneSign}<span class="lime">${Math.abs(zone)}</span>🕓,
 multiplies the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="time-of-day">tod</span> by 10,
 <span class="cyan">${dayTime.toFixed(5)}</span> × 10 =
@@ -1273,6 +1274,9 @@ function dote2dotw(d = 719468) {
 decoYear = deco.slice(0, 4)
 nextYear = parseInt(decoYear) + 1
 decoDoty = deco.slice(5, 8)
+decoDotyInput = String(dotyInput).padStart(3, "0")
+decoDotyInputDek = decoDotyInput.slice(0, 2)
+decoDotyInputDod = decoDotyInput[2]
 xmasDote = date2dote(ydz[0], 299)[0]
 xmasDotw = dote2dotw(xmasDote)
 dotw = Math.floor(dote2dotw(dz[0]))
@@ -1586,9 +1590,11 @@ input[type="radio"], input[type="checkbox"] {
   margin: 2px 0px 0px 0px;
 }
 p:has(.radiotitle) {
-  margin-top: -8px !important;
-  margin-bottom: -4px;
-  text-align: center;
+  margin-top: -6px !important;
+  margin-bottom: -2px;
+}
+#radiobuttons {
+  margin-bottom: -9px;
 }
 svg#finger {
   max-width: 760px;
