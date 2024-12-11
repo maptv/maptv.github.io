@@ -188,7 +188,7 @@ calPlot = Plot.plot({
   height: 200,
   className: "calplot",
   marginTop: 0,
-  marginBottom: 40 + 24 * (width < 450),
+  marginBottom: 40,
   marginLeft: 42,
   y: {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
       domain: [-1, 0, 1, 2, 3, 4, 5, 6],
@@ -1627,11 +1627,11 @@ input[type="radio"] {
   margin: 1px 0px 0px 0px;
 }
 p:has(.radiotitle) {
-  margin-top: -6px !important;
-  margin-bottom: -2px;
+  margin-top: -3px;
+  margin-bottom: -3px;
 }
 #radiobuttons {
-  margin-bottom: -9px;
+  margin-bottom: -12px;
 }
 svg#finger {
   max-width: 760px;
