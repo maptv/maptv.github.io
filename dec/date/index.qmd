@@ -34,7 +34,7 @@ In the Gregorian calendar, a month and a day-of-month ([dom]{.under .tool data-b
 
 # Day of year (doy){id="doy"}
 
-The [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} chosen by the [Observable](https://observablehq.com/) [range](https://observablehq.com/@observablehq/input-range)🎚️inputs below to be highlighted with a red🟥background in the calendar🗓️plots, [\${dotyInput}]{.cyan}, functions like a pair of coordinates in the top calendar🗓️plot by selecting a group of 10 days called a dek on the x-axis↔️via the dek equation, [\${dekInput}]{.cyan} = &LeftFloor;[\${dotyInput}]{.cyan} &times; 10&RightFloor;, and a day-of-dek ([dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}) on the y-axis↕with its last digit, [\${dodInput}]{.cyan}.
+The [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} chosen by the [Observable](https://observablehq.com/) [range](https://observablehq.com/@observablehq/input-range)🎚️inputs below to be highlighted with a red🟥background in the calendar🗓️plots, [\${dotyInput}]{.cyan}, functions like a pair of coordinates in the top calendar🗓️plot by selecting a group of 10 days called a dek on the x-axis↔️via the dek equation, [\${dekInput}]{.cyan} = &LeftFloor;[\${dotyInput}]{.cyan} &div; 10&RightFloor;, and a day-of-dek ([dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}) on the y-axis↕with its last digit, [\${dodInput}]{.cyan}.
 
 The Play▶️button beneath the [range](https://observablehq.com/@observablehq/input-range)🎚️inputs cycles🔄through the year so that every [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} gets its turn to have a red🟥background. All Dec years start on the first day, [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"}, of the first dek of the year, Dek 0. [Common years](https://en.wikipedia.org/wiki/Common_year#:~:text=a%20calendar%20year%20with%20365%20days) end on [Day 364]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 28"}, the midpoint of Dek 36, whereas [leap years](https://en.wikipedia.org/wiki/Leap_year#:~:text=a%20calendar%20year%20that%20contains%20an%20additional%20day) end on [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"}, the Dec and Gregorian calendar [leap day](https://en.wikipedia.org/wiki/February_29#:~:text=intercalary%20date%20added%20periodically).
 
@@ -75,7 +75,7 @@ decPlot = Plot.plot({
   className: "calplot",
   marginTop: -3,
   marginLeft: 31,
-  marginBottom: 35,
+  marginBottom: 35 + 4 * (width < 400),
   y: {tickSize: 0,
       label: "Day of dek    ",
       domain: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -268,16 +268,25 @@ Dec dates can be further modified to include [POSIX week numbers](https://pubs.o
 
 Dec week dates turn [d]{.cyan}-[w]{.wine} into 7&times;[W]{.wheat}-[w~0~]{.wine}, where [W]{.wheat} is the week number and [w~0~]{.wine} is the [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}. In this case, the subtraction is omitted, because [w~0~]{.wine} is not necessary to identify a date and can be calculated from a given [y]{.yellow} by flooring it, turning it into a [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"}, and passing it into the [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} equation. POSIX week numbers may be useful for [week-based accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
 
-Following the Dec week date pattern described above, we can base Dec dates on any fixed-length calendar unit, including the 20-day [dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit), 30-day [tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A), 40-day [kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A), 73-day [sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A), or 90-day [naŭdek](https://en.wiktionary.org/wiki/na%C5%ADdek). No other calendar unit can be as convenient as the 10-day [dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B), because our [decimal numeral system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers) allows us to naturally combine a dek, [\${decoDoty.slice(0, 2)}]{.cyan}, and [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}, [\${decoDoty[2]}]{.cyan}, into a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}: [\${decoDoty}]{.cyan}.
+Following the Dec week date pattern described above, we can base Dec dates on any fixed-length calendar unit, including the 20-day [dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit), 30-day [tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A), 40-day [kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A), 73-day [sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A), or 90-day [naŭdek](https://en.wiktionary.org/wiki/na%C5%ADdek). No other calendar unit can be as convenient as the 10-day [dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B), because our [decimal numeral system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers) allows us to naturally combine a dek, [\${decoDoty.slice(0, 2)}]{.cyan}, and a [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}, [\${decoDoty[2]}]{.cyan}, into a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}: [\${decoDoty}]{.cyan}.
 
 While weeks are not evenly divisible by two, a dek can be cut✂️into two equal halves. Each half of a dek is called a pent and can be used to schedule work and rest days. If we designate the first 3 days of each pent as work days and the remaining 2 days as a group of rest days called the pentend, we would work on [Dods]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-dek"} 0, 1, 2, 5, 6, and 7, and rest on [Dods]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-dek"} 3, 4, 8, and 9.
 
 
 ```{mermaid}
+%%{ init : { "theme" : "default", "flowchart" : { "curve" : "linear" }}}%%
 flowchart LR
-   A[Dod 0\nWork]-->B[Dod 1\nWork]-->C[Dod 2\nWork]-->D[Dod 3\nRest]-->E[Dod 4\nRest]
-   F[Dod 5\nWork]-->G[Dod 6\nWork]-->H[Dod 7\nWork]-->I[Dod 8\nRest]-->J[Dod 9\nRest]
-   subgraph pentend[pentend]
+   A[0]-->B[1]-->C[2]-->D[3]-->E[4]
+   F[5]-->G[6]-->H[7]-->I[8]-->J[9]
+   subgraph pentstart[work days]
+   A
+   B
+   C
+   F
+   G
+   H
+   end
+   subgraph pentend[rest days]
    D
    E
    I
@@ -307,6 +316,18 @@ The combination of a [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="
 # Next
 
 After reading this article, you should be able to understand the examples in the [filter](/quarto/filter), [script](/quarto/script), and [include](/quarto/include) articles in the [Quarto section](/quarto) of my site. To see the full extent of the benefits that Decalendar can provide, I recommend that you continue on through the [Dec section](/dec) of my site to the [time](/dec/time)🕰️, [ISO 8601](/dec/iso)🌐, [snap](/dec/snap)🫰, and [span](/dec/span)🌈articles.
+
+```{mermaid}
+%%| label: navchart
+flowchart LR
+   B[date]-->C[time]-->D[iso]-->E[snap]-->F[span]
+   click B "/dec/date"
+   click C "/dec/time"
+   click D "/dec/iso"
+   click E "/dec/snap"
+   click F "/dec/span"
+   style B stroke:#99f,stroke-width:5px
+```
 
 # Cite
 
@@ -670,13 +691,13 @@ form.oi-3a86ea-toggle > label {
   width: 75px;
 }
 input.oi-3a86ea-input[type="checkbox"] {
-  margin: 6px 0px 0px 0px;
+  margin: 4px 0px 0px 0px;
 }
 div > form > label {
   --label-width: 140px;
 }
-input[type="radio"], input[type="checkbox"] {
-  margin: 2px 0px 0px 0px;
+input[type="radio"] {
+  margin: 1px 0px 0px 0px;
 }
 p:has(.radiotitle) {
   margin-top: -6px !important;

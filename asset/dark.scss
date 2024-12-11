@@ -37,6 +37,23 @@ svg.mermaid-js path {
     stroke: #ffffff !important;
 }
 
+svg.mermaid-js .marker {
+    fill: #ffffff !important;
+    stroke: none !important;
+}
+
+#mermaid-1 g#pentend.cluster rect {
+    fill: darkblue !important;
+}
+
+#mermaid-1 g#pentstart.cluster rect {
+    fill: darkgreen !important;
+}
+
+#mermaid-1 .node rect {
+    fill: darkmagenta !important;
+}
+
 svg.mermaid-js g.edgeLabels span.edgeLabel {
     color: #ffffff !important;
     background: #000000 !important;
@@ -55,17 +72,11 @@ svg.mermaid-js g#iso > rect {
 }
 
 g.node.clickable.flowchart-label.default > rect {
-    fill: #888800 !important;
+    fill: darkmagenta !important;
 }
 svg.mermaid-js  span.nodeLabel {
     color: #ffffff !important;
 }
-
-svg.mermaid-js .marker {
-    fill: #ffffff !important;
-    stroke: none !important;
-}
-
 .knitr {
   filter: invert(1);
 }
@@ -238,6 +249,6 @@ div > form > div > input[type="range"] {
   stroke: #fff;
 }
 
-#daylightplot > g:nth-child(7) > rect {
+#daylightplot rect#daterect {
   fill: #f00;
 }
