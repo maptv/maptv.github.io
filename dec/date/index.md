@@ -1256,8 +1256,8 @@ algorithms underlying the conversion of Dec
 data-bs-title="days-of-era">does</span> is [Hinnant,
 Howard](https://howardhinnant.github.io). <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="2021-09-01"><u>2021+184</u></span>. “`chrono`-Compatible
-Low-Level Date Algorithms.”
+data-bs-title="2021-09-01"><u><span class="yellow">2021</span>+<span class="cyan">184</span></u></span>.
+“`chrono`-Compatible Low-Level Date Algorithms.”
 <span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>.
 <https://howardhinnant.github.io/date_algorithms.html>.
 

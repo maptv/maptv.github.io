@@ -743,7 +743,7 @@ translates into a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</span> of time.
 
 The leftmost vertical↕line on the map🗺️is [Meridian
-0](https://en.wikipedia.org/wiki/126th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole),
+0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole),
 the Dec [International Date
 Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
 and [prime
@@ -1141,41 +1141,45 @@ style="width:4.59in;height:0.52in" />
 # Cite
 
 Please spread the good word about Dec using the citation information at
-the bottom of this article. You may also want to cite the following blog
-post that proposed 20 decimal time zones based on degrees longitude from
-the [Greenwich
-Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England)
-and the Observable notebooks that provided the basis for the clock🕓,
-bar📊chart, map🗺️, and daylight☀️plot visualizations in this article:
+the bottom of this article. You may also want to cite the Observable
+notebooks that I adapted into the clock🕓, bar📊chart, map🗺️, and
+daylight☀️plot visualizations in this article or the 2014 blog post
+which proposed a system of 20 time zones, each 5
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of a day">centidays</span> wide, based on the
+[Greenwich
+Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England):
 
-- [Clements, John](https://www.brinckerhoff.org). <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="2021-05-31"><u>2014+091</u></span>, “Decimal Time
-  Zones.”
-  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
-  <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
 - [Pearson, Tom](https://www.2x2.graphics). <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="2013-07-03"><u>2013+124</u></span>. “Simple D3 clock.”
+  data-bs-title="2013-07-03"><u><span class="yellow">2013</span>+<span class="cyan">124</span></u></span>.
+  “Simple D3 clock.”
   <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
   <https://observablehq.com/@d3/simple-clock>.
 - [Heyen, Frank](https://fheyen.github.io). <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="2021-11-02"><u>2021+246</u></span>. “BarChart Clock.”
+  data-bs-title="2021-11-02"><u><span class="yellow">2021</span>+<span class="cyan">246</span></u></span>.
+  “BarChart Clock.”
   <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
   <https://observablehq.com/@fheyen/barchart-clock>.
 - [Johnson, Ian](https://enjalot.github.io). <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="2021-05-30"><u>2021+090</u></span>. “Draggable World
-  Map Coordinates Input.”
+  data-bs-title="2021-05-30"><u><span class="yellow">2021</span>+<span class="cyan">090</span></u></span>.
+  “Draggable World Map Coordinates Input.”
   <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
   <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
 - [Bridges, Dan](https://www.danbridges.org). <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="2022-01-06"><u>2021+311</u></span>. “Visualizing
-  Seasonal Daylight.”
+  data-bs-title="2022-01-06"><u><span class="yellow">2021</span>+<span class="cyan">311</span></u></span>.
+  “Visualizing Seasonal Daylight.”
   <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
   <https://observablehq.com/@dbridges/visualizing-seasonal-daylight>.
+- [Clements, John](https://www.brinckerhoff.org). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="2021-05-31"><u><span class="yellow">2014</span>+<span class="cyan">091</span></u></span>,
+  “Decimal Time Zones.”
+  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+  <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
 
 ``` {ojs}
 //| echo: false
