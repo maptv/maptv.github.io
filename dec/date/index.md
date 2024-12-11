@@ -188,7 +188,7 @@ calPlot = Plot.plot({
   height: 200,
   className: "calplot",
   marginTop: 0,
-  marginBottom: 40 + 18 * (width < 450),
+  marginBottom: 40 + 24 * (width < 450),
   marginLeft: 42,
   y: {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
       domain: [-1, 0, 1, 2, 3, 4, 5, 6],
