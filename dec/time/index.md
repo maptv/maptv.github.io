@@ -1,11 +1,12 @@
 # Dec Time
 Martin Laptev
-2024+283
+2024+285
 
 - [Time](#time)
 - [Zone](#zone)
 - [Unit](#unit)
 - [Next](#next)
+- [Cite](#cite)
 
 # Time
 
@@ -322,17 +323,17 @@ const svg = d3.select(DOM.svg(width, height - (width < 400 ? 10 : width < 600 ? 
   const margin = {top: 0, left: 10, right: 10, bottom: 0, inner: 3};
   const contentWidth = width - margin.left - margin.right - margin.inner;
   const columnWidth = contentWidth / 2;
-  const date2002 = new Date(2002, new Date().getMonth(), new Date().getDate(), new Date().getHours())
+  const date2022 = new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours())
   let selection = {
-    date: date2002,
-    hour: date2002.getHours()
+    date: date2022,
+    hour: date2022.getHours()
   }
   const renderPlot = () => {
     svg.selectAll("#daylightplot *").remove();
     svg.select("#daylightplot").call(daylightPlot, {
       width: columnWidth / 1.26,
       height: height / 1.51 - margin.top - margin.bottom,
-      year: date2002.getFullYear(),
+      year: date2022.getFullYear(),
       latitude: location[1],
       defaultDate: selection.date,
       defaultHour: selection.hour
@@ -1098,9 +1099,9 @@ and is obtained from the [hours, minutes, and
 seconds](https://en.wikipedia.org/wiki/Swatch_Internet_Time#Calculation_from_UTC+1:~:text=The%20formula%20for%20calculating%20the%20time%20in%20.beats%20from%20UTC%2B1)
 of
 [UTC+01:00](https://en.wikipedia.org/wiki/UTC%2B01:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B01%3A00).
-The major innovations described in this article are the Dec time zone
-system and the simple equation for obtaining the Dec time in Zone 0 from
-a UNIX timestamp, but Dec has much more to offer than <a
+In contrast, the major innovations described in this article are the Dec
+time zone system and the simple equation for obtaining the Dec time in
+Zone 0 from a UNIX timestamp, but Dec has much more to offer than <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</a> times and zones.
@@ -1126,6 +1127,56 @@ not translate well into Jupyter notebooks. After the next article, I
 return to the use of Observable in my Dec [snap](../../dec/span)🫰and
 [span](../../dec/span)🌈articles.
 
+<div id="navchart">
+
+<div>
+
+<img src="index_files/figure-commonmark/mermaid-figure-1.png"
+style="width:4.59in;height:0.52in" />
+
+</div>
+
+</div>
+
+# Cite
+
+Please spread the good word about Dec using the citation information at
+the bottom of this article. You may also want to cite the following blog
+post that proposed 20 decimal time zones based on degrees longitude from
+the [Greenwich
+Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England)
+and the Observable notebooks that provided the basis for the clock🕓,
+bar📊chart, map🗺️, and daylight☀️plot visualizations in this article:
+
+- [Clements, John](https://www.brinckerhoff.org). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="2021-05-31"><u>2014+091</u></span>, “Decimal Time
+  Zones.”
+  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+  <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
+- [Pearson, Tom](https://www.2x2.graphics). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="2013-07-03"><u>2013+124</u></span>. “Simple D3 clock.”
+  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+  <https://observablehq.com/@d3/simple-clock>.
+- [Heyen, Frank](https://fheyen.github.io). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="2021-11-02"><u>2021+246</u></span>. “BarChart Clock.”
+  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+  <https://observablehq.com/@fheyen/barchart-clock>.
+- [Johnson, Ian](https://enjalot.github.io). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="2021-05-30"><u>2021+090</u></span>. “Draggable World
+  Map Coordinates Input.”
+  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+  <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
+- [Bridges, Dan](https://www.danbridges.org). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="2022-01-06"><u>2021+311</u></span>. “Visualizing
+  Seasonal Daylight.”
+  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+  <https://observablehq.com/@dbridges/visualizing-seasonal-daylight>.
+
 ``` {ojs}
 //| echo: false
 //| output: false
@@ -1147,6 +1198,27 @@ function unix2dote1(unix, zone, offset = 719468) {
         (new Date).getTimezoneOffset() / 144)) % 10
       ) / 10 + offset, zone]
 }
+function dote2date(dote, zone = 0) {
+  const cote = Math.floor((
+      dote >= 0 ? dote
+      : dote - 146096
+    ) / 146097),
+  dotc = dote - cote * 146097,
+  yotc = Math.floor((dotc
+    - Math.floor(dotc / 1460)
+    + Math.floor(dotc / 36524)
+    - Math.floor(dotc / 146096)
+  ) / 365);
+  return [
+    yotc + cote * 400,
+    dotc - (yotc * 365
+      + Math.floor(yotc / 4)
+      - Math.floor(yotc / 100)
+  ), zone]}
+dz = unix2dote(unix)
+ydz = dote2date(...dz)
+decYear = ydz[0].toString().padStart(4, "0")
+decDate = Math.floor(ydz[1]).toString().padStart(3, "0")
 browserDote = unix2dote(unix)
 browserTime = browserDote[0] % 1 * 10
 browserZone = browserDote[1]
@@ -1170,19 +1242,6 @@ barBeatsN = decTimeN.slice(4, 6)
 function lati2turn1(degrees = -180, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
   return (degrees %= 360) / (360 / 10**e) % 10**e;
-}
-function dote2deco(dote = 719468, zone = 0, lead = "0", emoji = false, minus = false) {
-let [year, doty] = dote2date(dote);
-  if (minus) {
-    doty = Math.abs(doty - (365 + Number(year2leap(year + 1))));
-    if (zone != null) {
-      zone = (10 - zone) % 10;
-    }
-  }
-return `${
-    (year + minus).toString().padStart(4, lead)}${minus ? "-" : "+"}${
-    Math.floor(doty).toString().padStart(3, lead)}${emoji ? "🗓️" : ""}${(doty % 1 * 10).toFixed(4)}${
-    zone != null ? (minus ? "+" : "-") + String(zone) : ""}${emoji ? "🕰️" : ""}`
 }
 graticule = d3.geoGraticule().stepMinor([36,36]).stepMajor([36,36])()
 graticule.coordinates = graticule.coordinates.map(
@@ -1548,12 +1607,14 @@ daylightPlot = (
   const updateControlPositions = () => {
     dateLine
       .select("line")
+      .attr("id", "dateline")
       .attr("x1", xScale(0))
       .attr("y1", yScale(date))
       .attr("x2", xScale(24))
       .attr("y2", yScale(date));
     dateLine
       .select("rect")
+      .attr("id", "daterect")
       .attr("x", xScale(0))
       .attr("y", yScale(date) - 4);
     root

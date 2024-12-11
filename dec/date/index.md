@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+283
+2024+285
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -58,7 +58,7 @@ below to be highlighted with a red🟥background in the calendar🗓️plots,
 coordinates in the top calendar🗓️plot by selecting a group of 10 days
 called a dek on the x-axis↔️via the dek equation,
 <span class="cyan">${dekInput}</span> =
-⌊<span class="cyan">${dotyInput}</span> × 10⌋, and a day-of-dek
+⌊<span class="cyan">${dotyInput}</span> ÷ 10⌋, and a day-of-dek
 (<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">dod</span>) on the y-axis↕with its last
 digit, <span class="cyan">${dodInput}</span>.
@@ -188,7 +188,7 @@ calPlot = Plot.plot({
   height: 200,
   className: "calplot",
   marginTop: 0,
-  marginBottom: 40,
+  marginBottom: 40 + 8 * (width < 400),
   marginLeft: 42,
   y: {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
       domain: [-1, 0, 1, 2, 3, 4, 5, 6],
@@ -737,7 +737,7 @@ calendar unit can be as convenient as the 10-day
 because our [decimal numeral
 system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
 allows us to naturally combine a dek,
-<span class="cyan">${decoDoty.slice(0, 2)}</span>, and
+<span class="cyan">${decoDoty.slice(0, 2)}</span>, and a
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">dod</span>,
 <span class="cyan">${decoDoty\[2\]}</span>, into a
@@ -762,7 +762,7 @@ data-bs-toggle="tooltip" data-bs-title="days-of-dek">Dods</span> 3, 4,
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:5.66in;height:2.5in" />
+style="width:4.51in;height:2.11in" />
 
 </div>
 
@@ -1235,6 +1235,17 @@ that you continue on through the [Dec section](../../dec) of my site to
 the [time](../../dec/time)🕰️, [ISO 8601](../../dec/iso)🌐,
 [snap](../../dec/snap)🫰, and [span](../../dec/span)🌈articles.
 
+<div id="navchart">
+
+<div>
+
+<img src="index_files/figure-commonmark/mermaid-figure-2.png"
+style="width:4.59in;height:0.52in" />
+
+</div>
+
+</div>
+
 # Cite
 
 Thank you for your interest in Dec. You will find citation information
@@ -1607,13 +1618,13 @@ form.oi-3a86ea-toggle > label {
   width: 75px;
 }
 input.oi-3a86ea-input[type="checkbox"] {
-  margin: 6px 0px 0px 0px;
+  margin: 4px 0px 0px 0px;
 }
 div > form > label {
   --label-width: 140px;
 }
-input[type="radio"], input[type="checkbox"] {
-  margin: 2px 0px 0px 0px;
+input[type="radio"] {
+  margin: 1px 0px 0px 0px;
 }
 p:has(.radiotitle) {
   margin-top: -6px !important;
