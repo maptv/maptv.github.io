@@ -331,7 +331,7 @@ flowchart LR
 
 # Cite
 
-Thank you for your interest in Dec. You will find citation information for this article below. Please note that the original source of the algorithms underlying the conversion of Dec [year]{.yellow}+[day]{.cyan} dates and [does]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-era"} is [Hinnant, Howard](https://howardhinnant.github.io). [2021+184]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2021-09-01"}. “`chrono`-Compatible Low-Level Date Algorithms.” [\${decoYear}]{.yellow}+[\${decoDoty}]{.cyan}. <https://howardhinnant.github.io/date_algorithms.html>.
+Thank you for your interest in Dec. You will find citation information for this article below. Please note that the original source of the algorithms underlying the conversion of Dec [year]{.yellow}+[day]{.cyan} dates and [does]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-era"} is [Hinnant, Howard](https://howardhinnant.github.io). [[2021]{.yellow}+[184]{.cyan}]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2021-09-01"}. “`chrono`-Compatible Low-Level Date Algorithms.” [\${decoYear}]{.yellow}+[\${decoDoty}]{.cyan}. <https://howardhinnant.github.io/date_algorithms.html>.
 
 ```{ojs}
 //| echo: false
