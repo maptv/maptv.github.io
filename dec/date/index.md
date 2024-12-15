@@ -762,7 +762,7 @@ data-bs-toggle="tooltip" data-bs-title="days-of-dek">Dods</span> 3, 4,
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:4.51in;height:2.11in" />
+style="width:6.85in;height:2.54in" />
 
 </div>
 
@@ -1240,7 +1240,7 @@ the [time](../../dec/time)🕰️, [ISO 8601](../../dec/iso)🌐,
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:4.59in;height:0.52in" />
+style="width:6.94in;height:0.73in" />
 
 </div>
 

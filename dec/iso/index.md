@@ -309,7 +309,7 @@ format by clicking on its corresponding rectangle in the flowchart.
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:6.92in;height:3.98in" />
+style="width:11.6in;height:4.27in" />
 
 </div>
 

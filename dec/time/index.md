@@ -788,7 +788,7 @@ you can look up your Dec time zone (TZ) in the table below.
 <col style="width: 12%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">TZ<br>+</th>
 <th style="text-align: center;">TZ<br>-</th>
 <th style="text-align: center;">Start<br>°</th>
@@ -803,7 +803,7 @@ class="math inline"><em>c</em><em>τ</em></span></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">9</td>
 <td style="text-align: center;">-1</td>
 <td style="text-align: center;">-54</td>
@@ -813,7 +813,7 @@ class="math inline"><em>c</em><em>τ</em></span></th>
 <td style="text-align: center;">95</td>
 <td style="text-align: center;">100</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">8</td>
 <td style="text-align: center;">-2</td>
 <td style="text-align: center;">-90</td>
@@ -823,7 +823,7 @@ class="math inline"><em>c</em><em>τ</em></span></th>
 <td style="text-align: center;">85</td>
 <td style="text-align: center;">90</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">7</td>
 <td style="text-align: center;">-3</td>
 <td style="text-align: center;">-126</td>
@@ -833,7 +833,7 @@ class="math inline"><em>c</em><em>τ</em></span></th>
 <td style="text-align: center;">75</td>
 <td style="text-align: center;">80</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">-4</td>
 <td style="text-align: center;">-162</td>
@@ -843,7 +843,7 @@ class="math inline"><em>c</em><em>τ</em></span></th>
 <td style="text-align: center;">65</td>
 <td style="text-align: center;">70</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">-5</td>
 <td style="text-align: center;">162</td>
@@ -853,7 +853,7 @@ class="math inline"><em>c</em><em>τ</em></span></th>
 <td style="text-align: center;">55</td>
 <td style="text-align: center;">60</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">-6</td>
 <td style="text-align: center;">126</td>
@@ -863,7 +863,7 @@ class="math inline"><em>c</em><em>τ</em></span></th>
 <td style="text-align: center;">45</td>
 <td style="text-align: center;">50</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">-7</td>
 <td style="text-align: center;">90</td>
@@ -873,7 +873,7 @@ class="math inline"><em>c</em><em>τ</em></span></th>
 <td style="text-align: center;">35</td>
 <td style="text-align: center;">40</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">-8</td>
 <td style="text-align: center;">54</td>
@@ -883,7 +883,7 @@ class="math inline"><em>c</em><em>τ</em></span></th>
 <td style="text-align: center;">25</td>
 <td style="text-align: center;">30</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">-9</td>
 <td style="text-align: center;">18</td>
@@ -893,7 +893,7 @@ class="math inline"><em>c</em><em>τ</em></span></th>
 <td style="text-align: center;">15</td>
 <td style="text-align: center;">20</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">-10</td>
 <td style="text-align: center;">-18</td>
@@ -914,14 +914,14 @@ zones will differ from the closest UTC time by
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of a day">millidays</span>. To find the
 difference δ, convert the UTC offset hours
-<span class="cyan">o<sub>h</sub></span> and minutes
-<span class="cyan">o<sub>m</sub></span> into <span class="under tool"
+<span class="cyan">o<sub>H</sub></span> and minutes
+<span class="cyan">o<sub>M</sub></span> into <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="tenths of a turn">deci[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span>
 of the longitude λ and then subtract the Dec zone number
 <span class="lime">z</span>:
 
-*λ* = *o*<sub>*h*</sub> ÷ 2.4 + *o*<sub>*m*</sub> ÷ 144
+*λ* = *o*<sub>*H*</sub> ÷ 2.4 + *o*<sub>*M*</sub> ÷ 144
 
 *z* = ⌊*λ* + 1 ÷ 2⌋
 
@@ -975,7 +975,7 @@ minute, and `ss` is the base-60 second.
 
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Prefix</th>
 <th>Power</th>
 <th>Day</th>
@@ -983,37 +983,37 @@ minute, and `ss` is the base-60 second.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td></td>
 <td>0</td>
 <td>1</td>
 <td>24:00:00.000</td>
 </tr>
-<tr class="even">
+<tr>
 <td>deci</td>
 <td>-1</td>
 <td>.1</td>
 <td>02:24:00.000</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>centi</td>
 <td>-2</td>
 <td>.01</td>
 <td>00:14:24.000</td>
 </tr>
-<tr class="even">
+<tr>
 <td>milli</td>
 <td>-3</td>
 <td>.001</td>
 <td>00:01:26.400</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>decimilli</td>
 <td>-4</td>
 <td>.0001</td>
 <td>00:00:08.640</td>
 </tr>
-<tr class="even">
+<tr>
 <td>centimilli</td>
 <td>-5</td>
 <td>.00001</td>
@@ -1132,7 +1132,7 @@ return to the use of Observable in my Dec [snap](../../dec/span)🫰and
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:4.59in;height:0.52in" />
+style="width:6.94in;height:0.73in" />
 
 </div>
 
@@ -1144,7 +1144,7 @@ Please spread the good word about Dec using the citation information at
 the bottom of this article. You may also want to cite the Observable
 notebooks that I adapted into the clock🕓, bar📊chart, map🗺️, and
 daylight☀️plot visualizations in this article or the 2014 blog post
-which proposed a system of 20 time zones, each 5
+which proposed a system of 20 decimal time zones, each 5
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="hundredths of a day">centidays</span> wide, based on the
 [Greenwich

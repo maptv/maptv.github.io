@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,12 +74,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-20779428d464842b64dc11664170543a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-e17136ee4fef986afe6fcd47ea206205.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-644a86e57e1d5a2873bfec39e3098ffe.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-ca93e53c35d7cd6daec9449cb953cc2b.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": true,
@@ -161,7 +161,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../asset/deidek.svg" alt="Decagon made up of 100 triangles" class="navbar-logo">
+    <img src="../../asset/deidek.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Martin Laptev</span>
@@ -195,12 +195,17 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="sidebar-tools-main tools-wide">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../asset/deidek.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
     <a href="https://www.github.com/maptv" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-github"></i></a>
     <a href="https://www.linkedin.com/in/maptv" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-linkedin"></i></a>
     <a href="mailto:maptv@engineer.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope-at"></i></a>
     <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
 </div>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -1307,8 +1312,8 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>Dec times in Zone 0 and 5 can be directly converted to and from UTC times with an offset of 0 and 12 hours, respectively. The other Dec time zones will differ from the closest UTC time by 8.<span class="over">3</span>, 16.<span class="over">6</span>, 25, 33.<span class="over">3</span>, 41.<span class="over">6</span> or 50 <span class="under tool" data-bs-toggle="tooltip" data-bs-title="thousands of a day">millidays</span>. To find the difference δ, convert the UTC offset hours <span class="cyan">o<sub>h</sub></span> and minutes <span class="cyan">o<sub>m</sub></span> into <span class="under tool" data-bs-toggle="tooltip" data-bs-title="tenths of a turn">deci<a href="https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees">turns</a></span> of the longitude λ and then subtract the Dec zone number <span class="lime">z</span>:</p>
-<p><span class="math display">\[\lambda = o_h \div 2.4 + o_m \div 144\]</span></p>
+<p>Dec times in Zone 0 and 5 can be directly converted to and from UTC times with an offset of 0 and 12 hours, respectively. The other Dec time zones will differ from the closest UTC time by 8.<span class="over">3</span>, 16.<span class="over">6</span>, 25, 33.<span class="over">3</span>, 41.<span class="over">6</span> or 50 <span class="under tool" data-bs-toggle="tooltip" data-bs-title="thousands of a day">millidays</span>. To find the difference δ, convert the UTC offset hours <span class="cyan">o<sub>H</sub></span> and minutes <span class="cyan">o<sub>M</sub></span> into <span class="under tool" data-bs-toggle="tooltip" data-bs-title="tenths of a turn">deci<a href="https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees">turns</a></span> of the longitude λ and then subtract the Dec zone number <span class="lime">z</span>:</p>
+<p><span class="math display">\[\lambda = o_H \div 2.4 + o_M \div 144\]</span></p>
 <p><span class="math display">\[z = \lfloor\lambda + 1 \div 2\rfloor\]</span></p>
 <p><span class="math display">\[\delta = \lambda - z\]</span></p>
 <p>We can avoid dealing with the time zone difference by shifting the time zone so that we always convert between Zone 0 and <a href="https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+00:00,_Z">UTC+00:00</a> or Zone 5 and <a href="https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+12:00,_M">UTC+12:00</a>. To obtain the Zone 0 time, we evaluate a Dec time as a math expression, add 10, and get the remainder after dividing by 10 to make sure the result is less than 10 <a href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays" class="under tool" data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</a>: (<span class="cyan"><span><span id="ojs-element-id-5"></span></span></span> <span><span id="ojs-element-id-6"></span></span> <span class="lime"><span><span id="ojs-element-id-7"></span></span></span> + 10) <a href="https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder">mod</a> 10 = <span class="cyan"><span><span id="ojs-element-id-8"></span></span></span>.</p>
@@ -1406,7 +1411,7 @@ Bad Pun Alert
 </section>
 <section id="cite" class="level4">
 <h4 class="anchored" data-anchor-id="cite">Cite</h4>
-<p>Please spread the good word about Dec using the citation information at the bottom of this article. You may also want to cite the Observable notebooks that I adapted into the clock🕓, bar📊chart, map🗺️, and daylight☀️plot visualizations in this article or the 2014 blog post which proposed a system of 20 time zones, each 5 <span class="under tool" data-bs-toggle="tooltip" data-bs-title="hundredths of a day">centidays</span> wide, based on the <a href="https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England">Greenwich Meridian</a>:</p>
+<p>Please spread the good word about Dec using the citation information at the bottom of this article. You may also want to cite the Observable notebooks that I adapted into the clock🕓, bar📊chart, map🗺️, and daylight☀️plot visualizations in this article or the 2014 blog post which proposed a system of 20 decimal time zones, each 5 <span class="under tool" data-bs-toggle="tooltip" data-bs-title="hundredths of a day">centidays</span> wide, based on the <a href="https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England">Greenwich Meridian</a>:</p>
 <ul>
 <li><a href="https://www.2x2.graphics">Pearson, Tom</a>. <span class="tool" data-bs-toggle="tooltip" data-bs-title="2013-07-03"><u><span class="yellow">2013</span>+<span class="cyan">124</span></u></span>. “Simple D3 clock.” <span class="yellow"><span><span id="ojs-element-id-12"></span></span></span>+<span class="cyan"><span><span id="ojs-element-id-13"></span></span></span>. <a href="https://observablehq.com/@d3/simple-clock" class="uri">https://observablehq.com/@d3/simple-clock</a>.</li>
 <li><a href="https://fheyen.github.io">Heyen, Frank</a>. <span class="tool" data-bs-toggle="tooltip" data-bs-title="2021-11-02"><u><span class="yellow">2021</span>+<span class="cyan">246</span></u></span>. “BarChart Clock.” <span class="yellow"><span><span id="ojs-element-id-14"></span></span></span>+<span class="cyan"><span><span id="ojs-element-id-15"></span></span></span>. <a href="https://observablehq.com/@fheyen/barchart-clock" class="uri">https://observablehq.com/@fheyen/barchart-clock</a>.</li>
@@ -2951,8 +2956,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3119,7 +3122,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -4095,9 +4097,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-738"><a href="#cb4-738" aria-hidden="true" tabindex="-1"></a>| 1       | -9      | 18         | 36       | 54       | 10               | 15             | 20             |</span>
 <span id="cb4-739"><a href="#cb4-739" aria-hidden="true" tabindex="-1"></a>| 0       | -10     | -18        | 0        | 18       | 0                | 5              | 10             |</span>
 <span id="cb4-740"><a href="#cb4-740" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-741"><a href="#cb4-741" aria-hidden="true" tabindex="-1"></a>Dec times in Zone 0 and 5 can be directly converted to and from UTC times with an offset of 0 and 12 hours, respectively. The other Dec time zones will differ from the closest UTC time by 8.<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{.over}, 16.<span class="co">[</span><span class="ot">6</span><span class="co">]</span>{.over}, 25, 33.<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{.over}, 41.<span class="co">[</span><span class="ot">6</span><span class="co">]</span>{.over} or 50 <span class="co">[</span><span class="ot">millidays</span><span class="co">]</span>{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of a day"}. To find the difference <span class="dv">&amp;delta;</span>, convert the UTC offset hours <span class="co">[</span><span class="ot">o~h~</span><span class="co">]</span>{.cyan} and minutes <span class="co">[</span><span class="ot">o~m~</span><span class="co">]</span>{.cyan} into <span class="co">[</span><span class="ot">deci[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span><span class="co">]</span>{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a turn"} of the longitude <span class="dv">&amp;lambda;</span> and then subtract the Dec zone number <span class="co">[</span><span class="ot">z</span><span class="co">]</span>{.lime}:</span>
+<span id="cb4-741"><a href="#cb4-741" aria-hidden="true" tabindex="-1"></a>Dec times in Zone 0 and 5 can be directly converted to and from UTC times with an offset of 0 and 12 hours, respectively. The other Dec time zones will differ from the closest UTC time by 8.<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{.over}, 16.<span class="co">[</span><span class="ot">6</span><span class="co">]</span>{.over}, 25, 33.<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{.over}, 41.<span class="co">[</span><span class="ot">6</span><span class="co">]</span>{.over} or 50 <span class="co">[</span><span class="ot">millidays</span><span class="co">]</span>{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of a day"}. To find the difference <span class="dv">&amp;delta;</span>, convert the UTC offset hours <span class="co">[</span><span class="ot">o~H~</span><span class="co">]</span>{.cyan} and minutes <span class="co">[</span><span class="ot">o~M~</span><span class="co">]</span>{.cyan} into <span class="co">[</span><span class="ot">deci[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span><span class="co">]</span>{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a turn"} of the longitude <span class="dv">&amp;lambda;</span> and then subtract the Dec zone number <span class="co">[</span><span class="ot">z</span><span class="co">]</span>{.lime}:</span>
 <span id="cb4-742"><a href="#cb4-742" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-743"><a href="#cb4-743" aria-hidden="true" tabindex="-1"></a>$$\lambda = o_h \div 2.4 + o_m \div 144$$</span>
+<span id="cb4-743"><a href="#cb4-743" aria-hidden="true" tabindex="-1"></a>$$\lambda = o_H \div 2.4 + o_M \div 144$$</span>
 <span id="cb4-744"><a href="#cb4-744" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-745"><a href="#cb4-745" aria-hidden="true" tabindex="-1"></a>$$z = \lfloor\lambda + 1 \div 2\rfloor$$</span>
 <span id="cb4-746"><a href="#cb4-746" aria-hidden="true" tabindex="-1"></a></span>
@@ -4151,7 +4153,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-796"><a href="#cb4-796" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-797"><a href="#cb4-797" aria-hidden="true" tabindex="-1"></a><span class="fu"># Cite</span></span>
 <span id="cb4-798"><a href="#cb4-798" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-799"><a href="#cb4-799" aria-hidden="true" tabindex="-1"></a>Please spread the good word about Dec using the citation information at the bottom of this article. You may also want to cite the Observable notebooks that I adapted into the clock🕓, bar📊chart, map🗺️, and daylight☀️plot visualizations in this article or the 2014 blog post which proposed a system of 20 time zones, each 5 <span class="co">[</span><span class="ot">centidays</span><span class="co">]</span>{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"} wide, based on the <span class="co">[</span><span class="ot">Greenwich Meridian</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England):</span>
+<span id="cb4-799"><a href="#cb4-799" aria-hidden="true" tabindex="-1"></a>Please spread the good word about Dec using the citation information at the bottom of this article. You may also want to cite the Observable notebooks that I adapted into the clock🕓, bar📊chart, map🗺️, and daylight☀️plot visualizations in this article or the 2014 blog post which proposed a system of 20 decimal time zones, each 5 <span class="co">[</span><span class="ot">centidays</span><span class="co">]</span>{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"} wide, based on the <span class="co">[</span><span class="ot">Greenwich Meridian</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England):</span>
 <span id="cb4-800"><a href="#cb4-800" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-801"><a href="#cb4-801" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Pearson, Tom</span><span class="co">](https://www.2x2.graphics)</span>. [<span class="co">[</span><span class="ot">2013</span><span class="co">]</span>{.yellow}+<span class="co">[</span><span class="ot">124</span><span class="co">]</span>{.cyan}]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2013-07-03"}. “Simple D3 clock.” <span class="co">[</span><span class="ot">\${decYear}</span><span class="co">]</span>{.yellow}+<span class="co">[</span><span class="ot">\${decDate}</span><span class="co">]</span>{.cyan}. <span class="ot">&lt;https://observablehq.com/@d3/simple-clock&gt;</span>.</span>
 <span id="cb4-802"><a href="#cb4-802" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Heyen, Frank</span><span class="co">](https://fheyen.github.io)</span>. [<span class="co">[</span><span class="ot">2021</span><span class="co">]</span>{.yellow}+<span class="co">[</span><span class="ot">246</span><span class="co">]</span>{.cyan}]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2021-11-02"}. “BarChart Clock.” <span class="co">[</span><span class="ot">\${decYear}</span><span class="co">]</span>{.yellow}+<span class="co">[</span><span class="ot">\${decDate}</span><span class="co">]</span>{.cyan}. <span class="ot">&lt;https://observablehq.com/@fheyen/barchart-clock&gt;</span>.</span>
