@@ -4,10 +4,10 @@ logo:
 typography:
   fonts:
     - family: Tahoma
-      source: common
+      source: google
     - family: Ewka
       source: file
-      files: asset/ewka.ttf
+      files: "asset/ewka.ttf"
   base: Tahoma
   headings: Tahoma
   monospace: Ewka
