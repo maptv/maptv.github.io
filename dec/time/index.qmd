@@ -736,9 +736,9 @@ There are [37 UTC offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets), b
 | 1       | -9      | 18         | 36       | 54       | 10               | 15             | 20             |
 | 0       | -10     | -18        | 0        | 18       | 0                | 5              | 10             |
 
-Dec times in Zone 0 and 5 can be directly converted to and from UTC times with an offset of 0 and 12 hours, respectively. The other Dec time zones will differ from the closest UTC time by 8.[3]{.over}, 16.[6]{.over}, 25, 33.[3]{.over}, 41.[6]{.over} or 50 [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of a day"}. To find the difference &delta;, convert the UTC offset hours [o~h~]{.cyan} and minutes [o~m~]{.cyan} into [deci[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a turn"} of the longitude &lambda; and then subtract the Dec zone number [z]{.lime}:
+Dec times in Zone 0 and 5 can be directly converted to and from UTC times with an offset of 0 and 12 hours, respectively. The other Dec time zones will differ from the closest UTC time by 8.[3]{.over}, 16.[6]{.over}, 25, 33.[3]{.over}, 41.[6]{.over} or 50 [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of a day"}. To find the difference &delta;, convert the UTC offset hours [o~H~]{.cyan} and minutes [o~M~]{.cyan} into [deci[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a turn"} of the longitude &lambda; and then subtract the Dec zone number [z]{.lime}:
 
-$$\lambda = o_h \div 2.4 + o_m \div 144$$
+$$\lambda = o_H \div 2.4 + o_M \div 144$$
 
 $$z = \lfloor\lambda + 1 \div 2\rfloor$$
 
@@ -792,7 +792,7 @@ flowchart LR
 
 # Cite
 
-Please spread the good word about Dec using the citation information at the bottom of this article. You may also want to cite the Observable notebooks that I adapted into the clock🕓, bar📊chart, map🗺️, and daylight☀️plot visualizations in this article or the 2014 blog post which proposed a system of 20 time zones, each 5 [centidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"} wide, based on the [Greenwich Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England):
+Please spread the good word about Dec using the citation information at the bottom of this article. You may also want to cite the Observable notebooks that I adapted into the clock🕓, bar📊chart, map🗺️, and daylight☀️plot visualizations in this article or the 2014 blog post which proposed a system of 20 decimal time zones, each 5 [centidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"} wide, based on the [Greenwich Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England):
 
 - [Pearson, Tom](https://www.2x2.graphics). [[2013]{.yellow}+[124]{.cyan}]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2013-07-03"}. “Simple D3 clock.” [\${decYear}]{.yellow}+[\${decDate}]{.cyan}. <https://observablehq.com/@d3/simple-clock>.
 - [Heyen, Frank](https://fheyen.github.io). [[2021]{.yellow}+[246]{.cyan}]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2021-11-02"}. “BarChart Clock.” [\${decYear}]{.yellow}+[\${decDate}]{.cyan}. <https://observablehq.com/@fheyen/barchart-clock>.
