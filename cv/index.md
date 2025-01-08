@@ -211,8 +211,10 @@ for all of humanity.
 
 <div class="pubs">
 
-- Potentiating \[mAb\] therapy by targeting complement C3 \[…\] on
-  lymphoma cells <span class="cvdate">Submitted</span>
+- [Potentiating \[mAb\] therapy by targeting complement C3 \[…\] on
+  lymphoma
+  cells](https://ashpublications.org/blood/article-abstract/doi/10.1182/blood.2024024846/534967/Potentiating-CD20-monoclonal-antibody-therapy-by?redirectedFrom=fulltext)
+  <span class="cvdate">2025</span>
 - [Recalibration of a deep learning model \[…\] to inform lung cancer
   screening
   intervals](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2802522)
