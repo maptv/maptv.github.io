@@ -359,12 +359,12 @@ data-bs-title="day-of-year">doy</span>.
 
 </div>
 
-Christmas🎄is a fixed holiday because it occurs on the same
+Christmas🎄is a fixed⚓️holiday because it occurs on the same
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="December 25"><u>Day
-299</u></span>, every year. Unlike fixed holidays, Gregorian calendar
-floating holidays happen on a different <span class="under tool"
+299</u></span>, every year. Unlike fixed⚓️holidays, Gregorian calendar
+floating🛟holidays happen on a different <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> every
 year so that their <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> can remain constant. Dec uses the
@@ -375,7 +375,7 @@ equation, <span class="wine">w<sub>Δ</sub></span> =
 (<span class="wine">w<sub>M</sub></span> -
 <span class="wine">w<sub>S</sub></span> + 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-7, to determine which of the seven possible floating holiday dates
+7, to determine which of the seven possible floating🛟holiday dates
 corresponds to the given year.
 
 In the <span class="under tool" data-bs-toggle="tooltip"
@@ -609,16 +609,17 @@ of <span class="yellow">y</span>. The current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> equation
 values are <span class="cyan">${decoDoty}</span> =
 ⌊<span class="yellow">${mod1FracYear}</span> ×
-<span class="orange">${nDaysInYear}</span>⌋. We can refer to a
+<span class="orange">${nDaysInYear}</span>⌋. In Dec, a
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> without a year as a floating date
-and a <span class="yellow">year</span>+<span class="cyan">day</span>
-date as a fixed date. Unlike other types of dates, floating dates do not
-specify the year and thus can apply to any year.
+data-bs-title="day-of-year">doy</span> without a year is a
+floating🛟date and a
+<span class="yellow">year</span>+<span class="cyan">day</span> date is a
+fixed⚓️date. Unlike fixed⚓️dates, floating🛟dates do not specify the
+year and thus can apply to any year.
 
-Fixed dates are essentially
+Fixed⚓️dates are essentially
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
-math expressions. Instead of simplifying a fixed date into a
+math expressions. Instead of simplifying a fixed⚓️date into a
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="year-of-era">yoe</span>, we can do the opposite and
 expand it to display additional information, such as the number of days
@@ -647,13 +648,37 @@ to a math expression that can be simplified to a
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="year-of-era">yoe</span>.
 
-Expanded dates display a subtrahend Dec spans🌈can omit their
-subtrahend, 2025+320=+21, or their difference, 2025+320=2025+299. Spans
-that omit the difference can also omit the year on either their left,
-320=2025+299, or right side, 2025+320=299.
+Whereas expanded dates have a set structure that does not change, Dec
+spans🌈can omit the subtrahend,
+<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>=${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>,
+or the difference,
+<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>=<span class="yellow">${decoYear}</span>+<span class="cyan">299</span>.
+If the year is the same on both sides of the equals sign, it can be
+omitted from the minuend,
+<span class="cyan">${decoDoty}</span>=<span class="yellow">${decoYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>,
+or from the subtrahend along with the difference:
+<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>=<span class="cyan">299</span>.
 
-All it takes is a little bit of arithmetic! This incredible versatility
-is possible thanks to the mathematical basis of Dec date notation.
+Dec spans🌈 can omit their entire
+[left](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20expression%20on%20the%20left%20of%20the%20%22%3D%22)-
+or
+[right](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=The%20expression%20on%20the%20right%20side%20of%20the%20%22%3D%22%20sign)-hand
+side to indicate that the minuend is <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span> of
+the given year or that the subtrahend is <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span> of
+the subsequent year, respectively. Dec spans🌈that contain at least one
+year are called fixed⚓️spans🌈. In contrast, floating🛟spans🌈do not
+contain a year and thus can be reused every year like floating🛟dates.
+
+Expanded dates can also be floating🛟or fixed⚓️. Expanded
+floating🛟dates are guaranteed to be reusable across years. The only
+exception to that reusability guarantee is if the difference in an
+expanded floating🛟date is intended to be interpreted as a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-week">dow</span>. Weeks do not align well with
+years and thus <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-week">dows</span> differ from year to year.
 
 # Day of week (dow)
 
@@ -718,8 +743,8 @@ data-bs-title="day-of-week">dow</span>),
 <span class="wine">${doty0dotw}</span>, divided by 7:
 <span class="wheat">${week}</span> =
 (<span class="cyan">${dotw0doty}</span> +
-<span class="wine">${doty0dotw}</span>) ÷ 7. The current Dec floating
-week date,
+<span class="wine">${doty0dotw}</span>) ÷ 7. The current Dec
+floating🛟week date,
 7×<span class="wheat">${week}</span>+<span class="wine">${dotw}</span>,
 is therefore equal to the sum of the current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and the
@@ -832,7 +857,11 @@ data-bs-toggle="tooltip" data-bs-title="day-of-month">dom</span>. If we
 combine the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-month">dom</span> and <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> patterns
-above, we can create hybrid Dec dates:
+above, we can create hybrid <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="day-of-month">dom</span>+<span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> Dec
+dates:
 <span class="yellow">${decoYear}</span>+<span class="cyan">${monthNumber -
 dotw}</span>+<span class="magenta">${dotm}</span>+<span class="wine">${dotw}</span>,
 where <span class="cyan">${monthNumber - dotw}</span> is
@@ -1224,7 +1253,7 @@ just different parts of the <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>. If we
 floor a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span>, ⌊<span class="cyan">d</span>⌋,
-we get its integer part, which is a floating date that provides the dek
+we get its integer part, which is a floating🛟date that provides the dek
 and <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">dod</span>, and if we obtain the remainder
 after dividing a <span class="under tool" data-bs-toggle="tooltip"
