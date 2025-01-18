@@ -1,0 +1,148 @@
+h1.title {
+  text-align: center;
+}
+
+.centered {
+  text-align: center;
+}
+
+.contact {
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 1010px) {
+  .cvdate {
+    float: right;
+  }
+}
+
+.horizontal > ul > li > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.horizontal > ul > li > ul > li{
+  width: 32%
+}
+
+.cvdate {
+  font-style: italic;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.3em;
+  margin: 8px 0px;
+}
+
+h6 {
+  font-size: 1em;
+  margin: 3px 3px;
+  font-weight: normal;
+}
+
+p, li {
+  text-align: justify;
+}
+
+@media print {
+.cvdate {
+    float: right;
+  }
+  h6 {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+  section#experience > section:first-child > h6:first-child {
+  margin-top: 0px;
+}
+  ul {
+  padding-left: 18px;
+}
+  h3 {
+  font-size: 1.1em;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+  h1.title {
+  margin-top: -20px;
+  font-size: 28px;
+  }
+  p, li {
+    line-height: 1.4;
+    margin-top: 5px;
+  }
+  .tofrom {
+    line-height: 1;
+  }
+  ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+div.contact > ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.phone {
+  width: 15px;
+  margin-bottom: 1.2px;
+}
+
+.linkedin {
+  width: 14px;
+}
+
+@media print {
+  .shiftup {
+  margin-bottom: -3.7px;
+  width: 14px;
+}
+.phone {
+  width: 13.2px;
+  margin-bottom: -2.6px;
+}
+.linkedin {
+  width: 12px;
+  margin-bottom: -2.7px;
+}
+}
+
+@media screen {
+  div.contact > ul > li > a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 1.5px;
+  }
+  ul {
+    padding-left: 24px;
+  }
+  li:has(> .phone) {
+      display: none;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+div.contact > ul {
+  flex-direction: column;
+}
+div.contact > ul > li {
+  text-align: center;
+}
+}
+
+h3.anchored {
+  margin: 8px 0px;
+}
+
+p {
+  line-height: 1.5;
+  margin-top: 5px;
+}
+.tofrom {
+  line-height: 1;
+}

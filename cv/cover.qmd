@@ -1,0 +1,35 @@
+---
+author: ""
+date: ""
+title: "Martin Skarzynski Laptev"
+linestretch: 2.8
+format:
+  pdf:
+    toc: false
+    pdf-engine: weasyprint
+css: cover.css
+---
+
+::: {.contact}
+- ![](https://icons.getbootstrap.com/assets/icons/telephone.svg){.phone} [240-207-1654](tel:240-207-1654)
+- ![](https://icons.getbootstrap.com/assets/icons/envelope-at.svg){.shiftup} [maptv@engineer.com](mailto:maptv@engineer.com)
+- ![](https://icons.getbootstrap.com/assets/icons/house.svg){.shiftup} [maptv.github.io](https://maptv.github.io)
+- ![](https://icons.getbootstrap.com/assets/icons/github.svg){.shiftup} [maptv](https://github.com/maptv)
+- ![](https://icons.getbootstrap.com/assets/icons/linkedin.svg){.linkedin} [maptv](https://linkedin.com/in/maptv)
+:::
+
+I am excited to apply for the Solutions Architect position at Data Society Group (DSG). With a robust background in building and implementing data-powered solutions and a passion for empowering teams through education and innovation, I am eager to contribute to DSG's mission of transforming workforces through cutting-edge data and AI applications.
+
+Over the past decade, I have held leadership roles across diverse organizations, delivering solutions at the intersection of AI, data science, and cloud technologies. As a Senior Domain Lead at Amazon Web Services, I designed and deployed scalable machine learning systems utilizing AWS tools such as SageMaker, Lambda, and EventBridge. In this role, I partnered with enterprise clients to address complex technical challenges, delivering results that aligned with their strategic goals. Additionally, I hold three AWS certifications, including Solutions Architect Associate, further showcasing my proficiency in cloud architecture.
+
+At Booz Allen Hamilton, I led interdisciplinary teams to develop AI-driven cybersecurity applications and spearheaded efforts in COVID-19 visualization and genomics analysis. These projects demanded strong collaboration, innovative thinking, and the ability to convey complex technical concepts to both technical and non-technical stakeholders—skills that align with the collaborative and client-facing nature of the Solutions Architect role at DSG.
+
+Complementing my technical expertise, I have a deep commitment to education and continuous learning. As an Instructor with Data Society, I have delivered training to enterprise clients on advanced topics such as MLOps, Generative AI, and NLP, fostering data literacy and technical excellence across teams. My academic roles at Virginia Tech and George Washington University have further honed my ability to distill complex ideas into accessible, impactful content.
+
+DSG’s vision of empowering organizations through tailored data solutions resonates deeply with my professional mission. I am particularly excited by your focus on leveraging AI for workforce development, as my work has consistently emphasized applying AI to create meaningful, real-world impact.
+
+I would welcome the opportunity to bring my expertise, creativity, and passion for innovation to DSG’s dynamic team. Thank you for considering my application. I look forward to the opportunity to discuss how my skills and experiences align with your needs for this role.
+
+Sincerely,
+
+Martin Skarzynski Laptev

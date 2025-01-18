@@ -30,6 +30,7 @@ website:
     logo: asset/deidek.svg
     logo-alt: "Decagon made up of 100 triangles"
   sidebar:
+    logo: ""
     tools:
     - icon: github
       href: https://www.github.com/maptv
