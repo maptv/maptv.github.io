@@ -88,6 +88,7 @@ div#quarto-search {
 
 code {
   padding: 0px;
+  font-size: 1.15rem;
 }
 
 #quarto-header > nav.navbar.navbar-expand-lg > div > div.navbar-brand-container.mx-auto > i.bi.bi-calendar {
@@ -203,6 +204,20 @@ div > form > label {
 .wine {
   border-radius: 4px;
   background-color: #722F37;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
+.darkblue {
+  border-radius: 4px;
+  background-color: #darkblue;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
+.denim {
+  border-radius: 4px;
+  background-color: #1560BD;
   color: white;
   padding: 0px 2px 0px 2px;
 }

@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+285
+2024+323
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -407,8 +407,9 @@ equation, <span class="wine">${day266dotwDiff}</span> =
 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7, and then add the resulting <span class="wine">w<sub>Δ</sub></span> to
-266: <span class="cyan">${day266dotwDiff + 266}</span> =
-<span class="wine">${day266dotwDiff}</span> + 266.
+<span class="cyan">266</span>: <span class="cyan">${day266dotwDiff +
+266}</span> = <span class="wine">${day266dotwDiff}</span> +
+<span class="cyan">266</span>.
 
 Apart from the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> and <span class="under tool"
@@ -570,12 +571,10 @@ of the Dec <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="year-of-era">yoe</span> equation is
 ⌊<span class="yellow">y</span>⌋+1+(<span class="cyan">d</span>-<span class="orange">n</span>)÷<span class="orange">n</span>=<span class="yellow">y</span>.
 In essence, <span class="cyan">d</span>-<span class="orange">n</span> is
-a [“T-minus”
-countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event)
-of the days until the start of Year ⌊<span class="yellow">y</span>⌋+1.
-The current
+the number of days until the start of Year
+⌊<span class="yellow">y</span>⌋+1. The current
 <span class="yellow">year</span>-<span class="pink">day</span> date,
-<span class="yellow">${nextYear}</span>-<span class="pink">${Tminus}</span>,
+<span class="yellow">${nextYear}</span>-<span class="pink">${TminusPadded}</span>,
 tells us that Year <span class="yellow">${nextYear}</span> will begin in
 <span class="pink">${Tminus}</span> days.
 
@@ -619,15 +618,42 @@ specify the year and thus can apply to any year.
 
 Fixed dates are essentially
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
-math expressions. Dec uses unsimplified math expressions to display
-information about a date, such as its <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>
-<span class="cyan">d</span> or POSIX <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>
-<span class="wine">w</span>. Essentially, you can modify a Dec date to
-show whatever numbers🔢you want. All it takes is a little bit of
-arithmetic! This incredible versatility is possible thanks to the
-mathematical basis of Dec date notation.
+math expressions. Instead of simplifying a fixed date into a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="year-of-era">yoe</span>, we can do the opposite and
+expand it to display additional information, such as the number of days
+in between it and another date. For example,
+<span class="yellow">${decoYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>
+is an expanded version of the current date which tells us that
+<span class="denim">${Math.abs(xmasDiff)}</span> days ${xmasDiffSince}
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="December 25"><u>Day 299</u></span>🎄of this year.
+
+In the example above, the minuend <span class="cyan">${decoDoty}</span>
+has been expanded into the subtrahend <span class="cyan">299</span> and
+the difference <span class="denim">${xmasDiff}</span> according to the
+minuend equation: minuend = subtrahend + difference. If we were
+preparing for a rocket🚀launch, the minuend would be the current time,
+the subtrahend would be the planned launch time, and the difference
+would be the [“T-minus”
+countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event).
+
+To see its minuend, subtrahend, and difference at the same time, we
+could rewrite the expanded date above as a Dec span🌈:
+<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>=<span class="yellow">${decoYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>.
+Unlike expanded dates, Dec spans🌈represent time intervals instead of
+individual dates and are structured like the minuend equation as opposed
+to a math expression that can be simplified to a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="year-of-era">yoe</span>.
+
+Expanded dates display a subtrahend Dec spans🌈can omit their
+subtrahend, 2025+320=+21, or their difference, 2025+320=2025+299. Spans
+that omit the difference can also omit the year on either their left,
+320=2025+299, or right side, 2025+320=299.
+
+All it takes is a little bit of arithmetic! This incredible versatility
+is possible thanks to the mathematical basis of Dec date notation.
 
 # Day of week (dow)
 
@@ -661,7 +687,7 @@ data-bs-title="day-of-week">dow</span> dates display
 <span class="cyan">d</span>-<span class="wine">w</span>+<span class="wine">w</span>,
 where <span class="cyan">d</span>-<span class="wine">w</span> is the
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> 0 <span class="under tool"
+data-bs-title="Sunday">Dow 0</span> <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and
 <span class="wine">w</span> is the <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>
@@ -1311,6 +1337,9 @@ function dote2dotw(d = 719468) {
 decoYear = deco.slice(0, 4)
 nextYear = parseInt(decoYear) + 1
 decoDoty = deco.slice(5, 8)
+xmasDiff = decoDoty - 299
+xmasDiffSign = xmasDiff < 0 ? "-" : "+"
+xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
 dotyInputStr = String(dotyInput).padStart(3, "0")
 dekInput = parseInt(dotyInputStr.slice(0, 2))
 dodInput = dotyInputStr[2]
@@ -1336,6 +1365,7 @@ zone = dz[1]
 zoneSign = zone < 0 ? "+" : "-"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
 Tminus = nDaysInYear - decoDoty
+TminusPadded = Tminus.toString().padStart(3, "0")
 fracYear = ydz[0] + ydz[1] / nDaysInYear
 fullfracYear = (fracYear).toFixed(4)
 mod1FracYear = (fracYear % 1).toFixed(4)
