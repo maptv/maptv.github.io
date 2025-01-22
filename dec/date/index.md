@@ -1,11 +1,12 @@
 # Dec Date
 Martin Laptev
-2024+323
+2024+327
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
 - [Year of era (yoe)](#yoe)
 - [Day of week (dow)](#dow)
+- [Day of dek (dod)](#dod)
 - [Day of month (dom)](#dom)
 - [Time of day (tod)](#tod)
 - [Next](#next)
@@ -611,23 +612,22 @@ values are <span class="cyan">${decoDoty}</span> =
 ⌊<span class="yellow">${mod1FracYear}</span> ×
 <span class="orange">${nDaysInYear}</span>⌋. In Dec, a
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> without a year is a
-floating🛟date and a
-<span class="yellow">year</span>+<span class="cyan">day</span> date is a
-fixed⚓️date. Unlike fixed⚓️dates, floating🛟dates do not specify the
+data-bs-title="day-of-year">doy</span> by itself is a floating🛟date and
+a <span class="yellow">year</span>+<span class="cyan">day</span> date is
+a fixed⚓️date. Unlike fixed⚓️dates, floating🛟dates do not include a
 year and thus can apply to any year.
 
-Fixed⚓️dates are essentially
+Fixed⚓️dates are
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
 math expressions. Instead of simplifying a fixed⚓️date into a
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="year-of-era">yoe</span>, we can do the opposite and
 expand it to display additional information, such as the number of days
-in between it and another date. For example,
-<span class="yellow">${decoYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>
-is an expanded version of the current date which tells us that
-<span class="denim">${Math.abs(xmasDiff)}</span> days ${xmasDiffSince}
-<span class="tool" data-bs-toggle="tooltip"
+in between it and another date. For example, an expanded version of the
+current date,
+<span class="yellow">${decoYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>,
+can tell us that <span class="denim">${Math.abs(xmasDiff)}</span> days
+${xmasDiffSince} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="December 25"><u>Day 299</u></span>🎄of this year.
 
 In the example above, the minuend <span class="cyan">${decoDoty}</span>
@@ -660,32 +660,32 @@ or from the subtrahend along with the difference:
 <span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>=<span class="cyan">299</span>.
 
 Dec spans🌈 can omit their entire
-[left](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20expression%20on%20the%20left%20of%20the%20%22%3D%22)-
-or
-[right](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=The%20expression%20on%20the%20right%20side%20of%20the%20%22%3D%22%20sign)-hand
+[left](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20expression%20on%20the%20left%20of%20the%20%22%3D%22)-hand
 side to indicate that the minuend is <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span> of
-the given year or that the subtrahend is <span class="tool"
+the given year. Similarly, an empty
+[right](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=The%20expression%20on%20the%20right%20side%20of%20the%20%22%3D%22%20sign)-hand
+side means that the subtrahend is <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span> of
-the subsequent year, respectively. Dec spans🌈that contain at least one
-year are called fixed⚓️spans🌈. In contrast, floating🛟spans🌈do not
-contain a year and thus can be reused every year like floating🛟dates.
+the subsequent year. Dec spans🌈with at least one year are called
+fixed⚓️spans🌈. In contrast, floating🛟spans🌈do not contain a year and
+thus can be reused♻️ every year.
 
-Expanded dates can also be floating🛟or fixed⚓️. Expanded
-floating🛟dates are guaranteed to be reusable across years. The only
-exception to that reusability guarantee is if the difference in an
-expanded floating🛟date is intended to be interpreted as a
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-week">dow</span>. Weeks do not align well with
-years and thus <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-week">dows</span> differ from year to year.
+Floating🛟dates and spans🌈are reusable♻️across all years, but the
+information displayed by expanded dates and spans🌈may not be.
+Information related to weeks is difficult to reuse♻️, because it takes 6
+to 40 years for the pattern of <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-week">dows</span> in a
+year to repeat. At the price of reusability♻️, Dec can function without
+deks and use weeks instead.
 
 # Day of week (dow)
 
-Even though Dec uses deks instead of weeks, Dec dates can be modified to
-include POSIX Sunday-based <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-week">dows</span>.
-Instead of the current Dec date,
+Even though Decalendar works best with deks, Dec dates can display POSIX
+[Sunday-based](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=decimal%20number%20%5B0%2C6%5D%20(-,0%3DSunday,-).)
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-week">dows</span>. Instead of the current Dec
+date,
 <span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>,
 the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
@@ -746,7 +746,7 @@ data-bs-title="day-of-week">dow</span>),
 <span class="wine">${doty0dotw}</span>) ÷ 7. The current Dec
 floating🛟week date,
 7×<span class="wheat">${week}</span>+<span class="wine">${dotw}</span>,
-is therefore equal to the sum of the current <span class="under tool"
+is equal to the sum of the current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and the
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="March 1"><u>Day 0</u></span> <span class="under tool"
@@ -773,6 +773,8 @@ data-bs-title="day-of-week">dow</span> equation. POSIX week numbers may
 be useful for [week-based
 accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
 
+# Day of dek (dod)
+
 Following the Dec week date pattern described above, we can base Dec
 dates on any fixed-length calendar unit, including the 20-day
 [dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit),
@@ -782,10 +784,10 @@ dates on any fixed-length calendar unit, including the 20-day
 [kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A),
 73-day
 [sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A),
-or 90-day [naŭdek](https://en.wiktionary.org/wiki/na%C5%ADdek). No other
-calendar unit can be as convenient as the 10-day
-[dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B),
-because our [decimal numeral
+or 90-day [naŭdek](https://en.wiktionary.org/wiki/na%C5%ADdek). The
+10-day
+[dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B)
+is the best possible choice, because our [decimal numeral
 system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
 allows us to naturally combine a dek,
 <span class="cyan">${decoDoty.slice(0, 2)}</span>, and a
@@ -797,14 +799,16 @@ data-bs-title="day-of-year">doy</span>:
 <span class="cyan">${decoDoty}</span>.
 
 While weeks are not evenly divisible by two, a dek can be cut✂️into two
-equal halves. Each half of a dek is called a pent and can be used to
-schedule work and rest days. If we designate the first 3 days of each
-pent as work days and the remaining 2 days as a group of rest days
-called the pentend, we would work on <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-dek">Dods</span> 0, 1,
-2, 5, 6, and 7, and rest on <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-dek">Dods</span> 3, 4,
-8, and 9.
+equal halves called pents. If we follow Schedule
+<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>,
+every pent would start and end with a rest day and have 3 consecutive
+work days in the middle. The chart below shows the rest days
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-dek">Dods</span> 0, 4, 5, and 9) and work days
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-dek">Dods</span> 1, 2, 3, 6, 7, and 8) in 1 dek
+according to Schedule
+<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>.
 
 <div>
 
@@ -813,13 +817,91 @@ data-bs-toggle="tooltip" data-bs-title="days-of-dek">Dods</span> 3, 4,
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:6.85in;height:2.54in" />
+style="width:8.42in;height:2.96in" />
 
 </div>
 
 </figure>
 
 </div>
+
+Schedule
+<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>
+provides 219 work days every year, which is about 1 dek more than the
+208 to 210 work days provided annually by a 4-day workweek. In contrast,
+Schedule
+<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">2</span>+<span class="green">4</span>
+designates <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">Dod</span> 9 as a work day and has an annual
+total of 255 work days, which is about 1 pent less than the 260 to 262
+work days per year that a 5-day workweek yields.
+
+The table below shows how the transition from a common year to the
+subsequent year preserves the pattern of consecutive pents. This pattern
+is interrupted every 4 or 8 years by <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day
+365</u></span>. While <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>Day 365</u></span> varies between a work
+and a rest day in the Gregorian calendar, it is always a rest day in Dec
+according to both Schedule
+<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>
+and Schedule
+<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">2</span>+<span class="green">4</span>.
+
+<table>
+<thead>
+<tr>
+<th>Rest</th>
+<th>Work</th>
+<th>Work</th>
+<th>Work</th>
+<th>Rest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>360</td>
+<td>361</td>
+<td>362</td>
+<td>363</td>
+<td>364</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+
+There are 11 United States [Federal
+holidays](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/).
+Federal holidays that fall on a Gregorian calendar rest day,
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="Sunday">Dow 0</span> or <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="Saturday">Dow 6</span>, are
+observed on the nearest Gregorian calendar work day:
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="Monday">Dow 1</span> or <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="Friday">Dow 5</span>. To apply
+this rule to Schedule
+<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>,
+we would observe the Day <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="June 19"><u>110</u></span>⛓️‍💥, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="July 4"><u>125</u></span>🎆,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="November 11"><u>255</u></span>🫡, and <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="December 25"><u>299</u></span>🎄holidays on Days
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="June 20"><u>111</u></span>⛓️‍💥, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="July 5"><u>126</u></span>🎆,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="November 12"><u>256</u></span>🫡, and <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="December 26"><u>298</u></span>🎄, respectively.
 
 # Day of month (dom)
 
