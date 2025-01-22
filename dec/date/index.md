@@ -121,14 +121,14 @@ viewof leapscrub = Inputs.form([
 ])
 ```
 
-<div class="column-page-right">
+<div class="column-page">
 
 ``` {ojs}
 //| echo: false
 decPlot = Plot.plot({
   padding: 0,
-  width: 1080,
-  height: 240,
+  width: 1280,
+  height: 280,
   className: "calplot",
   marginTop: -3,
   marginLeft: 31,
@@ -137,8 +137,8 @@ decPlot = Plot.plot({
       label: "Day of dek    ",
       domain: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-      tickPadding: -12,
-      labelOffset: 22,
+      tickPadding: -4,
+      labelOffset: 28,
   },
   x: {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: -2, labelOffset: 32},
   //fx: {tickFormat: ""},
@@ -176,7 +176,7 @@ decPlot = Plot.plot({
       //stroke: "white",
       text: (d, i) => String(i),//.padStart(3, "0").slice(1),
       monospace: true,
-      fontSize: "13px"})
+      fontSize: "16px"})
   ]
 })
 ```
@@ -185,7 +185,7 @@ decPlot = Plot.plot({
 //| echo: false
 calPlot = Plot.plot({
   padding: 0,
-  width: 1000,
+  width: 1280,
   height: 200,
   className: "calplot",
   marginTop: 0,
@@ -232,7 +232,7 @@ calPlot = Plot.plot({
       //stroke: "white",
       text: d => d.getUTCDate(), //Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
       monospace: true,
-      fontSize: "13px"})
+      fontSize: "16px"})
   ]
 })
 ```
@@ -799,16 +799,14 @@ data-bs-title="day-of-year">doy</span>:
 <span class="cyan">${decoDoty}</span>.
 
 While weeks are not evenly divisible by two, a dek can be cut✂️into two
-equal halves called pents. If we follow Schedule
-<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>,
-every pent would start and end with a rest day and have 3 consecutive
-work days in the middle. The chart below shows the rest days
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-dek">Dods</span> 0, 4, 5, and 9) and work days
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-dek">Dods</span> 1, 2, 3, 6, 7, and 8) in 1 dek
-according to Schedule
-<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>.
+equal halves called pents. The charts below show Schedule
+<span class="green">3</span>+<span class="blue">2</span>, the
+recommended pently schedule of work and rest days, using
+[zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
+(top) and one-based (bottom) numbering. Regardless of whether we use
+zero- or one-based numbering system, each pent has
+<span class="green">3</span> work days and <span class="blue">2</span>
+rest days.
 
 <div>
 
@@ -817,7 +815,7 @@ according to Schedule
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:8.42in;height:2.96in" />
+style="width:8.64in;height:3.21in" />
 
 </div>
 
@@ -825,28 +823,39 @@ style="width:8.42in;height:2.96in" />
 
 </div>
 
-Schedule
-<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>
-provides 219 work days every year, which is about 1 dek more than the
-208 to 210 work days provided annually by a 4-day workweek. In contrast,
-Schedule
-<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">2</span>+<span class="green">4</span>
-designates <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">Dod</span> 9 as a work day and has an annual
-total of 255 work days, which is about 1 pent less than the 260 to 262
-work days per year that a 5-day workweek yields.
+<div>
 
-The table below shows how the transition from a common year to the
-subsequent year preserves the pattern of consecutive pents. This pattern
-is interrupted every 4 or 8 years by <span class="tool"
+<figure class=''>
+
+<div>
+
+<img src="index_files/figure-commonmark/mermaid-figure-3.png"
+style="width:8.77in;height:3.21in" />
+
+</div>
+
+</figure>
+
+</div>
+
+One-based numbering obscures the fact that the Dec year starts with
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span> instead of
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 2"><u>Day 1</u></span> and that
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">Dod</span> 10 is <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-dek">Dod</span> 0, but
+this may actually be useful for business analysis and accounting.
+Without <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span> and <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day
-365</u></span>. While <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="February 29"><u>Day 365</u></span> varies between a work
-and a rest day in the Gregorian calendar, it is always a rest day in Dec
-according to both Schedule
-<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>
-and Schedule
-<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">2</span>+<span class="green">4</span>.
+365</u></span>, we can evenly divide years into 7-day weeks, 14-day
+fortnights, 26-day fourteenths, 28-day thirteenths, 52-day sevenths,
+91-day quarters, or 182-day halves.
+
+If we exclude Day 365 and keep Day 0, we can evenly split any year into
+5-day pents or 73-day fifths. The table below
 
 <table>
 <thead>
@@ -875,6 +884,36 @@ and Schedule
 </tr>
 </tbody>
 </table>
+
+Schedule <span class="green">3</span>+<span class="blue">2</span>
+provides 219 work days every year, which is about 1 dek more than the
+208 to 210 work days provided annually by a 4-day workweek. In contrast,
+Schedule
+<span class="green">3</span>+<span class="blue">2</span>+<span class="green">4</span>+<span class="blue">1</span>
+designates <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">Dod</span> 9 as a work day and thus has an
+annual total of 255 work days, which is about 1 pent less than the 260
+to 262 work days per year that a 5-day workweek yields.
+
+Unlike a 4- or 5-day workweek, Schedules
+<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>
+and
+<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">2</span>+<span class="green">4</span>
+automatically include rest days at the start and end of every year and
+thus do not require any holidays to smooth the transition between years.
+Whereas weeks do not align with year, a common year has exactly 73
+pents. This creates a series of consecutive pents that lasts for 4 or 8
+years before it is interrupted by <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day
+365</u></span>.
+
+While <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>Day 365</u></span> varies between a work
+and a rest day in the Gregorian calendar, it is always a rest day in Dec
+according to both Schedule
+<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>
+and Schedule
+<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">2</span>+<span class="green">4</span>.
 
 There are 11 United States [Federal
 holidays](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/).
@@ -917,9 +956,7 @@ the last <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> of the previous month because
 POSIX <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-month">doms</span> start from one instead of
-zero. For
-[zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
-<span class="under tool" data-bs-toggle="tooltip"
+zero. For zero-based <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-month">doms</span>, we represent each month with
 its first <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span>:
