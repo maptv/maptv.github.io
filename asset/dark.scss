@@ -42,15 +42,15 @@ svg.mermaid-js .marker {
     stroke: none !important;
 }
 
-#mermaid-1 g#restdays.cluster rect {
+g#restdays.cluster rect {
     fill: darkblue !important;
 }
 
-#mermaid-1 g#workdays.cluster rect {
+g#workdays.cluster rect {
     fill: darkgreen !important;
 }
 
-#mermaid-1 .node rect {
+.node rect {
     fill: darkmagenta !important;
 }
 

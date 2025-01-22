@@ -65,13 +65,13 @@ viewof leapscrub = Inputs.form([
 ])
 ```
 
-::: {.column-page-right}
+::: {.column-page}
 ```{ojs}
 //| echo: false
 decPlot = Plot.plot({
   padding: 0,
-  width: 1080,
-  height: 240,
+  width: 1280,
+  height: 280,
   className: "calplot",
   marginTop: -3,
   marginLeft: 31,
@@ -80,8 +80,8 @@ decPlot = Plot.plot({
       label: "Day of dek    ",
       domain: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-      tickPadding: -12,
-      labelOffset: 22,
+      tickPadding: -4,
+      labelOffset: 28,
   },
   x: {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: -2, labelOffset: 32},
   //fx: {tickFormat: ""},
@@ -119,7 +119,7 @@ decPlot = Plot.plot({
       //stroke: "white",
       text: (d, i) => String(i),//.padStart(3, "0").slice(1),
       monospace: true,
-      fontSize: "13px"})
+      fontSize: "16px"})
   ]
 })
 ```
@@ -128,7 +128,7 @@ decPlot = Plot.plot({
 //| echo: false
 calPlot = Plot.plot({
   padding: 0,
-  width: 1000,
+  width: 1280,
   height: 200,
   className: "calplot",
   marginTop: 0,
@@ -175,7 +175,7 @@ calPlot = Plot.plot({
       //stroke: "white",
       text: d => d.getUTCDate(), //Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
       monospace: true,
-      fontSize: "13px"})
+      fontSize: "16px"})
   ]
 })
 ```
@@ -283,11 +283,11 @@ Dec week dates turn [d]{.cyan}-[w]{.wine} into 7&times;[W]{.wheat}-[w~0~]{.wine}
 
 Following the Dec week date pattern described above, we can base Dec dates on any fixed-length calendar unit, including the 20-day [dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit), 30-day [tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A), 40-day [kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A), 73-day [sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A), or 90-day [naŭdek](https://en.wiktionary.org/wiki/na%C5%ADdek). The 10-day [dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B) is the best possible choice, because our [decimal numeral system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers) allows us to naturally combine a dek, [\${decoDoty.slice(0, 2)}]{.cyan}, and a [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}, [\${decoDoty[2]}]{.cyan}, into a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}: [\${decoDoty}]{.cyan}.
 
-While weeks are not evenly divisible by two, a dek can be cut✂️into two equal halves called pents. If we follow Schedule [1]{.blue}+[3]{.green}+[1]{.blue},
-every pent would start and end with a rest day and have 3 consecutive work days in the middle. The chart below shows the rest days ([Dods]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-dek"} 0, 4, 5, and 9) and work days ([Dods]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-dek"} 1, 2, 3, 6, 7, and 8) in 1 dek according to Schedule [1]{.blue}+[3]{.green}+[1]{.blue}.
+While weeks are not evenly divisible by two, a dek can be cut✂️into two equal halves called pents.
+The charts below show Schedule [3]{.green}+[2]{.blue}, the recommended pently schedule of work and rest days, using [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) (top) and one-based (bottom) numbering. Regardless of whether we use zero- or one-based numbering system, each pent has [3]{.green} work days and [2]{.blue} rest days.
 
 ```{mermaid}
-%%{ init : { "theme" : "default", "flowchart" : { "curve" : "linear" }}}%%
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '24px'}}}%%
 flowchart TB
    A[0]-->B[1]-->C[2]-->D[3]-->E[4]
    F[5]-->G[6]-->H[7]-->I[8]-->J[9]
@@ -306,22 +306,52 @@ flowchart TB
    J
    workdays
    end
+   style restdays color:transparent;
 ```
 
-Schedule [1]{.blue}+[3]{.green}+[1]{.blue} provides 219 work days every year, which is about 1 dek more than the 208 to 210 work days provided annually by a 4-day workweek. In contrast, Schedule [1]{.blue}+[3]{.green}+[2]{.blue}+[4]{.green} designates [Dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} 9 as a work day and has an annual total of 255 work days, which is about 1 pent less than the 260 to 262 work days per year that a 5-day workweek yields.
+```{mermaid}
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '24px'}}}%%
+flowchart TB
+   B[1]-->C[2]-->D[3]-->E[4]-->F[5]
+   G[6]-->H[7]-->I[8]-->J[9]-->A[10]
+   subgraph workdays[work days]
+   B
+   C
+   G
+   H
+   D
+   I
+   end
+   subgraph restdays[rest days]
+   A
+   F
+   E
+   J
+   workdays
+   end
+   style restdays color:transparent;
+```
 
-The table below shows how the transition from a common year to the subsequent year preserves the pattern of consecutive pents. This pattern is interrupted every 4 or 8 years by [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"}. While [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"} varies between a work and a rest day in the Gregorian calendar, it is always a rest day in Dec according to both Schedule [1]{.blue}+[3]{.green}+[1]{.blue} and Schedule [1]{.blue}+[3]{.green}+[2]{.blue}+[4]{.green}.
+One-based numbering obscures the fact that the Dec year starts with [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} instead of [Day 1]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 2"} and that [Dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} 10 is [Dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} 0, but this may actually be useful for business analysis and accounting. Without [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} and [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"}, we can evenly divide years into 7-day weeks, 14-day fortnights, 26-day fourteenths, 28-day thirteenths, 52-day sevenths, 91-day quarters, or 182-day halves.
+
+If we exclude Day 365 and keep Day 0, we can evenly split any year into 5-day pents or 73-day fifths. The table below
 
 | Rest | Work | Work | Work | Rest |
 | ---  | ---  | ---  | ---  | ---  |
 | 360  | 361  | 362  | 363  | 364  |
 | 0    | 1    | 2    | 3    | 4    |
 
+Schedule [3]{.green}+[2]{.blue} provides 219 work days every year, which is about 1 dek more than the 208 to 210 work days provided annually by a 4-day workweek. In contrast, Schedule [3]{.green}+[2]{.blue}+[4]{.green}+[1]{.blue} designates [Dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} 9 as a work day and thus has an annual total of 255 work days, which is about 1 pent less than the 260 to 262 work days per year that a 5-day workweek yields.
+
+Unlike a 4- or 5-day workweek, Schedules [1]{.blue}+[3]{.green}+[1]{.blue} and [1]{.blue}+[3]{.green}+[2]{.blue}+[4]{.green} automatically include rest days at the start and end of every year and thus do not require any holidays to smooth the transition between years. Whereas weeks do not align with year, a common year has exactly 73 pents. This creates a series of consecutive pents that lasts for 4 or 8 years before it is interrupted by [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"}.
+
+While [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"} varies between a work and a rest day in the Gregorian calendar, it is always a rest day in Dec according to both Schedule [1]{.blue}+[3]{.green}+[1]{.blue} and Schedule [1]{.blue}+[3]{.green}+[2]{.blue}+[4]{.green}.
+
 There are 11 United States [Federal holidays](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/). Federal holidays that fall on a Gregorian calendar rest day, [Dow 0]{.under .tool data-bs-toggle="tooltip" data-bs-title="Sunday"} or [Dow 6]{.under .tool data-bs-toggle="tooltip" data-bs-title="Saturday"}, are observed on the nearest Gregorian calendar work day: [Dow 1]{.under .tool data-bs-toggle="tooltip" data-bs-title="Monday"} or [Dow 5]{.under .tool data-bs-toggle="tooltip" data-bs-title="Friday"}. To apply this rule to Schedule [1]{.blue}+[3]{.green}+[1]{.blue}, we would observe the Day [110]{.underline .tool data-bs-toggle="tooltip" data-bs-title="June 19"}⛓️‍💥, [125]{.underline .tool data-bs-toggle="tooltip" data-bs-title="July 4"}🎆, [255]{.underline .tool data-bs-toggle="tooltip" data-bs-title="November 11"}🫡, and [299]{.underline .tool data-bs-toggle="tooltip" data-bs-title="December 25"}🎄holidays on Days [111]{.underline .tool data-bs-toggle="tooltip" data-bs-title="June 20"}⛓️‍💥, [126]{.underline .tool data-bs-toggle="tooltip" data-bs-title="July 5"}🎆, [256]{.underline .tool data-bs-toggle="tooltip" data-bs-title="November 12"}🫡, and [298]{.underline .tool data-bs-toggle="tooltip" data-bs-title="December 26"}🎄, respectively.
 
 # Day of month (dom){#dom}
 
-Dec dates can also be modified to display Dec month and [POSIX [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D) numbers. The current Dec [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} date is [\${decoYear}]{.yellow}+[\${monthNumber}]{.cyan}+[\${dotm}]{.magenta}. Dec [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} dates represent each month with the last [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} of the previous month because POSIX [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"} start from one instead of zero. For [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"}, we represent each month with its first [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}: [\${decoYear}]{.yellow}+[\${monthNumber0}]{.cyan}+[\${dotm0}]{.magenta}.
+Dec dates can also be modified to display Dec month and [POSIX [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D) numbers. The current Dec [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} date is [\${decoYear}]{.yellow}+[\${monthNumber}]{.cyan}+[\${dotm}]{.magenta}. Dec [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} dates represent each month with the last [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} of the previous month because POSIX [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"} start from one instead of zero. For zero-based [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"}, we represent each month with its first [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}: [\${decoYear}]{.yellow}+[\${monthNumber0}]{.cyan}+[\${dotm0}]{.magenta}.
 
 Dec [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} dates replace the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} [d]{.cyan} from Dec dates with [d]{.cyan}-[m]{.magenta}+[m]{.magenta}. We evaluate the subtraction to get [d]{.cyan}-[m]{.magenta}, the Dec month number, but not the addition, so we can see [m]{.magenta}, the [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}. If we combine the [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} and [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} patterns above, we can create hybrid [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}+[dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} Dec dates: [\${decoYear}]{.yellow}+[\${monthNumber - dotw}]{.cyan}+[\${dotm}]{.magenta}+[\${dotw}]{.wine}, where [\${monthNumber - dotw}]{.cyan} is [d]{.cyan}-[m]{.magenta}-[w]{.wine}, the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} of the last [Dow 0]{.under .tool data-bs-toggle="tooltip" data-bs-title="Sunday"} before the beginning of the month.
 
