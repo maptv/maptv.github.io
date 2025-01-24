@@ -799,18 +799,13 @@ data-bs-title="day-of-year">doy</span>:
 
 While weeks are not evenly divisible by two, a dek can be cut✂️into two
 equal halves called pents. The flowcharts below show Schedule
-<span class="green">3</span>+<span class="blue">2</span>, the
-recommended pently schedule of <span class="green">work</span> and
-<span class="blue">rest</span> days, from two different perspectives.
-Both flowcharts use <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span> numbers, but the bottom one starts
-from <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">Dod</span> 1 instead of
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">Dod</span> 0 and refers to
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">Dod</span> 0 as <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-dek">Dod</span> 10.
+<span class="green">3</span>, the recommended pently schedule of
+<span class="green">work</span> and <span class="blue">rest</span> day.
+Schedule <span class="green">3</span> can be short for Schedule
+<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>,
+if you prefer the zero-based top flowchart, or Schedule
+<span class="green">3</span>+<span class="blue">2</span>, if you favor
+the one-based bottom flowchart.
 
 <div>
 
@@ -842,20 +837,22 @@ style="width:8.77in;height:3.21in" />
 
 </div>
 
-The idea of having two ways to view a dek was inspired by POSIX
+Both flowcharts use <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">dod</span> numbers, but the bottom one starts
+from <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">Dod</span> 1 instead of
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> numbers, which can range from
+data-bs-title="day-of-dek">Dod</span> 0 and refers to
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="Sunday">0</span> to <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="Saturday">6</span> or from
+data-bs-title="day-of-dek">Dod</span> 0 as <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-dek">Dod</span> 10. Like
+the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-dek">dods</span> in the flowcharts above, the
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="Monday">1</span> to <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="Sunday">7</span>. The tables
-below show the <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-year">doys</span> of the last pent of a common
-year and the first pent of the subsequent year. The top table is
-zero-based and the bottom table is one-based, but both tables show a
-seamless transition between years.
+data-bs-title="days-of-year">doys</span> in the tables below are
+arranged in both a zero-based (top) and a one-based (bottom) manner. The
+tables visualize the seamless transition between a common year and the
+subsequent year.
 
 <table>
 <colgroup>
@@ -927,16 +924,16 @@ seamless transition between years.
 </tbody>
 </table>
 
-After 4 or 8 years of consecutive pents, the pattern shown in the tables
-above is interrupted by <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="February 29"><u>Day 365</u></span>. This interruption is
-visualized by the two tables below, which are identical to the tables
-above except for an extra row in the middle that contains a day,
+After 4 or 8 years of consecutive pents, the Schedule
+<span class="green">3</span> pattern shown in the flowcharts and tables
+above is interrupted by <span class="blue">3</span> consecutive
+<span class="blue">rest</span> days during the transition from a leap
+year. This interruption is represented by 4 empty cells in the middle
+row of the two tables below. The middle row contains only one day:
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29"><u>Day 365</u></span> in the top table and
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span> in the bottom table, that
-does not appear to belong to any pent.
+data-bs-title="March 1"><u>Day 0</u></span> in bottom one.
 
 <table>
 <colgroup>
@@ -1022,20 +1019,33 @@ does not appear to belong to any pent.
 </tbody>
 </table>
 
-Officially, <span class="tool" data-bs-toggle="tooltip"
+The top and bottom rows in the top table above show the
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-year">doys</span> in Pent 72 and Pent 0,
+respectively. <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29"><u>Day 365</u></span> is the only day in
 Pent 73 and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span> is the first day of Pent 0,
-the bottom row in top table above. Pent 72 is shown in the top row in
-the top table above and is the last pent of common years. To get the
-current pent number, ${decoPent}, we double the current dek number,
-<span class="cyan">${decoDek}</span>, and then add 1 if the current
-<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span> is the first day of Pent 0.
+To get the current pent number, ${decoPent}, we double the current dek
+number, <span class="cyan">${decoDek}</span>, and then add 1 if the
+current <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">dod</span> number,
 <span class="cyan">${decoDod}</span>, is greater than 4.
 
-Pent numbers can also be expressed as spans🌈, such as 360=365-5,
-360=365, or 360=-5, which represent
+Apart from Pent numbers, we can also express a pent as a span🌈, like
+360=365-5, which represents Pent 72. In any span, we can omit the
+subtrahend, 360=-5, or the difference: 360=365. It also is possible to
+switch the left- and right-hand sides to reverse a span: 365=360+5,
+365=360, or 365=+5. Typically, the order does not matter, but a reversed
+span indicates that we want to start from the latest day of the span and
+work backwards.
+
+Spans can also represent groups of non-consecutive days. All of the
+Schedule 3+2 work days in a year can be expressed as 1=4=:5. In this
+span, we start with Days 1, 2, and 3 and then include every day that is
+a multiple of 5 days away from one of the starting days. The number
+preceded by a colon is called a step and indicates which days we want to
+include.
 
 Schedule <span class="green">3</span>+<span class="blue">2</span> is
 part of a group of schedules that allows us to neatly organize
