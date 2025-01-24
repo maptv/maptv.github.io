@@ -623,8 +623,7 @@ math expressions. Instead of simplifying a fixed⚓️date into a
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="year-of-era">yoe</span>, we can do the opposite and
 expand it to display additional information, such as the number of days
-in between it and another date. For example, an expanded version of the
-current date,
+in between it and another date. An expanded version of the current date,
 <span class="yellow">${decoYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>,
 can tell us that <span class="denim">${Math.abs(xmasDiff)}</span> days
 ${xmasDiffSince} <span class="tool" data-bs-toggle="tooltip"
@@ -799,14 +798,16 @@ data-bs-title="day-of-year">doy</span>:
 <span class="cyan">${decoDoty}</span>.
 
 While weeks are not evenly divisible by two, a dek can be cut✂️into two
-equal halves called pents. The charts below show Schedule
+equal halves called pents. The flowcharts below show Schedule
 <span class="green">3</span>+<span class="blue">2</span>, the
-recommended pently schedule of work and rest days, from two different
-perspectives. The top chart uses <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-dek">dod</span> numbers
-and the bottom chart uses a one-based numbering approach that skips
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span> and refers to
+recommended pently schedule of <span class="green">work</span> and
+<span class="blue">rest</span> days, from two different perspectives.
+Both flowcharts use <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">dod</span> numbers, but the bottom one starts
+from <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">Dod</span> 1 instead of
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">Dod</span> 0 and refers to
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">Dod</span> 0 as <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-dek">Dod</span> 10.
@@ -857,57 +858,71 @@ zero-based and the bottom table is one-based, but both tables show a
 seamless transition between years.
 
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 19%" />
+</colgroup>
 <thead>
 <tr>
-<th>Rest</th>
-<th>Work</th>
-<th>Work</th>
-<th>Work</th>
-<th>Rest</th>
+<th><span class="blue">Rest</span></th>
+<th><span class="green">Work</span></th>
+<th><span class="green">Work</span></th>
+<th><span class="green">Work</span></th>
+<th><span class="blue">Rest</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>360</td>
-<td>361</td>
-<td>362</td>
-<td>363</td>
-<td>364</td>
+<td><span class="blue">360</span></td>
+<td><span class="green">361</span></td>
+<td><span class="green">362</span></td>
+<td><span class="green">363</span></td>
+<td><span class="blue">364</span></td>
 </tr>
 <tr>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
+<td><span class="blue">0</span></td>
+<td><span class="green">1</span></td>
+<td><span class="green">2</span></td>
+<td><span class="green">3</span></td>
+<td><span class="blue">4</span></td>
 </tr>
 </tbody>
 </table>
 
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
 <thead>
 <tr>
-<th>Work</th>
-<th>Work</th>
-<th>Work</th>
-<th>Rest</th>
-<th>Rest</th>
+<th><span class="green">Work</span></th>
+<th><span class="green">Work</span></th>
+<th><span class="green">Work</span></th>
+<th><span class="blue">Rest</span></th>
+<th><span class="blue">Rest</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>361</td>
-<td>362</td>
-<td>363</td>
-<td>364</td>
-<td>0</td>
+<td><span class="green">361</span></td>
+<td><span class="green">362</span></td>
+<td><span class="green">363</span></td>
+<td><span class="blue">364</span></td>
+<td><span class="blue">0</span></td>
 </tr>
 <tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
+<td><span class="green">1</span></td>
+<td><span class="green">2</span></td>
+<td><span class="green">3</span></td>
+<td><span class="blue">4</span></td>
+<td><span class="blue">5</span></td>
 </tr>
 </tbody>
 </table>
@@ -924,71 +939,85 @@ data-bs-title="March 1"><u>Day 0</u></span> in the bottom table, that
 does not appear to belong to any pent.
 
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 19%" />
+</colgroup>
 <thead>
 <tr>
-<th>Rest</th>
-<th>Work</th>
-<th>Work</th>
-<th>Work</th>
-<th>Rest</th>
+<th><span class="blue">Rest</span></th>
+<th><span class="green">Work</span></th>
+<th><span class="green">Work</span></th>
+<th><span class="green">Work</span></th>
+<th><span class="blue">Rest</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>360</td>
-<td>361</td>
-<td>362</td>
-<td>363</td>
-<td>364</td>
+<td><span class="blue">360</span></td>
+<td><span class="green">361</span></td>
+<td><span class="green">362</span></td>
+<td><span class="green">363</span></td>
+<td><span class="blue">364</span></td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
-<td>365</td>
+<td><span class="blue">365</span></td>
 </tr>
 <tr>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
+<td><span class="blue">0</span></td>
+<td><span class="green">1</span></td>
+<td><span class="green">2</span></td>
+<td><span class="green">3</span></td>
+<td><span class="blue">4</span></td>
 </tr>
 </tbody>
 </table>
 
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+</colgroup>
 <thead>
 <tr>
-<th>Work</th>
-<th>Work</th>
-<th>Work</th>
-<th>Rest</th>
-<th>Rest</th>
+<th><span class="green">Work</span></th>
+<th><span class="green">Work</span></th>
+<th><span class="green">Work</span></th>
+<th><span class="blue">Rest</span></th>
+<th><span class="blue">Rest</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>361</td>
-<td>362</td>
-<td>363</td>
-<td>364</td>
-<td>365</td>
+<td><span class="green">361</span></td>
+<td><span class="green">362</span></td>
+<td><span class="green">363</span></td>
+<td><span class="blue">364</span></td>
+<td><span class="blue">365</span></td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
-<td>0</td>
+<td><span class="blue">0</span></td>
 </tr>
 <tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
+<td><span class="green">1</span></td>
+<td><span class="green">2</span></td>
+<td><span class="green">3</span></td>
+<td><span class="blue">4</span></td>
+<td><span class="blue">5</span></td>
 </tr>
 </tbody>
 </table>
@@ -996,24 +1025,41 @@ does not appear to belong to any pent.
 Officially, <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29"><u>Day 365</u></span> is the only day in
 Pent 73 and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span> is the first day of Pent 0.
-To get the current pent number, ${decoPent}, we double the current dek
-number, <span class="cyan">${decoDek}</span>, and then add 1 if the
-current <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span> is the first day of Pent 0,
+the bottom row in top table above. Pent 72 is shown in the top row in
+the top table above and is the last pent of common years. To get the
+current pent number, ${decoPent}, we double the current dek number,
+<span class="cyan">${decoDek}</span>, and then add 1 if the current
+<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">dod</span> number,
 <span class="cyan">${decoDod}</span>, is greater than 4.
 
-which have a total 219 work days according to Schedule
-<span class="green">3</span>+<span class="blue">2</span>.
+Pent numbers can also be expressed as spans🌈, such as 360=365-5,
+360=365, or 360=-5, which represent
 
-Schedule <span class="green">3</span>+<span class="blue">2</span>
-provides every year, which is about 1 dek more than the 208 to 210 work
-days provided annually by a 4-day workweek. In contrast, Schedule
-<span class="green">3</span>+<span class="blue">2</span>+<span class="green">4</span>+<span class="blue">1</span>
-designates <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">Dod</span> 9 as a work day and thus has an
-annual total of 255 work days, which is about 1 pent less than the 260
-to 262 work days per year that a 5-day workweek yields.
+Schedule <span class="green">3</span>+<span class="blue">2</span> is
+part of a group of schedules that allows us to neatly organize
+<span class="green">work</span> and <span class="blue">rest</span> days
+into 5 homogeneous columns like in the tables and flowcharts above. In
+the interest of brevity, we can refer to the different schedules just by
+their number of work days per pent. Schedule 5 would mean that we are
+working every day. If we keep each type work days and rest can modify
+this pattern to change the number of work days in the dek. This may be
+useful for professional that have a busy season during which the
+intensity of work is higher than at other times during the year. People
+can switch between different schedules throughout the year as needed.
+
+312 to 314. This is equivalent to a result in too many intensify the
+work designate <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">Dod</span> 9 as a work day without changing
+the transition between years shown in the tables above. The number of
+<span class="green">work</span> days per year we obtain from , 219, is
+about 1 dek more than the 208 to 210 work days provided annually by a
+4-day workweek.
+
+we will have an annual total of 255 work days, which is about 1 pent
+less than the 260 to 262 work days that we get annually from a 5-day
+workweek.
 
 Unlike a 4- or 5-day workweek, Schedules
 <span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>
