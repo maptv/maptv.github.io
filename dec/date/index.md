@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+327
+2024+329
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -327,7 +327,7 @@ Dec uses <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-era">does</span> for calculations, such as
 finding the
 [POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems)
-[Sunday-based <span class="under tool" data-bs-toggle="tooltip"
+[zero-based <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday))
 of a given date. This year, the <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> of
@@ -682,7 +682,7 @@ deks and use weeks instead.
 # Day of week (dow)
 
 Even though Decalendar works best with deks, Dec dates can display POSIX
-[Sunday-based](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=decimal%20number%20%5B0%2C6%5D%20(-,0%3DSunday,-).)
+[zero-based](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=Weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D)
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-week">dows</span>. Instead of the current Dec
 date,
@@ -801,12 +801,15 @@ data-bs-title="day-of-year">doy</span>:
 While weeks are not evenly divisible by two, a dek can be cut✂️into two
 equal halves called pents. The charts below show Schedule
 <span class="green">3</span>+<span class="blue">2</span>, the
-recommended pently schedule of work and rest days, using
-[zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00)
-(top) and one-based (bottom) numbering. Regardless of whether we use
-zero- or one-based numbering system, each pent has
-<span class="green">3</span> work days and <span class="blue">2</span>
-rest days.
+recommended pently schedule of work and rest days, from two different
+perspectives. The top chart uses <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-dek">dod</span> numbers
+and the bottom chart uses a one-based numbering approach that skips
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span> and refers to
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">Dod</span> 0 as <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-dek">Dod</span> 10.
 
 <div>
 
@@ -838,24 +841,20 @@ style="width:8.77in;height:3.21in" />
 
 </div>
 
-One-based numbering obscures the fact that the Dec year starts with
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span> instead of
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 2"><u>Day 1</u></span> and that
+The idea of having two ways to view a dek was inspired by POSIX
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">Dod</span> 10 is <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-dek">Dod</span> 0, but
-this may actually be useful for business analysis and accounting.
-Without <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span> and <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day
-365</u></span>, we can evenly divide years into 7-day weeks, 14-day
-fortnights, 26-day fourteenths, 28-day thirteenths, 52-day sevenths,
-91-day quarters, or 182-day halves.
-
-If we exclude Day 365 and keep Day 0, we can evenly split any year into
-5-day pents or 73-day fifths. The table below
+data-bs-title="day-of-week">dow</span> numbers, which can range from
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="Sunday">0</span> to <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="Saturday">6</span> or from
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="Monday">1</span> to <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="Sunday">7</span>. The tables
+below show the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-year">doys</span> of the last pent of a common
+year and the first pent of the subsequent year. The top table is
+zero-based and the bottom table is one-based, but both tables show a
+seamless transition between years.
 
 <table>
 <thead>
@@ -885,10 +884,131 @@ If we exclude Day 365 and keep Day 0, we can evenly split any year into
 </tbody>
 </table>
 
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Work</th>
+<th>Work</th>
+<th>Rest</th>
+<th>Rest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>361</td>
+<td>362</td>
+<td>363</td>
+<td>364</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+
+After 4 or 8 years of consecutive pents, the pattern shown in the tables
+above is interrupted by <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>Day 365</u></span>. This interruption is
+visualized by the two tables below, which are identical to the tables
+above except for an extra row in the middle that contains a day,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>Day 365</u></span> in the top table and
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span> in the bottom table, that
+does not appear to belong to any pent.
+
+<table>
+<thead>
+<tr>
+<th>Rest</th>
+<th>Work</th>
+<th>Work</th>
+<th>Work</th>
+<th>Rest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>360</td>
+<td>361</td>
+<td>362</td>
+<td>363</td>
+<td>364</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>365</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Work</th>
+<th>Work</th>
+<th>Rest</th>
+<th>Rest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>361</td>
+<td>362</td>
+<td>363</td>
+<td>364</td>
+<td>365</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+
+Officially, <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>Day 365</u></span> is the only day in
+Pent 73 and <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span> is the first day of Pent 0.
+To get the current pent number, ${decoPent}, we double the current dek
+number, <span class="cyan">${decoDek}</span>, and then add 1 if the
+current <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">dod</span> number,
+<span class="cyan">${decoDod}</span>, is greater than 4.
+
+which have a total 219 work days according to Schedule
+<span class="green">3</span>+<span class="blue">2</span>.
+
 Schedule <span class="green">3</span>+<span class="blue">2</span>
-provides 219 work days every year, which is about 1 dek more than the
-208 to 210 work days provided annually by a 4-day workweek. In contrast,
-Schedule
+provides every year, which is about 1 dek more than the 208 to 210 work
+days provided annually by a 4-day workweek. In contrast, Schedule
 <span class="green">3</span>+<span class="blue">2</span>+<span class="green">4</span>+<span class="blue">1</span>
 designates <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">Dod</span> 9 as a work day and thus has an
@@ -901,12 +1021,6 @@ and
 <span class="blue">1</span>+<span class="green">3</span>+<span class="blue">2</span>+<span class="green">4</span>
 automatically include rest days at the start and end of every year and
 thus do not require any holidays to smooth the transition between years.
-Whereas weeks do not align with year, a common year has exactly 73
-pents. This creates a series of consecutive pents that lasts for 4 or 8
-years before it is interrupted by <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day
-365</u></span>.
-
 While <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29"><u>Day 365</u></span> varies between a work
 and a rest day in the Gregorian calendar, it is always a rest day in Dec
@@ -1485,6 +1599,9 @@ function dote2dotw(d = 719468) {
 decoYear = deco.slice(0, 4)
 nextYear = parseInt(decoYear) + 1
 decoDoty = deco.slice(5, 8)
+decoDek = decoDoty.slice(0, 2)
+decoDod = decoDoty[2]
+decoPent = decoDek * 2 + (decoDod > 4)
 xmasDiff = decoDoty - 299
 xmasDiffSign = xmasDiff < 0 ? "-" : "+"
 xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
@@ -1816,5 +1933,12 @@ svg#finger {
 }
 h4.anchored {
   margin: 8px 0px 8px 0px;
+}
+div.cell-output-display:has(svg#mermaid-1.flowchart.mermaid-js) {
+  margin-top: -35px;
+}
+div.cell-output-display:has(svg#mermaid-2.flowchart.mermaid-js) {
+  margin-top: -35px;
+  margin-bottom: -35px;
 }
 </style>
