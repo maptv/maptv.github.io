@@ -256,7 +256,7 @@ The distinction between [d]{.cyan} and [d]{.cyan}-[n]{.orange} can also be expla
 
 The [yoe]{.under .tool data-bs-toggle="tooltip" data-bs-title="year-of-era"} equation can be rearranged into the Dec [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} equation, [d]{.cyan} = &LeftFloor;[y]{.yellow} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 &times; [n]{.orange}&RightFloor;, where [y]{.yellow} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 is the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of [y]{.yellow}. The current [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} equation values are [\${decoDoty}]{.cyan} = &LeftFloor;[\${mod1FracYear}]{.yellow} &times; [\${nDaysInYear}]{.orange}&RightFloor;. In Dec, a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} by itself is a floating🛟date and a [year]{.yellow}+[day]{.cyan} date is a fixed⚓️date. Unlike fixed⚓️dates, floating🛟dates do not include a year and thus can apply to any year.
 
-Fixed⚓️dates are [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler) math expressions. Instead of simplifying a fixed⚓️date into a [yoe]{.under .tool data-bs-toggle="tooltip" data-bs-title="year-of-era"}, we can do the opposite and expand it to display additional information, such as the number of days in between it and another date. For example, an expanded version of the current date, [\${decoYear}]{.yellow}+[299]{.cyan}\${xmasDiffSign}[\${Math.abs(xmasDiff)}]{.denim}, can tell us that [\${Math.abs(xmasDiff)}]{.denim} days \${xmasDiffSince} [Day 299]{.underline .tool data-bs-toggle="tooltip" data-bs-title="December 25"}🎄of this year.
+Fixed⚓️dates are [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler) math expressions. Instead of simplifying a fixed⚓️date into a [yoe]{.under .tool data-bs-toggle="tooltip" data-bs-title="year-of-era"}, we can do the opposite and expand it to display additional information, such as the number of days in between it and another date. An expanded version of the current date, [\${decoYear}]{.yellow}+[299]{.cyan}\${xmasDiffSign}[\${Math.abs(xmasDiff)}]{.denim}, can tell us that [\${Math.abs(xmasDiff)}]{.denim} days \${xmasDiffSince} [Day 299]{.underline .tool data-bs-toggle="tooltip" data-bs-title="December 25"}🎄of this year.
 
 In the example above, the minuend [\${decoDoty}]{.cyan} has been expanded into the subtrahend [299]{.cyan} and the difference [\${xmasDiff}]{.denim} according to the minuend equation: minuend = subtrahend + difference. If we were preparing for a rocket🚀launch, the minuend would be the current time, the subtrahend would be the planned launch time, and the difference would be the ["T-minus" countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event).
 
@@ -283,8 +283,7 @@ Dec week dates turn [d]{.cyan}-[w]{.wine} into 7&times;[W]{.wheat}-[w~0~]{.wine}
 
 Following the Dec week date pattern described above, we can base Dec dates on any fixed-length calendar unit, including the 20-day [dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit), 30-day [tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A), 40-day [kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A), 73-day [sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A), or 90-day [naŭdek](https://en.wiktionary.org/wiki/na%C5%ADdek). The 10-day [dek](https://en.wiktionary.org/wiki/dek#Esperanto:~:text=dek-,ten%20(10),-Derived%20terms%5B) is the best possible choice, because our [decimal numeral system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers) allows us to naturally combine a dek, [\${decoDoty.slice(0, 2)}]{.cyan}, and a [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}, [\${decoDoty[2]}]{.cyan}, into a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}: [\${decoDoty}]{.cyan}.
 
-While weeks are not evenly divisible by two, a dek can be cut✂️into two equal halves called pents.
-The charts below show Schedule [3]{.green}+[2]{.blue}, the recommended pently schedule of work and rest days, from two different perspectives. The top chart uses [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} numbers and the bottom chart uses a one-based numbering approach that skips [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} and refers to [Dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} 0 as [Dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} 10.
+While weeks are not evenly divisible by two, a dek can be cut✂️into two equal halves called pents. The flowcharts below show Schedule [3]{.green}+[2]{.blue}, the recommended pently schedule of [work]{.green} and [rest]{.blue} days, from two different perspectives. Both flowcharts use [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} numbers, but the bottom one starts from [Dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} 1 instead of [Dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} 0 and refers to [Dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} 0 as [Dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} 10.
 
 ```{mermaid}
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '24px'}}}%%
@@ -334,36 +333,41 @@ flowchart TB
 
 The idea of having two ways to view a dek was inspired by POSIX [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} numbers, which can range from [0]{.under .tool data-bs-toggle="tooltip" data-bs-title="Sunday"} to [6]{.under .tool data-bs-toggle="tooltip" data-bs-title="Saturday"} or from [1]{.under .tool data-bs-toggle="tooltip" data-bs-title="Monday"} to [7]{.under .tool data-bs-toggle="tooltip" data-bs-title="Sunday"}. The tables below show the [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-year"} of the last pent of a common year and the first pent of the subsequent year. The top table is zero-based and the bottom table is one-based, but both tables show a seamless transition between years.
 
+| [Rest]{.blue} | [Work]{.green} | [Work]{.green} | [Work]{.green} | [Rest]{.blue} |
+| ------------- | -------------- | -------------- | -------------- | ------------- |
+| [360]{.blue}  | [361]{.green}  | [362]{.green}  | [363]{.green}  | [364]{.blue} |
+| [0]{.blue}    | [1]{.green}    | [2]{.green}    | [3]{.green}    | [4]{.blue}   |
 
-| Rest | Work | Work | Work | Rest |
-| ---  | ---  | ---  | ---  | ---  |
-| 360  | 361  | 362  | 363  | 364  |
-| 0    | 1    | 2    | 3    | 4    |
-
-| Work | Work | Work | Rest | Rest |
-| ---  | ---  | ---  | ---  | ---  |
-| 361  | 362  | 363  | 364  | 0    |
-| 1    | 2    | 3    | 4    | 5    |
+| [Work]{.green} | [Work]{.green} | [Work]{.green} | [Rest]{.blue} | [Rest]{.blue} |
+| -------------  | -------------- | -------------- | ------------- | ------------- |
+| [361]{.green}  | [362]{.green}  | [363]{.green}  | [364]{.blue} | [0]{.blue}    |
+| [1]{.green}    | [2]{.green}    | [3]{.green}    | [4]{.blue}   | [5]{.blue}    |
 
 After 4 or 8 years of consecutive pents, the pattern shown in the tables above is interrupted by [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"}. This interruption is visualized by the two tables below, which are identical to the tables above except for an extra row in the middle that contains a day, [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"} in the top table and [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} in the bottom table, that does not appear to belong to any pent.
 
-| Rest | Work | Work | Work | Rest |
-| ---  | ---  | ---  | ---  | ---  |
-| 360  | 361  | 362  | 363  | 364  |
-|      |      |      |      | 365  |
-| 0    | 1    | 2    | 3    | 4    |
+| [Rest]{.blue} | [Work]{.green} | [Work]{.green} | [Work]{.green} | [Rest]{.blue} |
+| ------------- | -------------- | -------------- | -------------- | ------------- |
+| [360]{.blue}  | [361]{.green}  | [362]{.green}  | [363]{.green}  | [364]{.blue}  |
+|               |                |                |                | [365]{.blue}  |
+| [0]{.blue}    | [1]{.green}    | [2]{.green}    | [3]{.green}    | [4]{.blue}    |
 
-| Work | Work | Work | Rest | Rest |
-| ---  | ---  | ---  | ---  | ---  |
-| 361  | 362  | 363  | 364  | 365  |
-|      |      |      |      | 0    |
-| 1    | 2    | 3    | 4    | 5    |
+| [Work]{.green} | [Work]{.green} | [Work]{.green} | [Rest]{.blue} | [Rest]{.blue} |
+| -------------  | -------------- | -------------- | ------------- | ------------- |
+| [361]{.green}  | [362]{.green}  | [363]{.green}  | [364]{.blue}  | [365]{.blue}  |
+|                |                |                |               | [0]{.blue}    |
+| [1]{.green}    | [2]{.green}    | [3]{.green}    | [4]{.blue}    | [5]{.blue}    |
 
-Officially, [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"} is the only day in Pent 73 and [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} is the first day of Pent 0. To get the current pent number, ${decoPent}, we double the current dek number, [\${decoDek}]{.cyan}, and then add 1 if the current [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} number, [\${decoDod}]{.cyan}, is greater than 4.
+Officially, [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"} is the only day in Pent 73 and [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} is the first day of Pent 0, the bottom row in top table above. Pent 72 is shown in the top row in the top table above and is the last pent of common years. To get the current pent number, ${decoPent}, we double the current dek number, [\${decoDek}]{.cyan}, and then add 1 if the current [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} number, [\${decoDod}]{.cyan}, is greater than 4.
 
-which have a total 219 work days according to Schedule [3]{.green}+[2]{.blue}.
+Pent numbers can also be expressed as spans🌈, such as 360=365-5, 360=365, or 360=-5, which represent
 
-Schedule [3]{.green}+[2]{.blue} provides every year, which is about 1 dek more than the 208 to 210 work days provided annually by a 4-day workweek. In contrast, Schedule [3]{.green}+[2]{.blue}+[4]{.green}+[1]{.blue} designates [Dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} 9 as a work day and thus has an annual total of 255 work days, which is about 1 pent less than the 260 to 262 work days per year that a 5-day workweek yields.
+Schedule [3]{.green}+[2]{.blue} is part of a group of schedules that allows us to neatly organize [work]{.green} and [rest]{.blue} days into 5 homogeneous columns like in the tables and flowcharts above. In the interest of brevity, we can refer to the different schedules just by their number of work days per pent. Schedule 5 would mean that we are working every day. If we keep each type work days and rest can modify this pattern to change the number of work days in the dek. This may be useful for professional that have a busy season during which the intensity of work is higher than at other times during the year. People can switch between different schedules throughout the year as needed.
+
+312 to 314.
+This is equivalent to a  result in too many intensify the work designate [Dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} 9 as a work day without changing the transition between years shown in the tables above.
+The number of [work]{.green} days per year we obtain from , 219, is about 1 dek more than the 208 to 210 work days provided annually by a 4-day workweek. 
+
+we will have an annual total of 255 work days, which is about 1 pent less than the 260 to 262 work days that we get annually from a 5-day workweek.
 
 Unlike a 4- or 5-day workweek, Schedules [1]{.blue}+[3]{.green}+[1]{.blue} and [1]{.blue}+[3]{.green}+[2]{.blue}+[4]{.green} automatically include rest days at the start and end of every year and thus do not require any holidays to smooth the transition between years. While [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"} varies between a work and a rest day in the Gregorian calendar, it is always a rest day in Dec according to both Schedule [1]{.blue}+[3]{.green}+[1]{.blue} and Schedule [1]{.blue}+[3]{.green}+[2]{.blue}+[4]{.green}.
 
