@@ -320,6 +320,20 @@ div > form > label {
   padding: 0px 2px 0px 2px;
 }
 
+.sand {
+  border-radius: 4px;
+  background-color: sandybrown;
+  color: black;
+  padding: 0px 2px 0px 2px;
+}
+
+.sienna {
+  border-radius: 4px;
+  background-color: sienna;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
 .under {
   text-decoration-line: underline;
   text-decoration-thickness: .7px;
