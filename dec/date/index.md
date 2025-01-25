@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+329
+2024+330
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -1019,71 +1019,97 @@ data-bs-title="March 1"><u>Day 0</u></span> in bottom one.
 </tbody>
 </table>
 
-The top and bottom rows in the top table above show the
+The last pent in common years is Pent 72. <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day
+365</u></span> is the only day in Pent 73. <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span> is
+the first day of Pent 0, the first pent of the year. To get the current
+pent number, ${decoPent}, we double the current dek number,
+<span class="cyan">${decoDek}</span>, and then add 1 if the current
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-year">doys</span> in Pent 72 and Pent 0,
-respectively. <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="February 29"><u>Day 365</u></span> is the only day in
-Pent 73 and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span> is the first day of Pent 0.
-To get the current pent number, ${decoPent}, we double the current dek
-number, <span class="cyan">${decoDek}</span>, and then add 1 if the
-current <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">dod</span> number,
-<span class="cyan">${decoDod}</span>, is greater than 4.
+<span class="cyan">${decoDod}</span>, is greater than 4. To avoid
+[off-by-one
+errors](https://en.wikipedia.org/wiki/Off-by-one_error#:~:text=a%20logic%20error%20that%20involves%20a%20number%20that%20differs%20from%20its%20intended%20value%20by%201),
+pent, dek, <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">dod</span>, and <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> numbers
+are always zero-based in Dec.
 
-Apart from Pent numbers, we can also express a pent as a span🌈, like
-360=365-5, which represents Pent 72. In any span, we can omit the
-subtrahend, 360=-5, or the difference: 360=365. It also is possible to
-switch the left- and right-hand sides to reverse a span: 365=360+5,
-365=360, or 365=+5. Typically, the order does not matter, but a reversed
-span indicates that we want to start from the latest day of the span and
-work backwards.
+Apart from pent numbers, a pent can also be expressed as a span🌈. Pent
+72 can be represented as 360=365-5, 360=-5, or 360=365. In addition to
+omitting the subtrahend or the difference, we can make the subtrahend
+precede the minuend to indicate that we want to start from the latest
+day and work backwards: 365=360+5, 365=360, or 365=+5.
 
-Spans can also represent groups of non-consecutive days. All of the
-Schedule 3+2 work days in a year can be expressed as 1=4=:5. In this
-span, we start with Days 1, 2, and 3 and then include every day that is
-a multiple of 5 days away from one of the starting days. The number
-preceded by a colon is called a step and indicates which days we want to
-include.
+Spans🌈can also represent groups of non-consecutive days. All of the
+Schedule <span class="green">3</span> work days in a year can be
+expressed as 1=4=:5. In this span🌈, we start with Days 1, 2, and 3 and
+then include every day that is a multiple of 5 days away from one of the
+starting days. The number preceded by a colon is called a step and
+indicates which days we want to include.
 
-Schedule <span class="green">3</span>+<span class="blue">2</span> is
-part of a group of schedules that allows us to neatly organize
-<span class="green">work</span> and <span class="blue">rest</span> days
-into 5 homogeneous columns like in the tables and flowcharts above. In
-the interest of brevity, we can refer to the different schedules just by
-their number of work days per pent. Schedule 5 would mean that we are
-working every day. If we keep each type work days and rest can modify
-this pattern to change the number of work days in the dek. This may be
-useful for professional that have a busy season during which the
-intensity of work is higher than at other times during the year. People
-can switch between different schedules throughout the year as needed.
+<img src="../../asset/Manual_Layout.svg" class="column-sidebar" />
 
-312 to 314. This is equivalent to a result in too many intensify the
-work designate <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">Dod</span> 9 as a work day without changing
-the transition between years shown in the tables above. The number of
-<span class="green">work</span> days per year we obtain from , 219, is
-about 1 dek more than the 208 to 210 work days provided annually by a
-4-day workweek.
+<img src="../../asset/Manual_Layout.svg" class="column-margin" />
 
-we will have an annual total of 255 work days, which is about 1 pent
-less than the 260 to 262 work days that we get annually from a 5-day
-workweek.
+Schedule <span class="green">3</span> is one of six pently schedules
+that allow us to organize <span class="green">work</span> and
+<span class="blue">rest</span> days into five homogeneous columns like
+in the tables and flowcharts above. These schedules are like the gears
+of a
+[5-speed](https://en.m.wikipedia.org/wiki/Manual_transmission#:~:text=Common%20shift%20pattern%20for%20a%205%2Dspeed%20transmission)
+[manual
+transmission](https://en.m.wikipedia.org/wiki/Manual_transmission#:~:text=a%20multi%2Dspeed%20motor%20vehicle%20transmission%20system%20where%20gear%20changes%20require%20the%20driver%20to%20manually%20select%20the%20gears%20by%20operating%20a%20gear%20stick%20and%20clutch)
+in a car. The approximate speed ranges for the five gears are \<5, 5 to
+10, 10 to 15, 15 to 20, and ≥20 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousands of meters"><u>kilometers</u></span> per
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a hundredth of a day"><u>centiday</u></span>.
 
-Unlike a 4- or 5-day workweek, Schedules
-<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>
-and
-<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">2</span>+<span class="green">4</span>
+In this analogy,
+[Neutral](https://en.m.wikipedia.org/wiki/Neutral#:~:text=the%20state%20where%20no%20gears%20are%20selected%20for%20a%20motor%20vehicle's%20transmission)
+(N), 1st, 2nd, 3rd, 4th, and 5th gear are Schedules
+<span class="green">0</span>, <span class="green">1</span>,
+<span class="green">2</span>, <span class="green">3</span>,
+<span class="green">4</span>, and <span class="green">5</span>,
+respectively. To complete the
+[gearshift](https://en.m.wikipedia.org/wiki/Gear_stick#:~:text=a%20metal%20lever%20attached%20to%20the%20transmission%20of%20an%20automobile)
+analogy, Reverse (R) would be a time machine that takes us to the past.
+As our driving speed changes, we would shift up to a higher gear or
+shift down to a lower gear. Similarly, we can switch between the six
+pently schedules as needed.
+
+The names of the pently schedules are derived from their respective
+numbers of work days per pent. The total number of work days per year
+provided by Schedules <span class="green">0</span>,
+<span class="green">1</span>, <span class="green">2</span>,
+<span class="green">3</span>, <span class="green">4</span>, and
+<span class="green">5</span> are 0, 73, 146, 219, 292, and 365,
+respectively. In general, Schedule 3 should be the default and Schedule
+5 should only be used temporarily during crises caused by events like
+natural disasters.
+
+In addition to switching between schedules, we can also mix them to
+create hybrid schedules. Schedule 34 mixes Schedules 3 and 4 to obtain
+an annual total of 255 work days without modifying the transition
+between years shown in the tables above. This annual total is about 1
+pent less than the 260 to 262 work days that we get annually from a
+5-day workweek.
+
+Unlike a 4- or 5-day workweek, pently schedules provide an exact number
+of work days per year. While Days <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="February 28"><u>364</u></span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 29"><u>365</u></span>, and <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>0</u></span> can be
+work or rest days in the Gregorian calendar, these days are always rest
+days according to Schedules <span class="green">3</span> and
+<span class="green">34</span>. In this way, Schedules
+<span class="green">3</span> and <span class="green">34</span>
 automatically include rest days at the start and end of every year and
 thus do not require any holidays to smooth the transition between years.
-While <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="February 29"><u>Day 365</u></span> varies between a work
-and a rest day in the Gregorian calendar, it is always a rest day in Dec
-according to both Schedule
-<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>
-and Schedule
-<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">2</span>+<span class="green">4</span>.
 
 There are 11 United States [Federal
 holidays](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/).
