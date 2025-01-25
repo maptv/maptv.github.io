@@ -163,7 +163,7 @@ format:
       dark: [darkly, asset/dark.scss]
     grid:
       sidebar-width: 205px
-      body-width: 800px
+      body-width: 900px
     css: asset/style.css
     anchor-sections: true
     tbl-cap-location: margin
