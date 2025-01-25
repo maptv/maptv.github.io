@@ -1037,22 +1037,29 @@ data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> numbers
 are always zero-based in Dec.
 
 Apart from pent numbers, a pent can also be expressed as a span🌈. Pent
-72 can be represented as 360=365-5, 360=-5, or 360=365. In addition to
-omitting the subtrahend or the difference, we can make the subtrahend
+72 can be represented as
+<span class="cyan">360</span>=<span class="cyan">365</span>-<span class="denim">5</span>,
+<span class="cyan">360</span>=-<span class="denim">5</span>, or
+<span class="cyan">360</span>=<span class="cyan">365</span>. In addition
+to omitting the subtrahend or the difference, we can make the subtrahend
 precede the minuend to indicate that we want to start from the latest
-day and work backwards: 365=360+5, 365=360, or 365=+5.
+day and work backwards:
+<span class="cyan">365</span>=<span class="cyan">360</span>+<span class="denim">5</span>,
+<span class="cyan">365</span>=<span class="cyan">360</span>, or
+<span class="cyan">365</span>=+<span class="denim">5</span>.
 
 Spans🌈can also represent groups of non-consecutive days. All of the
 Schedule <span class="green">3</span> <span class="green">work</span>
-days in a year can be expressed as 1=4=:5. In this span🌈, we start with
-Days <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 2"><u>1</u></span>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="March 3"><u>2</u></span>, and
+days in a year can be expressed as
+<span class="cyan">1</span>=<span class="cyan">4</span>=:<span class="sienna">5</span>.
+In this span🌈, we start with Days <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 2"><u>1</u></span>,
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 4"><u>3</u></span> and then include every day that
-is a multiple of 5 days away from one of the starting days. The number
-preceded by a colon is called a step and determines which days we want
-to include.
+data-bs-title="March 3"><u>2</u></span>, and <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 4"><u>3</u></span> and
+then include every day that is a multiple of 5 days away from one of the
+starting days. The number preceded by a colon is called a step and
+determines which days we want to include.
 
 <img src="../../asset/Manual_Layout.svg" class="column-margin"
 data-fig-align="center" /> Schedule <span class="green">3</span> is one
@@ -1084,51 +1091,53 @@ shift down to a lower gear⚙️. Similarly, we can switch between the six
 pently schedules as needed.
 
 The names of the pently schedules are derived from their respective
-numbers of <span class="green">work</span> days per pent. The total
-number of <span class="green">work</span> days per year provided by
-Schedules <span class="green">0</span>, <span class="green">1</span>,
+numbers of <span class="green">work</span> days per pent. The
+total🧮number of <span class="green">work</span> days per year provided
+by Schedules <span class="green">0</span>, <span class="green">1</span>,
 <span class="green">2</span>, <span class="green">3</span>,
 <span class="green">4</span>, and <span class="green">5</span> are 0,
-73, 146, 219, 292, and 365, respectively. In general, Schedule 3 should
-be the default and Schedule 5 should only be used temporarily during
-crises caused by events like natural disasters.
+73, 146, 219, 292, and 365, respectively. In general, Schedule
+<span class="green">3</span> should be the default and Schedule
+<span class="green">5</span> should only be used temporarily during
+crises‼️and emergencies🚨.
 
 In addition to switching between schedules, we can also mix them to
 create hybrid schedules. Schedule <span class="green">34</span> mixes
 Schedules <span class="green">3</span> and <span class="green">4</span>
-to obtain an annual total of 255 <span class="green">work</span> days
+to obtain an annual total🧮of 255 <span class="green">work</span> days
 without modifying the transition between years shown in the tables
-above. This annual total is about 1 pent less than the 260 to 262
+above. This annual total🧮is about 1 pent less than the 260 to 262
 <span class="green">work</span> days that we get annually from a 5-day
 <span class="green">work</span>week.
 
-Unlike weekly schedules, pently schedules provide an exact number of
-<span class="green">work</span> days per year. While Days
+Unlike weekly schedules, pently schedules provide a consistent🎯number
+of <span class="green">work</span> days per year. While Days
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 28"><u>364</u></span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="February 29"><u>365</u></span>,
 and <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="March 1"><u>0</u></span> can be
-<span class="green">work</span> or rest days in the Gregorian calendar,
-these days are always rest days according to Schedules
-<span class="green">3</span> and <span class="green">34</span>. For this
-reason, Schedules <span class="green">3</span> and
+<span class="green">work</span> or <span class="blue">rest</span> days
+in the Gregorian calendar, these days are always
+<span class="blue">rest</span> days according to Schedules
+<span class="green">3</span> and <span class="green">34</span>.
+Therefore, Schedules <span class="green">3</span> and
 <span class="green">34</span> do not require any holidays to smooth the
 transition between years.
 
 There are 11 United States [Federal
 holidays](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/).
-Federal holidays that fall on a Gregorian calendar rest day,
+Federal holidays that fall on a Gregorian calendar
+<span class="blue">rest</span> day, <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="Sunday">Dow 0</span> or
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="Sunday">Dow 0</span> or <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="Saturday">Dow 6</span>, are
-observed on the nearest Gregorian calendar
-<span class="green">work</span> day: <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="Monday">Dow 1</span> or
+data-bs-title="Saturday">Dow 6</span>, are observed on the nearest
+Gregorian calendar <span class="green">work</span> day:
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="Friday">Dow 5</span>. To apply this rule to Schedule
-<span class="green">3</span>, we would observe the Day
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Monday">Dow 1</span> or <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="Friday">Dow 5</span>. To apply
+this rule to Schedule <span class="green">3</span>, we would observe the
+Day <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="June 19"><u>110</u></span>⛓️‍💥, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="July 4"><u>125</u></span>🎆,
 <span class="tool" data-bs-toggle="tooltip"
