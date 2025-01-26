@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+330
+2024+331
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -385,11 +385,11 @@ data-bs-title="day-of-week">dow</span>
 equation, <span class="wine">w<sub>M</sub></span> is the
 [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted)
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> at which we want to arrive and
-<span class="wine">w<sub>S</sub></span> is
+data-bs-title="day-of-week">dow</span> destination and
+<span class="wine">w<sub>S</sub></span> is the
 [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted)
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> from which we start. To get the
+data-bs-title="day-of-week">dow</span> starting point. To get the
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> of
 [Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃in
@@ -407,10 +407,14 @@ equation, <span class="wine">${day266dotwDiff}</span> =
 (<span class="wine">4</span> - <span class="wine">${day266dotw}</span> +
 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-7, and then add the resulting <span class="wine">w<sub>Δ</sub></span> to
+7, and then add <span class="wine">w<sub>Δ</sub></span> to
 <span class="cyan">266</span>: <span class="cyan">${day266dotwDiff +
 266}</span> = <span class="wine">${day266dotwDiff}</span> +
-<span class="cyan">266</span>.
+<span class="cyan">266</span>. Simply put, Thanksgiving🦃is the first
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="Thrsday">Dow 4</span> after <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="November 12"><u>Day
+256</u></span>.
 
 Apart from the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> and <span class="under tool"
@@ -1110,8 +1114,9 @@ above. This annual total🧮is about 1 pent less than the 260 to 262
 <span class="green">work</span> days that we get annually from a 5-day
 <span class="green">work</span>week.
 
-Unlike weekly schedules, pently schedules provide a consistent🎯number
-of <span class="green">work</span> days per year. While Days
+Unlike weekly schedules, Schedules <span class="green">3</span> and
+<span class="green">34</span> provide a consistent🎯number of
+<span class="green">work</span> days every year. While Days
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 28"><u>364</u></span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="February 29"><u>365</u></span>,
@@ -1151,6 +1156,17 @@ data-bs-toggle="tooltip" data-bs-title="July 5"><u>126</u></span>🎆,
 data-bs-title="November 12"><u>256</u></span>🫡, and <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="December 26"><u>298</u></span>🎄, respectively.
+
+Holidays that fall on the same Gregorian calendar date every year have a
+reusable♻️floating🛟Dec date, which can be identified with a month and a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-month">dom</span> or a dek and a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">dod</span>. Unlike a month and dom, a doy
+contains a dek and a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">dod</span>, the Dec equivalent of a week and
+a dow. Unlike weeks and dows, deks and dods are perfectly synchronized
+with years and months.
 
 # Day of month (dom)
 
