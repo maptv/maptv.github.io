@@ -412,9 +412,9 @@ equation, <span class="wine">${day266dotwDiff}</span> =
 266}</span> = <span class="wine">${day266dotwDiff}</span> +
 <span class="cyan">266</span>. Simply put, Thanksgiving🦃is the first
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="Thrsday">Dow 4</span> after <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="November 12"><u>Day
-256</u></span>.
+data-bs-title="Thursday">Dow 4</span> after <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="November 21"><u>Day
+265</u></span>.
 
 Apart from the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> and <span class="under tool"
@@ -1157,36 +1157,42 @@ data-bs-title="November 12"><u>256</u></span>🫡, and <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="December 26"><u>298</u></span>🎄, respectively.
 
-Holidays that fall on the same Gregorian calendar date every year have a
-reusable♻️floating🛟Dec date, which can be identified with a month and a
-<span class="under tool" data-bs-toggle="tooltip"
+Holidays that fall on the same <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> every
+year have a reusable♻️floating🛟date, which can be identified with a
+month and a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-month">dom</span> or a dek and a
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span>. Unlike a month and dom, a doy
-contains a dek and a <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span>, the Dec equivalent of a week and
-a dow. Unlike weeks and dows, deks and dods are perfectly synchronized
-with years and months.
+data-bs-title="day-of-dek">dod</span>, but not a week and a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span>. Even though a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> is sufficient for identify a
+floating🛟date and can be converted into a month and a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-month">dom</span>, Dec offers the option of
+including information related to months as part of Dec dates.
 
 # Day of month (dom)
 
-Dec dates can also be modified to display Dec month and [POSIX
+Dec dates can be expanded to display Dec month and [POSIX
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-month">dom</span>](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D)
 numbers. The current Dec <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-month">dom</span> date is
 <span class="yellow">${decoYear}</span>+<span class="cyan">${monthNumber}</span>+<span class="magenta">${dotm}</span>.
-Dec <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span> dates represent each month with
-the last <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> of the previous month because
-POSIX <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-month">doms</span> start from one instead of
-zero. For zero-based <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-month">doms</span>, we represent each month with
-its first <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>:
+Dec month numbers are the last <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> of the
+previous month because POSIX <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-month">doms</span> are
+one-based. For zero-based <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-month">doms</span>, Dec
+represents each month with its first <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>:
 <span class="yellow">${decoYear}</span>+<span class="cyan">${monthNumber0}</span>+<span class="magenta">${dotm0}</span>.
+This approach allows Dec to support both zero- and one-based
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-month">doms</span>.
 
 Dec <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-month">dom</span> dates replace the
