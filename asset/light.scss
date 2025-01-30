@@ -132,3 +132,17 @@ g#workdays.cluster rect {
     fill: lightgreen !important;
 }
 
+svg.flowchart.mermaid-js#navchart-mermaid rect.basic.label-container:hover {
+  stroke: lightgreen;
+  stroke-width: 9px;
+}
+
+svg.flowchart.mermaid-js#navchart-mermaid span.nodeLabel:hover {
+  stroke: lightgreen;
+  stroke-width: 9px;
+}
+
+svg.flowchart.mermaid-js#navchart-mermaid span.nodeLabel > p:hover {
+  stroke: lightgreen;
+  stroke-width: 9px;
+}

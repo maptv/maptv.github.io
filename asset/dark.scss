@@ -252,3 +252,17 @@ div > form > div > input[type="range"] {
 #daylightplot rect#daterect {
   fill: #f00;
 }
+svg.flowchart.mermaid-js#navchart-mermaid :is(rect.basic.label-container, g.label):hover {
+  stroke: lightgreen;
+  stroke-width: 8px;
+}
+
+svg.flowchart.mermaid-js#navchart-mermaid span.nodeLabel:hover {
+  stroke: lightgreen;
+  stroke-width: 9px;
+}
+
+svg.flowchart.mermaid-js#navchart-mermaid span.nodeLabel > p:hover {
+  stroke: lightgreen;
+  stroke-width: 9px;
+}
