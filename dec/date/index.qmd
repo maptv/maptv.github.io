@@ -402,7 +402,7 @@ Dec dates can be further modified to include [POSIX week numbers](https://pubs.o
 
 Dec week dates turn [d]{.cyan}-[w]{.wine} into 7&times;[W]{.wheat}-[w~0~]{.wine}, where [W]{.wheat} is the week number and [w~0~]{.wine} is the [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}. In this case, the subtraction is omitted, because [w~0~]{.wine} is not necessary to identify a date and can be calculated from a given [y]{.yellow} by flooring it, turning it into a [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"}, and passing it into the [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} equation. POSIX week numbers may be useful for [week-based accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
 
-To create a Dec week date, we need two types of Dec date expansion. We use minuend expansion to turn the minuend [d]{.cyan} into subtrahend [d]{.cyan}-[w]{.wine} and the difference [w]{.wine} and then use dividend expansion to convert the dividend [d]{.cyan}-[w]{.wine} into the divisor [W]{.wheat} and the quotient 7.
+To create a Dec week date, we need two types of Dec date expansion. We use minuend expansion to turn the minuend [d]{.cyan} into subtrahend [d]{.cyan}-[w]{.wine} and the difference [w]{.wine} and then use dividend expansion to convert the dividend [d]{.cyan}-[w]{.wine}+[w~0~]{.wine} into the divisor [W]{.wheat} and the quotient 7.
 
 # Day of dek (dod){#dod}
 
