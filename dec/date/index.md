@@ -17,7 +17,7 @@ Martin Laptev
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:9.28in;height:0.85in" />
+style="width:7.83in;height:0.85in" />
 
 </div>
 
@@ -1800,17 +1800,18 @@ After reading this article, you should be able to understand the
 examples in the [filter](../../quarto/filter),
 [script](../../quarto/script), and [include](../../quarto/include)
 articles in the [Quarto section](../../quarto) of my site. To see the
-full extent of the benefits that Decalendar can provide, I recommend
-that you continue on through the [Dec section](../../dec) of my site to
-the [time](../../dec/time)🕰️, [ISO 8601](../../dec/iso)🌐,
-[snap](../../dec/snap)🫰, and [span](../../dec/span)🌈articles.
+full extent of the benefits that Dec can provide, I recommend that you
+continue on through the [Dec section](../../dec) of my site to the
+[time](../../dec/time)🕰️, [snap](../../dec/snap)🫰, and
+[span](../../dec/span)🌈articles. Dec has a lot more to offer than just
+dates!
 
 <div id="navchart">
 
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:9.28in;height:0.85in" />
+style="width:7.83in;height:0.85in" />
 
 </div>
 
@@ -1878,54 +1879,32 @@ function year2leap(year = 1970) {
 function dote2dotw(d = 719468) {
   return d >= -3 ? (d + 3) % 7 : (d + 4) % 7 + 6
 }
-decoYear = deco.slice(0, 4)
-nextYear = parseInt(decoYear) + 1
-decoDoty = deco.slice(5, 8)
-decoDek = decoDoty.slice(0, 2)
-decoDod = decoDoty[2]
-decoPent = decoDek * 2 + (decoDod > 4)
-xmasDiff = decoDoty - 299
-xmasDiffSign = xmasDiff < 0 ? "-" : "+"
-xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
-dotyInputStr = String(dotyInput).padStart(3, "0")
-dekInput = parseInt(dotyInputStr.slice(0, 2))
-dodInput = dotyInputStr[2]
-xmasDote = date2dote(ydz[0], 299)[0]
-xmasDotw = dote2dotw(xmasDote)
-dotw = Math.floor(dote2dotw(dz[0]))
-day266dotw = dote2dotw(date2dote(ydz[0], 266)[0])
-day266dotwDiff = dotw2diff(4, day266dotw)
-week = Math.floor((ydz[1] + doty0dotw) / 7)
-dotm = doty2dotm(Math.floor(ydz[1]))
-dotm0 = String(dotm - 1).padStart(2, "0")
-dotm1 = dotm.toString().padStart(2, "0")
-monthNumber = Math.floor(ydz[1] - dotm)
-monthNumber0 = String(monthNumber + 1).padStart(3, "0")
-monthNumber1 = monthNumber.toString().padStart(3, "0")
-dotw0doty = Math.floor(ydz[1]) - dotw
-doty0dote = date2dote(ydz[0], 0, ydz[2])
-doty0dotw = dote2dotw(...doty0dote)
-dotw0sign = dotw0doty < 0 ? "-" : "+"
-dayTime = dz[0] % 1
-decidayTime = (dayTime * 10).toFixed(4)
-zone = dz[1]
-zoneSign = zone < 0 ? "+" : "-"
-nDaysInYear = 365 + year2leap(ydz[0] + 1)
-Tminus = nDaysInYear - decoDoty
-TminusPadded = Tminus.toString().padStart(3, "0")
-fracYear = ydz[0] + ydz[1] / nDaysInYear
-fullfracYear = (fracYear).toFixed(4)
-mod1FracYear = (fracYear % 1).toFixed(4)
-months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-monthNums = ["305", "336", "", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
-today = new Date()
-monthName = today.toLocaleString('default', { month: 'long' });
-monthNumJS = today.getMonth();
-currMonth = monthNums[monthNumJS]
-nextMonth = monthNums[(monthNumJS + 1) % 12]
-dekStart = Math.floor(decoDoty / 10) * 10
-diff = parseInt(currMonth || 0) - parseInt(nextMonth || nDaysInYear)
-  //currMonth === "" ? 0 : parseInt(currMonth) - nextMonth === "" ? nDaysInYear : parseInt(nextMonth)
+function unix2doty(unix) {
+  const dote = (
+    unix ?? Date.now()
+  ) / 86400000 + 719468,
+    cote = Math.floor((
+      dote >= 0 ? dote
+      : dote - 146096
+    ) / 146097),
+  dotc = dote - cote * 146097,
+  yotc = Math.floor((dotc
+    - Math.floor(dotc / 1460)
+    + Math.floor(dotc / 36524)
+    - Math.floor(dotc / 146096)
+  ) / 365);
+  return dotc - (yotc * 365
+      + Math.floor(yotc / 4)
+      - Math.floor(yotc / 100)
+  )}
+function date2dote(year = 1969, doty = 306, zone = 0) {
+    const cote = Math.floor((year >= 0 ? year : year - 399) / 400),
+      yote = year - cote * 400;
+    return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
+}
+function addN(d) { return d + 365 + leapInput }
+function subN(d) { return d - 365 - leapInput }
+// https://observablehq.com/@observablehq/synchronized-inputs
 // https://observablehq.com/@juang1744/transform-input/1
 transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
   if (source === undefined) {
@@ -1950,6 +1929,22 @@ transformInput = function(target, {bind: source, transform = identity, involutor
   });
   sourceInputHandler();
   return target;
+}
+function doty2month(doty = 0) {
+    const m = Math.floor((5 * doty + 2) / 153);
+    return Math.floor(m < 10 ? m + 3 : m - 9);
+}
+function month2doty(month = 1) {
+    return Math.floor(
+        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5
+)}
+function doty2dotm(doty = 0) {
+    const m = Math.floor((5 * doty + 2) / 153);
+    return doty - Math.floor((153 * m + 2) / 5) + 1;
+}
+function set(input, value) {
+  input.value = value;
+  input.dispatchEvent(new Event("input", {bubbles: true}));
 }
 setTransform = (input) => ({to: (value) => (input.value = value, {andDispatchEvent: (event = new Event("input")) => input.dispatchEvent(event)})});
 function inverse(f) {
@@ -1977,25 +1972,6 @@ function square(x) {
 }
 function identity(x) {
   return x;
-}
-function doty2month(doty = 0) {
-    const m = Math.floor((5 * doty + 2) / 153);
-    return Math.floor(m < 10 ? m + 3 : m - 9);
-}
-function month2doty(month = 1) {
-    return Math.floor(
-        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5
-)}
-function doty2dotm(doty = 0) {
-    const m = Math.floor((5 * doty + 2) / 153);
-    return doty - Math.floor((153 * m + 2) / 5) + 1;
-}
-numbers = Array.from({length: 366}, (_, i) => i)
-set(viewof dotyInput, leapscrub[0])
-// https://observablehq.com/@observablehq/synchronized-inputs
-function set(input, value) {
-  input.value = value;
-  input.dispatchEvent(new Event("input", {bubbles: true}));
 }
 // https://observablehq.com/@mbostock/scrubber
 function Scrubber(values, {
@@ -2070,97 +2046,50 @@ function Scrubber(values, {
   Inputs.disposal(form).then(stop);
   return form;
 }
+decoYear = deco.slice(0, 4)
+nextYear = parseInt(decoYear) + 1
+decoDoty = deco.slice(5, 8)
+decoDek = decoDoty.slice(0, 2)
+decoDod = decoDoty[2]
+decoPent = decoDek * 2 + (decoDod > 4)
+xmasDiff = decoDoty - 299
+xmasDiffSign = xmasDiff < 0 ? "-" : "+"
+xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
+xmasDote = date2dote(ydz[0], 299)[0]
+xmasDotw = dote2dotw(xmasDote)
+dotw = Math.floor(dote2dotw(dz[0]))
+day266dotw = dote2dotw(date2dote(ydz[0], 266)[0])
+day266dotwDiff = dotw2diff(4, day266dotw)
+week = Math.floor((ydz[1] + doty0dotw) / 7)
+dotm = doty2dotm(Math.floor(ydz[1]))
+dotm0 = String(dotm - 1).padStart(2, "0")
+monthNumber = Math.floor(ydz[1] - dotm)
+monthNumber0 = String(monthNumber + 1).padStart(3, "0")
+dotw0doty = Math.floor(ydz[1]) - dotw
+doty0dotw = dote2dotw(...doty0dote)
+dotw0sign = dotw0doty < 0 ? "-" : "+"
+dayTime = dz[0] % 1
+decidayTime = (dayTime * 10).toFixed(4)
+zone = dz[1]
+zoneSign = zone < 0 ? "+" : "-"
+nDaysInYear = 365 + year2leap(ydz[0] + 1)
+Tminus = nDaysInYear - decoDoty
+TminusPadded = Tminus.toString().padStart(3, "0")
+fracYear = ydz[0] + ydz[1] / nDaysInYear
+fullfracYear = (fracYear).toFixed(4)
+mod1FracYear = (fracYear % 1).toFixed(4)
+months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+monthNums = ["305", "336", "", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
 calYear = !leapInput && dotwInput == "Monday" ? 6 : !leapInput && dotwInput == "Tuesday" ? 7 : !leapInput && dotwInput == "Wednesday" ? 2 : !leapInput && dotwInput == "Thursday" ? 3 : !leapInput && dotwInput == "Friday" ? 9 : !leapInput && dotwInput == "Saturday" ? 10 : !leapInput && dotwInput == "Sunday" ? 11 : leapInput && dotwInput == "Monday" ? 12 : leapInput && dotwInput == "Tuesday" ? 24 : leapInput && dotwInput == "Wednesday" ? 8 : leapInput && dotwInput == "Thursday" ? 20 : leapInput && dotwInput == "Friday" ? 4 : leapInput && dotwInput == "Saturday" ? 16 : leapInput && dotwInput == "Sunday" ? 28 : 0;
 datesCal = d3.utcDays(new Date(calYear, 0, 0), new Date(calYear, 12, 0));
-function unix2doty(unix) {
-  const dote = (
-    unix ?? Date.now()
-  ) / 86400000 + 719468,
-    cote = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
-  dotc = dote - cote * 146097,
-  yotc = Math.floor((dotc
-    - Math.floor(dotc / 1460)
-    + Math.floor(dotc / 36524)
-    - Math.floor(dotc / 146096)
-  ) / 365);
-  return dotc - (yotc * 365
-      + Math.floor(yotc / 4)
-      - Math.floor(yotc / 100)
-  )}
-function date2dote(year = 1969, doty = 306, zone = 0) {
-    const cote = Math.floor((year >= 0 ? year : year - 399) / 400),
-      yote = year - cote * 400;
-    return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
-}
-function doty2deco(yearDoty = [1969, 306], zone = 0) {
-    const yd = dote2date(...date2dote(yearDoty[0], Math.floor(yearDoty[1]), zone));
-    return `${yd[0].toString().padStart(4, "0")}+${yd[1].toString().padStart(3, "0")}${
-        yearDoty[1].toString().includes(".") ? "." + (
-            (yearDoty[1] > 0) ? (yearDoty[1] - zone).toString().split(".").pop()
-            : [...(yearDoty[1] - zone).toString().split(".").pop()].map(
-                (e, i, a) => (i + 1 === a.length) ? 10 - e : 9 - e
-            ).join("")
-        ) : ""
-    }`
-}
-function deco2doty(timestamp = "1969+306.00000Z") {
-    const arr = timestamp.toString().split(/(?=[+-]|[a-zA-Z])/, 3);
-    switch (arr.length) {
-        case 1: return [unix2doty(Date.now())[0], parseFloat(arr[0]), 0];
-        case 2: return (/^[a-zA-Z]+$/.test(arr[1]))
-            ? [unix2doty(Date.now())[0], parseFloat(arr[0]), zone2hour(arr[1]) / 24]
-            : [parseFloat(arr[0]), parseFloat(arr[1]), 0];
-    };
-    return [parseFloat(arr[0]), parseFloat(arr[1]), /^[a-zA-Z]+$/.test(arr[2])
-        ? zone2hour(arr[2]) / 24
-        : parseFloat(arr[2].replace(/([+-])/, "$1\."))];
-}
-function zone2hour(zone = "Z") {
-    return (zone = zone.toUpperCase()) == "Z" ? 0
-        : zone > "@" && zone < "J" ? zone.charCodeAt() - 64
-        : zone > "J" && zone < "N" ? zone.charCodeAt() - 65
-        : zone < "Z" && zone > "M" ? -(zone.charCodeAt() - 77)
-        : zone;
-}
-function doty2unix(year = 1969, doty = 306, zone = 0) {
-    return (date2dote(year, doty, zone) - 719468) * 86400000;
-}
-function doty2isoc(yd) {
-    return new Date(doty2unix(...yd))
-}
-function doty2greg(doty = 306) {
-    const m = Math.floor((5 * doty + 2) / 153);
-    return [
-      Math.floor(m < 10 ? m + 3 : m - 9),
-      Math.floor(doty - (153 * m + 2) / 5 + 2)
-    ];
-}
-function greg2doty(month = 1, day = 1) {
-    return Math.floor(
-        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5 + day - 1
-)}
-function greg2year(year = 1970, month = 1) { return year - (month < 3) }
-function isoc2doty(isoc) {
-  return [greg2year(isoc.getFullYear(), isoc.getUTCMonth() + 1), greg2doty(isoc.getUTCMonth() + 1, isoc.getUTCDate())];
-}
 leapInput = leapscrub[1]
 turnInput = leapscrub[2]
-function addN(d) { return d + 365 + leapInput }
-function subN(d) { return d - 365 - leapInput }
 dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
+numbers = Array.from({length: 366}, (_, i) => i)
+set(viewof dotyInput, leapscrub[0])
 ```
 
 <style>
-h6.relative.anchored {
-  margin-top: -25px;
-  margin-bottom: -2px;
-}
-form.oi-3a86ea-checkbox {
-  max-width: 700px;
-}
 div.cell:has(form.oi-3a86ea-toggle) {
   display: flex;
   flex-wrap: wrap;
