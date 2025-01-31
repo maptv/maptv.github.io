@@ -132,17 +132,12 @@ g#workdays.cluster rect {
     fill: lightgreen !important;
 }
 
-svg.flowchart.mermaid-js#navchart-mermaid rect.basic.label-container:hover {
-  stroke: lightgreen;
-  stroke-width: 9px;
+#navchart-mermaid a:nth-child(2) rect.basic.label-container {
+  stroke: darkmagenta;
+  stroke-width: 6px;
 }
 
-svg.flowchart.mermaid-js#navchart-mermaid span.nodeLabel:hover {
-  stroke: lightgreen;
-  stroke-width: 9px;
-}
-
-svg.flowchart.mermaid-js#navchart-mermaid span.nodeLabel > p:hover {
-  stroke: lightgreen;
-  stroke-width: 9px;
+g.node rect:hover, g.node:has(g:hover) rect {
+  stroke: darkgreen !important;
+  stroke-width: 9px !important;
 }

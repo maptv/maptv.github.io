@@ -252,17 +252,13 @@ div > form > div > input[type="range"] {
 #daylightplot rect#daterect {
   fill: #f00;
 }
-svg.flowchart.mermaid-js#navchart-mermaid :is(rect.basic.label-container, g.label):hover {
-  stroke: lightgreen;
-  stroke-width: 8px;
+
+#navchart-mermaid a:nth-child(2) rect.basic.label-container {
+  stroke: magenta;
+  stroke-width: 6px;
 }
 
-svg.flowchart.mermaid-js#navchart-mermaid span.nodeLabel:hover {
-  stroke: lightgreen;
-  stroke-width: 9px;
-}
-
-svg.flowchart.mermaid-js#navchart-mermaid span.nodeLabel > p:hover {
-  stroke: lightgreen;
-  stroke-width: 9px;
+g.node rect:hover, g.node:has(g:hover) rect {
+  stroke: lightgreen !important;
+  stroke-width: 9px !important;
 }
