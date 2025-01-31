@@ -590,32 +590,54 @@ function year2leap(year = 1970) {
 function dote2dotw(d = 719468) {
   return d >= -3 ? (d + 3) % 7 : (d + 4) % 7 + 6
 }
-function unix2doty(unix) {
-  const dote = (
-    unix ?? Date.now()
-  ) / 86400000 + 719468,
-    cote = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
-  dotc = dote - cote * 146097,
-  yotc = Math.floor((dotc
-    - Math.floor(dotc / 1460)
-    + Math.floor(dotc / 36524)
-    - Math.floor(dotc / 146096)
-  ) / 365);
-  return dotc - (yotc * 365
-      + Math.floor(yotc / 4)
-      - Math.floor(yotc / 100)
-  )}
-function date2dote(year = 1969, doty = 306, zone = 0) {
-    const cote = Math.floor((year >= 0 ? year : year - 399) / 400),
-      yote = year - cote * 400;
-    return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
-}
-function addN(d) { return d + 365 + leapInput }
-function subN(d) { return d - 365 - leapInput }
-// https://observablehq.com/@observablehq/synchronized-inputs
+decoYear = deco.slice(0, 4)
+nextYear = parseInt(decoYear) + 1
+decoDoty = deco.slice(5, 8)
+decoDek = decoDoty.slice(0, 2)
+decoDod = decoDoty[2]
+decoPent = decoDek * 2 + (decoDod > 4)
+xmasDiff = decoDoty - 299
+xmasDiffSign = xmasDiff < 0 ? "-" : "+"
+xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
+dotyInputStr = String(dotyInput).padStart(3, "0")
+dekInput = parseInt(dotyInputStr.slice(0, 2))
+dodInput = dotyInputStr[2]
+xmasDote = date2dote(ydz[0], 299)[0]
+xmasDotw = dote2dotw(xmasDote)
+dotw = Math.floor(dote2dotw(dz[0]))
+day266dotw = dote2dotw(date2dote(ydz[0], 266)[0])
+day266dotwDiff = dotw2diff(4, day266dotw)
+week = Math.floor((ydz[1] + doty0dotw) / 7)
+dotm = doty2dotm(Math.floor(ydz[1]))
+dotm0 = String(dotm - 1).padStart(2, "0")
+dotm1 = dotm.toString().padStart(2, "0")
+monthNumber = Math.floor(ydz[1] - dotm)
+monthNumber0 = String(monthNumber + 1).padStart(3, "0")
+monthNumber1 = monthNumber.toString().padStart(3, "0")
+dotw0doty = Math.floor(ydz[1]) - dotw
+doty0dote = date2dote(ydz[0], 0, ydz[2])
+doty0dotw = dote2dotw(...doty0dote)
+dotw0sign = dotw0doty < 0 ? "-" : "+"
+dayTime = dz[0] % 1
+decidayTime = (dayTime * 10).toFixed(4)
+zone = dz[1]
+zoneSign = zone < 0 ? "+" : "-"
+nDaysInYear = 365 + year2leap(ydz[0] + 1)
+Tminus = nDaysInYear - decoDoty
+TminusPadded = Tminus.toString().padStart(3, "0")
+fracYear = ydz[0] + ydz[1] / nDaysInYear
+fullfracYear = (fracYear).toFixed(4)
+mod1FracYear = (fracYear % 1).toFixed(4)
+months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+monthNums = ["305", "336", "", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
+today = new Date()
+monthName = today.toLocaleString('default', { month: 'long' });
+monthNumJS = today.getMonth();
+currMonth = monthNums[monthNumJS]
+nextMonth = monthNums[(monthNumJS + 1) % 12]
+dekStart = Math.floor(decoDoty / 10) * 10
+diff = parseInt(currMonth || 0) - parseInt(nextMonth || nDaysInYear)
+  //currMonth === "" ? 0 : parseInt(currMonth) - nextMonth === "" ? nDaysInYear : parseInt(nextMonth)
 // https://observablehq.com/@juang1744/transform-input/1
 transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
   if (source === undefined) {
@@ -640,22 +662,6 @@ transformInput = function(target, {bind: source, transform = identity, involutor
   });
   sourceInputHandler();
   return target;
-}
-function doty2month(doty = 0) {
-    const m = Math.floor((5 * doty + 2) / 153);
-    return Math.floor(m < 10 ? m + 3 : m - 9);
-}
-function month2doty(month = 1) {
-    return Math.floor(
-        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5
-)}
-function doty2dotm(doty = 0) {
-    const m = Math.floor((5 * doty + 2) / 153);
-    return doty - Math.floor((153 * m + 2) / 5) + 1;
-}
-function set(input, value) {
-  input.value = value;
-  input.dispatchEvent(new Event("input", {bubbles: true}));
 }
 setTransform = (input) => ({to: (value) => (input.value = value, {andDispatchEvent: (event = new Event("input")) => input.dispatchEvent(event)})});
 function inverse(f) {
@@ -683,6 +689,25 @@ function square(x) {
 }
 function identity(x) {
   return x;
+}
+function doty2month(doty = 0) {
+    const m = Math.floor((5 * doty + 2) / 153);
+    return Math.floor(m < 10 ? m + 3 : m - 9);
+}
+function month2doty(month = 1) {
+    return Math.floor(
+        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5
+)}
+function doty2dotm(doty = 0) {
+    const m = Math.floor((5 * doty + 2) / 153);
+    return doty - Math.floor((153 * m + 2) / 5) + 1;
+}
+numbers = Array.from({length: 366}, (_, i) => i)
+set(viewof dotyInput, leapscrub[0])
+// https://observablehq.com/@observablehq/synchronized-inputs
+function set(input, value) {
+  input.value = value;
+  input.dispatchEvent(new Event("input", {bubbles: true}));
 }
 // https://observablehq.com/@mbostock/scrubber
 function Scrubber(values, {
@@ -757,51 +782,47 @@ function Scrubber(values, {
   Inputs.disposal(form).then(stop);
   return form;
 }
-decoYear = deco.slice(0, 4)
-nextYear = parseInt(decoYear) + 1
-decoDoty = deco.slice(5, 8)
-decoDek = decoDoty.slice(0, 2)
-decoDod = decoDoty[2]
-decoPent = decoDek * 2 + (decoDod > 4)
-xmasDiff = decoDoty - 299
-xmasDiffSign = xmasDiff < 0 ? "-" : "+"
-xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
-xmasDote = date2dote(ydz[0], 299)[0]
-xmasDotw = dote2dotw(xmasDote)
-dotw = Math.floor(dote2dotw(dz[0]))
-day266dotw = dote2dotw(date2dote(ydz[0], 266)[0])
-day266dotwDiff = dotw2diff(4, day266dotw)
-week = Math.floor((ydz[1] + doty0dotw) / 7)
-dotm = doty2dotm(Math.floor(ydz[1]))
-dotm0 = String(dotm - 1).padStart(2, "0")
-monthNumber = Math.floor(ydz[1] - dotm)
-monthNumber0 = String(monthNumber + 1).padStart(3, "0")
-dotw0doty = Math.floor(ydz[1]) - dotw
-doty0dotw = dote2dotw(...doty0dote)
-dotw0sign = dotw0doty < 0 ? "-" : "+"
-dayTime = dz[0] % 1
-decidayTime = (dayTime * 10).toFixed(4)
-zone = dz[1]
-zoneSign = zone < 0 ? "+" : "-"
-nDaysInYear = 365 + year2leap(ydz[0] + 1)
-Tminus = nDaysInYear - decoDoty
-TminusPadded = Tminus.toString().padStart(3, "0")
-fracYear = ydz[0] + ydz[1] / nDaysInYear
-fullfracYear = (fracYear).toFixed(4)
-mod1FracYear = (fracYear % 1).toFixed(4)
-months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-monthNums = ["305", "336", "", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
 calYear = !leapInput && dotwInput == "Monday" ? 6 : !leapInput && dotwInput == "Tuesday" ? 7 : !leapInput && dotwInput == "Wednesday" ? 2 : !leapInput && dotwInput == "Thursday" ? 3 : !leapInput && dotwInput == "Friday" ? 9 : !leapInput && dotwInput == "Saturday" ? 10 : !leapInput && dotwInput == "Sunday" ? 11 : leapInput && dotwInput == "Monday" ? 12 : leapInput && dotwInput == "Tuesday" ? 24 : leapInput && dotwInput == "Wednesday" ? 8 : leapInput && dotwInput == "Thursday" ? 20 : leapInput && dotwInput == "Friday" ? 4 : leapInput && dotwInput == "Saturday" ? 16 : leapInput && dotwInput == "Sunday" ? 28 : 0;
 datesCal = d3.utcDays(new Date(calYear, 0, 0), new Date(calYear, 12, 0));
+function unix2doty(unix) {
+  const dote = (
+    unix ?? Date.now()
+  ) / 86400000 + 719468,
+    cote = Math.floor((
+      dote >= 0 ? dote
+      : dote - 146096
+    ) / 146097),
+  dotc = dote - cote * 146097,
+  yotc = Math.floor((dotc
+    - Math.floor(dotc / 1460)
+    + Math.floor(dotc / 36524)
+    - Math.floor(dotc / 146096)
+  ) / 365);
+  return dotc - (yotc * 365
+      + Math.floor(yotc / 4)
+      - Math.floor(yotc / 100)
+  )}
+function date2dote(year = 1969, doty = 306, zone = 0) {
+    const cote = Math.floor((year >= 0 ? year : year - 399) / 400),
+      yote = year - cote * 400;
+    return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
+}
 leapInput = leapscrub[1]
 turnInput = leapscrub[2]
+function addN(d) { return d + 365 + leapInput }
+function subN(d) { return d - 365 - leapInput }
 dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
-numbers = Array.from({length: 366}, (_, i) => i)
-set(viewof dotyInput, leapscrub[0])
 ```
 
 ```{=html}
 <style>
+h6.relative.anchored {
+  margin-top: -25px;
+  margin-bottom: -2px;
+}
+form.oi-3a86ea-checkbox {
+  max-width: 700px;
+}
 div.cell:has(form.oi-3a86ea-toggle) {
   display: flex;
   flex-wrap: wrap;
