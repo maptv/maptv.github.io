@@ -68,30 +68,12 @@ website:
       - text: Time
         icon: clock
         href: dec/time/index.qmd
-      - text: ISO 8601
-        icon: globe
-        href: dec/iso/index.qmd
       - text: Snap
         icon: postage
         href: dec/snap/index.qmd
       - text: Span
         icon: calendar-range
         href: dec/span/index.qmd
-    # - text: Geoposition
-    #   icon: geo
-    #   href: dec/geo/index.qmd
-    # - text: Daylight duration
-    #   icon: sun
-    #   href: dec/day/index.qmd
-    # - text: Navigation
-    #   icon: compass
-    #   href: dec/nav/index.qmd
-    # - text: Movement
-    #   icon: arrows-move
-    #   href: dec/move/index.qmd
-    # - text: Size
-    #   icon: bounding-box-circles
-    #   href: dec/size/index.qmd
     - section: History
       icon: hourglass-split
       contents:
