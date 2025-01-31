@@ -501,14 +501,13 @@ Unlike weekly schedules, Schedules [3]{.green} and [34]{.green} provide a consis
 
 There are 11 United States [Federal holidays](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/). Federal holidays that fall on a Gregorian calendar [rest]{.blue} day, [Dow 0]{.under .tool data-bs-toggle="tooltip" data-bs-title="Sunday"} or [Dow 6]{.under .tool data-bs-toggle="tooltip" data-bs-title="Saturday"}, are observed on the nearest Gregorian calendar [work]{.green} day: [Dow 1]{.under .tool data-bs-toggle="tooltip" data-bs-title="Monday"} or [Dow 5]{.under .tool data-bs-toggle="tooltip" data-bs-title="Friday"}. To apply this rule to Schedule [3]{.green}, we would observe the Day [110]{.underline .tool data-bs-toggle="tooltip" data-bs-title="June 19"}⛓️‍💥, [125]{.underline .tool data-bs-toggle="tooltip" data-bs-title="July 4"}🎆, [255]{.underline .tool data-bs-toggle="tooltip" data-bs-title="November 11"}🫡, and [299]{.underline .tool data-bs-toggle="tooltip" data-bs-title="December 25"}🎄holidays on Days [111]{.underline .tool data-bs-toggle="tooltip" data-bs-title="June 20"}⛓️‍💥, [126]{.underline .tool data-bs-toggle="tooltip" data-bs-title="July 5"}🎆, [256]{.underline .tool data-bs-toggle="tooltip" data-bs-title="November 12"}🫡, and [298]{.underline .tool data-bs-toggle="tooltip" data-bs-title="December 26"}🎄, respectively.
 
-Holidays with a reusable♻️floating🛟date fall on the same month,
-[dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}, and [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}, but not the same [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}, every year. Months and [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"} are perfectly synchronized with years and doys, but weeks and dows do not aligned with  only used in the Gregorian calendar for date identification. In contrast, [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-year"} not only identify dates but also provide all of the information needed for pently schedules. If we used the last digit of the dom to determine work and rest days, we would even up with a very chaotic.
+With dekly schedules, we can determine whether any date falls on a [work]{.green} or a [rest]{.blue} day with just a glance. Counterintuitively, dekly schedules can be based on months instead of deks. Month-based dekly schedules distinguish between [work]{.green} and [rest]{.blue} days based on the last digit of [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"}. The drawback of month-based schedules is that [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"} reset twelve times every year.
 
-In Dec, [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-year"} not only identify dates but also provide all of the information needed for pently schedules. 
+The month-based Schedules [3]{.green} and [34]{.green} have 223 and 258 [work]{.green} days per year, respectively, but will require at least one holiday to avoid six consecutive [work]{.green} days during the transition from a Dec common year. The best time to switch from a weekly to a dekly schedule may be from [Day 31]{.under .tool data-bs-toggle="tooltip" data-bs-title="April 1"} to [93]{.under .tool data-bs-toggle="tooltip" data-bs-title="June 2"} when the original and month-based versions of Schedules [3]{.green} and [34]{.green} are identical.
 
 # Day of month (dom){#dom}
 
-Dec dates can be expanded to display Dec month and [POSIX [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D) numbers. The current Dec [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} date is [\${decoYear}]{.yellow}+[\${monthNumber}]{.cyan}+[\${dotm}]{.magenta}. Dec month numbers are the last [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} of the previous month because POSIX [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"} are one-based. For zero-based [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"}, Dec represents each month with its first [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}: [\${decoYear}]{.yellow}+[\${monthNumber0}]{.cyan}+[\${dotm0}]{.magenta}. This approach allows Dec to support both zero- and one-based [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"}.
+Dec dates can be expanded to display Dec month and [POSIX [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D) numbers. The current Dec [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} date is [\${decoYear}]{.yellow}+[\${monthNumber}]{.cyan}+[\${dotm}]{.magenta}. Dec month numbers are the last [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} of the previous month because POSIX [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"} are one-based. For zero-based [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"}, Dec represents each month with its first [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}: [\${decoYear}]{.yellow}+[\${monthNumber0}]{.cyan}+[\${dotm0}]{.magenta}. This way, Dec can support both zero- and one-based [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"}.
 
 Dec [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} dates replace the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} [d]{.cyan} from Dec dates with [d]{.cyan}-[m]{.magenta}+[m]{.magenta}. We evaluate the subtraction to get [d]{.cyan}-[m]{.magenta}, the Dec month number, but not the addition, so we can see [m]{.magenta}, the [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}. If we combine the [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} and [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} patterns above, we can create hybrid [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}+[dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} Dec dates: [\${decoYear}]{.yellow}+[\${monthNumber - dotw}]{.cyan}+[\${dotm}]{.magenta}+[\${dotw}]{.wine}, where [\${monthNumber - dotw}]{.cyan} is [d]{.cyan}-[m]{.magenta}-[w]{.wine}, the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} of the last [Dow 0]{.under .tool data-bs-toggle="tooltip" data-bs-title="Sunday"} before the beginning of the month.
 
@@ -952,16 +951,16 @@ svg#finger {
 h4.anchored {
   margin: 8px 0px 8px 0px;
 }
-div.cell-output-display:has(svg#mermaid-1.flowchart.mermaid-js) {
-  margin-top: -35px;
-}
-div.cell-output-display:has(svg#mermaid-2.flowchart.mermaid-js) {
-  margin-top: -35px;
-  margin-bottom: -35px;
-}
 #mermaid-1 {
   margin-top: 15px;
   margin-bottom: -20px;
+}
+div.cell-output-display:has(svg#mermaid-2.flowchart.mermaid-js) {
+  margin-top: -35px;
+}
+div.cell-output-display:has(svg#mermaid-3.flowchart.mermaid-js) {
+  margin-top: -35px;
+  margin-bottom: -35px;
 }
 </style>
 ```
