@@ -262,3 +262,7 @@ g.node rect:hover, g.node:has(g:hover) rect {
   stroke: lightgreen !important;
   stroke-width: 9px !important;
 }
+
+g#decdate > rect, g#gregdate > rect {
+  fill: darkblue !important;
+}
