@@ -954,27 +954,6 @@ accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_f
 
 # Day of dek (dod)
 
-Dividend expansion will not work for variable-length units like months,
-but it can be used to base Dec dates on any fixed-length unit, including
-the 20-day
-[dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit),
-30-day
-[tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A),
-40-day
-[kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A),
-73-day
-[sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A),
-or 90-day [naŭdek](https://en.wiktionary.org/wiki/na%C5%ADdek).
-Expansion of deks is unnecessary, because our [decimal numeral
-system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
-allows us to combine a dek, <span class="cyan">${decoDoty.slice(0,
-2)}</span>, and a <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span>,
-<span class="cyan">${decoDoty\[2\]}</span>, into a
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>:
-<span class="cyan">${decoDoty}</span>.
-
 While weeks are not evenly divisible by two, a dek can be cut✂️into two
 equal halves called pentadays (pents). The flowcharts below show
 Schedule <span class="green">3</span>, the recommended dekly schedule of
@@ -1855,6 +1834,27 @@ data-bs-title="time-of-day">tod</span> by 10,
 units as the time zone.
 
 # Summary
+
+Dividend expansion will not work for variable-length units like months,
+but it can be used to base Dec dates on any fixed-length unit, including
+the 20-day
+[dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit),
+30-day
+[tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A),
+40-day
+[kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A),
+73-day
+[sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A),
+or 90-day [naŭdek](https://en.wiktionary.org/wiki/na%C5%ADdek).
+Expansion of deks is unnecessary, because our [decimal numeral
+system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
+allows us to concatenate a dek, <span class="cyan">${decoDoty.slice(0,
+2)}</span>, and a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">dod</span>,
+<span class="cyan">${decoDoty\[2\]}</span>, to form a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span>:
+<span class="cyan">${decoDoty}</span>.
 
 <div>
 
