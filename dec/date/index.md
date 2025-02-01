@@ -1,14 +1,17 @@
 # Dec Date
 Martin Laptev
-2024+336
+2024+337
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
 - [Year of era (yoe)](#yoe)
 - [Day of week (dow)](#dow)
+- [Week of year (woy)](#woy)
 - [Day of dek (dod)](#dod)
 - [Day of month (dom)](#dom)
+- [Month of year (moy)](#moy)
 - [Time of day (tod)](#tod)
+- [Summary](#tldr)
 - [Next](#next)
 - [Cite](#cite)
 
@@ -17,7 +20,7 @@ Martin Laptev
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:7.83in;height:0.85in" />
+style="width:10.28in;height:1.23in" />
 
 </div>
 
@@ -508,7 +511,7 @@ data-bs-title="day-of-year">doy</span>: <span class="cyan">299</span>.
 Christmas🎄is a fixed⚓️holiday because it occurs on the same
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> every year. Unlike
-fixed⚓️holidays, Gregorian calendar floating🛟holidays happen on a
+fixed⚓️holidays, Gregorian calendar🗓️floating🛟holidays happen on a
 different <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> every year so that their
 <span class="under tool" data-bs-toggle="tooltip"
@@ -695,9 +698,9 @@ values are <span class="yellow">${fullfracYear}</span> =
 Dec dates do not include <span class="orange">n</span>, because it is
 not needed to specify a date, remains constant for 366, 1095, or 2920
 days, has only 2 possible values: 366 if
-⌊<span class="yellow">y</span>⌋+1 is a Gregorian calendar leap year and
-365 if ⌊<span class="yellow">y</span>⌋+1 is a Gregorian calendar common
-year, and can be determined by applying the Gregorian calendar [leap
+⌊<span class="yellow">y</span>⌋+1 is a Gregorian calendar🗓️leap year and
+365 if ⌊<span class="yellow">y</span>⌋+1 is a Gregorian calendar🗓️common
+year, and can be determined by applying the Gregorian calendar🗓️[leap
 year
 rule](https://en.wikipedia.org/wiki/Leap_year#:~:text=Every%20year%20that%20is%20exactly%20divisible%20by%20four%20is%20a%20leap%20year%2C%20except%20for%20years%20that%20are%20exactly%20divisible%20by%20100%2C%20but%20these%20centurial%20years%20are%20leap%20years%20if%20they%20are%20exactly%20divisible%20by%20400)
 to ⌊<span class="yellow">y</span>⌋+1, as shown in the Dec year length
@@ -876,11 +879,18 @@ data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> dates
 supply all of the information needed to identify specific dates and
 coordinate schedules based on deks or weeks.
 
-Dec dates can be further modified to include [POSIX week
-numbers](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=week%20of%20the%20year%20(sunday%20as%20the%20first%20day%20of%20the%20week)%20as%20a%20decimal%20number%20%5B00%2C53%5D.%20all%20days%20in%20a%20new%20year%20preceding%20the%20first%20sunday%20shall%20be%20considered%20to%20be%20in%20week%200.):
+# Week of year (woy)
+
+Dec <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span> dates can be further expanded to
+include Dec week-of-year (<span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="week-of-year">woy</span>)
+numbers:
 <span class="yellow">${decoYear}</span>+7×<span class="wheat">${week}</span>+<span class="wine">${dotw}</span>.
-The current week number, <span class="wheat">${week}</span>, is the sum
-of the <span class="under tool" data-bs-toggle="tooltip"
+The current <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="week-of-year">woy</span>,
+<span class="wheat">${week}</span>, is the sum of the
+<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="Sunday">Dow 0</span> <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>,
 <span class="cyan">${dotw0doty}</span>, and the first
@@ -893,7 +903,8 @@ data-bs-title="day-of-week">dow</span>),
 <span class="wheat">${week}</span> =
 (<span class="cyan">${dotw0doty}</span> +
 <span class="wine">${doty0dotw}</span>) ÷ 7. The current Dec
-floating🛟week date,
+floating🛟<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="week-of-year">woy</span> date,
 7×<span class="wheat">${week}</span>+<span class="wine">${dotw}</span>,
 is equal to the sum of the current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and the
@@ -904,35 +915,42 @@ data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>: 7 ×
 <span class="cyan">${decoDoty}</span> +
 <span class="wine">${doty0dotw}</span>.
 
-Dec week dates turn
-<span class="cyan">d</span>-<span class="wine">w</span> into
-7×<span class="wheat">W</span>-<span class="wine">w<sub>0</sub></span>,
-where <span class="wheat">W</span> is the week number and
-<span class="wine">w<sub>0</sub></span> is the <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>. In this case, the subtraction is
-omitted, because <span class="wine">w<sub>0</sub></span> is not
-necessary to identify a date and can be calculated from a given
-<span class="yellow">y</span> by flooring it, turning it into a
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span>, and passing it into the
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> equation. POSIX week numbers may
-be useful for [week-based
-accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
-
-To create a Dec week date, we need two types of Dec date expansion:
-minuend and dividend expansion. First, we turn the minuend
-<span class="cyan">d</span> into the subtrahend
+To create a Dec <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="week-of-year">woy</span> date, we need two types of Dec
+date expansion: minuend and dividend expansion. First, we turn the
+minuend <span class="cyan">d</span> into the subtrahend
 <span class="cyan">d</span>-<span class="wine">w</span> and the
 difference <span class="wine">w</span>. Then, we use the dividend
 equation, dividend = divisor × quotient, to convert the dividend
 <span class="cyan">d</span>-<span class="wine">w</span>+<span class="wine">w<sub>0</sub></span>
-into the divisor 7 and the quotient <span class="wheat">W</span>. Week
-dates obfuscate <span class="cyan">d</span> much more than
+into the divisor 7 and the quotient <span class="wheat">W</span>, where
+<span class="wheat">W</span> is the <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="week-of-year">woy</span> and
+<span class="wine">w<sub>0</sub></span> is the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> dates.
+data-bs-title="day-of-week">dow</span>.
+
+Essentially, Dec <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="week-of-year">woy</span> dates turn
+<span class="cyan">d</span>-<span class="wine">w</span> into
+7×<span class="wheat">W</span>+<span class="wine">w</span>-<span class="wine">w<sub>0</sub></span>.
+Typically, only
+7×<span class="wheat">W</span>+<span class="wine">w</span> is displayed,
+because <span class="wine">w<sub>0</sub></span> is not necessary to
+identify a date and can be calculated from a given
+<span class="yellow">y</span> by flooring it, turning it into a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-era">doe</span>, and passing it into the
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span> equation. Dec
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="week-of-year">woy</span> dates
+obfuscate🫣<span class="cyan">d</span> much more than
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span> dates, but may be useful for
+[week-based
+accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
 
 # Day of dek (dod)
 
@@ -958,8 +976,8 @@ data-bs-title="day-of-year">doy</span>:
 <span class="cyan">${decoDoty}</span>.
 
 While weeks are not evenly divisible by two, a dek can be cut✂️into two
-equal halves called pents. The flowcharts below show Schedule
-<span class="green">3</span>, the recommended pently schedule of
+equal halves called pentadays (pents). The flowcharts below show
+Schedule <span class="green">3</span>, the recommended dekly schedule of
 <span class="green">work</span> and <span class="blue">rest</span> day.
 Schedule <span class="green">3</span> can be short for Schedule
 <span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>,
@@ -973,7 +991,7 @@ the one-based bottom flowchart.
 
 <div>
 
-<img src="index_files/figure-commonmark/mermaid-figure-4.png"
+<img src="index_files/figure-commonmark/mermaid-figure-5.png"
 style="width:8.63in;height:3.21in" />
 
 </div>
@@ -988,7 +1006,7 @@ style="width:8.63in;height:3.21in" />
 
 <div>
 
-<img src="index_files/figure-commonmark/mermaid-figure-3.png"
+<img src="index_files/figure-commonmark/mermaid-figure-4.png"
 style="width:8.77in;height:3.21in" />
 
 </div>
@@ -1179,7 +1197,7 @@ data-bs-title="March 1"><u>Day 0</u></span> in bottom one.
 </tbody>
 </table>
 
-The last pent in common years is Pent 72. <span class="tool"
+The last pentaday (pent) in common years is Pent 72. <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day
 365</u></span> is the only day in Pent 73. <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span> is
@@ -1223,7 +1241,7 @@ determines which days we want to include.
 
 <img src="../../asset/Manual_Layout.svg" class="column-margin"
 data-fig-align="center" /> Schedule <span class="green">3</span> is one
-of six pently schedules that allow us to organize
+of six dekly schedules that allow us to organize
 <span class="green">work</span> and <span class="blue">rest</span> days
 into five homogeneous columns like in the tables and flowcharts above.
 These schedules are like the gears⚙️of a
@@ -1248,9 +1266,9 @@ respectively. To complete the
 analogy, Reverse (R) would be a time machine that takes us to the past.
 As our driving speed changes, we would shift up to a higher gear⚙️or
 shift down to a lower gear⚙️. Similarly, we can switch between the six
-pently schedules as needed.
+dekly schedules as needed.
 
-The names of the pently schedules are derived from their respective
+The names of the dekly schedules are derived from their respective
 numbers of <span class="green">work</span> days per pent. The
 total🧮number of <span class="green">work</span> days per year provided
 by Schedules <span class="green">0</span>, <span class="green">1</span>,
@@ -1279,7 +1297,7 @@ data-bs-toggle="tooltip" data-bs-title="February 29"><u>365</u></span>,
 and <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="March 1"><u>0</u></span> can be
 <span class="green">work</span> or <span class="blue">rest</span> days
-in the Gregorian calendar, these days are always
+in the Gregorian calendar🗓️, these days are always
 <span class="blue">rest</span> days if we follow Schedules
 <span class="green">3</span> or <span class="green">34</span>.
 Therefore, Schedules <span class="green">3</span> and
@@ -1288,12 +1306,12 @@ transition between years.
 
 There are 11 United States [Federal
 holidays](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/).
-Federal holidays that fall on a Gregorian calendar
-<span class="blue">rest</span> day, <span class="under tool"
+Federal holidays that fall on a Gregorian
+calendar🗓️<span class="blue">rest</span> day, <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="Sunday">Dow 0</span> or
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="Saturday">Dow 6</span>, are observed on the nearest
-Gregorian calendar <span class="green">work</span> day:
+Gregorian calendar🗓️<span class="green">work</span> day:
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="Monday">Dow 1</span> or <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="Friday">Dow 5</span>. To apply
@@ -1753,6 +1771,40 @@ the required information is plainly visible in the
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span>.
 
+# Month of year (moy)
+
+To convert <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-year">doys</span> to or from [POSIX
+month](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=Month%20as%20a%20decimal%20number%20%5B01%2C12%5D)
+and <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-month">dom</span> numbers, we can use the
+month-of-year (<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="month-of-year">moy</span>) equations below, which
+originate from [<span class="mono under">`chrono`</span>-Compatible
+Low-Level Date
+Algorithms](https://howardhinnant.github.io/date_algorithms.html).
+Unlike POSIX month numbers, <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="months-of-year">moys</span> are
+zero-based and start from <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="March">Moy 0</span> instead of
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="January">Moy 10</span>. A <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="month-of-year">moy</span> and
+its equivalent POSIX month number differ by 9 in Moy
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="January">10</span> or <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="February">11</span> and -3 in
+any other <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="month-of-year">moy</span>.
+
+$$\text{moy} = (5 \times \text{doy} + 2) \div 153 = \begin{cases}\text{month}-3&{\text{if }\text{month}\gt 2;}\\\text{month}+9&{\text{otherwise.}}\end{cases}$$
+
+$$\text{month} = \begin{cases}\text{moy}+3&{\text{if }\text{moy}\lt 10;}\\\text{moy}-9&{\text{otherwise.}}\end{cases}$$
+
+dom = doy − (153 × moy + 2) ÷ 5 + 1
+
+doy = (153 × moy + 2) ÷ 5 + dom − 1
+
 # Time of day (tod)
 
 In addition to the dek and <span class="under tool"
@@ -1794,6 +1846,23 @@ data-bs-title="time-of-day">tod</span> by 10,
 [deciday](https://en.wiktionary.org/wiki/deciday#:~:text=One%20tenth%20of%20one%20day)
 units as the time zone.
 
+# Summary
+
+<div>
+
+<figure class=''>
+
+<div>
+
+<img src="index_files/figure-commonmark/mermaid-figure-3.png"
+style="width:7.26in;height:6.58in" />
+
+</div>
+
+</figure>
+
+</div>
+
 # Next
 
 After reading this article, you should be able to understand the
@@ -1811,7 +1880,7 @@ dates!
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:7.83in;height:0.85in" />
+style="width:10.28in;height:1.23in" />
 
 </div>
 
@@ -2060,13 +2129,14 @@ xmasDotw = dote2dotw(xmasDote)
 dotw = Math.floor(dote2dotw(dz[0]))
 day266dotw = dote2dotw(date2dote(ydz[0], 266)[0])
 day266dotwDiff = dotw2diff(4, day266dotw)
-week = Math.floor((ydz[1] + doty0dotw) / 7)
 dotm = doty2dotm(Math.floor(ydz[1]))
 dotm0 = String(dotm - 1).padStart(2, "0")
 monthNumber = Math.floor(ydz[1] - dotm)
 monthNumber0 = String(monthNumber + 1).padStart(3, "0")
 dotw0doty = Math.floor(ydz[1]) - dotw
-doty0dotw = dote2dotw(...doty0dote)
+doty0dote = date2dote(ydz[0], 0)[0]
+doty0dotw = dote2dotw(doty0dote)
+week = Math.floor((ydz[1] + doty0dotw) / 7)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
 dayTime = dz[0] % 1
 decidayTime = (dayTime * 10).toFixed(4)
@@ -2176,5 +2246,8 @@ div.cell-output-display:has(svg#mermaid-2.flowchart.mermaid-js) {
 div.cell-output-display:has(svg#mermaid-3.flowchart.mermaid-js) {
   margin-top: -35px;
   margin-bottom: -35px;
+}
+span.nodeLabel > p {
+  text-align: center;
 }
 </style>
