@@ -1779,23 +1779,22 @@ month](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:te
 and <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-month">dom</span> numbers, we can use the
 month-of-year (<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="month-of-year">moy</span>) equations below, which
-originate from [<span class="mono under">`chrono`</span>-Compatible
-Low-Level Date
-Algorithms](https://howardhinnant.github.io/date_algorithms.html).
-Unlike POSIX month numbers, <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="months-of-year">moys</span> are
-zero-based and start from <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="March">Moy 0</span> instead of
+data-bs-title="month-of-year">moy</span>) equations from the <a
+href="https://howardhinnant.github.io/date_algorithms.html#civil_from_days"
+class="mono under"><code>civil_from_days</code></a> and <a
+href="https://howardhinnant.github.io/date_algorithms.html#days_from_civil"
+class="mono under"><code>days_from_civil</code></a> algorithms. Unlike
+POSIX month numbers, <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="months-of-year">moys</span> are zero-based and start from
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="January">Moy 10</span>. A <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="month-of-year">moy</span> and
-its equivalent POSIX month number differ by 9 in Moy
+data-bs-title="March">Moy 0</span> instead of <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="January">Moy 10</span>. As shown
+in the first <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="month-of-year">moy</span> equation below, we can obtain a
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="January">10</span> or <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="February">11</span> and -3 in
-any other <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="month-of-year">moy</span>.
+data-bs-title="month-of-year">moy</span> from a <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> or a
+POSIX month number.
 
 $$\text{moy} = (5 \times \text{doy} + 2) \div 153 = \begin{cases}\text{month}-3&{\text{if }\text{month}\gt 2;}\\\text{month}+9&{\text{otherwise.}}\end{cases}$$
 
@@ -1804,6 +1803,15 @@ $$\text{month} = \begin{cases}\text{moy}+3&{\text{if }\text{moy}\lt 10;}\\\text{
 dom = doy − (153 × moy + 2) ÷ 5 + 1
 
 doy = (153 × moy + 2) ÷ 5 + dom − 1
+
+A <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="month-of-year">moy</span> and its equivalent POSIX month
+number differ by 9 in Moy <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="January">10</span> or
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="February">11</span> and -3 in any other
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="month-of-year">moy</span>.
 
 # Time of day (tod)
 
