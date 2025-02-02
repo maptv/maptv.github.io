@@ -1865,34 +1865,33 @@ style="width:5.34in;height:6.33in" />
 
 For simplicity, the flowchart above only shows the conversion of a Dec
 year into a Gregorian calendar🗓️year and not the inverse. Also not shown
-are the conversion byproducts that are only used as stepping stones:
+are conversion byproducts, such as <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="cycles-of-era">coes</span>,
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="cycles-of-era">coes</span>, <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="years-of-cycle">yocs</span>,
+data-bs-title="years-of-cycle">yocs</span>, and <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-cycle">docs</span>,
+which are only used to convert between Dec dates and
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-cycle">docs</span>, and <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="months-of-year">moys</span>. Of
-these byproducts, <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="months-of-year">moys</span> are only used to split
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-year">doys</span> into months and
-<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-era">does</span>, and <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="months-of-year">moys</span>,
+which are only used to split <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-year">doys</span> into
+months and <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-month">doms</span> or combine months and
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-month">doms</span> into <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="days-of-year">doys</span>.
 
-Without the burden of supporting the Gregorian calendar🗓️, Decalendar
-can be free of weeks, <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="weeks-of-year">woys</span>, <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-week">dows</span>,
-months, <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="months-of-year">moys</span>, <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-month">doms</span>,
-finger counting, and dividend expansion. At its heart, Decalendar is a
-simple system that creates dates from integer years and days and
-calculates durations using decimal years or integer days. Dec dates are
-simple and easy to read. Dekly schedules are dependable and flexible.
+At its heart❤️, Decalendar is a simple system of dates that consist of
+integer years and days. With minuend expansion, we can easily switch
+between Dec dates that show <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-dek">dods</span>,
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-month">doms</span>, or <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-week">dows</span>. In
+this way, minuend expansion enables support for both dekly and weekly
+schedules, and thus promotes the peaceful coexistence of the Dec and
+Gregorian calendars🗓️.
 
 # Next
 
