@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+337
+2024+338
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -10,7 +10,6 @@ Martin Laptev
 - [Day of dek (dod)](#dod)
 - [Day of month (dom)](#dom)
 - [Month of year (moy)](#moy)
-- [Time of day (tod)](#tod)
 - [Summary](#tldr)
 - [Next](#next)
 - [Cite](#cite)
@@ -20,7 +19,7 @@ Martin Laptev
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:10.28in;height:1.23in" />
+style="width:8.64in;height:0.98in" />
 
 </div>
 
@@ -612,10 +611,10 @@ data-bs-title="day-of-era">doe</span> analogs like [Unix
 timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970)
 and [Julian
 days](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20continuous%20count%20of%20days%20from%20the%20beginning%20of%20the%20Julian%20period).
-Apart from <span class="under tool" data-bs-toggle="tooltip"
+Besides the <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="cycle-of-era">coe</span> and <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="year-of-cycle">yoc</span>, the
-Dec date equations use the day-of-cycle (<span class="under tool"
+Dec date equations also use the day-of-cycle (<span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-cycle">doc</span>) of a
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-era">doe</span> to produce the
@@ -971,7 +970,7 @@ the one-based bottom flowchart.
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-5.png"
-style="width:8.63in;height:3.21in" />
+style="width:8.53in;height:3.08in" />
 
 </div>
 
@@ -986,7 +985,7 @@ style="width:8.63in;height:3.21in" />
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-4.png"
-style="width:8.77in;height:3.21in" />
+style="width:8.63in;height:3.08in" />
 
 </div>
 
@@ -1193,7 +1192,7 @@ data-bs-title="day-of-dek">dod</span>, and <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> numbers
 are always zero-based in Dec.
 
-Apart from pent numbers, a pent can also be expressed as a span🌈. Pent
+Other than pent numbers, a pent can also be expressed as a span🌈. Pent
 72 can be represented as
 <span class="cyan">360</span>=<span class="cyan">365</span>-<span class="denim">5</span>,
 <span class="cyan">360</span>=-<span class="denim">5</span>, or
@@ -1775,7 +1774,11 @@ data-bs-title="month-of-year">moy</span> from a <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> or a
 POSIX month number.
 
+<div style="overflow-x:auto;overflow-y:hidden;">
+
 $$\text{moy} = (5 \times \text{doy} + 2) \div 153 = \begin{cases}\text{month}-3&{\text{if }\text{month}\gt 2;}\\\text{month}+9&{\text{otherwise.}}\end{cases}$$
+
+</div>
 
 $$\text{month} = \begin{cases}\text{moy}+3&{\text{if }\text{moy}\lt 10;}\\\text{moy}-9&{\text{otherwise.}}\end{cases}$$
 
@@ -1790,71 +1793,60 @@ data-bs-toggle="tooltip" data-bs-title="January">10</span> or
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="February">11</span> and -3 in any other
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="month-of-year">moy</span>.
-
-# Time of day (tod)
-
-In addition to the dek and <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-dek">dod</span>,
+data-bs-title="month-of-year">moy</span> because the Dec epoch,
+<span class="yellow">0000</span>+<span class="cyan">000</span>, is 2
+months later than the Gregorian calendar🗓️epoch:
+-<span class="yellow">0001</span>+<span class="cyan">306</span>. To
+convert years, we add 1 to Dec years and subtract 1 from Gregorian
+calendar🗓️years if the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> is greater than 305, the
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-year">doys</span> can also provide the
-time-of-day (<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span>). The dek,
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span>, and <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> are all
-just different parts of the <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>. If we
-floor a <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>, ⌊<span class="cyan">d</span>⌋,
-we get its integer part, which is a floating🛟date that provides the dek
-and <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span>, and if we obtain the remainder
-after dividing a <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> or a <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-era">doe</span> by 1,
-<span class="cyan">d</span>
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-1, we get its decimal part, which is a <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>.
+data-bs-title="month-of-year">moy</span> is greater than 9, or the month
+is less than 3:
 
-The combination of a <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> and a Dec time zone
-<span class="lime">z</span> is called a Dec time:
-.<span class="cyan">tod</span>-<span class="lime">z</span>. Dec times
-can be appended to Dec dates to form Dec snaps🫰:
-<span class="yellow">year</span>+<span class="cyan">day</span>.<span class="cyan">tod</span>-<span class="lime">z</span>.
-The Dec snap🫰on the left side of the navbar of my site,
-<span class="yellow">${decoYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="wine">${dotw}</span>🗓️<span class="cyan">${decidayTime}</span>${zoneSign}<span class="lime">${Math.abs(zone)}</span>🕓,
-multiplies the <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> by 10,
-<span class="cyan">${dayTime.toFixed(5)}</span> × 10 =
-<span class="cyan">${decidayTime}</span>, so it is in the same
-[deciday](https://en.wiktionary.org/wiki/deciday#:~:text=One%20tenth%20of%20one%20day)
-units as the time zone.
+<div style="overflow-x:auto;overflow-y:hidden;">
+
+$$\text{Dec year} = \begin{cases}\text{Gregorian calendar year}-1&{\text{if }\text{doy}\gt 305\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\gt 9\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3;}\\\text{Gregorian calendar year}&{\text{otherwise.}}\end{cases}$$
+
+</div>
+
+<div style="overflow-x:auto;overflow-y:hidden;">
+
+$$\text{Gregorian calendar year} = \begin{cases}\text{Dec year}+1&{\text{if }\text{doy}\gt 305\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\gt 9\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3;}\\\text{Dec year}&{\text{otherwise.}}\end{cases}$$
+
+</div>
 
 # Summary
 
-Dividend expansion will not work for variable-length units like months,
-but it can be used to base Dec dates on any fixed-length unit, including
-the 20-day
-[dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit),
-30-day
-[tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A),
-40-day
-[kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A),
-73-day
-[sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A),
-or 90-day [naŭdek](https://en.wiktionary.org/wiki/na%C5%ADdek).
-Expansion of deks is unnecessary, because our [decimal numeral
-system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers)
-allows us to concatenate a dek, <span class="cyan">${decoDoty.slice(0,
-2)}</span>, and a <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span>,
-<span class="cyan">${decoDoty\[2\]}</span>, to form a
+This article describes Dec and how it can interoperate with the
+Gregorian calendar🗓️by minuend expanding Dec dates into
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>:
-<span class="cyan">${decoDoty}</span>.
+data-bs-title="day-of-month">dom</span> and <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> dates or
+dividend expanding <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span> dates into
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="week-of-year">woy</span> dates. On its own, Dec minuend
+expands Dec dates into span🌈equivalents, but has no use for dividend
+expansion, because <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doys</span> display deks and
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-dek">dods</span> without any expansion.
+
+The flowchart below visualizes the conversion of the UNIX epoch Dec date
+<span class="yellow">1969</span>+<span class="cyan">306</span> into a
+Gregorian calendar🗓️year, month, <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-month">dom</span> and
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span>. To obtain its associated
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span>, we first need to convert a Dec
+date into a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-era">doe</span>. Outside of its interoperability
+with the Gregorian calendar🗓️, Dec converts dates into
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-era">does</span> to find the number of days in
+between two dates.
 
 <div>
 
@@ -1863,13 +1855,44 @@ data-bs-title="day-of-year">doy</span>:
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-3.png"
-style="width:7.26in;height:6.58in" />
+style="width:5.34in;height:6.33in" />
 
 </div>
 
 </figure>
 
 </div>
+
+For simplicity, the flowchart above only shows the conversion of a Dec
+year into a Gregorian calendar🗓️year and not the inverse. Also not shown
+are the conversion byproducts that are only used as stepping stones:
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="cycles-of-era">coes</span>, <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="years-of-cycle">yocs</span>,
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-cycle">docs</span>, and <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="months-of-year">moys</span>. Of
+these byproducts, <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="months-of-year">moys</span> are only used to split
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-year">doys</span> into months and
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-month">doms</span> or combine months and
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-month">doms</span> into <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-year">doys</span>.
+
+Without the burden of supporting the Gregorian calendar🗓️, Decalendar
+can be free of weeks, <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="weeks-of-year">woys</span>, <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-week">dows</span>,
+months, <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="months-of-year">moys</span>, <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-month">doms</span>,
+finger counting, and dividend expansion. At its heart, Decalendar is a
+simple system that creates dates from integer years and days and
+calculates durations using decimal years or integer days. Dec dates are
+simple and easy to read. Dekly schedules are dependable and flexible.
 
 # Next
 
@@ -1888,7 +1911,7 @@ dates!
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:10.28in;height:1.23in" />
+style="width:8.64in;height:0.98in" />
 
 </div>
 
@@ -2146,10 +2169,6 @@ doty0dote = date2dote(ydz[0], 0)[0]
 doty0dotw = dote2dotw(doty0dote)
 week = Math.floor((ydz[1] + doty0dotw) / 7)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
-dayTime = dz[0] % 1
-decidayTime = (dayTime * 10).toFixed(4)
-zone = dz[1]
-zoneSign = zone < 0 ? "+" : "-"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
 Tminus = nDaysInYear - decoDoty
 TminusPadded = Tminus.toString().padStart(3, "0")
@@ -2205,7 +2224,7 @@ form.oi-3a86ea-toggle > input#oi-3a86ea-2 {
   width: 15px;
 }
 form.oi-3a86ea-toggle {
-  width: 105px;
+  width: 110px;
 }
 form.oi-3a86ea-toggle:has(input#oi-3a86ea-2) {
   width: 150px;
@@ -2257,5 +2276,11 @@ div.cell-output-display:has(svg#mermaid-3.flowchart.mermaid-js) {
 }
 span.nodeLabel > p {
   text-align: center;
+}
+#decdate g span > p {
+  margin-top: 4px !important;
+}
+#gregdate g span > p {
+  margin-top: -6px !important;
 }
 </style>
