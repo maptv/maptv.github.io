@@ -31,7 +31,7 @@ filters:
 
 ```{mermaid}
 %%| label: navchart
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '48px'}}}%%
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
 flowchart LR
    A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
    click A "/dec"
@@ -344,7 +344,7 @@ $$\text{yoc} = \text{year} - \text{coe} \times 400$$
 $$\text{doe} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{doy}$$
 :::
 
-The Dec date equations, the [inverse](https://en.wikipedia.org/wiki/Inverse#:~:text=Inverse%20function%2C-,a%20function%20that%20%22reverses%22%20another%20function,-Generalized%20inverse%2C%20a)🔁of the Dec [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"} equations above, are based on Howard Hinnant's [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days){.mono} algorithm and are useful for obtaining Dec dates from [does]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-era"} and [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"} analogs like [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970) and [Julian days](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20continuous%20count%20of%20days%20from%20the%20beginning%20of%20the%20Julian%20period). Apart from [coe]{.under .tool data-bs-toggle="tooltip" data-bs-title="cycle-of-era"} and [yoc]{.under .tool data-bs-toggle="tooltip" data-bs-title="year-of-cycle"}, the Dec date equations use the day-of-cycle ([doc]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-cycle"}) of a [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"} to produce the [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"}'s corresponding year and [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}:
+The Dec date equations, the [inverse](https://en.wikipedia.org/wiki/Inverse#:~:text=Inverse%20function%2C-,a%20function%20that%20%22reverses%22%20another%20function,-Generalized%20inverse%2C%20a)🔁of the Dec [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"} equations above, are based on Howard Hinnant's [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days){.mono} algorithm and are useful for obtaining Dec dates from [does]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-era"} and [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"} analogs like [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970) and [Julian days](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20continuous%20count%20of%20days%20from%20the%20beginning%20of%20the%20Julian%20period). Besides the [coe]{.under .tool data-bs-toggle="tooltip" data-bs-title="cycle-of-era"} and [yoc]{.under .tool data-bs-toggle="tooltip" data-bs-title="year-of-cycle"}, the Dec date equations also use the day-of-cycle ([doc]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-cycle"}) of a [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"} to produce the [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"}'s corresponding year and [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}:
 
 $$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{doe}&{\text{if } \text{doe} \geq 0;}\\\text{doe}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$
 
@@ -410,7 +410,7 @@ Essentially, Dec [woy]{.under .tool data-bs-toggle="tooltip" data-bs-title="week
 While weeks are not evenly divisible by two, a dek can be cut✂️into two equal halves called pentadays (pents). The flowcharts below show Schedule [3]{.green}, the recommended dekly schedule of [work]{.green} and [rest]{.blue} day. Schedule [3]{.green} can be short for Schedule [1]{.blue}+[3]{.green}+[1]{.blue}, if you prefer the zero-based top flowchart, or Schedule [3]{.green}+[2]{.blue}, if you favor the one-based bottom flowchart.
 
 ```{mermaid}
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '24px'}}}%%
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
 flowchart TB
    A[0]-->B[1]-->C[2]-->D[3]-->E[4]
    F[5]-->G[6]-->H[7]-->I[8]-->J[9]
@@ -433,7 +433,7 @@ flowchart TB
 ```
 
 ```{mermaid}
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '24px'}}}%%
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
 flowchart TB
    B[1]-->C[2]-->D[3]-->E[4]-->F[5]
    G[6]-->H[7]-->I[8]-->J[9]-->A[10]
@@ -483,7 +483,7 @@ After 4 or 8 years of consecutive pents, the Schedule [3]{.green} pattern shown 
 
 The last pentaday (pent) in common years is Pent 72. [Day 365]{.underline .tool data-bs-toggle="tooltip" data-bs-title="February 29"} is the only day in Pent 73. [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} is the first day of Pent 0, the first pent of the year. To get the current pent number, ${decoPent}, we double the current dek number, [\${decoDek}]{.cyan}, and then add 1 if the current [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"} number, [\${decoDod}]{.cyan}, is greater than 4. To avoid [off-by-one errors](https://en.wikipedia.org/wiki/Off-by-one_error#:~:text=a%20logic%20error%20that%20involves%20a%20number%20that%20differs%20from%20its%20intended%20value%20by%201), pent, dek, [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}, and [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} numbers are always zero-based in Dec.
 
-Apart from pent numbers, a pent can also be expressed as a span🌈. Pent 72 can be represented as [360]{.cyan}=[365]{.cyan}-[5]{.denim}, [360]{.cyan}=-[5]{.denim}, or [360]{.cyan}=[365]{.cyan}. In addition to omitting the subtrahend or the difference, we can make the subtrahend precede the minuend to indicate that we want to start from the latest day and work backwards: [365]{.cyan}=[360]{.cyan}+[5]{.denim}, [365]{.cyan}=[360]{.cyan}, or [365]{.cyan}=+[5]{.denim}.
+Other than pent numbers, a pent can also be expressed as a span🌈. Pent 72 can be represented as [360]{.cyan}=[365]{.cyan}-[5]{.denim}, [360]{.cyan}=-[5]{.denim}, or [360]{.cyan}=[365]{.cyan}. In addition to omitting the subtrahend or the difference, we can make the subtrahend precede the minuend to indicate that we want to start from the latest day and work backwards: [365]{.cyan}=[360]{.cyan}+[5]{.denim}, [365]{.cyan}=[360]{.cyan}, or [365]{.cyan}=+[5]{.denim}.
 
 Spans🌈can also represent groups of non-consecutive days. All of the Schedule [3]{.green} [work]{.green} days in a year can be expressed as [1]{.cyan}=[4]{.cyan}=:[5]{.sienna}. In this span🌈, we start with Days [1]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 2"}, [2]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 3"}, and [3]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 4"} and then include every day that is a multiple of 5 days away from one of the starting days. The number preceded by a colon is called a step and determines which days we want to include.
 
@@ -520,7 +520,9 @@ The finger🖐[mnemonic](https://en.wikipedia.org/wiki/Mnemonic#:~:text=any%20le
 
 To convert [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-year"} to or from [POSIX month](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=Month%20as%20a%20decimal%20number%20%5B01%2C12%5D) and [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} numbers, we can use the month-of-year ([moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"}) equations from the [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days){.mono .under} and [`days_from_civil`](https://howardhinnant.github.io/date_algorithms.html#days_from_civil){.mono .under} algorithms. Unlike POSIX month numbers, [moys]{.under .tool data-bs-toggle="tooltip" data-bs-title="months-of-year"} are zero-based and start from [Moy 0]{.under .tool data-bs-toggle="tooltip" data-bs-title="March"} instead of [Moy 10]{.under .tool data-bs-toggle="tooltip" data-bs-title="January"}. As shown in the first [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"} equation below, we can obtain a [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"} from a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} or a POSIX month number.
 
+:::{style="overflow-x:auto;overflow-y:hidden;"}
 $$\text{moy} = (5 \times \text{doy} + 2) \div 153 = \begin{cases}\text{month}-3&{\text{if }\text{month}\gt 2;}\\\text{month}+9&{\text{otherwise.}}\end{cases}$$
+:::
 
 $$\text{month} = \begin{cases}\text{moy}+3&{\text{if }\text{moy}\lt 10;}\\\text{moy}-9&{\text{otherwise.}}\end{cases}$$
 
@@ -528,28 +530,34 @@ $$\text{dom} = \text{doy} - (153 \times \text{moy} + 2) \div 5 + 1$$
 
 $$\text{doy} = (153 \times \text{moy}+ 2) \div 5 + \text{dom} - 1$$
 
-A [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"} and its equivalent POSIX month number differ by 9 in Moy [10]{.under .tool data-bs-toggle="tooltip" data-bs-title="January"} or [11]{.under .tool data-bs-toggle="tooltip" data-bs-title="February"} and -3 in any other [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"}.
+A [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"} and its equivalent POSIX month number differ by 9 in Moy [10]{.under .tool data-bs-toggle="tooltip" data-bs-title="January"} or [11]{.under .tool data-bs-toggle="tooltip" data-bs-title="February"} and -3 in any other [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"} because the Dec epoch, [0000]{.yellow}+[000]{.cyan}, is 2 months later than the Gregorian calendar🗓️epoch: -[0001]{.yellow}+[306]{.cyan}. To convert years, we add 1 to Dec years and subtract 1 from Gregorian calendar🗓️years if the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} is greater than 305, the [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"} is greater than 9, or the month is less than 3:
 
-# Time of day (tod){#tod}
+:::{style="overflow-x:auto;overflow-y:hidden;"}
+$$\text{Dec year} = \begin{cases}\text{Gregorian calendar year}-1&{\text{if }\text{doy}\gt 305\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\gt 9\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3;}\\\text{Gregorian calendar year}&{\text{otherwise.}}\end{cases}$$
+:::
 
-In addition to the dek and [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}, [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-year"} can also provide the time-of-day ([tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}). The dek, [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}, and [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} are all just different parts of the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}. If we floor a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}, &LeftFloor;[d]{.cyan}&RightFloor;, we get its integer part, which is a floating🛟date that provides the dek and [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}, and if we obtain the remainder after dividing a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} or a [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"} by 1, [d]{.cyan} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1, we get its decimal part, which is a [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}.
-
-The combination of a [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} and a Dec time zone [z]{.lime} is called a Dec time: .[tod]{.cyan}-[z]{.lime}. Dec times can be appended to Dec dates to form Dec snaps🫰: [year]{.yellow}+[day]{.cyan}.[tod]{.cyan}-[z]{.lime}. The Dec snap🫰on the left side of the navbar of my site, [\${decoYear}]{.yellow}\${dotw0sign}[\${dotw0doty}]{.cyan}+[\${dotw}]{.wine}🗓️[\${decidayTime}]{.cyan}\${zoneSign}[\${Math.abs(zone)}]{.lime}🕓, multiplies the [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} by 10, [\${dayTime.toFixed(5)}]{.cyan} &times; 10 = [\${decidayTime}]{.cyan}, so it is in the same [deciday](https://en.wiktionary.org/wiki/deciday#:~:text=One%20tenth%20of%20one%20day) units as the time zone.
+:::{style="overflow-x:auto;overflow-y:hidden;"}
+$$\text{Gregorian calendar year} = \begin{cases}\text{Dec year}+1&{\text{if }\text{doy}\gt 305\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\gt 9\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3;}\\\text{Dec year}&{\text{otherwise.}}\end{cases}$$
+:::
 
 # Summary{#tldr}
 
-Dividend expansion will not work for variable-length units like months, but it can be used to base Dec dates on any fixed-length unit, including the 20-day [dudek](https://en.wiktionary.org/wiki/dudek#Esperanto:~:text=dudek-,twenty,-Polish%5Bedit), 30-day [tridek](https://en.wiktionary.org/wiki/tridek#Esperanto:~:text=tridek-,thirty,-Categories%3A), 40-day [kvardek](https://en.wiktionary.org/wiki/kvardek#Esperanto:~:text=kvardek-,forty,-Categories%3A), 73-day [sepdektri](https://en.wiktionary.org/wiki/sepdek_tri#Esperanto:~:text=sepdek%20tri-,seventy%2Dthree,-Categories%3A), or 90-day [naŭdek](https://en.wiktionary.org/wiki/na%C5%ADdek). Expansion of deks is unnecessary, because our [decimal numeral system](https://en.wikipedia.org/wiki/Decimal#:~:text=system%20for%20denoting%20integer%20and%20non%2Dinteger%20numbers) allows us to concatenate a dek, [\${decoDoty.slice(0, 2)}]{.cyan}, and a [dod]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-dek"}, [\${decoDoty[2]}]{.cyan}, to form a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}: [\${decoDoty}]{.cyan}.
+This article describes Dec and how it can interoperate with the Gregorian calendar🗓️by minuend expanding Dec dates into [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} and [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} dates or dividend expanding [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} dates into [woy]{.under .tool data-bs-toggle="tooltip" data-bs-title="week-of-year"} dates. On its own, Dec minuend expands Dec dates into span🌈equivalents, but has no use for dividend expansion, because [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} display deks and [dods]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-dek"} without any expansion.
+
+The flowchart below visualizes the conversion of the UNIX epoch Dec date [1969]{.yellow}+[306]{.cyan} into a Gregorian calendar🗓️year, month, [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} and [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}. To obtain its associated [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}, we first need to convert a Dec date into a [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"}. Outside of its interoperability with the Gregorian calendar🗓️, Dec converts dates into [does]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-era"} to find the number of days in between two dates.
 
 ```{mermaid}
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '23px'}}}%%
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
 flowchart LR
-   A[doe<br>719468]~~~C[  ]:::empty-->A
+   C[  ]:::empty-->A
    D[year<br>1969]~~~C-->D
    E[doy<br>306]~~~C-->E
+   A[doe<br>719468]~~~C
    D-->K[  ]:::empty
    E-->K
    E~~~L[  ]:::empty-->E
-   subgraph decdate[Dec date]
+   subgraph decdate[Decalendar]
+   A
    D
    E
    end
@@ -564,7 +572,8 @@ flowchart LR
    H
    end
    classDef empty width:0px;
-   style gregdate y:8px;
+   style gregdate y:8px,height:592px;
+   style decdate height:592px;
    click A "#doe"
    click B "#dow"
    click D "#yoe"
@@ -574,13 +583,17 @@ flowchart LR
    click H "#dom"
 ```
 
+For simplicity, the flowchart above only shows the conversion of a Dec year into a Gregorian calendar🗓️year and not the inverse. Also not shown are the conversion byproducts that are only used as stepping stones: [coes]{.under .tool data-bs-toggle="tooltip" data-bs-title="cycles-of-era"}, [yocs]{.under .tool data-bs-toggle="tooltip" data-bs-title="years-of-cycle"}, [docs]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-cycle"}, and [moys]{.under .tool data-bs-toggle="tooltip" data-bs-title="months-of-year"}. Of these byproducts, [moys]{.under .tool data-bs-toggle="tooltip" data-bs-title="months-of-year"} are only used to split [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-year"} into months and [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"} or combine months and [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"} into [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-year"}.
+
+Without the burden of supporting the Gregorian calendar🗓️, Decalendar can be free of weeks, [woys]{.under .tool data-bs-toggle="tooltip" data-bs-title="weeks-of-year"}, [dows]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-week"}, months, [moys]{.under .tool data-bs-toggle="tooltip" data-bs-title="months-of-year"}, [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"}, finger counting, and dividend expansion. At its heart, Decalendar is a simple system that creates dates from integer years and days and calculates durations using decimal years or integer days. Dec dates are simple and easy to read. Dekly schedules are dependable and flexible.
+
 # Next
 
 After reading this article, you should be able to understand the examples in the [filter](/quarto/filter), [script](/quarto/script), and [include](/quarto/include) articles in the [Quarto section](/quarto) of my site. To see the full extent of the benefits that Dec can provide, I recommend that you continue on through the [Dec section](/dec) of my site to the [time](/dec/time)🕰️, [snap](/dec/snap)🫰, and [span](/dec/span)🌈articles. Dec has a lot more to offer than just dates!
 
 ```{mermaid}
 %%| label: navchart
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '48px'}}}%%
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
 flowchart LR
    A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
    click A "/dec"
@@ -831,10 +844,6 @@ doty0dote = date2dote(ydz[0], 0)[0]
 doty0dotw = dote2dotw(doty0dote)
 week = Math.floor((ydz[1] + doty0dotw) / 7)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
-dayTime = dz[0] % 1
-decidayTime = (dayTime * 10).toFixed(4)
-zone = dz[1]
-zoneSign = zone < 0 ? "+" : "-"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
 Tminus = nDaysInYear - decoDoty
 TminusPadded = Tminus.toString().padStart(3, "0")
@@ -891,7 +900,7 @@ form.oi-3a86ea-toggle > input#oi-3a86ea-2 {
   width: 15px;
 }
 form.oi-3a86ea-toggle {
-  width: 105px;
+  width: 110px;
 }
 form.oi-3a86ea-toggle:has(input#oi-3a86ea-2) {
   width: 150px;
@@ -943,6 +952,12 @@ div.cell-output-display:has(svg#mermaid-3.flowchart.mermaid-js) {
 }
 span.nodeLabel > p {
   text-align: center;
+}
+#decdate g span > p {
+  margin-top: 4px !important;
+}
+#gregdate g span > p {
+  margin-top: -6px !important;
 }
 </style>
 ```
