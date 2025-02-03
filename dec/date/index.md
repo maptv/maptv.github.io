@@ -591,7 +591,8 @@ $$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{year}&{\text{if } \text{y
 
 yoc = year − coe × 400
 
-<div style="overflow-x:auto;overflow-y:hidden;">
+<div class="overflowequation"
+style="overflow-x:auto;overflow-y:hidden;">
 
 $$\text{doe} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{doy}$$
 
@@ -1944,7 +1945,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
    inkscape:label="152"><tspan
      sodipodi:role="line"
      id="tspan119-7-5-7"
-     x="260.63867"
+     x="262"
      y="122"
      style="font-size:24px;line-height:1">August</tspan><tspan
      sodipodi:role="line"
@@ -2434,7 +2435,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
    inkscape:label="183"><tspan
      sodipodi:role="line"
      id="tspan119-7-5-7-0"
-     x="52.4375"
+     x="54"
      y="122"
      style="font-size:24px;line-height:1">September</tspan><tspan
      sodipodi:role="line"
@@ -2569,7 +2570,8 @@ data-bs-title="month-of-year">moy</span> from a <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> or a
 POSIX month number.
 
-<div style="overflow-x:auto;overflow-y:hidden;">
+<div class="overflowequation"
+style="overflow-x:auto;overflow-y:hidden;">
 
 $$\text{moy} = (5 \times \text{doy} + 2) \div 153 = \begin{cases}\text{month}-3&{\text{if }\text{month}\gt 2;}\\\text{month}+9&{\text{otherwise.}}\end{cases}$$
 
@@ -2599,13 +2601,15 @@ data-bs-title="day-of-year">doy</span> is greater than 305, the
 data-bs-title="month-of-year">moy</span> is greater than 9, or the month
 is less than 3:
 
-<div style="overflow-x:auto;overflow-y:hidden;">
+<div class="overflowequation"
+style="overflow-x:auto;overflow-y:hidden;">
 
 $$\text{Dec year} = \begin{cases}\text{Gregorian calendar year}-1&{\text{if }\text{doy}\gt 305\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\gt 9\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3;}\\\text{Gregorian calendar year}&{\text{otherwise.}}\end{cases}$$
 
 </div>
 
-<div style="overflow-x:auto;overflow-y:hidden;">
+<div class="overflowequation"
+style="overflow-x:auto;overflow-y:hidden;">
 
 $$\text{Gregorian calendar year} = \begin{cases}\text{Dec year}+1&{\text{if }\text{doy}\gt 305\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\gt 9\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3;}\\\text{Dec year}&{\text{otherwise.}}\end{cases}$$
 
@@ -3083,8 +3087,13 @@ span.nodeLabel > p {
 }
 div.hand {
   display: flex;
+  flex-wrap: wrap;
 }
 div.hand > svg {
-  margin: -10px 5px 5px 5px;
+  margin: 5px 5px 20px 5px;
+}
+div.overflowequation {
+  margin-top: -20px;
+  margin-bottom: -20px;
 }
 </style>
