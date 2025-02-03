@@ -340,7 +340,7 @@ $$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{year}&{\text{if } \text{y
 
 $$\text{yoc} = \text{year} - \text{coe} \times 400$$
 
-:::{style="overflow-x:auto;overflow-y:hidden;"}
+:::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
 $$\text{doe} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{doy}$$
 :::
 
@@ -533,7 +533,7 @@ The finger🖐[mnemonic](https://en.wikipedia.org/wiki/Mnemonic#:~:text=any%20le
 
 To convert [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-year"} to or from [POSIX month](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=Month%20as%20a%20decimal%20number%20%5B01%2C12%5D) and [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} numbers, we can use the month-of-year ([moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"}) equations from the [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days){.mono .under} and [`days_from_civil`](https://howardhinnant.github.io/date_algorithms.html#days_from_civil){.mono .under} algorithms. Unlike POSIX month numbers, [moys]{.under .tool data-bs-toggle="tooltip" data-bs-title="months-of-year"} are zero-based and start from [Moy 0]{.under .tool data-bs-toggle="tooltip" data-bs-title="March"} instead of [Moy 10]{.under .tool data-bs-toggle="tooltip" data-bs-title="January"}. As shown in the first [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"} equation below, we can obtain a [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"} from a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} or a POSIX month number.
 
-:::{style="overflow-x:auto;overflow-y:hidden;"}
+:::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
 $$\text{moy} = (5 \times \text{doy} + 2) \div 153 = \begin{cases}\text{month}-3&{\text{if }\text{month}\gt 2;}\\\text{month}+9&{\text{otherwise.}}\end{cases}$$
 :::
 
@@ -545,11 +545,11 @@ $$\text{doy} = (153 \times \text{moy}+ 2) \div 5 + \text{dom} - 1$$
 
 A [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"} and its equivalent POSIX month number differ by 9 in Moy [10]{.under .tool data-bs-toggle="tooltip" data-bs-title="January"} or [11]{.under .tool data-bs-toggle="tooltip" data-bs-title="February"} and -3 in any other [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"} because the Dec epoch, [0000]{.yellow}+[000]{.cyan}, is 2 months later than the Gregorian calendar🗓️epoch: -[0001]{.yellow}+[306]{.cyan}. To convert years, we add 1 to Dec years and subtract 1 from Gregorian calendar🗓️years if the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} is greater than 305, the [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="month-of-year"} is greater than 9, or the month is less than 3:
 
-:::{style="overflow-x:auto;overflow-y:hidden;"}
+:::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
 $$\text{Dec year} = \begin{cases}\text{Gregorian calendar year}-1&{\text{if }\text{doy}\gt 305\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\gt 9\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3;}\\\text{Gregorian calendar year}&{\text{otherwise.}}\end{cases}$$
 :::
 
-:::{style="overflow-x:auto;overflow-y:hidden;"}
+:::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
 $$\text{Gregorian calendar year} = \begin{cases}\text{Dec year}+1&{\text{if }\text{doy}\gt 305\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\gt 9\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3;}\\\text{Dec year}&{\text{otherwise.}}\end{cases}$$
 :::
 
@@ -988,9 +988,14 @@ span.nodeLabel > p {
 }
 div.hand {
   display: flex;
+  flex-wrap: wrap;
 }
 div.hand > svg {
-  margin: -10px 5px 5px 5px;
+  margin: 5px 5px 20px 5px;
+}
+div.overflowequation {
+  margin-top: -20px;
+  margin-bottom: -20px;
 }
 </style>
 ```

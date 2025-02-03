@@ -497,7 +497,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
    inkscape:label="152"><tspan
      sodipodi:role="line"
      id="tspan119-7-5-7"
-     x="260.63867"
+     x="262"
      y="122"
      style="font-size:24px;line-height:1">August</tspan><tspan
      sodipodi:role="line"

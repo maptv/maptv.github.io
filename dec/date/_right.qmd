@@ -446,7 +446,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
    inkscape:label="183"><tspan
      sodipodi:role="line"
      id="tspan119-7-5-7-0"
-     x="52.4375"
+     x="54"
      y="122"
      style="font-size:24px;line-height:1">September</tspan><tspan
      sodipodi:role="line"
