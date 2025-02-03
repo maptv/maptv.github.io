@@ -90,6 +90,7 @@ varies.
 
 ``` {ojs}
 //| echo: false
+//| label: leapscrubvert
 viewof leapscrub = Inputs.form([
   Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
   Inputs.toggle({label: "Leap year", value: false}),
@@ -127,7 +128,7 @@ decPlot = turnInput ? Plot.plot({
   padding: 0,
   width: 480,
   height: 980,
-  className: "calplot",
+  className: "leftplot",
   marginTop: -3,
   marginRight: 31,
   marginBottom: 35,
@@ -178,6 +179,7 @@ decPlot = turnInput ? Plot.plot({
   padding: 0,
   width: 1280,
   height: 280,
+  className: "topplot",
   marginTop: -3,
   marginLeft: 31,
   marginBottom: 35,
@@ -235,7 +237,7 @@ calPlot = turnInput ? Plot.plot({
   padding: 0,
   width: 280,
   height: 980,
-  className: "calplot",
+  className: "rightplot",
   marginTop: 10,
   marginBottom: 30,
   marginRight: 42,
@@ -280,6 +282,7 @@ calPlot = turnInput ? Plot.plot({
   padding: 0,
   width: 1280,
   height: 200,
+  className: "btmplot",
   marginTop: 0,
   marginBottom: 40,
   marginLeft: 42,
@@ -3034,7 +3037,7 @@ div > form.oi-3a86ea > label {
 form.oi-3a86ea > div.oi-3a86ea-input > input[type="number"] {
   max-width: 60px;
 }
-div.column-page:has(svg.calplot) {
+div.column-page:has(svg.leftplot), div.column-page:has(svg.rightplot) {
   display: flex;
   justify-content: center;
 }
@@ -3052,9 +3055,6 @@ p:has(.radiotitle) {
 }
 #radiobuttons {
   margin-bottom: -12px;
-}
-svg#finger {
-  max-width: 760px;
 }
 h4.anchored {
   margin: 8px 0px 8px 0px;
@@ -3095,5 +3095,31 @@ div.hand > svg {
 div.overflowequation {
   margin-top: -20px;
   margin-bottom: -20px;
+}
+div#leapscrubvert {
+  margin-top: -10px;
+}
+svg.topplot {
+  margin-top: -9px;
+  margin-bottom: -9px;
+  overflow: clip;
+}
+svg.btmplot {
+  margin-top: -9px;
+  margin-bottom: -20px;
+  overflow: clip;
+}
+svg.leftplot {
+  margin-top: -9px;
+  margin-bottom: -15px;
+  overflow: clip;
+}
+svg.rightplot {
+  margin-top: -9px;
+  margin-bottom: -15px;
+  overflow: clip;
+}
+form.oi-3a86ea-checkbox {
+  max-width: 800px;
 }
 </style>
