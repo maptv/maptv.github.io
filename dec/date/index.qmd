@@ -1,5 +1,8 @@
 ---
 title: Dec Date
+author:
+  - name: Martin Laptev
+    url: https://maptv.github.io
 image: /asset/cal16.svg
 description: >
   Introducing the Dec calendar (Decalendar), which displays dates in years and days using math notation without the need for months or weeks.
@@ -26,11 +29,10 @@ format:
   commonmark: default
 filters:
   - ../../asset/date.lua
-  - include-code-files
 ---
 
 ```{mermaid}
-%%| label: navtop
+%%| label: datenavtop
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
 flowchart LR
    A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
@@ -618,7 +620,7 @@ At its heart❤️, Decalendar is a simple system that uses only years and days.
 After reading this article, you should be able to understand the examples in the [filter](/quarto/filter), [script](/quarto/script), and [include](/quarto/include) articles in the [Quarto section](/quarto) of my site. To see the full extent of the benefits that Dec can provide, I recommend that you continue on through the [Dec section](/dec) of my site to the [time](/dec/time)🕰️, [snap](/dec/snap)🫰, and [span](/dec/span)🌈articles. Dec has a lot more to offer than just dates!
 
 ```{mermaid}
-%%| label: navbtm
+%%| label: datenavbtm
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
 flowchart LR
    A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
@@ -966,7 +968,7 @@ h4.anchored {
   margin-top: 15px;
   margin-bottom: -20px;
 }
-div.cell-output-display:has(svg#navtop-mermaid.flowchart.mermaid-js) {
+div.cell-output-display:has(svg#datenavtop-mermaid.flowchart.mermaid-js) {
   margin-top: -5px;
   margin-bottom: -5px;
 }
@@ -981,7 +983,7 @@ div.cell-output-display:has(svg#conversionchart-mermaid.flowchart.mermaid-js) {
   margin-top: -15px;
   margin-bottom: -15px;
 }
-div.cell-output-display:has(svg#navbtm-mermaid.flowchart.mermaid-js) {
+div.cell-output-display:has(svg#datenavbtm-mermaid.flowchart.mermaid-js) {
   margin-top: -15px;
   margin-bottom: 5px;
 }

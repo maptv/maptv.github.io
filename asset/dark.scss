@@ -59,18 +59,6 @@ svg.mermaid-js g.edgeLabels span.edgeLabel {
     background: #000000 !important;
 }
 
-svg.mermaid-js g#decalendar > rect {
-    fill: #880088 !important;
-}
-
-svg.mermaid-js g#ana > rect {
-    fill: #880088 !important;
-}
-
-svg.mermaid-js g#iso > rect {
-    fill: #880088 !important;
-}
-
 g.node.clickable.flowchart-label.default > rect {
     fill: darkmagenta !important;
 }
@@ -253,7 +241,22 @@ div > form > div > input[type="range"] {
   fill: #f00;
 }
 
-#navchart-mermaid a:nth-child(2) rect.basic.label-container {
+svg#decnavtop-mermaid a:nth-child(1) rect.basic.label-container {
+  stroke: magenta;
+  stroke-width: 6px;
+}
+
+svg#decnavbtm-mermaid a:nth-child(1) rect.basic.label-container {
+  stroke: magenta;
+  stroke-width: 6px;
+}
+
+svg#datenavtop-mermaid a:nth-child(2) rect.basic.label-container {
+  stroke: magenta;
+  stroke-width: 6px;
+}
+
+svg#datenavbtm-mermaid a:nth-child(2) rect.basic.label-container {
   stroke: magenta;
   stroke-width: 6px;
 }

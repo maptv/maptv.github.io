@@ -132,10 +132,26 @@ g#workdays.cluster rect {
     fill: lightgreen !important;
 }
 
-#navchart-mermaid a:nth-child(2) rect.basic.label-container {
+svg#decnavtop-mermaid a:nth-child(1) rect.basic.label-container {
   stroke: darkmagenta;
   stroke-width: 6px;
 }
+
+svg#decnavbtm-mermaid a:nth-child(1) rect.basic.label-container {
+  stroke: darkmagenta;
+  stroke-width: 6px;
+}
+
+svg#datenavtop-mermaid a:nth-child(2) rect.basic.label-container {
+  stroke: darkmagenta;
+  stroke-width: 6px;
+}
+
+svg#datenavbtm-mermaid a:nth-child(2) rect.basic.label-container {
+  stroke: darkmagenta;
+  stroke-width: 6px;
+}
+
 
 g.node rect:hover, g.node:has(g:hover) rect {
   stroke: darkgreen !important;
