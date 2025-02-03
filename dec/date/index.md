@@ -14,7 +14,7 @@ Martin Laptev
 - [Next](#next)
 - [Cite](#cite)
 
-<div id="navtop">
+<div id="datenavtop">
 
 <div>
 
@@ -2709,7 +2709,7 @@ continue on through the [Dec section](../../dec) of my site to the
 [span](../../dec/span)🌈articles. Dec has a lot more to offer than just
 dates!
 
-<div id="navbtm">
+<div id="datenavbtm">
 
 <div>
 
@@ -3067,7 +3067,7 @@ h4.anchored {
   margin-top: 15px;
   margin-bottom: -20px;
 }
-div.cell-output-display:has(svg#navtop-mermaid.flowchart.mermaid-js) {
+div.cell-output-display:has(svg#datenavtop-mermaid.flowchart.mermaid-js) {
   margin-top: -5px;
   margin-bottom: -5px;
 }
@@ -3082,7 +3082,7 @@ div.cell-output-display:has(svg#conversionchart-mermaid.flowchart.mermaid-js) {
   margin-top: -15px;
   margin-bottom: -15px;
 }
-div.cell-output-display:has(svg#navbtm-mermaid.flowchart.mermaid-js) {
+div.cell-output-display:has(svg#datenavbtm-mermaid.flowchart.mermaid-js) {
   margin-top: -15px;
   margin-bottom: 5px;
 }
