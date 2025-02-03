@@ -909,6 +909,8 @@ data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> into a
 positive <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>, we add 7.
 
+<div class="overflowtable" style="overflow-x:auto;overflow-y:hidden;">
+
 <table>
 <thead>
 <tr>
@@ -942,6 +944,8 @@ data-bs-title="day-of-week">dow</span>, we add 7.
 </tr>
 </tbody>
 </table>
+
+</div>
 
 # Week of year (woy)
 
@@ -1033,7 +1037,7 @@ the one-based bottom flowchart.
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-5.png"
-style="width:8.53in;height:3.08in" />
+style="width:8.77in;height:3.36in" />
 
 </div>
 
@@ -1044,7 +1048,7 @@ style="width:8.53in;height:3.08in" />
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-4.png"
-style="width:8.63in;height:3.08in" />
+style="width:8.93in;height:3.36in" />
 
 </div>
 
@@ -2542,7 +2546,7 @@ described above is similar to the
 keyboard🎹](https://en.wikipedia.org/wiki/Month#:~:text=this%20cyclical%20pattern%20of%20month%20lengths%20matches%20the%20musical%20keyboard%20alternation%20of%20wide%20white%20keys%20(31%20days)%20and%20narrow%20black%20keys%20(30%20days))mnemonics.
 These mnemonics attempt to make sense of the irregular pattern of [month
 lengths](https://en.wikipedia.org/wiki/Month#:~:text=Name-,Number,of%20days)
-in the Gregorian calendar. As opposed to months, we do not need
+in the Gregorian calendar🗓️. As opposed to months, we do not need
 mnemonics, tables, or mental calculations to use deks, because all of
 the required information is plainly visible in the
 <span class="under tool" data-bs-toggle="tooltip"
@@ -3050,7 +3054,7 @@ input[type="radio"] {
   margin: 1px 0px 0px 0px;
 }
 p:has(.radiotitle) {
-  margin-top: -3px;
+  margin-top: -6px;
   margin-bottom: -3px;
 }
 #radiobuttons {
@@ -3106,7 +3110,7 @@ svg.topplot {
 }
 svg.btmplot {
   margin-top: -9px;
-  margin-bottom: -20px;
+  margin-bottom: -15px;
   overflow: clip;
 }
 svg.leftplot {
