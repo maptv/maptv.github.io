@@ -81,11 +81,11 @@ svg.mermaid-js  span.nodeLabel {
   filter: invert(1);
 }
 
-svg#finger tspan {
+svg#lefthand tspan, svg#righthand tspan {
   fill: white;
 }
 
-svg#finger path {
+svg#lefthand path, svg#righthand path {
   stroke: white;
 }
 

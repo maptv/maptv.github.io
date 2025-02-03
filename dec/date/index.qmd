@@ -30,7 +30,7 @@ filters:
 ---
 
 ```{mermaid}
-%%| label: navchart
+%%| label: navtop
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
 flowchart LR
    A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
@@ -397,6 +397,13 @@ Even though Decalendar works best with deks, Dec dates can display POSIX [zero-b
 
 Instead of the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} [d]{.cyan}, Dec [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} dates display [d]{.cyan}-[w]{.wine}+[w]{.wine}, where [d]{.cyan}-[w]{.wine} is the [Dow 0]{.under .tool data-bs-toggle="tooltip" data-bs-title="Sunday"} [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} and [w]{.wine} is the [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} associated with [d]{.cyan}. We evaluate the subtraction, [d]{.cyan}-[w]{.wine}, to obtain the [Dow 0]{.under .tool data-bs-toggle="tooltip" data-bs-title="Sunday"} [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}, but leave the addition unsimplified so we can see [w]{.wine}. Dec [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} dates supply all of the information needed to identify specific dates and coordinate schedules based on deks or weeks.
 
+The [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} equation, [dow]{.wine} = ([doe]{.cyan} + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7, is derived from Howard Hinnant's [`weekday_from_days`](https://howardhinnant.github.io/date_algorithms.html#weekday_from_days) algorithm. The Dec epoch [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} is [3]{.wine} = ([0]{.cyan} + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7. The UNIX epoch [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} is [4]{.wine} = ([719468]{.cyan} + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7. Depending on how [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) is defined, a negative [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"} could yield a negative [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}: -[1]{.wine} = (-[60]{.cyan} + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7. To convert a negative [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} into a positive [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}, we add 7.
+
+| Sunday | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday |
+| ------ | ------ | ------- | --------- | -------- | ------ | -------- |
+|   0    |   1    |    2    |     3     |    4     |   5    |    6     |
+|  -7    |  -6    |   -5    |    -4     |   -3     |  -2    |   -1     |
+
 # Week of year (woy){#woy}
 
 Dec [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} dates can be further expanded to include Dec week-of-year ([woy]{.under .tool data-bs-toggle="tooltip" data-bs-title="week-of-year"}) numbers: [\${decoYear}]{.yellow}+7&times;[\${week}]{.wheat}+[\${dotw}]{.wine}. The current [woy]{.under .tool data-bs-toggle="tooltip" data-bs-title="week-of-year"}, [\${week}]{.wheat}, is the sum of the [Dow 0]{.under .tool data-bs-toggle="tooltip" data-bs-title="Sunday"} [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}, [\${dotw0doty}]{.cyan}, and the first [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} of the year ([Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}), [\${doty0dotw}]{.wine}, divided by 7: [\${week}]{.wheat} = ([\${dotw0doty}]{.cyan} + [\${doty0dotw}]{.wine}) &div; 7. The current Dec floating🛟[woy]{.under .tool data-bs-toggle="tooltip" data-bs-title="week-of-year"} date, 7&times;[\${week}]{.wheat}+[\${dotw}]{.wine}, is equal to the sum of the current [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} and the [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}: 7 &times; [\${week}]{.wheat} + [\${dotw}]{.wine} = [\${decoDoty}]{.cyan} + [\${doty0dotw}]{.wine}.
@@ -410,6 +417,7 @@ Essentially, Dec [woy]{.under .tool data-bs-toggle="tooltip" data-bs-title="week
 While weeks are not evenly divisible by two, a dek can be cut✂️into two equal halves called pentadays (pents). The flowcharts below show Schedule [3]{.green}, the recommended dekly schedule of [work]{.green} and [rest]{.blue} day. Schedule [3]{.green} can be short for Schedule [1]{.blue}+[3]{.green}+[1]{.blue}, if you prefer the zero-based top flowchart, or Schedule [3]{.green}+[2]{.blue}, if you favor the one-based bottom flowchart.
 
 ```{mermaid}
+%%| label: zerobasedpent
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
 flowchart TB
    A[0]-->B[1]-->C[2]-->D[3]-->E[4]
@@ -433,6 +441,7 @@ flowchart TB
 ```
 
 ```{mermaid}
+%%| label: onebasedpent
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
 flowchart TB
    B[1]-->C[2]-->D[3]-->E[4]-->F[5]
@@ -512,7 +521,11 @@ Dec [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} da
 
 We can obtain Dec month numbers using only a pair of hands🤲by counting index☝️and ring💍fingers as 30 days and other fingers as 31 days. For zero-based [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"}, we start counting from 0. For one-based [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"}, we start counting from -1, as shown in the image below. To spread 12 months across 10 fingers, the first and last fingers each represent 2 months.
 
-{{< include _finger.qmd >}}
+
+:::{.hand}
+{{< include _left.qmd >}}
+{{< include _right.qmd >}}
+:::
 
 The finger🖐[mnemonic](https://en.wikipedia.org/wiki/Mnemonic#:~:text=any%20learning%20technique%20that%20aids%20information%20retention%20or%20retrieval%20in%20the%20human%20memory) described above is similar to the [knuckle👊](https://en.wikipedia.org/wiki/Knuckle_mnemonic#:~:text=a%20mnemonic%20device%20for%20remembering%20the%20number%20of%20days%20in%20the%20months%20of%20the%20Julian%20and%20Gregorian%20calendars)and [musical keyboard🎹](https://en.wikipedia.org/wiki/Month#:~:text=this%20cyclical%20pattern%20of%20month%20lengths%20matches%20the%20musical%20keyboard%20alternation%20of%20wide%20white%20keys%20(31%20days)%20and%20narrow%20black%20keys%20(30%20days))mnemonics. These mnemonics attempt to make sense of the irregular pattern of [month lengths](https://en.wikipedia.org/wiki/Month#:~:text=Name-,Number,of%20days) in the Gregorian calendar. As opposed to months, we do not need mnemonics, tables, or mental calculations to use deks, because all of the required information is plainly visible in the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}.
 
@@ -542,57 +555,65 @@ $$\text{Gregorian calendar year} = \begin{cases}\text{Dec year}+1&{\text{if }\te
 
 # Summary{#tldr}
 
-This article describes Dec and how it can interoperate with the Gregorian calendar🗓️by minuend expanding Dec dates into [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} and [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} dates or dividend expanding [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} dates into [woy]{.under .tool data-bs-toggle="tooltip" data-bs-title="week-of-year"} dates. On its own, Dec minuend expands Dec dates into span🌈equivalents, but has no use for dividend expansion, because [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} display deks and [dods]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-dek"} without any expansion.
+This article describes Dec and how it can interoperate with the Gregorian calendar🗓️by minuend expanding Dec dates into [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} and [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} dates or dividend expanding [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} dates into [woy]{.under .tool data-bs-toggle="tooltip" data-bs-title="week-of-year"} dates. On its own, Dec minuend expands dates into span🌈equivalents, but has no use for dividend expansion, because [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} display deks and [dods]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-dek"} without any expansion.
 
 The flowchart below visualizes the conversion of the UNIX epoch Dec date [1969]{.yellow}+[306]{.cyan} into a Gregorian calendar🗓️year, month, [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} and [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}. To obtain its associated [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}, we first need to convert a Dec date into a [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"}. Outside of its interoperability with the Gregorian calendar🗓️, Dec converts dates into [does]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-era"} to find the number of days in between two dates.
 
 ```{mermaid}
+%%| label: conversionchart
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
 flowchart LR
-   C[  ]:::empty-->A
-   D[year<br>1969]~~~C-->D
-   E[doy<br>306]~~~C-->E
-   A[doe<br>719468]~~~C
-   D-->K[  ]:::empty
-   E-->K
-   E~~~L[  ]:::empty-->E
+   L~~~Y
+   L-->Y
+   L-->D
+   L-->E
+   R-->Y
+   M-->R[  ]:::empty
+   D-->A
+   D~~~B[  ]:::empty
+   A-->G
+   G-->R
+   Y~~~L[  ]:::empty
+   Y---A[  ]:::empty
+   Y~~~A
+   B-->M
+   B~~~N
+   B-->N
+   B-->D
+   B~~~D
+   N~~~B
+   E-->W
    subgraph decdate[Decalendar]
-   A
-   D
-   E
+   Y[year<br>1969]
+   D[doy<br>306]
+   E[doe<br>719468]
    end
-   K-->F[year<br>1970]
-   G[month<br>1]~~~L-->G
-   H[dom<br>1]~~~L-->H
-   A-->B[dow<br>4]
    subgraph gregdate[Gregorian calendar]
-   B
-   F
-   G
-   H
+   W[dow<br>4]
+   G[year<br>1970]
+   M[month<br>1]
+   N[dom<br>1]
    end
    classDef empty width:0px;
-   style gregdate y:8px,height:592px;
-   style decdate height:592px;
-   click A "#doe"
-   click B "#dow"
-   click D "#yoe"
-   click E "#doy"
-   click F "#yoe"
-   click G "#moy"
-   click H "#dom"
+   click E "#doe"
+   click W "#dow"
+   click Y "#yoe"
+   click D "#doy"
+   click G "#yoe"
+   click M "#moy"
+   click N "#dom"
 ```
 
-For simplicity, the flowchart above only shows the conversion of a Dec year into a Gregorian calendar🗓️year and not the inverse. Also not shown are conversion byproducts, such as [coes]{.under .tool data-bs-toggle="tooltip" data-bs-title="cycles-of-era"}, [yocs]{.under .tool data-bs-toggle="tooltip" data-bs-title="years-of-cycle"}, and [docs]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-cycle"}, which are only used to convert between Dec dates and [does]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-era"}, and [moys]{.under .tool data-bs-toggle="tooltip" data-bs-title="months-of-year"}, which are only used to split [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-year"} into months and [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"} or combine months and [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"} into [doys]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-year"}.
+For simplicity, the flowchart above does not show conversion byproducts, such as the [coe]{.under .tool data-bs-toggle="tooltip" data-bs-title="cycle-of-era"}, [yoc]{.under .tool data-bs-toggle="tooltip" data-bs-title="year-of-cycle"}, and [doc]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-cycle"} generated during Dec [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"} to date conversion. Notably, we need a [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="months-of-year"} in order to split a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} into a month and a [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} or combine a month and a [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} into a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}. The arrows in the flowchart represent equations adapted from [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html).
 
-At its heart❤️, Decalendar is a simple system of dates that consist of integer years and days. With minuend expansion, we can easily switch between Dec dates that show [dods]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-dek"}, [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"}, or [dows]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-week"}. In this way, minuend expansion enables support for both dekly and weekly schedules, and thus promotes the peaceful coexistence of the Dec and Gregorian calendars🗓️.
+At its heart❤️, Decalendar is a simple system that uses only years and days. Thanks to minuend expansion, Decalendar can work with other units and support weekly schedules as opposed to just dekly schedules. Minuend expanded Dec dates can display [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"} or [dows]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-week"} instead of [dods]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-dek"}. In this way, minuend expansion bridges the gap between the Dec and Gregorian calendars🗓️.
 
 # Next
 
 After reading this article, you should be able to understand the examples in the [filter](/quarto/filter), [script](/quarto/script), and [include](/quarto/include) articles in the [Quarto section](/quarto) of my site. To see the full extent of the benefits that Dec can provide, I recommend that you continue on through the [Dec section](/dec) of my site to the [time](/dec/time)🕰️, [snap](/dec/snap)🫰, and [span](/dec/span)🌈articles. Dec has a lot more to offer than just dates!
 
 ```{mermaid}
-%%| label: navchart
+%%| label: navbtm
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
 flowchart LR
    A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
@@ -943,21 +964,33 @@ h4.anchored {
   margin-top: 15px;
   margin-bottom: -20px;
 }
-div.cell-output-display:has(svg#mermaid-2.flowchart.mermaid-js) {
-  margin-top: -35px;
+div.cell-output-display:has(svg#navtop-mermaid.flowchart.mermaid-js) {
+  margin-top: -5px;
+  margin-bottom: -5px;
 }
-div.cell-output-display:has(svg#mermaid-3.flowchart.mermaid-js) {
-  margin-top: -35px;
-  margin-bottom: -35px;
+div.cell-output-display:has(svg#zerobasedpent-mermaid.flowchart.mermaid-js) {
+  margin-top: -15px;
+}
+div.cell-output-display:has(svg#onebasedpent-mermaid.flowchart.mermaid-js) {
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+div.cell-output-display:has(svg#conversionchart-mermaid.flowchart.mermaid-js) {
+  margin-top: -15px;
+  margin-bottom: -15px;
+}
+div.cell-output-display:has(svg#navbtm-mermaid.flowchart.mermaid-js) {
+  margin-top: -15px;
+  margin-bottom: 5px;
 }
 span.nodeLabel > p {
   text-align: center;
 }
-#decdate g span > p {
-  margin-top: 4px !important;
+div.hand {
+  display: flex;
 }
-#gregdate g span > p {
-  margin-top: -6px !important;
+div.hand > svg {
+  margin: -10px 5px 5px 5px;
 }
 </style>
 ```

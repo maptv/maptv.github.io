@@ -1,3 +1,4 @@
+```{=html}
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 11 Build 196, SVG Export Plug-In . SVG Version: 6.0.0 Build 78)  -->
 <svg
@@ -11,7 +12,7 @@
    enable-background="new 0 0 838.332 516.951"
    xml:space="preserve"
    version="1.1"
-   id="svg108"
+   id="lefthand"
    sodipodi:docname="lefthand.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -446,7 +447,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
      sodipodi:role="line"
      id="tspan119-7"
      x="144.84377"
-     y="17.449219"
+     y="15.449219"
      style="font-size:24px;line-height:1">June</tspan><tspan
      sodipodi:role="line"
      id="tspan120-4"
@@ -496,8 +497,8 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
    inkscape:label="152"><tspan
      sodipodi:role="line"
      id="tspan119-7-5-7"
-     x="268.63867"
-     y="123.44922"
+     x="260.63867"
+     y="122"
      style="font-size:24px;line-height:1">August</tspan><tspan
      sodipodi:role="line"
      id="tspan120-4-7-7"
@@ -538,3 +539,4 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
      y="231.23438"
      id="tspan118-7-7"
      style="font-size:24px;line-height:1">-1</tspan></text></svg>
+```
