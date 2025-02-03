@@ -402,10 +402,12 @@ Instead of the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of
 
 The [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} equation, [dow]{.wine} = ([doe]{.cyan} + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7, is derived from Howard Hinnant's [`weekday_from_days`](https://howardhinnant.github.io/date_algorithms.html#weekday_from_days) algorithm. The Dec epoch [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} is [3]{.wine} = ([0]{.cyan} + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7. The UNIX epoch [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} is [4]{.wine} = ([719468]{.cyan} + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7. Depending on how [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) is defined, a negative [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"} could yield a negative [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}: -[1]{.wine} = (-[60]{.cyan} + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7. To convert a negative [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"} into a positive [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-week"}, we add 7.
 
+:::{.overflowtable style="overflow-x:auto;overflow-y:hidden;"}
 | Sunday | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday |
 | ------ | ------ | ------- | --------- | -------- | ------ | -------- |
 |   0    |   1    |    2    |     3     |    4     |   5    |    6     |
 |  -7    |  -6    |   -5    |    -4     |   -3     |  -2    |   -1     |
+:::
 
 # Week of year (woy){#woy}
 
@@ -421,7 +423,7 @@ While weeks are not evenly divisible by two, a dek can be cut✂️into two equa
 
 ```{mermaid}
 %%| label: zerobasedpent
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart TB
    A[0]-->B[1]-->C[2]-->D[3]-->E[4]
    F[5]-->G[6]-->H[7]-->I[8]-->J[9]
@@ -445,7 +447,7 @@ flowchart TB
 
 ```{mermaid}
 %%| label: onebasedpent
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart TB
    B[1]-->C[2]-->D[3]-->E[4]-->F[5]
    G[6]-->H[7]-->I[8]-->J[9]-->A[10]
@@ -530,7 +532,7 @@ We can obtain Dec month numbers using only a pair of hands🤲by counting index�
 {{< include _right.qmd >}}
 :::
 
-The finger🖐[mnemonic](https://en.wikipedia.org/wiki/Mnemonic#:~:text=any%20learning%20technique%20that%20aids%20information%20retention%20or%20retrieval%20in%20the%20human%20memory) described above is similar to the [knuckle👊](https://en.wikipedia.org/wiki/Knuckle_mnemonic#:~:text=a%20mnemonic%20device%20for%20remembering%20the%20number%20of%20days%20in%20the%20months%20of%20the%20Julian%20and%20Gregorian%20calendars)and [musical keyboard🎹](https://en.wikipedia.org/wiki/Month#:~:text=this%20cyclical%20pattern%20of%20month%20lengths%20matches%20the%20musical%20keyboard%20alternation%20of%20wide%20white%20keys%20(31%20days)%20and%20narrow%20black%20keys%20(30%20days))mnemonics. These mnemonics attempt to make sense of the irregular pattern of [month lengths](https://en.wikipedia.org/wiki/Month#:~:text=Name-,Number,of%20days) in the Gregorian calendar. As opposed to months, we do not need mnemonics, tables, or mental calculations to use deks, because all of the required information is plainly visible in the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}.
+The finger🖐[mnemonic](https://en.wikipedia.org/wiki/Mnemonic#:~:text=any%20learning%20technique%20that%20aids%20information%20retention%20or%20retrieval%20in%20the%20human%20memory) described above is similar to the [knuckle👊](https://en.wikipedia.org/wiki/Knuckle_mnemonic#:~:text=a%20mnemonic%20device%20for%20remembering%20the%20number%20of%20days%20in%20the%20months%20of%20the%20Julian%20and%20Gregorian%20calendars)and [musical keyboard🎹](https://en.wikipedia.org/wiki/Month#:~:text=this%20cyclical%20pattern%20of%20month%20lengths%20matches%20the%20musical%20keyboard%20alternation%20of%20wide%20white%20keys%20(31%20days)%20and%20narrow%20black%20keys%20(30%20days))mnemonics. These mnemonics attempt to make sense of the irregular pattern of [month lengths](https://en.wikipedia.org/wiki/Month#:~:text=Name-,Number,of%20days) in the Gregorian calendar🗓️. As opposed to months, we do not need mnemonics, tables, or mental calculations to use deks, because all of the required information is plainly visible in the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}.
 
 # Month of year (moy){#moy}
 
@@ -951,7 +953,7 @@ input[type="radio"] {
   margin: 1px 0px 0px 0px;
 }
 p:has(.radiotitle) {
-  margin-top: -3px;
+  margin-top: -6px;
   margin-bottom: -3px;
 }
 #radiobuttons {
@@ -1007,7 +1009,7 @@ svg.topplot {
 }
 svg.btmplot {
   margin-top: -9px;
-  margin-bottom: -20px;
+  margin-bottom: -15px;
   overflow: clip;
 }
 svg.leftplot {
