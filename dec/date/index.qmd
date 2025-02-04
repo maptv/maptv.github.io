@@ -611,7 +611,7 @@ flowchart LR
    click N "#dom"
 ```
 
-For simplicity, the flowchart above does not show conversion byproducts, such as the [coe]{.under .tool data-bs-toggle="tooltip" data-bs-title="cycle-of-era"}, [yoc]{.under .tool data-bs-toggle="tooltip" data-bs-title="year-of-cycle"}, and [doc]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-cycle"} generated during Dec [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"} to date conversion. Notably, we need a [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="months-of-year"} in order to split a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} into a month and a [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} or combine a month and a [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} into a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}. The arrows in the flowchart represent equations adapted from [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html).
+For simplicity, the flowchart above does not show conversion byproducts, such as the [coe]{.under .tool data-bs-toggle="tooltip" data-bs-title="cycle-of-era"}, [yoc]{.under .tool data-bs-toggle="tooltip" data-bs-title="year-of-cycle"}, and [doc]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-cycle"} generated during Dec [doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"} to date conversion or the [moy]{.under .tool data-bs-toggle="tooltip" data-bs-title="months-of-year"} that we need in order to split a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} into a month and a [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} or combine a month and a [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"} into a [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}. The arrows in the flowchart represent equations adapted from [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html).
 
 At its heart❤️, Decalendar is a simple system that uses only years and days. Thanks to minuend expansion, Decalendar can work with other units and support weekly schedules as opposed to just dekly schedules. Minuend expanded Dec dates can display [doms]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-month"} or [dows]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-week"} instead of [dods]{.under .tool data-bs-toggle="tooltip" data-bs-title="days-of-dek"}. In this way, minuend expansion bridges the gap between the Dec and Gregorian calendars🗓️.
 
@@ -630,6 +630,8 @@ flowchart LR
    click D "/dec/snap"
    click E "/dec/span"
 ```
+
+In addition my Dec and Quarto articles, many other articles on my site discuss Dec. Notably, my [Jupyter](/jupyter) article compares the code underlying Dec in several programming languages, my [Reveal](/reveal) article features a presentation on Dec time measurement, and my [Observable](/observable) article describes how I demonstrate Dec in action with interactive and animated visualizations.
 
 # Cite
 

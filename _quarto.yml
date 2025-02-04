@@ -40,7 +40,7 @@ website:
       target: _blank
     - icon: envelope-at
       href: mailto:maptv@engineer.com
-    collapse-level: 3
+    collapse-level: 2
     contents:
     - icon: house-door
       text: Home
@@ -99,12 +99,15 @@ website:
       - icon: git
         text: Git
         href: git/index.qmd
-      - icon: p-square
-        text: Positron
-        href: positron/index.qmd
       - icon: journal-richtext
         text: Jupyter
         href: jupyter/index.qmd
+      - icon: 0-circle
+        text: Observable
+        href: observable/index.qmd
+      - icon: p-square
+        text: Positron
+        href: positron/index.qmd
       - section: Quarto
         icon: markdown
         href: quarto/index.qmd
@@ -118,9 +121,9 @@ website:
         - text: Include
           icon: file-earmark-plus
           href: quarto/include/index.qmd
-      - icon: 0-circle
-        text: Observable
-        href: observable/index.qmd
+      - icon: file-slides
+        text: Reveal
+        href: reveal/index.qmd
   twitter-card: true
   page-footer:
     background: light
