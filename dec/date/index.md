@@ -2672,10 +2672,10 @@ data-bs-toggle="tooltip" data-bs-title="year-of-cycle">yoc</span>, and
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-cycle">doc</span> generated during Dec
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> to date conversion. Notably, we
-need a <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="months-of-year">moy</span> in order to split a
+data-bs-title="day-of-era">doe</span> to date conversion or the
 <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="months-of-year">moy</span> that we need in order to split
+a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> into a month and a
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-month">dom</span> or combine a month and a
@@ -2719,6 +2719,14 @@ style="width:8.64in;height:0.98in" />
 </div>
 
 </div>
+
+In addition my Dec and Quarto articles, many other articles on my site
+discuss Dec. Notably, my [Jupyter](../../jupyter) article compares the
+code underlying Dec in several programming languages, my
+[Reveal](../../reveal) article features a presentation on Dec time
+measurement, and my [Observable](../../observable) article describes how
+I demonstrate Dec in action with interactive and animated
+visualizations.
 
 # Cite
 

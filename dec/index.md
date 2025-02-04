@@ -52,6 +52,22 @@ is equivalent to the Dec
 snap🫰<span class="yellow">${String(decYear).padStart(4,
 “0”)}</span>+<span class="cyan">${String(decDate).padStart(3,
 “0”)}</span>.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>+<span class="lime">0</span>.
+The Dec analog of the UTC+00:00, Zone <span class="lime">0</span>, is
+shown on the left side of the map below.
+
+``` {ojs}
+//| echo: false
+//| label: zonemap
+viewof coordinates = worldMapCoordinates([162, 0, choice.value().rotate([-156, 0])], [width, Math.round((210 / 400) * width)])
+```
+
+``` {ojs}
+//| echo: false
+//| label: projselect
+viewof choice = Inputs.select(
+  projections, {label: "Projection:", format: x => x.name, value: projections.find(t => t.name === "Equirectangular")})
+```
+
 The ISO🌐8601 format is
 <span class="yellow">year</span>-<span class="mulberry">mm</span>-<span class="magenta">dd</span>T<span class="hardwood">hh</span>:<span class="maroon">mm</span>:<span class="sienna">ss</span>+<span class="hardwood">hh</span>:<span class="maroon">mm</span>.
 
@@ -165,17 +181,17 @@ thus should include a year and time zone.
 
 # Specific dates and times
 
-The `stamp` in **?@sec-stamp** assumes that the year and time zone are
-known. A date without a year is like a time without a time zone, both
-depend on the context. Most likely, we are talking about the current
-year and the local time zone, but it may be unclear. Including a year
-allows us to pinpoint a specific day, instead of a day that could happen
-any year. Similarly, a time with a time zone occurs once every day,
-rather than once in every time zone per day. The `Day` `306` of 1969,
-would be written `1969+306` and said “Year 1969 Day 306” or simply “1969
-306”, while midnight in `Zone` `0` would be written `.000+0` and said
-“Dot 0 Zone 0”, “0 Zone 0”, or “0 0”. Combined together, this date and
-time form the `stamp` `1969+306.000+0`.
+The `snap` above assumes that the year and time zone are known. A date
+without a year is like a time without a time zone, both depend on the
+context. Most likely, we are talking about the current year and the
+local time zone, but it may be unclear. Including a year allows us to
+pinpoint a specific day, instead of a day that could happen any year.
+Similarly, a time with a time zone occurs once every day, rather than
+once in every time zone per day. The `Day` `306` of 1969, would be
+written `1969+306` and said “Year 1969 Day 306” or simply “1969 306”,
+while midnight in `Zone` `0` would be written `.000+0` and said “Dot 0
+Zone 0”, “0 Zone 0”, or “0 0”. Combined together, this date and time
+form the `stamp` `1969+306.000+0`.
 
 # Negative numbers
 
@@ -195,11 +211,10 @@ by both 0 and −*N*, while the last `doty` is indexed by both −1 and *N*.
 In general, negative numbers show the number of parts that are left in
 the whole. A negative `doty` shows how many days remain in the year and
 a negative time [counts down](https://en.wikipedia.org/wiki/Countdown)
-to the end of the day. To extend the fractions analogy in **?@sec-frac**
-to negative numbers, the negative number added to the whole gives us the
-numerator of the positive fraction (*p**o**s* = *N* + *n**e**g*).
-Positive and negative numbers arrive at the same answer from opposite
-directions.
+to the end of the day. To extend the fractions analogy to negative
+numbers, the negative number added to the whole gives us the numerator
+of the positive fraction (*p**o**s* = *N* + *n**e**g*). Positive and
+negative numbers arrive at the same answer from opposite directions.
 
 In certain contexts, the choice of using a negative number over a
 positive number may mean that we want to emphasize how much time is left
@@ -235,8 +250,8 @@ are often best, `Declock` times can have any number of digits, depending
 on the desired precision level. `Declock` provides names for extremely
 precise time units, but the most relevant units are within a few orders
 of magnitude from a day, which is the base unit of both `Declock` and
-`Decalendar`. Listing the units of each, as in **?@tbl-unit**,
-highlights the relationship between the two:
+`Decalendar`. Listing the units of each highlights the relationship
+between the two:
 
 <div id="decnavbtm">
 
@@ -297,149 +312,117 @@ isoHour = Math.floor(decHour)
 isoMinute = Math.floor(decMinute)
 isoSecond = Math.floor(decSecond)
 isLeap = decYear % 4 == 0 && decYear % 100 != 0 || decYear % 400 == 0;
-midYear = 182.5 + .5 * isLeap
-midYearDiff = (decDate - midYear).toFixed(5)
-midYearDotm = isLeap ? 30 : 31
-midYearHour = isLeap ? 0 : 12
-pastmidYear = decDate > midYear
-sinceUntil = pastmidYear ? "since" : "until"
+// https://observablehq.com/@enjalot/draggable-world-map-coordinates-input
+function worldMapCoordinates(config = {}, dimensions) {
+  const {
+    value = [], title, description, width = dimensions[0]
+  } = Array.isArray(config) ? {value: config} : config;
+  const height = dimensions[1];
+  let [lon, lat] = value;
+  lon = lon != null ? lon : null;
+  lat = lat != null ? lat : null;
+  const formEl = html`<form style="width: ${width}px;"></form>`;
+  const context = DOM.context2d(width, height);
+  const canvas = context.canvas;
+  canvas.style.margin = `-6px 0 ${width > 400 ? -12 : -18}px`;
+  const projection = config[2]
+    .precision(0.1)
+    .fitSize([width, height], { type: "Sphere" });
+  const path = d3.geoPath(projection, context).pointRadius(2.5);
+  formEl.append(canvas);
+  function draw() {
+    context.fillStyle = "#ffffff00";
+    context.fillRect(0, 0, width, height);
+    context.beginPath(); path({type: "Sphere"});
+    context.fillStyle = colors.ocean; context.fill();
+    context.beginPath();
+    path(land);
+    context.fillStyle = colors.land;
+    context.fill();
+    context.beginPath();
+    path(graticule);
+    context.lineWidth = 0.95;
+    context.strokeStyle = `#555`;
+    context.stroke();
+    context.beginPath();
+    path(borders);
+    context.lineWidth = .95;
+    context.strokeStyle = `#aaa`;
+    context.stroke();
+    context.fillStyle = `#000`;
+    context.font = width < 760 ? "12px serif" : "18px serif";
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 54])));
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -60])));
+    context.beginPath(), path(night), context.fillStyle = "rgba(0,0,255,0.1)", context.fill();
+    context.beginPath(); path.pointRadius(17); path({type: "Point", coordinates: sun}); context.strokeStyle = "#0008"; context.fillStyle = "#ff0a"; context.lineWidth = 1; context.stroke(); context.fill();
+  }
+  draw();
+  return formEl;
+}
+projections = [
+   {name: "CylindricalEqualArea", value: d3.geoCylindricalEqualArea},
+   {name: "CylindricalStereographic", value: d3.geoCylindricalStereographic},
+   {name: "Eckert1", value: d3.geoEckert1},
+   {name: "Eckert2", value: d3.geoEckert2},
+   {name: "Eckert3", value: d3.geoEckert3},
+   {name: "Eckert4", value: d3.geoEckert4},
+   {name: "Eckert5", value: d3.geoEckert5},
+   {name: "EqualEarth", value: d3.geoEqualEarth},
+   {name: "Equirectangular", value: d3.geoEquirectangular},
+   {name: "Hufnagel", value: d3.geoHufnagel},
+   {name: "Kavrayskiy7", value: d3.geoKavrayskiy7},
+   {name: "Mercator", value: d3.geoMercator},
+   {name: "Miller", value: d3.geoMiller},
+   {name: "NaturalEarth1", value: d3.geoNaturalEarth1},
+   {name: "NaturalEarth2", value: d3.geoNaturalEarth2},
+   {name: "Patterson", value: d3.geoPatterson},
+   {name: "Robinson", value: d3.geoRobinson},
+   {name: "Times", value: d3.geoTimes},
+   {name: "Wagner4", value: d3.geoWagner4},
+   {name: "Wagner6", value: d3.geoWagner6},
+   {name: "Winkel3", value: d3.geoWinkel3},
+]
+colors = ({
+  night: "#719fb6",
+  day: "#ffe438",
+  grid: "#4b6a79",
+  ocean: "#adeeff",
+  land: "#f5f1dc",
+  sun: "#ffe438"
+})
+d3 = require("d3@5", "d3-drag@3", "d3-array@2", "d3-geo@2", "d3-geo-projection@3")
+graticule = d3.geoGraticule().stepMinor([36,0]).stepMajor([36,0])()
+function long2turn(degrees = -180, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return (((degrees %= 360) < 0 ? degrees + 360 : degrees) + 18) / (360 / 10**e) % 10**e;
+}
+function long2zone(degrees = -180) {
+  return Math.floor(long2turn(degrees, 1));
+}
+sun = {
+  const now = new Date;
+  const day = new Date(+now).setUTCHours(0, 0, 0, 0);
+  const t = solar.century(now);
+  const longitude = (day - now) / 864e5 * 360 - 180;
+  return [longitude - solar.equationOfTime(t) / 4, solar.declination(t)];
+}
+night = d3.geoCircle().radius(90).center(antipode(sun))()
+antipode = ([longitude, latitude]) => [longitude + 180, -latitude]
+graticule.coordinates = graticule.coordinates.map(
+  i => i.map(j => j.map((k, index, arr) => i.length === 3 && index === 0 ? k - 18 : k))
+)
+land = topojson.feature(world, world.objects.land)
+world = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/land-50m.json").then(response => response.json())
+topojson = require("topojson-client@3")
+solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
+d3require = require("d3@5", "d3-drag@3", "d3-array@2", "d3-geo@2", "d3-geo-projection@3")
+borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
+countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
 ```
 
 <style>
-div.cell:has(form.oi-3a86ea-toggle) {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-div.observablehq > div:has(form.oi-3a86ea-toggle) {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-div.cell:has(form.oi-3a86ea) {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-form.oi-3a86ea-toggle {
-  max-width: 100% !important;
-  --input-width: 30px;
-  --label-width: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-form.oi-3a86ea {
-  --input-width: 200px;
-  padding-right: 9px;
-}
-form.oi-3a86ea-toggle > label {
-  width: 75px;
-}
-form.oi-3a86ea-toggle > label[for="oi-3a86ea-2"] {
-  width: 110px;
-}
-form.oi-3a86ea-toggle > input#oi-3a86ea-2 {
-  width: 15px;
-}
-form.oi-3a86ea-toggle {
-  width: 110px;
-}
-form.oi-3a86ea-toggle:has(input#oi-3a86ea-2) {
-  width: 150px;
-}
-input.oi-3a86ea-input[type="checkbox"] {
-  margin: 4px 0px 0px 0px;
-}
-div > form.oi-3a86ea > label {
-  --label-width: 105px;
-}
-form.oi-3a86ea > div.oi-3a86ea-input > input[type="number"] {
-  max-width: 60px;
-}
-div.column-page:has(svg.leftplot), div.column-page:has(svg.rightplot) {
-  display: flex;
-  justify-content: center;
-}
-div.observablehq > figure > h2 {
-  text-align: center;
-  font-size: 1.3rem;
-  margin-bottom: -8px;
-}
-input[type="radio"] {
-  margin: 1px 0px 0px 0px;
-}
-p:has(.radiotitle) {
-  margin-top: -6px;
-  margin-bottom: -3px;
-}
-#radiobuttons {
-  margin-bottom: -12px;
-}
-h4.anchored {
-  margin: 8px 0px 8px 0px;
-}
-#mermaid-1 {
-  margin-top: 15px;
-  margin-bottom: -20px;
-}
-div.cell-output-display:has(svg#navtop-mermaid.flowchart.mermaid-js) {
-  margin-top: -5px;
-  margin-bottom: -5px;
-}
-div.cell-output-display:has(svg#zerobasedpent-mermaid.flowchart.mermaid-js) {
-  margin-top: -15px;
-}
-div.cell-output-display:has(svg#onebasedpent-mermaid.flowchart.mermaid-js) {
-  margin-top: -5px;
-  margin-bottom: -5px;
-}
-div.cell-output-display:has(svg#conversionchart-mermaid.flowchart.mermaid-js) {
-  margin-top: -15px;
-  margin-bottom: -15px;
-}
-div.cell-output-display:has(svg#navbtm-mermaid.flowchart.mermaid-js) {
-  margin-top: -15px;
-  margin-bottom: 5px;
-}
-span.nodeLabel > p {
-  text-align: center;
-}
-div.hand {
-  display: flex;
-  flex-wrap: wrap;
-}
-div.hand > svg {
-  margin: 5px 5px 20px 5px;
-}
-div.overflowequation {
-  margin-top: -20px;
-  margin-bottom: -20px;
-}
-div#leapscrubvert {
-  margin-top: -10px;
-}
-svg.topplot {
-  margin-top: -9px;
-  margin-bottom: -9px;
-  overflow: clip;
-}
-svg.btmplot {
-  margin-top: -9px;
-  margin-bottom: -15px;
-  overflow: clip;
-}
-svg.leftplot {
-  margin-top: -9px;
-  margin-bottom: -15px;
-  overflow: clip;
-}
-svg.rightplot {
-  margin-top: -9px;
-  margin-bottom: -15px;
-  overflow: clip;
-}
-form.oi-3a86ea-checkbox {
-  max-width: 800px;
+div#zonemap {
+   overflow-y:hidden;
+   margin-top: -15px;
 }
 </style>
