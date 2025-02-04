@@ -53,7 +53,7 @@ snap🫰<span class="yellow">${String(decYear).padStart(4,
 “0”)}</span>+<span class="cyan">${String(decDate).padStart(3,
 “0”)}</span>.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>+<span class="lime">0</span>.
 The Dec analog of the UTC+00:00, Zone <span class="lime">0</span>, is
-shown on the left side of the map below.
+shown on the left side of the map🗺️below.
 
 ``` {ojs}
 //| echo: false
@@ -67,6 +67,23 @@ viewof coordinates = worldMapCoordinates([162, 0, choice.value().rotate([-156, 0
 viewof choice = Inputs.select(
   projections, {label: "Projection:", format: x => x.name, value: projections.find(t => t.name === "Equirectangular")})
 ```
+
+Dec has ten time zones which are each one <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="a tenth of a turn">deciturn</span> wide and are numbered
+zero through nine, like the ten
+[meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of)
+that separate them. Zone <span class="lime">0</span> is in between
+Meridians 0 and 1. [Meridian
+0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole),
+which runs through Iceland and the Atlantic Ocean just West of Africa,
+is the Dec [International Date
+Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
+and [prime
+meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0).
+[Meridian
+1](https://en.wikipedia.org/wiki/18th_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Europe%2C%20Africa%2C%20the%20Atlantic%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
+divides Europe and Africa into Western and Eastern halves.
 
 The ISO🌐8601 format is
 <span class="yellow">year</span>-<span class="mulberry">mm</span>-<span class="magenta">dd</span>T<span class="hardwood">hh</span>:<span class="maroon">mm</span>:<span class="sienna">ss</span>+<span class="hardwood">hh</span>:<span class="maroon">mm</span>.
