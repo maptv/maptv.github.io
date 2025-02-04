@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+339
+2024+340
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -402,29 +402,29 @@ represents a day in a previous or subsequent year.
 
 The current <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> can be expressed as
-<span class="cyan">${decoDoty}</span> or
+<span class="cyan">${decDoty}</span> or
 -<span class="pink">${Tminus}</span>. The difference between any
 positive <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> and its negative equivalent is
-<span class="orange">n</span>: <span class="cyan">${decoDoty}</span> –
+<span class="orange">n</span>: <span class="cyan">${decDoty}</span> –
 -<span class="pink">${Tminus}</span> =
 <span class="orange">${nDaysInYear}</span>. We obtain the current dek
-via the dek equation, <span class="cyan">${decoDek}</span> =
-⌊<span class="cyan">${decoDoty}</span> ÷ 10⌋, and the current
+via the dek equation, <span class="cyan">${decDek}</span> =
+⌊<span class="cyan">${decDoty}</span> ÷ 10⌋, and the current
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">dod</span> number via the
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">dod</span> equation:
-<span class="cyan">${decoDod}</span> =
-<span class="cyan">${decoDoty}</span>
+<span class="cyan">${decDod}</span> =
+<span class="cyan">${decDoty}</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 10. To combine a dek and <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-dek">dod</span>, we
 multiply the dek by ten and add the <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-dek">dod</span>:
-<span class="cyan">${decoDoty}</span> =
-<span class="cyan">${decoDek}</span> × 10 +
-<span class="cyan">${decoDod}</span>.
+<span class="cyan">${decDoty}</span> =
+<span class="cyan">${decDek}</span> × 10 +
+<span class="cyan">${decDod}</span>.
 
 Unlike weeks in the Gregorian calendar🗓️, <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="days-of-year">doys</span> and
@@ -694,8 +694,8 @@ data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>, and
 ⌊<span class="yellow">y</span>⌋. The current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="year-of-era">yoe</span> equation
 values are <span class="yellow">${fullfracYear}</span> =
-<span class="yellow">${decoYear}</span> +
-<span class="cyan">${decoDoty}</span> ÷
+<span class="yellow">${decYear}</span> +
+<span class="cyan">${decDoty}</span> ÷
 <span class="orange">${nDaysInYear}</span>.
 
 Dec dates do not include <span class="orange">n</span>, because it is
@@ -764,7 +764,7 @@ data-bs-title="day-of-year">doy</span> equation,
 part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
 of <span class="yellow">y</span>. The current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> equation
-values are <span class="cyan">${decoDoty}</span> =
+values are <span class="cyan">${decDoty}</span> =
 ⌊<span class="yellow">${mod1FracYear}</span> ×
 <span class="orange">${nDaysInYear}</span>⌋. In Dec, a
 <span class="under tool" data-bs-toggle="tooltip"
@@ -780,12 +780,12 @@ math expressions. Instead of simplifying a fixed⚓️date into a
 data-bs-title="year-of-era">yoe</span>, we can do the opposite and
 expand it to display additional information, such as the number of days
 in between it and another date. An expanded version of the current date,
-<span class="yellow">${decoYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>,
+<span class="yellow">${decYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>,
 can tell us that <span class="denim">${Math.abs(xmasDiff)}</span> days
 ${xmasDiffSince} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="December 25"><u>Day 299</u></span>🎄of this year.
 
-In the example above, the minuend <span class="cyan">${decoDoty}</span>
+In the example above, the minuend <span class="cyan">${decDoty}</span>
 has been expanded into the subtrahend <span class="cyan">299</span> and
 the difference <span class="denim">${xmasDiff}</span> as per the Dec
 minuend equation: minuend = subtrahend + difference. If we were
@@ -796,7 +796,7 @@ countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=backward%20counting%2
 
 To see its minuend, subtrahend, and difference at the same time, we
 could rewrite the expanded date above as a Dec span🌈:
-<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>=<span class="yellow">${decoYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>.
+<span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>=<span class="yellow">${decYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>.
 Unlike expanded dates, Dec spans🌈represent time intervals instead of
 individual dates and are structured like the minuend equation as opposed
 to a math expression that can be simplified to a
@@ -805,14 +805,14 @@ data-bs-title="year-of-era">yoe</span>.
 
 Whereas expanded dates have a set structure that does not change, Dec
 spans🌈can omit the subtrahend,
-<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>=${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>,
+<span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>=${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>,
 or the difference,
-<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>=<span class="yellow">${decoYear}</span>+<span class="cyan">299</span>.
+<span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>=<span class="yellow">${decYear}</span>+<span class="cyan">299</span>.
 If the year is the same on both sides of the equals sign, it can be
 omitted from the minuend,
-<span class="cyan">${decoDoty}</span>=<span class="yellow">${decoYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>,
+<span class="cyan">${decDoty}</span>=<span class="yellow">${decYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="denim">${Math.abs(xmasDiff)}</span>,
 or from the subtrahend along with the difference:
-<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>=<span class="cyan">299</span>.
+<span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>=<span class="cyan">299</span>.
 
 Dec spans🌈 can omit their entire
 [left](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20expression%20on%20the%20left%20of%20the%20%22%3D%22)-hand
@@ -841,15 +841,15 @@ Even though Decalendar works best with deks, Dec dates can display POSIX
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-week">dows</span>. Instead of the current Dec
 date,
-<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>,
+<span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>,
 the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
 (navbar) of my site displays the current Dec <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> date,
-<span class="yellow">${decoYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="wine">${dotw}</span>,
+<span class="yellow">${decYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="wine">${dotw}</span>,
 by splitting the current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>,
-<span class="cyan">${decoDoty}</span>, into the <span class="under tool"
+<span class="cyan">${decDoty}</span>, into the <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> of the
 first day of the current week (<span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="Sunday">Dow 0</span>
@@ -954,7 +954,7 @@ data-bs-title="day-of-week">dow</span> dates can be further expanded to
 include Dec week-of-year (<span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="week-of-year">woy</span>)
 numbers:
-<span class="yellow">${decoYear}</span>+7×<span class="wheat">${week}</span>+<span class="wine">${dotw}</span>.
+<span class="yellow">${decYear}</span>+7×<span class="wheat">${week}</span>+<span class="wine">${dotw}</span>.
 The current <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="week-of-year">woy</span>,
 <span class="wheat">${week}</span>, is the sum of the
@@ -980,7 +980,7 @@ data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and the
 data-bs-title="March 1"><u>Day 0</u></span> <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>: 7 ×
 <span class="wheat">${week}</span> + <span class="wine">${dotw}</span> =
-<span class="cyan">${decoDoty}</span> +
+<span class="cyan">${decDoty}</span> +
 <span class="wine">${doty0dotw}</span>.
 
 To create a Dec <span class="under tool" data-bs-toggle="tooltip"
@@ -1241,11 +1241,11 @@ data-bs-toggle="tooltip" data-bs-title="February 29"><u>Day
 365</u></span> is the only day in Pent 73. <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span> is
 the first day of Pent 0, the first pent of the year. To get the current
-pent number, ${decoPent}, we double the current dek number,
-<span class="cyan">${decoDek}</span>, and then add 1 if the current
+pent number, ${decPent}, we double the current dek number,
+<span class="cyan">${decDek}</span>, and then add 1 if the current
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-dek">dod</span> number,
-<span class="cyan">${decoDod}</span>, is greater than 4. To avoid
+<span class="cyan">${decDod}</span>, is greater than 4. To avoid
 [off-by-one
 errors](https://en.wikipedia.org/wiki/Off-by-one_error#:~:text=a%20logic%20error%20that%20involves%20a%20number%20that%20differs%20from%20its%20intended%20value%20by%201),
 pent, dek, <span class="under tool" data-bs-toggle="tooltip"
@@ -1401,7 +1401,7 @@ Dec dates can be expanded to display Dec month and [POSIX
 data-bs-title="day-of-month">dom</span>](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D)
 numbers. The current Dec <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-month">dom</span> date is
-<span class="yellow">${decoYear}</span>+<span class="cyan">${monthNumber}</span>+<span class="magenta">${dotm}</span>.
+<span class="yellow">${decYear}</span>+<span class="cyan">${monthNumber}</span>+<span class="magenta">${dotm}</span>.
 Dec month numbers are the last <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> of the
 previous month because POSIX <span class="under tool"
@@ -1410,7 +1410,7 @@ one-based. For zero-based <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="days-of-month">doms</span>, Dec
 represents each month with its first <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>:
-<span class="yellow">${decoYear}</span>+<span class="cyan">${monthNumber0}</span>+<span class="magenta">${dotm0}</span>.
+<span class="yellow">${decYear}</span>+<span class="cyan">${monthNumber0}</span>+<span class="magenta">${dotm0}</span>.
 This way, Dec can support both zero- and one-based
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-month">doms</span>.
@@ -1434,7 +1434,7 @@ data-bs-toggle="tooltip"
 data-bs-title="day-of-month">dom</span>+<span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> Dec
 dates:
-<span class="yellow">${decoYear}</span>+<span class="cyan">${monthNumber -
+<span class="yellow">${decYear}</span>+<span class="cyan">${monthNumber -
 dotw}</span>+<span class="magenta">${dotm}</span>+<span class="wine">${dotw}</span>,
 where <span class="cyan">${monthNumber - dotw}</span> is
 <span class="cyan">d</span>-<span class="magenta">m</span>-<span class="wine">w</span>,
@@ -2732,7 +2732,7 @@ Howard](https://howardhinnant.github.io). <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="2021-09-01"><u><span class="yellow">2021</span>+<span class="cyan">184</span></u></span>.
 “`chrono`-Compatible Low-Level Date Algorithms.”
-<span class="yellow">${decoYear}</span>+<span class="cyan">${decoDoty}</span>.
+<span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>.
 <https://howardhinnant.github.io/date_algorithms.html>.
 
 ``` {ojs}
@@ -2767,15 +2767,11 @@ function dote2date(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
-function doty2deco0(year = 1969, doty = 306, zone = 0) {
-  return `${year.toString().padStart(4, "0")}+${Math.floor(doty).toString().padStart(3, "0")}${String(doty % 1 * 10).slice(0, 6)}-${zone}`
-}
 function dotw2diff(x, y) {
   return (x - y + 7) % 7;
 }
 dz = unix2dote(unix)
 ydz = dote2date(...dz)
-deco = doty2deco0(...ydz)
 function year2leap(year = 1970) {
   return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
 }
@@ -2949,13 +2945,13 @@ function Scrubber(values, {
   Inputs.disposal(form).then(stop);
   return form;
 }
-decoYear = deco.slice(0, 4)
-nextYear = parseInt(decoYear) + 1
-decoDoty = deco.slice(5, 8)
-decoDek = decoDoty.slice(0, 2)
-decoDod = decoDoty[2]
-decoPent = decoDek * 2 + (decoDod > 4)
-xmasDiff = decoDoty - 299
+decYear = ydz[0]
+nextYear = decYear + 1
+decDoty = Math.floor(ydz[1])
+decDek = Math.floor(decDoty / 10)
+decDod = decDoty % 10
+decPent = decDek * 2 + (decDod > 4)
+xmasDiff = decDoty - 299
 xmasDiffSign = xmasDiff < 0 ? "-" : "+"
 xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
 xmasDote = date2dote(ydz[0], 299)[0]
@@ -2973,7 +2969,7 @@ doty0dotw = dote2dotw(doty0dote)
 week = Math.floor((ydz[1] + doty0dotw) / 7)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
-Tminus = nDaysInYear - decoDoty
+Tminus = nDaysInYear - decDoty
 TminusPadded = Tminus.toString().padStart(3, "0")
 fracYear = ydz[0] + ydz[1] / nDaysInYear
 fullfracYear = (fracYear).toFixed(4)

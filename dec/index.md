@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2024+339
+2024+340
 
 - [Context clues](#sec-context)
 - [Snaps](#snaps)
@@ -21,22 +21,78 @@ style="width:8.64in;height:0.98in" />
 
 This section of my site focuses on Dec, a [measurement
 system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)
-that [I](https://maptv.github.io) created to
-measure⏳time,📍position,🧭orientation,📐angles, and🔄cycles in
+that [I](https://maptv.github.io) created to measure time⏳, position📍,
+orientation🧭, angles📐, and cycles🔄in
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
 ([*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
-instead of months, weeks, hours, minutes, seconds, and degrees. For time
-measurement, Dec uses days and years, which are turns of a [celestial
+instead of months, weeks, hours, minutes, seconds, and degrees. To
+measure time⏳, Dec uses years and days. Years are turns of a celestial
+body around [the point it
+orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit).
+Days are turns of a [celestial
 body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity)
 on [its
-axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole)
-and around [the point it
-orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit),
-respectively.
+axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
 
-The two most important components of Dec are Decalendar and Declock. In
-the simplest terms, Decalendar counts fractions of a year, while Declock
-counts fractions of a day. The denominator for Decalendar is the number
+In the scope of time⏳measurement, Dec is comparable to the
+[ISO🌐8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
+international date📅and time⏳standard. The ISO🌐8601 [combined
+date📅and
+time⏳representation](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression)
+of the current
+[UTC+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00)
+time⏳, <span class="yellow">${String(isoYear).padStart(4,
+“0”)}</span>-<span class="mulberry">${String(month).padStart(2,
+“0”)}</span>-<span class="magenta">${String(decDotm).padStart(2,
+“0”)}</span>T<span class="hardwood">${String(isoHour).padStart(2,
+“0”)}</span>:<span class="maroon">${String(isoMinute).padStart(2,
+“0”)}</span>:<span class="sienna">${String(isoSecond).padStart(2,
+“0”)}</span>+<span class="hardwood">00</span>:<span class="maroon">00</span>,
+is equivalent to the Dec
+snap🫰<span class="yellow">${String(decYear).padStart(4,
+“0”)}</span>+<span class="cyan">${String(decDate).padStart(3,
+“0”)}</span>.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>+<span class="lime">0</span>.
+The ISO🌐8601 format is
+<span class="yellow">year</span>-<span class="mulberry">mm</span>-<span class="magenta">dd</span>T<span class="hardwood">hh</span>:<span class="maroon">mm</span>:<span class="sienna">ss</span>+<span class="hardwood">hh</span>:<span class="maroon">mm</span>.
+
+If the Dec day-of-year (<span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>),
+<span class="cyan">${String(decDate).padStart(3,
+“0”)}</span>.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>,
+is greater than <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="January 1">306</span>, the Dec year is 1 less than the
+ISO🌐year.
+
+The ISO🌐8601
+[time⏳interval](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=the%20intervening%20time%20between%20two%20time%20points)
+from now until midnight can be expressed without including the current
+time as , which is equivalent to the Dec span🌈.
+
+ISO🌐8601 and Dec are different objectives. ISO🌐8601 seeks to
+standardize how we measure time, whereas Dec aims to completely redefine
+how we measure time.
+
+Unlike ISO🌐8601, the documentation describing Dec is available for free
+under a [Creative Commons
+license](https://en.wikipedia.org/wiki/Creative_Commons_license#:~:text=one%20of%20several%20public%20copyright%20licenses%20that%20enable%20the%20free%20distribution%20of%20an%20otherwise%20copyrighted%20%22work%22).
+While ISO🌐8601 standardizes,
+
+can be split two components: the Dec calendar🗓️(Decalendar) and
+clock🕓(Declock). The year in Dec is the same as in the Dec
+counts🧮years and days as integers and fractions. In Dec, the
+[integer](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20integer%20written%20to%20the%20left%20of%20the%20decimal%20separator)
+and
+[fractional](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
+part of a year form a date, while the fractional part of a year. The
+fractional years are expressed by while [fractional
+days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days) are .
+since the Dec
+[epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era),
+Dec tracks the date as and the time of day as fractional days using a
+single number called the <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>. In
+essence, Decalendar and Declock count🧮fractions of a year and a day,
+respectively. The numerator and denominator for Decalendar is the number
 of days in the year, and the Declock denominator is 10<sup>*x*</sup>,
 where *x* is the number of digits in the numerator. In both systems,
 only the numerator, not the denominator, is provided. In the context of
@@ -192,6 +248,62 @@ style="width:8.64in;height:0.98in" />
 </div>
 
 </div>
+
+``` {ojs}
+//| echo: false
+//| output: false
+unix = {
+  while(true) {
+    yield Date.now();
+  }
+}
+// http://howardhinnant.github.io/date_algorithms.html#civil_from_days
+function unix2dote(unix, zone, offset = 719468) {
+  return [(unix ?? Date.now()) / 86400000 + (
+    zone = zone ?? -Math.round(
+      (new Date).getTimezoneOffset() / 144)
+    ) / 10 + offset, zone]
+}
+function dote2date(dote, zone = 0) {
+  const cote = Math.floor((
+      dote >= 0 ? dote
+      : dote - 146096
+    ) / 146097),
+  dotc = dote - cote * 146097,
+  yotc = Math.floor((dotc
+    - Math.floor(dotc / 1460)
+    + Math.floor(dotc / 36524)
+    - Math.floor(dotc / 146096)
+  ) / 365);
+  return [
+    yotc + cote * 400,
+    dotc - (yotc * 365
+      + Math.floor(yotc / 4)
+      - Math.floor(yotc / 100)
+  ), zone]}
+dz = unix2dote(unix, 0)
+ydz = dote2date(...dz)
+decYear = ydz[0]
+decDate = Math.floor(ydz[1])
+decTime = ydz[1] % 1
+decMoty = Math.floor((5 * decDate + 2) / 153)
+decDotm = Math.floor(decDate - (153 * decMoty + 2) / 5 + 1)
+isoYear = decYear + (decMoty > 9)
+month = decMoty < 10 ? decMoty + 3 : decMoty - 9
+decHour = decTime * 24
+decMinute = (decHour % 1) * 60
+decSecond = (decMinute % 1) * 60
+isoHour = Math.floor(decHour)
+isoMinute = Math.floor(decMinute)
+isoSecond = Math.floor(decSecond)
+isLeap = decYear % 4 == 0 && decYear % 100 != 0 || decYear % 400 == 0;
+midYear = 182.5 + .5 * isLeap
+midYearDiff = (decDate - midYear).toFixed(5)
+midYearDotm = isLeap ? 30 : 31
+midYearHour = isLeap ? 0 : 12
+pastmidYear = decDate > midYear
+sinceUntil = pastmidYear ? "since" : "until"
+```
 
 <style>
 div.cell:has(form.oi-3a86ea-toggle) {
