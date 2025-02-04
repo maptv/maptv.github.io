@@ -1,29 +1,30 @@
 ---
-title: Knitr
+title: Jupyter
 draft: true
 author:
   - name: Martin Laptev
     url: https://maptv.github.io
 date: last-modified
 filters:
-  - ../../asset/date.lua
-image: horst_knitr.png
+  - ../asset/date.lua
+image: horst_jupyter.png
 categories:
   - tool
   - knitr
+  - jupyter
   - quarto
 date-format: x
 format:
   html:
     include-after-body:
-      - ../../asset/stamp.html
-      - ../../asset/style.html
-      - ../../asset/tooltip.html
+      - ../asset/stamp.html
+      - ../asset/style.html
+      - ../asset/tooltip.html
 ---
 
 ## [TL;DR]{.underline .blue data-bs-toggle="tooltip" data-bs-title="too long; didn't read"}
 
-The goal of this blog post, the last (index: -1) in my [Tools](..#category=tool) blog post series, is to
+The goal of this blog post, the second to last (index: -2) in my [Tools](..#category=tool) blog post series, is to
 
 ```{mermaid}
 %%| column: margin
@@ -40,7 +41,7 @@ flowchart TB
    click D "../observable"
    click E "../jupyter"
    click F "../knitr"
-   style F stroke:#99f,stroke-width:5px
+   style E stroke:#99f,stroke-width:5px
 ```
 
 ## Introduction {#sec-intro}

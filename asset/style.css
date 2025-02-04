@@ -250,6 +250,20 @@ div > form > label {
   padding: 0px 2px 0px 2px;
 }
 
+.mulberry {
+  border-radius: 4px;
+  background-color: #C54BBC;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
+.hardwood {
+  border-radius: 4px;
+  background-color: #937A62;
+  color: white;
+  padding: 0px 2px 0px 2px;
+}
+
 .honeydew {
   border-radius: 4px;
   background-color: honeydew;

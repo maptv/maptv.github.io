@@ -17,12 +17,12 @@ date-format: x
 format:
   html:
     include-after-body:
-      - ../../asset/cite.html
-      - ../../asset/style.html
-      - ../../asset/stamp.html
-      - ../../asset/tooltip.html
+      - ../asset/cite.html
+      - ../asset/style.html
+      - ../asset/stamp.html
+      - ../asset/tooltip.html
 filters:
-  - ../../asset/date.lua
+  - ../asset/date.lua
   - include-code-files
 ---
 

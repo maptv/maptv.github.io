@@ -98,13 +98,13 @@ website:
       #   text: Setup
       - icon: git
         text: Git
-        href: software/git/index.qmd
+        href: git/index.qmd
       - icon: p-square
         text: Positron
-        href: software/positron/index.qmd
+        href: positron/index.qmd
       - icon: journal-richtext
         text: Jupyter
-        href: software/jupyter/index.qmd
+        href: jupyter/index.qmd
       - section: Quarto
         icon: markdown
         href: quarto/index.qmd
@@ -120,7 +120,7 @@ website:
           href: quarto/include/index.qmd
       - icon: 0-circle
         text: Observable
-        href: software/observable/index.qmd
+        href: observable/index.qmd
   twitter-card: true
   page-footer:
     background: light
