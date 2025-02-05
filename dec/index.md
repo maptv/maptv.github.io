@@ -36,26 +36,128 @@ axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20
 
 Dec time⏳measurement is comparable to the
 [ISO🌐8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
-international date📅and time⏳standard. The ISO🌐8601 current [combined
-date📅and
-time⏳](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression)in
-the
-[UTC+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00)
-time⏳zone, <span class="yellow">${String(isoYear).padStart(4,
+international date📅and time⏳standard. In particular, the
+ISO🌐<span class="yellow">yyyy</span>-<span class="mulberry">mm</span>-<span class="magenta">dd</span>T<span class="hardwood">hh</span>:<span class="maroon">mm</span>:<span class="sienna">ss</span>+<span class="hardwood">hh</span>:<span class="maroon">mm</span>
+format is equivalent to the Dec
+snap🫰<span class="yellow">year</span>+<span class="cyan">day.clock</span>-<span class="lime">z</span>
+format. Both formats represent a [point in
+time](https://en.m.wikipedia.org/wiki/Instant#:~:text=an%20infinitesimal%20interval%20in%20time)
+and have multiple components that are organized by scale from the
+largest to the smallest.
+
+In between the <span class="yellow">year</span> and
+<span class="lime">zone</span> of a Dec snap🫰is
+<span class="cyan">day.clock</span>, a single number called a
+<span class="cyan">day-of-year</span> (<span class="cyan under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>) which
+serves the same purpose as the <span class="mulberry">month</span>,
+<span class="magenta">day-of-month</span>
+(<span class="magenta under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-month">dom</span>),
+<span class="hardwood">hour</span>, <span class="maroon">minute</span>,
+and <span class="sienna">second</span> in between the year and time zone
+in the ISO🌐format. The [integer
+part](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20integer%20written%20to%20the%20left%20of%20the%20decimal%20separator)
+of the <span class="cyan under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span>, <span class="cyan">day</span>,
+identifies a specific day in the given year and its
+[fractional](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
+part is the time-of-day (<span class="cyan under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>):
+<span class="cyan">.clock</span>.
+
+The Dec snap🫰in the Zone <span class="lime">0</span> Dec time⏳zone,
+<span class="yellow">${String(decYear).padStart(4,
+“0”)}</span>+<span class="cyan">${String(decDate).padStart(3,
+“0”)}</span>.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>+<span class="lime">0</span>,
+is equivalent to its ISO🌐8601
+[counterpart](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression)
+in the
+[UTC+<span class="maroon">00</span>:<span class="sienna">00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00)
+time⏳zone: <span class="yellow">${String(isoYear).padStart(4,
 “0”)}</span>-<span class="mulberry">${String(month).padStart(2,
 “0”)}</span>-<span class="magenta">${String(decDotm).padStart(2,
 “0”)}</span>T<span class="hardwood">${String(isoHour).padStart(2,
 “0”)}</span>:<span class="maroon">${String(isoMinute).padStart(2,
 “0”)}</span>:<span class="sienna">${String(isoSecond).padStart(2,
-“0”)}</span>+<span class="hardwood">00</span>:<span class="maroon">00</span>,
-is equivalent to the Dec
-snap🫰<span class="yellow">${String(decYear).padStart(4,
+“0”)}</span>+<span class="hardwood">00</span>:<span class="maroon">00</span>.
+In the current doy, <span class="cyan">${String(decDate).padStart(3,
+“0”)}</span>.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>,
+the integer part, <span class="cyan">${String(decDate).padStart(3,
+“0”)}</span>, corresponds to the
+ISO🌐<span class="mulberry">month</span> and <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-month">dom</span>,
+<span class="mulberry">${String(month).padStart(2,
+“0”)}</span>-<span class="magenta">${String(decDotm).padStart(2,
+“0”)}</span>, and the fractional part,
+.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>, converts to
+the ISO🌐<span class="hardwood">hour</span>,
+<span class="maroon">minute</span>, and
+<span class="sienna">second</span>:
+T<span class="hardwood">${String(isoHour).padStart(2,
+“0”)}</span>:<span class="maroon">${String(isoMinute).padStart(2,
+“0”)}</span>:<span class="sienna">${String(isoSecond).padStart(2,
+“0”)}</span>.
+
+The <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> in a middle of the Dec format
+acts as the Dec analog of a month, day of month dom, hour, minute, and
+second.
+
+The integer part of the <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>, ,
+identifies a day in the given year and the fractional part is the time
+of day tod: . The Dec and ISO years are the same for the first 306 days
+of the Dec year. When the <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> is
+greater than or equal to <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="January 1">306</span>, the Dec
+year is one less than the ISO year.
+
+The
+
+snap🫰
+
+, The Dec analog of UTC+00:00, Zone <span class="lime">0</span>, is on
+the left side of the map🗺️below.
+
+The Dec and ISO years are the same for the first 306 days of the Dec
+year. When the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> is greater than or equal to
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="January 1">306</span>, the Dec year is one less than the
+ISO year.
+
+The <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> does more than just identify a
+specific moment in time.
+
+big endian and thus start with the the largest unit, the year. , start
+with a year, and end with a time zone.
+
+The <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span>
+<span class="cyan">day.clock</span> in a snap🫰
+
+The current ISO🌐8601 [combined date📅and
+time⏳](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression)in
+the
+[UTC+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00)
+time⏳zone is <span class="yellow">${String(isoYear).padStart(4,
+“0”)}</span>-<span class="mulberry">${String(month).padStart(2,
+“0”)}</span>-<span class="magenta">${String(decDotm).padStart(2,
+“0”)}</span>T<span class="hardwood">${String(isoHour).padStart(2,
+“0”)}</span>:<span class="maroon">${String(isoMinute).padStart(2,
+“0”)}</span>:<span class="sienna">${String(isoSecond).padStart(2,
+“0”)}</span>+<span class="hardwood">00</span>:<span class="maroon">00</span>.
+
+the Dec<span class="yellow">${String(decYear).padStart(4,
 “0”)}</span>+<span class="cyan">${String(decDate).padStart(3,
 “0”)}</span>.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>+<span class="lime">0</span>.
-The Dec analog of UTC+00:00, Zone <span class="lime">0</span>, is shown
-on the left side of the
-[solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
-map🗺️below.
+snap🫰
+
+The Dec analog of UTC+00:00, Zone <span class="lime">0</span>, is on the
+left side of the map🗺️below.
 
 ``` {ojs}
 //| echo: false
@@ -80,6 +182,8 @@ viewof utctoggle = Inputs.toggle({label: "UTC", value: false})
 viewof select = Inputs.select(
   projections, {label: "Projection:", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
 ```
+
+[solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
 
 Dec has ten
 [time⏳zones](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time)
@@ -120,24 +224,7 @@ UTC+00:00 is in the middle of Zone 0, but makes detours to include
 Iceland and other islands. Except for such detours, each UTC time zone
 is 41.6̅ milliturns wide.
 
-In both the ISO format, , and Dec format, year+day.clock-z, the year is
-at the beginning and the time zone is at the end. The number in the
-middle of the Dec format, which is called a day-of-year
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>), acts as the Dec analog of a
-month, day of month dom, hour, minute, and second. The integer part of
-the <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>, , identifies a day in the given
-year and the fractional part is the time of day tod: . The Dec and ISO
-years are the same for the first 306 days of the Dec year. When the
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> is greater than or equal to
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="January 1">306</span>, the Dec year is one less than the
-ISO year.
-
 The ISO🌐8601 format is
-<span class="yellow">year</span>-<span class="mulberry">mm</span>-<span class="magenta">dd</span>T<span class="hardwood">hh</span>:<span class="maroon">mm</span>:<span class="sienna">ss</span>+<span class="hardwood">hh</span>:<span class="maroon">mm</span>.
 
 If the Dec day-of-year (<span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>),
@@ -369,6 +456,8 @@ ydz = dote2date(...dz)
 decYear = ydz[0]
 decDate = Math.floor(ydz[1])
 decTime = ydz[1] % 1
+decDek = Math.floor(decDate / 10)
+decDod = decDate % 10
 decMoty = Math.floor((5 * decDate + 2) / 153)
 decDotm = Math.floor(decDate - (153 * decMoty + 2) / 5 + 1)
 isoYear = decYear + (decMoty > 9)
