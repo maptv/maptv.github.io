@@ -14,7 +14,7 @@ website:
   search:
     location: sidebar
     type: overlay
-    keyboard-shortcut: ["/", "?", "h", "f", "s"]
+    keyboard-shortcut: []
     copy-button: true
     show-item-context: true
   page-navigation: true

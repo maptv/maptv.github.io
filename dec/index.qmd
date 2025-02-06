@@ -42,42 +42,9 @@ flowchart LR
    click E "/dec/span"
 ```
 
-This section of my site focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created to measure time⏳, position📍, orientation🧭, angles📐, and cycles🔄in [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) instead of months, weeks, hours, minutes, seconds, and degrees. To measure time⏳, Dec uses years and days. Years are turns of a celestial body around [the point it orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit). Days are turns of a [celestial body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
+This section of my site focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created to measure time⏳, position📍, orientation🧭, angles📐, and cycles🔄in [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) instead of months, weeks, hours, minutes, seconds, and degrees. To measure time, Dec uses years and days. Years are turns of a celestial body around [the point it orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit). Days are turns of a [celestial body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
 
-The distinguishing characteristics of Dec are its simplicity and consistency. These qualities are evident when comparing Dec and [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) time zones using the toggle✅inputs beneath the world🌏map🗺️below⬇️. The 10 Dec time zones are all 1 [deciturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a turn"} wide, whereas the 40 UTC time zones shown on the map frequently deviate from a width of 41⅔ [milliturns]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a turn"} to conform to political and geographic boundaries.
-
-By default, the 
-Using the toggle✅inputs, we supplement the map with more than 
-by the world 🌏map 🗺️ below ⬇️. By default, the map shows that 
-
-[UTC+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00) 
-
-The [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} in a middle of the Dec format acts as the Dec analog of a month, day of month dom, hour, minute, and second.
-
-The integer part of the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}, , identifies a day in the given year and the fractional part is the time of day tod: . The Dec and ISO years are the same for the first 306 days of the Dec year. When the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} is greater than or equal to [306]{.under .tool data-bs-toggle="tooltip" data-bs-title="January 1"}, the Dec year is one less than the ISO year.
-
-
-
-, 
-The Dec analog of UTC+00:00, Zone [0]{.lime}, is on the left side of the map🗺️below.
-
-
-The Dec and ISO years are the same for the first 306 days of the Dec year. When the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} is greater than or equal to [306]{.under .tool data-bs-toggle="tooltip" data-bs-title="January 1"}, the Dec year is one less than the ISO year.
-
-
-The [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} does more than just identify a specific moment in time.
-
-big endian and thus start with the the largest unit, the year. , start with a year, and end with a time zone. 
-
-The [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} [day.clock]{.cyan} in a snap🫰
-
-The current ISO🌐8601 [combined date📅and time⏳](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression)in the [UTC+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00) time⏳zone is [\${String(isoYear).padStart(4, "0")}]{.yellow}-[\${String(month).padStart(2, "0")}]{.mulberry}-[\${String(decDotm).padStart(2, "0")}]{.magenta}T[\${String(isoHour).padStart(2, "0")}]{.hardwood}:[\${String(isoMinute).padStart(2, "0")}]{.maroon}:[\${String(isoSecond).padStart(2, "0")}]{.sienna}+[00]{.hardwood}:[00]{.maroon}. 
-
-the Dec[\${String(decYear).padStart(4, "0")}]{.yellow}+[\${String(decDate).padStart(3, "0")}]{.cyan}.[\${decTime.toFixed(5).slice(2)}]{.cyan}+[0]{.lime}.
- snap🫰
-
-
-The Dec analog of UTC+00:00, Zone [0]{.lime}, is on the left side of the map🗺️below.
+The distinguishing characteristics of Dec are its simplicity and consistency. These qualities are evident when comparing Dec and [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) time zones using the [toggle](https://observablehq.com/@observablehq/input-toggle)✅inputs beneath the world🌏map🗺️below⬇️. The 10 Dec time zones are all 1 [deciturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a turn"} wide, whereas the 40 UTC time zones shown on the map all deviate from their standard width of 41⅔ [milliturns]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a turn"} to conform to political boundaries.
 
 ```{ojs}
 //| echo: false
@@ -91,8 +58,8 @@ viewof coordinates = worldMapCoordinates([162, 0, projection], [width, height])
 // https://observablehq.com/@d3/solar-terminator
 // https://observablehq.com/@mbostock/time-zones
 viewof dectoggle = Inputs.toggle({label: "Dec", value: true})
-viewof border = Inputs.toggle({label: "Edge", value: false})
-viewof suntoggle = Inputs.toggle({label: "Sun", value: true})
+viewof border = Inputs.toggle({label: "Borders", value: false})
+viewof suntoggle = Inputs.toggle({label: "Shade", value: true})
 viewof utctoggle = Inputs.toggle({label: "UTC", value: false})
 ```
 
@@ -103,7 +70,9 @@ viewof select = Inputs.select(
   projections, {label: "Projection:", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
 ```
 
-[solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
+In addition to showing and hiding time zones, the toggle✅inputs also can add country borders and a [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) shade effect to the map🗺️. For a different perspective on the world🌏, you can change the [map🗺️projection](https://observablehq.com/plot/features/projections) using the [select↕️input](https://observablehq.com/documentation/inputs/overview#select) beneath the toggle✅inputs. All map🗺️projections perform some kind of transformation to show a sphere on a flat surface.
+
+For a more realistic view of the world, you can interact with the  as it really is 
 
 Dec has ten [time⏳zones](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time) which are each one [deciturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a turn"} wide and are numbered zero through nine, like the ten [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of) that separate them. Zone [0]{.lime} is in between Meridians 0 and 1. [Meridian 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole), which runs through Iceland and the Atlantic Ocean just West of Africa, is the Dec [International Date Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) and [prime meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0). [Meridian 1](https://en.wikipedia.org/wiki/18th_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Europe%2C%20Africa%2C%20the%20Atlantic%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole) divides Europe and Africa into Western and Eastern halves.
 
@@ -224,7 +193,7 @@ isLeap = decYear % 4 == 0 && decYear % 100 != 0 || decYear % 400 == 0;
 timezones = FileAttachment("../asset/timezones.json").json()
 zones = topojson.feature(timezones, timezones.objects.timezones).features
 mesh = topojson.mesh(timezones, timezones.objects.timezones)
-color = d3.scaleSequential(d3.extent(zones, f => f.properties.zone), d3.interpolateRdBu)
+color = d3.scaleSequential(d3.interpolateRdBu).domain([14, -12])
 // https://observablehq.com/@enjalot/draggable-world-map-coordinates-input
 function worldMapCoordinates(config = {}, dimensions) {
   const {
@@ -249,17 +218,20 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.fillStyle = color(f.properties.zone);
     context.fill();
   }
-  // function formatLongitude(x) { return `${(x + 18) / 36}`; }
   function draw() {
-    context.beginPath(); path({type: "Sphere"});
-    context.fillStyle = colors.ocean; context.fill();
+    if (!utctoggle) {
+      context.beginPath(); path({type: "Sphere"});
+      context.fillStyle = colors.ocean; context.fill();
+    }
     if (utctoggle) {
       zones.map(f => fillMesh(f))
     }
     context.beginPath();
     path(land);
-    context.fillStyle = colors.land;
-    context.fill();
+    if (!utctoggle) {
+      context.fillStyle = colors.land;
+      context.fill();
+    }
     context.strokeStyle = `#888`;
     context.stroke();
     if (border) {
@@ -295,7 +267,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.fillStyle = "rgba(0,0,255,0.15)";
       context.fill();
       context.beginPath();
-      path.pointRadius(28);
+      path.pointRadius(18);
       path({type: "Point", coordinates: sun});
       context.strokeStyle = "#0009";
       context.fillStyle = "#ff0b";
@@ -455,8 +427,6 @@ borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== 
 countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
 ```
 
-
-
 ```{=html}
 <style>
 div#zonemap {
@@ -470,11 +440,13 @@ div#toggles form.oi-3a86ea-toggle > label {
    width: 28px;
 }
 div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-3"] {
-  width: 37px;
+  width: 56px;
+}
+div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-2"] {
+  width: 46px;
 }
 div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-1"] {
-  width: 37px;
-  margin: 2px 0px 0px 0px;
+  width: 31px;
 }
 div#toggles  form.oi-3a86ea-toggle {
    width: 110px;
