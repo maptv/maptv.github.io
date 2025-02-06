@@ -26,7 +26,7 @@ orientation🧭, angles📐, and cycles🔄in
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
 ([*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
 instead of months, weeks, hours, minutes, seconds, and degrees. To
-measure time⏳, Dec uses years and days. Years are turns of a celestial
+measure time, Dec uses years and days. Years are turns of a celestial
 body around [the point it
 orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit).
 Days are turns of a [celestial
@@ -37,75 +37,15 @@ axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20
 The distinguishing characteristics of Dec are its simplicity and
 consistency. These qualities are evident when comparing Dec and
 [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
-time zones using the toggle✅inputs beneath the world🌏map🗺️below⬇️. The
-10 Dec time zones are all 1 <span class="under tool"
-data-bs-toggle="tooltip"
+time zones using the
+[toggle](https://observablehq.com/@observablehq/input-toggle)✅inputs
+beneath the world🌏map🗺️below⬇️. The 10 Dec time zones are all 1
+<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a turn">deciturn</span> wide, whereas the 40
-UTC time zones shown on the map frequently deviate from a width of 41⅔
-<span class="under tool" data-bs-toggle="tooltip"
+UTC time zones shown on the map all deviate from their standard width of
+41⅔ <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a turn">milliturns</span> to conform to
-political and geographic boundaries.
-
-By default, the Using the toggle✅inputs, we supplement the map with
-more than by the world 🌏map 🗺️ below ⬇️. By default, the map shows that
-
-[UTC+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00)
-
-The <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> in a middle of the Dec format
-acts as the Dec analog of a month, day of month dom, hour, minute, and
-second.
-
-The integer part of the <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>, ,
-identifies a day in the given year and the fractional part is the time
-of day tod: . The Dec and ISO years are the same for the first 306 days
-of the Dec year. When the <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> is
-greater than or equal to <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="January 1">306</span>, the Dec
-year is one less than the ISO year.
-
-, The Dec analog of UTC+00:00, Zone <span class="lime">0</span>, is on
-the left side of the map🗺️below.
-
-The Dec and ISO years are the same for the first 306 days of the Dec
-year. When the <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> is greater than or equal to
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="January 1">306</span>, the Dec year is one less than the
-ISO year.
-
-The <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> does more than just identify a
-specific moment in time.
-
-big endian and thus start with the the largest unit, the year. , start
-with a year, and end with a time zone.
-
-The <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>
-<span class="cyan">day.clock</span> in a snap🫰
-
-The current ISO🌐8601 [combined date📅and
-time⏳](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression)in
-the
-[UTC+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00)
-time⏳zone is <span class="yellow">${String(isoYear).padStart(4,
-“0”)}</span>-<span class="mulberry">${String(month).padStart(2,
-“0”)}</span>-<span class="magenta">${String(decDotm).padStart(2,
-“0”)}</span>T<span class="hardwood">${String(isoHour).padStart(2,
-“0”)}</span>:<span class="maroon">${String(isoMinute).padStart(2,
-“0”)}</span>:<span class="sienna">${String(isoSecond).padStart(2,
-“0”)}</span>+<span class="hardwood">00</span>:<span class="maroon">00</span>.
-
-the Dec<span class="yellow">${String(decYear).padStart(4,
-“0”)}</span>+<span class="cyan">${String(decDate).padStart(3,
-“0”)}</span>.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>+<span class="lime">0</span>.
-snap🫰
-
-The Dec analog of UTC+00:00, Zone <span class="lime">0</span>, is on the
-left side of the map🗺️below.
+political boundaries.
 
 ``` {ojs}
 //| echo: false
@@ -119,8 +59,8 @@ viewof coordinates = worldMapCoordinates([162, 0, projection], [width, height])
 // https://observablehq.com/@d3/solar-terminator
 // https://observablehq.com/@mbostock/time-zones
 viewof dectoggle = Inputs.toggle({label: "Dec", value: true})
-viewof border = Inputs.toggle({label: "Edge", value: false})
-viewof suntoggle = Inputs.toggle({label: "Sun", value: true})
+viewof border = Inputs.toggle({label: "Borders", value: false})
+viewof suntoggle = Inputs.toggle({label: "Shade", value: true})
 viewof utctoggle = Inputs.toggle({label: "UTC", value: false})
 ```
 
@@ -131,7 +71,19 @@ viewof select = Inputs.select(
   projections, {label: "Projection:", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
 ```
 
+In addition to showing and hiding time zones, the toggle✅inputs also
+can add country borders and a
 [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
+shade effect to the map🗺️. For a different perspective on the world🌏,
+you can change the
+[map🗺️projection](https://observablehq.com/plot/features/projections)
+using the
+[select↕️input](https://observablehq.com/documentation/inputs/overview#select)
+beneath the toggle✅inputs. All map🗺️projections perform some kind of
+transformation to show a sphere on a flat surface.
+
+For a more realistic view of the world, you can interact with the as it
+really is
 
 Dec has ten
 [time⏳zones](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time)
@@ -415,7 +367,7 @@ isLeap = decYear % 4 == 0 && decYear % 100 != 0 || decYear % 400 == 0;
 timezones = FileAttachment("../asset/timezones.json").json()
 zones = topojson.feature(timezones, timezones.objects.timezones).features
 mesh = topojson.mesh(timezones, timezones.objects.timezones)
-color = d3.scaleSequential(d3.extent(zones, f => f.properties.zone), d3.interpolateRdBu)
+color = d3.scaleSequential(d3.interpolateRdBu).domain([14, -12])
 // https://observablehq.com/@enjalot/draggable-world-map-coordinates-input
 function worldMapCoordinates(config = {}, dimensions) {
   const {
@@ -440,17 +392,20 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.fillStyle = color(f.properties.zone);
     context.fill();
   }
-  // function formatLongitude(x) { return `${(x + 18) / 36}`; }
   function draw() {
-    context.beginPath(); path({type: "Sphere"});
-    context.fillStyle = colors.ocean; context.fill();
+    if (!utctoggle) {
+      context.beginPath(); path({type: "Sphere"});
+      context.fillStyle = colors.ocean; context.fill();
+    }
     if (utctoggle) {
       zones.map(f => fillMesh(f))
     }
     context.beginPath();
     path(land);
-    context.fillStyle = colors.land;
-    context.fill();
+    if (!utctoggle) {
+      context.fillStyle = colors.land;
+      context.fill();
+    }
     context.strokeStyle = `#888`;
     context.stroke();
     if (border) {
@@ -486,7 +441,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.fillStyle = "rgba(0,0,255,0.15)";
       context.fill();
       context.beginPath();
-      path.pointRadius(28);
+      path.pointRadius(18);
       path({type: "Point", coordinates: sun});
       context.strokeStyle = "#0009";
       context.fillStyle = "#ff0b";
@@ -658,11 +613,13 @@ div#toggles form.oi-3a86ea-toggle > label {
    width: 28px;
 }
 div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-3"] {
-  width: 37px;
+  width: 56px;
+}
+div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-2"] {
+  width: 46px;
 }
 div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-1"] {
-  width: 37px;
-  margin: 2px 0px 0px 0px;
+  width: 31px;
 }
 div#toggles  form.oi-3a86ea-toggle {
    width: 110px;
