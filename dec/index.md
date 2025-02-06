@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2024+341
+2024+342
 
 - [Context clues](#sec-context)
 - [Snaps](#snaps)
@@ -34,70 +34,22 @@ body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20
 on [its
 axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
 
-Dec time⏳measurement is comparable to the
-[ISO🌐8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
-international date📅and time⏳standard. In particular, the
-ISO🌐<span class="yellow">yyyy</span>-<span class="mulberry">mm</span>-<span class="magenta">dd</span>T<span class="hardwood">hh</span>:<span class="maroon">mm</span>:<span class="sienna">ss</span>+<span class="hardwood">hh</span>:<span class="maroon">mm</span>
-format is equivalent to the Dec
-snap🫰<span class="yellow">year</span>+<span class="cyan">day.clock</span>-<span class="lime">z</span>
-format. Both formats represent a [point in
-time](https://en.m.wikipedia.org/wiki/Instant#:~:text=an%20infinitesimal%20interval%20in%20time)
-and have multiple components that are organized by scale from the
-largest to the smallest.
+The distinguishing characteristics of Dec are its simplicity and
+consistency. These qualities are evident when comparing Dec and
+[UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
+time zones using the toggle✅inputs beneath the world🌏map🗺️below⬇️. The
+10 Dec time zones are all 1 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="a tenth of a turn">deciturn</span> wide, whereas the 40
+UTC time zones shown on the map frequently deviate from a width of 41⅔
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a turn">milliturns</span> to conform to
+political and geographic boundaries.
 
-In between the <span class="yellow">year</span> and
-<span class="lime">zone</span> of a Dec snap🫰is
-<span class="cyan">day.clock</span>, a single number called a
-<span class="cyan">day-of-year</span> (<span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>) which
-serves the same purpose as the <span class="mulberry">month</span>,
-<span class="magenta">day-of-month</span>
-(<span class="magenta under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span>),
-<span class="hardwood">hour</span>, <span class="maroon">minute</span>,
-and <span class="sienna">second</span> in between the year and time zone
-in the ISO🌐format. The [integer
-part](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20integer%20written%20to%20the%20left%20of%20the%20decimal%20separator)
-of the <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>, <span class="cyan">day</span>,
-identifies a specific day in the given year and its
-[fractional](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
-part is the time-of-day (<span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>):
-<span class="cyan">.clock</span>.
+By default, the Using the toggle✅inputs, we supplement the map with
+more than by the world 🌏map 🗺️ below ⬇️. By default, the map shows that
 
-The Dec snap🫰in the Zone <span class="lime">0</span> Dec time⏳zone,
-<span class="yellow">${String(decYear).padStart(4,
-“0”)}</span>+<span class="cyan">${String(decDate).padStart(3,
-“0”)}</span>.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>+<span class="lime">0</span>,
-is equivalent to its ISO🌐8601
-[counterpart](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression)
-in the
-[UTC+<span class="maroon">00</span>:<span class="sienna">00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00)
-time⏳zone: <span class="yellow">${String(isoYear).padStart(4,
-“0”)}</span>-<span class="mulberry">${String(month).padStart(2,
-“0”)}</span>-<span class="magenta">${String(decDotm).padStart(2,
-“0”)}</span>T<span class="hardwood">${String(isoHour).padStart(2,
-“0”)}</span>:<span class="maroon">${String(isoMinute).padStart(2,
-“0”)}</span>:<span class="sienna">${String(isoSecond).padStart(2,
-“0”)}</span>+<span class="hardwood">00</span>:<span class="maroon">00</span>.
-In the current doy, <span class="cyan">${String(decDate).padStart(3,
-“0”)}</span>.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>,
-the integer part, <span class="cyan">${String(decDate).padStart(3,
-“0”)}</span>, corresponds to the
-ISO🌐<span class="mulberry">month</span> and <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-month">dom</span>,
-<span class="mulberry">${String(month).padStart(2,
-“0”)}</span>-<span class="magenta">${String(decDotm).padStart(2,
-“0”)}</span>, and the fractional part,
-.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>, converts to
-the ISO🌐<span class="hardwood">hour</span>,
-<span class="maroon">minute</span>, and
-<span class="sienna">second</span>:
-T<span class="hardwood">${String(isoHour).padStart(2,
-“0”)}</span>:<span class="maroon">${String(isoMinute).padStart(2,
-“0”)}</span>:<span class="sienna">${String(isoSecond).padStart(2,
-“0”)}</span>.
+[UTC+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00)
 
 The <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> in a middle of the Dec format
@@ -113,10 +65,6 @@ data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> is
 greater than or equal to <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="January 1">306</span>, the Dec
 year is one less than the ISO year.
-
-The
-
-snap🫰
 
 , The Dec analog of UTC+00:00, Zone <span class="lime">0</span>, is on
 the left side of the map🗺️below.
@@ -422,11 +370,6 @@ style="width:8.64in;height:0.98in" />
 ``` {ojs}
 //| echo: false
 //| output: false
-unix = {
-  while(true) {
-    yield Date.now();
-  }
-}
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
@@ -451,7 +394,7 @@ function dote2date(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
-dz = unix2dote(unix, 0)
+dz = unix2dote(now, 0)
 ydz = dote2date(...dz)
 decYear = ydz[0]
 decDate = Math.floor(ydz[1])
