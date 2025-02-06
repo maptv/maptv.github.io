@@ -115,12 +115,12 @@ website:
         - text: Filter
           icon: funnel
           href: quarto/filter/index.qmd
-        - text: Script
-          icon: file-code
-          href: quarto/script/index.qmd
         - text: Include
           icon: file-earmark-plus
           href: quarto/include/index.qmd
+        - text: Script
+          icon: file-code
+          href: quarto/script/index.qmd
       - icon: file-slides
         text: Reveal
         href: reveal/index.qmd

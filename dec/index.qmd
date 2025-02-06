@@ -9,8 +9,7 @@ description: >
 citation:
   url: https://maptv.github.io/dec
 aliases:
-  - /d
-  - /de
+  - /d/
 license: CC BY-SA
 lightbox: false
 toc: true
@@ -45,25 +44,18 @@ flowchart LR
 
 This section of my site focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created to measure time⏳, position📍, orientation🧭, angles📐, and cycles🔄in [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) instead of months, weeks, hours, minutes, seconds, and degrees. To measure time⏳, Dec uses years and days. Years are turns of a celestial body around [the point it orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit). Days are turns of a [celestial body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
 
-Dec time⏳measurement is comparable to the [ISO🌐8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) international date📅and time⏳standard. In particular, the ISO🌐[yyyy]{.yellow}-[mm]{.mulberry}-[dd]{.magenta}T[hh]{.hardwood}:[mm]{.maroon}:[ss]{.sienna}+[hh]{.hardwood}:[mm]{.maroon} format is equivalent to the Dec snap🫰[year]{.yellow}+[day.clock]{.cyan}-[z]{.lime} format. Both formats represent a [point in time](https://en.m.wikipedia.org/wiki/Instant#:~:text=an%20infinitesimal%20interval%20in%20time) and have multiple components that are organized by scale from the largest to the smallest.
+The distinguishing characteristics of Dec are its simplicity and consistency. These qualities are evident when comparing Dec and [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) time zones using the toggle✅inputs beneath the world🌏map🗺️below⬇️. The 10 Dec time zones are all 1 [deciturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a turn"} wide, whereas the 40 UTC time zones shown on the map frequently deviate from a width of 41⅔ [milliturns]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a turn"} to conform to political and geographic boundaries.
 
-In between the [year]{.yellow} and [zone]{.lime} of a Dec snap🫰is [day.clock]{.cyan}, a single number called a [day-of-year]{.cyan} ([doy]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}) which serves the same purpose as the [month]{.mulberry}, [day-of-month]{.magenta} ([dom]{.magenta .under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}), [hour]{.hardwood}, [minute]{.maroon}, and [second]{.sienna} in between the year and time zone in the ISO🌐format. The [integer part](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20integer%20written%20to%20the%20left%20of%20the%20decimal%20separator) of the [doy]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}, [day]{.cyan}, identifies a specific day in the given year and its [fractional](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) part is the time-of-day ([tod]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}): [.clock]{.cyan}.
+By default, the 
+Using the toggle✅inputs, we supplement the map with more than 
+by the world 🌏map 🗺️ below ⬇️. By default, the map shows that 
 
-The Dec snap🫰in the Zone [0]{.lime} Dec time⏳zone, [\${String(decYear).padStart(4, "0")}]{.yellow}+[\${String(decDate).padStart(3, "0")}]{.cyan}.[\${decTime.toFixed(5).slice(2)}]{.cyan}+[0]{.lime}, is equivalent to its ISO🌐8601 [counterpart](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression) in the [UTC+[00]{.maroon}:[00]{.sienna}](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00) time⏳zone: [\${String(isoYear).padStart(4, "0")}]{.yellow}-[\${String(month).padStart(2, "0")}]{.mulberry}-[\${String(decDotm).padStart(2, "0")}]{.magenta}T[\${String(isoHour).padStart(2, "0")}]{.hardwood}:[\${String(isoMinute).padStart(2, "0")}]{.maroon}:[\${String(isoSecond).padStart(2, "0")}]{.sienna}+[00]{.hardwood}:[00]{.maroon}. In the current doy, [\${String(decDate).padStart(3, "0")}]{.cyan}.[\${decTime.toFixed(5).slice(2)}]{.cyan}, the integer part, [\${String(decDate).padStart(3, "0")}]{.cyan}, corresponds to the ISO🌐[month]{.mulberry} and [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}, [\${String(month).padStart(2, "0")}]{.mulberry}-[\${String(decDotm).padStart(2, "0")}]{.magenta}, and the fractional part, .[\${decTime.toFixed(5).slice(2)}]{.cyan}, converts to the ISO🌐[hour]{.hardwood}, [minute]{.maroon}, and [second]{.sienna}: T[\${String(isoHour).padStart(2, "0")}]{.hardwood}:[\${String(isoMinute).padStart(2, "0")}]{.maroon}:[\${String(isoSecond).padStart(2, "0")}]{.sienna}.
-
+[UTC+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00) 
 
 The [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} in a middle of the Dec format acts as the Dec analog of a month, day of month dom, hour, minute, and second.
 
 The integer part of the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}, , identifies a day in the given year and the fractional part is the time of day tod: . The Dec and ISO years are the same for the first 306 days of the Dec year. When the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} is greater than or equal to [306]{.under .tool data-bs-toggle="tooltip" data-bs-title="January 1"}, the Dec year is one less than the ISO year.
 
-
-
-
-
-
-The 
-
- snap🫰
 
 
 , 
@@ -187,11 +179,6 @@ flowchart LR
 ```{ojs}
 //| echo: false
 //| output: false
-unix = {
-  while(true) {
-    yield Date.now();
-  }
-}
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
@@ -216,7 +203,7 @@ function dote2date(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
-dz = unix2dote(unix, 0)
+dz = unix2dote(now, 0)
 ydz = dote2date(...dz)
 decYear = ydz[0]
 decDate = Math.floor(ydz[1])
