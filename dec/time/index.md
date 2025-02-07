@@ -1,12 +1,23 @@
 # Dec Time
 Martin Laptev
-2024+336
+2024+343
 
 - [Time](#time)
 - [Zone](#zone)
 - [Unit](#unit)
 - [Next](#next)
 - [Cite](#cite)
+
+<div id="timenav">
+
+<div>
+
+<img src="index_files/figure-commonmark/mermaid-figure-1.png"
+style="width:8.64in;height:0.98in" />
+
+</div>
+
+</div>
 
 # Time
 
@@ -907,15 +918,16 @@ class="math inline"><em>c</em><em>τ</em></span></th>
 </table>
 
 Dec times in Zone 0 and 5 can be directly converted to and from UTC
-times with an offset of 0 and 12 hours, respectively. The other Dec time
-zones will differ from the closest UTC time by
-8.<span class="over">3</span>, 16.<span class="over">6</span>, 25,
-33.<span class="over">3</span>, 41.<span class="over">6</span> or 50
+times with an offset of 0 and 12 <span class="teal">hours</span>,
+respectively. The other Dec time zones will differ from the closest UTC
+time by 8.<span class="over">3</span>, 16.<span class="over">6</span>,
+25, 33.<span class="over">3</span>, 41.<span class="over">6</span> or 50
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of a day">millidays</span>. To find the
-difference δ, convert the UTC offset hours
-<span class="cyan">o<sub>H</sub></span> and minutes
-<span class="cyan">o<sub>M</sub></span> into <span class="under tool"
+difference δ, convert the UTC offset <span class="teal">hours</span>
+<span class="teal">o<sub>H</sub></span> and
+<span class="olive">minutes</span>
+<span class="olive">o<sub>M</sub></span> into <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="tenths of a turn">deci[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span>
 of the longitude λ and then subtract the Dec zone number
@@ -963,23 +975,33 @@ of a day that can naturally be combined together into a single
 number. Conversion between decimal units is as simple as moving↔︎️or
 removing❌the [decimal
 separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number).
-In contrast, an `hh:mm:ss` time is a
+In contrast, an
+<span class="teal">hh</span>:<span class="olive">mm</span>:<span class="purple">ss</span>
+time is a
 [mixed-radix](https://en.wikipedia.org/wiki/Mixed_radix#:~:text=non%2Dstandard%20positional%20numeral%20systems%20in%20which%20the%20numerical%20base%20varies%20from%20position%20to%20position)
-number, where `hh` is the
+number, where <span class="teal">hh</span> is the
 [base-12](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=12-,Duodecimal,-%2C%20dozenal)
 or
 [base-24](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D)
-hour, `mm` is the
+<span class="teal">hour</span>, <span class="olive">mm</span> is the
 [base-60](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=60-,Sexagesimal,-Babylonian%20numerals%20and)
-minute, and `ss` is the base-60 second.
+<span class="olive">minute</span>, and <span class="purple">ss</span> is
+the base-60 <span class="purple">second</span>.
 
 <table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 15%" />
+<col style="width: 18%" />
+<col style="width: 36%" />
+</colgroup>
 <thead>
 <tr>
 <th>Prefix</th>
 <th>Power</th>
 <th>Day</th>
-<th>hh:mm:ss.sss</th>
+<th><span class="teal">hh</span>:<span class="olive">mm</span>:<span
+class="purple">ss</span>.<span class="purple">sss</span></th>
 </tr>
 </thead>
 <tbody>
@@ -1022,51 +1044,54 @@ minute, and `ss` is the base-60 second.
 </tbody>
 </table>
 
-To convert the hour <span class="orchid">h</span>, minute
-<span class="maroon">m</span>, and second
-<span class="seagreen">s</span> into the <a
+To convert the <span class="teal">hour</span>
+<span class="teal">h</span>, <span class="olive">minute</span>
+<span class="olive">m</span>, and <span class="purple">second</span>
+<span class="purple">s</span> into the <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</a>
 <span class="cyan">d</span>, Dec uses the following equation:
-<span class="cyan">d</span> = <span class="orchid">h</span> ÷ 2.4 +
-<span class="maroon">m</span> ÷ 144 + <span class="seagreen">s</span> ÷
+<span class="cyan">d</span> = <span class="teal">h</span> ÷ 2.4 +
+<span class="olive">m</span> ÷ 144 + <span class="purple">s</span> ÷
 8640. The current equation values in Zone
 <span class="lime">${browserZone}</span> are:
 <span class="cyan">${browserTime.toFixed(4)}</span> =
-<span class="orchid">${Math.floor(hours).toString().padStart(2,
+<span class="teal">${Math.floor(hours).toString().padStart(2,
 “0”)}</span> ÷ 2.4 +
-<span class="maroon">${Math.floor(minutes).toString().padStart(2,
+<span class="olive">${Math.floor(minutes).toString().padStart(2,
 “0”)}</span> ÷ 144 +
-<span class="seagreen">${Math.floor(seconds).toString().padStart(2,
+<span class="purple">${Math.floor(seconds).toString().padStart(2,
 “0”)}</span> ÷ 8640. Inversely, we can convert <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</a> into hours:
-<span class="orchid">h</span> = <span class="cyan">d</span> × 2.4,
-minutes: <span class="maroon">m</span> = <span class="orchid">h</span>
+data-bs-title="tenths of a day">decidays</a> into
+<span class="teal">hours</span>: <span class="teal">h</span> =
+<span class="cyan">d</span> × 2.4, <span class="olive">minutes</span>:
+<span class="olive">m</span> = <span class="teal">h</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-1 × 60, and seconds: <span class="seagreen">s</span> =
-<span class="maroon">m</span>
+1 × 60, and <span class="purple">seconds</span>:
+<span class="purple">s</span> = <span class="olive">m</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × 60.
 
-Instead of dealing with hours, minutes, and seconds, we can convert the
-[UNIX
+Instead of dealing with <span class="teal">hours</span>,
+<span class="olive">minutes</span>, and
+<span class="purple">seconds</span>, we can convert the [UNIX
 timestamp](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970)
-<span class="azul">u</span> into the Dec time
+<span class="purple">u</span> into the Dec time
 <span class="cyan">d</span>+<span class="lime">0</span>. First, we
-divide <span class="azul">u</span> by 86400 to convert seconds to days,
-then isolate the [decimal
+divide <span class="purple">u</span> by 86400 to convert seconds to
+days, then isolate the [decimal
 part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
 of the
 [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers),
 and finally multiply by 10: <span class="cyan">d</span> +
-<span class="lime">0</span> = <span class="azul">u</span> ÷ 86400
+<span class="lime">0</span> = <span class="purple">u</span> ÷ 86400
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × 10. The current values in this equation are
 <span class="cyan">${browserTime.toFixed(4)}</span> +
-<span class="lime">0</span> = <span class="azul">${(unix /
+<span class="lime">0</span> = <span class="purple">${(unix /
 1000).toFixed(0)}</span> ÷ 86400
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × 10.
@@ -1077,15 +1102,17 @@ calendar](https://en.wikipedia.org/wiki/French_Republican_calendar#:~:text=a%20c
 time system referred to <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</a> as decimal hours,
-<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a> as decimal
+<span class="teal">hours</span>, <span class="under tool"
+data-bs-toggle="tooltip"
 data-bs-title="hundredths of a day">centidays</span> as
 [décimes](https://en.wikipedia.org/wiki/Decimal_time#:~:text=into%20tenths%2C%20or-,d%C3%A9cimes,-%2C%20instead%20of%20minutes),
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span> as decimal
-minutes, and <span class="under tool" data-bs-toggle="tooltip"
+<span class="olive">minutes</span>, and <span class="under tool"
+data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span> as
-decimal seconds. Similarly, [Swatch Internet
+decimal <span class="purple">seconds</span>. Similarly, [Swatch Internet
 Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time#:~:text=a%20decimal%20time%20system%20introduced%20in%201998%20by%20the%20Swatch%20corporation),
 a [decimal
 time](https://en.wikipedia.org/wiki/Decimal_time#:~:text=the%20representation%20of%20the%20time%20of%20day%20using%20units%20which%20are%20decimally%20related)
@@ -1095,8 +1122,9 @@ data-bs-title="thousandths of a day">millidays</span>.
 
 Swatch Internet Time differs from Dec in that it [has no time
 zones](https://en.wikipedia.org/wiki/Swatch_Internet_Time#Calculation_from_UTC+1:~:text=There%20are%20no%20time%20zones%20in%20Swatch%20Internet%20Time)
-and is obtained from the [hours, minutes, and
-seconds](https://en.wikipedia.org/wiki/Swatch_Internet_Time#Calculation_from_UTC+1:~:text=The%20formula%20for%20calculating%20the%20time%20in%20.beats%20from%20UTC%2B1)
+and is obtained from the [<span class="teal">hours</span>,
+<span class="olive">minutes</span>, and
+<span class="purple">seconds</span>](https://en.wikipedia.org/wiki/Swatch_Internet_Time#Calculation_from_UTC+1:~:text=The%20formula%20for%20calculating%20the%20time%20in%20.beats%20from%20UTC%2B1)
 of
 [UTC+01:00](https://en.wikipedia.org/wiki/UTC%2B01:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B01%3A00).
 In contrast, the major innovations described in this article are the Dec
@@ -1127,12 +1155,12 @@ not translate well into Jupyter notebooks. After the next article, I
 return to the use of Observable in my Dec [snap](../../dec/span)🫰and
 [span](../../dec/span)🌈articles.
 
-<div id="navchart">
+<div id="timenav">
 
 <div>
 
-<img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:6.94in;height:0.73in" />
+<img src="index_files/figure-commonmark/mermaid-figure-2.png"
+style="width:8.64in;height:0.98in" />
 
 </div>
 
@@ -1991,5 +2019,11 @@ function setStyle(content, style = {}) {
 .clocks * {
   margin: -10px 0px 10px 0px;
   padding: 0px;
+}
+#title-block-header > div:nth-child(2) {
+  display: none;
+}
+#time > h4.hiddenheading {
+  display: none;
 }
 </style>

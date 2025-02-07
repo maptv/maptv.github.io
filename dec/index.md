@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2024+342
+2024+343
 
 - [Context clues](#sec-context)
 - [Snaps](#snaps)
@@ -8,7 +8,7 @@ Martin Laptev
 - [Negative numbers](#sec-neg)
 - [Units](#sec-unit)
 
-<div id="decnavtop">
+<div id="decnav">
 
 <div>
 
@@ -25,8 +25,44 @@ that [I](https://maptv.github.io) created to measure time⏳, position📍,
 orientation🧭, angles📐, and cycles🔄in
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
 ([*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
-instead of months, weeks, hours, minutes, seconds, and degrees. To
-measure time, Dec uses years and days. Years are turns of a celestial
+instead of <span class="azul">months</span>,
+<span class="darkgreen">weeks</span>, <span class="teal">hours</span>,
+<span class="olive">minutes</span>, <span class="purple">seconds</span>,
+and <span class="darkred">degrees</span>. Dec measures
+[longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth%2C%20or%20another%20celestial%20body)
+and the <span class="cyan">time-of-day</span>
+(<span class="cyan under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span>) in terms of the turns of planet
+[Earth](https://en.wikipedia.org/wiki/Earth#:~:text=the%20third%20planet%20from%20the%20Sun)
+on [its
+axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
+Longitudes start at [Meridian
+0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
+and <span class="cyan under tool" data-bs-toggle="tooltip"
+data-bs-title="times-of-day">tods</span> start at
+<span class="cyan under tool" data-bs-toggle="tooltip"
+data-bs-title="midnight">Dot 0</span>.
+
+Meridian 0 is the Dec [International Date
+Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
+and [prime
+meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0),
+whereas .
+
+41.<span class="over">6</span>
+
+[Meridian
+1](https://en.wikipedia.org/wiki/18th_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Europe%2C%20Africa%2C%20the%20Atlantic%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
+divides Europe and Africa into Western and Eastern halves.
+
+which runs through Iceland and the Atlantic Ocean just West of Africa,
+In the context of time measurement, a turn on Earth’s axis is called a
+day and a turn around the Sun is a year.
+
+for
+[geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=the%20process%20of%20determining%20or%20estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person)
+
+To measure time, Dec uses years and days. Years are turns of a celestial
 body around [the point it
 orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit).
 Days are turns of a [celestial
@@ -82,8 +118,8 @@ using the
 beneath the toggle✅inputs. All map🗺️projections perform some kind of
 transformation to show a sphere on a flat surface.
 
-For a more realistic view of the world, you can interact with the as it
-really is
+For a more realistic view of the world, you can interact with the
+globe🌐below⬇️. as it really is
 
 Dec has ten
 [time⏳zones](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time)
@@ -308,7 +344,7 @@ of magnitude from a day, which is the base unit of both `Declock` and
 `Decalendar`. Listing the units of each highlights the relationship
 between the two:
 
-<div id="decnavbtm">
+<div id="decnav">
 
 <div>
 
@@ -632,5 +668,8 @@ div#projselect form.oi-3a86ea > label {
 }
 div#projselect form.oi-3a86ea {
    --input-width: 260px;
+}
+div:has(div.description) {
+  display: none;
 }
 </style>

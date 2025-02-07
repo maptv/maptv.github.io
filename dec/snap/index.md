@@ -1,8 +1,8 @@
-# Dec
+# Dec snap
 Martin Laptev
-2024+342
+2024+343
 
-<div id="snapnavtop">
+<div id="snapnav">
 
 <div>
 
@@ -20,7 +20,7 @@ time <span class="cyan">.clock</span>-<span class="lime">z</span> can be
 combined into a
 snap🫰<span class="yellow">year</span>+<span class="cyan">day.clock</span>-<span class="lime">z</span>.
 Like the
-<span class="yellow">yyyy</span>-<span class="mulberry">mm</span>-<span class="magenta">dd</span>T<span class="hardwood">hh</span>:<span class="maroon">mm</span>:<span class="sienna">ss</span>+<span class="hardwood">hh</span>:<span class="maroon">mm</span>
+<span class="yellow">yyyy</span>-<span class="azul">mm</span>-<span class="lightblue">dd</span>T<span class="teal">hh</span>:<span class="olive">mm</span>:<span class="purple">ss</span>+<span class="teal">hh</span>:<span class="olive">mm</span>
 [format](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression)
 of the
 [ISO🌐8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data)
@@ -33,13 +33,13 @@ In between the <span class="yellow">year</span> and
 <span class="cyan">day.clock</span>, a single number called a
 <span class="cyan">day-of-year</span> (<span class="cyan under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>) which
-serves the same purpose as the <span class="mulberry">month</span>,
-<span class="magenta">day-of-month</span>
-(<span class="magenta under tool" data-bs-toggle="tooltip"
+serves the same purpose as the <span class="azul">month</span>,
+<span class="lightblue">day-of-month</span>
+(<span class="lightblue under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-month">dom</span>),
-<span class="hardwood">hour</span>, <span class="maroon">minute</span>,
-and <span class="sienna">second</span> in between the year and time zone
-in the ISO🌐format. The [integer
+<span class="teal">hour</span>, <span class="olive">minute</span>, and
+<span class="purple">second</span> in between the year and time zone in
+the ISO🌐format. The [integer
 part](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20integer%20written%20to%20the%20left%20of%20the%20decimal%20separator)
 of the <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span>, <span class="cyan">day</span>,
@@ -56,30 +56,30 @@ The Dec snap🫰in the Zone <span class="lime">0</span> Dec time⏳zone,
 is equivalent to its ISO🌐8601
 [counterpart](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression)
 in the
-[UTC+<span class="maroon">00</span>:<span class="sienna">00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00)
+[UTC+<span class="olive">00</span>:<span class="purple">00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00)
 time⏳zone: <span class="yellow">${String(isoYear).padStart(4,
-“0”)}</span>-<span class="mulberry">${String(month).padStart(2,
-“0”)}</span>-<span class="magenta">${String(decDotm).padStart(2,
-“0”)}</span>T<span class="hardwood">${String(isoHour).padStart(2,
-“0”)}</span>:<span class="maroon">${String(isoMinute).padStart(2,
-“0”)}</span>:<span class="sienna">${String(isoSecond).padStart(2,
-“0”)}</span>+<span class="hardwood">00</span>:<span class="maroon">00</span>.
+“0”)}</span>-<span class="azul">${String(month).padStart(2,
+“0”)}</span>-<span class="lightblue">${String(decDotm).padStart(2,
+“0”)}</span>T<span class="teal">${String(isoHour).padStart(2,
+“0”)}</span>:<span class="olive">${String(isoMinute).padStart(2,
+“0”)}</span>:<span class="purple">${String(isoSecond).padStart(2,
+“0”)}</span>+<span class="teal">00</span>:<span class="olive">00</span>.
 In the current doy, <span class="cyan">${String(decDate).padStart(3,
 “0”)}</span>.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>,
 the integer part, <span class="cyan">${String(decDate).padStart(3,
-“0”)}</span>, corresponds to the
-ISO🌐<span class="mulberry">month</span> and <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-month">dom</span>,
-<span class="mulberry">${String(month).padStart(2,
-“0”)}</span>-<span class="magenta">${String(decDotm).padStart(2,
+“0”)}</span>, corresponds to the ISO🌐<span class="azul">month</span>
+and <span class="lightblue under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-month">dom</span>,
+<span class="azul">${String(month).padStart(2,
+“0”)}</span>-<span class="lightblue">${String(decDotm).padStart(2,
 “0”)}</span>, and the fractional part,
 .<span class="cyan">${decTime.toFixed(5).slice(2)}</span>, converts to
-the ISO🌐<span class="hardwood">hour</span>,
-<span class="maroon">minute</span>, and
-<span class="sienna">second</span>:
-T<span class="hardwood">${String(isoHour).padStart(2,
-“0”)}</span>:<span class="maroon">${String(isoMinute).padStart(2,
-“0”)}</span>:<span class="sienna">${String(isoSecond).padStart(2,
+the ISO🌐<span class="teal">hour</span>,
+<span class="olive">minute</span>, and
+<span class="purple">second</span>:
+T<span class="teal">${String(isoHour).padStart(2,
+“0”)}</span>:<span class="olive">${String(isoMinute).padStart(2,
+“0”)}</span>:<span class="purple">${String(isoSecond).padStart(2,
 “0”)}</span>.
 
 ``` {ojs}
@@ -124,7 +124,7 @@ pentBar = Plot.plot({
   ]})
 ```
 
-<div id="snapnavbtm">
+<div id="snapnav">
 
 <div>
 
@@ -494,5 +494,8 @@ move = {
 <style>
 .pentbarlegend-swatch {
   font-size: 19px;
+}
+#title-block-header > div:nth-child(2) {
+  display: none;
 }
 </style>
