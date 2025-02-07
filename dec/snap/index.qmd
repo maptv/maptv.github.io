@@ -1,15 +1,18 @@
 ---
-title: Dec
+title: Dec snap
 author:
   - name: Martin Laptev
     url: https://maptv.github.io
-image: ../asset/deidek.svg
+image: /asset/deidek.svg
 description: >
   Introducing the Dec snaps, which combine a Dec date and time into a representation of an instant.
+draft: true
 citation:
   url: https://maptv.github.io/dec/snap
 aliases:
   - /d/sn
+  - /snap
+  - /sn
 license: CC BY-SA
 lightbox: false
 toc: true
@@ -31,7 +34,7 @@ filters:
 ---
 
 ```{mermaid}
-%%| label: snapnavtop
+%%| label: snapnav
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
 flowchart LR
    A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
@@ -42,11 +45,11 @@ flowchart LR
    click E "/dec/span"
 ```
 
-This article builds on the previous two [Dec](/dec) articles on [dates](/dec/date)📅and [times](/dec/time)⏳. A date [year]{.yellow}+[day]{.cyan} and a time [.clock]{.cyan}-[z]{.lime} can be combined into a snap🫰[year]{.yellow}+[day.clock]{.cyan}-[z]{.lime}. Like the [yyyy]{.yellow}-[mm]{.mulberry}-[dd]{.magenta}T[hh]{.hardwood}:[mm]{.maroon}:[ss]{.sienna}+[hh]{.hardwood}:[mm]{.maroon} [format](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression) of the [ISO🌐8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) international date📅and time⏳standard, Dec snaps🫰represent a [point in time](https://en.m.wikipedia.org/wiki/Instant#:~:text=an%20infinitesimal%20interval%20in%20time) and organize their components from the largest to the smallest.
+This article builds on the previous two [Dec](/dec) articles on [dates](/dec/date)📅and [times](/dec/time)⏳. A date [year]{.yellow}+[day]{.cyan} and a time [.clock]{.cyan}-[z]{.lime} can be combined into a snap🫰[year]{.yellow}+[day.clock]{.cyan}-[z]{.lime}. Like the [yyyy]{.yellow}-[mm]{.azul}-[dd]{.lightblue}T[hh]{.teal}:[mm]{.olive}:[ss]{.purple}+[hh]{.teal}:[mm]{.olive} [format](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression) of the [ISO🌐8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) international date📅and time⏳standard, Dec snaps🫰represent a [point in time](https://en.m.wikipedia.org/wiki/Instant#:~:text=an%20infinitesimal%20interval%20in%20time) and organize their components from the largest to the smallest.
 
-In between the [year]{.yellow} and [zone]{.lime} of a Dec snap🫰is [day.clock]{.cyan}, a single number called a [day-of-year]{.cyan} ([doy]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}) which serves the same purpose as the [month]{.mulberry}, [day-of-month]{.magenta} ([dom]{.magenta .under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}), [hour]{.hardwood}, [minute]{.maroon}, and [second]{.sienna} in between the year and time zone in the ISO🌐format. The [integer part](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20integer%20written%20to%20the%20left%20of%20the%20decimal%20separator) of the [doy]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}, [day]{.cyan}, identifies a specific day in the given year and its [fractional](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) part is the time-of-day ([tod]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}): [.clock]{.cyan}.
+In between the [year]{.yellow} and [zone]{.lime} of a Dec snap🫰is [day.clock]{.cyan}, a single number called a [day-of-year]{.cyan} ([doy]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}) which serves the same purpose as the [month]{.azul}, [day-of-month]{.lightblue} ([dom]{.lightblue .under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}), [hour]{.teal}, [minute]{.olive}, and [second]{.purple} in between the year and time zone in the ISO🌐format. The [integer part](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20integer%20written%20to%20the%20left%20of%20the%20decimal%20separator) of the [doy]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}, [day]{.cyan}, identifies a specific day in the given year and its [fractional](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) part is the time-of-day ([tod]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}): [.clock]{.cyan}.
 
-The Dec snap🫰in the Zone [0]{.lime} Dec time⏳zone, [\${String(decYear).padStart(4, "0")}]{.yellow}+[\${String(decDate).padStart(3, "0")}]{.cyan}.[\${decTime.toFixed(5).slice(2)}]{.cyan}+[0]{.lime}, is equivalent to its ISO🌐8601 [counterpart](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression) in the [UTC+[00]{.maroon}:[00]{.sienna}](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00) time⏳zone: [\${String(isoYear).padStart(4, "0")}]{.yellow}-[\${String(month).padStart(2, "0")}]{.mulberry}-[\${String(decDotm).padStart(2, "0")}]{.magenta}T[\${String(isoHour).padStart(2, "0")}]{.hardwood}:[\${String(isoMinute).padStart(2, "0")}]{.maroon}:[\${String(isoSecond).padStart(2, "0")}]{.sienna}+[00]{.hardwood}:[00]{.maroon}. In the current doy, [\${String(decDate).padStart(3, "0")}]{.cyan}.[\${decTime.toFixed(5).slice(2)}]{.cyan}, the integer part, [\${String(decDate).padStart(3, "0")}]{.cyan}, corresponds to the ISO🌐[month]{.mulberry} and [dom]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}, [\${String(month).padStart(2, "0")}]{.mulberry}-[\${String(decDotm).padStart(2, "0")}]{.magenta}, and the fractional part, .[\${decTime.toFixed(5).slice(2)}]{.cyan}, converts to the ISO🌐[hour]{.hardwood}, [minute]{.maroon}, and [second]{.sienna}: T[\${String(isoHour).padStart(2, "0")}]{.hardwood}:[\${String(isoMinute).padStart(2, "0")}]{.maroon}:[\${String(isoSecond).padStart(2, "0")}]{.sienna}.
+The Dec snap🫰in the Zone [0]{.lime} Dec time⏳zone, [\${String(decYear).padStart(4, "0")}]{.yellow}+[\${String(decDate).padStart(3, "0")}]{.cyan}.[\${decTime.toFixed(5).slice(2)}]{.cyan}+[0]{.lime}, is equivalent to its ISO🌐8601 [counterpart](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations:~:text=A%20single%20point%20in%20time%20can%20be%20represented%20by%20concatenating%20a%20complete%20date%20expression%2C%20the%20letter%20%22T%22%20as%20a%20delimiter%2C%20and%20a%20valid%20time%20expression) in the [UTC+[00]{.olive}:[00]{.purple}](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=a%20time%20offset%20from%20UTC%20of%20%2B00%3A00) time⏳zone: [\${String(isoYear).padStart(4, "0")}]{.yellow}-[\${String(month).padStart(2, "0")}]{.azul}-[\${String(decDotm).padStart(2, "0")}]{.lightblue}T[\${String(isoHour).padStart(2, "0")}]{.teal}:[\${String(isoMinute).padStart(2, "0")}]{.olive}:[\${String(isoSecond).padStart(2, "0")}]{.purple}+[00]{.teal}:[00]{.olive}. In the current doy, [\${String(decDate).padStart(3, "0")}]{.cyan}.[\${decTime.toFixed(5).slice(2)}]{.cyan}, the integer part, [\${String(decDate).padStart(3, "0")}]{.cyan}, corresponds to the ISO🌐[month]{.azul} and [dom]{.lightblue .under .tool data-bs-toggle="tooltip" data-bs-title="day-of-month"}, [\${String(month).padStart(2, "0")}]{.azul}-[\${String(decDotm).padStart(2, "0")}]{.lightblue}, and the fractional part, .[\${decTime.toFixed(5).slice(2)}]{.cyan}, converts to the ISO🌐[hour]{.teal}, [minute]{.olive}, and [second]{.purple}: T[\${String(isoHour).padStart(2, "0")}]{.teal}:[\${String(isoMinute).padStart(2, "0")}]{.olive}:[\${String(isoSecond).padStart(2, "0")}]{.purple}.
 
 ```{ojs}
 //| echo: false
@@ -91,7 +94,7 @@ pentBar = Plot.plot({
 ```
 
 ```{mermaid}
-%%| label: snapnavbtm
+%%| label: snapnav
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
 flowchart LR
    A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
@@ -462,6 +465,9 @@ move = {
 <style>
 .pentbarlegend-swatch {
   font-size: 19px;
+}
+#title-block-header > div:nth-child(2) {
+  display: none;
 }
 </style>
 ```

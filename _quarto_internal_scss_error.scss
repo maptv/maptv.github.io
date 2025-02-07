@@ -1046,7 +1046,7 @@ $body-color: #FFFFFF !default;
 
 // Inline code
 $code-bg: #000000 !default;
-$link-color: #0EF !default;
+$link-color: ##88a3e8 !default;
 $code-color: #BFFF00 !default;
 $code-font-size: .92em !default;
 $code-padding: 0px !default;
@@ -1054,7 +1054,7 @@ $code-padding: 0px !default;
 // color classes
 .orange { color: orange; }
 .green { color: lawngreen; }
-.blue { color: deepskyblue; }
+.blue { color: powderblue; }
 .gray { color: gray; }
 .mono { color: #BFFF00 !important; }
 .tool { color: #F399FF; }
@@ -1099,18 +1099,6 @@ svg.mermaid-js g.edgeLabels span.edgeLabel {
     background: #000000 !important;
 }
 
-svg.mermaid-js g#decalendar > rect {
-    fill: #880088 !important;
-}
-
-svg.mermaid-js g#ana > rect {
-    fill: #880088 !important;
-}
-
-svg.mermaid-js g#iso > rect {
-    fill: #880088 !important;
-}
-
 g.node.clickable.flowchart-label.default > rect {
     fill: darkmagenta !important;
 }
@@ -1121,11 +1109,11 @@ svg.mermaid-js  span.nodeLabel {
   filter: invert(1);
 }
 
-svg#finger tspan {
+svg#lefthand tspan, svg#righthand tspan {
   fill: white;
 }
 
-svg#finger path {
+svg#lefthand path, svg#righthand path {
   stroke: white;
 }
 
@@ -1293,7 +1281,22 @@ div > form > div > input[type="range"] {
   fill: #f00;
 }
 
-#navchart-mermaid a[xlink:href="/dec"] rect.basic.label-container {
+svg#decnavtop-mermaid a:nth-child(1) rect.basic.label-container {
+  stroke: magenta;
+  stroke-width: 6px;
+}
+
+svg#decnavbtm-mermaid a:nth-child(1) rect.basic.label-container {
+  stroke: magenta;
+  stroke-width: 6px;
+}
+
+svg#datenavtop-mermaid a:nth-child(2) rect.basic.label-container {
+  stroke: magenta;
+  stroke-width: 6px;
+}
+
+svg#datenavbtm-mermaid a:nth-child(2) rect.basic.label-container {
   stroke: magenta;
   stroke-width: 6px;
 }
@@ -1301,6 +1304,10 @@ div > form > div > input[type="range"] {
 g.node rect:hover, g.node:has(g:hover) rect {
   stroke: lightgreen !important;
   stroke-width: 9px !important;
+}
+
+g#decdate > rect, g#gregdate > rect {
+  fill: darkblue !important;
 }
 
 

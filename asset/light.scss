@@ -6,7 +6,7 @@ $body-color: #000000 !default;
 
 // Inline code
 $code-bg: #FFFFFF !default;
-$link-color: #03C !default;
+$link-color: mediumblue !default;
 $code-color: #006400 !default;
 $code-font-size: .9em !default;
 $code-padding: 0px !default;
@@ -132,26 +132,30 @@ g#workdays.cluster rect {
     fill: lightgreen !important;
 }
 
-svg#decnavtop-mermaid a:nth-child(1) rect.basic.label-container {
+svg#decnav-mermaid a:nth-child(1) rect.basic.label-container {
   stroke: darkmagenta;
   stroke-width: 6px;
 }
 
-svg#decnavbtm-mermaid a:nth-child(1) rect.basic.label-container {
+svg#datenav-mermaid a:nth-child(2) rect.basic.label-container {
   stroke: darkmagenta;
   stroke-width: 6px;
 }
 
-svg#datenavtop-mermaid a:nth-child(2) rect.basic.label-container {
+svg#timenav-mermaid a:nth-child(3) rect.basic.label-container {
   stroke: darkmagenta;
   stroke-width: 6px;
 }
 
-svg#datenavbtm-mermaid a:nth-child(2) rect.basic.label-container {
+svg#snapnav-mermaid a:nth-child(4) rect.basic.label-container {
   stroke: darkmagenta;
   stroke-width: 6px;
 }
 
+svg#spannav-mermaid a:nth-child(5) rect.basic.label-container {
+  stroke: darkmagenta;
+  stroke-width: 6px;
+}
 
 g.node rect:hover, g.node:has(g:hover) rect {
   stroke: darkgreen !important;

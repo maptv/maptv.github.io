@@ -3,13 +3,14 @@ title: Dec
 author:
   - name: Martin Laptev
     url: https://maptv.github.io
-image: ../asset/deidek.svg
+image: /asset/deidek.svg
 description: >
   Introducing the Dec measurement system, which uses turns instead of months, weeks, hours, minutes, seconds, and degrees.
+draft: true
 citation:
   url: https://maptv.github.io/dec
 aliases:
-  - /d/
+  - /d
 license: CC BY-SA
 lightbox: false
 toc: true
@@ -31,7 +32,7 @@ filters:
 ---
 
 ```{mermaid}
-%%| label: decnavtop
+%%| label: decnav
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
 flowchart LR
    A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
@@ -42,7 +43,20 @@ flowchart LR
    click E "/dec/span"
 ```
 
-This section of my site focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created to measure time⏳, position📍, orientation🧭, angles📐, and cycles🔄in [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) instead of months, weeks, hours, minutes, seconds, and degrees. To measure time, Dec uses years and days. Years are turns of a celestial body around [the point it orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit). Days are turns of a [celestial body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
+This section of my site focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created to measure time⏳, position📍, orientation🧭, angles📐, and cycles🔄in [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) instead of [months]{.azul}, [weeks]{.darkgreen}, [hours]{.teal}, [minutes]{.olive}, [seconds]{.purple}, and [degrees]{.darkred}. Dec measures [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth%2C%20or%20another%20celestial%20body) and the [time-of-day]{.cyan} ([tod]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}) in terms of the turns of planet [Earth](https://en.wikipedia.org/wiki/Earth#:~:text=the%20third%20planet%20from%20the%20Sun) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole). Longitudes start at [Meridian 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole) and [tods]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="times-of-day"} start at [Dot 0]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="midnight"}.
+
+Meridian 0 is the Dec [International Date Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) and [prime meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0), whereas .
+
+41.[6]{.over} 
+
+[Meridian 1](https://en.wikipedia.org/wiki/18th_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Europe%2C%20Africa%2C%20the%20Atlantic%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole) divides Europe and Africa into Western and Eastern halves.
+
+ which runs through Iceland and the Atlantic Ocean just West of Africa,
+In the context of time measurement, a turn on Earth's axis is called a day and a turn around the Sun is a year.
+
+ for [geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=the%20process%20of%20determining%20or%20estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person)
+
+To measure time, Dec uses years and days. Years are turns of a celestial body around [the point it orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit). Days are turns of a [celestial body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
 
 The distinguishing characteristics of Dec are its simplicity and consistency. These qualities are evident when comparing Dec and [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) time zones using the [toggle](https://observablehq.com/@observablehq/input-toggle)✅inputs beneath the world🌏map🗺️below⬇️. The 10 Dec time zones are all 1 [deciturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a turn"} wide, whereas the 40 UTC time zones shown on the map all deviate from their standard width of 41⅔ [milliturns]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a turn"} to conform to political boundaries.
 
@@ -72,7 +86,7 @@ viewof select = Inputs.select(
 
 In addition to showing and hiding time zones, the toggle✅inputs also can add country borders and a [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) shade effect to the map🗺️. For a different perspective on the world🌏, you can change the [map🗺️projection](https://observablehq.com/plot/features/projections) using the [select↕️input](https://observablehq.com/documentation/inputs/overview#select) beneath the toggle✅inputs. All map🗺️projections perform some kind of transformation to show a sphere on a flat surface.
 
-For a more realistic view of the world, you can interact with the  as it really is 
+For a more realistic view of the world, you can interact with the globe🌐below⬇️. as it really is 
 
 Dec has ten [time⏳zones](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time) which are each one [deciturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a turn"} wide and are numbered zero through nine, like the ten [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of) that separate them. Zone [0]{.lime} is in between Meridians 0 and 1. [Meridian 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole), which runs through Iceland and the Atlantic Ocean just West of Africa, is the Dec [International Date Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) and [prime meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0). [Meridian 1](https://en.wikipedia.org/wiki/18th_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Europe%2C%20Africa%2C%20the%20Atlantic%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole) divides Europe and Africa into Western and Eastern halves.
 
@@ -134,7 +148,7 @@ This shift causes the Gregorian calendar year to be 1 greater than the year in t
 `Declock` times often have three digits because this is the best level of precision for displaying time on clocks and watches. While 3 digits are often best, `Declock` times can have any number of digits, depending on the desired precision level. `Declock` provides names for extremely precise time units, but the most relevant units are within a few orders of magnitude from a day, which is the base unit of both `Declock` and `Decalendar`. Listing the units of each highlights the relationship between the two:
 
 ```{mermaid}
-%%| label: decnavbtm
+%%| label: decnav
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
 flowchart LR
    A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
@@ -459,6 +473,9 @@ div#projselect form.oi-3a86ea > label {
 }
 div#projselect form.oi-3a86ea {
    --input-width: 260px;
+}
+div:has(div.description) {
+  display: none;
 }
 </style>
 ```

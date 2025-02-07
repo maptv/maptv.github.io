@@ -187,166 +187,26 @@ div > form > label {
   --label-width: 125px;
 }
 
-.azul {
-  border-radius: 4px;
-  background-color: blue;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
+.azul { border-radius: 4px; background-color: blue; color: white; padding: 0px 2px 0px 2px; } /* month 0000ff */
+.cyan { border-radius: 4px; background-color: cyan; color: black; padding: 0px 2px 0px 2px; } /* day 00ffff */
+.darkgreen { border-radius: 4px; background-color: #006400; color: white; padding: 0px 2px 0px 2px; } /* week 006400 */
+.darkred { border-radius: 4px; background-color: darkred; color: white; padding: 0px 2px 0px 2px; } /* degree 8b0000 */
+.lightblue { border-radius: 4px; background-color: lightskyblue; color: black; padding: 0px 2px 0px 2px; } /* dom add8e6 */
+.lightgreen { border-radius: 4px; background-color: lightgreen; color: black; padding: 0px 2px 0px 2px; } /* dow 90ee90 */
+.lime { border-radius: 4px; background-color: lime; color: black; padding: 0px 2px 0px 2px; } /* zone 00ff00 */
+.olive { border-radius: 4px; background-color: olive; color: white; padding: 0px 2px 0px 2px; } /* minute 808000 */
+.orange { border-radius: 4px; background-color: orange; color: black; padding: 0px 2px 0px 2px; } /* orange ffa500 */
+.pink { border-radius: 4px; background-color: pink; color: black; padding: 0px 2px 0px 2px; } /* negative ffc0cb */
+.purple { border-radius: 4px; background-color: purple; color: white; padding: 0px 2px 0px 2px; } /* second 800080 */
+.teal { border-radius: 4px; background-color: teal; color: white; padding: 0px 2px 0px 2px; } /* hour 008080 */
+.violet { border-radius: 4px; background-color: violet; color: black; padding: 0px 2px 0px 2px; } /* diff ee82ee */
+.magenta { border-radius: 4px; background-color: magenta; color: black; padding: 0px 2px 0px 2px; } /* diff ff00ff */
+.yellow { border-radius: 4px; background-color: yellow; color: black; padding: 0px 2px 0px 2px; } /* year ffff00 */
 
-.winedregs {
-  border-radius: 4px;
-  background-color: #673147;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
-
-.wine {
-  border-radius: 4px;
-  background-color: #722F37;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
-
-.darkblue {
-  border-radius: 4px;
-  background-color: #darkblue;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
-
-.denim {
-  border-radius: 4px;
-  background-color: #1560BD;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
-
-.magenta {
-  border-radius: 4px;
-  background-color: darkmagenta;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
-
-.orchid {
-  border-radius: 4px;
-  background-color: darkorchid;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
-
-.orangered {
-  border-radius: 4px;
-  background-color: orangered;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
-
-.maroon {
-  border-radius: 4px;
-  background-color: maroon;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
-
-.mulberry {
-  border-radius: 4px;
-  background-color: #C54BBC;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
-
-.hardwood {
-  border-radius: 4px;
-  background-color: #937A62;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
-
-.honeydew {
-  border-radius: 4px;
-  background-color: honeydew;
-  color: black;
-  padding: 0px 2px 0px 2px;
-}
-
-.seagreen {
-  border-radius: 4px;
-  background-color: seagreen;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
-
-.wheat {
-  border-radius: 4px;
-  background-color: wheat;
-  color: black;
-  padding: 0px 2px 0px 2px;
-}
-
-.cyan {
-  border-radius: 4px;
-  background-color: cyan;
-  color: black;
-  padding: 0px 2px 0px 2px;
-}
-
-.lime {
-  border-radius: 4px;
-  background-color: lime;
-  color: black;
-  padding: 0px 2px 0px 2px;
-}
-
-.pink {
-  border-radius: 4px;
-  background-color: pink;
-  color: black;
-  padding: 0px 2px 0px 2px;
-}
-
-.orange {
-  border-radius: 4px;
-  background-color: orange;
-  color: black;
-  padding: 0px 2px 0px 2px;
-}
-
-.yellow {
-  border-radius: 4px;
-  background-color: yellow;
-  color: black;
-  padding: 0px 2px 0px 2px;
-}
-
-.ultramarine {
-  border-radius: 4px;
-  background-color: #120A8F;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
-
-.red {
-  border-radius: 4px;
-  background-color: red;
-  color: black;
-  padding: 0px 2px 0px 2px;
-}
-
-.sand {
-  border-radius: 4px;
-  background-color: sandybrown;
-  color: black;
-  padding: 0px 2px 0px 2px;
-}
-
-.sienna {
-  border-radius: 4px;
-  background-color: sienna;
-  color: white;
-  padding: 0px 2px 0px 2px;
-}
+.under {
+  text-decoration-line: underline;
+  text-decoration-thickness: .7px;
+.yellow { border-radius: 4px; background-color: yellow; color: black; padding: 0px 2px 0px 2px; } /* year ffff00 */
 
 .under {
   text-decoration-line: underline;
@@ -362,8 +222,8 @@ div > form > label {
   display: none;
 }
 
-h4.hiddenheading {
-  display: none;
+#time > h4.hiddenheading {
+  display: none !important;
 }
 
 #title-block-header.quarto-title-block.default .description>p:last-of-type {
