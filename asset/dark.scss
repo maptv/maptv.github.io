@@ -274,3 +274,13 @@ g.node rect:hover, g.node:has(g:hover) rect {
 g#decdate > rect, g#gregdate > rect {
   fill: darkblue !important;
 }
+
+.darklink {
+  color: #049;
+  text-underline-offset: 1.5px;
+  text-decoration-thickness: 1.5px;
+}
+
+.darklink:hover {
+  color: #06f;
+}
