@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2024+343
+2024+344
 
 - [Context clues](#sec-context)
 - [Snaps](#snaps)
@@ -19,7 +19,7 @@ style="width:8.64in;height:0.98in" />
 
 </div>
 
-This section of my site focuses on Dec, a [measurement
+This section of my website focuses on Dec, a [measurement
 system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)
 that [I](https://maptv.github.io) created to measure time⏳, position📍,
 orientation🧭, angles📐, and cycles🔄in
@@ -28,14 +28,86 @@ orientation🧭, angles📐, and cycles🔄in
 instead of <span class="azul">months</span>,
 <span class="darkgreen">weeks</span>, <span class="teal">hours</span>,
 <span class="olive">minutes</span>, <span class="purple">seconds</span>,
-and <span class="darkred">degrees</span>. Dec measures
+and <span class="darkred">degrees</span>. You may be surprised by how
+many things can be measured in turns. The
+[scrubber](https://observablehq.com/@mbostock/scrubber)🧽input
+below⬇️measures ${rainbow} in <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a turn">milliturns</span> of the [color
+wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle).
+
+``` {ojs}
+//| echo: false
+viewof colorturns = Scrubber(numbers)
+```
+
+Turns can represent anything that is circular or cyclical, like [Earth’s
+orbits](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=complete%20orbit%20takes-,365.256%C2%A0days,-(1%20sidereal%20year))
+around the Sun (years), [Earth’s
+rotations](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
+on [its
+axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole)
+(days),
+[meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of),
+and
+[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line).
+The distance from the
+[Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres)
+to the
+[North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
+or [South
+Pole](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
+is a [quarter
+meridian](https://en.wikipedia.org/wiki/Meridian_arc#Quarter_meridian:~:text=The%20distance%20from%20the%20equator%20to%20the%20pole).
+In fact, this was the basis of an [early
+definition](https://en.wikipedia.org/wiki/Metre#:~:text=one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole)
+of the
+[meter](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units).
+Even though the definition has changed, a meridian is still very close
+to 10 <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of meters">kilometers</span>.
+
+![](../asset/quartermeridian.svg)
+
+For time measurement, Dec uses turns to measure years, days, longitudes,
+and latitudes. can therefore represent
+
+The symbol *τ* represents any kind of turn. A turn can be a year, a day,
+a meridian, a parallel, or a color🎨wheel.
+
+are many kinds of turns. can Dec uses names to distinguish between
+different kinds of turns. of years, and called days and
+
+In geopositioning, a turn can be a circle of longitude or latitude.
+
+are ’s turns
+[turns](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
+on . days are turns. In time measurement, both years and days are turns.
+
+various Dec measures
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth%2C%20or%20another%20celestial%20body)
 and the <span class="cyan">time-of-day</span>
 (<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span>) in terms of the turns of planet
-[Earth](https://en.wikipedia.org/wiki/Earth#:~:text=the%20third%20planet%20from%20the%20Sun)
+data-bs-title="time-of-day">tod</span>) in terms of
+[Earth](https://en.wikipedia.org/wiki/Earth#:~:text=the%20third%20planet%20from%20the%20Sun)’s
+[turns](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
 on [its
 axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
+In different contexts of time, a turn is day. A turn of longitude is
+called a circle.
+
+The current <span class="cyan under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> is an approximation the longitude
+of the Sun.
+
+Turns help us understand the relationship between longitude and tod. A
+half turn separates noon and midnight or the Western and Eastern
+Hemispheres.
+
+Longitude defines the ten Dec time zones that standardize the
+<span class="cyan under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span>.
+
 Longitudes start at [Meridian
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 and <span class="cyan under tool" data-bs-toggle="tooltip"
@@ -358,6 +430,103 @@ style="width:8.64in;height:0.98in" />
 ``` {ojs}
 //| echo: false
 //| output: false
+// https://observablehq.com/@observablehq/text-color-annotations-in-markdown
+function textcolor(content, style = {}) {
+  function yiq(color) {
+    const {r, g, b} = d3.rgb(color);
+    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
+  }
+  const {
+    background,
+    color = yiq(background) >= 0.6 ? "#111" : "white",
+    padding = "0 5px",
+    borderRadius = "4px",
+    fontWeight = 800,
+    ...rest
+  } = typeof style === "string" ? {background: style} : style;
+  return htl.html`<span style=${{
+    background,
+    color,
+    padding,
+    borderRadius,
+    fontWeight,
+    ...rest
+  }}>${content}</span>`;
+}
+// https://observablehq.com/@mbostock/scrubber
+function Scrubber(values, {
+  format = value => value,
+  initial = 0,
+  direction = 1,
+  delay = null,
+  autoplay = true,
+  loop = true,
+  loopDelay = null,
+  alternate = false
+} = {}) {
+  values = Array.from(values);
+  const form = html`<form style="font: 12px var(--sans-serif); font-variant-numeric: tabular-nums; display: flex; height: 33px; align-items: center;">
+  <button name=b type=button style="margin-right: 0.4em; width: 5em;"></button>
+  <label style="display: flex; align-items: center;">
+    <input name=i type=range min=0 max=${values.length - 1} value=${initial} step=1 style="width: 180px;">
+    <output name=o style="margin-left: 0.4em;"></output>
+  </label>
+</form>`;
+  let frame = null;
+  let timer = null;
+  let interval = null;
+  function start() {
+    form.b.textContent = "Pause";
+    if (delay === null) frame = requestAnimationFrame(tick);
+    else interval = setInterval(tick, delay);
+  }
+  function stop() {
+    form.b.textContent = "Play";
+    if (frame !== null) cancelAnimationFrame(frame), frame = null;
+    if (timer !== null) clearTimeout(timer), timer = null;
+    if (interval !== null) clearInterval(interval), interval = null;
+  }
+  function running() {
+    return frame !== null || timer !== null || interval !== null;
+  }
+  function tick() {
+    if (form.i.valueAsNumber === (direction > 0 ? values.length - 1 : direction < 0 ? 0 : NaN)) {
+      if (!loop) return stop();
+      if (alternate) direction = -direction;
+      if (loopDelay !== null) {
+        if (frame !== null) cancelAnimationFrame(frame), frame = null;
+        if (interval !== null) clearInterval(interval), interval = null;
+        timer = setTimeout(() => (step(), start()), loopDelay);
+        return;
+      }
+    }
+    if (delay === null) frame = requestAnimationFrame(tick);
+    step();
+  }
+  function step() {
+    form.i.valueAsNumber = (form.i.valueAsNumber + direction + values.length) % values.length;
+    form.i.dispatchEvent(new CustomEvent("input", {bubbles: true}));
+  }
+  form.i.oninput = event => {
+    if (event && event.isTrusted && running()) stop();
+    form.value = values[form.i.valueAsNumber];
+    form.o.value = format(form.value, form.i.valueAsNumber, values);
+  };
+  form.b.onclick = () => {
+    if (running()) return stop();
+    direction = alternate && form.i.valueAsNumber === values.length - 1 ? -1 : 1;
+    form.i.valueAsNumber = (form.i.valueAsNumber + direction) % values.length;
+    form.i.dispatchEvent(new CustomEvent("input", {bubbles: true}));
+    start();
+  };
+  form.i.oninput();
+  if (autoplay) start();
+  else stop();
+  Inputs.disposal(form).then(stop);
+  return form;
+}
+numbers = Array.from({length: 1000}, (_, i) => i)
+rainbow = textcolor('colors🎨', {background:`hsl(${colorturns * .36}, 100%, 50%)`})
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
@@ -416,7 +585,7 @@ function worldMapCoordinates(config = {}, dimensions) {
   const formEl = html`<form style="width: ${width}px;"></form>`;
   const context = DOM.context2d(width, height);
   const canvas = context.canvas;
-  canvas.style.margin = `-6px 0 ${width > 400 ? -12 : -18}px`;
+  canvas.style.margin = `-4px 0 ${width > 400 ? -8 : -14}px`;
   const projection = config[2]
     .precision(0.1)
     .fitSize([width, height], { type: "Sphere" }).rotate([-156, 0]);

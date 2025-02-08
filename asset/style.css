@@ -222,10 +222,6 @@ div > form > label {
   display: none;
 }
 
-#time > h4.hiddenheading {
-  display: none !important;
-}
-
 #title-block-header.quarto-title-block.default .description>p:last-of-type {
   display: none;
 }

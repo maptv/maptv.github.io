@@ -466,9 +466,10 @@ regardless of the last 4 or 5 days of <span class="cyan">Dek</span> 36
 that extend past the end of the <span class="yellow">year</span>. If we
 want to track days seamlessly across <span class="yellow">years</span>,
 we can use a continuous count of days called the
-<span class="cyan">day-of-</span>[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
-(<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span>).
+<span class="cyan">day-of-<a
+href="https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar"
+class="darklink">era</a></span> (<span class="cyan under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-era">doe</span>).
 
 # Day of era (doe)
 
