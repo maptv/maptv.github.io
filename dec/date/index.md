@@ -1357,8 +1357,11 @@ determines which days we want to include.
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
 
-![[Wikimedia](https://commons.wikimedia.org/wiki/File:Manual_Layout.svg)](../../asset/Manual_Layout.svg)
-[Wikimedia](https://commons.wikimedia.org/wiki/File:Manual_Layout.svg)
+<figure>
+<img src="../../asset/Manual_Layout.svg" alt="Wikimedia" />
+<figcaption aria-hidden="true"><a
+href="https://commons.wikimedia.org/wiki/File:Manual_Layout.svg">Wikimedia</a></figcaption>
+</figure>
 
 </div>
 
@@ -3247,5 +3250,9 @@ form.oi-3a86ea-checkbox {
 }
 div:has(div.description) {
   display: none;
+}
+div#conversionchart > div {
+  display: flex;
+  justify-content: center;
 }
 </style>

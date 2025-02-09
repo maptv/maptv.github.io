@@ -19,30 +19,56 @@ class="column-margin" data-fig-align="center" />
 This section of my website focuses on Dec, a [measurement
 system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)
 that [I](https://maptv.github.io) created to measure time⏳, position📍,
-orientation🧭, angles📐, and cycles🔄in
+angle📐, and in
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
 ([*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
 instead of <span class="azul">months</span>,
 <span class="darkgreen">weeks</span>, <span class="teal">hours</span>,
 <span class="olive">minutes</span>, <span class="purple">seconds</span>,
 and <span class="darkred">degrees</span>. Turns have many uses and can
-even be used to specify a ${rainbow} and its
+even be used to specify a ${rainbow} and a
+[bearing](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object)
+as demonstrated by the
+[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
+[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭below⬇️.
+
+``` {ojs}
+//| echo: false
+//| label: colorslider
+// https://observablehq.com/@mbostock/scrubber
+// https://observablehq.com/@observablehq/synchronized-inputs
+viewof colorturns = Scrubber(numbers, {format: y => "", inputStyle: "display:none;"})
+Inputs.bind(Inputs.range([0, 999], {step: 1}), viewof colorturns)
+```
+
+``` {ojs}
+//| echo: false
+//| label: colorwheelcompass
+// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
+svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
+  <g transform='rotate(${-colorturns * .360})'>
+  ${repeat(tick(radius, 5, '#434343'), numMinorTicks * 4 * numMajorTicks)}
+  ${repeat(tick(radius, 8), numMajorTicks * 4)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="white" stroke="black" stroke-width="1"/>`, 4, 45)}
+  <circle r="${radius}" fill="#d3d3d3" stroke="#434343" stroke-width="3" />
+  ${repeat(directionMarker(radius+14, 24), 4, 0)}
+  ${repeat(directionMarker(radius+12, 24), 4, 45)}
+  ${repeat(turnMarker(radius+14, 32), 4, 0)}
+  ${repeat(turnMarker(radius+12, 32), 4, 45)}
+  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / piecolors.length / 2, 1, piecolors), piecolors.length, 360/piecolors.length)}
+</svg>
+`
+```
+
+its
 [hex](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors),
 <span class="mono">${colorhue.formatHex()}</span>, or
 [rgb](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model%5B1%5D%20in%20which%20the%20red%2C%20green%2C%20and%20blue%20primary%20colors%20of%20light%20are%20added%20together%20in%20various%20ways%20to%20reproduce%20a%20broad%20array%20of%20colors)
 triplet: <span class="mono">${colorhue.formatRgb().slice(3)}</span>.
 
-``` {ojs}
-//| echo: false
-//| label: colorslider
-viewof colorturns = Scrubber(numbers, {format: y => "", inputStyle: "display:none;"})
-Inputs.bind(Inputs.range([0, 999], {step: 1}), viewof colorturns)
-```
-
 Turns can represent anything that is circular, spherical, or cyclical,
-like the [color
-wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle),
-a
+like the , a
 [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation),
 [Earth’s
 orbits](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=complete%20orbit%20takes-,365.256%C2%A0days,-(1%20sidereal%20year))
@@ -427,9 +453,9 @@ function Scrubber(values, {
   return form;
 }
 numbers = Array.from({length: 1000}, (_, i) => i)
-colordeg = Math.ceil(colorturns * .36)
+colordeg = colorturns * .36
 colorhue = d3.color(`hsl(${colordeg}, 100%, 50%)`)
-rainbow = textcolor('color🎨', {background:`hsl(${colordeg}, 100%, 50%)`})
+rainbow = textcolor('hue', {background:`hsl(${colordeg}, 100%, 50%)`})
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
@@ -503,7 +529,7 @@ function worldMapCoordinates(config = {}, dimensions) {
   function draw() {
     if (!utctoggle) {
       context.beginPath(); path({type: "Sphere"});
-      context.fillStyle = colors.ocean; context.fill();
+      context.fillStyle = mapcolors.ocean; context.fill();
     }
     if (utctoggle) {
       zones.map(f => fillMesh(f))
@@ -511,7 +537,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.beginPath();
     path(land);
     if (!utctoggle) {
-      context.fillStyle = colors.land;
+      context.fillStyle = mapcolors.land;
       context.fill();
     }
     context.strokeStyle = `#888`;
@@ -666,7 +692,7 @@ projections = [
   { name: "Wiechel", value: d3.geoWiechel },
   { name: "Winkel tripel", value: d3.geoWinkel3 }
 ]
-colors = ({
+mapcolors = ({
   night: "#719fb6",
   day: "#ffe438",
   grid: "#4b6a79",
@@ -709,9 +735,98 @@ borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== 
 countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
 ```
 
+``` {ojs}
+//| echo: false
+piecolors = [
+  "#ff4000", // 15
+  "#ff8000", // 30
+  "#ffbf00", // 45
+  "#ffff00", // 60
+  '#bfff00', // 75
+  '#80ff00', // 90
+  '#40ff00', // 105
+  '#00ff00', // 120
+  '#00ff40', // 135
+  '#00ff80', // 150
+  '#00ffbf', // 165
+  '#00ffff', // 180
+  '#00bfff', // 195
+  '#0080ff', // 210
+  '#0040ff', // 225
+  '#0000ff', // 240
+  '#4000ff', // 255
+  '#8000ff', // 270
+  '#bf00ff', // 285
+  '#ff00ff', // 300
+  '#ff00bf', // 315
+  '#ff0080', // 330
+  '#ff0040', // 345
+  '#f00',    // 0
+]
+viewof size = Inputs.range([50, 700], {
+  value: 300,
+  step: 20,
+  label: 'size'
+})
+viewof numMajorTicks = Inputs.range([0, 45], {
+  value: 6,
+  step: 2,
+  label: "Major ticks"
+})
+viewof numMinorTicks = Inputs.range([0, 10], {
+  value: 4,
+  step: 1,
+  label: "Minor ticks"
+})
+function repeat(component, N, initialAngle=0) {
+  // NOTE: if component is a function, it will be called with (angle, i)
+  if (N <= 0) return "";
+  let result = [];
+  for (let i = 0; i < N; i++) {
+    let angle = (360 / N) * i + initialAngle;
+    let el = typeof component === 'function'? component(angle, i) : component;
+    result.push(`<g transform="rotate(${angle})">${el}</g>`);
+  }
+  return result.join("");
+}
+```
+
+``` {ojs}
+function tick(radius, length, color='black') {
+  return `<path d="M 0,${-radius} l 0,${-length}" fill="none" stroke="${color}" stroke-width="1" />`;
+}
+function directionMarker(radius, fontSize) { return (angle, _) => {
+  let label = {0: 'N', 45: 'NE', 90: 'E', 135: 'SE', 180: 'S', 225: 'SW', 270: 'W', 315: 'NW'}[angle] ?? '??';
+  return `<text y="${-radius-(margin/2)}" font-size="${fontSize}" text-anchor="middle" dy=".36em">${label}</text>`;
+};
+}
+```
+
+``` {ojs}
+function turnMarker(radius, fontSize) { return (angle, _) => {
+  let label = {0: '0', 45: '125', 90: '250', 135: '375', 180: '500', 225: '625', 270: '750', 315: '875'}[angle] ?? '??';
+  return `<text y="${-radius-(margin/2)}" font-size="${fontSize}" text-anchor="middle" dy="-0.36em">${label}</text>`;
+  };
+}
+```
+
+``` {ojs}
+//| echo: false
+function pie(radius, width, narrowness=1.0, piecolors) {
+  return (_, i) => `<path d="M 0,0 L ${-width},${-radius} A ${width} ${width/2} 0 0 1 ${width} ${-radius} z" fill="${piecolors[i]}" stroke="black" stroke-width="0.5"/>`;
+}
+margin = size / 14
+padding = 42
+radius = size/2 - margin - padding
+```
+
 <style>
 div#colorslider {
   display: flex;
+}
+div#colorwheelcompass {
+  display: flex;
+  justify-content: center;
 }
 div#zonemap {
    overflow-y: hidden;
