@@ -505,7 +505,6 @@ Spans🌈can also represent groups of non-consecutive days. All of the Schedule 
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
 ![[Wikimedia](https://commons.wikimedia.org/wiki/File:Manual_Layout.svg)](../../asset/Manual_Layout.svg)
-[Wikimedia](https://commons.wikimedia.org/wiki/File:Manual_Layout.svg)
 :::
 Schedule [3]{.green} is one of six [dek]{.cyan}ly schedules that allow us to organize [work]{.green} and [rest]{.blue} days into five homogeneous columns like in the tables and flowcharts above⬆️. These schedules are like the gears⚙️of a [5-speed](https://en.m.wikipedia.org/wiki/Manual_transmission#:~:text=Common%20shift%20pattern%20for%20a%205%2Dspeed%20transmission) [manual transmission](https://en.m.wikipedia.org/wiki/Manual_transmission#:~:text=a%20multi%2Dspeed%20motor%20vehicle%20transmission%20system%20where%20gear%20changes%20require%20the%20driver%20to%20manually%20select%20the%20gears%20by%20operating%20a%20gear%20stick%20and%20clutch) in a car. The approximate speed ranges for the five gears⚙️are <5, 5 to 10, 10 to 15, 15 to 20, and &ge;20 [kilometers]{.underline .tool data-bs-toggle="tooltip" data-bs-title="thousands of meters"} per [centiday]{.underline .tool data-bs-toggle="tooltip" data-bs-title="a hundredth of a day"}.
 
@@ -1032,6 +1031,10 @@ form.oi-3a86ea-checkbox {
 }
 div:has(div.description) {
   display: none;
+}
+div#conversionchart > div {
+  display: flex;
+  justify-content: center;
 }
 </style>
 ```
