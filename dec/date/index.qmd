@@ -421,7 +421,7 @@ Essentially, Dec [woy]{.darkgreen .under .tool data-bs-toggle="tooltip" data-bs-
 
 # Day of dek (dod){#dod}
 
-While [weeks]{.darkgreen} are not evenly divisible by two, a [dek]{.cyan} can be cut✂️into two equal halves called pentadays (pents). The flowcharts below⬇️show Schedule [3]{.green}, the recommended [dek]{.cyan}ly schedule of [work]{.green} and [rest]{.blue} day. Schedule [3]{.green} can be short for Schedule [1]{.blue}+[3]{.green}+[1]{.blue}, if you prefer the zero-based top flowchart, or Schedule [3]{.green}+[2]{.blue}, if you favor the one-based bottom flowchart.
+While [weeks]{.darkgreen} are not evenly divisible by two, a [dek]{.cyan} can be cut✂️into two equal halves called pentadays (pents). The [Mermaid](https://mermaid.js.org) flowcharts below⬇️show Schedule [3]{.green}, the recommended [dek]{.cyan}ly schedule of [work]{.green} and [rest]{.blue} day. Schedule [3]{.green} can be short for Schedule [1]{.blue}+[3]{.green}+[1]{.blue}, if you prefer the zero-based top flowchart, or Schedule [3]{.green}+[2]{.blue}, if you favor the one-based bottom flowchart.
 
 ```{mermaid}
 %%| label: zerobasedpent
@@ -503,7 +503,10 @@ Other than pent numbers, a pent can also be expressed as a span🌈. Pent 72 can
 
 Spans🌈can also represent groups of non-consecutive days. All of the Schedule [3]{.green} [work]{.green} days in a [year]{.yellow} can be expressed as [1]{.cyan}=[4]{.cyan}=:[5]{.sienna}. In this span🌈, we start with Days [1]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="March 2"}, [2]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="March 3"}, and [3]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="March 4"} and then include every day that is a multiple of 5 days away from one of the starting days. The number preceded by a colon is called a step and determines which days we want to include.
 
-![](../../asset/Manual_Layout.svg){.column-margin fig-align="center"}
+:::{.column-margin fig-align="center" style="text-align:center;"}
+![[Wikimedia](https://commons.wikimedia.org/wiki/File:Manual_Layout.svg)](../../asset/Manual_Layout.svg)
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Manual_Layout.svg)
+:::
 Schedule [3]{.green} is one of six [dek]{.cyan}ly schedules that allow us to organize [work]{.green} and [rest]{.blue} days into five homogeneous columns like in the tables and flowcharts above⬆️. These schedules are like the gears⚙️of a [5-speed](https://en.m.wikipedia.org/wiki/Manual_transmission#:~:text=Common%20shift%20pattern%20for%20a%205%2Dspeed%20transmission) [manual transmission](https://en.m.wikipedia.org/wiki/Manual_transmission#:~:text=a%20multi%2Dspeed%20motor%20vehicle%20transmission%20system%20where%20gear%20changes%20require%20the%20driver%20to%20manually%20select%20the%20gears%20by%20operating%20a%20gear%20stick%20and%20clutch) in a car. The approximate speed ranges for the five gears⚙️are <5, 5 to 10, 10 to 15, 15 to 20, and &ge;20 [kilometers]{.underline .tool data-bs-toggle="tooltip" data-bs-title="thousands of meters"} per [centiday]{.underline .tool data-bs-toggle="tooltip" data-bs-title="a hundredth of a day"}.
 
 In this analogy, [Neutral](https://en.m.wikipedia.org/wiki/Neutral#:~:text=the%20state%20where%20no%20gears%20are%20selected%20for%20a%20motor%20vehicle's%20transmission) (N), 1st, 2nd, 3rd, 4th, and 5th gear⚙️are Schedules [0]{.green}, [1]{.green}, [2]{.green}, [3]{.green}, [4]{.green}, and [5]{.green}, respectively. To complete the [gearshift](https://en.m.wikipedia.org/wiki/Gear_stick#:~:text=a%20metal%20lever%20attached%20to%20the%20transmission%20of%20an%20automobile) analogy, Reverse (R) would be a time machine that takes us to the past. As our driving speed changes, we would shift up to a higher gear⚙️or shift down to a lower gear⚙️. Similarly, we can switch between the six [dek]{.cyan}ly schedules as needed.
@@ -533,6 +536,7 @@ We can obtain Dec [month]{.azul} numbers using only a pair of hands🤲by counti
 {{< include _left.qmd >}}
 {{< include _right.qmd >}}
 :::
+[[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)]{.handlabel}
 
 The finger🖐[mnemonic](https://en.wikipedia.org/wiki/Mnemonic#:~:text=any%20learning%20technique%20that%20aids%20information%20retention%20or%20retrieval%20in%20the%20human%20memory) described above⬆️is similar to the [knuckle👊](https://en.wikipedia.org/wiki/Knuckle_mnemonic#:~:text=a%20mnemonic%20device%20for%20remembering%20the%20number%20of%20days%20in%20the%20months%20of%20the%20Julian%20and%20Gregorian%20calendars)and [musical keyboard🎹](https://en.wikipedia.org/wiki/Month#:~:text=this%20cyclical%20pattern%20of%20month%20lengths%20matches%20the%20musical%20keyboard%20alternation%20of%20wide%20white%20keys%20(31%20days)%20and%20narrow%20black%20keys%20(30%20days))mnemonics. These mnemonics attempt to make sense of the irregular pattern of [[month]{.azul} lengths](https://en.wikipedia.org/wiki/Month#:~:text=Name-,Number,of%20days) in the Gregorian calendar🗓️. As opposed to [months]{.azul}, we do not need mnemonics, tables, or mental calculations to use [deks]{.cyan}, because all of the required information is plainly visible in the [doy]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}.
 
@@ -986,9 +990,15 @@ span.nodeLabel > p {
 div.hand {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 div.hand > svg {
   margin: 5px 5px 20px 5px;
+}
+p:has(span.handlabel)  {
+  margin: -20px 5px 5px 5px;
+  width: 100%;
+  text-align: center;
 }
 div.overflowequation {
   margin-top: -20px;
