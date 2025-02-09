@@ -1,11 +1,11 @@
 /* css styles */
-p, ul {
-  text-align: left;
-}
 
-/* start order list at 0 */
 .centered {
   text-align: center;
+}
+
+.mono {
+  font-family: monospace;
 }
 
 .floatright {

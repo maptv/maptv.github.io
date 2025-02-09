@@ -1,12 +1,6 @@
 # Dec
 Martin Laptev
-2024+344
-
-- [Context clues](#sec-context)
-- [Snaps](#snaps)
-- [Specific dates and times](#sec-specific)
-- [Negative numbers](#sec-neg)
-- [Units](#sec-unit)
+2024+345
 
 <div id="decnav">
 
@@ -19,6 +13,9 @@ style="width:8.64in;height:0.98in" />
 
 </div>
 
+<img src="../asset/colorwheellabelled.svg" id="colorwheel"
+class="column-margin" data-fig-align="center" />
+
 This section of my website focuses on Dec, a [measurement
 system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)
 that [I](https://maptv.github.io) created to measure time⏳, position📍,
@@ -28,20 +25,26 @@ orientation🧭, angles📐, and cycles🔄in
 instead of <span class="azul">months</span>,
 <span class="darkgreen">weeks</span>, <span class="teal">hours</span>,
 <span class="olive">minutes</span>, <span class="purple">seconds</span>,
-and <span class="darkred">degrees</span>. You may be surprised by how
-many things can be measured in turns. The
-[scrubber](https://observablehq.com/@mbostock/scrubber)🧽input
-below⬇️measures ${rainbow} in <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a turn">milliturns</span> of the [color
-wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle).
+and <span class="darkred">degrees</span>. Turns have many uses and can
+even be used to specify a ${rainbow} and its
+[hex](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors),
+<span class="mono">${colorhue.formatHex()}</span>, or
+[rgb](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model%5B1%5D%20in%20which%20the%20red%2C%20green%2C%20and%20blue%20primary%20colors%20of%20light%20are%20added%20together%20in%20various%20ways%20to%20reproduce%20a%20broad%20array%20of%20colors)
+triplet: <span class="mono">${colorhue.formatRgb().slice(3)}</span>.
 
 ``` {ojs}
 //| echo: false
-viewof colorturns = Scrubber(numbers)
+//| label: colorslider
+viewof colorturns = Scrubber(numbers, {format: y => "", inputStyle: "display:none;"})
+Inputs.bind(Inputs.range([0, 999], {step: 1}), viewof colorturns)
 ```
 
-Turns can represent anything that is circular or cyclical, like [Earth’s
+Turns can represent anything that is circular, spherical, or cyclical,
+like the [color
+wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle),
+a
+[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation),
+[Earth’s
 orbits](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=complete%20orbit%20takes-,365.256%C2%A0days,-(1%20sidereal%20year))
 around the Sun (years), [Earth’s
 rotations](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
@@ -51,21 +54,18 @@ axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20
 [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of),
 and
 [parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line).
-The distance from the
+A [quarter
+meridian](https://en.wikipedia.org/wiki/Meridian_arc#Quarter_meridian:~:text=The%20distance%20from%20the%20equator%20to%20the%20pole)
+is very close to 10 <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="millions of meters">megameters</span> because the length
+of a
+[meter](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units)
+was [once
+defined](https://en.wikipedia.org/wiki/Metre#:~:text=one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole)
+as a ten millionth of the distance from the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres)
-to the
-[North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
-or [South
-Pole](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
-is a [quarter
-meridian](https://en.wikipedia.org/wiki/Meridian_arc#Quarter_meridian:~:text=The%20distance%20from%20the%20equator%20to%20the%20pole).
-In fact, this was the basis of an [early
-definition](https://en.wikipedia.org/wiki/Metre#:~:text=one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole)
-of the
-[meter](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units).
-Even though the definition has changed, a meridian is still very close
-to 10 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of meters">kilometers</span>.
+to the [North
+Pole](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface).
 
 ![](../asset/quartermeridian.svg)
 
@@ -316,106 +316,6 @@ close as possible to noon. Times that include `#` cannot have an implied
 duration. We can only add `#` to a time, so there is no need say “Dot 5
 Sharp” or write `.5#`.
 
-# Context clues
-
-Not saying “Day” or “Dot” in general is acceptable, because it is
-convenient and often the numbers make perfect sense in context. If
-someone says “let’s have lunch at 5”, it is clear that they are
-referring to noon (`Dot` `5`) and not the sixth `doty` (`Day` `5`).
-Also, the number itself may provide a clue. Numbers greater than 365
-could still be a `doty`, but it would represent a day in an upcoming
-year, not the current year. The meaning of such dates depends on whether
-the current year is a common year (n=365) or a leap year (n=366). Saying
-“500” could mean `Day` `134` (if n=366) or `Day` `135` (if n=365) of the
-subsequent year, but it would most likely mean noon (`Dot` `500`).
-
-# Snaps
-
-If a Decalender date and a Declock time are combined, they form a time
-`snap`. The date always goes before the time in any snap. When said
-together, the numbers “0” and “5” mean the first doy (Day 0) at noon
-(Dot 5). In written form, this would be 000.5. This format is called
-`.y`, which is read the same way as `doty`, but emphasizes that the `.`
-is used in a floating point decimal `doty`. In other words, `doty` can
-be used instead of “day of the year” in a sentence, whereas `.y`
-indicates a `stamp`, such as `000.5`. Ideally, a `stamp` will include
-all of the information needed to identify a singular point in time, and
-thus should include a year and time zone.
-
-# Specific dates and times
-
-The `snap` above assumes that the year and time zone are known. A date
-without a year is like a time without a time zone, both depend on the
-context. Most likely, we are talking about the current year and the
-local time zone, but it may be unclear. Including a year allows us to
-pinpoint a specific day, instead of a day that could happen any year.
-Similarly, a time with a time zone occurs once every day, rather than
-once in every time zone per day. The `Day` `306` of 1969, would be
-written `1969+306` and said “Year 1969 Day 306” or simply “1969 306”,
-while midnight in `Zone` `0` would be written `.000+0` and said “Dot 0
-Zone 0”, “0 Zone 0”, or “0 0”. Combined together, this date and time
-form the `stamp` `1969+306.000+0`.
-
-# Negative numbers
-
-Every component of `Decalender` dates and `Declock` times can be
-negative. A negative year is before 1 BCE (Before Common Era) and a
-negative time zone is West of `Zone` `0`. The year is usually provided
-without a sign, because most people rarely discuss years before 1 BCE,
-but numeric time zone offset must have a sign. Negative `doties` work
-like [zero-based
-indexes](https://en.wikipedia.org/wiki/Zero-based_numbering) in
-[computer
-programming](https://en.wikipedia.org/wiki/Zero-based_numbering#Computer_programming)
-in that they label the days of the year from −*N* to −1, where *N* is
-the number of the days in the current year. The first `doty` is indexed
-by both 0 and −*N*, while the last `doty` is indexed by both −1 and *N*.
-
-In general, negative numbers show the number of parts that are left in
-the whole. A negative `doty` shows how many days remain in the year and
-a negative time [counts down](https://en.wikipedia.org/wiki/Countdown)
-to the end of the day. To extend the fractions analogy to negative
-numbers, the negative number added to the whole gives us the numerator
-of the positive fraction (*p**o**s* = *N* + *n**e**g*). Positive and
-negative numbers arrive at the same answer from opposite directions.
-
-In certain contexts, the choice of using a negative number over a
-positive number may mean that we want to emphasize how much time is left
-instead of how much has passed. Even though `Dot` `-1` and `Dot` `9` are
-synonymous `Declock` times, the former could highlight that there is
-only 1 tenth (⅒ or .1) of the day remaining before midnight. `Dot` `5`
-and `Dot` `-5` both mean noon, like saying that a glass is half-empty or
-half-full.
-
-The negative equivalent of `1969+306`, January 1st, 1970 in the
-Gregorian calendar, is `1970-059`. This negative `deco` date literally
-subtracts 59 days from the beginning of year 1970 to arrive at `Day`
-`306` of 1969. The year in negative `deco` dates is always 1 greater
-than the year in the equivalent positive `deco` date. Both `1969+306`
-and `1970-059` translate to January 1, 1970 in the Gregorian calendar.
-`Decalendar` years are shifted by two months in relation to the
-Gregorian calendar years because `Decalendar` years start on March 1.
-
-This shift causes the Gregorian calendar year to be 1 greater than the
-year in the positive `deco` dates during January and February and 1 less
-than the year in negative `deco` dates during every other month. For
-example, the `Deco` dates `1969+000` and `1970-365` are March 1, 1969 in
-the Gregorian calendar. Immediately after midnight on this date, the
-negative `doty` will change from -365 to -364, while the positive `doty`
-will remain at 0. At noon, the positive `deco` date will be
-`1969+306.500` and the negative `deco` date will be `1970-058.500`.
-
-# Units
-
-`Declock` times often have three digits because this is the best level
-of precision for displaying time on clocks and watches. While 3 digits
-are often best, `Declock` times can have any number of digits, depending
-on the desired precision level. `Declock` provides names for extremely
-precise time units, but the most relevant units are within a few orders
-of magnitude from a day, which is the base unit of both `Declock` and
-`Decalendar`. Listing the units of each highlights the relationship
-between the two:
-
 <div id="decnav">
 
 <div>
@@ -462,13 +362,14 @@ function Scrubber(values, {
   autoplay = true,
   loop = true,
   loopDelay = null,
-  alternate = false
+  alternate = false,
+  inputStyle = ""
 } = {}) {
   values = Array.from(values);
-  const form = html`<form style="font: 12px var(--sans-serif); font-variant-numeric: tabular-nums; display: flex; height: 33px; align-items: center;">
+  const form = html`<form style="font: 18px var(--monospace); font-variant-numeric: tabular-nums; display: flex; height: 33px; align-items: center;">
   <button name=b type=button style="margin-right: 0.4em; width: 5em;"></button>
   <label style="display: flex; align-items: center;">
-    <input name=i type=range min=0 max=${values.length - 1} value=${initial} step=1 style="width: 180px;">
+    <input name=i type=range min=0 max=${values.length - 1} value=${initial} step=1 style=${inputStyle}>
     <output name=o style="margin-left: 0.4em;"></output>
   </label>
 </form>`;
@@ -476,7 +377,7 @@ function Scrubber(values, {
   let timer = null;
   let interval = null;
   function start() {
-    form.b.textContent = "Pause";
+    form.b.textContent = "Stop";
     if (delay === null) frame = requestAnimationFrame(tick);
     else interval = setInterval(tick, delay);
   }
@@ -526,7 +427,9 @@ function Scrubber(values, {
   return form;
 }
 numbers = Array.from({length: 1000}, (_, i) => i)
-rainbow = textcolor('colors🎨', {background:`hsl(${colorturns * .36}, 100%, 50%)`})
+colordeg = Math.ceil(colorturns * .36)
+colorhue = d3.color(`hsl(${colordeg}, 100%, 50%)`)
+rainbow = textcolor('color🎨', {background:`hsl(${colordeg}, 100%, 50%)`})
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
@@ -807,6 +710,9 @@ countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json
 ```
 
 <style>
+div#colorslider {
+  display: flex;
+}
 div#zonemap {
    overflow-y: hidden;
    margin-top: -15px;

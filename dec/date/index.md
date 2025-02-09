@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+343
+2024+345
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -1092,9 +1092,9 @@ accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_f
 
 While <span class="darkgreen">weeks</span> are not evenly divisible by
 two, a <span class="cyan">dek</span> can be cut✂️into two equal halves
-called pentadays (pents). The flowcharts below⬇️show Schedule
-<span class="green">3</span>, the recommended
-<span class="cyan">dek</span>ly schedule of
+called pentadays (pents). The [Mermaid](https://mermaid.js.org)
+flowcharts below⬇️show Schedule <span class="green">3</span>, the
+recommended <span class="cyan">dek</span>ly schedule of
 <span class="green">work</span> and <span class="blue">rest</span> day.
 Schedule <span class="green">3</span> can be short for Schedule
 <span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>,
@@ -1354,13 +1354,19 @@ include every day that is a multiple of 5 days away from one of the
 starting days. The number preceded by a colon is called a step and
 determines which days we want to include.
 
-<img src="../../asset/Manual_Layout.svg" class="column-margin"
-data-fig-align="center" /> Schedule <span class="green">3</span> is one
-of six <span class="cyan">dek</span>ly schedules that allow us to
-organize <span class="green">work</span> and
-<span class="blue">rest</span> days into five homogeneous columns like
-in the tables and flowcharts above⬆️. These schedules are like the
-gears⚙️of a
+<div class="column-margin" fig-align="center"
+style="text-align:center;">
+
+![[Wikimedia](https://commons.wikimedia.org/wiki/File:Manual_Layout.svg)](../../asset/Manual_Layout.svg)
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Manual_Layout.svg)
+
+</div>
+
+Schedule <span class="green">3</span> is one of six
+<span class="cyan">dek</span>ly schedules that allow us to organize
+<span class="green">work</span> and <span class="blue">rest</span> days
+into five homogeneous columns like in the tables and flowcharts above⬆️.
+These schedules are like the gears⚙️of a
 [5-speed](https://en.m.wikipedia.org/wiki/Manual_transmission#:~:text=Common%20shift%20pattern%20for%20a%205%2Dspeed%20transmission)
 [manual
 transmission](https://en.m.wikipedia.org/wiki/Manual_transmission#:~:text=a%20multi%2Dspeed%20motor%20vehicle%20transmission%20system%20where%20gear%20changes%20require%20the%20driver%20to%20manually%20select%20the%20gears%20by%20operating%20a%20gear%20stick%20and%20clutch)
@@ -2632,6 +2638,8 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 
 </div>
 
+<span class="handlabel">[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)</span>
+
 The
 finger🖐[mnemonic](https://en.wikipedia.org/wiki/Mnemonic#:~:text=any%20learning%20technique%20that%20aids%20information%20retention%20or%20retrieval%20in%20the%20human%20memory)
 described above⬆️is similar to the
@@ -3197,9 +3205,15 @@ span.nodeLabel > p {
 div.hand {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 div.hand > svg {
   margin: 5px 5px 20px 5px;
+}
+p:has(span.handlabel)  {
+  margin: -20px 5px 5px 5px;
+  width: 100%;
+  text-align: center;
 }
 div.overflowequation {
   margin-top: -20px;
