@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2024+345
+2024+347
 
 <div id="decnav">
 
@@ -13,33 +13,23 @@ style="width:8.64in;height:0.98in" />
 
 </div>
 
-<img src="../asset/colorwheellabelled.svg" id="colorwheel"
-class="column-margin" data-fig-align="center" />
-
 This section of my website focuses on Dec, a [measurement
 system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)
-that [I](https://maptv.github.io) created to measure time⏳, position📍,
-angle📐, and in
+that [I](https://maptv.github.io) created. Dec is short for
+[decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20base%2Dten%20positional%20numeral%20system).
+All Dec measurements are based on
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
-([*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
-instead of <span class="azul">months</span>,
-<span class="darkgreen">weeks</span>, <span class="teal">hours</span>,
-<span class="olive">minutes</span>, <span class="purple">seconds</span>,
-and <span class="darkred">degrees</span>. Turns have many uses and can
-even be used to specify a ${rainbow} and a
+([*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)).
+In the simplest terms, *τ* represents a circle⭕️and is equal to 2*π*
+radians or 360 degrees. When can use *τ* to measure any kind of angle📐,
+such as a
 [bearing](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object)
-as demonstrated by the
-[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
-[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭below⬇️.
-
-``` {ojs}
-//| echo: false
-//| label: colorslider
-// https://observablehq.com/@mbostock/scrubber
-// https://observablehq.com/@observablehq/synchronized-inputs
-viewof colorturns = Scrubber(numbers, {format: y => "", inputStyle: "display:none;"})
-Inputs.bind(Inputs.range([0, 999], {step: 1}), viewof colorturns)
-```
+on a
+[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭or
+a
+[${rainbow}](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram%20(such%20as%20a%20chromaticity%20diagram)%20or%20color%20wheel)
+on a
+[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle).
 
 ``` {ojs}
 //| echo: false
@@ -59,6 +49,24 @@ svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size}
   ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / piecolors.length / 2, 1, piecolors), piecolors.length, 360/piecolors.length)}
 </svg>
 `
+```
+
+``` {ojs}
+//| echo: false
+//| label: colorpicker
+viewof color = picker("hsl", [
+  { name: "h", domain: [0, 360] },
+  { name: "s", domain: [0, 1] },
+  { name: "l", domain: [0, 1] }
+], d3.hsl(180, 1, .5))
+```
+
+``` {ojs}
+//| echo: false
+//| label: colorscrubber
+// https://observablehq.com/@mbostock/scrubber
+// https://observablehq.com/@observablehq/synchronized-inputs
+viewof colorturns = Scrubber(numbers, {format: y => "", inputStyle: "display:none;"})
 ```
 
 its
@@ -456,6 +464,91 @@ numbers = Array.from({length: 1000}, (_, i) => i)
 colordeg = colorturns * .36
 colorhue = d3.color(`hsl(${colordeg}, 100%, 50%)`)
 rainbow = textcolor('hue', {background:`hsl(${colordeg}, 100%, 50%)`})
+// https://observablehq.com/@d3/hcl-color-picker
+function picker(model, channels, color) {
+  // Specify the picker’s dimensions.
+  // const width = 928; // set by Observable to the window’s width, for a responsive chart
+  const height = 70;
+  channels = channels.map(({ name, domain }) => ({
+    name,
+    scale: d3.scaleLinear().domain(domain).range([0, width]),
+    removeLastTick: domain[1]===100 || domain[1]===1
+  }));
+  // Start from the passed color (present after, e.g., a window resize event), or the midpoint.
+  for (const d of channels) d.x = Math.round(color ? d.scale(color[d.name]) : width / 2);
+  const wrapper = d3.create("div");
+  const white = d3.rgb("white");
+  const black = d3.rgb("black");
+  const channel = wrapper.selectAll("div").data(channels).join("div");
+  const ctx = d3.local();
+  const canvas = channel
+    .append("canvas")
+    .attr("width", width)
+    .attr("height", 1)
+    .style("max-width", "100%")
+    .style("width", `${width}px`)
+    .style("height", `${height}px`)
+    .each(function (d) {
+      const context = this.getContext("2d");
+      const image = context.createImageData(width, 1);
+      ctx.set(this, { context, image, data: image.data });
+    })
+    .each(render);
+  //const svg = channel
+   // .append("svg")
+   // .attr("width", width)
+   //  .attr("height", 20)
+   //  .attr("viewBox", [0, 0, width, 20])
+   //  .style("max-width", "100%")
+   //  .style("overflow", "visible")
+    //.append("g")
+    //.each(function (d) {
+    //  d3.select(this).call(
+    //    d3.axisBottom(d.scale).ticks(Math.min(width / 80, 10))
+    //  );
+    //  if (d.removeLastTick) d3.select(this).select("g:last-of-type").remove();
+    //})
+    //.append("text")
+    //.attr("x", width)
+    //.attr("y", 9)
+    //.attr("dy", ".72em")
+    //.style("text-anchor", "middle")
+    //.style("text-transform", "uppercase")
+    //.attr("fill", "currentColor")
+    //.text((d) => d.name);
+  canvas.call(
+    d3.drag()
+      .subject(({x}) => ({x}))
+      .on("start drag", ({x}, d) => {
+        d.x = Math.max(1, Math.min(width - 1, x));
+        canvas.each(render);
+      })
+  );
+  function render(d) {
+    const current = d3[model](
+      channels[0].scale.invert(channels[0].x),
+      channels[1].scale.invert(channels[1].x),
+      channels[2].scale.invert(channels[2].x)
+    );
+    // Update the value of the cell and notify listeners (for example, this informs the “color” cell below).
+    if (d.name === "h") {
+      wrapper.node().value = current.copy();
+      wrapper.node().dispatchEvent(new Event("input"));
+    }
+    const { context, image, data } = ctx.get(this);
+    for (let x = 0, i = -1; x < width; ++x) {
+      const c = x === d.x ? white
+              : x === d.x - 1 ? black
+              : ((current[d.name] = d.scale.invert(x)), d3.rgb(current));
+      data[++i] = c.r;
+      data[++i] = c.g;
+      data[++i] = c.b;
+      data[++i] = 255;
+    }
+    context.putImageData(image, 0, 0);
+  }
+  return wrapper.node();
+}
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
@@ -733,10 +826,6 @@ topojson = require("topojson-client@3")
 solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
 borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
 countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
-```
-
-``` {ojs}
-//| echo: false
 piecolors = [
   "#ff4000", // 15
   "#ff8000", // 30
@@ -789,9 +878,6 @@ function repeat(component, N, initialAngle=0) {
   }
   return result.join("");
 }
-```
-
-``` {ojs}
 function tick(radius, length, color='black') {
   return `<path d="M 0,${-radius} l 0,${-length}" fill="none" stroke="${color}" stroke-width="1" />`;
 }
@@ -800,18 +886,11 @@ function directionMarker(radius, fontSize) { return (angle, _) => {
   return `<text y="${-radius-(margin/2)}" font-size="${fontSize}" text-anchor="middle" dy=".36em">${label}</text>`;
 };
 }
-```
-
-``` {ojs}
 function turnMarker(radius, fontSize) { return (angle, _) => {
   let label = {0: '0', 45: '125', 90: '250', 135: '375', 180: '500', 225: '625', 270: '750', 315: '875'}[angle] ?? '??';
   return `<text y="${-radius-(margin/2)}" font-size="${fontSize}" text-anchor="middle" dy="-0.36em">${label}</text>`;
   };
 }
-```
-
-``` {ojs}
-//| echo: false
 function pie(radius, width, narrowness=1.0, piecolors) {
   return (_, i) => `<path d="M 0,0 L ${-width},${-radius} A ${width} ${width/2} 0 0 1 ${width} ${-radius} z" fill="${piecolors[i]}" stroke="black" stroke-width="0.5"/>`;
 }
@@ -823,6 +902,9 @@ radius = size/2 - margin - padding
 <style>
 div#colorslider {
   display: flex;
+}
+div#colorslider input[type="number"] {
+  width: 80px;
 }
 div#colorwheelcompass {
   display: flex;
