@@ -198,6 +198,7 @@ div > form > label {
 .orange { border-radius: 4px; background-color: orange; color: black; padding: 0px 2px 0px 2px; } /* orange ffa500 */
 .pink { border-radius: 4px; background-color: pink; color: black; padding: 0px 2px 0px 2px; } /* negative ffc0cb */
 .purple { border-radius: 4px; background-color: purple; color: white; padding: 0px 2px 0px 2px; } /* second 800080 */
+.red { border-radius: 4px; background-color: red; color: black; padding: 0px 2px 0px 2px; }
 .teal { border-radius: 4px; background-color: teal; color: white; padding: 0px 2px 0px 2px; } /* hour 008080 */
 .violet { border-radius: 4px; background-color: violet; color: black; padding: 0px 2px 0px 2px; } /* diff ee82ee */
 .magenta { border-radius: 4px; background-color: magenta; color: black; padding: 0px 2px 0px 2px; } /* diff ff00ff */
@@ -214,8 +215,8 @@ div > form > label {
 }
 
 .over {
-  text-decoration-line: overline;
-  text-decoration-thickness: .7px;
+  text-decoration-line: overline !important;
+  text-decoration-thickness: .7px !important;
 }
 
 .hide {

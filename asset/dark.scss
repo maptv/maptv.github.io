@@ -288,3 +288,15 @@ g#decdate > rect, g#gregdate > rect {
 .darklink:hover {
   color: #06f;
 }
+
+div#colorwheelcompass text {
+  fill: white;
+}
+
+div#colorwheelcompass path, div#colorwheelcompass circle {
+  stroke: white;
+}
+
+div#colorwheelcompass path#piepath {
+  stroke: black;
+}
