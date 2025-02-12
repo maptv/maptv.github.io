@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2024+347
+2024+348
 
 <div id="decnav">
 
@@ -18,25 +18,63 @@ system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%2
 that [I](https://maptv.github.io) created. Dec is short for
 [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20base%2Dten%20positional%20numeral%20system).
 All Dec measurements are based on
-[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
-([*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)).
-In the simplest terms, *τ* represents a circle⭕️and is equal to 2*π*
-radians or 360 degrees. When can use *τ* to measure any kind of angle📐,
-such as a
+[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees).
+A turn
+([*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
+represents a circle⭕️and is equal to 2*π* radians or 360 degrees. Any
+kind of angle📐, such as a
 [bearing](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object)
 on a
 [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭or
 a
-[${rainbow}](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram%20(such%20as%20a%20chromaticity%20diagram)%20or%20color%20wheel)
+[${rainbowHue0}](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram%20(such%20as%20a%20chromaticity%20diagram)%20or%20color%20wheel)
 on a
-[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle).
+[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle),
+can be measured in turns or
+[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer)
+of turns like <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a turn">milliturns</span>
+([*m**τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=e.g.%2C%20centiturns%20(ctr)%2C-,milliturns,-(mtr)%2C%20etc)):
+${rainbowMtr0}.
+
+The rotation of the color🎨wheel compass🧭below⬇️is determined by the
+slider🎚️on the top bar📊of the [Observable](https://observablehq.com)
+[HSL](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=hue%2C%20saturation%2C%20and%20lightness)
+[color🎨picker](https://en.wikipedia.org/wiki/Color_picker#:~:text=a%20graphical%20user%20interface%20widget%2C%20usually%20found%20within%20graphics%20software%20or%20online%2C%20used%20to%20select%20colors)
+beneath it. HSL triplets, (${rainbowDeg}${slStr}, specify ${rainbowHue1}
+in degrees with their first value. Degrees can succinctly identify the
+hues of pure
+[additive](https://en.wikipedia.org/wiki/Primary_color#:~:text=summing%20the%20spectral%20power%20distributions%20(the%20intensity%20of%20each%20wavelength)%20of%20the%20individual%20light%20sources)
+(<span class="red">red</span>=0°, <span class="lime">green</span>=120°,
+<span class="azul">blue</span>=240°) and
+[subtractive](https://en.wikipedia.org/wiki/Primary_color#:~:text=predicts%20the%20resultant%20spectral%20power%20distribution%20of%20light%20filtered%20through%20overlaid%20partially%20absorbing%20materials)
+(<span class="yellow">yellow</span>=60°,
+<span class="cyan">cyan</span>=180°,
+<span class="magenta">magenta</span>=300°) [primary
+colors](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors).
+
+To specify the hues of these colors in turns, we would need to use
+fractions or repeating decimal numbers (<span class="red">red</span>=0,
+<span class="lime">green</span>=1/3=.<span style="text-decoration-line:overline;">3</span>,
+<span class="azul">blue</span>=2/3=.<span style="text-decoration-line:overline;">6</span>,
+<span class="yellow">yellow</span>=1/6=.1<span style="text-decoration-line:overline;">6</span>,
+<span class="cyan">cyan</span>=1/2=0.5,
+<span class="magenta">magenta</span>=5/6=.8<span style="text-decoration-line:overline;">3</span>).
+With only three characters, [hex
+triplets](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors),
+${rainbowHex}, can stipulate any pure primary color
+(<span class="red">red</span>=f00, <span class="lime">green</span>=0f0,
+<span class="azul">blue</span>=00f,
+<span class="yellow">yellow</span>=ff0,
+<span class="cyan">cyan</span>=0ff,
+<span class="magenta">magenta</span>=f0f), not just its ${rainbowHue2}.
 
 ``` {ojs}
 //| echo: false
 //| label: colorwheelcompass
 // https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
 svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
-  <g transform='rotate(${-colorturns * .360})'>
+  <g transform='rotate(${Math.round(-chosenHsl.h)})'>
   ${repeat(tick(radius, 5, '#434343'), numMinorTicks * 4 * numMajorTicks)}
   ${repeat(tick(radius, 8), numMajorTicks * 4)}
   ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
@@ -54,7 +92,8 @@ svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size}
 ``` {ojs}
 //| echo: false
 //| label: colorpicker
-viewof color = picker("hsl", [
+// https://observablehq.com/@d3/hcl-color-picker
+viewof chosenHsl = picker("hsl", [
   { name: "h", domain: [0, 360] },
   { name: "s", domain: [0, 1] },
   { name: "l", domain: [0, 1] }
@@ -63,17 +102,48 @@ viewof color = picker("hsl", [
 
 ``` {ojs}
 //| echo: false
-//| label: colorscrubber
-// https://observablehq.com/@mbostock/scrubber
-// https://observablehq.com/@observablehq/synchronized-inputs
-viewof colorturns = Scrubber(numbers, {format: y => "", inputStyle: "display:none;"})
+//| label: directionconverter
+function turn2comp(turn) {
+  return ["N", "NE", "E", "SE", "S", "SW", "W", "NW"][Math.round(turn / 125) % 8]
+}
 ```
 
-its
-[hex](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors),
-<span class="mono">${colorhue.formatHex()}</span>, or
-[rgb](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model%5B1%5D%20in%20which%20the%20red%2C%20green%2C%20and%20blue%20primary%20colors%20of%20light%20are%20added%20together%20in%20various%20ways%20to%20reproduce%20a%20broad%20array%20of%20colors)
-triplet: <span class="mono">${colorhue.formatRgb().slice(3)}</span>.
+In contrast to primary color🎨hues,
+[compass🧭directions](https://en.wikipedia.org/wiki/Cardinal_direction)
+are essentially [dyadic
+rationals](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20number%20that%20can%20be%20expressed%20as%20a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
+and thus work well with turns. Milliturns can represent the
+[cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
+(N=0, E=250, S=500, W=750) and
+[intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
+(NE=125, SE=375, SW=625, NW=875) directions as integers with three
+digits or fewer. The milliturn value selected above⬆️, ${rainbowMtr1},
+is closest to the ${rainbowDir} compass🧭direction.
+
+In the color🎨wheel and compass🧭examples above, each type of turn is
+used individually. Different types of turns can also work together in
+groups.
+[Geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=the%20process%20of%20determining%20or%20estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person)📍relies
+on a pair of coordinates: longitude (*λ*) and latitude (*ϕ*). When the
+globe🌍below⬇️detects a click🖱️event, it marks the chosen location and
+provides relevant information like the *λ* and *ϕ* angles in milliturns.
+
+along with information about the chosen location or use longitude and
+latitude along with a compass🧭bearing (*γ*) to control the globe🌍below
+in three dimensions.
+
+The colorwheel compassdemonstrates that are, which can be truncated to
+three digits. an alternative to degrees that instead of degrees
+advantage of degrees is their incredible divisibility.
+
+Colors can be represented by HSL, , <span class="mono"></span>, or
+[RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model%5B1%5D%20in%20which%20the%20red%2C%20green%2C%20and%20blue%20primary%20colors%20of%20light%20are%20added%20together%20in%20various%20ways%20to%20reproduce%20a%20broad%20array%20of%20colors),
+<span class="mono">${rainbowD3.formatRgb().slice(3)}</span>, triplets.
+Hex triplets are
+[base16](https://en.wikipedia.org/wiki/Hexadecimal#:~:text=a%20positional%20numeral%20system%20that%20represents%20numbers%20using%20a%20radix%20(base)%20of%20sixteen),
+RGB triplets are
+[base256](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=two%20pentadecimal%20digits.-,256,-Number%20expressible%20with),
+and
 
 Turns can represent anything that is circular, spherical, or cyclical,
 like the , a
@@ -372,10 +442,11 @@ function textcolor(content, style = {}) {
   }
   const {
     background,
-    color = yiq(background) >= 0.6 ? "#111" : "white",
+    color = yiq(background) >= 0.5 ? "#000" : "white",
     padding = "0 5px",
     borderRadius = "4px",
-    fontWeight = 800,
+    fontWeight = 400,
+    fontFamily = "monospace",
     ...rest
   } = typeof style === "string" ? {background: style} : style;
   return htl.html`<span style=${{
@@ -384,6 +455,7 @@ function textcolor(content, style = {}) {
     padding,
     borderRadius,
     fontWeight,
+    fontFamily,
     ...rest
   }}>${content}</span>`;
 }
@@ -461,9 +533,21 @@ function Scrubber(values, {
   return form;
 }
 numbers = Array.from({length: 1000}, (_, i) => i)
-colordeg = colorturns * .36
-colorhue = d3.color(`hsl(${colordeg}, 100%, 50%)`)
-rainbow = textcolor('hue', {background:`hsl(${colordeg}, 100%, 50%)`})
+hueDeg = Math.round(chosenHsl.h)
+hueMtr = Math.round(hueDeg / .36)
+hStr = `hsl(${hueDeg}`
+slStr = `, ${Math.round(chosenHsl.s * 100)}%, ${Math.round(chosenHsl.l * 100)}%)`
+hslStr = hStr + slStr
+bkg = ({background: hslStr})
+rainbowHue0 = textcolor('hue', bkg)
+rainbowHue1 = textcolor('hue', bkg)
+rainbowHue2 = textcolor('hue', bkg)
+rainbowMtr0 = textcolor(hueMtr, bkg)
+rainbowMtr1 = textcolor(hueMtr, bkg)
+rainbowDir = textcolor(turn2comp(hueMtr), bkg)
+rainbowDeg = textcolor(hueDeg, bkg)
+rainbowD3 = d3.hsl(...Object.values(chosenHsl))
+rainbowHex = textcolor(d3.hsl(Math.round(chosenHsl.h), chosenHsl.s, chosenHsl.l).formatHex().slice(1), bkg)
 // https://observablehq.com/@d3/hcl-color-picker
 function picker(model, channels, color) {
   // Specify the picker’s dimensions.
@@ -548,6 +632,59 @@ function picker(model, channels, color) {
     context.putImageData(image, 0, 0);
   }
   return wrapper.node();
+}
+// https://observablehq.com/@observablehq/synchronized-inputs
+// https://observablehq.com/@juang1744/transform-input/1
+transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
+  if (source === undefined) {
+    source = target;
+    target = html`<div>${source}</div>`;
+  }
+  function sourceInputHandler() {
+    target.removeEventListener("input", targetInputHandler);
+    setTransform(target).to(transform(source.value)).andDispatchEvent();
+    target.addEventListener("input", targetInputHandler);
+  }
+  function targetInputHandler() {
+    source.removeEventListener("input", sourceInputHandler);
+    setTransform(source).to(invert(target.value)).andDispatchEvent();
+    source.addEventListener("input", sourceInputHandler);
+  }
+  source.addEventListener("input", sourceInputHandler);
+  target.addEventListener("input", targetInputHandler);
+  invalidation.then(() => {
+    source.removeEventListener("input", sourceInputHandler);
+    target.removeEventListener("input", targetInputHandler);
+  });
+  sourceInputHandler();
+  return target;
+}
+setTransform = (input) => ({to: (value) => (input.value = value, {andDispatchEvent: (event = new Event("input")) => input.dispatchEvent(event)})});
+function inverse(f) {
+  switch (f) {
+    case identity:  return identity;
+    case Math.sqrt: return square;
+    case Math.log:  return Math.exp;
+    case Math.exp:  return Math.log;
+    default:        return (x => solve(f, x, x));
+  }
+  function solve(f, y, x = 0) {
+    const dx = 1e-6;
+    let steps = 100, deltax, fx, dfx;
+    do {
+      fx = f(x)
+      dfx = (f(x + dx) - fx) || dx;
+      deltax = dx * (fx - y)/dfx
+      x -= deltax;
+    } while (Math.abs(deltax) > dx && --steps > 0);
+    return steps === 0 ? NaN : x;
+  }
+function square(x) {
+    return x * x;
+  }
+}
+function identity(x) {
+  return x;
 }
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
@@ -892,7 +1029,7 @@ function turnMarker(radius, fontSize) { return (angle, _) => {
   };
 }
 function pie(radius, width, narrowness=1.0, piecolors) {
-  return (_, i) => `<path d="M 0,0 L ${-width},${-radius} A ${width} ${width/2} 0 0 1 ${width} ${-radius} z" fill="${piecolors[i]}" stroke="black" stroke-width="0.5"/>`;
+  return (_, i) => `<path id="piepath" d="M 0,0 L ${-width},${-radius} A ${width} ${width/2} 0 0 1 ${width} ${-radius} z" fill="${piecolors[i]}" stroke="black" stroke-width="0.5"/>`;
 }
 margin = size / 14
 padding = 42
