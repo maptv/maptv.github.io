@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2024+343
+2024+348
 
 - [Time](#time)
 - [Zone](#zone)
@@ -731,10 +731,12 @@ clock1 = {
 
 The plot to the lower left of the map🗺️visualizes the night (blue) and
 day (yellow) time of day (x-axis) throughout every day of the year
-(y-axis) at the latitude of the red⭕️circle on the map🗺️. The
-vertical↕position of the red<font color=red>—</font>line (time of day)
-and the↔️horizontal position of the red🔴dot (day of the year) on the
-plot control the🌐globes above and to the right of the plot.
+(y-axis) at the
+[latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
+of the red⭕️circle on the map🗺️. The vertical↕position of the
+red<font color=red>—</font>line (time of day) and the↔️horizontal
+position of the red🔴dot (day of the year) on the plot control
+the🌐globes above and to the right of the plot.
 
 # Zone
 

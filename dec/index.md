@@ -1,6 +1,9 @@
 # Dec
 Martin Laptev
-2024+348
+2024+349
+
+- [Hue](#hue)
+- [Bearing](#bearing)
 
 <div id="decnav">
 
@@ -13,11 +16,12 @@ style="width:8.64in;height:0.98in" />
 
 </div>
 
+# Hue
+
 This section of my website focuses on Dec, a [measurement
 system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)
-that [I](https://maptv.github.io) created. Dec is short for
-[decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20base%2Dten%20positional%20numeral%20system).
-All Dec measurements are based on
+that [I](https://maptv.github.io) created. All Dec measurements are
+based on
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees).
 A turn
 ([*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
@@ -34,16 +38,43 @@ can be measured in turns or
 [submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer)
 of turns like <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a turn">milliturns</span>
-([*m**τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=e.g.%2C%20centiturns%20(ctr)%2C-,milliturns,-(mtr)%2C%20etc)):
-${rainbowMtr0}.
+([*m**τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=e.g.%2C%20centiturns%20(ctr)%2C-,milliturns,-(mtr)%2C%20etc)).
 
-The rotation of the color🎨wheel compass🧭below⬇️is determined by the
-slider🎚️on the top bar📊of the [Observable](https://observablehq.com)
-[HSL](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=hue%2C%20saturation%2C%20and%20lightness)
-[color🎨picker](https://en.wikipedia.org/wiki/Color_picker#:~:text=a%20graphical%20user%20interface%20widget%2C%20usually%20found%20within%20graphics%20software%20or%20online%2C%20used%20to%20select%20colors)
-beneath it. HSL triplets, (${rainbowDeg}${slStr}, specify ${rainbowHue1}
-in degrees with their first value. Degrees can succinctly identify the
-hues of pure
+The color🎨wheel compass🧭below⬇️rotates🔄in response to the
+[Observable](https://observablehq.com)
+[range](https://observablehq.com/@observablehq/input-range)🎚️input and
+[hue
+bar](https://observablehq.com/@paavanb/progressive-color-picker)📊input
+beneath it. These inputs are capable of selecting all three
+[additive](https://en.wikipedia.org/wiki/Primary_color#:~:text=summing%20the%20spectral%20power%20distributions%20(the%20intensity%20of%20each%20wavelength)%20of%20the%20individual%20light%20sources)
+(<span class="red">red</span>=0,
+<span class="lime">green</span>=1/3=.<span style="text-decoration-line:overline;">3</span>,
+<span class="azul">blue</span>=2/3=.<span style="text-decoration-line:overline;">6</span>)
+and all three
+[subtractive](https://en.wikipedia.org/wiki/Primary_color#:~:text=predicts%20the%20resultant%20spectral%20power%20distribution%20of%20light%20filtered%20through%20overlaid%20partially%20absorbing%20materials)
+(<span class="yellow">yellow</span>=1/6=.1<span style="text-decoration-line:overline;">6</span>,
+<span class="cyan">cyan</span>=1/2=0.5,
+<span class="magenta">magenta</span>=5/6=.8<span style="text-decoration-line:overline;">3</span>)
+[primary
+colors](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors),
+because the integer milliturn shown by the range🎚️input, ${rainbowMtr0},
+is converted to a degree and rounded: .
+
+rotation matches the so that it can be used to select exactly. To
+specify the others, we would typically need to fractions or [repeating
+decimal
+numbers](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20number%20whose%20digits%20are%20eventually%20periodic%20(that%20is%2C%20after%20some%20place%2C%20the%20same%20sequence%20of%20digits%20is%20repeated%20forever)),
+but the example below uses rounding
+(<span class="lime">green</span>=120°,
+<span class="azul">blue</span>=240°)
+(<span class="yellow">yellow</span>=60°,
+<span class="magenta">magenta</span>=300°) [primary
+colors](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors).
+
+Move the The [HSL and
+HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
+models specify ${rainbowHue1} in degrees. to allow for identification of
+the hues of
 [additive](https://en.wikipedia.org/wiki/Primary_color#:~:text=summing%20the%20spectral%20power%20distributions%20(the%20intensity%20of%20each%20wavelength)%20of%20the%20individual%20light%20sources)
 (<span class="red">red</span>=0°, <span class="lime">green</span>=120°,
 <span class="azul">blue</span>=240°) and
@@ -51,30 +82,39 @@ hues of pure
 (<span class="yellow">yellow</span>=60°,
 <span class="cyan">cyan</span>=180°,
 <span class="magenta">magenta</span>=300°) [primary
-colors](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors).
+colors](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors)
+with integers.${rainbowDeg}.
 
-To specify the hues of these colors in turns, we would need to use
-fractions or repeating decimal numbers (<span class="red">red</span>=0,
+To specify the hues of these colors in turns,
+(<span class="red">red</span>=0,
 <span class="lime">green</span>=1/3=.<span style="text-decoration-line:overline;">3</span>,
 <span class="azul">blue</span>=2/3=.<span style="text-decoration-line:overline;">6</span>,
 <span class="yellow">yellow</span>=1/6=.1<span style="text-decoration-line:overline;">6</span>,
 <span class="cyan">cyan</span>=1/2=0.5,
 <span class="magenta">magenta</span>=5/6=.8<span style="text-decoration-line:overline;">3</span>).
-With only three characters, [hex
-triplets](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors),
-${rainbowHex}, can stipulate any pure primary color
+We can stipulate any pure primary color🎨, instead of just its
+${rainbowHue2}, with only three characters
 (<span class="red">red</span>=f00, <span class="lime">green</span>=0f0,
 <span class="azul">blue</span>=00f,
 <span class="yellow">yellow</span>=ff0,
 <span class="cyan">cyan</span>=0ff,
-<span class="magenta">magenta</span>=f0f), not just its ${rainbowHue2}.
+<span class="magenta">magenta</span>=f0f) in a [hex
+triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors):
+${rainbowHex}.
+
+``` {ojs}
+//| echo: false
+//| label: colorpreview
+//| column: margin
+preview()
+```
 
 ``` {ojs}
 //| echo: false
 //| label: colorwheelcompass
 // https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
 svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
-  <g transform='rotate(${Math.round(-chosenHsl.h)})'>
+  <g transform='rotate(${Math.round(-colorH * .36)})'>
   ${repeat(tick(radius, 5, '#434343'), numMinorTicks * 4 * numMajorTicks)}
   ${repeat(tick(radius, 8), numMajorTicks * 4)}
   ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
@@ -91,42 +131,82 @@ svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size}
 
 ``` {ojs}
 //| echo: false
-//| label: colorpicker
-// https://observablehq.com/@d3/hcl-color-picker
-viewof chosenHsl = picker("hsl", [
-  { name: "h", domain: [0, 360] },
-  { name: "s", domain: [0, 1] },
-  { name: "l", domain: [0, 1] }
-], d3.hsl(180, 1, .5))
+//| label: colorbar
+// https://observablehq.com/@paavanb/progressive-color-picker
+hueBar = colorbar({
+  colorFn: t => hslToRgb(t, colorS, colorL),
+  onSelect: t => {
+    set(viewof colorH, t * 1000)
+    onUpdateHSL(t * 1000, colorS, colorL)
+  }
+})
 ```
 
 ``` {ojs}
 //| echo: false
-//| label: directionconverter
-function turn2comp(turn) {
-  return ["N", "NE", "E", "SE", "S", "SW", "W", "NW"][Math.round(turn / 125) % 8]
+//| label: colorslider
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { value: 0, step: 1 })
+  input.value = initialHSL[0]
+  input.oninput = (evt) => onUpdateHSL(evt.currentTarget.value, colorS, colorL)
+  return Inputs.bind(input, viewof colorH)
 }
 ```
 
-In contrast to primary color🎨hues,
-[compass🧭directions](https://en.wikipedia.org/wiki/Cardinal_direction)
-are essentially [dyadic
-rationals](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20number%20that%20can%20be%20expressed%20as%20a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
-and thus work well with turns. Milliturns can represent the
+# Bearing
+
+``` {ojs}
+//| echo: false
+//| label: sixteenpointcompass
+// https://observablehq.com/@redblobgames/compass-rose
+svg`<svg viewBox="-100 -100 200 200" style="max-width: 20em">
+  <g transform='rotate(${Math.round(-colorH * .36)})'>
+  ${repeat(tick(70, 5, "hsl(30, 20%, 70%)"), numMinorTicks * 4 * numMajorTicks)}
+  ${repeat(tick(70, 8, "hsl(30, 20%, 50%)"), numMajorTicks * 4)}
+  ${repeat(`<path d="M 0,-79 l 3,10 l -6,0 z" fill="white" stroke="hsl(30, 20%, 50%)" stroke-width="1"/>`, 4, 45)}
+  <circle r="70" fill="none" stroke="hsl(30, 20%, 30%)" stroke-width="3" />
+  <circle r="60" fill="none" stroke="hsl(30, 20%, 60%)" stroke-width="1" />
+  <circle r="50" fill="none" stroke="hsl(30, 20%, 30%)" stroke-width="2" />
+  ${repeat(`<circle cy="-40" r="1.5" fill="hsl(30, 20%, 50%)"/>`, numDots)}
+  ${repeat(directionMarker(88, 15), 4)}
+  ${repeat(directionMarker(65, 8), 4, 45)}
+  ${repeat(directionMarker(55.25, 8), 8, 22.5)}
+  ${repeat(angleMarker(86, 12), 8)}
+  ${repeat(angleMarkerMinor(83, 9), 16)}
+  ${repeat(wedge(cardinalLength, cardinalLength * cardinalWedge), 4)}
+  ${repeat(wedge(cardinalLength*0.75, cardinalLength * cardinalWedge * 1.7, 0.3), 4, 45)}
+  ${repeat(wedge(cardinalLength*0.62, cardinalLength * cardinalWedge * 1.7, 0.3), 8, 22.5)}
+  ${patternDefs}
+</svg>
+`
+```
+
+In contrast to primary color🎨hues, the
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
 (N=0, E=250, S=500, W=750) and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
-(NE=125, SE=375, SW=625, NW=875) directions as integers with three
-digits or fewer. The milliturn value selected above⬆️, ${rainbowMtr1},
-is closest to the ${rainbowDir} compass🧭direction.
+(NE=125, SE=375, SW=625, NW=875)
+[compass🧭directions](https://en.wikipedia.org/wiki/Cardinal_direction)
+can be expressed as integer milliturns with three digits or fewer. The
+milliturn value selected above⬆️, ${rainbowMtr1}, is closest to the
+${rainbowDir}
+[compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction).
+
+With submultiples of turns, we can represent any [dyadic
+rational](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20number%20that%20can%20be%20expressed%20as%20a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
+as an integer.
 
 In the color🎨wheel and compass🧭examples above, each type of turn is
 used individually. Different types of turns can also work together in
 groups.
 [Geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=the%20process%20of%20determining%20or%20estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person)📍relies
-on a pair of coordinates: longitude (*λ*) and latitude (*ϕ*). When the
-globe🌍below⬇️detects a click🖱️event, it marks the chosen location and
-provides relevant information like the *λ* and *ϕ* angles in milliturns.
+on a pair of coordinates:
+[longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
+(*λ*) and
+[latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
+(*ϕ*). When the globe🌍below⬇️detects a click🖱️event, it marks the
+chosen location and provides relevant information like the *λ* and *ϕ*
+angles in milliturns.
 
 along with information about the chosen location or use longitude and
 latitude along with a compass🧭bearing (*γ*) to control the globe🌍below
@@ -459,84 +539,13 @@ function textcolor(content, style = {}) {
     ...rest
   }}>${content}</span>`;
 }
-// https://observablehq.com/@mbostock/scrubber
-function Scrubber(values, {
-  format = value => value,
-  initial = 0,
-  direction = 1,
-  delay = null,
-  autoplay = true,
-  loop = true,
-  loopDelay = null,
-  alternate = false,
-  inputStyle = ""
-} = {}) {
-  values = Array.from(values);
-  const form = html`<form style="font: 18px var(--monospace); font-variant-numeric: tabular-nums; display: flex; height: 33px; align-items: center;">
-  <button name=b type=button style="margin-right: 0.4em; width: 5em;"></button>
-  <label style="display: flex; align-items: center;">
-    <input name=i type=range min=0 max=${values.length - 1} value=${initial} step=1 style=${inputStyle}>
-    <output name=o style="margin-left: 0.4em;"></output>
-  </label>
-</form>`;
-  let frame = null;
-  let timer = null;
-  let interval = null;
-  function start() {
-    form.b.textContent = "Stop";
-    if (delay === null) frame = requestAnimationFrame(tick);
-    else interval = setInterval(tick, delay);
-  }
-  function stop() {
-    form.b.textContent = "Play";
-    if (frame !== null) cancelAnimationFrame(frame), frame = null;
-    if (timer !== null) clearTimeout(timer), timer = null;
-    if (interval !== null) clearInterval(interval), interval = null;
-  }
-  function running() {
-    return frame !== null || timer !== null || interval !== null;
-  }
-  function tick() {
-    if (form.i.valueAsNumber === (direction > 0 ? values.length - 1 : direction < 0 ? 0 : NaN)) {
-      if (!loop) return stop();
-      if (alternate) direction = -direction;
-      if (loopDelay !== null) {
-        if (frame !== null) cancelAnimationFrame(frame), frame = null;
-        if (interval !== null) clearInterval(interval), interval = null;
-        timer = setTimeout(() => (step(), start()), loopDelay);
-        return;
-      }
-    }
-    if (delay === null) frame = requestAnimationFrame(tick);
-    step();
-  }
-  function step() {
-    form.i.valueAsNumber = (form.i.valueAsNumber + direction + values.length) % values.length;
-    form.i.dispatchEvent(new CustomEvent("input", {bubbles: true}));
-  }
-  form.i.oninput = event => {
-    if (event && event.isTrusted && running()) stop();
-    form.value = values[form.i.valueAsNumber];
-    form.o.value = format(form.value, form.i.valueAsNumber, values);
-  };
-  form.b.onclick = () => {
-    if (running()) return stop();
-    direction = alternate && form.i.valueAsNumber === values.length - 1 ? -1 : 1;
-    form.i.valueAsNumber = (form.i.valueAsNumber + direction) % values.length;
-    form.i.dispatchEvent(new CustomEvent("input", {bubbles: true}));
-    start();
-  };
-  form.i.oninput();
-  if (autoplay) start();
-  else stop();
-  Inputs.disposal(form).then(stop);
-  return form;
+function turn2comp(turn) {
+  return ["N", "NE", "E", "SE", "S", "SW", "W", "NW"][Math.round(turn / 125) % 8]
 }
-numbers = Array.from({length: 1000}, (_, i) => i)
-hueDeg = Math.round(chosenHsl.h)
-hueMtr = Math.round(hueDeg / .36)
+hueMtr = Math.round(colorH)
+hueDeg = Math.round(hueMtr * .36)
 hStr = `hsl(${hueDeg}`
-slStr = `, ${Math.round(chosenHsl.s * 100)}%, ${Math.round(chosenHsl.l * 100)}%)`
+slStr = `, ${Math.round(colorS * 100)}%, ${Math.round(colorL * 100)}%)`
 hslStr = hStr + slStr
 bkg = ({background: hslStr})
 rainbowHue0 = textcolor('hue', bkg)
@@ -546,146 +555,266 @@ rainbowMtr0 = textcolor(hueMtr, bkg)
 rainbowMtr1 = textcolor(hueMtr, bkg)
 rainbowDir = textcolor(turn2comp(hueMtr), bkg)
 rainbowDeg = textcolor(hueDeg, bkg)
-rainbowD3 = d3.hsl(...Object.values(chosenHsl))
-rainbowHex = textcolor(d3.hsl(Math.round(chosenHsl.h), chosenHsl.s, chosenHsl.l).formatHex().slice(1), bkg)
-// https://observablehq.com/@d3/hcl-color-picker
-function picker(model, channels, color) {
-  // Specify the picker’s dimensions.
-  // const width = 928; // set by Observable to the window’s width, for a responsive chart
-  const height = 70;
-  channels = channels.map(({ name, domain }) => ({
-    name,
-    scale: d3.scaleLinear().domain(domain).range([0, width]),
-    removeLastTick: domain[1]===100 || domain[1]===1
-  }));
-  // Start from the passed color (present after, e.g., a window resize event), or the midpoint.
-  for (const d of channels) d.x = Math.round(color ? d.scale(color[d.name]) : width / 2);
-  const wrapper = d3.create("div");
-  const white = d3.rgb("white");
-  const black = d3.rgb("black");
-  const channel = wrapper.selectAll("div").data(channels).join("div");
-  const ctx = d3.local();
-  const canvas = channel
-    .append("canvas")
-    .attr("width", width)
-    .attr("height", 1)
-    .style("max-width", "100%")
-    .style("width", `${width}px`)
-    .style("height", `${height}px`)
-    .each(function (d) {
-      const context = this.getContext("2d");
-      const image = context.createImageData(width, 1);
-      ctx.set(this, { context, image, data: image.data });
+rainbowHex = textcolor(d3.hsl(hueDeg, colorS, colorL).formatHex().slice(1), bkg)
+// Show preview swatches of color
+preview = () => {
+  const container = DOM.element('div')
+  d3.select(container).attr('style', 'display: flex;')
+  d3.select(container)
+    .append('div')
+      .text('Selected')
+      .style('font-weight', 'bold')
+    .append('div')
+      .classed('swatch', true)
+      .style('background-color', `hsl(${colorH * .36}, 100%, 50%`);
+  d3.select(container)
+    .append('div')
+      .text('Preview')
+      .style('font-style', 'italic')
+    .append('div')
+      .classed('swatch', true)
+      .style('background-color', `rgb(${hoverRGB[0]}, ${hoverRGB[1]}, ${hoverRGB[2]}`)
+  d3.select(container).selectAll('div.swatch')
+    .style('width', '100px')
+    .style('height', '100px')
+    .style('margin-right', '8px')
+    .style('padding', '4px')
+  return container
+}
+// The currently hovered color
+mutable hoverRGB = [255, 0, 0]
+/**
+ * Draw an interactive color bar
+ * @param colorFn (t: number) => [number, number, number] Given a position on the bar (between 0 and 1), return its RGB
+ * @param onSelect (t: number) => void Callback for when a position is selected on the bar
+ */
+function colorbar({colorFn, onSelect}) {
+  const WIDTH = 360
+  const HEIGHT = 32
+  const container = DOM.element('div')
+  function handleSelect(coords) {
+    const t = coords[0] / WIDTH
+    onSelect(t)
+  }
+  let isDragging = false
+  const canvas = d3.select(container).append('canvas')
+    .attr('width', WIDTH)
+    .attr('height', HEIGHT)
+    .attr('style', 'cursor: crosshair; border: 1px solid black; border-radius: 2px;')
+    .on('mousedown', function() {
+      isDragging = true
+      handleSelect(d3.mouse(this))
     })
-    .each(render);
-  //const svg = channel
-   // .append("svg")
-   // .attr("width", width)
-   //  .attr("height", 20)
-   //  .attr("viewBox", [0, 0, width, 20])
-   //  .style("max-width", "100%")
-   //  .style("overflow", "visible")
-    //.append("g")
-    //.each(function (d) {
-    //  d3.select(this).call(
-    //    d3.axisBottom(d.scale).ticks(Math.min(width / 80, 10))
-    //  );
-    //  if (d.removeLastTick) d3.select(this).select("g:last-of-type").remove();
-    //})
-    //.append("text")
-    //.attr("x", width)
-    //.attr("y", 9)
-    //.attr("dy", ".72em")
-    //.style("text-anchor", "middle")
-    //.style("text-transform", "uppercase")
-    //.attr("fill", "currentColor")
-    //.text((d) => d.name);
-  canvas.call(
-    d3.drag()
-      .subject(({x}) => ({x}))
-      .on("start drag", ({x}, d) => {
-        d.x = Math.max(1, Math.min(width - 1, x));
-        canvas.each(render);
-      })
-  );
-  function render(d) {
-    const current = d3[model](
-      channels[0].scale.invert(channels[0].x),
-      channels[1].scale.invert(channels[1].x),
-      channels[2].scale.invert(channels[2].x)
-    );
-    // Update the value of the cell and notify listeners (for example, this informs the “color” cell below).
-    if (d.name === "h") {
-      wrapper.node().value = current.copy();
-      wrapper.node().dispatchEvent(new Event("input"));
-    }
-    const { context, image, data } = ctx.get(this);
-    for (let x = 0, i = -1; x < width; ++x) {
-      const c = x === d.x ? white
-              : x === d.x - 1 ? black
-              : ((current[d.name] = d.scale.invert(x)), d3.rgb(current));
-      data[++i] = c.r;
-      data[++i] = c.g;
-      data[++i] = c.b;
-      data[++i] = 255;
-    }
-    context.putImageData(image, 0, 0);
-  }
-  return wrapper.node();
-}
-// https://observablehq.com/@observablehq/synchronized-inputs
-// https://observablehq.com/@juang1744/transform-input/1
-transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
-  if (source === undefined) {
-    source = target;
-    target = html`<div>${source}</div>`;
-  }
-  function sourceInputHandler() {
-    target.removeEventListener("input", targetInputHandler);
-    setTransform(target).to(transform(source.value)).andDispatchEvent();
-    target.addEventListener("input", targetInputHandler);
-  }
-  function targetInputHandler() {
-    source.removeEventListener("input", sourceInputHandler);
-    setTransform(source).to(invert(target.value)).andDispatchEvent();
-    source.addEventListener("input", sourceInputHandler);
-  }
-  source.addEventListener("input", sourceInputHandler);
-  target.addEventListener("input", targetInputHandler);
-  invalidation.then(() => {
-    source.removeEventListener("input", sourceInputHandler);
-    target.removeEventListener("input", targetInputHandler);
+    .on('mouseup', () => { isDragging = false; })
+    .on('mousemove', function() {
+      const coords = d3.mouse(this)
+      if (isDragging) {
+        handleSelect(coords)
+      }
+      mutable hoverRGB = colorFn(coords[0] / WIDTH)
+    })
+  const ctx = canvas.node().getContext('2d')
+  const imgData = ctx.getImageData(0, 0, WIDTH, HEIGHT)
+  // Possible optimization: cache d3.range so we're not recalculating it a million times
+  d3.range(WIDTH).forEach(colIdx => {
+    const t = colIdx / WIDTH
+    const rgb = colorFn(t)
+    d3.range(HEIGHT).forEach(rowIdx => {
+      const screenIdx = rowIdx * WIDTH + colIdx
+      const imgDataIdx = 4 * screenIdx
+      imgData.data[imgDataIdx] = rgb[0]
+      imgData.data[imgDataIdx + 1] = rgb[1]
+      imgData.data[imgDataIdx + 2] = rgb[2]
+      imgData.data[imgDataIdx + 3] = 255
+    })
   });
-  sourceInputHandler();
-  return target;
+  ctx.putImageData(imgData, 0, 0)
+  return container;
 }
-setTransform = (input) => ({to: (value) => (input.value = value, {andDispatchEvent: (event = new Event("input")) => input.dispatchEvent(event)})});
-function inverse(f) {
-  switch (f) {
-    case identity:  return identity;
-    case Math.sqrt: return square;
-    case Math.log:  return Math.exp;
-    case Math.exp:  return Math.log;
-    default:        return (x => solve(f, x, x));
-  }
-  function solve(f, y, x = 0) {
-    const dx = 1e-6;
-    let steps = 100, deltax, fx, dfx;
-    do {
-      fx = f(x)
-      dfx = (f(x + dx) - fx) || dx;
-      deltax = dx * (fx - y)/dfx
-      x -= deltax;
-    } while (Math.abs(deltax) > dx && --steps > 0);
-    return steps === 0 ? NaN : x;
-  }
-function square(x) {
-    return x * x;
-  }
+initialRGB = [255, 0, 0]
+initialHSL = rgbToHsl(...initialRGB)
+viewof colorR = Inputs.input(initialRGB[0])
+viewof colorG = Inputs.input(initialRGB[1])
+viewof colorB = Inputs.input(initialRGB[2])
+viewof colorH = Inputs.input(initialHSL[0])
+viewof colorS = Inputs.input(initialHSL[1])
+viewof colorL = Inputs.input(initialHSL[2])
+/**
+ * Update all color values based on current HSL
+ */
+onUpdateHSL = function(h, s, l) {
+  const rgb = hslToRgb(h * .36, s, l)
+  console.log(h)
+  set(viewof colorR, rgb[0])
+  set(viewof colorG, rgb[1])
+  set(viewof colorB, rgb[2])
 }
-function identity(x) {
-  return x;
+set = function(view, value) {
+  view.value = value
+  view.dispatchEvent(new CustomEvent("input"))
 }
+/**
+ * Credit to github.com/mjackson Source: https://gist.github.com/mjackson/5311256
+ * Converts an RGB color value to HSL. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes r, g, and b are contained in the set [0, 255] and
+ * returns h, s, and l in the set [0, 1].
+ *
+ * @param   Number  r       The red color value
+ * @param   Number  g       The green color value
+ * @param   Number  b       The blue color value
+ * @return  Array           The HSL representation
+ */
+function rgbToHsl(r, g, b) {
+  r /= 255, g /= 255, b /= 255;
+  var max = Math.max(r, g, b), min = Math.min(r, g, b);
+  var h, s, l = (max + min) / 2;
+  if (max == min) {
+    h = s = 0; // achromatic
+  } else {
+    var d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+  return [ h, s, l ];
+}
+/**
+ * Credit to github.com/mjackson Source: https://gist.github.com/mjackson/5311256
+ * Converts an HSL color value to RGB. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes h, s, and l are contained in the set [0, 1] and
+ * returns r, g, and b in the set [0, 255].
+ *
+ * @param   {number}  h       The hue
+ * @param   {number}  s       The saturation
+ * @param   {number}  l       The lightness
+ * @return  {Array}           The RGB representation
+ */
+function hslToRgb(h, s, l){
+    let r, g, b;
+    if(s == 0){
+        r = g = b = l; // achromatic
+    } else {
+        let q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        let p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+    }
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+}
+/**
+ * Credit github.com/mjackson. Source: https://gist.github.com/mjackson/5311256
+ */
+function hue2rgb(p, q, t) {
+  if (t < 0) t += 1;
+  if (t > 1) t -= 1;
+  if (t < 1/6) return p + (q - p) * 6 * t;
+  if (t < 1/2) return q;
+  if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+  return p;
+}
+formatPct = d3.format(".0%")
+formatColor = d3.format('.0f')
+import {slider} from "@jashkenas/inputs"
+viewof cardinalWedge = Inputs.range([0, 0.5], {
+  value: 0.2,
+  step: 0.01,
+  label: "Wedge"
+})
+viewof numDots = Inputs.range([0, 180], {
+  value: 20,
+  step: 4,
+  label: "Number of dots"
+})
+// viewof numMajorTicks = Inputs.range([0, 45], {
+//   value: 18,
+//   step: 2,
+//   label: "Major ticks"
+// })
+// viewof numMinorTicks = Inputs.range([0, 10], {
+//   value: 4,
+//   step: 1,
+//   label: "Minor ticks"
+// })
+viewof patternHeight = Inputs.range([1, 10], {
+  value: 2,
+  step: 1,
+  label: "Pattern spacing"
+})
+viewof patternPercentageFill = Inputs.range([0, 1], {
+  value: 0.4,
+  step: 0.01,
+  label: "Pattern percentage fill"
+})
+patternDefs = `
+  <defs>
+    <pattern id="shading" patternUnits="userSpaceOnUse" width="${patternHeight}" height="${patternHeight}">
+      <rect width="100%" height="100%" fill="hsl(0,0%,90%)" />
+      <rect width="100%" height="${patternPercentageFill*patternHeight}" fill="black" />
+    </pattern>
+  </defs>
+`;
+function wedge(radius, width, narrowness=1.0) {
+  return `
+    <path d="M 0,0 L ${width*narrowness},${-width} L 0,${-radius} z" fill="url(#shading)" stroke="black" stroke-width="0.5" />
+    <path d="M 0,0 L 0,${-radius} L ${-width*narrowness},${-width} z" fill="white" stroke="black" stroke-width="0.5" />
+  `;
+}
+// function tick(radius, length, color) {
+//   return `<path d="M 0,${-radius} l 0,${-length}" fill="none" stroke="${color}" stroke-width="1" />`;
+// }
+// function directionMarker(radius, fontSize) { return (angle, _) => {
+//   let label = {
+//     0: 'N',
+//     22.5: 'NNE',
+//     45: 'NE',
+//     67.5: 'ENE',
+//     90: 'E',
+//     112.5: 'ESE',
+//     135: 'SE',
+//     157.5: 'SSE',
+//     180: 'S',
+//     202.5: 'SSW',
+//     225: 'SW',
+//     247.5: 'WSW',
+//     270: 'W',
+//     292.5: 'WNW',
+//     315: 'NW',
+//     337.5: 'NNW',
+//   }[angle] ?? '??';
+//   return `<text y="${-radius}" font-size="${fontSize}" text-anchor="middle" dy="0.4em">${label}</text>`;
+// };
+// }
+angleMarker = function(radius, fontSize) { return (angle, _) => {
+  if (angle === 0 || angle === 90 || angle === 180 || angle === 270) return ``;
+  return `<text y="${-radius}" fill="hsl(30, 20%, 50%)" font-size="${fontSize}" font-family="sans-serif" text-anchor="middle" dy="0.4em">${angle/.360}</text>`;
+};
+}
+angleMarkerMinor = function(radius, fontSize) { return (angle, _) => {
+  if ([0, 90, 180, 270, 45, 135, 225, 315].includes(angle)) return ``;
+  return `<text y="${-radius}" fill="hsl(30, 20%, 50%)" font-size="${fontSize}" font-family="sans-serif" text-anchor="middle" dy="0.4em">${angle/.360}</text>`;
+};
+}
+// function repeat(component, N, initialAngle=0) {
+//   // NOTE: if component is a function, it will be called with (angle, i)
+//   if (N <= 0) return "";
+//   let result = [];
+//   for (let i = 0; i < N; i++) {
+//     let angle = (360 / N) * i + initialAngle;
+//     let el = typeof component === 'function'? component(angle, i) : component;
+//     result.push(`<g transform="rotate(${angle})">${el}</g>`);
+//   }
+//   return result.join("");
+// }
+// ordinalAngle = 15
+// cardinalAngle = 45
+cardinalLength = 80
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
@@ -951,7 +1080,7 @@ height = {
   projection.scale(projection.scale() * (l - 1) / l).precision(0.2);
   return dy;
 }
-d3 = require("d3@6", "d3-array@3", "d3-geo@3", "d3-geo-projection@4", "d3-geo-polygon@1.8")
+d3 = require("d3@5", "d3-array@3", "d3-geo@3", "d3-geo-projection@4", "d3-geo-polygon@1.8")
 sphere = ({type: "Sphere"})
 graticule = d3.geoGraticule().stepMinor([36,0]).stepMajor([36,0])()
 graticule.coordinates = graticule.coordinates.map(
@@ -1000,7 +1129,7 @@ viewof numMajorTicks = Inputs.range([0, 45], {
   label: "Major ticks"
 })
 viewof numMinorTicks = Inputs.range([0, 10], {
-  value: 4,
+  value: 2,
   step: 1,
   label: "Minor ticks"
 })
@@ -1037,15 +1166,35 @@ radius = size/2 - margin - padding
 ```
 
 <style>
+div#colorbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-basis: 30%;
+}
 div#colorslider {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-basis: 30%;
 }
-div#colorslider input[type="number"] {
-  width: 80px;
+.label {
+  font-weight: bold;
+}
+.code-value {
+  font-family: monospace;
+}
+div#colorpicker input[type="number"] {
+  width: 105px;
 }
 div#colorwheelcompass {
   display: flex;
   justify-content: center;
+}
+div#sixteenpointcompass {
+  text-align: center;
 }
 div#zonemap {
    overflow-y: hidden;
@@ -1079,6 +1228,9 @@ div#projselect form.oi-3a86ea {
    --input-width: 260px;
 }
 div:has(div.description) {
+  display: none;
+}
+#hue > h4.hiddenheading, #bearing > h4.hiddenheading {
   display: none;
 }
 </style>
