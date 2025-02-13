@@ -40,12 +40,20 @@ of turns like <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a turn">milliturns</span>
 ([*m**τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=e.g.%2C%20centiturns%20(ctr)%2C-,milliturns,-(mtr)%2C%20etc)).
 
-The color🎨wheel compass🧭below⬇️rotates🔄in response to the
+The color🎨wheel below⬇️rotates🔄in response to the
 [Observable](https://observablehq.com)
-[range](https://observablehq.com/@observablehq/input-range)🎚️input and
-[hue
-bar](https://observablehq.com/@paavanb/progressive-color-picker)📊input
-beneath it. These inputs are capable of selecting all three
+[range](https://observablehq.com/@observablehq/input-range)🎚️and [hue
+bar](https://observablehq.com/@paavanb/progressive-color-picker)📊inputs
+beneath it to orient the selected ${rainbowHue1} upward. The [HSL and
+HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
+models use degrees instead of milliturns so the milliturn shown by the
+range🎚️input, ${rainbowMtr}, is rounded to the nearest degree,
+${rainbowDeg}, and then used as part of an HSL triplet to obtain the
+[hex
+triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
+${rainbowHex}.
+
+Integer milliturns are capable of selecting all three
 [additive](https://en.wikipedia.org/wiki/Primary_color#:~:text=summing%20the%20spectral%20power%20distributions%20(the%20intensity%20of%20each%20wavelength)%20of%20the%20individual%20light%20sources)
 (<span class="red">red</span>=0,
 <span class="lime">green</span>=1/3=.<span style="text-decoration-line:overline;">3</span>,
@@ -56,9 +64,16 @@ and all three
 <span class="cyan">cyan</span>=1/2=0.5,
 <span class="magenta">magenta</span>=5/6=.8<span style="text-decoration-line:overline;">3</span>)
 [primary
-colors](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors),
-because the integer milliturn shown by the range🎚️input, ${rainbowMtr0},
-is converted to a degree and rounded: .
+color](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors)🎨hues
+only when converted to degrees and rounded. Unlike milliturns, degrees
+can represent [repeating decimal
+numbers](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20number%20whose%20digits%20are%20eventually%20periodic%20(that%20is%2C%20after%20some%20place%2C%20the%20same%20sequence%20of%20digits%20is%20repeated%20forever))
+as integers and thus are useful to specifying primary colors
+(<span class="red">red</span>=0°, <span class="lime">green</span>=120°,
+<span class="azul">blue</span>=240°,
+<span class="yellow">yellow</span>=60°,
+<span class="cyan">cyan</span>=180°,
+<span class="magenta">magenta</span>=300°).
 
 rotation matches the so that it can be used to select exactly. To
 specify the others, we would typically need to fractions or [repeating
@@ -71,17 +86,11 @@ but the example below uses rounding
 <span class="magenta">magenta</span>=300°) [primary
 colors](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors).
 
-Move the The [HSL and
-HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
-models specify ${rainbowHue1} in degrees. to allow for identification of
-the hues of
+to allow for identification of the hues of
 [additive](https://en.wikipedia.org/wiki/Primary_color#:~:text=summing%20the%20spectral%20power%20distributions%20(the%20intensity%20of%20each%20wavelength)%20of%20the%20individual%20light%20sources)
-(<span class="red">red</span>=0°, <span class="lime">green</span>=120°,
-<span class="azul">blue</span>=240°) and
+and
 [subtractive](https://en.wikipedia.org/wiki/Primary_color#:~:text=predicts%20the%20resultant%20spectral%20power%20distribution%20of%20light%20filtered%20through%20overlaid%20partially%20absorbing%20materials)
-(<span class="yellow">yellow</span>=60°,
-<span class="cyan">cyan</span>=180°,
-<span class="magenta">magenta</span>=300°) [primary
+() [primary
 colors](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors)
 with integers.${rainbowDeg}.
 
@@ -98,20 +107,20 @@ ${rainbowHue2}, with only three characters
 <span class="azul">blue</span>=00f,
 <span class="yellow">yellow</span>=ff0,
 <span class="cyan">cyan</span>=0ff,
-<span class="magenta">magenta</span>=f0f) in a [hex
-triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors):
-${rainbowHex}.
+<span class="magenta">magenta</span>=f0f) in a
 
 ``` {ojs}
 //| echo: false
 //| label: colorpreview
 //| column: margin
+//| class: colorcomponent
 preview()
 ```
 
 ``` {ojs}
 //| echo: false
 //| label: colorwheelcompass
+//| class: colorcomponent
 // https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
 svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
   <g transform='rotate(${Math.round(-colorH * .36)})'>
@@ -132,6 +141,7 @@ svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size}
 ``` {ojs}
 //| echo: false
 //| label: colorbar
+//| class: colorcomponent
 // https://observablehq.com/@paavanb/progressive-color-picker
 hueBar = colorbar({
   colorFn: t => hslToRgb(t, colorS, colorL),
@@ -145,6 +155,7 @@ hueBar = colorbar({
 ``` {ojs}
 //| echo: false
 //| label: colorslider
+//| class: colorcomponent
 // https://observablehq.com/@paavanb/progressive-color-picker
 { const input = Inputs.range([0, 1000], { value: 0, step: 1 })
   input.value = initialHSL[0]
@@ -154,32 +165,6 @@ hueBar = colorbar({
 ```
 
 # Bearing
-
-``` {ojs}
-//| echo: false
-//| label: sixteenpointcompass
-// https://observablehq.com/@redblobgames/compass-rose
-svg`<svg viewBox="-100 -100 200 200" style="max-width: 20em">
-  <g transform='rotate(${Math.round(-colorH * .36)})'>
-  ${repeat(tick(70, 5, "hsl(30, 20%, 70%)"), numMinorTicks * 4 * numMajorTicks)}
-  ${repeat(tick(70, 8, "hsl(30, 20%, 50%)"), numMajorTicks * 4)}
-  ${repeat(`<path d="M 0,-79 l 3,10 l -6,0 z" fill="white" stroke="hsl(30, 20%, 50%)" stroke-width="1"/>`, 4, 45)}
-  <circle r="70" fill="none" stroke="hsl(30, 20%, 30%)" stroke-width="3" />
-  <circle r="60" fill="none" stroke="hsl(30, 20%, 60%)" stroke-width="1" />
-  <circle r="50" fill="none" stroke="hsl(30, 20%, 30%)" stroke-width="2" />
-  ${repeat(`<circle cy="-40" r="1.5" fill="hsl(30, 20%, 50%)"/>`, numDots)}
-  ${repeat(directionMarker(88, 15), 4)}
-  ${repeat(directionMarker(65, 8), 4, 45)}
-  ${repeat(directionMarker(55.25, 8), 8, 22.5)}
-  ${repeat(angleMarker(86, 12), 8)}
-  ${repeat(angleMarkerMinor(83, 9), 16)}
-  ${repeat(wedge(cardinalLength, cardinalLength * cardinalWedge), 4)}
-  ${repeat(wedge(cardinalLength*0.75, cardinalLength * cardinalWedge * 1.7, 0.3), 4, 45)}
-  ${repeat(wedge(cardinalLength*0.62, cardinalLength * cardinalWedge * 1.7, 0.3), 8, 22.5)}
-  ${patternDefs}
-</svg>
-`
-```
 
 In contrast to primary color🎨hues, the
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
@@ -551,10 +536,12 @@ bkg = ({background: hslStr})
 rainbowHue0 = textcolor('hue', bkg)
 rainbowHue1 = textcolor('hue', bkg)
 rainbowHue2 = textcolor('hue', bkg)
-rainbowMtr0 = textcolor(hueMtr, bkg)
+rainbowMtr = textcolor(hueMtr, bkg)
 rainbowMtr1 = textcolor(hueMtr, bkg)
 rainbowDir = textcolor(turn2comp(hueMtr), bkg)
 rainbowDeg = textcolor(hueDeg, bkg)
+rainbowDeg1 = textcolor(hueDeg, bkg)
+rainbowDeg2 = textcolor(hueDeg, bkg)
 rainbowHex = textcolor(d3.hsl(hueDeg, colorS, colorL).formatHex().slice(1), bkg)
 // Show preview swatches of color
 preview = () => {
@@ -719,102 +706,7 @@ function hue2rgb(p, q, t) {
   if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
   return p;
 }
-formatPct = d3.format(".0%")
-formatColor = d3.format('.0f')
 import {slider} from "@jashkenas/inputs"
-viewof cardinalWedge = Inputs.range([0, 0.5], {
-  value: 0.2,
-  step: 0.01,
-  label: "Wedge"
-})
-viewof numDots = Inputs.range([0, 180], {
-  value: 20,
-  step: 4,
-  label: "Number of dots"
-})
-// viewof numMajorTicks = Inputs.range([0, 45], {
-//   value: 18,
-//   step: 2,
-//   label: "Major ticks"
-// })
-// viewof numMinorTicks = Inputs.range([0, 10], {
-//   value: 4,
-//   step: 1,
-//   label: "Minor ticks"
-// })
-viewof patternHeight = Inputs.range([1, 10], {
-  value: 2,
-  step: 1,
-  label: "Pattern spacing"
-})
-viewof patternPercentageFill = Inputs.range([0, 1], {
-  value: 0.4,
-  step: 0.01,
-  label: "Pattern percentage fill"
-})
-patternDefs = `
-  <defs>
-    <pattern id="shading" patternUnits="userSpaceOnUse" width="${patternHeight}" height="${patternHeight}">
-      <rect width="100%" height="100%" fill="hsl(0,0%,90%)" />
-      <rect width="100%" height="${patternPercentageFill*patternHeight}" fill="black" />
-    </pattern>
-  </defs>
-`;
-function wedge(radius, width, narrowness=1.0) {
-  return `
-    <path d="M 0,0 L ${width*narrowness},${-width} L 0,${-radius} z" fill="url(#shading)" stroke="black" stroke-width="0.5" />
-    <path d="M 0,0 L 0,${-radius} L ${-width*narrowness},${-width} z" fill="white" stroke="black" stroke-width="0.5" />
-  `;
-}
-// function tick(radius, length, color) {
-//   return `<path d="M 0,${-radius} l 0,${-length}" fill="none" stroke="${color}" stroke-width="1" />`;
-// }
-// function directionMarker(radius, fontSize) { return (angle, _) => {
-//   let label = {
-//     0: 'N',
-//     22.5: 'NNE',
-//     45: 'NE',
-//     67.5: 'ENE',
-//     90: 'E',
-//     112.5: 'ESE',
-//     135: 'SE',
-//     157.5: 'SSE',
-//     180: 'S',
-//     202.5: 'SSW',
-//     225: 'SW',
-//     247.5: 'WSW',
-//     270: 'W',
-//     292.5: 'WNW',
-//     315: 'NW',
-//     337.5: 'NNW',
-//   }[angle] ?? '??';
-//   return `<text y="${-radius}" font-size="${fontSize}" text-anchor="middle" dy="0.4em">${label}</text>`;
-// };
-// }
-angleMarker = function(radius, fontSize) { return (angle, _) => {
-  if (angle === 0 || angle === 90 || angle === 180 || angle === 270) return ``;
-  return `<text y="${-radius}" fill="hsl(30, 20%, 50%)" font-size="${fontSize}" font-family="sans-serif" text-anchor="middle" dy="0.4em">${angle/.360}</text>`;
-};
-}
-angleMarkerMinor = function(radius, fontSize) { return (angle, _) => {
-  if ([0, 90, 180, 270, 45, 135, 225, 315].includes(angle)) return ``;
-  return `<text y="${-radius}" fill="hsl(30, 20%, 50%)" font-size="${fontSize}" font-family="sans-serif" text-anchor="middle" dy="0.4em">${angle/.360}</text>`;
-};
-}
-// function repeat(component, N, initialAngle=0) {
-//   // NOTE: if component is a function, it will be called with (angle, i)
-//   if (N <= 0) return "";
-//   let result = [];
-//   for (let i = 0; i < N; i++) {
-//     let angle = (360 / N) * i + initialAngle;
-//     let el = typeof component === 'function'? component(angle, i) : component;
-//     result.push(`<g transform="rotate(${angle})">${el}</g>`);
-//   }
-//   return result.join("");
-// }
-// ordinalAngle = 15
-// cardinalAngle = 45
-cardinalLength = 80
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
@@ -1166,35 +1058,16 @@ radius = size/2 - margin - padding
 ```
 
 <style>
-div#colorbar {
+.colorcomponent {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  flex-basis: 30%;
 }
-div#colorslider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-basis: 30%;
+div#colorslider > div {
+  min-width: 360px;
 }
-.label {
-  font-weight: bold;
-}
-.code-value {
-  font-family: monospace;
-}
-div#colorpicker input[type="number"] {
+div#colorslider input[type="number"] {
   width: 105px;
-}
-div#colorwheelcompass {
-  display: flex;
-  justify-content: center;
-}
-div#sixteenpointcompass {
-  text-align: center;
 }
 div#zonemap {
    overflow-y: hidden;
