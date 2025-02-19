@@ -43,9 +43,57 @@ flowchart LR
    click E "/dec/span"
 ```
 
+# Turns {.hiddenheading}
+
+This section of my website focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created. All Dec measurements are based on [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)). When measuring [angles](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐, $\tau$ represents a full⭕️circle and equals 2$\pi$ [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units) (rad) or 360 [degrees](https://en.wikipedia.org/wiki/Degree_(angle)#:~:text=a%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20360%20degrees) (°). Dec measures distance📏in turns called [meridians](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude) ($\lambda$) and tracks time⏳with two other types of turns: years (y) and days (d).
+
+The three kinds of turns that Dec uses for distance📏and time⏳measurement are all approximations of physical attributes of the Earth🌍: $\lambda\approx$ the [circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth) of the Earth🌎, y $\approx$ the duration of [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun) of the Earth🌏around the Sun☀️, d $\approx$ the duration of [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis) of the Earth🌍on its [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole), and $\lambda\over\text d$ $\approx$ the speed of the rotation of Earth🌎at the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
+
+We can think of [centimeridians]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of a meridian"} per day ($\text c\lambda\over\text d$) as a percent (%) and [millimeridians]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a meridian"} per day ($\text m\lambda\over\text d$) as a [permille](https://en.wikipedia.org/wiki/Per_mille#:~:text=indicates%20parts%20per%20thousand) (‰) of the equatorial speed at which Earth🌏rotates on its axis. Conversion of $\text m\lambda$ to kilometers (km) or meters (m) and days to hours (h) or seconds (s) is straightforward: 1$\text m\lambda$ = 40km = 40000m, 1d = 24h = 86400s, and 1$\text m\lambda\over\text d$ = 1.[6]{style="text-decoration-line:overline;"}$\text{km}\over\text h$ = 2.16$\text m\over\text s$.
+
+The scale of meridians and days is well suited for [air travel](https://en.wikipedia.org/wiki/Air_travel#:~:text=a%20form%20of%20travel%20in%20vehicles%20such%20as%20airplanes%2C%20jet%20aircraft%2C%20helicopters%2C%20hot%20air%20balloons%2C%20blimps%2C%20gliders%2C%20hang%20gliders%2C%20parachutes%2C%20or%20anything%20else%20that%20can%20sustain%20flight). If we had our very own [seaplane](https://en.wikipedia.org/wiki/Seaplane#:~:text=a%20powered%20fixed%2Dwing%20aircraft%20capable%20of%20taking%20off%20and%20landing%20(alighting)%20on%20water)✈️, we could fly 1 [decimeridian]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a meridian"} directly South from the [Mississippi River](https://en.wikipedia.org/wiki/Mississippi_River#:~:text=the%20primary%20river%20of%20the%20largest%20drainage%20basin%20in%20the%20United%20States) near [Memphis, Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee) to the land next to [Santa Fe Island](https://en.wikipedia.org/wiki/Santa_Fe_Island#:~:text=a%20small%20island%20of%2024%20square%20kilometres%20(9.3%C2%A0sq%C2%A0mi)%20which%20lies%20in%20the%20middle%20of%20the%20Gal%C3%A1pagos%20Archipelago%20in%20Ecuador)🏝️in the [Galápagos archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific). If our average speed from takeoff🛫to landing🛬is 100$\text m\lambda\over\text d$, the duration of our flight will be 1 day.
+
+It is very easy to switch between multiples and submultiples of units, Dec distance📏and time⏳units are all based on powers of ten, so 
+
+Warning bad pun alert
+Turn the beat around, Love to hear the percussion…🪩🕺💃🎶🎵
+
+When dealing with shorter distances and durations, it is convenient to use submultiples of meridians and days.
+permission to land The Dec analogs of meters and seconds of a meter (m) is called **z**one **e**quatorial **m**icrowidth or **zem** (z). 
+
+Notably, $\text m\lambda\over\text d$ $\approx$ $\text{mi}\over\text h$.
+
+
+$\text m\lambda\over\text d$ closer to the distances and durations we may encounter A meridian per day ($\omega$ = $\lambda\over\text d$) The speed of the rotation of Earth🌎at the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres) is roughly .
+is approximation  [465.10](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=an%20equatorial%20speed%20of%20465.10%20metres%20per%20second) meters per second ($\text m\over\text s$) or 1.0046$\omega$. 
+
+Similarly, we can think of [centimeridians]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of meridians"} per day ($\text c\lambda\over\text d$) as percents : 1$\lambda\over\text d$ = 100$\text c\lambda\over\text d$. Conversion between Dec and SI speed units is easy: 1$\text c\lambda\over\text d$ = 0.216$\text m\over\text s$. 
+
 # Hue {.hiddenheading}
 
-This section of my website focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created. All Dec measurements are based on [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees). A turn ([$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) represents a circle⭕️and is equal to 2$\pi$ radians or 360 degrees. Any kind of angle📐, such as a [bearing](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object) on a [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭or a [\${rainbowHue0}](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram%20(such%20as%20a%20chromaticity%20diagram)%20or%20color%20wheel) on a [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle), can be measured in turns or [submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer) of turns like [milliturns]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a turn"} ([$m\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=e.g.%2C%20centiturns%20(ctr)%2C-,milliturns,-(mtr)%2C%20etc)).
+$$\text{n}=\begin{cases}
+  366&{\begin{align}\text{if } (\lfloor \text{y}\rfloor+1)\text{ mod }\ \ \ \ 4=0\\
+  \href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\lfloor \text{y}\rfloor+1)\text{ mod }100\neq0\\
+  \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}(\lfloor \text{y}\rfloor+1)\text{ mod }400=0\end{align}}\\\\
+  365&{\text{otherwise.}}\end{cases}$$
+
+and a meridian
+y = 365 or 366 days depending on the Dec leap year rule, and 
+Dec speed measurements are based on $\lambda$ / d ($\omega$)
+, which stands for the circumference of the Earth and amounts to 
+
+ and is equal to 365 or 366 days, depending on the leap year rule. A day (d) represents the Earth on its axis and is equal to. Millennia (10e3y), centuries (10e2y), and decades (10e1y) are multiples of years. Decidays (10e-1d), centidays (10e-2d), and millidays (10e-3d) are submultiples of days.
+
+Like  different kinds of turns can be combined to form new units. 
+
+
+For measurements of length or distance, a turn represents a [meridian](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude) ($\lambda$), a trip around the world through the North and South Poles, and is equal to 40000 kilometers (km).
+
+In Dec, time measurement is based on [days](https://en.wikipedia.org/wiki/Day#:~:text=the%20time%20period%20of%20a%20full%20rotation%20of%20the%20Earth%20with%20respect%20to%20the%20Sun) (d) and 
+
+are two special kinds of turns that are the basis of time and distance measurements. have their own names and are defined in terms of 
+
+A day is a turn of the Earth on its axis that has a duration of 86400 seconds and a meridian is a turn around the Earth that passes through the North and South Poles. A beat is 0.864 seconds (s) and a zem is 4 meters (m). Any kind of [angle](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐, such as a [bearing](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object) on a [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭or a [\${rainbowHue0}](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram%20(such%20as%20a%20chromaticity%20diagram)%20or%20color%20wheel) on a [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle), can be measured in turns or [submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer) of turns like [milliturns]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a turn"} ([$m\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=e.g.%2C%20centiturns%20(ctr)%2C-,milliturns,-(mtr)%2C%20etc)).
 
 The color🎨wheel below⬇️rotates🔄in response to the [Observable](https://observablehq.com) [range](https://observablehq.com/@observablehq/input-range)🎚️and [hue bar](https://observablehq.com/@paavanb/progressive-color-picker)📊inputs beneath it to orient the selected \${rainbowHue1} upward. The [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model) models use degrees instead of milliturns so the milliturn shown by the range🎚️input, \${rainbowMtr}, is rounded to the nearest degree, \${rainbowDeg}, and then used as part of an HSL triplet to obtain the [hex triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors) \${rainbowHex}.
 
@@ -852,7 +900,7 @@ div#projselect form.oi-3a86ea {
 div:has(div.description) {
   display: none;
 }
-#hue > h4.hiddenheading, #bearing > h4.hiddenheading {
+#turns > h4.hiddenheading, #hue > h4.hiddenheading, #bearing > h4.hiddenheading {
   display: none;
 }
 </style>
