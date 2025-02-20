@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2024+355
+2024+356
 
 - [Turns](#turns)
 - [Hue](#hue)
@@ -32,13 +32,13 @@ When measuring
 (rad) or 360
 [degrees](https://en.wikipedia.org/wiki/Degree_(angle)#:~:text=a%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20360%20degrees)
 (°). Dec measures distance📏in turns called
-[meridians](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude)
-(*λ*) and tracks time⏳with two other types of turns: years (y) and days
-(d).
+[taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
+(*τ**r*) and tracks time⏳with two other types of turns: years (y) and
+days (d).
 
 The three kinds of turns that Dec uses for distance📏and
 time⏳measurement are all approximations of physical attributes of the
-Earth🌍: *λ*≈ the
+Earth🌍: *τ**r*≈ the
 [circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth)
 of the Earth🌎, y ≈ the duration of
 [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun)
@@ -46,27 +46,94 @@ of the Earth🌏around the Sun☀️, d ≈ the duration of
 [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
 of the Earth🌍on its
 [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole),
-and $\lambda\over\text d$ ≈ the speed of the rotation of Earth🌎at the
+and $\tau r\over\text d$ ≈ the speed of the rotation of Earth🌎at the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
-We can think of <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="hundredths of a meridian">centimeridians</span> per day
-($\text c\lambda\over\text d$) as a percent (%) and
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a meridian">millimeridians</span> per day
-($\text m\lambda\over\text d$) as a
-[permille](https://en.wikipedia.org/wiki/Per_mille#:~:text=indicates%20parts%20per%20thousand)
-(‰) of the equatorial speed at which Earth🌏rotates on its axis.
-Conversion of $\text m\lambda$ to kilometers (km) or meters (m) and days
-to hours (h) or seconds (s) is straightforward: 1$\text m\lambda$ = 40km
-= 40000m, 1d = 24h = 86400s, and 1$\text m\lambda\over\text d$ =
-1.<span style="text-decoration-line:overline;">6</span>$\text{km}\over\text h$
-= 2.16$\text m\over\text s$.
+Click the map🗺️below⬇️to change the positions📍of Points
+<span class="red">0</span> and <span class="azul">1</span>. The “Reset”
+button brings the points back to their default positions📍. By default,
+these two points are 1 <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of the circumference of Earth">decitaur</span>
+($1\text d\tau r$) apart: <span class="red">Point 0</span> is at
+<span class="red">8</span> <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="tenths of a circle of longitude">decilambdas</span>
+($\text d\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$)
+and <span class="red">0</span> <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="tenths of a circle of latitude">deciphis</span>
+($\text d\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$),
+which is [Santa Fe
+Island](https://en.wikipedia.org/wiki/Santa_Fe_Island#:~:text=a%20small%20island%20of%2024%20square%20kilometres%20(9.3%C2%A0sq%C2%A0mi)%20which%20lies%20in%20the%20middle%20of%20the%20Gal%C3%A1pagos%20Archipelago%20in%20Ecuador)🏝️in
+the [Galápagos
+archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific),
+and <span class="azul">Point 1</span> is at
+<span class="azul">8</span>$\text d\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$
+and
+<span class="azul">1</span>$\text d\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$,
+which is [Memphis,
+Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
 
-The scale of meridians and days is well suited for [air
+An airplane✈️flying at an average speed of
+100$\text m\tau r\over\text d$ could travel between the default Point
+<span class="red">0</span> and <span class="azul">1</span> positions📍in
+1d. Currently, <span class="red">Point 0</span> is at
+<span class="red">${Math.floor(long2turn(Place_A\[0\], 3))}</span>
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a circle of longitude">millilambdas</span>
+($\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$)
+and <span class="red">${Math.floor(lati2turn(Place_A\[1\], 3))}</span>
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a circle of latitude">milliphi</span>
+($\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$),
+and <span class="azul">Point 1</span> is at
+<span class="azul">${Math.floor(long2turn(Place_B\[0\],
+3))}</span>$\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$
+and <span class="azul">${Math.floor(lati2turn(Place_B\[1\],
+3))}</span>$\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$.
+At an average speed of ${travelspeed}$\text m\tau r\over\text d$, we
+could cover the ${distance_mtaur} millitaur ($\text m\tau r$) distance
+between Points <span class="red">0</span> and
+<span class="azul">1</span> in ${traveltime} millidays (md).
+
+``` {ojs}
+//| echo: false
+//| label: distmap
+viewof coordinates = worldMapCoordinates([[-90, 0.025],[-90, 36], projection], [750, height / 2])
+```
+
+``` {ojs}
+//| echo: false
+//| label: toggles
+// https://observablehq.com/@d3/solar-terminator
+// https://observablehq.com/@mbostock/time-zones
+viewof dectoggle = Inputs.toggle({label: "Dec", value: true})
+viewof border = Inputs.toggle({label: "Border", value: false})
+viewof suntoggle = Inputs.toggle({label: "Shade", value: false})
+viewof utctoggle = Inputs.toggle({label: "UTC", value: false})
+```
+
+``` {ojs}
+//| echo: false
+//| label: projselect
+viewof select = Inputs.select(
+  projections, {label: "Projection:", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
+```
+
+``` {ojs}
+//| echo: false
+//| label: speedinput
+viewof travelspeed = Inputs.range([0, 1000], {label: "speed", value: 100, step: 1})
+```
+
+of these points are in milliturns to indicate that an angle rather than
+a distance kilometers (km) or meters (m) and days to hours (h) or
+seconds (s).
+
+The scale of $\tau\text r$ and d is well suited for [air
 travel](https://en.wikipedia.org/wiki/Air_travel#:~:text=a%20form%20of%20travel%20in%20vehicles%20such%20as%20airplanes%2C%20jet%20aircraft%2C%20helicopters%2C%20hot%20air%20balloons%2C%20blimps%2C%20gliders%2C%20hang%20gliders%2C%20parachutes%2C%20or%20anything%20else%20that%20can%20sustain%20flight).
 If we had our very own
-[seaplane](https://en.wikipedia.org/wiki/Seaplane#:~:text=a%20powered%20fixed%2Dwing%20aircraft%20capable%20of%20taking%20off%20and%20landing%20(alighting)%20on%20water)✈️,
+[seaplane](https://en.wikipedia.org/wiki/Seaplane#:~:text=a%20powered%20fixed%2Dwing%20aircraft%20capable%20of%20taking%20off%20and%20landing%20(alighting)%20on%20water),
 we could fly 1 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a meridian">decimeridian</span> directly South
 from the [Mississippi
@@ -77,9 +144,20 @@ to the land next to [Santa Fe
 Island](https://en.wikipedia.org/wiki/Santa_Fe_Island#:~:text=a%20small%20island%20of%2024%20square%20kilometres%20(9.3%C2%A0sq%C2%A0mi)%20which%20lies%20in%20the%20middle%20of%20the%20Gal%C3%A1pagos%20Archipelago%20in%20Ecuador)🏝️in
 the [Galápagos
 archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific).
-If our average speed from takeoff🛫to landing🛬is
-100$\text m\lambda\over\text d$, the duration of our flight will be 1
-day.
+
+We can think of <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of a meridian">centimeridians</span> per day
+($\text c\tau r\over\text d$) as a percent (%) and
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a meridian">millimeridians</span> per day
+($\text m\tau r\over\text d$) as a
+[permille](https://en.wikipedia.org/wiki/Per_mille#:~:text=indicates%20parts%20per%20thousand)
+(‰) of the equatorial speed at which Earth🌏rotates on its axis.
+Conversion of $\text m\tau r$ to kilometers (km) or meters (m) and days
+to hours (h) or seconds (s) is straightforward: 1$\text m\tau r$ = 40km
+= 40000m, 1d = 24h = 86400s, and 1$\text m\tau r\over\text d$ =
+1.<span style="text-decoration-line:overline;">6</span>$\text{km}\over\text h$
+= 2.16$\text m\over\text s$.
 
 It is very easy to switch between multiples and submultiples of units,
 Dec distance📏and time⏳units are all based on powers of ten, so
@@ -92,7 +170,7 @@ use submultiples of meridians and days. permission to land The Dec
 analogs of meters and seconds of a meter (m) is called **z**one
 **e**quatorial **m**icrowidth or **zem** (z).
 
-Notably, $\text m\lambda\over\text d$ ≈ $\text{mi}\over\text h$.
+Notably, $\text m\tau\text r\over\text d$ ≈ $\text{mi}\over\text h$.
 
 $\text m\lambda\over\text d$ closer to the distances and durations we
 may encounter A meridian per day (*ω* = $\lambda\over\text d$) The speed
@@ -444,30 +522,6 @@ UTC time zones shown on the map all deviate from their standard width of
 41⅔ <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a turn">milliturns</span> to conform to
 political boundaries.
-
-``` {ojs}
-//| echo: false
-//| label: zonemap
-viewof coordinates = worldMapCoordinates([162, 0, projection], [width, height])
-```
-
-``` {ojs}
-//| echo: false
-//| label: toggles
-// https://observablehq.com/@d3/solar-terminator
-// https://observablehq.com/@mbostock/time-zones
-viewof dectoggle = Inputs.toggle({label: "Dec", value: true})
-viewof border = Inputs.toggle({label: "Borders", value: false})
-viewof suntoggle = Inputs.toggle({label: "Shade", value: true})
-viewof utctoggle = Inputs.toggle({label: "UTC", value: false})
-```
-
-``` {ojs}
-//| echo: false
-//| label: projselect
-viewof select = Inputs.select(
-  projections, {label: "Projection:", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
-```
 
 In addition to showing and hiding time zones, the toggle✅inputs also
 can add country borders and a
@@ -875,14 +929,20 @@ zones = topojson.feature(timezones, timezones.objects.timezones).features
 mesh = topojson.mesh(timezones, timezones.objects.timezones)
 color = d3.scaleSequential(d3.interpolateRdBu).domain([14, -12])
 // https://observablehq.com/@enjalot/draggable-world-map-coordinates-input
+// https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea
 function worldMapCoordinates(config = {}, dimensions) {
+  var n_point;
+  var lonA, lonB, latA, latB;
   const {
     value = [], title, description, width = dimensions[0]
   } = Array.isArray(config) ? {value: config} : config;
   const height = dimensions[1];
-  let [lon, lat] = value;
-  lon = lon != null ? lon : null;
-  lat = lat != null ? lat : null;
+  [lonA, latA] = value[0];
+  [lonB, latB] = value[1];
+  lonA = lonA != null ? lonA : null;
+  latA = latA != null ? latA : null;
+  lonB = lonB != null ? lonB : null;
+  latB = latB != null ? latB : null;
   const formEl = html`<form style="width: ${width}px;"></form>`;
   const context = DOM.context2d(width, height);
   const canvas = context.canvas;
@@ -932,12 +992,12 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath();
       path(graticule);
       context.lineWidth = 1.25;
-      context.strokeStyle = `#000`;
+      context.strokeStyle = `#888`;
       context.stroke();
-      context.font = width < 760 ? "12px serif" : "21px serif";
-      context.fillStyle = `#000`;
-      d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 27.5])));
-      d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -48])));
+      // context.font = width < 760 ? "12px serif" : "21px serif";
+      // context.fillStyle = `#000`;
+      // d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 27.5])));
+      // d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -48])));
       // d3.range(-18, 336 + 1, 36).map(x => context.fillText(formatLongitude(x), ...projection([x, 90])));
       // d3.range(-18, 336 + 1, 36).map(x => context.fillText(formatLongitude(x), ...projection([x, -90])));
     }
@@ -955,9 +1015,159 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.stroke();
       context.fill();
     }
+    if (lonA != null && latA != null) {
+      const pointPath = { type: "MultiPoint", coordinates: [[lonA, latA]] };
+      context.beginPath();
+      path.pointRadius(point_radius_2);
+      path(pointPath);
+      context.fillStyle = color_A;
+      context.fill();
+    }
+    if (lonB != null && latB != null) {
+      const pointPath = { type: "MultiPoint", coordinates: [[lonB, latB]] };
+      context.beginPath();
+      path.pointRadius(point_radius_2);
+      path(pointPath);
+      context.fillStyle = color_B;
+      context.fill();
+    }
+    // We draw the path between 2 points
+    var interpolation = d3.geoInterpolate([lonA,latA],[lonB,latB]);
+    var nb_points =  d3.geoDistance([lonA,latA],[lonB,latB])*20;
+    for(let i = 1; i<nb_points; i++) {
+      const pointPath = { type: "MultiPoint", coordinates: [interpolation(i/nb_points)] };
+      path.pointRadius(point_radius);
+      context.beginPath(), context.fillStyle = color_path,  path(pointPath),  context.fill();
+    }
   }
+  canvas.onclick = function(ev) {
+    const { offsetX, offsetY } = ev;
+    var coords = projection.invert([offsetX, offsetY]);
+    if(n_point==0){
+    lonA = +coords[0].toFixed(2);
+    latA = +coords[1].toFixed(2);
+      n_point = 1;
+    }else{
+    lonB = +coords[0].toFixed(2);
+    latB = +coords[1].toFixed(2);
+      n_point = 0;
+    }
+    draw();
+    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+  };
   draw();
-  return formEl;
+  const form = input({
+    type: "worldMapCoordinates",
+    title,
+    description,
+    display: v => "",
+     // html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: 13px sans-serif; margin-bottom: 5px;">
+     //       <span style="color: ${color_A}">Longitude: ${lonA != null ? lonA.toFixed(2) : ""}</span>
+     //       &nbsp; &nbsp;
+     //       <span style="color: ${color_A}">Latitude: ${latA != null ? latA.toFixed(2) : ""} </span>
+     //     </div>
+     //     <div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: 13px sans-serif; margin-bottom: 5px;">
+     //       <span style="color: ${color_B}">Longitude: ${lonB != null ? lonB.toFixed(2) : ""}</span>
+     //       &nbsp; &nbsp;
+     //       <span style="color: ${color_B}">Latitude: ${latB != null ? latB.toFixed(2) : ""}</span>
+     //     </div>`,
+    getValue: () => [[lonA != null ? lonA : null, latA != null ? latA : null], [lonB != null ? lonB : null, latB != null ? latB : null]],
+    form: formEl
+  });
+  return form;
+}
+point_radius = 2.4
+point_radius_2 = 6
+color_A = "#f06"
+color_B  = "#60f"
+color_path = "tomato"
+Place_A = coordinates[0]
+Place_B = coordinates[1]
+distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
+distance_mtaur = Math.floor(distance_km / 40)
+traveltime = Math.floor(distance_mtaur / travelspeed * 1000)
+nb_points = Math.round(distance_km/150)
+d3format = require("d3-format@1")
+function input(config) {
+  let {
+    form,
+    type = "text",
+    attributes = {},
+    action,
+    getValue,
+    title,
+    description,
+    format,
+    display,
+    submit,
+    options
+  } = config;
+  const wrapper = html`<div></div>`;
+  if (!form)
+    form = html`<form>
+    <input name=input type=${type} />
+  </form>`;
+  Object.keys(attributes).forEach(key => {
+    const val = attributes[key];
+    if (val != null) form.input.setAttribute(key, val);
+  });
+  if (submit)
+    form.append(
+      html`<input name=submit type=submit style="margin: 0 0.75em" value="${
+        typeof submit == "string" ? submit : "Submit"
+      }" />`
+    );
+  form.append(
+    html`<output name=output style="font: 14px Menlo, Consolas, monospace; margin-left: 0.5em;"></output>`
+  );
+  if (title)
+    form.prepend(
+      html`<div style="font: 700 0.9rem sans-serif; margin-bottom: 3px;">${title}</div>`
+    );
+  if (description)
+    form.append(
+      html`<div style="font-size: 0.85rem; font-style: italic; margin-top: 3px;">${description}</div>`
+    );
+  if (format)
+    format = typeof format === "function" ? format : d3format.format(format);
+  if (action) {
+    action(form);
+  } else {
+    const verb = submit
+      ? "onsubmit"
+      : type == "button"
+      ? "onclick"
+      : type == "checkbox" || type == "radio"
+      ? "onchange"
+      : "oninput";
+    form[verb] = e => {
+      e && e.preventDefault();
+      const value = getValue ? getValue(form.input) : form.input.value;
+      if (form.output) {
+        const out = display ? display(value) : format ? format(value) : value;
+        if (out instanceof window.Element) {
+          while (form.output.hasChildNodes()) {
+            form.output.removeChild(form.output.lastChild);
+          }
+          form.output.append(out);
+        } else {
+          form.output.value = out;
+        }
+      }
+      form.value = value;
+      if (verb !== "oninput")
+        form.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+    };
+    if (verb !== "oninput")
+      wrapper.oninput = e => e && e.stopPropagation() && e.preventDefault();
+    if (verb !== "onsubmit") form.onsubmit = e => e && e.preventDefault();
+    form[verb]();
+  }
+  while (form.childNodes.length) {
+    wrapper.appendChild(form.childNodes[0]);
+  }
+  form.append(wrapper);
+  return form;
 }
 // https://observablehq.com/@fil/d3-projections
 projections = [
@@ -1077,6 +1287,10 @@ function long2turn(degrees = -180, e = 3) {
   return (((degrees %= 360) < 0 ? degrees + 360 : degrees) + 18) / (360 / 10**e) % 10**e;
 }
 function long2zone(degrees = -180) { return Math.floor(long2turn(degrees, 1)); }
+function lati2turn(degrees = -180, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return (degrees %= 360) / (360 / 10**e) % 10**e;
+}
 projection = select ? select.value() : d3.geoEquirectangular()
 sun = {
   const now = new Date;
@@ -1095,7 +1309,7 @@ height = {
 }
 d3 = require("d3@5", "d3-array@3", "d3-geo@3", "d3-geo-projection@4", "d3-geo-polygon@1.8")
 sphere = ({type: "Sphere"})
-graticule = d3.geoGraticule().stepMinor([36,0]).stepMajor([36,0])()
+graticule = d3.geoGraticule().stepMinor([36, 36]).stepMajor([36, 36])()
 graticule.coordinates = graticule.coordinates.map(
   i => i.map(j => j.map((k, index, arr) => i.length === 3 && index === 0 ? k - 18 : k))
 )
@@ -1190,7 +1404,7 @@ div#colorslider > div {
 div#colorslider input[type="number"] {
   width: 105px;
 }
-div#zonemap {
+div#distmap {
    overflow-y: hidden;
    margin-top: -15px;
 }
@@ -1198,19 +1412,22 @@ div#toggles {
    display: flex;
 }
 div#toggles form.oi-3a86ea-toggle > label {
-   width: 28px;
+   overflow-x: hidden;
 }
-div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-3"] {
-  width: 56px;
+div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-7"] {
+  width: 30px;
 }
-div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-2"] {
+div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-6"] {
+  width: 50px;
+}
+div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-5"] {
   width: 46px;
 }
-div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-1"] {
-  width: 31px;
+div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-4"] {
+  width: 32px;
 }
 div#toggles  form.oi-3a86ea-toggle {
-   width: 110px;
+   width: 109px;
 }
 div#toggles  input.oi-3a86ea-input[type="checkbox"] {
   margin: 3px 0px 0px 0px;
