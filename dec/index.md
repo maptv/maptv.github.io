@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2024+356
+2024+358
 
 - [Turns](#turns)
 - [Hue](#hue)
@@ -50,51 +50,50 @@ and $\tau r\over\text d$ ≈ the speed of the rotation of Earth🌎at the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
 Click the map🗺️below⬇️to change the positions📍of Points
-<span class="red">0</span> and <span class="azul">1</span>. The “Reset”
-button brings the points back to their default positions📍. By default,
-these two points are 1 <span class="under tool" data-bs-toggle="tooltip"
+<span class="yellow">0</span> and <span class="cyan">1</span>. The
+“Reset” button returns the points to their default positions📍. By
+default, these two points are 1 <span class="under tool"
+data-bs-toggle="tooltip"
 data-bs-title="a tenth of the circumference of Earth">decitaur</span>
-($1\text d\tau r$) apart: <span class="red">Point 0</span> is at
-<span class="red">8</span> <span class="under tool"
+($\text d\tau r$) apart: <span class="yellow">Point 0</span> is at
+<span class="yellow">8</span> <span class="under tool"
 data-bs-toggle="tooltip"
-data-bs-title="tenths of a circle of longitude">decilambdas</span>
+data-bs-title="tenths of a circle of longitude">deciparallels</span>
 ($\text d\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$)
-and <span class="red">0</span> <span class="under tool"
+and <span class="yellow">0</span> <span class="under tool"
 data-bs-toggle="tooltip"
-data-bs-title="tenths of a circle of latitude">deciphis</span>
+data-bs-title="tenths of a circle of latitude">decimeridians</span>
 ($\text d\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$),
-which is [Santa Fe
-Island](https://en.wikipedia.org/wiki/Santa_Fe_Island#:~:text=a%20small%20island%20of%2024%20square%20kilometres%20(9.3%C2%A0sq%C2%A0mi)%20which%20lies%20in%20the%20middle%20of%20the%20Gal%C3%A1pagos%20Archipelago%20in%20Ecuador)🏝️in
-the [Galápagos
-archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific),
-and <span class="azul">Point 1</span> is at
-<span class="azul">8</span>$\text d\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$
-and
-<span class="azul">1</span>$\text d\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$,
-which is [Memphis,
+which is near the
+[Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific),
+and <span class="cyan">Point 1</span> is at <span class="cyan">8</span>
+$\text d\lambda$ and <span class="cyan">1</span> $\text d\phi$, which is
+in [Memphis,
 Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
 
-An airplane✈️flying at an average speed of
-100$\text m\tau r\over\text d$ could travel between the default Point
-<span class="red">0</span> and <span class="azul">1</span> positions📍in
-1d. Currently, <span class="red">Point 0</span> is at
-<span class="red">${Math.floor(long2turn(Place_A\[0\], 3))}</span>
+An airplane✈️flying at an average speed of 100 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of the circumference of Earth">millitaurs</span>
+per day ($\text m\omega$) could travel between the default Point
+<span class="yellow">0</span> and <span class="cyan">1</span>
+positions📍in 1d. Currently, <span class="yellow">Point 0</span> is at
+<span class="yellow">${Math.floor(long2turn(Place_A\[0\], 3))}</span>
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a circle of longitude">millilambdas</span>
+data-bs-title="thousandths of a circle of longitude">milliparallels</span>
 ($\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$)
-and <span class="red">${Math.floor(lati2turn(Place_A\[1\], 3))}</span>
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a circle of latitude">milliphi</span>
+and <span class="yellow">${Math.floor(lati2turn(Place_A\[1\],
+3))}</span> <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a circle of latitude">millimeridians</span>
 ($\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$),
-and <span class="azul">Point 1</span> is at
-<span class="azul">${Math.floor(long2turn(Place_B\[0\],
-3))}</span>$\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$
-and <span class="azul">${Math.floor(lati2turn(Place_B\[1\],
-3))}</span>$\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$.
-At an average speed of ${travelspeed}$\text m\tau r\over\text d$, we
-could cover the ${distance_mtaur} millitaur ($\text m\tau r$) distance
-between Points <span class="red">0</span> and
-<span class="azul">1</span> in ${traveltime} millidays (md).
+and <span class="cyan">Point 1</span> is at
+<span class="cyan">${Math.floor(long2turn(Place_B\[0\], 3))}</span>
+$\text m\lambda$ and
+<span class="cyan">${Math.floor(lati2turn(Place_B\[1\], 3))}</span>
+$\text m\phi$. At an average speed of ${travelspeed} $\text m\omega$, we
+could cover the ${distance_mtaur} $\text m\tau r$ between Points
+<span class="yellow">0</span> and <span class="cyan">1</span> in
+${traveltime} <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a day">milliday</span> (md).
 
 ``` {ojs}
 //| echo: false
@@ -111,24 +110,64 @@ viewof dectoggle = Inputs.toggle({label: "Dec", value: true})
 viewof border = Inputs.toggle({label: "Border", value: false})
 viewof suntoggle = Inputs.toggle({label: "Shade", value: false})
 viewof utctoggle = Inputs.toggle({label: "UTC", value: false})
+button = btn.node();
 ```
 
 ``` {ojs}
 //| echo: false
 //| label: projselect
 viewof select = Inputs.select(
-  projections, {label: "Projection:", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
+  projections, {label: "Projection", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
 ```
 
 ``` {ojs}
 //| echo: false
 //| label: speedinput
-viewof travelspeed = Inputs.range([0, 1000], {label: "speed", value: 100, step: 1})
+viewof travelspeed = Inputs.range([0, 1000], {label: tex`\text m\omega`, value: 100, step: 1})
 ```
 
-of these points are in milliturns to indicate that an angle rather than
-a distance kilometers (km) or meters (m) and days to hours (h) or
-seconds (s).
+We can think of <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of the circumference of Earth">centitaurs</span>
+per day ($\text c\omega$) as a percent (%) and $\text m\omega$ as a
+[permille](https://en.wikipedia.org/wiki/Per_mille#:~:text=indicates%20parts%20per%20thousand)
+(‰) of the equatorial speed at which Earth🌏rotates on its axis.
+Notably, 1$\text m\omega$ =
+1.<span style="text-decoration-line:overline;">6</span> kilometers per
+hour ($\text{km}\over\text h$) ≈ 1 mile per hour
+($\text {mi}\over\text h$). Other than ease of conversion, another
+advantage of a global scale, $\text m\tau r\over\text d$,
+$\text m\lambda$, $\text m\phi$ are the right size to measure distance
+and position.
+
+b the closest Dec analog of $\text{km}\over\text h$ and
+$\text {mi}\over\text h$, the main Dec speed measurement units are
+equivalent to $\text c\tau r\over\text d$.
+
+The advantage of $\text c\tau r\over\text d$ is that is equivalent to is
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="ten millionths of the circumference of Earth">decimicrotaurs</span>
+per <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a hundred thousandth of a day">centimilliday</span>
+($\text d\micro\tau r\over\text {cmd}$).
+
+that 1$\text c\tau r\over\text d$ = zems per beat
+($\text z\over\text b$). Zem stands for **z**one **e**quatorial
+**m**icrowidth or **zem** (z) and a beat is roughly the duration of a
+heart or musical beat.
+
+Converting between Dec speed units is straightforward:
+10$\text m\tau r\over\text d$ = 1 $\text c\tau\over\text d$ = 1
+
+Zem stands for zone equatorial microwidth and is equal to 4m.
+
+The length of 1 *τ**r* is exactly equal to 10000 kilozems (kz) or 40000
+kilometers (km), which is is 1.96575kz less than the length of a
+[meridian](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude)
+(*ϕ*) and 18.75425kz less than the length of the
+[Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres)
+(*ϕ*<sub>0</sub>). of these points are in milliturns to indicate that an
+angle rather than a distance kilometers (km) or meters (m) and days to
+hours (h) or seconds (s).
 
 The scale of $\tau\text r$ and d is well suited for [air
 travel](https://en.wikipedia.org/wiki/Air_travel#:~:text=a%20form%20of%20travel%20in%20vehicles%20such%20as%20airplanes%2C%20jet%20aircraft%2C%20helicopters%2C%20hot%20air%20balloons%2C%20blimps%2C%20gliders%2C%20hang%20gliders%2C%20parachutes%2C%20or%20anything%20else%20that%20can%20sustain%20flight).
@@ -146,10 +185,10 @@ the [Galápagos
 archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific).
 
 We can think of <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="hundredths of a meridian">centimeridians</span> per day
+data-bs-title="hundredths of a meridian">centitaur</span> per day
 ($\text c\tau r\over\text d$) as a percent (%) and
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a meridian">millimeridians</span> per day
+data-bs-title="thousandths of a meridian">millitaur</span> per day
 ($\text m\tau r\over\text d$) as a
 [permille](https://en.wikipedia.org/wiki/Per_mille#:~:text=indicates%20parts%20per%20thousand)
 (‰) of the equatorial speed at which Earth🌏rotates on its axis.
@@ -167,8 +206,7 @@ percussion…🪩🕺💃🎶🎵
 
 When dealing with shorter distances and durations, it is convenient to
 use submultiples of meridians and days. permission to land The Dec
-analogs of meters and seconds of a meter (m) is called **z**one
-**e**quatorial **m**icrowidth or **zem** (z).
+analogs of meters and seconds of a meter (m) is called
 
 Notably, $\text m\tau\text r\over\text d$ ≈ $\text{mi}\over\text h$.
 
@@ -675,6 +713,7 @@ style="width:8.64in;height:0.98in" />
 //| echo: false
 //| output: false
 // https://observablehq.com/@observablehq/text-color-annotations-in-markdown
+btn = d3.create('button').html('Reset').attr("id", "rstbtn");
 function textcolor(content, style = {}) {
   function yiq(color) {
     const {r, g, b} = d3.rgb(color);
@@ -881,7 +920,6 @@ function hue2rgb(p, q, t) {
   if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
   return p;
 }
-import {slider} from "@jashkenas/inputs"
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
@@ -1022,6 +1060,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       path(pointPath);
       context.fillStyle = color_A;
       context.fill();
+      context.strokeStyle = "black";
+      context.stroke();
     }
     if (lonB != null && latB != null) {
       const pointPath = { type: "MultiPoint", coordinates: [[lonB, latB]] };
@@ -1030,6 +1070,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       path(pointPath);
       context.fillStyle = color_B;
       context.fill();
+      context.strokeStyle = "black";
+      context.stroke();
     }
     // We draw the path between 2 points
     var interpolation = d3.geoInterpolate([lonA,latA],[lonB,latB]);
@@ -1055,6 +1097,15 @@ function worldMapCoordinates(config = {}, dimensions) {
     draw();
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   };
+  function resetlatlon() {
+    latA = 0.025
+    lonA = -90
+    latB = 36
+    lonB = -90
+    draw();
+    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+  }
+  btn.on('click', resetlatlon);
   draw();
   const form = input({
     type: "worldMapCoordinates",
@@ -1078,8 +1129,8 @@ function worldMapCoordinates(config = {}, dimensions) {
 }
 point_radius = 2.4
 point_radius_2 = 6
-color_A = "#f06"
-color_B  = "#60f"
+color_A = "#ff0"
+color_B  = "#0ff"
 color_path = "tomato"
 Place_A = coordinates[0]
 Place_B = coordinates[1]
@@ -1393,6 +1444,33 @@ radius = size/2 - margin - padding
 ```
 
 <style>
+button#rstbtn {
+  border-radius: 4px;
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 8px 32px;
+  background-color: #5362a1;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0px;
+}
+button#rstbtn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+#speedinput label {
+  width: 80px;
+}
+#speedinput input[type="number"] {
+  width: 70px;
+}
+#speedinput input[type="range"] {
+  width: 216px;
+}
 .colorcomponent {
   display: flex;
   align-items: center;
