@@ -45,30 +45,63 @@ flowchart LR
 
 # Turns {.hiddenheading}
 
-This section of my website focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created. All Dec measurements are based on [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) ([$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)). When measuring [angles](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐, $\tau$ represents a full⭕️circle and equals 2$\pi$ [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units) (rad) or 360 [degrees](https://en.wikipedia.org/wiki/Degree_(angle)#:~:text=a%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20360%20degrees) (°). Dec measures distance📏in turns called [taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6) ($\tau r$) and tracks time⏳with two other types of turns: years (y) and days (d).
+This section of my website focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created. All Dec measurements are based on [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) (t). When measuring [angles](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐, t represents a full⭕️circle and equals 2$\pi$ ([$\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)) [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units) (rad) or 360 [degrees](https://en.wikipedia.org/wiki/Degree_(angle)#:~:text=a%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20360%20degrees) (°). Dec measures distance📏in turns called [taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6) (c) and tracks time⏳with two other types of turns: years (y) and days (d).
 
-The three kinds of turns that Dec uses for distance📏and time⏳measurement are all approximations of physical attributes of the Earth🌍: $\tau r\approx$ the [circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth) of the Earth🌎, y $\approx$ the duration of [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun) of the Earth🌏around the Sun☀️, d $\approx$ the duration of [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis) of the Earth🌍on its [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole), and $\tau r\over\text d$ $\approx$ the speed of the rotation of Earth🌎at the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
+The three turn types that Dec uses for distance📏and time⏳measurement are all approximations of physical attributes of the Earth🌍: c $\approx$ the [circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth) of the Earth🌎, y $\approx$ the duration of [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun) of the Earth🌏around the Sun☀️, and d $\approx$ the duration of [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis) of the Earth🌍on its [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole). Notably, $\text c\over\text d$ = $\omega \text r$ = [v](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity) $\approx$ the speed of the rotation of Earth🌎at the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
-Click the map🗺️below⬇️to change the positions📍of Points [0]{.yellow} and [1]{.cyan}. The "Reset" button returns the points to their default positions📍. By default, these two points are 1 [decitaur]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of the circumference of Earth"} ($\text d\tau r$) apart: [Point 0]{.yellow} is at [8]{.yellow} [deciparallels]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a circle of longitude"} ($\text d\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$) and [0]{.yellow} [decimeridians]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a circle of latitude"} ($\text d\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$), which is near the [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific), and [Point 1]{.cyan} is at [8]{.cyan} $\text d\lambda$ and [1]{.cyan} $\text d\phi$, which is in [Memphis, Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
+The table below provides the current [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) in [milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a circle of longitude"} ($\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$) and [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) in [milli[meridians](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a circle of latitude"} ($\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$) of Points [0]{.orange} and [1]{.cyan} on the map🗺️beneath the table. By default, [Point 0]{.orange} is at [800]{.orange} $\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$ and [0]{.orange} $\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$, which is near the [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific) of Ecuador🇪🇨, and [Point 1]{.cyan} is at [800]{.cyan} $\text m\lambda$ and [100]{.cyan} $\text m\phi$, which is in the United States🇺🇸city of [Memphis, Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
 
-An airplane✈️flying at an average speed of 100 [millitaurs]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of the circumference of Earth"} per day ($\text m\omega$) could travel between the default Point [0]{.yellow} and [1]{.cyan} positions📍in 1d. Currently, [Point 0]{.yellow} is at [\${Math.floor(long2turn(Place_A[0], 3))}]{.yellow} [milliparallels]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a circle of longitude"} ($\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$) and [\${Math.floor(lati2turn(Place_A[1], 3))}]{.yellow} [millimeridians]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a circle of latitude"} ($\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$), and [Point 1]{.cyan} is at [\${Math.floor(long2turn(Place_B[0], 3))}]{.cyan} $\text m\lambda$ and [\${Math.floor(lati2turn(Place_B[1], 3))}]{.cyan} $\text m\phi$. At an average speed of \${travelspeed} $\text m\omega$, we could cover the \${distance_mtaur} $\text m\tau r$ between Points [0]{.yellow} and [1]{.cyan} in ${traveltime} [milliday]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} (md).
+In the table, the geographic coordinates of each point are followed by the [course](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered) in [milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a compass rose"} ($\text m\href{https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha}{\alpha}$) we would need to maintain to travel🧳the shortest distance📏to the other point on the map🗺️. The default courses in $\text m\alpha$ are [0]{.orange} (North) from [Point 0]{.orange} to [Point 1]{.cyan} and [500]{.cyan} (South) from [Point 1]{.cyan} to [Point 0]{.orange}. By default, the points are 100 [millitaurs]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a taur"} (mc) apart.
+
+Click the map🗺️to move the points. To return the points to their original positions📍, click the "Reset" button beneath the map🗺️. Next to the button, there are [toggle](https://observablehq.com/framework/inputs/toggle)✅inputs that add country borders, a grid of Dec [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines), [solar terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) shading, and [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) time zones. The current geographic coordinates directly under the Sun☀️are \${Math.floor(long2turn(sun[0], 3))} $\text m\lambda$ and \${Math.floor(lati2turn(sun[1], 3))} $\text m\phi$.
+
+At an average ground speed of 500 [milliomegars]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of the circumference of Earth"} (mv), half the equatorial speed of the rotation of Earth🌏on its axis, an airplane✈️would fly 100 mc in 200 [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} (md). 
+
+The  and the course 
+
+, and [azimuth](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=the%20angle%20of%20rotation%20(in%20degrees)%20in%20the%20unit%20circle%20over%20the%20horizontal%20plane)  
+To travel the  between the default positions📍of the two points in 
+
+ The default bearing of 
+As the points move, the j
+in [milliparallels] () and [millimeridians] ()
+
+
+these two points are : and the course in  that we would need . [bearings](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object) of these points . To cross the shortest distance between the two points, we would nee Inversely, the default bearing of Point 0 is 500 $\text m\gamma$ (South) from the perspective of Point 1.
+
+At an average speed of \${travelspeed} $\text m\omega \text r$, we could cover the \${distance_mtaur} $\text m\tau r$ between Points [0]{.orange} and [1]{.cyan} in ${traveltime} [milliday]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} (md).
 
 ```{ojs}
 //| echo: false
-//| label: distmap
-viewof coordinates = worldMapCoordinates([[-90, 0.025],[-90, 36], projection], [750, height / 2])
+//| label: maptable
+Inputs.table([
+  {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Millirose: `${Math.floor(lati2turn(Place_A[1], 3))}`},
+  {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Millirose: `${Math.floor(lati2turn(Place_A[1], 3))}`},
+], { format: {
+    Milliparallel: sparkbar(1000),
+    Millimeridian: sparkbar(250),
+    Millirose: sparkbar(1000),
+}})
 ```
+
+::: {.column-page}
+```{ojs}
+//| echo: false
+//| label: distmap
+// https://observablehq.com/@d3/solar-terminator
+// https://observablehq.com/@mbostock/time-zones
+viewof coordinates = worldMapCoordinates([[-90, 0.025],[-90, 36], projection], [width, height * .85])
+```
+:::
 
 ```{ojs}
 //| echo: false
 //| label: toggles
-// https://observablehq.com/@d3/solar-terminator
-// https://observablehq.com/@mbostock/time-zones
-viewof dectoggle = Inputs.toggle({label: "Dec", value: true})
-viewof border = Inputs.toggle({label: "Border", value: false})
-viewof suntoggle = Inputs.toggle({label: "Shade", value: false})
-viewof utctoggle = Inputs.toggle({label: "UTC", value: false})
 button = btn.node();
+viewof dectoggle = Inputs.toggle({label: "Grid", value: false})
+viewof border = Inputs.toggle({label: "Border", value: false})
+viewof suntoggle = Inputs.toggle({label: "Sun", value: false})
+viewof utctoggle = Inputs.toggle({label: "UTC", value: false})
 ```
 
 ```{ojs}
@@ -81,10 +114,10 @@ viewof select = Inputs.select(
 ```{ojs}
 //| echo: false
 //| label: speedinput
-viewof travelspeed = Inputs.range([0, 1000], {label: tex`\text m\omega`, value: 100, step: 1})
+viewof travelspeed = Inputs.range([0, 1000], {label: "mv", value: 500, step: 1})
 ```
 
-We can think of [centitaurs]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of the circumference of Earth"} per day ($\text c\omega$) as a percent (%) and $\text m\omega$ as a [permille](https://en.wikipedia.org/wiki/Per_mille#:~:text=indicates%20parts%20per%20thousand) (‰) of the equatorial speed at which Earth🌏rotates on its axis. Notably, 1$\text m\omega$ = 1.[6]{style="text-decoration-line:overline;"} kilometers per hour ($\text{km}\over\text h$) $\approx$ 1 mile per hour ($\text {mi}\over\text h$). Other than ease of conversion, another advantage of a global scale, $\text m\tau r\over\text d$, $\text m\lambda$, $\text m\phi$ are the right size to measure distance and position.
+We can think of [centitaurs]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of the circumference of Earth"} per day ($\text c\omega \text r$) as a percent (%) and $\text m\omega$ as a [permille](https://en.wikipedia.org/wiki/Per_mille#:~:text=indicates%20parts%20per%20thousand) (‰) of . Notably, 1$\text m\omega$ = 1.[6]{style="text-decoration-line:overline;"} kilometers per hour ($\text{km}\over\text h$) $\approx$ 1 mile per hour ($\text {mi}\over\text h$). Other than ease of conversion, another advantage of a global scale, $\text m\tau r\over\text d$, $\text m\lambda$, $\text m\phi$ are the right size to measure distance and position.
 
 b the closest Dec analog of $\text{km}\over\text h$ and $\text {mi}\over\text h$, the main Dec speed measurement units are equivalent to $\text c\tau r\over\text d$.
 
@@ -325,7 +358,19 @@ flowchart LR
 //| echo: false
 //| output: false
 // https://observablehq.com/@observablehq/text-color-annotations-in-markdown
-btn = d3.create('button').html('Reset').attr("id", "rstbtn");
+btn = d3.create('button').html('Reset').attr("id", "rstbtn").attr("class", "btn btn-quarto");
+// https://observablehq.com/@observablehq/input-table
+function sparkbar(max) {
+  return x => htl.html`<div style="
+    background: lightblue;
+    width: ${100 * Math.abs(x) / max}%;
+    float: right;
+    padding-right: 3px;
+    box-sizing: border-box;
+    overflow: visible;
+    display: flex;
+    justify-content: end;">${x.toLocaleString("en")}`
+}
 function textcolor(content, style = {}) {
   function yiq(color) {
     const {r, g, b} = d3.rgb(color);
@@ -596,10 +641,9 @@ function worldMapCoordinates(config = {}, dimensions) {
   const formEl = html`<form style="width: ${width}px;"></form>`;
   const context = DOM.context2d(width, height);
   const canvas = context.canvas;
-  canvas.style.margin = `-4px 0 ${width > 400 ? -8 : -14}px`;
   const projection = config[2]
     .precision(0.1)
-    .fitSize([width, height], { type: "Sphere" }).rotate([-156, 0]);
+    .fitSize([width, height], { type: "Sphere" }).rotate([-148, 0]);
   const path = d3.geoPath(projection, context).pointRadius(2.5);
   formEl.append(canvas);
   function fillMesh(f) {
@@ -657,7 +701,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.fillStyle = "rgba(0,0,255,0.15)";
       context.fill();
       context.beginPath();
-      path.pointRadius(18);
+      path.pointRadius(width / 90);
       path({type: "Point", coordinates: sun});
       context.strokeStyle = "#0009";
       context.fillStyle = "#ff0b";
@@ -741,8 +785,8 @@ function worldMapCoordinates(config = {}, dimensions) {
 }
 point_radius = 2.4
 point_radius_2 = 6
-color_A = "#ff0"
-color_B  = "#0ff"
+color_A = "orange"
+color_B  = "cyan"
 color_path = "tomato"
 Place_A = coordinates[0]
 Place_B = coordinates[1]
@@ -1057,18 +1101,14 @@ radius = size/2 - margin - padding
 
 ```{=html}
 <style>
-button#rstbtn {
-  border-radius: 4px;
-  display: inline-block;
-  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 24px;
-  padding: 8px 32px;
-  background-color: #5362a1;
-  color: #ffffff;
-  text-align: center;
-  box-shadow: 0px;
+table td:has(input[type="checkbox"]), table th:has(input[type="checkbox"]) {
+  display: none;
+}
+table > tbody > tr:nth-child(1) > td > div {
+  background: orange !important;
+}
+table > tbody > tr:nth-child(2) > td > div {
+  background: cyan !important;
 }
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
@@ -1096,8 +1136,13 @@ div#colorslider input[type="number"] {
   width: 105px;
 }
 div#distmap {
-   overflow-y: hidden;
-   margin-top: -15px;
+   display: flex;
+   justify-content: center;
+   overflow-x: hidden;
+}
+div#maptable {
+   display: flex;
+   justify-content: center;
 }
 div#toggles {
    display: flex;
