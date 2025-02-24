@@ -60,17 +60,18 @@ and
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a circle of latitude">milli[meridians](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude)</span>
 ($\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$)
-of Points <span class="orange">0</span> and <span class="cyan">1</span>
-on the map🗺️beneath the table. By default, <span class="orange">Point
-0</span> is at <span class="orange">800</span>
+of Points <span class="point0">0</span> and
+<span class="point1">1</span> on the map🗺️beneath the table. By default,
+<span class="point0">Point 0</span> is at
+<span class="point0">800</span>
 $\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$
-and <span class="orange">0</span>
+and <span class="point0">0</span>
 $\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$,
 which is near the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
-of Ecuador🇪🇨, and <span class="cyan">Point 1</span> is at
-<span class="cyan">800</span> $\text m\lambda$ and
-<span class="cyan">100</span> $\text m\phi$, which is in the United
+of Ecuador🇪🇨, and <span class="point1">Point 1</span> is at
+<span class="point1">800</span> $\text m\lambda$ and
+<span class="point1">100</span> $\text m\phi$, which is in the United
 States🇺🇸city of [Memphis,
 Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
 
@@ -82,10 +83,10 @@ data-bs-title="thousandths of a compass rose">milli[windroses](https://en.wikipe
 ($\text m\href{https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha}{\alpha}$)
 we would need to maintain to travel🧳the shortest distance📏to the other
 point on the map🗺️. The default courses in $\text m\alpha$ are
-<span class="orange">0</span> (North) from <span class="orange">Point
-0</span> to <span class="cyan">Point 1</span> and
-<span class="cyan">500</span> (South) from <span class="cyan">Point
-1</span> to <span class="orange">Point 0</span>. By default, the points
+<span class="point0">0</span> (North) from <span class="point0">Point
+0</span> to <span class="point1">Point 1</span> and
+<span class="point1">500</span> (South) from <span class="point1">Point
+1</span> to <span class="point0">Point 0</span>. By default, the points
 are 100 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a taur">millitaurs</span> (mc) apart.
 
@@ -105,15 +106,9 @@ time zones.
 
 ``` {ojs}
 //| echo: false
-//| label: sizeinput
-viewof mapsize = Inputs.range([30, 100], {label: "Map size", value: 100, step: 1})
-```
-
-``` {ojs}
-//| echo: false
 //| label: projselect
 viewof select = Inputs.select(
-  projections, {label: "Map projection", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
+  projections, {label: "Projection", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
 ```
 
 ``` {ojs}
@@ -156,7 +151,7 @@ Inputs.table([
 //| label: distmap
 // https://observablehq.com/@d3/solar-terminator
 // https://observablehq.com/@mbostock/time-zones
-viewof coordinates = worldMapCoordinates([[-90, 0.025],[-90, 36], projection], [width, height * mapsize / 100])
+viewof coordinates = worldMapCoordinates([[-90, 0.025],[-90, 36], projection], [width, height])
 ```
 
 </div>
@@ -186,7 +181,7 @@ $\text m\gamma$ (South) from the perspective of Point 1.
 
 At an average speed of ${travelspeed} $\text m\omega \text r$, we could
 cover the ${distance_mtaur} $\text m\tau r$ between Points
-<span class="orange">0</span> and <span class="cyan">1</span> in
+<span class="point0">0</span> and <span class="point1">1</span> in
 ${traveltime} <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">milliday</span> (md).
 
@@ -510,8 +505,7 @@ advantage of degrees is their incredible divisibility.
 
 Colors can be represented by HSL, , <span class="mono"></span>, or
 [RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model%5B1%5D%20in%20which%20the%20red%2C%20green%2C%20and%20blue%20primary%20colors%20of%20light%20are%20added%20together%20in%20various%20ways%20to%20reproduce%20a%20broad%20array%20of%20colors),
-<span class="mono">${rainbowD3.formatRgb().slice(3)}</span>, triplets.
-Hex triplets are
+, triplets. Hex triplets are
 [base16](https://en.wikipedia.org/wiki/Hexadecimal#:~:text=a%20positional%20numeral%20system%20that%20represents%20numbers%20using%20a%20radix%20(base)%20of%20sixteen),
 RGB triplets are
 [base256](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=two%20pentadecimal%20digits.-,256,-Number%20expressible%20with),
@@ -1100,7 +1094,8 @@ function worldMapCoordinates(config = {}, dimensions) {
   function draw() {
     if (!utctoggle) {
       context.beginPath(); path({type: "Sphere"});
-      context.fillStyle = mapcolors.ocean; context.fill();
+      context.fillStyle = window.darkmode ? "#007FFF" : mapcolors.ocean;
+      context.fill();
     }
     if (utctoggle) {
       zones.map(f => fillMesh(f))
@@ -1108,30 +1103,30 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.beginPath();
     path(land);
     if (!utctoggle) {
-      context.fillStyle = mapcolors.land;
+      context.fillStyle = window.darkmode ? "green" : mapcolors.land;
       context.fill();
     }
-    context.strokeStyle = `#888`;
+    context.strokeStyle = `#000`;
     context.stroke();
     if (bordertoggle) {
       context.beginPath();
       path(borders);
       context.lineWidth = 1.25;
-      context.strokeStyle = `#888`;
+      context.strokeStyle = window.darkmode ? "#aaa" : "#333";
       context.stroke();
     }
     if (utctoggle) {
       context.beginPath();
       path(mesh);
       context.lineWidth = 1.25;
-      context.strokeStyle = `#aaa`;
+      context.strokeStyle = `#999`;
       context.stroke();
     }
     if (gridtoggle) {
       context.beginPath();
       path(graticule);
       context.lineWidth = 1.25;
-      context.strokeStyle = `#888`;
+      context.strokeStyle = window.darkmode ? "#aaa" : "#333";
       context.stroke();
       // context.font = width < 760 ? "12px serif" : "21px serif";
       // context.fillStyle = `#000`;
@@ -1143,10 +1138,10 @@ function worldMapCoordinates(config = {}, dimensions) {
     if (suntoggle) {
       context.beginPath();
       path(night);
-      context.fillStyle = "rgba(0,0,255,0.15)";
+      context.fillStyle = "rgba(0,0,255,0.25)";
       context.fill();
       context.beginPath();
-      path.pointRadius(width * mapsize / 8400);
+      path.pointRadius(width / 84);
       path({type: "Point", coordinates: sun});
       context.strokeStyle = "#0009";
       context.fillStyle = "#ff0b";
@@ -1155,13 +1150,13 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.fill();
     }
     if (lonA != null && latA != null) {
-      const pointPath = { type: "MultiPoint", coordinates: [[lonA, latA]] };
+      const pointPath = { type: "MultiPoint", coordinates: [[lonA, latA]], id: "point0test"};
       context.beginPath();
       path.pointRadius(point_radius_2);
       path(pointPath);
-      context.fillStyle = color_A;
+      context.fillStyle = window.darkmode ? "#CC042C" : "pink";
       context.fill();
-      context.strokeStyle = "black";
+      context.strokeStyle = window.darkmode ? "white" : "black";
       context.stroke();
     }
     if (lonB != null && latB != null) {
@@ -1169,9 +1164,9 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath();
       path.pointRadius(point_radius_2);
       path(pointPath);
-      context.fillStyle = color_B;
+      context.fillStyle = window.darkmode ? "blue" : "cyan";
       context.fill();
-      context.strokeStyle = "black";
+      context.strokeStyle = window.darkmode ? "white" : "black";
       context.stroke();
     }
     // We draw the path between 2 points
@@ -1180,7 +1175,12 @@ function worldMapCoordinates(config = {}, dimensions) {
     for(let i = 1; i<nb_points; i++) {
       const pointPath = { type: "MultiPoint", coordinates: [interpolation(i/nb_points)] };
       path.pointRadius(point_radius);
-      context.beginPath(), context.fillStyle = color_path,  path(pointPath),  context.fill(),  context.stroke();
+      context.beginPath(),
+      context.fillStyle = window.darkmode ? "#FF420E" : "orange",
+      path(pointPath),
+      context.strokeStyle = window.darkmode ? "white" : "black";
+      context.fill(),
+      context.stroke();
     }
   }
   canvas.onclick = function(ev) {
@@ -1220,6 +1220,12 @@ function worldMapCoordinates(config = {}, dimensions) {
   }
   rstbtn.on('click', resetlatlon);
   setbtn.on('click', setlatlon);
+  document.getElementsByClassName("quarto-color-scheme-toggle")[0].onclick = function (e) {
+    window.quartoToggleColorScheme();
+    window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
+    draw();
+    return false;
+  };
   draw();
   const form = input({
     type: "worldMapCoordinates",
@@ -1241,11 +1247,8 @@ function worldMapCoordinates(config = {}, dimensions) {
   });
   return form;
 }
-point_radius = 2.4
-point_radius_2 = 6
-color_A = "orange"
-color_B  = "cyan"
-color_path = "red"
+point_radius = width / 300
+point_radius_2 = width / 150
 Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
@@ -1563,6 +1566,7 @@ function pie(radius, width, narrowness=1.0, piecolors) {
 margin = size / 14
 padding = 42
 radius = size/2 - margin - padding
+window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
 ```
 
 <style>
@@ -1571,12 +1575,6 @@ radius = size/2 - margin - padding
 }
 #maptable table td:has(input[type="checkbox"]), table th:has(input[type="checkbox"]) {
   display: none;
-}
-#maptable table > tbody > tr:nth-child(1) > td > div {
-  background: orange !important;
-}
-table > tbody > tr:nth-child(2) > td > div {
-  background: cyan !important;
 }
 div#projselect {
   display: flex;
@@ -1623,6 +1621,9 @@ div#maptable {
   display: flex;
   justify-content: center;
   overflow-x: visible;
+}
+div#maptable form {
+  padding: 0px;
 }
 div#toggles {
   display: flex;
@@ -1673,10 +1674,10 @@ div#toggles  input.oi-3a86ea-input[type="checkbox"] {
   margin: 3px 0px 0px 0px;
 }
 div#projselect form.oi-3a86ea {
-   width: 440px;
+   width: 400px;
 }
 div#projselect form.oi-3a86ea > label {
-   --label-width: 120px;
+   --label-width: 80px;
 }
 div#projselect form.oi-3a86ea {
    --input-width: 280px;
@@ -1686,5 +1687,8 @@ div:has(div.description) {
 }
 #turns > h4.hiddenheading, #hue > h4.hiddenheading, #bearing > h4.hiddenheading {
   display: none;
+}
+#point0test {
+  fill: yellow;
 }
 </style>
