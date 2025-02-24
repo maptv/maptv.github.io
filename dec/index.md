@@ -123,25 +123,11 @@ rstbtn.node();
 
 ``` {ojs}
 //| echo: false
-//| label: numerics
-viewof lng0input = labelNumeric(Inputs.number, [0, 1000], tex`\text m\lambda_0`, 800, "lng0input")
-viewof lat0input = labelNumeric(Inputs.number, [-250, 250], tex`\text m\phi_0`, 0, "lat0input")
-viewof lng1input = labelNumeric(Inputs.number, [0, 1000], tex`\text m\lambda_1`, 800, "lng1input")
-viewof lat1input = labelNumeric(Inputs.number, [-250, 250], tex`\text m\phi_1`, 100, "lat1input")
-setbtn.node();
-```
-
-``` {ojs}
-//| echo: false
 //| label: maptable
-Inputs.table([
+table = createTable([
   {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
   {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
-], { format: {
-    Milliparallel: sparkbar(1000),
-    Millimeridian: sparkbar(250),
-    Milliwindrose: sparkbar(1000),
-}})
+], { headerEditable: false, appendRows: false })
 ```
 
 <div class="column-page">
@@ -770,9 +756,196 @@ style="width:8.64in;height:0.98in" />
 ``` {ojs}
 //| echo: false
 //| output: false
+// https://observablehq.com/@parlant/editable-table
+function createTable(data, options) {
+  let table = html`<table class="editable-table"></table>`;
+  table.innerHTML = xss.filterXSS(tableify.default(data));
+  makeTableEditable(table, options);
+  return table;
+}
+tableify = import("https://cdn.skypack.dev/tableify@1.1.1?min")
+xss = import("https://cdn.skypack.dev/xss@1.0.14?min")
+function makeTableEditable(table, options) {
+  const defaults = {headerEditable: false, appendRows: true};
+  options = options === undefined ? {} : options;
+  for (let key in defaults) {
+    options[key] = options[key] === undefined ? defaults[key] : options[key];
+  }
+  return Generators.observe((_notify) => {
+    const navigate = (event) => {
+      const cell = event.target;
+      const row = cell.closest('tr');
+      const table = row.closest('table');
+      const isBody = row.parentNode.tagName === 'TBODY';
+      const isHeader = row.parentNode.tagName === 'THEAD';
+      const colIndex = cell.cellIndex;
+      const colCount = row.cells.length;
+      const rowIndex = row.rowIndex;
+      const rowCount = table.rows.length;
+      const headStop = options.headerEditable ? 0 : 1;
+      let direction = null;
+      let x = colIndex;
+      let y = rowIndex;
+      switch(event.code) {
+        case 'Space':
+          event.preventDefault();
+          break;
+        // Tab cycles through the table, adding new rows as needed.
+        case 'Tab':
+          event.preventDefault();
+          if (event.altKey || event.shiftKey) {
+            direction = -1;
+            if (x - 1 < 0) {
+              if (y - 1 < headStop) break;
+              x = colCount - 1;
+              y = y - 1;
+            } else {
+              x = x - 1;
+            }
+          } else {
+            direction = 1;
+            if (x + 1 === colCount) {
+              x = 0;
+              y = y + 1;
+            } else {
+              x = x + 1;
+            }
+          }
+          break;
+        // Plain Enter navigates downwards.
+        // Shift + Enter or Alt + Enter goes up to the cell above.
+        case 'Enter':
+          event.preventDefault();
+          if (event.altKey || event.shiftKey) {
+            direction = -1;
+            x = x;
+            y = y - 1;
+            break;
+          }
+          direction = 1;
+          x = x;
+          y = y + 1;
+          break;
+        // The arrow keys allow you to navigate through cells.
+        // No new rows are added.
+        case 'ArrowUp':
+        case 'ArrowDown':
+        case 'ArrowLeft':
+        case 'ArrowRight':
+          if (!event.altKey) break;
+          event.preventDefault();
+          switch(event.code) {
+            case 'ArrowUp':
+              direction = -1;
+              y = Math.max(y - 1, headStop);
+              break;
+            case 'ArrowDown':
+              direction = 1;
+              y = Math.min(y + 1, rowCount - 1);
+              break;
+            case 'ArrowLeft':
+              direction = -1;
+              x = Math.max(x - 1, 0);
+              break;
+            case 'ArrowRight':
+              direction = 1;
+              x = Math.min(x + 1, colCount - 1);
+              break;
+          }
+          break;
+      }
+      if (direction !== null) {
+        let nextRow;
+        if (y === rowCount) {
+          nextRow = options.appendRows ? addRowRelativeTo(row, direction) : row;
+        } else {
+          nextRow = table.rows[y];
+        }
+        let nextCell = nextRow.cells[x];
+        focusCell(nextCell);
+      }
+    };
+    table.addEventListener("keydown", navigate, false);
+    if (table.rows.length > 0) {
+      for (let row of table.rows) {
+        if (!options.headerEditable && row.rowIndex === 0) continue;
+        for (let cell of row.cells) {
+        if (cell.cellIndex === 0) continue;
+          let cellValue = cell.innerText
+          cell.innerHTML = `<div style="
+            width: ${100 * Math.abs(cellValue) / (cell.cellIndex === 2 ? 250 : 1000)}%;
+            float: left;
+            padding: 0px 0px 0px 2px;
+            text-indent: 2px;
+            box-sizing: border-box;
+            overflow: visible;
+            white-space: nowrap;
+            display: flex;
+            justify-content: start;">${cellValue}</div>`
+        if (cell.cellIndex === 3) continue;
+          cell.contentEditable = true;
+        }
+      }
+    }
+    return () => table.removeEventListener("keydown", navigate);
+  });
+}
+function observeTable(table) {
+  return Generators.observe((notify) => {
+    const keyinput = (event) => notify(parseTableData(table));
+    table.addEventListener("input", keyinput, false);
+    notify(parseTableData(table));
+    return () => window.removeEventListener("input", keyinput);
+  });
+}
+function parseTableData(table) {
+  const header = [];
+  const data = [];
+  for (let row of table.rows) {
+    const rowIndex = row.rowIndex;
+    const isHeader = row.parentNode.tagName === 'THEAD' && rowIndex === 0;
+    let obj = {};
+    for (let cell of row.cells) {
+      const head = header[cell.cellIndex];
+      if (isHeader) {
+        header.push(cell.innerText);
+      } else {
+        obj[head] = cell.innerText;
+      }
+    }
+    if (!isHeader) data.push(obj);
+  }
+  return JSON.parse(JSON.stringify(data));
+}
+function focusCell(td) {
+  const s = window.getSelection();
+  const r = document.createRange();
+  let textNode = td.childNodes[0];
+  const i = td.innerText.length;
+  td.focus();
+  if (textNode) {
+    r.setStart(textNode, i);
+    r.setEnd(textNode, i);
+  } else {
+    r.selectNode(td);
+  }
+  s.removeAllRanges();
+  s.addRange(r);
+}
+function addRowRelativeTo(tr, direction) {
+  const newTr = document.createElement('tr');
+  const insertPosition = direction == 1 ? 'afterend' : 'beforebegin';
+  tr.insertAdjacentElement(insertPosition, newTr);
+  for (let _td of Array.from(tr.children)) {
+    const newTd = document.createElement('td');
+    newTd.appendChild(document.createTextNode(''));
+    newTd.contentEditable = true;
+    newTr.appendChild(newTd);
+  }
+  return newTr;
+}
 // https://observablehq.com/@observablehq/text-color-annotations-in-markdown
 rstbtn = d3.create('button').html('Reset').attr("id", "rstbtn").attr("class", "btn btn-quarto");
-setbtn = d3.create('button').html('Set').attr("id", "setbtn").attr("class", "btn btn-quarto");
 // https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support
 function labelToggle(inputType, inputLabel, inputValue, inputId) {
   const input = inputType({label: inputLabel, value: inputValue});
@@ -790,10 +963,10 @@ function set(input, value) {
   input.dispatchEvent(new Event("input", {bubbles: true}));
 }
 // https://observablehq.com/@observablehq/input-table
-function sparkbar(max) {
+function sparkbar(max, color) {
   return x => htl.html`<div style="
-    background: lightblue;
     width: ${100 * Math.abs(x) / max}%;
+    background: ${color};
     float: right;
     padding-right: 3px;
     box-sizing: border-box;
@@ -1138,10 +1311,10 @@ function worldMapCoordinates(config = {}, dimensions) {
     if (suntoggle) {
       context.beginPath();
       path(night);
-      context.fillStyle = "rgba(0,0,255,0.25)";
+      context.fillStyle = "rgba(0,0,255,0.3)";
       context.fill();
       context.beginPath();
-      path.pointRadius(width / 84);
+      path.pointRadius(width / 84 + 5);
       path({type: "Point", coordinates: sun});
       context.strokeStyle = "#0009";
       context.fillStyle = "#ff0b";
@@ -1210,16 +1383,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     draw();
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   }
-  function setlatlon() {
-    lonA = turn2long(lng0input);
-    latA = turn2degr(lat0input);
-    lonB = turn2long(lng1input);
-    latB = turn2degr(lat1input);
-    draw();
-    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
-  }
   rstbtn.on('click', resetlatlon);
-  setbtn.on('click', setlatlon);
   document.getElementsByClassName("quarto-color-scheme-toggle")[0].onclick = function (e) {
     window.quartoToggleColorScheme();
     window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
@@ -1247,8 +1411,8 @@ function worldMapCoordinates(config = {}, dimensions) {
   });
   return form;
 }
-point_radius = width / 300
-point_radius_2 = width / 150
+point_radius = width / 900 + 3
+point_radius_2 = width / 150 + 3
 Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
@@ -1572,9 +1736,7 @@ window.darkmode = document.getElementsByTagName("body")[0].className.match(/quar
 <style>
 #maptable table * {
   font-size: 18px;
-}
-#maptable table td:has(input[type="checkbox"]), table th:has(input[type="checkbox"]) {
-  display: none;
+  padding: 0px 5px 0px 5px;
 }
 div#projselect {
   display: flex;
@@ -1631,27 +1793,6 @@ div#toggles {
   justify-content: center;
   flex-wrap: wrap;
 }
-div#numerics {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-div#numerics * {
-  overflow-x: visible;
-}
-div#numerics label {
-  width: 30px;
-}
-div#numerics input {
-  width: 65px;
-}
-div#numerics div.cell-output {
-  width: 115px;
-}
-#numerics > div:has(button#setbtn) {
-  width: 35px;
-}
 div#toggles * {
   overflow-x: visible;
 }
@@ -1674,7 +1815,7 @@ div#toggles  input.oi-3a86ea-input[type="checkbox"] {
   margin: 3px 0px 0px 0px;
 }
 div#projselect form.oi-3a86ea {
-   width: 400px;
+   width: 395px;
 }
 div#projselect form.oi-3a86ea > label {
    --label-width: 80px;
