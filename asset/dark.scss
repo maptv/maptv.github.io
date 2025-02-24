@@ -300,3 +300,15 @@ div#colorwheelcompass path, div#colorwheelcompass circle {
 div#colorwheelcompass path#piepath {
   stroke: black;
 }
+
+#maptable table > tbody > tr:nth-child(1) > td > div {
+  background: #CC042C !important;
+}
+#maptable table > tbody > tr:nth-child(2) > td > div {
+  background: blue !important;
+}
+.point0 { border-radius: 4px; background-color: #CC042C; color: white; padding: 0px 2px 0px 2px; } /* day 00ffff */
+.point1 { border-radius: 4px; background-color: blue; color: white; padding: 0px 2px 0px 2px; } /* day 00ffff */
+canvas point {
+  fill: white;
+}

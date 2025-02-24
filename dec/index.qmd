@@ -49,23 +49,17 @@ This section of my website focuses on Dec, a [measurement system](https://en.wik
 
 The three turn types that Dec uses for distance📏and time⏳measurement are all approximations of physical attributes of the Earth🌍: c $\approx$ the [circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth) of the Earth🌎, y $\approx$ the duration of [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun) of the Earth🌏around the Sun☀️, and d $\approx$ the duration of [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis) of the Earth🌍on its [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole). Notably, $\text c\over\text d$ = $\omega \text r$ = [v](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity) $\approx$ the speed of the rotation of Earth🌎at the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
-The table below provides the current [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) in [milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a circle of longitude"} ($\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$) and [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) in [milli[meridians](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a circle of latitude"} ($\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$) of Points [0]{.orange} and [1]{.cyan} on the map🗺️beneath the table. By default, [Point 0]{.orange} is at [800]{.orange} $\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$ and [0]{.orange} $\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$, which is near the [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific) of Ecuador🇪🇨, and [Point 1]{.cyan} is at [800]{.cyan} $\text m\lambda$ and [100]{.cyan} $\text m\phi$, which is in the United States🇺🇸city of [Memphis, Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
+The table below provides the current [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) in [milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a circle of longitude"} ($\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$) and [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) in [milli[meridians](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a circle of latitude"} ($\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$) of Points [0]{.point0} and [1]{.point1} on the map🗺️beneath the table. By default, [Point 0]{.point0} is at [800]{.point0} $\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$ and [0]{.point0} $\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$, which is near the [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific) of Ecuador🇪🇨, and [Point 1]{.point1} is at [800]{.point1} $\text m\lambda$ and [100]{.point1} $\text m\phi$, which is in the United States🇺🇸city of [Memphis, Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
 
-In the table, the geographic coordinates of each point are followed by the [course](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered) in [milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a compass rose"} ($\text m\href{https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha}{\alpha}$) we would need to maintain to travel🧳the shortest distance📏to the other point on the map🗺️. The default courses in $\text m\alpha$ are [0]{.orange} (North) from [Point 0]{.orange} to [Point 1]{.cyan} and [500]{.cyan} (South) from [Point 1]{.cyan} to [Point 0]{.orange}. By default, the points are 100 [millitaurs]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a taur"} (mc) apart.
+In the table, the geographic coordinates of each point are followed by the [course](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered) in [milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a compass rose"} ($\text m\href{https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha}{\alpha}$) we would need to maintain to travel🧳the shortest distance📏to the other point on the map🗺️. The default courses in $\text m\alpha$ are [0]{.point0} (North) from [Point 0]{.point0} to [Point 1]{.point1} and [500]{.point1} (South) from [Point 1]{.point1} to [Point 0]{.point0}. By default, the points are 100 [millitaurs]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a taur"} (mc) apart.
 
 Click the map🗺️to move the points. To return the points to their original positions📍, click the "Reset" button above the map🗺️. Next to the "Reset" button, there are [toggle](https://observablehq.com/framework/inputs/toggle)✅inputs that add country borders, a grid of Dec [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines), [solar terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) shading, a yellow🟡dot denoting where the Sun☀️is directly overhead (\${Math.floor(long2turn(sun[0], 3))} $\text m\lambda$, \${Math.floor(lati2turn(sun[1], 3))} $\text m\phi$), and [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) time zones.
 
 ```{ojs}
 //| echo: false
-//| label: sizeinput
-viewof mapsize = Inputs.range([30, 100], {label: "Map size", value: 100, step: 1})
-```
-
-```{ojs}
-//| echo: false
 //| label: projselect
 viewof select = Inputs.select(
-  projections, {label: "Map projection", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
+  projections, {label: "Projection", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
 ```
 
 ```{ojs}
@@ -107,7 +101,7 @@ Inputs.table([
 //| label: distmap
 // https://observablehq.com/@d3/solar-terminator
 // https://observablehq.com/@mbostock/time-zones
-viewof coordinates = worldMapCoordinates([[-90, 0.025],[-90, 36], projection], [width, height * mapsize / 100])
+viewof coordinates = worldMapCoordinates([[-90, 0.025],[-90, 36], projection], [width, height])
 ```
 :::
 
@@ -125,7 +119,7 @@ in [milliparallels] () and [millimeridians] ()
 
 these two points are : and the course in  that we would need . [bearings](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object) of these points . To cross the shortest distance between the two points, we would nee Inversely, the default bearing of Point 0 is 500 $\text m\gamma$ (South) from the perspective of Point 1.
 
-At an average speed of \${travelspeed} $\text m\omega \text r$, we could cover the \${distance_mtaur} $\text m\tau r$ between Points [0]{.orange} and [1]{.cyan} in ${traveltime} [milliday]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} (md).
+At an average speed of \${travelspeed} $\text m\omega \text r$, we could cover the \${distance_mtaur} $\text m\tau r$ between Points [0]{.point0} and [1]{.point1} in ${traveltime} [milliday]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} (md).
 
 ```{ojs}
 //| echo: false
@@ -276,7 +270,7 @@ or use longitude and latitude along with a compass🧭bearing ($\gamma$) to cont
 
 The colorwheel compassdemonstrates that are, which can be truncated to three digits. an alternative to degrees that instead of degrees advantage of degrees is their incredible divisibility.
 
-Colors can be represented by HSL, , []{.mono}, or [RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model%5B1%5D%20in%20which%20the%20red%2C%20green%2C%20and%20blue%20primary%20colors%20of%20light%20are%20added%20together%20in%20various%20ways%20to%20reproduce%20a%20broad%20array%20of%20colors), [\${rainbowD3.formatRgb().slice(3)}]{.mono}, triplets. Hex triplets are [base16](https://en.wikipedia.org/wiki/Hexadecimal#:~:text=a%20positional%20numeral%20system%20that%20represents%20numbers%20using%20a%20radix%20(base)%20of%20sixteen), RGB triplets are [base256](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=two%20pentadecimal%20digits.-,256,-Number%20expressible%20with), and 
+Colors can be represented by HSL, , []{.mono}, or [RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model%5B1%5D%20in%20which%20the%20red%2C%20green%2C%20and%20blue%20primary%20colors%20of%20light%20are%20added%20together%20in%20various%20ways%20to%20reproduce%20a%20broad%20array%20of%20colors), , triplets. Hex triplets are [base16](https://en.wikipedia.org/wiki/Hexadecimal#:~:text=a%20positional%20numeral%20system%20that%20represents%20numbers%20using%20a%20radix%20(base)%20of%20sixteen), RGB triplets are [base256](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=two%20pentadecimal%20digits.-,256,-Number%20expressible%20with), and 
 
 Turns can represent anything that is circular, spherical, or cyclical, like the , a [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation), [Earth's orbits](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=complete%20orbit%20takes-,365.256%C2%A0days,-(1%20sidereal%20year)) around the Sun (years), [Earth's rotations](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole) (days), [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of), and [parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line).
 A [quarter meridian](https://en.wikipedia.org/wiki/Meridian_arc#Quarter_meridian:~:text=The%20distance%20from%20the%20equator%20to%20the%20pole) is very close to 10 [megameters]{.under .tool data-bs-toggle="tooltip" data-bs-title="millions of meters"} because the length of a [meter](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units) was [once defined](https://en.wikipedia.org/wiki/Metre#:~:text=one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole) as a ten millionth of the distance from the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres) to the [North Pole](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface).
@@ -697,7 +691,8 @@ function worldMapCoordinates(config = {}, dimensions) {
   function draw() {
     if (!utctoggle) {
       context.beginPath(); path({type: "Sphere"});
-      context.fillStyle = mapcolors.ocean; context.fill();
+      context.fillStyle = window.darkmode ? "#007FFF" : mapcolors.ocean;
+      context.fill();
     }
     if (utctoggle) {
       zones.map(f => fillMesh(f))
@@ -705,30 +700,30 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.beginPath();
     path(land);
     if (!utctoggle) {
-      context.fillStyle = mapcolors.land;
+      context.fillStyle = window.darkmode ? "green" : mapcolors.land;
       context.fill();
     }
-    context.strokeStyle = `#888`;
+    context.strokeStyle = `#000`;
     context.stroke();
     if (bordertoggle) {
       context.beginPath();
       path(borders);
       context.lineWidth = 1.25;
-      context.strokeStyle = `#888`;
+      context.strokeStyle = window.darkmode ? "#aaa" : "#333";
       context.stroke();
     }
     if (utctoggle) {
       context.beginPath();
       path(mesh);
       context.lineWidth = 1.25;
-      context.strokeStyle = `#aaa`;
+      context.strokeStyle = `#999`;
       context.stroke();
     }
     if (gridtoggle) {
       context.beginPath();
       path(graticule);
       context.lineWidth = 1.25;
-      context.strokeStyle = `#888`;
+      context.strokeStyle = window.darkmode ? "#aaa" : "#333";
       context.stroke();
       // context.font = width < 760 ? "12px serif" : "21px serif";
       // context.fillStyle = `#000`;
@@ -740,10 +735,10 @@ function worldMapCoordinates(config = {}, dimensions) {
     if (suntoggle) {
       context.beginPath();
       path(night);
-      context.fillStyle = "rgba(0,0,255,0.15)";
+      context.fillStyle = "rgba(0,0,255,0.25)";
       context.fill();
       context.beginPath();
-      path.pointRadius(width * mapsize / 8400);
+      path.pointRadius(width / 84);
       path({type: "Point", coordinates: sun});
       context.strokeStyle = "#0009";
       context.fillStyle = "#ff0b";
@@ -752,13 +747,13 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.fill();
     }
     if (lonA != null && latA != null) {
-      const pointPath = { type: "MultiPoint", coordinates: [[lonA, latA]] };
+      const pointPath = { type: "MultiPoint", coordinates: [[lonA, latA]], id: "point0test"};
       context.beginPath();
       path.pointRadius(point_radius_2);
       path(pointPath);
-      context.fillStyle = color_A;
+      context.fillStyle = window.darkmode ? "#CC042C" : "pink";
       context.fill();
-      context.strokeStyle = "black";
+      context.strokeStyle = window.darkmode ? "white" : "black";
       context.stroke();
     }
     if (lonB != null && latB != null) {
@@ -766,9 +761,9 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath();
       path.pointRadius(point_radius_2);
       path(pointPath);
-      context.fillStyle = color_B;
+      context.fillStyle = window.darkmode ? "blue" : "cyan";
       context.fill();
-      context.strokeStyle = "black";
+      context.strokeStyle = window.darkmode ? "white" : "black";
       context.stroke();
     }
     // We draw the path between 2 points
@@ -777,7 +772,12 @@ function worldMapCoordinates(config = {}, dimensions) {
     for(let i = 1; i<nb_points; i++) {
       const pointPath = { type: "MultiPoint", coordinates: [interpolation(i/nb_points)] };
       path.pointRadius(point_radius);
-      context.beginPath(), context.fillStyle = color_path,  path(pointPath),  context.fill(),  context.stroke();
+      context.beginPath(),
+      context.fillStyle = window.darkmode ? "#FF420E" : "orange",
+      path(pointPath),
+      context.strokeStyle = window.darkmode ? "white" : "black";
+      context.fill(),
+      context.stroke();
     }
   }
   canvas.onclick = function(ev) {
@@ -817,6 +817,12 @@ function worldMapCoordinates(config = {}, dimensions) {
   }
   rstbtn.on('click', resetlatlon);
   setbtn.on('click', setlatlon);
+  document.getElementsByClassName("quarto-color-scheme-toggle")[0].onclick = function (e) {
+    window.quartoToggleColorScheme();
+    window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
+    draw();
+    return false;
+  };
   draw();
   const form = input({
     type: "worldMapCoordinates",
@@ -838,11 +844,8 @@ function worldMapCoordinates(config = {}, dimensions) {
   });
   return form;
 }
-point_radius = 2.4
-point_radius_2 = 6
-color_A = "orange"
-color_B  = "cyan"
-color_path = "red"
+point_radius = width / 300
+point_radius_2 = width / 150
 Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
@@ -1160,6 +1163,7 @@ function pie(radius, width, narrowness=1.0, piecolors) {
 margin = size / 14
 padding = 42
 radius = size/2 - margin - padding
+window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
 ```
 
 ```{=html}
@@ -1169,12 +1173,6 @@ radius = size/2 - margin - padding
 }
 #maptable table td:has(input[type="checkbox"]), table th:has(input[type="checkbox"]) {
   display: none;
-}
-#maptable table > tbody > tr:nth-child(1) > td > div {
-  background: orange !important;
-}
-table > tbody > tr:nth-child(2) > td > div {
-  background: cyan !important;
 }
 div#projselect {
   display: flex;
@@ -1221,6 +1219,9 @@ div#maptable {
   display: flex;
   justify-content: center;
   overflow-x: visible;
+}
+div#maptable form {
+  padding: 0px;
 }
 div#toggles {
   display: flex;
@@ -1271,10 +1272,10 @@ div#toggles  input.oi-3a86ea-input[type="checkbox"] {
   margin: 3px 0px 0px 0px;
 }
 div#projselect form.oi-3a86ea {
-   width: 440px;
+   width: 400px;
 }
 div#projselect form.oi-3a86ea > label {
-   --label-width: 120px;
+   --label-width: 80px;
 }
 div#projselect form.oi-3a86ea {
    --input-width: 280px;
@@ -1284,6 +1285,9 @@ div:has(div.description) {
 }
 #turns > h4.hiddenheading, #hue > h4.hiddenheading, #bearing > h4.hiddenheading {
   display: none;
+}
+#point0test {
+  fill: yellow;
 }
 </style>
 ```
