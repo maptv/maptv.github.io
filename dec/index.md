@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2024+359
+2024+360
 
 - [Turns](#turns)
 - [Hue](#hue)
@@ -90,25 +90,83 @@ are 100 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a taur">millitaurs</span> (mc) apart.
 
 Click the map🗺️to move the points. To return the points to their
-original positions📍, click the “Reset” button beneath the map🗺️. Next
-to the button, there are
+original positions📍, click the “Reset” button above the map🗺️. Next to
+the “Reset” button, there are
 [toggle](https://observablehq.com/framework/inputs/toggle)✅inputs that
 add country borders, a grid of Dec
 [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines),
 [solar
 terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
-shading, and
+shading, a yellow🟡dot denoting where the Sun☀️is directly overhead
+(${Math.floor(long2turn(sun\[0\], 3))} $\text m\lambda$,
+${Math.floor(lati2turn(sun\[1\], 3))} $\text m\phi$), and
 [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
-time zones. The current geographic coordinates directly under the
-Sun☀️are ${Math.floor(long2turn(sun\[0\], 3))} $\text m\lambda$ and
-${Math.floor(lati2turn(sun\[1\], 3))} $\text m\phi$.
+time zones.
+
+``` {ojs}
+//| echo: false
+//| label: sizeinput
+viewof mapsize = Inputs.range([30, 100], {label: "Map size", value: 100, step: 1})
+```
+
+``` {ojs}
+//| echo: false
+//| label: projselect
+viewof select = Inputs.select(
+  projections, {label: "Map projection", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
+```
+
+``` {ojs}
+//| echo: false
+//| label: toggles
+viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
+viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
+viewof suntoggle = labelToggle(Inputs.toggle, "Shade", false, "suntoggle")
+viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
+rstbtn.node();
+```
+
+``` {ojs}
+//| echo: false
+//| label: numerics
+viewof lng0input = labelNumeric(Inputs.number, [0, 1000], tex`\text m\lambda_0`, 800, "lng0input")
+viewof lat0input = labelNumeric(Inputs.number, [-250, 250], tex`\text m\phi_0`, 0, "lat0input")
+viewof lng1input = labelNumeric(Inputs.number, [0, 1000], tex`\text m\lambda_1`, 800, "lng1input")
+viewof lat1input = labelNumeric(Inputs.number, [-250, 250], tex`\text m\phi_1`, 100, "lat1input")
+setbtn.node();
+```
+
+``` {ojs}
+//| echo: false
+//| label: maptable
+Inputs.table([
+  {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
+  {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
+], { format: {
+    Milliparallel: sparkbar(1000),
+    Millimeridian: sparkbar(250),
+    Milliwindrose: sparkbar(1000),
+}})
+```
+
+<div class="column-page">
+
+``` {ojs}
+//| echo: false
+//| label: distmap
+// https://observablehq.com/@d3/solar-terminator
+// https://observablehq.com/@mbostock/time-zones
+viewof coordinates = worldMapCoordinates([[-90, 0.025],[-90, 36], projection], [width, height * mapsize / 100])
+```
+
+</div>
 
 At an average ground speed of 500 <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of the circumference of Earth">milliomegars</span>
 (mv), half the equatorial speed of the rotation of Earth🌏on its axis,
-an airplane✈️would fly 100 mc in 200 <span class="under tool"
-data-bs-toggle="tooltip"
+an airplane✈️could fly between the default positions📍of the points in
+200 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span> (md).
 
 The and the course
@@ -131,48 +189,6 @@ cover the ${distance_mtaur} $\text m\tau r$ between Points
 <span class="orange">0</span> and <span class="cyan">1</span> in
 ${traveltime} <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">milliday</span> (md).
-
-``` {ojs}
-//| echo: false
-//| label: maptable
-Inputs.table([
-  {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Millirose: `${Math.floor(lati2turn(Place_A[1], 3))}`},
-  {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Millirose: `${Math.floor(lati2turn(Place_A[1], 3))}`},
-], { format: {
-    Milliparallel: sparkbar(1000),
-    Millimeridian: sparkbar(250),
-    Millirose: sparkbar(1000),
-}})
-```
-
-<div class="column-page">
-
-``` {ojs}
-//| echo: false
-//| label: distmap
-// https://observablehq.com/@d3/solar-terminator
-// https://observablehq.com/@mbostock/time-zones
-viewof coordinates = worldMapCoordinates([[-90, 0.025],[-90, 36], projection], [width, height * .85])
-```
-
-</div>
-
-``` {ojs}
-//| echo: false
-//| label: toggles
-button = btn.node();
-viewof dectoggle = Inputs.toggle({label: "Grid", value: false})
-viewof border = Inputs.toggle({label: "Border", value: false})
-viewof suntoggle = Inputs.toggle({label: "Sun", value: false})
-viewof utctoggle = Inputs.toggle({label: "UTC", value: false})
-```
-
-``` {ojs}
-//| echo: false
-//| label: projselect
-viewof select = Inputs.select(
-  projections, {label: "Projection", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
-```
 
 ``` {ojs}
 //| echo: false
@@ -618,13 +634,7 @@ political boundaries.
 In addition to showing and hiding time zones, the toggle✅inputs also
 can add country borders and a
 [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
-shade effect to the map🗺️. For a different perspective on the world🌏,
-you can change the
-[map🗺️projection](https://observablehq.com/plot/features/projections)
-using the
-[select↕️input](https://observablehq.com/documentation/inputs/overview#select)
-beneath the toggle✅inputs. All map🗺️projections perform some kind of
-transformation to show a sphere on a flat surface.
+shade effect to the map🗺️.
 
 For a more realistic view of the world, you can interact with the
 globe🌐below⬇️. as it really is
@@ -767,7 +777,24 @@ style="width:8.64in;height:0.98in" />
 //| echo: false
 //| output: false
 // https://observablehq.com/@observablehq/text-color-annotations-in-markdown
-btn = d3.create('button').html('Reset').attr("id", "rstbtn").attr("class", "btn btn-quarto");
+rstbtn = d3.create('button').html('Reset').attr("id", "rstbtn").attr("class", "btn btn-quarto");
+setbtn = d3.create('button').html('Set').attr("id", "setbtn").attr("class", "btn btn-quarto");
+// https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support
+function labelToggle(inputType, inputLabel, inputValue, inputId) {
+  const input = inputType({label: inputLabel, value: inputValue});
+  input.setAttribute("id", inputId);
+  return input;
+}
+function labelNumeric(inputType, extent, inputLabel, inputValue, inputId) {
+  const input = inputType(extent, {label: inputLabel, value: inputValue});
+  input.setAttribute("id", inputId);
+  return input;
+}
+// https://observablehq.com/@observablehq/synchronized-inputs
+function set(input, value) {
+  input.value = value;
+  input.dispatchEvent(new Event("input", {bubbles: true}));
+}
 // https://observablehq.com/@observablehq/input-table
 function sparkbar(max) {
   return x => htl.html`<div style="
@@ -779,6 +806,19 @@ function sparkbar(max) {
     overflow: visible;
     display: flex;
     justify-content: end;">${x.toLocaleString("en")}`
+}
+// https://stackoverflow.com/a/52079217
+// Converts from degrees to radians.
+function toRadians(degrees) { return degrees * Math.PI / 180; };
+// Converts from radians to degrees.
+function toDegrees(radians) { return radians * 180 / Math.PI; }
+function coor2bear(strt, dest) {
+  const [strtLng, strtLat] = strt.map(toRadians);
+  const [destLng, destLat] = dest.map(toRadians);
+  return (toDegrees(Math.atan2(
+    Math.sin(destLng - strtLng) * Math.cos(destLat),
+    Math.cos(strtLat) * Math.sin(destLat) - Math.sin(strtLat) * Math.cos(destLat) * Math.cos(destLng - strtLng)
+  )) + 360) % 360;
 }
 function textcolor(content, style = {}) {
   function yiq(color) {
@@ -915,10 +955,6 @@ onUpdateHSL = function(h, s, l) {
   set(viewof colorR, rgb[0])
   set(viewof colorG, rgb[1])
   set(viewof colorB, rgb[2])
-}
-set = function(view, value) {
-  view.value = value
-  view.dispatchEvent(new CustomEvent("input"))
 }
 /**
  * Credit to github.com/mjackson Source: https://gist.github.com/mjackson/5311256
@@ -1077,7 +1113,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     }
     context.strokeStyle = `#888`;
     context.stroke();
-    if (border) {
+    if (bordertoggle) {
       context.beginPath();
       path(borders);
       context.lineWidth = 1.25;
@@ -1091,7 +1127,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.strokeStyle = `#aaa`;
       context.stroke();
     }
-    if (dectoggle) {
+    if (gridtoggle) {
       context.beginPath();
       path(graticule);
       context.lineWidth = 1.25;
@@ -1110,7 +1146,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.fillStyle = "rgba(0,0,255,0.15)";
       context.fill();
       context.beginPath();
-      path.pointRadius(width / 90);
+      path.pointRadius(width * mapsize / 8400);
       path({type: "Point", coordinates: sun});
       context.strokeStyle = "#0009";
       context.fillStyle = "#ff0b";
@@ -1144,7 +1180,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     for(let i = 1; i<nb_points; i++) {
       const pointPath = { type: "MultiPoint", coordinates: [interpolation(i/nb_points)] };
       path.pointRadius(point_radius);
-      context.beginPath(), context.fillStyle = color_path,  path(pointPath),  context.fill();
+      context.beginPath(), context.fillStyle = color_path,  path(pointPath),  context.fill(),  context.stroke();
     }
   }
   canvas.onclick = function(ev) {
@@ -1163,14 +1199,27 @@ function worldMapCoordinates(config = {}, dimensions) {
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   };
   function resetlatlon() {
-    latA = 0.025
-    lonA = -90
-    latB = 36
-    lonB = -90
+    lonA = -90;
+    latA = 0.025;
+    lonB = -90;
+    latB = 36;
+    set(viewof gridtoggle, false);
+    set(viewof bordertoggle, false);
+    set(viewof suntoggle, false);
+    set(viewof utctoggle, false);
     draw();
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   }
-  btn.on('click', resetlatlon);
+  function setlatlon() {
+    lonA = turn2long(lng0input);
+    latA = turn2degr(lat0input);
+    lonB = turn2long(lng1input);
+    latB = turn2degr(lat1input);
+    draw();
+    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+  }
+  rstbtn.on('click', resetlatlon);
+  setbtn.on('click', setlatlon);
   draw();
   const form = input({
     type: "worldMapCoordinates",
@@ -1196,7 +1245,7 @@ point_radius = 2.4
 point_radius_2 = 6
 color_A = "orange"
 color_B  = "cyan"
-color_path = "tomato"
+color_path = "red"
 Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
@@ -1402,6 +1451,14 @@ function long2turn(degrees = -180, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
   return (((degrees %= 360) < 0 ? degrees + 360 : degrees) + 18) / (360 / 10**e) % 10**e;
 }
+function turn2degr(turns = -500, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return turns % 10**e * (360 / 10**e)
+}
+function turn2long(turns = -500, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return turns % 10**e * (360 / 10**e) - 18
+}
 function long2zone(degrees = -180) { return Math.floor(long2turn(degrees, 1)); }
 function lati2turn(degrees = -180, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
@@ -1509,27 +1566,41 @@ radius = size/2 - margin - padding
 ```
 
 <style>
-table td:has(input[type="checkbox"]), table th:has(input[type="checkbox"]) {
+#maptable table * {
+  font-size: 18px;
+}
+#maptable table td:has(input[type="checkbox"]), table th:has(input[type="checkbox"]) {
   display: none;
 }
-table > tbody > tr:nth-child(1) > td > div {
+#maptable table > tbody > tr:nth-child(1) > td > div {
   background: orange !important;
 }
 table > tbody > tr:nth-child(2) > td > div {
   background: cyan !important;
+}
+div#projselect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
   text-decoration: none;
   transform: translateY(-1px);
 }
-#speedinput label {
-  width: 80px;
+#sizeinput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#speedinput input[type="number"] {
+#speedinput label, #sizeinput label {
+  width: 80px;
+  --label-width: 80px;
+}
+#speedinput input[type="number"], #sizeinput input[type="number"] {
   width: 70px;
 }
-#speedinput input[type="range"] {
+#speedinput input[type="range"], #sizeinput input[type="range"] {
   width: 216px;
 }
 .colorcomponent {
@@ -1544,30 +1615,55 @@ div#colorslider input[type="number"] {
   width: 105px;
 }
 div#distmap {
-   display: flex;
-   justify-content: center;
-   overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  overflow-x: visible;
 }
 div#maptable {
-   display: flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
+  overflow-x: visible;
 }
 div#toggles {
-   display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-div#toggles form.oi-3a86ea-toggle > label {
-   overflow-x: hidden;
+div#numerics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-7"] {
+div#numerics * {
+  overflow-x: visible;
+}
+div#numerics label {
   width: 30px;
 }
-div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-6"] {
+div#numerics input {
+  width: 65px;
+}
+div#numerics div.cell-output {
+  width: 115px;
+}
+#numerics > div:has(button#setbtn) {
+  width: 35px;
+}
+div#toggles * {
+  overflow-x: visible;
+}
+div#toggles form.oi-3a86ea-toggle#gridtoggle > label {
+  width: 30px;
+}
+div#toggles form.oi-3a86ea-toggle#bordertoggle > label {
   width: 50px;
 }
-div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-5"] {
+div#toggles form.oi-3a86ea-toggle#suntoggle > label {
   width: 46px;
 }
-div#toggles form.oi-3a86ea-toggle > label[for="oi-3a86ea-4"] {
+div#toggles form.oi-3a86ea-toggle#utctoggle > label {
   width: 32px;
 }
 div#toggles  form.oi-3a86ea-toggle {
@@ -1576,11 +1672,14 @@ div#toggles  form.oi-3a86ea-toggle {
 div#toggles  input.oi-3a86ea-input[type="checkbox"] {
   margin: 3px 0px 0px 0px;
 }
+div#projselect form.oi-3a86ea {
+   width: 440px;
+}
 div#projselect form.oi-3a86ea > label {
-   --label-width: 80px;
+   --label-width: 120px;
 }
 div#projselect form.oi-3a86ea {
-   --input-width: 260px;
+   --input-width: 280px;
 }
 div:has(div.description) {
   display: none;
