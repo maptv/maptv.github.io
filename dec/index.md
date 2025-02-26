@@ -158,14 +158,9 @@ an airplane✈️could fly between the default positions📍of the points in
 200 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span> (md).
 
-The and the course
-
-, and
+and
 [azimuth](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=the%20angle%20of%20rotation%20(in%20degrees)%20in%20the%20unit%20circle%20over%20the%20horizontal%20plane)  
 To travel the between the default positions📍of the two points in
-
-The default bearing of As the points move, the j in \[milliparallels\]
-() and \[millimeridians\] ()
 
 these two points are : and the course in that we would need .
 [bearings](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object)
@@ -1865,8 +1860,8 @@ div#toggles {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  margin-top: -8px;
-  margin-bottom: -8px;
+  margin-top: -16px;
+  margin-bottom: -9px;
 }
 div#toggles * {
   overflow: visible;
