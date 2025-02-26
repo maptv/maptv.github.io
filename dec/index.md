@@ -771,6 +771,7 @@ function createTable(data, options) {
   makeTableEditable(table, options);
   return table;
 }
+table.setAttribute("class", "table")
 tableify = import("https://cdn.skypack.dev/tableify@1.1.1?min")
 xss = import("https://cdn.skypack.dev/xss@1.0.14?min")
 function createCellDiv(value, max) {
@@ -1863,49 +1864,46 @@ div#toggles {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  margin-top: -8px;
+  margin-bottom: -8px;
 }
 div#toggles * {
-  overflow-x: visible;
-  margin-top: -3px;
-  margin-bottom: -3px;
+  overflow: visible;
 }
 div#toggles form.oi-3a86ea-toggle#bordertoggle {
-  width: 80px;
+  width: 100px;
 }
 div#toggles form.oi-3a86ea-toggle#bordertoggle > label {
-  width: 49px;
+  width: 50px;
 }
 div#toggles form.oi-3a86ea-toggle#gridtoggle {
-  width: 60px;
+  width: 80px;
 }
 div#toggles form.oi-3a86ea-toggle#gridtoggle > label {
-  width: 30px;
-}
-div#toggles form.oi-3a86ea-toggle#suntoggle {
-  width: 55px;
-}
-div#toggles form.oi-3a86ea-toggle#suntoggle > label {
-  width: 27px;
-}
-div#toggles form.oi-3a86ea-toggle#utctoggle {
-  width: 60px;
-}
-div#toggles form.oi-3a86ea-toggle#utctoggle > label {
   width: 31px;
 }
+div#toggles form.oi-3a86ea-toggle#suntoggle {
+  width: 75px;
+}
+div#toggles form.oi-3a86ea-toggle#suntoggle > label {
+  width: 28px;
+}
+div#toggles form.oi-3a86ea-toggle#utctoggle {
+  width: 80px;
+}
+div#toggles form.oi-3a86ea-toggle#utctoggle > label {
+  width: 32px;
+}
+div#toggles form.oi-3a86ea-toggle > label {
+  margin-top: -4px;
+}
 div#toggles input.oi-3a86ea-input[type="checkbox"] {
-  margin: 3px 0px 0px 0px;
+  margin-top: 1px;
 }
-div#toggles button {
-  margin: -4px 0px 0px 0px;
-}
-div#projselect form.oi-3a86ea {
-   width: 365px;
-   --input-width: 280px;
-}
-div#projselect form.oi-3a86ea > label {
-   --label-width: 80px;
+div#toggles button#rstbtn {
+  overflow: visible;
+  margin-top: -6px;
 }
 div#projselect > div {
    overflow-x: clip;
