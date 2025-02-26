@@ -65,9 +65,9 @@ viewof select = Inputs.select(
 ```{ojs}
 //| echo: false
 //| label: toggles
-viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
 viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
-viewof suntoggle = labelToggle(Inputs.toggle, "Shade", false, "suntoggle")
+viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
+viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
 viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
 rstbtn.node();
 ```
@@ -76,9 +76,12 @@ rstbtn.node();
 //| echo: false
 //| label: maptable
 table = createTable([
-  {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
-  {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
+  { Point: 0, Milliparallel: 800, Millimeridian: 0, Milliwindrose: 0 },
+  { Point: 1, Milliparallel: 800, Millimeridian: 100, Milliwindrose: 500 },
 ], { headerEditable: false, appendRows: false })
+//   {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
+//   {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
+// ], {headerEditable: false, appendRows: false})
 ```
 
 ::: {.column-page}
@@ -87,7 +90,11 @@ table = createTable([
 //| label: distmap
 // https://observablehq.com/@d3/solar-terminator
 // https://observablehq.com/@mbostock/time-zones
-viewof coordinates = worldMapCoordinates([[-90, 0.025],[-90, 36], projection], [width, height])
+viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].childNodes[0].innerText), turn2degr(table.rows[1].cells[2].childNodes[0].innerText % 250)], [turn2long(table.rows[2].cells[1].childNodes[0].innerText), turn2degr(table.rows[2].cells[2].childNodes[0].innerText % 250)], projection], [width, height])
+//viewof coordinates = worldMapCoordinates([
+//  [turn2long(table.rows[1].cells[1].childNodes[0].innerText), turn2degr(table.rows[1].cells[2].childNodes[0].innerText % 250)],
+//  [turn2long(table.rows[2].cells[1].childNodes[0].innerText), turn2degr(table.rows[2].cells[2].childNodes[0].innerText % 250)],
+//  projection], [width, height])
 ```
 :::
 
@@ -362,6 +369,19 @@ function createTable(data, options) {
 }
 tableify = import("https://cdn.skypack.dev/tableify@1.1.1?min")
 xss = import("https://cdn.skypack.dev/xss@1.0.14?min")
+function createCellDiv(value, max) {
+  return `<div style="
+    width: ${Math.abs(value) / max}%;
+    float: left;
+    padding: 0px 0px 0px 2px;
+    text-indent: 2px;
+    box-sizing: border-box;
+    overflow: visible;
+    white-space: nowrap;
+    display: flex;
+    justify-content: start;">${Math.round(value)}</div>`
+}
+liveTable = observeTable(table)
 function makeTableEditable(table, options) {
   const defaults = {headerEditable: false, appendRows: true};
   options = options === undefined ? {} : options;
@@ -383,10 +403,14 @@ function makeTableEditable(table, options) {
       let direction = null;
       let x = colIndex;
       let y = rowIndex;
+      if (![
+      // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
+        8, 9, 13, 16, 17, 18, 27, 33, 34, 35, 36, 37, 38, 39, 40, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
+      ].includes(event.which)) {
+        event.preventDefault();
+      }
+      else {
       switch(event.code) {
-        case 'Space':
-          event.preventDefault();
-          break;
         // Tab cycles through the table, adding new rows as needed.
         case 'Tab':
           event.preventDefault();
@@ -417,11 +441,12 @@ function makeTableEditable(table, options) {
             direction = -1;
             x = x;
             y = y - 1;
-            break;
           }
-          direction = 1;
-          x = x;
-          y = y + 1;
+          else {
+            direction = 1;
+            x = x;
+            y = y + 1;
+          }
           break;
         // The arrow keys allow you to navigate through cells.
         // No new rows are added.
@@ -429,6 +454,7 @@ function makeTableEditable(table, options) {
         case 'ArrowDown':
         case 'ArrowLeft':
         case 'ArrowRight':
+        case 'Enter':
           if (!event.altKey) break;
           event.preventDefault();
           switch(event.code) {
@@ -462,6 +488,7 @@ function makeTableEditable(table, options) {
         focusCell(nextCell);
       }
     };
+    }
     table.addEventListener("keydown", navigate, false);
     if (table.rows.length > 0) {
       for (let row of table.rows) {
@@ -470,7 +497,7 @@ function makeTableEditable(table, options) {
         if (cell.cellIndex === 0) continue;
           let cellValue = cell.innerText
           cell.innerHTML = `<div style="
-            width: ${100 * Math.abs(cellValue) / (cell.cellIndex === 2 ? 250 : 1000)}%;
+            width: ${Math.abs(cellValue) / (cell.cellIndex === 2 ? 2.5 : 10)}%;
             float: left;
             padding: 0px 0px 0px 2px;
             text-indent: 2px;
@@ -843,10 +870,10 @@ function worldMapCoordinates(config = {}, dimensions) {
   const height = dimensions[1];
   [lonA, latA] = value[0];
   [lonB, latB] = value[1];
-  lonA = lonA != null ? lonA : null;
-  latA = latA != null ? latA : null;
-  lonB = lonB != null ? lonB : null;
-  latB = latB != null ? latB : null;
+  lonA = lonA != null ? lonA : 90;
+  latA = latA != null ? latA : 0.025;
+  lonB = lonB != null ? lonB : -90;
+  latB = latB != null ? latB : 36;
   const formEl = html`<form style="width: ${width}px;"></form>`;
   const context = DOM.context2d(width, height);
   const canvas = context.canvas;
@@ -861,7 +888,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.fillStyle = color(f.properties.zone);
     context.fill();
   }
-  function draw() {
+  function draw(lon0, lat0, lon1, lat1) {
     if (!utctoggle) {
       context.beginPath(); path({type: "Sphere"});
       context.fillStyle = window.darkmode ? "#007FFF" : mapcolors.ocean;
@@ -919,8 +946,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.stroke();
       context.fill();
     }
-    if (lonA != null && latA != null) {
-      const pointPath = { type: "MultiPoint", coordinates: [[lonA, latA]], id: "point0test"};
+    if (lon0 != null && lat0 != null) {
+      const pointPath = { type: "MultiPoint", coordinates: [[lon0, lat0]], id: "point0test"};
       context.beginPath();
       path.pointRadius(point_radius_2);
       path(pointPath);
@@ -929,8 +956,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.strokeStyle = window.darkmode ? "white" : "black";
       context.stroke();
     }
-    if (lonB != null && latB != null) {
-      const pointPath = { type: "MultiPoint", coordinates: [[lonB, latB]] };
+    if (lon1 != null && lat1 != null) {
+      const pointPath = { type: "MultiPoint", coordinates: [[lon1, lat1]] };
       context.beginPath();
       path.pointRadius(point_radius_2);
       path(pointPath);
@@ -940,8 +967,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.stroke();
     }
     // We draw the path between 2 points
-    var interpolation = d3.geoInterpolate([lonA,latA],[lonB,latB]);
-    var nb_points =  d3.geoDistance([lonA,latA],[lonB,latB])*20;
+    var interpolation = d3.geoInterpolate([lon0,lat0],[lon1,lat1]);
+    var nb_points =  d3.geoDistance([lon0,lat0],[lon1,lat1])*20;
     for(let i = 1; i<nb_points; i++) {
       const pointPath = { type: "MultiPoint", coordinates: [interpolation(i/nb_points)] };
       path.pointRadius(point_radius);
@@ -953,6 +980,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.stroke();
     }
   }
+  draw(lonA, latA, lonB, latB);
   canvas.onclick = function(ev) {
     const { offsetX, offsetY } = ev;
     var coords = projection.invert([offsetX, offsetY]);
@@ -965,7 +993,13 @@ function worldMapCoordinates(config = {}, dimensions) {
     latB = +coords[1].toFixed(2);
       n_point = 0;
     }
-    draw();
+    table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
+    table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
+    table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
+    table.rows[2].cells[2].innerHTML = createCellDiv(lati2turn(latB) % 250, 2.5)
+    table.rows[1].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonA, latA], [lonB, latB])), 10)
+    table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
+    draw(lonA, latA, lonB, latB);
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   };
   function resetlatlon() {
@@ -973,21 +1007,57 @@ function worldMapCoordinates(config = {}, dimensions) {
     latA = 0.025;
     lonB = -90;
     latB = 36;
-    set(viewof gridtoggle, false);
-    set(viewof bordertoggle, false);
-    set(viewof suntoggle, false);
-    set(viewof utctoggle, false);
-    draw();
+    // set(viewof bordertoggle, false);
+    // set(viewof gridtoggle, false);
+    // set(viewof suntoggle, false);
+    // set(viewof utctoggle, false);
+    table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
+    table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
+    table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
+    table.rows[2].cells[2].innerHTML = createCellDiv(lati2turn(latB) % 250, 2.5)
+    table.rows[1].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonA, latA], [lonB, latB])), 10)
+    table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
+    draw(lonA, latA, lonB, latB);
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+  }
+  table.onkeyup = function(ev) {
+   if ([
+    // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
+      9, 13, 27
+    ].includes(ev.which)) {
+      lonA = turn2long(liveTable[0].Milliparallel);
+      latA = turn2degr(liveTable[0].Millimeridian % 250);
+      lonB = turn2long(liveTable[1].Milliparallel);
+      latB = turn2degr(liveTable[1].Millimeridian % 250);
+      table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
+      table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
+      table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
+      table.rows[2].cells[2].innerHTML = createCellDiv(lati2turn(latB) % 250, 2.5)
+      table.rows[1].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonA, latA], [lonB, latB])), 10)
+      table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
+      draw(lonA, latA, lonB, latB);
+      canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+    } else if ([
+    // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
+      8, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
+    ].includes(ev.which)) {
+      lonA = turn2long(liveTable[0].Milliparallel);
+      latA = turn2degr(liveTable[0].Millimeridian % 250);
+      lonB = turn2long(liveTable[1].Milliparallel);
+      latB = turn2degr(liveTable[1].Millimeridian % 250);
+      table.rows[1].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonA, latA], [lonB, latB])), 10)
+      table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
+      draw(lonA, latA, lonB, latB);
+      canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+    }
   }
   rstbtn.on('click', resetlatlon);
   document.getElementsByClassName("quarto-color-scheme-toggle")[0].onclick = function (e) {
     window.quartoToggleColorScheme();
     window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
-    draw();
+    draw(lonA, latA, lonB, latB);
     return false;
   };
-  draw();
   const form = input({
     type: "worldMapCoordinates",
     title,
@@ -1394,41 +1464,48 @@ div#toggles {
 div#toggles * {
   overflow-x: visible;
 }
-div#toggles form.oi-3a86ea-toggle#gridtoggle > label {
-  width: 30px;
+div#toggles form.oi-3a86ea-toggle#bordertoggle {
+  width: 80px;
 }
 div#toggles form.oi-3a86ea-toggle#bordertoggle > label {
-  width: 50px;
-}
-div#toggles form.oi-3a86ea-toggle#suntoggle > label {
   width: 46px;
 }
-div#toggles form.oi-3a86ea-toggle#utctoggle > label {
-  width: 32px;
+div#toggles form.oi-3a86ea-toggle#gridtoggle {
+  width: 60px;
 }
-div#toggles  form.oi-3a86ea-toggle {
-   width: 109px;
+div#toggles form.oi-3a86ea-toggle#gridtoggle > label {
+  width: 27px;
+}
+div#toggles form.oi-3a86ea-toggle#suntoggle {
+  width: 55px;
+}
+div#toggles form.oi-3a86ea-toggle#suntoggle > label {
+  width: 24px;
+}
+div#toggles form.oi-3a86ea-toggle#utctoggle {
+  width: 60px;
+}
+div#toggles form.oi-3a86ea-toggle#utctoggle > label {
+  width: 28px;
 }
 div#toggles  input.oi-3a86ea-input[type="checkbox"] {
   margin: 3px 0px 0px 0px;
 }
 div#projselect form.oi-3a86ea {
-   width: 395px;
+   width: 365px;
+   --input-width: 280px;
 }
 div#projselect form.oi-3a86ea > label {
    --label-width: 80px;
 }
-div#projselect form.oi-3a86ea {
-   --input-width: 280px;
+div#projselect > div {
+   overflow-x: clip;
 }
 div:has(div.description) {
   display: none;
 }
 #turns > h4.hiddenheading, #hue > h4.hiddenheading, #bearing > h4.hiddenheading {
   display: none;
-}
-#point0test {
-  fill: yellow;
 }
 </style>
 ```
