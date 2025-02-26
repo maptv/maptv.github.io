@@ -175,10 +175,6 @@ div.quarto-listing > div.list.grid {
   white-space: nowrap;
 }
 
-#quarto-header > nav {
-  padding: .5em 1em .5em 1em;
-}
-
 .nowrap {
   white-space: nowrap;
 }
@@ -215,8 +211,8 @@ div > form > label {
 }
 
 .over {
-  text-decoration-line: overline !important;
-  text-decoration-thickness: .7px !important;
+  text-decoration-line: overline;
+  text-decoration-thickness: .7px;
 }
 
 .hide {
