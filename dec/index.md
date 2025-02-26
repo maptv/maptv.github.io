@@ -106,20 +106,20 @@ time zones.
 
 ``` {ojs}
 //| echo: false
-//| label: projselect
-//| column: margin
-viewof select = Inputs.select(
-  projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
-```
-
-``` {ojs}
-//| echo: false
 //| label: toggles
 viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
 viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
 viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
 viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
 rstbtn.node();
+```
+
+``` {ojs}
+//| echo: false
+//| label: projselect
+//| column: margin
+viewof select = Inputs.select(
+  projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
 ```
 
 ``` {ojs}
@@ -1415,6 +1415,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     set(viewof gridtoggle, false);
     set(viewof suntoggle, false);
     set(viewof utctoggle, false);
+    set(viewof select, projections.find(t => t.name === "Equirectangular (plate carrée)"));
     table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
     table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
     table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
@@ -1866,6 +1867,8 @@ div#toggles {
 }
 div#toggles * {
   overflow-x: visible;
+  margin-top: -3px;
+  margin-bottom: -3px;
 }
 div#toggles form.oi-3a86ea-toggle#bordertoggle {
   width: 80px;
@@ -1891,8 +1894,11 @@ div#toggles form.oi-3a86ea-toggle#utctoggle {
 div#toggles form.oi-3a86ea-toggle#utctoggle > label {
   width: 31px;
 }
-div#toggles  input.oi-3a86ea-input[type="checkbox"] {
-  margin: 1px 0px 0px 0px;
+div#toggles input.oi-3a86ea-input[type="checkbox"] {
+  margin: 3px 0px 0px 0px;
+}
+div#toggles button {
+  margin: -4px 0px 0px 0px;
 }
 div#projselect form.oi-3a86ea {
    width: 365px;
