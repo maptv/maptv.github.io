@@ -107,8 +107,9 @@ time zones.
 ``` {ojs}
 //| echo: false
 //| label: projselect
+//| column: margin
 viewof select = Inputs.select(
-  projections, {label: "Projection", format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
+  projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
 ```
 
 ``` {ojs}
@@ -1410,10 +1411,10 @@ function worldMapCoordinates(config = {}, dimensions) {
     latA = 0.025;
     lonB = -90;
     latB = 36;
-    // set(viewof bordertoggle, false);
-    // set(viewof gridtoggle, false);
-    // set(viewof suntoggle, false);
-    // set(viewof utctoggle, false);
+    set(viewof bordertoggle, false);
+    set(viewof gridtoggle, false);
+    set(viewof suntoggle, false);
+    set(viewof utctoggle, false);
     table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
     table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
     table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
@@ -1870,28 +1871,28 @@ div#toggles form.oi-3a86ea-toggle#bordertoggle {
   width: 80px;
 }
 div#toggles form.oi-3a86ea-toggle#bordertoggle > label {
-  width: 46px;
+  width: 49px;
 }
 div#toggles form.oi-3a86ea-toggle#gridtoggle {
   width: 60px;
 }
 div#toggles form.oi-3a86ea-toggle#gridtoggle > label {
-  width: 27px;
+  width: 30px;
 }
 div#toggles form.oi-3a86ea-toggle#suntoggle {
   width: 55px;
 }
 div#toggles form.oi-3a86ea-toggle#suntoggle > label {
-  width: 24px;
+  width: 27px;
 }
 div#toggles form.oi-3a86ea-toggle#utctoggle {
   width: 60px;
 }
 div#toggles form.oi-3a86ea-toggle#utctoggle > label {
-  width: 28px;
+  width: 31px;
 }
 div#toggles  input.oi-3a86ea-input[type="checkbox"] {
-  margin: 3px 0px 0px 0px;
+  margin: 1px 0px 0px 0px;
 }
 div#projselect form.oi-3a86ea {
    width: 365px;
