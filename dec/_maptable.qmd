@@ -1,0 +1,51 @@
+```{ojs}
+//| echo: false
+//| label: toggles
+viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
+viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
+viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
+viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
+rstbtn.node();
+```
+
+```{ojs}
+//| echo: false
+//| label: projselect
+//| column: margin
+viewof select = Inputs.select(
+  projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
+```
+
+```{ojs}
+//| echo: false
+//| label: sizeinput
+//| column: margin
+viewof mapsize = Inputs.range([0, 100], {label: "Size", value: 100, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: maptable
+table = createTable([
+  { Point: 0, Milliparallel: 800, Millimeridian: 0, Milliwindrose: 0 },
+  { Point: 1, Milliparallel: 800, Millimeridian: 100, Milliwindrose: 500 },
+], { headerEditable: false, appendRows: false })
+//   {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
+//   {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
+// ], {headerEditable: false, appendRows: false})
+```
+
+::: {.column-page}
+```{ojs}
+//| echo: false
+//| label: distmap
+// https://observablehq.com/@d3/solar-terminator
+// https://observablehq.com/@mbostock/time-zones
+viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].childNodes[0].innerText), turn2degr(table.rows[1].cells[2].childNodes[0].innerText % 250)], [turn2long(table.rows[2].cells[1].childNodes[0].innerText), turn2degr(table.rows[2].cells[2].childNodes[0].innerText % 250)], projection], [width, height * mapsize / 100])
+//viewof coordinates = worldMapCoordinates([
+//  [turn2long(table.rows[1].cells[1].childNodes[0].innerText), turn2degr(table.rows[1].cells[2].childNodes[0].innerText % 250)],
+//  [turn2long(table.rows[2].cells[1].childNodes[0].innerText), turn2degr(table.rows[2].cells[2].childNodes[0].innerText % 250)],
+//  projection], [width, height])
+```
+:::
+

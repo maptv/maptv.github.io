@@ -1,0 +1,54 @@
+```{ojs}
+//| echo: false
+//| label: colorpreview
+//| column: margin
+//| class: colorcomponent
+preview()
+```
+
+```{ojs}
+//| echo: false
+//| label: colorwheelcompass
+//| class: colorcomponent
+// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
+svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
+  <g transform='rotate(${Math.round(-colorH * .36)})'>
+  ${repeat(tick(radius, 5, '#434343'), numMinorTicks * 4 * numMajorTicks)}
+  ${repeat(tick(radius, 8), numMajorTicks * 4)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="white" stroke="black" stroke-width="1"/>`, 4, 45)}
+  <circle r="${radius}" fill="#d3d3d3" stroke="#434343" stroke-width="3" />
+  ${repeat(directionMarker(radius+14, 24), 4, 0)}
+  ${repeat(directionMarker(radius+12, 24), 4, 45)}
+  ${repeat(turnMarker(radius+14, 32), 4, 0)}
+  ${repeat(turnMarker(radius+12, 32), 4, 45)}
+  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / piecolors.length / 2, 1, piecolors), piecolors.length, 360/piecolors.length)}
+</svg>
+`
+```
+
+```{ojs}
+//| echo: false
+//| label: colorbar
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+hueBar = colorbar({
+  colorFn: t => hslToRgb(t, colorS, colorL),
+  onSelect: t => {
+    set(viewof colorH, t * 1000)
+    onUpdateHSL(t * 1000, colorS, colorL)
+  }
+})
+```
+
+```{ojs}
+//| echo: false
+//| label: colorslider
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { value: 0, step: 1 })
+  input.value = initialHSL[0]
+  input.oninput = (evt) => onUpdateHSL(evt.currentTarget.value, colorS, colorL)
+  return Inputs.bind(input, viewof colorH)
+}
+```

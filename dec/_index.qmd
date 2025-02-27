@@ -1,0 +1,1178 @@
+```{ojs}
+//| echo: false
+//| output: false
+// https://observablehq.com/@parlant/editable-table
+function createTable(data, options) {
+  let table = html`<table class="editable-table"></table>`;
+  table.innerHTML = xss.filterXSS(tableify.default(data));
+  makeTableEditable(table, options);
+  return table;
+}
+table.setAttribute("class", "table")
+tableify = import("https://cdn.skypack.dev/tableify@1.1.1?min")
+xss = import("https://cdn.skypack.dev/xss@1.0.14?min")
+function createCellDiv(value, max) {
+  return `<div style="
+    width: ${Math.abs(value) / max}%;
+    float: left;
+    padding: 0px 0px 0px 2px;
+    text-indent: 2px;
+    box-sizing: border-box;
+    overflow: visible;
+    white-space: nowrap;
+    display: flex;
+    justify-content: start;">${Math.round(value)}</div>`
+}
+liveTable = observeTable(table)
+function makeTableEditable(table, options) {
+  const defaults = {headerEditable: false, appendRows: true};
+  options = options === undefined ? {} : options;
+  for (let key in defaults) {
+    options[key] = options[key] === undefined ? defaults[key] : options[key];
+  }
+  return Generators.observe((_notify) => {
+    const navigate = (event) => {
+      const cell = event.target;
+      const row = cell.closest('tr');
+      const table = row.closest('table');
+      const isBody = row.parentNode.tagName === 'TBODY';
+      const isHeader = row.parentNode.tagName === 'THEAD';
+      const colIndex = cell.cellIndex;
+      const colCount = row.cells.length;
+      const rowIndex = row.rowIndex;
+      const rowCount = table.rows.length;
+      const headStop = options.headerEditable ? 0 : 1;
+      let direction = null;
+      let x = colIndex;
+      let y = rowIndex;
+      if (![
+      // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
+        8, 9, 13, 16, 17, 18, 27, 33, 34, 35, 36, 37, 38, 39, 40, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
+      ].includes(event.which)) {
+        event.preventDefault();
+      }
+      else {
+      switch(event.code) {
+        // Tab cycles through the table, adding new rows as needed.
+        case 'Tab':
+          event.preventDefault();
+          if (event.altKey || event.shiftKey) {
+            direction = -1;
+            if (x - 1 < 0) {
+              if (y - 1 < headStop) break;
+              x = colCount - 1;
+              y = y - 1;
+            } else {
+              x = x - 1;
+            }
+          } else {
+            direction = 1;
+            if (x + 1 === colCount) {
+              x = 0;
+              y = y + 1;
+            } else {
+              x = x + 1;
+            }
+          }
+          break;
+        // Plain Enter navigates downwards.
+        // Shift + Enter or Alt + Enter goes up to the cell above.
+        case 'Enter':
+          event.preventDefault();
+          if (event.altKey || event.shiftKey) {
+            direction = -1;
+            x = x;
+            y = y - 1;
+          }
+          else {
+            direction = 1;
+            x = x;
+            y = y + 1;
+          }
+          break;
+        // The arrow keys allow you to navigate through cells.
+        // No new rows are added.
+        case 'ArrowUp':
+        case 'ArrowDown':
+        case 'ArrowLeft':
+        case 'ArrowRight':
+        case 'Enter':
+          if (!event.altKey) break;
+          event.preventDefault();
+          switch(event.code) {
+            case 'ArrowUp':
+              direction = -1;
+              y = Math.max(y - 1, headStop);
+              break;
+            case 'ArrowDown':
+              direction = 1;
+              y = Math.min(y + 1, rowCount - 1);
+              break;
+            case 'ArrowLeft':
+              direction = -1;
+              x = Math.max(x - 1, 0);
+              break;
+            case 'ArrowRight':
+              direction = 1;
+              x = Math.min(x + 1, colCount - 1);
+              break;
+          }
+          break;
+      }
+      if (direction !== null) {
+        let nextRow;
+        if (y === rowCount) {
+          nextRow = options.appendRows ? addRowRelativeTo(row, direction) : row;
+        } else {
+          nextRow = table.rows[y];
+        }
+        let nextCell = nextRow.cells[x];
+        focusCell(nextCell);
+      }
+    };
+    }
+    table.addEventListener("keydown", navigate, false);
+    if (table.rows.length > 0) {
+      for (let row of table.rows) {
+        if (!options.headerEditable && row.rowIndex === 0) continue;
+        for (let cell of row.cells) {
+        if (cell.cellIndex === 0) continue;
+          let cellValue = cell.innerText
+          cell.innerHTML = `<div style="
+            width: ${Math.abs(cellValue) / (cell.cellIndex === 2 ? 2.5 : 10)}%;
+            float: left;
+            padding: 0px 0px 0px 2px;
+            text-indent: 2px;
+            box-sizing: border-box;
+            overflow: visible;
+            white-space: nowrap;
+            display: flex;
+            justify-content: start;">${cellValue}</div>`
+        if (cell.cellIndex === 3) continue;
+          cell.contentEditable = true;
+        }
+      }
+    }
+    return () => table.removeEventListener("keydown", navigate);
+  });
+}
+function observeTable(table) {
+  return Generators.observe((notify) => {
+    const keyinput = (event) => notify(parseTableData(table));
+    table.addEventListener("input", keyinput, false);
+    notify(parseTableData(table));
+    return () => window.removeEventListener("input", keyinput);
+  });
+}
+function parseTableData(table) {
+  const header = [];
+  const data = [];
+  for (let row of table.rows) {
+    const rowIndex = row.rowIndex;
+    const isHeader = row.parentNode.tagName === 'THEAD' && rowIndex === 0;
+    let obj = {};
+    for (let cell of row.cells) {
+      const head = header[cell.cellIndex];
+      if (isHeader) {
+        header.push(cell.innerText);
+      } else {
+        obj[head] = cell.innerText;
+      }
+    }
+    if (!isHeader) data.push(obj);
+  }
+  return JSON.parse(JSON.stringify(data));
+}
+function focusCell(td) {
+  const s = window.getSelection();
+  const r = document.createRange();
+  let textNode = td.childNodes[0];
+  const i = td.innerText.length;
+  td.focus();
+  if (textNode) {
+    r.setStart(textNode, i);
+    r.setEnd(textNode, i);
+  } else {
+    r.selectNode(td);
+  }
+  s.removeAllRanges();
+  s.addRange(r);
+}
+function addRowRelativeTo(tr, direction) {
+  const newTr = document.createElement('tr');
+  const insertPosition = direction == 1 ? 'afterend' : 'beforebegin';
+  tr.insertAdjacentElement(insertPosition, newTr);
+  for (let _td of Array.from(tr.children)) {
+    const newTd = document.createElement('td');
+    newTd.appendChild(document.createTextNode(''));
+    newTd.contentEditable = true;
+    newTr.appendChild(newTd);
+  }
+  return newTr;
+}
+// https://observablehq.com/@observablehq/text-color-annotations-in-markdown
+rstbtn = d3.create('button').html('Reset').attr("id", "rstbtn").attr("class", "btn btn-quarto");
+// https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support
+function labelToggle(inputType, inputLabel, inputValue, inputId) {
+  const input = inputType({label: inputLabel, value: inputValue});
+  input.setAttribute("id", inputId);
+  return input;
+}
+function labelNumeric(inputType, extent, inputLabel, inputValue, inputId) {
+  const input = inputType(extent, {label: inputLabel, value: inputValue});
+  input.setAttribute("id", inputId);
+  return input;
+}
+// https://observablehq.com/@observablehq/synchronized-inputs
+function set(input, value) {
+  input.value = value;
+  input.dispatchEvent(new Event("input", {bubbles: true}));
+}
+// https://observablehq.com/@observablehq/input-table
+function sparkbar(max, color) {
+  return x => htl.html`<div style="
+    width: ${100 * Math.abs(x) / max}%;
+    background: ${color};
+    float: right;
+    padding-right: 3px;
+    box-sizing: border-box;
+    overflow: visible;
+    display: flex;
+    justify-content: end;">${x.toLocaleString("en")}`
+}
+// https://stackoverflow.com/a/52079217
+// Converts from degrees to radians.
+function toRadians(degrees) { return degrees * Math.PI / 180; };
+// Converts from radians to degrees.
+function toDegrees(radians) { return radians * 180 / Math.PI; }
+function coor2bear(strt, dest) {
+  const [strtLng, strtLat] = strt.map(toRadians);
+  const [destLng, destLat] = dest.map(toRadians);
+  return (toDegrees(Math.atan2(
+    Math.sin(destLng - strtLng) * Math.cos(destLat),
+    Math.cos(strtLat) * Math.sin(destLat) - Math.sin(strtLat) * Math.cos(destLat) * Math.cos(destLng - strtLng)
+  )) + 360) % 360;
+}
+function textcolor(content, style = {}) {
+  function yiq(color) {
+    const {r, g, b} = d3.rgb(color);
+    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
+  }
+  const {
+    background,
+    color = yiq(background) >= 0.5 ? "#000" : "white",
+    padding = "0 5px",
+    borderRadius = "4px",
+    fontWeight = 400,
+    fontFamily = "monospace",
+    ...rest
+  } = typeof style === "string" ? {background: style} : style;
+  return htl.html`<span style=${{
+    background,
+    color,
+    padding,
+    borderRadius,
+    fontWeight,
+    fontFamily,
+    ...rest
+  }}>${content}</span>`;
+}
+function turn2comp(turn) {
+  return ["N", "NE", "E", "SE", "S", "SW", "W", "NW"][Math.round(turn / 125) % 8]
+}
+hueMtr = Math.round(colorH)
+hueDeg = Math.round(hueMtr * .36)
+hStr = `hsl(${hueDeg}`
+slStr = `, ${Math.round(colorS * 100)}%, ${Math.round(colorL * 100)}%)`
+hslStr = hStr + slStr
+bkg = ({background: hslStr})
+rainbow0 = textcolor('0', "hsl(0" + slStr)
+rainbow1 = textcolor('1', "hsl(36" + slStr)
+rainbow2 = textcolor('2', "hsl(72" + slStr)
+rainbow3 = textcolor('3', "hsl(108" + slStr)
+rainbow4 = textcolor('4', "hsl(144" + slStr)
+rainbow5 = textcolor('5', "hsl(180" + slStr)
+rainbow6 = textcolor('6', "hsl(216" + slStr)
+rainbow7 = textcolor('7', "hsl(252" + slStr)
+rainbow8 = textcolor('8', "hsl(288" + slStr)
+rainbow9 = textcolor('9', "hsl(324" + slStr)
+rainbowN = textcolor('N', "hsl(0" + slStr)
+rainbowNE = textcolor('NE', "hsl(45" + slStr)
+rainbowE = textcolor('E', "hsl(90" + slStr)
+rainbowSE = textcolor('SE', "hsl(135" + slStr)
+rainbowS = textcolor('S', "hsl(180" + slStr)
+rainbowSW = textcolor('SW', "hsl(225" + slStr)
+rainbowW = textcolor('W', "hsl(270" + slStr)
+rainbowNW = textcolor('NW', "hsl(315" + slStr)
+rainbowHue = textcolor('hue', bkg)
+rainbowMtr = textcolor(hueMtr, bkg)
+rainbowDir = textcolor(turn2comp(hueMtr), bkg)
+rainbowDeg = textcolor(hueDeg, bkg)
+rainbowHex = textcolor(d3.hsl(hueDeg, colorS, colorL).formatHex().slice(1), bkg)
+// Show preview swatches of color
+preview = () => {
+  const container = DOM.element('div')
+  d3.select(container).attr('style', 'display: flex;')
+  d3.select(container)
+    .append('div')
+      .text('Selected')
+      .style('font-weight', 'bold')
+    .append('div')
+      .classed('swatch', true)
+      .style('background-color', `hsl(${colorH * .36}, 100%, 50%`);
+  d3.select(container)
+    .append('div')
+      .text('Preview')
+      .style('font-style', 'italic')
+    .append('div')
+      .classed('swatch', true)
+      .style('background-color', `rgb(${hoverRGB[0]}, ${hoverRGB[1]}, ${hoverRGB[2]}`)
+  d3.select(container).selectAll('div.swatch')
+    .style('width', '100px')
+    .style('height', '100px')
+    .style('margin-right', '8px')
+    .style('padding', '4px')
+  return container
+}
+// The currently hovered color
+mutable hoverRGB = [255, 0, 0]
+/**
+ * Draw an interactive color bar
+ * @param colorFn (t: number) => [number, number, number] Given a position on the bar (between 0 and 1), return its RGB
+ * @param onSelect (t: number) => void Callback for when a position is selected on the bar
+ */
+function colorbar({colorFn, onSelect}) {
+  const WIDTH = 360
+  const HEIGHT = 32
+  const container = DOM.element('div')
+  function handleSelect(coords) {
+    const t = coords[0] / WIDTH
+    onSelect(t)
+  }
+  let isDragging = false
+  const canvas = d3.select(container).append('canvas')
+    .attr('width', WIDTH)
+    .attr('height', HEIGHT)
+    .attr('style', 'cursor: crosshair; border: 1px solid black; border-radius: 2px;')
+    .on('mousedown', function() {
+      isDragging = true
+      handleSelect(d3.mouse(this))
+    })
+    .on('mouseup', () => { isDragging = false; })
+    .on('mousemove', function() {
+      const coords = d3.mouse(this)
+      if (isDragging) {
+        handleSelect(coords)
+      }
+      mutable hoverRGB = colorFn(coords[0] / WIDTH)
+    })
+  const ctx = canvas.node().getContext('2d')
+  const imgData = ctx.getImageData(0, 0, WIDTH, HEIGHT)
+  // Possible optimization: cache d3.range so we're not recalculating it a million times
+  d3.range(WIDTH).forEach(colIdx => {
+    const t = colIdx / WIDTH
+    const rgb = colorFn(t)
+    d3.range(HEIGHT).forEach(rowIdx => {
+      const screenIdx = rowIdx * WIDTH + colIdx
+      const imgDataIdx = 4 * screenIdx
+      imgData.data[imgDataIdx] = rgb[0]
+      imgData.data[imgDataIdx + 1] = rgb[1]
+      imgData.data[imgDataIdx + 2] = rgb[2]
+      imgData.data[imgDataIdx + 3] = 255
+    })
+  });
+  ctx.putImageData(imgData, 0, 0)
+  return container;
+}
+initialRGB = [255, 0, 0]
+initialHSL = rgbToHsl(...initialRGB)
+viewof colorR = Inputs.input(initialRGB[0])
+viewof colorG = Inputs.input(initialRGB[1])
+viewof colorB = Inputs.input(initialRGB[2])
+viewof colorH = Inputs.input(initialHSL[0])
+viewof colorS = Inputs.input(initialHSL[1])
+viewof colorL = Inputs.input(initialHSL[2])
+/**
+ * Update all color values based on current HSL
+ */
+onUpdateHSL = function(h, s, l) {
+  const rgb = hslToRgb(h * .36, s, l)
+  console.log(h)
+  set(viewof colorR, rgb[0])
+  set(viewof colorG, rgb[1])
+  set(viewof colorB, rgb[2])
+}
+/**
+ * Credit to github.com/mjackson Source: https://gist.github.com/mjackson/5311256
+ * Converts an RGB color value to HSL. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes r, g, and b are contained in the set [0, 255] and
+ * returns h, s, and l in the set [0, 1].
+ *
+ * @param   Number  r       The red color value
+ * @param   Number  g       The green color value
+ * @param   Number  b       The blue color value
+ * @return  Array           The HSL representation
+ */
+function rgbToHsl(r, g, b) {
+  r /= 255, g /= 255, b /= 255;
+  var max = Math.max(r, g, b), min = Math.min(r, g, b);
+  var h, s, l = (max + min) / 2;
+  if (max == min) {
+    h = s = 0; // achromatic
+  } else {
+    var d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+  return [ h, s, l ];
+}
+/**
+ * Credit to github.com/mjackson Source: https://gist.github.com/mjackson/5311256
+ * Converts an HSL color value to RGB. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes h, s, and l are contained in the set [0, 1] and
+ * returns r, g, and b in the set [0, 255].
+ *
+ * @param   {number}  h       The hue
+ * @param   {number}  s       The saturation
+ * @param   {number}  l       The lightness
+ * @return  {Array}           The RGB representation
+ */
+function hslToRgb(h, s, l){
+    let r, g, b;
+    if(s == 0){
+        r = g = b = l; // achromatic
+    } else {
+        let q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        let p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+    }
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+}
+/**
+ * Credit github.com/mjackson. Source: https://gist.github.com/mjackson/5311256
+ */
+function hue2rgb(p, q, t) {
+  if (t < 0) t += 1;
+  if (t > 1) t -= 1;
+  if (t < 1/6) return p + (q - p) * 6 * t;
+  if (t < 1/2) return q;
+  if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+  return p;
+}
+// http://howardhinnant.github.io/date_algorithms.html#civil_from_days
+function unix2dote(unix, zone, offset = 719468) {
+  return [(unix ?? Date.now()) / 86400000 + (
+    zone = zone ?? -Math.round(
+      (new Date).getTimezoneOffset() / 144)
+    ) / 10 + offset, zone]
+}
+function dote2date(dote, zone = 0) {
+  const cote = Math.floor((
+      dote >= 0 ? dote
+      : dote - 146096
+    ) / 146097),
+  dotc = dote - cote * 146097,
+  yotc = Math.floor((dotc
+    - Math.floor(dotc / 1460)
+    + Math.floor(dotc / 36524)
+    - Math.floor(dotc / 146096)
+  ) / 365);
+  return [
+    yotc + cote * 400,
+    dotc - (yotc * 365
+      + Math.floor(yotc / 4)
+      - Math.floor(yotc / 100)
+  ), zone]}
+dz = unix2dote(now, 0)
+ydz = dote2date(...dz)
+decYear = ydz[0]
+decDate = Math.floor(ydz[1])
+decTime = ydz[1] % 1
+decDek = Math.floor(decDate / 10)
+decDod = decDate % 10
+decMoty = Math.floor((5 * decDate + 2) / 153)
+decDotm = Math.floor(decDate - (153 * decMoty + 2) / 5 + 1)
+isoYear = decYear + (decMoty > 9)
+month = decMoty < 10 ? decMoty + 3 : decMoty - 9
+decHour = decTime * 24
+decMinute = (decHour % 1) * 60
+decSecond = (decMinute % 1) * 60
+isoHour = Math.floor(decHour)
+isoMinute = Math.floor(decMinute)
+isoSecond = Math.floor(decSecond)
+isLeap = decYear % 4 == 0 && decYear % 100 != 0 || decYear % 400 == 0;
+timezones = FileAttachment("../asset/timezones.json").json()
+zones = topojson.feature(timezones, timezones.objects.timezones).features
+mesh = topojson.mesh(timezones, timezones.objects.timezones)
+color = d3.scaleSequential(d3.interpolateRdBu).domain([14, -12])
+// https://observablehq.com/@enjalot/draggable-world-map-coordinates-input
+// https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea
+function worldMapCoordinates(config = {}, dimensions) {
+  var n_point;
+  var lonA, lonB, latA, latB;
+  const {
+    value = [], title, description, width = dimensions[0]
+  } = Array.isArray(config) ? {value: config} : config;
+  const height = dimensions[1];
+  [lonA, latA] = value[0];
+  [lonB, latB] = value[1];
+  lonA = lonA != null ? lonA : 90;
+  latA = latA != null ? latA : 0.025;
+  lonB = lonB != null ? lonB : -90;
+  latB = latB != null ? latB : 36;
+  const formEl = html`<form style="width: ${width}px;"></form>`;
+  const context = DOM.context2d(width, height);
+  const canvas = context.canvas;
+  const projection = config[2]
+    .precision(0.1)
+    .fitSize([width, height], { type: "Sphere" }).rotate([-148, 0]);
+  const path = d3.geoPath(projection, context).pointRadius(2.5);
+  formEl.append(canvas);
+  function fillMesh(f) {
+    context.beginPath();
+    path(f);
+    context.fillStyle = color(f.properties.zone);
+    context.fill();
+  }
+  function draw(lon0, lat0, lon1, lat1) {
+    if (!utctoggle) {
+      context.beginPath(); path({type: "Sphere"});
+      context.fillStyle = window.darkmode ? "#007FFF" : mapcolors.ocean;
+      context.fill();
+    }
+    if (utctoggle) {
+      zones.map(f => fillMesh(f))
+    }
+    context.beginPath();
+    path(land);
+    if (!utctoggle) {
+      context.fillStyle = window.darkmode ? "green" : mapcolors.land;
+      context.fill();
+    }
+    context.strokeStyle = `#000`;
+    context.stroke();
+    if (bordertoggle) {
+      context.beginPath();
+      path(borders);
+      context.lineWidth = 1.25;
+      context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+      context.stroke();
+    }
+    if (utctoggle) {
+      context.beginPath();
+      path(mesh);
+      context.lineWidth = 1.25;
+      context.strokeStyle = `#999`;
+      context.stroke();
+    }
+    if (gridtoggle) {
+      context.beginPath();
+      path(graticule);
+      context.lineWidth = 1.25;
+      context.strokeStyle = window.darkmode ? "#888" : "#222";
+      context.stroke();
+      // context.font = width < 760 ? "12px serif" : "21px serif";
+      // context.fillStyle = `#000`;
+      // d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 27.5])));
+      // d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -48])));
+      // d3.range(-18, 336 + 1, 36).map(x => context.fillText(formatLongitude(x), ...projection([x, 90])));
+      // d3.range(-18, 336 + 1, 36).map(x => context.fillText(formatLongitude(x), ...projection([x, -90])));
+    }
+    if (suntoggle) {
+      context.beginPath();
+      path(night);
+      context.fillStyle = "rgba(0,0,255,0.3)";
+      context.fill();
+      context.beginPath();
+      path.pointRadius(width / 84 + 5);
+      path({type: "Point", coordinates: sun});
+      context.strokeStyle = "#0009";
+      context.fillStyle = "#ff0b";
+      context.lineWidth = 1;
+      context.stroke();
+      context.fill();
+    }
+    if (lon0 != null && lat0 != null) {
+      const pointPath = { type: "MultiPoint", coordinates: [[lon0, lat0]], id: "point0test"};
+      context.beginPath();
+      path.pointRadius(point_radius_2);
+      path(pointPath);
+      context.fillStyle = window.darkmode ? "#CC042C" : "pink";
+      context.fill();
+      context.strokeStyle = window.darkmode ? "white" : "black";
+      context.stroke();
+    }
+    if (lon1 != null && lat1 != null) {
+      const pointPath = { type: "MultiPoint", coordinates: [[lon1, lat1]] };
+      context.beginPath();
+      path.pointRadius(point_radius_2);
+      path(pointPath);
+      context.fillStyle = window.darkmode ? "blue" : "cyan";
+      context.fill();
+      context.strokeStyle = window.darkmode ? "white" : "black";
+      context.stroke();
+    }
+    // We draw the path between 2 points
+    var interpolation = d3.geoInterpolate([lon0,lat0],[lon1,lat1]);
+    var nb_points =  d3.geoDistance([lon0,lat0],[lon1,lat1])*20;
+    for(let i = 1; i<nb_points; i++) {
+      const pointPath = { type: "MultiPoint", coordinates: [interpolation(i/nb_points)] };
+      path.pointRadius(point_radius);
+      context.beginPath(),
+      context.fillStyle = window.darkmode ? "#FF420E" : "orange",
+      path(pointPath),
+      context.strokeStyle = window.darkmode ? "white" : "black";
+      context.fill(),
+      context.stroke();
+    }
+  }
+  draw(lonA, latA, lonB, latB);
+  canvas.onclick = function(ev) {
+    const { offsetX, offsetY } = ev;
+    var coords = projection.invert([offsetX, offsetY]);
+    if(n_point==0){
+    lonA = +coords[0].toFixed(2);
+    latA = +coords[1].toFixed(2);
+      n_point = 1;
+    }else{
+    lonB = +coords[0].toFixed(2);
+    latB = +coords[1].toFixed(2);
+      n_point = 0;
+    }
+    const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
+    set(viewof colorH, point0bear)
+    table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
+    table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
+    table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
+    table.rows[2].cells[2].innerHTML = createCellDiv(lati2turn(latB) % 250, 2.5)
+    table.rows[1].cells[3].innerHTML = createCellDiv(point0bear, 10)
+    table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
+    draw(lonA, latA, lonB, latB);
+    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+  };
+  function resetlatlon() {
+    lonA = -90;
+    latA = 0;
+    lonB = -90;
+    latB = 36;
+    set(viewof bordertoggle, false);
+    set(viewof gridtoggle, false);
+    set(viewof suntoggle, false);
+    set(viewof utctoggle, false);
+    set(viewof select, projections.find(t => t.name === "Equirectangular (plate carrée)"));
+    set(viewof colorH, 0)
+    table.rows[1].cells[1].innerHTML = createCellDiv(800, 10)
+    table.rows[2].cells[1].innerHTML = createCellDiv(800, 10)
+    table.rows[1].cells[2].innerHTML = createCellDiv(0, 2.5)
+    table.rows[2].cells[2].innerHTML = createCellDiv(100, 2.5)
+    table.rows[1].cells[3].innerHTML = createCellDiv(0, 10)
+    table.rows[2].cells[3].innerHTML = createCellDiv(500, 10)
+    draw(lonA, latA, lonB, latB);
+    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+  }
+  table.onkeyup = function(ev) {
+   if ([
+    // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
+      9, 13, 27
+    ].includes(ev.which)) {
+      lonA = turn2long(liveTable[0].Milliparallel);
+      latA = turn2degr(liveTable[0].Millimeridian % 250);
+      lonB = turn2long(liveTable[1].Milliparallel);
+      latB = turn2degr(liveTable[1].Millimeridian % 250);
+      const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
+      set(viewof colorH, point0bear)
+      table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
+      table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
+      table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
+      table.rows[2].cells[2].innerHTML = createCellDiv(lati2turn(latB) % 250, 2.5)
+      table.rows[1].cells[3].innerHTML = createCellDiv(point0bear, 10)
+      table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
+      draw(lonA, latA, lonB, latB);
+      canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+    } else if ([
+    // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
+      8, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
+    ].includes(ev.which)) {
+      lonA = turn2long(liveTable[0].Milliparallel);
+      latA = turn2degr(liveTable[0].Millimeridian % 250);
+      lonB = turn2long(liveTable[1].Milliparallel);
+      latB = turn2degr(liveTable[1].Millimeridian % 250);
+      const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
+      set(viewof colorH, point0bear)
+      table.rows[1].cells[3].innerHTML = createCellDiv(point0bear, 10)
+      table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
+      draw(lonA, latA, lonB, latB);
+      canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+    }
+  }
+  rstbtn.on('click', resetlatlon);
+  document.getElementsByClassName("quarto-color-scheme-toggle")[0].onclick = function (e) {
+    window.quartoToggleColorScheme();
+    window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
+    draw(lonA, latA, lonB, latB);
+    return false;
+  };
+  const form = input({
+    type: "worldMapCoordinates",
+    title,
+    description,
+    display: v => "",
+     // html`<div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: 13px sans-serif; margin-bottom: 5px;">
+     //       <span style="color: ${color_A}">Longitude: ${lonA != null ? lonA.toFixed(2) : ""}</span>
+     //       &nbsp; &nbsp;
+     //       <span style="color: ${color_A}">Latitude: ${latA != null ? latA.toFixed(2) : ""} </span>
+     //     </div>
+     //     <div style="width: ${width}px; white-space: nowrap; color: #444; text-align: center; font: 13px sans-serif; margin-bottom: 5px;">
+     //       <span style="color: ${color_B}">Longitude: ${lonB != null ? lonB.toFixed(2) : ""}</span>
+     //       &nbsp; &nbsp;
+     //       <span style="color: ${color_B}">Latitude: ${latB != null ? latB.toFixed(2) : ""}</span>
+     //     </div>`,
+    getValue: () => [[lonA != null ? lonA : null, latA != null ? latA : null], [lonB != null ? lonB : null, latB != null ? latB : null]],
+    form: formEl
+  });
+  return form;
+}
+point_radius = width / 900 * mapsize / 100 + 3
+point_radius_2 = width / 150 * mapsize / 100 + 3
+Place_A = coordinates[0]
+Place_B = coordinates[1]
+distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
+distance_mtaur = Math.floor(distance_km / 40)
+traveltime = Math.floor(distance_mtaur / travelspeed * 1000)
+nb_points = Math.round(distance_km/150)
+d3format = require("d3-format@1")
+function input(config) {
+  let {
+    form,
+    type = "text",
+    attributes = {},
+    action,
+    getValue,
+    title,
+    description,
+    format,
+    display,
+    submit,
+    options
+  } = config;
+  const wrapper = html`<div></div>`;
+  if (!form)
+    form = html`<form>
+	<input name=input type=${type} />
+  </form>`;
+  Object.keys(attributes).forEach(key => {
+    const val = attributes[key];
+    if (val != null) form.input.setAttribute(key, val);
+  });
+  if (submit)
+    form.append(
+      html`<input name=submit type=submit style="margin: 0 0.75em" value="${
+        typeof submit == "string" ? submit : "Submit"
+      }" />`
+    );
+  form.append(
+    html`<output name=output style="font: 14px Menlo, Consolas, monospace; margin-left: 0.5em;"></output>`
+  );
+  if (title)
+    form.prepend(
+      html`<div style="font: 700 0.9rem sans-serif; margin-bottom: 3px;">${title}</div>`
+    );
+  if (description)
+    form.append(
+      html`<div style="font-size: 0.85rem; font-style: italic; margin-top: 3px;">${description}</div>`
+    );
+  if (format)
+    format = typeof format === "function" ? format : d3format.format(format);
+  if (action) {
+    action(form);
+  } else {
+    const verb = submit
+      ? "onsubmit"
+      : type == "button"
+      ? "onclick"
+      : type == "checkbox" || type == "radio"
+      ? "onchange"
+      : "oninput";
+    form[verb] = e => {
+      e && e.preventDefault();
+      const value = getValue ? getValue(form.input) : form.input.value;
+      if (form.output) {
+        const out = display ? display(value) : format ? format(value) : value;
+        if (out instanceof window.Element) {
+          while (form.output.hasChildNodes()) {
+            form.output.removeChild(form.output.lastChild);
+          }
+          form.output.append(out);
+        } else {
+          form.output.value = out;
+        }
+      }
+      form.value = value;
+      if (verb !== "oninput")
+        form.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+    };
+    if (verb !== "oninput")
+      wrapper.oninput = e => e && e.stopPropagation() && e.preventDefault();
+    if (verb !== "onsubmit") form.onsubmit = e => e && e.preventDefault();
+    form[verb]();
+  }
+  while (form.childNodes.length) {
+    wrapper.appendChild(form.childNodes[0]);
+  }
+  form.append(wrapper);
+  return form;
+}
+// https://observablehq.com/@fil/d3-projections
+projections = [
+  { name: "Airocean", value: d3.geoAirocean },
+  { name: "Airy’s minimum error", value: d3.geoAiry },
+  { name: "Aitoff", value: d3.geoAitoff },
+  { name: "American polyconic", value: d3.geoPolyconic },
+  { name: "Armadillo", value: d3.geoArmadillo, options: { clip: { type: "Sphere" } } },
+  { name: "August", value: d3.geoAugust },
+  { name: "azimuthal equal-area", value: d3.geoAzimuthalEqualArea },
+  { name: "azimuthal equidistant", value: d3.geoAzimuthalEquidistant },
+  { name: "Baker dinomic", value: d3.geoBaker },
+  { name: "Berghaus’ star", value: d3.geoBerghaus, options: { clip: { type: "Sphere" } } },
+  { name: "Bertin’s 1953", value: d3.geoBertin1953 },
+  { name: "Boggs’ eumorphic", value: d3.geoBoggs },
+  { name: "Boggs’ eumorphic (interrupted)", value: d3.geoInterruptedBoggs, options: { clip: { type: "Sphere" } } },
+  { name: "Bonne", value: d3.geoBonne },
+  { name: "Bottomley", value: d3.geoBottomley },
+  { name: "Bromley", value: d3.geoBromley },
+  { name: "Butterfly (gnomonic)", value: d3.geoPolyhedralButterfly },
+  { name: "Butterfly (Collignon)", value: d3.geoPolyhedralCollignon },
+  { name: "Butterfly (Waterman)", value: d3.geoPolyhedralWaterman },
+  { name: "Cahill-Keyes", value: d3.geoCahillKeyes },
+  { name: "Collignon", value: d3.geoCollignon },
+  { name: "conic equal-area", value: d3.geoConicEqualArea },
+  { name: "conic equidistant", value: d3.geoConicEquidistant },
+  { name: "Craig retroazimuthal", value: d3.geoCraig },
+  { name: "Craster parabolic", value: d3.geoCraster },
+  { name: "Cox", value: d3.geoCox },
+  { name: "cubic", value: d3.geoCubic },
+  { name: "cylindrical equal-area", value: d3.geoCylindricalEqualArea },
+  { name: "cylindrical stereographic", value: d3.geoCylindricalStereographic },
+  { name: "dodecahedral", value: d3.geoDodecahedral },
+  { name: "Eckert I", value: d3.geoEckert1 },
+  { name: "Eckert II", value: d3.geoEckert2 },
+  { name: "Eckert III", value: d3.geoEckert3 },
+  { name: "Eckert IV", value: d3.geoEckert4 },
+  { name: "Eckert V", value: d3.geoEckert5 },
+  { name: "Eckert VI", value: d3.geoEckert6 },
+  { name: "Eisenlohr conformal", value: d3.geoEisenlohr },
+  { name: "Equal Earth", value: d3.geoEqualEarth },
+  { name: "Equirectangular (plate carrée)", value: d3.geoEquirectangular },
+  { name: "Fahey pseudocylindrical", value: d3.geoFahey },
+  { name: "flat-polar parabolic", value: d3.geoMtFlatPolarParabolic },
+  { name: "flat-polar quartic", value: d3.geoMtFlatPolarQuartic },
+  { name: "flat-polar sinusoidal", value: d3.geoMtFlatPolarSinusoidal },
+  { name: "Foucaut’s stereographic equivalent", value: d3.geoFoucaut },
+  { name: "Foucaut’s sinusoidal", value: d3.geoFoucautSinusoidal },
+  { name: "general perspective", value: d3.geoSatellite },
+  { name: "Gingery", value: d3.geoGingery, options: { clip: { type: "Sphere" } } },
+  { name: "Ginzburg V", value: d3.geoGinzburg5 },
+  { name: "Ginzburg VI", value: d3.geoGinzburg6 },
+  { name: "Ginzburg VIII", value: d3.geoGinzburg8 },
+  { name: "Ginzburg IX", value: d3.geoGinzburg9 },
+  { name: "Goode’s homolosine", value: d3.geoHomolosine},
+  { name: "Goode’s homolosine (interrupted)", value: d3.geoInterruptedHomolosine, options: { clip: { type: "Sphere" } }  },
+  { name: "gnomonic", value: d3.geoGnomonic },
+  { name: "Gringorten square", value: d3.geoGringorten },
+  { name: "Gringorten quincuncial", value: d3.geoGringortenQuincuncial },
+  { name: "Guyou square", value: d3.geoGuyou },
+  { name: "Hammer", value: d3.geoHammer },
+  { name: "Hammer retroazimuthal", value: d3.geoHammerRetroazimuthal, options: { clip: { type: "Sphere" } } },
+  { name: "HEALPix", value: d3.geoHealpix, options: { clip: { type: "Sphere" } } },
+  { name: "Hill eucyclic", value: d3.geoHill },
+  { name: "Hufnagel pseudocylindrical", value: d3.geoHufnagel },
+  { name: "icosahedral", value: d3.geoIcosahedral },
+  { name: "Imago", value: d3.geoImago },
+  { name: "Kavrayskiy VII", value: d3.geoKavrayskiy7 },
+  { name: "Lagrange conformal", value: d3.geoLagrange },
+  { name: "Larrivée", value: d3.geoLarrivee },
+  { name: "Laskowski tri-optimal", value: d3.geoLaskowski },
+  { name: "Loximuthal", value: d3.geoLoximuthal },
+  { name: "Mercator", value: d3.geoMercator },
+  { name: "Miller cylindrical", value: d3.geoMiller },
+  { name: "Mollweide", value: d3.geoMollweide },
+  { name: "Mollweide (Goode’s interrupted)", value: d3.geoInterruptedMollweide, options: { clip: { type: "Sphere" } } },
+  { name: "Mollweide (interrupted hemispheres)", value: d3.geoInterruptedMollweideHemispheres, options: { clip: { type: "Sphere" } } },
+  { name: "Natural Earth", value: d3.geoNaturalEarth1 },
+  { name: "Natural Earth II", value: d3.geoNaturalEarth2 },
+  { name: "Nell–Hammer", value: d3.geoNellHammer },
+  { name: "Nicolosi globular", value: d3.geoNicolosi },
+  { name: "orthographic", value: d3.geoOrthographic },
+  { name: "Patterson cylindrical", value: d3.geoPatterson },
+  { name: "Peirce quincuncial", value: d3.geoPeirceQuincuncial },
+  { name: "rectangular polyconic", value: d3.geoRectangularPolyconic },
+  { name: "Robinson", value: d3.geoRobinson },
+  { name: "sinusoidal", value: d3.geoSinusoidal },
+  { name: "sinusoidal (interrupted)", value: d3.geoInterruptedSinusoidal, options: { clip: { type: "Sphere" } } },
+  { name: "sinu-Mollweide", value: d3.geoSinuMollweide },
+  { name: "sinu-Mollweide (interrupted)", value: d3.geoInterruptedSinuMollweide, options: { clip: { type: "Sphere" } } },
+  { name: "stereographic", value: d3.geoStereographic },
+  { name: "Lee’s tetrahedal", value: d3.geoTetrahedralLee },
+  { name: "Times", value: d3.geoTimes },
+  { name: "Tobler hyperelliptical", value: d3.geoHyperelliptical },
+  { name: "transverse Mercator", value: d3.geoTransverseMercator },
+  { name: "Van der Grinten", value: d3.geoVanDerGrinten },
+  { name: "Van der Grinten II", value: d3.geoVanDerGrinten2 },
+  { name: "Van der Grinten III", value: d3.geoVanDerGrinten3 },
+  { name: "Van der Grinten IV", value: d3.geoVanDerGrinten4 },
+  { name: "Wagner IV", value: d3.geoWagner4 },
+  { name: "Wagner VI", value: d3.geoWagner6 },
+  { name: "Wagner VII", value: d3.geoWagner7 },
+  { name: "Werner", value: d3.geoBonne ? () => d3.geoBonne().parallel(90) : null },
+  { name: "Wiechel", value: d3.geoWiechel },
+  { name: "Winkel tripel", value: d3.geoWinkel3 }
+]
+mapcolors = ({
+  night: "#719fb6",
+  day: "#ffe438",
+  grid: "#4b6a79",
+  ocean: "#adeeff",
+  land: "#90ff78",
+  sun: "#ffe438"
+})
+function long2turn(degrees = -180, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return (((degrees %= 360) < 0 ? degrees + 360 : degrees) + 18) / (360 / 10**e) % 10**e;
+}
+function turn2degr(turns = -500, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return turns % 10**e * (360 / 10**e)
+}
+function turn2long(turns = -500, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return turns % 10**e * (360 / 10**e) - 18
+}
+function long2zone(degrees = -180) { return Math.floor(long2turn(degrees, 1)); }
+function lati2turn(degrees = -180, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return (degrees %= 360) / (360 / 10**e) % 10**e;
+}
+projection = select ? select.value() : d3.geoEquirectangular()
+sun = {
+  const now = new Date;
+  const day = new Date(+now).setUTCHours(0, 0, 0, 0);
+  const t = solar.century(now);
+  const longitude = (day - now) / 864e5 * 360 - 180;
+  return [longitude - solar.equationOfTime(t) / 4, solar.declination(t)];
+}
+night = d3.geoCircle().radius(90).center(antipode(sun))()
+antipode = ([longitude, latitude]) => [longitude + 180, -latitude]
+height = {
+  const [[x0, y0], [x1, y1]] = d3.geoPath(projection.fitWidth(width, sphere)).bounds(sphere);
+  const dy = Math.ceil(y1 - y0), l = Math.min(Math.ceil(x1 - x0), dy);
+  projection.scale(projection.scale() * (l - 1) / l).precision(0.2);
+  return dy;
+}
+d3 = require("d3@5", "d3-array@3", "d3-geo@3", "d3-geo-projection@4", "d3-geo-polygon@1.8")
+sphere = ({type: "Sphere"})
+graticule = d3.geoGraticule().stepMinor([36, 36]).stepMajor([36, 36])()
+graticule.coordinates = graticule.coordinates.map(
+  i => i.map(j => j.map((k, index, arr) => i.length === 3 && index === 0 ? k - 18 : k))
+)
+land = topojson.feature(world, world.objects.land)
+world = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/land-50m.json").then(response => response.json())
+topojson = require("topojson-client@3")
+solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
+borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
+countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
+piecolors = [
+  "#ff4000", // 15
+  "#ff8000", // 30
+  "#ffbf00", // 45
+  "#ffff00", // 60
+  '#bfff00', // 75
+  '#80ff00', // 90
+  '#40ff00', // 105
+  '#00ff00', // 120
+  '#00ff40', // 135
+  '#00ff80', // 150
+  '#00ffbf', // 165
+  '#00ffff', // 180
+  '#00bfff', // 195
+  '#0080ff', // 210
+  '#0040ff', // 225
+  '#0000ff', // 240
+  '#4000ff', // 255
+  '#8000ff', // 270
+  '#bf00ff', // 285
+  '#ff00ff', // 300
+  '#ff00bf', // 315
+  '#ff0080', // 330
+  '#ff0040', // 345
+  '#f00',    // 0
+]
+viewof size = Inputs.range([50, 700], {
+  value: 300,
+  step: 20,
+  label: 'size'
+})
+viewof numMajorTicks = Inputs.range([0, 45], {
+  value: 6,
+  step: 2,
+  label: "Major ticks"
+})
+viewof numMinorTicks = Inputs.range([0, 10], {
+  value: 2,
+  step: 1,
+  label: "Minor ticks"
+})
+function repeat(component, N, initialAngle=0) {
+  // NOTE: if component is a function, it will be called with (angle, i)
+  if (N <= 0) return "";
+  let result = [];
+  for (let i = 0; i < N; i++) {
+    let angle = (360 / N) * i + initialAngle;
+    let el = typeof component === 'function'? component(angle, i) : component;
+    result.push(`<g transform="rotate(${angle})">${el}</g>`);
+  }
+  return result.join("");
+}
+function tick(radius, length, color='black') {
+  return `<path d="M 0,${-radius} l 0,${-length}" fill="none" stroke="${color}" stroke-width="1" />`;
+}
+function directionMarker(radius, fontSize) { return (angle, _) => {
+  let label = {0: 'N', 45: 'NE', 90: 'E', 135: 'SE', 180: 'S', 225: 'SW', 270: 'W', 315: 'NW'}[angle] ?? '??';
+  return `<text y="${-radius-(margin/2)}" font-size="${fontSize}" text-anchor="middle" dy=".36em">${label}</text>`;
+};
+}
+function turnMarker(radius, fontSize) { return (angle, _) => {
+  let label = {0: '0', 45: '125', 90: '250', 135: '375', 180: '500', 225: '625', 270: '750', 315: '875'}[angle] ?? '??';
+  return `<text y="${-radius-(margin/2)}" font-size="${fontSize}" text-anchor="middle" dy="-0.36em">${label}</text>`;
+  };
+}
+function pie(radius, width, narrowness=1.0, piecolors) {
+  return (_, i) => `<path id="piepath" d="M 0,0 L ${-width},${-radius} A ${width} ${width/2} 0 0 1 ${width} ${-radius} z" fill="${piecolors[i]}" stroke="black" stroke-width="0.5"/>`;
+}
+margin = size / 14
+padding = 42
+radius = size/2 - margin - padding
+window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
+```
+
+```{=html}
+<style>
+#maptable table * {
+  font-size: 18px;
+  padding: 0px 5px 0px 5px;
+}
+div#projselect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div#projselect > div, div#sizeinput > div {
+  overflow-x: clip;
+}
+div#sizeinput  label {
+  width: 24px;
+}
+button#rstbtn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+div#distmap {
+  margin-bottom: -28px;
+}
+#sizeinput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#speedinput input[type="number"], #sizeinput input[type="number"] {
+  width: 56px;
+}
+#speedinput input[type="range"], #sizeinput input[type="range"] {
+  width: 72%;
+}
+.colorcomponent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div#colorslider > div {
+  min-width: 360px;
+}
+div#colorslider input[type="number"] {
+  width: 105px;
+}
+div#distmap {
+  display: flex;
+  justify-content: center;
+  overflow-x: visible;
+}
+div#maptable {
+  display: flex;
+  justify-content: center;
+  overflow-x: visible;
+}
+div#maptable form {
+  padding: 0px;
+}
+div#toggles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: -16px;
+  margin-bottom: -9px;
+}
+div#toggles * {
+  overflow: visible;
+}
+div#toggles form.oi-3a86ea-toggle#bordertoggle {
+  width: 100px;
+}
+div#toggles form.oi-3a86ea-toggle#bordertoggle > label {
+  width: 50px;
+}
+div#toggles form.oi-3a86ea-toggle#gridtoggle {
+  width: 80px;
+}
+div#toggles form.oi-3a86ea-toggle#gridtoggle > label {
+  width: 31px;
+}
+div#toggles form.oi-3a86ea-toggle#suntoggle {
+  width: 75px;
+}
+div#toggles form.oi-3a86ea-toggle#suntoggle > label {
+  width: 28px;
+}
+div#toggles form.oi-3a86ea-toggle#utctoggle {
+  width: 80px;
+}
+div#toggles form.oi-3a86ea-toggle#utctoggle > label {
+  width: 32px;
+}
+div#toggles form.oi-3a86ea-toggle > label {
+  margin-top: -4px;
+}
+div#toggles input.oi-3a86ea-input[type="checkbox"] {
+  margin-top: 1px;
+}
+div#toggles button#rstbtn {
+  overflow: visible;
+  margin-top: -6px;
+}
+div:has(div.description) {
+  display: none;
+}
+h4.hiddenheading {
+  display: none;
+}
+</style>
+```
