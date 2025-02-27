@@ -63,26 +63,16 @@ In addition to the [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:
 
 To determine the Dec time zone (z) in a location, we obtain its longitude in [deciparallels]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a circle of longitude"} (dλ) and then apply the [floor function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x): z = &LeftFloor;dλ&RightFloor;. Dec time zones are separated by the vertical lines shown on the map🗺️above⬆️when the "Grid" toggle✅input is enabled. You can compare Dec and UTC time zones by enabling both the "Grid" and "UTC" toggle✅inputs.
 
-or use  Any  of a turn can be labeled in this way, but this label works . The ten Dec time zones are .
-
-
-and [submultiple](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer) turn values can be useful for labeling. 
-
 are [dyadic rationals](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20number%20that%20can%20be%20expressed%20as%20a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two) and thus are easy to express as In contrast, the three [additive](https://en.wikipedia.org/wiki/Primary_color#:~:text=summing%20the%20spectral%20power%20distributions%20(the%20intensity%20of%20each%20wavelength)%20of%20the%20individual%20light%20sources) ([red]{.red}=0t=0°, [green]{.lime}=1/3t=.[3]{style="text-decoration-line:overline;"}t=120°, [blue]{.azul}=2/3t=.[6]{style="text-decoration-line:overline;"}t=240°) and three [subtractive](https://en.wikipedia.org/wiki/Primary_color#:~:text=predicts%20the%20resultant%20spectral%20power%20distribution%20of%20light%20filtered%20through%20overlaid%20partially%20absorbing%20materials) ([yellow]{.yellow}=1/6t=.1[6]{style="text-decoration-line:overline;"}t=60°, [cyan]{.cyan}=1/2t=0.5t=180°, [magenta]{.magenta}=5/6t=.8[3]{style="text-decoration-line:overline;"}t=300°) [primary color](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors)🎨hues, integer milliturns need to be rounded to the nearest degree.
 
 Unlike milliturns, degrees can represent [repeating decimal numbers](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20number%20whose%20digits%20are%20eventually%20periodic%20(that%20is%2C%20after%20some%20place%2C%20the%20same%20sequence%20of%20digits%20is%20repeated%20forever)) as integers and thus are useful to specifying primary colors ([red]{.red}=0°, [green]{.lime}, [blue]{.azul}=240°, [yellow]{.yellow}, [cyan]{.cyan}, [magenta]{.magenta}).
-
-The indicated and the chosen direction can be translated into the cardinal direction rainbowDir . a from , \${rainbowMtr}, into a the  or course can be translated into a cardinal direction: . and are shown in milliturns. is also controlled by to orient the selected \${rainbowHue1} upward. The [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model) models use degrees instead of milliturns so the milliturn shown by the range🎚️input, is rounded to the nearest degree, \${rainbowDeg}, and then used as part of an HSL triplet to obtain 
-milliturn value, , represents a 
-
-The connection between color and 
 
 At an average ground speed of 500 [milliomegars]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of the circumference of Earth"} (mv), half the equatorial speed of the rotation of Earth🌏on its axis, an airplane✈️could fly between the default positions📍of the points in 200 [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} (md).
 
 and [azimuth](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=the%20angle%20of%20rotation%20(in%20degrees)%20in%20the%20unit%20circle%20over%20the%20horizontal%20plane)  
 To travel the  between the default positions📍of the two points in 
 
-these two points are : and the course in  that we would need . [bearings](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object) of these points . To cross the shortest distance between the two points, we would nee Inversely, the default bearing of Point 0 is 500 $\text m\gamma$ (South) from the perspective of Point 1.
+[bearings](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object) of these points . To cross the shortest distance between the two points, we would nee Inversely, the default bearing of Point 0 is 500 $\text m\gamma$ (South) from the perspective of Point 1.
 
 At an average speed of \${travelspeed} $\text m\omega \text r$, we could cover the \${distance_mtaur} $\text m\tau r$ between Points [0]{.point0} and [1]{.point1} in ${traveltime} [milliday]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} (md).
 

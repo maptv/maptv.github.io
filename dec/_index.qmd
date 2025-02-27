@@ -578,7 +578,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath();
       path(graticule);
       context.lineWidth = 1.25;
-      context.strokeStyle = window.darkmode ? "#888" : "#222";
+      context.strokeStyle = utctoggle || !window.darkmode ? "#000" : "#fff";
       context.stroke();
       // context.font = width < 760 ? "12px serif" : "21px serif";
       // context.fillStyle = `#000`;
