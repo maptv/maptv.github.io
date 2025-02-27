@@ -1,10 +1,6 @@
 # Dec
 Martin Laptev
-2024+362
-
-- [Turns](#turns)
-- [Hue](#hue)
-- [Bearing](#bearing)
+2024+363
 
 <div id="decnav">
 
@@ -17,8 +13,6 @@ style="width:8.64in;height:0.98in" />
 
 </div>
 
-# Turns
-
 This section of my website focuses on Dec, a [measurement
 system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)
 that [I](https://maptv.github.io) created. All Dec measurements are
@@ -26,8 +20,8 @@ based on
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
 (t). When measuring
 [angles](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐,
-t represents a full⭕️circle and equals 2*π*
-([*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
+t represents a full⭕️circle and equals 2π
+([τ](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
 [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units)
 (rad) or 360
 [degrees](https://en.wikipedia.org/wiki/Degree_(angle)#:~:text=a%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20360%20degrees)
@@ -45,8 +39,8 @@ of the Earth🌏around the Sun☀️, and d ≈ the duration of
 [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
 of the Earth🌍on its
 [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
-Notably, $\text c\over\text d$ = $\omega \text r$ =
-[v](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity)
+Notably, $\text c\over\text d$ = [v =
+ωr](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity)
 ≈ the speed of the rotation of Earth🌎at the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
@@ -54,25 +48,21 @@ The table below provides the current
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a circle of longitude">milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)</span>
-($\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$)
+([mλ](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda))
 and
 [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a circle of latitude">milli[meridians](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude)</span>
-($\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$)
+([mφ](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
 of Points <span class="point0">0</span> and
 <span class="point1">1</span> on the map🗺️beneath the table. By default,
 <span class="point0">Point 0</span> is at
-<span class="point0">800</span>
-$\text m\href{https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda}{\lambda}$
-and <span class="point0">0</span>
-$\text m\href{https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi}{\phi}$,
+<span class="point0">800</span> mλ and <span class="point0">0</span> mφ,
 which is near the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
 of Ecuador🇪🇨, and <span class="point1">Point 1</span> is at
-<span class="point1">800</span> $\text m\lambda$ and
-<span class="point1">100</span> $\text m\phi$, which is in the United
-States🇺🇸city of [Memphis,
+<span class="point1">800</span> mλ and <span class="point1">100</span>
+mφ, which is in the United States🇺🇸city of [Memphis,
 Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
 
 In the table, the geographic coordinates of each point are followed by
@@ -80,9 +70,9 @@ the
 [course](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a compass rose">milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)</span>
-($\text m\href{https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha}{\alpha}$)
+[mα](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)
 we would need to maintain to travel🧳the shortest distance📏to the other
-point on the map🗺️. The default courses in $\text m\alpha$ are
+point on the map🗺️. The default courses in mα are
 <span class="point0">0</span> (North) from <span class="point0">Point
 0</span> to <span class="point1">Point 1</span> and
 <span class="point1">500</span> (South) from <span class="point1">Point
@@ -91,7 +81,7 @@ are 100 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a taur">millitaurs</span> (mc) apart.
 
 Click the map🗺️to move the points. To return the points to their
-original positions📍, click the “Reset” button above the map🗺️. Next to
+original positions📍, click the “Reset” button above the table. Next to
 the “Reset” button, there are
 [toggle](https://observablehq.com/framework/inputs/toggle)✅inputs that
 add country borders, a grid of Dec
@@ -99,8 +89,8 @@ add country borders, a grid of Dec
 [solar
 terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
 shading, a yellow🟡dot denoting where the Sun☀️is directly overhead
-(${Math.floor(long2turn(sun\[0\], 3))} $\text m\lambda$,
-${Math.floor(lati2turn(sun\[1\], 3))} $\text m\phi$), and
+(${Math.floor(long2turn(sun\[0\]))} mλ,
+${Math.floor(lati2turn(sun\[1\]))} mφ), and
 [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 time zones.
 
@@ -124,6 +114,13 @@ viewof select = Inputs.select(
 
 ``` {ojs}
 //| echo: false
+//| label: sizeinput
+//| column: margin
+viewof mapsize = Inputs.range([0, 100], {label: "Size", value: 100, step: 1})
+```
+
+``` {ojs}
+//| echo: false
 //| label: maptable
 table = createTable([
   { Point: 0, Milliparallel: 800, Millimeridian: 0, Milliwindrose: 0 },
@@ -141,7 +138,7 @@ table = createTable([
 //| label: distmap
 // https://observablehq.com/@d3/solar-terminator
 // https://observablehq.com/@mbostock/time-zones
-viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].childNodes[0].innerText), turn2degr(table.rows[1].cells[2].childNodes[0].innerText % 250)], [turn2long(table.rows[2].cells[1].childNodes[0].innerText), turn2degr(table.rows[2].cells[2].childNodes[0].innerText % 250)], projection], [width, height])
+viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].childNodes[0].innerText), turn2degr(table.rows[1].cells[2].childNodes[0].innerText % 250)], [turn2long(table.rows[2].cells[1].childNodes[0].innerText), turn2degr(table.rows[2].cells[2].childNodes[0].innerText % 250)], projection], [width, height * mapsize / 100])
 //viewof coordinates = worldMapCoordinates([
 //  [turn2long(table.rows[1].cells[1].childNodes[0].innerText), turn2degr(table.rows[1].cells[2].childNodes[0].innerText % 250)],
 //  [turn2long(table.rows[2].cells[1].childNodes[0].innerText), turn2degr(table.rows[2].cells[2].childNodes[0].innerText % 250)],
@@ -149,6 +146,142 @@ viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].chil
 ```
 
 </div>
+
+``` {ojs}
+//| echo: false
+//| label: colorpreview
+//| column: margin
+//| class: colorcomponent
+preview()
+```
+
+``` {ojs}
+//| echo: false
+//| label: colorwheelcompass
+//| class: colorcomponent
+// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
+svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
+  <g transform='rotate(${Math.round(-colorH * .36)})'>
+  ${repeat(tick(radius, 5, '#434343'), numMinorTicks * 4 * numMajorTicks)}
+  ${repeat(tick(radius, 8), numMajorTicks * 4)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="white" stroke="black" stroke-width="1"/>`, 4, 45)}
+  <circle r="${radius}" fill="#d3d3d3" stroke="#434343" stroke-width="3" />
+  ${repeat(directionMarker(radius+14, 24), 4, 0)}
+  ${repeat(directionMarker(radius+12, 24), 4, 45)}
+  ${repeat(turnMarker(radius+14, 32), 4, 0)}
+  ${repeat(turnMarker(radius+12, 32), 4, 45)}
+  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / piecolors.length / 2, 1, piecolors), piecolors.length, 360/piecolors.length)}
+</svg>
+`
+```
+
+``` {ojs}
+//| echo: false
+//| label: colorbar
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+hueBar = colorbar({
+  colorFn: t => hslToRgb(t, colorS, colorL),
+  onSelect: t => {
+    set(viewof colorH, t * 1000)
+    onUpdateHSL(t * 1000, colorS, colorL)
+  }
+})
+```
+
+``` {ojs}
+//| echo: false
+//| label: colorslider
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { value: 0, step: 1 })
+  input.value = initialHSL[0]
+  input.oninput = (evt) => onUpdateHSL(evt.currentTarget.value, colorS, colorL)
+  return Inputs.bind(input, viewof colorH)
+}
+```
+
+The
+[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
+[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️rotates🔄in
+response to the [Observable](https://observablehq.com)
+[range](https://observablehq.com/@observablehq/input-range)🎚️and [hue
+bar](https://observablehq.com/@paavanb/progressive-color-picker)📊inputs
+beneath it, but also adapts to the course from
+<span class="point0">Point 0</span> to <span class="point1">Point
+1</span> on the map🗺️. The currently selected ${rainbowHue} can be
+expressed as the [hex
+triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
+${rainbowHex}. We can convert the course value from mα into degrees and
+a
+[compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction):
+${rainbowMtr} mα = ${rainbowDeg}° = ${rainbowDir}.
+
+In addition to the
+[cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
+(${rainbowN} = 0 mα = 0°, ${rainbowE} = 250 mα = 90°, ${rainbowS} = 500
+mα = 180°, ${rainbowW} = 750 mα = 270°) and
+[intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
+(${rainbowNE} = 125 mα = 45°, ${rainbowSE} = 375 mα = 135°, ${rainbowSW}
+= 625 mα = 225°, ${rainbowNW} = 875 mα = 315°) directions, we can apply
+color🎨labels based on turn
+[submultiple](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer)
+values to Dec time zones: ${rainbow0}, ${rainbow1}, ${rainbow2},
+${rainbow3}, ${rainbow4}, ${rainbow5}, ${rainbow6}, ${rainbow7},
+${rainbow8}, and ${rainbow9}.
+
+To determine the Dec time zone (z) in a location, we obtain its
+longitude in <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a circle of longitude">deciparallels</span>
+(dλ) and then apply the [floor
+function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x):
+z = ⌊dλ⌋. Dec time zones are separated by the vertical lines shown on
+the map🗺️above⬆️when the “Grid” toggle✅input is enabled. You can
+compare Dec and UTC time zones by enabling both the “Grid” and “UTC”
+toggle✅inputs.
+
+or use Any of a turn can be labeled in this way, but this label works .
+The ten Dec time zones are .
+
+and
+[submultiple](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer)
+turn values can be useful for labeling.
+
+are [dyadic
+rationals](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20number%20that%20can%20be%20expressed%20as%20a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
+and thus are easy to express as In contrast, the three
+[additive](https://en.wikipedia.org/wiki/Primary_color#:~:text=summing%20the%20spectral%20power%20distributions%20(the%20intensity%20of%20each%20wavelength)%20of%20the%20individual%20light%20sources)
+(<span class="red">red</span>=0t=0°,
+<span class="lime">green</span>=1/3t=.<span style="text-decoration-line:overline;">3</span>t=120°,
+<span class="azul">blue</span>=2/3t=.<span style="text-decoration-line:overline;">6</span>t=240°)
+and three
+[subtractive](https://en.wikipedia.org/wiki/Primary_color#:~:text=predicts%20the%20resultant%20spectral%20power%20distribution%20of%20light%20filtered%20through%20overlaid%20partially%20absorbing%20materials)
+(<span class="yellow">yellow</span>=1/6t=.1<span style="text-decoration-line:overline;">6</span>t=60°,
+<span class="cyan">cyan</span>=1/2t=0.5t=180°,
+<span class="magenta">magenta</span>=5/6t=.8<span style="text-decoration-line:overline;">3</span>t=300°)
+[primary
+color](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors)🎨hues,
+integer milliturns need to be rounded to the nearest degree.
+
+Unlike milliturns, degrees can represent [repeating decimal
+numbers](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20number%20whose%20digits%20are%20eventually%20periodic%20(that%20is%2C%20after%20some%20place%2C%20the%20same%20sequence%20of%20digits%20is%20repeated%20forever))
+as integers and thus are useful to specifying primary colors
+(<span class="red">red</span>=0°, <span class="lime">green</span>,
+<span class="azul">blue</span>=240°, <span class="yellow">yellow</span>,
+<span class="cyan">cyan</span>, <span class="magenta">magenta</span>).
+
+The indicated and the chosen direction can be translated into the
+cardinal direction rainbowDir . a from , ${rainbowMtr}, into a the or
+course can be translated into a cardinal direction: . and are shown in
+milliturns. is also controlled by to orient the selected ${rainbowHue1}
+upward. The [HSL and
+HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
+models use degrees instead of milliturns so the milliturn shown by the
+range🎚️input, is rounded to the nearest degree, ${rainbowDeg}, and then
+used as part of an HSL triplet to obtain milliturn value, , represents a
+
+The connection between color and
 
 At an average ground speed of 500 <span class="under tool"
 data-bs-toggle="tooltip"
@@ -280,14 +413,6 @@ data-bs-title="hundredths of meridians">centimeridians</span> per day
 units is easy: 1$\text c\lambda\over\text d$ =
 0.216$\text m\over\text s$.
 
-# Hue
-
-$$\text{n}=\begin{cases}
-  366&{\begin{align}\text{if } (\lfloor \text{y}\rfloor+1)\text{ mod }\\\\\\\\4=0\\
-  \href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\lfloor \text{y}\rfloor+1)\text{ mod }100\neq0\\
-  \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}(\lfloor \text{y}\rfloor+1)\text{ mod }400=0\end{align}}\\\\
-  365&{\text{otherwise.}}\end{cases}$$
-
 and a meridian y = 365 or 366 days depending on the Dec leap year rule,
 and Dec speed measurements are based on *λ* / d (*ω*) , which stands for
 the circumference of the Earth and amounts to
@@ -400,71 +525,7 @@ ${rainbowHue2}, with only three characters
 <span class="cyan">cyan</span>=0ff,
 <span class="magenta">magenta</span>=f0f) in a
 
-``` {ojs}
-//| echo: false
-//| label: colorpreview
-//| column: margin
-//| class: colorcomponent
-preview()
-```
-
-``` {ojs}
-//| echo: false
-//| label: colorwheelcompass
-//| class: colorcomponent
-// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
-svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
-  <g transform='rotate(${Math.round(-colorH * .36)})'>
-  ${repeat(tick(radius, 5, '#434343'), numMinorTicks * 4 * numMajorTicks)}
-  ${repeat(tick(radius, 8), numMajorTicks * 4)}
-  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
-  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="white" stroke="black" stroke-width="1"/>`, 4, 45)}
-  <circle r="${radius}" fill="#d3d3d3" stroke="#434343" stroke-width="3" />
-  ${repeat(directionMarker(radius+14, 24), 4, 0)}
-  ${repeat(directionMarker(radius+12, 24), 4, 45)}
-  ${repeat(turnMarker(radius+14, 32), 4, 0)}
-  ${repeat(turnMarker(radius+12, 32), 4, 45)}
-  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / piecolors.length / 2, 1, piecolors), piecolors.length, 360/piecolors.length)}
-</svg>
-`
-```
-
-``` {ojs}
-//| echo: false
-//| label: colorbar
-//| class: colorcomponent
-// https://observablehq.com/@paavanb/progressive-color-picker
-hueBar = colorbar({
-  colorFn: t => hslToRgb(t, colorS, colorL),
-  onSelect: t => {
-    set(viewof colorH, t * 1000)
-    onUpdateHSL(t * 1000, colorS, colorL)
-  }
-})
-```
-
-``` {ojs}
-//| echo: false
-//| label: colorslider
-//| class: colorcomponent
-// https://observablehq.com/@paavanb/progressive-color-picker
-{ const input = Inputs.range([0, 1000], { value: 0, step: 1 })
-  input.value = initialHSL[0]
-  input.oninput = (evt) => onUpdateHSL(evt.currentTarget.value, colorS, colorL)
-  return Inputs.bind(input, viewof colorH)
-}
-```
-
-# Bearing
-
-In contrast to primary color🎨hues, the
-[cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
-(N=0, E=250, S=500, W=750) and
-[intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
-(NE=125, SE=375, SW=625, NW=875)
-[compass🧭directions](https://en.wikipedia.org/wiki/Cardinal_direction)
-can be expressed as integer milliturns with three digits or fewer. The
-milliturn value selected above⬆️, ${rainbowMtr1}, is closest to the
+The milliturn value selected above⬆️, ${rainbowMtr1}, is closest to the
 ${rainbowDir}
 [compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction).
 
@@ -1044,15 +1105,28 @@ hStr = `hsl(${hueDeg}`
 slStr = `, ${Math.round(colorS * 100)}%, ${Math.round(colorL * 100)}%)`
 hslStr = hStr + slStr
 bkg = ({background: hslStr})
-rainbowHue0 = textcolor('hue', bkg)
-rainbowHue1 = textcolor('hue', bkg)
-rainbowHue2 = textcolor('hue', bkg)
+rainbow0 = textcolor('0', "hsl(0" + slStr)
+rainbow1 = textcolor('1', "hsl(36" + slStr)
+rainbow2 = textcolor('2', "hsl(72" + slStr)
+rainbow3 = textcolor('3', "hsl(108" + slStr)
+rainbow4 = textcolor('4', "hsl(144" + slStr)
+rainbow5 = textcolor('5', "hsl(180" + slStr)
+rainbow6 = textcolor('6', "hsl(216" + slStr)
+rainbow7 = textcolor('7', "hsl(252" + slStr)
+rainbow8 = textcolor('8', "hsl(288" + slStr)
+rainbow9 = textcolor('9', "hsl(324" + slStr)
+rainbowN = textcolor('N', "hsl(0" + slStr)
+rainbowNE = textcolor('NE', "hsl(45" + slStr)
+rainbowE = textcolor('E', "hsl(90" + slStr)
+rainbowSE = textcolor('SE', "hsl(135" + slStr)
+rainbowS = textcolor('S', "hsl(180" + slStr)
+rainbowSW = textcolor('SW', "hsl(225" + slStr)
+rainbowW = textcolor('W', "hsl(270" + slStr)
+rainbowNW = textcolor('NW', "hsl(315" + slStr)
+rainbowHue = textcolor('hue', bkg)
 rainbowMtr = textcolor(hueMtr, bkg)
-rainbowMtr1 = textcolor(hueMtr, bkg)
 rainbowDir = textcolor(turn2comp(hueMtr), bkg)
 rainbowDeg = textcolor(hueDeg, bkg)
-rainbowDeg1 = textcolor(hueDeg, bkg)
-rainbowDeg2 = textcolor(hueDeg, bkg)
 rainbowHex = textcolor(d3.hsl(hueDeg, colorS, colorL).formatHex().slice(1), bkg)
 // Show preview swatches of color
 preview = () => {
@@ -1323,7 +1397,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath();
       path(graticule);
       context.lineWidth = 1.25;
-      context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+      context.strokeStyle = window.darkmode ? "#888" : "#222";
       context.stroke();
       // context.font = width < 760 ? "12px serif" : "21px serif";
       // context.fillStyle = `#000`;
@@ -1393,18 +1467,20 @@ function worldMapCoordinates(config = {}, dimensions) {
     latB = +coords[1].toFixed(2);
       n_point = 0;
     }
+    const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
+    set(viewof colorH, point0bear)
     table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
     table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
     table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
     table.rows[2].cells[2].innerHTML = createCellDiv(lati2turn(latB) % 250, 2.5)
-    table.rows[1].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonA, latA], [lonB, latB])), 10)
+    table.rows[1].cells[3].innerHTML = createCellDiv(point0bear, 10)
     table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
     draw(lonA, latA, lonB, latB);
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   };
   function resetlatlon() {
     lonA = -90;
-    latA = 0.025;
+    latA = 0;
     lonB = -90;
     latB = 36;
     set(viewof bordertoggle, false);
@@ -1412,12 +1488,13 @@ function worldMapCoordinates(config = {}, dimensions) {
     set(viewof suntoggle, false);
     set(viewof utctoggle, false);
     set(viewof select, projections.find(t => t.name === "Equirectangular (plate carrée)"));
-    table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
-    table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
-    table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
-    table.rows[2].cells[2].innerHTML = createCellDiv(lati2turn(latB) % 250, 2.5)
-    table.rows[1].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonA, latA], [lonB, latB])), 10)
-    table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
+    set(viewof colorH, 0)
+    table.rows[1].cells[1].innerHTML = createCellDiv(800, 10)
+    table.rows[2].cells[1].innerHTML = createCellDiv(800, 10)
+    table.rows[1].cells[2].innerHTML = createCellDiv(0, 2.5)
+    table.rows[2].cells[2].innerHTML = createCellDiv(100, 2.5)
+    table.rows[1].cells[3].innerHTML = createCellDiv(0, 10)
+    table.rows[2].cells[3].innerHTML = createCellDiv(500, 10)
     draw(lonA, latA, lonB, latB);
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   }
@@ -1430,11 +1507,13 @@ function worldMapCoordinates(config = {}, dimensions) {
       latA = turn2degr(liveTable[0].Millimeridian % 250);
       lonB = turn2long(liveTable[1].Milliparallel);
       latB = turn2degr(liveTable[1].Millimeridian % 250);
+      const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
+      set(viewof colorH, point0bear)
       table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
       table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
       table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
       table.rows[2].cells[2].innerHTML = createCellDiv(lati2turn(latB) % 250, 2.5)
-      table.rows[1].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonA, latA], [lonB, latB])), 10)
+      table.rows[1].cells[3].innerHTML = createCellDiv(point0bear, 10)
       table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
       draw(lonA, latA, lonB, latB);
       canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
@@ -1446,7 +1525,9 @@ function worldMapCoordinates(config = {}, dimensions) {
       latA = turn2degr(liveTable[0].Millimeridian % 250);
       lonB = turn2long(liveTable[1].Milliparallel);
       latB = turn2degr(liveTable[1].Millimeridian % 250);
-      table.rows[1].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonA, latA], [lonB, latB])), 10)
+      const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
+      set(viewof colorH, point0bear)
+      table.rows[1].cells[3].innerHTML = createCellDiv(point0bear, 10)
       table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
       draw(lonA, latA, lonB, latB);
       canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
@@ -1479,8 +1560,8 @@ function worldMapCoordinates(config = {}, dimensions) {
   });
   return form;
 }
-point_radius = width / 900 + 3
-point_radius_2 = width / 150 + 3
+point_radius = width / 900 * mapsize / 100 + 3
+point_radius_2 = width / 150 * mapsize / 100 + 3
 Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
@@ -1811,25 +1892,30 @@ div#projselect {
   align-items: center;
   justify-content: center;
 }
+div#projselect > div, div#sizeinput > div {
+  overflow-x: clip;
+}
+div#sizeinput  label {
+  width: 24px;
+}
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
   text-decoration: none;
   transform: translateY(-1px);
+}
+div#distmap {
+  margin-bottom: -28px;
 }
 #sizeinput {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#speedinput label, #sizeinput label {
-  width: 80px;
-  --label-width: 80px;
-}
 #speedinput input[type="number"], #sizeinput input[type="number"] {
-  width: 70px;
+  width: 56px;
 }
 #speedinput input[type="range"], #sizeinput input[type="range"] {
-  width: 216px;
+  width: 72%;
 }
 .colorcomponent {
   display: flex;
@@ -1900,13 +1986,10 @@ div#toggles button#rstbtn {
   overflow: visible;
   margin-top: -6px;
 }
-div#projselect > div {
-   overflow-x: clip;
-}
 div:has(div.description) {
   display: none;
 }
-#turns > h4.hiddenheading, #hue > h4.hiddenheading, #bearing > h4.hiddenheading {
+h4.hiddenheading {
   display: none;
 }
 </style>
