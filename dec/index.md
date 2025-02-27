@@ -241,13 +241,6 @@ the map🗺️above⬆️when the “Grid” toggle✅input is enabled. You can
 compare Dec and UTC time zones by enabling both the “Grid” and “UTC”
 toggle✅inputs.
 
-or use Any of a turn can be labeled in this way, but this label works .
-The ten Dec time zones are .
-
-and
-[submultiple](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer)
-turn values can be useful for labeling.
-
 are [dyadic
 rationals](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20number%20that%20can%20be%20expressed%20as%20a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
 and thus are easy to express as In contrast, the three
@@ -271,18 +264,6 @@ as integers and thus are useful to specifying primary colors
 <span class="azul">blue</span>=240°, <span class="yellow">yellow</span>,
 <span class="cyan">cyan</span>, <span class="magenta">magenta</span>).
 
-The indicated and the chosen direction can be translated into the
-cardinal direction rainbowDir . a from , ${rainbowMtr}, into a the or
-course can be translated into a cardinal direction: . and are shown in
-milliturns. is also controlled by to orient the selected ${rainbowHue1}
-upward. The [HSL and
-HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
-models use degrees instead of milliturns so the milliturn shown by the
-range🎚️input, is rounded to the nearest degree, ${rainbowDeg}, and then
-used as part of an HSL triplet to obtain milliturn value, , represents a
-
-The connection between color and
-
 At an average ground speed of 500 <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of the circumference of Earth">milliomegars</span>
@@ -295,7 +276,6 @@ and
 [azimuth](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=the%20angle%20of%20rotation%20(in%20degrees)%20in%20the%20unit%20circle%20over%20the%20horizontal%20plane)  
 To travel the between the default positions📍of the two points in
 
-these two points are : and the course in that we would need .
 [bearings](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object)
 of these points . To cross the shortest distance between the two points,
 we would nee Inversely, the default bearing of Point 0 is 500
@@ -1397,7 +1377,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath();
       path(graticule);
       context.lineWidth = 1.25;
-      context.strokeStyle = window.darkmode ? "#888" : "#222";
+      context.strokeStyle = utctoggle || !window.darkmode ? "#000" : "#fff";
       context.stroke();
       // context.font = width < 760 ? "12px serif" : "21px serif";
       // context.fillStyle = `#000`;
