@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2024+363
+2025+6
 
 <div id="decnav">
 
@@ -216,30 +216,73 @@ triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal
 ${rainbowHex}. We can convert the course value from mα into degrees and
 a
 [compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction):
-${rainbowMtr} mα = ${rainbowDeg}° = ${rainbowDir}.
+${rainbowMtr}mα = ${rainbowDeg}° = ${rainbowDir}.
 
-In addition to the
+Regardless of [angular measurement
+units](https://en.wikipedia.org/wiki/Angle#Units) we use, the
+color🎨labels for the
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
-(${rainbowN} = 0 mα = 0°, ${rainbowE} = 250 mα = 90°, ${rainbowS} = 500
-mα = 180°, ${rainbowW} = 750 mα = 270°) and
+and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
-(${rainbowNE} = 125 mα = 45°, ${rainbowSE} = 375 mα = 135°, ${rainbowSW}
-= 625 mα = 225°, ${rainbowNW} = 875 mα = 315°) directions, we can apply
-color🎨labels based on turn
-[submultiple](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer)
-values to Dec time zones: ${rainbow0}, ${rainbow1}, ${rainbow2},
-${rainbow3}, ${rainbow4}, ${rainbow5}, ${rainbow6}, ${rainbow7},
-${rainbow8}, and ${rainbow9}.
+directions are always the same: ${rainbowN} = 0mα = 0°, ${rainbowNE} =
+125mα = 45°, ${rainbowE} = 250mα = 90°, ${rainbowSE} = 375mα = 135°,
+${rainbowS} = 500mα = 180°, ${rainbowSW} = 625mα = 225°, ${rainbowW} =
+750mα = 270°, ${rainbowNW} = 875mα = 315°. The labels can provide a
+general sense of direction explain different turn
+[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
+
+[metric
+prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
+(deci, centi, milli, etc.) and
+
+or turn
+[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer)
+
+<div>
+
+> **Bad Pun Alert**
+>
+> Feeling ***disoriented***😵‍💫? Of
+> [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
+> you are! Color🎨labels can help you find your
+> [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object),
+> stay on
+> [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows),
+> and avoid
+> [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed)
+> aches🤕.
+
+</div>
+
+degrees or any or switch to degrees. the to use a based on turn values
+to
+
+be a Varying only hue, labels can be helpful but though some labels the
+green part of the [visible
+spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
+may be hard to distinguish.
+
+We can apply Dec time zones: ${rainbowZone0}, ${rainbowZone1},
+${rainbowZone2}, ${rainbowZone3}, ${rainbowZone4}, ${rainbowZone5},
+${rainbowZone6}, ${rainbowZone7}, ${rainbowZone8}, and ${rainbowZone9}.
 
 To determine the Dec time zone (z) in a location, we obtain its
 longitude in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a circle of longitude">deciparallels</span>
 (dλ) and then apply the [floor
 function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x):
-z = ⌊dλ⌋. Dec time zones are separated by the vertical lines shown on
-the map🗺️above⬆️when the “Grid” toggle✅input is enabled. You can
-compare Dec and UTC time zones by enabling both the “Grid” and “UTC”
-toggle✅inputs.
+z = ⌊dλ⌋. The time zone color🎨labels above are different Dec time zones
+are separated by the vertical lines shown on the map🗺️above⬆️when the
+“Grid” toggle✅input is enabled. You can compare Dec and UTC time zones
+by enabling both the “Grid” and “UTC” toggle✅inputs.
+
+For greater separation values above⬆️are ${rainbowZone0},
+${rainbowZone1}, ${rainbowZone2}, ${rainbowZone3}, ${rainbowZone4},
+${rainbowZone5}, ${rainbowZone6}, ${rainbowZone7}, ${rainbowZone8}, and
+${rainbowZone9} <span class="red">0</span>, <span class="red">90</span>,
+and <span class="cyan">500</span> are good reference reference points.
+The other colors can be modified The color🎨labels above⬆️are shifted
+towards 0 by increasing the separation between adjacent labels.
 
 are [dyadic
 rationals](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20number%20that%20can%20be%20expressed%20as%20a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
@@ -1085,16 +1128,26 @@ hStr = `hsl(${hueDeg}`
 slStr = `, ${Math.round(colorS * 100)}%, ${Math.round(colorL * 100)}%)`
 hslStr = hStr + slStr
 bkg = ({background: hslStr})
-rainbow0 = textcolor('0', "hsl(0" + slStr)
-rainbow1 = textcolor('1', "hsl(36" + slStr)
-rainbow2 = textcolor('2', "hsl(72" + slStr)
-rainbow3 = textcolor('3', "hsl(108" + slStr)
-rainbow4 = textcolor('4', "hsl(144" + slStr)
-rainbow5 = textcolor('5', "hsl(180" + slStr)
-rainbow6 = textcolor('6', "hsl(216" + slStr)
-rainbow7 = textcolor('7', "hsl(252" + slStr)
-rainbow8 = textcolor('8', "hsl(288" + slStr)
-rainbow9 = textcolor('9', "hsl(324" + slStr)
+rainbowZone0 = textcolor('0', "#f00")
+rainbowZone1 = textcolor('1', "#f80")
+rainbowZone2 = textcolor('2', "#fd0")
+rainbowZone3 = textcolor('3', "#cf0")
+rainbowZone4 = textcolor('4', "#0f6")
+rainbowZone5 = textcolor('5', "#0ff")
+rainbowZone6 = textcolor('6', "#06f")
+rainbowZone7 = textcolor('7', "#30f")
+rainbowZone8 = textcolor('8', "#c0f")
+rainbowZone9 = textcolor('9', "#f0c")
+rainbowMili0 = textcolor('0', "#f00")
+rainbowMili1 = textcolor('90', "#f80")
+rainbowMili2 = textcolor('145', "#fd0")
+rainbowMili3 = textcolor('200', "#cf0")
+rainbowMili4 = textcolor('400', "#0f6")
+rainbowMili5 = textcolor('500', "#0ff")
+rainbowMili6 = textcolor('600', "#06f")
+rainbowMili7 = textcolor('700', "#30f")
+rainbowMili8 = textcolor('800', "#c0f")
+rainbowMili9 = textcolor('867', "#f0c")
 rainbowN = textcolor('N', "hsl(0" + slStr)
 rainbowNE = textcolor('NE', "hsl(45" + slStr)
 rainbowE = textcolor('E', "hsl(90" + slStr)
