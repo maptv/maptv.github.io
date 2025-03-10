@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+6
+2025+9
 
 <div id="decnav">
 
@@ -48,21 +48,21 @@ The table below provides the current
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a circle of longitude">milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)</span>
-([mλ](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda))
+([m*λ*](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda))
 and
 [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a circle of latitude">milli[meridians](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude)</span>
-([mφ](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
+([m*ϕ*](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
 of Points <span class="point0">0</span> and
 <span class="point1">1</span> on the map🗺️beneath the table. By default,
 <span class="point0">Point 0</span> is at
-<span class="point0">800</span> mλ and <span class="point0">0</span> mφ,
-which is near the
+<span class="point0">800</span> m*λ* and <span class="point0">0</span>
+m*ϕ*, which is near the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
 of Ecuador🇪🇨, and <span class="point1">Point 1</span> is at
-<span class="point1">800</span> mλ and <span class="point1">100</span>
-mφ, which is in the United States🇺🇸city of [Memphis,
+<span class="point1">800</span> m*λ* and <span class="point1">100</span>
+m*ϕ*, which is in the United States🇺🇸city of [Memphis,
 Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
 
 In the table, the geographic coordinates of each point are followed by
@@ -70,9 +70,9 @@ the
 [course](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a compass rose">milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)</span>
-[mα](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)
+[m*α*](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)
 we would need to maintain to travel🧳the shortest distance📏to the other
-point on the map🗺️. The default courses in mα are
+point on the map🗺️. The default courses in m*α* are
 <span class="point0">0</span> (North) from <span class="point0">Point
 0</span> to <span class="point1">Point 1</span> and
 <span class="point1">500</span> (South) from <span class="point1">Point
@@ -89,8 +89,8 @@ add country borders, a grid of Dec
 [solar
 terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
 shading, a yellow🟡dot denoting where the Sun☀️is directly overhead
-(${Math.floor(long2turn(sun\[0\]))} mλ,
-${Math.floor(lati2turn(sun\[1\]))} mφ), and
+(${Math.floor(long2turn(sun\[0\]))} m*λ*,
+${Math.floor(lati2turn(sun\[1\]))} m*ϕ*), and
 [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 time zones.
 
@@ -213,30 +213,25 @@ beneath it, but also adapts to the course from
 1</span> on the map🗺️. The currently selected ${rainbowHue} can be
 expressed as the [hex
 triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
-${rainbowHex}. We can convert the course value from mα into degrees and
-a
+${rainbowHex}. We can convert the course value from m*α* into degrees
+and a
 [compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction):
-${rainbowMtr}mα = ${rainbowDeg}° = ${rainbowDir}.
+${rainbowMtr} m*α* = ${rainbowDeg}° = ${rainbowDir}.
 
-Regardless of [angular measurement
-units](https://en.wikipedia.org/wiki/Angle#Units) we use, the
-color🎨labels for the
+Regardless of the [unit](https://en.wikipedia.org/wiki/Angle#Units) we
+use, color🎨can provide a general sense of [angular
+measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle).
+The
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
 and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
-directions are always the same: ${rainbowN} = 0mα = 0°, ${rainbowNE} =
-125mα = 45°, ${rainbowE} = 250mα = 90°, ${rainbowSE} = 375mα = 135°,
-${rainbowS} = 500mα = 180°, ${rainbowSW} = 625mα = 225°, ${rainbowW} =
-750mα = 270°, ${rainbowNW} = 875mα = 315°. The labels can provide a
-general sense of direction explain different turn
-[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
-
-[metric
-prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
-(deci, centi, milli, etc.) and
-
-or turn
-[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer)
+direction labels above⬆️are ${rainbowN} = ${rainbowNmtr} m*α* =
+${rainbowNdeg}°, ${rainbowNE} = ${rainbowNEmtr} m*α* = ${rainbowNEdeg}°,
+${rainbowE} = ${rainbowEmtr} m*α* = ${rainbowEdeg}°, ${rainbowSE} =
+${rainbowSEmtr} m*α* = ${rainbowSEdeg}°, ${rainbowS} = ${rainbowSmtr}
+m*α* = ${rainbowSdeg}°, ${rainbowSW} = ${rainbowSWmtr} m*α* =
+${rainbowSWdeg}°, ${rainbowW} = ${rainbowWmtr} m*α* = ${rainbowWdeg}°,
+and ${rainbowNW} = ${rainbowNWmtr} m*α* = ${rainbowNWdeg}°.
 
 <div>
 
@@ -250,9 +245,33 @@ or turn
 > [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows),
 > and avoid
 > [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed)
-> aches🤕.
+> aches🤕. <span class="orange">Orange</span> you glad I couldn’t think
+> of a color🎨pun?
 
 </div>
+
+The labels can provide a general sense of direction explain different
+turn
+[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
+As opposed to a typical trichromatic Rather than arranging colors from
+longest to shortest wavelength or equivalently from shortest to longest
+frequency, is intuitive can create The color🎨wheel above equally spaces
+the colors <span class="red">red</span>,
+<span class="green">green</span>, and <span class="azul">blue</span>.
+
+Orange you glad this pun wasn’t kk
+
+The or change the [metric
+prefix](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
+to indicate a different turn
+[submultiple](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
+The color🎨labels show the equivalence of , can provide a general sense
+of direction.
+
+(deci, centi, milli, etc.) and
+
+or turn
+[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer)
 
 degrees or any or switch to degrees. the to use a based on turn values
 to
@@ -1128,16 +1147,26 @@ hStr = `hsl(${hueDeg}`
 slStr = `, ${Math.round(colorS * 100)}%, ${Math.round(colorL * 100)}%)`
 hslStr = hStr + slStr
 bkg = ({background: hslStr})
-rainbowZone0 = textcolor('0', "#f00")
-rainbowZone1 = textcolor('1', "#f80")
-rainbowZone2 = textcolor('2', "#fd0")
-rainbowZone3 = textcolor('3', "#cf0")
-rainbowZone4 = textcolor('4', "#0f6")
-rainbowZone5 = textcolor('5', "#0ff")
-rainbowZone6 = textcolor('6', "#06f")
-rainbowZone7 = textcolor('7', "#30f")
-rainbowZone8 = textcolor('8', "#c0f")
-rainbowZone9 = textcolor('9', "#f0c")
+rainbow0 = textcolor('0', "#f00") // red
+rainbow1 = textcolor('1', "#f0f") // magenta
+rainbow2 = textcolor('2', "#8000ff") // violet
+rainbow3 = textcolor('3', "#00f") // blue
+rainbow4 = textcolor('4', "#0080ff") // azure
+rainbow5 = textcolor('5', "#0ff") // cyan
+rainbow6 = textcolor('6', "#0f0") // green
+rainbow7 = textcolor('7', "#c0ff00") // lime
+rainbow8 = textcolor('8', "#ffff00") // yellow
+rainbow9 = textcolor('9', "#ff8000") // orange
+// rainbowRed = textcolor('red', "#f00") // red
+// rainbowMag = textcolor('magenta', "#f0f") // magenta
+// rainbowVio = textcolor('violet', "#8000ff") // violet
+// rainbowBlu = textcolor('blue', "#00f") // blue
+// rainbowAzu = textcolor('azure', "#0080ff") // azure
+// rainbowCya = textcolor('cyan', #0ff") // cyan
+// rainbowGre = textcolor('green', "#0f0") // green
+// rainbowLim = textcolor('lime', "#c0ff00") // lime
+// rainbowYel = textcolor('yellow', "#ffff00") // yellow
+// rainbowOra = textcolor('orange', "#ff8000") // orange
 rainbowMili0 = textcolor('0', "#f00")
 rainbowMili1 = textcolor('90', "#f80")
 rainbowMili2 = textcolor('145', "#fd0")
@@ -1149,13 +1178,29 @@ rainbowMili7 = textcolor('700', "#30f")
 rainbowMili8 = textcolor('800', "#c0f")
 rainbowMili9 = textcolor('867', "#f0c")
 rainbowN = textcolor('N', "hsl(0" + slStr)
+rainbowNmtr = textcolor('0', "hsl(0" + slStr)
+rainbowNdeg = textcolor('0', "hsl(0" + slStr)
 rainbowNE = textcolor('NE', "hsl(45" + slStr)
+rainbowNEmtr = textcolor('125', "hsl(45" + slStr)
+rainbowNEdeg = textcolor('45', "hsl(45" + slStr)
 rainbowE = textcolor('E', "hsl(90" + slStr)
+rainbowEmtr = textcolor('250', "hsl(90" + slStr)
+rainbowEdeg = textcolor('90', "hsl(90" + slStr)
 rainbowSE = textcolor('SE', "hsl(135" + slStr)
+rainbowSEmtr = textcolor('375', "hsl(135" + slStr)
+rainbowSEdeg = textcolor('135', "hsl(135" + slStr)
 rainbowS = textcolor('S', "hsl(180" + slStr)
+rainbowSmtr = textcolor('500', "hsl(180" + slStr)
+rainbowSdeg = textcolor('180', "hsl(180" + slStr)
 rainbowSW = textcolor('SW', "hsl(225" + slStr)
+rainbowSWmtr = textcolor('625', "hsl(225" + slStr)
+rainbowSWdeg = textcolor('225', "hsl(225" + slStr)
 rainbowW = textcolor('W', "hsl(270" + slStr)
+rainbowWmtr = textcolor('750', "hsl(270" + slStr)
+rainbowWdeg = textcolor('270', "hsl(270" + slStr)
 rainbowNW = textcolor('NW', "hsl(315" + slStr)
+rainbowNWmtr = textcolor('875', "hsl(315" + slStr)
+rainbowNWdeg = textcolor('315', "hsl(315" + slStr)
 rainbowHue = textcolor('hue', bkg)
 rainbowMtr = textcolor(hueMtr, bkg)
 rainbowDir = textcolor(turn2comp(hueMtr), bkg)
