@@ -66,6 +66,10 @@ Regardless of the [unit](https://en.wikipedia.org/wiki/Angle#Units) we use, colo
 Feeling ***disoriented***😵‍💫? Of [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered) you are! Color🎨labels can help you find your [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object), stay on [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows), and avoid [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed) aches🤕. [Orange]{.orange} you glad I couldn't think of a color🎨pun?
 :::
 
+{{< include /dec/_loroc.qmd >}}
+
+The Dec color wheel is different than its trichromatic counterpart.
+
 The labels can provide a general sense of direction explain different turn [submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer). As opposed to a typical trichromatic Rather than arranging colors from longest to shortest wavelength or equivalently from shortest to longest frequency, is intuitive  can create  The color🎨wheel above equally spaces the colors [red]{.red}, [green]{.green}, and [blue]{.azul}. 
 
 Orange you glad this pun wasn't kk

@@ -1,0 +1,21 @@
+```{ojs}
+//| echo: false
+//| label: deccolorwheelcompass
+//| class: colorcomponent
+// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
+svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
+  <g transform='rotate(${Math.round(-colorH * .36)})'>
+  ${repeat(tick(radius, 5, '#434343'), 5 * 4 * 10)}
+  ${repeat(tick(radius, 8), 10 * 4)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="white" stroke="black" stroke-width="1"/>`, 4, 45)}
+  <circle r="${radius}" fill="#d3d3d3" stroke="#434343" stroke-width="3" />
+  ${repeat(directionMarker(radius+14, 24), 4, 0)}
+  ${repeat(directionMarker(radius+12, 24), 4, 45)}
+  ${repeat(turnMarker(radius+14, 32), 4, 0)}
+  ${repeat(turnMarker(radius+12, 32), 4, 45)}
+  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / deccolors.length / 2, 1, deccolors), deccolors.length, 360/deccolors.length)}
+</svg>
+`
+```
+
