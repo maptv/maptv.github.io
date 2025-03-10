@@ -250,6 +250,29 @@ and ${rainbowNW} = ${rainbowNWmtr} m*α* = ${rainbowNWdeg}°.
 
 </div>
 
+``` {ojs}
+//| echo: false
+//| label: deccolorwheelcompass
+//| class: colorcomponent
+// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
+svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
+  <g transform='rotate(${Math.round(-colorH * .36)})'>
+  ${repeat(tick(radius, 5, '#434343'), 5 * 4 * 10)}
+  ${repeat(tick(radius, 8), 10 * 4)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="white" stroke="black" stroke-width="1"/>`, 4, 45)}
+  <circle r="${radius}" fill="#d3d3d3" stroke="#434343" stroke-width="3" />
+  ${repeat(directionMarker(radius+14, 24), 4, 0)}
+  ${repeat(directionMarker(radius+12, 24), 4, 45)}
+  ${repeat(turnMarker(radius+14, 32), 4, 0)}
+  ${repeat(turnMarker(radius+12, 32), 4, 45)}
+  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / deccolors.length / 2, 1, deccolors), deccolors.length, 360/deccolors.length)}
+</svg>
+`
+```
+
+The Dec color wheel is different than its trichromatic counterpart.
+
 The labels can provide a general sense of direction explain different
 turn
 [submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
@@ -1911,6 +1934,48 @@ piecolors = [
   '#ff0080', // 330
   '#ff0040', // 345
   '#f00',    // 0
+]
+deccolors = [
+  "#ff0040",
+  "#ff0080",
+  "#ff00bf",
+  "#ff00ff",
+  "#df00ff",
+  "#c000ff",
+  "#a000ff",
+  "#8000ff",
+  "#6000ff",
+  "#4000ff",
+  "#2000ff",
+  "#0000ff",
+  "#0020ff",
+  "#0040ff",
+  "#0060ff",
+  "#0080ff",
+  "#00a0ff",
+  "#00c0ff",
+  "#00dfff",
+  "#00ffff",
+  "#00ffbf",
+  "#00ff80",
+  "#00ff40",
+  "#00ff00",
+  "#30ff00",
+  "#60ff00",
+  "#90ff00",
+  "#c0ff00",
+  "#d0ff00",
+  "#e0ff00",
+  "#efff00",
+  "#ffff00",
+  "#ffdf00",
+  "#ffc000",
+  "#ffa000",
+  "#ff8000",
+  "#ff6000",
+  "#ff4000",
+  "#ff2000",
+  "#ff0000",
 ]
 viewof size = Inputs.range([50, 700], {
   value: 300,
