@@ -55,18 +55,112 @@ Click the map🗺️to move the points. To return the points to their original p
 
 {{< include /dec/_maptable.qmd >}}
 
-{{< include /dec/_color.qmd >}}
+```{ojs}
+//| echo: false
+//| label: colorpreview
+//| column: margin
+//| class: colorcomponent
+preview()
+```
 
-The [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle) [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️rotates🔄in response to the [Observable](https://observablehq.com) [range](https://observablehq.com/@observablehq/input-range)🎚️and [hue bar](https://observablehq.com/@paavanb/progressive-color-picker)📊inputs beneath it, but also adapts to the course from [Point 0]{.point0} to [Point 1]{.point1} on the map🗺️. The currently selected \${rainbowHue} can be expressed as the [hex triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors) \${rainbowHex}. We can convert the course value from m$\alpha$ into degrees and a [compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction): \${rainbowMtr} m$\alpha$ = \${rainbowDeg}° = \${rainbowDir}.
+```{ojs}
+//| echo: false
+//| label: colorwheelcompass
+//| class: colorcomponent
+// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
+svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
+  <g transform='rotate(${Math.round(-colorD * .36)})'>
+  ${repeat(tick(radius, 5, '#434343'), 5 * 4 * 10)}
+  ${repeat(tick(radius, 8), 10 * 4)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="white" stroke="black" stroke-width="1"/>`, 4, 45)}
+  <circle r="${radius}" fill="#d3d3d3" stroke="#434343" stroke-width="3" />
+  ${repeat(directionMarker(radius+14, 24), 4, 0)}
+  ${repeat(directionMarker(radius+12, 24), 4, 45)}
+  ${repeat(turnMarker(radius+14, 32), 4, 0)}
+  ${repeat(turnMarker(radius+12, 32), 4, 45)}
+  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / deccolors.length / 2, 1, deccolors), deccolors.length, 360/deccolors.length)}
+</svg>
+`
+```
 
-Regardless of the [unit](https://en.wikipedia.org/wiki/Angle#Units) we use, color🎨can provide a general sense of [angular measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle). The [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west) and [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW)) direction labels above⬆️are \${rainbowN} = \${rainbowNmtr} m$\alpha$ = \${rainbowNdeg}°, \${rainbowNE} = \${rainbowNEmtr} m$\alpha$ = \${rainbowNEdeg}°, \${rainbowE} = \${rainbowEmtr} m$\alpha$ = \${rainbowEdeg}°, \${rainbowSE} = \${rainbowSEmtr} m$\alpha$ = \${rainbowSEdeg}°, \${rainbowS} = \${rainbowSmtr} m$\alpha$ = \${rainbowSdeg}°, \${rainbowSW} = \${rainbowSWmtr} m$\alpha$ = \${rainbowSWdeg}°, \${rainbowW} = \${rainbowWmtr} m$\alpha$ = \${rainbowWdeg}°, and \${rainbowNW} = \${rainbowNWmtr} m$\alpha$ = \${rainbowNWdeg}°.
+```{ojs}
+//| echo: false
+//| label: colorbar
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+decBar = colorbar({
+  colorFn: t => hslToRgb(dec2hue(t) / 1000, colorS / 1000, colorL / 1000),
+  onSelect: t => {
+    set(viewof colorD, t * 1000)
+    onUpdateHSL(dec2hue(t), colorS / 1000, colorL / 1000)
+  }
+})
+```
+
+```{ojs}
+//| echo: false
+//| label: colorslider
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { label: "hue", value: 0, step: 1 })
+  input.value = initialHSL[0]
+  input.oninput = (evt) => onUpdateHSL(dec2hue(evt.currentTarget.value / 1000), colorS / 1000, colorL / 1000)
+  return Inputs.bind(input, viewof colorD)
+}
+```
+
+```{ojs}
+//| echo: false
+//| label: saturslider
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { label: "saturation", value: 1000, step: 1, })
+  input.oninput = (evt) => onUpdateHSL(colorD, evt.currentTarget.value / 1000, colorL / 1000)
+  return Inputs.bind(input, viewof colorS)
+}
+```
+
+```{ojs}
+//| echo: false
+//| label: lightslider
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { label: "lightness", value: 500, step: 1, })
+  input.oninput = (evt) => onUpdateHSL(colorD, colorS / 1000, evt.currentTarget.value / 1000)
+  return Inputs.bind(input, viewof colorL)
+}
+
+```
+
+The [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle) [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️rotates🔄in response to the [Observable](https://observablehq.com) [hue bar📊and range🎚️](https://observablehq.com/@paavanb/progressive-color-picker)inputs beneath it, but also adapts to the course from [Point 0]{.point0} to [Point 1]{.point1} on the map🗺️. We can convert the currently selected course value from m$\alpha$ into degrees and a [compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction): \${rainbowMtr} m$\alpha$ = \${rainbowDeg}° = \${rainbowDir}.
+
+The saturation and lightness range🎚️inputs have no effect on the course, but control how far away the color label is from gray and black, respectively. 
+\${rainbowHue} can be expressed as the [hex triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors) \${rainbowHex} \${rainbowHex1}. We can convert the 
+
+Regardless of the [unit](https://en.wikipedia.org/wiki/Angle#Units) we use, color🎨can provide a general sense of [angular measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle). To label values, we can choose any [palette](https://en.wikipedia.org/wiki/Palette_(computing)#:~:text=the%20set%20of%20available%20colors) we like, but it makes sense to arrange the colors🎨according to physical properties of light, such as wavelength, frequency, and photon energy, to get the familiar rainbow🌈pattern of the [visible spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye).
+
+The Dec color palette consists of the ten colors that are inspired by the [Munsell color system](https://en.wikipedia.org/wiki/Munsell_color_system#Hue). The deciturn (dt), hexadecimal (hex), [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model) hue degree (h°), red (r), green (g), and blue (b) values of the ten Dec colors are listed in the table below.
+
+| **Name**         | **dt**       | **hex**         | **h°**           | **r** | **g** | **b** |
+| ---------------- | ------------ | --------------- | --------------- | ----- | ----- | ----- |
+| [\${rainbow0name}](https://en.wikipedia.org/wiki/Red#:~:text=,Color%20coordinates,-Hex%20triplet) | \${rainbow0} | \${rainbow0hex} | \${rainbow0deg} | 255   | 0     | 0     |
+| [\${rainbow1name}](https://en.wikipedia.org/wiki/Magenta#:~:text=Magenta-,Color%20coordinates,-Hex%20triplet) | \${rainbow1} | \${rainbow1hex} | \${rainbow1deg} | 255   | 0     | 255   |
+| [\${rainbow2name}](https://en.wikipedia.org/wiki/Violet_(color)#:~:text=,Color%20coordinates,-Hex%20triplet) | \${rainbow2} | \${rainbow2hex} | \${rainbow2deg} | 128   | 0     | 255   |
+| [\${rainbow3name}](https://en.wikipedia.org/wiki/Blue#:~:text=,Colour%20coordinates,-Hex%20triplet) | \${rainbow3} | \${rainbow3hex} | \${rainbow3deg} | 0     | 0     | 255   |
+| [\${rainbow4name}](https://en.wikipedia.org/wiki/Azure_(color)#:~:text=Azure-,Color%20coordinates,-Hex%20triplet) | \${rainbow4} | \${rainbow4hex} | \${rainbow4deg} | 0     | 128   | 255   |
+| [\${rainbow5name}](https://en.wikipedia.org/wiki/Cyan#:~:text=water-,Color%20coordinates,-Hex%20triplet) | \${rainbow5} | \${rainbow5hex} | \${rainbow5deg} | 0     | 255   | 255   |
+| [\${rainbow6name}](https://en.wikipedia.org/wiki/Shades_of_green#:~:text=money%2C%20Earth-,Color%20coordinates,-Hex%20triplet) | \${rainbow6} | \${rainbow6hex} | \${rainbow6deg} | 0     | 255   | 0     |
+| [\${rainbow7name}](https://en.wikipedia.org/wiki/Lime_(color)#:~:text=Lime-,Color%20coordinates,-Hex%20triplet) | \${rainbow7} | \${rainbow7hex} | \${rainbow7deg} | 192   | 255   | 0     |
+| [\${rainbow8name}](https://en.wikipedia.org/wiki/Yellow#:~:text=,Color%20coordinates,-Hex%20triplet) | \${rainbow8} | \${rainbow8hex} | \${rainbow8deg} | 255   | 255   | 0     |
+| [\${rainbow9name}](https://en.wikipedia.org/wiki/Orange_(colour)#:~:text=,Colour%20coordinates,-Hex%20triplet) | \${rainbow9} | \${rainbow9hex} | \${rainbow9deg} | 255   | 128   | 0     |
+
+The [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west) and [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW)) direction labels above⬆️are \${rainbowN} = \${rainbowNmtr} m$\alpha$ = \${rainbowNdeg}°, \${rainbowNE} = \${rainbowNEmtr} m$\alpha$ = \${rainbowNEdeg}°, \${rainbowE} = \${rainbowEmtr} m$\alpha$ = \${rainbowEdeg}°, \${rainbowSE} = \${rainbowSEmtr} m$\alpha$ = \${rainbowSEdeg}°, \${rainbowS} = \${rainbowSmtr} m$\alpha$ = \${rainbowSdeg}°, \${rainbowSW} = \${rainbowSWmtr} m$\alpha$ = \${rainbowSWdeg}°, \${rainbowW} = \${rainbowWmtr} m$\alpha$ = \${rainbowWdeg}°, and \${rainbowNW} = \${rainbowNWmtr} m$\alpha$ = \${rainbowNWdeg}°.
 
 ::: {.callout-warning}
 # Bad Pun Alert
 Feeling ***disoriented***😵‍💫? Of [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered) you are! Color🎨labels can help you find your [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object), stay on [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows), and avoid [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed) aches🤕. [Orange]{.orange} you glad I couldn't think of a color🎨pun?
 :::
-
-{{< include /dec/_loroc.qmd >}}
 
 The Dec color wheel is different than its trichromatic counterpart.
 
