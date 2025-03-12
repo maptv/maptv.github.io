@@ -133,29 +133,37 @@ decBar = colorbar({
 
 ```
 
-The [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle) [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️rotates🔄in response to the [Observable](https://observablehq.com) [hue bar📊and range🎚️](https://observablehq.com/@paavanb/progressive-color-picker)inputs beneath it, but also adapts to the course from [Point 0]{.point0} to [Point 1]{.point1} on the map🗺️. We can convert the currently selected course value from m$\alpha$ into degrees and a [compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction): \${rainbowMtr} m$\alpha$ = \${rainbowDeg}° = \${rainbowDir}.
+The [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle) [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️rotates🔄in response to the [Observable](https://observablehq.com) [hue bar📊and range🎚️](https://observablehq.com/@paavanb/progressive-color-picker)inputs beneath it, but also adapts to the course from [Point 0]{.point0} to [Point 1]{.point1} on the map🗺️. The m$\alpha$ value of the current course is represented by the [hex triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors) \${rainbowHex} and can be converted into degrees and a [compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction): \${rainbowMtr} m$\alpha$ = \${rainbowDegC}° = \${rainbowDir}.
 
-The saturation and lightness range🎚️inputs have no effect on the course, but control how far away the color label is from gray and black, respectively. 
-\${rainbowHue} can be expressed as the [hex triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors) \${rainbowHex} \${rainbowHex1}. We can convert the 
+Regardless of the [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) and [units](https://en.wikipedia.org/wiki/Angle#Units) we use, color🎨can provide a general sense of [angular measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle) and is thus useful for labeling turn [submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer). Dec arranges colors🎨in a rainbow🌈pattern based on [physical properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV))) of the [visible spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye) of light. The \${rainbowColor}🎨selected by the range🎚️inputs above⬆️can be expressed as the hex triplet \${rainbowHex1}.
 
-Regardless of the [unit](https://en.wikipedia.org/wiki/Angle#Units) we use, color🎨can provide a general sense of [angular measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle). To label values, we can choose any [palette](https://en.wikipedia.org/wiki/Palette_(computing)#:~:text=the%20set%20of%20available%20colors) we like, but it makes sense to arrange the colors🎨according to physical properties of light, such as wavelength, frequency, and photon energy, to get the familiar rainbow🌈pattern of the [visible spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye).
+| **Name**    |  **m$\alpha$**   | **c°**            | **h°**             |
+| ----------- |  --------------- | ----------------- | ------------------ |
+\${rainbowN}  | \${rainbowNmtr}  | \${rainbowNdegC}  |  \${rainbowNdegH}  |
+\${rainbowNE} | \${rainbowNEmtr} | \${rainbowNEdegC} |  \${rainbowNEdegH} |
+\${rainbowE}  | \${rainbowEmtr}  | \${rainbowEdegC}  |  \${rainbowEdegH}  |
+\${rainbowSE} | \${rainbowSEmtr} | \${rainbowSEdegC} |  \${rainbowSEdegH} |
+\${rainbowS}  | \${rainbowSmtr}  | \${rainbowSdegC}  |  \${rainbowSdegH}  |
+\${rainbowSW} | \${rainbowSWmtr} | \${rainbowSWdegC} |  \${rainbowSWdegH} |
+\${rainbowW}  | \${rainbowWmtr}  | \${rainbowWdegC}  |  \${rainbowWdegH}  |
+\${rainbowNW} | \${rainbowNWmtr} | \${rainbowNWdegC} |  \${rainbowNWdegH} |
 
-The Dec color palette consists of the ten colors that are inspired by the [Munsell color system](https://en.wikipedia.org/wiki/Munsell_color_system#Hue). The deciturn (dt), hexadecimal (hex), [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model) hue degree (h°), red (r), green (g), and blue (b) values of the ten Dec colors are listed in the table below.
+The table above⬆️shows the m$\alpha$ and compass🧭degree (c°) values of the [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west) and [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW)) directions along with the [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model) hue degree (h°) values and hex triplets (hex) of their color🎨labels.
 
-| **Name**         | **dt**       | **hex**         | **h°**           | **r** | **g** | **b** |
-| ---------------- | ------------ | --------------- | --------------- | ----- | ----- | ----- |
-| [\${rainbow0name}](https://en.wikipedia.org/wiki/Red#:~:text=,Color%20coordinates,-Hex%20triplet) | \${rainbow0} | \${rainbow0hex} | \${rainbow0deg} | 255   | 0     | 0     |
-| [\${rainbow1name}](https://en.wikipedia.org/wiki/Magenta#:~:text=Magenta-,Color%20coordinates,-Hex%20triplet) | \${rainbow1} | \${rainbow1hex} | \${rainbow1deg} | 255   | 0     | 255   |
-| [\${rainbow2name}](https://en.wikipedia.org/wiki/Violet_(color)#:~:text=,Color%20coordinates,-Hex%20triplet) | \${rainbow2} | \${rainbow2hex} | \${rainbow2deg} | 128   | 0     | 255   |
-| [\${rainbow3name}](https://en.wikipedia.org/wiki/Blue#:~:text=,Colour%20coordinates,-Hex%20triplet) | \${rainbow3} | \${rainbow3hex} | \${rainbow3deg} | 0     | 0     | 255   |
-| [\${rainbow4name}](https://en.wikipedia.org/wiki/Azure_(color)#:~:text=Azure-,Color%20coordinates,-Hex%20triplet) | \${rainbow4} | \${rainbow4hex} | \${rainbow4deg} | 0     | 128   | 255   |
-| [\${rainbow5name}](https://en.wikipedia.org/wiki/Cyan#:~:text=water-,Color%20coordinates,-Hex%20triplet) | \${rainbow5} | \${rainbow5hex} | \${rainbow5deg} | 0     | 255   | 255   |
-| [\${rainbow6name}](https://en.wikipedia.org/wiki/Shades_of_green#:~:text=money%2C%20Earth-,Color%20coordinates,-Hex%20triplet) | \${rainbow6} | \${rainbow6hex} | \${rainbow6deg} | 0     | 255   | 0     |
-| [\${rainbow7name}](https://en.wikipedia.org/wiki/Lime_(color)#:~:text=Lime-,Color%20coordinates,-Hex%20triplet) | \${rainbow7} | \${rainbow7hex} | \${rainbow7deg} | 192   | 255   | 0     |
-| [\${rainbow8name}](https://en.wikipedia.org/wiki/Yellow#:~:text=,Color%20coordinates,-Hex%20triplet) | \${rainbow8} | \${rainbow8hex} | \${rainbow8deg} | 255   | 255   | 0     |
-| [\${rainbow9name}](https://en.wikipedia.org/wiki/Orange_(colour)#:~:text=,Colour%20coordinates,-Hex%20triplet) | \${rainbow9} | \${rainbow9hex} | \${rainbow9deg} | 255   | 128   | 0     |
+The Dec color [palette](https://en.wikipedia.org/wiki/Palette_(computing)#:~:text=the%20set%20of%20available%20colors) is inspired by the [Munsell color system](https://en.wikipedia.org/wiki/Munsell_color_system#Hue). The deciturn (dt), hexadecimal (hex), [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model) hue degree (h°), red (r), green (g), and blue (b) values of the ten Dec colors are listed in the table below.
 
-The [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west) and [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW)) direction labels above⬆️are \${rainbowN} = \${rainbowNmtr} m$\alpha$ = \${rainbowNdeg}°, \${rainbowNE} = \${rainbowNEmtr} m$\alpha$ = \${rainbowNEdeg}°, \${rainbowE} = \${rainbowEmtr} m$\alpha$ = \${rainbowEdeg}°, \${rainbowSE} = \${rainbowSEmtr} m$\alpha$ = \${rainbowSEdeg}°, \${rainbowS} = \${rainbowSmtr} m$\alpha$ = \${rainbowSdeg}°, \${rainbowSW} = \${rainbowSWmtr} m$\alpha$ = \${rainbowSWdeg}°, \${rainbowW} = \${rainbowWmtr} m$\alpha$ = \${rainbowWdeg}°, and \${rainbowNW} = \${rainbowNWmtr} m$\alpha$ = \${rainbowNWdeg}°.
+| **Name**         | **dt**       | **hex**         | **h°**          | **r**         | **g**         | **b**         |
+| ---------------- | ------------ | --------------- | --------------- | ------------- | ------------- | ------------- |
+| \${rainbow0name} | \${rainbow0} | \${rainbow0hex} | \${rainbow0deg} | \${rainbow0r} | \${rainbow0g} | \${rainbow0b} |
+| \${rainbow1name} | \${rainbow1} | \${rainbow1hex} | \${rainbow1deg} | \${rainbow1r} | \${rainbow1g} | \${rainbow1b} |
+| \${rainbow2name} | \${rainbow2} | \${rainbow2hex} | \${rainbow2deg} | \${rainbow2r} | \${rainbow2g} | \${rainbow2b} |
+| \${rainbow3name} | \${rainbow3} | \${rainbow3hex} | \${rainbow3deg} | \${rainbow3r} | \${rainbow3g} | \${rainbow3b} |
+| \${rainbow4name} | \${rainbow4} | \${rainbow4hex} | \${rainbow4deg} | \${rainbow4r} | \${rainbow4g} | \${rainbow4b} |
+| \${rainbow5name} | \${rainbow5} | \${rainbow5hex} | \${rainbow5deg} | \${rainbow5r} | \${rainbow5g} | \${rainbow5b} |
+| \${rainbow6name} | \${rainbow6} | \${rainbow6hex} | \${rainbow6deg} | \${rainbow6r} | \${rainbow6g} | \${rainbow6b} |
+| \${rainbow7name} | \${rainbow7} | \${rainbow7hex} | \${rainbow7deg} | \${rainbow7r} | \${rainbow7g} | \${rainbow7b} |
+| \${rainbow8name} | \${rainbow8} | \${rainbow8hex} | \${rainbow8deg} | \${rainbow8r} | \${rainbow8g} | \${rainbow8b} |
+| \${rainbow9name} | \${rainbow9} | \${rainbow9hex} | \${rainbow9deg} | \${rainbow9r} | \${rainbow9g} | \${rainbow9b} |
 
 ::: {.callout-warning}
 # Bad Pun Alert
@@ -168,7 +176,7 @@ The labels can provide a general sense of direction explain different turn [subm
 
 Orange you glad this pun wasn't kk
 
-The  or change the [metric prefix](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) to indicate a different turn [submultiple](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
+The  or change the  to indicate a different turn [submultiple](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
 The color🎨labels show the equivalence of ,  can provide a general sense of direction. 
 
  (deci, centi, milli, etc.) and 
