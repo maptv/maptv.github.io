@@ -231,44 +231,120 @@ response to the [Observable](https://observablehq.com) [hue bar📊and
 range🎚️](https://observablehq.com/@paavanb/progressive-color-picker)inputs
 beneath it, but also adapts to the course from
 <span class="point0">Point 0</span> to <span class="point1">Point
-1</span> on the map🗺️. We can convert the currently selected course
-value from m*α* into degrees and a
-[compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction):
-${rainbowMtr} m*α* = ${rainbowDeg}° = ${rainbowDir}.
-
-The saturation and lightness range🎚️inputs have no effect on the course,
-but control how far away the color label is from gray and black,
-respectively. ${rainbowHue} can be expressed as the [hex
+1</span> on the map🗺️. The m*α* value of the current course is
+represented by the [hex
 triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
-${rainbowHex} ${rainbowHex1}. We can convert the
+${rainbowHex} and can be converted into degrees and a
+[compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction):
+${rainbowMtr} m*α* = ${rainbowDegC}° = ${rainbowDir}.
 
-Regardless of the [unit](https://en.wikipedia.org/wiki/Angle#Units) we
-use, color🎨can provide a general sense of [angular
-measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle).
-To label values, we can choose any
+Regardless of the [metric
+prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
+and [units](https://en.wikipedia.org/wiki/Angle#Units) we use,
+color🎨can provide a general sense of [angular
+measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle)
+and is thus useful for labeling turn
+[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
+Dec arranges colors🎨in a rainbow🌈pattern based on [physical
+properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV)))
+of the [visible
+spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
+of light. The ${rainbowColor}🎨selected by the range🎚️inputs above⬆️can
+be expressed as the hex triplet ${rainbowHex1}.
+
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 24%" />
+<col style="width: 27%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>m<span class="math inline"><em>α</em></span></strong></th>
+<th><strong>c°</strong></th>
+<th><strong>h°</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>${rainbowN}</td>
+<td>${rainbowNmtr}</td>
+<td>${rainbowNdegC}</td>
+<td>${rainbowNdegH}</td>
+</tr>
+<tr>
+<td>${rainbowNE}</td>
+<td>${rainbowNEmtr}</td>
+<td>${rainbowNEdegC}</td>
+<td>${rainbowNEdegH}</td>
+</tr>
+<tr>
+<td>${rainbowE}</td>
+<td>${rainbowEmtr}</td>
+<td>${rainbowEdegC}</td>
+<td>${rainbowEdegH}</td>
+</tr>
+<tr>
+<td>${rainbowSE}</td>
+<td>${rainbowSEmtr}</td>
+<td>${rainbowSEdegC}</td>
+<td>${rainbowSEdegH}</td>
+</tr>
+<tr>
+<td>${rainbowS}</td>
+<td>${rainbowSmtr}</td>
+<td>${rainbowSdegC}</td>
+<td>${rainbowSdegH}</td>
+</tr>
+<tr>
+<td>${rainbowSW}</td>
+<td>${rainbowSWmtr}</td>
+<td>${rainbowSWdegC}</td>
+<td>${rainbowSWdegH}</td>
+</tr>
+<tr>
+<td>${rainbowW}</td>
+<td>${rainbowWmtr}</td>
+<td>${rainbowWdegC}</td>
+<td>${rainbowWdegH}</td>
+</tr>
+<tr>
+<td>${rainbowNW}</td>
+<td>${rainbowNWmtr}</td>
+<td>${rainbowNWdegC}</td>
+<td>${rainbowNWdegH}</td>
+</tr>
+</tbody>
+</table>
+
+The table above⬆️shows the m*α* and compass🧭degree (c°) values of the
+[cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
+and
+[intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
+directions along with the [HSL and
+HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
+hue degree (h°) values and hex triplets (hex) of their color🎨labels.
+
+The Dec color
 [palette](https://en.wikipedia.org/wiki/Palette_(computing)#:~:text=the%20set%20of%20available%20colors)
-we like, but it makes sense to arrange the colors🎨according to physical
-properties of light, such as wavelength, frequency, and photon energy,
-to get the familiar rainbow🌈pattern of the [visible
-spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye).
-
-The Dec color palette consists of the ten colors that are inspired by
-the [Munsell color
+is inspired by the [Munsell color
 system](https://en.wikipedia.org/wiki/Munsell_color_system#Hue). The
 deciturn (dt), hexadecimal (hex), [HSL and
 HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
 hue degree (h°), red (r), green (g), and blue (b) values of the ten Dec
 colors are listed in the table below.
 
-<table>
+<table style="width:100%;">
 <colgroup>
-<col style="width: 21%" />
 <col style="width: 16%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
 </colgroup>
 <thead>
 <tr>
@@ -283,119 +359,97 @@ colors are listed in the table below.
 </thead>
 <tbody>
 <tr>
-<td><a
-href="https://en.wikipedia.org/wiki/Red#:~:text=,Color%20coordinates,-Hex%20triplet">${rainbow0name}</a></td>
+<td>${rainbow0name}</td>
 <td>${rainbow0}</td>
 <td>${rainbow0hex}</td>
 <td>${rainbow0deg}</td>
-<td>255</td>
-<td>0</td>
-<td>0</td>
+<td>${rainbow0r}</td>
+<td>${rainbow0g}</td>
+<td>${rainbow0b}</td>
 </tr>
 <tr>
-<td><a
-href="https://en.wikipedia.org/wiki/Magenta#:~:text=Magenta-,Color%20coordinates,-Hex%20triplet">${rainbow1name}</a></td>
+<td>${rainbow1name}</td>
 <td>${rainbow1}</td>
 <td>${rainbow1hex}</td>
 <td>${rainbow1deg}</td>
-<td>255</td>
-<td>0</td>
-<td>255</td>
+<td>${rainbow1r}</td>
+<td>${rainbow1g}</td>
+<td>${rainbow1b}</td>
 </tr>
 <tr>
-<td><a
-href="https://en.wikipedia.org/wiki/Violet_(color)#:~:text=,Color%20coordinates,-Hex%20triplet">${rainbow2name}</a></td>
+<td>${rainbow2name}</td>
 <td>${rainbow2}</td>
 <td>${rainbow2hex}</td>
 <td>${rainbow2deg}</td>
-<td>128</td>
-<td>0</td>
-<td>255</td>
+<td>${rainbow2r}</td>
+<td>${rainbow2g}</td>
+<td>${rainbow2b}</td>
 </tr>
 <tr>
-<td><a
-href="https://en.wikipedia.org/wiki/Blue#:~:text=,Colour%20coordinates,-Hex%20triplet">${rainbow3name}</a></td>
+<td>${rainbow3name}</td>
 <td>${rainbow3}</td>
 <td>${rainbow3hex}</td>
 <td>${rainbow3deg}</td>
-<td>0</td>
-<td>0</td>
-<td>255</td>
+<td>${rainbow3r}</td>
+<td>${rainbow3g}</td>
+<td>${rainbow3b}</td>
 </tr>
 <tr>
-<td><a
-href="https://en.wikipedia.org/wiki/Azure_(color)#:~:text=Azure-,Color%20coordinates,-Hex%20triplet">${rainbow4name}</a></td>
+<td>${rainbow4name}</td>
 <td>${rainbow4}</td>
 <td>${rainbow4hex}</td>
 <td>${rainbow4deg}</td>
-<td>0</td>
-<td>128</td>
-<td>255</td>
+<td>${rainbow4r}</td>
+<td>${rainbow4g}</td>
+<td>${rainbow4b}</td>
 </tr>
 <tr>
-<td><a
-href="https://en.wikipedia.org/wiki/Cyan#:~:text=water-,Color%20coordinates,-Hex%20triplet">${rainbow5name}</a></td>
+<td>${rainbow5name}</td>
 <td>${rainbow5}</td>
 <td>${rainbow5hex}</td>
 <td>${rainbow5deg}</td>
-<td>0</td>
-<td>255</td>
-<td>255</td>
+<td>${rainbow5r}</td>
+<td>${rainbow5g}</td>
+<td>${rainbow5b}</td>
 </tr>
 <tr>
-<td><a
-href="https://en.wikipedia.org/wiki/Shades_of_green#:~:text=money%2C%20Earth-,Color%20coordinates,-Hex%20triplet">${rainbow6name}</a></td>
+<td>${rainbow6name}</td>
 <td>${rainbow6}</td>
 <td>${rainbow6hex}</td>
 <td>${rainbow6deg}</td>
-<td>0</td>
-<td>255</td>
-<td>0</td>
+<td>${rainbow6r}</td>
+<td>${rainbow6g}</td>
+<td>${rainbow6b}</td>
 </tr>
 <tr>
-<td><a
-href="https://en.wikipedia.org/wiki/Lime_(color)#:~:text=Lime-,Color%20coordinates,-Hex%20triplet">${rainbow7name}</a></td>
+<td>${rainbow7name}</td>
 <td>${rainbow7}</td>
 <td>${rainbow7hex}</td>
 <td>${rainbow7deg}</td>
-<td>192</td>
-<td>255</td>
-<td>0</td>
+<td>${rainbow7r}</td>
+<td>${rainbow7g}</td>
+<td>${rainbow7b}</td>
 </tr>
 <tr>
-<td><a
-href="https://en.wikipedia.org/wiki/Yellow#:~:text=,Color%20coordinates,-Hex%20triplet">${rainbow8name}</a></td>
+<td>${rainbow8name}</td>
 <td>${rainbow8}</td>
 <td>${rainbow8hex}</td>
 <td>${rainbow8deg}</td>
-<td>255</td>
-<td>255</td>
-<td>0</td>
+<td>${rainbow8r}</td>
+<td>${rainbow8g}</td>
+<td>${rainbow8b}</td>
 </tr>
 <tr>
-<td><a
-href="https://en.wikipedia.org/wiki/Orange_(colour)#:~:text=,Colour%20coordinates,-Hex%20triplet">${rainbow9name}</a></td>
+<td>${rainbow9name}</td>
 <td>${rainbow9}</td>
 <td>${rainbow9hex}</td>
 <td>${rainbow9deg}</td>
-<td>255</td>
-<td>128</td>
-<td>0</td>
+<td>${rainbow9r}</td>
+<td>${rainbow9g}</td>
+<td>${rainbow9b}</td>
 </tr>
 </tbody>
 </table>
-
-The
-[cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
-and
-[intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
-direction labels above⬆️are ${rainbowN} = ${rainbowNmtr} m*α* =
-${rainbowNdeg}°, ${rainbowNE} = ${rainbowNEmtr} m*α* = ${rainbowNEdeg}°,
-${rainbowE} = ${rainbowEmtr} m*α* = ${rainbowEdeg}°, ${rainbowSE} =
-${rainbowSEmtr} m*α* = ${rainbowSEdeg}°, ${rainbowS} = ${rainbowSmtr}
-m*α* = ${rainbowSdeg}°, ${rainbowSW} = ${rainbowSWmtr} m*α* =
-${rainbowSWdeg}°, ${rainbowW} = ${rainbowWmtr} m*α* = ${rainbowWdeg}°,
-and ${rainbowNW} = ${rainbowNWmtr} m*α* = ${rainbowNWdeg}°.
 
 <div>
 
@@ -427,9 +481,7 @@ the colors <span class="red">red</span>,
 
 Orange you glad this pun wasn’t kk
 
-The or change the [metric
-prefix](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
-to indicate a different turn
+The or change the to indicate a different turn
 [submultiple](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
 The color🎨labels show the equivalence of , can provide a general sense
 of direction.
@@ -1287,7 +1339,7 @@ function textcolor(content, style = {}) {
   }
   const {
     background,
-    color = yiq(background) >= 0.5 ? "#000" : "white",
+    color = yiq(background) >= 0.51 ? "#000" : "white",
     padding = "0 5px",
     borderRadius = "4px",
     fontWeight = 400,
@@ -1317,14 +1369,14 @@ function dec2hue(d) {
 piecewiseColor = d3.piecewise(d3.interpolateRgb, [
   "#f00", // red
   "#f0f", // magenta
-  "#8000ff", // violet
+  "#a0f", // violet
   "#00f", // blue
-  "#0080ff", // azure
+  "#0af", // azure
   "#0ff", // cyan
   "#0f0", // green
-  "#c0ff00", // lime
-  "#ffff00", // yellow
-  "#ff8000", // orange
+  "#af0", // lime
+  "#ff0", // yellow
+  "#fa0", // orange
   "#f00", // red
 ])
 hueMtr = Math.round(colorD)
@@ -1332,87 +1384,118 @@ hueDeg = dec2hue(colorD / 1000) * .36
 hStr = `hsl(${hueDeg}`
 slStr = `, ${colorS / 10}%, ${colorL / 10}%)`
 hslStr = hStr + slStr
-bkg = ({background: hslStr})
-rainbowHue = textcolor('hue', bkg)
-rainbowMtr = textcolor(Math.round(hueMtr), bkg)
-rainbowDir = textcolor(turn2comp(hueMtr), bkg)
-rainbowDeg = textcolor(Math.round(hueDeg), bkg)
-rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkg)
-rainbowHex1 = textcolor(d3.color(piecewiseColor(colorD / 1000)).formatHex().slice(1), bkg)
+bkgH = ({background: hStr + ", 100%, 50%)"})
+bkgHsl = ({background: hslStr})
+rainbowHue = textcolor('hue', bkgH)
+rainbowColor = textcolor('color', bkgHsl)
+rainbowMtr = textcolor(hueMtr, bkgH)
+rainbowDir = textcolor(turn2comp(hueMtr), bkgH)
+rainbowDegC = textcolor(Math.round(colorD *.36), bkgH)
+rainbowDegH = textcolor(Math.round(hueDeg), bkgH)
+rainbowHex = textcolor(d3.color(piecewiseColor(colorD / 1000)).formatHex().slice(1), bkgH)
+rainbowHex1 = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
 rainbow0 = textcolor('0', "#f00") // red
 rainbow1 = textcolor('1', "#f0f") // magenta
-rainbow2 = textcolor('2', "#8000ff") // violet
+rainbow2 = textcolor('2', "#a0f") // violet
 rainbow3 = textcolor('3', "#00f") // blue
-rainbow4 = textcolor('4', "#0080ff") // azure
+rainbow4 = textcolor('4', "#0af") // azure
 rainbow5 = textcolor('5', "#0ff") // cyan
 rainbow6 = textcolor('6', "#0f0") // green
-rainbow7 = textcolor('7', "#c0ff00") // lime
-rainbow8 = textcolor('8', "#ffff00") // yellow
-rainbow9 = textcolor('9', "#ff8000") // orange
-rainbow0hex = textcolor('ff0000', "#f00") // red
-rainbow1hex = textcolor('ff00ff', "#f0f") // magenta
-rainbow2hex = textcolor('8000ff', "#8000ff") // violet
-rainbow3hex = textcolor('0000ff', "#00f") // blue
-rainbow4hex = textcolor('0080ff', "#0080ff") // azure
-rainbow5hex = textcolor('00ffff', "#0ff") // cyan
-rainbow6hex = textcolor('00ff00', "#0f0") // green
-rainbow7hex = textcolor('c0ff00', "#c0ff00") // lime
-rainbow8hex = textcolor('ffff00', "#ffff00") // yellow
-rainbow9hex = textcolor('ff8000', "#ff8000") // orange
+rainbow7 = textcolor('7', "#af0") // lime
+rainbow8 = textcolor('8', "#ff0") // yellow
+rainbow9 = textcolor('9', "#fa0") // orange
+rainbow0hex = textcolor('f00', "#f00") // red
+rainbow1hex = textcolor('f0f', "#f0f") // magenta
+rainbow2hex = textcolor('a0f', "#a0f") // violet
+rainbow3hex = textcolor('00f', "#00f") // blue
+rainbow4hex = textcolor('0af', "#0af") // azure
+rainbow5hex = textcolor('0ff', "#0ff") // cyan
+rainbow6hex = textcolor('0f0', "#0f0") // green
+rainbow7hex = textcolor('af0', "#af0") // lime
+rainbow8hex = textcolor('ff0', "#ff0") // yellow
+rainbow9hex = textcolor('fa0', "#fa0") // orange
 rainbow0deg = textcolor('0', "#f00") // red
 rainbow1deg = textcolor('300', "#f0f") // magenta
-rainbow2deg = textcolor('270', "#8000ff") // violet
+rainbow2deg = textcolor('280', "#a0f") // violet
 rainbow3deg = textcolor('240', "#00f") // blue
-rainbow4deg = textcolor('210', "#0080ff") // azure
+rainbow4deg = textcolor('200', "#0af") // azure
 rainbow5deg = textcolor('180', "#0ff") // cyan
 rainbow6deg = textcolor('120', "#0f0") // green
-rainbow7deg = textcolor('75', "#c0ff00") // lime
-rainbow8deg = textcolor('60', "#ffff00") // yellow
-rainbow9deg = textcolor('30', "#ff8000") // orange
+rainbow7deg = textcolor('80',  "#af0") // lime
+rainbow8deg = textcolor('60',  "#ff0") // yellow
+rainbow9deg = textcolor('40',  "#fa0") // orange
 rainbow0name = textcolor('red', "#f00") // red
 rainbow1name = textcolor('magenta', "#f0f") // magenta
-rainbow2name = textcolor('violet', "#8000ff") // violet
+rainbow2name = textcolor('violet', "#a0f") // violet
 rainbow3name = textcolor('blue', "#00f") // blue
-rainbow4name = textcolor('azure', "#0080ff") // azure
+rainbow4name = textcolor('azure', "#0af") // azure
 rainbow5name = textcolor('cyan', "#0ff") // cyan
 rainbow6name = textcolor('green', "#0f0") // green
-rainbow7name = textcolor('lime', "#c0ff00") // lime
-rainbow8name = textcolor('yellow', "#ffff00") // yellow
-rainbow9name = textcolor('orange', "#ff8000") // orange
-rainbowMili0 = textcolor('0', "#f00")
-rainbowMili1 = textcolor('90', "#f80")
-rainbowMili2 = textcolor('145', "#fd0")
-rainbowMili3 = textcolor('200', "#cf0")
-rainbowMili4 = textcolor('400', "#0f6")
-rainbowMili5 = textcolor('500', "#0ff")
-rainbowMili6 = textcolor('600', "#06f")
-rainbowMili7 = textcolor('700', "#30f")
-rainbowMili8 = textcolor('800', "#c0f")
-rainbowMili9 = textcolor('867', "#f0c")
+rainbow7name = textcolor('lime', "#af0") // lime
+rainbow8name = textcolor('yellow', "#ff0") // yellow
+rainbow9name = textcolor('orange', "#fa0") // orange
+rainbow0r = textcolor('255', "#f00") // red
+rainbow1r = textcolor('255', "#f0f") // magenta
+rainbow2r = textcolor('170', "#a0f") // violet
+rainbow3r = textcolor('0', "#00f") // blue
+rainbow4r = textcolor('0', "#0af") // azure
+rainbow5r = textcolor('0', "#0ff") // cyan
+rainbow6r = textcolor('0', "#0f0") // green
+rainbow7r = textcolor('170', "#af0") // lime
+rainbow8r = textcolor('255', "#ff0") // yellow
+rainbow9r = textcolor('255', "#fa0") // orange
+rainbow0g = textcolor('0', "#f00") // red
+rainbow1g = textcolor('0', "#f0f") // magenta
+rainbow2g = textcolor('0', "#a0f") // violet
+rainbow3g = textcolor('0', "#00f") // blue
+rainbow4g = textcolor('170', "#0af") // azure
+rainbow5g = textcolor('255', "#0ff") // cyan
+rainbow6g = textcolor('255', "#0f0") // green
+rainbow7g = textcolor('255', "#af0") // lime
+rainbow8g = textcolor('255', "#ff0") // yellow
+rainbow9g = textcolor('170', "#fa0") // orange
+rainbow0b = textcolor('0', "#f00") // red
+rainbow1b = textcolor('255', "#f0f") // magenta
+rainbow2b = textcolor('255', "#a0f") // violet
+rainbow3b = textcolor('255', "#00f") // blue
+rainbow4b = textcolor('255', "#0af") // azure
+rainbow5b = textcolor('255', "#0ff") // cyan
+rainbow6b = textcolor('0', "#0f0") // green
+rainbow7b = textcolor('0', "#af0") // lime
+rainbow8b = textcolor('0', "#ff0") // yellow
+rainbow9b = textcolor('0', "#fa0") // orange
 rainbowN = textcolor('N', "hsl(0" + slStr)
 rainbowNmtr = textcolor('0', "hsl(0" + slStr)
-rainbowNdeg = textcolor('0', "hsl(0" + slStr)
-rainbowNE = textcolor('NE', "hsl(45" + slStr)
-rainbowNEmtr = textcolor('125', "hsl(45" + slStr)
-rainbowNEdeg = textcolor('45', "hsl(45" + slStr)
-rainbowE = textcolor('E', "hsl(90" + slStr)
-rainbowEmtr = textcolor('250', "hsl(90" + slStr)
-rainbowEdeg = textcolor('90', "hsl(90" + slStr)
-rainbowSE = textcolor('SE', "hsl(135" + slStr)
-rainbowSEmtr = textcolor('375', "hsl(135" + slStr)
-rainbowSEdeg = textcolor('135', "hsl(135" + slStr)
+rainbowNdegH = textcolor('0', "hsl(0" + slStr)
+rainbowNdegC = textcolor('0', "hsl(0" + slStr)
+rainbowNE = textcolor('NE', "hsl(295" + slStr)
+rainbowNEmtr = textcolor('125', "hsl(295" + slStr)
+rainbowNEdegH = textcolor('295', "hsl(295" + slStr)
+rainbowNEdegC = textcolor('45', "hsl(295" + slStr)
+rainbowE = textcolor('E', "hsl(260" + slStr)
+rainbowEmtr = textcolor('250', "hsl(260" + slStr)
+rainbowEdegH = textcolor('260', "hsl(260" + slStr)
+rainbowEdegC = textcolor('90', "hsl(260" + slStr)
+rainbowSE = textcolor('SE', "hsl(210" + slStr)
+rainbowSEmtr = textcolor('375', "hsl(210" + slStr)
+rainbowSEdegH = textcolor('210', "hsl(210" + slStr)
+rainbowSEdegC = textcolor('135', "hsl(210" + slStr)
 rainbowS = textcolor('S', "hsl(180" + slStr)
 rainbowSmtr = textcolor('500', "hsl(180" + slStr)
-rainbowSdeg = textcolor('180', "hsl(180" + slStr)
-rainbowSW = textcolor('SW', "hsl(225" + slStr)
-rainbowSWmtr = textcolor('625', "hsl(225" + slStr)
-rainbowSWdeg = textcolor('225', "hsl(225" + slStr)
-rainbowW = textcolor('W', "hsl(270" + slStr)
-rainbowWmtr = textcolor('750', "hsl(270" + slStr)
-rainbowWdeg = textcolor('270', "hsl(270" + slStr)
-rainbowNW = textcolor('NW', "hsl(315" + slStr)
-rainbowNWmtr = textcolor('875', "hsl(315" + slStr)
-rainbowNWdeg = textcolor('315', "hsl(315" + slStr)
+rainbowSdegH = textcolor('180', "hsl(180" + slStr)
+rainbowSdegC = textcolor('180', "hsl(180" + slStr)
+rainbowSW = textcolor('SW', "hsl(110" + slStr)
+rainbowSWmtr = textcolor('625', "hsl(110" + slStr)
+rainbowSWdegH = textcolor('110', "hsl(110" + slStr)
+rainbowSWdegC = textcolor('225', "hsl(110" + slStr)
+rainbowW = textcolor('W', "hsl(70" + slStr)
+rainbowWmtr = textcolor('750', "hsl(70" + slStr)
+rainbowWdegH = textcolor('70', "hsl(70" + slStr)
+rainbowWdegC = textcolor('270', "hsl(70" + slStr)
+rainbowNW = textcolor('NW', "hsl(45" + slStr)
+rainbowNWmtr = textcolor('875', "hsl(45" + slStr)
+rainbowNWdegH = textcolor('45', "hsl(45" + slStr)
+rainbowNWdegC = textcolor('315', "hsl(45" + slStr)
 // Show preview swatches of color
 preview = () => {
   const container = DOM.element('div')
