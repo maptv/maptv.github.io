@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+9
+2025+11
 
 <div id="decnav">
 
@@ -161,9 +161,9 @@ preview()
 //| class: colorcomponent
 // https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
 svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
-  <g transform='rotate(${Math.round(-colorH * .36)})'>
-  ${repeat(tick(radius, 5, '#434343'), numMinorTicks * 4 * numMajorTicks)}
-  ${repeat(tick(radius, 8), numMajorTicks * 4)}
+  <g transform='rotate(${Math.round(-colorD * .36)})'>
+  ${repeat(tick(radius, 5, '#434343'), 5 * 4 * 10)}
+  ${repeat(tick(radius, 8), 10 * 4)}
   ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
   ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="white" stroke="black" stroke-width="1"/>`, 4, 45)}
   <circle r="${radius}" fill="#d3d3d3" stroke="#434343" stroke-width="3" />
@@ -171,7 +171,7 @@ svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size}
   ${repeat(directionMarker(radius+12, 24), 4, 45)}
   ${repeat(turnMarker(radius+14, 32), 4, 0)}
   ${repeat(turnMarker(radius+12, 32), 4, 45)}
-  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / piecolors.length / 2, 1, piecolors), piecolors.length, 360/piecolors.length)}
+  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / deccolors.length / 2, 1, deccolors), deccolors.length, 360/deccolors.length)}
 </svg>
 `
 ```
@@ -181,11 +181,11 @@ svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size}
 //| label: colorbar
 //| class: colorcomponent
 // https://observablehq.com/@paavanb/progressive-color-picker
-hueBar = colorbar({
-  colorFn: t => hslToRgb(t, colorS, colorL),
+decBar = colorbar({
+  colorFn: t => hslToRgb(dec2hue(t) / 1000, colorS / 1000, colorL / 1000),
   onSelect: t => {
-    set(viewof colorH, t * 1000)
-    onUpdateHSL(t * 1000, colorS, colorL)
+    set(viewof colorD, t * 1000)
+    onUpdateHSL(dec2hue(t), colorS / 1000, colorL / 1000)
   }
 })
 ```
@@ -195,32 +195,196 @@ hueBar = colorbar({
 //| label: colorslider
 //| class: colorcomponent
 // https://observablehq.com/@paavanb/progressive-color-picker
-{ const input = Inputs.range([0, 1000], { value: 0, step: 1 })
+{ const input = Inputs.range([0, 1000], { label: "hue", value: 0, step: 1 })
   input.value = initialHSL[0]
-  input.oninput = (evt) => onUpdateHSL(evt.currentTarget.value, colorS, colorL)
-  return Inputs.bind(input, viewof colorH)
+  input.oninput = (evt) => onUpdateHSL(dec2hue(evt.currentTarget.value / 1000), colorS / 1000, colorL / 1000)
+  return Inputs.bind(input, viewof colorD)
+}
+```
+
+``` {ojs}
+//| echo: false
+//| label: saturslider
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { label: "saturation", value: 1000, step: 1, })
+  input.oninput = (evt) => onUpdateHSL(colorD, evt.currentTarget.value / 1000, colorL / 1000)
+  return Inputs.bind(input, viewof colorS)
+}
+```
+
+``` {ojs}
+//| echo: false
+//| label: lightslider
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { label: "lightness", value: 500, step: 1, })
+  input.oninput = (evt) => onUpdateHSL(colorD, colorS / 1000, evt.currentTarget.value / 1000)
+  return Inputs.bind(input, viewof colorL)
 }
 ```
 
 The
 [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
 [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️rotates🔄in
-response to the [Observable](https://observablehq.com)
-[range](https://observablehq.com/@observablehq/input-range)🎚️and [hue
-bar](https://observablehq.com/@paavanb/progressive-color-picker)📊inputs
+response to the [Observable](https://observablehq.com) [hue bar📊and
+range🎚️](https://observablehq.com/@paavanb/progressive-color-picker)inputs
 beneath it, but also adapts to the course from
 <span class="point0">Point 0</span> to <span class="point1">Point
-1</span> on the map🗺️. The currently selected ${rainbowHue} can be
-expressed as the [hex
-triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
-${rainbowHex}. We can convert the course value from m*α* into degrees
-and a
+1</span> on the map🗺️. We can convert the currently selected course
+value from m*α* into degrees and a
 [compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction):
 ${rainbowMtr} m*α* = ${rainbowDeg}° = ${rainbowDir}.
+
+The saturation and lightness range🎚️inputs have no effect on the course,
+but control how far away the color label is from gray and black,
+respectively. ${rainbowHue} can be expressed as the [hex
+triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
+${rainbowHex} ${rainbowHex1}. We can convert the
 
 Regardless of the [unit](https://en.wikipedia.org/wiki/Angle#Units) we
 use, color🎨can provide a general sense of [angular
 measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle).
+To label values, we can choose any
+[palette](https://en.wikipedia.org/wiki/Palette_(computing)#:~:text=the%20set%20of%20available%20colors)
+we like, but it makes sense to arrange the colors🎨according to physical
+properties of light, such as wavelength, frequency, and photon energy,
+to get the familiar rainbow🌈pattern of the [visible
+spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye).
+
+The Dec color palette consists of the ten colors that are inspired by
+the [Munsell color
+system](https://en.wikipedia.org/wiki/Munsell_color_system#Hue). The
+deciturn (dt), hexadecimal (hex), [HSL and
+HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
+hue degree (h°), red (r), green (g), and blue (b) values of the ten Dec
+colors are listed in the table below.
+
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 16%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>dt</strong></th>
+<th><strong>hex</strong></th>
+<th><strong>h°</strong></th>
+<th><strong>r</strong></th>
+<th><strong>g</strong></th>
+<th><strong>b</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Red#:~:text=,Color%20coordinates,-Hex%20triplet">${rainbow0name}</a></td>
+<td>${rainbow0}</td>
+<td>${rainbow0hex}</td>
+<td>${rainbow0deg}</td>
+<td>255</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Magenta#:~:text=Magenta-,Color%20coordinates,-Hex%20triplet">${rainbow1name}</a></td>
+<td>${rainbow1}</td>
+<td>${rainbow1hex}</td>
+<td>${rainbow1deg}</td>
+<td>255</td>
+<td>0</td>
+<td>255</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Violet_(color)#:~:text=,Color%20coordinates,-Hex%20triplet">${rainbow2name}</a></td>
+<td>${rainbow2}</td>
+<td>${rainbow2hex}</td>
+<td>${rainbow2deg}</td>
+<td>128</td>
+<td>0</td>
+<td>255</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Blue#:~:text=,Colour%20coordinates,-Hex%20triplet">${rainbow3name}</a></td>
+<td>${rainbow3}</td>
+<td>${rainbow3hex}</td>
+<td>${rainbow3deg}</td>
+<td>0</td>
+<td>0</td>
+<td>255</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Azure_(color)#:~:text=Azure-,Color%20coordinates,-Hex%20triplet">${rainbow4name}</a></td>
+<td>${rainbow4}</td>
+<td>${rainbow4hex}</td>
+<td>${rainbow4deg}</td>
+<td>0</td>
+<td>128</td>
+<td>255</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Cyan#:~:text=water-,Color%20coordinates,-Hex%20triplet">${rainbow5name}</a></td>
+<td>${rainbow5}</td>
+<td>${rainbow5hex}</td>
+<td>${rainbow5deg}</td>
+<td>0</td>
+<td>255</td>
+<td>255</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Shades_of_green#:~:text=money%2C%20Earth-,Color%20coordinates,-Hex%20triplet">${rainbow6name}</a></td>
+<td>${rainbow6}</td>
+<td>${rainbow6hex}</td>
+<td>${rainbow6deg}</td>
+<td>0</td>
+<td>255</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Lime_(color)#:~:text=Lime-,Color%20coordinates,-Hex%20triplet">${rainbow7name}</a></td>
+<td>${rainbow7}</td>
+<td>${rainbow7hex}</td>
+<td>${rainbow7deg}</td>
+<td>192</td>
+<td>255</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Yellow#:~:text=,Color%20coordinates,-Hex%20triplet">${rainbow8name}</a></td>
+<td>${rainbow8}</td>
+<td>${rainbow8hex}</td>
+<td>${rainbow8deg}</td>
+<td>255</td>
+<td>255</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/Orange_(colour)#:~:text=,Colour%20coordinates,-Hex%20triplet">${rainbow9name}</a></td>
+<td>${rainbow9}</td>
+<td>${rainbow9hex}</td>
+<td>${rainbow9deg}</td>
+<td>255</td>
+<td>128</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
 The
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
 and
@@ -249,27 +413,6 @@ and ${rainbowNW} = ${rainbowNWmtr} m*α* = ${rainbowNWdeg}°.
 > of a color🎨pun?
 
 </div>
-
-``` {ojs}
-//| echo: false
-//| label: deccolorwheelcompass
-//| class: colorcomponent
-// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
-svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
-  <g transform='rotate(${Math.round(-colorH * .36)})'>
-  ${repeat(tick(radius, 5, '#434343'), 5 * 4 * 10)}
-  ${repeat(tick(radius, 8), 10 * 4)}
-  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
-  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="white" stroke="black" stroke-width="1"/>`, 4, 45)}
-  <circle r="${radius}" fill="#d3d3d3" stroke="#434343" stroke-width="3" />
-  ${repeat(directionMarker(radius+14, 24), 4, 0)}
-  ${repeat(directionMarker(radius+12, 24), 4, 45)}
-  ${repeat(turnMarker(radius+14, 32), 4, 0)}
-  ${repeat(turnMarker(radius+12, 32), 4, 45)}
-  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / deccolors.length / 2, 1, deccolors), deccolors.length, 360/deccolors.length)}
-</svg>
-`
-```
 
 The Dec color wheel is different than its trichromatic counterpart.
 
@@ -1164,12 +1307,38 @@ function textcolor(content, style = {}) {
 function turn2comp(turn) {
   return ["N", "NE", "E", "SE", "S", "SW", "W", "NW"][Math.round(turn / 125) % 8]
 }
-hueMtr = Math.round(colorH)
-hueDeg = Math.round(hueMtr * .36)
+function dec2rgb(d) {
+  const color = d3.color(piecewiseColor(d % 1))
+  return [color.r, color.g, color.b]
+}
+function dec2hue(d) {
+  return rgbToHsl(...dec2rgb(d))[0] * 1000
+}
+piecewiseColor = d3.piecewise(d3.interpolateRgb, [
+  "#f00", // red
+  "#f0f", // magenta
+  "#8000ff", // violet
+  "#00f", // blue
+  "#0080ff", // azure
+  "#0ff", // cyan
+  "#0f0", // green
+  "#c0ff00", // lime
+  "#ffff00", // yellow
+  "#ff8000", // orange
+  "#f00", // red
+])
+hueMtr = Math.round(colorD)
+hueDeg = dec2hue(colorD / 1000) * .36
 hStr = `hsl(${hueDeg}`
-slStr = `, ${Math.round(colorS * 100)}%, ${Math.round(colorL * 100)}%)`
+slStr = `, ${colorS / 10}%, ${colorL / 10}%)`
 hslStr = hStr + slStr
 bkg = ({background: hslStr})
+rainbowHue = textcolor('hue', bkg)
+rainbowMtr = textcolor(Math.round(hueMtr), bkg)
+rainbowDir = textcolor(turn2comp(hueMtr), bkg)
+rainbowDeg = textcolor(Math.round(hueDeg), bkg)
+rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkg)
+rainbowHex1 = textcolor(d3.color(piecewiseColor(colorD / 1000)).formatHex().slice(1), bkg)
 rainbow0 = textcolor('0', "#f00") // red
 rainbow1 = textcolor('1', "#f0f") // magenta
 rainbow2 = textcolor('2', "#8000ff") // violet
@@ -1180,16 +1349,36 @@ rainbow6 = textcolor('6', "#0f0") // green
 rainbow7 = textcolor('7', "#c0ff00") // lime
 rainbow8 = textcolor('8', "#ffff00") // yellow
 rainbow9 = textcolor('9', "#ff8000") // orange
-// rainbowRed = textcolor('red', "#f00") // red
-// rainbowMag = textcolor('magenta', "#f0f") // magenta
-// rainbowVio = textcolor('violet', "#8000ff") // violet
-// rainbowBlu = textcolor('blue', "#00f") // blue
-// rainbowAzu = textcolor('azure', "#0080ff") // azure
-// rainbowCya = textcolor('cyan', #0ff") // cyan
-// rainbowGre = textcolor('green', "#0f0") // green
-// rainbowLim = textcolor('lime', "#c0ff00") // lime
-// rainbowYel = textcolor('yellow', "#ffff00") // yellow
-// rainbowOra = textcolor('orange', "#ff8000") // orange
+rainbow0hex = textcolor('ff0000', "#f00") // red
+rainbow1hex = textcolor('ff00ff', "#f0f") // magenta
+rainbow2hex = textcolor('8000ff', "#8000ff") // violet
+rainbow3hex = textcolor('0000ff', "#00f") // blue
+rainbow4hex = textcolor('0080ff', "#0080ff") // azure
+rainbow5hex = textcolor('00ffff', "#0ff") // cyan
+rainbow6hex = textcolor('00ff00', "#0f0") // green
+rainbow7hex = textcolor('c0ff00', "#c0ff00") // lime
+rainbow8hex = textcolor('ffff00', "#ffff00") // yellow
+rainbow9hex = textcolor('ff8000', "#ff8000") // orange
+rainbow0deg = textcolor('0', "#f00") // red
+rainbow1deg = textcolor('300', "#f0f") // magenta
+rainbow2deg = textcolor('270', "#8000ff") // violet
+rainbow3deg = textcolor('240', "#00f") // blue
+rainbow4deg = textcolor('210', "#0080ff") // azure
+rainbow5deg = textcolor('180', "#0ff") // cyan
+rainbow6deg = textcolor('120', "#0f0") // green
+rainbow7deg = textcolor('75', "#c0ff00") // lime
+rainbow8deg = textcolor('60', "#ffff00") // yellow
+rainbow9deg = textcolor('30', "#ff8000") // orange
+rainbow0name = textcolor('red', "#f00") // red
+rainbow1name = textcolor('magenta', "#f0f") // magenta
+rainbow2name = textcolor('violet', "#8000ff") // violet
+rainbow3name = textcolor('blue', "#00f") // blue
+rainbow4name = textcolor('azure', "#0080ff") // azure
+rainbow5name = textcolor('cyan', "#0ff") // cyan
+rainbow6name = textcolor('green', "#0f0") // green
+rainbow7name = textcolor('lime', "#c0ff00") // lime
+rainbow8name = textcolor('yellow', "#ffff00") // yellow
+rainbow9name = textcolor('orange', "#ff8000") // orange
 rainbowMili0 = textcolor('0', "#f00")
 rainbowMili1 = textcolor('90', "#f80")
 rainbowMili2 = textcolor('145', "#fd0")
@@ -1224,11 +1413,6 @@ rainbowWdeg = textcolor('270', "hsl(270" + slStr)
 rainbowNW = textcolor('NW', "hsl(315" + slStr)
 rainbowNWmtr = textcolor('875', "hsl(315" + slStr)
 rainbowNWdeg = textcolor('315', "hsl(315" + slStr)
-rainbowHue = textcolor('hue', bkg)
-rainbowMtr = textcolor(hueMtr, bkg)
-rainbowDir = textcolor(turn2comp(hueMtr), bkg)
-rainbowDeg = textcolor(hueDeg, bkg)
-rainbowHex = textcolor(d3.hsl(hueDeg, colorS, colorL).formatHex().slice(1), bkg)
 // Show preview swatches of color
 preview = () => {
   const container = DOM.element('div')
@@ -1239,7 +1423,7 @@ preview = () => {
       .style('font-weight', 'bold')
     .append('div')
       .classed('swatch', true)
-      .style('background-color', `hsl(${colorH * .36}, 100%, 50%`);
+      .style('background-color', `hsl(${dec2hue(colorD / 1000) * .36}, ${colorS / 10}%, ${colorL / 10}%`);
   d3.select(container)
     .append('div')
       .text('Preview')
@@ -1309,14 +1493,14 @@ initialHSL = rgbToHsl(...initialRGB)
 viewof colorR = Inputs.input(initialRGB[0])
 viewof colorG = Inputs.input(initialRGB[1])
 viewof colorB = Inputs.input(initialRGB[2])
-viewof colorH = Inputs.input(initialHSL[0])
-viewof colorS = Inputs.input(initialHSL[1])
-viewof colorL = Inputs.input(initialHSL[2])
+viewof colorD = Inputs.input(dec2hue(initialHSL[0]))
+viewof colorS = Inputs.input(1000)
+viewof colorL = Inputs.input(500)
 /**
  * Update all color values based on current HSL
  */
 onUpdateHSL = function(h, s, l) {
-  const rgb = hslToRgb(h * .36, s, l)
+  const rgb = hslToRgb(h / 1000, s / 1000, l / 1000)
   console.log(h)
   set(viewof colorR, rgb[0])
   set(viewof colorG, rgb[1])
@@ -1569,7 +1753,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       n_point = 0;
     }
     const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
-    set(viewof colorH, point0bear)
+    set(viewof colorD, point0bear)
     table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
     table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
     table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
@@ -1589,7 +1773,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     set(viewof suntoggle, false);
     set(viewof utctoggle, false);
     set(viewof select, projections.find(t => t.name === "Equirectangular (plate carrée)"));
-    set(viewof colorH, 0)
+    set(viewof colorD, 0)
     table.rows[1].cells[1].innerHTML = createCellDiv(800, 10)
     table.rows[2].cells[1].innerHTML = createCellDiv(800, 10)
     table.rows[1].cells[2].innerHTML = createCellDiv(0, 2.5)
@@ -1609,7 +1793,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       lonB = turn2long(liveTable[1].Milliparallel);
       latB = turn2degr(liveTable[1].Millimeridian % 250);
       const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
-      set(viewof colorH, point0bear)
+      set(viewof colorD, point0bear)
       table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
       table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
       table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
@@ -1627,7 +1811,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       lonB = turn2long(liveTable[1].Milliparallel);
       latB = turn2degr(liveTable[1].Millimeridian % 250);
       const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
-      set(viewof colorH, point0bear)
+      set(viewof colorD, point0bear)
       table.rows[1].cells[3].innerHTML = createCellDiv(point0bear, 10)
       table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
       draw(lonA, latA, lonB, latB);
@@ -2068,7 +2252,28 @@ div#distmap {
 div#colorslider > div {
   min-width: 360px;
 }
+div#colorslider > label {
+  maaxwidth: 60px;
+}
 div#colorslider input[type="number"] {
+  width: 105px;
+}
+div#saturslider > div {
+  min-width: 360px;
+}
+div#saturslider > label {
+  maaxwidth: 60px;
+}
+div#saturslider input[type="number"] {
+  width: 105px;
+}
+div#lightslider > div {
+  min-width: 360px;
+}
+div#lightslider > label {
+  maaxwidth: 60px;
+}
+div#lightslider input[type="number"] {
   width: 105px;
 }
 div#distmap {
