@@ -137,16 +137,16 @@ The [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abst
 
 Regardless of the [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) and [units](https://en.wikipedia.org/wiki/Angle#Units) we use, color🎨can provide a general sense of [angular measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle) and is thus useful for labeling turn [submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer). Dec arranges colors🎨in a rainbow🌈pattern based on [physical properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV))) of the [visible spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye) of light. The \${rainbowColor}🎨selected by the range🎚️inputs above⬆️can be expressed as the hex triplet \${rainbowHex1}.
 
-| **Name**    |  **m$\alpha$**   | **c°**            | **h°**             |
-| ----------- |  --------------- | ----------------- | ------------------ |
-\${rainbowN}  | \${rainbowNmtr}  | \${rainbowNdegC}  |  \${rainbowNdegH}  |
-\${rainbowNE} | \${rainbowNEmtr} | \${rainbowNEdegC} |  \${rainbowNEdegH} |
-\${rainbowE}  | \${rainbowEmtr}  | \${rainbowEdegC}  |  \${rainbowEdegH}  |
-\${rainbowSE} | \${rainbowSEmtr} | \${rainbowSEdegC} |  \${rainbowSEdegH} |
-\${rainbowS}  | \${rainbowSmtr}  | \${rainbowSdegC}  |  \${rainbowSdegH}  |
-\${rainbowSW} | \${rainbowSWmtr} | \${rainbowSWdegC} |  \${rainbowSWdegH} |
-\${rainbowW}  | \${rainbowWmtr}  | \${rainbowWdegC}  |  \${rainbowWdegH}  |
-\${rainbowNW} | \${rainbowNWmtr} | \${rainbowNWdegC} |  \${rainbowNWdegH} |
+| **Name**    |  **m$\alpha$**   | **c°**            | **h°**            | **hex**          |
+| ----------- |  --------------- | ----------------- | ----------------- | ---------------- |
+\${rainbowN}  | \${rainbowNmtr}  | \${rainbowNdegC}  | \${rainbowNdegH}  | \${rainbowNhex}  |
+\${rainbowNE} | \${rainbowNEmtr} | \${rainbowNEdegC} | \${rainbowNEdegH} | \${rainbowNEhex} |
+\${rainbowE}  | \${rainbowEmtr}  | \${rainbowEdegC}  | \${rainbowEdegH}  | \${rainbowEhex}  |
+\${rainbowSE} | \${rainbowSEmtr} | \${rainbowSEdegC} | \${rainbowSEdegH} | \${rainbowSEhex} |
+\${rainbowS}  | \${rainbowSmtr}  | \${rainbowSdegC}  | \${rainbowSdegH}  | \${rainbowShex}  |
+\${rainbowSW} | \${rainbowSWmtr} | \${rainbowSWdegC} | \${rainbowSWdegH} | \${rainbowSWhex} |
+\${rainbowW}  | \${rainbowWmtr}  | \${rainbowWdegC}  | \${rainbowWdegH}  | \${rainbowWhex}  |
+\${rainbowNW} | \${rainbowNWmtr} | \${rainbowNWdegC} | \${rainbowNWdegH} | \${rainbowNWhex} |
 
 The table above⬆️shows the m$\alpha$ and compass🧭degree (c°) values of the [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west) and [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW)) directions along with the [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model) hue degree (h°) values and hex triplets (hex) of their color🎨labels.
 
