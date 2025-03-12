@@ -234,23 +234,9 @@ beneath it, but also adapts to the course from
 1</span> on the map🗺️. The m*α* value of the current course is
 represented by the [hex
 triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
-${rainbowHex} and can be converted into degrees and a
-[compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction):
+${rainbowHex1} and can be converted into compass🧭degrees (c°) and a
+[direction](https://en.wikipedia.org/wiki/Cardinal_direction):
 ${rainbowMtr} m*α* = ${rainbowDegC}° = ${rainbowDir}.
-
-Regardless of the [metric
-prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
-and [units](https://en.wikipedia.org/wiki/Angle#Units) we use,
-color🎨can provide a general sense of [angular
-measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle)
-and is thus useful for labeling turn
-[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
-Dec arranges colors🎨in a rainbow🌈pattern based on [physical
-properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV)))
-of the [visible
-spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
-of light. The ${rainbowColor}🎨selected by the range🎚️inputs above⬆️can
-be expressed as the hex triplet ${rainbowHex1}.
 
 <table>
 <colgroup>
@@ -329,15 +315,26 @@ be expressed as the hex triplet ${rainbowHex1}.
 </tbody>
 </table>
 
-The table above⬆️shows the m*α* and compass🧭degree (c°) values of the
+The table above⬆️shows the m*α* and c° values of the
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
 and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
 directions along with the [HSL and
 HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
 hue degree (h°) values and hex triplets (hex) of their color🎨labels.
+Regardless of the [metric
+prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
+and [units](https://en.wikipedia.org/wiki/Angle#Units) we use,
+color🎨can provide a general sense of [angular
+measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle)
+and is thus useful for labeling turn
+[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
 
-The Dec color
+Dec arranges colors🎨in a rainbow🌈pattern based on [physical
+properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV)))
+of the [visible
+spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
+of light. The Dec color
 [palette](https://en.wikipedia.org/wiki/Palette_(computing)#:~:text=the%20set%20of%20available%20colors)
 is inspired by the [Munsell color
 system](https://en.wikipedia.org/wiki/Munsell_color_system#Hue). The
@@ -1398,9 +1395,9 @@ bkgH = ({background: hStr + ", 100%, 50%)"})
 bkgHsl = ({background: hslStr})
 rainbowHue = textcolor('hue', bkgH)
 rainbowColor = textcolor('color', bkgHsl)
-rainbowMtr = textcolor(hueMtr, bkgH)
-rainbowDir = textcolor(turn2comp(hueMtr), bkgH)
-rainbowDegC = textcolor(Math.round(colorD *.36), bkgH)
+rainbowMtr = textcolor(hueMtr, bkgHsl)
+rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
+rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
 rainbowDegH = textcolor(Math.round(hueDeg), bkgH)
 rainbowHex = textcolor(d3.color(piecewiseColor(colorD / 1000)).formatHex().slice(1), bkgH)
 rainbowHex1 = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
