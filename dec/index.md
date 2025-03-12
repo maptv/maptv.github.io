@@ -226,30 +226,35 @@ decBar = colorbar({
 
 The
 [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
-[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️rotates🔄in
-response to the [Observable](https://observablehq.com) [hue bar📊and
-range🎚️](https://observablehq.com/@paavanb/progressive-color-picker)inputs
-beneath it, but also adapts to the course from
-<span class="point0">Point 0</span> to <span class="point1">Point
-1</span> on the map🗺️. The m*α* value of the current course is
-represented by the [hex
-triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
-${rainbowHex1} and can be converted into compass🧭degrees (c°) and a
-[direction](https://en.wikipedia.org/wiki/Cardinal_direction):
-${rainbowMtr} m*α* = ${rainbowDegC}° = ${rainbowDir}.
+[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️indicates
+both a
+[hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram)
+and a [direction](https://en.wikipedia.org/wiki/Cardinal_direction). To
+rotate🔄the color🎨wheel compass🧭, use the
+[Observable](https://observablehq.com) hue
+[bar](https://observablehq.com/@paavanb/progressive-color-picker)📊and
+[range](https://observablehq.com/@observablehq/input-range)🎚️inputs
+beneath it or change the course from <span class="point0">Point 0</span>
+to <span class="point1">Point 1</span> on the map🗺️. The table
+below⬇️shows information on the currently indicated direction (top row)
+and the
+[cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
+and
+[intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
+directions.
 
 <table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 19%" />
-<col style="width: 22%" />
-<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 18%" />
 <col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr>
 <th><strong>Name</strong></th>
-<th><strong>m<span class="math inline"><em>α</em></span></strong></th>
+<th><strong>mt</strong></th>
 <th><strong>c°</strong></th>
 <th><strong>h°</strong></th>
 <th><strong>hex</strong></th>
@@ -257,11 +262,11 @@ ${rainbowMtr} m*α* = ${rainbowDegC}° = ${rainbowDir}.
 </thead>
 <tbody>
 <tr>
-<td>${rainbowN}</td>
-<td>${rainbowNmtr}</td>
-<td>${rainbowNdegC}</td>
-<td>${rainbowNdegH}</td>
-<td>${rainbowNhex}</td>
+<td>${rainbowDir}</td>
+<td>${rainbowMtr}</td>
+<td>${rainbowDegC}</td>
+<td>${rainbowDegH}</td>
+<td>${rainbowHex}</td>
 </tr>
 <tr>
 <td>${rainbowNE}</td>
@@ -312,23 +317,45 @@ ${rainbowMtr} m*α* = ${rainbowDegC}° = ${rainbowDir}.
 <td>${rainbowNWdegH}</td>
 <td>${rainbowNWhex}</td>
 </tr>
+<tr>
+<td>${rainbowN}</td>
+<td>${rainbowNmtr}</td>
+<td>${rainbowNdegC}</td>
+<td>${rainbowNdegH}</td>
+<td>${rainbowNhex}</td>
+</tr>
 </tbody>
 </table>
 
-The table above⬆️shows the m*α* and c° values of the
-[cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
-and
-[intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
-directions along with the [HSL and
+Specifically, the table shows <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="a thousandth of a turn">milliturn</span> (mt) and
+compass🧭degree (c°) values alongside the [HSL and
 HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
-hue degree (h°) values and hex triplets (hex) of their color🎨labels.
-Regardless of the [metric
+hue degree (h°) value and [hex
+triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
+(hex) of the corresponding color🎨labels. Regardless of the [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
 and [units](https://en.wikipedia.org/wiki/Angle#Units) we use,
 color🎨can provide a general sense of [angular
-measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle)
-and is thus useful for labeling turn
-[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
+measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle).
+
+<div>
+
+> **Bad Pun Alert**
+>
+> Feeling ***disoriented***😵‍💫? Of
+> [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
+> you are! Color🎨labels can help you find your
+> [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object),
+> stay on
+> [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows),
+> and avoid
+> [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed)
+> aches🤕. <span class="orange">Orange</span> you glad I couldn’t think
+> of a color🎨pun?
+
+</div>
 
 Dec arranges colors🎨in a rainbow🌈pattern based on [physical
 properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV)))
@@ -457,23 +484,6 @@ colors are listed in the table below.
 </tr>
 </tbody>
 </table>
-
-<div>
-
-> **Bad Pun Alert**
->
-> Feeling ***disoriented***😵‍💫? Of
-> [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
-> you are! Color🎨labels can help you find your
-> [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object),
-> stay on
-> [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows),
-> and avoid
-> [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed)
-> aches🤕. <span class="orange">Orange</span> you glad I couldn’t think
-> of a color🎨pun?
-
-</div>
 
 The Dec color wheel is different than its trichromatic counterpart.
 
@@ -1346,7 +1356,7 @@ function textcolor(content, style = {}) {
   }
   const {
     background,
-    color = yiq(background) >= 0.51 ? "#000" : "white",
+    color = yiq(background) > 0.5 ? "#000" : "white",
     padding = "0 5px",
     borderRadius = "4px",
     fontWeight = 400,
@@ -1394,13 +1404,12 @@ hslStr = hStr + slStr
 bkgH = ({background: hStr + ", 100%, 50%)"})
 bkgHsl = ({background: hslStr})
 rainbowHue = textcolor('hue', bkgH)
-rainbowColor = textcolor('color', bkgHsl)
+rainbowCourse = textcolor('Course', bkgHsl)
 rainbowMtr = textcolor(hueMtr, bkgHsl)
 rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
 rainbowDegH = textcolor(Math.round(hueDeg), bkgH)
-rainbowHex = textcolor(d3.color(piecewiseColor(colorD / 1000)).formatHex().slice(1), bkgH)
-rainbowHex1 = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
+rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
 rainbow0 = textcolor('0', "#f00") // red
 rainbow1 = textcolor('1', "#f0f") // magenta
 rainbow2 = textcolor('2', "#a0f") // violet
@@ -1475,42 +1484,42 @@ rainbowN = textcolor('N', "hsl(0" + slStr)
 rainbowNmtr = textcolor('0', "hsl(0" + slStr)
 rainbowNdegH = textcolor('0', "hsl(0" + slStr)
 rainbowNdegC = textcolor('0', "hsl(0" + slStr)
-rainbowNhex = textcolor('ff0000', "hsl(0" + slStr)
+rainbowNhex = textcolor(d3.color("hsl(0" + slStr).formatHex().slice(1), "hsl(0" + slStr)
 rainbowNE = textcolor('NE', "hsl(295" + slStr)
 rainbowNEmtr = textcolor('125', "hsl(295" + slStr)
 rainbowNEdegH = textcolor('295', "hsl(295" + slStr)
 rainbowNEdegC = textcolor('45', "hsl(295" + slStr)
-rainbowNEhex = textcolor('ea00ff', "hsl(295" + slStr)
+rainbowNEhex = textcolor(d3.color("hsl(295" + slStr).formatHex().slice(1), "hsl(295" + slStr)
 rainbowE = textcolor('E', "hsl(260" + slStr)
 rainbowEmtr = textcolor('250', "hsl(260" + slStr)
 rainbowEdegH = textcolor('260', "hsl(260" + slStr)
 rainbowEdegC = textcolor('90', "hsl(260" + slStr)
-rainbowEhex = textcolor('5500ff', "hsl(260" + slStr)
+rainbowEhex = textcolor(d3.color("hsl(260" + slStr).formatHex().slice(1), "hsl(260" + slStr)
 rainbowSE = textcolor('SE', "hsl(210" + slStr)
 rainbowSEmtr = textcolor('375', "hsl(210" + slStr)
 rainbowSEdegH = textcolor('210', "hsl(210" + slStr)
 rainbowSEdegC = textcolor('135', "hsl(210" + slStr)
-rainbowSEhex = textcolor('0080ff', "hsl(210" + slStr)
+rainbowSEhex = textcolor(d3.color("hsl(210" + slStr).formatHex().slice(1), "hsl(210" + slStr)
 rainbowS = textcolor('S', "hsl(180" + slStr)
 rainbowSmtr = textcolor('500', "hsl(180" + slStr)
 rainbowSdegH = textcolor('180', "hsl(180" + slStr)
 rainbowSdegC = textcolor('180', "hsl(180" + slStr)
-rainbowShex = textcolor('00ffff', "hsl(180" + slStr)
+rainbowShex = textcolor(d3.color("hsl(180" + slStr).formatHex().slice(1), "hsl(180" + slStr)
 rainbowSW = textcolor('SW', "hsl(110" + slStr)
 rainbowSWmtr = textcolor('625', "hsl(110" + slStr)
 rainbowSWdegH = textcolor('110', "hsl(110" + slStr)
 rainbowSWdegC = textcolor('225', "hsl(110" + slStr)
-rainbowSWhex = textcolor('2bff00', "hsl(110" + slStr)
+rainbowSWhex = textcolor(d3.color("hsl(110" + slStr).formatHex().slice(1), "hsl(110" + slStr)
 rainbowW = textcolor('W', "hsl(70" + slStr)
 rainbowWmtr = textcolor('750', "hsl(70" + slStr)
 rainbowWdegH = textcolor('70', "hsl(70" + slStr)
 rainbowWdegC = textcolor('270', "hsl(70" + slStr)
-rainbowWhex = textcolor('d5ff00', "hsl(70" + slStr)
+rainbowWhex = textcolor(d3.color("hsl(70" + slStr).formatHex().slice(1), "hsl(70" + slStr)
 rainbowNW = textcolor('NW', "hsl(45" + slStr)
 rainbowNWmtr = textcolor('875', "hsl(45" + slStr)
 rainbowNWdegH = textcolor('45', "hsl(45" + slStr)
 rainbowNWdegC = textcolor('315', "hsl(45" + slStr)
-rainbowNWhex = textcolor('ffbf00', "hsl(45" + slStr)
+rainbowNWhex = textcolor(d3.color("hsl(45" + slStr).formatHex().slice(1), "hsl(45" + slStr)
 // Show preview swatches of color
 preview = () => {
   const container = DOM.element('div')
