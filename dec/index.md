@@ -254,10 +254,11 @@ be expressed as the hex triplet ${rainbowHex1}.
 
 <table>
 <colgroup>
-<col style="width: 18%" />
-<col style="width: 24%" />
-<col style="width: 27%" />
-<col style="width: 29%" />
+<col style="width: 14%" />
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 21%" />
 </colgroup>
 <thead>
 <tr>
@@ -265,6 +266,7 @@ be expressed as the hex triplet ${rainbowHex1}.
 <th><strong>m<span class="math inline"><em>α</em></span></strong></th>
 <th><strong>c°</strong></th>
 <th><strong>h°</strong></th>
+<th><strong>hex</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -273,48 +275,56 @@ be expressed as the hex triplet ${rainbowHex1}.
 <td>${rainbowNmtr}</td>
 <td>${rainbowNdegC}</td>
 <td>${rainbowNdegH}</td>
+<td>${rainbowNhex}</td>
 </tr>
 <tr>
 <td>${rainbowNE}</td>
 <td>${rainbowNEmtr}</td>
 <td>${rainbowNEdegC}</td>
 <td>${rainbowNEdegH}</td>
+<td>${rainbowNEhex}</td>
 </tr>
 <tr>
 <td>${rainbowE}</td>
 <td>${rainbowEmtr}</td>
 <td>${rainbowEdegC}</td>
 <td>${rainbowEdegH}</td>
+<td>${rainbowEhex}</td>
 </tr>
 <tr>
 <td>${rainbowSE}</td>
 <td>${rainbowSEmtr}</td>
 <td>${rainbowSEdegC}</td>
 <td>${rainbowSEdegH}</td>
+<td>${rainbowSEhex}</td>
 </tr>
 <tr>
 <td>${rainbowS}</td>
 <td>${rainbowSmtr}</td>
 <td>${rainbowSdegC}</td>
 <td>${rainbowSdegH}</td>
+<td>${rainbowShex}</td>
 </tr>
 <tr>
 <td>${rainbowSW}</td>
 <td>${rainbowSWmtr}</td>
 <td>${rainbowSWdegC}</td>
 <td>${rainbowSWdegH}</td>
+<td>${rainbowSWhex}</td>
 </tr>
 <tr>
 <td>${rainbowW}</td>
 <td>${rainbowWmtr}</td>
 <td>${rainbowWdegC}</td>
 <td>${rainbowWdegH}</td>
+<td>${rainbowWhex}</td>
 </tr>
 <tr>
 <td>${rainbowNW}</td>
 <td>${rainbowNWmtr}</td>
 <td>${rainbowNWdegC}</td>
 <td>${rainbowNWdegH}</td>
+<td>${rainbowNWhex}</td>
 </tr>
 </tbody>
 </table>
@@ -1468,34 +1478,42 @@ rainbowN = textcolor('N', "hsl(0" + slStr)
 rainbowNmtr = textcolor('0', "hsl(0" + slStr)
 rainbowNdegH = textcolor('0', "hsl(0" + slStr)
 rainbowNdegC = textcolor('0', "hsl(0" + slStr)
+rainbowNhex = textcolor('ff0000', "hsl(0" + slStr)
 rainbowNE = textcolor('NE', "hsl(295" + slStr)
 rainbowNEmtr = textcolor('125', "hsl(295" + slStr)
 rainbowNEdegH = textcolor('295', "hsl(295" + slStr)
 rainbowNEdegC = textcolor('45', "hsl(295" + slStr)
+rainbowNEhex = textcolor('ea00ff', "hsl(295" + slStr)
 rainbowE = textcolor('E', "hsl(260" + slStr)
 rainbowEmtr = textcolor('250', "hsl(260" + slStr)
 rainbowEdegH = textcolor('260', "hsl(260" + slStr)
 rainbowEdegC = textcolor('90', "hsl(260" + slStr)
+rainbowEhex = textcolor('5500ff', "hsl(260" + slStr)
 rainbowSE = textcolor('SE', "hsl(210" + slStr)
 rainbowSEmtr = textcolor('375', "hsl(210" + slStr)
 rainbowSEdegH = textcolor('210', "hsl(210" + slStr)
 rainbowSEdegC = textcolor('135', "hsl(210" + slStr)
+rainbowSEhex = textcolor('0080ff', "hsl(210" + slStr)
 rainbowS = textcolor('S', "hsl(180" + slStr)
 rainbowSmtr = textcolor('500', "hsl(180" + slStr)
 rainbowSdegH = textcolor('180', "hsl(180" + slStr)
 rainbowSdegC = textcolor('180', "hsl(180" + slStr)
+rainbowShex = textcolor('00ffff', "hsl(180" + slStr)
 rainbowSW = textcolor('SW', "hsl(110" + slStr)
 rainbowSWmtr = textcolor('625', "hsl(110" + slStr)
 rainbowSWdegH = textcolor('110', "hsl(110" + slStr)
 rainbowSWdegC = textcolor('225', "hsl(110" + slStr)
+rainbowSWhex = textcolor('2bff00', "hsl(110" + slStr)
 rainbowW = textcolor('W', "hsl(70" + slStr)
 rainbowWmtr = textcolor('750', "hsl(70" + slStr)
 rainbowWdegH = textcolor('70', "hsl(70" + slStr)
 rainbowWdegC = textcolor('270', "hsl(70" + slStr)
+rainbowWhex = textcolor('d5ff00', "hsl(70" + slStr)
 rainbowNW = textcolor('NW', "hsl(45" + slStr)
 rainbowNWmtr = textcolor('875', "hsl(45" + slStr)
 rainbowNWdegH = textcolor('45', "hsl(45" + slStr)
 rainbowNWdegC = textcolor('315', "hsl(45" + slStr)
+rainbowNWhex = textcolor('ffbf00', "hsl(45" + slStr)
 // Show preview swatches of color
 preview = () => {
   const container = DOM.element('div')
