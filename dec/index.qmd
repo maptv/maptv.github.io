@@ -55,87 +55,9 @@ Click the map🗺️to move the points. To return the points to their original p
 
 {{< include /dec/_maptable.qmd >}}
 
-```{ojs}
-//| echo: false
-//| label: colorpreview
-//| column: margin
-//| class: colorcomponent
-preview()
-```
+{{< include /dec/_color.qmd >}}
 
-```{ojs}
-//| echo: false
-//| label: colorwheelcompass
-//| class: colorcomponent
-// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
-svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
-  <g transform='rotate(${Math.round(-colorD * .36)})'>
-  ${repeat(tick(radius, 5, '#434343'), 5 * 4 * 10)}
-  ${repeat(tick(radius, 8), 10 * 4)}
-  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
-  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="white" stroke="black" stroke-width="1"/>`, 4, 45)}
-  <circle r="${radius}" fill="#d3d3d3" stroke="#434343" stroke-width="3" />
-  ${repeat(directionMarker(radius+14, 24), 4, 0)}
-  ${repeat(directionMarker(radius+12, 24), 4, 45)}
-  ${repeat(turnMarker(radius+14, 32), 4, 0)}
-  ${repeat(turnMarker(radius+12, 32), 4, 45)}
-  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / deccolors.length / 2, 1, deccolors), deccolors.length, 360/deccolors.length)}
-</svg>
-`
-```
-
-```{ojs}
-//| echo: false
-//| label: colorbar
-//| class: colorcomponent
-// https://observablehq.com/@paavanb/progressive-color-picker
-decBar = colorbar({
-  colorFn: t => hslToRgb(dec2hue(t) / 1000, colorS / 1000, colorL / 1000),
-  onSelect: t => {
-    set(viewof colorD, t * 1000)
-    onUpdateHSL(dec2hue(t), colorS / 1000, colorL / 1000)
-  }
-})
-```
-
-```{ojs}
-//| echo: false
-//| label: colorslider
-//| class: colorcomponent
-// https://observablehq.com/@paavanb/progressive-color-picker
-{ const input = Inputs.range([0, 1000], { label: "hue", value: 0, step: 1 })
-  input.value = initialHSL[0]
-  input.oninput = (evt) => onUpdateHSL(dec2hue(evt.currentTarget.value / 1000), colorS / 1000, colorL / 1000)
-  return Inputs.bind(input, viewof colorD)
-}
-```
-
-```{ojs}
-//| echo: false
-//| label: saturslider
-//| class: colorcomponent
-// https://observablehq.com/@paavanb/progressive-color-picker
-{ const input = Inputs.range([0, 1000], { label: "saturation", value: 1000, step: 1, })
-  input.oninput = (evt) => onUpdateHSL(colorD, evt.currentTarget.value / 1000, colorL / 1000)
-  return Inputs.bind(input, viewof colorS)
-}
-```
-
-```{ojs}
-//| echo: false
-//| label: lightslider
-//| class: colorcomponent
-// https://observablehq.com/@paavanb/progressive-color-picker
-{ const input = Inputs.range([0, 1000], { label: "lightness", value: 500, step: 1, })
-  input.oninput = (evt) => onUpdateHSL(colorD, colorS / 1000, evt.currentTarget.value / 1000)
-  return Inputs.bind(input, viewof colorL)
-}
-
-```
-
-The [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle) [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️indicates both a [hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram) and a [direction](https://en.wikipedia.org/wiki/Cardinal_direction). To rotate🔄the color🎨wheel compass🧭, use the [Observable](https://observablehq.com) hue [bar](https://observablehq.com/@paavanb/progressive-color-picker)📊and [range](https://observablehq.com/@observablehq/input-range)🎚️inputs beneath it or change the course from [Point 0]{.point0} to [Point 1]{.point1} on the map🗺️. The table below⬇️shows information on the currently indicated direction (top row) and the [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west) and [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW)) directions.
-
-| **Name**       | **mt**           | **c°**            | **h°**            | **hex**          |
+| **NESW**       | **mt**           | **c°**            | **h°**            | **hex**          |
 | -------------- | ---------------  | ----------------- | ----------------- | ---------------- |
 | \${rainbowDir} | \${rainbowMtr}   | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}   |
 | \${rainbowNE}  | \${rainbowNEmtr} | \${rainbowNEdegC} | \${rainbowNEdegH} | \${rainbowNEhex} |
@@ -147,8 +69,11 @@ The [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abst
 | \${rainbowNW}  | \${rainbowNWmtr} | \${rainbowNWdegC} | \${rainbowNWdegH} | \${rainbowNWhex} |
 | \${rainbowN}   | \${rainbowNmtr}  | \${rainbowNdegC}  | \${rainbowNdegH}  | \${rainbowNhex}  |
 
-Specifically, the table shows [milliturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a thousandth of a turn"} (mt) and compass🧭degree (c°) values alongside the [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model) hue degree (h°) value and [hex triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors) (hex) of the corresponding color🎨labels.
-Regardless of the [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) and [units](https://en.wikipedia.org/wiki/Angle#Units) we use, color🎨can provide a general sense of [angular measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle).
+The [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle) [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️indicates both a [hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram) and a [direction](https://en.wikipedia.org/wiki/Cardinal_direction). To rotate🔄the color🎨wheel compass🧭, use the [Observable](https://observablehq.com) hue [bar](https://observablehq.com/@paavanb/progressive-color-picker)📊and range🎚️inputs beneath it or change the course from [Point 0]{.point0} to [Point 1]{.point1} on the map🗺️. The table above⬆️shows information on the currently indicated direction (top row) and the [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west) and [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW)) directions.
+
+The range🎚️inputs beneath the color🎨wheel compass🧭represent a hue, saturation, and lightness (HSL) triplet that specifies a color with three [milliturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a thousandth of a turn"} (mt) values. We can convert mt values into compass🧭degrees (c°) and [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model) hue degrees (h°). Similarly, we can translate our mt HSL triplet into an HSV, [RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model), or [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors) (hex) triplet.
+
+Regardless of the [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) and [units](https://en.wikipedia.org/wiki/Angle#Units) we use, color🎨can provide a general sense of angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle). In addition to compass directions, we can apply color🎨labels to latitude and longitude, time zones, the time of day, and dates.
 
 
 

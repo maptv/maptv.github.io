@@ -12,7 +12,7 @@ preview()
 //| class: colorcomponent
 // https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
 svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
-  <g transform='rotate(${Math.round(-colorH * .36)})'>
+  <g transform='rotate(${Math.round(-colorD * .36)})'>
   ${repeat(tick(radius, 5, '#434343'), 5 * 4 * 10)}
   ${repeat(tick(radius, 8), 10 * 4)}
   ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
@@ -35,7 +35,7 @@ svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size}
 decBar = colorbar({
   colorFn: t => hslToRgb(dec2hue(t) / 1000, colorS / 1000, colorL / 1000),
   onSelect: t => {
-    set(viewof colorH, dec2hue(t))
+    set(viewof colorD, t * 1000)
     onUpdateHSL(dec2hue(t), colorS / 1000, colorL / 1000)
   }
 })
@@ -48,10 +48,29 @@ decBar = colorbar({
 // https://observablehq.com/@paavanb/progressive-color-picker
 { const input = Inputs.range([0, 1000], { label: "hue", value: 0, step: 1 })
   input.value = initialHSL[0]
-  input.oninput = (evt) => {
-    set(viewof colorH, dec2hue(evt.currentTarget.value / 1000))
-    onUpdateHSL(dec2hue(evt.currentTarget.value / 1000), colorS / 1000, colorL / 1000)
-  }
+  input.oninput = (evt) => onUpdateHSL(dec2hue(evt.currentTarget.value / 1000), colorS / 1000, colorL / 1000)
   return Inputs.bind(input, viewof colorD)
+}
+```
+
+```{ojs}
+//| echo: false
+//| label: saturslider
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { label: "saturation", value: 1000, step: 1, })
+  input.oninput = (evt) => onUpdateHSL(colorD, evt.currentTarget.value / 1000, colorL / 1000)
+  return Inputs.bind(input, viewof colorS)
+}
+```
+
+```{ojs}
+//| echo: false
+//| label: lightslider
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { label: "lightness", value: 500, step: 1, })
+  input.oninput = (evt) => onUpdateHSL(colorD, colorS / 1000, evt.currentTarget.value / 1000)
+  return Inputs.bind(input, viewof colorL)
 }
 ```

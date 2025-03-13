@@ -312,7 +312,7 @@ rainbowCourse = textcolor('Course', bkgHsl)
 rainbowMtr = textcolor(hueMtr, bkgHsl)
 rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
-rainbowDegH = textcolor(Math.round(hueDeg), bkgH)
+rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
 rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
 rainbow0 = textcolor('0', "#f00") // red
 rainbow1 = textcolor('1', "#f0f") // magenta
@@ -785,6 +785,8 @@ function worldMapCoordinates(config = {}, dimensions) {
     set(viewof utctoggle, false);
     set(viewof select, projections.find(t => t.name === "Equirectangular (plate carrée)"));
     set(viewof colorD, 0)
+    set(viewof colorS, 1000)
+    set(viewof colorL, 500)
     table.rows[1].cells[1].innerHTML = createCellDiv(800, 10)
     table.rows[2].cells[1].innerHTML = createCellDiv(800, 10)
     table.rows[1].cells[2].innerHTML = createCellDiv(0, 2.5)
