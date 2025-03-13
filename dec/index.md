@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+11
+2025+12
 
 <div id="decnav">
 
@@ -224,25 +224,6 @@ decBar = colorbar({
 }
 ```
 
-The
-[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
-[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️indicates
-both a
-[hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram)
-and a [direction](https://en.wikipedia.org/wiki/Cardinal_direction). To
-rotate🔄the color🎨wheel compass🧭, use the
-[Observable](https://observablehq.com) hue
-[bar](https://observablehq.com/@paavanb/progressive-color-picker)📊and
-[range](https://observablehq.com/@observablehq/input-range)🎚️inputs
-beneath it or change the course from <span class="point0">Point 0</span>
-to <span class="point1">Point 1</span> on the map🗺️. The table
-below⬇️shows information on the currently indicated direction (top row)
-and the
-[cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
-and
-[intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
-directions.
-
 <table>
 <colgroup>
 <col style="width: 17%" />
@@ -253,7 +234,7 @@ directions.
 </colgroup>
 <thead>
 <tr>
-<th><strong>Name</strong></th>
+<th><strong>NESW</strong></th>
 <th><strong>mt</strong></th>
 <th><strong>c°</strong></th>
 <th><strong>h°</strong></th>
@@ -327,18 +308,44 @@ directions.
 </tbody>
 </table>
 
-Specifically, the table shows <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="a thousandth of a turn">milliturn</span> (mt) and
-compass🧭degree (c°) values alongside the [HSL and
+The
+[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
+[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️indicates
+both a
+[hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram)
+and a [direction](https://en.wikipedia.org/wiki/Cardinal_direction). To
+rotate🔄the color🎨wheel compass🧭, use the
+[Observable](https://observablehq.com) hue
+[bar](https://observablehq.com/@paavanb/progressive-color-picker)📊and
+range🎚️inputs beneath it or change the course from
+<span class="point0">Point 0</span> to <span class="point1">Point
+1</span> on the map🗺️. The table above⬆️shows information on the
+currently indicated direction (top row) and the
+[cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
+and
+[intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
+directions.
+
+The range🎚️inputs beneath the color🎨wheel compass🧭represent a hue,
+saturation, and lightness (HSL) triplet that specifies a color with
+three <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a thousandth of a turn">milliturn</span> (mt) values. We
+can convert mt values into compass🧭degrees (c°) and [HSL and
 HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
-hue degree (h°) value and [hex
-triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
-(hex) of the corresponding color🎨labels. Regardless of the [metric
+hue degrees (h°). Similarly, we can translate our mt HSL triplet into an
+HSV,
+[RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model),
+or
+[hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
+(hex) triplet.
+
+Regardless of the [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
 and [units](https://en.wikipedia.org/wiki/Angle#Units) we use,
-color🎨can provide a general sense of [angular
-measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle).
+color🎨can provide a general sense of
+angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle).
+In addition to compass directions, we can apply color🎨labels to
+latitude and longitude, time zones, the time of day, and dates.
 
 <div>
 
@@ -1408,7 +1415,7 @@ rainbowCourse = textcolor('Course', bkgHsl)
 rainbowMtr = textcolor(hueMtr, bkgHsl)
 rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
-rainbowDegH = textcolor(Math.round(hueDeg), bkgH)
+rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
 rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
 rainbow0 = textcolor('0', "#f00") // red
 rainbow1 = textcolor('1', "#f0f") // magenta
@@ -1881,6 +1888,8 @@ function worldMapCoordinates(config = {}, dimensions) {
     set(viewof utctoggle, false);
     set(viewof select, projections.find(t => t.name === "Equirectangular (plate carrée)"));
     set(viewof colorD, 0)
+    set(viewof colorS, 1000)
+    set(viewof colorL, 500)
     table.rows[1].cells[1].innerHTML = createCellDiv(800, 10)
     table.rows[2].cells[1].innerHTML = createCellDiv(800, 10)
     table.rows[1].cells[2].innerHTML = createCellDiv(0, 2.5)
