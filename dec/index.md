@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+12
+2025+13
 
 <div id="decnav">
 
@@ -20,7 +20,7 @@ based on
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
 (t). When measuring
 [angles](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐,
-t represents a full⭕️circle and equals 2π
+t represents a full⭕️circle and equals 2*π*
 ([$\underline\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
 [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units)
 (rad) or 360
@@ -96,21 +96,29 @@ time zones.
 
 The width of a UTC time zone is often
 41.<span style="text-decoration-line:overline;">6</span> m*λ*, but
-ranges from 0 m*λ* to the approximate width of China🇨🇳:
+ranges from 0 m*λ* to the width of China🇨🇳:
 [424](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=109%C2%B056%E2%80%B2E-,West,-%3A%20Akto%20County)
 m*λ* -
 [254](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=%20%5Bcitation%20needed%5D-,East,-%3A%20Fuyuan%20County%2C%20Heilongjiang%2C%20on)
-m*λ* = 170 m*λ*. The length of a parallel (L<sub>*λ*</sub>) varies by
-latitude (*ϕ*). Near the
+m*λ* = 170 m*λ*. The length of a meridian (L<sub>*ϕ*</sub>) never
+changes: L<sub>*ϕ*</sub> ≈ c. In contrast, the length of a parallel
+(L<sub>*λ*</sub>) varies by latitude (*ϕ*). At the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres),
-*ϕ* = 0 c and L<sub>*λ*</sub> ≈ 1 c. At the
+*ϕ* = 0 and L<sub>*λ*</sub> ≈ c. At the
 [North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
 or
 [South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
-Pole, *ϕ* ≈ .25 c and L<sub>*λ*</sub> = 0 c. In general, L<sub>*λ*</sub>
+Pole, |*ϕ*| = .25 and L<sub>*λ*</sub> = 0 c. In general, L<sub>*λ*</sub>
 ≈
 [cos](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)(*ϕ**τ*)
-c. c =
+c.
+
+If we obtain the difference in latitude (*Δ*<sub>*ϕ*</sub>) and
+longitude (*Δ*<sub>*λ*</sub>) between two points, we can approximate the
+distance between them as
+$\sqrt{\Delta\_\phi^2+\cos(\phi\tau)\Delta\_\lambda^2}$.
+
+c =
 [$\underline{\tau r}$](https://en.wikipedia.org/wiki/Turn_(angle)#Proposals_for_a_single_letter_to_represent_2%CF%80:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6),
 and *r* is the [equatorial radius of the
 Earth](https://en.wikipedia.org/wiki/Earth_radius#:~:text=from%20a%20maximum%20(-,equatorial%20radius,-%2C%20denoted%20a)%20of):
