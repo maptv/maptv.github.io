@@ -1233,11 +1233,11 @@ div#projselect {
   align-items: center;
   justify-content: center;
 }
-div#projselect > div, div#sizeinput > div {
+div#projselect > div, div#sizeinput > div, div#speedinput > div {
   overflow-x: clip;
 }
-div#sizeinput  label {
-  width: 24px;
+div#sizeinput label, div#speedinput label {
+  width: 35px;
 }
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
@@ -1247,13 +1247,13 @@ button#rstbtn:hover {
 div#distmap {
   margin-bottom: -28px;
 }
-#sizeinput {
+#sizeinput #speedinput {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 #speedinput input[type="number"], #sizeinput input[type="number"] {
-  width: 56px;
+  width: 58px;
 }
 #speedinput input[type="range"], #sizeinput input[type="range"] {
   width: 72%;

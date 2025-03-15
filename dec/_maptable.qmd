@@ -10,10 +10,9 @@ rstbtn.node();
 
 ```{ojs}
 //| echo: false
-//| label: projselect
+//| label: speedinput
 //| column: margin
-viewof select = Inputs.select(
-  projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
+viewof travelspeed = Inputs.range([0, 1000], {label: "Speed", value: 500, step: 1})
 ```
 
 ```{ojs}
@@ -21,6 +20,14 @@ viewof select = Inputs.select(
 //| label: sizeinput
 //| column: margin
 viewof mapsize = Inputs.range([0, 100], {label: "Size", value: 100, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: projselect
+//| column: margin
+viewof select = Inputs.select(
+  projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
 ```
 
 ```{ojs}
