@@ -114,17 +114,17 @@ Pole, |*ϕ*| = .25 and L<sub>*λ*</sub> = 0. In general, L<sub>*λ*</sub> ≈
 [cos](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)(*ϕ**τ*)
 c.
 
-A commercial airplane✈️flying at 500 <span class="under tool"
+An airplane✈️flying at 500 <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of the circumference of Earth">milliomegars</span>
 (mv), half the equatorial speed of the rotation of Earth🌏on its axis,
-could travel the 100 mc between the default Point
-<span class="point0">0</span> and <span class="point1">1</span>
-positions📍in 200 <span class="under tool" data-bs-toggle="tooltip"
+could travel🧳the 100 mc between the default positions📍of Points
+<span class="point0">0</span> and <span class="point1">1</span> in 200
+<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span> (md). To get the
-time in days (d) required to travel between two points, we divide the
-distance in mc by the speed in mv: ${distance_mtaur} mc ÷ ${travelspeed}
-mv = ${(distance_mtaur / travelspeed).toFixed(3)} d.
+time in days (d) required to travel🧳between two points, we divide the
+distance📏in mc by the speed in mv: ${distance_mtaur} mc ÷
+${travelspeed} mv = ${(distance_mtaur / travelspeed).toFixed(3)} d.
 
 ``` {ojs}
 //| echo: false
