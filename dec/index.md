@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+13
+2025+14
 
 <div id="decnav">
 
@@ -100,33 +100,31 @@ ranges from 0 m*λ* to the width of China🇨🇳:
 [424](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=109%C2%B056%E2%80%B2E-,West,-%3A%20Akto%20County)
 m*λ* -
 [254](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=%20%5Bcitation%20needed%5D-,East,-%3A%20Fuyuan%20County%2C%20Heilongjiang%2C%20on)
-m*λ* = 170 m*λ*. The length of a meridian (L<sub>*ϕ*</sub>) never
-changes: L<sub>*ϕ*</sub> ≈ c. In contrast, the length of a parallel
-(L<sub>*λ*</sub>) varies by latitude (*ϕ*). At the
+m*λ* = 170 m*λ*. The length of a meridian (L<sub>*ϕ*</sub>) is always
+near c: L<sub>*ϕ*</sub> ≈ c. In contrast, the length of a parallel
+(L<sub>*λ*</sub>) [varies by
+latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude)
+(*ϕ*). At the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres),
 *ϕ* = 0 and L<sub>*λ*</sub> ≈ c. At the
 [North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
 or
 [South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
-Pole, |*ϕ*| = .25 and L<sub>*λ*</sub> = 0 c. In general, L<sub>*λ*</sub>
-≈
+Pole, |*ϕ*| = .25 and L<sub>*λ*</sub> = 0. In general, L<sub>*λ*</sub> ≈
 [cos](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)(*ϕ**τ*)
 c.
 
-If we obtain the difference in latitude (*Δ*<sub>*ϕ*</sub>) and
-longitude (*Δ*<sub>*λ*</sub>) between two points, we can approximate the
-distance between them as
-$\sqrt{\Delta\_\phi^2+\cos(\phi\tau)\Delta\_\lambda^2}$.
-
-c =
-[$\underline{\tau r}$](https://en.wikipedia.org/wiki/Turn_(angle)#Proposals_for_a_single_letter_to_represent_2%CF%80:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6),
-and *r* is the [equatorial radius of the
-Earth](https://en.wikipedia.org/wiki/Earth_radius#:~:text=from%20a%20maximum%20(-,equatorial%20radius,-%2C%20denoted%20a)%20of):
-0.15945 c.
-
-In contrast to L<sub>*λ*</sub>, the length of a parallel
-(L<sub>*λ*</sub>) ≈ c. To calculate the distance between two points, we
-calculate the current distance between Points 0 and 1 is 100 mc.
+A commercial airplane✈️flying at 500 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of the circumference of Earth">milliomegars</span>
+(mv), half the equatorial speed of the rotation of Earth🌏on its axis,
+could travel the 100 mc between the default Point
+<span class="point0">0</span> and <span class="point1">1</span>
+positions📍in 200 <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a day">millidays</span> (md). To get the
+time in days (d) required to travel between two points, we divide the
+distance in mc by the speed in mv: ${distance_mtaur} mc ÷ ${travelspeed}
+mv = ${(distance_mtaur / travelspeed).toFixed(3)} d.
 
 ``` {ojs}
 //| echo: false
@@ -140,10 +138,9 @@ rstbtn.node();
 
 ``` {ojs}
 //| echo: false
-//| label: projselect
+//| label: speedinput
 //| column: margin
-viewof select = Inputs.select(
-  projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
+viewof travelspeed = Inputs.range([0, 1000], {label: "Speed", value: 500, step: 1})
 ```
 
 ``` {ojs}
@@ -151,6 +148,14 @@ viewof select = Inputs.select(
 //| label: sizeinput
 //| column: margin
 viewof mapsize = Inputs.range([0, 100], {label: "Size", value: 100, step: 1})
+```
+
+``` {ojs}
+//| echo: false
+//| label: projselect
+//| column: margin
+viewof select = Inputs.select(
+  projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
 ```
 
 ``` {ojs}
@@ -377,8 +382,13 @@ prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%
 and [units](https://en.wikipedia.org/wiki/Angle#Units) we use,
 color🎨can provide a general sense of
 angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle).
-In addition to compass directions, we can apply color🎨labels to
-latitude and longitude, time zones, the time of day, and dates.
+Dec arranges colors🎨in a rainbow🌈pattern based on [physical
+properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV)))
+of the [visible
+spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
+of light. Like the [Munsell color
+system](https://en.wikipedia.org/wiki/Munsell_color_system#Hue), Dec
+features 10 colors: .
 
 <div>
 
@@ -397,15 +407,10 @@ latitude and longitude, time zones, the time of day, and dates.
 
 </div>
 
-Dec arranges colors🎨in a rainbow🌈pattern based on [physical
-properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV)))
-of the [visible
-spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
-of light. The Dec color
-[palette](https://en.wikipedia.org/wiki/Palette_(computing)#:~:text=the%20set%20of%20available%20colors)
-is inspired by the [Munsell color
-system](https://en.wikipedia.org/wiki/Munsell_color_system#Hue). The
-deciturn (dt), hexadecimal (hex), [HSL and
+In addition to compass directions, we can apply color🎨labels to
+latitude and longitude, time zones, the time of day, and dates.
+
+The deciturn (dt), hexadecimal (hex), [HSL and
 HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
 hue degree (h°), red (r), green (g), and blue (b) values of the ten Dec
 colors are listed in the table below.
@@ -601,14 +606,6 @@ as integers and thus are useful to specifying primary colors
 <span class="azul">blue</span>=240°, <span class="yellow">yellow</span>,
 <span class="cyan">cyan</span>, <span class="magenta">magenta</span>).
 
-At an average ground speed of 500 <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of the circumference of Earth">milliomegars</span>
-(mv), half the equatorial speed of the rotation of Earth🌏on its axis,
-an airplane✈️could fly between the default positions📍of the points in
-200 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a day">millidays</span> (md).
-
 and
 [azimuth](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=the%20angle%20of%20rotation%20(in%20degrees)%20in%20the%20unit%20circle%20over%20the%20horizontal%20plane)  
 To travel the between the default positions📍of the two points in
@@ -623,12 +620,6 @@ cover the ${distance_mtaur} $\text m\tau r$ between Points
 <span class="point0">0</span> and <span class="point1">1</span> in
 ${traveltime} <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">milliday</span> (md).
-
-``` {ojs}
-//| echo: false
-//| label: speedinput
-viewof travelspeed = Inputs.range([0, 1000], {label: "mv", value: 500, step: 1})
-```
 
 We can think of <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="hundredths of the circumference of Earth">centitaurs</span>
@@ -2368,11 +2359,11 @@ div#projselect {
   align-items: center;
   justify-content: center;
 }
-div#projselect > div, div#sizeinput > div {
+div#projselect > div, div#sizeinput > div, div#speedinput > div {
   overflow-x: clip;
 }
-div#sizeinput  label {
-  width: 24px;
+div#sizeinput label, div#speedinput label {
+  width: 35px;
 }
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
@@ -2382,13 +2373,13 @@ button#rstbtn:hover {
 div#distmap {
   margin-bottom: -28px;
 }
-#sizeinput {
+#sizeinput #speedinput {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 #speedinput input[type="number"], #sizeinput input[type="number"] {
-  width: 56px;
+  width: 58px;
 }
 #speedinput input[type="range"], #sizeinput input[type="range"] {
   width: 72%;
