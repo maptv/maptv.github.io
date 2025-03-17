@@ -1285,7 +1285,7 @@ function cielabScatter(palette, { darkMode = false } = {}) {
           L: { value: "l", label: "L*" }
         },
         tip: {
-          format: { fill: (d,i) => `${d} (${i})` },
+          format: { fill: (d,i) => `${i}` },
           fill: "#202020",
         }
       }),
@@ -1325,7 +1325,7 @@ function lightnessSpectrum(palette, { darkMode = false } = {}) {
           frameAnchor: "left",
           format: {
             fontSize: 12,
-            stroke: (d,i) => `${d} (${i})`,
+            stroke: (d,i) => `${i}`,
             a: true, b: true
           },
           fill: "#202020"
@@ -1433,7 +1433,12 @@ div#colorslider > div {
   min-width: 360px;
 }
 div#coloropposites {
-  margin: -10px 0px -10px 0px;
+  overflow: visible;
+}
+div#coloropposites canvas{
+  width: 240px !important;
+  height: 240px !important;
+  overflow: visible;
 }
 div#colorslider > label {
   maaxwidth: 60px;

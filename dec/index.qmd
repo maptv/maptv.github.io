@@ -71,7 +71,6 @@ The categorical color🎨wheel above⬆️shows how each of the ten Dec colors c
 
 You can compare Dec and UTC time zones by enabling both the "Grid" and "UTC" toggle✅inputs. Unlike UTC times zones, Dec time zones are each exactly 1 deciparallel wide. To determine the Dec time zone (z) in a location, we obtain its longitude in [deciparallels]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a circle of longitude"} (dλ) and then apply the [floor function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x): z = &LeftFloor;dλ&RightFloor;.
 
-
 ::: {.callout-warning}
 # Bad Pun Alert
 Feeling ***disoriented***😵‍💫? Of [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered) you are! Color🎨labels can help you find your [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object), stay on [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows), and avoid [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed) aches🤕. [Orange]{.orange} you glad I couldn't think of a color🎨pun?

@@ -16,88 +16,8 @@ displayPalette(hsl10.slice(0, 10), {darkMode: true})
 
 ```{ojs}
 //| echo: false
-//| label: colorwheelcompass
-//| class: colorcomponent
-// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
-svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
-  <g transform='rotate(${Math.round(-colorD * .36)})'>
-  ${repeat(tick(radius, 5, '#434343'), 5 * 4 * 10)}
-  ${repeat(tick(radius, 8), 10 * 4)}
-  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
-  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="white" stroke="black" stroke-width="1"/>`, 4, 45)}
-  <circle r="${radius}" fill="#d3d3d3" stroke="#434343" stroke-width="3" />
-  ${repeat(directionMarker(radius+14, 24), 4, 0)}
-  ${repeat(directionMarker(radius+12, 24), 4, 45)}
-  ${repeat(turnMarker(radius+14, 32), 4, 0)}
-  ${repeat(turnMarker(radius+12, 32), 4, 45)}
-  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / deccolors.length / 2, 1, deccolors), deccolors.length, 360/deccolors.length)}
-</svg>
-`
-```
-
-```{ojs}
-//| echo: false
-//| label: colorbar
-//| class: colorcomponent
-// https://observablehq.com/@paavanb/progressive-color-picker
-decBar = colorbar({
-  colorFn: t => hslToRgb(dec2hue(t) / 1000, colorS / 1000, colorL / 1000),
-  onSelect: t => {
-    set(viewof colorD, t * 1000)
-    onUpdateHSL(dec2hue(t), colorS / 1000, colorL / 1000)
-  }
-})
-```
-
-```{ojs}
-//| echo: false
-//| label: colorslider
-//| class: colorcomponent
-// https://observablehq.com/@paavanb/progressive-color-picker
-{ const input = Inputs.range([0, 1000], { label: "hue", value: 0, step: 1 })
-  input.value = initialHSL[0]
-  input.oninput = (evt) => onUpdateHSL(dec2hue(evt.currentTarget.value / 1000), colorS / 1000, colorL / 1000)
-  return Inputs.bind(input, viewof colorD)
-}
-```
-
-```{ojs}
-//| echo: false
-//| label: saturslider
-//| class: colorcomponent
-// https://observablehq.com/@paavanb/progressive-color-picker
-{ const input = Inputs.range([0, 1000], { label: "saturation", value: 1000, step: 1, })
-  input.oninput = (evt) => onUpdateHSL(colorD, evt.currentTarget.value / 1000, colorL / 1000)
-  return Inputs.bind(input, viewof colorS)
-}
-```
-
-```{ojs}
-//| echo: false
-//| label: lightslider
-//| class: colorcomponent
-// https://observablehq.com/@paavanb/progressive-color-picker
-{ const input = Inputs.range([0, 1000], { label: "lightness", value: 500, step: 1, })
-  input.oninput = (evt) => onUpdateHSL(colorD, colorS / 1000, evt.currentTarget.value / 1000)
-  return Inputs.bind(input, viewof colorL)
-}
-```
-
-| **NESW**       | **mt**           | **c°**            | **h°**            | **hex**          |
-| -------------- | ---------------  | ----------------- | ----------------- | ---------------- |
-| \${rainbowDir} | \${rainbowMtr}   | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}   |
-| \${rainbowNE}  | \${rainbowNEmtr} | \${rainbowNEdegC} | \${rainbowNEdegH} | \${rainbowNEhex} |
-| \${rainbowE}   | \${rainbowEmtr}  | \${rainbowEdegC}  | \${rainbowEdegH}  | \${rainbowEhex}  |
-| \${rainbowSE}  | \${rainbowSEmtr} | \${rainbowSEdegC} | \${rainbowSEdegH} | \${rainbowSEhex} |
-| \${rainbowS}   | \${rainbowSmtr}  | \${rainbowSdegC}  | \${rainbowSdegH}  | \${rainbowShex}  |
-| \${rainbowSW}  | \${rainbowSWmtr} | \${rainbowSWdegC} | \${rainbowSWdegH} | \${rainbowSWhex} |
-| \${rainbowW}   | \${rainbowWmtr}  | \${rainbowWdegC}  | \${rainbowWdegH}  | \${rainbowWhex}  |
-| \${rainbowNW}  | \${rainbowNWmtr} | \${rainbowNWdegC} | \${rainbowNWdegH} | \${rainbowNWhex} |
-| \${rainbowN}   | \${rainbowNmtr}  | \${rainbowNdegC}  | \${rainbowNdegH}  | \${rainbowNhex}  |
-
-```{ojs}
-//| echo: false
 //| label: coloropposites
+//| column: margin
 //| class: colorcomponent
 quickRender(326, 326, context => {
   const center = 163
@@ -176,3 +96,84 @@ quickRender(326, 326, context => {
   })
 })
 ```
+
+```{ojs}
+//| echo: false
+//| label: colorwheelcompass
+//| class: colorcomponent
+// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
+svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
+  <g transform='rotate(${Math.round(-colorD * .36)})'>
+  ${repeat(tick(radius, 5, '#434343'), 5 * 4 * 10)}
+  ${repeat(tick(radius, 8), 10 * 4)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="black" stroke="black" stroke-width="1"/>`, 4, 0)}
+  ${repeat(`<path d="M 0,-${radius+12} l 3,10 l -6,0 z" fill="white" stroke="black" stroke-width="1"/>`, 4, 45)}
+  <circle r="${radius}" fill="#d3d3d3" stroke="#434343" stroke-width="3" />
+  ${repeat(directionMarker(radius+14, 24), 4, 0)}
+  ${repeat(directionMarker(radius+12, 24), 4, 45)}
+  ${repeat(turnMarker(radius+14, 32), 4, 0)}
+  ${repeat(turnMarker(radius+12, 32), 4, 45)}
+  ${repeat(pie(radius-margin/2, 2 * Math.PI * (radius-margin/2) / deccolors.length / 2, 1, deccolors), deccolors.length, 360/deccolors.length)}
+</svg>
+`
+```
+
+```{ojs}
+//| echo: false
+//| label: colorbar
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+decBar = colorbar({
+  colorFn: t => hslToRgb(dec2hue(t) / 1000, colorS / 1000, colorL / 1000),
+  onSelect: t => {
+    set(viewof colorD, t * 1000)
+    onUpdateHSL(dec2hue(t), colorS / 1000, colorL / 1000)
+  }
+})
+```
+
+```{ojs}
+//| echo: false
+//| label: colorslider
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { label: "hue", value: 0, step: 1 })
+  input.value = initialHSL[0]
+  input.oninput = (evt) => onUpdateHSL(dec2hue(evt.currentTarget.value / 1000), colorS / 1000, colorL / 1000)
+  return Inputs.bind(input, viewof colorD)
+}
+```
+
+```{ojs}
+//| echo: false
+//| label: saturslider
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { label: "saturation", value: 1000, step: 1, })
+  input.oninput = (evt) => onUpdateHSL(colorD, evt.currentTarget.value / 1000, colorL / 1000)
+  return Inputs.bind(input, viewof colorS)
+}
+```
+
+```{ojs}
+//| echo: false
+//| label: lightslider
+//| class: colorcomponent
+// https://observablehq.com/@paavanb/progressive-color-picker
+{ const input = Inputs.range([0, 1000], { label: "lightness", value: 500, step: 1, })
+  input.oninput = (evt) => onUpdateHSL(colorD, colorS / 1000, evt.currentTarget.value / 1000)
+  return Inputs.bind(input, viewof colorL)
+}
+```
+
+| **NESW**       | **mt**           | **c°**            | **h°**            | **hex**          |
+| -------------- | ---------------  | ----------------- | ----------------- | ---------------- |
+| \${rainbowDir} | \${rainbowMtr}   | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}   |
+| \${rainbowNE}  | \${rainbowNEmtr} | \${rainbowNEdegC} | \${rainbowNEdegH} | \${rainbowNEhex} |
+| \${rainbowE}   | \${rainbowEmtr}  | \${rainbowEdegC}  | \${rainbowEdegH}  | \${rainbowEhex}  |
+| \${rainbowSE}  | \${rainbowSEmtr} | \${rainbowSEdegC} | \${rainbowSEdegH} | \${rainbowSEhex} |
+| \${rainbowS}   | \${rainbowSmtr}  | \${rainbowSdegC}  | \${rainbowSdegH}  | \${rainbowShex}  |
+| \${rainbowSW}  | \${rainbowSWmtr} | \${rainbowSWdegC} | \${rainbowSWdegH} | \${rainbowSWhex} |
+| \${rainbowW}   | \${rainbowWmtr}  | \${rainbowWdegC}  | \${rainbowWdegH}  | \${rainbowWhex}  |
+| \${rainbowNW}  | \${rainbowNWmtr} | \${rainbowNWdegC} | \${rainbowNWdegH} | \${rainbowNWhex} |
+| \${rainbowN}   | \${rainbowNmtr}  | \${rainbowNdegC}  | \${rainbowNdegH}  | \${rainbowNhex}  |
