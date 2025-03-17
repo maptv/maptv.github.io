@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+14
+2025+16
 
 <div id="decnav">
 
@@ -196,6 +196,14 @@ preview()
 
 ``` {ojs}
 //| echo: false
+//| label: colorcomparer
+//| column: margin
+//| class: colorcomponent
+displayPalette(hsl10.slice(0, 10), {darkMode: true})
+```
+
+``` {ojs}
+//| echo: false
 //| label: colorwheelcompass
 //| class: colorcomponent
 // https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
@@ -347,6 +355,88 @@ decBar = colorbar({
 </tbody>
 </table>
 
+``` {ojs}
+//| echo: false
+//| label: coloropposites
+//| class: colorcomponent
+quickRender(326, 326, context => {
+  const center = 163
+  const ringRadius = 140
+  const ringLineWidth = 4
+  // Ring
+  context.beginPath();
+  context.lineWidth = ringLineWidth
+  context.strokeStyle = "#ddd"
+  context.arc(center, center, ringRadius, 0, 2 * Math.PI);
+  context.stroke();
+  context.font = "Bold 24px Arial"
+  context.textAlign = 'center'
+  let decPoints = []
+  for (let i = 0; i < 10; i++) {
+    const xPhase = Math.sin(i / 10 * 2 * Math.PI)
+    const yPhase = Math.cos(i / 10 * 2 * Math.PI)
+    const x = center + ringRadius * xPhase
+    const y = center - ringRadius * yPhase
+    decPoints.push([x, y])
+  }
+  // Lines
+  decConnections.forEach(([a, b], i ) => {
+    const [x1, y1] = decPoints[a]
+    const [x2, y2] = decPoints[b]
+    const lineAngle = Math.atan2(y2 - y1, x2 - x1)
+    // Draw just short of the label circumference
+    const x2a = x2 - 28 * Math.cos(lineAngle)
+    const y2a = y2 - 28 * Math.sin(lineAngle)
+    const x1a = x1 + 28 * Math.cos(lineAngle)
+    const y1a = y1 + 28 * Math.sin(lineAngle)
+    context.lineWidth = ringLineWidth
+    context.strokeStyle = "#ddd"
+    context.beginPath();
+    context.moveTo(x2a, y2a);
+    context.lineTo(x1a, y1a);
+    context.stroke();
+  })
+  // Arrow Heads
+  decConnections.forEach(([a, b], i ) => {
+    const [x1, y1] = decPoints[a]
+    const [x2, y2] = decPoints[b]
+    const lineAngle = Math.atan2(y2 - y1, x2 - x1)
+    const xl = x2 - 79 * Math.cos(lineAngle - (15 / 360) * 2 * Math.PI)
+    const yl = y2 - 79 * Math.sin(lineAngle - (15 / 360) * 2 * Math.PI)
+    const xr = x2 - 79 * Math.cos(lineAngle + (15 / 360) * 2 * Math.PI)
+    const yr = y2 - 79 * Math.sin(lineAngle + (15 / 360) * 2 * Math.PI)
+    const x2a = x2 - 22 * Math.cos(lineAngle)
+    const y2a = y2 - 22 * Math.sin(lineAngle)
+    const x = x2 - 60 * Math.cos(lineAngle)
+    const y = y2 - 60 * Math.sin(lineAngle)
+    context.fillStyle = hsl10[i]
+    context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+    context.lineWidth = 1
+    context.beginPath();
+    context.moveTo(x2a, y2a);
+    context.lineTo(xl, yl);
+    context.lineTo(xr, yr);
+    context.lineTo(x2a, y2a);
+    context.fill();
+    context.stroke();
+    context.fillStyle = yiq(hsl10[i]) > 0.51 ? "#000" : "white"
+    context.fillText(i, x, y + 8)
+  })
+  // Labels
+  decPoints.forEach(([x, y], i) => {
+    context.lineWidth = 1
+    context.fillStyle = hsl10[i]
+    context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+    context.beginPath();
+    context.arc(x, y, 22, 0, 2 * Math.PI);
+    context.fill();
+    context.stroke();
+    context.fillStyle = yiq(hsl10[i]) > 0.51 ? "#000" : "white";
+    context.fillText(i, x, y + 8)
+  })
+})
+```
+
 The
 [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
 [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️indicates
@@ -386,9 +476,25 @@ Dec arranges colors🎨in a rainbow🌈pattern based on [physical
 properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV)))
 of the [visible
 spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
-of light. Like the [Munsell color
-system](https://en.wikipedia.org/wiki/Munsell_color_system#Hue), Dec
-features 10 colors: .
+of light and highlights ten colors🎨as important milestones in the
+color🎨wheel: ${rainbow0hex}, ${rainbow1hex}, ${rainbow2hex},
+${rainbow3hex}, ${rainbow4hex}, ${rainbow5hex}, ${rainbow6hex},
+${rainbow7hex}, ${rainbow8hex}, and ${rainbow9hex}.
+
+The categorical color🎨wheel above⬆️shows how each of the ten Dec colors
+can be paired with its opposing color in a triangles. These ten colors
+can be used to designate the ten Dec time zones that are visible on the
+map🗺️above⬆️when the “Grid” toggle✅input is enabled.
+
+You can compare Dec and UTC time zones by enabling both the “Grid” and
+“UTC” toggle✅inputs. Unlike UTC times zones, Dec time zones are each
+exactly 1 deciparallel wide. To determine the Dec time zone (z) in a
+location, we obtain its longitude in <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="tenths of a circle of longitude">deciparallels</span>
+(dλ) and then apply the [floor
+function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x):
+z = ⌊dλ⌋.
 
 <div>
 
@@ -407,128 +513,10 @@ features 10 colors: .
 
 </div>
 
-In addition to compass directions, we can apply color🎨labels to
-latitude and longitude, time zones, the time of day, and dates.
-
 The deciturn (dt), hexadecimal (hex), [HSL and
 HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
 hue degree (h°), red (r), green (g), and blue (b) values of the ten Dec
 colors are listed in the table below.
-
-<table style="width:100%;">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 12%" />
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
-</colgroup>
-<thead>
-<tr>
-<th><strong>Name</strong></th>
-<th><strong>dt</strong></th>
-<th><strong>hex</strong></th>
-<th><strong>h°</strong></th>
-<th><strong>r</strong></th>
-<th><strong>g</strong></th>
-<th><strong>b</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>${rainbow0name}</td>
-<td>${rainbow0}</td>
-<td>${rainbow0hex}</td>
-<td>${rainbow0deg}</td>
-<td>${rainbow0r}</td>
-<td>${rainbow0g}</td>
-<td>${rainbow0b}</td>
-</tr>
-<tr>
-<td>${rainbow1name}</td>
-<td>${rainbow1}</td>
-<td>${rainbow1hex}</td>
-<td>${rainbow1deg}</td>
-<td>${rainbow1r}</td>
-<td>${rainbow1g}</td>
-<td>${rainbow1b}</td>
-</tr>
-<tr>
-<td>${rainbow2name}</td>
-<td>${rainbow2}</td>
-<td>${rainbow2hex}</td>
-<td>${rainbow2deg}</td>
-<td>${rainbow2r}</td>
-<td>${rainbow2g}</td>
-<td>${rainbow2b}</td>
-</tr>
-<tr>
-<td>${rainbow3name}</td>
-<td>${rainbow3}</td>
-<td>${rainbow3hex}</td>
-<td>${rainbow3deg}</td>
-<td>${rainbow3r}</td>
-<td>${rainbow3g}</td>
-<td>${rainbow3b}</td>
-</tr>
-<tr>
-<td>${rainbow4name}</td>
-<td>${rainbow4}</td>
-<td>${rainbow4hex}</td>
-<td>${rainbow4deg}</td>
-<td>${rainbow4r}</td>
-<td>${rainbow4g}</td>
-<td>${rainbow4b}</td>
-</tr>
-<tr>
-<td>${rainbow5name}</td>
-<td>${rainbow5}</td>
-<td>${rainbow5hex}</td>
-<td>${rainbow5deg}</td>
-<td>${rainbow5r}</td>
-<td>${rainbow5g}</td>
-<td>${rainbow5b}</td>
-</tr>
-<tr>
-<td>${rainbow6name}</td>
-<td>${rainbow6}</td>
-<td>${rainbow6hex}</td>
-<td>${rainbow6deg}</td>
-<td>${rainbow6r}</td>
-<td>${rainbow6g}</td>
-<td>${rainbow6b}</td>
-</tr>
-<tr>
-<td>${rainbow7name}</td>
-<td>${rainbow7}</td>
-<td>${rainbow7hex}</td>
-<td>${rainbow7deg}</td>
-<td>${rainbow7r}</td>
-<td>${rainbow7g}</td>
-<td>${rainbow7b}</td>
-</tr>
-<tr>
-<td>${rainbow8name}</td>
-<td>${rainbow8}</td>
-<td>${rainbow8hex}</td>
-<td>${rainbow8deg}</td>
-<td>${rainbow8r}</td>
-<td>${rainbow8g}</td>
-<td>${rainbow8b}</td>
-</tr>
-<tr>
-<td>${rainbow9name}</td>
-<td>${rainbow9}</td>
-<td>${rainbow9hex}</td>
-<td>${rainbow9deg}</td>
-<td>${rainbow9r}</td>
-<td>${rainbow9g}</td>
-<td>${rainbow9b}</td>
-</tr>
-</tbody>
-</table>
 
 The Dec color wheel is different than its trichromatic counterpart.
 
@@ -565,15 +553,8 @@ We can apply Dec time zones: ${rainbowZone0}, ${rainbowZone1},
 ${rainbowZone2}, ${rainbowZone3}, ${rainbowZone4}, ${rainbowZone5},
 ${rainbowZone6}, ${rainbowZone7}, ${rainbowZone8}, and ${rainbowZone9}.
 
-To determine the Dec time zone (z) in a location, we obtain its
-longitude in <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a circle of longitude">deciparallels</span>
-(dλ) and then apply the [floor
-function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x):
-z = ⌊dλ⌋. The time zone color🎨labels above are different Dec time zones
-are separated by the vertical lines shown on the map🗺️above⬆️when the
-“Grid” toggle✅input is enabled. You can compare Dec and UTC time zones
-by enabling both the “Grid” and “UTC” toggle✅inputs.
+The time zone color🎨labels above are different Dec time zones are
+separated
 
 For greater separation values above⬆️are ${rainbowZone0},
 ${rainbowZone1}, ${rainbowZone2}, ${rainbowZone3}, ${rainbowZone4},
@@ -1380,14 +1361,14 @@ function coor2bear(strt, dest) {
     Math.cos(strtLat) * Math.sin(destLat) - Math.sin(strtLat) * Math.cos(destLat) * Math.cos(destLng - strtLng)
   )) + 360) % 360;
 }
+function yiq(color) {
+  const {r, g, b} = d3.rgb(color);
+  return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
+}
 function textcolor(content, style = {}) {
-  function yiq(color) {
-    const {r, g, b} = d3.rgb(color);
-    return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
-  }
   const {
     background,
-    color = yiq(background) > 0.5 ? "#000" : "white",
+    color = yiq(background) > 0.51 ? "#000" : "white",
     padding = "0 5px",
     borderRadius = "4px",
     fontWeight = 400,
@@ -1451,66 +1432,16 @@ rainbow6 = textcolor('6', "#0f0") // green
 rainbow7 = textcolor('7', "#af0") // lime
 rainbow8 = textcolor('8', "#ff0") // yellow
 rainbow9 = textcolor('9', "#fa0") // orange
-rainbow0hex = textcolor('f00', "#f00") // red
-rainbow1hex = textcolor('f0f', "#f0f") // magenta
-rainbow2hex = textcolor('a0f', "#a0f") // violet
-rainbow3hex = textcolor('00f', "#00f") // blue
-rainbow4hex = textcolor('0af', "#0af") // azure
-rainbow5hex = textcolor('0ff', "#0ff") // cyan
-rainbow6hex = textcolor('0f0', "#0f0") // green
-rainbow7hex = textcolor('af0', "#af0") // lime
-rainbow8hex = textcolor('ff0', "#ff0") // yellow
-rainbow9hex = textcolor('fa0', "#fa0") // orange
-rainbow0deg = textcolor('0', "#f00") // red
-rainbow1deg = textcolor('300', "#f0f") // magenta
-rainbow2deg = textcolor('280', "#a0f") // violet
-rainbow3deg = textcolor('240', "#00f") // blue
-rainbow4deg = textcolor('200', "#0af") // azure
-rainbow5deg = textcolor('180', "#0ff") // cyan
-rainbow6deg = textcolor('120', "#0f0") // green
-rainbow7deg = textcolor('80',  "#af0") // lime
-rainbow8deg = textcolor('60',  "#ff0") // yellow
-rainbow9deg = textcolor('40',  "#fa0") // orange
-rainbow0name = textcolor('red', "#f00") // red
-rainbow1name = textcolor('magenta', "#f0f") // magenta
-rainbow2name = textcolor('violet', "#a0f") // violet
-rainbow3name = textcolor('blue', "#00f") // blue
-rainbow4name = textcolor('azure', "#0af") // azure
-rainbow5name = textcolor('cyan', "#0ff") // cyan
-rainbow6name = textcolor('green', "#0f0") // green
-rainbow7name = textcolor('lime', "#af0") // lime
-rainbow8name = textcolor('yellow', "#ff0") // yellow
-rainbow9name = textcolor('orange', "#fa0") // orange
-rainbow0r = textcolor('255', "#f00") // red
-rainbow1r = textcolor('255', "#f0f") // magenta
-rainbow2r = textcolor('170', "#a0f") // violet
-rainbow3r = textcolor('0', "#00f") // blue
-rainbow4r = textcolor('0', "#0af") // azure
-rainbow5r = textcolor('0', "#0ff") // cyan
-rainbow6r = textcolor('0', "#0f0") // green
-rainbow7r = textcolor('170', "#af0") // lime
-rainbow8r = textcolor('255', "#ff0") // yellow
-rainbow9r = textcolor('255', "#fa0") // orange
-rainbow0g = textcolor('0', "#f00") // red
-rainbow1g = textcolor('0', "#f0f") // magenta
-rainbow2g = textcolor('0', "#a0f") // violet
-rainbow3g = textcolor('0', "#00f") // blue
-rainbow4g = textcolor('170', "#0af") // azure
-rainbow5g = textcolor('255', "#0ff") // cyan
-rainbow6g = textcolor('255', "#0f0") // green
-rainbow7g = textcolor('255', "#af0") // lime
-rainbow8g = textcolor('255', "#ff0") // yellow
-rainbow9g = textcolor('170', "#fa0") // orange
-rainbow0b = textcolor('0', "#f00") // red
-rainbow1b = textcolor('255', "#f0f") // magenta
-rainbow2b = textcolor('255', "#a0f") // violet
-rainbow3b = textcolor('255', "#00f") // blue
-rainbow4b = textcolor('255', "#0af") // azure
-rainbow5b = textcolor('255', "#0ff") // cyan
-rainbow6b = textcolor('0', "#0f0") // green
-rainbow7b = textcolor('0', "#af0") // lime
-rainbow8b = textcolor('0', "#ff0") // yellow
-rainbow9b = textcolor('0', "#fa0") // orange
+rainbow0hex = textcolor('f00', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow1hex = textcolor('f0f', d3.color(`hsl(300${slStr}`).formatHex()) // magenta
+rainbow2hex = textcolor('a0f', d3.color(`hsl(280${slStr}`).formatHex()) // violet
+rainbow3hex = textcolor('00f', d3.color(`hsl(240${slStr}`).formatHex()) // blue
+rainbow4hex = textcolor('0af', d3.color(`hsl(200${slStr}`).formatHex()) // azure
+rainbow5hex = textcolor('0ff', d3.color(`hsl(180${slStr}`).formatHex()) // cyan
+rainbow6hex = textcolor('0f0', d3.color(`hsl(120${slStr}`).formatHex()) // green
+rainbow7hex = textcolor('af0', d3.color(`hsl(80${slStr}`).formatHex()) // lime
+rainbow8hex = textcolor('ff0', d3.color(`hsl(60${slStr}`).formatHex()) // yellow
+rainbow9hex = textcolor('fa0', d3.color(`hsl(40${slStr}`).formatHex()) // orange
 rainbowN = textcolor('N', "hsl(0" + slStr)
 rainbowNmtr = textcolor('0', "hsl(0" + slStr)
 rainbowNdegH = textcolor('0', "hsl(0" + slStr)
@@ -1634,6 +1565,7 @@ viewof colorB = Inputs.input(initialRGB[2])
 viewof colorD = Inputs.input(dec2hue(initialHSL[0]))
 viewof colorS = Inputs.input(1000)
 viewof colorL = Inputs.input(500)
+viewof colorA = Inputs.input(1000)
 /**
  * Update all color values based on current HSL
  */
@@ -1710,6 +1642,30 @@ function hue2rgb(p, q, t) {
   if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
   return p;
 }
+// https://observablehq.com/@maddievision/simple-canvas
+pixelRatio = window.devicePixelRatio;
+createCanvas = (width, height) => {
+  const canvas = document.createElement('canvas');
+  canvas.width = width * pixelRatio;
+  canvas.height = height * pixelRatio;
+  canvas.style.width = width + 'px';
+  canvas.style.height = height + 'px';
+  return canvas
+}
+renderWithScale = (context, renderFunction) => {
+  context.save();
+  context.scale(pixelRatio, pixelRatio);
+  renderFunction()
+  context.restore();
+}
+quickRender = (width, height, renderer) => {
+  const canvas = createCanvas(width, height)
+  const context = canvas.getContext('2d')
+  renderWithScale(context, () => {
+    renderer(context)
+  })
+  return canvas
+}
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
@@ -1717,6 +1673,59 @@ function unix2dote(unix, zone, offset = 719468) {
       (new Date).getTimezoneOffset() / 144)
     ) / 10 + offset, zone]
 }
+decConnections = [
+  [0, 5],
+  [1, 6],
+  [2, 7],
+  [3, 8],
+  [4, 9],
+  [5, 0],
+  [6, 1],
+  [7, 2],
+  [8, 3],
+  [9, 4]
+]
+coor = [[[-18, -90], [-18, 90], [18, 90], [18, -90], [-18, -90], ]]
+deczones = [...Array(10).keys()].map(
+  i => ({
+    "type": "Feature",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [coor[0].map(t => [t[0]+36*i, t[1]])]
+      },
+    "properties": []
+  })
+)
+hsl10 = [
+  `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
+  // `hsl(340, ${colorS / 10}%, ${colorL / 10}%)`, // magentared
+  `hsl(300, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
+  `hsl(280, ${colorS / 10}%, ${colorL / 10}%)`, // violet
+  `hsl(240, ${colorS / 10}%, ${colorL / 10}%)`, // blue
+  `hsl(200, ${colorS / 10}%, ${colorL / 10}%)`, // azure
+  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // cyan
+  // `hsl(160, ${colorS / 10}%, ${colorL / 10}%)`, // cyangreen
+  `hsl(120, ${colorS / 10}%, ${colorL / 10}%)`, // green
+  `hsl(80, ${colorS / 10}%, ${colorL / 10}%)`, // lime
+  `hsl(60, ${colorS / 10}%, ${colorL / 10}%)`, // yellow
+  `hsl(40, ${colorS / 10}%, ${colorL / 10}%)`, // orange
+  `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
+]
+hsla10 = [
+  `hsla(0, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // red
+  // `hsla(340, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // magentared
+  `hsla(300, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // magenta
+  `hsla(280, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // violet
+  `hsla(240, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // blue
+  `hsla(200, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // azure
+  `hsla(180, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // cyan
+  // `hsla(160, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // cyangreen
+  `hsla(120, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // green
+  `hsla(80, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // lime
+  `hsla(60, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // yellow
+  `hsla(40, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // orange
+  `hsla(0, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // red
+]
 function dote2date(dote, zone = 0) {
   const cote = Math.floor((
       dote >= 0 ? dote
@@ -1790,6 +1799,14 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath(); path({type: "Sphere"});
       context.fillStyle = window.darkmode ? "#007FFF" : mapcolors.ocean;
       context.fill();
+      if (gridtoggle) {
+        deczones.map((f, i) =>  {
+          context.beginPath();
+          path(f);
+          context.fillStyle = hsla10[i];
+          context.fill();
+        })
+      }
     }
     if (utctoggle) {
       zones.map(f => fillMesh(f))
@@ -1797,7 +1814,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.beginPath();
     path(land);
     if (!utctoggle) {
-      context.fillStyle = window.darkmode ? "green" : mapcolors.land;
+      context.fillStyle = window.darkmode ? "#0808" : mapcolors.land;
       context.fill();
     }
     context.strokeStyle = `#000`;
@@ -2185,8 +2202,8 @@ mapcolors = ({
   day: "#ffe438",
   grid: "#4b6a79",
   ocean: "#adeeff",
-  land: "#90ff78",
-  sun: "#ffe438"
+  land: "#90ff7888",
+  sun: "#ffb438"
 })
 function long2turn(degrees = -180, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
@@ -2233,73 +2250,46 @@ topojson = require("topojson-client@3")
 solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
 borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
 countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
-piecolors = [
-  "#ff4000", // 15
-  "#ff8000", // 30
-  "#ffbf00", // 45
-  "#ffff00", // 60
-  '#bfff00', // 75
-  '#80ff00', // 90
-  '#40ff00', // 105
-  '#00ff00', // 120
-  '#00ff40', // 135
-  '#00ff80', // 150
-  '#00ffbf', // 165
-  '#00ffff', // 180
-  '#00bfff', // 195
-  '#0080ff', // 210
-  '#0040ff', // 225
-  '#0000ff', // 240
-  '#4000ff', // 255
-  '#8000ff', // 270
-  '#bf00ff', // 285
-  '#ff00ff', // 300
-  '#ff00bf', // 315
-  '#ff0080', // 330
-  '#ff0040', // 345
-  '#f00',    // 0
-]
 deccolors = [
-  "#ff0040",
-  "#ff0080",
-  "#ff00bf",
-  "#ff00ff",
-  "#df00ff",
-  "#c000ff",
-  "#a000ff",
-  "#8000ff",
-  "#6000ff",
-  "#4000ff",
-  "#2000ff",
-  "#0000ff",
-  "#0020ff",
-  "#0040ff",
-  "#0060ff",
-  "#0080ff",
-  "#00a0ff",
-  "#00c0ff",
-  "#00dfff",
-  "#00ffff",
-  "#00ffbf",
-  "#00ff80",
-  "#00ff40",
-  "#00ff00",
-  "#30ff00",
-  "#60ff00",
-  "#90ff00",
-  "#c0ff00",
-  "#d0ff00",
-  "#e0ff00",
-  "#efff00",
-  "#ffff00",
-  "#ffdf00",
-  "#ffc000",
-  "#ffa000",
-  "#ff8000",
-  "#ff6000",
-  "#ff4000",
-  "#ff2000",
-  "#ff0000",
+  `hsl(344.94117647058823${slStr})`,
+  `hsl(329.88235294117646${slStr})`,
+  `hsl(315.05882352941177${slStr})`,
+  `hsl(300${slStr})`,
+  `hsl(295.05882352941177${slStr})`,
+  `hsl(290.11764705882354${slStr})`,
+  `hsl(284.94117647058823${slStr})`,
+  `hsl(280${slStr})`,
+  `hsl(270.11764705882354${slStr})`,
+  `hsl(260${slStr})`,
+  `hsl(250.11764705882354${slStr})`,
+  `hsl(240${slStr})`,
+  `hsl(229.8823529411765${slStr})`,
+  `hsl(209.88235294117646${slStr})`,
+  `hsl(200${slStr})`,
+  `hsl(195.05882352941177${slStr})`,
+  `hsl(189.88235294117646${slStr})`,
+  `hsl(184.94117647058823${slStr})`,
+  `hsl(180${slStr})`,
+  `hsl(164.94117647058823${slStr})`,
+  `hsl(150.11764705882354${slStr})`,
+  `hsl(135.05882352941177${slStr})`,
+  `hsl(120${slStr})`,
+  `hsl(109.88235294117646${slStr})`,
+  `hsl(100${slStr})`,
+  `hsl(89.88235294117646${slStr})`,
+  `hsl(80${slStr})`,
+  `hsl(75.05882352941177${slStr})`,
+  `hsl(69.88235294117646${slStr})`,
+  `hsl(64.94117647058825${slStr})`,
+  `hsl(60${slStr})`,
+  `hsl(55.05882352941176${slStr})`,
+  `hsl(50.11764705882353${slStr})`,
+  `hsl(44.94117647058823${slStr})`,
+  `hsl(40${slStr})`,
+  `hsl(30.11764705882353${slStr})`,
+  `hsl(20${slStr})`,
+  `hsl(10.11764705882353${slStr})`,
+  `hsl(0${slStr})`,
 ]
 viewof size = Inputs.range([50, 700], {
   value: 300,
@@ -2345,11 +2335,159 @@ function pie(radius, width, narrowness=1.0, piecolors) {
 }
 margin = size / 14
 padding = 42
-radius = size/2 - margin - padding
+radius = size / 2 - margin - padding
 window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
+function displayPalette(palette, { darkMode = false } = {}) {
+  return htl.html`
+  <div style="display: flex; flex-direction: column;">
+    <div style="margin-bottom:8px;">${cielabScatter(palette, { darkMode: darkMode })}</div>
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly;">
+      <div style="">${lightnessSpectrum(palette, { darkMode: darkMode })}</div>
+      <div>${swatches(palette)}</div>
+  </div></div>
+</div>`
+}
+paletteDots = function(palette, { darkMode = false } = {}) {
+  return Plot.plot( {
+    marks: [
+      Plot.dot(palette, {
+        x: (d,i) => i * 36,
+        r: 16,
+        fill: { value: (d) => d, label: "Color" },
+        stroke: darkMode ? "white" : "#202020" ,
+        tip: {
+          format: { x: false },
+          fill: darkMode ? "#202020" : "white"
+        }
+      }),
+      Plot.text(palette.map((d,i) => i), {
+        x: (d) => d * 36,
+        dx: 18,
+        dy: 16,
+        opacity: 0.8
+      }),
+    ],
+    x: { domain: [ 0, 320 ], ticks: 0 },
+    height: 48,
+    width: (palette.length) * 40,
+    marginTop: 16,
+    style: { fontSize: 18, overflow: "visible" }
+    })
+}
+function cielabScatter(palette, { darkMode = false } = {}) {
+  let labPalette = palette.map((c,i)=>({...d3.lab(c), i, color: c, ...({})}));
+  return Plot.plot({
+    width: colorsize,
+    height: colorsize,
+    style: { fontSize: 12 },
+    marks: [
+      Plot.frame({rx: size / 2, ry: size / 2, opacity: 0.2}),
+      Plot.gridX({ticks: 3, opacity: 0.2}),
+      Plot.gridY({ticks: 3, opacity: 0.2}),
+      Plot.ruleX([0], {opacity: 0.25}),
+      Plot.ruleY([0], {opacity: 0.25}),
+      Plot.dot(labPalette, {
+        x: "a", y: "b", r: 5,
+        fill: { value: (d) => d.color, label: "Color" },
+        channels: {
+          L: { value: "l", label: "L*" }
+        },
+        tip: {
+          format: { fill: (d,i) => `${d} (${i})` },
+          fill: "#202020",
+        }
+      }),
+    ],
+    x: {
+      domain: [-80, 80],
+      ticks: 3,
+      tickSize: 0,
+      labelArrow: null,
+      labelAnchor: "center",
+      label: "a*"
+    },
+    y: {
+      domain: [-80, 80],
+      ticks: 3,
+      tickRotate: 0,
+      tickSize: 0,
+      labelArrow: null,
+      labelAnchor: "center",
+      label: "b*"
+    }
+  });
+}
+function lightnessSpectrum(palette, { darkMode = false } = {}) {
+  let labPalette = palette.map((c,i)=>({...d3.lab(c), i, color: c, ...({})}));
+  return Plot.plot({
+    height: colorsize,
+    width: 70,
+    style: { fontSize: 12, overflow: "visible" }, // let the tip overflow the rect of the plot
+    marks: [
+      Plot.tickY( labPalette, {
+        y: (d) => d.l,
+        stroke: { value: (d) => d.color, label: "Color" },
+        strokeWidth: 3,
+        tip: {
+          anchor: "right",
+          frameAnchor: "left",
+          format: {
+            fontSize: 12,
+            stroke: (d,i) => `${d} (${i})`,
+            a: true, b: true
+          },
+          fill: "#202020"
+        },
+        channels: {
+          a: { value: "a", label: "a*" },
+          b: { value: "b", label: "b*" }
+        },
+      })
+    ],
+    y: {
+      domain: [30, 100],
+      grid: true,
+      tickSize: 0,
+      labelAnchor: "center",
+      label: "L*",
+      labelArrow: false
+    },
+  })
+}
+function swatches(palette) {
+  return Plot.plot({
+    height: colorsize,
+    width: 50,
+    x: {ticks: 0},
+    margin: 0,
+    marks: [
+      Plot.barX(
+        palette, {
+          y: (d,i) => i,
+          fill: (d) => d,
+          inset: -1
+        }
+      )
+    ]
+})}
+colorsize = 210
 ```
 
 <style>
+.text-preview {
+  display: flex;
+  font-family: sans-serif;
+  flex-direction: column;
+  margin: 0 32px;
+  font-size: 12px;
+}
+.text-preview div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  flex: auto;
+}
 #maptable table * {
   font-size: 18px;
   padding: 0px 5px 0px 5px;
@@ -2389,8 +2527,20 @@ div#distmap {
   align-items: center;
   justify-content: center;
 }
+div#colorpreview, div#colorcomparer {
+  overflow: visible;
+}
+div#colorcomparer g[aria-label="y-axis label"] > text {
+ transform: translate(40px,100px);
+}
+div#colorcomparer svg {
+  overflow: visible;
+}
 div#colorslider > div {
   min-width: 360px;
+}
+div#coloropposites {
+  margin: -10px 0px -10px 0px;
 }
 div#colorslider > label {
   maaxwidth: 60px;
