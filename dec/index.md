@@ -204,6 +204,89 @@ displayPalette(hsl10.slice(0, 10), {darkMode: true})
 
 ``` {ojs}
 //| echo: false
+//| label: coloropposites
+//| column: margin
+//| class: colorcomponent
+quickRender(326, 326, context => {
+  const center = 163
+  const ringRadius = 140
+  const ringLineWidth = 4
+  // Ring
+  context.beginPath();
+  context.lineWidth = ringLineWidth
+  context.strokeStyle = "#ddd"
+  context.arc(center, center, ringRadius, 0, 2 * Math.PI);
+  context.stroke();
+  context.font = "Bold 24px Arial"
+  context.textAlign = 'center'
+  let decPoints = []
+  for (let i = 0; i < 10; i++) {
+    const xPhase = Math.sin(i / 10 * 2 * Math.PI)
+    const yPhase = Math.cos(i / 10 * 2 * Math.PI)
+    const x = center + ringRadius * xPhase
+    const y = center - ringRadius * yPhase
+    decPoints.push([x, y])
+  }
+  // Lines
+  decConnections.forEach(([a, b], i ) => {
+    const [x1, y1] = decPoints[a]
+    const [x2, y2] = decPoints[b]
+    const lineAngle = Math.atan2(y2 - y1, x2 - x1)
+    // Draw just short of the label circumference
+    const x2a = x2 - 28 * Math.cos(lineAngle)
+    const y2a = y2 - 28 * Math.sin(lineAngle)
+    const x1a = x1 + 28 * Math.cos(lineAngle)
+    const y1a = y1 + 28 * Math.sin(lineAngle)
+    context.lineWidth = ringLineWidth
+    context.strokeStyle = "#ddd"
+    context.beginPath();
+    context.moveTo(x2a, y2a);
+    context.lineTo(x1a, y1a);
+    context.stroke();
+  })
+  // Arrow Heads
+  decConnections.forEach(([a, b], i ) => {
+    const [x1, y1] = decPoints[a]
+    const [x2, y2] = decPoints[b]
+    const lineAngle = Math.atan2(y2 - y1, x2 - x1)
+    const xl = x2 - 79 * Math.cos(lineAngle - (15 / 360) * 2 * Math.PI)
+    const yl = y2 - 79 * Math.sin(lineAngle - (15 / 360) * 2 * Math.PI)
+    const xr = x2 - 79 * Math.cos(lineAngle + (15 / 360) * 2 * Math.PI)
+    const yr = y2 - 79 * Math.sin(lineAngle + (15 / 360) * 2 * Math.PI)
+    const x2a = x2 - 22 * Math.cos(lineAngle)
+    const y2a = y2 - 22 * Math.sin(lineAngle)
+    const x = x2 - 60 * Math.cos(lineAngle)
+    const y = y2 - 60 * Math.sin(lineAngle)
+    context.fillStyle = hsl10[i]
+    context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+    context.lineWidth = 1
+    context.beginPath();
+    context.moveTo(x2a, y2a);
+    context.lineTo(xl, yl);
+    context.lineTo(xr, yr);
+    context.lineTo(x2a, y2a);
+    context.fill();
+    context.stroke();
+    context.fillStyle = yiq(hsl10[i]) > 0.51 ? "#000" : "white"
+    context.fillText(i, x, y + 8)
+  })
+  // Labels
+  decPoints.forEach(([x, y], i) => {
+    context.lineWidth = 1
+    context.fillStyle = hsl10[i]
+    context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+    context.beginPath();
+    context.arc(x, y, 22, 0, 2 * Math.PI);
+    context.fill();
+    context.stroke();
+    context.fillStyle = yiq(hsl10[i]) > 0.51 ? "#000" : "white";
+    context.fillText(i, x, y + 8)
+  })
+})
+```
+
+``` {ojs}
+//| echo: false
 //| label: colorwheelcompass
 //| class: colorcomponent
 // https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
@@ -354,88 +437,6 @@ decBar = colorbar({
 </tr>
 </tbody>
 </table>
-
-``` {ojs}
-//| echo: false
-//| label: coloropposites
-//| class: colorcomponent
-quickRender(326, 326, context => {
-  const center = 163
-  const ringRadius = 140
-  const ringLineWidth = 4
-  // Ring
-  context.beginPath();
-  context.lineWidth = ringLineWidth
-  context.strokeStyle = "#ddd"
-  context.arc(center, center, ringRadius, 0, 2 * Math.PI);
-  context.stroke();
-  context.font = "Bold 24px Arial"
-  context.textAlign = 'center'
-  let decPoints = []
-  for (let i = 0; i < 10; i++) {
-    const xPhase = Math.sin(i / 10 * 2 * Math.PI)
-    const yPhase = Math.cos(i / 10 * 2 * Math.PI)
-    const x = center + ringRadius * xPhase
-    const y = center - ringRadius * yPhase
-    decPoints.push([x, y])
-  }
-  // Lines
-  decConnections.forEach(([a, b], i ) => {
-    const [x1, y1] = decPoints[a]
-    const [x2, y2] = decPoints[b]
-    const lineAngle = Math.atan2(y2 - y1, x2 - x1)
-    // Draw just short of the label circumference
-    const x2a = x2 - 28 * Math.cos(lineAngle)
-    const y2a = y2 - 28 * Math.sin(lineAngle)
-    const x1a = x1 + 28 * Math.cos(lineAngle)
-    const y1a = y1 + 28 * Math.sin(lineAngle)
-    context.lineWidth = ringLineWidth
-    context.strokeStyle = "#ddd"
-    context.beginPath();
-    context.moveTo(x2a, y2a);
-    context.lineTo(x1a, y1a);
-    context.stroke();
-  })
-  // Arrow Heads
-  decConnections.forEach(([a, b], i ) => {
-    const [x1, y1] = decPoints[a]
-    const [x2, y2] = decPoints[b]
-    const lineAngle = Math.atan2(y2 - y1, x2 - x1)
-    const xl = x2 - 79 * Math.cos(lineAngle - (15 / 360) * 2 * Math.PI)
-    const yl = y2 - 79 * Math.sin(lineAngle - (15 / 360) * 2 * Math.PI)
-    const xr = x2 - 79 * Math.cos(lineAngle + (15 / 360) * 2 * Math.PI)
-    const yr = y2 - 79 * Math.sin(lineAngle + (15 / 360) * 2 * Math.PI)
-    const x2a = x2 - 22 * Math.cos(lineAngle)
-    const y2a = y2 - 22 * Math.sin(lineAngle)
-    const x = x2 - 60 * Math.cos(lineAngle)
-    const y = y2 - 60 * Math.sin(lineAngle)
-    context.fillStyle = hsl10[i]
-    context.strokeStyle = window.darkmode ? "#aaa" : "#333";
-    context.lineWidth = 1
-    context.beginPath();
-    context.moveTo(x2a, y2a);
-    context.lineTo(xl, yl);
-    context.lineTo(xr, yr);
-    context.lineTo(x2a, y2a);
-    context.fill();
-    context.stroke();
-    context.fillStyle = yiq(hsl10[i]) > 0.51 ? "#000" : "white"
-    context.fillText(i, x, y + 8)
-  })
-  // Labels
-  decPoints.forEach(([x, y], i) => {
-    context.lineWidth = 1
-    context.fillStyle = hsl10[i]
-    context.strokeStyle = window.darkmode ? "#aaa" : "#333";
-    context.beginPath();
-    context.arc(x, y, 22, 0, 2 * Math.PI);
-    context.fill();
-    context.stroke();
-    context.fillStyle = yiq(hsl10[i]) > 0.51 ? "#000" : "white";
-    context.fillText(i, x, y + 8)
-  })
-})
-```
 
 The
 [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
@@ -2393,7 +2394,7 @@ function cielabScatter(palette, { darkMode = false } = {}) {
           L: { value: "l", label: "L*" }
         },
         tip: {
-          format: { fill: (d,i) => `${d} (${i})` },
+          format: { fill: (d,i) => `${i}` },
           fill: "#202020",
         }
       }),
@@ -2433,7 +2434,7 @@ function lightnessSpectrum(palette, { darkMode = false } = {}) {
           frameAnchor: "left",
           format: {
             fontSize: 12,
-            stroke: (d,i) => `${d} (${i})`,
+            stroke: (d,i) => `${i}`,
             a: true, b: true
           },
           fill: "#202020"
@@ -2540,7 +2541,12 @@ div#colorslider > div {
   min-width: 360px;
 }
 div#coloropposites {
-  margin: -10px 0px -10px 0px;
+  overflow: visible;
+}
+div#coloropposites canvas{
+  width: 240px !important;
+  height: 240px !important;
+  overflow: visible;
 }
 div#colorslider > label {
   maaxwidth: 60px;
