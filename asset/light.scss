@@ -183,3 +183,9 @@ g.node rect:hover, g.node:has(g:hover) rect {
 #projselect select {
   border-color: black;
 }
+#colorcomparer svg g[aria-label="tip"] g {
+  fill: white;
+}
+#colorcomparer svg g[aria-label="tip"] g text {
+  color: black;
+}

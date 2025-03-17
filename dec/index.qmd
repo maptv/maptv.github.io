@@ -61,45 +61,23 @@ An airplane✈️flying at 500 [milliomegars]{.under .tool data-bs-toggle="toolt
 
 {{< include /dec/_color.qmd >}}
 
-| **NESW**       | **mt**           | **c°**            | **h°**            | **hex**          |
-| -------------- | ---------------  | ----------------- | ----------------- | ---------------- |
-| \${rainbowDir} | \${rainbowMtr}   | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}   |
-| \${rainbowNE}  | \${rainbowNEmtr} | \${rainbowNEdegC} | \${rainbowNEdegH} | \${rainbowNEhex} |
-| \${rainbowE}   | \${rainbowEmtr}  | \${rainbowEdegC}  | \${rainbowEdegH}  | \${rainbowEhex}  |
-| \${rainbowSE}  | \${rainbowSEmtr} | \${rainbowSEdegC} | \${rainbowSEdegH} | \${rainbowSEhex} |
-| \${rainbowS}   | \${rainbowSmtr}  | \${rainbowSdegC}  | \${rainbowSdegH}  | \${rainbowShex}  |
-| \${rainbowSW}  | \${rainbowSWmtr} | \${rainbowSWdegC} | \${rainbowSWdegH} | \${rainbowSWhex} |
-| \${rainbowW}   | \${rainbowWmtr}  | \${rainbowWdegC}  | \${rainbowWdegH}  | \${rainbowWhex}  |
-| \${rainbowNW}  | \${rainbowNWmtr} | \${rainbowNWdegC} | \${rainbowNWdegH} | \${rainbowNWhex} |
-| \${rainbowN}   | \${rainbowNmtr}  | \${rainbowNdegC}  | \${rainbowNdegH}  | \${rainbowNhex}  |
-
 The [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle) [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️indicates both a [hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram) and a [direction](https://en.wikipedia.org/wiki/Cardinal_direction). To rotate🔄the color🎨wheel compass🧭, use the [Observable](https://observablehq.com) hue [bar](https://observablehq.com/@paavanb/progressive-color-picker)📊and range🎚️inputs beneath it or change the course from [Point 0]{.point0} to [Point 1]{.point1} on the map🗺️. The table above⬆️shows information on the currently indicated direction (top row) and the [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west) and [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW)) directions.
 
 The range🎚️inputs beneath the color🎨wheel compass🧭represent a hue, saturation, and lightness (HSL) triplet that specifies a color with three [milliturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a thousandth of a turn"} (mt) values. We can convert the hue mt value into compass🧭degrees (c°) and [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model) hue degrees (h°). We can also translate an HSL triplet into an HSV, [RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model), or [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors) (hex) triplet.
 
-Regardless of the [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) and [units](https://en.wikipedia.org/wiki/Angle#Units) we use, color🎨can provide a general sense of angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle). Dec arranges colors🎨in a rainbow🌈pattern based on [physical properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV))) of the [visible spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye) of light. Like the [Munsell color system](https://en.wikipedia.org/wiki/Munsell_color_system#Hue), Dec features 10 colors: .
+Regardless of the [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) and [units](https://en.wikipedia.org/wiki/Angle#Units) we use, color🎨can provide a general sense of angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle). Dec arranges colors🎨in a rainbow🌈pattern based on [physical properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV))) of the [visible spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye) of light and highlights ten colors🎨as important milestones in the color🎨wheel: \${rainbow0hex}, \${rainbow1hex}, \${rainbow2hex}, \${rainbow3hex}, \${rainbow4hex}, \${rainbow5hex}, \${rainbow6hex}, \${rainbow7hex}, \${rainbow8hex}, and \${rainbow9hex}.
+
+The categorical color🎨wheel above⬆️shows how each of the ten Dec colors can be paired with its opposing color in a triangles. These ten colors can be used to designate the ten Dec time zones that are visible on the map🗺️above⬆️when the "Grid" toggle✅input is enabled.
+
+You can compare Dec and UTC time zones by enabling both the "Grid" and "UTC" toggle✅inputs. Unlike UTC times zones, Dec time zones are each exactly 1 deciparallel wide. To determine the Dec time zone (z) in a location, we obtain its longitude in [deciparallels]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a circle of longitude"} (dλ) and then apply the [floor function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x): z = &LeftFloor;dλ&RightFloor;.
+
 
 ::: {.callout-warning}
 # Bad Pun Alert
 Feeling ***disoriented***😵‍💫? Of [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered) you are! Color🎨labels can help you find your [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object), stay on [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows), and avoid [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed) aches🤕. [Orange]{.orange} you glad I couldn't think of a color🎨pun?
 :::
 
-In addition to compass directions, we can apply color🎨labels to latitude and longitude, time zones, the time of day, and dates.
-
 The deciturn (dt), hexadecimal (hex), [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model) hue degree (h°), red (r), green (g), and blue (b) values of the ten Dec colors are listed in the table below.
-
-| **Name**         | **dt**       | **hex**         | **h°**          | **r**         | **g**         | **b**         |
-| ---------------- | ------------ | --------------- | --------------- | ------------- | ------------- | ------------- |
-| \${rainbow0name} | \${rainbow0} | \${rainbow0hex} | \${rainbow0deg} | \${rainbow0r} | \${rainbow0g} | \${rainbow0b} |
-| \${rainbow1name} | \${rainbow1} | \${rainbow1hex} | \${rainbow1deg} | \${rainbow1r} | \${rainbow1g} | \${rainbow1b} |
-| \${rainbow2name} | \${rainbow2} | \${rainbow2hex} | \${rainbow2deg} | \${rainbow2r} | \${rainbow2g} | \${rainbow2b} |
-| \${rainbow3name} | \${rainbow3} | \${rainbow3hex} | \${rainbow3deg} | \${rainbow3r} | \${rainbow3g} | \${rainbow3b} |
-| \${rainbow4name} | \${rainbow4} | \${rainbow4hex} | \${rainbow4deg} | \${rainbow4r} | \${rainbow4g} | \${rainbow4b} |
-| \${rainbow5name} | \${rainbow5} | \${rainbow5hex} | \${rainbow5deg} | \${rainbow5r} | \${rainbow5g} | \${rainbow5b} |
-| \${rainbow6name} | \${rainbow6} | \${rainbow6hex} | \${rainbow6deg} | \${rainbow6r} | \${rainbow6g} | \${rainbow6b} |
-| \${rainbow7name} | \${rainbow7} | \${rainbow7hex} | \${rainbow7deg} | \${rainbow7r} | \${rainbow7g} | \${rainbow7b} |
-| \${rainbow8name} | \${rainbow8} | \${rainbow8hex} | \${rainbow8deg} | \${rainbow8r} | \${rainbow8g} | \${rainbow8b} |
-| \${rainbow9name} | \${rainbow9} | \${rainbow9hex} | \${rainbow9deg} | \${rainbow9r} | \${rainbow9g} | \${rainbow9b} |
 
 The Dec color wheel is different than its trichromatic counterpart.
 
@@ -123,7 +101,7 @@ be a Varying only hue, labels can be helpful but   though some labels the green 
 
 We can apply Dec time zones: \${rainbowZone0}, \${rainbowZone1}, \${rainbowZone2}, \${rainbowZone3}, \${rainbowZone4}, \${rainbowZone5}, \${rainbowZone6}, \${rainbowZone7}, \${rainbowZone8}, and \${rainbowZone9}.
 
-To determine the Dec time zone (z) in a location, we obtain its longitude in [deciparallels]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a circle of longitude"} (dλ) and then apply the [floor function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x): z = &LeftFloor;dλ&RightFloor;. The time zone color🎨labels above are different Dec time zones are separated by the vertical lines shown on the map🗺️above⬆️when the "Grid" toggle✅input is enabled. You can compare Dec and UTC time zones by enabling both the "Grid" and "UTC" toggle✅inputs.
+The time zone color🎨labels above are different Dec time zones are separated
 
 For greater separation values above⬆️are \${rainbowZone0}, \${rainbowZone1}, \${rainbowZone2}, \${rainbowZone3}, \${rainbowZone4}, \${rainbowZone5}, \${rainbowZone6}, \${rainbowZone7}, \${rainbowZone8}, and \${rainbowZone9} [0]{.red}, [90]{.red},   and [500]{.cyan} are good reference reference points. The other colors can be modified The color🎨labels above⬆️are shifted towards 0 by increasing the separation between adjacent labels.
 
