@@ -8,17 +8,100 @@ preview()
 
 ```{ojs}
 //| echo: false
-//| label: colorcomparer
+//| label: coloropposites8
 //| column: margin
-//| class: colorcomponent
-displayPalette(hsl10.slice(0, 10), {darkMode: true})
+//| class: coloropp
+quickRender(326, 326, context => {
+  const center = 163
+  const ringRadius = 140
+  const ringLineWidth = 4
+  // Ring
+  context.beginPath();
+  context.lineWidth = ringLineWidth
+  context.strokeStyle = "#ddd"
+  context.arc(center, center, ringRadius, 0, 2 * Math.PI);
+  context.stroke();
+  context.font = "Bold 18px Arial"
+  context.textAlign = 'center'
+  let octPoints = []
+  for (let i = 0; i < 8; i++) {
+    const xPhase = Math.sin(i / 8 * 2 * Math.PI)
+    const yPhase = Math.cos(i / 8 * 2 * Math.PI)
+    const x = center + ringRadius * xPhase
+    const y = center - ringRadius * yPhase
+    octPoints.push([x, y])
+  }
+  // Lines
+  octConnections.forEach(([a, b], i ) => {
+    const [x1, y1] = octPoints[a]
+    const [x2, y2] = octPoints[b]
+    const lineAngle = Math.atan2(y2 - y1, x2 - x1)
+    // Draw just short of the label circumference
+    const x2a = x2 - 28 * Math.cos(lineAngle)
+    const y2a = y2 - 28 * Math.sin(lineAngle)
+    const x1a = x1 + 28 * Math.cos(lineAngle)
+    const y1a = y1 + 28 * Math.sin(lineAngle)
+    context.lineWidth = ringLineWidth
+    context.strokeStyle = "#ddd"
+    context.beginPath();
+    context.moveTo(x2a, y2a);
+    context.lineTo(x1a, y1a);
+    context.stroke();
+  })
+  // Arrow Heads
+  octConnections.forEach(([a, b], i ) => {
+    const [x1, y1] = octPoints[a]
+    const [x2, y2] = octPoints[b]
+    const lineAngle = Math.atan2(y2 - y1, x2 - x1)
+    const xl = x2 - 88 * Math.cos(lineAngle - (15 / 360) * 2 * Math.PI)
+    const yl = y2 - 88 * Math.sin(lineAngle - (15 / 360) * 2 * Math.PI)
+    const xr = x2 - 88 * Math.cos(lineAngle + (15 / 360) * 2 * Math.PI)
+    const yr = y2 - 88 * Math.sin(lineAngle + (15 / 360) * 2 * Math.PI)
+    const x2a = x2 - 22 * Math.cos(lineAngle)
+    const y2a = y2 - 22 * Math.sin(lineAngle)
+    const x = x2 - 69 * Math.cos(lineAngle)
+    const y = y2 - 69 * Math.sin(lineAngle)
+    context.fillStyle = hsl8[i]
+    context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+    context.lineWidth = 1
+    context.beginPath();
+    context.moveTo(x2a, y2a);
+    context.lineTo(xl, yl);
+    context.lineTo(xr, yr);
+    context.lineTo(x2a, y2a);
+    context.fill();
+    context.stroke();
+    context.fillStyle = yiq(hsl8[i]) > 0.51 ? "#000" : "white"
+    context.fillText(["N", "NE", "E", "SE", "S", "SW", "W", "NW"][i], x, y + 8)
+  })
+  // Labels
+  octPoints.forEach(([x, y], i) => {
+    context.lineWidth = 1
+    context.fillStyle = hsl8[i]
+    context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+    context.beginPath();
+    context.arc(x, y, 22, 0, 2 * Math.PI);
+    context.fill();
+    context.stroke();
+    context.fillStyle = yiq(hsl8[i]) > 0.51 ? "#000" : "white";
+    context.fillText(["N", "NE", "E", "SE", "S", "SW", "W", "NW"][i], x, y + 8)
+  })
+})
 ```
 
 ```{ojs}
 //| echo: false
-//| label: coloropposites
+//| label: colorcomparer8
 //| column: margin
-//| class: colorcomponent
+//| class: colorcomparer
+displayPalette(hsl8, {darkMode: true})
+```
+
+```{ojs}
+//| echo: false
+//| label: coloropposites10
+//| column: margin
+//| class: coloropp
 quickRender(326, 326, context => {
   const center = 163
   const ringRadius = 140
@@ -99,6 +182,14 @@ quickRender(326, 326, context => {
 
 ```{ojs}
 //| echo: false
+//| label: colorcomparer10
+//| column: margin
+//| class: colorcomparer
+displayPalette(hsl10.slice(0, 10), {darkMode: true})
+```
+
+```{ojs}
+//| echo: false
 //| label: colorwheelcompass
 //| class: colorcomponent
 // https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
@@ -166,7 +257,7 @@ decBar = colorbar({
 }
 ```
 
-| **NESW**       | **mt**           | **c°**            | **h°**            | **hex**          |
+|  🧭            | **mt**           | **c°**            | **h°**            | **hex**          |
 | -------------- | ---------------  | ----------------- | ----------------- | ---------------- |
 | \${rainbowDir} | \${rainbowMtr}   | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}   |
 | \${rainbowNE}  | \${rainbowNEmtr} | \${rainbowNEdegC} | \${rainbowNEdegH} | \${rainbowNEhex} |

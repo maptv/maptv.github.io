@@ -12,7 +12,7 @@ function unix2deco(ms)
     - dotc // 146096
   ) // 365
   return string.format(
-    "%s+%s",
+    "%s+%03d",
     math.floor(yotc + cykl * 400),
     math.floor(dotc - (yotc * 365
       + yotc // 4

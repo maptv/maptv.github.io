@@ -314,26 +314,6 @@ rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
 rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
 rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
-rainbow0 = textcolor('0', "#f00") // red
-rainbow1 = textcolor('1', "#f0f") // magenta
-rainbow2 = textcolor('2', "#a0f") // violet
-rainbow3 = textcolor('3', "#00f") // blue
-rainbow4 = textcolor('4', "#0af") // azure
-rainbow5 = textcolor('5', "#0ff") // cyan
-rainbow6 = textcolor('6', "#0f0") // green
-rainbow7 = textcolor('7', "#af0") // lime
-rainbow8 = textcolor('8', "#ff0") // yellow
-rainbow9 = textcolor('9', "#fa0") // orange
-rainbow0hex = textcolor('f00', d3.color(`hsl(0${slStr}`).formatHex()) // red
-rainbow1hex = textcolor('f0f', d3.color(`hsl(300${slStr}`).formatHex()) // magenta
-rainbow2hex = textcolor('a0f', d3.color(`hsl(280${slStr}`).formatHex()) // violet
-rainbow3hex = textcolor('00f', d3.color(`hsl(240${slStr}`).formatHex()) // blue
-rainbow4hex = textcolor('0af', d3.color(`hsl(200${slStr}`).formatHex()) // azure
-rainbow5hex = textcolor('0ff', d3.color(`hsl(180${slStr}`).formatHex()) // cyan
-rainbow6hex = textcolor('0f0', d3.color(`hsl(120${slStr}`).formatHex()) // green
-rainbow7hex = textcolor('af0', d3.color(`hsl(80${slStr}`).formatHex()) // lime
-rainbow8hex = textcolor('ff0', d3.color(`hsl(60${slStr}`).formatHex()) // yellow
-rainbow9hex = textcolor('fa0', d3.color(`hsl(40${slStr}`).formatHex()) // orange
 rainbowN = textcolor('N', "hsl(0" + slStr)
 rainbowNmtr = textcolor('0', "hsl(0" + slStr)
 rainbowNdegH = textcolor('0', "hsl(0" + slStr)
@@ -374,6 +354,34 @@ rainbowNWmtr = textcolor('875', "hsl(45" + slStr)
 rainbowNWdegH = textcolor('45', "hsl(45" + slStr)
 rainbowNWdegC = textcolor('315', "hsl(45" + slStr)
 rainbowNWhex = textcolor(d3.color("hsl(45" + slStr).formatHex().slice(1), "hsl(45" + slStr)
+rainbowEast = textcolor('East', "hsl(260" + slStr)
+rainbowWest = textcolor('West', "hsl(70" + slStr)
+rainbowNort = textcolor('North', "hsl(0" + slStr)
+rainbowNpol = textcolor('North Pole', "hsl(260" + slStr)
+rainbowSpol = textcolor('South Pole', "hsl(70" + slStr)
+rainbowEqua = textcolor('Equator', "hsl(0" + slStr)
+rainbowWarm = textcolor('warm', "hsl(0" + slStr)
+rainbowCool = textcolor('cool', "hsl(180" + slStr)
+rainbow0 = textcolor('0', "#f00") // red
+rainbow1 = textcolor('1', "#f0f") // magenta
+rainbow2 = textcolor('2', "#a0f") // violet
+rainbow3 = textcolor('3', "#00f") // blue
+rainbow4 = textcolor('4', "#0af") // azure
+rainbow5 = textcolor('5', "#0ff") // cyan
+rainbow6 = textcolor('6', "#0f0") // green
+rainbow7 = textcolor('7', "#af0") // lime
+rainbow8 = textcolor('8', "#ff0") // yellow
+rainbow9 = textcolor('9', "#fa0") // orange
+rainbow0hex = textcolor('f00', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow1hex = textcolor('f0f', d3.color(`hsl(300${slStr}`).formatHex()) // magenta
+rainbow2hex = textcolor('a0f', d3.color(`hsl(280${slStr}`).formatHex()) // violet
+rainbow3hex = textcolor('00f', d3.color(`hsl(240${slStr}`).formatHex()) // blue
+rainbow4hex = textcolor('0af', d3.color(`hsl(200${slStr}`).formatHex()) // azure
+rainbow5hex = textcolor('0ff', d3.color(`hsl(180${slStr}`).formatHex()) // cyan
+rainbow6hex = textcolor('0f0', d3.color(`hsl(120${slStr}`).formatHex()) // green
+rainbow7hex = textcolor('af0', d3.color(`hsl(80${slStr}`).formatHex()) // lime
+rainbow8hex = textcolor('ff0', d3.color(`hsl(60${slStr}`).formatHex()) // yellow
+rainbow9hex = textcolor('fa0', d3.color(`hsl(40${slStr}`).formatHex()) // orange
 // Show preview swatches of color
 preview = () => {
   const container = DOM.element('div')
@@ -565,6 +573,16 @@ function unix2dote(unix, zone, offset = 719468) {
       (new Date).getTimezoneOffset() / 144)
     ) / 10 + offset, zone]
 }
+octConnections = [
+  [0, 4],
+  [1, 5],
+  [2, 6],
+  [3, 7],
+  [4, 0],
+  [5, 1],
+  [6, 2],
+  [7, 3],
+]
 decConnections = [
   [0, 5],
   [1, 6],
@@ -588,6 +606,16 @@ deczones = [...Array(10).keys()].map(
     "properties": []
   })
 )
+hsl8 = [
+  `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
+  `hsl(295, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
+  `hsl(260, ${colorS / 10}%, ${colorL / 10}%)`, // violet
+  `hsl(210, ${colorS / 10}%, ${colorL / 10}%)`, // blue
+  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // azure
+  `hsl(110, ${colorS / 10}%, ${colorL / 10}%)`, // green
+  `hsl(70, ${colorS / 10}%, ${colorL / 10}%)`, // lime
+  `hsl(45, ${colorS / 10}%, ${colorL / 10}%)`, // orange
+]
 hsl10 = [
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
   // `hsl(340, ${colorS / 10}%, ${colorL / 10}%)`, // magentared
@@ -1148,7 +1176,7 @@ deccolors = [
   `hsl(315.05882352941177${slStr})`,
   `hsl(300${slStr})`,
   `hsl(295.05882352941177${slStr})`,
-  `hsl(290.11764705882354${slStr})`,
+  `hsl(289.88235294117646${slStr})`,
   `hsl(284.94117647058823${slStr})`,
   `hsl(280${slStr})`,
   `hsl(270.11764705882354${slStr})`,
@@ -1156,6 +1184,7 @@ deccolors = [
   `hsl(250.11764705882354${slStr})`,
   `hsl(240${slStr})`,
   `hsl(229.8823529411765${slStr})`,
+  `hsl(220${slStr})`,
   `hsl(209.88235294117646${slStr})`,
   `hsl(200${slStr})`,
   `hsl(195.05882352941177${slStr})`,
@@ -1180,7 +1209,7 @@ deccolors = [
   `hsl(40${slStr})`,
   `hsl(30.11764705882353${slStr})`,
   `hsl(20${slStr})`,
-  `hsl(10.11764705882353${slStr})`,
+  `hsl(10.117647058823530${slStr})`,
   `hsl(0${slStr})`,
 ]
 viewof size = Inputs.range([50, 700], {
@@ -1420,28 +1449,29 @@ div#distmap {
   align-items: center;
   justify-content: center;
 }
-div#colorpreview, div#colorcomparer {
+div#colorpreview, div.colorcomparer {
   overflow: visible;
 }
-div#colorcomparer g[aria-label="y-axis label"] > text {
+div.colorcomparer g[aria-label="y-axis label"] > text {
  transform: translate(40px,100px);
 }
-div#colorcomparer svg {
+div.colorcomparer svg {
   overflow: visible;
+  margin-left: 5px;
 }
 div#colorslider > div {
   min-width: 360px;
 }
-div#coloropposites {
+div.coloropp {
   overflow: visible;
 }
-div#coloropposites canvas{
+div.coloropp canvas{
   width: 240px !important;
   height: 240px !important;
   overflow: visible;
 }
 div#colorslider > label {
-  maaxwidth: 60px;
+  maxwidth: 60px;
 }
 div#colorslider input[type="number"] {
   width: 105px;
@@ -1450,7 +1480,7 @@ div#saturslider > div {
   min-width: 360px;
 }
 div#saturslider > label {
-  maaxwidth: 60px;
+  maxwidth: 60px;
 }
 div#saturslider input[type="number"] {
   width: 105px;
@@ -1459,7 +1489,7 @@ div#lightslider > div {
   min-width: 360px;
 }
 div#lightslider > label {
-  maaxwidth: 60px;
+  maxwidth: 60px;
 }
 div#lightslider input[type="number"] {
   width: 105px;
