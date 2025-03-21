@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+16
+2025+020
 
 <div id="decnav">
 
@@ -44,17 +44,17 @@ Notably, $\text c\over\text d$ = [v =
 ≈ the speed of the rotation of Earth🌎at the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
-The table below provides the current
+The table below⬇️provides the current
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
+([*λ*](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda))
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a circle of longitude">milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)</span>
-([m*λ*](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda))
-and
+(m*λ*) and
 [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
+([*ϕ*](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a circle of latitude">milli[meridians](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude)</span>
-([m*ϕ*](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
-of Points <span class="point0">0</span> and
+(m*ϕ*) of Points <span class="point0">0</span> and
 <span class="point1">1</span> on the map🗺️beneath the table. By default,
 <span class="point0">Point 0</span> is at
 <span class="point0">800</span> m*λ* and <span class="point0">0</span>
@@ -68,11 +68,11 @@ Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20i
 In the table, the geographic coordinates of each point are followed by
 the
 [course](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
+([*α*](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha))
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a compass rose">milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)</span>
-[m*α*](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)
-we would need to maintain to travel🧳the shortest distance📏to the other
-point on the map🗺️. The default courses in m*α* are
+(m*α*) we would need to maintain to travel🧳the shortest distance📏to
+the other point on the map🗺️. The default courses in m*α* are
 <span class="point0">0</span> (North) from <span class="point0">Point
 0</span> to <span class="point1">Point 1</span> and
 <span class="point1">500</span> (South) from <span class="point1">Point
@@ -98,7 +98,7 @@ The width of a UTC time zone is often
 41.<span style="text-decoration-line:overline;">6</span> m*λ*, but
 ranges from 0 m*λ* to the width of China🇨🇳:
 [424](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=109%C2%B056%E2%80%B2E-,West,-%3A%20Akto%20County)
-m*λ* -
+m*λ* –
 [254](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=%20%5Bcitation%20needed%5D-,East,-%3A%20Fuyuan%20County%2C%20Heilongjiang%2C%20on)
 m*λ* = 170 m*λ*. The length of a meridian (L<sub>*ϕ*</sub>) is always
 near c: L<sub>*ϕ*</sub> ≈ c. In contrast, the length of a parallel
@@ -196,17 +196,100 @@ preview()
 
 ``` {ojs}
 //| echo: false
-//| label: colorcomparer
+//| label: coloropposites8
 //| column: margin
-//| class: colorcomponent
-displayPalette(hsl10.slice(0, 10), {darkMode: true})
+//| class: coloropp
+quickRender(326, 326, context => {
+  const center = 163
+  const ringRadius = 140
+  const ringLineWidth = 4
+  // Ring
+  context.beginPath();
+  context.lineWidth = ringLineWidth
+  context.strokeStyle = "#ddd"
+  context.arc(center, center, ringRadius, 0, 2 * Math.PI);
+  context.stroke();
+  context.font = "Bold 18px Arial"
+  context.textAlign = 'center'
+  let octPoints = []
+  for (let i = 0; i < 8; i++) {
+    const xPhase = Math.sin(i / 8 * 2 * Math.PI)
+    const yPhase = Math.cos(i / 8 * 2 * Math.PI)
+    const x = center + ringRadius * xPhase
+    const y = center - ringRadius * yPhase
+    octPoints.push([x, y])
+  }
+  // Lines
+  octConnections.forEach(([a, b], i ) => {
+    const [x1, y1] = octPoints[a]
+    const [x2, y2] = octPoints[b]
+    const lineAngle = Math.atan2(y2 - y1, x2 - x1)
+    // Draw just short of the label circumference
+    const x2a = x2 - 28 * Math.cos(lineAngle)
+    const y2a = y2 - 28 * Math.sin(lineAngle)
+    const x1a = x1 + 28 * Math.cos(lineAngle)
+    const y1a = y1 + 28 * Math.sin(lineAngle)
+    context.lineWidth = ringLineWidth
+    context.strokeStyle = "#ddd"
+    context.beginPath();
+    context.moveTo(x2a, y2a);
+    context.lineTo(x1a, y1a);
+    context.stroke();
+  })
+  // Arrow Heads
+  octConnections.forEach(([a, b], i ) => {
+    const [x1, y1] = octPoints[a]
+    const [x2, y2] = octPoints[b]
+    const lineAngle = Math.atan2(y2 - y1, x2 - x1)
+    const xl = x2 - 88 * Math.cos(lineAngle - (15 / 360) * 2 * Math.PI)
+    const yl = y2 - 88 * Math.sin(lineAngle - (15 / 360) * 2 * Math.PI)
+    const xr = x2 - 88 * Math.cos(lineAngle + (15 / 360) * 2 * Math.PI)
+    const yr = y2 - 88 * Math.sin(lineAngle + (15 / 360) * 2 * Math.PI)
+    const x2a = x2 - 22 * Math.cos(lineAngle)
+    const y2a = y2 - 22 * Math.sin(lineAngle)
+    const x = x2 - 69 * Math.cos(lineAngle)
+    const y = y2 - 69 * Math.sin(lineAngle)
+    context.fillStyle = hsl8[i]
+    context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+    context.lineWidth = 1
+    context.beginPath();
+    context.moveTo(x2a, y2a);
+    context.lineTo(xl, yl);
+    context.lineTo(xr, yr);
+    context.lineTo(x2a, y2a);
+    context.fill();
+    context.stroke();
+    context.fillStyle = yiq(hsl8[i]) > 0.51 ? "#000" : "white"
+    context.fillText(["N", "NE", "E", "SE", "S", "SW", "W", "NW"][i], x, y + 8)
+  })
+  // Labels
+  octPoints.forEach(([x, y], i) => {
+    context.lineWidth = 1
+    context.fillStyle = hsl8[i]
+    context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+    context.beginPath();
+    context.arc(x, y, 22, 0, 2 * Math.PI);
+    context.fill();
+    context.stroke();
+    context.fillStyle = yiq(hsl8[i]) > 0.51 ? "#000" : "white";
+    context.fillText(["N", "NE", "E", "SE", "S", "SW", "W", "NW"][i], x, y + 8)
+  })
+})
 ```
 
 ``` {ojs}
 //| echo: false
-//| label: coloropposites
+//| label: colorcomparer8
 //| column: margin
-//| class: colorcomponent
+//| class: colorcomparer
+displayPalette(hsl8, {darkMode: true})
+```
+
+``` {ojs}
+//| echo: false
+//| label: coloropposites10
+//| column: margin
+//| class: coloropp
 quickRender(326, 326, context => {
   const center = 163
   const ringRadius = 140
@@ -283,6 +366,14 @@ quickRender(326, 326, context => {
     context.fillText(i, x, y + 8)
   })
 })
+```
+
+``` {ojs}
+//| echo: false
+//| label: colorcomparer10
+//| column: margin
+//| class: colorcomparer
+displayPalette(hsl10.slice(0, 10), {darkMode: true})
 ```
 
 ``` {ojs}
@@ -364,7 +455,7 @@ decBar = colorbar({
 </colgroup>
 <thead>
 <tr>
-<th><strong>NESW</strong></th>
+<th>🧭</th>
 <th><strong>mt</strong></th>
 <th><strong>c°</strong></th>
 <th><strong>h°</strong></th>
@@ -449,8 +540,8 @@ rotate🔄the color🎨wheel compass🧭, use the
 [bar](https://observablehq.com/@paavanb/progressive-color-picker)📊and
 range🎚️inputs beneath it or change the course from
 <span class="point0">Point 0</span> to <span class="point1">Point
-1</span> on the map🗺️. The table above⬆️shows information on the
-currently indicated direction (top row) and the
+1</span> on the map🗺️. The table above⬆️shows the currently indicated
+direction (top row) and the
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
 and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
@@ -468,19 +559,64 @@ or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
 (hex) triplet.
 
-Regardless of the [metric
+The Dec
+[color🎨scheme](https://en.wikipedia.org/wiki/Color_scheme#:~:text=a%20combination%20of%202%20or%20more%20colors%20used%20in%20aesthetic%20or%20practical%20design)
+provides a general sense of
+angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle),
+regardless of the [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
-and [units](https://en.wikipedia.org/wiki/Angle#Units) we use,
-color🎨can provide a general sense of
-angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle).
-Dec arranges colors🎨in a rainbow🌈pattern based on [physical
+or [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore,
+the same color🎨can be used for ${rainbowEast} (250 m*α*) and the
+${rainbowNpol} (250 m*ϕ*), ${rainbowWest} (750 m*α*) and the
+${rainbowSpol} (750 or -250 m*ϕ*), or ${rainbowNort} (0 m*α*) and the
+${rainbowEqua} (0 m*ϕ*).
+
+The cardinal directions are essentially four *α* values that serve as
+important milestones. Similarly, there are [four
+major](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=The%20position%20of%20the%20Equator%20is%20fixed%20(90%20degrees%20from%20Earth's%20axis%20of%20rotation)%20but%20the%20latitudes%20of%20the%20other%20circles%20depend%20on%20the%20tilt%20of%20this%20axis%20relative%20to%20the%20plane%20of%20Earth's%20orbit%2C%20and%20so%20are%20not%20perfectly%20fixed)
+*ϕ* values that are defined by the axial tilt of Earth🌍(65 mt *ϕ*): the
+Tropics of
+[Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(65
+m*ϕ*) and
+[Capricorn](https://en.wikipedia.org/wiki/Tropic_of_Capricorn#:~:text=the%20southernmost%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♑️(-65
+m*ϕ*), and the
+[Artic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
+(250 m*ϕ* – 65 m*ϕ* = 185 m*ϕ*) and
+[Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
+(65 m*ϕ* – 250 m*ϕ* = -185 m*ϕ*) Circles.
+
+With *ϕ*, we can choose which half of the color🎨wheel we want to use:
+${rainbowWarm} (-250 m*ϕ* to 250 m*ϕ*) or ${rainbowCool} (250 m*ϕ* to
+750 m*ϕ*). In contrast, the range of *α* and *λ* values covers a full
+turn. There are ten *λ* milestone
+
+or equivalently 750. equidistant points in the continuous Dec
+color🎨scheme. Following this pattern, we can choose ten colors to Dec
+plans shown in the table above⬆️. To label Dec time zones, Dec picks the
+ten colors🎨displayed in the table below⬇️.
+
+, . Dec arranges colors🎨in a rainbow🌈pattern based on [physical
 properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV)))
 of the [visible
 spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
-of light and highlights ten colors🎨as important milestones in the
-color🎨wheel: ${rainbow0hex}, ${rainbow1hex}, ${rainbow2hex},
+of light. From the
+[continuous](https://en.wikipedia.org/wiki/Color_scheme#Quantitative_schemes:~:text=a%20smooth%20color%20gradient)
+Dec
+[color🎨scheme](https://en.wikipedia.org/wiki/Color_scheme#:~:text=a%20combination%20of%202%20or%20more%20colors%20used%20in%20aesthetic%20or%20practical%20design)
+shown in the hue bar📊input above⬆️, we can select colors🎨to create a
+[discrete](https://en.wikipedia.org/wiki/Color_scheme#Quantitative_schemes:~:text=a%20certain%20subset%20of%20a%20continuous%20color%20scheme)
+color🎨scheme.
+
+dt lambda° h° hex
+
+be create For compass🧭directions, Dec selects uses a
+[discrete](https://en.wikipedia.org/wiki/Color_scheme#Quantitative_schemes:~:text=a%20certain%20subset%20of%20a%20continuous%20color%20scheme)
+color🎨scheme created by ${rainbow0hex}, ${rainbow1hex}, ${rainbow2hex},
 ${rainbow3hex}, ${rainbow4hex}, ${rainbow5hex}, ${rainbow6hex},
 ${rainbow7hex}, ${rainbow8hex}, and ${rainbow9hex}.
+
+can be grouped into opposing pairs: \[0, 5\], \[1, 6\], \[2, 7\], \[3,
+8\], and \[4, 9\].
 
 The categorical color🎨wheel above⬆️shows how each of the ten Dec colors
 can be paired with its opposing color in a triangles. These ten colors
@@ -1423,26 +1559,6 @@ rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
 rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
 rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
-rainbow0 = textcolor('0', "#f00") // red
-rainbow1 = textcolor('1', "#f0f") // magenta
-rainbow2 = textcolor('2', "#a0f") // violet
-rainbow3 = textcolor('3', "#00f") // blue
-rainbow4 = textcolor('4', "#0af") // azure
-rainbow5 = textcolor('5', "#0ff") // cyan
-rainbow6 = textcolor('6', "#0f0") // green
-rainbow7 = textcolor('7', "#af0") // lime
-rainbow8 = textcolor('8', "#ff0") // yellow
-rainbow9 = textcolor('9', "#fa0") // orange
-rainbow0hex = textcolor('f00', d3.color(`hsl(0${slStr}`).formatHex()) // red
-rainbow1hex = textcolor('f0f', d3.color(`hsl(300${slStr}`).formatHex()) // magenta
-rainbow2hex = textcolor('a0f', d3.color(`hsl(280${slStr}`).formatHex()) // violet
-rainbow3hex = textcolor('00f', d3.color(`hsl(240${slStr}`).formatHex()) // blue
-rainbow4hex = textcolor('0af', d3.color(`hsl(200${slStr}`).formatHex()) // azure
-rainbow5hex = textcolor('0ff', d3.color(`hsl(180${slStr}`).formatHex()) // cyan
-rainbow6hex = textcolor('0f0', d3.color(`hsl(120${slStr}`).formatHex()) // green
-rainbow7hex = textcolor('af0', d3.color(`hsl(80${slStr}`).formatHex()) // lime
-rainbow8hex = textcolor('ff0', d3.color(`hsl(60${slStr}`).formatHex()) // yellow
-rainbow9hex = textcolor('fa0', d3.color(`hsl(40${slStr}`).formatHex()) // orange
 rainbowN = textcolor('N', "hsl(0" + slStr)
 rainbowNmtr = textcolor('0', "hsl(0" + slStr)
 rainbowNdegH = textcolor('0', "hsl(0" + slStr)
@@ -1483,6 +1599,34 @@ rainbowNWmtr = textcolor('875', "hsl(45" + slStr)
 rainbowNWdegH = textcolor('45', "hsl(45" + slStr)
 rainbowNWdegC = textcolor('315', "hsl(45" + slStr)
 rainbowNWhex = textcolor(d3.color("hsl(45" + slStr).formatHex().slice(1), "hsl(45" + slStr)
+rainbowEast = textcolor('East', "hsl(260" + slStr)
+rainbowWest = textcolor('West', "hsl(70" + slStr)
+rainbowNort = textcolor('North', "hsl(0" + slStr)
+rainbowNpol = textcolor('North Pole', "hsl(260" + slStr)
+rainbowSpol = textcolor('South Pole', "hsl(70" + slStr)
+rainbowEqua = textcolor('Equator', "hsl(0" + slStr)
+rainbowWarm = textcolor('warm', "hsl(0" + slStr)
+rainbowCool = textcolor('cool', "hsl(180" + slStr)
+rainbow0 = textcolor('0', "#f00") // red
+rainbow1 = textcolor('1', "#f0f") // magenta
+rainbow2 = textcolor('2', "#a0f") // violet
+rainbow3 = textcolor('3', "#00f") // blue
+rainbow4 = textcolor('4', "#0af") // azure
+rainbow5 = textcolor('5', "#0ff") // cyan
+rainbow6 = textcolor('6', "#0f0") // green
+rainbow7 = textcolor('7', "#af0") // lime
+rainbow8 = textcolor('8', "#ff0") // yellow
+rainbow9 = textcolor('9', "#fa0") // orange
+rainbow0hex = textcolor('f00', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow1hex = textcolor('f0f', d3.color(`hsl(300${slStr}`).formatHex()) // magenta
+rainbow2hex = textcolor('a0f', d3.color(`hsl(280${slStr}`).formatHex()) // violet
+rainbow3hex = textcolor('00f', d3.color(`hsl(240${slStr}`).formatHex()) // blue
+rainbow4hex = textcolor('0af', d3.color(`hsl(200${slStr}`).formatHex()) // azure
+rainbow5hex = textcolor('0ff', d3.color(`hsl(180${slStr}`).formatHex()) // cyan
+rainbow6hex = textcolor('0f0', d3.color(`hsl(120${slStr}`).formatHex()) // green
+rainbow7hex = textcolor('af0', d3.color(`hsl(80${slStr}`).formatHex()) // lime
+rainbow8hex = textcolor('ff0', d3.color(`hsl(60${slStr}`).formatHex()) // yellow
+rainbow9hex = textcolor('fa0', d3.color(`hsl(40${slStr}`).formatHex()) // orange
 // Show preview swatches of color
 preview = () => {
   const container = DOM.element('div')
@@ -1674,6 +1818,16 @@ function unix2dote(unix, zone, offset = 719468) {
       (new Date).getTimezoneOffset() / 144)
     ) / 10 + offset, zone]
 }
+octConnections = [
+  [0, 4],
+  [1, 5],
+  [2, 6],
+  [3, 7],
+  [4, 0],
+  [5, 1],
+  [6, 2],
+  [7, 3],
+]
 decConnections = [
   [0, 5],
   [1, 6],
@@ -1697,6 +1851,16 @@ deczones = [...Array(10).keys()].map(
     "properties": []
   })
 )
+hsl8 = [
+  `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
+  `hsl(295, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
+  `hsl(260, ${colorS / 10}%, ${colorL / 10}%)`, // violet
+  `hsl(210, ${colorS / 10}%, ${colorL / 10}%)`, // blue
+  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // azure
+  `hsl(110, ${colorS / 10}%, ${colorL / 10}%)`, // green
+  `hsl(70, ${colorS / 10}%, ${colorL / 10}%)`, // lime
+  `hsl(45, ${colorS / 10}%, ${colorL / 10}%)`, // orange
+]
 hsl10 = [
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
   // `hsl(340, ${colorS / 10}%, ${colorL / 10}%)`, // magentared
@@ -2257,7 +2421,7 @@ deccolors = [
   `hsl(315.05882352941177${slStr})`,
   `hsl(300${slStr})`,
   `hsl(295.05882352941177${slStr})`,
-  `hsl(290.11764705882354${slStr})`,
+  `hsl(289.88235294117646${slStr})`,
   `hsl(284.94117647058823${slStr})`,
   `hsl(280${slStr})`,
   `hsl(270.11764705882354${slStr})`,
@@ -2265,6 +2429,7 @@ deccolors = [
   `hsl(250.11764705882354${slStr})`,
   `hsl(240${slStr})`,
   `hsl(229.8823529411765${slStr})`,
+  `hsl(220${slStr})`,
   `hsl(209.88235294117646${slStr})`,
   `hsl(200${slStr})`,
   `hsl(195.05882352941177${slStr})`,
@@ -2289,7 +2454,7 @@ deccolors = [
   `hsl(40${slStr})`,
   `hsl(30.11764705882353${slStr})`,
   `hsl(20${slStr})`,
-  `hsl(10.11764705882353${slStr})`,
+  `hsl(10.117647058823530${slStr})`,
   `hsl(0${slStr})`,
 ]
 viewof size = Inputs.range([50, 700], {
@@ -2528,28 +2693,29 @@ div#distmap {
   align-items: center;
   justify-content: center;
 }
-div#colorpreview, div#colorcomparer {
+div#colorpreview, div.colorcomparer {
   overflow: visible;
 }
-div#colorcomparer g[aria-label="y-axis label"] > text {
+div.colorcomparer g[aria-label="y-axis label"] > text {
  transform: translate(40px,100px);
 }
-div#colorcomparer svg {
+div.colorcomparer svg {
   overflow: visible;
+  margin-left: 5px;
 }
 div#colorslider > div {
   min-width: 360px;
 }
-div#coloropposites {
+div.coloropp {
   overflow: visible;
 }
-div#coloropposites canvas{
+div.coloropp canvas{
   width: 240px !important;
   height: 240px !important;
   overflow: visible;
 }
 div#colorslider > label {
-  maaxwidth: 60px;
+  maxwidth: 60px;
 }
 div#colorslider input[type="number"] {
   width: 105px;
@@ -2558,7 +2724,7 @@ div#saturslider > div {
   min-width: 360px;
 }
 div#saturslider > label {
-  maaxwidth: 60px;
+  maxwidth: 60px;
 }
 div#saturslider input[type="number"] {
   width: 105px;
@@ -2567,7 +2733,7 @@ div#lightslider > div {
   min-width: 360px;
 }
 div#lightslider > label {
-  maaxwidth: 60px;
+  maxwidth: 60px;
 }
 div#lightslider input[type="number"] {
   width: 105px;
