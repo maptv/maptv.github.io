@@ -1,6 +1,10 @@
 # Dec
 Martin Laptev
-2025+020
+2025+021
+
+- [Dec](#dec)
+- [Map](#map)
+- [Hue](#hue)
 
 <div id="decnav">
 
@@ -12,6 +16,8 @@ style="width:8.64in;height:0.98in" />
 </div>
 
 </div>
+
+# Dec
 
 This section of my website focuses on Dec, a [measurement
 system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)
@@ -126,6 +132,8 @@ time in days (d) required to travel🧳between two points, we divide the
 distance📏in mc by the speed in mv: ${distance_mtaur} mc ÷
 ${travelspeed} mv = ${(distance_mtaur / travelspeed).toFixed(3)} d.
 
+# Map
+
 ``` {ojs}
 //| echo: false
 //| label: toggles
@@ -186,6 +194,8 @@ viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].chil
 
 </div>
 
+# Hue
+
 ``` {ojs}
 //| echo: false
 //| label: colorpreview
@@ -209,7 +219,7 @@ quickRender(326, 326, context => {
   context.strokeStyle = "#ddd"
   context.arc(center, center, ringRadius, 0, 2 * Math.PI);
   context.stroke();
-  context.font = "Bold 18px Arial"
+  context.font = "Bold 16px Arial"
   context.textAlign = 'center'
   let octPoints = []
   for (let i = 0; i < 8; i++) {
@@ -260,7 +270,7 @@ quickRender(326, 326, context => {
     context.fill();
     context.stroke();
     context.fillStyle = yiq(hsl8[i]) > 0.51 ? "#000" : "white"
-    context.fillText(["N", "NE", "E", "SE", "S", "SW", "W", "NW"][i], x, y + 8)
+    context.fillText(["N", "NE", "E", "SE", "S", "SW", "W", "NW"][i], x, y + 6)
   })
   // Labels
   octPoints.forEach(([x, y], i) => {
@@ -272,7 +282,7 @@ quickRender(326, 326, context => {
     context.fill();
     context.stroke();
     context.fillStyle = yiq(hsl8[i]) > 0.51 ? "#000" : "white";
-    context.fillText(["N", "NE", "E", "SE", "S", "SW", "W", "NW"][i], x, y + 8)
+    context.fillText(["N", "NE", "E", "SE", "S", "SW", "W", "NW"][i], x, y + 6)
   })
 })
 ```
@@ -456,7 +466,7 @@ decBar = colorbar({
 <thead>
 <tr>
 <th>🧭</th>
-<th><strong>mt</strong></th>
+<th><strong>m<span class="math inline"><em>α</em></span></strong></th>
 <th><strong>c°</strong></th>
 <th><strong>h°</strong></th>
 <th><strong>hex</strong></th>
@@ -559,17 +569,80 @@ or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
 (hex) triplet.
 
-The Dec
-[color🎨scheme](https://en.wikipedia.org/wiki/Color_scheme#:~:text=a%20combination%20of%202%20or%20more%20colors%20used%20in%20aesthetic%20or%20practical%20design)
-provides a general sense of
+Color🎨can provide a general sense of
 angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle),
 regardless of the [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
 or [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore,
-the same color🎨can be used for ${rainbowEast} (250 m*α*) and the
-${rainbowNpol} (250 m*ϕ*), ${rainbowWest} (750 m*α*) and the
-${rainbowSpol} (750 or -250 m*ϕ*), or ${rainbowNort} (0 m*α*) and the
-${rainbowEqua} (0 m*ϕ*).
+we can reuse♻️colors🎨across many different contexts. In any context,
+starting points are red: North (${rainbowNort} m*α*), [Meridian
+0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
+(${rainbowMer0} m*λ*), and midnight (${rainbowMidN} md); midpoints are
+cyan: South (${rainbowSout} m*α*), [Meridian
+0](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
+(${rainbowMer5} ml), and noon (${rainbowNoon} md).
+
+Apart from m*α*, m*λ*, and md, we can apply color🎨labels🏷️based on
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a year">milliyears</span> (my) and
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a millennium">millimillennia</span> (mk).
+Every year (y) starts on <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span> (${rainbowDay0} my). The
+midyear point (${rainbowMidY} my) is noon of <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="August 30">Day 182</span> in
+common years and midnight of <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="August 31">Day 183</span> in
+leap years. Every millennium (k) starts with Year 0 (${rainbowY000} mk)
+and has Year 500 (${rainbowY500} mk) as its midpoint.
+
+The Equator (${rainbowEqua} m*ϕ*) is the midpoint between the South Pole
+(${rainbowSpol} m*ϕ*) and the North Polee (${rainbowNpol} m*ϕ*). The
+other four major parallels depend on the [axial
+tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
+of the Earth🌍(${rainbowTilt} mt): the Tropics of
+[Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(${rainbowCanc}
+m*ϕ*) and
+[Capricorn](https://en.wikipedia.org/wiki/Tropic_of_Capricorn#:~:text=the%20southernmost%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♑️(${rainbowCapr}
+m*ϕ*), and the
+[Arctic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
+(${rainbowArc0} m*ϕ* – ${rainbowArc1} m*ϕ* = ${rainbowArc2} m*ϕ*) and
+[Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
+(${rainbowAnt0} m*ϕ* – ${rainbowAnt1} m*ϕ* = ${rainbowAnt2} m*ϕ*)
+Circles.
+
+The ten major meridians divide the world into the ten Dec time zones,
+which are visible on the map🗺️above⬆️when the “Grid” toggle✅input is
+enabled. Unlike UTC times zones, Dec time zones are each exactly one
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a circle of longitude">deciparallel</span>
+(d*λ*) wide and one meridian (*ϕ*) long. If we
+[floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
+the longitude in d*λ* of a location, we get z, the Dec time zone of that
+location: z = ⌊d*λ*⌋.
+
+represent a time offset of one <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="a tenth of a day">deciday</span>
+(dd) and
+
+Despite being solely defined by *λ*, any Dec time zone could be used in
+any location. We could all agree to use Zone 0.
+
+In total, there are four cardinal directions, five major parallels, and
+ten major meridians.
+
+The current year is . The current day-of-year (doy) is and the current
+time in md is .
+
+Therefore, the same color🎨can be used for , the , and , or
+${rainbowEast} (250 m*α*).
+
+${rainbowWest} (750 m*α*) and the ,
+
+For *ϕ*, we only need to use half the color🎨wheel.
+
+[color🎨scheme](https://en.wikipedia.org/wiki/Color_scheme#:~:text=a%20combination%20of%202%20or%20more%20colors%20used%20in%20aesthetic%20or%20practical%20design)
+.
 
 The cardinal directions are essentially four *α* values that serve as
 important milestones. Similarly, there are [four
@@ -580,7 +653,7 @@ Tropics of
 m*ϕ*) and
 [Capricorn](https://en.wikipedia.org/wiki/Tropic_of_Capricorn#:~:text=the%20southernmost%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♑️(-65
 m*ϕ*), and the
-[Artic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
+[Arctic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
 (250 m*ϕ* – 65 m*ϕ* = 185 m*ϕ*) and
 [Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
 (65 m*ϕ* – 250 m*ϕ* = -185 m*ϕ*) Circles.
@@ -1601,12 +1674,28 @@ rainbowNWdegC = textcolor('315', "hsl(45" + slStr)
 rainbowNWhex = textcolor(d3.color("hsl(45" + slStr).formatHex().slice(1), "hsl(45" + slStr)
 rainbowEast = textcolor('East', "hsl(260" + slStr)
 rainbowWest = textcolor('West', "hsl(70" + slStr)
-rainbowNort = textcolor('North', "hsl(0" + slStr)
-rainbowNpol = textcolor('North Pole', "hsl(260" + slStr)
-rainbowSpol = textcolor('South Pole', "hsl(70" + slStr)
-rainbowEqua = textcolor('Equator', "hsl(0" + slStr)
-rainbowWarm = textcolor('warm', "hsl(0" + slStr)
-rainbowCool = textcolor('cool', "hsl(180" + slStr)
+rainbowNort = textcolor('0', "hsl(0" + slStr)
+rainbowSout = textcolor('500', "hsl(180" + slStr)
+rainbowMidN = textcolor('0', "hsl(0" + slStr)
+rainbowNoon = textcolor('500', "hsl(180" + slStr)
+rainbowEqua = textcolor('0', "hsl(0" + slStr)
+rainbowMer0 = textcolor('0', "hsl(0" + slStr)
+rainbowMer5 = textcolor('500', "hsl(180" + slStr)
+rainbowDay0 = textcolor('0', "hsl(0" + slStr)
+rainbowMidY = textcolor('500', "hsl(180" + slStr)
+rainbowY000 = textcolor('0', "hsl(0" + slStr)
+rainbowY500 = textcolor('500', "hsl(180" + slStr)
+rainbowTilt = textcolor('65', "hsl(320.94117647058823" + slStr)
+rainbowCanc = textcolor('65', "hsl(320.94117647058823" + slStr)
+rainbowCapr = textcolor('-65', "hsl(25.88235294117647" + slStr)
+rainbowArc0 = textcolor('250', "hsl(260" + slStr)
+rainbowArc1 = textcolor('65', "hsl(320.94117647058823" + slStr)
+rainbowArc2 = textcolor('185', "hsl(283.05882352941177" + slStr)
+rainbowAnt0 = textcolor('65', "hsl(320.94117647058823" + slStr)
+rainbowAnt1 = textcolor('250', "hsl(260" + slStr)
+rainbowAnt2 = textcolor('-185', "hsl(56.94117647058823" + slStr)
+rainbowNpol = textcolor('250', "hsl(260" + slStr)
+rainbowSpol = textcolor('-250', "hsl(70" + slStr)
 rainbow0 = textcolor('0', "#f00") // red
 rainbow1 = textcolor('1', "#f0f") // magenta
 rainbow2 = textcolor('2', "#a0f") // violet
