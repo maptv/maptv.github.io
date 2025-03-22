@@ -21,7 +21,7 @@ quickRender(326, 326, context => {
   context.strokeStyle = "#ddd"
   context.arc(center, center, ringRadius, 0, 2 * Math.PI);
   context.stroke();
-  context.font = "Bold 18px Arial"
+  context.font = "Bold 16px Arial"
   context.textAlign = 'center'
   let octPoints = []
   for (let i = 0; i < 8; i++) {
@@ -72,7 +72,7 @@ quickRender(326, 326, context => {
     context.fill();
     context.stroke();
     context.fillStyle = yiq(hsl8[i]) > 0.51 ? "#000" : "white"
-    context.fillText(["N", "NE", "E", "SE", "S", "SW", "W", "NW"][i], x, y + 8)
+    context.fillText(["N", "NE", "E", "SE", "S", "SW", "W", "NW"][i], x, y + 6)
   })
   // Labels
   octPoints.forEach(([x, y], i) => {
@@ -84,7 +84,7 @@ quickRender(326, 326, context => {
     context.fill();
     context.stroke();
     context.fillStyle = yiq(hsl8[i]) > 0.51 ? "#000" : "white";
-    context.fillText(["N", "NE", "E", "SE", "S", "SW", "W", "NW"][i], x, y + 8)
+    context.fillText(["N", "NE", "E", "SE", "S", "SW", "W", "NW"][i], x, y + 6)
   })
 })
 ```
@@ -257,7 +257,7 @@ decBar = colorbar({
 }
 ```
 
-|  🧭            | **mt**           | **c°**            | **h°**            | **hex**          |
+|  🧭            | **m$\alpha$**           | **c°**            | **h°**            | **hex**          |
 | -------------- | ---------------  | ----------------- | ----------------- | ---------------- |
 | \${rainbowDir} | \${rainbowMtr}   | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}   |
 | \${rainbowNE}  | \${rainbowNEmtr} | \${rainbowNEdegC} | \${rainbowNEdegH} | \${rainbowNEhex} |
