@@ -1,10 +1,11 @@
 # Dec
 Martin Laptev
-2025+021
+2025+022
 
 - [Dec](#dec)
 - [Map](#map)
 - [Hue](#hue)
+- [Hex](#hex)
 
 <div id="decnav">
 
@@ -110,9 +111,7 @@ m*λ* = 170 m*λ*. The length of a meridian (L<sub>*ϕ*</sub>) is always
 near c: L<sub>*ϕ*</sub> ≈ c. In contrast, the length of a parallel
 (L<sub>*λ*</sub>) [varies by
 latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude)
-(*ϕ*). At the
-[Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres),
-*ϕ* = 0 and L<sub>*λ*</sub> ≈ c. At the
+(*ϕ*). At the Equator, *ϕ* = 0 and L<sub>*λ*</sub> ≈ c. At the
 [North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
 or
 [South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
@@ -455,6 +454,8 @@ decBar = colorbar({
 }
 ```
 
+# Hex
+
 <table>
 <colgroup>
 <col style="width: 17%" />
@@ -579,7 +580,7 @@ starting points are red: North (${rainbowNort} m*α*), [Meridian
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (${rainbowMer0} m*λ*), and midnight (${rainbowMidN} md); midpoints are
 cyan: South (${rainbowSout} m*α*), [Meridian
-0](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
+5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (${rainbowMer5} ml), and noon (${rainbowNoon} md).
 
 Apart from m*α*, m*λ*, and md, we can apply color🎨labels🏷️based on
@@ -596,9 +597,22 @@ data-bs-toggle="tooltip" data-bs-title="August 31">Day 183</span> in
 leap years. Every millennium (k) starts with Year 0 (${rainbowY000} mk)
 and has Year 500 (${rainbowY500} mk) as its midpoint.
 
-The Equator (${rainbowEqua} m*ϕ*) is the midpoint between the South Pole
-(${rainbowSpol} m*ϕ*) and the North Polee (${rainbowNpol} m*ϕ*). The
-other four major parallels depend on the [axial
+The Equator, also known as Parallel 0, is the midpoint between the South
+(${rainbowSpol} m*ϕ*) and North (${rainbowNpol} m*ϕ*) Pole. When the
+“Grid” toggle✅input is enabled, Parallels
+[-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
+(${rainbowN200} m*ϕ*),
+[-1](https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane)
+(${rainbowN100} m*ϕ*), 0 (${rainbowEqua} m*ϕ*),
+[1](https://en.wikipedia.org/wiki/36th_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane)
+(${rainbowP100} m*ϕ*), and
+[2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
+(${rainbowP200} m*ϕ*) are shown on the map🗺️above⬆️along with the ten
+major meridians that divide the Earth🌍into the ten Dec time zones.
+
+Not shown on the map are the four [major
+parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
+that depend on the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
 of the Earth🌍(${rainbowTilt} mt): the Tropics of
 [Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(${rainbowCanc}
@@ -609,17 +623,30 @@ m*ϕ*), and the
 (${rainbowArc0} m*ϕ* – ${rainbowArc1} m*ϕ* = ${rainbowArc2} m*ϕ*) and
 [Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
 (${rainbowAnt0} m*ϕ* – ${rainbowAnt1} m*ϕ* = ${rainbowAnt2} m*ϕ*)
-Circles.
+Circles. Each Dec time zone is exactly one <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="a tenth of a circle of longitude">deciparallel</span>
+(d*λ*) wide and one meridian (*ϕ*) long.
 
-The ten major meridians divide the world into the ten Dec time zones,
-which are visible on the map🗺️above⬆️when the “Grid” toggle✅input is
-enabled. Unlike UTC times zones, Dec time zones are each exactly one
+Time zones can also be labeled with color. To determine your Dec time
+zone, you would obtain your longitude in d*λ* and
+[floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
+it: ⌊d*λ*⌋. According to your web browser, your UTC time zone offset is
+md, which is closest to Zone. Converting In Zone , the current date is
+year+day and the current time in decidays (dd) is d.beat-z.
+
+Unlike the other major parallels, the position of the Equator is fixed
+and independent of the Earth’s🌍[axial
+tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere).
+
+Dec time zone: ⌊d*λ*⌋. Not shown on the map are the four \[ma We can a
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a circle of longitude">deciparallel</span>
-(d*λ*) wide and one meridian (*ϕ*) long. If we
-[floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-the longitude in d*λ* of a location, we get z, the Dec time zone of that
-location: z = ⌊d*λ*⌋.
+(d*λ*) longitude to get the corresponding Dec time zone: .
+
+Unlike UTC times zones, Meridians 0 to
+[9](https://en.wikipedia.org/wiki/54th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Newfoundland%2C%20the%20Atlantic%20Ocean%2C%20South%20America%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole).
+The
 
 represent a time offset of one <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="a tenth of a day">deciday</span>
@@ -1685,6 +1712,10 @@ rainbowDay0 = textcolor('0', "hsl(0" + slStr)
 rainbowMidY = textcolor('500', "hsl(180" + slStr)
 rainbowY000 = textcolor('0', "hsl(0" + slStr)
 rainbowY500 = textcolor('500', "hsl(180" + slStr)
+rainbowN100 = textcolor('-100', "hsl(300" + slStr)
+rainbowN200 = textcolor('-200', "hsl(280" + slStr)
+rainbowP100 = textcolor('100', "hsl(40" + slStr)
+rainbowP200 = textcolor('200', "hsl(60" + slStr)
 rainbowTilt = textcolor('65', "hsl(320.94117647058823" + slStr)
 rainbowCanc = textcolor('65', "hsl(320.94117647058823" + slStr)
 rainbowCapr = textcolor('-65', "hsl(25.88235294117647" + slStr)
