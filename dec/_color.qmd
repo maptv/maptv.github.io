@@ -257,6 +257,8 @@ decBar = colorbar({
 }
 ```
 
+# Hex {.hiddenheading}
+
 |  🧭            | **m$\alpha$**           | **c°**            | **h°**            | **hex**          |
 | -------------- | ---------------  | ----------------- | ----------------- | ---------------- |
 | \${rainbowDir} | \${rainbowMtr}   | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}   |
