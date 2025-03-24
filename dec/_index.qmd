@@ -682,11 +682,14 @@ function dote2date(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
-dz = unix2dote(now, 0)
+dz = unix2dote(now)
 ydz = dote2date(...dz)
 decYear = ydz[0]
-decDate = Math.floor(ydz[1])
+decDate = Math.floor(ydz[1]).toString().padStart(3, "0")
 decTime = ydz[1] % 1
+decTime4 = (decTime * 10).toFixed(4)
+decZone = ydz[2]
+decSign = decZone < 0 ? "+" : "-"
 decDek = Math.floor(decDate / 10)
 decDod = decDate % 10
 decMoty = Math.floor((5 * decDate + 2) / 153)
