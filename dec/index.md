@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+022
+2025+023
 
 - [Dec](#dec)
 - [Map](#map)
@@ -628,12 +628,36 @@ data-bs-toggle="tooltip"
 data-bs-title="a tenth of a circle of longitude">deciparallel</span>
 (d*λ*) wide and one meridian (*ϕ*) long.
 
-Time zones can also be labeled with color. To determine your Dec time
-zone, you would obtain your longitude in d*λ* and
+Time zones can also be labeled with color🎨. The ten Dec time zones are
+numbered ${rainbow0rng} to ${rainbow9rng} like the ten meridians that
+separate them. The time zone numbers are <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="a tenth of a day">deciday</span>
+(dd) offsets from Zone ${rainbow0zon}. In contrast, [UTC time zone
+offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
+range from ${rainbowN5zn} dd to ${rainbowP583} dd. UTC time zones with
+negative offsets are about one day behind their closest Dec
+counterparts.
+
+To make We can subtract ten from the offsets of Zones ${rainbow6zon} to
+${rainbow9zon} UTC time zone with a negative offset without affecting
+the time, we can . This may create negative Dec time offsets . closer to
+their match a negative be unless we make them . can subtract ten from
+any Dec time zone number UTC time zone offsets closer to According to
+your web browser, your UTC time zone offset is md, which is closest to
+Zone . In Zone , the current date is year+day and the current time in
+decidays (dd) is d.beat-z. To determine your Dec time zone, you would On
+2024+364, I [introduced
+Dec](https://www.youtube.com/watch?v=emHeYcSmwbw&t=487s) at a [Data
+Community DC](https://www.dc2.org)
+[Meetup](http://www.meetup.com/Data-Science-DC). After the talk I gave,
+two separate people remarked that they wanted to get rid of time zones.
+
+are about one day ahead of
+
+You can choose which Dec time zone is the first digit of your longitude.
+in d*λ* and
 [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-it: ⌊d*λ*⌋. According to your web browser, your UTC time zone offset is
-md, which is closest to Zone. Converting In Zone , the current date is
-year+day and the current time in decidays (dd) is d.beat-z.
+it: ⌊d*λ*⌋.
 
 Unlike the other major parallels, the position of the Equator is fixed
 and independent of the Earth’s🌍[axial
@@ -648,9 +672,7 @@ Unlike UTC times zones, Meridians 0 to
 [9](https://en.wikipedia.org/wiki/54th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Newfoundland%2C%20the%20Atlantic%20Ocean%2C%20South%20America%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole).
 The
 
-represent a time offset of one <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="a tenth of a day">deciday</span>
-(dd) and
+represent a time offset of one and
 
 Despite being solely defined by *λ*, any Dec time zone could be used in
 any location. We could all agree to use Zone 0.
@@ -825,7 +847,7 @@ as integers and thus are useful to specifying primary colors
 <span class="cyan">cyan</span>, <span class="magenta">magenta</span>).
 
 and
-[azimuth](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=the%20angle%20of%20rotation%20(in%20degrees)%20in%20the%20unit%20circle%20over%20the%20horizontal%20plane)  
+[azimuth](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=the%20angle%20of%20rotation%20(in%20degrees)%20in%20the%20unit%20circle%20over%20the%20horizontal%20plane)
 To travel the between the default positions📍of the two points in
 
 [bearings](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object)
@@ -1727,16 +1749,13 @@ rainbowAnt1 = textcolor('250', "hsl(260" + slStr)
 rainbowAnt2 = textcolor('-185', "hsl(56.94117647058823" + slStr)
 rainbowNpol = textcolor('250', "hsl(260" + slStr)
 rainbowSpol = textcolor('-250', "hsl(70" + slStr)
-rainbow0 = textcolor('0', "#f00") // red
-rainbow1 = textcolor('1', "#f0f") // magenta
-rainbow2 = textcolor('2', "#a0f") // violet
-rainbow3 = textcolor('3', "#00f") // blue
-rainbow4 = textcolor('4', "#0af") // azure
-rainbow5 = textcolor('5', "#0ff") // cyan
-rainbow6 = textcolor('6', "#0f0") // green
-rainbow7 = textcolor('7', "#af0") // lime
-rainbow8 = textcolor('8', "#ff0") // yellow
-rainbow9 = textcolor('9', "#fa0") // orange
+rainbow0rng = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow9rng = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
+rainbow0zon = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow6zon = textcolor('6', d3.color(`hsl(120${slStr}`).formatHex()) // red
+rainbow9zon = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
+rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex()) // red
+rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex()) // red
 rainbow0hex = textcolor('f00', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow1hex = textcolor('f0f', d3.color(`hsl(300${slStr}`).formatHex()) // magenta
 rainbow2hex = textcolor('a0f', d3.color(`hsl(280${slStr}`).formatHex()) // violet
