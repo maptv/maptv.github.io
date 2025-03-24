@@ -314,12 +314,12 @@ div#colorwheelcompass path#piepath {
   color: white;
 }
 
-#colorcomparer svg g[aria-label="tip"] g {
+.colorcomparer svg g[aria-label="tip"] g {
   overflow: visible;
 }
-#colorcomparer svg g[aria-label="tip"] g {
+.colorcomparer svg g[aria-label="tip"] g {
   fill: #202020;
 }
-#colorcomparer svg g[aria-label="tip"] g text {
+.colorcomparer svg g[aria-label="tip"] g text {
   color: white;
 }
