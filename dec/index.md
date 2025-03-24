@@ -610,7 +610,11 @@ The Equator, also known as Parallel 0, is the midpoint between the South
 (${rainbowP200} m*ϕ*) are shown on the map🗺️above⬆️along with the ten
 major meridians that divide the Earth🌍into the ten Dec time zones.
 
-Not shown on the map are the four [major
+Each Dec time zone is exactly one <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="a tenth of a circle of longitude">deciparallel</span>
+(d*λ*) wide and one meridian (*ϕ*) long. Not shown on the map are the
+four [major
 parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
 that depend on the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
@@ -623,27 +627,28 @@ m*ϕ*), and the
 (${rainbowArc0} m*ϕ* – ${rainbowArc1} m*ϕ* = ${rainbowArc2} m*ϕ*) and
 [Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
 (${rainbowAnt0} m*ϕ* – ${rainbowAnt1} m*ϕ* = ${rainbowAnt2} m*ϕ*)
-Circles. Each Dec time zone is exactly one <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="a tenth of a circle of longitude">deciparallel</span>
-(d*λ*) wide and one meridian (*ϕ*) long.
+Circles.
 
-Time zones can also be labeled🏷️with color🎨. Like the meridians that
-separate them, Dec time zones are numbered ${rainbow0rng} to
-${rainbow9rng}. Dec time zone numbers are <span class="under tool"
+Time zones can also be labeled🏷️with color🎨. Dec time zones are
+numbered ${rainbow0rng} to ${rainbow9rng}, like the meridians that
+separate them. Dec time zone numbers are <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="a tenth of a day">deciday</span>
-(dd) offsets from Zone ${rainbow0zon}. The
-[offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
-of UTC time zones range from ${rainbowN5zn} dd to ${rainbowP583} dd. UTC
-time zones with negative offsets are about one day behind their closest
-Dec counterparts.
+(dd) offsets from Zone ${rainbow0zon}. [UTC time zone
+offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
+range from ${rainbowN5zn} dd to ${rainbowP583} dd.
 
-If we want to match the date in a UTC time zones with a negative offset,
-we can subtract ten from a Dec time zone offset and use the resulting
-negative Dec time zone offset to decrement the date by one day without
-changing the time.
+Any UTC time zone with a negative offset is roughly one day (10 dd)
+behind its closest Dec time zone.
 
-s, ${rainbowN4zn} to ${rainbowN1zn}, we can of Zones ${rainbow6zon} to
+We can turn to match the date in a UTC time zones with a negative
+offset, we can use a negative Dec time zone offset to decrement the date
+by one day without changing the time. In Zone ${decZone}, the Dec time
+zone closest to your UTC time zone, the current date is
+${decYear}+${decDate} and the current time in decidays is
+${decTime4}${decSign}${decZone}.
+
+subtract ten from the offset of the closest Dec time zone. and s,
+${rainbowN4zn} to ${rainbowN1zn}, we can of Zones ${rainbow6zon} to
 ${rainbow9zon}, the Dec time zones that overlap with negative UTC time
 zones East of New Zealand🇳🇿and West of Iceland🇮🇸. With There is no
 difference between the time in Zone 0 and [UTC+00:00]() or Zone 5 and
@@ -2058,11 +2063,14 @@ function dote2date(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
-dz = unix2dote(now, 0)
+dz = unix2dote(now)
 ydz = dote2date(...dz)
 decYear = ydz[0]
-decDate = Math.floor(ydz[1])
+decDate = Math.floor(ydz[1]).toString().padStart(3, "0")
 decTime = ydz[1] % 1
+decTime4 = (decTime * 10).toFixed(4)
+decZone = ydz[2]
+decSign = decZone < 0 ? "+" : "-"
 decDek = Math.floor(decDate / 10)
 decDod = decDate % 10
 decMoty = Math.floor((5 * decDate + 2) / 153)
