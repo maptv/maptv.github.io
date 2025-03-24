@@ -628,29 +628,47 @@ data-bs-toggle="tooltip"
 data-bs-title="a tenth of a circle of longitude">deciparallel</span>
 (d*λ*) wide and one meridian (*ϕ*) long.
 
-Time zones can also be labeled with color🎨. The ten Dec time zones are
-numbered ${rainbow0rng} to ${rainbow9rng} like the ten meridians that
-separate them. The time zone numbers are <span class="under tool"
+Time zones can also be labeled🏷️with color🎨. Like the meridians that
+separate them, Dec time zones are numbered ${rainbow0rng} to
+${rainbow9rng}. Dec time zone numbers are <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="a tenth of a day">deciday</span>
-(dd) offsets from Zone ${rainbow0zon}. In contrast, [UTC time zone
-offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
-range from ${rainbowN5zn} dd to ${rainbowP583} dd. UTC time zones with
-negative offsets are about one day behind their closest Dec
-counterparts.
+(dd) offsets from Zone ${rainbow0zon}. The
+[offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
+of UTC time zones range from ${rainbowN5zn} dd to ${rainbowP583} dd. UTC
+time zones with negative offsets are about one day behind their closest
+Dec counterparts.
 
-To make We can subtract ten from the offsets of Zones ${rainbow6zon} to
-${rainbow9zon} UTC time zone with a negative offset without affecting
-the time, we can . This may create negative Dec time offsets . closer to
-their match a negative be unless we make them . can subtract ten from
-any Dec time zone number UTC time zone offsets closer to According to
-your web browser, your UTC time zone offset is md, which is closest to
-Zone . In Zone , the current date is year+day and the current time in
-decidays (dd) is d.beat-z. To determine your Dec time zone, you would On
-2024+364, I [introduced
+If we want to match the date in a UTC time zones with a negative offset,
+we can subtract ten from a Dec time zone offset and use the resulting
+negative Dec time zone offset to decrement the date by one day without
+changing the time.
+
+s, ${rainbowN4zn} to ${rainbowN1zn}, we can of Zones ${rainbow6zon} to
+${rainbow9zon}, the Dec time zones that overlap with negative UTC time
+zones East of New Zealand🇳🇿and West of Iceland🇮🇸. With There is no
+difference between the time in Zone 0 and [UTC+00:00]() or Zone 5 and
+[UTC+12:00](). The time in all other Dec time zones differ from the
+closest UTC time zone by -5 to 5 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundredths of a day">centidays</span>. There is nothing
+we can do to reconcile this difference; decidays and hours simply do not
+line up perfectly.
+
+Negative Dec time zones are most useful For most of my life, I lived in
+Zone 8, but On <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="February 28, 2025">2024+364</span>, I [introduced
 Dec](https://www.youtube.com/watch?v=emHeYcSmwbw&t=487s) at a [Data
 Community DC](https://www.dc2.org)
-[Meetup](http://www.meetup.com/Data-Science-DC). After the talk I gave,
-two separate people remarked that they wanted to get rid of time zones.
+[Meetup](http://www.meetup.com/Data-Science-DC). Washington DC, the
+capital of the United States, is in Zone 8. After the talk I gave, two
+separate people remarked that they wanted to get rid of time zones. If
+want the date in to match UTC time zone with a negative offset without
+affecting the time, we can . This may create negative Dec time offsets .
+closer to their match a negative be unless we make them . UTC time zone
+offsets closer to According to your web browser, your UTC time zone
+offset is md, which is closest to Zone . In Zone , the current date is
+year+day and the current time in decidays (dd) is d.beat-z. To determine
+your Dec time zone, you would
 
 are about one day ahead of
 
@@ -1257,15 +1275,6 @@ and filled in with reddish colors. By design, all Dec time⏳zones have
 positive offsets. Therefore, Zones 6 to 9 are roughly 1 day ahead of
 their UTC analogs unless we subtract 10 to make their offsets negative.
 
-The time in any Dec time⏳zone differs from the closest UTC time⏳differ
-by -5 to 5 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="hundredths of a turn">centiturns</span>. When comparing
-the time in a Dec and UTC time⏳zones, there is no difference between
-Zone 0 and UTC+00:00 or Zone 5 and UTC+12:00. <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="tenths of a turn">Deciturns</span> and hours do not line
-up perfectly.
-
 UTC+00:00 is in the middle of Zone 0, but makes detours to include
 Iceland and other islands. Except for such detours, each UTC time zone
 is 41.6̅ milliturns wide.
@@ -1756,6 +1765,8 @@ rainbow6zon = textcolor('6', d3.color(`hsl(120${slStr}`).formatHex()) // red
 rainbow9zon = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex()) // red
 rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex()) // red
+rainbowN4zn = textcolor('-4', d3.color(`hsl(120${slStr}`).formatHex()) // red
+rainbowN1zn = textcolor('-1', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbow0hex = textcolor('f00', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow1hex = textcolor('f0f', d3.color(`hsl(300${slStr}`).formatHex()) // magenta
 rainbow2hex = textcolor('a0f', d3.color(`hsl(280${slStr}`).formatHex()) // violet
