@@ -382,6 +382,8 @@ rainbowAnt1 = textcolor('250', "hsl(260" + slStr)
 rainbowAnt2 = textcolor('-185', "hsl(56.94117647058823" + slStr)
 rainbowNpol = textcolor('250', "hsl(260" + slStr)
 rainbowSpol = textcolor('-250', "hsl(70" + slStr)
+rainbow0num = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow9num = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbow0rng = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow9rng = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbow0zon = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
@@ -391,6 +393,9 @@ rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex()) // red
 rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex()) // red
 rainbowN4zn = textcolor('-4', d3.color(`hsl(120${slStr}`).formatHex()) // red
 rainbowN1zn = textcolor('-1', d3.color(`hsl(40${slStr}`).formatHex()) // red
+rainbowP5zn = textcolor('5', d3.color(`hsl(180${slStr}`).formatHex()) // red
+rainbowP12h = textcolor('UTC+12:00', d3.color(`hsl(180${slStr}`).formatHex()) // red
+rainbowN12h = textcolor('UTC-12:00', d3.color(`hsl(180${slStr}`).formatHex()) // red
 rainbow0hex = textcolor('f00', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow1hex = textcolor('f0f', d3.color(`hsl(300${slStr}`).formatHex()) // magenta
 rainbow2hex = textcolor('a0f', d3.color(`hsl(280${slStr}`).formatHex()) // violet
@@ -588,8 +593,8 @@ quickRender = (width, height, renderer) => {
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
-    zone = zone ?? -Math.round(
-      (new Date).getTimezoneOffset() / 144)
+    zone = zone ?? (-Math.round(
+      (new Date).getTimezoneOffset() / 144) + 10) % 10
     ) / 10 + offset, zone]
 }
 octConnections = [
@@ -682,13 +687,26 @@ function dote2date(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
+elapsed = {
+  let i = 0;
+  while (true) {
+    yield Promises.tick(864, ++i);
+  }
+}
+elaTime = elapsed % 1e5
+elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
 dz = unix2dote(now)
 ydz = dote2date(...dz)
 decYear = ydz[0]
-decDate = Math.floor(ydz[1]).toString().padStart(3, "0")
+decDate = Math.floor(ydz[1])
 decTime = ydz[1] % 1
-decTime4 = (decTime * 10).toFixed(4)
 decZone = ydz[2]
+decYearHsl = textcolor(decYear, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
+decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDate / (365 + isLeap))).h}` + slStr)
+decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
+decZone1st = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZone / 10)).h}` + slStr)
+decZone2nd = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZone / 10)).h}` + slStr)
+decZone3rd = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZone / 10)).h}` + slStr)
 decSign = decZone < 0 ? "+" : "-"
 decDek = Math.floor(decDate / 10)
 decDod = decDate % 10
