@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+023
+2025+025
 
 - [Dec](#dec)
 - [Map](#map)
@@ -40,15 +40,15 @@ t represents a full⭕️circle and equals 2*π*
 The three turn types that Dec uses for distance📏and time⏳measurement
 are all approximations of physical attributes of the Earth🌍: c ≈ the
 [circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth)
-of the Earth🌎, y ≈ the duration of
+of the Earth🌏, y ≈ the duration of
 [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun)
-of the Earth🌏around the Sun☀️, and d ≈ the duration of
+of the Earth🌎around the Sun☀️, and d ≈ the duration of
 [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
 of the Earth🌍on its
 [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
 Notably, $\text c\over\text d$ = [v =
 ωr](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity)
-≈ the speed of the rotation of Earth🌎at the
+≈ the speed of the rotation of Earth🌏at the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
 The table below⬇️provides the current
@@ -122,7 +122,7 @@ c.
 An airplane✈️flying at 500 <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of the circumference of Earth">milliomegars</span>
-(mv), half the equatorial speed of the rotation of Earth🌏on its axis,
+(mv), half the equatorial speed of the rotation of Earth🌎on its axis,
 could travel🧳the 100 mc between the default positions📍of Points
 <span class="point0">0</span> and <span class="point1">1</span> in 200
 <span class="under tool" data-bs-toggle="tooltip"
@@ -558,6 +558,23 @@ and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
 directions.
 
+<div>
+
+> **Bad Pun Alert**
+>
+> Feeling ***disoriented***😵‍💫? Of
+> [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
+> you are! Color🎨labels can help you find your
+> [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object),
+> stay on
+> [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows),
+> and avoid
+> [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed)
+> aches🤕. <span class="orange">Orange</span> you glad I couldn’t think
+> of a color🎨pun?
+
+</div>
+
 The range🎚️inputs beneath the color🎨wheel compass🧭represent a hue,
 saturation, and lightness (HSL) triplet that specifies a color with
 three <span class="under tool" data-bs-toggle="tooltip"
@@ -618,7 +635,7 @@ four [major
 parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
 that depend on the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
-of the Earth🌍(${rainbowTilt} mt): the Tropics of
+of the Earth🌏(${rainbowTilt} mt): the Tropics of
 [Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(${rainbowCanc}
 m*ϕ*) and
 [Capricorn](https://en.wikipedia.org/wiki/Tropic_of_Capricorn#:~:text=the%20southernmost%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♑️(${rainbowCapr}
@@ -631,252 +648,18 @@ Circles.
 
 Time zones can also be labeled🏷️with color🎨. Dec time zones are
 numbered ${rainbow0rng} to ${rainbow9rng}, like the meridians that
-separate them. Dec time zone numbers are <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="a tenth of a day">deciday</span>
-(dd) offsets from Zone ${rainbow0zon}. [UTC time zone
+separate them. The number assigned to each time zone is its time
+difference (offset) in <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</span> (dd) from Zone
+${rainbow0zon}. [UTC time zone
 offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
-range from ${rainbowN5zn} dd to ${rainbowP583} dd.
+range from ${rainbowN5zn} to ${rainbowP583} dd. The Dec time zone that
+corresponds to your UTC offset is Zone ${decZone1st}.
 
-Any UTC time zone with a negative offset is roughly one day (10 dd)
-behind its closest Dec time zone.
-
-We can turn to match the date in a UTC time zones with a negative
-offset, we can use a negative Dec time zone offset to decrement the date
-by one day without changing the time. In Zone ${decZone}, the Dec time
-zone closest to your UTC time zone, the current date is
-${decYear}+${decDate} and the current time in decidays is
-${decTime4}${decSign}${decZone}.
-
-subtract ten from the offset of the closest Dec time zone. and s,
-${rainbowN4zn} to ${rainbowN1zn}, we can of Zones ${rainbow6zon} to
-${rainbow9zon}, the Dec time zones that overlap with negative UTC time
-zones East of New Zealand🇳🇿and West of Iceland🇮🇸. With There is no
-difference between the time in Zone 0 and [UTC+00:00]() or Zone 5 and
-[UTC+12:00](). The time in all other Dec time zones differ from the
-closest UTC time zone by -5 to 5 <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="hundredths of a day">centidays</span>. There is nothing
-we can do to reconcile this difference; decidays and hours simply do not
-line up perfectly.
-
-Negative Dec time zones are most useful For most of my life, I lived in
-Zone 8, but On <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="February 28, 2025">2024+364</span>, I [introduced
-Dec](https://www.youtube.com/watch?v=emHeYcSmwbw&t=487s) at a [Data
-Community DC](https://www.dc2.org)
-[Meetup](http://www.meetup.com/Data-Science-DC). Washington DC, the
-capital of the United States, is in Zone 8. After the talk I gave, two
-separate people remarked that they wanted to get rid of time zones. If
-want the date in to match UTC time zone with a negative offset without
-affecting the time, we can . This may create negative Dec time offsets .
-closer to their match a negative be unless we make them . UTC time zone
-offsets closer to According to your web browser, your UTC time zone
-offset is md, which is closest to Zone . In Zone , the current date is
-year+day and the current time in decidays (dd) is d.beat-z. To determine
-your Dec time zone, you would
-
-are about one day ahead of
-
-You can choose which Dec time zone is the first digit of your longitude.
-in d*λ* and
-[floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-it: ⌊d*λ*⌋.
-
-Unlike the other major parallels, the position of the Equator is fixed
-and independent of the Earth’s🌍[axial
-tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere).
-
-Dec time zone: ⌊d*λ*⌋. Not shown on the map are the four \[ma We can a
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a circle of longitude">deciparallel</span>
-(d*λ*) longitude to get the corresponding Dec time zone: .
-
-Unlike UTC times zones, Meridians 0 to
-[9](https://en.wikipedia.org/wiki/54th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Newfoundland%2C%20the%20Atlantic%20Ocean%2C%20South%20America%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole).
-The
-
-represent a time offset of one and
-
-Despite being solely defined by *λ*, any Dec time zone could be used in
-any location. We could all agree to use Zone 0.
-
-In total, there are four cardinal directions, five major parallels, and
-ten major meridians.
-
-The current year is . The current day-of-year (doy) is and the current
-time in md is .
-
-Therefore, the same color🎨can be used for , the , and , or
-${rainbowEast} (250 m*α*).
-
-${rainbowWest} (750 m*α*) and the ,
-
-For *ϕ*, we only need to use half the color🎨wheel.
-
-[color🎨scheme](https://en.wikipedia.org/wiki/Color_scheme#:~:text=a%20combination%20of%202%20or%20more%20colors%20used%20in%20aesthetic%20or%20practical%20design)
-.
-
-The cardinal directions are essentially four *α* values that serve as
-important milestones. Similarly, there are [four
-major](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=The%20position%20of%20the%20Equator%20is%20fixed%20(90%20degrees%20from%20Earth's%20axis%20of%20rotation)%20but%20the%20latitudes%20of%20the%20other%20circles%20depend%20on%20the%20tilt%20of%20this%20axis%20relative%20to%20the%20plane%20of%20Earth's%20orbit%2C%20and%20so%20are%20not%20perfectly%20fixed)
-*ϕ* values that are defined by the axial tilt of Earth🌍(65 mt *ϕ*): the
-Tropics of
-[Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(65
-m*ϕ*) and
-[Capricorn](https://en.wikipedia.org/wiki/Tropic_of_Capricorn#:~:text=the%20southernmost%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♑️(-65
-m*ϕ*), and the
-[Arctic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
-(250 m*ϕ* – 65 m*ϕ* = 185 m*ϕ*) and
-[Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
-(65 m*ϕ* – 250 m*ϕ* = -185 m*ϕ*) Circles.
-
-With *ϕ*, we can choose which half of the color🎨wheel we want to use:
-${rainbowWarm} (-250 m*ϕ* to 250 m*ϕ*) or ${rainbowCool} (250 m*ϕ* to
-750 m*ϕ*). In contrast, the range of *α* and *λ* values covers a full
-turn. There are ten *λ* milestone
-
-or equivalently 750. equidistant points in the continuous Dec
-color🎨scheme. Following this pattern, we can choose ten colors to Dec
-plans shown in the table above⬆️. To label Dec time zones, Dec picks the
-ten colors🎨displayed in the table below⬇️.
-
-, . Dec arranges colors🎨in a rainbow🌈pattern based on [physical
-properties](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=Wavelength%0A(nm,(eV)))
-of the [visible
-spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
-of light. From the
-[continuous](https://en.wikipedia.org/wiki/Color_scheme#Quantitative_schemes:~:text=a%20smooth%20color%20gradient)
-Dec
-[color🎨scheme](https://en.wikipedia.org/wiki/Color_scheme#:~:text=a%20combination%20of%202%20or%20more%20colors%20used%20in%20aesthetic%20or%20practical%20design)
-shown in the hue bar📊input above⬆️, we can select colors🎨to create a
-[discrete](https://en.wikipedia.org/wiki/Color_scheme#Quantitative_schemes:~:text=a%20certain%20subset%20of%20a%20continuous%20color%20scheme)
-color🎨scheme.
-
-dt lambda° h° hex
-
-be create For compass🧭directions, Dec selects uses a
-[discrete](https://en.wikipedia.org/wiki/Color_scheme#Quantitative_schemes:~:text=a%20certain%20subset%20of%20a%20continuous%20color%20scheme)
-color🎨scheme created by ${rainbow0hex}, ${rainbow1hex}, ${rainbow2hex},
-${rainbow3hex}, ${rainbow4hex}, ${rainbow5hex}, ${rainbow6hex},
-${rainbow7hex}, ${rainbow8hex}, and ${rainbow9hex}.
-
-can be grouped into opposing pairs: \[0, 5\], \[1, 6\], \[2, 7\], \[3,
-8\], and \[4, 9\].
-
-The categorical color🎨wheel above⬆️shows how each of the ten Dec colors
-can be paired with its opposing color in a triangles. These ten colors
-can be used to designate the ten Dec time zones that are visible on the
-map🗺️above⬆️when the “Grid” toggle✅input is enabled.
-
-You can compare Dec and UTC time zones by enabling both the “Grid” and
-“UTC” toggle✅inputs. Unlike UTC times zones, Dec time zones are each
-exactly 1 deciparallel wide. To determine the Dec time zone (z) in a
-location, we obtain its longitude in <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="tenths of a circle of longitude">deciparallels</span>
-(dλ) and then apply the [floor
-function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x):
-z = ⌊dλ⌋.
-
-<div>
-
-> **Bad Pun Alert**
->
-> Feeling ***disoriented***😵‍💫? Of
-> [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
-> you are! Color🎨labels can help you find your
-> [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object),
-> stay on
-> [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows),
-> and avoid
-> [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed)
-> aches🤕. <span class="orange">Orange</span> you glad I couldn’t think
-> of a color🎨pun?
-
-</div>
-
-The deciturn (dt), hexadecimal (hex), [HSL and
-HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
-hue degree (h°), red (r), green (g), and blue (b) values of the ten Dec
-colors are listed in the table below.
-
-The Dec color wheel is different than its trichromatic counterpart.
-
-The labels can provide a general sense of direction explain different
-turn
-[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
-As opposed to a typical trichromatic Rather than arranging colors from
-longest to shortest wavelength or equivalently from shortest to longest
-frequency, is intuitive can create The color🎨wheel above equally spaces
-the colors <span class="red">red</span>,
-<span class="green">green</span>, and <span class="azul">blue</span>.
-
-Orange you glad this pun wasn’t kk
-
-The or change the to indicate a different turn
-[submultiple](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer).
-The color🎨labels show the equivalence of , can provide a general sense
-of direction.
-
-(deci, centi, milli, etc.) and
-
-or turn
-[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer)
-
-degrees or any or switch to degrees. the to use a based on turn values
-to
-
-be a Varying only hue, labels can be helpful but though some labels the
-green part of the [visible
-spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
-may be hard to distinguish.
-
-We can apply Dec time zones: ${rainbowZone0}, ${rainbowZone1},
-${rainbowZone2}, ${rainbowZone3}, ${rainbowZone4}, ${rainbowZone5},
-${rainbowZone6}, ${rainbowZone7}, ${rainbowZone8}, and ${rainbowZone9}.
-
-The time zone color🎨labels above are different Dec time zones are
-separated
-
-For greater separation values above⬆️are ${rainbowZone0},
-${rainbowZone1}, ${rainbowZone2}, ${rainbowZone3}, ${rainbowZone4},
-${rainbowZone5}, ${rainbowZone6}, ${rainbowZone7}, ${rainbowZone8}, and
-${rainbowZone9} <span class="red">0</span>, <span class="red">90</span>,
-and <span class="cyan">500</span> are good reference reference points.
-The other colors can be modified The color🎨labels above⬆️are shifted
-towards 0 by increasing the separation between adjacent labels.
-
-are [dyadic
-rationals](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20number%20that%20can%20be%20expressed%20as%20a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
-and thus are easy to express as In contrast, the three
-[additive](https://en.wikipedia.org/wiki/Primary_color#:~:text=summing%20the%20spectral%20power%20distributions%20(the%20intensity%20of%20each%20wavelength)%20of%20the%20individual%20light%20sources)
-(<span class="red">red</span>=0t=0°,
-<span class="lime">green</span>=1/3t=.<span style="text-decoration-line:overline;">3</span>t=120°,
-<span class="azul">blue</span>=2/3t=.<span style="text-decoration-line:overline;">6</span>t=240°)
-and three
-[subtractive](https://en.wikipedia.org/wiki/Primary_color#:~:text=predicts%20the%20resultant%20spectral%20power%20distribution%20of%20light%20filtered%20through%20overlaid%20partially%20absorbing%20materials)
-(<span class="yellow">yellow</span>=1/6t=.1<span style="text-decoration-line:overline;">6</span>t=60°,
-<span class="cyan">cyan</span>=1/2t=0.5t=180°,
-<span class="magenta">magenta</span>=5/6t=.8<span style="text-decoration-line:overline;">3</span>t=300°)
-[primary
-color](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors)🎨hues,
-integer milliturns need to be rounded to the nearest degree.
-
-Unlike milliturns, degrees can represent [repeating decimal
-numbers](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20number%20whose%20digits%20are%20eventually%20periodic%20(that%20is%2C%20after%20some%20place%2C%20the%20same%20sequence%20of%20digits%20is%20repeated%20forever))
-as integers and thus are useful to specifying primary colors
-(<span class="red">red</span>=0°, <span class="lime">green</span>,
-<span class="azul">blue</span>=240°, <span class="yellow">yellow</span>,
-<span class="cyan">cyan</span>, <span class="magenta">magenta</span>).
-
-and
-[azimuth](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=the%20angle%20of%20rotation%20(in%20degrees)%20in%20the%20unit%20circle%20over%20the%20horizontal%20plane)
-To travel the between the default positions📍of the two points in
-
-[bearings](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object)
-of these points . To cross the shortest distance between the two points,
-we would nee Inversely, the default bearing of Point 0 is 500
-$\text m\gamma$ (South) from the perspective of Point 1.
+In Zone ${decZone2nd}, the current date is ${decYearHsl}+${decDateHsl}
+and the current time in decidays is ${decTimeHsl}–${decZone3rd}. The
+time that has elapsed since this webpage was loaded is ${elaTimeHsl}.
+Even distances can be labeled🏷️with color🎨.
 
 At an average speed of ${travelspeed} $\text m\omega \text r$, we could
 cover the ${distance_mtaur} $\text m\tau r$ between Points
@@ -1763,6 +1546,8 @@ rainbowAnt1 = textcolor('250', "hsl(260" + slStr)
 rainbowAnt2 = textcolor('-185', "hsl(56.94117647058823" + slStr)
 rainbowNpol = textcolor('250', "hsl(260" + slStr)
 rainbowSpol = textcolor('-250', "hsl(70" + slStr)
+rainbow0num = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow9num = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbow0rng = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow9rng = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbow0zon = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
@@ -1772,6 +1557,9 @@ rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex()) // red
 rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex()) // red
 rainbowN4zn = textcolor('-4', d3.color(`hsl(120${slStr}`).formatHex()) // red
 rainbowN1zn = textcolor('-1', d3.color(`hsl(40${slStr}`).formatHex()) // red
+rainbowP5zn = textcolor('5', d3.color(`hsl(180${slStr}`).formatHex()) // red
+rainbowP12h = textcolor('UTC+12:00', d3.color(`hsl(180${slStr}`).formatHex()) // red
+rainbowN12h = textcolor('UTC-12:00', d3.color(`hsl(180${slStr}`).formatHex()) // red
 rainbow0hex = textcolor('f00', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow1hex = textcolor('f0f', d3.color(`hsl(300${slStr}`).formatHex()) // magenta
 rainbow2hex = textcolor('a0f', d3.color(`hsl(280${slStr}`).formatHex()) // violet
@@ -1969,8 +1757,8 @@ quickRender = (width, height, renderer) => {
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
-    zone = zone ?? -Math.round(
-      (new Date).getTimezoneOffset() / 144)
+    zone = zone ?? (-Math.round(
+      (new Date).getTimezoneOffset() / 144) + 10) % 10
     ) / 10 + offset, zone]
 }
 octConnections = [
@@ -2063,13 +1851,26 @@ function dote2date(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
+elapsed = {
+  let i = 0;
+  while (true) {
+    yield Promises.tick(864, ++i);
+  }
+}
+elaTime = elapsed % 1e5
+elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
 dz = unix2dote(now)
 ydz = dote2date(...dz)
 decYear = ydz[0]
-decDate = Math.floor(ydz[1]).toString().padStart(3, "0")
+decDate = Math.floor(ydz[1])
 decTime = ydz[1] % 1
-decTime4 = (decTime * 10).toFixed(4)
 decZone = ydz[2]
+decYearHsl = textcolor(decYear, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
+decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDate / (365 + isLeap))).h}` + slStr)
+decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
+decZone1st = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZone / 10)).h}` + slStr)
+decZone2nd = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZone / 10)).h}` + slStr)
+decZone3rd = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZone / 10)).h}` + slStr)
 decSign = decZone < 0 ? "+" : "-"
 decDek = Math.floor(decDate / 10)
 decDod = decDate % 10
