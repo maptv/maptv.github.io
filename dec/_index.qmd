@@ -394,6 +394,7 @@ rainbow8zn0 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbow8zn1 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbow8zn2 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbow8zn3 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
+rainbow8zn4 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbowN2zn = textcolor('-2', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbowMer8 = textcolor('800', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbow9zon = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
@@ -1555,6 +1556,102 @@ div#lightslider > div {
 }
 div#lightslider > label {
   max-width: 60px;
+}
+.color0 {
+  background: rgb(255, 0, 0);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color1 {
+  background: rgb(255, 0, 255);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color2 {
+  background: rgb(170, 0, 255);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color25 {
+  background: rgb(85, 0, 255);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color3 {
+  background: rgb(0, 0, 255);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color4 {
+  background: rgb(0, 170, 255);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color5 {
+  background: rgb(0, 255, 255);
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color6 {
+  background: rgb(0, 255, 0);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color7 {
+  background: rgb(170, 255, 0);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color75 {
+  background: rgb(213, 255, 0);
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color8 {
+  background: rgb(255, 255, 0);
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color9 {
+  background: rgb(255, 170, 0);
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
 }
 div#latinput label {
   --label-width: 65px;
