@@ -367,10 +367,10 @@ rainbowDay0 = textcolor('0', "hsl(0" + slStr)
 rainbowMidY = textcolor('500', "hsl(180" + slStr)
 rainbowY000 = textcolor('0', "hsl(0" + slStr)
 rainbowY500 = textcolor('500', "hsl(180" + slStr)
-rainbowN100 = textcolor('-100', "hsl(300" + slStr)
-rainbowN200 = textcolor('-200', "hsl(280" + slStr)
-rainbowP100 = textcolor('100', "hsl(40" + slStr)
-rainbowP200 = textcolor('200', "hsl(60" + slStr)
+rainbowN100 = textcolor('-100', "hsl(40" + slStr)
+rainbowN200 = textcolor('-200', "hsl(60" + slStr)
+rainbowP100 = textcolor('100', "hsl(300" + slStr)
+rainbowP200 = textcolor('200', "hsl(280" + slStr)
 rainbowTilt = textcolor('65', "hsl(320.94117647058823" + slStr)
 rainbowCanc = textcolor('65', "hsl(320.94117647058823" + slStr)
 rainbowCapr = textcolor('-65', "hsl(25.88235294117647" + slStr)
@@ -386,8 +386,16 @@ rainbow0num = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow9num = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbow0rng = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow9rng = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
-rainbow0zon = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow0zn0 = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow0zn1 = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow0zn2 = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow6zon = textcolor('6', d3.color(`hsl(120${slStr}`).formatHex()) // red
+rainbow8zn0 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
+rainbow8zn1 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
+rainbow8zn2 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
+rainbow8zn3 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
+rainbowN2zn = textcolor('-2', d3.color(`hsl(60${slStr}`).formatHex()) // red
+rainbowMer8 = textcolor('800', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbow9zon = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex()) // red
 rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex()) // red
@@ -396,6 +404,8 @@ rainbowN1zn = textcolor('-1', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbowP5zn = textcolor('5', d3.color(`hsl(180${slStr}`).formatHex()) // red
 rainbowP12h = textcolor('UTC+12:00', d3.color(`hsl(180${slStr}`).formatHex()) // red
 rainbowN12h = textcolor('UTC-12:00', d3.color(`hsl(180${slStr}`).formatHex()) // red
+rainbow0000 = textcolor('0.0000', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow8000 = textcolor('8.0000', d3.color(`hsl(80${slStr}`).formatHex()) // red
 rainbow0hex = textcolor('f00', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow1hex = textcolor('f0f', d3.color(`hsl(300${slStr}`).formatHex()) // magenta
 rainbow2hex = textcolor('a0f', d3.color(`hsl(280${slStr}`).formatHex()) // violet
@@ -695,19 +705,32 @@ elapsed = {
 }
 elaTime = elapsed % 1e5
 elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
-dz = unix2dote(now)
-ydz = dote2date(...dz)
-decYear = ydz[0]
-decDate = Math.floor(ydz[1])
-decTime = ydz[1] % 1
-decZone = ydz[2]
-decYearHsl = textcolor(decYear, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
-decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDate / (365 + isLeap))).h}` + slStr)
-decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
-decZone1st = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZone / 10)).h}` + slStr)
-decZone2nd = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZone / 10)).h}` + slStr)
-decZone3rd = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZone / 10)).h}` + slStr)
-decSign = decZone < 0 ? "+" : "-"
+dzP0 = unix2dote(now, 0)
+dzP8 = unix2dote(now, 8)
+ydzP0 = dote2date(...dzP0)
+ydzP8 = dote2date(...dzP8)
+dzN2 = unix2dote(now, -2)
+ydzN2 = dote2date(...dzN2)
+decYearP8 = ydzP8[0]
+decYearN2 = ydzN2[0]
+decDateP8 = Math.floor(ydzP8[1])
+decDateN2 = Math.floor(ydzN2[1])
+decTimeP8 = ydzP8[1] % 1
+decTimeP0 = ydzP0[1] % 1
+utcOffset = -(new Date).getTimezoneOffset() / 144
+utcOffsHsl = textcolor(utcOffset.toFixed(2).replace(/[.,]00$/, ""), `hsl(${d3.hsl(piecewiseColor((utcOffset + 10) % 10 / 10)).h}` + slStr)
+decYearHsl = textcolor(decYearP8, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
+decDateHsl = textcolor(decDateP8.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
+decYestHsl = textcolor(decDateN2.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateN2 / (365 + isLeapN2))).h}` + slStr)
+decTimeZn8 = textcolor((decTimeP8 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP8)).h}` + slStr)
+decTimeZn0 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+parLat = textcolor(latitude.toFixed(3), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
+parCos = Math.cos(latitude * 2 * Math.PI)
+parLen = textcolor(parCos.toFixed(3), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
+point0long = long2turn(Place_A[0], 1)
+point0zone = Math.floor(point0long)
+point0lHsl = textcolor(point0long.toFixed(2), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
+point0zHsl = textcolor(point0zone, `hsl(${d3.hsl(piecewiseColor(point0zone / 10)).h}` + slStr)
 decDek = Math.floor(decDate / 10)
 decDod = decDate % 10
 decMoty = Math.floor((5 * decDate + 2) / 153)
@@ -720,11 +743,12 @@ decSecond = (decMinute % 1) * 60
 isoHour = Math.floor(decHour)
 isoMinute = Math.floor(decMinute)
 isoSecond = Math.floor(decSecond)
-isLeap = decYear % 4 == 0 && decYear % 100 != 0 || decYear % 400 == 0;
+isLeapP8 = decYearP8 % 4 == 0 && decYearP8 % 100 != 0 || decYearP8 % 400 == 0;
+isLeapN2 = decYearN2 % 4 == 0 && decYearN2 % 100 != 0 || decYearN2 % 400 == 0;
 timezones = FileAttachment("../asset/timezones.json").json()
 zones = topojson.feature(timezones, timezones.objects.timezones).features
 mesh = topojson.mesh(timezones, timezones.objects.timezones)
-color = d3.scaleSequential(d3.interpolateRdBu).domain([14, -12])
+color = d3.scaleSequential(d3.interpolateRdBu).domain([-12, 14])
 // https://observablehq.com/@enjalot/draggable-world-map-coordinates-input
 // https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea
 function worldMapCoordinates(config = {}, dimensions) {
@@ -753,6 +777,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     path(f);
     context.fillStyle = color(f.properties.zone);
     context.fill();
+    context.innerHTML = `<title>${f.properties.places} ${f.properties.time_zone}</title>`;
   }
   function draw(lon0, lat0, lon1, lat1) {
     if (!utctoggle) {
@@ -1511,7 +1536,7 @@ div.coloropp canvas{
   overflow: visible;
 }
 div#colorslider > label {
-  maxwidth: 60px;
+  max-width: 60px;
 }
 div#colorslider input[type="number"] {
   width: 105px;
@@ -1520,7 +1545,7 @@ div#saturslider > div {
   min-width: 360px;
 }
 div#saturslider > label {
-  maxwidth: 60px;
+  max-width: 60px;
 }
 div#saturslider input[type="number"] {
   width: 105px;
@@ -1529,7 +1554,13 @@ div#lightslider > div {
   min-width: 360px;
 }
 div#lightslider > label {
-  maxwidth: 60px;
+  max-width: 60px;
+}
+div#latinput label {
+  --label-width: 65px;
+}
+div#latinput input[type="number"] {
+  width: 125px;
 }
 div#lightslider input[type="number"] {
   width: 105px;
