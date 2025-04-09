@@ -579,12 +579,15 @@ regardless of the [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
 or [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore,
 we can reuse♻️colors🎨across many different contexts. In any context,
-starting points are red: North (${rainbowNort} m*α*), [Longitude
+starting points are red: North (<span class="color0">0</span> m*α*),
+[Longitude
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
-(${rainbowMer0} m*λ*), and midnight (${rainbowMidN} md); midpoints are
-cyan: South (${rainbowSout} m*α*), [Longitude
+(<span class="color0">0</span> m*λ*), and midnight
+(<span class="color0">0</span> md); midpoints are cyan: South
+(<span class="color5">500</span> m*α*), [Longitude
 5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
-(${rainbowMer5} ml), and noon (${rainbowNoon} md).
+(<span class="color5">500</span> ml), and noon
+(<span class="color5">500</span> md).
 
 Apart from m*α*, m*λ*, and md, we can apply color🎨labels🏷️based on
 <span class="under tool" data-bs-toggle="tooltip"
@@ -592,26 +595,31 @@ data-bs-title="thousandths of a year">milliyears</span> (my) and
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a millennium">millimillennia</span> (mk).
 Every year (y) starts on <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span> (${rainbowDay0} my). The
-midyear point (${rainbowMidY} my) is noon of <span class="under tool"
+data-bs-title="March 1"><u>Day 0</u></span>
+(<span class="color0">0</span> my). The midyear point
+(<span class="color5">500</span> my) is noon of <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="August 30">Day 182</span> in
 common years and midnight of <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="August 31">Day 183</span> in
-leap years. Every millennium (k) starts with Year 0 (${rainbowY000} mk)
-and has Year 500 (${rainbowY500} mk) as its midpoint.
+leap years. Every millennium (k) starts with Year 0
+(<span class="color0">0</span> mk) and has Year 500
+(<span class="color5">500</span> mk) as its midpoint.
 
 The Equator, also known as Latitude 0, is the midpoint between the South
-(${rainbowSpol} m*ϕ*) and North (${rainbowNpol} m*ϕ*) Pole. When the
-“Grid” toggle✅input is enabled, Latitudes
+(<span class="color75">-250</span> m*ϕ*) and North
+(<span class="color25">250</span> m*ϕ*) Pole. When the “Grid”
+toggle✅input is enabled, Latitudes
 [-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
-(${rainbowN200} m*ϕ*),
+(<span class="color8">-200</span> m*ϕ*),
 [-1](https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane)
-(${rainbowN100} m*ϕ*), 0 (${rainbowEqua} m*ϕ*),
+(<span class="color9">-100</span> m*ϕ*), 0
+(<span class="color0">0</span> m*ϕ*),
 [1](https://en.wikipedia.org/wiki/36th_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane)
-(${rainbowP100} m*ϕ*), and
+(<span class="color1">100</span> m*ϕ*), and
 [2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
-(${rainbowP200} m*ϕ*) are shown on the map🗺️above⬆️along with the ten
-major longitudes that divide the Earth🌍into the ten Dec time zones.
+(<span class="color2">200</span> m*ϕ*) are shown on the
+map🗺️above⬆️along with the ten major longitudes that divide the
+Earth🌍into the ten Dec time zones.
 
 Each Dec time zone is one <span class="under tool"
 data-bs-toggle="tooltip"
@@ -635,10 +643,11 @@ viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: 
 ```
 
 Like the ten major longitudes that separate them, Dec time zones are
-numbered ${rainbow0rng} to ${rainbow9rng}. The number assigned to each
-time zone is its offset in <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
-(dd) from Zone ${rainbow0zn0}. To obtain the dd offset o at a location,
+numbered <span class="color0">0</span> to <span class="color9">9</span>.
+The number assigned to each time zone is its offset in
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</span> (dd) from Zone
+<span class="color0">0</span>. To obtain the dd offset o at a location,
 we
 [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
 its d*λ* longitude: o = ⌊d*λ*⌋. For example, the current d*λ* longitude
@@ -652,17 +661,15 @@ offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%
 range from ${rainbowN5zn} to ${rainbowP583} dd. Negative UTC offsets are
 common to the East of New Zealand🇳🇿and to the West of the United
 Kingdom🇬🇧. By design, each Dec time zone has a positive offset that can
-be converted to a negative offset by subtracting ten dd. When
-calculating the time, it does not matter whether we use a positive or
-negative offset.
+be converted to a negative offset by subtracting ten dd. Negative
+offsets can sometimes facilitate conversion of times across time zones.
 
-Nevertheless, the use of a negative offset can sometimes facilitate
-calculations. We can subtract either the positive (${rainbow8zn3}) or
-negative (${rainbowN2zn}) offset of Zone ${rainbow8zn2} from its time
-(${decTimeZn8}) to obtain the time in Zone ${rainbow0zn1}
-(${decTimeZn0}). Between ${rainbow0000} and ${rainbow8000}, it easier to
-subtract the negative offset, because subtracting the positive offset
-results in a negative time.
+To obtain the time in Zone ${rainbow0zn1}, ${decTimeZn0}, we can
+subtract either the positive or negative offset of any time zone from
+its time. Inversely, we can get the time in any time zone by adding its
+positive or negative offset to the Zone ${rainbow0zn2} time. We can
+choose either a positive or negative offset based on which one yields a
+positive time that is less than ten dd: 0 \<= t \< 10.
 
 In Dec, negative times tell us how much of the day is left, instead of
 how much of the day has passed. Positive and negative times are two
@@ -670,11 +677,11 @@ sides of the same coin🪙. At noon, half of the day has passed and half
 is left, just like a glass🥃can be both half full and half empty. A
 negative time will become positive if we add ten dd.
 
-the Zone ${rainbow8zn1} time () to the In contrast, dates are impacted
-by our choice of a positive or negative offset. Positive offset dates
-are one day ahead of their negative counterparts.
+In contrast, dates are impacted by our choice of a positive or negative
+offset. Positive offset dates are one day ahead of their negative
+counterparts.
 
-The date in Zone ${rainbow8zn3} is ${decDateHsl} if we use its positive
+The date in Zone ${rainbow8zn4} is ${decDateHsl} if we use its positive
 offset and ${decYestHsl} otherwise. By providing a positive and negative
 offset for each time zone, Dec can match the date in any UTC time zone.
 
@@ -1640,6 +1647,7 @@ rainbow8zn0 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbow8zn1 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbow8zn2 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbow8zn3 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
+rainbow8zn4 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbowN2zn = textcolor('-2', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbowMer8 = textcolor('800', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbow9zon = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
@@ -2800,6 +2808,102 @@ div#lightslider > div {
 }
 div#lightslider > label {
   max-width: 60px;
+}
+.color0 {
+  background: rgb(255, 0, 0);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color1 {
+  background: rgb(255, 0, 255);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color2 {
+  background: rgb(170, 0, 255);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color25 {
+  background: rgb(85, 0, 255);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color3 {
+  background: rgb(0, 0, 255);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color4 {
+  background: rgb(0, 170, 255);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color5 {
+  background: rgb(0, 255, 255);
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color6 {
+  background: rgb(0, 255, 0);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color7 {
+  background: rgb(170, 255, 0);
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color75 {
+  background: rgb(213, 255, 0);
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color8 {
+  background: rgb(255, 255, 0);
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color9 {
+  background: rgb(255, 170, 0);
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
 }
 div#latinput label {
   --label-width: 65px;
