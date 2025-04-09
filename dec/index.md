@@ -1,11 +1,13 @@
 # Dec
 Martin Laptev
-2025+025
+2025+039
 
 - [Dec](#dec)
 - [Map](#map)
 - [Hue](#hue)
 - [Hex](#hex)
+- [Pun](#pun)
+- [UTC](#utc)
 
 <div id="decnav">
 
@@ -55,12 +57,12 @@ The table below⬇️provides the current
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
 ([*λ*](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda))
 in <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a circle of longitude">milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)</span>
+data-bs-title="thousandths of a circle of latitude">milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)</span>
 (m*λ*) and
 [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
 ([*ϕ*](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
 in <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a circle of latitude">milli[meridians](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude)</span>
+data-bs-title="thousandths of a polar circumferences">milli[meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)</span>
 (m*ϕ*) of Points <span class="point0">0</span> and
 <span class="point1">1</span> on the map🗺️beneath the table. By default,
 <span class="point0">Point 0</span> is at
@@ -100,24 +102,6 @@ shading, a yellow🟡dot denoting where the Sun☀️is directly overhead
 ${Math.floor(lati2turn(sun\[1\]))} m*ϕ*), and
 [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 time zones.
-
-The width of a UTC time zone is often
-41.<span style="text-decoration-line:overline;">6</span> m*λ*, but
-ranges from 0 m*λ* to the width of China🇨🇳:
-[424](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=109%C2%B056%E2%80%B2E-,West,-%3A%20Akto%20County)
-m*λ* –
-[254](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=%20%5Bcitation%20needed%5D-,East,-%3A%20Fuyuan%20County%2C%20Heilongjiang%2C%20on)
-m*λ* = 170 m*λ*. The length of a meridian (L<sub>*ϕ*</sub>) is always
-near c: L<sub>*ϕ*</sub> ≈ c. In contrast, the length of a parallel
-(L<sub>*λ*</sub>) [varies by
-latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude)
-(*ϕ*). At the Equator, *ϕ* = 0 and L<sub>*λ*</sub> ≈ c. At the
-[North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
-or
-[South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
-Pole, |*ϕ*| = .25 and L<sub>*λ*</sub> = 0. In general, L<sub>*λ*</sub> ≈
-[cos](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)(*ϕ**τ*)
-c.
 
 An airplane✈️flying at 500 <span class="under tool"
 data-bs-toggle="tooltip"
@@ -558,6 +542,8 @@ and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
 directions.
 
+# Pun
+
 <div>
 
 > **Bad Pun Alert**
@@ -593,10 +579,10 @@ regardless of the [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
 or [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore,
 we can reuse♻️colors🎨across many different contexts. In any context,
-starting points are red: North (${rainbowNort} m*α*), [Meridian
+starting points are red: North (${rainbowNort} m*α*), [Longitude
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (${rainbowMer0} m*λ*), and midnight (${rainbowMidN} md); midpoints are
-cyan: South (${rainbowSout} m*α*), [Meridian
+cyan: South (${rainbowSout} m*α*), [Longitude
 5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (${rainbowMer5} ml), and noon (${rainbowNoon} md).
 
@@ -614,9 +600,9 @@ data-bs-toggle="tooltip" data-bs-title="August 31">Day 183</span> in
 leap years. Every millennium (k) starts with Year 0 (${rainbowY000} mk)
 and has Year 500 (${rainbowY500} mk) as its midpoint.
 
-The Equator, also known as Parallel 0, is the midpoint between the South
+The Equator, also known as Latitude 0, is the midpoint between the South
 (${rainbowSpol} m*ϕ*) and North (${rainbowNpol} m*ϕ*) Pole. When the
-“Grid” toggle✅input is enabled, Parallels
+“Grid” toggle✅input is enabled, Latitudes
 [-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
 (${rainbowN200} m*ϕ*),
 [-1](https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane)
@@ -625,13 +611,123 @@ The Equator, also known as Parallel 0, is the midpoint between the South
 (${rainbowP100} m*ϕ*), and
 [2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
 (${rainbowP200} m*ϕ*) are shown on the map🗺️above⬆️along with the ten
-major meridians that divide the Earth🌍into the ten Dec time zones.
+major longitudes that divide the Earth🌍into the ten Dec time zones.
 
-Each Dec time zone is exactly one <span class="under tool"
+Each Dec time zone is one <span class="under tool"
 data-bs-toggle="tooltip"
-data-bs-title="a tenth of a circle of longitude">deciparallel</span>
-(d*λ*) wide and one meridian (*ϕ*) long. Not shown on the map are the
-four [major
+data-bs-title="a tenth of a circle of latitude">deciparallel</span>
+(d*λ*) wide and half of a meridian (*ϕ*) long. While one *ϕ* is always
+about one c long, the length of a parallel (*λ*) [varies by
+latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude).
+At the Equator, one *λ* is roughly one c long. At the
+[North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
+or
+[South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
+Pole, the length of *λ* is zero. In general, the approximate length of a
+parallel is the
+[cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
+of its *ϕ* latitude: cos(${parLat}) = ${parLen}.
+
+``` {ojs}
+//| echo: false
+//| label: latinput
+viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: .001})
+```
+
+Like the ten major longitudes that separate them, Dec time zones are
+numbered ${rainbow0rng} to ${rainbow9rng}. The number assigned to each
+time zone is its offset in <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
+(dd) from Zone ${rainbow0zn0}. To obtain the dd offset o at a location,
+we
+[floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
+its d*λ* longitude: o = ⌊d*λ*⌋. For example, the current d*λ* longitude
+of [Point 0](.point0) on the map🗺️above⬆️, ${point0lHsl}, corresponds to
+Zone ${point0zHsl}.
+
+# UTC
+
+[UTC time zone
+offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
+range from ${rainbowN5zn} to ${rainbowP583} dd. Negative UTC offsets are
+common to the East of New Zealand🇳🇿and to the West of the United
+Kingdom🇬🇧. By design, each Dec time zone has a positive offset that can
+be converted to a negative offset by subtracting ten dd. When
+calculating the time, it does not matter whether we use a positive or
+negative offset.
+
+Nevertheless, the use of a negative offset can sometimes facilitate
+calculations. We can subtract either the positive (${rainbow8zn3}) or
+negative (${rainbowN2zn}) offset of Zone ${rainbow8zn2} from its time
+(${decTimeZn8}) to obtain the time in Zone ${rainbow0zn1}
+(${decTimeZn0}). Between ${rainbow0000} and ${rainbow8000}, it easier to
+subtract the negative offset, because subtracting the positive offset
+results in a negative time.
+
+In Dec, negative times tell us how much of the day is left, instead of
+how much of the day has passed. Positive and negative times are two
+sides of the same coin🪙. At noon, half of the day has passed and half
+is left, just like a glass🥃can be both half full and half empty. A
+negative time will become positive if we add ten dd.
+
+the Zone ${rainbow8zn1} time () to the In contrast, dates are impacted
+by our choice of a positive or negative offset. Positive offset dates
+are one day ahead of their negative counterparts.
+
+The date in Zone ${rainbow8zn3} is ${decDateHsl} if we use its positive
+offset and ${decYestHsl} otherwise. By providing a positive and negative
+offset for each time zone, Dec can match the date in any UTC time zone.
+
+Dates calculated using negative offsets will be This may be useful avoid
+date mismatches between Dec time zones that overlap with negative thus
+can be roughly one day ahead of their geographically closest UTC
+analogs. Zone ${rainbow6zon}, the default time of Points ${rainbow9zon}
+are .
+
+unless we subtract ten dd to make their offsets negative. The width of a
+UTC time zone is often
+41.<span style="text-decoration-line:overline;">6</span> m*λ*, but
+ranges from 0 m*λ* to the width of China🇨🇳:
+[424](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=109%C2%B056%E2%80%B2E-,West,-%3A%20Akto%20County)
+m*λ* –
+[254](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=%20%5Bcitation%20needed%5D-,East,-%3A%20Fuyuan%20County%2C%20Heilongjiang%2C%20on)
+m*λ* = 170 m*λ*.
+
+To accomodate negative UTC offsets, we can make any Dec offset negative
+by subtracting ten.
+
+The Dec time zone that corresponds to your UTC offset is Zone
+${decZone1st}.
+
+If you UTC offset is negative, To match the date in negative UTC zones,
+we can substract
+
+Each offset has a negative form that yields the same time but on a date
+that is one day earlier. To obtain the time in Zone ${rainbow0zn1}
+(*t*<sub>0</sub>), we can subtract the offset (*o*<sub>*x*</sub>) of any
+time zone *x* from its deciday time (*t*<sub>*x*</sub>): *t*<sub>0</sub>
+= *t*<sub>*x*</sub> – *o*<sub>*x*</sub>. Inversely, we can get the time
+in any time zone by adding its offset to the Zone ${rainbow0zn2} time.
+If *t*<sub>*x*</sub> is less than *o*<sub>*x*</sub>, then
+*t*<sub>0</sub> will be negative: *t*<sub>*x*</sub> \<
+*o*<sub>*x*</sub> → *t*<sub>0</sub> \< 0.
+
+We can add ten to any negative deciday time become positive.
+
+Instead of adding ten to a negative difference, we can subtract a the
+negative version of the offset In Dec, both times and offsets can be
+negative. Positive times tell us how much of the day has passed and
+negative times let us know how much of the day is left. Converting
+between positive and negative times or offsets is as easy as subtracting
+or adding ten. Negative offsets can facilitate mental calculations We
+can subtract ten from a time zone number to get a negative time zone
+offset.
+
+Both positive and negative offsets yield the correct time, but negative
+offsets result in a date that is one day behind the correct date
+produced by positive offsets.
+
+Not shown on the map are the four [major
 parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
 that depend on the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
@@ -645,16 +741,6 @@ m*ϕ*), and the
 [Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
 (${rainbowAnt0} m*ϕ* – ${rainbowAnt1} m*ϕ* = ${rainbowAnt2} m*ϕ*)
 Circles.
-
-Time zones can also be labeled🏷️with color🎨. Dec time zones are
-numbered ${rainbow0rng} to ${rainbow9rng}, like the meridians that
-separate them. The number assigned to each time zone is its time
-difference (offset) in <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span> (dd) from Zone
-${rainbow0zon}. [UTC time zone
-offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
-range from ${rainbowN5zn} to ${rainbowP583} dd. The Dec time zone that
-corresponds to your UTC offset is Zone ${decZone1st}.
 
 In Zone ${decZone2nd}, the current date is ${decYearHsl}+${decDateHsl}
 and the current time in decidays is ${decTimeHsl}–${decZone3rd}. The
@@ -1058,10 +1144,6 @@ divides Europe and Africa into Western and Eastern halves.
 The
 [choropleth](https://en.wikipedia.org/wiki/Choropleth_map#:~:text=a%20type%20of%20statistical%20thematic%20map%20that%20uses%20pseudocolor%2C%20meaning%20color%20corresponding%20with%20an%20aggregate%20summary%20of%20a%20geographic%20characteristic%20within%20spatial%20enumeration%20units%2C%20such%20as%20population%20density%20or%20per%2Dcapita%20income)🎨map🗺️below
 shows all ten Dec meridians and the full spectrum of UTC time⏳zones.
-The UTC time⏳zones to the East of New Zealand have negative UTC offsets
-and filled in with reddish colors. By design, all Dec time⏳zones have
-positive offsets. Therefore, Zones 6 to 9 are roughly 1 day ahead of
-their UTC analogs unless we subtract 10 to make their offsets negative.
 
 UTC+00:00 is in the middle of Zone 0, but makes detours to include
 Iceland and other islands. Except for such detours, each UTC time zone
@@ -1531,10 +1613,10 @@ rainbowDay0 = textcolor('0', "hsl(0" + slStr)
 rainbowMidY = textcolor('500', "hsl(180" + slStr)
 rainbowY000 = textcolor('0', "hsl(0" + slStr)
 rainbowY500 = textcolor('500', "hsl(180" + slStr)
-rainbowN100 = textcolor('-100', "hsl(300" + slStr)
-rainbowN200 = textcolor('-200', "hsl(280" + slStr)
-rainbowP100 = textcolor('100', "hsl(40" + slStr)
-rainbowP200 = textcolor('200', "hsl(60" + slStr)
+rainbowN100 = textcolor('-100', "hsl(40" + slStr)
+rainbowN200 = textcolor('-200', "hsl(60" + slStr)
+rainbowP100 = textcolor('100', "hsl(300" + slStr)
+rainbowP200 = textcolor('200', "hsl(280" + slStr)
 rainbowTilt = textcolor('65', "hsl(320.94117647058823" + slStr)
 rainbowCanc = textcolor('65', "hsl(320.94117647058823" + slStr)
 rainbowCapr = textcolor('-65', "hsl(25.88235294117647" + slStr)
@@ -1550,8 +1632,16 @@ rainbow0num = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow9num = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbow0rng = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow9rng = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
-rainbow0zon = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow0zn0 = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow0zn1 = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow0zn2 = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow6zon = textcolor('6', d3.color(`hsl(120${slStr}`).formatHex()) // red
+rainbow8zn0 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
+rainbow8zn1 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
+rainbow8zn2 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
+rainbow8zn3 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
+rainbowN2zn = textcolor('-2', d3.color(`hsl(60${slStr}`).formatHex()) // red
+rainbowMer8 = textcolor('800', d3.color(`hsl(60${slStr}`).formatHex()) // red
 rainbow9zon = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex()) // red
 rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex()) // red
@@ -1560,6 +1650,8 @@ rainbowN1zn = textcolor('-1', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbowP5zn = textcolor('5', d3.color(`hsl(180${slStr}`).formatHex()) // red
 rainbowP12h = textcolor('UTC+12:00', d3.color(`hsl(180${slStr}`).formatHex()) // red
 rainbowN12h = textcolor('UTC-12:00', d3.color(`hsl(180${slStr}`).formatHex()) // red
+rainbow0000 = textcolor('0.0000', d3.color(`hsl(0${slStr}`).formatHex()) // red
+rainbow8000 = textcolor('8.0000', d3.color(`hsl(80${slStr}`).formatHex()) // red
 rainbow0hex = textcolor('f00', d3.color(`hsl(0${slStr}`).formatHex()) // red
 rainbow1hex = textcolor('f0f', d3.color(`hsl(300${slStr}`).formatHex()) // magenta
 rainbow2hex = textcolor('a0f', d3.color(`hsl(280${slStr}`).formatHex()) // violet
@@ -1859,19 +1951,32 @@ elapsed = {
 }
 elaTime = elapsed % 1e5
 elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
-dz = unix2dote(now)
-ydz = dote2date(...dz)
-decYear = ydz[0]
-decDate = Math.floor(ydz[1])
-decTime = ydz[1] % 1
-decZone = ydz[2]
-decYearHsl = textcolor(decYear, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
-decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDate / (365 + isLeap))).h}` + slStr)
-decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
-decZone1st = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZone / 10)).h}` + slStr)
-decZone2nd = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZone / 10)).h}` + slStr)
-decZone3rd = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZone / 10)).h}` + slStr)
-decSign = decZone < 0 ? "+" : "-"
+dzP0 = unix2dote(now, 0)
+dzP8 = unix2dote(now, 8)
+ydzP0 = dote2date(...dzP0)
+ydzP8 = dote2date(...dzP8)
+dzN2 = unix2dote(now, -2)
+ydzN2 = dote2date(...dzN2)
+decYearP8 = ydzP8[0]
+decYearN2 = ydzN2[0]
+decDateP8 = Math.floor(ydzP8[1])
+decDateN2 = Math.floor(ydzN2[1])
+decTimeP8 = ydzP8[1] % 1
+decTimeP0 = ydzP0[1] % 1
+utcOffset = -(new Date).getTimezoneOffset() / 144
+utcOffsHsl = textcolor(utcOffset.toFixed(2).replace(/[.,]00$/, ""), `hsl(${d3.hsl(piecewiseColor((utcOffset + 10) % 10 / 10)).h}` + slStr)
+decYearHsl = textcolor(decYearP8, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
+decDateHsl = textcolor(decDateP8.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
+decYestHsl = textcolor(decDateN2.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateN2 / (365 + isLeapN2))).h}` + slStr)
+decTimeZn8 = textcolor((decTimeP8 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP8)).h}` + slStr)
+decTimeZn0 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+parLat = textcolor(latitude.toFixed(3), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
+parCos = Math.cos(latitude * 2 * Math.PI)
+parLen = textcolor(parCos.toFixed(3), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
+point0long = long2turn(Place_A[0], 1)
+point0zone = Math.floor(point0long)
+point0lHsl = textcolor(point0long.toFixed(2), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
+point0zHsl = textcolor(point0zone, `hsl(${d3.hsl(piecewiseColor(point0zone / 10)).h}` + slStr)
 decDek = Math.floor(decDate / 10)
 decDod = decDate % 10
 decMoty = Math.floor((5 * decDate + 2) / 153)
@@ -1884,11 +1989,12 @@ decSecond = (decMinute % 1) * 60
 isoHour = Math.floor(decHour)
 isoMinute = Math.floor(decMinute)
 isoSecond = Math.floor(decSecond)
-isLeap = decYear % 4 == 0 && decYear % 100 != 0 || decYear % 400 == 0;
+isLeapP8 = decYearP8 % 4 == 0 && decYearP8 % 100 != 0 || decYearP8 % 400 == 0;
+isLeapN2 = decYearN2 % 4 == 0 && decYearN2 % 100 != 0 || decYearN2 % 400 == 0;
 timezones = FileAttachment("../asset/timezones.json").json()
 zones = topojson.feature(timezones, timezones.objects.timezones).features
 mesh = topojson.mesh(timezones, timezones.objects.timezones)
-color = d3.scaleSequential(d3.interpolateRdBu).domain([14, -12])
+color = d3.scaleSequential(d3.interpolateRdBu).domain([-12, 14])
 // https://observablehq.com/@enjalot/draggable-world-map-coordinates-input
 // https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea
 function worldMapCoordinates(config = {}, dimensions) {
@@ -1917,6 +2023,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     path(f);
     context.fillStyle = color(f.properties.zone);
     context.fill();
+    context.innerHTML = `<title>${f.properties.places} ${f.properties.time_zone}</title>`;
   }
   function draw(lon0, lat0, lon1, lat1) {
     if (!utctoggle) {
@@ -2674,7 +2781,7 @@ div.coloropp canvas{
   overflow: visible;
 }
 div#colorslider > label {
-  maxwidth: 60px;
+  max-width: 60px;
 }
 div#colorslider input[type="number"] {
   width: 105px;
@@ -2683,7 +2790,7 @@ div#saturslider > div {
   min-width: 360px;
 }
 div#saturslider > label {
-  maxwidth: 60px;
+  max-width: 60px;
 }
 div#saturslider input[type="number"] {
   width: 105px;
@@ -2692,7 +2799,13 @@ div#lightslider > div {
   min-width: 360px;
 }
 div#lightslider > label {
-  maxwidth: 60px;
+  max-width: 60px;
+}
+div#latinput label {
+  --label-width: 65px;
+}
+div#latinput input[type="number"] {
+  width: 125px;
 }
 div#lightslider input[type="number"] {
   width: 105px;
