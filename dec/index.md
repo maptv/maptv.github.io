@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+039
+2025+040
 
 - [Dec](#dec)
 - [Map](#map)
@@ -664,18 +664,53 @@ Kingdom🇬🇧. By design, each Dec time zone has a positive offset that can
 be converted to a negative offset by subtracting ten dd. Negative
 offsets can sometimes facilitate conversion of times across time zones.
 
-To obtain the time in Zone ${rainbow0zn1}, ${decTimeZn0}, we can
-subtract either the positive or negative offset of any time zone from
-its time. Inversely, we can get the time in any time zone by adding its
-positive or negative offset to the Zone ${rainbow0zn2} time. We can
-choose either a positive or negative offset based on which one yields a
-positive time that is less than ten dd: 0 \<= t \< 10.
+To obtain the time in Zone <span class="color0">0</span>, we can
+subtract either one of the offsets of any time zone from its time. The
+Zone <span class="color8">8</span> to <span class="color0">0</span>
+conversion calculations are ${decTimeZn8} –
+<span class="color8">8</span> = , ${decTimeZn8} +
+<span class="color8">8</span> = . Inversely, we can get the time in any
+time zone by adding either one of its offset to the Zone
+<span class="color0">0</span> time. The Zone
+<span class="color0">0</span> to <span class="color8">8</span>
+conversion calculations are ${decTimeZn8} –
+<span class="color8">8</span> = , ${decTimeZn8} +
+<span class="color8">8</span> = .
 
-In Dec, negative times tell us how much of the day is left, instead of
-how much of the day has passed. Positive and negative times are two
-sides of the same coin🪙. At noon, half of the day has passed and half
-is left, just like a glass🥃can be both half full and half empty. A
-negative time will become positive if we add ten dd.
+Of the two possible results, we can pick the one that is within the
+typical bounds for a Dec time: 0 \<= time \< 10.
+
+The time zone By default, Points <span class="point0">0</span> and
+<span class="point1">1</span> on the map🗺️above⬆️lie on [Longitude
+8](https://en.wikipedia.org/wiki/90th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Gulf%20of%20Mexico%2C%20Central%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
+(${rainbowMer8} m*λ*), the start of Zone <span class="color8">8</span>.
+To obtain the time in Zone <span class="color0">0</span>, we can
+subtract either the positive or negative offset of Zone
+<span class="color8">8</span> from its time:
+
+and make
+
+At least one of the two kinds of offsets will result in Inversely, we
+can get the time in any time zone by adding either one of its offset to
+the Zone <span class="color0">0</span> time.
+
+The time zone conversion calculations for Zone
+<span class="color8">8</span> are
+
+We can choose the offset based on whether we want the resulting time to
+be positive or negative. In Zone <span class="color0">0</span>, the
+positive time is currently ${decTimeZ0n} and the current negative time
+is ${decTimeZ0p}
+
+In Dec, negative times are perfectly valid, but only positive times are
+shown by default. Negative times tell us how much of the day is left,
+instead of how much of the day has passed. Positive and negative times
+are two sides of the same coin🪙. At noon, half of the day has passed
+and half is left, just like a glass🥃can be both half full and half
+empty.
+
+To convert between positive and negative times, we can add and subtract
+ten dd as needed.
 
 In contrast, dates are impacted by our choice of a positive or negative
 offset. Positive offset dates are one day ahead of their negative
@@ -1971,13 +2006,15 @@ decDateP8 = Math.floor(ydzP8[1])
 decDateN2 = Math.floor(ydzN2[1])
 decTimeP8 = ydzP8[1] % 1
 decTimeP0 = ydzP0[1] % 1
+decTimeN0 = (decTimeP0 - 1) % 1
 utcOffset = -(new Date).getTimezoneOffset() / 144
 utcOffsHsl = textcolor(utcOffset.toFixed(2).replace(/[.,]00$/, ""), `hsl(${d3.hsl(piecewiseColor((utcOffset + 10) % 10 / 10)).h}` + slStr)
 decYearHsl = textcolor(decYearP8, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
 decDateHsl = textcolor(decDateP8.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
 decYestHsl = textcolor(decDateN2.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateN2 / (365 + isLeapN2))).h}` + slStr)
 decTimeZn8 = textcolor((decTimeP8 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP8)).h}` + slStr)
-decTimeZn0 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeZ0p = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeZ0n = textcolor((decTimeN0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 parLat = textcolor(latitude.toFixed(3), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
 parCos = Math.cos(latitude * 2 * Math.PI)
 parLen = textcolor(parCos.toFixed(3), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
