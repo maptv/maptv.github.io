@@ -96,9 +96,24 @@ Like the ten major longitudes that separate them, Dec time zones are numbered [0
 
 [UTC time zone offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place) range from \${rainbowN5zn} to \${rainbowP583} dd. Negative UTC offsets are common to the East of New Zealand🇳🇿and to the West of the United Kingdom🇬🇧. By design, each Dec time zone has a positive offset that can be converted to a negative offset by subtracting ten dd. Negative offsets can sometimes facilitate conversion of times across time zones.
 
-To obtain the time in Zone \${rainbow0zn1}, \${decTimeZn0}, we can subtract either the positive or negative offset of any time zone from its time. Inversely, we can get the time in any time zone by adding its positive or negative offset to the Zone \${rainbow0zn2} time. We can choose either a positive or negative offset based on which one yields a positive time that is less than ten dd: 0 <= t < 10.
+To obtain the time in Zone [0]{.color0}, we can subtract either one of the offsets of any time zone from its time. The Zone [8]{.color8} to [0]{.color0} conversion calculations are ${decTimeZn8} -- [8]{.color8} = , ${decTimeZn8} + [8]{.color8} = . Inversely, we can get the time in any time zone by adding either one of its offset to the Zone [0]{.color0} time. The Zone [0]{.color0} to [8]{.color8} conversion calculations are ${decTimeZn8} -- [8]{.color8} = , ${decTimeZn8} + [8]{.color8} = . 
 
-In Dec, negative times tell us how much of the day is left, instead of how much of the day has passed. Positive and negative times are two sides of the same coin🪙. At noon, half of the day has passed and half is left, just like a glass🥃can be both half full and half empty. A negative time will become positive if we add ten dd.
+Of the two possible results, we can pick the one that is within the typical bounds for a Dec time: 0 <= time < 10.
+
+The time zone By default, Points [0]{.point0} and [1]{.point1} on the map🗺️above⬆️lie on [Longitude 8](https://en.wikipedia.org/wiki/90th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Gulf%20of%20Mexico%2C%20Central%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole) (\${rainbowMer8}  m$\lambda$), the start of Zone [8]{.color8}. To obtain the time in Zone [0]{.color0}, we can subtract either the positive or negative offset of Zone [8]{.color8} from its time: 
+
+and make 
+
+At least one of the two kinds of offsets will result in 
+Inversely, we can get the time in any time zone by adding either one of its offset to the Zone [0]{.color0} time.
+
+The time zone conversion calculations for Zone [8]{.color8} are 
+
+We can choose the offset based on whether we want the resulting time to be positive or negative. In Zone [0]{.color0}, the positive time is currently \${decTimeZ0n} and the current negative time is \${decTimeZ0p}
+
+In Dec, negative times are perfectly valid, but only positive times are shown by default.  Negative times tell us how much of the day is left, instead of how much of the day has passed. Positive and negative times are two sides of the same coin🪙. At noon, half of the day has passed and half is left, just like a glass🥃can be both half full and half empty.
+
+To convert between positive and negative times, we can add and subtract ten dd as needed.
 
 In contrast, dates are impacted by our choice of a positive or negative offset. Positive offset dates are one day ahead of their negative counterparts.
 
