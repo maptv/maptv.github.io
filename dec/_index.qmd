@@ -604,6 +604,12 @@ quickRender = (width, height, renderer) => {
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
+    zone = zone ?? -Math.round(
+      (new Date).getTimezoneOffset() / 144)
+    ) / 10 + offset, zone]
+}
+function unix2dote1(unix, zone, offset = 719468) {
+  return [(unix ?? Date.now()) / 86400000 + (
     zone = zone ?? (-Math.round(
       (new Date).getTimezoneOffset() / 144) + 10) % 10
     ) / 10 + offset, zone]
@@ -706,6 +712,14 @@ elapsed = {
 }
 elaTime = elapsed % 1e5
 elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
+dz = unix2dote(now)
+ydz = dote2date(...dz)
+decYear = ydz[0]
+decDate = Math.floor(ydz[1])
+decTime = ydz[1] % 1
+decZone = ydz[2]
+decZonePos = (ydz[2] + 10) % 10
+decSign = decZone < 0 ? "+" : "–"
 dzP0 = unix2dote(now, 0)
 dzP8 = unix2dote(now, 8)
 ydzP0 = dote2date(...dzP0)
@@ -719,12 +733,19 @@ decDateN2 = Math.floor(ydzN2[1])
 decTimeP8 = ydzP8[1] % 1
 decTimeP0 = ydzP0[1] % 1
 decTimeN0 = (decTimeP0 - 1) % 1
-utcOffset = -(new Date).getTimezoneOffset() / 144
-utcOffsHsl = textcolor(utcOffset.toFixed(2).replace(/[.,]00$/, ""), `hsl(${d3.hsl(piecewiseColor((utcOffset + 10) % 10 / 10)).h}` + slStr)
-decYearHsl = textcolor(decYearP8, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
-decDateHsl = textcolor(decDateP8.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
-decYestHsl = textcolor(decDateN2.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateN2 / (365 + isLeapN2))).h}` + slStr)
-decTimeZn8 = textcolor((decTimeP8 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP8)).h}` + slStr)
+utcOffsetM = -(new Date).getTimezoneOffset()
+utcOffsetD = utcOffsetM / 144
+utcOffDiff = (Math.round(utcOffsetD) - utcOffsetD).toFixed(2).replaceAll(/[.]0+$/g, "")
+utcOffsetP = (utcOffsetD + 10) % 10
+decZonHslN = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
+decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
+decZonHslA = textcolor(Math.abs(decZone), `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
+utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+utcOffHslD = textcolor(utcOffsetD.toFixed(2).replaceAll(/[.]0+$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+utcOffHslP = textcolor(utcOffsetP.toFixed(2).replaceAll(/[.]0+$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+decYearHsl = textcolor(decYear, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
+decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
+decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
 decTimeZ0p = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 decTimeZ0n = textcolor((decTimeN0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 parLat = textcolor(latitude.toFixed(3), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
@@ -1462,6 +1483,93 @@ function swatches(palette) {
 colorsize = 210
 ```
 
+```{ojs}
+html`
+<style>
+.color0 {
+  background: hsl(0 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(0, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color1 {
+  background: hsl(300 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(300, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color2 {
+  background: hsl(280 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(280, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color3 {
+  background: hsl(240 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(240, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color4 {
+  background: hsl(200 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(200, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color5 {
+  background: hsl(180 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(180, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color6 {
+  background: hsl(120 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(120, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color7 {
+  background: hsl(80 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(80, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color8 {
+  background: hsl(60 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(60, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color9 {
+  background: hsl(40 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(40, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+</style>
+`
+```
+
 ```{=html}
 <style>
 .text-preview {
@@ -1559,101 +1667,8 @@ div#lightslider > div {
 div#lightslider > label {
   max-width: 60px;
 }
-.color0 {
-  background: rgb(255, 0, 0);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color1 {
-  background: rgb(255, 0, 255);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color2 {
-  background: rgb(170, 0, 255);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color25 {
-  background: rgb(85, 0, 255);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color3 {
-  background: rgb(0, 0, 255);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color4 {
-  background: rgb(0, 170, 255);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color5 {
-  background: rgb(0, 255, 255);
-  color: black;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color6 {
-  background: rgb(0, 255, 0);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color7 {
-  background: rgb(170, 255, 0);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color75 {
-  background: rgb(213, 255, 0);
-  color: black;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color8 {
-  background: rgb(255, 255, 0);
-  color: black;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color9 {
-  background: rgb(255, 170, 0);
-  color: black;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
+div#latinput form {
+  margin-bottom: 11px;
 }
 div#latinput label {
   --label-width: 65px;
