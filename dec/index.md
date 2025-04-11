@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+040
+2025+041
 
 - [Dec](#dec)
 - [Map](#map)
@@ -8,6 +8,7 @@ Martin Laptev
 - [Hex](#hex)
 - [Pun](#pun)
 - [UTC](#utc)
+- [Zem](#zem)
 
 <div id="decnav">
 
@@ -621,6 +622,55 @@ toggle✅input is enabled, Latitudes
 map🗺️above⬆️along with the ten major longitudes that divide the
 Earth🌍into the ten Dec time zones.
 
+Like the ten major longitudes that separate them, Dec time zones are
+numbered <span class="color0">0</span> to <span class="color9">9</span>.
+The number assigned to each time zone is its offset from Zone
+<span class="color0">0</span>. Dec offsets are positive integer
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</span>
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</span>). To obtain the offset at a location,
+we
+[floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
+its d*λ* longitude: ⌊d*λ*⌋. Based on its current d*λ* longitude,
+${point0lHsl}, <span class="point0">Point 0</span> on the map🗺️above⬆️is
+in Zone ${point0zHsl}.
+
+# UTC
+
+[UTC time zone
+offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
+range from ${rainbowN5zn} to ${rainbowP583} <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>. According to
+your web browser, your UTC offset is ${utcOffHslM} ÷ 144 = ${utcOffHslD}
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</span>. The Dec time zone that corresponds to
+your UTC offset is Zone ${decZonHslP}. This Dec time zone is
+${utcOffDiff} <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</span> ${utcOffDiff \< 0 ? “behind” :
+“ahead”} of time zones with your UTC offset. The times in corresponding
+Dec and UTC time zones can differ by up to 0.5 <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>.
+
+To obtain the time in Zone <span class="color0">0</span>, we can
+subtract the offset of any time zone from its time. Inversely, we can
+get the time in any time zone by adding its offset to the Zone
+<span class="color0">0</span> time. The date and time are the exact same
+in Zone <span class="color0">0</span> and
+[UTC<span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time).
+Zone <span class="color5">5</span> and
+[UTC<span class="color5">+12:00</span>](https://en.wikipedia.org/wiki/UTC%2B12:00)
+have the exact same date and time, both are exactly one day ahead of
+[UTC<span class="color5">-12:00</span>](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00).
+
+To avoid date mismatches with UTC time zones that have negative offsets,
+we can subtract ten dd from any positive Dec offset to make it negative.
+This way each Dec time zone has both a positive and a negative offset.
+When we add an offset of ${decZonHslN} dd to the current date and time
+in Zone <span class="color0">0</span>, we get
+${decYearHsl}+${decDateHsl} as the date and
+${decTimeHsl}${decSign}${decZonHslA} as the time.
+
 Each Dec time zone is one <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="a tenth of a circle of latitude">deciparallel</span>
@@ -642,31 +692,63 @@ of its *ϕ* latitude: cos(${parLat}) = ${parLen}.
 viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: .001})
 ```
 
-Like the ten major longitudes that separate them, Dec time zones are
-numbered <span class="color0">0</span> to <span class="color9">9</span>.
-The number assigned to each time zone is its offset in
+# Zem
+
+In addition to c, Dec has another distance unit called a **z**one
+**e**quatorial **m**eter (zem). As its name suggests, the zem is related
+to time zones, the Equator, and the
+[meter](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units).
+Whereas the meter was [originally
+defined](https://en.wikipedia.org/wiki/Metre#Definition:~:text=The%20metre%20was%20originally%20defined%20in%201791%20by%20the%20French%20National%20Assembly%20as%20one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole%20along%20a%20great%20circle%2C)
+as a ten millionth of a [quarter
+meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole),
+the zem is roughly a ten millionth of the width of Dec time zone at the
+Equator. Simply put, 1 zem = 0.4 meters = 0.1 $\micro$c.
+
+with negative offsets . The Dec time zone that most closely matches Of
+the more than two dozen UTC time zone offsets, only three are integers
+after we convert hours to <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>:
+<span class="color5">-5</span>, <span class="color0">0</span>,
+<span class="color5">5</span>. Time zones with one of these three
+offsets can converted directly between. A UTC offset that is not a
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span> (dd) from Zone
-<span class="color0">0</span>. To obtain the dd offset o at a location,
-we
-[floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-its d*λ* longitude: o = ⌊d*λ*⌋. For example, the current d*λ* longitude
-of [Point 0](.point0) on the map🗺️above⬆️, ${point0lHsl}, corresponds to
-Zone ${point0zHsl}.
+data-bs-title="deciday">dd</span> integer will not The date and time in
+UTC time zones with an offset of 0 Zone 0 has an offset of 0. -5 or 5,
+we The date and time in UTC time zones with an offset of zero dd match
+dd offsets matches the time in one of the ten Dec time zones exactly.
+UTC
 
-# UTC
+offsets are positive integers, but we can use negative the UTC offset is
+not an integer, we round it. obtain the Zones
+<span class="color5">5</span> to <span class="color9">9</span> overlap
+with UTC time zones that have negative
+[offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place).
+We can design, The When the “UTC” toggle✅input is enabled, UTC time
+zones are shown on the map🗺️above⬆️. To find the he UTC-12:00 time zone
+roughly from New Zealand🇳🇿to the United Kingdom🇬🇧. By design, each Dec
+time zone has a positive offset that can be converted to a negative
+offset by subtracting ten dd. The sole purpose of negative offsets in
+Dec is compatibility with UTC.
 
-[UTC time zone
-offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
-range from ${rainbowN5zn} to ${rainbowP583} dd. Negative UTC offsets are
-common to the East of New Zealand🇳🇿and to the West of the United
-Kingdom🇬🇧. By design, each Dec time zone has a positive offset that can
-be converted to a negative offset by subtracting ten dd. Negative
-offsets can sometimes facilitate conversion of times across time zones.
+The range🎚️inputs below⬇️select two time zones to demonstrate time zone
+conversion. The round trip conversion of round trip conversion of the
+current date and time in Zone <span class="color0">0</span> shown
+beneath the input. First, the offset is The date and time start as one
+number called a day-of-year (<span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>). After
+the offset is applied, the <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> is split
+into the date and the time. but are then displayed separately. The time
+is also converted from days to decidays. is measured in days and the
+Positive and negative offsets that yield the same time are displayed
+together for easy comparison. Regardless of which offset is selected,
 
-To obtain the time in Zone <span class="color0">0</span>, we can
-subtract either one of the offsets of any time zone from its time. The
-Zone <span class="color8">8</span> to <span class="color0">0</span>
+Zone x to y Day.day + o ‎ =  Day.day
+
+Zone y to x
+
+The Zone <span class="color8">8</span> to <span class="color0">0</span>
 conversion calculations are ${decTimeZn8} –
 <span class="color8">8</span> = , ${decTimeZn8} +
 <span class="color8">8</span> = . Inversely, we can get the time in any
@@ -690,9 +772,7 @@ subtract either the positive or negative offset of Zone
 
 and make
 
-At least one of the two kinds of offsets will result in Inversely, we
-can get the time in any time zone by adding either one of its offset to
-the Zone <span class="color0">0</span> time.
+At least one of the two kinds of offsets will result in
 
 The time zone conversion calculations for Zone
 <span class="color8">8</span> are
@@ -784,10 +864,9 @@ m*ϕ*), and the
 (${rainbowAnt0} m*ϕ* – ${rainbowAnt1} m*ϕ* = ${rainbowAnt2} m*ϕ*)
 Circles.
 
-In Zone ${decZone2nd}, the current date is ${decYearHsl}+${decDateHsl}
-and the current time in decidays is ${decTimeHsl}–${decZone3rd}. The
-time that has elapsed since this webpage was loaded is ${elaTimeHsl}.
-Even distances can be labeled🏷️with color🎨.
+In Zone ${decZone2nd}, the current date is and the current time in
+decidays is –. The time that has elapsed since this webpage was loaded
+is ${elaTimeHsl}. Even distances can be labeled🏷️with color🎨.
 
 At an average speed of ${travelspeed} $\text m\omega \text r$, we could
 cover the ${distance_mtaur} $\text m\tau r$ between Points
@@ -1892,6 +1971,12 @@ quickRender = (width, height, renderer) => {
 // http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
+    zone = zone ?? -Math.round(
+      (new Date).getTimezoneOffset() / 144)
+    ) / 10 + offset, zone]
+}
+function unix2dote1(unix, zone, offset = 719468) {
+  return [(unix ?? Date.now()) / 86400000 + (
     zone = zone ?? (-Math.round(
       (new Date).getTimezoneOffset() / 144) + 10) % 10
     ) / 10 + offset, zone]
@@ -1994,6 +2079,14 @@ elapsed = {
 }
 elaTime = elapsed % 1e5
 elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
+dz = unix2dote(now)
+ydz = dote2date(...dz)
+decYear = ydz[0]
+decDate = Math.floor(ydz[1])
+decTime = ydz[1] % 1
+decZone = ydz[2]
+decZonePos = (ydz[2] + 10) % 10
+decSign = decZone < 0 ? "+" : "–"
 dzP0 = unix2dote(now, 0)
 dzP8 = unix2dote(now, 8)
 ydzP0 = dote2date(...dzP0)
@@ -2007,12 +2100,19 @@ decDateN2 = Math.floor(ydzN2[1])
 decTimeP8 = ydzP8[1] % 1
 decTimeP0 = ydzP0[1] % 1
 decTimeN0 = (decTimeP0 - 1) % 1
-utcOffset = -(new Date).getTimezoneOffset() / 144
-utcOffsHsl = textcolor(utcOffset.toFixed(2).replace(/[.,]00$/, ""), `hsl(${d3.hsl(piecewiseColor((utcOffset + 10) % 10 / 10)).h}` + slStr)
-decYearHsl = textcolor(decYearP8, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
-decDateHsl = textcolor(decDateP8.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
-decYestHsl = textcolor(decDateN2.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateN2 / (365 + isLeapN2))).h}` + slStr)
-decTimeZn8 = textcolor((decTimeP8 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP8)).h}` + slStr)
+utcOffsetM = -(new Date).getTimezoneOffset()
+utcOffsetD = utcOffsetM / 144
+utcOffDiff = (Math.round(utcOffsetD) - utcOffsetD).toFixed(2).replaceAll(/[.]0+$/g, "")
+utcOffsetP = (utcOffsetD + 10) % 10
+decZonHslN = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
+decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
+decZonHslA = textcolor(Math.abs(decZone), `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
+utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+utcOffHslD = textcolor(utcOffsetD.toFixed(2).replaceAll(/[.]0+$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+utcOffHslP = textcolor(utcOffsetP.toFixed(2).replaceAll(/[.]0+$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+decYearHsl = textcolor(decYear, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
+decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
+decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
 decTimeZ0p = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 decTimeZ0n = textcolor((decTimeN0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 parLat = textcolor(latitude.toFixed(3), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
@@ -2750,6 +2850,93 @@ function swatches(palette) {
 colorsize = 210
 ```
 
+``` {ojs}
+html`
+<style>
+.color0 {
+  background: hsl(0 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(0, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color1 {
+  background: hsl(300 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(300, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color2 {
+  background: hsl(280 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(280, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color3 {
+  background: hsl(240 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(240, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color4 {
+  background: hsl(200 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(200, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color5 {
+  background: hsl(180 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(180, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color6 {
+  background: hsl(120 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(120, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color7 {
+  background: hsl(80 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(80, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color8 {
+  background: hsl(60 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(60, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color9 {
+  background: hsl(40 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(40, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+</style>
+`
+```
+
 <style>
 .text-preview {
   display: flex;
@@ -2846,101 +3033,8 @@ div#lightslider > div {
 div#lightslider > label {
   max-width: 60px;
 }
-.color0 {
-  background: rgb(255, 0, 0);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color1 {
-  background: rgb(255, 0, 255);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color2 {
-  background: rgb(170, 0, 255);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color25 {
-  background: rgb(85, 0, 255);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color3 {
-  background: rgb(0, 0, 255);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color4 {
-  background: rgb(0, 170, 255);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color5 {
-  background: rgb(0, 255, 255);
-  color: black;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color6 {
-  background: rgb(0, 255, 0);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color7 {
-  background: rgb(170, 255, 0);
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color75 {
-  background: rgb(213, 255, 0);
-  color: black;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color8 {
-  background: rgb(255, 255, 0);
-  color: black;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color9 {
-  background: rgb(255, 170, 0);
-  color: black;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
+div#latinput form {
+  margin-bottom: 11px;
 }
 div#latinput label {
   --label-width: 65px;
