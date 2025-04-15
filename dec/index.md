@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+041
+2025+045
 
 - [Dec](#dec)
 - [Map](#map)
@@ -467,60 +467,46 @@ decBar = colorbar({
 <td>${rainbowHex}</td>
 </tr>
 <tr>
-<td>${rainbowNE}</td>
-<td>${rainbowNEmtr}</td>
-<td>${rainbowNEdegC}</td>
-<td>${rainbowNEdegH}</td>
-<td>${rainbowNEhex}</td>
+<td><span class="color5">NE</span></td>
+<td><span class="color5">125</span></td>
+<td><span class="color5">45</span></td>
+<td><span class="color5">295</span></td>
+<td><span class="color0">ea00ff</span></td>
 </tr>
 <tr>
-<td>${rainbowE}</td>
-<td>${rainbowEmtr}</td>
-<td>${rainbowEdegC}</td>
-<td>${rainbowEdegH}</td>
-<td>${rainbowEhex}</td>
+<td><span class="color5">E</span></td>
+<td><span class="color5">250</span></td>
+<td><span class="color5">90</span></td>
+<td><span class="color5">260</span></td>
+<td><span class="color0">5500ff</span></td>
 </tr>
 <tr>
-<td>${rainbowSE}</td>
-<td>${rainbowSEmtr}</td>
-<td>${rainbowSEdegC}</td>
-<td>${rainbowSEdegH}</td>
-<td>${rainbowSEhex}</td>
+<td><span class="color5">SE</span></td>
+<td><span class="color5">375</span></td>
+<td><span class="color5">135</span></td>
+<td><span class="color5">210</span></td>
+<td><span class="color0">0080ff</span></td>
 </tr>
 <tr>
-<td>${rainbowS}</td>
-<td>${rainbowSmtr}</td>
-<td>${rainbowSdegC}</td>
-<td>${rainbowSdegH}</td>
-<td>${rainbowShex}</td>
+<td><span class="color5">S</span></td>
+<td><span class="color5">500</span></td>
+<td><span class="color5">180</span></td>
+<td><span class="color5">180</span></td>
+<td><span class="color0">00ffff</span></td>
 </tr>
 <tr>
-<td>${rainbowSW}</td>
-<td>${rainbowSWmtr}</td>
-<td>${rainbowSWdegC}</td>
-<td>${rainbowSWdegH}</td>
-<td>${rainbowSWhex}</td>
+<td><span class="color5">SW</span></td>
+<td><span class="color5">625</span></td>
+<td><span class="color5">225</span></td>
+<td><span class="color5">110</span></td>
+<td><span class="color0">00ffff</span></td>
 </tr>
 <tr>
-<td>${rainbowW}</td>
-<td>${rainbowWmtr}</td>
-<td>${rainbowWdegC}</td>
-<td>${rainbowWdegH}</td>
-<td>${rainbowWhex}</td>
-</tr>
-<tr>
-<td>${rainbowNW}</td>
-<td>${rainbowNWmtr}</td>
-<td>${rainbowNWdegC}</td>
-<td>${rainbowNWdegH}</td>
-<td>${rainbowNWhex}</td>
-</tr>
-<tr>
-<td>${rainbowN}</td>
-<td>${rainbowNmtr}</td>
-<td>${rainbowNdegC}</td>
-<td>${rainbowNdegH}</td>
-<td>${rainbowNhex}</td>
+<td><span class="color0">N</span></td>
+<td><span class="color0">0</span></td>
+<td><span class="color0">0</span></td>
+<td><span class="color0">0</span></td>
+<td><span class="color0">ff0000</span></td>
 </tr>
 </tbody>
 </table>
@@ -694,16 +680,29 @@ viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: 
 
 # Zem
 
-In addition to c, Dec has another distance unit called a **z**one
-**e**quatorial **m**eter (zem). As its name suggests, the zem is related
-to time zones, the Equator, and the
-[meter](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units).
-Whereas the meter was [originally
+In addition to c, Dec has a distance unit called a zem, which is named
+after the [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰word for Earth🌏
+and stands for **z**one **e**quatorial **m**eter (zem). One zem is 10
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a taur">nanotaurs</span> (nc), 0.4
+($2\over5$) meters, or about a ten millionth of the width of a Dec time
+zone at the Equator. Similarly, one
+[meter](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units)
+is 25 nc, 2.5 ($5\over2$) zems, or roughly a ten millionth of a [quarter
+meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole).
+
+Apart from distance measurements, zem are also useful for measuring
+speed. zem is to an mc as centimilliday is to a day. The default
+distance between Points <span class="point0">0</span> and
+<span class="point1">1</span> on the map🗺️above⬆️is 100 mc, ten million
+(10<sup>7</sup>) zem, or four million (4 × 10<sup>6</sup>) meters. When
+crossing such large distances, mv are the correct scale
+
+Therefore, 1 z = 0.4 m and 1 m = 2.5 z. [originally
 defined](https://en.wikipedia.org/wiki/Metre#Definition:~:text=The%20metre%20was%20originally%20defined%20in%201791%20by%20the%20French%20National%20Assembly%20as%20one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole%20along%20a%20great%20circle%2C)
-as a ten millionth of a [quarter
-meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole),
-the zem is roughly a ten millionth of the width of Dec time zone at the
-Equator. Simply put, 1 zem = 0.4 meters = 0.1 $\micro$c.
+[originally
+defined](https://en.wikipedia.org/wiki/Metre#Definition:~:text=The%20metre%20was%20originally%20defined%20in%201791%20by%20the%20French%20National%20Assembly%20as%20one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole%20along%20a%20great%20circle%2C)
+Simply put, 1 zem = 0.4 meters = .
 
 with negative offsets . The Dec time zone that most closely matches Of
 the more than two dozen UTC time zone offsets, only three are integers
