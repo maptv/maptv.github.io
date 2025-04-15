@@ -262,11 +262,9 @@ decBar = colorbar({
 |  🧭            | **m$\alpha$**           | **c°**            | **h°**            | **hex**          |
 | -------------- | ---------------  | ----------------- | ----------------- | ---------------- |
 | \${rainbowDir} | \${rainbowMtr}   | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}   |
-| \${rainbowNE}  | \${rainbowNEmtr} | \${rainbowNEdegC} | \${rainbowNEdegH} | \${rainbowNEhex} |
-| \${rainbowE}   | \${rainbowEmtr}  | \${rainbowEdegC}  | \${rainbowEdegH}  | \${rainbowEhex}  |
-| \${rainbowSE}  | \${rainbowSEmtr} | \${rainbowSEdegC} | \${rainbowSEdegH} | \${rainbowSEhex} |
-| \${rainbowS}   | \${rainbowSmtr}  | \${rainbowSdegC}  | \${rainbowSdegH}  | \${rainbowShex}  |
-| \${rainbowSW}  | \${rainbowSWmtr} | \${rainbowSWdegC} | \${rainbowSWdegH} | \${rainbowSWhex} |
-| \${rainbowW}   | \${rainbowWmtr}  | \${rainbowWdegC}  | \${rainbowWdegH}  | \${rainbowWhex}  |
-| \${rainbowNW}  | \${rainbowNWmtr} | \${rainbowNWdegC} | \${rainbowNWdegH} | \${rainbowNWhex} |
-| \${rainbowN}   | \${rainbowNmtr}  | \${rainbowNdegC}  | \${rainbowNdegH}  | \${rainbowNhex}  |
+| [NE]{.color5}   | [125]{.color5}  | [45]{.color5}  | [295]{.color5}  | [ea00ff]{.color0}  |
+| [E]{.color5}   | [250]{.color5}  | [90]{.color5}  | [260]{.color5}  | [5500ff]{.color0}  |
+| [SE]{.color5}   | [375]{.color5}  | [135]{.color5}  | [210]{.color5}  | [0080ff]{.color0}  |
+| [S]{.color5}   | [500]{.color5}  | [180]{.color5}  | [180]{.color5}  | [00ffff]{.color0}  |
+| [SW]{.color5}   | [625]{.color5}  | [225]{.color5}  | [110]{.color5}  | [00ffff]{.color0}  |
+| [N]{.color0}   | [0]{.color0}  | [0]{.color0}  | [0]{.color0}  | [ff0000]{.color0}  |
