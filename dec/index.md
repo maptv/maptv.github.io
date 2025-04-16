@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+045
+2025+046
 
 - [Dec](#dec)
 - [Map](#map)
@@ -63,7 +63,7 @@ data-bs-title="thousandths of a circle of latitude">milli[parallels](https://en.
 [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
 ([*ϕ*](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
 in <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a polar circumferences">milli[meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)</span>
+data-bs-title="thousandths of a polar circumference">milli[meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)</span>
 (m*ϕ*) of Points <span class="point0">0</span> and
 <span class="point1">1</span> on the map🗺️beneath the table. By default,
 <span class="point0">Point 0</span> is at
@@ -467,39 +467,39 @@ decBar = colorbar({
 <td>${rainbowHex}</td>
 </tr>
 <tr>
-<td><span class="color5">NE</span></td>
-<td><span class="color5">125</span></td>
-<td><span class="color5">45</span></td>
-<td><span class="color5">295</span></td>
-<td><span class="color0">ea00ff</span></td>
+<td><span class="color125">NE</span></td>
+<td><span class="color125">125</span></td>
+<td><span class="color125">45</span></td>
+<td><span class="color125">295</span></td>
+<td><span class="color125">ea00ff</span></td>
 </tr>
 <tr>
-<td><span class="color5">E</span></td>
-<td><span class="color5">250</span></td>
-<td><span class="color5">90</span></td>
-<td><span class="color5">260</span></td>
-<td><span class="color0">5500ff</span></td>
+<td><span class="color250">E</span></td>
+<td><span class="color250">250</span></td>
+<td><span class="color250">90</span></td>
+<td><span class="color250">260</span></td>
+<td><span class="color250">5500ff</span></td>
 </tr>
 <tr>
-<td><span class="color5">SE</span></td>
-<td><span class="color5">375</span></td>
-<td><span class="color5">135</span></td>
-<td><span class="color5">210</span></td>
-<td><span class="color0">0080ff</span></td>
+<td><span class="color375">SE</span></td>
+<td><span class="color375">375</span></td>
+<td><span class="color375">135</span></td>
+<td><span class="color375">210</span></td>
+<td><span class="color375">0080ff</span></td>
 </tr>
 <tr>
 <td><span class="color5">S</span></td>
 <td><span class="color5">500</span></td>
 <td><span class="color5">180</span></td>
 <td><span class="color5">180</span></td>
-<td><span class="color0">00ffff</span></td>
+<td><span class="color5">00ffff</span></td>
 </tr>
 <tr>
-<td><span class="color5">SW</span></td>
-<td><span class="color5">625</span></td>
-<td><span class="color5">225</span></td>
-<td><span class="color5">110</span></td>
-<td><span class="color0">00ffff</span></td>
+<td><span class="color625">SW</span></td>
+<td><span class="color625">625</span></td>
+<td><span class="color625">225</span></td>
+<td><span class="color625">110</span></td>
+<td><span class="color625">00ffff</span></td>
 </tr>
 <tr>
 <td><span class="color0">N</span></td>
@@ -680,16 +680,53 @@ viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: 
 
 # Zem
 
-In addition to c, Dec has a distance unit called a zem, which is named
-after the [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰word for Earth🌏
-and stands for **z**one **e**quatorial **m**eter (zem). One zem is 10
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="billionths of a taur">nanotaurs</span> (nc), 0.4
-($2\over5$) meters, or about a ten millionth of the width of a Dec time
-zone at the Equator. Similarly, one
-[meter](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units)
-is 25 nc, 2.5 ($5\over2$) zems, or roughly a ten millionth of a [quarter
-meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole).
+Apart from c, Dec also measures distance📏using a unit called the
+**z**one **e**quatorial **m**eter (zem). The width of a Dec time zone at
+the Equator is roughly ten million (~10<sup>7</sup>) zems. Similarly,
+the distance📏from the Equator to one of the Poles is ~10<sup>7</sup>
+[meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units).
+In other words, a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a polar circumference">decimeridian</span>
+(d*ϕ*) is ~10<sup>7</sup> zems long and a [quarter
+meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole)
+is ~10<sup>7</sup> meters long.
+
+One c is a hundred million (10<sup>8</sup>) zems or forty million (4 ×
+10<sup>7</sup>) meters. A zem is 10 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="billionths of a taur">nanotaurs</span> (nc) or 0.4
+($2\over5$) meters. A meter is 25 nc or 2.5 ($5\over2$) zems. One mv is
+equal to one zem per <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a hundred thousandth of a day">centimilliday</span>. In
+Dec, a centimilliday is called a beat because it is similar in duration
+to a heart❤️beat or musical🎵beat. One mc is 10<sup>5</sup> zem and a
+day is 10<sup>5</sup> beats.
+
+In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, zem means Earth🌏.
+This is fitting because all Dec units are based on physical properties
+of the Earth🌎. At the Equator, the Earth🌍rotates on its axis at a
+speed of 1.00224 v. If we could indefinitely maintain this speed while
+flying West in an airplane✈️while the sun☀️was setting, we would be able
+to perpetually fly [into the
+sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
+
+To reach the necessary speed, the airplane✈️would need to surpass the
+[speed of
+sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊:
+0.735048 v or Mach 1. [Mach
+numbers](https://en.wikipedia.org/wiki/Mach_number) are similar to v,
+but are relative to the speed of sound🔊instead of the equatorial speed
+of rotation of the Earth. One v is Mach 1.3635. A useful point of
+reference is the cruising speed of a [Boeing
+747](https://en.wikipedia.org/wiki/Boeing_747#:~:text=sweep%2C%20allowing%20a-,Mach%C2%A00.85,-%28490%C2%A0kn;%20900):
+0.54 v or Mach 0.85.
+
+If we are driving a car on a highway at a speed of 50 mv and our exit is
+1000 zems away, we will have to exit the highway in 20 beats: 1000 zems
+÷ 50 mv = 20 beats.
+
+Similarly, one is 25 nc, 2.5 ($5\over2$) zems, or roughly a ten
+millionth of a
 
 Apart from distance measurements, zem are also useful for measuring
 speed. zem is to an mc as centimilliday is to a day. The default
@@ -2868,6 +2905,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color125 {
+  background: hsl(295 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(295, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color2 {
   background: hsl(280 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(280, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -2876,9 +2921,25 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color250 {
+  background: hsl(260 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(260, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color3 {
   background: hsl(240 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(240, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color375 {
+  background: hsl(210 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(210, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2908,6 +2969,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color625 {
+  background: hsl(110 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(110, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color7 {
   background: hsl(80 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(80, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -2916,9 +2985,25 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color750 {
+  background: hsl(70 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(70, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color8 {
   background: hsl(60 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(60, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color875 {
+  background: hsl(45 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(45, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
