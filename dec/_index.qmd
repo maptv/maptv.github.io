@@ -1502,6 +1502,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color125 {
+  background: hsl(295 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(295, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color2 {
   background: hsl(280 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(280, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -1510,9 +1518,25 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color250 {
+  background: hsl(260 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(260, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color3 {
   background: hsl(240 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(240, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color375 {
+  background: hsl(210 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(210, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1542,6 +1566,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color625 {
+  background: hsl(110 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(110, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color7 {
   background: hsl(80 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(80, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -1550,9 +1582,25 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color750 {
+  background: hsl(70 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(70, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color8 {
   background: hsl(60 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(60, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color875 {
+  background: hsl(45 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(45, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
