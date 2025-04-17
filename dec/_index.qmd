@@ -751,6 +751,8 @@ decTimeZ0n = textcolor((decTimeN0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor
 parLat = textcolor(latitude.toFixed(3), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
 parCos = Math.cos(latitude * 2 * Math.PI)
 parLen = textcolor(parCos.toFixed(3), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
+zems = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
+zLeft = textcolor(zems, `hsl(${d3.hsl(piecewiseColor(zems / 1000)).h}` + slStr)
 point0long = long2turn(Place_A[0], 1)
 point0zone = Math.floor(point0long)
 point0lHsl = textcolor(point0long.toFixed(2), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
@@ -1484,11 +1486,21 @@ colorsize = 210
 ```
 
 ```{ojs}
+//| echo: false
+//| output: false
 html`
 <style>
 .color0 {
   background: hsl(0 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(0, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color065 {
+  background: hsl(320.94117647058823 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(320.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1505,6 +1517,14 @@ html`
 .color125 {
   background: hsl(295 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(295, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color185 {
+  background: hsl(283.05882352941177 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(283.05882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1598,6 +1618,22 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color815 {
+  background: hsl(56.94117647058823 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(56.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color864 {
+  background: hsl(47.29411764705882 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(47.29411764705882, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color875 {
   background: hsl(45 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(45, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -1609,6 +1645,46 @@ html`
 .color9 {
   background: hsl(40 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(40, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color935 {
+  background: hsl(25.88235294117647 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(25.88235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorMile {
+  background: hsl(338.5882352941177 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(338.5882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorInch {
+  background: hsl(6.352941176470588 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(6.352941176470588, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorPound {
+  background: hsl(294.3529411764706 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(6.352941176470588, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorPint {
+  background: hsl(310.8235294117647 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(6.352941176470588, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
