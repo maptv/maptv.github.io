@@ -1559,10 +1559,10 @@ fingers each represent 2 <span class="azul">months</span>.
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 11 Build 196, SVG Export Plug-In . SVG Version: 6.0.0 Build 78)  -->
-<svg
-   i:viewOrigin="-123.4824 642.7246"
-   i:rulerOrigin="124 -124"
-   i:pageBounds="-124 716 716 124"
+&#10;<svg
+   ns3:viewOrigin="-123.4824 642.7246"
+   ns3:rulerOrigin="124 -124"
+   ns3:pageBounds="-124 716 716 124"
    width="305.125"
    height="277.19452"
    viewBox="0 0 305.12501 277.19452"
@@ -1572,7 +1572,7 @@ fingers each represent 2 <span class="azul">months</span>.
    version="1.1"
    id="lefthand"
    sodipodi:docname="lefthand.svg"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:x="adobe:ns:meta/"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -1580,13 +1580,13 @@ fingers each represent 2 <span class="azul">months</span>.
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:ns3="&amp;#38;#38;ns_ai;"
+   xmlns:ns4="&amp;#38;#38;ns_sfw;"
+   xmlns:ns5="&amp;#38;#38;ns_vars;"
    xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
    xmlns:xap="http://ns.adobe.com/xap/1.0/"
    xmlns:xapgimg="http://ns.adobe.com/xap/1.0/g/img/"
-   xmlns:xapmm="http://ns.adobe.com/xap/1.0/mm/"
-   xmlns:ns1="&amp;ns_vars;"
-   xmlns:i="&amp;ns_ai;"
-   xmlns:ns0="&amp;ns_sfw;"><defs
+   xmlns:xapmm="http://ns.adobe.com/xap/1.0/mm/"><defs
    id="defs108">
                     </defs><sodipodi:namedview
    id="namedview108"
@@ -1597,34 +1597,34 @@ fingers each represent 2 <span class="azul">months</span>.
    inkscape:pageopacity="0.0"
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
-   inkscape:zoom="0.86515194"
-   inkscape:cx="364.0979"
-   inkscape:cy="-20.227661"
-   inkscape:window-width="1472"
+   inkscape:zoom="1.933359"
+   inkscape:cx="176.11835"
+   inkscape:cy="150.25663"
+   inkscape:window-width="1256"
    inkscape:window-height="896"
-   inkscape:window-x="50"
-   inkscape:window-y="66"
+   inkscape:window-x="221"
+   inkscape:window-y="32"
    inkscape:window-maximized="0"
-   inkscape:current-layer="svg108" />
+   inkscape:current-layer="lefthand" />
     <metadata
    id="metadata1">
-        <ns0:sfw>
-            <ns0:slices />
-            <ns0:sliceSourceBounds
+        <ns4:sfw>
+            <ns4:slices />
+            <ns4:sliceSourceBounds
    x="-123.482"
    y="125.773"
    width="838.332"
    height="516.951"
    bottomLeftOrigin="true" />
-        </ns0:sfw>
-        <ns1:variableSets>
-            <ns1:variableSet
+        </ns4:sfw>
+        <ns5:variableSets>
+            <ns5:variableSet
    varSetName="binding1"
    locked="none">
-                <ns1:variables />
-                <ns1:sampleDataSets />
-            </ns1:variableSet>
-        </ns1:variableSets>
+                <ns5:variables />
+                <ns5:sampleDataSets />
+            </ns5:variableSet>
+        </ns5:variableSets>
 <?xpacket begin='﻿' id='W5M0MpCehiHzreSzNTczkc9d'?><x:xmpmeta
    x:xmptk="XMP toolkit 3.0-29, framework 1.6">
 <rdf:RDF>
@@ -1966,27 +1966,32 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
         <g
    id="g112"
    transform="translate(26.102844,-207.71061)"><path
-     i:knockout="Off"
+     ns3:knockout="Off"
      fill="#ccffff"
      d="m 118.698,365.385 c 6.404,-2.645 -8.252,-81.105 -10.439,-94.6 -3.708,-22.874 20.403,-27.359 24.219,-4.037 2.169,13.249 13.406,91.545 19.883,92.723"
-     id="path96" /><path
-     i:knockout="Off"
+     id="path96"
+     style="fill:#aa00ff;fill-opacity:1" /><path
+     ns3:knockout="Off"
      fill="#c0dbfc"
      d="M 91.44,387.871 C 97.791,381.328 55.109,314.164 48.389,304.019 37.816,288.062 58.93,277.175 68.274,290.82 c 5.886,8.594 44.021,77.211 50.424,74.564"
-     id="path97" /><path
-     i:knockout="Off"
+     id="path97"
+     style="fill:#ff00ff;fill-opacity:1" /><path
+     ns3:knockout="Off"
      fill="#befc75"
      d="M 75.156,413.93 C 62.776,401.662 32.995,379.414 24.201,373.606 7.782,362.764 16.05,344.772 33.49,353.815 c 11.855,6.146 51.601,40.602 57.951,34.057"
-     id="path98" /><path
-     i:knockout="Off"
+     id="path98"
+     style="fill:#ff0000;fill-opacity:1" /><path
+     ns3:knockout="Off"
      fill="#e9befc"
      d="m 194.558,396.266 c 2.476,-0.215 5.742,-3.523 10.661,-9.414 26.474,-31.705 55.667,-34.346 63.162,-17.869 -17.557,10.336 -45.352,33.574 -50.785,56.691"
-     id="path99" /><path
-     i:knockout="Off"
+     id="path99"
+     style="fill:#00aaff;fill-opacity:1" /><path
+     ns3:knockout="Off"
      fill="#ffff66"
      d="m 152.36,359.471 c 6.477,1.178 26.692,-67.762 31.054,-82.859 5.918,-20.479 27.516,-13.883 22.155,6.934 -3.078,11.955 -15.788,56.023 -17.843,84.938"
-     id="path100" /><path
-     i:knockout="Off"
+     id="path100"
+     style="fill:#0000ff;fill-opacity:1" /><path
+     ns3:knockout="Off"
      fill="none"
      stroke="#000000"
      stroke-width="2.2742"
@@ -2100,7 +2105,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 11 Build 196, SVG Export Plug-In . SVG Version: 6.0.0 Build 78)  -->
-<svg
+&#10;<svg
    ns3:viewOrigin="-123.4824 642.7246"
    ns3:rulerOrigin="124 -124"
    ns3:pageBounds="-124 716 716 124"
@@ -2113,7 +2118,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
    version="1.1"
    id="righthand"
    sodipodi:docname="righthand.svg"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:x="adobe:ns:meta/"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -2121,13 +2126,13 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:ns3="&amp;#38;#38;ns_ai;"
+   xmlns:ns4="&amp;#38;#38;ns_sfw;"
+   xmlns:ns5="&amp;#38;#38;ns_vars;"
    xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
    xmlns:xap="http://ns.adobe.com/xap/1.0/"
    xmlns:xapgimg="http://ns.adobe.com/xap/1.0/g/img/"
-   xmlns:xapmm="http://ns.adobe.com/xap/1.0/mm/"
-   xmlns:ns3="&amp;#38;ns_ai;"
-   xmlns:ns4="&amp;#38;ns_sfw;"
-   xmlns:ns5="&amp;#38;ns_vars;"><defs
+   xmlns:xapmm="http://ns.adobe.com/xap/1.0/mm/"><defs
    id="defs108">
                     </defs><sodipodi:namedview
    id="namedview108"
@@ -2138,15 +2143,15 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
    inkscape:pageopacity="0.0"
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
-   inkscape:zoom="0.4993561"
-   inkscape:cx="-32.041263"
-   inkscape:cy="65.083815"
+   inkscape:zoom="1.092155"
+   inkscape:cx="141.46344"
+   inkscape:cy="83.779321"
    inkscape:window-width="1256"
    inkscape:window-height="896"
    inkscape:window-x="221"
    inkscape:window-y="32"
    inkscape:window-maximized="0"
-   inkscape:current-layer="svg108" />
+   inkscape:current-layer="righthand" />
     <metadata
    id="metadata1">
         <ns4:sfw>
@@ -2510,23 +2515,28 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
      ns3:knockout="Off"
      fill="#ccffff"
      d="m 438.938,365.771 c -6.403,-2.646 8.252,-81.105 10.439,-94.6 3.707,-22.875 -20.402,-27.36 -24.219,-4.038 -2.17,13.249 -13.407,91.546 -19.884,92.724"
-     id="path91" /><path
+     id="path91"
+     style="fill:#aaff00;fill-opacity:1" /><path
      ns3:knockout="Off"
      fill="#c0dbfc"
      d="m 466.195,388.258 c -6.352,-6.543 36.33,-73.709 43.051,-83.852 10.572,-15.957 -10.541,-26.845 -19.885,-13.199 -5.885,8.592 -44.021,77.211 -50.424,74.564"
-     id="path92" /><path
+     id="path92"
+     style="fill:#ffff00;fill-opacity:1" /><path
      ns3:knockout="Off"
      fill="#befc75"
      d="m 482.479,414.316 c 12.381,-12.268 42.16,-34.516 50.957,-40.324 16.418,-10.842 8.15,-28.834 -9.289,-19.791 -11.855,6.146 -51.602,40.602 -57.951,34.057"
-     id="path93" /><path
+     id="path93"
+     style="fill:#ffaa00;fill-opacity:1" /><path
      ns3:knockout="Off"
      fill="#e9befc"
      d="m 363.077,396.65 c -2.476,-0.213 -5.742,-3.521 -10.661,-9.414 -26.474,-31.703 -55.667,-34.346 -63.162,-17.867 17.557,10.336 45.352,33.574 50.786,56.691"
-     id="path94" /><path
+     id="path94"
+     style="fill:#00ffff;fill-opacity:1" /><path
      ns3:knockout="Off"
      fill="#ffff66"
      d="m 405.274,359.857 c -6.477,1.178 -26.692,-67.763 -31.054,-82.86 -5.917,-20.478 -27.515,-13.882 -22.155,6.934 3.078,11.954 15.788,56.024 17.843,84.938"
-     id="path95" /><path
+     id="path95"
+     style="fill:#00ff00;fill-opacity:1" /><path
      ns3:knockout="Off"
      fill="none"
      stroke="#000000"

@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+046
+2025+047
 
 - [Dec](#dec)
 - [Map](#map)
@@ -106,15 +106,23 @@ time zones.
 
 An airplane✈️flying at 500 <span class="under tool"
 data-bs-toggle="tooltip"
-data-bs-title="thousandths of the circumference of Earth">milliomegars</span>
-(mv), half the equatorial speed of the rotation of Earth🌎on its axis,
-could travel🧳the 100 mc between the default positions📍of Points
+data-bs-title="thousandths of the equatorial speed of rotation of Earth">milliomegars</span>
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis">mv</span>),
+half the equatorial speed of the rotation of Earth🌎on its axis, could
+travel🧳the 100 mc between the default positions📍of Points
 <span class="point0">0</span> and <span class="point1">1</span> in 200
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a day">millidays</span> (md). To get the
-time in days (d) required to travel🧳between two points, we divide the
-distance📏in mc by the speed in mv: ${distance_mtaur} mc ÷
-${travelspeed} mv = ${(distance_mtaur / travelspeed).toFixed(3)} d.
+data-bs-title="thousandths of a day">millidays</span>
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a day">md</span>). To get the time in days
+(d) required to travel🧳between two points, we divide the distance📏in
+mc by the speed in <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis">mv</span>:
+${distance_mtaur} mc ÷ ${travelspeed} <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis">mv</span>
+= ${(distance_mtaur / travelspeed).toFixed(3)} d.
 
 # Map
 
@@ -565,32 +573,43 @@ angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude
 regardless of the [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
 or [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore,
-we can reuse♻️colors🎨across many different contexts. In any context,
+we can reuse♻️colors🎨across many different contexts. Typically,
 starting points are red: North (<span class="color0">0</span> m*α*),
 [Longitude
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color0">0</span> m*λ*), and midnight
-(<span class="color0">0</span> md); midpoints are cyan: South
-(<span class="color5">500</span> m*α*), [Longitude
+(<span class="color0">0</span> <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a day">md</span>); midpoints are cyan:
+South (<span class="color5">500</span> m*α*), [Longitude
 5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
-(<span class="color5">500</span> ml), and noon
-(<span class="color5">500</span> md).
+(<span class="color5">500</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliparallel">m*λ*</span>), and
+noon (<span class="color5">500</span> <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a day">md</span>).
 
-Apart from m*α*, m*λ*, and md, we can apply color🎨labels🏷️based on
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a year">milliyears</span> (my) and
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a millennium">millimillennia</span> (mk).
-Every year (y) starts on <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span>
-(<span class="color0">0</span> my). The midyear point
-(<span class="color5">500</span> my) is noon of <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="August 30">Day 182</span> in
-common years and midnight of <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="August 31">Day 183</span> in
-leap years. Every millennium (k) starts with Year 0
-(<span class="color0">0</span> mk) and has Year 500
-(<span class="color5">500</span> mk) as its midpoint.
+Importantly, Longitude 0 is the Dec [Prime
+Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)
+and the [International Date
+Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next).
+Not shown on the map are the four [major
+parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
+that depend on the [axial
+tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
+of the Earth🌏(<span class="color065">65</span> mt): the Tropics of
+[Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(<span class="color065">65</span>
+m*ϕ*) and
+[Capricorn](https://en.wikipedia.org/wiki/Tropic_of_Capricorn#:~:text=the%20southernmost%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♑️(<span class="color935">-65</span>
+m*ϕ*), and the
+[Arctic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
+(<span class="color250">250</span> m*ϕ* –
+<span class="color065">65</span> m*ϕ* =
+<span class="color185">185</span> m*ϕ*) and
+[Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
+(<span class="color065">65</span> m*ϕ* –
+<span class="color250">250</span> m*ϕ* =
+<span class="color815">-185</span> m*ϕ*) Circles.
 
 The Equator, also known as Latitude 0, is the midpoint between the South
 (<span class="color75">-250</span> m*ϕ*) and North
@@ -657,6 +676,24 @@ in Zone <span class="color0">0</span>, we get
 ${decYearHsl}+${decDateHsl} as the date and
 ${decTimeHsl}${decSign}${decZonHslA} as the time.
 
+Dec dates consist of a year and day-of-year (doy). We can apply
+color🎨labels🏷️to the year based on <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a millennium">millimillennia</span> (mk)
+and to the doy based on <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a year">milliyears</span> (my). Every year
+starts on <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1"><u>Day 0</u></span>
+(<span class="color0">0</span> my). The midyear point
+(<span class="color5">500</span> my) is noon of <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="August 30">Day 182</span> in
+common years and midnight of <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="August 31">Day 183</span> in
+leap years. Every millennium starts with Year 0
+(<span class="color0">0</span> mk) and has Year 500
+(<span class="color5">500</span> mk) as its midpoint.
+
 Each Dec time zone is one <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="a tenth of a circle of latitude">deciparallel</span>
@@ -691,42 +728,89 @@ data-bs-title="a tenth of a polar circumference">decimeridian</span>
 meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole)
 is ~10<sup>7</sup> meters long.
 
-One c is a hundred million (10<sup>8</sup>) zems or forty million (4 ×
-10<sup>7</sup>) meters. A zem is 10 <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="billionths of a taur">nanotaurs</span> (nc) or 0.4
-($2\over5$) meters. A meter is 25 nc or 2.5 ($5\over2$) zems. One mv is
-equal to one zem per <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a hundred thousandth of a day">centimilliday</span>. In
-Dec, a centimilliday is called a beat because it is similar in duration
-to a heart❤️beat or musical🎵beat. One mc is 10<sup>5</sup> zem and a
-day is 10<sup>5</sup> beats.
-
 In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, zem means Earth🌏.
 This is fitting because all Dec units are based on physical properties
 of the Earth🌎. At the Equator, the Earth🌍rotates on its axis at a
 speed of 1.00224 v. If we could indefinitely maintain this speed while
-flying West in an airplane✈️while the sun☀️was setting, we would be able
+flying West in an airplane✈️towards the setting sun☀️, we would be able
 to perpetually fly [into the
 sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
-To reach the necessary speed, the airplane✈️would need to surpass the
-[speed of
+To travel fast enough, the airplane✈️would need to surpass the [speed of
 sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊:
 0.735048 v or Mach 1. [Mach
 numbers](https://en.wikipedia.org/wiki/Mach_number) are similar to v,
-but are relative to the speed of sound🔊instead of the equatorial speed
-of rotation of the Earth. One v is Mach 1.3635. A useful point of
+but are relative to the speed of sound🔊rather than the equatorial speed
+of rotation of the Earth🌏. One v is Mach 1.3635. A useful point of
 reference is the cruising speed of a [Boeing
 747](https://en.wikipedia.org/wiki/Boeing_747#:~:text=sweep%2C%20allowing%20a-,Mach%C2%A00.85,-%28490%C2%A0kn;%20900):
 0.54 v or Mach 0.85.
 
-If we are driving a car on a highway at a speed of 50 mv and our exit is
-1000 zems away, we will have to exit the highway in 20 beats: 1000 zems
-÷ 50 mv = 20 beats.
+The highway🛣️speed of a car🚗is roughly tenfold slower than the cruising
+speed of airplane✈️. If we are driving on a highway🛣️at 50 mv and our
+exit is 1000 zems away, we will have 20 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundred thousandths of a day">centimillidays</span> until
+we have to exit the highway🛣️. To ensure we do not miss our exit, we can
+periodically check a countdown of the remaining zem: ${zLeft}.
 
-Similarly, one is 25 nc, 2.5 ($5\over2$) zems, or roughly a ten
-millionth of a
+In Dec, centimillidays are called beats because they are similar in
+duration to heart❤️beats or musical🎵beats. A beat is
+<span class="color864">864</span> milliseconds. One mc is a hundred
+thousand (10<sup>5</sup>) zem (z) and one day is 10<sup>5</sup> beats
+(b). Therefore, 1 mv = $\text{mc}\over\text d$ = $\text z\over\text b$.
+It is easy to convert z into meters (m), z = $2\over5$ m, or mv into
+kilometers per hour (kmph): mv = $5\over3$ kmph.
+
+Dec redefines [imperial and US customary measurement
+system](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
+units based on the [International System of
+Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
+(SI) to facilitate conversion: <span class="color0">1</span> Dec mile =
+<span class="colorMile">1.0365</span>
+[miles](https://en.wikipedia.org/wiki/Mile#:~:text=units%20as%20exactly-,1%2C609.344%20metres)
+= $5\over3$ kilometers, <span class="color0">1</span> Dec inch =
+<span class="colorInch">0.98425</span>
+[inches](https://en.wikipedia.org/wiki/Inch#:~:text=defined%20as%20exactly-,25.4%C2%A0mm)
+= 25 millimeters, <span class="color0">1</span> Dec pound =
+<span class="colorPound">1.1288</span>
+[pounds](https://en.wikipedia.org/wiki/Pound_(mass)#:~:text=0.45359237%C2%A0kilograms)
+= 512 grams, and <span class="color0">1</span> Dec pint =
+<span class="colorPint">1.0821</span> US fluid pint = 512 milliliters.
+
+The colors🎨of the redefined unit values indicate how close they are to
+the original unit values, which are labeled🏷️in
+<span class="color0">red</span>. Redefined miles per hour (mph) are
+equivalent to mv. Redefined inches (in) are easier to convert to z and
+decimeters (dm): 1 z = 4 dm = 16 in. A square zem (z<sup>2</sup>) is
+called a hexamilliare (x) and is equal to 16 dm<sup>2</sup> or 256
+in<sup>2</sup>.
+
+1 centizem = 4 milliliters (mm).
+
+that we can easily convert miles per hour (mph) to mv or kmph, miles
+(mi) to kilozems (kz) or kilometers (km), and inches (in) to decimeters
+(dm) or z: 1 mph = 1 mv = $5\over3$ kmph, 1 mile = $25\over6$ =
+$5\over3$ , and 1 in = Furthermore, Dec redefines yards as $9\over4$ z,
+so that 1 mv = mph and 1 mile
+
+mv convert Inversely, 1 m = 25 nc = 2.5 z.
+
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a taur">nanotaurs</span> (nc) and
+
+We can define mv as mc per day, z per <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="a hundred thousandth of a day">centimilliday</span> (b),
+or nc per <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a millionth of a day">microday</span> ($\micro$d): 1 mv =
+$\text{mc}\over\text d$ = $\text z\over\text b$ =
+$\text{nc}\over\micro\text d$.
+
+One mc is a and a day is 10<sup>5</sup> beats. a million nc 1 mc is
+hundred thousand (10<sup>5</sup>) zem and a million (10<sup>6</sup>) nc.
+1 mv = 1 nc Zem can be combined c is a hundred million (10<sup>8</sup>)
+zems or forty million (4 × 10<sup>7</sup>) meters.
 
 Apart from distance measurements, zem are also useful for measuring
 speed. zem is to an mc as centimilliday is to a day. The default
@@ -734,6 +818,9 @@ distance between Points <span class="point0">0</span> and
 <span class="point1">1</span> on the map🗺️above⬆️is 100 mc, ten million
 (10<sup>7</sup>) zem, or four million (4 × 10<sup>6</sup>) meters. When
 crossing such large distances, mv are the correct scale
+
+The time that has elapsed since this webpage was loaded is
+${elaTimeHsl}.
 
 Therefore, 1 z = 0.4 m and 1 m = 2.5 z. [originally
 defined](https://en.wikipedia.org/wiki/Metre#Definition:~:text=The%20metre%20was%20originally%20defined%20in%201791%20by%20the%20French%20National%20Assembly%20as%20one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole%20along%20a%20great%20circle%2C)
@@ -885,24 +972,8 @@ Both positive and negative offsets yield the correct time, but negative
 offsets result in a date that is one day behind the correct date
 produced by positive offsets.
 
-Not shown on the map are the four [major
-parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
-that depend on the [axial
-tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
-of the Earth🌏(${rainbowTilt} mt): the Tropics of
-[Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(${rainbowCanc}
-m*ϕ*) and
-[Capricorn](https://en.wikipedia.org/wiki/Tropic_of_Capricorn#:~:text=the%20southernmost%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♑️(${rainbowCapr}
-m*ϕ*), and the
-[Arctic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
-(${rainbowArc0} m*ϕ* – ${rainbowArc1} m*ϕ* = ${rainbowArc2} m*ϕ*) and
-[Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
-(${rainbowAnt0} m*ϕ* – ${rainbowAnt1} m*ϕ* = ${rainbowAnt2} m*ϕ*)
-Circles.
-
 In Zone ${decZone2nd}, the current date is and the current time in
-decidays is –. The time that has elapsed since this webpage was loaded
-is ${elaTimeHsl}. Even distances can be labeled🏷️with color🎨.
+decidays is –. Even distances can be labeled🏷️with color🎨.
 
 At an average speed of ${travelspeed} $\text m\omega \text r$, we could
 cover the ${distance_mtaur} $\text m\tau r$ between Points
@@ -2154,6 +2225,8 @@ decTimeZ0n = textcolor((decTimeN0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor
 parLat = textcolor(latitude.toFixed(3), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
 parCos = Math.cos(latitude * 2 * Math.PI)
 parLen = textcolor(parCos.toFixed(3), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
+zems = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
+zLeft = textcolor(zems, `hsl(${d3.hsl(piecewiseColor(zems / 1000)).h}` + slStr)
 point0long = long2turn(Place_A[0], 1)
 point0zone = Math.floor(point0long)
 point0lHsl = textcolor(point0long.toFixed(2), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
@@ -2887,11 +2960,21 @@ colorsize = 210
 ```
 
 ``` {ojs}
+//| echo: false
+//| output: false
 html`
 <style>
 .color0 {
   background: hsl(0 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(0, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color065 {
+  background: hsl(320.94117647058823 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(320.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2908,6 +2991,14 @@ html`
 .color125 {
   background: hsl(295 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(295, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color185 {
+  background: hsl(283.05882352941177 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(283.05882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -3001,6 +3092,22 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color815 {
+  background: hsl(56.94117647058823 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(56.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color864 {
+  background: hsl(47.29411764705882 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(47.29411764705882, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color875 {
   background: hsl(45 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(45, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -3012,6 +3119,46 @@ html`
 .color9 {
   background: hsl(40 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(40, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color935 {
+  background: hsl(25.88235294117647 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(25.88235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorMile {
+  background: hsl(338.5882352941177 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(338.5882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorInch {
+  background: hsl(6.352941176470588 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(6.352941176470588, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorPound {
+  background: hsl(294.3529411764706 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(6.352941176470588, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorPint {
+  background: hsl(310.8235294117647 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(6.352941176470588, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
