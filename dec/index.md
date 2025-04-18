@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+047
+2025+048
 
 - [Dec](#dec)
 - [Map](#map)
@@ -9,6 +9,7 @@ Martin Laptev
 - [Pun](#pun)
 - [UTC](#utc)
 - [Zem](#zem)
+- [Keg](#keg)
 
 <div id="decnav">
 
@@ -762,31 +763,209 @@ thousand (10<sup>5</sup>) zem (z) and one day is 10<sup>5</sup> beats
 It is easy to convert z into meters (m), z = $2\over5$ m, or mv into
 kilometers per hour (kmph): mv = $5\over3$ kmph.
 
-Dec redefines [imperial and US customary measurement
-system](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
-units based on the [International System of
+# Keg
+
+The table below⬇️shows the [United
+States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
+(US) units that Dec redefines based on the [International System of
 Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
-(SI) to facilitate conversion: <span class="color0">1</span> Dec mile =
-<span class="colorMile">1.0365</span>
-[miles](https://en.wikipedia.org/wiki/Mile#:~:text=units%20as%20exactly-,1%2C609.344%20metres)
-= $5\over3$ kilometers, <span class="color0">1</span> Dec inch =
-<span class="colorInch">0.98425</span>
-[inches](https://en.wikipedia.org/wiki/Inch#:~:text=defined%20as%20exactly-,25.4%C2%A0mm)
-= 25 millimeters, <span class="color0">1</span> Dec pound =
-<span class="colorPound">1.1288</span>
-[pounds](https://en.wikipedia.org/wiki/Pound_(mass)#:~:text=0.45359237%C2%A0kilograms)
-= 512 grams, and <span class="color0">1</span> Dec pint =
-<span class="colorPint">1.0821</span> US fluid pint = 512 milliliters.
+(SI). The first column of the table contains [fold
+changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
+from original to redefined units. A fold change of
+<span class="color0">1</span> means that the redefined and original
+units are identical. Multiples and submultiples have the same fold
+change.
 
-The colors🎨of the redefined unit values indicate how close they are to
-the original unit values, which are labeled🏷️in
-<span class="color0">red</span>. Redefined miles per hour (mph) are
-equivalent to mv. Redefined inches (in) are easier to convert to z and
-decimeters (dm): 1 z = 4 dm = 16 in. A square zem (z<sup>2</sup>) is
-called a hexamilliare (x) and is equal to 16 dm<sup>2</sup> or 256
-in<sup>2</sup>.
+<table>
+<colgroup>
+<col style="width: 81%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr>
+<th>US</th>
+<th>Dec</th>
+<th>SI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="colorMile">1.0356</span> <a
+href="https://en.wikipedia.org/wiki/Mile#:~:text=units%20as%20exactly-,1%2C609.344%20metres">miles</a></td>
+<td><span class="math inline">$25\over6$</span> kz</td>
+<td><span class="math inline">$5\over3$</span> km</td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Yard#:~:text=as%20exactly-,0.9144%C2%A0meter">yards</a></td>
+<td><span class="math inline">$9\over4$</span> z</td>
+<td>9 dm</td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Foot_(unit)#:~:text=equal%20to%20exactly-,0.3048%20meters">feet</a></td>
+<td><span class="math inline">$3\over4$</span> z</td>
+<td>3 dm</td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Inch#:~:text=defined%20as%20exactly-,25.4%C2%A0mm">inches</a></td>
+<td><span class="math inline">$1\over16$</span> z</td>
+<td>25 mm</td>
+</tr>
+<tr>
+<td><span class="colorAvLb">1.1023</span> <a
+href="https://en.wikipedia.org/wiki/Pound_(mass)#:~:text=0.45359237%C2%A0kilograms">pounds</a></td>
+<td><span class="math inline">$1\over128$</span> z<sup>3</sup></td>
+<td>500 g</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
+<td>2 z<sup>3</sup></td>
+<td>128 L</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
+<td>1 z<sup>3</sup></td>
+<td>64 L</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Bushel">bushels</a></td>
+<td><span class="math inline">$1\over2$</span> z<sup>3</sup></td>
+<td>32 L</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Bucket#Unit_of_measurement">buckets</a></td>
+<td><span class="math inline">$1\over4$</span> z<sup>3</sup></td>
+<td>16 L</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Peck">pecks</a></td>
+<td><span class="math inline">$1\over8$</span> z<sup>3</sup></td>
+<td>8 L</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
+<td><span class="math inline">$1\over16$</span> z<sup>3</sup></td>
+<td>4 L</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/English_units#General_liquid_measures">pottles</a></td>
+<td><span class="math inline">$1\over32$</span> z<sup>3</sup></td>
+<td>2 L</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
+<td><span class="math inline">$1\over64$</span> z<sup>3</sup></td>
+<td>1 L</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
+<td><span class="math inline">$1\over128$</span> z<sup>3</sup></td>
+<td>500 mL</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
+<td><span class="math inline">$1\over256$</span> z<sup>3</sup></td>
+<td>250 mL</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Gill_(unit)">gills</a></td>
+<td><span class="math inline">$1\over512$</span> z<sup>3</sup></td>
+<td>125 mL</td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Shot_glass">shots</a></td>
+<td>1 dz<sup>3</sup></td>
+<td>64 mL</td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
+<td><span class="math inline">$1\over2$</span> dz<sup>3</sup></td>
+<td>32 mL</td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
+<td><span class="math inline">$1\over4$</span> dz<sup>3</sup></td>
+<td>16 mL</td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Dessert_spoon">dessertspoons</a></td>
+<td><span class="math inline">$1\over8$</span> dz<sup>3</sup></td>
+<td>8 mL</td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Teaspoon">teaspoons</a></td>
+<td><span class="math inline">$1\over16$</span> dz<sup>3</sup></td>
+<td>4 mL</td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Teaspoon#:~:text=2.03-,US%20customary%20coffee%20spoons">coffeespoons</a></td>
+<td><span class="math inline">$1\over32$</span> dz<sup>3</sup></td>
+<td>2 mL</td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Salt_spoon">saltspoons</a></td>
+<td><span class="math inline">$1\over64$</span> dz<sup>3</sup></td>
+<td>1 mL</td>
+</tr>
+</tbody>
+</table>
 
-1 centizem = 4 milliliters (mm).
+Distances units are redefined in term of <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousands of meters">kilometers</span> (km),
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of zems">kilozem</span> (kz),
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a meter">decimeters</span> (dm), and
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a meter">millimeters</span> (mm). Miles
+are redefined such that miles per hour (mph) are equivalent to
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="millitaurs per day">mv</span>. Volume measurements are
+based on [liters]() (l), <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a liter">milliliters</span> (mL), cubic
+zem (z<sup>3</sup>), and cubic <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="tenths of a zem">decizem</span>
+(dz<sup>3</sup>). Dec does not have separate units for wet🌊and
+dry🏜️volumes.
+
+grams (g), . Redefining inches allows us to use powers are easier to
+convert to z and (dm): 1 z = 4 dm = 16 in. A square zem (z<sup>2</sup>)
+is called a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="sixteen square decimeters">hexamilliare</span> (x) and is
+equal to .16m<sup>2</sup>, 16 dm<sup>2</sup>, or 256 in<sup>2</sup>.
+
+A cubic zem is called a
+[keg](https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg:~:text=12.90645%20imp.%20gallons-,58.673882652%20liters,-Full%20keg%20weight)
+and is 64 liters or 16 Dec gallons. The table below contains A cubic
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a zem">decizem</span> (dz<sup>3</sup>), which
+is the same as a cubic <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a taur">nanotaurs</span> (nc<sup>3</sup>),
+is 64 milliliters or 2 Dec fluid ounces. A cubic zem is 256 dm^2 = 0.5 1
+centizem = 4 milliliters (mm).
 
 that we can easily convert miles per hour (mph) to mv or kmph, miles
 (mi) to kilozems (kz) or kilometers (km), and inches (in) to decimeters
@@ -3148,17 +3327,25 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.colorPound {
-  background: hsl(294.3529411764706 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(6.352941176470588, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+.colorAvLb {
+  background: hsl(299.52941176470586 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(299.52941176470586, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorPint {
+  background: hsl(325.88235294117646 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(325.88235294117646, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorFlOz {
   background: hsl(310.8235294117647 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(6.352941176470588, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  color: ${yiq(`hsl(310.8235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
