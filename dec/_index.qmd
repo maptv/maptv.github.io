@@ -1674,17 +1674,25 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.colorPound {
-  background: hsl(294.3529411764706 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(6.352941176470588, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+.colorAvLb {
+  background: hsl(299.52941176470586 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(299.52941176470586, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorPint {
+  background: hsl(325.88235294117646 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(325.88235294117646, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorFlOz {
   background: hsl(310.8235294117647 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(6.352941176470588, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  color: ${yiq(`hsl(310.8235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
