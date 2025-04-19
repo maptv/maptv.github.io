@@ -1,15 +1,15 @@
 # Dec
 Martin Laptev
-2025+048
+2025+049
 
-- [Dec](#dec)
-- [Map](#map)
-- [Hue](#hue)
-- [Hex](#hex)
-- [Pun](#pun)
-- [UTC](#utc)
-- [Zem](#zem)
-- [Keg](#keg)
+- [Dec measurement system](#dec)
+- [Interactive world map](#map)
+- [Color wheel compass](#hue)
+- [Dec time zones](#dtz)
+- [Coordinated Universal Time (UTC)](#utc)
+- [Zone equatorial meter (zem)](#zem)
+- [Unit conversion table](#uct)
+- [Summary](#tldr)
 
 <div id="decnav">
 
@@ -22,7 +22,7 @@ style="width:8.64in;height:0.98in" />
 
 </div>
 
-# Dec
+# Dec measurement system
 
 This section of my website focuses on Dec, a [measurement
 system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)
@@ -125,7 +125,7 @@ data-bs-toggle="tooltip"
 data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis">mv</span>
 = ${(distance_mtaur / travelspeed).toFixed(3)} d.
 
-# Map
+# Interactive world map
 
 ``` {ojs}
 //| echo: false
@@ -187,7 +187,7 @@ viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].chil
 
 </div>
 
-# Hue
+# Color wheel compass
 
 ``` {ojs}
 //| echo: false
@@ -448,8 +448,6 @@ decBar = colorbar({
 }
 ```
 
-# Hex
-
 <table>
 <colgroup>
 <col style="width: 17%" />
@@ -538,8 +536,6 @@ and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
 directions.
 
-# Pun
-
 <div>
 
 > **Bad Pun Alert**
@@ -590,13 +586,25 @@ noon (<span class="color5">500</span> <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">md</span>).
 
-Importantly, Longitude 0 is the Dec [Prime
-Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)
-and the [International Date
-Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next).
-Not shown on the map are the four [major
-parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
-that depend on the [axial
+# Dec time zones
+
+Enable the “Grid” toggle✅input to see Latitudes
+[-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
+(<span class="color8">-200</span> m*ϕ*),
+[-1](https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane)
+(<span class="color9">-100</span> m*ϕ*), 0
+(<span class="color0">0</span> m*ϕ*),
+[1](https://en.wikipedia.org/wiki/36th_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane)
+(<span class="color1">100</span> m*ϕ*), and
+[2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
+(<span class="color2">200</span> m*ϕ*) on the map🗺️above⬆️along with the
+ten major longitudes that divide the Earth🌍into the ten Dec time zones.
+The Equator, also known as Latitude 0, is the [major
+latitude](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
+midway between the South (<span class="color750">-250</span> m*ϕ*) and
+North (<span class="color250">250</span> m*ϕ*) Pole.
+
+The other four major latitudes depend on the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
 of the Earth🌏(<span class="color065">65</span> mt): the Tropics of
 [Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(<span class="color065">65</span>
@@ -610,23 +618,11 @@ m*ϕ*), and the
 [Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
 (<span class="color065">65</span> m*ϕ* –
 <span class="color250">250</span> m*ϕ* =
-<span class="color815">-185</span> m*ϕ*) Circles.
-
-The Equator, also known as Latitude 0, is the midpoint between the South
-(<span class="color75">-250</span> m*ϕ*) and North
-(<span class="color25">250</span> m*ϕ*) Pole. When the “Grid”
-toggle✅input is enabled, Latitudes
-[-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
-(<span class="color8">-200</span> m*ϕ*),
-[-1](https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane)
-(<span class="color9">-100</span> m*ϕ*), 0
-(<span class="color0">0</span> m*ϕ*),
-[1](https://en.wikipedia.org/wiki/36th_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane)
-(<span class="color1">100</span> m*ϕ*), and
-[2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
-(<span class="color2">200</span> m*ϕ*) are shown on the
-map🗺️above⬆️along with the ten major longitudes that divide the
-Earth🌍into the ten Dec time zones.
+<span class="color815">-185</span> m*ϕ*) Circles. Longitude 0 is the
+major longitude that serves as the Dec [Prime
+Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)
+and the [International Date
+Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next).
 
 Like the ten major longitudes that separate them, Dec time zones are
 numbered <span class="color0">0</span> to <span class="color9">9</span>.
@@ -641,59 +637,6 @@ we
 its d*λ* longitude: ⌊d*λ*⌋. Based on its current d*λ* longitude,
 ${point0lHsl}, <span class="point0">Point 0</span> on the map🗺️above⬆️is
 in Zone ${point0zHsl}.
-
-# UTC
-
-[UTC time zone
-offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
-range from ${rainbowN5zn} to ${rainbowP583} <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>. According to
-your web browser, your UTC offset is ${utcOffHslM} ÷ 144 = ${utcOffHslD}
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="deciday">dd</span>. The Dec time zone that corresponds to
-your UTC offset is Zone ${decZonHslP}. This Dec time zone is
-${utcOffDiff} <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="deciday">dd</span> ${utcOffDiff \< 0 ? “behind” :
-“ahead”} of time zones with your UTC offset. The times in corresponding
-Dec and UTC time zones can differ by up to 0.5 <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>.
-
-To obtain the time in Zone <span class="color0">0</span>, we can
-subtract the offset of any time zone from its time. Inversely, we can
-get the time in any time zone by adding its offset to the Zone
-<span class="color0">0</span> time. The date and time are the exact same
-in Zone <span class="color0">0</span> and
-[UTC<span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time).
-Zone <span class="color5">5</span> and
-[UTC<span class="color5">+12:00</span>](https://en.wikipedia.org/wiki/UTC%2B12:00)
-have the exact same date and time, both are exactly one day ahead of
-[UTC<span class="color5">-12:00</span>](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00).
-
-To avoid date mismatches with UTC time zones that have negative offsets,
-we can subtract ten dd from any positive Dec offset to make it negative.
-This way each Dec time zone has both a positive and a negative offset.
-When we add an offset of ${decZonHslN} dd to the current date and time
-in Zone <span class="color0">0</span>, we get
-${decYearHsl}+${decDateHsl} as the date and
-${decTimeHsl}${decSign}${decZonHslA} as the time.
-
-Dec dates consist of a year and day-of-year (doy). We can apply
-color🎨labels🏷️to the year based on <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a millennium">millimillennia</span> (mk)
-and to the doy based on <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a year">milliyears</span> (my). Every year
-starts on <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 1"><u>Day 0</u></span>
-(<span class="color0">0</span> my). The midyear point
-(<span class="color5">500</span> my) is noon of <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="August 30">Day 182</span> in
-common years and midnight of <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="August 31">Day 183</span> in
-leap years. Every millennium starts with Year 0
-(<span class="color0">0</span> mk) and has Year 500
-(<span class="color5">500</span> mk) as its midpoint.
 
 Each Dec time zone is one <span class="under tool"
 data-bs-toggle="tooltip"
@@ -716,7 +659,58 @@ of its *ϕ* latitude: cos(${parLat}) = ${parLen}.
 viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: .001})
 ```
 
-# Zem
+# Coordinated Universal Time (UTC)
+
+[UTC time zone
+offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
+range from ${rainbowN5zn} to ${rainbowP583} <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>. According to
+your web browser, your UTC offset is ${utcOffHslM} ÷ 144 = ${utcOffHslD}
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</span>. The Dec time zone that corresponds to
+your UTC offset is Zone ${decZonHslP}. This Dec time zone is
+${utcOffDiff} <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</span> ${utcOffDiff \< 0 ? “behind” :
+“ahead”} of time zones with your UTC offset. The times in corresponding
+Dec and UTC time zones can differ by up to 0.5 <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>.
+
+We can obtain the time in Zone <span class="color0">0</span> by
+subtracting the offset of any time zone from its time. Inversely, we can
+get the time in any time zone by adding its offset to the Zone
+<span class="color0">0</span> time. The date and time are the exact same
+in Zone <span class="color0">0</span> and
+[UTC<span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time).
+Zone <span class="color5">5</span> and
+[UTC<span class="color5">+12:00</span>](https://en.wikipedia.org/wiki/UTC%2B12:00)
+have the exact same date and time, both are exactly one day ahead of
+[UTC<span class="color5">-12:00</span>](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00).
+
+To avoid date mismatches with UTC time zones that have negative offsets,
+we can subtract ten dd from any positive Dec offset to make it negative.
+This way each Dec time zone has both a positive and a negative offset.
+When we add an offset of ${decZonHslN} dd to the current date and time
+in Zone <span class="color0">0</span>, we get
+${decYearHsl}+${decDateHsl} as the date and
+${decTimeHsl}${decSign}${decZonHslA} as the time.
+
+We can apply color🎨labels🏷️based on <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a millennium">millimillennia</span> (mk)
+and <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a year">milliyears</span> (my) to Dec
+dates in the year+day format. Every year starts on <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
+(<span class="color0">0</span> my). The midyear point
+(<span class="color5">500</span> my) is noon of <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="August 30">Day 182</span> in
+common years and midnight of <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="August 31">Day 183</span> in
+leap years. Every millennium starts with Year 0
+(<span class="color0">0</span> mk) and has Year 500
+(<span class="color5">500</span> mk) as its midpoint.
+
+# Zone equatorial meter (zem)
 
 Apart from c, Dec also measures distance📏using a unit called the
 **z**one **e**quatorial **m**eter (zem). The width of a Dec time zone at
@@ -763,24 +757,24 @@ thousand (10<sup>5</sup>) zem (z) and one day is 10<sup>5</sup> beats
 It is easy to convert z into meters (m), z = $2\over5$ m, or mv into
 kilometers per hour (kmph): mv = $5\over3$ kmph.
 
-# Keg
-
-The table below⬇️shows the [United
-States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
-(US) units that Dec redefines based on the [International System of
+The table below⬇️shows the [United States (US) customary
+units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
+that Dec redefines based on the [International System of
 Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
-(SI). The first column of the table contains [fold
+(SI). The measurements in each row are equal. The values in the first
+column are [fold
 changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
 from original to redefined units. A fold change of
-<span class="color0">1</span> means that the redefined and original
-units are identical. Multiples and submultiples have the same fold
-change.
+<span class="color0">1</span> indicates no change. Units that are
+derived in the same way have the same fold change.
+
+# Unit conversion table
 
 <table>
 <colgroup>
-<col style="width: 81%" />
+<col style="width: 77%" />
+<col style="width: 11%" />
 <col style="width: 10%" />
-<col style="width: 8%" />
 </colgroup>
 <thead>
 <tr>
@@ -815,9 +809,39 @@ href="https://en.wikipedia.org/wiki/Inch#:~:text=defined%20as%20exactly-,25.4%C2
 <td>25 mm</td>
 </tr>
 <tr>
+<td><span class="colorAcre">0.9884</span> <a
+href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
+<td><span class="math inline">$1\over40$</span> kz<sup>2</sup></td>
+<td><span class="math inline">$1\over250$</span> km<sup>2</sup></td>
+</tr>
+<tr>
+<td><span class="colorSqMi">1.0725</span> <a
+href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
+<td><span class="math inline">$625\over36$</span> kz<sup>2</sup></td>
+<td><span class="math inline">$25\over9$</span> km<sup>2</sup></td>
+</tr>
+<tr>
+<td><span class="colorSqIn">0.9688</span> <a
+href="https://en.wikipedia.org/wiki/Square_yard">square yards</a></td>
+<td><span class="math inline">$81\over16$</span> z<sup>2</sup></td>
+<td>81 dm<sup>2</sup></td>
+</tr>
+<tr>
+<td><span class="colorSqIn">0.9688</span> <a
+href="https://en.wikipedia.org/wiki/Square_foot">square feets</a></td>
+<td><span class="math inline">$9\over16$</span> z<sup>2</sup></td>
+<td>9 dm<sup>2</sup></td>
+</tr>
+<tr>
+<td><span class="colorSqIn">0.9688</span> <a
+href="https://en.wikipedia.org/wiki/Square_inch">square inches</a></td>
+<td><span class="math inline">$1\over256$</span> z<sup>2</sup></td>
+<td>625 mm<sup>2</sup></td>
+</tr>
+<tr>
 <td><span class="colorAvLb">1.1023</span> <a
 href="https://en.wikipedia.org/wiki/Pound_(mass)#:~:text=0.45359237%C2%A0kilograms">pounds</a></td>
-<td><span class="math inline">$1\over128$</span> z<sup>3</sup></td>
+<td>500 g</td>
 <td>500 g</td>
 </tr>
 <tr>
@@ -931,7 +955,7 @@ href="https://en.wikipedia.org/wiki/Salt_spoon">saltspoons</a></td>
 </tbody>
 </table>
 
-Distances units are redefined in term of <span class="under tool"
+Dec bases distances and areas on <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousands of meters">kilometers</span> (km),
 <span class="under tool" data-bs-toggle="tooltip"
@@ -939,33 +963,39 @@ data-bs-title="thousands of zems">kilozem</span> (kz),
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a meter">decimeters</span> (dm), and
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a meter">millimeters</span> (mm). Miles
-are redefined such that miles per hour (mph) are equivalent to
+data-bs-title="thousandths of a meter">millimeters</span> (mm), weights
+on grams, and volumes on
+[liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic)
+(L) and <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a liter">milliliters</span> (mL). Dec does
+not have separate units for wet🌊and dry🏜️volumes. Miles are redefined
+such that one mile per hour is one <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="millitaurs per day">mv</span>. A
+redefined acre is equal to $2\over5$
+[hectares](https://en.wikipedia.org/wiki/Hectare#:~:text=10%2C000%20square%20metres)
+or 40
+[are](https://en.wikipedia.org/wiki/Hectare#Are:~:text=area%2C%20equal%20to-,100%20square%20metres).
+
+A square zem (z<sup>2</sup>) is equal to 1 hexamilliare, 0.19753086
+square yards, 1.<span style="text-decoration-line:overline;">7</span>
+square feet, 16 square decimeters (dm<sup>2</sup>), 256 square inches,
+or 160000 square millimeters (mm<sup>2</sup>). Similarly, a square
+kilozem (kz<sup>2</sup>) is equal to 1 hexakilare, 0.16 square
+kilometers (km²), 160000 square meters (m²), 40 acres, 16 hectare,
+0.0576 square miles, or 10<sup>6</sup> z<sup>2</sup>.
+
+A cubic zem (z<sup>3</sup>) of water weighs 64 kilograms and a cubic
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="millitaurs per day">mv</span>. Volume measurements are
-based on [liters]() (l), <span class="under tool"
+data-bs-title="tenths of a zem">decizem</span> (dz<sup>3</sup>) of water
+weighs 64 grams. A dz is the same as a <span class="under tool"
 data-bs-toggle="tooltip"
-data-bs-title="thousandths of a liter">milliliters</span> (mL), cubic
-zem (z<sup>3</sup>), and cubic <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="tenths of a zem">decizem</span>
-(dz<sup>3</sup>). Dec does not have separate units for wet🌊and
-dry🏜️volumes.
+data-bs-title="billionths of a taur">nanotaur</span> (nc).
 
 grams (g), . Redefining inches allows us to use powers are easier to
 convert to z and (dm): 1 z = 4 dm = 16 in. A square zem (z<sup>2</sup>)
 is called a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="sixteen square decimeters">hexamilliare</span> (x) and is
-equal to .16m<sup>2</sup>, 16 dm<sup>2</sup>, or 256 in<sup>2</sup>.
-
-A cubic zem is called a
-[keg](https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg:~:text=12.90645%20imp.%20gallons-,58.673882652%20liters,-Full%20keg%20weight)
-and is 64 liters or 16 Dec gallons. The table below contains A cubic
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a zem">decizem</span> (dz<sup>3</sup>), which
-is the same as a cubic <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="billionths of a taur">nanotaurs</span> (nc<sup>3</sup>),
-is 64 milliliters or 2 Dec fluid ounces. A cubic zem is 256 dm^2 = 0.5 1
-centizem = 4 milliliters (mm).
+equal to .16m<sup>2</sup>, or 256 in<sup>2</sup>.
 
 that we can easily convert miles per hour (mph) to mv or kmph, miles
 (mi) to kilozems (kz) or kilometers (km), and inches (in) to decimeters
@@ -1650,6 +1680,8 @@ style="width:8.64in;height:0.98in" />
 </div>
 
 </div>
+
+# Summary
 
 ``` {ojs}
 //| echo: false
@@ -2388,22 +2420,22 @@ decTimeP0 = ydzP0[1] % 1
 decTimeN0 = (decTimeP0 - 1) % 1
 utcOffsetM = -(new Date).getTimezoneOffset()
 utcOffsetD = utcOffsetM / 144
-utcOffDiff = (Math.round(utcOffsetD) - utcOffsetD).toFixed(2).replaceAll(/[.]0+$/g, "")
+utcOffDiff = (Math.round(utcOffsetD) - utcOffsetD).toFixed(2).replaceAll(/[.]0$/g, "")
 utcOffsetP = (utcOffsetD + 10) % 10
 decZonHslN = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 decZonHslA = textcolor(Math.abs(decZone), `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
-utcOffHslD = textcolor(utcOffsetD.toFixed(2).replaceAll(/[.]0+$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
-utcOffHslP = textcolor(utcOffsetP.toFixed(2).replaceAll(/[.]0+$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+utcOffHslD = textcolor(utcOffsetD.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+utcOffHslP = textcolor(utcOffsetP.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
 decYearHsl = textcolor(decYear, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
 decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
 decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
 decTimeZ0p = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 decTimeZ0n = textcolor((decTimeN0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
-parLat = textcolor(latitude.toFixed(3), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
+parLat = textcolor(latitude.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
 parCos = Math.cos(latitude * 2 * Math.PI)
-parLen = textcolor(parCos.toFixed(3), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
+parLen = textcolor(parCos.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
 zems = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
 zLeft = textcolor(zems, `hsl(${d3.hsl(piecewiseColor(zems / 1000)).h}` + slStr)
 point0long = long2turn(Place_A[0], 1)
@@ -3351,6 +3383,30 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorAcre {
+  background: hsl(4.705882352941177 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(4.705882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorSqMi {
+  background: hsl(316.4705882352941 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(316.4705882352941, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorSqIn {
+  background: hsl(12.470588235294118 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(12.470588235294118, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 </style>
 `
 ```
@@ -3526,5 +3582,8 @@ div:has(div.description) {
 }
 h4.hiddenheading {
   display: none;
+}
+h4.anchored {
+  margin: 8px 0px 8px 0px;
 }
 </style>
