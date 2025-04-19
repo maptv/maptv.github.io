@@ -735,22 +735,22 @@ decTimeP0 = ydzP0[1] % 1
 decTimeN0 = (decTimeP0 - 1) % 1
 utcOffsetM = -(new Date).getTimezoneOffset()
 utcOffsetD = utcOffsetM / 144
-utcOffDiff = (Math.round(utcOffsetD) - utcOffsetD).toFixed(2).replaceAll(/[.]0+$/g, "")
+utcOffDiff = (Math.round(utcOffsetD) - utcOffsetD).toFixed(2).replaceAll(/[.]0$/g, "")
 utcOffsetP = (utcOffsetD + 10) % 10
 decZonHslN = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 decZonHslA = textcolor(Math.abs(decZone), `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
-utcOffHslD = textcolor(utcOffsetD.toFixed(2).replaceAll(/[.]0+$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
-utcOffHslP = textcolor(utcOffsetP.toFixed(2).replaceAll(/[.]0+$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+utcOffHslD = textcolor(utcOffsetD.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+utcOffHslP = textcolor(utcOffsetP.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
 decYearHsl = textcolor(decYear, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
 decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
 decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
 decTimeZ0p = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 decTimeZ0n = textcolor((decTimeN0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
-parLat = textcolor(latitude.toFixed(3), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
+parLat = textcolor(latitude.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
 parCos = Math.cos(latitude * 2 * Math.PI)
-parLen = textcolor(parCos.toFixed(3), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
+parLen = textcolor(parCos.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
 zems = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
 zLeft = textcolor(zems, `hsl(${d3.hsl(piecewiseColor(zems / 1000)).h}` + slStr)
 point0long = long2turn(Place_A[0], 1)
@@ -1698,6 +1698,30 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorAcre {
+  background: hsl(4.705882352941177 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(4.705882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorSqMi {
+  background: hsl(316.4705882352941 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(316.4705882352941, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorSqIn {
+  background: hsl(12.470588235294118 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(12.470588235294118, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 </style>
 `
 ```
@@ -1874,6 +1898,9 @@ div:has(div.description) {
 }
 h4.hiddenheading {
   display: none;
+}
+h4.anchored {
+  margin: 8px 0px 8px 0px;
 }
 </style>
 ```

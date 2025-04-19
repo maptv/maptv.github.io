@@ -55,4 +55,3 @@ viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].chil
 //  projection], [width, height])
 ```
 :::
-

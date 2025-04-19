@@ -257,14 +257,12 @@ decBar = colorbar({
 }
 ```
 
-# Hex {.hiddenheading}
-
-| 🧭              | **m$\alpha$**   | **c°**            | **h°**            | **hex**            |
-| --------------  | --------------- | ----------------- | ----------------- | ----------------   |
-| \${rainbowDir}  | \${rainbowMtr}  | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}     |
-| [NE]{.color125} | [125]{.color125} | [45]{.color125}    | [295]{.color125}   | [ea00ff]{.color125} |
-| [E]{.color250}  | [250]{.color250}  | [90]{.color250}     | [260]{.color250}    | [5500ff]{.color250} |
-| [SE]{.color375} | [375]{.color375}  | [135]{.color375}    | [210]{.color375}    | [0080ff]{.color375}  |
-| [S]{.color5}    | [500]{.color5}  | [180]{.color5}    | [180]{.color5}    | [00ffff]{.color5}  |
-| [SW]{.color625} | [625]{.color625}  | [225]{.color625}    | [110]{.color625}    | [00ffff]{.color625}  |
-| [N]{.color0}    | [0]{.color0}    | [0]{.color0}      | [0]{.color0}      | [ff0000]{.color0}  |
+| 🧭              | **m$\alpha$**    | **c°**            | **h°**            | **hex**             |
+| --------------  | ---------------  | ----------------- | ----------------- | ----------------    |
+| \${rainbowDir}  | \${rainbowMtr}   | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}      |
+| [NE]{.color125} | [125]{.color125} | [45]{.color125}   | [295]{.color125}  | [ea00ff]{.color125} |
+| [E]{.color250}  | [250]{.color250} | [90]{.color250}   | [260]{.color250}  | [5500ff]{.color250} |
+| [SE]{.color375} | [375]{.color375} | [135]{.color375}  | [210]{.color375}  | [0080ff]{.color375} |
+| [S]{.color5}    | [500]{.color5}   | [180]{.color5}    | [180]{.color5}    | [00ffff]{.color5}   |
+| [SW]{.color625} | [625]{.color625} | [225]{.color625}  | [110]{.color625}  | [00ffff]{.color625} |
+| [N]{.color0}    | [0]{.color0}     | [0]{.color0}      | [0]{.color0}      | [ff0000]{.color0}   |
