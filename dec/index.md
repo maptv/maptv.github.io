@@ -963,6 +963,17 @@ Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%
 were 4 z tall, we could measure 1 z from the knee to the toes🦶of one of
 his legs🦵 or from the elbow to the fingertips✋of one of his arms💪.
 
+<div class="column-margin" fig-align="center"
+style="text-align:center;">
+
+<figure>
+<img src="../../asset/vitruvianMan.svg" alt="Wikimedia" />
+<figcaption aria-hidden="true"><a
+href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg">Wikimedia</a></figcaption>
+</figure>
+
+</div>
+
 addition to Redefined units based on z<sup>3</sup> such as a Dec cup and
 cannot be split evenly into redefined units based on dz<sup>3</sup> like
 a Dec ounce. A Dec cup is 7.8125 Dec ounces.A zem is 4
