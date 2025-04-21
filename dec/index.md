@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+049
+2025+051
 
 - [Dec measurement system](#dec)
 - [Interactive world map](#map)
@@ -752,10 +752,10 @@ periodically check a countdown of the remaining zem: ${zLeft}.
 In Dec, centimillidays are called beats because they are similar in
 duration to heart❤️beats or musical🎵beats. A beat is
 <span class="color864">864</span> milliseconds. One mc is a hundred
-thousand (10<sup>5</sup>) zem (z) and one day is 10<sup>5</sup> beats
-(b). Therefore, 1 mv = $\text{mc}\over\text d$ = $\text z\over\text b$.
-It is easy to convert z into meters (m), z = $2\over5$ m, or mv into
-kilometers per hour (kmph): mv = $5\over3$ kmph.
+thousand (10<sup>5</sup>) zem (z) and one day (d) is 10<sup>5</sup>
+beats (b). Therefore, 1 mv = $\text{mc}\over\text d$ =
+$\text z\over\text b$. It is easy to convert z into meters (m), z =
+$2\over5$ m, or mv into kilometers per hour (kmph): mv = $5\over3$ kmph.
 
 The table below⬇️shows the [United States (US) customary
 units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
@@ -858,33 +858,9 @@ href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_ba
 </tr>
 <tr>
 <td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Bushel">bushels</a></td>
-<td><span class="math inline">$1\over2$</span> z<sup>3</sup></td>
-<td>32 L</td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Bucket#Unit_of_measurement">buckets</a></td>
-<td><span class="math inline">$1\over4$</span> z<sup>3</sup></td>
-<td>16 L</td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Peck">pecks</a></td>
-<td><span class="math inline">$1\over8$</span> z<sup>3</sup></td>
-<td>8 L</td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
 href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
 <td><span class="math inline">$1\over16$</span> z<sup>3</sup></td>
 <td>4 L</td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/English_units#General_liquid_measures">pottles</a></td>
-<td><span class="math inline">$1\over32$</span> z<sup>3</sup></td>
-<td>2 L</td>
 </tr>
 <tr>
 <td><span class="colorPint">1.0567</span> <a
@@ -905,12 +881,6 @@ href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
 <td>250 mL</td>
 </tr>
 <tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Gill_(unit)">gills</a></td>
-<td><span class="math inline">$1\over512$</span> z<sup>3</sup></td>
-<td>125 mL</td>
-</tr>
-<tr>
 <td><span class="colorFlOz">1.0821</span> <a
 href="https://en.wikipedia.org/wiki/Shot_glass">shots</a></td>
 <td>1 dz<sup>3</sup></td>
@@ -928,85 +898,97 @@ href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
 <td><span class="math inline">$1\over4$</span> dz<sup>3</sup></td>
 <td>16 mL</td>
 </tr>
-<tr>
-<td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Dessert_spoon">dessertspoons</a></td>
-<td><span class="math inline">$1\over8$</span> dz<sup>3</sup></td>
-<td>8 mL</td>
-</tr>
-<tr>
-<td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Teaspoon">teaspoons</a></td>
-<td><span class="math inline">$1\over16$</span> dz<sup>3</sup></td>
-<td>4 mL</td>
-</tr>
-<tr>
-<td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Teaspoon#:~:text=2.03-,US%20customary%20coffee%20spoons">coffeespoons</a></td>
-<td><span class="math inline">$1\over32$</span> dz<sup>3</sup></td>
-<td>2 mL</td>
-</tr>
-<tr>
-<td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Salt_spoon">saltspoons</a></td>
-<td><span class="math inline">$1\over64$</span> dz<sup>3</sup></td>
-<td>1 mL</td>
-</tr>
 </tbody>
 </table>
 
-Dec bases distances and areas on <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousands of meters">kilometers</span> (km),
+Instead of metric prefixes based on [powers of
+ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten),
+redefined units rely on [fractions based on powers of
+two](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
+to scale up or down as needed. Redefined units serve as convenient
+reference points and can easily be converted to Dec or SI units. Miles
+are redefined such that one Dec mile per hour is one
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of zems">kilozem</span> (kz),
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a meter">decimeters</span> (dm), and
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a meter">millimeters</span> (mm), weights
-on grams, and volumes on
-[liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic)
-(L) and <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a liter">milliliters</span> (mL). Dec does
-not have separate units for wet🌊and dry🏜️volumes. Miles are redefined
-such that one mile per hour is one <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="millitaurs per day">mv</span>. A
-redefined acre is equal to $2\over5$
+data-bs-title="millitaurs per day">mv</span>. A Dec acre is equal to
+$2\over5$
 [hectares](https://en.wikipedia.org/wiki/Hectare#:~:text=10%2C000%20square%20metres)
 or 40
 [are](https://en.wikipedia.org/wiki/Hectare#Are:~:text=area%2C%20equal%20to-,100%20square%20metres).
 
-A square zem (z<sup>2</sup>) is equal to 1 hexamilliare, 0.19753086
-square yards, 1.<span style="text-decoration-line:overline;">7</span>
-square feet, 16 square decimeters (dm<sup>2</sup>), 256 square inches,
-or 160000 square millimeters (mm<sup>2</sup>). Similarly, a square
-kilozem (kz<sup>2</sup>) is equal to 1 hexakilare, 0.16 square
-kilometers (km²), 160000 square meters (m²), 40 acres, 16 hectare,
-0.0576 square miles, or 10<sup>6</sup> z<sup>2</sup>.
-
-A cubic zem (z<sup>3</sup>) of water weighs 64 kilograms and a cubic
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a zem">decizem</span> (dz<sup>3</sup>) of water
-weighs 64 grams. A dz is the same as a <span class="under tool"
+A square zem (z<sup>2</sup>) is 1 <span class="under tool"
 data-bs-toggle="tooltip"
-data-bs-title="billionths of a taur">nanotaur</span> (nc).
+data-bs-title="1.6 thousandths of an are">hexamilliare</span> (x), 16
+square <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a meter">decimeters</span> (dm<sup>2</sup>),
+1.<span style="text-decoration-line:overline;">7</span> Dec square feet,
+or 256 Dec square inches. A square <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="ten zem">decazem</span>
+(Dz<sup>2</sup>) is 1 <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
+square meters (m²), 19.753086 Dec square yards, or 100 x. A square
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a thousand of zem">kilozem</span> (kz<sup>2</sup>) is 1
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="sixteen hundred ares">hexakilare</span>, 0.16 square
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of meters">kilometers</span> (km²), 0.0576 Dec
+square miles, 40 Dec acres, 16 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundreds of ares">hectares</span>, or 10<sup>6</sup> x.
 
-grams (g), . Redefining inches allows us to use powers are easier to
-convert to z and (dm): 1 z = 4 dm = 16 in. A square zem (z<sup>2</sup>)
-is called a <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="sixteen square decimeters">hexamilliare</span> (x) and is
-equal to .16m<sup>2</sup>, or 256 in<sup>2</sup>.
+A cubic <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a zem">decizem</span> (dz<sup>3</sup>) is 1
+shot, 2 Dec ounces, or 64 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a liter">milliliters</span> (mL). A shot
+of water🌊weighs 64 grams (g). Even though the weight of a Dec ounce of
+water🌊is close to a sixteenth of a Dec pound, Dec does not measure
+weights in ounces. A cubic zem (z<sup>3</sup>) is 1 keg, 16 Dec gallons,
+or 64
+[liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic)
+(L). A keg of water🌊weighs 64 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousands of grams">kilograms</span> (kg) or 128 Dec
+pounds.
 
-that we can easily convert miles per hour (mph) to mv or kmph, miles
-(mi) to kilozems (kz) or kilometers (km), and inches (in) to decimeters
-(dm) or z: 1 mph = 1 mv = $5\over3$ kmph, 1 mile = $25\over6$ =
-$5\over3$ , and 1 in = Furthermore, Dec redefines yards as $9\over4$ z,
-so that 1 mv = mph and 1 mile
+A weight of 64 kg and a height of 4 z, 1.6 m, or 64 inches correspond to
+a [body mass
+index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
+(BMI) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$.
+A BMI above 4.8 $\text {kg}\over\text z^2$ or 30
+$\text {kg}\over\text m^2$ is considered obese. If [Leonardo Da
+Vince](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s
+[Vitruvian
+Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
+were 4 z tall, we could measure 1 z from the knee to the toes🦶of one of
+his legs🦵 or from the elbow to the fingertips✋of one of his arms💪.
 
-mv convert Inversely, 1 m = 25 nc = 2.5 z.
+addition to Redefined units based on z<sup>3</sup> such as a Dec cup and
+cannot be split evenly into redefined units based on dz<sup>3</sup> like
+a Dec ounce. A Dec cup is 7.8125 Dec ounces.A zem is 4
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a meter">decimeters</span> (dm) or 16 Dec
+inches. A <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of a zem">centizem</span> (cz) is 4
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a meter">millimeters</span> (mm).
 
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="billionths of a taur">nanotaurs</span> (nc) and
+data-bs-title="thousands of meters">kilometers</span> (km),
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of zems">kilozem</span> (kz),
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a meter">decimeters</span> (dm), and , weights
+on grams (g), and volumes on , and
+
+Liters are cubic decimeters and milliliters are cubic centimeters.
+
+In general, redefined units are easier to convert.
+
+A dz is the same as a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a taur">nanotaur</span> (nc). and does not
+have separate units for wetand dry🏜️volumes. A Dec ounce is 32 mL, not a
+sixteenth of a Dec pound, which is 31.25 g.
 
 We can define mv as mc per day, z per <span class="under tool"
 data-bs-toggle="tooltip"
