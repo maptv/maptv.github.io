@@ -128,6 +128,10 @@ A cubic [decizem]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth o
 
 A weight of 64 kg and a height of 4 z, 1.6 m, or 64 inches correspond to a [body mass index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height) (BMI) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$. A BMI above 4.8 $\text {kg}\over\text z^2$ or 30 $\text {kg}\over\text m^2$ is considered obese. If [Leonardo Da Vince](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)'s [Vitruvian Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci) were 4 z tall, we could measure 1 z from the knee to the toes🦶of one of his legs🦵 or from the elbow to the fingertips✋of one of his arms💪.
 
+:::{.column-margin fig-align="center" style="text-align:center;"}
+![[Wikimedia](https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg)](../../asset/vitruvianMan.svg)
+:::
+
 addition to Redefined units based on z^3^ such as a Dec cup and cannot be split evenly into redefined units based on dz^3^ like a Dec ounce. A Dec cup is 7.8125 Dec ounces.A zem is 4 [decimeters]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a meter"} (dm) or 16 Dec inches. A [centizem]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of a zem"} (cz) is 4 [millimeters]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a meter"} (mm).
 
 [kilometers]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of meters"} (km), [kilozem]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of zems"} (kz), [decimeters]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a meter"} (dm), and , weights on grams (g), and volumes on , and 
