@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+051
+2025+052
 
 - [Dec measurement system](#dec)
 - [Interactive world map](#map)
@@ -506,7 +506,21 @@ decBar = colorbar({
 <td><span class="color625">625</span></td>
 <td><span class="color625">225</span></td>
 <td><span class="color625">110</span></td>
-<td><span class="color625">00ffff</span></td>
+<td><span class="color625">2bff00</span></td>
+</tr>
+<tr>
+<td><span class="color750">W</span></td>
+<td><span class="color750">750</span></td>
+<td><span class="color750">270</span></td>
+<td><span class="color750">70</span></td>
+<td><span class="color750">d5ff00</span></td>
+</tr>
+<tr>
+<td><span class="color875">NW</span></td>
+<td><span class="color875">875</span></td>
+<td><span class="color875">315</span></td>
+<td><span class="color875">45</span></td>
+<td><span class="color875">ffbf00</span></td>
 </tr>
 <tr>
 <td><span class="color0">N</span></td>
@@ -967,9 +981,24 @@ his legs🦵 or from the elbow to the fingertips✋of one of his arms💪.
 style="text-align:center;">
 
 <figure>
-<img src="../../asset/vitruvianMan.svg" alt="Wikimedia" />
+<img src="../asset/vitruvianMan.svg" alt="Wikimedia" />
 <figcaption aria-hidden="true"><a
 href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg">Wikimedia</a></figcaption>
+</figure>
+
+</div>
+
+If four people each placed their right hand✋on top of the elbow of the
+person to their right, they would create a square with an area of
+roughly 1 x.
+
+<div class="column-margin" fig-align="center"
+style="text-align:center;">
+
+<figure>
+<img src="../asset/squareZem.svg" alt="Wikimedia" />
+<figcaption aria-hidden="true"><a
+href="https://commons.wikimedia.org/wiki/File:Extended_arm.jpg">Wikimedia</a></figcaption>
 </figure>
 
 </div>
