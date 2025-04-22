@@ -3,12 +3,13 @@ Martin Laptev
 2025+052
 
 - [Dec measurement system](#dec)
-- [Interactive world map](#map)
-- [Color wheel compass](#hue)
+  - [Interactive world map](#map)
+  - [Color wheel compass](#hue)
 - [Dec time zones](#dtz)
 - [Coordinated Universal Time (UTC)](#utc)
 - [Zone equatorial meter (zem)](#zem)
-- [Unit conversion table](#uct)
+  - [Unit conversion table](#uct)
+  - [Body mass index](#bmi)
 - [Summary](#tldr)
 
 <div id="decnav">
@@ -125,7 +126,7 @@ data-bs-toggle="tooltip"
 data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis">mv</span>
 = ${(distance_mtaur / travelspeed).toFixed(3)} d.
 
-# Interactive world map
+## Interactive world map
 
 ``` {ojs}
 //| echo: false
@@ -187,7 +188,7 @@ viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].chil
 
 </div>
 
-# Color wheel compass
+## Color wheel compass
 
 ``` {ojs}
 //| echo: false
@@ -782,7 +783,7 @@ from original to redefined units. A fold change of
 <span class="color0">1</span> indicates no change. Units that are
 derived in the same way have the same fold change.
 
-# Unit conversion table
+## Unit conversion table
 
 <table>
 <colgroup>
@@ -965,6 +966,8 @@ data-bs-toggle="tooltip"
 data-bs-title="thousands of grams">kilograms</span> (kg) or 128 Dec
 pounds.
 
+## Body mass index
+
 A weight of 64 kg and a height of 4 z, 1.6 m, or 64 inches correspond to
 a [body mass
 index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
@@ -975,7 +978,7 @@ Vince](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20po
 [Vitruvian
 Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
 were 4 z tall, we could measure 1 z from the knee to the toes🦶of one of
-his legs🦵 or from the elbow to the fingertips✋of one of his arms💪.
+his legs🦵or from the elbow to the fingertips✋of one of his arms💪.
 
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -988,9 +991,9 @@ href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg
 
 </div>
 
-If four people each placed their right hand✋on top of the elbow of the
-person to their right, they would create a square with an area of
-roughly 1 x.
+Building on the If four people each stretch out their right arm💪and
+place their right hand✋on top of the elbow of the person to their
+right, they would create a square with an area of roughly 1 x.
 
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -3602,7 +3605,7 @@ div#toggles button#rstbtn {
 div:has(div.description) {
   display: none;
 }
-h4.hiddenheading {
+h4.hiddenheading, h5.hiddenheading {
   display: none;
 }
 h4.anchored {
