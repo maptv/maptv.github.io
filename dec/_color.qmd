@@ -264,5 +264,7 @@ decBar = colorbar({
 | [E]{.color250}  | [250]{.color250} | [90]{.color250}   | [260]{.color250}  | [5500ff]{.color250} |
 | [SE]{.color375} | [375]{.color375} | [135]{.color375}  | [210]{.color375}  | [0080ff]{.color375} |
 | [S]{.color5}    | [500]{.color5}   | [180]{.color5}    | [180]{.color5}    | [00ffff]{.color5}   |
-| [SW]{.color625} | [625]{.color625} | [225]{.color625}  | [110]{.color625}  | [00ffff]{.color625} |
+| [SW]{.color625} | [625]{.color625} | [225]{.color625}  | [110]{.color625}  | [2bff00]{.color625} |
+| [W]{.color750} | [750]{.color750} | [270]{.color750}  | [70]{.color750}  | [d5ff00]{.color750} |
+| [NW]{.color875} | [875]{.color875} | [315]{.color875}  | [45]{.color875}  | [ffbf00]{.color875} |
 | [N]{.color0}    | [0]{.color0}     | [0]{.color0}      | [0]{.color0}      | [ff0000]{.color0}   |
