@@ -1896,7 +1896,7 @@ div#toggles button#rstbtn {
 div:has(div.description) {
   display: none;
 }
-h4.hiddenheading {
+h4.hiddenheading, h5.hiddenheading {
   display: none;
 }
 h4.anchored {

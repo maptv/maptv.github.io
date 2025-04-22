@@ -14,7 +14,8 @@ aliases:
 license: CC BY-SA
 lightbox: false
 toc: true
-toc-depth: 4
+toc-depth: 5
+toc-expand: true
 bread-crumbs: false
 format:
   html:
@@ -57,11 +58,11 @@ Click the map🗺️to move the points. To return the points to their original p
 
 An airplane✈️flying at 500 [milliomegars]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of the equatorial speed of rotation of Earth"} ([mv]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis"}), half the equatorial speed of the rotation of Earth🌎on its axis, could travel🧳the 100 mc between the default positions📍of Points [0]{.point0} and [1]{.point1} in 200 [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} ([md]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}). To get the time in days (d) required to travel🧳between two points, we divide the distance📏in mc by the speed in [mv]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis"}: \${distance_mtaur} mc &divide; \${travelspeed} [mv]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis"} = \${(distance_mtaur / travelspeed).toFixed(3)} d.
 
-# Interactive world map {.hiddenheading #map}
+## Interactive world map {.hiddenheading #map}
 
 {{< include /dec/_maptable.qmd >}}
 
-# Color wheel compass {.hiddenheading #hue}
+## Color wheel compass {.hiddenheading #hue}
 
 {{< include /dec/_color.qmd >}}
 
@@ -116,7 +117,7 @@ In Dec, centimillidays are called beats because they are similar in duration to 
 
 The table below⬇️shows the [United States (US) customary units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems) that Dec redefines based on the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) (SI). The measurements in each row are equal. The values in the first column are [fold changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement) from original to redefined units. A fold change of [1]{.color0} indicates no change. Units that are derived in the same way have the same fold change.
 
-# Unit conversion table {.hiddenheading #uct}
+## Unit conversion table {.hiddenheading #uct}
 
 {{< include /dec/_kegtable.qmd >}}
 
@@ -126,13 +127,16 @@ A square zem (z^2^) is 1 [hexamilliare]{.under .tool data-bs-toggle="tooltip" da
 
 A cubic [decizem]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a zem"} (dz^3^) is 1 shot, 2 Dec ounces, or 64 [milliliters]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a liter"} (mL). A shot of water🌊weighs 64 grams (g). Even though the weight of a Dec ounce of water🌊is close to a sixteenth of a Dec pound, Dec does not measure weights in ounces. A cubic zem (z^3^) is 1 keg, 16 Dec gallons, or 64 [liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic) (L). A keg of water🌊weighs 64 [kilograms]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of grams"} (kg) or 128 Dec pounds.
 
-A weight of 64 kg and a height of 4 z, 1.6 m, or 64 inches correspond to a [body mass index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height) (BMI) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$. A BMI above 4.8 $\text {kg}\over\text z^2$ or 30 $\text {kg}\over\text m^2$ is considered obese. If [Leonardo Da Vince](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)'s [Vitruvian Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci) were 4 z tall, we could measure 1 z from the knee to the toes🦶of one of his legs🦵 or from the elbow to the fingertips✋of one of his arms💪.
+## Body mass index {.hiddenheading #bmi}
+
+A weight of 64 kg and a height of 4 z, 1.6 m, or 64 inches correspond to a [body mass index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height) (BMI) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$. A BMI above 4.8 $\text {kg}\over\text z^2$ or 30 $\text {kg}\over\text m^2$ is considered obese. If [Leonardo Da Vince](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)'s [Vitruvian Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci) were 4 z tall, we could measure 1 z from the knee to the toes🦶of one of his legs🦵or from the elbow to the fingertips✋of one of his arms💪.
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
 ![[Wikimedia](https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg)](../asset/vitruvianMan.svg)
 :::
 
-If four people each placed their right hand✋on top of the elbow of the person to their right, they would create a square with an area of roughly 1 x.
+Building on the 
+If four people each stretch out their right arm💪and place their right hand✋on top of the elbow of the person to their right, they would create a square with an area of roughly 1 x.
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
 ![[Wikimedia](https://commons.wikimedia.org/wiki/File:Extended_arm.jpg)](../asset/squareZem.svg)
