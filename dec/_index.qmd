@@ -1902,5 +1902,11 @@ h4.hiddenheading, h5.hiddenheading {
 h4.anchored {
   margin: 8px 0px 8px 0px;
 }
+#cubic svg, #hands svg {
+  max-width: 100%;
+}
+svg#lefthand {
+  height: 50%;
+}
 </style>
 ```

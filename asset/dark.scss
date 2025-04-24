@@ -74,7 +74,7 @@ svg#lefthand tspan, svg#righthand tspan {
 }
 
 svg#lefthand path, svg#righthand path {
-  stroke: white;
+  stroke: white !important;
 }
 
 img#colorwheel tspan {
@@ -322,4 +322,8 @@ div#colorwheelcompass path#piepath {
 }
 .colorcomparer svg g[aria-label="tip"] g text {
   color: white;
+}
+
+#vitruvian img {
+  filter: invert(100%);
 }

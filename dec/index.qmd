@@ -50,9 +50,9 @@ This section of my website focuses on Dec, a [measurement system](https://en.wik
 
 The three turn types that Dec uses for distance📏and time⏳measurement are all approximations of physical attributes of the Earth🌍: c $\approx$ the [circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth) of the Earth🌏, y $\approx$ the duration of [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun) of the Earth🌎around the Sun☀️, and d $\approx$ the duration of [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis) of the Earth🌍on its [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole). Notably, $\text c\over\text d$ = [v = ωr](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity) $\approx$ the speed of the rotation of Earth🌏at the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
-The table below⬇️provides the current [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) ([$\lambda$](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda)) in [milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a circle of latitude"} (m$\lambda$) and [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) ([$\phi$](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi)) in [milli[meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a polar circumference"} (m$\phi$) of Points [0]{.point0} and [1]{.point1} on the map🗺️beneath the table. By default, [Point 0]{.point0} is at [800]{.point0} m$\lambda$ and [0]{.point0} m$\phi$, which is near the [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific) of Ecuador🇪🇨, and [Point 1]{.point1} is at [800]{.point1} m$\lambda$ and [100]{.point1} m$\phi$, which is in the United States🇺🇸city of [Memphis, Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
+The table below⬇️provides the current [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) ([$\lambda$](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda)) in [milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a circle of latitude"} (m$\lambda$) and [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) ([$\phi$](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi)) in [milli[meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a polar circumference"} (m$\phi$) of Points [0]{.point0} and [1]{.point1} on the map🗺️beneath the table. By default, [Point 0]{.point0} is at [800]{.point0} m$\lambda$ and [0]{.point0} m$\phi$, near the [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific) of Ecuador🇪🇨, and [Point 1]{.point1} is at [800]{.point1} m$\lambda$ and [100]{.point1} m$\phi$, in the United States🇺🇸city of [Memphis, Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
 
-In the table, the geographic coordinates of each point are followed by the [course](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered) ([$\alpha$](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)) in [milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a compass rose"} (m$\alpha$) we would need to maintain to travel🧳the shortest distance📏to the other point on the map🗺️. The default courses in m$\alpha$ are [0]{.point0} (North) from [Point 0]{.point0} to [Point 1]{.point1} and [500]{.point1} (South) from [Point 1]{.point1} to [Point 0]{.point0}. By default, the points are 100 [millitaurs]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a taur"} (mc) apart.
+Each row of the table contains the geographic coordinates of a point and the [course](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered) ([$\alpha$](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)) in [milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a compass rose"} (m$\alpha$) we would need to maintain to travel🧳the shortest distance📏to the other point. The default courses in m$\alpha$ are [0]{.point0} (North) from [Point 0]{.point0} to [Point 1]{.point1} and [500]{.point1} (South) from [Point 1]{.point1} to [Point 0]{.point0}. By default, the points are 100 [millitaurs]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a taur"} (mc) apart.
 
 Click the map🗺️to move the points. To return the points to their original positions📍, click the "Reset" button above the table. Next to the "Reset" button, there are [toggle](https://observablehq.com/framework/inputs/toggle)✅inputs that add country borders, a grid of Dec [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines), [solar terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) shading, a yellow🟡dot denoting where the Sun☀️is directly overhead (\${Math.floor(long2turn(sun[0]))} m$\lambda$, \${Math.floor(lati2turn(sun[1]))} m$\phi$), and [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) time zones.
 
@@ -93,7 +93,7 @@ Each Dec time zone is one [deciparallel]{.under .tool data-bs-toggle="tooltip" d
 viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: .001})
 ```
 
-# Coordinated Universal Time (UTC) {#utc}
+# Coordinated Universal Time {#utc}
 
 [UTC time zone offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place) range from \${rainbowN5zn} to \${rainbowP583} [dd]{.under .tool data-bs-toggle="tooltip" data-bs-title="deciday"}. According to your web browser, your UTC offset is \${utcOffHslM} &div; 144 = \${utcOffHslD} [dd]{.under .tool data-bs-toggle="tooltip" data-bs-title="deciday"}. The Dec time zone that corresponds to your UTC offset is Zone \${decZonHslP}. This Dec time zone is \${utcOffDiff} [dd]{.under .tool data-bs-toggle="tooltip" data-bs-title="deciday"} \${utcOffDiff < 0 ? "behind" : "ahead"} of time zones with your UTC offset. The times in corresponding Dec and UTC time zones can differ by up to 0.5 [dd]{.under .tool data-bs-toggle="tooltip" data-bs-title="deciday"}.
 
@@ -123,272 +123,45 @@ The table below⬇️shows the [United States (US) customary units](https://en.w
 
 Instead of metric prefixes based on [powers of ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten), redefined units rely on [fractions based on powers of two](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two) to scale up or down as needed. Redefined units serve as convenient reference points and can easily be converted to Dec or SI units. Miles are redefined such that one Dec mile per hour is one [mv]{.under .tool data-bs-toggle="tooltip" data-bs-title="millitaurs per day"}. A Dec acre is equal to $2\over5$ [hectares](https://en.wikipedia.org/wiki/Hectare#:~:text=10%2C000%20square%20metres) or 40 [are](https://en.wikipedia.org/wiki/Hectare#Are:~:text=area%2C%20equal%20to-,100%20square%20metres).
 
-A square zem (z^2^) is 1 [hexamilliare]{.under .tool data-bs-toggle="tooltip" data-bs-title="1.6 thousandths of an are"} (x), 16 square [decimeters]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a meter"} (dm^2^), 1.[7]{style="text-decoration-line:overline;"} Dec square feet, or 256 Dec square inches. A square [decazem]{.under .tool data-bs-toggle="tooltip" data-bs-title="ten zem"} (Dz^2^) is 1 [hexadeciare]{.under .tool data-bs-toggle="tooltip" data-bs-title="sixteen hundredths of an are"}, 16 square meters (m²), 19.753086 Dec square yards, or 100 x. A square [kilozem]{.under .tool data-bs-toggle="tooltip" data-bs-title="a thousand of zem"} (kz^2^) is 1 [hexakilare]{.under .tool data-bs-toggle="tooltip" data-bs-title="sixteen hundred ares"}, 0.16 square [kilometers]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of meters"} (km²), 0.0576 Dec square miles, 40 Dec acres, 16 [hectares]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundreds of ares"}, or 10^6^ x.
+A square zem (z^2^) is 1 [hexamilliare]{.under .tool data-bs-toggle="tooltip" data-bs-title="1.6 thousandths of an are"} (x), 16 square [decimeters]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a meter"} (dm^2^), 1.[7]{style="text-decoration-line:overline;"} Dec square feet🦶, or 256 Dec square inches. A square [decazem]{.under .tool data-bs-toggle="tooltip" data-bs-title="ten zem"} (Dz^2^) is 1 [hexadeciare]{.under .tool data-bs-toggle="tooltip" data-bs-title="sixteen hundredths of an are"}, 16 square meters (m²), 19.753086 Dec square yards, or 100 x. A square [kilozem]{.under .tool data-bs-toggle="tooltip" data-bs-title="a thousand of zem"} (kz^2^) is 1 [hexakilare]{.under .tool data-bs-toggle="tooltip" data-bs-title="sixteen hundred ares"}, 0.16 square [kilometers]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of meters"} (km²), 0.0576 Dec square miles, 40 Dec acres, 16 [hectares]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundreds of ares"}, or 10^6^ x.
 
 A cubic [decizem]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a zem"} (dz^3^) is 1 shot, 2 Dec ounces, or 64 [milliliters]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a liter"} (mL). A shot of water🌊weighs 64 grams (g). Even though the weight of a Dec ounce of water🌊is close to a sixteenth of a Dec pound, Dec does not measure weights in ounces. A cubic zem (z^3^) is 1 keg, 16 Dec gallons, or 64 [liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic) (L). A keg of water🌊weighs 64 [kilograms]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of grams"} (kg) or 128 Dec pounds.
 
-## Body mass index {.hiddenheading #bmi}
-
-A weight of 64 kg and a height of 4 z, 1.6 m, or 64 inches correspond to a [body mass index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height) (BMI) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$. A BMI above 4.8 $\text {kg}\over\text z^2$ or 30 $\text {kg}\over\text m^2$ is considered obese. If [Leonardo Da Vince](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)'s [Vitruvian Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci) were 4 z tall, we could measure 1 z from the knee to the toes🦶of one of his legs🦵or from the elbow to the fingertips✋of one of his arms💪.
-
 :::{.column-margin fig-align="center" style="text-align:center;"}
-![[Wikimedia](https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg)](../asset/vitruvianMan.svg)
+![[Wikimedia](https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg)](../asset/vitruvianMan.svg){#vitruvian}
 :::
 
-Building on the 
-If four people each stretch out their right arm💪and place their right hand✋on top of the elbow of the person to their right, they would create a square with an area of roughly 1 x.
+## Body mass index {.hiddenheading #bmi}
+
+A weight of 64 kg and a height of 4 z, 1.6 m, or 64 inches correspond to a [body mass index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height) (BMI) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$. A BMI above 4.8 $\text {kg}\over\text z^2$ or 30 $\text {kg}\over\text m^2$ is considered [obese](https://en.wikipedia.org/wiki/Obesity#:~:text=person's%20height—is-,over%2030%C2%A0kg/m2,-;%20the%20range%2025). If [Leonardo da Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)'s [Vitruvian Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci) were 4 z tall, we could measure 1 z from the knee to the foot🦶of one of his legs🦵or from the elbow to the fingertips of one of his arms💪.
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
 ![[Wikimedia](https://commons.wikimedia.org/wiki/File:Extended_arm.jpg)](../asset/squareZem.svg)
 :::
 
-addition to Redefined units based on z^3^ such as a Dec cup and cannot be split evenly into redefined units based on dz^3^ like a Dec ounce. A Dec cup is 7.8125 Dec ounces.A zem is 4 [decimeters]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a meter"} (dm) or 16 Dec inches. A [centizem]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of a zem"} (cz) is 4 [millimeters]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a meter"} (mm).
+To visualize a square zem, imagine four people standing in a circle, facing inward, each with their right hand✋placed on top of the elbow of the person to their right. Alternatively, two people can stand in front of each other and raise their arms💪, placing one hand✋on the elbow of the other person and the other hand✋on their own elbow to form a square🔲.
 
-[kilometers]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of meters"} (km), [kilozem]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousands of zems"} (kz), [decimeters]{.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a meter"} (dm), and , weights on grams (g), and volumes on , and 
+:::{.column-margin fig-align="center" style="text-align:center;"}
+![[Wikimedia](https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg)](../asset/Man_Lifting_Barbell_Cartoon.svg)
+:::
 
-Liters are cubic decimeters and milliliters are cubic centimeters. 
+You can measure a square zem yourself with a ruler📏or measuring tape. Either sitting in a chair🪑or standing🧍, measure 1 z, 4 dm, or 16 inches between knees and your feet🦶. This distance may be more or less the width of your hips or shoulders. Next, measure this same distance down from your knees to create the left and right sides of the square🔲.
 
-In general, redefined units are easier to convert.
+:::{.column-margin fig-align="center" style="text-align:center;" id="cubic"}
+{{< include _cubic.qmd >}}
+[Dimensions.com](https://www.dimensions.com/element/sitting-male-side-1)
+:::
 
-A dz is the same as a [nanotaur]{.under .tool data-bs-toggle="tooltip" data-bs-title="billionths of a taur"} (nc). 
- and does not have separate units for wetand dry🏜️volumes. A Dec ounce is 32 mL, not a sixteenth of a Dec pound, which is 31.25 g.
+If two people sit facing each other with their legs🦵bent at 25 [centiturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a hundredth of a turn"} (ct) angles and their knees 1 z apart, there will be roughly a cubic zem of space between their legs🦵. According to [dimensions.com](https://www.dimensions.com), 115 [centizems]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of a zem"} (cz) is the [typical seat height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual) and a [low seat height](https://www.dimensions.com/element/sitting-female-front-1#:~:text=Seat%20Height%20(Low)%3A-,15%E2%80%9D%20%7C%2038%20cm,-Style%3A%20Casual) is 95 cz for both men and women age 25 to 45. A [centizem]{.under .tool data-bs-toggle="tooltip" data-bs-title="a hundredth of a zem"} is 4 [millimeters]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a meter"} (mm).
 
-We can define mv as mc per day, z per [centimilliday]{.under .tool data-bs-toggle="tooltip" data-bs-title="a hundred thousandth of a day"} (b), or nc per [microday]{.under .tool data-bs-toggle="tooltip" data-bs-title="a millionth of a day"} ($\micro$d): 1 mv = $\text{mc}\over\text d$ = $\text z\over\text b$ = $\text{nc}\over\micro\text d$.
+:::{.column-margin fig-align="center" style="text-align:center;" id="hands" .hand}
+{{< include _hands.qmd >}}
+[[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)]{.handlabel}
+:::
 
-One mc is a  and a day is 10^5^ beats. a million nc   1 mc is hundred thousand (10^5^) zem and a million (10^6^) nc. 1 mv = 1 nc Zem can be combined c is a hundred million (10^8^) zems or forty million (4 &times; 10^7^) meters.
+Apart from the zem approximation methods described above, you can also approximate a zem using your hands✋. With your thumbs👍touching and your fingers spread out, your pinkies will be about 1 z apart. Instead of spreading out all your fingers, you can curl all but your thumb and pinky, as in the "[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)", "[drink](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=placing%20the%20thumb%20to%20the%20mouth%20and%20motioning%20the%20little%20finger%20upward%20as%20if%20tipping%20up%20a%20bottle%27s%20bottom%20end)", or "[call me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)"🤙gesture.
 
-
-Apart from distance measurements, zem are also useful for measuring speed. zem is to an mc as centimilliday is to a day. The default distance between Points [0]{.point0} and [1]{.point1} on the map🗺️above⬆️is 100 mc, ten million (10^7^) zem, or four million (4 &times; 10^6^) meters. When crossing such large distances, mv are the correct scale
-
-The time that has elapsed since this webpage was loaded is \${elaTimeHsl}. 
-
- Therefore, 1 z = 0.4 m and 1 m = 2.5 z.
-[originally defined](https://en.wikipedia.org/wiki/Metre#Definition:~:text=The%20metre%20was%20originally%20defined%20in%201791%20by%20the%20French%20National%20Assembly%20as%20one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole%20along%20a%20great%20circle%2C)
-[originally defined](https://en.wikipedia.org/wiki/Metre#Definition:~:text=The%20metre%20was%20originally%20defined%20in%201791%20by%20the%20French%20National%20Assembly%20as%20one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole%20along%20a%20great%20circle%2C)
- Simply put, 1 zem = 0.4 meters = .
-
-with negative offsets . The Dec time zone that most closely matches Of the more than two dozen UTC time zone offsets, only three are integers after we convert hours to [dd]{.under .tool data-bs-toggle="tooltip" data-bs-title="deciday"}: [-5]{.color5}, [0]{.color0}, [5]{.color5}. Time zones with one of these three offsets can converted directly between. A UTC offset that is not a [dd]{.under .tool data-bs-toggle="tooltip" data-bs-title="deciday"} integer will not  The date and time in UTC time zones with an offset of 0 Zone 0 has an offset of 0.  -5 or 5, we  The date and time in UTC time zones with an offset of zero dd match  dd offsets matches the time in one of the ten Dec time zones exactly. UTC 
-
-offsets are positive integers, but we can use negative  the UTC offset is not an integer, we round it.   obtain the Zones [5]{.color5} to [9]{.color9} overlap with UTC time zones that have negative [offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place). We can  design, The When the "UTC" toggle✅input is enabled, UTC time zones are shown on the map🗺️above⬆️. To find the he UTC-12:00 time zone roughly from New Zealand🇳🇿to the United Kingdom🇬🇧. By design, each Dec time zone has a positive offset that can be converted to a negative offset by subtracting ten dd. The sole purpose of negative offsets in Dec is compatibility with UTC.
-
-The range🎚️inputs below⬇️select two time zones to demonstrate time zone conversion. The round trip conversion of round trip conversion of the current date and time in Zone [0]{.color0} shown beneath the input. First, the offset is The date and time start as one number called a day-of-year ([doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}). After the offset is applied, the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"} is split into the date and the time. but are then displayed separately. The time is also converted from days to decidays. is measured in days and the Positive and negative offsets that yield the same time are displayed together for easy comparison. Regardless of which offset is selected, 
-
-Zone x to y
-Day.day + o ‎ =  Day.day 
-
-Zone y to x
-
-The Zone [8]{.color8} to [0]{.color0} conversion calculations are ${decTimeZn8} -- [8]{.color8} = , ${decTimeZn8} + [8]{.color8} = . Inversely, we can get the time in any time zone by adding either one of its offset to the Zone [0]{.color0} time. The Zone [0]{.color0} to [8]{.color8} conversion calculations are ${decTimeZn8} -- [8]{.color8} = , ${decTimeZn8} + [8]{.color8} = . 
-
-Of the two possible results, we can pick the one that is within the typical bounds for a Dec time: 0 <= time < 10.
-
-The time zone By default, Points [0]{.point0} and [1]{.point1} on the map🗺️above⬆️lie on [Longitude 8](https://en.wikipedia.org/wiki/90th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Gulf%20of%20Mexico%2C%20Central%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole) (\${rainbowMer8}  m$\lambda$), the start of Zone [8]{.color8}. To obtain the time in Zone [0]{.color0}, we can subtract either the positive or negative offset of Zone [8]{.color8} from its time: 
-
-and make 
-
-At least one of the two kinds of offsets will result in 
-
-
-The time zone conversion calculations for Zone [8]{.color8} are 
-
-We can choose the offset based on whether we want the resulting time to be positive or negative. In Zone [0]{.color0}, the positive time is currently \${decTimeZ0n} and the current negative time is \${decTimeZ0p}
-
-In Dec, negative times are perfectly valid, but only positive times are shown by default.  Negative times tell us how much of the day is left, instead of how much of the day has passed. Positive and negative times are two sides of the same coin🪙. At noon, half of the day has passed and half is left, just like a glass🥃can be both half full and half empty.
-
-To convert between positive and negative times, we can add and subtract ten dd as needed.
-
-In contrast, dates are impacted by our choice of a positive or negative offset. Positive offset dates are one day ahead of their negative counterparts.
-
-The date in Zone \${rainbow8zn4} is \${decDateHsl} if we use its positive offset and \${decYestHsl} otherwise. By providing a positive and negative offset for each time zone, Dec can match the date in any UTC time zone.
-
-
-
-Dates calculated using negative offsets will be This may be useful avoid date mismatches between Dec time zones that overlap with negative thus can be roughly one day ahead of their geographically closest UTC analogs. Zone \${rainbow6zon}, the default time of Points \${rainbow9zon} are .
-
-unless we subtract ten dd to make their offsets negative. The width of a UTC time zone is often 41.[6]{style="text-decoration-line:overline;"} m$\lambda$, but ranges from 0 m$\lambda$ to the width of China🇨🇳: [424](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=109%C2%B056%E2%80%B2E-,West,-%3A%20Akto%20County) m$\lambda$ -- [254](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=%20%5Bcitation%20needed%5D-,East,-%3A%20Fuyuan%20County%2C%20Heilongjiang%2C%20on) m$\lambda$ = 170 m$\lambda$.
-
-
-
-To accomodate negative UTC offsets, we can make any Dec offset negative by subtracting ten.
-
-The Dec time zone that corresponds to your UTC offset is Zone \${decZone1st}. 
-
-If you UTC offset is negative, To match the date in negative UTC zones, we can substract
-
-
-
-Each offset has a negative form that yields the same time but on a date that is one day earlier. To obtain the time in Zone \${rainbow0zn1} ($t_0$), we can subtract the offset ($o_x$) of any time zone $x$ from its deciday time ($t_x$): $t_0$ = $t_x$ -- $o_x$. Inversely, we can get the time in any time zone by adding its offset to the Zone \${rainbow0zn2} time. If $t_x$ is less than $o_x$, then $t_0$ will be negative: $t_x$ < $o_x \rightarrow t_0$ < $0$.
-
-We can add ten to any negative deciday time become positive.
-
-Instead of adding ten to a negative difference, we can subtract a the negative version of the offset
-In Dec, both times and offsets can be negative. Positive times tell us how much of the day has passed and negative times let us know how much of the day is left. Converting between positive and negative times or offsets is as easy as subtracting or adding ten. Negative offsets can facilitate mental calculations
-We can subtract ten from a time zone number to get a negative time zone offset. 
-
-Both positive and negative offsets yield the correct time, but negative offsets result in a date that is one day behind the correct date produced by positive offsets.
-
-
-In Zone \${decZone2nd}, the current date is and the current time in decidays is --. Even distances can be labeled🏷️with color🎨.
-
-At an average speed of \${travelspeed} $\text m\omega \text r$, we could cover the \${distance_mtaur} $\text m\tau r$ between Points [0]{.point0} and [1]{.point1} in ${traveltime} [milliday]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} (md).
-
-We can think of [centitaurs]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of the circumference of Earth"} per day ($\text c\omega \text r$) as a percent (%) and $\text m\omega$ as a [permille](https://en.wikipedia.org/wiki/Per_mille#:~:text=indicates%20parts%20per%20thousand) (‰) of . Notably, 1$\text m\omega$ = 1.[6]{style="text-decoration-line:overline;"} kilometers per hour ($\text{km}\over\text h$) $\approx$ 1 mile per hour ($\text {mi}\over\text h$). Other than ease of conversion, another advantage of a global scale, $\text m\tau r\over\text d$, $\text m\lambda$, $\text m\phi$ are the right size to measure distance and position.
-
-b the closest Dec analog of $\text{km}\over\text h$ and $\text {mi}\over\text h$, the main Dec speed measurement units are equivalent to $\text c\tau r\over\text d$.
-
-The advantage of $\text c\tau r\over\text d$ is that is equivalent to
-is [decimicrotaurs]{.under .tool data-bs-toggle="tooltip" data-bs-title="ten millionths of the circumference of Earth"} per [centimilliday]{.under .tool data-bs-toggle="tooltip" data-bs-title="a hundred thousandth of a day"} ($\text d\micro\tau r\over\text {cmd}$).
-
-that 1$\text c\tau r\over\text d$ = zems per beat ($\text z\over\text b$). Zem stands for **z**one **e**quatorial **m**icrowidth or **zem** (z) and a beat is roughly the duration of a heart or musical beat.
-
-
-Converting between Dec speed units is straightforward: 10$\text m\tau r\over\text d$ = 1 $\text c\tau\over\text d$ = 1
-
-Zem stands for zone equatorial microwidth and is equal to 4m.
-
-The length of 1 $\tau r$ is exactly equal to 10000 kilozems (kz) or 40000 kilometers (km), which is is 1.96575kz less than the length of a [meridian](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude) ($\phi$) and 18.75425kz less than the length of the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres) ($\phi_0$).
-of these points are in milliturns to indicate that an angle rather than a distance kilometers (km) or meters (m) and days to hours (h) or seconds (s).
-
-The scale of $\tau\text r$ and d is well suited for [air travel](https://en.wikipedia.org/wiki/Air_travel#:~:text=a%20form%20of%20travel%20in%20vehicles%20such%20as%20airplanes%2C%20jet%20aircraft%2C%20helicopters%2C%20hot%20air%20balloons%2C%20blimps%2C%20gliders%2C%20hang%20gliders%2C%20parachutes%2C%20or%20anything%20else%20that%20can%20sustain%20flight). If we had our very own [seaplane](https://en.wikipedia.org/wiki/Seaplane#:~:text=a%20powered%20fixed%2Dwing%20aircraft%20capable%20of%20taking%20off%20and%20landing%20(alighting)%20on%20water), we could fly 1 [decimeridian]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a meridian"} directly South from the [Mississippi River](https://en.wikipedia.org/wiki/Mississippi_River#:~:text=the%20primary%20river%20of%20the%20largest%20drainage%20basin%20in%20the%20United%20States) near [Memphis, Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee) to the land next to [Santa Fe Island](https://en.wikipedia.org/wiki/Santa_Fe_Island#:~:text=a%20small%20island%20of%2024%20square%20kilometres%20(9.3%C2%A0sq%C2%A0mi)%20which%20lies%20in%20the%20middle%20of%20the%20Gal%C3%A1pagos%20Archipelago%20in%20Ecuador)🏝️in the [Galápagos archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific).
-
-We can think of [centitaur]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of a meridian"} per day ($\text c\tau r\over\text d$) as a percent (%) and [millitaur]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a meridian"} per day ($\text m\tau r\over\text d$) as a [permille](https://en.wikipedia.org/wiki/Per_mille#:~:text=indicates%20parts%20per%20thousand) (‰) of the equatorial speed at which Earth🌏rotates on its axis. Conversion of $\text m\tau r$ to kilometers (km) or meters (m) and days to hours (h) or seconds (s) is straightforward: 1$\text m\tau r$ = 40km = 40000m, 1d = 24h = 86400s, and 1$\text m\tau r\over\text d$ = 1.[6]{style="text-decoration-line:overline;"}$\text{km}\over\text h$ = 2.16$\text m\over\text s$.
-
-
-It is very easy to switch between multiples and submultiples of units, Dec distance📏and time⏳units are all based on powers of ten, so
-
-Warning bad pun alert
-Turn the beat around, Love to hear the percussion…🪩🕺💃🎶🎵
-
-When dealing with shorter distances and durations, it is convenient to use submultiples of meridians and days.
-permission to land The Dec analogs of meters and seconds of a meter (m) is called
-
-Notably, $\text m\tau\text r\over\text d$ $\approx$ $\text{mi}\over\text h$.
-
-
-$\text m\lambda\over\text d$ closer to the distances and durations we may encounter A meridian per day ($\omega$ = $\lambda\over\text d$) The speed of the rotation of Earth🌎at the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres) is roughly .
-is approximation  [465.10](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=an%20equatorial%20speed%20of%20465.10%20metres%20per%20second) meters per second ($\text m\over\text s$) or 1.0046$\omega$.
-
-Similarly, we can think of [centimeridians]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundredths of meridians"} per day ($\text c\lambda\over\text d$) as percents : 1$\lambda\over\text d$ = 100$\text c\lambda\over\text d$. Conversion between Dec and SI speed units is easy: 1$\text c\lambda\over\text d$ = 0.216$\text m\over\text s$.
-
-and a meridian
-y = 365 or 366 days depending on the Dec leap year rule, and
-Dec speed measurements are based on $\lambda$ / d ($\omega$)
-, which stands for the circumference of the Earth and amounts to
-
- and is equal to 365 or 366 days, depending on the leap year rule. A day (d) represents the Earth on its axis and is equal to. Millennia (10e3y), centuries (10e2y), and decades (10e1y) are multiples of years. Decidays (10e-1d), centidays (10e-2d), and millidays (10e-3d) are submultiples of days.
-
-Like  different kinds of turns can be combined to form new units.
-
-
-For measurements of length or distance, a turn represents a [meridian](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude) ($\lambda$), a trip around the world through the North and South Poles, and is equal to 40000 kilometers (km).
-
-In Dec, time measurement is based on [days](https://en.wikipedia.org/wiki/Day#:~:text=the%20time%20period%20of%20a%20full%20rotation%20of%20the%20Earth%20with%20respect%20to%20the%20Sun) (d) and
-
-are two special kinds of turns that are the basis of time and distance measurements. have their own names and are defined in terms of
-
-A day is a turn of the Earth on its axis that has a duration of 86400 seconds and a meridian is a turn around the Earth that passes through the North and South Poles. A beat is 0.864 seconds (s) and a zem is 4 meters (m). Any kind of [angle](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐, such as a [bearing](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object) on a [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭or a [\${rainbowHue0}](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram%20(such%20as%20a%20chromaticity%20diagram)%20or%20color%20wheel) on a [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle), can be measured in turns or [submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer) of turns like [milliturns]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a turn"} ([$m\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=e.g.%2C%20centiturns%20(ctr)%2C-,milliturns,-(mtr)%2C%20etc)).
-
-The color🎨wheel below⬇️rotates🔄in response to the [Observable](https://observablehq.com) [range](https://observablehq.com/@observablehq/input-range)🎚️and [hue bar](https://observablehq.com/@paavanb/progressive-color-picker)📊inputs beneath it to orient the selected \${rainbowHue1} upward. The [HSL and HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model) models use degrees instead of milliturns so the milliturn shown by the range🎚️input, \${rainbowMtr}, is rounded to the nearest degree, \${rainbowDeg}, and then used as part of an HSL triplet to obtain the [hex triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors) \${rainbowHex}.
-
-Integer milliturns are capable of selecting all three [additive](https://en.wikipedia.org/wiki/Primary_color#:~:text=summing%20the%20spectral%20power%20distributions%20(the%20intensity%20of%20each%20wavelength)%20of%20the%20individual%20light%20sources) ([red]{.red}=0, [green]{.lime}=1/3=.[3]{style="text-decoration-line:overline;"}, [blue]{.azul}=2/3=.[6]{style="text-decoration-line:overline;"}) and all three [subtractive](https://en.wikipedia.org/wiki/Primary_color#:~:text=predicts%20the%20resultant%20spectral%20power%20distribution%20of%20light%20filtered%20through%20overlaid%20partially%20absorbing%20materials) ([yellow]{.yellow}=1/6=.1[6]{style="text-decoration-line:overline;"}, [cyan]{.cyan}=1/2=0.5, [magenta]{.magenta}=5/6=.8[3]{style="text-decoration-line:overline;"}) [primary color](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors)🎨hues only when converted to degrees and rounded. Unlike milliturns, degrees can represent [repeating decimal numbers](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20number%20whose%20digits%20are%20eventually%20periodic%20(that%20is%2C%20after%20some%20place%2C%20the%20same%20sequence%20of%20digits%20is%20repeated%20forever)) as integers and thus are useful to specifying primary colors ([red]{.red}=0°, [green]{.lime}=120°, [blue]{.azul}=240°, [yellow]{.yellow}=60°, [cyan]{.cyan}=180°, [magenta]{.magenta}=300°).
-
-
-rotation matches the  so that it can be used to select exactly. To specify the others, we would typically need to fractions or [repeating decimal numbers](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20number%20whose%20digits%20are%20eventually%20periodic%20(that%20is%2C%20after%20some%20place%2C%20the%20same%20sequence%20of%20digits%20is%20repeated%20forever)), but the example below uses rounding  ([green]{.lime}=120°, [blue]{.azul}=240°) ([yellow]{.yellow}=60°, [magenta]{.magenta}=300°) [primary colors](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors).
-
-to allow for identification of the hues of [additive](https://en.wikipedia.org/wiki/Primary_color#:~:text=summing%20the%20spectral%20power%20distributions%20(the%20intensity%20of%20each%20wavelength)%20of%20the%20individual%20light%20sources)  and [subtractive](https://en.wikipedia.org/wiki/Primary_color#:~:text=predicts%20the%20resultant%20spectral%20power%20distribution%20of%20light%20filtered%20through%20overlaid%20partially%20absorbing%20materials) () [primary colors](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors) with integers.\${rainbowDeg}.
-
-To specify the hues of these colors in turns, ([red]{.red}=0, [green]{.lime}=1/3=.[3]{style="text-decoration-line:overline;"}, [blue]{.azul}=2/3=.[6]{style="text-decoration-line:overline;"}, [yellow]{.yellow}=1/6=.1[6]{style="text-decoration-line:overline;"}, [cyan]{.cyan}=1/2=0.5, [magenta]{.magenta}=5/6=.8[3]{style="text-decoration-line:overline;"}). We can stipulate any pure primary color🎨, instead of just its \${rainbowHue2}, with only three characters ([red]{.red}=f00, [green]{.lime}=0f0, [blue]{.azul}=00f, [yellow]{.yellow}=ff0, [cyan]{.cyan}=0ff, [magenta]{.magenta}=f0f) in a
-
-The milliturn value selected above⬆️, \${rainbowMtr1}, is closest to the \${rainbowDir} [compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction).
-
-With submultiples of turns, we can represent any [dyadic rational](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20number%20that%20can%20be%20expressed%20as%20a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two) as an integer.
-
-In the color🎨wheel and compass🧭examples above, each type of turn is used individually. Different types of turns can also work together in groups. [Geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=the%20process%20of%20determining%20or%20estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person)📍relies on a pair of coordinates: [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) ($\lambda$) and [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) ($\phi$). When the globe🌍below⬇️detects a click🖱️event, it marks the chosen location and provides relevant information like the $\lambda$ and $\phi$ angles in milliturns.
-
- along with information about the chosen location
-or use longitude and latitude along with a compass🧭bearing ($\gamma$) to control the globe🌍below in three dimensions.
-
-The colorwheel compassdemonstrates that are, which can be truncated to three digits. an alternative to degrees that instead of degrees advantage of degrees is their incredible divisibility.
-
-Colors can be represented by HSL, , []{.mono}, or [RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model%5B1%5D%20in%20which%20the%20red%2C%20green%2C%20and%20blue%20primary%20colors%20of%20light%20are%20added%20together%20in%20various%20ways%20to%20reproduce%20a%20broad%20array%20of%20colors), , triplets. Hex triplets are [base16](https://en.wikipedia.org/wiki/Hexadecimal#:~:text=a%20positional%20numeral%20system%20that%20represents%20numbers%20using%20a%20radix%20(base)%20of%20sixteen), RGB triplets are [base256](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=two%20pentadecimal%20digits.-,256,-Number%20expressible%20with), and
-
-Turns can represent anything that is circular, spherical, or cyclical, like the , a [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation), [Earth's orbits](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=complete%20orbit%20takes-,365.256%C2%A0days,-(1%20sidereal%20year)) around the Sun (years), [Earth's rotations](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole) (days), [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of), and [parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line).
-A [quarter meridian](https://en.wikipedia.org/wiki/Meridian_arc#Quarter_meridian:~:text=The%20distance%20from%20the%20equator%20to%20the%20pole) is very close to 10 [megameters]{.under .tool data-bs-toggle="tooltip" data-bs-title="millions of meters"} because the length of a [meter](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units) was [once defined](https://en.wikipedia.org/wiki/Metre#:~:text=one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole) as a ten millionth of the distance from the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres) to the [North Pole](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface).
-
-![](../asset/quartermeridian.svg)
-
-For time measurement, Dec uses turns to measure years, days, longitudes, and latitudes. can therefore represent
-
-The symbol $\tau$ represents any kind of turn. A turn can be a year, a day, a meridian, a parallel, or a color🎨wheel.
-
-are many kinds of turns. can  Dec uses names to distinguish between different kinds of turns. of years, and called days and
-
-In geopositioning, a turn can be a circle of longitude or latitude.
-
-
-are 's turns [turns](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis) on . days are turns.
- In time measurement, both years and days are turns.
-
-various Dec measures [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth%2C%20or%20another%20celestial%20body) and the [time-of-day]{.cyan} ([tod]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}) in terms of [Earth](https://en.wikipedia.org/wiki/Earth#:~:text=the%20third%20planet%20from%20the%20Sun)'s [turns](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
-In different contexts of time, a turn is day. A turn of longitude is called a circle.
-
-The current [tod]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} is an approximation the longitude of the Sun.
-
- Turns help us understand the relationship between longitude and tod.
-A half turn separates noon and midnight or the Western and Eastern Hemispheres.
-
-Longitude defines the ten Dec time zones that standardize the [tod]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}.
-
-Longitudes start at [Meridian 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole) and [tods]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="times-of-day"} start at [Dot 0]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="midnight"}.
-
-Meridian 0 is the Dec [International Date Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) and [prime meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0), whereas .
-
-41.[6]{.over}
-
-[Meridian 1](https://en.wikipedia.org/wiki/18th_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Europe%2C%20Africa%2C%20the%20Atlantic%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole) divides Europe and Africa into Western and Eastern halves.
-
- which runs through Iceland and the Atlantic Ocean just West of Africa,
-In the context of time measurement, a turn on Earth's axis is called a day and a turn around the Sun is a year.
-
- for [geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=the%20process%20of%20determining%20or%20estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person)
-
-To measure time, Dec uses years and days. Years are turns of a celestial body around [the point it orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit). Days are turns of a [celestial body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity) on [its axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
-
-The distinguishing characteristics of Dec are its simplicity and consistency. These qualities are evident when comparing Dec and [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) time zones using the [toggle](https://observablehq.com/@observablehq/input-toggle)✅inputs beneath the world🌏map🗺️below⬇️. The 10 Dec time zones are all 1 [deciturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a turn"} wide, whereas the 40 UTC time zones shown on the map all deviate from their standard width of 41⅔ [milliturns]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a turn"} to conform to political boundaries.
-
-In addition to showing and hiding time zones, the toggle✅inputs also can add country borders and a [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) shade effect to the map🗺️.
-
-For a more realistic view of the world, you can interact with the globe🌐below⬇️. as it really is
-
-Dec has ten [time⏳zones](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time) which are each one [deciturn]{.under .tool data-bs-toggle="tooltip" data-bs-title="a tenth of a turn"} wide and are numbered zero through nine, like the ten [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of) that separate them. Zone [0]{.lime} is in between Meridians 0 and 1. [Meridian 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole), which runs through Iceland and the Atlantic Ocean just West of Africa, is the Dec [International Date Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) and [prime meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0). [Meridian 1](https://en.wikipedia.org/wiki/18th_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Europe%2C%20Africa%2C%20the%20Atlantic%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole) divides Europe and Africa into Western and Eastern halves.
-
-The [choropleth](https://en.wikipedia.org/wiki/Choropleth_map#:~:text=a%20type%20of%20statistical%20thematic%20map%20that%20uses%20pseudocolor%2C%20meaning%20color%20corresponding%20with%20an%20aggregate%20summary%20of%20a%20geographic%20characteristic%20within%20spatial%20enumeration%20units%2C%20such%20as%20population%20density%20or%20per%2Dcapita%20income)🎨map🗺️below shows all ten Dec meridians and the full spectrum of UTC time⏳zones.
-
-
-UTC+00:00 is in the middle of Zone 0, but makes detours to include Iceland and other islands. Except for such detours, each UTC time zone is 41.6̅ milliturns wide.
-
-The ISO🌐8601 format is
-
-If the Dec day-of-year ([doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}), [\${String(decDate).padStart(3, "0")}]{.cyan}.[\${decTime.toFixed(5).slice(2)}]{.cyan}, is greater than [306]{.under .tool data-bs-toggle="tooltip" data-bs-title="January 1"}, the Dec year is 1 less than the ISO🌐year.
-
-The ISO🌐8601 [time⏳interval](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=the%20intervening%20time%20between%20two%20time%20points) from now until midnight can be expressed without including the current time as , which is equivalent to the Dec span🌈.
-
-ISO🌐8601 and Dec are  different objectives. ISO🌐8601 seeks to standardize how we measure time, whereas Dec aims to completely redefine how we measure time.
-
-
-Unlike ISO🌐8601, the documentation describing Dec is available for free under a [Creative Commons license](https://en.wikipedia.org/wiki/Creative_Commons_license#:~:text=one%20of%20several%20public%20copyright%20licenses%20that%20enable%20the%20free%20distribution%20of%20an%20otherwise%20copyrighted%20%22work%22). While ISO🌐8601 standardizes,
-
- can be split two components: the Dec calendar🗓️(Decalendar) and clock🕓(Declock).
-The year in Dec is the same as in the
-Dec counts🧮years and days as integers and fractions. In Dec, the [integer](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20integer%20written%20to%20the%20left%20of%20the%20decimal%20separator) and [fractional](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) part of a year form a date, while the fractional part of a year. The fractional years are expressed by  while [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days) are . since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era), Dec tracks the date as and the time of day as fractional days using a single number called the [doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}.
-In essence, Decalendar and Declock  count🧮fractions of a year and a day, respectively. The numerator and denominator for Decalendar is the number of days in the year, and the Declock denominator is $10^x$, where $x$ is the number of digits in the numerator. In both systems, only the numerator, not the denominator, is provided. In the context of Decalendar, the numerator is the days that have passed in the year, while in the context of Declock, the numerator is the parts of the day that have passed in the day.
-
-To avoid any confusion between the two, we can say [Day 5]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 6"} to mean the date when 5 days have passed this year or [Day 0]{.underline .tool data-bs-toggle="tooltip" data-bs-title="March 1"} to mean the first day-of-year ([doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}). This is like the use of the term "day zero" in other contexts, such as epidemiology. The analogous term for times is "Dot". The word "Dot" conveys that at its core Declock is a system built on [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days) expressed as decimal numbers. The 5 in "Dot 5" can be thought of as a number after a decimal (0.5) or a numerator (⁵/₁₀), either way it means noon, the time when half the day has passed.
-
-The analogy to decimals or fractions is important, because it explains why adding a zero at the end of a time does not change the time, only the implied tolerance of time points or the implied duration of time intervals. If Dot 5 is a time point, it has an implied tolerance of 5% of the day ($.5±.05$), because any time after Dot 45 and before Dot 55 ($[.45, .55)$) would round to Dot 5. On the other hand, if Dot 5 is the start time for a time interval, that interval is implied to start at Dot 5 and end before Dot 6 ($[.5, .6)$) and thus have a duration of 10% of the day (Dot 6-Dot 5). Every additional digit we add decreases the implied tolerance and the implied duration 10-fold.
-
-If we really want to insist on punctuality, we could include up to 5 digits in a time. Specifying times with more than 5 digits is possible, and may be useful for scientific or technical purposes, but it is analogous to providing [extremely long GPS coordinates](https://xkcd.com/2170/); at some point the level of precision stops having relevance to daily life. If we want to strive for the highest level of precision possible, we can add the word "sharp" or the `#` symbol to the time. Saying "5 Sharp" or writing `5#` means as close as possible to noon. Times that include `#` cannot have an implied duration. We can only add `#` to a time, so there is no need say "Dot 5 Sharp" or write `.5#`.
-
+# Next{#next}
 
 ```{mermaid}
 %%| label: decnav
