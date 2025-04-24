@@ -3,8 +3,12 @@ Martin Laptev
 2025+054
 
 - [Dec measurement system](#dec)
+  - [Longitude latitude course](#llc)
+  - [Yaw pitch roll (ypr)](#ypr)
   - [Interactive world map](#map)
-  - [Color wheel compass](#hue)
+  - [Color wheel compass](#cwc)
+  - [Hue saturation lightness (hsl)](#hsl)
+  - [Red green blue (rgb)](#rgb)
 - [Dec time zones](#dtz)
 - [Coordinated Universal Time](#utc)
 - [Zone equatorial meter (zem)](#zem)
@@ -57,6 +61,8 @@ Notably, $\text c\over\text d$ = [v =
 ≈ the speed of the rotation of Earth🌏at the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
+## Longitude latitude course
+
 The table below⬇️provides the current
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
 ([*λ*](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda))
@@ -107,6 +113,20 @@ ${Math.floor(lati2turn(sun\[1\]))} m*ϕ*), and
 [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 time zones.
 
+## Yaw pitch roll (ypr)
+
+As the points move, their m*λ*, m*ϕ*, and m*α* values change. The
+map🗺️itself can move in terms of the three [aircraft principal
+axes](https://en.wikipedia.org/wiki/Aircraft_principal_axes#:~:text=yaw%2C%20nose%20left%20or%20right%20about%20an%20axis%20running%20up%20and%20down%3B%20pitch%2C%20nose%20up%20or%20down%20about%20an%20axis%20running%20from%20wing%20to%20wing%3B%20and%20roll%2C%20rotation%20about%20an%20axis%20running%20from%20nose%20to%20tail):
+[yaw](https://en.wikipedia.org/wiki/Aircraft_principal_axes#:~:text=an%20axis%20drawn%20from%20top%20to%20bottom),
+[pitch](https://simple.wikipedia.org/wiki/Pitch,_yaw,_and_roll#:~:text=pitch-,nose%20up%20or%20tail%20up,-.),
+and
+[roll](https://en.wikipedia.org/wiki/Degrees_of_freedom_%28mechanics%29#:~:text=Roll%20rotation%3A-,Pivots%20side%20to%20side,-%3B).
+In the context of map🗺️movement, yaw is eastward, pitch is northward,
+and roll is clockwise. Dec measures yaw in millispins (ms), pitch in
+milliflips (mf), and roll in millirolls (mr): ${yaw} ms, ${pitch} mf,
+and ${roll} mr.
+
 An airplane✈️flying at 500 <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of the equatorial speed of rotation of Earth">milliomegars</span>
@@ -129,21 +149,34 @@ data-bs-title="thousandths of the equatorial speed of rotation of Earth on its a
 
 ## Interactive world map
 
-``` {ojs}
-//| echo: false
-//| label: toggles
-viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
-viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
-viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
-viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
-rstbtn.node();
-```
+<div class="marginInputs">
 
 ``` {ojs}
 //| echo: false
 //| label: speedinput
 //| column: margin
 viewof travelspeed = Inputs.range([0, 1000], {label: "Speed", value: 500, step: 1})
+```
+
+``` {ojs}
+//| echo: false
+//| label: yawinput
+//| column: margin
+viewof yaw = Inputs.range([0, 1000], {label: "Yaw", value: 500, step: 1})
+```
+
+``` {ojs}
+//| echo: false
+//| label: pitchinput
+//| column: margin
+viewof pitch = Inputs.range([-500, 500], {label: "Pitch", value: 0, step: 1})
+```
+
+``` {ojs}
+//| echo: false
+//| label: rollinput
+//| column: margin
+viewof roll = Inputs.range([-500, 500], {label: "Roll", value: 0, step: 1})
 ```
 
 ``` {ojs}
@@ -159,6 +192,18 @@ viewof mapsize = Inputs.range([0, 100], {label: "Size", value: 100, step: 1})
 //| column: margin
 viewof select = Inputs.select(
   projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
+```
+
+</div>
+
+``` {ojs}
+//| echo: false
+//| label: toggles
+viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
+viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
+viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
+viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
+rstbtn.node();
 ```
 
 ``` {ojs}
@@ -416,6 +461,8 @@ decBar = colorbar({
 })
 ```
 
+## Hue saturation lightness (hsl)
+
 ``` {ojs}
 //| echo: false
 //| label: colorslider
@@ -539,18 +586,27 @@ The
 [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️indicates
 both a
 [hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram)
-and a [direction](https://en.wikipedia.org/wiki/Cardinal_direction). To
-rotate🔄the color🎨wheel compass🧭, use the
-[Observable](https://observablehq.com) hue
-[bar](https://observablehq.com/@paavanb/progressive-color-picker)📊and
-range🎚️inputs beneath it or change the course from
-<span class="point0">Point 0</span> to <span class="point1">Point
-1</span> on the map🗺️. The table above⬆️shows the currently indicated
-direction (top row) and the
+in <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a turn">milliturns</span> (mt) and a
+course in m*α*. To rotate🔄the color🎨wheel compass🧭, use the
+[Observable](https://observablehq.com) hue range🎚️and hue
+[bar](https://observablehq.com/@paavanb/progressive-color-picker)📊inputs
+beneath it or change the course from <span class="point0">Point 0</span>
+to <span class="point1">Point 1</span> on the map🗺️.
+
+The table beneath the hue inputs compares the current course (top row)
+with the
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
 and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
 directions.
+
+translates the m*α* into compass🧭degrees (c°) and [HSL and
+HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
+hue degrees (h°).
+
+[direction](https://en.wikipedia.org/wiki/Cardinal_direction) The table
+underneath the hue inputs
 
 <div>
 
@@ -569,17 +625,19 @@ directions.
 
 </div>
 
-The range🎚️inputs beneath the color🎨wheel compass🧭represent a hue,
-saturation, and lightness (HSL) triplet that specifies a color with
-three <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a thousandth of a turn">milliturn</span> (mt) values. We
-can convert the hue mt value into compass🧭degrees (c°) and [HSL and
-HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
-hue degrees (h°). We can also translate an HSL triplet into an HSV,
-[RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model),
+## Red green blue (rgb)
+
+The color🎨of the top row is specified by <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="a thousandth of a turn">milliturn</span> (mt) values of
+the three range🎚️inputs under the hue
+[bar](https://observablehq.com/@paavanb/progressive-color-picker)📊.
+Together, the three mt values form a hue-saturation-lightness (HSL)
+triplet. We can also convert an HSL triplet into an red-green-blue
+([RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
 or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
-(hex) triplet.
+(hex) triplet. The saturation and lightness
 
 Color🎨can provide a general sense of
 angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle),
@@ -2501,7 +2559,7 @@ decConnections = [
   [8, 3],
   [9, 4]
 ]
-coor = [[[-18, -90], [-18, 90], [18, 90], [18, -90], [-18, -90], ]]
+coor = [[[-18, -88], [-18, 88], [18, 88], [18, -88], [-18, -88], ]]
 deczones = [...Array(10).keys()].map(
   i => ({
     "type": "Feature",
@@ -2660,7 +2718,7 @@ function worldMapCoordinates(config = {}, dimensions) {
   const canvas = context.canvas;
   const projection = config[2]
     .precision(0.1)
-    .fitSize([width, height], { type: "Sphere" }).rotate([-148, 0]);
+    .fitSize([width, height], { type: "Sphere" });
   const path = d3.geoPath(projection, context).pointRadius(2.5);
   formEl.append(canvas);
   function fillMesh(f) {
@@ -2803,6 +2861,9 @@ function worldMapCoordinates(config = {}, dimensions) {
     set(viewof gridtoggle, false);
     set(viewof suntoggle, false);
     set(viewof utctoggle, false);
+    set(viewof yaw, 500);
+    set(viewof pitch, 0);
+    set(viewof roll, 0);
     set(viewof select, projections.find(t => t.name === "Equirectangular (plate carrée)"));
     set(viewof colorD, 0)
     set(viewof colorS, 1000)
@@ -3098,7 +3159,12 @@ function lati2turn(degrees = -180, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
   return (degrees %= 360) / (360 / 10**e) % 10**e;
 }
-projection = select ? select.value() : d3.geoEquirectangular()
+selectedProjection = select ? select.value() : d3.geoEquirectangular()
+projection = {
+  let proj = selectedProjection;
+  if (proj.rotate) proj.rotate([-turn2long(yaw), -turn2degr(pitch), turn2degr(roll)]);
+  return proj;
+}
 sun = {
   const now = new Date;
   const day = new Date(+now).setUTCHours(0, 0, 0, 0);
@@ -3615,10 +3681,10 @@ div#projselect {
   align-items: center;
   justify-content: center;
 }
-div#projselect > div, div#sizeinput > div, div#speedinput > div {
+div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div, {
   overflow-x: clip;
 }
-div#sizeinput label, div#speedinput label {
+div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
   width: 35px;
 }
 button#rstbtn:hover {
@@ -3629,15 +3695,15 @@ button#rstbtn:hover {
 div#distmap {
   margin-bottom: -28px;
 }
-#sizeinput #speedinput {
+#sizeinput #speedinput #yawinput #pitchinput #rollinput {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#speedinput input[type="number"], #sizeinput input[type="number"] {
+#speedinput input[type="number"], #sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
   width: 58px;
 }
-#speedinput input[type="range"], #sizeinput input[type="range"] {
+#speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
   width: 72%;
 }
 .colorcomponent {
@@ -3645,7 +3711,7 @@ div#distmap {
   align-items: center;
   justify-content: center;
 }
-div#colorpreview, div.colorcomparer {
+div#colorpreview, div.colorcomparer, div#coloropposites8, div.coloropposites10, div#colorcomparer8, div.colorcomparer10 {
   overflow: visible;
 }
 div.colorcomparer g[aria-label="y-axis label"] > text {
@@ -3771,5 +3837,9 @@ h4.anchored {
 }
 svg#lefthand {
   height: 50%;
+}
+.marginInputs {
+  position: relative;
+  top: -120px;
 }
 </style>
