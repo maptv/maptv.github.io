@@ -1,0 +1,21 @@
+```{ojs}
+//| echo: false
+//| label: yawinput
+//| column: margin
+viewof yaw = Inputs.range([0, 1000], {label: "Yaw", value: 500, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: pitchinput
+//| column: margin
+viewof pitch = Inputs.range([-500, 500], {label: "Pitch", value: 0, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: rollinput
+//| column: margin
+viewof roll = Inputs.range([-500, 500], {label: "Roll", value: 0, step: 1})
+```
+

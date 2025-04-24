@@ -223,6 +223,8 @@ decBar = colorbar({
 })
 ```
 
+## Hue saturation lightness (hsl) {.hiddenheading #hsl}
+
 ```{ojs}
 //| echo: false
 //| label: colorslider

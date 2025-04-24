@@ -1,18 +1,30 @@
-```{ojs}
-//| echo: false
-//| label: toggles
-viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
-viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
-viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
-viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
-rstbtn.node();
-```
-
+:::{.marginInputs}
 ```{ojs}
 //| echo: false
 //| label: speedinput
 //| column: margin
 viewof travelspeed = Inputs.range([0, 1000], {label: "Speed", value: 500, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: yawinput
+//| column: margin
+viewof yaw = Inputs.range([0, 1000], {label: "Yaw", value: 500, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: pitchinput
+//| column: margin
+viewof pitch = Inputs.range([-500, 500], {label: "Pitch", value: 0, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: rollinput
+//| column: margin
+viewof roll = Inputs.range([-500, 500], {label: "Roll", value: 0, step: 1})
 ```
 
 ```{ojs}
@@ -28,6 +40,17 @@ viewof mapsize = Inputs.range([0, 100], {label: "Size", value: 100, step: 1})
 //| column: margin
 viewof select = Inputs.select(
   projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
+```
+:::
+
+```{ojs}
+//| echo: false
+//| label: toggles
+viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
+viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
+viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
+viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
+rstbtn.node();
 ```
 
 ```{ojs}

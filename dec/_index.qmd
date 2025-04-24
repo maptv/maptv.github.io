@@ -636,7 +636,7 @@ decConnections = [
   [8, 3],
   [9, 4]
 ]
-coor = [[[-18, -90], [-18, 90], [18, 90], [18, -90], [-18, -90], ]]
+coor = [[[-18, -88], [-18, 88], [18, 88], [18, -88], [-18, -88], ]]
 deczones = [...Array(10).keys()].map(
   i => ({
     "type": "Feature",
@@ -795,7 +795,7 @@ function worldMapCoordinates(config = {}, dimensions) {
   const canvas = context.canvas;
   const projection = config[2]
     .precision(0.1)
-    .fitSize([width, height], { type: "Sphere" }).rotate([-148, 0]);
+    .fitSize([width, height], { type: "Sphere" });
   const path = d3.geoPath(projection, context).pointRadius(2.5);
   formEl.append(canvas);
   function fillMesh(f) {
@@ -938,6 +938,9 @@ function worldMapCoordinates(config = {}, dimensions) {
     set(viewof gridtoggle, false);
     set(viewof suntoggle, false);
     set(viewof utctoggle, false);
+    set(viewof yaw, 500);
+    set(viewof pitch, 0);
+    set(viewof roll, 0);
     set(viewof select, projections.find(t => t.name === "Equirectangular (plate carrée)"));
     set(viewof colorD, 0)
     set(viewof colorS, 1000)
@@ -1233,7 +1236,12 @@ function lati2turn(degrees = -180, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
   return (degrees %= 360) / (360 / 10**e) % 10**e;
 }
-projection = select ? select.value() : d3.geoEquirectangular()
+selectedProjection = select ? select.value() : d3.geoEquirectangular()
+projection = {
+  let proj = selectedProjection;
+  if (proj.rotate) proj.rotate([-turn2long(yaw), -turn2degr(pitch), turn2degr(roll)]);
+  return proj;
+}
 sun = {
   const now = new Date;
   const day = new Date(+now).setUTCHours(0, 0, 0, 0);
@@ -1751,10 +1759,10 @@ div#projselect {
   align-items: center;
   justify-content: center;
 }
-div#projselect > div, div#sizeinput > div, div#speedinput > div {
+div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div, {
   overflow-x: clip;
 }
-div#sizeinput label, div#speedinput label {
+div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
   width: 35px;
 }
 button#rstbtn:hover {
@@ -1765,15 +1773,15 @@ button#rstbtn:hover {
 div#distmap {
   margin-bottom: -28px;
 }
-#sizeinput #speedinput {
+#sizeinput #speedinput #yawinput #pitchinput #rollinput {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#speedinput input[type="number"], #sizeinput input[type="number"] {
+#speedinput input[type="number"], #sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
   width: 58px;
 }
-#speedinput input[type="range"], #sizeinput input[type="range"] {
+#speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
   width: 72%;
 }
 .colorcomponent {
@@ -1781,7 +1789,7 @@ div#distmap {
   align-items: center;
   justify-content: center;
 }
-div#colorpreview, div.colorcomparer {
+div#colorpreview, div.colorcomparer, div#coloropposites8, div.coloropposites10, div#colorcomparer8, div.colorcomparer10 {
   overflow: visible;
 }
 div.colorcomparer g[aria-label="y-axis label"] > text {
@@ -1907,6 +1915,10 @@ h4.anchored {
 }
 svg#lefthand {
   height: 50%;
+}
+.marginInputs {
+  position: relative;
+  top: -120px;
 }
 </style>
 ```
