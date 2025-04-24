@@ -1,15 +1,16 @@
 # Dec
 Martin Laptev
-2025+052
+2025+054
 
 - [Dec measurement system](#dec)
   - [Interactive world map](#map)
   - [Color wheel compass](#hue)
 - [Dec time zones](#dtz)
-- [Coordinated Universal Time (UTC)](#utc)
+- [Coordinated Universal Time](#utc)
 - [Zone equatorial meter (zem)](#zem)
   - [Unit conversion table](#uct)
   - [Body mass index](#bmi)
+- [Next](#next)
 - [Summary](#tldr)
 
 <div id="decnav">
@@ -70,21 +71,21 @@ data-bs-title="thousandths of a polar circumference">milli[meridians](https://en
 <span class="point1">1</span> on the map🗺️beneath the table. By default,
 <span class="point0">Point 0</span> is at
 <span class="point0">800</span> m*λ* and <span class="point0">0</span>
-m*ϕ*, which is near the
+m*ϕ*, near the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
 of Ecuador🇪🇨, and <span class="point1">Point 1</span> is at
 <span class="point1">800</span> m*λ* and <span class="point1">100</span>
-m*ϕ*, which is in the United States🇺🇸city of [Memphis,
+m*ϕ*, in the United States🇺🇸city of [Memphis,
 Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
 
-In the table, the geographic coordinates of each point are followed by
+Each row of the table contains the geographic coordinates of a point and
 the
 [course](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
 ([*α*](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha))
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a compass rose">milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)</span>
 (m*α*) we would need to maintain to travel🧳the shortest distance📏to
-the other point on the map🗺️. The default courses in m*α* are
+the other point. The default courses in m*α* are
 <span class="point0">0</span> (North) from <span class="point0">Point
 0</span> to <span class="point1">Point 1</span> and
 <span class="point1">500</span> (South) from <span class="point1">Point
@@ -674,7 +675,7 @@ of its *ϕ* latitude: cos(${parLat}) = ${parLen}.
 viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: .001})
 ```
 
-# Coordinated Universal Time (UTC)
+# Coordinated Universal Time
 
 [UTC time zone
 offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
@@ -935,8 +936,8 @@ data-bs-toggle="tooltip"
 data-bs-title="1.6 thousandths of an are">hexamilliare</span> (x), 16
 square <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a meter">decimeters</span> (dm<sup>2</sup>),
-1.<span style="text-decoration-line:overline;">7</span> Dec square feet,
-or 256 Dec square inches. A square <span class="under tool"
+1.<span style="text-decoration-line:overline;">7</span> Dec square
+feet🦶, or 256 Dec square inches. A square <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="ten zem">decazem</span>
 (Dz<sup>2</sup>) is 1 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
@@ -966,24 +967,10 @@ data-bs-toggle="tooltip"
 data-bs-title="thousands of grams">kilograms</span> (kg) or 128 Dec
 pounds.
 
-## Body mass index
-
-A weight of 64 kg and a height of 4 z, 1.6 m, or 64 inches correspond to
-a [body mass
-index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
-(BMI) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$.
-A BMI above 4.8 $\text {kg}\over\text z^2$ or 30
-$\text {kg}\over\text m^2$ is considered obese. If [Leonardo Da
-Vince](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s
-[Vitruvian
-Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
-were 4 z tall, we could measure 1 z from the knee to the toes🦶of one of
-his legs🦵or from the elbow to the fingertips✋of one of his arms💪.
-
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
 
-<figure>
+<figure id="vitruvian">
 <img src="../asset/vitruvianMan.svg" alt="Wikimedia" />
 <figcaption aria-hidden="true"><a
 href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg">Wikimedia</a></figcaption>
@@ -991,9 +978,21 @@ href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg
 
 </div>
 
-Building on the If four people each stretch out their right arm💪and
-place their right hand✋on top of the elbow of the person to their
-right, they would create a square with an area of roughly 1 x.
+## Body mass index
+
+A weight of 64 kg and a height of 4 z, 1.6 m, or 64 inches correspond to
+a [body mass
+index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
+(BMI) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$.
+A BMI above 4.8 $\text {kg}\over\text z^2$ or 30
+$\text {kg}\over\text m^2$ is considered
+[obese](https://en.wikipedia.org/wiki/Obesity#:~:text=person's%20height—is-,over%2030%C2%A0kg/m2,-;%20the%20range%2025).
+If [Leonardo da
+Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s
+[Vitruvian
+Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
+were 4 z tall, we could measure 1 z from the knee to the foot🦶of one of
+his legs🦵or from the elbow to the fingertips of one of his arms💪.
 
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1006,694 +1005,850 @@ href="https://commons.wikimedia.org/wiki/File:Extended_arm.jpg">Wikimedia</a></f
 
 </div>
 
-addition to Redefined units based on z<sup>3</sup> such as a Dec cup and
-cannot be split evenly into redefined units based on dz<sup>3</sup> like
-a Dec ounce. A Dec cup is 7.8125 Dec ounces.A zem is 4
+To visualize a square zem, imagine four people standing in a circle,
+facing inward, each with their right hand✋placed on top of the elbow of
+the person to their right. Alternatively, two people can stand in front
+of each other and raise their arms💪, placing one hand✋on the elbow of
+the other person and the other hand✋on their own elbow to form a
+square🔲.
+
+<div class="column-margin" fig-align="center"
+style="text-align:center;">
+
+<figure>
+<img src="../asset/Man_Lifting_Barbell_Cartoon.svg" alt="Wikimedia" />
+<figcaption aria-hidden="true"><a
+href="https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg">Wikimedia</a></figcaption>
+</figure>
+
+</div>
+
+You can measure a square zem yourself with a ruler📏or measuring tape.
+Either sitting in a chair🪑or standing🧍, measure 1 z, 4 dm, or 16
+inches between knees and your feet🦶. This distance may be more or less
+the width of your hips or shoulders. Next, measure this same distance
+down from your knees to create the left and right sides of the square🔲.
+
+<div id="cubic" class="column-margin" fig-align="center"
+style="text-align:center;">
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+&#10;<svg
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 215.32027 192.98191"
+   enable-background="new 0 0 1500 525"
+   xml:space="preserve"
+   id="svg74"
+   sodipodi:docname="cubicZem.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   width="215.32027"
+   height="192.9819"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:ns2="&amp;#38;#38;#38;ns_sfw;"><defs
+   id="defs74" /><sodipodi:namedview
+   id="namedview74"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="0.45368529"
+   inkscape:cx="116.82107"
+   inkscape:cy="369.19866"
+   inkscape:window-width="1256"
+   inkscape:window-height="896"
+   inkscape:window-x="221"
+   inkscape:window-y="32"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg74" />
+<metadata
+   id="metadata1">
+    <ns2:sfw>
+        <ns2:slices />
+        <ns2:sliceSourceBounds
+   bottomLeftOrigin="true"
+   height="5750"
+   width="6426.366"
+   x="-5096.366"
+   y="-1000" />
+    </ns2:sfw>
+</metadata>
+&#10;
+&#10;
+&#10;
+&#10;<g
+   id="g1"
+   transform="matrix(0.5,0,0,0.5,-2.0843142e-6,0)"><g
+     id="g76"
+     transform="translate(-382.42548,-73.387058)"><g
+       id="AG-PEOPLE">
+    <g
+   id="POLYLINE_154_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 398.688,317.013 c 0.916,1.659 1.828,3.356 3.306,4.588 1.43,1.192 3.236,1.824 5.02,2.267 5.828,1.448 12.115,1.492 18.087,1.709 5.74,0.209 11.49,0.345 17.234,0.22 7.312,-0.159 14.626,-0.376 21.939,-0.478 6.134,-0.086 12.242,0.11 18.347,0.725 3.112,0.314 6.216,0.748 9.336,0.969 1.26,0.089 2.558,-0.026 3.807,0.152 0.672,0.096 1.24,0.339 1.55,0.975 0.736,1.508 0.263,3.731 0.059,5.275 -0.414,3.136 -0.175,6.253 -0.599,9.388 -0.732,5.408 0.88,10.86 0.489,16.301 -0.598,8.324 0.89305,24.973 0.89305,24.973 -0.0251,-0.016 1.48225,11.20412 1.98595,17.609 0.21676,2.75625 0.543,6.5555 0.503,8.293 -0.021,1.441 -0.115,3.49 0.936,4.652 1.033,1.143 3.021,1.051 4.412,1.033 2.868,-0.036 5.727,-0.366 8.59,-0.521 3.337,-0.181 6.705,-0.253 10.027,-0.641 1.579,-0.185 3.484,-0.362 4.835,-1.315 0.61359,-1.04401 1.511,-4.069 1.674,-5.988 0.25,-2.946 0.832,-5.86 1.415,-8.754 1.213,-6.02 0.629,-12 2.081,-17.966 1.627,-6.687 -0.666,-13.347 1.062,-20.009 1.543,-5.949 0.24886,-12.74572 0.635,-17.924 0.61843,-6.18086 1.361,-12.143 1.629,-18.257 0.137,-3.115 0.18,-6.239 0.008,-9.353 -0.128,-2.31 -0.284,-4.764 -1.114,-6.949 -1.303,-3.428 -5.188,-5.148 -8.351,-6.435 -2.729,-1.11 -5.58,-1.891 -8.413,-2.681"
+   id="path13"
+   sodipodi:nodetypes="csccccccccccccscccccccccscccccc" />
+    </g>
+    <g
+   id="POLYLINE_155_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 500.826,431.295 c -0.621,-0.767 -1.377,-1.964 -2.515,-1.846 -0.819,0.085 -1.534,0.723 -2.026,1.343 -1.174,1.48 -1.358,3.461 -1.393,5.282 -0.042,2.192 0.16,4.382 0.203,6.573 0.045,2.254 -0.116,4.502 -0.187,6.754 -0.07,2.255 -0.2,5.174 2.116,6.386 2.539,1.329 5.962,1.231 8.739,1.338 4.767,0.183 9.542,0.193 14.311,0.271 4.456,0.073 8.912,0.153 13.369,0.187 4.341,0.033 8.688,0.028 13.029,-0.086 4.434,-0.117 8.886,-0.28 13.287,-0.859 2.68,-0.353 5.999,-0.732 8.183,-2.511 1.582,-1.288 1.539,-3.159 0.933,-4.947 -0.69,-2.039 -1.864,-4.351 -3.612,-5.705 -2.307,-1.788 -5.545,-2.308 -8.293,-3.033 -2.12,-0.559 -4.289,-1.051 -6.326,-1.874 -1.627,-0.657 -3.065,-1.605 -4.439,-2.686 -3.727,-2.93 -7.389,-5.942 -11.143,-8.838 -2.238,-1.726 -4.69,-3.89 -7.639,-4.15 -2,-0.177 -3.956,0.613 -5.677,1.557 -3.488,1.913 -6.133,4.746 -8.805,7.63 -1.332,1.437 -2.838,3.021 -4.797,3.559 -1.519,0.417 -2.906,-0.062 -4.127,-0.997 -1.227,-0.943 -2.219,-2.155 -3.191,-3.348 z"
+   id="path14"
+   sodipodi:nodetypes="csccccccssccccccccccccccc" />
+    </g>
+    <g
+   id="POLYLINE_156_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 499.019,429.541 c 1.294,-4.84 2.204,-9.746 2.749,-14.725"
+   id="path15"
+   sodipodi:nodetypes="cc" />
+    </g>
+    <g
+   id="POLYLINE_157_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 405.614,136.305 c 1.299,4.228 1.258,8.605 0.106,12.864"
+   id="path16" />
+    </g>
+    <g
+   id="POLYLINE_158_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 444.254,281.97 c -2.101,2.488 -4.045,5.048 -5.856,7.754 -1.904,2.846 -3.757,5.744 -6.022,8.324 -4.445,5.061 -10.25,9.14 -15.915,12.72 -2.762,1.745 -5.672,3.251 -8.747,4.363 -2.844,1.029 -5.932,1.915 -8.983,1.883 -1.287,-0.013 -2.746,-0.201 -3.722,-1.125 -1.467,-1.388 -1.589,-3.784 -2.208,-5.574 -0.821,-2.373 -2.423,-4.364 -3.44,-6.645 -1.033,-2.315 -1.181,-4.827 -1.164,-7.33 0.023,-3.516 0.232,-7.022 0.091,-10.538 -0.137,-3.402 -0.457,-6.796 -0.801,-10.181 -0.73,-7.18 -1.666,-14.341 -2.101,-21.548 -0.446,-7.372 -0.123,-14.76 0.049,-22.135 0.16,-6.851 -0.272,-13.663 -0.709,-20.496 -0.437,-6.842 -0.766,-13.633 -0.233,-20.483 0.531,-6.826 1.505,-13.659 2.871,-20.367 0.624,-3.063 1.278,-6.231 2.69,-9.045 1.336,-2.663 3.432,-4.847 5.502,-6.953 2.536,-2.581 5.774,-5.607 9.663,-5.459 2.25,0.086 4.37,1.053 6.364,2.015 2.947,1.421 5.891,2.873 9.063,3.729 4.92,1.329 10.183,0.885 14.436,4.082 2.387,1.794 4.198,4.215 5.752,6.736 1.785,2.896 3.415,5.92 4.912,8.975 2.9,5.921 4.954,12.209 5.906,18.741 0.952,6.531 0.511,12.998 -0.262,19.518 -0.847,7.141 -1.645,14.214 -1.382,21.42 0.25,6.847 1.62,13.466 2.816,20.19 0.577,3.244 1.102,6.522 1.193,9.821"
+   id="path17" />
+    </g>
+    <g
+   id="POLYLINE_159_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 394.401,198.327 c 0.709,6.497 1.538,12.973 2.453,19.444 0.893,6.316 1.915,12.585 3.504,18.769 1.584,6.163 3.532,12.249 6.027,18.106 1.218,2.859 2.578,5.656 3.95,8.444 1.111,2.258 2.251,4.446 4.114,6.183 4.173,3.891 10.065,6.048 15.329,7.995 6.03,2.23 12.175,4.144 18.397,5.762 6.032,1.568 12.154,2.819 18.339,3.604 3.09,0.392 6.187,0.475 9.284,0.762 2.119,0.196 4.02,0.794 5.89,1.8 2.735,1.471 5.201,3.389 7.727,5.18 1.409,1 2.882,1.903 4.576,2.311 4.758,1.146 9.749,-0.798 14.501,0.33 2.372,0.563 4.416,1.99 6.497,3.194 0.999,0.578 2.959,1.933 4.228,1.402 1.295,-0.542 0.98,-2.678 0.609,-3.699 -0.633,-1.739 -2.094,-3.089 -3.277,-4.449 -2.873,-3.302 -5.694,-7.742 -10.102,-9.115 -2.632,-0.82 -5.504,-0.867 -8.219,-1.268 -3.097,-0.457 -6.181,-1.023 -9.191,-1.893 -5.154,-1.488 -9.932,-3.951 -14.683,-6.392 -7.636,-3.923 -15.272,-7.846 -22.908,-11.769 -4.841,-2.487 -9.754,-4.908 -14.335,-7.857 -3.737,-2.406 -7.817,-5.509 -8.974,-10.03 -0.573,-2.241 -0.707,-4.632 -0.981,-6.92 -0.549,-4.591 -1.098,-9.183 -1.647,-13.774 -0.671,-5.607 -1.44,-11.19 -2.288,-16.773 -0.512,-3.372 -1.024,-6.743 -1.536,-10.115"
+   id="path18" />
+    </g>
+    <g
+   id="POLYLINE_160_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 424.452,137.432 c 2.972,2.152 6.491,3.662 10.002,4.679 2.65,0.768 5.506,1.008 8.182,0.199 0.795,-0.24 1.648,-0.593 2.201,-1.237 0.776,-0.904 0.681,-2.192 0.78,-3.301 0.074,-0.831 0.273,-1.571 0.654,-2.32 0.458,-0.901 1.118,-1.746 1.207,-2.784 0.077,-0.889 -0.143,-1.78 -0.126,-2.673 0.022,-1.16 -0.125,-2.993 0.624,-3.996 1.083,-1.45 4.588,-1.83 4.327,-4.071 -0.11,-0.945 -0.676,-1.878 -1.141,-2.676 -0.979,-1.681 -2.069,-3.288 -2.978,-5.011 -0.906,-1.718 -2.298,-3.936 -1.21,-5.852 0.921,-1.622 1.477,-3.194 0.986,-5.088 -0.247,-0.95 -0.755,-1.807 -1.006,-2.758 -0.47,-1.783 -0.596,-3.693 -0.823,-5.518 -0.11,-0.885 -0.206,-1.771 -0.285,-2.66"
+   id="path19" />
+    </g>
+    <g
+   id="POLYLINE_161_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 430.534,156.684 c -0.486,-5.168 0.659,-10.294 3.319,-14.753"
+   id="path20" />
+    </g>
+    <g
+   id="POLYLINE_162_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 421.089,122.437 c -0.855,0.737 -2.065,1.639 -3.264,1.286 -1.222,-0.359 -2.069,-1.785 -2.663,-2.801 -1.408,-2.41 -2.499,-5.071 -3.237,-7.761 -0.364,-1.326 -0.75,-2.869 -0.233,-4.211 0.49,-1.272 1.825,-2.332 3.205,-2.398 1.057,-0.051 2.018,0.528 2.794,1.193 1.465,1.255 2.308,3.021 3.646,4.382 0.934,0.95 2.472,1.627 3.649,0.631 1.2,-1.015 0.658,-3.38 0.667,-4.693 0.01,-1.464 0.208,-2.996 0.826,-4.34 0.668,-1.453 1.835,-1.849 2.973,-2.826 1.125,-0.966 0.682,-2.571 0.508,-3.846 -0.178,-1.301 -0.359,-2.69 0.611,-3.741 1.16,-1.256 3.11,-1.534 4.692,-1.853 0.807,-0.163 1.616,-0.319 2.389,-0.612 0.611,-0.232 1.209,-0.579 1.868,-0.662 1.548,-0.195 3.027,1.157 4.329,1.753 0.941,0.43 1.984,0.655 2.941,0.126 1.137,-0.629 1.352,-1.86 1.478,-3.038 0.173,-1.617 0.627,-3.362 0.252,-4.986 -0.357,-1.547 -1.454,-3.047 -2.391,-4.278 -0.77,-1.012 -1.713,-1.724 -2.933,-2.089 -2.469,-0.739 -5.243,-0.726 -7.784,-0.983 -3.135,-0.317 -6.264,-0.703 -9.395,-1.058 -2.443,-0.276 -4.89,-0.572 -7.353,-0.485 -4.769,0.168 -9.882,1.503 -13.987,3.979 -4.263,2.571 -7.245,7.064 -9.744,11.254 -0.973,1.631 -1.895,3.376 -2.287,5.251 -0.428,2.042 -0.115,4.142 0.025,6.198 0.317,4.651 -0.332,9.758 2.246,13.904 1.12,1.801 2.652,3.339 3.602,5.246 0.914,1.835 1.094,3.918 1.388,5.916 0.476,3.236 1.606,6.641 4.258,8.774 2.083,1.676 5.48,-0.526 5.637,-2.943 0.101,-1.563 -0.008,-2.657 1.325,-3.689 1.136,-0.88 2.398,-1.531 3.29,-2.684 0.876,-1.133 1.422,-2.5 1.802,-3.87"
+   id="path21" />
+    </g>
+    <g
+   id="POLYLINE_163_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 387.872,168.22 c -0.699,6.03 -0.725,11.846 0.287,17.838 0.544,3.22 1.024,6.448 1.553,9.668 0.229,1.392 0.719,2.607 2.285,2.768 2.526,0.26 5.261,-0.793 7.699,-1.276 2.673,-0.53 5.375,-0.703 8.095,-0.565 3.151,0.16 6.255,0.712 9.391,1.026 1.586,0.159 3.542,0.396 5.042,-0.322 1.357,-0.65 1.747,-2.178 2.037,-3.525 0.597,-2.768 1.225,-5.601 1.306,-8.442 0.015,-0.522 0.009,-1.045 -0.024,-1.567"
+   id="path22" />
+    </g>
+    <g
+   id="POLYLINE_164_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 527.273,416.056 c -0.312,2.937 -0.546,3.874 -0.764,6.819"
+   id="path23"
+   sodipodi:nodetypes="cc" />
+    </g>
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+</g><g
+       id="AG-OUTLINE">
+    <g
+   id="POLYLINE_153_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="3.5"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 445.846,92.366 c 1.128,-0.133 1.917,-0.958 2.21,-2.015 0.421,-1.513 0.567,-3.326 0.591,-4.893 0.014,-0.9 -0.149,-1.739 -0.543,-2.551 -0.663,-1.366 -1.556,-2.835 -2.639,-3.917 -0.723,-0.722 -1.599,-1.149 -2.579,-1.402 -2.308,-0.597 -4.814,-0.633 -7.173,-0.868 -4.85,-0.483 -9.694,-1.308 -14.565,-1.549 -4.294,-0.212 -8.609,0.581 -12.619,2.113 -3.723,1.422 -6.736,3.601 -9.209,6.727 -1.577,1.993 -3.042,4.119 -4.347,6.3 -0.896,1.497 -1.74,3.076 -2.197,4.771 -0.362,1.343 -0.391,2.721 -0.305,4.103 0.155,2.506 0.275,4.993 0.358,7.504 0.071,2.151 0.211,4.36 0.864,6.426 0.496,1.57 1.373,2.933 2.351,4.243 1.024,1.373 2.151,2.714 2.787,4.324 0.661,1.675 0.821,3.503 1.083,5.268 0.455,3.077 1.465,5.998 3.726,8.244 0.283,0.281 0.586,0.56 0.927,0.771 0.354,0.219 0.907,0.26 1.101,0.521 0.287,0.387 0.347,1.254 0.451,1.724 0.114,0.517 0.211,1.039 0.287,1.563 0.134,0.923 0.204,1.855 0.211,2.788 0.009,1.056 -0.061,2.112 -0.199,3.158 -0.072,0.55 -0.163,1.097 -0.271,1.641 -0.087,0.437 -0.118,1.223 -0.37,1.59 -0.182,0.265 -0.21,0.197 -0.569,0.184 -0.19,-0.007 -0.381,-0.008 -0.571,-10e-4 -0.391,0.014 -0.78,0.057 -1.163,0.133 -3.161,0.628 -5.801,3.163 -7.97,5.376 -1.578,1.61 -3.18,3.261 -4.433,5.145 -1.12,1.683 -1.872,3.552 -2.44,5.485 -1.378,4.686 -2.143,9.602 -2.841,14.428 -0.727,5.023 -1.324,10.075 -1.537,15.149 -0.198,4.729 0.012,9.442 0.314,14.161 0.355,5.551 0.776,11.099 0.884,16.662 0.106,5.484 -0.13,10.976 -0.258,16.458 -0.109,4.676 -0.021,9.362 0.324,14.028 0.414,5.604 1.077,11.188 1.677,16.774 0.5,4.657 1.002,9.326 1.128,14.011 0.125,4.654 -0.7,9.531 0.207,14.129 0.682,3.461 3.201,6.068 4.307,9.355 0.806,2.394 0.938,5.545 3.818,6.336 0.532,0.146 1.063,0.16 1.604,0.238 0.57,0.082 0.564,0.267 0.87,0.816 0.254,0.457 0.513,0.911 0.795,1.352 0.653,1.022 1.427,1.965 2.402,2.696 3.042,2.283 7.394,2.646 11.046,3.001 4.93,0.479 9.905,0.69 14.855,0.823 4.585,0.123 9.176,0.219 13.762,0.119 6.621,-0.144 13.243,-0.289 19.864,-0.433 4.4,-0.096 8.8,-0.11 13.198,0.086 5.035,0.224 10.027,0.888 15.037,1.396 1.155,0.117 2.316,0.211 3.478,0.237 0.847,0.019 1.789,-0.076 2.621,0.153 1.062,0.293 1.341,1.236 1.423,2.231 0.143,1.754 -0.165,3.556 -0.425,5.285 -0.421,2.803 -0.284,5.601 -0.659,8.411 l 0.647,14.421 c -0.421,5.612 0.52106,11.226 0.69,16.839 0.22894,4.99578 0.65128,9.42361 1.07,14.302 0.50918,5.93225 0.94021,11.54776 1.501,17.798 0.16062,1.79016 0.106,3.619 0.268,5.414 0.053,0.584 0.135,1.181 0.337,1.735 0.082,0.225 0.18,0.446 0.312,0.648 0.358,0.547 0.397,0.647 0.32,1.365 -0.502,4.678 -1.438,9.306 -2.652,13.848 -1.209,-0.474 -2.426,0.73 -3.027,1.661 -0.733,1.136 -0.966,2.504 -1.057,3.831 -0.225,3.283 0.247,6.578 0.152,9.866 -0.078,2.686 -0.574,5.654 0.032,8.318 0.332,1.462 1.277,2.402 2.659,2.892 2.471,0.878 5.296,0.909 7.886,1.012 7.267,0.288 14.553,0.292 21.824,0.397 6.802,0.099 13.608,0.133 20.409,-0.059 3.299,-0.093 6.603,-0.257 9.887,-0.593 2.802,-0.287 5.767,-0.613 8.385,-1.721 1.292,-0.547 2.637,-1.4 3.015,-2.842 0.376,-1.437 -0.201,-3.029 -0.79,-4.324 -0.705,-1.551 -1.592,-3.214 -2.919,-4.333 -1.326,-1.119 -3.06,-1.67 -4.69,-2.163 -3.246,-0.981 -6.632,-1.572 -9.806,-2.784 -2.642,-1.009 -4.745,-2.794 -6.927,-4.535 -3.062,-2.442 -6.11,-4.9 -9.211,-7.291 -1.826,-1.409 -3.717,-3 -5.961,-3.689 -0.768,-0.236 -1.569,-0.348 -2.372,-0.308 0.16,-2.157 0.307,-4.315 0.517,-6.468 0.064,-0.657 -0.05,-1.4485 0.423,-1.7935 0.292,-0.213 0.895,-0.3585 1.241,-0.5105 2.649,-1.166 2.231,-4.807 2.454,-7.22 0.345,-3.734 1.155,-7.443 1.944,-11.104 l 3.902,-60.358 c -0.007,0.11135 0.84,-8.029 0.989,-12.061 0.145,-3.942 0.195,-7.957 -0.342,-11.873 -0.268,-1.955 -0.684,-4.043 -2.009,-5.582 -1.755,-2.039 -4.598,-3.308 -7.028,-4.306 -1.694,-0.695 -3.44,-1.26 -5.195,-1.778 -0.533,-0.158 -1.067,-0.314 -1.602,-0.467 -0.423,-0.12 -1.415,-0.182 -1.706,-0.475 -0.163,-0.164 -0.219,-0.829 -0.319,-1.086 -0.29,-0.742 -0.746,-1.406 -1.238,-2.028 -1.267,-1.604 -2.684,-3.109 -4.006,-4.669 -1.885,-2.225 -3.846,-4.727 -6.488,-6.093 -2.586,-1.337 -5.676,-1.36 -8.498,-1.737 -3.891,-0.519 -7.781,-1.205 -11.532,-2.384 -3.822,-1.201 -7.456,-2.922 -11.023,-4.728 -3.663,-1.854 -7.305,-3.749 -10.957,-5.623 -2.605,-1.337 -5.21,-2.674 -7.814,-4.01 -0.94,-0.483 -1.881,-0.965 -2.821,-1.448 -0.332,-0.171 -1.091,-0.38 -1.322,-0.679 -0.276,-0.356 -0.137,-1.617 -0.176,-2.103 -0.074,-0.919 -0.177,-1.836 -0.295,-2.751 -0.239,-1.853 -0.546,-3.699 -0.885,-5.537 -0.777,-4.203 -1.645,-8.398 -2.173,-12.643 -0.941,-7.569 -0.728,-15.242 0.169,-22.802 0.978,-8.24 2.138,-16.418 0.993,-24.707 -1.061,-7.681 -3.678,-14.928 -7.288,-21.766 -2.971,-5.626 -6.286,-12.469 -12.586,-14.964 -0.211,-0.084 -0.424,-0.162 -0.639,-0.234 -0.647,-0.218 -0.676,-0.24 -0.722,-0.926 -0.065,-0.965 -0.075,-1.935 -0.029,-2.901 0.091,-1.889 0.401,-3.766 0.945,-5.578 0.522,-1.741 1.212,-3.618 2.222,-5.142 0.327,-0.495 0.436,-0.345 0.977,-0.191 0.426,0.121 0.854,0.233 1.287,0.327 0.683,0.148 1.374,0.256 2.071,0.304 1.985,0.139 4.438,-0.011 6.179,-1.117 1.967,-1.25 1.114,-3.649 1.832,-5.527 0.391,-1.023 1.167,-1.893 1.437,-2.961 0.205,-0.811 0.009,-1.642 -0.034,-2.46 -0.066,-1.256 -0.04,-2.688 0.251,-3.91 0.243,-1.02 1.157,-1.554 2.004,-2.048 0.832,-0.485 2.261,-1.023 2.621,-2.035 0.253,-0.713 -0.087,-1.518 -0.384,-2.168 -1.416,-3.096 -3.695,-5.723 -4.907,-8.94 -0.297,-0.787 -0.565,-1.678 -0.309,-2.512 0.244,-0.796 0.86,-1.422 1.153,-2.202 0.713,-1.897 0.195,-3.593 -0.51,-5.372 -0.415,-1.048 -0.581,-2.157 -0.729,-3.27 -0.261,-1.965 -0.531,-3.925 -0.706,-5.896 z"
+   id="path68"
+   sodipodi:nodetypes="cccccccccccccccccccsccccccscccsccccccccccccccccccccccssccccccsscsccccccccccsccccccsccccsscscccsccccscccsccccccccscccsccccccccccccsscccccccccc" />
+    </g>
+    &#10;    
+    &#10;    
+    &#10;    
+</g><g
+       id="g75">
+    <g
+   id="g74">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="3.5"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 445.846,92.366 c 1.128,-0.133 1.917,-0.958 2.21,-2.015 0.421,-1.513 0.567,-3.326 0.591,-4.893 0.014,-0.9 -0.149,-1.739 -0.543,-2.551 -0.663,-1.366 -1.556,-2.835 -2.639,-3.917 -0.723,-0.722 -1.599,-1.149 -2.579,-1.402 -2.308,-0.597 -4.814,-0.633 -7.173,-0.868 -4.85,-0.483 -9.694,-1.308 -14.565,-1.549 -4.294,-0.212 -8.609,0.581 -12.619,2.113 -3.723,1.422 -6.736,3.601 -9.209,6.727 -1.577,1.993 -3.042,4.119 -4.347,6.3 -0.896,1.497 -1.74,3.076 -2.197,4.771 -0.362,1.343 -0.391,2.721 -0.305,4.103 0.155,2.506 0.275,4.993 0.358,7.504 0.071,2.151 0.211,4.36 0.864,6.426 0.496,1.57 1.373,2.933 2.351,4.243 1.024,1.373 2.151,2.714 2.787,4.324 0.661,1.675 0.821,3.503 1.083,5.268 0.455,3.077 1.465,5.998 3.726,8.244 0.283,0.281 0.586,0.56 0.927,0.771 0.354,0.219 0.907,0.26 1.101,0.521 0.287,0.387 0.347,1.254 0.451,1.724 0.114,0.517 0.211,1.039 0.287,1.563 0.134,0.923 0.204,1.855 0.211,2.788 0.009,1.056 -0.061,2.112 -0.199,3.158 -0.072,0.55 -0.163,1.097 -0.271,1.641 -0.087,0.437 -0.118,1.223 -0.37,1.59 -0.182,0.265 -0.21,0.197 -0.569,0.184 -0.19,-0.007 -0.381,-0.008 -0.571,-10e-4 -0.391,0.014 -0.78,0.057 -1.163,0.133 -3.161,0.628 -5.801,3.163 -7.97,5.376 -1.578,1.61 -3.18,3.261 -4.433,5.145 -1.12,1.683 -1.872,3.552 -2.44,5.485 -1.378,4.686 -2.143,9.602 -2.841,14.428 -0.727,5.023 -1.324,10.075 -1.537,15.149 -0.198,4.729 0.012,9.442 0.314,14.161 0.355,5.551 0.776,11.099 0.884,16.662 0.106,5.484 -0.13,10.976 -0.258,16.458 -0.109,4.676 -0.021,9.362 0.324,14.028 0.414,5.604 1.077,11.188 1.677,16.774 0.5,4.657 1.002,9.326 1.128,14.011 0.125,4.654 -0.7,9.531 0.207,14.129 0.682,3.461 3.201,6.068 4.307,9.355 0.806,2.394 0.938,5.545 3.818,6.336 0.532,0.146 1.063,0.16 1.604,0.238 0.57,0.082 0.564,0.267 0.87,0.816 0.254,0.457 0.513,0.911 0.795,1.352 0.653,1.022 1.427,1.965 2.402,2.696 3.042,2.283 7.394,2.646 11.046,3.001 4.93,0.479 9.905,0.69 14.855,0.823 4.585,0.123 9.176,0.219 13.762,0.119 6.621,-0.144 13.243,-0.289 19.864,-0.433 4.4,-0.096 8.8,-0.11 13.198,0.086 5.035,0.224 10.027,0.888 15.037,1.396 1.155,0.117 2.316,0.211 3.478,0.237 0.847,0.019 1.789,-0.076 2.621,0.153 1.062,0.293 1.341,1.236 1.423,2.231 0.143,1.754 -0.165,3.556 -0.425,5.285 -1.2459,24.0249 2.14115,53.58122 3.517,77.185 0.053,0.584 0.135,1.181 0.337,1.735 0.082,0.225 0.18,0.446 0.312,0.648 0.358,0.547 0.397,0.647 0.32,1.365 -0.502,4.678 -1.438,9.306 -2.652,13.848 -1.209,-0.474 -2.426,0.73 -3.027,1.661 -0.733,1.136 -0.966,2.504 -1.057,3.831 -0.225,3.283 0.247,6.578 0.152,9.866 -0.078,2.686 -0.574,5.654 0.032,8.318 0.332,1.462 1.277,2.402 2.659,2.892 2.471,0.878 5.296,0.909 7.886,1.012 7.267,0.288 14.553,0.292 21.824,0.397 6.802,0.099 13.608,0.133 20.409,-0.059 3.299,-0.093 6.603,-0.257 9.887,-0.593 2.802,-0.287 5.767,-0.613 8.385,-1.721 1.292,-0.547 2.637,-1.4 3.015,-2.842 0.376,-1.437 -0.201,-3.029 -0.79,-4.324 -0.705,-1.551 -1.592,-3.214 -2.919,-4.333 -1.326,-1.119 -3.06,-1.67 -4.69,-2.163 -3.246,-0.981 -6.632,-1.572 -9.806,-2.784 -2.642,-1.009 -4.745,-2.794 -6.927,-4.535 -3.062,-2.442 -6.11,-4.9 -9.211,-7.291 -1.826,-1.409 -3.717,-3 -5.961,-3.689 -0.768,-0.236 -1.569,-0.348 -2.372,-0.308 0.16,-2.157 0.307,-4.315 0.517,-6.468 0.064,-0.657 -0.16228,-1.77941 0.423,-1.7935 0.63788,-0.0154 0.895,-0.40723 1.241,-0.411 4.14869,0.1093 8.22223,-65.25729 9.289,-90.8425 0.145,-3.942 0.195,-7.957 -0.342,-11.873 -0.268,-1.955 -0.684,-4.043 -2.009,-5.582 -1.755,-2.039 -4.598,-3.308 -7.028,-4.306 -1.694,-0.695 -3.44,-1.26 -5.195,-1.778 -0.533,-0.158 -1.067,-0.314 -1.602,-0.467 -0.423,-0.12 -1.415,-0.182 -1.706,-0.475 -0.163,-0.164 -0.219,-0.829 -0.319,-1.086 -0.29,-0.742 -0.746,-1.406 -1.238,-2.028 -1.267,-1.604 -2.684,-3.109 -4.006,-4.669 -1.885,-2.225 -3.846,-4.727 -6.488,-6.093 -2.586,-1.337 -5.676,-1.36 -8.498,-1.737 -3.891,-0.519 -7.781,-1.205 -11.532,-2.384 -3.822,-1.201 -7.456,-2.922 -11.023,-4.728 -3.663,-1.854 -7.305,-3.749 -10.957,-5.623 -2.605,-1.337 -5.21,-2.674 -7.814,-4.01 -0.94,-0.483 -1.881,-0.965 -2.821,-1.448 -0.332,-0.171 -1.091,-0.38 -1.322,-0.679 -0.276,-0.356 -0.137,-1.617 -0.176,-2.103 -0.074,-0.919 -0.177,-1.836 -0.295,-2.751 -0.239,-1.853 -0.546,-3.699 -0.885,-5.537 -0.777,-4.203 -1.645,-8.398 -2.173,-12.643 -0.941,-7.569 -0.728,-15.242 0.169,-22.802 0.978,-8.24 2.138,-16.418 0.993,-24.707 -1.061,-7.681 -3.678,-14.928 -7.288,-21.766 -2.971,-5.626 -6.286,-12.469 -12.586,-14.964 -0.211,-0.084 -0.424,-0.162 -0.639,-0.234 -0.647,-0.218 -0.676,-0.24 -0.722,-0.926 -0.065,-0.965 -0.075,-1.935 -0.029,-2.901 0.091,-1.889 0.401,-3.766 0.945,-5.578 0.522,-1.741 1.212,-3.618 2.222,-5.142 0.327,-0.495 0.436,-0.345 0.977,-0.191 0.426,0.121 0.854,0.233 1.287,0.327 0.683,0.148 1.374,0.256 2.071,0.304 1.985,0.139 4.438,-0.011 6.179,-1.117 1.967,-1.25 1.114,-3.649 1.832,-5.527 0.391,-1.023 1.167,-1.893 1.437,-2.961 0.205,-0.811 0.009,-1.642 -0.034,-2.46 -0.066,-1.256 -0.04,-2.688 0.251,-3.91 0.243,-1.02 1.157,-1.554 2.004,-2.048 0.832,-0.485 2.261,-1.023 2.621,-2.035 0.253,-0.713 -0.087,-1.518 -0.384,-2.168 -1.416,-3.096 -3.695,-5.723 -4.907,-8.94 -0.297,-0.787 -0.565,-1.678 -0.309,-2.512 0.244,-0.796 0.86,-1.422 1.153,-2.202 0.713,-1.897 0.195,-3.593 -0.51,-5.372 -0.415,-1.048 -0.581,-2.157 -0.729,-3.27 -0.261,-1.965 -0.531,-3.925 -0.706,-5.896 z"
+   id="path74"
+   sodipodi:nodetypes="cccccccccccccccccccsccccccscccsccccccccccccccccccccccssccccsccccccccccsccccccsccccssccsccccscccsccccccccscccsccccccccccccsscccccccccc" />
+    </g>
+    &#10;    
+    &#10;    
+    &#10;    
+</g></g><use
+     x="0"
+     y="0"
+     xlink:href="#g76"
+     id="use1"
+     transform="matrix(-1,0,0,1,430.64054,-1.5384192e-7)" /><rect
+     style="fill:none;stroke:#e4695e;stroke-width:5;stroke-linecap:round;stroke-linejoin:round"
+     id="rect9"
+     width="107.46342"
+     height="107.46342"
+     x="162.14525"
+     y="246.85394" /><text
+     xml:space="preserve"
+     style="font-size:64px;line-height:1;font-family:Tahoma;-inkscape-font-specification:Tahoma;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:none;stroke:#e4695e;stroke-width:5;stroke-linecap:round;stroke-linejoin:round"
+     x="219.10088"
+     y="341.57956"
+     id="text9"><tspan
+       sodipodi:role="line"
+       id="tspan9"
+       x="219.10088"
+       y="341.57956"
+       style="font-size:64px;fill:#e4695e;fill-opacity:1;stroke:none">z<tspan
+   style="font-size:64px;baseline-shift:super;fill:#e4695e;fill-opacity:1;stroke:none"
+   id="tspan10">3</tspan></tspan></text></g></svg>
+
+[Dimensions.com](https://www.dimensions.com/element/sitting-male-side-1)
+
+</div>
+
+If two people sit facing each other with their legs🦵bent at 25
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a meter">decimeters</span> (dm) or 16 Dec
-inches. A <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="hundredths of a zem">centizem</span> (cz) is 4
+data-bs-title="a hundredth of a turn">centiturn</span> (ct) angles and
+their knees 1 z apart, there will be roughly a cubic zem of space
+between their legs🦵. According to
+[dimensions.com](https://www.dimensions.com), 115
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of a zem">centizems</span> (cz) is the
+[typical seat
+height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
+and a [low seat
+height](https://www.dimensions.com/element/sitting-female-front-1#:~:text=Seat%20Height%20(Low)%3A-,15%E2%80%9D%20%7C%2038%20cm,-Style%3A%20Casual)
+is 95 cz for both men and women age 25 to 45. A <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="a hundredth of a zem">centizem</span> is 4
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a meter">millimeters</span> (mm).
 
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of meters">kilometers</span> (km),
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of zems">kilozem</span> (kz),
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a meter">decimeters</span> (dm), and , weights
-on grams (g), and volumes on , and
-
-Liters are cubic decimeters and milliliters are cubic centimeters.
-
-In general, redefined units are easier to convert.
-
-A dz is the same as a <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="billionths of a taur">nanotaur</span> (nc). and does not
-have separate units for wetand dry🏜️volumes. A Dec ounce is 32 mL, not a
-sixteenth of a Dec pound, which is 31.25 g.
-
-We can define mv as mc per day, z per <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="a hundred thousandth of a day">centimilliday</span> (b),
-or nc per <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a millionth of a day">microday</span> ($\micro$d): 1 mv =
-$\text{mc}\over\text d$ = $\text z\over\text b$ =
-$\text{nc}\over\micro\text d$.
-
-One mc is a and a day is 10<sup>5</sup> beats. a million nc 1 mc is
-hundred thousand (10<sup>5</sup>) zem and a million (10<sup>6</sup>) nc.
-1 mv = 1 nc Zem can be combined c is a hundred million (10<sup>8</sup>)
-zems or forty million (4 × 10<sup>7</sup>) meters.
-
-Apart from distance measurements, zem are also useful for measuring
-speed. zem is to an mc as centimilliday is to a day. The default
-distance between Points <span class="point0">0</span> and
-<span class="point1">1</span> on the map🗺️above⬆️is 100 mc, ten million
-(10<sup>7</sup>) zem, or four million (4 × 10<sup>6</sup>) meters. When
-crossing such large distances, mv are the correct scale
-
-The time that has elapsed since this webpage was loaded is
-${elaTimeHsl}.
-
-Therefore, 1 z = 0.4 m and 1 m = 2.5 z. [originally
-defined](https://en.wikipedia.org/wiki/Metre#Definition:~:text=The%20metre%20was%20originally%20defined%20in%201791%20by%20the%20French%20National%20Assembly%20as%20one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole%20along%20a%20great%20circle%2C)
-[originally
-defined](https://en.wikipedia.org/wiki/Metre#Definition:~:text=The%20metre%20was%20originally%20defined%20in%201791%20by%20the%20French%20National%20Assembly%20as%20one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole%20along%20a%20great%20circle%2C)
-Simply put, 1 zem = 0.4 meters = .
-
-with negative offsets . The Dec time zone that most closely matches Of
-the more than two dozen UTC time zone offsets, only three are integers
-after we convert hours to <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>:
-<span class="color5">-5</span>, <span class="color0">0</span>,
-<span class="color5">5</span>. Time zones with one of these three
-offsets can converted directly between. A UTC offset that is not a
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="deciday">dd</span> integer will not The date and time in
-UTC time zones with an offset of 0 Zone 0 has an offset of 0. -5 or 5,
-we The date and time in UTC time zones with an offset of zero dd match
-dd offsets matches the time in one of the ten Dec time zones exactly.
-UTC
-
-offsets are positive integers, but we can use negative the UTC offset is
-not an integer, we round it. obtain the Zones
-<span class="color5">5</span> to <span class="color9">9</span> overlap
-with UTC time zones that have negative
-[offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place).
-We can design, The When the “UTC” toggle✅input is enabled, UTC time
-zones are shown on the map🗺️above⬆️. To find the he UTC-12:00 time zone
-roughly from New Zealand🇳🇿to the United Kingdom🇬🇧. By design, each Dec
-time zone has a positive offset that can be converted to a negative
-offset by subtracting ten dd. The sole purpose of negative offsets in
-Dec is compatibility with UTC.
-
-The range🎚️inputs below⬇️select two time zones to demonstrate time zone
-conversion. The round trip conversion of round trip conversion of the
-current date and time in Zone <span class="color0">0</span> shown
-beneath the input. First, the offset is The date and time start as one
-number called a day-of-year (<span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>). After
-the offset is applied, the <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> is split
-into the date and the time. but are then displayed separately. The time
-is also converted from days to decidays. is measured in days and the
-Positive and negative offsets that yield the same time are displayed
-together for easy comparison. Regardless of which offset is selected,
-
-Zone x to y Day.day + o ‎ =  Day.day
-
-Zone y to x
-
-The Zone <span class="color8">8</span> to <span class="color0">0</span>
-conversion calculations are ${decTimeZn8} –
-<span class="color8">8</span> = , ${decTimeZn8} +
-<span class="color8">8</span> = . Inversely, we can get the time in any
-time zone by adding either one of its offset to the Zone
-<span class="color0">0</span> time. The Zone
-<span class="color0">0</span> to <span class="color8">8</span>
-conversion calculations are ${decTimeZn8} –
-<span class="color8">8</span> = , ${decTimeZn8} +
-<span class="color8">8</span> = .
-
-Of the two possible results, we can pick the one that is within the
-typical bounds for a Dec time: 0 \<= time \< 10.
-
-The time zone By default, Points <span class="point0">0</span> and
-<span class="point1">1</span> on the map🗺️above⬆️lie on [Longitude
-8](https://en.wikipedia.org/wiki/90th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20North%20America%2C%20the%20Gulf%20of%20Mexico%2C%20Central%20America%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
-(${rainbowMer8} m*λ*), the start of Zone <span class="color8">8</span>.
-To obtain the time in Zone <span class="color0">0</span>, we can
-subtract either the positive or negative offset of Zone
-<span class="color8">8</span> from its time:
-
-and make
-
-At least one of the two kinds of offsets will result in
-
-The time zone conversion calculations for Zone
-<span class="color8">8</span> are
-
-We can choose the offset based on whether we want the resulting time to
-be positive or negative. In Zone <span class="color0">0</span>, the
-positive time is currently ${decTimeZ0n} and the current negative time
-is ${decTimeZ0p}
-
-In Dec, negative times are perfectly valid, but only positive times are
-shown by default. Negative times tell us how much of the day is left,
-instead of how much of the day has passed. Positive and negative times
-are two sides of the same coin🪙. At noon, half of the day has passed
-and half is left, just like a glass🥃can be both half full and half
-empty.
-
-To convert between positive and negative times, we can add and subtract
-ten dd as needed.
-
-In contrast, dates are impacted by our choice of a positive or negative
-offset. Positive offset dates are one day ahead of their negative
-counterparts.
-
-The date in Zone ${rainbow8zn4} is ${decDateHsl} if we use its positive
-offset and ${decYestHsl} otherwise. By providing a positive and negative
-offset for each time zone, Dec can match the date in any UTC time zone.
-
-Dates calculated using negative offsets will be This may be useful avoid
-date mismatches between Dec time zones that overlap with negative thus
-can be roughly one day ahead of their geographically closest UTC
-analogs. Zone ${rainbow6zon}, the default time of Points ${rainbow9zon}
-are .
-
-unless we subtract ten dd to make their offsets negative. The width of a
-UTC time zone is often
-41.<span style="text-decoration-line:overline;">6</span> m*λ*, but
-ranges from 0 m*λ* to the width of China🇨🇳:
-[424](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=109%C2%B056%E2%80%B2E-,West,-%3A%20Akto%20County)
-m*λ* –
-[254](https://en.wikipedia.org/wiki/List_of_extreme_points_of_China#:~:text=%20%5Bcitation%20needed%5D-,East,-%3A%20Fuyuan%20County%2C%20Heilongjiang%2C%20on)
-m*λ* = 170 m*λ*.
-
-To accomodate negative UTC offsets, we can make any Dec offset negative
-by subtracting ten.
-
-The Dec time zone that corresponds to your UTC offset is Zone
-${decZone1st}.
-
-If you UTC offset is negative, To match the date in negative UTC zones,
-we can substract
-
-Each offset has a negative form that yields the same time but on a date
-that is one day earlier. To obtain the time in Zone ${rainbow0zn1}
-(*t*<sub>0</sub>), we can subtract the offset (*o*<sub>*x*</sub>) of any
-time zone *x* from its deciday time (*t*<sub>*x*</sub>): *t*<sub>0</sub>
-= *t*<sub>*x*</sub> – *o*<sub>*x*</sub>. Inversely, we can get the time
-in any time zone by adding its offset to the Zone ${rainbow0zn2} time.
-If *t*<sub>*x*</sub> is less than *o*<sub>*x*</sub>, then
-*t*<sub>0</sub> will be negative: *t*<sub>*x*</sub> \<
-*o*<sub>*x*</sub> → *t*<sub>0</sub> \< 0.
-
-We can add ten to any negative deciday time become positive.
-
-Instead of adding ten to a negative difference, we can subtract a the
-negative version of the offset In Dec, both times and offsets can be
-negative. Positive times tell us how much of the day has passed and
-negative times let us know how much of the day is left. Converting
-between positive and negative times or offsets is as easy as subtracting
-or adding ten. Negative offsets can facilitate mental calculations We
-can subtract ten from a time zone number to get a negative time zone
-offset.
-
-Both positive and negative offsets yield the correct time, but negative
-offsets result in a date that is one day behind the correct date
-produced by positive offsets.
-
-In Zone ${decZone2nd}, the current date is and the current time in
-decidays is –. Even distances can be labeled🏷️with color🎨.
-
-At an average speed of ${travelspeed} $\text m\omega \text r$, we could
-cover the ${distance_mtaur} $\text m\tau r$ between Points
-<span class="point0">0</span> and <span class="point1">1</span> in
-${traveltime} <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a day">milliday</span> (md).
-
-We can think of <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="hundredths of the circumference of Earth">centitaurs</span>
-per day ($\text c\omega \text r$) as a percent (%) and $\text m\omega$
-as a
-[permille](https://en.wikipedia.org/wiki/Per_mille#:~:text=indicates%20parts%20per%20thousand)
-(‰) of . Notably, 1$\text m\omega$ =
-1.<span style="text-decoration-line:overline;">6</span> kilometers per
-hour ($\text{km}\over\text h$) ≈ 1 mile per hour
-($\text {mi}\over\text h$). Other than ease of conversion, another
-advantage of a global scale, $\text m\tau r\over\text d$,
-$\text m\lambda$, $\text m\phi$ are the right size to measure distance
-and position.
-
-b the closest Dec analog of $\text{km}\over\text h$ and
-$\text {mi}\over\text h$, the main Dec speed measurement units are
-equivalent to $\text c\tau r\over\text d$.
-
-The advantage of $\text c\tau r\over\text d$ is that is equivalent to is
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="ten millionths of the circumference of Earth">decimicrotaurs</span>
-per <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a hundred thousandth of a day">centimilliday</span>
-($\text d\micro\tau r\over\text {cmd}$).
-
-that 1$\text c\tau r\over\text d$ = zems per beat
-($\text z\over\text b$). Zem stands for **z**one **e**quatorial
-**m**icrowidth or **zem** (z) and a beat is roughly the duration of a
-heart or musical beat.
-
-Converting between Dec speed units is straightforward:
-10$\text m\tau r\over\text d$ = 1 $\text c\tau\over\text d$ = 1
-
-Zem stands for zone equatorial microwidth and is equal to 4m.
-
-The length of 1 *τ**r* is exactly equal to 10000 kilozems (kz) or 40000
-kilometers (km), which is is 1.96575kz less than the length of a
-[meridian](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude)
-(*ϕ*) and 18.75425kz less than the length of the
-[Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres)
-(*ϕ*<sub>0</sub>). of these points are in milliturns to indicate that an
-angle rather than a distance kilometers (km) or meters (m) and days to
-hours (h) or seconds (s).
-
-The scale of $\tau\text r$ and d is well suited for [air
-travel](https://en.wikipedia.org/wiki/Air_travel#:~:text=a%20form%20of%20travel%20in%20vehicles%20such%20as%20airplanes%2C%20jet%20aircraft%2C%20helicopters%2C%20hot%20air%20balloons%2C%20blimps%2C%20gliders%2C%20hang%20gliders%2C%20parachutes%2C%20or%20anything%20else%20that%20can%20sustain%20flight).
-If we had our very own
-[seaplane](https://en.wikipedia.org/wiki/Seaplane#:~:text=a%20powered%20fixed%2Dwing%20aircraft%20capable%20of%20taking%20off%20and%20landing%20(alighting)%20on%20water),
-we could fly 1 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a meridian">decimeridian</span> directly South
-from the [Mississippi
-River](https://en.wikipedia.org/wiki/Mississippi_River#:~:text=the%20primary%20river%20of%20the%20largest%20drainage%20basin%20in%20the%20United%20States)
-near [Memphis,
-Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee)
-to the land next to [Santa Fe
-Island](https://en.wikipedia.org/wiki/Santa_Fe_Island#:~:text=a%20small%20island%20of%2024%20square%20kilometres%20(9.3%C2%A0sq%C2%A0mi)%20which%20lies%20in%20the%20middle%20of%20the%20Gal%C3%A1pagos%20Archipelago%20in%20Ecuador)🏝️in
-the [Galápagos
-archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific).
-
-We can think of <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="hundredths of a meridian">centitaur</span> per day
-($\text c\tau r\over\text d$) as a percent (%) and
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a meridian">millitaur</span> per day
-($\text m\tau r\over\text d$) as a
-[permille](https://en.wikipedia.org/wiki/Per_mille#:~:text=indicates%20parts%20per%20thousand)
-(‰) of the equatorial speed at which Earth🌏rotates on its axis.
-Conversion of $\text m\tau r$ to kilometers (km) or meters (m) and days
-to hours (h) or seconds (s) is straightforward: 1$\text m\tau r$ = 40km
-= 40000m, 1d = 24h = 86400s, and 1$\text m\tau r\over\text d$ =
-1.<span style="text-decoration-line:overline;">6</span>$\text{km}\over\text h$
-= 2.16$\text m\over\text s$.
-
-It is very easy to switch between multiples and submultiples of units,
-Dec distance📏and time⏳units are all based on powers of ten, so
-
-Warning bad pun alert Turn the beat around, Love to hear the
-percussion…🪩🕺💃🎶🎵
-
-When dealing with shorter distances and durations, it is convenient to
-use submultiples of meridians and days. permission to land The Dec
-analogs of meters and seconds of a meter (m) is called
-
-Notably, $\text m\tau\text r\over\text d$ ≈ $\text{mi}\over\text h$.
-
-$\text m\lambda\over\text d$ closer to the distances and durations we
-may encounter A meridian per day (*ω* = $\lambda\over\text d$) The speed
-of the rotation of Earth🌎at the
-[Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres)
-is roughly . is approximation
-[465.10](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=an%20equatorial%20speed%20of%20465.10%20metres%20per%20second)
-meters per second ($\text m\over\text s$) or 1.0046*ω*.
-
-Similarly, we can think of <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="hundredths of meridians">centimeridians</span> per day
-($\text c\lambda\over\text d$) as percents : 1$\lambda\over\text d$ =
-100$\text c\lambda\over\text d$. Conversion between Dec and SI speed
-units is easy: 1$\text c\lambda\over\text d$ =
-0.216$\text m\over\text s$.
-
-and a meridian y = 365 or 366 days depending on the Dec leap year rule,
-and Dec speed measurements are based on *λ* / d (*ω*) , which stands for
-the circumference of the Earth and amounts to
-
-and is equal to 365 or 366 days, depending on the leap year rule. A day
-(d) represents the Earth on its axis and is equal to. Millennia (10e3y),
-centuries (10e2y), and decades (10e1y) are multiples of years. Decidays
-(10e-1d), centidays (10e-2d), and millidays (10e-3d) are submultiples of
-days.
-
-Like different kinds of turns can be combined to form new units.
-
-For measurements of length or distance, a turn represents a
-[meridian](https://en.wikipedia.org/wiki/Meridian_(geography)#:~:text=the%20locus%20connecting%20points%20of%20equal%20longitude)
-(*λ*), a trip around the world through the North and South Poles, and is
-equal to 40000 kilometers (km).
-
-In Dec, time measurement is based on
-[days](https://en.wikipedia.org/wiki/Day#:~:text=the%20time%20period%20of%20a%20full%20rotation%20of%20the%20Earth%20with%20respect%20to%20the%20Sun)
-(d) and
-
-are two special kinds of turns that are the basis of time and distance
-measurements. have their own names and are defined in terms of
-
-A day is a turn of the Earth on its axis that has a duration of 86400
-seconds and a meridian is a turn around the Earth that passes through
-the North and South Poles. A beat is 0.864 seconds (s) and a zem is 4
-meters (m). Any kind of
-[angle](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐,
-such as a
-[bearing](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object)
-on a
-[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭or
-a
-[${rainbowHue0}](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram%20(such%20as%20a%20chromaticity%20diagram)%20or%20color%20wheel)
-on a
-[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle),
-can be measured in turns or
-[submultiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20quotient%20of%20the%20main%20unit%20by%20an%20integer)
-of turns like <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a turn">milliturns</span>
-([*m**τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=e.g.%2C%20centiturns%20(ctr)%2C-,milliturns,-(mtr)%2C%20etc)).
-
-The color🎨wheel below⬇️rotates🔄in response to the
-[Observable](https://observablehq.com)
-[range](https://observablehq.com/@observablehq/input-range)🎚️and [hue
-bar](https://observablehq.com/@paavanb/progressive-color-picker)📊inputs
-beneath it to orient the selected ${rainbowHue1} upward. The [HSL and
-HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
-models use degrees instead of milliturns so the milliturn shown by the
-range🎚️input, ${rainbowMtr}, is rounded to the nearest degree,
-${rainbowDeg}, and then used as part of an HSL triplet to obtain the
-[hex
-triplet](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
-${rainbowHex}.
-
-Integer milliturns are capable of selecting all three
-[additive](https://en.wikipedia.org/wiki/Primary_color#:~:text=summing%20the%20spectral%20power%20distributions%20(the%20intensity%20of%20each%20wavelength)%20of%20the%20individual%20light%20sources)
-(<span class="red">red</span>=0,
-<span class="lime">green</span>=1/3=.<span style="text-decoration-line:overline;">3</span>,
-<span class="azul">blue</span>=2/3=.<span style="text-decoration-line:overline;">6</span>)
-and all three
-[subtractive](https://en.wikipedia.org/wiki/Primary_color#:~:text=predicts%20the%20resultant%20spectral%20power%20distribution%20of%20light%20filtered%20through%20overlaid%20partially%20absorbing%20materials)
-(<span class="yellow">yellow</span>=1/6=.1<span style="text-decoration-line:overline;">6</span>,
-<span class="cyan">cyan</span>=1/2=0.5,
-<span class="magenta">magenta</span>=5/6=.8<span style="text-decoration-line:overline;">3</span>)
-[primary
-color](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors)🎨hues
-only when converted to degrees and rounded. Unlike milliturns, degrees
-can represent [repeating decimal
-numbers](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20number%20whose%20digits%20are%20eventually%20periodic%20(that%20is%2C%20after%20some%20place%2C%20the%20same%20sequence%20of%20digits%20is%20repeated%20forever))
-as integers and thus are useful to specifying primary colors
-(<span class="red">red</span>=0°, <span class="lime">green</span>=120°,
-<span class="azul">blue</span>=240°,
-<span class="yellow">yellow</span>=60°,
-<span class="cyan">cyan</span>=180°,
-<span class="magenta">magenta</span>=300°).
-
-rotation matches the so that it can be used to select exactly. To
-specify the others, we would typically need to fractions or [repeating
-decimal
-numbers](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20number%20whose%20digits%20are%20eventually%20periodic%20(that%20is%2C%20after%20some%20place%2C%20the%20same%20sequence%20of%20digits%20is%20repeated%20forever)),
-but the example below uses rounding
-(<span class="lime">green</span>=120°,
-<span class="azul">blue</span>=240°)
-(<span class="yellow">yellow</span>=60°,
-<span class="magenta">magenta</span>=300°) [primary
-colors](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors).
-
-to allow for identification of the hues of
-[additive](https://en.wikipedia.org/wiki/Primary_color#:~:text=summing%20the%20spectral%20power%20distributions%20(the%20intensity%20of%20each%20wavelength)%20of%20the%20individual%20light%20sources)
-and
-[subtractive](https://en.wikipedia.org/wiki/Primary_color#:~:text=predicts%20the%20resultant%20spectral%20power%20distribution%20of%20light%20filtered%20through%20overlaid%20partially%20absorbing%20materials)
-() [primary
-colors](https://en.wikipedia.org/wiki/Primary_color#:~:text=colorants%20or%20colored%20lights%20that%20can%20be%20mixed%20in%20varying%20amounts%20to%20produce%20a%20gamut%20of%20colors)
-with integers.${rainbowDeg}.
-
-To specify the hues of these colors in turns,
-(<span class="red">red</span>=0,
-<span class="lime">green</span>=1/3=.<span style="text-decoration-line:overline;">3</span>,
-<span class="azul">blue</span>=2/3=.<span style="text-decoration-line:overline;">6</span>,
-<span class="yellow">yellow</span>=1/6=.1<span style="text-decoration-line:overline;">6</span>,
-<span class="cyan">cyan</span>=1/2=0.5,
-<span class="magenta">magenta</span>=5/6=.8<span style="text-decoration-line:overline;">3</span>).
-We can stipulate any pure primary color🎨, instead of just its
-${rainbowHue2}, with only three characters
-(<span class="red">red</span>=f00, <span class="lime">green</span>=0f0,
-<span class="azul">blue</span>=00f,
-<span class="yellow">yellow</span>=ff0,
-<span class="cyan">cyan</span>=0ff,
-<span class="magenta">magenta</span>=f0f) in a
-
-The milliturn value selected above⬆️, ${rainbowMtr1}, is closest to the
-${rainbowDir}
-[compass🧭direction](https://en.wikipedia.org/wiki/Cardinal_direction).
-
-With submultiples of turns, we can represent any [dyadic
-rational](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20number%20that%20can%20be%20expressed%20as%20a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
-as an integer.
-
-In the color🎨wheel and compass🧭examples above, each type of turn is
-used individually. Different types of turns can also work together in
-groups.
-[Geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=the%20process%20of%20determining%20or%20estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person)📍relies
-on a pair of coordinates:
-[longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
-(*λ*) and
-[latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
-(*ϕ*). When the globe🌍below⬇️detects a click🖱️event, it marks the
-chosen location and provides relevant information like the *λ* and *ϕ*
-angles in milliturns.
-
-along with information about the chosen location or use longitude and
-latitude along with a compass🧭bearing (*γ*) to control the globe🌍below
-in three dimensions.
-
-The colorwheel compassdemonstrates that are, which can be truncated to
-three digits. an alternative to degrees that instead of degrees
-advantage of degrees is their incredible divisibility.
-
-Colors can be represented by HSL, , <span class="mono"></span>, or
-[RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model%5B1%5D%20in%20which%20the%20red%2C%20green%2C%20and%20blue%20primary%20colors%20of%20light%20are%20added%20together%20in%20various%20ways%20to%20reproduce%20a%20broad%20array%20of%20colors),
-, triplets. Hex triplets are
-[base16](https://en.wikipedia.org/wiki/Hexadecimal#:~:text=a%20positional%20numeral%20system%20that%20represents%20numbers%20using%20a%20radix%20(base)%20of%20sixteen),
-RGB triplets are
-[base256](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=two%20pentadecimal%20digits.-,256,-Number%20expressible%20with),
-and
-
-Turns can represent anything that is circular, spherical, or cyclical,
-like the , a
-[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation),
-[Earth’s
-orbits](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=complete%20orbit%20takes-,365.256%C2%A0days,-(1%20sidereal%20year))
-around the Sun (years), [Earth’s
-rotations](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
-on [its
-axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole)
-(days),
-[meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of),
-and
-[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line).
-A [quarter
-meridian](https://en.wikipedia.org/wiki/Meridian_arc#Quarter_meridian:~:text=The%20distance%20from%20the%20equator%20to%20the%20pole)
-is very close to 10 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="millions of meters">megameters</span> because the length
-of a
-[meter](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units)
-was [once
-defined](https://en.wikipedia.org/wiki/Metre#:~:text=one%20ten%2Dmillionth%20of%20the%20distance%20from%20the%20equator%20to%20the%20North%20Pole)
-as a ten millionth of the distance from the
-[Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres)
-to the [North
-Pole](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface).
-
-![](../asset/quartermeridian.svg)
-
-For time measurement, Dec uses turns to measure years, days, longitudes,
-and latitudes. can therefore represent
-
-The symbol *τ* represents any kind of turn. A turn can be a year, a day,
-a meridian, a parallel, or a color🎨wheel.
-
-are many kinds of turns. can Dec uses names to distinguish between
-different kinds of turns. of years, and called days and
-
-In geopositioning, a turn can be a circle of longitude or latitude.
-
-are ’s turns
-[turns](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
-on . days are turns. In time measurement, both years and days are turns.
-
-various Dec measures
-[longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth%2C%20or%20another%20celestial%20body)
-and the <span class="cyan">time-of-day</span>
-(<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span>) in terms of
-[Earth](https://en.wikipedia.org/wiki/Earth#:~:text=the%20third%20planet%20from%20the%20Sun)’s
-[turns](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
-on [its
-axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
-In different contexts of time, a turn is day. A turn of longitude is
-called a circle.
-
-The current <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> is an approximation the longitude
-of the Sun.
-
-Turns help us understand the relationship between longitude and tod. A
-half turn separates noon and midnight or the Western and Eastern
-Hemispheres.
-
-Longitude defines the ten Dec time zones that standardize the
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span>.
-
-Longitudes start at [Meridian
-0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
-and <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">tods</span> start at
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="midnight">Dot 0</span>.
-
-Meridian 0 is the Dec [International Date
-Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
-and [prime
-meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0),
-whereas .
-
-41.<span class="over">6</span>
-
-[Meridian
-1](https://en.wikipedia.org/wiki/18th_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Europe%2C%20Africa%2C%20the%20Atlantic%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
-divides Europe and Africa into Western and Eastern halves.
-
-which runs through Iceland and the Atlantic Ocean just West of Africa,
-In the context of time measurement, a turn on Earth’s axis is called a
-day and a turn around the Sun is a year.
-
-for
-[geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=the%20process%20of%20determining%20or%20estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person)
-
-To measure time, Dec uses years and days. Years are turns of a celestial
-body around [the point it
-orbits](https://en.wikipedia.org/wiki/Barycenter_%28astronomy%29#:~:text=the%20point%20about%20which%20the%20bodies%20orbit).
-Days are turns of a [celestial
-body](https://en.wikipedia.org/wiki/Astronomical_object#:~:text=a%20single%2C%20tightly%20bound%2C%20contiguous%20entity)
-on [its
-axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
-
-The distinguishing characteristics of Dec are its simplicity and
-consistency. These qualities are evident when comparing Dec and
-[UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
-time zones using the
-[toggle](https://observablehq.com/@observablehq/input-toggle)✅inputs
-beneath the world🌏map🗺️below⬇️. The 10 Dec time zones are all 1
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a turn">deciturn</span> wide, whereas the 40
-UTC time zones shown on the map all deviate from their standard width of
-41⅔ <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a turn">milliturns</span> to conform to
-political boundaries.
-
-In addition to showing and hiding time zones, the toggle✅inputs also
-can add country borders and a
-[solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
-shade effect to the map🗺️.
-
-For a more realistic view of the world, you can interact with the
-globe🌐below⬇️. as it really is
-
-Dec has ten
-[time⏳zones](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time)
-which are each one <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a turn">deciturn</span> wide and are numbered
-zero through nine, like the ten
-[meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of)
-that separate them. Zone <span class="lime">0</span> is in between
-Meridians 0 and 1. [Meridian
-0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole),
-which runs through Iceland and the Atlantic Ocean just West of Africa,
-is the Dec [International Date
-Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
-and [prime
-meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0).
-[Meridian
-1](https://en.wikipedia.org/wiki/18th_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Europe%2C%20Africa%2C%20the%20Atlantic%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
-divides Europe and Africa into Western and Eastern halves.
-
-The
-[choropleth](https://en.wikipedia.org/wiki/Choropleth_map#:~:text=a%20type%20of%20statistical%20thematic%20map%20that%20uses%20pseudocolor%2C%20meaning%20color%20corresponding%20with%20an%20aggregate%20summary%20of%20a%20geographic%20characteristic%20within%20spatial%20enumeration%20units%2C%20such%20as%20population%20density%20or%20per%2Dcapita%20income)🎨map🗺️below
-shows all ten Dec meridians and the full spectrum of UTC time⏳zones.
-
-UTC+00:00 is in the middle of Zone 0, but makes detours to include
-Iceland and other islands. Except for such detours, each UTC time zone
-is 41.6̅ milliturns wide.
-
-The ISO🌐8601 format is
-
-If the Dec day-of-year (<span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>),
-<span class="cyan">${String(decDate).padStart(3,
-“0”)}</span>.<span class="cyan">${decTime.toFixed(5).slice(2)}</span>,
-is greater than <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="January 1">306</span>, the Dec year is 1 less than the
-ISO🌐year.
-
-The ISO🌐8601
-[time⏳interval](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=the%20intervening%20time%20between%20two%20time%20points)
-from now until midnight can be expressed without including the current
-time as , which is equivalent to the Dec span🌈.
-
-ISO🌐8601 and Dec are different objectives. ISO🌐8601 seeks to
-standardize how we measure time, whereas Dec aims to completely redefine
-how we measure time.
-
-Unlike ISO🌐8601, the documentation describing Dec is available for free
-under a [Creative Commons
-license](https://en.wikipedia.org/wiki/Creative_Commons_license#:~:text=one%20of%20several%20public%20copyright%20licenses%20that%20enable%20the%20free%20distribution%20of%20an%20otherwise%20copyrighted%20%22work%22).
-While ISO🌐8601 standardizes,
-
-can be split two components: the Dec calendar🗓️(Decalendar) and
-clock🕓(Declock). The year in Dec is the same as in the Dec
-counts🧮years and days as integers and fractions. In Dec, the
-[integer](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20integer%20written%20to%20the%20left%20of%20the%20decimal%20separator)
-and
-[fractional](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
-part of a year form a date, while the fractional part of a year. The
-fractional years are expressed by while [fractional
-days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days) are .
-since the Dec
-[epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era),
-Dec tracks the date as and the time of day as fractional days using a
-single number called the <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>. In
-essence, Decalendar and Declock count🧮fractions of a year and a day,
-respectively. The numerator and denominator for Decalendar is the number
-of days in the year, and the Declock denominator is 10<sup>*x*</sup>,
-where *x* is the number of digits in the numerator. In both systems,
-only the numerator, not the denominator, is provided. In the context of
-Decalendar, the numerator is the days that have passed in the year,
-while in the context of Declock, the numerator is the parts of the day
-that have passed in the day.
-
-To avoid any confusion between the two, we can say <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="March 6"><u>Day 5</u></span> to
-mean the date when 5 days have passed this year or <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span> to
-mean the first day-of-year (<span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>). This
-is like the use of the term “day zero” in other contexts, such as
-epidemiology. The analogous term for times is “Dot”. The word “Dot”
-conveys that at its core Declock is a system built on [fractional
-days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days)
-expressed as decimal numbers. The 5 in “Dot 5” can be thought of as a
-number after a decimal (0.5) or a numerator (⁵/₁₀), either way it means
-noon, the time when half the day has passed.
-
-The analogy to decimals or fractions is important, because it explains
-why adding a zero at the end of a time does not change the time, only
-the implied tolerance of time points or the implied duration of time
-intervals. If Dot 5 is a time point, it has an implied tolerance of 5%
-of the day (.5 ± .05), because any time after Dot 45 and before Dot 55
-(\[.45, .55)) would round to Dot 5. On the other hand, if Dot 5 is the
-start time for a time interval, that interval is implied to start at Dot
-5 and end before Dot 6 (\[.5, .6)) and thus have a duration of 10% of
-the day (Dot 6-Dot 5). Every additional digit we add decreases the
-implied tolerance and the implied duration 10-fold.
-
-If we really want to insist on punctuality, we could include up to 5
-digits in a time. Specifying times with more than 5 digits is possible,
-and may be useful for scientific or technical purposes, but it is
-analogous to providing [extremely long GPS
-coordinates](https://xkcd.com/2170/); at some point the level of
-precision stops having relevance to daily life. If we want to strive for
-the highest level of precision possible, we can add the word “sharp” or
-the `#` symbol to the time. Saying “5 Sharp” or writing `5#` means as
-close as possible to noon. Times that include `#` cannot have an implied
-duration. We can only add `#` to a time, so there is no need say “Dot 5
-Sharp” or write `.5#`.
+<div id="hands" class="column-margin hand" fig-align="center"
+style="text-align:center;">
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   enable-background="new 0 0 838.332 516.951"
+   overflow="visible"
+   ns3:pageBounds="-124 716 716 124"
+   ns3:rulerOrigin="124 -124"
+   ns3:viewOrigin="-123.4824 642.7246"
+   version="1.1"
+   viewBox="0 0 563.14672 234.1945"
+   xml:space="preserve"
+   id="lefthand"
+   sodipodi:docname="hands.svg"
+   width="563.14673"
+   height="234.1945"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:x="adobe:ns:meta/"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
+   xmlns:xap="http://ns.adobe.com/xap/1.0/"
+   xmlns:xapgimg="http://ns.adobe.com/xap/1.0/g/img/"
+   xmlns:xapmm="http://ns.adobe.com/xap/1.0/mm/"
+   xmlns:ns3="&amp;#38;#38;ns_ai;"
+   xmlns:ns4="&amp;#38;#38;ns_sfw;"
+   xmlns:ns5="&amp;#38;#38;ns_vars;"><defs
+   id="defs17" /><sodipodi:namedview
+   id="namedview17"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="2.5207312"
+   inkscape:cx="448.08426"
+   inkscape:cy="120.40157"
+   inkscape:window-width="1472"
+   inkscape:window-height="896"
+   inkscape:window-x="0"
+   inkscape:window-y="32"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg17" />
+    <metadata
+   id="metadata1">
+        <ns4:sfw>
+            <ns4:slices />
+            <ns4:sliceSourceBounds
+   x="-123.482"
+   y="125.773"
+   width="838.332"
+   height="516.951"
+   bottomLeftOrigin="true" />
+        </ns4:sfw>
+        <ns5:variableSets>
+            <ns5:variableSet
+   locked="none"
+   varSetName="binding1">
+                <ns5:variables />
+                <ns5:sampleDataSets />
+            </ns5:variableSet>
+        </ns5:variableSets>
+<x:xmpmeta
+   x:xmptk="XMP toolkit 3.0-29, framework 1.6">
+<rdf:RDF>
+ <rdf:Description
+   rdf:about="uuid:4dd77512-294e-11df-b0f4-001f5b3c2ba8">
+  <pdf:Producer>Adobe PDF library 6.66</pdf:Producer>
+ </rdf:Description>
+ <rdf:Description
+   rdf:about="uuid:4dd77512-294e-11df-b0f4-001f5b3c2ba8">
+ </rdf:Description>
+ <rdf:Description
+   rdf:about="uuid:4dd77512-294e-11df-b0f4-001f5b3c2ba8">
+ </rdf:Description>
+ <rdf:Description
+   rdf:about="uuid:4dd77512-294e-11df-b0f4-001f5b3c2ba8">
+  <xap:ModifyDate>2010-03-06T19:45:34Z</xap:ModifyDate>
+  <xap:CreateDate>2008-03-27T12:07:11+01:00</xap:CreateDate>
+  <xap:CreatorTool>Illustrator</xap:CreatorTool>
+  <xap:MetadataDate>2008-03-27T16:40:58+01:00</xap:MetadataDate>
+  <xap:Thumbnails>
+   <rdf:Alt>
+    <rdf:li
+   rdf:parseType="Resource">
+     <xapgimg:format>JPEG</xapgimg:format>
+     <xapgimg:width>256</xapgimg:width>
+     <xapgimg:height>160</xapgimg:height>
+     <xapgimg:image>/9j/4AAQSkZJRgABAgEASABIAAD/7QAsUGhvdG9zaG9wIDMuMAA4QklNA+0AAAAAABAASAAAAAEA
+AQBIAAAAAQAB/+4ADkFkb2JlAGTAAAAAAf/bAIQABgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoK
+DBAMDAwMDAwQDA4PEA8ODBMTFBQTExwbGxscHx8fHx8fHx8fHwEHBwcNDA0YEBAYGhURFRofHx8f
+Hx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8f/8AAEQgAoAEAAwER
+AAIRAQMRAf/EAaIAAAAHAQEBAQEAAAAAAAAAAAQFAwIGAQAHCAkKCwEAAgIDAQEBAQEAAAAAAAAA
+AQACAwQFBgcICQoLEAACAQMDAgQCBgcDBAIGAnMBAgMRBAAFIRIxQVEGE2EicYEUMpGhBxWxQiPB
+UtHhMxZi8CRygvElQzRTkqKyY3PCNUQnk6OzNhdUZHTD0uIIJoMJChgZhJRFRqS0VtNVKBry4/PE
+1OT0ZXWFlaW1xdXl9WZ2hpamtsbW5vY3R1dnd4eXp7fH1+f3OEhYaHiImKi4yNjo+Ck5SVlpeYmZ
+qbnJ2en5KjpKWmp6ipqqusra6voRAAICAQIDBQUEBQYECAMDbQEAAhEDBCESMUEFURNhIgZxgZEy
+obHwFMHR4SNCFVJicvEzJDRDghaSUyWiY7LCB3PSNeJEgxdUkwgJChgZJjZFGidkdFU38qOzwygp
+0+PzhJSktMTU5PRldYWVpbXF1eX1RlZmdoaWprbG1ub2R1dnd4eXp7fH1+f3OEhYaHiImKi4yNjo
++DlJWWl5iZmpucnZ6fkqOkpaanqKmqq6ytrq+v/aAAwDAQACEQMRAD8A9KaVpWlnS7MmzgJMEdT6
+afyD2xVFfonSv+WKD/kUn9MVd+idK/5YoP8AkUn9MVd+idK/5YoP+RSf0xV36J0r/lig/wCRSf0x
+V36J0r/lig/5FJ/TFXfonSv+WKD/AJFJ/TFXfonSv+WKD/kUn9MVd+idK/5YoP8AkUn9MVd+idK/
+5YoP+RSf0xV5L/zjFaWl1+Wjy3MMc8v6Uvl5yqHagl2FWB6Yq9a/ROlf8sUH/IpP6Yq79E6V/wAs
+UH/IpP6Yq79E6V/yxQf8ik/pirv0TpX/ACxQf8ik/pirv0TpX/LFB/yKT+mKu/ROlf8ALFB/yKT+
+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</xapgimg:image>
+    </rdf:li>
+   </rdf:Alt>
+  </xap:Thumbnails>
+ </rdf:Description>
+ <rdf:Description
+   rdf:about="uuid:4dd77512-294e-11df-b0f4-001f5b3c2ba8">
+  <xapmm:DocumentID>uuid:db0c57f4-dad3-11dc-b3c0-003065732f80</xapmm:DocumentID>
+ </rdf:Description>
+ <rdf:Description
+   rdf:about="uuid:4dd77512-294e-11df-b0f4-001f5b3c2ba8">
+  <dc:format>image/svg+xml</dc:format>
+  <dc:title>
+   <rdf:Alt>
+    <rdf:li
+   xml:lang="x-default">keyboard.ai</rdf:li>
+   </rdf:Alt>
+  </dc:title>
+ </rdf:Description>
+</rdf:RDF>
+</x:xmpmeta>
+            </metadata>
+        &#10;    <g
+   id="g17"
+   transform="translate(-24.999999)"
+   style="display:inline"><g
+     id="g112"
+     transform="translate(11.13165,-250.71061)"><path
+       ns3:knockout="Off"
+       fill="#ccffff"
+       d="m 118.698,365.385 c 6.404,-2.645 -8.252,-81.105 -10.439,-94.6 -3.708,-22.874 20.403,-27.359 24.219,-4.037 2.169,13.249 13.406,91.545 19.883,92.723"
+       id="path96"
+       style="fill:#aa00ff;fill-opacity:1" /><path
+       ns3:knockout="Off"
+       fill="#c0dbfc"
+       d="M 91.44,387.871 C 97.791,381.328 55.109,314.164 48.389,304.019 37.816,288.062 58.93,277.175 68.274,290.82 c 5.886,8.594 44.021,77.211 50.424,74.564"
+       id="path97"
+       style="fill:#ff00ff;fill-opacity:1" /><path
+       ns3:knockout="Off"
+       fill="#befc75"
+       d="M 75.156,413.93 C 62.776,401.662 32.995,379.414 24.201,373.606 7.782,362.764 16.05,344.772 33.49,353.815 c 11.855,6.146 51.601,40.602 57.951,34.057"
+       id="path98"
+       style="fill:#ff0000;fill-opacity:1" /><path
+       ns3:knockout="Off"
+       fill="#e9befc"
+       d="m 218.40579,412.38523 c 2.12949,1.28142 6.71614,0.52489 14.15833,-1.34971 40.05366,-10.08886 65.22363,4.93375 61.60227,22.66937 -20.27926,-1.95775 -56.42484,0.5047 -74.40806,16.0133"
+       id="path99"
+       style="fill:#00aaff;fill-opacity:1" /><path
+       ns3:knockout="Off"
+       fill="#ffff66"
+       d="m 152.36,359.471 c 6.477,1.178 26.692,-67.762 31.054,-82.859 5.918,-20.479 27.516,-13.883 22.155,6.934 -3.078,11.955 -15.788,56.023 -17.843,84.938"
+       id="path100"
+       style="fill:#0000ff;fill-opacity:1" /><path
+       ns3:knockout="Off"
+       fill="none"
+       stroke="#000000"
+       stroke-width="2.2742"
+       stroke-linecap="round"
+       stroke-linejoin="bevel"
+       d="m 219.277,448.223 c -9.82512,15.73075 -15.369,10.77 -26.92,21.295 -12.778,11.641 -27.906,5.285 -41.088,9.52 -9.404,3.021 -17.9,6.805 -28.715,3.371 C 106.318,477.249 84.4,436.235 80.23,421.286 78.202,414.02 34.818,381.378 23.882,374.155 7.463,363.315 15.731,345.321 33.17,354.364 c 11.856,6.146 51.603,40.602 57.953,34.059 6.351,-6.545 -36.33,-73.709 -43.052,-83.854 -10.573,-15.957 10.54,-26.844 19.885,-13.198 5.885,8.593 44.021,77.212 50.424,74.565 6.404,-2.646 -8.252,-81.106 -10.44,-94.601 -3.708,-22.874 20.403,-27.36 24.22,-4.038 2.168,13.25 13.406,91.547 19.882,92.723 6.477,1.178 26.693,-67.762 31.055,-82.859 5.918,-20.478 27.515,-13.883 22.154,6.934 -3.876,15.059 -23.037,81.07 -16.934,103.568 8.66338,20.04652 13.46168,27.94516 30.37219,26.45191 43.21803,-13.31723 77.7404,-1.91731 75.37635,18.63232 -15.41351,3.04714 -56.4956,-0.13802 -74.78854,15.47577 z"
+       id="path103"
+       sodipodi:nodetypes="ccccccccsccccccccccc" /></g><g
+     id="g23"
+     transform="matrix(-1,0,0,1,602.0151,-250.71061)"><path
+       ns3:knockout="Off"
+       fill="#ccffff"
+       d="m 118.698,365.385 c 6.404,-2.645 -8.252,-81.105 -10.439,-94.6 -3.708,-22.874 20.403,-27.359 24.219,-4.037 2.169,13.249 13.406,91.545 19.883,92.723"
+       id="path18"
+       style="fill:#aaff00;fill-opacity:1" /><path
+       ns3:knockout="Off"
+       fill="#c0dbfc"
+       d="M 91.44,387.871 C 97.791,381.328 55.109,314.164 48.389,304.019 37.816,288.062 58.93,277.175 68.274,290.82 c 5.886,8.594 44.021,77.211 50.424,74.564"
+       id="path19"
+       style="fill:#ffff00;fill-opacity:1" /><path
+       ns3:knockout="Off"
+       fill="#befc75"
+       d="M 75.156,413.93 C 62.776,401.662 32.995,379.414 24.201,373.606 7.782,362.764 16.05,344.772 33.49,353.815 c 11.855,6.146 51.601,40.602 57.951,34.057"
+       id="path20"
+       style="fill:#ffaa00;fill-opacity:1" /><path
+       ns3:knockout="Off"
+       fill="#e9befc"
+       d="m 218.40579,412.38523 c 2.12949,1.28142 6.71614,0.52489 14.15833,-1.34971 40.05366,-10.08886 65.22363,4.93375 61.60227,22.66937 -20.27926,-1.95775 -56.42484,0.5047 -74.40806,16.0133"
+       id="path21"
+       style="fill:#00ffff;fill-opacity:1" /><path
+       ns3:knockout="Off"
+       fill="#ffff66"
+       d="m 152.36,359.471 c 6.477,1.178 26.692,-67.762 31.054,-82.859 5.918,-20.479 27.516,-13.883 22.155,6.934 -3.078,11.955 -15.788,56.023 -17.843,84.938"
+       id="path22"
+       style="fill:#00ff00;fill-opacity:1" /><path
+       ns3:knockout="Off"
+       fill="none"
+       stroke="#000000"
+       stroke-width="2.2742"
+       stroke-linecap="round"
+       stroke-linejoin="bevel"
+       d="m 219.277,448.223 c -9.82512,15.73075 -15.369,10.77 -26.92,21.295 -12.778,11.641 -27.906,5.285 -41.088,9.52 -9.404,3.021 -17.9,6.805 -28.715,3.371 C 106.318,477.249 84.4,436.235 80.23,421.286 78.202,414.02 34.818,381.378 23.882,374.155 7.463,363.315 15.731,345.321 33.17,354.364 c 11.856,6.146 51.603,40.602 57.953,34.059 6.351,-6.545 -36.33,-73.709 -43.052,-83.854 -10.573,-15.957 10.54,-26.844 19.885,-13.198 5.885,8.593 44.021,77.212 50.424,74.565 6.404,-2.646 -8.252,-81.106 -10.44,-94.601 -3.708,-22.874 20.403,-27.36 24.22,-4.038 2.168,13.25 13.406,91.547 19.882,92.723 6.477,1.178 26.693,-67.762 31.055,-82.859 5.918,-20.478 27.515,-13.883 22.154,6.934 -3.876,15.059 -23.037,81.07 -16.934,103.568 8.66338,20.04652 13.46168,27.94516 30.37219,26.45191 43.21803,-13.31723 77.7404,-1.91731 75.37635,18.63232 -15.41351,3.04714 -56.4956,-0.13802 -74.78854,15.47577 z"
+       id="path23"
+       sodipodi:nodetypes="ccccccccsccccccccccc" /></g></g><g
+   id="g18"
+   transform="matrix(0.72889931,0,0,0.99998477,90.107994,229.91224)"
+   style="display:inline"><path
+     style="clip-rule:evenodd;display:inline;fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:4.48729;stroke-linejoin:round;stroke-opacity:1;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+     d="m 454.74575,-63.865542 v -30.992135 m 0,15.118117 h 192.05281 m 0,0 v 15.874207 m 0,0 -0.002,-30.992135"
+     id="use12690"
+     sodipodi:nodetypes="cccccccc" /><path
+     style="clip-rule:evenodd;display:inline;fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:4.48729;stroke-linejoin:round;stroke-opacity:1;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+     d="m 262.63617,-63.865542 v -30.992135 m 0,15.118117 h 192.05281 m 0,0 v 15.874207 m 0,0 -0.002,-30.992135"
+     id="use12691"
+     sodipodi:nodetypes="cccccccc" /><path
+     style="clip-rule:evenodd;display:inline;fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:4.48729;stroke-linejoin:round;stroke-opacity:1;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+     d="m 70.634039,-63.865542 v -30.992135 m 0,15.118117 H 262.68685 m 0,0 v 15.874207 m 0,0 -0.002,-30.992135"
+     id="use12692"
+     sodipodi:nodetypes="cccccccc" /><path
+     style="clip-rule:evenodd;display:inline;fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:4.48729;stroke-linejoin:round;stroke-opacity:1;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+     d="m -121.36585,-63.865542 v -30.992135 m 0,15.118117 H 70.686959 m 0,0 v 15.874207 m 0,0 -0.0015,-30.992135"
+     id="use12693"
+     sodipodi:nodetypes="cccccccc" /></g></svg>
+
+<span class="handlabel">[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)</span>
+
+</div>
+
+Apart from the zem approximation methods described above, you can also
+approximate a zem using your hands✋. With your thumbs👍touching and
+your fingers spread out, your pinkies will be about 1 z apart. Instead
+of spreading out all your fingers, you can curl all but your thumb and
+pinky, as in the
+“[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)”,
+“[drink](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=placing%20the%20thumb%20to%20the%20mouth%20and%20motioning%20the%20little%20finger%20upward%20as%20if%20tipping%20up%20a%20bottle%27s%20bottom%20end)”,
+or “[call
+me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)”🤙gesture.
+
+# Next
 
 <div id="decnav">
 
@@ -3610,5 +3765,11 @@ h4.hiddenheading, h5.hiddenheading {
 }
 h4.anchored {
   margin: 8px 0px 8px 0px;
+}
+#cubic svg, #hands svg {
+  max-width: 100%;
+}
+svg#lefthand {
+  height: 50%;
 }
 </style>

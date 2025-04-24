@@ -134,3 +134,7 @@ h3.anchored {
 p, li {
   text-align: left;
 }
+
+svg#decnav-mermaid g > foreignobject {
+  overflow: visible;
+}
