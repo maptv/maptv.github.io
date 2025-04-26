@@ -1,21 +1,23 @@
 # Dec
 Martin Laptev
-2025+054
+2025+056
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
-  - [Yaw pitch roll (ypr)](#ypr)
   - [Interactive world map](#map)
   - [Color wheel compass](#cwc)
   - [Hue saturation lightness (hsl)](#hsl)
+  - [Course color table](#cct)
   - [Red green blue (rgb)](#rgb)
 - [Dec time zones](#dtz)
-- [Coordinated Universal Time](#utc)
+  - [Coordinated Universal Time](#utc)
 - [Zone equatorial meter (zem)](#zem)
-  - [Unit conversion table](#uct)
+  - [Speed of sound](#sos)
+  - [Zem conversion table](#zct)
   - [Body mass index](#bmi)
-- [Next](#next)
 - [Summary](#tldr)
+- [Next](#next)
+- [Cite](#cite)
 
 <div id="decnav">
 
@@ -42,13 +44,13 @@ t represents a full⭕️circle and equals 2*π*
 [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units)
 (rad) or 360
 [degrees](https://en.wikipedia.org/wiki/Degree_(angle)#:~:text=a%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20360%20degrees)
-(°). Dec measures distance📏in turns called
+(°). Dec measures distance in turns called
 [taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
-(c) and tracks time⏳with two other types of turns: years (y) and days
+(c) and tracks time with two other types of turns: years (y) and days
 (d).
 
-The three turn types that Dec uses for distance📏and time⏳measurement
-are all approximations of physical attributes of the Earth🌍: c ≈ the
+The three turn types that Dec uses for distance and time measurement are
+all approximations of physical attributes of the Earth🌍: c ≈ the
 [circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth)
 of the Earth🌏, y ≈ the duration of
 [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun)
@@ -63,7 +65,7 @@ Notably, $\text c\over\text d$ = [v =
 
 ## Longitude latitude course
 
-The table below⬇️provides the current
+The table below provides the current
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
 ([*λ*](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda))
 in <span class="under tool" data-bs-toggle="tooltip"
@@ -76,13 +78,29 @@ data-bs-title="thousandths of a polar circumference">milli[meridians](https://en
 (m*ϕ*) of Points <span class="point0">0</span> and
 <span class="point1">1</span> on the map🗺️beneath the table. By default,
 <span class="point0">Point 0</span> is at
-<span class="point0">800</span> m*λ* and <span class="point0">0</span>
+<span class="color8">800</span> m*λ* and <span class="color0">0</span>
 m*ϕ*, near the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
 of Ecuador🇪🇨, and <span class="point1">Point 1</span> is at
-<span class="point1">800</span> m*λ* and <span class="point1">100</span>
+<span class="color8">800</span> m*λ* and <span class="color1">100</span>
 m*ϕ*, in the United States🇺🇸city of [Memphis,
 Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
+
+To move the points, click the map🗺️or edit their coordinates in the
+table. The [Observable](https://observablehq.com)
+[toggle](https://observablehq.com/framework/inputs/toggle)✅inputs above
+the table add layers to the map🗺️: country borders, a
+rainbow🌈colored🎨grid of Dec
+[graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines),
+a
+[choropleth](https://en.wikipedia.org/wiki/Choropleth_map#:~:text=a%20type%20of%20statistical%20thematic%20map%20that%20uses%20pseudocolor)
+of
+[UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
+time zones, and [solar
+terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
+shading with a yellow🟡dot denoting that the Sun☀️is [directly
+overhead](https://en.wikipedia.org/wiki/Subsolar_point#:~:text=the%20point%20at%20which%20its%20Sun%20is%20perceived%20to%20be%20directly%20overhead)
+at ${sunLonHsl} m*λ* and ${sunLatHsl} m*ϕ*.
 
 Each row of the table contains the geographic coordinates of a point and
 the
@@ -90,57 +108,31 @@ the
 ([*α*](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha))
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a compass rose">milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)</span>
-(m*α*) we would need to maintain to travel🧳the shortest distance📏to
-the other point. The default courses in m*α* are
-<span class="point0">0</span> (North) from <span class="point0">Point
+(m*α*) we would need to maintain to travel🧳the shortest distance to the
+other point. The default courses in m*α* are
+<span class="color0">0</span> (North) from <span class="point0">Point
 0</span> to <span class="point1">Point 1</span> and
-<span class="point1">500</span> (South) from <span class="point1">Point
+<span class="color5">500</span> (South) from <span class="point1">Point
 1</span> to <span class="point0">Point 0</span>. By default, the points
-are 100 <span class="under tool" data-bs-toggle="tooltip"
+are <span class="color1">100</span> <span class="under tool"
+data-bs-toggle="tooltip"
 data-bs-title="thousandths of a taur">millitaurs</span> (mc) apart.
 
-Click the map🗺️to move the points. To return the points to their
-original positions📍, click the “Reset” button above the table. Next to
-the “Reset” button, there are
-[toggle](https://observablehq.com/framework/inputs/toggle)✅inputs that
-add country borders, a grid of Dec
-[graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines),
-[solar
-terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
-shading, a yellow🟡dot denoting where the Sun☀️is directly overhead
-(${Math.floor(long2turn(sun\[0\]))} m*λ*,
-${Math.floor(lati2turn(sun\[1\]))} m*ϕ*), and
-[UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
-time zones.
-
-## Yaw pitch roll (ypr)
-
-As the points move, their m*λ*, m*ϕ*, and m*α* values change. The
-map🗺️itself can move in terms of the three [aircraft principal
-axes](https://en.wikipedia.org/wiki/Aircraft_principal_axes#:~:text=yaw%2C%20nose%20left%20or%20right%20about%20an%20axis%20running%20up%20and%20down%3B%20pitch%2C%20nose%20up%20or%20down%20about%20an%20axis%20running%20from%20wing%20to%20wing%3B%20and%20roll%2C%20rotation%20about%20an%20axis%20running%20from%20nose%20to%20tail):
-[yaw](https://en.wikipedia.org/wiki/Aircraft_principal_axes#:~:text=an%20axis%20drawn%20from%20top%20to%20bottom),
-[pitch](https://simple.wikipedia.org/wiki/Pitch,_yaw,_and_roll#:~:text=pitch-,nose%20up%20or%20tail%20up,-.),
-and
-[roll](https://en.wikipedia.org/wiki/Degrees_of_freedom_%28mechanics%29#:~:text=Roll%20rotation%3A-,Pivots%20side%20to%20side,-%3B).
-In the context of map🗺️movement, yaw is eastward, pitch is northward,
-and roll is clockwise. Dec measures yaw in millispins (ms), pitch in
-milliflips (mf), and roll in millirolls (mr): ${yaw} ms, ${pitch} mf,
-and ${roll} mr.
-
-An airplane✈️flying at 500 <span class="under tool"
-data-bs-toggle="tooltip"
+An airplane✈️flying at <span class="color5">500</span>
+<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of the equatorial speed of rotation of Earth">milliomegars</span>
 (<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis">mv</span>),
 half the equatorial speed of the rotation of Earth🌎on its axis, could
-travel🧳the 100 mc between the default positions📍of Points
-<span class="point0">0</span> and <span class="point1">1</span> in 200
+travel🧳the <span class="color1">100</span> mc between the default
+positions📍of Points <span class="point0">0</span> and
+<span class="point1">1</span> in <span class="color2">200</span>
 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span>
 (<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">md</span>). To get the time in days
-(d) required to travel🧳between two points, we divide the distance📏in
-mc by the speed in <span class="under tool" data-bs-toggle="tooltip"
+(d) required to travel🧳between two points, we divide the distance in mc
+by the speed in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis">mv</span>:
 ${distance_mtaur} mc ÷ ${travelspeed} <span class="under tool"
 data-bs-toggle="tooltip"
@@ -497,6 +489,8 @@ decBar = colorbar({
 }
 ```
 
+## Course color table
+
 <table>
 <colgroup>
 <col style="width: 17%" />
@@ -583,30 +577,34 @@ decBar = colorbar({
 
 The
 [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
-[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above⬆️indicates
-both a
+[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above
+indicates both a
 [hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram)
-in <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a turn">milliturns</span> (mt) and a
-course in m*α*. To rotate🔄the color🎨wheel compass🧭, use the
-[Observable](https://observablehq.com) hue range🎚️and hue
+and a course. We can express the hue in [HSL and
+HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
+degrees (h°) and convey the course in compass🧭degrees (c°): 25 m*α* = 9
+c°. To rotate🔄the color🎨wheel compass🧭, use the Observable hue
+[range](https://observablehq.com/framework/inputs/range)🎚️and hue
 [bar](https://observablehq.com/@paavanb/progressive-color-picker)📊inputs
 beneath it or change the course from <span class="point0">Point 0</span>
 to <span class="point1">Point 1</span> on the map🗺️.
 
-The table beneath the hue inputs compares the current course (top row)
-with the
+## Red green blue (rgb)
+
+Together, the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a thousandth of a turn">milliturn</span> (mt) values of
+the range🎚️inputs beneath the hue bar📊inputs form a hue saturation
+lightness (hsl) triplet that, like a
+red🔴green🟢blue🔵([rgb](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
+or
+[hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
+(hex) triplet, specifies a color🎨. The table underneath the
+range🎚️inputs compares the current <span class="point0">Point 0</span>
+to <span class="point1">Point 1</span> course in its top row with the
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
 and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
 directions.
-
-translates the m*α* into compass🧭degrees (c°) and [HSL and
-HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
-hue degrees (h°).
-
-[direction](https://en.wikipedia.org/wiki/Cardinal_direction) The table
-underneath the hue inputs
 
 <div>
 
@@ -625,20 +623,6 @@ underneath the hue inputs
 
 </div>
 
-## Red green blue (rgb)
-
-The color🎨of the top row is specified by <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="a thousandth of a turn">milliturn</span> (mt) values of
-the three range🎚️inputs under the hue
-[bar](https://observablehq.com/@paavanb/progressive-color-picker)📊.
-Together, the three mt values form a hue-saturation-lightness (HSL)
-triplet. We can also convert an HSL triplet into an red-green-blue
-([RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
-or
-[hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
-(hex) triplet. The saturation and lightness
-
 Color🎨can provide a general sense of
 angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle),
 regardless of the [metric
@@ -651,7 +635,7 @@ starting points are red: North (<span class="color0">0</span> m*α*),
 (<span class="color0">0</span> m*λ*), and midnight
 (<span class="color0">0</span> <span class="under tool"
 data-bs-toggle="tooltip"
-data-bs-title="thousandths of a day">md</span>); midpoints are cyan:
+data-bs-title="thousandths of a day">md</span>), and midpoints are cyan:
 South (<span class="color5">500</span> m*α*), [Longitude
 5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color5">500</span> <span class="tool"
@@ -660,25 +644,11 @@ noon (<span class="color5">500</span> <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">md</span>).
 
-# Dec time zones
-
-Enable the “Grid” toggle✅input to see Latitudes
-[-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
-(<span class="color8">-200</span> m*ϕ*),
-[-1](https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane)
-(<span class="color9">-100</span> m*ϕ*), 0
-(<span class="color0">0</span> m*ϕ*),
-[1](https://en.wikipedia.org/wiki/36th_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane)
-(<span class="color1">100</span> m*ϕ*), and
-[2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
-(<span class="color2">200</span> m*ϕ*) on the map🗺️above⬆️along with the
-ten major longitudes that divide the Earth🌍into the ten Dec time zones.
 The Equator, also known as Latitude 0, is the [major
 latitude](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
 midway between the South (<span class="color750">-250</span> m*ϕ*) and
-North (<span class="color250">250</span> m*ϕ*) Pole.
-
-The other four major latitudes depend on the [axial
+North (<span class="color250">250</span> m*ϕ*) Pole. The other four
+major latitudes depend on the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
 of the Earth🌏(<span class="color065">65</span> mt): the Tropics of
 [Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(<span class="color065">65</span>
@@ -692,8 +662,23 @@ m*ϕ*), and the
 [Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
 (<span class="color065">65</span> m*ϕ* –
 <span class="color250">250</span> m*ϕ* =
-<span class="color815">-185</span> m*ϕ*) Circles. Longitude 0 is the
-major longitude that serves as the Dec [Prime
+<span class="color815">-185</span> m*ϕ*) Circles.
+
+# Dec time zones
+
+Enable the “Grid” toggle✅input to see Latitudes
+[-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
+(<span class="color8">-200</span> m*ϕ*),
+[-1](https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane)
+(<span class="color9">-100</span> m*ϕ*), 0
+(<span class="color0">0</span> m*ϕ*),
+[1](https://en.wikipedia.org/wiki/36th_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane)
+(<span class="color1">100</span> m*ϕ*), and
+[2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
+(<span class="color2">200</span> m*ϕ*) on the map🗺️above along with the
+ten major longitudes that divide the Earth🌍into the ten Dec time zones.
+Notably, Longitude 0 is the major longitude that serves as the Dec
+[Prime
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)
 and the [International Date
 Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next).
@@ -709,7 +694,7 @@ data-bs-title="deciday">dd</span>). To obtain the offset at a location,
 we
 [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
 its d*λ* longitude: ⌊d*λ*⌋. Based on its current d*λ* longitude,
-${point0lHsl}, <span class="point0">Point 0</span> on the map🗺️above⬆️is
+${point0lHsl}, <span class="point0">Point 0</span> on the map🗺️above is
 in Zone ${point0zHsl}.
 
 Each Dec time zone is one <span class="under tool"
@@ -733,7 +718,7 @@ of its *ϕ* latitude: cos(${parLat}) = ${parLen}.
 viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: .001})
 ```
 
-# Coordinated Universal Time
+## Coordinated Universal Time
 
 [UTC time zone
 offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
@@ -786,609 +771,17 @@ leap years. Every millennium starts with Year 0
 
 # Zone equatorial meter (zem)
 
-Apart from c, Dec also measures distance📏using a unit called the
+Apart from c, Dec also measures distance using a unit called the
 **z**one **e**quatorial **m**eter (zem). The width of a Dec time zone at
-the Equator is roughly ten million (~10<sup>7</sup>) zems. Similarly,
-the distance📏from the Equator to one of the Poles is ~10<sup>7</sup>
+the Equator is approximately ten million (~10<sup>7</sup>) zems.
+Similarly, the distance from the Equator to one of the Poles is
+~10<sup>7</sup>
 [meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units).
 In other words, a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a polar circumference">decimeridian</span>
 (d*ϕ*) is ~10<sup>7</sup> zems long and a [quarter
 meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole)
 is ~10<sup>7</sup> meters long.
-
-In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, zem means Earth🌏.
-This is fitting because all Dec units are based on physical properties
-of the Earth🌎. At the Equator, the Earth🌍rotates on its axis at a
-speed of 1.00224 v. If we could indefinitely maintain this speed while
-flying West in an airplane✈️towards the setting sun☀️, we would be able
-to perpetually fly [into the
-sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
-
-To travel fast enough, the airplane✈️would need to surpass the [speed of
-sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊:
-0.735048 v or Mach 1. [Mach
-numbers](https://en.wikipedia.org/wiki/Mach_number) are similar to v,
-but are relative to the speed of sound🔊rather than the equatorial speed
-of rotation of the Earth🌏. One v is Mach 1.3635. A useful point of
-reference is the cruising speed of a [Boeing
-747](https://en.wikipedia.org/wiki/Boeing_747#:~:text=sweep%2C%20allowing%20a-,Mach%C2%A00.85,-%28490%C2%A0kn;%20900):
-0.54 v or Mach 0.85.
-
-The highway🛣️speed of a car🚗is roughly tenfold slower than the cruising
-speed of airplane✈️. If we are driving on a highway🛣️at 50 mv and our
-exit is 1000 zems away, we will have 20 <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="hundred thousandths of a day">centimillidays</span> until
-we have to exit the highway🛣️. To ensure we do not miss our exit, we can
-periodically check a countdown of the remaining zem: ${zLeft}.
-
-In Dec, centimillidays are called beats because they are similar in
-duration to heart❤️beats or musical🎵beats. A beat is
-<span class="color864">864</span> milliseconds. One mc is a hundred
-thousand (10<sup>5</sup>) zem (z) and one day (d) is 10<sup>5</sup>
-beats (b). Therefore, 1 mv = $\text{mc}\over\text d$ =
-$\text z\over\text b$. It is easy to convert z into meters (m), z =
-$2\over5$ m, or mv into kilometers per hour (kmph): mv = $5\over3$ kmph.
-
-The table below⬇️shows the [United States (US) customary
-units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
-that Dec redefines based on the [International System of
-Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
-(SI). The measurements in each row are equal. The values in the first
-column are [fold
-changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
-from original to redefined units. A fold change of
-<span class="color0">1</span> indicates no change. Units that are
-derived in the same way have the same fold change.
-
-## Unit conversion table
-
-<table>
-<colgroup>
-<col style="width: 77%" />
-<col style="width: 11%" />
-<col style="width: 10%" />
-</colgroup>
-<thead>
-<tr>
-<th>US</th>
-<th>Dec</th>
-<th>SI</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="colorMile">1.0356</span> <a
-href="https://en.wikipedia.org/wiki/Mile#:~:text=units%20as%20exactly-,1%2C609.344%20metres">miles</a></td>
-<td><span class="math inline">$25\over6$</span> kz</td>
-<td><span class="math inline">$5\over3$</span> km</td>
-</tr>
-<tr>
-<td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Yard#:~:text=as%20exactly-,0.9144%C2%A0meter">yards</a></td>
-<td><span class="math inline">$9\over4$</span> z</td>
-<td>9 dm</td>
-</tr>
-<tr>
-<td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Foot_(unit)#:~:text=equal%20to%20exactly-,0.3048%20meters">feet</a></td>
-<td><span class="math inline">$3\over4$</span> z</td>
-<td>3 dm</td>
-</tr>
-<tr>
-<td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Inch#:~:text=defined%20as%20exactly-,25.4%C2%A0mm">inches</a></td>
-<td><span class="math inline">$1\over16$</span> z</td>
-<td>25 mm</td>
-</tr>
-<tr>
-<td><span class="colorAcre">0.9884</span> <a
-href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
-<td><span class="math inline">$1\over40$</span> kz<sup>2</sup></td>
-<td><span class="math inline">$1\over250$</span> km<sup>2</sup></td>
-</tr>
-<tr>
-<td><span class="colorSqMi">1.0725</span> <a
-href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
-<td><span class="math inline">$625\over36$</span> kz<sup>2</sup></td>
-<td><span class="math inline">$25\over9$</span> km<sup>2</sup></td>
-</tr>
-<tr>
-<td><span class="colorSqIn">0.9688</span> <a
-href="https://en.wikipedia.org/wiki/Square_yard">square yards</a></td>
-<td><span class="math inline">$81\over16$</span> z<sup>2</sup></td>
-<td>81 dm<sup>2</sup></td>
-</tr>
-<tr>
-<td><span class="colorSqIn">0.9688</span> <a
-href="https://en.wikipedia.org/wiki/Square_foot">square feets</a></td>
-<td><span class="math inline">$9\over16$</span> z<sup>2</sup></td>
-<td>9 dm<sup>2</sup></td>
-</tr>
-<tr>
-<td><span class="colorSqIn">0.9688</span> <a
-href="https://en.wikipedia.org/wiki/Square_inch">square inches</a></td>
-<td><span class="math inline">$1\over256$</span> z<sup>2</sup></td>
-<td>625 mm<sup>2</sup></td>
-</tr>
-<tr>
-<td><span class="colorAvLb">1.1023</span> <a
-href="https://en.wikipedia.org/wiki/Pound_(mass)#:~:text=0.45359237%C2%A0kilograms">pounds</a></td>
-<td>500 g</td>
-<td>500 g</td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
-<td>2 z<sup>3</sup></td>
-<td>128 L</td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
-<td>1 z<sup>3</sup></td>
-<td>64 L</td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
-<td><span class="math inline">$1\over16$</span> z<sup>3</sup></td>
-<td>4 L</td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
-<td><span class="math inline">$1\over64$</span> z<sup>3</sup></td>
-<td>1 L</td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
-<td><span class="math inline">$1\over128$</span> z<sup>3</sup></td>
-<td>500 mL</td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
-<td><span class="math inline">$1\over256$</span> z<sup>3</sup></td>
-<td>250 mL</td>
-</tr>
-<tr>
-<td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Shot_glass">shots</a></td>
-<td>1 dz<sup>3</sup></td>
-<td>64 mL</td>
-</tr>
-<tr>
-<td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
-<td><span class="math inline">$1\over2$</span> dz<sup>3</sup></td>
-<td>32 mL</td>
-</tr>
-<tr>
-<td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
-<td><span class="math inline">$1\over4$</span> dz<sup>3</sup></td>
-<td>16 mL</td>
-</tr>
-</tbody>
-</table>
-
-Instead of metric prefixes based on [powers of
-ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten),
-redefined units rely on [fractions based on powers of
-two](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
-to scale up or down as needed. Redefined units serve as convenient
-reference points and can easily be converted to Dec or SI units. Miles
-are redefined such that one Dec mile per hour is one
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="millitaurs per day">mv</span>. A Dec acre is equal to
-$2\over5$
-[hectares](https://en.wikipedia.org/wiki/Hectare#:~:text=10%2C000%20square%20metres)
-or 40
-[are](https://en.wikipedia.org/wiki/Hectare#Are:~:text=area%2C%20equal%20to-,100%20square%20metres).
-
-A square zem (z<sup>2</sup>) is 1 <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="1.6 thousandths of an are">hexamilliare</span> (x), 16
-square <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a meter">decimeters</span> (dm<sup>2</sup>),
-1.<span style="text-decoration-line:overline;">7</span> Dec square
-feet🦶, or 256 Dec square inches. A square <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="ten zem">decazem</span>
-(Dz<sup>2</sup>) is 1 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
-square meters (m²), 19.753086 Dec square yards, or 100 x. A square
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a thousand of zem">kilozem</span> (kz<sup>2</sup>) is 1
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="sixteen hundred ares">hexakilare</span>, 0.16 square
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of meters">kilometers</span> (km²), 0.0576 Dec
-square miles, 40 Dec acres, 16 <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="hundreds of ares">hectares</span>, or 10<sup>6</sup> x.
-
-A cubic <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a zem">decizem</span> (dz<sup>3</sup>) is 1
-shot, 2 Dec ounces, or 64 <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a liter">milliliters</span> (mL). A shot
-of water🌊weighs 64 grams (g). Even though the weight of a Dec ounce of
-water🌊is close to a sixteenth of a Dec pound, Dec does not measure
-weights in ounces. A cubic zem (z<sup>3</sup>) is 1 keg, 16 Dec gallons,
-or 64
-[liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic)
-(L). A keg of water🌊weighs 64 <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousands of grams">kilograms</span> (kg) or 128 Dec
-pounds.
-
-<div class="column-margin" fig-align="center"
-style="text-align:center;">
-
-<figure id="vitruvian">
-<img src="../asset/vitruvianMan.svg" alt="Wikimedia" />
-<figcaption aria-hidden="true"><a
-href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg">Wikimedia</a></figcaption>
-</figure>
-
-</div>
-
-## Body mass index
-
-A weight of 64 kg and a height of 4 z, 1.6 m, or 64 inches correspond to
-a [body mass
-index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
-(BMI) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$.
-A BMI above 4.8 $\text {kg}\over\text z^2$ or 30
-$\text {kg}\over\text m^2$ is considered
-[obese](https://en.wikipedia.org/wiki/Obesity#:~:text=person's%20height—is-,over%2030%C2%A0kg/m2,-;%20the%20range%2025).
-If [Leonardo da
-Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s
-[Vitruvian
-Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
-were 4 z tall, we could measure 1 z from the knee to the foot🦶of one of
-his legs🦵or from the elbow to the fingertips of one of his arms💪.
-
-<div class="column-margin" fig-align="center"
-style="text-align:center;">
-
-<figure>
-<img src="../asset/squareZem.svg" alt="Wikimedia" />
-<figcaption aria-hidden="true"><a
-href="https://commons.wikimedia.org/wiki/File:Extended_arm.jpg">Wikimedia</a></figcaption>
-</figure>
-
-</div>
-
-To visualize a square zem, imagine four people standing in a circle,
-facing inward, each with their right hand✋placed on top of the elbow of
-the person to their right. Alternatively, two people can stand in front
-of each other and raise their arms💪, placing one hand✋on the elbow of
-the other person and the other hand✋on their own elbow to form a
-square🔲.
-
-<div class="column-margin" fig-align="center"
-style="text-align:center;">
-
-<figure>
-<img src="../asset/Man_Lifting_Barbell_Cartoon.svg" alt="Wikimedia" />
-<figcaption aria-hidden="true"><a
-href="https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg">Wikimedia</a></figcaption>
-</figure>
-
-</div>
-
-You can measure a square zem yourself with a ruler📏or measuring tape.
-Either sitting in a chair🪑or standing🧍, measure 1 z, 4 dm, or 16
-inches between knees and your feet🦶. This distance may be more or less
-the width of your hips or shoulders. Next, measure this same distance
-down from your knees to create the left and right sides of the square🔲.
-
-<div id="cubic" class="column-margin" fig-align="center"
-style="text-align:center;">
-
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-&#10;<svg
-   version="1.1"
-   x="0px"
-   y="0px"
-   viewBox="0 0 215.32027 192.98191"
-   enable-background="new 0 0 1500 525"
-   xml:space="preserve"
-   id="svg74"
-   sodipodi:docname="cubicZem.svg"
-   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
-   width="215.32027"
-   height="192.9819"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:ns2="&amp;#38;#38;#38;ns_sfw;"><defs
-   id="defs74" /><sodipodi:namedview
-   id="namedview74"
-   pagecolor="#ffffff"
-   bordercolor="#000000"
-   borderopacity="0.25"
-   inkscape:showpageshadow="2"
-   inkscape:pageopacity="0.0"
-   inkscape:pagecheckerboard="0"
-   inkscape:deskcolor="#d1d1d1"
-   inkscape:zoom="0.45368529"
-   inkscape:cx="116.82107"
-   inkscape:cy="369.19866"
-   inkscape:window-width="1256"
-   inkscape:window-height="896"
-   inkscape:window-x="221"
-   inkscape:window-y="32"
-   inkscape:window-maximized="0"
-   inkscape:current-layer="svg74" />
-<metadata
-   id="metadata1">
-    <ns2:sfw>
-        <ns2:slices />
-        <ns2:sliceSourceBounds
-   bottomLeftOrigin="true"
-   height="5750"
-   width="6426.366"
-   x="-5096.366"
-   y="-1000" />
-    </ns2:sfw>
-</metadata>
-&#10;
-&#10;
-&#10;
-&#10;<g
-   id="g1"
-   transform="matrix(0.5,0,0,0.5,-2.0843142e-6,0)"><g
-     id="g76"
-     transform="translate(-382.42548,-73.387058)"><g
-       id="AG-PEOPLE">
-    <g
-   id="POLYLINE_154_">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="2.75"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 398.688,317.013 c 0.916,1.659 1.828,3.356 3.306,4.588 1.43,1.192 3.236,1.824 5.02,2.267 5.828,1.448 12.115,1.492 18.087,1.709 5.74,0.209 11.49,0.345 17.234,0.22 7.312,-0.159 14.626,-0.376 21.939,-0.478 6.134,-0.086 12.242,0.11 18.347,0.725 3.112,0.314 6.216,0.748 9.336,0.969 1.26,0.089 2.558,-0.026 3.807,0.152 0.672,0.096 1.24,0.339 1.55,0.975 0.736,1.508 0.263,3.731 0.059,5.275 -0.414,3.136 -0.175,6.253 -0.599,9.388 -0.732,5.408 0.88,10.86 0.489,16.301 -0.598,8.324 0.89305,24.973 0.89305,24.973 -0.0251,-0.016 1.48225,11.20412 1.98595,17.609 0.21676,2.75625 0.543,6.5555 0.503,8.293 -0.021,1.441 -0.115,3.49 0.936,4.652 1.033,1.143 3.021,1.051 4.412,1.033 2.868,-0.036 5.727,-0.366 8.59,-0.521 3.337,-0.181 6.705,-0.253 10.027,-0.641 1.579,-0.185 3.484,-0.362 4.835,-1.315 0.61359,-1.04401 1.511,-4.069 1.674,-5.988 0.25,-2.946 0.832,-5.86 1.415,-8.754 1.213,-6.02 0.629,-12 2.081,-17.966 1.627,-6.687 -0.666,-13.347 1.062,-20.009 1.543,-5.949 0.24886,-12.74572 0.635,-17.924 0.61843,-6.18086 1.361,-12.143 1.629,-18.257 0.137,-3.115 0.18,-6.239 0.008,-9.353 -0.128,-2.31 -0.284,-4.764 -1.114,-6.949 -1.303,-3.428 -5.188,-5.148 -8.351,-6.435 -2.729,-1.11 -5.58,-1.891 -8.413,-2.681"
-   id="path13"
-   sodipodi:nodetypes="csccccccccccccscccccccccscccccc" />
-    </g>
-    <g
-   id="POLYLINE_155_">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="2.75"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 500.826,431.295 c -0.621,-0.767 -1.377,-1.964 -2.515,-1.846 -0.819,0.085 -1.534,0.723 -2.026,1.343 -1.174,1.48 -1.358,3.461 -1.393,5.282 -0.042,2.192 0.16,4.382 0.203,6.573 0.045,2.254 -0.116,4.502 -0.187,6.754 -0.07,2.255 -0.2,5.174 2.116,6.386 2.539,1.329 5.962,1.231 8.739,1.338 4.767,0.183 9.542,0.193 14.311,0.271 4.456,0.073 8.912,0.153 13.369,0.187 4.341,0.033 8.688,0.028 13.029,-0.086 4.434,-0.117 8.886,-0.28 13.287,-0.859 2.68,-0.353 5.999,-0.732 8.183,-2.511 1.582,-1.288 1.539,-3.159 0.933,-4.947 -0.69,-2.039 -1.864,-4.351 -3.612,-5.705 -2.307,-1.788 -5.545,-2.308 -8.293,-3.033 -2.12,-0.559 -4.289,-1.051 -6.326,-1.874 -1.627,-0.657 -3.065,-1.605 -4.439,-2.686 -3.727,-2.93 -7.389,-5.942 -11.143,-8.838 -2.238,-1.726 -4.69,-3.89 -7.639,-4.15 -2,-0.177 -3.956,0.613 -5.677,1.557 -3.488,1.913 -6.133,4.746 -8.805,7.63 -1.332,1.437 -2.838,3.021 -4.797,3.559 -1.519,0.417 -2.906,-0.062 -4.127,-0.997 -1.227,-0.943 -2.219,-2.155 -3.191,-3.348 z"
-   id="path14"
-   sodipodi:nodetypes="csccccccssccccccccccccccc" />
-    </g>
-    <g
-   id="POLYLINE_156_">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="2.75"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 499.019,429.541 c 1.294,-4.84 2.204,-9.746 2.749,-14.725"
-   id="path15"
-   sodipodi:nodetypes="cc" />
-    </g>
-    <g
-   id="POLYLINE_157_">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="2.75"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 405.614,136.305 c 1.299,4.228 1.258,8.605 0.106,12.864"
-   id="path16" />
-    </g>
-    <g
-   id="POLYLINE_158_">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="2.75"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 444.254,281.97 c -2.101,2.488 -4.045,5.048 -5.856,7.754 -1.904,2.846 -3.757,5.744 -6.022,8.324 -4.445,5.061 -10.25,9.14 -15.915,12.72 -2.762,1.745 -5.672,3.251 -8.747,4.363 -2.844,1.029 -5.932,1.915 -8.983,1.883 -1.287,-0.013 -2.746,-0.201 -3.722,-1.125 -1.467,-1.388 -1.589,-3.784 -2.208,-5.574 -0.821,-2.373 -2.423,-4.364 -3.44,-6.645 -1.033,-2.315 -1.181,-4.827 -1.164,-7.33 0.023,-3.516 0.232,-7.022 0.091,-10.538 -0.137,-3.402 -0.457,-6.796 -0.801,-10.181 -0.73,-7.18 -1.666,-14.341 -2.101,-21.548 -0.446,-7.372 -0.123,-14.76 0.049,-22.135 0.16,-6.851 -0.272,-13.663 -0.709,-20.496 -0.437,-6.842 -0.766,-13.633 -0.233,-20.483 0.531,-6.826 1.505,-13.659 2.871,-20.367 0.624,-3.063 1.278,-6.231 2.69,-9.045 1.336,-2.663 3.432,-4.847 5.502,-6.953 2.536,-2.581 5.774,-5.607 9.663,-5.459 2.25,0.086 4.37,1.053 6.364,2.015 2.947,1.421 5.891,2.873 9.063,3.729 4.92,1.329 10.183,0.885 14.436,4.082 2.387,1.794 4.198,4.215 5.752,6.736 1.785,2.896 3.415,5.92 4.912,8.975 2.9,5.921 4.954,12.209 5.906,18.741 0.952,6.531 0.511,12.998 -0.262,19.518 -0.847,7.141 -1.645,14.214 -1.382,21.42 0.25,6.847 1.62,13.466 2.816,20.19 0.577,3.244 1.102,6.522 1.193,9.821"
-   id="path17" />
-    </g>
-    <g
-   id="POLYLINE_159_">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="2.75"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 394.401,198.327 c 0.709,6.497 1.538,12.973 2.453,19.444 0.893,6.316 1.915,12.585 3.504,18.769 1.584,6.163 3.532,12.249 6.027,18.106 1.218,2.859 2.578,5.656 3.95,8.444 1.111,2.258 2.251,4.446 4.114,6.183 4.173,3.891 10.065,6.048 15.329,7.995 6.03,2.23 12.175,4.144 18.397,5.762 6.032,1.568 12.154,2.819 18.339,3.604 3.09,0.392 6.187,0.475 9.284,0.762 2.119,0.196 4.02,0.794 5.89,1.8 2.735,1.471 5.201,3.389 7.727,5.18 1.409,1 2.882,1.903 4.576,2.311 4.758,1.146 9.749,-0.798 14.501,0.33 2.372,0.563 4.416,1.99 6.497,3.194 0.999,0.578 2.959,1.933 4.228,1.402 1.295,-0.542 0.98,-2.678 0.609,-3.699 -0.633,-1.739 -2.094,-3.089 -3.277,-4.449 -2.873,-3.302 -5.694,-7.742 -10.102,-9.115 -2.632,-0.82 -5.504,-0.867 -8.219,-1.268 -3.097,-0.457 -6.181,-1.023 -9.191,-1.893 -5.154,-1.488 -9.932,-3.951 -14.683,-6.392 -7.636,-3.923 -15.272,-7.846 -22.908,-11.769 -4.841,-2.487 -9.754,-4.908 -14.335,-7.857 -3.737,-2.406 -7.817,-5.509 -8.974,-10.03 -0.573,-2.241 -0.707,-4.632 -0.981,-6.92 -0.549,-4.591 -1.098,-9.183 -1.647,-13.774 -0.671,-5.607 -1.44,-11.19 -2.288,-16.773 -0.512,-3.372 -1.024,-6.743 -1.536,-10.115"
-   id="path18" />
-    </g>
-    <g
-   id="POLYLINE_160_">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="2.75"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 424.452,137.432 c 2.972,2.152 6.491,3.662 10.002,4.679 2.65,0.768 5.506,1.008 8.182,0.199 0.795,-0.24 1.648,-0.593 2.201,-1.237 0.776,-0.904 0.681,-2.192 0.78,-3.301 0.074,-0.831 0.273,-1.571 0.654,-2.32 0.458,-0.901 1.118,-1.746 1.207,-2.784 0.077,-0.889 -0.143,-1.78 -0.126,-2.673 0.022,-1.16 -0.125,-2.993 0.624,-3.996 1.083,-1.45 4.588,-1.83 4.327,-4.071 -0.11,-0.945 -0.676,-1.878 -1.141,-2.676 -0.979,-1.681 -2.069,-3.288 -2.978,-5.011 -0.906,-1.718 -2.298,-3.936 -1.21,-5.852 0.921,-1.622 1.477,-3.194 0.986,-5.088 -0.247,-0.95 -0.755,-1.807 -1.006,-2.758 -0.47,-1.783 -0.596,-3.693 -0.823,-5.518 -0.11,-0.885 -0.206,-1.771 -0.285,-2.66"
-   id="path19" />
-    </g>
-    <g
-   id="POLYLINE_161_">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="2.75"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 430.534,156.684 c -0.486,-5.168 0.659,-10.294 3.319,-14.753"
-   id="path20" />
-    </g>
-    <g
-   id="POLYLINE_162_">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="2.75"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 421.089,122.437 c -0.855,0.737 -2.065,1.639 -3.264,1.286 -1.222,-0.359 -2.069,-1.785 -2.663,-2.801 -1.408,-2.41 -2.499,-5.071 -3.237,-7.761 -0.364,-1.326 -0.75,-2.869 -0.233,-4.211 0.49,-1.272 1.825,-2.332 3.205,-2.398 1.057,-0.051 2.018,0.528 2.794,1.193 1.465,1.255 2.308,3.021 3.646,4.382 0.934,0.95 2.472,1.627 3.649,0.631 1.2,-1.015 0.658,-3.38 0.667,-4.693 0.01,-1.464 0.208,-2.996 0.826,-4.34 0.668,-1.453 1.835,-1.849 2.973,-2.826 1.125,-0.966 0.682,-2.571 0.508,-3.846 -0.178,-1.301 -0.359,-2.69 0.611,-3.741 1.16,-1.256 3.11,-1.534 4.692,-1.853 0.807,-0.163 1.616,-0.319 2.389,-0.612 0.611,-0.232 1.209,-0.579 1.868,-0.662 1.548,-0.195 3.027,1.157 4.329,1.753 0.941,0.43 1.984,0.655 2.941,0.126 1.137,-0.629 1.352,-1.86 1.478,-3.038 0.173,-1.617 0.627,-3.362 0.252,-4.986 -0.357,-1.547 -1.454,-3.047 -2.391,-4.278 -0.77,-1.012 -1.713,-1.724 -2.933,-2.089 -2.469,-0.739 -5.243,-0.726 -7.784,-0.983 -3.135,-0.317 -6.264,-0.703 -9.395,-1.058 -2.443,-0.276 -4.89,-0.572 -7.353,-0.485 -4.769,0.168 -9.882,1.503 -13.987,3.979 -4.263,2.571 -7.245,7.064 -9.744,11.254 -0.973,1.631 -1.895,3.376 -2.287,5.251 -0.428,2.042 -0.115,4.142 0.025,6.198 0.317,4.651 -0.332,9.758 2.246,13.904 1.12,1.801 2.652,3.339 3.602,5.246 0.914,1.835 1.094,3.918 1.388,5.916 0.476,3.236 1.606,6.641 4.258,8.774 2.083,1.676 5.48,-0.526 5.637,-2.943 0.101,-1.563 -0.008,-2.657 1.325,-3.689 1.136,-0.88 2.398,-1.531 3.29,-2.684 0.876,-1.133 1.422,-2.5 1.802,-3.87"
-   id="path21" />
-    </g>
-    <g
-   id="POLYLINE_163_">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="2.75"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 387.872,168.22 c -0.699,6.03 -0.725,11.846 0.287,17.838 0.544,3.22 1.024,6.448 1.553,9.668 0.229,1.392 0.719,2.607 2.285,2.768 2.526,0.26 5.261,-0.793 7.699,-1.276 2.673,-0.53 5.375,-0.703 8.095,-0.565 3.151,0.16 6.255,0.712 9.391,1.026 1.586,0.159 3.542,0.396 5.042,-0.322 1.357,-0.65 1.747,-2.178 2.037,-3.525 0.597,-2.768 1.225,-5.601 1.306,-8.442 0.015,-0.522 0.009,-1.045 -0.024,-1.567"
-   id="path22" />
-    </g>
-    <g
-   id="POLYLINE_164_">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="2.75"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 527.273,416.056 c -0.312,2.937 -0.546,3.874 -0.764,6.819"
-   id="path23"
-   sodipodi:nodetypes="cc" />
-    </g>
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-    &#10;    
-</g><g
-       id="AG-OUTLINE">
-    <g
-   id="POLYLINE_153_">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="3.5"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 445.846,92.366 c 1.128,-0.133 1.917,-0.958 2.21,-2.015 0.421,-1.513 0.567,-3.326 0.591,-4.893 0.014,-0.9 -0.149,-1.739 -0.543,-2.551 -0.663,-1.366 -1.556,-2.835 -2.639,-3.917 -0.723,-0.722 -1.599,-1.149 -2.579,-1.402 -2.308,-0.597 -4.814,-0.633 -7.173,-0.868 -4.85,-0.483 -9.694,-1.308 -14.565,-1.549 -4.294,-0.212 -8.609,0.581 -12.619,2.113 -3.723,1.422 -6.736,3.601 -9.209,6.727 -1.577,1.993 -3.042,4.119 -4.347,6.3 -0.896,1.497 -1.74,3.076 -2.197,4.771 -0.362,1.343 -0.391,2.721 -0.305,4.103 0.155,2.506 0.275,4.993 0.358,7.504 0.071,2.151 0.211,4.36 0.864,6.426 0.496,1.57 1.373,2.933 2.351,4.243 1.024,1.373 2.151,2.714 2.787,4.324 0.661,1.675 0.821,3.503 1.083,5.268 0.455,3.077 1.465,5.998 3.726,8.244 0.283,0.281 0.586,0.56 0.927,0.771 0.354,0.219 0.907,0.26 1.101,0.521 0.287,0.387 0.347,1.254 0.451,1.724 0.114,0.517 0.211,1.039 0.287,1.563 0.134,0.923 0.204,1.855 0.211,2.788 0.009,1.056 -0.061,2.112 -0.199,3.158 -0.072,0.55 -0.163,1.097 -0.271,1.641 -0.087,0.437 -0.118,1.223 -0.37,1.59 -0.182,0.265 -0.21,0.197 -0.569,0.184 -0.19,-0.007 -0.381,-0.008 -0.571,-10e-4 -0.391,0.014 -0.78,0.057 -1.163,0.133 -3.161,0.628 -5.801,3.163 -7.97,5.376 -1.578,1.61 -3.18,3.261 -4.433,5.145 -1.12,1.683 -1.872,3.552 -2.44,5.485 -1.378,4.686 -2.143,9.602 -2.841,14.428 -0.727,5.023 -1.324,10.075 -1.537,15.149 -0.198,4.729 0.012,9.442 0.314,14.161 0.355,5.551 0.776,11.099 0.884,16.662 0.106,5.484 -0.13,10.976 -0.258,16.458 -0.109,4.676 -0.021,9.362 0.324,14.028 0.414,5.604 1.077,11.188 1.677,16.774 0.5,4.657 1.002,9.326 1.128,14.011 0.125,4.654 -0.7,9.531 0.207,14.129 0.682,3.461 3.201,6.068 4.307,9.355 0.806,2.394 0.938,5.545 3.818,6.336 0.532,0.146 1.063,0.16 1.604,0.238 0.57,0.082 0.564,0.267 0.87,0.816 0.254,0.457 0.513,0.911 0.795,1.352 0.653,1.022 1.427,1.965 2.402,2.696 3.042,2.283 7.394,2.646 11.046,3.001 4.93,0.479 9.905,0.69 14.855,0.823 4.585,0.123 9.176,0.219 13.762,0.119 6.621,-0.144 13.243,-0.289 19.864,-0.433 4.4,-0.096 8.8,-0.11 13.198,0.086 5.035,0.224 10.027,0.888 15.037,1.396 1.155,0.117 2.316,0.211 3.478,0.237 0.847,0.019 1.789,-0.076 2.621,0.153 1.062,0.293 1.341,1.236 1.423,2.231 0.143,1.754 -0.165,3.556 -0.425,5.285 -0.421,2.803 -0.284,5.601 -0.659,8.411 l 0.647,14.421 c -0.421,5.612 0.52106,11.226 0.69,16.839 0.22894,4.99578 0.65128,9.42361 1.07,14.302 0.50918,5.93225 0.94021,11.54776 1.501,17.798 0.16062,1.79016 0.106,3.619 0.268,5.414 0.053,0.584 0.135,1.181 0.337,1.735 0.082,0.225 0.18,0.446 0.312,0.648 0.358,0.547 0.397,0.647 0.32,1.365 -0.502,4.678 -1.438,9.306 -2.652,13.848 -1.209,-0.474 -2.426,0.73 -3.027,1.661 -0.733,1.136 -0.966,2.504 -1.057,3.831 -0.225,3.283 0.247,6.578 0.152,9.866 -0.078,2.686 -0.574,5.654 0.032,8.318 0.332,1.462 1.277,2.402 2.659,2.892 2.471,0.878 5.296,0.909 7.886,1.012 7.267,0.288 14.553,0.292 21.824,0.397 6.802,0.099 13.608,0.133 20.409,-0.059 3.299,-0.093 6.603,-0.257 9.887,-0.593 2.802,-0.287 5.767,-0.613 8.385,-1.721 1.292,-0.547 2.637,-1.4 3.015,-2.842 0.376,-1.437 -0.201,-3.029 -0.79,-4.324 -0.705,-1.551 -1.592,-3.214 -2.919,-4.333 -1.326,-1.119 -3.06,-1.67 -4.69,-2.163 -3.246,-0.981 -6.632,-1.572 -9.806,-2.784 -2.642,-1.009 -4.745,-2.794 -6.927,-4.535 -3.062,-2.442 -6.11,-4.9 -9.211,-7.291 -1.826,-1.409 -3.717,-3 -5.961,-3.689 -0.768,-0.236 -1.569,-0.348 -2.372,-0.308 0.16,-2.157 0.307,-4.315 0.517,-6.468 0.064,-0.657 -0.05,-1.4485 0.423,-1.7935 0.292,-0.213 0.895,-0.3585 1.241,-0.5105 2.649,-1.166 2.231,-4.807 2.454,-7.22 0.345,-3.734 1.155,-7.443 1.944,-11.104 l 3.902,-60.358 c -0.007,0.11135 0.84,-8.029 0.989,-12.061 0.145,-3.942 0.195,-7.957 -0.342,-11.873 -0.268,-1.955 -0.684,-4.043 -2.009,-5.582 -1.755,-2.039 -4.598,-3.308 -7.028,-4.306 -1.694,-0.695 -3.44,-1.26 -5.195,-1.778 -0.533,-0.158 -1.067,-0.314 -1.602,-0.467 -0.423,-0.12 -1.415,-0.182 -1.706,-0.475 -0.163,-0.164 -0.219,-0.829 -0.319,-1.086 -0.29,-0.742 -0.746,-1.406 -1.238,-2.028 -1.267,-1.604 -2.684,-3.109 -4.006,-4.669 -1.885,-2.225 -3.846,-4.727 -6.488,-6.093 -2.586,-1.337 -5.676,-1.36 -8.498,-1.737 -3.891,-0.519 -7.781,-1.205 -11.532,-2.384 -3.822,-1.201 -7.456,-2.922 -11.023,-4.728 -3.663,-1.854 -7.305,-3.749 -10.957,-5.623 -2.605,-1.337 -5.21,-2.674 -7.814,-4.01 -0.94,-0.483 -1.881,-0.965 -2.821,-1.448 -0.332,-0.171 -1.091,-0.38 -1.322,-0.679 -0.276,-0.356 -0.137,-1.617 -0.176,-2.103 -0.074,-0.919 -0.177,-1.836 -0.295,-2.751 -0.239,-1.853 -0.546,-3.699 -0.885,-5.537 -0.777,-4.203 -1.645,-8.398 -2.173,-12.643 -0.941,-7.569 -0.728,-15.242 0.169,-22.802 0.978,-8.24 2.138,-16.418 0.993,-24.707 -1.061,-7.681 -3.678,-14.928 -7.288,-21.766 -2.971,-5.626 -6.286,-12.469 -12.586,-14.964 -0.211,-0.084 -0.424,-0.162 -0.639,-0.234 -0.647,-0.218 -0.676,-0.24 -0.722,-0.926 -0.065,-0.965 -0.075,-1.935 -0.029,-2.901 0.091,-1.889 0.401,-3.766 0.945,-5.578 0.522,-1.741 1.212,-3.618 2.222,-5.142 0.327,-0.495 0.436,-0.345 0.977,-0.191 0.426,0.121 0.854,0.233 1.287,0.327 0.683,0.148 1.374,0.256 2.071,0.304 1.985,0.139 4.438,-0.011 6.179,-1.117 1.967,-1.25 1.114,-3.649 1.832,-5.527 0.391,-1.023 1.167,-1.893 1.437,-2.961 0.205,-0.811 0.009,-1.642 -0.034,-2.46 -0.066,-1.256 -0.04,-2.688 0.251,-3.91 0.243,-1.02 1.157,-1.554 2.004,-2.048 0.832,-0.485 2.261,-1.023 2.621,-2.035 0.253,-0.713 -0.087,-1.518 -0.384,-2.168 -1.416,-3.096 -3.695,-5.723 -4.907,-8.94 -0.297,-0.787 -0.565,-1.678 -0.309,-2.512 0.244,-0.796 0.86,-1.422 1.153,-2.202 0.713,-1.897 0.195,-3.593 -0.51,-5.372 -0.415,-1.048 -0.581,-2.157 -0.729,-3.27 -0.261,-1.965 -0.531,-3.925 -0.706,-5.896 z"
-   id="path68"
-   sodipodi:nodetypes="cccccccccccccccccccsccccccscccsccccccccccccccccccccccssccccccsscsccccccccccsccccccsccccsscscccsccccscccsccccccccscccsccccccccccccsscccccccccc" />
-    </g>
-    &#10;    
-    &#10;    
-    &#10;    
-</g><g
-       id="g75">
-    <g
-   id="g74">
-        &#10;            <path
-   fill="none"
-   stroke="#ff6b6b"
-   stroke-width="3.5"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   stroke-miterlimit="10"
-   d="m 445.846,92.366 c 1.128,-0.133 1.917,-0.958 2.21,-2.015 0.421,-1.513 0.567,-3.326 0.591,-4.893 0.014,-0.9 -0.149,-1.739 -0.543,-2.551 -0.663,-1.366 -1.556,-2.835 -2.639,-3.917 -0.723,-0.722 -1.599,-1.149 -2.579,-1.402 -2.308,-0.597 -4.814,-0.633 -7.173,-0.868 -4.85,-0.483 -9.694,-1.308 -14.565,-1.549 -4.294,-0.212 -8.609,0.581 -12.619,2.113 -3.723,1.422 -6.736,3.601 -9.209,6.727 -1.577,1.993 -3.042,4.119 -4.347,6.3 -0.896,1.497 -1.74,3.076 -2.197,4.771 -0.362,1.343 -0.391,2.721 -0.305,4.103 0.155,2.506 0.275,4.993 0.358,7.504 0.071,2.151 0.211,4.36 0.864,6.426 0.496,1.57 1.373,2.933 2.351,4.243 1.024,1.373 2.151,2.714 2.787,4.324 0.661,1.675 0.821,3.503 1.083,5.268 0.455,3.077 1.465,5.998 3.726,8.244 0.283,0.281 0.586,0.56 0.927,0.771 0.354,0.219 0.907,0.26 1.101,0.521 0.287,0.387 0.347,1.254 0.451,1.724 0.114,0.517 0.211,1.039 0.287,1.563 0.134,0.923 0.204,1.855 0.211,2.788 0.009,1.056 -0.061,2.112 -0.199,3.158 -0.072,0.55 -0.163,1.097 -0.271,1.641 -0.087,0.437 -0.118,1.223 -0.37,1.59 -0.182,0.265 -0.21,0.197 -0.569,0.184 -0.19,-0.007 -0.381,-0.008 -0.571,-10e-4 -0.391,0.014 -0.78,0.057 -1.163,0.133 -3.161,0.628 -5.801,3.163 -7.97,5.376 -1.578,1.61 -3.18,3.261 -4.433,5.145 -1.12,1.683 -1.872,3.552 -2.44,5.485 -1.378,4.686 -2.143,9.602 -2.841,14.428 -0.727,5.023 -1.324,10.075 -1.537,15.149 -0.198,4.729 0.012,9.442 0.314,14.161 0.355,5.551 0.776,11.099 0.884,16.662 0.106,5.484 -0.13,10.976 -0.258,16.458 -0.109,4.676 -0.021,9.362 0.324,14.028 0.414,5.604 1.077,11.188 1.677,16.774 0.5,4.657 1.002,9.326 1.128,14.011 0.125,4.654 -0.7,9.531 0.207,14.129 0.682,3.461 3.201,6.068 4.307,9.355 0.806,2.394 0.938,5.545 3.818,6.336 0.532,0.146 1.063,0.16 1.604,0.238 0.57,0.082 0.564,0.267 0.87,0.816 0.254,0.457 0.513,0.911 0.795,1.352 0.653,1.022 1.427,1.965 2.402,2.696 3.042,2.283 7.394,2.646 11.046,3.001 4.93,0.479 9.905,0.69 14.855,0.823 4.585,0.123 9.176,0.219 13.762,0.119 6.621,-0.144 13.243,-0.289 19.864,-0.433 4.4,-0.096 8.8,-0.11 13.198,0.086 5.035,0.224 10.027,0.888 15.037,1.396 1.155,0.117 2.316,0.211 3.478,0.237 0.847,0.019 1.789,-0.076 2.621,0.153 1.062,0.293 1.341,1.236 1.423,2.231 0.143,1.754 -0.165,3.556 -0.425,5.285 -1.2459,24.0249 2.14115,53.58122 3.517,77.185 0.053,0.584 0.135,1.181 0.337,1.735 0.082,0.225 0.18,0.446 0.312,0.648 0.358,0.547 0.397,0.647 0.32,1.365 -0.502,4.678 -1.438,9.306 -2.652,13.848 -1.209,-0.474 -2.426,0.73 -3.027,1.661 -0.733,1.136 -0.966,2.504 -1.057,3.831 -0.225,3.283 0.247,6.578 0.152,9.866 -0.078,2.686 -0.574,5.654 0.032,8.318 0.332,1.462 1.277,2.402 2.659,2.892 2.471,0.878 5.296,0.909 7.886,1.012 7.267,0.288 14.553,0.292 21.824,0.397 6.802,0.099 13.608,0.133 20.409,-0.059 3.299,-0.093 6.603,-0.257 9.887,-0.593 2.802,-0.287 5.767,-0.613 8.385,-1.721 1.292,-0.547 2.637,-1.4 3.015,-2.842 0.376,-1.437 -0.201,-3.029 -0.79,-4.324 -0.705,-1.551 -1.592,-3.214 -2.919,-4.333 -1.326,-1.119 -3.06,-1.67 -4.69,-2.163 -3.246,-0.981 -6.632,-1.572 -9.806,-2.784 -2.642,-1.009 -4.745,-2.794 -6.927,-4.535 -3.062,-2.442 -6.11,-4.9 -9.211,-7.291 -1.826,-1.409 -3.717,-3 -5.961,-3.689 -0.768,-0.236 -1.569,-0.348 -2.372,-0.308 0.16,-2.157 0.307,-4.315 0.517,-6.468 0.064,-0.657 -0.16228,-1.77941 0.423,-1.7935 0.63788,-0.0154 0.895,-0.40723 1.241,-0.411 4.14869,0.1093 8.22223,-65.25729 9.289,-90.8425 0.145,-3.942 0.195,-7.957 -0.342,-11.873 -0.268,-1.955 -0.684,-4.043 -2.009,-5.582 -1.755,-2.039 -4.598,-3.308 -7.028,-4.306 -1.694,-0.695 -3.44,-1.26 -5.195,-1.778 -0.533,-0.158 -1.067,-0.314 -1.602,-0.467 -0.423,-0.12 -1.415,-0.182 -1.706,-0.475 -0.163,-0.164 -0.219,-0.829 -0.319,-1.086 -0.29,-0.742 -0.746,-1.406 -1.238,-2.028 -1.267,-1.604 -2.684,-3.109 -4.006,-4.669 -1.885,-2.225 -3.846,-4.727 -6.488,-6.093 -2.586,-1.337 -5.676,-1.36 -8.498,-1.737 -3.891,-0.519 -7.781,-1.205 -11.532,-2.384 -3.822,-1.201 -7.456,-2.922 -11.023,-4.728 -3.663,-1.854 -7.305,-3.749 -10.957,-5.623 -2.605,-1.337 -5.21,-2.674 -7.814,-4.01 -0.94,-0.483 -1.881,-0.965 -2.821,-1.448 -0.332,-0.171 -1.091,-0.38 -1.322,-0.679 -0.276,-0.356 -0.137,-1.617 -0.176,-2.103 -0.074,-0.919 -0.177,-1.836 -0.295,-2.751 -0.239,-1.853 -0.546,-3.699 -0.885,-5.537 -0.777,-4.203 -1.645,-8.398 -2.173,-12.643 -0.941,-7.569 -0.728,-15.242 0.169,-22.802 0.978,-8.24 2.138,-16.418 0.993,-24.707 -1.061,-7.681 -3.678,-14.928 -7.288,-21.766 -2.971,-5.626 -6.286,-12.469 -12.586,-14.964 -0.211,-0.084 -0.424,-0.162 -0.639,-0.234 -0.647,-0.218 -0.676,-0.24 -0.722,-0.926 -0.065,-0.965 -0.075,-1.935 -0.029,-2.901 0.091,-1.889 0.401,-3.766 0.945,-5.578 0.522,-1.741 1.212,-3.618 2.222,-5.142 0.327,-0.495 0.436,-0.345 0.977,-0.191 0.426,0.121 0.854,0.233 1.287,0.327 0.683,0.148 1.374,0.256 2.071,0.304 1.985,0.139 4.438,-0.011 6.179,-1.117 1.967,-1.25 1.114,-3.649 1.832,-5.527 0.391,-1.023 1.167,-1.893 1.437,-2.961 0.205,-0.811 0.009,-1.642 -0.034,-2.46 -0.066,-1.256 -0.04,-2.688 0.251,-3.91 0.243,-1.02 1.157,-1.554 2.004,-2.048 0.832,-0.485 2.261,-1.023 2.621,-2.035 0.253,-0.713 -0.087,-1.518 -0.384,-2.168 -1.416,-3.096 -3.695,-5.723 -4.907,-8.94 -0.297,-0.787 -0.565,-1.678 -0.309,-2.512 0.244,-0.796 0.86,-1.422 1.153,-2.202 0.713,-1.897 0.195,-3.593 -0.51,-5.372 -0.415,-1.048 -0.581,-2.157 -0.729,-3.27 -0.261,-1.965 -0.531,-3.925 -0.706,-5.896 z"
-   id="path74"
-   sodipodi:nodetypes="cccccccccccccccccccsccccccscccsccccccccccccccccccccccssccccsccccccccccsccccccsccccssccsccccscccsccccccccscccsccccccccccccsscccccccccc" />
-    </g>
-    &#10;    
-    &#10;    
-    &#10;    
-</g></g><use
-     x="0"
-     y="0"
-     xlink:href="#g76"
-     id="use1"
-     transform="matrix(-1,0,0,1,430.64054,-1.5384192e-7)" /><rect
-     style="fill:none;stroke:#e4695e;stroke-width:5;stroke-linecap:round;stroke-linejoin:round"
-     id="rect9"
-     width="107.46342"
-     height="107.46342"
-     x="162.14525"
-     y="246.85394" /><text
-     xml:space="preserve"
-     style="font-size:64px;line-height:1;font-family:Tahoma;-inkscape-font-specification:Tahoma;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:none;stroke:#e4695e;stroke-width:5;stroke-linecap:round;stroke-linejoin:round"
-     x="219.10088"
-     y="341.57956"
-     id="text9"><tspan
-       sodipodi:role="line"
-       id="tspan9"
-       x="219.10088"
-       y="341.57956"
-       style="font-size:64px;fill:#e4695e;fill-opacity:1;stroke:none">z<tspan
-   style="font-size:64px;baseline-shift:super;fill:#e4695e;fill-opacity:1;stroke:none"
-   id="tspan10">3</tspan></tspan></text></g></svg>
-
-[Dimensions.com](https://www.dimensions.com/element/sitting-male-side-1)
-
-</div>
-
-If two people sit facing each other with their legs🦵bent at 25
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a hundredth of a turn">centiturn</span> (ct) angles and
-their knees 1 z apart, there will be roughly a cubic zem of space
-between their legs🦵. According to
-[dimensions.com](https://www.dimensions.com), 115
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="hundredths of a zem">centizems</span> (cz) is the
-[typical seat
-height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
-and a [low seat
-height](https://www.dimensions.com/element/sitting-female-front-1#:~:text=Seat%20Height%20(Low)%3A-,15%E2%80%9D%20%7C%2038%20cm,-Style%3A%20Casual)
-is 95 cz for both men and women age 25 to 45. A <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="a hundredth of a zem">centizem</span> is 4
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a meter">millimeters</span> (mm).
 
 <div id="hands" class="column-margin hand" fig-align="center"
 style="text-align:center;">
@@ -1896,17 +1289,630 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 
 </div>
 
-Apart from the zem approximation methods described above, you can also
-approximate a zem using your hands✋. With your thumbs👍touching and
-your fingers spread out, your pinkies will be about 1 z apart. Instead
-of spreading out all your fingers, you can curl all but your thumb and
-pinky, as in the
-“[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)”,
+You can approximate a zem using your hands🤲. With your palms flat on a
+table in front of you and the tips of your thumbs👍touching, the maximum
+distance between the tips of your pinkies is about 1 z. When you spread
+out the fingers on one hand✋or do the “[call
+me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)”,
 “[drink](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=placing%20the%20thumb%20to%20the%20mouth%20and%20motioning%20the%20little%20finger%20upward%20as%20if%20tipping%20up%20a%20bottle%27s%20bottom%20end)”,
-or “[call
-me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)”🤙gesture.
+or
+“[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)”🤙gesture,
+the tips of your thumb👍and pinky are roughly 0.5 z apart.
+
+<div class="column-margin" fig-align="center"
+style="text-align:center;">
+
+<figure>
+<img src="../asset/squareZem.svg" alt="Wikimedia" />
+<figcaption aria-hidden="true"><a
+href="https://commons.wikimedia.org/wiki/File:Extended_arm.jpg">Wikimedia</a></figcaption>
+</figure>
+
+</div>
+
+To visualize a square zem, imagine four people standing in a circle,
+facing inward, each with their right hand✋placed on top of the elbow of
+the person to their right. Alternatively, two people can stand in front
+of each other and raise their arms💪, placing one hand✋on the elbow of
+the other person and the other hand✋on their own elbow to form a
+square🔲.
+
+<div class="column-margin" fig-align="center"
+style="text-align:center;">
+
+<figure>
+<img src="../asset/Man_Lifting_Barbell_Cartoon.svg" alt="Wikimedia" />
+<figcaption aria-hidden="true"><a
+href="https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg">Wikimedia</a></figcaption>
+</figure>
+
+</div>
+
+You can measure a square zem yourself with a ruler📏or measuring tape.
+Either sitting in a chair🪑or standing🧍, measure 1 z, 4 dm, or 16
+inches between knees and your feet🦶. This distance may be more or less
+the width of your hips or shoulders. Next, measure this same distance
+down from your knees to create the left and right sides of the square🔲.
+
+<div id="cubic" class="column-margin" fig-align="center"
+style="text-align:center;">
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+&#10;<svg
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 215.32027 192.98191"
+   enable-background="new 0 0 1500 525"
+   xml:space="preserve"
+   id="svg74"
+   sodipodi:docname="cubicZem.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   width="215.32027"
+   height="192.9819"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:ns2="&amp;#38;#38;#38;ns_sfw;"><defs
+   id="defs74" /><sodipodi:namedview
+   id="namedview74"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="0.45368529"
+   inkscape:cx="116.82107"
+   inkscape:cy="369.19866"
+   inkscape:window-width="1256"
+   inkscape:window-height="896"
+   inkscape:window-x="221"
+   inkscape:window-y="32"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg74" />
+<metadata
+   id="metadata1">
+    <ns2:sfw>
+        <ns2:slices />
+        <ns2:sliceSourceBounds
+   bottomLeftOrigin="true"
+   height="5750"
+   width="6426.366"
+   x="-5096.366"
+   y="-1000" />
+    </ns2:sfw>
+</metadata>
+&#10;
+&#10;
+&#10;
+&#10;<g
+   id="g1"
+   transform="matrix(0.5,0,0,0.5,-2.0843142e-6,0)"><g
+     id="g76"
+     transform="translate(-382.42548,-73.387058)"><g
+       id="AG-PEOPLE">
+    <g
+   id="POLYLINE_154_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 398.688,317.013 c 0.916,1.659 1.828,3.356 3.306,4.588 1.43,1.192 3.236,1.824 5.02,2.267 5.828,1.448 12.115,1.492 18.087,1.709 5.74,0.209 11.49,0.345 17.234,0.22 7.312,-0.159 14.626,-0.376 21.939,-0.478 6.134,-0.086 12.242,0.11 18.347,0.725 3.112,0.314 6.216,0.748 9.336,0.969 1.26,0.089 2.558,-0.026 3.807,0.152 0.672,0.096 1.24,0.339 1.55,0.975 0.736,1.508 0.263,3.731 0.059,5.275 -0.414,3.136 -0.175,6.253 -0.599,9.388 -0.732,5.408 0.88,10.86 0.489,16.301 -0.598,8.324 0.89305,24.973 0.89305,24.973 -0.0251,-0.016 1.48225,11.20412 1.98595,17.609 0.21676,2.75625 0.543,6.5555 0.503,8.293 -0.021,1.441 -0.115,3.49 0.936,4.652 1.033,1.143 3.021,1.051 4.412,1.033 2.868,-0.036 5.727,-0.366 8.59,-0.521 3.337,-0.181 6.705,-0.253 10.027,-0.641 1.579,-0.185 3.484,-0.362 4.835,-1.315 0.61359,-1.04401 1.511,-4.069 1.674,-5.988 0.25,-2.946 0.832,-5.86 1.415,-8.754 1.213,-6.02 0.629,-12 2.081,-17.966 1.627,-6.687 -0.666,-13.347 1.062,-20.009 1.543,-5.949 0.24886,-12.74572 0.635,-17.924 0.61843,-6.18086 1.361,-12.143 1.629,-18.257 0.137,-3.115 0.18,-6.239 0.008,-9.353 -0.128,-2.31 -0.284,-4.764 -1.114,-6.949 -1.303,-3.428 -5.188,-5.148 -8.351,-6.435 -2.729,-1.11 -5.58,-1.891 -8.413,-2.681"
+   id="path13"
+   sodipodi:nodetypes="csccccccccccccscccccccccscccccc" />
+    </g>
+    <g
+   id="POLYLINE_155_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 500.826,431.295 c -0.621,-0.767 -1.377,-1.964 -2.515,-1.846 -0.819,0.085 -1.534,0.723 -2.026,1.343 -1.174,1.48 -1.358,3.461 -1.393,5.282 -0.042,2.192 0.16,4.382 0.203,6.573 0.045,2.254 -0.116,4.502 -0.187,6.754 -0.07,2.255 -0.2,5.174 2.116,6.386 2.539,1.329 5.962,1.231 8.739,1.338 4.767,0.183 9.542,0.193 14.311,0.271 4.456,0.073 8.912,0.153 13.369,0.187 4.341,0.033 8.688,0.028 13.029,-0.086 4.434,-0.117 8.886,-0.28 13.287,-0.859 2.68,-0.353 5.999,-0.732 8.183,-2.511 1.582,-1.288 1.539,-3.159 0.933,-4.947 -0.69,-2.039 -1.864,-4.351 -3.612,-5.705 -2.307,-1.788 -5.545,-2.308 -8.293,-3.033 -2.12,-0.559 -4.289,-1.051 -6.326,-1.874 -1.627,-0.657 -3.065,-1.605 -4.439,-2.686 -3.727,-2.93 -7.389,-5.942 -11.143,-8.838 -2.238,-1.726 -4.69,-3.89 -7.639,-4.15 -2,-0.177 -3.956,0.613 -5.677,1.557 -3.488,1.913 -6.133,4.746 -8.805,7.63 -1.332,1.437 -2.838,3.021 -4.797,3.559 -1.519,0.417 -2.906,-0.062 -4.127,-0.997 -1.227,-0.943 -2.219,-2.155 -3.191,-3.348 z"
+   id="path14"
+   sodipodi:nodetypes="csccccccssccccccccccccccc" />
+    </g>
+    <g
+   id="POLYLINE_156_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 499.019,429.541 c 1.294,-4.84 2.204,-9.746 2.749,-14.725"
+   id="path15"
+   sodipodi:nodetypes="cc" />
+    </g>
+    <g
+   id="POLYLINE_157_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 405.614,136.305 c 1.299,4.228 1.258,8.605 0.106,12.864"
+   id="path16" />
+    </g>
+    <g
+   id="POLYLINE_158_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 444.254,281.97 c -2.101,2.488 -4.045,5.048 -5.856,7.754 -1.904,2.846 -3.757,5.744 -6.022,8.324 -4.445,5.061 -10.25,9.14 -15.915,12.72 -2.762,1.745 -5.672,3.251 -8.747,4.363 -2.844,1.029 -5.932,1.915 -8.983,1.883 -1.287,-0.013 -2.746,-0.201 -3.722,-1.125 -1.467,-1.388 -1.589,-3.784 -2.208,-5.574 -0.821,-2.373 -2.423,-4.364 -3.44,-6.645 -1.033,-2.315 -1.181,-4.827 -1.164,-7.33 0.023,-3.516 0.232,-7.022 0.091,-10.538 -0.137,-3.402 -0.457,-6.796 -0.801,-10.181 -0.73,-7.18 -1.666,-14.341 -2.101,-21.548 -0.446,-7.372 -0.123,-14.76 0.049,-22.135 0.16,-6.851 -0.272,-13.663 -0.709,-20.496 -0.437,-6.842 -0.766,-13.633 -0.233,-20.483 0.531,-6.826 1.505,-13.659 2.871,-20.367 0.624,-3.063 1.278,-6.231 2.69,-9.045 1.336,-2.663 3.432,-4.847 5.502,-6.953 2.536,-2.581 5.774,-5.607 9.663,-5.459 2.25,0.086 4.37,1.053 6.364,2.015 2.947,1.421 5.891,2.873 9.063,3.729 4.92,1.329 10.183,0.885 14.436,4.082 2.387,1.794 4.198,4.215 5.752,6.736 1.785,2.896 3.415,5.92 4.912,8.975 2.9,5.921 4.954,12.209 5.906,18.741 0.952,6.531 0.511,12.998 -0.262,19.518 -0.847,7.141 -1.645,14.214 -1.382,21.42 0.25,6.847 1.62,13.466 2.816,20.19 0.577,3.244 1.102,6.522 1.193,9.821"
+   id="path17" />
+    </g>
+    <g
+   id="POLYLINE_159_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 394.401,198.327 c 0.709,6.497 1.538,12.973 2.453,19.444 0.893,6.316 1.915,12.585 3.504,18.769 1.584,6.163 3.532,12.249 6.027,18.106 1.218,2.859 2.578,5.656 3.95,8.444 1.111,2.258 2.251,4.446 4.114,6.183 4.173,3.891 10.065,6.048 15.329,7.995 6.03,2.23 12.175,4.144 18.397,5.762 6.032,1.568 12.154,2.819 18.339,3.604 3.09,0.392 6.187,0.475 9.284,0.762 2.119,0.196 4.02,0.794 5.89,1.8 2.735,1.471 5.201,3.389 7.727,5.18 1.409,1 2.882,1.903 4.576,2.311 4.758,1.146 9.749,-0.798 14.501,0.33 2.372,0.563 4.416,1.99 6.497,3.194 0.999,0.578 2.959,1.933 4.228,1.402 1.295,-0.542 0.98,-2.678 0.609,-3.699 -0.633,-1.739 -2.094,-3.089 -3.277,-4.449 -2.873,-3.302 -5.694,-7.742 -10.102,-9.115 -2.632,-0.82 -5.504,-0.867 -8.219,-1.268 -3.097,-0.457 -6.181,-1.023 -9.191,-1.893 -5.154,-1.488 -9.932,-3.951 -14.683,-6.392 -7.636,-3.923 -15.272,-7.846 -22.908,-11.769 -4.841,-2.487 -9.754,-4.908 -14.335,-7.857 -3.737,-2.406 -7.817,-5.509 -8.974,-10.03 -0.573,-2.241 -0.707,-4.632 -0.981,-6.92 -0.549,-4.591 -1.098,-9.183 -1.647,-13.774 -0.671,-5.607 -1.44,-11.19 -2.288,-16.773 -0.512,-3.372 -1.024,-6.743 -1.536,-10.115"
+   id="path18" />
+    </g>
+    <g
+   id="POLYLINE_160_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 424.452,137.432 c 2.972,2.152 6.491,3.662 10.002,4.679 2.65,0.768 5.506,1.008 8.182,0.199 0.795,-0.24 1.648,-0.593 2.201,-1.237 0.776,-0.904 0.681,-2.192 0.78,-3.301 0.074,-0.831 0.273,-1.571 0.654,-2.32 0.458,-0.901 1.118,-1.746 1.207,-2.784 0.077,-0.889 -0.143,-1.78 -0.126,-2.673 0.022,-1.16 -0.125,-2.993 0.624,-3.996 1.083,-1.45 4.588,-1.83 4.327,-4.071 -0.11,-0.945 -0.676,-1.878 -1.141,-2.676 -0.979,-1.681 -2.069,-3.288 -2.978,-5.011 -0.906,-1.718 -2.298,-3.936 -1.21,-5.852 0.921,-1.622 1.477,-3.194 0.986,-5.088 -0.247,-0.95 -0.755,-1.807 -1.006,-2.758 -0.47,-1.783 -0.596,-3.693 -0.823,-5.518 -0.11,-0.885 -0.206,-1.771 -0.285,-2.66"
+   id="path19" />
+    </g>
+    <g
+   id="POLYLINE_161_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 430.534,156.684 c -0.486,-5.168 0.659,-10.294 3.319,-14.753"
+   id="path20" />
+    </g>
+    <g
+   id="POLYLINE_162_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 421.089,122.437 c -0.855,0.737 -2.065,1.639 -3.264,1.286 -1.222,-0.359 -2.069,-1.785 -2.663,-2.801 -1.408,-2.41 -2.499,-5.071 -3.237,-7.761 -0.364,-1.326 -0.75,-2.869 -0.233,-4.211 0.49,-1.272 1.825,-2.332 3.205,-2.398 1.057,-0.051 2.018,0.528 2.794,1.193 1.465,1.255 2.308,3.021 3.646,4.382 0.934,0.95 2.472,1.627 3.649,0.631 1.2,-1.015 0.658,-3.38 0.667,-4.693 0.01,-1.464 0.208,-2.996 0.826,-4.34 0.668,-1.453 1.835,-1.849 2.973,-2.826 1.125,-0.966 0.682,-2.571 0.508,-3.846 -0.178,-1.301 -0.359,-2.69 0.611,-3.741 1.16,-1.256 3.11,-1.534 4.692,-1.853 0.807,-0.163 1.616,-0.319 2.389,-0.612 0.611,-0.232 1.209,-0.579 1.868,-0.662 1.548,-0.195 3.027,1.157 4.329,1.753 0.941,0.43 1.984,0.655 2.941,0.126 1.137,-0.629 1.352,-1.86 1.478,-3.038 0.173,-1.617 0.627,-3.362 0.252,-4.986 -0.357,-1.547 -1.454,-3.047 -2.391,-4.278 -0.77,-1.012 -1.713,-1.724 -2.933,-2.089 -2.469,-0.739 -5.243,-0.726 -7.784,-0.983 -3.135,-0.317 -6.264,-0.703 -9.395,-1.058 -2.443,-0.276 -4.89,-0.572 -7.353,-0.485 -4.769,0.168 -9.882,1.503 -13.987,3.979 -4.263,2.571 -7.245,7.064 -9.744,11.254 -0.973,1.631 -1.895,3.376 -2.287,5.251 -0.428,2.042 -0.115,4.142 0.025,6.198 0.317,4.651 -0.332,9.758 2.246,13.904 1.12,1.801 2.652,3.339 3.602,5.246 0.914,1.835 1.094,3.918 1.388,5.916 0.476,3.236 1.606,6.641 4.258,8.774 2.083,1.676 5.48,-0.526 5.637,-2.943 0.101,-1.563 -0.008,-2.657 1.325,-3.689 1.136,-0.88 2.398,-1.531 3.29,-2.684 0.876,-1.133 1.422,-2.5 1.802,-3.87"
+   id="path21" />
+    </g>
+    <g
+   id="POLYLINE_163_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 387.872,168.22 c -0.699,6.03 -0.725,11.846 0.287,17.838 0.544,3.22 1.024,6.448 1.553,9.668 0.229,1.392 0.719,2.607 2.285,2.768 2.526,0.26 5.261,-0.793 7.699,-1.276 2.673,-0.53 5.375,-0.703 8.095,-0.565 3.151,0.16 6.255,0.712 9.391,1.026 1.586,0.159 3.542,0.396 5.042,-0.322 1.357,-0.65 1.747,-2.178 2.037,-3.525 0.597,-2.768 1.225,-5.601 1.306,-8.442 0.015,-0.522 0.009,-1.045 -0.024,-1.567"
+   id="path22" />
+    </g>
+    <g
+   id="POLYLINE_164_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="2.75"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 527.273,416.056 c -0.312,2.937 -0.546,3.874 -0.764,6.819"
+   id="path23"
+   sodipodi:nodetypes="cc" />
+    </g>
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+    &#10;    
+</g><g
+       id="AG-OUTLINE">
+    <g
+   id="POLYLINE_153_">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="3.5"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 445.846,92.366 c 1.128,-0.133 1.917,-0.958 2.21,-2.015 0.421,-1.513 0.567,-3.326 0.591,-4.893 0.014,-0.9 -0.149,-1.739 -0.543,-2.551 -0.663,-1.366 -1.556,-2.835 -2.639,-3.917 -0.723,-0.722 -1.599,-1.149 -2.579,-1.402 -2.308,-0.597 -4.814,-0.633 -7.173,-0.868 -4.85,-0.483 -9.694,-1.308 -14.565,-1.549 -4.294,-0.212 -8.609,0.581 -12.619,2.113 -3.723,1.422 -6.736,3.601 -9.209,6.727 -1.577,1.993 -3.042,4.119 -4.347,6.3 -0.896,1.497 -1.74,3.076 -2.197,4.771 -0.362,1.343 -0.391,2.721 -0.305,4.103 0.155,2.506 0.275,4.993 0.358,7.504 0.071,2.151 0.211,4.36 0.864,6.426 0.496,1.57 1.373,2.933 2.351,4.243 1.024,1.373 2.151,2.714 2.787,4.324 0.661,1.675 0.821,3.503 1.083,5.268 0.455,3.077 1.465,5.998 3.726,8.244 0.283,0.281 0.586,0.56 0.927,0.771 0.354,0.219 0.907,0.26 1.101,0.521 0.287,0.387 0.347,1.254 0.451,1.724 0.114,0.517 0.211,1.039 0.287,1.563 0.134,0.923 0.204,1.855 0.211,2.788 0.009,1.056 -0.061,2.112 -0.199,3.158 -0.072,0.55 -0.163,1.097 -0.271,1.641 -0.087,0.437 -0.118,1.223 -0.37,1.59 -0.182,0.265 -0.21,0.197 -0.569,0.184 -0.19,-0.007 -0.381,-0.008 -0.571,-10e-4 -0.391,0.014 -0.78,0.057 -1.163,0.133 -3.161,0.628 -5.801,3.163 -7.97,5.376 -1.578,1.61 -3.18,3.261 -4.433,5.145 -1.12,1.683 -1.872,3.552 -2.44,5.485 -1.378,4.686 -2.143,9.602 -2.841,14.428 -0.727,5.023 -1.324,10.075 -1.537,15.149 -0.198,4.729 0.012,9.442 0.314,14.161 0.355,5.551 0.776,11.099 0.884,16.662 0.106,5.484 -0.13,10.976 -0.258,16.458 -0.109,4.676 -0.021,9.362 0.324,14.028 0.414,5.604 1.077,11.188 1.677,16.774 0.5,4.657 1.002,9.326 1.128,14.011 0.125,4.654 -0.7,9.531 0.207,14.129 0.682,3.461 3.201,6.068 4.307,9.355 0.806,2.394 0.938,5.545 3.818,6.336 0.532,0.146 1.063,0.16 1.604,0.238 0.57,0.082 0.564,0.267 0.87,0.816 0.254,0.457 0.513,0.911 0.795,1.352 0.653,1.022 1.427,1.965 2.402,2.696 3.042,2.283 7.394,2.646 11.046,3.001 4.93,0.479 9.905,0.69 14.855,0.823 4.585,0.123 9.176,0.219 13.762,0.119 6.621,-0.144 13.243,-0.289 19.864,-0.433 4.4,-0.096 8.8,-0.11 13.198,0.086 5.035,0.224 10.027,0.888 15.037,1.396 1.155,0.117 2.316,0.211 3.478,0.237 0.847,0.019 1.789,-0.076 2.621,0.153 1.062,0.293 1.341,1.236 1.423,2.231 0.143,1.754 -0.165,3.556 -0.425,5.285 -0.421,2.803 -0.284,5.601 -0.659,8.411 l 0.647,14.421 c -0.421,5.612 0.52106,11.226 0.69,16.839 0.22894,4.99578 0.65128,9.42361 1.07,14.302 0.50918,5.93225 0.94021,11.54776 1.501,17.798 0.16062,1.79016 0.106,3.619 0.268,5.414 0.053,0.584 0.135,1.181 0.337,1.735 0.082,0.225 0.18,0.446 0.312,0.648 0.358,0.547 0.397,0.647 0.32,1.365 -0.502,4.678 -1.438,9.306 -2.652,13.848 -1.209,-0.474 -2.426,0.73 -3.027,1.661 -0.733,1.136 -0.966,2.504 -1.057,3.831 -0.225,3.283 0.247,6.578 0.152,9.866 -0.078,2.686 -0.574,5.654 0.032,8.318 0.332,1.462 1.277,2.402 2.659,2.892 2.471,0.878 5.296,0.909 7.886,1.012 7.267,0.288 14.553,0.292 21.824,0.397 6.802,0.099 13.608,0.133 20.409,-0.059 3.299,-0.093 6.603,-0.257 9.887,-0.593 2.802,-0.287 5.767,-0.613 8.385,-1.721 1.292,-0.547 2.637,-1.4 3.015,-2.842 0.376,-1.437 -0.201,-3.029 -0.79,-4.324 -0.705,-1.551 -1.592,-3.214 -2.919,-4.333 -1.326,-1.119 -3.06,-1.67 -4.69,-2.163 -3.246,-0.981 -6.632,-1.572 -9.806,-2.784 -2.642,-1.009 -4.745,-2.794 -6.927,-4.535 -3.062,-2.442 -6.11,-4.9 -9.211,-7.291 -1.826,-1.409 -3.717,-3 -5.961,-3.689 -0.768,-0.236 -1.569,-0.348 -2.372,-0.308 0.16,-2.157 0.307,-4.315 0.517,-6.468 0.064,-0.657 -0.05,-1.4485 0.423,-1.7935 0.292,-0.213 0.895,-0.3585 1.241,-0.5105 2.649,-1.166 2.231,-4.807 2.454,-7.22 0.345,-3.734 1.155,-7.443 1.944,-11.104 l 3.902,-60.358 c -0.007,0.11135 0.84,-8.029 0.989,-12.061 0.145,-3.942 0.195,-7.957 -0.342,-11.873 -0.268,-1.955 -0.684,-4.043 -2.009,-5.582 -1.755,-2.039 -4.598,-3.308 -7.028,-4.306 -1.694,-0.695 -3.44,-1.26 -5.195,-1.778 -0.533,-0.158 -1.067,-0.314 -1.602,-0.467 -0.423,-0.12 -1.415,-0.182 -1.706,-0.475 -0.163,-0.164 -0.219,-0.829 -0.319,-1.086 -0.29,-0.742 -0.746,-1.406 -1.238,-2.028 -1.267,-1.604 -2.684,-3.109 -4.006,-4.669 -1.885,-2.225 -3.846,-4.727 -6.488,-6.093 -2.586,-1.337 -5.676,-1.36 -8.498,-1.737 -3.891,-0.519 -7.781,-1.205 -11.532,-2.384 -3.822,-1.201 -7.456,-2.922 -11.023,-4.728 -3.663,-1.854 -7.305,-3.749 -10.957,-5.623 -2.605,-1.337 -5.21,-2.674 -7.814,-4.01 -0.94,-0.483 -1.881,-0.965 -2.821,-1.448 -0.332,-0.171 -1.091,-0.38 -1.322,-0.679 -0.276,-0.356 -0.137,-1.617 -0.176,-2.103 -0.074,-0.919 -0.177,-1.836 -0.295,-2.751 -0.239,-1.853 -0.546,-3.699 -0.885,-5.537 -0.777,-4.203 -1.645,-8.398 -2.173,-12.643 -0.941,-7.569 -0.728,-15.242 0.169,-22.802 0.978,-8.24 2.138,-16.418 0.993,-24.707 -1.061,-7.681 -3.678,-14.928 -7.288,-21.766 -2.971,-5.626 -6.286,-12.469 -12.586,-14.964 -0.211,-0.084 -0.424,-0.162 -0.639,-0.234 -0.647,-0.218 -0.676,-0.24 -0.722,-0.926 -0.065,-0.965 -0.075,-1.935 -0.029,-2.901 0.091,-1.889 0.401,-3.766 0.945,-5.578 0.522,-1.741 1.212,-3.618 2.222,-5.142 0.327,-0.495 0.436,-0.345 0.977,-0.191 0.426,0.121 0.854,0.233 1.287,0.327 0.683,0.148 1.374,0.256 2.071,0.304 1.985,0.139 4.438,-0.011 6.179,-1.117 1.967,-1.25 1.114,-3.649 1.832,-5.527 0.391,-1.023 1.167,-1.893 1.437,-2.961 0.205,-0.811 0.009,-1.642 -0.034,-2.46 -0.066,-1.256 -0.04,-2.688 0.251,-3.91 0.243,-1.02 1.157,-1.554 2.004,-2.048 0.832,-0.485 2.261,-1.023 2.621,-2.035 0.253,-0.713 -0.087,-1.518 -0.384,-2.168 -1.416,-3.096 -3.695,-5.723 -4.907,-8.94 -0.297,-0.787 -0.565,-1.678 -0.309,-2.512 0.244,-0.796 0.86,-1.422 1.153,-2.202 0.713,-1.897 0.195,-3.593 -0.51,-5.372 -0.415,-1.048 -0.581,-2.157 -0.729,-3.27 -0.261,-1.965 -0.531,-3.925 -0.706,-5.896 z"
+   id="path68"
+   sodipodi:nodetypes="cccccccccccccccccccsccccccscccsccccccccccccccccccccccssccccccsscsccccccccccsccccccsccccsscscccsccccscccsccccccccscccsccccccccccccsscccccccccc" />
+    </g>
+    &#10;    
+    &#10;    
+    &#10;    
+</g><g
+       id="g75">
+    <g
+   id="g74">
+        &#10;            <path
+   fill="none"
+   stroke="#ff6b6b"
+   stroke-width="3.5"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-miterlimit="10"
+   d="m 445.846,92.366 c 1.128,-0.133 1.917,-0.958 2.21,-2.015 0.421,-1.513 0.567,-3.326 0.591,-4.893 0.014,-0.9 -0.149,-1.739 -0.543,-2.551 -0.663,-1.366 -1.556,-2.835 -2.639,-3.917 -0.723,-0.722 -1.599,-1.149 -2.579,-1.402 -2.308,-0.597 -4.814,-0.633 -7.173,-0.868 -4.85,-0.483 -9.694,-1.308 -14.565,-1.549 -4.294,-0.212 -8.609,0.581 -12.619,2.113 -3.723,1.422 -6.736,3.601 -9.209,6.727 -1.577,1.993 -3.042,4.119 -4.347,6.3 -0.896,1.497 -1.74,3.076 -2.197,4.771 -0.362,1.343 -0.391,2.721 -0.305,4.103 0.155,2.506 0.275,4.993 0.358,7.504 0.071,2.151 0.211,4.36 0.864,6.426 0.496,1.57 1.373,2.933 2.351,4.243 1.024,1.373 2.151,2.714 2.787,4.324 0.661,1.675 0.821,3.503 1.083,5.268 0.455,3.077 1.465,5.998 3.726,8.244 0.283,0.281 0.586,0.56 0.927,0.771 0.354,0.219 0.907,0.26 1.101,0.521 0.287,0.387 0.347,1.254 0.451,1.724 0.114,0.517 0.211,1.039 0.287,1.563 0.134,0.923 0.204,1.855 0.211,2.788 0.009,1.056 -0.061,2.112 -0.199,3.158 -0.072,0.55 -0.163,1.097 -0.271,1.641 -0.087,0.437 -0.118,1.223 -0.37,1.59 -0.182,0.265 -0.21,0.197 -0.569,0.184 -0.19,-0.007 -0.381,-0.008 -0.571,-10e-4 -0.391,0.014 -0.78,0.057 -1.163,0.133 -3.161,0.628 -5.801,3.163 -7.97,5.376 -1.578,1.61 -3.18,3.261 -4.433,5.145 -1.12,1.683 -1.872,3.552 -2.44,5.485 -1.378,4.686 -2.143,9.602 -2.841,14.428 -0.727,5.023 -1.324,10.075 -1.537,15.149 -0.198,4.729 0.012,9.442 0.314,14.161 0.355,5.551 0.776,11.099 0.884,16.662 0.106,5.484 -0.13,10.976 -0.258,16.458 -0.109,4.676 -0.021,9.362 0.324,14.028 0.414,5.604 1.077,11.188 1.677,16.774 0.5,4.657 1.002,9.326 1.128,14.011 0.125,4.654 -0.7,9.531 0.207,14.129 0.682,3.461 3.201,6.068 4.307,9.355 0.806,2.394 0.938,5.545 3.818,6.336 0.532,0.146 1.063,0.16 1.604,0.238 0.57,0.082 0.564,0.267 0.87,0.816 0.254,0.457 0.513,0.911 0.795,1.352 0.653,1.022 1.427,1.965 2.402,2.696 3.042,2.283 7.394,2.646 11.046,3.001 4.93,0.479 9.905,0.69 14.855,0.823 4.585,0.123 9.176,0.219 13.762,0.119 6.621,-0.144 13.243,-0.289 19.864,-0.433 4.4,-0.096 8.8,-0.11 13.198,0.086 5.035,0.224 10.027,0.888 15.037,1.396 1.155,0.117 2.316,0.211 3.478,0.237 0.847,0.019 1.789,-0.076 2.621,0.153 1.062,0.293 1.341,1.236 1.423,2.231 0.143,1.754 -0.165,3.556 -0.425,5.285 -1.2459,24.0249 2.14115,53.58122 3.517,77.185 0.053,0.584 0.135,1.181 0.337,1.735 0.082,0.225 0.18,0.446 0.312,0.648 0.358,0.547 0.397,0.647 0.32,1.365 -0.502,4.678 -1.438,9.306 -2.652,13.848 -1.209,-0.474 -2.426,0.73 -3.027,1.661 -0.733,1.136 -0.966,2.504 -1.057,3.831 -0.225,3.283 0.247,6.578 0.152,9.866 -0.078,2.686 -0.574,5.654 0.032,8.318 0.332,1.462 1.277,2.402 2.659,2.892 2.471,0.878 5.296,0.909 7.886,1.012 7.267,0.288 14.553,0.292 21.824,0.397 6.802,0.099 13.608,0.133 20.409,-0.059 3.299,-0.093 6.603,-0.257 9.887,-0.593 2.802,-0.287 5.767,-0.613 8.385,-1.721 1.292,-0.547 2.637,-1.4 3.015,-2.842 0.376,-1.437 -0.201,-3.029 -0.79,-4.324 -0.705,-1.551 -1.592,-3.214 -2.919,-4.333 -1.326,-1.119 -3.06,-1.67 -4.69,-2.163 -3.246,-0.981 -6.632,-1.572 -9.806,-2.784 -2.642,-1.009 -4.745,-2.794 -6.927,-4.535 -3.062,-2.442 -6.11,-4.9 -9.211,-7.291 -1.826,-1.409 -3.717,-3 -5.961,-3.689 -0.768,-0.236 -1.569,-0.348 -2.372,-0.308 0.16,-2.157 0.307,-4.315 0.517,-6.468 0.064,-0.657 -0.16228,-1.77941 0.423,-1.7935 0.63788,-0.0154 0.895,-0.40723 1.241,-0.411 4.14869,0.1093 8.22223,-65.25729 9.289,-90.8425 0.145,-3.942 0.195,-7.957 -0.342,-11.873 -0.268,-1.955 -0.684,-4.043 -2.009,-5.582 -1.755,-2.039 -4.598,-3.308 -7.028,-4.306 -1.694,-0.695 -3.44,-1.26 -5.195,-1.778 -0.533,-0.158 -1.067,-0.314 -1.602,-0.467 -0.423,-0.12 -1.415,-0.182 -1.706,-0.475 -0.163,-0.164 -0.219,-0.829 -0.319,-1.086 -0.29,-0.742 -0.746,-1.406 -1.238,-2.028 -1.267,-1.604 -2.684,-3.109 -4.006,-4.669 -1.885,-2.225 -3.846,-4.727 -6.488,-6.093 -2.586,-1.337 -5.676,-1.36 -8.498,-1.737 -3.891,-0.519 -7.781,-1.205 -11.532,-2.384 -3.822,-1.201 -7.456,-2.922 -11.023,-4.728 -3.663,-1.854 -7.305,-3.749 -10.957,-5.623 -2.605,-1.337 -5.21,-2.674 -7.814,-4.01 -0.94,-0.483 -1.881,-0.965 -2.821,-1.448 -0.332,-0.171 -1.091,-0.38 -1.322,-0.679 -0.276,-0.356 -0.137,-1.617 -0.176,-2.103 -0.074,-0.919 -0.177,-1.836 -0.295,-2.751 -0.239,-1.853 -0.546,-3.699 -0.885,-5.537 -0.777,-4.203 -1.645,-8.398 -2.173,-12.643 -0.941,-7.569 -0.728,-15.242 0.169,-22.802 0.978,-8.24 2.138,-16.418 0.993,-24.707 -1.061,-7.681 -3.678,-14.928 -7.288,-21.766 -2.971,-5.626 -6.286,-12.469 -12.586,-14.964 -0.211,-0.084 -0.424,-0.162 -0.639,-0.234 -0.647,-0.218 -0.676,-0.24 -0.722,-0.926 -0.065,-0.965 -0.075,-1.935 -0.029,-2.901 0.091,-1.889 0.401,-3.766 0.945,-5.578 0.522,-1.741 1.212,-3.618 2.222,-5.142 0.327,-0.495 0.436,-0.345 0.977,-0.191 0.426,0.121 0.854,0.233 1.287,0.327 0.683,0.148 1.374,0.256 2.071,0.304 1.985,0.139 4.438,-0.011 6.179,-1.117 1.967,-1.25 1.114,-3.649 1.832,-5.527 0.391,-1.023 1.167,-1.893 1.437,-2.961 0.205,-0.811 0.009,-1.642 -0.034,-2.46 -0.066,-1.256 -0.04,-2.688 0.251,-3.91 0.243,-1.02 1.157,-1.554 2.004,-2.048 0.832,-0.485 2.261,-1.023 2.621,-2.035 0.253,-0.713 -0.087,-1.518 -0.384,-2.168 -1.416,-3.096 -3.695,-5.723 -4.907,-8.94 -0.297,-0.787 -0.565,-1.678 -0.309,-2.512 0.244,-0.796 0.86,-1.422 1.153,-2.202 0.713,-1.897 0.195,-3.593 -0.51,-5.372 -0.415,-1.048 -0.581,-2.157 -0.729,-3.27 -0.261,-1.965 -0.531,-3.925 -0.706,-5.896 z"
+   id="path74"
+   sodipodi:nodetypes="cccccccccccccccccccsccccccscccsccccccccccccccccccccccssccccsccccccccccsccccccsccccssccsccccscccsccccccccscccsccccccccccccsscccccccccc" />
+    </g>
+    &#10;    
+    &#10;    
+    &#10;    
+</g></g><use
+     x="0"
+     y="0"
+     xlink:href="#g76"
+     id="use1"
+     transform="matrix(-1,0,0,1,430.64054,-1.5384192e-7)" /><rect
+     style="fill:none;stroke:#e4695e;stroke-width:5;stroke-linecap:round;stroke-linejoin:round"
+     id="rect9"
+     width="107.46342"
+     height="107.46342"
+     x="162.14525"
+     y="246.85394" /><text
+     xml:space="preserve"
+     style="font-size:64px;line-height:1;font-family:Tahoma;-inkscape-font-specification:Tahoma;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:none;stroke:#e4695e;stroke-width:5;stroke-linecap:round;stroke-linejoin:round"
+     x="219.10088"
+     y="341.57956"
+     id="text9"><tspan
+       sodipodi:role="line"
+       id="tspan9"
+       x="219.10088"
+       y="341.57956"
+       style="font-size:64px;fill:#e4695e;fill-opacity:1;stroke:none">z<tspan
+   style="font-size:64px;baseline-shift:super;fill:#e4695e;fill-opacity:1;stroke:none"
+   id="tspan10">3</tspan></tspan></text></g></svg>
+
+[Dimensions.com](https://www.dimensions.com/element/sitting-male-side-1)
+
+</div>
+
+If two people sit facing each other with their legs🦵bent at 25
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a hundredth of a turn">centiturn</span> (ct) angles and
+their knees 1 z apart, there will be around a cubic zem of space between
+their legs🦵. According to [dimensions.com](https://www.dimensions.com),
+115 <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of a zem">centizems</span> (cz) is the
+[typical seat
+height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
+and 95 cz is a [low seat
+height](https://www.dimensions.com/element/sitting-female-front-1#:~:text=Seat%20Height%20(Low)%3A-,15%E2%80%9D%20%7C%2038%20cm,-Style%3A%20Casual)
+for both men and women age 25 to 45. A <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="a hundredth of a zem">centizem</span> is 4
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a meter">millimeters</span> (mm).
+
+In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, zem means Earth🌏.
+This is fitting because all Dec units are based on physical properties
+of the Earth🌎. At the Equator, the Earth🌍rotates on its axis at a
+speed of 1.00224 v. If we could indefinitely maintain this speed while
+flying West in an airplane✈️towards the setting sun☀️, we would be able
+to perpetually fly [into the
+sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
+
+## Speed of sound
+
+To travel fast enough, the airplane✈️would need to surpass the [speed of
+sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊:
+0.735048 v or Mach 1. [Mach
+numbers](https://en.wikipedia.org/wiki/Mach_number) are similar to v,
+but are relative to the speed of sound🔊rather than the equatorial speed
+of rotation of the Earth🌏. One v is Mach 1.3635. A useful point of
+reference is the cruising speed of a [Boeing
+747](https://en.wikipedia.org/wiki/Boeing_747#:~:text=sweep%2C%20allowing%20a-,Mach%C2%A00.85,-%28490%C2%A0kn;%20900):
+0.54 v or Mach 0.85.
+
+The highway🛣️speed of a car🚗is roughly tenfold slower than the cruising
+speed of airplane✈️. If we are driving on a highway🛣️at 50 mv and our
+exit is 1000 zems away, we will have 20 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundred thousandths of a day">centimillidays</span> until
+we have to exit the highway🛣️. To ensure we do not miss our exit, we can
+periodically check a countdown of the remaining zem: ${zLeft}.
+
+In Dec, centimillidays are called beats because they are similar in
+duration to heart❤️beats or musical🎵beats. A beat is
+<span class="color864">864</span> milliseconds. One mc is a hundred
+thousand (10<sup>5</sup>) zem (z) and one day (d) is 10<sup>5</sup>
+beats (b). Therefore, 1 mv = $\text{mc}\over\text d$ =
+$\text z\over\text b$. It is easy to convert z into meters (m), z =
+$2\over5$ m, or mv into kilometers per hour (kmph): mv = $5\over3$ kmph.
+
+The table below shows the [United States (US) customary
+units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
+that Dec redefines based on the [International System of
+Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
+(SI). The measurements in each row are equal. The values in the first
+column are [fold
+changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
+from original to redefined units. A fold change of
+<span class="color0">1</span> indicates no change. Units that are
+derived in the same way have the same fold change.
+
+## Zem conversion table
+
+<table>
+<colgroup>
+<col style="width: 77%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>US</th>
+<th>Dec</th>
+<th>SI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="colorMile">1.0356</span> <a
+href="https://en.wikipedia.org/wiki/Mile#:~:text=units%20as%20exactly-,1%2C609.344%20metres">miles</a></td>
+<td><span class="math inline">$25\over6$</span> kz</td>
+<td><span class="math inline">$5\over3$</span> km</td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Yard#:~:text=as%20exactly-,0.9144%C2%A0meter">yards</a></td>
+<td><span class="math inline">$9\over4$</span> z</td>
+<td>9 dm</td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Foot_(unit)#:~:text=equal%20to%20exactly-,0.3048%20meters">feet</a></td>
+<td><span class="math inline">$3\over4$</span> z</td>
+<td>3 dm</td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Inch#:~:text=defined%20as%20exactly-,25.4%C2%A0mm">inches</a></td>
+<td><span class="math inline">$1\over16$</span> z</td>
+<td>25 mm</td>
+</tr>
+<tr>
+<td><span class="colorAcre">0.9884</span> <a
+href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
+<td><span class="math inline">$1\over40$</span> kz<sup>2</sup></td>
+<td><span class="math inline">$1\over250$</span> km<sup>2</sup></td>
+</tr>
+<tr>
+<td><span class="colorSqMi">1.0725</span> <a
+href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
+<td><span class="math inline">$625\over36$</span> kz<sup>2</sup></td>
+<td><span class="math inline">$25\over9$</span> km<sup>2</sup></td>
+</tr>
+<tr>
+<td><span class="colorSqIn">0.9688</span> <a
+href="https://en.wikipedia.org/wiki/Square_yard">square yards</a></td>
+<td><span class="math inline">$81\over16$</span> z<sup>2</sup></td>
+<td>81 dm<sup>2</sup></td>
+</tr>
+<tr>
+<td><span class="colorSqIn">0.9688</span> <a
+href="https://en.wikipedia.org/wiki/Square_foot">square feets</a></td>
+<td><span class="math inline">$9\over16$</span> z<sup>2</sup></td>
+<td>9 dm<sup>2</sup></td>
+</tr>
+<tr>
+<td><span class="colorSqIn">0.9688</span> <a
+href="https://en.wikipedia.org/wiki/Square_inch">square inches</a></td>
+<td><span class="math inline">$1\over256$</span> z<sup>2</sup></td>
+<td>625 mm<sup>2</sup></td>
+</tr>
+<tr>
+<td><span class="colorAvLb">1.1023</span> <a
+href="https://en.wikipedia.org/wiki/Pound_(mass)#:~:text=0.45359237%C2%A0kilograms">pounds</a></td>
+<td>500 g</td>
+<td>500 g</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
+<td>2 z<sup>3</sup></td>
+<td>128 L</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
+<td>1 z<sup>3</sup></td>
+<td>64 L</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
+<td><span class="math inline">$1\over16$</span> z<sup>3</sup></td>
+<td>4 L</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
+<td><span class="math inline">$1\over64$</span> z<sup>3</sup></td>
+<td>1 L</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
+<td><span class="math inline">$1\over128$</span> z<sup>3</sup></td>
+<td>500 mL</td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
+<td><span class="math inline">$1\over256$</span> z<sup>3</sup></td>
+<td>250 mL</td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Shot_glass">shots</a></td>
+<td>1 dz<sup>3</sup></td>
+<td>64 mL</td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
+<td><span class="math inline">$1\over2$</span> dz<sup>3</sup></td>
+<td>32 mL</td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
+<td><span class="math inline">$1\over4$</span> dz<sup>3</sup></td>
+<td>16 mL</td>
+</tr>
+</tbody>
+</table>
+
+Instead of metric prefixes based on [powers of
+ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten),
+redefined units rely on [fractions based on powers of
+two](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
+to scale up or down as needed. Redefined units serve as convenient
+reference points and can easily be converted to Dec or SI units. Miles
+are redefined such that one Dec mile per hour is one
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="millitaurs per day">mv</span>. A Dec acre is equal to
+$2\over5$
+[hectares](https://en.wikipedia.org/wiki/Hectare#:~:text=10%2C000%20square%20metres)
+or 40
+[are](https://en.wikipedia.org/wiki/Hectare#Are:~:text=area%2C%20equal%20to-,100%20square%20metres).
+
+A square zem (z<sup>2</sup>) is 1 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="1.6 thousandths of an are">hexamilliare</span> (x), 16
+square <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a meter">decimeters</span> (dm<sup>2</sup>),
+1.<span style="text-decoration-line:overline;">7</span> Dec square
+feet🦶, or 256 Dec square inches. A square <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="ten zem">decazem</span>
+(Dz<sup>2</sup>) is 1 <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
+square meters (m²), 19.753086 Dec square yards, or 100 x. A square
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a thousand of zem">kilozem</span> (kz<sup>2</sup>) is 1
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="sixteen hundred ares">hexakilare</span>, 0.16 square
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of meters">kilometers</span> (km²), 0.0576 Dec
+square miles, 40 Dec acres, 16 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundreds of ares">hectares</span>, or 10<sup>6</sup> x.
+
+A cubic <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a zem">decizem</span> (dz<sup>3</sup>) is 1
+shot, 2 Dec ounces, or 64 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a liter">milliliters</span> (mL). A shot
+of water🌊weighs 64 grams (g). Even though the weight of a Dec ounce of
+water🌊is close to a sixteenth of a Dec pound, Dec does not measure
+weights in ounces. A cubic zem (z<sup>3</sup>) is 1 keg, 16 Dec gallons,
+or 64
+[liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic)
+(L). A keg of water🌊weighs 64 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousands of grams">kilograms</span> (kg) or 128 Dec
+pounds.
+
+<div class="column-margin" fig-align="center"
+style="text-align:center;">
+
+<figure id="vitruvian">
+<img src="../asset/vitruvianMan.svg" alt="Wikimedia" />
+<figcaption aria-hidden="true"><a
+href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg">Wikimedia</a></figcaption>
+</figure>
+
+</div>
+
+## Body mass index
+
+A weight of 64 kg and a height of 4 z, 1.6 m, or 64 inches correspond to
+a [body mass
+index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
+(BMI) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$.
+A BMI above 4.8 $\text {kg}\over\text z^2$ or 30
+$\text {kg}\over\text m^2$ is considered
+[obese](https://en.wikipedia.org/wiki/Obesity#:~:text=person's%20height—is-,over%2030%C2%A0kg/m2,-;%20the%20range%2025).
+If [Leonardo da
+Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s
+[Vitruvian
+Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
+were 4 z tall, we could measure 1 z from the knee to the foot🦶of one of
+his legs🦵or from the elbow to the fingertips of one of his arms💪.
+
+# Summary
+
+This article introduces the Dec measurement system and describes how Dec
+uses the properties of the planet Earth🌎and metric prefixes to define
+units based on turns for geographic coordinates, compass🧭directions,
+colors🎨, speeds, dates, times, time zones, distances, areas, volumes,
+and weights. Many Dec measurements The introduction includes a
+comparison of Dec, SI, and US customary units.
 
 # Next
+
+Now that you have had a taste of Dec, I hope that you are hungry for
+more! will be interested in reading the Dec section of my site to the
+time⏳, snap🫰, and span🌈articles. Dec has a lot more to offer than
+just dates! you should be able to understand the examples in my filter,
+include, and script articles, but you may want to start with my Quarto
+article. To see the full extent of the benefits that Dec provides, I
+recommend that you continue through the Dec section of my site to the
+time⏳, snap🫰, and span🌈articles. Dec has a lot more to offer than
+just dates!
 
 <div id="decnav">
 
@@ -1919,7 +1925,74 @@ style="width:8.64in;height:0.98in" />
 
 </div>
 
-# Summary
+# Cite
+
+Please support Dec by citing it as shown at the bottom of this article.
+You may also want to cite the Observable notebooks that I adapted into
+the map🗺️ and color🎨wheel compass visualizations in this article or the
+2004 [arxiv](https://arxiv.org/abs/physics/0412078)
+[article](https://www.roma1.infn.it/~dagos/history/sm/sm.html), that I
+found on <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="April 9, 2025"><u><span class="color025">2025</span>+<span class="color039">039</span></u></span>,
+which includes the definition of a zem, 1 z = 10<sup>-8</sup> c = 4 dm,
+in [a table of possible length
+units](https://www.roma1.infn.it/~dagos/history/sm/node12.html):
+
+- [Agnoli, Paolo](http://www.paoloagnoli.it) & [D’Agostini,
+  Giulio](https://www.roma1.infn.it/~dagos). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="January 25, 2005"><u>2004+330</u></span>. “Why does the
+  meter beat the second?” ${decYear}+${decDoty}.
+  <https://arxiv.org/abs/physics/0412078>.
+- [Patel, Amit](https://observablehq.com/@redblobgames).
+  <span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="December 16, 2021"><u>2021+290</u></span>. “Compass
+  Rose.” ${decYear}+${decDoty}.
+  <https://observablehq.com/@paavanb/progressive-color-picker>.
+- [Edwards, Paul](https://observablehq.com/@pjedwards).
+  <span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="August 19, 2022"><u>2022+171</u></span>. “Compass Rose
+  as legend with colors.” ${decYear}+${decDoty}.
+  <https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors>.
+- [paavanb](https://observablehq.com/user/@paavanb). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="March 7, 2024"><u>2024+006</u></span>. “Progressive
+  Color Picker.” ${decYear}+${decDoty}.
+  <https://observablehq.com/@paavanb/progressive-color-picker>.
+
+Please help to promote Dec by citing it using the information below. You
+may also want to cite the Observable notebooks that I adapted into the
+
+- [Pearson, Tom](https://www.2x2.graphics). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="2013-07-03"><u><span class="yellow">2013</span>+<span class="cyan">124</span></u></span>.
+  “Simple D3 clock.”
+  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+  <https://observablehq.com/@d3/simple-clock>.
+- [Heyen, Frank](https://fheyen.github.io). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="2021-11-02"><u><span class="yellow">2021</span>+<span class="cyan">246</span></u></span>.
+  “BarChart Clock.”
+  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+  <https://observablehq.com/@fheyen/barchart-clock>.
+- [Johnson, Ian](https://enjalot.github.io). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="2021-05-30"><u><span class="yellow">2021</span>+<span class="cyan">090</span></u></span>.
+  “Draggable World Map Coordinates Input.”
+  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+  <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
+- [Bridges, Dan](https://www.danbridges.org). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="2022-01-06"><u><span class="yellow">2021</span>+<span class="cyan">311</span></u></span>.
+  “Visualizing Seasonal Daylight.”
+  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+  <https://observablehq.com/@dbridges/visualizing-seasonal-daylight>.
+- [Clements, John](https://www.brinckerhoff.org). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="2021-05-31"><u><span class="yellow">2014</span>+<span class="cyan">091</span></u></span>,
+  “Decimal Time Zones.”
+  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+  <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
 
 ``` {ojs}
 //| echo: false
@@ -2559,7 +2632,7 @@ decConnections = [
   [8, 3],
   [9, 4]
 ]
-coor = [[[-18, -88], [-18, 88], [18, 88], [18, -88], [-18, -88], ]]
+coor = [[[-18, -89.98], [-18, 89.98], [18, 89.98], [18, -89.98], [-18, -89.98], ]]
 deczones = [...Array(10).keys()].map(
   i => ({
     "type": "Feature",
@@ -2635,10 +2708,13 @@ elapsed = {
 }
 elaTime = elapsed % 1e5
 elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
+sunLonHsl = textcolor(sunLon, `hsl(${d3.hsl(piecewiseColor(sunLon % 1000 / 1000)).h}` + slStr)
+sunLatHsl = textcolor(sunLat, `hsl(${d3.hsl(piecewiseColor((sunLat + 1000) % 1000 / 1000)).h}` + slStr)
 dz = unix2dote(now)
 ydz = dote2date(...dz)
 decYear = ydz[0]
 decDate = Math.floor(ydz[1])
+decDoty = decDate.toString().padStart(3, "0")
 decTime = ydz[1] % 1
 decZone = ydz[2]
 decZonePos = (ydz[2] + 10) % 10
@@ -3172,6 +3248,8 @@ sun = {
   const longitude = (day - now) / 864e5 * 360 - 180;
   return [longitude - solar.equationOfTime(t) / 4, solar.declination(t)];
 }
+sunLon = Math.round(long2turn(sun[0]))
+sunLat = Math.round(lati2turn(sun[1]))
 night = d3.geoCircle().radius(90).center(antipode(sun))()
 antipode = ([longitude, latitude]) => [longitude + 180, -latitude]
 height = {
@@ -3429,6 +3507,22 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color025 {
+  background: hsl(344.94117647058823 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(344.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color039 {
+  background: hsl(336.70588235294116 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(336.70588235294116, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color065 {
   background: hsl(320.94117647058823 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(320.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -3677,9 +3771,7 @@ html`
   padding: 0px 5px 0px 5px;
 }
 div#projselect {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: 250px;
 }
 div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div, {
   overflow-x: clip;
@@ -3711,7 +3803,7 @@ div#distmap {
   align-items: center;
   justify-content: center;
 }
-div#colorpreview, div.colorcomparer, div#coloropposites8, div.coloropposites10, div#colorcomparer8, div.colorcomparer10 {
+div#colorpreview, div.colorcomparer, div#coloropposites8, div#coloropposites10, div#colorcomparer8, div#colorcomparer10 {
   overflow: visible;
 }
 div.colorcomparer g[aria-label="y-axis label"] > text {
@@ -3752,9 +3844,6 @@ div#lightslider > div {
 }
 div#lightslider > label {
   max-width: 60px;
-}
-div#latinput form {
-  margin-bottom: 11px;
 }
 div#latinput label {
   --label-width: 65px;
