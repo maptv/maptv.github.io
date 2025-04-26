@@ -93,14 +93,19 @@ on the map🗺️beneath the table. By default, <span class="point0">Point
 0</span> is at <span class="color8">800</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="milliparallels">$\underline{\text m\lambda}$</span> and
-<span class="color0">0</span> m*ϕ*, near the
+<span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>, near
+the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
 of Ecuador🇪🇨, and <span class="point1">Point 1</span> is at
 <span class="color8">800</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="milliparallels">$\underline{\text m\lambda}$</span> and
-<span class="color1">100</span> m*ϕ*, in the United States🇺🇸city of
-[Memphis,
+<span class="color1">100</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>, in the
+United States🇺🇸city of [Memphis,
 Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
 
 To move the points, click the map🗺️or edit their coordinates in the
@@ -119,12 +124,13 @@ shading with a yellow🟡dot denoting that the Sun☀️is [directly
 overhead](https://en.wikipedia.org/wiki/Subsolar_point#:~:text=the%20point%20at%20which%20its%20Sun%20is%20perceived%20to%20be%20directly%20overhead)
 at ${sunLonHsl} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliparallels">$\underline{\text m\lambda}$</span> and
-${sunLatHsl} m*ϕ*.
+${sunLatHsl} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>.
 
 Each row of the table contains the geographic coordinates of a point and
 the
 [course](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
-([*α*](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha))
+([$\underline\alpha$](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha))
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a compass rose">milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)</span>
 (m*α*) we would need to maintain to travel🧳the shortest distance to the
@@ -668,39 +674,69 @@ data-bs-title="thousandths of a day">md</span>).
 
 The Equator, also known as Latitude 0, is the [major
 latitude](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
-midway between the South (<span class="color750">-250</span> m*ϕ*) and
-North (<span class="color250">250</span> m*ϕ*) Pole. The other four
-major latitudes depend on the [axial
+midway between the South (<span class="color750">-250</span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>) and
+North (<span class="color250">250</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>) Pole.
+The other four major latitudes depend on the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
 of the Earth🌏(<span class="color065">65</span> mt): the Tropics of
 [Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(<span class="color065">65</span>
-m*ϕ*) and
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>) and
 [Capricorn](https://en.wikipedia.org/wiki/Tropic_of_Capricorn#:~:text=the%20southernmost%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♑️(<span class="color935">-65</span>
-m*ϕ*), and the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>), and
+the
 [Arctic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
-(<span class="color250">250</span> m*ϕ* –
-<span class="color065">65</span> m*ϕ* =
-<span class="color185">185</span> m*ϕ*) and
+(<span class="color250">250</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span> –
+<span class="color065">65</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span> =
+<span class="color185">185</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>) and
 [Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
-(<span class="color065">65</span> m*ϕ* –
-<span class="color250">250</span> m*ϕ* =
-<span class="color815">-185</span> m*ϕ*) Circles.
+(<span class="color065">65</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span> –
+<span class="color250">250</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span> =
+<span class="color815">-185</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>)
+Circles.
 
 # Dec time zones
 
 Enable the “Grid” toggle✅input to see Latitudes
 [-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
-(<span class="color8">-200</span> m*ϕ*),
+(<span class="color8">-200</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>),
 [-1](https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane)
-(<span class="color9">-100</span> m*ϕ*), 0
-(<span class="color0">0</span> m*ϕ*),
+(<span class="color9">-100</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>), 0
+(<span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>),
 [1](https://en.wikipedia.org/wiki/36th_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane)
-(<span class="color1">100</span> m*ϕ*), and
+(<span class="color1">100</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>), and
 [2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
-(<span class="color2">200</span> m*ϕ*) on the map🗺️above along with the
-ten major longitudes that divide the Earth🌍into the ten Dec time zones.
-Notably, Longitude 0 is the major longitude that serves as the Dec
-[Prime
+(<span class="color2">200</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>) on the
+map🗺️above along with the ten major longitudes that divide the
+Earth🌍into the ten Dec time zones. Notably, Longitude 0 is the major
+longitude that serves as the Dec [Prime
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)
 and the [International Date
 Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next).
@@ -722,8 +758,12 @@ in Zone ${point0zHsl}.
 Each Dec time zone is one <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="a tenth of a circle of latitude">deciparallel</span>
-(d*λ*) wide and half of a meridian (*ϕ*) long. While one *ϕ* is always
-about one c long, the length of a parallel (*λ*) [varies by
+(d*λ*) wide and half of a meridian (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="meridian">$\underline\phi$</span>) long. While one
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meridian">$\underline\phi$</span> is always about one c
+long, the length of a parallel (*λ*) [varies by
 latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude).
 At the Equator, one *λ* is roughly one c long. At the
 [North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
@@ -732,7 +772,9 @@ or
 Pole, the length of *λ* is zero. In general, the approximate length of a
 parallel is the
 [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
-of its *ϕ* latitude: cos(${parLat}) = ${parLen}.
+of its <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meridian">$\underline\phi$</span> latitude:
+cos(${parLat}) = ${parLen}.
 
 ``` {ojs}
 //| echo: false
@@ -801,7 +843,9 @@ Similarly, the distance from the Equator to one of the Poles is
 [meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units).
 In other words, a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a polar circumference">decimeridian</span>
-(d*ϕ*) is ~10<sup>7</sup> zems long and a [quarter
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meridians">$\underline{\text d\phi}$</span>) is
+~10<sup>7</sup> zems long and a [quarter
 meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole)
 is ~10<sup>7</sup> meters long.
 
@@ -3964,5 +4008,12 @@ svg#lefthand {
 .marginInputs {
   position: relative;
   top: -120px;
+}
+#cct table, #zct table {
+  line-height: 1.5;
+  vertical-align: middle;
+}
+section#map {
+  line-height: 1.5;
 }
 </style>
