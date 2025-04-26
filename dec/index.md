@@ -37,24 +37,34 @@ system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%2
 that [I](https://maptv.github.io) created. All Dec measurements are
 based on
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
-(t). When measuring
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="turns">t</span>). When measuring
 [angles](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐,
-t represents a full⭕️circle and equals 2*π*
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="turns">t</span> represents a full⭕️circle and equals 2*π*
 ([$\underline\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
 [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units)
-(rad) or 360
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="radians">rad</span>) or 360
 [degrees](https://en.wikipedia.org/wiki/Degree_(angle)#:~:text=a%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20360%20degrees)
 (°). Dec measures distance in turns called
 [taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
-(c) and tracks time with two other types of turns: years (y) and days
-(d).
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="taurs">c</span>) and tracks time with two other types of
+turns: years (<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="years">y</span>) and days (<span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days">d</span>).
 
 The three turn types that Dec uses for distance and time measurement are
-all approximations of physical attributes of the Earth🌍: c ≈ the
+all approximations of physical attributes of the Earth🌍:
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="taurs">c</span> ≈ the
 [circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth)
-of the Earth🌏, y ≈ the duration of
+of the Earth🌏, <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="years">y</span> ≈ the duration of
 [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun)
-of the Earth🌎around the Sun☀️, and d ≈ the duration of
+of the Earth🌎around the Sun☀️, and <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="days">d</span> ≈ the duration of
 [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
 of the Earth🌍on its
 [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
@@ -67,23 +77,30 @@ Notably, $\text c\over\text d$ = [v =
 
 The table below provides the current
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
-([*λ*](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda))
+([$\underline\lambda$](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda))
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a circle of latitude">milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)</span>
-(m*λ*) and
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliparallels">$\underline{\text m\lambda}$</span>) and
 [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
-([*ϕ*](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
+([$\underline\phi$](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
 in <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a polar circumference">milli[meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)</span>
-(m*ϕ*) of Points <span class="point0">0</span> and
-<span class="point1">1</span> on the map🗺️beneath the table. By default,
-<span class="point0">Point 0</span> is at
-<span class="color8">800</span> m*λ* and <span class="color0">0</span>
-m*ϕ*, near the
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\underline{\text m\phi}$</span>) of
+Points <span class="point0">0</span> and <span class="point1">1</span>
+on the map🗺️beneath the table. By default, <span class="point0">Point
+0</span> is at <span class="color8">800</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="milliparallels">$\underline{\text m\lambda}$</span> and
+<span class="color0">0</span> m*ϕ*, near the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
 of Ecuador🇪🇨, and <span class="point1">Point 1</span> is at
-<span class="color8">800</span> m*λ* and <span class="color1">100</span>
-m*ϕ*, in the United States🇺🇸city of [Memphis,
+<span class="color8">800</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="milliparallels">$\underline{\text m\lambda}$</span> and
+<span class="color1">100</span> m*ϕ*, in the United States🇺🇸city of
+[Memphis,
 Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
 
 To move the points, click the map🗺️or edit their coordinates in the
@@ -100,7 +117,9 @@ time zones, and [solar
 terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
 shading with a yellow🟡dot denoting that the Sun☀️is [directly
 overhead](https://en.wikipedia.org/wiki/Subsolar_point#:~:text=the%20point%20at%20which%20its%20Sun%20is%20perceived%20to%20be%20directly%20overhead)
-at ${sunLonHsl} m*λ* and ${sunLatHsl} m*ϕ*.
+at ${sunLonHsl} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliparallels">$\underline{\text m\lambda}$</span> and
+${sunLatHsl} m*ϕ*.
 
 Each row of the table contains the geographic coordinates of a point and
 the
@@ -632,14 +651,17 @@ we can reuse♻️colors🎨across many different contexts. Typically,
 starting points are red: North (<span class="color0">0</span> m*α*),
 [Longitude
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
-(<span class="color0">0</span> m*λ*), and midnight
-(<span class="color0">0</span> <span class="under tool"
+(<span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="milliparallels">$\underline{\text m\lambda}$</span>), and
+midnight (<span class="color0">0</span> <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">md</span>), and midpoints are cyan:
 South (<span class="color5">500</span> m*α*), [Longitude
 5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color5">500</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="milliparallel">m*λ*</span>), and
+data-bs-toggle="tooltip"
+data-bs-title="milliparallels">$\underline{\text m\lambda}$</span>), and
 noon (<span class="color5">500</span> <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">md</span>).
@@ -1289,10 +1311,10 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 
 </div>
 
-You can approximate a zem using your hands🤲. With your palms flat on a
-table in front of you and the tips of your thumbs👍touching, the maximum
-distance between the tips of your pinkies is about 1 z. When you spread
-out the fingers on one hand✋or do the “[call
+You can approximate a zem (z) using your hands🤲. With your palms flat
+on a table in front of you and the tips of your thumbs👍touching, the
+maximum distance between the tips of your pinkies is about 1 z. When you
+spread out the fingers on one hand✋or do the “[call
 me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)”,
 “[drink](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=placing%20the%20thumb%20to%20the%20mouth%20and%20motioning%20the%20little%20finger%20upward%20as%20if%20tipping%20up%20a%20bottle%27s%20bottom%20end)”,
 or
@@ -1315,7 +1337,7 @@ facing inward, each with their right hand✋placed on top of the elbow of
 the person to their right. Alternatively, two people can stand in front
 of each other and raise their arms💪, placing one hand✋on the elbow of
 the other person and the other hand✋on their own elbow to form a
-square🔲.
+square.
 
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1328,11 +1350,15 @@ href="https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg">W
 
 </div>
 
-You can measure a square zem yourself with a ruler📏or measuring tape.
-Either sitting in a chair🪑or standing🧍, measure 1 z, 4 dm, or 16
-inches between knees and your feet🦶. This distance may be more or less
-the width of your hips or shoulders. Next, measure this same distance
-down from your knees to create the left and right sides of the square🔲.
+You can approximate a square zem yourself by sitting in a chair🪑or
+standing🧍with your knees and feet🦶1 z, 4 <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="tenths of a meter">decimeters</span>
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="decimeters">dm</span>), or 16 inches apart, which is
+likely to be more or less the width of your hips or shoulders. The top
+of the square zem will be between your knees, its bottom will be between
+your ankles or feet🦶, and its sides between your shins.
 
 <div id="cubic" class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1621,12 +1647,15 @@ style="text-align:center;">
 
 If two people sit facing each other with their legs🦵bent at 25
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a hundredth of a turn">centiturn</span> (ct) angles and
-their knees 1 z apart, there will be around a cubic zem of space between
-their legs🦵. According to [dimensions.com](https://www.dimensions.com),
-115 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="hundredths of a zem">centizems</span> (cz) is the
-[typical seat
+data-bs-title="a hundredth of a turn">centiturn</span>
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="centiturn">ct</span>) angles and their knees 1 z apart,
+there will be around a cubic zem of space between their legs🦵.
+According to [dimensions.com](https://www.dimensions.com), 115
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of a zem">centizems</span>
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="centizems">cz</span>) is the [typical seat
 height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
 and 95 cz is a [low seat
 height](https://www.dimensions.com/element/sitting-female-front-1#:~:text=Seat%20Height%20(Low)%3A-,15%E2%80%9D%20%7C%2038%20cm,-Style%3A%20Casual)
@@ -1634,7 +1663,9 @@ for both men and women age 25 to 45. A <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="a hundredth of a zem">centizem</span> is 4
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a meter">millimeters</span> (mm).
+data-bs-title="thousandths of a meter">millimeters</span>
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="millimeters">mm</span>).
 
 In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, zem means Earth🌏.
 This is fitting because all Dec units are based on physical properties
@@ -3765,6 +3796,9 @@ html`
   align-items: center;
   padding: 0;
   flex: auto;
+}
+#maptable {
+  line-height: 1.5;
 }
 #maptable table * {
   font-size: 18px;
