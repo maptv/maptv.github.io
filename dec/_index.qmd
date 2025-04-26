@@ -1939,5 +1939,12 @@ svg#lefthand {
   position: relative;
   top: -120px;
 }
+#cct table, #zct table {
+  line-height: 1.5;
+  vertical-align: middle;
+}
+section#map {
+  line-height: 1.5;
+}
 </style>
 ```
