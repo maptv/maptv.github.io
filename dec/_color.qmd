@@ -259,6 +259,8 @@ decBar = colorbar({
 }
 ```
 
+## Course color table {.hiddenheading #cct}
+
 | 🧭              | **m$\alpha$**    | **c°**            | **h°**            | **hex**             |
 | --------------  | ---------------  | ----------------- | ----------------- | ----------------    |
 | \${rainbowDir}  | \${rainbowMtr}   | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}      |

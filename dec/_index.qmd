@@ -636,7 +636,7 @@ decConnections = [
   [8, 3],
   [9, 4]
 ]
-coor = [[[-18, -88], [-18, 88], [18, 88], [18, -88], [-18, -88], ]]
+coor = [[[-18, -89.98], [-18, 89.98], [18, 89.98], [18, -89.98], [-18, -89.98], ]]
 deczones = [...Array(10).keys()].map(
   i => ({
     "type": "Feature",
@@ -712,10 +712,13 @@ elapsed = {
 }
 elaTime = elapsed % 1e5
 elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
+sunLonHsl = textcolor(sunLon, `hsl(${d3.hsl(piecewiseColor(sunLon % 1000 / 1000)).h}` + slStr)
+sunLatHsl = textcolor(sunLat, `hsl(${d3.hsl(piecewiseColor((sunLat + 1000) % 1000 / 1000)).h}` + slStr)
 dz = unix2dote(now)
 ydz = dote2date(...dz)
 decYear = ydz[0]
 decDate = Math.floor(ydz[1])
+decDoty = decDate.toString().padStart(3, "0")
 decTime = ydz[1] % 1
 decZone = ydz[2]
 decZonePos = (ydz[2] + 10) % 10
@@ -1249,6 +1252,8 @@ sun = {
   const longitude = (day - now) / 864e5 * 360 - 180;
   return [longitude - solar.equationOfTime(t) / 4, solar.declination(t)];
 }
+sunLon = Math.round(long2turn(sun[0]))
+sunLat = Math.round(lati2turn(sun[1]))
 night = d3.geoCircle().radius(90).center(antipode(sun))()
 antipode = ([longitude, latitude]) => [longitude + 180, -latitude]
 height = {
@@ -1506,6 +1511,22 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color025 {
+  background: hsl(344.94117647058823 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(344.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color039 {
+  background: hsl(336.70588235294116 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(336.70588235294116, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color065 {
   background: hsl(320.94117647058823 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(320.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -1755,9 +1776,7 @@ html`
   padding: 0px 5px 0px 5px;
 }
 div#projselect {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: 250px;
 }
 div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div, {
   overflow-x: clip;
@@ -1789,7 +1808,7 @@ div#distmap {
   align-items: center;
   justify-content: center;
 }
-div#colorpreview, div.colorcomparer, div#coloropposites8, div.coloropposites10, div#colorcomparer8, div.colorcomparer10 {
+div#colorpreview, div.colorcomparer, div#coloropposites8, div#coloropposites10, div#colorcomparer8, div#colorcomparer10 {
   overflow: visible;
 }
 div.colorcomparer g[aria-label="y-axis label"] > text {
@@ -1830,9 +1849,6 @@ div#lightslider > div {
 }
 div#lightslider > label {
   max-width: 60px;
-}
-div#latinput form {
-  margin-bottom: 11px;
 }
 div#latinput label {
   --label-width: 65px;

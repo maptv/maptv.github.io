@@ -135,6 +135,6 @@ p, li {
   text-align: left;
 }
 
-svg#decnav-mermaid g > foreignobject {
+svg#decnav-mermaid foreignobject, svg#conversionchart-mermaid foreignobject {
   overflow: visible;
 }
