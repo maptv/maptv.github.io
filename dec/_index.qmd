@@ -751,6 +751,10 @@ decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecew
 decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
 decTimeZ0p = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 decTimeZ0n = textcolor((decTimeN0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decLon = longitude % 10
+decLonHsl = textcolor(decLon.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(decLon / 10)).h}` + slStr)
+decZon = Math.floor(decLon)
+decZonHsl = textcolor(decZon, `hsl(${d3.hsl(piecewiseColor(decZon / 10)).h}` + slStr)
 parLat = textcolor(latitude.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
 parCos = Math.cos(latitude * 2 * Math.PI)
 parLen = textcolor(parCos.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
@@ -879,7 +883,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath();
       path.pointRadius(point_radius_2);
       path(pointPath);
-      context.fillStyle = window.darkmode ? "#CC042C" : "pink";
+      context.fillStyle = window.darkmode ? "#A24" : "#FDF";
       context.fill();
       context.strokeStyle = window.darkmode ? "white" : "black";
       context.stroke();
@@ -889,7 +893,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath();
       path.pointRadius(point_radius_2);
       path(pointPath);
-      context.fillStyle = window.darkmode ? "blue" : "cyan";
+      context.fillStyle = window.darkmode ? "#24A" : "#BFF";
       context.fill();
       context.strokeStyle = window.darkmode ? "white" : "black";
       context.stroke();
@@ -1024,8 +1028,15 @@ point_radius_2 = width / 150 * mapsize / 100 + 3
 Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
-distance_mtaur = Math.floor(distance_km / 40)
-traveltime = Math.floor(distance_mtaur / travelspeed * 1000)
+distance_mc = distance_km / 40
+distance_mcHsl = textcolor(distance_mc.toFixed(0), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
+distance_c = distance_mc / 1000
+distance_cHsl = textcolor(distance_c.toFixed(3), `hsl(${d3.hsl(piecewiseColor(distance_c % 1)).h}` + slStr)
+velocity_v = travelspeed / 1000
+velocity_vHsl = textcolor(velocity_v.toFixed(3), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
+velocity_mvHsl = textcolor(travelspeed.toFixed(0), `hsl(${d3.hsl(piecewiseColor(travelspeed / 1000)).h}` + slStr)
+traveltime = Math.round(distance_mc) / Math.round(travelspeed)
+traveltimeHsl = Number.isFinite(traveltime) ? textcolor(traveltime.toFixed(3), `hsl(${d3.hsl(piecewiseColor(traveltime % 1)).h}` + slStr) : traveltime
 nb_points = Math.round(distance_km/150)
 d3format = require("d3-format@1")
 function input(config) {
@@ -1853,10 +1864,10 @@ div#lightslider > div {
 div#lightslider > label {
   max-width: 60px;
 }
-div#latinput label {
-  --label-width: 65px;
+div#loninput label, div#latinput label {
+  --label-width: 75px;
 }
-div#latinput input[type="number"] {
+div#loninput input[type="number"], div#latinput input[type="number"] {
   width: 125px;
 }
 div#lightslider input[type="number"] {

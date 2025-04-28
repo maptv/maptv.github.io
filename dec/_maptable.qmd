@@ -48,8 +48,8 @@ viewof select = Inputs.select(
 //| label: toggles
 viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
 viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
-viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
 viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
+viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
 rstbtn.node();
 ```
 

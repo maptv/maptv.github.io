@@ -302,13 +302,13 @@ div#colorwheelcompass path#piepath {
 }
 
 #maptable tbody tr:nth-child(1) td div {
-    background: #CC042C !important;
+    background: #A24 !important;
 }
 #maptable tbody tr:nth-child(2) td div {
-    background: blue !important;
+    background: #24A !important;
 }
-.point0 { border-radius: 4px; background-color: #CC042C; color: white; padding: 0px 2px 0px 2px; } /* day 00ffff */
-.point1 { border-radius: 4px; background-color: blue; color: white; padding: 0px 2px 0px 2px; } /* day 00ffff */
+.point0 { border-radius: 4px; background-color: #A24; color: white; padding: 0px 2px 0px 2px; }
+.point1 { border-radius: 4px; background-color: #24A; color: white; padding: 0px 2px 0px 2px; }
 #projselect select {
   border-color: white;
   color: white;
