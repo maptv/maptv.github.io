@@ -1,9 +1,10 @@
 # Dec
 Martin Laptev
-2025+056
+2025+058
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
+  - [Distance speed duration](#dsd)
   - [Interactive world map](#map)
   - [Color wheel compass](#cwc)
   - [Hue saturation lightness (hsl)](#hsl)
@@ -36,80 +37,57 @@ This section of my website focuses on Dec, a [measurement
 system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)
 that [I](https://maptv.github.io) created. All Dec measurements are
 based on
-[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="turns">t</span>). When measuring
+[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees).
+When measuring
 [angles](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐,
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="turns">t</span> represents a full⭕️circle and equals 2*π*
+a turn represents a full⭕️circle and equals 2*π*
 ([$\underline\tau$](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
 [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units)
-(<span class="under tool" data-bs-toggle="tooltip"
+(<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="radians">rad</span>) or 360
 [degrees](https://en.wikipedia.org/wiki/Degree_(angle)#:~:text=a%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20360%20degrees)
-(°). Dec measures distance in turns called
-[taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</span>) and tracks time with two other types of
-turns: years (<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="years">y</span>) and days (<span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="days">d</span>).
-
-The three turn types that Dec uses for distance and time measurement are
-all approximations of physical attributes of the Earth🌍:
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</span> ≈ the
-[circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth)
-of the Earth🌏, <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="years">y</span> ≈ the duration of
-[orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun)
-of the Earth🌎around the Sun☀️, and <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="days">d</span> ≈ the duration of
-[rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
-of the Earth🌍on its
-[axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole).
-Notably, $\text c\over\text d$ = [v =
-ωr](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity)
-≈ the speed of the rotation of Earth🌏at the
-[Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="degrees">°</span>). [Geographic
+coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude)
+and
+[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭directions
+are examples of angles and thus can (and should!) be measured in turns.
 
 ## Longitude latitude course
 
 The table below provides the current
-[longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20east%2Dwest%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
-([$\underline\lambda$](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda))
-in <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a circle of latitude">milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)</span>
+[longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda)
+in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a parallel">milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\underline{\text m\lambda}$</span>) and
-[latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
-([$\underline\phi$](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
-in <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a polar circumference">milli[meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)</span>
+data-bs-title="milliparallels">$\text m\lambda$</span>) and
+[latitude](%5B$\underline\phi$%5D(https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
+in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a meridian">milli[meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>) of
-Points <span class="point0">0</span> and <span class="point1">1</span>
-on the map🗺️beneath the table. By default, <span class="point0">Point
-0</span> is at <span class="color8">800</span> <span class="tool"
+data-bs-title="millimeridians">$\text m\phi$</span>) of Points
+<span class="point0">0</span> and <span class="point1">1</span> on the
+map🗺️beneath the table. By default, <span class="point0">Point 0</span>
+is at <span class="color8">800</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\underline{\text m\lambda}$</span> and
+data-bs-title="milliparallels">$\text m\lambda$</span> and
 <span class="color0">0</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>, near
-the
+data-bs-title="millimeridians">$\text m\phi$</span>, near the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
 of Ecuador🇪🇨, and <span class="point1">Point 1</span> is at
 <span class="color8">800</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\underline{\text m\lambda}$</span> and
+data-bs-title="milliparallels">$\text m\lambda$</span> and
 <span class="color1">100</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>, in the
-United States🇺🇸city of [Memphis,
-Tennessee](https://en.wikipedia.org/wiki/Memphis,_Tennessee#:~:text=a%20city%20in%20the%20U.S.%20state%20of%20Tennessee).
+data-bs-title="millimeridians">$\text m\phi$</span>, near the bottom of
+the [Missouri
+bootheel](https://en.wikipedia.org/wiki/Missouri_Bootheel#:~:text=a%20salient%20(protrusion)%20located%20in%20the%20southeasternmost%20part%20of%20the%20U.S.%20state%20of%20Missouri)
+in the United States🇺🇸.
 
 To move the points, click the map🗺️or edit their coordinates in the
-table. The [Observable](https://observablehq.com)
+table. The
 [toggle](https://observablehq.com/framework/inputs/toggle)✅inputs above
 the table add layers to the map🗺️: country borders, a
 rainbow🌈colored🎨grid of Dec
@@ -123,46 +101,90 @@ terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%
 shading with a yellow🟡dot denoting that the Sun☀️is [directly
 overhead](https://en.wikipedia.org/wiki/Subsolar_point#:~:text=the%20point%20at%20which%20its%20Sun%20is%20perceived%20to%20be%20directly%20overhead)
 at ${sunLonHsl} <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\underline{\text m\lambda}$</span> and
-${sunLatHsl} <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>.
+data-bs-title="milliparallels">$\text m\lambda$</span> and ${sunLatHsl}
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\text m\phi$</span>.
 
 Each row of the table contains the geographic coordinates of a point and
 the
 [course](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
 ([$\underline\alpha$](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha))
-in <span class="under tool" data-bs-toggle="tooltip"
+in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a compass rose">milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)</span>
-(m*α*) we would need to maintain to travel🧳the shortest distance to the
-other point. The default courses in m*α* are
-<span class="color0">0</span> (North) from <span class="point0">Point
-0</span> to <span class="point1">Point 1</span> and
-<span class="color5">500</span> (South) from <span class="point1">Point
-1</span> to <span class="point0">Point 0</span>. By default, the points
-are <span class="color1">100</span> <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a taur">millitaurs</span> (mc) apart.
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliwindroses">$\text m\alpha$</span>) we would need to
+maintain to travel🧳the shortest distance to the other point. The
+shortest distance is shown as orange🟠dots on the map🗺️. The default
+courses in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliwindroses">$\text m\alpha$</span> are
+<span class="color0">0</span> (North) from Point
+<span class="point0">0</span> to <span class="point1">1</span> and
+<span class="color5">500</span> (South) from Point
+<span class="point1">1</span> to <span class="point0">0</span>.
 
-An airplane✈️flying at <span class="color5">500</span>
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of the equatorial speed of rotation of Earth">milliomegars</span>
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis">mv</span>),
-half the equatorial speed of the rotation of Earth🌎on its axis, could
-travel🧳the <span class="color1">100</span> mc between the default
-positions📍of Points <span class="point0">0</span> and
-<span class="point1">1</span> in <span class="color2">200</span>
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a day">millidays</span>
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a day">md</span>). To get the time in days
-(d) required to travel🧳between two points, we divide the distance in mc
-by the speed in <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis">mv</span>:
-${distance_mtaur} mc ÷ ${travelspeed} <span class="under tool"
+## Distance speed duration
+
+Dec measures distance in
+[taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="taurs">c</span>), speed in
+[romegas](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="romegas">v</span>), and time in years (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="years">y</span>) and days
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</span>). Each of these four turn types
+approximates (≈) a physical property of the Earth🌏: <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="taur">c</span> =
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">*τ**r*</span> ≈ its
+[circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth),
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="year">y</span> ≈ the duration of its
+[orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun)
+around the Sun☀️, <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day">d</span> ≈ the duration of its
+[rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
+on its
+[axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole),
+and $\text c\over\text d$ = <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="romega">v</span> = <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="romega">*r**ω*</span> ≈ its
+speed of the rotation at the
+[Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
+
+At a speed of <span class="color5">0.5</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="romega">v</span> or
+<span class="color5">500</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="thousandths of the equatorial speed of rotation of Earth on its axis">mv</span>
-= ${(distance_mtaur / travelspeed).toFixed(3)} d.
+data-bs-title="thousandths of a romega">milliromegas</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliromegas">mv</span>), an airplane✈️could fly over the
+<span class="color1">0.1</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="taurs">c</span> or
+<span class="color1">100</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a taur">millitaurs</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaurs">mc</span>) between the default positions📍of
+Points <span class="point0">0</span> and <span class="point1">1</span>
+in <span class="color2">200</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a day">millidays</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</span>) or <span class="color2">0.2</span>
+days (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</span>). To get the time required to
+travel🧳between two points, we divide the distance by the speed:
+${distance_cHsl} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="taurs">c</span> ÷ ${velocity_vHsl} <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="romega">v</span> =
+${distance_mcHsl} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaurs">mc</span> ÷ ${velocity_mvHsl}
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliromega">mv</span> = ${traveltimeHsl}
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</span>.
 
 ## Interactive world map
 
@@ -218,8 +240,8 @@ viewof select = Inputs.select(
 //| label: toggles
 viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
 viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
-viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
 viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
+viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
 rstbtn.node();
 ```
 
@@ -602,34 +624,45 @@ decBar = colorbar({
 
 The
 [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
-[compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭above
-indicates both a
+compass🧭above indicates both a
 [hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram)
-and a course. We can express the hue in [HSL and
+in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a thousandth of a turn">milliturns</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">mt</span>) and a course in <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="milliwindroses">$\text m\alpha$</span>. We can convert
+the hue to [HSL and
 HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
-degrees (h°) and convey the course in compass🧭degrees (c°): 25 m*α* = 9
-c°. To rotate🔄the color🎨wheel compass🧭, use the Observable hue
-[range](https://observablehq.com/framework/inputs/range)🎚️and hue
-[bar](https://observablehq.com/@paavanb/progressive-color-picker)📊inputs
-beneath it or change the course from <span class="point0">Point 0</span>
-to <span class="point1">Point 1</span> on the map🗺️.
+degrees (h<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="degrees">°</span>) and the course to compass🧭degrees
+(c<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="degrees">°</span>): 25 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="milliwindroses">$\text m\alpha$</span> = 9
+c<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="degrees">°</span>. To rotate🔄the color🎨wheel compass🧭,
+use the “hue”
+[range](https://observablehq.com/framework/inputs/range)🎚️and [hue
+bar](https://observablehq.com/@paavanb/progressive-color-picker) inputs
+beneath it or change the course from Point <span class="point0">0</span>
+to <span class="point1">1</span> on the map🗺️.
 
 ## Red green blue (rgb)
 
-Together, the <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a thousandth of a turn">milliturn</span> (mt) values of
-the range🎚️inputs beneath the hue bar📊inputs form a hue saturation
-lightness (hsl) triplet that, like a
-red🔴green🟢blue🔵([rgb](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
-or
-[hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
-(hex) triplet, specifies a color🎨. The table underneath the
-range🎚️inputs compares the current <span class="point0">Point 0</span>
-to <span class="point1">Point 1</span> course in its top row with the
+The table beneath the hue bar input compares the current course from
+Point <span class="point0">0</span> to <span class="point1">1</span> in
+its top row with the
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
 and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
-directions.
+directions. Together, the range🎚️inputs underneath the hue bar form a
+hue saturation lightness (hsl) triplet. Like
+red🔴green🟢blue🔵([rgb](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
+or
+[hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
+(hex) triplets, hsl triplets specify a full-fledged color🎨instead of
+just a hue.
 
 <div>
 
@@ -654,63 +687,66 @@ regardless of the [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
 or [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore,
 we can reuse♻️colors🎨across many different contexts. Typically,
-starting points are red: North (<span class="color0">0</span> m*α*),
-[Longitude
+starting points are red: North (<span class="color0">0</span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliwindroses">$\text m\alpha$</span>), [Longitude
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color0">0</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\underline{\text m\lambda}$</span>), and
-midnight (<span class="color0">0</span> <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a day">md</span>), and midpoints are cyan:
-South (<span class="color5">500</span> m*α*), [Longitude
+data-bs-title="milliparallels">$\text m\lambda$</span>), and midnight
+(<span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millidays">md</span>), and
+midpoints are cyan: South (<span class="color5">500</span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliwindroses">$\text m\alpha$</span>), [Longitude
 5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color5">500</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\underline{\text m\lambda}$</span>), and
-noon (<span class="color5">500</span> <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a day">md</span>).
+data-bs-title="milliparallels">$\text m\lambda$</span>), and noon
+(<span class="color5">500</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millidays">md</span>).
 
-The Equator, also known as Latitude 0, is the [major
+The Equator (<span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millimeridians">$\text m\phi$</span>) is the [major
 latitude](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
 midway between the South (<span class="color750">-250</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>) and
-North (<span class="color250">250</span> <span class="tool"
+data-bs-title="millimeridians">$\text m\phi$</span>) and North
+(<span class="color250">250</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>) Pole.
-The other four major latitudes depend on the [axial
+data-bs-title="millimeridians">$\text m\phi$</span>) Pole. The other
+four major latitudes depend on the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
-of the Earth🌏(<span class="color065">65</span> mt): the Tropics of
+of the Earth🌏(<span class="color065">65</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliturn">mt</span>): the
+Tropics of
 [Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(<span class="color065">65</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>) and
+data-bs-title="millimeridians">$\text m\phi$</span>) and
 [Capricorn](https://en.wikipedia.org/wiki/Tropic_of_Capricorn#:~:text=the%20southernmost%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♑️(<span class="color935">-65</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>), and
-the
+data-bs-title="millimeridians">$\text m\phi$</span>), and the
 [Arctic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
 (<span class="color250">250</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span> –
+data-bs-title="millimeridians">$\text m\phi$</span> –
 <span class="color065">65</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span> =
+data-bs-title="millimeridians">$\text m\phi$</span> =
 <span class="color185">185</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>) and
+data-bs-title="millimeridians">$\text m\phi$</span>) and
 [Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
 (<span class="color065">65</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span> –
+data-bs-title="millimeridians">$\text m\phi$</span> –
 <span class="color250">250</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span> =
+data-bs-title="millimeridians">$\text m\phi$</span> =
 <span class="color815">-185</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>)
-Circles.
+data-bs-title="millimeridians">$\text m\phi$</span>) Circles.
 
 # Dec time zones
 
@@ -718,63 +754,78 @@ Enable the “Grid” toggle✅input to see Latitudes
 [-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
 (<span class="color8">-200</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>),
+data-bs-title="millimeridians">$\text m\phi$</span>),
 [-1](https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane)
 (<span class="color9">-100</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>), 0
+data-bs-title="millimeridians">$\text m\phi$</span>), 0
 (<span class="color0">0</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>),
+data-bs-title="millimeridians">$\text m\phi$</span>),
 [1](https://en.wikipedia.org/wiki/36th_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane)
 (<span class="color1">100</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>), and
+data-bs-title="millimeridians">$\text m\phi$</span>), and
 [2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
 (<span class="color2">200</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\underline{\text m\phi}$</span>) on the
-map🗺️above along with the ten major longitudes that divide the
-Earth🌍into the ten Dec time zones. Notably, Longitude 0 is the major
-longitude that serves as the Dec [Prime
+data-bs-title="millimeridians">$\text m\phi$</span>) on the map🗺️above
+along with the ten major longitudes that divide the Earth🌍into the ten
+Dec time zones. Notably, Longitude 0 is the major longitude that serves
+as both the [Prime
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)
-and the [International Date
-Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next).
+and [International Date
+Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
+in Dec.
 
 Like the ten major longitudes that separate them, Dec time zones are
 numbered <span class="color0">0</span> to <span class="color9">9</span>.
-The number assigned to each time zone is its offset from Zone
-<span class="color0">0</span>. Dec offsets are positive integer
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span>
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="deciday">dd</span>). To obtain the offset at a location,
-we
+Based on its current <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a parallel">deciparallel</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciparallel">d*λ*</span>) longitude, ${point0lHsl},
+<span class="point0">Point 0</span> on the map🗺️above is in Zone
+${point0zHsl}. The number assigned to each time zone is its offset from
+Zone <span class="color0">0</span> in <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</span>). To obtain the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="deciday">dd</span> offset at a
+location, we
 [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-its d*λ* longitude: ⌊d*λ*⌋. Based on its current d*λ* longitude,
-${point0lHsl}, <span class="point0">Point 0</span> on the map🗺️above is
-in Zone ${point0zHsl}.
+its <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciparallel">d*λ*</span> longitude: ⌊${decLonHsl}⌋ =
+${decZonHsl}.
 
-Each Dec time zone is one <span class="under tool"
-data-bs-toggle="tooltip"
-data-bs-title="a tenth of a circle of latitude">deciparallel</span>
-(d*λ*) wide and half of a meridian (<span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="meridian">$\underline\phi$</span>) long. While one
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridian">$\underline\phi$</span> is always about one c
-long, the length of a parallel (*λ*) [varies by
+``` {ojs}
+//| echo: false
+//| label: loninput
+viewof longitude = Inputs.range([0, 10], {label: "Longitude", value: 5, step: .01})
+```
+
+Each Dec time zone is one <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciparallel">d*λ*</span> wide and half of a meridian
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meridian">*ϕ*</span>) long. While one <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="meridian">*ϕ*</span> is always
+about one <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</span> long, the length of a parallel
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="parallel">*λ*</span>) [varies by
 latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude).
-At the Equator, one *λ* is roughly one c long. At the
+At the Equator, one <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="parallel">*λ*</span> is roughly one <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="taur">c</span> long. At the
 [North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
 or
 [South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
-Pole, the length of *λ* is zero. In general, the approximate length of a
-parallel is the
+Pole, the length of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="parallel">*λ*</span> is zero. In general, the approximate
+length of a parallel is the
 [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
 of its <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridian">$\underline\phi$</span> latitude:
-cos(${parLat}) = ${parLen}.
+data-bs-title="meridian">*ϕ*</span> latitude: cos(${parLat}) =
+${parLen}.
 
 ``` {ojs}
 //| echo: false
@@ -786,20 +837,20 @@ viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: 
 
 [UTC time zone
 offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
-range from ${rainbowN5zn} to ${rainbowP583} <span class="under tool"
+range from ${rainbowN5zn} to ${rainbowP583} <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>. According to
 your web browser, your UTC offset is ${utcOffHslM} ÷ 144 = ${utcOffHslD}
-<span class="under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</span>. The Dec time zone that corresponds to
 your UTC offset is Zone ${decZonHslP}. This Dec time zone is
-${utcOffDiff} <span class="under tool" data-bs-toggle="tooltip"
+${utcOffDiff} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</span> ${utcOffDiff \< 0 ? “behind” :
 “ahead”} of time zones with your UTC offset. The times in corresponding
-Dec and UTC time zones can differ by up to 0.5 <span class="under tool"
+Dec and UTC time zones can differ by up to 0.5 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>.
 
-We can obtain the time in Zone <span class="color0">0</span> by
-subtracting the offset of any time zone from its time. Inversely, we can
+To obtain the time in Zone <span class="color0">0</span>, we can
+subtract the offset of any time zone from its time. Inversely, we can
 get the time in any time zone by adding its offset to the Zone
 <span class="color0">0</span> time. The date and time are the exact same
 in Zone <span class="color0">0</span> and
@@ -817,35 +868,39 @@ in Zone <span class="color0">0</span>, we get
 ${decYearHsl}+${decDateHsl} as the date and
 ${decTimeHsl}${decSign}${decZonHslA} as the time.
 
-We can apply color🎨labels🏷️based on <span class="under tool"
+We can apply color🎨labels🏷️based on <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a millennium">millimillennia</span> (mk)
-and <span class="under tool" data-bs-toggle="tooltip"
+and <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a year">milliyears</span> (my) to Dec
 dates in the year+day format. Every year starts on <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="March 1"><u>Day 0</u></span>
+data-bs-toggle="tooltip" data-bs-title="March 1">Day 0</span>
 (<span class="color0">0</span> my). The midyear point
-(<span class="color5">500</span> my) is noon of <span class="under tool"
+(<span class="color5">500</span> my) is noon of <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="August 30">Day 182</span> in
-common years and midnight of <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="August 31">Day 183</span> in
-leap years. Every millennium starts with Year 0
-(<span class="color0">0</span> mk) and has Year 500
+common years and midnight of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="August 31">Day 183</span> in leap years. Every millennium
+starts with Year 0 (<span class="color0">0</span> mk) and has Year 500
 (<span class="color5">500</span> mk) as its midpoint.
 
 # Zone equatorial meter (zem)
 
-Apart from c, Dec also measures distance using a unit called the
-**z**one **e**quatorial **m**eter (zem). The width of a Dec time zone at
-the Equator is approximately ten million (~10<sup>7</sup>) zems.
-Similarly, the distance from the Equator to one of the Poles is
-~10<sup>7</sup>
+Apart from <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</span>, Dec also measures distance using a unit
+called the **z**one **e**quatorial **m**eter (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span>). The width of a Dec
+time zone at the Equator is approximately ten million (~10<sup>7</sup>)
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meters">zems</span>. Similarly, the
+distance from the Equator to one of the Poles is ~10<sup>7</sup>
 [meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units).
-In other words, a <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a polar circumference">decimeridian</span>
+In other words, a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a meridian">decimeridian</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridians">$\underline{\text d\phi}$</span>) is
-~10<sup>7</sup> zems long and a [quarter
+data-bs-title="decimeridians">$\text d\phi$</span>) is ~10<sup>7</sup>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meters">zems</span> long and a [quarter
 meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole)
 is ~10<sup>7</sup> meters long.
 
@@ -1355,15 +1410,20 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 
 </div>
 
-You can approximate a zem (z) using your hands🤲. With your palms flat
-on a table in front of you and the tips of your thumbs👍touching, the
-maximum distance between the tips of your pinkies is about 1 z. When you
-spread out the fingers on one hand✋or do the “[call
+You can approximate a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span>) using your
+hands🤲. With your palms flat on a table in front of you and the tips of
+your thumbs👍touching, the maximum distance between the tips of your
+pinkies is about 1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span>. When you spread out the fingers on one
+hand✋or do the “[call
 me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)”,
 “[drink](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=placing%20the%20thumb%20to%20the%20mouth%20and%20motioning%20the%20little%20finger%20upward%20as%20if%20tipping%20up%20a%20bottle%27s%20bottom%20end)”,
 or
 “[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)”🤙gesture,
-the tips of your thumb👍and pinky are roughly 0.5 z apart.
+the tips of your thumb👍and pinky are roughly 0.5 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span> apart.
 
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1376,12 +1436,15 @@ href="https://commons.wikimedia.org/wiki/File:Extended_arm.jpg">Wikimedia</a></f
 
 </div>
 
-To visualize a square zem, imagine four people standing in a circle,
-facing inward, each with their right hand✋placed on top of the elbow of
-the person to their right. Alternatively, two people can stand in front
-of each other and raise their arms💪, placing one hand✋on the elbow of
-the other person and the other hand✋on their own elbow to form a
-square.
+To visualize a square <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span>), imagine four people
+standing in a circle, facing inward, each with their right hand✋placed
+on top of the elbow of the person to their right. Alternatively, two
+people can stand in front of each other and raise their arms💪, placing
+one hand✋on the elbow of the other person and the other hand✋on their
+own elbow to form a square.
 
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1394,15 +1457,19 @@ href="https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg">W
 
 </div>
 
-You can approximate a square zem yourself by sitting in a chair🪑or
-standing🧍with your knees and feet🦶1 z, 4 <span class="under tool"
+You can approximate a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span> yourself by sitting in a
+chair🪑or standing🧍with your knees and feet🦶1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span>, 4
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a meter">decimeters</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decimeters">dm</span>), or 16
+inches apart, which is likely to be more or less the width of your hips
+or shoulders. The top of the square <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="tenths of a meter">decimeters</span>
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="decimeters">dm</span>), or 16 inches apart, which is
-likely to be more or less the width of your hips or shoulders. The top
-of the square zem will be between your knees, its bottom will be between
-your ankles or feet🦶, and its sides between your shins.
+data-bs-title="zone equatorial meter">zem</span> will be between your
+knees, its bottom will be between your ankles or feet🦶, and its sides
+between your shins.
 
 <div id="cubic" class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1690,64 +1757,89 @@ style="text-align:center;">
 </div>
 
 If two people sit facing each other with their legs🦵bent at 25
-<span class="under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a hundredth of a turn">centiturn</span>
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="centiturn">ct</span>) angles and their knees 1 z apart,
-there will be around a cubic zem of space between their legs🦵.
-According to [dimensions.com](https://www.dimensions.com), 115
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="hundredths of a zem">centizems</span>
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="centizems">cz</span>) is the [typical seat
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centiturn">ct</span>) angles and their knees 1
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span>
+apart, there will be around a cubic <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span> of space between their
+legs🦵. According to [dimensions.com](https://www.dimensions.com), 115
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of a zem">centizems</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centizems">cz</span>) is the
+[typical seat
 height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
 and 95 cz is a [low seat
 height](https://www.dimensions.com/element/sitting-female-front-1#:~:text=Seat%20Height%20(Low)%3A-,15%E2%80%9D%20%7C%2038%20cm,-Style%3A%20Casual)
-for both men and women age 25 to 45. A <span class="under tool"
+for both men and women age 25 to 45. A <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="a hundredth of a zem">centizem</span> is 4
-<span class="under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a meter">millimeters</span>
-(<span class="under tool" data-bs-toggle="tooltip"
+(<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeters">mm</span>).
 
-In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, zem means Earth🌏.
-This is fitting because all Dec units are based on physical properties
-of the Earth🌎. At the Equator, the Earth🌍rotates on its axis at a
-speed of 1.00224 v. If we could indefinitely maintain this speed while
-flying West in an airplane✈️towards the setting sun☀️, we would be able
-to perpetually fly [into the
+In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span> means Earth🌏. This is
+fitting because all Dec units are based on physical attributes of the
+Earth🌎. At the Equator, the Earth🌍rotates on its axis at a speed of
+1.00224 v. If we could indefinitely maintain this speed while flying
+West in an airplane✈️towards the setting sun☀️, we would be able to
+perpetually fly [into the
 sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
 ## Speed of sound
 
 To travel fast enough, the airplane✈️would need to surpass the [speed of
-sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊:
-0.735048 v or Mach 1. [Mach
-numbers](https://en.wikipedia.org/wiki/Mach_number) are similar to v,
-but are relative to the speed of sound🔊rather than the equatorial speed
-of rotation of the Earth🌏. One v is Mach 1.3635. A useful point of
-reference is the cruising speed of a [Boeing
-747](https://en.wikipedia.org/wiki/Boeing_747#:~:text=sweep%2C%20allowing%20a-,Mach%C2%A00.85,-%28490%C2%A0kn;%20900):
-0.54 v or Mach 0.85.
+sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊,
+which at 15<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="degrees">°</span>
+[Celsius](https://en.wikipedia.org/wiki/Celsius#:~:text=the%20unit%20of%20temperature%20on%20the%20Celsius%20temperature%20scale)
+and 1 [standard
+atmosphere](https://en.wikipedia.org/wiki/Standard_atmosphere_(unit)#:~:text=a%20unit%20of%20pressure%20defined%20as%20101325%20Pa)
+is 0.735048 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="romegas">v</span> or Mach 1. [Mach
+numbers](https://en.wikipedia.org/wiki/Mach_number) are not as reliable
+as <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="romega">v</span>, because they are relative to the speed
+of sound🔊, which varies greatly by air temperature and pressure. The
+cruising speed of a [Boeing
+747](https://en.wikipedia.org/wiki/Boeing_747#:~:text=sweep%2C%20allowing%20a-,Mach%C2%A00.85,-%28490%C2%A0kn;%20900)
+is 0.54 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="romegas">v</span> or Mach 0.85.
 
 The highway🛣️speed of a car🚗is roughly tenfold slower than the cruising
-speed of airplane✈️. If we are driving on a highway🛣️at 50 mv and our
-exit is 1000 zems away, we will have 20 <span class="under tool"
-data-bs-toggle="tooltip"
+speed of airplane✈️. If we are driving on a highway🛣️at 50
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliromega">mv</span> and our exit is 1000
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meters">zems</span> away, we will have 20
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span> until
 we have to exit the highway🛣️. To ensure we do not miss our exit, we can
-periodically check a countdown of the remaining zem: ${zLeft}.
+periodically check a countdown of the remaining <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span>: ${zLeft}.
 
 In Dec, centimillidays are called beats because they are similar in
 duration to heart❤️beats or musical🎵beats. A beat is
 <span class="color864">864</span> milliseconds. One mc is a hundred
-thousand (10<sup>5</sup>) zem (z) and one day (d) is 10<sup>5</sup>
-beats (b). Therefore, 1 mv = $\text{mc}\over\text d$ =
-$\text z\over\text b$. It is easy to convert z into meters (m), z =
-$2\over5$ m, or mv into kilometers per hour (kmph): mv = $5\over3$ kmph.
+thousand (10<sup>5</sup>) <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span> and one day (d) is 10<sup>5</sup> beats
+(b). Therefore, 1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliromega">mv</span> = $\text{mc}\over\text d$ =
+$\text z\over\text b$. It is easy to convert <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span> into meters (m),
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span>
+= $2\over5$ m, or <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliromega">mv</span> into kilometers per hour (kmph):
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliromega">mv</span> = $5\over3$ kmph.
 
-The table below shows the [United States (US) customary
+The table below shows the [United States🇺🇸(US) customary
 units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 that Dec redefines based on the [International System of
 Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
@@ -1755,8 +1847,8 @@ Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%2
 column are [fold
 changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
 from original to redefined units. A fold change of
-<span class="color0">1</span> indicates no change. Units that are
-derived in the same way have the same fold change.
+<span class="color0">1</span> means no change. Units that are derived in
+the same way have the same fold change.
 
 ## Zem conversion table
 
@@ -1897,46 +1989,49 @@ redefined units rely on [fractions based on powers of
 two](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
 to scale up or down as needed. Redefined units serve as convenient
 reference points and can easily be converted to Dec or SI units. Miles
-are redefined such that one Dec mile per hour is one
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="millitaurs per day">mv</span>. A Dec acre is equal to
-$2\over5$
+are redefined such that one Dec mile per hour is one <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliromega">mv</span>. A Dec
+acre is equal to $2\over5$
 [hectares](https://en.wikipedia.org/wiki/Hectare#:~:text=10%2C000%20square%20metres)
 or 40
 [are](https://en.wikipedia.org/wiki/Hectare#Are:~:text=area%2C%20equal%20to-,100%20square%20metres).
 
-A square zem (z<sup>2</sup>) is 1 <span class="under tool"
+A <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="1.6 thousandths of an are">hexamilliare</span> (x) is 1
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span>, 16 square
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a meter">decimeters</span> (<span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="1.6 thousandths of an are">hexamilliare</span> (x), 16
-square <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a meter">decimeters</span> (dm<sup>2</sup>),
+data-bs-title="decimeters">dm</span><sup>2</sup>),
 1.<span style="text-decoration-line:overline;">7</span> Dec square
-feet🦶, or 256 Dec square inches. A square <span class="under tool"
+feet🦶, or 256 Dec square inches. A square <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="ten zem">decazem</span>
-(Dz<sup>2</sup>) is 1 <span class="under tool" data-bs-toggle="tooltip"
+(Dz<sup>2</sup>) is 1 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
 square meters (m²), 19.753086 Dec square yards, or 100 x. A square
-<span class="under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a thousand of zem">kilozem</span> (kz<sup>2</sup>) is 1
-<span class="under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="sixteen hundred ares">hexakilare</span>, 0.16 square
-<span class="under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of meters">kilometers</span> (km²), 0.0576 Dec
-square miles, 40 Dec acres, 16 <span class="under tool"
+square miles, 40 Dec acres, 16 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundreds of ares">hectares</span>, or 10<sup>6</sup> x.
 
-A cubic <span class="under tool" data-bs-toggle="tooltip"
+A cubic <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a zem">decizem</span> (dz<sup>3</sup>) is 1
-shot, 2 Dec ounces, or 64 <span class="under tool"
-data-bs-toggle="tooltip"
+shot, 2 Dec ounces, or 64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a liter">milliliters</span> (mL). A shot
 of water🌊weighs 64 grams (g). Even though the weight of a Dec ounce of
 water🌊is close to a sixteenth of a Dec pound, Dec does not measure
-weights in ounces. A cubic zem (z<sup>3</sup>) is 1 keg, 16 Dec gallons,
-or 64
+weights in ounces. A cubic <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span><sup>3</sup>) is 1
+keg, 16 Dec gallons, or 64
 [liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic)
-(L). A keg of water🌊weighs 64 <span class="under tool"
+(L). A keg of water🌊weighs 64 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousands of grams">kilograms</span> (kg) or 128 Dec
 pounds.
@@ -1954,8 +2049,9 @@ href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg
 
 ## Body mass index
 
-A weight of 64 kg and a height of 4 z, 1.6 m, or 64 inches correspond to
-a [body mass
+A weight of 64 kg and a height of 4 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span>, 1.6 m, or 64
+inches correspond to a [body mass
 index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
 (BMI) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$.
 A BMI above 4.8 $\text {kg}\over\text z^2$ or 30
@@ -1965,8 +2061,11 @@ If [Leonardo da
 Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s
 [Vitruvian
 Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
-were 4 z tall, we could measure 1 z from the knee to the foot🦶of one of
-his legs🦵or from the elbow to the fingertips of one of his arms💪.
+were 4 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span> tall, we could measure 1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span> from the knee to
+the foot🦶of one of his legs🦵or from the elbow to the fingertips of one
+of his arms💪.
 
 # Summary
 
@@ -2008,9 +2107,14 @@ the map🗺️ and color🎨wheel compass visualizations in this article or the
 2004 [arxiv](https://arxiv.org/abs/physics/0412078)
 [article](https://www.roma1.infn.it/~dagos/history/sm/sm.html), that I
 found on <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="April 9, 2025"><u><span class="color025">2025</span>+<span class="color039">039</span></u></span>,
-which includes the definition of a zem, 1 z = 10<sup>-8</sup> c = 4 dm,
-in [a table of possible length
+data-bs-title="April 9, 2025"><span class="color025">2025</span>+<span class="color039">039</span></span>,
+which includes the definition of a <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span>, 1 z = 10<sup>-8</sup>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</span> = 4 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decimeters">dm</span>, in [a
+table of possible length
 units](https://www.roma1.infn.it/~dagos/history/sm/node12.html):
 
 - [Agnoli, Paolo](http://www.paoloagnoli.it) & [D’Agostini,
@@ -2034,40 +2138,6 @@ units](https://www.roma1.infn.it/~dagos/history/sm/node12.html):
   data-bs-title="March 7, 2024"><u>2024+006</u></span>. “Progressive
   Color Picker.” ${decYear}+${decDoty}.
   <https://observablehq.com/@paavanb/progressive-color-picker>.
-
-Please help to promote Dec by citing it using the information below. You
-may also want to cite the Observable notebooks that I adapted into the
-
-- [Pearson, Tom](https://www.2x2.graphics). <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="2013-07-03"><u><span class="yellow">2013</span>+<span class="cyan">124</span></u></span>.
-  “Simple D3 clock.”
-  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
-  <https://observablehq.com/@d3/simple-clock>.
-- [Heyen, Frank](https://fheyen.github.io). <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="2021-11-02"><u><span class="yellow">2021</span>+<span class="cyan">246</span></u></span>.
-  “BarChart Clock.”
-  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
-  <https://observablehq.com/@fheyen/barchart-clock>.
-- [Johnson, Ian](https://enjalot.github.io). <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="2021-05-30"><u><span class="yellow">2021</span>+<span class="cyan">090</span></u></span>.
-  “Draggable World Map Coordinates Input.”
-  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
-  <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
-- [Bridges, Dan](https://www.danbridges.org). <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="2022-01-06"><u><span class="yellow">2021</span>+<span class="cyan">311</span></u></span>.
-  “Visualizing Seasonal Daylight.”
-  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
-  <https://observablehq.com/@dbridges/visualizing-seasonal-daylight>.
-- [Clements, John](https://www.brinckerhoff.org). <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="2021-05-31"><u><span class="yellow">2014</span>+<span class="cyan">091</span></u></span>,
-  “Decimal Time Zones.”
-  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
-  <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
 
 ``` {ojs}
 //| echo: false
@@ -2822,6 +2892,10 @@ decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecew
 decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
 decTimeZ0p = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 decTimeZ0n = textcolor((decTimeN0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decLon = longitude % 10
+decLonHsl = textcolor(decLon.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(decLon / 10)).h}` + slStr)
+decZon = Math.floor(decLon)
+decZonHsl = textcolor(decZon, `hsl(${d3.hsl(piecewiseColor(decZon / 10)).h}` + slStr)
 parLat = textcolor(latitude.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
 parCos = Math.cos(latitude * 2 * Math.PI)
 parLen = textcolor(parCos.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
@@ -2950,7 +3024,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath();
       path.pointRadius(point_radius_2);
       path(pointPath);
-      context.fillStyle = window.darkmode ? "#CC042C" : "pink";
+      context.fillStyle = window.darkmode ? "#A24" : "#FDF";
       context.fill();
       context.strokeStyle = window.darkmode ? "white" : "black";
       context.stroke();
@@ -2960,7 +3034,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath();
       path.pointRadius(point_radius_2);
       path(pointPath);
-      context.fillStyle = window.darkmode ? "blue" : "cyan";
+      context.fillStyle = window.darkmode ? "#24A" : "#BFF";
       context.fill();
       context.strokeStyle = window.darkmode ? "white" : "black";
       context.stroke();
@@ -3095,8 +3169,15 @@ point_radius_2 = width / 150 * mapsize / 100 + 3
 Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
-distance_mtaur = Math.floor(distance_km / 40)
-traveltime = Math.floor(distance_mtaur / travelspeed * 1000)
+distance_mc = distance_km / 40
+distance_mcHsl = textcolor(distance_mc.toFixed(0), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
+distance_c = distance_mc / 1000
+distance_cHsl = textcolor(distance_c.toFixed(3), `hsl(${d3.hsl(piecewiseColor(distance_c % 1)).h}` + slStr)
+velocity_v = travelspeed / 1000
+velocity_vHsl = textcolor(velocity_v.toFixed(3), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
+velocity_mvHsl = textcolor(travelspeed.toFixed(0), `hsl(${d3.hsl(piecewiseColor(travelspeed / 1000)).h}` + slStr)
+traveltime = Math.round(distance_mc) / Math.round(travelspeed)
+traveltimeHsl = Number.isFinite(traveltime) ? textcolor(traveltime.toFixed(3), `hsl(${d3.hsl(piecewiseColor(traveltime % 1)).h}` + slStr) : traveltime
 nb_points = Math.round(distance_km/150)
 d3format = require("d3-format@1")
 function input(config) {
@@ -3923,10 +4004,10 @@ div#lightslider > div {
 div#lightslider > label {
   max-width: 60px;
 }
-div#latinput label {
-  --label-width: 65px;
+div#loninput label, div#latinput label {
+  --label-width: 75px;
 }
-div#latinput input[type="number"] {
+div#loninput input[type="number"], div#latinput input[type="number"] {
   width: 125px;
 }
 div#lightslider input[type="number"] {
