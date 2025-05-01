@@ -723,12 +723,31 @@ decTime = ydz[1] % 1
 decZone = ydz[2]
 decZonePos = (ydz[2] + 10) % 10
 decSign = decZone < 0 ? "+" : "–"
+decSignOff = offset < 0 ? "+" : "–"
 dzP0 = unix2dote(now, 0)
+dzOff = unix2dote(now, offset)
+ydzOff = dote2date(...dzOff)
+decYearOff = ydzOff[0]
+decDateOff = Math.floor(ydzOff[1])
+decDotyOff = decDateOff.toString().padStart(3, "0")
+decTimeOff = ydzOff[1] % 1
+decOffsetPosi = (offset + 10) % 10
+decOffsetNega = decOffsetPosi - 10
+decOffsetHslP = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decOffsetHslN = textcolor(decOffsetNega, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decOffsetHsl0 = textcolor(offset, `hsl(${d3.hsl(piecewiseColor((offset + 10) % 10 / 10)).h}` + slStr)
+decOffsetHsl1 = textcolor(Math.abs(offset), `hsl(${d3.hsl(piecewiseColor((offset + 10) % 10 / 10)).h}` + slStr)
+decYearOffHsl = textcolor(decYearOff, `hsl(${d3.hsl(piecewiseColor(decYearOff % 1000 / 1000)).h}` + slStr)
+decDateOffHsl = textcolor(decDateOff.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateOff / (365 + isLeapOff))).h}` + slStr)
+decTimeOffHsl = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 dzP8 = unix2dote(now, 8)
 ydzP0 = dote2date(...dzP0)
 ydzP8 = dote2date(...dzP8)
 dzN2 = unix2dote(now, -2)
 ydzN2 = dote2date(...dzN2)
+decYearP0 = ydzP0[0]
+decDateP0 = Math.floor(ydzP0[1])
+decDotyP0 = decDateP0.toString().padStart(3, "0")
 decYearP8 = ydzP8[0]
 decYearN2 = ydzN2[0]
 decDateP8 = Math.floor(ydzP8[1])
@@ -739,8 +758,8 @@ decTimeN0 = (decTimeP0 - 1) % 1
 utcOffsetM = -(new Date).getTimezoneOffset()
 utcOffsetD = utcOffsetM / 144
 utcOffDiff = (Math.round(utcOffsetD) - utcOffsetD).toFixed(2).replaceAll(/[.]0$/g, "")
+utcOffDiffHsl = textcolor(utcOffDiff, `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
 utcOffsetP = (utcOffsetD + 10) % 10
-decZonHslN = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 decZonHslA = textcolor(Math.abs(decZone), `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
@@ -749,8 +768,6 @@ utcOffHslP = textcolor(utcOffsetP.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3
 decYearHsl = textcolor(decYear, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
 decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
 decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
-decTimeZ0p = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
-decTimeZ0n = textcolor((decTimeN0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 decLon = longitude % 10
 decLonHsl = textcolor(decLon.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(decLon / 10)).h}` + slStr)
 decZon = Math.floor(decLon)
@@ -776,6 +793,7 @@ decSecond = (decMinute % 1) * 60
 isoHour = Math.floor(decHour)
 isoMinute = Math.floor(decMinute)
 isoSecond = Math.floor(decSecond)
+isLeapOff = decYearOff % 4 == 0 && decYearOff % 100 != 0 || decYearOff % 400 == 0;
 isLeapP8 = decYearP8 % 4 == 0 && decYearP8 % 100 != 0 || decYearP8 % 400 == 0;
 isLeapN2 = decYearN2 % 4 == 0 && decYearN2 % 100 != 0 || decYearN2 % 400 == 0;
 timezones = FileAttachment("../asset/timezones.json").json()
@@ -893,7 +911,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath();
       path.pointRadius(point_radius_2);
       path(pointPath);
-      context.fillStyle = window.darkmode ? "#24A" : "#BFF";
+      context.fillStyle = window.darkmode ? "#24B" : "#BFF";
       context.fill();
       context.strokeStyle = window.darkmode ? "white" : "black";
       context.stroke();
@@ -1538,6 +1556,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color050 {
+  background: hsl(329.88235294117646 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(329.88235294117646, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color065 {
   background: hsl(320.94117647058823 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(320.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -1864,10 +1890,10 @@ div#lightslider > div {
 div#lightslider > label {
   max-width: 60px;
 }
-div#loninput label, div#latinput label {
+div#loninput label, div#latinput label , div#offinput label {
   --label-width: 75px;
 }
-div#loninput input[type="number"], div#latinput input[type="number"] {
+div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"] {
   width: 125px;
 }
 div#lightslider input[type="number"] {
