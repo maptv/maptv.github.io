@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+058
+2025+061
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -12,6 +12,7 @@ Martin Laptev
   - [Red green blue (rgb)](#rgb)
 - [Dec time zones](#dtz)
   - [Coordinated Universal Time](#utc)
+  - [Millenium Year Day](#myd)
 - [Zone equatorial meter (zem)](#zem)
   - [Speed of sound](#sos)
   - [Zem conversion table](#zct)
@@ -67,7 +68,7 @@ data-bs-title="thousandths of a meridian">milli[meridians](https://en.wikipedia.
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span>) of Points
 <span class="point0">0</span> and <span class="point1">1</span> on the
-map🗺️beneath the table. By default, <span class="point0">Point 0</span>
+map🗺️beneath the table. By default, Point <span class="point0">0</span>
 is at <span class="color8">800</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="milliparallels">$\text m\lambda$</span> and
@@ -75,7 +76,7 @@ data-bs-title="milliparallels">$\text m\lambda$</span> and
 data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span>, near the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
-of Ecuador🇪🇨, and <span class="point1">Point 1</span> is at
+of Ecuador🇪🇨, and Point <span class="point1">1</span> is at
 <span class="color8">800</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="milliparallels">$\text m\lambda$</span> and
@@ -149,8 +150,8 @@ on its
 [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole),
 and $\text c\over\text d$ = <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="romega">v</span> = <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="romega">*r**ω*</span> ≈ its
-speed of the rotation at the
+data-bs-toggle="tooltip" data-bs-title="romega">*r**ω*</span> ≈ the
+speed of its rotation at the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
 At a speed of <span class="color5">0.5</span> <span class="tool"
@@ -549,10 +550,15 @@ decBar = colorbar({
 <thead>
 <tr>
 <th>🧭</th>
-<th><strong>m<span class="math inline"><em>α</em></span></strong></th>
-<th><strong>c°</strong></th>
-<th><strong>h°</strong></th>
-<th><strong>hex</strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliwindroses"><span class="math inline">$\text
+m\alpha$</span></span></strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="compass degrees">c°</span></strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hue degrees">h°</span></strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span></strong></th>
 </tr>
 </thead>
 <tbody>
@@ -634,15 +640,15 @@ data-bs-toggle="tooltip"
 data-bs-title="milliwindroses">$\text m\alpha$</span>. We can convert
 the hue to [HSL and
 HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
-degrees (h<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="degrees">°</span>) and the course to compass🧭degrees
-(c<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="degrees">°</span>): 25 <span class="tool"
+degrees (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hue degrees">h°</span>) and the course to
+compass🧭degrees (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="compass degrees">c°</span>): 25 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="milliwindroses">$\text m\alpha$</span> = 9
-c<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="degrees">°</span>. To rotate🔄the color🎨wheel compass🧭,
-use the “hue”
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="compass degrees">c°</span>. To rotate🔄the color🎨wheel
+compass🧭, use the “hue”
 [range](https://observablehq.com/framework/inputs/range)🎚️and [hue
 bar](https://observablehq.com/@paavanb/progressive-color-picker) inputs
 beneath it or change the course from Point <span class="point0">0</span>
@@ -657,12 +663,16 @@ its top row with the
 and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
 directions. Together, the range🎚️inputs underneath the hue bar form a
-hue saturation lightness (hsl) triplet. Like
+hue saturation lightness (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hue saturation lightness">hsl</span>) triplet. Like
 red🔴green🟢blue🔵([rgb](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
 or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
-(hex) triplets, hsl triplets specify a full-fledged color🎨instead of
-just a hue.
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span>) triplets, <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="hue saturation lightness">hsl</span> triplets specify a
+full-fledged color🎨instead of just a hue.
 
 <div>
 
@@ -686,25 +696,22 @@ angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude
 regardless of the [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
 or [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore,
-we can reuse♻️colors🎨across many different contexts. Typically,
-starting points are red: North (<span class="color0">0</span>
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliwindroses">$\text m\alpha$</span>), [Longitude
+we can reuse♻️colors🎨across many different contexts. In most contexts,
+red designates starting points, like North
+(<span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="milliwindroses">$\text m\alpha$</span>) and [Longitude
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color0">0</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\text m\lambda$</span>), and midnight
-(<span class="color0">0</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millidays">md</span>), and
-midpoints are cyan: South (<span class="color5">500</span>
+data-bs-title="milliparallels">$\text m\lambda$</span>), and cyan
+indicates midpoints, such as South (<span class="color5">500</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliwindroses">$\text m\alpha$</span>), [Longitude
+data-bs-title="milliwindroses">$\text m\alpha$</span>) and [Longitude
 5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color5">500</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\text m\lambda$</span>), and noon
-(<span class="color5">500</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millidays">md</span>).
+data-bs-title="milliparallels">$\text m\lambda$</span>).
 
 The Equator (<span class="color0">0</span> <span class="tool"
 data-bs-toggle="tooltip"
@@ -716,7 +723,7 @@ data-bs-title="millimeridians">$\text m\phi$</span>) and North
 (<span class="color250">250</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span>) Pole. The other
-four major latitudes depend on the [axial
+major latitudes depend on the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
 of the Earth🌏(<span class="color065">65</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliturn">mt</span>): the
@@ -784,7 +791,7 @@ Based on its current <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a parallel">deciparallel</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciparallel">d*λ*</span>) longitude, ${point0lHsl},
-<span class="point0">Point 0</span> on the map🗺️above is in Zone
+Point <span class="point0">0</span> on the map🗺️above is in Zone
 ${point0zHsl}. The number assigned to each time zone is its offset from
 Zone <span class="color0">0</span> in <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
@@ -842,11 +849,11 @@ data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>. According to
 your web browser, your UTC offset is ${utcOffHslM} ÷ 144 = ${utcOffHslD}
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</span>. The Dec time zone that corresponds to
-your UTC offset is Zone ${decZonHslP}. This Dec time zone is
-${utcOffDiff} <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciday">dd</span> ${utcOffDiff \< 0 ? “behind” :
-“ahead”} of time zones with your UTC offset. The times in corresponding
-Dec and UTC time zones can differ by up to 0.5 <span class="tool"
+your UTC offset is Zone ${decZonHslP}. The time in corresponding Dec and
+UTC time zones can differ by up to <span class="color050">0.5</span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</span>. The time difference between your Dec
+and UTC time zones is ${utcOffDiffHsl} <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>.
 
 To obtain the time in Zone <span class="color0">0</span>, we can
@@ -857,31 +864,64 @@ in Zone <span class="color0">0</span> and
 [UTC<span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time).
 Zone <span class="color5">5</span> and
 [UTC<span class="color5">+12:00</span>](https://en.wikipedia.org/wiki/UTC%2B12:00)
-have the exact same date and time, both are exactly one day ahead of
+have the exact same date and time, both are precisely one day ahead of
 [UTC<span class="color5">-12:00</span>](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00).
 
 To avoid date mismatches with UTC time zones that have negative offsets,
-we can subtract ten dd from any positive Dec offset to make it negative.
-This way each Dec time zone has both a positive and a negative offset.
-When we add an offset of ${decZonHslN} dd to the current date and time
-in Zone <span class="color0">0</span>, we get
-${decYearHsl}+${decDateHsl} as the date and
-${decTimeHsl}${decSign}${decZonHslA} as the time.
+we can subtract ten <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decidays">dd</span> from any positive Dec offset to make
+it negative: ${decOffsetHslP} - <span class="color0">10</span> =
+${decOffsetHslN}. Therefore, each Dec time zone has both a positive and
+a negative offset. The two offsets in any time zone are precisely one
+day apart, result in the same time, and have the same color🎨label🏷️.
 
-We can apply color🎨labels🏷️based on <span class="tool"
+## Millenium Year Day
+
+``` {ojs}
+//| echo: false
+//| label: offinput
+viewof offset = Inputs.range([-10, 9], {label: "Offset", value: -2, step: 1})
+```
+
+When we add the offset selected by the range🎚️input above to the current
+date and time in Zone <span class="color0">0</span>, we get
+${decYearOffHsl}+${decDateOffHsl} as the date and
+${decTimeOffHsl}<span style="font-family:monospace;">${decSignOff}</span>${decOffsetHsl1}
+as the time. Dec dates consist of a year and a day-of-year
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span>). Dec times are composed of a
+time-of-day (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span>) and a time zone. We can apply
+color🎨labels🏷️to each component of Dec dates and times.
+
+Color🎨labels🏷️for years are based on <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="thousandths of a millennium">millimillennia</span> (mk)
-and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a year">milliyears</span> (my) to Dec
-dates in the year+day format. Every year starts on <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="March 1">Day 0</span>
-(<span class="color0">0</span> my). The midyear point
-(<span class="color5">500</span> my) is noon of <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="August 30">Day 182</span> in
-common years and midnight of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="August 31">Day 183</span> in leap years. Every millennium
-starts with Year 0 (<span class="color0">0</span> mk) and has Year 500
-(<span class="color5">500</span> mk) as its midpoint.
+data-bs-title="thousandths of a millennium">millimillennia</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millimillennia">mk</span>). Every millennium starts with
+Year 0 (<span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millimillennia">mk</span>) and
+has Year 500 (<span class="color5">500</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millimillennia">mk</span>) as
+its midpoint. <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">Doy</span> color🎨labels🏷️are derived from
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a year">milliyears</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliyears">my</span>). Every year starts on
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="March 1">Day
+0</span> (<span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliyears">my</span>). The
+midyear point (<span class="color5">500</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliyears">my</span>) is noon
+(<span class="color5">500</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millidays">md</span>) on
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="August 30">Day 182</span> in common years and midnight
+(<span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millidays">md</span>) on
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="August 31">Day 183</span> in leap years.
 
 # Zone equatorial meter (zem)
 
@@ -2121,22 +2161,22 @@ units](https://www.roma1.infn.it/~dagos/history/sm/node12.html):
   Giulio](https://www.roma1.infn.it/~dagos). <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="January 25, 2005"><u>2004+330</u></span>. “Why does the
-  meter beat the second?” ${decYear}+${decDoty}.
+  meter beat the second?” ${decYearP0}+${decDotyOff}.
   <https://arxiv.org/abs/physics/0412078>.
 - [Patel, Amit](https://observablehq.com/@redblobgames).
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="December 16, 2021"><u>2021+290</u></span>. “Compass
-  Rose.” ${decYear}+${decDoty}.
+  Rose.” ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@paavanb/progressive-color-picker>.
 - [Edwards, Paul](https://observablehq.com/@pjedwards).
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="August 19, 2022"><u>2022+171</u></span>. “Compass Rose
-  as legend with colors.” ${decYear}+${decDoty}.
+  as legend with colors.” ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors>.
 - [paavanb](https://observablehq.com/user/@paavanb). <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="March 7, 2024"><u>2024+006</u></span>. “Progressive
-  Color Picker.” ${decYear}+${decDoty}.
+  Color Picker.” ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@paavanb/progressive-color-picker>.
 
 ``` {ojs}
@@ -2864,12 +2904,31 @@ decTime = ydz[1] % 1
 decZone = ydz[2]
 decZonePos = (ydz[2] + 10) % 10
 decSign = decZone < 0 ? "+" : "–"
+decSignOff = offset < 0 ? "+" : "–"
 dzP0 = unix2dote(now, 0)
+dzOff = unix2dote(now, offset)
+ydzOff = dote2date(...dzOff)
+decYearOff = ydzOff[0]
+decDateOff = Math.floor(ydzOff[1])
+decDotyOff = decDateOff.toString().padStart(3, "0")
+decTimeOff = ydzOff[1] % 1
+decOffsetPosi = (offset + 10) % 10
+decOffsetNega = decOffsetPosi - 10
+decOffsetHslP = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decOffsetHslN = textcolor(decOffsetNega, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decOffsetHsl0 = textcolor(offset, `hsl(${d3.hsl(piecewiseColor((offset + 10) % 10 / 10)).h}` + slStr)
+decOffsetHsl1 = textcolor(Math.abs(offset), `hsl(${d3.hsl(piecewiseColor((offset + 10) % 10 / 10)).h}` + slStr)
+decYearOffHsl = textcolor(decYearOff, `hsl(${d3.hsl(piecewiseColor(decYearOff % 1000 / 1000)).h}` + slStr)
+decDateOffHsl = textcolor(decDateOff.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateOff / (365 + isLeapOff))).h}` + slStr)
+decTimeOffHsl = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 dzP8 = unix2dote(now, 8)
 ydzP0 = dote2date(...dzP0)
 ydzP8 = dote2date(...dzP8)
 dzN2 = unix2dote(now, -2)
 ydzN2 = dote2date(...dzN2)
+decYearP0 = ydzP0[0]
+decDateP0 = Math.floor(ydzP0[1])
+decDotyP0 = decDateP0.toString().padStart(3, "0")
 decYearP8 = ydzP8[0]
 decYearN2 = ydzN2[0]
 decDateP8 = Math.floor(ydzP8[1])
@@ -2880,8 +2939,8 @@ decTimeN0 = (decTimeP0 - 1) % 1
 utcOffsetM = -(new Date).getTimezoneOffset()
 utcOffsetD = utcOffsetM / 144
 utcOffDiff = (Math.round(utcOffsetD) - utcOffsetD).toFixed(2).replaceAll(/[.]0$/g, "")
+utcOffDiffHsl = textcolor(utcOffDiff, `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
 utcOffsetP = (utcOffsetD + 10) % 10
-decZonHslN = textcolor(decZone, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 decZonHslA = textcolor(Math.abs(decZone), `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
@@ -2890,8 +2949,6 @@ utcOffHslP = textcolor(utcOffsetP.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3
 decYearHsl = textcolor(decYear, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
 decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
 decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
-decTimeZ0p = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
-decTimeZ0n = textcolor((decTimeN0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 decLon = longitude % 10
 decLonHsl = textcolor(decLon.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(decLon / 10)).h}` + slStr)
 decZon = Math.floor(decLon)
@@ -2917,6 +2974,7 @@ decSecond = (decMinute % 1) * 60
 isoHour = Math.floor(decHour)
 isoMinute = Math.floor(decMinute)
 isoSecond = Math.floor(decSecond)
+isLeapOff = decYearOff % 4 == 0 && decYearOff % 100 != 0 || decYearOff % 400 == 0;
 isLeapP8 = decYearP8 % 4 == 0 && decYearP8 % 100 != 0 || decYearP8 % 400 == 0;
 isLeapN2 = decYearN2 % 4 == 0 && decYearN2 % 100 != 0 || decYearN2 % 400 == 0;
 timezones = FileAttachment("../asset/timezones.json").json()
@@ -3034,7 +3092,7 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath();
       path.pointRadius(point_radius_2);
       path(pointPath);
-      context.fillStyle = window.darkmode ? "#24A" : "#BFF";
+      context.fillStyle = window.darkmode ? "#24B" : "#BFF";
       context.fill();
       context.strokeStyle = window.darkmode ? "white" : "black";
       context.stroke();
@@ -3679,6 +3737,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color050 {
+  background: hsl(329.88235294117646 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(329.88235294117646, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color065 {
   background: hsl(320.94117647058823 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(320.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -4004,10 +4070,10 @@ div#lightslider > div {
 div#lightslider > label {
   max-width: 60px;
 }
-div#loninput label, div#latinput label {
+div#loninput label, div#latinput label , div#offinput label {
   --label-width: 75px;
 }
-div#loninput input[type="number"], div#latinput input[type="number"] {
+div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"] {
   width: 125px;
 }
 div#lightslider input[type="number"] {
