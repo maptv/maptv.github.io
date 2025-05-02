@@ -261,7 +261,7 @@ decBar = colorbar({
 
 ## Course color table {.hiddenheading #cct}
 
-| 🧭              | **[$\text m\alpha$]{.tool data-bs-toggle="tooltip" data-bs-title="milliwindroses"}**    | **[c°]{.tool data-bs-toggle="tooltip" data-bs-title="compass degrees"}**            | **[h°]{.tool data-bs-toggle="tooltip" data-bs-title="hue degrees"}**            | **[hex]{.tool data-bs-toggle="tooltip" data-bs-title="hexadecimal"}**             |
+| 🧭              | **[$\text m\alpha$]{.tool data-bs-toggle="tooltip" data-bs-title="milliwindroses"}**    | **[c°]{.tool data-bs-toggle="tooltip" data-bs-title="compass degrees"}**            | **[h°]{.tool data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees"}**            | **[hex]{.tool data-bs-toggle="tooltip" data-bs-title="hexadecimal"}**             |
 | --------------  | ---------------  | ----------------- | ----------------- | ----------------    |
 | \${rainbowDir}  | \${rainbowMtr}   | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}      |
 | [NE]{.color125} | [125]{.color125} | [45]{.color125}   | [295]{.color125}  | [ea00ff]{.color125} |
