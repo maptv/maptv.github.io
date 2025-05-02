@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+061
+2025+062
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -108,8 +108,7 @@ data-bs-title="millimeridians">$\text m\phi$</span>.
 
 Each row of the table contains the geographic coordinates of a point and
 the
-[course](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
-([$\underline\alpha$](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha))
+[course](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)
 in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a compass rose">milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)</span>
 (<span class="tool" data-bs-toggle="tooltip"
@@ -556,7 +555,7 @@ m\alpha$</span></span></strong></th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="compass degrees">c°</span></strong></th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hue degrees">h°</span></strong></th>
+data-bs-title="HSL or HSV degrees">h°</span></strong></th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</span></strong></th>
 </tr>
@@ -633,7 +632,7 @@ The
 compass🧭above indicates both a
 [hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram)
 in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a thousandth of a turn">milliturns</span>
+data-bs-title="thousandths of a turn">milliturns</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliturns">mt</span>) and a course in <span class="tool"
 data-bs-toggle="tooltip"
@@ -641,7 +640,7 @@ data-bs-title="milliwindroses">$\text m\alpha$</span>. We can convert
 the hue to [HSL and
 HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
 degrees (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hue degrees">h°</span>) and the course to
+data-bs-title="HSL or HSV degrees">h°</span>) and the course to
 compass🧭degrees (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="compass degrees">c°</span>): 25 <span class="tool"
 data-bs-toggle="tooltip"
@@ -765,7 +764,8 @@ data-bs-title="millimeridians">$\text m\phi$</span>),
 [-1](https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane)
 (<span class="color9">-100</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>), 0
+data-bs-title="millimeridians">$\text m\phi$</span>),
+[0](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres)
 (<span class="color0">0</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span>),
@@ -872,8 +872,8 @@ we can subtract ten <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</span> from any positive Dec offset to make
 it negative: ${decOffsetHslP} - <span class="color0">10</span> =
 ${decOffsetHslN}. Therefore, each Dec time zone has both a positive and
-a negative offset. The two offsets in any time zone are precisely one
-day apart, result in the same time, and have the same color🎨label🏷️.
+a negative offset. The two offsets in any time zone are exactly one day
+apart, result in the same time, and have the same color🎨label🏷️.
 
 ## Millenium Year Day
 
@@ -887,12 +887,12 @@ When we add the offset selected by the range🎚️input above to the current
 date and time in Zone <span class="color0">0</span>, we get
 ${decYearOffHsl}+${decDateOffHsl} as the date and
 ${decTimeOffHsl}<span style="font-family:monospace;">${decSignOff}</span>${decOffsetHsl1}
-as the time. Dec dates consist of a year and a day-of-year
+as the time. We can apply color🎨labels🏷️to each component of Dec dates
+and times. Dec dates consist of a year and a day-of-year
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>). Dec times are composed of a
-time-of-day (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span>) and a time zone. We can apply
-color🎨labels🏷️to each component of Dec dates and times.
+data-bs-title="day-of-year">doy</span>), whereas Dec times are composed
+of a time-of-day (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span>) and a time zone.
 
 Color🎨labels🏷️for years are based on <span class="tool"
 data-bs-toggle="tooltip"
