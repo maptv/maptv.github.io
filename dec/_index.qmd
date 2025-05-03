@@ -775,6 +775,7 @@ decZonHsl = textcolor(decZon, `hsl(${d3.hsl(piecewiseColor(decZon / 10)).h}` + s
 parLat = textcolor(latitude.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
 parCos = Math.cos(latitude * 2 * Math.PI)
 parLen = textcolor(parCos.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
+conversionFactor = costype === "turns" ? "" : costype === "radians" ?  tex`\tau` : tex`\times360`
 zems = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
 zLeft = textcolor(zems, `hsl(${d3.hsl(piecewiseColor(zems / 1000)).h}` + slStr)
 point0long = long2turn(Place_A[0], 1)
