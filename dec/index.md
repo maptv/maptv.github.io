@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+062
+2025+063
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -52,19 +52,51 @@ data-bs-title="degrees">°</span>). [Geographic
 coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude)
 and
 [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭directions
-are examples of angles and thus can (and should!) be measured in turns.
+are angles📐and thus can (and should!) be measured in turns.
 
 ## Longitude latitude course
 
-The table below provides the current
+Dec measures
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda)
-in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a parallel">milli[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)</span>
+in
+[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="parallels">*λ*</span>), latitude in
+[meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meridians">*ϕ*</span>), and compass🧭directions in
+[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="windroses">*α*</span>). In Dec, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="parallels">*λ*</span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meridians">*ϕ*</span>, and <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="windroses">*α*</span> are
+specific types of turns, each used to measure a certain kind of angle📐.
+All turn types can be combined with [metric
+prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit),
+like
+[deci](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20decimal%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20tenth),
+[centi](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20hundredth),
+or
+[milli](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20thousandth),
+to create turn
+[submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20%28a),
+such as <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a turn">deciturns</span>, <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundredths of a turn">centiturns</span>, or
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a turn">milliturns</span>.
+
+The table below provides the current longitude in <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a parallel">milliparallels</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliparallels">$\text m\lambda$</span>) and
 [latitude](%5B$\underline\phi$%5D(https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
 in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a meridian">milli[meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)</span>
+data-bs-title="thousandths of a meridian">millimeridians</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span>) of Points
 <span class="point0">0</span> and <span class="point1">1</span> on the
@@ -110,7 +142,7 @@ Each row of the table contains the geographic coordinates of a point and
 the
 [course](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)
 in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a compass rose">milli[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)</span>
+data-bs-title="thousandths of a compass rose">milliwindroses</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliwindroses">$\text m\alpha$</span>) we would need to
 maintain to travel🧳the shortest distance to the other point. The
@@ -692,13 +724,11 @@ full-fledged color🎨instead of just a hue.
 
 Color🎨can provide a general sense of
 angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle),
-regardless of the [metric
-prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit)
-or [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore,
-we can reuse♻️colors🎨across many different contexts. In most contexts,
-red designates starting points, like North
-(<span class="color0">0</span> <span class="tool"
-data-bs-toggle="tooltip"
+regardless of the metric prefixes or
+[units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore, we
+can reuse♻️colors🎨across many different contexts. In most contexts, red
+designates starting points, like North (<span class="color0">0</span>
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliwindroses">$\text m\alpha$</span>) and [Longitude
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color0">0</span> <span class="tool"
@@ -807,37 +837,46 @@ ${decZonHsl}.
 ``` {ojs}
 //| echo: false
 //| label: loninput
-viewof longitude = Inputs.range([0, 10], {label: "Longitude", value: 5, step: .01})
+viewof longitude = Inputs.range([0, 10], {label: "Longitude", value: 5.67, step: .01})
 ```
 
-Each Dec time zone is one <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciparallel">d*λ*</span> wide and half of a meridian
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridian">*ϕ*</span>) long. While one <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="meridian">*ϕ*</span> is always
-about one <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="taur">c</span> long, the length of a parallel
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">*λ*</span>) [varies by
+Each Dec time zone is 1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciparallel">d*λ*</span> wide and 0.5 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="meridians">*ϕ*</span> long.
+While 1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meridian">*ϕ*</span> is always about 1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="taur">c</span> long, the length
+of a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="parallel">*λ*</span> [varies by
 latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude).
-At the Equator, one <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">*λ*</span> is roughly one <span class="tool"
+At the Equator, 1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="parallel">*λ*</span> is roughly 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="taur">c</span> long. At the
 [North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
 or
 [South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
 Pole, the length of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">*λ*</span> is zero. In general, the approximate
-length of a parallel is the
+data-bs-title="parallel">*λ*</span> is zero. The approximate
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</span> length of a parallel is the
 [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
-of its <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridian">*ϕ*</span> latitude: cos(${parLat}) =
-${parLen}.
+of its latitude: cos(${parLat}${conversionFactor}) = ${parLen}. The
+cosine function may expect its input to be <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="meridians">*ϕ*</span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="radians">rad</span>, or <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="degrees">°</span>.
 
 ``` {ojs}
 //| echo: false
 //| label: latinput
 viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: .001})
+```
+
+``` {ojs}
+//| echo: false
+//| label: costype
+viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine units", value: "turns"})
 ```
 
 ## Coordinated Universal Time
@@ -2956,6 +2995,7 @@ decZonHsl = textcolor(decZon, `hsl(${d3.hsl(piecewiseColor(decZon / 10)).h}` + s
 parLat = textcolor(latitude.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
 parCos = Math.cos(latitude * 2 * Math.PI)
 parLen = textcolor(parCos.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
+conversionFactor = costype === "turns" ? "" : costype === "radians" ?  tex`\tau` : tex`\times360`
 zems = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
 zLeft = textcolor(zems, `hsl(${d3.hsl(piecewiseColor(zems / 1000)).h}` + slStr)
 point0long = long2turn(Place_A[0], 1)
