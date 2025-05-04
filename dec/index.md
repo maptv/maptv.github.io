@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+063
+2025+064
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -67,13 +67,14 @@ data-bs-title="parallels">*λ*</span>), latitude in
 data-bs-title="meridians">*ϕ*</span>), and compass🧭directions in
 [windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="windroses">*α*</span>). In Dec, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="parallels">*λ*</span>,
+data-bs-title="windroses">*α*</span>). To measure certain kinds of
+angles📐, Dec uses specific types of turns with distinct names like
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridians">*ϕ*</span>, and <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="windroses">*α*</span> are
-specific types of turns, each used to measure a certain kind of angle📐.
-All turn types can be combined with [metric
+data-bs-title="parallel">*λ*</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="meridian">*ϕ*</span>, or
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="windrose">*α*</span>. All turn types can be combined with
+[metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit),
 like
 [deci](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20decimal%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20tenth),
@@ -160,9 +161,9 @@ Dec measures distance in
 [taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taurs">c</span>), speed in
-[romegas](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity)
+[omegars](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="romegas">v</span>), and time in years (<span class="tool"
+data-bs-title="omegars">v</span>), and time in years (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="years">y</span>) and days
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</span>). Each of these four turn types
@@ -180,18 +181,18 @@ data-bs-title="day">d</span> ≈ the duration of its
 on its
 [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole),
 and $\text c\over\text d$ = <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="romega">v</span> = <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="romega">*r**ω*</span> ≈ the
+data-bs-title="omegar">v</span> = <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="omegar">*r**ω*</span> ≈ the
 speed of its rotation at the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
 At a speed of <span class="color5">0.5</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="romega">v</span> or
+data-bs-toggle="tooltip" data-bs-title="omegars">v</span> or
 <span class="color5">500</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="thousandths of a romega">milliromegas</span>
+data-bs-title="thousandths of a omegar">milliomegars</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliromegas">mv</span>), an airplane✈️could fly over the
+data-bs-title="milliomegars">mv</span>), an airplane✈️could fly over the
 <span class="color1">0.1</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="taurs">c</span> or
 <span class="color1">100</span> <span class="tool"
@@ -210,11 +211,11 @@ data-bs-title="days">d</span>). To get the time required to
 travel🧳between two points, we divide the distance by the speed:
 ${distance_cHsl} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taurs">c</span> ÷ ${velocity_vHsl} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="romega">v</span> =
+data-bs-toggle="tooltip" data-bs-title="omegars">v</span> =
 ${distance_mcHsl} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millitaurs">mc</span> ÷ ${velocity_mvHsl}
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliromega">mv</span> = ${traveltimeHsl}
+data-bs-title="milliomegars">mv</span> = ${traveltimeHsl}
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</span>.
 
@@ -711,7 +712,7 @@ full-fledged color🎨instead of just a hue.
 >
 > Feeling ***disoriented***😵‍💫? Of
 > [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
-> you are! Color🎨labels can help you find your
+> you are! Color🎨labels🏷️can help you find your
 > [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object),
 > stay on
 > [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows),
@@ -855,17 +856,18 @@ data-bs-toggle="tooltip" data-bs-title="taur">c</span> long. At the
 [North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
 or
 [South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
-Pole, the length of <span class="tool" data-bs-toggle="tooltip"
+Pole, the length of a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="parallel">*λ*</span> is zero. The approximate
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="taur">c</span> length of a parallel is the
+data-bs-title="taur">c</span> length of a <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="parallel">*λ*</span> is the
 [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
-of its latitude: cos(${parLat}${conversionFactor}) = ${parLen}. The
-cosine function may expect its input to be <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="meridians">*ϕ*</span>,
+of its <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meridians">*ϕ*</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="radians">rad</span>, or
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="radians">rad</span>, or <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="degrees">°</span>.
+data-bs-title="degrees">°</span> latitude, whichever is required by our
+cosine function: cos(${parLat}${conversionFactor}) = ${parLen}.
 
 ``` {ojs}
 //| echo: false
@@ -909,10 +911,10 @@ have the exact same date and time, both are precisely one day ahead of
 To avoid date mismatches with UTC time zones that have negative offsets,
 we can subtract ten <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</span> from any positive Dec offset to make
-it negative: ${decOffsetHslP} - <span class="color0">10</span> =
+it negative: ${decOffsetHslP} – <span class="color0">10</span> =
 ${decOffsetHslN}. Therefore, each Dec time zone has both a positive and
 a negative offset. The two offsets in any time zone are exactly one day
-apart, result in the same time, and have the same color🎨label🏷️.
+apart, produce the same time, and have the same color🎨label🏷️.
 
 ## Millenium Year Day
 
@@ -1516,9 +1518,7 @@ href="https://commons.wikimedia.org/wiki/File:Extended_arm.jpg">Wikimedia</a></f
 </div>
 
 To visualize a square <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span>), imagine four people
+data-bs-title="zone equatorial meter">zem</span>, imagine four people
 standing in a circle, facing inward, each with their right hand✋placed
 on top of the elbow of the person to their right. Alternatively, two
 people can stand in front of each other and raise their arms💪, placing
@@ -1536,19 +1536,19 @@ href="https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg">W
 
 </div>
 
-You can approximate a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span> yourself by sitting in a
+You can approximate a square <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span>yourself by sitting in a
 chair🪑or standing🧍with your knees and feet🦶1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zem">z</span>, 4
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a meter">decimeters</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decimeters">dm</span>), or 16
-inches apart, which is likely to be more or less the width of your hips
-or shoulders. The top of the square <span class="tool"
+inches apart, which is likely to be about the width of your hips or
+shoulders. The top of the square <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span> will be between your
 knees, its bottom will be between your ankles or feet🦶, and its sides
-between your shins.
+will be between your shins.
 
 <div id="cubic" class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1862,9 +1862,9 @@ data-bs-title="millimeters">mm</span>).
 
 In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span> means Earth🌏. This is
+data-bs-title="zone equatorial meter">zem</span> means Earth🌎. This is
 fitting because all Dec units are based on physical attributes of the
-Earth🌎. At the Equator, the Earth🌍rotates on its axis at a speed of
+Earth🌍. At the Equator, the Earth🌏rotates on its axis at a speed of
 1.00224 v. If we could indefinitely maintain this speed while flying
 West in an airplane✈️towards the setting sun☀️, we would be able to
 perpetually fly [into the
@@ -1874,49 +1874,53 @@ sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
 To travel fast enough, the airplane✈️would need to surpass the [speed of
 sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊,
-which at 15<span class="tool" data-bs-toggle="tooltip"
+which at 15 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="degrees">°</span>
 [Celsius](https://en.wikipedia.org/wiki/Celsius#:~:text=the%20unit%20of%20temperature%20on%20the%20Celsius%20temperature%20scale)
 and 1 [standard
 atmosphere](https://en.wikipedia.org/wiki/Standard_atmosphere_(unit)#:~:text=a%20unit%20of%20pressure%20defined%20as%20101325%20Pa)
 is 0.735048 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="romegas">v</span> or Mach 1. [Mach
+data-bs-title="omegars">v</span> or Mach 1. [Mach
 numbers](https://en.wikipedia.org/wiki/Mach_number) are not as reliable
 as <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="romega">v</span>, because they are relative to the speed
+data-bs-title="omegra">v</span>, because they are relative to the speed
 of sound🔊, which varies greatly by air temperature and pressure. The
 cruising speed of a [Boeing
 747](https://en.wikipedia.org/wiki/Boeing_747#:~:text=sweep%2C%20allowing%20a-,Mach%C2%A00.85,-%28490%C2%A0kn;%20900)
 is 0.54 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="romegas">v</span> or Mach 0.85.
+data-bs-title="omegars">v</span> or Mach 0.85.
 
 The highway🛣️speed of a car🚗is roughly tenfold slower than the cruising
-speed of airplane✈️. If we are driving on a highway🛣️at 50
+speed of airplane✈️. If we are driving on a highway🛣️at a speed of 50
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliromega">mv</span> and our exit is 1000
+data-bs-title="milliomegars">mv</span> and our exit is 1000
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meters">zems</span> away, we will have 20
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zems">z</span> away, we will have 20 <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span> until
 we have to exit the highway🛣️. To ensure we do not miss our exit, we can
 periodically check a countdown of the remaining <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span>: ${zLeft}.
+data-bs-toggle="tooltip" data-bs-title="zems">z</span>: ${zLeft}.
 
 In Dec, centimillidays are called beats because they are similar in
 duration to heart❤️beats or musical🎵beats. A beat is
 <span class="color864">864</span> milliseconds. One mc is a hundred
 thousand (10<sup>5</sup>) <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span> and one day (d) is 10<sup>5</sup> beats
-(b). Therefore, 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliromega">mv</span> = $\text{mc}\over\text d$ =
-$\text z\over\text b$. It is easy to convert <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zem">z</span> into meters (m),
+data-bs-title="zems">z</span> and one day (d) is 10<sup>5</sup> beats
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</span>). Therefore, 1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> =
+$\text{mc}\over\text d$ = $\text z\over\text b$. It is easy to convert
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zems">z</span> into meters (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="meters">m</span>), 1
 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span>
 = $2\over5$ m, or <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliromega">mv</span> into kilometers per hour (kmph):
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliromega">mv</span> = $5\over3$ kmph.
+data-bs-title="milliomegars">mv</span> into kilometers per hour
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="kilometers per hour">kmph</span>): 1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> =
+$5\over3$ kmph.
 
 The table below shows the [United States🇺🇸(US) customary
 units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
@@ -1939,9 +1943,11 @@ the same way have the same fold change.
 </colgroup>
 <thead>
 <tr>
-<th>US</th>
+<th><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="US customary units">US</span></th>
 <th>Dec</th>
-<th>SI</th>
+<th><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span></th>
 </tr>
 </thead>
 <tbody>
@@ -2067,52 +2073,74 @@ ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%
 redefined units rely on [fractions based on powers of
 two](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
 to scale up or down as needed. Redefined units serve as convenient
-reference points and can easily be converted to Dec or SI units. Miles
-are redefined such that one Dec mile per hour is one <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="milliromega">mv</span>. A Dec
+reference points and can easily be converted to Dec or
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span> units. Miles are
+redefined such that one Dec mile per hour is one <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span>. A Dec
 acre is equal to $2\over5$
 [hectares](https://en.wikipedia.org/wiki/Hectare#:~:text=10%2C000%20square%20metres)
 or 40
 [are](https://en.wikipedia.org/wiki/Hectare#Are:~:text=area%2C%20equal%20to-,100%20square%20metres).
 
 A <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="1.6 thousandths of an are">hexamilliare</span> (x) is 1
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span>, 16 square
+data-bs-title="1.6 thousandths of an are">hexamilliare</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexamilliare">x</span>) is 1 square zem
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span>), 16 square
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a meter">decimeters</span> (<span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="decimeters">dm</span><sup>2</sup>),
+data-bs-title="square decimeters">dm<sup>2</sup></span>),
 1.<span style="text-decoration-line:overline;">7</span> Dec square
 feet🦶, or 256 Dec square inches. A square <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="ten zem">decazem</span>
-(Dz<sup>2</sup>) is 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
-square meters (m²), 19.753086 Dec square yards, or 100 x. A square
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square decazem">Dz<sup>2</sup></span>) is 1
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a thousand of zem">kilozem</span> (kz<sup>2</sup>) is 1
+data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
+square meters (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square meters">m²</span>), 19.753086 Dec square yards, or
+100 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexamilliare">x</span>. A square <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="a thousand of zem">kilozem</span> (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square kilozem">kz<sup>2</sup></span>) is 1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="sixteen hundred ares">hexakilare</span>, 0.16 square
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of meters">kilometers</span> (km²), 0.0576 Dec
+data-bs-title="thousands of meters">kilometers</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square kilometers">km<sup>2</sup></span>), 0.0576 Dec
 square miles, 40 Dec acres, 16 <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="hundreds of ares">hectares</span>, or 10<sup>6</sup> x.
+data-bs-title="hundreds of ares">hectares</span>, or 10<sup>6</sup>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexamilliare">x</span>.
 
 A cubic <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a zem">decizem</span> (dz<sup>3</sup>) is 1
-shot, 2 Dec ounces, or 64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a liter">milliliters</span> (mL). A shot
-of water🌊weighs 64 grams (g). Even though the weight of a Dec ounce of
-water🌊is close to a sixteenth of a Dec pound, Dec does not measure
+data-bs-title="a tenth of a zem">decizem</span> (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="cubic decizem">dz<sup>3</sup></span>) is 1 shot, 2 Dec
+ounces, or 64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a liter">milliliters</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span>). A shot of water🌊weighs 64 grams
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="grams">g</span>). Even though the weight of a Dec ounce
+of water🌊is close to a sixteenth of a Dec pound, Dec does not measure
 weights in ounces. A cubic <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zem">z</span><sup>3</sup>) is 1
-keg, 16 Dec gallons, or 64
+data-bs-toggle="tooltip" data-bs-title="cubic zem">z<sup>3</sup></span>)
+is 1 keg, 16 Dec gallons, or 64
 [liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic)
-(L). A keg of water🌊weighs 64 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousands of grams">kilograms</span> (kg) or 128 Dec
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="liters">L</span>). A keg of water🌊weighs 64
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of grams">kilograms</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="kilograms">kg</span>) or 128 Dec
 pounds.
 
 <div class="column-margin" fig-align="center"
@@ -2128,13 +2156,17 @@ href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg
 
 ## Body mass index
 
-A weight of 64 kg and a height of 4 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zem">z</span>, 1.6 m, or 64
-inches correspond to a [body mass
+A weight of 64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="kilograms">kg</span> and a height of 4 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span>, 1.6
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span>, or 64 inches correspond to a [body mass
 index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
-(BMI) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$.
-A BMI above 4.8 $\text {kg}\over\text z^2$ or 30
-$\text {kg}\over\text m^2$ is considered
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="body mass index">bmi</span>) of 4
+$\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$. A bmi above
+4.8 $\text {kg}\over\text z^2$ or 30 $\text {kg}\over\text m^2$ is
+considered
 [obese](https://en.wikipedia.org/wiki/Obesity#:~:text=person's%20height—is-,over%2030%C2%A0kg/m2,-;%20the%20range%2025).
 If [Leonardo da
 Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s
@@ -2149,11 +2181,29 @@ of his arms💪.
 # Summary
 
 This article introduces the Dec measurement system and describes how Dec
-uses the properties of the planet Earth🌎and metric prefixes to define
+uses metric prefixes and the properties of the planet Earth🌎to define
 units based on turns for geographic coordinates, compass🧭directions,
-colors🎨, speeds, dates, times, time zones, distances, areas, volumes,
-and weights. Many Dec measurements The introduction includes a
-comparison of Dec, SI, and US customary units.
+speeds, dates, times, time zones, distances, areas, volumes, and
+weights. If you forget the name of any Dec unit, you can just call it a
+turn.
+
+Dec attempts to bridge the gap between <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span> and
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</span> customary measurement systems by
+redefining <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</span> customary distance, area, and
+volume units to facilitate conversion. The percent differences between
+the original and redefined units range between -3.12% and 10.23%. Most
+people would probably not notice that a mile is 3.56% longer or that a
+gallon is 5.67% larger.
+
+Dec color🎨labels🏷️can imprecisely convey many different kinds of values
+at a glance. Moreover, color🎨labels🏷️help avoid confusion when dealing
+with metric prefixes.
+
+so it is easily to and US customary units.
 
 # Next
 
