@@ -11,6 +11,7 @@ preview()
 //| label: coloropposites8
 //| column: margin
 //| class: coloropp
+// https://observablehq.com/@maddievision/enneagram
 quickRender(326, 326, context => {
   const center = 163
   const ringRadius = 140
@@ -94,6 +95,7 @@ quickRender(326, 326, context => {
 //| label: colorcomparer8
 //| column: margin
 //| class: colorcomparer
+// https://observablehq.com/@observablehq/categorical-palette-tool
 displayPalette(hsl8, {darkMode: true})
 ```
 
@@ -102,6 +104,7 @@ displayPalette(hsl8, {darkMode: true})
 //| label: coloropposites10
 //| column: margin
 //| class: coloropp
+// https://observablehq.com/@maddievision/enneagram
 quickRender(326, 326, context => {
   const center = 163
   const ringRadius = 140
@@ -185,6 +188,7 @@ quickRender(326, 326, context => {
 //| label: colorcomparer10
 //| column: margin
 //| class: colorcomparer
+// https://observablehq.com/@observablehq/categorical-palette-tool
 displayPalette(hsl10.slice(0, 10), {darkMode: true})
 ```
 

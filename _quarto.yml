@@ -143,6 +143,7 @@ format:
     page-layout: full
     mainfont: Tahoma, Palatino, Verdana, Times New Roman
     toc: true
+    respect-user-color-scheme: true
     theme:
       light: [flatly, asset/light.scss]
       dark: [darkly, asset/dark.scss]
