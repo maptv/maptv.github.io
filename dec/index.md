@@ -2269,7 +2269,8 @@ found on <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="April 9, 2025"><span class="color025">2025</span>+<span class="color039">039</span></span>,
 which includes the definition of a <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span>, 1 z = 10<sup>-8</sup>
+data-bs-title="zone equatorial meter">zem</span>, 1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span> = 10<sup>-8</sup>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</span> = 4 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decimeters">dm</span>, in [a
