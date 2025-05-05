@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+064
+2025+065
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -167,7 +167,7 @@ data-bs-title="omegars">v</span>), and time in years (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="years">y</span>) and days
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</span>). Each of these four turn types
-approximates (≈) a physical property of the Earth🌏: <span class="tool"
+approximates (≈) a physical property of the Earth🌍: <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="taur">c</span> =
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">*τ**r*</span> ≈ its
@@ -321,6 +321,7 @@ preview()
 //| label: coloropposites8
 //| column: margin
 //| class: coloropp
+// https://observablehq.com/@maddievision/enneagram
 quickRender(326, 326, context => {
   const center = 163
   const ringRadius = 140
@@ -404,6 +405,7 @@ quickRender(326, 326, context => {
 //| label: colorcomparer8
 //| column: margin
 //| class: colorcomparer
+// https://observablehq.com/@observablehq/categorical-palette-tool
 displayPalette(hsl8, {darkMode: true})
 ```
 
@@ -412,6 +414,7 @@ displayPalette(hsl8, {darkMode: true})
 //| label: coloropposites10
 //| column: margin
 //| class: coloropp
+// https://observablehq.com/@maddievision/enneagram
 quickRender(326, 326, context => {
   const center = 163
   const ringRadius = 140
@@ -495,6 +498,7 @@ quickRender(326, 326, context => {
 //| label: colorcomparer10
 //| column: margin
 //| class: colorcomparer
+// https://observablehq.com/@observablehq/categorical-palette-tool
 displayPalette(hsl10.slice(0, 10), {darkMode: true})
 ```
 
@@ -808,7 +812,7 @@ data-bs-title="millimeridians">$\text m\phi$</span>), and
 (<span class="color2">200</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span>) on the map🗺️above
-along with the ten major longitudes that divide the Earth🌍into the ten
+along with the ten major longitudes that divide the Earth🌎into the ten
 Dec time zones. Notably, Longitude 0 is the major longitude that serves
 as both the [Prime
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)
@@ -838,7 +842,7 @@ ${decZonHsl}.
 ``` {ojs}
 //| echo: false
 //| label: loninput
-viewof longitude = Inputs.range([0, 10], {label: "Longitude", value: 5.67, step: .01})
+viewof longitude = Inputs.range([0, 10], {label: "Longitude", value: .5, step: .01})
 ```
 
 Each Dec time zone is 1 <span class="tool" data-bs-toggle="tooltip"
@@ -921,13 +925,13 @@ apart, produce the same time, and have the same color🎨label🏷️.
 ``` {ojs}
 //| echo: false
 //| label: offinput
-viewof offset = Inputs.range([-10, 9], {label: "Offset", value: -2, step: 1})
+viewof offset = Inputs.range([-10, 9], {label: "Offset", value: 0, step: 1})
 ```
 
 When we add the offset selected by the range🎚️input above to the current
 date and time in Zone <span class="color0">0</span>, we get
 ${decYearOffHsl}+${decDateOffHsl} as the date and
-${decTimeOffHsl}<span style="font-family:monospace;">${decSignOff}</span>${decOffsetHsl1}
+${decTimeOffHsl0}<span style="font-family:monospace;">${decSignOff}</span>${decOffsetHsl1}
 as the time. We can apply color🎨labels🏷️to each component of Dec dates
 and times. Dec dates consist of a year and a day-of-year
 (<span class="tool" data-bs-toggle="tooltip"
@@ -1862,9 +1866,9 @@ data-bs-title="millimeters">mm</span>).
 
 In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span> means Earth🌎. This is
+data-bs-title="zone equatorial meter">zem</span> means Earth🌍. This is
 fitting because all Dec units are based on physical attributes of the
-Earth🌍. At the Equator, the Earth🌏rotates on its axis at a speed of
+Earth🌏. At the Equator, the Earth🌎rotates on its axis at a speed of
 1.00224 v. If we could indefinitely maintain this speed while flying
 West in an airplane✈️towards the setting sun☀️, we would be able to
 perpetually fly [into the
@@ -1904,9 +1908,12 @@ data-bs-toggle="tooltip" data-bs-title="zems">z</span>: ${zLeft}.
 
 In Dec, centimillidays are called beats because they are similar in
 duration to heart❤️beats or musical🎵beats. A beat is
-<span class="color864">864</span> milliseconds. One mc is a hundred
-thousand (10<sup>5</sup>) <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</span> and one day (d) is 10<sup>5</sup> beats
+<span class="color864">864</span> milliseconds. One <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millitaurs">mc</span> is a
+hundred thousand (10<sup>5</sup>) <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zems">z</span> and one day
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day">d</span>) is 10<sup>5</sup> beats
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</span>). Therefore, 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> =
@@ -1920,7 +1927,8 @@ data-bs-title="milliomegars">mv</span> into kilometers per hour
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilometers per hour">kmph</span>): 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> =
-$5\over3$ kmph.
+$5\over3$ <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="kilometers per hour">kmph</span>.
 
 The table below shows the [United States🇺🇸(US) customary
 units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
@@ -2134,11 +2142,13 @@ of water🌊is close to a sixteenth of a Dec pound, Dec does not measure
 weights in ounces. A cubic <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="cubic zem">z<sup>3</sup></span>)
-is 1 keg, 16 Dec gallons, or 64
+is 1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic zem">keg</span>, 16 Dec gallons, or 64
 [liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="liters">L</span>). A keg of water🌊weighs 64
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="liters">L</span>). A <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="cubic zem">keg</span> of
+water🌊weighs 64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of grams">kilograms</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="kilograms">kg</span>) or 128 Dec
 pounds.
@@ -2181,11 +2191,23 @@ of his arms💪.
 # Summary
 
 This article introduces the Dec measurement system and describes how Dec
-uses metric prefixes and the properties of the planet Earth🌎to define
+uses metric prefixes and the properties of the planet Earth🌏to define
 units based on turns for geographic coordinates, compass🧭directions,
-speeds, dates, times, time zones, distances, areas, volumes, and
-weights. If you forget the name of any Dec unit, you can just call it a
-turn.
+dates, times, speeds, distances, areas, volumes, and weights. Each unit
+has a unique name, such as <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="parallel">*λ*</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="meridians">*ϕ*</span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="windrose">*α*</span>, year, day, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="beat">b</span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="omegar">v</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="taur">c</span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hexamilliare">x</span>, or
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic zem">keg</span>.
 
 Dec attempts to bridge the gap between <span class="tool"
 data-bs-toggle="tooltip"
@@ -2194,28 +2216,36 @@ data-bs-title="International System of Units">SI</span> and
 data-bs-title="United States">US</span> customary measurement systems by
 redefining <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> customary distance, area, and
-volume units to facilitate conversion. The percent differences between
-the original and redefined units range between -3.12% and 10.23%. Most
-people would probably not notice that a mile is 3.56% longer or that a
-gallon is 5.67% larger.
+volume units to facilitate conversion. Dec redefinition of US customary
+units makes inches, feet, and yards <span class="colorInch">1.57%</span>
+shorter, miles <span class="colorMile">3.56%</span> longer, cups, pints,
+quarts, and gallons <span class="colorPint">5.67%</span> larger, and Dec
+pounds <span class="colorAvLb">10.23%</span> heavier.
 
 Dec color🎨labels🏷️can imprecisely convey many different kinds of values
 at a glance. Moreover, color🎨labels🏷️help avoid confusion when dealing
-with metric prefixes.
-
-so it is easily to and US customary units.
+with different metric prefixes. The <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> in Zone
+${decOffsetHsl2} can be expressed as ${decTimeOffHsl2}
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decidays">dd</span>, ${decTimeOffHsl1} days, or
+${decTimeOffHsl4} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</span>. Metric prefixes allow us to shift the
+[decimal
+separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline)
+in decimal numbers at will.
 
 # Next
 
 Now that you have had a taste of Dec, I hope that you are hungry for
-more! will be interested in reading the Dec section of my site to the
-time⏳, snap🫰, and span🌈articles. Dec has a lot more to offer than
-just dates! you should be able to understand the examples in my filter,
-include, and script articles, but you may want to start with my Quarto
-article. To see the full extent of the benefits that Dec provides, I
-recommend that you continue through the Dec section of my site to the
-time⏳, snap🫰, and span🌈articles. Dec has a lot more to offer than
-just dates!
+more! My other Dec articles not only dive🤿deeper into Dec
+[dates](../dec/date) and [times](../dec/time), but also introduce Dec
+[snaps](../dec/snap)🫰and [spans](../dec/span)🌈. My [Quarto](../quarto)
+articles describe how I display Dec dates throughout my site, including
+in its [navigation
+bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
+(navbar). My Dec [date](../dec/date) article explains the
+[format](../dec/date#dow) of the navbar date.
 
 <div id="decnav">
 
@@ -2232,7 +2262,7 @@ style="width:8.64in;height:0.98in" />
 
 Please support Dec by citing it as shown at the bottom of this article.
 You may also want to cite the Observable notebooks that I adapted into
-the map🗺️ and color🎨wheel compass visualizations in this article or the
+the map🗺️and color🎨wheel compass visualizations in this article or the
 2004 [arxiv](https://arxiv.org/abs/physics/0412078)
 [article](https://www.roma1.infn.it/~dagos/history/sm/sm.html), that I
 found on <span class="tool" data-bs-toggle="tooltip"
@@ -2252,21 +2282,77 @@ units](https://www.roma1.infn.it/~dagos/history/sm/node12.html):
   data-bs-title="January 25, 2005"><u>2004+330</u></span>. “Why does the
   meter beat the second?” ${decYearP0}+${decDotyOff}.
   <https://arxiv.org/abs/physics/0412078>.
-- [Patel, Amit](https://observablehq.com/@redblobgames).
+- [Armstrong, Zan](https://observablehq.com/@zanarmstrong)
   <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="December 16, 2021"><u>2021+290</u></span>. “Compass
-  Rose.” ${decYearP0}+${decDotyOff}.
-  <https://observablehq.com/@paavanb/progressive-color-picker>.
+  data-bs-title="April 27, 2023"><u>2023+057</u></span>. “Text color
+  annotations in markdown.” ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@observablehq/text-color-annotations-in-markdown>.
+- [Bostock, Mike](https://observablehq.com/@mbostock) <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="January 30, 2021"><u>2020+335</u></span>. “Solar
+  Terminator.” ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@mbostock/time-zones>.
+- [Bostock, Mike](https://observablehq.com/@mbostock) <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="April 7, 2022"><u>2022+037</u></span>. “Solar
+  Terminator.” ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@d3/solar-terminator>.
+- [Bostock, Mike](https://observablehq.com/@mbostock) <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="January 9, 2024"><u>2023+314</u></span>. “Input:
+  Table.” ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@observablehq/input-table>.
 - [Edwards, Paul](https://observablehq.com/@pjedwards).
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="August 19, 2022"><u>2022+171</u></span>. “Compass Rose
   as legend with colors.” ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors>.
-- [paavanb](https://observablehq.com/user/@paavanb). <span class="tool"
+- [Johnson, Ian](https://observablehq.com/@enjalot) <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="June 30, 2021"><u>2021+121</u></span>. “Draggable World
+  Map Coordinates Input.” ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
+- [Lim, Maddie](https://observablehq.com/@maddievision)
+  <span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="January 25, 2019"><u>2018+330</u></span>. “Enneagram.”
+  ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@maddievision/enneagram>.
+- [Paavanb](https://observablehq.com/@paavanb). <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="March 7, 2024"><u>2024+006</u></span>. “Progressive
   Color Picker.” ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@paavanb/progressive-color-picker>.
+- [Patel, Amit](https://observablehq.com/@redblobgames).
+  <span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="December 16, 2021"><u>2021+290</u></span>. “Compass
+  Rose.” ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@paavanb/progressive-color-picker>.
+- [Pettiross, Jeff](https://observablehq.com/@pettiross)
+  <span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="July 19, 2024"><u>2024+150</u></span>. “Categorical
+  color scheme test tool.” ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@observablehq/categorical-palette-tool>
+- [Rieder, Lukas](https://observablehq.com/@lukasrieder)
+  <span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="April 2, 2023"><u>2023+032</u></span>. “Editable
+  table.” ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@parlant/editable-table>.
+- [Rivière, Philippe](https://observablehq.com/@fil) <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="November 15, 2022"><u>2022+259</u></span>. “Add a class
+  to an observable input.” ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support>.
+- [Rivière, Philippe](https://observablehq.com/@fil) <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="January 25, 2024"><u>2023+330</u></span>. “D3
+  Projections.” ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@fil/d3-projections>.
+- [Yamahata, Christophe](https://observablehq.com/@christophe-yamahata)
+  <span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="June 28, 2022"><u>2021+119</u></span>. “Great circle:
+  shortest distance between two locations on Earth 🌏.”
+  ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
 
 ``` {ojs}
 //| echo: false
@@ -3005,11 +3091,16 @@ decOffsetPosi = (offset + 10) % 10
 decOffsetNega = decOffsetPosi - 10
 decOffsetHslP = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
 decOffsetHslN = textcolor(decOffsetNega, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decOffsetHsl0 = textcolor(offset, `hsl(${d3.hsl(piecewiseColor((offset + 10) % 10 / 10)).h}` + slStr)
-decOffsetHsl1 = textcolor(Math.abs(offset), `hsl(${d3.hsl(piecewiseColor((offset + 10) % 10 / 10)).h}` + slStr)
+decOffsetHsl0 = textcolor(offset, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decOffsetHsl1 = textcolor(Math.abs(offset), `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decOffsetHsl2 = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
 decYearOffHsl = textcolor(decYearOff, `hsl(${d3.hsl(piecewiseColor(decYearOff % 1000 / 1000)).h}` + slStr)
 decDateOffHsl = textcolor(decDateOff.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateOff / (365 + isLeapOff))).h}` + slStr)
-decTimeOffHsl = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl0 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl1 = textcolor(decTimeOff.toFixed(5).slice(1), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl2 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl3 = textcolor((decTimeOff * 1000).toFixed(2), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl4 = textcolor((decTimeOff * 100000).toFixed(0), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 dzP8 = unix2dote(now, 8)
 ydzP0 = dote2date(...dzP0)
 ydzP8 = dote2date(...dzP8)
@@ -3027,30 +3118,30 @@ decTimeP0 = ydzP0[1] % 1
 decTimeN0 = (decTimeP0 - 1) % 1
 utcOffsetM = -(new Date).getTimezoneOffset()
 utcOffsetD = utcOffsetM / 144
-utcOffDiff = (Math.round(utcOffsetD) - utcOffsetD).toFixed(2).replaceAll(/[.]0$/g, "")
+utcOffDiff = parseFloat((Math.round(utcOffsetD) - utcOffsetD).toFixed(2))
 utcOffDiffHsl = textcolor(utcOffDiff, `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
 utcOffsetP = (utcOffsetD + 10) % 10
 decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 decZonHslA = textcolor(Math.abs(decZone), `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
-utcOffHslD = textcolor(utcOffsetD.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
-utcOffHslP = textcolor(utcOffsetP.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+utcOffHslD = textcolor(parseFloat(utcOffsetD.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+utcOffHslP = textcolor(parseFloat(utcOffsetP.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
 decYearHsl = textcolor(decYear, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
 decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
-decTimeHsl = textcolor((decTime * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
+decTimeHsl = textcolor(parseFloat((decTime * 10).toFixed(4)), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
 decLon = longitude % 10
-decLonHsl = textcolor(decLon.toFixed(2).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(decLon / 10)).h}` + slStr)
+decLonHsl = textcolor(parseFloat(decLon.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(decLon / 10)).h}` + slStr)
 decZon = Math.floor(decLon)
 decZonHsl = textcolor(decZon, `hsl(${d3.hsl(piecewiseColor(decZon / 10)).h}` + slStr)
-parLat = textcolor(latitude.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
+parLat = textcolor(parseFloat(latitude.toFixed(3)), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
 parCos = Math.cos(latitude * 2 * Math.PI)
-parLen = textcolor(parCos.toFixed(3).replaceAll(/[.]0$/g, ""), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
-conversionFactor = costype === "turns" ? "" : costype === "radians" ?  tex`\tau` : tex`\times360`
+parLen = textcolor(parseFloat(parCos.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
+conversionFactor = costype === "turns" ? "" : costype === "radians" ?  tex`\,\tau\!` : tex`\times360`
 zems = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
 zLeft = textcolor(zems, `hsl(${d3.hsl(piecewiseColor(zems / 1000)).h}` + slStr)
 point0long = long2turn(Place_A[0], 1)
 point0zone = Math.floor(point0long)
-point0lHsl = textcolor(point0long.toFixed(2), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
+point0lHsl = textcolor(parseFloat(point0long.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
 point0zHsl = textcolor(point0zone, `hsl(${d3.hsl(piecewiseColor(point0zone / 10)).h}` + slStr)
 decDek = Math.floor(decDate / 10)
 decDod = decDate % 10
@@ -3318,14 +3409,14 @@ Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
 distance_mc = distance_km / 40
-distance_mcHsl = textcolor(distance_mc.toFixed(0), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
+distance_mcHsl = textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
 distance_c = distance_mc / 1000
-distance_cHsl = textcolor(distance_c.toFixed(3), `hsl(${d3.hsl(piecewiseColor(distance_c % 1)).h}` + slStr)
+distance_cHsl = textcolor(parseFloat(distance_c.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(distance_c % 1)).h}` + slStr)
 velocity_v = travelspeed / 1000
-velocity_vHsl = textcolor(velocity_v.toFixed(3), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
-velocity_mvHsl = textcolor(travelspeed.toFixed(0), `hsl(${d3.hsl(piecewiseColor(travelspeed / 1000)).h}` + slStr)
+velocity_vHsl = textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
+velocity_mvHsl = textcolor(parseFloat(travelspeed.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(travelspeed / 1000)).h}` + slStr)
 traveltime = Math.round(distance_mc) / Math.round(travelspeed)
-traveltimeHsl = Number.isFinite(traveltime) ? textcolor(traveltime.toFixed(3), `hsl(${d3.hsl(piecewiseColor(traveltime % 1)).h}` + slStr) : traveltime
+traveltimeHsl = Number.isFinite(traveltime) ? textcolor(parseFloat(traveltime.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(traveltime % 1)).h}` + slStr) : traveltime
 nb_points = Math.round(distance_km/150)
 d3format = require("d3-format@1")
 function input(config) {
@@ -3662,6 +3753,7 @@ margin = size / 14
 padding = 42
 radius = size / 2 - margin - padding
 window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
+// https://observablehq.com/@observablehq/categorical-palette-tool
 function displayPalette(palette, { darkMode = false } = {}) {
   return htl.html`
   <div style="display: flex; flex-direction: column;">
