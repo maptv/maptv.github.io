@@ -3,10 +3,9 @@ title: Dec
 author:
   - name: Martin Laptev
     url: https://maptv.github.io
-image: /asset/deidek.svg
+image: /asset/colorWheelCompass.svg
 description: >
   Introducing the Dec measurement system, which uses turns instead of months, weeks, hours, minutes, seconds, and degrees.
-draft: true
 citation:
   url: https://maptv.github.io/dec
 aliases:

@@ -3,6 +3,7 @@ author: ""
 date: ""
 listing:
   contents:
+    - ../../dec/index.qmd
     - ../../dec/date/index.qmd
     - ../../dec/time/index.qmd
     - ../../history/ww2/index.qmd
