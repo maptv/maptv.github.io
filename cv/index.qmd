@@ -21,7 +21,7 @@ css: ../asset/cv.css
 
 ::: {.contact}
 - ![](https://icons.getbootstrap.com/assets/icons/telephone.svg){.phone} [240-207-1654](tel:240-207-1654)
-- ![](https://icons.getbootstrap.com/assets/icons/envelope-at.svg){.shiftup} [maptv@engineer.com](mailto:maptv@engineer.com)
+- ![](https://icons.getbootstrap.com/assets/icons/envelope-at.svg){.shiftup} [maptv@ireni.co](mailto:maptv@ireni.co)
 - ![](https://icons.getbootstrap.com/assets/icons/house.svg){.shiftup} [maptv.github.io](https://maptv.github.io)
 - ![](https://icons.getbootstrap.com/assets/icons/github.svg){.shiftup} [maptv](https://github.com/maptv)
 - ![](https://icons.getbootstrap.com/assets/icons/linkedin.svg){.linkedin} [maptv](https://linkedin.com/in/maptv)
@@ -29,11 +29,16 @@ css: ../asset/cv.css
 
 ### Mission
 
-My goal is to lead the next generation of scientists and engineers in building solutions that integrate substantive expertise from diverse fields with machine intelligence.
-Through my work, I strive to promote open source software, such as the [Quarto](https://quarto.org) publishing system, which I use to build dashboards, presentations, reports, websites, and other digital deliverables.
-Overall, I aim to leverage my broad scientific background and technical expertise to help transform the promises of science and technology into a better future for all of humanity.
+My goal is to lead the next generation of scientists and engineers in building solutions that integrate substantive expertise from diverse fields with machine intelligence. Through my work, I strive to promote open source software, such as the [Quarto](https://quarto.org) publishing system, which I use to build dashboards, presentations, reports, websites, and other digital deliverables. Overall, I aim to leverage my broad scientific background and technical expertise to help transform the promises of science and technology into a better future for all of humanity.
 
 ### Experience
+
+#### **Chief Technology Officer**, Ireni Co [2024:]{.cvdate}
+
+::: {.horizontal}
+- Builds applications based on the [Dec measurement system](/dec)
+- Offers freelance consulting services to clients
+:::
 
 #### **Lead Instructor**, [General Assembly](https://generalassemb.ly) [2019:]{.cvdate}
 
@@ -84,7 +89,7 @@ Overall, I aim to leverage my broad scientific background and technical expertis
   - [Solutions Architect Associate](https://www.credly.com/badges/1ae81600-c0cb-47b4-8610-e0c58bff6741/public_url)
 :::
 
-#### **Adjunct Professor**, Virginia Tech [2021:2024]{.cvdate}
+#### **Adjunct Professor**, [Virginia Tech](https://www.vt.edu) [2021:2024]{.cvdate}
 
 ::: {.horizontal}
 - Taught two graduate courses for the Computer Science and Statistics Departments:

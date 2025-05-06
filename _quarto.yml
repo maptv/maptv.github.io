@@ -28,7 +28,7 @@ website:
   navbar:
     title: Martin Laptev
     logo: asset/deidec.svg
-    logo-alt: "Decagon made up of 100 triangles that transitions in a circle of ten swirling teardrops"
+    logo-alt: "Decagon made up of 100 triangles that transitions in a circle of ten swirling teardrops each with a repeat of the larger image at its center."
   sidebar:
     logo: ""
     tools:
