@@ -24,11 +24,11 @@ website:
   back-to-top-navigation: true
   reader-mode: true
   draft-mode: visible
-  favicon: asset/deidec.svg
+  favicon: asset/deidec.png
   navbar:
     title: Martin Laptev
     logo: asset/deidec.svg
-    logo-alt: "Decagon made up of 100 triangles"
+    logo-alt: "Decagon made up of 100 triangles that transitions in a circle of ten swirling teardrops"
   sidebar:
     logo: ""
     tools:
@@ -40,7 +40,7 @@ website:
       target: _blank
     - icon: envelope-at
       href: mailto:maptv@engineer.com
-    collapse-level: 2
+    collapse-level: 1
     contents:
     - icon: house-door
       text: Home

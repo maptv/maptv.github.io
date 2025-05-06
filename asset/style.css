@@ -238,3 +238,7 @@ section#cite a.uri {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
+
+.navbar-logo {
+  max-height: 38px !important;
+}
