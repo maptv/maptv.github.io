@@ -5,7 +5,7 @@ author:
   - name: Martin Laptev
     url: https://maptv.github.io
 date: last-modified
-image: vscodium.png
+image: ../asset/positron.svg
 categories:
   - tool
   - git
