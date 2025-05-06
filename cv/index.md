@@ -14,7 +14,7 @@
 - <img src="https://icons.getbootstrap.com/assets/icons/telephone.svg"
   class="phone" /> [240-207-1654](tel:240-207-1654)
 - <img src="https://icons.getbootstrap.com/assets/icons/envelope-at.svg"
-  class="shiftup" /> <maptv@engineer.com>
+  class="shiftup" /> <maptv@ireni.co>
 - <img src="https://icons.getbootstrap.com/assets/icons/house.svg"
   class="shiftup" /> [maptv.github.io](https://maptv.github.io)
 - <img src="https://icons.getbootstrap.com/assets/icons/github.svg"
@@ -37,6 +37,15 @@ transform the promises of science and technology into a better future
 for all of humanity.
 
 ### Experience
+
+#### **Chief Technology Officer**, Ireni Co <span class="cvdate">2024:</span>
+
+<div class="horizontal">
+
+- Builds applications based on the [Dec measurement system](../dec)
+- Offers freelance consulting services to clients
+
+</div>
 
 #### **Lead Instructor**, [General Assembly](https://generalassemb.ly) <span class="cvdate">2019:</span>
 
@@ -108,7 +117,7 @@ for all of humanity.
 
 </div>
 
-#### **Adjunct Professor**, Virginia Tech <span class="cvdate">2021:2024</span>
+#### **Adjunct Professor**, [Virginia Tech](https://www.vt.edu) <span class="cvdate">2021:2024</span>
 
 <div class="horizontal">
 
