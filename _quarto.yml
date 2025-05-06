@@ -39,7 +39,7 @@ website:
       href: https://www.linkedin.com/in/maptv
       target: _blank
     - icon: envelope-at
-      href: mailto:maptv@engineer.com
+      href: mailto:maptv@ireni.co
     collapse-level: 1
     contents:
     - icon: house-door
@@ -136,7 +136,7 @@ website:
       href: https://linkedin.com/in/maptv
       target: _blank
     - icon: envelope-at
-      href: mailto:maptv@engineer.com
+      href: mailto:maptv@ireni.co
 format:
   html:
     pagetitle: Martin Laptev
