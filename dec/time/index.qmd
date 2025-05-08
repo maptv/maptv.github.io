@@ -1553,44 +1553,70 @@ function setStyle(content, style = {}) {
     ...rest
   }}>${content}</span>`;
 }
+elapsed = {
+  let i = 0;
+  while (true) {
+    yield Promises.tick(864, ++i);
+  }
+}
+elaTime = elapsed % 1e5
+elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
+decMoty = Math.floor((5 * decDate + 2) / 153)
+isoYear = decYear + (decMoty > 9)
+month = decMoty < 10 ? decMoty + 3 : decMoty - 9
+decHour = decTime * 24
+decMinute = (decHour % 1) * 60
+decSecond = (decMinute % 1) * 60
+isoHour = Math.floor(decHour)
+isoMinute = Math.floor(decMinute)
+isoSecond = Math.floor(decSecond)
+dz = unix2dote(now)
+ydz = dote2date(...dz)
+decYear = ydz[0]
+decDate = Math.floor(ydz[1])
+decDek = Math.floor(decDate / 10)
+decDod = decDate % 10
+decDotm = Math.floor(decDate - (153 * decMoty + 2) / 5 + 1)
+decDoty = decDate.toString().padStart(3, "0")
 ```
 
 ```{=html}
 <style>
-  #barClock {
-    width: 100%;
-  }
-  .tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
-    fill: #000;
-    font-family: monospace;
-    text-anchor: middle;
-  }
-  .timeLabel {
-    text-anchor: start;
-  }
-  .timeBar, .timeBarFull, .timeBarFullN {
-    x: 1px;
-    height: 25px;
-    rx: 5px;
-    stroke: #aaa;
-  }
-  .timeBar {
-    fill: #e8e8e8;
-  }
-  .timeBarFull {
-    fill: #ccffff;
-  }
-  .timeBarFullN {
-    fill: #ffcccc;
-  }
-  .background {
-    fill: white;
-  }
-  .tickDek, .tickDotd, .tickDotd1, .tickC, .tickC1, .tickM, .tickM1, .tickB, .tickB1 {
-    stroke: none;
-    fill: #666;
-    width: 1px;
-  }
+#barClock {
+  width: 98%;
+  overflow: visible;
+}
+.tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
+  fill: #000;
+  font-family: monospace;
+  text-anchor: middle;
+}
+.timeLabel {
+  text-anchor: start;
+}
+.timeBar, .timeBarFull, .timeBarFullN {
+  x: 1px;
+  height: 25px;
+  rx: 5px;
+  stroke: #aaa;
+}
+.timeBar {
+  fill: #e8e8e8;
+}
+.timeBarFull {
+  fill: #ccffff;
+}
+.timeBarFullN {
+  fill: #ffcccc;
+}
+.background {
+  fill: white;
+}
+.tickDek, .tickDotd, .tickDotd1, .tickC, .tickC1, .tickM, .tickM1, .tickB, .tickB1 {
+  stroke: none;
+  fill: #666;
+  width: 1px;
+}
 #clock {
   stroke: #000;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;

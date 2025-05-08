@@ -218,28 +218,12 @@ function labelToggle(inputType, inputLabel, inputValue, inputId) {
   input.setAttribute("id", inputId);
   return input;
 }
-function labelNumeric(inputType, extent, inputLabel, inputValue, inputId) {
-  const input = inputType(extent, {label: inputLabel, value: inputValue});
-  input.setAttribute("id", inputId);
-  return input;
-}
 // https://observablehq.com/@observablehq/synchronized-inputs
 function set(input, value) {
   input.value = value;
   input.dispatchEvent(new Event("input", {bubbles: true}));
 }
 // https://observablehq.com/@observablehq/input-table
-function sparkbar(max, color) {
-  return x => htl.html`<div style="
-    width: ${100 * Math.abs(x) / max}%;
-    background: ${color};
-    float: right;
-    padding-right: 3px;
-    box-sizing: border-box;
-    overflow: visible;
-    display: flex;
-    justify-content: end;">${x.toLocaleString("en")}`
-}
 // https://stackoverflow.com/a/52079217
 // Converts from degrees to radians.
 function toRadians(degrees) { return degrees * Math.PI / 180; };
@@ -307,116 +291,13 @@ slStr = `, ${colorS / 10}%, ${colorL / 10}%)`
 hslStr = hStr + slStr
 bkgH = ({background: hStr + ", 100%, 50%)"})
 bkgHsl = ({background: hslStr})
-rainbowHue = textcolor('hue', bkgH)
-rainbowCourse = textcolor('Course', bkgHsl)
 rainbowMtr = textcolor(hueMtr, bkgHsl)
 rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
 rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
 rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
-rainbowN = textcolor('N', "hsl(0" + slStr)
-rainbowNmtr = textcolor('0', "hsl(0" + slStr)
-rainbowNdegH = textcolor('0', "hsl(0" + slStr)
-rainbowNdegC = textcolor('0', "hsl(0" + slStr)
-rainbowNhex = textcolor(d3.color("hsl(0" + slStr).formatHex().slice(1), "hsl(0" + slStr)
-rainbowNE = textcolor('NE', "hsl(295" + slStr)
-rainbowNEmtr = textcolor('125', "hsl(295" + slStr)
-rainbowNEdegH = textcolor('295', "hsl(295" + slStr)
-rainbowNEdegC = textcolor('45', "hsl(295" + slStr)
-rainbowNEhex = textcolor(d3.color("hsl(295" + slStr).formatHex().slice(1), "hsl(295" + slStr)
-rainbowE = textcolor('E', "hsl(260" + slStr)
-rainbowEmtr = textcolor('250', "hsl(260" + slStr)
-rainbowEdegH = textcolor('260', "hsl(260" + slStr)
-rainbowEdegC = textcolor('90', "hsl(260" + slStr)
-rainbowEhex = textcolor(d3.color("hsl(260" + slStr).formatHex().slice(1), "hsl(260" + slStr)
-rainbowSE = textcolor('SE', "hsl(210" + slStr)
-rainbowSEmtr = textcolor('375', "hsl(210" + slStr)
-rainbowSEdegH = textcolor('210', "hsl(210" + slStr)
-rainbowSEdegC = textcolor('135', "hsl(210" + slStr)
-rainbowSEhex = textcolor(d3.color("hsl(210" + slStr).formatHex().slice(1), "hsl(210" + slStr)
-rainbowS = textcolor('S', "hsl(180" + slStr)
-rainbowSmtr = textcolor('500', "hsl(180" + slStr)
-rainbowSdegH = textcolor('180', "hsl(180" + slStr)
-rainbowSdegC = textcolor('180', "hsl(180" + slStr)
-rainbowShex = textcolor(d3.color("hsl(180" + slStr).formatHex().slice(1), "hsl(180" + slStr)
-rainbowSW = textcolor('SW', "hsl(110" + slStr)
-rainbowSWmtr = textcolor('625', "hsl(110" + slStr)
-rainbowSWdegH = textcolor('110', "hsl(110" + slStr)
-rainbowSWdegC = textcolor('225', "hsl(110" + slStr)
-rainbowSWhex = textcolor(d3.color("hsl(110" + slStr).formatHex().slice(1), "hsl(110" + slStr)
-rainbowW = textcolor('W', "hsl(70" + slStr)
-rainbowWmtr = textcolor('750', "hsl(70" + slStr)
-rainbowWdegH = textcolor('70', "hsl(70" + slStr)
-rainbowWdegC = textcolor('270', "hsl(70" + slStr)
-rainbowWhex = textcolor(d3.color("hsl(70" + slStr).formatHex().slice(1), "hsl(70" + slStr)
-rainbowNW = textcolor('NW', "hsl(45" + slStr)
-rainbowNWmtr = textcolor('875', "hsl(45" + slStr)
-rainbowNWdegH = textcolor('45', "hsl(45" + slStr)
-rainbowNWdegC = textcolor('315', "hsl(45" + slStr)
-rainbowNWhex = textcolor(d3.color("hsl(45" + slStr).formatHex().slice(1), "hsl(45" + slStr)
-rainbowEast = textcolor('East', "hsl(260" + slStr)
-rainbowWest = textcolor('West', "hsl(70" + slStr)
-rainbowNort = textcolor('0', "hsl(0" + slStr)
-rainbowSout = textcolor('500', "hsl(180" + slStr)
-rainbowMidN = textcolor('0', "hsl(0" + slStr)
-rainbowNoon = textcolor('500', "hsl(180" + slStr)
-rainbowEqua = textcolor('0', "hsl(0" + slStr)
-rainbowMer0 = textcolor('0', "hsl(0" + slStr)
-rainbowMer5 = textcolor('500', "hsl(180" + slStr)
-rainbowDay0 = textcolor('0', "hsl(0" + slStr)
-rainbowMidY = textcolor('500', "hsl(180" + slStr)
-rainbowY000 = textcolor('0', "hsl(0" + slStr)
-rainbowY500 = textcolor('500', "hsl(180" + slStr)
-rainbowN100 = textcolor('-100', "hsl(40" + slStr)
-rainbowN200 = textcolor('-200', "hsl(60" + slStr)
-rainbowP100 = textcolor('100', "hsl(300" + slStr)
-rainbowP200 = textcolor('200', "hsl(280" + slStr)
-rainbowTilt = textcolor('65', "hsl(320.94117647058823" + slStr)
-rainbowCanc = textcolor('65', "hsl(320.94117647058823" + slStr)
-rainbowCapr = textcolor('-65', "hsl(25.88235294117647" + slStr)
-rainbowArc0 = textcolor('250', "hsl(260" + slStr)
-rainbowArc1 = textcolor('65', "hsl(320.94117647058823" + slStr)
-rainbowArc2 = textcolor('185', "hsl(283.05882352941177" + slStr)
-rainbowAnt0 = textcolor('65', "hsl(320.94117647058823" + slStr)
-rainbowAnt1 = textcolor('250', "hsl(260" + slStr)
-rainbowAnt2 = textcolor('-185', "hsl(56.94117647058823" + slStr)
-rainbowNpol = textcolor('250', "hsl(260" + slStr)
-rainbowSpol = textcolor('-250', "hsl(70" + slStr)
-rainbow0num = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
-rainbow9num = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
-rainbow0rng = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
-rainbow9rng = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
-rainbow0zn0 = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
-rainbow0zn1 = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
-rainbow0zn2 = textcolor('0', d3.color(`hsl(0${slStr}`).formatHex()) // red
-rainbow6zon = textcolor('6', d3.color(`hsl(120${slStr}`).formatHex()) // red
-rainbow8zn0 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
-rainbow8zn1 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
-rainbow8zn2 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
-rainbow8zn3 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
-rainbow8zn4 = textcolor('8', d3.color(`hsl(60${slStr}`).formatHex()) // red
-rainbowN2zn = textcolor('-2', d3.color(`hsl(60${slStr}`).formatHex()) // red
-rainbowMer8 = textcolor('800', d3.color(`hsl(60${slStr}`).formatHex()) // red
-rainbow9zon = textcolor('9', d3.color(`hsl(40${slStr}`).formatHex()) // red
 rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex()) // red
 rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex()) // red
-rainbowN4zn = textcolor('-4', d3.color(`hsl(120${slStr}`).formatHex()) // red
-rainbowN1zn = textcolor('-1', d3.color(`hsl(40${slStr}`).formatHex()) // red
-rainbowP5zn = textcolor('5', d3.color(`hsl(180${slStr}`).formatHex()) // red
-rainbowP12h = textcolor('UTC+12:00', d3.color(`hsl(180${slStr}`).formatHex()) // red
-rainbowN12h = textcolor('UTC-12:00', d3.color(`hsl(180${slStr}`).formatHex()) // red
-rainbow0000 = textcolor('0.0000', d3.color(`hsl(0${slStr}`).formatHex()) // red
-rainbow8000 = textcolor('8.0000', d3.color(`hsl(80${slStr}`).formatHex()) // red
-rainbow0hex = textcolor('f00', d3.color(`hsl(0${slStr}`).formatHex()) // red
-rainbow1hex = textcolor('f0f', d3.color(`hsl(300${slStr}`).formatHex()) // magenta
-rainbow2hex = textcolor('a0f', d3.color(`hsl(280${slStr}`).formatHex()) // violet
-rainbow3hex = textcolor('00f', d3.color(`hsl(240${slStr}`).formatHex()) // blue
-rainbow4hex = textcolor('0af', d3.color(`hsl(200${slStr}`).formatHex()) // azure
-rainbow5hex = textcolor('0ff', d3.color(`hsl(180${slStr}`).formatHex()) // cyan
-rainbow6hex = textcolor('0f0', d3.color(`hsl(120${slStr}`).formatHex()) // green
-rainbow7hex = textcolor('af0', d3.color(`hsl(80${slStr}`).formatHex()) // lime
-rainbow8hex = textcolor('ff0', d3.color(`hsl(60${slStr}`).formatHex()) // yellow
-rainbow9hex = textcolor('fa0', d3.color(`hsl(40${slStr}`).formatHex()) // orange
 // Show preview swatches of color
 preview = () => {
   const container = DOM.element('div')
@@ -636,17 +517,6 @@ decConnections = [
   [8, 3],
   [9, 4]
 ]
-coor = [[[-18, -89.98], [-18, 89.98], [18, 89.98], [18, -89.98], [-18, -89.98], ]]
-deczones = [...Array(10).keys()].map(
-  i => ({
-    "type": "Feature",
-    "geometry": {
-      "type": "Polygon",
-      "coordinates": [coor[0].map(t => [t[0]+36*i, t[1]])]
-      },
-    "properties": []
-  })
-)
 hsl8 = [
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
   `hsl(295, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
@@ -704,27 +574,14 @@ function dote2date(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
-elapsed = {
-  let i = 0;
-  while (true) {
-    yield Promises.tick(864, ++i);
-  }
-}
-elaTime = elapsed % 1e5
-elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
 sunLonHsl = textcolor(sunLon, `hsl(${d3.hsl(piecewiseColor(sunLon % 1000 / 1000)).h}` + slStr)
 sunLatHsl = textcolor(sunLat, `hsl(${d3.hsl(piecewiseColor((sunLat + 1000) % 1000 / 1000)).h}` + slStr)
 dz = unix2dote(now)
 ydz = dote2date(...dz)
-decYear = ydz[0]
-decDate = Math.floor(ydz[1])
-decDoty = decDate.toString().padStart(3, "0")
-decTime = ydz[1] % 1
 decZone = ydz[2]
-decZonePos = (ydz[2] + 10) % 10
+decZonePos = (decZone + 10) % 10
 decSign = decZone < 0 ? "+" : "–"
 decSignOff = offset < 0 ? "+" : "–"
-dzP0 = unix2dote(now, 0)
 dzOff = unix2dote(now, offset)
 ydzOff = dote2date(...dzOff)
 decYearOff = ydzOff[0]
@@ -738,26 +595,21 @@ decOffsetHslN = textcolor(decOffsetNega, `hsl(${d3.hsl(piecewiseColor(decOffsetP
 decOffsetHsl0 = textcolor(offset, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
 decOffsetHsl1 = textcolor(Math.abs(offset), `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
 decOffsetHsl2 = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decYearOffHsl = textcolor(decYearOff, `hsl(${d3.hsl(piecewiseColor(decYearOff % 1000 / 1000)).h}` + slStr)
 decDateOffHsl = textcolor(decDateOff.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateOff / (365 + isLeapOff))).h}` + slStr)
 decTimeOffHsl0 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 decTimeOffHsl1 = textcolor(decTimeOff.toFixed(5).slice(1), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 decTimeOffHsl2 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 decTimeOffHsl3 = textcolor((decTimeOff * 1000).toFixed(2), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 decTimeOffHsl4 = textcolor((decTimeOff * 100000).toFixed(0), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-dzP8 = unix2dote(now, 8)
+dzP0 = unix2dote(now, 0)
 ydzP0 = dote2date(...dzP0)
-ydzP8 = dote2date(...dzP8)
 dzN2 = unix2dote(now, -2)
 ydzN2 = dote2date(...dzN2)
 decYearP0 = ydzP0[0]
 decDateP0 = Math.floor(ydzP0[1])
 decDotyP0 = decDateP0.toString().padStart(3, "0")
-decYearP8 = ydzP8[0]
 decYearN2 = ydzN2[0]
-decDateP8 = Math.floor(ydzP8[1])
 decDateN2 = Math.floor(ydzN2[1])
-decTimeP8 = ydzP8[1] % 1
 decTimeP0 = ydzP0[1] % 1
 decTimeN0 = (decTimeP0 - 1) % 1
 utcOffsetM = -(new Date).getTimezoneOffset()
@@ -769,10 +621,6 @@ decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)
 decZonHslA = textcolor(Math.abs(decZone), `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
 utcOffHslD = textcolor(parseFloat(utcOffsetD.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
-utcOffHslP = textcolor(parseFloat(utcOffsetP.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
-decYearHsl = textcolor(decYear, `hsl(${d3.hsl(piecewiseColor(decYear % 1000 / 1000)).h}` + slStr)
-decDateHsl = textcolor(decDate.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP8 / (365 + isLeapP8))).h}` + slStr)
-decTimeHsl = textcolor(parseFloat((decTime * 10).toFixed(4)), `hsl(${d3.hsl(piecewiseColor(decTime)).h}` + slStr)
 decLon = longitude % 10
 decLonHsl = textcolor(parseFloat(decLon.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(decLon / 10)).h}` + slStr)
 decZon = Math.floor(decLon)
@@ -787,18 +635,6 @@ point0long = long2turn(Place_A[0], 1)
 point0zone = Math.floor(point0long)
 point0lHsl = textcolor(parseFloat(point0long.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
 point0zHsl = textcolor(point0zone, `hsl(${d3.hsl(piecewiseColor(point0zone / 10)).h}` + slStr)
-decDek = Math.floor(decDate / 10)
-decDod = decDate % 10
-decMoty = Math.floor((5 * decDate + 2) / 153)
-decDotm = Math.floor(decDate - (153 * decMoty + 2) / 5 + 1)
-isoYear = decYear + (decMoty > 9)
-month = decMoty < 10 ? decMoty + 3 : decMoty - 9
-decHour = decTime * 24
-decMinute = (decHour % 1) * 60
-decSecond = (decMinute % 1) * 60
-isoHour = Math.floor(decHour)
-isoMinute = Math.floor(decMinute)
-isoSecond = Math.floor(decSecond)
 isLeapOff = decYearOff % 4 == 0 && decYearOff % 100 != 0 || decYearOff % 400 == 0;
 isLeapP8 = decYearP8 % 4 == 0 && decYearP8 % 100 != 0 || decYearP8 % 400 == 0;
 isLeapN2 = decYearN2 % 4 == 0 && decYearN2 % 100 != 0 || decYearN2 % 400 == 0;
