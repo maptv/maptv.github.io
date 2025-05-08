@@ -585,6 +585,7 @@ decSignOff = offset < 0 ? "+" : "–"
 dzOff = unix2dote(now, offset)
 ydzOff = dote2date(...dzOff)
 decYearOff = ydzOff[0]
+decYearOffHsl = textcolor(decYearOff, `hsl(${d3.hsl(piecewiseColor(decYearOff % 1000 / 1000)).h}` + slStr)
 decDateOff = Math.floor(ydzOff[1])
 decDotyOff = decDateOff.toString().padStart(3, "0")
 decTimeOff = ydzOff[1] % 1
