@@ -1,8 +1,8 @@
 # Dec Time
 Martin Laptev
-2024+348
+2025+068
 
-- [Time](#time)
+- [Time of day (tod)](#tod)
 - [Zone](#zone)
 - [Unit](#unit)
 - [Next](#next)
@@ -19,7 +19,7 @@ style="width:8.64in;height:0.98in" />
 
 </div>
 
-# Time
+# Time of day (tod)
 
 My website provides many examples of the [Quarto](https://quarto.org)
 publishing and the [Dec](../../dec) measurement systems in action. I
@@ -749,7 +749,7 @@ data-bs-title="a tenth of a day">deciday</span>, varies across time
 zones, because the 10 Dec time zones, numbered 0 through 9 on the map🗺️,
 are each 1 <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a turn">deci[turn](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span>
-(d[*τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
+([dt](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
 wide. Simply put, a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a turn">deciturn</span> of longitude
 translates into a <span class="under tool" data-bs-toggle="tooltip"
@@ -786,7 +786,7 @@ boundaries, whereas Dec time zones are determined solely by longitude.
 If you know your longitude in degrees (°) or <span class="under tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundredths of a turn">centi[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span>
-([*c**τ*](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)),
+([ct](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)),
 you can look up your Dec time zone (TZ) in the table below.
 
 <table>
@@ -808,11 +808,11 @@ you can look up your Dec time zone (TZ) in the table below.
 <th style="text-align: center;">Mid<br>°</th>
 <th style="text-align: center;">End<br>°</th>
 <th style="text-align: center;">Start<br><span
-class="math inline"><em>c</em><em>τ</em></span></th>
+class="math inline"><em>c</em><em>t</em></span></th>
 <th style="text-align: center;">Mid<br><span
-class="math inline"><em>c</em><em>τ</em></span></th>
+class="math inline"><em>c</em><em>t</em></span></th>
 <th style="text-align: center;">End<br><span
-class="math inline"><em>c</em><em>τ</em></span></th>
+class="math inline"><em>c</em><em>t</em></span></th>
 </tr>
 </thead>
 <tbody>
@@ -1093,8 +1093,8 @@ and finally multiply by 10: <span class="cyan">d</span> +
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × 10. The current values in this equation are
 <span class="cyan">${browserTime.toFixed(4)}</span> +
-<span class="lime">0</span> = <span class="purple">${(unix /
-1000).toFixed(0)}</span> ÷ 86400
+<span class="lime">0</span> = <span class="purple">${Math.floor(now /
+1000)}</span> ÷ 86400
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × 10.
 
@@ -1214,11 +1214,6 @@ Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20g
 ``` {ojs}
 //| echo: false
 //| output: false
-unix = {
-  while(true) {
-    yield Date.now();
-  }
-}
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
     zone = zone ?? -Math.round(
@@ -1249,11 +1244,11 @@ function dote2date(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
-dz = unix2dote(unix)
+dz = unix2dote(now)
 ydz = dote2date(...dz)
 decYear = ydz[0].toString().padStart(4, "0")
 decDate = Math.floor(ydz[1]).toString().padStart(3, "0")
-browserDote = unix2dote(unix)
+browserDote = unix2dote(now)
 browserTime = browserDote[0] % 1 * 10
 browserZone = browserDote[1]
 browserSign = browserZone > 0 ? "-" : "+"
@@ -1261,7 +1256,7 @@ zone0time = (browserTime - browserZone + 10) % 10
 hours = browserTime * 2.4
 minutes = hours % 1 * 60
 seconds = minutes % 1 * 60
-selectedDote = unix2dote(unix, long2zone(location[0]))
+selectedDote = unix2dote(now, long2zone(location[0]))
 selectedExact = selectedDote[0] % 1
 selectedExactN = (1 - selectedExact) % 1
 selectedZone = selectedDote[1]
@@ -1944,43 +1939,192 @@ function setStyle(content, style = {}) {
     ...rest
   }}>${content}</span>`;
 }
+function yiq(color) {
+  const {r, g, b} = d3.rgb(color);
+  return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
+}
+function textcolor(content, style = {}) {
+  const {
+    background,
+    color = yiq(background) > 0.51 ? "#000" : "white",
+    padding = "0 5px",
+    borderRadius = "4px",
+    fontWeight = 400,
+    fontFamily = "monospace",
+    ...rest
+  } = typeof style === "string" ? {background: style} : style;
+  return htl.html`<span style=${{
+    background,
+    color,
+    padding,
+    borderRadius,
+    fontWeight,
+    fontFamily,
+    ...rest
+  }}>${content}</span>`;
+}
+elapsed = {
+  let i = 0;
+  while (true) {
+    yield Promises.tick(864, ++i);
+  }
+}
+piecewiseColor = d3.piecewise(d3.interpolateRgb, [
+  "#f00", // red
+  "#f0f", // magenta
+  "#a0f", // violet
+  "#00f", // blue
+  "#0af", // azure
+  "#0ff", // cyan
+  "#0f0", // green
+  "#af0", // lime
+  "#ff0", // yellow
+  "#fa0", // orange
+  "#f00", // red
+])
+slStr = `, 100%, 50%)`
+elaTime = elapsed % 1e5
+elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
+decMoty = Math.floor((5 * decDate + 2) / 153)
+isoYear = decYear + (decMoty > 9)
+month = decMoty < 10 ? decMoty + 3 : decMoty - 9
+decHour = decTime * 24
+decMinute = (decHour % 1) * 60
+decSecond = (decMinute % 1) * 60
+isoHour = Math.floor(decHour)
+isoMinute = Math.floor(decMinute)
+isoSecond = Math.floor(decSecond)
+decDek = Math.floor(decDate / 10)
+decDod = decDate % 10
+decDotm = Math.floor(decDate - (153 * decMoty + 2) / 5 + 1)
+decDoty = decDate.toString().padStart(3, "0")
+```
+
+``` {ojs}
+//| echo: false
+//| output: false
+html`
+<style>
+.color0 {
+  background: hsl(0 100% 50%);
+  color: ${yiq(`hsl(0, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color1 {
+  background: hsl(300 100% 50%);
+  color: ${yiq(`hsl(300, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color2 {
+  background: hsl(280 100% 50%);
+  color: ${yiq(`hsl(280, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color3 {
+  background: hsl(240 100% 50%);
+  color: ${yiq(`hsl(240, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color4 {
+  background: hsl(200 100% 50%);
+  color: ${yiq(`hsl(200, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color5 {
+  background: hsl(180 100% 50%);
+  color: ${yiq(`hsl(180, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color6 {
+  background: hsl(120 100% 50%);
+  color: ${yiq(`hsl(120, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color7 {
+  background: hsl(80 100% 50%);
+  color: ${yiq(`hsl(80, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color8 {
+  background: hsl(60 100% 50%);
+  color: ${yiq(`hsl(60, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color9 {
+  background: hsl(40 100% 50%);
+  color: ${yiq(`hsl(40, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+</style>
+`
 ```
 
 <style>
-  #barClock {
-    width: 100%;
-  }
-  .tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
-    fill: #000;
-    font-family: monospace;
-    text-anchor: middle;
-  }
-  .timeLabel {
-    text-anchor: start;
-  }
-  .timeBar, .timeBarFull, .timeBarFullN {
-    x: 1px;
-    height: 25px;
-    rx: 5px;
-    stroke: #aaa;
-  }
-  .timeBar {
-    fill: #e8e8e8;
-  }
-  .timeBarFull {
-    fill: #ccffff;
-  }
-  .timeBarFullN {
-    fill: #ffcccc;
-  }
-  .background {
-    fill: white;
-  }
-  .tickDek, .tickDotd, .tickDotd1, .tickC, .tickC1, .tickM, .tickM1, .tickB, .tickB1 {
-    stroke: none;
-    fill: #666;
-    width: 1px;
-  }
+#barClock {
+  width: 98%;
+  overflow: visible;
+}
+.tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
+  fill: #000;
+  font-family: monospace;
+  text-anchor: middle;
+}
+.timeLabel {
+  text-anchor: start;
+}
+.timeBar, .timeBarFull, .timeBarFullN {
+  x: 1px;
+  height: 25px;
+  rx: 5px;
+  stroke: #aaa;
+}
+.timeBar {
+  fill: #e8e8e8;
+}
+.timeBarFull {
+  fill: #ccffff;
+}
+.timeBarFullN {
+  fill: #ffcccc;
+}
+.background {
+  fill: white;
+}
+.tickDek, .tickDotd, .tickDotd1, .tickC, .tickC1, .tickM, .tickM1, .tickB, .tickB1 {
+  stroke: none;
+  fill: #666;
+  width: 1px;
+}
 #clock {
   stroke: #000;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -2025,7 +2169,7 @@ function setStyle(content, style = {}) {
 #title-block-header > div:nth-child(2) {
   display: none;
 }
-#time > h4.hiddenheading {
+h4.hiddenheading, h5.hiddenheading {
   display: none;
 }
 </style>
