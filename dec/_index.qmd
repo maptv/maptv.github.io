@@ -599,26 +599,16 @@ decDateOffHsl = textcolor(decDateOff.toString().padStart(3, "0"), `hsl(${d3.hsl(
 decTimeOffHsl0 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 decTimeOffHsl1 = textcolor(decTimeOff.toFixed(5).slice(1), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 decTimeOffHsl2 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl3 = textcolor((decTimeOff * 1000).toFixed(2), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 decTimeOffHsl4 = textcolor((decTimeOff * 100000).toFixed(0), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 dzP0 = unix2dote(now, 0)
 ydzP0 = dote2date(...dzP0)
-dzN2 = unix2dote(now, -2)
-ydzN2 = dote2date(...dzN2)
 decYearP0 = ydzP0[0]
-decDateP0 = Math.floor(ydzP0[1])
-decDotyP0 = decDateP0.toString().padStart(3, "0")
-decYearN2 = ydzN2[0]
-decDateN2 = Math.floor(ydzN2[1])
-decTimeP0 = ydzP0[1] % 1
-decTimeN0 = (decTimeP0 - 1) % 1
 utcOffsetM = -(new Date).getTimezoneOffset()
 utcOffsetD = utcOffsetM / 144
 utcOffDiff = parseFloat((Math.round(utcOffsetD) - utcOffsetD).toFixed(2))
 utcOffDiffHsl = textcolor(utcOffDiff, `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
 utcOffsetP = (utcOffsetD + 10) % 10
 decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
-decZonHslA = textcolor(Math.abs(decZone), `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
 utcOffHslD = textcolor(parseFloat(utcOffsetD.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
 decLon = longitude % 10
@@ -636,12 +626,21 @@ point0zone = Math.floor(point0long)
 point0lHsl = textcolor(parseFloat(point0long.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
 point0zHsl = textcolor(point0zone, `hsl(${d3.hsl(piecewiseColor(point0zone / 10)).h}` + slStr)
 isLeapOff = decYearOff % 4 == 0 && decYearOff % 100 != 0 || decYearOff % 400 == 0;
-isLeapP8 = decYearP8 % 4 == 0 && decYearP8 % 100 != 0 || decYearP8 % 400 == 0;
-isLeapN2 = decYearN2 % 4 == 0 && decYearN2 % 100 != 0 || decYearN2 % 400 == 0;
 timezones = FileAttachment("../asset/timezones.json").json()
 zones = topojson.feature(timezones, timezones.objects.timezones).features
 mesh = topojson.mesh(timezones, timezones.objects.timezones)
 color = d3.scaleSequential(d3.interpolateRdBu).domain([-12, 14])
+coor = [[[-18, -89.98], [-18, 89.98], [18, 89.98], [18, -89.98], [-18, -89.98], ]]
+deczones = [...Array(10).keys()].map(
+  i => ({
+    "type": "Feature",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [coor[0].map(t => [t[0]+36*i, t[1]])]
+      },
+    "properties": []
+  })
+)
 // https://observablehq.com/@enjalot/draggable-world-map-coordinates-input
 // https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea
 function worldMapCoordinates(config = {}, dimensions) {
