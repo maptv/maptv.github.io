@@ -620,8 +620,8 @@ parLat = textcolor(parseFloat(latitude.toFixed(3)), `hsl(${d3.hsl(piecewiseColor
 parCos = Math.cos(latitude * 2 * Math.PI)
 parLen = textcolor(parseFloat(parCos.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
 conversionFactor = costype === "turns" ? "" : costype === "radians" ?  tex`\,\tau\!` : tex`\times360`
-zems = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
-zLeft = textcolor(zems, `hsl(${d3.hsl(piecewiseColor(zems / 1000)).h}` + slStr)
+zemsLeft = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
+zLeft = textcolor(zemsLeft, `hsl(${d3.hsl(piecewiseColor(zemsLeft / 1000)).h}` + slStr)
 point0long = long2turn(Place_A[0], 1)
 point0zone = Math.floor(point0long)
 point0lHsl = textcolor(parseFloat(point0long.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
@@ -1368,6 +1368,11 @@ function swatches(palette) {
     ]
 })}
 colorsize = 210
+kg = parseFloat(kilograms.toFixed(2))
+zem2 = parseFloat((zems**2).toFixed(2))
+bmi = parseFloat((kilograms / zems**2).toFixed(2))
+bmim2 = parseFloat((bmi * 25 / 4).toFixed(2))
+bmiStr = bmi < 2.96 ? "underweight" : bmi < 4 ? "normal" : bmi < 4.8 ? "overweight" : "obese"
 ```
 
 ```{ojs}
@@ -1712,35 +1717,15 @@ div.coloropp canvas{
   height: 240px !important;
   overflow: visible;
 }
-div#colorslider > label {
-  max-width: 60px;
-}
-div#colorslider input[type="number"] {
-  width: 105px;
-}
-div#saturslider > div {
-  min-width: 360px;
-}
-div#saturslider > label {
-  max-width: 60px;
-}
-div#saturslider input[type="number"] {
-  width: 105px;
-}
-div#lightslider > div {
-  min-width: 360px;
-}
-div#lightslider > label {
-  max-width: 60px;
-}
-div#loninput label, div#latinput label , div#offinput label {
+div#colorslider label, div#saturslider label, div#lightslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label {
   --label-width: 75px;
+  max-width: 75px;
 }
-div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"] {
-  width: 125px;
+div#colorinput input[type="number"], div#saturslider input[type="number"], div#lightslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"] {
+  max-width: 75px;
 }
-div#lightslider input[type="number"] {
-  width: 105px;
+div#colorslider input[type="range"], div#saturslider input[type="range"], div#lightslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"] {
+  max-width: 200px;
 }
 div#distmap {
   display: flex;
@@ -1825,6 +1810,15 @@ svg#lefthand {
 }
 section#map {
   line-height: 1.5;
+}
+#ruler {
+  margin-top: 25px;
+}
+form.oi-3a86ea {
+  flex-wrap: nowrap;
+}
+#costype label {
+  max-width: 100px;
 }
 </style>
 ```

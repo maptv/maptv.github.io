@@ -22,7 +22,7 @@ bread-crumbs: false
 format:
   html:
     grid:
-      body-width: 900px
+      body-width: 850px
     shift-heading-level-by: 3
     include-after-body:
       - ../../asset/cite.html
@@ -46,11 +46,17 @@ flowchart LR
    click E "/dec/span"
 ```
 
+# Day of year (doy) {.hiddenheading #tod}
+
+My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the clocks🕓and bar📊charts below, which display the Dec time in the Dec time zone, [\${selectedZone}]{.lime}, selected by the red⭕️circle on the [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺️beneath the bars📊.
+
+like the one on the left side of the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) (navbar) above.
+
+Dec times consist of a time-of-day ([tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}) and a time zone. The [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} can be obtained from either a day-of-year ([doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}) or a day-of-era ([doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"}). To get the [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day), we divide by one and keep remainder: [d]{.cyan} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = [t]{.cyan}. In the times below clocks and on the bar charts, the tod and time zone are both in [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}: [d]{.cyan} &times; 10 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 10 = [t]{.cyan}.
+
 # Time of day (tod) {.hiddenheading #tod}
 
-My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the clocks🕓and bar📊charts below, which display a Dec time like the one on the left side of the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) (navbar) above.
-
-Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day). The shortest, longest, and thinnest clock🕓hands and the top, middle, and bottom bars📊indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, [+\${decTime}]{.cyan}, or until the end, [-\${decTimeN}]{.pink}, of the day in the Dec time zone, [\${selectedZone}]{.lime}, selected by the red⭕️circle on the [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺️beneath the bars📊.
+Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day). The shortest, longest, and thinnest clock🕓hands and the top, middle, and bottom bars📊indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, [+\${decTime}]{.cyan}, or until the end, [-\${decTimeN}]{.pink}, of the day in the 
 
 :::{.clocks}
 \${clock}\${clock1}

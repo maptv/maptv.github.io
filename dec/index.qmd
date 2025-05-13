@@ -19,7 +19,7 @@ bread-crumbs: false
 format:
   html:
     grid:
-      body-width: 850px
+      body-width: 900px
     shift-heading-level-by: 3
     include-after-body:
       - ../asset/cite.html
@@ -161,7 +161,7 @@ You can approximate a square [zem]{.tool data-bs-toggle="tooltip" data-bs-title=
 [Dimensions.com](https://www.dimensions.com/element/sitting-male-side-1)
 :::
 
-If two people sit facing each other with their legs🦵bent at 25 [centiturn]{.tool data-bs-toggle="tooltip" data-bs-title="a hundredth of a turn"} ([ct]{.tool data-bs-toggle="tooltip" data-bs-title="centiturn"}) angles and their knees 1 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"} apart, there will be around a cubic [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} of space between their legs🦵. According to [dimensions.com](https://www.dimensions.com), 115 [centizems]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a zem"} ([cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizems"}) is the [typical seat height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual) and 95 cz is a [low seat height](https://www.dimensions.com/element/sitting-female-front-1#:~:text=Seat%20Height%20(Low)%3A-,15%E2%80%9D%20%7C%2038%20cm,-Style%3A%20Casual) for both men and women age 25 to 45. A [centizem]{.tool data-bs-toggle="tooltip" data-bs-title="a hundredth of a zem"} is 4 [millimeters]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a meter"} ([mm]{.tool data-bs-toggle="tooltip" data-bs-title="millimeters"}).
+If two people sit facing each other with their legs🦵bent at 25 [centiturn]{.tool data-bs-toggle="tooltip" data-bs-title="a hundredth of a turn"} ([ct]{.tool data-bs-toggle="tooltip" data-bs-title="centiturn"}) angles and their knees 1 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"} apart, there will be around a cubic [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} of space between their legs🦵. According to [dimensions.com](https://www.dimensions.com), 115 [centizems]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a zem"} ([cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizems"}) is the [typical seat height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual) and 95 [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizems"} is a [low seat height](https://www.dimensions.com/element/sitting-female-front-1#:~:text=Seat%20Height%20(Low)%3A-,15%E2%80%9D%20%7C%2038%20cm,-Style%3A%20Casual) for both men and women age 25 to 45. A [centizem]{.tool data-bs-toggle="tooltip" data-bs-title="a hundredth of a zem"} is 4 [millimeters]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a meter"} ([mm]{.tool data-bs-toggle="tooltip" data-bs-title="millimeters"}).
 
 In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} means Earth🌍. This is fitting because all Dec units are based on physical attributes of the Earth🌏. At the Equator, the Earth🌎rotates on its axis at a speed of 1.00224 v. If we could indefinitely maintain this speed while flying West in an airplane✈️towards the setting sun☀️, we would be able to perpetually fly [into the sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
@@ -191,7 +191,27 @@ A cubic [decizem]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a zem
 
 ## Body mass index {.hiddenheading #bmi}
 
-A weight of 64 [kg]{.tool data-bs-toggle="tooltip" data-bs-title="kilograms"} and a height of 4 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}, 1.6 [m]{.tool data-bs-toggle="tooltip" data-bs-title="meters"}, or 64 inches correspond to a [body mass index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height) ([bmi]{.tool data-bs-toggle="tooltip" data-bs-title="body mass index"}) of 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$. A bmi above 4.8 $\text {kg}\over\text z^2$ or 30 $\text {kg}\over\text m^2$ is considered [obese](https://en.wikipedia.org/wiki/Obesity#:~:text=person's%20height—is-,over%2030%C2%A0kg/m2,-;%20the%20range%2025). If [Leonardo da Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)'s [Vitruvian Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci) were 4 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"} tall, we could measure 1 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"} from the knee to the foot🦶of one of his legs🦵or from the elbow to the fingertips of one of his arms💪.
+If [Leonardo da Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)'s [Vitruvian Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci) weighed 64 [kg]{.tool data-bs-toggle="tooltip" data-bs-title="kilograms"} and were 4 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"} tall, his [body mass index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height) ([bmi]{.tool data-bs-toggle="tooltip" data-bs-title="body mass index"}) would be 4 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$ and we could measure 1 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"} from the knee to the foot🦶of one of his legs🦵or from the elbow to the fingertips of one of his arms💪. A normal [bmi]{.tool data-bs-toggle="tooltip" data-bs-title="body mass index"} is between 2.96 and 4 $\text {kg}\over\text z^2$ or 18.5 and 25 $\text {kg}\over\text m^2$. A [bmi]{.tool data-bs-toggle="tooltip" data-bs-title="body mass index"} of \${kg} kg &div; \${zem2} z^2^ = \${bmi} $\text {kg}\over\text z^2$ = ${bmim2} $\text {kg}\over\text m^2$ is considered \${bmiStr}.
+
+```{ojs}
+//| echo: false
+//| label: kginput
+viewof kilograms = Inputs.range([0, 1000], {label: "kilograms", value: 64, step: .1})
+```
+
+```{ojs}
+//| echo: false
+//| label: zinput
+viewof zems = Inputs.range([0, 10], {label: "zems", value: 4, step: 0.01})
+```
+
+## Centizem centimeter inch {.hiddenheading #cci}
+
+::: {.column-page fig-align="center" style="text-align:center;"}
+![[Wikimedia](https://commons.wikimedia.org/wiki/File:Ruler_illustration.svg)](../asset/ruler.svg){#ruler}
+:::
+
+The image of a ruler📏above illustrates the relationship between [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizems"}, [centimeters]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a meter"} ([cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeters"}), and Dec inches: 1 [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizem"} = $2\over5$ [cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeters"} = $4\over25$ Dec inches, $5\over2$ [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizems"} = 1 [cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeter"} = $2\over5$ Dec inches, and $25\over4$ [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizems"} = $5\over2$ [cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeters"} = 1 Dec inch. The full length of the ruler📏represents $1\over4$ [z]{.tool data-bs-toggle="tooltip" data-bs-title="zems"}, 1 [dm]{.tool data-bs-toggle="tooltip" data-bs-title="decimeter"}, or 4 Dec inches. The shortest length marked on the ruler📏is $1\over2$ [millizems]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a zem"} ([mz]{.tool data-bs-toggle="tooltip" data-bs-title="millizems"}), $1\over5$ [mm]{.tool data-bs-toggle="tooltip" data-bs-title="millimeters"}, or $1\over125$ Dec inches.
 
 # Summary {#tldr}
 
@@ -203,7 +223,7 @@ Dec color🎨labels🏷️can imprecisely convey many different kinds of values 
 
 # Next{#next}
 
-Now that you have had a taste of Dec, I hope that you are hungry for more! My other Dec articles not only dive🤿deeper into Dec [dates](/dec/date) and [times](/dec/time), but also introduce Dec [snaps](/dec/snap)🫰and [spans](/dec/span)🌈. My [Quarto](/quarto) articles describe how I display Dec dates throughout my site, including in its [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) (navbar). My Dec [date](/dec/date) article explains the [format](/dec/date#dow) of the navbar date.
+Now that you have had a taste of Dec, I hope that you are hungry for more! My other Dec articles not only dive🤿deeper into Dec [dates](/dec/date) and [times](/dec/time), but also introduce Dec [snaps](/dec/snap)🫰and [spans](/dec/span)🌈. My [Quarto](/quarto) articles describe how I display Dec dates throughout my site, including in its [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) ([navbar]{.tool data-bs-toggle="tooltip" data-bs-title="navigation bar"}). My Dec [date](/dec/date) article explains the [format](/dec/date#dow) of the [navbar]{.tool data-bs-toggle="tooltip" data-bs-title="navigation bar"} date.
 
 ```{mermaid}
 %%| label: decnav
