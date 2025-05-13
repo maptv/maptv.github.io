@@ -231,8 +231,8 @@ decBar = colorbar({
 
 ```{ojs}
 //| echo: false
-//| label: colorslider
-//| class: colorcomponent
+//| label: hueslider
+//| class: colorslider
 // https://observablehq.com/@paavanb/progressive-color-picker
 { const input = Inputs.range([0, 1000], { label: "hue", value: 0, step: 1 })
   input.value = initialHSL[0]
@@ -243,8 +243,8 @@ decBar = colorbar({
 
 ```{ojs}
 //| echo: false
-//| label: saturslider
-//| class: colorcomponent
+//| label: satslider
+//| class: colorslider
 // https://observablehq.com/@paavanb/progressive-color-picker
 { const input = Inputs.range([0, 1000], { label: "saturation", value: 1000, step: 1, })
   input.oninput = (evt) => onUpdateHSL(colorD, evt.currentTarget.value / 1000, colorL / 1000)
@@ -254,8 +254,8 @@ decBar = colorbar({
 
 ```{ojs}
 //| echo: false
-//| label: lightslider
-//| class: colorcomponent
+//| label: litslider
+//| class: colorslider
 // https://observablehq.com/@paavanb/progressive-color-picker
 { const input = Inputs.range([0, 1000], { label: "lightness", value: 500, step: 1, })
   input.oninput = (evt) => onUpdateHSL(colorD, colorS / 1000, evt.currentTarget.value / 1000)

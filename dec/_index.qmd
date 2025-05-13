@@ -1706,9 +1706,6 @@ div.colorcomparer svg {
   overflow: visible;
   margin-left: 5px;
 }
-div#colorslider > div {
-  min-width: 360px;
-}
 div.coloropp {
   overflow: visible;
 }
@@ -1717,15 +1714,16 @@ div.coloropp canvas{
   height: 240px !important;
   overflow: visible;
 }
-div#colorslider label, div#saturslider label, div#lightslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label {
-  --label-width: 75px;
+div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label {
+  --label-width: 80px;
+  max-width: 80px;
+}
+div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"] {
   max-width: 75px;
 }
-div#colorinput input[type="number"], div#saturslider input[type="number"], div#lightslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"] {
-  max-width: 75px;
-}
-div#colorslider input[type="range"], div#saturslider input[type="range"], div#lightslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"] {
-  max-width: 200px;
+div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"] {
+  max-width: 225px;
+  min-width: 125px;
 }
 div#distmap {
   display: flex;

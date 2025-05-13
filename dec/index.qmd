@@ -10,6 +10,7 @@ citation:
   url: https://maptv.github.io/dec
 aliases:
   - /d
+  - /de
 license: CC BY-SA
 lightbox: false
 toc: true
