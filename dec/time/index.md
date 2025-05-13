@@ -1,7 +1,8 @@
 # Dec Time
 Martin Laptev
-2025+068
+2025+072
 
+- [Day of year (doy)](#tod)
 - [Time of day (tod)](#tod)
 - [Zone](#zone)
 - [Unit](#unit)
@@ -19,16 +20,46 @@ style="width:8.64in;height:0.98in" />
 
 </div>
 
-# Time of day (tod)
+# Day of year (doy)
 
 My website provides many examples of the [Quarto](https://quarto.org)
 publishing and the [Dec](../../dec) measurement systems in action. I
 leverage Quarto support for the [Observable](https://observablehq.com/)
 data analysis and visualization system to create animated and
 interactive graphics like the clocks🕓and bar📊charts below, which
-display a Dec time like the one on the left side of the [navigation
+display the Dec time in the Dec time zone,
+<span class="lime">${selectedZone}</span>, selected by the red⭕️circle
+on the
+[solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
+map🗺️beneath the bars📊.
+
+like the one on the left side of the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
 (navbar) above.
+
+Dec times consist of a time-of-day (<span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>) and a
+time zone. The <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> can be obtained from either a
+day-of-year (<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span>) or a day-of-era
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-era">doe</span>). To get the
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> in [fractional
+days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day),
+we divide by one and keep remainder: <span class="cyan">d</span>
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1 = <span class="cyan">t</span>. In the times below clocks and on the
+bar charts, the tod and time zone are both in <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a>:
+<span class="cyan">d</span> × 10
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+10 = <span class="cyan">t</span>.
+
+# Time of day (tod)
 
 Dec times are measured in [fractional
 days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day).
@@ -43,11 +74,7 @@ data-bs-title="thousandths of a day">millidays</span>, and
 data-bs-title="hundred thousandths of a day">centimillidays</span>,
 respectively, of the time since the start,
 <span class="cyan">+${decTime}</span>, or until the end,
-<span class="pink">-${decTimeN}</span>, of the day in the Dec time zone,
-<span class="lime">${selectedZone}</span>, selected by the red⭕️circle
-on the
-[solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
-map🗺️beneath the bars📊.
+<span class="pink">-${decTimeN}</span>, of the day in the
 
 <div class="clocks">
 

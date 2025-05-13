@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+065
+2025+073
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -17,6 +17,7 @@ Martin Laptev
   - [Speed of sound](#sos)
   - [Zem conversion table](#zct)
   - [Body mass index](#bmi)
+  - [Centizem centimeter inch](#cci)
 - [Summary](#tldr)
 - [Next](#next)
 - [Cite](#cite)
@@ -1854,7 +1855,8 @@ data-bs-title="hundredths of a zem">centizems</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="centizems">cz</span>) is the
 [typical seat
 height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
-and 95 cz is a [low seat
+and 95 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centizems">cz</span> is a [low seat
 height](https://www.dimensions.com/element/sitting-female-front-1#:~:text=Seat%20Height%20(Low)%3A-,15%E2%80%9D%20%7C%2038%20cm,-Style%3A%20Casual)
 for both men and women age 25 to 45. A <span class="tool"
 data-bs-toggle="tooltip"
@@ -2166,27 +2168,81 @@ href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg
 
 ## Body mass index
 
-A weight of 64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilograms">kg</span> and a height of 4 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zem">z</span>, 1.6
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span>, or 64 inches correspond to a [body mass
-index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">bmi</span>) of 4
-$\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$. A bmi above
-4.8 $\text {kg}\over\text z^2$ or 30 $\text {kg}\over\text m^2$ is
-considered
-[obese](https://en.wikipedia.org/wiki/Obesity#:~:text=person's%20height—is-,over%2030%C2%A0kg/m2,-;%20the%20range%2025).
 If [Leonardo da
 Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s
 [Vitruvian
 Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
-were 4 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span> tall, we could measure 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zem">z</span> from the knee to
-the foot🦶of one of his legs🦵or from the elbow to the fingertips of one
-of his arms💪.
+weighed 64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="kilograms">kg</span> and were 4 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span> tall, his [body
+mass
+index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="body mass index">bmi</span>) would be 4
+$\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$ and we could
+measure 1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span> from the knee to the foot🦶of one of his
+legs🦵or from the elbow to the fingertips of one of his arms💪. A normal
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="body mass index">bmi</span> is between 2.96 and 4
+$\text {kg}\over\text z^2$ or 18.5 and 25 $\text {kg}\over\text m^2$. A
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="body mass index">bmi</span> of ${kg} kg ÷ ${zem2}
+z<sup>2</sup> = ${bmi} $\text {kg}\over\text z^2$ = ${bmim2}
+$\text {kg}\over\text m^2$ is considered ${bmiStr}.
+
+``` {ojs}
+//| echo: false
+//| label: kginput
+viewof kilograms = Inputs.range([0, 1000], {label: "kilograms", value: 64, step: .1})
+```
+
+``` {ojs}
+//| echo: false
+//| label: zinput
+viewof zems = Inputs.range([0, 10], {label: "zems", value: 4, step: 0.01})
+```
+
+## Centizem centimeter inch
+
+<div class="column-page" fig-align="center" style="text-align:center;">
+
+<figure id="ruler">
+<img src="../asset/ruler.svg" alt="Wikimedia" />
+<figcaption aria-hidden="true"><a
+href="https://commons.wikimedia.org/wiki/File:Ruler_illustration.svg">Wikimedia</a></figcaption>
+</figure>
+
+</div>
+
+The image of a ruler📏above illustrates the relationship between
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centizems">cz</span>, <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundredths of a meter">centimeters</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimeters">cm</span>), and Dec inches: 1
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centizem">cz</span> = $2\over5$ <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span> =
+$4\over25$ Dec inches, $5\over2$ <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centizems">cz</span> = 1
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimeter">cm</span> = $2\over5$ Dec inches, and
+$25\over4$ <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centizems">cz</span> = $5\over2$ <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span> = 1 Dec
+inch. The full length of the ruler📏represents $1\over4$
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zems">z</span>, 1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decimeter">dm</span>, or 4 Dec
+inches. The shortest length marked on the ruler📏is $1\over2$
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a zem">millizems</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millizems">mz</span>), $1\over5$ <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millimeters">mm</span>, or
+$1\over125$ Dec inches.
 
 # Summary
 
@@ -2244,8 +2300,11 @@ more! My other Dec articles not only dive🤿deeper into Dec
 articles describe how I display Dec dates throughout my site, including
 in its [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
-(navbar). My Dec [date](../dec/date) article explains the
-[format](../dec/date#dow) of the navbar date.
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="navigation bar">navbar</span>). My Dec
+[date](../dec/date) article explains the [format](../dec/date#dow) of
+the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="navigation bar">navbar</span> date.
 
 <div id="decnav">
 
@@ -2977,8 +3036,8 @@ parLat = textcolor(parseFloat(latitude.toFixed(3)), `hsl(${d3.hsl(piecewiseColor
 parCos = Math.cos(latitude * 2 * Math.PI)
 parLen = textcolor(parseFloat(parCos.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
 conversionFactor = costype === "turns" ? "" : costype === "radians" ?  tex`\,\tau\!` : tex`\times360`
-zems = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
-zLeft = textcolor(zems, `hsl(${d3.hsl(piecewiseColor(zems / 1000)).h}` + slStr)
+zemsLeft = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
+zLeft = textcolor(zemsLeft, `hsl(${d3.hsl(piecewiseColor(zemsLeft / 1000)).h}` + slStr)
 point0long = long2turn(Place_A[0], 1)
 point0zone = Math.floor(point0long)
 point0lHsl = textcolor(parseFloat(point0long.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
@@ -3725,6 +3784,11 @@ function swatches(palette) {
     ]
 })}
 colorsize = 210
+kg = parseFloat(kilograms.toFixed(2))
+zem2 = parseFloat((zems**2).toFixed(2))
+bmi = parseFloat((kilograms / zems**2).toFixed(2))
+bmim2 = parseFloat((bmi * 25 / 4).toFixed(2))
+bmiStr = bmi < 2.96 ? "underweight" : bmi < 4 ? "normal" : bmi < 4.8 ? "overweight" : "obese"
 ```
 
 ``` {ojs}
@@ -4068,35 +4132,15 @@ div.coloropp canvas{
   height: 240px !important;
   overflow: visible;
 }
-div#colorslider > label {
-  max-width: 60px;
-}
-div#colorslider input[type="number"] {
-  width: 105px;
-}
-div#saturslider > div {
-  min-width: 360px;
-}
-div#saturslider > label {
-  max-width: 60px;
-}
-div#saturslider input[type="number"] {
-  width: 105px;
-}
-div#lightslider > div {
-  min-width: 360px;
-}
-div#lightslider > label {
-  max-width: 60px;
-}
-div#loninput label, div#latinput label , div#offinput label {
+div#colorslider label, div#saturslider label, div#lightslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label {
   --label-width: 75px;
+  max-width: 75px;
 }
-div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"] {
-  width: 125px;
+div#colorinput input[type="number"], div#saturslider input[type="number"], div#lightslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"] {
+  max-width: 75px;
 }
-div#lightslider input[type="number"] {
-  width: 105px;
+div#colorslider input[type="range"], div#saturslider input[type="range"], div#lightslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"] {
+  max-width: 200px;
 }
 div#distmap {
   display: flex;
@@ -4181,5 +4225,14 @@ svg#lefthand {
 }
 section#map {
   line-height: 1.5;
+}
+#ruler {
+  margin-top: 25px;
+}
+form.oi-3a86ea {
+  flex-wrap: nowrap;
+}
+#costype label {
+  max-width: 100px;
 }
 </style>
