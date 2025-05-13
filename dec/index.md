@@ -542,8 +542,8 @@ decBar = colorbar({
 
 ``` {ojs}
 //| echo: false
-//| label: colorslider
-//| class: colorcomponent
+//| label: hueslider
+//| class: colorslider
 // https://observablehq.com/@paavanb/progressive-color-picker
 { const input = Inputs.range([0, 1000], { label: "hue", value: 0, step: 1 })
   input.value = initialHSL[0]
@@ -554,8 +554,8 @@ decBar = colorbar({
 
 ``` {ojs}
 //| echo: false
-//| label: saturslider
-//| class: colorcomponent
+//| label: satslider
+//| class: colorslider
 // https://observablehq.com/@paavanb/progressive-color-picker
 { const input = Inputs.range([0, 1000], { label: "saturation", value: 1000, step: 1, })
   input.oninput = (evt) => onUpdateHSL(colorD, evt.currentTarget.value / 1000, colorL / 1000)
@@ -565,8 +565,8 @@ decBar = colorbar({
 
 ``` {ojs}
 //| echo: false
-//| label: lightslider
-//| class: colorcomponent
+//| label: litslider
+//| class: colorslider
 // https://observablehq.com/@paavanb/progressive-color-picker
 { const input = Inputs.range([0, 1000], { label: "lightness", value: 500, step: 1, })
   input.oninput = (evt) => onUpdateHSL(colorD, colorS / 1000, evt.currentTarget.value / 1000)
@@ -4121,9 +4121,6 @@ div.colorcomparer svg {
   overflow: visible;
   margin-left: 5px;
 }
-div#colorslider > div {
-  min-width: 360px;
-}
 div.coloropp {
   overflow: visible;
 }
@@ -4132,15 +4129,16 @@ div.coloropp canvas{
   height: 240px !important;
   overflow: visible;
 }
-div#colorslider label, div#saturslider label, div#lightslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label {
-  --label-width: 75px;
+div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label {
+  --label-width: 80px;
+  max-width: 80px;
+}
+div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"] {
   max-width: 75px;
 }
-div#colorinput input[type="number"], div#saturslider input[type="number"], div#lightslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"] {
-  max-width: 75px;
-}
-div#colorslider input[type="range"], div#saturslider input[type="range"], div#lightslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"] {
-  max-width: 200px;
+div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"] {
+  max-width: 225px;
+  min-width: 125px;
 }
 div#distmap {
   display: flex;
