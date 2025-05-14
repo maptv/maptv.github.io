@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+073
+2025+074
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -1492,7 +1492,8 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
      id="use12693"
      sodipodi:nodetypes="cccccccc" /></g></svg>
 
-<span class="handlabel">[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)</span>
+<span class="handlabel"></span>
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)
 
 </div>
 
@@ -1514,11 +1515,8 @@ data-bs-toggle="tooltip" data-bs-title="zem">z</span> apart.
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
 
-<figure>
-<img src="../asset/squareZem.svg" alt="Wikimedia" />
-<figcaption aria-hidden="true"><a
-href="https://commons.wikimedia.org/wiki/File:Extended_arm.jpg">Wikimedia</a></figcaption>
-</figure>
+![](../asset/squareZem.svg)
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Extended_arm.jpg)
 
 </div>
 
@@ -1533,11 +1531,8 @@ own elbow to form a square.
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
 
-<figure>
-<img src="../asset/Man_Lifting_Barbell_Cartoon.svg" alt="Wikimedia" />
-<figcaption aria-hidden="true"><a
-href="https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg">Wikimedia</a></figcaption>
-</figure>
+![](../asset/Man_Lifting_Barbell_Cartoon.svg)
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg)
 
 </div>
 
@@ -2158,11 +2153,8 @@ pounds.
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
 
-<figure id="vitruvian">
-<img src="../asset/vitruvianMan.svg" alt="Wikimedia" />
-<figcaption aria-hidden="true"><a
-href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg">Wikimedia</a></figcaption>
-</figure>
+<img src="../asset/vitruvianMan.svg" id="vitruvian" />
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg)
 
 </div>
 
@@ -2205,13 +2197,11 @@ viewof zems = Inputs.range([0, 10], {label: "zems", value: 4, step: 0.01})
 
 ## Centizem centimeter inch
 
-<div class="column-page" fig-align="center" style="text-align:center;">
+<div class="column-page-right" fig-align="left"
+style="text-align:center;">
 
-<figure id="ruler">
-<img src="../asset/ruler.svg" alt="Wikimedia" />
-<figcaption aria-hidden="true"><a
-href="https://commons.wikimedia.org/wiki/File:Ruler_illustration.svg">Wikimedia</a></figcaption>
-</figure>
+<img src="../asset/ruler1dz.svg" id="ruler" />
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Ruler_illustration.svg)
 
 </div>
 
@@ -2232,17 +2222,18 @@ data-bs-title="centimeter">cm</span> = $2\over5$ Dec inches, and
 $25\over4$ <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="centizems">cz</span> = $5\over2$ <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span> = 1 Dec
-inch. The full length of the ruler📏represents $1\over4$
+inch. The full length of the ruler📏represents 1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decizem">dz</span>, 4
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</span>, 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decimeter">dm</span>, or 4 Dec
-inches. The shortest length marked on the ruler📏is $1\over2$
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimeters">cm</span>, or $8\over5$ Dec inches. In the
+image, 5 pixels = $1\over2$ <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a zem">millizems</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millizems">mz</span>), $1\over5$ <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millimeters">mm</span>, or
-$1\over125$ Dec inches.
+data-bs-title="millizems">mz</span>) = $1\over5$ <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millimeters">mm</span>,
+$1\over125$ Dec inches = $1\over127$ <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="United States">US</span>
+customary inches.
 
 # Summary
 
@@ -4232,5 +4223,8 @@ form.oi-3a86ea {
 }
 #costype label {
   max-width: 100px;
+}
+img#ruler {
+  width: 100%;
 }
 </style>
