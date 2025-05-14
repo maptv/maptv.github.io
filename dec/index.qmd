@@ -10,7 +10,6 @@ citation:
   url: https://maptv.github.io/dec
 aliases:
   - /d
-  - /de
 license: CC BY-SA
 lightbox: false
 toc: true
@@ -140,19 +139,22 @@ Apart from [c]{.tool data-bs-toggle="tooltip" data-bs-title="taur"}, Dec also me
 
 :::{.column-margin fig-align="center" style="text-align:center;" id="hands" .hand}
 {{< include _hands.qmd >}}
-[[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)]{.handlabel}
+[]{.handlabel}
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)
 :::
 
 You can approximate a [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} ([z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}) using your hands🤲. With your palms flat on a table in front of you and the tips of your thumbs👍touching, the maximum distance between the tips of your pinkies is about 1 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}. When you spread out the fingers on one hand✋or do the "[call me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)", "[drink](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=placing%20the%20thumb%20to%20the%20mouth%20and%20motioning%20the%20little%20finger%20upward%20as%20if%20tipping%20up%20a%20bottle%27s%20bottom%20end)", or "[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)"🤙gesture, the tips of your thumb👍and pinky are roughly 0.5 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"} apart.
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
-![[Wikimedia](https://commons.wikimedia.org/wiki/File:Extended_arm.jpg)](../asset/squareZem.svg)
+![](../asset/squareZem.svg)
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Extended_arm.jpg)
 :::
 
 To visualize a square [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"}, imagine four people standing in a circle, facing inward, each with their right hand✋placed on top of the elbow of the person to their right. Alternatively, two people can stand in front of each other and raise their arms💪, placing one hand✋on the elbow of the other person and the other hand✋on their own elbow to form a square.
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
-![[Wikimedia](https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg)](../asset/Man_Lifting_Barbell_Cartoon.svg)
+![](../asset/Man_Lifting_Barbell_Cartoon.svg)
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg)
 :::
 
 You can approximate a square [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"}yourself by sitting in a chair🪑or standing🧍with your knees and feet🦶1 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}, 4 [decimeters]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a meter"} ([dm]{.tool data-bs-toggle="tooltip" data-bs-title="decimeters"}), or 16 inches apart, which is likely to be about the width of your hips or shoulders. The top of the square [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} will be between your knees, its bottom will be between your ankles or feet🦶, and its sides will be between your shins.
@@ -187,7 +189,8 @@ A [hexamilliare]{.tool data-bs-toggle="tooltip" data-bs-title="1.6 thousandths o
 A cubic [decizem]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a zem"} ([dz^3^]{.tool data-bs-toggle="tooltip" data-bs-title="cubic decizem"}) is 1 shot, 2 Dec ounces, or 64 [milliliters]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a liter"} ([mL]{.tool data-bs-toggle="tooltip" data-bs-title="milliliters"}). A shot of water🌊weighs 64 grams ([g]{.tool data-bs-toggle="tooltip" data-bs-title="grams"}). Even though the weight of a Dec ounce of water🌊is close to a sixteenth of a Dec pound, Dec does not measure weights in ounces. A cubic [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} ([z^3^]{.tool data-bs-toggle="tooltip" data-bs-title="cubic zem"}) is 1 [keg]{.tool data-bs-toggle="tooltip" data-bs-title="cubic zem"}, 16 Dec gallons, or 64 [liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic) ([L]{.tool data-bs-toggle="tooltip" data-bs-title="liters"}). A [keg]{.tool data-bs-toggle="tooltip" data-bs-title="cubic zem"} of water🌊weighs 64 [kilograms]{.tool data-bs-toggle="tooltip" data-bs-title="thousands of grams"} ([kg]{.tool data-bs-toggle="tooltip" data-bs-title="kilograms"}) or 128 Dec pounds.
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
-![[Wikimedia](https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg)](../asset/vitruvianMan.svg){#vitruvian}
+![](../asset/vitruvianMan.svg){#vitruvian}
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg)
 :::
 
 ## Body mass index {.hiddenheading #bmi}
@@ -208,11 +211,12 @@ viewof zems = Inputs.range([0, 10], {label: "zems", value: 4, step: 0.01})
 
 ## Centizem centimeter inch {.hiddenheading #cci}
 
-::: {.column-page fig-align="center" style="text-align:center;"}
-![[Wikimedia](https://commons.wikimedia.org/wiki/File:Ruler_illustration.svg)](../asset/ruler.svg){#ruler}
+::: {.column-page-right fig-align="left" style="text-align:center;"}
+![](../asset/ruler1dz.svg){#ruler}
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Ruler_illustration.svg)
 :::
 
-The image of a ruler📏above illustrates the relationship between [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizems"}, [centimeters]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a meter"} ([cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeters"}), and Dec inches: 1 [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizem"} = $2\over5$ [cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeters"} = $4\over25$ Dec inches, $5\over2$ [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizems"} = 1 [cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeter"} = $2\over5$ Dec inches, and $25\over4$ [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizems"} = $5\over2$ [cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeters"} = 1 Dec inch. The full length of the ruler📏represents $1\over4$ [z]{.tool data-bs-toggle="tooltip" data-bs-title="zems"}, 1 [dm]{.tool data-bs-toggle="tooltip" data-bs-title="decimeter"}, or 4 Dec inches. The shortest length marked on the ruler📏is $1\over2$ [millizems]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a zem"} ([mz]{.tool data-bs-toggle="tooltip" data-bs-title="millizems"}), $1\over5$ [mm]{.tool data-bs-toggle="tooltip" data-bs-title="millimeters"}, or $1\over125$ Dec inches.
+The image of a ruler📏above illustrates the relationship between [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizems"}, [centimeters]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a meter"} ([cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeters"}), and Dec inches: 1 [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizem"} = $2\over5$ [cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeters"} = $4\over25$ Dec inches, $5\over2$ [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizems"} = 1 [cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeter"} = $2\over5$ Dec inches, and $25\over4$ [cz]{.tool data-bs-toggle="tooltip" data-bs-title="centizems"} = $5\over2$ [cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeters"} = 1 Dec inch. The full length of the ruler📏represents 1 [dz]{.tool data-bs-toggle="tooltip" data-bs-title="decizem"}, 4 [cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeters"}, or $8\over5$ Dec inches. In the image, 5 pixels = $1\over2$ [millizems]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a zem"} ([mz]{.tool data-bs-toggle="tooltip" data-bs-title="millizems"}) = $1\over5$ [mm]{.tool data-bs-toggle="tooltip" data-bs-title="millimeters"}, $1\over125$ Dec inches = $1\over127$ [US]{.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary inches.
 
 # Summary {#tldr}
 

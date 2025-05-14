@@ -1818,5 +1818,8 @@ form.oi-3a86ea {
 #costype label {
   max-width: 100px;
 }
+img#ruler {
+  width: 100%;
+}
 </style>
 ```
