@@ -2284,20 +2284,15 @@ in decimal numbers at will.
 
 # Next
 
-Now that you have had a taste of Dec, I hope that you are hungry for
-more! I recommend that you dive🤿deeper into Dec [dates](../dec/date)
-and [times](../dec/time) before advancing to Dec
-[snaps](../dec/snap)🫰and [spans](../dec/span)🌈. My [Quarto](../quarto)
-articles describe how I display Dec dates throughout my site, including
-the [navigation
-bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="navigation bar">navbar</span>). The date in the
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="navigation bar">navbar</span> is a
-[day-of-week](../dec/date#dow) (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>) Dec
-[date](../dec/date).
+Now that you have had a taste of Dec, I hope that you are hungry🤤for
+more! If so, dive🤿deeper into Dec [dates](../dec/date) and
+[times](../dec/time) before advancing to Dec [snaps](../dec/snap)🫰and
+[spans](../dec/span)🌈. I used [Quarto](../quarto)
+[filters](../quarto/filter), [includes](../quarto/include), and
+[scripts](../quarto/script) to display Dec dates in the [navigation
+bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information),
+under the word PUBLISHED at the top, and in the [citation
+section](#citation) at the bottom of each article on my site.
 
 <div id="decnav">
 
