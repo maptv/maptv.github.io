@@ -1932,16 +1932,17 @@ data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> =
 $5\over3$ <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilometers per hour">kmph</span>.
 
-The table below shows the [United States🇺🇸(US) customary
+The [unit
+conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
+table below shows the [United States🇺🇸(US) customary
 units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 that Dec redefines based on the [International System of
 Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
-(SI). The measurements in each row are equal. The values in the first
-column are [fold
+(SI). The values in the first column are approximate [fold
 changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
 from original to redefined units. A fold change of
-<span class="color0">1</span> means no change. Units with the same fold
-change are
+<span class="color0">1</span> would mean that a unit is unchanged. Units
+with the same fold change are
 [multiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20product%20of%20any%20quantity%20and%20an%20integer)
 or submultiples.
 
@@ -2265,14 +2266,17 @@ Dec attempts to bridge the gap between <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span> and
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</span> customary measurement systems by
-redefining <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</span> customary distance, area, and
-volume units to facilitate conversion. Dec redefinition of US customary
-units makes inches, feet, and yards <span class="colorInch">1.57%</span>
-shorter, miles <span class="colorMile">3.56%</span> longer, cups, pints,
-quarts, and gallons <span class="colorPint">5.67%</span> larger, and Dec
-pounds <span class="colorAvLb">10.23%</span> heavier.
+data-bs-title="United States">US</span> customary measurement systems
+via redefinition of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</span> customary units to make inches
+~<span class="colorInch">1.57%</span> shorter, miles
+~<span class="colorMile">3.56%</span> longer, pints
+~<span class="colorPint">5.67%</span> larger, ounces
+~<span class="colorFlOz">8.21%</span> larger, and pounds
+~<span class="colorAvLb">10.23%</span> heavier. By redefining
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</span> customary units, Dec facilitates
+conversion and improves interoperability.
 
 Dec color🎨labels🏷️can convey an impression of many different kinds of
 values at a glance. Moreover, color🎨labels🏷️help avoid confusion when
