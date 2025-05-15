@@ -53,7 +53,10 @@ data-bs-title="degrees">°</span>). [Geographic
 coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude)
 and
 [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭directions
-are angles📐and thus can (and should!) be measured in turns.
+are angles📐and thus can (and should!😄) be measured in turns instead of
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="radians">rad</span> or <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="degrees">°</span>.
 
 ## Longitude latitude course
 
@@ -133,15 +136,17 @@ of
 [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 time zones, and [solar
 terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
-shading with a yellow🟡dot denoting that the Sun☀️is [directly
-overhead](https://en.wikipedia.org/wiki/Subsolar_point#:~:text=the%20point%20at%20which%20its%20Sun%20is%20perceived%20to%20be%20directly%20overhead)
-at ${sunLonHsl} <span class="tool" data-bs-toggle="tooltip"
+shading with a yellow🟡dot denoting the
+[point](https://en.wikipedia.org/wiki/Subsolar_point#:~:text=the%20point%20at%20which%20its%20Sun%20is%20perceived%20to%20be%20directly%20overhead)
+where the Sun☀️is [directly
+overhead](https://en.wikipedia.org/wiki/Zenith#:~:text=the%20imaginary%20point%20on%20the%20celestial%20sphere%20directly%20%22above%22%20a%20particular%20location):
+${sunLonHsl} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliparallels">$\text m\lambda$</span> and ${sunLatHsl}
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span>.
 
-Each row of the table contains the geographic coordinates of a point and
-the
+Alongside the the geographic coordinates of a point, each row of the
+table contains the
 [course](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)
 in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a compass rose">milliwindroses</span>
@@ -1537,8 +1542,8 @@ style="text-align:center;">
 </div>
 
 You can approximate a square <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span>yourself by sitting in a
-chair🪑or standing🧍with your knees and feet🦶1 <span class="tool"
+data-bs-title="zone equatorial meter">zem</span> yourself by sitting in
+a chair🪑or standing🧍with your knees and feet🦶1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zem">z</span>, 4
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a meter">decimeters</span> (<span class="tool"
@@ -2269,9 +2274,9 @@ shorter, miles <span class="colorMile">3.56%</span> longer, cups, pints,
 quarts, and gallons <span class="colorPint">5.67%</span> larger, and Dec
 pounds <span class="colorAvLb">10.23%</span> heavier.
 
-Dec color🎨labels🏷️can imprecisely convey many different kinds of values
-at a glance. Moreover, color🎨labels🏷️help avoid confusion when dealing
-with different metric prefixes. The current <span class="tool"
+Dec color🎨labels🏷️can convey an impression of many different kinds of
+values at a glance. Moreover, color🎨labels🏷️help avoid confusion when
+dealing with different metric prefixes. The current <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> in Zone
 ${decOffsetHsl2} can be expressed as ${decTimeOffHsl2}
 <span class="tool" data-bs-toggle="tooltip"
@@ -2287,19 +2292,21 @@ in decimal numbers at will.
 Now that you have had a taste of Dec, I hope that you are hungry🤤for
 more! If so, dive🤿deeper into Dec [dates](../dec/date) and
 [times](../dec/time) before advancing to Dec [snaps](../dec/snap)🫰and
-[spans](../dec/span)🌈. I used [Quarto](../quarto)
-[filters](../quarto/filter), [includes](../quarto/include), and
-[scripts](../quarto/script) to display Dec dates in the [navigation
+[spans](../dec/span)🌈. My [Quarto](../quarto),
+[filter](../quarto/filter), [include](../quarto/include), and
+[script](../quarto/script) articles describe how I used the
+[Quarto](https://quarto.org) publishing system to display Dec
+[dates](../dec/date) in the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information),
-under the word PUBLISHED at the top, and in the [citation
-section](#citation) at the bottom of each article on my site.
+[title block](https://quarto.org/docs/authoring/title-blocks.html), and
+[citation section](#citation) of each article on my website.
 
 <div id="decnav">
 
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:8.64in;height:0.98in" />
+style="width:9.64in;height:2.31in" />
 
 </div>
 
@@ -2323,6 +2330,8 @@ data-bs-title="taur">c</span> = 4 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decimeters">dm</span>, in [a
 table of possible length
 units](https://www.roma1.infn.it/~dagos/history/sm/node12.html):
+
+<div class="column-page-right">
 
 - [Agnoli, Paolo](http://www.paoloagnoli.it) & [D’Agostini,
   Giulio](https://www.roma1.infn.it/~dagos). <span class="tool"
@@ -2401,6 +2410,8 @@ units](https://www.roma1.infn.it/~dagos/history/sm/node12.html):
   shortest distance between two locations on Earth 🌏.”
   ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
+
+</div>
 
 ``` {ojs}
 //| echo: false
