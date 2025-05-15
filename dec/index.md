@@ -2232,7 +2232,7 @@ data-bs-title="centimeters">cm</span>, a <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="centimeter">cm</span> is
 $5\over2$ <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="centizems">cz</span>, and a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="centizems">cz</span> is
+data-bs-toggle="tooltip" data-bs-title="centizem">cz</span> is
 $4\over25$ Dec inches.
 
 # Summary
@@ -2271,7 +2271,7 @@ pounds <span class="colorAvLb">10.23%</span> heavier.
 
 Dec color🎨labels🏷️can imprecisely convey many different kinds of values
 at a glance. Moreover, color🎨labels🏷️help avoid confusion when dealing
-with different metric prefixes. The <span class="tool"
+with different metric prefixes. The current <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> in Zone
 ${decOffsetHsl2} can be expressed as ${decTimeOffHsl2}
 <span class="tool" data-bs-toggle="tooltip"
@@ -2285,17 +2285,19 @@ in decimal numbers at will.
 # Next
 
 Now that you have had a taste of Dec, I hope that you are hungry for
-more! My other Dec articles not only dive🤿deeper into Dec
-[dates](../dec/date) and [times](../dec/time), but also introduce Dec
+more! I recommend that you dive🤿deeper into Dec [dates](../dec/date)
+and [times](../dec/time) before advancing to Dec
 [snaps](../dec/snap)🫰and [spans](../dec/span)🌈. My [Quarto](../quarto)
 articles describe how I display Dec dates throughout my site, including
-in its [navigation
+the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="navigation bar">navbar</span>). My Dec
-[date](../dec/date) article explains the [format](../dec/date#dow) of
-the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="navigation bar">navbar</span> date.
+data-bs-title="navigation bar">navbar</span>). The date in the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="navigation bar">navbar</span> is a
+[day-of-week](../dec/date#dow) (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>) Dec
+[date](../dec/date).
 
 <div id="decnav">
 
