@@ -1935,8 +1935,10 @@ Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%2
 column are [fold
 changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
 from original to redefined units. A fold change of
-<span class="color0">1</span> means no change. Units that are derived in
-the same way have the same fold change.
+<span class="color0">1</span> means no change. Units with the same fold
+change are
+[multiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20product%20of%20any%20quantity%20and%20an%20integer)
+or submultiples.
 
 ## Zem conversion table
 
@@ -2173,8 +2175,8 @@ index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%2
 data-bs-title="body mass index">bmi</span>) would be 4
 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$ and we could
 measure 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span> from the knee to the foot🦶of one of his
-legs🦵or from the elbow to the fingertips of one of his arms💪. A normal
+data-bs-title="zem">z</span> from the knee to the foot🦶of his legs🦵or
+from the elbow to the fingertips of his arms💪. A normal
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">bmi</span> is between 2.96 and 4
 $\text {kg}\over\text z^2$ or 18.5 and 25 $\text {kg}\over\text m^2$. A
@@ -2205,36 +2207,33 @@ style="text-align:center;">
 
 </div>
 
-The image of a ruler📏above illustrates the relationship between
+The image of a ruler📏above compares <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centizems">cz</span>,
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centizems">cz</span>, <span class="tool"
-data-bs-toggle="tooltip"
 data-bs-title="hundredths of a meter">centimeters</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centimeters">cm</span>), and Dec inches: 1
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centizem">cz</span> = $2\over5$ <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span> =
-$4\over25$ Dec inches, $5\over2$ <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="centizems">cz</span> = 1
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centimeter">cm</span> = $2\over5$ Dec inches, and
-$25\over4$ <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centizems">cz</span> = $5\over2$ <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span> = 1 Dec
-inch. The full length of the ruler📏represents 1 <span class="tool"
+data-bs-title="centimeters">cm</span>), and Dec inches. The longest
+length portrayed by the ruler📏is 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decizem">dz</span>, 4
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centimeters">cm</span>, or $8\over5$ Dec inches. In the
-image, 5 pixels portray $1\over2$ <span class="tool"
-data-bs-toggle="tooltip"
+data-bs-title="centimeters">cm</span>, or $8\over5$ Dec inches, and the
+shortest is $1\over2$ <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a zem">millizems</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizems">mz</span>), $1\over5$ <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="millimeters">mm</span>,
 $1\over125$ Dec inches, or $1\over127$ <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="United States">US</span>
-customary inches.
+customary inches. A <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</span> customary inch is
+<span class="color016">1.016</span> Dec inches. A Dec inch is $5\over2$
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimeters">cm</span>, a <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centimeter">cm</span> is
+$5\over2$ <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centizems">cz</span>, and a <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centizems">cz</span> is
+$4\over25$ Dec inches.
 
 # Summary
 
@@ -3791,6 +3790,14 @@ html`
 .color0 {
   background: hsl(0 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(0, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color016 {
+  background: hsl(350.35294117647055 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(350.35294117647055, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
