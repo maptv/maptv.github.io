@@ -188,7 +188,7 @@ on its
 [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole),
 and $\text c\over\text d$ = <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="omegar">v</span> = <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="omegar">*r**ω*</span> ≈ the
+data-bs-toggle="tooltip" data-bs-title="omegar">*ω**r*</span> ≈ the
 speed of its rotation at the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
