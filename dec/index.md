@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+074
+2025+075
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -2226,12 +2226,13 @@ inch. The full length of the ruler📏represents 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decizem">dz</span>, 4
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="centimeters">cm</span>, or $8\over5$ Dec inches. In the
-image, 5 pixels = $1\over2$ <span class="tool" data-bs-toggle="tooltip"
+image, 5 pixels portray $1\over2$ <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="thousandths of a zem">millizems</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millizems">mz</span>) = $1\over5$ <span class="tool"
+data-bs-title="millizems">mz</span>), $1\over5$ <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="millimeters">mm</span>,
-$1\over125$ Dec inches = $1\over127$ <span class="tool"
+$1\over125$ Dec inches, or $1\over127$ <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="United States">US</span>
 customary inches.
 
