@@ -969,11 +969,13 @@ data-bs-toggle="tooltip" data-bs-title="milliyears">my</span>) is noon
 (<span class="color5">500</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="millidays">md</span>) on
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="August 30">Day 182</span> in common years and midnight
-(<span class="color0">0</span> <span class="tool"
+data-bs-title="August 30">Day 182</span> in [common
+years](https://en.wikipedia.org/wiki/Common_year#:~:text=a%20calendar%20year%20with%20365%20days)
+and midnight (<span class="color0">0</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="millidays">md</span>) on
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="August 31">Day 183</span> in leap years.
+data-bs-title="August 31">Day 183</span> in [leap
+years](https://en.wikipedia.org/wiki/Leap_year#:~:text=a%20calendar%20year%20that%20contains%20an%20additional%20day).
 
 # Zone equatorial meter (zem)
 
@@ -2219,11 +2221,11 @@ data-bs-toggle="tooltip" data-bs-title="centizems">cz</span>,
 data-bs-title="hundredths of a meter">centimeters</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="centimeters">cm</span>), and Dec inches. The longest
-length portrayed by the ruler📏is 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decizem">dz</span>, 4
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centimeters">cm</span>, or $8\over5$ Dec inches, and the
-shortest is $1\over2$ <span class="tool" data-bs-toggle="tooltip"
+length it portrays is 1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decizem">dz</span>, 4 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span>, or
+$8\over5$ Dec inches, and the shortest is $1\over2$ <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="thousandths of a zem">millizems</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizems">mz</span>), $1\over5$ <span class="tool"
@@ -2247,7 +2249,7 @@ $4\over25$ Dec inches.
 # Summary
 
 This article introduces the Dec measurement system and describes how Dec
-uses metric prefixes and the properties of the planet Earth🌏to define
+uses metric prefixes and the properties of the planet Earth🌍to define
 units based on turns for geographic coordinates, compass🧭directions,
 dates, times, speeds, distances, areas, volumes, and weights. Each unit
 has a unique name, such as <span class="tool" data-bs-toggle="tooltip"
