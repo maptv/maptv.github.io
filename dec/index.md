@@ -145,8 +145,8 @@ data-bs-title="milliparallels">$\text m\lambda$</span> and ${sunLatHsl}
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span>.
 
-Alongside the the geographic coordinates of a point, each row of the
-table contains the
+Alongside the geographic coordinates of a point, each row of the table
+contains the
 [course](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)
 in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a compass rose">milliwindroses</span>
