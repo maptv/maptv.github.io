@@ -1841,40 +1841,34 @@ style="text-align:center;">
 
 </div>
 
-If two people sit facing each other with their legs🦵bent at 25
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a hundredth of a turn">centiturn</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centiturn">ct</span>) angles and their knees 1
-<span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span>
-apart, there will be around a cubic <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span> of space between their
-legs🦵. According to [dimensions.com](https://www.dimensions.com), 115
+According to [dimensions.com](https://www.dimensions.com), 115
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundredths of a zem">centizems</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="centizems">cz</span>) is the
 [typical seat
 height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
-and 95 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centizems">cz</span> is a [low seat
-height](https://www.dimensions.com/element/sitting-female-front-1#:~:text=Seat%20Height%20(Low)%3A-,15%E2%80%9D%20%7C%2038%20cm,-Style%3A%20Casual)
-for both men and women age 25 to 45. A <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="a hundredth of a zem">centizem</span> is 4
+for both men and women age 25 to 45. A box📦with the dimensions of a
+cubic <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span> would likely fit
+underneath a typical chair🪑 or in between the shins of two people
+sitting in front of each other with their legs🦵bent at 25
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a meter">millimeters</span>
+data-bs-title="a hundredth of a turn">centiturn</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeters">mm</span>).
+data-bs-title="centiturn">ct</span>) or 90 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="degree">°</span> angles and
+their knees and feet🦶1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span> apart.
 
 In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span> means Earth🌍. This is
 fitting because all Dec units are based on physical attributes of the
 Earth🌏. At the Equator, the Earth🌎rotates on its axis at a speed of
-1.00224 v. If we could indefinitely maintain this speed while flying
-West in an airplane✈️towards the setting sun☀️, we would be able to
-perpetually fly [into the
+1.00224 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="omegars">v</span>. If we could indefinitely maintain this
+speed while flying West in an airplane✈️towards the setting sun☀️, we
+would be able to perpetually fly [into the
 sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
 ## Speed of sound
@@ -1890,7 +1884,7 @@ is 0.735048 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="omegars">v</span> or Mach 1. [Mach
 numbers](https://en.wikipedia.org/wiki/Mach_number) are not as reliable
 as <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegra">v</span>, because they are relative to the speed
+data-bs-title="omegar">v</span>, because they are relative to the speed
 of sound🔊, which varies greatly by air temperature and pressure. The
 cruising speed of a [Boeing
 747](https://en.wikipedia.org/wiki/Boeing_747#:~:text=sweep%2C%20allowing%20a-,Mach%C2%A00.85,-%28490%C2%A0kn;%20900)
@@ -2103,8 +2097,10 @@ or 40
 A <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="1.6 thousandths of an are">hexamilliare</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexamilliare">x</span>) is 1 square zem
-(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexamilliare">x</span>) is 1 square <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="square zem">z<sup>2</sup></span>), 16 square
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a meter">decimeters</span> (<span class="tool"
@@ -2231,10 +2227,13 @@ shortest is $1\over2$ <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a zem">millizems</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizems">mz</span>), $1\over5$ <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millimeters">mm</span>,
-$1\over125$ Dec inches, or $1\over127$ <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="United States">US</span>
-customary inches. A <span class="tool" data-bs-toggle="tooltip"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a meter">millimeters</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millimeters">mm</span>), $1\over125$ Dec inches, or
+$1\over127$ <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</span> customary inches. A
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> customary inch is
 <span class="color016">1.016</span> Dec inches. A Dec inch is $5\over2$
 <span class="tool" data-bs-toggle="tooltip"
