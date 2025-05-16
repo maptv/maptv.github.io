@@ -936,7 +936,8 @@ viewof offset = Inputs.range([-10, 9], {label: "Offset", value: 0, step: 1})
 
 When we add the offset selected by the range🎚️input above to the current
 date and time in Zone <span class="color0">0</span>, we get
-${decYearOffHsl}+${decDateOffHsl} as the date and
+${decYearOffHsl}<span style="font-family:monospace;">+</span>${decDateOffHsl}
+as the date and
 ${decTimeOffHsl0}<span style="font-family:monospace;">${decSignOff}</span>${decOffsetHsl1}
 as the time. We can apply color🎨labels🏷️to each component of Dec dates
 and times. Dec dates consist of a year and a day-of-year
@@ -2324,7 +2325,7 @@ the map🗺️and color🎨wheel compass visualizations in this article or the
 2004 [arxiv](https://arxiv.org/abs/physics/0412078)
 [article](https://www.roma1.infn.it/~dagos/history/sm/sm.html), that I
 found on <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="April 9, 2025"><span class="color025">2025</span>+<span class="color039">039</span></span>,
+data-bs-title="April 9, 2025"><span class="color025">2025</span><span style="font-family:monospace;">+</span><span class="color039">039</span></span>,
 which includes the definition of a <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>, 1 <span class="tool"
