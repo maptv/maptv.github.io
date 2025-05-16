@@ -1898,7 +1898,7 @@ is 0.54 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="omegars">v</span> or Mach 0.85.
 
 The highway🛣️speed of a car🚗is roughly tenfold slower than the cruising
-speed of airplane✈️. If we are driving on a highway🛣️at a speed of 50
+speed of an airplane✈️. If we are driving on a highway🛣️at a speed of 50
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegars">mv</span> and our exit is 1000
 <span class="tool" data-bs-toggle="tooltip"
@@ -1909,15 +1909,18 @@ we have to exit the highway🛣️. To ensure we do not miss our exit, we can
 periodically check a countdown of the remaining <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zems">z</span>: ${zLeft}.
 
-In Dec, centimillidays are called beats because they are similar in
-duration to heart❤️beats or musical🎵beats. A beat is
-<span class="color864">864</span> milliseconds. One <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millitaurs">mc</span> is a
-hundred thousand (10<sup>5</sup>) <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zems">z</span> and one day
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</span>) is 10<sup>5</sup> beats
-(<span class="tool" data-bs-toggle="tooltip"
+In Dec, <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hundred thousandths of a day">centimillidays</span> are
+called beats because they are similar in duration to heart❤️beats or
+musical🎵beats. A beat is <span class="color864">864</span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a second">milliseconds</span>. One
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaurs">mc</span> is a hundred thousand
+(10<sup>5</sup>) <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zems">z</span> and one day (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day">d</span>) is 10<sup>5</sup>
+beats (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</span>). Therefore, 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> =
 $\text{mc}\over\text d$ = $\text z\over\text b$. It is easy to convert
@@ -2320,10 +2323,11 @@ style="width:9.64in;height:2.31in" />
 # Cite
 
 Please support Dec by citing it as shown at the bottom of this article.
-You may also want to cite the Observable notebooks that I adapted into
-the map🗺️and color🎨wheel compass visualizations in this article or the
-2004 [arxiv](https://arxiv.org/abs/physics/0412078)
-[article](https://www.roma1.infn.it/~dagos/history/sm/sm.html), that I
+You may also want to cite the [Observable](http://observablehq.com)
+notebooks that I adapted into the map🗺️and color🎨wheel compass
+visualizations above or the 2004
+[arxiv](https://arxiv.org/abs/physics/0412078)
+[article](https://www.roma1.infn.it/~dagos/history/sm/sm.html) that I
 found on <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="April 9, 2025"><span class="color025">2025</span><span style="font-family:monospace;">+</span><span class="color039">039</span></span>,
 which includes the definition of a <span class="tool"
