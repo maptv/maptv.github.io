@@ -1388,14 +1388,6 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.color016 {
-  background: hsl(350.35294117647055 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(350.35294117647055, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
 .color025 {
   background: hsl(344.94117647058823 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(344.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
