@@ -1572,6 +1572,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color960 {
+  background: hsl(16 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(16, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .colorMile {
   background: hsl(338.5882352941177 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(338.5882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
