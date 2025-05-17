@@ -608,6 +608,7 @@ utcOffsetM = -(new Date).getTimezoneOffset()
 utcOffsetD = utcOffsetM / 144
 utcOffDiff = parseFloat((Math.round(utcOffsetD) - utcOffsetD).toFixed(2))
 utcOffDiffHsl = textcolor(utcOffDiff, `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
+utcOffsetMdiffHsl = textcolor(parseFloat((utcOffDiff * 144).toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
 utcOffsetP = (utcOffsetD + 10) % 10
 decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
