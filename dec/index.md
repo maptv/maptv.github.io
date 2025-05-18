@@ -999,7 +999,7 @@ data-bs-title="zone equatorial meters">zems</span> long and a [quarter
 meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole)
 is ~10<sup>7</sup> meters long.
 
-<div id="hands" class="column-margin hand" fig-align="center"
+<div id="zemHands" class="column-margin hand" fig-align="center"
 style="text-align:center;">
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -1501,7 +1501,6 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
      id="use12693"
      sodipodi:nodetypes="cccccccc" /></g></svg>
 
-<span class="handlabel"></span>
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)
 
 </div>
@@ -1524,7 +1523,7 @@ data-bs-toggle="tooltip" data-bs-title="zems">z</span> apart.
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
 
-![](../asset/squareZem.svg)
+<img src="../asset/squareZem.svg" id="zemArms" />
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Extended_arm.jpg)
 
 </div>
@@ -1542,7 +1541,7 @@ own elbow to form a square.
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
 
-![](../asset/Man_Lifting_Barbell_Cartoon.svg)
+<img src="../asset/Man_Lifting_Barbell_Cartoon.svg" id="zemLift" />
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg)
 
 </div>
@@ -2368,7 +2367,7 @@ data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span>, in [a
 table of ten possible length
 units](https://www.roma1.infn.it/~dagos/history/sm/node12.html):
 
-<div class="column-page-right">
+<div id="citelist" class="column-page-right">
 
 - [Agnoli, Paolo](http://www.paoloagnoli.it) & [D’Agostini,
   Giulio](https://www.roma1.infn.it/~dagos). <span class="tool"
