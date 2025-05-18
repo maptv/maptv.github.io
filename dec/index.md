@@ -992,7 +992,7 @@ distance from the Equator to one of the Poles is ~10<sup>7</sup>
 In other words, a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a meridian">decimeridian</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decimeridians">$\text d\phi$</span>) is ~10<sup>7</sup>
+data-bs-title="decimeridian">$\text d\phi$</span>) is ~10<sup>7</sup>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meters">zems</span> long and a [quarter
 meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole)
@@ -1518,7 +1518,7 @@ me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20common
 or
 “[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)”🤙gesture,
 the tips of your thumb👍and pinky are roughly 0.5 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zem">z</span> apart.
+data-bs-toggle="tooltip" data-bs-title="zems">z</span> apart.
 
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1910,14 +1910,17 @@ data-bs-title="hundred thousandths of a day">centimillidays</span> are
 called beats because they are similar in duration to heart❤️beats or
 musical🎵beats. A beat is <span class="color864">864</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a second">milliseconds</span>. One
+data-bs-title="thousandths of a second">milliseconds</span>. One day
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day">d</span>) is 10<sup>5</sup> beats
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</span>) and 1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millitaur">mc</span> = 100
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millitaurs">mc</span> is a hundred thousand
-(10<sup>5</sup>) <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</span> and one day (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day">d</span>) is 10<sup>5</sup>
-beats (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</span>). Therefore, 1 <span class="tool"
+data-bs-title="thousands of zems">kilozems</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="thousands of zems">kz</span>) =
+10<sup>5</sup> <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zems">z</span>. Therefore, 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> =
 $\text{mc}\over\text d$ = $\text z\over\text b$. It is easy to convert
 <span class="tool" data-bs-toggle="tooltip"
@@ -2097,7 +2100,7 @@ or 40
 [are](https://en.wikipedia.org/wiki/Hectare#Are:~:text=area%2C%20equal%20to-,100%20square%20metres).
 
 A <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="1.6 thousandths of an are">hexamilliare</span>
+data-bs-title="1.6 thousandth of an are">hexamilliare</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexamilliare">x</span>) is 1 square <span class="tool"
 data-bs-toggle="tooltip"
@@ -2116,12 +2119,11 @@ data-bs-title="square decazem">Dz<sup>2</sup></span>) is 1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
 square meters (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meters">m²</span>), 19.753086 Dec square yards, or
+data-bs-title="square meters">m²</span>), ~19.753 Dec square yards, or
 100 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexamilliare">x</span>. A square <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="a thousand of zem">kilozem</span> (<span class="tool"
-data-bs-toggle="tooltip"
+data-bs-title="hexamilliares">x</span>. A square <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="a thousand zems">kilozem</span>
+(<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square kilozem">kz<sup>2</sup></span>) is 1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="sixteen hundred ares">hexakilare</span>, 0.16 square
@@ -2133,7 +2135,7 @@ square miles, 40 Dec acres, 16 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundreds of ares">hectares</span>, or 10<sup>6</sup>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexamilliare">x</span>.
+data-bs-title="hexamilliares">x</span>.
 
 A cubic <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a zem">decizem</span> (<span class="tool"
@@ -2176,7 +2178,7 @@ Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20po
 Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
 weighed 64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilograms">kg</span> and were 4 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zem">z</span> tall, his [body
+data-bs-toggle="tooltip" data-bs-title="zems">z</span> tall, his [body
 mass
 index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
 (<span class="tool" data-bs-toggle="tooltip"
@@ -2272,21 +2274,32 @@ data-bs-toggle="tooltip" data-bs-title="hexamilliare">x</span>, or
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic zem">keg</span>.
 
-Dec attempts to bridge the gap between <span class="tool"
-data-bs-toggle="tooltip"
+Dec attempts to bridge the gap and improve interoperability between
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span> and
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</span> customary measurement systems
-via redefinition of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</span> customary units to make inches
+data-bs-title="United States">US</span> customary measurement systems by
+redefining <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</span> customary units in terms of
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of zems">kz</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zems">z</span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square kilozems">kz<sup>2</sup></span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zems">z<sup>2</sup></span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="grams">g</span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic zems">z<sup>3</sup></span>, or <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="cubic decizems">dz<sup>3</sup></span>. Redefinition of
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</span> customary units makes inches
 ~<span class="colorInch">1.57%</span> shorter, miles
 ~<span class="colorMile">3.56%</span> longer, pints
 ~<span class="colorPint">5.67%</span> larger, ounces
 ~<span class="colorFlOz">8.21%</span> larger, and pounds
-~<span class="colorAvLb">10.23%</span> heavier. By redefining
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</span> customary units, Dec facilitates
-conversion and improves interoperability.
+~<span class="colorAvLb">10.23%</span> heavier.
 
 Dec color🎨labels🏷️can convey an impression of many different kinds of
 values at a glance. Moreover, color🎨labels🏷️help avoid confusion when
@@ -2330,8 +2343,8 @@ style="width:9.64in;height:2.31in" />
 
 Please support Dec by citing it as shown at the bottom of this article.
 You may also want to cite the [Observable](http://observablehq.com)
-notebooks that I adapted into the map🗺️and color🎨wheel compass
-visualizations above or the 2004
+notebooks that I adapted into the map🗺️and color🎨wheel
+compass🧭visualizations above or the 2004
 [arxiv](https://arxiv.org/abs/physics/0412078)
 [article](https://www.roma1.infn.it/~dagos/history/sm/sm.html) that I
 found on <span class="tool" data-bs-toggle="tooltip"
@@ -2341,7 +2354,7 @@ data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>, 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zem">z</span> = 10<sup>-8</sup>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="taur">c</span> = 4 <span class="tool"
+data-bs-title="taurs">c</span> = 4 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decimeters">dm</span>, in [a
 table of possible length
 units](https://www.roma1.infn.it/~dagos/history/sm/node12.html):
