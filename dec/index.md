@@ -766,7 +766,7 @@ data-bs-title="millimeridians">$\text m\phi$</span>) Pole. The other
 major latitudes depend on the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
 of the Earth🌏(<span class="color065">65</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="milliturn">mt</span>): the
+data-bs-toggle="tooltip" data-bs-title="milliturns">mt</span>): the
 Tropics of
 [Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(<span class="color065">65</span>
 <span class="tool" data-bs-toggle="tooltip"
@@ -837,7 +837,7 @@ ${point0zHsl}. The number assigned to each time zone is its offset from
 Zone <span class="color0">0</span> in <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciday">dd</span>). To obtain the <span class="tool"
+data-bs-title="decidays">dd</span>). To obtain the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="deciday">dd</span> offset at a
 location, we
 [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
@@ -896,16 +896,16 @@ viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine u
 [UTC time zone
 offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
 range from ${rainbowN5zn} to ${rainbowP583} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>. According to
-your web browser, your UTC offset is ${utcOffHslM} ÷ 144 = ${utcOffHslD}
+data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>. According
+to your web browser, your UTC offset is ${utcOffHslM} ÷ 144 =
+${utcOffHslD} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decidays">dd</span>. The Dec time zone that corresponds
+to your UTC offset is Zone ${decZonHslP}. The time in corresponding Dec
+and UTC time zones can differ by up to <span class="color050">0.5</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciday">dd</span>. The Dec time zone that corresponds to
-your UTC offset is Zone ${decZonHslP}. The time in corresponding Dec and
-UTC time zones can differ by up to <span class="color050">0.5</span>
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciday">dd</span>. The time difference between your Dec
+data-bs-title="decidays">dd</span>. The time difference between your Dec
 and UTC time zones is ${utcOffDiffHsl} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="deciday">dd</span>.
+data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>.
 
 To obtain the time in Zone <span class="color0">0</span>, we can
 subtract the offset of any time zone from its time. Inversely, we can
@@ -2215,16 +2215,19 @@ style="text-align:center;">
 
 </div>
 
-The image of a ruler📏above compares <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="centizems">cz</span>,
-<span class="tool" data-bs-toggle="tooltip"
+The longest length depicted on the ruler📏above is 1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="a tenth of a zem">decizem</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decizem">dz</span>), 1 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="a millionth of a taur">nanotaur</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="nanotaur">nc</span>), 4 <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="hundredths of a meter">centimeters</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centimeters">cm</span>), and Dec inches. The longest
-length it portrays is 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decizem">dz</span>, 4 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span>, or
-$8\over5$ Dec inches, and the shortest is $1\over2$ <span class="tool"
+data-bs-title="centimeters">cm</span>), or $8\over5$ Dec inches long,
+and the shortest is $1\over2$ <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a zem">millizems</span>
 (<span class="tool" data-bs-toggle="tooltip"
@@ -2236,15 +2239,17 @@ data-bs-title="millimeters">mm</span>), $1\over125$ Dec inches, or
 $1\over127$ <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> customary inches. A
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</span> customary inch is
-<span class="color016">1.016</span> Dec inches. A Dec inch is $5\over2$
+data-bs-title="United States">US</span> customary inch is $127\over2$
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centimeters">cm</span>, a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="centimeter">cm</span> is
-$5\over2$ <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centizems">cz</span>, and a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="centizem">cz</span> is
-$4\over25$ Dec inches.
+data-bs-title="millizems">mz</span>, $127\over5$ <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millimeters">mm</span>, or
+$127\over125$ Dec inches. A Dec inch is $5\over2$ <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span>. A
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimeter">cm</span> is $5\over2$ <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centizems">cz</span>. A
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centizem">cz</span> is $4\over25$ Dec inches.
 
 # Summary
 
@@ -3808,14 +3813,6 @@ html`
 .color0 {
   background: hsl(0 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(0, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color016 {
-  background: hsl(350.35294117647055 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(350.35294117647055, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
