@@ -999,7 +999,7 @@ data-bs-title="zone equatorial meters">zems</span> long and a [quarter
 meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole)
 is ~10<sup>7</sup> meters long.
 
-<div id="zemHands" class="column-margin hand" fig-align="center"
+<div id="zemhands" class="column-margin hand" fig-align="center"
 style="text-align:center;">
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -1501,7 +1501,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
      id="use12693"
      sodipodi:nodetypes="cccccccc" /></g></svg>
 
-[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)
+<span class="handlabel">[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)</span>
 
 </div>
 
@@ -1520,10 +1520,10 @@ or
 the tips of your thumb👍and pinky are roughly 0.5 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zems">z</span> apart.
 
-<div class="column-margin" fig-align="center"
+<div id="zemarms" class="column-margin" fig-align="center"
 style="text-align:center;">
 
-<img src="../asset/squareZem.svg" id="zemArms" />
+<img src="../asset/squareZem.svg" id="zArms" />
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Extended_arm.jpg)
 
 </div>
@@ -1538,10 +1538,10 @@ people can stand in front of each other and raise their arms💪, placing
 one hand✋on the elbow of the other person and the other hand✋on their
 own elbow to form a square.
 
-<div class="column-margin" fig-align="center"
+<div id="zemlift" class="column-margin" fig-align="center"
 style="text-align:center;">
 
-<img src="../asset/Man_Lifting_Barbell_Cartoon.svg" id="zemLift" />
+<img src="../asset/Man_Lifting_Barbell_Cartoon.svg" id="zLift" />
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg)
 
 </div>
@@ -1559,7 +1559,7 @@ data-bs-title="square zem">z<sup>2</sup></span> will be between your
 knees, its bottom will be between your ankles or feet🦶depending on your
 height, and its sides will be between your shins.
 
-<div id="cubic" class="column-margin" fig-align="center"
+<div id="zemcubic" class="column-margin" fig-align="center"
 style="text-align:center;">
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -4251,7 +4251,7 @@ h4.hiddenheading, h5.hiddenheading {
 h4.anchored {
   margin: 8px 0px 8px 0px;
 }
-#cubic svg, #hands svg {
+#zemcubic svg, #zemhands svg {
   max-width: 100%;
 }
 svg#lefthand {
@@ -4277,7 +4277,7 @@ form.oi-3a86ea {
 #costype label {
   max-width: 100px;
 }
-img#ruler {
+img#ruler svg#zhands {
   width: 100%;
 }
 </style>
