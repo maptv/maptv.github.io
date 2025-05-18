@@ -550,7 +550,7 @@ decBar = colorbar({
 //| label: hueslider
 //| class: colorslider
 // https://observablehq.com/@paavanb/progressive-color-picker
-{ const input = Inputs.range([0, 1000], { label: "hue", value: 0, step: 1 })
+{ const input = Inputs.range([0, 1000], { label: "Hue", value: 0, step: 1 })
   input.value = initialHSL[0]
   input.oninput = (evt) => onUpdateHSL(dec2hue(evt.currentTarget.value / 1000), colorS / 1000, colorL / 1000)
   return Inputs.bind(input, viewof colorD)
@@ -562,7 +562,7 @@ decBar = colorbar({
 //| label: satslider
 //| class: colorslider
 // https://observablehq.com/@paavanb/progressive-color-picker
-{ const input = Inputs.range([0, 1000], { label: "saturation", value: 1000, step: 1, })
+{ const input = Inputs.range([0, 1000], { label: "Saturation", value: 1000, step: 1, })
   input.oninput = (evt) => onUpdateHSL(colorD, evt.currentTarget.value / 1000, colorL / 1000)
   return Inputs.bind(input, viewof colorS)
 }
@@ -573,7 +573,7 @@ decBar = colorbar({
 //| label: litslider
 //| class: colorslider
 // https://observablehq.com/@paavanb/progressive-color-picker
-{ const input = Inputs.range([0, 1000], { label: "lightness", value: 500, step: 1, })
+{ const input = Inputs.range([0, 1000], { label: "Lightness", value: 500, step: 1, })
   input.oninput = (evt) => onUpdateHSL(colorD, colorS / 1000, evt.currentTarget.value / 1000)
   return Inputs.bind(input, viewof colorL)
 }
@@ -690,7 +690,7 @@ data-bs-toggle="tooltip"
 data-bs-title="milliwindroses">$\text m\alpha$</span> = 9
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="compass degrees">c°</span>. To rotate🔄the color🎨wheel
-compass🧭, use the “hue”
+compass🧭, use the “Hue”
 [range](https://observablehq.com/framework/inputs/range)🎚️and [hue
 bar](https://observablehq.com/@paavanb/progressive-color-picker) inputs
 beneath it or change the course from Point <span class="point0">0</span>
@@ -705,15 +705,15 @@ its top row with the
 and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
 directions. Together, the range🎚️inputs underneath the hue bar form a
-hue saturation lightness (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hue saturation lightness">hsl</span>) triplet. Like
+Hue Saturation Lightness (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Hue Saturation Lightness">HSL</span>) triplet. Like
 red🔴green🟢blue🔵([rgb](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
 or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</span>) triplets, <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="hue saturation lightness">hsl</span> triplets specify a
+data-bs-title="Hue Saturation Lightness">HSL</span> triplets specify a
 full-fledged color🎨instead of just a hue.
 
 <div>
@@ -2189,33 +2189,33 @@ Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20po
 Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
 weighed 64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilograms">kg</span> and were 4 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zems">z</span> tall, his [body
-mass
-index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
+data-bs-toggle="tooltip" data-bs-title="zems">z</span> tall, his [Body
+Mass
+Index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">bmi</span>) would be 4
+data-bs-title="body mass index">BMI</span>) would be 4
 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$ and we could
 measure 1 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</span> from the knee to the foot🦶of his legs🦵or
 from the elbow to the fingertips of his arms💪. A normal
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">bmi</span> is between 2.96 and 4
+data-bs-title="body mass index">BMI</span> is between 2.96 and 4
 $\text {kg}\over\text z^2$ or 18.5 and 25 $\text {kg}\over\text m^2$. A
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">bmi</span> of ${kg} kg ÷ ${zem2}
+data-bs-title="body mass index">BMI</span> of ${kg} kg ÷ ${zem2}
 z<sup>2</sup> = ${bmi} $\text {kg}\over\text z^2$ = ${bmim2}
 $\text {kg}\over\text m^2$ is considered ${bmiStr}.
 
 ``` {ojs}
 //| echo: false
 //| label: kginput
-viewof kilograms = Inputs.range([0, 1000], {label: "kilograms", value: 64, step: .1})
+viewof kilograms = Inputs.range([0, 1000], {label: "Kilograms", value: 64, step: .1})
 ```
 
 ``` {ojs}
 //| echo: false
 //| label: zinput
-viewof zems = Inputs.range([0, 10], {label: "zems", value: 4, step: 0.01})
+viewof zems = Inputs.range([0, 10], {label: "Zems", value: 4, step: 0.01})
 ```
 
 ## Centizem centimeter inch
