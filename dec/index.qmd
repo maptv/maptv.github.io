@@ -137,23 +137,22 @@ Color🎨labels🏷️for years are based on [millimillennia]{.tool data-bs-togg
 
 Apart from [c]{.tool data-bs-toggle="tooltip" data-bs-title="taur"}, Dec also measures distance using a unit called the **z**one **e**quatorial **m**eter ([zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"}). The width of a Dec time zone at the Equator is approximately ten million (~10^7^) [zems]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meters"}. Similarly, the distance from the Equator to one of the Poles is ~10^7^ [meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units). In other words, a [decimeridian]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a meridian"} ([$\text d\phi$]{.tool data-bs-toggle="tooltip" data-bs-title="decimeridian"}) is ~10^7^ [zems]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meters"} long and a [quarter meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole) is ~10^7^ meters long.
 
-:::{.column-margin fig-align="center" style="text-align:center;" id="hands" .hand}
+:::{.column-margin fig-align="center" style="text-align:center;" id="zemHands" .hand}
 {{< include _hands.qmd >}}
-[]{.handlabel}
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)
 :::
 
 You can approximate a [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} ([z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}) using your hands🤲. With your palms flat on a table in front of you and the tips of your thumbs👍touching, the maximum distance between the tips of your pinkies is about 1 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}. When you spread out the fingers on one hand✋or do the "[call me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)", "[drink](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=placing%20the%20thumb%20to%20the%20mouth%20and%20motioning%20the%20little%20finger%20upward%20as%20if%20tipping%20up%20a%20bottle%27s%20bottom%20end)", or "[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)"🤙gesture, the tips of your thumb👍and pinky are roughly 0.5 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zems"} apart.
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
-![](../asset/squareZem.svg)
+![](../asset/squareZem.svg){#zemArms}
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Extended_arm.jpg)
 :::
 
 To visualize a square [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} ([z^2^]{.tool data-bs-toggle="tooltip" data-bs-title="square zem"}), imagine four people standing in a circle, facing inward, each with their right hand✋placed on top of the elbow of the person to their right. Alternatively, two people can stand in front of each other and raise their arms💪, placing one hand✋on the elbow of the other person and the other hand✋on their own elbow to form a square.
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
-![](../asset/Man_Lifting_Barbell_Cartoon.svg)
+![](../asset/Man_Lifting_Barbell_Cartoon.svg){#zemLift}
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg)
 :::
 
@@ -252,7 +251,7 @@ flowchart LR
 
 Please support Dec by citing it as shown at the bottom of this article. You may also want to cite the [Observable](http://observablehq.com) notebooks that I adapted into the map🗺️and color🎨wheel compass🧭visualizations above or the 2004 [arxiv](https://arxiv.org/abs/physics/0412078) [article](https://www.roma1.infn.it/~dagos/history/sm/sm.html) that I found on [[2025]{.color025}[+]{style="font-family:monospace;"}[039]{.color039}]{.tool data-bs-toggle="tooltip" data-bs-title="April 9, 2025"}, which includes the definition of a [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"}, 1 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"} = 10^-8^ [c]{.tool data-bs-toggle="tooltip" data-bs-title="taurs"} = 40 [cm]{.tool data-bs-toggle="tooltip" data-bs-title="centimeters"}, in [a table of ten possible length units](https://www.roma1.infn.it/~dagos/history/sm/node12.html):
 
-::: {.column-page-right}
+::: {.column-page-right #citelist}
 - [Agnoli, Paolo](http://www.paoloagnoli.it) & [D'Agostini, Giulio](https://www.roma1.infn.it/~dagos). [2004+330]{.underline .tool data-bs-toggle="tooltip" data-bs-title="January 25, 2005"}. “Why does the meter beat the second?” \${decYearP0}+\${decDotyOff}. <https://arxiv.org/abs/physics/0412078>.
 - [Armstrong, Zan](https://observablehq.com/@zanarmstrong) [2023+057]{.underline .tool data-bs-toggle="tooltip" data-bs-title="April 27, 2023"}. “Text color annotations in markdown.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@observablehq/text-color-annotations-in-markdown>.
 - [Bostock, Mike](https://observablehq.com/@mbostock) [2020+335]{.underline .tool data-bs-toggle="tooltip" data-bs-title="January 30, 2021"}. “Solar Terminator.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@mbostock/time-zones>.
