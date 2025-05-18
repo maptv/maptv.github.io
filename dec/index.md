@@ -22,12 +22,16 @@ Martin Laptev
 - [Next](#next)
 - [Cite](#cite)
 
+<div id="firstnav">
+
 <div id="decnav">
 
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
 style="width:8.64in;height:0.98in" />
+
+</div>
 
 </div>
 
@@ -2336,12 +2340,16 @@ bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%2
 [title block](https://quarto.org/docs/authoring/title-blocks.html), and
 [citation section](#citation) of each article on my website.
 
+<div id="firstnav">
+
 <div id="decnav">
 
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
 style="width:9.64in;height:2.31in" />
+
+</div>
 
 </div>
 

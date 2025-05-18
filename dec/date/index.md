@@ -16,10 +16,14 @@ Martin Laptev
 
 <div id="datenav">
 
+<div id="decnav">
+
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
 style="width:8.64in;height:0.98in" />
+
+</div>
 
 </div>
 
@@ -98,6 +102,8 @@ not the same <span class="darkgreen">weeks</span>, because the
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span> of the first day of the
 <span class="yellow">year</span> varies.
+
+<div id="calplots">
 
 ``` {ojs}
 //| echo: false
@@ -354,6 +360,8 @@ viewof dotwInput = Inputs.radio([
   "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
   ], {value: "Sunday"})
 ```
+
+</div>
 
 The [radio](https://observablehq.com/@observablehq/input-radio)🔘input
 beneath the plots selects the <span class="lightgreen under tool"
@@ -2838,10 +2846,14 @@ a lot more to offer than just dates!
 
 <div id="datenav">
 
+<div id="decnav">
+
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:8.64in;height:0.98in" />
+style="width:9.64in;height:2.31in" />
+
+</div>
 
 </div>
 
@@ -2867,8 +2879,8 @@ Howard](https://howardhinnant.github.io). <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="2021-09-01"><u><span class="yellow">2021</span>+<span class="cyan">184</span></u></span>.
 “`chrono`-Compatible Low-Level Date Algorithms.”
-<span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>.
-<https://howardhinnant.github.io/date_algorithms.html>.
+<span class="yellow">${decYear}</span>+<span class="cyan">${String(decDoty).padStart(3,
+“0”)}</span>. <https://howardhinnant.github.io/date_algorithms.html>.
 
 ``` {ojs}
 //| echo: false
@@ -3193,7 +3205,7 @@ h4.anchored {
   margin-top: 15px;
   margin-bottom: -20px;
 }
-div.cell-output-display:has(svg#datenavtop-mermaid.flowchart.mermaid-js) {
+div.cell-output-display:has(svg#datenav-mermaid.flowchart.mermaid-js) {
   margin-top: -5px;
   margin-bottom: -5px;
 }
@@ -3208,7 +3220,7 @@ div.cell-output-display:has(svg#conversionchart-mermaid.flowchart.mermaid-js) {
   margin-top: -15px;
   margin-bottom: -15px;
 }
-div.cell-output-display:has(svg#datenavbtm-mermaid.flowchart.mermaid-js) {
+div.cell-output-display:has(svg#decnav-mermaid.flowchart.mermaid-js) {
   margin-top: -15px;
   margin-bottom: 5px;
 }

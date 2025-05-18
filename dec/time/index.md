@@ -1,8 +1,8 @@
 # Dec Time
 Martin Laptev
-2025+072
+2025+078
 
-- [Day of year (doy)](#tod)
+- [Day of year (doy)](#doy)
 - [Time of day (tod)](#tod)
 - [Zone](#zone)
 - [Unit](#unit)
@@ -11,10 +11,14 @@ Martin Laptev
 
 <div id="timenav">
 
+<div id="decnav">
+
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
 style="width:8.64in;height:0.98in" />
+
+</div>
 
 </div>
 
@@ -1186,10 +1190,14 @@ return to the use of Observable in my Dec [snap](../../dec/span)🫰and
 
 <div id="timenav">
 
+<div id="decnav">
+
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
 style="width:8.64in;height:0.98in" />
+
+</div>
 
 </div>
 
