@@ -69,6 +69,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="default">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="asset/style.css">
@@ -511,9 +515,33 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Greetings! <img src="asset/wave.gif" width="25px"></p>
 <p>Welcome to my personal website, which I created using the <a href="https://quarto.org">Quarto</a> publishing system.</p>
-<p>You are currently on the <a href=""><span class="bi bi-house-door"></span> Home</a> page of my site. You can use the <a href="https://en.wikipedia.org/wiki/Sidebar_(computing)#:~:text=a%20graphical%20control%20element%20that%20displays%20various%20forms%20of%20information%20to%20the%20right%20or%20left%20side"><span class="bi bi-layout-text-sidebar-reverse"></span> Sidebar</a> on the left to go to the <a href="about"><span class="bi bi-info-circle"></span> About</a>, <a href="list"><span class="bi bi-grid-3x3-gap"></span> Article List</a>, and <a href="cv"><span class="bi bi-file-earmark-person"></span> Curriculum Vitae (CV)</a> pages of my site or my profile pages on <a href="https://github.com/maptv"><span class="bi bi-github"></span> GitHub</a> and <a href="https://www.linkedin.com/in/maptv"><span class="bi bi-linkedin"></span> LinkedIn</a>. The remaining items in the sidebar are sections that contain articles on different topics. In addition to the sidebar, you can also use the <span class="bi bi-arrow-left-short">arrows<span class="bi bi-arrow-right-short"></span></span> at the bottom to move between articles in a given section or on to the next section.</p>
-<p>If you are not sure where to begin, I recommend starting with my articles on <a href="dec"><span class="bi bi-arrow-repeat"></span> Dec</a>, a measurement system that I created, and then continuing on my <a href="quarto"><span class="bi bi-markdown"></span> Quarto</a> section to learn about how I customized my website to show Dec dates in every article and the navigation bar.</p>
-<p>Have fun looking around!</p>
+<p>You are currently on the <a href=""><span class="bi bi-house-door"></span> Home</a> page of my site. You can use the <a href="https://en.wikipedia.org/wiki/Sidebar_(computing)#:~:text=a%20graphical%20control%20element%20that%20displays%20various%20forms%20of%20information%20to%20the%20right%20or%20left%20side"><span class="bi bi-layout-text-sidebar-reverse"></span> Sidebar</a> on the left to go to the <a href="about"><span class="bi bi-info-circle"></span> About</a>, <a href="list"><span class="bi bi-grid-3x3-gap"></span> Article List</a>, and <a href="cv"><span class="bi bi-file-earmark-person"></span> Curriculum Vitae (CV)</a> pages of my site or my profile pages on <a href="https://github.com/maptv"><span class="bi bi-github"></span> GitHub</a> and <a href="https://www.linkedin.com/in/maptv"><span class="bi bi-linkedin"></span> LinkedIn</a>. The remaining items in the sidebar are sections that contain articles on many different topics. In addition to the sidebar, you can also use the <span class="bi bi-arrow-left-short">arrows<span class="bi bi-arrow-right-short"></span></span> at the bottom to move between articles in a given section or on to the next section.</p>
+<p>If you are not sure where to begin, I recommend starting with my articles on <a href="dec"><span class="bi bi-arrow-repeat"></span> Dec</a>, a measurement system that I created, and then continuing on my <a href="quarto"><span class="bi bi-markdown"></span> Quarto</a> section to learn about how I customized my website to show Dec dates in every article and the navigation bar.</p>
+<p>Each article contains at least one navigation chart (<span class="under tool" data-bs-toggle="tooltip" data-bs-title="navigation chart">navchart</span>). As with <a href="https://en.wikipedia.org/wiki/Breadcrumb_navigation#:~:text=allows%20users%20to%20keep%20track%20and%20maintain%20awareness%20of%20their%20locations%20within%20programs%2C%20documents%2C%20or%20websites">breadcrumb navigation</a>, you can click on any node in the <span class="under tool" data-bs-toggle="tooltip" data-bs-title="navigation chart">navchart</span> below to go to the article that it represents.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="decnav">
+<div>
+<pre class="mermaid mermaid-js" data-label="decnav">%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
+flowchart LR
+   A[Dec]--&gt;B[date]--&gt;C[time]--&gt;D[snap]--&gt;E[span]
+   Z[  ]:::empty~~~F[Quarto]--&gt;G[filter]--&gt;H[include]--&gt;I[script]
+   classDef empty width:0px;
+   click A "/dec"
+   click B "/dec/date"
+   click C "/dec/time"
+   click D "/dec/snap"
+   click E "/dec/span"
+   click F "/quarto"
+   click G "/quarto/filter"
+   click H "/quarto/include"
+   click I "/quarto/script"
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><br> Please feel free to take a look around!</p>
 
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main></div>
