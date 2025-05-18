@@ -137,28 +137,28 @@ Color🎨labels🏷️for years are based on [millimillennia]{.tool data-bs-togg
 
 Apart from [c]{.tool data-bs-toggle="tooltip" data-bs-title="taur"}, Dec also measures distance using a unit called the **z**one **e**quatorial **m**eter ([zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"}). The width of a Dec time zone at the Equator is approximately ten million (~10^7^) [zems]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meters"}. Similarly, the distance from the Equator to one of the Poles is ~10^7^ [meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units). In other words, a [decimeridian]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a meridian"} ([$\text d\phi$]{.tool data-bs-toggle="tooltip" data-bs-title="decimeridian"}) is ~10^7^ [zems]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meters"} long and a [quarter meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole) is ~10^7^ meters long.
 
-:::{.column-margin fig-align="center" style="text-align:center;" id="zemHands" .hand}
+:::{.column-margin fig-align="center" style="text-align:center;" id="zemhands" .hand}
 {{< include _hands.qmd >}}
-[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)
+[[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)]{.handlabel}
 :::
 
 You can approximate a [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} ([z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}) using your hands🤲. With your palms flat on a table in front of you and the tips of your thumbs👍touching, the maximum distance between the tips of your pinkies is about 1 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}. When you spread out the fingers on one hand✋or do the "[call me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)", "[drink](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=placing%20the%20thumb%20to%20the%20mouth%20and%20motioning%20the%20little%20finger%20upward%20as%20if%20tipping%20up%20a%20bottle%27s%20bottom%20end)", or "[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)"🤙gesture, the tips of your thumb👍and pinky are roughly 0.5 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zems"} apart.
 
-:::{.column-margin fig-align="center" style="text-align:center;"}
-![](../asset/squareZem.svg){#zemArms}
+:::{.column-margin fig-align="center" style="text-align:center;" #zemarms}
+![](../asset/squareZem.svg){#zArms}
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Extended_arm.jpg)
 :::
 
 To visualize a square [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} ([z^2^]{.tool data-bs-toggle="tooltip" data-bs-title="square zem"}), imagine four people standing in a circle, facing inward, each with their right hand✋placed on top of the elbow of the person to their right. Alternatively, two people can stand in front of each other and raise their arms💪, placing one hand✋on the elbow of the other person and the other hand✋on their own elbow to form a square.
 
-:::{.column-margin fig-align="center" style="text-align:center;"}
-![](../asset/Man_Lifting_Barbell_Cartoon.svg){#zemLift}
+:::{.column-margin fig-align="center" style="text-align:center;" #zemlift}
+![](../asset/Man_Lifting_Barbell_Cartoon.svg){#zLift}
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg)
 :::
 
 You can approximate a [z^2^]{.tool data-bs-toggle="tooltip" data-bs-title="square zem"} yourself by sitting in a chair🪑or standing🧍with your knees and feet🦶1 [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}, 4 [decimeters]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a meter"} ([dm]{.tool data-bs-toggle="tooltip" data-bs-title="decimeters"}), or 16 inches apart, which is likely to be about the width of your hips or shoulders. The top of the [z^2^]{.tool data-bs-toggle="tooltip" data-bs-title="square zem"} will be between your knees, its bottom will be between your ankles or feet🦶depending on your height, and its sides will be between your shins.
 
-:::{.column-margin fig-align="center" style="text-align:center;" id="cubic"}
+:::{.column-margin fig-align="center" style="text-align:center;" id="zemcubic"}
 {{< include _cubic.qmd >}}
 [Dimensions.com](https://www.dimensions.com/element/sitting-male-side-1)
 :::

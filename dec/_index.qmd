@@ -1801,7 +1801,7 @@ h4.hiddenheading, h5.hiddenheading {
 h4.anchored {
   margin: 8px 0px 8px 0px;
 }
-#cubic svg, #hands svg {
+#zemcubic svg, #zemhands svg {
   max-width: 100%;
 }
 svg#lefthand {
@@ -1827,7 +1827,7 @@ form.oi-3a86ea {
 #costype label {
   max-width: 100px;
 }
-img#ruler {
+img#ruler svg#zhands {
   width: 100%;
 }
 </style>
