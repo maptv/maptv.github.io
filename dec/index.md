@@ -4277,7 +4277,7 @@ form.oi-3a86ea {
 #costype label {
   max-width: 100px;
 }
-img#ruler svg#zhands {
+img#ruler, svg#zhands {
   width: 100%;
 }
 </style>
