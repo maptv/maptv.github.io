@@ -212,8 +212,8 @@ data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millidays">md</span>) or <span class="color2">0.2</span>
-days (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</span>). To get the time required to
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</span>. To get the time required to
 travel🧳between two points, we divide the distance by the speed:
 ${distance_cHsl} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taurs">c</span> ÷ ${velocity_vHsl} <span class="tool"
@@ -1529,7 +1529,9 @@ style="text-align:center;">
 </div>
 
 To visualize a square <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span>, imagine four people
+data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span>), imagine four people
 standing in a circle, facing inward, each with their right hand✋placed
 on top of the elbow of the person to their right. Alternatively, two
 people can stand in front of each other and raise their arms💪, placing
@@ -1544,19 +1546,18 @@ style="text-align:center;">
 
 </div>
 
-You can approximate a square <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span> yourself by sitting in
-a chair🪑or standing🧍with your knees and feet🦶1 <span class="tool"
+You can approximate a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span> yourself by sitting in a
+chair🪑or standing🧍with your knees and feet🦶1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zem">z</span>, 4
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a meter">decimeters</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decimeters">dm</span>), or 16
 inches apart, which is likely to be about the width of your hips or
-shoulders. The top of the square <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span> will be between your
-knees, its bottom will be between your ankles or feet🦶, and its sides
-will be between your shins.
+shoulders. The top of the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span> will be between your
+knees, its bottom will be between your ankles or feet🦶depending on your
+height, and its sides will be between your shins.
 
 <div id="cubic" class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1851,9 +1852,10 @@ data-bs-toggle="tooltip" data-bs-title="centizems">cz</span>) is the
 height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
 for both men and women age 25 to 45. A box📦with the dimensions of a
 cubic <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span> would likely fit
-underneath a typical chair🪑 or in between the shins of two people
-sitting in front of each other with their legs🦵bent at 25
+data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="cubic zem">z<sup>3</sup></span>)
+would likely fit underneath a typical chair🪑 or in between the shins of
+two people sitting in front of each other with their legs🦵bent at 25
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a hundredth of a turn">centiturn</span>
 (<span class="tool" data-bs-toggle="tooltip"
@@ -1905,35 +1907,44 @@ we have to exit the highway🛣️. To ensure we do not miss our exit, we can
 periodically check a countdown of the remaining <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zems">z</span>: ${zLeft}.
 
-In Dec, <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hundred thousandths of a day">centimillidays</span> are
-called beats because they are similar in duration to heart❤️beats or
-musical🎵beats. A beat is <span class="color864">864</span>
+Dec refers to <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hundred thousandths of a day">centimillidays</span> as
+beats (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</span>) because they are similar in duration to
+heart❤️beats or musical🎵beats. A <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day">d</span> is 100
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a second">milliseconds</span>. One day
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</span>) is 10<sup>5</sup> beats
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</span>) and 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millitaur">mc</span> = 100
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of zems">kilozems</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="thousands of zems">kz</span>) =
+data-bs-title="hundredths of a day">centiday</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centidays">cd</span>),
 10<sup>5</sup> <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</span>. Therefore, 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> =
-$\text{mc}\over\text d$ = $\text z\over\text b$. It is easy to convert
+data-bs-title="beats">b</span>, or 10<sup>6</sup> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millionths of a day">microdays</span> (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="microdays">$\micro\text d$</span>). One
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</span> into meters (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="meters">m</span>), 1
-<span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span>
-= $2\over5$ m, or <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</span> into kilometers per hour
+data-bs-title="millitaur">mc</span> is 100 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousands of zems">kilozems</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="thousands of zems">kz</span>),
+10<sup>5</sup> <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zems">z</span>, 10<sup>6</sup> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="tenths of a zem">decizems</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilometers per hour">kmph</span>): 1 <span class="tool"
+data-bs-title="decizems">dz</span>), or 10<sup>6</sup>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millionths of a taur">nanotaurs</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="nanotaurs">nc</span>). Therefore, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> =
-$5\over3$ <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilometers per hour">kmph</span>.
+$\text{mc}\over\text d$ = $\text {kz}\over\text {cd}$ =
+$\text z\over\text b$ = $\text {dz}\over\micro\text d$ =
+$\text {nc}\over\micro\text d$. A <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centiday">cd</span> is
+<span class="color960">96%</span> of a quarter hour and a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beat">b</span> is <span class="color864">86.4%</span> of
+a second.
 
 The [unit
 conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
@@ -2086,28 +2097,40 @@ href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
 
 Instead of metric prefixes based on [powers of
 ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten),
-redefined units rely on [fractions based on powers of
-two](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
+redefined units rely on fractions based on powers of two ([dyadic
+rationals](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two))
 to scale up or down as needed. Redefined units serve as convenient
 reference points and can easily be converted to Dec or
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span> units. Miles are
-redefined such that one Dec mile per hour is one <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span>. A Dec
-acre is equal to $2\over5$
-[hectares](https://en.wikipedia.org/wiki/Hectare#:~:text=10%2C000%20square%20metres)
-or 40
-[are](https://en.wikipedia.org/wiki/Hectare#Are:~:text=area%2C%20equal%20to-,100%20square%20metres).
+redefined such that a mile per hour is equal to one <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> or
+$5\over3$ kilometers per hour (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="kilometers per hour">kmph</span>).
 
-A <span class="tool" data-bs-toggle="tooltip"
+A square <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a thousand zems">kilozem</span> (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square kilozem">kz<sup>2</sup></span>) is 1
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="sixteen hundred ares">hexakilare</span>, 16
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hundreds of ares">hectares</span>, 40 Dec acres, 1600
+[ares](https://en.wikipedia.org/wiki/Hectare#Are:~:text=area%2C%20equal%20to-,100%20square%20metres),
+0.16 square <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of meters">kilometers</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square kilometers">km<sup>2</sup></span>), 0.0576 Dec
+square miles, or 10<sup>6</sup> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span>. One <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="square zem">z<sup>2</sup></span>
+is a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="1.6 thousandth of an are">hexamilliare</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexamilliare">x</span>) is 1 square <span class="tool"
+data-bs-title="hexamilliares">x</span>), 16 square <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span>), 16 square
-<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a meter">decimeters</span> (<span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="square decimeters">dm<sup>2</sup></span>),
@@ -2121,38 +2144,26 @@ data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
 square meters (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square meters">m²</span>), ~19.753 Dec square yards, or
 100 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexamilliares">x</span>. A square <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="a thousand zems">kilozem</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square kilozem">kz<sup>2</sup></span>) is 1
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="sixteen hundred ares">hexakilare</span>, 0.16 square
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of meters">kilometers</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square kilometers">km<sup>2</sup></span>), 0.0576 Dec
-square miles, 40 Dec acres, 16 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="hundreds of ares">hectares</span>, or 10<sup>6</sup>
-<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexamilliares">x</span>.
 
-A cubic <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a zem">decizem</span> (<span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz<sup>3</sup></span>) is 1 shot, 2 Dec
-ounces, or 64 <span class="tool" data-bs-toggle="tooltip"
+A <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic decizem">dz<sup>3</sup></span> is 1 shot, 1 cubic
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a millionth of a taur">nanotaur</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic nanotaur">nc<sup>3</sup></span>), 2 Dec ounces, or
+64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a liter">milliliters</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span>). A shot of water🌊weighs 64 grams
-(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span>). A <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="cubic decizem">shot</span> of
+water🌊weighs 64 grams (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="grams">g</span>). Even though the weight of a Dec ounce
 of water🌊is close to a sixteenth of a Dec pound, Dec does not measure
-weights in ounces. A cubic <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="cubic zem">z<sup>3</sup></span>)
-is 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zem">keg</span>, 16 Dec gallons, or 64
+weights in ounces. A <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic zem">z<sup>3</sup></span> is 1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="cubic zem">keg</span>, 16 Dec
+gallons, or 64
 [liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="liters">L</span>). A <span class="tool"
@@ -2217,20 +2228,15 @@ style="text-align:center;">
 
 </div>
 
-The longest length depicted on the ruler📏above is 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="a tenth of a zem">decizem</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decizem">dz</span>), 1 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="a millionth of a taur">nanotaur</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="nanotaur">nc</span>), 4 <span class="tool"
-data-bs-toggle="tooltip"
+The longest length depicted in the image of a ruler📏above is 1
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decizem">dz</span>, 1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="nanotaur">nc</span>, 4
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundredths of a meter">centimeters</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centimeters">cm</span>), or $8\over5$ Dec inches long,
-and the shortest is $1\over2$ <span class="tool"
-data-bs-toggle="tooltip"
+data-bs-title="centimeters">cm</span>), or $8\over5$ Dec inches, and the
+shortest length is $1\over2$ <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a zem">millizems</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizems">mz</span>), $1\over5$ <span class="tool"
@@ -2250,8 +2256,11 @@ data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span>. A
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="centimeter">cm</span> is $5\over2$ <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="centizems">cz</span>. A
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centizem">cz</span> is $4\over25$ Dec inches.
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span>
+is 4 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decimeters">dm</span>. A <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decimeter">dm</span> is 4 Dec
+inches.
 
 # Summary
 
@@ -2318,12 +2327,11 @@ in decimal numbers at will.
 
 Now that you have had a taste of Dec, I hope that you are hungry🤤for
 more! If so, dive🤿deeper into Dec [dates](../dec/date) and
-[times](../dec/time) before advancing to Dec [snaps](../dec/snap)🫰and
-[spans](../dec/span)🌈. My [Quarto](../quarto),
-[filter](../quarto/filter), [include](../quarto/include), and
-[script](../quarto/script) articles describe how I used the
-[Quarto](https://quarto.org) publishing system to display Dec
-[dates](../dec/date) in the [navigation
+[times](../dec/time) before tackling Dec [snaps](../dec/snap)🫰and
+[spans](../dec/span)🌈. My [filter](../quarto/filter),
+[include](../quarto/include), and [script](../quarto/script) articles
+describe how I used the [Quarto](../quarto) publishing system to display
+Dec [dates](../dec/date) in the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information),
 [title block](https://quarto.org/docs/authoring/title-blocks.html), and
 [citation section](#citation) of each article on my website.
@@ -2354,9 +2362,9 @@ data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>, 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zem">z</span> = 10<sup>-8</sup>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</span> = 4 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decimeters">dm</span>, in [a
-table of possible length
+data-bs-title="taurs">c</span> = 40 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span>, in [a
+table of ten possible length
 units](https://www.roma1.infn.it/~dagos/history/sm/node12.html):
 
 <div class="column-page-right">
@@ -4010,6 +4018,14 @@ html`
 .color935 {
   background: hsl(25.88235294117647 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(25.88235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color960 {
+  background: hsl(16 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(16, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
