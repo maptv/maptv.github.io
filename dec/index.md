@@ -872,12 +872,12 @@ data-bs-title="parallel">*λ*</span> is zero. The approximate
 data-bs-title="taur">c</span> length of a <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="parallel">*λ*</span> is the
 [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
-of its <span class="tool" data-bs-toggle="tooltip"
+of its latitude in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="meridians">*ϕ*</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="radians">rad</span>, or
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="degrees">°</span> latitude, whichever is required by our
-cosine function: cos(${parLat}${conversionFactor}) = ${parLen}.
+data-bs-title="degrees">°</span>, depending on the input requirement of
+our cosine function: cos(${parLat}${conversionFactor}) = ${parLen}.
 
 ``` {ojs}
 //| echo: false
@@ -888,7 +888,7 @@ viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: 
 ``` {ojs}
 //| echo: false
 //| label: costype
-viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine units", value: "turns"})
+viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine input", value: "turns"})
 ```
 
 ## Coordinated Universal Time
