@@ -904,8 +904,9 @@ to your UTC offset is Zone ${decZonHslP}. The time in corresponding Dec
 and UTC time zones can differ by up to <span class="color050">0.5</span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</span>. The time difference between your Dec
-and UTC time zones is ${utcOffDiffHsl} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>.
+and UTC time zones is ${utcOffsetMdiffHsl } ÷ 144 = ${utcOffDiffHsl}
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decidays">dd</span>.
 
 To obtain the time in Zone <span class="color0">0</span>, we can
 subtract the offset of any time zone from its time. Inversely, we can
@@ -3059,6 +3060,7 @@ utcOffsetM = -(new Date).getTimezoneOffset()
 utcOffsetD = utcOffsetM / 144
 utcOffDiff = parseFloat((Math.round(utcOffsetD) - utcOffsetD).toFixed(2))
 utcOffDiffHsl = textcolor(utcOffDiff, `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
+utcOffsetMdiffHsl = textcolor(parseFloat((utcOffDiff * 144).toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
 utcOffsetP = (utcOffsetD + 10) % 10
 decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
 utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
