@@ -29,7 +29,6 @@ If you are not sure where to begin, I recommend starting with my articles on [[]
 
 Each article contains at least one navigation chart ([navchart]{.under .tool data-bs-toggle="tooltip" data-bs-title="navigation chart"}). As with [breadcrumb navigation](https://en.wikipedia.org/wiki/Breadcrumb_navigation#:~:text=allows%20users%20to%20keep%20track%20and%20maintain%20awareness%20of%20their%20locations%20within%20programs%2C%20documents%2C%20or%20websites), you can click on any node in the [navchart]{.under .tool data-bs-toggle="tooltip" data-bs-title="navigation chart"} below to go to the article that it represents.
 
-{{< include /asset/_decquanav.qmd >}}
-
-<br>
 Please feel free to take a look around!
+
+{{< include /asset/_decquanav.qmd >}}
