@@ -1,0 +1,398 @@
+```{ojs}
+//| echo: false
+//| output: false
+// http://howardhinnant.github.io/date_algorithms.html#civil_from_days
+function unix2dote(unix, zone, offset = 719468) {
+  return [(unix ?? Date.now()) / 86400000 + (
+    zone = zone ?? -Math.round(
+      (new Date).getTimezoneOffset() / 144)
+    ) / 10 + offset, zone]
+}
+function dote2date(dote, zone = 0) {
+  const cote = Math.floor((
+      dote >= 0 ? dote
+      : dote - 146096
+    ) / 146097),
+  dotc = dote - cote * 146097,
+  yotc = Math.floor((dotc
+    - Math.floor(dotc / 1460)
+    + Math.floor(dotc / 36524)
+    - Math.floor(dotc / 146096)
+  ) / 365);
+  return [
+    yotc + cote * 400,
+    dotc - (yotc * 365
+      + Math.floor(yotc / 4)
+      - Math.floor(yotc / 100)
+  ), zone]}
+function dotw2diff(x, y) {
+  return (x - y + 7) % 7;
+}
+dz = unix2dote(now)
+ydz = dote2date(...dz)
+function year2leap(year = 1970) {
+  return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+}
+function dote2dotw(d = 719468) {
+  return d >= -3 ? (d + 3) % 7 : (d + 4) % 7 + 6
+}
+function unix2doty(unix) {
+  const dote = (
+    unix ?? Date.now()
+  ) / 86400000 + 719468,
+    cote = Math.floor((
+      dote >= 0 ? dote
+      : dote - 146096
+    ) / 146097),
+  dotc = dote - cote * 146097,
+  yotc = Math.floor((dotc
+    - Math.floor(dotc / 1460)
+    + Math.floor(dotc / 36524)
+    - Math.floor(dotc / 146096)
+  ) / 365);
+  return dotc - (yotc * 365
+      + Math.floor(yotc / 4)
+      - Math.floor(yotc / 100)
+  )}
+function date2dote(year = 1969, doty = 306, zone = 0) {
+    const cote = Math.floor((year >= 0 ? year : year - 399) / 400),
+      yote = year - cote * 400;
+    return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
+}
+function addN(d) { return d + 365 + leapInput }
+function subN(d) { return d - 365 - leapInput }
+// https://observablehq.com/@observablehq/synchronized-inputs
+// https://observablehq.com/@juang1744/transform-input/1
+transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
+  if (source === undefined) {
+    source = target;
+    target = html`<div>${source}</div>`;
+  }
+  function sourceInputHandler() {
+    target.removeEventListener("input", targetInputHandler);
+    setTransform(target).to(transform(source.value)).andDispatchEvent();
+    target.addEventListener("input", targetInputHandler);
+  }
+  function targetInputHandler() {
+    source.removeEventListener("input", sourceInputHandler);
+    setTransform(source).to(invert(target.value)).andDispatchEvent();
+    source.addEventListener("input", sourceInputHandler);
+  }
+  source.addEventListener("input", sourceInputHandler);
+  target.addEventListener("input", targetInputHandler);
+  invalidation.then(() => {
+    source.removeEventListener("input", sourceInputHandler);
+    target.removeEventListener("input", targetInputHandler);
+  });
+  sourceInputHandler();
+  return target;
+}
+function doty2month(doty = 0) {
+    const m = Math.floor((5 * doty + 2) / 153);
+    return Math.floor(m < 10 ? m + 3 : m - 9);
+}
+function month2doty(month = 1) {
+    return Math.floor(
+        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5
+)}
+function doty2dotm(doty = 0) {
+    const m = Math.floor((5 * doty + 2) / 153);
+    return doty - Math.floor((153 * m + 2) / 5) + 1;
+}
+function set(input, value) {
+  input.value = value;
+  input.dispatchEvent(new Event("input", {bubbles: true}));
+}
+setTransform = (input) => ({to: (value) => (input.value = value, {andDispatchEvent: (event = new Event("input")) => input.dispatchEvent(event)})});
+function inverse(f) {
+  switch (f) {
+    case identity:  return identity;
+    case Math.sqrt: return square;
+    case Math.log:  return Math.exp;
+    case Math.exp:  return Math.log;
+    default:        return (x => solve(f, x, x));
+  }
+  function solve(f, y, x = 0) {
+    const dx = 1e-6;
+    let steps = 100, deltax, fx, dfx;
+    do {
+      fx = f(x)
+      dfx = (f(x + dx) - fx) || dx;
+      deltax = dx * (fx - y)/dfx
+      x -= deltax;
+    } while (Math.abs(deltax) > dx && --steps > 0);
+    return steps === 0 ? NaN : x;
+  }
+function square(x) {
+    return x * x;
+  }
+}
+function identity(x) {
+  return x;
+}
+// https://observablehq.com/@mbostock/scrubber
+function Scrubber(values, {
+  format = value => value,
+  initial = 0,
+  direction = 1,
+  delay = null,
+  autoplay = true,
+  loop = true,
+  loopDelay = null,
+  alternate = false,
+  inputStyle = ""
+} = {}) {
+  values = Array.from(values);
+  const form = html`<form style="font: 18px var(--monospace); font-variant-numeric: tabular-nums; display: flex; height: 33px; align-items: center;">
+  <button name=b type=button style="margin-right: 0.4em; width: 5em;"></button>
+  <label style="display: flex; align-items: center;">
+    <input name=i type=range min=0 max=${values.length - 1} value=${initial} step=1 style=${inputStyle}>
+    <output name=o style="margin-left: 0.4em;"></output>
+  </label>
+</form>`;
+  let frame = null;
+  let timer = null;
+  let interval = null;
+  function start() {
+    form.b.textContent = "Stop";
+    if (delay === null) frame = requestAnimationFrame(tick);
+    else interval = setInterval(tick, delay);
+  }
+  function stop() {
+    form.b.textContent = "Play";
+    if (frame !== null) cancelAnimationFrame(frame), frame = null;
+    if (timer !== null) clearTimeout(timer), timer = null;
+    if (interval !== null) clearInterval(interval), interval = null;
+  }
+  function running() {
+    return frame !== null || timer !== null || interval !== null;
+  }
+  function tick() {
+    if (form.i.valueAsNumber === (direction > 0 ? values.length - 1 : direction < 0 ? 0 : NaN)) {
+      if (!loop) return stop();
+      if (alternate) direction = -direction;
+      if (loopDelay !== null) {
+        if (frame !== null) cancelAnimationFrame(frame), frame = null;
+        if (interval !== null) clearInterval(interval), interval = null;
+        timer = setTimeout(() => (step(), start()), loopDelay);
+        return;
+      }
+    }
+    if (delay === null) frame = requestAnimationFrame(tick);
+    step();
+  }
+  function step() {
+    form.i.valueAsNumber = (form.i.valueAsNumber + direction + values.length) % values.length;
+    form.i.dispatchEvent(new CustomEvent("input", {bubbles: true}));
+  }
+  form.i.oninput = event => {
+    if (event && event.isTrusted && running()) stop();
+    form.value = values[form.i.valueAsNumber];
+    form.o.value = format(form.value, form.i.valueAsNumber, values);
+  };
+  form.b.onclick = () => {
+    if (running()) return stop();
+    direction = alternate && form.i.valueAsNumber === values.length - 1 ? -1 : 1;
+    form.i.valueAsNumber = (form.i.valueAsNumber + direction) % values.length;
+    form.i.dispatchEvent(new CustomEvent("input", {bubbles: true}));
+    start();
+  };
+  form.i.oninput();
+  if (autoplay) start();
+  else stop();
+  Inputs.disposal(form).then(stop);
+  return form;
+}
+decYear = ydz[0]
+nextYear = decYear + 1
+decDoty = Math.floor(ydz[1])
+decDek = Math.floor(decDoty / 10)
+decDotd = decDoty % 10
+decPent = decDek * 2 + (decDotd > 4)
+xmasDiff = decDoty - 299
+xmasDiffSign = xmasDiff < 0 ? "-" : "+"
+xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
+xmasDote = date2dote(ydz[0], 299)[0]
+xmasDotw = dote2dotw(xmasDote)
+dotw = Math.floor(dote2dotw(dz[0]))
+day266dotw = dote2dotw(date2dote(ydz[0], 266)[0])
+day266dotwDiff = dotw2diff(4, day266dotw)
+dotm = doty2dotm(Math.floor(ydz[1]))
+dotm0 = String(dotm - 1).padStart(2, "0")
+monthNumber = Math.floor(ydz[1] - dotm)
+monthNumber0 = String(monthNumber + 1).padStart(3, "0")
+dotw0doty = Math.floor(ydz[1]) - dotw
+doty0dote = date2dote(ydz[0], 0)[0]
+doty0dotw = dote2dotw(doty0dote)
+week = Math.floor((ydz[1] + doty0dotw) / 7)
+dotw0sign = dotw0doty < 0 ? "-" : "+"
+nDaysInYear = 365 + year2leap(ydz[0] + 1)
+Tminus = nDaysInYear - decDoty
+TminusPadded = Tminus.toString().padStart(3, "0")
+fracYear = ydz[0] + ydz[1] / nDaysInYear
+fullfracYear = (fracYear).toFixed(4)
+mod1FracYear = (fracYear % 1).toFixed(4)
+months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+monthNums = ["305", "336", "", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
+calYear = !leapInput && dotwInput == "Monday" ? 6 : !leapInput && dotwInput == "Tuesday" ? 7 : !leapInput && dotwInput == "Wednesday" ? 2 : !leapInput && dotwInput == "Thursday" ? 3 : !leapInput && dotwInput == "Friday" ? 9 : !leapInput && dotwInput == "Saturday" ? 10 : !leapInput && dotwInput == "Sunday" ? 11 : leapInput && dotwInput == "Monday" ? 12 : leapInput && dotwInput == "Tuesday" ? 24 : leapInput && dotwInput == "Wednesday" ? 8 : leapInput && dotwInput == "Thursday" ? 20 : leapInput && dotwInput == "Friday" ? 4 : leapInput && dotwInput == "Saturday" ? 16 : leapInput && dotwInput == "Sunday" ? 28 : 0;
+datesCal = d3.utcDays(new Date(calYear, 0, 0), new Date(calYear, 12, 0));
+leapInput = leapscrub[1]
+turnInput = leapscrub[2]
+dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
+numbers = Array.from({length: 366}, (_, i) => i)
+set(viewof dotyInput, leapscrub[0])
+```
+
+```{=html}
+<style>
+div.cell:has(form.oi-3a86ea-toggle) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+div.observablehq > div:has(form.oi-3a86ea-toggle) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+div.cell:has(form.oi-3a86ea) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+form.oi-3a86ea-toggle {
+  max-width: 100% !important;
+  --input-width: 30px;
+  --label-width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+form.oi-3a86ea {
+  --input-width: 200px;
+  padding-right: 9px;
+}
+form.oi-3a86ea-toggle > label {
+  width: 75px;
+}
+form.oi-3a86ea-toggle > label[for="oi-3a86ea-2"] {
+  width: 110px;
+}
+form.oi-3a86ea-toggle > input#oi-3a86ea-2 {
+  width: 15px;
+}
+form.oi-3a86ea-toggle {
+  width: 110px;
+}
+form.oi-3a86ea-toggle:has(input#oi-3a86ea-2) {
+  width: 150px;
+}
+input.oi-3a86ea-input[type="checkbox"] {
+  margin: 4px 0px 0px 0px;
+}
+div > form.oi-3a86ea > label {
+  --label-width: 105px;
+}
+form.oi-3a86ea > div.oi-3a86ea-input > input[type="number"] {
+  max-width: 60px;
+}
+div.column-page:has(svg.leftplot), div.column-page:has(svg.rightplot) {
+  display: flex;
+  justify-content: center;
+}
+div.observablehq > figure > h2 {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: -8px;
+}
+input[type="radio"] {
+  margin: 1px 0px 0px 0px;
+}
+p:has(.radiotitle) {
+  margin-top: -6px;
+  margin-bottom: -3px;
+}
+#radiobuttons {
+  margin-bottom: -12px;
+}
+h4.anchored {
+  margin: 8px 0px 8px 0px;
+}
+#mermaid-1 {
+  margin-top: 15px;
+  margin-bottom: -20px;
+}
+div.cell-output-display:has(svg#datenav-mermaid.flowchart.mermaid-js) {
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+div.cell-output-display:has(svg#zerobasedpent-mermaid.flowchart.mermaid-js) {
+  margin-top: -15px;
+}
+div.cell-output-display:has(svg#onebasedpent-mermaid.flowchart.mermaid-js) {
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+div.cell-output-display:has(svg#conversionchart-mermaid.flowchart.mermaid-js) {
+  margin-top: -15px;
+  margin-bottom: -15px;
+}
+div.cell-output-display:has(svg#decnav-mermaid.flowchart.mermaid-js) {
+  margin-top: -15px;
+  margin-bottom: 5px;
+}
+span.nodeLabel > p {
+  text-align: center;
+}
+div.hand {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+div.hand > svg {
+  margin: 5px 5px 20px 5px;
+}
+p:has(span.handlabel)  {
+  margin: -20px 5px 5px 5px;
+  width: 100%;
+  text-align: center;
+}
+div.overflowequation {
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+div#leapscrubvert {
+  margin-top: -10px;
+}
+svg.topplot {
+  margin-top: -9px;
+  margin-bottom: -9px;
+  overflow: clip;
+}
+svg.btmplot {
+  margin-top: -9px;
+  margin-bottom: -15px;
+  overflow: clip;
+}
+svg.leftplot {
+  margin-top: -9px;
+  margin-bottom: -15px;
+  overflow: clip;
+}
+svg.rightplot {
+  margin-top: -9px;
+  margin-bottom: -15px;
+  overflow: clip;
+}
+form.oi-3a86ea-checkbox {
+  max-width: 800px;
+}
+div:has(div.description) {
+  display: none;
+}
+div#conversionchart > div {
+  display: flex;
+  justify-content: center;
+}
+</style>
+```

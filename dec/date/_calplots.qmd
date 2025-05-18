@@ -1,0 +1,253 @@
+```{ojs}
+//| echo: false
+//| label: leapscrubvert
+viewof leapscrub = Inputs.form([
+  Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
+  Inputs.toggle({label: "Leap year", value: false}),
+  Inputs.toggle({label: "Vertical layout", value: false}),
+])
+```
+
+```{ojs}
+//| echo: false
+viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: "Day of year"});
+viewof monthInput = transformInput(
+  Inputs.range([1, 12], {step: 1, label: "Month"}),
+  {bind: viewof dotyInput, transform: doty2month, invert: month2doty}
+);
+viewof dotyInput1 = transformInput(
+  Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of year"}),
+  {bind: viewof dotyInput, transform: subN, invert: addN}
+);
+viewof dotmInput = transformInput(
+  Inputs.range([1, 31], {step: 1, label: "Day of month"}),
+  {bind: viewof dotyInput, transform: doty2dotm, invert: (x => Math.floor(( 153 * (
+    viewof monthInput.value > 2
+    ? viewof monthInput.value - 3
+    : viewof monthInput.value + 9) + 2
+  ) / 5 + x - 1
+))});
+```
+
+::: {.column-page}
+```{ojs}
+//| echo: false
+decPlot = turnInput ? Plot.plot({
+  title: "Decalendar",
+  padding: 0,
+  width: 480,
+  height: 980,
+  className: "leftplot",
+  marginTop: -3,
+  marginRight: 31,
+  marginBottom: 35,
+  x: {tickSize: 0,
+      label: "Day of dek    ",
+      domain: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      tickPadding: -9,
+      labelOffset: 24,
+  },
+  y: {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: -2, labelOffset: 40, labelArrow: false},
+  //fx: {tickFormat: ""},
+  style: { fontSize: "21px" },
+  color: {
+    range: d3.schemePastel1.concat(d3.schemePastel2.slice(4, 7)).concat(d3.schemeSet1[0]),
+    domain: months.concat("selected"),
+    className: "cal",
+  },
+  marks: [
+    Plot.cell(dates, {
+      y: (d, i) => Math.floor(i / 10),
+      x: (d, i) => i % 10,
+      //fx: d => d.getUTCFullYear(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[d.getUTCMonth()],
+      stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "darkorange" : "none",
+      strokeWidth: 3,
+      inset: 0.5,
+    }),
+    Plot.text(dates, {
+      y: (d, i) => Math.floor(i / 10),
+      text: d => d.getUTCDate() === 11 ? months[d.getUTCMonth()].slice(0, 3) : "",
+      frameAnchor: "right",
+      dx: 32,
+      monospace: true,
+      fontSize: "18px"}),
+    Plot.text(dates, {
+      y: (d, i) => Math.floor(i / 10),
+      x: (d, i) => i % 10,
+      //fx: d => d.getUTCFullYear(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "white" : "black",
+      //stroke: "white",
+      text: (d, i) => String(i),//.padStart(3, "0").slice(1),
+      monospace: true,
+      fontSize: "16px"})
+    ]
+  }) : Plot.plot({
+  title: "Decalendar",
+  padding: 0,
+  width: 1280,
+  height: 280,
+  className: "topplot",
+  marginTop: -3,
+  marginLeft: 31,
+  marginBottom: 35,
+  y: {tickSize: 0,
+      label: "Day of dek    ",
+      domain: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      tickPadding: -4,
+      labelOffset: 28,
+  },
+  x: {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: -2, labelOffset: 32, labelArrow: false},
+  style: { fontSize: "21px" },
+  color: {
+    range: d3.schemePastel1.concat(d3.schemePastel2.slice(4, 7)).concat(d3.schemeSet1[0]),
+    domain: months.concat("selected"),
+    className: "cal",
+  },
+  marks: [
+    Plot.cell(dates, {
+      x: (d, i) => Math.floor(i / 10),
+      y: (d, i) => i % 10,
+      //fx: d => d.getUTCFullYear(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[d.getUTCMonth()],
+      stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "darkorange" : "none",
+      strokeWidth: 3,
+      inset: 0.5,
+    }),
+    Plot.text(dates, {
+      x: (d, i) => Math.floor(i / 10),
+      y: (d, i) => i % 10,
+      //fx: d => d.getUTCFullYear(),
+      text: d => d.getUTCDate() === 11 ? months[d.getUTCMonth()].slice(0, 3) : "",
+      y: -1,
+      frameAnchor: "left",
+      dy: -1,
+      monospace: true,
+      fontSize: "18px"}),
+    Plot.text(dates, {
+      x: (d, i) => Math.floor(i / 10),
+      y: (d, i) => i % 10,
+      //fx: d => d.getUTCFullYear(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "white" : "black",
+      //stroke: "white",
+      text: (d, i) => String(i),//.padStart(3, "0").slice(1),
+      monospace: true,
+      fontSize: "16px"})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+calPlot = turnInput ? Plot.plot({
+  title: "Gregorian calendar",
+  padding: 0,
+  width: 280,
+  height: 980,
+  className: "rightplot",
+  marginTop: 10,
+  marginBottom: 30,
+  marginRight: 42,
+  x: {tickFormat: Plot.formatWeekday("en", "narrow"), tickSize: 0,
+      domain: [-1, 0, 1, 2, 3, 4, 5, 6],
+      ticks: [0, 1, 2, 3, 4, 5, 6],
+      tickPadding: 2,
+  },
+  y: {interval: 1, ticks: 26, label: "Week", type: "band", tickSize: 0, tickPadding: -26, labelOffset: 16, labelArrow: false},
+  style: { fontSize: "21px" },
+  color: {
+    range: d3.schemePastel1.concat(d3.schemePastel2.slice(4, 7)).concat(d3.schemeSet1[0]),
+    domain: months.concat("selected"),
+    className: "cal",
+  },
+  marks: [
+    Plot.cell(datesCal, {
+      y: d => d3.utcWeek.count(d3.utcYear(d), d),
+      x: d => d.getUTCDay(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[d.getUTCMonth()],
+      stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "darkorange" : "none",
+      strokeWidth: 3,
+      inset: .5,
+    }),
+    Plot.text(datesCal, {
+      y: d => d3.utcWeek.count(d3.utcYear(d), d),
+      text: d => d.getUTCDate() === 9 ? months[d.getUTCMonth()].slice(0, 3) : "",
+      frameAnchor: "right",
+      dx: 32,
+      monospace: true,
+      fontSize: "18px"}),
+    Plot.text(datesCal, {
+      y: d => d3.utcWeek.count(d3.utcYear(d), d),
+      x: d => d.getUTCDay(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "white" : "black",
+      text: d => d.getUTCDate(), //Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
+      monospace: true,
+      fontSize: "16px"})
+  ]
+}) : Plot.plot({
+  title: "Gregorian calendar",
+  padding: 0,
+  width: 1280,
+  height: 200,
+  className: "btmplot",
+  marginTop: 0,
+  marginBottom: 40,
+  marginLeft: 42,
+  y: {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
+      domain: [-1, 0, 1, 2, 3, 4, 5, 6],
+      ticks: [0, 1, 2, 3, 4, 5, 6],
+      tickPadding: 0,
+  },
+  x: {interval: 1, ticks: 26, label: "Week", type: "band", tickSize: 0, tickPadding: 2, labelOffset: 36, labelArrow: false},
+  //fx: {tickFormat: ""},
+  style: { fontSize: "21px" },
+  color: {
+    range: d3.schemePastel1.concat(d3.schemePastel2.slice(4, 7)).concat(d3.schemeSet1[0]),
+    domain: months.concat("selected"),
+    className: "cal",
+  },
+  marks: [
+    Plot.cell(datesCal, {
+      x: d => d3.utcWeek.count(d3.utcYear(d), d),
+      y: d => d.getUTCDay(),
+      //fx: d => d.getUTCFullYear(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[d.getUTCMonth()],
+      stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "darkorange" : "none",
+      strokeWidth: 3,
+      inset: .5,
+    }),
+    Plot.text(datesCal, {
+      x: d => d3.utcWeek.count(d3.utcYear(d), d),
+      y: d => d.getUTCDay(),
+      //fx: d => d.getUTCFullYear(),
+      text: d => d.getUTCDate() === 7 ? months[d.getUTCMonth()].slice(0, 3) : "",
+      y: -1,
+      frameAnchor: "left",
+      dy: -1,
+      monospace: true,
+      fontSize: "18px"}),
+    Plot.text(datesCal, {
+      x: d => d3.utcWeek.count(d3.utcYear(d), d),
+      y: d => d.getUTCDay(),
+      //fx: d => d.getUTCFullYear(),
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "white" : "black",
+      //stroke: "white",
+      text: d => d.getUTCDate(), //Math.floor(unix2doty(d.getTime())).toString().padStart(3, "0"),
+      monospace: true,
+      fontSize: "16px"})
+  ]
+})
+```
+:::
+
+[First day of the Gregorian calendar year]{.radiotitle}
+
+```{ojs}
+//| echo: false
+//| id: radiobuttons
+viewof dotwInput = Inputs.radio([
+  "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+  ], {value: "Sunday"})
+```

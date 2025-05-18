@@ -34,19 +34,11 @@ filters:
   - ../../asset/date.lua
 ---
 
-```{mermaid}
-%%| label: timenav
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
-flowchart LR
-   A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
-   click A "/dec"
-   click B "/dec/date"
-   click C "/dec/time"
-   click D "/dec/snap"
-   click E "/dec/span"
-```
+:::{#timenav}
+{{< include /asset/_decnav.qmd >}}
+:::
 
-# Day of year (doy) {.hiddenheading #tod}
+# Day of year (doy) {.hiddenheading #doy}
 
 My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the clocks🕓and bar📊charts below, which display the Dec time in the Dec time zone, [\${selectedZone}]{.lime}, selected by the red⭕️circle on the [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺️beneath the bars📊.
 
@@ -804,17 +796,9 @@ The next article in the [Dec section](/dec) of my site compares Dec to the [ISO 
 
 My [ISO 8601 article](/dec/iso) is unique because it avoids the use of Observable in favor of leveraging [Jupyter](https://jupyter.org) support in Quarto to make the code underlying Dec available in multiple programming languages. Observable is a great visualization tool but does not translate well into Jupyter notebooks. After the next article, I return to the use of Observable in my Dec [snap](/dec/span)🫰and [span](/dec/span)🌈articles.
 
-```{mermaid}
-%%| label: timenav
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
-flowchart LR
-   A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
-   click A "/dec"
-   click B "/dec/date"
-   click C "/dec/time"
-   click D "/dec/snap"
-   click E "/dec/span"
-```
+:::{#timenav}
+{{< include /asset/_decnav.qmd >}}
+:::
 
 # Cite
 

@@ -132,27 +132,27 @@ g#workdays.cluster rect {
     fill: lightgreen !important;
 }
 
-svg#decnav-mermaid a:nth-child(1) rect.basic.label-container {
+div#firstnav svg#decnav-mermaid a:nth-child(1) rect.basic.label-container {
   stroke: darkmagenta;
   stroke-width: 6px;
 }
 
-svg#datenav-mermaid a:nth-child(2) rect.basic.label-container {
+div#datenav svg#decnav-mermaid a:nth-child(2) rect.basic.label-container {
   stroke: darkmagenta;
   stroke-width: 6px;
 }
 
-svg#timenav-mermaid a:nth-child(3) rect.basic.label-container {
+div#timenav svg#decnav-mermaid a:nth-child(3) rect.basic.label-container {
   stroke: darkmagenta;
   stroke-width: 6px;
 }
 
-svg#snapnav-mermaid a:nth-child(4) rect.basic.label-container {
+div#snapnav svg#decnav-mermaid a:nth-child(4) rect.basic.label-container {
   stroke: darkmagenta;
   stroke-width: 6px;
 }
 
-svg#spannav-mermaid a:nth-child(5) rect.basic.label-container {
+div#spannav svg#decnav-mermaid a:nth-child(5) rect.basic.label-container {
   stroke: darkmagenta;
   stroke-width: 6px;
 }

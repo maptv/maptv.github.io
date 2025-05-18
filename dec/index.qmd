@@ -31,17 +31,9 @@ filters:
   - ../asset/date.lua
 ---
 
-```{mermaid}
-%%| label: decnav
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
-flowchart LR
-   A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
-   click A "/dec"
-   click B "/dec/date"
-   click C "/dec/time"
-   click D "/dec/snap"
-   click E "/dec/span"
-```
+:::{#firstnav}
+{{< include /asset/_decnav.qmd >}}
+:::
 
 # Dec measurement system {.hiddenheading #dec}
 
@@ -229,23 +221,9 @@ Dec color🎨labels🏷️can convey an impression of many different kinds of va
 
 Now that you have had a taste of Dec, I hope that you are hungry🤤for more! If so, dive🤿deeper into Dec [dates](/dec/date) and [times](/dec/time) before tackling Dec [snaps](/dec/snap)🫰and [spans](/dec/span)🌈. My [filter](/quarto/filter), [include](/quarto/include), and [script](/quarto/script) articles describe how I used the [Quarto](/quarto) publishing system to display Dec [dates](/dec/date) in the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information), [title block](https://quarto.org/docs/authoring/title-blocks.html), and [citation section](#citation) of each article on my website.
 
-```{mermaid}
-%%| label: decnav
-%%{init: {'theme': 'default', 'flowchart' : {'curve' : 'linear'}, 'themeVariables': { 'fontSize': '32px'}}}%%
-flowchart LR
-   A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
-   Z[  ]:::empty~~~F[Quarto]-->G[filter]-->H[include]-->I[script]
-   classDef empty width:0px;
-   click A "/dec"
-   click B "/dec/date"
-   click C "/dec/time"
-   click D "/dec/snap"
-   click E "/dec/span"
-   click F "/quarto"
-   click G "/quarto/filter"
-   click H "/quarto/include"
-   click I "/quarto/script"
-```
+:::{#firstnav}
+{{< include /asset/_decquanav.qmd >}}
+:::
 
 # Cite
 

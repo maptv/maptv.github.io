@@ -1,0 +1,18 @@
+```{mermaid}
+%%| label: decnav
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
+flowchart LR
+   A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
+   Z[  ]:::empty~~~F[Quarto]-->G[filter]-->H[include]-->I[script]
+   classDef empty width:0px;
+   click A "/dec"
+   click B "/dec/date"
+   click C "/dec/time"
+   click D "/dec/snap"
+   click E "/dec/span"
+   click F "/quarto"
+   click G "/quarto/filter"
+   click H "/quarto/include"
+   click I "/quarto/script"
+```
+
