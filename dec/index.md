@@ -711,7 +711,7 @@ and
 directions. Together, the range🎚️inputs underneath the hue bar form a
 Hue Saturation Lightness (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Hue Saturation Lightness">HSL</span>) triplet. Like
-red🔴green🟢blue🔵([rgb](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
+red🔴green🟢blue🔵([RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
 or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
 (<span class="tool" data-bs-toggle="tooltip"
@@ -989,19 +989,27 @@ data-bs-title="taur">c</span>, Dec also measures distance using a unit
 called the **z**one **e**quatorial **m**eter (<span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>). The width of a Dec
-time zone at the Equator is approximately ten million (~10<sup>7</sup>)
+time zone at the Equator is approximately ten million
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately ten million">~10<sup>7</sup></span>)
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meters">zems</span>. Similarly, the
-distance from the Equator to one of the Poles is ~10<sup>7</sup>
+distance from the Equator to one of the Poles is <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="approximately ten million">~10<sup>7</sup></span>
 [meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units).
 In other words, a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a meridian">decimeridian</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decimeridian">$\text d\phi$</span>) is ~10<sup>7</sup>
+data-bs-title="decimeridian">$\text d\phi$</span>) is <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="approximately ten million">~10<sup>7</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meters">zems</span> long and a [quarter
 meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole)
-is ~10<sup>7</sup> meters long.
+is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately ten million">~10<sup>7</sup></span> meters
+long.
 
 <div id="zemhands" class="column-margin hand" fig-align="center"
 style="text-align:center;">
@@ -1920,9 +1928,12 @@ data-bs-toggle="tooltip" data-bs-title="day">d</span> is 100
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundredths of a day">centiday</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="centidays">cd</span>),
-10<sup>5</sup> <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</span>, or 10<sup>6</sup> <span class="tool"
-data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a hundred thousand">10<sup>5</sup></span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</span>, or <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="a million">10<sup>6</sup></span>
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millionths of a day">microdays</span> (<span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="microdays">$\micro\text d$</span>). One
@@ -1931,12 +1942,17 @@ data-bs-title="millitaur">mc</span> is 100 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousands of zems">kilozems</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="thousands of zems">kz</span>),
-10<sup>5</sup> <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</span>, 10<sup>6</sup> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="tenths of a zem">decizems</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decizems">dz</span>), or 10<sup>6</sup>
 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a hundred thousand">10<sup>5</sup></span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zems">z</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="a million">10<sup>6</sup></span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a zem">decizems</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decizems">dz</span>), or
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a million">10<sup>6</sup></span> <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="millionths of a taur">nanotaurs</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="nanotaurs">nc</span>). Therefore, <span class="tool"
@@ -2126,7 +2142,8 @@ data-bs-title="hundreds of ares">hectares</span>, 40 Dec acres, 1600
 data-bs-title="thousands of meters">kilometers</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square kilometers">km<sup>2</sup></span>), 0.0576 Dec
-square miles, or 10<sup>6</sup> <span class="tool"
+square miles, or <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a million">10<sup>6</sup></span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="square zem">z<sup>2</sup></span>. One <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="square zem">z<sup>2</sup></span>
@@ -2368,7 +2385,9 @@ data-bs-title="April 9, 2025"><span class="color025">2025</span><span style="fon
 which includes the definition of a <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>, 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zem">z</span> = 10<sup>-8</sup>
+data-bs-toggle="tooltip" data-bs-title="zem">z</span> =
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a hundred millionth">10<sup>-8</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taurs">c</span> = 40 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span>, in [a
@@ -3606,46 +3625,46 @@ solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
 borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
 countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
 deccolors = [
-  `hsl(344.94117647058823${slStr})`,
-  `hsl(329.88235294117646${slStr})`,
-  `hsl(315.05882352941177${slStr})`,
-  `hsl(300${slStr})`,
-  `hsl(295.05882352941177${slStr})`,
-  `hsl(289.88235294117646${slStr})`,
-  `hsl(284.94117647058823${slStr})`,
-  `hsl(280${slStr})`,
-  `hsl(270.11764705882354${slStr})`,
-  `hsl(260${slStr})`,
-  `hsl(250.11764705882354${slStr})`,
-  `hsl(240${slStr})`,
-  `hsl(229.8823529411765${slStr})`,
-  `hsl(220${slStr})`,
-  `hsl(209.88235294117646${slStr})`,
-  `hsl(200${slStr})`,
-  `hsl(195.05882352941177${slStr})`,
-  `hsl(189.88235294117646${slStr})`,
-  `hsl(184.94117647058823${slStr})`,
-  `hsl(180${slStr})`,
-  `hsl(164.94117647058823${slStr})`,
-  `hsl(150.11764705882354${slStr})`,
-  `hsl(135.05882352941177${slStr})`,
-  `hsl(120${slStr})`,
-  `hsl(109.88235294117646${slStr})`,
-  `hsl(100${slStr})`,
-  `hsl(89.88235294117646${slStr})`,
-  `hsl(80${slStr})`,
-  `hsl(75.05882352941177${slStr})`,
-  `hsl(69.88235294117646${slStr})`,
-  `hsl(64.94117647058825${slStr})`,
-  `hsl(60${slStr})`,
-  `hsl(55.05882352941176${slStr})`,
-  `hsl(50.11764705882353${slStr})`,
-  `hsl(44.94117647058823${slStr})`,
-  `hsl(40${slStr})`,
-  `hsl(30.11764705882353${slStr})`,
-  `hsl(20${slStr})`,
-  `hsl(10.117647058823530${slStr})`,
-  `hsl(0${slStr})`,
+  `hsl(344.94117647058823${slStr}`,
+  `hsl(329.88235294117646${slStr}`,
+  `hsl(315.05882352941177${slStr}`,
+  `hsl(300${slStr}`,
+  `hsl(295.05882352941177${slStr}`,
+  `hsl(289.88235294117646${slStr}`,
+  `hsl(284.94117647058823${slStr}`,
+  `hsl(280${slStr}`,
+  `hsl(270.11764705882354${slStr}`,
+  `hsl(260${slStr}`,
+  `hsl(250.11764705882354${slStr}`,
+  `hsl(240${slStr}`,
+  `hsl(229.8823529411765${slStr}`,
+  `hsl(220${slStr}`,
+  `hsl(209.88235294117646${slStr}`,
+  `hsl(200${slStr}`,
+  `hsl(195.05882352941177${slStr}`,
+  `hsl(189.88235294117646${slStr}`,
+  `hsl(184.94117647058823${slStr}`,
+  `hsl(180${slStr}`,
+  `hsl(164.94117647058823${slStr}`,
+  `hsl(150.11764705882354${slStr}`,
+  `hsl(135.05882352941177${slStr}`,
+  `hsl(120${slStr}`,
+  `hsl(109.88235294117646${slStr}`,
+  `hsl(100${slStr}`,
+  `hsl(89.88235294117646${slStr}`,
+  `hsl(80${slStr}`,
+  `hsl(75.05882352941177${slStr}`,
+  `hsl(69.88235294117646${slStr}`,
+  `hsl(64.94117647058825${slStr}`,
+  `hsl(60${slStr}`,
+  `hsl(55.05882352941176${slStr}`,
+  `hsl(50.11764705882353${slStr}`,
+  `hsl(44.94117647058823${slStr}`,
+  `hsl(40${slStr}`,
+  `hsl(30.11764705882353${slStr}`,
+  `hsl(20${slStr}`,
+  `hsl(10.117647058823530${slStr}`,
+  `hsl(0${slStr}`,
 ]
 viewof size = Inputs.range([50, 700], {
   value: 300,
