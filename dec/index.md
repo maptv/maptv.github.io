@@ -1966,19 +1966,205 @@ data-bs-toggle="tooltip" data-bs-title="centiday">cd</span> is
 data-bs-title="beat">b</span> is <span class="color864">86.4%</span> of
 a second.
 
+A Dec clock⏰ticks at a rate of $\text b^{-1}$, $1\over\text b$, once
+per <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</span>, or the
+[inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number)
+of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="inverse of b">iob</span>). One
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse of b">iob</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iob">i</span>) is equal to 100
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</span> per <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millidays">md</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats per milliday">BPM</span>). A [normal resting
+heart❤️rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=heart%20rate%20is-,60–100%20bpm,-.%20An%20ultra%2Dtrained)
+is between 100 and
+166.<span style="text-decoration-line:overline;">6</span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats per milliday">BPM</span>. The [musical
+note](https://en.wikipedia.org/wiki/Musical_note#:~:text=distinct%20and%20isolatable%20sounds%20that%20act%20as%20the%20most%20basic%20building%20blocks%20for%20nearly%20all%20of%20music)
+of [A](https://en.wikipedia.org/wiki/A_(musical_note)) above [middle
+C](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard)
+([A4](https://en.wikipedia.org/wiki/A440_(pitch_standard)#:~:text=the%20musical%20note%20of%20A%20above%20middle%20C%2C%20or%20A4))
+has a
+[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
+of 380.16 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iob">i</span>, a
+[wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats)
+of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="speed of sound in mv">735.048</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> ÷ 380.16
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
+= ~1.93 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zems">z</span>, and a
+[period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency)
+of 1 ÷ 380.16 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iob">i</span> = ~2.63 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a beat">millibeats</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millibeats">mb</span>).
+
+If we increase the A4 note frequency by 40
+[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency),
+we get 380.16 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iob">i</span> × 2<sup>40</sup> = ~417.99
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>). On the
+[electromagnetic
+spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye),
+417.99 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiobs">Ti</span> corresponds to the color
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span> code
+<span class="colorff6400">ff6400</span> and a wavelength of
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="speed of light in v">647551.71</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ 417.99
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiob">Ti</span> = ~1549.20 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="billionths of a zem">nanozems</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="microzems">nz</span>). The table
+below shows the characteristics of twelve musical notes and their
+colors🎨labels🏷️.
+
+``` {ojs}
+//| echo: false
+//| label: iobinput
+//| column: margin
+//| class: freqcomponent
+// https://observablehq.com/@austinkeeton/sounds
+viewof iobs = Inputs.range([34, 9999], { step: 1,  value: 380, label: "Iobs" })
+```
+
+``` {ojs}
+//| echo: false
+//| label: iobplayer
+//| column: margin
+//| class: freqcomponent
+// https://observablehq.com/@austinkeeton/sounds
+Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
+```
+
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 10%" />
+<col style="width: 7%" />
+<col style="width: 40%" />
+<col style="width: 16%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th>Note</th>
+<th>i</th>
+<th>z</th>
+<th>Color</th>
+<th>Ti</th>
+<th>nz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A4</td>
+<td>380.16</td>
+<td>1.93</td>
+<td><span class="colorff6400">ff6400</span></td>
+<td>417.99</td>
+<td>1549.20</td>
+</tr>
+</tbody>
+</table>
+
+``` {ojs}
+//| echo: false
+//| label: iobpiano
+//| class: freqcomponent
+// https://observablehq.com/@austinkeeton/sounds
+{
+  const width = 960;
+  const keyHeight = 270;
+  const height = 320;
+  const whiteKeys = 13;
+  const blackKeys = [1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1];
+  const whiteOffsets = blackKeys.reduce((x, y) => x.concat([y + x[x.length - 1] + 1]), [0]);
+  const svg = html`<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"
+    xmlns="http://www.w3.org/2000/svg"></svg>`;
+  function wrap(elem, note) {
+    const freq = 440 * Math.pow(2, note / 12);
+    // Play a note when clicked.
+    const oscillator = ctx.createOscillator();
+    const gain = ctx.createGain();
+    gain.gain.value = 0;
+    oscillator.type = 'square';
+    oscillator.frequency.setValueAtTime(freq, ctx.currentTime);
+    oscillator.connect(gain);
+    gain.connect(ctx.destination);
+    oscillator.start();
+    elem.style.cursor = 'pointer';
+    elem.onclick = () => {
+      gain.gain.cancelScheduledValues(ctx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + 0.05);
+      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.3);
+    };
+    return elem;
+  }
+  // Draw the white keys.
+  for (let i = 0; i <= whiteKeys - 1; i++) {
+    svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill="white" stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 19));
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 12}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 3) % 7)}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 24}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${Math.round(freqs[i])}</text></svg>`);
+  }
+  // Draw the black keys.
+  for (let i = 0; i <= whiteKeys - 2; i++) {
+    if (blackKeys[i] == 1) {
+      svg.appendChild(wrap(html`<svg><rect x="${width * ((i + 0.65) / whiteKeys)}" y="0" width="${width / whiteKeys * 0.7}" height="${keyHeight * 0.55}" fill="black" stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 19 + blackKeys[i]));
+    }
+  }
+  return svg;
+}
+```
+
+``` {ojs}
+//| echo: false
+//| label: wavinput
+//| column: margin
+//| class: freqcomponent
+// https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
+viewof wavelength = Inputs.range([950, 1950], {label: "nz", value: 1549, step: 1})
+```
+
+<div class="column-margin freqcomponent" fig-align="center"
+style="text-align:center;">
+
+${wavehexHsl}
+
+</div>
+
 The [unit
 conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
 table below shows the [United States🇺🇸(US) customary
 units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
-that Dec redefines based on the [International System of
+that Dec redefines in terms of the [International System of
 Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
-(SI). The values in the first column are approximate [fold
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span>). The values in
+the first column are approximate [fold
 changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
 from original to redefined units. A fold change of
-<span class="color0">1</span> would mean that a unit is unchanged. Units
-with the same fold change are
-[multiples](https://en.wikipedia.org/wiki/Multiple_(mathematics)#:~:text=the%20product%20of%20any%20quantity%20and%20an%20integer)
-or submultiples.
+<span class="color0">1</span> means <span class="color0">0</span>
+[change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared).
+Identical fold changes indicate <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="US customary units">US</span>
+units derived from the same <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span> unit.
 
 ## Zem conversion table
 
@@ -2774,8 +2960,10 @@ rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
 rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
 rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
-rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex()) // red
-rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex()) // red
+wavehex = rgb2hex(wavelength2rgb(wavelength * .4))
+wavehexHsl = textcolor(wavehex.slice(1), wavehex)
+rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex())
+rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex())
 // Show preview swatches of color
 preview = () => {
   const container = DOM.element('div')
@@ -3852,6 +4040,219 @@ zem2 = parseFloat((zems**2).toFixed(2))
 bmi = parseFloat((kilograms / zems**2).toFixed(2))
 bmim2 = parseFloat((bmi * 25 / 4).toFixed(2))
 bmiStr = bmi < 2.96 ? "underweight" : bmi < 4 ? "normal" : bmi < 4.8 ? "overweight" : "obese"
+// https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
+rgb2hex = ([r,g,b])=> {
+  const componentToHex = (c) => {
+    const hex = Math.round(c*255).toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+  }
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+wavelength2rgb = lambda => {
+  let R, G, B, alpha;
+  if (lambda >= 380 && lambda < 440) {
+    R = -1 * (lambda - 440) / (440 - 380);
+    G = 0;
+    B = 1;
+  } else if (lambda >= 440 && lambda < 490) {
+    R = 0;
+    G = (lambda - 440) / (490 - 440);
+    B = 1;
+  } else if (lambda >= 490 && lambda < 510) {
+    R = 0;
+    G = 1;
+    B = -1 * (lambda - 510) / (510 - 490);
+  } else if (lambda >= 510 && lambda < 580) {
+    R = (lambda - 510) / (580 - 510);
+    G = 1;
+    B = 0;
+  } else if (lambda >= 580 && lambda < 645) {
+    R = 1;
+    G = -1 * (lambda - 645) / (645 - 580);
+    B = 0.0;
+  } else if (lambda >= 645 && lambda <= 780) {
+    R = 1;
+    G = 0;
+    B = 0;
+  } else {
+    R = 0;
+    G = 0;
+    B = 0;
+  }
+  // intensty is lower at the edges of the visible spectrum.
+  if (lambda > 780 || lambda < 380) {
+    alpha = 0;
+  } else if (lambda > 700) {
+    alpha = (780 - lambda) / (780 - 700);
+  } else if (lambda < 420) {
+    alpha = (lambda - 380) / (420 - 380);
+  } else {
+    alpha = 1;
+  }
+  return [R*alpha, G*alpha, B*alpha]
+}
+// https://observablehq.com/@austinkeeton/sounds
+ctx = new (window.AudioContext || window.webkitAudioContext)()
+function Play(genFn, duration = 1) {
+  return new SoundBuffer(genFn, duration).gui();
+}
+class SoundBuffer {
+  constructor(genFn, duration = .864) {
+    this.duration = duration;
+    // Create an audio buffer.
+    this.audioBuffer = ctx.createBuffer(1, ctx.sampleRate * this.duration, ctx.sampleRate);
+    this.buffer = this.audioBuffer.getChannelData(0);
+    let max = 0;
+    for (let i = 0; i < this.audioBuffer.length; i++) {
+      const value = genFn(i / ctx.sampleRate);
+      this.buffer[i] = value;
+      if (Math.abs(value) > max) max = Math.abs(value);
+    }
+    for (let i = 0; i < this.audioBuffer.length; i++) {
+      this.buffer[i] = this.buffer[i] / max;
+    }
+  }
+  play(maxVol = 0.3) {
+    this.stop();
+    this.source = ctx.createBufferSource();
+    this.source.buffer = this.audioBuffer;
+    const gain = ctx.createGain();
+    gain.gain.value = maxVol;
+    this.source.connect(gain);
+    gain.connect(ctx.destination);
+    this.source.start();    
+  }
+  stop() {
+    if (this.source) this.source.stop();
+  }
+  draw(height = 50, width = width, color = 'blue') {
+    const drawingCtx = DOM.context2d(width, height);
+    // Draw the middle line.
+    drawingCtx.strokeStyle = 'gainsboro';
+    drawingCtx.beginPath();
+    drawingCtx.moveTo(0, height / 2);
+    drawingCtx.lineTo(width, height / 2);
+    drawingCtx.stroke();
+    // Draw the waveform.
+    drawingCtx.strokeStyle = color;
+    drawingCtx.beginPath();
+    for (let i = 0; i < width; i++) {
+      const value = this.buffer[Math.floor(i / width * this.audioBuffer.length)];
+      const y = height - Math.floor((value / 2 + 0.5) * height * 0.9 + height * 0.05);
+      if (i == 0) {
+        drawingCtx.moveTo(i, y);
+      } else {
+        drawingCtx.lineTo(i, y);
+      }
+    }
+    drawingCtx.stroke();
+    return drawingCtx.canvas;
+  }
+  gui() {
+    const ui = html`<style>
+      .sound-player {
+        border: solid 1px gainsboro;
+        background: #f5f5f5;
+        font-family: sans-serif;
+        color: #6f6f6f;
+        font-size: 0.8em;
+      }
+
+      .sound-pane {
+        height: 50px;
+        background: white;
+        margin: 8px;
+        border: solid 1px gainsboro;
+        position: relative;
+      }
+
+      .icons {
+        margin: 0 8px 8px 8px;
+      }
+
+      .icons .button {
+         cursor: pointer;
+         border: solid 1px transparent;
+      }
+
+      .icons .button:hover {
+         border: solid 1px gainsboro;
+      }
+
+      .cursor {
+        background: red;
+        width: 2px;
+        height: 100%;
+        position: absolute;
+      }
+    </style>
+    <div class="sound-player">
+      <div class="sound-pane">
+        <span class="cursor" style="display: none;"></span>
+      </div>
+      <div class="icons">
+        <span class="button play-button">▶</span>
+        <span class="button stop-button">◼</span>&nbsp;&nbsp;
+        <span class="duration">${this.duration /.864} b</span>
+      </div>
+    </div>`;
+    const cursor = ui.querySelector('.cursor');
+    let interval = null;
+    const resetInterval = () => {
+      if (interval != null) {
+        clearInterval(interval);
+        interval = null;
+      }
+    };
+    const soundPlayer = ui.querySelector('.sound-player');
+    ui.querySelector('.sound-pane').appendChild(this.draw(46, width - 20));
+    ui.querySelector('.play-button').onclick = () => {
+      cursor.style.left = '0';
+      this.play();
+      cursor.style.display = 'block';
+      const playTime = Date.now();
+      resetInterval();
+      interval = setInterval(() => {
+        if (!document.contains(soundPlayer)) {
+          resetInterval();
+          this.stop();
+        }
+        let progress = (Date.now() - playTime) / this.duration / 1000;
+        if (progress < 0) progress = 0;
+        if (progress > 1) {
+          progress = 1;
+          resetInterval();
+          this.stop();
+          cursor.style.display = 'none';
+        }
+        cursor.style.left = `${Math.floor(progress * (width - 20))}px`;
+      }, 20);
+    };
+    ui.querySelector('.stop-button').onclick = () => {
+      resetInterval();
+      this.stop();
+      cursor.style.display = 'none';
+    };
+    return ui;
+  }
+}
+freqs = [
+  126.86112,
+  142.39584,
+  150.86304,
+  169.344,
+  190.08,
+  213.35616,
+  226.04832,
+  253.72224,
+  284.80032,
+  301.73472,
+  338.688,
+  380.16,
+  426.71232,
+  452.088,
+  507.45312,
+]
 ```
 
 ``` {ojs}
@@ -4059,6 +4460,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorff6400 {
+  background: #ff6400;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .colorMile {
   background: hsl(338.5882352941177 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(338.5882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -4152,10 +4561,10 @@ html`
 div#projselect {
   max-width: 250px;
 }
-div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div, {
+div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div div#wavinput > div,, div#iobinput > div, {
   overflow-x: clip;
 }
-div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
+div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label, div#wavinput label, div#iobinput label {
   width: 35px;
 }
 button#rstbtn:hover {
@@ -4166,7 +4575,7 @@ button#rstbtn:hover {
 div#distmap {
   margin-bottom: -28px;
 }
-#sizeinput #speedinput #yawinput #pitchinput #rollinput {
+#sizeinput #speedinput #yawinput #pitchinput #rollinput #wavinput #iobinput {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4174,7 +4583,10 @@ div#distmap {
 #speedinput input[type="number"], #sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
   width: 58px;
 }
-#speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
+#wavinput input[type="number"], #iobinput input[type="number"] {
+  width: 65px;
+}
+#speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"]  {
   width: 72%;
 }
 .colorcomponent {
@@ -4306,5 +4718,16 @@ form.oi-3a86ea {
 }
 img#ruler, svg#zhands {
   width: 100%;
+}
+div#iobpiano > div > div > svg {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: visible;
+}
+.freqcomponent {
+  max-width: 100%;
+}
+.iobplayer {
+  overflow: clip;
 }
 </style>
