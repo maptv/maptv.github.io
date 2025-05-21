@@ -1456,7 +1456,7 @@ class SoundBuffer {
     gain.gain.value = maxVol;
     this.source.connect(gain);
     gain.connect(ctx.destination);
-    this.source.start();    
+    this.source.start();
   }
   stop() {
     if (this.source) this.source.stop();
@@ -1796,9 +1796,65 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.colorff6400 {
-  background: #ff6400;
+.colorff6300 {
+  background: #ff6300;
   color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorffec00 {
+  background: #ffec00;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color99ff00 {
+  background: #99ff00;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color28ff00 {
+  background: #28ff00;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color00ffe8 {
+  background: #00ffe8;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color007cff {
+  background: #007cff;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color0800ff {
+  background: #0800ff;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color5e00d6 {
+  background: #5e00d6;
+  color: white;
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2064,8 +2120,14 @@ div#iobpiano > div > div > svg {
 .freqcomponent {
   max-width: 100%;
 }
-.iobplayer {
+#iobplayer canvas {
   overflow: clip;
+  max-width: 100%;
+}
+#iobpiano {
+  overflow: clip;
+  max-width: 100%;
+  margin: -8px 0px -60px 0px;
 }
 </style>
 ```

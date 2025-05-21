@@ -16,9 +16,17 @@ viewof iobs = Inputs.range([34, 9999], { step: 1,  value: 380, label: "Iobs" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
 ```
 
-| Note    | i      | z    | Color                  | Ti        | nz      |
-| ------- | ------ | ---- | ---------------------- | --------- | ------- |
-| A4      | 380.16 | 1.93 | [ff6400]{.colorff6400} | 417.99    | 1549.20 |
+| Note    | i      | z    | Hex                    | Ti                     | nz                      |
+| ------- | ------ | ---- | ---------------------- | ---------------------- | ----------------------- |
+| G♯4     | 358.82 | 2.05 | [ff0000]{.color0}      | [394.53]{.color0}      | [1641.32]{.color0}      |
+| A4      | 380.16 | 1.93 | [ff6300]{.colorff6300} | [417.99]{.colorff6300} | [1549.20]{.colorff6300} |
+| A♯4     | 402.77 | 1.83 | [ffec00]{.colorffec00} | [442.85]{.colorffec00} | [1462.25]{.colorffec00} |
+| B4      | 426.72 | 1.72 | [99ff00]{.color99ff00} | [469.18]{.color99ff00} | [1380.18]{.color99ff00} |
+| C5      | 452.09 | 1.63 | [28ff00]{.color28ff00} | [497.08]{.color28ff00} | [1302.72]{.color28ff00} |
+| C♯5     | 478.97 | 1.53 | [00ffe8]{.color00ffe8} | [526.63]{.color00ffe8} | [1229.60]{.color00ffe8} |
+| D5      | 507.45 | 1.45 | [007cff]{.color007cff} | [557.95]{.color007cff} | [1160.59]{.color007cff} |
+| D♯5     | 537.63 | 1.37 | [0800ff]{.color0800ff} | [591.13]{.color0800ff} | [1095.45]{.color0800ff} |
+| E5      | 569.60 | 1.29 | [5e00d6]{.color5e00d6} | [626.28]{.color5e00d6} | [1033.97]{.color5e00d6} |
 
 ```{ojs}
 //| echo: false
@@ -27,7 +35,7 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
 // https://observablehq.com/@austinkeeton/sounds
 {
   const width = 960;
-  const keyHeight = 270;
+  const keyHeight = 240;
   const height = 320;
   const whiteKeys = 13;
   const blackKeys = [1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1];
@@ -56,8 +64,8 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
   // Draw the white keys.
   for (let i = 0; i <= whiteKeys - 1; i++) {
     svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill="white" stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 19));
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 12}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 3) % 7)}</text></svg>`);
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 24}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${Math.round(freqs[i])}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 24}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 3) % 7)}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 48}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${Math.round(freqs[i])}</text></svg>`);
   }
   // Draw the black keys.
   for (let i = 0; i <= whiteKeys - 2; i++) {
