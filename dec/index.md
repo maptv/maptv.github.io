@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+075
+2025+081
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -1972,28 +1972,22 @@ data-bs-title="beats">b</span>, or the
 [inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number)
 of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="inverse of b">iob</span>). One
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse of b">iob</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iob">i</span>) is equal to 100
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</span> per <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millidays">md</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats per milliday">BPM</span>). A [normal resting
-heart❤️rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=heart%20rate%20is-,60–100%20bpm,-.%20An%20ultra%2Dtrained)
-is between 100 and
-166.<span style="text-decoration-line:overline;">6</span>
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats per milliday">BPM</span>. The [musical
-note](https://en.wikipedia.org/wiki/Musical_note#:~:text=distinct%20and%20isolatable%20sounds%20that%20act%20as%20the%20most%20basic%20building%20blocks%20for%20nearly%20all%20of%20music)
-of [A](https://en.wikipedia.org/wiki/A_(musical_note)) above [middle
+data-bs-toggle="tooltip" data-bs-title="inverse of b">iob</span>). We
+can use <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse of b">iobs</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iobs">i</span>) to measure the
+[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
+of [musical
+notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=distinct%20and%20isolatable%20sounds%20that%20act%20as%20the%20most%20basic%20building%20blocks%20for%20nearly%20all%20of%20music).
+The [A](https://en.wikipedia.org/wiki/A_(musical_note)) note above
+[middle
 C](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard)
 ([A4](https://en.wikipedia.org/wiki/A440_(pitch_standard)#:~:text=the%20musical%20note%20of%20A%20above%20middle%20C%2C%20or%20A4))
-has a
-[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
-of 380.16 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iob">i</span>, a
+has a frequency of 440 [cycles per
+second](https://en.wikipedia.org/wiki/Hertz#:~:text=one%20event%20(or%20cycle)%20per%20second)
+× .864 seconds per <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beat">b</span> = 380.16 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iob">i</span>, a
 [wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats)
 of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of sound in mv">735.048</span> <span class="tool"
@@ -2022,7 +2016,7 @@ spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of
 data-bs-title="teraiobs">Ti</span> corresponds to the color
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</span> code
-<span class="colorff6400">ff6400</span> and a wavelength of
+<span class="colorff6300">ff6300</span> and a wavelength of
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of light in v">647551.71</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ 417.99
@@ -2031,8 +2025,7 @@ data-bs-title="teraiob">Ti</span> = ~1549.20 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="billionths of a zem">nanozems</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="microzems">nz</span>). The table
-below shows the characteristics of twelve musical notes and their
-colors🎨labels🏷️.
+below compares nine musical notes and their associated colors🎨.
 
 ``` {ojs}
 //| echo: false
@@ -2054,31 +2047,95 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
 
 <table>
 <colgroup>
-<col style="width: 12%" />
-<col style="width: 10%" />
+<col style="width: 8%" />
 <col style="width: 7%" />
-<col style="width: 40%" />
-<col style="width: 16%" />
-<col style="width: 12%" />
+<col style="width: 4%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 27%" />
 </colgroup>
 <thead>
 <tr>
 <th>Note</th>
 <th>i</th>
 <th>z</th>
-<th>Color</th>
+<th>Hex</th>
 <th>Ti</th>
 <th>nz</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>G♯4</td>
+<td>358.82</td>
+<td>2.05</td>
+<td><span class="color0">ff0000</span></td>
+<td><span class="color0">394.53</span></td>
+<td><span class="color0">1641.32</span></td>
+</tr>
+<tr>
 <td>A4</td>
 <td>380.16</td>
 <td>1.93</td>
-<td><span class="colorff6400">ff6400</span></td>
-<td>417.99</td>
-<td>1549.20</td>
+<td><span class="colorff6300">ff6300</span></td>
+<td><span class="colorff6300">417.99</span></td>
+<td><span class="colorff6300">1549.20</span></td>
+</tr>
+<tr>
+<td>A♯4</td>
+<td>402.77</td>
+<td>1.83</td>
+<td><span class="colorffec00">ffec00</span></td>
+<td><span class="colorffec00">442.85</span></td>
+<td><span class="colorffec00">1462.25</span></td>
+</tr>
+<tr>
+<td>B4</td>
+<td>426.72</td>
+<td>1.72</td>
+<td><span class="color99ff00">99ff00</span></td>
+<td><span class="color99ff00">469.18</span></td>
+<td><span class="color99ff00">1380.18</span></td>
+</tr>
+<tr>
+<td>C5</td>
+<td>452.09</td>
+<td>1.63</td>
+<td><span class="color28ff00">28ff00</span></td>
+<td><span class="color28ff00">497.08</span></td>
+<td><span class="color28ff00">1302.72</span></td>
+</tr>
+<tr>
+<td>C♯5</td>
+<td>478.97</td>
+<td>1.53</td>
+<td><span class="color00ffe8">00ffe8</span></td>
+<td><span class="color00ffe8">526.63</span></td>
+<td><span class="color00ffe8">1229.60</span></td>
+</tr>
+<tr>
+<td>D5</td>
+<td>507.45</td>
+<td>1.45</td>
+<td><span class="color007cff">007cff</span></td>
+<td><span class="color007cff">557.95</span></td>
+<td><span class="color007cff">1160.59</span></td>
+</tr>
+<tr>
+<td>D♯5</td>
+<td>537.63</td>
+<td>1.37</td>
+<td><span class="color0800ff">0800ff</span></td>
+<td><span class="color0800ff">591.13</span></td>
+<td><span class="color0800ff">1095.45</span></td>
+</tr>
+<tr>
+<td>E5</td>
+<td>569.60</td>
+<td>1.29</td>
+<td><span class="color5e00d6">5e00d6</span></td>
+<td><span class="color5e00d6">626.28</span></td>
+<td><span class="color5e00d6">1033.97</span></td>
 </tr>
 </tbody>
 </table>
@@ -2090,7 +2147,7 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
 // https://observablehq.com/@austinkeeton/sounds
 {
   const width = 960;
-  const keyHeight = 270;
+  const keyHeight = 240;
   const height = 320;
   const whiteKeys = 13;
   const blackKeys = [1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1];
@@ -2119,8 +2176,8 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
   // Draw the white keys.
   for (let i = 0; i <= whiteKeys - 1; i++) {
     svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill="white" stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 19));
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 12}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 3) % 7)}</text></svg>`);
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 24}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${Math.round(freqs[i])}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 24}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 3) % 7)}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 48}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${Math.round(freqs[i])}</text></svg>`);
   }
   // Draw the black keys.
   for (let i = 0; i <= whiteKeys - 2; i++) {
@@ -2562,8 +2619,8 @@ style="width:9.64in;height:2.31in" />
 
 Please support Dec by citing it as shown at the bottom of this article.
 You may also want to cite the [Observable](http://observablehq.com)
-notebooks that I adapted into the map🗺️and color🎨wheel
-compass🧭visualizations above or the 2004
+notebooks that I adapted into the map🗺️, color🎨wheel compass🧭, and the
+other visualizations above or the 2004
 [arxiv](https://arxiv.org/abs/physics/0412078)
 [article](https://www.roma1.infn.it/~dagos/history/sm/sm.html) that I
 found on <span class="tool" data-bs-toggle="tooltip"
@@ -4120,7 +4177,7 @@ class SoundBuffer {
     gain.gain.value = maxVol;
     this.source.connect(gain);
     gain.connect(ctx.destination);
-    this.source.start();    
+    this.source.start();
   }
   stop() {
     if (this.source) this.source.stop();
@@ -4460,9 +4517,65 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.colorff6400 {
-  background: #ff6400;
+.colorff6300 {
+  background: #ff6300;
   color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorffec00 {
+  background: #ffec00;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color99ff00 {
+  background: #99ff00;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color28ff00 {
+  background: #28ff00;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color00ffe8 {
+  background: #00ffe8;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color007cff {
+  background: #007cff;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color0800ff {
+  background: #0800ff;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color5e00d6 {
+  background: #5e00d6;
+  color: white;
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -4727,7 +4840,13 @@ div#iobpiano > div > div > svg {
 .freqcomponent {
   max-width: 100%;
 }
-.iobplayer {
+#iobplayer canvas {
   overflow: clip;
+  max-width: 100%;
+}
+#iobpiano {
+  overflow: clip;
+  max-width: 100%;
+  margin: -8px 0px -60px 0px;
 }
 </style>
