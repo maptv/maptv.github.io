@@ -71,7 +71,7 @@ p, li {
   font-size: 28px;
   }
   p, li {
-    line-height: 1.4;
+    line-height: 1.9;
     margin-top: 5px;
   }
   .tofrom {
@@ -140,7 +140,7 @@ h3.anchored {
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.9;
   margin-top: 5px;
 }
 .tofrom {

@@ -296,8 +296,10 @@ rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
 rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
 rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
-rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex()) // red
-rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex()) // red
+wavehex = rgb2hex(wavelength2rgb(wavelength * .4))
+wavehexHsl = textcolor(wavehex.slice(1), wavehex)
+rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex())
+rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex())
 // Show preview swatches of color
 preview = () => {
   const container = DOM.element('div')
@@ -1374,6 +1376,219 @@ zem2 = parseFloat((zems**2).toFixed(2))
 bmi = parseFloat((kilograms / zems**2).toFixed(2))
 bmim2 = parseFloat((bmi * 25 / 4).toFixed(2))
 bmiStr = bmi < 2.96 ? "underweight" : bmi < 4 ? "normal" : bmi < 4.8 ? "overweight" : "obese"
+// https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
+rgb2hex = ([r,g,b])=> {
+  const componentToHex = (c) => {
+    const hex = Math.round(c*255).toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+  }
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+wavelength2rgb = lambda => {
+  let R, G, B, alpha;
+  if (lambda >= 380 && lambda < 440) {
+    R = -1 * (lambda - 440) / (440 - 380);
+    G = 0;
+    B = 1;
+  } else if (lambda >= 440 && lambda < 490) {
+    R = 0;
+    G = (lambda - 440) / (490 - 440);
+    B = 1;
+  } else if (lambda >= 490 && lambda < 510) {
+    R = 0;
+    G = 1;
+    B = -1 * (lambda - 510) / (510 - 490);
+  } else if (lambda >= 510 && lambda < 580) {
+    R = (lambda - 510) / (580 - 510);
+    G = 1;
+    B = 0;
+  } else if (lambda >= 580 && lambda < 645) {
+    R = 1;
+    G = -1 * (lambda - 645) / (645 - 580);
+    B = 0.0;
+  } else if (lambda >= 645 && lambda <= 780) {
+    R = 1;
+    G = 0;
+    B = 0;
+  } else {
+    R = 0;
+    G = 0;
+    B = 0;
+  }
+  // intensty is lower at the edges of the visible spectrum.
+  if (lambda > 780 || lambda < 380) {
+    alpha = 0;
+  } else if (lambda > 700) {
+    alpha = (780 - lambda) / (780 - 700);
+  } else if (lambda < 420) {
+    alpha = (lambda - 380) / (420 - 380);
+  } else {
+    alpha = 1;
+  }
+  return [R*alpha, G*alpha, B*alpha]
+}
+// https://observablehq.com/@austinkeeton/sounds
+ctx = new (window.AudioContext || window.webkitAudioContext)()
+function Play(genFn, duration = 1) {
+  return new SoundBuffer(genFn, duration).gui();
+}
+class SoundBuffer {
+  constructor(genFn, duration = .864) {
+    this.duration = duration;
+    // Create an audio buffer.
+    this.audioBuffer = ctx.createBuffer(1, ctx.sampleRate * this.duration, ctx.sampleRate);
+    this.buffer = this.audioBuffer.getChannelData(0);
+    let max = 0;
+    for (let i = 0; i < this.audioBuffer.length; i++) {
+      const value = genFn(i / ctx.sampleRate);
+      this.buffer[i] = value;
+      if (Math.abs(value) > max) max = Math.abs(value);
+    }
+    for (let i = 0; i < this.audioBuffer.length; i++) {
+      this.buffer[i] = this.buffer[i] / max;
+    }
+  }
+  play(maxVol = 0.3) {
+    this.stop();
+    this.source = ctx.createBufferSource();
+    this.source.buffer = this.audioBuffer;
+    const gain = ctx.createGain();
+    gain.gain.value = maxVol;
+    this.source.connect(gain);
+    gain.connect(ctx.destination);
+    this.source.start();    
+  }
+  stop() {
+    if (this.source) this.source.stop();
+  }
+  draw(height = 50, width = width, color = 'blue') {
+    const drawingCtx = DOM.context2d(width, height);
+    // Draw the middle line.
+    drawingCtx.strokeStyle = 'gainsboro';
+    drawingCtx.beginPath();
+    drawingCtx.moveTo(0, height / 2);
+    drawingCtx.lineTo(width, height / 2);
+    drawingCtx.stroke();
+    // Draw the waveform.
+    drawingCtx.strokeStyle = color;
+    drawingCtx.beginPath();
+    for (let i = 0; i < width; i++) {
+      const value = this.buffer[Math.floor(i / width * this.audioBuffer.length)];
+      const y = height - Math.floor((value / 2 + 0.5) * height * 0.9 + height * 0.05);
+      if (i == 0) {
+        drawingCtx.moveTo(i, y);
+      } else {
+        drawingCtx.lineTo(i, y);
+      }
+    }
+    drawingCtx.stroke();
+    return drawingCtx.canvas;
+  }
+  gui() {
+    const ui = html`<style>
+      .sound-player {
+        border: solid 1px gainsboro;
+        background: #f5f5f5;
+        font-family: sans-serif;
+        color: #6f6f6f;
+        font-size: 0.8em;
+      }
+
+      .sound-pane {
+        height: 50px;
+        background: white;
+        margin: 8px;
+        border: solid 1px gainsboro;
+        position: relative;
+      }
+
+      .icons {
+        margin: 0 8px 8px 8px;
+      }
+
+	  .icons .button {
+         cursor: pointer;
+         border: solid 1px transparent;
+      }
+
+      .icons .button:hover {
+         border: solid 1px gainsboro;
+      }
+
+      .cursor {
+        background: red;
+        width: 2px;
+        height: 100%;
+        position: absolute;
+      }
+    </style>
+    <div class="sound-player">
+      <div class="sound-pane">
+        <span class="cursor" style="display: none;"></span>
+	  </div>
+      <div class="icons">
+        <span class="button play-button">▶</span>
+        <span class="button stop-button">◼</span>&nbsp;&nbsp;
+        <span class="duration">${this.duration /.864} b</span>
+      </div>
+    </div>`;
+    const cursor = ui.querySelector('.cursor');
+    let interval = null;
+    const resetInterval = () => {
+      if (interval != null) {
+        clearInterval(interval);
+        interval = null;
+      }
+    };
+    const soundPlayer = ui.querySelector('.sound-player');
+    ui.querySelector('.sound-pane').appendChild(this.draw(46, width - 20));
+    ui.querySelector('.play-button').onclick = () => {
+      cursor.style.left = '0';
+      this.play();
+      cursor.style.display = 'block';
+      const playTime = Date.now();
+      resetInterval();
+      interval = setInterval(() => {
+        if (!document.contains(soundPlayer)) {
+          resetInterval();
+          this.stop();
+        }
+        let progress = (Date.now() - playTime) / this.duration / 1000;
+        if (progress < 0) progress = 0;
+        if (progress > 1) {
+          progress = 1;
+          resetInterval();
+          this.stop();
+          cursor.style.display = 'none';
+        }
+        cursor.style.left = `${Math.floor(progress * (width - 20))}px`;
+      }, 20);
+    };
+    ui.querySelector('.stop-button').onclick = () => {
+      resetInterval();
+      this.stop();
+      cursor.style.display = 'none';
+    };
+    return ui;
+  }
+}
+freqs = [
+  126.86112,
+  142.39584,
+  150.86304,
+  169.344,
+  190.08,
+  213.35616,
+  226.04832,
+  253.72224,
+  284.80032,
+  301.73472,
+  338.688,
+  380.16,
+  426.71232,
+  452.088,
+  507.45312,
+]
 ```
 
 ```{ojs}
@@ -1581,6 +1796,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorff6400 {
+  background: #ff6400;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .colorMile {
   background: hsl(338.5882352941177 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(338.5882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -1675,10 +1898,10 @@ html`
 div#projselect {
   max-width: 250px;
 }
-div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div, {
+div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div div#wavinput > div,, div#iobinput > div, {
   overflow-x: clip;
 }
-div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
+div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label, div#wavinput label, div#iobinput label {
   width: 35px;
 }
 button#rstbtn:hover {
@@ -1689,7 +1912,7 @@ button#rstbtn:hover {
 div#distmap {
   margin-bottom: -28px;
 }
-#sizeinput #speedinput #yawinput #pitchinput #rollinput {
+#sizeinput #speedinput #yawinput #pitchinput #rollinput #wavinput #iobinput {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1697,7 +1920,10 @@ div#distmap {
 #speedinput input[type="number"], #sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
   width: 58px;
 }
-#speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
+#wavinput input[type="number"], #iobinput input[type="number"] {
+  width: 65px;
+}
+#speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"]  {
   width: 72%;
 }
 .colorcomponent {
@@ -1829,6 +2055,17 @@ form.oi-3a86ea {
 }
 img#ruler, svg#zhands {
   width: 100%;
+}
+div#iobpiano > div > div > svg {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: visible;
+}
+.freqcomponent {
+  max-width: 100%;
+}
+.iobplayer {
+  overflow: clip;
 }
 </style>
 ```
