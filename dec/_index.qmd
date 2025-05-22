@@ -1804,6 +1804,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorff6400 {
+  background: #ff6400;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .colorffec00 {
   background: #ffec00;
   color: black;
@@ -1855,6 +1863,14 @@ html`
 .color5e00d6 {
   background: #5e00d6;
   color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorIob {
+  background: hsl(288.4705882352941 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(288.4705882352941, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2119,10 +2135,6 @@ div#iobpiano > div > div > svg {
   overflow: visible;
 }
 .freqcomponent {
-  max-width: 100%;
-}
-#iobplayer canvas {
-  overflow: clip;
   max-width: 100%;
 }
 #iobpiano {

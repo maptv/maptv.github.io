@@ -1,7 +1,14 @@
 ```{ojs}
 //| echo: false
+//| label: wavinput
+//| class: freqcomponent
+// https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
+viewof wavelength = Inputs.range([950, 1950], {label: "nz", value: 1549, step: 1})
+```
+
+```{ojs}
+//| echo: false
 //| label: iobinput
-//| column: margin
 //| class: freqcomponent
 // https://observablehq.com/@austinkeeton/sounds
 viewof iobs = Inputs.range([34, 9999], { step: 1,  value: 380, label: "Iobs" })
@@ -77,16 +84,3 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
   return svg;
 }
 ```
-
-```{ojs}
-//| echo: false
-//| label: wavinput
-//| class: freqcomponent
-// https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
-viewof wavelength = Inputs.range([950, 1950], {label: "nz", value: 1549, step: 1})
-```
-
-\${html`<canvas width="128", height = "128" style="border:1px solid #000000; background-color: ${rgb2hex(wavelength2rgb(freq * .4))};"/>`
-rgb2hex(wavelength2rgb(freq * .4))}
-
-\${wavehexHsl}
