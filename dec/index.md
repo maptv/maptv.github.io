@@ -2017,75 +2017,85 @@ has a
 [tempo](https://en.wikipedia.org/wiki/Tempo#:~:text=the%20speed%20or%20pace%20of%20a%20given%20composition)
 of 188.64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats per milliday">BPM</span>, which corresponds to the
-[tempo
-marking](https://en.wikipedia.org/wiki/Tempo#Approximately_from_the_slowest_to_the_fastest)
-*allegro*.
+*allegro* [tempo
+marking](https://en.wikipedia.org/wiki/Tempo#Approximately_from_the_slowest_to_the_fastest).
+A Dec clock⏰ticks at a rate of 100 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="beats per milliday">BPM</span>,
+$\text b^{-1}$, $1\over\text b$, or 1
+[inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number)-of-<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="beats">b</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse-of-b">iob</span>), which is
+<span class="colorIob">1.15<span style="text-decoration-line:overline;">740</span></span>
+times more frequent than a
+[Hertz](https://en.wikipedia.org/wiki/Hertz#:~:text=one%20event%20(or%20cycle)).
 
-A Dec clock⏰ticks at a rate of $\text b^{-1}$, $1\over\text b$, once
-per <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</span>, or the
-[inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number)
-of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="inverse of b">iob</span>). We
-can use <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse of b">iobs</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iobs">i</span>) to measure the
+The
 [frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
-of [musical
-notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=distinct%20and%20isolatable%20sounds%20that%20act%20as%20the%20most%20basic%20building%20blocks%20for%20nearly%20all%20of%20music).
-The [A](https://en.wikipedia.org/wiki/A_(musical_note)) note above
-[middle
+in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse of b">iobs</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iobs">i</span>) of the [musical
+note](https://en.wikipedia.org/wiki/Musical_note#:~:text=distinct%20and%20isolatable%20sounds%20that%20act%20as%20the%20most%20basic%20building%20blocks%20for%20nearly%20all%20of%20music)
+of [A](https://en.wikipedia.org/wiki/A_(musical_note)) above [middle
 C](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard)
 ([A4](https://en.wikipedia.org/wiki/A440_(pitch_standard)#:~:text=the%20musical%20note%20of%20A%20above%20middle%20C%2C%20or%20A4))
-has a frequency of 440 [cycles per
-second](https://en.wikipedia.org/wiki/Hertz#:~:text=one%20event%20(or%20cycle)%20per%20second)
-× .864 seconds per <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beat">b</span> = 380.16 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iob">i</span>, a
+is 440 Hertz × .864 seconds per <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="beat">b</span> = 380.16
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iob">i</span>. This frequency is associated with a
 [wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats)
 of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of sound in mv">735.048</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> ÷ 380.16
 <span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
 = ~1.93 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</span>, and a
+data-bs-title="zems">z</span> and a
 [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency)
 of 1 ÷ 380.16 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="iob">i</span> = ~2.63 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a beat">millibeats</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millibeats">mb</span>).
-
-If we increase the A4 note frequency by 40
+data-bs-title="millibeats">mb</span>). If we increase the A4 note
+frequency by 40
 [octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency),
 we get 380.16 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="iob">i</span> × 2<sup>40</sup> = ~417.99
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>). On the
-[electromagnetic
+data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>).
+
+On the [electromagnetic
 spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye),
-417.99 <span class="tool" data-bs-toggle="tooltip"
+418 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="teraiobs">Ti</span> corresponds to the color
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</span> code
-<span class="colorff6300">ff6300</span> and a wavelength of
+<span class="colorff6400">ff6400</span> and a wavelength of
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="speed of light in v">647551.71</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ 417.99
+data-bs-title="speed of light in v">647552</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ 418
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiob">Ti</span> = ~1549.20 <span class="tool"
+data-bs-title="teraiob">Ti</span> = ~1549 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="billionths of a zem">nanozems</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). The table
-below compares nine musical notes and their associated colors🎨.
+data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). The color
+associated with the value selected by the “<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>” range input
+below is ${wavehexHsl}. The table below compares nine musical notes and
+their associated colors🎨.
+
+``` {ojs}
+//| echo: false
+//| label: wavinput
+//| class: freqcomponent
+// https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
+viewof wavelength = Inputs.range([950, 1950], {label: "nz", value: 1549, step: 1})
+```
 
 ``` {ojs}
 //| echo: false
 //| label: iobinput
-//| column: margin
 //| class: freqcomponent
 // https://observablehq.com/@austinkeeton/sounds
 viewof iobs = Inputs.range([34, 9999], { step: 1,  value: 380, label: "Iobs" })
@@ -2254,19 +2264,6 @@ href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯5</a></td>
   return svg;
 }
 ```
-
-``` {ojs}
-//| echo: false
-//| label: wavinput
-//| class: freqcomponent
-// https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
-viewof wavelength = Inputs.range([950, 1950], {label: "nz", value: 1549, step: 1})
-```
-
-${html`<canvas width="128", height = "128" style="border:1px solid #000000; background-color: ${rgb2hex(wavelength2rgb(freq * .4))};"/>`
-rgb2hex(wavelength2rgb(freq \* .4))}
-
-${wavehexHsl}
 
 The [unit
 conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
@@ -4588,6 +4585,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorff6400 {
+  background: #ff6400;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .colorffec00 {
   background: #ffec00;
   color: black;
@@ -4639,6 +4644,14 @@ html`
 .color5e00d6 {
   background: #5e00d6;
   color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorIob {
+  background: hsl(288.4705882352941 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(288.4705882352941, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -4902,10 +4915,6 @@ div#iobpiano > div > div > svg {
   overflow: visible;
 }
 .freqcomponent {
-  max-width: 100%;
-}
-#iobplayer canvas {
-  overflow: clip;
   max-width: 100%;
 }
 #iobpiano {
