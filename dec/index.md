@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+081
+2025+082
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -984,6 +984,14 @@ years](https://en.wikipedia.org/wiki/Leap_year#:~:text=a%20calendar%20year%20tha
 
 # Zone equatorial meter (zem)
 
+<div id="zemmodulor" class="column-page-right lighthouse"
+fig-align="center" style="text-align:center;">
+
+<img src="../asset/Modulor_measurements.svg" id="zModu" />
+[Wikimedia](https://commons.m.wikimedia.org/wiki/File:Modulor_measurements.svg#mw-jump-to-license)
+
+</div>
+
 Apart from <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</span>, Dec also measures distance using a unit
 called the **z**one **e**quatorial **m**eter (<span class="tool"
@@ -1536,7 +1544,8 @@ data-bs-toggle="tooltip" data-bs-title="zems">z</span> apart.
 style="text-align:center;">
 
 <img src="../asset/squareZem.svg" id="zArms" />
-[Wikimedia](https://commons.wikimedia.org/wiki/File:Extended_arm.jpg)
+<a href="https://commons.wikimedia.org/wiki/File:Extended_arm.jpg"
+id="armlabel">Wikimedia</a>
 
 </div>
 
@@ -1553,8 +1562,9 @@ own elbow to form a square.
 <div id="zemlift" class="column-margin" fig-align="center"
 style="text-align:center;">
 
-<img src="../asset/Man_Lifting_Barbell_Cartoon.svg" id="zLift" />
-[Wikimedia](https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg)
+<img src="../asset/Man_Lifting_Barbell_Cartoon.svg" id="zLift" /> <a
+href="https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg"
+id="liftlabel">Wikimedia</a>
 
 </div>
 
@@ -1580,20 +1590,20 @@ style="text-align:center;">
    version="1.1"
    x="0px"
    y="0px"
-   viewBox="0 0 215.32027 192.98191"
+   viewBox="0 0 430.64053 385.96381"
    enable-background="new 0 0 1500 525"
    xml:space="preserve"
    id="svg74"
    sodipodi:docname="cubicZem.svg"
    inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
-   width="215.32027"
-   height="192.9819"
+   width="430.64053"
+   height="385.96381"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:ns2="&amp;#38;#38;#38;ns_sfw;"><defs
+   xmlns:ns4="&amp;#38;#38;#38;ns_sfw;"><defs
    id="defs74" /><sodipodi:namedview
    id="namedview74"
    pagecolor="#ffffff"
@@ -1603,9 +1613,9 @@ style="text-align:center;">
    inkscape:pageopacity="0.0"
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
-   inkscape:zoom="0.45368529"
-   inkscape:cx="116.82107"
-   inkscape:cy="369.19866"
+   inkscape:zoom="0.79270714"
+   inkscape:cx="226.43924"
+   inkscape:cy="168.41024"
    inkscape:window-width="1256"
    inkscape:window-height="896"
    inkscape:window-x="221"
@@ -1614,24 +1624,23 @@ style="text-align:center;">
    inkscape:current-layer="svg74" />
 <metadata
    id="metadata1">
-    <ns2:sfw>
-        <ns2:slices />
-        <ns2:sliceSourceBounds
+    <ns4:sfw>
+        <ns4:slices />
+        <ns4:sliceSourceBounds
    bottomLeftOrigin="true"
    height="5750"
    width="6426.366"
    x="-5096.366"
    y="-1000" />
-    </ns2:sfw>
+    </ns4:sfw>
 </metadata>
 &#10;
 &#10;
 &#10;
 &#10;<g
-   id="g1"
-   transform="matrix(0.5,0,0,0.5,-2.0843142e-6,0)"><g
+   id="g4"><g
      id="g76"
-     transform="translate(-382.42548,-73.387058)"><g
+     transform="translate(-378.42548,-73.387058)"><g
        id="AG-PEOPLE">
     <g
    id="POLYLINE_154_">
@@ -1832,27 +1841,54 @@ style="text-align:center;">
      y="0"
      xlink:href="#g76"
      id="use1"
-     transform="matrix(-1,0,0,1,430.64054,-1.5384192e-7)" /><rect
-     style="fill:none;stroke:#e4695e;stroke-width:5;stroke-linecap:round;stroke-linejoin:round"
+     transform="matrix(-1,0,0,1,430.64054,-1.5384192e-7)" /></g><g
+   id="g3"
+   transform="matrix(0.970299,0,0,0.970299,5.9996868,15.913286)"
+   style="stroke-width:5.15305;stroke-dasharray:none"><rect
+     style="fill:none;stroke:#e4695e;stroke-width:5.15305;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
      id="rect9"
-     width="107.46342"
-     height="107.46342"
-     x="162.14525"
-     y="246.85394" /><text
-     xml:space="preserve"
-     style="font-size:64px;line-height:1;font-family:Tahoma;-inkscape-font-specification:Tahoma;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:none;stroke:#e4695e;stroke-width:5;stroke-linecap:round;stroke-linejoin:round"
-     x="219.10088"
-     y="341.57956"
-     id="text9"><tspan
-       sodipodi:role="line"
-       id="tspan9"
-       x="219.10088"
-       y="341.57956"
-       style="font-size:64px;fill:#e4695e;fill-opacity:1;stroke:none">z<tspan
-   style="font-size:64px;baseline-shift:super;fill:#e4695e;fill-opacity:1;stroke:none"
-   id="tspan10">3</tspan></tspan></text></g></svg>
+     width="103.20786"
+     height="103.20786"
+     x="164.27303"
+     y="248.98172" /><g
+     id="g2"
+     transform="translate(-12.872356,-9.2022531)"
+     style="stroke-width:5.15305;stroke-dasharray:none"><text
+       xml:space="preserve"
+       style="font-size:85.3333px;line-height:1;font-family:Tahoma;-inkscape-font-specification:Tahoma;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:none;stroke:#e4695e;stroke-width:5.15305;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       x="215.10088"
+       y="349.57956"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         x="215.10088"
+         y="349.57956"
+         style="font-size:85.3333px;fill:#e4695e;fill-opacity:1;stroke:none;stroke-width:5.15305;stroke-dasharray:none">z<tspan
+   style="font-size:85.3333px;baseline-shift:super;fill:#e4695e;fill-opacity:1;stroke:none;stroke-width:5.15305;stroke-dasharray:none"
+   id="tspan10" /></tspan></text><text
+       xml:space="preserve"
+       style="font-size:53.3333px;line-height:1;font-family:Tahoma;-inkscape-font-specification:Tahoma;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:none;stroke:#e4695e;stroke-width:5.15305;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       x="247.10088"
+       y="309.57956"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         x="247.10088"
+         y="309.57956"
+         style="font-size:53.3333px;fill:#e4695e;fill-opacity:1;stroke:none;stroke-width:5.15305;stroke-dasharray:none">3</tspan></text></g></g><use
+   x="0"
+   y="0"
+   xlink:href="#g3"
+   id="use3"
+   transform="translate(153.10636)" /><use
+   x="0"
+   y="0"
+   xlink:href="#use3"
+   id="use4"
+   transform="translate(-306)" /></svg>
 
-[Dimensions.com](https://www.dimensions.com/element/sitting-male-side-1)
+<a href="https://www.dimensions.com/element/sitting-male-side-1"
+id="cubiclabel">Dimensions.com</a>
 
 </div>
 
@@ -1966,6 +2002,25 @@ data-bs-toggle="tooltip" data-bs-title="centiday">cd</span> is
 data-bs-title="beat">b</span> is <span class="color864">86.4%</span> of
 a second.
 
+A [normal resting
+heart❤️rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=heart%20rate%20is-,60–100%20bpm,-.%20An%20ultra%2Dtrained)
+is between 100 and
+166.<span style="text-decoration-line:overline;">6</span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</span> per <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millidays">md</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats per milliday">BPM</span>). The unofficial anthem of
+the Dec measurement system, “[Turn the beat
+around](https://en.wikipedia.org/wiki/Turn_the_Beat_Around#:~:text=a%20disco%20song%20written%20by%20Gerald%20Jackson%20and%20Peter%20Jackson%2C%20and%20performed%20by%20American%20actress%20and%20singer%20Vicki%20Sue%20Robinson%20in%201976)”,
+has a
+[tempo](https://en.wikipedia.org/wiki/Tempo#:~:text=the%20speed%20or%20pace%20of%20a%20given%20composition)
+of 188.64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats per milliday">BPM</span>, which corresponds to the
+[tempo
+marking](https://en.wikipedia.org/wiki/Tempo#Approximately_from_the_slowest_to_the_fastest)
+*allegro*.
+
 A Dec clock⏰ticks at a rate of $\text b^{-1}$, $1\over\text b$, once
 per <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</span>, or the
@@ -2024,7 +2079,7 @@ data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ 417.99
 data-bs-title="teraiob">Ti</span> = ~1549.20 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="billionths of a zem">nanozems</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="microzems">nz</span>). The table
+data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). The table
 below compares nine musical notes and their associated colors🎨.
 
 ``` {ojs}
@@ -2039,106 +2094,117 @@ viewof iobs = Inputs.range([34, 9999], { step: 1,  value: 380, label: "Iobs" })
 ``` {ojs}
 //| echo: false
 //| label: iobplayer
-//| column: margin
 //| class: freqcomponent
 // https://observablehq.com/@austinkeeton/sounds
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
 ```
 
+<div id="iobtable">
+
 <table>
 <colgroup>
-<col style="width: 8%" />
-<col style="width: 7%" />
+<col style="width: 54%" />
+<col style="width: 6%" />
 <col style="width: 4%" />
-<col style="width: 26%" />
-<col style="width: 26%" />
-<col style="width: 27%" />
+<col style="width: 22%" />
+<col style="width: 6%" />
+<col style="width: 7%" />
 </colgroup>
 <thead>
 <tr>
 <th>Note</th>
-<th>i</th>
-<th>z</th>
-<th>Hex</th>
-<th>Ti</th>
-<th>nz</th>
+<th><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iobs">i</span></th>
+<th><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></th>
+<th>Color</th>
+<th><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiobs">Ti</span></th>
+<th><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="nanozems">nz</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>G♯4</td>
+<td><a
+href="https://en.wikipedia.org/wiki/G♯_(musical_note)">G♯4</a></td>
 <td>358.82</td>
 <td>2.05</td>
 <td><span class="color0">ff0000</span></td>
-<td><span class="color0">394.53</span></td>
-<td><span class="color0">1641.32</span></td>
+<td>394.53</td>
+<td>1641.32</td>
 </tr>
 <tr>
-<td>A4</td>
+<td><a href="https://en.wikipedia.org/wiki/A_(musical_note)">A4</a></td>
 <td>380.16</td>
 <td>1.93</td>
 <td><span class="colorff6300">ff6300</span></td>
-<td><span class="colorff6300">417.99</span></td>
-<td><span class="colorff6300">1549.20</span></td>
+<td>417.99</td>
+<td>1549.20</td>
 </tr>
 <tr>
-<td>A♯4</td>
+<td><a
+href="https://en.wikipedia.org/wiki/A♯_(musical_note)">A♯4</a></td>
 <td>402.77</td>
 <td>1.83</td>
 <td><span class="colorffec00">ffec00</span></td>
-<td><span class="colorffec00">442.85</span></td>
-<td><span class="colorffec00">1462.25</span></td>
+<td>442.85</td>
+<td>1462.25</td>
 </tr>
 <tr>
-<td>B4</td>
+<td><a href="https://en.wikipedia.org/wiki/B_(musical_note)">B4</a></td>
 <td>426.72</td>
 <td>1.72</td>
 <td><span class="color99ff00">99ff00</span></td>
-<td><span class="color99ff00">469.18</span></td>
-<td><span class="color99ff00">1380.18</span></td>
+<td>469.18</td>
+<td>1380.18</td>
 </tr>
 <tr>
-<td>C5</td>
+<td><a href="https://en.wikipedia.org/wiki/C_(musical_note)">C5</a></td>
 <td>452.09</td>
 <td>1.63</td>
 <td><span class="color28ff00">28ff00</span></td>
-<td><span class="color28ff00">497.08</span></td>
-<td><span class="color28ff00">1302.72</span></td>
+<td>497.08</td>
+<td>1302.72</td>
 </tr>
 <tr>
-<td>C♯5</td>
+<td><a
+href="https://en.wikipedia.org/wiki/C♯_(musical_note)">C♯5</a></td>
 <td>478.97</td>
 <td>1.53</td>
 <td><span class="color00ffe8">00ffe8</span></td>
-<td><span class="color00ffe8">526.63</span></td>
-<td><span class="color00ffe8">1229.60</span></td>
+<td>526.63</td>
+<td>1229.60</td>
 </tr>
 <tr>
-<td>D5</td>
+<td><a href="https://en.wikipedia.org/wiki/D_(musical_note)">D5</a></td>
 <td>507.45</td>
 <td>1.45</td>
 <td><span class="color007cff">007cff</span></td>
-<td><span class="color007cff">557.95</span></td>
-<td><span class="color007cff">1160.59</span></td>
+<td>557.95</td>
+<td>1160.59</td>
 </tr>
 <tr>
-<td>D♯5</td>
+<td><a
+href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯5</a></td>
 <td>537.63</td>
 <td>1.37</td>
 <td><span class="color0800ff">0800ff</span></td>
-<td><span class="color0800ff">591.13</span></td>
-<td><span class="color0800ff">1095.45</span></td>
+<td>591.13</td>
+<td>1095.45</td>
 </tr>
 <tr>
-<td>E5</td>
+<td><a href="https://en.wikipedia.org/wiki/E_(musical_note)">E5</a></td>
 <td>569.60</td>
 <td>1.29</td>
 <td><span class="color5e00d6">5e00d6</span></td>
-<td><span class="color5e00d6">626.28</span></td>
-<td><span class="color5e00d6">1033.97</span></td>
+<td>626.28</td>
+<td>1033.97</td>
 </tr>
 </tbody>
 </table>
+
+</div>
 
 ``` {ojs}
 //| echo: false
@@ -2192,18 +2258,15 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
 ``` {ojs}
 //| echo: false
 //| label: wavinput
-//| column: margin
 //| class: freqcomponent
 // https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
 viewof wavelength = Inputs.range([950, 1950], {label: "nz", value: 1549, step: 1})
 ```
 
-<div class="column-margin freqcomponent" fig-align="center"
-style="text-align:center;">
+${html`<canvas width="128", height = "128" style="border:1px solid #000000; background-color: ${rgb2hex(wavelength2rgb(freq * .4))};"/>`
+rgb2hex(wavelength2rgb(freq \* .4))}
 
 ${wavehexHsl}
-
-</div>
 
 The [unit
 conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
@@ -4805,6 +4868,7 @@ h4.anchored {
 }
 #zemcubic svg, #zemhands svg {
   max-width: 100%;
+  height: 220px;
 }
 svg#lefthand {
   height: 50%;
@@ -4848,5 +4912,11 @@ div#iobpiano > div > div > svg {
   overflow: clip;
   max-width: 100%;
   margin: -8px 0px -60px 0px;
+}
+img#zModu {
+  width: 100%;
+}
+#iobtable {
+  margin-bottom: -10px;
 }
 </style>

@@ -18,7 +18,7 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:ns4="&amp;#38;#38;ns_sfw;"><defs
+   xmlns:ns4="&amp;#38;#38;#38;ns_sfw;"><defs
    id="defs74" /><sodipodi:namedview
    id="namedview74"
    pagecolor="#ffffff"
@@ -28,12 +28,12 @@
    inkscape:pageopacity="0.0"
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
-   inkscape:zoom="0.45368529"
-   inkscape:cx="264.50053"
-   inkscape:cy="523.49063"
-   inkscape:window-width="1472"
+   inkscape:zoom="0.79270714"
+   inkscape:cx="226.43924"
+   inkscape:cy="168.41024"
+   inkscape:window-width="1256"
    inkscape:window-height="896"
-   inkscape:window-x="0"
+   inkscape:window-x="221"
    inkscape:window-y="32"
    inkscape:window-maximized="0"
    inkscape:current-layer="svg74" />
@@ -57,9 +57,10 @@
 
 
 <g
-   id="g76"
-   transform="translate(-382.42548,-73.387058)"><g
-     id="AG-PEOPLE">
+   id="g4"><g
+     id="g76"
+     transform="translate(-378.42548,-73.387058)"><g
+       id="AG-PEOPLE">
 	<g
    id="POLYLINE_154_">
 		
@@ -252,7 +253,7 @@
 	
 	
 </g><g
-     id="AG-OUTLINE">
+       id="AG-OUTLINE">
 	<g
    id="POLYLINE_153_">
 		
@@ -274,7 +275,7 @@
 	
 	
 </g><g
-     id="g75">
+       id="g75">
 	<g
    id="g74">
 		
@@ -296,26 +297,52 @@
 	
 	
 </g></g><use
+     x="0"
+     y="0"
+     xlink:href="#g76"
+     id="use1"
+     transform="matrix(-1,0,0,1,430.64054,-1.5384192e-7)" /></g><g
+   id="g3"
+   transform="matrix(0.970299,0,0,0.970299,5.9996868,15.913286)"
+   style="stroke-width:5.15305;stroke-dasharray:none"><rect
+     style="fill:none;stroke:#e4695e;stroke-width:5.15305;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+     id="rect9"
+     width="103.20786"
+     height="103.20786"
+     x="164.27303"
+     y="248.98172" /><g
+     id="g2"
+     transform="translate(-12.872356,-9.2022531)"
+     style="stroke-width:5.15305;stroke-dasharray:none"><text
+       xml:space="preserve"
+       style="font-size:85.3333px;line-height:1;font-family:Tahoma;-inkscape-font-specification:Tahoma;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:none;stroke:#e4695e;stroke-width:5.15305;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       x="215.10088"
+       y="349.57956"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         x="215.10088"
+         y="349.57956"
+         style="font-size:85.3333px;fill:#e4695e;fill-opacity:1;stroke:none;stroke-width:5.15305;stroke-dasharray:none">z<tspan
+   style="font-size:85.3333px;baseline-shift:super;fill:#e4695e;fill-opacity:1;stroke:none;stroke-width:5.15305;stroke-dasharray:none"
+   id="tspan10" /></tspan></text><text
+       xml:space="preserve"
+       style="font-size:53.3333px;line-height:1;font-family:Tahoma;-inkscape-font-specification:Tahoma;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:none;stroke:#e4695e;stroke-width:5.15305;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       x="247.10088"
+       y="309.57956"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         x="247.10088"
+         y="309.57956"
+         style="font-size:53.3333px;fill:#e4695e;fill-opacity:1;stroke:none;stroke-width:5.15305;stroke-dasharray:none">3</tspan></text></g></g><use
    x="0"
    y="0"
-   xlink:href="#g76"
-   id="use1"
-   transform="matrix(-1,0,0,1,430.64054,-1.5384192e-7)" /><rect
-   style="fill:none;stroke:#e4695e;stroke-width:5;stroke-linecap:round;stroke-linejoin:round"
-   id="rect9"
-   width="107.46342"
-   height="107.46342"
-   x="162.14525"
-   y="246.85394" /><text
-   xml:space="preserve"
-   style="font-size:85.3333px;line-height:1;font-family:Tahoma;-inkscape-font-specification:Tahoma;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:none;stroke:#e4695e;stroke-width:5;stroke-linecap:round;stroke-linejoin:round"
-   x="219.10088"
-   y="349.57956"
-   id="text9"><tspan
-     sodipodi:role="line"
-     id="tspan9"
-     x="219.10088"
-     y="349.57956"
-     style="font-size:85.3333px;fill:#e4695e;fill-opacity:1;stroke:none">z<tspan
-   style="font-size:85.3333px;baseline-shift:super;fill:#e4695e;fill-opacity:1;stroke:none"
-   id="tspan10">3</tspan></tspan></text></svg>
+   xlink:href="#g3"
+   id="use3"
+   transform="translate(153.10636)" /><use
+   x="0"
+   y="0"
+   xlink:href="#use3"
+   id="use4"
+   transform="translate(-306)" /></svg>
