@@ -10,23 +10,24 @@ viewof iobs = Inputs.range([34, 9999], { step: 1,  value: 380, label: "Iobs" })
 ```{ojs}
 //| echo: false
 //| label: iobplayer
-//| column: margin
 //| class: freqcomponent
 // https://observablehq.com/@austinkeeton/sounds
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
 ```
 
-| Note    | i      | z    | Hex                    | Ti                     | nz                      |
-| ------- | ------ | ---- | ---------------------- | ---------------------- | ----------------------- |
-| G♯4     | 358.82 | 2.05 | [ff0000]{.color0}      | [394.53]{.color0}      | [1641.32]{.color0}      |
-| A4      | 380.16 | 1.93 | [ff6300]{.colorff6300} | [417.99]{.colorff6300} | [1549.20]{.colorff6300} |
-| A♯4     | 402.77 | 1.83 | [ffec00]{.colorffec00} | [442.85]{.colorffec00} | [1462.25]{.colorffec00} |
-| B4      | 426.72 | 1.72 | [99ff00]{.color99ff00} | [469.18]{.color99ff00} | [1380.18]{.color99ff00} |
-| C5      | 452.09 | 1.63 | [28ff00]{.color28ff00} | [497.08]{.color28ff00} | [1302.72]{.color28ff00} |
-| C♯5     | 478.97 | 1.53 | [00ffe8]{.color00ffe8} | [526.63]{.color00ffe8} | [1229.60]{.color00ffe8} |
-| D5      | 507.45 | 1.45 | [007cff]{.color007cff} | [557.95]{.color007cff} | [1160.59]{.color007cff} |
-| D♯5     | 537.63 | 1.37 | [0800ff]{.color0800ff} | [591.13]{.color0800ff} | [1095.45]{.color0800ff} |
-| E5      | 569.60 | 1.29 | [5e00d6]{.color5e00d6} | [626.28]{.color5e00d6} | [1033.97]{.color5e00d6} |
+:::{#iobtable}
+| Note  | [i]{.tool data-bs-toggle="tooltip" data-bs-title="iobs"}  | [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}    | Color                  | [Ti]{.tool data-bs-toggle="tooltip" data-bs-title="teraiobs"}     | [nz]{.tool data-bs-toggle="tooltip" data-bs-title="nanozems"}      |
+| ------------------------------------------------------ | ------ | ---- | ---------------------- | ------ | ------- |
+| [G♯4](https://en.wikipedia.org/wiki/G♯_(musical_note)) | 358.82 | 2.05 | [ff0000]{.color0}      | 394.53 | 1641.32 |
+| [A4](https://en.wikipedia.org/wiki/A_(musical_note))   | 380.16 | 1.93 | [ff6300]{.colorff6300} | 417.99 | 1549.20 |
+| [A♯4](https://en.wikipedia.org/wiki/A♯_(musical_note)) | 402.77 | 1.83 | [ffec00]{.colorffec00} | 442.85 | 1462.25 |
+| [B4](https://en.wikipedia.org/wiki/B_(musical_note))   | 426.72 | 1.72 | [99ff00]{.color99ff00} | 469.18 | 1380.18 |
+| [C5](https://en.wikipedia.org/wiki/C_(musical_note))   | 452.09 | 1.63 | [28ff00]{.color28ff00} | 497.08 | 1302.72 |
+| [C♯5](https://en.wikipedia.org/wiki/C♯_(musical_note)) | 478.97 | 1.53 | [00ffe8]{.color00ffe8} | 526.63 | 1229.60 |
+| [D5](https://en.wikipedia.org/wiki/D_(musical_note))   | 507.45 | 1.45 | [007cff]{.color007cff} | 557.95 | 1160.59 |
+| [D♯5](https://en.wikipedia.org/wiki/D♯_(musical_note)) | 537.63 | 1.37 | [0800ff]{.color0800ff} | 591.13 | 1095.45 |
+| [E5](https://en.wikipedia.org/wiki/E_(musical_note))   | 569.60 | 1.29 | [5e00d6]{.color5e00d6} | 626.28 | 1033.97 |
+:::
 
 ```{ojs}
 //| echo: false
@@ -80,13 +81,12 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
 ```{ojs}
 //| echo: false
 //| label: wavinput
-//| column: margin
 //| class: freqcomponent
 // https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
 viewof wavelength = Inputs.range([950, 1950], {label: "nz", value: 1549, step: 1})
 ```
 
-:::{.column-margin fig-align="center" style="text-align:center;" .freqcomponent}
-\${wavehexHsl}
-:::
+\${html`<canvas width="128", height = "128" style="border:1px solid #000000; background-color: ${rgb2hex(wavelength2rgb(freq * .4))};"/>`
+rgb2hex(wavelength2rgb(freq * .4))}
 
+\${wavehexHsl}
