@@ -58,7 +58,7 @@ viewof wavelength = Inputs.range([950, 1950], {label: "Nanozems", value: 1549.2,
   // Draw the white keys.
   for (let i = 0; i <= whiteKeys - 1; i++) {
     svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill="white" stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 19));
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 24}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 3) % 7) + (i < 5 ? "3" : "4")}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 24}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 3) % 7) + (i < 6 ? "3" : "4")}</text></svg>`);
     svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 48}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${Math.round(freqs[i])}</text></svg>`);
   }
   // Draw the black keys.
