@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2025+078
+2025+083
 
 - [Day of year (doy)](#doy)
 - [Time of day (tod)](#tod)
@@ -1241,7 +1241,7 @@ Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20g
   <https://observablehq.com/@dbridges/visualizing-seasonal-daylight>.
 - [Clements, John](https://www.brinckerhoff.org). <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="2021-05-31"><u><span class="yellow">2014</span>+<span class="cyan">091</span></u></span>,
+  data-bs-title="2014-05-31"><u><span class="yellow">2014</span>+<span class="cyan">091</span></u></span>,
   “Decimal Time Zones.”
   <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
   <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.

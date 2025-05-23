@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+082
+2025+083
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -15,8 +15,13 @@ Martin Laptev
   - [Millenium Year Day](#myd)
 - [Zone equatorial meter (zem)](#zem)
   - [Speed of sound](#sos)
-  - [Zem conversion table](#zct)
-  - [Body mass index](#bmi)
+  - [Beats per milliday (bpm)](#bpm)
+  - [Frequency period wavelength](#fpw)
+- [US customary units](#ucu)
+  - [Unit conversion table](#uct)
+  - [Miles per hour (mph)](#mph)
+  - [Length area volume](#lav)
+  - [Body mass index (bmi)](#bmi)
   - [Centizem centimeter inch](#cci)
 - [Summary](#tldr)
 - [Next](#next)
@@ -944,14 +949,39 @@ date and time in Zone <span class="color0">0</span>, we get
 ${decYearOffHsl}<span style="font-family:monospace;">+</span>${decDateOffHsl}
 as the date and
 ${decTimeOffHsl0}<span style="font-family:monospace;">${decSignOff}</span>${decOffsetHsl1}
-as the time. We can apply color🎨labels🏷️to each component of Dec dates
-and times. Dec dates consist of a year and a day-of-year
+as the time. We can apply color🎨labels🏷️to each Dec date and time
+component. Dec dates consist of a year and a day-of-year
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span>), whereas Dec times are composed
 of a time-of-day (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="time-of-day">tod</span>) and a time zone.
 
-Color🎨labels🏷️for years are based on <span class="tool"
+Each <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-year">doy</span> also has two components. The
+first two digits of a three-digit <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-year">doy</span>
+represent a group of ten days called a <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="group of ten days">decaday</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="group of ten days">dek</span>).
+The last digit of a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-year">doy</span> is the day-of-dek
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-dek">dod</span>). In Dec, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="groups of ten days">deks</span>
+are used instead of months and weeks. Likewise, Dec uses
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-dek">dods</span> in lieu of days-of-month
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-month">doms</span>) and days-of-week
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-week">dows</span>). In Zone ${decOffsetHsl2}, it
+is currently <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="group of ten days">Dek</span> ${decDekOffHsl} and
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Day-of-dek">Dod</span> ${decDodOffHsl}.
+
+Year color🎨labels🏷️are based on <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a millennium">millimillennia</span>
 (<span class="tool" data-bs-toggle="tooltip"
@@ -1959,7 +1989,7 @@ Dec refers to <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span> as
 beats (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</span>) because they are similar in duration to
-heart❤️beats or musical🎵beats. A <span class="tool"
+heart❤️beats or musical beats. A <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day">d</span> is 100
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundredths of a day">centiday</span> (<span class="tool"
@@ -2002,6 +2032,8 @@ data-bs-toggle="tooltip" data-bs-title="centiday">cd</span> is
 data-bs-title="beat">b</span> is <span class="color864">86.4%</span> of
 a second.
 
+## Beats per milliday (bpm)
+
 A [normal resting
 heart❤️rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=heart%20rate%20is-,60–100%20bpm,-.%20An%20ultra%2Dtrained)
 is between 100 and
@@ -2030,75 +2062,46 @@ data-bs-title="inverse-of-b">iob</span>), which is
 times more frequent than a
 [Hertz](https://en.wikipedia.org/wiki/Hertz#:~:text=one%20event%20(or%20cycle)).
 
+## Frequency period wavelength
+
 The
 [frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
 in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="inverse of b">iobs</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="iobs">i</span>) of the [musical
-note](https://en.wikipedia.org/wiki/Musical_note#:~:text=distinct%20and%20isolatable%20sounds%20that%20act%20as%20the%20most%20basic%20building%20blocks%20for%20nearly%20all%20of%20music)
-of [A](https://en.wikipedia.org/wiki/A_(musical_note)) above [middle
+note](https://en.wikipedia.org/wiki/Musical_note#:~:text=distinct%20and%20isolatable%20sounds%20that%20act%20as%20the%20most%20basic%20building%20blocks%20for%20nearly%20all%20of%20music)🎶of
+[A](https://en.wikipedia.org/wiki/A_(musical_note)) above [middle
 C](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard)
 ([A4](https://en.wikipedia.org/wiki/A440_(pitch_standard)#:~:text=the%20musical%20note%20of%20A%20above%20middle%20C%2C%20or%20A4))
 is 440 Hertz × .864 seconds per <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="beat">b</span> = 380.16
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="iob">i</span>. This frequency is associated with a
-[wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats)
-of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="speed of sound in mv">735.048</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> ÷ 380.16
-<span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
-= ~1.93 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</span> and a
 [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency)
 of 1 ÷ 380.16 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="iob">i</span> = ~2.63 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a beat">millibeats</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millibeats">mb</span>). If we increase the A4 note
-frequency by 40
-[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency),
-we get 380.16 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iob">i</span> × 2<sup>40</sup> = ~417.99
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>).
-
-On the [electromagnetic
-spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye),
-418 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiobs">Ti</span> corresponds to the color
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> code
-<span class="colorff6400">ff6400</span> and a wavelength of
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="speed of light in v">647552</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ 418
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiob">Ti</span> = ~1549 <span class="tool"
+data-bs-title="millibeats">mb</span>) and a
+[wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats)
+of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="speed of sound in mv">735.048</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> ÷ 380.16
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
+= ~1.93 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zems">z</span>. The “<span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="billionths of a zem">nanozems</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). The color
-associated with the value selected by the “<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>” range input
-below is ${wavehexHsl}. The table below compares nine musical notes and
-their associated colors🎨.
-
-``` {ojs}
-//| echo: false
-//| label: wavinput
-//| class: freqcomponent
-// https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
-viewof wavelength = Inputs.range([950, 1950], {label: "nz", value: 1549, step: 1})
-```
+data-bs-title="billionths of a zem">Iobs</span>” range🎚️input below
+determines the sound🔊played by the [audio
+player](https://observablehq.com/@austinkeeton/sounds) beneath it.
 
 ``` {ojs}
 //| echo: false
 //| label: iobinput
 //| class: freqcomponent
 // https://observablehq.com/@austinkeeton/sounds
-viewof iobs = Inputs.range([34, 9999], { step: 1,  value: 380, label: "Iobs" })
+viewof iobs = Inputs.range([34, 9999], { step: .1,  value: 380.2, label: "Iobs" })
 ```
 
 ``` {ojs}
@@ -2107,6 +2110,40 @@ viewof iobs = Inputs.range([34, 9999], { step: 1,  value: 380, label: "Iobs" })
 //| class: freqcomponent
 // https://observablehq.com/@austinkeeton/sounds
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
+```
+
+If we increase the A4 note🎶frequency by 40
+[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
+(2<sup>40</sup>), we get 380.16 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iob">i</span> × 2<sup>40</sup> =
+~417.99 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>). On the
+[visible
+spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye),
+418 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiobs">Ti</span> corresponds to the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hexadecimal">hex</span> triplet
+<span class="colorff6300">ff6300</span> and a wavelength of
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="speed of light in v">647551.71</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ 417.99
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiob">Ti</span> = ~1549.20 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="billionths of a zem">nanozems</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). The
+frequency selected by the “<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a zem">Nanozems</span>” range🎚️input below
+is associated with the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span> triplet ${wavehexHsl}.
+
+``` {ojs}
+//| echo: false
+//| label: wavinput
+//| class: freqcomponent
+// https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
+viewof wavelength = Inputs.range([950, 1950], {label: "Nanozems", value: 1549.2, step: .1})
 ```
 
 <div id="iobtable">
@@ -2135,6 +2172,23 @@ data-bs-title="nanozems">nz</span></th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/F♯_(musical_note)">F♯4</a></td>
+<td>319.68</td>
+<td>2.30</td>
+<td><span class="color890000">890000</span></td>
+<td>351.49</td>
+<td>1842.32</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/F_(musical_note)">G4</a></td>
+<td>338.68</td>
+<td>2.17</td>
+<td><span class="color0">ff0000</span></td>
+<td>372.39</td>
+<td>1738.92</td>
+</tr>
 <tr>
 <td><a
 href="https://en.wikipedia.org/wiki/G♯_(musical_note)">G♯4</a></td>
@@ -2252,7 +2306,7 @@ href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯5</a></td>
   // Draw the white keys.
   for (let i = 0; i <= whiteKeys - 1; i++) {
     svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill="white" stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 19));
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 24}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 3) % 7)}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 24}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 3) % 7) + (i < 5 ? "3" : "4")}</text></svg>`);
     svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 48}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${Math.round(freqs[i])}</text></svg>`);
   }
   // Draw the black keys.
@@ -2264,6 +2318,35 @@ href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯5</a></td>
   return svg;
 }
 ```
+
+The table above compares eleven musical notes🎶and the colors🎨we obtain
+by increasing the frequency of each note🎶by 2<sup>40</sup>, converting
+the frequencies into wavelengths, and translating the wavelengths into
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span> triplets. If we add
+[F5](https://en.wikipedia.org/wiki/F_(musical_note)) and
+<span class="color1">magenta</span> to the bottom of the table, the
+result is reminiscent of the ten colors🎨Dec uses for time zones.
+
+Using the 2<sup>40</sup> method, we can label numbers with both
+colors🎨and sounds🔊: {<span class="color0">0</span>:
+<span class="color0">G♯5</span>, <span class="color1">1</span>:
+<span class="color1">F5</span>, <span class="color2">2</span>:
+<span class="color2">E5</span>, <span class="color3">3</span>:
+<span class="color3">D#5</span>, <span class="color4">4</span>:
+<span class="color4">D5</span>, <span class="color5">5</span>:
+<span class="color5">C#5</span>, <span class="color6">6</span>:
+<span class="color6">C5</span>, <span class="color7">7</span>:
+<span class="color7">B4</span>, <span class="color8">8</span>:
+<span class="color8">A♯4</span>, <span class="color9">9</span>:
+<span class="color9">A4</span>, <span class="color0">0</span>:
+<span class="color0">G♯4</span>}. This approach works not only for
+discrete but also continuous numbers because we can
+[interpolate](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
+the frequencies between notes🎶to create
+[microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone).
+
+# US customary units
 
 The [unit
 conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
@@ -2283,7 +2366,7 @@ data-bs-toggle="tooltip" data-bs-title="US customary units">US</span>
 units derived from the same <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span> unit.
 
-## Zem conversion table
+## Unit conversion table
 
 <table>
 <colgroup>
@@ -2418,6 +2501,8 @@ href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
 </tbody>
 </table>
 
+## Miles per hour (mph)
+
 Instead of metric prefixes based on [powers of
 ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten),
 redefined units rely on fractions based on powers of two ([dyadic
@@ -2431,6 +2516,8 @@ data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> or
 $5\over3$ kilometers per hour (<span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="kilometers per hour">kmph</span>).
+
+## Length area volume
 
 A square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a thousand zems">kilozem</span> (<span class="tool"
@@ -2505,7 +2592,7 @@ style="text-align:center;">
 
 </div>
 
-## Body mass index
+## Body mass index (bmi)
 
 If [Leonardo da
 Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s
@@ -2638,14 +2725,14 @@ Dec color🎨labels🏷️can convey an impression of many different kinds of
 values at a glance. Moreover, color🎨labels🏷️help avoid confusion when
 dealing with different metric prefixes. The current <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> in Zone
-${decOffsetHsl2} can be expressed as ${decTimeOffHsl2}
+${decOffsetHsl3} can be expressed as ${decTimeOffHsl1}
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</span>, ${decTimeOffHsl1} days, or
-${decTimeOffHsl4} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decidays">dd</span>, ${decTimeOffHsl2} days, or
+${decTimeOffHsl3} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</span>. Metric prefixes allow us to shift the
 [decimal
 separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline)
-in decimal numbers at will.
+in [decimal](https://en.wikipedia.org/wiki/Decimal) numbers at will.
 
 # Next
 
@@ -2678,14 +2765,52 @@ style="width:9.64in;height:2.31in" />
 # Cite
 
 Please support Dec by citing it as shown at the bottom of this article.
-You may also want to cite the [Observable](http://observablehq.com)
-notebooks that I adapted into the map🗺️, color🎨wheel compass🧭, and the
-other visualizations above or the 2004
-[arxiv](https://arxiv.org/abs/physics/0412078)
-[article](https://www.roma1.infn.it/~dagos/history/sm/sm.html) that I
-found on <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="April 9, 2025"><span class="color025">2025</span><span style="font-family:monospace;">+</span><span class="color039">039</span></span>,
-which includes the definition of a <span class="tool"
+Listed below are citations for the [Observable](http://observablehq.com)
+notebooks listed below that I adapted into the map🗺️, color🎨wheel
+compass🧭, and other visualizations above. The list also includes
+citations for three works that predate the [French
+Revolution](https://en.wikipedia.org/wiki/French_Revolution#:~:text=a%20period%20of%20political%20and%20societal%20change%20in%20France%20which%20began%20with%20the%20Estates%20General%20of%201789%20and%20ended%20with%20the%20Coup%20of%2018%20Brumaire%20on%209%20November%201799)
+and three more recent articles published on websites.
+
+In his <span class="color704">1704</span> book entitled
+[Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton),
+[Isaac
+Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a)
+presented the first
+[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=Newton's%20asymmetric%20color%20wheel%20based%20on%20musical%20intervals)
+and linked its colors🎨to musical notes🎶. On <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="May 20, 2025"><span class="color025">2025</span><span style="font-family:monospace;">+</span><span class="colorD080">080</span></span>,
+I read about the 2<sup>40</sup> method of connecting musical notes🎶to
+colors🎨via their frequencies in the <span class="color022">2022</span>
+[Color of Sound](https://www.flutopedia.com/sound_color.htm) article by
+[Clint Goss](https://www.clintgoss.com). To convert wavelengths to
+colors🎨, I used
+[code](https://observablehq.com/@magfoto/wavelengths-and-spectral-colours)
+by [Marcus A. Gordon](https://observablehq.com/@magfoto).
+
+In <span class="color754">1754</span>, [Jean le Rond
+d’Alembert](https://en.wikipedia.org/wiki/Jean_le_Rond_d%27Alembert#:~:text=French%20mathematician%2C%20mechanician%2C%20physicist%2C%20philosopher%2C%20and%20music%20theorist)
+extolled the benefits of
+[decimalisation](https://en.wikipedia.org/wiki/Decimalisation#:~:text=t-,he%20conversion%20of%20a%20system%20of%20currency%20or%20of%20weights%20and%20measures%20to%20units%20related%20by%20powers%20of%2010).
+In <span class="color788">1788</span>, [Claude Boniface
+Collignon](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution)
+proposed measuring length in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decizems">dz</span> or <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="nanotaurs">nc</span> and
+tracking time in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of ten days">deks</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</span>, <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="microdays">$\micro\text d$</span>, and <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="billionths of a day">nanodays</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="nanodays">nd</span>). On
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="April 9, 2025"><span class="color025">2025</span><span style="font-family:monospace;">+</span><span class="colorD039">039</span></span>,
+I recognized the definition of a <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>, 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zem">z</span> =
@@ -2693,89 +2818,145 @@ data-bs-toggle="tooltip" data-bs-title="zem">z</span> =
 data-bs-title="a hundred millionth">10<sup>-8</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taurs">c</span> = 40 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span>, in [a
-table of ten possible length
-units](https://www.roma1.infn.it/~dagos/history/sm/node12.html):
+data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span>, in a
+table of [ten possible length
+units](https://www.roma1.infn.it/~dagos/history/sm/node12.html) from a
+2004 [arxiv](https://arxiv.org/abs/physics/0412078)
+[article](https://www.roma1.infn.it/~dagos/history/sm/sm.html).
+
+The algorithms that define the fundamental properties of Dec dates were
+developed by [Howard Hinnant](https://howardhinnant.github.io) and
+described in his <span class="color021">2021</span> article entitled
+[<span class="mono under">`chrono`</span>-Compatible Low-Level Date
+Algorithms](https://howardhinnant.github.io/date_algorithms.html). On
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="December 11, 2024"><span class="color024">2024</span><span style="font-family:monospace;">+</span><span class="colorD285">285</span></span>,
+I found a <span class="color014">2014</span> article which proposed a
+[decimal
+time](https://en.wikipedia.org/wiki/Decimal_time#:~:text=the%20representation%20of%20the%20time%20of%20day%20using%20units%20which%20are%20decimally%20related)
+system of twenty time zones, each five <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="centidays">cd</span> wide, based
+on the [Greenwich
+Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England).
 
 <div id="citelist" class="column-page-right">
 
 - [Agnoli, Paolo](http://www.paoloagnoli.it) & [D’Agostini,
   Giulio](https://www.roma1.infn.it/~dagos). <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="January 25, 2005"><u>2004+330</u></span>. “Why does the
-  meter beat the second?” ${decYearP0}+${decDotyOff}.
+  data-bs-title="January 25, 2005">2004+330</span>. “Why does the meter
+  beat the second?” ${decYearP0}+${decDotyOff}.
   <https://arxiv.org/abs/physics/0412078>.
 - [Armstrong, Zan](https://observablehq.com/@zanarmstrong)
   <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="April 27, 2023"><u>2023+057</u></span>. “Text color
+  data-bs-title="April 27, 2023">2023+057</span>. “Text color
   annotations in markdown.” ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@observablehq/text-color-annotations-in-markdown>.
 - [Bostock, Mike](https://observablehq.com/@mbostock) <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="January 30, 2021"><u>2020+335</u></span>. “Solar
-  Terminator.” ${decYearP0}+${decDotyOff}.
+  data-bs-title="January 30, 2021">2020+335</span>. “Time Zones.”
+  ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@mbostock/time-zones>.
 - [Bostock, Mike](https://observablehq.com/@mbostock) <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="April 7, 2022"><u>2022+037</u></span>. “Solar
-  Terminator.” ${decYearP0}+${decDotyOff}.
+  data-bs-title="April 7, 2022">2022+037</span>. “Solar Terminator.”
+  ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@d3/solar-terminator>.
 - [Bostock, Mike](https://observablehq.com/@mbostock) <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="January 9, 2024"><u>2023+314</u></span>. “Input:
-  Table.” ${decYearP0}+${decDotyOff}.
+  data-bs-title="January 9, 2024">2023+314</span>. “Input: Table.”
+  ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@observablehq/input-table>.
+- [Clements, John](https://www.brinckerhoff.org). <span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="May 31, 2014">2014+091</span>,
+  “Decimal Time Zones.” ${decYearP0}+${decDotyOff}.
+  <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
+- [Clint Goss](https://www.clintgoss.com). <span class="tool"
+  data-bs-toggle="tooltip" data-bs-title="June 7, 2022">2022+098</span>.
+  “Color of Sound.” ${decYearP0}+${decDotyOff}.
+  <https://www.flutopedia.com/sound_color.htm>.
+- [Collignon, Claude
+  Boniface](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution). 1788.
+  “Découverte d’étalons justes, naturels, invariables et universels.”
+  ${decYearP0}+${decDotyOff}.
+  <https://archive.org/details/dcouvertedtalon00collgoog/page/n68/mode/2up>.
 - [Edwards, Paul](https://observablehq.com/@pjedwards).
   <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="August 19, 2022"><u>2022+171</u></span>. “Compass Rose
-  as legend with colors.” ${decYearP0}+${decDotyOff}.
+  data-bs-title="August 19, 2022">2022+171</span>. “Compass Rose as
+  legend with colors.” ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors>.
+- [Freedman, Dylan](https://observablehq.com/@freedmand).
+  <span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="February 9, 2018">2017+345</span>. “Sounds.”
+  ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@freedmand/sounds>.
+- [Gordon, Marcus A.](https://observablehq.com/@magfoto).
+  <span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="December 14, 2018">2018+288</span>. “Wavelengths and
+  Spectral Colours.” ${decYearP0}+${decDotyOff}.
+  <https://observablehq.com/@magfoto/wavelengths-and-spectral-colours>.
+- [Hinnant, Howard](https://howardhinnant.github.io). <span class="tool"
+  data-bs-toggle="tooltip"
+  data-bs-title="September 1, 2021">2021+184</span>.
+  “`chrono`-Compatible Low-Level Date Algorithms.”
+  ${decYearP0}+${decDotyOff}.
+  <https://howardhinnant.github.io/date_algorithms.html>.
 - [Johnson, Ian](https://observablehq.com/@enjalot) <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="June 30, 2021"><u>2021+121</u></span>. “Draggable World
-  Map Coordinates Input.” ${decYearP0}+${decDotyOff}.
+  data-bs-title="June 30, 2021">2021+121</span>. “Draggable World Map
+  Coordinates Input.” ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
 - [Lim, Maddie](https://observablehq.com/@maddievision)
   <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="January 25, 2019"><u>2018+330</u></span>. “Enneagram.”
+  data-bs-title="January 25, 2019">2018+330</span>. “Enneagram.”
   ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@maddievision/enneagram>.
+- [Newton,
+  Issac](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a). 1704.
+  “Opticks.” ${decYearP0}+${decDotyOff}.
+  <https://doi.org/10.5479/sil.302475.39088000644674>.
 - [Paavanb](https://observablehq.com/@paavanb). <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="March 7, 2024"><u>2024+006</u></span>. “Progressive
-  Color Picker.” ${decYearP0}+${decDotyOff}.
+  data-bs-title="March 7, 2024">2024+006</span>. “Progressive Color
+  Picker.” ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@paavanb/progressive-color-picker>.
 - [Patel, Amit](https://observablehq.com/@redblobgames).
   <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="December 16, 2021"><u>2021+290</u></span>. “Compass
-  Rose.” ${decYearP0}+${decDotyOff}.
+  data-bs-title="December 16, 2021">2021+290</span>. “Compass Rose.”
+  ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@paavanb/progressive-color-picker>.
 - [Pettiross, Jeff](https://observablehq.com/@pettiross)
   <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="July 19, 2024"><u>2024+150</u></span>. “Categorical
-  color scheme test tool.” ${decYearP0}+${decDotyOff}.
+  data-bs-title="July 19, 2024">2024+150</span>. “Categorical color
+  scheme test tool.” ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@observablehq/categorical-palette-tool>
 - [Rieder, Lukas](https://observablehq.com/@lukasrieder)
   <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="April 2, 2023"><u>2023+032</u></span>. “Editable
-  table.” ${decYearP0}+${decDotyOff}.
+  data-bs-title="April 2, 2023">2023+032</span>. “Editable table.”
+  ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@parlant/editable-table>.
 - [Rivière, Philippe](https://observablehq.com/@fil) <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="November 15, 2022"><u>2022+259</u></span>. “Add a class
-  to an observable input.” ${decYearP0}+${decDotyOff}.
+  data-bs-title="November 15, 2022">2022+259</span>. “Add a class to an
+  observable input.” ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support>.
 - [Rivière, Philippe](https://observablehq.com/@fil) <span class="tool"
   data-bs-toggle="tooltip"
-  data-bs-title="January 25, 2024"><u>2023+330</u></span>. “D3
-  Projections.” ${decYearP0}+${decDotyOff}.
+  data-bs-title="January 25, 2024">2023+330</span>. “D3 Projections.”
+  ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@fil/d3-projections>.
 - [Yamahata, Christophe](https://observablehq.com/@christophe-yamahata)
   <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="June 28, 2022"><u>2021+119</u></span>. “Great circle:
-  shortest distance between two locations on Earth 🌏.”
+  data-bs-title="June 28, 2022">2021+119</span>. “Great circle: shortest
+  distance between two locations on Earth 🌏.”
   ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
+- [d’Alembert, Jean le
+  Rond](https://en.wikipedia.org/wiki/Jean_le_Rond_d%27Alembert#:~:text=French%20mathematician%2C%20mechanician%2C%20physicist%2C%20philosopher%2C%20and%20music%20theorist). 1754.
+  “Decimal.”
+  [*Encyclopédie*](https://en.wikipedia.org/wiki/Encyclopédie#:~:text=a%20general%20encyclopedia%20published%20in%20France%20between%201751%20and%201772),
+  *4*, 670. ${decYearP0}+${decDotyOff}.
+  <https://artflsrv04.uchicago.edu/philologic4.7/encyclopedie0922/navigate/4/3458>.
 
 </div>
 
@@ -3077,7 +3258,7 @@ rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
 rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
 rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
-wavehex = rgb2hex(wavelength2rgb(wavelength * .4))
+wavehex = d3.color(wavelengthToColor(wavelength * .4)[0]).formatHex()
 wavehexHsl = textcolor(wavehex.slice(1), wavehex)
 rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex())
 rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex())
@@ -3370,6 +3551,8 @@ ydzOff = dote2date(...dzOff)
 decYearOff = ydzOff[0]
 decYearOffHsl = textcolor(decYearOff, `hsl(${d3.hsl(piecewiseColor(decYearOff % 1000 / 1000)).h}` + slStr)
 decDateOff = Math.floor(ydzOff[1])
+decDek = Math.floor(decDateOff / 10)
+decDod = decDateOff % 10
 decDotyOff = decDateOff.toString().padStart(3, "0")
 decTimeOff = ydzOff[1] % 1
 decOffsetPosi = (offset + 10) % 10
@@ -3379,11 +3562,14 @@ decOffsetHslN = textcolor(decOffsetNega, `hsl(${d3.hsl(piecewiseColor(decOffsetP
 decOffsetHsl0 = textcolor(offset, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
 decOffsetHsl1 = textcolor(Math.abs(offset), `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
 decOffsetHsl2 = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decOffsetHsl3 = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
 decDateOffHsl = textcolor(decDateOff.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateOff / (365 + isLeapOff))).h}` + slStr)
+decDekOffHsl = textcolor(decDek, `hsl(${d3.hsl(piecewiseColor(decDek / 37)).h}` + slStr)
+decDodOffHsl = textcolor(decDod, `hsl(${d3.hsl(piecewiseColor(decDod / 10)).h}` + slStr)
 decTimeOffHsl0 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl1 = textcolor(decTimeOff.toFixed(5).slice(1), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl2 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl4 = textcolor((decTimeOff * 100000).toFixed(0), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl1 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl2 = textcolor(decTimeOff.toFixed(5).slice(1), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl3 = textcolor((decTimeOff * 100000).toFixed(0), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 dzP0 = unix2dote(now, 0)
 ydzP0 = dote2date(...dzP0)
 decYearP0 = ydzP0[0]
@@ -4157,57 +4343,62 @@ zem2 = parseFloat((zems**2).toFixed(2))
 bmi = parseFloat((kilograms / zems**2).toFixed(2))
 bmim2 = parseFloat((bmi * 25 / 4).toFixed(2))
 bmiStr = bmi < 2.96 ? "underweight" : bmi < 4 ? "normal" : bmi < 4.8 ? "overweight" : "obese"
-// https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
-rgb2hex = ([r,g,b])=> {
-  const componentToHex = (c) => {
-    const hex = Math.round(c*255).toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
-  }
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-wavelength2rgb = lambda => {
-  let R, G, B, alpha;
-  if (lambda >= 380 && lambda < 440) {
-    R = -1 * (lambda - 440) / (440 - 380);
-    G = 0;
-    B = 1;
-  } else if (lambda >= 440 && lambda < 490) {
-    R = 0;
-    G = (lambda - 440) / (490 - 440);
-    B = 1;
-  } else if (lambda >= 490 && lambda < 510) {
-    R = 0;
-    G = 1;
-    B = -1 * (lambda - 510) / (510 - 490);
-  } else if (lambda >= 510 && lambda < 580) {
-    R = (lambda - 510) / (580 - 510);
-    G = 1;
-    B = 0;
-  } else if (lambda >= 580 && lambda < 645) {
-    R = 1;
-    G = -1 * (lambda - 645) / (645 - 580);
-    B = 0.0;
-  } else if (lambda >= 645 && lambda <= 780) {
-    R = 1;
-    G = 0;
-    B = 0;
-  } else {
-    R = 0;
-    G = 0;
-    B = 0;
-  }
-  // intensty is lower at the edges of the visible spectrum.
-  if (lambda > 780 || lambda < 380) {
-    alpha = 0;
-  } else if (lambda > 700) {
-    alpha = (780 - lambda) / (780 - 700);
-  } else if (lambda < 420) {
-    alpha = (lambda - 380) / (420 - 380);
-  } else {
-    alpha = 1;
-  }
-  return [R*alpha, G*alpha, B*alpha]
-}
+// https://observablehq.com/@magfoto/wavelengths-and-spectral-colours
+// takes wavelength in nm and returns an rgba value
+    function wavelengthToColor(wavelength) {
+        let R,
+            G,
+            B,
+            alpha,
+            colorSpace,
+            wl = wavelength,
+            gamma = 1;
+        if (wl >= 380 && wl < 440) {
+            R = -1 * (wl - 440) / (440 - 380);
+            G = 0;
+            B = 1;
+       } else if (wl >= 440 && wl < 490) {
+           R = 0;
+           G = (wl - 440) / (490 - 440);
+           B = 1;
+        } else if (wl >= 490 && wl < 510) {
+            R = 0;
+            G = 1;
+            B = -1 * (wl - 510) / (510 - 490);
+        } else if (wl >= 510 && wl < 580) {
+            R = (wl - 510) / (580 - 510);
+            G = 1;
+            B = 0;
+        } else if (wl >= 580 && wl < 645) {
+            R = 1;
+            G = -1 * (wl - 645) / (645 - 580);
+            B = 0.0;
+        } else if (wl >= 645 && wl <= 780) {
+            R = 1;
+            G = 0;
+            B = 0;
+        } else {
+            R = 0;
+            G = 0;
+            B = 0;
+        }
+        // intensty is lower at the edges of the visible spectrum.
+        if (wl > 780 || wl < 380) {
+            alpha = 0;
+        } else if (wl > 700) {
+            alpha = (780 - wl) / (780 - 700);
+        } else if (wl < 420) {
+            alpha = (wl - 380) / (420 - 380);
+        } else {
+            alpha = 1;
+        }
+        colorSpace = ["rgba(" + (R * 100) + "%," + (G * 100) + "%," + (B * 100) + "%, " + alpha + ")", R, G, B, alpha]
+        // colorSpace is an array with 5 elements.
+        // The first element is the complete code as a string.
+        // Use colorSpace[0] as is to display the desired color.
+        // Use the last four elements alone or together to access each of the individual r, g, and b channels.
+        return colorSpace;
+    }
 // https://observablehq.com/@austinkeeton/sounds
 ctx = new (window.AudioContext || window.webkitAudioContext)()
 function Play(genFn, duration = 1) {
@@ -4385,6 +4576,38 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color014 {
+  background: hsl(351.52941176470586 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(351.52941176470586, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color021 {
+  background: hsl(347.29411764705884 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(347.29411764705884, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color022 {
+  background: hsl(346.8235294117647 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(346.8235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color024 {
+  background: hsl(345.6470588235294 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(345.6470588235294, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color025 {
   background: hsl(344.94117647058823 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(344.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -4396,6 +4619,30 @@ html`
 .color039 {
   background: hsl(336.70588235294116 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(336.70588235294116, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD039 {
+  background: hsl(298.5882352941177 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(298.5882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD080 {
+  background: hsl(272.2352941176471 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(272.2352941176471, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD285 {
+  background: hsl(63.76470588235294 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(63.76470588235294, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -4513,9 +4760,33 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color704 {
+  background: hsl(79.29411764705883 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(79.29411764705883, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color750 {
   background: hsl(70 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(70, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color754 {
+  background: hsl(69.17647058823529 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(69.17647058823529, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color788 {
+  background: hsl(62.35294117647058 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(62.35294117647058, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -4577,16 +4848,16 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.colorff6300 {
-  background: #ff6300;
-  color: black;
+.color890000 {
+  background: #890000;
+  color: white;
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
-.colorff6400 {
-  background: #ff6400;
+.colorff6300 {
+  background: #ff6300;
   color: black;
   padding: 0px 5px;
   border-radius: 4px;
@@ -4750,10 +5021,10 @@ html`
 div#projselect {
   max-width: 250px;
 }
-div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div div#wavinput > div,, div#iobinput > div, {
+div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div {
   overflow-x: clip;
 }
-div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label, div#wavinput label, div#iobinput label {
+div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
   width: 35px;
 }
 button#rstbtn:hover {
@@ -4764,7 +5035,7 @@ button#rstbtn:hover {
 div#distmap {
   margin-bottom: -28px;
 }
-#sizeinput #speedinput #yawinput #pitchinput #rollinput #wavinput #iobinput {
+#sizeinput #speedinput #yawinput #pitchinput #rollinput {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4772,10 +5043,7 @@ div#distmap {
 #speedinput input[type="number"], #sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
   width: 58px;
 }
-#wavinput input[type="number"], #iobinput input[type="number"] {
-  width: 65px;
-}
-#speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"]  {
+#speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
   width: 72%;
 }
 .colorcomponent {
@@ -4796,19 +5064,19 @@ div.colorcomparer svg {
 div.coloropp {
   overflow: visible;
 }
-div.coloropp canvas{
+div.coloropp canvas {
   width: 240px !important;
   height: 240px !important;
   overflow: visible;
 }
-div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label {
+div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label, div#wavinput label, div#iobinput label  {
   --label-width: 80px;
   max-width: 80px;
 }
-div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"] {
-  max-width: 75px;
+div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"], #wavinput input[type="number"], #iobinput input[type="number"]  {
+  max-width: 80px;
 }
-div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"] {
+div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] {
   max-width: 225px;
   min-width: 125px;
 }
@@ -4879,9 +5147,12 @@ h4.hiddenheading, h5.hiddenheading {
 h4.anchored {
   margin: 8px 0px 8px 0px;
 }
-#zemcubic svg, #zemhands svg {
+#zemcubic svg {
   max-width: 100%;
   height: 220px;
+}
+#zemhands svg {
+  max-width: 100%;
 }
 svg#lefthand {
   height: 50%;
@@ -4927,5 +5198,10 @@ img#zModu {
 }
 #iobtable {
   margin-bottom: -10px;
+}
+#iobplayer canvas {
+  overflow: clip;
+  max-width: 100%;
+  height: 100%;
 }
 </style>
