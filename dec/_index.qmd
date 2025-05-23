@@ -296,7 +296,7 @@ rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
 rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
 rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
-wavehex = rgb2hex(wavelength2rgb(wavelength * .4))
+wavehex = d3.color(wavelengthToColor(wavelength * .4)[0]).formatHex()
 wavehexHsl = textcolor(wavehex.slice(1), wavehex)
 rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex())
 rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex())
@@ -589,6 +589,8 @@ ydzOff = dote2date(...dzOff)
 decYearOff = ydzOff[0]
 decYearOffHsl = textcolor(decYearOff, `hsl(${d3.hsl(piecewiseColor(decYearOff % 1000 / 1000)).h}` + slStr)
 decDateOff = Math.floor(ydzOff[1])
+decDek = Math.floor(decDateOff / 10)
+decDod = decDateOff % 10
 decDotyOff = decDateOff.toString().padStart(3, "0")
 decTimeOff = ydzOff[1] % 1
 decOffsetPosi = (offset + 10) % 10
@@ -598,11 +600,14 @@ decOffsetHslN = textcolor(decOffsetNega, `hsl(${d3.hsl(piecewiseColor(decOffsetP
 decOffsetHsl0 = textcolor(offset, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
 decOffsetHsl1 = textcolor(Math.abs(offset), `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
 decOffsetHsl2 = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decOffsetHsl3 = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
 decDateOffHsl = textcolor(decDateOff.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateOff / (365 + isLeapOff))).h}` + slStr)
+decDekOffHsl = textcolor(decDek, `hsl(${d3.hsl(piecewiseColor(decDek / 37)).h}` + slStr)
+decDodOffHsl = textcolor(decDod, `hsl(${d3.hsl(piecewiseColor(decDod / 10)).h}` + slStr)
 decTimeOffHsl0 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl1 = textcolor(decTimeOff.toFixed(5).slice(1), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl2 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl4 = textcolor((decTimeOff * 100000).toFixed(0), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl1 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl2 = textcolor(decTimeOff.toFixed(5).slice(1), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl3 = textcolor((decTimeOff * 100000).toFixed(0), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
 dzP0 = unix2dote(now, 0)
 ydzP0 = dote2date(...dzP0)
 decYearP0 = ydzP0[0]
@@ -1376,57 +1381,62 @@ zem2 = parseFloat((zems**2).toFixed(2))
 bmi = parseFloat((kilograms / zems**2).toFixed(2))
 bmim2 = parseFloat((bmi * 25 / 4).toFixed(2))
 bmiStr = bmi < 2.96 ? "underweight" : bmi < 4 ? "normal" : bmi < 4.8 ? "overweight" : "obese"
-// https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
-rgb2hex = ([r,g,b])=> {
-  const componentToHex = (c) => {
-    const hex = Math.round(c*255).toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
-  }
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-wavelength2rgb = lambda => {
-  let R, G, B, alpha;
-  if (lambda >= 380 && lambda < 440) {
-    R = -1 * (lambda - 440) / (440 - 380);
-    G = 0;
-    B = 1;
-  } else if (lambda >= 440 && lambda < 490) {
-    R = 0;
-    G = (lambda - 440) / (490 - 440);
-    B = 1;
-  } else if (lambda >= 490 && lambda < 510) {
-    R = 0;
-    G = 1;
-    B = -1 * (lambda - 510) / (510 - 490);
-  } else if (lambda >= 510 && lambda < 580) {
-    R = (lambda - 510) / (580 - 510);
-    G = 1;
-    B = 0;
-  } else if (lambda >= 580 && lambda < 645) {
-    R = 1;
-    G = -1 * (lambda - 645) / (645 - 580);
-    B = 0.0;
-  } else if (lambda >= 645 && lambda <= 780) {
-    R = 1;
-    G = 0;
-    B = 0;
-  } else {
-    R = 0;
-    G = 0;
-    B = 0;
-  }
-  // intensty is lower at the edges of the visible spectrum.
-  if (lambda > 780 || lambda < 380) {
-    alpha = 0;
-  } else if (lambda > 700) {
-    alpha = (780 - lambda) / (780 - 700);
-  } else if (lambda < 420) {
-    alpha = (lambda - 380) / (420 - 380);
-  } else {
-    alpha = 1;
-  }
-  return [R*alpha, G*alpha, B*alpha]
-}
+// https://observablehq.com/@magfoto/wavelengths-and-spectral-colours
+// takes wavelength in nm and returns an rgba value
+    function wavelengthToColor(wavelength) {
+        let R,
+            G,
+            B,
+            alpha,
+            colorSpace,
+            wl = wavelength,
+            gamma = 1;
+        if (wl >= 380 && wl < 440) {
+            R = -1 * (wl - 440) / (440 - 380);
+            G = 0;
+            B = 1;
+       } else if (wl >= 440 && wl < 490) {
+           R = 0;
+           G = (wl - 440) / (490 - 440);
+           B = 1;
+        } else if (wl >= 490 && wl < 510) {
+            R = 0;
+            G = 1;
+            B = -1 * (wl - 510) / (510 - 490);
+        } else if (wl >= 510 && wl < 580) {
+            R = (wl - 510) / (580 - 510);
+            G = 1;
+            B = 0;
+        } else if (wl >= 580 && wl < 645) {
+            R = 1;
+            G = -1 * (wl - 645) / (645 - 580);
+            B = 0.0;
+        } else if (wl >= 645 && wl <= 780) {
+            R = 1;
+            G = 0;
+            B = 0;
+        } else {
+            R = 0;
+            G = 0;
+            B = 0;
+        }
+        // intensty is lower at the edges of the visible spectrum.
+        if (wl > 780 || wl < 380) {
+            alpha = 0;
+        } else if (wl > 700) {
+            alpha = (780 - wl) / (780 - 700);
+        } else if (wl < 420) {
+            alpha = (wl - 380) / (420 - 380);
+        } else {
+            alpha = 1;
+        }
+        colorSpace = ["rgba(" + (R * 100) + "%," + (G * 100) + "%," + (B * 100) + "%, " + alpha + ")", R, G, B, alpha]
+        // colorSpace is an array with 5 elements.
+        // The first element is the complete code as a string.
+        // Use colorSpace[0] as is to display the desired color.
+        // Use the last four elements alone or together to access each of the individual r, g, and b channels.
+        return colorSpace;
+    }
 // https://observablehq.com/@austinkeeton/sounds
 ctx = new (window.AudioContext || window.webkitAudioContext)()
 function Play(genFn, duration = 1) {
@@ -1604,6 +1614,38 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color014 {
+  background: hsl(351.52941176470586 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(351.52941176470586, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color021 {
+  background: hsl(347.29411764705884 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(347.29411764705884, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color022 {
+  background: hsl(346.8235294117647 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(346.8235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color024 {
+  background: hsl(345.6470588235294 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(345.6470588235294, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color025 {
   background: hsl(344.94117647058823 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(344.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -1615,6 +1657,30 @@ html`
 .color039 {
   background: hsl(336.70588235294116 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(336.70588235294116, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD039 {
+  background: hsl(298.5882352941177 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(298.5882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD080 {
+  background: hsl(272.2352941176471 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(272.2352941176471, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD285 {
+  background: hsl(63.76470588235294 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(63.76470588235294, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1732,9 +1798,33 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color704 {
+  background: hsl(79.29411764705883 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(79.29411764705883, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color750 {
   background: hsl(70 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(70, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color754 {
+  background: hsl(69.17647058823529 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(69.17647058823529, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color788 {
+  background: hsl(62.35294117647058 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(62.35294117647058, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1796,16 +1886,16 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.colorff6300 {
-  background: #ff6300;
-  color: black;
+.color890000 {
+  background: #890000;
+  color: white;
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
-.colorff6400 {
-  background: #ff6400;
+.colorff6300 {
+  background: #ff6300;
   color: black;
   padding: 0px 5px;
   border-radius: 4px;
@@ -1970,10 +2060,10 @@ html`
 div#projselect {
   max-width: 250px;
 }
-div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div div#wavinput > div,, div#iobinput > div, {
+div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div {
   overflow-x: clip;
 }
-div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label, div#wavinput label, div#iobinput label {
+div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
   width: 35px;
 }
 button#rstbtn:hover {
@@ -1984,7 +2074,7 @@ button#rstbtn:hover {
 div#distmap {
   margin-bottom: -28px;
 }
-#sizeinput #speedinput #yawinput #pitchinput #rollinput #wavinput #iobinput {
+#sizeinput #speedinput #yawinput #pitchinput #rollinput {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1992,10 +2082,7 @@ div#distmap {
 #speedinput input[type="number"], #sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
   width: 58px;
 }
-#wavinput input[type="number"], #iobinput input[type="number"] {
-  width: 65px;
-}
-#speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"]  {
+#speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
   width: 72%;
 }
 .colorcomponent {
@@ -2016,19 +2103,19 @@ div.colorcomparer svg {
 div.coloropp {
   overflow: visible;
 }
-div.coloropp canvas{
+div.coloropp canvas {
   width: 240px !important;
   height: 240px !important;
   overflow: visible;
 }
-div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label {
+div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label, div#wavinput label, div#iobinput label  {
   --label-width: 80px;
   max-width: 80px;
 }
-div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"] {
-  max-width: 75px;
+div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"], #wavinput input[type="number"], #iobinput input[type="number"]  {
+  max-width: 80px;
 }
-div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"] {
+div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] {
   max-width: 225px;
   min-width: 125px;
 }
@@ -2099,9 +2186,12 @@ h4.hiddenheading, h5.hiddenheading {
 h4.anchored {
   margin: 8px 0px 8px 0px;
 }
-#zemcubic svg, #zemhands svg {
+#zemcubic svg {
   max-width: 100%;
   height: 220px;
+}
+#zemhands svg {
+  max-width: 100%;
 }
 svg#lefthand {
   height: 50%;
@@ -2147,6 +2237,11 @@ img#zModu {
 }
 #iobtable {
   margin-bottom: -10px;
+}
+#iobplayer canvas {
+  overflow: clip;
+  max-width: 100%;
+  height: 100%;
 }
 </style>
 ```

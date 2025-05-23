@@ -808,7 +808,7 @@ Please spread the good word about Dec using the citation information at the bott
 - [Heyen, Frank](https://fheyen.github.io). [[2021]{.yellow}+[246]{.cyan}]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2021-11-02"}. “BarChart Clock.” [\${decYear}]{.yellow}+[\${decDate}]{.cyan}. <https://observablehq.com/@fheyen/barchart-clock>.
 - [Johnson, Ian](https://enjalot.github.io). [[2021]{.yellow}+[090]{.cyan}]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2021-05-30"}. “Draggable World Map Coordinates Input.” [\${decYear}]{.yellow}+[\${decDate}]{.cyan}. <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
 - [Bridges, Dan](https://www.danbridges.org). [[2021]{.yellow}+[311]{.cyan}]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2022-01-06"}. “Visualizing Seasonal Daylight.” [\${decYear}]{.yellow}+[\${decDate}]{.cyan}. <https://observablehq.com/@dbridges/visualizing-seasonal-daylight>.
-- [Clements, John](https://www.brinckerhoff.org). [[2014]{.yellow}+[091]{.cyan}]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2021-05-31"}, “Decimal Time Zones.” [\${decYear}]{.yellow}+[\${decDate}]{.cyan}. <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
+- [Clements, John](https://www.brinckerhoff.org). [[2014]{.yellow}+[091]{.cyan}]{.underline .tool data-bs-toggle="tooltip" data-bs-title="2014-05-31"}, “Decimal Time Zones.” [\${decYear}]{.yellow}+[\${decDate}]{.cyan}. <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
 
 ```{ojs}
 //| echo: false
