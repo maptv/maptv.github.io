@@ -1437,7 +1437,70 @@ bmiStr = bmi < 2.96 ? "underweight" : bmi < 4 ? "normal" : bmi < 4.8 ? "overweig
         // Use the last four elements alone or together to access each of the individual r, g, and b channels.
         return colorSpace;
     }
-// https://observablehq.com/@austinkeeton/sounds
+// https://observablehq.com/@freedmand/sounds
+function piano(stlibWidth) {
+  const width = 960;
+  const keyHeight = 450;
+  const height = 575;
+  const whiteKeys = 7;
+  const blackKeys = [1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1];
+  const whiteOffsets = blackKeys.reduce((x, y) => x.concat([y + x[x.length - 1] + 1]), [0]);
+  const svg = html`<svg width="100%" height="auto" viewBox="0 0 ${width} ${height}"
+    xmlns="http://www.w3.org/2000/svg"></svg>`;
+  function wrap(elem, note) {
+    const freq = 440 * Math.pow(2, note / 12);
+    // Play a note when clicked.
+    const oscillator = ctx.createOscillator();
+    const gain = ctx.createGain();
+    gain.gain.value = 0;
+    oscillator.type = 'square';
+    oscillator.frequency.setValueAtTime(freq, ctx.currentTime);
+    oscillator.connect(gain);
+    gain.connect(ctx.destination);
+    oscillator.start();
+    elem.style.cursor = 'pointer';
+    elem.onclick = () => {
+      gain.gain.cancelScheduledValues(ctx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + 0.05);
+      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.3);
+    };
+    return elem;
+  }
+  // Draw the white keys.
+  for (let i = 0; i <= whiteKeys - 1; i++) {
+    svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill=${whiteKeyColors[i]} stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 4));
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 42}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 5) % 7) + (i < 4 ? "4" : "5")}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 82}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 122}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(73504.8 / 440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
+  }
+  // Draw the black keys.
+  for (let i = 0; i <= whiteKeys - 2; i++) {
+    if (blackKeys[i] == 1) {
+      svg.appendChild(wrap(html`<svg><rect x="${width * ((i + 0.65) / whiteKeys)}" y="0" width="${width / whiteKeys * 0.7}" height="${keyHeight * 0.55}" fill=${blackKeyColors[i]} stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 4 + blackKeys[i]));
+    }
+  }
+  return svg;
+}
+whiteKeyColors = [
+  "#fff",
+  "#fff",
+  "#fa0",
+  "#af0",
+  "#0f0",
+  "#0af",
+  "#a0f",
+  "#f0f",
+  "#f00",
+]
+blackKeyColors = [
+  "#000",
+  "#f00",
+  "#ff0",
+  "",
+  "#0ff",
+  "#00f",
+]
+// https://observablehq.com/@freedmand/sounds
 ctx = new (window.AudioContext || window.webkitAudioContext)()
 function Play(genFn, duration = 1) {
   return new SoundBuffer(genFn, duration).gui();
@@ -1503,7 +1566,6 @@ class SoundBuffer {
         color: #6f6f6f;
         font-size: 0.8em;
       }
-
       .sound-pane {
         height: 50px;
         background: white;
@@ -1511,20 +1573,16 @@ class SoundBuffer {
         border: solid 1px gainsboro;
         position: relative;
       }
-
       .icons {
         margin: 0 8px 8px 8px;
       }
-
 	  .icons .button {
          cursor: pointer;
          border: solid 1px transparent;
       }
-
       .icons .button:hover {
          border: solid 1px gainsboro;
       }
-
       .cursor {
         background: red;
         width: 2px;
@@ -1582,23 +1640,6 @@ class SoundBuffer {
     return ui;
   }
 }
-freqs = [
-  126.86112,
-  142.39584,
-  150.86304,
-  169.344,
-  190.08,
-  213.35616,
-  226.04832,
-  253.72224,
-  284.80032,
-  301.73472,
-  338.688,
-  380.16,
-  426.71232,
-  452.088,
-  507.45312,
-]
 ```
 
 ```{ojs}
@@ -2230,13 +2271,9 @@ div#iobpiano > div > div > svg {
 #iobpiano {
   overflow: clip;
   max-width: 100%;
-  margin: -8px 0px -60px 0px;
 }
 img#zModu {
   width: 100%;
-}
-#iobtable {
-  margin-bottom: -10px;
 }
 #iobplayer canvas {
   overflow: clip;

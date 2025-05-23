@@ -9,8 +9,6 @@ viewof wavelength = Inputs.range([950, 1950], {label: "Nanozems", value: 1549.2,
 :::{#iobtable}
 | Note  | [i]{.tool data-bs-toggle="tooltip" data-bs-title="iobs"}  | [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}    | Color                  | [Ti]{.tool data-bs-toggle="tooltip" data-bs-title="teraiobs"}     | [nz]{.tool data-bs-toggle="tooltip" data-bs-title="nanozems"}      |
 | ------------------------------------------------------ | ------ | ---- | ---------------------- | ------ | ------- |
-| [F♯4](https://en.wikipedia.org/wiki/F♯_(musical_note)) | 319.68 | 2.30 | [890000]{.color890000} | 351.49 | 1842.32 |
-| [G4](https://en.wikipedia.org/wiki/F_(musical_note))   | 338.68 | 2.17 | [ff0000]{.color0}      | 372.39 | 1738.92 |
 | [G♯4](https://en.wikipedia.org/wiki/G♯_(musical_note)) | 358.82 | 2.05 | [ff0000]{.color0}      | 394.53 | 1641.32 |
 | [A4](https://en.wikipedia.org/wiki/A_(musical_note))   | 380.16 | 1.93 | [ff6300]{.colorff6300} | 417.99 | 1549.20 |
 | [A♯4](https://en.wikipedia.org/wiki/A♯_(musical_note)) | 402.77 | 1.83 | [ffec00]{.colorffec00} | 442.85 | 1462.25 |
@@ -26,47 +24,5 @@ viewof wavelength = Inputs.range([950, 1950], {label: "Nanozems", value: 1549.2,
 //| echo: false
 //| label: iobpiano
 //| class: freqcomponent
-// https://observablehq.com/@austinkeeton/sounds
-{
-  const width = 960;
-  const keyHeight = 240;
-  const height = 320;
-  const whiteKeys = 13;
-  const blackKeys = [1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1];
-  const whiteOffsets = blackKeys.reduce((x, y) => x.concat([y + x[x.length - 1] + 1]), [0]);
-  const svg = html`<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"
-    xmlns="http://www.w3.org/2000/svg"></svg>`;
-  function wrap(elem, note) {
-    const freq = 440 * Math.pow(2, note / 12);
-    // Play a note when clicked.
-    const oscillator = ctx.createOscillator();
-    const gain = ctx.createGain();
-    gain.gain.value = 0;
-    oscillator.type = 'square';
-    oscillator.frequency.setValueAtTime(freq, ctx.currentTime);
-    oscillator.connect(gain);
-    gain.connect(ctx.destination);
-    oscillator.start();
-    elem.style.cursor = 'pointer';
-    elem.onclick = () => {
-      gain.gain.cancelScheduledValues(ctx.currentTime);
-      gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + 0.05);
-      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.3);
-    };
-    return elem;
-  }
-  // Draw the white keys.
-  for (let i = 0; i <= whiteKeys - 1; i++) {
-    svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill="white" stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 19));
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 24}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 3) % 7) + (i < 6 ? "3" : "4")}</text></svg>`);
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 48}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${Math.round(freqs[i])}</text></svg>`);
-  }
-  // Draw the black keys.
-  for (let i = 0; i <= whiteKeys - 2; i++) {
-    if (blackKeys[i] == 1) {
-      svg.appendChild(wrap(html`<svg><rect x="${width * ((i + 0.65) / whiteKeys)}" y="0" width="${width / whiteKeys * 0.7}" height="${keyHeight * 0.55}" fill="black" stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 19 + blackKeys[i]));
-    }
-  }
-  return svg;
-}
+piano(width)
 ```
