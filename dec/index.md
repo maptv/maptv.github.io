@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+083
+2025+084
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -2114,9 +2114,12 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
 
 If we increase the A4 note🎶frequency by 40
 [octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-(2<sup>40</sup>), we get 380.16 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iob">i</span> × 2<sup>40</sup> =
-~417.99 <span class="tool" data-bs-toggle="tooltip"
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="forty octaves">2<sup>40</sup></span>), we get 380.16
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
+× <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="forty octaves">2<sup>40</sup></span> = ~417.99
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>). On the
 [visible
@@ -2261,17 +2264,72 @@ piano(width)
 ```
 
 The table above compares nine musical notes🎶and the colors🎨we obtain
-by increasing the frequency of each note🎶by 2<sup>40</sup>, converting
-the frequencies into wavelengths, and translating the wavelengths into
+by increasing the frequency of each note🎶by <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="forty octaves">2<sup>40</sup></span>, converting the
+frequencies into wavelengths, and translating the wavelengths into
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> triplets. The result is
-reminiscent of the colors🎨Dec uses for time zones without .
+data-bs-title="hexadecimal">hex</span> triplets. This transformation,
+which Dec refers to as <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="forty octaves">2<sup>40</sup></span> scaling, provides a
+rationale for linking Dec color🎨labels with specific
+sound🔊frequencies.
+
+In the table, there is no color🎨similar to
+<span class="color1">magenta</span>, the Zone
+<span class="color1">1</span> color🎨, because
+<span class="color1">magenta</span> is
+[extra-spectral](https://en.wikipedia.org/wiki/Magenta#:~:text=no%20color%20of%20the%20visible%20spectrum%20has%20magenta%27s%20hue).
+Dec associates <span class="color1">magenta</span> with
+[G4](https://en.wikipedia.org/wiki/F_(musical_note)) so that
+color🎨coding looks balanced when viewed on a piano as in the image
+beneath the table above. Octaves 4 and 5 each contribute three [natural
+notes](https://en.wikipedia.org/wiki/Natural_(music)#:~:text=not%20modified%20by%20a%20flat%20or%20sharp)
+that are separated from each other on a piano by black keys.
+
+[F](https://en.wikipedia.org/wiki/F_(musical_note)) and
+[F♯4](https://en.wikipedia.org/wiki/F♯_(musical_note)) musical notes🎶.
+Each of the ten Dec colors🎨is associated with a sound frequency, except
+for . To associate colors🎨with sounds🔊, Dec uses
+[interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
+instead of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="forty octaves">2<sup>40</sup></span> scaling. labels with
+speci nine colors🎨in the table, We can use 2<sup>40</sup> scaling We
+can scale any sound frequency and find its corresponding frequency on
+the [electromagnetic spectrum](), but the visible spectrum is between .
+combining 2<sup>40</sup> scaling with
+[interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points),
+we can is to provide a rationale for labeling values with both
+color🎨and sound🔊.
+
+For continuous numbers, we can
+[interpolate](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
+the frequencies between notes🎶to create
+[microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone).
+
+However tenuous the connection between color🎨and sound🔊may seem,
+
+numbers with both : {<span class="color0">0</span>:
+<span class="color0">G♯5</span>, <span class="color1">1</span>:
+<span class="color1">F5</span>, <span class="color2">2</span>:
+<span class="color2">E5</span>, <span class="color3">3</span>:
+<span class="color3">D#5</span>, <span class="color4">4</span>:
+<span class="color4">D5</span>, <span class="color5">5</span>:
+<span class="color5">C#5</span>, <span class="color6">6</span>:
+<span class="color6">C5</span>, <span class="color7">7</span>:
+<span class="color7">B4</span>, <span class="color8">8</span>:
+<span class="color8">A♯4</span>, <span class="color9">9</span>:
+<span class="color9">A4</span>, <span class="color0">0</span>:
+<span class="color0">G♯4</span>}.
+
+The color🎨in the table are reminiscent of nine of ten colors Dec uses
+for time zones.
 
 Inspired by the connection between musical notes🎶and color, the image
 beneath the table applies Dec color🎨labels🏷️to twelve piano keys
 according to the.
 
-Using the 2<sup>40</sup> method, we can label numbers with both
+Using the 2<sup>40</sup> method, we can labeling numbers with both
 colors🎨and sounds🔊: {<span class="color0">0</span>:
 <span class="color0">G♯5</span>, <span class="color1">1</span>:
 <span class="color1">F5</span>, <span class="color2">2</span>:
@@ -2284,10 +2342,7 @@ colors🎨and sounds🔊: {<span class="color0">0</span>:
 <span class="color8">A♯4</span>, <span class="color9">9</span>:
 <span class="color9">A4</span>, <span class="color0">0</span>:
 <span class="color0">G♯4</span>}. This approach works not only for
-discrete but also continuous numbers because we can
-[interpolate](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
-the frequencies between notes🎶to create
-[microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone).
+discrete but also
 
 # US customary units
 
@@ -4388,7 +4443,7 @@ function piano(stlibWidth) {
 }
 whiteKeyColors = [
   "#fff",
-  "#fff",
+  "#f0f",
   "#fa0",
   "#af0",
   "#0f0",
