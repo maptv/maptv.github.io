@@ -897,14 +897,17 @@ Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
 distance_mc = distance_km / 40
-distance_mcHsl = textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
+distance_mcHsl0 = textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
+distance_mcHsl1 = textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
 distance_c = distance_mc / 1000
 distance_cHsl = textcolor(parseFloat(distance_c.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(distance_c % 1)).h}` + slStr)
 velocity_v = travelspeed / 1000
-velocity_vHsl = textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
+velocity_vHsl0 = textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
+velocity_vHsl1 = textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
 velocity_mvHsl = textcolor(parseFloat(travelspeed.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(travelspeed / 1000)).h}` + slStr)
 traveltime = Math.round(distance_mc) / Math.round(travelspeed)
-traveltimeHsl = Number.isFinite(traveltime) ? textcolor(parseFloat(traveltime.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(traveltime % 1)).h}` + slStr) : traveltime
+traveltimeHsl0 = Number.isFinite(traveltime) ? textcolor(parseFloat(Math.round(traveltime * 1000).toFixed(3)), `hsl(${d3.hsl(piecewiseColor(traveltime % 1)).h}` + slStr) : traveltime
+traveltimeHsl1 = Number.isFinite(traveltime) ? textcolor(parseFloat(traveltime.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(traveltime % 1)).h}` + slStr) : traveltime
 nb_points = Math.round(distance_km/150)
 d3format = require("d3-format@1")
 function input(config) {
@@ -1442,8 +1445,8 @@ function piano(stlibWidth) {
   const width = 960;
   const keyHeight = 450;
   const height = 575;
-  const whiteKeys = 7;
-  const blackKeys = [1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1];
+  const whiteKeys = 11;
+  const blackKeys = [1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1];
   const whiteOffsets = blackKeys.reduce((x, y) => x.concat([y + x[x.length - 1] + 1]), [0]);
   const svg = html`<svg width="100%" height="auto" viewBox="0 0 ${width} ${height}"
     xmlns="http://www.w3.org/2000/svg"></svg>`;
@@ -1483,22 +1486,28 @@ function piano(stlibWidth) {
 }
 whiteKeyColors = [
   "#fff",
-  "#f0f",
+  "#fff",
   "#fa0",
   "#af0",
   "#0f0",
   "#0af",
   "#a0f",
   "#f0f",
-  "#f00",
+  "#fff",
+  "#fff",
+  "#fff",
 ]
 blackKeyColors = [
   "#000",
-  "#f00",
+  "#000",
   "#ff0",
   "",
   "#0ff",
   "#00f",
+  "",
+  "#f00",
+  "#000",
+  "#000",
 ]
 // https://observablehq.com/@freedmand/sounds
 ctx = new (window.AudioContext || window.webkitAudioContext)()
