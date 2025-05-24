@@ -2094,13 +2094,13 @@ data-bs-title="zems">z</span>. The “<span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="billionths of a zem">Iobs</span>” range🎚️input below
 determines the sound🔊played by the [audio
-player](https://observablehq.com/@austinkeeton/sounds) beneath it.
+player](https://observablehq.com/@freedmand/sounds) beneath it.
 
 ``` {ojs}
 //| echo: false
 //| label: iobinput
 //| class: freqcomponent
-// https://observablehq.com/@austinkeeton/sounds
+// https://observablehq.com/@freedmand/sounds
 viewof iobs = Inputs.range([34, 9999], { step: .1,  value: 380.2, label: "Iobs" })
 ```
 
@@ -2108,7 +2108,7 @@ viewof iobs = Inputs.range([34, 9999], { step: .1,  value: 380.2, label: "Iobs" 
 //| echo: false
 //| label: iobplayer
 //| class: freqcomponent
-// https://observablehq.com/@austinkeeton/sounds
+// https://observablehq.com/@freedmand/sounds
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
 ```
 
@@ -2172,23 +2172,6 @@ data-bs-title="nanozems">nz</span></th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a
-href="https://en.wikipedia.org/wiki/F♯_(musical_note)">F♯4</a></td>
-<td>319.68</td>
-<td>2.30</td>
-<td><span class="color890000">890000</span></td>
-<td>351.49</td>
-<td>1842.32</td>
-</tr>
-<tr>
-<td><a href="https://en.wikipedia.org/wiki/F_(musical_note)">G4</a></td>
-<td>338.68</td>
-<td>2.17</td>
-<td><span class="color0">ff0000</span></td>
-<td>372.39</td>
-<td>1738.92</td>
-</tr>
 <tr>
 <td><a
 href="https://en.wikipedia.org/wiki/G♯_(musical_note)">G♯4</a></td>
@@ -2274,59 +2257,19 @@ href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯5</a></td>
 //| echo: false
 //| label: iobpiano
 //| class: freqcomponent
-// https://observablehq.com/@austinkeeton/sounds
-{
-  const width = 960;
-  const keyHeight = 240;
-  const height = 320;
-  const whiteKeys = 13;
-  const blackKeys = [1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1];
-  const whiteOffsets = blackKeys.reduce((x, y) => x.concat([y + x[x.length - 1] + 1]), [0]);
-  const svg = html`<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"
-    xmlns="http://www.w3.org/2000/svg"></svg>`;
-  function wrap(elem, note) {
-    const freq = 440 * Math.pow(2, note / 12);
-    // Play a note when clicked.
-    const oscillator = ctx.createOscillator();
-    const gain = ctx.createGain();
-    gain.gain.value = 0;
-    oscillator.type = 'square';
-    oscillator.frequency.setValueAtTime(freq, ctx.currentTime);
-    oscillator.connect(gain);
-    gain.connect(ctx.destination);
-    oscillator.start();
-    elem.style.cursor = 'pointer';
-    elem.onclick = () => {
-      gain.gain.cancelScheduledValues(ctx.currentTime);
-      gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + 0.05);
-      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.3);
-    };
-    return elem;
-  }
-  // Draw the white keys.
-  for (let i = 0; i <= whiteKeys - 1; i++) {
-    svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill="white" stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 19));
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 24}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 3) % 7) + (i < 6 ? "3" : "4")}</text></svg>`);
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 48}" font-family="sans-serif" id="pianotext" font-size="24" text-anchor="middle">${Math.round(freqs[i])}</text></svg>`);
-  }
-  // Draw the black keys.
-  for (let i = 0; i <= whiteKeys - 2; i++) {
-    if (blackKeys[i] == 1) {
-      svg.appendChild(wrap(html`<svg><rect x="${width * ((i + 0.65) / whiteKeys)}" y="0" width="${width / whiteKeys * 0.7}" height="${keyHeight * 0.55}" fill="black" stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 19 + blackKeys[i]));
-    }
-  }
-  return svg;
-}
+piano(width)
 ```
 
-The table above compares eleven musical notes🎶and the colors🎨we obtain
+The table above compares nine musical notes🎶and the colors🎨we obtain
 by increasing the frequency of each note🎶by 2<sup>40</sup>, converting
 the frequencies into wavelengths, and translating the wavelengths into
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> triplets. If we add
-[F5](https://en.wikipedia.org/wiki/F_(musical_note)) and
-<span class="color1">magenta</span> to the bottom of the table, the
-result is reminiscent of the ten colors🎨Dec uses for time zones.
+data-bs-title="hexadecimal">hex</span> triplets. The result is
+reminiscent of the colors🎨Dec uses for time zones without .
+
+Inspired by the connection between musical notes🎶and color, the image
+beneath the table applies Dec color🎨labels🏷️to twelve piano keys
+according to the.
 
 Using the 2<sup>40</sup> method, we can label numbers with both
 colors🎨and sounds🔊: {<span class="color0">0</span>:
@@ -4399,7 +4342,70 @@ bmiStr = bmi < 2.96 ? "underweight" : bmi < 4 ? "normal" : bmi < 4.8 ? "overweig
         // Use the last four elements alone or together to access each of the individual r, g, and b channels.
         return colorSpace;
     }
-// https://observablehq.com/@austinkeeton/sounds
+// https://observablehq.com/@freedmand/sounds
+function piano(stlibWidth) {
+  const width = 960;
+  const keyHeight = 450;
+  const height = 575;
+  const whiteKeys = 7;
+  const blackKeys = [1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1];
+  const whiteOffsets = blackKeys.reduce((x, y) => x.concat([y + x[x.length - 1] + 1]), [0]);
+  const svg = html`<svg width="100%" height="auto" viewBox="0 0 ${width} ${height}"
+    xmlns="http://www.w3.org/2000/svg"></svg>`;
+  function wrap(elem, note) {
+    const freq = 440 * Math.pow(2, note / 12);
+    // Play a note when clicked.
+    const oscillator = ctx.createOscillator();
+    const gain = ctx.createGain();
+    gain.gain.value = 0;
+    oscillator.type = 'square';
+    oscillator.frequency.setValueAtTime(freq, ctx.currentTime);
+    oscillator.connect(gain);
+    gain.connect(ctx.destination);
+    oscillator.start();
+    elem.style.cursor = 'pointer';
+    elem.onclick = () => {
+      gain.gain.cancelScheduledValues(ctx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + 0.05);
+      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.3);
+    };
+    return elem;
+  }
+  // Draw the white keys.
+  for (let i = 0; i <= whiteKeys - 1; i++) {
+    svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill=${whiteKeyColors[i]} stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 4));
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 42}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 5) % 7) + (i < 4 ? "4" : "5")}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 82}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 122}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(73504.8 / 440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
+  }
+  // Draw the black keys.
+  for (let i = 0; i <= whiteKeys - 2; i++) {
+    if (blackKeys[i] == 1) {
+      svg.appendChild(wrap(html`<svg><rect x="${width * ((i + 0.65) / whiteKeys)}" y="0" width="${width / whiteKeys * 0.7}" height="${keyHeight * 0.55}" fill=${blackKeyColors[i]} stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 4 + blackKeys[i]));
+    }
+  }
+  return svg;
+}
+whiteKeyColors = [
+  "#fff",
+  "#fff",
+  "#fa0",
+  "#af0",
+  "#0f0",
+  "#0af",
+  "#a0f",
+  "#f0f",
+  "#f00",
+]
+blackKeyColors = [
+  "#000",
+  "#f00",
+  "#ff0",
+  "",
+  "#0ff",
+  "#00f",
+]
+// https://observablehq.com/@freedmand/sounds
 ctx = new (window.AudioContext || window.webkitAudioContext)()
 function Play(genFn, duration = 1) {
   return new SoundBuffer(genFn, duration).gui();
@@ -4465,7 +4471,6 @@ class SoundBuffer {
         color: #6f6f6f;
         font-size: 0.8em;
       }
-
       .sound-pane {
         height: 50px;
         background: white;
@@ -4473,20 +4478,16 @@ class SoundBuffer {
         border: solid 1px gainsboro;
         position: relative;
       }
-
       .icons {
         margin: 0 8px 8px 8px;
       }
-
       .icons .button {
          cursor: pointer;
          border: solid 1px transparent;
       }
-
       .icons .button:hover {
          border: solid 1px gainsboro;
       }
-
       .cursor {
         background: red;
         width: 2px;
@@ -4544,23 +4545,6 @@ class SoundBuffer {
     return ui;
   }
 }
-freqs = [
-  126.86112,
-  142.39584,
-  150.86304,
-  169.344,
-  190.08,
-  213.35616,
-  226.04832,
-  253.72224,
-  284.80032,
-  301.73472,
-  338.688,
-  380.16,
-  426.71232,
-  452.088,
-  507.45312,
-]
 ```
 
 ``` {ojs}
@@ -5191,13 +5175,9 @@ div#iobpiano > div > div > svg {
 #iobpiano {
   overflow: clip;
   max-width: 100%;
-  margin: -8px 0px -60px 0px;
 }
 img#zModu {
   width: 100%;
-}
-#iobtable {
-  margin-bottom: -10px;
 }
 #iobplayer canvas {
   overflow: clip;
