@@ -207,7 +207,7 @@ data-bs-toggle="tooltip" data-bs-title="omegars">v</span> or
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a omegar">milliomegars</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</span>), an airplane✈️could fly over the
+data-bs-title="milliomegars">mv</span>), we could travel🧳the
 <span class="color1">0.1</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="taurs">c</span> or
 <span class="color1">100</span> <span class="tool"
@@ -216,21 +216,26 @@ data-bs-title="thousandths of a taur">millitaurs</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millitaurs">mc</span>) between the default positions📍of
 Points <span class="point0">0</span> and <span class="point1">1</span>
-in <span class="color2">200</span> <span class="tool"
+in <span class="color2">0.2</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="days">d</span> or
+<span class="color2">200</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</span>) or <span class="color2">0.2</span>
+data-bs-title="millidays">md</span>). The time required to
+travel🧳between two points is the distance divided by the speed:
+${distance_mcHsl0} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaurs">mc</span> ÷ ${velocity_vHsl0}
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</span>. To get the time required to
-travel🧳between two points, we divide the distance by the speed:
+data-bs-title="omegars">v</span> = ${traveltimeHsl0} <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millidays">md</span> =
 ${distance_cHsl} <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</span> ÷ ${velocity_vHsl} <span class="tool"
+data-bs-title="taurs">c</span> ÷ ${velocity_vHsl1} <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="omegars">v</span> =
-${distance_mcHsl} <span class="tool" data-bs-toggle="tooltip"
+${distance_mcHsl1} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millitaurs">mc</span> ÷ ${velocity_mvHsl}
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</span> = ${traveltimeHsl}
+data-bs-title="milliomegars">mv</span> = ${traveltimeHsl1}
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</span>.
 
@@ -716,7 +721,7 @@ and
 directions. Together, the range🎚️inputs underneath the hue bar form a
 Hue Saturation Lightness (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Hue Saturation Lightness">HSL</span>) triplet. Like
-red🔴green🟢blue🔵([RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
+<span class="color0">Red</span>🔴<span class="color6">Green</span>🟢<span class="color3">Blue</span>🔵([RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
 or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
 (<span class="tool" data-bs-toggle="tooltip"
@@ -746,16 +751,18 @@ Color🎨can provide a general sense of
 angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle),
 regardless of the metric prefixes or
 [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore, we
-can reuse♻️colors🎨across many different contexts. In most contexts, red
-designates starting points, like North (<span class="color0">0</span>
-<span class="tool" data-bs-toggle="tooltip"
+can reuse♻️colors🎨across many different contexts. In most contexts,
+<span class="color0">red</span> designates starting points, like North
+(<span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="milliwindroses">$\text m\alpha$</span>) and [Longitude
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color0">0</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\text m\lambda$</span>), and cyan
-indicates midpoints, such as South (<span class="color5">500</span>
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliparallels">$\text m\lambda$</span>), and
+<span class="color5">cyan</span> indicates midpoints, such as South
+(<span class="color5">500</span> <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="milliwindroses">$\text m\alpha$</span>) and [Longitude
 5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color5">500</span> <span class="tool"
@@ -2275,22 +2282,29 @@ data-bs-title="forty octaves">2<sup>40</sup></span> scaling, provides a
 rationale for linking Dec color🎨labels with specific
 sound🔊frequencies.
 
-In the table, there is no color🎨similar to
-<span class="color1">magenta</span>, the Zone
-<span class="color1">1</span> color🎨, because
-<span class="color1">magenta</span> is
-[extra-spectral](https://en.wikipedia.org/wiki/Magenta#:~:text=no%20color%20of%20the%20visible%20spectrum%20has%20magenta%27s%20hue).
-Dec associates <span class="color1">magenta</span> with
-[G4](https://en.wikipedia.org/wiki/F_(musical_note)) so that
-color🎨coding looks balanced when viewed on a piano as in the image
-beneath the table above. Octaves 4 and 5 each contribute three [natural
-notes](https://en.wikipedia.org/wiki/Natural_(music)#:~:text=not%20modified%20by%20a%20flat%20or%20sharp)
-that are separated from each other on a piano by black keys.
+In the table, [extra-spectral
+colors](https://en.wikipedia.org/wiki/Magenta#:~:text=no%20color%20of%20the%20visible%20spectrum%20has%20magenta%27s%20hue)🎨like
+<span class="color1">magenta</span> are not included. To completes the
+color🎨wheel, Dec associates <span class="color1">magenta</span> with
+[F5](https://en.wikipedia.org/wiki/F_(musical_note)). Dec also bumps
+<span class="color0">red</span> up $5\over6$ octaves from G#4 to F#5 to
+make the order of the notes🎶more intuitive. In total, six
+[natural](https://en.wikipedia.org/wiki/Natural_(music))
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="natural">♮</span>) notes🎶and four
+[sharp](https://en.wikipedia.org/wiki/Sharp_(music)#:~:text=applied%20is%20played-,one%20semitone%20higher,-.%20The%20opposite%20of)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="sharp">\#</span>) notes🎶are associated with colors🎨.
+These ten notes🎶, <span class="color9">A4</span> to
+<span class="color0">F#5</span>, are labeled🏷️with the Dec time zone
+colors🎨in the image of the piano🎹keys beneath the table.
 
-[F](https://en.wikipedia.org/wiki/F_(musical_note)) and
-[F♯4](https://en.wikipedia.org/wiki/F♯_(musical_note)) musical notes🎶.
-Each of the ten Dec colors🎨is associated with a sound frequency, except
-for . To associate colors🎨with sounds🔊, Dec uses
+The actual order of the colors and notes in Dec is from shortest to
+longest wavelength so that the highest energy colors and sounds are
+associated with earlier <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="times-of-day">tods</span>.
+
+To associate colors🎨with sounds🔊, Dec uses
 [interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
 instead of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="forty octaves">2<sup>40</sup></span> scaling. labels with
@@ -3857,14 +3871,17 @@ Place_A = coordinates[0]
 Place_B = coordinates[1]
 distance_km = (d3.geoDistance(Place_A, Place_B)* 6371).toFixed(0)
 distance_mc = distance_km / 40
-distance_mcHsl = textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
+distance_mcHsl0 = textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
+distance_mcHsl1 = textcolor(parseFloat(distance_mc.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(distance_mc % 1000 / 1000)).h}` + slStr)
 distance_c = distance_mc / 1000
 distance_cHsl = textcolor(parseFloat(distance_c.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(distance_c % 1)).h}` + slStr)
 velocity_v = travelspeed / 1000
-velocity_vHsl = textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
+velocity_vHsl0 = textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
+velocity_vHsl1 = textcolor(parseFloat(velocity_v.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(velocity_v)).h}` + slStr)
 velocity_mvHsl = textcolor(parseFloat(travelspeed.toFixed(0)), `hsl(${d3.hsl(piecewiseColor(travelspeed / 1000)).h}` + slStr)
 traveltime = Math.round(distance_mc) / Math.round(travelspeed)
-traveltimeHsl = Number.isFinite(traveltime) ? textcolor(parseFloat(traveltime.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(traveltime % 1)).h}` + slStr) : traveltime
+traveltimeHsl0 = Number.isFinite(traveltime) ? textcolor(parseFloat(Math.round(traveltime * 1000).toFixed(3)), `hsl(${d3.hsl(piecewiseColor(traveltime % 1)).h}` + slStr) : traveltime
+traveltimeHsl1 = Number.isFinite(traveltime) ? textcolor(parseFloat(traveltime.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(traveltime % 1)).h}` + slStr) : traveltime
 nb_points = Math.round(distance_km/150)
 d3format = require("d3-format@1")
 function input(config) {
@@ -4402,8 +4419,8 @@ function piano(stlibWidth) {
   const width = 960;
   const keyHeight = 450;
   const height = 575;
-  const whiteKeys = 7;
-  const blackKeys = [1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1];
+  const whiteKeys = 11;
+  const blackKeys = [1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1];
   const whiteOffsets = blackKeys.reduce((x, y) => x.concat([y + x[x.length - 1] + 1]), [0]);
   const svg = html`<svg width="100%" height="auto" viewBox="0 0 ${width} ${height}"
     xmlns="http://www.w3.org/2000/svg"></svg>`;
@@ -4443,22 +4460,28 @@ function piano(stlibWidth) {
 }
 whiteKeyColors = [
   "#fff",
-  "#f0f",
+  "#fff",
   "#fa0",
   "#af0",
   "#0f0",
   "#0af",
   "#a0f",
   "#f0f",
-  "#f00",
+  "#fff",
+  "#fff",
+  "#fff",
 ]
 blackKeyColors = [
   "#000",
-  "#f00",
+  "#000",
   "#ff0",
   "",
   "#0ff",
   "#00f",
+  "",
+  "#f00",
+  "#000",
+  "#000",
 ]
 // https://observablehq.com/@freedmand/sounds
 ctx = new (window.AudioContext || window.webkitAudioContext)()
