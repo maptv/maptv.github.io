@@ -1483,7 +1483,7 @@ function piano(stlibWidth) {
 }
 whiteKeyColors = [
   "#fff",
-  "#fff",
+  "#f0f",
   "#fa0",
   "#af0",
   "#0f0",
