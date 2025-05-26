@@ -1474,7 +1474,7 @@ function piano(stlibWidth) {
     svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill=${whiteKeyColors[i]} stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 4));
     svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 42}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 5) % 7) + (i < 4 ? "4" : "5")}</text></svg>`);
     svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 82}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 122}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(73504.8 / 440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 122}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(73504.8 / (440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864))}</text></svg>`);
   }
   // Draw the black keys.
   for (let i = 0; i <= whiteKeys - 2; i++) {
@@ -1604,9 +1604,9 @@ class SoundBuffer {
         <span class="cursor" style="display: none;"></span>
 	  </div>
       <div class="icons">
-        <span class="button play-button">▶</span>
-        <span class="button stop-button">◼</span>&nbsp;&nbsp;
-        <span class="duration">${this.duration /.864} b</span>
+        <span class="button play-button" style="font-size:18px;">▶</span>
+        <span class="button stop-button" style="font-size:18px;">◼</span>&nbsp;&nbsp;
+        <span class="duration">${Math.round(this.duration / .864)} b</span>
       </div>
     </div>`;
     const cursor = ui.querySelector('.cursor');
@@ -2158,14 +2158,14 @@ div.coloropp canvas {
   height: 240px !important;
   overflow: visible;
 }
-div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label, div#wavinput label, div#iobinput label  {
+div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label, div#wavinput label, div#iobinput label, div#beatinput label {
   --label-width: 80px;
   max-width: 80px;
 }
-div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"], #wavinput input[type="number"], #iobinput input[type="number"]  {
+div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"], #wavinput input[type="number"], #iobinput input[type="number"], div#beatinput input[type="number"] {
   max-width: 80px;
 }
-div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] {
+div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] , #beatinput input[type="range"] {
   max-width: 225px;
   min-width: 125px;
 }
