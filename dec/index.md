@@ -712,8 +712,8 @@ to <span class="point1">1</span> on the map🗺️.
 
 ## Red green blue (rgb)
 
-The table beneath the hue bar input compares the current course from
-Point <span class="point0">0</span> to <span class="point1">1</span> in
+The table beneath the hue bar compares the current Point
+<span class="point0">0</span> to <span class="point1">1</span> course in
 its top row with the
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
 and
@@ -753,7 +753,7 @@ Color🎨can provide a general sense of
 angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle),
 regardless of the metric prefixes or
 [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore, we
-can reuse♻️colors🎨across many different contexts. In most contexts,
+can reuse♻️colors🎨across many different contexts. Most often,
 <span class="color0">red</span> designates starting points, like North
 (<span class="color0">0</span> <span class="tool"
 data-bs-toggle="tooltip"
@@ -780,18 +780,14 @@ midway between the South (<span class="color750">-250</span>
 data-bs-title="millimeridians">$\text m\phi$</span>) and North
 (<span class="color250">250</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>) Pole. The other
-major latitudes depend on the [axial
-tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
-of the Earth🌏(<span class="color065">65</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="milliturns">mt</span>): the
-Tropics of
+data-bs-title="millimeridians">$\text m\phi$</span>) Poles. Unlike the
+Equator, the Tropics of
 [Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(<span class="color065">65</span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span>) and
 [Capricorn](https://en.wikipedia.org/wiki/Tropic_of_Capricorn#:~:text=the%20southernmost%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♑️(<span class="color935">-65</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>), and the
+data-bs-title="millimeridians">$\text m\phi$</span>) and the
 [Arctic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
 (<span class="color250">250</span> <span class="tool"
 data-bs-toggle="tooltip"
@@ -811,7 +807,11 @@ data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span> =
 <span class="color815">-185</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>) Circles.
+data-bs-title="millimeridians">$\text m\phi$</span>) Circles are defined
+by the [axial
+tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
+of the Earth🌏(<span class="color065">65</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliturns">mt</span>).
 
 # Dec time zones
 
@@ -2075,47 +2075,35 @@ times more frequent than a
 
 ## Frequency period wavelength
 
-The “<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="billionths of a zem">Iobs</span>” range🎚️input below
-selects a frequency in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse of b">iob</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iob">i</span>). The inverse of a
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of iobs">kiloiob</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="kiloiob">ki</span>)
-[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
-is its <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a beat">millibeat</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millibeat">mb</span>)
-[period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency):
+We can divide one by the
+sound🔊[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
+selected by the “<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a zem">Iobs</span>” range🎚️input below to
+get its
+[period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency),
 1 ÷ ${parseFloat((iobs / 1000).toFixed(3))} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="kiloiobs">ki</span> =
-${parseFloat((1000 / iobs).toFixed(3))} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millibeats">mb</span>. The
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a zem">millizem</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millizem">mz</span>)
-[wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats)
-of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse of b">iob</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iob">i</span>) sound🔊frequency
-in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iob">i</span> is the dividend of the <span class="tool"
 data-bs-toggle="tooltip"
+data-bs-title="thousands of iobs">kiloiobs</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="kiloiobs">ki</span>) =
+${parseFloat((1000 / iobs).toFixed(3))} <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a beat">millibeats</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millibeats">mb</span>), or divide the speed of sound🔊by
+it to get its
+[wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats):
+735048 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millionths of a omegar">microomegars</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">$\micro\text v$</span>) speed of sound🔊and
-that frequency: 735048 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">$\micro\text v$</span> ÷ ${iobs}
-<span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
-= ${parseFloat((735048 / iobs).toFixed(2))} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millizems">mz</span>. Press the
-Play▶️button below to hear a sound🔊with a
-[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
-of ${iobs} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegars">$\micro\text v$</span>) ÷ ${iobs}
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="inverse of b">iob</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iob">i</span>) for a duration of
+data-bs-toggle="tooltip" data-bs-title="iob">i</span>) =
+${parseFloat((735048 / iobs).toFixed(2))} <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a zem">millizem</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millizem">mz</span>). Press the
+Play▶️button below to hear the chosen frequency for a duration of
 ${beats} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</span>.
 
@@ -2143,11 +2131,139 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Beats" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864)
 ```
 
-Any Dec value that can be labelled🏷️with a color🎨can also have a
-sound🔊label🏷️. The major color🎨and sound🔊labels🏷️are listed in the
-table below. points Dec also labels some values with musical notes🎶.
-The table below shows the colors by increasing the frequency by a
-certain number of
+In addition to colors🎨, Dec can also label🏷️values with sounds🔊. Dec
+color🎨and sound🔊labels🏷️can quickly impart a rough idea of the
+[magnitude](https://en.wikipedia.org/wiki/Magnitude_(mathematics)#:~:text=a%20property%20which%20determines%20whether%20the%20object%20is%20larger%20or%20smaller%20than%20other%20objects%20of%20the%20same%20kind)
+of labelled🏷️values. Dec labels🏷️groups of ten, such as Dec time zones,
+major longitudes, <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-dek">dods</span>, “[top of the <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</span>](https://en.wiktionary.org/wiki/top_of_the_hour)”
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="times-of-day">tods</span>, and
+[deciles](https://en.wikipedia.org/wiki/Decile#:~:text=any%20of%20the%20nine%20values%20that%20divide%20the%20sorted%20data%20into%20ten%20equal%20parts),
+with the ten colors🎨and musical notes🎶in the table below.
+
+multiples of [powers of
+ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=the%20integer%20powers%20of%20the%20number%20ten)
+and labels🏷️in the table below.labels🏷️work best for that wrap to zero
+after reaching a maximum.
+
+or saturate. such as
+
+with a single
+[nonzero](https://en.wiktionary.org/wiki/nonzero#:~:text=Not%20equal%20to%20zero)
+digit
+
+Dec uses
+[interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
+to find the corresponding color🎨and
+[microtone](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone)
+of any continuous values with multiple nonzero digits.
+
+<div id="dectable">
+
+<table>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 7%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>+</strong></th>
+<th><strong>–</strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span></strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="HSL or HSV degrees">h°</span></strong></th>
+<th><strong>Note</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>-10</td>
+<td><span class="color0">ff0</span></td>
+<td><span class="color0">0</span></td>
+<td><a
+href="https://en.wikipedia.org/wiki/F♯_(musical_note)">F♯</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>-9</td>
+<td><span class="color1">f0f</span></td>
+<td><span class="color1">300</span></td>
+<td><a href="https://en.wikipedia.org/wiki/F_(musical_note)">F</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>-8</td>
+<td><span class="color2">a0f</span></td>
+<td><span class="color2">270</span></td>
+<td><a href="https://en.wikipedia.org/wiki/E_(musical_note)">E</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>-7</td>
+<td><span class="color3">00f</span></td>
+<td><span class="color3">240</span></td>
+<td><a
+href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>-6</td>
+<td><span class="color4">0af</span></td>
+<td><span class="color4">210</span></td>
+<td><a href="https://en.wikipedia.org/wiki/D_(musical_note)">D</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>-5</td>
+<td><span class="color5">0ff</span></td>
+<td><span class="color5">180</span></td>
+<td><a
+href="https://en.wikipedia.org/wiki/C♯_(musical_note)">C♯</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>-4</td>
+<td><span class="color6">0f0</span></td>
+<td><span class="color6">120</span></td>
+<td><a href="https://en.wikipedia.org/wiki/C_(musical_note)">C</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>-3</td>
+<td><span class="color7">af0</span></td>
+<td><span class="color7">75</span></td>
+<td><a href="https://en.wikipedia.org/wiki/B_(musical_note)">B</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>-2</td>
+<td><span class="color8">ff0</span></td>
+<td><span class="color8">60</span></td>
+<td><a
+href="https://en.wikipedia.org/wiki/A♯_(musical_note)">A♯</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>-1</td>
+<td><span class="color9">fa0</span></td>
+<td><span class="color9">30</span></td>
+<td><a href="https://en.wikipedia.org/wiki/A_(musical_note)">A</a></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+points Dec also labels some values with musical notes🎶. The table below
+shows the colors by increasing the frequency by a certain number of
 [octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
 and iden (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="forty octaves">2<sup>40</sup></span>), we get 380.16
@@ -2197,16 +2313,16 @@ viewof wavelength = Inputs.range([950, 1950], {label: "Nanozems", value: 1549.2,
 </colgroup>
 <thead>
 <tr>
-<th>Note</th>
-<th><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iobs">i</span></th>
-<th><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></th>
-<th>Color</th>
-<th><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiobs">Ti</span></th>
-<th><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="nanozems">nz</span></th>
+<th><strong>Note</strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iobs">i</span></strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></strong></th>
+<th><strong>Color</strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiobs">Ti</span></strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="nanozems">nz</span></strong></th>
 </tr>
 </thead>
 <tbody>
@@ -2476,11 +2592,11 @@ data-bs-title="International System of Units">SI</span> unit.
 </colgroup>
 <thead>
 <tr>
-<th><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="US customary units">US</span></th>
-<th>Dec</th>
-<th><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</span></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="US customary units">US</span></strong></th>
+<th><strong>Dec</strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span></strong></th>
 </tr>
 </thead>
 <tbody>
