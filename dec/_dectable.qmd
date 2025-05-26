@@ -1,0 +1,14 @@
+:::{#dectable}
+| **+** |  **--** | **[hex]{.tool data-bs-toggle="tooltip" data-bs-title="hexadecimal"}** | **[h°]{.tool data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees"}** | **Note**  |
+| ----- | ------- | -------------- | -------------- | ----------------------------------------------------- |
+| 0     | -10     | [ff0]{.color0} | [0]{.color0}   | [F♯](https://en.wikipedia.org/wiki/F♯_(musical_note)) |
+| 1     | -9      | [f0f]{.color1} | [300]{.color1} | [F](https://en.wikipedia.org/wiki/F_(musical_note))   |
+| 2     | -8      | [a0f]{.color2} | [270]{.color2} | [E](https://en.wikipedia.org/wiki/E_(musical_note))   |
+| 3     | -7      | [00f]{.color3} | [240]{.color3} | [D♯](https://en.wikipedia.org/wiki/D♯_(musical_note)) |
+| 4     | -6      | [0af]{.color4} | [210]{.color4} | [D](https://en.wikipedia.org/wiki/D_(musical_note))   |
+| 5     | -5      | [0ff]{.color5} | [180]{.color5} | [C♯](https://en.wikipedia.org/wiki/C♯_(musical_note)) |
+| 6     | -4      | [0f0]{.color6} | [120]{.color6} | [C](https://en.wikipedia.org/wiki/C_(musical_note))   |
+| 7     | -3      | [af0]{.color7} | [75]{.color7}  | [B](https://en.wikipedia.org/wiki/B_(musical_note))   |
+| 8     | -2      | [ff0]{.color8} | [60]{.color8}  | [A♯](https://en.wikipedia.org/wiki/A♯_(musical_note)) |
+| 9     | -1      | [fa0]{.color9} | [30]{.color9}  | [A](https://en.wikipedia.org/wiki/A_(musical_note))   |
+:::

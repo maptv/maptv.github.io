@@ -7,7 +7,7 @@ viewof wavelength = Inputs.range([950, 1950], {label: "Nanozems", value: 1549.2,
 ```
 
 :::{#iobtable}
-| Note  | [i]{.tool data-bs-toggle="tooltip" data-bs-title="iobs"}  | [z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}    | Color                  | [Ti]{.tool data-bs-toggle="tooltip" data-bs-title="teraiobs"}     | [nz]{.tool data-bs-toggle="tooltip" data-bs-title="nanozems"}      |
+| **Note**  | **[i]{.tool data-bs-toggle="tooltip" data-bs-title="iobs"}**  | **[z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}**    | **Color**                  | **[Ti]{.tool data-bs-toggle="tooltip" data-bs-title="teraiobs"}**     | **[nz]{.tool data-bs-toggle="tooltip" data-bs-title="nanozems"}**      |
 | ------------------------------------------------------ | ------ | ---- | ---------------------- | ------ | ------- |
 | [G♯4](https://en.wikipedia.org/wiki/G♯_(musical_note)) | 358.82 | 2.05 | [ff0000]{.color0}      | 394.53 | 1641.32 |
 | [A4](https://en.wikipedia.org/wiki/A_(musical_note))   | 380.16 | 1.93 | [ff6300]{.colorff6300} | 417.99 | 1549.20 |
