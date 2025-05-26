@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+084
+2025+086
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -721,7 +721,9 @@ and
 directions. Together, the range🎚️inputs underneath the hue bar form a
 Hue Saturation Lightness (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Hue Saturation Lightness">HSL</span>) triplet. Like
-<span class="color0">Red</span>🔴<span class="color6">Green</span>🟢<span class="color3">Blue</span>🔵([RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
+<span class="color0">Red</span> <span class="color6">Green</span>
+<span class="color3">Blue</span>
+([RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
 or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
 (<span class="tool" data-bs-toggle="tooltip"
@@ -1022,7 +1024,7 @@ years](https://en.wikipedia.org/wiki/Leap_year#:~:text=a%20calendar%20year%20tha
 # Zone equatorial meter (zem)
 
 <div id="zemmodulor" class="column-page-right lighthouse"
-fig-align="center" style="text-align:center;">
+fig-align="center" style="text-align:center;font-size:.825rem;">
 
 <img src="../asset/Modulor_measurements.svg" id="zModu" />
 [Wikimedia](https://commons.m.wikimedia.org/wiki/File:Modulor_measurements.svg#mw-jump-to-license)
@@ -1994,7 +1996,9 @@ data-bs-toggle="tooltip" data-bs-title="zems">z</span>: ${zLeft}.
 
 Dec refers to <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span> as
-beats (<span class="tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hundred thousandths of a day">beats</span>
+(<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</span>) because they are similar in duration to
 heart❤️beats or musical beats. A <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day">d</span> is 100
@@ -2062,7 +2066,7 @@ A Dec clock⏰ticks at a rate of 100 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="beats per milliday">BPM</span>,
 $\text b^{-1}$, $1\over\text b$, or 1
 [inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number)-of-<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="beats">b</span>
+data-bs-toggle="tooltip" data-bs-title="beat">b</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="inverse-of-b">iob</span>), which is
 <span class="colorIob">1.15<span style="text-decoration-line:overline;">740</span></span>
@@ -2071,44 +2075,64 @@ times more frequent than a
 
 ## Frequency period wavelength
 
-The
-[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
-in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse of b">iobs</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iobs">i</span>) of the [musical
-note](https://en.wikipedia.org/wiki/Musical_note#:~:text=distinct%20and%20isolatable%20sounds%20that%20act%20as%20the%20most%20basic%20building%20blocks%20for%20nearly%20all%20of%20music)🎶of
-[A](https://en.wikipedia.org/wiki/A_(musical_note)) above [middle
-C](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard)
-([A4](https://en.wikipedia.org/wiki/A440_(pitch_standard)#:~:text=the%20musical%20note%20of%20A%20above%20middle%20C%2C%20or%20A4))
-is 440 Hertz × .864 seconds per <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="beat">b</span> = 380.16
+The “<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a zem">Iobs</span>” range🎚️input below
+selects a frequency in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse of b">iob</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iob">i</span>). The inverse of a
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iob">i</span>. This frequency is associated with a
-[period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency)
-of 1 ÷ 380.16 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iob">i</span> = ~2.63 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a beat">millibeats</span>
+data-bs-title="thousands of iobs">kiloiob</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="kiloiob">ki</span>)
+[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
+is its <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a beat">millibeat</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millibeats">mb</span>) and a
+data-bs-title="millibeat">mb</span>)
+[period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency):
+1 ÷ ${parseFloat((iobs / 1000).toFixed(3))} <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="kiloiobs">ki</span> =
+${parseFloat((1000 / iobs).toFixed(3))} <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millibeats">mb</span>. The
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a zem">millizem</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millizem">mz</span>)
 [wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats)
 of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="speed of sound in mv">735.048</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> ÷ 380.16
-<span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
-= ~1.93 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</span>. The “<span class="tool"
+data-bs-title="inverse of b">iob</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iob">i</span>) sound🔊frequency
+in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iob">i</span> is the dividend of the <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="billionths of a zem">Iobs</span>” range🎚️input below
-determines the sound🔊played by the [audio
-player](https://observablehq.com/@freedmand/sounds) beneath it.
+data-bs-title="millionths of a omegar">microomegars</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegars">$\micro\text v$</span>) speed of sound🔊and
+that frequency: 735048 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegars">$\micro\text v$</span> ÷ ${iobs}
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
+= ${parseFloat((735048 / iobs).toFixed(2))} <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millizems">mz</span>. Press the
+Play▶️button below to hear a sound🔊with a
+[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
+of ${iobs} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse of b">iob</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iob">i</span>) for a duration of
+${beats} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</span>.
 
 ``` {ojs}
 //| echo: false
 //| label: iobinput
 //| class: freqcomponent
 // https://observablehq.com/@freedmand/sounds
-viewof iobs = Inputs.range([34, 9999], { step: .1,  value: 380.2, label: "Iobs" })
+viewof iobs = Inputs.range([1, 9999], { step: 1,  value: 380, label: "Iobs" })
+```
+
+``` {ojs}
+//| echo: false
+//| label: beatinput
+//| class: freqcomponent
+// https://observablehq.com/@freedmand/sounds
+viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Beats" })
 ```
 
 ``` {ojs}
@@ -2116,12 +2140,16 @@ viewof iobs = Inputs.range([34, 9999], { step: .1,  value: 380.2, label: "Iobs" 
 //| label: iobplayer
 //| class: freqcomponent
 // https://observablehq.com/@freedmand/sounds
-Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), .864)
+Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864)
 ```
 
-If we increase the A4 note🎶frequency by 40
+Any Dec value that can be labelled🏷️with a color🎨can also have a
+sound🔊label🏷️. The major color🎨and sound🔊labels🏷️are listed in the
+table below. points Dec also labels some values with musical notes🎶.
+The table below shows the colors by increasing the frequency by a
+certain number of
 [octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-(<span class="tool" data-bs-toggle="tooltip"
+and iden (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="forty octaves">2<sup>40</sup></span>), we get 380.16
 <span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
 × <span class="tool" data-bs-toggle="tooltip"
@@ -2131,8 +2159,8 @@ data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>). On the
 [visible
 spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye),
-418 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiobs">Ti</span> corresponds to the <span class="tool"
+417.99 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiobs">Ti</span> correspond to the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="hexadecimal">hex</span> triplet
 <span class="colorff6300">ff6300</span> and a wavelength of
 <span class="tool" data-bs-toggle="tooltip"
@@ -2143,9 +2171,9 @@ data-bs-title="teraiob">Ti</span> = ~1549.20 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="billionths of a zem">nanozems</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). The
-frequency selected by the “<span class="tool" data-bs-toggle="tooltip"
+wavelength selected by the “<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="billionths of a zem">Nanozems</span>” range🎚️input below
-is associated with the <span class="tool" data-bs-toggle="tooltip"
+yields the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</span> triplet ${wavehexHsl}.
 
 ``` {ojs}
@@ -2270,38 +2298,98 @@ href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯5</a></td>
 piano(width)
 ```
 
-The table above compares nine musical notes🎶and the colors🎨we obtain
-by increasing the frequency of each note🎶by <span class="tool"
+The table above compares nine musical notes🎶and the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hexadecimal">hex</span> triplets
+we obtain from increasing each note the wavelengths that result from
+dividing the speed of light by the product of the frequency of each
+note🎶by <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="forty octaves">2<sup>40</sup></span>: <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="forty octaves">2<sup>40</sup></span>, converting the
-frequencies into wavelengths, and translating the wavelengths into
+data-bs-title="speed of light in v">647551.71</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ frequency
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> triplets. This transformation,
-which Dec refers to as <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="forty octaves">2<sup>40</sup></span> scaling, provides a
-rationale for linking Dec color🎨labels with specific
-sound🔊frequencies.
+data-bs-title="teraiob">Ti</span>. This process provides a rationale for
+linking Dec color🎨labels with specific sound🔊frequencies.
 
-In the table, [extra-spectral
-colors](https://en.wikipedia.org/wiki/Magenta#:~:text=no%20color%20of%20the%20visible%20spectrum%20has%20magenta%27s%20hue)🎨like
-<span class="color1">magenta</span> are not included. To completes the
-color🎨wheel, Dec associates <span class="color1">magenta</span> with
-[F5](https://en.wikipedia.org/wiki/F_(musical_note)). Dec also bumps
-<span class="color0">red</span> up $5\over6$ octaves from G#4 to F#5 to
-make the order of the notes🎶more intuitive. In total, six
-[natural](https://en.wikipedia.org/wiki/Natural_(music))
+If we increase the A4 note🎶frequency by 40
+[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="forty octaves">2<sup>40</sup></span>), we get 380.16
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
+× <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="forty octaves">2<sup>40</sup></span> = ~417.99
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>). On the
+[visible
+spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye),
+417.99 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiobs">Ti</span> correspond to the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hexadecimal">hex</span> triplet
+<span class="colorff6300">ff6300</span> and a wavelength of
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="speed of light in v">647551.71</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ 417.99
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiob">Ti</span> = ~1549.20 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="billionths of a zem">nanozems</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). The
+wavelength selected by the “<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a zem">Nanozems</span>” range🎚️input below
+yields the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span> triplet ${wavehexHsl}.
+
+The process described above does not work well for
+[F](https://en.wikipedia.org/wiki/F_(musical_note)) notes🎶, because the
+result with light (F4×2<sup>40</sup>) is
+[infrared](https://en.wikipedia.org/wiki/Infrared#:~:text=%20electromagnetic%20radiation%20(EMR)%20with%20wavelengths%20longer%20than%20that%20of%20visible%20light%20but%20shorter%20than%20microwaves)
+and F5-associated light is
+[ultraviolet](https://en.wikipedia.org/wiki/Ultraviolet#:~:text=shorter%20than%20that%20of%20visible%20light%2C%20but%20longer%20than%20X%2Drays),
+depending on how we define the limits of the visible spectrum.
+[infrared](https://en.wikipedia.org/wiki/Infrared#:~:text=%20electromagnetic%20radiation%20(EMR)%20with%20wavelengths%20longer%20than%20that%20of%20visible%20light%20but%20shorter%20than%20microwaves)
+light and and F5 When the
+[F4](https://en.wikipedia.org/wiki/F_(musical_note)) musical note🎶is
+subjected to the process described above, we obtain a frequency of 332
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiobs">Ti</span> and a wavelength of 1952, which is
+just beyond the [limits of visible
+spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=A%20typical%20human%20eye%20will%20respond%20to%20wavelengths%20from%20about%20380%20to%20about%20750%20nanometers.%5B3%5D%20In%20terms%20of%20frequency%2C%20this%20corresponds%20to%20a%20band%20in%20the%20vicinity%20of%20400–790%C2%A0terahertz.)
+(345.6 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiobs">Ti</span> to 682.56 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span> or 950
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="nanozems">nz</span> to 1875 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). While the
+light that corresponds to
+[F4](https://en.wikipedia.org/wiki/F_(musical_note)) is infrared,
+[F5](https://en.wikipedia.org/wiki/F_(musical_note)) note falls outside
+of the To bridge the gap and complete the color🎨wheel, Dec associates
+[F](https://en.wikipedia.org/wiki/F_(musical_note)) with
+<span class="color1">magenta</span>, even though it [cannot be produced
+by a single wavelength of
+light](https://en.wikipedia.org/wiki/Magenta#:~:text=no%20color%20of%20the%20visible%20spectrum%20has%20magenta%27s%20hue).
+
+Dec also bumps <span class="color0">red</span> up $5\over6$ octaves from
+G#4 to F#5. Ten piano🎹keys, <span class="color9">A4</span> to
+<span class="color0">F#5</span>, in the image beneath the table above
+are labeled🏷️with the ten Dec time zone colors🎨.
+
+The table below shows the ten Dec colors🎨and notes🎶arranged by
+wavelength, from shortest to longest. When so that the highest energy
+colors and sounds are associated with earlier <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="times-of-day">tods</span>. In
+total, six [natural](https://en.wikipedia.org/wiki/Natural_(music))
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="natural">♮</span>) notes🎶and four
 [sharp](https://en.wikipedia.org/wiki/Sharp_(music)#:~:text=applied%20is%20played-,one%20semitone%20higher,-.%20The%20opposite%20of)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="sharp">\#</span>) notes🎶are associated with colors🎨.
-These ten notes🎶, <span class="color9">A4</span> to
-<span class="color0">F#5</span>, are labeled🏷️with the Dec time zone
-colors🎨in the image of the piano🎹keys beneath the table.
+Colors and notes are ,
 
-The actual order of the colors and notes in Dec is from shortest to
-longest wavelength so that the highest energy colors and sounds are
-associated with earlier <span class="tool" data-bs-toggle="tooltip"
+Colors🎨and notes🎶in Dec are ordered from shortest to longest
+wavelength so that the highest energy waves are associated with earlier
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="times-of-day">tods</span>.
 
 To associate colors🎨with sounds🔊, Dec uses
@@ -2515,15 +2603,19 @@ href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
 
 ## Miles per hour (mph)
 
-Instead of metric prefixes based on [powers of
-ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten),
-redefined units rely on fractions based on powers of two ([dyadic
-rationals](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two))
-to scale up or down as needed. Redefined units serve as convenient
-reference points and can easily be converted to Dec or
+Unlike Dec and <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span>, the
 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="US customary units">US</span> customary measurement
+system does not use metric prefixes to scale units up and down by
+[powers of
+ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten).
+Redefined <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="US customary units">US</span> customary units serve as
+convenient reference points and provide names for certain fractions of
+Dec and <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span> units. Miles are
-redefined such that a mile per hour is equal to one <span class="tool"
+redefined such that 1 mile per hour is equal to 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> or
 $5\over3$ kilometers per hour (<span class="tool"
 data-bs-toggle="tooltip"
@@ -4448,7 +4540,7 @@ function piano(stlibWidth) {
     svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill=${whiteKeyColors[i]} stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 4));
     svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 42}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 5) % 7) + (i < 4 ? "4" : "5")}</text></svg>`);
     svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 82}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 122}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(73504.8 / 440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 122}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(73504.8 / (440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864))}</text></svg>`);
   }
   // Draw the black keys.
   for (let i = 0; i <= whiteKeys - 2; i++) {
@@ -4578,9 +4670,9 @@ class SoundBuffer {
         <span class="cursor" style="display: none;"></span>
       </div>
       <div class="icons">
-        <span class="button play-button">▶</span>
-        <span class="button stop-button">◼</span>&nbsp;&nbsp;
-        <span class="duration">${this.duration /.864} b</span>
+        <span class="button play-button" style="font-size:18px;">▶</span>
+        <span class="button stop-button" style="font-size:18px;">◼</span>&nbsp;&nbsp;
+        <span class="duration">${Math.round(this.duration / .864)} b</span>
       </div>
     </div>`;
     const cursor = ui.querySelector('.cursor');
@@ -5131,14 +5223,14 @@ div.coloropp canvas {
   height: 240px !important;
   overflow: visible;
 }
-div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label, div#wavinput label, div#iobinput label  {
+div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label, div#wavinput label, div#iobinput label, div#beatinput label {
   --label-width: 80px;
   max-width: 80px;
 }
-div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"], #wavinput input[type="number"], #iobinput input[type="number"]  {
+div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"], #wavinput input[type="number"], #iobinput input[type="number"], div#beatinput input[type="number"] {
   max-width: 80px;
 }
-div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] {
+div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] , #beatinput input[type="range"] {
   max-width: 225px;
   min-width: 125px;
 }
