@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+086
+2025+087
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -749,7 +749,7 @@ full-fledged color🎨instead of just a hue.
 
 </div>
 
-Color🎨can provide a general sense of
+Color🎨can provide a general idea of
 angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle),
 regardless of the metric prefixes or
 [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore, we
@@ -2132,17 +2132,187 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864)
 ```
 
 In addition to colors🎨, Dec can also label🏷️values with sounds🔊. Dec
-color🎨and sound🔊labels🏷️can quickly impart a rough idea of the
+color🎨and sound🔊labels🏷️can identify discrete values and give a sense
+of the
 [magnitude](https://en.wikipedia.org/wiki/Magnitude_(mathematics)#:~:text=a%20property%20which%20determines%20whether%20the%20object%20is%20larger%20or%20smaller%20than%20other%20objects%20of%20the%20same%20kind)
-of labelled🏷️values. Dec labels🏷️groups of ten, such as Dec time zones,
-major longitudes, <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-dek">dods</span>, “[top of the <span class="tool"
-data-bs-toggle="tooltip"
+of continuous values. Dec uses the colors🎨and musical notes🎶in the
+table below to label🏷️groups of ten, such as <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-dek">dods</span>, “[top
+of the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</span>](https://en.wiktionary.org/wiki/top_of_the_hour)”
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">tods</span>, and
+data-bs-title="times-of-day">tods</span>,
 [deciles](https://en.wikipedia.org/wiki/Decile#:~:text=any%20of%20the%20nine%20values%20that%20divide%20the%20sorted%20data%20into%20ten%20equal%20parts),
-with the ten colors🎨and musical notes🎶in the table below.
+time zones, and major longitudes.
+
+<div id="dectable">
+
+<table style="width:100%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>+</strong></th>
+<th><strong>–</strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span></strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="HSL or HSV degrees">h°</span></strong></th>
+<th><strong>Note</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="color0">0</span></td>
+<td><span class="color0">-10</span></td>
+<td><span class="color0">ff0</span></td>
+<td><span class="color0">0</span></td>
+<td><span class="color0">F♯</span></td>
+</tr>
+<tr>
+<td><span class="color1">1</span></td>
+<td><span class="color1">-9</span></td>
+<td><span class="color1">f0f</span></td>
+<td><span class="color1">300</span></td>
+<td><span class="color1">F</span></td>
+</tr>
+<tr>
+<td><span class="color2">2</span></td>
+<td><span class="color2">-8</span></td>
+<td><span class="color2">a0f</span></td>
+<td><span class="color2">270</span></td>
+<td><span class="color2">E</span></td>
+</tr>
+<tr>
+<td><span class="color3">3</span></td>
+<td><span class="color3">-7</span></td>
+<td><span class="color3">00f</span></td>
+<td><span class="color3">240</span></td>
+<td><span class="color3">D♯</span></td>
+</tr>
+<tr>
+<td><span class="color4">4</span></td>
+<td><span class="color4">-6</span></td>
+<td><span class="color4">0af</span></td>
+<td><span class="color4">210</span></td>
+<td><span class="color4">D</span></td>
+</tr>
+<tr>
+<td><span class="color5">5</span></td>
+<td><span class="color5">-5</span></td>
+<td><span class="color5">0ff</span></td>
+<td><span class="color5">180</span></td>
+<td><span class="color5">C♯</span></td>
+</tr>
+<tr>
+<td><span class="color6">6</span></td>
+<td><span class="color6">-4</span></td>
+<td><span class="color6">0f0</span></td>
+<td><span class="color6">120</span></td>
+<td><span class="color6">C</span></td>
+</tr>
+<tr>
+<td><span class="color7">7</span></td>
+<td><span class="color7">-3</span></td>
+<td><span class="color7">af0</span></td>
+<td><span class="color7">75</span></td>
+<td><span class="color7">B</span></td>
+</tr>
+<tr>
+<td><span class="color8">8</span></td>
+<td><span class="color8">-2</span></td>
+<td><span class="color8">ff0</span></td>
+<td><span class="color8">60</span></td>
+<td><span class="color8">A♯</span></td>
+</tr>
+<tr>
+<td><span class="color9">9</span></td>
+<td><span class="color9">-1</span></td>
+<td><span class="color9">fa0</span></td>
+<td><span class="color9">30</span></td>
+<td><span class="color9">A</span></td>
+</tr>
+<tr>
+<td><span class="colorff7100">9.<span
+style="text-decoration-line:overline;">3</span></span></td>
+<td><span class="colorff7100">-.<span
+style="text-decoration-line:overline;">6</span></span></td>
+<td><span class="colorff7100">ff7100</span></td>
+<td><span class="colorff7100">~26.6</span></td>
+<td><span class="colorff7100">G#</span></td>
+</tr>
+<tr>
+<td><span class="colorff3900">9.<span
+style="text-decoration-line:overline;">6</span></span></td>
+<td><span class="colorff3900">-.<span
+style="text-decoration-line:overline;">3</span></span></td>
+<td><span class="colorff3900">ff3900</span></td>
+<td><span class="colorff3900">~13.4</span></td>
+<td><span class="colorff3900">G</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+The colors🎨and musical notes🎶in the table above are arranged by
+wavelength, from shortest to longest, so that the [highest
+energy](https://en.wikipedia.org/wiki/Wavelength#:~:text=higher%20frequencies%2C%20higher%20energy%2C%20shorter%20wavelengths%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0longer%20wavelengths%2C%20lower%20frequencies%2C%20lower%20energy)
+colors🎨and sounds🔊are associated with earlier <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="times-of-day">tods</span>. Dec
+uses
+[interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
+to find
+[microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone)
+in between the ten musical notes🎶and intermediate colors🎨in between
+the ten principal colors in the table🎨.
+
+The <span class="colorff7100">G</span> and
+<span class="colorff3900">G#</span> musical notes🎶are not included in
+the table but can play an important role smoothing the transition
+between the <span class="color9">A</span> and
+<span class="color0">F#</span> musical notes🎶. On a piano🎹, [Middle
+C](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard)
+is called <span class="color6">C4</span>. The
+<span class="color9">A</span> note above <span class="color6">C4</span>
+is named
+[A4](https://en.wikipedia.org/wiki/A440_(pitch_standard)#:~:text=the%20musical%20note%20of%20A%20above%20middle%20C%2C%20or%20A4)
+has a frequency of 440 Hertz × .864 seconds per <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="beat">b</span> = 380.16
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iobs">i</span>. The <span class="color0">F#</span> above
+gb
+
+We can blend that is $3\over4$
+[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
+higher. Just like <span class="color1">magenta</span> [cannot be defined
+by a single wavelength of
+light](https://en.wikipedia.org/wiki/Magenta#:~:text=no%20color%20of%20the%20visible%20spectrum%20has%20magenta%27s%20hue),
+the musical notes🎶.
+
+The color🎨label🏷️for a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a turn">deciturn</span> value of ${deciturns}
+has the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span> code ${wavehexHsl}.
+
+and rationale for linking Dec color🎨labels with specific musical
+notes🎶is based on the observation that visible spectrum frequencies are
+forty octaves (2<sup>40</sup>) lower Electromagnetic waves in the
+visible spectrum have frequencies that are roughly 1.1 trillion times
+(1.1×10<sup>12</sup>) higher than
+
+``` {ojs}
+//| echo: false
+//| label: dtinput
+//| class: freqcomponent
+// https://observablehq.com/@d3/d3-piecewise
+viewof deciturns = Inputs.range([1, 10], { step: .1,  value: 9.5, label: "Deciturns" })
+```
 
 multiples of [powers of
 ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=the%20integer%20powers%20of%20the%20number%20ten)
@@ -2160,107 +2330,6 @@ Dec uses
 to find the corresponding color🎨and
 [microtone](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone)
 of any continuous values with multiple nonzero digits.
-
-<div id="dectable">
-
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 7%" />
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 56%" />
-</colgroup>
-<thead>
-<tr>
-<th><strong>+</strong></th>
-<th><strong>–</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span></strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="HSL or HSV degrees">h°</span></strong></th>
-<th><strong>Note</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>-10</td>
-<td><span class="color0">ff0</span></td>
-<td><span class="color0">0</span></td>
-<td><a
-href="https://en.wikipedia.org/wiki/F♯_(musical_note)">F♯</a></td>
-</tr>
-<tr>
-<td>1</td>
-<td>-9</td>
-<td><span class="color1">f0f</span></td>
-<td><span class="color1">300</span></td>
-<td><a href="https://en.wikipedia.org/wiki/F_(musical_note)">F</a></td>
-</tr>
-<tr>
-<td>2</td>
-<td>-8</td>
-<td><span class="color2">a0f</span></td>
-<td><span class="color2">270</span></td>
-<td><a href="https://en.wikipedia.org/wiki/E_(musical_note)">E</a></td>
-</tr>
-<tr>
-<td>3</td>
-<td>-7</td>
-<td><span class="color3">00f</span></td>
-<td><span class="color3">240</span></td>
-<td><a
-href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯</a></td>
-</tr>
-<tr>
-<td>4</td>
-<td>-6</td>
-<td><span class="color4">0af</span></td>
-<td><span class="color4">210</span></td>
-<td><a href="https://en.wikipedia.org/wiki/D_(musical_note)">D</a></td>
-</tr>
-<tr>
-<td>5</td>
-<td>-5</td>
-<td><span class="color5">0ff</span></td>
-<td><span class="color5">180</span></td>
-<td><a
-href="https://en.wikipedia.org/wiki/C♯_(musical_note)">C♯</a></td>
-</tr>
-<tr>
-<td>6</td>
-<td>-4</td>
-<td><span class="color6">0f0</span></td>
-<td><span class="color6">120</span></td>
-<td><a href="https://en.wikipedia.org/wiki/C_(musical_note)">C</a></td>
-</tr>
-<tr>
-<td>7</td>
-<td>-3</td>
-<td><span class="color7">af0</span></td>
-<td><span class="color7">75</span></td>
-<td><a href="https://en.wikipedia.org/wiki/B_(musical_note)">B</a></td>
-</tr>
-<tr>
-<td>8</td>
-<td>-2</td>
-<td><span class="color8">ff0</span></td>
-<td><span class="color8">60</span></td>
-<td><a
-href="https://en.wikipedia.org/wiki/A♯_(musical_note)">A♯</a></td>
-</tr>
-<tr>
-<td>9</td>
-<td>-1</td>
-<td><span class="color9">fa0</span></td>
-<td><span class="color9">30</span></td>
-<td><a href="https://en.wikipedia.org/wiki/A_(musical_note)">A</a></td>
-</tr>
-</tbody>
-</table>
-
-</div>
 
 points Dec also labels some values with musical notes🎶. The table below
 shows the colors by increasing the frequency by a certain number of
@@ -2492,10 +2561,8 @@ G#4 to F#5. Ten piano🎹keys, <span class="color9">A4</span> to
 are labeled🏷️with the ten Dec time zone colors🎨.
 
 The table below shows the ten Dec colors🎨and notes🎶arranged by
-wavelength, from shortest to longest. When so that the highest energy
-colors and sounds are associated with earlier <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="times-of-day">tods</span>. In
-total, six [natural](https://en.wikipedia.org/wiki/Natural_(music))
+wavelength, from shortest to longest. In total, six
+[natural](https://en.wikipedia.org/wiki/Natural_(music))
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="natural">♮</span>) notes🎶and four
 [sharp](https://en.wikipedia.org/wiki/Sharp_(music)#:~:text=applied%20is%20played-,one%20semitone%20higher,-.%20The%20opposite%20of)
@@ -5126,8 +5193,24 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorff3900 {
+  background: #ff3900;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .colorff6300 {
   background: #ff6300;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorff7100 {
+  background: #ff7100;
   color: black;
   padding: 0px 5px;
   border-radius: 4px;
@@ -5465,9 +5548,10 @@ div#iobpiano > div > div > svg {
 img#zModu {
   width: 100%;
 }
-#iobplayer canvas {
+#iobplayer {
   overflow: clip;
-  max-width: 100%;
+}
+#iobplayer canvas {
   height: 100%;
 }
 </style>
