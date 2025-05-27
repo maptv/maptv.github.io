@@ -1,14 +1,16 @@
 :::{#dectable}
 | **+** |  **--** | **[hex]{.tool data-bs-toggle="tooltip" data-bs-title="hexadecimal"}** | **[h°]{.tool data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees"}** | **Note**  |
-| ----- | ------- | -------------- | -------------- | ----------------------------------------------------- |
-| 0     | -10     | [ff0]{.color0} | [0]{.color0}   | [F♯](https://en.wikipedia.org/wiki/F♯_(musical_note)) |
-| 1     | -9      | [f0f]{.color1} | [300]{.color1} | [F](https://en.wikipedia.org/wiki/F_(musical_note))   |
-| 2     | -8      | [a0f]{.color2} | [270]{.color2} | [E](https://en.wikipedia.org/wiki/E_(musical_note))   |
-| 3     | -7      | [00f]{.color3} | [240]{.color3} | [D♯](https://en.wikipedia.org/wiki/D♯_(musical_note)) |
-| 4     | -6      | [0af]{.color4} | [210]{.color4} | [D](https://en.wikipedia.org/wiki/D_(musical_note))   |
-| 5     | -5      | [0ff]{.color5} | [180]{.color5} | [C♯](https://en.wikipedia.org/wiki/C♯_(musical_note)) |
-| 6     | -4      | [0f0]{.color6} | [120]{.color6} | [C](https://en.wikipedia.org/wiki/C_(musical_note))   |
-| 7     | -3      | [af0]{.color7} | [75]{.color7}  | [B](https://en.wikipedia.org/wiki/B_(musical_note))   |
-| 8     | -2      | [ff0]{.color8} | [60]{.color8}  | [A♯](https://en.wikipedia.org/wiki/A♯_(musical_note)) |
-| 9     | -1      | [fa0]{.color9} | [30]{.color9}  | [A](https://en.wikipedia.org/wiki/A_(musical_note))   |
+| ------------ | -------------- | -------------- | -------------- | ------------- |
+| [0]{.color0} | [-10]{.color0} | [ff0]{.color0} | [0]{.color0}   | [F♯]{.color0} |
+| [1]{.color1} | [-9]{.color1}  | [f0f]{.color1} | [300]{.color1} | [F]{.color1}  |
+| [2]{.color2} | [-8]{.color2}  | [a0f]{.color2} | [270]{.color2} | [E]{.color2}  |
+| [3]{.color3} | [-7]{.color3}  | [00f]{.color3} | [240]{.color3} | [D♯]{.color3} |
+| [4]{.color4} | [-6]{.color4}  | [0af]{.color4} | [210]{.color4} | [D]{.color4}  |
+| [5]{.color5} | [-5]{.color5}  | [0ff]{.color5} | [180]{.color5} | [C♯]{.color5} |
+| [6]{.color6} | [-4]{.color6}  | [0f0]{.color6} | [120]{.color6} | [C]{.color6}  |
+| [7]{.color7} | [-3]{.color7}  | [af0]{.color7} | [75]{.color7}  | [B]{.color7}  |
+| [8]{.color8} | [-2]{.color8}  | [ff0]{.color8} | [60]{.color8}  | [A♯]{.color8} |
+| [9]{.color9} | [-1]{.color9}  | [fa0]{.color9} | [30]{.color9}  | [A]{.color9}  |
+| [9.[3]{style="text-decoration-line:overline;"}]{.colorff7100} | [-.[6]{style="text-decoration-line:overline;"}]{.colorff7100}  | [ff7100]{.colorff7100} | [~26.6]{.colorff7100}  | [G#]{.colorff7100}  |
+| [9.[6]{style="text-decoration-line:overline;"}]{.colorff3900} | [-.[3]{style="text-decoration-line:overline;"}]{.colorff3900}  | [ff3900]{.colorff3900} | [~13.4]{.colorff3900}  | [G]{.colorff3900}  |
 :::

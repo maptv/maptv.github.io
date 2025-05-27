@@ -1944,8 +1944,24 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorff3900 {
+  background: #ff3900;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .colorff6300 {
   background: #ff6300;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorff7100 {
+  background: #ff7100;
   color: black;
   padding: 0px 5px;
   border-radius: 4px;
@@ -2284,9 +2300,10 @@ div#iobpiano > div > div > svg {
 img#zModu {
   width: 100%;
 }
-#iobplayer canvas {
+#iobplayer {
   overflow: clip;
-  max-width: 100%;
+}
+#iobplayer canvas {
   height: 100%;
 }
 </style>
