@@ -272,17 +272,47 @@ function dec2hue(d) {
   return rgbToHsl(...dec2rgb(d))[0] * 1000
 }
 piecewiseColor = d3.piecewise(d3.interpolateRgb, [
-  "#f00", // red
-  "#f0f", // magenta
-  "#a0f", // violet
-  "#00f", // blue
-  "#0af", // azure
-  "#0ff", // cyan
-  "#0f0", // green
-  "#af0", // lime
-  "#ff0", // yellow
-  "#fa0", // orange
-  "#f00", // red
+  "#f00",    // 0      0 red
+  "#f06",    // 0.25 336 rm
+  "#f08",    // 0.5  328 rm
+  "#f0a",    // 0.75 320 rm
+  "#f0f",    // 1    300 magenta
+  "#d0f",    // 1.25 292 mb
+  "#c0f",    // 1.5  288 mb violetpurple
+  "#b0f",    // 1.75 284 mb
+  "#90f",    // 2    276 mb purple
+  "#70f",    // 2.25 268 mb
+  "#60f",    // 2.5  264 mb purpleblue
+  "#50f",    // 2.75 260 mb
+  "#00f",    // 3    240 blue
+  "#04f",    // 3.25 224 bc
+  "#05f",    // 3.5  220 bc blueazure
+  "#06f",    // 3.75 216 bc
+  "#08f",    // 4    208 bc azure
+  "#0af",    // 4.25 200 bc
+  "#0bf",    // 4.5  196 bc azurecyan
+  "#0cf",    // 4.75 192 bc
+  "#0ff",    // 5    180 cyan
+  "#0fb",    // 5.25 164 cg
+  "#0f9",    // 5.5  156 cg cyangreen
+  "#0f7",    // 5.75 148 cg
+  "#0f0",    // 6    120 green
+  "#6f0",    // 6.25  96 gy
+  "#7f0",    // 6.5   92 gy greenlime
+  "#8f0",    // 6.75  88 gy
+  "#af0",    // 7     80 gy lime
+  "#cf0",    // 7.25  72 gy
+  "#df0",    // 7.5   68 gy limeyellow
+  "#ef0",    // 7.75  64 gy
+  "#ff0",    // 8     60 yellow
+  "#fd0",    // 8.25  52 yr
+  "#fc0",    // 8.5   48 yr yelloworange
+  "#fb0",    // 8.75  44 yr
+  "#f90",    // 9     36 yr orange
+  "#f70",    // 9.25  28 yr
+  "#f60",    // 9.5   24 yr orangered
+  "#f50",    // 9.75  20 yr
+  "#f00",    // 10     0 red
 ])
 hueMtr = Math.round(colorD)
 hueDeg = dec2hue(colorD / 1000) * .36
@@ -295,7 +325,7 @@ rainbowMtr = textcolor(hueMtr, bkgHsl)
 rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
 rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
-rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
+rainbowHex = textcolor(shortenHex(d3.color(hslStr).formatHex()).slice(1), bkgHsl)
 wavehex = d3.color(wavelengthToColor(wavelength * .4)[0]).formatHex()
 wavehexHsl = textcolor(wavehex.slice(1), wavehex)
 rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex())
@@ -520,43 +550,39 @@ decConnections = [
   [9, 4]
 ]
 hsl8 = [
-  `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
-  `hsl(295, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
-  `hsl(260, ${colorS / 10}%, ${colorL / 10}%)`, // violet
-  `hsl(210, ${colorS / 10}%, ${colorL / 10}%)`, // blue
-  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // azure
-  `hsl(110, ${colorS / 10}%, ${colorL / 10}%)`, // green
-  `hsl(70, ${colorS / 10}%, ${colorL / 10}%)`, // lime
-  `hsl(45, ${colorS / 10}%, ${colorL / 10}%)`, // orange
+  `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`,   // 0
+  `hsl(292, ${colorS / 10}%, ${colorL / 10}%)`, // 125
+  `hsl(264, ${colorS / 10}%, ${colorL / 10}%)`, // 250
+  `hsl(216, ${colorS / 10}%, ${colorL / 10}%)`, // 375
+  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // 500
+  `hsl(96, ${colorS / 10}%, ${colorL / 10}%)`, // 625
+  `hsl(68, ${colorS / 10}%, ${colorL / 10}%)`, // 750
+  `hsl(44, ${colorS / 10}%, ${colorL / 10}%)`, // 875
 ]
 hsl10 = [
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
-  // `hsl(340, ${colorS / 10}%, ${colorL / 10}%)`, // magentared
   `hsl(300, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
-  `hsl(280, ${colorS / 10}%, ${colorL / 10}%)`, // violet
+  `hsl(276, ${colorS / 10}%, ${colorL / 10}%)`, // violet
   `hsl(240, ${colorS / 10}%, ${colorL / 10}%)`, // blue
-  `hsl(200, ${colorS / 10}%, ${colorL / 10}%)`, // azure
+  `hsl(208, ${colorS / 10}%, ${colorL / 10}%)`, // azure
   `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // cyan
-  // `hsl(160, ${colorS / 10}%, ${colorL / 10}%)`, // cyangreen
   `hsl(120, ${colorS / 10}%, ${colorL / 10}%)`, // green
   `hsl(80, ${colorS / 10}%, ${colorL / 10}%)`, // lime
   `hsl(60, ${colorS / 10}%, ${colorL / 10}%)`, // yellow
-  `hsl(40, ${colorS / 10}%, ${colorL / 10}%)`, // orange
+  `hsl(36, ${colorS / 10}%, ${colorL / 10}%)`, // orange
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
 ]
 hsla10 = [
   `hsla(0, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // red
-  // `hsla(340, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // magentared
   `hsla(300, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // magenta
-  `hsla(280, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // violet
+  `hsla(276, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // violet
   `hsla(240, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // blue
-  `hsla(200, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // azure
+  `hsla(208, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // azure
   `hsla(180, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // cyan
-  // `hsla(160, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // cyangreen
   `hsla(120, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // green
   `hsla(80, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // lime
   `hsla(60, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // yellow
-  `hsla(40, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // orange
+  `hsla(36, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // orange
   `hsla(0, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // red
 ]
 function dote2date(dote, zone = 0) {
@@ -1157,45 +1183,45 @@ solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
 borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
 countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
 deccolors = [
-  `hsl(344.94117647058823${slStr}`,
-  `hsl(329.88235294117646${slStr}`,
-  `hsl(315.05882352941177${slStr}`,
+  `hsl(336${slStr}`,
+  `hsl(328${slStr}`,
+  `hsl(320${slStr}`,
   `hsl(300${slStr}`,
-  `hsl(295.05882352941177${slStr}`,
-  `hsl(289.88235294117646${slStr}`,
-  `hsl(284.94117647058823${slStr}`,
-  `hsl(280${slStr}`,
-  `hsl(270.11764705882354${slStr}`,
+  `hsl(292${slStr}`,
+  `hsl(288${slStr}`,
+  `hsl(284${slStr}`,
+  `hsl(276${slStr}`,
+  `hsl(268${slStr}`,
+  `hsl(264${slStr}`,
   `hsl(260${slStr}`,
-  `hsl(250.11764705882354${slStr}`,
   `hsl(240${slStr}`,
-  `hsl(229.8823529411765${slStr}`,
+  `hsl(224${slStr}`,
   `hsl(220${slStr}`,
-  `hsl(209.88235294117646${slStr}`,
+  `hsl(216${slStr}`,
+  `hsl(208${slStr}`,
   `hsl(200${slStr}`,
-  `hsl(195.05882352941177${slStr}`,
-  `hsl(189.88235294117646${slStr}`,
-  `hsl(184.94117647058823${slStr}`,
+  `hsl(196${slStr}`,
+  `hsl(192${slStr}`,
   `hsl(180${slStr}`,
-  `hsl(164.94117647058823${slStr}`,
-  `hsl(150.11764705882354${slStr}`,
-  `hsl(135.05882352941177${slStr}`,
+  `hsl(164${slStr}`,
+  `hsl(156${slStr}`,
+  `hsl(148${slStr}`,
   `hsl(120${slStr}`,
-  `hsl(109.88235294117646${slStr}`,
-  `hsl(100${slStr}`,
-  `hsl(89.88235294117646${slStr}`,
+  `hsl(96${slStr}`,
+  `hsl(92${slStr}`,
+  `hsl(88${slStr}`,
   `hsl(80${slStr}`,
-  `hsl(75.05882352941177${slStr}`,
-  `hsl(69.88235294117646${slStr}`,
-  `hsl(64.94117647058825${slStr}`,
+  `hsl(72${slStr}`,
+  `hsl(68${slStr}`,
+  `hsl(64${slStr}`,
   `hsl(60${slStr}`,
-  `hsl(55.05882352941176${slStr}`,
-  `hsl(50.11764705882353${slStr}`,
-  `hsl(44.94117647058823${slStr}`,
-  `hsl(40${slStr}`,
-  `hsl(30.11764705882353${slStr}`,
+  `hsl(52${slStr}`,
+  `hsl(48${slStr}`,
+  `hsl(44${slStr}`,
+  `hsl(36${slStr}`,
+  `hsl(28${slStr}`,
+  `hsl(24${slStr}`,
   `hsl(20${slStr}`,
-  `hsl(10.117647058823530${slStr}`,
   `hsl(0${slStr}`,
 ]
 viewof size = Inputs.range([50, 700], {
@@ -1649,6 +1675,79 @@ class SoundBuffer {
     return ui;
   }
 }
+function shortenHex(hex) {
+  if (!/^#([0-9a-f]{3}){1,2}$/i.test(hex)) {
+    return hex;
+  }
+  hex = hex.replace("#", "");
+  if (hex.length === 6 && hex[0] === hex[1] && hex[2] === hex[3] && hex[4] === hex[5]) {
+    return "#" + hex[0] + hex[2] + hex[4];
+  }
+  return "#" + hex;
+}
+dtHex = d3.color(piecewiseColor(deciturns / 10)).formatHex()
+dtHexHsl = textcolor(shortenHex(dtHex).slice(1), dtHex)
+dtValHsl = textcolor(deciturns.toFixed(1), dtHex)
+piecewiseIob = d3.piecewise(d3.interpolateRound, [
+  301.734720,
+  319.675162,
+  338.684026,
+  358.823261,
+  380.160000,
+  402.765523,
+  426.715171,
+  452.088950,
+  478.971619,
+  507.452688,
+  537.627456,
+  569.596406,
+  603.466416,
+  639.351360,
+])
+piecewiseMillizem = d3.piecewise(d3.interpolateRound, [
+  2436.073648,
+  2299.359125,
+  2170.306080,
+  2048.495960,
+  1933.522727,
+  1825.002285,
+  1722.572924,
+  1625.892425,
+  1534.637900,
+  1448.505481,
+  1367.206961,
+  1290.471625,
+  1218.042928,
+  1149.677698,
+])
+h014 = d3.hsl(piecewiseColor(0.014)).h
+h021 = d3.hsl(piecewiseColor(0.021)).h
+h022 = d3.hsl(piecewiseColor(0.022)).h
+h024 = d3.hsl(piecewiseColor(0.024)).h
+h039 = d3.hsl(piecewiseColor(0.039)).h
+hD039 = d3.hsl(piecewiseColor(39 / 365)).h
+hD080 = d3.hsl(piecewiseColor(80 / 365)).h
+hD285 = d3.hsl(piecewiseColor(285 / 365)).h
+h065 = d3.hsl(piecewiseColor(0.065)).h
+h185 = d3.hsl(piecewiseColor(0.185)).h
+h704 = d3.hsl(piecewiseColor(0.704)).h
+h754 = d3.hsl(piecewiseColor(0.754)).h
+h788 = d3.hsl(piecewiseColor(0.788)).h
+h815 = d3.hsl(piecewiseColor(0.815)).h
+h864 = d3.hsl(piecewiseColor(0.864)).h
+h935 = d3.hsl(piecewiseColor(0.935)).h
+h960 = d3.hsl(piecewiseColor(0.960)).h
+fMile = 5 / 3 / 1.609344
+fInch = 25 / 25.4
+hIob = d3.hsl(piecewiseColor(1 / .864 % 1)).h
+hMile = d3.hsl(piecewiseColor(fMile % 1)).h
+hInch = d3.hsl(piecewiseColor(fInch % 1)).h
+hAvLb = d3.hsl(piecewiseColor(500 / 453.59237 % 1)).h
+hPint = d3.hsl(piecewiseColor(4 / 3.785411784 % 1)).h
+hFlOz = d3.hsl(piecewiseColor(32 / 29.5735296875 % 1)).h
+hAcre = d3.hsl(piecewiseColor(247.1053814672 / 250 % 1)).h
+hSqMi = d3.hsl(piecewiseColor(fMile**2 % 1)).h
+hSqIn = d3.hsl(piecewiseColor(fInch**2 % 1)).h
 ```
 
 ```{ojs}
@@ -1665,88 +1764,88 @@ html`
   font-family: monospace;
 }
 .color014 {
-  background: hsl(351.52941176470586 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(351.52941176470586, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h014} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h014}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color021 {
-  background: hsl(347.29411764705884 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(347.29411764705884, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(h021 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(h021, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color022 {
-  background: hsl(346.8235294117647 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(346.8235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h022} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h022}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color024 {
-  background: hsl(345.6470588235294 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(345.6470588235294, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h024} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h024}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color025 {
-  background: hsl(344.94117647058823 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(344.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(336 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(336, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color039 {
-  background: hsl(336.70588235294116 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(336.70588235294116, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h039} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorD039 {
-  background: hsl(298.5882352941177 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(298.5882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hD039} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorD080 {
-  background: hsl(272.2352941176471 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(272.2352941176471, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hD080} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD080}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorD285 {
-  background: hsl(63.76470588235294 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(63.76470588235294, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hD285} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD285}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color050 {
-  background: hsl(329.88235294117646 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(329.88235294117646, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(328 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(328, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color065 {
-  background: hsl(320.94117647058823 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(320.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h065} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h065}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1761,32 +1860,32 @@ html`
   font-family: monospace;
 }
 .color125 {
-  background: hsl(295 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(295, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(292 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(292, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color185 {
-  background: hsl(283.05882352941177 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(283.05882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h185} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h185}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color2 {
-  background: hsl(280 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(280, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(276 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(276, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color250 {
-  background: hsl(260 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(260, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(264 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(264, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1801,16 +1900,16 @@ html`
   font-family: monospace;
 }
 .color375 {
-  background: hsl(210 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(210, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(216 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(216, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color4 {
-  background: hsl(200 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(200, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(208 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(208, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1833,8 +1932,8 @@ html`
   font-family: monospace;
 }
 .color625 {
-  background: hsl(110 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(110, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(96 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(96, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1849,32 +1948,32 @@ html`
   font-family: monospace;
 }
 .color704 {
-  background: hsl(79.29411764705883 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(79.29411764705883, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h704} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h704}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color750 {
-  background: hsl(70 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(70, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(68 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(68, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color754 {
-  background: hsl(69.17647058823529 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(69.17647058823529, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h754} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h754}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color788 {
-  background: hsl(62.35294117647058 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(62.35294117647058, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h788} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h788}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1889,64 +1988,56 @@ html`
   font-family: monospace;
 }
 .color815 {
-  background: hsl(56.94117647058823 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(56.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h815} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h815}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color864 {
-  background: hsl(47.29411764705882 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(47.29411764705882, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h864} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h864}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color875 {
-  background: hsl(45 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(45, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(44 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(44, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color9 {
-  background: hsl(40 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(40, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(36 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(36, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color935 {
-  background: hsl(25.88235294117647 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(25.88235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h935} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h935}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color950 {
+  background: hsl(24 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(24, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color960 {
-  background: hsl(16 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(16, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color890000 {
-  background: #890000;
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.colorff3900 {
-  background: #ff3900;
-  color: white;
+  background: hsl(${h960} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h960}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1954,14 +2045,6 @@ html`
 }
 .colorff6300 {
   background: #ff6300;
-  color: black;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.colorff7100 {
-  background: #ff7100;
   color: black;
   padding: 0px 5px;
   border-radius: 4px;
@@ -2025,72 +2108,72 @@ html`
   font-family: monospace;
 }
 .colorIob {
-  background: hsl(288.4705882352941 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(288.4705882352941, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hIob} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hIob}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorMile {
-  background: hsl(338.5882352941177 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(338.5882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hMile} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hMile}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorInch {
-  background: hsl(6.352941176470588 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(6.352941176470588, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hInch} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hInch}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorAvLb {
-  background: hsl(299.52941176470586 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(299.52941176470586, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hAvLb} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hAvLb}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorPint {
-  background: hsl(325.88235294117646 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(325.88235294117646, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hPint} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hPint}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorFlOz {
-  background: hsl(310.8235294117647 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(310.8235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hFlOz} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hFlOz}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorAcre {
-  background: hsl(4.705882352941177 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(4.705882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hAcre} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hAcre}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorSqMi {
-  background: hsl(316.4705882352941 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(316.4705882352941, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hSqMi} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hSqMi}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorSqIn {
-  background: hsl(12.470588235294118 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(12.470588235294118, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hSqIn} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hSqIn}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;

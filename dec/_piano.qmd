@@ -1,5 +1,13 @@
 ```{ojs}
 //| echo: false
+//| label: dtinput
+//| class: freqcomponent
+// https://observablehq.com/@d3/d3-piecewise
+viewof deciturns = Inputs.range([1, 10], { step: .1,  value: 4.5, label: "Deciturns" })
+```
+
+```{ojs}
+//| echo: false
 //| label: wavinput
 //| class: freqcomponent
 // https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
