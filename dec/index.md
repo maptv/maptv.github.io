@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+087
+2025+089
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -629,57 +629,57 @@ data-bs-title="hexadecimal">hex</span></strong></th>
 <td><span class="color125">NE</span></td>
 <td><span class="color125">125</span></td>
 <td><span class="color125">45</span></td>
-<td><span class="color125">295</span></td>
-<td><span class="color125">ea00ff</span></td>
+<td><span class="color125">292</span></td>
+<td><span class="color125">d0f</span></td>
 </tr>
 <tr>
 <td><span class="color250">E</span></td>
 <td><span class="color250">250</span></td>
 <td><span class="color250">90</span></td>
-<td><span class="color250">260</span></td>
-<td><span class="color250">5500ff</span></td>
+<td><span class="color250">264</span></td>
+<td><span class="color250">60f</span></td>
 </tr>
 <tr>
 <td><span class="color375">SE</span></td>
 <td><span class="color375">375</span></td>
 <td><span class="color375">135</span></td>
-<td><span class="color375">210</span></td>
-<td><span class="color375">0080ff</span></td>
+<td><span class="color375">216</span></td>
+<td><span class="color375">06f</span></td>
 </tr>
 <tr>
 <td><span class="color5">S</span></td>
 <td><span class="color5">500</span></td>
 <td><span class="color5">180</span></td>
 <td><span class="color5">180</span></td>
-<td><span class="color5">00ffff</span></td>
+<td><span class="color5">0ff</span></td>
 </tr>
 <tr>
 <td><span class="color625">SW</span></td>
 <td><span class="color625">625</span></td>
 <td><span class="color625">225</span></td>
-<td><span class="color625">110</span></td>
-<td><span class="color625">2bff00</span></td>
+<td><span class="color625">96</span></td>
+<td><span class="color625">6f0</span></td>
 </tr>
 <tr>
 <td><span class="color750">W</span></td>
 <td><span class="color750">750</span></td>
 <td><span class="color750">270</span></td>
-<td><span class="color750">70</span></td>
-<td><span class="color750">d5ff00</span></td>
+<td><span class="color750">68</span></td>
+<td><span class="color750">df0</span></td>
 </tr>
 <tr>
 <td><span class="color875">NW</span></td>
 <td><span class="color875">875</span></td>
 <td><span class="color875">315</span></td>
-<td><span class="color875">45</span></td>
-<td><span class="color875">ffbf00</span></td>
+<td><span class="color875">44</span></td>
+<td><span class="color875">fb0</span></td>
 </tr>
 <tr>
 <td><span class="color0">N</span></td>
 <td><span class="color0">0</span></td>
 <td><span class="color0">0</span></td>
 <td><span class="color0">0</span></td>
-<td><span class="color0">ff0000</span></td>
+<td><span class="color0">f00</span></td>
 </tr>
 </tbody>
 </table>
@@ -2132,28 +2132,30 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864)
 ```
 
 In addition to colors🎨, Dec can also label🏷️values with sounds🔊. Dec
-color🎨and sound🔊labels🏷️can identify discrete values and give a sense
-of the
+color🎨and sound🔊labels🏷️can give a sense of the
 [magnitude](https://en.wikipedia.org/wiki/Magnitude_(mathematics)#:~:text=a%20property%20which%20determines%20whether%20the%20object%20is%20larger%20or%20smaller%20than%20other%20objects%20of%20the%20same%20kind)
-of continuous values. Dec uses the colors🎨and musical notes🎶in the
-table below to label🏷️groups of ten, such as <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-dek">dods</span>, “[top
-of the <span class="tool" data-bs-toggle="tooltip"
+of continuous values. Dec uses the single-digit values in the table
+below as
+[indexes](https://en.wikipedia.org/wiki/Index#:~:text=an%20integer%20pointer%20into%20an%20array%20data%20structure)
+for groups of ten, like <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-dek">dods</span>, “[top of the <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</span>](https://en.wiktionary.org/wiki/top_of_the_hour)”
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="times-of-day">tods</span>,
 [deciles](https://en.wikipedia.org/wiki/Decile#:~:text=any%20of%20the%20nine%20values%20that%20divide%20the%20sorted%20data%20into%20ten%20equal%20parts),
-time zones, and major longitudes.
+and time zones. Each index has a corresponding color🎨and musical
+note🎶.
 
 <div id="dectable">
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 19%" />
+<col style="width: 11%" />
+<col style="width: 12%" />
+<col style="width: 14%" />
+<col style="width: 12%" />
+<col style="width: 48%" />
 </colgroup>
 <thead>
 <tr>
@@ -2170,90 +2172,98 @@ data-bs-title="HSL or HSV degrees">h°</span></strong></th>
 <tr>
 <td><span class="color0">0</span></td>
 <td><span class="color0">-10</span></td>
-<td><span class="color0">ff0</span></td>
+<td><span class="color0">f00</span></td>
 <td><span class="color0">0</span></td>
-<td><span class="color0">F♯</span></td>
+<td><a href="https://en.wikipedia.org/wiki/G_(musical_note)"><span
+class="color0">G</span></a></td>
+</tr>
+<tr>
+<td><span class="color050">0.5</span></td>
+<td><span class="color050">-9.5</span></td>
+<td><span class="color050">f08</span></td>
+<td><span class="color050">328</span></td>
+<td><a href="https://en.wikipedia.org/wiki/F#_(musical_note)"><span
+class="color050">F#</span></a></td>
 </tr>
 <tr>
 <td><span class="color1">1</span></td>
 <td><span class="color1">-9</span></td>
 <td><span class="color1">f0f</span></td>
 <td><span class="color1">300</span></td>
-<td><span class="color1">F</span></td>
+<td><a href="https://en.wikipedia.org/wiki/E_(musical_note)"><span
+class="color1">F</span></a></td>
 </tr>
 <tr>
 <td><span class="color2">2</span></td>
 <td><span class="color2">-8</span></td>
-<td><span class="color2">a0f</span></td>
-<td><span class="color2">270</span></td>
-<td><span class="color2">E</span></td>
+<td><span class="color2">90f</span></td>
+<td><span class="color2">276</span></td>
+<td><a href="https://en.wikipedia.org/wiki/E_(musical_note)"><span
+class="color2">E</span></a></td>
 </tr>
 <tr>
 <td><span class="color3">3</span></td>
 <td><span class="color3">-7</span></td>
 <td><span class="color3">00f</span></td>
 <td><span class="color3">240</span></td>
-<td><span class="color3">D♯</span></td>
+<td><a href="https://en.wikipedia.org/wiki/D♯_(musical_note)"><span
+class="color3">D♯</span></a></td>
 </tr>
 <tr>
 <td><span class="color4">4</span></td>
 <td><span class="color4">-6</span></td>
-<td><span class="color4">0af</span></td>
-<td><span class="color4">210</span></td>
-<td><span class="color4">D</span></td>
+<td><span class="color4">08f</span></td>
+<td><span class="color4">208</span></td>
+<td><a href="https://en.wikipedia.org/wiki/D_(musical_note)"><span
+class="color4">D</span></a></td>
 </tr>
 <tr>
 <td><span class="color5">5</span></td>
 <td><span class="color5">-5</span></td>
 <td><span class="color5">0ff</span></td>
 <td><span class="color5">180</span></td>
-<td><span class="color5">C♯</span></td>
+<td><a href="https://en.wikipedia.org/wiki/C♯_(musical_note)"><span
+class="color5">C♯</span></a></td>
 </tr>
 <tr>
 <td><span class="color6">6</span></td>
 <td><span class="color6">-4</span></td>
 <td><span class="color6">0f0</span></td>
 <td><span class="color6">120</span></td>
-<td><span class="color6">C</span></td>
+<td><a href="https://en.wikipedia.org/wiki/C_(musical_note)"><span
+class="color6">C</span></a></td>
 </tr>
 <tr>
 <td><span class="color7">7</span></td>
 <td><span class="color7">-3</span></td>
 <td><span class="color7">af0</span></td>
-<td><span class="color7">75</span></td>
-<td><span class="color7">B</span></td>
+<td><span class="color7">80</span></td>
+<td><a href="https://en.wikipedia.org/wiki/B_(musical_note)"><span
+class="color7">B</span></a></td>
 </tr>
 <tr>
 <td><span class="color8">8</span></td>
 <td><span class="color8">-2</span></td>
 <td><span class="color8">ff0</span></td>
 <td><span class="color8">60</span></td>
-<td><span class="color8">A♯</span></td>
+<td><a href="https://en.wikipedia.org/wiki/A♯_(musical_note)"><span
+class="color8">A♯</span></a></td>
 </tr>
 <tr>
 <td><span class="color9">9</span></td>
 <td><span class="color9">-1</span></td>
-<td><span class="color9">fa0</span></td>
-<td><span class="color9">30</span></td>
-<td><span class="color9">A</span></td>
+<td><span class="color9">f90</span></td>
+<td><span class="color9">36</span></td>
+<td><a href="https://en.wikipedia.org/wiki/A_(musical_note)"><span
+class="color9">A</span></a></td>
 </tr>
 <tr>
-<td><span class="colorff7100">9.<span
-style="text-decoration-line:overline;">3</span></span></td>
-<td><span class="colorff7100">-.<span
-style="text-decoration-line:overline;">6</span></span></td>
-<td><span class="colorff7100">ff7100</span></td>
-<td><span class="colorff7100">~26.6</span></td>
-<td><span class="colorff7100">G#</span></td>
-</tr>
-<tr>
-<td><span class="colorff3900">9.<span
-style="text-decoration-line:overline;">6</span></span></td>
-<td><span class="colorff3900">-.<span
-style="text-decoration-line:overline;">3</span></span></td>
-<td><span class="colorff3900">ff3900</span></td>
-<td><span class="colorff3900">~13.4</span></td>
-<td><span class="colorff3900">G</span></td>
+<td><span class="color950">9.5</span></td>
+<td><span class="color950">-0.5</span></td>
+<td><span class="color950">f60</span></td>
+<td><span class="color950">24</span></td>
+<td><a href="https://en.wikipedia.org/wiki/G♯_(musical_note)"><span
+class="color950">G#</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -2267,99 +2277,39 @@ colors🎨and sounds🔊are associated with earlier <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="times-of-day">tods</span>. Dec
 uses
 [interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
-to find
-[microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone)
-in between the ten musical notes🎶and intermediate colors🎨in between
-the ten principal colors in the table🎨.
+to find colors🎨and
+[microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone),
+the sound🔊frequencies in between musical notes🎶, for values that are
+not included in the table.
 
-The <span class="colorff7100">G</span> and
-<span class="colorff3900">G#</span> musical notes🎶are not included in
-the table but can play an important role smoothing the transition
-between the <span class="color9">A</span> and
-<span class="color0">F#</span> musical notes🎶. On a piano🎹, [Middle
-C](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard)
-is called <span class="color6">C4</span>. The
-<span class="color9">A</span> note above <span class="color6">C4</span>
-is named
-[A4](https://en.wikipedia.org/wiki/A440_(pitch_standard)#:~:text=the%20musical%20note%20of%20A%20above%20middle%20C%2C%20or%20A4)
-has a frequency of 440 Hertz × .864 seconds per <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="beat">b</span> = 380.16
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iobs">i</span>. The <span class="color0">F#</span> above
-gb
+The notes🎶in the table above can belong to different
+[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency).
+By convention, <span class="color0">G</span> to
+<span class="color6">C</span> are in Octave 5 and
+<span class="color7">B</span> to <span class="color950">G#</span> are in
+Octave 4. Following this convention, we can use the <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="tenths of a turn">deciturn</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="deciturns">dt</span>) value
+selected by the “Deciturns” range🎚️input above to interpolate the
+sound🔊frequency ${piecewiseIob(deciturns / 10)} <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iobs">i</span>, and the
+wavelength ${piecewiseMillizem(deciturns / 10)} <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a zem">millizems</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millizems">mz</span>).
 
-We can blend that is $3\over4$
-[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-higher. Just like <span class="color1">magenta</span> [cannot be defined
-by a single wavelength of
-light](https://en.wikipedia.org/wiki/Magenta#:~:text=no%20color%20of%20the%20visible%20spectrum%20has%20magenta%27s%20hue),
-the musical notes🎶.
-
-The color🎨label🏷️for a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a turn">deciturn</span> value of ${deciturns}
-has the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> code ${wavehexHsl}.
-
-and rationale for linking Dec color🎨labels with specific musical
-notes🎶is based on the observation that visible spectrum frequencies are
-forty octaves (2<sup>40</sup>) lower Electromagnetic waves in the
-visible spectrum have frequencies that are roughly 1.1 trillion times
-(1.1×10<sup>12</sup>) higher than
+We can use the the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span> triplet ${dtHexHsl}.
 
 ``` {ojs}
 //| echo: false
 //| label: dtinput
 //| class: freqcomponent
 // https://observablehq.com/@d3/d3-piecewise
-viewof deciturns = Inputs.range([1, 10], { step: .1,  value: 9.5, label: "Deciturns" })
+viewof deciturns = Inputs.range([1, 10], { step: .1,  value: 4.5, label: "Deciturns" })
 ```
-
-multiples of [powers of
-ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=the%20integer%20powers%20of%20the%20number%20ten)
-and labels🏷️in the table below.labels🏷️work best for that wrap to zero
-after reaching a maximum.
-
-or saturate. such as
-
-with a single
-[nonzero](https://en.wiktionary.org/wiki/nonzero#:~:text=Not%20equal%20to%20zero)
-digit
-
-Dec uses
-[interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
-to find the corresponding color🎨and
-[microtone](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone)
-of any continuous values with multiple nonzero digits.
-
-points Dec also labels some values with musical notes🎶. The table below
-shows the colors by increasing the frequency by a certain number of
-[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-and iden (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="forty octaves">2<sup>40</sup></span>), we get 380.16
-<span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
-× <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="forty octaves">2<sup>40</sup></span> = ~417.99
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>). On the
-[visible
-spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye),
-417.99 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiobs">Ti</span> correspond to the <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="hexadecimal">hex</span> triplet
-<span class="colorff6300">ff6300</span> and a wavelength of
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="speed of light in v">647551.71</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ 417.99
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiob">Ti</span> = ~1549.20 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="billionths of a zem">nanozems</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). The
-wavelength selected by the “<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="billionths of a zem">Nanozems</span>” range🎚️input below
-yields the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> triplet ${wavehexHsl}.
 
 ``` {ojs}
 //| echo: false
@@ -2482,6 +2432,111 @@ href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯5</a></td>
 //| class: freqcomponent
 piano(width)
 ```
+
+Before we can determine the sound🔊frequency associated with this
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciturns">dt</span>, we will need to establish a frame
+of reference by specifying the for at least one of the twelve notes in
+the table.
+
+The
+[<span class="color6">C</span>]((https://en.wikipedia.org/wiki/C_(musical_note)))
+note🎶in Octave 4
+([<span class="color6">C4</span>](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard))
+is called “Middle <span class="color6">C</span>” because it is between
+the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
+[treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)of
+a [grand
+staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff). If
+<span class="color6">C4</span> the remaining notes🎶will be evenly
+spread across the . For this reason, <span class="color6">C4</span> is
+called . we could fit all twelve of the notes🎶in the table on the
+treble🎼clef if we instead go up one
+[octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
+to <span class="color6">C5</span>. If we center on
+<span class="color6">C5</span>, our
+[<span class="color9">A</span>]((https://en.wikipedia.org/wiki/A_(musical_note)))
+note🎶will be
+[<span class="color9">A4</span>](https://en.wikipedia.org/wiki/A440_(pitch_standard)#:~:text=the%20musical%20note%20of%20A%20above%20middle%20C%2C%20or%20A4),
+the note🎶widely used to [tune musical
+instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance).
+
+<span class="color9">A4</span> has a frequency of 440 Hertz × .864
+seconds per <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beat">b</span> = 380.16 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iobs">i</span>. If we multiply
+this frequency by <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="forty octaves">2<sup>40</sup></span>to move it up forty
+octaves, we will get frequency of 380.16 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iob">i</span> ×
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="forty octaves">2<sup>40</sup></span> = ~417.99
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>), which is
+too high for sound🔊, but happens to fall in the [visible
+spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
+of light💡.
+
+We can blend that is $3\over4$
+[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
+higher. Just like <span class="color1">magenta</span> [cannot be defined
+by a single wavelength of
+light](https://en.wikipedia.org/wiki/Magenta#:~:text=no%20color%20of%20the%20visible%20spectrum%20has%20magenta%27s%20hue),
+the musical notes🎶.
+
+and rationale for linking Dec color🎨labels with specific musical
+notes🎶is based on the observation that visible spectrum frequencies are
+forty octaves (2<sup>40</sup>) lower Electromagnetic waves in the
+visible spectrum have frequencies that are roughly 1.1 trillion times
+(1.1×10<sup>12</sup>) higher than
+
+multiples of [powers of
+ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=the%20integer%20powers%20of%20the%20number%20ten)
+and labels🏷️in the table below.labels🏷️work best for that wrap to zero
+after reaching a maximum.
+
+or saturate. such as
+
+with a single
+[nonzero](https://en.wiktionary.org/wiki/nonzero#:~:text=Not%20equal%20to%20zero)
+digit
+
+Dec uses
+[interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
+to find the corresponding color🎨and
+[microtone](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone)
+of any continuous values with multiple nonzero digits.
+
+points Dec also labels some values with musical notes🎶. The table below
+shows the colors by increasing the frequency by a certain number of
+[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
+and iden (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="forty octaves">2<sup>40</sup></span>), we get 380.16
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
+× <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="forty octaves">2<sup>40</sup></span> = ~417.99
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>). On the
+[visible
+spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye),
+417.99 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiobs">Ti</span> correspond to the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hexadecimal">hex</span> triplet
+<span class="colorff6300">ff6300</span> and a wavelength of
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="speed of light in v">647551.71</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ 417.99
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraiob">Ti</span> = ~1549.20 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="billionths of a zem">nanozems</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). The
+wavelength selected by the “<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a zem">Nanozems</span>” range🎚️input below
+yields the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span> triplet ${wavehexHsl}.
 
 The table above compares nine musical notes🎶and the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="hexadecimal">hex</span> triplets
@@ -3521,17 +3576,47 @@ function dec2hue(d) {
   return rgbToHsl(...dec2rgb(d))[0] * 1000
 }
 piecewiseColor = d3.piecewise(d3.interpolateRgb, [
-  "#f00", // red
-  "#f0f", // magenta
-  "#a0f", // violet
-  "#00f", // blue
-  "#0af", // azure
-  "#0ff", // cyan
-  "#0f0", // green
-  "#af0", // lime
-  "#ff0", // yellow
-  "#fa0", // orange
-  "#f00", // red
+  "#f00",    // 0      0 red
+  "#f06",    // 0.25 336 rm
+  "#f08",    // 0.5  328 rm
+  "#f0a",    // 0.75 320 rm
+  "#f0f",    // 1    300 magenta
+  "#d0f",    // 1.25 292 mb
+  "#c0f",    // 1.5  288 mb violetpurple
+  "#b0f",    // 1.75 284 mb
+  "#90f",    // 2    276 mb purple
+  "#70f",    // 2.25 268 mb
+  "#60f",    // 2.5  264 mb purpleblue
+  "#50f",    // 2.75 260 mb
+  "#00f",    // 3    240 blue
+  "#04f",    // 3.25 224 bc
+  "#05f",    // 3.5  220 bc blueazure
+  "#06f",    // 3.75 216 bc
+  "#08f",    // 4    208 bc azure
+  "#0af",    // 4.25 200 bc
+  "#0bf",    // 4.5  196 bc azurecyan
+  "#0cf",    // 4.75 192 bc
+  "#0ff",    // 5    180 cyan
+  "#0fb",    // 5.25 164 cg
+  "#0f9",    // 5.5  156 cg cyangreen
+  "#0f7",    // 5.75 148 cg
+  "#0f0",    // 6    120 green
+  "#6f0",    // 6.25  96 gy
+  "#7f0",    // 6.5   92 gy greenlime
+  "#8f0",    // 6.75  88 gy
+  "#af0",    // 7     80 gy lime
+  "#cf0",    // 7.25  72 gy
+  "#df0",    // 7.5   68 gy limeyellow
+  "#ef0",    // 7.75  64 gy
+  "#ff0",    // 8     60 yellow
+  "#fd0",    // 8.25  52 yr
+  "#fc0",    // 8.5   48 yr yelloworange
+  "#fb0",    // 8.75  44 yr
+  "#f90",    // 9     36 yr orange
+  "#f70",    // 9.25  28 yr
+  "#f60",    // 9.5   24 yr orangered
+  "#f50",    // 9.75  20 yr
+  "#f00",    // 10     0 red
 ])
 hueMtr = Math.round(colorD)
 hueDeg = dec2hue(colorD / 1000) * .36
@@ -3544,7 +3629,7 @@ rainbowMtr = textcolor(hueMtr, bkgHsl)
 rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
 rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
-rainbowHex = textcolor(d3.color(hslStr).formatHex().slice(1), bkgHsl)
+rainbowHex = textcolor(shortenHex(d3.color(hslStr).formatHex()).slice(1), bkgHsl)
 wavehex = d3.color(wavelengthToColor(wavelength * .4)[0]).formatHex()
 wavehexHsl = textcolor(wavehex.slice(1), wavehex)
 rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex())
@@ -3769,43 +3854,39 @@ decConnections = [
   [9, 4]
 ]
 hsl8 = [
-  `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
-  `hsl(295, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
-  `hsl(260, ${colorS / 10}%, ${colorL / 10}%)`, // violet
-  `hsl(210, ${colorS / 10}%, ${colorL / 10}%)`, // blue
-  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // azure
-  `hsl(110, ${colorS / 10}%, ${colorL / 10}%)`, // green
-  `hsl(70, ${colorS / 10}%, ${colorL / 10}%)`, // lime
-  `hsl(45, ${colorS / 10}%, ${colorL / 10}%)`, // orange
+  `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`,   // 0
+  `hsl(292, ${colorS / 10}%, ${colorL / 10}%)`, // 125
+  `hsl(264, ${colorS / 10}%, ${colorL / 10}%)`, // 250
+  `hsl(216, ${colorS / 10}%, ${colorL / 10}%)`, // 375
+  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // 500
+  `hsl(96, ${colorS / 10}%, ${colorL / 10}%)`, // 625
+  `hsl(68, ${colorS / 10}%, ${colorL / 10}%)`, // 750
+  `hsl(44, ${colorS / 10}%, ${colorL / 10}%)`, // 875
 ]
 hsl10 = [
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
-  // `hsl(340, ${colorS / 10}%, ${colorL / 10}%)`, // magentared
   `hsl(300, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
-  `hsl(280, ${colorS / 10}%, ${colorL / 10}%)`, // violet
+  `hsl(276, ${colorS / 10}%, ${colorL / 10}%)`, // violet
   `hsl(240, ${colorS / 10}%, ${colorL / 10}%)`, // blue
-  `hsl(200, ${colorS / 10}%, ${colorL / 10}%)`, // azure
+  `hsl(208, ${colorS / 10}%, ${colorL / 10}%)`, // azure
   `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // cyan
-  // `hsl(160, ${colorS / 10}%, ${colorL / 10}%)`, // cyangreen
   `hsl(120, ${colorS / 10}%, ${colorL / 10}%)`, // green
   `hsl(80, ${colorS / 10}%, ${colorL / 10}%)`, // lime
   `hsl(60, ${colorS / 10}%, ${colorL / 10}%)`, // yellow
-  `hsl(40, ${colorS / 10}%, ${colorL / 10}%)`, // orange
+  `hsl(36, ${colorS / 10}%, ${colorL / 10}%)`, // orange
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
 ]
 hsla10 = [
   `hsla(0, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // red
-  // `hsla(340, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // magentared
   `hsla(300, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // magenta
-  `hsla(280, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // violet
+  `hsla(276, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // violet
   `hsla(240, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // blue
-  `hsla(200, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // azure
+  `hsla(208, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // azure
   `hsla(180, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // cyan
-  // `hsla(160, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // cyangreen
   `hsla(120, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // green
   `hsla(80, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // lime
   `hsla(60, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // yellow
-  `hsla(40, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // orange
+  `hsla(36, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // orange
   `hsla(0, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // red
 ]
 function dote2date(dote, zone = 0) {
@@ -4406,45 +4487,45 @@ solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
 borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
 countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
 deccolors = [
-  `hsl(344.94117647058823${slStr}`,
-  `hsl(329.88235294117646${slStr}`,
-  `hsl(315.05882352941177${slStr}`,
+  `hsl(336${slStr}`,
+  `hsl(328${slStr}`,
+  `hsl(320${slStr}`,
   `hsl(300${slStr}`,
-  `hsl(295.05882352941177${slStr}`,
-  `hsl(289.88235294117646${slStr}`,
-  `hsl(284.94117647058823${slStr}`,
-  `hsl(280${slStr}`,
-  `hsl(270.11764705882354${slStr}`,
+  `hsl(292${slStr}`,
+  `hsl(288${slStr}`,
+  `hsl(284${slStr}`,
+  `hsl(276${slStr}`,
+  `hsl(268${slStr}`,
+  `hsl(264${slStr}`,
   `hsl(260${slStr}`,
-  `hsl(250.11764705882354${slStr}`,
   `hsl(240${slStr}`,
-  `hsl(229.8823529411765${slStr}`,
+  `hsl(224${slStr}`,
   `hsl(220${slStr}`,
-  `hsl(209.88235294117646${slStr}`,
+  `hsl(216${slStr}`,
+  `hsl(208${slStr}`,
   `hsl(200${slStr}`,
-  `hsl(195.05882352941177${slStr}`,
-  `hsl(189.88235294117646${slStr}`,
-  `hsl(184.94117647058823${slStr}`,
+  `hsl(196${slStr}`,
+  `hsl(192${slStr}`,
   `hsl(180${slStr}`,
-  `hsl(164.94117647058823${slStr}`,
-  `hsl(150.11764705882354${slStr}`,
-  `hsl(135.05882352941177${slStr}`,
+  `hsl(164${slStr}`,
+  `hsl(156${slStr}`,
+  `hsl(148${slStr}`,
   `hsl(120${slStr}`,
-  `hsl(109.88235294117646${slStr}`,
-  `hsl(100${slStr}`,
-  `hsl(89.88235294117646${slStr}`,
+  `hsl(96${slStr}`,
+  `hsl(92${slStr}`,
+  `hsl(88${slStr}`,
   `hsl(80${slStr}`,
-  `hsl(75.05882352941177${slStr}`,
-  `hsl(69.88235294117646${slStr}`,
-  `hsl(64.94117647058825${slStr}`,
+  `hsl(72${slStr}`,
+  `hsl(68${slStr}`,
+  `hsl(64${slStr}`,
   `hsl(60${slStr}`,
-  `hsl(55.05882352941176${slStr}`,
-  `hsl(50.11764705882353${slStr}`,
-  `hsl(44.94117647058823${slStr}`,
-  `hsl(40${slStr}`,
-  `hsl(30.11764705882353${slStr}`,
+  `hsl(52${slStr}`,
+  `hsl(48${slStr}`,
+  `hsl(44${slStr}`,
+  `hsl(36${slStr}`,
+  `hsl(28${slStr}`,
+  `hsl(24${slStr}`,
   `hsl(20${slStr}`,
-  `hsl(10.117647058823530${slStr}`,
   `hsl(0${slStr}`,
 ]
 viewof size = Inputs.range([50, 700], {
@@ -4898,6 +4979,79 @@ class SoundBuffer {
     return ui;
   }
 }
+function shortenHex(hex) {
+  if (!/^#([0-9a-f]{3}){1,2}$/i.test(hex)) {
+    return hex;
+  }
+  hex = hex.replace("#", "");
+  if (hex.length === 6 && hex[0] === hex[1] && hex[2] === hex[3] && hex[4] === hex[5]) {
+    return "#" + hex[0] + hex[2] + hex[4];
+  }
+  return "#" + hex;
+}
+dtHex = d3.color(piecewiseColor(deciturns / 10)).formatHex()
+dtHexHsl = textcolor(shortenHex(dtHex).slice(1), dtHex)
+dtValHsl = textcolor(deciturns.toFixed(1), dtHex)
+piecewiseIob = d3.piecewise(d3.interpolateRound, [
+  301.734720,
+  319.675162,
+  338.684026,
+  358.823261,
+  380.160000,
+  402.765523,
+  426.715171,
+  452.088950,
+  478.971619,
+  507.452688,
+  537.627456,
+  569.596406,
+  603.466416,
+  639.351360,
+])
+piecewiseMillizem = d3.piecewise(d3.interpolateRound, [
+  2436.073648,
+  2299.359125,
+  2170.306080,
+  2048.495960,
+  1933.522727,
+  1825.002285,
+  1722.572924,
+  1625.892425,
+  1534.637900,
+  1448.505481,
+  1367.206961,
+  1290.471625,
+  1218.042928,
+  1149.677698,
+])
+h014 = d3.hsl(piecewiseColor(0.014)).h
+h021 = d3.hsl(piecewiseColor(0.021)).h
+h022 = d3.hsl(piecewiseColor(0.022)).h
+h024 = d3.hsl(piecewiseColor(0.024)).h
+h039 = d3.hsl(piecewiseColor(0.039)).h
+hD039 = d3.hsl(piecewiseColor(39 / 365)).h
+hD080 = d3.hsl(piecewiseColor(80 / 365)).h
+hD285 = d3.hsl(piecewiseColor(285 / 365)).h
+h065 = d3.hsl(piecewiseColor(0.065)).h
+h185 = d3.hsl(piecewiseColor(0.185)).h
+h704 = d3.hsl(piecewiseColor(0.704)).h
+h754 = d3.hsl(piecewiseColor(0.754)).h
+h788 = d3.hsl(piecewiseColor(0.788)).h
+h815 = d3.hsl(piecewiseColor(0.815)).h
+h864 = d3.hsl(piecewiseColor(0.864)).h
+h935 = d3.hsl(piecewiseColor(0.935)).h
+h960 = d3.hsl(piecewiseColor(0.960)).h
+fMile = 5 / 3 / 1.609344
+fInch = 25 / 25.4
+hIob = d3.hsl(piecewiseColor(1 / .864 % 1)).h
+hMile = d3.hsl(piecewiseColor(fMile % 1)).h
+hInch = d3.hsl(piecewiseColor(fInch % 1)).h
+hAvLb = d3.hsl(piecewiseColor(500 / 453.59237 % 1)).h
+hPint = d3.hsl(piecewiseColor(4 / 3.785411784 % 1)).h
+hFlOz = d3.hsl(piecewiseColor(32 / 29.5735296875 % 1)).h
+hAcre = d3.hsl(piecewiseColor(247.1053814672 / 250 % 1)).h
+hSqMi = d3.hsl(piecewiseColor(fMile**2 % 1)).h
+hSqIn = d3.hsl(piecewiseColor(fInch**2 % 1)).h
 ```
 
 ``` {ojs}
@@ -4914,88 +5068,88 @@ html`
   font-family: monospace;
 }
 .color014 {
-  background: hsl(351.52941176470586 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(351.52941176470586, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h014} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h014}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color021 {
-  background: hsl(347.29411764705884 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(347.29411764705884, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(h021 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(h021, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color022 {
-  background: hsl(346.8235294117647 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(346.8235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h022} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h022}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color024 {
-  background: hsl(345.6470588235294 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(345.6470588235294, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h024} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h024}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color025 {
-  background: hsl(344.94117647058823 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(344.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(336 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(336, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color039 {
-  background: hsl(336.70588235294116 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(336.70588235294116, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h039} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorD039 {
-  background: hsl(298.5882352941177 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(298.5882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hD039} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorD080 {
-  background: hsl(272.2352941176471 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(272.2352941176471, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hD080} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD080}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorD285 {
-  background: hsl(63.76470588235294 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(63.76470588235294, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hD285} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD285}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color050 {
-  background: hsl(329.88235294117646 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(329.88235294117646, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(328 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(328, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color065 {
-  background: hsl(320.94117647058823 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(320.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h065} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h065}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5010,32 +5164,32 @@ html`
   font-family: monospace;
 }
 .color125 {
-  background: hsl(295 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(295, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(292 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(292, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color185 {
-  background: hsl(283.05882352941177 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(283.05882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h185} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h185}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color2 {
-  background: hsl(280 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(280, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(276 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(276, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color250 {
-  background: hsl(260 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(260, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(264 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(264, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5050,16 +5204,16 @@ html`
   font-family: monospace;
 }
 .color375 {
-  background: hsl(210 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(210, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(216 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(216, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color4 {
-  background: hsl(200 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(200, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(208 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(208, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5082,8 +5236,8 @@ html`
   font-family: monospace;
 }
 .color625 {
-  background: hsl(110 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(110, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(96 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(96, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5098,32 +5252,32 @@ html`
   font-family: monospace;
 }
 .color704 {
-  background: hsl(79.29411764705883 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(79.29411764705883, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h704} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h704}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color750 {
-  background: hsl(70 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(70, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(68 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(68, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color754 {
-  background: hsl(69.17647058823529 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(69.17647058823529, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h754} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h754}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color788 {
-  background: hsl(62.35294117647058 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(62.35294117647058, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h788} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h788}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5138,64 +5292,56 @@ html`
   font-family: monospace;
 }
 .color815 {
-  background: hsl(56.94117647058823 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(56.94117647058823, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h815} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h815}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color864 {
-  background: hsl(47.29411764705882 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(47.29411764705882, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h864} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h864}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color875 {
-  background: hsl(45 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(45, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(44 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(44, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color9 {
-  background: hsl(40 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(40, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(36 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(36, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color935 {
-  background: hsl(25.88235294117647 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(25.88235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h935} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h935}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color950 {
+  background: hsl(24 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(24, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color960 {
-  background: hsl(16 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(16, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.color890000 {
-  background: #890000;
-  color: white;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.colorff3900 {
-  background: #ff3900;
-  color: white;
+  background: hsl(${h960} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h960}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5203,14 +5349,6 @@ html`
 }
 .colorff6300 {
   background: #ff6300;
-  color: black;
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.colorff7100 {
-  background: #ff7100;
   color: black;
   padding: 0px 5px;
   border-radius: 4px;
@@ -5274,72 +5412,72 @@ html`
   font-family: monospace;
 }
 .colorIob {
-  background: hsl(288.4705882352941 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(288.4705882352941, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hIob} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hIob}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorMile {
-  background: hsl(338.5882352941177 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(338.5882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hMile} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hMile}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorInch {
-  background: hsl(6.352941176470588 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(6.352941176470588, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hInch} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hInch}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorAvLb {
-  background: hsl(299.52941176470586 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(299.52941176470586, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hAvLb} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hAvLb}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorPint {
-  background: hsl(325.88235294117646 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(325.88235294117646, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hPint} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hPint}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorFlOz {
-  background: hsl(310.8235294117647 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(310.8235294117647, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hFlOz} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hFlOz}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorAcre {
-  background: hsl(4.705882352941177 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(4.705882352941177, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hAcre} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hAcre}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorSqMi {
-  background: hsl(316.4705882352941 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(316.4705882352941, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hSqMi} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hSqMi}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .colorSqIn {
-  background: hsl(12.470588235294118 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(12.470588235294118, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hSqIn} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hSqIn}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
