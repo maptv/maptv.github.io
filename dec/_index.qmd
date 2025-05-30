@@ -272,47 +272,47 @@ function dec2hue(d) {
   return rgbToHsl(...dec2rgb(d))[0] * 1000
 }
 piecewiseColor = d3.piecewise(d3.interpolateRgb, [
-  "#f00",    // 0      0 red
-  "#f06",    // 0.25 336 rm
-  "#f08",    // 0.5  328 rm
-  "#f0a",    // 0.75 320 rm
-  "#f0f",    // 1    300 magenta
-  "#d0f",    // 1.25 292 mb
-  "#c0f",    // 1.5  288 mb violetpurple
-  "#b0f",    // 1.75 284 mb
-  "#90f",    // 2    276 mb purple
-  "#70f",    // 2.25 268 mb
-  "#60f",    // 2.5  264 mb purpleblue
-  "#50f",    // 2.75 260 mb
-  "#00f",    // 3    240 blue
-  "#04f",    // 3.25 224 bc
-  "#05f",    // 3.5  220 bc blueazure
-  "#06f",    // 3.75 216 bc
-  "#08f",    // 4    208 bc azure
-  "#0af",    // 4.25 200 bc
-  "#0bf",    // 4.5  196 bc azurecyan
-  "#0cf",    // 4.75 192 bc
-  "#0ff",    // 5    180 cyan
-  "#0fb",    // 5.25 164 cg
-  "#0f9",    // 5.5  156 cg cyangreen
-  "#0f7",    // 5.75 148 cg
-  "#0f0",    // 6    120 green
-  "#6f0",    // 6.25  96 gy
-  "#7f0",    // 6.5   92 gy greenlime
-  "#8f0",    // 6.75  88 gy
-  "#af0",    // 7     80 gy lime
-  "#cf0",    // 7.25  72 gy
-  "#df0",    // 7.5   68 gy limeyellow
-  "#ef0",    // 7.75  64 gy
-  "#ff0",    // 8     60 yellow
-  "#fd0",    // 8.25  52 yr
-  "#fc0",    // 8.5   48 yr yelloworange
-  "#fb0",    // 8.75  44 yr
-  "#f90",    // 9     36 yr orange
-  "#f70",    // 9.25  28 yr
-  "#f60",    // 9.5   24 yr orangered
-  "#f50",    // 9.75  20 yr
-  "#f00",    // 10     0 red
+  "#f00",    //  0   0 red
+  "#f50",    //  0.25  20 yr
+  "#f60",    //  0.5   24 yr orangered
+  "#f70",    //  0.75  28 yr
+  "#f90",    //  1     36 yr orange
+  "#fb0",    //  1.25  44 yr
+  "#fc0",    //  1.5   48 yr yelloworange
+  "#fd0",    //  1.75  52 yr
+  "#ff0",    //  2     60 yellow
+  "#ef0",    //  2.25  64 gy
+  "#df0",    //  2.5   68 gy limeyellow
+  "#cf0",    //  2.75  72 gy
+  "#af0",    //  3     80 gy lime
+  "#8f0",    //  3.25  88 gy
+  "#7f0",    //  3.5   92 gy greenlime
+  "#6f0",    //  3.75  96 gy
+  "#0f0",    //  4    120 green
+  "#0f7",    //  4.25 148 cg
+  "#0f9",    //  4.5  156 cg cyangreen
+  "#0fb",    //  4.75 164 cg
+  "#0ff",    //  5    180 cyan
+  "#0cf",    //  5.25 192 bc
+  "#0bf",    //  5.5  196 bc azurecyan
+  "#0af",    //  5.75 200 bc
+  "#08f",    //  6    208 bc azure
+  "#06f",    //  6.25 216 bc
+  "#05f",    //  6.5  220 bc blueazure
+  "#04f",    //  6.75 224 bc
+  "#00f",    //  7    240 blue
+  "#50f",    //  7.25 260 mb
+  "#60f",    //  7.5  264 mb purpleblue
+  "#70f",    //  7.75 268 mb
+  "#90f",    //  8    276 mb purple
+  "#b0f",    //  8.25 284 mb
+  "#c0f",    //  8.5  288 mb violetpurple
+  "#d0f",    //  8.75 292 mb
+  "#f0f",    //  9    300 magenta
+  "#f0a",    //  9.25 320 rm
+  "#f08",    //  9.5  328 rm
+  "#f06",    //  9.75 336 rm
+  "#f00",    //  0        0 red
 ])
 hueMtr = Math.round(colorD)
 hueDeg = dec2hue(colorD / 1000) * .36
@@ -551,38 +551,38 @@ decConnections = [
 ]
 hsl8 = [
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`,   // 0
-  `hsl(292, ${colorS / 10}%, ${colorL / 10}%)`, // 125
-  `hsl(264, ${colorS / 10}%, ${colorL / 10}%)`, // 250
-  `hsl(216, ${colorS / 10}%, ${colorL / 10}%)`, // 375
-  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // 500
-  `hsl(96, ${colorS / 10}%, ${colorL / 10}%)`, // 625
-  `hsl(68, ${colorS / 10}%, ${colorL / 10}%)`, // 750
   `hsl(44, ${colorS / 10}%, ${colorL / 10}%)`, // 875
+  `hsl(68, ${colorS / 10}%, ${colorL / 10}%)`, // 750
+  `hsl(96, ${colorS / 10}%, ${colorL / 10}%)`, // 625
+  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // 500
+  `hsl(216, ${colorS / 10}%, ${colorL / 10}%)`, // 375
+  `hsl(264, ${colorS / 10}%, ${colorL / 10}%)`, // 250
+  `hsl(292, ${colorS / 10}%, ${colorL / 10}%)`, // 125
 ]
 hsl10 = [
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
-  `hsl(300, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
-  `hsl(276, ${colorS / 10}%, ${colorL / 10}%)`, // violet
-  `hsl(240, ${colorS / 10}%, ${colorL / 10}%)`, // blue
-  `hsl(208, ${colorS / 10}%, ${colorL / 10}%)`, // azure
-  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // cyan
-  `hsl(120, ${colorS / 10}%, ${colorL / 10}%)`, // green
-  `hsl(80, ${colorS / 10}%, ${colorL / 10}%)`, // lime
-  `hsl(60, ${colorS / 10}%, ${colorL / 10}%)`, // yellow
   `hsl(36, ${colorS / 10}%, ${colorL / 10}%)`, // orange
+  `hsl(60, ${colorS / 10}%, ${colorL / 10}%)`, // yellow
+  `hsl(80, ${colorS / 10}%, ${colorL / 10}%)`, // lime
+  `hsl(120, ${colorS / 10}%, ${colorL / 10}%)`, // green
+  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // cyan
+  `hsl(208, ${colorS / 10}%, ${colorL / 10}%)`, // azure
+  `hsl(240, ${colorS / 10}%, ${colorL / 10}%)`, // blue
+  `hsl(276, ${colorS / 10}%, ${colorL / 10}%)`, // violet
+  `hsl(300, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
 ]
 hsla10 = [
   `hsla(0, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // red
-  `hsla(300, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // magenta
-  `hsla(276, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // violet
-  `hsla(240, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // blue
-  `hsla(208, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // azure
-  `hsla(180, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // cyan
-  `hsla(120, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // green
-  `hsla(80, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // lime
-  `hsla(60, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // yellow
   `hsla(36, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // orange
+  `hsla(60, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // yellow
+  `hsla(80, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // lime
+  `hsla(120, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // green
+  `hsla(180, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // cyan
+  `hsla(208, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // azure
+  `hsla(240, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // blue
+  `hsla(276, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // violet
+  `hsla(300, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // magenta
   `hsla(0, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // red
 ]
 function dote2date(dote, zone = 0) {
@@ -1183,45 +1183,45 @@ solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
 borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
 countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
 deccolors = [
-  `hsl(336${slStr}`,
-  `hsl(328${slStr}`,
-  `hsl(320${slStr}`,
-  `hsl(300${slStr}`,
-  `hsl(292${slStr}`,
-  `hsl(288${slStr}`,
-  `hsl(284${slStr}`,
-  `hsl(276${slStr}`,
-  `hsl(268${slStr}`,
-  `hsl(264${slStr}`,
-  `hsl(260${slStr}`,
-  `hsl(240${slStr}`,
-  `hsl(224${slStr}`,
-  `hsl(220${slStr}`,
-  `hsl(216${slStr}`,
-  `hsl(208${slStr}`,
-  `hsl(200${slStr}`,
-  `hsl(196${slStr}`,
-  `hsl(192${slStr}`,
-  `hsl(180${slStr}`,
-  `hsl(164${slStr}`,
-  `hsl(156${slStr}`,
-  `hsl(148${slStr}`,
-  `hsl(120${slStr}`,
-  `hsl(96${slStr}`,
-  `hsl(92${slStr}`,
-  `hsl(88${slStr}`,
-  `hsl(80${slStr}`,
-  `hsl(72${slStr}`,
-  `hsl(68${slStr}`,
-  `hsl(64${slStr}`,
-  `hsl(60${slStr}`,
-  `hsl(52${slStr}`,
-  `hsl(48${slStr}`,
-  `hsl(44${slStr}`,
-  `hsl(36${slStr}`,
-  `hsl(28${slStr}`,
-  `hsl(24${slStr}`,
   `hsl(20${slStr}`,
+  `hsl(24${slStr}`,
+  `hsl(28${slStr}`,
+  `hsl(36${slStr}`,
+  `hsl(44${slStr}`,
+  `hsl(48${slStr}`,
+  `hsl(52${slStr}`,
+  `hsl(60${slStr}`,
+  `hsl(64${slStr}`,
+  `hsl(68${slStr}`,
+  `hsl(72${slStr}`,
+  `hsl(80${slStr}`,
+  `hsl(88${slStr}`,
+  `hsl(92${slStr}`,
+  `hsl(96${slStr}`,
+  `hsl(120${slStr}`,
+  `hsl(148${slStr}`,
+  `hsl(156${slStr}`,
+  `hsl(164${slStr}`,
+  `hsl(180${slStr}`,
+  `hsl(192${slStr}`,
+  `hsl(196${slStr}`,
+  `hsl(200${slStr}`,
+  `hsl(208${slStr}`,
+  `hsl(216${slStr}`,
+  `hsl(220${slStr}`,
+  `hsl(224${slStr}`,
+  `hsl(240${slStr}`,
+  `hsl(260${slStr}`,
+  `hsl(264${slStr}`,
+  `hsl(268${slStr}`,
+  `hsl(276${slStr}`,
+  `hsl(284${slStr}`,
+  `hsl(288${slStr}`,
+  `hsl(292${slStr}`,
+  `hsl(300${slStr}`,
+  `hsl(320${slStr}`,
+  `hsl(328${slStr}`,
+  `hsl(336${slStr}`,
   `hsl(0${slStr}`,
 ]
 viewof size = Inputs.range([50, 700], {
@@ -1772,8 +1772,8 @@ html`
   font-family: monospace;
 }
 .color021 {
-  background: hsl(h021 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(h021, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h021} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h021}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1796,8 +1796,8 @@ html`
   font-family: monospace;
 }
 .color025 {
-  background: hsl(336 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(336, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(20 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(20, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1836,8 +1836,8 @@ html`
   font-family: monospace;
 }
 .color050 {
-  background: hsl(328 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(328, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(24 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(24, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1852,16 +1852,16 @@ html`
   font-family: monospace;
 }
 .color1 {
-  background: hsl(300 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(300, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(36 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(36, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color125 {
-  background: hsl(292 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(292, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(44 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(44, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1876,40 +1876,40 @@ html`
   font-family: monospace;
 }
 .color2 {
-  background: hsl(276 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(276, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(60 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(60, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color250 {
-  background: hsl(264 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(264, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(68 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(68, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color3 {
-  background: hsl(240 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(240, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(80 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(80, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color375 {
-  background: hsl(216 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(216, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(96 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(96, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color4 {
-  background: hsl(208 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(208, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(120 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(120, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1924,24 +1924,24 @@ html`
   font-family: monospace;
 }
 .color6 {
-  background: hsl(120 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(120, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(208 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(208, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color625 {
-  background: hsl(96 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(96, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(216 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(216, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color7 {
-  background: hsl(80 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(80, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(240 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(240, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1956,8 +1956,8 @@ html`
   font-family: monospace;
 }
 .color750 {
-  background: hsl(68 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(68, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(264 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(264, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1980,8 +1980,8 @@ html`
   font-family: monospace;
 }
 .color8 {
-  background: hsl(60 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(60, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(276 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(276, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2004,16 +2004,16 @@ html`
   font-family: monospace;
 }
 .color875 {
-  background: hsl(44 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(44, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(292 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(292, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color9 {
-  background: hsl(36 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(36, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(300 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(300, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2028,8 +2028,8 @@ html`
   font-family: monospace;
 }
 .color950 {
-  background: hsl(24 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(24, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(328 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(328, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2267,6 +2267,10 @@ div#hueslider input[type="number"], div#satslider input[type="number"], div#lits
 div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] , #beatinput input[type="range"] {
   max-width: 225px;
   min-width: 125px;
+}
+.colorslider {
+  display: flex;
+  justify-content: center;
 }
 div#distmap {
   display: flex;
