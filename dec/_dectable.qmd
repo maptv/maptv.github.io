@@ -1,14 +1,14 @@
 :::{#dectable}
-| **+**            |  **--**           | 🎨**[hex]{.tool data-bs-toggle="tooltip" data-bs-title="hexadecimal"}** | 🎨**[h°]{.tool data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees"}** | 🔊**[i]{.tool data-bs-toggle="tooltip" data-bs-title="iobs"}**  | 🔊**[~mz]{.tool data-bs-toggle="tooltip" data-bs-title="approximate millizems"}**    |
-| ---------------- | ----------------- | ------------------- | ----------------- | ---------------- | ----------------- |
-| [0]{.color0}     | [-10]{.color0}    | [f00]{.color0}      | [0]{.color0}      |  [200]{.color0}  |  [3675]{.color0}  |
-| [1]{.color1}     | [-9]{.color1}     | [f90]{.color1}      | [36]{.color1}     |  [220]{.color1}  |  [3341]{.color1}  |
-| [2]{.color2}     | [-8]{.color2}     | [ff0]{.color2}      | [60]{.color2}     |  [240]{.color2}  |  [3063]{.color2}  |
-| [3]{.color3}     | [-7]{.color3}     | [af0]{.color3}      | [80]{.color3}     |  [260]{.color3}  |  [2827]{.color3}  |
-| [4]{.color4}     | [-6]{.color4}     | [0f0]{.color4}      | [120]{.color4}    |  [280]{.color4}  |  [2625]{.color4}  |
-| [5]{.color5}     | [-5]{.color5}     | [0ff]{.color5}      | [180]{.color5}    |  [300]{.color5}  |  [2450]{.color5}  |
-| [6]{.color6}     | [-4]{.color6}     | [08f]{.color6}      | [208]{.color6}    |  [320]{.color6}  |  [2297]{.color6}  |
-| [7]{.color7}     | [-3]{.color7}     | [00f]{.color7}      | [240]{.color7}    |  [340]{.color7}  |  [2162]{.color7}  |
-| [8]{.color8}     | [-2]{.color8}     | [90f]{.color8}      | [276]{.color8}    |  [360]{.color8}  |  [2042]{.color8}  |
-| [9]{.color9}     | [-1]{.color9}     | [f0f]{.color9}      | [300]{.color9}    |  [380]{.color9}  |  [1934]{.color9}  |
+| **+**        |  **--**        | **[hex]{.tool data-bs-toggle="tooltip" data-bs-title="hexadecimal"}**🎨 | **[h°]{.tool data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees"}**🎨 | **[i]{.tool data-bs-toggle="tooltip" data-bs-title="iobs"}**🔊 | **[~mz]{.tool data-bs-toggle="tooltip" data-bs-title="approximate millizems"}**🔊 |
+| ------------ | -------------- | -------------- | -------------- | -------------- | --------------- |
+| [0]{.color0} | [-10]{.color0} | [f00]{.color0} | [0]{.color0}   | [200]{.color0} | [3675]{.color0} |
+| [1]{.color1} | [-9]{.color1}  | [f90]{.color1} | [36]{.color1}  | [220]{.color1} | [3341]{.color1} |
+| [2]{.color2} | [-8]{.color2}  | [ff0]{.color2} | [60]{.color2}  | [240]{.color2} | [3063]{.color2} |
+| [3]{.color3} | [-7]{.color3}  | [af0]{.color3} | [80]{.color3}  | [260]{.color3} | [2827]{.color3} |
+| [4]{.color4} | [-6]{.color4}  | [0f0]{.color4} | [120]{.color4} | [280]{.color4} | [2625]{.color4} |
+| [5]{.color5} | [-5]{.color5}  | [0ff]{.color5} | [180]{.color5} | [300]{.color5} | [2450]{.color5} |
+| [6]{.color6} | [-4]{.color6}  | [08f]{.color6} | [208]{.color6} | [320]{.color6} | [2297]{.color6} |
+| [7]{.color7} | [-3]{.color7}  | [00f]{.color7} | [240]{.color7} | [340]{.color7} | [2162]{.color7} |
+| [8]{.color8} | [-2]{.color8}  | [90f]{.color8} | [276]{.color8} | [360]{.color8} | [2042]{.color8} |
+| [9]{.color9} | [-1]{.color9}  | [f0f]{.color9} | [300]{.color9} | [380]{.color9} | [1934]{.color9} |
 :::

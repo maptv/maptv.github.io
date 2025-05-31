@@ -1704,7 +1704,7 @@ piecewiseIob = d3.piecewise(d3.interpolateRound, [
   603.466416,
   639.351360,
 ])
-piecewiseMillizem = d3.piecewise(d3.interpolateRound, [
+piecewiseLen = d3.piecewise(d3.interpolateRound, [
   2436.073648,
   2299.359125,
   2170.306080,
@@ -1720,6 +1720,51 @@ piecewiseMillizem = d3.piecewise(d3.interpolateRound, [
   1218.042928,
   1149.677698,
 ])
+class minMax {
+  constructor(limits) {
+    this.min = Math.min(...limits)
+    this.max = Math.max(...limits)
+  }
+  scale(val) {
+    return (val - this.min) / (this.max - this.min)
+  }
+}
+octave4scaler = new minMax([200, 400])
+freqs = [
+  201.38,
+  213.36,
+  226.04,
+  239.49,
+  253.73,
+  268.81,
+  284.80,
+  301.73,
+  319.68,
+  338.68,
+  358.82,
+  380.16,
+]
+notes = [
+  "A♯",
+  "B",
+  "C",
+  "C♯",
+  "D",
+  "D♯",
+  "E",
+  "F",
+  "F#",
+  "G",
+  "G♯",
+  "A",
+]
+xet = freqs.map(x => octave4scaler.scale(x))
+xetFix = xet.map(x => parseFloat((x * 10).toFixed(2)))
+xetCol = xet.map(piecewiseColor)
+xetHex = xetCol.map(x => d3.color(x).formatHex())
+xetHue = xetCol.map(x => Math.round(d3.hsl(x).h))
+xetIob = xet.map(piecewiseIob)
+xetLen = xet.map(piecewiseLen)
 h014 = d3.hsl(piecewiseColor(0.014)).h
 h021 = d3.hsl(piecewiseColor(0.021)).h
 h022 = d3.hsl(piecewiseColor(0.022)).h
@@ -1755,6 +1800,102 @@ hSqIn = d3.hsl(piecewiseColor(fInch**2 % 1)).h
 //| output: false
 html`
 <style>
+.colorAs {
+  background: hsl(${xetHue[0]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[0]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorB {
+  background: hsl(${xetHue[1]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[1]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorC {
+  background: hsl(${xetHue[2]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[2]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorCs {
+  background: hsl(${xetHue[3]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[3]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD {
+  background: hsl(${xetHue[4]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[4]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorDs {
+  background: hsl(${xetHue[5]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[5]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorE {
+  background: hsl(${xetHue[6]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[6]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorF {
+  background: hsl(${xetHue[7]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[7]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorFs {
+  background: hsl(${xetHue[8]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[8]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorG {
+  background: hsl(${xetHue[9]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[9]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorGs {
+  background: hsl(${xetHue[10]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[10]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorA {
+  background: hsl(${xetHue[11]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[11]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color0 {
   background: hsl(0 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(0, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};

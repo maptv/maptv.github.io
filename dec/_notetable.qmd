@@ -1,0 +1,16 @@
+:::{#notetable}
+| [Xet]{.tool data-bs-toggle="tooltip" data-bs-title="ten equal temperament"}🎶 | [12ET]{.tool data-bs-toggle="tooltip" data-bs-title="twelve equal temperament"}🎶 | **[hex]{.tool data-bs-toggle="tooltip" data-bs-title="hexadecimal"}**🎨 | **[~h°]{.tool data-bs-toggle="tooltip" data-bs-title="approximate HSL or HSV degrees"}**🎨 | **[~i]{.tool data-bs-toggle="tooltip" data-bs-title="approximate iobs"}**🔊  | **[~mz]{.tool data-bs-toggle="tooltip" data-bs-title="approximate millizems"}**🔊    |
+| -------------------------- | ------------------------- | -------------------------- | -------------------------- | -------------------------- | -------------------------- |
+| [\${xetFix[0]}]{.colorAs}  | [\${notes[0]}]{.colorAs}  | [\${xetHex[0]}]{.colorAs}  | [\${xetHue[0]}]{.colorAs}  | [\${xetIob[0]}]{.colorAs}  | [\${xetLen[0]}]{.colorAs}  |
+| [\${xetFix[1]}]{.colorB}   | [\${notes[1]}]{.colorB}   | [\${xetHex[1]}]{.colorB}   | [\${xetHue[1]}]{.colorB}   | [\${xetIob[1]}]{.colorB}   | [\${xetLen[1]}]{.colorB}   |
+| [\${xetFix[2]}]{.colorC}   | [\${notes[2]}]{.colorC}   | [\${xetHex[2]}]{.colorC}   | [\${xetHue[2]}]{.colorC}   | [\${xetIob[2]}]{.colorC}   | [\${xetLen[2]}]{.colorC}   |
+| [\${xetFix[3]}]{.colorCs}  | [\${notes[3]}]{.colorCs}  | [\${xetHex[3]}]{.colorCs}  | [\${xetHue[3]}]{.colorCs}  | [\${xetIob[3]}]{.colorCs}  | [\${xetLen[3]}]{.colorCs}  |
+| [\${xetFix[4]}]{.colorD}   | [\${notes[4]}]{.colorD}   | [\${xetHex[4]}]{.colorD}   | [\${xetHue[4]}]{.colorD}   | [\${xetIob[4]}]{.colorD}   | [\${xetLen[4]}]{.colorD}   |
+| [\${xetFix[5]}]{.colorDs}  | [\${notes[5]}]{.colorDs}  | [\${xetHex[5]}]{.colorDs}  | [\${xetHue[5]}]{.colorDs}  | [\${xetIob[5]}]{.colorDs}  | [\${xetLen[5]}]{.colorDs}  |
+| [\${xetFix[6]}]{.colorE}   | [\${notes[6]}]{.colorE}   | [\${xetHex[6]}]{.colorE}   | [\${xetHue[6]}]{.colorE}   | [\${xetIob[6]}]{.colorE}   | [\${xetLen[6]}]{.colorE}   |
+| [\${xetFix[7]}]{.colorF}   | [\${notes[7]}]{.colorF}   | [\${xetHex[7]}]{.colorF}   | [\${xetHue[7]}]{.colorF}   | [\${xetIob[7]}]{.colorF}   | [\${xetLen[7]}]{.colorF}   |
+| [\${xetFix[8]}]{.colorFs}  | [\${notes[8]}]{.colorFs}  | [\${xetHex[8]}]{.colorFs}  | [\${xetHue[8]}]{.colorFs}  | [\${xetIob[8]}]{.colorFs}  | [\${xetLen[8]}]{.colorFs}  |
+| [\${xetFix[9]}]{.colorG}   | [\${notes[9]}]{.colorG}   | [\${xetHex[9]}]{.colorG}   | [\${xetHue[9]}]{.colorG}   | [\${xetIob[9]}]{.colorG}   | [\${xetLen[9]}]{.colorG}   |
+| [\${xetFix[10]}]{.colorGs} | [\${notes[10]}]{.colorGs} | [\${xetHex[10]}]{.colorGs} | [\${xetHue[10]}]{.colorGs} | [\${xetIob[10]}]{.colorGs} | [\${xetLen[10]}]{.colorGs} |
+| [\${xetFix[11]}]{.colorA}  | [\${notes[11]}]{.colorA}  | [\${xetHex[11]}]{.colorA}  | [\${xetHue[11]}]{.colorA}  | [\${xetIob[11]}]{.colorA}  | [\${xetLen[11]}]{.colorA}  |
+:::
