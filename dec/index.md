@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+089
+2025+091
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -17,6 +17,8 @@ Martin Laptev
   - [Speed of sound](#sos)
   - [Beats per milliday (bpm)](#bpm)
   - [Frequency period wavelength](#fpw)
+  - [Color sound table](#cst)
+  - [Ten equal temperament (Xet)](#xet)
 - [US customary units](#ucu)
   - [Unit conversion table](#uct)
   - [Miles per hour (mph)](#mph)
@@ -605,15 +607,15 @@ decBar = colorbar({
 </colgroup>
 <thead>
 <tr>
-<th>🧭</th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
+<th></th>
+<th>🧭<strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliwindroses"><span class="math inline">$\text
 m\alpha$</span></span></strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
+<th>🧭<strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="compass degrees">c°</span></strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
+<th>🎨<strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="HSL or HSV degrees">h°</span></strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
+<th>🎨<strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</span></strong></th>
 </tr>
 </thead>
@@ -629,22 +631,22 @@ data-bs-title="hexadecimal">hex</span></strong></th>
 <td><span class="color125">NE</span></td>
 <td><span class="color125">125</span></td>
 <td><span class="color125">45</span></td>
-<td><span class="color125">292</span></td>
-<td><span class="color125">d0f</span></td>
+<td><span class="color125">44</span></td>
+<td><span class="color125">fb0</span></td>
 </tr>
 <tr>
 <td><span class="color250">E</span></td>
 <td><span class="color250">250</span></td>
 <td><span class="color250">90</span></td>
-<td><span class="color250">264</span></td>
-<td><span class="color250">60f</span></td>
+<td><span class="color250">68</span></td>
+<td><span class="color250">df0</span></td>
 </tr>
 <tr>
 <td><span class="color375">SE</span></td>
 <td><span class="color375">375</span></td>
 <td><span class="color375">135</span></td>
-<td><span class="color375">216</span></td>
-<td><span class="color375">06f</span></td>
+<td><span class="color375">96</span></td>
+<td><span class="color375">6f0</span></td>
 </tr>
 <tr>
 <td><span class="color5">S</span></td>
@@ -657,22 +659,22 @@ data-bs-title="hexadecimal">hex</span></strong></th>
 <td><span class="color625">SW</span></td>
 <td><span class="color625">625</span></td>
 <td><span class="color625">225</span></td>
-<td><span class="color625">96</span></td>
-<td><span class="color625">6f0</span></td>
+<td><span class="color625">216</span></td>
+<td><span class="color625">06f</span></td>
 </tr>
 <tr>
 <td><span class="color750">W</span></td>
 <td><span class="color750">750</span></td>
 <td><span class="color750">270</span></td>
-<td><span class="color750">68</span></td>
-<td><span class="color750">df0</span></td>
+<td><span class="color750">264</span></td>
+<td><span class="color750">60f</span></td>
 </tr>
 <tr>
 <td><span class="color875">NW</span></td>
 <td><span class="color875">875</span></td>
 <td><span class="color875">315</span></td>
-<td><span class="color875">44</span></td>
-<td><span class="color875">fb0</span></td>
+<td><span class="color875">292</span></td>
+<td><span class="color875">d0f</span></td>
 </tr>
 <tr>
 <td><span class="color0">N</span></td>
@@ -721,8 +723,8 @@ and
 directions. Together, the range🎚️inputs underneath the hue bar form a
 Hue Saturation Lightness (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Hue Saturation Lightness">HSL</span>) triplet. Like
-<span class="color0">Red</span> <span class="color6">Green</span>
-<span class="color3">Blue</span>
+<span class="color0">Red</span> <span class="color4">Green</span>
+<span class="color7">Blue</span>
 ([RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
 or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
@@ -2131,41 +2133,50 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Beats" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864)
 ```
 
-In addition to colors🎨, Dec can also label🏷️values with sounds🔊. Dec
-color🎨and sound🔊labels🏷️can give a sense of the
-[magnitude](https://en.wikipedia.org/wiki/Magnitude_(mathematics)#:~:text=a%20property%20which%20determines%20whether%20the%20object%20is%20larger%20or%20smaller%20than%20other%20objects%20of%20the%20same%20kind)
-of continuous values. Dec uses the single-digit values in the table
-below as
-[indexes](https://en.wikipedia.org/wiki/Index#:~:text=an%20integer%20pointer%20into%20an%20array%20data%20structure)
-for groups of ten, like <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-dek">dods</span>, “[top of the <span class="tool"
-data-bs-toggle="tooltip"
+In addition to colors🎨, Dec can also label🏷️values with sounds🔊. The
+table below lists the
+[indexes](https://en.wikipedia.org/wiki/Index#:~:text=an%20integer%20pointer%20into%20an%20array%20data%20structure),
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span> triplets, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iobs">i</span>
+sound🔊frequencies, and <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millizem">mz</span> sound🔊wavelengths of the Dec
+labels🏷️for groups of ten, like <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="days-of-dek">dods</span>, “[top
+of the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</span>](https://en.wiktionary.org/wiki/top_of_the_hour)”
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="times-of-day">tods</span>,
 [deciles](https://en.wikipedia.org/wiki/Decile#:~:text=any%20of%20the%20nine%20values%20that%20divide%20the%20sorted%20data%20into%20ten%20equal%20parts),
-and time zones. Each index has a corresponding color🎨and musical
-note🎶.
+and time zones. Dec uses
+[interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
+to find color🎨and sound🔊labels🏷️for values that are not in the table.
+
+## Color sound table
 
 <div id="dectable">
 
 <table>
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 12%" />
 <col style="width: 14%" />
-<col style="width: 12%" />
-<col style="width: 48%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 18%" />
 </colgroup>
 <thead>
 <tr>
 <th><strong>+</strong></th>
 <th><strong>–</strong></th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span></strong></th>
+data-bs-title="hexadecimal">hex</span></strong>🎨</th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="HSL or HSV degrees">h°</span></strong></th>
-<th><strong>Note</strong></th>
+data-bs-title="HSL or HSV degrees">h°</span></strong>🎨</th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iobs">i</span></strong>🔊</th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 </tr>
 </thead>
 <tbody>
@@ -2174,113 +2185,304 @@ data-bs-title="HSL or HSV degrees">h°</span></strong></th>
 <td><span class="color0">-10</span></td>
 <td><span class="color0">f00</span></td>
 <td><span class="color0">0</span></td>
-<td><a href="https://en.wikipedia.org/wiki/G_(musical_note)"><span
-class="color0">G</span></a></td>
-</tr>
-<tr>
-<td><span class="color050">0.5</span></td>
-<td><span class="color050">-9.5</span></td>
-<td><span class="color050">f08</span></td>
-<td><span class="color050">328</span></td>
-<td><a href="https://en.wikipedia.org/wiki/F#_(musical_note)"><span
-class="color050">F#</span></a></td>
+<td><span class="color0">200</span></td>
+<td><span class="color0">3675</span></td>
 </tr>
 <tr>
 <td><span class="color1">1</span></td>
 <td><span class="color1">-9</span></td>
-<td><span class="color1">f0f</span></td>
-<td><span class="color1">300</span></td>
-<td><a href="https://en.wikipedia.org/wiki/E_(musical_note)"><span
-class="color1">F</span></a></td>
+<td><span class="color1">f90</span></td>
+<td><span class="color1">36</span></td>
+<td><span class="color1">220</span></td>
+<td><span class="color1">3341</span></td>
 </tr>
 <tr>
 <td><span class="color2">2</span></td>
 <td><span class="color2">-8</span></td>
-<td><span class="color2">90f</span></td>
-<td><span class="color2">276</span></td>
-<td><a href="https://en.wikipedia.org/wiki/E_(musical_note)"><span
-class="color2">E</span></a></td>
+<td><span class="color2">ff0</span></td>
+<td><span class="color2">60</span></td>
+<td><span class="color2">240</span></td>
+<td><span class="color2">3063</span></td>
 </tr>
 <tr>
 <td><span class="color3">3</span></td>
 <td><span class="color3">-7</span></td>
-<td><span class="color3">00f</span></td>
-<td><span class="color3">240</span></td>
-<td><a href="https://en.wikipedia.org/wiki/D♯_(musical_note)"><span
-class="color3">D♯</span></a></td>
+<td><span class="color3">af0</span></td>
+<td><span class="color3">80</span></td>
+<td><span class="color3">260</span></td>
+<td><span class="color3">2827</span></td>
 </tr>
 <tr>
 <td><span class="color4">4</span></td>
 <td><span class="color4">-6</span></td>
-<td><span class="color4">08f</span></td>
-<td><span class="color4">208</span></td>
-<td><a href="https://en.wikipedia.org/wiki/D_(musical_note)"><span
-class="color4">D</span></a></td>
+<td><span class="color4">0f0</span></td>
+<td><span class="color4">120</span></td>
+<td><span class="color4">280</span></td>
+<td><span class="color4">2625</span></td>
 </tr>
 <tr>
 <td><span class="color5">5</span></td>
 <td><span class="color5">-5</span></td>
 <td><span class="color5">0ff</span></td>
 <td><span class="color5">180</span></td>
-<td><a href="https://en.wikipedia.org/wiki/C♯_(musical_note)"><span
-class="color5">C♯</span></a></td>
+<td><span class="color5">300</span></td>
+<td><span class="color5">2450</span></td>
 </tr>
 <tr>
 <td><span class="color6">6</span></td>
 <td><span class="color6">-4</span></td>
-<td><span class="color6">0f0</span></td>
-<td><span class="color6">120</span></td>
-<td><a href="https://en.wikipedia.org/wiki/C_(musical_note)"><span
-class="color6">C</span></a></td>
+<td><span class="color6">08f</span></td>
+<td><span class="color6">208</span></td>
+<td><span class="color6">320</span></td>
+<td><span class="color6">2297</span></td>
 </tr>
 <tr>
 <td><span class="color7">7</span></td>
 <td><span class="color7">-3</span></td>
-<td><span class="color7">af0</span></td>
-<td><span class="color7">80</span></td>
-<td><a href="https://en.wikipedia.org/wiki/B_(musical_note)"><span
-class="color7">B</span></a></td>
+<td><span class="color7">00f</span></td>
+<td><span class="color7">240</span></td>
+<td><span class="color7">340</span></td>
+<td><span class="color7">2162</span></td>
 </tr>
 <tr>
 <td><span class="color8">8</span></td>
 <td><span class="color8">-2</span></td>
-<td><span class="color8">ff0</span></td>
-<td><span class="color8">60</span></td>
-<td><a href="https://en.wikipedia.org/wiki/A♯_(musical_note)"><span
-class="color8">A♯</span></a></td>
+<td><span class="color8">90f</span></td>
+<td><span class="color8">276</span></td>
+<td><span class="color8">360</span></td>
+<td><span class="color8">2042</span></td>
 </tr>
 <tr>
 <td><span class="color9">9</span></td>
 <td><span class="color9">-1</span></td>
-<td><span class="color9">f90</span></td>
-<td><span class="color9">36</span></td>
-<td><a href="https://en.wikipedia.org/wiki/A_(musical_note)"><span
-class="color9">A</span></a></td>
-</tr>
-<tr>
-<td><span class="color950">9.5</span></td>
-<td><span class="color950">-0.5</span></td>
-<td><span class="color950">f60</span></td>
-<td><span class="color950">24</span></td>
-<td><a href="https://en.wikipedia.org/wiki/G♯_(musical_note)"><span
-class="color950">G#</span></a></td>
+<td><span class="color9">f0f</span></td>
+<td><span class="color9">300</span></td>
+<td><span class="color9">380</span></td>
+<td><span class="color9">1934</span></td>
 </tr>
 </tbody>
 </table>
 
 </div>
 
-The colors🎨and musical notes🎶in the table above are arranged by
-wavelength, from shortest to longest, so that the [highest
+## Ten equal temperament (Xet)
+
+The sound🔊frequencies in the table above are the
+[Octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
+4 [musical
+notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=distinct%20and%20isolatable%20sounds%20that%20act%20as%20the%20most%20basic%20building%20blocks%20for%20nearly%20all%20of%20music)🎶of
+the Dec **ten** **e**qual **t**emperament (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="ten equal temperament">tenet</span>) musical system. The
+ten notes🎶in any tenet (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenet">Xet</span>) octave can be referred to as the Dec
+[chromatic](https://en.wikipedia.org/wiki/Chromatic_scale#:~:text=a%20set%20of%20twelve%20pitches%20(more%20completely%2C%20pitch%20classes)%20used%20in%20tonal%20music)
+(Dechromatic)
+[scale](https://en.wikipedia.org/wiki/Scale_(music)#:~:text=any%20consecutive%20series%20of%20notes%20that%20form%20a%20progression%20between%20one%20note%20and%20its%20octave).
+The table below lists the approximate <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="tenet">Xet</span>
+[microtone](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone)
+equivalents of the [12 equal
+temperament](https://en.wikipedia.org/wiki/12_equal_temperament#:~:text=the%20musical%20system%20that%20divides%20the%20octave%20into%2012%20parts)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12ET</span>) notes🎶.
+
+<div id="notetable">
+
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="ten equal temperament">Xet</span>🎶</th>
+<th><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="twelve equal temperament">12ET</span>🎶</th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span></strong>🎨</th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximate HSL or HSV degrees">~h°</span></strong>🎨</th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximate iobs">~i</span></strong>🔊</th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="colorAs">${xetFix[0]}</span></td>
+<td><span class="colorAs">${notes[0]}</span></td>
+<td><span class="colorAs">${xetHex[0]}</span></td>
+<td><span class="colorAs">${xetHue[0]}</span></td>
+<td><span class="colorAs">${xetIob[0]}</span></td>
+<td><span class="colorAs">${xetLen[0]}</span></td>
+</tr>
+<tr>
+<td><span class="colorB">${xetFix[1]}</span></td>
+<td><span class="colorB">${notes[1]}</span></td>
+<td><span class="colorB">${xetHex[1]}</span></td>
+<td><span class="colorB">${xetHue[1]}</span></td>
+<td><span class="colorB">${xetIob[1]}</span></td>
+<td><span class="colorB">${xetLen[1]}</span></td>
+</tr>
+<tr>
+<td><span class="colorC">${xetFix[2]}</span></td>
+<td><span class="colorC">${notes[2]}</span></td>
+<td><span class="colorC">${xetHex[2]}</span></td>
+<td><span class="colorC">${xetHue[2]}</span></td>
+<td><span class="colorC">${xetIob[2]}</span></td>
+<td><span class="colorC">${xetLen[2]}</span></td>
+</tr>
+<tr>
+<td><span class="colorCs">${xetFix[3]}</span></td>
+<td><span class="colorCs">${notes[3]}</span></td>
+<td><span class="colorCs">${xetHex[3]}</span></td>
+<td><span class="colorCs">${xetHue[3]}</span></td>
+<td><span class="colorCs">${xetIob[3]}</span></td>
+<td><span class="colorCs">${xetLen[3]}</span></td>
+</tr>
+<tr>
+<td><span class="colorD">${xetFix[4]}</span></td>
+<td><span class="colorD">${notes[4]}</span></td>
+<td><span class="colorD">${xetHex[4]}</span></td>
+<td><span class="colorD">${xetHue[4]}</span></td>
+<td><span class="colorD">${xetIob[4]}</span></td>
+<td><span class="colorD">${xetLen[4]}</span></td>
+</tr>
+<tr>
+<td><span class="colorDs">${xetFix[5]}</span></td>
+<td><span class="colorDs">${notes[5]}</span></td>
+<td><span class="colorDs">${xetHex[5]}</span></td>
+<td><span class="colorDs">${xetHue[5]}</span></td>
+<td><span class="colorDs">${xetIob[5]}</span></td>
+<td><span class="colorDs">${xetLen[5]}</span></td>
+</tr>
+<tr>
+<td><span class="colorE">${xetFix[6]}</span></td>
+<td><span class="colorE">${notes[6]}</span></td>
+<td><span class="colorE">${xetHex[6]}</span></td>
+<td><span class="colorE">${xetHue[6]}</span></td>
+<td><span class="colorE">${xetIob[6]}</span></td>
+<td><span class="colorE">${xetLen[6]}</span></td>
+</tr>
+<tr>
+<td><span class="colorF">${xetFix[7]}</span></td>
+<td><span class="colorF">${notes[7]}</span></td>
+<td><span class="colorF">${xetHex[7]}</span></td>
+<td><span class="colorF">${xetHue[7]}</span></td>
+<td><span class="colorF">${xetIob[7]}</span></td>
+<td><span class="colorF">${xetLen[7]}</span></td>
+</tr>
+<tr>
+<td><span class="colorFs">${xetFix[8]}</span></td>
+<td><span class="colorFs">${notes[8]}</span></td>
+<td><span class="colorFs">${xetHex[8]}</span></td>
+<td><span class="colorFs">${xetHue[8]}</span></td>
+<td><span class="colorFs">${xetIob[8]}</span></td>
+<td><span class="colorFs">${xetLen[8]}</span></td>
+</tr>
+<tr>
+<td><span class="colorG">${xetFix[9]}</span></td>
+<td><span class="colorG">${notes[9]}</span></td>
+<td><span class="colorG">${xetHex[9]}</span></td>
+<td><span class="colorG">${xetHue[9]}</span></td>
+<td><span class="colorG">${xetIob[9]}</span></td>
+<td><span class="colorG">${xetLen[9]}</span></td>
+</tr>
+<tr>
+<td><span class="colorGs">${xetFix[10]}</span></td>
+<td><span class="colorGs">${notes[10]}</span></td>
+<td><span class="colorGs">${xetHex[10]}</span></td>
+<td><span class="colorGs">${xetHue[10]}</span></td>
+<td><span class="colorGs">${xetIob[10]}</span></td>
+<td><span class="colorGs">${xetLen[10]}</span></td>
+</tr>
+<tr>
+<td><span class="colorA">${xetFix[11]}</span></td>
+<td><span class="colorA">${notes[11]}</span></td>
+<td><span class="colorA">${xetHex[11]}</span></td>
+<td><span class="colorA">${xetHue[11]}</span></td>
+<td><span class="colorA">${xetIob[11]}</span></td>
+<td><span class="colorA">${xetLen[11]}</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+In <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenet">Xet</span> music notation, notes🎶are single-digit
+integers and microtones are decimal numbers. Of the three
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenet">Xet</span> notes🎶that differ from their closest
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12ET</span> note by more than a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a Xet musical note">decistep</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decistep">ds</span>), Note <span class="color1">1</span>
+is roughly midway between <span class="colorB">B</span> and
+<span class="colorC">C</span>, Note <span class="color3">3</span> is a
+little below the midpoint between <span class="colorD">D</span> and
+<span class="colorDs">D#</span>, and Note <span class="color4">4</span>
+is about a quarter step below <span class="colorE">E</span>.
+
+To specify an exact frequency in <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="tenet">Xet</span> we need at
+least two digits: an octave and a note index.
+<span class="colorA">A4</span>, the musical note🎶widely used to [tune
+musical
+instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance),
+is <span class="color9">49</span> in <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="tenet">Xet</span>.
+[<span class="color6">C4</span>](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard),
+which is called “Middle <span class="colorC">C</span>” because it is
+between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
+[treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)of
+a [grand
+staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff), is
+<span class="colorC">41.3</span>.
+
+The single-digit octave indexes cover nearly the entire range of
+frequencies that are audible to humans. Octave -1 notes are probably too
+low for humans to hear and Octave 10 notes are likely to be too high to
+be heard by humans.
+
+but note numbers cannot. 40 means Octave 4 note zero. Notes are
+integers, microtones are floats.
+
+3 notes🎶that are the closest can serve as last sound🔊frequency in the
+table above, <span class="color9">380</span>, is almost identical to
+<span class="colorA">A4</span>, the musical note🎶widely used to [tune
+musical
+instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance).
+in the table above are arranged by wavelength, from shortest to longest,
+so that the [highest
 energy](https://en.wikipedia.org/wiki/Wavelength#:~:text=higher%20frequencies%2C%20higher%20energy%2C%20shorter%20wavelengths%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0longer%20wavelengths%2C%20lower%20frequencies%2C%20lower%20energy)
 colors🎨and sounds🔊are associated with earlier <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="times-of-day">tods</span>. Dec
-uses
-[interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
-to find colors🎨and
-[microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone),
-the sound🔊frequencies in between musical notes🎶, for values that are
-not included in the table.
+color🎨and sound🔊labels🏷️can give a sense of the
+[magnitude](https://en.wikipedia.org/wiki/Magnitude_(mathematics)#:~:text=a%20property%20which%20determines%20whether%20the%20object%20is%20larger%20or%20smaller%20than%20other%20objects%20of%20the%20same%20kind)
+of continuous values.
+
+We can use the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span> triplet ${wavehexHsl}. the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span> triplet ${dtHexHsl}.
+
+``` {ojs}
+//| echo: false
+//| label: dtinput
+//| class: freqcomponent
+// https://observablehq.com/@d3/d3-piecewise
+viewof deciturns = Inputs.range([1, 10], { step: .1,  value: 4.5, label: "Deciturns" })
+```
 
 The notes🎶in the table above can belong to different
 [octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency).
@@ -2294,22 +2496,11 @@ data-bs-toggle="tooltip" data-bs-title="deciturns">dt</span>) value
 selected by the “Deciturns” range🎚️input above to interpolate the
 sound🔊frequency ${piecewiseIob(deciturns / 10)} <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="iobs">i</span>, and the
-wavelength ${piecewiseMillizem(deciturns / 10)} <span class="tool"
+wavelength ${piecewiseLen(deciturns / 10)} <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a zem">millizems</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizems">mz</span>).
-
-We can use the the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> triplet ${dtHexHsl}.
-
-``` {ojs}
-//| echo: false
-//| label: dtinput
-//| class: freqcomponent
-// https://observablehq.com/@d3/d3-piecewise
-viewof deciturns = Inputs.range([1, 10], { step: .1,  value: 4.5, label: "Deciturns" })
-```
 
 ``` {ojs}
 //| echo: false
@@ -2347,24 +2538,7 @@ data-bs-title="nanozems">nz</span></strong></th>
 <tbody>
 <tr>
 <td><a
-href="https://en.wikipedia.org/wiki/G♯_(musical_note)">G♯4</a></td>
-<td>358.82</td>
-<td>2.05</td>
-<td><span class="color0">ff0000</span></td>
-<td>394.53</td>
-<td>1641.32</td>
-</tr>
-<tr>
-<td><a href="https://en.wikipedia.org/wiki/A_(musical_note)">A4</a></td>
-<td>380.16</td>
-<td>1.93</td>
-<td><span class="colorff6300">ff6300</span></td>
-<td>417.99</td>
-<td>1549.20</td>
-</tr>
-<tr>
-<td><a
-href="https://en.wikipedia.org/wiki/A♯_(musical_note)">A♯4</a></td>
+href="https://en.wikipedia.org/wiki/A♯_(musical_note)">A♯</a></td>
 <td>402.77</td>
 <td>1.83</td>
 <td><span class="colorffec00">ffec00</span></td>
@@ -2372,7 +2546,7 @@ href="https://en.wikipedia.org/wiki/A♯_(musical_note)">A♯4</a></td>
 <td>1462.25</td>
 </tr>
 <tr>
-<td><a href="https://en.wikipedia.org/wiki/B_(musical_note)">B4</a></td>
+<td><a href="https://en.wikipedia.org/wiki/B_(musical_note)">B</a></td>
 <td>426.72</td>
 <td>1.72</td>
 <td><span class="color99ff00">99ff00</span></td>
@@ -2380,7 +2554,7 @@ href="https://en.wikipedia.org/wiki/A♯_(musical_note)">A♯4</a></td>
 <td>1380.18</td>
 </tr>
 <tr>
-<td><a href="https://en.wikipedia.org/wiki/C_(musical_note)">C5</a></td>
+<td><a href="https://en.wikipedia.org/wiki/C_(musical_note)">C</a></td>
 <td>452.09</td>
 <td>1.63</td>
 <td><span class="color28ff00">28ff00</span></td>
@@ -2389,7 +2563,7 @@ href="https://en.wikipedia.org/wiki/A♯_(musical_note)">A♯4</a></td>
 </tr>
 <tr>
 <td><a
-href="https://en.wikipedia.org/wiki/C♯_(musical_note)">C♯5</a></td>
+href="https://en.wikipedia.org/wiki/C♯_(musical_note)">C♯</a></td>
 <td>478.97</td>
 <td>1.53</td>
 <td><span class="color00ffe8">00ffe8</span></td>
@@ -2397,7 +2571,7 @@ href="https://en.wikipedia.org/wiki/C♯_(musical_note)">C♯5</a></td>
 <td>1229.60</td>
 </tr>
 <tr>
-<td><a href="https://en.wikipedia.org/wiki/D_(musical_note)">D5</a></td>
+<td><a href="https://en.wikipedia.org/wiki/D_(musical_note)">D</a></td>
 <td>507.45</td>
 <td>1.45</td>
 <td><span class="color007cff">007cff</span></td>
@@ -2406,7 +2580,7 @@ href="https://en.wikipedia.org/wiki/C♯_(musical_note)">C♯5</a></td>
 </tr>
 <tr>
 <td><a
-href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯5</a></td>
+href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯</a></td>
 <td>537.63</td>
 <td>1.37</td>
 <td><span class="color0800ff">0800ff</span></td>
@@ -2414,12 +2588,37 @@ href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯5</a></td>
 <td>1095.45</td>
 </tr>
 <tr>
-<td><a href="https://en.wikipedia.org/wiki/E_(musical_note)">E5</a></td>
+<td><a href="https://en.wikipedia.org/wiki/E_(musical_note)">E</a></td>
 <td>569.60</td>
 <td>1.29</td>
 <td><span class="color5e00d6">5e00d6</span></td>
 <td>626.28</td>
 <td>1033.97</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/E_(musical_note)">F</a></td>
+<td>569.60</td>
+<td>1.29</td>
+<td><span class="color5e00d6">5e00d6</span></td>
+<td>626.28</td>
+<td>1033.97</td>
+</tr>
+<tr>
+<td><a
+href="https://en.wikipedia.org/wiki/G♯_(musical_note)">G♯</a></td>
+<td>358.82</td>
+<td>2.05</td>
+<td><span class="color0">ff0000</span></td>
+<td>394.53</td>
+<td>1641.32</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/A_(musical_note)">A</a></td>
+<td>380.16</td>
+<td>1.93</td>
+<td><span class="colorff6300">ff6300</span></td>
+<td>417.99</td>
+<td>1549.20</td>
 </tr>
 </tbody>
 </table>
@@ -2458,8 +2657,6 @@ to <span class="color6">C5</span>. If we center on
 [<span class="color9">A</span>]((https://en.wikipedia.org/wiki/A_(musical_note)))
 note🎶will be
 [<span class="color9">A4</span>](https://en.wikipedia.org/wiki/A440_(pitch_standard)#:~:text=the%20musical%20note%20of%20A%20above%20middle%20C%2C%20or%20A4),
-the note🎶widely used to [tune musical
-instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance).
 
 <span class="color9">A4</span> has a frequency of 440 Hertz × .864
 seconds per <span class="tool" data-bs-toggle="tooltip"
@@ -3576,47 +3773,47 @@ function dec2hue(d) {
   return rgbToHsl(...dec2rgb(d))[0] * 1000
 }
 piecewiseColor = d3.piecewise(d3.interpolateRgb, [
-  "#f00",    // 0      0 red
-  "#f06",    // 0.25 336 rm
-  "#f08",    // 0.5  328 rm
-  "#f0a",    // 0.75 320 rm
-  "#f0f",    // 1    300 magenta
-  "#d0f",    // 1.25 292 mb
-  "#c0f",    // 1.5  288 mb violetpurple
-  "#b0f",    // 1.75 284 mb
-  "#90f",    // 2    276 mb purple
-  "#70f",    // 2.25 268 mb
-  "#60f",    // 2.5  264 mb purpleblue
-  "#50f",    // 2.75 260 mb
-  "#00f",    // 3    240 blue
-  "#04f",    // 3.25 224 bc
-  "#05f",    // 3.5  220 bc blueazure
-  "#06f",    // 3.75 216 bc
-  "#08f",    // 4    208 bc azure
-  "#0af",    // 4.25 200 bc
-  "#0bf",    // 4.5  196 bc azurecyan
-  "#0cf",    // 4.75 192 bc
-  "#0ff",    // 5    180 cyan
-  "#0fb",    // 5.25 164 cg
-  "#0f9",    // 5.5  156 cg cyangreen
-  "#0f7",    // 5.75 148 cg
-  "#0f0",    // 6    120 green
-  "#6f0",    // 6.25  96 gy
-  "#7f0",    // 6.5   92 gy greenlime
-  "#8f0",    // 6.75  88 gy
-  "#af0",    // 7     80 gy lime
-  "#cf0",    // 7.25  72 gy
-  "#df0",    // 7.5   68 gy limeyellow
-  "#ef0",    // 7.75  64 gy
-  "#ff0",    // 8     60 yellow
-  "#fd0",    // 8.25  52 yr
-  "#fc0",    // 8.5   48 yr yelloworange
-  "#fb0",    // 8.75  44 yr
-  "#f90",    // 9     36 yr orange
-  "#f70",    // 9.25  28 yr
-  "#f60",    // 9.5   24 yr orangered
-  "#f50",    // 9.75  20 yr
-  "#f00",    // 10     0 red
+  "#f00",    //  0   0 red
+  "#f50",    //  0.25  20 yr
+  "#f60",    //  0.5   24 yr orangered
+  "#f70",    //  0.75  28 yr
+  "#f90",    //  1     36 yr orange
+  "#fb0",    //  1.25  44 yr
+  "#fc0",    //  1.5   48 yr yelloworange
+  "#fd0",    //  1.75  52 yr
+  "#ff0",    //  2     60 yellow
+  "#ef0",    //  2.25  64 gy
+  "#df0",    //  2.5   68 gy limeyellow
+  "#cf0",    //  2.75  72 gy
+  "#af0",    //  3     80 gy lime
+  "#8f0",    //  3.25  88 gy
+  "#7f0",    //  3.5   92 gy greenlime
+  "#6f0",    //  3.75  96 gy
+  "#0f0",    //  4    120 green
+  "#0f7",    //  4.25 148 cg
+  "#0f9",    //  4.5  156 cg cyangreen
+  "#0fb",    //  4.75 164 cg
+  "#0ff",    //  5    180 cyan
+  "#0cf",    //  5.25 192 bc
+  "#0bf",    //  5.5  196 bc azurecyan
+  "#0af",    //  5.75 200 bc
+  "#08f",    //  6    208 bc azure
+  "#06f",    //  6.25 216 bc
+  "#05f",    //  6.5  220 bc blueazure
+  "#04f",    //  6.75 224 bc
+  "#00f",    //  7    240 blue
+  "#50f",    //  7.25 260 mb
+  "#60f",    //  7.5  264 mb purpleblue
+  "#70f",    //  7.75 268 mb
+  "#90f",    //  8    276 mb purple
+  "#b0f",    //  8.25 284 mb
+  "#c0f",    //  8.5  288 mb violetpurple
+  "#d0f",    //  8.75 292 mb
+  "#f0f",    //  9    300 magenta
+  "#f0a",    //  9.25 320 rm
+  "#f08",    //  9.5  328 rm
+  "#f06",    //  9.75 336 rm
+  "#f00",    //  0        0 red
 ])
 hueMtr = Math.round(colorD)
 hueDeg = dec2hue(colorD / 1000) * .36
@@ -3855,38 +4052,38 @@ decConnections = [
 ]
 hsl8 = [
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`,   // 0
-  `hsl(292, ${colorS / 10}%, ${colorL / 10}%)`, // 125
-  `hsl(264, ${colorS / 10}%, ${colorL / 10}%)`, // 250
-  `hsl(216, ${colorS / 10}%, ${colorL / 10}%)`, // 375
-  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // 500
-  `hsl(96, ${colorS / 10}%, ${colorL / 10}%)`, // 625
-  `hsl(68, ${colorS / 10}%, ${colorL / 10}%)`, // 750
   `hsl(44, ${colorS / 10}%, ${colorL / 10}%)`, // 875
+  `hsl(68, ${colorS / 10}%, ${colorL / 10}%)`, // 750
+  `hsl(96, ${colorS / 10}%, ${colorL / 10}%)`, // 625
+  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // 500
+  `hsl(216, ${colorS / 10}%, ${colorL / 10}%)`, // 375
+  `hsl(264, ${colorS / 10}%, ${colorL / 10}%)`, // 250
+  `hsl(292, ${colorS / 10}%, ${colorL / 10}%)`, // 125
 ]
 hsl10 = [
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
-  `hsl(300, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
-  `hsl(276, ${colorS / 10}%, ${colorL / 10}%)`, // violet
-  `hsl(240, ${colorS / 10}%, ${colorL / 10}%)`, // blue
-  `hsl(208, ${colorS / 10}%, ${colorL / 10}%)`, // azure
-  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // cyan
-  `hsl(120, ${colorS / 10}%, ${colorL / 10}%)`, // green
-  `hsl(80, ${colorS / 10}%, ${colorL / 10}%)`, // lime
-  `hsl(60, ${colorS / 10}%, ${colorL / 10}%)`, // yellow
   `hsl(36, ${colorS / 10}%, ${colorL / 10}%)`, // orange
+  `hsl(60, ${colorS / 10}%, ${colorL / 10}%)`, // yellow
+  `hsl(80, ${colorS / 10}%, ${colorL / 10}%)`, // lime
+  `hsl(120, ${colorS / 10}%, ${colorL / 10}%)`, // green
+  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // cyan
+  `hsl(208, ${colorS / 10}%, ${colorL / 10}%)`, // azure
+  `hsl(240, ${colorS / 10}%, ${colorL / 10}%)`, // blue
+  `hsl(276, ${colorS / 10}%, ${colorL / 10}%)`, // violet
+  `hsl(300, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
   `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
 ]
 hsla10 = [
   `hsla(0, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // red
-  `hsla(300, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // magenta
-  `hsla(276, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // violet
-  `hsla(240, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // blue
-  `hsla(208, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // azure
-  `hsla(180, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // cyan
-  `hsla(120, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // green
-  `hsla(80, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // lime
-  `hsla(60, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // yellow
   `hsla(36, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // orange
+  `hsla(60, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // yellow
+  `hsla(80, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // lime
+  `hsla(120, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // green
+  `hsla(180, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // cyan
+  `hsla(208, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // azure
+  `hsla(240, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // blue
+  `hsla(276, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // violet
+  `hsla(300, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // magenta
   `hsla(0, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // red
 ]
 function dote2date(dote, zone = 0) {
@@ -4487,45 +4684,45 @@ solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
 borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
 countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
 deccolors = [
-  `hsl(336${slStr}`,
-  `hsl(328${slStr}`,
-  `hsl(320${slStr}`,
-  `hsl(300${slStr}`,
-  `hsl(292${slStr}`,
-  `hsl(288${slStr}`,
-  `hsl(284${slStr}`,
-  `hsl(276${slStr}`,
-  `hsl(268${slStr}`,
-  `hsl(264${slStr}`,
-  `hsl(260${slStr}`,
-  `hsl(240${slStr}`,
-  `hsl(224${slStr}`,
-  `hsl(220${slStr}`,
-  `hsl(216${slStr}`,
-  `hsl(208${slStr}`,
-  `hsl(200${slStr}`,
-  `hsl(196${slStr}`,
-  `hsl(192${slStr}`,
-  `hsl(180${slStr}`,
-  `hsl(164${slStr}`,
-  `hsl(156${slStr}`,
-  `hsl(148${slStr}`,
-  `hsl(120${slStr}`,
-  `hsl(96${slStr}`,
-  `hsl(92${slStr}`,
-  `hsl(88${slStr}`,
-  `hsl(80${slStr}`,
-  `hsl(72${slStr}`,
-  `hsl(68${slStr}`,
-  `hsl(64${slStr}`,
-  `hsl(60${slStr}`,
-  `hsl(52${slStr}`,
-  `hsl(48${slStr}`,
-  `hsl(44${slStr}`,
-  `hsl(36${slStr}`,
-  `hsl(28${slStr}`,
-  `hsl(24${slStr}`,
   `hsl(20${slStr}`,
+  `hsl(24${slStr}`,
+  `hsl(28${slStr}`,
+  `hsl(36${slStr}`,
+  `hsl(44${slStr}`,
+  `hsl(48${slStr}`,
+  `hsl(52${slStr}`,
+  `hsl(60${slStr}`,
+  `hsl(64${slStr}`,
+  `hsl(68${slStr}`,
+  `hsl(72${slStr}`,
+  `hsl(80${slStr}`,
+  `hsl(88${slStr}`,
+  `hsl(92${slStr}`,
+  `hsl(96${slStr}`,
+  `hsl(120${slStr}`,
+  `hsl(148${slStr}`,
+  `hsl(156${slStr}`,
+  `hsl(164${slStr}`,
+  `hsl(180${slStr}`,
+  `hsl(192${slStr}`,
+  `hsl(196${slStr}`,
+  `hsl(200${slStr}`,
+  `hsl(208${slStr}`,
+  `hsl(216${slStr}`,
+  `hsl(220${slStr}`,
+  `hsl(224${slStr}`,
+  `hsl(240${slStr}`,
+  `hsl(260${slStr}`,
+  `hsl(264${slStr}`,
+  `hsl(268${slStr}`,
+  `hsl(276${slStr}`,
+  `hsl(284${slStr}`,
+  `hsl(288${slStr}`,
+  `hsl(292${slStr}`,
+  `hsl(300${slStr}`,
+  `hsl(320${slStr}`,
+  `hsl(328${slStr}`,
+  `hsl(336${slStr}`,
   `hsl(0${slStr}`,
 ]
 viewof size = Inputs.range([50, 700], {
@@ -5008,7 +5205,7 @@ piecewiseIob = d3.piecewise(d3.interpolateRound, [
   603.466416,
   639.351360,
 ])
-piecewiseMillizem = d3.piecewise(d3.interpolateRound, [
+piecewiseLen = d3.piecewise(d3.interpolateRound, [
   2436.073648,
   2299.359125,
   2170.306080,
@@ -5024,6 +5221,51 @@ piecewiseMillizem = d3.piecewise(d3.interpolateRound, [
   1218.042928,
   1149.677698,
 ])
+class minMax {
+  constructor(limits) {
+    this.min = Math.min(...limits)
+    this.max = Math.max(...limits)
+  }
+  scale(val) {
+    return (val - this.min) / (this.max - this.min)
+  }
+}
+octave4scaler = new minMax([200, 400])
+freqs = [
+  201.38,
+  213.36,
+  226.04,
+  239.49,
+  253.73,
+  268.81,
+  284.80,
+  301.73,
+  319.68,
+  338.68,
+  358.82,
+  380.16,
+]
+notes = [
+  "A♯",
+  "B",
+  "C",
+  "C♯",
+  "D",
+  "D♯",
+  "E",
+  "F",
+  "F#",
+  "G",
+  "G♯",
+  "A",
+]
+xet = freqs.map(x => octave4scaler.scale(x))
+xetFix = xet.map(x => parseFloat((x * 10).toFixed(2)))
+xetCol = xet.map(piecewiseColor)
+xetHex = xetCol.map(x => d3.color(x).formatHex())
+xetHue = xetCol.map(x => Math.round(d3.hsl(x).h))
+xetIob = xet.map(piecewiseIob)
+xetLen = xet.map(piecewiseLen)
 h014 = d3.hsl(piecewiseColor(0.014)).h
 h021 = d3.hsl(piecewiseColor(0.021)).h
 h022 = d3.hsl(piecewiseColor(0.022)).h
@@ -5059,6 +5301,102 @@ hSqIn = d3.hsl(piecewiseColor(fInch**2 % 1)).h
 //| output: false
 html`
 <style>
+.colorAs {
+  background: hsl(${xetHue[0]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[0]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorB {
+  background: hsl(${xetHue[1]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[1]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorC {
+  background: hsl(${xetHue[2]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[2]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorCs {
+  background: hsl(${xetHue[3]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[3]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD {
+  background: hsl(${xetHue[4]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[4]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorDs {
+  background: hsl(${xetHue[5]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[5]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorE {
+  background: hsl(${xetHue[6]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[6]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorF {
+  background: hsl(${xetHue[7]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[7]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorFs {
+  background: hsl(${xetHue[8]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[8]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorG {
+  background: hsl(${xetHue[9]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[9]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorGs {
+  background: hsl(${xetHue[10]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[10]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorA {
+  background: hsl(${xetHue[11]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[11]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color0 {
   background: hsl(0 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(0, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -5076,8 +5414,8 @@ html`
   font-family: monospace;
 }
 .color021 {
-  background: hsl(h021 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(h021, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${h021} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h021}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5100,8 +5438,8 @@ html`
   font-family: monospace;
 }
 .color025 {
-  background: hsl(336 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(336, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(20 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(20, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5140,8 +5478,8 @@ html`
   font-family: monospace;
 }
 .color050 {
-  background: hsl(328 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(328, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(24 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(24, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5156,16 +5494,16 @@ html`
   font-family: monospace;
 }
 .color1 {
-  background: hsl(300 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(300, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(36 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(36, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color125 {
-  background: hsl(292 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(292, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(44 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(44, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5180,40 +5518,40 @@ html`
   font-family: monospace;
 }
 .color2 {
-  background: hsl(276 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(276, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(60 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(60, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color250 {
-  background: hsl(264 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(264, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(68 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(68, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color3 {
-  background: hsl(240 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(240, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(80 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(80, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color375 {
-  background: hsl(216 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(216, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(96 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(96, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color4 {
-  background: hsl(208 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(208, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(120 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(120, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5228,24 +5566,24 @@ html`
   font-family: monospace;
 }
 .color6 {
-  background: hsl(120 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(120, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(208 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(208, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color625 {
-  background: hsl(96 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(96, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(216 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(216, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color7 {
-  background: hsl(80 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(80, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(240 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(240, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5260,8 +5598,8 @@ html`
   font-family: monospace;
 }
 .color750 {
-  background: hsl(68 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(68, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(264 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(264, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5284,8 +5622,8 @@ html`
   font-family: monospace;
 }
 .color8 {
-  background: hsl(60 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(60, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(276 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(276, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5308,16 +5646,16 @@ html`
   font-family: monospace;
 }
 .color875 {
-  background: hsl(44 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(44, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(292 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(292, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color9 {
-  background: hsl(36 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(36, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(300 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(300, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5332,8 +5670,8 @@ html`
   font-family: monospace;
 }
 .color950 {
-  background: hsl(24 ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(24, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(328 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(328, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5570,6 +5908,10 @@ div#hueslider input[type="number"], div#satslider input[type="number"], div#lits
 div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] , #beatinput input[type="range"] {
   max-width: 225px;
   min-width: 125px;
+}
+.colorslider {
+  display: flex;
+  justify-content: center;
 }
 div#distmap {
   display: flex;
