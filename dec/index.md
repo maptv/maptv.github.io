@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+091
+2025+094
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -15,10 +15,11 @@ Martin Laptev
   - [Millenium Year Day](#myd)
 - [Zone equatorial meter (zem)](#zem)
   - [Speed of sound](#sos)
+- [Inverse of b (Iob)](#iob)
   - [Beats per milliday (bpm)](#bpm)
   - [Frequency period wavelength](#fpw)
+- [Ten equal temperament (Xet)](#xet)
   - [Color sound table](#cst)
-  - [Ten equal temperament (Xet)](#xet)
 - [US customary units](#ucu)
   - [Unit conversion table](#uct)
   - [Miles per hour (mph)](#mph)
@@ -597,6 +598,8 @@ decBar = colorbar({
 
 ## Course color table
 
+<div id="colortable">
+
 <table>
 <colgroup>
 <col style="width: 17%" />
@@ -608,15 +611,15 @@ decBar = colorbar({
 <thead>
 <tr>
 <th></th>
-<th>🧭<strong><span class="tool" data-bs-toggle="tooltip"
+<th><strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliwindroses"><span class="math inline">$\text
-m\alpha$</span></span></strong></th>
-<th>🧭<strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="compass degrees">c°</span></strong></th>
-<th>🎨<strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="HSL or HSV degrees">h°</span></strong></th>
-<th>🎨<strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span></strong></th>
+m\alpha$</span></span></strong>🧭</th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="compass degrees">c°</span></strong>🧭</th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="HSL or HSV degrees">h°</span></strong>🎨</th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</span></strong>🎨</th>
 </tr>
 </thead>
 <tbody>
@@ -685,6 +688,8 @@ data-bs-title="hexadecimal">hex</span></strong></th>
 </tr>
 </tbody>
 </table>
+
+</div>
 
 The
 [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
@@ -839,8 +844,8 @@ data-bs-title="millimeridians">$\text m\phi$</span>), and
 data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span>) on the map🗺️above
 along with the ten major longitudes that divide the Earth🌎into the ten
-Dec time zones. Notably, Longitude 0 is the major longitude that serves
-as both the [Prime
+Dec time zones. Notably, Longitude 0 is the major longitude that
+functions as both the [Prime
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)
 and [International Date
 Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
@@ -1996,6 +2001,8 @@ we have to exit the highway🛣️. To ensure we do not miss our exit, we can
 periodically check a countdown of the remaining <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zems">z</span>: ${zLeft}.
 
+# Inverse of b (Iob)
+
 Dec refers to <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span> as
 <span class="tool" data-bs-toggle="tooltip"
@@ -2133,37 +2140,41 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Beats" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864)
 ```
 
+# Ten equal temperament (Xet)
+
 In addition to colors🎨, Dec can also label🏷️values with sounds🔊. The
-table below lists the
+positive (**+**) and negative (**–**)
 [indexes](https://en.wikipedia.org/wiki/Index#:~:text=an%20integer%20pointer%20into%20an%20array%20data%20structure),
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</span> triplets, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iobs">i</span>
-sound🔊frequencies, and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millizem">mz</span> sound🔊wavelengths of the Dec
-labels🏷️for groups of ten, like <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees">h°</span>,
+and <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iob">i</span> sound🔊frequencies in the table below
+characterize the
+[Octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
+4 [musical
+tones](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound)
+of the **Ten** **e**qual **t**emperament (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="ten equal temperament">Tenet</span>) musical system and
+the Dec labels🏷️for groups of ten, like <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="days-of-dek">dods</span>, “[top
 of the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</span>](https://en.wiktionary.org/wiki/top_of_the_hour)”
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">tods</span>,
-[deciles](https://en.wikipedia.org/wiki/Decile#:~:text=any%20of%20the%20nine%20values%20that%20divide%20the%20sorted%20data%20into%20ten%20equal%20parts),
-and time zones. Dec uses
-[interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
-to find color🎨and sound🔊labels🏷️for values that are not in the table.
+data-bs-title="times-of-day">tods</span>, and time zones.
 
 ## Color sound table
 
 <div id="dectable">
 
-<table>
+<table style="width:100%;">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 18%" />
+<col style="width: 17%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr>
@@ -2175,8 +2186,6 @@ data-bs-title="hexadecimal">hex</span></strong>🎨</th>
 data-bs-title="HSL or HSV degrees">h°</span></strong>🎨</th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="iobs">i</span></strong>🔊</th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 </tr>
 </thead>
 <tbody>
@@ -2186,7 +2195,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="color0">f00</span></td>
 <td><span class="color0">0</span></td>
 <td><span class="color0">200</span></td>
-<td><span class="color0">3675</span></td>
 </tr>
 <tr>
 <td><span class="color1">1</span></td>
@@ -2194,7 +2202,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="color1">f90</span></td>
 <td><span class="color1">36</span></td>
 <td><span class="color1">220</span></td>
-<td><span class="color1">3341</span></td>
 </tr>
 <tr>
 <td><span class="color2">2</span></td>
@@ -2202,7 +2209,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="color2">ff0</span></td>
 <td><span class="color2">60</span></td>
 <td><span class="color2">240</span></td>
-<td><span class="color2">3063</span></td>
 </tr>
 <tr>
 <td><span class="color3">3</span></td>
@@ -2210,7 +2216,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="color3">af0</span></td>
 <td><span class="color3">80</span></td>
 <td><span class="color3">260</span></td>
-<td><span class="color3">2827</span></td>
 </tr>
 <tr>
 <td><span class="color4">4</span></td>
@@ -2218,7 +2223,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="color4">0f0</span></td>
 <td><span class="color4">120</span></td>
 <td><span class="color4">280</span></td>
-<td><span class="color4">2625</span></td>
 </tr>
 <tr>
 <td><span class="color5">5</span></td>
@@ -2226,7 +2230,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="color5">0ff</span></td>
 <td><span class="color5">180</span></td>
 <td><span class="color5">300</span></td>
-<td><span class="color5">2450</span></td>
 </tr>
 <tr>
 <td><span class="color6">6</span></td>
@@ -2234,7 +2237,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="color6">08f</span></td>
 <td><span class="color6">208</span></td>
 <td><span class="color6">320</span></td>
-<td><span class="color6">2297</span></td>
 </tr>
 <tr>
 <td><span class="color7">7</span></td>
@@ -2242,7 +2244,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="color7">00f</span></td>
 <td><span class="color7">240</span></td>
 <td><span class="color7">340</span></td>
-<td><span class="color7">2162</span></td>
 </tr>
 <tr>
 <td><span class="color8">8</span></td>
@@ -2250,7 +2251,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="color8">90f</span></td>
 <td><span class="color8">276</span></td>
 <td><span class="color8">360</span></td>
-<td><span class="color8">2042</span></td>
 </tr>
 <tr>
 <td><span class="color9">9</span></td>
@@ -2258,60 +2258,56 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="color9">f0f</span></td>
 <td><span class="color9">300</span></td>
 <td><span class="color9">380</span></td>
-<td><span class="color9">1934</span></td>
 </tr>
 </tbody>
 </table>
 
 </div>
 
-## Ten equal temperament (Xet)
-
-The sound🔊frequencies in the table above are the
-[Octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-4 [musical
-notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=distinct%20and%20isolatable%20sounds%20that%20act%20as%20the%20most%20basic%20building%20blocks%20for%20nearly%20all%20of%20music)🎶of
-the Dec **ten** **e**qual **t**emperament (<span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="ten equal temperament">tenet</span>) musical system. The
-ten notes🎶in any tenet (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenet">Xet</span>) octave can be referred to as the Dec
-[chromatic](https://en.wikipedia.org/wiki/Chromatic_scale#:~:text=a%20set%20of%20twelve%20pitches%20(more%20completely%2C%20pitch%20classes)%20used%20in%20tonal%20music)
-(Dechromatic)
+The ten tones in any <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="ten equal temperament">Tenet</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span>) octave can be
+referred to as the Dec chromatic (Dechromatic)
 [scale](https://en.wikipedia.org/wiki/Scale_(music)#:~:text=any%20consecutive%20series%20of%20notes%20that%20form%20a%20progression%20between%20one%20note%20and%20its%20octave).
-The table below lists the approximate <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="tenet">Xet</span>
-[microtone](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone)
-equivalents of the [12 equal
+In <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenet">Xet</span> [musical
+notation](https://en.wikipedia.org/wiki/Musical_notation#:~:text=any%20system%20used%20to%20visually%20represent%20music),
+Dechromatic scale [musical
+notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=distinct%20and%20isolatable%20sounds%20that%20act%20as%20the%20most%20basic%20building%20blocks%20for%20nearly%20all%20of%20music)🎶are
+integers and
+[microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone)
+are decimal numbers. The table below shows the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="tenet">Xet</span> microtone
+equivalents of the [chromatic
+scale](https://en.wikipedia.org/wiki/Chromatic_scale#:~:text=a%20set%20of%20twelve%20pitches%20(more%20completely%2C%20pitch%20classes)%20used%20in%20tonal%20music)
+[notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=Chromatic%20scale,-note%20naming%20conventions)🎶of
+the [12 equal
 temperament](https://en.wikipedia.org/wiki/12_equal_temperament#:~:text=the%20musical%20system%20that%20divides%20the%20octave%20into%2012%20parts)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</span>) notes🎶.
+data-bs-title="12 equal temperament">12ET</span>) musical system.
 
 <div id="notetable">
 
 <table>
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
+<col style="width: 20%" />
+<col style="width: 19%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr>
 <th><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="ten equal temperament">Xet</span>🎶</th>
+data-bs-title="tenet microtones">Xet</span>🎶</th>
 <th><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="twelve equal temperament">12ET</span>🎶</th>
+data-bs-title="twelve equal temperament notes">12ET</span>🎶</th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</span></strong>🎨</th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximate HSL or HSV degrees">~h°</span></strong>🎨</th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximate iobs">~i</span></strong>🔊</th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 </tr>
 </thead>
 <tbody>
@@ -2321,7 +2317,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="colorAs">${xetHex[0]}</span></td>
 <td><span class="colorAs">${xetHue[0]}</span></td>
 <td><span class="colorAs">${xetIob[0]}</span></td>
-<td><span class="colorAs">${xetLen[0]}</span></td>
 </tr>
 <tr>
 <td><span class="colorB">${xetFix[1]}</span></td>
@@ -2329,7 +2324,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="colorB">${xetHex[1]}</span></td>
 <td><span class="colorB">${xetHue[1]}</span></td>
 <td><span class="colorB">${xetIob[1]}</span></td>
-<td><span class="colorB">${xetLen[1]}</span></td>
 </tr>
 <tr>
 <td><span class="colorC">${xetFix[2]}</span></td>
@@ -2337,7 +2331,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="colorC">${xetHex[2]}</span></td>
 <td><span class="colorC">${xetHue[2]}</span></td>
 <td><span class="colorC">${xetIob[2]}</span></td>
-<td><span class="colorC">${xetLen[2]}</span></td>
 </tr>
 <tr>
 <td><span class="colorCs">${xetFix[3]}</span></td>
@@ -2345,7 +2338,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="colorCs">${xetHex[3]}</span></td>
 <td><span class="colorCs">${xetHue[3]}</span></td>
 <td><span class="colorCs">${xetIob[3]}</span></td>
-<td><span class="colorCs">${xetLen[3]}</span></td>
 </tr>
 <tr>
 <td><span class="colorD">${xetFix[4]}</span></td>
@@ -2353,7 +2345,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="colorD">${xetHex[4]}</span></td>
 <td><span class="colorD">${xetHue[4]}</span></td>
 <td><span class="colorD">${xetIob[4]}</span></td>
-<td><span class="colorD">${xetLen[4]}</span></td>
 </tr>
 <tr>
 <td><span class="colorDs">${xetFix[5]}</span></td>
@@ -2361,7 +2352,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="colorDs">${xetHex[5]}</span></td>
 <td><span class="colorDs">${xetHue[5]}</span></td>
 <td><span class="colorDs">${xetIob[5]}</span></td>
-<td><span class="colorDs">${xetLen[5]}</span></td>
 </tr>
 <tr>
 <td><span class="colorE">${xetFix[6]}</span></td>
@@ -2369,7 +2359,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="colorE">${xetHex[6]}</span></td>
 <td><span class="colorE">${xetHue[6]}</span></td>
 <td><span class="colorE">${xetIob[6]}</span></td>
-<td><span class="colorE">${xetLen[6]}</span></td>
 </tr>
 <tr>
 <td><span class="colorF">${xetFix[7]}</span></td>
@@ -2377,7 +2366,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="colorF">${xetHex[7]}</span></td>
 <td><span class="colorF">${xetHue[7]}</span></td>
 <td><span class="colorF">${xetIob[7]}</span></td>
-<td><span class="colorF">${xetLen[7]}</span></td>
 </tr>
 <tr>
 <td><span class="colorFs">${xetFix[8]}</span></td>
@@ -2385,7 +2373,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="colorFs">${xetHex[8]}</span></td>
 <td><span class="colorFs">${xetHue[8]}</span></td>
 <td><span class="colorFs">${xetIob[8]}</span></td>
-<td><span class="colorFs">${xetLen[8]}</span></td>
 </tr>
 <tr>
 <td><span class="colorG">${xetFix[9]}</span></td>
@@ -2393,7 +2380,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="colorG">${xetHex[9]}</span></td>
 <td><span class="colorG">${xetHue[9]}</span></td>
 <td><span class="colorG">${xetIob[9]}</span></td>
-<td><span class="colorG">${xetLen[9]}</span></td>
 </tr>
 <tr>
 <td><span class="colorGs">${xetFix[10]}</span></td>
@@ -2401,7 +2387,6 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="colorGs">${xetHex[10]}</span></td>
 <td><span class="colorGs">${xetHue[10]}</span></td>
 <td><span class="colorGs">${xetIob[10]}</span></td>
-<td><span class="colorGs">${xetLen[10]}</span></td>
 </tr>
 <tr>
 <td><span class="colorA">${xetFix[11]}</span></td>
@@ -2409,65 +2394,76 @@ data-bs-title="approximate millizems">~mz</span></strong>🔊</th>
 <td><span class="colorA">${xetHex[11]}</span></td>
 <td><span class="colorA">${xetHue[11]}</span></td>
 <td><span class="colorA">${xetIob[11]}</span></td>
-<td><span class="colorA">${xetLen[11]}</span></td>
 </tr>
 </tbody>
 </table>
 
 </div>
 
-In <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenet">Xet</span> music notation, notes🎶are single-digit
-integers and microtones are decimal numbers. Of the three
-<span class="tool" data-bs-toggle="tooltip"
+Of the three <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenet">Xet</span> notes🎶that differ from their closest
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</span> note by more than a
+data-bs-title="12 equal temperament">12ET</span> note🎶by more than a
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a Xet musical note">decistep</span>
+data-bs-title="a tenth of the space between consecutive Xet musical notes">decistep</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="decistep">ds</span>), Note <span class="color1">1</span>
-is roughly midway between <span class="colorB">B</span> and
-<span class="colorC">C</span>, Note <span class="color3">3</span> is a
-little below the midpoint between <span class="colorD">D</span> and
+is 15 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of the space between consecutive Xet musical notes">millisteps</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millisteps">ms</span>) above the average of
+<span class="colorB">B</span> and <span class="colorC">C</span>, Note
+<span class="color3">3</span> is 65 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> below the
+mean of <span class="colorD">D</span> and
 <span class="colorDs">D#</span>, and Note <span class="color4">4</span>
-is about a quarter step below <span class="colorE">E</span>.
+is 24 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hundredths of the space between consecutive Xet musical notes">centisteps</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centisteps">cs</span>) below
+<span class="colorE">E</span>. Any note or microtone number can be
+appended to an octave number to specify a frequency in steps
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</span>).
 
-To specify an exact frequency in <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="tenet">Xet</span> we need at
-least two digits: an octave and a note index.
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenet">Xet</span> interprets <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="steps">s</span> frequencies
+greater than -10 and less than 10 as Octave 0 indexes. We can perform
+arithmetic on positive <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</span> frequencies to find but negative  
 <span class="colorA">A4</span>, the musical note🎶widely used to [tune
 musical
 instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance),
-is <span class="color9">49</span> in <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="tenet">Xet</span>.
-[<span class="color6">C4</span>](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard),
-which is called “Middle <span class="colorC">C</span>” because it is
-between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
-[treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)of
-a [grand
+is <span class="color9">49</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="steps">s</span>.
+[<span class="colorC">C4</span>](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard),
+the “Middle <span class="colorC">C</span>” in between the
+[bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
+[treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)
+of a [grand
 staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff), is
-<span class="colorC">41.3</span>.
+<span class="colorC">41.3</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="steps">s</span>.
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenet">Xet</span> interprets single-digit positive and
+negative <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</span> frequencies as indexes for Octave 0.
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenet">Xet</span> supports negative octaves even though
+Octave 0 is at the limit of the typical [audible
+range](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
+for humans. To get the sound🔊frequency $\text f$ that corresponds to a
+step $\text s$, Dec uses the step-to-frequency equation:
 
-The single-digit octave indexes cover nearly the entire range of
-frequencies that are audible to humans. Octave -1 notes are probably too
-low for humans to hear and Octave 10 notes are likely to be too high to
-be heard by humans.
+$$
+\Large \text f = 2^{\left\lceil \text s \div 10 \right\rfloor} \times (12.5 + 1.25 \times | \text{(s + 10) mod } 10 |)
+$$
+$$
+\left\lceil \text s \right\rfloor = \begin{cases} \left\lceil \text s \right\rceil & \text{if } \text s \< 0 \\ \left\lfloor \text s \right\rfloor & \text{if } \text s \geq 0 \end{cases}
+$$
 
-but note numbers cannot. 40 means Octave 4 note zero. Notes are
-integers, microtones are floats.
-
-3 notes🎶that are the closest can serve as last sound🔊frequency in the
-table above, <span class="color9">380</span>, is almost identical to
-<span class="colorA">A4</span>, the musical note🎶widely used to [tune
-musical
-instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance).
-in the table above are arranged by wavelength, from shortest to longest,
-so that the [highest
-energy](https://en.wikipedia.org/wiki/Wavelength#:~:text=higher%20frequencies%2C%20higher%20energy%2C%20shorter%20wavelengths%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0longer%20wavelengths%2C%20lower%20frequencies%2C%20lower%20energy)
-colors🎨and sounds🔊are associated with earlier <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="times-of-day">tods</span>. Dec
-color🎨and sound🔊labels🏷️can give a sense of the
+Dec color🎨and sound🔊labels🏷️can give a sense of the
 [magnitude](https://en.wikipedia.org/wiki/Magnitude_(mathematics)#:~:text=a%20property%20which%20determines%20whether%20the%20object%20is%20larger%20or%20smaller%20than%20other%20objects%20of%20the%20same%20kind)
 of continuous values.
 
