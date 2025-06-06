@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+094
+2025+097
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -2142,39 +2142,76 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864)
 
 # Ten equal temperament (Xet)
 
-In addition to colors🎨, Dec can also label🏷️values with sounds🔊. The
-positive (**+**) and negative (**–**)
+The positive (**+**) and negative (**–**)
 [indexes](https://en.wikipedia.org/wiki/Index#:~:text=an%20integer%20pointer%20into%20an%20array%20data%20structure),
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> triplets, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees">h°</span>,
-and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iob">i</span> sound🔊frequencies in the table below
-characterize the
-[Octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-4 [musical
-tones](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound)
-of the **Ten** **e**qual **t**emperament (<span class="tool"
+data-bs-title="hexadecimal">hex</span> triplets, and <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees">h°</span> in
+the table below are used by Dec to label🏷️groups of ten, like
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days-of-dek">dods</span>, “[top of the <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="ten equal temperament">Tenet</span>) musical system and
-the Dec labels🏷️for groups of ten, like <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-dek">dods</span>, “[top
-of the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</span>](https://en.wiktionary.org/wiki/top_of_the_hour)”
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">tods</span>, and time zones.
+data-bs-title="times-of-day">tods</span>, and time zones. In addition to
+colors🎨, Dec also labels🏷️groups of ten with the [musical
+notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=Chromatic%20scale,-note%20naming%20conventions)
+that constitute the Dec
+[chromatic](https://en.wikipedia.org/wiki/Chromatic_scale#:~:text=a%20set%20of%20twelve%20pitches%20(more%20completely%2C%20pitch%20classes)%20used%20in%20tonal%20music)
+(Dechromatic)
+[scale](https://en.wikipedia.org/wiki/Scale_(music)#:~:text=any%20consecutive%20series%20of%20notes%20that%20form%20a%20progression%20between%20one%20note%20and%20its%20octave)
+of the **Ten** **e**qual **t**emperament (<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="ten equal temperament">Tenet</span>) musical system.
+
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="ten equal temperament">Tenet</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span>) identifies
+each Dechromatic scale note with a single-digit integer and expresses
+all other possible sound🔊frequencies as decimal numbers. In contrast,
+the notes of the [12 equal
+temperament](https://en.wikipedia.org/wiki/12_equal_temperament#:~:text=the%20musical%20system%20that%20divides%20the%20octave%20into%2012%20parts)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12ET</span>) musical system have
+names that consist of a letter from <span class="colorA">A</span> to
+<span class="colorG">G</span> and a symbol such as sharp
+(<span class="iosevka">♯</span>), half sharp
+(<span class="iosevka">𝄲</span>), flat (<span class="iosevka">♭</span>),
+and half flat (<span class="iosevka">𝄳</span>).
+
+The rightmost column of the table below shows the <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12ET</span> notes that are closest
+to the Dechromatic scale. The differences between the nearest
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span> and <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12ET</span> notes range from the
+<span class="color008">8</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="ten thousandths of an octave">millisteps</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millisteps">ms</span>) between Notes
+<span class="color9">9</span> and <span class="colorA">A</span> to the
+<span class="color26div300">87</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> between
+Notes <span class="color5">5</span> and <span class="colorF">F</span>. A
+typical person can reliably distinguish sounds🔊that
+[differ](https://en.wikipedia.org/wiki/Cent_(music)#:~:text=Normal%20adults%20are%20able%20to%20recognize%20pitch%20differences%20of%20as%20small%20as%2025%20cents%20very%20reliably)
+by at least <span class="color2">200</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span>.
 
 ## Color sound table
 
-<div id="dectable">
+<div id="notetable">
 
-<table style="width:100%;">
+<table>
 <colgroup>
+<col style="width: 14%" />
 <col style="width: 17%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 33%" />
 </colgroup>
 <thead>
 <tr>
@@ -2185,7 +2222,7 @@ data-bs-title="hexadecimal">hex</span></strong>🎨</th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="HSL or HSV degrees">h°</span></strong>🎨</th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iobs">i</span></strong>🔊</th>
+data-bs-title="twelve equal temperament">12ET</span></strong>🎶</th>
 </tr>
 </thead>
 <tbody>
@@ -2194,427 +2231,70 @@ data-bs-title="iobs">i</span></strong>🔊</th>
 <td><span class="color0">-10</span></td>
 <td><span class="color0">f00</span></td>
 <td><span class="color0">0</span></td>
-<td><span class="color0">200</span></td>
+<td><span class="colorAs">A<span class="iosevka">♯</span></span></td>
 </tr>
 <tr>
 <td><span class="color1">1</span></td>
 <td><span class="color1">-9</span></td>
 <td><span class="color1">f90</span></td>
 <td><span class="color1">36</span></td>
-<td><span class="color1">220</span></td>
+<td><span class="colorBc">B<span class="iosevka">𝄲</span></span></td>
 </tr>
 <tr>
 <td><span class="color2">2</span></td>
 <td><span class="color2">-8</span></td>
 <td><span class="color2">ff0</span></td>
 <td><span class="color2">60</span></td>
-<td><span class="color2">240</span></td>
+<td><span class="colorCs">C<span class="iosevka">♯</span></span></td>
 </tr>
 <tr>
 <td><span class="color3">3</span></td>
 <td><span class="color3">-7</span></td>
 <td><span class="color3">af0</span></td>
 <td><span class="color3">80</span></td>
-<td><span class="color3">260</span></td>
+<td><span class="colorDds">D<span class="iosevka">𝄲</span></span></td>
 </tr>
 <tr>
 <td><span class="color4">4</span></td>
 <td><span class="color4">-6</span></td>
 <td><span class="color4">0f0</span></td>
 <td><span class="color4">120</span></td>
-<td><span class="color4">280</span></td>
+<td><span class="colorDsE">E<span class="iosevka">𝄳</span></span></td>
 </tr>
 <tr>
 <td><span class="color5">5</span></td>
 <td><span class="color5">-5</span></td>
 <td><span class="color5">0ff</span></td>
 <td><span class="color5">180</span></td>
-<td><span class="color5">300</span></td>
+<td><span class="colorF">F</span></td>
 </tr>
 <tr>
 <td><span class="color6">6</span></td>
 <td><span class="color6">-4</span></td>
 <td><span class="color6">08f</span></td>
 <td><span class="color6">208</span></td>
-<td><span class="color6">320</span></td>
+<td><span class="colorFs">F<span class="iosevka">♯</span></span></td>
 </tr>
 <tr>
 <td><span class="color7">7</span></td>
 <td><span class="color7">-3</span></td>
 <td><span class="color7">00f</span></td>
 <td><span class="color7">240</span></td>
-<td><span class="color7">340</span></td>
+<td><span class="colorG">G</span></td>
 </tr>
 <tr>
 <td><span class="color8">8</span></td>
 <td><span class="color8">-2</span></td>
 <td><span class="color8">90f</span></td>
 <td><span class="color8">276</span></td>
-<td><span class="color8">360</span></td>
+<td><span class="colorGs">G<span class="iosevka">♯</span></span></td>
 </tr>
 <tr>
 <td><span class="color9">9</span></td>
 <td><span class="color9">-1</span></td>
 <td><span class="color9">f0f</span></td>
 <td><span class="color9">300</span></td>
-<td><span class="color9">380</span></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-The ten tones in any <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="ten equal temperament">Tenet</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span>) octave can be
-referred to as the Dec chromatic (Dechromatic)
-[scale](https://en.wikipedia.org/wiki/Scale_(music)#:~:text=any%20consecutive%20series%20of%20notes%20that%20form%20a%20progression%20between%20one%20note%20and%20its%20octave).
-In <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenet">Xet</span> [musical
-notation](https://en.wikipedia.org/wiki/Musical_notation#:~:text=any%20system%20used%20to%20visually%20represent%20music),
-Dechromatic scale [musical
-notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=distinct%20and%20isolatable%20sounds%20that%20act%20as%20the%20most%20basic%20building%20blocks%20for%20nearly%20all%20of%20music)🎶are
-integers and
-[microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone)
-are decimal numbers. The table below shows the <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="tenet">Xet</span> microtone
-equivalents of the [chromatic
-scale](https://en.wikipedia.org/wiki/Chromatic_scale#:~:text=a%20set%20of%20twelve%20pitches%20(more%20completely%2C%20pitch%20classes)%20used%20in%20tonal%20music)
-[notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=Chromatic%20scale,-note%20naming%20conventions)🎶of
-the [12 equal
-temperament](https://en.wikipedia.org/wiki/12_equal_temperament#:~:text=the%20musical%20system%20that%20divides%20the%20octave%20into%2012%20parts)
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</span>) musical system.
-
-<div id="notetable">
-
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 19%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr>
-<th><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenet microtones">Xet</span>🎶</th>
-<th><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="twelve equal temperament notes">12ET</span>🎶</th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span></strong>🎨</th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximate HSL or HSV degrees">~h°</span></strong>🎨</th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximate iobs">~i</span></strong>🔊</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="colorAs">${xetFix[0]}</span></td>
-<td><span class="colorAs">${notes[0]}</span></td>
-<td><span class="colorAs">${xetHex[0]}</span></td>
-<td><span class="colorAs">${xetHue[0]}</span></td>
-<td><span class="colorAs">${xetIob[0]}</span></td>
-</tr>
-<tr>
-<td><span class="colorB">${xetFix[1]}</span></td>
-<td><span class="colorB">${notes[1]}</span></td>
-<td><span class="colorB">${xetHex[1]}</span></td>
-<td><span class="colorB">${xetHue[1]}</span></td>
-<td><span class="colorB">${xetIob[1]}</span></td>
-</tr>
-<tr>
-<td><span class="colorC">${xetFix[2]}</span></td>
-<td><span class="colorC">${notes[2]}</span></td>
-<td><span class="colorC">${xetHex[2]}</span></td>
-<td><span class="colorC">${xetHue[2]}</span></td>
-<td><span class="colorC">${xetIob[2]}</span></td>
-</tr>
-<tr>
-<td><span class="colorCs">${xetFix[3]}</span></td>
-<td><span class="colorCs">${notes[3]}</span></td>
-<td><span class="colorCs">${xetHex[3]}</span></td>
-<td><span class="colorCs">${xetHue[3]}</span></td>
-<td><span class="colorCs">${xetIob[3]}</span></td>
-</tr>
-<tr>
-<td><span class="colorD">${xetFix[4]}</span></td>
-<td><span class="colorD">${notes[4]}</span></td>
-<td><span class="colorD">${xetHex[4]}</span></td>
-<td><span class="colorD">${xetHue[4]}</span></td>
-<td><span class="colorD">${xetIob[4]}</span></td>
-</tr>
-<tr>
-<td><span class="colorDs">${xetFix[5]}</span></td>
-<td><span class="colorDs">${notes[5]}</span></td>
-<td><span class="colorDs">${xetHex[5]}</span></td>
-<td><span class="colorDs">${xetHue[5]}</span></td>
-<td><span class="colorDs">${xetIob[5]}</span></td>
-</tr>
-<tr>
-<td><span class="colorE">${xetFix[6]}</span></td>
-<td><span class="colorE">${notes[6]}</span></td>
-<td><span class="colorE">${xetHex[6]}</span></td>
-<td><span class="colorE">${xetHue[6]}</span></td>
-<td><span class="colorE">${xetIob[6]}</span></td>
-</tr>
-<tr>
-<td><span class="colorF">${xetFix[7]}</span></td>
-<td><span class="colorF">${notes[7]}</span></td>
-<td><span class="colorF">${xetHex[7]}</span></td>
-<td><span class="colorF">${xetHue[7]}</span></td>
-<td><span class="colorF">${xetIob[7]}</span></td>
-</tr>
-<tr>
-<td><span class="colorFs">${xetFix[8]}</span></td>
-<td><span class="colorFs">${notes[8]}</span></td>
-<td><span class="colorFs">${xetHex[8]}</span></td>
-<td><span class="colorFs">${xetHue[8]}</span></td>
-<td><span class="colorFs">${xetIob[8]}</span></td>
-</tr>
-<tr>
-<td><span class="colorG">${xetFix[9]}</span></td>
-<td><span class="colorG">${notes[9]}</span></td>
-<td><span class="colorG">${xetHex[9]}</span></td>
-<td><span class="colorG">${xetHue[9]}</span></td>
-<td><span class="colorG">${xetIob[9]}</span></td>
-</tr>
-<tr>
-<td><span class="colorGs">${xetFix[10]}</span></td>
-<td><span class="colorGs">${notes[10]}</span></td>
-<td><span class="colorGs">${xetHex[10]}</span></td>
-<td><span class="colorGs">${xetHue[10]}</span></td>
-<td><span class="colorGs">${xetIob[10]}</span></td>
-</tr>
-<tr>
-<td><span class="colorA">${xetFix[11]}</span></td>
-<td><span class="colorA">${notes[11]}</span></td>
-<td><span class="colorA">${xetHex[11]}</span></td>
-<td><span class="colorA">${xetHue[11]}</span></td>
-<td><span class="colorA">${xetIob[11]}</span></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-Of the three <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenet">Xet</span> notes🎶that differ from their closest
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</span> note🎶by more than a
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of the space between consecutive Xet musical notes">decistep</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decistep">ds</span>), Note <span class="color1">1</span>
-is 15 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of the space between consecutive Xet musical notes">millisteps</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</span>) above the average of
-<span class="colorB">B</span> and <span class="colorC">C</span>, Note
-<span class="color3">3</span> is 65 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> below the
-mean of <span class="colorD">D</span> and
-<span class="colorDs">D#</span>, and Note <span class="color4">4</span>
-is 24 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hundredths of the space between consecutive Xet musical notes">centisteps</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centisteps">cs</span>) below
-<span class="colorE">E</span>. Any note or microtone number can be
-appended to an octave number to specify a frequency in steps
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</span>).
-
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenet">Xet</span> interprets <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="steps">s</span> frequencies
-greater than -10 and less than 10 as Octave 0 indexes. We can perform
-arithmetic on positive <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</span> frequencies to find but negative  
-<span class="colorA">A4</span>, the musical note🎶widely used to [tune
-musical
-instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance),
-is <span class="color9">49</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="steps">s</span>.
-[<span class="colorC">C4</span>](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard),
-the “Middle <span class="colorC">C</span>” in between the
-[bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
-[treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)
-of a [grand
-staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff), is
-<span class="colorC">41.3</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="steps">s</span>.
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenet">Xet</span> interprets single-digit positive and
-negative <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</span> frequencies as indexes for Octave 0.
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenet">Xet</span> supports negative octaves even though
-Octave 0 is at the limit of the typical [audible
-range](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
-for humans. To get the sound🔊frequency $\text f$ that corresponds to a
-step $\text s$, Dec uses the step-to-frequency equation:
-
-$$
-\Large \text f = 2^{\left\lceil \text s \div 10 \right\rfloor} \times (12.5 + 1.25 \times | \text{(s + 10) mod } 10 |)
-$$
-$$
-\left\lceil \text s \right\rfloor = \begin{cases} \left\lceil \text s \right\rceil & \text{if } \text s \< 0 \\ \left\lfloor \text s \right\rfloor & \text{if } \text s \geq 0 \end{cases}
-$$
-
-Dec color🎨and sound🔊labels🏷️can give a sense of the
-[magnitude](https://en.wikipedia.org/wiki/Magnitude_(mathematics)#:~:text=a%20property%20which%20determines%20whether%20the%20object%20is%20larger%20or%20smaller%20than%20other%20objects%20of%20the%20same%20kind)
-of continuous values.
-
-We can use the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> triplet ${wavehexHsl}. the
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> triplet ${dtHexHsl}.
-
-``` {ojs}
-//| echo: false
-//| label: dtinput
-//| class: freqcomponent
-// https://observablehq.com/@d3/d3-piecewise
-viewof deciturns = Inputs.range([1, 10], { step: .1,  value: 4.5, label: "Deciturns" })
-```
-
-The notes🎶in the table above can belong to different
-[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency).
-By convention, <span class="color0">G</span> to
-<span class="color6">C</span> are in Octave 5 and
-<span class="color7">B</span> to <span class="color950">G#</span> are in
-Octave 4. Following this convention, we can use the <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="tenths of a turn">deciturn</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="deciturns">dt</span>) value
-selected by the “Deciturns” range🎚️input above to interpolate the
-sound🔊frequency ${piecewiseIob(deciturns / 10)} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iobs">i</span>, and the
-wavelength ${piecewiseLen(deciturns / 10)} <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a zem">millizems</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millizems">mz</span>).
-
-``` {ojs}
-//| echo: false
-//| label: wavinput
-//| class: freqcomponent
-// https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
-viewof wavelength = Inputs.range([950, 1950], {label: "Nanozems", value: 1549.2, step: .1})
-```
-
-<div id="iobtable">
-
-<table>
-<colgroup>
-<col style="width: 54%" />
-<col style="width: 6%" />
-<col style="width: 4%" />
-<col style="width: 22%" />
-<col style="width: 6%" />
-<col style="width: 7%" />
-</colgroup>
-<thead>
-<tr>
-<th><strong>Note</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iobs">i</span></strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></strong></th>
-<th><strong>Color</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiobs">Ti</span></strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="nanozems">nz</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a
-href="https://en.wikipedia.org/wiki/A♯_(musical_note)">A♯</a></td>
-<td>402.77</td>
-<td>1.83</td>
-<td><span class="colorffec00">ffec00</span></td>
-<td>442.85</td>
-<td>1462.25</td>
-</tr>
-<tr>
-<td><a href="https://en.wikipedia.org/wiki/B_(musical_note)">B</a></td>
-<td>426.72</td>
-<td>1.72</td>
-<td><span class="color99ff00">99ff00</span></td>
-<td>469.18</td>
-<td>1380.18</td>
-</tr>
-<tr>
-<td><a href="https://en.wikipedia.org/wiki/C_(musical_note)">C</a></td>
-<td>452.09</td>
-<td>1.63</td>
-<td><span class="color28ff00">28ff00</span></td>
-<td>497.08</td>
-<td>1302.72</td>
-</tr>
-<tr>
-<td><a
-href="https://en.wikipedia.org/wiki/C♯_(musical_note)">C♯</a></td>
-<td>478.97</td>
-<td>1.53</td>
-<td><span class="color00ffe8">00ffe8</span></td>
-<td>526.63</td>
-<td>1229.60</td>
-</tr>
-<tr>
-<td><a href="https://en.wikipedia.org/wiki/D_(musical_note)">D</a></td>
-<td>507.45</td>
-<td>1.45</td>
-<td><span class="color007cff">007cff</span></td>
-<td>557.95</td>
-<td>1160.59</td>
-</tr>
-<tr>
-<td><a
-href="https://en.wikipedia.org/wiki/D♯_(musical_note)">D♯</a></td>
-<td>537.63</td>
-<td>1.37</td>
-<td><span class="color0800ff">0800ff</span></td>
-<td>591.13</td>
-<td>1095.45</td>
-</tr>
-<tr>
-<td><a href="https://en.wikipedia.org/wiki/E_(musical_note)">E</a></td>
-<td>569.60</td>
-<td>1.29</td>
-<td><span class="color5e00d6">5e00d6</span></td>
-<td>626.28</td>
-<td>1033.97</td>
-</tr>
-<tr>
-<td><a href="https://en.wikipedia.org/wiki/E_(musical_note)">F</a></td>
-<td>569.60</td>
-<td>1.29</td>
-<td><span class="color5e00d6">5e00d6</span></td>
-<td>626.28</td>
-<td>1033.97</td>
-</tr>
-<tr>
-<td><a
-href="https://en.wikipedia.org/wiki/G♯_(musical_note)">G♯</a></td>
-<td>358.82</td>
-<td>2.05</td>
-<td><span class="color0">ff0000</span></td>
-<td>394.53</td>
-<td>1641.32</td>
-</tr>
-<tr>
-<td><a href="https://en.wikipedia.org/wiki/A_(musical_note)">A</a></td>
-<td>380.16</td>
-<td>1.93</td>
-<td><span class="colorff6300">ff6300</span></td>
-<td>417.99</td>
-<td>1549.20</td>
+<td><span class="colorA">A</span></td>
 </tr>
 </tbody>
 </table>
@@ -2628,81 +2308,75 @@ href="https://en.wikipedia.org/wiki/G♯_(musical_note)">G♯</a></td>
 piano(width)
 ```
 
-Before we can determine the sound🔊frequency associated with this
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciturns">dt</span>, we will need to establish a frame
-of reference by specifying the for at least one of the twelve notes in
-the table.
-
-The
-[<span class="color6">C</span>]((https://en.wikipedia.org/wiki/C_(musical_note)))
-note🎶in Octave 4
-([<span class="color6">C4</span>](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard))
-is called “Middle <span class="color6">C</span>” because it is between
-the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
-[treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)of
-a [grand
-staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff). If
-<span class="color6">C4</span> the remaining notes🎶will be evenly
-spread across the . For this reason, <span class="color6">C4</span> is
-called . we could fit all twelve of the notes🎶in the table on the
-treble🎼clef if we instead go up one
+The image above applies Dec color🎨labels🏷️to one
 [octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-to <span class="color6">C5</span>. If we center on
-<span class="color6">C5</span>, our
-[<span class="color9">A</span>]((https://en.wikipedia.org/wiki/A_(musical_note)))
-note🎶will be
-[<span class="color9">A4</span>](https://en.wikipedia.org/wiki/A440_(pitch_standard)#:~:text=the%20musical%20note%20of%20A%20above%20middle%20C%2C%20or%20A4),
+of white piano🎹keys. The text below the labeled🏷️keys provides the
+[scientific pitch
+name](https://en.wikipedia.org/wiki/Scientific_pitch_notation#:~:text=a%20method%20of%20specifying%20musical%20pitch%20by%20combining%20a%20musical%20note%20name%20(with%20accidental%20if%20needed)%20and%20a%20number%20identifying%20the%20pitch%27s%20octave)
+(top), <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iobs">i</span> sound🔊frequency (middle), and
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millizem">mz</span> wavelength (bottom) of the
+corresponding key. The frequencies and wavelengths are rounded to
+integers. As frequency increases, wavelength decreases.
 
-<span class="color9">A4</span> has a frequency of 440 Hertz × .864
-seconds per <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beat">b</span> = 380.16 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iobs">i</span>. If we multiply
-this frequency by <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="forty octaves">2<sup>40</sup></span>to move it up forty
-octaves, we will get frequency of 380.16 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iob">i</span> ×
+An octave is ten thousand <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millisteps">ms</span>. In <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> [musical
+notation](https://en.wikipedia.org/wiki/Musical_notation#:~:text=any%20system%20used%20to%20visually%20represent%20music),
+we can combine any positive octave number with any positive note number
+below ten to create a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span> [musical
+tone](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound)
+number. If we append the highest Dechromatic scale note, Note
+<span class="color9">9</span>, to Octave <span class="color4">4</span>,
+we get Tone <span class="color490">49</span>, which is
+<span class="color008">8</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> below
+<span class="colorA4">A4</span>, the <span class="colorA">A</span> note
+widely used to [tune musical
+instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance).
+
+The typical
+[audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
+range for humans extends from Note <span class="color3">3</span> in
+Octave <span class="color0">0</span> (Tone
+<span class="color030">03</span>) to Note <span class="color4">4</span>
+in Octave <span class="color0">10</span> (Tone
+<span class="color040">104</span>). Octave numbers in <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> and
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="forty octaves">2<sup>40</sup></span> = ~417.99
+data-bs-title="12 equal temperament">12ET</span> match for all notes
+except <span class="colorAs">A♯</span> and
+<span class="colorB">B</span>, which belong to the previous octave. Tone
+<span class="color413">41.3</span>, which is Note
+<span class="color130">1.3</span> in Octave
+<span class="color4">4</span>, is just <span class="color002">2</span>
 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millisteps">ms</span> below
+[<span class="color4132">C4</span>](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard),
+the “Middle <span class="colorC">C</span>” in between the
+[bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
+[treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)
+of a [grand
+staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff).
+
+Dec color🎨and sound🔊labels🏷️can give a sense of the
+[magnitude](https://en.wikipedia.org/wiki/Magnitude_(mathematics)#:~:text=a%20property%20which%20determines%20whether%20the%20object%20is%20larger%20or%20smaller%20than%20other%20objects%20of%20the%20same%20kind)
+of continuous values.
+
+If we multiply the Tone <span class="color4">40</span> frequency by a
+trillion (10<sup>12</sup>), we get 400 <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>), which is
-too high for sound🔊, but happens to fall in the [visible
+too high for sound🔊, but happens to fall in the
+<span class="color0">red</span> part of the [visible
 spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
 of light💡.
 
-We can blend that is $3\over4$
-[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-higher. Just like <span class="color1">magenta</span> [cannot be defined
-by a single wavelength of
-light](https://en.wikipedia.org/wiki/Magenta#:~:text=no%20color%20of%20the%20visible%20spectrum%20has%20magenta%27s%20hue),
-the musical notes🎶.
-
-and rationale for linking Dec color🎨labels with specific musical
-notes🎶is based on the observation that visible spectrum frequencies are
-forty octaves (2<sup>40</sup>) lower Electromagnetic waves in the
-visible spectrum have frequencies that are roughly 1.1 trillion times
-(1.1×10<sup>12</sup>) higher than
-
-multiples of [powers of
-ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=the%20integer%20powers%20of%20the%20number%20ten)
-and labels🏷️in the table below.labels🏷️work best for that wrap to zero
-after reaching a maximum.
-
-or saturate. such as
-
-with a single
-[nonzero](https://en.wiktionary.org/wiki/nonzero#:~:text=Not%20equal%20to%20zero)
-digit
-
-Dec uses
-[interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
-to find the corresponding color🎨and
-[microtone](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone)
-of any continuous values with multiple nonzero digits.
-
-points Dec also labels some values with musical notes🎶. The table below
-shows the colors by increasing the frequency by a certain number of
+The table below shows the colors by increasing the frequency by a
+certain number of
 [octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
 and iden (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="forty octaves">2<sup>40</sup></span>), we get 380.16
@@ -4995,9 +4669,9 @@ function piano(stlibWidth) {
   // Draw the white keys.
   for (let i = 0; i <= whiteKeys - 1; i++) {
     svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill=${whiteKeyColors[i]} stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 4));
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 42}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 5) % 7) + (i < 4 ? "4" : "5")}</text></svg>`);
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 82}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 122}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(73504.8 / (440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864))}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 42}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 5) % 7) + (i < 4 ? "3" : "4")}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 82}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(220 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 122}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(73504.8 / (220 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864))}</text></svg>`);
   }
   // Draw the black keys.
   for (let i = 0; i <= whiteKeys - 2; i++) {
@@ -5010,12 +4684,14 @@ function piano(stlibWidth) {
 whiteKeyColors = [
   "#fff",
   "#fff",
-  "#fa0",
-  "#af0",
-  "#0f0",
-  "#0af",
-  "#a0f",
-  "#f0f",
+  "#fff",
+  xetHex[1],
+  xetHex[2],
+  xetHex[4],
+  xetHex[6],
+  xetHex[7],
+  xetHex[9],
+  xetHex[11],
   "#fff",
   "#fff",
   "#fff",
@@ -5023,12 +4699,14 @@ whiteKeyColors = [
 blackKeyColors = [
   "#000",
   "#000",
-  "#ff0",
+  xetHex[0],
   "",
-  "#0ff",
-  "#00f",
+  xetHex[3],
+  xetHex[5],
   "",
-  "#f00",
+  xetHex[8],
+  xetHex[10],
+  "#000",
   "#000",
   "#000",
 ]
@@ -5262,16 +4940,23 @@ xetHex = xetCol.map(x => d3.color(x).formatHex())
 xetHue = xetCol.map(x => Math.round(d3.hsl(x).h))
 xetIob = xet.map(piecewiseIob)
 xetLen = xet.map(piecewiseLen)
+h002 = d3.hsl(piecewiseColor(0.002)).h
+h008 = d3.hsl(piecewiseColor(0.008)).h
 h014 = d3.hsl(piecewiseColor(0.014)).h
+h016 = d3.hsl(piecewiseColor(0.016)).h
 h021 = d3.hsl(piecewiseColor(0.021)).h
 h022 = d3.hsl(piecewiseColor(0.022)).h
 h024 = d3.hsl(piecewiseColor(0.024)).h
+h030 = d3.hsl(piecewiseColor(0.03)).h
+h040 = d3.hsl(piecewiseColor(0.04)).h
 h039 = d3.hsl(piecewiseColor(0.039)).h
-hD039 = d3.hsl(piecewiseColor(39 / 365)).h
-hD080 = d3.hsl(piecewiseColor(80 / 365)).h
-hD285 = d3.hsl(piecewiseColor(285 / 365)).h
 h065 = d3.hsl(piecewiseColor(0.065)).h
+h130 = d3.hsl(piecewiseColor(0.13)).h
 h185 = d3.hsl(piecewiseColor(0.185)).h
+h38016 = d3.hsl(piecewiseColor(0.38016)).h
+h413 = d3.hsl(piecewiseColor(0.413)).h
+h4132 = d3.hsl(piecewiseColor(0.4132)).h
+h490 = d3.hsl(piecewiseColor(0.49)).h
 h704 = d3.hsl(piecewiseColor(0.704)).h
 h754 = d3.hsl(piecewiseColor(0.754)).h
 h788 = d3.hsl(piecewiseColor(0.788)).h
@@ -5279,6 +4964,10 @@ h815 = d3.hsl(piecewiseColor(0.815)).h
 h864 = d3.hsl(piecewiseColor(0.864)).h
 h935 = d3.hsl(piecewiseColor(0.935)).h
 h960 = d3.hsl(piecewiseColor(0.960)).h
+h26div300 = d3.hsl(piecewiseColor(26 / 300)).h
+hD039 = d3.hsl(piecewiseColor(39 / 365)).h
+hD080 = d3.hsl(piecewiseColor(80 / 365)).h
+hD285 = d3.hsl(piecewiseColor(285 / 365)).h
 fMile = 5 / 3 / 1.609344
 fInch = 25 / 25.4
 hIob = d3.hsl(piecewiseColor(1 / .864 % 1)).h
@@ -5290,6 +4979,9 @@ hFlOz = d3.hsl(piecewiseColor(32 / 29.5735296875 % 1)).h
 hAcre = d3.hsl(piecewiseColor(247.1053814672 / 250 % 1)).h
 hSqMi = d3.hsl(piecewiseColor(fMile**2 % 1)).h
 hSqIn = d3.hsl(piecewiseColor(fInch**2 % 1)).h
+bcHue = (xetHue[1] + xetHue[2]) / 2
+ddsHue = (xetHue[4] + xetHue[5]) / 2
+dseHue = (xetHue[5] + xetHue[6]) / 2
 ```
 
 ``` {ojs}
@@ -5305,9 +4997,25 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorA4 {
+  background: hsl(${h38016} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h38016}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .colorB {
   background: hsl(${xetHue[1]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[1]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorBc {
+  background: hsl(${bcHue} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${bcHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5340,6 +5048,22 @@ html`
 .colorDs {
   background: hsl(${xetHue[5]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[5]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorDds {
+  background: hsl(${ddsHue} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${ddsHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorDsE {
+  background: hsl(${dseHue} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${dseHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5401,9 +5125,33 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color002 {
+  background: hsl(${h002} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h002}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color008 {
+  background: hsl(${h008} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h008}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color014 {
   background: hsl(${h014} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${h014}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color016 {
+  background: hsl(${h016} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h016}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5441,6 +5189,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color030 {
+  background: hsl(${h030} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h030}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color039 {
   background: hsl(${h039} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${h039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -5449,25 +5205,9 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.colorD039 {
-  background: hsl(${hD039} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hD039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.colorD080 {
-  background: hsl(${hD080} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hD080}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.colorD285 {
-  background: hsl(${hD285} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hD285}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+.color040 {
+  background: hsl(${h040} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h040}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5489,6 +5229,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color26div300 {
+  background: hsl(${h26div300} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h26div300}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color1 {
   background: hsl(36 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(36, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -5500,6 +5248,14 @@ html`
 .color125 {
   background: hsl(44 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(44, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color130 {
+  background: hsl(${h130} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h130}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5548,6 +5304,30 @@ html`
 .color4 {
   background: hsl(120 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(120, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color413 {
+  background: hsl(${h413} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h413}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color4132 {
+  background: hsl(${h4132} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h4132}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color490 {
+  background: hsl(${h490} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h490}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5676,6 +5456,30 @@ html`
 .color960 {
   background: hsl(${h960} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${h960}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD039 {
+  background: hsl(${hD039} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD080 {
+  background: hsl(${hD080} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD080}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD285 {
+  background: hsl(${hD285} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD285}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -6029,5 +5833,12 @@ img#zModu {
 }
 #iobplayer canvas {
   height: 100%;
+}
+@font-face {
+    font-family: "Iosevka";
+    src: url(../asset/IosevkaNerdFont-Regular.ttf);
+}
+.iosevka {
+  font-family: "Iosevka", sans-serif !important;
 }
 </style>
