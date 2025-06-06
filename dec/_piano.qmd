@@ -5,25 +5,3 @@
 // https://observablehq.com/@spattana/color-from-wavelength-and-correlated-temperature
 viewof wavelength = Inputs.range([950, 1950], {label: "Nanozems", value: 1549.2, step: .1})
 ```
-
-:::{#iobtable}
-| **Note**  | **[i]{.tool data-bs-toggle="tooltip" data-bs-title="iobs"}**  | **[z]{.tool data-bs-toggle="tooltip" data-bs-title="zem"}**    | **Color**                  | **[Ti]{.tool data-bs-toggle="tooltip" data-bs-title="teraiobs"}**     | **[nz]{.tool data-bs-toggle="tooltip" data-bs-title="nanozems"}**      |
-| ----------------------------------------------------- | ------ | ---- | ---------------------- | ------ | ------- |
-| [A♯](https://en.wikipedia.org/wiki/A♯_(musical_note)) | 402.77 | 1.83 | [ffec00]{.colorffec00} | 442.85 | 1462.25 |
-| [B](https://en.wikipedia.org/wiki/B_(musical_note))   | 426.72 | 1.72 | [99ff00]{.color99ff00} | 469.18 | 1380.18 |
-| [C](https://en.wikipedia.org/wiki/C_(musical_note))   | 452.09 | 1.63 | [28ff00]{.color28ff00} | 497.08 | 1302.72 |
-| [C♯](https://en.wikipedia.org/wiki/C♯_(musical_note)) | 478.97 | 1.53 | [00ffe8]{.color00ffe8} | 526.63 | 1229.60 |
-| [D](https://en.wikipedia.org/wiki/D_(musical_note))   | 507.45 | 1.45 | [007cff]{.color007cff} | 557.95 | 1160.59 |
-| [D♯](https://en.wikipedia.org/wiki/D♯_(musical_note)) | 537.63 | 1.37 | [0800ff]{.color0800ff} | 591.13 | 1095.45 |
-| [E](https://en.wikipedia.org/wiki/E_(musical_note))   | 569.60 | 1.29 | [5e00d6]{.color5e00d6} | 626.28 | 1033.97 |
-| [F](https://en.wikipedia.org/wiki/E_(musical_note))   | 569.60 | 1.29 | [5e00d6]{.color5e00d6} | 626.28 | 1033.97 |
-| [G♯](https://en.wikipedia.org/wiki/G♯_(musical_note)) | 358.82 | 2.05 | [ff0000]{.color0}      | 394.53 | 1641.32 |
-| [A](https://en.wikipedia.org/wiki/A_(musical_note))   | 380.16 | 1.93 | [ff6300]{.colorff6300} | 417.99 | 1549.20 |
-:::
-
-```{ojs}
-//| echo: false
-//| label: iobpiano
-//| class: freqcomponent
-piano(width)
-```

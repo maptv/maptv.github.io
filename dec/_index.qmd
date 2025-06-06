@@ -1498,9 +1498,9 @@ function piano(stlibWidth) {
   // Draw the white keys.
   for (let i = 0; i <= whiteKeys - 1; i++) {
     svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill=${whiteKeyColors[i]} stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 4));
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 42}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 5) % 7) + (i < 4 ? "4" : "5")}</text></svg>`);
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 82}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
-    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 122}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(73504.8 / (440 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864))}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 42}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 5) % 7) + (i < 4 ? "3" : "4")}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 82}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(220 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 122}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(73504.8 / (220 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864))}</text></svg>`);
   }
   // Draw the black keys.
   for (let i = 0; i <= whiteKeys - 2; i++) {
@@ -1513,12 +1513,14 @@ function piano(stlibWidth) {
 whiteKeyColors = [
   "#fff",
   "#fff",
-  "#fa0",
-  "#af0",
-  "#0f0",
-  "#0af",
-  "#a0f",
-  "#f0f",
+  "#fff",
+  xetHex[1],
+  xetHex[2],
+  xetHex[4],
+  xetHex[6],
+  xetHex[7],
+  xetHex[9],
+  xetHex[11],
   "#fff",
   "#fff",
   "#fff",
@@ -1526,12 +1528,14 @@ whiteKeyColors = [
 blackKeyColors = [
   "#000",
   "#000",
-  "#ff0",
+  xetHex[0],
   "",
-  "#0ff",
-  "#00f",
+  xetHex[3],
+  xetHex[5],
   "",
-  "#f00",
+  xetHex[8],
+  xetHex[10],
+  "#000",
   "#000",
   "#000",
 ]
@@ -1765,18 +1769,23 @@ xetHex = xetCol.map(x => d3.color(x).formatHex())
 xetHue = xetCol.map(x => Math.round(d3.hsl(x).h))
 xetIob = xet.map(piecewiseIob)
 xetLen = xet.map(piecewiseLen)
+h002 = d3.hsl(piecewiseColor(0.002)).h
 h008 = d3.hsl(piecewiseColor(0.008)).h
 h014 = d3.hsl(piecewiseColor(0.014)).h
+h016 = d3.hsl(piecewiseColor(0.016)).h
 h021 = d3.hsl(piecewiseColor(0.021)).h
 h022 = d3.hsl(piecewiseColor(0.022)).h
 h024 = d3.hsl(piecewiseColor(0.024)).h
+h030 = d3.hsl(piecewiseColor(0.03)).h
+h040 = d3.hsl(piecewiseColor(0.04)).h
 h039 = d3.hsl(piecewiseColor(0.039)).h
-hD039 = d3.hsl(piecewiseColor(39 / 365)).h
-hD080 = d3.hsl(piecewiseColor(80 / 365)).h
-hD285 = d3.hsl(piecewiseColor(285 / 365)).h
 h065 = d3.hsl(piecewiseColor(0.065)).h
-h26div300 = d3.hsl(piecewiseColor(26 / 300)).h
+h130 = d3.hsl(piecewiseColor(0.13)).h
 h185 = d3.hsl(piecewiseColor(0.185)).h
+h38016 = d3.hsl(piecewiseColor(0.38016)).h
+h413 = d3.hsl(piecewiseColor(0.413)).h
+h4132 = d3.hsl(piecewiseColor(0.4132)).h
+h490 = d3.hsl(piecewiseColor(0.49)).h
 h704 = d3.hsl(piecewiseColor(0.704)).h
 h754 = d3.hsl(piecewiseColor(0.754)).h
 h788 = d3.hsl(piecewiseColor(0.788)).h
@@ -1784,6 +1793,10 @@ h815 = d3.hsl(piecewiseColor(0.815)).h
 h864 = d3.hsl(piecewiseColor(0.864)).h
 h935 = d3.hsl(piecewiseColor(0.935)).h
 h960 = d3.hsl(piecewiseColor(0.960)).h
+h26div300 = d3.hsl(piecewiseColor(26 / 300)).h
+hD039 = d3.hsl(piecewiseColor(39 / 365)).h
+hD080 = d3.hsl(piecewiseColor(80 / 365)).h
+hD285 = d3.hsl(piecewiseColor(285 / 365)).h
 fMile = 5 / 3 / 1.609344
 fInch = 25 / 25.4
 hIob = d3.hsl(piecewiseColor(1 / .864 % 1)).h
@@ -1808,6 +1821,14 @@ html`
 .colorAs {
   background: hsl(${xetHue[0]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[0]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorA4 {
+  background: hsl(${h38016} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h38016}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1933,6 +1954,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color002 {
+  background: hsl(${h002} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h002}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color008 {
   background: hsl(${h008} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${h008}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -1944,6 +1973,14 @@ html`
 .color014 {
   background: hsl(${h014} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${h014}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color016 {
+  background: hsl(${h016} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h016}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1981,6 +2018,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color030 {
+  background: hsl(${h030} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h030}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color039 {
   background: hsl(${h039} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${h039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -1989,25 +2034,9 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.colorD039 {
-  background: hsl(${hD039} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hD039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.colorD080 {
-  background: hsl(${hD080} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hD080}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.colorD285 {
-  background: hsl(${hD285} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hD285}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+.color040 {
+  background: hsl(${h040} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h040}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2048,6 +2077,14 @@ html`
 .color125 {
   background: hsl(44 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(44, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color130 {
+  background: hsl(${h130} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h130}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2096,6 +2133,30 @@ html`
 .color4 {
   background: hsl(120 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(120, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color413 {
+  background: hsl(${h413} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h413}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color4132 {
+  background: hsl(${h4132} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h4132}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color490 {
+  background: hsl(${h490} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h490}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2224,6 +2285,30 @@ html`
 .color960 {
   background: hsl(${h960} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${h960}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD039 {
+  background: hsl(${hD039} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD080 {
+  background: hsl(${hD080} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD080}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD285 {
+  background: hsl(${hD285} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD285}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;

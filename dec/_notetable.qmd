@@ -1,16 +1,21 @@
 :::{#notetable}
-| [Xet]{.tool data-bs-toggle="tooltip" data-bs-title="tenet microtones"}🎶 | [12ET]{.tool data-bs-toggle="tooltip" data-bs-title="twelve equal temperament notes"}🎶 | **[hex]{.tool data-bs-toggle="tooltip" data-bs-title="hexadecimal"}**🎨 | **[~h°]{.tool data-bs-toggle="tooltip" data-bs-title="approximate HSL or HSV degrees"}**🎨 | **[~i]{.tool data-bs-toggle="tooltip" data-bs-title="approximate iobs"}**🔊 |
-| -------------------------- | ------------------------- | -------------------------- | -------------------------- | -------------------------- |
-| [\${xetFix[0]}]{.colorAs}  | [\${notes[0]}]{.colorAs}  | [\${xetHex[0]}]{.colorAs}  | [\${xetHue[0]}]{.colorAs}  | [\${xetIob[0]}]{.colorAs}  |
-| [\${xetFix[1]}]{.colorB}   | [\${notes[1]}]{.colorB}   | [\${xetHex[1]}]{.colorB}   | [\${xetHue[1]}]{.colorB}   | [\${xetIob[1]}]{.colorB}   |
-| [\${xetFix[2]}]{.colorC}   | [\${notes[2]}]{.colorC}   | [\${xetHex[2]}]{.colorC}   | [\${xetHue[2]}]{.colorC}   | [\${xetIob[2]}]{.colorC}   |
-| [\${xetFix[3]}]{.colorCs}  | [\${notes[3]}]{.colorCs}  | [\${xetHex[3]}]{.colorCs}  | [\${xetHue[3]}]{.colorCs}  | [\${xetIob[3]}]{.colorCs}  |
-| [\${xetFix[4]}]{.colorD}   | [\${notes[4]}]{.colorD}   | [\${xetHex[4]}]{.colorD}   | [\${xetHue[4]}]{.colorD}   | [\${xetIob[4]}]{.colorD}   |
-| [\${xetFix[5]}]{.colorDs}  | [\${notes[5]}]{.colorDs}  | [\${xetHex[5]}]{.colorDs}  | [\${xetHue[5]}]{.colorDs}  | [\${xetIob[5]}]{.colorDs}  |
-| [\${xetFix[6]}]{.colorE}   | [\${notes[6]}]{.colorE}   | [\${xetHex[6]}]{.colorE}   | [\${xetHue[6]}]{.colorE}   | [\${xetIob[6]}]{.colorE}   |
-| [\${xetFix[7]}]{.colorF}   | [\${notes[7]}]{.colorF}   | [\${xetHex[7]}]{.colorF}   | [\${xetHue[7]}]{.colorF}   | [\${xetIob[7]}]{.colorF}   |
-| [\${xetFix[8]}]{.colorFs}  | [\${notes[8]}]{.colorFs}  | [\${xetHex[8]}]{.colorFs}  | [\${xetHue[8]}]{.colorFs}  | [\${xetIob[8]}]{.colorFs}  |
-| [\${xetFix[9]}]{.colorG}   | [\${notes[9]}]{.colorG}   | [\${xetHex[9]}]{.colorG}   | [\${xetHue[9]}]{.colorG}   | [\${xetIob[9]}]{.colorG}   |
-| [\${xetFix[10]}]{.colorGs} | [\${notes[10]}]{.colorGs} | [\${xetHex[10]}]{.colorGs} | [\${xetHue[10]}]{.colorGs} | [\${xetIob[10]}]{.colorGs} |
-| [\${xetFix[11]}]{.colorA}  | [\${notes[11]}]{.colorA}  | [\${xetHex[11]}]{.colorA}  | [\${xetHue[11]}]{.colorA}  | [\${xetIob[11]}]{.colorA}  |
+| **+** | **--** | **[hex]{.tool data-bs-toggle="tooltip" data-bs-title="hexadecimal"}**🎨 | **[h°]{.tool data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees"}**🎨 | **[12ET]{.tool data-bs-toggle="tooltip" data-bs-title="twelve equal temperament"}**🎶 |
+| ------------ | -------------- | -------------- | -------------- | --------------------------- |
+| [0]{.color0} | [-10]{.color0} | [f00]{.color0} | [0]{.color0}   | [A[♯]{.iosevka}]{.colorAs}  |
+| [1]{.color1} | [-9]{.color1}  | [f90]{.color1} | [36]{.color1}  | [B[𝄲]{.iosevka}]{.colorBc}  |
+| [2]{.color2} | [-8]{.color2}  | [ff0]{.color2} | [60]{.color2}  | [C[♯]{.iosevka}]{.colorCs}  |
+| [3]{.color3} | [-7]{.color3}  | [af0]{.color3} | [80]{.color3}  | [D[𝄲]{.iosevka}]{.colorDds} |
+| [4]{.color4} | [-6]{.color4}  | [0f0]{.color4} | [120]{.color4} | [E[𝄳]{.iosevka}]{.colorDsE} |
+| [5]{.color5} | [-5]{.color5}  | [0ff]{.color5} | [180]{.color5} | [F]{.colorF}                |
+| [6]{.color6} | [-4]{.color6}  | [08f]{.color6} | [208]{.color6} | [F[♯]{.iosevka}]{.colorFs}  |
+| [7]{.color7} | [-3]{.color7}  | [00f]{.color7} | [240]{.color7} | [G]{.colorG}                |
+| [8]{.color8} | [-2]{.color8}  | [90f]{.color8} | [276]{.color8} | [G[♯]{.iosevka}]{.colorGs}  |
+| [9]{.color9} | [-1]{.color9}  | [f0f]{.color9} | [300]{.color9} | [A]{.colorA}                |
 :::
+
+```{ojs}
+//| echo: false
+//| label: iobpiano
+//| class: freqcomponent
+piano(width)
+```
