@@ -1765,6 +1765,7 @@ xetHex = xetCol.map(x => d3.color(x).formatHex())
 xetHue = xetCol.map(x => Math.round(d3.hsl(x).h))
 xetIob = xet.map(piecewiseIob)
 xetLen = xet.map(piecewiseLen)
+h008 = d3.hsl(piecewiseColor(0.008)).h
 h014 = d3.hsl(piecewiseColor(0.014)).h
 h021 = d3.hsl(piecewiseColor(0.021)).h
 h022 = d3.hsl(piecewiseColor(0.022)).h
@@ -1774,6 +1775,7 @@ hD039 = d3.hsl(piecewiseColor(39 / 365)).h
 hD080 = d3.hsl(piecewiseColor(80 / 365)).h
 hD285 = d3.hsl(piecewiseColor(285 / 365)).h
 h065 = d3.hsl(piecewiseColor(0.065)).h
+h26div300 = d3.hsl(piecewiseColor(26 / 300)).h
 h185 = d3.hsl(piecewiseColor(0.185)).h
 h704 = d3.hsl(piecewiseColor(0.704)).h
 h754 = d3.hsl(piecewiseColor(0.754)).h
@@ -1793,6 +1795,9 @@ hFlOz = d3.hsl(piecewiseColor(32 / 29.5735296875 % 1)).h
 hAcre = d3.hsl(piecewiseColor(247.1053814672 / 250 % 1)).h
 hSqMi = d3.hsl(piecewiseColor(fMile**2 % 1)).h
 hSqIn = d3.hsl(piecewiseColor(fInch**2 % 1)).h
+bcHue = (xetHue[1] + xetHue[2]) / 2
+ddsHue = (xetHue[4] + xetHue[5]) / 2
+dseHue = (xetHue[5] + xetHue[6]) / 2
 ```
 
 ```{ojs}
@@ -1811,6 +1816,14 @@ html`
 .colorB {
   background: hsl(${xetHue[1]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[1]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorBc {
+  background: hsl(${bcHue} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${bcHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1843,6 +1856,22 @@ html`
 .colorDs {
   background: hsl(${xetHue[5]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[5]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorDds {
+  background: hsl(${ddsHue} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${ddsHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorDsE {
+  background: hsl(${dseHue} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${dseHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1899,6 +1928,14 @@ html`
 .color0 {
   background: hsl(0 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(0, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color008 {
+  background: hsl(${h008} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h008}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -1987,6 +2024,14 @@ html`
 .color065 {
   background: hsl(${h065} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${h065}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color26div300 {
+  background: hsl(${h26div300} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h26div300}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2533,6 +2578,13 @@ img#zModu {
 }
 #iobplayer canvas {
   height: 100%;
+}
+@font-face {
+    font-family: "Iosevka";
+    src: url(../asset/IosevkaNerdFont-Regular.ttf);
+}
+.iosevka {
+  font-family: "Iosevka", sans-serif !important;
 }
 </style>
 ```
