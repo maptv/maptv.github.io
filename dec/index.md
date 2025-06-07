@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+097
+2025+098
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -2179,27 +2179,51 @@ names that consist of a letter from <span class="colorA">A</span> to
 (<span class="iosevka">𝄲</span>), flat (<span class="iosevka">♭</span>),
 and half flat (<span class="iosevka">𝄳</span>).
 
+The sound🔊frequencies of two consecutive <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> Dechromatic
+scale notes always differ by one step (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="step">s</span>), but the
+differences between consecutive <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12ET</span> chromatic scale notes
+vary from the ~<span class="color599">599</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="ten thousandths of an octave">millisteps</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millisteps">ms</span>) between
+<span class="colorAs">A<span class="iosevka">♯</span></span> and
+<span class="colorB">B</span> to the ~<span class="color067">1067</span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millisteps">ms</span> between
+<span class="colorGs">G<span class="iosevka">♯</span></span> and
+<span class="colorA">A</span>. A typical person can reliably distinguish
+sounds🔊that
+[differ](https://en.wikipedia.org/wiki/Cent_(music)#:~:text=Normal%20adults%20are%20able%20to%20recognize%20pitch%20differences%20of%20as%20small%20as%2025%20cents%20very%20reliably)
+by at least <span class="color2">200</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span>.
+
 The rightmost column of the table below shows the <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="12 equal temperament">12ET</span> notes that are closest
-to the Dechromatic scale. The differences between the nearest
+to the Dechromatic scale. <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12ET</span> considers
+<span class="colorBc">B<span class="iosevka">𝄲</span></span>,
+<span class="colorDds">D<span class="iosevka">𝄲</span></span>, and
+<span class="colorDsE">E<span class="iosevka">𝄳</span></span> to be
+[microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=intervals%20not%20found%20in%20the%20customary%20Western%20tuning%20of%20twelve%20equal%20intervals%20per%20octave).
+The sound🔊frequency differences between the nearest <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> and
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span> and <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</span> notes range from the
-<span class="color008">8</span> <span class="tool"
+data-bs-title="12 equal temperament">12ET</span> notes in the table
+range from the <span class="color008">8</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="ten thousandths of an octave">millisteps</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</span>) between Notes
 <span class="color9">9</span> and <span class="colorA">A</span> to the
-<span class="color26div300">87</span> <span class="tool"
+~<span class="color26div300">87</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> between
-Notes <span class="color5">5</span> and <span class="colorF">F</span>. A
-typical person can reliably distinguish sounds🔊that
-[differ](https://en.wikipedia.org/wiki/Cent_(music)#:~:text=Normal%20adults%20are%20able%20to%20recognize%20pitch%20differences%20of%20as%20small%20as%2025%20cents%20very%20reliably)
-by at least <span class="color2">200</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span>.
+Notes <span class="color5">5</span> and <span class="colorF">F</span>.
 
 ## Color sound table
 
@@ -2321,8 +2345,23 @@ corresponding key. The frequencies and wavelengths are rounded to
 integers. As frequency increases, wavelength decreases.
 
 An octave is ten thousand <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</span>. In <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> [musical
+data-bs-title="millisteps">ms</span>. Octave numbers in
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span> and <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12ET</span> match for all notes
+except Notes <span class="color0">0</span> and
+<span class="colorAs">A<span class="iosevka">♯</span></span> or
+<span class="color1">1</span> and
+<span class="colorB">B<span class="iosevka">𝄲</span></span>. From the
+perspective of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span>, all of the labeled🏷️keys in the image
+above are in Octave <span class="color4">4</span>. <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> octave and
+note numbers do not have to be integers.
+
+In <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span> [musical
 notation](https://en.wikipedia.org/wiki/Musical_notation#:~:text=any%20system%20used%20to%20visually%20represent%20music),
 we can combine any positive octave number with any positive note number
 below ten to create a <span class="tool" data-bs-toggle="tooltip"
@@ -2343,12 +2382,7 @@ range for humans extends from Note <span class="color3">3</span> in
 Octave <span class="color0">0</span> (Tone
 <span class="color030">03</span>) to Note <span class="color4">4</span>
 in Octave <span class="color0">10</span> (Tone
-<span class="color040">104</span>). Octave numbers in <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> and
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</span> match for all notes
-except <span class="colorAs">A♯</span> and
-<span class="colorB">B</span>, which belong to the previous octave. Tone
+<span class="color040">104</span>). Tone
 <span class="color413">41.3</span>, which is Note
 <span class="color130">1.3</span> in Octave
 <span class="color4">4</span>, is just <span class="color002">2</span>
@@ -4940,30 +4974,35 @@ xetHex = xetCol.map(x => d3.color(x).formatHex())
 xetHue = xetCol.map(x => Math.round(d3.hsl(x).h))
 xetIob = xet.map(piecewiseIob)
 xetLen = xet.map(piecewiseLen)
-h002 = d3.hsl(piecewiseColor(0.002)).h
-h008 = d3.hsl(piecewiseColor(0.008)).h
-h014 = d3.hsl(piecewiseColor(0.014)).h
-h016 = d3.hsl(piecewiseColor(0.016)).h
-h021 = d3.hsl(piecewiseColor(0.021)).h
-h022 = d3.hsl(piecewiseColor(0.022)).h
-h024 = d3.hsl(piecewiseColor(0.024)).h
-h030 = d3.hsl(piecewiseColor(0.03)).h
-h040 = d3.hsl(piecewiseColor(0.04)).h
-h039 = d3.hsl(piecewiseColor(0.039)).h
-h065 = d3.hsl(piecewiseColor(0.065)).h
-h130 = d3.hsl(piecewiseColor(0.13)).h
-h185 = d3.hsl(piecewiseColor(0.185)).h
-h38016 = d3.hsl(piecewiseColor(0.38016)).h
-h413 = d3.hsl(piecewiseColor(0.413)).h
-h4132 = d3.hsl(piecewiseColor(0.4132)).h
-h490 = d3.hsl(piecewiseColor(0.49)).h
-h704 = d3.hsl(piecewiseColor(0.704)).h
-h754 = d3.hsl(piecewiseColor(0.754)).h
-h788 = d3.hsl(piecewiseColor(0.788)).h
-h815 = d3.hsl(piecewiseColor(0.815)).h
-h864 = d3.hsl(piecewiseColor(0.864)).h
-h935 = d3.hsl(piecewiseColor(0.935)).h
-h960 = d3.hsl(piecewiseColor(0.960)).h
+hues = Object.fromEntries([
+    0.002,
+    0.008,
+    0.014,
+    0.016,
+    0.021,
+    0.022,
+    0.024,
+    0.030,
+    0.040,
+    0.039,
+    0.065,
+    0.067,
+    0.130,
+    0.185,
+    0.38016,
+    0.413,
+    0.4132,
+    0.490,
+    0.599,
+    0.704,
+    0.754,
+    0.788,
+    0.815,
+    0.864,
+    0.935,
+    0.960,
+  ].map(i => [i, d3.hsl(piecewiseColor(i)).h])
+);
 h26div300 = d3.hsl(piecewiseColor(26 / 300)).h
 hD039 = d3.hsl(piecewiseColor(39 / 365)).h
 hD080 = d3.hsl(piecewiseColor(80 / 365)).h
@@ -4998,8 +5037,8 @@ html`
   font-family: monospace;
 }
 .colorA4 {
-  background: hsl(${h38016} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h38016}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[.38016]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.38016]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5126,56 +5165,56 @@ html`
   font-family: monospace;
 }
 .color002 {
-  background: hsl(${h002} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h002}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[.002]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.002]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color008 {
-  background: hsl(${h008} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h008}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[.008]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color014 {
-  background: hsl(${h014} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h014}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[.014]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.014]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color016 {
-  background: hsl(${h016} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h016}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.016]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.016]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color021 {
-  background: hsl(${h021} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h021}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.021]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.021]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color022 {
-  background: hsl(${h022} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h022}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.022]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.022]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color024 {
-  background: hsl(${h024} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h024}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.024]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.024]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5190,24 +5229,24 @@ html`
   font-family: monospace;
 }
 .color030 {
-  background: hsl(${h030} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h030}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.030]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.030]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color039 {
-  background: hsl(${h039} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.039]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.039]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color040 {
-  background: hsl(${h040} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h040}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.040]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.040]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5222,8 +5261,16 @@ html`
   font-family: monospace;
 }
 .color065 {
-  background: hsl(${h065} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h065}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.065]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.065]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color067 {
+  background: hsl(${hues[0.067]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.067]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5254,16 +5301,16 @@ html`
   font-family: monospace;
 }
 .color130 {
-  background: hsl(${h130} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h130}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.130]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.130]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color185 {
-  background: hsl(${h185} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h185}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.185]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.185]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5310,24 +5357,24 @@ html`
   font-family: monospace;
 }
 .color413 {
-  background: hsl(${h413} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h413}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.413]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.413]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color4132 {
-  background: hsl(${h4132} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h4132}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.4132]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.4132]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color490 {
-  background: hsl(${h490} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h490}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.490]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.490]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5336,6 +5383,14 @@ html`
 .color5 {
   background: hsl(180 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(180, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color599 {
+  background: hsl(${hues[0.599]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.599]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5366,8 +5421,8 @@ html`
   font-family: monospace;
 }
 .color704 {
-  background: hsl(${h704} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h704}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.704]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.704]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5382,16 +5437,16 @@ html`
   font-family: monospace;
 }
 .color754 {
-  background: hsl(${h754} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h754}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.754]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.754]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color788 {
-  background: hsl(${h788} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h788}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.788]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.788]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5406,16 +5461,16 @@ html`
   font-family: monospace;
 }
 .color815 {
-  background: hsl(${h815} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h815}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.815]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.815]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
 .color864 {
-  background: hsl(${h864} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h864}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.864]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.864]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5438,8 +5493,8 @@ html`
   font-family: monospace;
 }
 .color935 {
-  background: hsl(${h935} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h935}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.935]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.935]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5454,8 +5509,8 @@ html`
   font-family: monospace;
 }
 .color960 {
-  background: hsl(${h960} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${h960}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.960]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.960]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
