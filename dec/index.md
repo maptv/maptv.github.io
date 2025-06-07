@@ -2356,25 +2356,35 @@ except Notes <span class="color0">0</span> and
 <span class="colorB">B<span class="iosevka">𝄲</span></span>. From the
 perspective of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</span>, all of the labeled🏷️keys in the image
-above are in Octave <span class="color4">4</span>. <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> octave and
-note numbers do not have to be integers.
-
-In <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span> [musical
-notation](https://en.wikipedia.org/wiki/Musical_notation#:~:text=any%20system%20used%20to%20visually%20represent%20music),
-we can combine any positive octave number with any positive note number
-below ten to create a <span class="tool" data-bs-toggle="tooltip"
+above are in Octave <span class="color4">4</span>. We can concatenate a
+positive octave number and a positive note number that is less than ten
+to obtain a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</span> [musical
 tone](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound)
-number. If we append the highest Dechromatic scale note, Note
-<span class="color9">9</span>, to Octave <span class="color4">4</span>,
-we get Tone <span class="color490">49</span>, which is
+number.
+
+If we append Note <span class="color9">9</span> to Octave
+<span class="color4">4</span>, we get Tone
+<span class="color490">49</span>, which is
 <span class="color008">8</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> below
 <span class="colorA4">A4</span>, the <span class="colorA">A</span> note
 widely used to [tune musical
 instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance).
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span> tone, octave, and note numbers can be
+decimal numbers instead of integers. Tone
+<span class="color413">41.3</span>, which is Note
+<span class="color130">1.3</span> in Octave
+<span class="color4">4</span>, is just <span class="color002">2</span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millisteps">ms</span> below
+<span class="color4132">C4</span>, the “[Middle
+<span class="colorC">C</span>](https://en.wikipedia.org/wiki/C_(musical_note)#Middle_C:~:text=above%20the%20top%20line%20of%20the%20bass%20staff%20or%20below%20the%20bottom%20line%20of%20the%20treble%20staff)”
+in between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
+[treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)
+of a [grand
+staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff).
 
 The typical
 [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
@@ -2382,18 +2392,7 @@ range for humans extends from Note <span class="color3">3</span> in
 Octave <span class="color0">0</span> (Tone
 <span class="color030">03</span>) to Note <span class="color4">4</span>
 in Octave <span class="color0">10</span> (Tone
-<span class="color040">104</span>). Tone
-<span class="color413">41.3</span>, which is Note
-<span class="color130">1.3</span> in Octave
-<span class="color4">4</span>, is just <span class="color002">2</span>
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</span> below
-[<span class="color4132">C4</span>](https://en.wikipedia.org/wiki/C_(musical_note)#:~:text=the%20fourth%20C%20key%20from%20left%20on%20a%20standard%2088%2Dkey%20piano%20keyboard),
-the “Middle <span class="colorC">C</span>” in between the
-[bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
-[treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)
-of a [grand
-staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff).
+<span class="color040">104</span>).
 
 Dec color🎨and sound🔊labels🏷️can give a sense of the
 [magnitude](https://en.wikipedia.org/wiki/Magnitude_(mathematics)#:~:text=a%20property%20which%20determines%20whether%20the%20object%20is%20larger%20or%20smaller%20than%20other%20objects%20of%20the%20same%20kind)
@@ -4989,10 +4988,10 @@ hues = Object.fromEntries([
     0.067,
     0.130,
     0.185,
-    0.38016,
     0.413,
     0.4132,
     0.490,
+    0.49008,
     0.599,
     0.704,
     0.754,
@@ -5037,8 +5036,8 @@ html`
   font-family: monospace;
 }
 .colorA4 {
-  background: hsl(${hues[.38016]} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hues[.38016]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.49008]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.49008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
