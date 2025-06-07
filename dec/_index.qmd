@@ -1784,10 +1784,10 @@ hues = Object.fromEntries([
     0.067,
     0.130,
     0.185,
-    0.38016,
     0.413,
     0.4132,
     0.490,
+    0.49008,
     0.599,
     0.704,
     0.754,
@@ -1832,8 +1832,8 @@ html`
   font-family: monospace;
 }
 .colorA4 {
-  background: hsl(${hues[.38016]} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hues[.38016]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  background: hsl(${hues[0.49008]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.49008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
