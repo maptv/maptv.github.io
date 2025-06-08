@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+098
+2025+099
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -2227,15 +2227,15 @@ Notes <span class="color5">5</span> and <span class="colorF">F</span>.
 
 ## Color sound table
 
-<div id="notetable">
+<div id="colortable">
 
 <table>
 <colgroup>
 <col style="width: 14%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 33%" />
+<col style="width: 18%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 21%" />
 </colgroup>
 <thead>
 <tr>
@@ -2334,255 +2334,61 @@ piano(width)
 
 The image above applies Dec color🎨labels🏷️to one
 [octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-of white piano🎹keys. The text below the labeled🏷️keys provides the
-[scientific pitch
+of piano🎹keys. In <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span>, an octave is 10 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="steps">s</span> or
+10<sup>4</sup> <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millisteps">ms</span>. The text below the image provides
+the [scientific pitch
 name](https://en.wikipedia.org/wiki/Scientific_pitch_notation#:~:text=a%20method%20of%20specifying%20musical%20pitch%20by%20combining%20a%20musical%20note%20name%20(with%20accidental%20if%20needed)%20and%20a%20number%20identifying%20the%20pitch%27s%20octave)
-(top), <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iobs">i</span> sound🔊frequency (middle), and
+(top), integer <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iobs">i</span> sound🔊frequency (middle), and integer
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizem">mz</span> wavelength (bottom) of the
-corresponding key. The frequencies and wavelengths are rounded to
-integers. As frequency increases, wavelength decreases.
+corresponding white key. As octave indexes and frequency increase,
+wavelength decreases.
 
-An octave is ten thousand <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</span>. Octave numbers in
-<span class="tool" data-bs-toggle="tooltip"
+Octave indexes in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</span> and <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</span> match for all notes
-except Notes <span class="color0">0</span> and
-<span class="colorAs">A<span class="iosevka">♯</span></span> or
-<span class="color1">1</span> and
+data-bs-title="12 equal temperament">12ET</span> match except for
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span> notes with indexes below
+<span class="color2">2</span> and <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12ET</span> notes from
+<span class="colorAs">A<span class="iosevka">♯</span></span> to
 <span class="colorB">B<span class="iosevka">𝄲</span></span>. From the
 perspective of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</span>, all of the labeled🏷️keys in the image
-above are in Octave <span class="color4">4</span>. We can concatenate a
-positive octave number and a positive note number that is less than ten
-to obtain a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span> [musical
+above are in Octave <span class="color4">4</span>. When we append a
+positive note index that is less than ten to an octave index which is a
+positive integer, we obtain a <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> [musical
 tone](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound)
-number.
+index.
 
-If we append Note <span class="color9">9</span> to Octave
-<span class="color4">4</span>, we get Tone
-<span class="color490">49</span>, which is
-<span class="color008">8</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> below
-<span class="colorA4">A4</span>, the <span class="colorA">A</span> note
-widely used to [tune musical
+The tone indexes of the the labeled🏷️keys in the image above range from
+<span class="colorAs3">40.069</span> to
+<span class="colorA4">49.008</span>. Tone
+<span class="colorA4">49.008</span> is <span class="colorA4">A4</span>,
+the <span class="colorA">A</span> note widely used to [tune musical
 instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance).
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span> tone, octave, and note numbers can be
-decimal numbers instead of integers. Tone
-<span class="color413">41.3</span>, which is Note
-<span class="color130">1.3</span> in Octave
-<span class="color4">4</span>, is just <span class="color002">2</span>
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</span> below
-<span class="color4132">C4</span>, the “[Middle
+Tone <span class="colorC4">41.302</span> is
+<span class="colorC4">C4</span>, the “[Middle
 <span class="colorC">C</span>](https://en.wikipedia.org/wiki/C_(musical_note)#Middle_C:~:text=above%20the%20top%20line%20of%20the%20bass%20staff%20or%20below%20the%20bottom%20line%20of%20the%20treble%20staff)”
 in between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
 [treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)
 of a [grand
-staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff).
-
-The typical
+staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff). The
+typical
 [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
-range for humans extends from Note <span class="color3">3</span> in
-Octave <span class="color0">0</span> (Tone
-<span class="color030">03</span>) to Note <span class="color4">4</span>
-in Octave <span class="color0">10</span> (Tone
-<span class="color040">104</span>).
+range for humans extends from Tone <span class="color030">03</span> to
+Tone <span class="color040">104</span>.
 
-Dec color🎨and sound🔊labels🏷️can give a sense of the
-[magnitude](https://en.wikipedia.org/wiki/Magnitude_(mathematics)#:~:text=a%20property%20which%20determines%20whether%20the%20object%20is%20larger%20or%20smaller%20than%20other%20objects%20of%20the%20same%20kind)
-of continuous values.
-
-If we multiply the Tone <span class="color4">40</span> frequency by a
-trillion (10<sup>12</sup>), we get 400 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>), which is
-too high for sound🔊, but happens to fall in the
-<span class="color0">red</span> part of the [visible
-spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
-of light💡.
-
-The table below shows the colors by increasing the frequency by a
-certain number of
-[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-and iden (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="forty octaves">2<sup>40</sup></span>), we get 380.16
-<span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
-× <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="forty octaves">2<sup>40</sup></span> = ~417.99
+Dec sound🔊labels🏷️only use the most basic features of
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>). On the
-[visible
-spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye),
-417.99 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiobs">Ti</span> correspond to the <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="hexadecimal">hex</span> triplet
-<span class="colorff6300">ff6300</span> and a wavelength of
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="speed of light in v">647551.71</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ 417.99
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiob">Ti</span> = ~1549.20 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="billionths of a zem">nanozems</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). The
-wavelength selected by the “<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="billionths of a zem">Nanozems</span>” range🎚️input below
-yields the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> triplet ${wavehexHsl}.
-
-The table above compares nine musical notes🎶and the <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="hexadecimal">hex</span> triplets
-we obtain from increasing each note the wavelengths that result from
-dividing the speed of light by the product of the frequency of each
-note🎶by <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="forty octaves">2<sup>40</sup></span>: <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="speed of light in v">647551.71</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ frequency
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiob">Ti</span>. This process provides a rationale for
-linking Dec color🎨labels with specific sound🔊frequencies.
-
-If we increase the A4 note🎶frequency by 40
-[octaves](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="forty octaves">2<sup>40</sup></span>), we get 380.16
-<span class="tool" data-bs-toggle="tooltip" data-bs-title="iob">i</span>
-× <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="forty octaves">2<sup>40</sup></span> = ~417.99
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="trillions of iobs">teraiobs</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span>). On the
-[visible
-spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye),
-417.99 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiobs">Ti</span> correspond to the <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="hexadecimal">hex</span> triplet
-<span class="colorff6300">ff6300</span> and a wavelength of
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="speed of light in v">647551.71</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="omegar">v</span> ÷ 417.99
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiob">Ti</span> = ~1549.20 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="billionths of a zem">nanozems</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). The
-wavelength selected by the “<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="billionths of a zem">Nanozems</span>” range🎚️input below
-yields the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> triplet ${wavehexHsl}.
-
-The process described above does not work well for
-[F](https://en.wikipedia.org/wiki/F_(musical_note)) notes🎶, because the
-result with light (F4×2<sup>40</sup>) is
-[infrared](https://en.wikipedia.org/wiki/Infrared#:~:text=%20electromagnetic%20radiation%20(EMR)%20with%20wavelengths%20longer%20than%20that%20of%20visible%20light%20but%20shorter%20than%20microwaves)
-and F5-associated light is
-[ultraviolet](https://en.wikipedia.org/wiki/Ultraviolet#:~:text=shorter%20than%20that%20of%20visible%20light%2C%20but%20longer%20than%20X%2Drays),
-depending on how we define the limits of the visible spectrum.
-[infrared](https://en.wikipedia.org/wiki/Infrared#:~:text=%20electromagnetic%20radiation%20(EMR)%20with%20wavelengths%20longer%20than%20that%20of%20visible%20light%20but%20shorter%20than%20microwaves)
-light and and F5 When the
-[F4](https://en.wikipedia.org/wiki/F_(musical_note)) musical note🎶is
-subjected to the process described above, we obtain a frequency of 332
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiobs">Ti</span> and a wavelength of 1952, which is
-just beyond the [limits of visible
-spectrum](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=A%20typical%20human%20eye%20will%20respond%20to%20wavelengths%20from%20about%20380%20to%20about%20750%20nanometers.%5B3%5D%20In%20terms%20of%20frequency%2C%20this%20corresponds%20to%20a%20band%20in%20the%20vicinity%20of%20400–790%C2%A0terahertz.)
-(345.6 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraiobs">Ti</span> to 682.56 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="teraiobs">Ti</span> or 950
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="nanozems">nz</span> to 1875 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="nanozems">nz</span>). While the
-light that corresponds to
-[F4](https://en.wikipedia.org/wiki/F_(musical_note)) is infrared,
-[F5](https://en.wikipedia.org/wiki/F_(musical_note)) note falls outside
-of the To bridge the gap and complete the color🎨wheel, Dec associates
-[F](https://en.wikipedia.org/wiki/F_(musical_note)) with
-<span class="color1">magenta</span>, even though it [cannot be produced
-by a single wavelength of
-light](https://en.wikipedia.org/wiki/Magenta#:~:text=no%20color%20of%20the%20visible%20spectrum%20has%20magenta%27s%20hue).
-
-Dec also bumps <span class="color0">red</span> up $5\over6$ octaves from
-G#4 to F#5. Ten piano🎹keys, <span class="color9">A4</span> to
-<span class="color0">F#5</span>, in the image beneath the table above
-are labeled🏷️with the ten Dec time zone colors🎨.
-
-The table below shows the ten Dec colors🎨and notes🎶arranged by
-wavelength, from shortest to longest. In total, six
-[natural](https://en.wikipedia.org/wiki/Natural_(music))
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="natural">♮</span>) notes🎶and four
-[sharp](https://en.wikipedia.org/wiki/Sharp_(music)#:~:text=applied%20is%20played-,one%20semitone%20higher,-.%20The%20opposite%20of)
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="sharp">\#</span>) notes🎶are associated with colors🎨.
-Colors and notes are ,
-
-Colors🎨and notes🎶in Dec are ordered from shortest to longest
-wavelength so that the highest energy waves are associated with earlier
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">tods</span>.
-
-To associate colors🎨with sounds🔊, Dec uses
-[interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
-instead of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="forty octaves">2<sup>40</sup></span> scaling. labels with
-speci nine colors🎨in the table, We can use 2<sup>40</sup> scaling We
-can scale any sound frequency and find its corresponding frequency on
-the [electromagnetic spectrum](), but the visible spectrum is between .
-combining 2<sup>40</sup> scaling with
-[interpolation](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points),
-we can is to provide a rationale for labeling values with both
-color🎨and sound🔊.
-
-For continuous numbers, we can
-[interpolate](https://en.wikipedia.org/wiki/Interpolation#:~:text=a%20method%20of%20constructing%20(finding)%20new%20data%20points%20based%20on%20the%20range%20of%20a%20discrete%20set%20of%20known%20data%20points)
-the frequencies between notes🎶to create
-[microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=%20intervals%20smaller%20than%20a%20semitone).
-
-However tenuous the connection between color🎨and sound🔊may seem,
-
-numbers with both : {<span class="color0">0</span>:
-<span class="color0">G♯5</span>, <span class="color1">1</span>:
-<span class="color1">F5</span>, <span class="color2">2</span>:
-<span class="color2">E5</span>, <span class="color3">3</span>:
-<span class="color3">D#5</span>, <span class="color4">4</span>:
-<span class="color4">D5</span>, <span class="color5">5</span>:
-<span class="color5">C#5</span>, <span class="color6">6</span>:
-<span class="color6">C5</span>, <span class="color7">7</span>:
-<span class="color7">B4</span>, <span class="color8">8</span>:
-<span class="color8">A♯4</span>, <span class="color9">9</span>:
-<span class="color9">A4</span>, <span class="color0">0</span>:
-<span class="color0">G♯4</span>}.
-
-The color🎨in the table are reminiscent of nine of ten colors Dec uses
-for time zones.
-
-Inspired by the connection between musical notes🎶and color, the image
-beneath the table applies Dec color🎨labels🏷️to twelve piano keys
-according to the.
-
-Using the 2<sup>40</sup> method, we can labeling numbers with both
-colors🎨and sounds🔊: {<span class="color0">0</span>:
-<span class="color0">G♯5</span>, <span class="color1">1</span>:
-<span class="color1">F5</span>, <span class="color2">2</span>:
-<span class="color2">E5</span>, <span class="color3">3</span>:
-<span class="color3">D#5</span>, <span class="color4">4</span>:
-<span class="color4">D5</span>, <span class="color5">5</span>:
-<span class="color5">C#5</span>, <span class="color6">6</span>:
-<span class="color6">C5</span>, <span class="color7">7</span>:
-<span class="color7">B4</span>, <span class="color8">8</span>:
-<span class="color8">A♯4</span>, <span class="color9">9</span>:
-<span class="color9">A4</span>, <span class="color0">0</span>:
-<span class="color0">G♯4</span>}. This approach works not only for
-discrete but also
+data-bs-title="Tenet">Xet</span>.
 
 # US customary units
 
@@ -4988,6 +4794,8 @@ hues = Object.fromEntries([
     0.067,
     0.130,
     0.185,
+    0.40069,
+    0.41302,
     0.413,
     0.4132,
     0.490,
@@ -5030,6 +4838,22 @@ html`
 .colorAs {
   background: hsl(${xetHue[0]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[0]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorAs3 {
+  background: hsl(${hues[0.40069]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.40069]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorC4 {
+  background: hsl(${hues[0.41302]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.41302]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
