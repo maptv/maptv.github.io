@@ -1784,6 +1784,8 @@ hues = Object.fromEntries([
     0.067,
     0.130,
     0.185,
+    0.40069,
+    0.41302,
     0.413,
     0.4132,
     0.490,
@@ -1826,6 +1828,22 @@ html`
 .colorAs {
   background: hsl(${xetHue[0]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[0]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorAs3 {
+  background: hsl(${hues[0.40069]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.40069]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorC4 {
+  background: hsl(${hues[0.41302]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.41302]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;

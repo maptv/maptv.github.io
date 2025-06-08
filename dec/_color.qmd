@@ -267,14 +267,14 @@ decBar = colorbar({
 
 :::{#colortable}
 |                 | **[$\text m\alpha$]{.tool data-bs-toggle="tooltip" data-bs-title="milliwindroses"}**🧭 | **[c°]{.tool data-bs-toggle="tooltip" data-bs-title="compass degrees"}**🧭 | **[h°]{.tool data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees"}**🎨 | **[hex]{.tool data-bs-toggle="tooltip" data-bs-title="hexadecimal"}**🎨 |
-| --------------  | ---------------  | ----------------- | ----------------- | ----------------    |
-| \${rainbowDir}  | \${rainbowMtr}   | \${rainbowDegC}   | \${rainbowDegH}   | \${rainbowHex}      |
-| [NE]{.color125} | [125]{.color125} | [45]{.color125}   | [44]{.color125}  | [fb0]{.color125} |
-| [E]{.color250}  | [250]{.color250} | [90]{.color250}   | [68]{.color250}  | [df0]{.color250} |
-| [SE]{.color375} | [375]{.color375} | [135]{.color375}  | [96]{.color375}  | [6f0]{.color375} |
-| [S]{.color5}    | [500]{.color5}   | [180]{.color5}    | [180]{.color5}   | [0ff]{.color5}   |
-| [SW]{.color625} | [625]{.color625} | [225]{.color625}  | [216]{.color625} | [06f]{.color625} |
-| [W]{.color750}  | [750]{.color750} | [270]{.color750}  | [264]{.color750} | [60f]{.color750} |
-| [NW]{.color875} | [875]{.color875} | [315]{.color875}  | [292]{.color875} | [d0f]{.color875} |
-| [N]{.color0}    | [0]{.color0}     | [0]{.color0}      | [0]{.color0}     | [f00]{.color0}   |
+| --------------  | ---------------                                                                        | -----------------                                                          | -----------------                                                             | ----------------                                                        |
+| \${rainbowDir}  | \${rainbowMtr}                                                                         | \${rainbowDegC}                                                            | \${rainbowDegH}                                                               | \${rainbowHex}                                                          |
+| [NE]{.color125} | [125]{.color125}                                                                       | [45]{.color125}                                                            | [44]{.color125}                                                               | [fb0]{.color125}                                                        |
+| [E]{.color250}  | [250]{.color250}                                                                       | [90]{.color250}                                                            | [68]{.color250}                                                               | [df0]{.color250}                                                        |
+| [SE]{.color375} | [375]{.color375}                                                                       | [135]{.color375}                                                           | [96]{.color375}                                                               | [6f0]{.color375}                                                        |
+| [S]{.color5}    | [500]{.color5}                                                                         | [180]{.color5}                                                             | [180]{.color5}                                                                | [0ff]{.color5}                                                          |
+| [SW]{.color625} | [625]{.color625}                                                                       | [225]{.color625}                                                           | [216]{.color625}                                                              | [06f]{.color625}                                                        |
+| [W]{.color750}  | [750]{.color750}                                                                       | [270]{.color750}                                                           | [264]{.color750}                                                              | [60f]{.color750}                                                        |
+| [NW]{.color875} | [875]{.color875}                                                                       | [315]{.color875}                                                           | [292]{.color875}                                                              | [d0f]{.color875}                                                        |
+| [N]{.color0}    | [0]{.color0}                                                                           | [0]{.color0}                                                               | [0]{.color0}                                                                  | [f00]{.color0}                                                          |
 :::
