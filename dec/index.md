@@ -2404,7 +2404,7 @@ The [unit
 conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
 table below shows the [United States🇺🇸(US) customary
 units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
-that Dec redefines in terms of the [International System of
+that Dec redefines using the [International System of
 Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span>). The values in
@@ -2415,7 +2415,8 @@ from original to redefined units. A fold change of
 [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared).
 Identical fold changes indicate <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="US customary units">US</span>
-units derived from the same <span class="tool" data-bs-toggle="tooltip"
+units that are derived from the same <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span> unit.
 
 ## Unit conversion table
@@ -2755,7 +2756,7 @@ data-bs-title="United States">US</span> customary units in terms of
 data-bs-title="International System of Units">SI</span> units.
 Redefinition of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> customary units makes inches
-~<span class="colorInch">1.57%</span> shorter, miles
+~<span class="color0158">1.58%</span> shorter, miles
 ~<span class="colorMile">3.56%</span> longer, pints
 ~<span class="colorPint">5.67%</span> larger, ounces
 ~<span class="colorFlOz">8.21%</span> larger, and pounds
@@ -2821,13 +2822,12 @@ presented the first
 and linked its colors🎨to musical notes🎶. On <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="May 20, 2025"><span class="color025">2025</span><span style="font-family:monospace;">+</span><span class="colorD080">080</span></span>,
-I read about the 2<sup>40</sup> method of connecting musical notes🎶to
-colors🎨via their frequencies in the <span class="color022">2022</span>
-[Color of Sound](https://www.flutopedia.com/sound_color.htm) article by
-[Clint Goss](https://www.clintgoss.com). To convert wavelengths to
-colors🎨, I used
-[code](https://observablehq.com/@magfoto/wavelengths-and-spectral-colours)
-by [Marcus A. Gordon](https://observablehq.com/@magfoto).
+I read the <span class="color022">2022</span> [Color of
+Sound](https://www.flutopedia.com/sound_color.htm) article by [Clint
+Goss](https://www.clintgoss.com), which describes a method of connecting
+musical notes🎶to colors🎨via their frequencies that produces results
+similar to the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span> Dechromatic scale note colors🎨.
 
 In <span class="color754">1754</span>, [Jean le Rond
 d’Alembert](https://en.wikipedia.org/wiki/Jean_le_Rond_d%27Alembert#:~:text=French%20mathematician%2C%20mechanician%2C%20physicist%2C%20philosopher%2C%20and%20music%20theorist)
@@ -4775,6 +4775,7 @@ hues = Object.fromEntries([
     0.002,
     0.008,
     0.014,
+    0.0158,
     0.016,
     0.021,
     0.022,
@@ -4838,6 +4839,14 @@ html`
 .colorAs3 {
   background: hsl(${hues[0.40069]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.40069]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color0158 {
+  background: hsl(${hues[0.0158]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.0158]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
