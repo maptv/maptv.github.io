@@ -26,7 +26,7 @@ Martin Laptev
 - [US customary units](#ucu)
   - [Unit conversion table](#uct)
   - [Miles per hour (mph)](#mph)
-  - [Hexamilliare shot keg](#xsk)
+  - [Hexamilliare doppio keg](#xdk)
   - [Body mass index (bmi)](#bmi)
   - [Centizem centimeter inch](#cci)
 - [Summary](#tldr)
@@ -2422,9 +2422,9 @@ data-bs-title="International System of Units">SI</span> unit.
 
 <table>
 <colgroup>
-<col style="width: 77%" />
+<col style="width: 76%" />
 <col style="width: 11%" />
-<col style="width: 10%" />
+<col style="width: 11%" />
 </colgroup>
 <thead>
 <tr>
@@ -2534,12 +2534,6 @@ href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Shot_glass">shots</a></td>
-<td>1 dz<sup>3</sup></td>
-<td>64 mL</td>
-</tr>
-<tr>
-<td><span class="colorFlOz">1.0821</span> <a
 href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
 <td><span class="math inline">$1\over2$</span> dz<sup>3</sup></td>
 <td>32 mL</td>
@@ -2569,11 +2563,9 @@ Dec and <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span> units. Miles are
 redefined such that 1 mile per hour is equal to 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> or
-$5\over3$ kilometers per hour (<span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="kilometers per hour">kmph</span>).
+$5\over3$ kilometers per hour.
 
-## Hexamilliare shot keg
+## Hexamilliare doppio keg
 
 A square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a thousand zems">kilozem</span> (<span class="tool"
@@ -2591,7 +2583,7 @@ data-bs-title="square kilometers">km<sup>2</sup></span>), 0.0576 Dec
 square miles, or <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a million">10<sup>6</sup></span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span>. One <span class="tool"
+data-bs-title="square zem">z<sup>2</sup></span>. A <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="square zem">z<sup>2</sup></span>
 is a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="1.6 thousandth of an are">hexamilliare</span>
@@ -2616,7 +2608,7 @@ data-bs-title="hexamilliares">x</span>.
 A cubic <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a zone equatorial meter">decizem</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz<sup>3</sup></span>) is 1 shot, 1 cubic
+data-bs-title="cubic decizem">dz<sup>3</sup></span>) is 1 cubic
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a millionth of a taur">nanotaur</span>
 (<span class="tool" data-bs-toggle="tooltip"
@@ -2625,8 +2617,9 @@ data-bs-title="cubic nanotaur">nc<sup>3</sup></span>), 2 Dec ounces, or
 data-bs-title="thousandths of a liter">milliliters</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliliters">mL</span>). A <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="cubic decizem">shot</span> of
-water🌊weighs 64 grams (<span class="tool" data-bs-toggle="tooltip"
+data-bs-toggle="tooltip"
+data-bs-title="cubic decizem">dz<sup>3</sup></span> of water🌊weighs 64
+grams (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="grams">g</span>). Even though a Dec ounce of
 water🌊weighs close to a sixteenth of a Dec pound, Dec does not measure
 weights in ounces. A <span class="tool" data-bs-toggle="tooltip"
@@ -2656,21 +2649,20 @@ If [Leonardo da
 Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s
 [Vitruvian
 Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
-weighed 64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilograms">kg</span> and were 4 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zems">z</span> tall, his [Body
-Mass
+were 4 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zems">z</span> tall, we could measure 1
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span>
+from his knees to his feet🦶or from his elbows💪to his fingertips. If he
+also weighed 64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="kilograms">kg</span>, his [Body Mass
 Index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">BMI</span>) would be 4
-$\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$ and we could
-measure 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span> from the knee to the foot🦶of his legs🦵or
-from the elbow to the fingertips of his arms💪. A normal
+$\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$. A normal
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">BMI</span> is between 2.96 and 4
-$\text {kg}\over\text z^2$ or 18.5 and 25 $\text {kg}\over\text m^2$. A
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="body mass index">BMI</span> ranges from 2.96 to 4
+$\text {kg}\over\text z^2$ or 18.5 to 25 $\text {kg}\over\text m^2$.
+Therefore, a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">BMI</span> of ${kg} kg ÷ ${zem2}
 z<sup>2</sup> = ${bmi} $\text {kg}\over\text z^2$ = ${bmim2}
 $\text {kg}\over\text m^2$ is considered ${bmiStr}.
@@ -2760,18 +2752,8 @@ data-bs-title="International System of Units">SI</span> measurement
 systems by redefining <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> customary units in terms of
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of zems">kz</span>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zems">z</span>,
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square kilozems">kz<sup>2</sup></span>,
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zems">z<sup>2</sup></span>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="grams">g</span>,
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zems">z<sup>3</sup></span>, or <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="cubic decizems">dz<sup>3</sup></span>. Redefinition of
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span> units.
+Redefinition of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> customary units makes inches
 ~<span class="colorInch">1.57%</span> shorter, miles
 ~<span class="colorMile">3.56%</span> longer, pints
