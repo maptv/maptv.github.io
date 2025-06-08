@@ -14,16 +14,19 @@ Martin Laptev
   - [Coordinated Universal Time](#utc)
   - [Millenium Year Day](#myd)
 - [Zone equatorial meter (zem)](#zem)
+  - [Length area volume](#lav)
+  - [Typical seat height](#tsh)
   - [Speed of sound](#sos)
 - [Inverse of b (Iob)](#iob)
   - [Beats per milliday (bpm)](#bpm)
   - [Frequency period wavelength](#fpw)
 - [Ten equal temperament (Xet)](#xet)
   - [Color sound table](#cst)
+  - [Octave + note = tone](#ont)
 - [US customary units](#ucu)
   - [Unit conversion table](#uct)
   - [Miles per hour (mph)](#mph)
-  - [Length area volume](#lav)
+  - [Hexamilliare shot keg](#xsk)
   - [Body mass index (bmi)](#bmi)
   - [Centizem centimeter inch](#cci)
 - [Summary](#tldr)
@@ -1571,6 +1574,8 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 
 </div>
 
+## Length area volume
+
 You can approximate a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zem">z</span>) using your
@@ -1937,6 +1942,8 @@ style="text-align:center;">
 id="cubiclabel">Dimensions.com</a>
 
 </div>
+
+## Typical seat height
 
 According to [dimensions.com](https://www.dimensions.com), 115
 <span class="tool" data-bs-toggle="tooltip"
@@ -2332,6 +2339,8 @@ data-bs-title="twelve equal temperament">12ET</span></strong>🎶</th>
 piano(width)
 ```
 
+## Octave + note = tone
+
 The image above applies Dec color🎨labels🏷️to one
 [octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
 of piano🎹keys. In <span class="tool" data-bs-toggle="tooltip"
@@ -2339,14 +2348,13 @@ data-bs-title="Tenet">Xet</span>, an octave is 10 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="steps">s</span> or
 10<sup>4</sup> <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</span>. The text below the image provides
-the [scientific pitch
-name](https://en.wikipedia.org/wiki/Scientific_pitch_notation#:~:text=a%20method%20of%20specifying%20musical%20pitch%20by%20combining%20a%20musical%20note%20name%20(with%20accidental%20if%20needed)%20and%20a%20number%20identifying%20the%20pitch%27s%20octave)
-(top), integer <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iobs">i</span> sound🔊frequency (middle), and integer
+from top to bottom the [scientific pitch
+name](https://en.wikipedia.org/wiki/Scientific_pitch_notation#:~:text=a%20method%20of%20specifying%20musical%20pitch%20by%20combining%20a%20musical%20note%20name%20(with%20accidental%20if%20needed)%20and%20a%20number%20identifying%20the%20pitch%27s%20octave),
+integer <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="iobs">i</span> sound🔊frequency, and integer
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millizem">mz</span> wavelength (bottom) of the
-corresponding white key. As octave indexes and frequency increase,
-wavelength decreases.
+data-bs-title="millizem">mz</span> wavelength of the corresponding white
+key. As octave indexes and frequency increase, wavelength decreases.
 
 Octave indexes in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</span> and <span class="tool"
@@ -2565,7 +2573,7 @@ $5\over3$ kilometers per hour (<span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="kilometers per hour">kmph</span>).
 
-## Length area volume
+## Hexamilliare shot keg
 
 A square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a thousand zems">kilozem</span> (<span class="tool"
@@ -2605,8 +2613,10 @@ data-bs-title="square meters">m²</span>), ~19.753 Dec square yards, or
 100 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexamilliares">x</span>.
 
-A <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz<sup>3</sup></span> is 1 shot, 1 cubic
+A cubic <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a zone equatorial meter">decizem</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic decizem">dz<sup>3</sup></span>) is 1 shot, 1 cubic
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a millionth of a taur">nanotaur</span>
 (<span class="tool" data-bs-toggle="tooltip"
@@ -2617,8 +2627,8 @@ data-bs-title="thousandths of a liter">milliliters</span>
 data-bs-title="milliliters">mL</span>). A <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="cubic decizem">shot</span> of
 water🌊weighs 64 grams (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="grams">g</span>). Even though the weight of a Dec ounce
-of water🌊is close to a sixteenth of a Dec pound, Dec does not measure
+data-bs-title="grams">g</span>). Even though a Dec ounce of
+water🌊weighs close to a sixteenth of a Dec pound, Dec does not measure
 weights in ounces. A <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic zem">z<sup>3</sup></span> is 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="cubic zem">keg</span>, 16 Dec
@@ -2680,7 +2690,7 @@ viewof zems = Inputs.range([0, 10], {label: "Zems", value: 4, step: 0.01})
 ## Centizem centimeter inch
 
 <div class="column-page-right" fig-align="left"
-style="text-align:center;">
+style="text-align:center;font-size:.825rem;">
 
 <img src="../asset/ruler1dz.svg" id="ruler" />
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Ruler_illustration.svg)
@@ -2742,12 +2752,12 @@ data-bs-toggle="tooltip" data-bs-title="hexamilliare">x</span>, or
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic zem">keg</span>.
 
-Dec attempts to bridge the gap and improve interoperability between
+Dec attempts to bridge the gap and improve interoperability between the
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</span> and
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</span> customary measurement systems by
-redefining <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</span> customary and <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span> measurement
+systems by redefining <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> customary units in terms of
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of zems">kz</span>, <span class="tool"
