@@ -2729,6 +2729,7 @@ div#iobpiano > div > div > svg {
 #iobpiano {
   overflow: clip;
   max-width: 100%;
+  margin-bottom: 8px;
 }
 img#zModu {
   width: 100%;
