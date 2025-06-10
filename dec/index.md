@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+099
+2025+100
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -26,7 +26,7 @@ Martin Laptev
 - [US customary units](#ucu)
   - [Unit conversion table](#uct)
   - [Miles per hour (mph)](#mph)
-  - [Hexamilliare doppio keg](#xdk)
+  - [Hexamilliare wineglass keg](#xwk)
   - [Body mass index (bmi)](#bmi)
   - [Centizem centimeter inch](#cci)
 - [Summary](#tldr)
@@ -50,7 +50,7 @@ style="width:8.64in;height:0.98in" />
 
 # Dec measurement system
 
-This section of my website focuses on Dec, a [measurement
+This part of my website focuses on Dec, a [measurement
 system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other)
 that [I](https://maptv.github.io) created. All Dec measurements are
 based on
@@ -68,7 +68,7 @@ data-bs-title="degrees">°</span>). [Geographic
 coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude)
 and
 [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭directions
-are angles📐and thus can (and should!😄) be measured in turns instead of
+are angles📐and thus can, and should😄, be measured in turns instead of
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="radians">rad</span> or <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="degrees">°</span>.
@@ -80,7 +80,9 @@ Dec measures
 in
 [parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallels">*λ*</span>), latitude in
+data-bs-title="parallels">*λ*</span>),
+[latitude](%5B$\underline\phi$%5D(https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
+in
 [meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="meridians">*ϕ*</span>), and compass🧭directions in
@@ -113,9 +115,8 @@ The table below provides the current longitude in <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a parallel">milliparallels</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\text m\lambda$</span>) and
-[latitude](%5B$\underline\phi$%5D(https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
-in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliparallels">$\text m\lambda$</span>) and latitude in
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a meridian">millimeridians</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span>) of Points
@@ -772,7 +773,7 @@ data-bs-title="milliwindroses">$\text m\alpha$</span>) and [Longitude
 (<span class="color0">0</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="milliparallels">$\text m\lambda$</span>), and
-<span class="color5">cyan</span> indicates midpoints, such as South
+<span class="color5">cyan</span> denotes midpoints, such as South
 (<span class="color5">500</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="milliwindroses">$\text m\alpha$</span>) and [Longitude
@@ -883,14 +884,17 @@ Each Dec time zone is 1 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciparallel">d*λ*</span> wide and 0.5 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="meridians">*ϕ*</span> long.
 While 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridian">*ϕ*</span> is always about 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="taur">c</span> long, the length
-of a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">*λ*</span> [varies by
+data-bs-title="meridian">*ϕ*</span> is always <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="roughly">~</span>1
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</span> long, the length of a <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="parallel">*λ*</span> [varies by
 latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude).
 At the Equator, 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">*λ*</span> is roughly 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="taur">c</span> long. At the
+data-bs-title="parallel">*λ*</span> is <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="roughly">~</span>1
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</span> long. At the
 [North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
 or
 [South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
@@ -924,27 +928,27 @@ viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine i
 [UTC time zone
 offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
 range from ${rainbowN5zn} to ${rainbowP583} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>. According
-to your web browser, your UTC offset is ${utcOffHslM} ÷ 144 =
+data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>. The UTC
+offset provided by your web browser is ${utcOffHslM} ÷ 144 =
 ${utcOffHslD} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</span>. The Dec time zone that corresponds
-to your UTC offset is Zone ${decZonHslP}. The time in corresponding Dec
+to this UTC offset is Zone ${decZonHslP}. The times in corresponding Dec
 and UTC time zones can differ by up to <span class="color050">0.5</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</span>. The time difference between your Dec
-and UTC time zones is ${utcOffsetMdiffHsl } ÷ 144 = ${utcOffDiffHsl}
+data-bs-title="decidays">dd</span>. The difference between your Dec and
+UTC time is ${utcOffsetMdiffHsl } ÷ 144 = ${utcOffDiffHsl}
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</span>.
 
 To obtain the time in Zone <span class="color0">0</span>, we can
 subtract the offset of any time zone from its time. Inversely, we can
 get the time in any time zone by adding its offset to the Zone
-<span class="color0">0</span> time. The date and time are the exact same
-in Zone <span class="color0">0</span> and
-[UTC<span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time).
-Zone <span class="color5">5</span> and
+<span class="color0">0</span> time. The dates and times in Zone
+<span class="color0">0</span> and
+[UTC<span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+match exactly. Zone <span class="color5">5</span> and
 [UTC<span class="color5">+12:00</span>](https://en.wikipedia.org/wiki/UTC%2B12:00)
-have the exact same date and time, both are precisely one day ahead of
+also have matching dates and times, both are precisely one day ahead of
 [UTC<span class="color5">-12:00</span>](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00).
 
 To avoid date mismatches with UTC time zones that have negative offsets,
@@ -1581,15 +1585,18 @@ data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zem">z</span>) using your
 hands🤲. With your palms flat on a table in front of you and the tips of
 your thumbs👍touching, the maximum distance between the tips of your
-pinkies is about 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span>. When you spread out the fingers on one
-hand✋or do the “[call
+pinkies is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="roughly">~</span>1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span>. When you spread
+out the fingers on one hand✋or do the “[call
 me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)”,
 “[drink](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=placing%20the%20thumb%20to%20the%20mouth%20and%20motioning%20the%20little%20finger%20upward%20as%20if%20tipping%20up%20a%20bottle%27s%20bottom%20end)”,
 or
 “[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)”🤙gesture,
-the tips of your thumb👍and pinky are roughly 0.5 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zems">z</span> apart.
+your thumb👍and pinky tips are <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="roughly">~</span>0.5
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zems">z</span> apart.
 
 <div id="zemarms" class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1608,7 +1615,7 @@ standing in a circle, facing inward, each with their right hand✋placed
 on top of the elbow of the person to their right. Alternatively, two
 people can stand in front of each other and raise their arms💪, placing
 one hand✋on the elbow of the other person and the other hand✋on their
-own elbow to form a square.
+own elbow.
 
 <div id="zemlift" class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1626,11 +1633,11 @@ data-bs-toggle="tooltip" data-bs-title="zem">z</span>, 4
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a meter">decimeters</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decimeters">dm</span>), or 16
-inches apart, which is likely to be about the width of your hips or
-shoulders. The top of the <span class="tool" data-bs-toggle="tooltip"
+inches apart, which is probably about the width of your hips or
+shoulders. The <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square zem">z<sup>2</sup></span> will be between your
-knees, its bottom will be between your ankles or feet🦶depending on your
-height, and its sides will be between your shins.
+shins, its top will be below your knees, and its bottom will be either
+above your ankles or feet🦶, depending on your height.
 
 <div id="zemcubic" class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1644,7 +1651,7 @@ style="text-align:center;">
    viewBox="0 0 430.64053 385.96381"
    enable-background="new 0 0 1500 525"
    xml:space="preserve"
-   id="svg74"
+   id="cubiczem"
    sodipodi:docname="cubicZem.svg"
    inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
    width="430.64053"
@@ -1951,19 +1958,18 @@ data-bs-title="hundredths of a zem">centizems</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="centizems">cz</span>) is the
 [typical seat
 height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
-for both men and women age 25 to 45. A box📦with the dimensions of a
-cubic <span class="tool" data-bs-toggle="tooltip"
+for both men and women age 25 to 45. A box📦that is the size of a cubic
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="cubic zem">z<sup>3</sup></span>)
-would likely fit underneath a typical chair🪑 or in between the shins of
-two people sitting in front of each other with their legs🦵bent at 25
-<span class="tool" data-bs-toggle="tooltip"
+would likely fit under a typical chair🪑 or in between the shins of two
+people sitting in front of each other with their knees and feet🦶1
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span>
+apart and their legs🦵bent at 25 <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="a hundredth of a turn">centiturn</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centiturn">ct</span>) or 90 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="degree">°</span> angles and
-their knees and feet🦶1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span> apart.
+data-bs-title="centiturn">ct</span>) angles📐.
 
 In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, <span class="tool"
 data-bs-toggle="tooltip"
@@ -2193,13 +2199,16 @@ data-bs-toggle="tooltip" data-bs-title="step">s</span>), but the
 differences between consecutive <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="12 equal temperament">12ET</span> chromatic scale notes
-vary from the ~<span class="color599">599</span> <span class="tool"
-data-bs-toggle="tooltip"
+vary from the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="roughly">~</span><span class="color599">599</span>
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="ten thousandths of an octave">millisteps</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</span>) between
 <span class="colorAs">A<span class="iosevka">♯</span></span> and
-<span class="colorB">B</span> to the ~<span class="color067">1067</span>
+<span class="colorB">B</span> to the <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="roughly">~</span><span class="color067">1067</span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</span> between
 <span class="colorGs">G<span class="iosevka">♯</span></span> and
@@ -2228,9 +2237,11 @@ data-bs-title="ten thousandths of an octave">millisteps</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</span>) between Notes
 <span class="color9">9</span> and <span class="colorA">A</span> to the
-~<span class="color26div300">87</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> between
-Notes <span class="color5">5</span> and <span class="colorF">F</span>.
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="roughly">~</span><span class="color26div300">87</span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millisteps">ms</span> between Notes
+<span class="color5">5</span> and <span class="colorF">F</span>.
 
 ## Color sound table
 
@@ -2394,9 +2405,72 @@ typical
 range for humans extends from Tone <span class="color030">03</span> to
 Tone <span class="color040">104</span>.
 
-Dec sound🔊labels🏷️only use the most basic features of
+By default, each <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span> note or tone lasts one musical beat.
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span>.
+data-bs-title="Tenet">Xet</span> modifies the duration of notes and
+tones by appending × and a multiplier or ÷ and a divisor. The first two
+[measures](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music)
+of the
+[chorus](https://en.wikipedia.org/wiki/Chorus#:~:text=the%20part%20of%20a%20song%20that%20is%20repeated%20several%20times)
+from “[Turn the beat
+around](https://en.wikipedia.org/wiki/Turn_the_Beat_Around#:~:text=a%20disco%20song%20written%20by%20Gerald%20Jackson%20and%20Peter%20Jackson%2C%20and%20performed%20by%20American%20actress%20and%20singer%20Vicki%20Sue%20Robinson%20in%201976)”
+are shown below and can be expressed in <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> as Octave
+<span class="color4">4</span> and a series of notes followed by a rest
+(∅): <span class="color9">9</span> <span class="color9">9</span>÷2
+<span class="color8">8</span> <span class="color8">8</span>
+<span class="color6">6</span>×4 ∅.
+
+``` {ojs}
+//| echo: false
+//| label: chorus
+// https://observablehq.com/@kreijstal/abc
+// https://github.com/quarto-dev/quarto-cli/discussions/7098
+// https://github.com/quarto-dev/quarto-cli/issues/2700
+abcjs = require('https://bundle.run/abcjs@5.1.2/midi.js')
+code = `
+M:4/4
+L:1/4
+K:A
+y A A/2G/2- G/2 G F/2- | F3 z |
+w: Turn the~ ~beat _ ~a- ~round
+`
+abc(code, true)
+function abc(tune, midi = false, notation = true) {
+    function colorRange(range, color) {
+        if (range && range.elements) {
+            range.elements.forEach(function(set) {
+                set.forEach(function(item) {
+                    item.setAttribute("fill", color);
+                });
+            });
+        }
+    }
+    const result = html `<div/>`;
+    if (notation) {
+        const notation = result.appendChild(html `<div/>`);
+        var abcElem = (abcjs.renderAbc(notation, tune));
+    }
+    if (midi) {
+        result.appendChild(html `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/><link rel="stylesheet" type="text/css" href="https://unpkg.com/abcjs@5.1.2/abcjs-midi.css"/>`);
+        const midi = result.appendChild(html `<div/>`);
+        abcjs.renderMidi(midi, tune, {
+            midiListener: function(a, b, c) {},
+            animate: {
+                listener: function(a, b, c) {
+                    colorRange(a, "#000000");
+                    colorRange(b, "#3D9AFC");
+                },
+                target: abcElem[0],
+                qpm: abcElem[0].getBpm()
+            }
+        });
+        //  abcjs.midi.startPlaying(document.querySelector(".abcjs-inline-midi"),true)
+    }
+    return result;
+}
+```
 
 # US customary units
 
@@ -2404,28 +2478,25 @@ The [unit
 conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
 table below shows the [United States🇺🇸(US) customary
 units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
-that Dec redefines using the [International System of
-Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</span>). The values in
-the first column are approximate [fold
+that Dec redefines. The values in the first column are approximate [fold
 changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
 from original to redefined units. A fold change of
 <span class="color0">1</span> means <span class="color0">0</span>
 [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared).
 Identical fold changes indicate <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="US customary units">US</span>
-units that are derived from the same <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</span> unit.
+units that are derived from the same Dec and [International System of
+Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span>) units.
 
 ## Unit conversion table
 
 <table>
 <colgroup>
-<col style="width: 76%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
+<col style="width: 40%" />
+<col style="width: 29%" />
+<col style="width: 30%" />
 </colgroup>
 <thead>
 <tr>
@@ -2440,110 +2511,168 @@ data-bs-title="International System of Units">SI</span></strong></th>
 <tr>
 <td><span class="colorMile">1.0356</span> <a
 href="https://en.wikipedia.org/wiki/Mile#:~:text=units%20as%20exactly-,1%2C609.344%20metres">miles</a></td>
-<td><span class="math inline">$25\over6$</span> kz</td>
-<td><span class="math inline">$5\over3$</span> km</td>
+<td><span class="math inline">$25\over6$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousands of zems">kz</span></td>
+<td><span class="math inline">$5\over3$</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="kilometers">km</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Yard#:~:text=as%20exactly-,0.9144%C2%A0meter">yards</a></td>
-<td><span class="math inline">$9\over4$</span> z</td>
-<td>9 dm</td>
+<td><span class="math inline">$9\over4$</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
+<td>9 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decimeters">dm</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Foot_(unit)#:~:text=equal%20to%20exactly-,0.3048%20meters">feet</a></td>
-<td><span class="math inline">$3\over4$</span> z</td>
-<td>3 dm</td>
+<td><span class="math inline">$3\over4$</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
+<td>3 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decimeters">dm</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Inch#:~:text=defined%20as%20exactly-,25.4%C2%A0mm">inches</a></td>
-<td><span class="math inline">$1\over16$</span> z</td>
-<td>25 mm</td>
+<td><span class="math inline">$1\over16$</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
+<td>25 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millimeters">mm</span></td>
 </tr>
 <tr>
 <td><span class="colorAcre">0.9884</span> <a
 href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
-<td><span class="math inline">$1\over40$</span> kz<sup>2</sup></td>
-<td><span class="math inline">$1\over250$</span> km<sup>2</sup></td>
+<td><span class="math inline">$1\over40$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square kilozem">kz<sup>2</sup></span></td>
+<td><span class="math inline">$1\over250$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square kilometers">km<sup>2</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorSqMi">1.0725</span> <a
 href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
-<td><span class="math inline">$625\over36$</span> kz<sup>2</sup></td>
-<td><span class="math inline">$25\over9$</span> km<sup>2</sup></td>
+<td><span class="math inline">$625\over36$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square kilozem">kz<sup>2</sup></span></td>
+<td><span class="math inline">$25\over9$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square kilometers">km<sup>2</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_yard">square yards</a></td>
-<td><span class="math inline">$81\over16$</span> z<sup>2</sup></td>
-<td>81 dm<sup>2</sup></td>
+<td><span class="math inline">$81\over16$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span></td>
+<td>81 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square decimeters">dm<sup>2</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_foot">square feets</a></td>
-<td><span class="math inline">$9\over16$</span> z<sup>2</sup></td>
-<td>9 dm<sup>2</sup></td>
+<td><span class="math inline">$9\over16$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span></td>
+<td>9 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square decimeters">dm<sup>2</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_inch">square inches</a></td>
-<td><span class="math inline">$1\over256$</span> z<sup>2</sup></td>
-<td>625 mm<sup>2</sup></td>
+<td><span class="math inline">$1\over256$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span></td>
+<td>625 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square millimeters">mm<sup>2</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorAvLb">1.1023</span> <a
 href="https://en.wikipedia.org/wiki/Pound_(mass)#:~:text=0.45359237%C2%A0kilograms">pounds</a></td>
-<td>500 g</td>
-<td>500 g</td>
+<td>500 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="grams">g</span></td>
+<td>500 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="grams">g</span></td>
 </tr>
 <tr>
 <td><span class="colorPint">1.0567</span> <a
 href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
-<td>2 z<sup>3</sup></td>
-<td>128 L</td>
+<td>2 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic zem">z<sup>3</sup></span></td>
+<td>128 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="liters">L</span></td>
 </tr>
 <tr>
 <td><span class="colorPint">1.0567</span> <a
 href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
-<td>1 z<sup>3</sup></td>
-<td>64 L</td>
+<td>1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic zem">z<sup>3</sup></span></td>
+<td>64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="liters">L</span></td>
 </tr>
 <tr>
 <td><span class="colorPint">1.0567</span> <a
 href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
-<td><span class="math inline">$1\over16$</span> z<sup>3</sup></td>
-<td>4 L</td>
+<td><span class="math inline">$1\over16$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="cubic zem">z<sup>3</sup></span></td>
+<td>4 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="liters">L</span></td>
 </tr>
 <tr>
 <td><span class="colorPint">1.0567</span> <a
 href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
-<td><span class="math inline">$1\over64$</span> z<sup>3</sup></td>
-<td>1 L</td>
+<td><span class="math inline">$1\over64$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="cubic zem">z<sup>3</sup></span></td>
+<td>1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="liters">L</span></td>
 </tr>
 <tr>
 <td><span class="colorPint">1.0567</span> <a
 href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
-<td><span class="math inline">$1\over128$</span> z<sup>3</sup></td>
-<td>500 mL</td>
+<td><span class="math inline">$1\over128$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="cubic zem">z<sup>3</sup></span></td>
+<td>500 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
 </tr>
 <tr>
 <td><span class="colorPint">1.0567</span> <a
 href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
-<td><span class="math inline">$1\over256$</span> z<sup>3</sup></td>
-<td>250 mL</td>
+<td><span class="math inline">$1\over256$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="cubic zem">z<sup>3</sup></span></td>
+<td>250 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Wine_glass#Capacity_measure">wineglass</a></td>
+<td>1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic decizem">dz<sup>3</sup></span></td>
+<td>64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
 href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
-<td><span class="math inline">$1\over2$</span> dz<sup>3</sup></td>
-<td>32 mL</td>
+<td><span class="math inline">$1\over2$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="cubic decizem">dz<sup>3</sup></span></td>
+<td>32 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
 href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
-<td><span class="math inline">$1\over4$</span> dz<sup>3</sup></td>
-<td>16 mL</td>
+<td><span class="math inline">$1\over4$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="cubic decizem">dz<sup>3</sup></span></td>
+<td>16 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
 </tr>
 </tbody>
 </table>
@@ -2554,19 +2683,21 @@ Unlike Dec and <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span>, the
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="US customary units">US</span> customary measurement
-system does not use metric prefixes to scale units up and down by
-[powers of
+system does not use metric prefixes to scale units by [powers of
 ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten).
 Redefined <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="US customary units">US</span> customary units serve as
-convenient reference points and provide names for certain fractions of
-Dec and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</span> units. Miles are
-redefined such that 1 mile per hour is equal to 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> or
-$5\over3$ kilometers per hour.
+convenient reference points and allow us to scale volumes by [powers of
+two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20form%202n%20where%20n%20is%20an%20integer)
+with intuitive names. Miles are redefined such that 1 mile per hour is
+equal to 1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegar">mv</span> or $5\over3$ <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousands of meters">kilometers</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="kilometers">km</span>) per hour.
 
-## Hexamilliare doppio keg
+## Hexamilliare wineglass keg
 
 A square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a thousand zems">kilozem</span> (<span class="tool"
@@ -2575,13 +2706,14 @@ data-bs-title="square kilozem">kz<sup>2</sup></span>) is 1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="sixteen hundred ares">hexakilare</span>, 16
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hundreds of ares">hectares</span>, 40 Dec acres, 1600
-[ares](https://en.wikipedia.org/wiki/Hectare#Are:~:text=area%2C%20equal%20to-,100%20square%20metres),
-0.16 square <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hundreds of ares">hectares</span>, 40 Dec acres, 0.16
+square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of meters">kilometers</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square kilometers">km<sup>2</sup></span>), 0.0576 Dec
-square miles, or <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square kilometers">km<sup>2</sup></span>),
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="roughly">~</span>0.062 Dec square miles, or
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a million">10<sup>6</sup></span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="square zem">z<sup>2</sup></span>. A <span class="tool"
@@ -2602,8 +2734,9 @@ data-bs-title="square decazem">Dz<sup>2</sup></span>) is 1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
 square meters (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meters">m²</span>), ~19.753 Dec square yards, or
-100 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square meters">m²</span>), <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="roughly">~</span>19.75 Dec
+square yards, or 100 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexamilliares">x</span>.
 
 A cubic <span class="tool" data-bs-toggle="tooltip"
@@ -2624,14 +2757,12 @@ grams (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="grams">g</span>). Even though a Dec ounce of
 water🌊weighs close to a sixteenth of a Dec pound, Dec does not measure
 weights in ounces. A <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z<sup>3</sup></span> is 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="cubic zem">keg</span>, 16 Dec
-gallons, or 64
+data-bs-title="cubic zem">z<sup>3</sup></span> is 16 Dec gallons or 64
 [liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="liters">L</span>). A <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="cubic zem">keg</span> of
-water🌊weighs 64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-toggle="tooltip" data-bs-title="cubic zem">z<sup>3</sup></span>
+of water🌊weighs 64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of grams">kilograms</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="kilograms">kg</span>) or 128 Dec
 pounds.
@@ -2662,8 +2793,8 @@ data-bs-title="body mass index">BMI</span>) would be 4
 $\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$. A normal
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">BMI</span> ranges from 2.96 to 4
-$\text {kg}\over\text z^2$ or 18.5 to 25 $\text {kg}\over\text m^2$.
-Therefore, a <span class="tool" data-bs-toggle="tooltip"
+$\text {kg}\over\text z^2$ or 18.5 to 25 $\text {kg}\over\text m^2$. A
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">BMI</span> of ${kg} kg ÷ ${zem2}
 z<sup>2</sup> = ${bmi} $\text {kg}\over\text z^2$ = ${bmim2}
 $\text {kg}\over\text m^2$ is considered ${bmiStr}.
@@ -2699,9 +2830,7 @@ data-bs-title="hundredths of a meter">centimeters</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="centimeters">cm</span>), or $8\over5$ Dec inches, and the
 shortest length is $1\over2$ <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a zem">millizems</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millizems">mz</span>), $1\over5$ <span class="tool"
+data-bs-title="millizems">mz</span>, $1\over5$ <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a meter">millimeters</span>
 (<span class="tool" data-bs-toggle="tooltip"
@@ -2734,33 +2863,38 @@ has a unique name, such as <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="parallel">*λ*</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="meridians">*ϕ*</span>,
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="windrose">*α*</span>, year, day, <span class="tool"
+data-bs-title="windrose">*α*</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="years">y</span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="beat">b</span>,
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="omegar">v</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="taur">c</span>,
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="hexamilliare">x</span>, or
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zem">keg</span>.
+data-bs-title="zem">z</span>, or <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hexamilliare">x</span>.
 
-Dec attempts to bridge the gap and improve interoperability between the
-<span class="tool" data-bs-toggle="tooltip"
+Dec attempts to bridge the gap, improve interoperability, and faciliate
+conversion between the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> customary and <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span> measurement
 systems by redefining <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</span> customary units in terms of
+data-bs-title="United States">US</span> customary units. Redefinition of
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</span> units.
-Redefinition of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> customary units makes inches
-~<span class="color0158">1.58%</span> shorter, miles
-~<span class="colorMile">3.56%</span> longer, pints
-~<span class="colorPint">5.67%</span> larger, ounces
-~<span class="colorFlOz">8.21%</span> larger, and pounds
-~<span class="colorAvLb">10.23%</span> heavier.
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="roughly">~</span><span class="color0158">1.58%</span>
+shorter, miles <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="roughly">~</span><span class="colorMile">3.56%</span>
+longer, pints <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="roughly">~</span><span class="colorPint">5.67%</span>
+larger, ounces <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="roughly">~</span><span class="colorFlOz">8.21%</span>
+larger, and pounds <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="roughly">~</span><span class="colorAvLb">10.23%</span>
+heavier.
 
 Dec color🎨labels🏷️can convey an impression of many different kinds of
 values at a glance. Moreover, color🎨labels🏷️help avoid confusion when
@@ -2773,17 +2907,17 @@ ${decTimeOffHsl3} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</span>. Metric prefixes allow us to shift the
 [decimal
 separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline)
-in [decimal](https://en.wikipedia.org/wiki/Decimal) numbers at will.
+in [decimal](https://en.wikipedia.org/wiki/Decimal) numbers.
 
 # Next
 
-Now that you have had a taste of Dec, I hope that you are hungry🤤for
+Now that you have had a taste of Dec, I hope that you are hungry for
 more! If so, dive🤿deeper into Dec [dates](../dec/date) and
 [times](../dec/time) before tackling Dec [snaps](../dec/snap)🫰and
 [spans](../dec/span)🌈. My [filter](../quarto/filter),
 [include](../quarto/include), and [script](../quarto/script) articles
-describe how I used the [Quarto](../quarto) publishing system to display
-Dec [dates](../dec/date) in the [navigation
+discuss the [Quarto](../quarto) publishing system and how I display Dec
+[dates](../dec/date) in the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information),
 [title block](https://quarto.org/docs/authoring/title-blocks.html), and
 [citation section](#citation) of each article on my website.
@@ -2807,9 +2941,9 @@ style="width:9.64in;height:2.31in" />
 
 Please support Dec by citing it as shown at the bottom of this article.
 Listed below are citations for the [Observable](http://observablehq.com)
-notebooks listed below that I adapted into the map🗺️, color🎨wheel
-compass🧭, and other visualizations above. The list also includes
-citations for three works that predate the [French
+notebooks that I adapted into the map🗺️, color🎨wheel compass🧭, and
+other visualizations above. The list also includes citations for three
+works that predate the [French
 Revolution](https://en.wikipedia.org/wiki/French_Revolution#:~:text=a%20period%20of%20political%20and%20societal%20change%20in%20France%20which%20began%20with%20the%20Estates%20General%20of%201789%20and%20ended%20with%20the%20Coup%20of%2018%20Brumaire%20on%209%20November%201799)
 and three more recent articles published on websites.
 
@@ -2819,19 +2953,18 @@ In his <span class="color704">1704</span> book entitled
 Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a)
 presented the first
 [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=Newton's%20asymmetric%20color%20wheel%20based%20on%20musical%20intervals)
-and linked its colors🎨to musical notes🎶. On <span class="tool"
+and linked its colors🎨to musical notes. On <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="May 20, 2025"><span class="color025">2025</span><span style="font-family:monospace;">+</span><span class="colorD080">080</span></span>,
-I read the <span class="color022">2022</span> [Color of
-Sound](https://www.flutopedia.com/sound_color.htm) article by [Clint
-Goss](https://www.clintgoss.com), which describes a method of connecting
-musical notes🎶to colors🎨via their frequencies that produces results
-similar to the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span> Dechromatic scale note colors🎨.
+I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm)
+by [Clint Goss](https://www.clintgoss.com), which presents a method of
+connecting musical notes to colors🎨via their frequencies. The note and
+color🎨pairs in that article are similar to those of the Dechromatic
+scale.
 
 In <span class="color754">1754</span>, [Jean le Rond
 d’Alembert](https://en.wikipedia.org/wiki/Jean_le_Rond_d%27Alembert#:~:text=French%20mathematician%2C%20mechanician%2C%20physicist%2C%20philosopher%2C%20and%20music%20theorist)
-extolled the benefits of
+lauded the benefits of
 [decimalisation](https://en.wikipedia.org/wiki/Decimalisation#:~:text=t-,he%20conversion%20of%20a%20system%20of%20currency%20or%20of%20weights%20and%20measures%20to%20units%20related%20by%20powers%20of%2010).
 In <span class="color788">1788</span>, [Claude Boniface
 Collignon](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution)
@@ -2850,8 +2983,7 @@ data-bs-title="billionths of a day">nanodays</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="nanodays">nd</span>). On
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="April 9, 2025"><span class="color025">2025</span><span style="font-family:monospace;">+</span><span class="colorD039">039</span></span>,
-I recognized the definition of a <span class="tool"
-data-bs-toggle="tooltip"
+I saw the definition of a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>, 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zem">z</span> =
 <span class="tool" data-bs-toggle="tooltip"
@@ -2861,10 +2993,11 @@ data-bs-title="taurs">c</span> = 40 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span>, in a
 table of [ten possible length
 units](https://www.roma1.infn.it/~dagos/history/sm/node12.html) from a
-2004 [arxiv](https://arxiv.org/abs/physics/0412078)
+<span class="color004">2004</span>
+[arxiv](https://arxiv.org/abs/physics/0412078)
 [article](https://www.roma1.infn.it/~dagos/history/sm/sm.html).
 
-The algorithms that define the fundamental properties of Dec dates were
+The fundamental properties of Dec dates are defined by algorithms
 developed by [Howard Hinnant](https://howardhinnant.github.io) and
 described in his <span class="color021">2021</span> article entitled
 [<span class="mono under">`chrono`</span>-Compatible Low-Level Date
@@ -2874,10 +3007,13 @@ data-bs-title="December 11, 2024"><span class="color024">2024</span><span style=
 I found a <span class="color014">2014</span> article which proposed a
 [decimal
 time](https://en.wikipedia.org/wiki/Decimal_time#:~:text=the%20representation%20of%20the%20time%20of%20day%20using%20units%20which%20are%20decimally%20related)
-system of twenty time zones, each five <span class="tool"
+system with twenty time zones, each five <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="centidays">cd</span> wide, based
-on the [Greenwich
-Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England).
+on [Longitude
+05](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England)
+(<span class="color050">50</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="milliparallels">$\text m\lambda$</span>).
 
 <div id="citelist" class="column-page-right">
 
@@ -2935,6 +3071,10 @@ Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20g
   data-bs-title="December 14, 2018">2018+288</span>. “Wavelengths and
   Spectral Colours.” ${decYearP0}+${decDotyOff}.
   <https://observablehq.com/@magfoto/wavelengths-and-spectral-colours>.
+- [Harmath, Dénes](https://observablehq.com/user/@thsoft).
+  <span class="tool" data-bs-toggle="tooltip"
+  data-bs-title="June 13, 2018">2018+104</span>. “ABC.”
+  ${decYearP0}+${decDotyOff}. <https://observablehq.com/@thsoft/abc>.
 - [Hinnant, Howard](https://howardhinnant.github.io). <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="September 1, 2021">2021+184</span>.
@@ -4773,6 +4913,7 @@ xetIob = xet.map(piecewiseIob)
 xetLen = xet.map(piecewiseLen)
 hues = Object.fromEntries([
     0.002,
+    0.004,
     0.008,
     0.014,
     0.0158,
@@ -4791,6 +4932,8 @@ hues = Object.fromEntries([
     0.41302,
     0.413,
     0.4132,
+    0.460,
+    0.480,
     0.490,
     0.49008,
     0.599,
@@ -4996,6 +5139,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color004 {
+  background: hsl(${hues[.004]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.004]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color008 {
   background: hsl(${hues[.008]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -5191,6 +5342,22 @@ html`
 .color4132 {
   background: hsl(${hues[0.4132]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.4132]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color460 {
+  background: hsl(${hues[0.460]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.460]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color480 {
+  background: hsl(${hues[0.480]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.480]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5714,10 +5881,21 @@ img#zModu {
   height: 100%;
 }
 @font-face {
-    font-family: "Iosevka";
-    src: url(../asset/IosevkaNerdFont-Regular.ttf);
+  font-family: "Iosevka";
+  src: url(../asset/IosevkaNerdFont-Regular.ttf);
 }
 .iosevka {
   font-family: "Iosevka", sans-serif !important;
+}
+#chorus svg {
+  width: 100%;
+}
+#chorus > div {
+  overflow: clip;
+}
+#citelist ul li {
+  overflow-x: scroll;
+  white-space: nowrap;
+  list-style-position: inside;
 }
 </style>
