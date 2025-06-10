@@ -9,7 +9,7 @@
    viewBox="0 0 430.64053 385.96381"
    enable-background="new 0 0 1500 525"
    xml:space="preserve"
-   id="svg74"
+   id="cubiczem"
    sodipodi:docname="cubicZem.svg"
    inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
    width="430.64053"

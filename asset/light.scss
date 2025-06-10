@@ -64,7 +64,6 @@ button.btn.btn-quarto, div.observablehq > div.button-switch {
     width: auto !important;
     color: #1c1c1c !important;
     font-size: 14px !important;
-    font-family: sans-serif !important;
     text-decoration: none !important;
 }
 button.btn.btn-quarto:hover, div.observablehq > div.button-switch:hover {
@@ -112,10 +111,6 @@ svg.date-selector g[aria-label="x-axis tick label"] text {
 svg.date-selector g[aria-label="y-axis tick label"] text {
     color: #000 !important;
     font-size: 18px !important;
-}
-
-svg:not(.aa-SubmitIcon) {
-    background: #ffffff !important;
 }
 
 span.edgeLabel { background: white !important; }

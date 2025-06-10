@@ -107,7 +107,6 @@ button.btn.btn-quarto, div.observablehq > div.button-switch {
     width: auto !important;
     color: #EFEFEF !important;
     font-size: 14px !important;
-    font-family: sans-serif !important;
     text-decoration: none !important;
 }
 button.btn.btn-quarto:hover, div.observablehq > div.button-switch:hover {
@@ -159,10 +158,6 @@ svg.date-selector g[aria-label="x-axis tick label"] text {
 svg.date-selector g[aria-label="y-axis tick label"] text {
     color: #ffffff !important;
     font-size: 18px !important;
-}
-
-svg:not(.aa-SubmitIcon) {
-    background: #000000 !important;
 }
 
 #listing-listing > div.list.grid.quarto-listing-cols-3 > div > a > div > p > img.thumbnail-image.card-img {
@@ -243,6 +238,10 @@ div > form > div > input[type="range"] {
 
 #daylightplot rect#daterect {
   fill: #f00;
+}
+
+svg#decnav-mermaid, svg#lefthand, svg#cubiczem, #iobpiano svg, #colorwheelcompass svg, .colorcomparer svg, svg.topplot, svg.btmplot {
+  background: #000 !important;
 }
 
 div#firstnav svg#decnav-mermaid a:nth-child(1) rect.basic.label-container {
@@ -342,4 +341,8 @@ img#zModu {
 
 #iobplayer {
   filter: invert(100%);
+}
+
+#chorus svg {
+  filter: invert(100%) !important;
 }

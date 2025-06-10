@@ -1771,6 +1771,7 @@ xetIob = xet.map(piecewiseIob)
 xetLen = xet.map(piecewiseLen)
 hues = Object.fromEntries([
     0.002,
+    0.004,
     0.008,
     0.014,
     0.0158,
@@ -1789,6 +1790,8 @@ hues = Object.fromEntries([
     0.41302,
     0.413,
     0.4132,
+    0.460,
+    0.480,
     0.490,
     0.49008,
     0.599,
@@ -1994,6 +1997,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color004 {
+  background: hsl(${hues[.004]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.004]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color008 {
   background: hsl(${hues[.008]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -2189,6 +2200,22 @@ html`
 .color4132 {
   background: hsl(${hues[0.4132]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.4132]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color460 {
+  background: hsl(${hues[0.460]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.460]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color480 {
+  background: hsl(${hues[0.480]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.480]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2713,11 +2740,22 @@ img#zModu {
   height: 100%;
 }
 @font-face {
-    font-family: "Iosevka";
-    src: url(../asset/IosevkaNerdFont-Regular.ttf);
+  font-family: "Iosevka";
+  src: url(../asset/IosevkaNerdFont-Regular.ttf);
 }
 .iosevka {
   font-family: "Iosevka", sans-serif !important;
+}
+#chorus svg {
+  width: 100%;
+}
+#chorus > div {
+  overflow: clip;
+}
+#citelist ul li {
+  overflow-x: scroll;
+  white-space: nowrap;
+  list-style-position: inside;
 }
 </style>
 ```

@@ -222,10 +222,3 @@ div > form > label {
 #title-block-header.quarto-title-block.default .description>p:last-of-type {
   display: none;
 }
-
-.musicfont {
-  font-family: "BravuraText", sans-serif !important;
-  src: url("../asset/BravuraText.woff2") format("woff2"),
-      url("../asset/BravuraText.woff") format("woff"),
-      url("../asset/BravuraText.otf") format("otf");
-}
