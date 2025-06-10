@@ -212,7 +212,7 @@ At a speed of <span class="color5">0.5</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="omegars">v</span> or
 <span class="color5">500</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="thousandths of a omegar">milliomegars</span>
+data-bs-title="thousandths of an omegar">milliomegars</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegars">mv</span>), we could travel🧳the
 <span class="color1">0.1</span> <span class="tool"
@@ -848,8 +848,8 @@ data-bs-title="millimeridians">$\text m\phi$</span>), and
 data-bs-toggle="tooltip"
 data-bs-title="millimeridians">$\text m\phi$</span>) on the map🗺️above
 along with the ten major longitudes that divide the Earth🌎into the ten
-Dec time zones. Notably, Longitude 0 is the major longitude that
-functions as both the [Prime
+Dec time zones. Notably, Longitude <span class="color0">0</span> is the
+major longitude that functions as both the [Prime
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)
 and [International Date
 Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
@@ -885,14 +885,14 @@ data-bs-title="deciparallel">d*λ*</span> wide and 0.5 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="meridians">*ϕ*</span> long.
 While 1 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="meridian">*ϕ*</span> is always <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="roughly">~</span>1
+data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</span> long, the length of a <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="parallel">*λ*</span> [varies by
 latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude).
 At the Equator, 1 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="parallel">*λ*</span> is <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="roughly">~</span>1
+data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</span> long. At the
 [North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
@@ -932,7 +932,7 @@ data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>. The UTC
 offset provided by your web browser is ${utcOffHslM} ÷ 144 =
 ${utcOffHslD} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</span>. The Dec time zone that corresponds
-to this UTC offset is Zone ${decZonHslP}. The times in corresponding Dec
+to this UTC offset is Zone ${decZonHslP}. The time in corresponding Dec
 and UTC time zones can differ by up to <span class="color050">0.5</span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</span>. The difference between your Dec and
@@ -996,7 +996,7 @@ are used instead of months and weeks. Likewise, Dec uses
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-dek">dods</span> in lieu of days-of-month
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">doms</span>) and days-of-week
+data-bs-title="days-of-month">doms</span>) and days-of-week
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-week">dows</span>). In Zone ${decOffsetHsl2}, it
 is currently <span class="tool" data-bs-toggle="tooltip"
@@ -1586,7 +1586,7 @@ data-bs-toggle="tooltip" data-bs-title="zem">z</span>) using your
 hands🤲. With your palms flat on a table in front of you and the tips of
 your thumbs👍touching, the maximum distance between the tips of your
 pinkies is <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="roughly">~</span>1 <span class="tool"
+data-bs-title="approximately">~</span>1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zem">z</span>. When you spread
 out the fingers on one hand✋or do the “[call
 me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)”,
@@ -1594,7 +1594,7 @@ me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20common
 or
 “[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)”🤙gesture,
 your thumb👍and pinky tips are <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="roughly">~</span>0.5
+data-bs-toggle="tooltip" data-bs-title="approximately">~</span>0.5
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zems">z</span> apart.
 
@@ -2022,9 +2022,11 @@ data-bs-title="hundred thousandths of a day">centimillidays</span> as
 data-bs-title="hundred thousandths of a day">beats</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</span>) because they are similar in duration to
-heart❤️beats or musical beats. A <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day">d</span> is 100
-<span class="tool" data-bs-toggle="tooltip"
+heart❤️beats or [musical
+beats](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=I-,n%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time,-%2C%20the).
+A <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day">d</span> is 100 <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="hundredths of a day">centiday</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="centidays">cd</span>),
 <span class="tool" data-bs-toggle="tooltip"
@@ -2100,8 +2102,7 @@ times more frequent than a
 We can divide one by the
 sound🔊[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
 selected by the “<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="billionths of a zem">Iobs</span>” range🎚️input below to
-get its
+data-bs-title="inverse-of-b">Iobs</span>” range🎚️input below to get its
 [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency),
 1 ÷ ${parseFloat((iobs / 1000).toFixed(3))} <span class="tool"
 data-bs-toggle="tooltip"
@@ -2115,12 +2116,12 @@ data-bs-title="millibeats">mb</span>), or divide the speed of sound🔊by
 it to get its
 [wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats):
 735048 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millionths of a omegar">microomegars</span>
+data-bs-title="millionths of an omegar">microomegars</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegars">$\micro\text v$</span>) ÷ ${iobs}
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse of b">iob</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iob">i</span>) =
+data-bs-title="inverses-of-b">iobs</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="iobs">i</span>) =
 ${parseFloat((735048 / iobs).toFixed(2))} <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a zem">millizem</span> (<span class="tool"
@@ -2200,7 +2201,7 @@ differences between consecutive <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="12 equal temperament">12ET</span> chromatic scale notes
 vary from the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="roughly">~</span><span class="color599">599</span>
+data-bs-title="approximately">~</span><span class="color599">599</span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="ten thousandths of an octave">millisteps</span>
 (<span class="tool" data-bs-toggle="tooltip"
@@ -2208,7 +2209,7 @@ data-bs-title="millisteps">ms</span>) between
 <span class="colorAs">A<span class="iosevka">♯</span></span> and
 <span class="colorB">B</span> to the <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="roughly">~</span><span class="color067">1067</span>
+data-bs-title="approximately">~</span><span class="color067">1067</span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</span> between
 <span class="colorGs">G<span class="iosevka">♯</span></span> and
@@ -2221,7 +2222,9 @@ data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span>.
 The rightmost column of the table below shows the <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="12 equal temperament">12ET</span> notes that are closest
-to the Dechromatic scale. <span class="tool" data-bs-toggle="tooltip"
+to the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span> Dechromatic scale notes.
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="12 equal temperament">12ET</span> considers
 <span class="colorBc">B<span class="iosevka">𝄲</span></span>,
 <span class="colorDds">D<span class="iosevka">𝄲</span></span>, and
@@ -2232,13 +2235,10 @@ data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> and
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="12 equal temperament">12ET</span> notes in the table
 range from the <span class="color008">8</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="ten thousandths of an octave">millisteps</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</span>) between Notes
-<span class="color9">9</span> and <span class="colorA">A</span> to the
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="roughly">~</span><span class="color26div300">87</span>
+data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> between
+Notes <span class="color9">9</span> and <span class="colorA">A</span> to
+the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span><span class="color26div300">87</span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</span> between Notes
 <span class="color5">5</span> and <span class="colorF">F</span>.
@@ -2362,7 +2362,7 @@ data-bs-title="millisteps">ms</span>. The text below the image provides
 from top to bottom the [scientific pitch
 name](https://en.wikipedia.org/wiki/Scientific_pitch_notation#:~:text=a%20method%20of%20specifying%20musical%20pitch%20by%20combining%20a%20musical%20note%20name%20(with%20accidental%20if%20needed)%20and%20a%20number%20identifying%20the%20pitch%27s%20octave),
 integer <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iobs">i</span> sound🔊frequency, and integer
+data-bs-title="iob">i</span> sound🔊frequency, and integer
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizem">mz</span> wavelength of the corresponding white
 key. As octave indexes and frequency increase, wavelength decreases.
@@ -2484,8 +2484,8 @@ from original to redefined units. A fold change of
 <span class="color0">1</span> means <span class="color0">0</span>
 [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared).
 Identical fold changes indicate <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="US customary units">US</span>
-units that are derived from the same Dec and [International System of
+data-bs-toggle="tooltip" data-bs-title="United States">US</span>
+customary units derived from the same Dec and [International System of
 Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span>) units.
@@ -2521,7 +2521,7 @@ data-bs-toggle="tooltip" data-bs-title="kilometers">km</span></td>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Yard#:~:text=as%20exactly-,0.9144%C2%A0meter">yards</a></td>
 <td><span class="math inline">$9\over4$</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
+data-bs-toggle="tooltip" data-bs-title="zems">z</span></td>
 <td>9 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="decimeters">dm</span></td>
 </tr>
@@ -2529,7 +2529,7 @@ data-bs-title="decimeters">dm</span></td>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Foot_(unit)#:~:text=equal%20to%20exactly-,0.3048%20meters">feet</a></td>
 <td><span class="math inline">$3\over4$</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
+data-bs-toggle="tooltip" data-bs-title="zems">z</span></td>
 <td>3 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="decimeters">dm</span></td>
 </tr>
@@ -2537,7 +2537,7 @@ data-bs-title="decimeters">dm</span></td>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Inch#:~:text=defined%20as%20exactly-,25.4%C2%A0mm">inches</a></td>
 <td><span class="math inline">$1\over16$</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
+data-bs-toggle="tooltip" data-bs-title="zems">z</span></td>
 <td>25 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeters">mm</span></td>
 </tr>
@@ -2546,7 +2546,7 @@ data-bs-title="millimeters">mm</span></td>
 href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
 <td><span class="math inline">$1\over40$</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="square kilozem">kz<sup>2</sup></span></td>
+data-bs-title="square kilozems">kz<sup>2</sup></span></td>
 <td><span class="math inline">$1\over250$</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="square kilometers">km<sup>2</sup></span></td>
@@ -2556,7 +2556,7 @@ data-bs-title="square kilometers">km<sup>2</sup></span></td>
 href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
 <td><span class="math inline">$625\over36$</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="square kilozem">kz<sup>2</sup></span></td>
+data-bs-title="square kilozems">kz<sup>2</sup></span></td>
 <td><span class="math inline">$25\over9$</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="square kilometers">km<sup>2</sup></span></td>
@@ -2566,7 +2566,7 @@ data-bs-title="square kilometers">km<sup>2</sup></span></td>
 href="https://en.wikipedia.org/wiki/Square_yard">square yards</a></td>
 <td><span class="math inline">$81\over16$</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span></td>
+data-bs-title="square zems">z<sup>2</sup></span></td>
 <td>81 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square decimeters">dm<sup>2</sup></span></td>
 </tr>
@@ -2575,7 +2575,7 @@ data-bs-title="square decimeters">dm<sup>2</sup></span></td>
 href="https://en.wikipedia.org/wiki/Square_foot">square feets</a></td>
 <td><span class="math inline">$9\over16$</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span></td>
+data-bs-title="square zems">z<sup>2</sup></span></td>
 <td>9 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square decimeters">dm<sup>2</sup></span></td>
 </tr>
@@ -2584,7 +2584,7 @@ data-bs-title="square decimeters">dm<sup>2</sup></span></td>
 href="https://en.wikipedia.org/wiki/Square_inch">square inches</a></td>
 <td><span class="math inline">$1\over256$</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span></td>
+data-bs-title="square zems">z<sup>2</sup></span></td>
 <td>625 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square millimeters">mm<sup>2</sup></span></td>
 </tr>
@@ -2600,7 +2600,7 @@ data-bs-title="grams">g</span></td>
 <td><span class="colorPint">1.0567</span> <a
 href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
 <td>2 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z<sup>3</sup></span></td>
+data-bs-title="cubic zems">z<sup>3</sup></span></td>
 <td>128 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="liters">L</span></td>
 </tr>
@@ -2617,7 +2617,7 @@ data-bs-title="liters">L</span></td>
 href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
 <td><span class="math inline">$1\over16$</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z<sup>3</sup></span></td>
+data-bs-title="cubic zems">z<sup>3</sup></span></td>
 <td>4 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="liters">L</span></td>
 </tr>
@@ -2626,7 +2626,7 @@ data-bs-title="liters">L</span></td>
 href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
 <td><span class="math inline">$1\over64$</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z<sup>3</sup></span></td>
+data-bs-title="cubic zems">z<sup>3</sup></span></td>
 <td>1 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="liters">L</span></td>
 </tr>
@@ -2635,7 +2635,7 @@ data-bs-title="liters">L</span></td>
 href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
 <td><span class="math inline">$1\over128$</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z<sup>3</sup></span></td>
+data-bs-title="cubic zems">z<sup>3</sup></span></td>
 <td>500 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliliters">mL</span></td>
 </tr>
@@ -2644,7 +2644,7 @@ data-bs-title="milliliters">mL</span></td>
 href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
 <td><span class="math inline">$1\over256$</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z<sup>3</sup></span></td>
+data-bs-title="cubic zems">z<sup>3</sup></span></td>
 <td>250 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliliters">mL</span></td>
 </tr>
@@ -2661,7 +2661,7 @@ data-bs-title="milliliters">mL</span></td>
 href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
 <td><span class="math inline">$1\over2$</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz<sup>3</sup></span></td>
+data-bs-title="cubic decizems">dz<sup>3</sup></span></td>
 <td>32 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliliters">mL</span></td>
 </tr>
@@ -2670,7 +2670,7 @@ data-bs-title="milliliters">mL</span></td>
 href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
 <td><span class="math inline">$1\over4$</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz<sup>3</sup></span></td>
+data-bs-title="cubic decizems">dz<sup>3</sup></span></td>
 <td>16 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliliters">mL</span></td>
 </tr>
@@ -2682,15 +2682,17 @@ data-bs-title="milliliters">mL</span></td>
 Unlike Dec and <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span>, the
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="US customary units">US</span> customary measurement
-system does not use metric prefixes to scale units by [powers of
+data-bs-title="United States">US</span> customary measurement system
+does not use metric prefixes to scale units by [powers of
 ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten).
 Redefined <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="US customary units">US</span> customary units serve as
-convenient reference points and allow us to scale volumes by [powers of
-two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20form%202n%20where%20n%20is%20an%20integer)
-with intuitive names. Miles are redefined such that 1 mile per hour is
-equal to 1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</span> customary units serve as
+convenient reference points. <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</span> customary volume units have
+intuitive names and scale by [powers of
+two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20form%202n%20where%20n%20is%20an%20integer).
+Miles are redefined such that 1 mile per hour is equal to 1
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegar">mv</span> or $5\over3$ <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousands of meters">kilometers</span>
@@ -2706,17 +2708,18 @@ data-bs-title="square kilozem">kz<sup>2</sup></span>) is 1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="sixteen hundred ares">hexakilare</span>, 16
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hundreds of ares">hectares</span>, 40 Dec acres, 0.16
+data-bs-title="hundreds of ares">hectares</span>, 1600
+[ares](https://en.wikipedia.org/wiki/Hectare#Are), 40 Dec acres, 0.16
 square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of meters">kilometers</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square kilometers">km<sup>2</sup></span>),
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="roughly">~</span>0.062 Dec square miles, or
+data-bs-title="approximately">~</span>0.062 Dec square miles, or
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a million">10<sup>6</sup></span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span>. A <span class="tool"
+data-bs-title="square zems">z<sup>2</sup></span>. A <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="square zem">z<sup>2</sup></span>
 is a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="1.6 thousandth of an are">hexamilliare</span>
@@ -2735,7 +2738,7 @@ data-bs-title="square decazem">Dz<sup>2</sup></span>) is 1
 data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
 square meters (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square meters">m²</span>), <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="roughly">~</span>19.75 Dec
+data-bs-toggle="tooltip" data-bs-title="approximately">~</span>19.75 Dec
 square yards, or 100 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexamilliares">x</span>.
 
@@ -2861,12 +2864,12 @@ units based on turns for geographic coordinates, compass🧭directions,
 dates, times, speeds, distances, areas, volumes, and weights. Each unit
 has a unique name, such as <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="parallel">*λ*</span>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="meridians">*ϕ*</span>,
+data-bs-toggle="tooltip" data-bs-title="meridian">*ϕ*</span>,
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="windrose">*α*</span>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="years">y</span>,
+data-bs-toggle="tooltip" data-bs-title="year">y</span>,
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</span>, <span class="tool"
+data-bs-title="day">d</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="beat">b</span>,
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="omegar">v</span>, <span class="tool"
@@ -2885,15 +2888,15 @@ data-bs-title="United States">US</span> customary units. Redefinition of
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> customary units makes inches
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="roughly">~</span><span class="color0158">1.58%</span>
+data-bs-title="approximately">~</span><span class="color0158">1.58%</span>
 shorter, miles <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="roughly">~</span><span class="colorMile">3.56%</span>
+data-bs-title="approximately">~</span><span class="colorMile">3.56%</span>
 longer, pints <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="roughly">~</span><span class="colorPint">5.67%</span>
+data-bs-title="approximately">~</span><span class="colorPint">5.67%</span>
 larger, ounces <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="roughly">~</span><span class="colorFlOz">8.21%</span>
+data-bs-title="approximately">~</span><span class="colorFlOz">8.21%</span>
 larger, and pounds <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="roughly">~</span><span class="colorAvLb">10.23%</span>
+data-bs-title="approximately">~</span><span class="colorAvLb">10.23%</span>
 heavier.
 
 Dec color🎨labels🏷️can convey an impression of many different kinds of
@@ -5870,6 +5873,7 @@ div#iobpiano > div > div > svg {
 #iobpiano {
   overflow: clip;
   max-width: 100%;
+  margin-bottom: 8px;
 }
 img#zModu {
   width: 100%;
