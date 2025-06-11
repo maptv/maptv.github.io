@@ -219,7 +219,7 @@ div > form > div > input[type="range"] {
   filter: invert(1);
 }
 
-#clock * {
+.analogclock * {
   fill: #fff;
   stroke: #fff;
 }
@@ -345,4 +345,8 @@ img#zModu {
 
 #chorus svg {
   filter: invert(100%) !important;
+}
+
+svg#daylightapp text {
+  fill: white;
 }
