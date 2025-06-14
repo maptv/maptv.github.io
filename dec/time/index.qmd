@@ -40,7 +40,9 @@ filters:
 
 # Day of year (doy) {.hiddenheading #doy}
 
-My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the clocks🕓and bar📊charts below, which display the Dec time in the Dec time zone, [\${selectedZone}]{.lime}, selected by the red⭕️circle on the [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺️beneath the bars📊.
+My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the clocks🕓, bar📊charts, [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map, Earth orbit diagram, [daylight plot](https://observablehq.com/@dbridges/visualizing-seasonal-daylight), and [time zone globe](https://observablehq.com/@jcolot/time-zone-service) below.
+
+which display the Dec time in the Dec time zone, [\${selectedZone}]{.lime}, selected by the red⭕️circle on the  map🗺️beneath the bars📊.
 
 like the one on the left side of the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) (navbar) above.
 
@@ -328,11 +330,11 @@ barChart1 = {
 viewof location = worldMapCoordinates([162, 0], [width * .998, ((21 / 40) * width)])
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 app = {
-  const svg = d3.select(DOM.svg(width, height * (width < 600 ? .78 : .74)));
+  const svg = d3.select(DOM.svg(width, height * (width < 300 ? .94 : width < 400 ? .93 : width < 450 ? .92 : width < 500 ? .91 : width < 550 ? .9 : width < 600 ? .8 : width < 700 ? .78 : .76)));
   svg.style("user-select", "none")
      .style("-webkit-user-select", "none")
      .attr("id", "daylightapp");
-  const margin = {top: 20, left: width < 400 ? 5 : 16, right: 16, bottom: 0, inner: 32};
+  const margin = {top: 20, left: 16, right: 16, bottom: 0, inner: 32};
   const contentWidth = width - margin.left - margin.right - margin.inner;
   const columnWidth = contentWidth / 2;
   const date2022 = new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours())
@@ -343,8 +345,8 @@ app = {
   const renderPlot = () => {
     svg.selectAll("#plot *").remove();
     svg.select("#plot").call(daylightPlot, {
-      vizwidth: columnWidth / (width < 400 ? 1.15 : width < 550 ? 1.2 : 1.48),
-      height: height * (width < 400 ? 1.52 : width < 800 ? 1.58 : 1.62),
+      vizwidth: columnWidth / (width < 300 ? 1 : width < 400 ? 1.05 : width < 450 ? 1.1 : width < 500 ? 1.15 : width < 550 ? 1.2 : 1.48),
+      height: height * (width < 400 ? 1.62 : width < 500 ? 1.6 : width < 700 ? 1.58 : 1.56),
       year: 2022,
       latitude: location[1],
       defaultDate: selection.date,
@@ -378,10 +380,10 @@ app = {
   }
   const plot = svg.append("g")
     .attr("id", "plot")
-    .attr("transform", `translate(${margin.left + 0}, ${height / 5 + (width < 600 ? 60 : 5)})`);
+    .attr("transform", `translate(${margin.left + 0}, ${height / 5 + (width < 600 ? 12 : 5)})`);
   svg.append("g")
     .attr("id", "solar-system")
-    .attr("transform", `translate(${margin.left + 12}, ${margin.top + width / 22 - 6})`);
+    .attr("transform", `translate(${margin.left + 12}, ${margin.top + width / 22 - 6 - 5 * (width < 400)})`);
   // svg.append("g")
   //   .attr("id", "globe")
   //   .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 2 + 20}, ${margin.top + height / 1.2 + 4})`);
@@ -893,8 +895,8 @@ function year2leap(year = 1970) {
 }
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 solarSystem = (root, vizwidth, location, date, hour) => {
-  const earthRadius = 0.06 * vizwidth;
-  const sunRadius = 0.015 * vizwidth;
+  const earthRadius = 0.065 * vizwidth;
+  // const sunRadius = 0.015 * vizwidth;
   const solarSystemRadius = vizwidth / 2 - (vizwidth < 500 ? 4 : 20);
   const stretch = 0.06;
   const solarAngle = getSolarAngle(date);
@@ -918,7 +920,7 @@ solarSystem = (root, vizwidth, location, date, hour) => {
   const solarSystem = root
     .append("g")
     .attr("transform", `translate(${vizwidth / 2})`);
-  solarSystem.append("circle").attr("r", sunRadius).attr("fill", colors.sun);
+  // solarSystem.append("circle").attr("r", sunRadius).attr("fill", colors.sun);
   /* Draw orbit */
   solarSystem
     .append("ellipse")
@@ -946,11 +948,11 @@ solarSystem = (root, vizwidth, location, date, hour) => {
       .attr("x", (solarSystemRadius + 18 - width / 50) * Math.sin(startMonthAngle) * 1.1)
       .attr(
         "y",
-        (solarSystemRadius + 54 - width / 3) * 6.2 * stretch * Math.cos(startMonthAngle)
+        (solarSystemRadius + 2 - width / 3) * 6.2 * stretch * Math.cos(startMonthAngle) + Math.sign(Math.cos(startMonthAngle)) * 12
       )
       .attr("text-anchor", "middle")
       .attr("dominant-baseline", "middle")
-      .attr("font-size", fontSize * 1.1 + width / 100)
+      .attr("font-size", fontSize * (width < 300 ? .9 : width < 400 ? .95 : width < 500 ? 1 : width < 600 ? 1.05 : width < 700 ? 1.1 : 1.2) + width / 100)
       .attr("font-family", "sans-serif")
       .attr("fill", "black");
   });
@@ -970,24 +972,31 @@ solarSystem = (root, vizwidth, location, date, hour) => {
   .attr("stroke-width", ".075")
   .attr("fill", "none")
   .attr("stroke", "#555");
-  const shadowPolygon = [
-    [0, -90],
-    [0, 0],
-    [0, 90],
-    [180, 0],
-    [0, -90]
-  ];
-  earth
-    .append("path")
-    .attr("d", staticPath({ type: "Polygon", coordinates: [shadowPolygon] }))
-    .attr("fill", "rgba(0, 0, 0, 0.5)");
+  // const shadowPolygon = [
+  //   [0, -90],
+  //   [0, 0],
+  //   [0, 90],
+  //   [180, 0],
+  //   [0, -90]
+  // ];
+  // earth
+  //   .append("path")
+  //   .attr("d", staticPath({ type: "Polygon", coordinates: [shadowPolygon] }))
+  //   .attr("fill", "rgba(0, 0, 0, 0.5)");
+  path.pointRadius(5.5);
   earth
     .append("path")
     .attr("d", path({ type: "Point", coordinates: location }))
-    .attr("r", 18)
-    .attr("stroke-width", .3)
-    .attr("stroke", "black")
-    .attr("fill", "red");
+    .attr("fill", "none")
+    .attr("stroke-width", .6)
+    .attr("stroke", "black");
+  path.pointRadius(4.5);
+  earth
+    .append("path")
+    .attr("d", path({ type: "Point", coordinates: location }))
+    .attr("fill", "none")
+    .attr("stroke-width", 2.25)
+    .attr("stroke", "red");
 }
 function greg2doty(month = 1, day = 1) {
     return Math.floor(
@@ -1000,94 +1009,94 @@ function date2doty1(date) {
   return greg2doty(date.getMonth() + 1, date.getDate())
 }
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
-globe = (root, { vizwidth, location, date, hour }) => {
-  const solarAngle = getSolarAngle(date);
-  const solarAngleDeg = toDegrees(solarAngle);
-  const hourSpin = 360 * ((hour + 12) / 24);
-  const spin = (180 + -location[0] + solarAngleDeg + hourSpin);
-  const tilt = -15;
-  const projection = d3.geoOrthographic()
-                       .fitWidth(vizwidth, graticule)
-                       .rotate([spin, tilt, 23.5]);
-  const path = d3.geoPath(projection);
-  const unClippedProjection = d3.geoOrthographic()
-                                .clipAngle(null)
-                                .fitWidth(vizwidth, graticule)
-                                .rotate([spin, tilt, 23.5]);
-  const unClippedPath = d3.geoPath(unClippedProjection);
-  const staticProjection = d3.geoOrthographic()
-                             .fitWidth(vizwidth, graticule)
-                             .rotate([solarAngleDeg - 90, tilt]);
-  const staticPath = d3.geoPath(staticProjection);
-  const background = root.append("g");
-  const earth = root.append("g").style("opacity", 0.75);
-  const foreground = root.append("g");
-  earth.append("path")
-    .attr("d", path({type: "Sphere"}))
-    .attr("fill", colors.ocean)
-    .attr("stroke", "#9ecbda");
-  earth.append("path")
-    .attr("d", path(land))
-    .attr("fill", colors.land);
-  earth.append("path")
-    .attr("d", path(countries))
-    .attr("stroke-width", "1")
-    .attr("fill", "none")
-    .attr("stroke", "#000");
-  background.append("path")
-    .attr("d", unClippedPath({type: "Point", coordinates: location}))
-    .attr("fill", "red");
-  const latitudeCoords = (latitude, start, end) => {
-    const longitudes = d3.range(start, end, 2).concat(end);
-    return longitudes.map(d => [d, latitude]);
-  }
-  const correctSpin = d3.geoRotation([-hourSpin, 0]);
-  const correctTilt = d3.geoRotation([6, 0, 0]);
-  /* total angular extent of day/night */
-  const dayExtent = 360 * dayLength(date, location[1]) / 24;
-  const nightExtent = 360 - dayExtent;
-  const dayLine = {
-    type: "LineString",
-    coordinates: latitudeCoords(location[1],
-                                location[0] - dayExtent / 2,
-                                location[0] + dayExtent / 2).map(d => correctSpin(d))
-  };
-  const nightLine = {
-    type: "LineString",
-    coordinates: latitudeCoords(location[1],
-                                location[0] - dayExtent / 2 - nightExtent,
-                                location[0] - dayExtent / 2).map(d => correctSpin(d))
-  };
-  background.append("path")
-    .attr("d", unClippedPath(dayLine))
-    .attr("fill", "none")
-    .attr("stroke", colors.day)
-    .attr("stroke-width", 3);
-  background.append("path")
-    .attr("d", unClippedPath(nightLine))
-    .attr("fill", "none")
-    .attr("stroke", colors.night)
-    .attr("stroke-width", 3);
-  foreground.append("path")
-    .attr("d", path(dayLine))
-    .attr("fill", "none")
-    .attr("stroke", colors.day)
-    .attr("stroke-width", 3);
-  foreground.append("path")
-    .attr("d", path(nightLine))
-    .attr("fill", "none")
-    .attr("stroke", colors.night)
-    .attr("stroke-width", 3);
-  foreground.append("path")
-    .attr("d", path({type: "Point", coordinates: location}))
-    .attr("stroke-width", .5)
-    .attr("stroke", "black")
-    .attr("fill", "red");
-  const shadowPolygon = [[0, -90], [0, 0], [0, 90], [180, 0], [0, -90]].map(d => correctTilt(d));
-  foreground.append("path")
-    .attr("d", staticPath({type: "Polygon", coordinates: [shadowPolygon]}))
-    .attr("fill", "rgba(0, 0, 0, 0.25)");
-}
+// globe = (root, { vizwidth, location, date, hour }) => {
+//   const solarAngle = getSolarAngle(date);
+//   const solarAngleDeg = toDegrees(solarAngle);
+//   const hourSpin = 360 * ((hour + 12) / 24);
+//   const spin = (180 + -location[0] + solarAngleDeg + hourSpin);
+//   const tilt = -15;
+//   const projection = d3.geoOrthographic()
+//                        .fitWidth(vizwidth, graticule)
+//                        .rotate([spin, tilt, 23.5]);
+//   const path = d3.geoPath(projection);
+//   const unClippedProjection = d3.geoOrthographic()
+//                                 .clipAngle(null)
+//                                 .fitWidth(vizwidth, graticule)
+//                                 .rotate([spin, tilt, 23.5]);
+//   const unClippedPath = d3.geoPath(unClippedProjection);
+//   const staticProjection = d3.geoOrthographic()
+//                              .fitWidth(vizwidth, graticule)
+//                              .rotate([solarAngleDeg - 90, tilt]);
+//   const staticPath = d3.geoPath(staticProjection);
+//   const background = root.append("g");
+//   const earth = root.append("g").style("opacity", 0.75);
+//   const foreground = root.append("g");
+//   earth.append("path")
+//     .attr("d", path({type: "Sphere"}))
+//     .attr("fill", colors.ocean)
+//     .attr("stroke", "#9ecbda");
+//   earth.append("path")
+//     .attr("d", path(land))
+//     .attr("fill", colors.land);
+//   earth.append("path")
+//     .attr("d", path(countries))
+//     .attr("stroke-width", "1")
+//     .attr("fill", "none")
+//     .attr("stroke", "#000");
+//   background.append("path")
+//     .attr("d", unClippedPath({type: "Point", coordinates: location}))
+//     .attr("fill", "red");
+//   const latitudeCoords = (latitude, start, end) => {
+//     const longitudes = d3.range(start, end, 2).concat(end);
+//     return longitudes.map(d => [d, latitude]);
+//   }
+//   const correctSpin = d3.geoRotation([-hourSpin, 0]);
+//   const correctTilt = d3.geoRotation([6, 0, 0]);
+//   /* total angular extent of day/night */
+//   const dayExtent = 360 * dayLength(date, location[1]) / 24;
+//   const nightExtent = 360 - dayExtent;
+//   const dayLine = {
+//     type: "LineString",
+//     coordinates: latitudeCoords(location[1],
+//                                 location[0] - dayExtent / 2,
+//                                 location[0] + dayExtent / 2).map(d => correctSpin(d))
+//   };
+//   const nightLine = {
+//     type: "LineString",
+//     coordinates: latitudeCoords(location[1],
+//                                 location[0] - dayExtent / 2 - nightExtent,
+//                                 location[0] - dayExtent / 2).map(d => correctSpin(d))
+//   };
+//   background.append("path")
+//     .attr("d", unClippedPath(dayLine))
+//     .attr("fill", "none")
+//     .attr("stroke", colors.day)
+//     .attr("stroke-width", 3);
+//   background.append("path")
+//     .attr("d", unClippedPath(nightLine))
+//     .attr("fill", "none")
+//     .attr("stroke", colors.night)
+//     .attr("stroke-width", 3);
+//   foreground.append("path")
+//     .attr("d", path(dayLine))
+//     .attr("fill", "none")
+//     .attr("stroke", colors.day)
+//     .attr("stroke-width", 3);
+//   foreground.append("path")
+//     .attr("d", path(nightLine))
+//     .attr("fill", "none")
+//     .attr("stroke", colors.night)
+//     .attr("stroke-width", 3);
+//   foreground.append("path")
+//     .attr("d", path({type: "Point", coordinates: location}))
+//     .attr("stroke-width", .5)
+//     .attr("stroke", "black")
+//     .attr("fill", "red");
+//   const shadowPolygon = [[0, -90], [0, 0], [0, 90], [180, 0], [0, -90]].map(d => correctTilt(d));
+//   foreground.append("path")
+//     .attr("d", staticPath({type: "Polygon", coordinates: [shadowPolygon]}))
+//     .attr("fill", "rgba(0, 0, 0, 0.25)");
+// }
 dayOfYear = (date) => {
   const yearStart = new Date(date.getFullYear(), 0, 1+60);
   return Math.floor((date.getTime() - yearStart.getTime())/86400000) + 1
@@ -1141,7 +1150,7 @@ daylightPlot = (
     .call(xAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    .call((g) => g.selectAll(".tick text").attr("font-size", (width < 750 ? 1.3 : 1.5) * fontSize))
+    .call((g) => g.selectAll(".tick text").attr("font-size", (width < 300 ? .7 : width < 325 ? .725 : width < 350 ? .75 : width < 375 ? .8 : width < 400 ? .9 : width < 450 ? .95 : width < 500 ? 1 : width < 600 ? 1.2 : width < 700 ? 1.3 : 1.4) * fontSize))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
@@ -1150,26 +1159,26 @@ daylightPlot = (
     .call(yAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", colors.grid))
-    .call((g) => g.selectAll(".tick text").attr("font-size", (width < 500 ? 1.2 : 1.2) * fontSize))
+    .call((g) => g.selectAll(".tick text").attr("font-size", (width < 400 ? .9 : width < 500 ? 1 : width < 600 ? 1.1 : width < 700 ? 1.2 : 1.3) * fontSize))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
     .append("text")
     .text("Time of day")
-    .attr("x", margin.left - chartWidth + (width < 500 ? 32 : 32))
-    .attr("y", margin.top - (width < 500 ? 40 : 40))
+    .attr("x", margin.bottom + (width < 275 ? -102 : width < 300 ? -106 : width < 325 ? -108 : width < 350 ? -115 : width < 375 ? -120 : width < 400 ? -124 : width < 425 ? -126 : width < 450 ? -128 : width < 475 ? -130 : width < 500 ? -136 : width < 525 ? -140 : width < 550 ? -146 : width < 575 ? -132 : width < 600 ? -136 : width < 650 ? -142 : width < 675 ? -148 : width < 700 ? -153 : width < 725 ? -156 : width < 750 ? -164 : width < 775 ? -166 : -172))
+    .attr("y", margin.top - (width < 400 ? 33 : width < 500 ? 35 : width < 600 ? 37 : width < 700 ? 40 : 42))
     .attr("text-anchor", "middle")
-    .attr("font-size", fontSize * 1.1 + width / 100)
+    .attr("font-size", fontSize * (width < 300 ? .8 : width < 400 ? .9 : width < 500 ? 1 : width < 600 ? 1.1 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
     .attr("transform", "rotate(-90)")
     .attr("fill", "black");
   root
     .append("text")
     .text("Day of year")
-    .attr("x", margin.left + width / 2 - 16)
-    .attr("y", margin.top + chartHeight / 4 + margin.bottom + (width < 600 ? 18 : 36))
+    .attr("x", margin.left + width / 2 - (width < 500 ? 30 : width < 600 ? 28 : width < 700 ? 24 : 22))
+    .attr("y", margin.top + chartHeight / 4 + margin.bottom + (width < 275 ? 10 : width < 300 ? 18 : width < 325 ? 19 : width < 350 ? 22 : width < 375 ? 30 : width < 400 ? 37 : width < 450 ? 39 : width < 475 ? 40 : width < 500 ? 44 : width < 550 ? 50 : width < 600 ? 20 : width < 650 ? 24 : width < 700 ? 32 : width < 750 ? 36 : 42))
     .attr("text-anchor", "middle")
-    .attr("font-size", fontSize * 1.1 + width / 100)
+    .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
     .attr("fill", "black");
   const data = yearDates(year)
@@ -1207,33 +1216,32 @@ daylightPlot = (
     .attr("transform", `translate(${margin.left + chartWidth / 2 - 64})`);
   legend
     .append("rect")
-    .attr("x", width < 500 ? 66 : 66)
-    .attr("y", width < 500 ? 6 : 6)
+    .attr("x", width < 300 ? 63 : width < 500 ? 62 : width < 600 ? 61 : 60)
+    .attr("y", width < 450 ? 8 : 1)
     .attr("rx", 5)
-    .attr("width", 1.4 * fontSize)
-    .attr("height", 1.4 * fontSize)
+    .attr("width", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
+    .attr("height", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("fill", colors.day);
   legend
     .append("text")
-    .attr("x", width < 500 ? 88 : 88)
-    .attr("y", width < 500 ? 24 : 24)
-    .attr("font-size", 1.4 * fontSize)
+    .attr("x", width < 400 ? 82 : width < 500 ? 85 : width < 600 ? 87 : 90)
+    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 20 : width < 700 ? 21 : 23)
+    .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
-    .text(width);
-    //.text("Day");
+    .text("Day");
   legend
     .append("rect")
-    .attr("x", width < 500 ? -16 : -16)
-    .attr("y", width < 500 ? 6 : 6)
+    .attr("x", width < 400 ? -10 : width < 500 ? -20 : width < 600 ? -40 : -39)
+    .attr("y", width < 450 ? 8 : 1)
     .attr("rx", 5)
-    .attr("width", 1.4 * fontSize)
-    .attr("height", 1.4 * fontSize)
+    .attr("width", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
+    .attr("height", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("fill", colors.night);
   legend
     .append("text")
-    .attr("x", width < 500 ? 6 : 6)
-    .attr("y", width < 500 ? 24 : 24)
-    .attr("font-size", 1.4 * fontSize)
+    .attr("x", width < 400 ? 11 : width < 500 ? 4 : width < 600 ? -12 : -9)
+    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 19 : width < 700 ? 21 : 23)
+    .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
     .text("Night");
   /* Time and date controls */
@@ -1456,7 +1464,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.stroke();
     context.fillStyle = `#000`;
     context.font = width < 760 ? "14px serif" : width < 990 ? "17px serif" : "23px serif";
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 84 - (width < 500) * 8.8])));
+    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 82 - (width < 500) * 8.8])));
     d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -66 + (width < 500) * 1.1])));
     context.beginPath(), path(night), context.fillStyle = "rgba(0,0,255,0.1)", context.fill();
     context.beginPath(); path.pointRadius(17); path({type: "Point", coordinates: sun}); context.strokeStyle = "#0008"; context.fillStyle = "#ff08"; context.lineWidth = 1; context.stroke(); context.fill();
