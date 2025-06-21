@@ -38,23 +38,20 @@ filters:
 {{< include /asset/_decnav.qmd >}}
 :::
 
-# Day of year (doy) {.hiddenheading #doy}
+My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the [analog clocks](https://en.wikipedia.org/wiki/Clock#:~:text=indicate%20time%20with%20a%20traditional%20clock%20face%20and%20moving%20hands)🕓, [bar📊charts](https://en.wikipedia.org/wiki/Bar_chart), [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map, [Earth🌍orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit) diagram, and [daylight](https://en.wikipedia.org/wiki/Daylight#:~:text=the%20combination%20of%20all%20direct%20and%20indirect%20sunlight%20during%20the%20daytime) [area chart](https://en.wikipedia.org/wiki/Area_chart) below.
 
-My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the clocks🕓, bar📊charts, [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map, Earth orbit diagram, [daylight plot](https://observablehq.com/@dbridges/visualizing-seasonal-daylight), and [time zone globe](https://observablehq.com/@jcolot/time-zone-service) below.
+# Fractional day time {.hiddenheading #fdt}
 
-which display the Dec time in the Dec time zone, [\${selectedZone}]{.lime}, selected by the red⭕️circle on the  map🗺️beneath the bars📊.
-
-like the one on the left side of the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) (navbar) above.
-
-Dec times consist of a time-of-day ([tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}) and a time zone. The [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} can be obtained from either a day-of-year ([doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}) or a day-of-era ([doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"}). To get the [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day), we divide by one and keep remainder: [d]{.cyan} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = [t]{.cyan}. In the times below clocks and on the bar charts, the tod and time zone are both in [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}: [d]{.cyan} &times; 10 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 10 = [t]{.cyan}.
-
-# Time of day (tod) {.hiddenheading #tod}
-
-Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day). The shortest, longest, and thinnest clock🕓hands and the top, middle, and bottom bars📊indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, [+\${decTime}]{.cyan}, or until the end, [-\${decTimeN}]{.pink}, of the day in the 
+Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day). The shortest, longest, and thinnest clock🕓hands and the top, middle, and bottom bars📊indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays]{.under .tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, [+\${decTime}]{.point1}, or until the end, [-\${decTimeN}]{.point0}, of the day in the Dec time zone, \${decZoneHsl}, selected by the red⭕️circle on the map🗺️beneath the bars📊.
 
 :::{.clocks}
 \${clock}\${clock1}
 :::
+
+```{ojs}
+//| echo: false
+import {getTimezones} from "@jcolot/time-zone-service"
+```
 
 ```{ojs}
 //| echo: false
@@ -330,14 +327,13 @@ barChart1 = {
 viewof location = worldMapCoordinates([162, 0], [width * .998, ((21 / 40) * width)])
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 app = {
-  const svg = d3.select(DOM.svg(width, height * (width < 300 ? .94 : width < 400 ? .93 : width < 450 ? .92 : width < 500 ? .91 : width < 550 ? .9 : width < 600 ? .8 : width < 700 ? .78 : .76)));
+  const svg = d3.select(DOM.svg(width, height * (width < 400 ? 1.05 : width < 450 ? 1 : width < 500 ? .99 : width < 550 ? .975 : width < 600 ? .95 : width < 650 ? .9 : width < 700 ? .86 : .82)));
   svg.style("user-select", "none")
      .style("-webkit-user-select", "none")
      .attr("id", "daylightapp");
   const margin = {top: 20, left: 16, right: 16, bottom: 0, inner: 32};
   const contentWidth = width - margin.left - margin.right - margin.inner;
   const columnWidth = contentWidth / 2;
-  const date2022 = new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours())
   let selection = {
     date: date2022,
     hour: date2022.getHours()
@@ -345,7 +341,7 @@ app = {
   const renderPlot = () => {
     svg.selectAll("#plot *").remove();
     svg.select("#plot").call(daylightPlot, {
-      vizwidth: columnWidth / (width < 300 ? 1 : width < 400 ? 1.05 : width < 450 ? 1.1 : width < 500 ? 1.15 : width < 550 ? 1.2 : 1.48),
+    vizwidth: columnWidth / (width < 300 ? 1 : width < 400 ? 1.05 : width < 450 ? 1.1 : width < 500 ? 1.15 : width < 550 ? 1.2 : width < 600 ? 1.25 : width < 650 ? 1.3 : width < 700 ? 1.4 : 1.48),
       height: height * (width < 400 ? 1.62 : width < 500 ? 1.6 : width < 700 ? 1.58 : 1.56),
       year: 2022,
       latitude: location[1],
@@ -369,6 +365,8 @@ app = {
     const prev = {...selection};
     selection = newSelection;
     svg.node().value = selection;
+    set(viewof selectedDate, selection.date);
+    set(viewof selectedHour, selection.hour);
     if (forceRender) {
       renderPlot();
       renderSolarSystem();
@@ -732,7 +730,17 @@ clock1 = {
 }
 ```
 
-The plot to the lower left of the map🗺️visualizes the night (blue) and day (yellow) time of day (x-axis) throughout every day of the year (y-axis) at the [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) of the red⭕️circle on the map🗺️. The vertical↕position of the red<font color=red>—</font>line (time of day) and the↔️horizontal position of the red🔴dot (day of the year) on the plot control the🌐globes above and to the right of the plot.
+# Day of year (doy) {.hiddenheading #doy}
+
+The area chart above visualizes the absence ([Night]{.colorNight}) and presence ([Day]{.colorDay}) of daylight throughout the year at the [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth) of the red⭕️circle on the map🗺️: \${selLatiHsl}. The red<font color=red>—</font>line on the chart indicates the a day-of-year ([doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}), \${selDateHsl}, and the red🔴dot on the red<font color=red>—</font>line denotes a fractional day time-of-day ([tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}), \${selTimeHsl}.
+
+Drag the red<font color=red>—</font>line horizontally↔️to move the globe🌐beneath the map🗺️along the ellipsis of the Earth🌏orbit diagram.
+
+# Time of day (tod) {.hiddenheading #tod}
+
+You can drag the red🔴dot to rotate the the Earth orbit diagram globe. Likewise, the y-axis tick labels on the plot are  time-of-day ([tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}).
+
+Dec times consist of a time-of-day ([tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"}) and a time zone. The [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} can be obtained from either a day-of-year ([doy]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-year"}) or a day-of-era ([doe]{.under .tool data-bs-toggle="tooltip" data-bs-title="day-of-era"}). To get the [tod]{.under .tool data-bs-toggle="tooltip" data-bs-title="time-of-day"} in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day), we divide by one and keep remainder: [d]{.cyan} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = [t]{.cyan}. In the times below clocks and on the bar charts, the tod and time zone are both in [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.under .tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}: [d]{.cyan} &times; 10 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 10 = [t]{.cyan}.
 
 # Zone
 
@@ -848,9 +856,7 @@ function dote2date(dote, zone = 0) {
       - Math.floor(yotc / 100)
   ), zone]}
 dz = unix2dote(now)
-ydz = dote2date(...dz)
 decYear = ydz[0].toString().padStart(4, "0")
-decDate = Math.floor(ydz[1]).toString().padStart(3, "0")
 browserDote = unix2dote(now)
 browserTime = browserDote[0] % 1 * 10
 browserZone = browserDote[1]
@@ -863,6 +869,8 @@ selectedDote = unix2dote(now, long2zone(location[0]))
 selectedExact = selectedDote[0] % 1
 selectedExactN = (1 - selectedExact) % 1
 selectedZone = selectedDote[1]
+ydz = dote2date(...selectedDote)
+decDate = Math.floor(ydz[1])
 decTime = (selectedExact * 10).toFixed(4)
 decTimeN = (selectedExactN * 10).toFixed(4)
 barDD = decTime[0]
@@ -871,7 +879,7 @@ barMils = decTime.slice(2, 4)
 barMilsN = decTimeN.slice(2, 4)
 barBeats = decTime.slice(4, 6)
 barBeatsN = decTimeN.slice(4, 6)
-function lati2turn1(degrees = -180, e = 3) {
+function lati2turn(degrees = -180, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
   return (degrees %= 360) / (360 / 10**e) % 10**e;
 }
@@ -1165,7 +1173,7 @@ daylightPlot = (
   root
     .append("text")
     .text("Time of day")
-    .attr("x", margin.bottom + (width < 275 ? -102 : width < 300 ? -106 : width < 325 ? -108 : width < 350 ? -115 : width < 375 ? -120 : width < 400 ? -124 : width < 425 ? -126 : width < 450 ? -128 : width < 475 ? -130 : width < 500 ? -136 : width < 525 ? -140 : width < 550 ? -146 : width < 575 ? -132 : width < 600 ? -136 : width < 650 ? -142 : width < 675 ? -148 : width < 700 ? -153 : width < 725 ? -156 : width < 750 ? -164 : width < 775 ? -166 : -172))
+    .attr("x", margin.bottom + (width < 275 ? -102 : width < 300 ? -106 : width < 325 ? -108 : width < 350 ? -115 : width < 375 ? -120 : width < 400 ? -128 : width < 425 ? -130 : width < 450 ? -132 : width < 475 ? -136 : width < 500 ? -141 : width < 525 ? -142 : width < 550 ? -148 : width < 575 ? -149 : width < 600 ? -154 : width < 650 ? -157 : width < 675 ? -157 : width < 700 ? -161 : width < 725 ? -160 : width < 750 ? -165 : width < 775 ? -169 : -173))
     .attr("y", margin.top - (width < 400 ? 33 : width < 500 ? 35 : width < 600 ? 37 : width < 700 ? 40 : 42))
     .attr("text-anchor", "middle")
     .attr("font-size", fontSize * (width < 300 ? .8 : width < 400 ? .9 : width < 500 ? 1 : width < 600 ? 1.1 : width < 700 ? 1.2 : 1.25) + width / 100)
@@ -1176,7 +1184,7 @@ daylightPlot = (
     .append("text")
     .text("Day of year")
     .attr("x", margin.left + width / 2 - (width < 500 ? 30 : width < 600 ? 28 : width < 700 ? 24 : 22))
-    .attr("y", margin.top + chartHeight / 4 + margin.bottom + (width < 275 ? 10 : width < 300 ? 18 : width < 325 ? 19 : width < 350 ? 22 : width < 375 ? 30 : width < 400 ? 37 : width < 450 ? 39 : width < 475 ? 40 : width < 500 ? 44 : width < 550 ? 50 : width < 600 ? 20 : width < 650 ? 24 : width < 700 ? 32 : width < 750 ? 36 : 42))
+    .attr("y", margin.top + chartHeight / 4 + margin.bottom + (width < 275 ? 10 : width < 300 ? 18 : width < 325 ? 19 : width < 350 ? 22 : width < 375 ? 30 : width < 400 ? 37 : width < 450 ? 39 : width < 475 ? 40 : width < 500 ? 44 : width < 550 ? 50 : width < 600 ? 51 : width < 650 ? 50 : width < 700 ? 44 : width < 750 ? 40 : 43))
     .attr("text-anchor", "middle")
     .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
@@ -1503,7 +1511,7 @@ function worldMapCoordinates(config = {}, dimensions) {
             &nbsp; &nbsp;
             <span style="color: #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
             &nbsp; &nbsp;
-            <span style="color: #000;">Latitude:</span> ${lat != null ? ((lati2turn1(lat))).toFixed(0) : ""}
+            <span style="color: #000;">Latitude:</span> ${lat != null ? (lati2turn(lat)).toFixed(0) : ""}
           </div>` : '',
     getValue: () => [lon != null ? lon : null, lat != null ? lat : null],
     form: formEl
@@ -1608,7 +1616,24 @@ isoSecond = Math.floor(decSecond)
 decDek = Math.floor(decDate / 10)
 decDod = decDate % 10
 decDotm = Math.floor(decDate - (153 * decMoty + 2) / 5 + 1)
-decDoty = decDate.toString().padStart(3, "0")
+selDote = unix2dote(selectedDate.getTime(), selectedZone)
+selDate = Math.floor(dote2date(...selDote)[1])
+selTime = selectedHour / 24
+selLati = lati2turn(location[1])
+decDateHsl = textcolor(decDate.toString().padStart(3, "0"), d3.color(piecewiseColor(decDate / (365 + isLeapYear))).formatHex())
+decTimeHsl = textcolor(decTime, d3.color(piecewiseColor(decTime / 10)).formatHex())
+selDateHsl = textcolor(selDate.toString().padStart(3, "0"), d3.color(piecewiseColor(selDate / 365)).formatHex())
+selLatiHsl = textcolor(selLati.toFixed(0), d3.color(piecewiseColor((selLati + 250) % 250 / 250)).formatHex())
+selTimeHsl = textcolor((selTime * 10).toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
+decZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
+isLeapYear = decYear % 4 == 0 && decYear % 100 != 0 || decYear % 400 == 0;
+viewof selectedDate = Inputs.input(date2022)
+viewof selectedHour = Inputs.input(date2022.getHours())
+date2022 = new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours())
+function set(input, value) {
+  input.value = value;
+  input.dispatchEvent(new Event("input", {bubbles: true}));
+}
 ```
 
 ```{ojs}
@@ -1616,6 +1641,22 @@ decDoty = decDate.toString().padStart(3, "0")
 //| output: false
 html`
 <style>
+.colorNight {
+  background: #416f86;
+  color: white;
+  padding: 0px 2px 0px 4px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorDay {
+  background: #ffe438;
+  color: black;
+  padding: 0px 3px 0px 4px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color0 {
   background: hsl(0 100% 50%);
   color: ${yiq(`hsl(0, 100%, 50%)`) > 0.51 ? "black" : "white"};
