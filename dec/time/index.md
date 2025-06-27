@@ -3,9 +3,13 @@ Martin Laptev
 2025+118
 
 - [Fractional day time](#fdt)
+  - [Ticking analog clocks](#tac)
+  - [Bar chart clocks](#bcc)
+  - [Longitude latitude map](#llm)
+  - [Daylight area chart](#dac)
   - [Time of day (tod)](#tod)
   - [Day of era (doe)](#doe)
-- [Zone](#zone)
+- [Time zone offset](#tzo)
 - [Unit](#unit)
 - [Next](#next)
 - [Cite](#cite)
@@ -57,18 +61,15 @@ respectively, of the time since the start,
 zone, ${decZoneHsl}, at the location of the red⭕️circle on the
 map🗺️beneath the bars📊.
 
-To rotate the globe🌐in the Earth🌏orbit diagram, drag the red⭕️circle
-horizontally↔️or slide the red🔴dot on the daylight area chart
-vertically↕. The red⭕️circle’s vertical↕position determines the yearly
-daylight pattern visualized by the area chart. Shift the
-red<font color=red>—</font>line on the area chart horizontally↔️to move
-the globe🌐along the ellipse of the Earth🌎orbit.
+## Ticking analog clocks
 
 <div class="clocks">
 
 ${clock}${clock1}
 
 </div>
+
+## Bar chart clocks
 
 ``` {ojs}
 //| echo: false
@@ -341,7 +342,19 @@ barChart1 = {
   svg.attr('class', 'barclock')
   return svg.node();
 }
+```
+
+## Longitude latitude map
+
+``` {ojs}
+//| echo: false
 viewof location = worldMapCoordinates([162, 0], [width * .998, ((21 / 40) * width)])
+```
+
+## Daylight area chart
+
+``` {ojs}
+//| echo: false
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 app = {
   const svg = d3.select(DOM.svg(width, height * (width < 300 ? .97 : width < 350 ? .96 : width < 400 ? .95 : width < 450 ? .94 : width < 500 ? .93 : width < 550 ? .92 : width < 600 ? .9 : width < 650 ? .86 : width < 700 ? .82 : .78)));
@@ -748,6 +761,13 @@ clock1 = {
 }
 ```
 
+To rotate the globe🌐in the Earth🌏orbit diagram, drag the red⭕️circle
+horizontally↔️or slide the red🔴dot on the daylight area chart
+vertically↕. The red⭕️circle’s vertical↕position determines the yearly
+daylight pattern visualized by the area chart. Shift the
+red<font color=red>—</font>line on the area chart horizontally↔️to move
+the globe🌐along the ellipse of the Earth🌎orbit.
+
 ## Time of day (tod)
 
 The day-of-year (<span class="under tool" data-bs-toggle="tooltip"
@@ -775,138 +795,67 @@ data-bs-title="tenths of a day">decidays</a>: ${selSnapDec}.
 ## Day of era (doe)
 
 To turn a floating🛟snap🫰into a <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>, we
-divide days by one or <a
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>, we keep
+the remainder after dividing days by one or <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</a> by ten and keep the
-remainder. We can use this same approach to obtain a
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> from a
+data-bs-title="tenths of a day">decidays</a> by ten. We can use this
+same approach to obtain a <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> from a
 day-of-[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
 (<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">doe</span>) or
+data-bs-title="times-of-day">doe</span>), ${zeroDote.toFixed(5)}
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1 = ${zeroTimeHsl0}, or
 deciday-of-[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
 (<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">ddoe</span>): <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> =
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">doe</span>
+data-bs-title="times-of-day">ddoe</span>): ${(zeroDote \*
+10).toFixed(4)}
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-1 = <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">ddoe</span>
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-10. The current time in the Zone <span class="color0">0</span> Dec time
-zone is the [decimal
-part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
-of the current <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">doe</span>: ${zeroDote.toFixed(5)}
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-1 = ${zeroTimeHsl0}.
-
-The current <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">doe</span> tells us how many days have
-passed since the Dec
+10 = ${zeroTimeHsl1}. The current <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="times-of-day">doe</span> tells
+us how many days have passed since the Dec
 [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
-In the anchored⚓️snap🫰format, the Dec epoch is
-<span class="color0">0000</span><span style="font-family:monospace;">+</span><span class="color0">000</span><span style="font-family:monospace;">.</span><span class="color0">00000</span><span style="font-family:monospace;">-</span><span class="color0">0</span>.
-The anchored⚓️snap🫰equivalent of the current <span class="under tool"
+
+In the <span style="font-family:monospace;">year+doy.tod-z</span> format
+of anchored⚓️snaps🫰, where
+<span style="font-family:monospace;">z</span> is the time zone, the Dec
+epoch is
+<span class="color0">0000</span><span style="font-family:monospace;">+</span><span class="color0">000</span><span style="font-family:monospace;">.</span><span class="color0">000</span><span style="font-family:monospace;">-</span><span class="color0">0</span>
+and the [UNIX
+epoch](https://en.wikipedia.org/wiki/Epoch_(computing)#:~:text=Thursday%201%20January%201970%2000:00:00%20UT)
+is
+<span class="color969">1969</span><span style="font-family:monospace;">+</span><span class="colorD306">306</span><span style="font-family:monospace;">.</span><span class="color0">000</span><span style="font-family:monospace;">-</span><span class="color0">0</span>.
+Both of these epochs occured at midnight (<span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> =
+<span class="color0">0</span>) in the Zone <span class="color0">0</span>
+Dec time zone. The Zone <span class="color0">0</span>
+anchored⚓️snap🫰equivalent of the current <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="times-of-day">doe</span> is
-${zeroYearHsl}<span style="font-family:monospace;">+</span>${zeroDotyHsl}<span style="font-family:monospace;">.</span>${zeroTimeHsl1}<span style="font-family:monospace;">-</span><span class="color0">0</span>.
-The table below lists the four Dec snap🫰formats. Regardless of the
-format, all snaps🫰contain a <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and a
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span>.
+${zeroYearHsl}<span style="font-family:monospace;">+</span>${zeroDotyHsl}<span style="font-family:monospace;">.</span>${zeroTimeHsl2}<span style="font-family:monospace;">-</span><span class="color0">0</span>.
 
-<table>
-<colgroup>
-<col style="width: 34%" />
-<col style="width: 65%" />
-</colgroup>
-<thead>
-<tr>
-<th>Type</th>
-<th>Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span style="font-family:monospace;">anchored</span></td>
-<td><span style="font-family:monospace;">year+doytod-z</span></td>
-</tr>
-<tr>
-<td><span style="font-family:monospace;">zoneless</span></td>
-<td><span style="font-family:monospace;">year+doytod  </span></td>
-</tr>
-<tr>
-<td><span style="font-family:monospace;">yearless</span></td>
-<td><span style="font-family:monospace;">     doytod-z</span></td>
-</tr>
-<tr>
-<td><span style="font-family:monospace;">floating</span></td>
-<td><span style="font-family:monospace;">     doytod  </span></td>
-</tr>
-</tbody>
-</table>
-
-In the table above, <span style="font-family:monospace;">z</span> is the
-time zone and <span style="font-family:monospace;">doytod</span> is a
-three-digit integer <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> followed by a
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> that typically has three or five
-digits.
-
-can have any number of digits . is a concatenated
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> and a <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>.
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> in a snap🫰can  
-We can truncate the
-<span style="font-family:monospace;">year+doy.tod-z</span> format of
-fixed⚓️snaps🫰, to create a yearless:
-<span style="font-family:monospace;">doy.tod-z</span>, zoneless:
-<span style="font-family:monospace;">year+doy.tod</span>, or floating🛟.
-In Changing the <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> moves the globe🌐beneath the
-map🗺️along the ellipsis of the Earth🌏orbit diagram. Likewise, modifying
-the <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> rotates the globe🌐on its axis.
-
-absence (<span class="colorNight">Night</span>) and presence
-(<span class="colorDay">Day</span>) , and thus the daylight area chart
-beneath the map🗺️ , and that visualizes the throughout the year
-
-You can drag the red🔴dot to rotate the the Earth orbit diagram globe.
-Likewise, the y-axis tick labels on the plot are time-of-day
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span>).
-
-Dec times consist of a time-of-day (<span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>) and a
-time zone. The <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> can be obtained from either a
-day-of-year (<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>) or a day-of-era
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span>). To get the
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> in [fractional
-days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day),
-we divide by one and keep remainder: <span class="cyan">d</span>
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-1 = <span class="cyan">t</span>. In the times below clocks and on the
-bar charts, the tod and time zone are both in <a
+To get the Zone <span class="color0">0</span> <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> from
+[UNIX
+time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970%2C%20the%20Unix%20epoch),
+we divide by the number of seconds in a day and then keep the remainder
+after dividing by one: <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> = unix /
+[86400](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day)
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1.
+If we want to convert seconds to <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</a>:
-<span class="cyan">d</span> × 10
+data-bs-title="tenths of a day">decidays</a> instead of days, we divide
+by the number of <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tens of seconds">decaseconds</span> in a day and then
+keep the remainder after dividing by ten: <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> = unix /
+8640
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-10 = <span class="cyan">t</span>.
+10.
 
-# Zone
+# Time zone offset
 
 Drag the red⭕️circle across the
 [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of)
@@ -1424,7 +1373,8 @@ zeroDate = dote2date(zeroDote)
 zeroYear = zeroDate[0]
 zeroDoty = Math.floor(zeroDate[1])
 zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(2), d3.color(piecewiseColor(zeroTime)).formatHex())
+zeroTimeHsl1 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
+zeroTimeHsl2 = textcolor(zeroTime.toFixed(5).slice(2), d3.color(piecewiseColor(zeroTime)).formatHex())
 zeroDotyHsl = textcolor(zeroDoty.toString().padStart(3, "0"), d3.color(piecewiseColor(zeroDoty / (365 + zeroIsLeap))).formatHex())
 zeroYearHsl = textcolor(zeroYear, d3.color(piecewiseColor(zeroYear % 1000 / 1000)).formatHex())
 zeroIsLeap = zeroYear % 4 == 0 && zeroYear % 100 != 0 || zeroYear % 400 == 0;
@@ -2205,18 +2155,20 @@ decDotm = Math.floor(decDate - (153 * decMoty + 2) / 5 + 1)
 selDote = unix2dote(selectedDate.getTime() - 86400000, 0)
 selDate = Math.floor(dote2date(...selDote)[1])
 selTime = selectedHour / 24
+selTimeOne = selTime % 1
+selTimeTen = selTime * 10 % 10
 selSnap = selDate + selTime
 selLati = lati2turn(location[1])
 decDateHsl = textcolor(decDate.toString().padStart(3, "0"), d3.color(piecewiseColor(decDate / (365 + isLeapYear))).formatHex())
 decTimeHsl = textcolor(decTime, d3.color(piecewiseColor(decTime / 10)).formatHex())
 selDateHsl = textcolor(selDate.toString().padStart(3, "0"), d3.color(piecewiseColor(selDate / 365)).formatHex())
 selLatiHsl = textcolor(selLati.toFixed(0), d3.color(piecewiseColor((selLati + 250) % 250 / 250)).formatHex())
-selTimeDay = textcolor(selTime.toFixed(5).slice(1), d3.color(piecewiseColor(selTime)).formatHex())
-selTimeHsl0 = textcolor((selTime * 10).toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
-selTimeHsl1 = textcolor((selTime * 10).toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
+selTimeDay = textcolor(selTimeOne.toFixed(5).slice(1), d3.color(piecewiseColor(selTime)).formatHex())
+selTimeHsl0 = textcolor(selTimeTen.toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
+selTimeHsl1 = textcolor(selTimeTen.toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
 selZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
-selSnapDay = textcolor(selSnap.toFixed(5), d3.color(piecewiseColor(selSnap / 365)).formatHex())
-selSnapDec = textcolor((selSnap * 10).toFixed(4), d3.color(piecewiseColor(selSnap / 365)).formatHex())
+selSnapDay = textcolor(selSnap.toFixed(5).padStart(9, "0"), d3.color(piecewiseColor(selSnap / 365)).formatHex())
+selSnapDec = textcolor((selSnap * 10).toFixed(4).padStart(9, "0"), d3.color(piecewiseColor(selSnap / 365)).formatHex())
 decZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
 isLeapYear = decYear % 4 == 0 && decYear % 100 != 0 || decYear % 400 == 0;
 viewof selectedDate = Inputs.input(date2022)
@@ -2226,6 +2178,11 @@ function set(input, value) {
   input.value = value;
   input.dispatchEvent(new Event("input", {bubbles: true}));
 }
+hD306 = d3.hsl(piecewiseColor(306 / 365)).h
+hues = Object.fromEntries([
+    0.969,
+  ].map(i => [i, d3.hsl(piecewiseColor(i)).h])
+);
 ```
 
 ``` {ojs}
@@ -2324,6 +2281,22 @@ html`
 .color9 {
   background: hsl(40 100% 50%);
   color: ${yiq(`hsl(40, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color969 {
+  background: hsl(${hues[0.969]} 100% 50%);
+  color: ${yiq(`hsl(${hues[0.969]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD306 {
+  background: hsl(${hD306} 100% 50%);
+  color: ${yiq(`hsl(${hD306}, 100%, 50%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
