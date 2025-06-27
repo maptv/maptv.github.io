@@ -306,8 +306,15 @@ div#colorwheelcompass path#piepath {
 #maptable tbody tr:nth-child(2) td div {
     background: #24A !important;
 }
+
 .point0 { border-radius: 4px; background-color: #A24; color: white; padding: 0px 2px 0px 2px; }
 .point1 { border-radius: 4px; background-color: #24A; color: white; padding: 0px 2px 0px 2px; }
+.timeBarFull { fill: #24A; }
+.timeBarFullN { fill: #A24; }
+.tickLabel, .tickLabel1, .tickLabel2, .timeLabel { fill: white; }
+.timeBar { fill: #999; }
+.background { fill: black; }
+
 #projselect select {
   border-color: white;
   color: white;
@@ -348,5 +355,9 @@ img#zModu {
 }
 
 svg#daylightapp text {
+  fill: white;
+}
+
+#formEl text {
   fill: white;
 }

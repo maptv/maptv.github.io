@@ -173,8 +173,15 @@ g.node rect:hover, g.node:has(g:hover) rect {
 #maptable tbody tr:nth-child(2) td div {
   background: #BFF !important;
 }
+
 .point0 { border-radius: 4px; background-color: #FDF; color: black; padding: 0px 2px 0px 2px; }
 .point1 { border-radius: 4px; background-color: #BFF; color: black; padding: 0px 2px 0px 2px; }
+.timeBarFull { fill: #BFF; }
+.timeBarFullN { fill: #FDF; }
+.tickLabel, .tickLabel1, .tickLabel2, .timeLabel { fill: black; }
+.timeBar { fill: #ccc; }
+.background { fill: white; }
+
 #projselect select {
   border-color: black;
 }
