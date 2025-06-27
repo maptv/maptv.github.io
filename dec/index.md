@@ -3471,8 +3471,6 @@ rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
 rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
 rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
 rainbowHex = textcolor(shortenHex(d3.color(hslStr).formatHex()).slice(1), bkgHsl)
-wavehex = d3.color(wavelengthToColor(wavelength * .4)[0]).formatHex()
-wavehexHsl = textcolor(wavehex.slice(1), wavehex)
 rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex())
 rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex())
 // Show preview swatches of color

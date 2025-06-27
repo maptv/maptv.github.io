@@ -1,10 +1,10 @@
 # Dec Time
 Martin Laptev
-2025+112
+2025+118
 
 - [Fractional day time](#fdt)
-- [Day of year (doy)](#doy)
-- [Time of day (tod)](#tod)
+  - [Time of day (tod)](#tod)
+  - [Day of era (doe)](#doe)
 - [Zone](#zone)
 - [Unit](#unit)
 - [Next](#next)
@@ -54,19 +54,21 @@ data-bs-title="hundred thousandths of a day">centimillidays</span>,
 respectively, of the time since the start,
 <span class="point1">+${decTime}</span>, or until the end,
 <span class="point0">-${decTimeN}</span>, of the day in the Dec time
-zone, ${decZoneHsl}, selected by the red⭕️circle on the map🗺️beneath the
-bars📊.
+zone, ${decZoneHsl}, at the location of the red⭕️circle on the
+map🗺️beneath the bars📊.
+
+To rotate the globe🌐in the Earth🌏orbit diagram, drag the red⭕️circle
+horizontally↔️or slide the red🔴dot on the daylight area chart
+vertically↕. The red⭕️circle’s vertical↕position determines the yearly
+daylight pattern visualized by the area chart. Shift the
+red<font color=red>—</font>line on the area chart horizontally↔️to move
+the globe🌐along the ellipse of the Earth🌎orbit.
 
 <div class="clocks">
 
 ${clock}${clock1}
 
 </div>
-
-``` {ojs}
-//| echo: false
-import {getTimezones} from "@jcolot/time-zone-service"
-```
 
 ``` {ojs}
 //| echo: false
@@ -342,7 +344,7 @@ barChart1 = {
 viewof location = worldMapCoordinates([162, 0], [width * .998, ((21 / 40) * width)])
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 app = {
-  const svg = d3.select(DOM.svg(width, height * (width < 400 ? 1.05 : width < 450 ? 1 : width < 500 ? .99 : width < 550 ? .975 : width < 600 ? .95 : width < 650 ? .9 : width < 700 ? .86 : .82)));
+  const svg = d3.select(DOM.svg(width, height * (width < 300 ? .97 : width < 350 ? .96 : width < 400 ? .95 : width < 450 ? .94 : width < 500 ? .93 : width < 550 ? .92 : width < 600 ? .9 : width < 650 ? .86 : width < 700 ? .82 : .78)));
   svg.style("user-select", "none")
      .style("-webkit-user-select", "none")
      .attr("id", "daylightapp");
@@ -370,7 +372,8 @@ app = {
                                         columnWidth * 2.02,
                                         location,
                                         selection.date,
-                                        selection.hour);
+                                        selection.hour,
+                                        window.darkmode);
   }
   // const renderGlobe = () => {
   //   svg.selectAll("#globe *").remove();
@@ -745,25 +748,136 @@ clock1 = {
 }
 ```
 
-# Day of year (doy)
+## Time of day (tod)
 
-The area chart above visualizes the absence
-(<span class="colorNight">Night</span>) and presence
-(<span class="colorDay">Day</span>) of daylight throughout the year at
-the
-[latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=a%20geographic%20coordinate%20that%20specifies%20the%20north%2Dsouth%20position%20of%20a%20point%20on%20the%20surface%20of%20the%20Earth)
-of the red⭕️circle on the map🗺️: ${selLatiHsl}. The
-red<font color=red>—</font>line on the chart indicates the a day-of-year
+The day-of-year (<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span>) indicated by the
+red<font color=red>—</font>line is ${selDateHsl} and the time-of-day
 (<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>), ${selDateHsl}, and the red🔴dot
-on the red<font color=red>—</font>line denotes a fractional day
-time-of-day (<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span>), ${selTimeHsl}.
+data-bs-title="time-of-day">tod</span>) denoted by the red🔴dot is
+${selTimeDay} days or ${selTimeHsl0} <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a>. Dec times consist of a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> and a time zone:
+${selTimeHsl1}<span style="font-family:monospace;">–</span>${selZoneHsl}.
+Together, a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> and <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> form a
+floating🛟snap🫰. Like <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="times-of-day">tods</span>, floating🛟snaps🫰can be
+expressed in days, ${selSnapDay}, or <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a>: ${selSnapDec}.
 
-Drag the red<font color=red>—</font>line horizontally↔️to move the
-globe🌐beneath the map🗺️along the ellipsis of the Earth🌏orbit diagram.
+## Day of era (doe)
 
-# Time of day (tod)
+To turn a floating🛟snap🫰into a <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>, we
+divide days by one or <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="under tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a> by ten and keep the
+remainder. We can use this same approach to obtain a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> from a
+day-of-[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="times-of-day">doe</span>) or
+deciday-of-[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="times-of-day">ddoe</span>): <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> =
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="times-of-day">doe</span>
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1 = <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="times-of-day">ddoe</span>
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+10. The current time in the Zone <span class="color0">0</span> Dec time
+zone is the [decimal
+part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
+of the current <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="times-of-day">doe</span>: ${zeroDote.toFixed(5)}
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+1 = ${zeroTimeHsl0}.
+
+The current <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="times-of-day">doe</span> tells us how many days have
+passed since the Dec
+[epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
+In the anchored⚓️snap🫰format, the Dec epoch is
+<span class="color0">0000</span><span style="font-family:monospace;">+</span><span class="color0">000</span><span style="font-family:monospace;">.</span><span class="color0">00000</span><span style="font-family:monospace;">-</span><span class="color0">0</span>.
+The anchored⚓️snap🫰equivalent of the current <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="times-of-day">doe</span> is
+${zeroYearHsl}<span style="font-family:monospace;">+</span>${zeroDotyHsl}<span style="font-family:monospace;">.</span>${zeroTimeHsl1}<span style="font-family:monospace;">-</span><span class="color0">0</span>.
+The table below lists the four Dec snap🫰formats. Regardless of the
+format, all snaps🫰contain a <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span>.
+
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr>
+<th>Type</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="font-family:monospace;">anchored</span></td>
+<td><span style="font-family:monospace;">year+doytod-z</span></td>
+</tr>
+<tr>
+<td><span style="font-family:monospace;">zoneless</span></td>
+<td><span style="font-family:monospace;">year+doytod  </span></td>
+</tr>
+<tr>
+<td><span style="font-family:monospace;">yearless</span></td>
+<td><span style="font-family:monospace;">     doytod-z</span></td>
+</tr>
+<tr>
+<td><span style="font-family:monospace;">floating</span></td>
+<td><span style="font-family:monospace;">     doytod  </span></td>
+</tr>
+</tbody>
+</table>
+
+In the table above, <span style="font-family:monospace;">z</span> is the
+time zone and <span style="font-family:monospace;">doytod</span> is a
+three-digit integer <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> followed by a
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> that typically has three or five
+digits.
+
+can have any number of digits . is a concatenated
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> and a <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>.
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> in a snap🫰can  
+We can truncate the
+<span style="font-family:monospace;">year+doy.tod-z</span> format of
+fixed⚓️snaps🫰, to create a yearless:
+<span style="font-family:monospace;">doy.tod-z</span>, zoneless:
+<span style="font-family:monospace;">year+doy.tod</span>, or floating🛟.
+In Changing the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> moves the globe🌐beneath the
+map🗺️along the ellipsis of the Earth🌏orbit diagram. Likewise, modifying
+the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> rotates the globe🌐on its axis.
+
+absence (<span class="colorNight">Night</span>) and presence
+(<span class="colorDay">Day</span>) , and thus the daylight area chart
+beneath the map🗺️ , and that visualizes the throughout the year
 
 You can drag the red🔴dot to rotate the the Earth orbit diagram globe.
 Likewise, the y-axis tick labels on the plot are time-of-day
@@ -1304,6 +1418,16 @@ function dote2date(dote, zone = 0) {
   ), zone]}
 dz = unix2dote(now)
 decYear = ydz[0].toString().padStart(4, "0")
+zeroDote = unix2dote(now, 0)[0]
+zeroTime = zeroDote % 1
+zeroDate = dote2date(zeroDote)
+zeroYear = zeroDate[0]
+zeroDoty = Math.floor(zeroDate[1])
+zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
+zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(2), d3.color(piecewiseColor(zeroTime)).formatHex())
+zeroDotyHsl = textcolor(zeroDoty.toString().padStart(3, "0"), d3.color(piecewiseColor(zeroDoty / (365 + zeroIsLeap))).formatHex())
+zeroYearHsl = textcolor(zeroYear, d3.color(piecewiseColor(zeroYear % 1000 / 1000)).formatHex())
+zeroIsLeap = zeroYear % 4 == 0 && zeroYear % 100 != 0 || zeroYear % 400 == 0;
 browserDote = unix2dote(now)
 browserTime = browserDote[0] % 1 * 10
 browserZone = browserDote[1]
@@ -1349,7 +1473,7 @@ function year2leap(year = 1970) {
     return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
 }
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
-solarSystem = (root, vizwidth, location, date, hour) => {
+solarSystem = (root, vizwidth, location, date, hour, darkmode) => {
   const earthRadius = 0.065 * vizwidth;
   // const sunRadius = 0.015 * vizwidth;
   const solarSystemRadius = vizwidth / 2 - (vizwidth < 500 ? 4 : 20);
@@ -1372,86 +1496,62 @@ solarSystem = (root, vizwidth, location, date, hour) => {
     .translate([0, 0]);
   const path = d3.geoPath(projection).pointRadius(1.5);
   const staticPath = d3.geoPath(staticProjection);
+  const oceanColor = darkmode ? "#007FFF" : mapcolors.ocean;
+  const landColor = darkmode ? "#0808" : mapcolors.land;
+  const borderColor = darkmode ? "#eee" : "#333";
   const solarSystem = root
     .append("g")
     .attr("transform", `translate(${vizwidth / 2})`);
   // solarSystem.append("circle").attr("r", sunRadius).attr("fill", colors.sun);
   /* Draw orbit */
-  solarSystem
-    .append("ellipse")
-    .attr("rx", solarSystemRadius)
-    .attr("ry", stretch * solarSystemRadius)
-    .attr("fill", "none")
-    .attr("stroke-width", "1.25")
-    .attr("stroke", "black");
-  /* Draw month ticks */
-  d3.range(12).map((m) => {
-    const d = new Date(date.getFullYear(), m, 1);
-    const angle = getSolarAngle(d);
     solarSystem
-      .append("line")
-      .attr("x1", (solarSystemRadius + 9) * Math.sin(angle))
-      .attr("y1", (solarSystemRadius + 9) * stretch * Math.cos(angle))
-      .attr("x2", (solarSystemRadius - 9) * Math.sin(angle))
-      .attr("y2", (solarSystemRadius - 9) * stretch * Math.cos(angle))
-      .attr("stroke-width", "1.75")
+      .append("ellipse")
+      .attr("rx", solarSystemRadius)
+      .attr("ry", stretch * solarSystemRadius)
+      .attr("fill", "none")
+      .attr("stroke-width", "1.25")
       .attr("stroke", "black");
-    const startMonthAngle = getSolarAngle(new Date(date.getFullYear(), m, 1));
-    solarSystem
-      .append("text")
-      .text(date2doty(d))
-      .attr("x", (solarSystemRadius + 18 - width / 50) * Math.sin(startMonthAngle) * 1.1)
-      .attr(
-        "y",
-        (solarSystemRadius + 2 - width / 3) * 6.2 * stretch * Math.cos(startMonthAngle) + Math.sign(Math.cos(startMonthAngle)) * 12
-      )
-      .attr("text-anchor", "middle")
-      .attr("dominant-baseline", "middle")
-      .attr("font-size", fontSize * (width < 300 ? .9 : width < 400 ? .95 : width < 500 ? 1 : width < 600 ? 1.05 : width < 700 ? 1.1 : 1.2) + width / 100)
-      .attr("font-family", "sans-serif")
-      .attr("fill", "black");
-  });
-  const earth = solarSystem
-    .append("g")
-    .attr("transform", `translate(${x}, ${y})`);
-  earth
-    .append("line")
-    .attr("y1", -1.5 * earthRadius)
-    .attr("y2", 1.5 * earthRadius)
-    .attr("stroke", "blue")
-    .attr("transform", `rotate(-23.5)`);
-  earth.append("path").attr("d", path(earthGeo)).attr("fill", colors.ocean);
-  earth.append("path").attr("d", path(land)).attr("fill", colors.land);
-  earth.append("path")
-  .attr("d", path(countries))
-  .attr("stroke-width", ".075")
-  .attr("fill", "none")
-  .attr("stroke", "#555");
-  // const shadowPolygon = [
-  //   [0, -90],
-  //   [0, 0],
-  //   [0, 90],
-  //   [180, 0],
-  //   [0, -90]
-  // ];
-  // earth
-  //   .append("path")
-  //   .attr("d", staticPath({ type: "Polygon", coordinates: [shadowPolygon] }))
-  //   .attr("fill", "rgba(0, 0, 0, 0.5)");
-  path.pointRadius(5.5);
-  earth
-    .append("path")
-    .attr("d", path({ type: "Point", coordinates: location }))
-    .attr("fill", "none")
-    .attr("stroke-width", .6)
-    .attr("stroke", "black");
-  path.pointRadius(4.5);
-  earth
-    .append("path")
-    .attr("d", path({ type: "Point", coordinates: location }))
-    .attr("fill", "none")
-    .attr("stroke-width", 2.25)
-    .attr("stroke", "red");
+    /* Draw month ticks */
+    d3.range(12).map((m) => {
+      const d = new Date(date.getFullYear(), m, 1);
+      const angle = getSolarAngle(d);
+      solarSystem
+        .append("line")
+        .attr("x1", (solarSystemRadius + 9) * Math.sin(angle))
+        .attr("y1", (solarSystemRadius + 9) * stretch * Math.cos(angle))
+        .attr("x2", (solarSystemRadius - 9) * Math.sin(angle))
+        .attr("y2", (solarSystemRadius - 9) * stretch * Math.cos(angle))
+        .attr("stroke-width", "1.75")
+        .attr("stroke", "black");
+      const startMonthAngle = getSolarAngle(new Date(date.getFullYear(), m, 1));
+      solarSystem
+        .append("text")
+        .text(date2doty(d))
+        .attr("x", (solarSystemRadius + 18 - width / 50) * Math.sin(startMonthAngle) * 1.1)
+        .attr(
+          "y",
+          (solarSystemRadius + 2 - width / 3) * 6.2 * stretch * Math.cos(startMonthAngle) + Math.sign(Math.cos(startMonthAngle)) * 12
+        )
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .attr("font-size", fontSize * (width < 300 ? .9 : width < 400 ? .95 : width < 500 ? 1 : width < 600 ? 1.05 : width < 700 ? 1.1 : 1.2) + width / 100)
+        .attr("font-family", "sans-serif")
+        .attr("fill", "black");
+    });
+    const earth = solarSystem
+      .append("g")
+      .attr("transform", `translate(${x}, ${y})`);
+    function drawEarth() {
+      earth.append("line").attr("y1", -1.5 * earthRadius).attr("y2", 1.5 * earthRadius).attr("stroke", "blue").attr("transform", `rotate(-23.5)`);
+      earth.append("path").attr("d", path(earthGeo)).attr("fill", darkmode ? "#007FFF" : mapcolors.ocean).attr("id", "globeOcean");
+      earth.append("path").attr("d", path(land)).attr("fill", darkmode ? "#0808" : mapcolors.land).attr("id", "globeLand");
+      earth.append("path").attr("d", path(countries)).attr("stroke-width", ".08").attr("fill", "none").attr("stroke", darkmode ? "#eee" : "#333").attr("id", "globeBorders");
+      path.pointRadius(5.5);
+      earth.append("path").attr("d", path({ type: "Point", coordinates: location })).attr("fill", "none").attr("stroke-width", .6).attr("stroke", "black");
+      path.pointRadius(4.5);
+      earth.append("path").attr("d", path({ type: "Point", coordinates: location })).attr("fill", "none").attr("stroke-width", 2.25).attr("stroke", "red");
+  }
+  drawEarth();
 }
 function greg2doty(month = 1, day = 1) {
     return Math.floor(
@@ -1488,11 +1588,11 @@ function date2doty1(date) {
 //   const foreground = root.append("g");
 //   earth.append("path")
 //     .attr("d", path({type: "Sphere"}))
-//     .attr("fill", colors.ocean)
+//     .attr("fill", mapcolors.ocean)
 //     .attr("stroke", "#9ecbda");
 //   earth.append("path")
 //     .attr("d", path(land))
-//     .attr("fill", colors.land);
+//     .attr("fill", mapcolors.land);
 //   earth.append("path")
 //     .attr("d", path(countries))
 //     .attr("stroke-width", "1")
@@ -1525,22 +1625,22 @@ function date2doty1(date) {
 //   background.append("path")
 //     .attr("d", unClippedPath(dayLine))
 //     .attr("fill", "none")
-//     .attr("stroke", colors.day)
+//     .attr("stroke", mapcolors.day)
 //     .attr("stroke-width", 3);
 //   background.append("path")
 //     .attr("d", unClippedPath(nightLine))
 //     .attr("fill", "none")
-//     .attr("stroke", colors.night)
+//     .attr("stroke", mapcolors.night)
 //     .attr("stroke-width", 3);
 //   foreground.append("path")
 //     .attr("d", path(dayLine))
 //     .attr("fill", "none")
-//     .attr("stroke", colors.day)
+//     .attr("stroke", mapcolors.day)
 //     .attr("stroke-width", 3);
 //   foreground.append("path")
 //     .attr("d", path(nightLine))
 //     .attr("fill", "none")
-//     .attr("stroke", colors.night)
+//     .attr("stroke", mapcolors.night)
 //     .attr("stroke-width", 3);
 //   foreground.append("path")
 //     .attr("d", path({type: "Point", coordinates: location}))
@@ -1598,13 +1698,13 @@ daylightPlot = (
     .attr("height", chartWidth)
     .attr("width", chartHeight)
     .attr("ry", 0.05 * vizwidth)
-    .attr("fill", colors.night);
+    .attr("fill", mapcolors.night);
   root
     .append("g")
     .attr("transform", `translate(0, ${margin.top})`)
     .call(xAxis)
     .call((g) => g.select(".domain").remove())
-    .call((g) => g.selectAll(".tick").attr("color", colors.grid))
+    .call((g) => g.selectAll(".tick").attr("color", mapcolors.grid))
     .call((g) => g.selectAll(".tick text").attr("font-size", (width < 300 ? .7 : width < 325 ? .725 : width < 350 ? .75 : width < 375 ? .8 : width < 400 ? .9 : width < 450 ? .95 : width < 500 ? 1 : width < 600 ? 1.2 : width < 700 ? 1.3 : 1.4) * fontSize))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
@@ -1613,7 +1713,7 @@ daylightPlot = (
     .attr("transform", `translate(${margin.left + chartHeight}, 0)`)
     .call(yAxis)
     .call((g) => g.select(".domain").remove())
-    .call((g) => g.selectAll(".tick").attr("color", colors.grid))
+    .call((g) => g.selectAll(".tick").attr("color", mapcolors.grid))
     .call((g) => g.selectAll(".tick text").attr("font-size", (width < 400 ? .9 : width < 500 ? 1 : width < 600 ? 1.1 : width < 700 ? 1.2 : 1.3) * fontSize))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
@@ -1663,7 +1763,7 @@ daylightPlot = (
       ...p.map(([d, l]) => `${xScale(d)},${yScale(12 - l / 2)}`),
       ...p.reverse().map(([d, l]) => `${xScale(d)},${yScale(12 + l / 2)}`)
     ].join(" ");
-    root.append("polygon").attr("points", points).attr("fill", colors.day);
+    root.append("polygon").attr("points", points).attr("fill", mapcolors.day);
   });
   /* Legend */
   const legend = root
@@ -1676,7 +1776,7 @@ daylightPlot = (
     .attr("rx", 5)
     .attr("width", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("height", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
-    .attr("fill", colors.day);
+    .attr("fill", mapcolors.day);
   legend
     .append("text")
     .attr("x", width < 400 ? 82 : width < 500 ? 85 : width < 600 ? 87 : 90)
@@ -1691,7 +1791,7 @@ daylightPlot = (
     .attr("rx", 5)
     .attr("width", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("height", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
-    .attr("fill", colors.night);
+    .attr("fill", mapcolors.night);
   legend
     .append("text")
     .attr("x", width < 400 ? 11 : width < 500 ? 4 : width < 600 ? -12 : -9)
@@ -1785,13 +1885,13 @@ EventType = ({
   LocationChange: "LOCATION_CHANGE",
   DateHourChange: "DATE_HOUR_CHANGE"
 })
-colors = ({
+mapcolors = ({
   night: "#719fb6",
   day: "#ffe438",
   grid: "#4b6a79",
   ocean: "#adeeff",
-  land: "#f5f1dc",
-  sun: "#ffe438"
+  land: "#90ff7888",
+  sun: "#ffb438"
 })
 toRadians = (val) => val * Math.PI / 180
 toDegrees = (val) => val * 180 / Math.PI;
@@ -1899,10 +1999,11 @@ function worldMapCoordinates(config = {}, dimensions) {
   const path = d3.geoPath(projection, context).pointRadius(2.5);
   formEl.append(canvas);
   function draw() {
-    context.fillStyle = "#00000000";
+    context.fillStyle = window.darkmode ? "black" : "white";
     context.fillRect(0, 0, width, height);
     context.beginPath(); path({type: "Sphere"});
-    context.fillStyle = colors.ocean; context.fill();
+    context.fillStyle = window.darkmode ? "#007FFF" : mapcolors.ocean;
+    context.fill();
     context.beginPath();
     path(graticule);
     context.lineWidth = 0.95;
@@ -1910,14 +2011,14 @@ function worldMapCoordinates(config = {}, dimensions) {
     context.stroke();
     context.beginPath();
     path(land);
-    context.fillStyle = colors.land;
+    context.fillStyle = window.darkmode ? "#0808" : mapcolors.land;
     context.fill();
     context.beginPath();
     path(countries);
     context.lineWidth = .95;
-    context.strokeStyle = `#000`;
+    context.strokeStyle = window.darkmode ? "#aaa" : "#333";
     context.stroke();
-    context.fillStyle = `#000`;
+    context.fillStyle = window.darkmode ? "#fff" : "#000";
     context.font = width < 760 ? "14px serif" : width < 990 ? "17px serif" : "23px serif";
     d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 82 - (width < 500) * 8.8])));
     d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -66 + (width < 500) * 1.1])));
@@ -1953,18 +2054,26 @@ function worldMapCoordinates(config = {}, dimensions) {
     type: "worldMapCoordinates",
     title,
     description,
-    display: v => (width > 300) ? html`<div style="width: ${width}px; white-space: nowrap; color: #000; text-align: center; font: ${width / 40}px monospace; position: relative; top: ${-16 - width / 50}px;  margin-bottom: -.4em;">
-            <span style="color: #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
+    display: v => (width > 300) ? html`<div style="width: ${width}px; white-space: nowrap; color: window.darkmode ? #fff : #000; text-align: center; font: ${width / 40}px monospace; position: relative; top: ${-16 - width / 50}px;  margin-bottom: -.4em;">
+            <span style="color: window.darkmode ? #fff : #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
             &nbsp; &nbsp;
-            <span style="color: #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
+            <span style="color: window.darkmode ? #fff : #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
             &nbsp; &nbsp;
-            <span style="color: #000;">Latitude:</span> ${lat != null ? (lati2turn(lat)).toFixed(0) : ""}
+            <span style="color: window.darkmode ? #fff : #000;">Latitude:</span> ${lat != null ? (lati2turn(lat)).toFixed(0) : ""}
           </div>` : '',
     getValue: () => [lon != null ? lon : null, lat != null ? lat : null],
     form: formEl
   });
   return form;
 }
+window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
+document.getElementsByClassName("quarto-color-scheme-toggle")[0].onclick = function (e) {
+  window.quartoToggleColorScheme();
+  window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
+  worldMapCoordinates.draw();
+  app.drawEarth();
+  return false;
+};
 sun = {
   const now = new Date;
   const day = new Date(+now).setUTCHours(0, 0, 0, 0);
@@ -2036,17 +2145,47 @@ elapsed = {
   }
 }
 piecewiseColor = d3.piecewise(d3.interpolateRgb, [
-  "#f00", // red
-  "#f0f", // magenta
-  "#a0f", // violet
-  "#00f", // blue
-  "#0af", // azure
-  "#0ff", // cyan
-  "#0f0", // green
-  "#af0", // lime
-  "#ff0", // yellow
-  "#fa0", // orange
-  "#f00", // red
+  "#f00",    //  0   0 red
+  "#f50",    //  0.25  20 yr
+  "#f60",    //  0.5   24 yr orangered
+  "#f70",    //  0.75  28 yr
+  "#f90",    //  1     36 yr orange
+  "#fb0",    //  1.25  44 yr
+  "#fc0",    //  1.5   48 yr yelloworange
+  "#fd0",    //  1.75  52 yr
+  "#ff0",    //  2     60 yellow
+  "#ef0",    //  2.25  64 gy
+  "#df0",    //  2.5   68 gy limeyellow
+  "#cf0",    //  2.75  72 gy
+  "#af0",    //  3     80 gy lime
+  "#8f0",    //  3.25  88 gy
+  "#7f0",    //  3.5   92 gy greenlime
+  "#6f0",    //  3.75  96 gy
+  "#0f0",    //  4    120 green
+  "#0f7",    //  4.25 148 cg
+  "#0f9",    //  4.5  156 cg cyangreen
+  "#0fb",    //  4.75 164 cg
+  "#0ff",    //  5    180 cyan
+  "#0cf",    //  5.25 192 bc
+  "#0bf",    //  5.5  196 bc azurecyan
+  "#0af",    //  5.75 200 bc
+  "#08f",    //  6    208 bc azure
+  "#06f",    //  6.25 216 bc
+  "#05f",    //  6.5  220 bc blueazure
+  "#04f",    //  6.75 224 bc
+  "#00f",    //  7    240 blue
+  "#50f",    //  7.25 260 mb
+  "#60f",    //  7.5  264 mb purpleblue
+  "#70f",    //  7.75 268 mb
+  "#90f",    //  8    276 mb purple
+  "#b0f",    //  8.25 284 mb
+  "#c0f",    //  8.5  288 mb violetpurple
+  "#d0f",    //  8.75 292 mb
+  "#f0f",    //  9    300 magenta
+  "#f0a",    //  9.25 320 rm
+  "#f08",    //  9.5  328 rm
+  "#f06",    //  9.75 336 rm
+  "#f00",    //  0        0 red
 ])
 slStr = `, 100%, 50%)`
 elaTime = elapsed % 1e5
@@ -2063,15 +2202,21 @@ isoSecond = Math.floor(decSecond)
 decDek = Math.floor(decDate / 10)
 decDod = decDate % 10
 decDotm = Math.floor(decDate - (153 * decMoty + 2) / 5 + 1)
-selDote = unix2dote(selectedDate.getTime(), selectedZone)
+selDote = unix2dote(selectedDate.getTime() - 86400000, 0)
 selDate = Math.floor(dote2date(...selDote)[1])
 selTime = selectedHour / 24
+selSnap = selDate + selTime
 selLati = lati2turn(location[1])
 decDateHsl = textcolor(decDate.toString().padStart(3, "0"), d3.color(piecewiseColor(decDate / (365 + isLeapYear))).formatHex())
 decTimeHsl = textcolor(decTime, d3.color(piecewiseColor(decTime / 10)).formatHex())
 selDateHsl = textcolor(selDate.toString().padStart(3, "0"), d3.color(piecewiseColor(selDate / 365)).formatHex())
 selLatiHsl = textcolor(selLati.toFixed(0), d3.color(piecewiseColor((selLati + 250) % 250 / 250)).formatHex())
-selTimeHsl = textcolor((selTime * 10).toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
+selTimeDay = textcolor(selTime.toFixed(5).slice(1), d3.color(piecewiseColor(selTime)).formatHex())
+selTimeHsl0 = textcolor((selTime * 10).toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
+selTimeHsl1 = textcolor((selTime * 10).toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
+selZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
+selSnapDay = textcolor(selSnap.toFixed(5), d3.color(piecewiseColor(selSnap / 365)).formatHex())
+selSnapDec = textcolor((selSnap * 10).toFixed(4), d3.color(piecewiseColor(selSnap / 365)).formatHex())
 decZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
 isLeapYear = decYear % 4 == 0 && decYear % 100 != 0 || decYear % 400 == 0;
 viewof selectedDate = Inputs.input(date2022)
@@ -2194,7 +2339,6 @@ svg.barclock {
   overflow: visible;
 }
 .tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
-  fill: #000;
   font-family: monospace;
   text-anchor: middle;
 }
@@ -2206,18 +2350,6 @@ svg.barclock {
   height: 25px;
   rx: 5px;
   stroke: #aaa;
-}
-.timeBar {
-  fill: #e8e8e8;
-}
-.timeBarFull {
-  fill: #ccffff;
-}
-.timeBarFullN {
-  fill: #ffcccc;
-}
-.background {
-  fill: white;
 }
 .tickDek, .tickDotd, .tickDotd1, .tickC, .tickC1, .tickM, .tickM1, .tickB, .tickB1 {
   stroke: none;
