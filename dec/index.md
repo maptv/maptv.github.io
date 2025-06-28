@@ -11,13 +11,13 @@ Martin Laptev
   - [Course color table](#cct)
   - [Red green blue (rgb)](#rgb)
 - [Dec time zones](#dtz)
-  - [Coordinated Universal Time](#utc)
+  - [Coordinated Universal Time (UTC)](#utc)
   - [Millenium Year Day](#myd)
 - [Zone equatorial meter (zem)](#zem)
   - [Length area volume](#lav)
   - [Typical seat height](#tsh)
   - [Speed of sound](#sos)
-- [Inverse of b (Iob)](#iob)
+- [Inverse of b (iob)](#iob)
   - [Beats per milliday (bpm)](#bpm)
   - [Frequency period wavelength](#fpw)
 - [Ten equal temperament (Xet)](#xet)
@@ -148,8 +148,8 @@ rainbow🌈colored🎨grid of Dec
 [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines),
 a
 [choropleth](https://en.wikipedia.org/wiki/Choropleth_map#:~:text=a%20type%20of%20statistical%20thematic%20map%20that%20uses%20pseudocolor)
-of
-[UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
+of [<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span>](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 time zones, and [solar
 terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
 shading with a yellow🟡dot denoting the
@@ -923,41 +923,55 @@ viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: 
 viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine input", value: "turns"})
 ```
 
-## Coordinated Universal Time
+## Coordinated Universal Time (UTC)
 
-[UTC time zone
+[<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zone
 offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
 range from ${rainbowN5zn} to ${rainbowP583} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>. The UTC
-offset provided by your web browser is ${utcOffHslM} ÷ 144 =
-${utcOffHslD} <span class="tool" data-bs-toggle="tooltip"
+data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>. The
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> offset provided by
+your web browser is ${utcOffHslM} ÷ 144 = ${utcOffHslD}
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</span>. The Dec time zone that corresponds
-to this UTC offset is Zone ${decZonHslP}. The time in corresponding Dec
-and UTC time zones can differ by up to <span class="color050">0.5</span>
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</span>. The difference between your Dec and
-UTC time is ${utcOffsetMdiffHsl } ÷ 144 = ${utcOffDiffHsl}
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</span>.
+to this <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> offset is Zone
+${decZonHslP}. The time in corresponding Dec and <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zones can
+differ by up to <span class="color050">0.5</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>. The
+difference between your Dec and <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time is
+${utcOffsetMdiffHsl } ÷ 144 = ${utcOffDiffHsl} <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>.
 
 To obtain the time in Zone <span class="color0">0</span>, we can
 subtract the offset of any time zone from its time. Inversely, we can
 get the time in any time zone by adding its offset to the Zone
 <span class="color0">0</span> time. The dates and times in Zone
-<span class="color0">0</span> and
-[UTC<span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+<span class="color0">0</span> and [<span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
 match exactly. Zone <span class="color5">5</span> and
-[UTC<span class="color5">+12:00</span>](https://en.wikipedia.org/wiki/UTC%2B12:00)
+[<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color5">+12:00</span>](https://en.wikipedia.org/wiki/UTC%2B12:00)
 also have matching dates and times, both are precisely one day ahead of
-[UTC<span class="color5">-12:00</span>](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00).
+[<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color5">-12:00</span>](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00).
 
-To avoid date mismatches with UTC time zones that have negative offsets,
-we can subtract ten <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</span> from any positive Dec offset to make
-it negative: ${decOffsetHslP} – <span class="color0">10</span> =
-${decOffsetHslN}. Therefore, each Dec time zone has both a positive and
-a negative offset. The two offsets in any time zone are exactly one day
-apart, produce the same time, and have the same color🎨label🏷️.
+To avoid date mismatches with <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zones that
+have negative offsets, we can subtract ten <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decidays">dd</span> from any
+positive Dec offset to make it negative: ${decOffsetHslP} –
+<span class="color0">10</span> = ${decOffsetHslN}. Therefore, each Dec
+time zone has both a positive and a negative offset. The two offsets in
+any time zone are exactly one day apart, produce the same time, and have
+the same color🎨label🏷️.
 
 ## Millenium Year Day
 
@@ -2014,7 +2028,7 @@ we have to exit the highway🛣️. To ensure we do not miss our exit, we can
 periodically check a countdown of the remaining <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zems">z</span>: ${zLeft}.
 
-# Inverse of b (Iob)
+# Inverse of b (iob)
 
 Dec refers to <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span> as

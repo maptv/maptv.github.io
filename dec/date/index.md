@@ -552,10 +552,10 @@ data-bs-title="day-of-year">doy</span>: <span class="cyan">299</span>.
 
 </div>
 
-Christmas🎄is a fixed⚓️holiday because it occurs on the same
+Christmas🎄is a anchored⚓️holiday because it occurs on the same
 <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> every
-<span class="yellow">year</span>. Unlike fixed⚓️holidays, Gregorian
+<span class="yellow">year</span>. Unlike anchored⚓️holidays, Gregorian
 calendar🗓️floating🛟holidays happen on a different
 <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> every
@@ -827,13 +827,13 @@ data-bs-title="day-of-year">doy</span> equation values are
 <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> by itself is a floating🛟date and
 a <span class="yellow">year</span>+<span class="cyan">day</span> date is
-a fixed⚓️date. Unlike fixed⚓️dates, floating🛟dates do not include a
-<span class="yellow">year</span> and thus can apply to any
+a anchored⚓️date. Unlike anchored⚓️dates, floating🛟dates do not include
+a <span class="yellow">year</span> and thus can apply to any
 <span class="yellow">year</span>.
 
-Fixed⚓️dates are
+Anchored⚓️dates are
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
-math expressions. Instead of simplifying a fixed⚓️date into a
+math expressions. Instead of simplifying a anchored⚓️date into a
 <span class="yellow under tool" data-bs-toggle="tooltip"
 data-bs-title="year-of-era">yoe</span>, we can do the opposite and
 expand it to display additional information, such as the number of days
@@ -882,7 +882,7 @@ given <span class="yellow">year</span>. Similarly, an empty
 side means that the subtrahend is <span class="cyan under tool"
 data-bs-toggle="tooltip" data-bs-title="March 1">Day 0</span> of the
 subsequent <span class="yellow">year</span>. Dec spans🌈with at least
-one <span class="yellow">year</span> are called fixed⚓️spans🌈. In
+one <span class="yellow">year</span> are called anchored⚓️spans🌈. In
 contrast, floating🛟spans🌈do not contain a
 <span class="yellow">year</span> and thus can be reused♻️ every
 <span class="yellow">year</span>.

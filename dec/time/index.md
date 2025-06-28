@@ -9,6 +9,8 @@ Martin Laptev
   - [Daylight area chart](#dac)
   - [Time of day (tod)](#tod)
   - [Day of era (doe)](#doe)
+  - [Deciday Unix time](#dut)
+- [Coordinated Universal Time (UTC)](#utc)
 - [Time zone offset](#tzo)
 - [Unit](#unit)
 - [Next](#next)
@@ -49,11 +51,11 @@ days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20deci
 The shortest, longest, and thinnest clock🕓hands and the top, middle,
 and bottom bars📊indicate the <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</a>, <span class="under tool"
+class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a>, <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span>, and
-<span class="under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span>,
 respectively, of the time since the start,
 <span class="point1">+${decTime}</span>, or until the end,
@@ -768,62 +770,62 @@ the globe🌐along the ellipse of the Earth🌎orbit.
 
 ## Time of day (tod)
 
-Dec times consist of a time-of-day (<span class="under tool"
+Dec times consist of a time-of-day (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>) and a
 time zone:
 ${selTimeHsl1}<span style="font-family:monospace;">–</span>${selZoneHsl}.
-The <span class="under tool" data-bs-toggle="tooltip"
+The <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="time-of-day">tod</span> denoted by the red🔴dot is
 ${selTimeDay} days or ${selTimeHsl0} <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
+class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</a>. The day-of-year
-(<span class="under tool" data-bs-toggle="tooltip"
+(<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span>) indicated by the
 red<font color=red>—</font>line is ${selDateHsl}. Together, a
-<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> and <span class="under tool"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span> and <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> form a
-floating🛟snap🫰. Like <span class="under tool" data-bs-toggle="tooltip"
+floating🛟snap🫰. Like <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="times-of-day">tods</span>, floating🛟snaps🫰can be
 expressed in days, ${selSnapDay}, or <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
+class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</a>: ${selSnapDec}.
 
 A floating🛟snap🫰identifies a day in an unspecified year with its first
 three digits, classifies that day as a work or rest day with its third
-digit, and denotes a specific point in that day with its remaining
-digits, thus serving the same purposes as a [Gregorian
+digit, and specifies an point in that day with its remaining digits,
+thus serving the same purposes as a [Gregorian
 calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
-month and day-of-month (<span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-month">dom</span>) pair,
-a day-of-week (<span class="under tool" data-bs-toggle="tooltip"
+month and day-of-month (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-month">dom</span>) pair, a day-of-week
+(<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>), and an hour-minute-second
-(<span class="under tool" data-bs-toggle="tooltip"
+(<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hour-minute-second">hms</span>) triplet.
 
 ## Day of era (doe)
 
-To turn a floating🛟snap🫰into a <span class="under tool"
+To turn a floating🛟snap🫰into a <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>, we keep
 the remainder after dividing days by one or <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
+class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</a> by ten. We can use this
-same approach to obtain a <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> from a
+same approach to obtain a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> from a
 day-of-[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
-(<span class="under tool" data-bs-toggle="tooltip"
+(<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="times-of-day">doe</span>), ${zeroDote.toFixed(5)}
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 = ${zeroTimeHsl0}, or
 deciday-of-[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
-(<span class="under tool" data-bs-toggle="tooltip"
+(<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="times-of-day">ddoe</span>): ${(zeroDote \*
 10).toFixed(4)}
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-10 = ${zeroTimeHsl1}. The current <span class="under tool"
+10 = ${zeroTimeHsl1}. The current <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="times-of-day">doe</span> tells
 us how many days have passed since the Dec
 [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
@@ -837,53 +839,121 @@ and the [UNIX
 epoch](https://en.wikipedia.org/wiki/Epoch_(computing)#:~:text=Thursday%201%20January%201970%2000:00:00%20UT)
 is
 <span class="color969">1969</span><span style="font-family:monospace;">+</span><span class="colorD306">306</span><span style="font-family:monospace;">.</span><span class="color0">000</span><span style="font-family:monospace;">-</span><span class="color0">0</span>.
-Both of these epochs occured at midnight (<span class="under tool"
+Both of these epochs occured at midnight (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> =
 <span class="color0">0</span>) in the Zone <span class="color0">0</span>
 Dec time zone. The Zone <span class="color0">0</span>
-anchored⚓️snap🫰equivalent of the current <span class="under tool"
+anchored⚓️snap🫰equivalent of the current <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="times-of-day">doe</span> is
 ${zeroYearHsl}<span style="font-family:monospace;">+</span>${zeroDotyHsl}<span style="font-family:monospace;">.</span>${zeroTimeHsl2}<span style="font-family:monospace;">-</span><span class="color0">0</span>.
 
-To get the Zone <span class="color0">0</span> <span class="under tool"
+## Deciday Unix time
+
+To get the Zone <span class="color0">0</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> from
 [UNIX
 time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970%2C%20the%20Unix%20epoch),
 we divide by the number of seconds in a day and then keep the remainder
-after dividing by one: <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> = <span class="under tool"
+after dividing by one: <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> = <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="seconds since UNIX epoch">unix</span> /
 [86400](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1.
 If we want to convert seconds to <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
+class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</a> instead of days, we divide
-by the number of <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tens of seconds">decaseconds</span> in a day and then
-keep the remainder after dividing by ten: <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> =
-<span class="under tool" data-bs-toggle="tooltip"
+by the number of seconds in a <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a day">deciday</a> and then keep the remainder
+after dividing by ten: <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> = <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="seconds since UNIX epoch">unix</span> / 8640
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 10.
 
+# Coordinated Universal Time (UTC)
+
+We can also derive a <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a day">deciday</a> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> from a
+[Coordinated Universal
+Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span>)
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour-minute-second">hms</span> triplet:
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> = <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hour">h</span> ÷ 2.4 +
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="minute">m</span> ÷ 144 + <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="second">s</span> ÷ 8640. The
+divisors in this equation are the hours, minutes, and seconds in a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a day">deciday</span>. Instead of performing
+this calculation on <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zone
+[offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place),
+we should convert for the [<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+time zone because it is synchronized with Zone
+<span class="color0">0</span>.
+
+The time in Zone <span class="color0">0</span> matches UTC time with the
+[<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+offset. UNIX time and three <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> offsets are called
+[<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time),
+[<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color5">+12:00</span>](https://en.wikipedia.org/wiki/UTC%2B12:00),
+and [<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color5">-12:00</span>](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00).
+Starting with a [<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour-minute-second">hms</span> triplet results in Zone
+<span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>.
+
+only three out of the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zones are
+synchronized with a Dec time zone it will most likely be easier to shift
+the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour-minute-second">hms</span> triplet to will result in
+days instead of decidays if we divide by the most Dec and
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zones are not
+aligned. Whereas UNIX time is always synchronized with Zone
+<span class="color0">0</span> and
+[UTC<span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time),
+This method ensure that the result matches
+
 # Time zone offset
+
+[UTC time zone
+offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
 
 Drag the red⭕️circle across the
 [meridians](https://en.wikipedia.org/wiki/Meridian_%28geography%29#:~:text=words%2C%20it%20is-,a%20line%20of%20longitude,-.%20The%20position%20of)
 (vertical↕gray lines) on the map🗺️to see how changing time zones affects
 the time. Only the first digit of the Dec times shown above, the
-<span class="under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</span>, varies across time
 zones, because the 10 Dec time zones, numbered 0 through 9 on the map🗺️,
-are each 1 <span class="under tool" data-bs-toggle="tooltip"
+are each 1 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a turn">deci[turn](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span>
 ([dt](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn))
-wide. Simply put, a <span class="under tool" data-bs-toggle="tooltip"
+wide. Simply put, a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a turn">deciturn</span> of longitude
-translates into a <span class="under tool" data-bs-toggle="tooltip"
+translates into a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</span> of time.
 
 The leftmost vertical↕line on the map🗺️is [Meridian
@@ -914,7 +984,7 @@ offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets), but only 10
 Dec time zones. Conversion between Dec time zones and UTC offsets is
 inexact, because UTC offsets depend on geographic and political
 boundaries, whereas Dec time zones are determined solely by longitude.
-If you know your longitude in degrees (°) or <span class="under tool"
+If you know your longitude in degrees (°) or <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundredths of a turn">centi[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span>
 ([ct](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)),
@@ -1055,12 +1125,12 @@ times with an offset of 0 and 12 <span class="teal">hours</span>,
 respectively. The other Dec time zones will differ from the closest UTC
 time by 8.<span class="over">3</span>, 16.<span class="over">6</span>,
 25, 33.<span class="over">3</span>, 41.<span class="over">6</span> or 50
-<span class="under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of a day">millidays</span>. To find the
 difference δ, convert the UTC offset <span class="teal">hours</span>
 <span class="teal">o<sub>H</sub></span> and
 <span class="olive">minutes</span>
-<span class="olive">o<sub>M</sub></span> into <span class="under tool"
+<span class="olive">o<sub>M</sub></span> into <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="tenths of a turn">deci[turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)</span>
 of the longitude λ and then subtract the Dec zone number
@@ -1081,7 +1151,7 @@ To obtain the Zone 0 time, we evaluate a Dec time as a math expression,
 add 10, and get the remainder after dividing by 10 to make sure the
 result is less than 10 <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
+class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</a>:
 (<span class="cyan">${browserTime.toFixed(4)}</span> ${browserSign}
 <span class="lime">${Math.abs(browserZone)}</span> + 10)
@@ -1182,7 +1252,7 @@ To convert the <span class="teal">hour</span>
 <span class="olive">m</span>, and <span class="purple">second</span>
 <span class="purple">s</span> into the <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
+class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</a>
 <span class="cyan">d</span>, Dec uses the following equation:
 <span class="cyan">d</span> = <span class="teal">h</span> ÷ 2.4 +
@@ -1197,7 +1267,7 @@ data-bs-title="a tenth of a day">deciday</a>
 <span class="purple">${Math.floor(seconds).toString().padStart(2,
 “0”)}</span> ÷ 8640. Inversely, we can convert <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
+class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</a> into
 <span class="teal">hours</span>: <span class="teal">h</span> =
 <span class="cyan">d</span> × 2.4, <span class="olive">minutes</span>:
@@ -1234,23 +1304,23 @@ The concept of measuring time in decimal days is not novel. In the late
 calendar](https://en.wikipedia.org/wiki/French_Republican_calendar#:~:text=a%20calendar%20created%20and%20implemented%20during%20the%20French%20Revolution)
 time system referred to <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
+class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</a> as decimal
-<span class="teal">hours</span>, <span class="under tool"
+<span class="teal">hours</span>, <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundredths of a day">centidays</span> as
 [décimes](https://en.wikipedia.org/wiki/Decimal_time#:~:text=into%20tenths%2C%20or-,d%C3%A9cimes,-%2C%20instead%20of%20minutes),
-<span class="under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span> as decimal
-<span class="olive">minutes</span>, and <span class="under tool"
+<span class="olive">minutes</span>, and <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span> as
 decimal <span class="purple">seconds</span>. Similarly, [Swatch Internet
 Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time#:~:text=a%20decimal%20time%20system%20introduced%20in%201998%20by%20the%20Swatch%20corporation),
 a [decimal
 time](https://en.wikipedia.org/wiki/Decimal_time#:~:text=the%20representation%20of%20the%20time%20of%20day%20using%20units%20which%20are%20decimally%20related)
-system introduced in 1998, uses the term “.beats” for
-<span class="under tool" data-bs-toggle="tooltip"
+system introduced in 1998, uses the term “.beats” for <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span>.
 
 Swatch Internet Time differs from Dec in that it [has no time
@@ -1264,7 +1334,7 @@ In contrast, the major innovations described in this article are the Dec
 time zone system and the simple equation for obtaining the Dec time in
 Zone 0 from a UNIX timestamp, but Dec has much more to offer than <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="under tool" data-bs-toggle="tooltip"
+class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</a> times and zones.
 
 # Next
@@ -1310,7 +1380,7 @@ the bottom of this article. You may also want to cite the Observable
 notebooks that I adapted into the clock🕓, bar📊chart, map🗺️, and
 daylight☀️plot visualizations in this article or the 2014 blog post
 which proposed a system of 20 decimal time zones, each 5
-<span class="under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundredths of a day">centidays</span> wide, based on the
 [Greenwich
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England):
@@ -1878,7 +1948,7 @@ function input(config) {
   const wrapper = html`<div></div>`;
   if (!form)
     form = html`<form>
-    <input name=input type=${type} />
+  <input name=input type=${type} />
   </form>`;
   Object.keys(attributes).forEach(key => {
     const val = attributes[key];
