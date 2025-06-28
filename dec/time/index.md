@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2025+118
+2025+119
 
 - [Fractional day time](#fdt)
   - [Ticking analog clocks](#tac)
@@ -358,9 +358,7 @@ viewof location = worldMapCoordinates([162, 0], [width * .998, ((21 / 40) * widt
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 app = {
   const svg = d3.select(DOM.svg(width, height * (width < 300 ? .97 : width < 350 ? .96 : width < 400 ? .95 : width < 450 ? .94 : width < 500 ? .93 : width < 550 ? .92 : width < 600 ? .9 : width < 650 ? .86 : width < 700 ? .82 : .78)));
-  svg.style("user-select", "none")
-     .style("-webkit-user-select", "none")
-     .attr("id", "daylightapp");
+  svg.style("user-select", "none").style("-webkit-user-select", "none").attr("id", "daylightapp");
   const margin = {top: 20, left: 16, right: 16, bottom: 0, inner: 32};
   const contentWidth = width - margin.left - margin.right - margin.inner;
   const columnWidth = contentWidth / 2;
@@ -770,19 +768,20 @@ the globe🌐along the ellipse of the Earth🌎orbit.
 
 ## Time of day (tod)
 
-The day-of-year (<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>) indicated by the
-red<font color=red>—</font>line is ${selDateHsl} and the time-of-day
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span>) denoted by the red🔴dot is
+Dec times consist of a time-of-day (<span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>) and a
+time zone:
+${selTimeHsl1}<span style="font-family:monospace;">–</span>${selZoneHsl}.
+The <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> denoted by the red🔴dot is
 ${selTimeDay} days or ${selTimeHsl0} <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="under tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</a>. Dec times consist of a
+data-bs-title="tenths of a day">decidays</a>. The day-of-year
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-year">doy</span>) indicated by the
+red<font color=red>—</font>line is ${selDateHsl}. Together, a
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> and a time zone:
-${selTimeHsl1}<span style="font-family:monospace;">–</span>${selZoneHsl}.
-Together, a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> and <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> form a
 floating🛟snap🫰. Like <span class="under tool" data-bs-toggle="tooltip"
@@ -791,6 +790,18 @@ expressed in days, ${selSnapDay}, or <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="under tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</a>: ${selSnapDec}.
+
+A floating🛟snap🫰identifies a day in an unspecified year with its first
+three digits, classifies that day as a work or rest day with its third
+digit, and denotes a specific point in that day with its remaining
+digits, thus serving the same purposes as a [Gregorian
+calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
+month and day-of-month (<span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-month">dom</span>) pair,
+a day-of-week (<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-week">dow</span>), and an hour-minute-second
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="hour-minute-second">hms</span>) triplet.
 
 ## Day of era (doe)
 
@@ -840,7 +851,9 @@ data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> from
 time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970%2C%20the%20Unix%20epoch),
 we divide by the number of seconds in a day and then keep the remainder
 after dividing by one: <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> = unix /
+data-bs-title="time-of-day">tod</span> = <span class="under tool"
+data-bs-toggle="tooltip"
+data-bs-title="seconds since UNIX epoch">unix</span> /
 [86400](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1.
 If we want to convert seconds to <a
@@ -850,8 +863,9 @@ data-bs-title="tenths of a day">decidays</a> instead of days, we divide
 by the number of <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="tens of seconds">decaseconds</span> in a day and then
 keep the remainder after dividing by ten: <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> = unix /
-8640
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> =
+<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="seconds since UNIX epoch">unix</span> / 8640
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 10.
 
