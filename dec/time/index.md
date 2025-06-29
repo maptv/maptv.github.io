@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2025+119
+2025+120
 
 - [Fractional day time](#fdt)
   - [Ticking analog clocks](#tac)
@@ -877,33 +877,116 @@ data-bs-title="seconds since UNIX epoch">unix</span> / 8640
 
 # Coordinated Universal Time (UTC)
 
-We can also derive a <a
-href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
-class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a day">deciday</a> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> from a
-[Coordinated Universal
+We can also derive a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> from a [Coordinated Universal
 Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span>)
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet:
+data-bs-title="hour-minute-second">hms</span> triplet using the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> equation
+to divide each component of the triplet by either a day,
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="time-of-day">tod</span> = <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="hour">h</span> ÷ 2.4 +
+data-bs-toggle="tooltip" data-bs-title="hour">h</span> ÷ 24 +
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="minute">m</span> ÷ 144 + <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="second">s</span> ÷ 8640. The
-divisors in this equation are the hours, minutes, and seconds in a
+data-bs-title="minute">m</span> ÷ 1440 + <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="second">s</span> ÷ 86400, or a
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a day">deciday</span>. Instead of performing
-this calculation on <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> time zone
-[offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place),
-we should convert for the [<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a day">deciday</span>: <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> =
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour">h</span> ÷ 2.4 + <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="minute">m</span> ÷ 144 +
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="second">s</span> ÷ 8640. If the input for this equation
+is a [<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
-time zone because it is synchronized with Zone
-<span class="color0">0</span>.
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour-minute-second">hms</span> triplet, the result will
+be a Zone <span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>.
+
+Instead of passing both a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hour-minute-second">hms</span>
+triplet and its <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zone
+[offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
+to the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>
+equation, we can subtract the offset from the triplet to produce a
+[<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+00:00,_Z)
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour-minute-second">hms</span> triplet. In other words,
+we can avoid converting time zone offsets if we always first shift the
+input <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour-minute-second">hms</span> triplet to
+[<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+00:00,_Z).
+
+Zone <span class="color0">0</span> and . or Zone 5 and
+[UTC+12:00](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+12:00,_M).
+
+Of the [37 UTC
+offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets), only three
+are compatible with Dec.
+
+To obtain the Zone 0 time, we evaluate a Dec time as a math expression,
+add 10, and get the remainder after dividing by 10 to make sure the
+result is less than 10 <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a>:
+(<span class="cyan">${browserTime.toFixed(4)}</span> ${browserSign}
+<span class="lime">${Math.abs(browserZone)}</span> + 10)
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+10 = <span class="cyan">${zone0time.toFixed(4)}</span>.
+
+Instead of passing both a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hour-minute-second">hms</span>
+triplets and its <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zone
+[offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
+to the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>
+equation.
+
+Instead of performing this calculation on both a <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hour-minute-second">hms</span>
+triplet and its <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zone
+[offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place),
+we should subtract the offset from the triplet.
+
+equation should be a [<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour-minute-second">hms</span> triplet so that we do not
+have to convert a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zone
+[offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
+to <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a>.
+
+When we add a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> offset to a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hour-minute-second">hms</span>
+triplet, with the resulting [<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+time.
 
 The time in Zone <span class="color0">0</span> matches UTC time with the
 [<span class="tool" data-bs-toggle="tooltip"
