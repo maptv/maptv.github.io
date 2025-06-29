@@ -909,7 +909,7 @@ data-bs-title="hour-minute-second">hms</span> triplet, the result will
 be a Zone <span class="color0">0</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>.
 
-Instead of passing both a <span class="tool" data-bs-toggle="tooltip"
+Instead of passing a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="hour-minute-second">hms</span>
 triplet and its <span class="tool" data-bs-toggle="tooltip"
@@ -917,8 +917,8 @@ data-bs-title="Coordinated Universal Time">UTC</span> time zone
 [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
 to the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>
-equation, we can subtract the offset from the triplet to produce a
+data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> equation
+separately, we can subtract the offset from the triplet to produce a
 [<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+00:00,_Z)
 <span class="tool" data-bs-toggle="tooltip"
@@ -928,13 +928,9 @@ input <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hour-minute-second">hms</span> triplet to
 [<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+00:00,_Z).
-
-Zone <span class="color0">0</span> and . or Zone 5 and
-[UTC+12:00](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+12:00,_M).
-
 Of the [37 UTC
-offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets), only three
-are compatible with Dec.
+offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets), only 3 are
+compatible with Dec.
 
 To obtain the Zone 0 time, we evaluate a Dec time as a math expression,
 add 10, and get the remainder after dividing by 10 to make sure the
