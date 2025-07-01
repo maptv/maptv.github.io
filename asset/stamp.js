@@ -1,9 +1,9 @@
 // https://howardhinnant.github.io/date_algorithms.html#days_from_civil
 function unix2dote(unix, zone, offset = 719468) {
   return [(unix ?? Date.now()) / 86400000 + (
-    zone = zone ?? -Math.round(
+    zone = zone ?? (-Math.round(
       (new Date).getTimezoneOffset() / 144)
-    ) / 10 + offset, zone]
+      + 10) % 10) / 10 + offset, zone]
 }
 function dote2date(dote, zone = 0) {
   const cote = Math.floor((
