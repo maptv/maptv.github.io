@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2025+122
+2025+123
 
 - [Fractional day time](#fdt)
   - [Ticking analog clocks](#tac)
@@ -11,6 +11,7 @@ Martin Laptev
   - [Day of era (doe)](#doe)
   - [Hour minute second](#hms)
   - [Time zone offset](#tzo)
+  - [Repeating decimal numbers](#rdn)
 - [Coordinated Universal Time (UTC)](#utc)
 - [Unit](#unit)
 - [Next](#next)
@@ -852,8 +853,7 @@ We can also create a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="time-of-day">tod</span> by summing the components of an
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hour-minute-second">hms</span> triplet after converting
-them to either fractional days or <span class="tool"
-data-bs-toggle="tooltip"
+them to either days or <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</span>. Unlike UNIX time,
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hour-minute-second">hms</span> triplets may include [leap
@@ -864,13 +864,12 @@ Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20pri
 data-bs-title="Coordinated Universal Time">UTC</span>) [time
 zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time)
 [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place).
-Dec does not acknowledge leap seconds and is only compatible with three
-<span class="tool" data-bs-toggle="tooltip"
+Dec does not acknowledge the existence of leap seconds and is compatible
+with only two <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> offsets:
-[<span class="color0">+00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time),
-[<span class="color5">+12</span>](https://en.wikipedia.org/wiki/UTC%2B12:00),
+[<span class="color0">+00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
 and
-[<span class="color5">-12</span>](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00).
+[<span class="color5">+12</span>](https://en.wikipedia.org/wiki/UTC%2B12:00).
 
 $$\text{deciday} = \frac{\text{hour}}{2.4} + \frac{\text{minute}}{144} + \frac{\text{second}}{8640}$$
 
@@ -878,81 +877,89 @@ $$\text{day} = \frac{\text{hour}}{24} + \frac{\text{minute}}{1440} + \frac{\text
 
 ## Time zone offset
 
+To be compatible with Dec, a time zone offset must be equivalent to one
+of the ten positive single-digit integer <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="a tenth of a day">deciday</span>
+Dec offsets. The Zone <span class="color5">5</span> Dec time zone and
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> time zones with
-incompatible offsets differ from their closest Dec time zone by
-<span class="color0083">.8<span class="vinculum">3</span></span>,
-<span class="color0166">1.<span class="vinculum">6</span></span>,
-<span class="color025">2.5</span>,
-<span class="color0333">3.<span class="vinculum">3</span></span>,
-<span class="color0416">4.1<span class="vinculum">6</span></span> or
-<span class="color05">5</span> <span class="tool"
+data-bs-title="Coordinated Universal Time">UTC</span>
+[<span class="color5">+12:00</span>](https://en.wikipedia.org/wiki/UTC%2B12:00)
+time zone have equivalent offsets: <span class="color5">5</span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</span> =
+<span class="color5">12</span> hours. Likewise, the Zone
+<span class="color0">0</span> Dec time zone, UNIX time, and the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span>
+[<span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+time zone all have an offset of <span class="color0">0</span>.
+
+Apart from <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span>
+[<span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+and
+[<span class="color5">+12:00</span>](https://en.wikipedia.org/wiki/UTC%2B12:00),
+all of the other <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zones are
+incompatible with Dec. To find the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="a tenth of a day">deciday</span>
+time difference *Δ* between a <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="hundredths of a day">centidays</span>. To find the
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a day">deciday</span> difference δ between a
-<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time zone and its
-nearest Dec time zone, convert a <span class="tool"
+nearest Dec time zone, convert the offset of the <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> offset to
+data-bs-title="Coordinated Universal Time">UTC</span> time zone to
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</span> and then calculate how
 much the converted offset changes after rounding it to the nearest
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a day">deciday</span>:
+data-bs-title="a tenth of a day">deciday</span>.
 
-*δ* = offset − ⌊offset + 1 ÷ 2⌋
+*Δ* = offset − ⌊offset + 0.5⌋
 
-The Zone <span class="color0">0</span> Dec time zone is synchronized
-with both UNIX time and the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span>
-[<span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
-time zone. There is also no time difference between the
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span>
-[<span class="color5">-12:00</span>](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00#:~:text=a%20nautical%20time%20zone%20comprising%20the%20high%20seas%20between%20180%C2%B0%20and%20172%C2%B030%E2%80%B2W%20longitude)
-and
-[<span class="color5">+12:00</span>](https://en.wikipedia.org/wiki/UTC%2B12:00)
-time zones and the Zone <span class="color5">5</span> and
-<span class="color5">-5</span> Dec time zones. The three
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> time zones that
-are compatible with Dec all have offsets that are single-digit integers
-after being converted to <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span>.
+## Repeating decimal numbers
 
-Incompatible <span class="tool" data-bs-toggle="tooltip"
+Dec expresses incompatible offsets as positive or negative fractions or
+multi-digit integers. <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> offsets are either
-[terminating](https://en.wikipedia.org/wiki/Dyadic_rational#:~:text=a%20number%20that%20can%20be%20expressed%20as%20a%20fraction%20whose%20denominator%20is%20a%20power%20of%20two)
-or [repeating decimal
-numbers](https://en.wikipedia.org/wiki/Repeating_decimal#Notation).
-Terminating decimal number offsets can be displayed by Dec provided
-there is enough space for the additional digits. Dec displays repeating
-decimal number offsets as fractions or using
-[notation](https://en.wikipedia.org/wiki/Repeating_decimal#Notation)
-like a
-[vinculum](https://en.wikipedia.org/wiki/Vinculum_(symbol)#:~:text=indicate%20the%20repetend%20of%20a%20repeating%20decimal%20value).
-In this way, Dec is able to support all <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> time zones.
-
-The most populous <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> time zone,
+[repeating](https://en.wikipedia.org/wiki/Repeating_decimal) or
+terminating decimal numbers. Dec displays repeating decimal offsets as
+fractions and terminating decimal offsets as integers.
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span>
 [<span class="color333">+08:00</span>](https://en.wikipedia.org/wiki/UTC%2B08:00),
-can be expressed in Dec as Zone <span class="color333">10/3</span> or
-Zone <span class="color333">3.<span class="vinculum">3</span></span>.
-The second most populous, <span class="tool" data-bs-toggle="tooltip"
+the most populous <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zone, has an
+offset of <span class="color333">.<span class="vinculum">3</span></span>
+days and is called Zone <span class="color333">1/3</span> in Dec. In
+contrast, <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span>
+[<span class="color125">+03:00</span>](https://en.wikipedia.org/wiki/UTC%2B03:00)
+has an offset of <span class="color125">.125</span> days and is called
+Zone <span class="color125">125</span> in Dec.
+
+Terminating decimal number offsets can be displayed by Dec provided
+there is enough space for the additional digits. Dec displays repeating
+decimal number offsets as fractions. The second most populous
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zone,
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span>
 [<span class="color333">+05:30</span>](https://en.wikipedia.org/wiki/UTC%2B05:30),
 translates to Zone <span class="color55by24">55/24</span> or Zone
 <span class="color55by24">2.291<span class="vinculum">6</span></span> in
-Dec. When it is noon (tod=<span class="color5">5</span>)
-<span class="color5">5.00</span><span style="font-family:monospace;">-</span><span class="color333">10/3</span>
-or
-<span class="color5">5.00</span><span style="font-family:monospace;">-</span><span class="color333">3.<span class="vinculum">3</span></span>
+Dec. The top six most populous <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zones all
+have positive offsets.
+
+When it is midnight (tod=<span class="color0">0</span>) in Zone
+<span class="color0">0</span>, it is noon
+(tod=<span class="color5">5</span>) in Zone
+<span class="color5">5</span> and the time in every other time zone is
+equal to it it is ~<span class="color533">5.33</span> in Zone
+<span class="color333">10/3</span>, ~<span class="color429">4.29</span>
+in Zone <span class="color55by24">55/24</span>, and
 
 To obtain the Zone <span class="color0">0</span> time, we evaluate any
 Dec time as a math expression, add 10, and then get the remainder after
@@ -2475,7 +2482,11 @@ hues = Object.fromEntries([
   .0333,
   .0416,
   .05,
+  .125,
   .333,
+  .375,
+  .429,
+  .533,
   .969,
   ].map(i => [i, d3.hsl(piecewiseColor(i)).h])
 );
@@ -2590,6 +2601,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color375 {
+  background: hsl(${hues[0.375]} 100% 50%);
+  color: ${yiq(`hsl(${hues[0.375]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color0083 {
   background: hsl(${hues[0.0083]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.0083]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
@@ -2609,6 +2628,14 @@ html`
 .color55by24 {
   background: hsl(${hues[.0229]} 100% 50%);
   color: ${yiq(`hsl(${hues[.0229]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color125 {
+  background: hsl(${hues[.125]} 100% 50%);
+  color: ${yiq(`hsl(${hues[.125]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2646,9 +2673,25 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color429 {
+  background: hsl(${hues[0.429]} 100% 50%);
+  color: ${yiq(`hsl(${hues[0.429]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color05 {
   background: hsl(${hues[0.05]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.05]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color533 {
+  background: hsl(${hues[0.533]} 100% 50%);
+  color: ${yiq(`hsl(${hues[0.533]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
