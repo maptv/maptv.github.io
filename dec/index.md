@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+100
+2025+124
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -11,7 +11,8 @@ Martin Laptev
   - [Course color table](#cct)
   - [Red green blue (rgb)](#rgb)
 - [Dec time zones](#dtz)
-  - [Coordinated Universal Time (UTC)](#utc)
+  - [Time zone offset](#tzo)
+  - [Day of dek (dod)](#dod)
   - [Millenium Year Day](#myd)
 - [Zone equatorial meter (zem)](#zem)
   - [Length area volume](#lav)
@@ -923,7 +924,7 @@ viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: 
 viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine input", value: "turns"})
 ```
 
-## Coordinated Universal Time (UTC)
+## Time zone offset
 
 [<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time zone
@@ -945,7 +946,7 @@ data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>. The
 difference between your Dec and <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time is
-${utcOffsetMdiffHsl } ÷ 144 = ${utcOffDiffHsl} <span class="tool"
+${utcOffsetMdiffHsl} ÷ 144 = ${utcOffDiffHsl} <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>.
 
 To obtain the time in Zone <span class="color0">0</span>, we can
@@ -973,8 +974,6 @@ time zone has both a positive and a negative offset. The two offsets in
 any time zone are exactly one day apart, produce the same time, and have
 the same color🎨label🏷️.
 
-## Millenium Year Day
-
 ``` {ojs}
 //| echo: false
 //| label: offinput
@@ -992,6 +991,8 @@ component. Dec dates consist of a year and a day-of-year
 data-bs-title="day-of-year">doy</span>), whereas Dec times are composed
 of a time-of-day (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="time-of-day">tod</span>) and a time zone.
+
+## Day of dek (dod)
 
 Each <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-year">doy</span> also has two components. The
@@ -1017,6 +1018,8 @@ is currently <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">Dek</span> ${decDekOffHsl} and
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Day-of-dek">Dod</span> ${decDodOffHsl}.
+
+## Millenium Year Day
 
 Year color🎨labels🏷️are based on <span class="tool"
 data-bs-toggle="tooltip"
