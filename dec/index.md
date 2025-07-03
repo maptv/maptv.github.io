@@ -2085,8 +2085,7 @@ a second.
 
 A [normal resting
 heart❤️rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=heart%20rate%20is-,60–100%20bpm,-.%20An%20ultra%2Dtrained)
-is between 100 and
-166.<span style="text-decoration-line:overline;">6</span>
+is between 100 and 166.<span class="vinculum">6</span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</span> per <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="millidays">md</span>
@@ -2107,7 +2106,7 @@ $\text b^{-1}$, $1\over\text b$, or 1
 data-bs-toggle="tooltip" data-bs-title="beat">b</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="inverse-of-b">iob</span>), which is
-<span class="colorIob">1.15<span style="text-decoration-line:overline;">740</span></span>
+<span class="colorIob">1.15<span class="vinculum">740</span></span>
 times more frequent than a
 [Hertz](https://en.wikipedia.org/wiki/Hertz#:~:text=one%20event%20(or%20cycle)).
 
@@ -2743,10 +2742,10 @@ data-bs-toggle="tooltip"
 data-bs-title="tenths of a meter">decimeters</span> (<span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="square decimeters">dm<sup>2</sup></span>),
-1.<span style="text-decoration-line:overline;">7</span> Dec square
-feet🦶, or 256 Dec square inches. A square <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="ten zem">decazem</span>
-(<span class="tool" data-bs-toggle="tooltip"
+1.<span class="vinculum">7</span> Dec square feet🦶, or 256 Dec square
+inches. A square <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="ten zem">decazem</span> (<span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="square decazem">Dz<sup>2</sup></span>) is 1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16

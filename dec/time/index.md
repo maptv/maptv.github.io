@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2025+123
+2025+124
 
 - [Fractional day time](#fdt)
   - [Ticking analog clocks](#tac)
@@ -849,31 +849,56 @@ day = unix ÷ 86400 mod 1
 
 ## Hour minute second
 
-We can also create a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> by summing the components of an
+UNIX time is synchronized with the Zone <span class="color0">0</span>
+Dec time zone. We can obtain a Zone <span class="color0">0</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet after converting
-them to either days or <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span>. Unlike UNIX time,
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplets may include [leap
+data-bs-title="time-of-day">tod</span> from an <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hour-minute-second">hms</span>
+triplet by removing its [leap
 seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment)
-and a [Coordinated Universal
-Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span>) [time
+and <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> [time
 zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time)
-[offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place).
-Dec does not acknowledge the existence of leap seconds and is compatible
-with only two <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> offsets:
-[<span class="color0">+00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
-and
-[<span class="color5">+12</span>](https://en.wikipedia.org/wiki/UTC%2B12:00).
+[offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place),
+converting its components to either days or <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</span>, and then summing the
+converted components.
 
 $$\text{deciday} = \frac{\text{hour}}{2.4} + \frac{\text{minute}}{144} + \frac{\text{second}}{8640}$$
 
 $$\text{day} = \frac{\text{hour}}{24} + \frac{\text{minute}}{1440} + \frac{\text{second}}{86400}$$
+
+does not include [leap
+seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment)
+or a [Coordinated Universal
+Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span>) [time
+zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time)
+[offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
+and
+
+than
+[<span class="color0">+00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+and
+[<span class="color5">+12</span>](https://en.wikipedia.org/wiki/UTC%2B12:00)
+will not match the time in any of the ten Dec time zones. We can create
+a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time-of-day">tod</span> by summing the components of an
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour-minute-second">hms</span> triplet after
+
+that were added a [Coordinated Universal
+Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span>)
+[<span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+time zone. A <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour-minute-second">hms</span> triplet that includes
+[leap
+seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment)
+or a
 
 ## Time zone offset
 
@@ -906,7 +931,7 @@ data-bs-toggle="tooltip" data-bs-title="a tenth of a day">deciday</span>
 time difference *Δ* between a <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time zone and its
-nearest Dec time zone, convert the offset of the <span class="tool"
+closest Dec time zone, convert the offset of the <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time zone to
 <span class="tool" data-bs-toggle="tooltip"
