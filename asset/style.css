@@ -1,5 +1,10 @@
 /* css styles */
 
+@font-face {
+    font-family: Ewka;
+    src: url("ewka.ttf") format("truetype");
+}
+
 .centered {
   text-align: center;
 }
@@ -89,6 +94,7 @@ div#quarto-search {
 code {
   padding: 0px;
   font-size: 1.15rem;
+  font-family: Monaco Consolas "Courier New" Courier monospace;
 }
 
 #quarto-header > nav.navbar.navbar-expand-lg > div > div.navbar-brand-container.mx-auto > i.bi.bi-calendar {

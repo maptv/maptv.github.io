@@ -5,8 +5,6 @@ typography:
   fonts:
     - family: Tahoma
       source: google
-    - family: "Source Code Pro"
-      source: google
     - family: Ewka
       source: file
       files:
@@ -14,4 +12,6 @@ typography:
         - path: ewka.ttf
   base: Tahoma
   headings: Tahoma
-  monospace: "Source Code Pro"
+  monospace: Ewka
+  monospace-inline: Ewka
+  monospace-block: Ewka

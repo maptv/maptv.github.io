@@ -142,6 +142,7 @@ format:
     pagetitle: Martin Laptev
     page-layout: full
     mainfont: Tahoma, Palatino, Verdana, Times New Roman
+    monofont: Monaco, Consolas, Courier New
     toc: true
     respect-user-color-scheme: true
     theme:

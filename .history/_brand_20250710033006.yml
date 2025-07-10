@@ -5,7 +5,7 @@ typography:
   fonts:
     - family: Tahoma
       source: google
-    - family: "Source Code Pro"
+    - family:
       source: google
     - family: Ewka
       source: file
