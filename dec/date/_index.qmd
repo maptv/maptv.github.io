@@ -318,10 +318,6 @@ p:has(.radiotitle) {
 h4.anchored {
   margin: 8px 0px 8px 0px;
 }
-#mermaid-1 {
-  margin-top: 15px;
-  margin-bottom: -20px;
-}
 div.cell-output-display:has(svg#datenav-mermaid.flowchart.mermaid-js) {
   margin-top: -5px;
   margin-bottom: -5px;
