@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+124
+2025+100
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -36,7 +36,9 @@ Martin Laptev
 
 <div id="firstnav">
 
-<div id="decnav">
+<div>
+
+<figure class=''>
 
 <div>
 
@@ -44,6 +46,8 @@ Martin Laptev
 style="width:8.64in;height:0.98in" />
 
 </div>
+
+</figure>
 
 </div>
 

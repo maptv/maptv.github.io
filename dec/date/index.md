@@ -16,7 +16,9 @@ Martin Laptev
 
 <div id="datenav">
 
-<div id="decnav">
+<div>
+
+<figure class=''>
 
 <div>
 
@@ -24,6 +26,8 @@ Martin Laptev
 style="width:8.64in;height:0.98in" />
 
 </div>
+
+</figure>
 
 </div>
 
@@ -529,7 +533,7 @@ data-bs-title="day-of-week">dow</span> of
 data-bs-title="day-of-week">dow</span> equation:
 (<span class="cyan">${xmasDote}</span> + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-7 = <span class="lightgreen">${xmasDotw}</span>. In contrast to the
+7 = <span class="lightgreen">${xmasDotw}</span>. As opposed to the
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-week">dow</span>, we can find the
 <span class="cyan under tool" data-bs-toggle="tooltip"
@@ -555,9 +559,8 @@ data-bs-title="day-of-year">doy</span>: <span class="cyan">299</span>.
 Christmas🎄is a anchored⚓️holiday because it occurs on the same
 <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> every
-<span class="yellow">year</span>. Unlike anchored⚓️holidays, Gregorian
-calendar🗓️floating🛟holidays happen on a different
-<span class="cyan under tool" data-bs-toggle="tooltip"
+<span class="yellow">year</span>. In contrast, floating🛟holidays happen
+on a different <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-year">doy</span> every
 <span class="yellow">year</span> so that their
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
