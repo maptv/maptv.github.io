@@ -4,7 +4,7 @@ Martin Laptev
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
-- [Year of era (yoe)](#yoe)
+- [Epochal year aggregate (eya)](#eya)
 - [Day of week (dow)](#dow)
 - [Week of year (woy)](#woy)
 - [Day of dek (dod)](#dod)
@@ -486,14 +486,17 @@ data-bs-toggle="tooltip" data-bs-title="day-of-era">doe</span>).
 # Day of era (doe)
 
 A <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> is essentially a [Julian
-day](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20continuous%20count%20of%20days%20from%20the%20beginning%20of%20the%20Julian%20period)
-with a different
+data-bs-title="day-of-era">doe</span> is essentially a [Julian day
+number](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20continuous%20count%20of%20days%20from%20the%20beginning%20of%20the%20Julian%20period)
+(<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="Julian day number">JDN</span>) with a different
 [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
-We can convert a Julian day in a <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-era">doe</span> by
-subtracting <span class="cyan">1721119.5</span> days to shift the epoch
-from <span class="under yellow" data-bs-toggle="tooltip"
+We can convert a <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="Julian day number">JDN</span> to a
+<span class="cyan under tool" data-bs-toggle="tooltip"
+data-bs-title="day-of-era">doe</span> by subtracting
+<span class="cyan">1721119.5</span> days to shift the epoch from
+<span class="under yellow" data-bs-toggle="tooltip"
 data-bs-title="4714 BC">-4713</span>+<span class="under cyan"
 data-bs-toggle="tooltip"
 data-bs-title="November 24">268</span>.<span class="under cyan"
@@ -651,21 +654,21 @@ $$\text{doe} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text
 
 </div>
 
-The Dec date equations, the
+The Dec date equations are the
 [inverse](https://en.wikipedia.org/wiki/Inverse#:~:text=Inverse%20function%2C-,a%20function%20that%20%22reverses%22%20another%20function,-Generalized%20inverse%2C%20a)🔁of
 the Dec <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> equations above⬆️, are based on
-Howard Hinnant’s <a
+data-bs-title="day-of-era">doe</span> equations above⬆️, based on Howard
+Hinnant’s <a
 href="https://howardhinnant.github.io/date_algorithms.html#civil_from_days"
-class="mono"><code>civil_from_days</code></a> algorithm and are useful
-for obtaining Dec dates from <span class="cyan under tool"
+class="mono"><code>civil_from_days</code></a> algorithm, and useful for
+obtaining Dec dates from <span class="cyan under tool"
 data-bs-toggle="tooltip" data-bs-title="days-of-era">does</span> and
 <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-era">doe</span> analogs like [Unix
 timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970)
-and [Julian
-days](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20continuous%20count%20of%20days%20from%20the%20beginning%20of%20the%20Julian%20period).
-Besides the <span class="under tool" data-bs-toggle="tooltip"
+and <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="Julian day numbers">JDNs</span>. Besides the
+<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="cycle-of-era">coe</span> and
 <span class="yellow under tool" data-bs-toggle="tooltip"
 data-bs-title="year-of-cycle">yoc</span>, the Dec date equations also
@@ -673,9 +676,7 @@ use the <span class="cyan">day-of-cycle</span>
 (<span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-cycle">doc</span>) of a
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> to produce the
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span>’s corresponding
+data-bs-title="day-of-era">doe</span> to produce its corresponding
 <span class="yellow">year</span> and <span class="cyan under tool"
 data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>:
 
@@ -702,7 +703,7 @@ This allows Dec to handle Dec dates with a non-integer
 outside the typical range of <span class="cyan">0</span> ≤
 <span class="cyan">day</span> ≤ <span class="cyan">365</span>.
 
-# Year of era (yoe)
+# Epochal year aggregate (eya)
 
 A <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day-of-era">doe</span> is essentially a Dec date with a
@@ -710,17 +711,18 @@ data-bs-title="day-of-era">doe</span> is essentially a Dec date with a
 <span class="yellow">0</span> and a <span class="cyan">day</span> that
 is
 [unbounded](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded).
-Similarly, a Dec <span class="yellow">year-of-era</span>
+Similarly, a Dec <span class="yellow">epochal-year-aggregate</span>
 (<span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="year-of-era">yoe</span>) is basically a Dec with a
-non-integer <span class="yellow">year</span> and a
+data-bs-title="epochal-year-aggregate">eya</span>) is basically a Dec
+date with a non-integer <span class="yellow">year</span> and a
 <span class="cyan">day</span> permanently set to
 <span class="cyan">0</span>. Both <span class="cyan under tool"
 data-bs-toggle="tooltip" data-bs-title="days-of-era">does</span> and
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="years-of-era">yoes</span> allow us to represent a date as
-a single number and obtain the difference between two dates, either in
-days (<span class="cyan">d<sub>M</sub></span> -
+data-bs-title="sums-of-years">soys</span> allow us to represent a date
+as a single number and obtain the difference between two dates, either
+in <span class="cyan">days</span>
+(<span class="cyan">d<sub>M</sub></span> –
 <span class="cyan">d<sub>S</sub></span>) or
 <span class="yellow">years</span>
 (<span class="yellow">y<sub>M</sub></span> –
@@ -728,18 +730,19 @@ days (<span class="cyan">d<sub>M</sub></span> -
 
 Compared to <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="days-of-era">does</span>, <span class="yellow under tool"
-data-bs-toggle="tooltip" data-bs-title="years-of-era">yoes</span> are
+data-bs-toggle="tooltip" data-bs-title="sums-of-years">soys</span> are
 easier to turn into Dec dates. We can convert dates to
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="years-of-era">yoes</span> and vice versa with the Dec
+data-bs-title="sums-of-years">soys</span> and vice versa with the Dec
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="year-of-era">yoe</span> equation:
+data-bs-title="epochal-year-aggregate">eya</span> equation:
 <span class="yellow">y</span> = ⌊<span class="yellow">y</span>⌋ +
 <span class="cyan">d</span> ÷ <span class="orange">n</span>. In the Dec
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="year-of-era">yoe</span> equation,
+data-bs-title="epochal-year-aggregate">eya</span> equation,
 <span class="yellow">y</span> is the <span class="yellow under tool"
-data-bs-toggle="tooltip" data-bs-title="year-of-era">yoe</span>,
+data-bs-toggle="tooltip"
+data-bs-title="epochal-year-aggregate">eya</span>,
 ⌊<span class="yellow">y</span>⌋ + <span class="cyan">d</span> is the Dec
 date, ⌊<span class="yellow">y</span>⌋ is the
 <span class="yellow">year</span>, <span class="cyan">d</span> is the
@@ -748,7 +751,7 @@ data-bs-title="day-of-year">doy</span>, and
 <span class="orange">n</span> is the number of days in
 <span class="yellow">Year</span> ⌊<span class="yellow">y</span>⌋. The
 current <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="year-of-era">yoe</span> equation values are
+data-bs-title="epochal-year-aggregate">eya</span> equation values are
 <span class="yellow">${fullfracYear}</span> =
 <span class="yellow">${decYear}</span> +
 <span class="cyan">${decDoty}</span> ÷
@@ -780,7 +783,7 @@ equations, <span class="orange">n</span> is needed to convert between
 dates. The
 <span class="yellow">year</span>-<span class="pink">day</span> version
 of the Dec <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="year-of-era">yoe</span> equation is
+data-bs-title="epochal-year-aggregate">eya</span> equation is
 <span class="yellow">y</span> = ⌊<span class="yellow">y</span>⌋ + 1 +
 (<span class="cyan">d</span> – <span class="orange">n</span>) ÷
 <span class="orange">n</span>. In essence,
@@ -812,10 +815,10 @@ and <span class="cyan">d</span>-<span class="orange">n</span> is a
 index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array).
 
 The <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="year-of-era">yoe</span> equation can be rearranged into
-the Dec <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> equation,
-<span class="cyan">d</span> = ⌊<span class="yellow">y</span>
+data-bs-title="epochal-year-aggregate">eya</span> equation can be
+rearranged into the Dec <span class="cyan under tool"
+data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>
+equation, <span class="cyan">d</span> = ⌊<span class="yellow">y</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × <span class="orange">n</span>⌋, where <span class="yellow">y</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
@@ -836,11 +839,12 @@ a <span class="yellow">year</span> and thus can apply to any
 
 Anchored⚓️dates are
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
-math expressions. Instead of simplifying a anchored⚓️date into a
+math expressions. Instead of simplifying a anchored⚓️date into an
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="year-of-era">yoe</span>, we can do the opposite and
-expand it to display additional information, such as the number of days
-in between it and another date. An expanded version of the current date,
+data-bs-title="epochal-year-aggregate">eya</span>, we can do the
+opposite and expand it to display additional information, such as the
+number of days in between it and another date. An expanded version of
+the current date,
 <span class="yellow">${decYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="violet">${Math.abs(xmasDiff)}</span>,
 can tell us that <span class="violet">${Math.abs(xmasDiff)}</span> days
 ${xmasDiffSince} <span class="cyan under tool" data-bs-toggle="tooltip"
@@ -861,9 +865,9 @@ could rewrite the expanded date above⬆️as a Dec span🌈:
 <span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>=<span class="yellow">${decYear}</span>+<span class="cyan">299</span>${xmasDiffSign}<span class="violet">${Math.abs(xmasDiff)}</span>.
 Unlike expanded dates, Dec spans🌈represent time intervals instead of
 individual dates and are structured like the minuend equation as opposed
-to a math expression that can be simplified to a
+to a math expression that can be simplified to an
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="year-of-era">yoe</span>.
+data-bs-title="epochal-year-aggregate">eya</span>.
 
 Whereas expanded dates have a set structure that does not change, Dec
 spans🌈can omit the subtrahend,
