@@ -735,10 +735,10 @@ its top row with the
 and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
 directions. Together, the range🎚️inputs underneath the hue bar form a
-Hue Saturation Lightness (<span class="tool" data-bs-toggle="tooltip"
+“Hue Saturation Lightness” (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Hue Saturation Lightness">HSL</span>) triplet. Like
-<span class="color0">Red</span> <span class="color4">Green</span>
-<span class="color7">Blue</span>
+“<span class="color0">Red</span> <span class="color4">Green</span>
+<span class="color7">Blue</span>”
 ([RGB](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model))
 or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
@@ -990,38 +990,38 @@ ${decYearOffHsl}<span style="font-family:monospace;">+</span>${decDateOffHsl}
 as the date and
 ${decTimeOffHsl0}<span style="font-family:monospace;">${decSignOff}</span>${decOffsetHsl1}
 as the time. We can apply color🎨labels🏷️to each Dec date and time
-component. Dec dates consist of a year and a day-of-year
+component. Dec dates consist of a year and a “day of year”
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>), whereas Dec times are composed
-of a time-of-day (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span>) and a time zone.
+data-bs-title="day of year">doy</span>), whereas Dec times are composed
+of a “time of day” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</span>) and a time zone.
 
 ## Day of dek (dod)
 
 Each <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-year">doy</span> also has two components. The
+data-bs-title="days of year">doy</span> also has two components. The
 first two digits of a three-digit <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-year">doy</span>
+data-bs-toggle="tooltip" data-bs-title="days of year">doy</span>
 represent a group of ten days called a <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="group of ten days">decaday</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="group of ten days">dek</span>).
 The last digit of a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-year">doy</span> is the day-of-dek
+data-bs-title="days of year">doy</span> is the “day of dek”
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span>). In Dec, <span class="tool"
+data-bs-title="day of dek">dod</span>). In Dec, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="groups of ten days">deks</span>
 are used instead of months and weeks. Likewise, Dec uses
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-dek">dods</span> in lieu of days-of-month
+data-bs-title="days of dek">dods</span> in lieu of days of month
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-month">doms</span>) and days-of-week
+data-bs-title="days of month">doms</span>) and days of week
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-week">dows</span>). In Zone ${decOffsetHsl2}, it
+data-bs-title="days of week">dows</span>). In Zone ${decOffsetHsl2}, it
 is currently <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">Dek</span> ${decDekOffHsl} and
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Day-of-dek">Dod</span> ${decDodOffHsl}.
+data-bs-title="Day of dek">Dod</span> ${decDodOffHsl}.
 
 ## Millenium Year Day
 
@@ -1035,7 +1035,7 @@ data-bs-toggle="tooltip" data-bs-title="millimillennia">mk</span>) and
 has Year 500 (<span class="color5">500</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="millimillennia">mk</span>) as
 its midpoint. <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">Doy</span> color🎨labels🏷️are derived from
+data-bs-title="day of year">Doy</span> color🎨labels🏷️are derived from
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a year">milliyears</span>
 (<span class="tool" data-bs-toggle="tooltip"
@@ -2109,11 +2109,11 @@ marking](https://en.wikipedia.org/wiki/Tempo#Approximately_from_the_slowest_to_t
 A Dec clock⏰ticks at a rate of 100 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="beats per milliday">BPM</span>,
 $\text b^{-1}$, $1\over\text b$, or 1
-[inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number)-of-<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="beat">b</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse-of-b">iob</span>), which is
-<span class="colorIob">1.15<span class="vinculum">740</span></span>
+[inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number)
+of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beat">b</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="inverse of b">iob</span>), which
+is <span class="colorIob">1.15<span class="vinculum">740</span></span>
 times more frequent than a
 [Hertz](https://en.wikipedia.org/wiki/Hertz#:~:text=one%20event%20(or%20cycle)).
 
@@ -2122,7 +2122,7 @@ times more frequent than a
 We can divide one by the
 sound🔊[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
 selected by the “<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse-of-b">Iobs</span>” range🎚️input below to get its
+data-bs-title="inverse of b">Iobs</span>” range🎚️input below to get its
 [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency),
 1 ÷ ${parseFloat((iobs / 1000).toFixed(3))} <span class="tool"
 data-bs-toggle="tooltip"
@@ -2140,7 +2140,7 @@ data-bs-title="millionths of an omegar">microomegars</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegars">$\micro\text v$</span>) ÷ ${iobs}
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverses-of-b">iobs</span> (<span class="tool"
+data-bs-title="inverses of b">iobs</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="iobs">i</span>) =
 ${parseFloat((735048 / iobs).toFixed(2))} <span class="tool"
 data-bs-toggle="tooltip"
@@ -2183,11 +2183,11 @@ data-bs-title="hexadecimal">hex</span> triplets, and <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees">h°</span> in
 the table below are used by Dec to label🏷️groups of ten, like
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-dek">dods</span>, “[top of the <span class="tool"
+data-bs-title="days of dek">dods</span>, “[top of the <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</span>](https://en.wiktionary.org/wiki/top_of_the_hour)”
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">tods</span>, and time zones. In addition to
+data-bs-title="times of day">tods</span>, and time zones. In addition to
 colors🎨, Dec also labels🏷️groups of ten with the [musical
 notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=Chromatic%20scale,-note%20naming%20conventions)
 that constitute the Dec
@@ -2922,7 +2922,7 @@ heavier.
 Dec color🎨labels🏷️can convey an impression of many different kinds of
 values at a glance. Moreover, color🎨labels🏷️help avoid confusion when
 dealing with different metric prefixes. The current <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> in Zone
+data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> in Zone
 ${decOffsetHsl3} can be expressed as ${decTimeOffHsl1}
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</span>, ${decTimeOffHsl2} days, or

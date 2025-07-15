@@ -87,15 +87,14 @@ data-bs-title="March 1">Day 0</span> of the subsequent Dec
 rotates the plots by a quarter turn, interchanging the x- and y-axes.
 
 The axis labels🏷️of the plots imply that a <span class="cyan">dek</span>
-and a <span class="cyan">day-of-dek</span>
+and a “<span class="cyan">day of dek</span>”
 (<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span>) are analogous to a
-<span class="darkgreen">week</span> and a
-<span class="lightgreen">day-of-week</span>
-(<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>). Indeed,
-<span class="cyan">deks</span> are groups of ten days that serve as the
-Dec analog of both <span class="darkgreen">weeks</span> and
+data-bs-title="day of dek">dod</span>) are analogous to a
+<span class="darkgreen">week</span> and a “<span class="lightgreen">day
+of week</span>” (<span class="lightgreen under tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>).
+Indeed, <span class="cyan">deks</span> are groups of ten days that serve
+as the Dec analog of both <span class="darkgreen">weeks</span> and
 <span class="azul">months</span>. With the exception of
 <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="February 29">Day 365</span> in leap
@@ -104,7 +103,7 @@ data-bs-title="February 29">Day 365</span> in leap
 <span class="cyan">deks</span> and <span class="azul">months</span>, but
 not the same <span class="darkgreen">weeks</span>, because the
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> of the first day of the
+data-bs-title="day of week">dow</span> of the first day of the
 <span class="yellow">year</span> varies.
 
 <div id="calplots">
@@ -369,14 +368,14 @@ viewof dotwInput = Inputs.radio([
 
 The [radio](https://observablehq.com/@observablehq/input-radio)🔘input
 beneath the plots selects the <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> for
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> for
 <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="January 1">Day 306</span>, the first day of the Gregorian
 calendar🗓️<span class="yellow">year</span>. Changing the
 <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="January 1">Day 306</span>
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> shifts every date in the
+data-bs-title="day of week">dow</span> shifts every date in the
 Gregorian calendar🗓️by one to six days depending on the number of days
 that <span class="darkgreen">Week 0</span>, the first
 <span class="darkgreen">week</span> of the
@@ -387,12 +386,12 @@ that <span class="darkgreen">Week 0</span>, the first
 Although <span class="darkgreen">weeks</span> determine the shape of the
 Gregorian calendar🗓️plot, each of its
 [cell](https://observablehq.com/plot/marks/cell) values is a
-<span class="lightblue">day-of-month</span>
+“<span class="lightblue">day of month</span>”
 (<span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span>). To uniquely identify🪪a
+data-bs-title="day of month">dom</span>). To uniquely identify🪪a
 specific day in a <span class="yellow">year</span>, a
 <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span> must be paired with the
+data-bs-title="day of month">dom</span> must be paired with the
 <span class="azul">month</span> to which it belongs. Both plots use
 three-letter abbreviations and the same
 [color🎨scheme](https://observablehq.com/@d3/color-schemes) to
@@ -402,48 +401,48 @@ each other by two <span class="azul">months</span>.
 # Day of year (doy)
 
 A <span class="cyan">dek</span> and <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-dek">dod</span> can be
-combined into a single number called a
-<span class="cyan">day-of-year</span> (<span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>). Every
-cell value in the Decalendar plot is a <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>. The
+data-bs-toggle="tooltip" data-bs-title="day of dek">dod</span> can be
+combined into a single number called a “<span class="cyan">day of
+year</span>” (<span class="cyan under tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span>). Every cell value in the
+Decalendar plot is a <span class="cyan under tool"
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>. The
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> chosen by the range🎚️inputs to be
+data-bs-title="day of year">doy</span> chosen by the range🎚️inputs to be
 highlighted with a red🟥background in the plots is
 <span class="cyan">${dotyInput}</span>. You can use the range🎚️inputs to
 convert a <span class="azul">month</span> and a
 <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span> into a
+data-bs-title="day of month">dom</span> into a
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>. Try converting a special date
+data-bs-title="day of year">doy</span>. Try converting a special date
 such as your birthday🎂 or anniversary💍!
 
 There are two range🎚️inputs labeled🏷️as “day of year” because every
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> can be expressed as both a
+data-bs-title="day of year">doy</span> can be expressed as both a
 positive and a negative number. The typical range for
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-year">doys</span> is 0 to
+data-bs-title="days of year">doys</span> is 0 to
 <span class="orange">n</span>-1, but negative
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-year">doys</span> typically range from
+data-bs-title="days of year">doys</span> typically range from
 -<span class="orange">n</span> to -1, where
 <span class="orange">n</span> is the number of days in the
 <span class="yellow">year</span>, either <span class="orange">365</span>
 or <span class="orange">366</span>. A <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> outside
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> outside
 these
 [bounds](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20upper%20bound%20or%20majorant%5B1%5D%20of%20a%20subset%20S%20of%20some%20preordered%20set%20(K%2C%20%E2%89%A4)%20is%20an%20element%20of%20K%20that%20is%20greater%20than%20or%20equal%20to%20every%20element%20of%20S.%5B2%5D%5B3%5D%20Dually%2C%20a%20lower%20bound%20or%20minorant%20of%20S%20is%20defined%20to%20be%20an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S)
 represents a day in a previous or subsequent
 <span class="yellow">year</span>.
 
 The current <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> can be expressed as
+data-bs-title="day of year">doy</span> can be expressed as
 <span class="cyan">${decDoty}</span> or
 -<span class="pink">${Tminus}</span>. The difference between any
 positive <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> and its negative equivalent is
+data-bs-title="day of year">doy</span> and its negative equivalent is
 <span class="orange">n</span>: <span class="cyan">${decDoty}</span> –
 -<span class="pink">${Tminus}</span> =
 <span class="orange">${nDaysInYear}</span>. We obtain the current
@@ -451,25 +450,25 @@ data-bs-title="day-of-year">doy</span> and its negative equivalent is
 equation, <span class="cyan">${decDek}</span> =
 ⌊<span class="cyan">${decDoty}</span> ÷ 10⌋, and the current
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span> number via the
+data-bs-title="day of dek">dod</span> number via the
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span> equation:
+data-bs-title="day of dek">dod</span> equation:
 <span class="cyan">${decDotd}</span> =
 <span class="cyan">${decDoty}</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 10. To combine a <span class="cyan">dek</span> and
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span>, we multiply the
+data-bs-title="day of dek">dod</span>, we multiply the
 <span class="cyan">dek</span> by ten and add the
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span>:
+data-bs-title="day of dek">dod</span>:
 <span class="cyan">${decDoty}</span> =
 <span class="cyan">${decDek}</span> × 10 +
 <span class="cyan">${decDotd}</span>.
 
 Unlike <span class="darkgreen">weeks</span> in the Gregorian calendar🗓️,
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-year">doys</span> and
+data-bs-title="days of year">doys</span> and
 <span class="cyan">deks</span> do not need to continue in an infinite
 unbroken sequence. The last day of the <span class="yellow">year</span>,
 Day -1, is always followed by <span class="cyan under tool"
@@ -477,16 +476,16 @@ data-bs-toggle="tooltip" data-bs-title="March 1">Day 0</span>,
 regardless of the last 4 or 5 days of <span class="cyan">Dek</span> 36
 that extend past the end of the <span class="yellow">year</span>. If we
 want to track days seamlessly across <span class="yellow">years</span>,
-we can use a continuous count of days called the
-<span class="cyan">day-of-<a
+we can use a continuous count of days called the “<span class="cyan">day
+of <a
 href="https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar"
-class="darklink">era</a></span> (<span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-era">doe</span>).
+class="darklink">era</a></span>” (<span class="cyan under tool"
+data-bs-toggle="tooltip" data-bs-title="day of era">doe</span>).
 
 # Day of era (doe)
 
 A <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> is essentially a [Julian day
+data-bs-title="day of era">doe</span> is essentially a [Julian day
 number](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20continuous%20count%20of%20days%20from%20the%20beginning%20of%20the%20Julian%20period)
 (<span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="Julian day number">JDN</span>) with a different
@@ -494,7 +493,7 @@ data-bs-title="Julian day number">JDN</span>) with a different
 We can convert a <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="Julian day number">JDN</span> to a
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> by subtracting
+data-bs-title="day of era">doe</span> by subtracting
 <span class="cyan">1721119.5</span> days to shift the epoch from
 <span class="under yellow" data-bs-toggle="tooltip"
 data-bs-title="4714 BC">-4713</span>+<span class="under cyan"
@@ -509,7 +508,7 @@ data-bs-toggle="tooltip" data-bs-title="midnight">0</span>. To turn a
 [UNIX
 timestamp](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970)
 into a <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span>, we divide by
+data-bs-title="day of era">doe</span>, we divide by
 [86400](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day)
 to convert <span class="purple">seconds</span> to days and then add
 <span class="cyan">719468.0</span> to account for the fact that the
@@ -522,31 +521,31 @@ data-bs-title="January 1">306</span>.<span class="under cyan"
 data-bs-toggle="tooltip" data-bs-title="midnight">0</span>.
 
 Dec uses <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-era">does</span> for calculations, such as
+data-bs-title="days of era">does</span> for calculations, such as
 finding the
 [POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems)
 [zero-based <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday))
+data-bs-title="day of week">dow</span>](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday))
 of a given date. This <span class="yellow">year</span>, the
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> of
+data-bs-title="day of week">dow</span> of
 [Christmas](https://en.wikipedia.org/wiki/Christmas#:~:text=annual%20festival%20commemorating%20the%20birth%20of%20Jesus%20Christ)🎄is
 <span class="lightgreen">${xmasDotw}</span> according to the Dec
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> equation:
+data-bs-title="day of week">dow</span> equation:
 (<span class="cyan">${xmasDote}</span> + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7 = <span class="lightgreen">${xmasDotw}</span>. As opposed to the
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>, we can find the
+data-bs-title="day of week">dow</span>, we can find the
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span> of Christmas🎄without any
+data-bs-title="day of dek">dod</span> of Christmas🎄without any
 calculation because its <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-dek">dod</span>,
+data-bs-toggle="tooltip" data-bs-title="day of dek">dod</span>,
 <span class="cyan">9</span>, is simply the last digit of the [integer
 part](https://en.wikipedia.org/wiki/Decimal#:~:text=the%20integer%20written%20to%20the%20left%20of%20the%20decimal)
 of its <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>: <span class="cyan">299</span>.
+data-bs-title="day of year">doy</span>: <span class="cyan">299</span>.
 
 <div>
 
@@ -555,21 +554,21 @@ data-bs-title="day-of-year">doy</span>: <span class="cyan">299</span>.
 > [Dek the
 > halls](https://en.wikipedia.org/wiki/Deck_the_Halls#:~:text=a%20traditional%20Christmas%20carol.)
 > with <span class="lightgreen under tool" data-bs-toggle="tooltip"
-> data-bs-title="days-of-week">dows</span> of holly! Fa + la × 8!
+> data-bs-title="days of week">dows</span> of holly! Fa + la × 8!
 
 </div>
 
 Christmas🎄is a anchored⚓️holiday because it occurs on the same
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> every
+data-bs-title="day of year">doy</span> every
 <span class="yellow">year</span>. In contrast, floating🛟holidays happen
 on a different <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> every
+data-bs-title="day of year">doy</span> every
 <span class="yellow">year</span> so that their
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> can remain constant. Dec uses the
+data-bs-title="day of week">dow</span> can remain constant. Dec uses the
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>
+data-bs-title="day of week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
 equation, <span class="lightgreen">w<sub>Δ</sub></span> =
 (<span class="lightgreen">w<sub>M</sub></span> –
@@ -579,18 +578,18 @@ equation, <span class="lightgreen">w<sub>Δ</sub></span> =
 corresponds to the given <span class="yellow">year</span>.
 
 In the <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>
+data-bs-title="day of week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
 equation, <span class="lightgreen">w<sub>M</sub></span> is the
 [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted)
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> destination and
+data-bs-title="day of week">dow</span> destination and
 <span class="lightgreen">w<sub>S</sub></span> is the
 [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted)
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> starting point. To get the
+data-bs-title="day of week">dow</span> starting point. To get the
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> of the first
+data-bs-title="day of year">doy</span> of the first
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
 data-bs-title="Thursday">Dow 4</span> after
 <span class="cyan under tool" data-bs-toggle="tooltip"
@@ -600,12 +599,12 @@ the United States and Brazil, we plug <span class="lightgreen">4</span>
 as <span class="lightgreen">w<sub>M</sub></span> and
 <span class="lightgreen">${day266dotw}</span>, the
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> of <span class="cyan under tool"
+data-bs-title="day of week">dow</span> of <span class="cyan under tool"
 data-bs-toggle="tooltip" data-bs-title="November 22">Day 266</span> this
 <span class="yellow">year</span>, as
 <span class="lightgreen">w<sub>S</sub></span> into the
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>
+data-bs-title="day of week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
 equation, <span class="lightgreen">${day266dotwDiff}</span> =
 (<span class="lightgreen">4</span> –
@@ -617,13 +616,13 @@ equation, <span class="lightgreen">${day266dotwDiff}</span> =
 <span class="cyan">266</span>.
 
 Apart from the <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> and
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> and
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>
+data-bs-title="day of week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
 equations, the Thanksgiving🦃calculation above⬆️relies on the Dec
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> equation, which is based on the <a
+data-bs-title="day of era">doe</span> equation, which is based on the <a
 href="https://howardhinnant.github.io/date_algorithms.html#days_from_civil"
 class="mono under"><code>days_from_civil</code></a> algorithm created by
 [Howard Hinnant](https://howardhinnant.github.io) and described in his
@@ -631,17 +630,16 @@ manuscript entitled [<span class="mono under">`chrono`</span>-Compatible
 Low-Level Date
 Algorithms](https://howardhinnant.github.io/date_algorithms.html), to
 convert the
-[cycle](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years)-of-era
-(<span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="cycle-of-era">coe</span>),
-<span class="yellow">year-of-cycle</span>
-(<span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="year-of-cycle">yoc</span>), and
+[cycle](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years)
+of era (<span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="cycle of era">coe</span>), <span class="yellow">year of
+cycle</span> (<span class="yellow under tool" data-bs-toggle="tooltip"
+data-bs-title="year of cycle">yoc</span>), and
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> of <span class="cyan under tool"
+data-bs-title="day of year">doy</span> of <span class="cyan under tool"
 data-bs-toggle="tooltip" data-bs-title="November 22">Day 266</span> into
 its <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span>:
+data-bs-title="day of era">doe</span>:
 
 $$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{year}&{\text{if } \text{year} \geq 0;}\\\text{year}-399&{\text{otherwise.}}\end{cases}}{400} \Biggr \rfloor$$
 
@@ -657,28 +655,28 @@ $$\text{doe} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text
 The Dec date equations are the
 [inverse](https://en.wikipedia.org/wiki/Inverse#:~:text=Inverse%20function%2C-,a%20function%20that%20%22reverses%22%20another%20function,-Generalized%20inverse%2C%20a)🔁of
 the Dec <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> equations above⬆️, based on Howard
+data-bs-title="day of era">doe</span> equations above⬆️, based on Howard
 Hinnant’s <a
 href="https://howardhinnant.github.io/date_algorithms.html#civil_from_days"
 class="mono"><code>civil_from_days</code></a> algorithm, and useful for
 obtaining Dec dates from <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-era">does</span> and
+data-bs-toggle="tooltip" data-bs-title="days of era">does</span> and
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> analogs like [Unix
+data-bs-title="day of era">doe</span> analogs like [Unix
 timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970)
 and <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="Julian day numbers">JDNs</span>. Besides the
 <span class="under tool" data-bs-toggle="tooltip"
-data-bs-title="cycle-of-era">coe</span> and
+data-bs-title="cycle of era">coe</span> and
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="year-of-cycle">yoc</span>, the Dec date equations also
-use the <span class="cyan">day-of-cycle</span>
+data-bs-title="year of cycle">yoc</span>, the Dec date equations also
+use the “<span class="cyan">day of cycle</span>”
 (<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-cycle">doc</span>) of a
+data-bs-title="day of cycle">doc</span>) of a
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> to produce its corresponding
+data-bs-title="day of era">doe</span> to produce its corresponding
 <span class="yellow">year</span> and <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>:
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>:
 
 $$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{doe}&{\text{if } \text{doe} \geq 0;}\\\text{doe}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$
 
@@ -695,9 +693,9 @@ standard <span class="yellow">year</span>+<span class="cyan">day</span>
 format. Therefore, we can standardize Dec dates by performing a
 [round-trip](https://en.wikipedia.org/wiki/Round-trip_format_conversion#:~:text=converting%20from%20any%20data%20representation%20and%20back%20again)
 date-to-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span>-to-date conversion using the Dec
+data-bs-title="day of era">doe</span>-to-date conversion using the Dec
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> and date equations consecutively.
+data-bs-title="day of era">doe</span> and date equations consecutively.
 This allows Dec to handle Dec dates with a non-integer
 <span class="yellow">year</span> and a <span class="cyan">day</span>
 outside the typical range of <span class="cyan">0</span> ≤
@@ -706,20 +704,20 @@ outside the typical range of <span class="cyan">0</span> ≤
 # Epochal year aggregate (eya)
 
 A <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> is essentially a Dec date with a
+data-bs-title="day of era">doe</span> is essentially a Dec date with a
 <span class="yellow">year</span> that is always equal to
 <span class="yellow">0</span> and a <span class="cyan">day</span> that
 is
 [unbounded](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded).
-Similarly, a Dec <span class="yellow">epochal-year-aggregate</span>
+Similarly, a Dec “<span class="yellow">epochal year aggregate</span>”
 (<span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="epochal-year-aggregate">eya</span>) is basically a Dec
+data-bs-title="epochal year aggregate">eya</span>) is basically a Dec
 date with a non-integer <span class="yellow">year</span> and a
 <span class="cyan">day</span> permanently set to
 <span class="cyan">0</span>. Both <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-era">does</span> and
+data-bs-toggle="tooltip" data-bs-title="days of era">does</span> and
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="sums-of-years">soys</span> allow us to represent a date
+data-bs-title="sums of years">soys</span> allow us to represent a date
 as a single number and obtain the difference between two dates, either
 in <span class="cyan">days</span>
 (<span class="cyan">d<sub>M</sub></span> –
@@ -729,29 +727,29 @@ in <span class="cyan">days</span>
 <span class="yellow">y<sub>S</sub></span>).
 
 Compared to <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-era">does</span>, <span class="yellow under tool"
-data-bs-toggle="tooltip" data-bs-title="sums-of-years">soys</span> are
+data-bs-title="days of era">does</span>, <span class="yellow under tool"
+data-bs-toggle="tooltip" data-bs-title="sums of years">soys</span> are
 easier to turn into Dec dates. We can convert dates to
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="sums-of-years">soys</span> and vice versa with the Dec
+data-bs-title="sums of years">soys</span> and vice versa with the Dec
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="epochal-year-aggregate">eya</span> equation:
+data-bs-title="epochal year aggregate">eya</span> equation:
 <span class="yellow">y</span> = ⌊<span class="yellow">y</span>⌋ +
 <span class="cyan">d</span> ÷ <span class="orange">n</span>. In the Dec
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="epochal-year-aggregate">eya</span> equation,
+data-bs-title="epochal year aggregate">eya</span> equation,
 <span class="yellow">y</span> is the <span class="yellow under tool"
 data-bs-toggle="tooltip"
-data-bs-title="epochal-year-aggregate">eya</span>,
+data-bs-title="epochal year aggregate">eya</span>,
 ⌊<span class="yellow">y</span>⌋ + <span class="cyan">d</span> is the Dec
 date, ⌊<span class="yellow">y</span>⌋ is the
 <span class="yellow">year</span>, <span class="cyan">d</span> is the
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>, and
+data-bs-title="day of year">doy</span>, and
 <span class="orange">n</span> is the number of days in
 <span class="yellow">Year</span> ⌊<span class="yellow">y</span>⌋. The
 current <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="epochal-year-aggregate">eya</span> equation values are
+data-bs-title="epochal year aggregate">eya</span> equation values are
 <span class="yellow">${fullfracYear}</span> =
 <span class="yellow">${decYear}</span> +
 <span class="cyan">${decDoty}</span> ÷
@@ -776,14 +774,14 @@ $$\text{n}=\begin{cases}
   365&{\text{otherwise.}}\end{cases}$$
 
 Apart from its role in the Dec date and <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>
 equations, <span class="orange">n</span> is needed to convert between
 <span class="yellow">year</span>+<span class="cyan">day</span> and
 <span class="yellow">year</span>-<span class="pink">day</span> Dec
 dates. The
 <span class="yellow">year</span>-<span class="pink">day</span> version
 of the Dec <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="epochal-year-aggregate">eya</span> equation is
+data-bs-title="epochal year aggregate">eya</span> equation is
 <span class="yellow">y</span> = ⌊<span class="yellow">y</span>⌋ + 1 +
 (<span class="cyan">d</span> – <span class="orange">n</span>) ÷
 <span class="orange">n</span>. In essence,
@@ -815,9 +813,9 @@ and <span class="cyan">d</span>-<span class="orange">n</span> is a
 index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array).
 
 The <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="epochal-year-aggregate">eya</span> equation can be
+data-bs-title="epochal year aggregate">eya</span> equation can be
 rearranged into the Dec <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>
 equation, <span class="cyan">d</span> = ⌊<span class="yellow">y</span>
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 1 × <span class="orange">n</span>⌋, where <span class="yellow">y</span>
@@ -826,12 +824,12 @@ equation, <span class="cyan">d</span> = ⌊<span class="yellow">y</span>
 part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
 of <span class="yellow">y</span>. The current
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> equation values are
+data-bs-title="day of year">doy</span> equation values are
 <span class="cyan">${decDoty}</span> =
 ⌊<span class="yellow">${mod1FracYear}</span> ×
 <span class="orange">${nDaysInYear}</span>⌋. In Dec, a
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> by itself is a floating🛟date and
+data-bs-title="day of year">doy</span> by itself is a floating🛟date and
 a <span class="yellow">year</span>+<span class="cyan">day</span> date is
 a anchored⚓️date. Unlike anchored⚓️dates, floating🛟dates do not include
 a <span class="yellow">year</span> and thus can apply to any
@@ -841,7 +839,7 @@ Anchored⚓️dates are
 [unsimplified](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%2C%20that%20is%20simpler)
 math expressions. Instead of simplifying a anchored⚓️date into an
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="epochal-year-aggregate">eya</span>, we can do the
+data-bs-title="epochal year aggregate">eya</span>, we can do the
 opposite and expand it to display additional information, such as the
 number of days in between it and another date. An expanded version of
 the current date,
@@ -867,7 +865,7 @@ Unlike expanded dates, Dec spans🌈represent time intervals instead of
 individual dates and are structured like the minuend equation as opposed
 to a math expression that can be simplified to an
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="epochal-year-aggregate">eya</span>.
+data-bs-title="epochal year aggregate">eya</span>.
 
 Whereas expanded dates have a set structure that does not change, Dec
 spans🌈can omit the subtrahend,
@@ -900,7 +898,7 @@ expanded dates and spans🌈may not be. Information related to
 <span class="darkgreen">weeks</span> is difficult to reuse♻️, because it
 takes 6 to 40 <span class="yellow">years</span> for the pattern of
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-week">dows</span> in a
+data-bs-title="days of week">dows</span> in a
 <span class="yellow">year</span> to repeat. At the price of
 reusability♻️, Dec can function without <span class="cyan">deks</span>
 and use <span class="darkgreen">weeks</span> instead.
@@ -911,82 +909,82 @@ Even though Decalendar functions best with
 <span class="cyan">deks</span>, Dec dates can display POSIX
 [zero-based](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=Weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D)
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-week">dows</span>. Instead of the current Dec
+data-bs-title="days of week">dows</span>. Instead of the current Dec
 date,
 <span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>,
 the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
 (navbar) of my site displays the current Dec
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> date,
+data-bs-title="day of week">dow</span> date,
 <span class="yellow">${decYear}</span>${dotw0sign}<span class="cyan">${dotw0doty}</span>+<span class="lightgreen">${dotw}</span>,
 by splitting the current <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>,
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>,
 <span class="cyan">${decDoty}</span>, into the
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> of the first day of the current
+data-bs-title="day of year">doy</span> of the first day of the current
 week (<span class="lightgreen under tool" data-bs-toggle="tooltip"
 data-bs-title="Sunday">Dow 0</span> <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>),
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>),
 <span class="cyan">${dotw0doty}</span>, and the current POSIX
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>:
+data-bs-title="day of week">dow</span>:
 <span class="lightgreen">${dotw}</span>.
 
 Instead of the <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> <span class="cyan">d</span>, Dec
+data-bs-title="day of year">doy</span> <span class="cyan">d</span>, Dec
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> dates display
+data-bs-title="day of week">dow</span> dates display
 <span class="cyan">d</span>-<span class="lightgreen">w</span>+<span class="lightgreen">w</span>,
 where <span class="cyan">d</span>-<span class="lightgreen">w</span> is
 the <span class="lightgreen under tool" data-bs-toggle="tooltip"
 data-bs-title="Sunday">Dow 0</span> <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> and
 <span class="lightgreen">w</span> is the
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> associated with
+data-bs-title="day of week">dow</span> associated with
 <span class="cyan">d</span>. We evaluate the subtraction,
 <span class="cyan">d</span>-<span class="lightgreen">w</span>, to obtain
 the <span class="lightgreen under tool" data-bs-toggle="tooltip"
 data-bs-title="Sunday">Dow 0</span> <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>, but
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>, but
 leave the addition unsimplified so we can see
 <span class="lightgreen">w</span>. Dec
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> dates supply all of the
+data-bs-title="day of week">dow</span> dates supply all of the
 information needed to identify specific dates and coordinate schedules
 based on <span class="cyan">deks</span> or
 <span class="darkgreen">weeks</span>.
 
 The <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> equation,
+data-bs-title="day of week">dow</span> equation,
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> = (<span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-era">doe</span> + 3)
+data-bs-title="day of week">dow</span> = (<span class="cyan under tool"
+data-bs-toggle="tooltip" data-bs-title="day of era">doe</span> + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7, is derived from Howard Hinnant’s
 [`weekday_from_days`](https://howardhinnant.github.io/date_algorithms.html#weekday_from_days)
 algorithm. The Dec epoch <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> is
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> is
 <span class="lightgreen">3</span> = (<span class="cyan">0</span> + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7. The UNIX epoch <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> is
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> is
 <span class="lightgreen">4</span> = (<span class="cyan">719468</span> +
 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7. Depending on how
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 is defined, a negative <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-era">doe</span> could
+data-bs-toggle="tooltip" data-bs-title="day of era">doe</span> could
 yield a negative <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>:
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>:
 -<span class="lightgreen">1</span> = (-<span class="cyan">60</span> + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7. To convert a negative <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> into a
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> into a
 positive <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>, we add 7.
+data-bs-title="day of week">dow</span>, we add 7.
 
 <div class="overflowtable" style="overflow-x:auto;overflow-y:hidden;">
 
@@ -1029,43 +1027,43 @@ data-bs-title="day-of-week">dow</span>, we add 7.
 # Week of year (woy)
 
 Dec <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> dates can be further expanded to
-include Dec <span class="darkgreen">week-of-year</span>
+data-bs-title="day of week">dow</span> dates can be further expanded to
+include Dec <span class="darkgreen">week of year</span>
 (<span class="darkgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="week-of-year">woy</span>) numbers:
+data-bs-title="week of year">woy</span>) numbers:
 <span class="yellow">${decYear}</span>+7×<span class="darkgreen">${week}</span>+<span class="lightgreen">${dotw}</span>.
 The current <span class="darkgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="week-of-year">woy</span>,
+data-bs-title="week of year">woy</span>,
 <span class="darkgreen">${week}</span>, is the sum of the
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
 data-bs-title="Sunday">Dow 0</span> <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span>,
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>,
 <span class="cyan">${dotw0doty}</span>, and the first
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> of the
+data-bs-title="day of week">dow</span> of the
 <span class="yellow">year</span> (<span class="cyan under tool"
 data-bs-toggle="tooltip" data-bs-title="March 1">Day 0</span>
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>),
+data-bs-title="day of week">dow</span>),
 <span class="lightgreen">${doty0dotw}</span>, divided by 7:
 <span class="darkgreen">${week}</span> =
 (<span class="cyan">${dotw0doty}</span> +
 <span class="lightgreen">${doty0dotw}</span>) ÷ 7. The current Dec
 floating🛟<span class="darkgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="week-of-year">woy</span> date,
+data-bs-title="week of year">woy</span> date,
 7×<span class="darkgreen">${week}</span>+<span class="lightgreen">${dotw}</span>,
 is equal to the sum of the current <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span> and the
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> and the
 <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="March 1">Day 0</span> <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>: 7 ×
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>: 7 ×
 <span class="darkgreen">${week}</span> +
 <span class="lightgreen">${dotw}</span> =
 <span class="cyan">${decDoty}</span> +
 <span class="lightgreen">${doty0dotw}</span>.
 
 To create a Dec <span class="darkgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="week-of-year">woy</span> date,
+data-bs-toggle="tooltip" data-bs-title="week of year">woy</span> date,
 we need two types of Dec expansion: minuend and dividend expansion.
 First, we turn the minuend <span class="cyan">d</span> into the
 subtrahend <span class="cyan">d</span>-<span class="lightgreen">w</span>
@@ -1076,14 +1074,14 @@ dividend
 into the divisor 7 and the quotient <span class="darkgreen">W</span>,
 where <span class="darkgreen">W</span> is the
 <span class="darkgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="week-of-year">woy</span> and
+data-bs-title="week of year">woy</span> and
 <span class="lightgreen">w<sub>0</sub></span> is the
 <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="March 1">Day 0</span> <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span>.
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>.
 
 Essentially, Dec <span class="darkgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="week-of-year">woy</span> dates
+data-bs-toggle="tooltip" data-bs-title="week of year">woy</span> dates
 turn <span class="cyan">d</span>-<span class="lightgreen">w</span> into
 7×<span class="darkgreen">W</span>+<span class="lightgreen">w</span>-<span class="lightgreen">w<sub>0</sub></span>.
 Typically, only
@@ -1092,14 +1090,14 @@ displayed, because <span class="lightgreen">w<sub>0</sub></span> is not
 necessary to identify a date and can be calculated from a given
 <span class="yellow">y</span> by flooring it, turning it into a
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span>, and passing it into the
+data-bs-title="day of era">doe</span>, and passing it into the
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> equation. Dec
+data-bs-title="day of week">dow</span> equation. Dec
 <span class="darkgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="week-of-year">woy</span> dates
+data-bs-title="week of year">woy</span> dates
 obfuscate🫣<span class="cyan">d</span> much more than
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> dates, but may be useful for
+data-bs-title="day of week">dow</span> dates, but may be useful for
 [<span class="darkgreen">week</span>-based
 accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
 
@@ -1140,19 +1138,19 @@ style="width:8.93in;height:3.36in" />
 </div>
 
 Both flowcharts use <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-dek">dod</span> numbers,
+data-bs-toggle="tooltip" data-bs-title="day of dek">dod</span> numbers,
 but the bottom one starts from <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="second day-of-dek">Dod 1</span>
+data-bs-toggle="tooltip" data-bs-title="second day of dek">Dod 1</span>
 instead of <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">Dod 0</span> and refers to
+data-bs-title="day of dek">Dod 0</span> and refers to
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="first day-of-dek">Dod 0</span> as
+data-bs-title="first day of dek">Dod 0</span> as
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="first day-of-dek">Dod 10</span>. Like the
+data-bs-title="first day of dek">Dod 10</span>. Like the
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-dek">dods</span> in the flowcharts above⬆️, the
+data-bs-title="days of dek">dods</span> in the flowcharts above⬆️, the
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-year">doys</span> in the tables below⬇️are
+data-bs-title="days of year">doys</span> in the tables below⬇️are
 arranged in both a zero-based (top) and a one-based (bottom) manner. The
 tables visualize the seamless transition between a common
 <span class="yellow">year</span> and the subsequent
@@ -1334,14 +1332,14 @@ pent number, ${decPent}, we double the current
 <span class="cyan">dek</span> number,
 <span class="cyan">${decDek}</span>, and then add 1 if the current
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-dek">dod</span> number,
+data-bs-title="day of dek">dod</span> number,
 <span class="cyan">${decDotd}</span>, is greater than 4. To avoid
 [off-by-one
 errors](https://en.wikipedia.org/wiki/Off-by-one_error#:~:text=a%20logic%20error%20that%20involves%20a%20number%20that%20differs%20from%20its%20intended%20value%20by%201),
 pent, <span class="cyan">dek</span>, <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-dek">dod</span>, and
+data-bs-toggle="tooltip" data-bs-title="day of dek">dod</span>, and
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> numbers are always zero-based in
+data-bs-title="day of week">dow</span> numbers are always zero-based in
 Dec.
 
 Other than pent numbers, a pent can also be expressed as a span🌈. Pent
@@ -1484,10 +1482,10 @@ based on <span class="azul">months</span> instead of
 <span class="cyan">dek</span>ly schedules distinguish between
 <span class="green">work</span> and <span class="blue">rest</span> days
 based on the last digit of <span class="lightblue under tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-month">doms</span>. The
+data-bs-toggle="tooltip" data-bs-title="days of month">doms</span>. The
 drawback of <span class="azul">month</span>-based schedules is that
 <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-month">doms</span> reset twelve times every
+data-bs-title="days of month">doms</span> reset twelve times every
 <span class="yellow">year</span>.
 
 The <span class="azul">month</span>-based Schedules
@@ -1510,30 +1508,30 @@ identical.
 
 Dec dates can be expanded to display Dec <span class="azul">month</span>
 and [POSIX <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span>](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D)
+data-bs-title="day of month">dom</span>](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D)
 numbers. The current Dec <span class="lightblue under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-month">dom</span> date is
+data-bs-toggle="tooltip" data-bs-title="day of month">dom</span> date is
 <span class="yellow">${decYear}</span>+<span class="cyan">${monthNumber}</span>+<span class="lightblue">${dotm}</span>.
 Dec <span class="azul">month</span> numbers are the last
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> of the previous
+data-bs-title="day of year">doy</span> of the previous
 <span class="azul">month</span> because POSIX
 <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-month">doms</span> are one-based. For zero-based
+data-bs-title="days of month">doms</span> are one-based. For zero-based
 <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-month">doms</span>, Dec represents each
+data-bs-title="days of month">doms</span>, Dec represents each
 <span class="azul">month</span> with its first
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>:
+data-bs-title="day of year">doy</span>:
 <span class="yellow">${decYear}</span>+<span class="cyan">${monthNumber0}</span>+<span class="lightblue">${dotm0}</span>.
 This way, Dec can support both zero- and one-based
 <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-month">doms</span>.
+data-bs-title="days of month">doms</span>.
 
 Dec <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span> dates replace the
+data-bs-title="day of month">dom</span> dates replace the
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> <span class="cyan">d</span> from
+data-bs-title="day of year">doy</span> <span class="cyan">d</span> from
 Dec dates with
 <span class="cyan">d</span>-<span class="lightblue">m</span>+<span class="lightblue">m</span>.
 We evaluate the subtraction to get
@@ -1541,21 +1539,21 @@ We evaluate the subtraction to get
 <span class="azul">month</span> number, but not the addition, so we can
 see <span class="lightblue">m</span>, the
 <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span>. If we combine the
+data-bs-title="day of month">dom</span>. If we combine the
 <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span> and <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> patterns
+data-bs-title="day of month">dom</span> and <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> patterns
 above⬆️, we can create hybrid <span class="lightblue under tool"
 data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span>+<span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-week">dow</span> Dec
+data-bs-title="day of month">dom</span>+<span class="lightgreen under tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> Dec
 dates:
 <span class="yellow">${decYear}</span>+<span class="cyan">${monthNumber -
 dotw}</span>+<span class="lightblue">${dotm}</span>+<span class="lightgreen">${dotw}</span>,
 where <span class="cyan">${monthNumber - dotw}</span> is
 <span class="cyan">d</span>-<span class="lightblue">m</span>-<span class="lightgreen">w</span>,
 the <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> of the last
+data-bs-title="day of year">doy</span> of the last
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
 data-bs-title="Sunday">Dow 0</span> before the beginning of the
 <span class="azul">month</span>.
@@ -1563,9 +1561,9 @@ data-bs-title="Sunday">Dow 0</span> before the beginning of the
 We can obtain Dec <span class="azul">month</span> numbers using only a
 pair of hands🤲by counting index☝️and ring💍fingers as 30 days and other
 fingers as 31 days. For zero-based <span class="lightblue under tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-month">doms</span>, we
+data-bs-toggle="tooltip" data-bs-title="days of month">doms</span>, we
 start counting from 0. For one-based <span class="lightblue under tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-month">doms</span>, we
+data-bs-toggle="tooltip" data-bs-title="days of month">doms</span>, we
 start counting from -1, as shown in the image below⬇️. To spread 12
 <span class="azul">months</span> across 10 fingers, the first and last
 fingers each represent 2 <span class="azul">months</span>.
@@ -2682,34 +2680,34 @@ in the Gregorian calendar🗓️. As opposed to
 mental calculations to use <span class="cyan">deks</span>, because all
 of the required information is plainly visible in the
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>.
+data-bs-title="day of year">doy</span>.
 
 # Month of year (moy)
 
 To convert <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-year">doys</span> to or from [POSIX
+data-bs-title="days of year">doys</span> to or from [POSIX
 month](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=Month%20as%20a%20decimal%20number%20%5B01%2C12%5D)
 and <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span> numbers, we can use the
-<span class="azul">month-of-year</span> (<span class="azul under tool"
-data-bs-toggle="tooltip" data-bs-title="month-of-year">moy</span>)
+data-bs-title="day of month">dom</span> numbers, we can use the
+<span class="azul">month of year</span> (<span class="azul under tool"
+data-bs-toggle="tooltip" data-bs-title="month of year">moy</span>)
 equations from the <a
 href="https://howardhinnant.github.io/date_algorithms.html#civil_from_days"
 class="mono under"><code>civil_from_days</code></a> and <a
 href="https://howardhinnant.github.io/date_algorithms.html#days_from_civil"
 class="mono under"><code>days_from_civil</code></a> algorithms. Unlike
 POSIX month numbers, <span class="azul under tool"
-data-bs-toggle="tooltip" data-bs-title="months-of-year">moys</span> are
+data-bs-toggle="tooltip" data-bs-title="months of year">moys</span> are
 zero-based and start from <span class="azul under tool"
 data-bs-toggle="tooltip" data-bs-title="March">Moy 0</span> instead of
 <span class="azul under tool" data-bs-toggle="tooltip"
 data-bs-title="January">Moy 10</span>. As shown in the first
 <span class="azul under tool" data-bs-toggle="tooltip"
-data-bs-title="month-of-year">moy</span> equation below⬇️, we can obtain
+data-bs-title="month of year">moy</span> equation below⬇️, we can obtain
 a <span class="azul under tool" data-bs-toggle="tooltip"
-data-bs-title="month-of-year">moy</span> from a
+data-bs-title="month of year">moy</span> from a
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> or a POSIX
+data-bs-title="day of year">doy</span> or a POSIX
 <span class="azul">month</span> number.
 
 <div class="overflowequation"
@@ -2726,14 +2724,14 @@ dom = doy − (153 × moy + 2) ÷ 5 + 1
 doy = (153 × moy + 2) ÷ 5 + dom − 1
 
 A <span class="azul under tool" data-bs-toggle="tooltip"
-data-bs-title="month-of-year">moy</span> and its equivalent POSIX
+data-bs-title="month of year">moy</span> and its equivalent POSIX
 <span class="azul">month</span> number differ by 9 in
 <span class="azul">Moy</span> <span class="azul under tool"
 data-bs-toggle="tooltip" data-bs-title="January">10</span> or
 <span class="azul under tool" data-bs-toggle="tooltip"
 data-bs-title="February">11</span> and -3 in any other
 <span class="azul under tool" data-bs-toggle="tooltip"
-data-bs-title="month-of-year">moy</span> because the Dec epoch,
+data-bs-title="month of year">moy</span> because the Dec epoch,
 <span class="yellow">0000</span>+<span class="cyan">000</span>, is 2
 <span class="azul">months</span> later than the Gregorian
 calendar🗓️epoch:
@@ -2742,9 +2740,9 @@ convert <span class="yellow">years</span>, we add 1 to Dec
 <span class="yellow">years</span> and subtract 1 from Gregorian
 calendar🗓️<span class="yellow">years</span> if the
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> is greater than 305, the
+data-bs-title="day of year">doy</span> is greater than 305, the
 <span class="azul under tool" data-bs-toggle="tooltip"
-data-bs-title="month-of-year">moy</span> is greater than 9, or the
+data-bs-title="month of year">moy</span> is greater than 9, or the
 <span class="azul">month</span> is less than 3:
 
 <div class="overflowequation"
@@ -2766,34 +2764,34 @@ $$\text{Gregorian calendar year} = \begin{cases}\text{Dec year}+1&{\text{if }\te
 This article describes Dec and how it can interoperate with the
 Gregorian calendar🗓️by minuend expanding Dec dates into
 <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span> and
+data-bs-title="day of month">dom</span> and
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> dates or dividend expanding
+data-bs-title="day of week">dow</span> dates or dividend expanding
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span> dates into
+data-bs-title="day of week">dow</span> dates into
 <span class="darkgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="week-of-year">woy</span> dates. On its own, Dec minuend
+data-bs-title="week of year">woy</span> dates. On its own, Dec minuend
 expands dates into span🌈equivalents, but has no use for dividend
 expansion, because <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doys</span> display
+data-bs-toggle="tooltip" data-bs-title="day of year">doys</span> display
 <span class="cyan">deks</span> and <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="days-of-dek">dods</span> without
+data-bs-toggle="tooltip" data-bs-title="days of dek">dods</span> without
 any expansion.
 
 The flowchart below⬇️visualizes the conversion of the UNIX epoch Dec
 date <span class="yellow">1969</span>+<span class="cyan">306</span> into
 a Gregorian calendar🗓️<span class="yellow">year</span>,
 <span class="azul">month</span>, <span class="lightblue under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-month">dom</span> and
+data-bs-toggle="tooltip" data-bs-title="day of month">dom</span> and
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>. To obtain its associated
+data-bs-title="day of week">dow</span>. To obtain its associated
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>, we first need to convert a Dec
+data-bs-title="day of week">dow</span>, we first need to convert a Dec
 date into a <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span>. Outside of its interoperability
+data-bs-title="day of era">doe</span>. Outside of its interoperability
 with the Gregorian calendar🗓️, Dec converts dates into
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-era">does</span> to find the number of days in
+data-bs-title="days of era">does</span> to find the number of days in
 between two dates.
 
 <div id="conversionchart">
@@ -2809,24 +2807,24 @@ style="width:5.79in;height:6.83in" />
 
 For simplicity, the flowchart above⬆️does not show conversion
 byproducts, such as the <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="cycle-of-era">coe</span>,
+data-bs-toggle="tooltip" data-bs-title="cycle of era">coe</span>,
 <span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="year-of-cycle">yoc</span>, and
+data-bs-title="year of cycle">yoc</span>, and
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-cycle">doc</span> generated during Dec
+data-bs-title="day of cycle">doc</span> generated during Dec
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-era">doe</span> to date conversion or the
+data-bs-title="day of era">doe</span> to date conversion or the
 <span class="azul under tool" data-bs-toggle="tooltip"
-data-bs-title="months-of-year">moy</span> that we need in order to split
+data-bs-title="months of year">moy</span> that we need in order to split
 a <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> into a
+data-bs-title="day of year">doy</span> into a
 <span class="azul">month</span> and a <span class="lightblue under tool"
-data-bs-toggle="tooltip" data-bs-title="day-of-month">dom</span> or
+data-bs-toggle="tooltip" data-bs-title="day of month">dom</span> or
 combine a <span class="azul">month</span> and a
 <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span> into a
+data-bs-title="day of month">dom</span> into a
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>. The arrows in the flowchart
+data-bs-title="day of year">doy</span>. The arrows in the flowchart
 represent equations adapted from
 [<span class="mono under">`chrono`</span>-Compatible Low-Level Date
 Algorithms](https://howardhinnant.github.io/date_algorithms.html).
@@ -2881,7 +2879,7 @@ for this article below⬇️. Please note that the original source of the
 algorithms underlying the conversion of Dec
 <span class="yellow">year</span>+<span class="cyan">day</span> dates and
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days-of-era">does</span> is [Hinnant,
+data-bs-title="days of era">does</span> is [Hinnant,
 Howard](https://howardhinnant.github.io). <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="2021-09-01"><u><span class="yellow">2021</span>+<span class="cyan">184</span></u></span>.
