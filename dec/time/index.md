@@ -7,8 +7,10 @@ Martin Laptev
   - [Bar chart clocks](#bcc)
   - [Longitude latitude map](#llm)
   - [Daylight area chart](#dac)
-  - [Time of day (tod)](#tod)
-  - [Day of era (doe)](#doe)
+  - [Yearly day aggregate (yda)](#yda)
+  - [Epochal day aggregate (eda)](#eda)
+  - [UNIX time equation](#ute)
+  - [Julian time equation](#jte)
   - [Hour minute second](#hms)
   - [Time zone offset](#tzo)
   - [Repeating decimal numbers](#rdn)
@@ -64,9 +66,10 @@ data-bs-title="thousandths of a day">millidays</span>, and
 data-bs-title="hundred thousandths of a day">centimillidays</span>,
 respectively, of the time since the start,
 <span class="point1">+${decTime}</span>, or until the end,
-<span class="point0">-${decTimeN}</span>, of the day in the Dec time
-zone, ${decZoneHsl}, at the location of the red⭕️circle on the
-map🗺️beneath the bars📊.
+<span class="point0">-${decTimeN}</span>, of the day in the Dec [time
+zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time),
+${decZoneHsl}, at the location of the red⭕️circle on the map🗺️beneath
+the bars📊.
 
 ## Ticking analog clocks
 
@@ -773,198 +776,321 @@ daylight pattern visualized by the area chart. Shift the
 red<font color=red>—</font>line on the area chart horizontally↔️to move
 the globe🌐along the ellipse of the Earth🌎orbit.
 
-## Time of day (tod)
+## Yearly day aggregate (yda)
 
-Dec times consist of a time-of-day (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>) and a
-time zone:
-${selTimeHsl1}<span style="font-family:monospace;">–</span>${selZoneHsl}.
-The <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> denoted by the red🔴dot is
-${selTimeDay} days or ${selTimeHsl0} <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span>. The day-of-year
+The red<font color=red>—</font>line indicates a “day of year”
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span>) indicated by the
-red<font color=red>—</font>line is ${selDateHsl}. Together, a
+data-bs-title="day of year">doy</span>), ${selDateHsl}, and the red🔴dot
+denotes a “time of day” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</span>): ${selTimeDay}. A
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-year">doy</span> and <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> form a
-floating🛟snap🫰. Like <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">tods</span>, floating🛟snaps🫰can be
-expressed in days, ${selSnapDay}, or <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span>: ${selSnapDec}.
-
-A floating🛟snap🫰identifies a day in an unspecified year with its first
-three digits, classifies that day as a work or rest day with its third
-digit, and specifies a point in that day with its remaining digits, thus
-serving the same purposes as a [Gregorian
+data-bs-title="day of year">doy</span> identifies a day in a year like a
+[Gregorian
 calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
-month and day-of-month (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-month">dom</span>) pair, a day-of-week
+month and “day of month” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span>). A <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time of day">tod</span>
+specifies a point in a day like an “hour minute second”
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day-of-week">dow</span>), and an hour-minute-second
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span>) triplet.
+data-bs-title="hour minute second">hms</span>) triplet. Together, a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span> and <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> can form
+a “yearly day aggregate” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="yearly day aggregate">yda</span>): ${selSnapDay}.
 
-## Day of era (doe)
+yda = doy + tod
 
-To turn a floating🛟snap🫰into a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>, we keep
-the remainder after dividing days by one or <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
-by ten. We can use this same approach to obtain a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> from a
-day-of-[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
+As their names suggest, <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doys</span> and <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="yearly day aggregates">ydas</span> are measured in days.
+In addition to days, the units of <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="times of day">tods</span> can
+also be
+[submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20)
+of days with [metric
+prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit).
+Whereas the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="times of day">tods</span> beneath the analog
+clocks🕓above are five-digit <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a day">deciday</a> numbers with a [decimal
+separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number)
+after the first digit, the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="times of day">tods</span> along the y-axis of the area
+chart are three-digit <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a thousandth of a day">milliday</span> integers.
+
+## Epochal day aggregate (eda)
+
+We can turn an <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="yearly day aggregate">yda</span> into a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</span> by [keeping the remainder after
+dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+by one to isolate the [decimal
+part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
+of the
+[quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers):
+${zeroYdaHsl} mod 1 = ${zeroTimeHsl0}. We can use this same approach to
+obtain a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</span> from an “epochal day aggregate”
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">doe</span>), ${zeroDote.toFixed(5)}
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-1 = ${zeroTimeHsl0}, or <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a day">deciday</span>-of-[era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times-of-day">ddoe</span>): ${(zeroDote \*
-10).toFixed(4)}
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-10 = ${zeroTimeHsl1}. The current <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="times-of-day">doe</span> tells
-us how many days have passed since the Dec
+data-bs-title="epochal day aggregate">eda</span>): ${zeroDoteHsl} mod 1
+= ${zeroTimeHsl1}. The current <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="epochal day aggregate">eda</span> tells us how many days
+have passed since the Dec
 [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
+
+tod = yda mod 1 = eda mod 1
+
+## UNIX time equation
 
 Similarly, [UNIX
 time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970%2C%20the%20Unix%20epoch)
 counts the seconds since the [UNIX
-epoch](https://en.wikipedia.org/wiki/Unix_time#:~:text=00%3A00%3A00%20UTC%20on%201%C2%A0January%201970).
-To get the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> in Zone
+epoch](https://en.wikipedia.org/wiki/Unix_time#:~:text=00%3A00%3A00%20UTC%20on%201%C2%A0January%201970),
+which is exactly 719468 days after the Dec epoch. To get the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</span> in Zone
 <span class="color0">0</span>, the Dec time zone that is in between the
 two leftmost vertical lines on the map🗺️above, we can divide UNIX time
 by the [number of seconds in a
 day](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day)
-or a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a day">deciday</span> and then keep the
-remainder after dividing the resulting days by one or the resulting
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span> by ten:
+and then keep the remainder after dividing the resulting days by one.
 
-day = unix ÷ 86400 mod 1
+tod = unix ÷ 86400 mod 1
 
-deciday = unix ÷ 8640 mod 10
+## Julian time equation
 
-We can also derive a Zone <span class="color5">5</span>
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> from a [Julian
+[Julian
+dates](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon)
+tally the days since the beginning of the [Julian
+period](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20chronological%20interval%20of%207980%C2%A0years%2C%20derived%20from%20three%20multi%2Dyear%20cycles:%20the%20Indiction%2C%20Solar%2C%20and%20Lunar%20cycles)
+and thus are akin to <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="epochal day aggregates">edas</span>. We can produce a
+Zone <span class="color5">5</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> from a
+[Julian
 date](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon)
-simply by keeping the remainder after dividing by one. To convert days
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</span>) into <span class="tool"
+simply by keeping the remainder after dividing by one. If we want a Zone
+<span class="color0">0</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> instead,
+we should add <span class="color5">5</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</span>), we multiply by ten. If we want a
-Zone <span class="color0">0</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> instead
-of a Zone <span class="color5">5</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>, we
-should add half a day (0.5 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</span>) to the Julian date before converting it
-to a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> to ensure that the result is less
-than one <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</span> or ten <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>:
+to the Julian date before converting it to a <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> to
+ensure that the final result is less than one day:
 
-day = (julian + 0.5) mod 1
+tod = (julian + 0.5) mod 1
 
-deciday = day × 10
+## Hour minute second
 
-UNIX time and Julian dates yield <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="times-of-day">tods</span> that
-are 5 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</span> apart because the UNIX epoch occurred
-at midnight (<span class="color0">0</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>) and the
-Julian period started at <span class="color5" data-bs-toggle="tooltip"
-data-bs-title="decidays">noon</span> (<span class="color5">5</span>
+We can also obtain a Zone <span class="color0">0</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</span>). The table below shows the Dec,
-UNIX, Julian date, and [Coordinated Universal
+data-bs-title="time of day">tod</span> from a [Coordinated Universal
 Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span>) epochs in the
-<span style="font-family:monospace;">year+doy.tod-z</span> format of
-anchored⚓️snaps🫰, where <span style="font-family:monospace;">z</span>
-is a Dec time zone:
+data-bs-title="Coordinated Universal Time">UTC</span>)
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour minute second">hms</span> triplet by summing its
+components after converting them to fractional days, as shown in the
+equation below. The [computer
+programming](https://en.wikipedia.org/wiki/Computer_programming#:~:text=the%20composition%20of%20sequences%20of%20instructions%2C%20called%20programs%2C%20that%20computers%20can%20follow%20to%20perform%20tasks)
+code in the [tabset
+panel](https://quarto.org/docs/interactive/layout.html#tabset-panel)
+beneath the equation compares <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="times of day">tods</span>
+derived from <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> and UNIX time as
+Quarto was
+[rendering](https://quarto.org/docs/get-started/hello/rstudio.html#rendering:~:text=When%20rendering%2C%20Quarto%20generates%20a%20new%20file%20that%20contains%20selected%20text%2C%20code%2C%20and%20results)
+this webpage.
 
-<table>
-<colgroup>
-<col style="width: 62%" />
-<col style="width: 37%" />
-</colgroup>
-<thead>
-<tr>
-<th>Epoch</th>
-<th> <span style="font-weight:normal;"><span class="colorBkg"
-data-bs-toggle="tooltip" data-bs-title="Dec year">year</span><span
-style="font-family:monospace;">+</span><span class="colorBkg"
-data-bs-toggle="tooltip" data-bs-title="day-of-year">doy</span><span
-style="font-family:monospace;">.</span><span class="colorBkg"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span><span
-style="font-family:monospace;">-</span><span class="colorBkg"
+$$\text{tod} = \frac{\text{hour}}{24} + \frac{\text{minute}}{1440} + \frac{\text{second}}{86400}$$
+
+<div class="panel-tabset" group="language">
+
+### Julia
+
+``` julia
+using Dates
+hms = now(UTC)
+```
+
+    2025-07-17T18:16:47.670
+
+``` julia
+hour(hms) / 24 +
+minute(hms) / 1440 +
+second(hms) / 86400 +
+millisecond(hms) / 864e5
+```
+
+    0.7616628472222222
+
+``` julia
+datetime2unix(hms) / 86400 % 1
+```
+
+    0.7616628472242155
+
+### Observable JavaScript
+
+``` {ojs}
+hms = new Date();
+hms.getUTCHours() / 24 +
+hms.getUTCMinutes() / 1440 +
+hms.getUTCSeconds() / 86400 +
+hms.getUTCMilliseconds() / 864e5;
+hms.getTime() / 864e5 % 1;
+```
+
+### Python
+
+``` python
+from datetime import datetime, timezone
+hms = datetime.now(timezone.utc)
+hms.hour / 24 + \
+hms.minute / 1440 + \
+hms.second / 86400 + \
+hms.microsecond / 864e8
+```
+
+    0.7616777381828703
+
+``` python
+hms.timestamp() / 86400 % 1
+```
+
+    0.7616777381808788
+
+### R
+
+``` r
+hms <- as.POSIXlt(Sys.time(), tz = "UTC")
+hms$hour / 24 +
+hms$min / 1440 +
+hms$sec / 86400
+```
+
+    [1] 0.7616779
+
+``` r
+(as.numeric(as.POSIXct(hms)) / 86400) %% 1
+```
+
+    [1] 0.7616779
+
+</div>
+
+In Dec, the components of an <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour minute second">hms</span> triplet are called the
+“hour of day” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour of day">hod</span>), “minute of hour”
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="minute of hour">moh</span>), and “second of minute”
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="second of minute">som</span>).
+
+Dec handles differences from Zone <span class="color0">0</span> with
+time zone offsets. There is no time difference between Zone
+<span class="color0">0</span> and UNIX time. Dec applies a time zone
+offset <span class="color5">5</span> <a
+href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
+class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</a> to Julian dates because the
+Dec epoch occurred at midnight (<span class="color0">0</span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</span>) and the [Julian
+period](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20chronological%20interval%20of%207980%C2%A0years%2C%20derived%20from%20three%20multi%2Dyear%20cycles:%20the%20Indiction%2C%20Solar%2C%20and%20Lunar%20cycles)
+started at noon (<span class="color5">5</span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="Dec time zone">z</span></span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Dec</td>
-<td> <span class="color0" data-bs-toggle="tooltip"
-data-bs-title="1 BC">0000</span><span
-style="font-family:monospace;">+</span><span class="color0"
-data-bs-toggle="tooltip" data-bs-title="March 1">000</span><span
-style="font-family:monospace;">.</span><span class="color0"
-data-bs-toggle="tooltip" data-bs-title="midnight">000</span><span
-style="font-family:monospace;">-</span><span class="color0"
-data-bs-toggle="tooltip" data-bs-title="Zone 0">0</span></td>
-</tr>
-<tr>
-<td>UNIX</td>
-<td> <span class="color969">1969</span><span
-style="font-family:monospace;">+</span><span class="colorD306"
-data-bs-toggle="tooltip" data-bs-title="January 1">306</span><span
-style="font-family:monospace;">.</span><span class="color0"
-data-bs-toggle="tooltip" data-bs-title="midnight">000</span><span
-style="font-family:monospace;">-</span><span
-class="color0">0</span></td>
-</tr>
-<tr>
-<td>Julian Day</td>
-<td>-<span class="color287" data-bs-toggle="tooltip"
-data-bs-title="4714 BCE">4713</span><span
-style="font-family:monospace;">+</span><span class="colorD268"
-data-bs-toggle="tooltip" data-bs-title="November 24">268</span><span
-style="font-family:monospace;">.</span><span class="color5"
-data-bs-toggle="tooltip" data-bs-title="noon">500</span><span
-style="font-family:monospace;">-</span><span
-class="color0">0</span></td>
-</tr>
-<tr>
-<td>UTC</td>
-<td>-<span class="color999" data-bs-toggle="tooltip"
-data-bs-title="2 BCE">0001</span><span
-style="font-family:monospace;">+</span><span class="colorD306"
-data-bs-toggle="tooltip" data-bs-title="January 1">306</span><span
-style="font-family:monospace;">.</span><span class="color0"
-data-bs-toggle="tooltip" data-bs-title="midnight">000</span><span
-style="font-family:monospace;">-</span><span
-class="color0">0</span></td>
-</tr>
-</tbody>
-</table>
+data-bs-title="tenths of a day">decidays</span>).
 
-A day in Julian dates is always 86400 seconds long. Instead of seconds,
-Dec uses centimillidays. beats because [leap
+To convert days to <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</span>, we multiply the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</span> by ten.
+
+In Dec, days start at midnight, instead of noon, but have the same
+duration as Julian days: 86400 [International System of
+Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span>) seconds or
+100000 Dec <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimillidays">beats</span>.
+
+The duration of days in Dec and Julian dates The difference between the
+Dec epoch and the beginning of the Julian period is the only thing that
+distinguishes Julian date and a <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="times-of-day">doe</span> is its
+epoch.
+
+In [Coordinated Universal
+Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span>), days start at
+midnight, but the length of a day can vary due to [leap
+seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment).
+In Dec, a day always has the same duration as a
+
+When matching <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> is required, Dec
+avoids day length changes by adding leap seconds to a <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zone
+[offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place).
+According to Dec, the [<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+time zone does not have any leap seconds because its offset is
+<span class="color0">0</span>. To indicate that a <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zone includes
+the [27 leap
+seconds](https://en.wikipedia.org/wiki/Leap_second#Procedure:~:text=16-,27,-Current%20TAI%20%E2%88%92%20UTC)
+that have been inserted into <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> so far, Dec
+appends <span class="color1by320">:27</span> to its offset.
+
+The Dec equivalent of the [<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color1by320">+00:00:27</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
+time zone is Zone <span class="color1by320">1/320</span>.
+
+In <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span>, the length of Day
+<span class="colorD121" data-bs-toggle="tooltip"
+data-bs-title="June 30">121</span> or Day <span class="colorD305"
+data-bs-toggle="tooltip" data-bs-title="December 31">305</span> can vary
+due to [leap
+seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment).
+T this offset as T To represent the 27 leap seconds that have been added
+to <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> so far, Dec uses
+an offset of <span class="color1by320">1/320</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>. Dec refers
+to the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> time zone that has
+this offset as [<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span><span class="color1by320">+00:00:32</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time).
+
+either or secon Since 1972+121, 27 positive leap seconds have been added
+to UTC, and 0 negative leap seconds have been whave been in a Julian
+date or a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="times-of-day">doe</span> i Dec does not allow The time in
+the ten Dec time zones never include
+
+o depending on whether the leap second is p. Dec uses to represent [leap
 seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment)
-are included, some <span class="tool" data-bs-toggle="tooltip"
+without changing the length of a day in the same way as leap days
+changes the length of a year. Instead of allowing the length of a day
+included, some <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</span> days will be 86401
+or 86399 seconds long. So far, 27 positive leap seconds have been added,
+some <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> days will differ
 in length. includes of seconds, Dec uses beats. 100000 The programming
 languages that the [Quarto FAQ](https://quarto.org/docs/faq) refers to
@@ -987,111 +1113,61 @@ occurred at midnight, <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time may be
 shifted in relation to Dec or UNIX time because of [leap
 seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment).
+Since 1972+121, 27
 
 <div class="panel-tabset" group="language">
-
-### Python
-
-``` python
-from datetime import datetime, timezone
-hms = datetime.now(timezone.utc)
-unix = hms.timestamp() / 86400 % 1
-utc = (
-    hms.hour / 24 +
-    hms.minute / 1440 +
-    hms.second / 86400 +
-    hms.microsecond / 864e8
-)
-hms
-```
-
-    datetime.datetime(2025, 7, 10, 8, 21, 59, 127677, tzinfo=datetime.timezone.utc)
-
-``` python
-utc
-```
-
-    0.34860101478009253
-
-``` python
-unix
-```
-
-    0.3486010147789784
-
-### R
-
-``` r
-sys <- Sys.time()
-hms <- as.POSIXlt(sys, tz = "UTC")
-unix <- (as.numeric(as.POSIXct(sys)) / 86400) %% 1
-utc <- hms$hour / 24 +
-       hms$min / 1440 +
-       as.numeric(hms$sec) / 86400
-sys
-```
-
-    [1] "2025-07-10 03:21:59 CDT"
-
-``` r
-hms
-```
-
-    [1] "2025-07-10 08:21:59 UTC"
-
-``` r
-utc
-```
-
-    [1] 0.3486014
-
-``` r
-unix
-```
-
-    [1] 0.3486014
-
-### Observable
-
-``` {ojs}
-hms = new Date();
-unix = hms.getTime() / 864e5 % 1;
-utc = hms.getUTCHours() / 24 +
-      hms.getUTCMinutes() / 1440 +
-      hms.getUTCSeconds() / 86400 +
-      hms.getUTCMilliseconds() / 864e5;
-hms
-unix
-utc
-```
 
 ### Julia
 
 ``` julia
 using Dates
-hms = now(UTC)
+sod = datetime2unix(now(UTC)) / 86400 % 1 * 86400
 ```
 
-    2025-07-10T08:22:04.316
+    65809.0369998361
 
 ``` julia
-unix = datetime2unix(hms) / 86400 % 1
+soh = sod % 3600
 ```
 
-    0.3486610648142232
+    1009.0369998360984
 
 ``` julia
-utc = hour(hms) / 24 +
-      minute(hms) / 1440 +
-      second(hms) / 86400 +
-      millisecond(hms) / 86400000
+(Int(floor(sod / 3600)), Int(floor(soh / 60)), soh % 60)
 ```
 
-    0.34866106481481485
+    (18, 16, 49.0369998360984)
+
+### Observable JavaScript
+
+``` {ojs}
+sod = now / 864e5 % 1 * 86400;
+soh = sod % 3600;
+[Math.floor(sod / 3600), Math.floor(soh / 60), soh % 60]
+```
+
+### Python
+
+``` python
+from datetime import datetime, timezone
+sod = datetime.now(timezone.utc).timestamp() / 86400 % 1 * 86400
+soh = sod % 3600
+sod // 3600, soh // 60, soh % 60
+```
+
+    (18.0, 16.0, 49.14835698204115)
+
+### R
+
+``` r
+sod <- (as.numeric(as.POSIXct(Sys.time())) / 86400) %% 1 * 86400
+soh <- sod %% 3600
+c(sod %/% 3600, soh %/% 60, soh %% 60)
+```
+
+    [1] 18.00000 16.00000 49.15825
 
 </div>
-
-## Hour minute second
 
 We can make the time in any Dec time zone match UNIX by subtracting its
 time zone
@@ -1119,11 +1195,11 @@ with 27 leap seconds is referred to as Zone 1/320 in Dec and . which
 data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
 
 To produce a Zone <span class="color0">0</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> from an
+data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> from an
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet, we get the
+data-bs-title="hour minute second">hms</span> triplet, we get the
 difference between the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet and its
+data-bs-title="hour minute second">hms</span> triplet and its
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time zone
 [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place),
@@ -1154,9 +1230,9 @@ and
 <span class="color5">[+12](https://en.wikipedia.org/wiki/UTC%2B12:00)</span>
 will not match the time in any of the ten Dec time zones. We can create
 a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time-of-day">tod</span> by summing the components of an
+data-bs-title="time of day">tod</span> by summing the components of an
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet after
+data-bs-title="hour minute second">hms</span> triplet after
 
 that were added a [Coordinated Universal
 Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
@@ -1164,7 +1240,7 @@ Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20pri
 data-bs-title="Coordinated Universal Time">UTC</span>)
 <span class="color0">[+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)</span>
 time zone. A <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet that includes
+data-bs-title="hour minute second">hms</span> triplet that includes
 [leap
 seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment)
 or a
@@ -1382,29 +1458,29 @@ and Zone <span class="color0">0</span> are all synchronized.
 Similarly, a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">[UTC](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)</span><span class="color0">[+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet yields a Zone
+data-bs-title="hour minute second">hms</span> triplet yields a Zone
 <span class="color5">5</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>.
+data-bs-toggle="tooltip" data-bs-title="time of day">tod</span>.
 
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span>
 
 Instead of passing an <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet and its
+data-bs-title="hour minute second">hms</span> triplet and its
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time zone
 [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
 to the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span> equation
+data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> equation
 separately, we can subtract the offset from the triplet to produce a
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">[UTC](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+00:00,_Z)</span><span class="color0">[+00:00](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+00:00,_Z)</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet. In other words,
+data-bs-title="hour minute second">hms</span> triplet. In other words,
 we can avoid converting time zone offsets if we always first shift the
 input <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet to
+data-bs-title="hour minute second">hms</span> triplet to
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">[UTC](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+00:00,_Z)</span><span class="color0">[+00:00](https://en.wikipedia.org/wiki/List_of_UTC_offsets#UTC+00:00,_Z)</span>.
 
@@ -1421,19 +1497,19 @@ data-bs-title="tenths of a day">decidays</a>:
 
 Instead of passing both a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="hour-minute-second">hms</span>
+data-bs-toggle="tooltip" data-bs-title="hour minute second">hms</span>
 triplets and its <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time zone
 [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
 to the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>
+data-bs-toggle="tooltip" data-bs-title="time of day">tod</span>
 equation.
 
 Instead of performing this calculation on both a <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="hour-minute-second">hms</span>
+data-bs-toggle="tooltip" data-bs-title="hour minute second">hms</span>
 triplet and its <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time zone
 [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place),
@@ -1442,7 +1518,7 @@ we should subtract the offset from the triplet.
 equation should be a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">[UTC](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)</span><span class="color0">[+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet so that we do not
+data-bs-title="hour minute second">hms</span> triplet so that we do not
 have to convert a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time zone
 [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
@@ -1455,7 +1531,7 @@ When we add a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> offset to a
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="hour-minute-second">hms</span>
+data-bs-toggle="tooltip" data-bs-title="hour minute second">hms</span>
 triplet, with the resulting <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">[UTC](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)</span><span class="color0">[+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)</span>
 time.
@@ -1474,15 +1550,15 @@ data-bs-title="Coordinated Universal Time">[UTC](https://en.wikipedia.org/wiki/U
 Starting with a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">[UTC](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)</span><span class="color0">[+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet results in Zone
+data-bs-title="hour minute second">hms</span> triplet results in Zone
 <span class="color0">0</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time-of-day">tod</span>.
+data-bs-toggle="tooltip" data-bs-title="time of day">tod</span>.
 
 only three out of the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time zones are
 synchronized with a Dec time zone it will most likely be easier to shift
 the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour-minute-second">hms</span> triplet to will result in
+data-bs-title="hour minute second">hms</span> triplet to will result in
 days instead of decidays if we divide by the most Dec and
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> time zones are not
@@ -1960,11 +2036,15 @@ zeroDote = unix2dote(now, 0)[0]
 zeroTime = zeroDote % 1
 zeroDate = dote2date(zeroDote)
 zeroYear = zeroDate[0]
-zeroDoty = Math.floor(zeroDate[1])
+zeroYda = zeroDate[1]
+zeroDoy = Math.floor(zeroYda)
+zeroYdaHsl = textcolor(zeroYda.toFixed(5), d3.color(piecewiseColor(zeroYda / (365 + zeroIsLeap))).formatHex())
 zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl1 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl2 = textcolor(zeroTime.toFixed(5).slice(2), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroDotyHsl = textcolor(zeroDoty.toString().padStart(3, "0"), d3.color(piecewiseColor(zeroDoty / (365 + zeroIsLeap))).formatHex())
+zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
+zeroTimeHsl2 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
+zeroTimeHsl3 = textcolor(zeroTime.toFixed(5).slice(2), d3.color(piecewiseColor(zeroTime)).formatHex())
+zeroDotyHsl = textcolor(zeroDoy.toString().padStart(3, "0"), d3.color(piecewiseColor(zeroDoy / (365 + zeroIsLeap))).formatHex())
+zeroDoteHsl = textcolor(zeroDote.toFixed(5), d3.color(piecewiseColor(zeroDote % 1)).formatHex())
 zeroYearHsl = textcolor(zeroYear, d3.color(piecewiseColor(zeroYear % 1000 / 1000)).formatHex())
 zeroIsLeap = zeroYear % 4 == 0 && zeroYear % 100 != 0 || zeroYear % 400 == 0;
 browserDote = unix2dote(now)
@@ -2748,6 +2828,7 @@ selTimeOne = selTime % 1
 selTimeTen = selTime * 10 % 10
 selSnap = selDate + selTime
 selLati = lati2turn(location[1])
+decDodHsl = textcolor(decDod, d3.color(piecewiseColor(decDod / 10)).formatHex())
 decDateHsl = textcolor(decDate.toString().padStart(3, "0"), d3.color(piecewiseColor(decDate / (365 + isLeapYear))).formatHex())
 decTimeHsl = textcolor(decTime, d3.color(piecewiseColor(decTime / 10)).formatHex())
 selDateHsl = textcolor(selDate.toString().padStart(3, "0"), d3.color(piecewiseColor(selDate / 365)).formatHex())
@@ -2767,8 +2848,11 @@ function set(input, value) {
   input.value = value;
   input.dispatchEvent(new Event("input", {bubbles: true}));
 }
+hD121 = d3.hsl(piecewiseColor(121 / 365)).h
 hD268 = d3.hsl(piecewiseColor(268 / 365)).h
+hD305 = d3.hsl(piecewiseColor(305 / 365)).h
 hD306 = d3.hsl(piecewiseColor(306 / 365)).h
+h1by320 = d3.hsl(piecewiseColor(1 / 320)).h
 hues = Object.fromEntries([
   .0083,
   .0166,
@@ -3026,9 +3110,33 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color1by320 {
+  background: hsl(${h1by320} 100% 50%);
+  color: ${yiq(`hsl(${h1by320}, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD121 {
+  background: hsl(${hD121} 100% 50%);
+  color: ${yiq(`hsl(${hD121}, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .colorD268 {
   background: hsl(${hD268} 100% 50%);
   color: ${yiq(`hsl(${hD268}, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD305 {
+  background: hsl(${hD305} 100% 50%);
+  color: ${yiq(`hsl(${hD305}, 100%, 50%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
