@@ -824,7 +824,7 @@ hms$sec / 86400
 
 :::
 
-The equations below turn a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} into a [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet using a "daily second aggregate" ([dsa]{.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregate"}) and "hourly second aggregate" ([hsa]{.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregate"}). While both count seconds, the dsa starts at midnight and the hsa begins at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour). In Dec, the components of the [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet are called the "hour of day" ([hod]{.tool data-bs-toggle="tooltip" data-bs-title="hour of day"}), "minute of hour" ([moh]{.tool data-bs-toggle="tooltip" data-bs-title="minute of hour"}), and "second of minute" ([som]{.tool data-bs-toggle="tooltip" data-bs-title="second of minute"}).
+The equations below turn a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} into a [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet using a "daily second aggregate" ([dsa]{.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregate"}) and "hourly second aggregate" ([hsa]{.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregate"}). While both count seconds, [dsas]{.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregates"} start at midnight and [hsas]{.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregates"} begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour). In Dec, the components of a [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet are called the "hour of day" ([hod]{.tool data-bs-toggle="tooltip" data-bs-title="hour of day"}), "minute of hour" ([moh]{.tool data-bs-toggle="tooltip" data-bs-title="minute of hour"}), and "second of minute" ([som]{.tool data-bs-toggle="tooltip" data-bs-title="second of minute"}).
 
 $$\text{dsa} = \text{tod} \times 86400$$
 
@@ -873,7 +873,13 @@ sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 
 :::
 
-The code in the tabset panel above can convert a Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} into a [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet. According to Dec and all four of the programming languages used above, [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} does not have any [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment). In Dec, leap days can increase the duration of a year from 365 to 366 days, but days always have the same duration and therefore cannot have leap seconds.
+The code can convert between a Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet. According to Dec and all four of the programming languages used above, [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} does not have any [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment). In Dec, leap days can increase the duration of a year from 365 to 366 days, but days always have the same duration and therefore cannot have leap seconds.
+
+Instead of changing the duration of a day, Dec handles leap seconds by adding them to a time zone offset ([tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}). When a leap second needs to be inserted, Dec simply shifts the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} by 1/8640 decidays. If we add the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} selected by the range input below to the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, we get x.xxxx. If we also add 27 leap seconds, the [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} will be x.xxxx and the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} will be x/320.
+
+
+
+
 
 This stance is at odds with the International Earth Rotation and Reference Systems Service, which has inserted [27]{.color1by320} leap seconds into [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}.
 
