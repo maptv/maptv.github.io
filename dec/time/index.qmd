@@ -824,7 +824,7 @@ hms$sec / 86400
 
 :::
 
-The equations below turn a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} into a [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet using a "daily second aggregate" ([dsa]{.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregate"}) and "hourly second aggregate" ([hsa]{.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregate"}). While both count seconds, [dsas]{.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregates"} start at midnight and [hsas]{.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregates"} begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour). In Dec, the components of a [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet are called the "hour of day" ([hod]{.tool data-bs-toggle="tooltip" data-bs-title="hour of day"}), "minute of hour" ([moh]{.tool data-bs-toggle="tooltip" data-bs-title="minute of hour"}), and "second of minute" ([som]{.tool data-bs-toggle="tooltip" data-bs-title="second of minute"}).
+The equations below turn a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} into an [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet using a "daily second aggregate" ([dsa]{.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregate"}) and "hourly second aggregate" ([hsa]{.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregate"}). While both count seconds, [dsas]{.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregates"} start at midnight and [hsas]{.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregates"} begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour). In Dec, the components of an [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet are called the "hour of day" ([hod]{.tool data-bs-toggle="tooltip" data-bs-title="hour of day"}), "minute of hour" ([moh]{.tool data-bs-toggle="tooltip" data-bs-title="minute of hour"}), and "second of minute" ([som]{.tool data-bs-toggle="tooltip" data-bs-title="second of minute"}).
 
 $$\text{dsa} = \text{tod} \times 86400$$
 
@@ -873,13 +873,51 @@ sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 
 :::
 
-The code can convert between a Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet. According to Dec and all four of the programming languages used above, [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} does not have any [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment). In Dec, leap days can increase the duration of a year from 365 to 366 days, but days always have the same duration and therefore cannot have leap seconds.
+With the code above we can convert between a Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet. According to Dec and all four of the programming languages used above, [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} does not have any [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment). In Dec, leap days can increase the duration of a year from 365 to 366 days, but days always have the same duration and therefore cannot have leap seconds.
 
-Instead of changing the duration of a day, Dec handles leap seconds by adding them to a time zone offset ([tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}). When a leap second needs to be inserted, Dec simply shifts the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} by 1/8640 decidays. If we add the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} selected by the range input below to the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, we get x.xxxx. If we also add 27 leap seconds, the [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} will be x.xxxx and the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} will be x/320.
+## Time zone offset {.hiddenheading #tzo}
+
+Instead of changing the duration of a day, Dec handles leap seconds by adding them to a "[time zone offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)" ([tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}). Each leap second shifts the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} by [1/8640]{.color1by8640} [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}. If we add the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} selected by the range🎚️input below to the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, we get \${decTimeOffHsl0}. If we also add [[27]{.color1by320} leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=27%20leap%20seconds%20have%20been%20added%20to%20UTC), the [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} will be \${decTimeOffLeapTodHsl} and the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} will be ${decTimeOffLeapTzoHsl}.
+
+```{ojs}
+//| echo: false
+//| label: offinput
+viewof offset = Inputs.range([-10, 9], {label: "Offset", value: 0, step: 1})
+```
+
+Dec measures [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} in decidays. If a tzo is a single-digit integer, it likely  or fractions. The tzos of the ten Dec time zones are positive integers.
+ contain leap seconds as fractions. Even if we disregard leap seconds, fractions  in [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} and [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} to are single-digit integers or fractions. Dec only uses  ten Dec time zones each have a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} that is a : [0]{.color0} to [9]{.color9} [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}. In contrast, [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} range range from [-5]{.color5} to [5.83̅]{.color583} [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}. A [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} time zone with a negative [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} will be between  have a similar time To avoid date mismatches with , we can subtract ten [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} from any positive Dec [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} to make it negative: \${decOffsetHslP} -- [10]{.color0} = \${decOffsetHslN}.
+
+Finding the Dec time zone with the closest [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} to a given [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} entails converting an [hms]{} triplet to decidays, adding ten, keeping the remainder after dividing by ten, and then rounding to the nearest deciday. matching a  tzo of -5 yields the same tod as  exactly one day behind Zone [5
+Dec avoids incompatible with the ten Dec time zones. Dec expresses incompatibles [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} as fractions. Officially, t
+Dec refers to [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} with [27]{.color1by320} leap seconds as [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}[+]{style="font-family:monospace;"}[00:00:27]{.color1by320} or [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}[+]{style="font-family:monospace;"}[1/320]{.color1by320}.
+Dec can relax its requirement that each [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} be a single-digit positive integer [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"} to match any [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}.
+
+```{ojs}
+//| echo: false
+//| label: hmsinput
+viewof hms = Inputs.form([
+  Inputs.range([-24, 24], {label: "Hour", value: 0, step: 1}),
+  Inputs.range([0, 60], {label: "Minute", value: 0, step: 1}),
+  Inputs.range([0, 60], {label: "Second", value: 0, step: 1}),
+])
+```
+
+[tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} is
+
+Dec Positive and negative offsets that differ by exactly ten [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} yield identical times, but result in dates that are precisely one day apart.
+
+
+https://stackoverflow.com/a/23575642
+Use fractions.js to turn non standard offsets into fractions.
+
+To determine which Dec time zone you are in, Dec would need to know your longitude. In general, Dec allows for everyone to use whatever [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} they want, regardless of their geographic location. The UTC [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} provided by your web browser is -300 minutes ÷ 144 = -2.083333 dd. In the absence of any other information, Dec would round this [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} to the nearest deciday (dd), , and infer that you are in Zone 8. which Dec time zone you are in unless  Rounding UTC tzos can result in a time difference of up to 0.5 dd. Adding 27 leap seconds increases the maximum time difference to 161/320 dd. With time zone rounding, the time difference between your Dec and UTC time zones is 11.52 ÷ 144 = 0.08 dd. With 27 leap seconds, this difference is /320.
 
 
 
+The [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} offset provided by your web browser is \${utcOffHslM} &div; 144 = \${utcOffHslD} [dd]{.tool data-bs-toggle="tooltip" data-bs-title="decidays"}. The Dec time zone that corresponds to this [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} offset is Zone \${decZonHslP}. The time in corresponding Dec and [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} time zones can differ by up to [0.5]{.color050} [dd]{.tool data-bs-toggle="tooltip" data-bs-title="decidays"}. The difference between your Dec and [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} time is \${utcOffsetMdiffHsl} &div; 144 = \${utcOffDiffHsl} [dd]{.tool data-bs-toggle="tooltip" data-bs-title="decidays"}.
 
+To obtain the time in Zone [0]{.color0}, we can subtract the offset of any time zone from its time. Inversely, we can get the time in any time zone by adding its offset to the Zone [0]{.color0} time. The dates and times in Zone [0]{.color0} and [[UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}[+00:00]{.color0}](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time) match exactly. Zone [5]{.color5} and [[UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}[+12:00]{.color5}](https://en.wikipedia.org/wiki/UTC%2B12:00) also have matching dates and times, both are precisely one day ahead of [[UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}[-12:00]{.color5}](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00).
 
 This stance is at odds with the International Earth Rotation and Reference Systems Service, which has inserted [27]{.color1by320} leap seconds into [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}.
 
@@ -941,9 +979,7 @@ does not include [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:tex
 
 than [[+00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)]{.color0} and [[+12](https://en.wikipedia.org/wiki/UTC%2B12:00)]{.color5} will not match the time in any of the ten Dec time zones. We can create a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} by summing the components of an [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet after
 
-that were added a [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) ([UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}) [[+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)]{.color0} time zone. A [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet that includes [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment) or a
-
-## Time zone offset {#tzo .hiddenheading}
+that were added a [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) ([UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}) [[+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)]{.color0} time zone. An [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet that includes [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment) or a
 
 To be compatible with Dec, a time zone offset must be equivalent to one of the ten positive single-digit integer [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"} Dec offsets. The Zone [5]{.color5} Dec time zone and [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [[+12:00](https://en.wikipedia.org/wiki/UTC%2B12:00)]{.color5} time zone have equivalent offsets: [5]{.color5} [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} = [12]{.color5} hours. Likewise, the Zone [0]{.color0} Dec time zone, UNIX time, and the [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [[+00:00](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)]{.color0} time zone all have an offset of [0]{.color0}.
 
@@ -1148,7 +1184,7 @@ zeroYdaHsl = textcolor(zeroYda.toFixed(5), d3.color(piecewiseColor(zeroYda / (36
 zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
 zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
 zeroTimeHsl2 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl3 = textcolor(zeroTime.toFixed(5).slice(2), d3.color(piecewiseColor(zeroTime)).formatHex())
+zeroTimeHsl3 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
 zeroDotyHsl = textcolor(zeroDoy.toString().padStart(3, "0"), d3.color(piecewiseColor(zeroDoy / (365 + zeroIsLeap))).formatHex())
 zeroDoteHsl = textcolor(zeroDote.toFixed(5), d3.color(piecewiseColor(zeroDote % 1)).formatHex())
 zeroYearHsl = textcolor(zeroYear, d3.color(piecewiseColor(zeroYear % 1000 / 1000)).formatHex())
@@ -1959,6 +1995,7 @@ hD268 = d3.hsl(piecewiseColor(268 / 365)).h
 hD305 = d3.hsl(piecewiseColor(305 / 365)).h
 hD306 = d3.hsl(piecewiseColor(306 / 365)).h
 h1by320 = d3.hsl(piecewiseColor(1 / 320)).h
+h1by8640 = d3.hsl(piecewiseColor(1 / 8640)).h
 hues = Object.fromEntries([
   .0083,
   .0166,
@@ -1985,6 +2022,35 @@ sortedPop = populationByTimeZone.sort(
 sortFunc = sortParams[0] ? d3.ascending : d3.descending
 popBySign = d3.rollup(sortedPop, v => d3.sum(v, d => d.pop / 1e9), d => d.Sign)
 totalPop = d3.sum(sortedPop, d => d.pop / 1e9)
+dzOff = unix2dote(now, offset)
+ydzOff = dote2date(...dzOff)
+decTimeOff = ydzOff[1] % 1
+decSignOff = offset < 0 ? "+" : "–"
+decOffsetPosi = (offset + 10) % 10
+decOffsetNega = decOffsetPosi - 10
+decOffsetHsl0 = textcolor(Math.abs(offset), `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decOffsetHsl1 = textcolor(Math.abs(offset), `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decOffsetHsl2 = textcolor(offset, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decOffsetHslP = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decOffsetHslN = textcolor(decOffsetNega, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
+decTimeOffHsl0 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl1 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl2 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffHsl3 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffLeapNum = offset * 320 + 1
+decTimeOffLeapTodHsl = textcolor((decTimeOff * 10 + 1 / 320).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
+decTimeOffLeapTzoHsl = textcolor(`${decTimeOffLeapNum}/320`, `hsl(${d3.hsl(piecewiseColor((decTimeOffLeapNum / 320 + 10) % 10 / 10)).h}` + slStr)
+utcOffsetM = -(new Date).getTimezoneOffset()
+utcOffsetD = utcOffsetM / 144
+utcOffsetP = (utcOffsetD + 10) % 10
+decZone = ydz[2]
+decZonePos = (decZone + 10) % 10
+utcOffDiff = parseFloat((Math.round(utcOffsetD) - utcOffsetD).toFixed(2))
+utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+utcOffHslD = textcolor(parseFloat(utcOffsetD.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
+utcOffsetMdiffHsl = textcolor(parseFloat((utcOffDiff * 144).toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
+utcOffDiffHsl = textcolor(utcOffDiff, `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
 ```
 
 ```{ojs}
@@ -2019,6 +2085,14 @@ html`
 .color0 {
   background: hsl(0 100% 50%);
   color: ${yiq(`hsl(0, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color1by8640 {
+  background: hsl(${h1by8640} 100% 50%);
+  color: ${yiq(`hsl(${h1by8640}, 100%, 50%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2064,6 +2138,15 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color583 {
+  background: hsl(129.88235294117646 100% 50%);
+  color: ${yiq(`hsl(129.88235294117646, 100%, 50%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+
 .color6 {
   background: hsl(120 100% 50%);
   color: ${yiq(`hsl(120, 100%, 50%)`) > 0.51 ? "black" : "white"};
