@@ -10,18 +10,17 @@ Martin Laptev
   - [Hue saturation lightness (hsl)](#hsl)
   - [Course color table](#cct)
   - [Red green blue (rgb)](#rgb)
-- [Dec time zones](#dtz)
-  - [Time zone offset](#tzo)
-  - [Day of dek (dod)](#dod)
+  - [Dec time zones](#dtz)
+  - [Dates and times](#dat)
   - [Millenium Year Day](#myd)
+  - [Day of dek (dod)](#dod)
 - [Zone equatorial meter (zem)](#zem)
   - [Length area volume](#lav)
   - [Typical seat height](#tsh)
   - [Speed of sound](#sos)
-- [Inverse of b (iob)](#iob)
+- [Ten equal temperament (Xet)](#xet)
   - [Beats per milliday (bpm)](#bpm)
   - [Frequency period wavelength](#fpw)
-- [Ten equal temperament (Xet)](#xet)
   - [Color sound table](#cst)
   - [Octave + note = tone](#ont)
 - [US customary units](#ucu)
@@ -829,7 +828,7 @@ tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20betwee
 of the Earth🌏(<span class="color065">65</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliturns">mt</span>).
 
-# Dec time zones
+## Dec time zones
 
 Enable the “Grid” toggle✅input to see Latitudes
 [-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
@@ -928,100 +927,21 @@ viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: 
 viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine input", value: "turns"})
 ```
 
-## Time zone offset
+## Dates and times
 
-[<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> time zone
-offsets](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)
-range from ${rainbowN5zn} to ${rainbowP583} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>. The
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> offset provided by
-your web browser is ${utcOffHslM} ÷ 144 = ${utcOffHslD}
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</span>. The Dec time zone that corresponds
-to this <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> offset is Zone
-${decZonHslP}. The time in corresponding Dec and <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> time zones can
-differ by up to <span class="color050">0.5</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>. The
-difference between your Dec and <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> time is
-${utcOffsetMdiffHsl} ÷ 144 = ${utcOffDiffHsl} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>.
-
-To obtain the time in Zone <span class="color0">0</span>, we can
-subtract the offset of any time zone from its time. Inversely, we can
-get the time in any time zone by adding its offset to the Zone
-<span class="color0">0</span> time. The dates and times in Zone
-<span class="color0">0</span> and [<span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span><span class="color0">+00:00</span>](https://en.wikipedia.org/wiki/UTC%2B00:00#:~:text=the%20basis%20of%20Coordinated%20Universal%20Time)
-match exactly. Zone <span class="color5">5</span> and
-[<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span><span class="color5">+12:00</span>](https://en.wikipedia.org/wiki/UTC%2B12:00)
-also have matching dates and times, both are precisely one day ahead of
-[<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span><span class="color5">-12:00</span>](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00).
-
-To avoid date mismatches with <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</span> time zones that
-have negative offsets, we can subtract ten <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decidays">dd</span> from any
-positive Dec offset to make it negative: ${decOffsetHslP} –
-<span class="color0">10</span> = ${decOffsetHslN}. Therefore, each Dec
-time zone has both a positive and a negative offset. The two offsets in
-any time zone are exactly one day apart, produce the same time, and have
-the same color🎨label🏷️.
-
-``` {ojs}
-//| echo: false
-//| label: offinput
-viewof offset = Inputs.range([-10, 9], {label: "Offset", value: 0, step: 1})
-```
-
-When we add the offset selected by the range🎚️input above to the current
-date and time in Zone <span class="color0">0</span>, we get
-${decYearOffHsl}<span style="font-family:monospace;">+</span>${decDateOffHsl}
-as the date and
-${decTimeOffHsl0}<span style="font-family:monospace;">${decSignOff}</span>${decOffsetHsl1}
-as the time. We can apply color🎨labels🏷️to each Dec date and time
-component. Dec dates consist of a year and a “day of year”
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span>), whereas Dec times are composed
-of a “time of day” (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</span>) and a time zone.
-
-## Day of dek (dod)
-
-Each <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of year">doy</span> also has two components. The
-first two digits of a three-digit <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="days of year">doy</span>
-represent a group of ten days called a <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="group of ten days">decaday</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="group of ten days">dek</span>).
-The last digit of a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of year">doy</span> is the “day of dek”
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of dek">dod</span>). In Dec, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="groups of ten days">deks</span>
-are used instead of months and weeks. Likewise, Dec uses
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of dek">dods</span> in lieu of days of month
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">doms</span>) and days of week
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dows</span>). In Zone ${decOffsetHsl2}, it
-is currently <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of ten days">Dek</span> ${decDekOffHsl} and
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Day of dek">Dod</span> ${decDodOffHsl}.
+Dec dates consist of a year and a “day of year” (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>),
+whereas Dec times are composed of a “time of day” (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time of day">tod</span>) and a
+“time zone offset” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</span>). Each of these components
+can have its own color🎨label🏷️. In Zone <span class="color0">0</span>,
+the current date is
+${decYearP0hsl0}<span style="font-family:monospace;">+</span>${decDateP0hsl0}
+and the current time is
+${decTimeP0hsl0}<span style="font-family:monospace;">-</span><span class="color0">0</span>.
+Dates and time can be combined into snaps🫰:
+${decYearP0hsl1}<span style="font-family:monospace;">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span style="font-family:monospace;">-</span><span class="color0">0</span>.
 
 ## Millenium Year Day
 
@@ -1055,6 +975,33 @@ data-bs-toggle="tooltip" data-bs-title="millidays">md</span>) on
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="August 31">Day 183</span> in [leap
 years](https://en.wikipedia.org/wiki/Leap_year#:~:text=a%20calendar%20year%20that%20contains%20an%20additional%20day).
+
+## Day of dek (dod)
+
+Each <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doy</span> also has two components. The
+first two digits of a three-digit <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="days of year">doy</span>
+represent a group of ten days called a <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="group of ten days">decaday</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="group of ten days">dek</span>).
+The last digit of a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doy</span> is the “day of dek”
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of dek">dod</span>). In Dec, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="groups of ten days">deks</span>
+are used instead of months and weeks. Likewise, Dec uses
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of dek">dods</span> in lieu of days of month
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">doms</span>) and days of week
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of week">dows</span>). In Zone
+<span class="color0">0</span>, it is currently <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="group of ten days">Dek</span>
+${decDekP0hsl} and <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Day of dek">Dod</span> ${decDodP0hsl}.
 
 # Zone equatorial meter (zem)
 
@@ -2035,7 +1982,7 @@ we have to exit the highway🛣️. To ensure we do not miss our exit, we can
 periodically check a countdown of the remaining <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zems">z</span>: ${zLeft}.
 
-# Inverse of b (iob)
+# Ten equal temperament (Xet)
 
 Dec refers to <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span> as
@@ -2173,8 +2120,6 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Beats" })
 // https://observablehq.com/@freedmand/sounds
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864)
 ```
-
-# Ten equal temperament (Xet)
 
 The positive (**+**) and negative (**–**)
 [indexes](https://en.wikipedia.org/wiki/Index#:~:text=an%20integer%20pointer%20into%20an%20array%20data%20structure),
@@ -2919,18 +2864,14 @@ larger, and pounds <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="colorAvLb">10.23%</span>
 heavier.
 
-Dec color🎨labels🏷️can convey an impression of many different kinds of
-values at a glance. Moreover, color🎨labels🏷️help avoid confusion when
-dealing with different metric prefixes. The current <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> in Zone
-${decOffsetHsl3} can be expressed as ${decTimeOffHsl1}
+Dec color🎨labels🏷can convey an impression of a value at a glance.
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decidays">dd</span>, ${decTimeOffHsl2} days, or
-${decTimeOffHsl3} <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</span>. Metric prefixes allow us to shift the
-[decimal
-separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline)
-in [decimal](https://en.wikipedia.org/wiki/Decimal) numbers.
+data-bs-title="Tenet">Xet</span> sound🔊labels🏷allow us to estimate a
+value without even having to look at it. Both types of labels can help
+avoid confusion when [decimal
+separators](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline)
+appear, disappear, or move due to a measurement unit change such as the
+addition, removal, or replacement of a metric prefix.
 
 # Next
 
@@ -3772,43 +3713,22 @@ ydz = dote2date(...dz)
 decZone = ydz[2]
 decZonePos = (decZone + 10) % 10
 decSign = decZone < 0 ? "+" : "–"
-decSignOff = offset < 0 ? "+" : "–"
-dzOff = unix2dote(now, offset)
-ydzOff = dote2date(...dzOff)
-decYearOff = ydzOff[0]
-decYearOffHsl = textcolor(decYearOff, `hsl(${d3.hsl(piecewiseColor(decYearOff % 1000 / 1000)).h}` + slStr)
-decDateOff = Math.floor(ydzOff[1])
-decDek = Math.floor(decDateOff / 10)
-decDod = decDateOff % 10
-decDotyOff = decDateOff.toString().padStart(3, "0")
-decTimeOff = ydzOff[1] % 1
-decOffsetPosi = (offset + 10) % 10
-decOffsetNega = decOffsetPosi - 10
-decOffsetHslP = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decOffsetHslN = textcolor(decOffsetNega, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decOffsetHsl0 = textcolor(offset, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decOffsetHsl1 = textcolor(Math.abs(offset), `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decOffsetHsl2 = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decOffsetHsl3 = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decDateOffHsl = textcolor(decDateOff.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateOff / (365 + isLeapOff))).h}` + slStr)
-decDekOffHsl = textcolor(decDek, `hsl(${d3.hsl(piecewiseColor(decDek / 37)).h}` + slStr)
-decDodOffHsl = textcolor(decDod, `hsl(${d3.hsl(piecewiseColor(decDod / 10)).h}` + slStr)
-decTimeOffHsl0 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl1 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl2 = textcolor(decTimeOff.toFixed(5).slice(1), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl3 = textcolor((decTimeOff * 100000).toFixed(0), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-dzP0 = unix2dote(now, 0)
-ydzP0 = dote2date(...dzP0)
+ydzP0 = dote2date(...unix2dote(now, 0))
 decYearP0 = ydzP0[0]
-utcOffsetM = -(new Date).getTimezoneOffset()
-utcOffsetD = utcOffsetM / 144
-utcOffDiff = parseFloat((Math.round(utcOffsetD) - utcOffsetD).toFixed(2))
-utcOffDiffHsl = textcolor(utcOffDiff, `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
-utcOffsetMdiffHsl = textcolor(parseFloat((utcOffDiff * 144).toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
-utcOffsetP = (utcOffsetD + 10) % 10
-decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
-utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
-utcOffHslD = textcolor(parseFloat(utcOffsetD.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
+decYdaP0 = ydzP0[1]
+decDateP0 = Math.floor(decYdaP0)
+decTimeP0 = ydzP0[1] % 1
+decDekP0 = Math.floor(decDateP0 / 10)
+decDodP0 = decDateP0 % 10
+decYearP0hsl0 = textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0 % 1000 / 1000)).h}` + slStr)
+decYearP0hsl1 = textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0 % 1000 / 1000)).h}` + slStr)
+decDateP0hsl0 = textcolor(decDateP0.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
+decDateP0hsl1 = textcolor(decDateP0.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
+decYdaP0hsl = textcolor(decYdaP0.toFixed(5).padStart(9, "0"), `hsl(${d3.hsl(piecewiseColor(decYdaP0 / (365 + isLeapP0))).h}` + slStr)
+decTimeP0hsl0 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeP0hsl1 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decDekP0hsl = textcolor(decDekP0, `hsl(${d3.hsl(piecewiseColor(decDekP0 / 37)).h}` + slStr)
+decDodP0hsl = textcolor(decDodP0, `hsl(${d3.hsl(piecewiseColor(decDodP0 / 10)).h}` + slStr)
 decLon = longitude % 10
 decLonHsl = textcolor(parseFloat(decLon.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(decLon / 10)).h}` + slStr)
 decZon = Math.floor(decLon)
@@ -3823,7 +3743,7 @@ point0long = long2turn(Place_A[0], 1)
 point0zone = Math.floor(point0long)
 point0lHsl = textcolor(parseFloat(point0long.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(point0long / 10)).h}` + slStr)
 point0zHsl = textcolor(point0zone, `hsl(${d3.hsl(piecewiseColor(point0zone / 10)).h}` + slStr)
-isLeapOff = decYearOff % 4 == 0 && decYearOff % 100 != 0 || decYearOff % 400 == 0;
+isLeapP0 = decYearP0 % 4 == 0 && decYearP0 % 100 != 0 || decYearP0 % 400 == 0;
 timezones = FileAttachment("../asset/timezones.json").json()
 zones = topojson.feature(timezones, timezones.objects.timezones).features
 mesh = topojson.mesh(timezones, timezones.objects.timezones)
@@ -5919,5 +5839,9 @@ img#zModu {
   overflow-x: scroll;
   white-space: nowrap;
   list-style-position: inside;
+}
+#chorus {
+  margin-top: -12px;
+  margin-bottom: 19px;
 }
 </style>
