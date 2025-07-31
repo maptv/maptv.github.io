@@ -937,11 +937,11 @@ data-bs-toggle="tooltip" data-bs-title="time of day">tod</span>) and a
 data-bs-title="time zone offset">tzo</span>). Each of these components
 can have its own color🎨label🏷️. In Zone <span class="color0">0</span>,
 the current date is
-${decYearP0hsl0}<span style="font-family:monospace;">+</span>${decDateP0hsl0}
-and the current time is
-${decTimeP0hsl0}<span style="font-family:monospace;">-</span><span class="color0">0</span>.
+${decYearP0hsl0}<span class="mono">+</span>${decDateP0hsl0} and the
+current time is
+${decTimeP0hsl0}<span class="mono">-</span><span class="color0">0</span>.
 Dates and time can be combined into snaps🫰:
-${decYearP0hsl1}<span style="font-family:monospace;">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span style="font-family:monospace;">-</span><span class="color0">0</span>.
+${decYearP0hsl1}<span class="mono">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span class="mono">-</span><span class="color0">0</span>.
 
 ## Millenium Year Day
 
@@ -2919,7 +2919,7 @@ presented the first
 [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=Newton's%20asymmetric%20color%20wheel%20based%20on%20musical%20intervals)
 and linked its colors🎨to musical notes. On <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="May 20, 2025"><span class="color025">2025</span><span style="font-family:monospace;">+</span><span class="colorD080">080</span></span>,
+data-bs-title="May 20, 2025"><span class="color025">2025</span><span class="mono">+</span><span class="colorD080">080</span></span>,
 I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm)
 by [Clint Goss](https://www.clintgoss.com), which presents a method of
 connecting musical notes to colors🎨via their frequencies. The note and
@@ -2946,7 +2946,7 @@ data-bs-toggle="tooltip"
 data-bs-title="billionths of a day">nanodays</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="nanodays">nd</span>). On
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="April 9, 2025"><span class="color025">2025</span><span style="font-family:monospace;">+</span><span class="colorD039">039</span></span>,
+data-bs-title="April 9, 2025"><span class="color025">2025</span><span class="mono">+</span><span class="colorD039">039</span></span>,
 I saw the definition of a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>, 1 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zem">z</span> =
@@ -2967,7 +2967,7 @@ described in his <span class="color021">2021</span> article entitled
 [<span class="mono under">`chrono`</span>-Compatible Low-Level Date
 Algorithms](https://howardhinnant.github.io/date_algorithms.html). On
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="December 11, 2024"><span class="color024">2024</span><span style="font-family:monospace;">+</span><span class="colorD285">285</span></span>,
+data-bs-title="December 11, 2024"><span class="color024">2024</span><span class="mono">+</span><span class="colorD285">285</span></span>,
 I found a <span class="color014">2014</span> article which proposed a
 [decimal
 time](https://en.wikipedia.org/wiki/Decimal_time#:~:text=the%20representation%20of%20the%20time%20of%20day%20using%20units%20which%20are%20decimally%20related)

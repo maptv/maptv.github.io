@@ -424,8 +424,8 @@ data-bs-title="day of year">doy</span> can be expressed as both a
 positive and a negative number. The typical range for
 <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doys</span> is 0 to
-<span class="orange">n</span><span style="font-family:monospace;">-</span>1,
-but negative <span class="cyan under tool" data-bs-toggle="tooltip"
+<span class="orange">n</span><span class="mono">-</span>1, but negative
+<span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doys</span> typically range from
 -<span class="orange">n</span> to -1, where
 <span class="orange">n</span> is the number of days in the
@@ -444,9 +444,8 @@ data-bs-title="day of year">doy</span> can be expressed as
 positive <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> and its negative equivalent is
 <span class="orange">n</span>: <span class="cyan">${decDoty}</span>
-<span style="font-family:monospace;">-</span>
-<span class="pink">${TminusPaddedNeg}</span> =
-<span class="orange">${nDaysInYear}</span>. We obtain the current
+<span class="mono">-</span> <span class="pink">${TminusPaddedNeg}</span>
+= <span class="orange">${nDaysInYear}</span>. We obtain the current
 <span class="cyan">dek</span> via the <span class="cyan">dek</span>
 equation, <span class="cyan">${decDek}</span> =
 ⌊<span class="cyan">${decDoty}</span> ÷ 10⌋, and the current
@@ -573,7 +572,7 @@ data-bs-title="day of week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
 equation, <span class="lightgreen">w<sub>Δ</sub></span> =
 (<span class="lightgreen">w<sub>M</sub></span>
-<span style="font-family:monospace;">-</span>
+<span class="mono">-</span>
 <span class="lightgreen">w<sub>S</sub></span> + 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7, to determine which of the seven possible floating🛟holiday dates
@@ -609,8 +608,7 @@ data-bs-toggle="tooltip" data-bs-title="November 22">Day 266</span> this
 data-bs-title="day of week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
 equation, <span class="lightgreen">${day266dotwDiff}</span> =
-(<span class="lightgreen">4</span>
-<span style="font-family:monospace;">-</span>
+(<span class="lightgreen">4</span> <span class="mono">-</span>
 <span class="lightgreen">${day266dotw}</span> + 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7, and then add <span class="lightgreen">w<sub>Δ</sub></span> to
@@ -665,7 +663,7 @@ class="mono"><code>civil_from_days</code></a> algorithm, and useful for
 obtaining Dec dates from <span class="cyan under tool"
 data-bs-toggle="tooltip" data-bs-title="days of era">does</span> and
 <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day of era">doe</span> analogs like [Unix
+data-bs-title="day of era">doe</span> analogs like [UNIX
 timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970)
 and <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="Julian day numbers">JDNs</span>. Besides the
@@ -723,12 +721,10 @@ data-bs-toggle="tooltip" data-bs-title="days of era">does</span> and
 data-bs-title="sums of years">soys</span> allow us to represent a date
 as a single number and obtain the difference between two dates, either
 in <span class="cyan">days</span>
-(<span class="cyan">d<sub>M</sub></span>
-<span style="font-family:monospace;">-</span>
+(<span class="cyan">d<sub>M</sub></span> <span class="mono">-</span>
 <span class="cyan">d<sub>S</sub></span>) or
 <span class="yellow">years</span>
-(<span class="yellow">y<sub>M</sub></span>
-<span style="font-family:monospace;">-</span>
+(<span class="yellow">y<sub>M</sub></span> <span class="mono">-</span>
 <span class="yellow">y<sub>S</sub></span>).
 
 Compared to <span class="cyan under tool" data-bs-toggle="tooltip"
@@ -782,35 +778,34 @@ Apart from its role in the Dec date and <span class="cyan under tool"
 data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>
 equations, <span class="orange">n</span> is needed to convert between
 <span class="yellow">year</span>+<span class="cyan">day</span> and
-<span class="yellow">year</span><span style="font-family:monospace;">-</span><span class="pink">day</span>
+<span class="yellow">year</span><span class="mono">-</span><span class="pink">day</span>
 Dec dates. The
-<span class="yellow">year</span><span style="font-family:monospace;">-</span><span class="pink">day</span>
+<span class="yellow">year</span><span class="mono">-</span><span class="pink">day</span>
 version of the Dec <span class="yellow under tool"
 data-bs-toggle="tooltip"
 data-bs-title="epochal year aggregate">eya</span> equation is
 <span class="yellow">y</span> = ⌊<span class="yellow">y</span>⌋ + 1 +
-(<span class="cyan">d</span>
-<span style="font-family:monospace;">-</span>
+(<span class="cyan">d</span> <span class="mono">-</span>
 <span class="orange">n</span>) ÷ <span class="orange">n</span>. In
 essence,
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="orange">n</span>
+<span class="cyan">d</span><span class="mono">-</span><span class="orange">n</span>
 is the number of days until the start of
 <span class="yellow">Year</span> ⌊<span class="yellow">y</span>⌋+1. The
 current
-<span class="yellow">year</span><span style="font-family:monospace;">-</span><span class="pink">day</span>
+<span class="yellow">year</span><span class="mono">-</span><span class="pink">day</span>
 date,
-<span class="yellow">${nextYear}</span><span style="font-family:monospace;">-</span><span class="pink">${TminusPadded}</span>,
+<span class="yellow">${nextYear}</span><span class="mono">-</span><span class="pink">${TminusPadded}</span>,
 tells us that <span class="yellow">Year</span>
 <span class="yellow">${nextYear}</span> will begin in
 <span class="pink">${Tminus}</span> days.
 
 The distinction between <span class="cyan">d</span> and
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="orange">n</span>
+<span class="cyan">d</span><span class="mono">-</span><span class="orange">n</span>
 can also be explained in terms of computer programming. If we think of
 <span class="yellow">years</span> as
 [arrays](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=a%20data%20structure%20consisting%20of%20a%20collection%20of%20elements%20(values%20or%20variables)%2C%20of%20same%20memory%20size%2C%20each%20identified%20by%20at%20least%20one%20array%20index),
 <span class="cyan">d</span> and
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="orange">n</span>
+<span class="cyan">d</span><span class="mono">-</span><span class="orange">n</span>
 are like array
 [indexes](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=individual%20objects%20are%20selected%20by%20an%20index)
 that can be used to identify array elements or combine them into groups
@@ -820,7 +815,7 @@ In this analogy, <span class="orange">n</span> is the number of elements
 in the array, <span class="cyan">d</span> is a [positive
 index](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00),
 and
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="orange">n</span>
+<span class="cyan">d</span><span class="mono">-</span><span class="orange">n</span>
 is a [negative
 index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array).
 
@@ -855,7 +850,7 @@ data-bs-title="epochal year aggregate">eya</span>, we can do the
 opposite and expand it to display additional information, such as the
 number of days in between it and another date. An expanded version of
 the current date,
-<span class="yellow">${decYear}</span>+<span class="cyan">299</span><span style="font-family:monospace;">${xmasDiffSign}</span><span class="violet">${Math.abs(xmasDiff)}</span>,
+<span class="yellow">${decYear}</span>+<span class="cyan">299</span><span class="mono">${xmasDiffSign}</span><span class="violet">${Math.abs(xmasDiff)}</span>,
 can tell us that <span class="violet">${Math.abs(xmasDiff)}</span> days
 ${xmasDiffSince} <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="December 25">Day 299</span>🎄of this
@@ -872,7 +867,7 @@ countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=backward%20counting%2
 
 To see its minuend, subtrahend, and difference at the same time, we
 could rewrite the expanded date above⬆️as a Dec span🌈:
-<span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>=<span class="yellow">${decYear}</span>+<span class="cyan">299</span><span style="font-family:monospace;">${xmasDiffSign}</span><span class="violet">${Math.abs(xmasDiff)}</span>.
+<span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>=<span class="yellow">${decYear}</span>+<span class="cyan">299</span><span class="mono">${xmasDiffSign}</span><span class="violet">${Math.abs(xmasDiff)}</span>.
 Unlike expanded dates, Dec spans🌈represent time intervals instead of
 individual dates and are structured like the minuend equation as opposed
 to a math expression that can be simplified to an
@@ -886,7 +881,7 @@ or the difference,
 <span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>=<span class="yellow">${decYear}</span>+<span class="cyan">299</span>.
 If the <span class="yellow">year</span> is the same on both sides of the
 equals sign, it can be omitted from the minuend,
-<span class="cyan">${decDoty}</span>=<span class="yellow">${decYear}</span>+<span class="cyan">299</span><span style="font-family:monospace;">${xmasDiffSign}</span><span class="violet">${Math.abs(xmasDiff)}</span>,
+<span class="cyan">${decDoty}</span>=<span class="yellow">${decYear}</span>+<span class="cyan">299</span><span class="mono">${xmasDiffSign}</span><span class="violet">${Math.abs(xmasDiff)}</span>,
 or from the subtrahend along with the difference:
 <span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>=<span class="cyan">299</span>.
 
@@ -929,7 +924,7 @@ bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%2
 (navbar) of my site displays the current Dec
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</span> date,
-<span class="yellow">${decYear}</span><span style="font-family:monospace;">${dotw0sign}</span><span class="cyan">${dotw0doty}</span>+<span class="lightgreen">${dotw}</span>,
+<span class="yellow">${decYear}</span><span class="mono">${dotw0sign}</span><span class="cyan">${dotw0doty}</span>+<span class="lightgreen">${dotw}</span>,
 by splitting the current <span class="cyan under tool"
 data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>,
 <span class="cyan">${decDoty}</span>, into the
@@ -947,9 +942,9 @@ Instead of the <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> <span class="cyan">d</span>, Dec
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</span> dates display
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="lightgreen">w</span>+<span class="lightgreen">w</span>,
+<span class="cyan">d</span><span class="mono">-</span><span class="lightgreen">w</span>+<span class="lightgreen">w</span>,
 where
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="lightgreen">w</span>
+<span class="cyan">d</span><span class="mono">-</span><span class="lightgreen">w</span>
 is the <span class="lightgreen under tool" data-bs-toggle="tooltip"
 data-bs-title="Sunday">Dow 0</span> <span class="cyan under tool"
 data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> and
@@ -957,7 +952,7 @@ data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> and
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</span> associated with
 <span class="cyan">d</span>. We evaluate the subtraction,
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="lightgreen">w</span>,
+<span class="cyan">d</span><span class="mono">-</span><span class="lightgreen">w</span>,
 to obtain the <span class="lightgreen under tool"
 data-bs-toggle="tooltip" data-bs-title="Sunday">Dow 0</span>
 <span class="cyan under tool" data-bs-toggle="tooltip"
@@ -1080,11 +1075,11 @@ data-bs-toggle="tooltip" data-bs-title="week of year">woy</span> date,
 we need two types of Dec expansion: minuend and dividend expansion.
 First, we turn the minuend <span class="cyan">d</span> into the
 subtrahend
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="lightgreen">w</span>
+<span class="cyan">d</span><span class="mono">-</span><span class="lightgreen">w</span>
 and the difference <span class="lightgreen">w</span>. Then, we use the
 dividend equation, dividend = divisor × quotient, to convert the
 dividend
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="lightgreen">w</span>+<span class="lightgreen">w<sub>0</sub></span>
+<span class="cyan">d</span><span class="mono">-</span><span class="lightgreen">w</span>+<span class="lightgreen">w<sub>0</sub></span>
 into the divisor 7 and the quotient <span class="darkgreen">W</span>,
 where <span class="darkgreen">W</span> is the
 <span class="darkgreen under tool" data-bs-toggle="tooltip"
@@ -1097,9 +1092,9 @@ data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>.
 Essentially, Dec <span class="darkgreen under tool"
 data-bs-toggle="tooltip" data-bs-title="week of year">woy</span> dates
 turn
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="lightgreen">w</span>
+<span class="cyan">d</span><span class="mono">-</span><span class="lightgreen">w</span>
 into
-7×<span class="darkgreen">W</span>+<span class="lightgreen">w</span><span style="font-family:monospace;">-</span><span class="lightgreen">w<sub>0</sub></span>.
+7×<span class="darkgreen">W</span>+<span class="lightgreen">w</span><span class="mono">-</span><span class="lightgreen">w<sub>0</sub></span>.
 Typically, only
 7×<span class="darkgreen">W</span>+<span class="lightgreen">w</span> is
 displayed, because <span class="lightgreen">w<sub>0</sub></span> is not
@@ -1360,7 +1355,7 @@ Dec.
 
 Other than pent numbers, a pent can also be expressed as a span🌈. Pent
 72 can be represented as
-<span class="cyan">360</span>=<span class="cyan">365</span><span style="font-family:monospace;">-</span><span class="violet">5</span>,
+<span class="cyan">360</span>=<span class="cyan">365</span><span class="mono">-</span><span class="violet">5</span>,
 <span class="cyan">360</span>=<span class="violet">-5</span>, or
 <span class="cyan">360</span>=<span class="cyan">365</span>. In addition
 to omitting the subtrahend or the difference, we can make the subtrahend
@@ -1550,9 +1545,9 @@ data-bs-title="day of month">dom</span> dates replace the
 <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> <span class="cyan">d</span> from
 Dec dates with
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="lightblue">m</span>+<span class="lightblue">m</span>.
+<span class="cyan">d</span><span class="mono">-</span><span class="lightblue">m</span>+<span class="lightblue">m</span>.
 We evaluate the subtraction to get
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="lightblue">m</span>,
+<span class="cyan">d</span><span class="mono">-</span><span class="lightblue">m</span>,
 the Dec <span class="azul">month</span> number, but not the addition, so
 we can see <span class="lightblue">m</span>, the
 <span class="lightblue under tool" data-bs-toggle="tooltip"
@@ -1568,7 +1563,7 @@ dates:
 <span class="yellow">${decYear}</span>+<span class="cyan">${monthNumber -
 dotw}</span>+<span class="lightblue">${dotm}</span>+<span class="lightgreen">${dotw}</span>,
 where <span class="cyan">${monthNumber - dotw}</span> is
-<span class="cyan">d</span><span style="font-family:monospace;">-</span><span class="lightblue">m</span><span style="font-family:monospace;">-</span><span class="lightgreen">w</span>,
+<span class="cyan">d</span><span class="mono">-</span><span class="lightblue">m</span><span class="mono">-</span><span class="lightgreen">w</span>,
 the <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> of the last
 <span class="lightgreen under tool" data-bs-toggle="tooltip"
