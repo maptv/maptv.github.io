@@ -9,7 +9,7 @@
   text-align: center;
 }
 
-.mono {
+.monospaced {
   font-family: monospace;
 }
 
@@ -203,11 +203,6 @@ div > form > label {
 .teal { border-radius: 4px; background-color: teal; color: white; padding: 0px 2px 0px 2px; } /* hour 008080 */
 .violet { border-radius: 4px; background-color: violet; color: black; padding: 0px 2px 0px 2px; } /* diff ee82ee */
 .magenta { border-radius: 4px; background-color: magenta; color: black; padding: 0px 2px 0px 2px; } /* diff ff00ff */
-.yellow { border-radius: 4px; background-color: yellow; color: black; padding: 0px 2px 0px 2px; } /* year ffff00 */
-
-.under {
-  text-decoration-line: underline;
-  text-decoration-thickness: .7px;
 .yellow { border-radius: 4px; background-color: yellow; color: black; padding: 0px 2px 0px 2px; } /* year ffff00 */
 
 .under {

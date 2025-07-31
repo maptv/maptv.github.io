@@ -17,16 +17,16 @@ css: cover.css
 - ![](https://icons.getbootstrap.com/assets/icons/linkedin.svg){.linkedin} [maptv](https://linkedin.com/in/maptv)
 :::
 
-I am writing to express my interest in the Staff Data Scientist position at K1X. With over a decade of experience designing and deploying end-to-end Artifical Intelligence (AI), Machine Learning (ML), and Natural Language Processing (NLP) solutions, I am excited by the prospect of contributing to K1X’s AI-powered platform for alternative investments.
+I am writing to express my interest in the Azure Data Engineer position at Accenture Federal Services. With a career spanning biomedical science, machine learning, health data analytics, and cloud engineering, I am confident that my blend of leadership experience, technical expertise, and mission-driven focus aligns well with the role’s demands and Accenture’s public service vision.
 
-My background includes building large-scale AI, ML, and NLP systems that extract and interpret unstructured data—especially in high-stakes domains such as finance and healthcare. At Amazon Web Services (AWS), I served as a Senior Domain Lead, helping enterprise clients design and deploy scalable architectures using SageMaker, Lambda, and other AWS services. These engagements often involved parsing unstructured documents, which directly aligns with K1X’s core challenge of extracting and categorizing data from complex PDF tax documents.
+Throughout my career, I have led interdisciplinary teams focused on turning complex health data into actionable insights. As a Senior Domain Lead at Amazon Web Services, I worked with many scientists who wanted to integrate cloud-based tools into their workflows and transfer their computational workloads to the cloud. As an AI Engineering Manager at Booz Allen Hamilton, I led teams developing cyber intelligence and COVID-19 analytics solutions, obtaining the Microsoft Azure Data Scientist Associate certification in the process.
 
-Previously at Booz Allen Hamilton, I led interdisciplinary teams to deliver NLP-powered applications in cybersecurity and public health. One of my key strengths is bridging the gap between data science and business needs—translating technical insight into strategic impact for stakeholders at all levels. I also hold three AWS certifications, including Solutions Architect Associate, underscoring my fluency in modern cloud infrastructure.
+Prior to that, I spent over a decade at the National Institutes of Health integrating clinical, genomic, and imaging data to develop therapeutic and diagnostic strategies, where I mentored undergraduate, graduate, and medical school students. In addition to mentoring students, I have taught computer and data science courses at the Foundation for Advanced Education in the Sciences, George Washington University, General Assembly, Data Society, and Virginia Tech.
 
-Beyond applied machine learning, I am deeply committed to education and mentorship. I have trained enterprise teams at Data Society and General Assembly on topics such as NLP, ML Operations (MLOps), and Generative AI. I have also taught graduate-level courses at Virginia Tech and George Washington University. These roles have sharpened my ability to mentor junior data scientists and foster a collaborative, learning-driven environment.
+What draws me to Accenture Federal Services is your mission to support national health and safety through cutting-edge technology. I am passionate about using data science to solve complex public health challenges, and I thrive in fast-paced environments that demand both strategic oversight and hands-on execution.
 
-Thank you for considering my application. I would welcome the chance to discuss how my skills and experiences align with this role and the ways I can support K1X's vision and bring value to your growing team.
+Thank you for considering my application. I would welcome the opportunity to contribute my experience and dedication to your team. I am happy to provide further information or schedule a conversation at your convenience.
 
 Sincerely,
 
-Martin Skarzynski Laptev
+Martin Skarzynski Laptev PhD MPH MS
