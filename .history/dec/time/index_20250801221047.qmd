@@ -904,21 +904,19 @@ $$\gamma = \tau \times \text{toy}$$
 
 $$\begin{split}
 \text{eot}(\gamma) & = \beta_0 \\
-& + \beta_1 \times \cos(\gamma) \\
-& + \beta_2 \times \sin(\gamma) \\
-& + \beta_3 \times \cos(2\gamma) \\
-& + \beta_4 \times \sin(2\gamma)
+& + \beta_1 \times \text{cos}(\gamma) \\
+& + \beta_2 \times \text{sin}(\gamma) \\
+& + \beta_3 \times \text{cos}(2\gamma) \\
+& + \beta_4 \times \text{sin}(2\gamma)
 \end{split}$$
 
 $$\text{mst} = \text{tod} + \text{d}\lambda$$
 
 $$\text{ast} = (\text{mst} + \text{eot}(\gamma) + 10) \text{ mod } 10$$
 
-## Equation of time {.hiddenheading #eot}
+In the equations above, $\tau$ is two times $\pi$, n is the number of days in a year, the "time of year" ([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) is the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} divided by n, $\gamma$ is the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} multiplied by $\tau$, "mean solar time" ([mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}) is the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} plus [$\text d\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"}. We can refer to [$\text d\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"} as the [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} and the sum of [$\text d\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"} and [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}($\gamma$) as the [ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. Using the coefficients shown below, we can plot [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}($\gamma$) against [doys]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"}:
 
-In the equations above, $\tau$ is two times $\pi$, n is the number of days in a year, the "time of year" ([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) is the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} divided by n, $\gamma$ is the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} multiplied by $\tau$, "mean solar time" ([mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}) is the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} plus [$\text d\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"}. We can refer to [$\text d\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"} as the [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} and the sum of [$\text d\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"} and [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}($\gamma$) as the [ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. Using the coefficients shown below, we can plot [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}($\gamma$) against [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}:
-
-{{< embed eot.ipynb#eot >}}
+{{< embed eot.ipynb#coefficients >}}
 
 ```{ojs}
 //| echo: false
@@ -953,51 +951,11 @@ In the equations above, $\tau$ is two times $\pi$, n is the number of days in a 
 }
 ```
 
-## Solar declination angle {.hiddenheading #sda}
-
-We can subtract the [ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} from five to get the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow) at the given longitude. Before we can find the sunrise and sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, we first need to calculate the solar declination angle ([sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}). For simplicity, we can use the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} for [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}, even though the [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF) propose the more complex model shown below.
+We can subtract the [ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} from five to get the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow) at the given longitude. Dec is able to show the time relative to a specific point in the day, such as solar noon, as part of a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} relative solar noon based on the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and longitude selected by the range🎚️inputs above is \${solarNoonHsl}\${solarSign}\${solarDiffHsl}.
 
 $$\text{noon} = (5 - \text{d}\lambda - \text{eot}(\gamma) + 10) \text{ mod } 10$$
 
-$$\begin{split}
-\text{sda}(\gamma) & = \beta_0 \\
-& + \beta_1 \times \cos(\gamma) \\
-& + \beta_2 \times \sin(\gamma) \\
-& + \beta_3 \times \cos(2\gamma) \\
-& + \beta_4 \times \sin(2\gamma) \\
-& + \beta_5 \times \cos(3\gamma) \\
-& + \beta_6 \times \sin(3\gamma) \\
-\end{split}$$
-
-## Solar hour angle {.hiddenheading #sha}
-
-If the "solar zenith angle" ([sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"}) in the equation below is 0.2523 turns, the equation will yield a sunrise "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) that we can use to get a sunrise or sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. Dec measures angles in turns. The trigonometric functions of most --- if not all -- programming languages require radians. To convert turns into radians, we multiply by $\tau$.
-
-$$\text{radian} = \text{turn} \times \tau = \text{degree} \times \tau \div 360$$
-
-$$\text{turn} = \text{radian} \div \tau = \text{degree} \div 360$$
-
-$$\text{degree} = \text{radian} \div \tau \div 360 = \text{turn} \times 360$$
-
-$$\text{sha} = \arccos\left( \frac{\cos(\text{sza}\times\tau)}{\cos(\phi\times\tau) \cdot \cos(\text{sda}\times\tau)} - \tan(\text{$\phi\times\tau$}) \cdot \tan(\text{sda}\times\tau) \right)$$
-
-In the equation above, latitude is measured in turns called meridians ($\phi$). The difference between a solar noon and sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} is a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. Likewise, the sum of a solar noon and sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} is a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. To get the daylight duration in decidays, we can either subtract the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} from the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} or multiply the sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} by twenty.
-
-$$\text{sunrise} = \text{noon} - \text{sha}$$
-
-$$\text{sunset} = \text{noon} + \text{sha}$$
-
-$$\text{duration} = \text{sunset} - \text{sunrise} = \text{sha} \times 20$$
-
-
-In general, computer programmers and mathematicians seem to prefer radians over degrees.  are better because the Dec base units of time, longitude, and latitude can be multiplied by $\tau$ to can convert days, parallels, and meridians into radians simply by multiplying to . Apart from such as solar noon,
-In Dec, any [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can be expanded to show a subtrahend and a difference. specific point in the day called a subtrahend. The difference between the original [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} and a . A [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} without the diff is called a minuend and Positive diffs show how much time has passed and negative diffs show how much time is left.
-
-$$\text{minuend} = \text{subtrahend} + \text{diff}$$
-
-$$\text{minuend} = \text{subtrahend} + \text{diff}$$
-
-The Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} relative to the solar noon that corresponds to the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and longitude selected by the range🎚️inputs above is \${solarNoonHsl}\${solarSign}\${solarDiffHsl}.
+$$\text{tod} = \text{noon} + \text{diff}$$
 
 In Zone [0]{.color0}, this was our solar noon, we could  could all agree to center our daily schedules on the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of our local solar noon, there would be no need for time zones.  could start work two decidays before solar noon and finish two decidays after solar noon.
 

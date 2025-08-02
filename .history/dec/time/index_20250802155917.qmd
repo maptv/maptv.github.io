@@ -970,8 +970,8 @@ $$\begin{split}
 \end{split}$$
 
 ## Solar hour angle {.hiddenheading #sha}
-
-If the "solar zenith angle" ([sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"}) in the equation below is 0.2523 turns, the equation will yield a sunrise "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) that we can use to get a sunrise or sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. Dec measures angles in turns. The trigonometric functions of most --- if not all -- programming languages require radians. To convert turns into radians, we multiply by $\tau$.
+ha
+With [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}($\gamma$), we can calculate the "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}). In the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation below, the "solar zenith angle" ([sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"}) is set to 0.2523 turns. Dec measures angles such as [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}, [sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"}, meridians ($\phi$), and [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} in turns. The trigonometric functions of most --- if not all -- programming languages accept radians. To convert turns into radians, we multiply by $\tau$.
 
 $$\text{radian} = \text{turn} \times \tau = \text{degree} \times \tau \div 360$$
 
@@ -979,23 +979,16 @@ $$\text{turn} = \text{radian} \div \tau = \text{degree} \div 360$$
 
 $$\text{degree} = \text{radian} \div \tau \div 360 = \text{turn} \times 360$$
 
-$$\text{sha} = \arccos\left( \frac{\cos(\text{sza}\times\tau)}{\cos(\phi\times\tau) \cdot \cos(\text{sda}\times\tau)} - \tan(\text{$\phi\times\tau$}) \cdot \tan(\text{sda}\times\tau) \right)$$
+$$\text{sha} = \pm \arccos\left( \frac{\cos(0.2523\times\tau)}{\cos(\phi\times\tau) \cdot \cos(\text{sda}\times\tau)} - \tan(\text{$\phi\times\tau$}) \cdot \tan(\text{sda}\times\tau) \right)$$
 
-In the equation above, latitude is measured in turns called meridians ($\phi$). The difference between a solar noon and sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} is a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. Likewise, the sum of a solar noon and sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} is a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. To get the daylight duration in decidays, we can either subtract the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} from the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} or multiply the sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} by twenty.
+$$\text{minuend} = \text{subtrahend} + \text{diff}$$
 
-$$\text{sunrise} = \text{noon} - \text{sha}$$
+$$\text{minuend} = \text{subtrahend} + \text{diff}$$
 
-$$\text{sunset} = \text{noon} + \text{sha}$$
-
-$$\text{duration} = \text{sunset} - \text{sunrise} = \text{sha} \times 20$$
-
+The Dec unit of latitude, the meridian ($\phi$), is a type of turn.
 
 In general, computer programmers and mathematicians seem to prefer radians over degrees.  are better because the Dec base units of time, longitude, and latitude can be multiplied by $\tau$ to can convert days, parallels, and meridians into radians simply by multiplying to . Apart from such as solar noon,
 In Dec, any [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can be expanded to show a subtrahend and a difference. specific point in the day called a subtrahend. The difference between the original [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} and a . A [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} without the diff is called a minuend and Positive diffs show how much time has passed and negative diffs show how much time is left.
-
-$$\text{minuend} = \text{subtrahend} + \text{diff}$$
-
-$$\text{minuend} = \text{subtrahend} + \text{diff}$$
 
 The Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} relative to the solar noon that corresponds to the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and longitude selected by the range🎚️inputs above is \${solarNoonHsl}\${solarSign}\${solarDiffHsl}.
 

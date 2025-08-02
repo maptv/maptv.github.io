@@ -971,7 +971,7 @@ $$\begin{split}
 
 ## Solar hour angle {.hiddenheading #sha}
 
-If the "solar zenith angle" ([sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"}) in the equation below is 0.2523 turns, the equation will yield a sunrise "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) that we can use to get a sunrise or sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. Dec measures angles in turns. The trigonometric functions of most --- if not all -- programming languages require radians. To convert turns into radians, we multiply by $\tau$.
+With [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}($\gamma$), "solar zenith angle" ([sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"}), and latitude ($\phi$), we can calculate the "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}). In the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation below, the [sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"} is set to 0.2523 turns. Dec measures angles such as [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}, [sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"}, and latitude ($\phi$) in turns. The trigonometric functions of most --- if not all -- programming languages accept radians. To convert turns into radians, we multiply by $\tau$.
 
 $$\text{radian} = \text{turn} \times \tau = \text{degree} \times \tau \div 360$$
 
@@ -979,15 +979,14 @@ $$\text{turn} = \text{radian} \div \tau = \text{degree} \div 360$$
 
 $$\text{degree} = \text{radian} \div \tau \div 360 = \text{turn} \times 360$$
 
-$$\text{sha} = \arccos\left( \frac{\cos(\text{sza}\times\tau)}{\cos(\phi\times\tau) \cdot \cos(\text{sda}\times\tau)} - \tan(\text{$\phi\times\tau$}) \cdot \tan(\text{sda}\times\tau) \right)$$
+$$\text{sha} = \pm \arccos\left( \frac{\cos(0.2523\times\tau)}{\cos(\phi\times\tau) \cdot \cos(\text{sda}\times\tau)} - \tan(\text{$\phi\times\tau$}) \cdot \tan(\text{sda}\times\tau) \right)$$
 
-In the equation above, latitude is measured in turns called meridians ($\phi$). The difference between a solar noon and sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} is a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. Likewise, the sum of a solar noon and sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} is a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. To get the daylight duration in decidays, we can either subtract the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} from the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} or multiply the sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} by twenty.
+The Zone [0]{.color0} sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of any location is the difference between solar noon and [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}. Likewise, the sum of solar noon and [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} is Zone [0]{.color0} sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. Instead of subtracting the sunset tod from the sunrise tod, we can double the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} to get the daylight duration in days or multiply it by twenty.
 
 $$\text{sunrise} = \text{noon} - \text{sha}$$
 
 $$\text{sunset} = \text{noon} + \text{sha}$$
 
-$$\text{duration} = \text{sunset} - \text{sunrise} = \text{sha} \times 20$$
 
 
 In general, computer programmers and mathematicians seem to prefer radians over degrees.  are better because the Dec base units of time, longitude, and latitude can be multiplied by $\tau$ to can convert days, parallels, and meridians into radians simply by multiplying to . Apart from such as solar noon,
