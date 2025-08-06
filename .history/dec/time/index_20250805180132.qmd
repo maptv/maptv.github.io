@@ -754,19 +754,19 @@ As their names suggest, [doys]{.tool data-bs-toggle="tooltip" data-bs-title="day
 
 We can turn an [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"} into a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} by [keeping the remainder after dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) by one to isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers): \${zeroYdaHsl} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = \${zeroTimeHsl0}. We can use this same approach to obtain a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from an "epochal day aggregate" ([eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}): \${zeroDoteHsl} mod 1 = \${zeroTimeHsl1}. The current [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} tells us how many days have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
 
-$$\text{tod} = \text{yda mod } 1 = \text{eda mod } 1$$
+$$\text{tod} = \text{yda} \mod 1 = \text{eda} \mod 1$$
 
 ## UNIX time equation {#ute .hiddenheading}
 
 Similarly, [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970%2C%20the%20Unix%20epoch) tallies the seconds since the [UNIX epoch](https://en.wikipedia.org/wiki/Unix_time#:~:text=00%3A00%3A00%20UTC%20on%201%C2%A0January%201970), which is exactly 719468 days after the Dec epoch. To get the [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} in Zone [0]{.color0}, the Dec time zone that is in between the two leftmost vertical lines on the map🗺️, we can divide UNIX time by the [number of seconds in a day](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day) and then keep the remainder after dividing the resulting days by one:
 
-$$\text{tod} = \text{unix} \div 86400 \text{ mod } 1$$
+$$\text{tod} = \text{unix} \div 86400 \mod 1$$
 
 ## Julian time equation {#jte .hiddenheading}
 
 [Julian dates](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon) track the days since the beginning of the [Julian period](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20chronological%20interval%20of%207980%C2%A0years%2C%20derived%20from%20three%20multi%2Dyear%20cycles:%20the%20Indiction%2C%20Solar%2C%20and%20Lunar%20cycles) and thus are akin to [edas]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregates"}. We can produce a Zone [5]{.color5} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from a [Julian date](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon) simply by keeping the remainder after dividing by one. If we want a Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} instead, we should add [5]{.color5} [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} to the Julian date before converting it to a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to ensure that the final result is less than one day:
 
-$$\text{tod} = (\text{julian} + 0.5) \text{ mod } 1$$
+$$\text{tod} = (\text{julian} + 0.5) \mod 1$$
 
 ## Hour minute second {#hms .hiddenheading}
 
@@ -824,15 +824,15 @@ hms$sec / 86400
 
 The equations below turn UNIX time or a Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} into the three components of an [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet: the "hour of day" ([hod]{.tool data-bs-toggle="tooltip" data-bs-title="hour of day"}), "minute of hour" ([moh]{.tool data-bs-toggle="tooltip" data-bs-title="minute of hour"}), and "second of minute" ([som]{.tool data-bs-toggle="tooltip" data-bs-title="second of minute"}), using a "daily second aggregate" ([dsa]{.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregate"}) and "hourly second aggregate" ([hsa]{.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregate"}). While both count seconds, [dsas]{.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregates"} start at midnight and [hsas]{.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregates"} begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
-$$\text{dsa} = \text{tod} \times 86400 = \text{unix mod } 86400$$
+$$\text{dsa} = \text{tod} \times 86400 = \text{unix} \mod 86400$$
 
-$$\text{hsa} = \text{dsa mod } 3600$$
+$$\text{hsa} = \text{dsa} \mod 3600$$
 
 $$\text{hod} = \lfloor \text{dsa} \div 3600 \rfloor$$
 
 $$\text{moh} = \lfloor \text{hsa} \div 60 \rfloor$$
 
-$$\text{som} = \lfloor \text{hsa mod } 60 \rfloor$$
+$$\text{som} = \lfloor \text{hsa} \mod 60 \rfloor$$
 
 :::{.panel-tabset group="language"}
 ### Julia
@@ -886,17 +886,13 @@ viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 
 
 ## Apparent solar time {.hiddenheading #ast}
 
-At any given moment, there is only one [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} for the entire world, regardless of longitude. Unlike [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"}, there is a ["mean solar time"](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}) and ["apparent solar time"](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"}) for every longitude. The two types of [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky), [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"}, and [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} in general must be greater that negative one and less than one day: -1 < t < 1. If we ever encounter a tod outside these bounds, we can
-
-$$-1 < \text{tod} < 1$$
-
-To calculate the [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"} for a location, we sum its longitude in [parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line) ([$\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"}), the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, and then subtract 5 [centidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}:
+At any given moment, there is only one [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} for the entire world, regardless of longitude. Unlike [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"}, there are two types of [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky): ["mean solar time"](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}) and ["apparent solar time"](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"}), vary by longitude. To calculate the [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"} for a location, we sum its longitude in [parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line) ([$\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"}), the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, and then subtract 5 [centidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}:
 
 $$\text{mst} = \text{tod} + \text{d}\lambda - 0.05$$
 
 In Dec, [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}, [msts]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar times"}, [$\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"}, and [asts]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar times"} are bound between -1 and 1. equations above make sure that the The equation above works for any [tod] in days and longitude in [$\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="parallels"}, even those that are outside the typical bounds. In Dec, less than zero or greater than one (0 &le; x &lt; 1). If we ever need to deal with an negative values, we can always add one and then keep the remainder after dividing by one. Zone [0]{.color0} starts at a longitude of 0 [$\text d\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"} and is 1 [$\text d\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"} wide. In contrast,  0.5 [$\text d\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"} it is midnight in , the [mst] in  Unlike [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"}, [ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} also varies by longitude and is cyclical on a yearly basis. To approximate [ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} for a given [deci[parallel](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a parallel"} [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda) ([$\text d\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"}) and [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}, we sum the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, [$\text d\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"}, and the result obtained from plugging the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} into the [equation of time](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepancy%20between%20two%20kinds%20of%20solar%20time) ([eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}): \${zeroTimeHsl2} + \${longInputHsl} + \${eotHsl} = \${eotSumHsl}.
 
-$$\text{mst} = (\text{tod} + \lambda + 0.95) \text{ mod } 1$$
+$$\text{mst} = (\text{tod} + \lambda + 0.95) \mod 1$$
 
 
 ```{ojs}
