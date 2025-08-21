@@ -1,7 +1,6 @@
 # Martin Skarzynski Laptev
 
 
-- [Mission](#mission)
 - [Experience](#experience)
 - [Education](#education)
 - [Publications](#publications)
@@ -23,18 +22,6 @@
   class="linkedin" /> [maptv](https://linkedin.com/in/maptv)
 
 </div>
-
-### Mission
-
-My goal is to lead the next generation of scientists and engineers in
-building solutions that integrate substantive expertise from diverse
-fields with machine intelligence. Through my work, I strive to promote
-open source software, such as the [Quarto](https://quarto.org)
-publishing system, which I use to build dashboards, presentations,
-reports, websites, and other digital deliverables. Overall, I aim to
-leverage my broad scientific background and technical expertise to help
-transform the promises of science and technology into a better future
-for all of humanity.
 
 ### Experience
 

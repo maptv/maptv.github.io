@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+100
+2025+170
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -940,7 +940,7 @@ the current date is
 ${decYearP0hsl0}<span class="mono">+</span>${decDateP0hsl0} and the
 current time is
 ${decTimeP0hsl0}<span class="mono">-</span><span class="color0">0</span>.
-Dates and time can be combined into snaps🫰:
+Dates and times can be combined into snaps🫰:
 ${decYearP0hsl1}<span class="mono">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span class="mono">-</span><span class="color0">0</span>.
 
 ## Millenium Year Day
