@@ -17,15 +17,13 @@ css: cover.css
 - ![](https://icons.getbootstrap.com/assets/icons/linkedin.svg){.linkedin} [maptv](https://linkedin.com/in/maptv)
 :::
 
-I am writing to express my interest in the Azure Data Engineer position at Accenture Federal Services. With a career spanning biomedical science, machine learning, health data analytics, and cloud engineering, I am confident that my blend of leadership experience, technical expertise, and mission-driven focus aligns well with the role’s demands and Accenture’s public service vision.
+I am writing to express my interest in the Data Scientist position at Accenture Federal Services (AFS). With a career spanning biomedical science, machine learning, health data analytics, and cloud engineering, I am confident that my blend of leadership experience, technical expertise, and mission-driven focus aligns well with the role’s demands and AFS’s public service vision.
 
-Throughout my career, I have led interdisciplinary teams focused on turning complex health data into actionable insights. As a Senior Domain Lead at Amazon Web Services, I worked with many scientists who wanted to integrate cloud-based tools into their workflows and transfer their computational workloads to the cloud. As an AI Engineering Manager at Booz Allen Hamilton, I led teams developing cyber intelligence and COVID-19 analytics solutions, obtaining the Microsoft Azure Data Scientist Associate certification in the process.
+Throughout my career, I have led interdisciplinary teams focused on turning complex data into actionable insights. As a Senior Domain Lead at Amazon Web Services, I worked with many scientists who wanted to integrate cloud-based tools into their workflows and transfer their computational workloads to the cloud. As an AI Engineering Manager at Booz Allen Hamilton, I led teams developing cyber intelligence and COVID-19 analytics solutions, obtaining the Microsoft Azure Data Scientist Associate certification in the process.
 
 Prior to that, I spent over a decade at the National Institutes of Health integrating clinical, genomic, and imaging data to develop therapeutic and diagnostic strategies, where I mentored undergraduate, graduate, and medical school students. In addition to mentoring students, I have taught computer and data science courses at the Foundation for Advanced Education in the Sciences, George Washington University, General Assembly, Data Society, and Virginia Tech.
 
-What draws me to Accenture Federal Services is your mission to support national health and safety through cutting-edge technology. I am passionate about using data science to solve complex public health challenges, and I thrive in fast-paced environments that demand both strategic oversight and hands-on execution.
-
-Thank you for considering my application. I would welcome the opportunity to contribute my experience and dedication to your team. I am happy to provide further information or schedule a conversation at your convenience.
+Thank you for considering my application. I would welcome the opportunity to contribute my experience and dedication to your team. I am happy to provide further information or to answer any questions that you might have.
 
 Sincerely,
 

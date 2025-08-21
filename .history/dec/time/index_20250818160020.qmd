@@ -879,7 +879,7 @@ The [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning
 
 ## Time zone offset {.hiddenheading #tzo}
 
-Instead of leap seconds, Dec matches [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} using a "[time zone offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)" ([tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}). With the [leap second insertion dates](https://en.wikipedia.org/wiki/Leap_second#:~:text=Announced%20leap%20seconds%20to%20date) provided by the [International Earth Rotation and Reference Systems Service](https://en.wikipedia.org/wiki/International_Earth_Rotation_and_Reference_Systems_Service#:~:text=the%20body%20responsible%20for%20maintaining%20global%20time%20and%20reference%20frame%20standards), we can approximate the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} that we need to add to the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to obtain [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} on the [Dec date](/dec/date) selected by the [range](https://observablehq.com/framework/inputs/range)🎚️inputs below: \${leapCountHsl} &div; 8640 = \${leapTzoHsl0}.
+Instead of leap seconds, Dec matches [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} using a "[time zone offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)" ([tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}). With the [leap second insertion dates](https://en.wikipedia.org/wiki/Leap_second#:~:text=Announced%20leap%20seconds%20to%20date) provided by the [International Earth Rotation and Reference Systems Service](https://en.wikipedia.org/wiki/International_Earth_Rotation_and_Reference_Systems_Service#:~:text=the%20body%20responsible%20for%20maintaining%20global%20time%20and%20reference%20frame%20standards), we can approximate the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} we need to add to the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to obtain [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} on the `year+doy` [Dec date](/dec/date) selected by the [range](https://observablehq.com/framework/inputs/range)🎚️inputs below: \${leapCountHsl} &div; 86400 = \${leapTzoHsl0}.
 
 ```{ojs}
 //| echo: false
@@ -888,80 +888,12 @@ viewof leapSecondYear = Inputs.range([1970, 2020], {label: "Year", value: 1995, 
 viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 1})
 ```
 
-Of the twenty eight [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} that can be displayed above, one is an integer, one is a [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits), and the rest are [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever). To express a repeating decimal exactly, Dec has to use a fraction. Dec always displays [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} precisely. In contrast, Dec will round [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} to fit within a given number of digits, typically three or five, when necessary.
+Dec measures all [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} in [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}. Most [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} and [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} are recurring decimal numbers after being converted to decidays. If we add the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} shown above to the current Zone [0]{.color0} time: \${zeroTimeHsl3}[-]{.mono}[0]{.color0}, the resulting [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} will be \${leapTodHsl0}[-]{.mono}\${leapTzoHsl1}. Dec times are structured like math expressions that can be simplified to the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}: \${leapTodHsl1} -- \${leapTzoHsl2} = \${zeroTimeHsl4}.
 
-Repeating decimals are by far the most common result of converting [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets to days or submultiples of days. If we converted all of the [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets that can be selected by the range🎚️inputs below, we would have 10 integers, 3190 terminating decimals, and 83200 repeating decimals. The currently selected [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet is equal to \${hmsTzoHsl0} [deciday\${pluralx10}]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}.
-
-```{ojs}
-//| echo: false
-//| label: hmsinput
-viewof hmsinput = Inputs.form([
-  Inputs.range([0, 23], {label: "Hour", value: 12, step: 1}),
-  Inputs.range([0, 59], {label: "Minute", value: 30, step: 1}),
-  Inputs.range([0, 59], {label: "Second", value: 30, step: 1}),
-])
-```
-
-Instead of a fraction, a repeating decimal [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} can be represented by a "rounded decimal offset" ([rdo]{.tool data-bs-toggle="tooltip" data-bs-title="rounded decimal offset"}) and a ["round-off error"](https://en.wikipedia.org/wiki/Round-off_error#:~:text=the%20difference%20between%20the%20result%20produced%20by%20a%20given%20algorithm%20using%20exact%20arithmetic%20and%20the%20result%20produced%20by%20the%20same%20algorithm%20using%20finite%2Dprecision%2C%20rounded%20arithmetic) ([roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"}), without sacrificing exactness. The sum of a [rdo]{.tool data-bs-toggle="tooltip" data-bs-title="rounded decimal offset"} and a [roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"} is the original [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. If we round the [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet above to the number of digits chosen by the range🎚️input below, the resulting [rdo]{.tool data-bs-toggle="tooltip" data-bs-title="rounded decimal offset"} and [roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"} will be \${hmsTzoHsl1}[\${hmsRoeSign}]{.mono}\${hmsRoeHsl}.
-
-```{ojs}
-//| echo: false
-//| label: diginput
-viewof digits = Inputs.range([0, 9], {label: "Digits", value: 4, step: 1})
-```
-
-
-When we round a decimal number, we are essentially removing the round-off error.
-
-In general, the presence of a fraction indicates that goal is to match either UT or a time in a UTC time zone.
-
-After being converted to [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, the [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets that can be selected by range🎚️inputs below to [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"},
-
-from a Each of the ten Dec time zones has a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} that is a positive single-digit [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"} integer.
-
-The vast majority of the [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets that can be selected by the range🎚️inputs above,   expressed the remaining 8639 out of 8640 [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets using fractions.
-
-cannot be expressed the remaining 26/27 [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets thatas fractions
-
-Most Using fractions, Dec can precisely match any UTC tzo with any number of leap seconds.
-Dec uses fractions for decimal tzos that are derived from hms triplets like the one selected by the range🎚️inputs below. Using fractions, Dec can match any UTC tzo. Instead of showing
-To facilitate the comparison of a tod and a tzo that comprise a Dec time,   easier the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} shown above can be represented by a math expression that the sum of a rounded decimal offset ([rdo]{.tool data-bs-toggle="tooltip" data-bs-title="rounded decimal offset"}) and its associated [round-off error](https://en.wikipedia.org/wiki/Round-off_error#:~:text=the%20difference%20between%20the%20result%20produced%20by%20a%20given%20algorithm%20using%20exact%20arithmetic%20and%20the%20result%20produced%20by%20the%20same%20algorithm%20using%20finite%2Dprecision%2C%20rounded%20arithmetic) ([roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"}) fraction: [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} = [rdo]{.tool data-bs-toggle="tooltip" data-bs-title="rounded decimal offset"} + [roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"}.
-
-After being converted to decidays, 26 out of [38](https://en.wikipedia.org/wiki/List_of_UTC_offsets) [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} are [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever), 9 are [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits), and 3 are integers. Instead of displaying a decimal [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} as a fraction, Dec can round and display it along with its the [round-off error](https://en.wikipedia.org/wiki/Round-off_error#:~:text=the%20difference%20between%20the%20result%20produced%20by%20a%20given%20algorithm%20using%20exact%20arithmetic%20and%20the%20result%20produced%20by%20the%20same%20algorithm%20using%20finite%2Dprecision%2C%20rounded%20arithmetic) ([roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"}) as a fraction.
-Dec displays [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} derived from the [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets, like the one selected by the range🎚️inputs below, as a fraction:
-
-In its most basic form, a Dec time consists of a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. Typically, all of the components of a Dec time are measured in [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}. Dec times are essentially math expressions that can be simplified to Zone [0]{.color0} [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}.
-
-In  The "Hour" range input above cannot be used to select a negative value.  In essence, Dec times are math expressions that can be simplified to the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}: \${leapTodHsl1} -- \${leapTzoHsl2} = \${zeroTimeHsl4}.
-
-If we include a sum of leap seconds that is not zero or a multiple of 8640, none of the [38](https://en.wikipedia.org/wiki/List_of_UTC_offsets) [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} will be an integer. You can The deciday value of the
-
-
-The fractions we will have a UTC will match Zone 0 from [-1276/320]{.color5} to [5603/960]{.color5}. With leap seconds, none of  [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} have [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} the range of [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} is [-5]{.color5} to [35/6]{.color583} [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}.
-
-Using [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} expressed as fractions, Dec can match the time in UTC time zones, Dec often has to To avoid date mismatches with [[UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} time zones](https://en.wikipedia.org/wiki/List_of_UTC_offsets) that have negative [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"}, we can subtract ten [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} from any positive [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} to make it negative: \${decOffsetHslP} -- [10]{.color0} = \${decOffsetHslN}.
-
-```{ojs}
-frac(27).div(8640).add(1, 320).toFraction()
-```
-
-```{ojs}
-//| echo: false
-//| label: offinput
-viewof offset = Inputs.range([-10, 9], {label: "Offset", value: 0, step: 1})
-```
-
-Disregarding leap seconds, the [[UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}[-5]{.color5}](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00#:~:text=a%20nautical%20time%20zone%20comprising%20the%20high%20seas%20between%20180°%20and%20172°30′W%20longitude) time zone is exactly one day behind Zone [5]{.color5} and thus has the same time but a different date.
-If date mismatches are not a concern,
-Negative [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} associated with a date, Dec will standardize its bring its that has an integer [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} will belong to one of the ten Dec time zones. If a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} is not an integer, Dec will either express it as All other [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} will not be compatible with any of the twn Dec time zones, but may match either [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} or the time in a [[UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} time zone](https://en.wikipedia.org/wiki/List_of_UTC_offsets).
-
-Any [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} that is an integer will produce a time that matches the time in one of the ten Dec time zones.
-After being converted to [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, the latest [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} that can be selected above is a [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits) and all of the others are [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever). In contrast, 26 out of [38](https://en.wikipedia.org/wiki/List_of_UTC_offsets) [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} are repeating decimals, 9 are terminating decimals, and 3 are integers.
-Dec can round it
-he current Zone [0]{.color0} time is \${zeroTimeHsl3}[-]{.mono}[0]{.color0}.
 where the [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is the minuend and the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} is a .
 
-A Dec time consists of a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. We can evaluate any Dec time as Dec can display a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} together as , we get a Dec time. and a tzo that differs from the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is defined as the sum of the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. The ten Dec time zones are labeled [0]{.color0} to [9]{.color9} based on their [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. To find the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} of a location, we floor its deciparallel longitude. of the all single-digit positive integers: . To find the Dec time zone with the closest to a [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} time zone with a negative [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} can be  have a similar time
+A Dec time consists of a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. We can evaluate any Dec time as Dec can display a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} together as , we get a Dec time. and a tzo that differs from the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is defined as the sum of the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. The ten Dec time zones are labeled [0]{.color0} to [9]{.color9} based on their [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. To find the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} of a location, we floor its deciparallel longitude. of the all single-digit positive integers: . In contrast, [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} range from [-5]{.color5} to [5.83̅]{.color583} [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}. To find the Dec time zone with the closest to a [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} time zone with a negative [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} can be  have a similar time To avoid date mismatches with , we can subtract ten [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} from any positive Dec [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} to make it negative: \${decOffsetHslP} -- [10]{.color0} = \${decOffsetHslN}.
+
 
 Dec measures longitude in [parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line) ([$\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="parallels"}) or submultiples of [$\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="parallels"} starting from Longitude [0]{.color0}, the Dec [prime meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0) and ["international date line"](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) ([idl]{.tool data-bs-toggle="tooltip" data-bs-title="international date line"}). To find the Dec time zone and [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} at a location
 
@@ -969,7 +901,7 @@ Dec measures longitude in [parallels](https://en.wikipedia.org/wiki/Circle_of_la
 We can combine the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} of any of the ten Dec time zones with a tod to create a .time all single-digit positive integers. We can combine an UT can be measured using vlbi with a precision greater than a fifth of a microday.
 
 D
-Dec can either display
+Dec can either display recurring decimal numbers as fractions or
 Each of the ten Dec time zones has a tzo that is a single-digit positive integer. We can make any  Dec displays [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} based on hours, minutes, and seconds as fractions to avoid rounding recurring decimal numbers. ec measures tzos in decidays. The tzos of the ten Dec time zones are all single-digit positive integers. Dec displays
 
 [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} does not belong to any of the ten Dec time zones. Similarly, In general, the difference between needed to is able to support any number kk we can a zonal time is the sum of a Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The tzo of any zonal time is a floored longitude. and solar times
@@ -980,7 +912,7 @@ At any given moment, there is just one [UT]{.tool data-bs-toggle="tooltip" data-
 
 Dec measures longitude in [parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line) ([$\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="parallels"}) or submultiples of [$\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="parallels"} starting from Longitude [0]{.color0}, the Dec [prime meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0) and ["international date line"](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next) ([idl]{.tool data-bs-toggle="tooltip" data-bs-title="international date line"}).
 
-## Mean solar time {.hiddenheading #mst}
+## Mean solar time {.hiddenheading #ast}
 
 To calculate the [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"} for a location, we add its longitude in [$\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"} to the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and then subtract 5 [centidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}. If the result is negative, we can make it positive by
 
@@ -1201,6 +1133,12 @@ a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, from a prog
 is a Dec [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset index"}, [uzi]{.tool data-bs-toggle="tooltip" data-bs-title="unique zone identifier"}, If we add [[27]{.color1by320} leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=27%20leap%20seconds%20have%20been%20added%20to%20UTC) We can combine the [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} in any Dec time zone by summing the Zone [0]{.color0}, [[27]{.color1by320} leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=27%20leap%20seconds%20have%20been%20added%20to%20UTC) to a Zone \${decOffsetHsl0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, we get add the result deciday and the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset index"} selected by the range🎚️input below is [0.003125] + \${decOffsetHsl0} = \${decTimeOffLeapTzoHsl}. If we add the resulting [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset index"} to the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, we get \${decTimeOffLeapTzoHsl}. last two digits of this [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset index"} and [uzi]{.tool data-bs-toggle="tooltip" data-bs-title="unique zone identifier"} are not visible in a five-digit [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}
 If we remove the decimal separator from this [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset index"}, we get its [uzi]{.tool data-bs-toggle="tooltip" data-bs-title="unique zone identifier"}: ${decTimeOffLeapUziHsl}.
 
+```{ojs}
+//| echo: false
+//| label: offinput
+viewof offset = Inputs.range([-10, 9], {label: "Offset", value: 0, step: 1})
+```
+
 Every [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} has a corresponding "time zone index" ([tzi]{.tool data-bs-toggle="tooltip" data-bs-title="time zone index"}). In the case of the ten Dec time zones, the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} and [tzi]{.tool data-bs-toggle="tooltip" data-bs-title="time zone index"} are identical. The [tzi]{.tool data-bs-toggle="tooltip" data-bs-title="time zone index"} that corresponds to the  Dec measures [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} in decidays. If a tzo is a single-digit integer, it likely  or fractions. The tzos of the ten Dec time zones are positive integers.
  contain leap seconds as fractions. Even if we disregard leap seconds, fractions  in [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} and [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} to are single-digit integers or fractions. Dec only uses  ten Dec time zones each have a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} that is a : [0]{.color0} to [9]{.color9} [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}. In contrast, [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} range range from [-5]{.color5} to [5.83̅]{.color583} [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}. A [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} time zone with a negative [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} will be between  have a similar time To avoid date mismatches with , we can subtract ten [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} from any positive Dec [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} to make it negative: \${decOffsetHslP} -- [10]{.color0} = \${decOffsetHslN}.
 
@@ -1210,6 +1148,16 @@ Finding the Dec time zone with the closest [tzo]{.tool data-bs-toggle="tooltip" 
 Dec avoids incompatible with the ten Dec time zones. Dec expresses incompatibles [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} as fractions. Officially, t
 Dec refers to [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} with [27]{.color1by320} leap seconds as [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}[+]{.mono}[00:00:27]{.color1by320} or [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}[+]{.mono}[1/320]{.color1by320}.
 Dec can relax its requirement that each [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} be a single-digit positive integer [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"} to match any [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}.
+
+```{ojs}
+//| echo: false
+//| label: hmsinput
+viewof hmsinput = Inputs.form([
+  Inputs.range([-24, 24], {label: "Hour", value: 0, step: 1}),
+  Inputs.range([0, 60], {label: "Minute", value: 0, step: 1}),
+  Inputs.range([0, 60], {label: "Second", value: 0, step: 1}),
+])
+```
 
 [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} is
 
@@ -2414,17 +2362,6 @@ frac = require("fraction.js")
 leapTzoHsl0 = textcolor(frac(leapCount).div(8640).toFraction(), leapColor)
 leapTzoHsl1 = textcolor(frac(leapCount).div(8640).toFraction(), leapColor)
 leapTzoHsl2 = textcolor(frac(leapCount).div(8640).toFraction(), leapColor)
-hmsTzo = frac(hmsinput[0]).div(24).add(hmsinput[1], 1440).add(hmsinput[2], 86400).mod(1)
-hmsTzox10 = hmsTzo.mul(10)
-pluralx10 = hmsTzox10.equals(1) ? "" : "s"
-hmsRounded = hmsTzox10.round(digits)
-hmsRoe = hmsRounded.sub(hmsTzox10)
-hmsRoeHsl = textcolor(hmsRoe.abs().toFraction(), d3.color(piecewiseColor(Number(hmsRoe.div(10)))).formatHex())
-hmsRoeSign = hmsRoe.lt(0) ? "-" : "+"
-hmsTzoHsl0 = textcolor(hmsTzox10.toFraction(), d3.color(piecewiseColor(Number(hmsTzo))).formatHex())
-hmsTzoHsl1 = textcolor(hmsRounded, d3.color(piecewiseColor(Number(hmsRounded.div(10)))).formatHex())
-hmsTod = (zeroTime + hmsTzo) % 1
-hmsTodHsl = textcolor((hmsTod * 10).toFixed(4), d3.color(piecewiseColor(hmsTod)).formatHex())
 leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
 leapTodHsl0 = textcolor(leapDecidayTod, d3.color(piecewiseColor(leapTod)).formatHex())
