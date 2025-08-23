@@ -1,6 +1,6 @@
 # Dec Time
 Martin Laptev
-2025+173
+2025+175
 
 - [Fractional day time](#fdt)
   - [Ticking analog clocks](#tac)
