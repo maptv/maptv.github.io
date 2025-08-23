@@ -888,7 +888,26 @@ viewof leapSecondYear = Inputs.range([1970, 2020], {label: "Year", value: 1995, 
 viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 1})
 ```
 
-Of the twenty eight [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} that can be displayed above, one is an integer, one is a [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits), and the rest are [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever). To express a repeating decimal exactly, Dec has to use a fraction. Dec always displays [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} precisely. In contrast, Dec will round [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} to fit within a given number of digits, typically three or five, when necessary.
+Of the twenty eight [UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} that can be displayed above, one is an integer, one is a [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits), and the rest are [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever). Dec can [express a repeating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=several%20notational%20conventions%20for%20representing%20repeating%20decimals) [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} as either an [irreducible fraction](https://en.wikipedia.org/wiki/Irreducible_fraction#:~:text=a%20fraction%20in%20which%20the%20numerator%20and%20denominator%20are%20integers%20that%20have%20no%20other%20common%20divisors%20than%201) like the one above or a terminating decimal called a "rounded offset decimal" ([rod]{.tool data-bs-toggle="tooltip" data-bs-title="rounded offset decimal"}) and a "[rounding error](https://en.wikipedia.org/wiki/Round-off_error#:~:text=the%20difference%20between%20the%20result%20produced%20by%20a%20given%20algorithm%20using%20exact%20arithmetic%20and%20the%20result%20produced%20by%20the%20same%20algorithm%20using%20finite%2Dprecision%2C%20rounded%20arithmetic) fraction" ([ref]{.tool data-bs-toggle="tooltip" data-bs-title="roundoff error fraction"}): \${hmsTzoHsl1}[\${hmsRoeSign}]{.mono}\${hmsRoeHsl}.
+
+```{ojs}
+//| echo: false
+//| label: diginput
+viewof digits = Inputs.range([1, 9], {label: "Digits", value: 5, step: 1})
+```
+
+In the equation above, the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} is the minuend, the [rod]{.tool data-bs-toggle="tooltip" data-bs-title="rounded offset decimal"} is the subtrahend, and the [ref]{.tool data-bs-toggle="tooltip" data-bs-title="roundoff error fraction"} is the difference. Dec uses the term minuend expansion to describe the replacement of a minuend with a subtrahend and a difference.
+
+$$\text{tzo} - \text{rod} = \text{ref}$$
+
+In addition to replacing a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} with a [rod]{.tool data-bs-toggle="tooltip" data-bs-title="rounded offset decimal"} and a [ref]{.tool data-bs-toggle="tooltip" data-bs-title="roundoff error fraction"},  . In minuend expansion, the minuend is expanded into a the first equation below, the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} is the , and the [ref]{.tool data-bs-toggle="tooltip" data-bs-title="roundoff error fraction"} is the difference. The second equation below shows that we can replace a minuend with a subtrahend and a difference.
+
+The [ref]{.tool data-bs-toggle="tooltip" data-bs-title="roundoff error fraction"} is the difference between the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} and the [rod]{.tool data-bs-toggle="tooltip" data-bs-title="rounded offset decimal"}: \${leapTzoHsl1} - \${hmsTzoHsl1} = \${hmsRoeHsl}.
+
+$$\text{tzo} = \text{rod} + \text{ref}$$
+
+The range🎚️input above chooses the number of digits in the rod.
+ [rounding error](https://en.wikipedia.org/wiki/Round-off_error#:~:text=the%20difference%20between%20the%20result%20produced%20by%20a%20given%20algorithm%20using%20exact%20arithmetic%20and%20the%20result%20produced%20by%20the%20same%20algorithm%20using%20finite%2Dprecision%2C%20rounded%20arithmetic). When rounded to the number of digits chosen by the range🎚️input below, the [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet selected by the range🎚️inputs above is \${hmsTzoHsl1} and the rounding error is \${hmsRoeHsl}.
 
 Repeating decimals are by far the most common result of converting [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets to days or submultiples of days. If we converted all of the [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets that can be selected by the range🎚️inputs below, we would have 10 integers, 3190 terminating decimals, and 83200 repeating decimals. The currently selected [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet is equal to \${hmsTzoHsl0} [deciday\${pluralx10}]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}.
 
@@ -902,13 +921,11 @@ viewof hmsinput = Inputs.form([
 ])
 ```
 
-Instead of a fraction, a repeating decimal [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} can be represented by a "rounded decimal offset" ([rdo]{.tool data-bs-toggle="tooltip" data-bs-title="rounded decimal offset"}) and a ["round-off error"](https://en.wikipedia.org/wiki/Round-off_error#:~:text=the%20difference%20between%20the%20result%20produced%20by%20a%20given%20algorithm%20using%20exact%20arithmetic%20and%20the%20result%20produced%20by%20the%20same%20algorithm%20using%20finite%2Dprecision%2C%20rounded%20arithmetic) ([roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"}), without sacrificing exactness. The sum of a [rdo]{.tool data-bs-toggle="tooltip" data-bs-title="rounded decimal offset"} and a [roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"} is the original [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. If we round the [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet above to the number of digits chosen by the range🎚️input below, the resulting [rdo]{.tool data-bs-toggle="tooltip" data-bs-title="rounded decimal offset"} and [roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"} will be \${hmsTzoHsl1}[\${hmsRoeSign}]{.mono}\${hmsRoeHsl}.
+In addition to splitting a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} into a [rod]{.tool data-bs-toggle="tooltip" data-bs-title="rounded offset decimal"} and a [ref]{.tool data-bs-toggle="tooltip" data-bs-title="roundoff error fraction"}, we can split a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}, [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}, or [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} into a subtrahend and a difference via a process called minuend expansion.  [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} or a  the difference. Dec uses the terms minuend, subtrahend, and difference to label different parts of a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}, [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}, [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, or [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} that have undergone minuend expansion. When a  splitting a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} [rod]{.tool data-bs-toggle="tooltip" data-bs-title="rounded offset decimal"} and a [ref]{.tool data-bs-toggle="tooltip" data-bs-title="roundoff error fraction"} is an example of minuend expansion.
 
-```{ojs}
-//| echo: false
-//| label: diginput
-viewof digits = Inputs.range([0, 9], {label: "Digits", value: 4, step: 1})
-```
+In the equation below, the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} is the minuend, the [rod]{.tool data-bs-toggle="tooltip" data-bs-title="rounded offset decimal"} is the subtrahend, and the [ref]{.tool data-bs-toggle="tooltip" data-bs-title="roundoff error fraction"} is the difference.
+$$\text{tzo} - \text{rod} = \text{ref}$$
+
 
 
 When we round a decimal number, we are essentially removing the round-off error.
@@ -925,7 +942,7 @@ cannot be expressed the remaining 26/27 [hms]{.tool data-bs-toggle="tooltip" dat
 
 Most Using fractions, Dec can precisely match any UTC tzo with any number of leap seconds.
 Dec uses fractions for decimal tzos that are derived from hms triplets like the one selected by the range🎚️inputs below. Using fractions, Dec can match any UTC tzo. Instead of showing
-To facilitate the comparison of a tod and a tzo that comprise a Dec time,   easier the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} shown above can be represented by a math expression that the sum of a rounded decimal offset ([rdo]{.tool data-bs-toggle="tooltip" data-bs-title="rounded decimal offset"}) and its associated [round-off error](https://en.wikipedia.org/wiki/Round-off_error#:~:text=the%20difference%20between%20the%20result%20produced%20by%20a%20given%20algorithm%20using%20exact%20arithmetic%20and%20the%20result%20produced%20by%20the%20same%20algorithm%20using%20finite%2Dprecision%2C%20rounded%20arithmetic) ([roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"}) fraction: [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} = [rdo]{.tool data-bs-toggle="tooltip" data-bs-title="rounded decimal offset"} + [roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"}.
+To facilitate the comparison of a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a tzo that comprise a Dec time,   easier the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} shown above can be represented by a math expression that the sum of a and its associated [round-off error](https://en.wikipedia.org/wiki/Round-off_error#:~:text=the%20difference%20between%20the%20result%20produced%20by%20a%20given%20algorithm%20using%20exact%20arithmetic%20and%20the%20result%20produced%20by%20the%20same%20algorithm%20using%20finite%2Dprecision%2C%20rounded%20arithmetic) ([roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"}) fraction: [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} = [rdo]{.tool data-bs-toggle="tooltip" data-bs-title="rounded decimal offset"} + [roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"}.
 
 After being converted to decidays, 26 out of [38](https://en.wikipedia.org/wiki/List_of_UTC_offsets) [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} are [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever), 9 are [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits), and 3 are integers. Instead of displaying a decimal [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} as a fraction, Dec can round and display it along with its the [round-off error](https://en.wikipedia.org/wiki/Round-off_error#:~:text=the%20difference%20between%20the%20result%20produced%20by%20a%20given%20algorithm%20using%20exact%20arithmetic%20and%20the%20result%20produced%20by%20the%20same%20algorithm%20using%20finite%2Dprecision%2C%20rounded%20arithmetic) ([roe]{.tool data-bs-toggle="tooltip" data-bs-title="round-off error"}) as a fraction.
 Dec displays [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} derived from the [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets, like the one selected by the range🎚️inputs below, as a fraction:
@@ -2411,13 +2428,14 @@ leapCount = leapSecondDotes.filter(dote => leapSecondDote > dote).length;
 leapColor = d3.color(piecewiseColor(leapCount / 86400)).formatHex()
 leapCountHsl = textcolor(leapCount, leapColor)
 frac = require("fraction.js")
-leapTzoHsl0 = textcolor(frac(leapCount).div(8640).toFraction(), leapColor)
-leapTzoHsl1 = textcolor(frac(leapCount).div(8640).toFraction(), leapColor)
-leapTzoHsl2 = textcolor(frac(leapCount).div(8640).toFraction(), leapColor)
+leapFrac = frac(leapCount).div(8640).toFraction()
+leapTzoHsl0 = textcolor(leapFrac, leapColor)
+leapTzoHsl1 = textcolor(leapFrac, leapColor)
+leapTzoHsl2 = textcolor(leapFrac, leapColor)
 hmsTzo = frac(hmsinput[0]).div(24).add(hmsinput[1], 1440).add(hmsinput[2], 86400).mod(1)
 hmsTzox10 = hmsTzo.mul(10)
 pluralx10 = hmsTzox10.equals(1) ? "" : "s"
-hmsRounded = hmsTzox10.round(digits)
+hmsRounded = hmsTzox10.round(digits - 1)
 hmsRoe = hmsRounded.sub(hmsTzox10)
 hmsRoeHsl = textcolor(hmsRoe.abs().toFraction(), d3.color(piecewiseColor(Number(hmsRoe.div(10)))).formatHex())
 hmsRoeSign = hmsRoe.lt(0) ? "-" : "+"
