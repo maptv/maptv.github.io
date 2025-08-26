@@ -875,7 +875,7 @@ sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 
 :::
 
-The [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System#:~:text=a%20satellite%2Dbased%20hyperbolic%20navigation%20system), [BeiDou](https://en.wikipedia.org/wiki/BeiDou#:~:text=a%20satellite%2Dbased%20radio%20navigation%20system), and [Galileo](https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)#:~:text=a%20global%20navigation%20satellite%20system%20(GNSS)%20created%20by%20the%20European%20Union) [global navigation satellite systems](https://en.wikipedia.org/wiki/Satellite_navigation#:~:text=a%20satellite%20navigation%20system%20with%20global%20coverage) along with most --- if not all --- [programming languages](https://en.wikipedia.org/wiki/Programming_language#:~:text=a%20system%20of%20notation%20for%20writing%20source%20code%20such%20as%20used%20to%20produce%20a%20computer%20program) do not account for [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment), which appears to be for the best given that leap seconds will be [abolished by 2035](https://en.wikipedia.org/wiki/Leap_second#:~:text=at%20the%2027th%20General%20Conference%20on%20Weights%20and%20Measures%2C%20it%20was%20decided%20to%20abandon%20the%20leap%20second%20by%20or%20before%202035). The goal of leap seconds is to keep [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} within [1.041[6]{.over}](https://en.wikipedia.org/wiki/Leap_second#:~:text=to%20ensure%20that%20the%20difference%20between%20the%20UTC%20and%20UT1%20readings%20will%20never%20exceed%200.9%20seconds) [centimillidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundred thousands of a day"} ([cmds]{.tool data-bs-toggle="tooltip" data-bs-title="centimillidays"}) of [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"}).
+The [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System#:~:text=a%20satellite%2Dbased%20hyperbolic%20navigation%20system), [BeiDou](https://en.wikipedia.org/wiki/BeiDou#:~:text=a%20satellite%2Dbased%20radio%20navigation%20system), and [Galileo](https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)#:~:text=a%20global%20navigation%20satellite%20system%20(GNSS)%20created%20by%20the%20European%20Union) [global navigation satellite systems](https://en.wikipedia.org/wiki/Satellite_navigation#:~:text=a%20satellite%20navigation%20system%20with%20global%20coverage) along with most --- if not all --- [programming languages](https://en.wikipedia.org/wiki/Programming_language#:~:text=a%20system%20of%20notation%20for%20writing%20source%20code%20such%20as%20used%20to%20produce%20a%20computer%20program) do not account for [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment), which appears to be for the best given that leap seconds will be [abolished by 2035](https://en.wikipedia.org/wiki/Leap_second#:~:text=at%20the%2027th%20General%20Conference%20on%20Weights%20and%20Measures%2C%20it%20was%20decided%20to%20abandon%20the%20leap%20second%20by%20or%20before%202035). The goal of leap seconds is to keep [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} within [25/24](https://en.wikipedia.org/wiki/Leap_second#:~:text=to%20ensure%20that%20the%20difference%20between%20the%20UTC%20and%20UT1%20readings%20will%20never%20exceed%200.9%20seconds) [centimillidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundred thousands of a day"} ([cmds]{.tool data-bs-toggle="tooltip" data-bs-title="centimillidays"}) of [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT]{.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"}).
 
 # Time zone offset {.hiddenheading #tzo}
 
@@ -912,7 +912,53 @@ viewof hmsinput = Inputs.form([
 viewof digits = Inputs.range([1, 9], {label: "Digits", value: 3, step: 1})
 ```
 
-Repeating decimals are by far the most common result of converting [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets to days or submultiples of days. If we converted all of the [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets that can be selected by the range🎚️inputs below, we would have 10 integers, 3190 terminating decimals, and 83200 repeating decimals. When a tzo is an integer, the ref is zero.
+## Coordinated Universal Time (UTC) {#utc}
+
+If we obtain [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} from all of the [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets that can be selected with the range🎚️inputs above, we will have 10 integers, 3190 terminating decimals, and 83200 repeating decimals. When we do the same to the [38](https://en.wikipedia.org/wiki/List_of_UTC_offsets) [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"}, the number of integers, terminating decimals, and repeating decimals we get depends on how many leap seconds are included.
+
+Unless the number of leaps seconds included is zero or a multiple of 27, all 38 [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} will be repeating decimals. If the number of leap seconds is zero or a multiple of 8640, we will get 3 integer, 9 terminating decimals, and 26 repeating decimals. The 3 integers will be terminating decimals if the number of leap seconds is a multiple of 27 but not 8640.
+
+Of the 38 [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"}, 14 are negative and 24 are positive. The [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} time zone with [the most negative [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00#:~:text=a%20nautical%20time%20zone%20comprising%20the%20high%20seas%20between%20180%C2%B0%20and%20172%C2%B030%E2%80%B2W%20longitude) is completely uninhabited. The vast majority of people live in [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} time zones with positive [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"}. The bar chart below visualizes Socioeconomic Data and Applications Center data from 2020 to show the number of people living in each [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} time zone.
+
+```{ojs}
+//| echo: false
+//| label: timezonepoptoggles
+//| class: /togs
+// https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
+viewof sortParams = Inputs.form([
+  Inputs.toggle({ label: "Sort ascending" }),
+  Inputs.toggle({ label: "Sort by offset" }),
+  ])
+```
+
+```{ojs}
+//| echo: false
+//| label: timezonepopstackedbar
+//| class: stackedBar
+// https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
+Plot.plot({
+  width: width,
+  marginBottom: 50,
+  style: `overflow: visible;font-size:16px;`,
+  color: {scheme: "RdBu", className: "barPlotLegend"},
+  marginLeft: 75,
+  y: { label: null },
+  x: { grid: true, label: "Population (billions)", labelOffset: 38, transform: d => d / 1e9 },
+  marks: [
+    Plot.barX(sortedPop, {x: "pop", y: "Sign", fill: "Offset", stroke: "black", tip: true }),
+  ]
+})
+```
+
+The [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [[-12:00](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00#:~:text=a%20nautical%20time%20zone%20comprising%20the%20high%20seas%20between%20180%C2%B0%20and%20172%C2%B030%E2%80%B2W%20longitude)]{.color5} time zone contains only [strict nature reserves](https://en.wikipedia.org/wiki/Strict_nature_reserve#:~:text=the%20highest%20category%20of%20protected%20area%20recognised%20by%20the%20World%20Commission%20on%20Protected%20Areas) and thus does not have any inhabited territory.
+
+
+Dec can use a positive [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} to match any possible [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. Even if Dec even those associated with a negative [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}, but the date produced by the negative [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} will be one day behind. Date mismatches lead to unexpected results when translating dates between the Dec and Gregorian calendars or when a “day of week” is included as part of a Dec date. We can subtract ten decidays from any positive Dec [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} to make it negative.We can add or subtract ten [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} to switch between a positive and negative [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} without changing its corresponding [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. To stay within the correct [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"} range for [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} and [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"}, -10 < x < 10, we keep only the remainder after dividing by ten.
+
+ and range from [-5]{.color5} to [35/6]{.color583} [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} without leap seconds.
+and from [-1276/320]{.color5} to [5603/960]{.color5} [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} with [[27]{.color1by320} leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=27%20leap%20seconds%20have%20been%20added%20to%20UTC).
+
+
 
 Of the 86390 [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet-derived fractions that can be shown above, there are 8639 [simple fractions](https://en.wikipedia.org/wiki/Fraction#Simple,_common,_or_vulgar_fractions) and 77751 [improper fractions](https://en.wikipedia.org/wiki/Fraction#:~:text=When%20the%20numerator%20and%20the%20denominator%20are%20both%20positive%2C%20the%20fraction%20is%20called%20proper%20if%20the%20numerator%20is%20less%20than%20the%20denominator%2C%20and%20improper%20otherwise). Among these fractions, we would find 96 unique denominators. Fractions that have different denominators are difficult to compare.
 Similarly, a Dec times is essentially a math expression with two terms, a tod and a tzo, that can be combined into a Zone 0 tod. We can also have a Dec time that consists of a tod, [rod]{.tool data-bs-toggle="tooltip" data-bs-title="rounded offset decimal"}, and [ref]{.tool data-bs-toggle="tooltip" data-bs-title="roundoff error fraction"}
@@ -1344,40 +1390,6 @@ Sorry if reading this takes a long ***time***; I hope you don’t ***zone*** out
 :::
 
 If a Dec time zone offset is not specified, we can detected a time zone using Whether or not negative time zones offsets are worth the trouble is a matter of that the offer little to no benefit. The [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [[-12:00](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00#:~:text=a%20nautical%20time%20zone%20comprising%20the%20high%20seas%20between%20180%C2%B0%20and%20172%C2%B030%E2%80%B2W%20longitude)]{.color5} and [[+12:00](https://en.wikipedia.org/wiki/UTC%2B12:00)]{.color5} time zones and the Zone [5]{.color5} and [-5]{.color5} Dec time zones all have the same time, but their dates do not match, because [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [[-12:00](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00#:~:text=a%20nautical%20time%20zone%20comprising%20the%20high%20seas%20between%20180%C2%B0%20and%20172%C2%B030%E2%80%B2W%20longitude)]{.color5} and Zone [-5]{.color5} are one day behind [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [[+12:00](https://en.wikipedia.org/wiki/UTC%2B12:00)]{.color5} and Zone [5]{.color5}. Dec discourages the use of time zones with negative offsets.
-
-```{ojs}
-//| echo: false
-//| label: timezonepoptoggles
-//| class: /togs
-// https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
-viewof sortParams = Inputs.form([
-  Inputs.toggle({ label: "Sort ascending" }),
-  Inputs.toggle({ label: "Sort by offset" }),
-  ])
-```
-
-```{ojs}
-//| echo: false
-//| label: timezonepopstackedbar
-//| class: stackedBar
-// https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
-Plot.plot({
-  width: width,
-  marginBottom: 50,
-  style: `overflow: visible;font-size:16px;`,
-  color: {scheme: "RdBu", className: "barPlotLegend"},
-  marginLeft: 75,
-  y: { label: null },
-  x: { grid: true, label: "Population (billions)", labelOffset: 38, transform: d => d / 1e9 },
-  marks: [
-    Plot.barX(sortedPop, {x: "pop", y: "Sign", fill: "Offset", stroke: "black", tip: true }),
-  ]
-})
-```
-
-# Coordinated Universal Time (UTC) {#utc}
-
-The [UTC]{.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [[-12:00](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00#:~:text=a%20nautical%20time%20zone%20comprising%20the%20high%20seas%20between%20180%C2%B0%20and%20172%C2%B030%E2%80%B2W%20longitude)]{.color5} time zone contains only [strict nature reserves](https://en.wikipedia.org/wiki/Strict_nature_reserve#:~:text=the%20highest%20category%20of%20protected%20area%20recognised%20by%20the%20World%20Commission%20on%20Protected%20Areas) and thus does not have any inhabited territory.
 
 The remaining UTC time zones with negative offsets
 
