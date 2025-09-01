@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+170
+2025+100
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
