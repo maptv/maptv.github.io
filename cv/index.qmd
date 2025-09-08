@@ -36,21 +36,10 @@ css: ../asset/cv.css
 - Offers freelance consulting services to clients
 :::
 
-#### **Lead Instructor**, [General Assembly](https://generalassemb.ly) [2019:]{.cvdate}
+#### **Lead Instructor**, [Data Society](https://datasociety.com) [2019:2025]{.cvdate}
 
 ::: {.horizontal}
-- Teaches [open-enrollment](https://generalassemb.ly/instructors/martin-skarzynski/23420) and enterprise courses such as:
-  - [React Development](https://generalassemb.ly/education/react-development)
-  - [Data Analytics](https://generalassemb.ly/education/data-analytics)
-  - [Data Science](https://www.boozallen.com/e/insight/blog/path-to-technical-success)
-  - [Python Programming](https://generalassemb.ly/education/python-programming)
-  - [Web Development](https://generalassemb.ly/education/front-end-web-development)
-:::
-
-#### **Lead Instructor**, [Data Society](https://datasociety.com) [2019:]{.cvdate}
-
-::: {.horizontal}
-- Provides enterprise clients with training in:
+- Provided enterprise clients with training in:
   - Machine Learning
   - DevOps & MLOps
   - Python & R Programming
@@ -83,6 +72,17 @@ css: ../asset/cv.css
   - [Practical Data Science](https://www.coursera.org/account/accomplishments/specialization/certificate/MU388FKRUUL3)
   - [Cloud Practitioner](https://www.credly.com/badges/c3143f03-6ebb-4f16-827c-c89f8db2a3cf/public_url)
   - [Solutions Architect Associate](https://www.credly.com/badges/1ae81600-c0cb-47b4-8610-e0c58bff6741/public_url)
+:::
+
+#### **Lead Instructor**, [General Assembly](https://generalassemb.ly) [2019:2024]{.cvdate}
+
+::: {.horizontal}
+- Taught over 20 [open-enrollment](https://generalassemb.ly/instructors/martin-skarzynski/23420) and enterprise courses such as:
+  - [React Development](https://generalassemb.ly/education/react-development)
+  - [Data Analytics](https://generalassemb.ly/education/data-analytics)
+  - [Data Science](https://www.boozallen.com/e/insight/blog/path-to-technical-success)
+  - [Python Programming](https://generalassemb.ly/education/python-programming)
+  - [Web Development](https://generalassemb.ly/education/front-end-web-development)
 :::
 
 #### **Adjunct Professor**, [Virginia Tech](https://www.vt.edu) [2021:2024]{.cvdate}
