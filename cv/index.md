@@ -34,30 +34,11 @@
 
 </div>
 
-#### **Lead Instructor**, [General Assembly](https://generalassemb.ly) <span class="cvdate">2019:</span>
+#### **Lead Instructor**, [Data Society](https://datasociety.com) <span class="cvdate">2019:2025</span>
 
 <div class="horizontal">
 
-- Teaches
-  [open-enrollment](https://generalassemb.ly/instructors/martin-skarzynski/23420)
-  and enterprise courses such as:
-  - [React
-    Development](https://generalassemb.ly/education/react-development)
-  - [Data Analytics](https://generalassemb.ly/education/data-analytics)
-  - [Data
-    Science](https://www.boozallen.com/e/insight/blog/path-to-technical-success)
-  - [Python
-    Programming](https://generalassemb.ly/education/python-programming)
-  - [Web
-    Development](https://generalassemb.ly/education/front-end-web-development)
-
-</div>
-
-#### **Lead Instructor**, [Data Society](https://datasociety.com) <span class="cvdate">2019:</span>
-
-<div class="horizontal">
-
-- Provides enterprise clients with training in:
+- Provided enterprise clients with training in:
   - Machine Learning
   - DevOps & MLOps
   - Python & R Programming
@@ -101,6 +82,25 @@
     Practitioner](https://www.credly.com/badges/c3143f03-6ebb-4f16-827c-c89f8db2a3cf/public_url)
   - [Solutions Architect
     Associate](https://www.credly.com/badges/1ae81600-c0cb-47b4-8610-e0c58bff6741/public_url)
+
+</div>
+
+#### **Lead Instructor**, [General Assembly](https://generalassemb.ly) <span class="cvdate">2019:2024</span>
+
+<div class="horizontal">
+
+- Taught over 20
+  [open-enrollment](https://generalassemb.ly/instructors/martin-skarzynski/23420)
+  and enterprise courses such as:
+  - [React
+    Development](https://generalassemb.ly/education/react-development)
+  - [Data Analytics](https://generalassemb.ly/education/data-analytics)
+  - [Data
+    Science](https://www.boozallen.com/e/insight/blog/path-to-technical-success)
+  - [Python
+    Programming](https://generalassemb.ly/education/python-programming)
+  - [Web
+    Development](https://generalassemb.ly/education/front-end-web-development)
 
 </div>
 
