@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.2 -0.2 2.4 1.2" width="480" height="240">
+  <!-- golden rhombus: vertices computed from side=1, acute angle=36° -->
+  <polygon points="0,0 1,0 1.8090169943749475,0.5877852522924731 0.8090169943749475,0.5877852522924731"
+           fill="none" stroke="black" stroke-width="0.01"/>
+  <!-- diagonals -->
+  <line x1="0.0" y1="0.0" x2="1.8090169943749475" y2="0.5877852522924731" stroke="gray" stroke-dasharray="0.02 0.02" stroke-width="0.005"/>
+  <line x1="1.0" y1="0.0" x2="0.8090169943749475" y2="0.5877852522924731" stroke="gray" stroke-dasharray="0.02 0.02" stroke-width="0.005"/>
+  <!-- labels -->
+  <text x="0.05" y="-0.03" font-size="0.06">36°</text>
+  <text x="0.95" y="0.07" font-size="0.06">144°</text>
+</svg>
