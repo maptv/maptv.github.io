@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,18 +90,19 @@ div.csl-indent {
 <link href="../asset/deidec.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f7559df9aa140eca8ced59a27863313.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-568e7decee7edff9fda74e82dcf897b3.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f7559df9aa140eca8ced59a27863313.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e2ebf8e2605a502049583e0d4fe4413a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-7c0818a6829d610e3ad73bed61f3c46a.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e2ebf8e2605a502049583e0d4fe4413a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6329569ba7c2489ad381460a54ae9f5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c2821b85da0cc791b17643d6a44bf25b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-6329569ba7c2489ad381460a54ae9f5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4458bf708ab3988a8dea3734e33e5073.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e0f29f2206a9e15fceee165a8ae79208.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4458bf708ab3988a8dea3734e33e5073.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": true,
@@ -147,7 +148,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -351,7 +352,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../asset/deidec.svg" alt="" class="navbar-logo">
+    <img src="../asset/deidec.svg" alt="Decagon made up of 100 triangles that transitions in a circle of ten swirling teardrops each with a repeat of the larger image at its center." class="navbar-logo light-content">
+    <img src="../asset/deidec.svg" alt="Decagon made up of 100 triangles that transitions in a circle of ten swirling teardrops each with a repeat of the larger image at its center." class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Martin Laptev</span>
@@ -385,12 +387,18 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="sidebar-tools-main tools-wide">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../asset/deidec.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../asset/deidec.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
     <a href="https://www.github.com/maptv" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-github"></i></a>
     <a href="https://www.linkedin.com/in/maptv" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-linkedin"></i></a>
     <a href="mailto:maptv@ireni.co" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope-at"></i></a>
     <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
 </div>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -688,7 +696,7 @@ Figure&nbsp;1: Tools series navigation chart
 <p>The top two bars in <a href="#fig-bar-doty" class="quarto-xref">Figure&nbsp;2</a> (旬 and 日) show the two components of the <code>Decalendar</code> date <span>(<span id="ojs-element-id-6"></span>):</span> the <code>dek</code><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> <span>(<span id="ojs-element-id-4"></span>)</span> and the day-of-the-<code>dek</code><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> <span>(<span id="ojs-element-id-5"></span>).</span> A <code>dek</code> is a group of 10 days that fulfills the role of months and weeks in <code>Decalendar</code>. Therefore, the <code>dek</code> and the day-of-the-<code>dek</code> (<code>dotd</code>) in <code>Decalendar</code> dates are analogous to the month and day-of-the-month (<code>dotm</code>) in <a href="https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates">calendar dates</a> (<code>mm-dd</code>) and the week and day-of-the-week (<code>dotw</code>) in <a href="https://en.wikipedia.org/wiki/ISO_8601#Week_dates">week dates</a> (<code>Www-d</code>).</p>
 <p>The bottom three bars in <a href="#fig-bar-doty" class="quarto-xref">Figure&nbsp;2</a> (%, ‰, and ♫) show components of the <code>Declock</code> time <span>(<span id="ojs-element-id-11"></span>):</span> <code>cents</code><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> <span>(<span id="ojs-element-id-7"></span>),</span> <code>mils</code><a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> <span>(<span id="ojs-element-id-8"></span>),</span> and <code>beats</code><a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> <span>(<span id="ojs-element-id-9"></span>).</span> A <code>cent</code> is 1% of the day, which is a little less than a quarter hour. A <code>mil</code> (<code>‰</code>) is a tenth of a <code>cent</code>, which is close to a minute and a half. A <code>beat</code> is 1% of a <code>mil</code>, which is almost as long as a second, and can be thought of as a heart❤️beat or musical🎵<a href="https://en.wikipedia.org/wiki/Beat_(music)#:~:text=the%20beat%20is%20the%20basic%20unit%20of%20time">beat</a> with a constant <a href="https://en.wikipedia.org/wiki/Heart_rate#:~:text=The%20American%20Heart%20Association%20states%20the%20normal%20resting%20adult%20human%20heart%20rate%20is%2060%2D100%20bpm.">rate</a> or <a href="https://en.wikipedia.org/wiki/Tempo#Basic_tempo_markings:~:text=Adagietto%20%E2%80%93%20slower%20than,56%E2%80%93108%C2%A0bpm">tempo</a> of 69.4̅ beats per minute. In addition to displaying time on clocks🕰️and⌚️watches, <code>beats</code> can be used to measure durations, such as the time since this webpage was loaded: <span><span id="ojs-element-id-10"></span>.</span></p>
 <div class="cell column-body" data-layout-align="center">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="84" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 83;"><span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@fheyen/barchart-clock</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="84" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 83;"><span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@fheyen/barchart-clock</span></span>
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> W <span class="op">=</span> width <span class="op">&gt;</span> <span class="dv">1250</span> <span class="op">?</span> width <span class="op">*</span> <span class="dv">2</span> <span class="op">/</span> <span class="dv">3</span> <span class="op">:</span> width <span class="op">&gt;</span> <span class="dv">1150</span> <span class="op">?</span> width <span class="op">*</span> <span class="dv">3</span> <span class="op">/</span> <span class="dv">4</span> <span class="op">:</span> width <span class="op">&gt;</span> <span class="dv">1050</span> <span class="op">?</span> width <span class="op">*</span> <span class="dv">4</span> <span class="op">/</span> <span class="dv">5</span> <span class="op">:</span> width <span class="op">&gt;</span> <span class="dv">950</span> <span class="op">?</span> width <span class="op">*</span> <span class="dv">5</span> <span class="op">/</span> <span class="dv">6</span> <span class="op">:</span> width <span class="op">&gt;</span> <span class="dv">850</span> <span class="op">?</span> width <span class="op">:</span> width <span class="op">&gt;</span> <span class="dv">750</span> <span class="op">?</span> width <span class="op">*</span> <span class="fl">1.02</span> <span class="op">:</span> width <span class="op">&gt;</span> <span class="dv">650</span> <span class="op">?</span> width <span class="op">*</span> <span class="fl">1.06</span> <span class="op">:</span> width <span class="op">&gt;</span> <span class="dv">550</span> <span class="op">?</span> width <span class="op">*</span> <span class="fl">1.1</span> <span class="op">:</span> width <span class="op">&gt;</span> <span class="dv">450</span> <span class="op">?</span> width <span class="op">*</span> <span class="fl">1.14</span> <span class="op">:</span> width <span class="op">*</span> <span class="fl">1.18</span><span class="op">;</span></span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> H <span class="op">=</span> <span class="dv">156</span><span class="op">;</span></span>
@@ -863,7 +871,7 @@ Figure&nbsp;1: Tools series navigation chart
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">'y'</span><span class="op">,</span> (d<span class="op">,</span>i)<span class="kw">=&gt;</span>i<span class="op">*</span><span class="dv">30</span><span class="op">+</span>firstBarY<span class="op">+</span><span class="dv">20</span>)</span>
 <span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>(d<span class="kw">=&gt;</span>d)</span>
 <span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="fig-bar-doty" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bar-doty-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -878,7 +886,7 @@ Figure&nbsp;2: Doty bar chart
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="264" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 263;"><span id="cb2-264"><a href="#cb2-264" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;style&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="264" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 263;"><span id="cb2-264"><a href="#cb2-264" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;style&gt;</span></span>
 <span id="cb2-265"><a href="#cb2-265" aria-hidden="true" tabindex="-1"></a><span class="vs">  .tickLabel, .tickLabel1, .tickLabel2, .timeLabel {</span></span>
 <span id="cb2-266"><a href="#cb2-266" aria-hidden="true" tabindex="-1"></a><span class="vs">    fill: #000;</span></span>
 <span id="cb2-267"><a href="#cb2-267" aria-hidden="true" tabindex="-1"></a><span class="vs">    font-family: sans-serif;</span></span>
@@ -908,7 +916,7 @@ Figure&nbsp;2: Doty bar chart
 <span id="cb2-291"><a href="#cb2-291" aria-hidden="true" tabindex="-1"></a><span class="vs">    fill: #666;</span></span>
 <span id="cb2-292"><a href="#cb2-292" aria-hidden="true" tabindex="-1"></a><span class="vs">    width: 1px;</span></span>
 <span id="cb2-293"><a href="#cb2-293" aria-hidden="true" tabindex="-1"></a><span class="vs">  }</span></span>
-<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/style&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/style&gt;`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="expression">
 
@@ -922,7 +930,7 @@ Figure&nbsp;2: Doty bar chart
 <div class="grid">
 <div class="g-col-7">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="310" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 309;"><span id="cb3-310"><a href="#cb3-310" aria-hidden="true" tabindex="-1"></a>viewof inputDoty <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">365</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">306</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"doty"</span>})<span class="op">;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="310" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 309;"><span id="cb3-310"><a href="#cb3-310" aria-hidden="true" tabindex="-1"></a>viewof inputDoty <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">365</span>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="dv">306</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"doty"</span>})<span class="op">;</span></span>
 <span id="cb3-311"><a href="#cb3-311" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-312"><a href="#cb3-312" aria-hidden="true" tabindex="-1"></a>viewof year <span class="op">=</span> <span class="fu">transformInput</span>(</span>
 <span id="cb3-313"><a href="#cb3-313" aria-hidden="true" tabindex="-1"></a>    Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="op">.</span><span class="dv">999</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="op">.</span><span class="bn">001</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"year"</span>})<span class="op">,</span></span>
@@ -941,7 +949,7 @@ Figure&nbsp;2: Doty bar chart
 <span id="cb3-326"><a href="#cb3-326" aria-hidden="true" tabindex="-1"></a>        <span class="op">?</span> viewof monthInput<span class="op">.</span><span class="at">value</span> <span class="op">-</span> <span class="dv">3</span></span>
 <span id="cb3-327"><a href="#cb3-327" aria-hidden="true" tabindex="-1"></a>        <span class="op">:</span> viewof monthInput<span class="op">.</span><span class="at">value</span> <span class="op">+</span> <span class="dv">9</span>) <span class="op">+</span> <span class="dv">2</span></span>
 <span id="cb3-328"><a href="#cb3-328" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">/</span> <span class="dv">5</span> <span class="op">+</span> x <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb3-329"><a href="#cb3-329" aria-hidden="true" tabindex="-1"></a>))})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-329"><a href="#cb3-329" aria-hidden="true" tabindex="-1"></a>))})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-3-1" data-nodetype="declaration">
@@ -979,7 +987,7 @@ Figure&nbsp;2: Doty bar chart
 <li><span><span id="ojs-element-id-15"></span></span></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="339" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 338;"><span id="cb4-339"><a href="#cb4-339" aria-hidden="true" tabindex="-1"></a>viewof scrubberDoty <span class="op">=</span> <span class="fu">Scrubber</span>(numbers<span class="op">,</span> {<span class="dt">autoplay</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">alternate</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">delay</span><span class="op">:</span> <span class="fl">86.4</span><span class="op">,</span> <span class="dt">loopDelay</span><span class="op">:</span> <span class="dv">864</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="339" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 338;"><span id="cb4-339"><a href="#cb4-339" aria-hidden="true" tabindex="-1"></a>viewof scrubberDoty <span class="op">=</span> <span class="fu">Scrubber</span>(numbers<span class="op">,</span> {<span class="dt">autoplay</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">alternate</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">delay</span><span class="op">:</span> <span class="fl">86.4</span><span class="op">,</span> <span class="dt">loopDelay</span><span class="op">:</span> <span class="dv">864</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="declaration">
 
@@ -1011,7 +1019,7 @@ Figure&nbsp;2: Doty bar chart
 <div class="grid">
 <div class="g-col-7">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb12" data-startfrom="669" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 668;"><span id="cb12-669"><a href="#cb12-669" aria-hidden="true" tabindex="-1"></a>viewof inputDatetime <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">datetime</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">"date"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">"1970-01-01T00:00"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb12" data-startfrom="669" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 668;"><span id="cb12-669"><a href="#cb12-669" aria-hidden="true" tabindex="-1"></a>viewof inputDatetime <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">datetime</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">"date"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">"1970-01-01T00:00"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-10" data-nodetype="declaration">
 
@@ -1046,10 +1054,10 @@ Figure&nbsp;2: Doty bar chart
 <div class="grid">
 <div class="g-col-7">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb14" data-startfrom="696" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 695;"><span id="cb14-696"><a href="#cb14-696" aria-hidden="true" tabindex="-1"></a>viewof yd <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">form</span>([</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb14" data-startfrom="696" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 695;"><span id="cb14-696"><a href="#cb14-696" aria-hidden="true" tabindex="-1"></a>viewof yd <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">form</span>([</span>
 <span id="cb14-697"><a href="#cb14-697" aria-hidden="true" tabindex="-1"></a>  Inputs<span class="op">.</span><span class="fu">number</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">"year"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">"1969"</span>})<span class="op">,</span></span>
 <span id="cb14-698"><a href="#cb14-698" aria-hidden="true" tabindex="-1"></a>  Inputs<span class="op">.</span><span class="fu">number</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">"doty"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">"306"</span>})</span>
-<span id="cb14-699"><a href="#cb14-699" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-699"><a href="#cb14-699" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-11" data-nodetype="declaration">
 
@@ -1057,9 +1065,9 @@ Figure&nbsp;2: Doty bar chart
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb15" data-startfrom="704" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 703;"><span id="cb15-704"><a href="#cb15-704" aria-hidden="true" tabindex="-1"></a>viewof decoOutput <span class="op">=</span> <span class="fu">transformInput</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb15" data-startfrom="704" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 703;"><span id="cb15-704"><a href="#cb15-704" aria-hidden="true" tabindex="-1"></a>viewof decoOutput <span class="op">=</span> <span class="fu">transformInput</span>(</span>
 <span id="cb15-705"><a href="#cb15-705" aria-hidden="true" tabindex="-1"></a>  Inputs<span class="op">.</span><span class="fu">text</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">"deco"</span><span class="op">,</span> <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"year+day.ddd"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">"1969+306"</span>})<span class="op">,</span></span>
-<span id="cb15-706"><a href="#cb15-706" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">bind</span><span class="op">:</span> viewof yd<span class="op">,</span> <span class="dt">transform</span><span class="op">:</span> doty2deco<span class="op">,</span> <span class="dt">invert</span><span class="op">:</span> deco2doty})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-706"><a href="#cb15-706" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">bind</span><span class="op">:</span> viewof yd<span class="op">,</span> <span class="dt">transform</span><span class="op">:</span> doty2deco<span class="op">,</span> <span class="dt">invert</span><span class="op">:</span> deco2doty})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-12" data-nodetype="declaration">
 
@@ -1073,7 +1081,7 @@ Figure&nbsp;2: Doty bar chart
 <li><span><span id="ojs-element-id-20"></span></span></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb16" data-startfrom="716" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 715;"><span id="cb16-716"><a href="#cb16-716" aria-hidden="true" tabindex="-1"></a>viewof scrubberDeco <span class="op">=</span> <span class="fu">Scrubber</span>(numbers<span class="op">,</span> {<span class="dt">autoplay</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">alternate</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">delay</span><span class="op">:</span> <span class="fl">86.4</span><span class="op">,</span> <span class="dt">loopDelay</span><span class="op">:</span> <span class="dv">864</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb16" data-startfrom="716" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 715;"><span id="cb16-716"><a href="#cb16-716" aria-hidden="true" tabindex="-1"></a>viewof scrubberDeco <span class="op">=</span> <span class="fu">Scrubber</span>(numbers<span class="op">,</span> {<span class="dt">autoplay</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">alternate</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">delay</span><span class="op">:</span> <span class="fl">86.4</span><span class="op">,</span> <span class="dt">loopDelay</span><span class="op">:</span> <span class="dv">864</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-13" data-nodetype="declaration">
 
@@ -1108,13 +1116,13 @@ Figure&nbsp;2: Doty bar chart
 <div class="grid">
 <div class="g-col-7">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb22" data-startfrom="851" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 850;"><span id="cb22-851"><a href="#cb22-851" aria-hidden="true" tabindex="-1"></a>viewof intervals <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">form</span>([</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb22" data-startfrom="851" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 850;"><span id="cb22-851"><a href="#cb22-851" aria-hidden="true" tabindex="-1"></a>viewof intervals <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">form</span>([</span>
 <span id="cb22-852"><a href="#cb22-852" aria-hidden="true" tabindex="-1"></a>  <span class="fu">interval</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="op">.</span><span class="bn">01</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> [<span class="op">.</span><span class="dv">3</span><span class="op">,</span> <span class="op">.</span><span class="dv">7</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">'0 or 5'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">250</span><span class="op">,</span> <span class="dt">format</span><span class="op">:</span> ([start<span class="op">,</span> end]) <span class="kw">=&gt;</span> start <span class="op">===</span> end <span class="op">?</span> <span class="st">""</span> <span class="op">:</span> <span class="vs">`</span><span class="sc">${</span><span class="fu">formatDecimal</span>(start)<span class="sc">}</span><span class="vs">:</span><span class="sc">${</span><span class="fu">formatDecimal</span>(end)<span class="sc">}</span><span class="vs">`</span>})<span class="op">,</span></span>
 <span id="cb22-853"><a href="#cb22-853" aria-hidden="true" tabindex="-1"></a>  <span class="fu">interval</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="op">.</span><span class="bn">01</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> [<span class="op">.</span><span class="dv">3</span><span class="op">,</span> <span class="op">.</span><span class="dv">7</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">'1 or 6'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">250</span><span class="op">,</span> <span class="dt">format</span><span class="op">:</span> ([start<span class="op">,</span> end]) <span class="kw">=&gt;</span> start <span class="op">===</span> end <span class="op">?</span> <span class="st">""</span> <span class="op">:</span> <span class="vs">`</span><span class="sc">${</span><span class="fu">formatDecimal</span>(start)<span class="sc">}</span><span class="vs">:</span><span class="sc">${</span><span class="fu">formatDecimal</span>(end)<span class="sc">}</span><span class="vs">`</span>})<span class="op">,</span></span>
 <span id="cb22-854"><a href="#cb22-854" aria-hidden="true" tabindex="-1"></a>  <span class="fu">interval</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="op">.</span><span class="bn">01</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> [<span class="op">.</span><span class="dv">3</span><span class="op">,</span> <span class="op">.</span><span class="dv">7</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">'2 or 7'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">250</span><span class="op">,</span> <span class="dt">format</span><span class="op">:</span> ([start<span class="op">,</span> end]) <span class="kw">=&gt;</span> start <span class="op">===</span> end <span class="op">?</span> <span class="st">""</span> <span class="op">:</span> <span class="vs">`</span><span class="sc">${</span><span class="fu">formatDecimal</span>(start)<span class="sc">}</span><span class="vs">:</span><span class="sc">${</span><span class="fu">formatDecimal</span>(end)<span class="sc">}</span><span class="vs">`</span>})<span class="op">,</span></span>
 <span id="cb22-855"><a href="#cb22-855" aria-hidden="true" tabindex="-1"></a>  <span class="fu">interval</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="op">.</span><span class="bn">01</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">'3 or 8'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">250</span><span class="op">,</span> <span class="dt">format</span><span class="op">:</span> ([start<span class="op">,</span> end]) <span class="kw">=&gt;</span> start <span class="op">===</span> end <span class="op">?</span> <span class="st">""</span> <span class="op">:</span> <span class="vs">`</span><span class="sc">${</span><span class="fu">formatDecimal</span>(start)<span class="sc">}</span><span class="vs">:</span><span class="sc">${</span><span class="fu">formatDecimal</span>(end)<span class="sc">}</span><span class="vs">`</span>})<span class="op">,</span></span>
 <span id="cb22-856"><a href="#cb22-856" aria-hidden="true" tabindex="-1"></a>  <span class="fu">interval</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="op">.</span><span class="bn">01</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">'4 or 9'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">250</span><span class="op">,</span> <span class="dt">format</span><span class="op">:</span> ([start<span class="op">,</span> end]) <span class="kw">=&gt;</span> start <span class="op">===</span> end <span class="op">?</span> <span class="st">""</span> <span class="op">:</span> <span class="vs">`</span><span class="sc">${</span><span class="fu">formatDecimal</span>(start)<span class="sc">}</span><span class="vs">:</span><span class="sc">${</span><span class="fu">formatDecimal</span>(end)<span class="sc">}</span><span class="vs">`</span>})<span class="op">,</span></span>
-<span id="cb22-857"><a href="#cb22-857" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-857"><a href="#cb22-857" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-17" data-nodetype="declaration">
 
@@ -1124,11 +1132,11 @@ Figure&nbsp;2: Doty bar chart
 </div>
 <div class="g-col-5">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb23" data-startfrom="865" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 864;"><span id="cb23-865"><a href="#cb23-865" aria-hidden="true" tabindex="-1"></a>viewof schedule <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>([<span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"sched."</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">3</span>})</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb23" data-startfrom="865" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 864;"><span id="cb23-865"><a href="#cb23-865" aria-hidden="true" tabindex="-1"></a>viewof schedule <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>([<span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"sched."</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">3</span>})</span>
 <span id="cb23-866"><a href="#cb23-866" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-867"><a href="#cb23-867" aria-hidden="true" tabindex="-1"></a>viewof filename <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">text</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">"name"</span><span class="op">,</span> <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Enter the filename"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="vs">`schedule</span><span class="sc">${</span>schedule<span class="sc">}</span><span class="vs">.csv`</span>})</span>
 <span id="cb23-868"><a href="#cb23-868" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-869"><a href="#cb23-869" aria-hidden="true" tabindex="-1"></a><span class="fu">button</span>(durations<span class="op">,</span> filename)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-869"><a href="#cb23-869" aria-hidden="true" tabindex="-1"></a><span class="fu">button</span>(durations<span class="op">,</span> filename)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-18-1" data-nodetype="declaration">
@@ -1154,7 +1162,7 @@ Figure&nbsp;2: Doty bar chart
 </div>
 </div>
 <div class="cell fig-cap-location-margin" data-layout-align="center">
-<div class="sourceCode cell-code hidden" id="cb24" data-startfrom="879" data-source-offset="0" data-cap-location="margin"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 878;"><span id="cb24-879"><a href="#cb24-879" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@dec/pent</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb24" data-startfrom="879" data-source-offset="0" data-cap-location="margin"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 878;"><span id="cb24-879"><a href="#cb24-879" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@dec/pent</span></span>
 <span id="cb24-880"><a href="#cb24-880" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
 <span id="cb24-881"><a href="#cb24-881" aria-hidden="true" tabindex="-1"></a>  <span class="dt">className</span><span class="op">:</span> <span class="st">"schedule-explorer"</span><span class="op">,</span></span>
 <span id="cb24-882"><a href="#cb24-882" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="kw">null</span>}<span class="op">,</span></span>
@@ -1179,7 +1187,7 @@ Figure&nbsp;2: Doty bar chart
 <span id="cb24-901"><a href="#cb24-901" aria-hidden="true" tabindex="-1"></a>        )</span>
 <span id="cb24-902"><a href="#cb24-902" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb24-903"><a href="#cb24-903" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb24-904"><a href="#cb24-904" aria-hidden="true" tabindex="-1"></a>  ]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-904"><a href="#cb24-904" aria-hidden="true" tabindex="-1"></a>  ]})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="fig-intro-dek" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-intro-dek-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1200,7 +1208,7 @@ Figure&nbsp;3: Pently schedule explorer
 <div id="exm-intro-dotd" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5</strong></span> &nbsp;</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb25" data-startfrom="920" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 919;"><span id="cb25-920"><a href="#cb25-920" aria-hidden="true" tabindex="-1"></a>viewof sliceDotd <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>([<span class="op">...</span><span class="bu">Array</span>(<span class="dv">10</span>)<span class="op">.</span><span class="fu">keys</span>()]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"slice"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">6</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb25" data-startfrom="920" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 919;"><span id="cb25-920"><a href="#cb25-920" aria-hidden="true" tabindex="-1"></a>viewof sliceDotd <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>([<span class="op">...</span><span class="bu">Array</span>(<span class="dv">10</span>)<span class="op">.</span><span class="fu">keys</span>()]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"slice"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">6</span>]})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-20" data-nodetype="declaration">
 
@@ -1208,7 +1216,7 @@ Figure&nbsp;3: Pently schedule explorer
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb26" data-startfrom="925" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 924;"><span id="cb26-925"><a href="#cb26-925" aria-hidden="true" tabindex="-1"></a>viewof spreadDotd <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>([<span class="op">...</span><span class="bu">Array</span>(<span class="dv">10</span>)<span class="op">.</span><span class="fu">keys</span>()]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"spread"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">6</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb26" data-startfrom="925" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 924;"><span id="cb26-925"><a href="#cb26-925" aria-hidden="true" tabindex="-1"></a>viewof spreadDotd <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>([<span class="op">...</span><span class="bu">Array</span>(<span class="dv">10</span>)<span class="op">.</span><span class="fu">keys</span>()]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"spread"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">6</span>]})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-21" data-nodetype="declaration">
 
@@ -1216,7 +1224,7 @@ Figure&nbsp;3: Pently schedule explorer
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb27" data-startfrom="930" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 929;"><span id="cb27-930"><a href="#cb27-930" aria-hidden="true" tabindex="-1"></a>viewof togglePlot <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>([</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb27" data-startfrom="930" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 929;"><span id="cb27-930"><a href="#cb27-930" aria-hidden="true" tabindex="-1"></a>viewof togglePlot <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>([</span>
 <span id="cb27-931"><a href="#cb27-931" aria-hidden="true" tabindex="-1"></a>  [invertDotd <span class="op">?</span> <span class="st">"None"</span> <span class="op">:</span> <span class="st">"All"</span><span class="op">,</span> value <span class="kw">=&gt;</span> [<span class="op">...</span><span class="bu">Array</span>(<span class="dv">10</span>)<span class="op">.</span><span class="fu">keys</span>()]]<span class="op">,</span></span>
 <span id="cb27-932"><a href="#cb27-932" aria-hidden="true" tabindex="-1"></a>  [invertDotd <span class="op">?</span> <span class="st">"Even"</span> <span class="op">:</span> <span class="st">"Odd"</span><span class="op">,</span> value <span class="kw">=&gt;</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">9</span>]]<span class="op">,</span></span>
 <span id="cb27-933"><a href="#cb27-933" aria-hidden="true" tabindex="-1"></a>  [invertDotd <span class="op">?</span> <span class="fu">html</span><span class="vs">`&lt;s&gt;Prime&lt;/s&gt;`</span> <span class="op">:</span> <span class="st">"Prime"</span><span class="op">,</span> value <span class="kw">=&gt;</span> [<span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">7</span>]]<span class="op">,</span></span>
@@ -1224,7 +1232,7 @@ Figure&nbsp;3: Pently schedule explorer
 <span id="cb27-935"><a href="#cb27-935" aria-hidden="true" tabindex="-1"></a>  [invertDotd <span class="op">?</span> <span class="fu">html</span><span class="vs">`&lt;s&gt;Schedule2&lt;/s&gt;`</span> <span class="op">:</span> <span class="st">"Schedule2"</span><span class="op">,</span> value <span class="kw">=&gt;</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]]<span class="op">,</span></span>
 <span id="cb27-936"><a href="#cb27-936" aria-hidden="true" tabindex="-1"></a>  [invertDotd <span class="op">?</span> <span class="fu">html</span><span class="vs">`&lt;s&gt;Schedule3&lt;/s&gt;`</span> <span class="op">:</span> <span class="st">"Schedule3"</span><span class="op">,</span> value <span class="kw">=&gt;</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">7</span>]]<span class="op">,</span></span>
 <span id="cb27-937"><a href="#cb27-937" aria-hidden="true" tabindex="-1"></a>  [invertDotd <span class="op">?</span> <span class="fu">html</span><span class="vs">`&lt;s&gt;Schedule4&lt;/s&gt;`</span> <span class="op">:</span> <span class="st">"Schedule4"</span><span class="op">,</span> value <span class="kw">=&gt;</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">8</span>]]<span class="op">,</span></span>
-<span id="cb27-938"><a href="#cb27-938" aria-hidden="true" tabindex="-1"></a>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> []<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"select"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-938"><a href="#cb27-938" aria-hidden="true" tabindex="-1"></a>]<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> []<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"select"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-22" data-nodetype="declaration">
 
@@ -1234,8 +1242,8 @@ Figure&nbsp;3: Pently schedule explorer
 <div class="grid">
 <div class="g-col-6">
 <div class="cell btn-row">
-<div class="sourceCode cell-code hidden" id="cb28" data-startfrom="947" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 946;"><span id="cb28-947"><a href="#cb28-947" aria-hidden="true" tabindex="-1"></a>viewof invertDotd <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">toggle</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">"invert"</span>})</span>
-<span id="cb28-948"><a href="#cb28-948" aria-hidden="true" tabindex="-1"></a>viewof sliceOrSpread <span class="op">=</span> <span class="fu">toggleSwitch</span>({<span class="dt">textOn</span><span class="op">:</span> invertDotd <span class="op">?</span> <span class="st">"Spread"</span> <span class="op">:</span> <span class="st">'Slice'</span> <span class="op">,</span> <span class="dt">textOff</span><span class="op">:</span> invertDotd <span class="op">?</span> <span class="st">"Slice"</span> <span class="op">:</span> <span class="st">'Spread'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb28" data-startfrom="947" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 946;"><span id="cb28-947"><a href="#cb28-947" aria-hidden="true" tabindex="-1"></a>viewof invertDotd <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">toggle</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">"invert"</span>})</span>
+<span id="cb28-948"><a href="#cb28-948" aria-hidden="true" tabindex="-1"></a>viewof sliceOrSpread <span class="op">=</span> <span class="fu">toggleSwitch</span>({<span class="dt">textOn</span><span class="op">:</span> invertDotd <span class="op">?</span> <span class="st">"Spread"</span> <span class="op">:</span> <span class="st">'Slice'</span> <span class="op">,</span> <span class="dt">textOff</span><span class="op">:</span> invertDotd <span class="op">?</span> <span class="st">"Slice"</span> <span class="op">:</span> <span class="st">'Spread'</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-23-1" data-nodetype="declaration">
@@ -1252,14 +1260,14 @@ Figure&nbsp;3: Pently schedule explorer
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb29" data-startfrom="953" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 952;"><span id="cb29-953"><a href="#cb29-953" aria-hidden="true" tabindex="-1"></a>viewof sliceInputs <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">form</span>([</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb29" data-startfrom="953" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 952;"><span id="cb29-953"><a href="#cb29-953" aria-hidden="true" tabindex="-1"></a>viewof sliceInputs <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">form</span>([</span>
 <span id="cb29-954"><a href="#cb29-954" aria-hidden="true" tabindex="-1"></a>    Inputs<span class="op">.</span><span class="fu">number</span>([<span class="op">-</span><span class="dv">366</span><span class="op">,</span> <span class="dv">366</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Enter start index"</span>})<span class="op">,</span></span>
 <span id="cb29-955"><a href="#cb29-955" aria-hidden="true" tabindex="-1"></a>    Inputs<span class="op">.</span><span class="fu">number</span>([<span class="op">-</span><span class="dv">366</span><span class="op">,</span> <span class="dv">366</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"stop"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">366</span><span class="op">,</span> <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Enter stop index"</span>})<span class="op">,</span></span>
 <span id="cb29-956"><a href="#cb29-956" aria-hidden="true" tabindex="-1"></a>    Inputs<span class="op">.</span><span class="fu">number</span>([<span class="op">-</span><span class="dv">366</span><span class="op">,</span> <span class="dv">366</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"step"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Enter step size"</span>})<span class="op">,</span></span>
 <span id="cb29-957"><a href="#cb29-957" aria-hidden="true" tabindex="-1"></a>])</span>
 <span id="cb29-958"><a href="#cb29-958" aria-hidden="true" tabindex="-1"></a>viewof sliceString <span class="op">=</span> <span class="fu">transformInput</span>(</span>
 <span id="cb29-959"><a href="#cb29-959" aria-hidden="true" tabindex="-1"></a>  Inputs<span class="op">.</span><span class="fu">text</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">"slice"</span><span class="op">,</span> <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Enter slice string"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">"0:366"</span>})<span class="op">,</span></span>
-<span id="cb29-960"><a href="#cb29-960" aria-hidden="true" tabindex="-1"></a>{<span class="dt">bind</span><span class="op">:</span> viewof sliceInputs<span class="op">,</span> <span class="dt">transform</span><span class="op">:</span> encodeSlice<span class="op">,</span> <span class="dt">invert</span><span class="op">:</span> decodeSlice})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-960"><a href="#cb29-960" aria-hidden="true" tabindex="-1"></a>{<span class="dt">bind</span><span class="op">:</span> viewof sliceInputs<span class="op">,</span> <span class="dt">transform</span><span class="op">:</span> encodeSlice<span class="op">,</span> <span class="dt">invert</span><span class="op">:</span> decodeSlice})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-24-1" data-nodetype="declaration">
@@ -1278,7 +1286,7 @@ Figure&nbsp;3: Pently schedule explorer
 </div>
 <div class="g-col-6">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb30" data-startfrom="967" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 966;"><span id="cb30-967"><a href="#cb30-967" aria-hidden="true" tabindex="-1"></a>viewof spreadInputs <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">form</span>([</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb30" data-startfrom="967" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 966;"><span id="cb30-967"><a href="#cb30-967" aria-hidden="true" tabindex="-1"></a>viewof spreadInputs <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">form</span>([</span>
 <span id="cb30-968"><a href="#cb30-968" aria-hidden="true" tabindex="-1"></a>    Inputs<span class="op">.</span><span class="fu">number</span>([<span class="op">-</span><span class="dv">366</span><span class="op">,</span> <span class="dv">366</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Enter start index"</span>})<span class="op">,</span></span>
 <span id="cb30-969"><a href="#cb30-969" aria-hidden="true" tabindex="-1"></a>    Inputs<span class="op">.</span><span class="fu">number</span>([<span class="op">-</span><span class="dv">366</span><span class="op">,</span> <span class="dv">366</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"span"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">366</span><span class="op">,</span> <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Enter span size"</span>})<span class="op">,</span></span>
 <span id="cb30-970"><a href="#cb30-970" aria-hidden="true" tabindex="-1"></a>    Inputs<span class="op">.</span><span class="fu">number</span>([<span class="op">-</span><span class="dv">366</span><span class="op">,</span> <span class="dv">366</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"split"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Enter split size"</span>})<span class="op">,</span></span>
@@ -1286,7 +1294,7 @@ Figure&nbsp;3: Pently schedule explorer
 <span id="cb30-972"><a href="#cb30-972" aria-hidden="true" tabindex="-1"></a>])</span>
 <span id="cb30-973"><a href="#cb30-973" aria-hidden="true" tabindex="-1"></a>viewof spreadString <span class="op">=</span> <span class="fu">transformInput</span>(</span>
 <span id="cb30-974"><a href="#cb30-974" aria-hidden="true" tabindex="-1"></a>  Inputs<span class="op">.</span><span class="fu">text</span>({<span class="dt">label</span><span class="op">:</span> <span class="st">"spread"</span><span class="op">,</span> <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Enter spread string"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">"0&gt;366&gt;3&gt;2"</span>})<span class="op">,</span></span>
-<span id="cb30-975"><a href="#cb30-975" aria-hidden="true" tabindex="-1"></a>{<span class="dt">bind</span><span class="op">:</span> viewof spreadInputs<span class="op">,</span> <span class="dt">transform</span><span class="op">:</span> encodeSpread<span class="op">,</span> <span class="dt">invert</span><span class="op">:</span> decodeSpread})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-975"><a href="#cb30-975" aria-hidden="true" tabindex="-1"></a>{<span class="dt">bind</span><span class="op">:</span> viewof spreadInputs<span class="op">,</span> <span class="dt">transform</span><span class="op">:</span> encodeSpread<span class="op">,</span> <span class="dt">invert</span><span class="op">:</span> decodeSpread})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-25-1" data-nodetype="declaration">
@@ -1305,7 +1313,7 @@ Figure&nbsp;3: Pently schedule explorer
 </div>
 </div>
 <div class="cell fig-cap-location-margin" data-layout-align="center">
-<div class="sourceCode cell-code hidden" id="cb31" data-startfrom="985" data-source-offset="0" data-cap-location="margin"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 984;"><span id="cb31-985"><a href="#cb31-985" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@dec/dotd</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb31" data-startfrom="985" data-source-offset="0" data-cap-location="margin"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 984;"><span id="cb31-985"><a href="#cb31-985" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@dec/dotd</span></span>
 <span id="cb31-986"><a href="#cb31-986" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
 <span id="cb31-987"><a href="#cb31-987" aria-hidden="true" tabindex="-1"></a>  <span class="dt">className</span><span class="op">:</span> <span class="st">"date-selector"</span><span class="op">,</span></span>
 <span id="cb31-988"><a href="#cb31-988" aria-hidden="true" tabindex="-1"></a>  <span class="dt">padding</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
@@ -1324,7 +1332,7 @@ Figure&nbsp;3: Pently schedule explorer
 <span id="cb31-1001"><a href="#cb31-1001" aria-hidden="true" tabindex="-1"></a>    <span class="dt">stroke</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span></span>
 <span id="cb31-1002"><a href="#cb31-1002" aria-hidden="true" tabindex="-1"></a>    <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span>})</span>
 <span id="cb31-1003"><a href="#cb31-1003" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb31-1004"><a href="#cb31-1004" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-1004"><a href="#cb31-1004" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="fig-intro-dotd" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-intro-dotd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1369,7 +1377,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div></section><section id="functions" class="level5 appendix"><h2 class="anchored quarto-appendix-heading">Functions</h2><div class="quarto-appendix-contents">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-startfrom="358" data-source-offset="-62"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 357;"><span id="cb6-358"><a href="#cb6-358" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">set</span>(input<span class="op">,</span> value) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-startfrom="358" data-source-offset="-62"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 357;"><span id="cb6-358"><a href="#cb6-358" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">set</span>(input<span class="op">,</span> value) {</span>
 <span id="cb6-359"><a href="#cb6-359" aria-hidden="true" tabindex="-1"></a>  input<span class="op">.</span><span class="at">value</span> <span class="op">=</span> value<span class="op">;</span></span>
 <span id="cb6-360"><a href="#cb6-360" aria-hidden="true" tabindex="-1"></a>  input<span class="op">.</span><span class="fu">dispatchEvent</span>(<span class="kw">new</span> <span class="bu">Event</span>(<span class="st">"input"</span><span class="op">,</span> {<span class="dt">bubbles</span><span class="op">:</span> <span class="kw">true</span>}))<span class="op">;</span></span>
 <span id="cb6-361"><a href="#cb6-361" aria-hidden="true" tabindex="-1"></a>}</span>
@@ -1598,7 +1606,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 <span id="cb6-584"><a href="#cb6-584" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">doty2dotm</span>(doty <span class="op">=</span> <span class="dv">0</span>) {</span>
 <span id="cb6-585"><a href="#cb6-585" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> m <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((<span class="dv">5</span> <span class="op">*</span> doty <span class="op">+</span> <span class="dv">2</span>) <span class="op">/</span> <span class="dv">153</span>)<span class="op">;</span></span>
 <span id="cb6-586"><a href="#cb6-586" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> doty <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((<span class="dv">153</span> <span class="op">*</span> m <span class="op">+</span> <span class="dv">2</span>) <span class="op">/</span> <span class="dv">5</span>) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb6-587"><a href="#cb6-587" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-587"><a href="#cb6-587" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-5-1" data-nodetype="declaration">
@@ -1736,7 +1744,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div></section><section id="variables" class="level5 appendix"><h2 class="anchored quarto-appendix-heading">Variables</h2><div class="quarto-appendix-contents">
 
 <div class="cell" data-output="all">
-<div class="sourceCode cell-code" id="cb7" data-startfrom="594" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 593;"><span id="cb7-594"><a href="#cb7-594" aria-hidden="true" tabindex="-1"></a>width</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-startfrom="594" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 593;"><span id="cb7-594"><a href="#cb7-594" aria-hidden="true" tabindex="-1"></a>width</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-6-1" data-nodetype="expression">
@@ -1744,7 +1752,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb8" data-startfrom="595" data-source-offset="-6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 594;"><span id="cb8-595"><a href="#cb8-595" aria-hidden="true" tabindex="-1"></a>unix <span class="op">=</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" data-startfrom="595" data-source-offset="-6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 594;"><span id="cb8-595"><a href="#cb8-595" aria-hidden="true" tabindex="-1"></a>unix <span class="op">=</span> {</span>
 <span id="cb8-596"><a href="#cb8-596" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span>(<span class="kw">true</span>) {</span>
 <span id="cb8-597"><a href="#cb8-597" aria-hidden="true" tabindex="-1"></a>    <span class="kw">yield</span> <span class="bu">Date</span><span class="op">.</span><span class="fu">now</span>()<span class="op">;</span></span>
 <span id="cb8-598"><a href="#cb8-598" aria-hidden="true" tabindex="-1"></a>  }</span>
@@ -1778,7 +1786,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 <span id="cb8-626"><a href="#cb8-626" aria-hidden="true" tabindex="-1"></a>zodiac <span class="op">=</span> <span class="fu">doty2zodi</span>(dotyDate)</span>
 <span id="cb8-627"><a href="#cb8-627" aria-hidden="true" tabindex="-1"></a>inputDotySeason <span class="op">=</span> <span class="fu">doty2toty</span>(inputDoty)</span>
 <span id="cb8-628"><a href="#cb8-628" aria-hidden="true" tabindex="-1"></a>inputDotyZodiac <span class="op">=</span> <span class="fu">doty2zodi</span>(inputDoty)</span>
-<span id="cb8-629"><a href="#cb8-629" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> <span class="dv">366</span>}<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-629"><a href="#cb8-629" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> <span class="dv">366</span>}<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-6-2" data-nodetype="declaration">
@@ -1935,7 +1943,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" data-startfrom="633" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 632;"><span id="cb9-633"><a href="#cb9-633" aria-hidden="true" tabindex="-1"></a>styledYear <span class="op">=</span> <span class="fu">setStyle</span>(deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" data-startfrom="633" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 632;"><span id="cb9-633"><a href="#cb9-633" aria-hidden="true" tabindex="-1"></a>styledYear <span class="op">=</span> <span class="fu">setStyle</span>(deco<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
 <span id="cb9-634"><a href="#cb9-634" aria-hidden="true" tabindex="-1"></a>styledDotyDate <span class="op">=</span> <span class="fu">setStyle</span>(dotyDate<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
 <span id="cb9-635"><a href="#cb9-635" aria-hidden="true" tabindex="-1"></a>styledDotyTime <span class="op">=</span> <span class="fu">setStyle</span>(dotyTime<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>])</span>
 <span id="cb9-636"><a href="#cb9-636" aria-hidden="true" tabindex="-1"></a>styledDotyDate1 <span class="op">=</span> <span class="fu">setStyle</span>(dotyDate<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
@@ -1945,7 +1953,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 <span id="cb9-640"><a href="#cb9-640" aria-hidden="true" tabindex="-1"></a>styledDotd <span class="op">=</span> <span class="fu">setStyle</span>(dotyDotd<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">9</span>])</span>
 <span id="cb9-641"><a href="#cb9-641" aria-hidden="true" tabindex="-1"></a>styledCent <span class="op">=</span> <span class="fu">setStyle</span>(dotyTime<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">7</span>])</span>
 <span id="cb9-642"><a href="#cb9-642" aria-hidden="true" tabindex="-1"></a>styledMil <span class="op">=</span> <span class="fu">setStyle</span>(dotyTime[<span class="dv">2</span>]<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">6</span>])</span>
-<span id="cb9-643"><a href="#cb9-643" aria-hidden="true" tabindex="-1"></a>styledBeat <span class="op">=</span> <span class="fu">setStyle</span>(dotyTime<span class="op">.</span><span class="fu">slice</span>(<span class="dv">3</span><span class="op">,</span> <span class="dv">5</span>)<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">11</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-643"><a href="#cb9-643" aria-hidden="true" tabindex="-1"></a>styledBeat <span class="op">=</span> <span class="fu">setStyle</span>(dotyTime<span class="op">.</span><span class="fu">slice</span>(<span class="dv">3</span><span class="op">,</span> <span class="dv">5</span>)<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">11</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-7-1" data-nodetype="declaration">
@@ -2027,7 +2035,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div></section><section id="set-values" class="level5 appendix"><h2 class="anchored quarto-appendix-heading">Set values</h2><div class="quarto-appendix-contents">
 
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb10" data-startfrom="649" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 648;"><span id="cb10-649"><a href="#cb10-649" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(viewof inputDoty<span class="op">,</span> scrubberDoty)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb10" data-startfrom="649" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 648;"><span id="cb10-649"><a href="#cb10-649" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(viewof inputDoty<span class="op">,</span> scrubberDoty)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-8" data-nodetype="expression">
 
@@ -2035,7 +2043,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb11" data-startfrom="654" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 653;"><span id="cb11-654"><a href="#cb11-654" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(viewof decoOutput<span class="op">,</span> <span class="vs">`1969+</span><span class="sc">${</span>scrubberDeco<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">3</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}</span><span class="vs">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb11" data-startfrom="654" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 653;"><span id="cb11-654"><a href="#cb11-654" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(viewof decoOutput<span class="op">,</span> <span class="vs">`1969+</span><span class="sc">${</span>scrubberDeco<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">3</span><span class="op">,</span> <span class="st">"0"</span>)<span class="sc">}</span><span class="vs">`</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-9" data-nodetype="expression">
 
@@ -2048,7 +2056,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 
 </div></section><section id="functions-1" class="level5 appendix"><h2 class="anchored quarto-appendix-heading">Functions</h2><div class="quarto-appendix-contents">
 
-<div class="sourceCode" id="cb18"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>copyq<span class="op">:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>copyq<span class="op">:</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">unix2doty</span>(ms <span class="op">=</span> <span class="dv">0</span>) {</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> days <span class="op">=</span> ms <span class="op">/</span> <span class="dv">86400000</span> <span class="op">+</span> <span class="dv">719468</span><span class="op">,</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        dote <span class="op">=</span> days <span class="op">-</span> (era <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((days <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> days <span class="op">:</span> days <span class="op">-</span> <span class="dv">146096</span>) <span class="op">/</span> <span class="dv">146097</span>)) <span class="op">*</span> <span class="dv">146097</span><span class="op">,</span></span>
@@ -2063,9 +2071,9 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 <span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="fu">copy</span>(datetime)</span>
 <span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="fu">copySelection</span>(datetime)</span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19" data-startfrom="753" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 752;"><span id="cb19-753"><a href="#cb19-753" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">zone2hour</span>(zone <span class="op">=</span> <span class="st">"Z"</span>) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19" data-startfrom="753" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 752;"><span id="cb19-753"><a href="#cb19-753" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">zone2hour</span>(zone <span class="op">=</span> <span class="st">"Z"</span>) {</span>
 <span id="cb19-754"><a href="#cb19-754" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (zone <span class="op">=</span> zone<span class="op">.</span><span class="fu">toUpperCase</span>()) <span class="op">==</span> <span class="st">"Z"</span> <span class="op">?</span> <span class="dv">0</span></span>
 <span id="cb19-755"><a href="#cb19-755" aria-hidden="true" tabindex="-1"></a>        <span class="op">:</span> zone <span class="op">&gt;</span> <span class="st">"@"</span> <span class="op">&amp;&amp;</span> zone <span class="op">&lt;</span> <span class="st">"J"</span> <span class="op">?</span> zone<span class="op">.</span><span class="fu">charCodeAt</span>() <span class="op">-</span> <span class="dv">64</span></span>
 <span id="cb19-756"><a href="#cb19-756" aria-hidden="true" tabindex="-1"></a>        <span class="op">:</span> zone <span class="op">&gt;</span> <span class="st">"J"</span> <span class="op">&amp;&amp;</span> zone <span class="op">&lt;</span> <span class="st">"N"</span> <span class="op">?</span> zone<span class="op">.</span><span class="fu">charCodeAt</span>() <span class="op">-</span> <span class="dv">65</span></span>
@@ -2113,7 +2121,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 <span id="cb19-798"><a href="#cb19-798" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb19-799"><a href="#cb19-799" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">unix2year</span>(ms <span class="op">=</span> <span class="dv">0</span>) {</span>
 <span id="cb19-800"><a href="#cb19-800" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">dote2year</span>(<span class="fu">unix2dote</span>(ms))<span class="op">;</span></span>
-<span id="cb19-801"><a href="#cb19-801" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-801"><a href="#cb19-801" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-14-1" data-nodetype="declaration">
@@ -2195,7 +2203,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div></section><section id="variables-1" class="level5 appendix"><h2 class="anchored quarto-appendix-heading">Variables</h2><div class="quarto-appendix-contents">
 
 <div class="cell" data-output="all">
-<div class="sourceCode cell-code" id="cb20" data-startfrom="808" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 807;"><span id="cb20-808"><a href="#cb20-808" aria-hidden="true" tabindex="-1"></a>tzOffsetInMs <span class="op">=</span> inputDatetime<span class="op">.</span><span class="fu">getTimezoneOffset</span>() <span class="op">*</span> <span class="dv">60000</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20" data-startfrom="808" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 807;"><span id="cb20-808"><a href="#cb20-808" aria-hidden="true" tabindex="-1"></a>tzOffsetInMs <span class="op">=</span> inputDatetime<span class="op">.</span><span class="fu">getTimezoneOffset</span>() <span class="op">*</span> <span class="dv">60000</span></span>
 <span id="cb20-809"><a href="#cb20-809" aria-hidden="true" tabindex="-1"></a>utcDatetime <span class="op">=</span> inputDatetime <span class="op">-</span> tzOffsetInMs</span>
 <span id="cb20-810"><a href="#cb20-810" aria-hidden="true" tabindex="-1"></a>outputDatetimeDeco <span class="op">=</span> <span class="fu">unix2deco</span>(utcDatetime)</span>
 <span id="cb20-811"><a href="#cb20-811" aria-hidden="true" tabindex="-1"></a>dtDoty <span class="op">=</span> outputDatetimeDeco<span class="op">.</span><span class="fu">split</span>(<span class="st">"+"</span>)[<span class="dv">1</span>]</span>
@@ -2205,7 +2213,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 <span id="cb20-815"><a href="#cb20-815" aria-hidden="true" tabindex="-1"></a>dtDotyTimeDelimiter <span class="op">=</span> dtDotyTimeRaw <span class="op">?</span> <span class="st">"."</span> <span class="op">:</span> <span class="st">""</span></span>
 <span id="cb20-816"><a href="#cb20-816" aria-hidden="true" tabindex="-1"></a>outputDecoYear <span class="op">=</span> <span class="fu">doty2year</span>(<span class="op">...</span>yd)<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">8</span>)</span>
 <span id="cb20-817"><a href="#cb20-817" aria-hidden="true" tabindex="-1"></a>outputIsoc <span class="op">=</span> <span class="fu">doty2isoc</span>(<span class="op">...</span>yd)</span>
-<span id="cb20-818"><a href="#cb20-818" aria-hidden="true" tabindex="-1"></a>yearDate <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">ceil</span>(<span class="fu">unix2year</span>(unix) <span class="op">*</span> <span class="fl">1e3</span>) <span class="op">/</span> <span class="fl">1e3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-818"><a href="#cb20-818" aria-hidden="true" tabindex="-1"></a>yearDate <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">ceil</span>(<span class="fu">unix2year</span>(unix) <span class="op">*</span> <span class="fl">1e3</span>) <span class="op">/</span> <span class="fl">1e3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-15-1" data-nodetype="declaration">
@@ -2285,14 +2293,14 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21" data-startfrom="822" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 821;"><span id="cb21-822"><a href="#cb21-822" aria-hidden="true" tabindex="-1"></a>dtYear <span class="op">=</span> <span class="fu">setStyle</span>(outputDatetimeDeco<span class="op">.</span><span class="fu">split</span>(<span class="st">"+"</span>)[<span class="dv">0</span>]<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" data-startfrom="822" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 821;"><span id="cb21-822"><a href="#cb21-822" aria-hidden="true" tabindex="-1"></a>dtYear <span class="op">=</span> <span class="fu">setStyle</span>(outputDatetimeDeco<span class="op">.</span><span class="fu">split</span>(<span class="st">"+"</span>)[<span class="dv">0</span>]<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
 <span id="cb21-823"><a href="#cb21-823" aria-hidden="true" tabindex="-1"></a>dtDotyDate <span class="op">=</span> <span class="fu">setStyle</span>(dtDotyDateRaw<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">1</span>])</span>
 <span id="cb21-824"><a href="#cb21-824" aria-hidden="true" tabindex="-1"></a>dtDotyTime <span class="op">=</span> dtDotyTimeRaw <span class="op">?</span> <span class="fu">setStyle</span>(dtDotyTimeRaw<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">2</span>]) <span class="op">:</span> <span class="st">""</span></span>
 <span id="cb21-825"><a href="#cb21-825" aria-hidden="true" tabindex="-1"></a>styledIsocYear <span class="op">=</span> <span class="fu">setStyle</span>(outputIsoc<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">(?</span><span class="ss">=-</span><span class="sc">)</span><span class="ss">/</span>)[<span class="dv">0</span>]<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
 <span id="cb21-826"><a href="#cb21-826" aria-hidden="true" tabindex="-1"></a>styledIsocMd <span class="op">=</span> <span class="fu">setStyle</span>(outputIsoc<span class="op">.</span><span class="fu">slice</span>(outputIsoc<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">(?</span><span class="ss">=-</span><span class="sc">)</span><span class="ss">/</span>)[<span class="dv">0</span>]<span class="op">.</span><span class="at">length</span><span class="op">+</span><span class="dv">1</span><span class="op">,</span>outputIsoc<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">(?</span><span class="ss">=-</span><span class="sc">)</span><span class="ss">/</span>)[<span class="dv">0</span>]<span class="op">.</span><span class="at">length</span><span class="op">+</span><span class="dv">6</span>)<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">5</span>])</span>
 <span id="cb21-827"><a href="#cb21-827" aria-hidden="true" tabindex="-1"></a>styledIsocTime <span class="op">=</span> <span class="fu">setStyle</span>(outputIsoc<span class="op">.</span><span class="fu">slice</span>(outputIsoc<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">(?</span><span class="ss">=-</span><span class="sc">)</span><span class="ss">/</span>)[<span class="dv">0</span>]<span class="op">.</span><span class="at">length</span><span class="op">+</span><span class="dv">7</span>)<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">4</span>])</span>
 <span id="cb21-828"><a href="#cb21-828" aria-hidden="true" tabindex="-1"></a>styledOutputDatetimeYear <span class="op">=</span> <span class="fu">setStyle</span>(outputDatetimeYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span>
-<span id="cb21-829"><a href="#cb21-829" aria-hidden="true" tabindex="-1"></a>styledOutputDecoYear <span class="op">=</span> <span class="fu">setStyle</span>(outputDecoYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-829"><a href="#cb21-829" aria-hidden="true" tabindex="-1"></a>styledOutputDecoYear <span class="op">=</span> <span class="fu">setStyle</span>(outputDecoYear<span class="op">,</span> d3<span class="op">.</span><span class="at">schemePaired</span>[<span class="dv">10</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-16-1" data-nodetype="declaration">
@@ -2358,7 +2366,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div></section><section id="functions-2" class="level5 appendix"><h2 class="anchored quarto-appendix-heading">Functions</h2><div class="quarto-appendix-contents">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32" data-startfrom="1016" data-source-offset="-50"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1015;"><span id="cb32-1016"><a href="#cb32-1016" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">interval</span>(range <span class="op">=</span> []<span class="op">,</span> options <span class="op">=</span> {}) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32" data-startfrom="1016" data-source-offset="-50"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1015;"><span id="cb32-1016"><a href="#cb32-1016" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">interval</span>(range <span class="op">=</span> []<span class="op">,</span> options <span class="op">=</span> {}) {</span>
 <span id="cb32-1017"><a href="#cb32-1017" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> [min <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> max <span class="op">=</span> <span class="dv">1</span>] <span class="op">=</span> range<span class="op">;</span></span>
 <span id="cb32-1018"><a href="#cb32-1018" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> {</span>
 <span id="cb32-1019"><a href="#cb32-1019" aria-hidden="true" tabindex="-1"></a>    step <span class="op">=</span> <span class="op">.</span><span class="bn">001</span><span class="op">,</span></span>
@@ -2732,7 +2740,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 <span id="cb32-1387"><a href="#cb32-1387" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb32-1388"><a href="#cb32-1388" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
 <span id="cb32-1389"><a href="#cb32-1389" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> result<span class="op">;</span></span>
-<span id="cb32-1390"><a href="#cb32-1390" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-1390"><a href="#cb32-1390" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-27-1" data-nodetype="declaration">
@@ -2856,7 +2864,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div></section><section id="variables-2" class="level5 appendix"><h2 class="anchored quarto-appendix-heading">Variables</h2><div class="quarto-appendix-contents">
 
 <div class="cell" data-output="all">
-<div class="sourceCode cell-code" id="cb33" data-startfrom="1397" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1396;"><span id="cb33-1397"><a href="#cb33-1397" aria-hidden="true" tabindex="-1"></a>nested <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> intervals<span class="op">.</span><span class="at">length</span>}<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> ([</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33" data-startfrom="1397" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1396;"><span id="cb33-1397"><a href="#cb33-1397" aria-hidden="true" tabindex="-1"></a>nested <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> intervals<span class="op">.</span><span class="at">length</span>}<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> ([</span>
 <span id="cb33-1398"><a href="#cb33-1398" aria-hidden="true" tabindex="-1"></a>  {</span>
 <span id="cb33-1399"><a href="#cb33-1399" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="vs">`</span><span class="sc">${</span>i<span class="sc">}</span><span class="vs"> or </span><span class="sc">${</span>i<span class="op">+</span><span class="dv">5</span><span class="sc">}</span><span class="vs">`</span><span class="op">,</span></span>
 <span id="cb33-1400"><a href="#cb33-1400" aria-hidden="true" tabindex="-1"></a>  <span class="dt">duration</span><span class="op">:</span> intervals[i][<span class="dv">1</span>] <span class="op">!==</span> intervals[i][<span class="dv">0</span>] <span class="op">?</span> intervals[i][<span class="dv">0</span>] <span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
@@ -2956,7 +2964,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 <span id="cb33-1494"><a href="#cb33-1494" aria-hidden="true" tabindex="-1"></a>]</span>
 <span id="cb33-1495"><a href="#cb33-1495" aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> <span class="dv">366</span>}<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> i<span class="op">.</span><span class="fu">toString</span>()<span class="op">.</span><span class="fu">padStart</span>(<span class="dv">3</span><span class="op">,</span> <span class="st">"0"</span>))</span>
 <span id="cb33-1496"><a href="#cb33-1496" aria-hidden="true" tabindex="-1"></a>sliceArray <span class="op">=</span> <span class="fu">slice</span>(dates<span class="op">,</span> <span class="op">...</span>sliceString<span class="op">.</span><span class="fu">split</span>(<span class="st">":"</span>)<span class="op">.</span><span class="fu">map</span>(i <span class="kw">=&gt;</span> i <span class="op">===</span> <span class="st">""</span> <span class="op">?</span> <span class="kw">null</span> <span class="op">:</span> <span class="bu">Number</span>(i)))</span>
-<span id="cb33-1497"><a href="#cb33-1497" aria-hidden="true" tabindex="-1"></a>spreadArray <span class="op">=</span> []<span class="op">.</span><span class="fu">concat</span>(<span class="op">...</span><span class="fu">spread</span>(dates<span class="op">,</span> <span class="op">...</span><span class="fu">decodeSpread</span>(spreadString)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-1497"><a href="#cb33-1497" aria-hidden="true" tabindex="-1"></a>spreadArray <span class="op">=</span> []<span class="op">.</span><span class="fu">concat</span>(<span class="op">...</span><span class="fu">spread</span>(dates<span class="op">,</span> <span class="op">...</span><span class="fu">decodeSpread</span>(spreadString)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-28-1" data-nodetype="declaration">
@@ -3010,7 +3018,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div></section><section id="set-values-1" class="level5 appendix"><h2 class="anchored quarto-appendix-heading">Set values</h2><div class="quarto-appendix-contents">
 
 <div class="cell hidden">
-<div class="sourceCode cell-code" id="cb34" data-startfrom="1504" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1503;"><span id="cb34-1504"><a href="#cb34-1504" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(viewof intervals<span class="op">,</span> schedules[schedule<span class="op">-</span><span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34" data-startfrom="1504" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1503;"><span id="cb34-1504"><a href="#cb34-1504" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(viewof intervals<span class="op">,</span> schedules[schedule<span class="op">-</span><span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display hidden">
 <div>
 <div id="ojs-cell-29-1" data-nodetype="expression">
@@ -3018,7 +3026,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb35" data-startfrom="1505" data-source-offset="-45"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1504;"><span id="cb35-1505"><a href="#cb35-1505" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(viewof spreadString<span class="op">,</span> <span class="fu">setSpreadDotd</span>(spreadDotd))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35" data-startfrom="1505" data-source-offset="-45"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1504;"><span id="cb35-1505"><a href="#cb35-1505" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(viewof spreadString<span class="op">,</span> <span class="fu">setSpreadDotd</span>(spreadDotd))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display hidden">
 <div>
 <div id="ojs-cell-29-2" data-nodetype="expression">
@@ -3026,7 +3034,7 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb36" data-startfrom="1506" data-source-offset="-97"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1505;"><span id="cb36-1506"><a href="#cb36-1506" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(viewof sliceString<span class="op">,</span> <span class="fu">setSliceDotd</span>(sliceDotd))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36" data-startfrom="1506" data-source-offset="-97"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1505;"><span id="cb36-1506"><a href="#cb36-1506" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span>(viewof sliceString<span class="op">,</span> <span class="fu">setSliceDotd</span>(sliceDotd))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display hidden">
 <div>
 <div id="ojs-cell-29-3" data-nodetype="expression">
@@ -3034,13 +3042,13 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb37" data-startfrom="1507" data-source-offset="-146"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1506;"><span id="cb37-1507"><a href="#cb37-1507" aria-hidden="true" tabindex="-1"></a>{</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37" data-startfrom="1507" data-source-offset="-146"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1506;"><span id="cb37-1507"><a href="#cb37-1507" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb37-1508"><a href="#cb37-1508" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (invertDotd <span class="op">?</span> <span class="op">!</span>sliceOrSpread <span class="op">:</span> sliceOrSpread) {</span>
 <span id="cb37-1509"><a href="#cb37-1509" aria-hidden="true" tabindex="-1"></a>    <span class="kw">set</span>(viewof sliceDotd<span class="op">,</span> <span class="fu">invert</span>(togglePlot))</span>
 <span id="cb37-1510"><a href="#cb37-1510" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
 <span id="cb37-1511"><a href="#cb37-1511" aria-hidden="true" tabindex="-1"></a>    <span class="kw">set</span>(viewof spreadDotd<span class="op">,</span> <span class="fu">invert</span>(togglePlot))</span>
 <span id="cb37-1512"><a href="#cb37-1512" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb37-1513"><a href="#cb37-1513" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-1513"><a href="#cb37-1513" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display hidden">
 <div>
 <div id="ojs-cell-29-4" data-nodetype="expression">
@@ -3180,13 +3188,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -3596,7 +3605,7 @@ window._ojs.runtime.interpretFromScriptTags();
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb38" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Observable</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
@@ -5118,7 +5127,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb38-1580"><a href="#cb38-1580" aria-hidden="true" tabindex="-1"></a><span class="op">:::</span></span>
 <span id="cb38-1581"><a href="#cb38-1581" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-1582"><a href="#cb38-1582" aria-hidden="true" tabindex="-1"></a># Appendix <span class="op">{</span>#appendix<span class="op">}</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,18 +72,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../asset/deidec.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f7559df9aa140eca8ced59a27863313.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-568e7decee7edff9fda74e82dcf897b3.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f7559df9aa140eca8ced59a27863313.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e2ebf8e2605a502049583e0d4fe4413a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-7c0818a6829d610e3ad73bed61f3c46a.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e2ebf8e2605a502049583e0d4fe4413a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6329569ba7c2489ad381460a54ae9f5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c2821b85da0cc791b17643d6a44bf25b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-6329569ba7c2489ad381460a54ae9f5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4458bf708ab3988a8dea3734e33e5073.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e0f29f2206a9e15fceee165a8ae79208.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4458bf708ab3988a8dea3734e33e5073.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": true,
@@ -128,7 +129,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -330,7 +331,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../asset/deidec.svg" alt="" class="navbar-logo">
+    <img src="../asset/deidec.svg" alt="Decagon made up of 100 triangles that transitions in a circle of ten swirling teardrops each with a repeat of the larger image at its center." class="navbar-logo light-content">
+    <img src="../asset/deidec.svg" alt="Decagon made up of 100 triangles that transitions in a circle of ten swirling teardrops each with a repeat of the larger image at its center." class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Martin Laptev</span>
@@ -364,12 +366,18 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="sidebar-tools-main tools-wide">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../asset/deidec.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../asset/deidec.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
     <a href="https://www.github.com/maptv" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-github"></i></a>
     <a href="https://www.linkedin.com/in/maptv" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-linkedin"></i></a>
     <a href="mailto:maptv@ireni.co" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope-at"></i></a>
     <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
 </div>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -696,7 +704,7 @@ flowchart LR
 <h5 class="hiddenheading anchored" data-anchor-id="map">Interactive world map</h5>
 <div class="marginInputs page-columns page-full">
 <div class="cell page-columns page-full">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="89" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 88;"><span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>viewof travelspeed <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Speed"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="89" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 88;"><span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>viewof travelspeed <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Speed"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <div class="no-row-height column-margin column-container"><div id="speedinput" class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
@@ -704,7 +712,7 @@ flowchart LR
 </div>
 </div></div></div>
 <div class="cell page-columns page-full">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="97" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 96;"><span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>viewof yaw <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Yaw"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="97" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 96;"><span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>viewof yaw <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Yaw"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <div class="no-row-height column-margin column-container"><div id="yawinput" class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="declaration">
@@ -712,7 +720,7 @@ flowchart LR
 </div>
 </div></div></div>
 <div class="cell page-columns page-full">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="103" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 102;"><span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>viewof pitch <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">500</span><span class="op">,</span> <span class="dv">500</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Pitch"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="103" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 102;"><span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>viewof pitch <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">500</span><span class="op">,</span> <span class="dv">500</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Pitch"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <div class="no-row-height column-margin column-container"><div id="pitchinput" class="cell-output cell-output-display">
 <div id="ojs-cell-3" data-nodetype="declaration">
@@ -720,7 +728,7 @@ flowchart LR
 </div>
 </div></div></div>
 <div class="cell page-columns page-full">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="182" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 181;"><span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a>viewof roll <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">500</span><span class="op">,</span> <span class="dv">500</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Roll"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="182" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 181;"><span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a>viewof roll <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">500</span><span class="op">,</span> <span class="dv">500</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Roll"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <div class="no-row-height column-margin column-container"><div id="rollinput" class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="declaration">
@@ -728,7 +736,7 @@ flowchart LR
 </div>
 </div></div></div>
 <div class="cell page-columns page-full">
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="190" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 189;"><span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a>viewof mapsize <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Size"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="190" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 189;"><span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a>viewof mapsize <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Size"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <div class="no-row-height column-margin column-container"><div id="sizeinput" class="cell-output cell-output-display">
 <div id="ojs-cell-5" data-nodetype="declaration">
@@ -736,8 +744,8 @@ flowchart LR
 </div>
 </div></div></div>
 <div class="cell page-columns page-full">
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="198" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 197;"><span id="cb6-198"><a href="#cb6-198" aria-hidden="true" tabindex="-1"></a>viewof select <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(</span>
-<span id="cb6-199"><a href="#cb6-199" aria-hidden="true" tabindex="-1"></a>  projections<span class="op">,</span> {<span class="dt">format</span><span class="op">:</span> x <span class="kw">=&gt;</span> x<span class="op">.</span><span class="at">name</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> projections<span class="op">.</span><span class="fu">find</span>(t <span class="kw">=&gt;</span> t<span class="op">.</span><span class="at">name</span> <span class="op">===</span> <span class="st">"Equirectangular (plate carrée)"</span>)})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb6" data-startfrom="198" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 197;"><span id="cb6-198"><a href="#cb6-198" aria-hidden="true" tabindex="-1"></a>viewof select <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(</span>
+<span id="cb6-199"><a href="#cb6-199" aria-hidden="true" tabindex="-1"></a>  projections<span class="op">,</span> {<span class="dt">format</span><span class="op">:</span> x <span class="kw">=&gt;</span> x<span class="op">.</span><span class="at">name</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> projections<span class="op">.</span><span class="fu">find</span>(t <span class="kw">=&gt;</span> t<span class="op">.</span><span class="at">name</span> <span class="op">===</span> <span class="st">"Equirectangular (plate carrée)"</span>)})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <div class="no-row-height column-margin column-container"><div id="projselect" class="cell-output cell-output-display">
 <div id="ojs-cell-6" data-nodetype="declaration">
@@ -746,11 +754,11 @@ flowchart LR
 </div></div></div>
 </div>
 <div id="toggles" class="cell">
-<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="257" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 256;"><span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a>viewof bordertoggle <span class="op">=</span> <span class="fu">labelToggle</span>(Inputs<span class="op">.</span><span class="at">toggle</span><span class="op">,</span> <span class="st">"Border"</span><span class="op">,</span> <span class="kw">false</span><span class="op">,</span> <span class="st">"bordertoggle"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb7" data-startfrom="257" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 256;"><span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a>viewof bordertoggle <span class="op">=</span> <span class="fu">labelToggle</span>(Inputs<span class="op">.</span><span class="at">toggle</span><span class="op">,</span> <span class="st">"Border"</span><span class="op">,</span> <span class="kw">false</span><span class="op">,</span> <span class="st">"bordertoggle"</span>)</span>
 <span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a>viewof gridtoggle <span class="op">=</span> <span class="fu">labelToggle</span>(Inputs<span class="op">.</span><span class="at">toggle</span><span class="op">,</span> <span class="st">"Grid"</span><span class="op">,</span> <span class="kw">false</span><span class="op">,</span> <span class="st">"gridtoggle"</span>)</span>
 <span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a>viewof utctoggle <span class="op">=</span> <span class="fu">labelToggle</span>(Inputs<span class="op">.</span><span class="at">toggle</span><span class="op">,</span> <span class="st">"UTC"</span><span class="op">,</span> <span class="kw">false</span><span class="op">,</span> <span class="st">"utctoggle"</span>)</span>
 <span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a>viewof suntoggle <span class="op">=</span> <span class="fu">labelToggle</span>(Inputs<span class="op">.</span><span class="at">toggle</span><span class="op">,</span> <span class="st">"Sun"</span><span class="op">,</span> <span class="kw">false</span><span class="op">,</span> <span class="st">"suntoggle"</span>)</span>
-<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a>rstbtn<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a>rstbtn<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="toggles-1">
 <div id="ojs-cell-7-1" data-nodetype="declaration">
@@ -788,13 +796,13 @@ flowchart LR
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="262" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 261;"><span id="cb8-262"><a href="#cb8-262" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> <span class="fu">createTable</span>([</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb8" data-startfrom="262" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 261;"><span id="cb8-262"><a href="#cb8-262" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> <span class="fu">createTable</span>([</span>
 <span id="cb8-263"><a href="#cb8-263" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">Point</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">Milliparallel</span><span class="op">:</span> <span class="dv">800</span><span class="op">,</span> <span class="dt">Millimeridian</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">Milliwindrose</span><span class="op">:</span> <span class="dv">0</span> }<span class="op">,</span></span>
 <span id="cb8-264"><a href="#cb8-264" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">Point</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">Milliparallel</span><span class="op">:</span> <span class="dv">800</span><span class="op">,</span> <span class="dt">Millimeridian</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span> <span class="dt">Milliwindrose</span><span class="op">:</span> <span class="dv">500</span> }<span class="op">,</span></span>
 <span id="cb8-265"><a href="#cb8-265" aria-hidden="true" tabindex="-1"></a>]<span class="op">,</span> { <span class="dt">headerEditable</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">appendRows</span><span class="op">:</span> <span class="kw">false</span> })</span>
 <span id="cb8-266"><a href="#cb8-266" aria-hidden="true" tabindex="-1"></a><span class="co">//   {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},</span></span>
 <span id="cb8-267"><a href="#cb8-267" aria-hidden="true" tabindex="-1"></a><span class="co">//   {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},</span></span>
-<span id="cb8-268"><a href="#cb8-268" aria-hidden="true" tabindex="-1"></a><span class="co">// ], {headerEditable: false, appendRows: false})</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-268"><a href="#cb8-268" aria-hidden="true" tabindex="-1"></a><span class="co">// ], {headerEditable: false, appendRows: false})</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="maptable" class="cell-output cell-output-display">
 <div id="ojs-cell-8" data-nodetype="declaration">
 
@@ -803,13 +811,13 @@ flowchart LR
 </div>
 <div class="column-page">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@d3/solar-terminator</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb9" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@d3/solar-terminator</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@mbostock/time-zones</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>viewof coordinates <span class="op">=</span> <span class="fu">worldMapCoordinates</span>([[<span class="fu">turn2long</span>(table<span class="op">.</span><span class="at">rows</span>[<span class="dv">1</span>]<span class="op">.</span><span class="at">cells</span>[<span class="dv">1</span>]<span class="op">.</span><span class="at">childNodes</span>[<span class="dv">0</span>]<span class="op">.</span><span class="at">innerText</span>)<span class="op">,</span> <span class="fu">turn2degr</span>(table<span class="op">.</span><span class="at">rows</span>[<span class="dv">1</span>]<span class="op">.</span><span class="at">cells</span>[<span class="dv">2</span>]<span class="op">.</span><span class="at">childNodes</span>[<span class="dv">0</span>]<span class="op">.</span><span class="at">innerText</span> <span class="op">%</span> <span class="dv">250</span>)]<span class="op">,</span> [<span class="fu">turn2long</span>(table<span class="op">.</span><span class="at">rows</span>[<span class="dv">2</span>]<span class="op">.</span><span class="at">cells</span>[<span class="dv">1</span>]<span class="op">.</span><span class="at">childNodes</span>[<span class="dv">0</span>]<span class="op">.</span><span class="at">innerText</span>)<span class="op">,</span> <span class="fu">turn2degr</span>(table<span class="op">.</span><span class="at">rows</span>[<span class="dv">2</span>]<span class="op">.</span><span class="at">cells</span>[<span class="dv">2</span>]<span class="op">.</span><span class="at">childNodes</span>[<span class="dv">0</span>]<span class="op">.</span><span class="at">innerText</span> <span class="op">%</span> <span class="dv">250</span>)]<span class="op">,</span> projection]<span class="op">,</span> [width<span class="op">,</span> height <span class="op">*</span> mapsize <span class="op">/</span> <span class="dv">100</span>])</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">//viewof coordinates = worldMapCoordinates([</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">//  [turn2long(table.rows[1].cells[1].childNodes[0].innerText), turn2degr(table.rows[1].cells[2].childNodes[0].innerText % 250)],</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">//  [turn2long(table.rows[2].cells[1].childNodes[0].innerText), turn2degr(table.rows[2].cells[2].childNodes[0].innerText % 250)],</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">//  projection], [width, height])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">//  projection], [width, height])</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="distmap" class="cell-output cell-output-display">
 <div id="ojs-cell-9" data-nodetype="declaration">
 
@@ -821,7 +829,7 @@ flowchart LR
 <section id="cwc" class="level5 hiddenheading page-columns page-full">
 <h5 class="hiddenheading anchored" data-anchor-id="cwc">Color wheel compass</h5>
 <div class="cell colorcomponent page-columns page-full">
-<div class="sourceCode cell-code hidden" id="cb10" data-startfrom="3" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">preview</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb10" data-startfrom="3" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">preview</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <div class="no-row-height column-margin column-container"><div id="colorpreview" class="cell-output cell-output-display">
 <div id="ojs-cell-10" data-nodetype="expression">
@@ -829,7 +837,7 @@ flowchart LR
 </div>
 </div></div></div>
 <div class="cell coloropp page-columns page-full">
-<div class="sourceCode cell-code hidden" id="cb11" data-startfrom="3" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@maddievision/enneagram</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb11" data-startfrom="3" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@maddievision/enneagram</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">quickRender</span>(<span class="dv">326</span><span class="op">,</span> <span class="dv">326</span><span class="op">,</span> context <span class="kw">=&gt;</span> {</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> center <span class="op">=</span> <span class="dv">163</span></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> ringRadius <span class="op">=</span> <span class="dv">140</span></span>
@@ -905,7 +913,7 @@ flowchart LR
 <span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>    context<span class="op">.</span><span class="at">fillStyle</span> <span class="op">=</span> <span class="fu">yiq</span>(hsl8[i]) <span class="op">&gt;</span> <span class="fl">0.51</span> <span class="op">?</span> <span class="st">"#000"</span> <span class="op">:</span> <span class="st">"white"</span><span class="op">;</span></span>
 <span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a>    context<span class="op">.</span><span class="fu">fillText</span>([<span class="st">"N"</span><span class="op">,</span> <span class="st">"NE"</span><span class="op">,</span> <span class="st">"E"</span><span class="op">,</span> <span class="st">"SE"</span><span class="op">,</span> <span class="st">"S"</span><span class="op">,</span> <span class="st">"SW"</span><span class="op">,</span> <span class="st">"W"</span><span class="op">,</span> <span class="st">"NW"</span>][i]<span class="op">,</span> x<span class="op">,</span> y <span class="op">+</span> <span class="dv">6</span>)</span>
 <span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <div class="no-row-height column-margin column-container"><div id="coloropposites8" class="cell-output cell-output-display">
 <div id="ojs-cell-11" data-nodetype="expression">
@@ -913,8 +921,8 @@ flowchart LR
 </div>
 </div></div></div>
 <div class="cell colorcomparer page-columns page-full">
-<div class="sourceCode cell-code hidden" id="cb12" data-startfrom="3" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@observablehq/categorical-palette-tool</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">displayPalette</span>(hsl8<span class="op">,</span> {<span class="dt">darkMode</span><span class="op">:</span> <span class="kw">true</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb12" data-startfrom="3" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@observablehq/categorical-palette-tool</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">displayPalette</span>(hsl8<span class="op">,</span> {<span class="dt">darkMode</span><span class="op">:</span> <span class="kw">true</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <div class="no-row-height column-margin column-container"><div id="colorcomparer8" class="cell-output cell-output-display">
 <div id="ojs-cell-12" data-nodetype="expression">
@@ -922,7 +930,7 @@ flowchart LR
 </div>
 </div></div></div>
 <div class="cell coloropp page-columns page-full">
-<div class="sourceCode cell-code hidden" id="cb13" data-startfrom="3" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@maddievision/enneagram</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb13" data-startfrom="3" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@maddievision/enneagram</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">quickRender</span>(<span class="dv">326</span><span class="op">,</span> <span class="dv">326</span><span class="op">,</span> context <span class="kw">=&gt;</span> {</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> center <span class="op">=</span> <span class="dv">163</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> ringRadius <span class="op">=</span> <span class="dv">140</span></span>
@@ -998,7 +1006,7 @@ flowchart LR
 <span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a>    context<span class="op">.</span><span class="at">fillStyle</span> <span class="op">=</span> <span class="fu">yiq</span>(hsl10[i]) <span class="op">&gt;</span> <span class="fl">0.51</span> <span class="op">?</span> <span class="st">"#000"</span> <span class="op">:</span> <span class="st">"white"</span><span class="op">;</span></span>
 <span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a>    context<span class="op">.</span><span class="fu">fillText</span>(i<span class="op">,</span> x<span class="op">,</span> y <span class="op">+</span> <span class="dv">8</span>)</span>
 <span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <div class="no-row-height column-margin column-container"><div id="coloropposites10" class="cell-output cell-output-display">
 <div id="ojs-cell-13" data-nodetype="expression">
@@ -1006,8 +1014,8 @@ flowchart LR
 </div>
 </div></div></div>
 <div class="cell colorcomparer page-columns page-full">
-<div class="sourceCode cell-code hidden" id="cb14" data-startfrom="3" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@observablehq/categorical-palette-tool</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">displayPalette</span>(hsl10<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span>)<span class="op">,</span> {<span class="dt">darkMode</span><span class="op">:</span> <span class="kw">true</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb14" data-startfrom="3" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@observablehq/categorical-palette-tool</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">displayPalette</span>(hsl10<span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span>)<span class="op">,</span> {<span class="dt">darkMode</span><span class="op">:</span> <span class="kw">true</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <div class="no-row-height column-margin column-container"><div id="colorcomparer10" class="cell-output cell-output-display">
 <div id="ojs-cell-14" data-nodetype="expression">
@@ -1015,7 +1023,7 @@ flowchart LR
 </div>
 </div></div></div>
 <div class="cell colorcomponent">
-<div class="sourceCode cell-code hidden" id="cb15" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb15" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">svg</span><span class="vs">`&lt;svg width="</span><span class="sc">${</span>size<span class="sc">}</span><span class="vs">" height="</span><span class="sc">${</span>size<span class="sc">}</span><span class="vs">" viewBox="</span><span class="sc">${</span><span class="op">-</span>size<span class="op">/</span><span class="dv">2</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span><span class="op">-</span>size<span class="op">/</span><span class="dv">2</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span>size<span class="sc">}</span><span class="vs"> </span><span class="sc">${</span>size<span class="sc">}</span><span class="vs">"&gt;</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;g transform='rotate(</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(<span class="op">-</span>colorD <span class="op">*</span> <span class="op">.</span><span class="dv">36</span>)<span class="sc">}</span><span class="vs">)'&gt;</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span><span class="fu">repeat</span>(<span class="fu">tick</span>(radius<span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="st">'#434343'</span>)<span class="op">,</span> <span class="dv">5</span> <span class="op">*</span> <span class="dv">4</span> <span class="op">*</span> <span class="dv">10</span>)<span class="sc">}</span></span>
@@ -1029,7 +1037,7 @@ flowchart LR
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span><span class="fu">repeat</span>(<span class="fu">turnMarker</span>(radius<span class="op">+</span><span class="dv">12</span><span class="op">,</span> <span class="dv">32</span>)<span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">45</span>)<span class="sc">}</span></span>
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span><span class="fu">repeat</span>(<span class="fu">pie</span>(radius<span class="op">-</span>margin<span class="op">/</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> (radius<span class="op">-</span>margin<span class="op">/</span><span class="dv">2</span>) <span class="op">/</span> deccolors<span class="op">.</span><span class="at">length</span> <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> deccolors)<span class="op">,</span> deccolors<span class="op">.</span><span class="at">length</span><span class="op">,</span> <span class="dv">360</span><span class="op">/</span>deccolors<span class="op">.</span><span class="at">length</span>)<span class="sc">}</span></span>
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/svg&gt;</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="colorwheelcompass" class="cell-output cell-output-display">
 <div id="ojs-cell-15" data-nodetype="expression">
 
@@ -1037,14 +1045,14 @@ flowchart LR
 </div>
 </div>
 <div class="cell colorcomponent">
-<div class="sourceCode cell-code hidden" id="cb16" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@paavanb/progressive-color-picker</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb16" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@paavanb/progressive-color-picker</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>decBar <span class="op">=</span> <span class="fu">colorbar</span>({</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">colorFn</span><span class="op">:</span> t <span class="kw">=&gt;</span> <span class="fu">hslToRgb</span>(<span class="fu">dec2hue</span>(t) <span class="op">/</span> <span class="dv">1000</span><span class="op">,</span> colorS <span class="op">/</span> <span class="dv">1000</span><span class="op">,</span> colorL <span class="op">/</span> <span class="dv">1000</span>)<span class="op">,</span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">onSelect</span><span class="op">:</span> t <span class="kw">=&gt;</span> {</span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">set</span>(viewof colorD<span class="op">,</span> t <span class="op">*</span> <span class="dv">1000</span>)</span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">onUpdateHSL</span>(<span class="fu">dec2hue</span>(t)<span class="op">,</span> colorS <span class="op">/</span> <span class="dv">1000</span><span class="op">,</span> colorL <span class="op">/</span> <span class="dv">1000</span>)</span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="colorbar" class="cell-output cell-output-display">
 <div id="ojs-cell-16" data-nodetype="declaration">
 
@@ -1055,12 +1063,12 @@ flowchart LR
 <section id="hsl" class="level5 hiddenheading">
 <h5 class="hiddenheading anchored" data-anchor-id="hsl">Hue saturation lightness (hsl)</h5>
 <div class="cell colorslider">
-<div class="sourceCode cell-code hidden" id="cb17" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@paavanb/progressive-color-picker</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb17" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@paavanb/progressive-color-picker</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>{ <span class="kw">const</span> input <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Hue"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span> })</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  input<span class="op">.</span><span class="at">value</span> <span class="op">=</span> initialHSL[<span class="dv">0</span>]</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  input<span class="op">.</span><span class="at">oninput</span> <span class="op">=</span> (evt) <span class="kw">=&gt;</span> <span class="fu">onUpdateHSL</span>(<span class="fu">dec2hue</span>(evt<span class="op">.</span><span class="at">currentTarget</span><span class="op">.</span><span class="at">value</span> <span class="op">/</span> <span class="dv">1000</span>)<span class="op">,</span> colorS <span class="op">/</span> <span class="dv">1000</span><span class="op">,</span> colorL <span class="op">/</span> <span class="dv">1000</span>)</span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Inputs<span class="op">.</span><span class="fu">bind</span>(input<span class="op">,</span> viewof colorD)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="hueslider" class="cell-output cell-output-display">
 <div id="ojs-cell-17" data-nodetype="expression">
 
@@ -1068,11 +1076,11 @@ flowchart LR
 </div>
 </div>
 <div class="cell colorslider">
-<div class="sourceCode cell-code hidden" id="cb18" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@paavanb/progressive-color-picker</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb18" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@paavanb/progressive-color-picker</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>{ <span class="kw">const</span> input <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Saturation"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">1000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> })</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  input<span class="op">.</span><span class="at">oninput</span> <span class="op">=</span> (evt) <span class="kw">=&gt;</span> <span class="fu">onUpdateHSL</span>(colorD<span class="op">,</span> evt<span class="op">.</span><span class="at">currentTarget</span><span class="op">.</span><span class="at">value</span> <span class="op">/</span> <span class="dv">1000</span><span class="op">,</span> colorL <span class="op">/</span> <span class="dv">1000</span>)</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Inputs<span class="op">.</span><span class="fu">bind</span>(input<span class="op">,</span> viewof colorS)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="satslider" class="cell-output cell-output-display">
 <div id="ojs-cell-18" data-nodetype="expression">
 
@@ -1080,11 +1088,11 @@ flowchart LR
 </div>
 </div>
 <div class="cell colorslider">
-<div class="sourceCode cell-code hidden" id="cb19" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@paavanb/progressive-color-picker</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb19" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@paavanb/progressive-color-picker</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>{ <span class="kw">const</span> input <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Lightness"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> })</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  input<span class="op">.</span><span class="at">oninput</span> <span class="op">=</span> (evt) <span class="kw">=&gt;</span> <span class="fu">onUpdateHSL</span>(colorD<span class="op">,</span> colorS <span class="op">/</span> <span class="dv">1000</span><span class="op">,</span> evt<span class="op">.</span><span class="at">currentTarget</span><span class="op">.</span><span class="at">value</span> <span class="op">/</span> <span class="dv">1000</span>)</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Inputs<span class="op">.</span><span class="fu">bind</span>(input<span class="op">,</span> viewof colorL)</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="litslider" class="cell-output cell-output-display">
 <div id="ojs-cell-19" data-nodetype="expression">
 
@@ -1190,7 +1198,7 @@ flowchart LR
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Bad Pun Alert
+<span class="screen-reader-only">Warning</span>Bad Pun Alert
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1205,7 +1213,7 @@ Bad Pun Alert
 <p>Enable the “Grid” toggle✅input to see Latitudes <a href="https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic">-2</a> (<span class="color8">-200</span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="millimeridians"><span class="math inline">\(\text m\phi\)</span></span>), <a href="https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane">-1</a> (<span class="color9">-100</span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="millimeridians"><span class="math inline">\(\text m\phi\)</span></span>), <a href="https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres">0</a> (<span class="color0">0</span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="millimeridians"><span class="math inline">\(\text m\phi\)</span></span>), <a href="https://en.wikipedia.org/wiki/36th_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane">1</a> (<span class="color1">100</span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="millimeridians"><span class="math inline">\(\text m\phi\)</span></span>), and <a href="https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic">2</a> (<span class="color2">200</span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="millimeridians"><span class="math inline">\(\text m\phi\)</span></span>) on the map🗺️above along with the ten major longitudes that divide the Earth🌎into the ten Dec time zones. Notably, Longitude <span class="color0">0</span> is the major longitude that functions as both the <a href="https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0">Prime Meridian</a> and <a href="https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next">International Date Line</a> in Dec.</p>
 <p>Like the ten major longitudes that separate them, Dec time zones are numbered <span class="color0">0</span> to <span class="color9">9</span>. Based on its current <span class="tool" data-bs-toggle="tooltip" data-bs-title="a tenth of a parallel">deciparallel</span> (<span class="tool" data-bs-toggle="tooltip" data-bs-title="deciparallel">d<span class="math inline">\(\lambda\)</span></span>) longitude, <span><span id="ojs-element-id-16"></span>,</span> Point <span class="point0">0</span> on the map🗺️above is in Zone <span><span id="ojs-element-id-17"></span>.</span> The number assigned to each time zone is its offset from Zone <span class="color0">0</span> in <span class="tool" data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span> (<span class="tool" data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>). To obtain the <span class="tool" data-bs-toggle="tooltip" data-bs-title="deciday">dd</span> offset at a location, we <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x">floor</a> its <span class="tool" data-bs-toggle="tooltip" data-bs-title="deciparallel">d<span class="math inline">\(\lambda\)</span></span> longitude: <span>⌊<span id="ojs-element-id-18"></span>⌋</span> = <span><span id="ojs-element-id-19"></span>.</span></p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb20" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>viewof longitude <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Longitude"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="op">.</span><span class="dv">5</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="op">.</span><span class="bn">01</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb20" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>viewof longitude <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Longitude"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="op">.</span><span class="dv">5</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="op">.</span><span class="bn">01</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="loninput" class="cell-output cell-output-display">
 <div id="ojs-cell-20" data-nodetype="declaration">
 
@@ -1214,7 +1222,7 @@ Bad Pun Alert
 </div>
 <p>Each Dec time zone is 1 <span class="tool" data-bs-toggle="tooltip" data-bs-title="deciparallel">d<span class="math inline">\(\lambda\)</span></span> wide and 0.5 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meridians"><span class="math inline">\(\phi\)</span></span> long. While 1 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meridian"><span class="math inline">\(\phi\)</span></span> is always <span class="tool" data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1 <span class="tool" data-bs-toggle="tooltip" data-bs-title="taur">c</span> long, the length of a <span class="tool" data-bs-toggle="tooltip" data-bs-title="parallel"><span class="math inline">\(\lambda\)</span></span> <a href="https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude">varies by latitude</a>. At the Equator, 1 <span class="tool" data-bs-toggle="tooltip" data-bs-title="parallel"><span class="math inline">\(\lambda\)</span></span> is <span class="tool" data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1 <span class="tool" data-bs-toggle="tooltip" data-bs-title="taur">c</span> long. At the <a href="https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface">North</a> or <a href="https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface">South</a> Pole, the length of a <span class="tool" data-bs-toggle="tooltip" data-bs-title="parallel"><span class="math inline">\(\lambda\)</span></span> is zero. The approximate <span class="tool" data-bs-toggle="tooltip" data-bs-title="taur">c</span> length of a <span class="tool" data-bs-toggle="tooltip" data-bs-title="parallel"><span class="math inline">\(\lambda\)</span></span> is the <a href="https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse">cosine</a> of its latitude in <span class="tool" data-bs-toggle="tooltip" data-bs-title="meridians"><span class="math inline">\(\phi\)</span></span>, <span class="tool" data-bs-toggle="tooltip" data-bs-title="radians">rad</span>, or <span class="tool" data-bs-toggle="tooltip" data-bs-title="degrees">°</span>, depending on the input requirement of our cosine function: <span>cos(<span id="ojs-element-id-20"></span>)</span> = <span><span id="ojs-element-id-21"></span>.</span></p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb21" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>viewof latitude <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-.</span><span class="dv">25</span><span class="op">,</span> <span class="op">.</span><span class="dv">25</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Latitude"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="op">.</span><span class="bn">001</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb21" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>viewof latitude <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-.</span><span class="dv">25</span><span class="op">,</span> <span class="op">.</span><span class="dv">25</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Latitude"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="op">.</span><span class="bn">001</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="latinput" class="cell-output cell-output-display">
 <div id="ojs-cell-21" data-nodetype="declaration">
 
@@ -1222,7 +1230,7 @@ Bad Pun Alert
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb22" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>viewof costype <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>([<span class="st">"turns"</span><span class="op">,</span> <span class="st">"radians"</span><span class="op">,</span> <span class="st">"degrees"</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Cosine input"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">"turns"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb22" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>viewof costype <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>([<span class="st">"turns"</span><span class="op">,</span> <span class="st">"radians"</span><span class="op">,</span> <span class="st">"degrees"</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Cosine input"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">"turns"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="costype" class="cell-output cell-output-display">
 <div id="ojs-cell-22" data-nodetype="declaration">
 
@@ -1761,8 +1769,8 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 <h5 class="hiddenheading anchored" data-anchor-id="fpw">Frequency period wavelength</h5>
 <p>We can divide one by the sound🔊<a href="https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time">frequency</a> selected by the “<span class="tool" data-bs-toggle="tooltip" data-bs-title="inverse of b">Iobs</span>” range🎚️input below to get its <a href="https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency">period</a>, 1 ÷ <span><span id="ojs-element-id-32"></span></span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="thousands of iobs">kiloiobs</span> (<span class="tool" data-bs-toggle="tooltip" data-bs-title="kiloiobs">ki</span>) = <span><span id="ojs-element-id-33"></span></span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="thousandths of a beat">millibeats</span> (<span class="tool" data-bs-toggle="tooltip" data-bs-title="millibeats">mb</span>), or divide the speed of sound🔊by it to get its <a href="https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats">wavelength</a>: 735048 <span class="tool" data-bs-toggle="tooltip" data-bs-title="millionths of an omegar">microomegars</span> (<span class="tool" data-bs-toggle="tooltip" data-bs-title="milliomegars"><span class="math inline">\(\micro\text v\)</span></span>) ÷ <span><span id="ojs-element-id-30"></span></span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="inverses of b">iobs</span> (<span class="tool" data-bs-toggle="tooltip" data-bs-title="iobs">i</span>) = <span><span id="ojs-element-id-34"></span></span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="thousandths of a zem">millizem</span> (<span class="tool" data-bs-toggle="tooltip" data-bs-title="millizem">mz</span>). Press the Play▶️button below to hear the chosen frequency for a duration of <span><span id="ojs-element-id-31"></span></span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="beats">b</span>.</p>
 <div class="cell freqcomponent">
-<div class="sourceCode cell-code hidden" id="cb23" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@freedmand/sounds</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>viewof iobs <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">9999</span>]<span class="op">,</span> { <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>  <span class="dt">value</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Iobs"</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb23" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@freedmand/sounds</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>viewof iobs <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">9999</span>]<span class="op">,</span> { <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>  <span class="dt">value</span><span class="op">:</span> <span class="dv">380</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Iobs"</span> })</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="iobinput" class="cell-output cell-output-display">
 <div id="ojs-cell-23" data-nodetype="declaration">
 
@@ -1770,8 +1778,8 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 </div>
 </div>
 <div class="cell freqcomponent">
-<div class="sourceCode cell-code hidden" id="cb24" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@freedmand/sounds</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>viewof beats <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">999</span>]<span class="op">,</span> { <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>  <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Beats"</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb24" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@freedmand/sounds</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>viewof beats <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">999</span>]<span class="op">,</span> { <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>  <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Beats"</span> })</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="beatinput" class="cell-output cell-output-display">
 <div id="ojs-cell-24" data-nodetype="declaration">
 
@@ -1779,8 +1787,8 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 </div>
 </div>
 <div class="cell freqcomponent">
-<div class="sourceCode cell-code hidden" id="cb25" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@freedmand/sounds</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Play</span>((t) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(iobs <span class="op">/</span> <span class="op">.</span><span class="dv">864</span> <span class="op">*</span> t <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)<span class="op">,</span> beats <span class="op">*</span> <span class="op">.</span><span class="dv">864</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb25" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@freedmand/sounds</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Play</span>((t) <span class="kw">=&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sin</span>(iobs <span class="op">/</span> <span class="op">.</span><span class="dv">864</span> <span class="op">*</span> t <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)<span class="op">,</span> beats <span class="op">*</span> <span class="op">.</span><span class="dv">864</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="iobplayer" class="cell-output cell-output-display">
 <div id="ojs-cell-25" data-nodetype="expression">
 
@@ -1887,7 +1895,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 </table>
 </div>
 <div class="cell freqcomponent">
-<div class="sourceCode cell-code hidden" id="cb26" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">piano</span>(width)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb26" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">piano</span>(width)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="iobpiano" class="cell-output cell-output-display">
 <div id="ojs-cell-26" data-nodetype="expression">
 
@@ -1902,7 +1910,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 <p>The tone indexes of the the labeled🏷️keys in the image above range from <span class="colorAs3">40.069</span> to <span class="colorA4">49.008</span>. Tone <span class="colorA4">49.008</span> is <span class="colorA4">A4</span>, the <span class="colorA">A</span> note widely used to <a href="https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance">tune musical instruments</a>. Tone <span class="colorC4">41.302</span> is <span class="colorC4">C4</span>, the “<a href="https://en.wikipedia.org/wiki/C_(musical_note)#Middle_C:~:text=above%20the%20top%20line%20of%20the%20bass%20staff%20or%20below%20the%20bottom%20line%20of%20the%20treble%20staff">Middle <span class="colorC">C</span></a>” in between the <a href="https://en.wikipedia.org/wiki/Clef#Bass_clef">bass</a> and <a href="https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students">treble</a>🎼<a href="https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff">clefs</a> of a <a href="https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff">grand staff</a>. The typical <a href="https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans">audible</a> range for humans extends from Tone <span class="color030">03</span> to Tone <span class="color040">104</span>.</p>
 <p>By default, each <span class="tool" data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> note or tone lasts one musical beat. <span class="tool" data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> modifies the duration of notes and tones by appending × and a multiplier or ÷ and a divisor. The first two <a href="https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music">measures</a> of the <a href="https://en.wikipedia.org/wiki/Chorus#:~:text=the%20part%20of%20a%20song%20that%20is%20repeated%20several%20times">chorus</a> from “<a href="https://en.wikipedia.org/wiki/Turn_the_Beat_Around#:~:text=a%20disco%20song%20written%20by%20Gerald%20Jackson%20and%20Peter%20Jackson%2C%20and%20performed%20by%20American%20actress%20and%20singer%20Vicki%20Sue%20Robinson%20in%201976">Turn the beat around</a>” are shown below and can be expressed in <span class="tool" data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> as Octave <span class="color4">4</span> and a series of notes followed by a rest (∅): <span class="color9">9</span> <span class="color9">9</span>÷2 <span class="color8">8</span> <span class="color8">8</span> <span class="color6">6</span>×4 ∅.</p>
 <div id="chorus" class="cell">
-<div class="sourceCode cell-code hidden" id="cb27" data-startfrom="5" data-source-offset="-160"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 4;"><span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>abcjs <span class="op">=</span> <span class="pp">require</span>(<span class="st">'https://bundle.run/abcjs@5.1.2/midi.js'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb27" data-startfrom="5" data-source-offset="-160"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 4;"><span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>abcjs <span class="op">=</span> <span class="pp">require</span>(<span class="st">'https://bundle.run/abcjs@5.1.2/midi.js'</span>)</span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>code <span class="op">=</span> <span class="vs">`</span></span>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="vs">M:4/4</span></span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="vs">L:1/4</span></span>
@@ -1910,7 +1918,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="vs">y A A/2G/2- G/2 G F/2- | F3 z |</span></span>
 <span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="vs">w: Turn the~ ~beat _ ~a- ~round</span></span>
 <span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abc</span>(code<span class="op">,</span> <span class="kw">true</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abc</span>(code<span class="op">,</span> <span class="kw">true</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="chorus-1">
 <div id="ojs-cell-27-1" data-nodetype="declaration">
@@ -1932,7 +1940,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb28" data-startfrom="14" data-source-offset="-325"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 13;"><span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">abc</span>(tune<span class="op">,</span> midi <span class="op">=</span> <span class="kw">false</span><span class="op">,</span> notation <span class="op">=</span> <span class="kw">true</span>) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb28" data-startfrom="14" data-source-offset="-325"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 13;"><span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">abc</span>(tune<span class="op">,</span> midi <span class="op">=</span> <span class="kw">false</span><span class="op">,</span> notation <span class="op">=</span> <span class="kw">true</span>) {</span>
 <span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">function</span> <span class="fu">colorRange</span>(range<span class="op">,</span> color) {</span>
 <span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (range <span class="op">&amp;&amp;</span> range<span class="op">.</span><span class="at">elements</span>) {</span>
 <span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>            range<span class="op">.</span><span class="at">elements</span><span class="op">.</span><span class="fu">forEach</span>(<span class="kw">function</span>(<span class="kw">set</span>) {</span>
@@ -1964,7 +1972,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 <span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a>        <span class="co">//  abcjs.midi.startPlaying(document.querySelector(".abcjs-inline-midi"),true)</span></span>
 <span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result<span class="op">;</span></span>
-<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="chorus-4">
 <div id="ojs-cell-27-4" data-nodetype="declaration">
@@ -2103,7 +2111,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 <h5 class="hiddenheading anchored" data-anchor-id="bmi">Body mass index (bmi)</h5>
 <p>If <a href="https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance">Leonardo da Vinci</a>’s <a href="https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci">Vitruvian Man</a> were 4 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zems">z</span> tall, we could measure 1 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span> from his knees to his feet🦶or from his elbows💪to his fingertips. If he also weighed 64 <span class="tool" data-bs-toggle="tooltip" data-bs-title="kilograms">kg</span>, his <a href="https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height">Body Mass Index</a> (<span class="tool" data-bs-toggle="tooltip" data-bs-title="body mass index">BMI</span>) would be 4 <span class="math inline">\(\text {kg}\over\text z^2\)</span> or 25 <span class="math inline">\(\text {kg}\over\text m^2\)</span>. A normal <span class="tool" data-bs-toggle="tooltip" data-bs-title="body mass index">BMI</span> ranges from 2.96 to 4 <span class="math inline">\(\text {kg}\over\text z^2\)</span> or 18.5 to 25 <span class="math inline">\(\text {kg}\over\text m^2\)</span>. A <span class="tool" data-bs-toggle="tooltip" data-bs-title="body mass index">BMI</span> of <span><span id="ojs-element-id-35"></span></span> kg ÷ <span><span id="ojs-element-id-36"></span></span> z<sup>2</sup> = <span><span id="ojs-element-id-37"></span></span> <span class="math inline">\(\text {kg}\over\text z^2\)</span> = <span><span id="ojs-element-id-38"></span></span> <span class="math inline">\(\text {kg}\over\text m^2\)</span> is considered <span><span id="ojs-element-id-39"></span>.</span></p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb29" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>viewof kilograms <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Kilograms"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">64</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="op">.</span><span class="dv">1</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb29" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>viewof kilograms <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Kilograms"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">64</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="op">.</span><span class="dv">1</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="kginput" class="cell-output cell-output-display">
 <div id="ojs-cell-28" data-nodetype="declaration">
 
@@ -2111,7 +2119,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb30" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>viewof zems <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Zems"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb30" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>viewof zems <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Zems"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="zinput" class="cell-output cell-output-display">
 <div id="ojs-cell-29" data-nodetype="declaration">
 
@@ -2197,13 +2205,13 @@ flowchart LR
 </ul>
 </div>
 <div class="cell hidden">
-<div class="sourceCode cell-code hidden" id="cb31" data-startfrom="3" data-source-offset="-52"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">createTable</span>(data<span class="op">,</span> options) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb31" data-startfrom="3" data-source-offset="-52"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">createTable</span>(data<span class="op">,</span> options) {</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> table <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;table class="editable-table"&gt;&lt;/table&gt;`</span><span class="op">;</span></span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  table<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> xss<span class="op">.</span><span class="fu">filterXSS</span>(tableify<span class="op">.</span><span class="fu">default</span>(data))<span class="op">;</span></span>
 <span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">makeTableEditable</span>(table<span class="op">,</span> options)<span class="op">;</span></span>
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> table<span class="op">;</span></span>
 <span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>table<span class="op">.</span><span class="fu">setAttribute</span>(<span class="st">"class"</span><span class="op">,</span> <span class="st">"table"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>table<span class="op">.</span><span class="fu">setAttribute</span>(<span class="st">"class"</span><span class="op">,</span> <span class="st">"table"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display hidden">
 <div>
 <div id="ojs-cell-30-1" data-nodetype="declaration">
@@ -2218,7 +2226,7 @@ flowchart LR
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb32" data-startfrom="10" data-source-offset="-301"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 9;"><span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>tableify <span class="op">=</span> <span class="im">import</span>(<span class="st">"https://cdn.skypack.dev/tableify@1.1.1?min"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb32" data-startfrom="10" data-source-offset="-301"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 9;"><span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>tableify <span class="op">=</span> <span class="im">import</span>(<span class="st">"https://cdn.skypack.dev/tableify@1.1.1?min"</span>)</span>
 <span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>xss <span class="op">=</span> <span class="im">import</span>(<span class="st">"https://cdn.skypack.dev/xss@1.0.14?min"</span>)</span>
 <span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">createCellDiv</span>(value<span class="op">,</span> max) {</span>
 <span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="vs">`&lt;div style="</span></span>
@@ -3361,7 +3369,7 @@ flowchart LR
 <span id="cb32-1150"><a href="#cb32-1150" aria-hidden="true" tabindex="-1"></a>graticule <span class="op">=</span> d3<span class="op">.</span><span class="fu">geoGraticule</span>()<span class="op">.</span><span class="fu">stepMinor</span>([<span class="dv">36</span><span class="op">,</span> <span class="dv">36</span>])<span class="op">.</span><span class="fu">stepMajor</span>([<span class="dv">36</span><span class="op">,</span> <span class="dv">36</span>])()</span>
 <span id="cb32-1151"><a href="#cb32-1151" aria-hidden="true" tabindex="-1"></a>graticule<span class="op">.</span><span class="at">coordinates</span> <span class="op">=</span> graticule<span class="op">.</span><span class="at">coordinates</span><span class="op">.</span><span class="fu">map</span>(</span>
 <span id="cb32-1152"><a href="#cb32-1152" aria-hidden="true" tabindex="-1"></a>  i <span class="kw">=&gt;</span> i<span class="op">.</span><span class="fu">map</span>(j <span class="kw">=&gt;</span> j<span class="op">.</span><span class="fu">map</span>((k<span class="op">,</span> index<span class="op">,</span> arr) <span class="kw">=&gt;</span> i<span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">3</span> <span class="op">&amp;&amp;</span> index <span class="op">===</span> <span class="dv">0</span> <span class="op">?</span> k <span class="op">-</span> <span class="dv">18</span> <span class="op">:</span> k))</span>
-<span id="cb32-1153"><a href="#cb32-1153" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-1153"><a href="#cb32-1153" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display hidden">
 <div>
 <div id="ojs-cell-30-3" data-nodetype="declaration">
@@ -4391,7 +4399,7 @@ flowchart LR
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb33" data-startfrom="1154" data-source-offset="-45756"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1153;"><span id="cb33-1154"><a href="#cb33-1154" aria-hidden="true" tabindex="-1"></a>land <span class="op">=</span> topojson<span class="op">.</span><span class="fu">feature</span>(world<span class="op">,</span> world<span class="op">.</span><span class="at">objects</span><span class="op">.</span><span class="at">land</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb33" data-startfrom="1154" data-source-offset="-45756"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1153;"><span id="cb33-1154"><a href="#cb33-1154" aria-hidden="true" tabindex="-1"></a>land <span class="op">=</span> topojson<span class="op">.</span><span class="fu">feature</span>(world<span class="op">,</span> world<span class="op">.</span><span class="at">objects</span><span class="op">.</span><span class="at">land</span>)</span>
 <span id="cb33-1155"><a href="#cb33-1155" aria-hidden="true" tabindex="-1"></a>world <span class="op">=</span> <span class="fu">fetch</span>(<span class="st">"https://cdn.jsdelivr.net/npm/world-atlas@2/land-50m.json"</span>)<span class="op">.</span><span class="fu">then</span>(response <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">json</span>())</span>
 <span id="cb33-1156"><a href="#cb33-1156" aria-hidden="true" tabindex="-1"></a>topojson <span class="op">=</span> <span class="pp">require</span>(<span class="st">"topojson-client@3"</span>)</span>
 <span id="cb33-1157"><a href="#cb33-1157" aria-hidden="true" tabindex="-1"></a>solar <span class="op">=</span> <span class="pp">require</span>(<span class="st">"solar-calculator@0.3/dist/solar-calculator.min.js"</span>)</span>
@@ -4484,7 +4492,7 @@ flowchart LR
 <span id="cb33-1244"><a href="#cb33-1244" aria-hidden="true" tabindex="-1"></a>margin <span class="op">=</span> size <span class="op">/</span> <span class="dv">14</span></span>
 <span id="cb33-1245"><a href="#cb33-1245" aria-hidden="true" tabindex="-1"></a>padding <span class="op">=</span> <span class="dv">42</span></span>
 <span id="cb33-1246"><a href="#cb33-1246" aria-hidden="true" tabindex="-1"></a>radius <span class="op">=</span> size <span class="op">/</span> <span class="dv">2</span> <span class="op">-</span> margin <span class="op">-</span> padding</span>
-<span id="cb33-1247"><a href="#cb33-1247" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="at">darkmode</span> <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementsByTagName</span>(<span class="st">"body"</span>)[<span class="dv">0</span>]<span class="op">.</span><span class="at">className</span><span class="op">.</span><span class="fu">match</span>(<span class="ss">/quarto-dark/</span>) <span class="op">?</span> <span class="kw">true</span> <span class="op">:</span> <span class="kw">false</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-1247"><a href="#cb33-1247" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="at">darkmode</span> <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementsByTagName</span>(<span class="st">"body"</span>)[<span class="dv">0</span>]<span class="op">.</span><span class="at">className</span><span class="op">.</span><span class="fu">match</span>(<span class="ss">/quarto-dark/</span>) <span class="op">?</span> <span class="kw">true</span> <span class="op">:</span> <span class="kw">false</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display hidden">
 <div>
 <div id="ojs-cell-30-150" data-nodetype="declaration">
@@ -4618,7 +4626,7 @@ flowchart LR
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb34" data-startfrom="1249" data-source-offset="-49000"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1248;"><span id="cb34-1249"><a href="#cb34-1249" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">displayPalette</span>(palette<span class="op">,</span> { darkMode <span class="op">=</span> <span class="kw">false</span> } <span class="op">=</span> {}) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb34" data-startfrom="1249" data-source-offset="-49000"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1248;"><span id="cb34-1249"><a href="#cb34-1249" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">displayPalette</span>(palette<span class="op">,</span> { darkMode <span class="op">=</span> <span class="kw">false</span> } <span class="op">=</span> {}) {</span>
 <span id="cb34-1250"><a href="#cb34-1250" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> htl<span class="op">.</span><span class="fu">html</span><span class="vs">`</span></span>
 <span id="cb34-1251"><a href="#cb34-1251" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div style="display: flex; flex-direction: column;"&gt;</span></span>
 <span id="cb34-1252"><a href="#cb34-1252" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div style="margin-bottom:8px;"&gt;</span><span class="sc">${</span><span class="fu">cielabScatter</span>(palette<span class="op">,</span> { <span class="dt">darkMode</span><span class="op">:</span> darkMode })<span class="sc">}</span><span class="vs">&lt;/div&gt;</span></span>
@@ -5168,7 +5176,7 @@ flowchart LR
 <span id="cb34-1796"><a href="#cb34-1796" aria-hidden="true" tabindex="-1"></a>hSqIn <span class="op">=</span> d3<span class="op">.</span><span class="fu">hsl</span>(<span class="fu">piecewiseColor</span>(fInch<span class="op">**</span><span class="dv">2</span> <span class="op">%</span> <span class="dv">1</span>))<span class="op">.</span><span class="at">h</span></span>
 <span id="cb34-1797"><a href="#cb34-1797" aria-hidden="true" tabindex="-1"></a>bcHue <span class="op">=</span> (xetHue[<span class="dv">1</span>] <span class="op">+</span> xetHue[<span class="dv">2</span>]) <span class="op">/</span> <span class="dv">2</span></span>
 <span id="cb34-1798"><a href="#cb34-1798" aria-hidden="true" tabindex="-1"></a>ddsHue <span class="op">=</span> (xetHue[<span class="dv">4</span>] <span class="op">+</span> xetHue[<span class="dv">5</span>]) <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb34-1799"><a href="#cb34-1799" aria-hidden="true" tabindex="-1"></a>dseHue <span class="op">=</span> (xetHue[<span class="dv">5</span>] <span class="op">+</span> xetHue[<span class="dv">6</span>]) <span class="op">/</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-1799"><a href="#cb34-1799" aria-hidden="true" tabindex="-1"></a>dseHue <span class="op">=</span> (xetHue[<span class="dv">5</span>] <span class="op">+</span> xetHue[<span class="dv">6</span>]) <span class="op">/</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display hidden">
 <div>
 <div id="ojs-cell-30-169" data-nodetype="declaration">
@@ -5549,7 +5557,7 @@ flowchart LR
 </div>
 </div>
 <div class="cell hidden">
-<div class="sourceCode cell-code hidden" id="cb35" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb35" data-startfrom="1" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;style&gt;</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="vs">.colorAs {</span></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="vs">  background: hsl(</span><span class="sc">${</span>xetHue[<span class="dv">0</span>]<span class="sc">}</span><span class="vs"> </span><span class="sc">${</span>colorS <span class="op">/</span> <span class="dv">10</span><span class="sc">}</span><span class="vs">% </span><span class="sc">${</span>colorL <span class="op">/</span> <span class="dv">10</span><span class="sc">}</span><span class="vs">%);</span></span>
@@ -6248,7 +6256,7 @@ flowchart LR
 <span id="cb35-697"><a href="#cb35-697" aria-hidden="true" tabindex="-1"></a><span class="vs">  font-family: monospace;</span></span>
 <span id="cb35-698"><a href="#cb35-698" aria-hidden="true" tabindex="-1"></a><span class="vs">}</span></span>
 <span id="cb35-699"><a href="#cb35-699" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/style&gt;</span></span>
-<span id="cb35-700"><a href="#cb35-700" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-700"><a href="#cb35-700" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-31" data-nodetype="expression">
 
@@ -6613,13 +6621,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -7029,7 +7038,7 @@ window._ojs.runtime.interpretFromScriptTags();
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb36" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Dec</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: Martin Laptev</span></span>
@@ -7358,7 +7367,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb36-343"><a href="#cb36-343" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb36-344"><a href="#cb36-344" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-345"><a href="#cb36-345" aria-hidden="true" tabindex="-1"></a>{{&lt; include /dec/_index.qmd &gt;}}</span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
