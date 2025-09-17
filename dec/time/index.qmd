@@ -998,14 +998,106 @@ The Equator is approximately ([~]{.tool data-bs-toggle="tooltip" data-bs-title="
 
 For precise [geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person), it may be helpful to show [geographic coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude) in submultiples of [ab]{.tool data-bs-toggle="tooltip" data-bs-title="arcbeats"}, but we are unlikely to benefit from units smaller than [md]{.tool data-bs-toggle="tooltip" data-bs-title="millidays"} when displaying the [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky) or estimates of what the [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} will be when the Sun rises, reaches its [zenith](https://en.m.wikipedia.org/wiki/Noon#:~:text=highest%20position%20above%20the%20horizon), or sets on a given day. By default, Dec uses three digits to show each solar time and [sto]{.tool data-bs-toggle="tooltip" data-bs-title="solar time offset"}.
 
-The two types of [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky) are ["mean solar time"](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}) and ["apparent solar time"](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"}). To calculate [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}, we sum 9.5, the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, and our [d&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallel"} longitude. When calculating [ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"}, this sum also includes the result of plugging the "time of year" ([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) into the [equation of time](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepancy%20between%20two%20kinds%20of%20solar%20time) ([eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}). If the sum is more than ten, we divide by ten and then keep the remainder.
+## Equation of time {.hiddenheading #eot}
 
-[mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"} = (9.5 + [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} + [d&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallel"}) mod 10
+The two types of [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky) are ["mean solar time"](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}) and ["apparent solar time"](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"}). To calculate [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}, we keep only the decimal part of the sum of the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} measured in days, 0.95, and our longitude measured in [&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallel"}. If we want [ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} instead of [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}, the sum needs to include the result of plugging the "time of year" ([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) into the [equation of time](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepancy%20between%20two%20kinds%20of%20solar%20time) ([eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}).
 
-[ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} = (9.5 + [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} + [d&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallel"} + [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}) mod 10
+$$\text{toy} = \text{doy} \div \text{n}$$
 
+$$\text{mst} = (\text{tod} + \lambda + 0.95) \text{ mod } 1$$
+
+$$\text{ast} = (\text{tod} + \lambda +  \text{eot(toy)} + 0.95) \text{ mod } 1$$
+
+To obtain the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}, we divide the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} by the number of days in the year ([n]{.tool data-bs-toggle="tooltip" data-bs-title="the number of days in the year"}). If we use trigonometric functions that are designed to work with [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units), we will have to multiply the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} by $2\pi$ or $\tau$. We do not need to modify the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} before passing it to the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}() function defined below because its trigonometric functions expect [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) instead of radians.
+
+$$\begin{split}
+\text{eot(toy)} & = \beta_0 \\
+& + \beta_1 \times \text{costau(toy)} \\
+& + \beta_2 \times \text{costau(2} \times \text{toy)} \\
+& + \beta_3 \times \text{sintau(toy)} \\
+& + \beta_4 \times \text{sintau(2} \times \text{toy)}
+\end{split}$$
+
+:::{.panel-tabset group="language"}
+### Julia
+
+```{julia}
+sincostau(turn) = sincospi(2 * turn)
+sincostau(0.25)
+sincostau(0.5)
+sincos(0.25 * 2 * pi)
+sincos(0.5 * 2 * pi)
+```
+
+### Observable JavaScript
+
+```{ojs}
+sincospi = require(
+  'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-sincospi@umd/browser.js'
+  )
+function sincostau(turn) {
+  return sincospi(2 * turn);
+}
+function sincos(turn) {
+  turn *= 2 * Math.PI
+  return [Math.sin(turn), Math.cos(turn)]
+}
+sincostau(0.25)
+sincostau(0.5)
+sincos(0.25)
+sincos(0.5)
+```
+
+### Python
+
+```{python}
+from math import cos, sin, pi
+from mpmath import cospi, sinpi
+
+def sincostau(turn):
+    turn *= 2
+    return sinpi(turn), cospi(turn)
+
+def sincos(turn):
+    turn *= 2 * pi
+    return sin(turn), cos(turn)
+
+sincostau(0.25)
+sincostau(0.5)
+sincos(0.25)
+sincos(0.5)
+```
+
+### R
+
+```{r}
+sincostau <- function(turn) {
+  turn <- 2 * turn
+  c(sinpi(turn), cospi(turn))
+}
+
+sincos <- function(turn) {
+  turn <- 2 * turn * pi
+  c(sin(turn), cos(turn))
+}
+
+sincostau(0.25)
+sincostau(0.5)
+sincos(0.25)
+sincos(0.5)
+```
+
+:::
+
+The code above compares two functions which return both the sine and cosine of their input. The sincos() function assumes it will receive radians and the sincostau() works with turns. In general, working with turns is more convenient and intuitive. The examples above demonstrate that using turns instead of radians can [yield more accurate results](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages).
+
+need to  input to be in turns instead of radians. The code below shows how sintau() and costau(), we do not have to multiply [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}  make it clear below shows Programming languages that have a  the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}, we may need to multiply the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} by 2, 360, or &tau;. expect their input to be turns, we
+All of the equations that above assume that the tod is .  To obtain the  we need to plug into the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}
 In Dec, solar time is shifted by 0.5 [d&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"} to the West with respect to our [d&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallel"} longitude so that our [tod]{.tool data-bs-toggle="tooltip" data-bs-title="solar time offset"} will match our [mst]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} when we are at the center of a Dec time zone and so that our [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} is always the first digit of our longitude.
 
+ is based on the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF) document.
+
+The [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) provides [yearly and daily [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} values](https://gml.noaa.gov/grad/solcalc/calcdetails.html). To create a Dec version of the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}, we can sort the yearly [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} values by their [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and then [fit a curve](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) to the sorted values so that we can use the fitted model coefficients ($\beta_0$ to $\beta_4$) as the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} constants in the [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF):
 
 In other words, a [sto]{.tool data-bs-toggle="tooltip" data-bs-title="solar time offset"} that has five digits can be accurate to within one [b]{.tool data-bs-toggle="tooltip" data-bs-title="beat"}.
 
@@ -1274,26 +1366,6 @@ $$\text{mst} = (\text{tod} + \lambda + 0.95) \text{ mod } 1$$
 //| label: longinput
 viewof longInput = Inputs.range([0, 10], {label: "Longitude", value: 5, step: 0.01})
 ```
-
-The [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) provides [yearly and daily [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} values](https://gml.noaa.gov/grad/solcalc/calcdetails.html). To create a Dec version of the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}, we can sort the yearly [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} values by their [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and then [fit a curve](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) to the sorted values so that we can use the fitted model coefficients ($\beta_0$ to $\beta_4$) as the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} constants in the [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF):
-
-$$\tau = 2 \times \pi$$
-
-$$\text{toy} = \text{doy} \div \text{n}$$
-
-$$\gamma = \tau \times \text{toy}$$
-
-$$\begin{split}
-\text{eot}(\gamma) & = \beta_0 \\
-& + \beta_1 \times \cos(\gamma) \\
-& + \beta_2 \times \sin(\gamma) \\
-& + \beta_3 \times \cos(2\gamma) \\
-& + \beta_4 \times \sin(2\gamma)
-\end{split}$$
-
-$$\text{ast} = (\text{mst} + \text{eot}(\gamma) + 10) \mod 10$$
-
-## Equation of time {.hiddenheading #eot}
 
 In the equations above, $\tau$ is two times $\pi$, n is the number of days in a year, the "time of year" ([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) is the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} divided by n, $\gamma$ is the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} multiplied by $\tau$, "mean solar time" ([mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}) is the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} plus [d&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"}. We can refer to [d&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"} as the [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} and the sum of [d&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"} and [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}($\gamma$) as the [ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. Using the coefficients shown below, we can plot [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}($\gamma$) against [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}:
 
