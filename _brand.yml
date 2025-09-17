@@ -1,6 +1,3 @@
-logo:
-  small: asset/deidec.svg
-
 typography:
   fonts:
     - family: Tahoma
