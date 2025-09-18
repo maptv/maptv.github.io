@@ -990,7 +990,7 @@ The one day difference between positive and negative offsets may make Dec [dow]{
 In Dec, offsets are closely related to [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda). Dec measures longitude in [parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line) ([&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="parallel"}) or submultiples of [&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="parallels"} like [deci[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a parallel"} ([d&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallels"}). A [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} is essentially a [d&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="deciparallel"} longitude that had its decimal part removed via [rounding](https://en.wikipedia.org/wiki/Rounding#:~:text=the%20process%20of%20adjusting%20a%20number%20to%20an%20approximate%2C%20more%20convenient%20value), [flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=takes%20as%20input%20a%20real%20number%20x%2C%20and%20gives%20as%20output%20the%20greatest%20integer%20less%20than%20or%20equal%20to%20x), [truncation](https://en.wikipedia.org/wiki/Truncation#Truncation_and_floor_function:~:text=truncation%20is%20limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point), or [ceiling](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=maps%20x%20to%20the%20least%20integer%20greater%20than%20or%20equal%20to%20x). Whereas [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} have one digit, [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"} [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} and [stos]{.tool data-bs-toggle="tooltip" data-bs-title="solar time offsets"} typically have up to four digits after the [decimal separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number).
 
 The fourth digit in the decimal part of any current deciday [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} increments [10^5^]{.tool data-bs-toggle="tooltip" data-bs-title="a hundred thousand"} times per day, 100 times per [milliday]{.tool data-bs-toggle="tooltip" data-bs-title="a thousandth of a day"}, or once per [beat]{.tool data-bs-toggle="tooltip" data-bs-title="a hundred thousandth of a day"} ([iob]{.tool data-bs-toggle="tooltip" data-bs-title="inverse of beat"}), which is the [lower bound](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S) of the [normal resting heart rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=normal%20resting%20adult%20human%20heart%20rate%20is%2060–100%20bpm) of an adult.
-For [everyday life](https://en.wikipedia.org/wiki/Everyday_life), we should limit the length of [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} to the three digits needed to show [millidays]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} or the five digits required to display [beats]{.tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"} ([b]{.tool data-bs-toggle="tooltip" data-bs-title="beats"}).
+For [everyday life](https://en.wikipedia.org/wiki/Everyday_life), we should limit the length of [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} to the three digits needed to show [millidays]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} ([md]{.tool data-bs-toggle="tooltip" data-bs-title="millidays"}) or the five digits required to display [beats]{.tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"} ([b]{.tool data-bs-toggle="tooltip" data-bs-title="beats"}).
 
 When the current [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is shown with seven digits, the sixth digit changes too quickly to be read out loud and seventh changes so fast that it appears as a blur. Near the Equator, a longitude that has seven digits is accurate to within about ten [zems]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meters"} (z) or four [meters](https://en.wikipedia.org/wiki/Metre#:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units), which is roughly the length of a [subcompact car](https://www.dimensions.com/collection/subcompact-cars-b-segment) or the width of a [U-shaped living room layout](https://www.dimensions.com/collection/living-room-layouts).
 
@@ -1091,7 +1091,7 @@ sincos(0.5)
 
 The code above compares two functions which return both the sine and cosine of their input. The sincos() function assumes it will receive radians and the sincostau() works with turns. In general, working with turns is more convenient and intuitive. The examples above demonstrate that using turns instead of radians can [yield more accurate results](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages).
 
-The [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) provides [yearly and daily [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} values](https://gml.noaa.gov/grad/solcalc/calcdetails.html). To create a Dec version of the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}, we can convert the yearly [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} values from minutes to [centidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}, combine dates and times into [ydas]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregates"}, sort by [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"},  [fit a curve](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) to the sorted values, and then use the fitted model coefficients in the [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF):
+The values below are the coefficients of a model adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), we need to convert eot([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) values from minutes to [centidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}, combine ymd triplet dates and hms triplet times into [ydas]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregates"}, and sort by [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}.
 
 {{< embed eot.ipynb#eot >}}
 
@@ -1110,7 +1110,7 @@ The [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NO
     width: w,
     height: h,
     style: "font-size:19;",
-    y: {label: "centiday eot(toy)"},
+    y: {label: "milliday eot(toy)"},
     x: {label: "day of year"},
     marks: [
       Plot.line(samples, {
@@ -1128,9 +1128,23 @@ The [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NO
 }
 ```
 
-The line📈chart above uses [centiday]{.tool data-bs-toggle="tooltip" data-bs-title="a hundredth of a day"} [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) values to show fewer digits on its y-axis. For time calculations, Dec always uses units that do not have metric prefixes. To calculate the [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow), the moment when the sun reaches its highest point in the sky, we keep only the decimal part after subtracting a longitude measured in &lambda; and an eot([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) value from the sum of 9.55 and a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}.
+The line📈chart above uses [md]{.tool data-bs-toggle="tooltip" data-bs-title="millidays"} to display [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) values as integers. If we want the equation below to yield [md]{.tool data-bs-toggle="tooltip" data-bs-title="millidays"}, we set [n](https://en.wikipedia.org/wiki/Power_of_10#:~:text=1'%20followed%20by-,n%20zeroes,-.%20It%20can%20also) to three. To calculate the [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow), the equation adds 9.55 to a longitude measured in &lambda;, subtracts two values measured in days, [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} and a eot([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}, discards the integer part, and multiplies by the [nth power of ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=decimal%20notation%20the-,nth%20power%20of%20ten,-is%20written%20as).
 
-$$\text{noon} = (9.55 + \text{tzo} - \lambda - \text{eot(toy)}) \mod 1$$
+$$\text{noon} = (9.55 + \text{tzo} - \lambda - \text{eot(toy)) mod 1} \times 10^\text{n}$$
+
+To compare the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} in two cities, we can plug in the longitude of each city into the equation above. If all the variables in the equation other than longitude are set to zero, solar noon is almost five decidays for [Cambridge, England]() in the [United Kingdom]() and nearly seven decidays for [Cambridge, Massachusetts]() in the [United States](). Essentially, the tzo determines the frame of reference. From the perspective of Zone 8 
+
+$$4.99635 = (9.55 - 0.050365) \text{ mod 1} \times 10$$
+
+$$6.97516 = (9.55 - 0.852484) \text{ mod 1} \times 10$$
+
+If we change the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} from zero to eight decidays, solar noon is near three decidays for [Cambridge, England]() and almost five decidays for [Cambridge, Massachusetts](). 
+
+$$2.99635 = (9.55 + 0.8 - 0.050365) \text{ mod 1} \times 10$$
+
+$$4.97516 = (9.55 + 0.8 - 0.852484) \text{ mod 1} \times 10$$
+
+Each cities is near the middle of its time zone. The English city is near the middle of Zone 0 () and the American city is near the middle of Zone 8 (0.852484 &lambda;). Cambridge, Massachusetts is Given that midnight is zero and midday is five decidays, the result will make sense from the perspective of . For Cambridge, England, we get (9.55 - 0.050365) mod 1 = 0.499635, which is very close to 500 [md]{.tool data-bs-toggle="tooltip" data-bs-title="millidays"}. For Cambridge, Massachusetts, the result is (9.55 - 0.852484) mod 1 = 0.697516, which is nearly 700 [md]{.tool data-bs-toggle="tooltip" data-bs-title="millidays"}. 
 
 ## Solar declination angle {.hiddenheading #sda}
 
@@ -1224,11 +1238,11 @@ function dote2date(dote, zone = 0) {
 function getEot(day) {
   const gamma = 2 * Math.PI * day / 365
     return (
-      1.4949317633417003e-4 +
-     -0.4164553809136968 * Math.cos(gamma) +
-     -0.2959657573651431 * Math.sin(gamma) +
-     -0.46578504463469605 * Math.cos(2 * gamma) +
-      0.5096179567359089 * Math.sin(2 * gamma)
+      0.0011114386869002235 +
+      -4.155124400404918    * Math.cos(gamma) +
+      -2.9710873225303756   * Math.sin(gamma) +
+      -4.635570414590801    * Math.cos(2 * gamma) +
+      5.116176940364264     * Math.sin(2 * gamma)
     )
 }
 dz = unix2dote(now)
