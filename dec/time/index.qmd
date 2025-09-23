@@ -1008,7 +1008,7 @@ $$\text{mst} = (0.95 + \text{tod} + \lambda) \text{ mod } 1$$
 
 $$\text{ast} = (0.95 + \text{tod} + \lambda +  \text{eot(toy)}) \text{ mod } 1$$
 
-To obtain the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}, we divide the [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"} by the number of days in the year ([n]{.tool data-bs-toggle="tooltip" data-bs-title="the number of days in the year"}). If we use trigonometric functions that are designed to work with [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units), we will have to multiply the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} by $2\pi$ or $\tau$. We do not need to modify the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} before passing it to the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}() function defined below because its trigonometric functions expect [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) instead of radians.
+To obtain the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}, we divide the [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"} by the number of days in the year ([n]{.tool data-bs-toggle="tooltip" data-bs-title="the number of days in the year"}). If we use [trigonometric functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths) that are designed to work with [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units), we will have to multiply the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} by $2\pi$ or $\tau$. We do not need to modify the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} before passing it to the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}() function defined below because its trigonometric functions expect [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) instead of radians.
 
 $$\begin{split}
 \text{eot(toy)} & = \beta_0 \\
@@ -1089,7 +1089,7 @@ sincos(0.5)
 
 :::
 
-The code above compares two functions which return both the sine and cosine of their input. The sincos() function assumes it will receive radians and the sincostau() works with turns. In general, working with turns is more convenient and intuitive. The examples above demonstrate that using turns instead of radians can [yield more accurate results](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages).
+The code above compares two functions which return both the [sine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20side%20opposite%20that%20angle%20to%20the%20length%20of%20the%20longest%20side%20of%20the%20triangle) and [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse) of their input. The sincos() function assumes it will receive radians and the sincostau() works with turns. In general, working with turns is more convenient and intuitive. The examples above demonstrate that using turns instead of radians can [yield more accurate results](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages).
 
 The values below are the coefficients of a model adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), we need to convert eot([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) values from minutes to [centidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}, combine [ymd]{.tool data-bs-toggle="tooltip" data-bs-title="year month day"} triplet dates and [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet times into [ydas]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregates"}, and sort by [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}.
 
@@ -1134,7 +1134,7 @@ Apart from turning a [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean so
 
 $$\text{noon} = (9.55 + \text{tzo} - \lambda - \text{eot(toy)) mod 1}$$
 
-## Cambridge and Cambridge (.hiddenheading #cac)
+## Cambridge and Cambridge {.hiddenheading #cac}
 
 To compare the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} in two cities, we can plug in the longitude of each city into the equation above. If all the variables in the equation other than longitude are set to zero, the result is almost five [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} for [Cambridge, England](https://en.wikipedia.org/wiki/Cambridge#:~:text=a%20city%20and%20non%2Dmetropolitan%20district%20in%20the%20county%20of%20Cambridgeshire%2C%20England) in the [United Kingdom](https://en.wikipedia.org/wiki/United_Kingdom#:~:text=a%20country%20in%20Northwestern%20Europe) and nearly seven [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} for [Cambridge, Massachusetts](https://en.wikipedia.org/wiki/Cambridge,_Massachusetts#:~:text=a%20city%20in%20Middlesex%20County%2C%20Massachusetts%2C%20United%20States) in the [United States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America).
 
@@ -1148,9 +1148,9 @@ $$2.99635 = (9.55 + 0.8 - 0.050365) \text{ mod 1} \times 10$$
 
 $$4.97516 = (9.55 + 0.8 - 0.852484) \text{ mod 1} \times 10$$
 
-## Sunrise and sunset {.hiddenheading #sas}
+## Solar declination angle {.hiddenheading #sda}
 
-Compared to the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} calculations above, calculating the [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} of sunrise and sunset requires several more steps. We first need to calculate the solar declination angle ([sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}). For simplicity, we can use the same model for the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} and [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}, even though the [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF) propose the more complex model shown below.
+The duration of [daytime](https://en.wikipedia.org/wiki/Daytime#:~:text=the%20period%20of%20the%20day%20during%20which%20a%20given%20location%20experiences%20natural%20illumination%20from%20direct%20sunlight) is the difference between the sunset and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}. To calculate the daytime duration, we only need a latitude and a "solar declination angle" ([sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}). For simplicity, we can use the same model for the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} and [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}, even though the [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF) propose the more complex model shown below.
 
 $$\begin{split}
 \text{sda(toy)} & = \beta_0 \\
@@ -1162,11 +1162,50 @@ $$\begin{split}
 & + \beta_6 \times \text{sintau(3} \times \text{toy)} \\
 \end{split}$$
 
+Dec measures latitude in turns called meridians ([&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"}). Like [&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="parallels"}, we can pass [&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"} directly into trigonometric functions that accept turns. If the "solar zenith angle" ([sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"}) in the equation below is 0.252314 turns, the equation will give us a "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) that we can use to find out how long the Sun will shine or when it will rise or set on a given [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}.
+
+$$\text{sha} = \arccos\left( \frac{\text{costau(sza)} - \text{sintau($\phi$)} \times \text{sintau(sda)}}{\text{costau($\phi$)} \times \text{costau(sda)}} \right)$$
+
+Before being plugged into the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation above, the [m&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"} latitude selected by the first range input below is divided by 1000 to convert it to [&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"} and the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} chosen by the second range input is turned into a [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} and then into an [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}. When the [sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"} is 0.252314, we can divide the result of the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation by $\pi$ to obtain the daytime duration: \${parseFloat(daytimeDuration.toFixed(6))}.
+
+$$\text{sunset} - \text{sunrise} = \text{sha} \div \pi$$
+
+```{ojs}
+//| echo: false
+//| label: latinput
+viewof latInput = Inputs.range([-250, 250], {label: "Latitude", value: 0, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: doyinput
+viewof doyInput = Inputs.range([0, 365], {label: "Day of year", value: 183, step: 1})
+```
+
+Like other trigonometric functions, the [arcosine](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=y%20%E2%89%A4%2090%C2%B0-,arccosine,-y%20%3D%20arccos) function returns radians. We can divide by $\tau$ to convert radians to turns. After converting the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} to turns, we can sum it with the solar noon to get the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} or subtract it from the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to obtain the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The sunrise and sunset [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} are equidistant from the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
+
+$$\text{sunset} = \text{noon} + \text{sha} \div \tau$$
+
+$$\text{sunrise} = \text{noon} - \text{sha} \div \tau$$
+
+Before we insert the latitude selected by the second range input, we convert m&phi; to &phi;.
+
+$$\text{sha} \div \tau = \text{noon} - \text{sunrise} = \text{sunset} - \text{noon}$$
+
+When we divide the sha by $\tau$, we get the difference between the solar noon and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} or the sunset and solar noon [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}. 
+
+## Sunrise and sunset {.hiddenheading #sas}
+
 ## Solar hour angle {.hiddenheading #sha}
 
-Dec measures latitude in turns called meridians (&phi;). Like &lambda;, we can pass &phi; directly into trigonometric functions like [sin](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20side%20opposite%20that%20angle%20to%20the%20length%20of%20the%20longest%20side%20of%20the%20triangle)tau(), [cos](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)tau(), or [tan](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20between%20the%20sine%20and%20cosine%20functions)tau(). If the "solar zenith angle" ([sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"}) in the equation below is 0.2523 turns, we will get a "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) that we can use to find out how long the Sun will shine or when it will rise or set on a given [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}.
+```{ojs}
+//| echo: false
+//| label: loninput
+viewof lonInput = Inputs.range([0, 1000], {label: "Longitude", value: 500, step: 1})
+```
 
-$$\text{sha} = \arccos\left( \frac{\text{costau(sza)}}{\text{costau($\phi$)} \times \text{costau(sda)}} - \text{tantau($\phi$)} \times \text{tantau(sda)} \right)$$
+
+The first range input above sets the doy that will be used to obtain the sda that along with the &phi; selected by the second range input will be plugged into the sha equation above. Once we have the sha, we can double it to get the daylight duration in negative days, add it to the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, or subtract it from the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
 
 The difference between a solar noon and sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} is a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. Likewise, the sum of a solar noon and sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} is a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. To get the daylight duration in decidays, we can either subtract the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} from the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} or multiply the sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} by twenty.
 
@@ -1182,7 +1221,7 @@ To find the UTC [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone of
 
 # Next
 
-The next article in the [Dec section](/dec) of my [site](/) shows how we can combine [Dec dates](/dec/date) and times into Dec [Dec snaps](/dec/snap)🫰, which are analogous to the [combined date and time representations](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) international standard for dates and times. The final article in the Dec section demonstrates how Dec dates, times, and snaps🫰can be paired up to express [time intervals](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=the%20intervening%20time%20between%20two%20time%20points) called Dec [spans](/dec/span)🌈.
+The next article in the [Dec section](/dec) of my [site](/) shows how we can combine [Dec dates](/dec/date) and times into [Dec snaps](/dec/snap)🫰, which are analogous to the [combined date and time representations](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) international standard for dates and times. The final article in the Dec section demonstrates how Dec dates, times, and snaps🫰can be paired up to express [time intervals](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals:~:text=the%20intervening%20time%20between%20two%20time%20points) called Dec [spans](/dec/span)🌈.
 
 ::: {#timenav}
 {{< include /asset/_decnav.qmd >}}
@@ -1241,6 +1280,33 @@ function getEot(day) {
       5.116176940364264     * Math.sin(2 * gamma)
     )
 }
+function getSda(day) {
+  const gamma = 2 * Math.PI * day / 365
+    return (
+      0.001091553079960761  +
+      -0.023117708562197206 * Math.cos(gamma) +
+      0.060320423699681706  * Math.sin(gamma) +
+      0.0006152631125526081 * Math.cos(2 * gamma) +
+      0.0008981745798778195 * Math.sin(2 * gamma)
+    )
+}
+function getSha(latitude, solarDeclinationAngle, solarZenithAngle = 0.252314) {
+  const ratio = (
+    costau(.252314) - sintau(latitude) * sintau(solarDeclinationAngle)) / (
+    costau(latitude) * costau(solarDeclinationAngle))
+  return ratio >= 1 ? Math.PI : ratio <= -1 ? 0 : Math.acos(ratio)
+}
+cospi = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cospi@umd/browser.js' )
+sinpi = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-sinpi@umd/browser.js' )
+function sintau(turn) {
+  return sinpi(2 * turn);
+}
+function costau(turn) {
+  return cospi(2 * turn);
+}
+sha = getSha(latInput / 1000, getSda(doyInput))
+daytimeDuration = sha / Math.PI
+noonDiff = daytimeDuration / 2
 dz = unix2dote(now)
 decYear = ydz[0].toString().padStart(4, "0")
 zeroDote = unix2dote(now, 0)[0]
@@ -2182,9 +2248,9 @@ leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
 leapTodHsl0 = textcolor(leapDecidayTod, d3.color(piecewiseColor(leapTod)).formatHex())
 leapTodHsl1 = textcolor(leapDecidayTod, d3.color(piecewiseColor(leapTod)).formatHex())
-longInputHsl = textcolor(longInput, d3.color(piecewiseColor(longInput / 10)).formatHex())
+longInputHsl = textcolor(lonInput, d3.color(piecewiseColor(lonInput / 10)).formatHex())
 eot = getEot(leapSecondDate)
-astTzo = eot + longInput
+astTzo = eot + lonInput
 astTzoHsl = textcolor(astTzo.toFixed(4), d3.color(piecewiseColor(astTzo / 10)).formatHex())
 solarNoon = (5 - astTzo + 10) % 10
 solarNoonHsl = textcolor(solarNoon.toFixed(4), d3.color(piecewiseColor(solarNoon / 10)).formatHex())
