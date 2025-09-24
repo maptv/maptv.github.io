@@ -49,17 +49,15 @@ engine: knitr
 {{< include /asset/_decnav.qmd >}}
 :::
 
-My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the [analog clocks](https://en.wikipedia.org/wiki/Clock#:~:text=indicate%20time%20with%20a%20traditional%20clock%20face%20and%20moving%20hands)🕓, [bar📊charts](https://en.wikipedia.org/wiki/Bar_chart), [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺, [Earth🌍orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit) diagram, and [daylight](https://en.wikipedia.org/wiki/Daylight#:~:text=the%20combination%20of%20all%20direct%20and%20indirect%20sunlight%20during%20the%20daytime) [area chart](https://en.wikipedia.org/wiki/Area_chart#:~:text=The%20area%20between%20axis%20and%20line%20are%20commonly%20emphasized%20with%20colors) below.
+My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the [bar📊charts](https://en.wikipedia.org/wiki/Bar_chart) clocks🕓, [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺, [Earth🌍orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit) diagram, and [daylight](https://en.wikipedia.org/wiki/Daylight#:~:text=the%20combination%20of%20all%20direct%20and%20indirect%20sunlight%20during%20the%20daytime) [area chart](https://en.wikipedia.org/wiki/Area_chart#:~:text=The%20area%20between%20axis%20and%20line%20are%20commonly%20emphasized%20with%20colors) below.
 
-# Fractional day time {#fdt .hiddenheading}
+::: {.column-margin .clocks}
+\${clock}\${clock1}\${sunclock}
+:::
 
 Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day). The shortest, longest, and thinnest clock🕓hands and the top, middle, and bottom bars📊indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, [+\${decTime}]{.point1}, or until the end, [-\${decTimeN}]{.point0}, of the day in the Dec [time zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time), \${decZoneHsl}, at the location of the red⭕️circle on the map🗺️beneath the bars📊.
 
-## Ticking analog clocks {#tac .hiddenheading}
-
-::: clocks
-\${clock}\${clock1}
-:::
+To rotate the globe🌐in the Earth🌏orbit diagram, drag the red⭕️circle horizontally↔️or slide the red🔴dot on the daylight area chart vertically↕. The red⭕️circle's vertical↕position determines the yearly daylight pattern visualized by the area chart. Shift the red<font color=red>—</font>line on the area chart horizontally↔️to move the globe🌐along the ellipse of the Earth🌎orbit.
 
 ## Bar chart clocks {#bcc .hiddenheading}
 
@@ -338,20 +336,23 @@ barChart1 = {
 
 ## Longitude latitude map {#llm .hiddenheading}
 
+::: {.column-page}
 ```{ojs}
 //| echo: false
 viewof location = worldMapCoordinates([162, 0], [width * .998, ((21 / 40) * width)])
 ```
+:::
 
 ## Daylight area chart {#dac .hiddenheading}
 
+::: {.column-page}
 ```{ojs}
 //| echo: false
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 app = {
   const svg = d3.select(DOM.svg(width, height * (width < 300 ? .97 : width < 350 ? .96 : width < 400 ? .95 : width < 450 ? .94 : width < 500 ? .93 : width < 550 ? .92 : width < 600 ? .9 : width < 650 ? .86 : width < 700 ? .82 : .78)));
   svg.style("user-select", "none").style("-webkit-user-select", "none").attr("id", "daylightapp");
-  const margin = {top: 20, left: 16, right: 16, bottom: 0, inner: 32};
+  const margin = {top: 0, left: 16, right: 16, bottom: 0, inner: 32};
   const contentWidth = width - margin.left - margin.right - margin.inner;
   const columnWidth = contentWidth / 2;
   let selection = {
@@ -399,10 +400,10 @@ app = {
   }
   const plot = svg.append("g")
     .attr("id", "plot")
-    .attr("transform", `translate(${margin.left + 0}, ${height / 5 + (width < 600 ? 12 : 5)})`);
+    .attr("transform", `translate(${margin.left + 0}, ${width > 500 ? -72 : 5})`);
   svg.append("g")
     .attr("id", "solar-system")
-    .attr("transform", `translate(${margin.left + 12}, ${margin.top + width / 22 - 6 - 5 * (width < 400)})`);
+    .attr("transform", `translate(${margin.left + 12}, ${margin.top + height / 1.6 + 6 + 5 * (width < 400)})`);
   // svg.append("g")
   //   .attr("id", "globe")
   //   .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 2 + 20}, ${margin.top + height / 1.2 + 4})`);
@@ -728,7 +729,7 @@ clock1 = {
     .attr("viewBox", [0, 0, w, h])
     .style("max-width", `${width / 2.1}px`)
     .attr("class", "analogclock")
-    .attr("id", "btmclock");
+    .attr("id", "midclock");
   svg
     .append("text")
     .text(`-${decTimeN}-${selectedZone}`)
@@ -750,8 +751,11 @@ clock1 = {
   return svg.node();
 }
 ```
+:::
 
-To rotate the globe🌐in the Earth🌏orbit diagram, drag the red⭕️circle horizontally↔️or slide the red🔴dot on the daylight area chart vertically↕. The red⭕️circle's vertical↕position determines the yearly daylight pattern visualized by the area chart. Shift the red<font color=red>—</font>line on the area chart horizontally↔️to move the globe🌐along the ellipse of the Earth🌎orbit.
+```{ojs}
+width
+```
 
 ## Yearly day aggregate (yda) {#yda .hiddenheading}
 
@@ -1603,7 +1607,7 @@ daylightPlot = (
     .call(xAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", mapcolors.grid))
-    .call((g) => g.selectAll(".tick text").attr("font-size", (width < 300 ? .7 : width < 325 ? .725 : width < 350 ? .75 : width < 375 ? .8 : width < 400 ? .9 : width < 450 ? .95 : width < 500 ? 1 : width < 600 ? 1.2 : width < 700 ? 1.3 : 1.4) * fontSize))
+    .call((g) => g.selectAll(".tick text").attr("font-size", (width < 300 ? .7 : width < 325 ? .725 : width < 350 ? .75 : width < 375 ? .8 : width < 400 ? .9 : width < 450 ? .95 : width < 500 ? 1 : width < 600 ? 1.2 : width < 700 ? 1.3 : width < 800 ? 1.4 : width < 900 ? 1.5 : width < 1000 ? 1.7 : width < 1100 ? 1.8 : width < 1200 ? 1.9 : 2) * fontSize))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
@@ -1612,13 +1616,13 @@ daylightPlot = (
     .call(yAxis)
     .call((g) => g.select(".domain").remove())
     .call((g) => g.selectAll(".tick").attr("color", mapcolors.grid))
-    .call((g) => g.selectAll(".tick text").attr("font-size", (width < 400 ? .9 : width < 500 ? 1 : width < 600 ? 1.1 : width < 700 ? 1.2 : 1.3) * fontSize))
+    .call((g) => g.selectAll(".tick text").attr("font-size", (width < 400 ? .9 : width < 450 ? .95 : width < 500 ? 1 : width < 600 ? 1.2 : width < 700 ? 1.3 : width < 800 ? 1.4 : width < 900 ? 1.5 : width < 1000 ? 1.7 : width < 1100 ? 1.8 : width < 1200 ? 1.9 : 2) * fontSize))
     .call((g) => g.selectAll(".tick text").attr("color", "black"))
     .call((g) => g.selectAll(".tick line").attr("stroke-dasharray", "5 3"));
   root
     .append("text")
     .text("Time of day")
-    .attr("x", margin.bottom + (width < 275 ? -102 : width < 300 ? -106 : width < 325 ? -108 : width < 350 ? -115 : width < 375 ? -120 : width < 400 ? -128 : width < 425 ? -130 : width < 450 ? -132 : width < 475 ? -136 : width < 500 ? -141 : width < 525 ? -142 : width < 550 ? -148 : width < 575 ? -149 : width < 600 ? -154 : width < 650 ? -157 : width < 675 ? -157 : width < 700 ? -161 : width < 725 ? -160 : width < 750 ? -165 : width < 775 ? -169 : -173))
+    .attr("x", margin.bottom + (width < 275 ? -102 : width < 300 ? -106 : width < 325 ? -108 : width < 350 ? -115 : width < 375 ? -120 : width < 400 ? -128 : width < 425 ? -130 : width < 450 ? -132 : width < 475 ? -136 : width < 500 ? -141 : width < 525 ? -142 : width < 550 ? -148 : width < 575 ? -149 : width < 600 ? -154 : width < 650 ? -157 : width < 675 ? -157 : width < 700 ? -161 : width < 725 ? -160 : width < 750 ? -165 : width < 775 ? -160 : width < 875 ? -165 : width < 975 ? -185 : width < 975 ? -205 : width < 975 ? -225 : width < 975 ? -245 : width < 1075 ? -265 : width < 1175 ? -265 : -285))
     .attr("y", margin.top - (width < 400 ? 33 : width < 500 ? 35 : width < 600 ? 37 : width < 700 ? 40 : 42))
     .attr("text-anchor", "middle")
     .attr("font-size", fontSize * (width < 300 ? .8 : width < 400 ? .9 : width < 500 ? 1 : width < 600 ? 1.1 : width < 700 ? 1.2 : 1.25) + width / 100)
@@ -1629,7 +1633,7 @@ daylightPlot = (
     .append("text")
     .text("Day of year")
     .attr("x", margin.left + width / 2 - (width < 500 ? 30 : width < 600 ? 28 : width < 700 ? 24 : 22))
-    .attr("y", margin.top + chartHeight / 4 + margin.bottom + (width < 275 ? 10 : width < 300 ? 18 : width < 325 ? 19 : width < 350 ? 22 : width < 375 ? 30 : width < 400 ? 37 : width < 450 ? 39 : width < 475 ? 40 : width < 500 ? 44 : width < 550 ? 50 : width < 600 ? 51 : width < 650 ? 50 : width < 700 ? 44 : width < 750 ? 40 : 43))
+    .attr("y", margin.top + chartHeight / 4 + margin.bottom + (width < 275 ? 10 : width < 300 ? 18 : width < 325 ? 19 : width < 350 ? 22 : width < 375 ? 30 : width < 400 ? 37 : width < 450 ? 39 : width < 475 ? 40 : width < 500 ? 44 : width < 550 ? 50 : width < 600 ? 51 : width < 650 ? 50 : width < 700 ? 44 : width < 750 ? 40 : width < 850 ? 50 : width < 950 ? 60 : width < 1050 ? 70 : width < 1150 ? 80 : width < 1250 ? 90 : width < 1350 ? 100 : 109))
     .attr("text-anchor", "middle")
     .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
@@ -1669,31 +1673,31 @@ daylightPlot = (
     .attr("transform", `translate(${margin.left + chartWidth / 2 - 64})`);
   legend
     .append("rect")
-    .attr("x", width < 300 ? 63 : width < 500 ? 62 : width < 600 ? 61 : 60)
-    .attr("y", width < 450 ? 8 : 1)
+    .attr("x", width < 300 ? 63 : width < 500 ? 62 : width < 600 ? 61 : width < 700 ? 51 : width < 800 ? 41 : 30)
+    .attr("y", width < 450 ? 8 : width < 850 ? 1 : -5)
     .attr("rx", 5)
     .attr("width", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("height", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("fill", mapcolors.day);
   legend
     .append("text")
-    .attr("x", width < 400 ? 82 : width < 500 ? 85 : width < 600 ? 87 : 90)
+    .attr("x", width < 400 ? 82 : width < 500 ? 85 : width < 600 ? 77 : width < 700 ? 67 : width < 800 ? 57 : width < 900 ? 47 : 40)
     .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 20 : width < 700 ? 21 : 23)
     .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
     .text("Day");
   legend
     .append("rect")
-    .attr("x", width < 400 ? -10 : width < 500 ? -20 : width < 600 ? -40 : -39)
-    .attr("y", width < 450 ? 8 : 1)
+    .attr("x", width < 400 ? -10 : width < 500 ? -20 : width < 600 ? -40 : width < 700 ? -60 : width < 800 ? -80 : -109)
+    .attr("y", width < 450 ? 8 : width < 850 ? 1 : -5)
     .attr("rx", 5)
     .attr("width", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("height", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("fill", mapcolors.night);
   legend
     .append("text")
-    .attr("x", width < 400 ? 11 : width < 500 ? 4 : width < 600 ? -12 : -9)
-    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 19 : width < 700 ? 21 : 23)
+    .attr("x", width < 400 ? 11 : width < 500 ? 4 : width < 600 ? -12 : -48)
+    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 9 : width < 700 ? -1 : -3)
     .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
     .text("Night");
@@ -1952,7 +1956,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     type: "worldMapCoordinates",
     title,
     description,
-    display: v => (width > 300) ? html`<div style="width: ${width}px; white-space: nowrap; color: window.darkmode ? #fff : #000; text-align: center; font: ${width / 40}px monospace; position: relative; top: ${-16 - width / 50}px;  margin-bottom: -.4em;">
+    display: v => (width > 300) ? html`<div style="width: ${width}px; white-space: nowrap; color: window.darkmode ? #fff : #000; text-align: center; font: ${width > 1000 ? width / 50 : width / 40}px monospace; position: relative; top: ${-16 - width / 50}px;  margin-bottom: -.4em;">
             <span style="color: window.darkmode ? #fff : #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
             &nbsp; &nbsp;
             <span style="color: window.darkmode ? #fff : #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
@@ -2288,14 +2292,12 @@ function build_samples(f, a, b, opts = {}) {
         nodeLeft.fa = f(a_left);
         nodeLeft.fb = f(b_left);
         node.left = nodeLeft;
-
         let a_right = midpoint;
         let b_right = node.b;
         nodeRight = new Interval(a_right, b_right, new_depth);
         nodeRight.fa = f(a_left);
         nodeRight.fb = f(b_left);
         node.right = nodeRight;
-
         stack.push(nodeRight);
         stack.push(nodeLeft);
       } else {
@@ -2342,6 +2344,306 @@ class Interval {
     this.depth = depth;
   }
 }
+// https://observablehq.com/@ldgrp/apple-watch-solar-dial-simulation
+sunclock = {
+  const radius = 200;
+  const width = radius * 2;
+  const height = radius * 2;
+  const { minutes: _minutes, seconds } = minutesAndSeconds;
+  //let _minutes = 0;
+  const minutes = changed ? travel : _minutes;
+  const minutesDegrees = (minutes / 1440) * 360;
+  const svg = d3
+    .create("svg")
+    .attr("id", "btmclock")
+    .attr("viewBox", [0, 0, width, height])
+    .style("margin-top", "1px")
+    .style("max-width", "200px");
+  const face = svg
+    .append("g")
+    .attr("transform", `translate(${width / 2}, ${height / 2})`);
+  for (const angle of angles) {
+    const arc = d3
+      .arc()
+      .innerRadius(0)
+      .outerRadius(radius)
+      .startAngle(angle.start)
+      .endAngle(angle.end);
+    face.append("path").attr("d", arc).attr("fill", angle.color);
+  }
+  const sun = face
+    .append("circle")
+    .attr("r", 15)
+    .attr("cx", 125 * -sin(minutesDegrees))
+    .attr("cy", 125 * cos(minutesDegrees))
+    .style("fill", "white");
+  const ringContainer = svg
+    .append("g")
+    .attr("transform", `translate(${width / 2}, ${height / 2})`);
+  const ring = ringContainer
+    .append("circle")
+    .attr("r", 125)
+    .style("opacity", 0.2)
+    .style("fill", "transparent")
+    .style("stroke", "white")
+    .style("stroke-width", 3);
+  const events = [
+    data.astronomicalSunrise,
+    data.astronomicalSunset,
+    data.nauticalSunrise,
+    data.nauticalSunset,
+    data.civilSunrise,
+    data.civilSunset,
+    data.sunrise,
+    data.sunset,
+    data.solarNoon
+  ];
+  for (const e of events) {
+    ringContainer
+      .append("circle")
+      .attr("r", 5)
+      .attr("cx", 125 * Math.sin(e))
+      .attr("cy", 125 * -Math.cos(e))
+      .style("opacity", 0.4)
+      .style("fill", "white");
+  }
+  const digitalClock = svg
+    .append("g")
+    .attr(
+      "transform",
+      `translate(${width / 2 + 45 * sin(minutesDegrees)}, ${
+        height / 2 + 45 * -cos(minutesDegrees)
+      })`
+    );
+  const digitalClockBase = digitalClock
+    .append("circle")
+    .attr("r", 100)
+    .style("opacity", 0.21)
+    .style("fill", "white");
+//  const digitalClockTicks = digitalClock
+//    .selectAll(".digital-clock-tick")
+//    .data(d3.range(0, 60))
+//    .enter()
+//    .append("line")
+//    .attr("class", "digital-clock-tick")
+//    .attr("x1", 0)
+//    .attr("x2", 0)
+//    .attr("y1", 100 - 5)
+//    .attr("y2", 100 - 10)
+//    .attr("stroke", (d) => (d > seconds ? "black" : "white"))
+//    .attr("stroke-width", "3")
+//    .attr("stroke-linecap", "round")
+//    .style("mix-blend-mode", "luminance")
+//    .style("opacity", 0.6)
+//    .attr("transform", (d) => `rotate(${180 + d * 6})`);
+  const clockText = digitalClock
+    .append("text")
+    .attr("y", 25)
+    .attr("fill", "white")
+    .attr("text-anchor", "middle")
+    .attr("font-family", "Helvetica, Arial, sans-serif")
+    .style("opacity", 1)
+    .attr("font-weight", 600)
+    .attr("font-size", "75px")
+    .text(minutesTo12HourTime(minutes));
+  const ticks = face
+    .selectAll(".tick")
+    .data(d3.range(0, 20))
+    .enter()
+    .append("line")
+    .attr("class", "tick")
+    .attr("x1", 0)
+    .attr("x2", 0)
+    .attr("y1", radius - 5)
+    .attr("y2", radius - 20)
+    .attr("stroke", "white")
+    .attr("stroke-width", "3")
+    .attr("stroke-linecap", "round")
+    .style("mix-blend-mode", "screen")
+    .style("opacity", 1)
+    .attr("transform", (d) => `rotate(${d * 18})`);
+  const minuteTicks = face
+    .selectAll(".tick")
+    .data(d3.range(0, 200))
+    .enter()
+    .append("line")
+    .attr("class", "tick")
+    .attr("x1", 0)
+    .attr("x2", 0)
+    .attr("y1", radius - 5)
+    .attr("y2", radius - 15)
+    .attr("stroke", "white")
+    .attr("stroke-width", "2")
+    .attr("stroke-linecap", "round")
+    .style("mix-blend-mode", "screen")
+    .style("opacity", 0.6)
+    .attr("transform", (d) => `rotate(${d * 2})`);
+  const hourLabels = face
+    .selectAll(".hour-label")
+    .data(d3.range(0, 10))
+    .enter()
+    .append("text")
+    .attr("class", "hour-label")
+    .attr("x", (d) => 160 * -Math.sin(toRadians((d / 10) * 360)))
+    .attr("y", (d) => 160 * Math.cos(toRadians((d / 10) * 360)) + 12)
+    .attr("fill", "white")
+    .attr("text-anchor", "middle")
+    .attr("font-family", "Helvetica, Arial, sans-serif")
+    .attr("font-weight", 600)
+    .attr("font-size", "38px")
+    .style("opacity", 0.7)
+    .text((d) => (String(d)));
+  return svg.node();
+}
+minutesAndSeconds = {
+  while (true) {
+    await Promises.delay(1000);
+    const date = new Date();
+    yield {
+      minutes: date.getHours() * 60 + date.getMinutes(),
+      seconds: date.getSeconds()
+    };
+  }
+}
+function minutesTo12HourTime(minutes) {
+  const decidays = minutes / 144 % 10
+  return decidays.toFixed(2);
+}
+viewof changed = Inputs.input(false)
+viewof travel = {
+  const input = Inputs.range([0, 1440], {
+    label: "Time Travel",
+    step: 1,
+    value: new Date().getHours() * 60 + new Date().getMinutes()
+  });
+  input.oninput = (x) => {
+    if (!changed) set(viewof changed, true);
+  };
+  return input;
+}
+viewof reset = Inputs.button([["Reset", () => set(viewof changed, false)]])
+viewof date = Inputs.date({ label: "Date", value: Date.now() })
+JD = getJulianDate(date)
+T = (JD - 2451545.0) / 36525
+sun_geometric_mean_longitude = 280.46646 + 36000.76983 * T + 0.0003032 * T ** 2
+sun_mean_anomaly = 357.52911 + 35999.05029 * T - 0.0001537 * T ** 2
+earth_eccentricity_orbit = 0.016708634 - 0.000042037 * T - 0.0000001267 * T ** 2
+sun_equation_of_the_center = (1.914602 - 0.004817 * T - 0.000014 * T ** 2) * sin(sun_mean_anomaly) + (0.019993 - 0.000101 * T) * sin(2 * sun_mean_anomaly) + 0.000289 * sin(3 * sun_mean_anomaly)
+sun_true_longitude = sun_geometric_mean_longitude + sun_equation_of_the_center
+sun_true_anomaly = sun_mean_anomaly + sun_equation_of_the_center
+omega = 125.04 - 1934.136 * T
+sun_aparrent_longitude = sun_true_longitude - 0.00569 - 0.00478 * sin(omega)
+sun_ecliptic_obliquity = 23 + (26 + (21.448 - 46.815 * T - 0.00059 * T ** 2 + 0.001813 * T ** 3) / 60) / 60
+sun_ecliptic_obliquity_corrected = sun_ecliptic_obliquity + 0.00256 * cos(omega)
+sun_right_ascension = Math.atan2(
+  cos(sun_ecliptic_obliquity_corrected) * sin(sun_aparrent_longitude),
+  cos(sun_aparrent_longitude)
+)
+sun_declination = Math.asin(
+  sin(sun_ecliptic_obliquity_corrected) * sin(sun_aparrent_longitude)
+)
+y = Math.tan(toRadians(sun_ecliptic_obliquity_corrected) / 2) ** 2
+equation_of_time = toDegrees(
+  y * sin(2 * (sun_geometric_mean_longitude)) -
+    2 * earth_eccentricity_orbit * sin((sun_mean_anomaly)) +
+    4 * earth_eccentricity_orbit * y * sin((sun_mean_anomaly)) * cos(2 * (sun_geometric_mean_longitude)) -
+    (1 / 2) * y ** 2 * sin(4 * (sun_geometric_mean_longitude)) -
+    (5 / 4) * earth_eccentricity_orbit ** 2 * sin(2 * (sun_mean_anomaly))
+) * 4
+hour_angle = toDegrees(
+  Math.acos(
+    (sin(-0.833) - sin(latitude) * Math.sin(sun_declination)) /
+      (cos(latitude) * Math.cos(sun_declination))
+  )
+)
+sun_transit = 720 - 4 * longitude - equation_of_time + timezone * 60
+sun_rise = sun_transit - hour_angle * 4
+sun_set = sun_transit + hour_angle * 4
+sun_duration = sun_set - sun_rise
+sun_civil_rise = sun_transit - (hour_angle + 6) * 4
+sun_nautical_rise = sun_transit - (hour_angle + 12) * 4
+sun_astronomical_rise = sun_transit - (hour_angle + 18) * 4
+sun_civil_set = sun_transit + (hour_angle + 6) * 4
+sun_nautical_set = sun_transit + (hour_angle + 12) * 4
+sun_astronomical_set = sun_transit + (hour_angle + 18) * 4
+data = ({
+  astronomicalSunrise:
+    toRadians((sun_astronomical_rise / 1440) * 360) + Math.PI,
+  nauticalSunrise: toRadians((sun_nautical_rise / 1440) * 360) + Math.PI,
+  civilSunrise: toRadians((sun_civil_rise / 1440) * 360) + Math.PI,
+  sunrise: toRadians((sun_rise / 1440) * 360) + Math.PI,
+  sunset: toRadians((sun_set / 1440) * 360) + Math.PI,
+  civilSunset: toRadians((sun_civil_set / 1440) * 360) + Math.PI,
+  nauticalSunset: toRadians((sun_nautical_set / 1440) * 360) + Math.PI,
+  astronomicalSunset: toRadians((sun_astronomical_set / 1440) * 360) + Math.PI,
+  solarNoon: toRadians((sun_transit / 1440) * 360) + Math.PI,
+  dayLength: sun_duration
+})
+angles = [
+  {
+    start: data.astronomicalSunrise,
+    end: data.nauticalSunrise,
+    color: "rgb(17,49,86)"
+  },
+  {
+    start: data.nauticalSunrise,
+    end: data.civilSunrise,
+    color: "rgb(23,61,112)"
+  },
+  { start: data.civilSunrise, end: data.sunrise, color: "rgb(35,85,155)" },
+  { start: data.sunrise, end: data.sunset, color: "rgb(70,155,245)" },
+  { start: data.sunset, end: data.civilSunset, color: "rgb(35,85,155)" },
+  {
+    start: data.civilSunset,
+    end: data.nauticalSunset,
+    color: "rgb(23,61,112)"
+  },
+  {
+    start: data.nauticalSunset,
+    end: data.astronomicalSunset,
+    color: "rgb(17,49,86)"
+  },
+  {
+    start: data.astronomicalSunset,
+    end: data.astronomicalSunrise + Math.PI * 2,
+    color: "rgb(10,34,58)"
+  }
+]
+getJulianDate = (timestamp) => {
+  return new Date(timestamp) / 86400000 + 2440587.5;
+}
+getDateFromSun = (v) => {
+  var d = new Date();
+  d.setHours(v / 60);
+  d.setMinutes(v % 60);
+  d.setSeconds((v / 60) % 60);
+  return d.toLocaleString();
+}
+sin = (x) => Math.sin(toRadians(x))
+cos = (x) => Math.cos(toRadians(x))
+m_ = {
+  let lastMinutes = undefined;
+  let { minutes } = minutesAndSeconds;
+  if (lastMinutes !== minutes) {
+    lastMinutes = minutes;
+    yield minutes;
+  } else {}
+}
+longitude = location[0]
+latitude = location[1]
+getTimezoneFromLatLng = (lat, lng) => {
+  const point = turf.point([lng, lat]);
+  for (const feature of zones) {
+    if (turf.booleanPointInPolygon(point, feature)) {
+      return feature.properties.zone;
+    }
+  }
+  return null;
+}
+timezone = getTimezoneFromLatLng(latitude, longitude)
+import { timezones } from "@mbostock/time-zones"
+zones = topojson.feature(timezones, timezones.objects.timezones).features
+turf = require("@turf/turf@5")
 ```
 
 ```{ojs}
@@ -2629,12 +2931,34 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.clocks {
+  margin-top: ${width > 500 ? -62 : width > 400 ? 80 : 0}px;
+}
 </style>
 `
 ```
 
 ```{=html}
 <style>
+.clocks {
+  overflow: visible;
+}
+.btmclock {
+  overflow: visible;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+div.cell:has(svg.barclock) {
+  margin-top: -28px;
+}
+div.cell:has(form#formEl) {
+  margin-top: -58px;
+}
+form#formEl canvas {
+  max-width: 92%;
+}
 svg.barclock {
   width: 100%;
   overflow: visible;
@@ -2690,14 +3014,16 @@ svg.barclock {
   stroke-width: 8; // same as the minute hand
 }
 .analogclock .second-label {
-  font-size: 18px;
+  font-size: 22px;
 }
 .analogclock .hour-label {
   font-size: 32px
 }
 .clocks * {
+  overflow: visible;
   margin: -10px 0px 10px 0px;
   padding: 0px;
+  text-align: center;
 }
 #title-block-header > div:nth-child(2) {
   display: none;
@@ -2709,10 +3035,12 @@ div.cell-output:has(#daylightapp) {
   overflow: visible;
 }
 div.cell-output:has(#formEl) {
+  margin-top: 60px;
   overflow: visible;
 }
 #daylightapp {
   overflow: visible;
+  max-width: 100%;
 }
 #daylightapp * {
   overflow: visible;
@@ -2740,6 +3068,15 @@ div.cell-output:has(#formEl) {
 }
 #timezonepoptoggles input[type=checkbox] {
   margin-top: 8px;
+}
+div:has(form#formEl) {
+  overflow: visible;
+}
+form#formEl div {
+  max-width: 100%;
+}
+.btmclock {
+  overflow: visible;
 }
 </style>
 ```
