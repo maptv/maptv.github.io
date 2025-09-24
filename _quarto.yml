@@ -158,7 +158,6 @@ format:
     code-block-border-left: false
     citations-hover: true
     footnote-hover: true
-    code-copy: true
     code-fold: false
     code-link: true
     code-tools: true
