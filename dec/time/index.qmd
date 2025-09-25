@@ -20,7 +20,7 @@ bread-crumbs: false
 format:
   html:
     grid:
-      body-width: 850px
+      body-width: 900px
     shift-heading-level-by: 3
     include-after-body:
       - ../../asset/cite.html
@@ -49,11 +49,11 @@ engine: knitr
 {{< include /asset/_decnav.qmd >}}
 :::
 
-My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the [bar📊charts](https://en.wikipedia.org/wiki/Bar_chart) clocks🕓, [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺, [Earth🌍orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit) diagram, and [daylight](https://en.wikipedia.org/wiki/Daylight#:~:text=the%20combination%20of%20all%20direct%20and%20indirect%20sunlight%20during%20the%20daytime) [area chart](https://en.wikipedia.org/wiki/Area_chart#:~:text=The%20area%20between%20axis%20and%20line%20are%20commonly%20emphasized%20with%20colors) below.
-
 ::: {.column-margin .clocks}
 \${clock}\${clock1}\${sunclock}
 :::
+
+My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the [bar📊charts](https://en.wikipedia.org/wiki/Bar_chart) clocks🕓, [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺, [Earth🌍orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit) diagram, and [daylight](https://en.wikipedia.org/wiki/Daylight#:~:text=the%20combination%20of%20all%20direct%20and%20indirect%20sunlight%20during%20the%20daytime) [area chart](https://en.wikipedia.org/wiki/Area_chart#:~:text=The%20area%20between%20axis%20and%20line%20are%20commonly%20emphasized%20with%20colors) below.
 
 Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day). The shortest, longest, and thinnest clock🕓hands and the top, middle, and bottom bars📊indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, [+\${decTime}]{.point1}, or until the end, [-\${decTimeN}]{.point0}, of the day in the Dec [time zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time), \${decZoneHsl}, at the location of the red⭕️circle on the map🗺️beneath the bars📊.
 
@@ -350,14 +350,14 @@ viewof location = worldMapCoordinates([162, 0], [width * .998, ((21 / 40) * widt
 //| echo: false
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 app = {
-  const svg = d3.select(DOM.svg(width, height * (width < 300 ? .97 : width < 350 ? .96 : width < 400 ? .95 : width < 450 ? .94 : width < 500 ? .93 : width < 550 ? .92 : width < 600 ? .9 : width < 650 ? .86 : width < 700 ? .82 : .78)));
+  const svg = d3.select(DOM.svg(width, height * (width < 300 ? .97 : width < 350 ? .96 : width < 400 ? .95 : width < 450 ? .94 : width < 500 ? .93 : width < 550 ? .92 : width < 600 ? .9 : width < 650 ? .86 : width < 700 ? .82 : width < 800 ? .81 : width < 900 ? .80 : width < 1000 ? .76 : width < 1100 ? .74 : width < 1200 ? .72 : .7)));
   svg.style("user-select", "none").style("-webkit-user-select", "none").attr("id", "daylightapp");
   const margin = {top: 0, left: 16, right: 16, bottom: 0, inner: 32};
   const contentWidth = width - margin.left - margin.right - margin.inner;
   const columnWidth = contentWidth / 2;
   let selection = {
-    date: date2022,
-    hour: date2022.getHours()
+    date: this.value != null ? this.value.date : new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours()),
+    hour: this.value != null ? this.value.hour : new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours()).getHours()
   }
   const renderPlot = () => {
     svg.selectAll("#plot *").remove();
@@ -387,6 +387,7 @@ app = {
     const prev = {...selection};
     selection = newSelection;
     svg.node().value = selection;
+    this.value = selection;
     set(viewof selectedDate, selection.date);
     set(viewof selectedHour, selection.hour);
     if (forceRender) {
@@ -400,7 +401,7 @@ app = {
   }
   const plot = svg.append("g")
     .attr("id", "plot")
-    .attr("transform", `translate(${margin.left + 0}, ${width > 500 ? -72 : 5})`);
+    .attr("transform", `translate(${margin.left + 0}, ${width < 500 ? -72 : width < 600 ? -76 : width < 700 ? -75 : width < 800 ? -74 : width < 900 ? -73 : width < 900 ? -72 : width < 1000 ? -71 : width < 1100 ? -70 : width < 1100 ? -78 : -76})`);
   svg.append("g")
     .attr("id", "solar-system")
     .attr("transform", `translate(${margin.left + 12}, ${margin.top + height / 1.6 + 6 + 5 * (width < 400)})`);
@@ -414,342 +415,6 @@ app = {
   svg.node().addEventListener(EventType.DateHourChange, handleDateHourChange, false);
   return svg.node();
 }
-// https://observablehq.com/@d3/simple-clock
-// https://observablehq.com/@drio/lets-build-an-analog-clock
-clock = {
-  const clockRadius = 200,
-    margin = 50,
-    w = (clockRadius + margin) * 2,
-    h = (clockRadius + margin) * 2,
-    hourHandLength = (2 * clockRadius) / 3,
-    minuteHandLength = clockRadius,
-    secondHandLength = clockRadius - 12,
-    secondHandBalance = 30,
-    secondTickStart = clockRadius,
-    secondTickLength = -10,
-    hourTickStart = clockRadius,
-    hourTickLength = -18,
-    secondLabelRadius = clockRadius + 16,
-    secondLabelYOffset = 5,
-    hourLabelRadius = clockRadius - 40,
-    hourLabelYOffset = 7,
-    radians = Math.PI / 180;
-  const ten = d3
-    .scaleLinear()
-    .range([0, 360])
-    .domain([0, 10]);
-  const sto = d3
-    .scaleLinear()
-    .range([0, 360])
-    .domain([0, 100]);
-  const handData = [
-    {
-      type: "hour",
-      value: 0,
-      length: -hourHandLength,
-      scale: ten
-    },
-    {
-      type: "minute",
-      value: 0,
-      length: -minuteHandLength,
-      scale: sto
-    },
-    {
-      type: "second",
-      value: 0,
-      length: -secondHandLength,
-      scale: sto,
-      balance: secondHandBalance
-    }
-  ];
-  function drawClock() {
-    // create all the clock elements
-    updateData(); //draw them in the correct starting position
-    const face = svg
-      .append("g")
-      .attr("id", "clock-face")
-      .attr("transform", `translate(${[w / 2, h / 2]})`);
-    // add marks for seconds
-    face
-      .selectAll(".second-tick")
-      .data(d3.range(0, 100))
-      .enter()
-      .append("line")
-      .attr("class", "second-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", secondTickStart)
-      .attr("y2", secondTickStart + secondTickLength)
-      .attr("transform", d => `rotate(${sto(d)})`);
-    // and labels...
-    face
-      .selectAll(".second-label")
-      .data(d3.range(0, 100, 5))
-      .enter()
-      .append("text")
-      .attr("class", "second-label")
-      .attr("text-anchor", "middle")
-      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
-      .attr(
-        "y",
-        d =>
-          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
-      )
-      .text(d => d);
-    // ... and hours
-    face
-      .selectAll(".hour-tick")
-      .data(d3.range(0, 10, 1))
-      .enter()
-      .append("line")
-      .attr("class", "hour-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", hourTickStart)
-      .attr("y2", hourTickStart + hourTickLength)
-      .attr("transform", d => `rotate(${ten(d)})`);
-    face
-      .selectAll(".hour-label")
-      .data(d3.range(0, 10, 1))
-      .enter()
-      .append("text")
-      .attr("class", "hour-label")
-      .attr("text-anchor", "middle")
-      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
-      .attr(
-        "y",
-        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
-      )
-      .text(d => d);
-    const hands = face.append("g").attr("id", "clock-hands");
-    hands
-      .selectAll("line")
-      .data(handData)
-      .enter()
-      .append("line")
-      .attr("class", d => d.type + "-hand")
-      .attr("x1", 0)
-      .attr("y1", d => d.balance || 0)
-      .attr("x2", 0)
-      .attr("y2", d => d.length)
-      .attr("transform", d => `rotate(${d.scale(d.value)})`);
-    face
-      .append("g")
-      .attr("id", "face-overlay")
-      .append("circle")
-      .attr("class", "hands-cover")
-      .attr("x", 0)
-      .attr("y", 0)
-      .attr("r", clockRadius / 20);
-  }
-  function moveHands() {
-    const sel = d3
-      .select("#clock-hands-final")
-      .selectAll("line")
-      .data(handData)
-      .transition();
-    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
-    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
-  }
-  function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : decTime[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : decTime.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : decTime.slice(4, 6);
-  }
-  const svg = d3
-    .create("svg")
-    .attr("viewBox", [0, 0, w, h])
-    .style("max-width", `${width / 2.1}px`)
-    .attr("class", "analogclock")
-    .attr("id", "topclock");
-  svg
-    .append("text")
-    .text(`+${decTime}-${selectedZone}`)
-    .attr("x", clockRadius + margin)
-    .attr("y", clockRadius * 2 + margin * 2.1)
-    .attr("text-anchor", "middle")
-    .attr("font-size", 32)
-    .attr("font-family", "monospace");
-  drawClock();
-  // Animation
-  const interval = setInterval(
-    () => {
-      updateData();
-      moveHands();
-    },
-    !fancySecondsOFF ? 10 : 864
-  );
-  invalidation.then(() => clearInterval(interval));
-  return svg.node();
-}
-clock1 = {
-  const clockRadius = 200,
-    margin = 50,
-    w = (clockRadius + margin) * 2,
-    h = (clockRadius + margin) * 2,
-    hourHandLength = (2 * clockRadius) / 3,
-    minuteHandLength = clockRadius,
-    secondHandLength = clockRadius - 12,
-    secondHandBalance = 30,
-    secondTickStart = clockRadius,
-    secondTickLength = -10,
-    hourTickStart = clockRadius,
-    hourTickLength = -18,
-    secondLabelRadius = clockRadius + 16,
-    secondLabelYOffset = 5,
-    hourLabelRadius = clockRadius - 40,
-    hourLabelYOffset = 7,
-    radians = Math.PI / 180;
-  const ten = d3
-    .scaleLinear()
-    .range([0, 360])
-    .domain([0, 10]);
-  const sto = d3
-    .scaleLinear()
-    .range([0, 360])
-    .domain([0, 100]);
-  const handData = [
-    {
-      type: "hour",
-      value: 0,
-      length: -hourHandLength,
-      scale: ten
-    },
-    {
-      type: "minute",
-      value: 0,
-      length: -minuteHandLength,
-      scale: sto
-    },
-    {
-      type: "second",
-      value: 0,
-      length: -secondHandLength,
-      scale: sto,
-      balance: secondHandBalance
-    }
-  ];
-  function drawClock() {
-    // create all the clock elements
-    updateData(); //draw them in the correct starting position
-    const face = svg
-      .append("g")
-      .attr("id", "clock-face")
-      .attr("transform", `translate(${[w / 2, h / 2]})`);
-    // add marks for seconds
-    face
-      .selectAll(".second-tick")
-      .data(d3.range(0, 100))
-      .enter()
-      .append("line")
-      .attr("class", "second-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", secondTickStart)
-      .attr("y2", secondTickStart + secondTickLength)
-      .attr("transform", d => `rotate(${sto(d)})`);
-    // and labels...
-    face
-      .selectAll(".second-label")
-      .data(d3.range(0, 100, 5))
-      .enter()
-      .append("text")
-      .attr("class", "second-label")
-      .attr("text-anchor", "middle")
-      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
-      .attr(
-        "y",
-        d =>
-          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
-      )
-      .text(d => d);
-    // ... and hours
-    face
-      .selectAll(".hour-tick")
-      .data(d3.range(0, 10, 1))
-      .enter()
-      .append("line")
-      .attr("class", "hour-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", hourTickStart)
-      .attr("y2", hourTickStart + hourTickLength)
-      .attr("transform", d => `rotate(${ten(d)})`);
-    face
-      .selectAll(".hour-label")
-      .data(d3.range(0, 10, 1))
-      .enter()
-      .append("text")
-      .attr("class", "hour-label")
-      .attr("text-anchor", "middle")
-      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
-      .attr(
-        "y",
-        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
-      )
-      .text(d => d);
-    const hands = face.append("g").attr("id", "clock-hands");
-    hands
-      .selectAll("line")
-      .data(handData)
-      .enter()
-      .append("line")
-      .attr("class", d => d.type + "-hand")
-      .attr("x1", 0)
-      .attr("y1", d => d.balance || 0)
-      .attr("x2", 0)
-      .attr("y2", d => d.length)
-      .attr("transform", d => `rotate(${d.scale(d.value)})`);
-    face
-      .append("g")
-      .attr("id", "face-overlay")
-      .append("circle")
-      .attr("class", "hands-cover")
-      .attr("x", 0)
-      .attr("y", 0)
-      .attr("r", clockRadius / 20);
-  }
-  function moveHands() {
-    const sel = d3
-      .select("#clock-hands-final")
-      .selectAll("line")
-      .data(handData)
-      .transition();
-    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
-    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
-  }
-  function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10) : decTimeN[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10 % 1 * 100) : decTimeN.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExactN * 10 % 1 * 100 % 1 * 100 : decTimeN.slice(4, 6);
-  }
-  const svg = d3
-    .create("svg")
-    .attr("viewBox", [0, 0, w, h])
-    .style("max-width", `${width / 2.1}px`)
-    .attr("class", "analogclock")
-    .attr("id", "midclock");
-  svg
-    .append("text")
-    .text(`-${decTimeN}-${selectedZone}`)
-    .attr("x", clockRadius + margin)
-    .attr("y", clockRadius * 2 + margin * 2.1)
-    .attr("text-anchor", "middle")
-    .attr("font-size", 32)
-    .attr("font-family", "monospace");
-  drawClock();
-  // Animation
-  const interval = setInterval(
-    () => {
-      updateData();
-      moveHands();
-    },
-    !fancySecondsOFF ? 10 : 864
-  );
-  invalidation.then(() => clearInterval(interval));
-  return svg.node();
-}
 ```
 :::
 
@@ -757,10 +422,29 @@ clock1 = {
 width
 ```
 
+```{ojs}
+solarNoonTurn = (9.55 + selectedZone / 10 - lonTurnMapPlot - eotTurnMapPlot) % 1
+solarNoonMinu = solarNoonTurn * 1440
+```
+
+```{ojs}
+selectedZone / 10
+lonTurnMapPlot
+eotTurnMapPlot
+solarNoonTurn
+shaHalfMapPlot
+solarNoonMinu
+shaDegrMapPlot
+lati2turn(location[1], 0)
+selYda
+getSda(selYda)
+latInput / 1000
+```
+
 ## Yearly day aggregate (yda) {#yda .hiddenheading}
 
 The red<font color=red>—</font>line indicates a "day of year" ([doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}), \${selDateHsl}, and the red🔴dot denotes a "time of day" ([tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}): \${selTimeDay}. A [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} identifies a day in a year like a [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world) month and "day of month" ([dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}). A [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} specifies a point in a day like an "hour minute second" ([hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"}) triplet.
-Together, a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can form a "yearly day aggregate" ([yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}): \${selSnapDay}.
+Together, a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can form a "yearly day aggregate" ([yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}): \${selYdaDay}.
 
 $$\text{yda} = \text{doy} + \text{tod}$$
 
@@ -1186,6 +870,11 @@ viewof latInput = Inputs.range([-250, 250], {label: "Latitude", value: 0, step: 
 viewof doyInput = Inputs.range([0, 365], {label: "Day of year", value: 183, step: 1})
 ```
 
+```{ojs}
+daytimeDuration
+latInput / 1000
+```
+
 Like other trigonometric functions, the [arcosine](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=y%20%E2%89%A4%2090%C2%B0-,arccosine,-y%20%3D%20arccos) function returns radians. We can divide by $\tau$ to convert radians to turns. After converting the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} to turns, we can sum it with the solar noon to get the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} or subtract it from the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to obtain the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The sunrise and sunset [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} are equidistant from the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
 
 $$\text{sunset} = \text{noon} + \text{sha} \div \tau$$
@@ -1298,7 +987,7 @@ function getSha(latitude, solarDeclinationAngle, solarZenithAngle = 0.252314) {
   const ratio = (
     costau(.252314) - sintau(latitude) * sintau(solarDeclinationAngle)) / (
     costau(latitude) * costau(solarDeclinationAngle))
-  return ratio >= 1 ? Math.PI : ratio <= -1 ? 0 : Math.acos(ratio)
+  return ratio >= 1 ? 0 : ratio <= -1 ? Math.PI : Math.acos(ratio)
 }
 cospi = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cospi@umd/browser.js' )
 sinpi = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-sinpi@umd/browser.js' )
@@ -1308,8 +997,17 @@ function sintau(turn) {
 function costau(turn) {
   return cospi(2 * turn);
 }
-sha = getSha(latInput / 1000, getSda(doyInput))
-daytimeDuration = sha / Math.PI
+shaRadiMapPlot = getSha(latTurnMapPlot, getSda(selYda))
+shaHalfMapPlot = shaRadiMapPlot / Math.PI
+shaTurnMapPlot = shaHalfMapPlot / 2
+shaDegrMapPlot = shaHalfMapPlot * 180
+eotTurnMapPlot = getEot(selYda) / 1000
+lonTurnMapPlot = long2turn(location[0], 0)
+latTurnMapPlot = lati2turn(location[1], 0)
+astDecMapPlot = (0.95 + zeroTime + lonTurnMapPlot + eotTurnMapPlot) % 1 * 10
+astDegMapPlot = astDecMapPlot * 36
+shaDoyInput = getSha(latInput / 1000, getSda(doyInput))
+daytimeDuration = shaDoyInput / Math.PI
 noonDiff = daytimeDuration / 2
 dz = unix2dote(now)
 decYear = ydz[0].toString().padStart(4, "0")
@@ -1423,7 +1121,7 @@ solarSystem = (root, vizwidth, location, date, hour, darkmode) => {
         .attr("y1", (solarSystemRadius + 9) * stretch * Math.cos(angle))
         .attr("x2", (solarSystemRadius - 9) * Math.sin(angle))
         .attr("y2", (solarSystemRadius - 9) * stretch * Math.cos(angle))
-        .attr("stroke-width", "1.75")
+        .attr("stroke-width", "3.75")
         .attr("stroke", "black");
       const startMonthAngle = getSolarAngle(new Date(date.getFullYear(), m, 1));
       solarSystem
@@ -1432,7 +1130,7 @@ solarSystem = (root, vizwidth, location, date, hour, darkmode) => {
         .attr("x", (solarSystemRadius + 18 - width / 50) * Math.sin(startMonthAngle) * 1.1)
         .attr(
           "y",
-          (solarSystemRadius + 2 - width / 3) * 6.2 * stretch * Math.cos(startMonthAngle) + Math.sign(Math.cos(startMonthAngle)) * 12
+          (solarSystemRadius + 2 - width / 2.8) * 6.2 * stretch * Math.cos(startMonthAngle) + Math.sign(Math.cos(startMonthAngle)) * 12
         )
         .attr("text-anchor", "middle")
         .attr("dominant-baseline", "middle")
@@ -1623,7 +1321,7 @@ daylightPlot = (
     .append("text")
     .text("Time of day")
     .attr("x", margin.bottom + (width < 275 ? -102 : width < 300 ? -106 : width < 325 ? -108 : width < 350 ? -115 : width < 375 ? -120 : width < 400 ? -128 : width < 425 ? -130 : width < 450 ? -132 : width < 475 ? -136 : width < 500 ? -141 : width < 525 ? -142 : width < 550 ? -148 : width < 575 ? -149 : width < 600 ? -154 : width < 650 ? -157 : width < 675 ? -157 : width < 700 ? -161 : width < 725 ? -160 : width < 750 ? -165 : width < 775 ? -160 : width < 875 ? -165 : width < 975 ? -185 : width < 975 ? -205 : width < 975 ? -225 : width < 975 ? -245 : width < 1075 ? -265 : width < 1175 ? -265 : -285))
-    .attr("y", margin.top - (width < 400 ? 33 : width < 500 ? 35 : width < 600 ? 37 : width < 700 ? 40 : 42))
+    .attr("y", margin.top - (width < 275 ? 12 : width < 300 ? 16 : width < 325 ? 17 : width < 350 ? 18 : width < 375 ? 19 : width < 400 ? 20 : width < 425 ? 21 : width < 450 ? 22 : width < 475 ? 23 : width < 500 ? 24 : width < 525 ? 25 : width < 550 ? 26 : width < 575 ? 27 : width < 600 ? 28 : width < 650 ? 29 : width < 675 ? 30 : width < 700 ? 31 : width < 725 ? 32 : width < 750 ? 33 : width < 775 ? 34 : width < 875 ? 35 : width < 975 ? 36 : width < 975 ? 37 : width < 975 ? 38 : width < 975 ? 39 : width < 1075 ? 48 : width < 1175 ? 52 : 64))
     .attr("text-anchor", "middle")
     .attr("font-size", fontSize * (width < 300 ? .8 : width < 400 ? .9 : width < 500 ? 1 : width < 600 ? 1.1 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
@@ -1674,30 +1372,30 @@ daylightPlot = (
   legend
     .append("rect")
     .attr("x", width < 300 ? 63 : width < 500 ? 62 : width < 600 ? 61 : width < 700 ? 51 : width < 800 ? 41 : 30)
-    .attr("y", width < 450 ? 8 : width < 850 ? 1 : -5)
+    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 420 : width < 700 ? 21 : 504)
     .attr("rx", 5)
     .attr("width", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("height", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("fill", mapcolors.day);
   legend
     .append("text")
-    .attr("x", width < 400 ? 82 : width < 500 ? 85 : width < 600 ? 77 : width < 700 ? 67 : width < 800 ? 57 : width < 900 ? 47 : 40)
-    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 20 : width < 700 ? 21 : 23)
+    .attr("x", width < 275 ? 1 : width < 300 ? 2 : width < 325 ? 3 : width < 350 ? 4 : width < 375 ? 5 : width < 400 ? 6 : width < 450 ? 7 : width < 475 ? 8 : width < 500 ? 9 : width < 550 ? 10 : width < 600 ? 11 : width < 650 ? 12 : width < 700 ? 13 : width < 750 ? 14 : width < 850 ? 15 : width < 950 ? 18 : width < 1050 ? 16 : width < 1150 ? 32 : width < 1250 ? 48 : width < 1350 ? 64 : 68)
+    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 520 : width < 700 ? 21 : 530)
     .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
     .text("Day");
   legend
     .append("rect")
     .attr("x", width < 400 ? -10 : width < 500 ? -20 : width < 600 ? -40 : width < 700 ? -60 : width < 800 ? -80 : -109)
-    .attr("y", width < 450 ? 8 : width < 850 ? 1 : -5)
+    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 420 : width < 700 ? 21 : 504)
     .attr("rx", 5)
     .attr("width", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("height", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("fill", mapcolors.night);
   legend
     .append("text")
-    .attr("x", width < 400 ? 11 : width < 500 ? 4 : width < 600 ? -12 : -48)
-    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 9 : width < 700 ? -1 : -3)
+    .attr("x", width < 275 ? 9 : width < 300 ? 8 : width < 325 ? 7 : width < 350 ? 6 : width < 375 ? 5 : width < 400 ? 4 : width < 450 ? 3 : width < 475 ? 2 : width < 500 ? 1 : width < 550 ? 0 : width < 600 ? -1 : width < 650 ? -2 : width < 700 ? -3 : width < 750 ? -4 : width < 850 ? -5 : width < 950 ? -8 : width < 1050 ? -16 : width < 1150 ? -32 : width < 1250 ? -48 : width < 1350 ? -64 : -70)
+    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 520 : width < 700 ? 21 : 530)
     .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
     .text("Night");
@@ -2113,7 +1811,7 @@ selDate = Math.floor(dote2date(...selDote)[1])
 selTime = selectedHour / 24
 selTimeOne = selTime % 1
 selTimeTen = selTime * 10 % 10
-selSnap = selDate + selTime
+selYda = selDate + selTime
 selLati = lati2turn(location[1])
 decDodHsl = textcolor(decDod, d3.color(piecewiseColor(decDod / 10)).formatHex())
 decDateHsl = textcolor(decDate.toString().padStart(3, "0"), d3.color(piecewiseColor(decDate / (365 + isLeapYear(decYear)))).formatHex())
@@ -2124,12 +1822,11 @@ selTimeDay = textcolor(selTimeOne.toFixed(3).slice(2), d3.color(piecewiseColor(s
 selTimeHsl0 = textcolor(selTimeTen.toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
 selTimeHsl1 = textcolor(selTimeTen.toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
 selZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
-selSnapDay = textcolor(selSnap.toFixed(3).padStart(6, "0"), d3.color(piecewiseColor(selSnap / 365)).formatHex())
-selSnapDec = textcolor((selSnap * 10).toFixed(4).padStart(9, "0"), d3.color(piecewiseColor(selSnap / 365)).formatHex())
+selYdaDay = textcolor(selYda.toFixed(3).padStart(6, "0"), d3.color(piecewiseColor(selYda / 365)).formatHex())
+selYdaDec = textcolor((selYda * 10).toFixed(4).padStart(9, "0"), d3.color(piecewiseColor(selYda / 365)).formatHex())
 decZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
-viewof selectedDate = Inputs.input(date2022)
-viewof selectedHour = Inputs.input(date2022.getHours())
-date2022 = new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours())
+viewof selectedDate = Inputs.input(new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours()))
+viewof selectedHour = Inputs.input(new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours()).getHours())
 function set(input, value) {
   input.value = value;
   input.dispatchEvent(new Event("input", {bubbles: true}));
@@ -2166,24 +1863,6 @@ sortedPop = populationByTimeZone.sort(
 sortFunc = sortParams[0] ? d3.ascending : d3.descending
 popBySign = d3.rollup(sortedPop, v => d3.sum(v, d => d.pop / 1e9), d => d.Sign)
 totalPop = d3.sum(sortedPop, d => d.pop / 1e9)
-dzOff = unix2dote(now, offset)
-ydzOff = dote2date(...dzOff)
-decTimeOff = ydzOff[1] % 1
-decSignOff = offset < 0 ? "+" : "–"
-decOffsetPosi = (offset + 10) % 10
-decOffsetNega = decOffsetPosi - 10
-decOffsetHsl0 = textcolor(Math.abs(offset), `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decOffsetHsl1 = textcolor(Math.abs(offset), `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decOffsetHsl2 = textcolor(offset, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decOffsetHslP = textcolor(decOffsetPosi, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decOffsetHslN = textcolor(decOffsetNega, `hsl(${d3.hsl(piecewiseColor(decOffsetPosi / 10)).h}` + slStr)
-decTimeOffHsl0 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl1 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl2 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffHsl3 = textcolor((decTimeOff * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffLeapNum = offset * 320 + 1
-decTimeOffLeapTodHsl = textcolor((decTimeOff * 10 + 1 / 320).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeOff)).h}` + slStr)
-decTimeOffLeapTzoHsl = textcolor(`${decTimeOffLeapNum}/320`, `hsl(${d3.hsl(piecewiseColor((decTimeOffLeapNum / 320 + 10) % 10 / 10)).h}` + slStr)
 utcOffsetM = -(new Date).getTimezoneOffset()
 utcOffsetD = utcOffsetM / 144
 utcOffsetP = (utcOffsetD + 10) % 10
@@ -2256,11 +1935,6 @@ longInputHsl = textcolor(lonInput, d3.color(piecewiseColor(lonInput / 10)).forma
 eot = getEot(leapSecondDate)
 astTzo = eot + lonInput
 astTzoHsl = textcolor(astTzo.toFixed(4), d3.color(piecewiseColor(astTzo / 10)).formatHex())
-solarNoon = (5 - astTzo + 10) % 10
-solarNoonHsl = textcolor(solarNoon.toFixed(4), d3.color(piecewiseColor(solarNoon / 10)).formatHex())
-solarDiff = zeroTime - solarNoon
-solarSign = solarDiff < 0 ? "-" : "+"
-solarDiffHsl = textcolor(Math.abs(solarDiff).toFixed(4), d3.color(piecewiseColor((solarDiff + 10) % 10 / 10)).formatHex())
 eotHsl = textcolor(eot.toFixed(4), d3.color(piecewiseColor(eot / 10)).formatHex())
 eotSum = (zeroTime + astTzo + 10) % 10
 eotSumHsl = textcolor(eotSum.toFixed(4), d3.color(piecewiseColor(eotSum / 10)).formatHex())
@@ -2344,15 +2018,361 @@ class Interval {
     this.depth = depth;
   }
 }
+colors = ({
+  night: "#719fb6",
+  day: "#ffe438",
+  grid: "#4b6a79",
+  ocean: "lightblue",
+  land: "#f5f1dc",
+  sun: "#ffe438"
+})
+// https://observablehq.com/@d3/simple-clock
+// https://observablehq.com/@drio/lets-build-an-analog-clock
+clock = {
+  const clockRadius = 200,
+    margin = 50,
+    w = (clockRadius + margin) * 2,
+    h = (clockRadius + margin) * 2,
+    hourHandLength = (2 * clockRadius) / 3,
+    minuteHandLength = clockRadius,
+    secondHandLength = clockRadius - 12,
+    secondHandBalance = 30,
+    secondTickStart = clockRadius,
+    secondTickLength = -10,
+    hourTickStart = clockRadius,
+    hourTickLength = -18,
+    secondLabelRadius = clockRadius + 16,
+    secondLabelYOffset = 5,
+    hourLabelRadius = clockRadius - 40,
+    hourLabelYOffset = 7,
+    radians = Math.PI / 180;
+  const ten = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 10]);
+  const sto = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 100]);
+  const handData = [
+    {
+      type: "hour",
+      value: 0,
+      length: -hourHandLength,
+      scale: ten
+    },
+    {
+      type: "minute",
+      value: 0,
+      length: -minuteHandLength,
+      scale: sto
+    },
+    {
+      type: "second",
+      value: 0,
+      length: -secondHandLength,
+      scale: sto,
+      balance: secondHandBalance
+    }
+  ];
+  function drawClock() {
+    // create all the clock elements
+    updateData(); //draw them in the correct starting position
+    const face = svg
+      .append("g")
+      .attr("id", "clock-face")
+      .attr("transform", `translate(${[w / 2, h / 2]})`);
+    // add marks for seconds
+    face
+      .selectAll(".second-tick")
+      .data(d3.range(0, 100))
+      .enter()
+      .append("line")
+      .attr("class", "second-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", secondTickStart)
+      .attr("y2", secondTickStart + secondTickLength)
+      .attr("transform", d => `rotate(${sto(d)})`);
+    // and labels...
+    face
+      .selectAll(".second-label")
+      .data(d3.range(0, 100, 5))
+      .enter()
+      .append("text")
+      .attr("class", "second-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
+      .attr(
+        "y",
+        d =>
+          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
+      )
+      .text(d => d);
+    // ... and hours
+    face
+      .selectAll(".hour-tick")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("line")
+      .attr("class", "hour-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", hourTickStart)
+      .attr("y2", hourTickStart + hourTickLength)
+      .attr("transform", d => `rotate(${ten(d)})`);
+    face
+      .selectAll(".hour-label")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("text")
+      .attr("class", "hour-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
+      .attr(
+        "y",
+        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
+      )
+      .text(d => d);
+    const hands = face.append("g").attr("id", "clock-hands");
+    hands
+      .selectAll("line")
+      .data(handData)
+      .enter()
+      .append("line")
+      .attr("class", d => d.type + "-hand")
+      .attr("x1", 0)
+      .attr("y1", d => d.balance || 0)
+      .attr("x2", 0)
+      .attr("y2", d => d.length)
+      .attr("transform", d => `rotate(${d.scale(d.value)})`);
+    face
+      .append("g")
+      .attr("id", "face-overlay")
+      .append("circle")
+      .attr("class", "hands-cover")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("r", clockRadius / 20);
+  }
+  function moveHands() {
+    const sel = d3
+      .select("#clock-hands-final")
+      .selectAll("line")
+      .data(handData)
+      .transition();
+    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
+    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
+  }
+  function updateData() {
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : decTime[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : decTime.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : decTime.slice(4, 6);
+  }
+  const svg = d3
+    .create("svg")
+    .attr("viewBox", [0, 0, w, h])
+    .style("max-width", `${width / 2.1}px`)
+    .attr("class", "analogclock")
+    .attr("id", "topclock");
+  svg
+    .append("text")
+    .text(`+${decTime}-${selectedZone}`)
+    .attr("x", clockRadius + margin)
+    .attr("y", clockRadius * 2 + margin * 2.1)
+    .attr("text-anchor", "middle")
+    .attr("font-size", 32)
+    .attr("font-family", "monospace");
+  drawClock();
+  // Animation
+  const interval = setInterval(
+    () => {
+      updateData();
+      moveHands();
+    },
+    !fancySecondsOFF ? 10 : 864
+  );
+  invalidation.then(() => clearInterval(interval));
+  return svg.node();
+}
+clock1 = {
+  const clockRadius = 200,
+    margin = 50,
+    w = (clockRadius + margin) * 2,
+    h = (clockRadius + margin) * 2,
+    hourHandLength = (2 * clockRadius) / 3,
+    minuteHandLength = clockRadius,
+    secondHandLength = clockRadius - 12,
+    secondHandBalance = 30,
+    secondTickStart = clockRadius,
+    secondTickLength = -10,
+    hourTickStart = clockRadius,
+    hourTickLength = -18,
+    secondLabelRadius = clockRadius + 16,
+    secondLabelYOffset = 5,
+    hourLabelRadius = clockRadius - 40,
+    hourLabelYOffset = 7,
+    radians = Math.PI / 180;
+  const ten = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 10]);
+  const sto = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 100]);
+  const handData = [
+    {
+      type: "hour",
+      value: 0,
+      length: -hourHandLength,
+      scale: ten
+    },
+    {
+      type: "minute",
+      value: 0,
+      length: -minuteHandLength,
+      scale: sto
+    },
+    {
+      type: "second",
+      value: 0,
+      length: -secondHandLength,
+      scale: sto,
+      balance: secondHandBalance
+    }
+  ];
+  function drawClock() {
+    // create all the clock elements
+    updateData(); //draw them in the correct starting position
+    const face = svg
+      .append("g")
+      .attr("id", "clock-face")
+      .attr("transform", `translate(${[w / 2, h / 2]})`);
+    // add marks for seconds
+    face
+      .selectAll(".second-tick")
+      .data(d3.range(0, 100))
+      .enter()
+      .append("line")
+      .attr("class", "second-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", secondTickStart)
+      .attr("y2", secondTickStart + secondTickLength)
+      .attr("transform", d => `rotate(${sto(d)})`);
+    // and labels...
+    face
+      .selectAll(".second-label")
+      .data(d3.range(0, 100, 5))
+      .enter()
+      .append("text")
+      .attr("class", "second-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
+      .attr(
+        "y",
+        d =>
+          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
+      )
+      .text(d => d);
+    // ... and hours
+    face
+      .selectAll(".hour-tick")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("line")
+      .attr("class", "hour-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", hourTickStart)
+      .attr("y2", hourTickStart + hourTickLength)
+      .attr("transform", d => `rotate(${ten(d)})`);
+    face
+      .selectAll(".hour-label")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("text")
+      .attr("class", "hour-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
+      .attr(
+        "y",
+        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
+      )
+      .text(d => d);
+    const hands = face.append("g").attr("id", "clock-hands");
+    hands
+      .selectAll("line")
+      .data(handData)
+      .enter()
+      .append("line")
+      .attr("class", d => d.type + "-hand")
+      .attr("x1", 0)
+      .attr("y1", d => d.balance || 0)
+      .attr("x2", 0)
+      .attr("y2", d => d.length)
+      .attr("transform", d => `rotate(${d.scale(d.value)})`);
+    face
+      .append("g")
+      .attr("id", "face-overlay")
+      .append("circle")
+      .attr("class", "hands-cover")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("r", clockRadius / 20);
+  }
+  function moveHands() {
+    const sel = d3
+      .select("#clock-hands-final")
+      .selectAll("line")
+      .data(handData)
+      .transition();
+    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
+    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
+  }
+  function updateData() {
+    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10) : decTimeN[0];
+    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10 % 1 * 100) : decTimeN.slice(2, 4);
+    handData[2].value = !fancySecondsOFF ? selectedExactN * 10 % 1 * 100 % 1 * 100 : decTimeN.slice(4, 6);
+  }
+  const svg = d3
+    .create("svg")
+    .attr("viewBox", [0, 0, w, h])
+    .style("max-width", `${width / 2.1}px`)
+    .attr("class", "analogclock")
+    .attr("id", "midclock");
+  svg
+    .append("text")
+    .text(`-${decTimeN}-${selectedZone}`)
+    .attr("x", clockRadius + margin)
+    .attr("y", clockRadius * 2 + margin * 2.1)
+    .attr("text-anchor", "middle")
+    .attr("font-size", 32)
+    .attr("font-family", "monospace");
+  drawClock();
+  // Animation
+  const interval = setInterval(
+    () => {
+      updateData();
+      moveHands();
+    },
+    !fancySecondsOFF ? 10 : 864
+  );
+  invalidation.then(() => clearInterval(interval));
+  return svg.node();
+}
+```
+
+```{ojs}
+//| echo: false
+//| output: false
 // https://observablehq.com/@ldgrp/apple-watch-solar-dial-simulation
 sunclock = {
   const radius = 200;
   const width = radius * 2;
   const height = radius * 2;
-  const { minutes: _minutes, seconds } = minutesAndSeconds;
   //let _minutes = 0;
-  const minutes = changed ? travel : _minutes;
-  const minutesDegrees = (minutes / 1440) * 360;
   const svg = d3
     .create("svg")
     .attr("id", "btmclock")
@@ -2374,8 +2394,8 @@ sunclock = {
   const sun = face
     .append("circle")
     .attr("r", 15)
-    .attr("cx", 125 * -sin(minutesDegrees))
-    .attr("cy", 125 * cos(minutesDegrees))
+    .attr("cx", 125 * -sin(astDegMapPlot))
+    .attr("cy", 125 * cos(astDegMapPlot))
     .style("fill", "white");
   const ringContainer = svg
     .append("g")
@@ -2411,8 +2431,8 @@ sunclock = {
     .append("g")
     .attr(
       "transform",
-      `translate(${width / 2 + 45 * sin(minutesDegrees)}, ${
-        height / 2 + 45 * -cos(minutesDegrees)
+      `translate(${width / 2 + 45 * sin(astDegMapPlot)}, ${
+        height / 2 + 45 * -cos(astDegMapPlot)
       })`
     );
   const digitalClockBase = digitalClock
@@ -2445,7 +2465,7 @@ sunclock = {
     .style("opacity", 1)
     .attr("font-weight", 600)
     .attr("font-size", "75px")
-    .text(minutesTo12HourTime(minutes));
+    .text(astDecMapPlot.toFixed(2));
   const ticks = face
     .selectAll(".tick")
     .data(d3.range(0, 20))
@@ -2509,19 +2529,6 @@ function minutesTo12HourTime(minutes) {
   const decidays = minutes / 144 % 10
   return decidays.toFixed(2);
 }
-viewof changed = Inputs.input(false)
-viewof travel = {
-  const input = Inputs.range([0, 1440], {
-    label: "Time Travel",
-    step: 1,
-    value: new Date().getHours() * 60 + new Date().getMinutes()
-  });
-  input.oninput = (x) => {
-    if (!changed) set(viewof changed, true);
-  };
-  return input;
-}
-viewof reset = Inputs.button([["Reset", () => set(viewof changed, false)]])
 viewof date = Inputs.date({ label: "Date", value: Date.now() })
 JD = getJulianDate(date)
 T = (JD - 2451545.0) / 36525
@@ -2550,13 +2557,8 @@ equation_of_time = toDegrees(
     (1 / 2) * y ** 2 * sin(4 * (sun_geometric_mean_longitude)) -
     (5 / 4) * earth_eccentricity_orbit ** 2 * sin(2 * (sun_mean_anomaly))
 ) * 4
-hour_angle = toDegrees(
-  Math.acos(
-    (sin(-0.833) - sin(latitude) * Math.sin(sun_declination)) /
-      (cos(latitude) * Math.cos(sun_declination))
-  )
-)
-sun_transit = 720 - 4 * longitude - equation_of_time + timezone * 60
+hour_angle = shaDegrMapPlot
+sun_transit = solarNoonMinu
 sun_rise = sun_transit - hour_angle * 4
 sun_set = sun_transit + hour_angle * 4
 sun_duration = sun_set - sun_rise
@@ -2612,38 +2614,8 @@ angles = [
 getJulianDate = (timestamp) => {
   return new Date(timestamp) / 86400000 + 2440587.5;
 }
-getDateFromSun = (v) => {
-  var d = new Date();
-  d.setHours(v / 60);
-  d.setMinutes(v % 60);
-  d.setSeconds((v / 60) % 60);
-  return d.toLocaleString();
-}
 sin = (x) => Math.sin(toRadians(x))
 cos = (x) => Math.cos(toRadians(x))
-m_ = {
-  let lastMinutes = undefined;
-  let { minutes } = minutesAndSeconds;
-  if (lastMinutes !== minutes) {
-    lastMinutes = minutes;
-    yield minutes;
-  } else {}
-}
-longitude = location[0]
-latitude = location[1]
-getTimezoneFromLatLng = (lat, lng) => {
-  const point = turf.point([lng, lat]);
-  for (const feature of zones) {
-    if (turf.booleanPointInPolygon(point, feature)) {
-      return feature.properties.zone;
-    }
-  }
-  return null;
-}
-timezone = getTimezoneFromLatLng(latitude, longitude)
-import { timezones } from "@mbostock/time-zones"
-zones = topojson.feature(timezones, timezones.objects.timezones).features
-turf = require("@turf/turf@5")
 ```
 
 ```{ojs}
@@ -2932,7 +2904,7 @@ html`
   font-family: monospace;
 }
 .clocks {
-  margin-top: ${width > 500 ? -62 : width > 400 ? 80 : 0}px;
+  margin-top: ${width < 300 ? 2 : width < 400 ? 10 : width < 500 ? 8 : width < 600 ? 0 : width < 700 ? 4 : width < 800 ? 50 : width < 900 ? 52 : width < 1000 ? 54 : width < 1100 ? 56 : width < 1200 ? 78 : 84}px;
 }
 </style>
 `
@@ -2940,9 +2912,6 @@ html`
 
 ```{=html}
 <style>
-.clocks {
-  overflow: visible;
-}
 .btmclock {
   overflow: visible;
 }
@@ -2957,7 +2926,7 @@ div.cell:has(form#formEl) {
   margin-top: -58px;
 }
 form#formEl canvas {
-  max-width: 92%;
+  max-width: 100%;
 }
 svg.barclock {
   width: 100%;
