@@ -55,7 +55,7 @@ engine: knitr
 
 My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the [bar📊charts](https://en.wikipedia.org/wiki/Bar_chart) clocks🕓, [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺, [Earth🌍orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit) diagram, and [daylight](https://en.wikipedia.org/wiki/Daylight#:~:text=the%20combination%20of%20all%20direct%20and%20indirect%20sunlight%20during%20the%20daytime) [area chart](https://en.wikipedia.org/wiki/Area_chart#:~:text=The%20area%20between%20axis%20and%20line%20are%20commonly%20emphasized%20with%20colors) below.
 
-Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day). The shortest, longest, and thinnest clock🕓hands and the top, middle, and bottom bars📊indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, [+\${decTime}]{.point1}, or until the end, [-\${decTimeN}]{.point0}, of the day in the Dec [time zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time), \${decZoneHsl}, at the location of the red⭕️circle on the map🗺️beneath the bars📊.
+Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day), often using [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) like [deci](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20decimal%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20tenth), [centi](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20hundredth), or [milli](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20thousandth). The top, middle, and bottom bars📊indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=1.44%20minutes%2C%20or%2086.4%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=which%20would%20be-,1/100%2C000%20day,-%2C%20or%20864%20milliseconds){.tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, [+\${decTime}]{.point1}, or until the end, [-\${decTimeN}]{.point0}, of the day in the Dec [time zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time), \${decZoneHsl}, at the location of the red⭕️circle on the map🗺️beneath the bars📊.
 
 To rotate the globe🌐in the Earth🌏orbit diagram, drag the red⭕️circle horizontally↔️or slide the red🔴dot on the daylight area chart vertically↕. The red⭕️circle's vertical↕position determines the yearly daylight pattern visualized by the area chart. Shift the red<font color=red>—</font>line on the area chart horizontally↔️to move the globe🌐along the ellipse of the Earth🌎orbit.
 
@@ -339,7 +339,7 @@ barChart1 = {
 ::: {.column-page}
 ```{ojs}
 //| echo: false
-viewof location = worldMapCoordinates([162, 0], [width * .998, ((21 / 40) * width)])
+viewof location = worldMapCoordinates([162, 0], [Math.min(width * .96, 1305), Math.min((21 / 40) * width, 684)])
 ```
 :::
 
@@ -401,7 +401,7 @@ app = {
   }
   const plot = svg.append("g")
     .attr("id", "plot")
-    .attr("transform", `translate(${margin.left + 0}, ${width < 500 ? -72 : width < 600 ? -76 : width < 700 ? -75 : width < 800 ? -74 : width < 900 ? -73 : width < 900 ? -72 : width < 1000 ? -71 : width < 1100 ? -70 : width < 1100 ? -78 : -76})`);
+    .attr("transform", `translate(${margin.left + (width < 500 ? 26 : width < 600 ? 24 : width < 700 ? 22 : width < 800 ? 20 : width < 900 ? 18 : width < 950 ? 16 : width < 1000 ? 15 : width < 1100 ? 12 : width < 1200 ? 10 : 0)}, ${width < 500 ? -4 : width < 600 ? -12 : width < 700 ? -20 : width < 800 ? -28 : width < 900 ? -36 : width < 950 ? -48 : width < 1000 ? -52 : width < 1100 ? -60 : width < 1200 ? -68 : -76})`);
   svg.append("g")
     .attr("id", "solar-system")
     .attr("transform", `translate(${margin.left + 12}, ${margin.top + height / 1.6 + 6 + 5 * (width < 400)})`);
@@ -420,25 +420,6 @@ app = {
 
 ```{ojs}
 width
-```
-
-```{ojs}
-solarNoonTurn = (9.55 + selectedZone / 10 - lonTurnMapPlot - eotTurnMapPlot) % 1
-solarNoonMinu = solarNoonTurn * 1440
-```
-
-```{ojs}
-selectedZone / 10
-lonTurnMapPlot
-eotTurnMapPlot
-solarNoonTurn
-shaHalfMapPlot
-solarNoonMinu
-shaDegrMapPlot
-lati2turn(location[1], 0)
-selYda
-getSda(selYda)
-latInput / 1000
 ```
 
 ## Yearly day aggregate (yda) {#yda .hiddenheading}
@@ -779,7 +760,7 @@ sincos(0.5)
 
 The code above compares two functions which return both the [sine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20side%20opposite%20that%20angle%20to%20the%20length%20of%20the%20longest%20side%20of%20the%20triangle) and [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse) of their input. The sincos() function assumes it will receive radians and the sincostau() works with turns. In general, working with turns is more convenient and intuitive. The examples above demonstrate that using turns instead of radians can [yield more accurate results](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages).
 
-The values below are the coefficients of a model adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), we need to convert eot([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) values from minutes to [centidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}, combine [ymd]{.tool data-bs-toggle="tooltip" data-bs-title="year month day"} triplet dates and [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet times into [ydas]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregates"}, and sort by [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}.
+The values below are the coefficients of a model adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), we need to convert eot([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) values from minutes to [centidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=14.4%20minutes%2C%20or%20864%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}, combine [ymd]{.tool data-bs-toggle="tooltip" data-bs-title="year month day"} triplet dates and [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet times into [ydas]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregates"}, and sort by [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}.
 
 {{< embed eot.ipynb#eot >}}
 
@@ -1320,8 +1301,8 @@ daylightPlot = (
   root
     .append("text")
     .text("Time of day")
-    .attr("x", margin.bottom + (width < 275 ? -102 : width < 300 ? -106 : width < 325 ? -108 : width < 350 ? -115 : width < 375 ? -120 : width < 400 ? -128 : width < 425 ? -130 : width < 450 ? -132 : width < 475 ? -136 : width < 500 ? -141 : width < 525 ? -142 : width < 550 ? -148 : width < 575 ? -149 : width < 600 ? -154 : width < 650 ? -157 : width < 675 ? -157 : width < 700 ? -161 : width < 725 ? -160 : width < 750 ? -165 : width < 775 ? -160 : width < 875 ? -165 : width < 975 ? -185 : width < 975 ? -205 : width < 975 ? -225 : width < 975 ? -245 : width < 1075 ? -265 : width < 1175 ? -265 : -285))
-    .attr("y", margin.top - (width < 275 ? 12 : width < 300 ? 16 : width < 325 ? 17 : width < 350 ? 18 : width < 375 ? 19 : width < 400 ? 20 : width < 425 ? 21 : width < 450 ? 22 : width < 475 ? 23 : width < 500 ? 24 : width < 525 ? 25 : width < 550 ? 26 : width < 575 ? 27 : width < 600 ? 28 : width < 650 ? 29 : width < 675 ? 30 : width < 700 ? 31 : width < 725 ? 32 : width < 750 ? 33 : width < 775 ? 34 : width < 875 ? 35 : width < 975 ? 36 : width < 975 ? 37 : width < 975 ? 38 : width < 975 ? 39 : width < 1075 ? 48 : width < 1175 ? 52 : 64))
+    .attr("x", margin.bottom + (width < 275 ? -102 : width < 300 ? -106 : width < 325 ? -108 : width < 350 ? -115 : width < 375 ? -120 : width < 400 ? -128 : width < 425 ? -130 : width < 450 ? -132 : width < 475 ? -136 : width < 500 ? -141 : width < 525 ? -142 : width < 550 ? -148 : width < 575 ? -149 : width < 600 ? -154 : width < 650 ? -157 : width < 675 ? -162 : width < 700 ? -166 : width < 725 ? -165 : width < 750 ? -170 : width < 775 ? -185 : width < 875 ? -190 : width < 975 ? -200 : width < 1025 ? -225 : width < 1075 ? -245 : width < 1125 ? -265 : width < 1175 ? -285 : width < 1275 ? -305 : -285))
+    .attr("y", margin.top - (width < 275 ? 12 : width < 300 ? 16 : width < 325 ? 17 : width < 350 ? 18 : width < 375 ? 19 : width < 400 ? 20 : width < 425 ? 21 : width < 450 ? 22 : width < 475 ? 23 : width < 500 ? 24 : width < 525 ? 25 : width < 550 ? 26 : width < 575 ? 27 : width < 600 ? 28 : width < 650 ? 29 : width < 675 ? 30 : width < 700 ? 31 : width < 725 ? 40 : width < 750 ? 49 : width < 775 ? 46 : width < 875 ? 47 : width < 925 ? 52 : width < 975 ? 53 : width < 1025 ? 54 : width < 1075 ? 55 : width < 1175 ? 64 : width < 1275 ? 68 : 64))
     .attr("text-anchor", "middle")
     .attr("font-size", fontSize * (width < 300 ? .8 : width < 400 ? .9 : width < 500 ? 1 : width < 600 ? 1.1 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
@@ -1331,7 +1312,7 @@ daylightPlot = (
     .append("text")
     .text("Day of year")
     .attr("x", margin.left + width / 2 - (width < 500 ? 30 : width < 600 ? 28 : width < 700 ? 24 : 22))
-    .attr("y", margin.top + chartHeight / 4 + margin.bottom + (width < 275 ? 10 : width < 300 ? 18 : width < 325 ? 19 : width < 350 ? 22 : width < 375 ? 30 : width < 400 ? 37 : width < 450 ? 39 : width < 475 ? 40 : width < 500 ? 44 : width < 550 ? 50 : width < 600 ? 51 : width < 650 ? 50 : width < 700 ? 44 : width < 750 ? 40 : width < 850 ? 50 : width < 950 ? 60 : width < 1050 ? 70 : width < 1150 ? 80 : width < 1250 ? 90 : width < 1350 ? 100 : 109))
+    .attr("y", margin.top + chartHeight / 4 + margin.bottom + (width < 275 ? 10 : width < 300 ? 18 : width < 325 ? 19 : width < 350 ? 22 : width < 375 ? 30 : width < 400 ? 37 : width < 450 ? 39 : width < 475 ? 40 : width < 500 ? 44 : width < 550 ? 50 : width < 600 ? 51 : width < 650 ? 45 : width < 700 ? 39 : width < 750 ? 35 : width < 850 ? 45 : width < 950 ? 55 : width < 1050 ? 65 : width < 1150 ? 75 : width < 1250 ? 85 : width < 1350 ? 95 : 109))
     .attr("text-anchor", "middle")
     .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
@@ -1371,31 +1352,31 @@ daylightPlot = (
     .attr("transform", `translate(${margin.left + chartWidth / 2 - 64})`);
   legend
     .append("rect")
-    .attr("x", width < 300 ? 63 : width < 500 ? 62 : width < 600 ? 61 : width < 700 ? 51 : width < 800 ? 41 : 30)
-    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 420 : width < 700 ? 21 : 504)
+    .attr("x", width < 275 ? 1 : width < 300 ? 2 : width < 325 ? 3 : width < 350 ? 4 : width < 375 ? 5 : width < 400 ? 6 : width < 450 ? 7 : width < 475 ? 8 : width < 500 ? 9 : width < 550 ? 10 : width < 600 ? 11 : width < 650 ? 12 : width < 700 ? 13 : width < 750 ? 14 : width < 850 ? 5 : width < 950 ? -6 : width < 1050 ? -12 : width < 1150 ? -12 : width < 1250 ? -12 : width < 1350 ? -12 : -100)
+    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 20 : width < 700 ? 136 : width < 800 ? 215 : width < 900 ? 275 : width < 1000 ? 335 : width < 1100 ? 395 : width < 1200 ? 435 : 504)
     .attr("rx", 5)
     .attr("width", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("height", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("fill", mapcolors.day);
   legend
     .append("text")
-    .attr("x", width < 275 ? 1 : width < 300 ? 2 : width < 325 ? 3 : width < 350 ? 4 : width < 375 ? 5 : width < 400 ? 6 : width < 450 ? 7 : width < 475 ? 8 : width < 500 ? 9 : width < 550 ? 10 : width < 600 ? 11 : width < 650 ? 12 : width < 700 ? 13 : width < 750 ? 14 : width < 850 ? 15 : width < 950 ? 18 : width < 1050 ? 16 : width < 1150 ? 32 : width < 1250 ? 48 : width < 1350 ? 64 : 68)
-    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 520 : width < 700 ? 21 : 530)
+    .attr("x", width < 275 ? 1 : width < 300 ? 2 : width < 325 ? 3 : width < 350 ? 4 : width < 375 ? 5 : width < 400 ? 6 : width < 450 ? 7 : width < 475 ? 8 : width < 500 ? 9 : width < 550 ? 10 : width < 600 ? 11 : width < 650 ? 12 : width < 700 ? 13 : width < 750 ? 14 : width < 850 ? 10 : width < 950 ? 13 : width < 1050 ? 21 : width < 1150 ? 27 : width < 1250 ? 33 : width < 1350 ? 39 : -62)
+    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 20 : width < 700 ? 124 : width < 800 ? 198 : width < 900 ? 258 : width < 1000 ? 358 : width < 1100 ? 418 : width < 1200 ? 458 : 532)
     .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
     .text("Day");
   legend
     .append("rect")
-    .attr("x", width < 400 ? -10 : width < 500 ? -20 : width < 600 ? -40 : width < 700 ? -60 : width < 800 ? -80 : -109)
-    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 420 : width < 700 ? 21 : 504)
+    .attr("x", width < 275 ? -59 : width < 300 ? -58 : width < 325 ? -57 : width < 350 ? -56 : width < 375 ? -55 : width < 400 ? -54 : width < 450 ? -53 : width < 475 ? -52 : width < 500 ? -51 : width < 550 ? -50 : width < 600 ? -51 : width < 650 ? -52 : width < 700 ? -53 : width < 750 ? -74 : width < 850 ? -165 : width < 950 ? -156 : width < 1050 ? -144 : width < 1150 ? -140 : width < 1250 ? -136 : width < 1350 ? -132 : -240)
+    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 20 : width < 700 ? 136 : width < 800 ? 215 : width < 900 ? 275 : width < 1000 ? 335 : width < 1100 ? 395 : width < 1200 ? 435 : 504)
     .attr("rx", 5)
     .attr("width", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("height", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("fill", mapcolors.night);
   legend
     .append("text")
-    .attr("x", width < 275 ? 9 : width < 300 ? 8 : width < 325 ? 7 : width < 350 ? 6 : width < 375 ? 5 : width < 400 ? 4 : width < 450 ? 3 : width < 475 ? 2 : width < 500 ? 1 : width < 550 ? 0 : width < 600 ? -1 : width < 650 ? -2 : width < 700 ? -3 : width < 750 ? -4 : width < 850 ? -5 : width < 950 ? -8 : width < 1050 ? -16 : width < 1150 ? -32 : width < 1250 ? -48 : width < 1350 ? -64 : -70)
-    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 520 : width < 700 ? 21 : 530)
+    .attr("x", width < 275 ? 9 : width < 300 ? 8 : width < 325 ? 7 : width < 350 ? 6 : width < 375 ? 5 : width < 400 ? 4 : width < 450 ? 3 : width < 475 ? 2 : width < 500 ? 1 : width < 550 ? 0 : width < 600 ? -1 : width < 650 ? -2 : width < 700 ? -3 : width < 750 ? -19 : width < 850 ? -120 : width < 950 ? -122 : width < 1050 ? -110 : width < 1150 ? -106 : width < 1250 ? -102 : width < 1350 ? -98 : -201)
+    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 20 : width < 700 ? 124 : width < 800 ? 198 : width < 900 ? 258 : width < 1000 ? 358 : width < 1100 ? 418 : width < 1200 ? 458 : 532)
     .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
     .text("Night");
@@ -1654,7 +1635,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     type: "worldMapCoordinates",
     title,
     description,
-    display: v => (width > 300) ? html`<div style="width: ${width}px; white-space: nowrap; color: window.darkmode ? #fff : #000; text-align: center; font: ${width > 1000 ? width / 50 : width / 40}px monospace; position: relative; top: ${-16 - width / 50}px;  margin-bottom: -.4em;">
+    display: v => (width > 300) ? html`<div style="width: ${width}px; white-space: nowrap; color: window.darkmode ? #fff : #000; text-align: center; font: ${width > 1000 ? width / 50 : width / 40}px monospace; position: relative; top: ${-28 - width / 50}px;  margin-bottom: -.4em;">
             <span style="color: window.darkmode ? #fff : #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
             &nbsp; &nbsp;
             <span style="color: window.darkmode ? #fff : #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
@@ -2616,6 +2597,8 @@ getJulianDate = (timestamp) => {
 }
 sin = (x) => Math.sin(toRadians(x))
 cos = (x) => Math.cos(toRadians(x))
+solarNoonTurn = (9.55 + selectedZone / 10 - lonTurnMapPlot - eotTurnMapPlot) % 1
+solarNoonMinu = solarNoonTurn * 1440
 ```
 
 ```{ojs}
@@ -2904,7 +2887,7 @@ html`
   font-family: monospace;
 }
 .clocks {
-  margin-top: ${width < 300 ? 2 : width < 400 ? 10 : width < 500 ? 8 : width < 600 ? 0 : width < 700 ? 4 : width < 800 ? 50 : width < 900 ? 52 : width < 1000 ? 54 : width < 1100 ? 56 : width < 1200 ? 78 : 84}px;
+  margin-top: ${width < 300 ? 2 : width < 400 ? 10 : width < 500 ? 8 : width < 600 ? 0 : width < 700 ? 4 : width < 800 ? 50 : width < 900 ? 206 : width < 1000 ? 202 : width < 1100 ? 196 : width < 1200 ? 187 : 84}px;
 }
 </style>
 `
@@ -2912,9 +2895,6 @@ html`
 
 ```{=html}
 <style>
-.btmclock {
-  overflow: visible;
-}
 html, body {
     max-width: 100%;
     overflow-x: hidden;
