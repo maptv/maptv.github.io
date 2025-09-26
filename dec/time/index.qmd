@@ -49,9 +49,7 @@ engine: knitr
 {{< include /asset/_decnav.qmd >}}
 :::
 
-::: {.column-margin .clocks}
-\${clock}\${clock1}\${sunclock}
-:::
+{{< include /dec/time/_clock.qmd >}}
 
 My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the [bar📊charts](https://en.wikipedia.org/wiki/Bar_chart) clocks🕓, [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺, [Earth🌍orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit) diagram, and [daylight](https://en.wikipedia.org/wiki/Daylight#:~:text=the%20combination%20of%20all%20direct%20and%20indirect%20sunlight%20during%20the%20daytime) [area chart](https://en.wikipedia.org/wiki/Area_chart#:~:text=The%20area%20between%20axis%20and%20line%20are%20commonly%20emphasized%20with%20colors) below.
 
@@ -363,7 +361,7 @@ app = {
     svg.selectAll("#plot *").remove();
     svg.select("#plot").call(daylightPlot, {
     vizwidth: columnWidth / (width < 300 ? 1 : width < 400 ? 1.05 : width < 450 ? 1.1 : width < 500 ? 1.15 : width < 550 ? 1.2 : width < 600 ? 1.25 : width < 650 ? 1.3 : width < 700 ? 1.4 : 1.48),
-      height: height * (width < 400 ? 1.62 : width < 500 ? 1.6 : width < 700 ? 1.58 : 1.56),
+      height: height * (width < 400 ? 1.62 : width < 500 ? 1.6 : width < 600 ? 1.54 : width < 800 ? 1.54 : width < 900 ? 1.54 : width < 1000 ? 1.54 : width < 1100 ? 1.54 : width < 1200 ? 1.54 : width < 1300 ? 1.54 : width < 1400 ? 1.54 : 1.56),
       year: 2022,
       latitude: location[1],
       defaultDate: selection.date,
@@ -401,7 +399,7 @@ app = {
   }
   const plot = svg.append("g")
     .attr("id", "plot")
-    .attr("transform", `translate(${margin.left + (width < 500 ? 26 : width < 600 ? 24 : width < 700 ? 22 : width < 800 ? 20 : width < 900 ? 18 : width < 950 ? 16 : width < 1000 ? 15 : width < 1100 ? 12 : width < 1200 ? 10 : 0)}, ${width < 500 ? -4 : width < 600 ? -12 : width < 700 ? -20 : width < 800 ? -28 : width < 900 ? -36 : width < 950 ? -48 : width < 1000 ? -52 : width < 1100 ? -60 : width < 1200 ? -68 : -76})`);
+    .attr("transform", `translate(${margin.left + (width < 500 ? 26 : width < 600 ? 24 : width < 700 ? 22 : width < 800 ? 20 : width < 900 ? 18 : width < 950 ? 16 : width < 1000 ? 15 : width < 1100 ? 22 : width < 1200 ? 20 : width < 1300 ? 15 : width < 1400 ? 10 : width < 1500 ? 5 : 0)}, ${width < 500 ? -4 : width < 600 ? -12 : width < 700 ? -20 : width < 800 ? -28 : width < 900 ? -36 : width < 950 ? -44 : width < 1000 ? -48 : width < 1100 ? -52 : width < 1200 ? -54 : width < 1300 ? -56 : width < 1400 ? -60 : width < 1450 ? -62 : -76})`);
   svg.append("g")
     .attr("id", "solar-system")
     .attr("transform", `translate(${margin.left + 12}, ${margin.top + height / 1.6 + 6 + 5 * (width < 400)})`);
@@ -1301,8 +1299,8 @@ daylightPlot = (
   root
     .append("text")
     .text("Time of day")
-    .attr("x", margin.bottom + (width < 275 ? -102 : width < 300 ? -106 : width < 325 ? -108 : width < 350 ? -115 : width < 375 ? -120 : width < 400 ? -128 : width < 425 ? -130 : width < 450 ? -132 : width < 475 ? -136 : width < 500 ? -141 : width < 525 ? -142 : width < 550 ? -148 : width < 575 ? -149 : width < 600 ? -154 : width < 650 ? -157 : width < 675 ? -162 : width < 700 ? -166 : width < 725 ? -165 : width < 750 ? -170 : width < 775 ? -185 : width < 875 ? -190 : width < 975 ? -200 : width < 1025 ? -225 : width < 1075 ? -245 : width < 1125 ? -265 : width < 1175 ? -285 : width < 1275 ? -305 : -285))
-    .attr("y", margin.top - (width < 275 ? 12 : width < 300 ? 16 : width < 325 ? 17 : width < 350 ? 18 : width < 375 ? 19 : width < 400 ? 20 : width < 425 ? 21 : width < 450 ? 22 : width < 475 ? 23 : width < 500 ? 24 : width < 525 ? 25 : width < 550 ? 26 : width < 575 ? 27 : width < 600 ? 28 : width < 650 ? 29 : width < 675 ? 30 : width < 700 ? 31 : width < 725 ? 40 : width < 750 ? 49 : width < 775 ? 46 : width < 875 ? 47 : width < 925 ? 52 : width < 975 ? 53 : width < 1025 ? 54 : width < 1075 ? 55 : width < 1175 ? 64 : width < 1275 ? 68 : 64))
+    .attr("x", -chartHeight / 5 + (width < 275 ? -2 : width < 300 ? -6 : width < 325 ? -8 : width < 350 ? -15 : width < 375 ? -20 : width < 400 ? -28 : width < 425 ? -30 : width < 450 ? -32 : width < 475 ? -36 : width < 500 ? -41 : width < 525 ? -42 : width < 550 ? -48 : width < 575 ? -49 : width < 600 ? -4 : width < 650 ? -7 : width < 675 ? -12 : width < 700 ? -16 : width < 725 ? -15 : width < 750 ? -20 : width < 775 ? -5 : width < 875 ? -3 : width < 975 ? 13 : width < 1025 ? 36 : width < 1075 ? 28 : width < 1125 ? 28 : width < 1175 ? 28 : width < 1275 ? 35 : 32))
+    .attr("y", margin.left - (width < 275 ? 12 : width < 300 ? 16 : width < 325 ? 17 : width < 350 ? 18 : width < 375 ? 19 : width < 400 ? 20 : width < 425 ? 21 : width < 450 ? 22 : width < 475 ? 23 : width < 500 ? 24 : width < 525 ? 25 : width < 550 ? 26 : width < 575 ? 27 : width < 600 ? 28 : width < 650 ? 29 : width < 675 ? 30 : width < 700 ? 31 : width < 725 ? 40 : width < 750 ? 49 : width < 775 ? 46 : width < 875 ? 47 : width < 925 ? 52 : width < 975 ? 53 : width < 1025 ? 54 : width < 1075 ? 55 : width < 1175 ? 64 : width < 1275 ? 68 : 64))
     .attr("text-anchor", "middle")
     .attr("font-size", fontSize * (width < 300 ? .8 : width < 400 ? .9 : width < 500 ? 1 : width < 600 ? 1.1 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
@@ -1352,31 +1350,31 @@ daylightPlot = (
     .attr("transform", `translate(${margin.left + chartWidth / 2 - 64})`);
   legend
     .append("rect")
-    .attr("x", width < 275 ? 1 : width < 300 ? 2 : width < 325 ? 3 : width < 350 ? 4 : width < 375 ? 5 : width < 400 ? 6 : width < 450 ? 7 : width < 475 ? 8 : width < 500 ? 9 : width < 550 ? 10 : width < 600 ? 11 : width < 650 ? 12 : width < 700 ? 13 : width < 750 ? 14 : width < 850 ? 5 : width < 950 ? -6 : width < 1050 ? -12 : width < 1150 ? -12 : width < 1250 ? -12 : width < 1350 ? -12 : -100)
-    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 20 : width < 700 ? 136 : width < 800 ? 215 : width < 900 ? 275 : width < 1000 ? 335 : width < 1100 ? 395 : width < 1200 ? 435 : 504)
+    .attr("x", chartWidth / 20 + (width < 275 ? 1 : width < 300 ? 2 : width < 325 ? 3 : width < 350 ? 4 : width < 375 ? 5 : width < 400 ? 6 : width < 450 ? 7 : width < 475 ? 8 : width < 500 ? 9 : width < 550 ? 10 : width < 600 ? 11 : width < 650 ? 12 : width < 700 ? 13 : width < 750 ? 14 : width < 850 ? 5 : width < 950 ? -6 : width < 1050 ? -8 : width < 1150 ? -8 : width < 1250 ? -8 : width < 1350 ? -8 : width < 1400 ? -8 : -100))
+    .attr("y", chartHeight / 4 + (width < 300 ? 81 : width < 400 ? 82 : width < 450 ? 83 : width < 500 ? 52 : width < 600 ? 54 : width < 700 ? 85 : width < 800 ? 94 : width < 900 ? 99 : width < 1000 ? 109 : width < 1100 ? 139 : width < 1200 ? 179 : 154))
     .attr("rx", 5)
     .attr("width", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("height", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("fill", mapcolors.day);
   legend
     .append("text")
-    .attr("x", width < 275 ? 1 : width < 300 ? 2 : width < 325 ? 3 : width < 350 ? 4 : width < 375 ? 5 : width < 400 ? 6 : width < 450 ? 7 : width < 475 ? 8 : width < 500 ? 9 : width < 550 ? 10 : width < 600 ? 11 : width < 650 ? 12 : width < 700 ? 13 : width < 750 ? 14 : width < 850 ? 10 : width < 950 ? 13 : width < 1050 ? 21 : width < 1150 ? 27 : width < 1250 ? 33 : width < 1350 ? 39 : -62)
-    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 20 : width < 700 ? 124 : width < 800 ? 198 : width < 900 ? 258 : width < 1000 ? 358 : width < 1100 ? 418 : width < 1200 ? 458 : 532)
+    .attr("x", chartWidth / 20 + (width < 275 ? 1 : width < 300 ? 2 : width < 325 ? 3 : width < 350 ? 4 : width < 375 ? 5 : width < 400 ? 6 : width < 450 ? 7 : width < 475 ? 8 : width < 500 ? 9 : width < 550 ? 10 : width < 600 ? 11 : width < 650 ? 12 : width < 700 ? 13 : width < 750 ? 14 : width < 850 ? 19 : width < 950 ? 29 : width < 1050 ? 29 : width < 1150 ? 29 : width < 1250 ? 29 : width < 1350 ? 29 : width < 1400 ? 33 : -62))
+    .attr("y", chartHeight / 4 + (width < 300 ? 72 : width < 400 ? 73 : width < 450 ? 74 : width < 500 ? 68 : width < 600 ? 70 : width < 700 ? 74 : width < 800 ? 72 : width < 900 ? 122 : width < 1000 ? 132 : width < 1100 ? 142 : width < 1200 ? 152 : 182))
     .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
     .text("Day");
   legend
     .append("rect")
-    .attr("x", width < 275 ? -59 : width < 300 ? -58 : width < 325 ? -57 : width < 350 ? -56 : width < 375 ? -55 : width < 400 ? -54 : width < 450 ? -53 : width < 475 ? -52 : width < 500 ? -51 : width < 550 ? -50 : width < 600 ? -51 : width < 650 ? -52 : width < 700 ? -53 : width < 750 ? -74 : width < 850 ? -165 : width < 950 ? -156 : width < 1050 ? -144 : width < 1150 ? -140 : width < 1250 ? -136 : width < 1350 ? -132 : -240)
-    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 20 : width < 700 ? 136 : width < 800 ? 215 : width < 900 ? 275 : width < 1000 ? 335 : width < 1100 ? 395 : width < 1200 ? 435 : 504)
+    .attr("x", chartWidth / 20 + (width < 275 ? -59 : width < 300 ? -58 : width < 325 ? -57 : width < 350 ? -56 : width < 375 ? -55 : width < 400 ? -54 : width < 450 ? -53 : width < 475 ? -52 : width < 500 ? -51 : width < 550 ? -50 : width < 600 ? -51 : width < 650 ? -52 : width < 700 ? -53 : width < 750 ? -74 : width < 850 ? -132 : width < 950 ? -132 : width < 1050 ? -132 : width < 1150 ? -132 : width < 1250 ? -132 : width < 1350 ? -132 : width < 1400 ? -148 : -240))
+    .attr("y", chartHeight / 4 + (width < 300 ? 81 : width < 400 ? 82 : width < 450 ? 83 : width < 500 ? 52 : width < 600 ? 54 : width < 700 ? 85 : width < 800 ? 94 : width < 900 ? 99 : width < 1000 ? 109 : width < 1100 ? 139 : width < 1200 ? 179 : 154))
     .attr("rx", 5)
     .attr("width", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("height", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("fill", mapcolors.night);
   legend
     .append("text")
-    .attr("x", width < 275 ? 9 : width < 300 ? 8 : width < 325 ? 7 : width < 350 ? 6 : width < 375 ? 5 : width < 400 ? 4 : width < 450 ? 3 : width < 475 ? 2 : width < 500 ? 1 : width < 550 ? 0 : width < 600 ? -1 : width < 650 ? -2 : width < 700 ? -3 : width < 750 ? -19 : width < 850 ? -120 : width < 950 ? -122 : width < 1050 ? -110 : width < 1150 ? -106 : width < 1250 ? -102 : width < 1350 ? -98 : -201)
-    .attr("y", width < 300 ? 22 : width < 400 ? 23 : width < 450 ? 24 : width < 500 ? 18 : width < 600 ? 20 : width < 700 ? 124 : width < 800 ? 198 : width < 900 ? 258 : width < 1000 ? 358 : width < 1100 ? 418 : width < 1200 ? 458 : 532)
+    .attr("x", chartWidth / 20 + (width < 275 ? 9 : width < 300 ? 8 : width < 325 ? 7 : width < 350 ? 6 : width < 375 ? 5 : width < 400 ? 4 : width < 450 ? 3 : width < 475 ? 2 : width < 500 ? 1 : width < 550 ? 0 : width < 600 ? -1 : width < 650 ? -2 : width < 700 ? -3 : width < 750 ? -19 : width < 850 ? -98 : width < 950 ? -98 : width < 1050 ? -98 : width < 1150 ? -98 : width < 1250 ? -98 : width < 1350 ? -98 : width < 1400 ? -108 : -201))
+    .attr("y", chartHeight / 4 + (width < 300 ? 72 : width < 400 ? 73 : width < 450 ? 74 : width < 500 ? 68 : width < 600 ? 70 : width < 700 ? 74 : width < 800 ? 72 : width < 900 ? 122 : width < 1000 ? 132 : width < 1100 ? 142 : width < 1200 ? 152 : 182))
     .attr("font-size", fontSize * (width < 300 ? .95 : width < 400 ? 1 : width < 500 ? 1.05 : width < 600 ? 1.15 : width < 700 ? 1.2 : 1.25) + width / 100)
     .attr("font-family", "sans-serif")
     .text("Night");
@@ -1570,7 +1568,7 @@ function worldMapCoordinates(config = {}, dimensions) {
   lon = lon != null ? lon : null;
   lat = lat != null ? lat : null;
   const formEl = html`<form id="formEl" style="width: ${width}px;"></form>`;
-  const context = DOM.context2d(width, height-width/14);
+  const context = DOM.context2d(width, height-width/18);
   const canvas = context.canvas;
   canvas.style.margin = `0px 0px -26px 0px`;
   const projection = d3
@@ -2007,495 +2005,10 @@ colors = ({
   land: "#f5f1dc",
   sun: "#ffe438"
 })
-// https://observablehq.com/@d3/simple-clock
-// https://observablehq.com/@drio/lets-build-an-analog-clock
-clock = {
-  const clockRadius = 200,
-    margin = 50,
-    w = (clockRadius + margin) * 2,
-    h = (clockRadius + margin) * 2,
-    hourHandLength = (2 * clockRadius) / 3,
-    minuteHandLength = clockRadius,
-    secondHandLength = clockRadius - 12,
-    secondHandBalance = 30,
-    secondTickStart = clockRadius,
-    secondTickLength = -10,
-    hourTickStart = clockRadius,
-    hourTickLength = -18,
-    secondLabelRadius = clockRadius + 16,
-    secondLabelYOffset = 5,
-    hourLabelRadius = clockRadius - 40,
-    hourLabelYOffset = 7,
-    radians = Math.PI / 180;
-  const ten = d3
-    .scaleLinear()
-    .range([0, 360])
-    .domain([0, 10]);
-  const sto = d3
-    .scaleLinear()
-    .range([0, 360])
-    .domain([0, 100]);
-  const handData = [
-    {
-      type: "hour",
-      value: 0,
-      length: -hourHandLength,
-      scale: ten
-    },
-    {
-      type: "minute",
-      value: 0,
-      length: -minuteHandLength,
-      scale: sto
-    },
-    {
-      type: "second",
-      value: 0,
-      length: -secondHandLength,
-      scale: sto,
-      balance: secondHandBalance
-    }
-  ];
-  function drawClock() {
-    // create all the clock elements
-    updateData(); //draw them in the correct starting position
-    const face = svg
-      .append("g")
-      .attr("id", "clock-face")
-      .attr("transform", `translate(${[w / 2, h / 2]})`);
-    // add marks for seconds
-    face
-      .selectAll(".second-tick")
-      .data(d3.range(0, 100))
-      .enter()
-      .append("line")
-      .attr("class", "second-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", secondTickStart)
-      .attr("y2", secondTickStart + secondTickLength)
-      .attr("transform", d => `rotate(${sto(d)})`);
-    // and labels...
-    face
-      .selectAll(".second-label")
-      .data(d3.range(0, 100, 5))
-      .enter()
-      .append("text")
-      .attr("class", "second-label")
-      .attr("text-anchor", "middle")
-      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
-      .attr(
-        "y",
-        d =>
-          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
-      )
-      .text(d => d);
-    // ... and hours
-    face
-      .selectAll(".hour-tick")
-      .data(d3.range(0, 10, 1))
-      .enter()
-      .append("line")
-      .attr("class", "hour-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", hourTickStart)
-      .attr("y2", hourTickStart + hourTickLength)
-      .attr("transform", d => `rotate(${ten(d)})`);
-    face
-      .selectAll(".hour-label")
-      .data(d3.range(0, 10, 1))
-      .enter()
-      .append("text")
-      .attr("class", "hour-label")
-      .attr("text-anchor", "middle")
-      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
-      .attr(
-        "y",
-        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
-      )
-      .text(d => d);
-    const hands = face.append("g").attr("id", "clock-hands");
-    hands
-      .selectAll("line")
-      .data(handData)
-      .enter()
-      .append("line")
-      .attr("class", d => d.type + "-hand")
-      .attr("x1", 0)
-      .attr("y1", d => d.balance || 0)
-      .attr("x2", 0)
-      .attr("y2", d => d.length)
-      .attr("transform", d => `rotate(${d.scale(d.value)})`);
-    face
-      .append("g")
-      .attr("id", "face-overlay")
-      .append("circle")
-      .attr("class", "hands-cover")
-      .attr("x", 0)
-      .attr("y", 0)
-      .attr("r", clockRadius / 20);
-  }
-  function moveHands() {
-    const sel = d3
-      .select("#clock-hands-final")
-      .selectAll("line")
-      .data(handData)
-      .transition();
-    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
-    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
-  }
-  function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExact * 10) : decTime[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExact * 10 % 1 * 100) : decTime.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExact * 10 % 1 * 100 % 1 * 100 : decTime.slice(4, 6);
-  }
-  const svg = d3
-    .create("svg")
-    .attr("viewBox", [0, 0, w, h])
-    .style("max-width", `${width / 2.1}px`)
-    .attr("class", "analogclock")
-    .attr("id", "topclock");
-  svg
-    .append("text")
-    .text(`+${decTime}-${selectedZone}`)
-    .attr("x", clockRadius + margin)
-    .attr("y", clockRadius * 2 + margin * 2.1)
-    .attr("text-anchor", "middle")
-    .attr("font-size", 32)
-    .attr("font-family", "monospace");
-  drawClock();
-  // Animation
-  const interval = setInterval(
-    () => {
-      updateData();
-      moveHands();
-    },
-    !fancySecondsOFF ? 10 : 864
-  );
-  invalidation.then(() => clearInterval(interval));
-  return svg.node();
-}
-clock1 = {
-  const clockRadius = 200,
-    margin = 50,
-    w = (clockRadius + margin) * 2,
-    h = (clockRadius + margin) * 2,
-    hourHandLength = (2 * clockRadius) / 3,
-    minuteHandLength = clockRadius,
-    secondHandLength = clockRadius - 12,
-    secondHandBalance = 30,
-    secondTickStart = clockRadius,
-    secondTickLength = -10,
-    hourTickStart = clockRadius,
-    hourTickLength = -18,
-    secondLabelRadius = clockRadius + 16,
-    secondLabelYOffset = 5,
-    hourLabelRadius = clockRadius - 40,
-    hourLabelYOffset = 7,
-    radians = Math.PI / 180;
-  const ten = d3
-    .scaleLinear()
-    .range([0, 360])
-    .domain([0, 10]);
-  const sto = d3
-    .scaleLinear()
-    .range([0, 360])
-    .domain([0, 100]);
-  const handData = [
-    {
-      type: "hour",
-      value: 0,
-      length: -hourHandLength,
-      scale: ten
-    },
-    {
-      type: "minute",
-      value: 0,
-      length: -minuteHandLength,
-      scale: sto
-    },
-    {
-      type: "second",
-      value: 0,
-      length: -secondHandLength,
-      scale: sto,
-      balance: secondHandBalance
-    }
-  ];
-  function drawClock() {
-    // create all the clock elements
-    updateData(); //draw them in the correct starting position
-    const face = svg
-      .append("g")
-      .attr("id", "clock-face")
-      .attr("transform", `translate(${[w / 2, h / 2]})`);
-    // add marks for seconds
-    face
-      .selectAll(".second-tick")
-      .data(d3.range(0, 100))
-      .enter()
-      .append("line")
-      .attr("class", "second-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", secondTickStart)
-      .attr("y2", secondTickStart + secondTickLength)
-      .attr("transform", d => `rotate(${sto(d)})`);
-    // and labels...
-    face
-      .selectAll(".second-label")
-      .data(d3.range(0, 100, 5))
-      .enter()
-      .append("text")
-      .attr("class", "second-label")
-      .attr("text-anchor", "middle")
-      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
-      .attr(
-        "y",
-        d =>
-          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
-      )
-      .text(d => d);
-    // ... and hours
-    face
-      .selectAll(".hour-tick")
-      .data(d3.range(0, 10, 1))
-      .enter()
-      .append("line")
-      .attr("class", "hour-tick")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", hourTickStart)
-      .attr("y2", hourTickStart + hourTickLength)
-      .attr("transform", d => `rotate(${ten(d)})`);
-    face
-      .selectAll(".hour-label")
-      .data(d3.range(0, 10, 1))
-      .enter()
-      .append("text")
-      .attr("class", "hour-label")
-      .attr("text-anchor", "middle")
-      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
-      .attr(
-        "y",
-        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
-      )
-      .text(d => d);
-    const hands = face.append("g").attr("id", "clock-hands");
-    hands
-      .selectAll("line")
-      .data(handData)
-      .enter()
-      .append("line")
-      .attr("class", d => d.type + "-hand")
-      .attr("x1", 0)
-      .attr("y1", d => d.balance || 0)
-      .attr("x2", 0)
-      .attr("y2", d => d.length)
-      .attr("transform", d => `rotate(${d.scale(d.value)})`);
-    face
-      .append("g")
-      .attr("id", "face-overlay")
-      .append("circle")
-      .attr("class", "hands-cover")
-      .attr("x", 0)
-      .attr("y", 0)
-      .attr("r", clockRadius / 20);
-  }
-  function moveHands() {
-    const sel = d3
-      .select("#clock-hands-final")
-      .selectAll("line")
-      .data(handData)
-      .transition();
-    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
-    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
-  }
-  function updateData() {
-    handData[0].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10) : decTimeN[0];
-    handData[1].value = !fancySecondsOFF ? Math.floor(selectedExactN * 10 % 1 * 100) : decTimeN.slice(2, 4);
-    handData[2].value = !fancySecondsOFF ? selectedExactN * 10 % 1 * 100 % 1 * 100 : decTimeN.slice(4, 6);
-  }
-  const svg = d3
-    .create("svg")
-    .attr("viewBox", [0, 0, w, h])
-    .style("max-width", `${width / 2.1}px`)
-    .attr("class", "analogclock")
-    .attr("id", "midclock");
-  svg
-    .append("text")
-    .text(`-${decTimeN}-${selectedZone}`)
-    .attr("x", clockRadius + margin)
-    .attr("y", clockRadius * 2 + margin * 2.1)
-    .attr("text-anchor", "middle")
-    .attr("font-size", 32)
-    .attr("font-family", "monospace");
-  drawClock();
-  // Animation
-  const interval = setInterval(
-    () => {
-      updateData();
-      moveHands();
-    },
-    !fancySecondsOFF ? 10 : 864
-  );
-  invalidation.then(() => clearInterval(interval));
-  return svg.node();
-}
 ```
 
 ```{ojs}
 //| echo: false
-//| output: false
-// https://observablehq.com/@ldgrp/apple-watch-solar-dial-simulation
-sunclock = {
-  const radius = 200;
-  const width = radius * 2;
-  const height = radius * 2;
-  //let _minutes = 0;
-  const svg = d3
-    .create("svg")
-    .attr("id", "btmclock")
-    .attr("viewBox", [0, 0, width, height])
-    .style("margin-top", "1px")
-    .style("max-width", "200px");
-  const face = svg
-    .append("g")
-    .attr("transform", `translate(${width / 2}, ${height / 2})`);
-  for (const angle of angles) {
-    const arc = d3
-      .arc()
-      .innerRadius(0)
-      .outerRadius(radius)
-      .startAngle(angle.start)
-      .endAngle(angle.end);
-    face.append("path").attr("d", arc).attr("fill", angle.color);
-  }
-  const sun = face
-    .append("circle")
-    .attr("r", 15)
-    .attr("cx", 125 * -sin(astDegMapPlot))
-    .attr("cy", 125 * cos(astDegMapPlot))
-    .style("fill", "white");
-  const ringContainer = svg
-    .append("g")
-    .attr("transform", `translate(${width / 2}, ${height / 2})`);
-  const ring = ringContainer
-    .append("circle")
-    .attr("r", 125)
-    .style("opacity", 0.2)
-    .style("fill", "transparent")
-    .style("stroke", "white")
-    .style("stroke-width", 3);
-  const events = [
-    data.astronomicalSunrise,
-    data.astronomicalSunset,
-    data.nauticalSunrise,
-    data.nauticalSunset,
-    data.civilSunrise,
-    data.civilSunset,
-    data.sunrise,
-    data.sunset,
-    data.solarNoon
-  ];
-  for (const e of events) {
-    ringContainer
-      .append("circle")
-      .attr("r", 5)
-      .attr("cx", 125 * Math.sin(e))
-      .attr("cy", 125 * -Math.cos(e))
-      .style("opacity", 0.4)
-      .style("fill", "white");
-  }
-  const digitalClock = svg
-    .append("g")
-    .attr(
-      "transform",
-      `translate(${width / 2 + 45 * sin(astDegMapPlot)}, ${
-        height / 2 + 45 * -cos(astDegMapPlot)
-      })`
-    );
-  const digitalClockBase = digitalClock
-    .append("circle")
-    .attr("r", 100)
-    .style("opacity", 0.21)
-    .style("fill", "white");
-//  const digitalClockTicks = digitalClock
-//    .selectAll(".digital-clock-tick")
-//    .data(d3.range(0, 60))
-//    .enter()
-//    .append("line")
-//    .attr("class", "digital-clock-tick")
-//    .attr("x1", 0)
-//    .attr("x2", 0)
-//    .attr("y1", 100 - 5)
-//    .attr("y2", 100 - 10)
-//    .attr("stroke", (d) => (d > seconds ? "black" : "white"))
-//    .attr("stroke-width", "3")
-//    .attr("stroke-linecap", "round")
-//    .style("mix-blend-mode", "luminance")
-//    .style("opacity", 0.6)
-//    .attr("transform", (d) => `rotate(${180 + d * 6})`);
-  const clockText = digitalClock
-    .append("text")
-    .attr("y", 25)
-    .attr("fill", "white")
-    .attr("text-anchor", "middle")
-    .attr("font-family", "Helvetica, Arial, sans-serif")
-    .style("opacity", 1)
-    .attr("font-weight", 600)
-    .attr("font-size", "75px")
-    .text(astDecMapPlot.toFixed(2));
-  const ticks = face
-    .selectAll(".tick")
-    .data(d3.range(0, 20))
-    .enter()
-    .append("line")
-    .attr("class", "tick")
-    .attr("x1", 0)
-    .attr("x2", 0)
-    .attr("y1", radius - 5)
-    .attr("y2", radius - 20)
-    .attr("stroke", "white")
-    .attr("stroke-width", "3")
-    .attr("stroke-linecap", "round")
-    .style("mix-blend-mode", "screen")
-    .style("opacity", 1)
-    .attr("transform", (d) => `rotate(${d * 18})`);
-  const minuteTicks = face
-    .selectAll(".tick")
-    .data(d3.range(0, 200))
-    .enter()
-    .append("line")
-    .attr("class", "tick")
-    .attr("x1", 0)
-    .attr("x2", 0)
-    .attr("y1", radius - 5)
-    .attr("y2", radius - 15)
-    .attr("stroke", "white")
-    .attr("stroke-width", "2")
-    .attr("stroke-linecap", "round")
-    .style("mix-blend-mode", "screen")
-    .style("opacity", 0.6)
-    .attr("transform", (d) => `rotate(${d * 2})`);
-  const hourLabels = face
-    .selectAll(".hour-label")
-    .data(d3.range(0, 10))
-    .enter()
-    .append("text")
-    .attr("class", "hour-label")
-    .attr("x", (d) => 160 * -Math.sin(toRadians((d / 10) * 360)))
-    .attr("y", (d) => 160 * Math.cos(toRadians((d / 10) * 360)) + 12)
-    .attr("fill", "white")
-    .attr("text-anchor", "middle")
-    .attr("font-family", "Helvetica, Arial, sans-serif")
-    .attr("font-weight", 600)
-    .attr("font-size", "38px")
-    .style("opacity", 0.7)
-    .text((d) => (String(d)));
-  return svg.node();
-}
 minutesAndSeconds = {
   while (true) {
     await Promises.delay(1000);
@@ -2886,9 +2399,6 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.clocks {
-  margin-top: ${width < 300 ? 2 : width < 400 ? 10 : width < 500 ? 8 : width < 600 ? 0 : width < 700 ? 4 : width < 800 ? 50 : width < 900 ? 206 : width < 1000 ? 202 : width < 1100 ? 196 : width < 1200 ? 187 : 84}px;
-}
 </style>
 `
 ```
@@ -2903,7 +2413,7 @@ div.cell:has(svg.barclock) {
   margin-top: -28px;
 }
 div.cell:has(form#formEl) {
-  margin-top: -58px;
+  margin-top: -8px;
 }
 form#formEl canvas {
   max-width: 100%;
@@ -2973,6 +2483,7 @@ svg.barclock {
   margin: -10px 0px 10px 0px;
   padding: 0px;
   text-align: center;
+  position: relative;
 }
 #title-block-header > div:nth-child(2) {
   display: none;
@@ -2984,8 +2495,8 @@ div.cell-output:has(#daylightapp) {
   overflow: visible;
 }
 div.cell-output:has(#formEl) {
-  margin-top: 60px;
-  overflow: visible;
+  margin-top: 0px;
+  overflow: hidden;
 }
 #daylightapp {
   overflow: visible;
@@ -3019,13 +2530,19 @@ div.cell-output:has(#formEl) {
   margin-top: 8px;
 }
 div:has(form#formEl) {
-  overflow: visible;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 form#formEl div {
   max-width: 100%;
+  position: relative;
+  z-index: 1;
 }
 .btmclock {
   overflow: visible;
+  position: relative;
+  z-index: 99;
 }
 </style>
 ```
