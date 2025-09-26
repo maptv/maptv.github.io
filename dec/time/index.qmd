@@ -1570,9 +1570,9 @@ function worldMapCoordinates(config = {}, dimensions) {
   lon = lon != null ? lon : null;
   lat = lat != null ? lat : null;
   const formEl = html`<form id="formEl" style="width: ${width}px;"></form>`;
-  const context = DOM.context2d(width, height-width/18);
+  const context = DOM.context2d(width, height-width/15);
   const canvas = context.canvas;
-  canvas.style.margin = `0px 0px -26px 0px`;
+  canvas.style.margin = `0px 0px 0px 0px`;
   const projection = d3
     .geoEquirectangular()
     .precision(0.1)
@@ -1635,7 +1635,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     type: "worldMapCoordinates",
     title,
     description,
-    display: v => (width > 300) ? html`<div style="width: ${width}px; white-space: nowrap; color: window.darkmode ? #fff : #000; text-align: center; font: ${width > 1000 ? width / 50 : width / 40}px monospace; position: relative; top: ${-28 - width / 50}px;  margin-bottom: -.4em;">
+    display: v => (width > 300) ? html`<div style="width: ${width}px; pointer-events: none; white-space: nowrap; color: window.darkmode ? #fff : #000; text-align: center; font: ${width > 1000 ? width / 50 : width / 40}px monospace; position: relative; top: ${-28 - width / 25}px;  margin-bottom: -.4em;">
             <span style="color: window.darkmode ? #fff : #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
             &nbsp; &nbsp;
             <span style="color: window.darkmode ? #fff : #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
@@ -2921,9 +2921,10 @@ div.cell:has(svg.barclock) {
   margin-top: -28px;
 }
 div.cell:has(form#formEl) {
+  max-width: 100%;
   margin-top: -8px;
 }
-form#formEl canvas {
+form#formEl * {
   max-width: 100%;
 }
 svg.barclock {
@@ -3001,10 +3002,6 @@ h4.hiddenheading, h5.hiddenheading {
 div.cell-output:has(#daylightapp) {
   overflow: visible;
 }
-div.cell-output:has(#formEl) {
-  margin-top: 0px;
-  overflow: hidden;
-}
 #daylightapp {
   overflow: visible;
   max-width: 100%;
@@ -3037,7 +3034,7 @@ div.cell-output:has(#formEl) {
   margin-top: 8px;
 }
 div:has(form#formEl) {
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   z-index: 1;
 }
@@ -3046,7 +3043,11 @@ form#formEl div {
   position: relative;
   z-index: 1;
 }
-.btmclock {
+div.cell-output:has(#formEl) {
+  margin-top: 0px;
+  overflow: visible;
+}
+#daylightapp, #btmclock, #btmbar  {
   overflow: visible;
   position: relative;
   z-index: 99;
