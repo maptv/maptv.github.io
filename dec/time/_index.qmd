@@ -1,0 +1,2679 @@
+```{ojs}
+//| echo: false
+//| output: false
+// https://observablehq.com/@parlant/editable-table
+function createTable(data, options) {
+  let table = html`<table class="editable-table"></table>`;
+  table.innerHTML = xss.filterXSS(tableify.default(data));
+  makeTableEditable(table, options);
+  return table;
+}
+table.setAttribute("class", "table")
+tableify = import("https://cdn.skypack.dev/tableify@1.1.1?min")
+xss = import("https://cdn.skypack.dev/xss@1.0.14?min")
+function createCellDiv(value, max) {
+  return `<div style="
+    width: ${Math.abs(value) / max}%;
+    float: left;
+    padding: 0px 0px 0px 2px;
+    text-indent: 2px;
+    box-sizing: border-box;
+    overflow: visible;
+    white-space: nowrap;
+    display: flex;
+    justify-content: start;">${Math.round(value)}</div>`
+}
+liveTable = observeTable(table)
+function makeTableEditable(table, options) {
+  const defaults = {headerEditable: false, appendRows: true};
+  options = options === undefined ? {} : options;
+  for (let key in defaults) {
+    options[key] = options[key] === undefined ? defaults[key] : options[key];
+  }
+  return Generators.observe((_notify) => {
+    const navigate = (event) => {
+      const cell = event.target;
+      const row = cell.closest('tr');
+      const table = row.closest('table');
+      const isBody = row.parentNode.tagName === 'TBODY';
+      const isHeader = row.parentNode.tagName === 'THEAD';
+      const colIndex = cell.cellIndex;
+      const colCount = row.cells.length;
+      const rowIndex = row.rowIndex;
+      const rowCount = table.rows.length;
+      const headStop = options.headerEditable ? 0 : 1;
+      let direction = null;
+      let x = colIndex;
+      let y = rowIndex;
+      if (![
+      // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
+        8, 9, 13, 16, 17, 18, 27, 33, 34, 35, 36, 37, 38, 39, 40, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
+      ].includes(event.which)) {
+        event.preventDefault();
+      }
+      else {
+      switch(event.code) {
+        // Tab cycles through the table, adding new rows as needed.
+        case 'Tab':
+          event.preventDefault();
+          if (event.altKey || event.shiftKey) {
+            direction = -1;
+            if (x - 1 < 0) {
+              if (y - 1 < headStop) break;
+              x = colCount - 1;
+              y = y - 1;
+            } else {
+              x = x - 1;
+            }
+          } else {
+            direction = 1;
+            if (x + 1 === colCount) {
+              x = 0;
+              y = y + 1;
+            } else {
+              x = x + 1;
+            }
+          }
+          break;
+        // Plain Enter navigates downwards.
+        // Shift + Enter or Alt + Enter goes up to the cell above.
+        case 'Enter':
+          event.preventDefault();
+          if (event.altKey || event.shiftKey) {
+            direction = -1;
+            x = x;
+            y = y - 1;
+          }
+          else {
+            direction = 1;
+            x = x;
+            y = y + 1;
+          }
+          break;
+        // The arrow keys allow you to navigate through cells.
+        // No new rows are added.
+        case 'ArrowUp':
+        case 'ArrowDown':
+        case 'ArrowLeft':
+        case 'ArrowRight':
+        case 'Enter':
+          if (!event.altKey) break;
+          event.preventDefault();
+          switch(event.code) {
+            case 'ArrowUp':
+              direction = -1;
+              y = Math.max(y - 1, headStop);
+              break;
+            case 'ArrowDown':
+              direction = 1;
+              y = Math.min(y + 1, rowCount - 1);
+              break;
+            case 'ArrowLeft':
+              direction = -1;
+              x = Math.max(x - 1, 0);
+              break;
+            case 'ArrowRight':
+              direction = 1;
+              x = Math.min(x + 1, colCount - 1);
+              break;
+          }
+          break;
+      }
+      if (direction !== null) {
+        let nextRow;
+        if (y === rowCount) {
+          nextRow = options.appendRows ? addRowRelativeTo(row, direction) : row;
+        } else {
+          nextRow = table.rows[y];
+        }
+        let nextCell = nextRow.cells[x];
+        focusCell(nextCell);
+      }
+    };
+    }
+    table.addEventListener("keydown", navigate, false);
+    if (table.rows.length > 0) {
+      for (let row of table.rows) {
+        if (!options.headerEditable && row.rowIndex === 0) continue;
+        for (let cell of row.cells) {
+        if (cell.cellIndex === 0) continue;
+          let cellValue = cell.innerText
+          cell.innerHTML = `<div style="
+            width: ${Math.abs(cellValue) / (cell.cellIndex === 2 ? 2.5 : 10)}%;
+            float: left;
+            padding: 0px 0px 0px 2px;
+            text-indent: 2px;
+            box-sizing: border-box;
+            overflow: visible;
+            white-space: nowrap;
+            display: flex;
+            justify-content: start;">${cellValue}</div>`
+        if (cell.cellIndex === 3) continue;
+          cell.contentEditable = true;
+        }
+      }
+    }
+    return () => table.removeEventListener("keydown", navigate);
+  });
+}
+function observeTable(table) {
+  return Generators.observe((notify) => {
+    const keyinput = (event) => notify(parseTableData(table));
+    table.addEventListener("input", keyinput, false);
+    notify(parseTableData(table));
+    return () => window.removeEventListener("input", keyinput);
+  });
+}
+function parseTableData(table) {
+  const header = [];
+  const data = [];
+  for (let row of table.rows) {
+    const rowIndex = row.rowIndex;
+    const isHeader = row.parentNode.tagName === 'THEAD' && rowIndex === 0;
+    let obj = {};
+    for (let cell of row.cells) {
+      const head = header[cell.cellIndex];
+      if (isHeader) {
+        header.push(cell.innerText);
+      } else {
+        obj[head] = cell.innerText;
+      }
+    }
+    if (!isHeader) data.push(obj);
+  }
+  return JSON.parse(JSON.stringify(data));
+}
+function focusCell(td) {
+  const s = window.getSelection();
+  const r = document.createRange();
+  let textNode = td.childNodes[0];
+  const i = td.innerText.length;
+  td.focus();
+  if (textNode) {
+    r.setStart(textNode, i);
+    r.setEnd(textNode, i);
+  } else {
+    r.selectNode(td);
+  }
+  s.removeAllRanges();
+  s.addRange(r);
+}
+function addRowRelativeTo(tr, direction) {
+  const newTr = document.createElement('tr');
+  const insertPosition = direction == 1 ? 'afterend' : 'beforebegin';
+  tr.insertAdjacentElement(insertPosition, newTr);
+  for (let _td of Array.from(tr.children)) {
+    const newTd = document.createElement('td');
+    newTd.appendChild(document.createTextNode(''));
+    newTd.contentEditable = true;
+    newTr.appendChild(newTd);
+  }
+  return newTr;
+}
+// https://observablehq.com/@observablehq/text-color-annotations-in-markdown
+rstbtn = d3.create('button').html('Reset').attr("id", "rstbtn").attr("class", "btn btn-quarto");
+// https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support
+function labelToggle(inputType, inputLabel, inputValue, inputId) {
+  const input = inputType({label: inputLabel, value: inputValue});
+  input.setAttribute("id", inputId);
+  return input;
+}
+// https://observablehq.com/@observablehq/synchronized-inputs
+function set(input, value) {
+  input.value = value;
+  input.dispatchEvent(new Event("input", {bubbles: true}));
+}
+// https://observablehq.com/@observablehq/input-table
+// https://stackoverflow.com/a/52079217
+// Converts from degrees to radians.
+function toRadians(degrees) { return degrees * Math.PI / 180; };
+// Converts from radians to degrees.
+function toDegrees(radians) { return radians * 180 / Math.PI; }
+function coor2bear(strt, dest) {
+  const [strtLng, strtLat] = strt.map(toRadians);
+  const [destLng, destLat] = dest.map(toRadians);
+  return (toDegrees(Math.atan2(
+    Math.sin(destLng - strtLng) * Math.cos(destLat),
+    Math.cos(strtLat) * Math.sin(destLat) - Math.sin(strtLat) * Math.cos(destLat) * Math.cos(destLng - strtLng)
+  )) + 360) % 360;
+}
+function yiq(color) {
+  const {r, g, b} = d3.rgb(color);
+  return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
+}
+function textcolor(content, style = {}) {
+  const {
+    background,
+    color = yiq(background) > 0.51 ? "#000" : "white",
+    padding = "0 5px",
+    borderRadius = "4px",
+    fontWeight = 400,
+    fontFamily = "monospace",
+    ...rest
+  } = typeof style === "string" ? {background: style} : style;
+  return htl.html`<span style=${{
+    background,
+    color,
+    padding,
+    borderRadius,
+    fontWeight,
+    fontFamily,
+    ...rest
+  }}>${content}</span>`;
+}
+function turn2comp(turn) {
+  return ["N", "NE", "E", "SE", "S", "SW", "W", "NW"][Math.round(turn / 125) % 8]
+}
+function dec2rgb(d) {
+  const color = d3.color(piecewiseColor(d % 1))
+  return [color.r, color.g, color.b]
+}
+function dec2hue(d) {
+  return rgbToHsl(...dec2rgb(d))[0] * 1000
+}
+piecewiseColor = d3.piecewise(d3.interpolateRgb, [
+  "#f00",    //  0   0 red
+  "#f50",    //  0.25  20 yr
+  "#f60",    //  0.5   24 yr orangered
+  "#f70",    //  0.75  28 yr
+  "#f90",    //  1     36 yr orange
+  "#fb0",    //  1.25  44 yr
+  "#fc0",    //  1.5   48 yr yelloworange
+  "#fd0",    //  1.75  52 yr
+  "#ff0",    //  2     60 yellow
+  "#ef0",    //  2.25  64 gy
+  "#df0",    //  2.5   68 gy limeyellow
+  "#cf0",    //  2.75  72 gy
+  "#af0",    //  3     80 gy lime
+  "#8f0",    //  3.25  88 gy
+  "#7f0",    //  3.5   92 gy greenlime
+  "#6f0",    //  3.75  96 gy
+  "#0f0",    //  4    120 green
+  "#0f7",    //  4.25 148 cg
+  "#0f9",    //  4.5  156 cg cyangreen
+  "#0fb",    //  4.75 164 cg
+  "#0ff",    //  5    180 cyan
+  "#0cf",    //  5.25 192 bc
+  "#0bf",    //  5.5  196 bc azurecyan
+  "#0af",    //  5.75 200 bc
+  "#08f",    //  6    208 bc azure
+  "#06f",    //  6.25 216 bc
+  "#05f",    //  6.5  220 bc blueazure
+  "#04f",    //  6.75 224 bc
+  "#00f",    //  7    240 blue
+  "#50f",    //  7.25 260 mb
+  "#60f",    //  7.5  264 mb purpleblue
+  "#70f",    //  7.75 268 mb
+  "#90f",    //  8    276 mb purple
+  "#b0f",    //  8.25 284 mb
+  "#c0f",    //  8.5  288 mb violetpurple
+  "#d0f",    //  8.75 292 mb
+  "#f0f",    //  9    300 magenta
+  "#f0a",    //  9.25 320 rm
+  "#f08",    //  9.5  328 rm
+  "#f06",    //  9.75 336 rm
+  "#f00",    //  0        0 red
+])
+hueMtr = Math.round(colorD)
+hueDeg = dec2hue(colorD / 1000) * .36
+hStr = `hsl(${hueDeg}`
+slStr = `, ${colorS / 10}%, ${colorL / 10}%)`
+hslStr = hStr + slStr
+bkgH = ({background: hStr + ", 100%, 50%)"})
+bkgHsl = ({background: hslStr})
+rainbowMtr = textcolor(hueMtr, bkgHsl)
+rainbowDir = textcolor(turn2comp(hueMtr), bkgHsl)
+rainbowDegC = textcolor(Math.round(colorD *.36), bkgHsl)
+rainbowDegH = textcolor(Math.round(hueDeg), bkgHsl)
+rainbowHex = textcolor(shortenHex(d3.color(hslStr).formatHex()).slice(1), bkgHsl)
+rainbowN5zn = textcolor('-5', d3.color(`hsl(180${slStr}`).formatHex())
+rainbowP583 = textcolor('5.83̅', d3.color(`hsl(129.88235294117646${slStr}`).formatHex())
+// Show preview swatches of color
+preview = () => {
+  const container = DOM.element('div')
+  d3.select(container).attr('style', 'display: flex;')
+  d3.select(container)
+    .append('div')
+      .text('Selected')
+      .style('font-weight', 'bold')
+    .append('div')
+      .classed('swatch', true)
+      .style('background-color', `hsl(${dec2hue(colorD / 1000) * .36}, ${colorS / 10}%, ${colorL / 10}%`);
+  d3.select(container)
+    .append('div')
+      .text('Preview')
+      .style('font-style', 'italic')
+    .append('div')
+      .classed('swatch', true)
+      .style('background-color', `rgb(${hoverRGB[0]}, ${hoverRGB[1]}, ${hoverRGB[2]}`)
+  d3.select(container).selectAll('div.swatch')
+    .style('width', '100px')
+    .style('height', '100px')
+    .style('margin-right', '8px')
+    .style('padding', '4px')
+  return container
+}
+// The currently hovered color
+mutable hoverRGB = [255, 0, 0]
+/**
+ * Draw an interactive color bar
+ * @param colorFn (t: number) => [number, number, number] Given a position on the bar (between 0 and 1), return its RGB
+ * @param onSelect (t: number) => void Callback for when a position is selected on the bar
+ */
+function colorbar({colorFn, onSelect}) {
+  const WIDTH = 360
+  const HEIGHT = 32
+  const container = DOM.element('div')
+  function handleSelect(coords) {
+    const t = coords[0] / WIDTH
+    onSelect(t)
+  }
+  let isDragging = false
+  const canvas = d3.select(container).append('canvas')
+    .attr('width', WIDTH)
+    .attr('height', HEIGHT)
+    .attr('style', 'cursor: crosshair; border: 1px solid black; border-radius: 2px;')
+    .on('mousedown', function() {
+      isDragging = true
+      handleSelect(d3.mouse(this))
+    })
+    .on('mouseup', () => { isDragging = false; })
+    .on('mousemove', function() {
+      const coords = d3.mouse(this)
+      if (isDragging) {
+        handleSelect(coords)
+      }
+      mutable hoverRGB = colorFn(coords[0] / WIDTH)
+    })
+  const ctx = canvas.node().getContext('2d')
+  const imgData = ctx.getImageData(0, 0, WIDTH, HEIGHT)
+  // Possible optimization: cache d3.range so we're not recalculating it a million times
+  d3.range(WIDTH).forEach(colIdx => {
+    const t = colIdx / WIDTH
+    const rgb = colorFn(t)
+    d3.range(HEIGHT).forEach(rowIdx => {
+      const screenIdx = rowIdx * WIDTH + colIdx
+      const imgDataIdx = 4 * screenIdx
+      imgData.data[imgDataIdx] = rgb[0]
+      imgData.data[imgDataIdx + 1] = rgb[1]
+      imgData.data[imgDataIdx + 2] = rgb[2]
+      imgData.data[imgDataIdx + 3] = 255
+    })
+  });
+  ctx.putImageData(imgData, 0, 0)
+  return container;
+}
+initialRGB = [255, 0, 0]
+initialHSL = rgbToHsl(...initialRGB)
+viewof colorR = Inputs.input(initialRGB[0])
+viewof colorG = Inputs.input(initialRGB[1])
+viewof colorB = Inputs.input(initialRGB[2])
+viewof colorD = Inputs.input(dec2hue(initialHSL[0]))
+viewof colorS = Inputs.input(1000)
+viewof colorL = Inputs.input(500)
+viewof colorA = Inputs.input(1000)
+/**
+ * Update all color values based on current HSL
+ */
+onUpdateHSL = function(h, s, l) {
+  const rgb = hslToRgb(h / 1000, s / 1000, l / 1000)
+  console.log(h)
+  set(viewof colorR, rgb[0])
+  set(viewof colorG, rgb[1])
+  set(viewof colorB, rgb[2])
+}
+/**
+ * Credit to github.com/mjackson Source: https://gist.github.com/mjackson/5311256
+ * Converts an RGB color value to HSL. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes r, g, and b are contained in the set [0, 255] and
+ * returns h, s, and l in the set [0, 1].
+ *
+ * @param   Number  r       The red color value
+ * @param   Number  g       The green color value
+ * @param   Number  b       The blue color value
+ * @return  Array           The HSL representation
+ */
+function rgbToHsl(r, g, b) {
+  r /= 255, g /= 255, b /= 255;
+  var max = Math.max(r, g, b), min = Math.min(r, g, b);
+  var h, s, l = (max + min) / 2;
+  if (max == min) {
+    h = s = 0; // achromatic
+  } else {
+    var d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+  return [ h, s, l ];
+}
+/**
+ * Credit to github.com/mjackson Source: https://gist.github.com/mjackson/5311256
+ * Converts an HSL color value to RGB. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes h, s, and l are contained in the set [0, 1] and
+ * returns r, g, and b in the set [0, 255].
+ *
+ * @param   {number}  h       The hue
+ * @param   {number}  s       The saturation
+ * @param   {number}  l       The lightness
+ * @return  {Array}           The RGB representation
+ */
+function hslToRgb(h, s, l){
+    let r, g, b;
+    if(s == 0){
+        r = g = b = l; // achromatic
+    } else {
+        let q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        let p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+    }
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+}
+/**
+ * Credit github.com/mjackson. Source: https://gist.github.com/mjackson/5311256
+ */
+function hue2rgb(p, q, t) {
+  if (t < 0) t += 1;
+  if (t > 1) t -= 1;
+  if (t < 1/6) return p + (q - p) * 6 * t;
+  if (t < 1/2) return q;
+  if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+  return p;
+}
+// https://observablehq.com/@maddievision/simple-canvas
+pixelRatio = window.devicePixelRatio;
+createCanvas = (width, height) => {
+  const canvas = document.createElement('canvas');
+  canvas.width = width * pixelRatio;
+  canvas.height = height * pixelRatio;
+  canvas.style.width = width + 'px';
+  canvas.style.height = height + 'px';
+  return canvas
+}
+renderWithScale = (context, renderFunction) => {
+  context.save();
+  context.scale(pixelRatio, pixelRatio);
+  renderFunction()
+  context.restore();
+}
+quickRender = (width, height, renderer) => {
+  const canvas = createCanvas(width, height)
+  const context = canvas.getContext('2d')
+  renderWithScale(context, () => {
+    renderer(context)
+  })
+  return canvas
+}
+// http://howardhinnant.github.io/date_algorithms.html#civil_from_days
+function unix2dote(unix, zone, offset = 719468) {
+  return [(unix ?? Date.now()) / 86400000 + (
+    zone = zone ?? -Math.round(
+      (new Date).getTimezoneOffset() / 144)
+    ) / 10 + offset, zone]
+}
+function unix2dote1(unix, zone, offset = 719468) {
+  return [(unix ?? Date.now()) / 86400000 + (
+    zone = zone ?? (-Math.round(
+      (new Date).getTimezoneOffset() / 144) + 10) % 10
+    ) / 10 + offset, zone]
+}
+octConnections = [
+  [0, 4],
+  [1, 5],
+  [2, 6],
+  [3, 7],
+  [4, 0],
+  [5, 1],
+  [6, 2],
+  [7, 3],
+]
+decConnections = [
+  [0, 5],
+  [1, 6],
+  [2, 7],
+  [3, 8],
+  [4, 9],
+  [5, 0],
+  [6, 1],
+  [7, 2],
+  [8, 3],
+  [9, 4]
+]
+hsl8 = [
+  `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`,   // 0
+  `hsl(44, ${colorS / 10}%, ${colorL / 10}%)`, // 875
+  `hsl(68, ${colorS / 10}%, ${colorL / 10}%)`, // 750
+  `hsl(96, ${colorS / 10}%, ${colorL / 10}%)`, // 625
+  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // 500
+  `hsl(216, ${colorS / 10}%, ${colorL / 10}%)`, // 375
+  `hsl(264, ${colorS / 10}%, ${colorL / 10}%)`, // 250
+  `hsl(292, ${colorS / 10}%, ${colorL / 10}%)`, // 125
+]
+hsl10 = [
+  `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
+  `hsl(36, ${colorS / 10}%, ${colorL / 10}%)`, // orange
+  `hsl(60, ${colorS / 10}%, ${colorL / 10}%)`, // yellow
+  `hsl(80, ${colorS / 10}%, ${colorL / 10}%)`, // lime
+  `hsl(120, ${colorS / 10}%, ${colorL / 10}%)`, // green
+  `hsl(180, ${colorS / 10}%, ${colorL / 10}%)`, // cyan
+  `hsl(208, ${colorS / 10}%, ${colorL / 10}%)`, // azure
+  `hsl(240, ${colorS / 10}%, ${colorL / 10}%)`, // blue
+  `hsl(276, ${colorS / 10}%, ${colorL / 10}%)`, // violet
+  `hsl(300, ${colorS / 10}%, ${colorL / 10}%)`, // magenta
+  `hsl(0, ${colorS / 10}%, ${colorL / 10}%)`, // red
+]
+hsla10 = [
+  `hsla(0, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // red
+  `hsla(36, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // orange
+  `hsla(60, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // yellow
+  `hsla(80, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // lime
+  `hsla(120, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // green
+  `hsla(180, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // cyan
+  `hsla(208, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // azure
+  `hsla(240, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // blue
+  `hsla(276, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // violet
+  `hsla(300, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // magenta
+  `hsla(0, ${colorS / 10}%, ${colorL / 10}%, ${colorA / 10}%)`, // red
+]
+function dote2date(dote, zone = 0) {
+  const cote = Math.floor((
+      dote >= 0 ? dote
+      : dote - 146096
+    ) / 146097),
+  dotc = dote - cote * 146097,
+  yotc = Math.floor((dotc
+    - Math.floor(dotc / 1460)
+    + Math.floor(dotc / 36524)
+    - Math.floor(dotc / 146096)
+  ) / 365);
+  return [
+    yotc + cote * 400,
+    dotc - (yotc * 365
+      + Math.floor(yotc / 4)
+      - Math.floor(yotc / 100)
+  ), zone]}
+sunLonHsl = textcolor(sunLon, `hsl(${d3.hsl(piecewiseColor(sunLon % 1000 / 1000)).h}` + slStr)
+sunLatHsl = textcolor(sunLat, `hsl(${d3.hsl(piecewiseColor((sunLat + 1000) % 1000 / 1000)).h}` + slStr)
+dz = unix2dote(now)
+ydz = dote2date(...dz)
+decZone = ydz[2]
+decZonePos = (decZone + 10) % 10
+decSign = decZone < 0 ? "+" : "–"
+ydzP0 = dote2date(...unix2dote(now, 0))
+decYearP0 = ydzP0[0]
+decYdaP0 = ydzP0[1]
+decDateP0 = Math.floor(decYdaP0)
+decTimeP0 = ydzP0[1] % 1
+decDekP0 = Math.floor(decDateP0 / 10)
+decDodP0 = decDateP0 % 10
+decYearP0hsl0 = textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0 % 1000 / 1000)).h}` + slStr)
+decYearP0hsl1 = textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0 % 1000 / 1000)).h}` + slStr)
+decDateP0hsl0 = textcolor(decDateP0.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
+decDateP0hsl1 = textcolor(decDateP0.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
+decYdaP0hsl = textcolor(decYdaP0.toFixed(5).padStart(9, "0"), `hsl(${d3.hsl(piecewiseColor(decYdaP0 / (365 + isLeapP0))).h}` + slStr)
+decTimeP0hsl0 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decTimeP0hsl1 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
+decDekP0hsl = textcolor(decDekP0, `hsl(${d3.hsl(piecewiseColor(decDekP0 / 37)).h}` + slStr)
+decDodP0hsl = textcolor(decDodP0, `hsl(${d3.hsl(piecewiseColor(decDodP0 / 10)).h}` + slStr)
+decLon = longitude % 10
+decLonHsl = textcolor(parseFloat(decLon.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(decLon / 10)).h}` + slStr)
+decZon = Math.floor(decLon)
+decZonHsl = textcolor(decZon, `hsl(${d3.hsl(piecewiseColor(decZon / 10)).h}` + slStr)
+parLat = textcolor(parseFloat(latitude.toFixed(3)), `hsl(${d3.hsl(piecewiseColor((latitude + 1) % 1)).h}` + slStr)
+parCos = Math.cos(latitude * 2 * Math.PI)
+parLen = textcolor(parseFloat(parCos.toFixed(3)), `hsl(${d3.hsl(piecewiseColor(parCos)).h}` + slStr)
+conversionFactor = costype === "turns" ? "" : costype === "radians" ?  tex`\,\tau\!` : tex`\times360`
+zemsLeft = 1000 - 50 * Math.floor(now / 86400000 % 1 * 1000 % 1 * 100 % 21)
+zLeft = textcolor(zemsLeft, `hsl(${d3.hsl(piecewiseColor(zemsLeft / 1000)).h}` + slStr)
+isLeapP0 = decYearP0 % 4 == 0 && decYearP0 % 100 != 0 || decYearP0 % 400 == 0;
+timezones = FileAttachment("../../../asset/timezones.json").json()
+zones = topojson.feature(timezones, timezones.objects.timezones).features
+mesh = topojson.mesh(timezones, timezones.objects.timezones)
+color = d3.scaleSequential(d3.interpolateRdBu).domain([-12, 14])
+coor = [[[-18, -89.98], [-18, 89.98], [18, 89.98], [18, -89.98], [-18, -89.98], ]]
+deczones = [...Array(10).keys()].map(
+  i => ({
+    "type": "Feature",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [coor[0].map(t => [t[0]+36*i, t[1]])]
+      },
+    "properties": []
+  })
+)
+// https://observablehq.com/@enjalot/draggable-world-map-coordinates-input
+// https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea
+function worldMapCoordinates(config = {}, dimensions) {
+    const {
+    value = [], title, description, width = dimensions[0]
+  } = Array.isArray(config) ? {value: config[0]} : config;
+  const height = dimensions[1];
+  let [lon, lat] = value;
+  lon = lon != null ? lon : null;
+  lat = lat != null ? lat : null;
+  const formEl = html`<form id="formEl" style="width: ${width}px;"></form>`;
+  const context = DOM.context2d(width, height);
+  const canvas = context.canvas;
+  const projection = config[1]
+    .precision(0.1)
+    .fitSize([width, height], { type: "Sphere" });
+  const path = d3.geoPath(projection, context).pointRadius(2.5);
+  formEl.append(canvas);
+  function fillMesh(f) {
+    context.beginPath();
+    path(f);
+    context.fillStyle = color(f.properties.zone);
+    context.fill();
+    context.innerHTML = `<title>${f.properties.places} ${f.properties.time_zone}</title>`;
+  }
+  function draw() {
+    if (!utctoggle) {
+      context.beginPath(); path({type: "Sphere"});
+      context.fillStyle = window.darkmode ? "#007FFF" : mapcolors.ocean;
+      context.fill();
+      if (gridtoggle) {
+        deczones.map((f, i) =>  {
+          context.beginPath();
+          path(f);
+          context.fillStyle = hsla10[i];
+          context.fill();
+        })
+      }
+    }
+    if (utctoggle) {
+      zones.map(f => fillMesh(f))
+    }
+    context.beginPath();
+    path(land);
+    if (!utctoggle) {
+      context.fillStyle = window.darkmode ? "#0808" : mapcolors.land;
+      context.fill();
+    }
+    context.strokeStyle = `#000`;
+    context.stroke();
+    if (bordertoggle) {
+      context.beginPath();
+      path(borders);
+      context.lineWidth = 1.25;
+      context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+      context.stroke();
+    }
+    if (utctoggle) {
+      context.beginPath();
+      path(mesh);
+      context.lineWidth = 1.25;
+      context.strokeStyle = `#999`;
+      context.stroke();
+    }
+    if (gridtoggle) {
+      context.beginPath();
+      path(graticule);
+      context.lineWidth = 1.25;
+      context.strokeStyle = utctoggle || !window.darkmode ? "#000" : "#fff";
+      context.stroke();
+    }
+    if (suntoggle) {
+      context.beginPath();
+      path(night);
+      context.fillStyle = "rgba(0,0,255,0.3)";
+      context.fill();
+      context.beginPath();
+      path.pointRadius(width / 84 + 5);
+      path({type: "Point", coordinates: sun});
+      context.strokeStyle = "#0009";
+      context.fillStyle = "#ff0b";
+      context.lineWidth = 1;
+      context.stroke();
+      context.fill();
+    }
+    if (lon != null && lat != null) {
+      path.pointRadius(17); context.strokeStyle = "black";
+      context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.lineWidth = 1; context.stroke();
+      context.lineWidth = 6;
+      path.pointRadius(14); context.strokeStyle = "red";
+      context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.stroke();
+      context.lineWidth = 1;
+    }
+  }
+  let drag = d3.drag()
+  .on("drag", (event) => {
+    let coords = projection.invert([event.x, event.y]);
+    lon = +coords[0].toFixed(2);
+    lat = +coords[1].toFixed(2);
+    draw();
+    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+  })
+  d3.select(canvas).call(drag)
+  canvas.onclick = function(ev) {
+    const { offsetX, offsetY } = ev;
+    let coords = projection.invert([offsetX, offsetY]);
+    lon = +coords[0].toFixed(2);
+    lat = +coords[1].toFixed(2);
+    draw();
+    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+  };
+  draw();
+  function resetlatlon() {
+    lon = 160;
+    lat = 0;
+    set(viewof bordertoggle, false);
+    set(viewof gridtoggle, false);
+    set(viewof suntoggle, false);
+    set(viewof utctoggle, false);
+    set(viewof yaw, 500);
+    set(viewof pitch, 0);
+    set(viewof roll, 0);
+    set(viewof select, projections.find(t => t.name === "Equirectangular (plate carrée)"));
+    draw();
+    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+  }
+  rstbtn.on('click', resetlatlon);
+  const form = input({
+    type: "worldMapCoordinates",
+    title,
+    description,
+    display: v => (width > 300) ? html`<div style="width: ${width}px; pointer-events: none; white-space: nowrap; color: window.darkmode ? #fff : #000; text-align: center; font: ${width > 1000 ? width / 50 : width / 40}px monospace; position: relative; top: ${-28 - width / 25}px;  margin-bottom: -.4em;">
+            <span style="color: window.darkmode ? #fff : #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
+            &nbsp; &nbsp;
+            <span style="color: window.darkmode ? #fff : #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
+            &nbsp; &nbsp;
+            <span style="color: window.darkmode ? #fff : #000;">Latitude:</span> ${lat != null ? (lati2turn(lat)).toFixed(0) : ""}
+          </div>` : '',
+    getValue: () => [lon != null ? lon : null, lat != null ? lat : null],
+    form: formEl
+  });
+  return form;
+}
+point_radius = width / 900 * mapsize / 100 + 3
+point_radius_2 = width / 150 * mapsize / 100 + 3
+d3format = require("d3-format@1")
+function input(config) {
+  let {
+    form,
+    type = "text",
+    attributes = {},
+    action,
+    getValue,
+    title,
+    description,
+    format,
+    display,
+    submit,
+    options
+  } = config;
+  const wrapper = html`<div></div>`;
+  if (!form)
+    form = html`<form>
+	<input name=input type=${type} />
+  </form>`;
+  Object.keys(attributes).forEach(key => {
+    const val = attributes[key];
+    if (val != null) form.input.setAttribute(key, val);
+  });
+  if (submit)
+    form.append(
+      html`<input name=submit type=submit style="margin: 0 0.75em" value="${
+        typeof submit == "string" ? submit : "Submit"
+      }" />`
+    );
+  form.append(
+    html`<output name=output style="font: 14px Menlo, Consolas, monospace; margin-left: 0.5em;"></output>`
+  );
+  if (title)
+    form.prepend(
+      html`<div style="font: 700 0.9rem sans-serif; margin-bottom: 3px;">${title}</div>`
+    );
+  if (description)
+    form.append(
+      html`<div style="font-size: 0.85rem; font-style: italic; margin-top: 3px;">${description}</div>`
+    );
+  if (format)
+    format = typeof format === "function" ? format : d3format.format(format);
+  if (action) {
+    action(form);
+  } else {
+    const verb = submit
+      ? "onsubmit"
+      : type == "button"
+      ? "onclick"
+      : type == "checkbox" || type == "radio"
+      ? "onchange"
+      : "oninput";
+    form[verb] = e => {
+      e && e.preventDefault();
+      const value = getValue ? getValue(form.input) : form.input.value;
+      if (form.output) {
+        const out = display ? display(value) : format ? format(value) : value;
+        if (out instanceof window.Element) {
+          while (form.output.hasChildNodes()) {
+            form.output.removeChild(form.output.lastChild);
+          }
+          form.output.append(out);
+        } else {
+          form.output.value = out;
+        }
+      }
+      form.value = value;
+      if (verb !== "oninput")
+        form.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+    };
+    if (verb !== "oninput")
+      wrapper.oninput = e => e && e.stopPropagation() && e.preventDefault();
+    if (verb !== "onsubmit") form.onsubmit = e => e && e.preventDefault();
+    form[verb]();
+  }
+  while (form.childNodes.length) {
+    wrapper.appendChild(form.childNodes[0]);
+  }
+  form.append(wrapper);
+  return form;
+}
+// https://observablehq.com/@fil/d3-projections
+projections = [
+  { name: "Airocean", value: d3.geoAirocean },
+  { name: "Airy’s minimum error", value: d3.geoAiry },
+  { name: "Aitoff", value: d3.geoAitoff },
+  { name: "American polyconic", value: d3.geoPolyconic },
+  { name: "Armadillo", value: d3.geoArmadillo, options: { clip: { type: "Sphere" } } },
+  { name: "August", value: d3.geoAugust },
+  { name: "azimuthal equal-area", value: d3.geoAzimuthalEqualArea },
+  { name: "azimuthal equidistant", value: d3.geoAzimuthalEquidistant },
+  { name: "Baker dinomic", value: d3.geoBaker },
+  { name: "Berghaus’ star", value: d3.geoBerghaus, options: { clip: { type: "Sphere" } } },
+  { name: "Bertin’s 1953", value: d3.geoBertin1953 },
+  { name: "Boggs’ eumorphic", value: d3.geoBoggs },
+  { name: "Boggs’ eumorphic (interrupted)", value: d3.geoInterruptedBoggs, options: { clip: { type: "Sphere" } } },
+  { name: "Bonne", value: d3.geoBonne },
+  { name: "Bottomley", value: d3.geoBottomley },
+  { name: "Bromley", value: d3.geoBromley },
+  { name: "Butterfly (gnomonic)", value: d3.geoPolyhedralButterfly },
+  { name: "Butterfly (Collignon)", value: d3.geoPolyhedralCollignon },
+  { name: "Butterfly (Waterman)", value: d3.geoPolyhedralWaterman },
+  { name: "Cahill-Keyes", value: d3.geoCahillKeyes },
+  { name: "Collignon", value: d3.geoCollignon },
+  { name: "conic equal-area", value: d3.geoConicEqualArea },
+  { name: "conic equidistant", value: d3.geoConicEquidistant },
+  { name: "Craig retroazimuthal", value: d3.geoCraig },
+  { name: "Craster parabolic", value: d3.geoCraster },
+  { name: "Cox", value: d3.geoCox },
+  { name: "cubic", value: d3.geoCubic },
+  { name: "cylindrical equal-area", value: d3.geoCylindricalEqualArea },
+  { name: "cylindrical stereographic", value: d3.geoCylindricalStereographic },
+  { name: "dodecahedral", value: d3.geoDodecahedral },
+  { name: "Eckert I", value: d3.geoEckert1 },
+  { name: "Eckert II", value: d3.geoEckert2 },
+  { name: "Eckert III", value: d3.geoEckert3 },
+  { name: "Eckert IV", value: d3.geoEckert4 },
+  { name: "Eckert V", value: d3.geoEckert5 },
+  { name: "Eckert VI", value: d3.geoEckert6 },
+  { name: "Eisenlohr conformal", value: d3.geoEisenlohr },
+  { name: "Equal Earth", value: d3.geoEqualEarth },
+  { name: "Equirectangular (plate carrée)", value: d3.geoEquirectangular },
+  { name: "Fahey pseudocylindrical", value: d3.geoFahey },
+  { name: "flat-polar parabolic", value: d3.geoMtFlatPolarParabolic },
+  { name: "flat-polar quartic", value: d3.geoMtFlatPolarQuartic },
+  { name: "flat-polar sinusoidal", value: d3.geoMtFlatPolarSinusoidal },
+  { name: "Foucaut’s stereographic equivalent", value: d3.geoFoucaut },
+  { name: "Foucaut’s sinusoidal", value: d3.geoFoucautSinusoidal },
+  { name: "general perspective", value: d3.geoSatellite },
+  { name: "Gingery", value: d3.geoGingery, options: { clip: { type: "Sphere" } } },
+  { name: "Ginzburg V", value: d3.geoGinzburg5 },
+  { name: "Ginzburg VI", value: d3.geoGinzburg6 },
+  { name: "Ginzburg VIII", value: d3.geoGinzburg8 },
+  { name: "Ginzburg IX", value: d3.geoGinzburg9 },
+  { name: "Goode’s homolosine", value: d3.geoHomolosine},
+  { name: "Goode’s homolosine (interrupted)", value: d3.geoInterruptedHomolosine, options: { clip: { type: "Sphere" } }  },
+  { name: "gnomonic", value: d3.geoGnomonic },
+  { name: "Gringorten square", value: d3.geoGringorten },
+  { name: "Gringorten quincuncial", value: d3.geoGringortenQuincuncial },
+  { name: "Guyou square", value: d3.geoGuyou },
+  { name: "Hammer", value: d3.geoHammer },
+  { name: "Hammer retroazimuthal", value: d3.geoHammerRetroazimuthal, options: { clip: { type: "Sphere" } } },
+  { name: "HEALPix", value: d3.geoHealpix, options: { clip: { type: "Sphere" } } },
+  { name: "Hill eucyclic", value: d3.geoHill },
+  { name: "Hufnagel pseudocylindrical", value: d3.geoHufnagel },
+  { name: "icosahedral", value: d3.geoIcosahedral },
+  { name: "Imago", value: d3.geoImago },
+  { name: "Kavrayskiy VII", value: d3.geoKavrayskiy7 },
+  { name: "Lagrange conformal", value: d3.geoLagrange },
+  { name: "Larrivée", value: d3.geoLarrivee },
+  { name: "Laskowski tri-optimal", value: d3.geoLaskowski },
+  { name: "Loximuthal", value: d3.geoLoximuthal },
+  { name: "Mercator", value: d3.geoMercator },
+  { name: "Miller cylindrical", value: d3.geoMiller },
+  { name: "Mollweide", value: d3.geoMollweide },
+  { name: "Mollweide (Goode’s interrupted)", value: d3.geoInterruptedMollweide, options: { clip: { type: "Sphere" } } },
+  { name: "Mollweide (interrupted hemispheres)", value: d3.geoInterruptedMollweideHemispheres, options: { clip: { type: "Sphere" } } },
+  { name: "Natural Earth", value: d3.geoNaturalEarth1 },
+  { name: "Natural Earth II", value: d3.geoNaturalEarth2 },
+  { name: "Nell–Hammer", value: d3.geoNellHammer },
+  { name: "Nicolosi globular", value: d3.geoNicolosi },
+  { name: "orthographic", value: d3.geoOrthographic },
+  { name: "Patterson cylindrical", value: d3.geoPatterson },
+  { name: "Peirce quincuncial", value: d3.geoPeirceQuincuncial },
+  { name: "rectangular polyconic", value: d3.geoRectangularPolyconic },
+  { name: "Robinson", value: d3.geoRobinson },
+  { name: "sinusoidal", value: d3.geoSinusoidal },
+  { name: "sinusoidal (interrupted)", value: d3.geoInterruptedSinusoidal, options: { clip: { type: "Sphere" } } },
+  { name: "sinu-Mollweide", value: d3.geoSinuMollweide },
+  { name: "sinu-Mollweide (interrupted)", value: d3.geoInterruptedSinuMollweide, options: { clip: { type: "Sphere" } } },
+  { name: "stereographic", value: d3.geoStereographic },
+  { name: "Lee’s tetrahedal", value: d3.geoTetrahedralLee },
+  { name: "Times", value: d3.geoTimes },
+  { name: "Tobler hyperelliptical", value: d3.geoHyperelliptical },
+  { name: "transverse Mercator", value: d3.geoTransverseMercator },
+  { name: "Van der Grinten", value: d3.geoVanDerGrinten },
+  { name: "Van der Grinten II", value: d3.geoVanDerGrinten2 },
+  { name: "Van der Grinten III", value: d3.geoVanDerGrinten3 },
+  { name: "Van der Grinten IV", value: d3.geoVanDerGrinten4 },
+  { name: "Wagner IV", value: d3.geoWagner4 },
+  { name: "Wagner VI", value: d3.geoWagner6 },
+  { name: "Wagner VII", value: d3.geoWagner7 },
+  { name: "Werner", value: d3.geoBonne ? () => d3.geoBonne().parallel(90) : null },
+  { name: "Wiechel", value: d3.geoWiechel },
+  { name: "Winkel tripel", value: d3.geoWinkel3 }
+]
+mapcolors = ({
+  night: "#719fb6",
+  day: "#ffe438",
+  grid: "#4b6a79",
+  ocean: "#adeeff",
+  land: "#90ff7888",
+  sun: "#ffb438"
+})
+function long2turn(degrees = -180, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return (((degrees %= 360) < 0 ? degrees + 360 : degrees) + 18) / (360 / 10**e) % 10**e;
+}
+function turn2degr(turns = -500, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return turns % 10**e * (360 / 10**e)
+}
+function turn2long(turns = -500, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return turns % 10**e * (360 / 10**e) - 18
+}
+function long2zone(degrees = -180) { return Math.floor(long2turn(degrees, 1)); }
+function lati2turn(degrees = -180, e = 3) {
+  // turns: e=0, deciturns: e=1, etc.
+  return (degrees %= 360) / (360 / 10**e) % 10**e;
+}
+selectedProjection = select ? select.value() : d3.geoEquirectangular()
+projection = {
+  let proj = selectedProjection;
+  if (proj.rotate) proj.rotate([-turn2long(yaw), -turn2degr(pitch), turn2degr(roll)]);
+  return proj;
+}
+sun = {
+  const now = new Date;
+  const day = new Date(+now).setUTCHours(0, 0, 0, 0);
+  const t = solar.century(now);
+  const longitude = (day - now) / 864e5 * 360 - 180;
+  return [longitude - solar.equationOfTime(t) / 4, solar.declination(t)];
+}
+sunLon = Math.round(long2turn(sun[0]))
+sunLat = Math.round(lati2turn(sun[1]))
+night = d3.geoCircle().radius(90).center(antipode(sun))()
+antipode = ([longitude, latitude]) => [longitude + 180, -latitude]
+height = {
+  const [[x0, y0], [x1, y1]] = d3.geoPath(projection.fitWidth(width, sphere)).bounds(sphere);
+  const dy = Math.ceil(y1 - y0), l = Math.min(Math.ceil(x1 - x0), dy);
+  projection.scale(projection.scale() * (l - 1) / l).precision(0.2);
+  return dy;
+}
+d3 = require("d3@7", "d3-array@3", "d3-geo@3", "d3-geo-projection@4", "d3-geo-polygon@1.8")
+sphere = ({type: "Sphere"})
+graticule = d3.geoGraticule().stepMinor([36, 36]).stepMajor([36, 36])()
+graticule.coordinates = graticule.coordinates.map(
+  i => i.map(j => j.map((k, index, arr) => i.length === 3 && index === 0 ? k - 18 : k))
+)
+land = topojson.feature(world, world.objects.land)
+world = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/land-50m.json").then(response => response.json())
+topojson = require("topojson-client@3")
+solar = require("solar-calculator@0.3/dist/solar-calculator.min.js")
+borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
+countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
+deccolors = [
+  `hsl(20${slStr}`,
+  `hsl(24${slStr}`,
+  `hsl(28${slStr}`,
+  `hsl(36${slStr}`,
+  `hsl(44${slStr}`,
+  `hsl(48${slStr}`,
+  `hsl(52${slStr}`,
+  `hsl(60${slStr}`,
+  `hsl(64${slStr}`,
+  `hsl(68${slStr}`,
+  `hsl(72${slStr}`,
+  `hsl(80${slStr}`,
+  `hsl(88${slStr}`,
+  `hsl(92${slStr}`,
+  `hsl(96${slStr}`,
+  `hsl(120${slStr}`,
+  `hsl(148${slStr}`,
+  `hsl(156${slStr}`,
+  `hsl(164${slStr}`,
+  `hsl(180${slStr}`,
+  `hsl(192${slStr}`,
+  `hsl(196${slStr}`,
+  `hsl(200${slStr}`,
+  `hsl(208${slStr}`,
+  `hsl(216${slStr}`,
+  `hsl(220${slStr}`,
+  `hsl(224${slStr}`,
+  `hsl(240${slStr}`,
+  `hsl(260${slStr}`,
+  `hsl(264${slStr}`,
+  `hsl(268${slStr}`,
+  `hsl(276${slStr}`,
+  `hsl(284${slStr}`,
+  `hsl(288${slStr}`,
+  `hsl(292${slStr}`,
+  `hsl(300${slStr}`,
+  `hsl(320${slStr}`,
+  `hsl(328${slStr}`,
+  `hsl(336${slStr}`,
+  `hsl(0${slStr}`,
+]
+viewof size = Inputs.range([50, 700], {
+  value: 300,
+  step: 20,
+  label: 'size'
+})
+viewof numMajorTicks = Inputs.range([0, 45], {
+  value: 6,
+  step: 2,
+  label: "Major ticks"
+})
+viewof numMinorTicks = Inputs.range([0, 10], {
+  value: 2,
+  step: 1,
+  label: "Minor ticks"
+})
+function repeat(component, N, initialAngle=0) {
+  // NOTE: if component is a function, it will be called with (angle, i)
+  if (N <= 0) return "";
+  let result = [];
+  for (let i = 0; i < N; i++) {
+    let angle = (360 / N) * i + initialAngle;
+    let el = typeof component === 'function'? component(angle, i) : component;
+    result.push(`<g transform="rotate(${angle})">${el}</g>`);
+  }
+  return result.join("");
+}
+function tick(radius, length, color='black') {
+  return `<path d="M 0,${-radius} l 0,${-length}" fill="none" stroke="${color}" stroke-width="1" />`;
+}
+function directionMarker(radius, fontSize) { return (angle, _) => {
+  let label = {0: 'N', 45: 'NE', 90: 'E', 135: 'SE', 180: 'S', 225: 'SW', 270: 'W', 315: 'NW'}[angle] ?? '??';
+  return `<text y="${-radius-(margin/2)}" font-size="${fontSize}" text-anchor="middle" dy=".36em">${label}</text>`;
+};
+}
+function turnMarker(radius, fontSize) { return (angle, _) => {
+  let label = {0: '0', 45: '125', 90: '250', 135: '375', 180: '500', 225: '625', 270: '750', 315: '875'}[angle] ?? '??';
+  return `<text y="${-radius-(margin/2)}" font-size="${fontSize}" text-anchor="middle" dy="-0.36em">${label}</text>`;
+  };
+}
+function pie(radius, width, narrowness=1.0, piecolors) {
+  return (_, i) => `<path id="piepath" d="M 0,0 L ${-width},${-radius} A ${width} ${width/2} 0 0 1 ${width} ${-radius} z" fill="${piecolors[i]}" stroke="black" stroke-width="0.5"/>`;
+}
+margin = size / 14
+padding = 42
+radius = size / 2 - margin - padding
+window.darkmode = document.getElementsByTagName("body")[0].className.match(/quarto-dark/) ? true : false;
+// https://observablehq.com/@observablehq/categorical-palette-tool
+function displayPalette(palette, { darkMode = false } = {}) {
+  return htl.html`
+  <div style="display: flex; flex-direction: column;">
+    <div style="margin-bottom:8px;">${cielabScatter(palette, { darkMode: darkMode })}</div>
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly;">
+      <div style="">${lightnessSpectrum(palette, { darkMode: darkMode })}</div>
+      <div>${swatches(palette)}</div>
+  </div></div>
+</div>`
+}
+paletteDots = function(palette, { darkMode = false } = {}) {
+  return Plot.plot( {
+    marks: [
+      Plot.dot(palette, {
+        x: (d,i) => i * 36,
+        r: 16,
+        fill: { value: (d) => d, label: "Color" },
+        stroke: darkMode ? "white" : "#202020" ,
+        tip: {
+          format: { x: false },
+          fill: darkMode ? "#202020" : "white"
+        }
+      }),
+      Plot.text(palette.map((d,i) => i), {
+        x: (d) => d * 36,
+        dx: 18,
+        dy: 16,
+        opacity: 0.8
+      }),
+    ],
+    x: { domain: [ 0, 320 ], ticks: 0 },
+    height: 48,
+    width: (palette.length) * 40,
+    marginTop: 16,
+    style: { fontSize: 18, overflow: "visible" }
+    })
+}
+function cielabScatter(palette, { darkMode = false } = {}) {
+  let labPalette = palette.map((c,i)=>({...d3.lab(c), i, color: c, ...({})}));
+  return Plot.plot({
+    width: colorsize,
+    height: colorsize,
+    style: { fontSize: 12 },
+    marks: [
+      Plot.frame({rx: size / 2, ry: size / 2, opacity: 0.2}),
+      Plot.gridX({ticks: 3, opacity: 0.2}),
+      Plot.gridY({ticks: 3, opacity: 0.2}),
+      Plot.ruleX([0], {opacity: 0.25}),
+      Plot.ruleY([0], {opacity: 0.25}),
+      Plot.dot(labPalette, {
+        x: "a", y: "b", r: 5,
+        fill: { value: (d) => d.color, label: "Color" },
+        channels: {
+          L: { value: "l", label: "L*" }
+        },
+        tip: {
+          format: { fill: (d,i) => `${i}` },
+          fill: "#202020",
+        }
+      }),
+    ],
+    x: {
+      domain: [-80, 80],
+      ticks: 3,
+      tickSize: 0,
+      labelArrow: null,
+      labelAnchor: "center",
+      label: "a*"
+    },
+    y: {
+      domain: [-80, 80],
+      ticks: 3,
+      tickRotate: 0,
+      tickSize: 0,
+      labelArrow: null,
+      labelAnchor: "center",
+      label: "b*"
+    }
+  });
+}
+function lightnessSpectrum(palette, { darkMode = false } = {}) {
+  let labPalette = palette.map((c,i)=>({...d3.lab(c), i, color: c, ...({})}));
+  return Plot.plot({
+    height: colorsize,
+    width: 70,
+    style: { fontSize: 12, overflow: "visible" }, // let the tip overflow the rect of the plot
+    marks: [
+      Plot.tickY( labPalette, {
+        y: (d) => d.l,
+        stroke: { value: (d) => d.color, label: "Color" },
+        strokeWidth: 3,
+        tip: {
+          anchor: "right",
+          frameAnchor: "left",
+          format: {
+            fontSize: 12,
+            stroke: (d,i) => `${i}`,
+            a: true, b: true
+          },
+          fill: "#202020"
+        },
+        channels: {
+          a: { value: "a", label: "a*" },
+          b: { value: "b", label: "b*" }
+        },
+      })
+    ],
+    y: {
+      domain: [30, 100],
+      grid: true,
+      tickSize: 0,
+      labelAnchor: "center",
+      label: "L*",
+      labelArrow: false
+    },
+  })
+}
+function swatches(palette) {
+  return Plot.plot({
+    height: colorsize,
+    width: 50,
+    x: {ticks: 0},
+    margin: 0,
+    marks: [
+      Plot.barX(
+        palette, {
+          y: (d,i) => i,
+          fill: (d) => d,
+          inset: -1
+        }
+      )
+    ]
+})}
+colorsize = 210
+kg = parseFloat(kilograms.toFixed(2))
+zem2 = parseFloat((zems**2).toFixed(2))
+bmi = parseFloat((kilograms / zems**2).toFixed(2))
+bmim2 = parseFloat((bmi * 25 / 4).toFixed(2))
+bmiStr = bmi < 2.96 ? "underweight" : bmi < 4 ? "normal" : bmi < 4.8 ? "overweight" : "obese"
+// https://observablehq.com/@magfoto/wavelengths-and-spectral-colours
+// takes wavelength in nm and returns an rgba value
+    function wavelengthToColor(wavelength) {
+        let R,
+            G,
+            B,
+            alpha,
+            colorSpace,
+            wl = wavelength,
+            gamma = 1;
+        if (wl >= 380 && wl < 440) {
+            R = -1 * (wl - 440) / (440 - 380);
+            G = 0;
+            B = 1;
+       } else if (wl >= 440 && wl < 490) {
+           R = 0;
+           G = (wl - 440) / (490 - 440);
+           B = 1;
+        } else if (wl >= 490 && wl < 510) {
+            R = 0;
+            G = 1;
+            B = -1 * (wl - 510) / (510 - 490);
+        } else if (wl >= 510 && wl < 580) {
+            R = (wl - 510) / (580 - 510);
+            G = 1;
+            B = 0;
+        } else if (wl >= 580 && wl < 645) {
+            R = 1;
+            G = -1 * (wl - 645) / (645 - 580);
+            B = 0.0;
+        } else if (wl >= 645 && wl <= 780) {
+            R = 1;
+            G = 0;
+            B = 0;
+        } else {
+            R = 0;
+            G = 0;
+            B = 0;
+        }
+        // intensty is lower at the edges of the visible spectrum.
+        if (wl > 780 || wl < 380) {
+            alpha = 0;
+        } else if (wl > 700) {
+            alpha = (780 - wl) / (780 - 700);
+        } else if (wl < 420) {
+            alpha = (wl - 380) / (420 - 380);
+        } else {
+            alpha = 1;
+        }
+        colorSpace = ["rgba(" + (R * 100) + "%," + (G * 100) + "%," + (B * 100) + "%, " + alpha + ")", R, G, B, alpha]
+        // colorSpace is an array with 5 elements.
+        // The first element is the complete code as a string.
+        // Use colorSpace[0] as is to display the desired color.
+        // Use the last four elements alone or together to access each of the individual r, g, and b channels.
+        return colorSpace;
+    }
+// https://observablehq.com/@freedmand/sounds
+function piano(stlibWidth) {
+  const width = 960;
+  const keyHeight = 450;
+  const height = 575;
+  const whiteKeys = 11;
+  const blackKeys = [1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1];
+  const whiteOffsets = blackKeys.reduce((x, y) => x.concat([y + x[x.length - 1] + 1]), [0]);
+  const svg = html`<svg width="100%" height="auto" viewBox="0 0 ${width} ${height}"
+    xmlns="http://www.w3.org/2000/svg"></svg>`;
+  function wrap(elem, note) {
+    const freq = 440 * Math.pow(2, note / 12);
+    // Play a note when clicked.
+    const oscillator = ctx.createOscillator();
+    const gain = ctx.createGain();
+    gain.gain.value = 0;
+    oscillator.type = 'square';
+    oscillator.frequency.setValueAtTime(freq, ctx.currentTime);
+    oscillator.connect(gain);
+    gain.connect(ctx.destination);
+    oscillator.start();
+    elem.style.cursor = 'pointer';
+    elem.onclick = () => {
+      gain.gain.cancelScheduledValues(ctx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + 0.05);
+      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.3);
+    };
+    return elem;
+  }
+  // Draw the white keys.
+  for (let i = 0; i <= whiteKeys - 1; i++) {
+    svg.appendChild(wrap(html`<svg><rect x="${width * i / whiteKeys}" y="0" width="${width / whiteKeys}" height="${keyHeight}" fill=${whiteKeyColors[i]} stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 4));
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 42}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${String.fromCharCode('A'.charCodeAt(0) + (i + 5) % 7) + (i < 4 ? "3" : "4")}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 82}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(220 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864)}</text></svg>`);
+    svg.appendChild(html`<svg><text style="user-select: none;" x="${width * (i + 0.5) / whiteKeys}" y="${keyHeight + 122}" font-family="monospace" id="pianotext" font-size="36" text-anchor="middle">${Math.round(73504.8 / (220 * Math.pow(2, (whiteOffsets[i] - 4) / 12) * .864))}</text></svg>`);
+  }
+  // Draw the black keys.
+  for (let i = 0; i <= whiteKeys - 2; i++) {
+    if (blackKeys[i] == 1) {
+      svg.appendChild(wrap(html`<svg><rect x="${width * ((i + 0.65) / whiteKeys)}" y="0" width="${width / whiteKeys * 0.7}" height="${keyHeight * 0.55}" fill=${blackKeyColors[i]} stroke="black" stroke-width="2"/></svg>`, whiteOffsets[i] - 4 + blackKeys[i]));
+    }
+  }
+  return svg;
+}
+whiteKeyColors = [
+  "#fff",
+  "#fff",
+  "#fff",
+  xetHex[1],
+  xetHex[2],
+  xetHex[4],
+  xetHex[6],
+  xetHex[7],
+  xetHex[9],
+  xetHex[11],
+  "#fff",
+  "#fff",
+  "#fff",
+]
+blackKeyColors = [
+  "#000",
+  "#000",
+  xetHex[0],
+  "",
+  xetHex[3],
+  xetHex[5],
+  "",
+  xetHex[8],
+  xetHex[10],
+  "#000",
+  "#000",
+  "#000",
+]
+// https://observablehq.com/@freedmand/sounds
+ctx = new (window.AudioContext || window.webkitAudioContext)()
+function Play(genFn, duration = 1) {
+  return new SoundBuffer(genFn, duration).gui();
+}
+class SoundBuffer {
+  constructor(genFn, duration = .864) {
+    this.duration = duration;
+    // Create an audio buffer.
+    this.audioBuffer = ctx.createBuffer(1, ctx.sampleRate * this.duration, ctx.sampleRate);
+    this.buffer = this.audioBuffer.getChannelData(0);
+    let max = 0;
+    for (let i = 0; i < this.audioBuffer.length; i++) {
+      const value = genFn(i / ctx.sampleRate);
+      this.buffer[i] = value;
+      if (Math.abs(value) > max) max = Math.abs(value);
+    }
+    for (let i = 0; i < this.audioBuffer.length; i++) {
+      this.buffer[i] = this.buffer[i] / max;
+    }
+  }
+  play(maxVol = 0.3) {
+    this.stop();
+    this.source = ctx.createBufferSource();
+    this.source.buffer = this.audioBuffer;
+    const gain = ctx.createGain();
+    gain.gain.value = maxVol;
+    this.source.connect(gain);
+    gain.connect(ctx.destination);
+    this.source.start();
+  }
+  stop() {
+    if (this.source) this.source.stop();
+  }
+  draw(height = 50, width = width, color = 'blue') {
+    const drawingCtx = DOM.context2d(width, height);
+    // Draw the middle line.
+    drawingCtx.strokeStyle = 'gainsboro';
+    drawingCtx.beginPath();
+    drawingCtx.moveTo(0, height / 2);
+    drawingCtx.lineTo(width, height / 2);
+    drawingCtx.stroke();
+    // Draw the waveform.
+    drawingCtx.strokeStyle = color;
+    drawingCtx.beginPath();
+    for (let i = 0; i < width; i++) {
+      const value = this.buffer[Math.floor(i / width * this.audioBuffer.length)];
+      const y = height - Math.floor((value / 2 + 0.5) * height * 0.9 + height * 0.05);
+      if (i == 0) {
+        drawingCtx.moveTo(i, y);
+      } else {
+        drawingCtx.lineTo(i, y);
+      }
+    }
+    drawingCtx.stroke();
+    return drawingCtx.canvas;
+  }
+  gui() {
+    const ui = html`<style>
+      .sound-player {
+        border: solid 1px gainsboro;
+        background: #f5f5f5;
+        font-family: sans-serif;
+        color: #6f6f6f;
+        font-size: 0.8em;
+      }
+      .sound-pane {
+        height: 50px;
+        background: white;
+        margin: 8px;
+        border: solid 1px gainsboro;
+        position: relative;
+      }
+      .icons {
+        margin: 0 8px 8px 8px;
+      }
+	  .icons .button {
+         cursor: pointer;
+         border: solid 1px transparent;
+      }
+      .icons .button:hover {
+         border: solid 1px gainsboro;
+      }
+      .cursor {
+        background: red;
+        width: 2px;
+        height: 100%;
+        position: absolute;
+      }
+    </style>
+    <div class="sound-player">
+      <div class="sound-pane">
+        <span class="cursor" style="display: none;"></span>
+	  </div>
+      <div class="icons">
+        <span class="button play-button" style="font-size:18px;">▶</span>
+        <span class="button stop-button" style="font-size:18px;">◼</span>&nbsp;&nbsp;
+        <span class="duration">${Math.round(this.duration / .864)} b</span>
+      </div>
+    </div>`;
+    const cursor = ui.querySelector('.cursor');
+    let interval = null;
+    const resetInterval = () => {
+      if (interval != null) {
+        clearInterval(interval);
+        interval = null;
+      }
+    };
+    const soundPlayer = ui.querySelector('.sound-player');
+    ui.querySelector('.sound-pane').appendChild(this.draw(46, width - 20));
+    ui.querySelector('.play-button').onclick = () => {
+      cursor.style.left = '0';
+      this.play();
+      cursor.style.display = 'block';
+      const playTime = Date.now();
+      resetInterval();
+      interval = setInterval(() => {
+        if (!document.contains(soundPlayer)) {
+          resetInterval();
+          this.stop();
+        }
+        let progress = (Date.now() - playTime) / this.duration / 1000;
+        if (progress < 0) progress = 0;
+        if (progress > 1) {
+          progress = 1;
+          resetInterval();
+          this.stop();
+          cursor.style.display = 'none';
+        }
+        cursor.style.left = `${Math.floor(progress * (width - 20))}px`;
+      }, 20);
+    };
+    ui.querySelector('.stop-button').onclick = () => {
+      resetInterval();
+      this.stop();
+      cursor.style.display = 'none';
+    };
+    return ui;
+  }
+}
+function shortenHex(hex) {
+  if (!/^#([0-9a-f]{3}){1,2}$/i.test(hex)) {
+    return hex;
+  }
+  hex = hex.replace("#", "");
+  if (hex.length === 6 && hex[0] === hex[1] && hex[2] === hex[3] && hex[4] === hex[5]) {
+    return "#" + hex[0] + hex[2] + hex[4];
+  }
+  return "#" + hex;
+}
+piecewiseIob = d3.piecewise(d3.interpolateRound, [
+  301.734720,
+  319.675162,
+  338.684026,
+  358.823261,
+  380.160000,
+  402.765523,
+  426.715171,
+  452.088950,
+  478.971619,
+  507.452688,
+  537.627456,
+  569.596406,
+  603.466416,
+  639.351360,
+])
+piecewiseLen = d3.piecewise(d3.interpolateRound, [
+  2436.073648,
+  2299.359125,
+  2170.306080,
+  2048.495960,
+  1933.522727,
+  1825.002285,
+  1722.572924,
+  1625.892425,
+  1534.637900,
+  1448.505481,
+  1367.206961,
+  1290.471625,
+  1218.042928,
+  1149.677698,
+])
+class minMax {
+  constructor(limits) {
+    this.min = Math.min(...limits)
+    this.max = Math.max(...limits)
+  }
+  scale(val) {
+    return (val - this.min) / (this.max - this.min)
+  }
+}
+octave4scaler = new minMax([200, 400])
+freqs = [
+  201.38,
+  213.36,
+  226.04,
+  239.49,
+  253.73,
+  268.81,
+  284.80,
+  301.73,
+  319.68,
+  338.68,
+  358.82,
+  380.16,
+]
+notes = [
+  "A♯",
+  "B",
+  "C",
+  "C♯",
+  "D",
+  "D♯",
+  "E",
+  "F",
+  "F#",
+  "G",
+  "G♯",
+  "A",
+]
+xet = freqs.map(x => octave4scaler.scale(x))
+xetFix = xet.map(x => parseFloat((x * 10).toFixed(2)))
+xetCol = xet.map(piecewiseColor)
+xetHex = xetCol.map(x => d3.color(x).formatHex())
+xetHue = xetCol.map(x => Math.round(d3.hsl(x).h))
+xetIob = xet.map(piecewiseIob)
+xetLen = xet.map(piecewiseLen)
+hues = Object.fromEntries([
+    0.002,
+    0.004,
+    0.008,
+    0.014,
+    0.0158,
+    0.016,
+    0.021,
+    0.022,
+    0.024,
+    0.030,
+    0.040,
+    0.039,
+    0.065,
+    0.067,
+    0.130,
+    0.185,
+    0.40069,
+    0.41302,
+    0.413,
+    0.4132,
+    0.460,
+    0.480,
+    0.490,
+    0.49008,
+    0.599,
+    0.704,
+    0.754,
+    0.788,
+    0.815,
+    0.864,
+    0.935,
+    0.960,
+  ].map(i => [i, d3.hsl(piecewiseColor(i)).h])
+);
+h26div300 = d3.hsl(piecewiseColor(26 / 300)).h
+hD039 = d3.hsl(piecewiseColor(39 / 365)).h
+hD080 = d3.hsl(piecewiseColor(80 / 365)).h
+hD285 = d3.hsl(piecewiseColor(285 / 365)).h
+fMile = 5 / 3 / 1.609344
+fInch = 25 / 25.4
+hIob = d3.hsl(piecewiseColor(1 / .864 % 1)).h
+hMile = d3.hsl(piecewiseColor(fMile % 1)).h
+hInch = d3.hsl(piecewiseColor(fInch % 1)).h
+hAvLb = d3.hsl(piecewiseColor(500 / 453.59237 % 1)).h
+hPint = d3.hsl(piecewiseColor(4 / 3.785411784 % 1)).h
+hFlOz = d3.hsl(piecewiseColor(32 / 29.5735296875 % 1)).h
+hAcre = d3.hsl(piecewiseColor(247.1053814672 / 250 % 1)).h
+hSqMi = d3.hsl(piecewiseColor(fMile**2 % 1)).h
+hSqIn = d3.hsl(piecewiseColor(fInch**2 % 1)).h
+bcHue = (xetHue[1] + xetHue[2]) / 2
+ddsHue = (xetHue[4] + xetHue[5]) / 2
+dseHue = (xetHue[5] + xetHue[6]) / 2
+selectedDote = unix2dote(now, long2zone(location[0]))
+selectedExact = selectedDote[0] % 1
+selectedExactN = (1 - selectedExact) % 1
+selectedZone = selectedDote[1]
+selydz = dote2date(...selectedDote)
+decDate = Math.floor(selydz[1])
+decTime = (selectedExact * 10).toFixed(4)
+decTimeN = (selectedExactN * 10).toFixed(4)
+barDD = decTime[0]
+barDDN = decTimeN[0]
+barMils = decTime.slice(2, 4)
+barMilsN = decTimeN.slice(2, 4)
+barBeats = decTime.slice(4, 6)
+barBeatsN = decTimeN.slice(4, 6)
+decZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+html`
+<style>
+.colorAs {
+  background: hsl(${xetHue[0]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[0]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorAs3 {
+  background: hsl(${hues[0.40069]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.40069]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color0158 {
+  background: hsl(${hues[0.0158]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.0158]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorC4 {
+  background: hsl(${hues[0.41302]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.41302]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorA4 {
+  background: hsl(${hues[0.49008]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.49008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorB {
+  background: hsl(${xetHue[1]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[1]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorBc {
+  background: hsl(${bcHue} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${bcHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorC {
+  background: hsl(${xetHue[2]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[2]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorCs {
+  background: hsl(${xetHue[3]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[3]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD {
+  background: hsl(${xetHue[4]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[4]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorDs {
+  background: hsl(${xetHue[5]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[5]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorDds {
+  background: hsl(${ddsHue} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${ddsHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorDsE {
+  background: hsl(${dseHue} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${dseHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorE {
+  background: hsl(${xetHue[6]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[6]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorF {
+  background: hsl(${xetHue[7]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[7]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorFs {
+  background: hsl(${xetHue[8]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[8]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorG {
+  background: hsl(${xetHue[9]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[9]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorGs {
+  background: hsl(${xetHue[10]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[10]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorA {
+  background: hsl(${xetHue[11]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${xetHue[11]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color0 {
+  background: hsl(0 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(0, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color002 {
+  background: hsl(${hues[.002]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.002]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color004 {
+  background: hsl(${hues[.004]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.004]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color008 {
+  background: hsl(${hues[.008]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color014 {
+  background: hsl(${hues[.014]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.014]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color016 {
+  background: hsl(${hues[0.016]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.016]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color021 {
+  background: hsl(${hues[0.021]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.021]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color022 {
+  background: hsl(${hues[0.022]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.022]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color024 {
+  background: hsl(${hues[0.024]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.024]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color025 {
+  background: hsl(20 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(20, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color030 {
+  background: hsl(${hues[0.030]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.030]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color039 {
+  background: hsl(${hues[0.039]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.039]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color040 {
+  background: hsl(${hues[0.040]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.040]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color050 {
+  background: hsl(24 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(24, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color065 {
+  background: hsl(${hues[0.065]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.065]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color067 {
+  background: hsl(${hues[0.067]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.067]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color26div300 {
+  background: hsl(${h26div300} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${h26div300}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color1 {
+  background: hsl(36 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(36, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color125 {
+  background: hsl(44 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(44, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color130 {
+  background: hsl(${hues[0.130]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.130]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color185 {
+  background: hsl(${hues[0.185]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.185]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color2 {
+  background: hsl(60 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(60, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color250 {
+  background: hsl(68 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(68, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color3 {
+  background: hsl(80 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(80, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color375 {
+  background: hsl(96 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(96, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color4 {
+  background: hsl(120 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(120, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color413 {
+  background: hsl(${hues[0.413]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.413]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color4132 {
+  background: hsl(${hues[0.4132]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.4132]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color460 {
+  background: hsl(${hues[0.460]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.460]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color480 {
+  background: hsl(${hues[0.480]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.480]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color490 {
+  background: hsl(${hues[0.490]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.490]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color5 {
+  background: hsl(180 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(180, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color599 {
+  background: hsl(${hues[0.599]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.599]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color6 {
+  background: hsl(208 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(208, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color625 {
+  background: hsl(216 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(216, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color7 {
+  background: hsl(240 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(240, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color704 {
+  background: hsl(${hues[0.704]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.704]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color750 {
+  background: hsl(264 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(264, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color754 {
+  background: hsl(${hues[0.754]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.754]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color788 {
+  background: hsl(${hues[0.788]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.788]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color8 {
+  background: hsl(276 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(276, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color815 {
+  background: hsl(${hues[0.815]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.815]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color864 {
+  background: hsl(${hues[0.864]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.864]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color875 {
+  background: hsl(292 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(292, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color9 {
+  background: hsl(300 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(300, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color935 {
+  background: hsl(${hues[0.935]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.935]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color950 {
+  background: hsl(328 ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(328, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color960 {
+  background: hsl(${hues[0.960]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.960]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD039 {
+  background: hsl(${hD039} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD080 {
+  background: hsl(${hD080} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD080}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorD285 {
+  background: hsl(${hD285} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hD285}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorff6300 {
+  background: #ff6300;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorffec00 {
+  background: #ffec00;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color99ff00 {
+  background: #99ff00;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color28ff00 {
+  background: #28ff00;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color00ffe8 {
+  background: #00ffe8;
+  color: black;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color007cff {
+  background: #007cff;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color0800ff {
+  background: #0800ff;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color5e00d6 {
+  background: #5e00d6;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorIob {
+  background: hsl(${hIob} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hIob}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorMile {
+  background: hsl(${hMile} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hMile}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorInch {
+  background: hsl(${hInch} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hInch}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorAvLb {
+  background: hsl(${hAvLb} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hAvLb}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorPint {
+  background: hsl(${hPint} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hPint}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorFlOz {
+  background: hsl(${hFlOz} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hFlOz}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorAcre {
+  background: hsl(${hAcre} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hAcre}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorSqMi {
+  background: hsl(${hSqMi} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hSqMi}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorSqIn {
+  background: hsl(${hSqIn} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hSqIn}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+</style>
+`
+```
+
+```{=html}
+<style>
+.text-preview {
+  display: flex;
+  font-family: sans-serif;
+  flex-direction: column;
+  margin: 0 32px;
+  font-size: 12px;
+}
+.text-preview div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  flex: auto;
+}
+#maptable {
+  line-height: 1.5;
+}
+#maptable table * {
+  font-size: 18px;
+  padding: 0px 5px 0px 5px;
+}
+div#projselect {
+  max-width: 250px;
+}
+div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput > div, div#pitchinput > div, div#rollinput > div {
+  overflow-x: clip;
+}
+div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
+  width: 35px;
+}
+button#rstbtn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+div#distmap {
+  margin-bottom: -28px;
+}
+#sizeinput #speedinput #yawinput #pitchinput #rollinput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#speedinput input[type="number"], #sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
+  width: 58px;
+}
+#speedinput input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
+  width: 72%;
+}
+.colorcomponent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div#colorpreview, div.colorcomparer, div#coloropposites8, div#coloropposites10, div#colorcomparer8, div#colorcomparer10 {
+  overflow: visible;
+}
+div.colorcomparer g[aria-label="y-axis label"] > text {
+ transform: translate(40px,100px);
+}
+div.colorcomparer svg {
+  overflow: visible;
+  margin-left: 5px;
+}
+div.coloropp {
+  overflow: visible;
+}
+div.coloropp canvas {
+  width: 240px !important;
+  height: 240px !important;
+  overflow: visible;
+}
+div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label, div#wavinput label, div#iobinput label, div#beatinput label {
+  --label-width: 80px;
+  max-width: 80px;
+}
+div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"], #wavinput input[type="number"], #iobinput input[type="number"], div#beatinput input[type="number"] {
+  max-width: 80px;
+}
+div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] , #beatinput input[type="range"] {
+  max-width: 225px;
+  min-width: 125px;
+}
+.colorslider {
+  display: flex;
+  justify-content: center;
+}
+div#distmap {
+  display: flex;
+  justify-content: center;
+  overflow-x: visible;
+}
+div#maptable {
+  display: flex;
+  justify-content: center;
+  overflow-x: visible;
+}
+div#maptable form {
+  padding: 0px;
+}
+div#toggles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+div#toggles * {
+  overflow: visible;
+}
+div#toggles form.oi-3a86ea-toggle#bordertoggle {
+  width: 100px;
+}
+div#toggles form.oi-3a86ea-toggle#bordertoggle > label {
+  width: 50px;
+}
+div#toggles form.oi-3a86ea-toggle#gridtoggle {
+  width: 80px;
+}
+div#toggles form.oi-3a86ea-toggle#gridtoggle > label {
+  width: 31px;
+}
+div#toggles form.oi-3a86ea-toggle#suntoggle {
+  width: 75px;
+}
+div#toggles form.oi-3a86ea-toggle#suntoggle > label {
+  width: 28px;
+}
+div#toggles form.oi-3a86ea-toggle#utctoggle {
+  width: 80px;
+}
+div#toggles form.oi-3a86ea-toggle#utctoggle > label {
+  width: 32px;
+}
+div#toggles form.oi-3a86ea-toggle > label {
+  margin-top: -4px;
+}
+div#toggles input.oi-3a86ea-input[type="checkbox"] {
+  margin-top: 1px;
+}
+div#toggles button#rstbtn {
+  overflow: visible;
+  margin-top: -6px;
+}
+div:has(div.description) {
+  display: none;
+}
+h4.hiddenheading, h5.hiddenheading {
+  display: none;
+}
+h4.anchored {
+  margin: 8px 0px 8px 0px;
+}
+#zemcubic svg {
+  max-width: 100%;
+  height: 220px;
+}
+#zemhands svg {
+  max-width: 100%;
+}
+svg#lefthand {
+  height: 50%;
+}
+.marginInputs {
+  position: relative;
+  top: -210px;
+  z-index: 99;
+  line-height: 1;
+}
+#cct table, #zct table {
+  line-height: 1.5;
+  vertical-align: middle;
+}
+section#map {
+  line-height: 1.5;
+}
+#ruler {
+  margin-top: 25px;
+}
+form.oi-3a86ea {
+  flex-wrap: nowrap;
+}
+#costype label {
+  max-width: 100px;
+}
+img#ruler, svg#zhands {
+  width: 100%;
+}
+img#zModu {
+  width: 100%;
+}
+#iobplayer {
+  overflow: clip;
+}
+#iobplayer canvas {
+  height: 100%;
+}
+#chorus svg {
+  width: 100%;
+}
+#chorus > div {
+  overflow: clip;
+}
+#citelist ul li {
+  overflow-x: scroll;
+  white-space: nowrap;
+  list-style-position: inside;
+}
+#chorus {
+  margin-top: -12px;
+  margin-bottom: 19px;
+}
+svg.barclock {
+  width: 100%;
+  overflow: visible;
+}
+.tickLabel, .tickLabel1, .tickLabel2, .timeLabel {
+  font-family: monospace;
+  text-anchor: middle;
+}
+.timeLabel {
+  text-anchor: start;
+}
+.timeBar, .timeBarFull, .timeBarFullN {
+  x: 1px;
+  height: 25px;
+  rx: 5px;
+  stroke: #aaa;
+}
+.tickDek, .tickDotd, .tickDotd1, .tickC, .tickC1, .tickM, .tickM1, .tickB, .tickB1 {
+  stroke: none;
+  fill: #666;
+  width: 1px;
+}
+.analogclock {
+  stroke: #000;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  overflow: visible;
+}
+.analogclock #rim {
+  fill: none;
+  stroke: #999;
+  stroke-width: 3px;
+}
+.analogclock .second-hand {
+  stroke-width: 3;
+}
+.analogclock .minute-hand {
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+.analogclock .hour-hand {
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+.analogclock .hands-cover {
+  stroke-width: 3;
+  fill: #fff;
+}
+.analogclock .second-tick {
+  stroke-width: 3;
+  fill: #000;
+}
+.analogclock .hour-tick {
+  stroke-width: 8; // same as the minute hand
+}
+.analogclock .second-label {
+  font-size: 22px;
+}
+.analogclock .hour-label {
+  font-size: 32px
+}
+</style>
+```

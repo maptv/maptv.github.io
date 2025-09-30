@@ -1,0 +1,23 @@
+```{ojs}
+//| echo: false
+//| label: toggles
+viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
+viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
+viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
+viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
+rstbtn.node();
+```
+
+::: {.column-page}
+```{ojs}
+//| echo: false
+//| label: distmap
+// https://observablehq.com/@d3/solar-terminator
+// https://observablehq.com/@mbostock/time-zones
+viewof coordinates = worldMapCoordinates([[162, 0], projection], [width, height * mapsize / 100])
+//viewof coordinates = worldMapCoordinates([
+//  [turn2long(table.rows[1].cells[1].childNodes[0].innerText), turn2degr(table.rows[1].cells[2].childNodes[0].innerText % 250)],
+//  [turn2long(table.rows[2].cells[1].childNodes[0].innerText), turn2degr(table.rows[2].cells[2].childNodes[0].innerText % 250)],
+//  projection], [width, height])
+```
+:::
