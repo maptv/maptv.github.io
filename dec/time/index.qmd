@@ -1865,6 +1865,21 @@ function worldMapCoordinates(config = {}, dimensions) {
     canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
   };
   draw();
+  function resetlatlon() {
+    lon = 160;
+    lat = 0;
+    set(viewof bordertoggle, false);
+    set(viewof gridtoggle, false);
+    set(viewof suntoggle, false);
+    set(viewof utctoggle, false);
+    set(viewof yaw, 500);
+    set(viewof pitch, 0);
+    set(viewof roll, 0);
+    set(viewof select, projections.find(t => t.name === "Equirectangular (plate carrée)"));
+    draw(lon, lat);
+    canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+  }
+  rstbtn.on('click', resetlatlon);
   const form = input({
     type: "worldMapCoordinates",
     title,
