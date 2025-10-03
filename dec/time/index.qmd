@@ -1814,8 +1814,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.stroke();
       context.fillStyle = "#000";
       context.font = width < 760 ? "14px serif" : width < 990 ? "17px serif" : "23px serif";
-      d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 82 - (width < 500) * 8.8])));
-      d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -66 + (width < 500) * 1.1])));
+      d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 54.7])));
+      d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -59.7])));
       // context.font = width < 760 ? "12px serif" : "21px serif";
       // context.fillStyle = `#000`;
       // d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 27.5])));
