@@ -1110,7 +1110,7 @@ function long2turn(degrees = -180, e = 3) {
 }
 // https://github.com/topojson/world-atlas
 world = d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
-countries = topojson.feature(world, world.objects.countries)
+// countries = topojson.feature(world, world.objects.countries)
 topojson = require("topojson-client@3")
 function long2zone(degrees = -180) {
   return Math.floor(long2turn(degrees, 1));
@@ -1761,38 +1761,90 @@ function worldMapCoordinates(config = {}, dimensions) {
     .fitSize([width, height], { type: "Sphere" }).rotate([-153, 0]);
   const path = d3.geoPath(projection, context).pointRadius(2.5);
   formEl.append(canvas);
-  function draw() {
-    context.fillStyle = window.darkmode ? "black" : "white";
-    context.fillRect(0, 0, width, height);
-    context.beginPath(); path({type: "Sphere"});
-    context.fillStyle = window.darkmode ? "#007FFF" : mapcolors.ocean;
-    context.fill();
+  function fillMesh(f) {
     context.beginPath();
-    path(graticule);
-    context.lineWidth = 0.95;
-    context.strokeStyle = `#aaa`;
-    context.stroke();
+    path(f);
+    context.fillStyle = zonecolor(f.properties.zone);
+    context.fill();
+    context.innerHTML = `<title>${f.properties.places} ${f.properties.time_zone}</title>`;
+  }
+  function draw() {
+    if (!utctoggle) {
+      context.beginPath(); path({type: "Sphere"});
+      context.fillStyle = window.darkmode ? "#007FFF" : mapcolors.ocean;
+      context.fill();
+      if (gridtoggle) {
+        deczones.map((f, i) =>  {
+          context.beginPath();
+          path(f);
+          context.fillStyle = hsla10[i];
+          context.fill();
+        })
+      }
+    }
+    if (utctoggle) {
+      zones.map(f => fillMesh(f))
+    }
     context.beginPath();
     path(land);
-    context.fillStyle = window.darkmode ? "#0808" : mapcolors.land;
-    context.fill();
-    context.beginPath();
-    path(countries);
-    context.lineWidth = .95;
-    context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+    if (!utctoggle) {
+      context.fillStyle = window.darkmode ? "#0808" : mapcolors.land;
+      context.fill();
+    }
+    context.strokeStyle = `#000`;
     context.stroke();
+    if (bordertoggle) {
+      context.beginPath();
+      path(borders);
+      context.lineWidth = 1.25;
+      context.strokeStyle = window.darkmode ? "#aaa" : "#333";
+      context.stroke();
+    }
+    if (utctoggle) {
+      context.beginPath();
+      path(mesh);
+      context.lineWidth = 1.25;
+      context.strokeStyle = `#999`;
+      context.stroke();
+    }
+    if (gridtoggle) {
+      context.beginPath();
+      path(graticule);
+      context.lineWidth = 1.25;
+      context.strokeStyle = utctoggle || !window.darkmode ? "#000" : "#fff";
+      context.stroke();
+      // context.font = width < 760 ? "12px serif" : "21px serif";
+      // context.fillStyle = `#000`;
+      // d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 27.5])));
+      // d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -48])));
+      // d3.range(-18, 336 + 1, 36).map(x => context.fillText(formatLongitude(x), ...projection([x, 90])));
+      // d3.range(-18, 336 + 1, 36).map(x => context.fillText(formatLongitude(x), ...projection([x, -90])));
+    }
+    if (suntoggle) {
+      context.beginPath();
+      path(night);
+      context.fillStyle = "rgba(0,0,255,0.3)";
+      context.fill();
+      context.beginPath();
+      path.pointRadius(width / 84 + 5);
+      path({type: "Point", coordinates: sun});
+      context.strokeStyle = "#0009";
+      context.fillStyle = "#ff0b";
+      context.lineWidth = 1;
+      context.stroke();
+      context.fill();
+    }
     context.fillStyle = window.darkmode ? "#fff" : "#000";
     context.font = width < 760 ? "14px serif" : width < 990 ? "17px serif" : "23px serif";
     d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 82 - (width < 500) * 8.8])));
     d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -66 + (width < 500) * 1.1])));
-    context.beginPath(), path(night), context.fillStyle = "rgba(0,0,255,0.1)", context.fill();
-    context.beginPath(); path.pointRadius(17); path({type: "Point", coordinates: sun}); context.strokeStyle = "#0008"; context.fillStyle = "#ff08"; context.lineWidth = 1; context.stroke(); context.fill();
     if (lon != null && lat != null) {
       path.pointRadius(17); context.strokeStyle = "black";
       context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.lineWidth = 1; context.stroke();
       context.lineWidth = 6;
       path.pointRadius(14); context.strokeStyle = "red";
       context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.stroke();
+      context.lineWidth = 1;
     }
   }
   let drag = d3.drag()
@@ -2406,6 +2458,36 @@ function labelToggle(inputType, inputLabel, inputValue, inputId) {
   input.setAttribute("id", inputId);
   return input;
 }
+timezones = FileAttachment("../../asset/timezones.json").json()
+zones = topojson.feature(timezones, timezones.objects.timezones).features
+mesh = topojson.mesh(timezones, timezones.objects.timezones)
+zonecolor = d3.scaleSequential(d3.interpolateRdBu).domain([-12, 14])
+coor = [[[-18, -89.98], [-18, 89.98], [18, 89.98], [18, -89.98], [-18, -89.98], ]]
+deczones = [...Array(10).keys()].map(
+  i => ({
+    "type": "Feature",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [coor[0].map(t => [t[0]+36*i, t[1]])]
+      },
+    "properties": []
+  })
+)
+hsla10 = [
+  `hsla(0,   100%, 50%, 100%)`, // red
+  `hsla(36,  100%, 50%, 100%)`, // orange
+  `hsla(60,  100%, 50%, 100%)`, // yellow
+  `hsla(80,  100%, 50%, 100%)`, // lime
+  `hsla(120, 100%, 50%, 100%)`, // green
+  `hsla(180, 100%, 50%, 100%)`, // cyan
+  `hsla(208, 100%, 50%, 100%)`, // azure
+  `hsla(240, 100%, 50%, 100%)`, // blue
+  `hsla(276, 100%, 50%, 100%)`, // violet
+  `hsla(300, 100%, 50%, 100%)`, // magenta
+  `hsla(0,   100%, 50%, 100%)`, // red
+]
+borders = topojson.mesh(countries, countries.objects.countries, (a, b) => a !== b)
+countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json").then(response => response.json())
 ```
 
 ```{ojs}
@@ -3467,7 +3549,7 @@ div#distmap {
   overflow: visible;
   display: flex;
   justify-content: center;
-  line-height: 1;
+  line-height: 1.5;
 }
 #projselect > div {
   margin-top: -4px;
@@ -3547,6 +3629,10 @@ div#toggles button#rstbtn {
 }
 div#maptable form {
   padding: 0px;
+}
+#maptable table * {
+  font-size: 15px;
+  padding: 0px 4px 0px 4px;
 }
 </style>
 ```

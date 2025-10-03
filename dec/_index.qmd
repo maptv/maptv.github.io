@@ -653,6 +653,19 @@ deczones = [...Array(10).keys()].map(
     "properties": []
   })
 )
+hsla10 = [
+  `hsla(0,   100%, 100%, 100%)`, // red
+  `hsla(36,  100%, 100%, 100%)`, // orange
+  `hsla(60,  100%, 100%, 100%)`, // yellow
+  `hsla(80,  100%, 100%, 100%)`, // lime
+  `hsla(120, 100%, 100%, 100%)`, // green
+  `hsla(180, 100%, 100%, 100%)`, // cyan
+  `hsla(208, 100%, 100%, 100%)`, // azure
+  `hsla(240, 100%, 100%, 100%)`, // blue
+  `hsla(276, 100%, 100%, 100%)`, // violet
+  `hsla(300, 100%, 100%, 100%)`, // magenta
+  `hsla(0,   100%, 100%, 100%)`, // red
+]
 // https://observablehq.com/@enjalot/draggable-world-map-coordinates-input
 // https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea
 function worldMapCoordinates(config = {}, dimensions) {
