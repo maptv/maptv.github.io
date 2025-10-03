@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+209
+2025+100
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -3834,6 +3834,10 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.lineWidth = 1.25;
       context.strokeStyle = utctoggle || !window.darkmode ? "#000" : "#fff";
       context.stroke();
+      context.fillStyle = "#000";
+      context.font = width < 760 ? "14px serif" : width < 990 ? "17px serif" : "23px serif";
+      d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 54.7])));
+      d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -59.7])));
       // context.font = width < 760 ? "12px serif" : "21px serif";
       // context.fillStyle = `#000`;
       // d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 27.5])));
