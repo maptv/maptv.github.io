@@ -396,7 +396,7 @@ table = createTable([
 ```{ojs}
 //| echo: false
 //| label: distmap
-viewof location = worldMapCoordinates([162, 0], [width, height * mapsize / 100])
+viewof location = worldMapCoordinates([[162, 0], projection], [width, height * mapsize / 100])
 ```
 :::
 
@@ -1746,19 +1746,18 @@ d3format = require("d3-format@1")
 function worldMapCoordinates(config = {}, dimensions) {
   const {
     value = [], title, description, width = dimensions[0]
-  } = Array.isArray(config) ? {value: config} : config;
+  } = Array.isArray(config) ? {value: config[0]} : config;
   const height = dimensions[1];
   let [lon, lat] = value;
   lon = lon != null ? lon : null;
   lat = lat != null ? lat : null;
   const formEl = html`<form id="formEl" style="width: ${width}px;"></form>`;
-  const context = DOM.context2d(width, height-width/15);
+  const context = DOM.context2d(width, height);
   const canvas = context.canvas;
   canvas.style.margin = `10px 0px 0px 0px`;
-  const projection = d3
-    .geoEquirectangular()
+  const projection = config[1]
     .precision(0.1)
-    .fitSize([width, height], { type: "Sphere" }).rotate([-153, 0]);
+    .fitSize([width, height], { type: "Sphere" });
   const path = d3.geoPath(projection, context).pointRadius(2.5);
   formEl.append(canvas);
   function fillMesh(f) {
@@ -1813,6 +1812,10 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.lineWidth = 1.25;
       context.strokeStyle = utctoggle || !window.darkmode ? "#000" : "#fff";
       context.stroke();
+      context.fillStyle = "#000";
+      context.font = width < 760 ? "14px serif" : width < 990 ? "17px serif" : "23px serif";
+      d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 82 - (width < 500) * 8.8])));
+      d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -66 + (width < 500) * 1.1])));
       // context.font = width < 760 ? "12px serif" : "21px serif";
       // context.fillStyle = `#000`;
       // d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 27.5])));
@@ -1834,10 +1837,6 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.stroke();
       context.fill();
     }
-    context.fillStyle = window.darkmode ? "#fff" : "#000";
-    context.font = width < 760 ? "14px serif" : width < 990 ? "17px serif" : "23px serif";
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, 82 - (width < 500) * 8.8])));
-    d3.range(-1.5, 342 + 1, 36).map(x =>  context.fillText(long2zone(x), ...projection([x, -66 + (width < 500) * 1.1])));
     if (lon != null && lat != null) {
       path.pointRadius(17); context.strokeStyle = "black";
       context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.lineWidth = 1; context.stroke();
