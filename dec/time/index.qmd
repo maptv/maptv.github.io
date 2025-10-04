@@ -382,7 +382,7 @@ viewof select = Inputs.select(
 //| label: maptable
 //| column: margin
 table = createTable([
-  { Milliparallel: 800, Millimeridian: 0 },
+  { Milliparallel: 500, Millimeridian: 0 },
 ], { headerEditable: false, appendRows: false })
 //   {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
 //   {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
@@ -396,7 +396,7 @@ table = createTable([
 ```{ojs}
 //| echo: false
 //| label: distmap
-viewof location = worldMapCoordinates([[162, 0], projection], [width, height * mapsize / 100])
+viewof location = worldMapCoordinates([[turn2long(table.rows[1].cells[0].childNodes[0].innerText), turn2degr(table.rows[1].cells[1].childNodes[0].innerText)], projection], [width, height * mapsize / 100])
 ```
 :::
 
@@ -1845,6 +1845,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.stroke();
       context.lineWidth = 1;
     }
+    table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10)
+    table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5)
   }
   let drag = d3.drag()
     .on("drag", (event) => {
@@ -2390,7 +2392,6 @@ function makeTableEditable(table, options) {
       for (let row of table.rows) {
         if (!options.headerEditable && row.rowIndex === 0) continue;
         for (let cell of row.cells) {
-        if (cell.cellIndex === 0) continue;
           let cellValue = cell.innerText
           cell.innerHTML = `<div style="
             width: ${Math.abs(cellValue) / (cell.cellIndex === 2 ? 2.5 : 10)}%;
@@ -3570,6 +3571,13 @@ div#distmap {
 }
 #maptable > div {
   margin-top: -16px;
+}
+#maptable table * {
+  font-size: 18px;
+  padding: 0px 5px 0px 5px;
+}
+div#maptable form {
+  padding: 0px;
 }
 #projselect {
   overflow: visible;
