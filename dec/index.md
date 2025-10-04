@@ -3910,8 +3910,8 @@ function worldMapCoordinates(config = {}, dimensions) {
     set(viewof colorD, point0bear)
     table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
     table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
-    table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
-    table.rows[2].cells[2].innerHTML = createCellDiv(lati2turn(latB) % 250, 2.5)
+    table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA), 2.5)
+    table.rows[2].cells[2].innerHTML = createCellDiv(lati2turn(latB), 2.5)
     table.rows[1].cells[3].innerHTML = createCellDiv(point0bear, 10)
     table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
     draw(lonA, latA, lonB, latB);
@@ -3948,15 +3948,15 @@ function worldMapCoordinates(config = {}, dimensions) {
       9, 13, 27
     ].includes(ev.which)) {
       lonA = turn2long(liveTable[0].Milliparallel);
-      latA = turn2degr(liveTable[0].Millimeridian % 250);
+      latA = turn2degr(liveTable[0].Millimeridian);
       lonB = turn2long(liveTable[1].Milliparallel);
-      latB = turn2degr(liveTable[1].Millimeridian % 250);
+      latB = turn2degr(liveTable[1].Millimeridian);
       const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
       set(viewof colorD, point0bear)
       table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
       table.rows[2].cells[1].innerHTML = createCellDiv(long2turn(lonB), 10)
-      table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA) % 250, 2.5)
-      table.rows[2].cells[2].innerHTML = createCellDiv(lati2turn(latB) % 250, 2.5)
+      table.rows[1].cells[2].innerHTML = createCellDiv(lati2turn(latA), 2.5)
+      table.rows[2].cells[2].innerHTML = createCellDiv(lati2turn(latB), 2.5)
       table.rows[1].cells[3].innerHTML = createCellDiv(point0bear, 10)
       table.rows[2].cells[3].innerHTML = createCellDiv(lati2turn(coor2bear([lonB, latB], [lonA, latA])), 10)
       draw(lonA, latA, lonB, latB);
@@ -3966,9 +3966,9 @@ function worldMapCoordinates(config = {}, dimensions) {
       8, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
     ].includes(ev.which)) {
       lonA = turn2long(liveTable[0].Milliparallel);
-      latA = turn2degr(liveTable[0].Millimeridian % 250);
+      latA = turn2degr(liveTable[0].Millimeridian);
       lonB = turn2long(liveTable[1].Milliparallel);
-      latB = turn2degr(liveTable[1].Millimeridian % 250);
+      latB = turn2degr(liveTable[1].Millimeridian);
       const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
       set(viewof colorD, point0bear)
       table.rows[1].cells[3].innerHTML = createCellDiv(point0bear, 10)
@@ -5631,9 +5631,6 @@ html`
   padding: 0;
   flex: auto;
 }
-#maptable {
-  line-height: 1.5;
-}
 #maptable table * {
   font-size: 18px;
   padding: 0px 5px 0px 5px;
@@ -5713,6 +5710,7 @@ div#maptable {
   display: flex;
   justify-content: center;
   overflow-x: visible;
+  line-height: 1.5;
 }
 div#maptable form {
   padding: 0px;
