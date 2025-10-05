@@ -396,7 +396,7 @@ table = createTable([
 ```{ojs}
 //| echo: false
 //| label: distmap
-viewof location = worldMapCoordinates([[turn2long(table.rows[1].cells[0].childNodes[0].innerText), turn2degr(table.rows[1].cells[1].childNodes[0].innerText)], projection], [width, height * mapsize / 100])
+viewof location = worldMapCoordinates([[turn2long(table.rows[1].cells[0].childNodes[0].innerText), turn2lati(table.rows[1].cells[1].childNodes[0].innerText)], projection], [width, height * mapsize / 100])
 ```
 :::
 
@@ -1089,8 +1089,12 @@ barMilsN = decTimeN.slice(2, 4)
 barBeats = decTime.slice(4, 6)
 barBeatsN = decTimeN.slice(4, 6)
 function lati2turn(degrees = -180, e = 3) {
+  const base = 10 ** e, limit = base / 4;
+  return Math.max(-limit, Math.min(limit, (degrees / 360) * base));
+}
+function turn2lati(turns = -500, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
-  return (degrees %= 360) / (360 / 10**e) % 10**e;
+  return Math.max(-90, Math.min(90, turns * 360 / 10**e))
 }
 graticule = d3.geoGraticule().stepMinor([36,36]).stepMajor([36,36])()
 graticule.coordinates = graticule.coordinates.map(
@@ -1098,7 +1102,7 @@ graticule.coordinates = graticule.coordinates.map(
 )
 function turn2degr(turns = -500, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
-  return turns % 10**e * (360 / 10**e)
+  return turns % 10**e * 360 / 10**e
 }
 function turn2long(turns = -500, e = 3) {
   // turns: e=0, deciturns: e=1, etc.
@@ -1885,8 +1889,10 @@ function worldMapCoordinates(config = {}, dimensions) {
     // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
       8, 9, 13, 27, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
     ].includes(ev.which)) {
-      lon = turn2long(liveTable[0].Milliparallel);
-      lat = turn2degr(liveTable[0].Millimeridian);
+      const newLon = parseInt(liveTable[0].Milliparallel)
+      const newLat = parseInt(liveTable[0].Millimeridian)
+      lon = newLon != null || !isNaN(newLon) ? turn2long(newLon) : lon;
+      lat = newLat != null || !isNaN(newLat) ? turn2lati(newLat) : lat;
       table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10)
       table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5)
       draw();
