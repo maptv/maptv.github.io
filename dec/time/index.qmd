@@ -19,6 +19,7 @@ toc-depth: 5
 bread-crumbs: false
 format:
   html:
+    code-copy: false
     grid:
       body-width: 900px
     shift-heading-level-by: 3
@@ -50,6 +51,10 @@ engine: knitr
 :::
 
 My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the [bar📊charts](https://en.wikipedia.org/wiki/Bar_chart) clocks🕓, [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺, [Earth🌍orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit) diagram, and [daylight](https://en.wikipedia.org/wiki/Daylight#:~:text=the%20combination%20of%20all%20direct%20and%20indirect%20sunlight%20during%20the%20daytime) [area chart](https://en.wikipedia.org/wiki/Area_chart#:~:text=The%20area%20between%20axis%20and%20line%20are%20commonly%20emphasized%20with%20colors) below.
+
+::: {.column-margin .clocks #onlymargin .posneg}
+\${posclock}\${negclock}
+:::
 
 Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day), often using [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) like [deci](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20decimal%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20tenth), [centi](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20hundredth), or [milli](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20thousandth). The top, middle, and bottom bars📊indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=1.44%20minutes%2C%20or%2086.4%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=which%20would%20be-,1/100%2C000%20day,-%2C%20or%20864%20milliseconds){.tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, [+\${decTime}]{.point1}, or until the end, [-\${decTimeN}]{.point0}, of the day in the Dec [time zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time), \${decZoneHsl}, at the location of the red⭕️circle on the map🗺️beneath the bars📊.
 
@@ -379,7 +384,7 @@ viewof select = Inputs.select(
 
 ```{ojs}
 //| echo: false
-//| label: maptable
+//| label: lonlatable
 //| column: margin
 table = createTable([
   { Milliparallel: 500, Millimeridian: 0 },
@@ -402,7 +407,11 @@ viewof location = worldMapCoordinates([[turn2long(table.rows[1].cells[0].childNo
 
 ## Daylight area chart {#dac .hiddenheading}
 
-::: {.column-page}
+::: {.column-margin .clocks #onlymargin}
+\${sunclock}\${dotclock}
+:::
+
+::: {.column-page-left}
 ```{ojs}
 //| echo: false
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
@@ -1849,8 +1858,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       context.beginPath(); path({type: "Point", coordinates: [lon, lat]}); context.stroke();
       context.lineWidth = 1;
     }
-    table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10)
-    table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5)
+    table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, "positive")
+    table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, lat < 0 ? "negative" : "positive")
   }
   let drag = d3.drag()
     .on("drag", (event) => {
@@ -1893,8 +1902,8 @@ function worldMapCoordinates(config = {}, dimensions) {
       const newLat = parseInt(liveTable[0].Millimeridian)
       lon = newLon != null || !isNaN(newLon) ? turn2long(newLon) : lon;
       lat = newLat != null || !isNaN(newLat) ? turn2lati(newLat) : lat;
-      table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10)
-      table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5)
+      table.rows[1].cells[0].innerHTML = createCellDiv(long2turn(lon), 10, "positive")
+      table.rows[1].cells[1].innerHTML = createCellDiv(lati2turn(lat), 2.5, lat < 0 ? "negative" : "positive")
       draw();
       canvas.dispatchEvent(new CustomEvent("input", { bubbles: true }));
     }
@@ -1904,13 +1913,14 @@ function worldMapCoordinates(config = {}, dimensions) {
     type: "worldMapCoordinates",
     title,
     description,
-    display: v => (width > 300) ? html`<div style="width: ${width}px; pointer-events: none; white-space: nowrap; color: window.darkmode ? #fff : #000; text-align: center; font: ${width > 1000 ? width / 50 : width / 40}px monospace; position: relative; top: ${-28 - width / 25}px;  margin-bottom: -.4em;">
-            <span style="color: window.darkmode ? #fff : #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
-            &nbsp; &nbsp;
-            <span style="color: window.darkmode ? #fff : #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
-            &nbsp; &nbsp;
-            <span style="color: window.darkmode ? #fff : #000;">Latitude:</span> ${lat != null ? (lati2turn(lat)).toFixed(0) : ""}
-          </div>` : '',
+    display: v => "",
+    // display: v => (width > 300) ? html`<div style="width: ${width}px; pointer-events: none; white-space: nowrap; color: window.darkmode ? #fff : #000; text-align: center; font: ${width > 1000 ? width / 50 : width / 40}px monospace; position: relative; top: ${-28 - width / 25}px;  margin-bottom: -.4em;">
+    //        <span style="color: window.darkmode ? #fff : #000;">Zone:</span> ${lon != null ? long2zone(lon) : ""}
+    //        &nbsp; &nbsp;
+    //        <span style="color: window.darkmode ? #fff : #000;">Longitude:</span> ${lon != null ? (long2turn(lon)).toFixed(0) : ""}
+    //        &nbsp; &nbsp;
+    //        <span style="color: window.darkmode ? #fff : #000;">Latitude:</span> ${lat != null ? (lati2turn(lat)).toFixed(0) : ""}
+    //      </div>` : '',
     getValue: () => [lon != null ? lon : null, lat != null ? lat : null],
     form: formEl
   });
@@ -2061,6 +2071,8 @@ selDate = Math.floor(dote2date(...selDote)[1])
 selTime = selectedHour / 24
 selTimeOne = selTime % 1
 selTimeTen = selTime * 10 % 10
+selTimeMil = selTimeOne.toFixed(3).slice(2)
+selTimeCmd = selTimeOne.toFixed(5).slice(2)
 selYda = selDate + selTime
 selLati = lati2turn(location[1])
 decDodHsl = textcolor(decDod, d3.color(piecewiseColor(decDod / 10)).formatHex())
@@ -2068,7 +2080,7 @@ decDateHsl = textcolor(decDate.toString().padStart(3, "0"), d3.color(piecewiseCo
 decTimeHsl = textcolor(decTime, d3.color(piecewiseColor(decTime / 10)).formatHex())
 selDateHsl = textcolor(selDate.toString().padStart(3, "0"), d3.color(piecewiseColor(selDate / 365)).formatHex())
 selLatiHsl = textcolor(selLati.toFixed(0), d3.color(piecewiseColor((selLati + 250) % 250 / 250)).formatHex())
-selTimeDay = textcolor(selTimeOne.toFixed(3).slice(2), d3.color(piecewiseColor(selTime)).formatHex())
+selTimeDay = textcolor(selTimeMil, d3.color(piecewiseColor(selTime)).formatHex())
 selTimeHsl0 = textcolor(selTimeTen.toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
 selTimeHsl1 = textcolor(selTimeTen.toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
 selZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
@@ -2286,8 +2298,8 @@ function createTable(data, options) {
 table.setAttribute("class", "table")
 tableify = import("https://cdn.skypack.dev/tableify@1.1.1?min")
 xss = import("https://cdn.skypack.dev/xss@1.0.14?min")
-function createCellDiv(value, max) {
-  return `<div style="
+function createCellDiv(value, max, posorneg) {
+  return `<div class="${posorneg}" style="
     width: ${Math.abs(value) / max}%;
     float: left;
     padding: 0px 0px 0px 2px;
@@ -2531,7 +2543,7 @@ countries = fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json
 //| label: posclock
 // https://observablehq.com/@d3/simple-clock
 // https://observablehq.com/@drio/lets-build-an-analog-clock
-clock = {
+posclock = {
   const clockRadius = 200,
     margin = 50,
     w = (clockRadius + margin) * 2,
@@ -2707,7 +2719,7 @@ clock = {
 //| label: negclock
 // https://observablehq.com/@d3/simple-clock
 // https://observablehq.com/@drio/lets-build-an-analog-clock
-clock1 = {
+negclock = {
   const clockRadius = 200,
     margin = 50,
     w = (clockRadius + margin) * 2,
@@ -2857,6 +2869,182 @@ clock1 = {
   svg
     .append("text")
     .text(`-${decTimeN}-${selectedZone}`)
+    .attr("x", clockRadius + margin)
+    .attr("y", clockRadius * 2 + margin * 2.1)
+    .attr("text-anchor", "middle")
+    .attr("font-size", 32)
+    .attr("font-family", "monospace");
+  drawClock();
+  // Animation
+  const interval = setInterval(
+    () => {
+      updateData();
+      moveHands();
+    },
+    !fancySecondsOFF ? 10 : 864
+  );
+  invalidation.then(() => clearInterval(interval));
+  return svg.node();
+}
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+//| class: clock
+//| label: dotclock
+// https://observablehq.com/@d3/simple-clock
+// https://observablehq.com/@drio/lets-build-an-analog-clock
+dotclock = {
+  const clockRadius = 200,
+    margin = 50,
+    w = (clockRadius + margin) * 2,
+    h = (clockRadius + margin) * 2,
+    hourHandLength = (2 * clockRadius) / 3,
+    minuteHandLength = clockRadius,
+    secondHandLength = clockRadius - 12,
+    secondHandBalance = 30,
+    secondTickStart = clockRadius,
+    secondTickLength = -10,
+    hourTickStart = clockRadius,
+    hourTickLength = -18,
+    secondLabelRadius = clockRadius + 16,
+    secondLabelYOffset = 5,
+    hourLabelRadius = clockRadius - 40,
+    hourLabelYOffset = 7,
+    radians = Math.PI / 180;
+  const ten = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 10]);
+  const sto = d3
+    .scaleLinear()
+    .range([0, 360])
+    .domain([0, 100]);
+  const handData = [
+    {
+      type: "hour",
+      value: 0,
+      length: -hourHandLength,
+      scale: ten
+    },
+    {
+      type: "minute",
+      value: 0,
+      length: -minuteHandLength,
+      scale: sto
+    },
+    {
+      type: "second",
+      value: 0,
+      length: -secondHandLength,
+      scale: sto,
+      balance: secondHandBalance
+    }
+  ];
+  function drawClock() {
+    // create all the clock elements
+    updateData(); //draw them in the correct starting position
+    const face = svg
+      .append("g")
+      .attr("id", "clock-face")
+      .attr("transform", `translate(${[w / 2, h / 2]})`);
+    // add marks for seconds
+    face
+      .selectAll(".second-tick")
+      .data(d3.range(0, 100))
+      .enter()
+      .append("line")
+      .attr("class", "second-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", secondTickStart)
+      .attr("y2", secondTickStart + secondTickLength)
+      .attr("transform", d => `rotate(${sto(d)})`);
+    // and labels...
+    face
+      .selectAll(".second-label")
+      .data(d3.range(0, 100, 5))
+      .enter()
+      .append("text")
+      .attr("class", "second-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => secondLabelRadius * Math.sin(sto(d) * radians))
+      .attr(
+        "y",
+        d =>
+          -secondLabelRadius * Math.cos(sto(d) * radians) + secondLabelYOffset
+      )
+      .text(d => d);
+    // ... and hours
+    face
+      .selectAll(".hour-tick")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("line")
+      .attr("class", "hour-tick")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", hourTickStart)
+      .attr("y2", hourTickStart + hourTickLength)
+      .attr("transform", d => `rotate(${ten(d)})`);
+    face
+      .selectAll(".hour-label")
+      .data(d3.range(0, 10, 1))
+      .enter()
+      .append("text")
+      .attr("class", "hour-label")
+      .attr("text-anchor", "middle")
+      .attr("x", d => hourLabelRadius * Math.sin(ten(d) * radians))
+      .attr(
+        "y",
+        d => -hourLabelRadius * Math.cos(ten(d) * radians) + hourLabelYOffset
+      )
+      .text(d => d);
+    const hands = face.append("g").attr("id", "clock-hands");
+    hands
+      .selectAll("line")
+      .data(handData)
+      .enter()
+      .append("line")
+      .attr("class", d => d.type + "-hand")
+      .attr("x1", 0)
+      .attr("y1", d => d.balance || 0)
+      .attr("x2", 0)
+      .attr("y2", d => d.length)
+      .attr("transform", d => `rotate(${d.scale(d.value)})`);
+    face
+      .append("g")
+      .attr("id", "face-overlay")
+      .append("circle")
+      .attr("class", "hands-cover")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("r", clockRadius / 20);
+  }
+  function moveHands() {
+    const sel = d3
+      .select("#clock-hands-final")
+      .selectAll("line")
+      .data(handData)
+      .transition();
+    if (fancySecondsOFF) sel.ease(d3.easeElastic.period(0.5));
+    sel.attr("transform", d => `rotate(${d.scale(d.value)})`);
+  }
+  function updateData() {
+    handData[0].value = selTimeCmd[0];
+    handData[1].value = selTimeCmd.slice(1, 3);
+    handData[2].value = selTimeCmd.slice(3, 5);
+  }
+  const svg = d3
+    .create("svg")
+    .attr("viewBox", [0, 0, w, h])
+    .style("max-width", `${width / 2.1}px`)
+    .attr("class", "analogclock")
+    .attr("id", "topclock");
+  svg
+    .append("text")
+    .text(`+${selTimeTen.toFixed(4)}`)
     .attr("x", clockRadius + margin)
     .attr("y", clockRadius * 2 + margin * 2.1)
     .attr("text-anchor", "middle")
@@ -3419,6 +3607,10 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.posneg {
+  position: relative;
+  top: ${width < 770 ? 274 : width < 780 ? 264 : width < 790 ? 254 : width < 800 ? 244 : width < 810 ? 234 : width < 816 ? 228 : width < 819 ? 218 : width < 823 ? 188 : width < 825 ? 168 : width < 830 ? 162 : width < 840 ? 154 : width < 848 ? 134 : width < 850 ? 124 : width < 851 ? 114 : width < 852 ? 112 : width < 854 ? 110 : width < 856 ? 108 : width < 858 ? 106 : width < 860 ? 104 : width < 862 ? 102 : width < 864 ? 100 : width < 865 ? 84 : width < 866 ? 72 : width < 872 ? 70 : width < 874 ? 68 : width < 876 ? 66 : width < 878 ? 64 : width < 888 ? 62 : width < 890 ? 60 : width < 892 ? 58 : width < 894 ? 56 : width < 896 ? 54 : width < 898 ? 52 : width < 900 ? 46 : width < 907 ? 52 : width < 913 ? 56 : width < 918 ? 58 : width < 923 ? 60 : width < 933 ? 68 : width < 943 ? 78 : width < 973 ? 88 : width < 978 ? 68 : width < 985 ? 44 : width < 988 ? 42 : width < 992 ? 40 : width < 993 ? 148 : width < 1005 ? 154 : width < 1020 ? 148 : width < 1045 ? 142 : width < 1070 ? 124 : width < 1075 ? 112 : width < 1080 ? 108 : width < 1086 ? 96 : width < 1088 ? 87 : width < 1090 ? 78 : width < 1093 ? 64 : width < 1095 ? 38 : width < 1100 ? 36 : width < 1110 ? 22 : width < 1120 ? 18 : width < 1130 ? 12 : width < 1140 ? 14 : width < 1150 ? 16 : width < 1160 ? 18 : width < 1170 ? 20 : width < 1180 ? 24 : width < 1185 ? 26 : width < 1190 ? 28 : width < 1195 ? 30 : width < 1200 ? 32 : width < 1221 ? 28 : width < 1224 ? 10 : width < 1226 ? -46 : width < 1231 ? -24 : width < 1237 ? -37 : width < 1243 ? -39 : width < 1247 ? -48 : width < 1250 ? -50 : width < 1300 ? -52 : -54}px;
+}
 </style>
 `
 ```
@@ -3564,7 +3756,7 @@ div.cell-output:has(#formEl) {
   z-index: 99;
 }
 @media (max-width: 767.98px) {
-  #onlymargin, #maptable {
+  #onlymargin, #lonlatable {
     display: none;
   }
 }
@@ -3579,7 +3771,7 @@ div#distmap {
   z-index: 99;
   line-height: 1;
 }
-#maptable {
+#lonlatable {
   overflow: visible;
   display: flex;
   justify-content: center;
@@ -3588,14 +3780,14 @@ div#distmap {
 #projselect > div {
   margin-top: -4px;
 }
-#maptable > div {
-  margin-top: -16px;
+#lonlatable > div {
+  margin-top: -18px;
 }
-#maptable table * {
-  font-size: 18px;
+#lonlatable table * {
+  font-size: 21px;
   padding: 0px 5px 0px 5px;
 }
-div#maptable form {
+div#lonlatable form {
   padding: 0px;
 }
 #projselect {
@@ -3668,12 +3860,15 @@ div#toggles button#rstbtn {
   overflow: visible;
   margin-top: -6px;
 }
-div#maptable form {
+div#lonlatable form {
   padding: 0px;
 }
-#maptable table * {
+#lonlatable table * {
   font-size: 15px;
   padding: 0px 4px 0px 4px;
+}
+div.cell:has(.barclock) * {
+  pointer-events: none;
 }
 </style>
 ```
