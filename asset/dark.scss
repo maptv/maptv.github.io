@@ -306,6 +306,13 @@ div#colorwheelcompass path#piepath {
     background: #24A !important;
 }
 
+#lonlatable tbody tr td div.negative {
+    background: #A24 !important;
+}
+#lonlatable tbody tr td div.positive {
+    background: #24A !important;
+}
+
 .point0 { border-radius: 4px; background-color: #A24; color: white; padding: 0px 2px 0px 2px; }
 .point1 { border-radius: 4px; background-color: #24A; color: white; padding: 0px 2px 0px 2px; }
 .timeBarFull { fill: #24A; }
