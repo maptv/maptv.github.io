@@ -405,18 +405,18 @@ viewof location = worldMapCoordinates([[turn2long(table.rows[1].cells[0].childNo
 ```
 :::
 
-## Daylight area chart {#dac .hiddenheading}
-
-::: {.column-margin .clocks #onlymargin}
+::: {.column-margin .clocks #onlymargin .sundot}
 \${sunclock}\${dotclock}
 :::
+
+## Daylight area chart {#dac .hiddenheading}
 
 ::: {.column-page-left}
 ```{ojs}
 //| echo: false
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
 app = {
-  const svg = d3.select(DOM.svg(width, height * (width < 300 ? .97 : width < 350 ? .96 : width < 400 ? .95 : width < 450 ? .94 : width < 500 ? .93 : width < 550 ? .92 : width < 600 ? .9 : width < 650 ? .86 : width < 700 ? .82 : width < 800 ? .81 : width < 900 ? .80 : width < 1000 ? .76 : width < 1100 ? .74 : width < 1200 ? .72 : .7)));
+  const svg = d3.select(DOM.svg(width, height * (width < 300 ? .97 : width < 350 ? .96 : width < 400 ? .95 : width < 450 ? .94 : width < 500 ? .93 : width < 550 ? .92 : width < 600 ? .9 : width < 650 ? .86 : width < 700 ? .82 : width < 800 ? .81 : width < 900 ? .80 : width < 1000 ? .76 : width < 1100 ? .74 : width < 1200 ? .72 : width < 1300 ? .67 : width < 1400 ? .65 : width < 1500 ? .62 : .7)));
   svg.style("user-select", "none").style("-webkit-user-select", "none").attr("id", "daylightapp");
   const margin = {top: 0, left: 16, right: 16, bottom: 0, inner: 32};
   const contentWidth = width - margin.left - margin.right - margin.inner;
@@ -428,8 +428,8 @@ app = {
   const renderPlot = () => {
     svg.selectAll("#plot *").remove();
     svg.select("#plot").call(daylightPlot, {
-    vizwidth: columnWidth / (width < 300 ? 1 : width < 400 ? 1.05 : width < 450 ? 1.1 : width < 500 ? 1.15 : width < 550 ? 1.2 : width < 600 ? 1.25 : width < 650 ? 1.3 : width < 700 ? 1.4 : 1.48),
-      height: height * (width < 400 ? 1.62 : width < 500 ? 1.6 : width < 600 ? 1.54 : width < 800 ? 1.54 : width < 900 ? 1.54 : width < 1000 ? 1.54 : width < 1100 ? 1.54 : width < 1200 ? 1.54 : width < 1300 ? 1.54 : width < 1400 ? 1.54 : 1.56),
+    vizwidth: columnWidth / (width < 300 ? 1 : width < 400 ? 1.05 : width < 450 ? 1.1 : width < 500 ? 1.15 : width < 550 ? 1.2 : width < 600 ? 1.25 : width < 650 ? 1.3 : width < 700 ? 1.4 : width < 750 ? 1.3 : width < 800 ? 1.4 : width < 850 ? 1.3 : width < 900 ? 1.4 : width < 950 ? 1.3 : width < 1000 ? 1.4 : width < 1050 ? 1.3 : width < 1100 ? 1.4 : width < 1200 ? 1.4 : width < 1300 ? 1.4 : width < 1400 ? 1.4 : width < 1500 ? 1.6 : 1.8),
+      height: height * (width < 300 ? 1 : width < 400 ? 1.05 : width < 450 ? 1.1 : width < 500 ? 1.15 : width < 550 ? 1.2 : width < 600 ? 1.25 : width < 650 ? 1.3 : width < 700 ? 1.4 : width < 750 ? 1.3 : width < 800 ? 1.4 : width < 850 ? 1.3 : width < 900 ? 1.4 : width < 950 ? 1.3 : width < 1000 ? 1.4 : width < 1050 ? 1.3 : width < 1100 ? 1.4 : width < 1200 ? 1.4 : width < 1300 ? 1.4 : width < 1400 ? 1.4 : width < 1500 ? 2.05 : 2),
       year: 2022,
       latitude: location[1],
       defaultDate: selection.date,
@@ -467,7 +467,7 @@ app = {
   }
   const plot = svg.append("g")
     .attr("id", "plot")
-    .attr("transform", `translate(${margin.left + (width < 500 ? 26 : width < 600 ? 24 : width < 700 ? 22 : width < 800 ? 20 : width < 900 ? 18 : width < 950 ? 16 : width < 1000 ? 15 : width < 1100 ? 22 : width < 1200 ? 20 : width < 1300 ? 15 : width < 1400 ? 10 : width < 1500 ? 5 : 0)}, ${width < 500 ? -4 : width < 600 ? -12 : width < 700 ? -20 : width < 800 ? -28 : width < 900 ? -36 : width < 950 ? -44 : width < 1000 ? -48 : width < 1100 ? -52 : width < 1200 ? -54 : width < 1300 ? -56 : width < 1400 ? -60 : width < 1450 ? -62 : -76})`);
+    .attr("transform", `translate(${margin.left + (width < 500 ? 26 : width < 600 ? 24 : width < 700 ? 22 : width < 800 ? 20 : width < 900 ? 18 : width < 950 ? 16 : width < 1000 ? 15 : width < 1100 ? 22 : width < 1200 ? 20 : width < 1300 ? 15 : width < 1400 ? 10 : width < 1500 ? 5 : 0)}, ${width < 500 ? -4 : width < 600 ? -12 : width < 700 ? -20 : width < 800 ? -28 : width < 900 ? -36 : width < 950 ? -44 : width < 1000 ? -48 : width < 1100 ? -52 : width < 1200 ? -54 : width < 1300 ? -56 : width < 1400 ? -60 : width < 1450 ? -172 : width < 1540 ? -198 : width < 1640 ? -255 : width < 1780 ? -318 : width < 1820 ? -278 : width < 1880 ? -178 : width < 2310 ? -498 : width < 2820 ? -1178 : width < 4230 ? -1478 : width < 5640 ? -1978 : -2876})`);
   svg.append("g")
     .attr("id", "solar-system")
     .attr("transform", `translate(${margin.left + 12}, ${margin.top + height / 1.6 + 6 + 5 * (width < 400)})`);
@@ -1053,6 +1053,7 @@ lonTurnMapPlot = long2turn(location[0], 0)
 latTurnMapPlot = lati2turn(location[1], 0)
 astDecMapPlot = (0.95 + zeroTime + lonTurnMapPlot + eotTurnMapPlot) % 1 * 10
 astDegMapPlot = astDecMapPlot * 36
+astDegMapHalf = (astDecMapPlot * 36 + 180) % 360
 shaDoyInput = getSha(latInput / 1000, getSda(doyInput))
 daytimeDuration = shaDoyInput / Math.PI
 noonDiff = daytimeDuration / 2
@@ -3096,8 +3097,8 @@ sunclock = {
   const sun = face
     .append("circle")
     .attr("r", 15)
-    .attr("cx", 125 * -sin(astDegMapPlot))
-    .attr("cy", 125 * cos(astDegMapPlot))
+    .attr("cx", 125 * -sin(astDegMapHalf))
+    .attr("cy", 125 * cos(astDegMapHalf))
     .style("fill", "white");
   const ringContainer = svg
     .append("g")
@@ -3133,8 +3134,8 @@ sunclock = {
     .append("g")
     .attr(
       "transform",
-      `translate(${width / 2 + 45 * sin(astDegMapPlot)}, ${
-        height / 2 + 45 * -cos(astDegMapPlot)
+      `translate(${width / 2 + 45 * sin(astDegMapHalf)}, ${
+        height / 2 + 45 * -cos(astDegMapHalf)
       })`
     );
   const digitalClockBase = digitalClock
@@ -3214,7 +3215,7 @@ sunclock = {
     .attr("font-weight", 600)
     .attr("font-size", "38px")
     .style("opacity", 0.7)
-    .text((d) => (String(d)));
+    .text((d) => (String((d + 5) % 10)));
   return svg.node();
 }
 minutesAndSeconds = {
@@ -3318,7 +3319,7 @@ getJulianDate = (timestamp) => {
 }
 sin = (x) => Math.sin(toRadians(x))
 cos = (x) => Math.cos(toRadians(x))
-solarNoonTurn = (9.55 + selectedZone / 10 - lonTurnMapPlot - eotTurnMapPlot) % 1
+solarNoonTurn = (9.55 + selectedZone / 10 - lonTurnMapPlot - eotTurnMapPlot + .5) % 1
 solarNoonMinu = solarNoonTurn * 1440
 ```
 
@@ -3869,6 +3870,11 @@ div#lonlatable form {
 }
 div.cell:has(.barclock) * {
   pointer-events: none;
+}
+.sundot {
+  position: relative;
+  top: -29px;
+  z-index: 99;
 }
 </style>
 ```
