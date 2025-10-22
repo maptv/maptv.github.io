@@ -1206,14 +1206,14 @@ solarSystem = (root, vizwidth, location, date, hour, darkmode) => {
       .append("g")
       .attr("transform", `translate(${x}, ${y})`);
     function drawEarth() {
-      earth.append("line").attr("y1", -1.5 * earthRadius).attr("y2", 1.5 * earthRadius).attr("stroke", "blue").attr("transform", `rotate(-23.5)`).attr("stroke-width", `${width < 500 ? .1 : width < 1000 ? .2 : width < 1500 ? .3 : width < 2000 ? .4 : width < 2500 ? .5 : width < 3000 ? .6 : width < 3500 ? .7 : width < 4000 ? .8 : width < 4500 ? .9 : width < 5000 ? 1 : width < 5500 ? 1.1 : 1.2}`);
+      earth.append("line").attr("y1", -1.5 * earthRadius).attr("y2", 1.5 * earthRadius).attr("stroke", "blue").attr("transform", `rotate(-23.5)`).attr("stroke-width", `${width < 500 ? .25 : width < 1000 ? .5 : width < 1500 ? 1 : width < 2000 ? 1.5 : width < 2500 ? 2 : width < 3000 ? 2.2 : width < 3500 ? 2.4 : width < 4000 ? 2.6 : width < 4500 ? 2.8 : width < 5000 ? 3 : width < 5500 ? 3.5 : 4}`);
       earth.append("path").attr("d", path(earthGeo)).attr("fill", darkmode ? "#007FFF" : mapcolors.ocean).attr("id", "globeOcean");
       earth.append("path").attr("d", path(land)).attr("fill", darkmode ? "#0808" : mapcolors.land).attr("id", "globeLand");
       earth.append("path").attr("d", path(countries)).attr("stroke-width", `${width < 500 ? .1 : width < 1000 ? .2 : width < 1500 ? .3 : width < 2000 ? .4 : width < 2500 ? .5 : width < 3000 ? .6 : width < 3500 ? .7 : width < 4000 ? .8 : width < 4500 ? .9 : width < 5000 ? 1 : width < 5500 ? 1.1 : 1.2}`).attr("fill", "none").attr("stroke", darkmode ? "#eee" : "#333").attr("id", "globeBorders");
       path.pointRadius(width < 500 ? 2.75 : width < 1000 ? 5.5 : width < 2000 ? 11 : width < 3000 ? 16.5 : width < 4000 ? 22 : width < 5000 ? 27.5 : 33);
-      earth.append("path").attr("d", path({ type: "Point", coordinates: location })).attr("fill", "none").attr("stroke-width", width < 1000 ? .6 : width < 2000 ? 1.2 : width < 3000 ? 1.8 : width < 4000 ? 2.4 : width < 5000 ? 3 : 3.6).attr("stroke", "black");
-      path.pointRadius(width < 1000 ? 4.5 : width < 2000 ? 9 : width < 3000 ? 13.5 : width < 4000 ? 18 : width < 5000 ? 22.5 : 27);
-      earth.append("path").attr("d", path({ type: "Point", coordinates: location })).attr("fill", "none").attr("stroke-width", width < 1000 ? 2.25 : width < 2000 ? 4.5 : width < 3000 ? 6.75 : width < 4000 ? 9 : width < 5000 ? 11.25 : 13.5).attr("stroke", "red");
+      earth.append("path").attr("d", path({ type: "Point", coordinates: location })).attr("fill", "none").attr("stroke-width", width < 500 ? .3 : width < 1000 ? .6 : width < 2000 ? 1.2 : width < 3000 ? 1.8 : width < 4000 ? 2.4 : width < 5000 ? 3 : 3.6).attr("stroke", "black");
+      path.pointRadius(width < 500 ? 2.25 : width < 1000 ? 4.5 : width < 2000 ? 9 : width < 3000 ? 13.5 : width < 4000 ? 18 : width < 5000 ? 22.5 : 27);
+      earth.append("path").attr("d", path({ type: "Point", coordinates: location })).attr("fill", "none").attr("stroke-width", width < 500 ? 1.125 : width < 1000 ? 2.25 : width < 2000 ? 4.5 : width < 3000 ? 6.75 : width < 4000 ? 9 : width < 5000 ? 11.25 : 13.5).attr("stroke", "red");
   }
   drawEarth();
 }
