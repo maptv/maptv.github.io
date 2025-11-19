@@ -488,10 +488,6 @@ app = {
 ```
 :::
 
-```{ojs}
-width
-```
-
 The red<font color=red>—</font>line indicates a "day of year" ([doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}), \${selDateHsl}, and the red🔴dot denotes a "time of day" ([tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}): \${selTimeDay}. A [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} identifies a day in a year like a [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world) month and "day of month" ([dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}). A [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} specifies a point in a day like an "hour minute second" ([hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"}) triplet.
 Together, a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can form a "yearly day aggregate" ([yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}): \${selYdaDay}.
 
@@ -692,11 +688,11 @@ viewof sortParams = Inputs.form([
 Plot.plot({
   width: width,
   marginBottom: 50,
-  style: `overflow: visible;font-size:16px;`,
+  style: `overflow: visible;font-size:20px;`,
   color: {scheme: "RdBu", className: "barPlotLegend"},
   marginLeft: 75,
   y: { label: null },
-  x: { grid: true, label: "Population (billions)", labelOffset: 38, transform: d => d / 1e9 },
+  x: { grid: true, label: "Population (billions)", labelOffset: 42, transform: d => d / 1e9 },
   marks: [
     Plot.barX(sortedPop, {x: "pop", y: "Sign", fill: "Offset", stroke: "black", tip: true }),
   ]
@@ -3886,6 +3882,9 @@ div.cell:has(.barclock) * {
   position: relative;
   z-index: 99;
   margin-top: -42px !important;
+}
+div#eotplot div div svg g g text{
+  color: black;
 }
 </style>
 ```
