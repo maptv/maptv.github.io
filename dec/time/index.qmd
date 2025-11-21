@@ -881,28 +881,26 @@ $$2.99635 = (9.55 + 0.8 - 0.050365) \text{ mod 1} \times 10$$
 
 $$4.97516 = (9.55 + 0.8 - 0.852484) \text{ mod 1} \times 10$$
 
-## Solar declination angle {.hiddenheading #sda}
+Solar noon is the midpoint between sunrise and sunset. The path between a sunrise and a sunset is a [day arc](https://en.wikipedia.org/wiki/Sun_path#:~:text=arc%2Dlike%20path%20that%20the%20Sun%20appears%20to%20follow%20across%20the%20sky) ([da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"}). Dec refers to the path from a sunrise to a solar noon or from a solar noon to a sunset as a half day arc ([hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"}). The difference between a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} is a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The sum of a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} is a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
 
-The duration of [daytime](https://en.wikipedia.org/wiki/Daytime#:~:text=the%20period%20of%20the%20day%20during%20which%20a%20given%20location%20experiences%20natural%20illumination%20from%20direct%20sunlight) is the difference between the sunset and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}. To calculate the daytime duration, we only need a latitude and a "solar declination angle" ([sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}). For simplicity, we can use the same model for the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} and [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}, even though the [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF) propose the more complex model shown below.
+$$\text{da} = \text{sunset} - \text{sunrise} = \text{hda} \times 2$$
 
 $$\begin{split}
-\text{sda(toy)} & = \beta_0 \\
-& + \beta_1 \times \text{costau(toy)} \\
-& + \beta_2 \times \text{sintau(toy)} \\
-& + \beta_3 \times \text{costau(2} \times \text{toy)} \\
-& + \beta_4 \times \text{sintau(2} \times \text{toy)} \\
-& + \beta_5 \times \text{costau(3} \times \text{toy)} \\
-& + \beta_6 \times \text{sintau(3} \times \text{toy)} \\
+\text{sunrise} & = \text{noon} - \text{hda}\\
+\text{sunset} & = \text{noon} + \text{hda}\\
 \end{split}$$
 
-Dec measures latitude in turns called meridians ([&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"}). Like [&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="parallels"}, we can pass [&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"} directly into trigonometric functions that accept turns. The equation below accepts turns but its [arcosine](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=y%20%E2%89%A4%2090%C2%B0-,arccosine,-y%20%3D%20arccos) function provides a "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) in radians. We can pass turns to the "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) equation below and then use the resulting [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} to find out how long the Sun will shine or when it will rise or set on a given [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}.
+To obtain a [da]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"}
 
 :::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
-$$\text{sha} = \arccos\left( \frac{\text{costau(sza)} - \text{sintau($\phi$)} \times \text{sintau(sda)}}{\text{costau($\phi$)} \times \text{costau(sda)}} \right)$$
+$$\text{hda} = \arccos\left( \frac{\text{costau(0.252314)} - \text{sintau(sda)} \times \text{sintau($\phi$)}}{\text{costau(sda)} \times \text{costau($\phi$)}} \right) \div \tau$$
 :::
 
-Before being plugged into the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation above, the "solar zenith angle" ([sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"}) is set to 0.252314 turns, the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} chosen by the top range input below is first turned into a [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} and then into an [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}, and the [m&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"} latitude selected by the middle range input below is divided by 1000 to convert it to [&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"}. If we divide the result of the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation by $\pi$, we get the daytime duration: ${parseFloat(shaDoyInput.toFixed(5))} &div; $\pi$ = \${parseFloat(daytimeDuration.toFixed(5))}.
-If 
+:::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
+$$\text{da} = \arccos\left( \frac{\text{costau(0.252314)} - \text{sintau(sda)} \times \text{sintau($\phi$)}}{\text{costau(sda)} \times \text{costau($\phi$)}} \right) \div \pi$$
+:::
+
+The difference between a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is a day arc: ${parseFloat(selectedSunset.toFixed(3))} - ${parseFloat(selectedSunrise.toFixed(3))} = \${parseFloat(daytimeDuration.toFixed(3))}.
 
 ```{ojs}
 //| echo: false
@@ -922,11 +920,40 @@ viewof latInput = Inputs.range([-250, 250], {label: "Latitude", value: 0, step: 
 viewof lonInput = Inputs.range([0, 1000], {label: "Longitude", value: 500, step: 1})
 ```
 
-The in the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation returns radians. To convert radians to turns, we divide by $\tau$. We then either sum the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} with the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} or subtract it from the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to obtain the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The difference between the sunset and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} is the daytime duration: ${selectedSunset} - ${selectedSunrise} = ${selectedDuration}.
+we need both its solar noon and . We use the latitude of Cambridge, Massachusetts can subtract a "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) from a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to find a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
+ 
+## Solar declination angle {.hiddenheading #sda}
+
+The duration of [daytime](https://en.wikipedia.org/wiki/Daytime#:~:text=the%20period%20of%20the%20day%20during%20which%20a%20given%20location%20experiences%20natural%20illumination%20from%20direct%20sunlight) is the difference between the sunset and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}. To calculate the daytime duration, we divide a "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) measured in radians by $\pi$ or subtract a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
+
+$$\begin{split}
+\text{sda(toy)} & = \beta_0 \\
+& + \beta_1 \times \text{costau(toy)} \\
+& + \beta_2 \times \text{sintau(toy)} \\
+& + \beta_3 \times \text{costau(2} \times \text{toy)} \\
+& + \beta_4 \times \text{sintau(2} \times \text{toy)} \\
+& + \beta_5 \times \text{costau(3} \times \text{toy)} \\
+& + \beta_6 \times \text{sintau(3} \times \text{toy)} \\
+\end{split}$$
+
+ a latitude and a "solar declination angle" ([sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}). For simplicity, we can use the same model for the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} and [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}, even though the [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF) propose the more complex model shown below.
+
+Dec measures latitude in turns called meridians ([&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"}). Like [&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="parallels"}, we can pass [&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"} directly into trigonometric functions that accept turns. The equation below accepts turns but its [arcosine](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=y%20%E2%89%A4%2090%C2%B0-,arccosine,-y%20%3D%20arccos) function provides a "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) in radians. We can then use the resulting [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} to find out how long the Sun will shine or when it will rise or set on a given [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}.
+
+To obtain the duration of daytime or the [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of sunrise or sunset, the "solar zenith angle" ([sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"}) must be set to 0.252314 turns, but we can use the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and [m&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"} latitude range inputs below to control the other two angles required for the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation. The [m&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="milliparallels"} longitude range input below affects the sunrise and sunset [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}, but not the daytime duration.
+
+After plugging the three required angles into the equation above, we can divide the resulting [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} by $\pi$ to get the daytime duration. Alternatively, we can obtain the daytime duration by subtracting the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is the difference between we first divide the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} by $\tau$ instead of $\pi$. Then, we sum the dividend with the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} or subtract it from the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to obtain the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
+
+First, we convert the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} chosen below from days to years and then pass it to our [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"} model. Then, we divide the [m&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"} latitude selected below by 1000 to get the [&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridian"} angle.  we can obtain the sunset and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}, which is the daytime duration, to obtain the difference between the sunset and solar noon [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}, which is also the difference between the solar noon and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}, so that we can calculate sunrise and .
 
 $$\text{sunset} - \text{sunrise} = \text{sha} \div \pi$$
 
 $$\text{sunset} = \text{noon} + \text{sha} \div \tau$$
+
+
+and then into an [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}, If we divide the result of the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation by $\pi$, we get the daytime duration:
+
+The in the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation returns radians. To convert radians to turns, we divide by $\tau$. We then either  The difference between the sunset and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} is the daytime duration: ${selectedSunset} - ${selectedSunrise} = ${selectedDuration}.
 
 $$\text{sunrise} = \text{noon} - \text{sha} \div \tau$$
 
