@@ -893,7 +893,9 @@ $$\begin{split}
 
 Of course, the path of the Sun keeps going after it disappears over the horizon To obtain a [fda]{.tool data-bs-toggle="tooltip" data-bs-title="full day arc"}
 
-$$\text{fna} = 1 - \text{sunset} - \text{sunrise} = \text{hda} \times 2$$
+$$\text{midnight} = \text{sunset} + \text{hna}$$
+$$\text{sunrise} = \text{midnight} + \text{hna}$$
+
 
 :::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
 $$\text{hda} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(sda)} \times \text{sintau($\phi$)}}{\text{costau(sda)} \times \text{costau($\phi$)}}}\right)}{\tau}$$
