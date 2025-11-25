@@ -687,13 +687,14 @@ viewof sortParams = Inputs.form([
 //| class: stackedBar
 // https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
 Plot.plot({
-  width: width,
+  width: Math.min(width, 1000),
+  height: 100 + Math.min(width / 25, 20),
   marginBottom: 50,
-  style: `overflow: visible;font-size:25px;`,
+  style: `overflow: visible;font-size:${15 + Math.min(width / 90, 11)}px;`,
   color: {scheme: "RdBu", className: "barPlotLegend"},
-  marginLeft: 100,
+  marginLeft: 80 + Math.min(width / 100, 20),
   y: { label: null },
-  x: { grid: true, label: "Population (billions)", labelOffset: 50, transform: d => d / 1e9 },
+  x: { grid: true, label: "Population (billions)", labelOffset: 45 + Math.min(width / 90, 22), transform: d => d / 1e9 },
   marks: [
     Plot.barX(sortedPop, {x: "pop", y: "Sign", fill: "Offset", stroke: "black", tip: true }),
   ]
@@ -866,7 +867,7 @@ The [line📈chart](https://en.wikipedia.org/wiki/Line_chart#:~:text=a%20type%20
 
 Apart from turning a [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"} into an [ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"}, we can also use [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} to more accurately estimate the [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} of [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow), sunrise, and sunset. The equation below creates a [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow) [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} measured in days by adding 9.55 to a longitude measured in [&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="parallel"}, subtracting a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} and a [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) value that are both measured in days, and keeping only the decimal part of the result.
 
-$$\text{noon} = (9.55 + \text{tzo} - \lambda - \text{eot(toy)) mod 1}$$
+$$\text{solarnoon} = (9.55 + \text{tzo} - \lambda - \text{eot(toy)) mod 1}$$
 
 ## Cambridge and Cambridge {.hiddenheading #cac}
 
@@ -882,27 +883,29 @@ $$2.99635 = (9.55 + 0.8 - 0.050365) \text{ mod 1} \times 10$$
 
 $$4.97516 = (9.55 + 0.8 - 0.852484) \text{ mod 1} \times 10$$
 
-Solar noon is the midpoint between sunrise and sunset. The path between a sunrise and a sunset is a [full day arc](https://en.wikipedia.org/wiki/Sun_path#:~:text=arc%2Dlike%20path%20that%20the%20Sun%20appears%20to%20follow%20across%20the%20sky) ([fda]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"}). Dec refers to the path from a sunrise to a solar noon or from a solar noon to a sunset as a half day arc ([hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"}). The difference between a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} is a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The sum of a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} is a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
+The path in the sky that the Sun appears to follow between a sunrise and a sunset is a full [day arc](https://en.wikipedia.org/wiki/Sun_path#:~:text=arc%2Dlike%20path%20that%20the%20Sun%20appears%20to%20follow%20across%20the%20sky) ([fda]{.tool data-bs-toggle="tooltip" data-bs-title="full day arc"}) and the path from a sunrise to a solar noon or from a solar noon to a sunset is a half day arc ([hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"}). Therefore, the difference between a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} is a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and the sum of a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} is a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
 
 $$\text{fda} = \text{sunset} - \text{sunrise} = \text{hda} \times 2$$
 
 $$\begin{split}
-\text{sunrise} & = \text{noon} - \text{hda}\\
-\text{sunset} & = \text{noon} + \text{hda}\\
+\text{sunrise} & = \text{solarnoon} - \text{hda} && = \text{sunset} - \text{fda} \\
+\text{sunset} & = \text{solarnoon} + \text{hda} && = \text{sunrise} + \text{fda}
 \end{split}$$
 
-Of course, the path of the Sun keeps going after it disappears over the horizon To obtain a [fda]{.tool data-bs-toggle="tooltip" data-bs-title="full day arc"}
+The Sun continues its path after it disappears below the horizon, moving from sunset to sunrise in a full night arc ([fna]{.tool data-bs-toggle="tooltip" data-bs-title="full night arc"}). Just like a [fda]{.tool data-bs-toggle="tooltip" data-bs-title="full day arc"} can be split into two [hdas]{.tool data-bs-toggle="tooltip" data-bs-title="half day arcs"}, the first from sunrise to solar noon and the second from solar noon to sunset, every [fna]{.tool data-bs-toggle="tooltip" data-bs-title="full night arc"} consists of the half night arc ([hna]{.tool data-bs-toggle="tooltip" data-bs-title="half night arc"}) from sunset to [solar midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn) and the [hna]{.tool data-bs-toggle="tooltip" data-bs-title="half night arc"} from solar midnight to sunset.
 
-$$\text{midnight} = \text{sunset} + \text{hna}$$
-$$\text{sunrise} = \text{midnight} + \text{hna}$$
+$$\text{fna} = 1 - \text{fda} = \text{hna} \times 2$$
 
+$$\text{solarmidnight} = (\text{sunset} + \text{hna}) \text{ mod } 1 = (1 + \text{sunrise} - \text{hna}) \text{ mod } 1$$
 
-:::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
-$$\text{hda} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(sda)} \times \text{sintau($\phi$)}}{\text{costau(sda)} \times \text{costau($\phi$)}}}\right)}{\tau}$$
-:::
+If we only want to know how long the Sun will shine on a given day, we can use the top equation below to obtain a [fda]{.tool data-bs-toggle="tooltip" data-bs-title="full day arc"}, but if we are interested in finding the a sunrise or sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, we will need to calculate a [hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} using the bottom equation and combine it with a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
 
 :::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
 $$\text{fda} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(sda)} \times \text{sintau($\phi$)}}{\text{costau(sda)} \times \text{costau($\phi$)}}}\right)}{\pi}$$
+:::
+
+:::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
+$$\text{hda} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(sda)} \times \text{sintau($\phi$)}}{\text{costau(sda)} \times \text{costau($\phi$)}}}\right)}{\tau}$$
 :::
 
 The difference between a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is a day arc: ${parseFloat(selectedSunset.toFixed(3))} - ${parseFloat(selectedSunrise.toFixed(3))} = \${parseFloat(daytimeDuration.toFixed(3))}.
@@ -3921,5 +3924,8 @@ div.cell:has(.barclock) * {
 div#eotplot div div svg g g text{
   color: black;
 }
+mjx-container[jax="CHTML"][display="true"] {
+  margin-top: 0px;
+  }
 </style>
 ```
