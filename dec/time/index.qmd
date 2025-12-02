@@ -673,7 +673,7 @@ There are 14 negative and 24 positive [UTC]{.tool data-bs-toggle="tooltip" data-
 ```{ojs}
 //| echo: false
 //| label: timezonepoptoggles
-//| class: /togs
+//| class: togs
 // https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
 viewof sortParams = Inputs.form([
   Inputs.toggle({ label: "Sort ascending" }),
@@ -885,24 +885,133 @@ $$4.97516 = (9.55 + 0.8 - 0.852484) \text{ mod 1} \times 10$$
 
 ## Full day arc {.hiddenheading #fda}
 
-The path in the sky that the Sun appears to follow from a sunrise to a sunset is a "full [day arc](https://en.wikipedia.org/wiki/Sun_path#:~:text=arc%2Dlike%20path%20that%20the%20Sun%20appears%20to%20follow%20across%20the%20sky)" ([fda]{.tool data-bs-toggle="tooltip" data-bs-title="full day arc"}). Solar noon, the midpoint of a [fda]{.tool data-bs-toggle="tooltip" data-bs-title="full day arc"}, is halfway between sunrise and sunset. On each side of solar noon is a "half day arc" ([hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"}). The difference between a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} is a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and the sum of a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} is a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
-
-$$\text{fda} = \text{sunset} - \text{sunrise} = \text{hda} \times 2$$
+The path in the sky that the Sun appears to follow from a sunrise to a sunset is a "[day arc](https://en.wikipedia.org/wiki/Sun_path#:~:text=arc%2Dlike%20path%20that%20the%20Sun%20appears%20to%20follow%20across%20the%20sky)" ([da]{.tool data-bs-toggle="tooltip" data-bs-title="full day arc"}). Solar noon, the midpoint of a [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"}, is halfway between sunrise and sunset. On each side of solar noon is a "half day arc" ([da/2]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"}). The sum of a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [da/2]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} is a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and the difference between a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a [da/2]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} is a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
 
 $$\begin{split}
-\text{sunrise} & = \text{solarnoon} - \text{hda} && = \text{sunset} - \text{fda} \\
-\text{sunset} & = \text{solarnoon} + \text{hda} && = \text{sunrise} + \text{fda}
+\text{sunset} & = \text{solarnoon} + \frac{\text{da}}{2} && = \text{sunrise} + \text{da} \\
+\text{sunrise} & = \text{solarnoon} - \frac{\text{da}}{2} && = \text{sunset} - \text{da}
 \end{split}$$
 
 ## Full night arc {.hiddenheading #fna}
 
-The Sun continues its path after it disappears below the horizon, moving from sunset to sunrise to complete a "full night arc" ([fna]{.tool data-bs-toggle="tooltip" data-bs-title="full night arc"}). Like [conjugate angles](https://en.wikipedia.org/wiki/Angle#:~:text=conjugate%20angles%20sum%20to%20a%20full%20angle), a [fda]{.tool data-bs-toggle="tooltip" data-bs-title="full day arc"} and a [fna]{.tool data-bs-toggle="tooltip" data-bs-title="full night arc"} sum to a "full [diurnal circle](https://en.wikipedia.org/wiki/Diurnal_motion#:~:text=caused%20by%20Earth%27s%20rotation%20around%20its%20axis)" ([fdc]{.tool data-bs-toggle="tooltip" data-bs-title="full diurnal circle"}). A "half diurnal circle" ([hdc]{.tool data-bs-toggle="tooltip" data-bs-title="half diurnal circle"}) consists of a [hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} and a half night arc ([hna]{.tool data-bs-toggle="tooltip" data-bs-title="half night arc"}) and spans from solar noon to [solar midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
-
-$$\text{fna} = \text{fdc} - \text{fda} = \text{hna} \times 2$$
+The Sun continues its path after it disappears below the horizon, moving from sunset to sunrise along a "night arc" ([na]{.tool data-bs-toggle="tooltip" data-bs-title="night arc"}). Like [conjugate angles](https://en.wikipedia.org/wiki/Angle#:~:text=conjugate%20angles%20sum%20to%20a%20full%20angle), a [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"} and a [na]{.tool data-bs-toggle="tooltip" data-bs-title="night arc"} form a full circle that represents one day. Similarly, a [da/2]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} and a "half night arc" ([na/2]{.tool data-bs-toggle="tooltip" data-bs-title="half night arc"}) are like two [supplementary angles](https://en.wikipedia.org/wiki/Angle#:~:text=sum%20to%20a%20straight%20angle) that form a semicircle from solar noon to the [na]{.tool data-bs-toggle="tooltip" data-bs-title="night arc"} midpoint: [solar midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
 
 :::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
-$$\text{solarmidnight} = (\text{solarnoon} + \text{hdc}) \text{ mod } 1 = (\text{sunset} + \text{hna}) \text{ mod } 1 $$
+$$\text{solarmidnight} = \text{solarnoon} + \frac{\text{da}}{2} + \frac{\text{na}}{2} = \text{sunset} + \frac{\text{na}}{2}$$
 :::
+
+The range input below controls the yellow [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"} and the blue [na]{.tool data-bs-toggle="tooltip" data-bs-title="night arc"} in the diagram beneath it. At the Equator, the sunrise always rises about a quarter turn from North and sets around three quarter turns from North, resulting in a [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"} of approximately half a day: 75% -- 25% = 50%. If [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"} is zero, a [polar night](https://en.wikipedia.org/wiki/Polar_night#:~:text=the%20Sun%20remains%20below%20the%20horizon%20for%20more%20than%2024%C2%A0hours) occurs. A day without a [na]{.tool data-bs-toggle="tooltip" data-bs-title="night arc"} is called a [polar day](https://en.wikipedia.org/wiki/Midnight_sun#:~:text=the%20Sun%20remains%20visible%20at%20the%20local%20midnight).
+
+```{ojs}
+//| echo: false
+//| label: dayarcinput
+viewof dayArcInput = Inputs.range([0, 1000], {label: "Day arc", value: 375, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: dayarcdiagram
+{
+  const svg = d3.create("svg")
+      .attr("width", width)
+      .attr("height", daheight);
+  svg.append("circle")
+      .attr("stroke", window.darkmode ? "white" : "black")
+      .attr("fill", "none")
+      .attr("r", daradius)
+      .attr("transform", `translate(${dacenter})`);
+  const tick = svg.selectAll(".tick")
+      .data([0, 45].map(n => d3.range(n, 360, 90)).flat().sort((a, b) => a - b))
+    .enter().append("g")
+      .attr("class", "tick");
+  tick.append("polyline")
+      .attr("points", d => [-3, 3].map(n => geometric.pointTranslate(dacenter, -d, daradius + n)))
+      .attr("stroke", window.darkmode ? "white" : "black");
+  tick.append("text")
+      .attr("dy", d => d === 0 || d === 180 ? 4 : d > 0 && d < 180 ? 0 : 8)
+      .attr("text-anchor", d => d < 90 || d > 270 ? "start" : d > 90 && d < 270 ? "end" : "middle")
+      .attr("transform", d => `translate(${geometric.pointTranslate(dacenter, -d, daradius + (d === 270 ? 15 : d === 315 ? 14 : d === 225 ? 13 : 12))})`)
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 16)
+      .attr("fill", window.darkmode ? "white" : "black")
+      .text(d => `${(1000-((d+270)%360)/.36)%1000}`);
+  svg.append("polyline")
+      .attr("stroke-width", 2)
+      .attr("stroke", window.darkmode ? "violet" : "darkviolet")
+      .attr("points", [dacenter, [daend[0], dacenter[1]]]);
+  svg.append("polyline")
+      .attr("stroke-width", 2)
+      .attr("stroke", window.darkmode ? "red" : "darkred")
+      .attr("points", [[daend[0], dacenter[1]], daend]);
+  svg.append("polyline")
+      .attr("stroke-width", 2)
+      .attr("stroke", window.darkmode ? "slateblue" : "darkslateblue")
+      .attr("points", [[dacenter, daend]]);
+  svg.append("polyline")
+      .attr("stroke-width", 2)
+      .attr("stroke", window.darkmode ? "violet" : "darkviolet")
+      .attr("points", [dacenter, [daend1[0], dacenter[1]]]);
+  svg.append("polyline")
+      .attr("stroke-width", 2)
+      .attr("stroke", window.darkmode ? "red" : "darkred")
+      .attr("points", [[daend1[0], dacenter[1]], [daend1[0], daend1[1]]]);
+  svg.append("polyline")
+      .attr("stroke-width", 2)
+      .attr("stroke", window.darkmode ? "slateblue" : "darkslateblue")
+      .attr("points", [[dacenter, [daend1[0], daend1[1]]]]);
+  svg.append("path")
+    .attr("transform", `translate(${dacenter})`)
+    .attr("d", d3.arc()({
+      innerRadius: 105,
+      outerRadius: 110,
+      startAngle: Math.PI - dayArcInput / 1000 * Math.PI,
+      endAngle: Math.PI + dayArcInput / 1000 * Math.PI
+    }))
+    .attr("stroke", window.darkmode ? "white" : "black")
+    .attr("fill", "gold");
+  svg.append("path")
+    .attr("transform", `translate(${dacenter})`)
+    .attr("d", d3.arc()({
+      innerRadius: 105,
+      outerRadius: 110,
+      startAngle: Math.PI - dayArcInput / 1000 * Math.PI,
+      endAngle: dayArcInput / 1000 * Math.PI  - Math.PI
+    }))
+    .attr("stroke", window.darkmode ? "white" : "black")
+    .attr("fill", "blue");
+  return svg.node();
+}
+```
+
+In the [Northern Hemisphere](https://en.wikipedia.org/wiki/Northern_Hemisphere#:~:text=the%20half%20of%20Earth%20that%20is%20north%20of%20the%20equator), solar time is essentially the same as the [solar azimuth angle](https://en.wikipedia.org/wiki/Solar_azimuth_angle#:~:text=horizontal%20angle%20with%20respect%20to%20north) ([saa]{.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"}) and the diagram above can represent both a clock and a compass. In the [Southern Hemisphere](https://en.wikipedia.org/wiki/Southern_Hemisphere#:~:text=the%20half%20(hemisphere)%20of%20Earth%20that%20is%20south%20of%20the%20equator), we would need to flip the diagram upside down for it to match the [saa]{.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"}. The bar chart below compares the populations of the Northern and Southern Hemispheres.
+
+```{ojs}
+//| echo: false
+//| label: hemispheretimezonepoptoggles
+//| class: togs
+// https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
+viewof sortParamsHemi = Inputs.form([
+  Inputs.toggle({ label: "Sort ascending" }),
+  Inputs.toggle({ label: "Sort by offset" }),
+  ])
+```
+
+```{ojs}
+//| echo: false
+//| label: northSouthPopPlot
+Plot.plot({
+  width: width,
+  marginBottom: 50,
+  style: `overflow: visible;font-size:16px;`,
+  color: {scheme: "RdBu", className: "barPlotLegend"},
+  marginLeft: 75,
+  y: { label: null },
+  x: { grid: true, label: "Population (billions)", labelOffset: 38, transform: d => d},
+  marks: [
+    Plot.barX(sortedPopByHemi, {x: "Population", y: "Hemisphere", fill: "Offset", stroke: "black", tip: true }),
+  ]
+})
+```
 
 If we only want to know how long the Sun will shine on a given day, we can use the top equation below to obtain a [fda]{.tool data-bs-toggle="tooltip" data-bs-title="full day arc"}. Alternatively, if we are interested in finding out when the Sun will rise or set on a given day, we will need to calculate a [hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} using the bottom equation below and combine it with a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get a sunrise or sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
 
@@ -2174,10 +2283,15 @@ hues = Object.fromEntries([
 );
 // https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
 populationByTimeZone = FileAttachment("../../asset/populationByTimeZone.json").json();
+populationByHemisphere = FileAttachment("../../asset/populationByHemisphere.json").json();
 sortedPop = populationByTimeZone.sort(
   (a, b) => sortParams[1] ? sortFunc(a.number, b.number) : sortFunc(a.pop, b.pop)
 )
 sortFunc = sortParams[0] ? d3.ascending : d3.descending
+sortedPopByHemi = populationByHemisphere.sort(
+  (a, b) => sortParamsHemi[1] ? sortFuncHemi(a.Offset, b.Offset) : sortFuncHemi(a.Population, b.Population)
+)
+sortFuncHemi = sortParamsHemi[0] ? d3.ascending : d3.descending
 popBySign = d3.rollup(sortedPop, v => d3.sum(v, d => d.pop / 1e9), d => d.Sign)
 totalPop = d3.sum(sortedPop, d => d.pop / 1e9)
 utcOffsetM = -(new Date).getTimezoneOffset()
@@ -3376,6 +3490,15 @@ cos = (x) => Math.cos(toRadians(x))
 solarNoonTurn = (9.55 + selectedZone / 10 - lonTurnMapPlot - eotTurnMapPlot + .5) % 1
 solarNoonMinu = solarNoonTurn * 1440
 majwid = Math.min(5879, width) // majorized width
+// https://observablehq.com/@harrystevens/circles-angles-and-right-triangles
+daradius = 100
+daheight = 250
+dacenter = [ daradius + 38, daheight / 2 ]
+geometric = require("geometric@2")
+daangle = dayArcInput * .36 / 2
+daend = geometric.pointTranslate(dacenter, -daangle + 90, daradius)
+daend1 = geometric.pointTranslate(dacenter, daangle + 90, daradius)
+// https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
 ```
 
 ```{ojs}
@@ -3937,5 +4060,8 @@ div#eotplot div div svg g g text{
 mjx-container[jax="CHTML"][display="true"] {
   margin-top: 0px;
   }
+#dayarcdiagram {
+  overflow: visible;
+}
 </style>
 ```
