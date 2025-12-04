@@ -684,7 +684,7 @@ viewof sortParams = Inputs.form([
 ```{ojs}
 //| echo: false
 //| label: timezonepopstackedbar
-//| class: stackedBar
+//| class: stackedbar
 // https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
 Plot.plot({
   width: Math.min(width, 1000),
@@ -729,7 +729,7 @@ For [everyday life](https://en.wikipedia.org/wiki/Everyday_life), we should limi
 
 When the current [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} has seven digits, the sixth digit changes too quickly to be read out loud and the seventh changes so fast that it appears as a blur. Near the Equator, a longitude that has seven digits is accurate to within about ten [zems]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meters"} (z) or four [meters](https://en.wikipedia.org/wiki/Metre#:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units), which is roughly the length of a [subcompact car](https://www.dimensions.com/collection/subcompact-cars-b-segment) or the width of a [U-shaped living room layout](https://www.dimensions.com/collection/living-room-layouts).
 
-The Equator is approximately ([~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}) [10^3^]{.tool data-bs-toggle="tooltip" data-bs-title="one thousand"} [millitaurs]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a taur"} ([mc]{.tool data-bs-toggle="tooltip" data-bs-title="millitaurs"}), [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}4 &times; [10^4^]{.tool data-bs-toggle="tooltip" data-bs-title="ten thousand"} [kilometers]{.tool data-bs-toggle="tooltip" data-bs-title="thousands of meters"} ([km]{.tool data-bs-toggle="tooltip" data-bs-title="kilometers"}), or [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[10^5^]{.tool data-bs-toggle="tooltip" data-bs-title="a hundred thousand"} [kilozems]{.tool data-bs-toggle="tooltip" data-bs-title="thousands of zone equatorial meters"} ([kz]{.tool data-bs-toggle="tooltip" data-bs-title="kilozems"}) long. If we are near the Equator and move 1 [mc]{.tool data-bs-toggle="tooltip" data-bs-title="millitaurs"}, 40 [km]{.tool data-bs-toggle="tooltip" data-bs-title="kilometers"}, or 100 [kz]{.tool data-bs-toggle="tooltip" data-bs-title="kilozems"} to the East or West, our [sto]{.tool data-bs-toggle="tooltip" data-bs-title="solar time offset"} will change by [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}1 [md]{.tool data-bs-toggle="tooltip" data-bs-title="millidays"}, [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}1.44 minutes, or [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}100 [b]{.tool data-bs-toggle="tooltip" data-bs-title="beat"} and our longitude will shift by [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}0.36 degrees, [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}1 [m&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="milliparallel"}, [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}21.6 [arcminutes](https://en.wikipedia.org/wiki/Minute_and_second_of_arc){.tool data-bs-toggle="tooltip" data-bs-title="a sixtieth of a degree"}, or [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}100 arcbeats ([ab]{.tool data-bs-toggle="tooltip" data-bs-title="arcbeats"}).
+The Equator is approximately ([~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}) [10^3^]{.tool data-bs-toggle="tooltip" data-bs-title="one thousand"} [millitaurs]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a taur"} ([mc]{.tool data-bs-toggle="tooltip" data-bs-title="millitaurs"}), [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}4 &times; [10^4^]{.tool data-bs-toggle="tooltip" data-bs-title="ten thousand"} [kilometers]{.tool data-bs-toggle="tooltip" data-bs-title="thousands of meters"} ([km]{.tool data-bs-toggle="tooltip" data-bs-title="kilometers"}), or [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[10^5^]{.tool data-bs-toggle="tooltip" data-bs-title="a hundred thousand"} [kilozems]{.tool data-bs-toggle="tooltip" data-bs-title="thousands of zone equatorial meters"} ([kz]{.tool data-bs-toggle="tooltip" data-bs-title="kilozems"}) long. If we move 1 [mc]{.tool data-bs-toggle="tooltip" data-bs-title="millitaurs"}, 40 [km]{.tool data-bs-toggle="tooltip" data-bs-title="kilometers"}, or 100 [kz]{.tool data-bs-toggle="tooltip" data-bs-title="kilozems"} to the East or West on or near the Equator, our [sto]{.tool data-bs-toggle="tooltip" data-bs-title="solar time offset"} will change by [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}1 [md]{.tool data-bs-toggle="tooltip" data-bs-title="millidays"}, [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}1.44 minutes, or [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}100 [b]{.tool data-bs-toggle="tooltip" data-bs-title="beat"} and our longitude will shift by [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}0.36 degrees, [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}1 milliparallel ([m&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="milliparallel"}), [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}21.6 [arcminutes](https://en.wikipedia.org/wiki/Minute_and_second_of_arc){.tool data-bs-toggle="tooltip" data-bs-title="a sixtieth of a degree"}, or [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}100 arcbeats ([ab]{.tool data-bs-toggle="tooltip" data-bs-title="arcbeats"}).
 
 For precise [geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person), it may be helpful to show [geographic coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude) in submultiples of [ab]{.tool data-bs-toggle="tooltip" data-bs-title="arcbeats"}, but we are unlikely to benefit from units smaller than [md]{.tool data-bs-toggle="tooltip" data-bs-title="millidays"} when displaying the [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky) or estimates of what the [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} will be when the Sun rises, reaches its [zenith](https://en.m.wikipedia.org/wiki/Noon#:~:text=highest%20position%20above%20the%20horizon), or sets on a given day. By default, Dec uses three digits to show each solar time and [sto]{.tool data-bs-toggle="tooltip" data-bs-title="solar time offset"}.
 
@@ -828,7 +828,7 @@ The code above compares two functions which return both the [sine](https://en.wi
 
 The values below are the coefficients of a model adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), we need to convert eot([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) values from minutes to [centidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=14.4%20minutes%2C%20or%20864%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}, combine [ymd]{.tool data-bs-toggle="tooltip" data-bs-title="year month day"} triplet dates and [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet times into [ydas]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregates"}, and sort by [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}.
 
-{{< embed eot.ipynb#eot >}}
+{{< embed eot.ipynb#eotcoef >}}
 
 ```{ojs}
 //| echo: false
@@ -894,7 +894,7 @@ $$\begin{split}
 
 ## Full night arc {.hiddenheading #fna}
 
-The Sun continues its path after it disappears below the horizon, moving from sunset to sunrise along a "night arc" ([na]{.tool data-bs-toggle="tooltip" data-bs-title="night arc"}). Like [conjugate angles](https://en.wikipedia.org/wiki/Angle#:~:text=conjugate%20angles%20sum%20to%20a%20full%20angle), a [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"} and a [na]{.tool data-bs-toggle="tooltip" data-bs-title="night arc"} form a full circle that represents one day. Similarly, a [da/2]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} and a "half night arc" ([na/2]{.tool data-bs-toggle="tooltip" data-bs-title="half night arc"}) are like two [supplementary angles](https://en.wikipedia.org/wiki/Angle#:~:text=sum%20to%20a%20straight%20angle) that form a semicircle from solar noon to the [na]{.tool data-bs-toggle="tooltip" data-bs-title="night arc"} midpoint: [solar midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
+The Sun continues its path after it disappears below the horizon, moving from sunset to sunrise along a "night arc" ([na]{.tool data-bs-toggle="tooltip" data-bs-title="night arc"}). Like [conjugate angles](https://en.wikipedia.org/wiki/Angle#:~:text=conjugate%20angles%20sum%20to%20a%20full%20angle), a [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"} and a [na]{.tool data-bs-toggle="tooltip" data-bs-title="night arc"} form a full circle that represents one day. Likewise, a [da/2]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} and a "half night arc" ([na/2]{.tool data-bs-toggle="tooltip" data-bs-title="half night arc"}) are like two [supplementary angles](https://en.wikipedia.org/wiki/Angle#:~:text=sum%20to%20a%20straight%20angle) that form a semicircle from solar noon to the [na]{.tool data-bs-toggle="tooltip" data-bs-title="night arc"} midpoint: [solar midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
 
 :::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
 $$\text{solarmidnight} = \text{solarnoon} + \frac{\text{da}}{2} + \frac{\text{na}}{2} = \text{sunset} + \frac{\text{na}}{2}$$
@@ -983,11 +983,11 @@ viewof dayArcInput = Inputs.range([0, 1000], {label: "Day arc", value: 375, step
 }
 ```
 
-In the [Northern Hemisphere](https://en.wikipedia.org/wiki/Northern_Hemisphere#:~:text=the%20half%20of%20Earth%20that%20is%20north%20of%20the%20equator), solar time is essentially the same as the [solar azimuth angle](https://en.wikipedia.org/wiki/Solar_azimuth_angle#:~:text=horizontal%20angle%20with%20respect%20to%20north) ([saa]{.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"}) and the diagram above can represent both a clock and a compass. In the [Southern Hemisphere](https://en.wikipedia.org/wiki/Southern_Hemisphere#:~:text=the%20half%20(hemisphere)%20of%20Earth%20that%20is%20south%20of%20the%20equator), we would need to flip the diagram upside down for it to match the [saa]{.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"}. The bar chart below compares the populations of the Northern and Southern Hemispheres.
+The diagram above can represent both a clock and a compass. In the [Northern Hemisphere](https://en.wikipedia.org/wiki/Northern_Hemisphere#:~:text=the%20half%20of%20Earth%20that%20is%20north%20of%20the%20equator), solar time is essentially the same as the ["solar azimuth angle"](https://en.wikipedia.org/wiki/Solar_azimuth_angle#:~:text=horizontal%20angle%20with%20respect%20to%20north) ([saa]{.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"}). In the [Southern Hemisphere](https://en.wikipedia.org/wiki/Southern_Hemisphere#:~:text=the%20half%20(hemisphere)%20of%20Earth%20that%20is%20south%20of%20the%20equator), we would need to flip the diagram upside down for it to match the [saa]{.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"}. The bar chart below compares the populations of the Northern and Southern Hemispheres.
 
 ```{ojs}
 //| echo: false
-//| label: hemispheretimezonepoptoggles
+//| label: hemipoptoggles
 //| class: togs
 // https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
 viewof sortParamsHemi = Inputs.form([
@@ -998,36 +998,62 @@ viewof sortParamsHemi = Inputs.form([
 
 ```{ojs}
 //| echo: false
-//| label: northSouthPopPlot
+//| label: hemipopstackedbar
+//| class: stackedbar
 Plot.plot({
-  width: width,
+  width: Math.min(width, 1000),
+  height: 100 + Math.min(width / 25, 20),
   marginBottom: 50,
-  style: `overflow: visible;font-size:16px;`,
+  style: `overflow: visible;font-size:${15 + Math.min(width / 90, 11)}px;`,
   color: {scheme: "RdBu", className: "barPlotLegend"},
-  marginLeft: 75,
+  marginLeft: 90 + Math.min(width / 100, 20),
   y: { label: null },
-  x: { grid: true, label: "Population (billions)", labelOffset: 38, transform: d => d},
+  x: { grid: true, label: "Population (billions)", labelOffset: 40 + Math.min(width / 90, 22), transform: d => d},
   marks: [
-    Plot.barX(sortedPopByHemi, {x: "Population", y: "Hemisphere", fill: "Offset", stroke: "black", tip: true }),
+    Plot.barX(sortedPopHemi, {x: "Population", y: "Hemisphere", fill: "Offset", stroke: "black", tip: true }),
   ]
 })
 ```
 
-If we only want to know how long the Sun will shine on a given day, we can use the top equation below to obtain a [fda]{.tool data-bs-toggle="tooltip" data-bs-title="full day arc"}. Alternatively, if we are interested in finding out when the Sun will rise or set on a given day, we will need to calculate a [hda]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} using the bottom equation below and combine it with a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get a sunrise or sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
+Anyone can measure the [saa]{.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} during the daytime by pointing a compass at the point on the horizon below the Sun. In the Northern Hemisphere, we can use this method to approximate solar time. In the Southern Hemisphere, we can obtain solar time by measuring the [saa]{.tool data-bs-toggle="tooltip" data-bs-title="solar azimuth angle"} in turns and then subtracting our measurement from one and a half turns:
+
+$$\text{solartime} \approx \begin{cases}\text{saa}&{\text{if } \phi \geq 0;}\\(1.5 - \text{saa}) \text{ mod } 1&{\text{otherwise.}}\end{cases}$$
+
+The clockwise path that the Sun follows in the Northern Hemisphere is ingrained in the Belarussian, Polish, or Ukrainian languages. These three Slavic languages each have one word for north or midnight and another word for south or noon. In Dec, zero represents both north and midnight, while both south and noon can be expressed as a half turn.
+
+:::{.overflowtable style="overflow-x:auto;overflow-y:hidden;"}
+ | Turns | Direction | Time     | Belarussian | Polish   | Ukrainian |
+ | ----- | --------- | -------- | ----------- | -------- | --------- |
+ | 0     | north     | midnight | поўнач      | północ   | північ    |
+ | 0.5   | south     | noon     | поўдзень    | południe | південь   |
+:::
+
+If we only want to know how long the Sun will shine on a given day, we can use the top equation below to obtain a [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"}. Alternatively, if we are interested in finding out when the Sun will rise or set on a given day, we will need to calculate a [da/2]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} using the bottom equation below and then combine it with a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get a sunrise or sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
+
 
 :::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
-$$\text{fda} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(sda)} \times \text{sintau($\phi$)}}{\text{costau(sda)} \times \text{costau($\phi$)}}}\right)}{\pi}$$
+$$\text{da} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau($\phi$)} \times \text{sintau(sda)}}{\text{costau($\phi$)} \times \text{costau(sda)}}}\right)}{\pi}$$
 :::
 
 :::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
-$$\text{hda} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(sda)} \times \text{sintau($\phi$)}}{\text{costau(sda)} \times \text{costau($\phi$)}}}\right)}{\tau}$$
+$$\frac{\text{da}}{2} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau($\phi$)} \times \text{sintau(sda)}}{\text{costau($\phi$)} \times \text{costau(sda)}}}\right)}{\tau}$$
 :::
 
-The fda and hda equations each require a "solar declination angle" ([sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}) and a latitude. For simplicity, our [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"} and [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} functions can differ only in their coefficients, even though the NOAA General Solar Position Calculations propose the more complex sda model shown below. Dec measures latitude in turns called meridians ([&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"}). Like [&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="parallels"}, we can pass [&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"} directly into trigonometric functions that accept turns.
+## Solar declination angle {.hiddenheading #sda}
 
-Use the doy, mφ, and latitude range inputs below to find a fda. Sunrise and sunset tods will depend on all three of the range inputs below. We can report the results of our calculations in the form of an equation 
+The [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"} and [da/2]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} equations above require a latitude and a "solar [declination](https://en.wikipedia.org/wiki/Declination#:~:text=one%20of%20the%20two%20angles%20that%20locate%20a%20point%20on%20the%20celestial%20sphere%20in%20the%20equatorial%20coordinate%20system) angle" ([sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}). Dec measures latitude in turns called meridians ([&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"}) or turn submultiples such as millimeridians ([m&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"}). For simplicity, we can fit our [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} model to [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"} data instead of fitting the needlessly complex [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"} model provided by the NOAA General Solar Position Calculations:
 
-The difference between a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} and a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is a day arc: ${parseFloat(selectedSunset.toFixed(3))} - ${parseFloat(selectedSunrise.toFixed(3))} = \${parseFloat(daytimeDuration.toFixed(3))}.
+$$\begin{split}
+\text{sda(toy)} & = \beta_0 \\
+& + \beta_1 \times \text{costau(toy)} \\
+& + \beta_2 \times \text{sintau(toy)} \\
+& + \beta_3 \times \text{costau(2} \times \text{toy)} \\
+& + \beta_4 \times \text{sintau(2} \times \text{toy)} \\
+& + \beta_5 \times \text{costau(3} \times \text{toy)} \\
+& + \beta_6 \times \text{sintau(3} \times \text{toy)} \\
+\end{split}$$
+
+The top range input below selects a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} that determines the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} in our fitted [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"} model. The other two range inputs below chose the geographic coordinates that we need to find the sunrise and sunset [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}. While the sunrise and sunset [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} depend on both geographic coordinates, the [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"} varies only by latitude and not by longitude: ${selectedSunset.toFixed(3)} -- ${selectedSunrise.toFixed(3)} = \${parseFloat(daytimeDuration.toFixed(3))}.
 
 ```{ojs}
 //| echo: false
@@ -1047,68 +1073,17 @@ viewof latInput = Inputs.range([-250, 250], {label: "Latitude", value: 0, step: 
 viewof lonInput = Inputs.range([0, 1000], {label: "Longitude", value: 500, step: 1})
 ```
 
-we need both its solar noon and . We use the latitude of Cambridge, Massachusetts can subtract a "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) from a solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to find a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
- 
-## Solar declination angle {.hiddenheading #sda}
-
-The duration of [daytime](https://en.wikipedia.org/wiki/Daytime#:~:text=the%20period%20of%20the%20day%20during%20which%20a%20given%20location%20experiences%20natural%20illumination%20from%20direct%20sunlight) is the difference between the sunset and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}. To calculate the daytime duration, we divide a "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) measured in radians by $\pi$ or subtract a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
-
-$$\begin{split}
-\text{sda(toy)} & = \beta_0 \\
-& + \beta_1 \times \text{costau(toy)} \\
-& + \beta_2 \times \text{sintau(toy)} \\
-& + \beta_3 \times \text{costau(2} \times \text{toy)} \\
-& + \beta_4 \times \text{sintau(2} \times \text{toy)} \\
-& + \beta_5 \times \text{costau(3} \times \text{toy)} \\
-& + \beta_6 \times \text{sintau(3} \times \text{toy)} \\
-\end{split}$$
-
- a latitude and a "solar declination angle" ([sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}). For simplicity, we can use the same model for the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"} and [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}, even though the [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF) propose the more complex model shown below.
-
-Dec measures latitude in turns called meridians ([&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"}). Like [&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="parallels"}, we can pass [&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridians"} directly into trigonometric functions that accept turns. The equation below accepts turns but its [arcosine](https://en.wikipedia.org/wiki/Inverse_trigonometric_functions#:~:text=y%20%E2%89%A4%2090%C2%B0-,arccosine,-y%20%3D%20arccos) function provides a "solar hour angle" ([sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"}) in radians. We can then use the resulting [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} to find out how long the Sun will shine or when it will rise or set on a given [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}.
-
-To obtain the duration of daytime or the [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of sunrise or sunset, the "solar zenith angle" ([sza]{.tool data-bs-toggle="tooltip" data-bs-title="solar zenith angle"}) must be set to 0.252314 turns, but we can use the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and [m&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"} latitude range inputs below to control the other two angles required for the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation. The [m&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="milliparallels"} longitude range input below affects the sunrise and sunset [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}, but not the daytime duration.
-
-After plugging the three required angles into the equation above, we can divide the resulting [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} by $\pi$ to get the daytime duration. Alternatively, we can obtain the daytime duration by subtracting the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is the difference between we first divide the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} by $\tau$ instead of $\pi$. Then, we sum the dividend with the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} or subtract it from the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to obtain the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
-
-First, we convert the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} chosen below from days to years and then pass it to our [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"} model. Then, we divide the [m&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"} latitude selected below by 1000 to get the [&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="meridian"} angle.  we can obtain the sunset and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}, which is the daytime duration, to obtain the difference between the sunset and solar noon [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}, which is also the difference between the solar noon and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}, so that we can calculate sunrise and .
-
-$$\text{sunset} - \text{sunrise} = \text{sha} \div \pi$$
-
-$$\text{sunset} = \text{noon} + \text{sha} \div \tau$$
+At sunrise, the [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"} is the amount of time until sunset. At solar noon, the time remaining before sunset will be [da/2]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"}. Throughout the day, the current tod is equal to the sum of sunset tod and the difference between the current and sunset tods: ${selectedSunset.toFixed(3)} -- ${selectedSunrise.toFixed(3)} = \${parseFloat(daytimeDuration.toFixed(3))}.
 
 
-and then into an [sda]{.tool data-bs-toggle="tooltip" data-bs-title="solar declination angle"}, If we divide the result of the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation by $\pi$, we get the daytime duration:
+Like a countdown sequence, we can keep track of the time relative to sunset throughout the day. Instead of the current tod, we can display the , the  and the current tod is equal to the difference between the sunset tod and the [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"} and the current tod is equal to the difference between the sunset tod and the [da/2]{.tool data-bs-toggle="tooltip" data-bs-title="half day arc"}. The Given a sunset tod of We can replace the current tod with an expression that provides the time relative to a given tod.
 
-The in the [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} equation returns radians. To convert radians to turns, we divide by $\tau$. We then either  The difference between the sunset and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} is the daytime duration: ${selectedSunset} - ${selectedSunrise} = ${selectedDuration}.
-
-$$\text{sunrise} = \text{noon} - \text{sha} \div \tau$$
-
-The [m&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="milliparallels"} range input gives us solar noon. 
-
-The line chart beneath the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}, [m&phi;]{.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"} and [m&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="milliparallels"} range inputs visualizes sunrise, solar noon, and sunset for every [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}, similar to the daylight area chart beneath the map🗺above. The main difference between the charts is that the area chart shows local [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} and thus is independent of longitude, whereas the line chart includes [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} and therefore changes with longitude.
-
-Before we insert the latitude selected by the second range input, we convert m&phi; to &phi;.
-
-$$\text{sha} \div \tau = \text{noon} - \text{sunrise} = \text{sunset} - \text{noon}$$
-
-When we divide the sha by $\tau$, we get the difference between the solar noon and sunrise [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} or the sunset and solar noon [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}. 
+can keep track of the remaining time until sunset by minuend The [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of sunrise is found by subtracting half the [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"} from solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of sunset is found by adding half the [da]{.tool data-bs-toggle="tooltip" data-bs-title="day arc"} to solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
 
 ## Sunrise and sunset {.hiddenheading #sas}
 
 ## Solar hour angle {.hiddenheading #sha}
 
-The first range input above sets the doy that will be used to obtain the sda that along with the &phi; selected by the second range input will be plugged into the sha equation above. Once we have the sha, we can double it to get the daylight duration in negative days, add it to the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, or subtract it from the solar noon [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} to get the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
-
-The difference between a solar noon and sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} is a sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. Likewise, the sum of a solar noon and sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} is a sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. To get the daylight duration in decidays, we can either subtract the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} from the sunrise [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} or multiply the sunrise [sha]{.tool data-bs-toggle="tooltip" data-bs-title="solar hour angle"} by twenty.
-
-$$\text{sunrise} = \text{noon} + \text{sha}$$
-
-$$\text{sunset} = \text{noon} - \text{sha}$$
-
-$$\text{duration} = \text{sunset} - \text{sunrise}$$
-
-The sunrise and sunset times in the equations above depend on the time zone of solar noon. To select a time zone  may be strange to consider The range🎚️inputs below set the [geographic coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude) that are used for the equations above
 
 To find the UTC [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} of a given longitude and latitude, we could use an [application programming interface](https://en.wikipedia.org/wiki/API#:~:text=a%20type%20of%20software%20interface%2C%20offering%20a%20service%20to%20other%20pieces%20of%20software) (API) or a [database](https://observablehq.com/@jcolot/time-zone-service). If we only have longitude, we need to first round degrees to zero or the nearest multiple of fifteen for whole hour [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"}, 7.5 for half hour [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"}, or 3.75 for quarter hour [tzos]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} and then divide by fifteen to convert degrees to hours.
 
@@ -2283,12 +2258,12 @@ hues = Object.fromEntries([
 );
 // https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
 populationByTimeZone = FileAttachment("../../asset/populationByTimeZone.json").json();
-populationByHemisphere = FileAttachment("../../asset/populationByHemisphere.json").json();
+populationHemisphere = FileAttachment("../../asset/populationByHemisphere.json").json();
 sortedPop = populationByTimeZone.sort(
   (a, b) => sortParams[1] ? sortFunc(a.number, b.number) : sortFunc(a.pop, b.pop)
 )
 sortFunc = sortParams[0] ? d3.ascending : d3.descending
-sortedPopByHemi = populationByHemisphere.sort(
+sortedPopHemi = populationHemisphere.sort(
   (a, b) => sortParamsHemi[1] ? sortFuncHemi(a.Offset, b.Offset) : sortFuncHemi(a.Population, b.Population)
 )
 sortFuncHemi = sortParamsHemi[0] ? d3.ascending : d3.descending
@@ -3897,22 +3872,22 @@ div.cell-output:has(#daylightapp) {
 #timezonepopstackedbar {
   overflow: visible;
 }
-#timezonepoptoggles div {
+.togs div {
   display: flex;
 }
-#timezonepoptoggles div form {
+.togs div form {
   max-width: 180px;
 }
-#timezonepoptoggles div form label {
+.togs div form label {
   max-width: 120px;
 }
-#timezonepoptoggles div form:nth-child(1) {
+.togs div form:nth-child(1) {
   margin-right: 8px;
 }
-#timezonepoptoggles div form:nth-child(2) label {
+.togs div form:nth-child(2) label {
   max-width: 110px;
 }
-#timezonepoptoggles input[type=checkbox] {
+.togs input[type=checkbox] {
   margin-top: 8px;
 }
 div:has(form#formEl) {
@@ -4060,8 +4035,14 @@ div#eotplot div div svg g g text{
 mjx-container[jax="CHTML"][display="true"] {
   margin-top: 0px;
   }
-#dayarcdiagram {
+#dayarcdiagram, #hemipopstackedbar {
   overflow: visible;
+}
+.stackedbar g[aria-label="tip"] text {
+  color: black;
+}
+.overflowtable {
+  margin-bottom: 10px;
 }
 </style>
 ```
