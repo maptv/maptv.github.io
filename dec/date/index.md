@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2024+345
+2023+345
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -440,12 +440,14 @@ represents a day in a previous or subsequent
 The current <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> can be expressed as
 <span class="cyan">${decDoty}</span> or
-<span class="pink">${TminusPaddedNeg}</span>. The difference between any
-positive <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> and its negative equivalent is
-<span class="orange">n</span>: <span class="cyan">${decDoty}</span>
-<span class="mono">-</span> <span class="pink">${TminusPaddedNeg}</span>
-= <span class="orange">${nDaysInYear}</span>. We obtain the current
+<span class="pink">${TminusPaddedNeg}</span>. The
+[difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference)
+between any positive <span class="cyan under tool"
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> and its
+negative equivalent is <span class="orange">n</span>:
+<span class="cyan">${decDoty}</span> <span class="mono">-</span>
+<span class="pink">${TminusPaddedNeg}</span> =
+<span class="orange">${nDaysInYear}</span>. We obtain the current
 <span class="cyan">dek</span> via the <span class="cyan">dek</span>
 equation, <span class="cyan">${decDek}</span> =
 ⌊<span class="cyan">${decDoty}</span> ÷ 10⌋, and the current
