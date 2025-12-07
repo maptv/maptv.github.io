@@ -1077,13 +1077,38 @@ The equation controlled by range inputs above can be summarized as sunset -- sun
 
 The latest equation above is an example of a Dec span. From left to right, this span consists of a [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted), an equals sign (=), [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted), a plus (+) or a minus (--) sign, and a [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference). A minus sign indicates the difference is the time remaining **until** sunset, whereas a plus sign means that the difference is the time that has passed **since** sunset.
 
-In other words, the difference will be negative if the minuend is less than the substrahend or positive if the minuend is greater than the subtrahend. In this way, the righthand side of a Dec span acts like a "[T minus countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining)" that turns into a ["T plus countup"](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time) of [Mission Elapsed Time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) after the rocket launch. original [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is called the minuend and the replacement is called the subtrahend. By selecting the current [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} as the minuend and the sunset [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} as the subtrahend, we can keep track of the time before sunset.
+The difference shows the [remaining time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event) as a negative number if the minuend is less than the substrahend or displays the [elapsed time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) as a positive number if the minuend is greater than the subtrahend. In this way, the difference can act like a ["T minus countdown"](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining) that becomes a ["T plus countup"](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time) after an event like a rocket🚀launch.
 
-$$\text{solartime} \approx \begin{cases}\text{saa}&{\text{if } \phi \geq 0;}\\(1.5 - \text{saa}) \text{ mod } 1&{\text{otherwise.}}\end{cases}$$
+$$\begin{cases}\text{difference}<0&{\text{if } \text{minuend} < \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}>0&{\text{if minuend}>\text{subtrahend.}}\end{cases}$$
 
-The [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} of any event can be the subtrahend in a Dec span. Let’s say that you live in Zone [0]{.color0}, start work at [375]{.color375} md, take a lunch break from [525]{.color525} to [575]{.color575} md, and finish work at [725]{.color725} md. You can have four subtrahends that represent your typical daily rhythm. After one subtrahend passes, you can move on to the next one and thus cycle through all four subtrahends over the course of each day: current = [375]{.color375} diff = [525]{.color525} diff = [575]{.color575} diff = [725]{.color725} diff.
+When the subtrahend is the timestamp of an event, the difference can be the time elapsed since the event. Dec timestamps typically consist of a "year of era" ([yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}), a [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}, and a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}, but we can omit the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} if it is zero. If we replace the [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"} with a subtrahend and difference, we can omit the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and then calculate it later using the equations below:
 
-Another common use case for minuend expansion is to replace the current [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} with the timestamp of an event and the time elapsed since that event. To make it easier to compare timestamps, we can agree to always set the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} to zero. If we use a non-zero [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}, we should include it in between the event time and the elapsed time. The time since this webpage was loaded is current - load = diff.
+$$\text{x} = \text{eda} - \text{subtrahend} - \text{difference}$$
+
+$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{x}&{\text{if } \text{x} \geq 0;}\\\text{x}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$
+
+$$\text{doc} = \text{x} - \text{coe} \times 146097$$
+
+$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$
+
+$$\text{yoe} = \text{yoc} + \text{coe} \times 400$$
+
+In the equations above, [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} is "epochal day aggregate", [coe]{.tool data-bs-toggle="tooltip" data-bs-title="cycle of era"} is "cycle of era", [doc]{.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"} is "day of cycle", and [yoc]{.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"} is "year of cycle".
+
+is "epochal day aggregate" ([eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}), If a subtrahend does not include a and a difference We do not need to include a  with , because  can also omit the .
+The current Zone [0]{.color0} [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"} timestamp is \${zeroYearHsl}+\${zeroYdaHsl1}.
+
+
+omit the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}  by passing the subtrahend, difference, and current "epochal day aggregate" ([eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}) to the 
+
+We can omit the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} if the timestamp is based on Zone [0]{.color0}. 
+ The time since this webpage was loaded is current - load = diff.
+If needed, calculate the year by subtracting the [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"} and &Delta; from the current eda and passing the result to the equations below.
+
+
+To make it easier to compare timestamps, we should agree to always set the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} to zero. If we use a non-zero [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}, we should include it in between the event time and the elapsed time.
+
+Let’s say that you live in Zone [0]{.color0} and there are four tods that are vital to your typical daily rhythm: you start work at [375]{.color375} md, take a lunch break from [525]{.color525} to [575]{.color575} md, and finish work at [725]{.color725} md. After one event passes, you can begin tracking the time until the next one and thus cycle through all four over the course of each day: current = [375]{.color375} diff = [525]{.color525} diff = [575]{.color575} diff = [725]{.color725} diff.
 
 Tzo range input (include tzo only if not zero)
 
@@ -1232,6 +1257,7 @@ zeroYda = zeroDate[1]
 zeroDoy = Math.floor(zeroYda)
 zeroIsLeap = isLeapYear(zeroYear)
 zeroYdaHsl = textcolor(zeroYda.toFixed(5), d3.color(piecewiseColor(zeroYda / (365 + zeroIsLeap))).formatHex())
+zeroYdaHsl1 = textcolor(zeroYda.toFixed(5), d3.color(piecewiseColor(zeroYda / (365 + zeroIsLeap))).formatHex())
 zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
 zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
 zeroTimeHsl2 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
