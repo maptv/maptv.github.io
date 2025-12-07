@@ -1081,13 +1081,15 @@ The difference shows the [remaining time](https://en.wikipedia.org/wiki/Countdow
 
 $$\begin{cases}\text{difference}<0&{\text{if } \text{minuend} < \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}>0&{\text{if minuend}>\text{subtrahend.}}\end{cases}$$
 
-When the subtrahend is the timestamp of an event, the difference can be the time elapsed since the event. Dec timestamps typically consist of a "year of era" ([yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}), a [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}, and a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}, but we can omit the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} if it is zero. If we replace the [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"} with a subtrahend and difference, we can omit the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and then calculate it later using the equations below:
+When the minuend is the current time and the subtrahend is the timestamp of an event that occurred in the past, the difference is the time elapsed since that event. Dec timestamps are called snaps and typically consist of a "year of era" ([yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}), a [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}, and a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}, but we can omit the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} if it is zero. The snap created when this webpage loaded is and the associated difference is.
 
-$$\text{x} = \text{eda} - \text{subtrahend} - \text{difference}$$
+We can omit the yoe from a snap if we replace the [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"} with a subtrahend and a difference or just a difference. If needed, we can obtain a snap from a difference using the equations below. First, we subtract the difference from the current [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} to obtain the "[eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} difference difference" ([edd]{.tool data-bs-toggle="tooltip" data-bs-title="eda difference difference"}). Then, we use the [edd]{.tool data-bs-toggle="tooltip" data-bs-title="eda difference difference"} to get the "cycle of era" ([coe]{.tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}), "day of cycle" ([doc]{.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"}), "year of cycle" ([yoc]{.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}), and then finally the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}.
 
-$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{x}&{\text{if } \text{x} \geq 0;}\\\text{x}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$
+$$\text{edd} = \text{eda} - \text{difference}$$
 
-$$\text{doc} = \text{x} - \text{coe} \times 146097$$
+$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$
+
+$$\text{doc} = \text{edd} - \text{coe} \times 146097$$
 
 $$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$
 
