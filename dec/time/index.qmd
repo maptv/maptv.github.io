@@ -1102,6 +1102,32 @@ $$\begin{cases}\text{difference}<0&{\text{if } \text{minuend} < \text{subtrahend
 
 When the minuend is the current time and the subtrahend is the [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) of an event which occurred in the past, the difference is the time elapsed since that event. A Dec timestamp consists of a year, a day, . can be an [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}, a "epochal year aggregate" ([eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}), or a snap🫰. Edas and eyas are  the time The typical snap format is year[+]{.mono}[ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}[-]{.mono}[tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. The snap \${loadYearHsl}[+]{.mono}\${loadAdaHsl}[-]{.mono}[0]{.color0} represents the [b]{.tool data-bs-toggle="tooltip" data-bs-title="beat"} when this webpage loaded ${elaTimeHsl} [b]{.tool data-bs-toggle="tooltip" data-bs-title="beats"} ago.
 
+# Epochal year aggregate (eya){#eya}
+
+A [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} is essentially a Dec date with a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} that is always equal to 0 and a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} that is [not restricted](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded) to 0 &le; [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} &le; 365. Similarly, a Dec "epochal year aggregate" ([eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}) is basically a Dec date with a non-integer year and a day permanently set to [0]{.color0}. We can obtain a Dec date by passing a doe Both [does]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"} and [eyas]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregates"} allow us to represent a date as a single number and obtain the difference between two dates.
+
+$$\text{cda} = \text{de} - \text{coe} \times 146097$$
+
+$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$
+
+$$\text{yoe} = \text{yoc} + \text{coe} \times 400$$
+
+$$\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \biggr \rfloor$$
+
+Compared to a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}, it is much easier to convert between an [eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} and a to turn into Dec dates. The decimal part of an [eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} is a called a [toy]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}. We can convert between dates to [eyas]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregates"} with the equations below. We can obtain a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} by flooring an [eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}. Likewise, we can obtain a [doy]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="day of year"} by flooring the product of [n]{.tool data-bs-toggle="tooltip" data-bs-title="number of days in the year"} and the decimal part of an [eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}, which is called a [toy]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}. The current [eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} equation values are \${fullfracYear} = \${decYear} + \${decDoty} &div; \${nDaysInYear}. We can floor an [eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} to get a yoe or divide its , we can obtain a 
+
+$$\text{eya} = \text{yoe} + \text{toy} = \text{yoe} + \text{doy} \div \text{n}$$
+
+$$\text{toy} = \text{eya mod } 1 = \text{doy} \div \text{n}$$
+
+$$\text{doy} = \lfloor\text{toy}\times\text{n}\rfloor$$
+
+$$\text{eya} = \text{yoe} + \text{doy} \times \text{n}$$
+
+$$\text{eya} = \text{yoe} + \text{coe} \times 400$$
+
+[eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} = [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} + [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} &div; [n]{.tool data-bs-toggle="tooltip" data-bs-title="number of days in the year"}. 
+
 We can omit the year from a snap if we replace the [ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} with a subtrahend and a difference or just a difference. If needed, we can obtain a snap from a difference using the equations below. First, we subtract the difference from the current [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} to obtain the "[eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} difference difference" ([edd]{.tool data-bs-toggle="tooltip" data-bs-title="eda difference difference"}). Then, we use the [edd]{.tool data-bs-toggle="tooltip" data-bs-title="eda difference difference"} to get the "cycle of era" ([coe]{.tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}), "day of cycle" ([doc]{.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"}), "year of cycle" ([yoc]{.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}), and then finally the year and [ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}.
 
 $$\text{edd} = \text{eda} - \text{difference}$$
