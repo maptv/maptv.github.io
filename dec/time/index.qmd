@@ -489,23 +489,42 @@ app = {
 :::
 
 The red<font color=red>—</font>line indicates a "day of year" ([doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}), \${selDateHsl}, and the red🔴dot denotes a "time of day" ([tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}): \${selTimeDay}. A [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} identifies a day in a year like a [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world) month and "day of month" ([dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}). A [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} specifies a point in a day like an "hour minute second" ([hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"}) triplet.
-Together, a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can form a "yearly day aggregate" ([yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}): \${selYdaDay}.
+Together, a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can form a "annual day aggregate" ([ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}): \${selAdaDay}.
 
 $$\begin{split}
-\text{yda\;\,} & = \text{doy} + \text{tod} \\
-\lfloor\text{yda}\rfloor & = \text{doy} \\
+\text{ada\;\,} & = \text{doy} + \text{tod} \\
+\lfloor\text{ada}\rfloor & = \text{doy} \\
 \end{split}$$
 
-As their names suggest, [doys]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} and [ydas]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregates"} are measured in days. The [measurement unit](https://en.wikipedia.org/wiki/Unit_of_measurement#:~:text=a%20definite%20magnitude%20of%20a%20quantity) of a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can be a day or a [submultiple](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20) of a day. By changing how a decimal [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is measured, we can shift its [decimal separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number) or turn it into an integer. The [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} along the y-axis of the area chart are integers because they have three digits and are measured in [millidays]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}.
+As their names suggest, [doys]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} and [adas]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"} are measured in days. The [measurement unit](https://en.wikipedia.org/wiki/Unit_of_measurement#:~:text=a%20definite%20magnitude%20of%20a%20quantity) of a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can be a day or a [submultiple](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20) of a day. By changing how a decimal [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is measured, we can shift its [decimal separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number) or turn it into an integer. The [tods]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"} along the y-axis of the area chart are integers because they have three digits and are measured in [millidays]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}.
 
 ## Epochal day aggregate (eda) {#eda .hiddenheading}
 
-To obtain a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from a [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}, we can [keep the remainder after dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) by one to isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers): \${zeroYdaHsl} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = \${zeroTimeHsl0}. We can use this same approach to separate a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from an "epochal day aggregate" ([eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}): \${zeroDoteHsl} mod 1 = \${zeroTimeHsl1}. The current [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} tells us how many days have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
+To obtain a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from a [ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}, we can [keep the remainder after dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) by one to isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers): \${zeroAdaHsl} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = \${zeroTimeHsl0}. We can use this same approach to separate a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from an "epochal day aggregate" ([eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}): \${zeroDoteHsl} mod 1 = \${zeroTimeHsl1}. The current [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} tells us how many days have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
 
 $$\begin{split}
-\text{tod} &= \text{yda mod } 1 &&= \text{eda mod } 1 \\
-\text{tod} &= \text{yda} - \text{doy} &&= \text{eda} - \lfloor\text{eda}\rfloor
+\text{tod} &= \text{ada mod } 1 &&= \text{eda mod } 1 \\
+\text{tod} &= \text{ada} - \text{doy} &&= \text{eda} - \lfloor\text{eda}\rfloor
 \end{split}$$
+
+The Dec doe equations We can describe an "epochal year aggregate" ([eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}) instead of a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}, 
+
+When provided with an "epochal day aggregate" ([eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}) instead of a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}, the Dec date equations return a "annual day aggregate" ([ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}) instead of a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}. While [does]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"} and [doys]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} are integers, [edas]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} and [adas]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"} each have a decimal part called a "time of day" ([tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}). We can obtain an [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} by passing a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} to the Dec eda equations or by summing a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} and a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. isolate a [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from an [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} or [ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}, and convert between a doe and [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} or a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and [ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}.
+
+:::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
+$$\text{eda} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{ada}$$
+:::
+
+$$\text{tod} = \text{eda mod } 1 = \text{ada mod } 1$$
+
+$$\text{doe} = \lfloor \text{eda} \rfloor = \text{eda} - \text{tod}$$
+
+$$\text{doy} = \lfloor \text{ada} \rfloor = \text{ada} - \text{tod}$$
+
+$$\text{eda} = \text{doe} + \text{tod}$$
+
+$$\text{ada} = \text{doy} + \text{tod}$$
+
 
 ## UNIX time equation {#ute .hiddenheading}
 
@@ -737,13 +756,13 @@ For precise [geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:tex
 
 The two types of [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky) are ["mean solar time"](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}) and ["apparent solar time"](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"}). To calculate [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}, we keep only the decimal part of the sum of 0.95, the Zone [0]{.color0} [tod]{.tool data-bs-toggle="tooltip" data-bs-title="time of day"} measured in days, and our longitude measured in [&lambda;]{.tool data-bs-toggle="tooltip" data-bs-title="parallel"}. If we want [ast]{.tool data-bs-toggle="tooltip" data-bs-title="apparent solar time"} instead of [mst]{.tool data-bs-toggle="tooltip" data-bs-title="mean solar time"}, the sum needs to include the result of plugging the "time of year" ([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) into the ["equation of time"](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepancy%20between%20two%20kinds%20of%20solar%20time) ([eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}).
 
-$$\text{toy} = \text{yda} \div \text{n}$$
+$$\text{toy} = \text{ada} \div \text{n}$$
 
 $$\text{mst} = (0.95 + \text{tod} + \lambda) \text{ mod } 1$$
 
 $$\text{ast} = (0.95 + \text{tod} + \lambda +  \text{eot(toy)}) \text{ mod } 1$$
 
-To obtain the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}, we divide the [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"} by the number of days in the year ([n]{.tool data-bs-toggle="tooltip" data-bs-title="the number of days in the year"}). If we use [trigonometric functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths) that are designed to work with [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units), we will have to multiply the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} by $2\pi$ or $\tau$. We do not need to modify the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} before passing it to the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}() function defined below because its trigonometric functions expect [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) instead of radians.
+To obtain the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}, we divide the [ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} by the number of days in the year ([n]{.tool data-bs-toggle="tooltip" data-bs-title="the number of days in the year"}). If we use [trigonometric functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths) that are designed to work with [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units), we will have to multiply the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} by $2\pi$ or $\tau$. We do not need to modify the [toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"} before passing it to the [eot]{.tool data-bs-toggle="tooltip" data-bs-title="equation of time"}() function defined below because its trigonometric functions expect [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) instead of radians.
 
 $$\begin{split}
 \text{eot(toy)} & = \beta_0 \\
@@ -826,7 +845,7 @@ sincos(0.5)
 
 The code above compares two functions which return both the [sine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20side%20opposite%20that%20angle%20to%20the%20length%20of%20the%20longest%20side%20of%20the%20triangle) and [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse) of their input. The sincos() function assumes it will receive radians and the sincostau() works with turns. In general, working with turns is more convenient and intuitive. The examples above demonstrate that using turns instead of radians can [yield more accurate results](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages).
 
-The values below are the coefficients of a model adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), we need to convert eot([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) values from minutes to [centidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=14.4%20minutes%2C%20or%20864%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}, combine [ymd]{.tool data-bs-toggle="tooltip" data-bs-title="year month day"} triplet dates and [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet times into [ydas]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregates"}, and sort by [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}.
+The values below are the coefficients of a model adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"}) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA]{.tool data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration"} [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), we need to convert eot([toy]{.tool data-bs-toggle="tooltip" data-bs-title="time of year"}) values from minutes to [centidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=14.4%20minutes%2C%20or%20864%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a day"}, combine [ymd]{.tool data-bs-toggle="tooltip" data-bs-title="year month day"} triplet dates and [hms]{.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet times into [adas]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"}, and sort by [ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}.
 
 {{< embed eot.ipynb#eotcoef >}}
 
@@ -1081,9 +1100,35 @@ The difference shows the [remaining time](https://en.wikipedia.org/wiki/Countdow
 
 $$\begin{cases}\text{difference}<0&{\text{if } \text{minuend} < \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}>0&{\text{if minuend}>\text{subtrahend.}}\end{cases}$$
 
-When the minuend is the current time and the subtrahend is the timestamp of an event that occurred in the past, the difference is the time elapsed since that event. Dec timestamps are called snaps and typically consist of a "year of era" ([yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}), a [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}, and a [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}, but we can omit the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} if it is zero. The snap created when this webpage loaded is and the associated difference is.
+When the minuend is the current time and the subtrahend is the [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) of an event which occurred in the past, the difference is the time elapsed since that event. A Dec timestamp consists of a year, a day, . can be an [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}, a "epochal year aggregate" ([eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}), or a snap🫰. Edas and eyas are  the time The typical snap format is year[+]{.mono}[ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}[-]{.mono}[tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. The snap \${loadYearHsl}[+]{.mono}\${loadAdaHsl}[-]{.mono}[0]{.color0} represents the [b]{.tool data-bs-toggle="tooltip" data-bs-title="beat"} when this webpage loaded ${elaTimeHsl} [b]{.tool data-bs-toggle="tooltip" data-bs-title="beats"} ago.
 
-We can omit the yoe from a snap if we replace the [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"} with a subtrahend and a difference or just a difference. If needed, we can obtain a snap from a difference using the equations below. First, we subtract the difference from the current [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} to obtain the "[eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} difference difference" ([edd]{.tool data-bs-toggle="tooltip" data-bs-title="eda difference difference"}). Then, we use the [edd]{.tool data-bs-toggle="tooltip" data-bs-title="eda difference difference"} to get the "cycle of era" ([coe]{.tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}), "day of cycle" ([doc]{.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"}), "year of cycle" ([yoc]{.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}), and then finally the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"}.
+# Epochal year aggregate (eya){#eya}
+
+A [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} is essentially a Dec date with a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} that is always equal to 0 and a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} that is [not restricted](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded) to 0 &le; [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} &le; 365. Similarly, a Dec "epochal year aggregate" ([eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}) is basically a Dec date with a non-integer year and a day permanently set to [0]{.color0}. We can obtain a Dec date by passing a doe Both [does]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"} and [eyas]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregates"} allow us to represent a date as a single number and obtain the difference between two dates.
+
+$$\text{cda} = \text{de} - \text{coe} \times 146097$$
+
+$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$
+
+$$\text{yoe} = \text{yoc} + \text{coe} \times 400$$
+
+$$\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \biggr \rfloor$$
+
+Compared to a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}, it is much easier to convert between an [eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} and a to turn into Dec dates. The decimal part of an [eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} is a called a [toy]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}. We can convert between dates to [eyas]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregates"} with the equations below. We can obtain a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} by flooring an [eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}. Likewise, we can obtain a [doy]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="day of year"} by flooring the product of [n]{.tool data-bs-toggle="tooltip" data-bs-title="number of days in the year"} and the decimal part of an [eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}, which is called a [toy]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}. The current [eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} equation values are \${fullfracYear} = \${decYear} + \${decDoty} &div; \${nDaysInYear}. We can floor an [eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} to get a yoe or divide its , we can obtain a 
+
+$$\text{eya} = \text{yoe} + \text{toy} = \text{yoe} + \text{doy} \div \text{n}$$
+
+$$\text{toy} = \text{eya mod } 1 = \text{doy} \div \text{n}$$
+
+$$\text{doy} = \lfloor\text{toy}\times\text{n}\rfloor$$
+
+$$\text{eya} = \text{yoe} + \text{doy} \times \text{n}$$
+
+$$\text{eya} = \text{yoe} + \text{coe} \times 400$$
+
+[eya]{.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} = [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} + [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} &div; [n]{.tool data-bs-toggle="tooltip" data-bs-title="number of days in the year"}. 
+
+We can omit the year from a snap if we replace the [ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} with a subtrahend and a difference or just a difference. If needed, we can obtain a snap from a difference using the equations below. First, we subtract the difference from the current [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} to obtain the "[eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} difference difference" ([edd]{.tool data-bs-toggle="tooltip" data-bs-title="eda difference difference"}). Then, we use the [edd]{.tool data-bs-toggle="tooltip" data-bs-title="eda difference difference"} to get the "cycle of era" ([coe]{.tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}), "day of cycle" ([doc]{.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"}), "year of cycle" ([yoc]{.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}), and then finally the year and [ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}.
 
 $$\text{edd} = \text{eda} - \text{difference}$$
 
@@ -1093,19 +1138,21 @@ $$\text{doc} = \text{edd} - \text{coe} \times 146097$$
 
 $$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$
 
-$$\text{yoe} = \text{yoc} + \text{coe} \times 400$$
+$$\text{year} = \text{yoc} + \text{coe} \times 400$$
+
+$$\text{ada} = \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor$$
 
 In the equations above, [eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} is "epochal day aggregate", [coe]{.tool data-bs-toggle="tooltip" data-bs-title="cycle of era"} is "cycle of era", [doc]{.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"} is "day of cycle", and [yoc]{.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"} is "year of cycle".
 
 is "epochal day aggregate" ([eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}), If a subtrahend does not include a and a difference We do not need to include a  with , because  can also omit the .
-The current Zone [0]{.color0} [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"} timestamp is \${zeroYearHsl}+\${zeroYdaHsl1}.
+The current Zone [0]{.color0} [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} timestamp is \${zeroYearHsl}+\${zeroAdaHsl1}.
 
 
 omit the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}  by passing the subtrahend, difference, and current "epochal day aggregate" ([eda]{.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"}) to the 
 
 We can omit the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} if the timestamp is based on Zone [0]{.color0}. 
  The time since this webpage was loaded is current - load = diff.
-If needed, calculate the year by subtracting the [yda]{.tool data-bs-toggle="tooltip" data-bs-title="yearly day aggregate"} and &Delta; from the current eda and passing the result to the equations below.
+If needed, calculate the year by subtracting the [ada]{.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} and &Delta; from the current eda and passing the result to the equations below.
 
 
 To make it easier to compare timestamps, we should agree to always set the [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} to zero. If we use a non-zero [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}, we should include it in between the event time and the elapsed time.
@@ -1229,11 +1276,11 @@ function sintau(x) {
 function costau(x) {
   return cospi(2 * x);
 }
-shaRadiMapPlot = getSha(latTurnMapPlot, getSda(selYda))
+shaRadiMapPlot = getSha(latTurnMapPlot, getSda(selAda))
 shaHalfMapPlot = shaRadiMapPlot / Math.PI
 shaTurnMapPlot = shaHalfMapPlot / 2
 shaDegrMapPlot = shaHalfMapPlot * 180
-eotTurnMapPlot = getEot(selYda) / 1000
+eotTurnMapPlot = getEot(selAda) / 1000
 lonTurnMapPlot = long2turn(location[0], 0)
 latTurnMapPlot = lati2turn(location[1], 0)
 astDecMapPlot = (0.95 + zeroTime + lonTurnMapPlot + eotTurnMapPlot) % 1 * 10
@@ -1255,11 +1302,11 @@ zeroDote = unix2dote(now, 0)[0]
 zeroTime = zeroDote % 1
 zeroDate = dote2date(zeroDote)
 zeroYear = zeroDate[0]
-zeroYda = zeroDate[1]
-zeroDoy = Math.floor(zeroYda)
+zeroAda = zeroDate[1]
+zeroDoy = Math.floor(zeroAda)
 zeroIsLeap = isLeapYear(zeroYear)
-zeroYdaHsl = textcolor(zeroYda.toFixed(5), d3.color(piecewiseColor(zeroYda / (365 + zeroIsLeap))).formatHex())
-zeroYdaHsl1 = textcolor(zeroYda.toFixed(5), d3.color(piecewiseColor(zeroYda / (365 + zeroIsLeap))).formatHex())
+zeroAdaHsl = textcolor(zeroAda.toFixed(5), d3.color(piecewiseColor(zeroAda / (365 + zeroIsLeap))).formatHex())
+zeroAdaHsl1 = textcolor(zeroAda.toFixed(5), d3.color(piecewiseColor(zeroAda / (365 + zeroIsLeap))).formatHex())
 zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
 zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
 zeroTimeHsl2 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
@@ -2254,6 +2301,14 @@ piecewiseColor = d3.piecewise(d3.interpolateRgb, [
 slStr = `, 100%, 50%)`
 elaTime = elapsed % 1e5
 elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 1000)).h}` + slStr)
+loadDote = unix2dote(Date.now(), 0)
+loadydz = dote2date(...loadDote)
+loadYear = loadydz[0]
+loadYearHsl = textcolor(loadYear, d3.color(piecewiseColor(loadYear % 1000 / 1000)).formatHex())
+loadAda = loadydz[1]
+loadIsLeap = isLeapYear(loadYear)
+loadAdaHsl = textcolor(loadAda.toFixed(5), d3.color(piecewiseColor(loadAda / (365 + loadIsLeap))).formatHex())
+decDate = Math.floor(ydz[1])
 decMoty = Math.floor((5 * decDate + 2) / 153)
 isoYear = decYear + (decMoty > 9)
 month = decMoty < 10 ? decMoty + 3 : decMoty - 9
@@ -2273,7 +2328,7 @@ selTimeOne = selTime % 1
 selTimeTen = selTime * 10 % 10
 selTimeMil = selTimeOne.toFixed(3).slice(2)
 selTimeCmd = selTimeOne.toFixed(5).slice(2)
-selYda = selDate + selTime
+selAda = selDate + selTime
 selLati = lati2turn(location[1])
 decDodHsl = textcolor(decDod, d3.color(piecewiseColor(decDod / 10)).formatHex())
 decDateHsl = textcolor(decDate.toString().padStart(3, "0"), d3.color(piecewiseColor(decDate / (365 + isLeapYear(decYear)))).formatHex())
@@ -2284,8 +2339,8 @@ selTimeDay = textcolor(selTimeMil, d3.color(piecewiseColor(selTime)).formatHex()
 selTimeHsl0 = textcolor(selTimeTen.toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
 selTimeHsl1 = textcolor(selTimeTen.toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
 selZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
-selYdaDay = textcolor(selYda.toFixed(3).padStart(6, "0"), d3.color(piecewiseColor(selYda / 365)).formatHex())
-selYdaDec = textcolor((selYda * 10).toFixed(4).padStart(9, "0"), d3.color(piecewiseColor(selYda / 365)).formatHex())
+selAdaDay = textcolor(selAda.toFixed(3).padStart(6, "0"), d3.color(piecewiseColor(selAda / 365)).formatHex())
+selAdaDec = textcolor((selAda * 10).toFixed(4).padStart(9, "0"), d3.color(piecewiseColor(selAda / 365)).formatHex())
 decZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
 viewof selectedDate = Inputs.input(new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours()))
 viewof selectedHour = Inputs.input(new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours()).getHours())

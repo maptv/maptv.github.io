@@ -14,10 +14,10 @@ Martin Laptev
   - [Dates and times](#dat)
   - [Millenium Year Day](#myd)
   - [Day of dek (dod)](#dod)
-- [Zone equatorial meter (zem)](#zem)
-  - [Length area volume](#lav)
-  - [Typical seat height](#tsh)
-  - [Speed of sound](#sos)
+  - [Zone equatorial meter (zem)](#zem)
+    - [Length area volume](#lav)
+    - [Typical seat height](#tsh)
+    - [Speed of sound](#sos)
 - [Ten equal temperament (Xet)](#xet)
   - [Beats per milliday (bpm)](#bpm)
   - [Frequency period wavelength](#fpw)
@@ -929,24 +929,28 @@ viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine i
 
 ## Dates and times
 
-Dec dates consist of a year and a “day of year” (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>),
-whereas Dec times are composed of a “time of day” (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time of day">tod</span>) and a
-“time zone offset” (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offset">tzo</span>). Each of these components
-can have its own color🎨label🏷️. In Zone <span class="color0">0</span>,
-the current date is
+Dec dates consist of a “year of era” (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="year of era">yoe</span>) and a
+“day of year” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span>), whereas Dec times are composed
+of a “time of day” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</span>) and a “time zone offset”
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</span>). In Zone
+<span class="color0">0</span>, the current date is
 ${decYearP0hsl0}<span class="mono">+</span>${decDateP0hsl0} and the
 current time is
 ${decTimeP0hsl0}<span class="mono">-</span><span class="color0">0</span>.
-Dates and times can be combined into snaps🫰:
+Color🎨labels🏷️can help us to visually
+[parse](https://en.wikipedia.org/wiki/Parsing#:~:text=a%20process%20of%20analyzing%20a%20string%20of%20symbols)
+the date and time that make up a Dec snap🫰:
 ${decYearP0hsl1}<span class="mono">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span class="mono">-</span><span class="color0">0</span>.
 
 ## Millenium Year Day
 
-Year color🎨labels🏷️are based on <span class="tool"
-data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="year of era">Yoe</span> color🎨labels🏷️are based on
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a millennium">millimillennia</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimillennia">mk</span>). Every millennium starts with
@@ -979,7 +983,7 @@ years](https://en.wikipedia.org/wiki/Leap_year#:~:text=a%20calendar%20year%20tha
 ## Day of dek (dod)
 
 Each <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of year">doy</span> also has two components. The
+data-bs-title="day of year">doy</span> also has two components. The
 first two digits of a three-digit <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="days of year">doy</span>
 represent a group of ten days called a <span class="tool"
@@ -1003,7 +1007,7 @@ data-bs-toggle="tooltip" data-bs-title="group of ten days">Dek</span>
 ${decDekP0hsl} and <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Day of dek">Dod</span> ${decDodP0hsl}.
 
-# Zone equatorial meter (zem)
+## Zone equatorial meter (zem)
 
 <div id="zemmodulor" class="column-page-right lighthouse"
 fig-align="center" style="text-align:center;font-size:.825rem;">
@@ -1546,7 +1550,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 
 </div>
 
-## Length area volume
+### Length area volume
 
 You can approximate a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
@@ -1918,7 +1922,7 @@ id="cubiclabel">Dimensions.com</a>
 
 </div>
 
-## Typical seat height
+### Typical seat height
 
 According to [dimensions.com](https://www.dimensions.com), 115
 <span class="tool" data-bs-toggle="tooltip"
@@ -1950,7 +1954,7 @@ speed while flying West in an airplane✈️towards the setting sun☀️, we
 would be able to perpetually fly [into the
 sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
-## Speed of sound
+### Speed of sound
 
 To travel fast enough, the airplane✈️would need to surpass the [speed of
 sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊,
