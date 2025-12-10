@@ -392,5 +392,8 @@ div#conversionchart > div {
   display: flex;
   justify-content: center;
 }
+h4.hiddenheading, h5.hiddenheading {
+  display: none;
+}
 </style>
 ```
