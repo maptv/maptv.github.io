@@ -751,13 +751,14 @@ subtrahend. If we omit the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</span> from the subtrahend, we must also
 omit the difference: ${decYear}+${decDoty}=299.
 
-Dec spans can omit the minuend and the difference to indicate that the
+Dec spans can omit both the minuend and difference to indicate that the
 minuend is the first day of the year: <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1">Day 0</span>.
-Similarly, an empty
-[right](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=The%20expression%20on%20the%20right%20side%20of%20the%20%22%3D%22%20sign)-hand
-side means that the subtrahend is the last day of the year:
-<span class="tool" data-bs-toggle="tooltip"
+Similarly, an empty [“right-hand
+side”](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=The%20expression%20on%20the%20right%20side%20of%20the%20%22%3D%22%20sign)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="right-hand side">rhs</span>) means that the subtrahend is
+the last day of the year: <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 28 or 29">Day -1</span>. Anchored spans have one
 or two <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="years of era">yoes</span>, whereas floating spans do not
@@ -765,8 +766,23 @@ contain a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</span>. The floating version of the span
 above would be ${decDoty}=299.
 
-Unlike expanded dates, spans can display a minuend. Without a minuend,
-visually
+The simplest possible span is just an equals sign and represents all the
+days in the year, from <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1">Day 0</span> to <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="February 28 or 29">Day
+-1</span>. If the year is unspecified, we will not know whether
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 28 or 29">Day -1</span> is <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="February 28">Day 364</span> or
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 29">Day 365</span>, but even if we do know, we
+might still want to keep the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="right-hand side">rhs</span> blank for brevity. The span
+${decYear}+= only contains the current year but is equivalent to
+${decYear}+0=${decYearLastDay}<span class="mono">-</span>${decYearLastDay}.
+
+A span can display expanded dates, spans can display a minuend. Without
+a minuend, visually
 [parsing](https://en.wikipedia.org/wiki/Parsing#:~:text=a%20process%20of%20analyzing%20a%20string%20of%20symbols)
 a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> into a dek and <span class="tool"
@@ -2980,6 +2996,9 @@ function Scrubber(values, {
 }
 decYear = ydz[0]
 nextYear = decYear + 1
+decYearLeap = year2leap(decYear)
+decYearLength = 365 + decYearLeap
+decYearLastDay = decYearLength - 1
 decDoty = Math.floor(ydz[1])
 decDek = Math.floor(decDoty / 10)
 decDotd = decDoty % 10
