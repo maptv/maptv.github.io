@@ -205,6 +205,9 @@ function Scrubber(values, {
 }
 decYear = ydz[0]
 nextYear = decYear + 1
+decYearLeap = year2leap(decYear)
+decYearLength = 365 + decYearLeap
+decYearLastDay = decYearLength - 1
 decDoty = Math.floor(ydz[1])
 decDek = Math.floor(decDoty / 10)
 decDotd = decDoty % 10
