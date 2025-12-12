@@ -1,6 +1,6 @@
 # Dec Date
 Martin Laptev
-2025+285
+2025+286
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -666,8 +666,6 @@ has only 2 possible values: 365 or 366, and can be determined by passing
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</span>+1 to the Dec year length
 equation:
-
-toy = doy ÷ *n*
 
 $$\text{n}=\begin{cases}
   366&{\begin{align}\text{if } (\text{yoe}+1)\text{ mod }\\\\\\\\4=0\\ \href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\text{yoe}+1)\text{ mod }100\neq0\\

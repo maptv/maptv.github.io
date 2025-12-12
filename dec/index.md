@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+100
+2025+286
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -1948,31 +1948,36 @@ data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span> means Earth🌍. This is
 fitting because all Dec units are based on physical attributes of the
 Earth🌏. At the Equator, the Earth🌎rotates on its axis at a speed of
-1.00224 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegars">v</span>. If we could indefinitely maintain this
-speed while flying West in an airplane✈️towards the setting sun☀️, we
-would be able to perpetually fly [into the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>1.00224 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="omegars">v</span>. If we could
+indefinitely maintain this speed while flying West in an
+airplane✈️towards the setting sun☀️, we would be able to perpetually fly
+[into the
 sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
 ### Speed of sound
 
-To travel fast enough, the airplane✈️would need to surpass the [speed of
+To travel fast enough for a perpetual sunset🌅, the airplane✈️would need
+to surpass the [speed of
 sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊,
 which at 15 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="degrees">°</span>
 [Celsius](https://en.wikipedia.org/wiki/Celsius#:~:text=the%20unit%20of%20temperature%20on%20the%20Celsius%20temperature%20scale)
 and 1 [standard
 atmosphere](https://en.wikipedia.org/wiki/Standard_atmosphere_(unit)#:~:text=a%20unit%20of%20pressure%20defined%20as%20101325%20Pa)
-is 0.735048 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegars">v</span> or Mach 1. [Mach
-numbers](https://en.wikipedia.org/wiki/Mach_number) are not as reliable
-as <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegar">v</span>, because they are relative to the speed
-of sound🔊, which varies greatly by air temperature and pressure. The
-cruising speed of a [Boeing
+is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>0.735048 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="omegars">v</span> or Mach 1.
+[Mach numbers](https://en.wikipedia.org/wiki/Mach_number) are relative
+to the speed of sound🔊, which varies greatly by air temperature and
+pressure. The cruising speed of a [Boeing
 747](https://en.wikipedia.org/wiki/Boeing_747#:~:text=sweep%2C%20allowing%20a-,Mach%C2%A00.85,-%28490%C2%A0kn;%20900)
-is 0.54 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegars">v</span> or Mach 0.85.
+is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>0.54 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="omegars">v</span> or Mach
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>0.85.
 
 The highway🛣️speed of a car🚗is roughly tenfold slower than the cruising
 speed of an airplane✈️. If we are driving on a highway🛣️at a speed of 50
@@ -2008,8 +2013,7 @@ data-bs-title="beats">b</span>, or <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="a million">10<sup>6</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millionths of a day">microdays</span> (<span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="microdays">$\micro\text d$</span>). One
+data-bs-toggle="tooltip" data-bs-title="microdays">µd</span>). One
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millitaur">mc</span> is 100 <span class="tool"
 data-bs-toggle="tooltip"
@@ -2048,17 +2052,17 @@ is between 100 and 166.<span class="vinculum">6</span>
 data-bs-title="beats">b</span> per <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="millidays">md</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats per milliday">BPM</span>). The unofficial anthem of
+data-bs-title="beats per milliday">bpm</span>). The unofficial anthem of
 the Dec measurement system, “[Turn the beat
 around](https://en.wikipedia.org/wiki/Turn_the_Beat_Around#:~:text=a%20disco%20song%20written%20by%20Gerald%20Jackson%20and%20Peter%20Jackson%2C%20and%20performed%20by%20American%20actress%20and%20singer%20Vicki%20Sue%20Robinson%20in%201976)”,
 has a
 [tempo](https://en.wikipedia.org/wiki/Tempo#:~:text=the%20speed%20or%20pace%20of%20a%20given%20composition)
 of 188.64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats per milliday">BPM</span>, which corresponds to the
+data-bs-title="beats per milliday">bpm</span>, which corresponds to the
 *allegro* [tempo
 marking](https://en.wikipedia.org/wiki/Tempo#Approximately_from_the_slowest_to_the_fastest).
 A Dec clock⏰ticks at a rate of 100 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="beats per milliday">BPM</span>,
+data-bs-toggle="tooltip" data-bs-title="beats per milliday">bpm</span>,
 $\text b^{-1}$, $1\over\text b$, or 1
 [inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number)
 of <span class="tool" data-bs-toggle="tooltip"
@@ -2157,7 +2161,7 @@ temperament](https://en.wikipedia.org/wiki/12_equal_temperament#:~:text=the%20mu
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="12 equal temperament">12ET</span>) musical system have
 names that consist of a letter from <span class="colorA">A</span> to
-<span class="colorG">G</span> and a symbol such as sharp
+<span class="colorG">G</span> and often a symbol such as sharp
 (<span class="iosevka">♯</span>), half sharp
 (<span class="iosevka">𝄲</span>), flat (<span class="iosevka">♭</span>),
 and half flat (<span class="iosevka">𝄳</span>).
@@ -2327,14 +2331,14 @@ of piano🎹keys. In <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</span>, an octave is 10 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="steps">s</span> or
 10<sup>4</sup> <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</span>. The text below the image provides
-from top to bottom the [scientific pitch
+data-bs-title="millisteps">ms</span>. From top to bottom, the text below
+the image provides the [scientific pitch
 name](https://en.wikipedia.org/wiki/Scientific_pitch_notation#:~:text=a%20method%20of%20specifying%20musical%20pitch%20by%20combining%20a%20musical%20note%20name%20(with%20accidental%20if%20needed)%20and%20a%20number%20identifying%20the%20pitch%27s%20octave),
 integer <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="iob">i</span> sound🔊frequency, and integer
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizem">mz</span> wavelength of the corresponding white
-key. As octave indexes and frequency increase, wavelength decreases.
+key. As octave indexes and frequencies increase, wavelengths decrease.
 
 Octave indexes in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</span> and <span class="tool"
@@ -2374,22 +2378,51 @@ typical
 range for humans extends from Tone <span class="color030">03</span> to
 Tone <span class="color040">104</span>.
 
-By default, each <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span> note or tone lasts one musical beat.
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span> modifies the duration of notes and
-tones by appending × and a multiplier or ÷ and a divisor. The first two
+Notes that should be played simultaneously, like those in the
+<span class="colorFs">F<span class="iosevka">♯</span></span> major chord
+(<span class="colorAs">A<span class="iosevka">♯</span></span><span class="colorCs">C<span class="iosevka">♯</span></span><span class="colorFs">F<span class="iosevka">♯</span></span>),
+are written without spaces:
+<span class="color0">0</span><span class="color2">2</span><span class="color6">6</span>.
+Notes to be played separately are separated by spaces and grouped into
+measures that end with a bar (|). Measures are grouped into lines that
+start with an octave and [time
+signature](https://en.wikipedia.org/wiki/Time_signature#:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure)
+and end with a
+[newline](https://en.wikipedia.org/wiki/Newline#:~:text=used%20to%20signify%20the%20end%20of%20a%20line%20of%20text%20and%20the%20start%20of%20a%20new%20one)
+character.
+
+Groups of lines are played together and are separated by empty lines.
+With four lines, we can cover Octaves 2, 3, 4, and 5 or equivalently
+Notes 20 to 59, which is close to the range of the <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12ET</span> bass and treble
+[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff):
+<span class="colorC2">21.302</span> to
+<span class="colorC6">61.302</span>. Of these four lines, the top two
+are analogous to the treble clef and the bottom two closely match the
+bass clef.
+
+In <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span>, a rest is denoted by a null sign (∅).
+All rests except whole rests are followed by a fraction: ½ for a half
+rest, ¼ for a quarter rest, ⅛ for an eighth rest, and so on. The same
+goes for notes. The first two
 [measures](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music)
 of the
 [chorus](https://en.wikipedia.org/wiki/Chorus#:~:text=the%20part%20of%20a%20song%20that%20is%20repeated%20several%20times)
 from “[Turn the beat
 around](https://en.wikipedia.org/wiki/Turn_the_Beat_Around#:~:text=a%20disco%20song%20written%20by%20Gerald%20Jackson%20and%20Peter%20Jackson%2C%20and%20performed%20by%20American%20actress%20and%20singer%20Vicki%20Sue%20Robinson%20in%201976)”
-are shown below and can be expressed in <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> as Octave
-<span class="color4">4</span> and a series of notes followed by a rest
-(∅): <span class="color9">9</span> <span class="color9">9</span>÷2
-<span class="color8">8</span> <span class="color8">8</span>
-<span class="color6">6</span>×4 ∅.
+are shown below, first using <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span> music notation and then a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12ET</span> treble clef.
+
+4<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span>
+<span class="mono">9¼</span> <span class="mono">9⅛</span>
+<span class="under">8<span class="mono">⅛</span>
+<span class="mono">8⅛</span></span> <span class="mono">8¼</span>
+<span style="text-decoration: underline;"><span class="mono">6⅛</span> |
+<span class="mono">6¾</span></span> <span class="mono">∅¼</span> |
 
 ``` {ojs}
 //| echo: false
@@ -2944,9 +2977,8 @@ data-bs-title="groups of ten days">deks</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>,
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millidays">md</span>, <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="microdays">$\micro\text d$</span>, and <span class="tool"
-data-bs-toggle="tooltip"
+data-bs-toggle="tooltip" data-bs-title="microdays">µd</span>, and
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="billionths of a day">nanodays</span> (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="nanodays">nd</span>). On
 <span class="tool" data-bs-toggle="tooltip"
@@ -5849,5 +5881,18 @@ img#zModu {
 #chorus {
   margin-top: -12px;
   margin-bottom: 19px;
+}
+.fraction {
+  display: inline-flex; /* Allows the container to sit inline with text */
+  flex-direction: column; /* Stacks the children vertically */
+  align-items: center; /* Centers the numbers */
+  vertical-align: middle; /* Aligns the fraction with the surrounding text */
+  font-size: 80%; /* Makes the numbers smaller for a better look */
+}
+.numerator {
+  padding: 0 0.2em; /* Adds a little space around the number */
+}
+.denominator {
+  padding: 0 0.2em;
 }
 </style>
