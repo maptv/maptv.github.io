@@ -115,8 +115,6 @@ Dec date standardization ensures that [yoes]{.tool data-bs-toggle="tooltip" data
 
 While [n]{.tool data-bs-toggle="tooltip" data-bs-title="number of days in the year"} can be useful for converting between positive and negative [doys]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="days of year"} or between days and fractional years, Dec dates do not include [n]{.tool data-bs-toggle="tooltip" data-bs-title="number of days in the year"}, because it is not needed to specify a date, remains constant for 366, 1095, or 2920 days, has only 2 possible values: 365 or 366, and can be determined by passing [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+1 to the Dec year length equation:
 
-$$\text{toy} = \text{doy} \div n$$
-
 $$\text{n}=\begin{cases}
   366&{\begin{align}\text{if } (\text{yoe}+1)\text{ mod }\ \ \ \ 4=0\\ \href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\text{yoe}+1)\text{ mod }100\neq0\\
   \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}( \text{yoe}+1)\text{ mod }400=0\end{align}}\\\\

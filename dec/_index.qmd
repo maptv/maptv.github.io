@@ -2741,5 +2741,18 @@ img#zModu {
   margin-top: -12px;
   margin-bottom: 19px;
 }
+.fraction {
+  display: inline-flex; /* Allows the container to sit inline with text */
+  flex-direction: column; /* Stacks the children vertically */
+  align-items: center; /* Centers the numbers */
+  vertical-align: middle; /* Aligns the fraction with the surrounding text */
+  font-size: 80%; /* Makes the numbers smaller for a better look */
+}
+.numerator {
+  padding: 0 0.2em; /* Adds a little space around the number */
+}
+.denominator {
+  padding: 0 0.2em;
+}
 </style>
 ```
