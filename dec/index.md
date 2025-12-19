@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+286
+2025+293
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -2378,12 +2378,114 @@ typical
 range for humans extends from Tone <span class="color030">03</span> to
 Tone <span class="color040">104</span>.
 
-Notes that should be played simultaneously, like those in the
+Notes can be grouped into chords such as the
 <span class="colorFs">F<span class="iosevka">♯</span></span> major chord
-(<span class="colorAs">A<span class="iosevka">♯</span></span><span class="colorCs">C<span class="iosevka">♯</span></span><span class="colorFs">F<span class="iosevka">♯</span></span>),
-are written without spaces:
+(<span class="colorAs">A<span class="iosevka">♯</span></span><span class="colorCs">C<span class="iosevka">♯</span></span><span class="colorFs">F<span class="iosevka">♯</span></span>):
 <span class="color0">0</span><span class="color2">2</span><span class="color6">6</span>.
-Notes to be played separately are separated by spaces and grouped into
+All notes, rests, and chords are followed by a Xet separator which
+indicates their respective durations. A separator that follows a chord
+applies to all notes in that chord:
+<span class="color0">0</span><span class="color2">2</span><span class="color6">6</span><span class="color5">    </span>.
+As shown in the table below, Xet separators can be color coded.
+
+<div style="overflow-x:scroll;">
+
+<table>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 62%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>Note</th>
+<th>Rest</th>
+<th>Separator</th>
+<th>US name</th>
+<th>UK name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>𝅜</td>
+<td>𝄺</td>
+<td><span class="color0">                </span></td>
+<td>double</td>
+<td>breve</td>
+</tr>
+<tr>
+<td>𝅝</td>
+<td>𝄻</td>
+<td><span class="color0">        </span></td>
+<td>whole</td>
+<td>semibreve</td>
+</tr>
+<tr>
+<td>𝅗𝅥</td>
+<td>𝄼</td>
+<td><span class="color5">    </span></td>
+<td>half</td>
+<td>minim</td>
+</tr>
+<tr>
+<td>𝅘𝅥</td>
+<td>𝄽</td>
+<td><span class="color250">  </span></td>
+<td>quarter</td>
+<td>crotchet</td>
+</tr>
+<tr>
+<td>𝅘𝅥𝅮</td>
+<td>𝄾</td>
+<td><span class="color125">𝄖</span></td>
+<td>eighth</td>
+<td>quaver</td>
+</tr>
+<tr>
+<td>𝅘𝅥𝅯</td>
+<td>𝄿</td>
+<td><span class="color0625">𝄗</span></td>
+<td>sixteenth</td>
+<td>semiquaver</td>
+</tr>
+<tr>
+<td>𝅘𝅥𝅰</td>
+<td>𝅀</td>
+<td><span class="color03125">𝄘</span></td>
+<td>thirty-second</td>
+<td>demisemiquaver</td>
+</tr>
+<tr>
+<td>𝅘𝅥𝅱</td>
+<td>𝅁</td>
+<td><span class="color015625">𝄙</span></td>
+<td>sixty-fourth</td>
+<td>hemidemisemiquaver</td>
+</tr>
+<tr>
+<td>𝅘𝅥𝅲</td>
+<td>𝅂</td>
+<td><span class="color0078125">𝄚</span></td>
+<td>hundred twenty-eighth</td>
+<td>semihemidemisemiquaver</td>
+</tr>
+<tr>
+<td><img src="../asset/Semigarrapatea.svg"
+style="max-width:12px" /></td>
+<td><img src="../asset/Silencio_de_semigarrapatea.svg"
+style="max-width:12px" /></td>
+<td><span class="color00390625">𝄛</span></td>
+<td>two hundred fifty-sixth</td>
+<td>demisemihemidemisemiquaver</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+to be played separately are separated by spaces and grouped into
 measures that end with a bar (|). Measures are grouped into lines that
 start with an octave and [time
 signature](https://en.wikipedia.org/wiki/Time_signature#:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure)
@@ -2418,7 +2520,25 @@ data-bs-title="Tenet">Xet</span> music notation and then a
 data-bs-title="12 equal temperament">12ET</span> treble clef.
 
 4<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span>
-<span class="mono">9¼</span> <span class="mono">9⅛</span>
+|
+9<span class="fraction"><span class="numerator"></span><span class="denominator">4</span></span>
+9<span class="fraction"><span class="numerator"></span><span class="denominator">8</span></span>
+<span class="under">8<span class="fraction"><span class="numerator"></span><span class="denominator">8</span></span>
+8<span class="fraction"><span class="numerator"></span><span class="denominator">8</span></span></span>
+8<span class="fraction"><span class="numerator"></span><span class="denominator">4</span></span>
+6<span class="fraction"><span class="numerator"></span><span class="denominator">8</span></span>
+|
+6<span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span>
+∅<span class="fraction"><span class="numerator"></span><span class="denominator">4</span></span>
+|
+
+4<sup>4</sup><sub>4</sub> | 9<sub>4</sub> 9<sub>8</sub>
+<span class="under">8<sub>8</sub> 8<sub>8</sub></span> 8<sub>4</sub>
+<span class="under">6<sub>8</sub> | 6<sup>3</sup><sub>4</sub></span>
+∅<sub>4</sub> |
+
+4<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span>
+| <span class="mono">9¼</span> <span class="mono">9⅛</span>
 <span class="under">8<span class="mono">⅛</span>
 <span class="mono">8⅛</span></span> <span class="mono">8¼</span>
 <span style="text-decoration: underline;"><span class="mono">6⅛</span> |
@@ -4894,17 +5014,22 @@ xetIob = xet.map(piecewiseIob)
 xetLen = xet.map(piecewiseLen)
 hues = Object.fromEntries([
     0.002,
+    0.00390625,
     0.004,
+    0.0078125,
     0.008,
     0.014,
+    0.015625,
     0.0158,
     0.016,
     0.021,
     0.022,
     0.024,
     0.030,
+    0.03125,
     0.040,
     0.039,
+    0.0625,
     0.065,
     0.067,
     0.130,
@@ -5128,6 +5253,22 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color00390625 {
+  background: hsl(${hues[.00390625]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.00390625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color0078125 {
+  background: hsl(${hues[.0078125]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.0078125]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color008 {
   background: hsl(${hues[.008]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -5139,6 +5280,14 @@ html`
 .color014 {
   background: hsl(${hues[.014]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.014]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color015625 {
+  background: hsl(${hues[0.015625]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.015625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -5192,6 +5341,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color03125 {
+  background: hsl(${hues[0.03125]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.03125]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color039 {
   background: hsl(${hues[0.039]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.039]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -5211,6 +5368,14 @@ html`
 .color050 {
   background: hsl(24 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(24, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color0625 {
+  background: hsl(${hues[0.0625]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.0625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
