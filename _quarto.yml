@@ -127,7 +127,7 @@ website:
   twitter-card: true
   page-footer:
     background: light
-    left: © Copyright 2025, Martin Laptev
+    left: © Copyright 2026, Martin Laptev
     right:
     - icon: github
       href: https://github.com/maptv
@@ -171,8 +171,8 @@ format:
       theme: default
   commonmark: default
 citation:
-  accessed: 2024
-  issued: 2024
+  accessed: 2026
+  issued: 2026
 title-block-banner: false
 execute:
   freeze: true
