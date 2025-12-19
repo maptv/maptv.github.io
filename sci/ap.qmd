@@ -1,0 +1,210 @@
+---
+title: "Action Potentials: How Neurons Send Signals"
+author: "Introductory Anatomy & Physiology"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    transition: fade
+---
+
+## What Is an Action Potential?
+
+- A **rapid, temporary change in membrane potential**
+- Allows neurons to communicate over long distances
+- All-or-none: same size every time once threshold is reached
+
+---
+
+## Big Picture: Why Action Potentials Matter
+
+- Thought 🧠
+- Movement 💪
+- Sensation 👁️
+- Homeostasis ⚖️
+
+Without action potentials, the nervous system cannot function.
+
+---
+
+## How Long Are Human Nerves?
+
+- The **longest axons** (e.g., from spinal cord to toes) can be **~1–1.5 meters** long
+
+### Orders of Magnitude (Length)
+
+| Example | Approx. Length |
+|------|---------------|
+| Bacterium | ~1 µm (10⁻⁶ m) |
+| Human cell | ~10 µm (10⁻⁵ m) |
+| **Longest human axon** | **~1 m (10⁰ m)** |
+| Football field | ~100 m (10² m) |
+
+➡️ One neuron can span **100,000× the size of a typical cell**.
+
+---
+
+## How Fast Are Action Potentials?
+
+- Speed depends on axon diameter and myelination
+- **Human cortex**: ~1–5 m/s
+- **Large myelinated axons**: up to **120 m/s**
+
+---
+
+## Orders of Magnitude: Speed
+
+| Example | Speed |
+|------|------|
+| Snail | ~0.01 m/s |
+| Walking human | ~1.4 m/s |
+| **Cortical action potential** | **~1–5 m/s** |
+| Olympic sprinter | ~10 m/s |
+| Commercial jet | ~250 m/s |
+
+> *"I'm so fast that last night I turned off the light switch in my hotel room and was in bed before the room was dark."*  
+> — **Muhammad Ali**
+
+Neurons aren’t that fast—but they’re fast enough to think, react, and survive.
+
+---
+
+## Electrical Units: Membrane Potential
+
+- Measured in **millivolts (mV)**
+- Inside of neuron is negative relative to outside
+
+### Typical Values
+
+| State | Membrane Potential |
+|------|-------------------|
+| Resting | −70 mV |
+| Threshold | −55 mV |
+| Peak | +30 mV |
+
+---
+
+## Orders of Magnitude: mV vs Batteries
+
+| Source | Voltage |
+|------|--------|
+| Neuron membrane change | ~100 mV (0.1 V) |
+| AA battery | 1.5 V |
+| Phone battery | ~3.7 V |
+
+➡️ A neuron works with **tiny voltages**, yet produces powerful effects.
+
+---
+
+## Neurons as Social Networks
+
+- A single neuron can form **1,000–10,000 synaptic connections**
+
+### Comparison
+
+| Network | Typical Connections |
+|-------|--------------------|
+| Average social media user | ~150–500 friends |
+| Influencer | ~10⁵–10⁶ followers |
+| **Neuron** | **up to 10⁴ synapses** |
+
+➡️ Your brain is a **biological super-network**.
+
+---
+
+## Concentration Gradients
+
+- Ions move **down their concentration gradients**
+- High → low concentration
+
+Key ions:
+
+- **Na⁺**: high outside
+- **K⁺**: high inside
+
+Gradients store **potential energy**.
+
+---
+
+## Resting Membrane Potential
+
+Maintained by:
+
+- Unequal ion distribution
+- Selective membrane permeability
+- **Na⁺/K⁺ pump**
+  - Pumps **3 Na⁺ out**
+  - Pumps **2 K⁺ in**
+
+Result: neuron rests at **~ −70 mV**.
+
+---
+
+## Stages of an Action Potential
+
+1. Resting state
+2. Depolarization
+3. Repolarization
+4. Hyperpolarization
+
+Each stage depends on **voltage-gated ion channels**.
+
+---
+
+## Depolarization: Sodium Channels
+
+- Voltage-gated **Na⁺ channels open** at threshold
+- Na⁺ rushes **into** the neuron
+- Membrane potential becomes positive
+
+➡️ Rising phase of the action potential
+
+---
+
+## Repolarization: Potassium Channels
+
+- Na⁺ channels inactivate
+- Voltage-gated **K⁺ channels open**
+- K⁺ flows **out** of the neuron
+
+➡️ Membrane potential returns toward negative
+
+---
+
+## Hyperpolarization
+
+- K⁺ channels close slowly
+- Membrane becomes **more negative than rest**
+
+This is why neurons cannot fire continuously.
+
+---
+
+## Refractory Periods
+
+### Absolute Refractory Period
+
+- No new action potential possible
+- Na⁺ channels are inactivated
+
+### Relative Refractory Period
+
+- Stronger stimulus required
+- Membrane is hyperpolarized
+
+➡️ Ensures **one-way signal travel** and limits firing rate.
+
+---
+
+## Key Takeaways
+
+- Action potentials are rapid electrical signals
+- Tiny voltages, long distances, fast speeds
+- Ion gradients + voltage-gated channels make it possible
+- Your brain is one of the most complex networks in the universe
+
+---
+
+## End
+
+*Questions?* 🧠⚡

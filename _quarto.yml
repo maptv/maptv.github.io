@@ -80,17 +80,17 @@ website:
         text: World War 2
         icon: 2-square
         href: history/ww2/index.qmd
-    - section: Machine Learning
-      icon: robot
-      contents:
-      - icon: dice-5
-        text: Probablity
-        href: ml/prob/index.qmd
-      - icon: translate
-        text: Language Models
-        href: ml/llm/index.qmd
-    # - section: Science
-    #   icon: stars
+          # - section: Machine Learning
+          #   icon: robot
+          #   contents:
+          #   - icon: dice-5
+          #     text: Probablity
+          #     href: ml/prob/index.qmd
+          #   - icon: translate
+          #     text: Language Models
+          #     href: ml/llm/index.qmd
+          # - section: Science
+          #   icon: flask
     - section: Software
       icon: laptop
       contents:

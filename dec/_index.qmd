@@ -1752,17 +1752,22 @@ xetIob = xet.map(piecewiseIob)
 xetLen = xet.map(piecewiseLen)
 hues = Object.fromEntries([
     0.002,
+    0.00390625,
     0.004,
+    0.0078125,
     0.008,
     0.014,
+    0.015625,
     0.0158,
     0.016,
     0.021,
     0.022,
     0.024,
     0.030,
+    0.03125,
     0.040,
     0.039,
+    0.0625,
     0.065,
     0.067,
     0.130,
@@ -1986,6 +1991,22 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color00390625 {
+  background: hsl(${hues[.00390625]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.00390625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color0078125 {
+  background: hsl(${hues[.0078125]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.0078125]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color008 {
   background: hsl(${hues[.008]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -1997,6 +2018,14 @@ html`
 .color014 {
   background: hsl(${hues[.014]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.014]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color015625 {
+  background: hsl(${hues[0.015625]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.015625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2050,6 +2079,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.color03125 {
+  background: hsl(${hues[0.03125]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.03125]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color039 {
   background: hsl(${hues[0.039]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.039]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -2069,6 +2106,14 @@ html`
 .color050 {
   background: hsl(24 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(24, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color0625 {
+  background: hsl(${hues[0.0625]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.0625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
