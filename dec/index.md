@@ -2378,8 +2378,10 @@ typical
 range for humans extends from Tone <span class="color030">03</span> to
 Tone <span class="color040">104</span>.
 
-Notes can be grouped into chords such as the
-<span class="colorFs">F<span class="iosevka">♯</span></span> major chord
+Notes can be grouped into a
+[chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together)
+such as the <span class="colorFs">F<span class="iosevka">♯</span></span>
+major chord
 (<span class="colorAs">A<span class="iosevka">♯</span></span><span class="colorCs">C<span class="iosevka">♯</span></span><span class="colorFs">F<span class="iosevka">♯</span></span>):
 <span class="color0">0</span><span class="color2">2</span><span class="color6">6</span>.
 All notes, rests, and chords are followed by a Xet separator which
@@ -2473,9 +2475,9 @@ As shown in the table below, Xet separators can be color coded.
 </tr>
 <tr>
 <td><img src="../asset/Semigarrapatea.svg"
-style="max-width:12px" /></td>
+style="max-width:11px" /></td>
 <td><img src="../asset/Silencio_de_semigarrapatea.svg"
-style="max-width:12px" /></td>
+style="max-width:11px" /></td>
 <td><span class="color00390625">𝄛</span></td>
 <td>two hundred fifty-sixth</td>
 <td>demisemihemidemisemiquaver</td>
@@ -2485,9 +2487,28 @@ style="max-width:12px" /></td>
 
 </div>
 
-to be played separately are separated by spaces and grouped into
-measures that end with a bar (|). Measures are grouped into lines that
-start with an octave and [time
+In <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span>, a rest is denoted by a null sign (∅).
+Notes, rests, chords, and their separators are grouped into
+[measures](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music)
+that have a bar (|) on both sides. Measures are grouped into lines that
+start with an octave index and end with a
+[newline](https://en.wikipedia.org/wiki/Newline#:~:text=used%20to%20signify%20the%20end%20of%20a%20line%20of%20text%20and%20the%20start%20of%20a%20new%20one)
+character. Lines separated by empty lines are played sequentially,
+whereas groups of lines are played simultaneously.
+
+Since each line that represent Octaves 4 and 5, span Notes 40 to 59, and
+overlap with the majority of the range of 12ET treble clef tones: 41.302
+to 61.302. Similarly, two lines representing Octaves 2 and 3 are To
+cover most of the tone range of the bass clef: 21.302 to 41.302, we need
+two Xet lines labeled as Octaves 2 and 3, Notes 20 to 39. Of these four
+lines, the top two cover but the treble clef and the bottom two closely
+match the bass clef.
+
+The Xet analog of the 12ET treble clef is two lines that represent
+Octaves 4 and 5, to be played separately are separated by spaces and
+grouped into measures that end with a bar (|). Measures are grouped into
+lines that start with an octave and [time
 signature](https://en.wikipedia.org/wiki/Time_signature#:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure)
 and end with a
 [newline](https://en.wikipedia.org/wiki/Newline#:~:text=used%20to%20signify%20the%20end%20of%20a%20line%20of%20text%20and%20the%20start%20of%20a%20new%20one)
@@ -2504,8 +2525,6 @@ data-bs-title="12 equal temperament">12ET</span> bass and treble
 are analogous to the treble clef and the bottom two closely match the
 bass clef.
 
-In <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span>, a rest is denoted by a null sign (∅).
 All rests except whole rests are followed by a fraction: ½ for a half
 rest, ¼ for a quarter rest, ⅛ for an eighth rest, and so on. The same
 goes for notes. The first two
