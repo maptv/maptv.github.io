@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+293
+2025+312
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -2378,7 +2378,195 @@ typical
 range for humans extends from Tone <span class="color030">03</span> to
 Tone <span class="color040">104</span>.
 
-Notes can be grouped into a
+In the Xet music notation example below, Tone
+<span class="color420">42</span> sets the octave for Notes
+<span class="color2">2</span>, <span class="color5">5</span>, and
+<span class="color8">8</span>, which are first arranged sequentially as
+an ascending
+[arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order)
+and then simultaneously to demonstrate the Xet equivalent of a
+<span class="colorCs">C♯</span> major chord, which can be represented by
+notes instead of tones because all of its notes are in the octave set by
+the preceding tone.
+
+```
+42 5 8 8 |
+       5 |
+       2 |
+```
+
+```
+     8 8 |
+   5 x 5 |
+42 x   2 |
+```
+
+``` {ojs}
+//| echo: false
+//| label: arpeggio
+// https://observablehq.com/@kreijstal/abc
+// https://github.com/quarto-dev/quarto-cli/discussions/7098
+// https://github.com/quarto-dev/quarto-cli/issues/2700
+abcjs = require('https://bundle.run/abcjs@5.1.2/midi.js')
+arpcode = `
+M:4/4
+L:1/4
+K:C#
+C E G [CEG] |
+`
+abc(arpcode, true)
+function abc(tune, midi = false, notation = true) {
+    function colorRange(range, color) {
+        if (range && range.elements) {
+            range.elements.forEach(function(set) {
+                set.forEach(function(item) {
+                    item.setAttribute("fill", color);
+                });
+            });
+        }
+    }
+    const result = html `<div/>`;
+    if (notation) {
+        const notation = result.appendChild(html `<div/>`);
+        var abcElem = (abcjs.renderAbc(notation, tune));
+    }
+    if (midi) {
+        result.appendChild(html `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/><link rel="stylesheet" type="text/css" href="https://unpkg.com/abcjs@5.1.2/abcjs-midi.css"/>`);
+        const midi = result.appendChild(html `<div/>`);
+        abcjs.renderMidi(midi, tune, {
+            midiListener: function(a, b, c) {},
+            animate: {
+                listener: function(a, b, c) {
+                    colorRange(a, "#000000");
+                    colorRange(b, "#3D9AFC");
+                },
+                target: abcElem[0],
+                qpm: abcElem[0].getBpm()
+            }
+        });
+        //  abcjs.midi.startPlaying(document.querySelector(".abcjs-inline-midi"),true)
+    }
+    return result;
+}
+```
+
+In Xet, simultaneous notes or tones are vertically aligned in columns.
+Each column must only contain either single-digit notes or double-digit
+tones so that the width is consistent throughout the column. The first
+example below uses Xet tones to emulate the
+<span class="colorFs">F♯</span> major chord. because aligned three notes
+in column below consists of notes because the previous in the example
+below below the example below, notes should be played If a chord spans
+multiple octaves, it has to be specified with tones. In the example
+below, Tone <span class="color6">46</span> sets the octave and then Tone
+<span class="color0">50</span><span class="color2">2</span>) changes it.
+indicate that these notes are in Octave 4 The whereas the chord
+(<span class="colorFs">F<span class="iosevka">♯</span></span><span class="colorAs">A<span class="iosevka">♯</span></span><span class="colorCs">C<span class="iosevka">♯</span></span>
+=
+<span class="color6">6</span><span class="color0">0</span><span class="color2">2</span>)
+spans two octaves. When played as an
+[arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order)
+starting immediately after kkkkk shown below can be written in Xet as
+one line of text that consists of a [time
+signature](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure),
+tones, notes, spaces, and bar (|) characters.
+
+```
+46 50 52 52 |
+         50 |
+         46 |
+```
+
+```
+     2 2 |2 x   2 |
+   0 x 0 |  0 x 0 |
+46 x   6 |    6 6 |
+```
+
+```
+52 2 x   |    2 2 |
+50 x 0 x |  0 x 0 |
+46 x   6 |6 x   6 |
+```
+
+```
+      52 2 | 2 ∅   2 |
+   50 ∅∅ 0 |   0 ∅ 0 |
+46 ∅∅    6 |     6 6 |
+```
+
+<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span><span class="color2">42</span><span class="iosevka"> </span><span class="color5">5</span><span class="iosevka"> </span><span class="color8">8</span><span class="iosevka"> </span><span class="color6">6</span><span class="iosevka"> </span>|<span class="color0">50</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><span class="color0">0</span><span class="iosevka"> </span>|<span class="color6">46</span><span class="iosevka"> </span><span class="color8">8</span><span class="iosevka"> </span><span class="color5">5</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><br><span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span><span class="color2">42</span><span class="iosevka"> </span><span class="color5">5</span><span class="iosevka"> </span><span class="color8">8</span><span class="iosevka"> </span><span class="color6">6</span><span class="iosevka"> </span>|<span class="color0">50</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><span class="color0">0</span><span class="iosevka"> </span>|<span class="color6">46</span><span class="iosevka"> </span><span class="color8">8</span><span class="iosevka"> </span><span class="color5">5</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span>
+
+at the end of every
+[measure](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music%20bounded%20by%20vertical%20lines):
+
+<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span><span class="color420">42</span><span class="color0625"> </span><span class="color5">5</span><span class="color0625"> </span><span class="color8">8</span><span class="color0625"> </span>.
+[time
+signatures](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure),
+
+4<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span>|
+The value of a space depends on the [time
+signatures](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure),
+which in Xet consist of a top number that defines the number of musical
+[beats](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=In%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time)
+per
+[measure](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music%20bounded%20by%20vertical%20lines)
+and a bottom number that determines the number of spaces per musical
+beat. The number of spaces per measure is the product of the top and
+bottom numbers.
+
+If a time signature is never specified, we assume there are four beats
+per measure, four spaces per beat, and thus sixteen spaces per measure.
+Whenever
+
+The color labels of the examples below, one musical beat is indicated by
+four spaces (<span class="color0625">    </span>). Therefore, a single
+space (<span class="color0625"> </span>) is worth a quarter of a musical
+beat, which is the equivalent of an eighth note in [common
+time](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=time%2C%20also%20called-,common%20time,-or%20imperfect%20time).
+Similarly
+
+Each tone in the
+[arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order)
+shown below that consists of the three <span class="colorCs">C♯</span>
+major chord notes immediately above Middle
+<span class="colorC">C</span>. Each note in the arpeggio lasts a If we
+specify that one space (<span class="color0625"> </span>) is equivalent
+to a quarter of a musical beat, this arpeggio could be written in Xet as
+a series of tones:
+<span class="color420">42</span><span class="color0625"> </span><span class="color450">45</span><span class="color0625"> </span><span class="color480">48</span><span class="color0625"> </span>.
+To avoid repeating the octave index, we can specify it at the beginning
+of the line and place a bar character (|) between it and the three notes
+of the arpeggio:
+4|<span class="color2">2</span><span class="color0625"> </span><span class="color5">5</span><span class="color0625"> </span><span class="color8">8</span><span class="color0625"> </span>.
+
+Xet indicates note duration with whitespace indicated with one or more
+spaces following a note or a rest indicates its duration. The single
+space (<span class="color0625"> </span>) that follows each note in the
+arpeggio example above indicates that each note is held for the shortest
+duration. The table below shows the note and rest names, symbols, and
+number of spaces that are equivalent if a quarter note is one beat and
+there are eight spaces per beat.
+
+a single space (<span class="color0625"> </span>) is equivalent to an
+eighth note in. If a piece of music contains sixteenth notes, we will
+need at least eight spaces per musical is often an eighth note.
+
+If these three notes are to be played simultaneously instead of
+sequentially, they need to be split across three separate lines:
+
+4|<span class="color2">2</span><span class="color0625"> </span>  
+4|<span class="color5">5</span><span class="color0625"> </span>  
+4|<span class="color8">8</span><span class="color0625"> </span>
+
+If the three notes are all quarter C♯, F, and G♯,. Rather than annotate
+music as a series of tones, Xet first identifies an octave at the
+beginning of a line before the notes that should be played in that
+octave. the notes that are played simultaneously instead of sequentially
+are written on separate lines and aligned vertically using whitespace.
+The example below shows an below Middle C. Notes written on the same
+line are in the same octave and are played sequentially. Notes can be
+grouped into a
 [chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together)
 such as the <span class="colorFs">F<span class="iosevka">♯</span></span>
 major chord
@@ -2569,48 +2757,14 @@ data-bs-title="12 equal temperament">12ET</span> treble clef.
 // https://observablehq.com/@kreijstal/abc
 // https://github.com/quarto-dev/quarto-cli/discussions/7098
 // https://github.com/quarto-dev/quarto-cli/issues/2700
-abcjs = require('https://bundle.run/abcjs@5.1.2/midi.js')
-code = `
+chocode = `
 M:4/4
 L:1/4
 K:A
 y A A/2G/2- G/2 G F/2- | F3 z |
 w: Turn the~ ~beat _ ~a- ~round
 `
-abc(code, true)
-function abc(tune, midi = false, notation = true) {
-    function colorRange(range, color) {
-        if (range && range.elements) {
-            range.elements.forEach(function(set) {
-                set.forEach(function(item) {
-                    item.setAttribute("fill", color);
-                });
-            });
-        }
-    }
-    const result = html `<div/>`;
-    if (notation) {
-        const notation = result.appendChild(html `<div/>`);
-        var abcElem = (abcjs.renderAbc(notation, tune));
-    }
-    if (midi) {
-        result.appendChild(html `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/><link rel="stylesheet" type="text/css" href="https://unpkg.com/abcjs@5.1.2/abcjs-midi.css"/>`);
-        const midi = result.appendChild(html `<div/>`);
-        abcjs.renderMidi(midi, tune, {
-            midiListener: function(a, b, c) {},
-            animate: {
-                listener: function(a, b, c) {
-                    colorRange(a, "#000000");
-                    colorRange(b, "#3D9AFC");
-                },
-                target: abcElem[0],
-                qpm: abcElem[0].getBpm()
-            }
-        });
-        //  abcjs.midi.startPlaying(document.querySelector(".abcjs-inline-midi"),true)
-    }
-    return result;
-}
+abc(chocode, true)
 ```
 
 # US customary units
@@ -3526,7 +3680,7 @@ function textcolor(content, style = {}) {
   const {
     background,
     color = yiq(background) > 0.51 ? "#000" : "white",
-    padding = "0 5px",
+    padding = "0 2px",
     borderRadius = "4px",
     fontWeight = 400,
     fontFamily = "monospace",
@@ -5053,10 +5207,13 @@ hues = Object.fromEntries([
     0.067,
     0.130,
     0.185,
+    1/3,
     0.40069,
     0.41302,
     0.413,
     0.4132,
+    0.420,
+    0.450,
     0.460,
     0.480,
     0.490,
@@ -5480,6 +5637,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorThird {
+  background: hsl(${hues[1/3]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[1/3]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color375 {
   background: hsl(96 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(96, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -5507,6 +5672,22 @@ html`
 .color4132 {
   background: hsl(${hues[0.4132]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.4132]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color420 {
+  background: hsl(${hues[0.420]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.420]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color450 {
+  background: hsl(${hues[0.450]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.450]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -6071,12 +6252,14 @@ img#zModu {
   flex-direction: column; /* Stacks the children vertically */
   align-items: center; /* Centers the numbers */
   vertical-align: middle; /* Aligns the fraction with the surrounding text */
-  font-size: 80%; /* Makes the numbers smaller for a better look */
+  font-size: 60%; /* Makes the numbers smaller for a better look */
 }
 .numerator {
-  padding: 0 0.2em; /* Adds a little space around the number */
+  position: relative;
+  top: .4em;
 }
 .denominator {
-  padding: 0 0.2em;
+  position: relative;
+  bottom: .6em;
 }
 </style>
