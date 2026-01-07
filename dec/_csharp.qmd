@@ -1,0 +1,48 @@
+```{ojs}
+//| echo: false
+//| label: arpeggio
+// https://observablehq.com/@kreijstal/abc
+// https://github.com/quarto-dev/quarto-cli/discussions/7098
+// https://github.com/quarto-dev/quarto-cli/issues/2700
+abcjs = require('https://bundle.run/abcjs@5.1.2/midi.js')
+arpcode = `
+M:4/4
+L:1/4
+K:C#
+C E G [CEG] |
+`
+abc(arpcode, true)
+function abc(tune, midi = false, notation = true) {
+    function colorRange(range, color) {
+        if (range && range.elements) {
+            range.elements.forEach(function(set) {
+                set.forEach(function(item) {
+                    item.setAttribute("fill", color);
+                });
+            });
+        }
+    }
+    const result = html `<div/>`;
+    if (notation) {
+        const notation = result.appendChild(html `<div/>`);
+        var abcElem = (abcjs.renderAbc(notation, tune));
+    }
+    if (midi) {
+        result.appendChild(html `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/><link rel="stylesheet" type="text/css" href="https://unpkg.com/abcjs@5.1.2/abcjs-midi.css"/>`);
+        const midi = result.appendChild(html `<div/>`);
+        abcjs.renderMidi(midi, tune, {
+            midiListener: function(a, b, c) {},
+            animate: {
+                listener: function(a, b, c) {
+                    colorRange(a, "#000000");
+                    colorRange(b, "#3D9AFC");
+                },
+                target: abcElem[0],
+                qpm: abcElem[0].getBpm()
+            }
+        });
+        //  abcjs.midi.startPlaying(document.querySelector(".abcjs-inline-midi"),true)
+    }
+    return result;
+}
+```

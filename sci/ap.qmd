@@ -8,7 +8,7 @@ format:
     transition: fade
 ---
 
-## What Is an Action Potential?
+## What is an action potential?
 
 - A **rapid, temporary change in membrane potential**
 - Allows neurons to communicate over long distances

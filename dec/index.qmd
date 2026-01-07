@@ -220,6 +220,82 @@ Octave indexes in [Xet]{.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} an
 
 The tone indexes of the the labeled🏷️keys in the image above range from [40.069]{.colorAs3} to [49.008]{.colorA4}. Tone [49.008]{.colorA4} is [A4]{.colorA4}, the [A]{.colorA} note widely used to [tune musical instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance). Tone [41.302]{.colorC4} is [C4]{.colorC4}, the "[Middle [C]{.colorC}](https://en.wikipedia.org/wiki/C_(musical_note)#Middle_C:~:text=above%20the%20top%20line%20of%20the%20bass%20staff%20or%20below%20the%20bottom%20line%20of%20the%20treble%20staff)" in between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and [treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff) of a [grand staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff). The typical [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans) range for humans extends from Tone [03]{.color030} to Tone [104]{.color040}.
 
+In the Xet music notation example below, Tone [42]{.color420} sets the octave for Notes [2]{.color2}, [5]{.color5}, and [8]{.color8}, which are first arranged sequentially as an ascending [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order) and then simultaneously to demonstrate the Xet equivalent of a [C♯]{.colorCs} major chord, which can be represented by notes instead of tones because all of its notes are in the octave set by the preceding tone.
+
+```{style="line-height:.8"}
+42 5 8 8 |
+       5 |
+       2 |
+```
+
+```{style="line-height:.8"}
+     8 8 |
+   5 x 5 |
+42 x   2 |
+```
+
+{{< include /dec/_csharp.qmd >}}
+
+In Xet, simultaneous notes or tones are vertically aligned in columns. Each column must only contain either single-digit notes or double-digit tones so that the width is consistent throughout the column. The first example below uses Xet tones to emulate the [F♯]{.colorFs} major chord. because  aligned three notes in column below consists of notes because the previous in the example below below the example below, notes should be played If a chord spans multiple octaves, it has to be specified with tones. In the example below, Tone [46]{.color6} sets the octave and then Tone [50]{.color0}[2]{.color2}) changes it.  indicate that these notes are in Octave 4 The  whereas the chord ([F[♯]{.iosevka}]{.colorFs}[A[♯]{.iosevka}]{.colorAs}[C[♯]{.iosevka}]{.colorCs} = [6]{.color6}[0]{.color0}[2]{.color2}) spans two octaves. When played as an [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order) starting immediately after kkkkk shown below can be written in Xet as one line of text that consists of a [time signature](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure), tones, notes, spaces, and bar (|) characters.
+
+```{style="line-height:.8"}
+46 50 52 52 |
+         50 |
+         46 |
+```
+
+```{style="line-height:.8"}
+     2 2 |2 x   2 |
+   0 x 0 |  0 x 0 |
+46 x   6 |    6 6 |
+```
+
+```{style="line-height:.8"}
+52 2 x   |    2 2 |
+50 x 0 x |  0 x 0 |
+46 x   6 |6 x   6 |
+```
+
+```{style="line-height:.8"}
+      52 2 | 2 ∅   2 |
+   50 ∅∅ 0 |   0 ∅ 0 |
+46 ∅∅    6 |     6 6 |
+```
+
+[[4]{.numerator}[4]{.denominator}]{.fraction}[42]{.color2}[&nbsp;]{.iosevka}[5]{.color5}[&nbsp;]{.iosevka}[8]{.color8}[&nbsp;]{.iosevka}[6]{.color6}[&nbsp;]{.iosevka}|[50]{.color0}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}[0]{.color0}[&nbsp;]{.iosevka}|[46]{.color6}[&nbsp;]{.iosevka}[8]{.color8}[&nbsp;]{.iosevka}[5]{.color5}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}<br>[[4]{.numerator}[4]{.denominator}]{.fraction}[42]{.color2}[&nbsp;]{.iosevka}[5]{.color5}[&nbsp;]{.iosevka}[8]{.color8}[&nbsp;]{.iosevka}[6]{.color6}[&nbsp;]{.iosevka}|[50]{.color0}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}[0]{.color0}[&nbsp;]{.iosevka}|[46]{.color6}[&nbsp;]{.iosevka}[8]{.color8}[&nbsp;]{.iosevka}[5]{.color5}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}
+
+ at the end of every [measure](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music%20bounded%20by%20vertical%20lines):
+
+[[4]{.numerator}[4]{.denominator}]{.fraction}[42]{.color420}[&nbsp;]{.color0625}[5]{.color5}[&nbsp;]{.color0625}[8]{.color8}[&nbsp;]{.color0625}.
+[time signatures](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure), 
+
+
+4[[4]{.numerator}[4]{.denominator}]{.fraction}| The value of a space depends on the [time signatures](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure), which in Xet consist of a top number that defines the number of musical [beats](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=In%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time) per [measure](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music%20bounded%20by%20vertical%20lines) and a bottom number that determines the number of spaces per musical beat. The number of spaces per measure is the product of the top and bottom numbers.
+
+
+If a time signature is never specified, we assume there are four beats per measure, four spaces per beat, and thus sixteen spaces per measure. Whenever 
+
+The color labels of  the examples below, one musical beat is indicated by four spaces ([&nbsp;&nbsp;&nbsp;&nbsp;]{.color0625}). Therefore, a single space ([&nbsp;]{.color0625}) is worth a quarter of a musical beat, which is the equivalent of an eighth note in [common time](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=time%2C%20also%20called-,common%20time,-or%20imperfect%20time). Similarly
+
+Each tone in the [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order) shown below that consists of the three [C♯]{.colorCs} major chord notes immediately above Middle [C]{.colorC}. Each note in the arpeggio lasts a If we specify that one space ([&nbsp;]{.color0625}) is equivalent to a quarter of a musical beat, this arpeggio could be written in Xet as a series of tones: [42]{.color420}[&nbsp;]{.color0625}[45]{.color450}[&nbsp;]{.color0625}[48]{.color480}[&nbsp;]{.color0625}. To avoid repeating the octave index, we can specify it at the beginning of the line and place a bar character (|) between it and the three notes of the arpeggio: 4|[2]{.color2}[&nbsp;]{.color0625}[5]{.color5}[&nbsp;]{.color0625}[8]{.color8}[&nbsp;]{.color0625}.
+
+
+Xet indicates note duration with whitespace indicated with one or more spaces following a note or a rest indicates its duration. 
+The single space ([&nbsp;]{.color0625}) that follows each note in the arpeggio example above indicates that each note is held for the shortest duration. The table below shows the note and rest names, symbols, and number of spaces that are equivalent if a quarter note is one beat and there are eight spaces per beat.
+
+
+a single space ([&nbsp;]{.color0625}) is equivalent to an eighth note in. If a piece of music contains sixteenth notes, we will need at least eight spaces per musical is often an eighth note.
+
+If these three notes are to be played simultaneously instead of sequentially, they need to be split across three separate lines:
+
+4|[2]{.color2}[&nbsp;]{.color0625}  
+4|[5]{.color5}[&nbsp;]{.color0625}  
+4|[8]{.color8}[&nbsp;]{.color0625}
+
+
+If the three notes are all quarter C♯, F, and G♯,. 
+Rather than annotate music as a series of tones, Xet first identifies an octave at the beginning of a line before the notes that should be played in that octave. the notes that are played simultaneously instead of sequentially are written on separate lines and aligned vertically using whitespace. The example below shows an below Middle C.
+Notes written on the same line are in the same octave and are played sequentially. 
 Notes can be grouped into a [chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together) such as the [F[♯]{.iosevka}]{.colorFs} major chord ([A[♯]{.iosevka}]{.colorAs}[C[♯]{.iosevka}]{.colorCs}[F[♯]{.iosevka}]{.colorFs}): [0]{.color0}[2]{.color2}[6]{.color6}. All notes, rests, and chords are followed by a Xet separator which indicates their respective durations. A separator that follows a chord applies to all notes in that chord: [0]{.color0}[2]{.color2}[6]{.color6}[&nbsp;&nbsp;&nbsp;&nbsp;]{.color5}. As shown in the table below, Xet separators can be color coded.
 
 :::{style="overflow-x:scroll;"}

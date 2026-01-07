@@ -245,7 +245,7 @@ function textcolor(content, style = {}) {
   const {
     background,
     color = yiq(background) > 0.51 ? "#000" : "white",
-    padding = "0 5px",
+    padding = "0 2px",
     borderRadius = "4px",
     fontWeight = 400,
     fontFamily = "monospace",
@@ -1772,10 +1772,13 @@ hues = Object.fromEntries([
     0.067,
     0.130,
     0.185,
+    1/3,
     0.40069,
     0.41302,
     0.413,
     0.4132,
+    0.420,
+    0.450,
     0.460,
     0.480,
     0.490,
@@ -2199,6 +2202,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorThird {
+  background: hsl(${hues[1/3]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[1/3]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .color375 {
   background: hsl(96 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(96, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -2226,6 +2237,22 @@ html`
 .color4132 {
   background: hsl(${hues[0.4132]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.4132]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color420 {
+  background: hsl(${hues[0.420]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.420]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color450 {
+  background: hsl(${hues[0.450]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[0.450]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2791,13 +2818,15 @@ img#zModu {
   flex-direction: column; /* Stacks the children vertically */
   align-items: center; /* Centers the numbers */
   vertical-align: middle; /* Aligns the fraction with the surrounding text */
-  font-size: 80%; /* Makes the numbers smaller for a better look */
+  font-size: 60%; /* Makes the numbers smaller for a better look */
 }
 .numerator {
-  padding: 0 0.2em; /* Adds a little space around the number */
+  position: relative;
+  top: .4em;
 }
 .denominator {
-  padding: 0 0.2em;
+  position: relative;
+  bottom: .6em;
 }
 </style>
 ```
