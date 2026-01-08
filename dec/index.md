@@ -2360,14 +2360,14 @@ data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> [musical
 tone](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound)
 index.
 
-The tone indexes of the the labeled🏷️keys in the image above range from
-<span class="colorAs3">40.069</span> to
-<span class="colorA4">49.008</span>. Tone
-<span class="colorA4">49.008</span> is <span class="colorA4">A4</span>,
+The tone indexes of the labeled🏷️keys in the image above range from
+<span class="colorAs">40.069</span> to
+<span class="colorA">49.008</span>. Tone
+<span class="colorA">49.008</span> is <span class="colorA">A4</span>,
 the <span class="colorA">A</span> note widely used to [tune musical
 instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance).
-Tone <span class="colorC4">41.302</span> is
-<span class="colorC4">C4</span>, the “[Middle
+Tone <span class="colorC">41.302</span> is
+<span class="colorC">C4</span>, the “[Middle
 <span class="colorC">C</span>](https://en.wikipedia.org/wiki/C_(musical_note)#Middle_C:~:text=above%20the%20top%20line%20of%20the%20bass%20staff%20or%20below%20the%20bottom%20line%20of%20the%20treble%20staff)”
 in between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
 [treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)
@@ -2375,30 +2375,26 @@ of a [grand
 staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff). The
 typical
 [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
-range for humans extends from Tone <span class="color030">03</span> to
-Tone <span class="color040">104</span>.
+range for humans extends from Tone <span class="color3">03</span> to
+Tone <span class="color4">104</span>.
 
 In the Xet music notation example below, Tone
-<span class="color420">42</span> sets the octave for Notes
+<span class="color2">42</span> sets the reference frame for Notes
 <span class="color2">2</span>, <span class="color5">5</span>, and
-<span class="color8">8</span>, which are first arranged sequentially as
-an ascending
+<span class="color8">8</span>, indicating that they are all three in
+Octave <span class="color4">4</span>. Tone
+<span class="color2">42</span> and Notes <span class="color5">5</span>
+and <span class="color8">8</span> first complete the Xet equivalent of
+an ascending <span class="colorCs">C♯</span> major
 [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order)
-and then simultaneously to demonstrate the Xet equivalent of a
-<span class="colorCs">C♯</span> major chord, which can be represented by
-notes instead of tones because all of its notes are in the octave set by
-the preceding tone.
+and then all three notes are aligned vertically to form the Xet
+equivalent of a <span class="colorCs">C♯</span> major
+[chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together%20for%20their%20harmonic%20consonance%20or%20dissonance).
 
 ```
 42 5 8 8 |
        5 |
        2 |
-```
-
-```
-     8 8 |
-   5 x 5 |
-42 x   2 |
 ```
 
 ``` {ojs}
@@ -2450,31 +2446,29 @@ function abc(tune, midi = false, notation = true) {
 }
 ```
 
-In Xet, simultaneous notes or tones are vertically aligned in columns.
-Each column must only contain either single-digit notes or double-digit
-tones so that the width is consistent throughout the column. The first
-example below uses Xet tones to emulate the
-<span class="colorFs">F♯</span> major chord. because aligned three notes
-in column below consists of notes because the previous in the example
-below below the example below, notes should be played If a chord spans
-multiple octaves, it has to be specified with tones. In the example
-below, Tone <span class="color6">46</span> sets the octave and then Tone
-<span class="color0">50</span><span class="color2">2</span>) changes it.
-indicate that these notes are in Octave 4 The whereas the chord
-(<span class="colorFs">F<span class="iosevka">♯</span></span><span class="colorAs">A<span class="iosevka">♯</span></span><span class="colorCs">C<span class="iosevka">♯</span></span>
-=
-<span class="color6">6</span><span class="color0">0</span><span class="color2">2</span>)
-spans two octaves. When played as an
-[arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order)
-starting immediately after kkkkk shown below can be written in Xet as
-one line of text that consists of a [time
-signature](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure),
-tones, notes, spaces, and bar (|) characters.
+Xet vertically aligns chords into columns. A single tone can set the
+reference frame for an entire column, because columns are always
+organized in descending order from highest to lowest. Column widths are
+measured in characters. A column of notes has a width of one character.
+Mixing notes and tones in the same column is not allowed.
+
+The three notes vertically aligned in the column below are the Xet
+equivalent of a <span class="colorFs">F♯</span> major chord. Tone
+<span class="color0">50</span> is able to set the reference frame for
+all three of these notes, even though they do not all belong to the same
+octave. Notes that span more than two octaves can be part of the same
+column but not part of the same reference frame.
 
 ```
-46 50 52 52 |
-         50 |
-         46 |
+46 50 2 2 |
+        0 |
+        6 |
+```
+
+```
+     8 8 |
+   5 x 5 |
+42 x   2 |
 ```
 
 ```
@@ -2494,6 +2488,25 @@ tones, notes, spaces, and bar (|) characters.
    50 ∅∅ 0 |   0 ∅ 0 |
 46 ∅∅    6 |     6 6 |
 ```
+
+Thanks to this convention, we can The first example below uses Xet tones
+to emulate the <span class="colorFs">F♯</span> major chord. because
+aligned three notes in column below consists of notes because the
+previous in the example below below the example below, notes should be
+played If a chord spans multiple octaves, it has to be specified with
+tones. In the example below, Tone <span class="color6">46</span> sets
+the octave and then Tone
+<span class="color0">50</span><span class="color2">2</span>) changes it.
+indicate that these notes are in Octave 4 The whereas the chord
+(<span class="colorFs">F<span class="iosevka">♯</span></span><span class="colorAs">A<span class="iosevka">♯</span></span><span class="colorCs">C<span class="iosevka">♯</span></span>
+=
+<span class="color6">6</span><span class="color0">0</span><span class="color2">2</span>)
+spans two octaves. When played as an
+[arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order)
+starting immediately after kkkkk shown below can be written in Xet as
+one line of text that consists of a [time
+signature](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure),
+tones, notes, spaces, and bar (|) characters.
 
 <span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span><span class="color2">42</span><span class="iosevka"> </span><span class="color5">5</span><span class="iosevka"> </span><span class="color8">8</span><span class="iosevka"> </span><span class="color6">6</span><span class="iosevka"> </span>|<span class="color0">50</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><span class="color0">0</span><span class="iosevka"> </span>|<span class="color6">46</span><span class="iosevka"> </span><span class="color8">8</span><span class="iosevka"> </span><span class="color5">5</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><br><span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span><span class="color2">42</span><span class="iosevka"> </span><span class="color5">5</span><span class="iosevka"> </span><span class="color8">8</span><span class="iosevka"> </span><span class="color6">6</span><span class="iosevka"> </span>|<span class="color0">50</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><span class="color0">0</span><span class="iosevka"> </span>|<span class="color6">46</span><span class="iosevka"> </span><span class="color8">8</span><span class="iosevka"> </span><span class="color5">5</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span>
 
