@@ -218,9 +218,9 @@ The image above applies Dec color🎨labels🏷️to one [octave](https://en.wik
 
 Octave indexes in [Xet]{.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} and [12ET]{.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} match except for [Xet]{.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} notes with indexes below [2]{.color2} and [12ET]{.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} notes from [A[♯]{.iosevka}]{.colorAs} to [B[𝄲]{.iosevka}]{.colorB}. From the perspective of [Xet]{.tool data-bs-toggle="tooltip" data-bs-title="Tenet"}, all of the labeled🏷️keys in the image above are in Octave [4]{.color4}. When we append a positive note index that is less than ten to an octave index which is a positive integer, we obtain a [Xet]{.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} [musical tone](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound) index.
 
-The tone indexes of the the labeled🏷️keys in the image above range from [40.069]{.colorAs3} to [49.008]{.colorA4}. Tone [49.008]{.colorA4} is [A4]{.colorA4}, the [A]{.colorA} note widely used to [tune musical instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance). Tone [41.302]{.colorC4} is [C4]{.colorC4}, the "[Middle [C]{.colorC}](https://en.wikipedia.org/wiki/C_(musical_note)#Middle_C:~:text=above%20the%20top%20line%20of%20the%20bass%20staff%20or%20below%20the%20bottom%20line%20of%20the%20treble%20staff)" in between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and [treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff) of a [grand staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff). The typical [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans) range for humans extends from Tone [03]{.color030} to Tone [104]{.color040}.
+The tone indexes of the labeled🏷️keys in the image above range from [40.069]{.colorAs} to [49.008]{.colorA}. Tone [49.008]{.colorA} is [A4]{.colorA}, the [A]{.colorA} note widely used to [tune musical instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance). Tone [41.302]{.colorC} is [C4]{.colorC}, the "[Middle [C]{.colorC}](https://en.wikipedia.org/wiki/C_(musical_note)#Middle_C:~:text=above%20the%20top%20line%20of%20the%20bass%20staff%20or%20below%20the%20bottom%20line%20of%20the%20treble%20staff)" in between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and [treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff) of a [grand staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff). The typical [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans) range for humans extends from Tone [03]{.color3} to Tone [104]{.color4}.
 
-In the Xet music notation example below, Tone [42]{.color420} sets the octave for Notes [2]{.color2}, [5]{.color5}, and [8]{.color8}, which are first arranged sequentially as an ascending [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order) and then simultaneously to demonstrate the Xet equivalent of a [C♯]{.colorCs} major chord, which can be represented by notes instead of tones because all of its notes are in the octave set by the preceding tone.
+In the Xet music notation example below, Tone [42]{.color2} sets the reference frame for Notes [2]{.color2}, [5]{.color5}, and [8]{.color8}, indicating that they are all three in Octave [4]{.color4}. Tone [42]{.color2} and Notes [5]{.color5} and [8]{.color8} first complete the Xet equivalent of an ascending [C♯]{.colorCs} major [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order) and then all three notes are aligned vertically to form the Xet equivalent of a [C♯]{.colorCs} major [chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together%20for%20their%20harmonic%20consonance%20or%20dissonance).
 
 ```{style="line-height:.8"}
 42 5 8 8 |
@@ -228,20 +228,22 @@ In the Xet music notation example below, Tone [42]{.color420} sets the octave fo
        2 |
 ```
 
+{{< include /dec/_csharp.qmd >}}
+
+Xet vertically aligns chords into columns. A single tone can set the reference frame for an entire column, because columns are always organized in descending order from highest to lowest. Column widths are measured in characters. A column of notes has a width of one character. Mixing notes and tones in the same column is not allowed.
+
+The three notes vertically aligned in the column below are the Xet equivalent of a [F♯]{.colorFs} major chord. Tone [50]{.color0} is able to set the reference frame for all three of these notes, even though they do not all belong to the same octave. Notes that span more than two octaves can be part of the same column but not part of the same reference frame.
+
+```{style="line-height:.8"}
+46 50 2 2 |
+        0 |
+        6 |
+```
+
 ```{style="line-height:.8"}
      8 8 |
    5 x 5 |
 42 x   2 |
-```
-
-{{< include /dec/_csharp.qmd >}}
-
-In Xet, simultaneous notes or tones are vertically aligned in columns. Each column must only contain either single-digit notes or double-digit tones so that the width is consistent throughout the column. The first example below uses Xet tones to emulate the [F♯]{.colorFs} major chord. because  aligned three notes in column below consists of notes because the previous in the example below below the example below, notes should be played If a chord spans multiple octaves, it has to be specified with tones. In the example below, Tone [46]{.color6} sets the octave and then Tone [50]{.color0}[2]{.color2}) changes it.  indicate that these notes are in Octave 4 The  whereas the chord ([F[♯]{.iosevka}]{.colorFs}[A[♯]{.iosevka}]{.colorAs}[C[♯]{.iosevka}]{.colorCs} = [6]{.color6}[0]{.color0}[2]{.color2}) spans two octaves. When played as an [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order) starting immediately after kkkkk shown below can be written in Xet as one line of text that consists of a [time signature](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure), tones, notes, spaces, and bar (|) characters.
-
-```{style="line-height:.8"}
-46 50 52 52 |
-         50 |
-         46 |
 ```
 
 ```{style="line-height:.8"}
@@ -261,6 +263,8 @@ In Xet, simultaneous notes or tones are vertically aligned in columns. Each colu
    50 ∅∅ 0 |   0 ∅ 0 |
 46 ∅∅    6 |     6 6 |
 ```
+
+Thanks to this convention, we can  The first example below uses Xet tones to emulate the [F♯]{.colorFs} major chord. because  aligned three notes in column below consists of notes because the previous in the example below below the example below, notes should be played If a chord spans multiple octaves, it has to be specified with tones. In the example below, Tone [46]{.color6} sets the octave and then Tone [50]{.color0}[2]{.color2}) changes it.  indicate that these notes are in Octave 4 The  whereas the chord ([F[♯]{.iosevka}]{.colorFs}[A[♯]{.iosevka}]{.colorAs}[C[♯]{.iosevka}]{.colorCs} = [6]{.color6}[0]{.color0}[2]{.color2}) spans two octaves. When played as an [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order) starting immediately after kkkkk shown below can be written in Xet as one line of text that consists of a [time signature](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure), tones, notes, spaces, and bar (|) characters.
 
 [[4]{.numerator}[4]{.denominator}]{.fraction}[42]{.color2}[&nbsp;]{.iosevka}[5]{.color5}[&nbsp;]{.iosevka}[8]{.color8}[&nbsp;]{.iosevka}[6]{.color6}[&nbsp;]{.iosevka}|[50]{.color0}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}[0]{.color0}[&nbsp;]{.iosevka}|[46]{.color6}[&nbsp;]{.iosevka}[8]{.color8}[&nbsp;]{.iosevka}[5]{.color5}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}<br>[[4]{.numerator}[4]{.denominator}]{.fraction}[42]{.color2}[&nbsp;]{.iosevka}[5]{.color5}[&nbsp;]{.iosevka}[8]{.color8}[&nbsp;]{.iosevka}[6]{.color6}[&nbsp;]{.iosevka}|[50]{.color0}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}[0]{.color0}[&nbsp;]{.iosevka}|[46]{.color6}[&nbsp;]{.iosevka}[8]{.color8}[&nbsp;]{.iosevka}[5]{.color5}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}
 
