@@ -1,6 +1,6 @@
 ```{ojs}
 //| echo: false
-//| label: arpeggio
+//| label: csharpstaff
 // https://observablehq.com/@kreijstal/abc
 // https://github.com/quarto-dev/quarto-cli/discussions/7098
 // https://github.com/quarto-dev/quarto-cli/issues/2700

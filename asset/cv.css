@@ -134,7 +134,3 @@ h3.anchored {
 p, li {
   text-align: left;
 }
-
-svg#decnav-mermaid foreignobject, svg#conversionchart-mermaid foreignobject {
-  overflow: visible;
-}

@@ -1670,9 +1670,6 @@ function shortenHex(hex) {
   }
   return "#" + hex;
 }
-dtHex = d3.color(piecewiseColor(deciturns / 10)).formatHex()
-dtHexHsl = textcolor(shortenHex(dtHex).slice(1), dtHex)
-dtValHsl = textcolor(deciturns.toFixed(1), dtHex)
 piecewiseIob = d3.piecewise(d3.interpolateRound, [
   301.734720,
   319.675162,
@@ -2827,6 +2824,20 @@ img#zModu {
 .denominator {
   position: relative;
   bottom: .6em;
+}
+g#arpeggio.cluster rect {
+  height: 156px;
+  y: 148;
+}
+g#arpeggio g.cluster-label {
+  transform: translate(148.73508071899414px, 150px);
+}
+div.cell-output-display:has(svg#csharpchart-mermaid.flowchart.mermaid-js) {
+  margin-top: -120px;
+  margin-bottom: -100px;
+}
+div.cell#csharpstaff * {
+  overflow: visible;
 }
 </style>
 ```

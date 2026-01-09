@@ -220,24 +220,86 @@ Octave indexes in [Xet]{.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} an
 
 The tone indexes of the labeled🏷️keys in the image above range from [40.069]{.colorAs} to [49.008]{.colorA}. Tone [49.008]{.colorA} is [A4]{.colorA}, the [A]{.colorA} note widely used to [tune musical instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance). Tone [41.302]{.colorC} is [C4]{.colorC}, the "[Middle [C]{.colorC}](https://en.wikipedia.org/wiki/C_(musical_note)#Middle_C:~:text=above%20the%20top%20line%20of%20the%20bass%20staff%20or%20below%20the%20bottom%20line%20of%20the%20treble%20staff)" in between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and [treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff) of a [grand staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff). The typical [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans) range for humans extends from Tone [03]{.color3} to Tone [104]{.color4}.
 
-In the Xet music notation example below, Tone [42]{.color2} sets the reference frame for Notes [2]{.color2}, [5]{.color5}, and [8]{.color8}, indicating that they are all three in Octave [4]{.color4}. Tone [42]{.color2} and Notes [5]{.color5} and [8]{.color8} first complete the Xet equivalent of an ascending [C♯]{.colorCs} major [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order) and then all three notes are aligned vertically to form the Xet equivalent of a [C♯]{.colorCs} major [chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together%20for%20their%20harmonic%20consonance%20or%20dissonance).
+The mermaid chart below visualizes the structure of the Xet music notation example above it, which is composed of the Xet equivalents of an ascending [C♯]{.colorCs} major [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order) and a [C♯]{.colorCs} major [chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together%20for%20their%20harmonic%20consonance%20or%20dissonance). This arpeggio and chord are also shown beneath the mermaid chart in [staff notation](https://en.wikipedia.org/wiki/Musical_notation#Modern_staff_notation:~:text=5%20parallel%20horizontal%20lines%20that%20act%20as%20a%20framework%20upon%20which%20pitches%20are%20indicated%20by%20placing%20oval%20note%2Dheads%20on%20(i.e.%20crossing)%20the%20staff%20lines%2C%20between%20the%20lines%20(i.e.%20in%20the%20spaces)%20or%20above%20and%20below%20the%20staff%20using%20small%20additional%20lines%20called%20ledger%20lines). Whereas staff notation is graphical, Xet notation is [text-based](https://en.wikipedia.org/wiki/Plain_text#:~:text=only%20characters%20of%20readable%20material%20but%20not%20its%20graphical%20representation).
 
-```{style="line-height:.8"}
-42 5 8 8 |
-       5 |
+```{style="line-height:.9;overflow:visible;font-size:36px;"}
+       8 |
+42 5 8 5 |
        2 |
+```
+
+```{mermaid}
+%%| label: csharpchart
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
+flowchart LR
+   subgraph arpeggio[C# Arpeggio]
+      A[42<br>C#4]
+      B[5<br>F4]
+      C[8<br>G#4]
+   end
+   subgraph chord[C# Chord]
+      X[8<br>G#4]
+      Y[5<br>F4]
+      Z[2<br>C#4]
+   end
+   A-->B-->C
+   C-->X
+   C-->Y
+   C-->Z
+   click A "#cst"
+   click B "#cst"
+   click C "#cst"
+   click X "#cst"
+   click Y "#cst"
+   click Z "#cst"
 ```
 
 {{< include /dec/_csharp.qmd >}}
 
-Xet vertically aligns chords into columns. A single tone can set the reference frame for an entire column, because columns are always organized in descending order from highest to lowest. Column widths are measured in characters. A column of notes has a width of one character. Mixing notes and tones in the same column is not allowed.
+Xet vertically aligns chords into columns. A chord can contain either notes that represent tones or the tones themselves. Mixing notes and tones in the same chord is not allowed. The chord in the example above can be written with notes instead of tones because Tone [42]{.color2} sets Octave [4]{.color4} as the default. Each line can have its own default octave.
+
+In the example below, Tone [46]{.color6} sets the default on the middle line to Octave [4]{.color4} but then Tone [50]{.color0} changes it Octave [5]{.color5}. Based on the default, we know the middle note in the chord represents Tone [50]{.color0}. We can then infer the tones represented by the top and bottom notes because chords are always ordered from highest to lowest tone.
+
+```{style="line-height:.9;overflow:visible;font-size:36px;"}
+        2 |
+46 50 2 0 |
+        6 |
+```
+
+```{mermaid}
+%%| label: fsharpchart
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
+flowchart LR
+   subgraph arpeggio[F# Arpeggio]
+      A[46<br>F#4]
+      B[50<br>A#4]
+      C[2<br>C#5]
+   end
+   subgraph chord[F# Chord]
+      X[2<br>C#5]
+      Y[0<br>A#4]
+      Z[6<br>F#4]
+   end
+   A-->B-->C
+   C-->X
+   C-->Y
+   C-->Z
+   click A "#cst"
+   click B "#cst"
+   click C "#cst"
+   click X "#cst"
+   click Y "#cst"
+   click Z "#cst"
+```
+
+Column widths are measured in characters. A column of notes has a width of one character. 
 
 The three notes vertically aligned in the column below are the Xet equivalent of a [F♯]{.colorFs} major chord. Tone [50]{.color0} is able to set the reference frame for all three of these notes, even though they do not all belong to the same octave. Notes that span more than two octaves can be part of the same column but not part of the same reference frame.
 
-```{style="line-height:.8"}
-46 50 2 2 |
-        0 |
-        6 |
+```{style="line-height:.9;overflow:visible;font-size:36px;"}
+        2 |       2 |
+46 50 2 0 | 2 0 x 0 |
+        6 |     6 6 |
 ```
 
 ```{style="line-height:.8"}
@@ -415,30 +477,30 @@ The fundamental properties of Dec dates are defined by algorithms developed by [
 On [[2024]{.color024}[+]{.mono}[285]{.colorD285}]{.tool data-bs-toggle="tooltip" data-bs-title="December 11, 2024"}, I found a [2014]{.color014} article which proposed a [decimal time](https://en.wikipedia.org/wiki/Decimal_time#:~:text=the%20representation%20of%20the%20time%20of%20day%20using%20units%20which%20are%20decimally%20related) system with twenty time zones, each five [cd]{.tool data-bs-toggle="tooltip" data-bs-title="centidays"} wide, based on [Longitude 05](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England) ([50]{.color050} [$\text m\lambda$]{.tool data-bs-toggle="tooltip" data-bs-title="milliparallels"}).
 
 ::: {.column-page-right #citelist}
-- [Agnoli, Paolo](http://www.paoloagnoli.it) & [D'Agostini, Giulio](https://www.roma1.infn.it/~dagos). [2004+330]{.tool data-bs-toggle="tooltip" data-bs-title="January 25, 2005"}. “Why does the meter beat the second?” \${decYearP0}+\${decDotyOff}. <https://arxiv.org/abs/physics/0412078>.
-- [Armstrong, Zan](https://observablehq.com/@zanarmstrong) [2023+057]{.tool data-bs-toggle="tooltip" data-bs-title="April 27, 2023"}. “Text color annotations in markdown.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@observablehq/text-color-annotations-in-markdown>.
-- [Bostock, Mike](https://observablehq.com/@mbostock) [2020+335]{.tool data-bs-toggle="tooltip" data-bs-title="January 30, 2021"}. “Time Zones.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@mbostock/time-zones>.
-- [Bostock, Mike](https://observablehq.com/@mbostock) [2022+037]{.tool data-bs-toggle="tooltip" data-bs-title="April 7, 2022"}. “Solar Terminator.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@d3/solar-terminator>.
-- [Bostock, Mike](https://observablehq.com/@mbostock) [2023+314]{.tool data-bs-toggle="tooltip" data-bs-title="January 9, 2024"}. “Input: Table.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@observablehq/input-table>.
-- [Clements, John](https://www.brinckerhoff.org). [2014+091]{.tool data-bs-toggle="tooltip" data-bs-title="May 31, 2014"}, “Decimal Time Zones.” \${decYearP0}+\${decDotyOff}. <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
-- [Clint Goss](https://www.clintgoss.com). [2022+098]{.tool data-bs-toggle="tooltip" data-bs-title="June 7, 2022"}. “Color of Sound.” \${decYearP0}+\${decDotyOff}. <https://www.flutopedia.com/sound_color.htm>.
-- [Collignon, Claude Boniface](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution). 1788. “Découverte d'étalons justes, naturels, invariables et universels.” \${decYearP0}+\${decDotyOff}. <https://archive.org/details/dcouvertedtalon00collgoog/page/n68/mode/2up>.
-- [Edwards, Paul](https://observablehq.com/@pjedwards). [2022+171]{.tool data-bs-toggle="tooltip" data-bs-title="August 19, 2022"}. “Compass Rose as legend with colors.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors>.
-- [Freedman, Dylan](https://observablehq.com/@freedmand). [2017+345]{.tool data-bs-toggle="tooltip" data-bs-title="February 9, 2018"}. “Sounds.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@freedmand/sounds>.
-- [Gordon, Marcus A.](https://observablehq.com/@magfoto). [2018+288]{.tool data-bs-toggle="tooltip" data-bs-title="December 14, 2018"}. “Wavelengths and Spectral Colours.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@magfoto/wavelengths-and-spectral-colours>.
-- [Harmath, Dénes](https://observablehq.com/user/@thsoft). [2018+104]{.tool data-bs-toggle="tooltip" data-bs-title="June 13, 2018"}. “ABC.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@thsoft/abc>.
-- [Hinnant, Howard](https://howardhinnant.github.io). [2021+184]{.tool data-bs-toggle="tooltip" data-bs-title="September 1, 2021"}. “`chrono`-Compatible Low-Level Date Algorithms.” \${decYearP0}+\${decDotyOff}. <https://howardhinnant.github.io/date_algorithms.html>.
-- [Johnson, Ian](https://observablehq.com/@enjalot) [2021+121]{.tool data-bs-toggle="tooltip" data-bs-title="June 30, 2021"}. “Draggable World Map Coordinates Input.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
-- [Lim, Maddie](https://observablehq.com/@maddievision) [2018+330]{.tool data-bs-toggle="tooltip" data-bs-title="January 25, 2019"}. “Enneagram.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@maddievision/enneagram>.
-- [Newton, Issac](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a). 1704. “Opticks.” \${decYearP0}+\${decDotyOff}. <https://doi.org/10.5479/sil.302475.39088000644674>.
-- [Paavanb](https://observablehq.com/@paavanb). [2024+006]{.tool data-bs-toggle="tooltip" data-bs-title="March 7, 2024"}. “Progressive Color Picker.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@paavanb/progressive-color-picker>.
-- [Patel, Amit](https://observablehq.com/@redblobgames). [2021+290]{.tool data-bs-toggle="tooltip" data-bs-title="December 16, 2021"}. “Compass Rose.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@paavanb/progressive-color-picker>.
-- [Pettiross, Jeff](https://observablehq.com/@pettiross) [2024+150]{.tool data-bs-toggle="tooltip" data-bs-title="July 19, 2024"}. “Categorical color scheme test tool.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@observablehq/categorical-palette-tool>
-- [Rieder, Lukas](https://observablehq.com/@lukasrieder) [2023+032]{.tool data-bs-toggle="tooltip" data-bs-title="April 2, 2023"}. “Editable table.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@parlant/editable-table>.
-- [Rivière, Philippe](https://observablehq.com/@fil) [2022+259]{.tool data-bs-toggle="tooltip" data-bs-title="November 15, 2022"}. “Add a class to an observable input.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support>.
-- [Rivière, Philippe](https://observablehq.com/@fil) [2023+330]{.tool data-bs-toggle="tooltip" data-bs-title="January 25, 2024"}. “D3 Projections.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@fil/d3-projections>.
-- [Yamahata, Christophe](https://observablehq.com/@christophe-yamahata) [2021+119]{.tool data-bs-toggle="tooltip" data-bs-title="June 28, 2022"}. “Great circle: shortest distance between two locations on Earth 🌏.” \${decYearP0}+\${decDotyOff}. <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
-- [d'Alembert, Jean le Rond ](https://en.wikipedia.org/wiki/Jean_le_Rond_d%27Alembert#:~:text=French%20mathematician%2C%20mechanician%2C%20physicist%2C%20philosopher%2C%20and%20music%20theorist). 1754. “Decimal.” [_Encyclopédie_](https://en.wikipedia.org/wiki/Encyclopédie#:~:text=a%20general%20encyclopedia%20published%20in%20France%20between%201751%20and%201772), _4_, 670. \${decYearP0}+\${decDotyOff}. <https://artflsrv04.uchicago.edu/philologic4.7/encyclopedie0922/navigate/4/3458>.
+- [Agnoli, Paolo](http://www.paoloagnoli.it) & [D'Agostini, Giulio](https://www.roma1.infn.it/~dagos). [2004+330]{.tool data-bs-toggle="tooltip" data-bs-title="January 25, 2005"}. “Why does the meter beat the second?” \${decYearP0}+\${decDateP0}. <https://arxiv.org/abs/physics/0412078>.
+- [Armstrong, Zan](https://observablehq.com/@zanarmstrong) [2023+057]{.tool data-bs-toggle="tooltip" data-bs-title="April 27, 2023"}. “Text color annotations in markdown.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@observablehq/text-color-annotations-in-markdown>.
+- [Bostock, Mike](https://observablehq.com/@mbostock) [2020+335]{.tool data-bs-toggle="tooltip" data-bs-title="January 30, 2021"}. “Time Zones.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@mbostock/time-zones>.
+- [Bostock, Mike](https://observablehq.com/@mbostock) [2022+037]{.tool data-bs-toggle="tooltip" data-bs-title="April 7, 2022"}. “Solar Terminator.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@d3/solar-terminator>.
+- [Bostock, Mike](https://observablehq.com/@mbostock) [2023+314]{.tool data-bs-toggle="tooltip" data-bs-title="January 9, 2024"}. “Input: Table.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@observablehq/input-table>.
+- [Clements, John](https://www.brinckerhoff.org). [2014+091]{.tool data-bs-toggle="tooltip" data-bs-title="May 31, 2014"}, “Decimal Time Zones.” \${decYearP0}+\${decDateP0}. <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
+- [Clint Goss](https://www.clintgoss.com). [2022+098]{.tool data-bs-toggle="tooltip" data-bs-title="June 7, 2022"}. “Color of Sound.” \${decYearP0}+\${decDateP0}. <https://www.flutopedia.com/sound_color.htm>.
+- [Collignon, Claude Boniface](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution). 1788. “Découverte d'étalons justes, naturels, invariables et universels.” \${decYearP0}+\${decDateP0}. <https://archive.org/details/dcouvertedtalon00collgoog/page/n68/mode/2up>.
+- [Edwards, Paul](https://observablehq.com/@pjedwards). [2022+171]{.tool data-bs-toggle="tooltip" data-bs-title="August 19, 2022"}. “Compass Rose as legend with colors.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors>.
+- [Freedman, Dylan](https://observablehq.com/@freedmand). [2017+345]{.tool data-bs-toggle="tooltip" data-bs-title="February 9, 2018"}. “Sounds.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@freedmand/sounds>.
+- [Gordon, Marcus A.](https://observablehq.com/@magfoto). [2018+288]{.tool data-bs-toggle="tooltip" data-bs-title="December 14, 2018"}. “Wavelengths and Spectral Colours.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@magfoto/wavelengths-and-spectral-colours>.
+- [Harmath, Dénes](https://observablehq.com/user/@thsoft). [2018+104]{.tool data-bs-toggle="tooltip" data-bs-title="June 13, 2018"}. “ABC.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@thsoft/abc>.
+- [Hinnant, Howard](https://howardhinnant.github.io). [2021+184]{.tool data-bs-toggle="tooltip" data-bs-title="September 1, 2021"}. “`chrono`-Compatible Low-Level Date Algorithms.” \${decYearP0}+\${decDateP0}. <https://howardhinnant.github.io/date_algorithms.html>.
+- [Johnson, Ian](https://observablehq.com/@enjalot) [2021+121]{.tool data-bs-toggle="tooltip" data-bs-title="June 30, 2021"}. “Draggable World Map Coordinates Input.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
+- [Lim, Maddie](https://observablehq.com/@maddievision) [2018+330]{.tool data-bs-toggle="tooltip" data-bs-title="January 25, 2019"}. “Enneagram.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@maddievision/enneagram>.
+- [Newton, Issac](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a). 1704. “Opticks.” \${decYearP0}+\${decDateP0}. <https://doi.org/10.5479/sil.302475.39088000644674>.
+- [Paavanb](https://observablehq.com/@paavanb). [2024+006]{.tool data-bs-toggle="tooltip" data-bs-title="March 7, 2024"}. “Progressive Color Picker.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@paavanb/progressive-color-picker>.
+- [Patel, Amit](https://observablehq.com/@redblobgames). [2021+290]{.tool data-bs-toggle="tooltip" data-bs-title="December 16, 2021"}. “Compass Rose.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@paavanb/progressive-color-picker>.
+- [Pettiross, Jeff](https://observablehq.com/@pettiross) [2024+150]{.tool data-bs-toggle="tooltip" data-bs-title="July 19, 2024"}. “Categorical color scheme test tool.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@observablehq/categorical-palette-tool>
+- [Rieder, Lukas](https://observablehq.com/@lukasrieder) [2023+032]{.tool data-bs-toggle="tooltip" data-bs-title="April 2, 2023"}. “Editable table.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@parlant/editable-table>.
+- [Rivière, Philippe](https://observablehq.com/@fil) [2022+259]{.tool data-bs-toggle="tooltip" data-bs-title="November 15, 2022"}. “Add a class to an observable input.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support>.
+- [Rivière, Philippe](https://observablehq.com/@fil) [2023+330]{.tool data-bs-toggle="tooltip" data-bs-title="January 25, 2024"}. “D3 Projections.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@fil/d3-projections>.
+- [Yamahata, Christophe](https://observablehq.com/@christophe-yamahata) [2021+119]{.tool data-bs-toggle="tooltip" data-bs-title="June 28, 2022"}. “Great circle: shortest distance between two locations on Earth 🌏.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
+- [d'Alembert, Jean le Rond ](https://en.wikipedia.org/wiki/Jean_le_Rond_d%27Alembert#:~:text=French%20mathematician%2C%20mechanician%2C%20physicist%2C%20philosopher%2C%20and%20music%20theorist). 1754. “Decimal.” [_Encyclopédie_](https://en.wikipedia.org/wiki/Encyclopédie#:~:text=a%20general%20encyclopedia%20published%20in%20France%20between%201751%20and%201772), _4_, 670. \${decYearP0}+\${decDateP0}. <https://artflsrv04.uchicago.edu/philologic4.7/encyclopedie0922/navigate/4/3458>.
 :::
 
 {{< include /dec/_index.qmd >}}
