@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+312
+2025+314
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -2378,28 +2378,38 @@ typical
 range for humans extends from Tone <span class="color3">03</span> to
 Tone <span class="color4">104</span>.
 
-In the Xet music notation example below, Tone
-<span class="color2">42</span> sets the reference frame for Notes
-<span class="color2">2</span>, <span class="color5">5</span>, and
-<span class="color8">8</span>, indicating that they are all three in
-Octave <span class="color4">4</span>. Tone
-<span class="color2">42</span> and Notes <span class="color5">5</span>
-and <span class="color8">8</span> first complete the Xet equivalent of
+The mermaid chart below visualizes the structure of the Xet music
+notation example above it, which is composed of the Xet equivalents of
 an ascending <span class="colorCs">C♯</span> major
 [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order)
-and then all three notes are aligned vertically to form the Xet
-equivalent of a <span class="colorCs">C♯</span> major
+and a <span class="colorCs">C♯</span> major
 [chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together%20for%20their%20harmonic%20consonance%20or%20dissonance).
+This arpeggio and chord are also shown beneath the mermaid chart in
+[staff
+notation](https://en.wikipedia.org/wiki/Musical_notation#Modern_staff_notation:~:text=5%20parallel%20horizontal%20lines%20that%20act%20as%20a%20framework%20upon%20which%20pitches%20are%20indicated%20by%20placing%20oval%20note%2Dheads%20on%20(i.e.%20crossing)%20the%20staff%20lines%2C%20between%20the%20lines%20(i.e.%20in%20the%20spaces)%20or%20above%20and%20below%20the%20staff%20using%20small%20additional%20lines%20called%20ledger%20lines).
+Whereas staff notation is graphical, Xet notation is
+[text-based](https://en.wikipedia.org/wiki/Plain_text#:~:text=only%20characters%20of%20readable%20material%20but%20not%20its%20graphical%20representation).
 
 ```
-42 5 8 8 |
-       5 |
+       8 |
+42 5 8 5 |
        2 |
 ```
 
+<div id="csharpchart">
+
+<div>
+
+<img src="index_files/figure-commonmark/mermaid-figure-4.png"
+style="width:6.55in;height:4.75in" />
+
+</div>
+
+</div>
+
 ``` {ojs}
 //| echo: false
-//| label: arpeggio
+//| label: csharpstaff
 // https://observablehq.com/@kreijstal/abc
 // https://github.com/quarto-dev/quarto-cli/discussions/7098
 // https://github.com/quarto-dev/quarto-cli/issues/2700
@@ -2446,11 +2456,40 @@ function abc(tune, midi = false, notation = true) {
 }
 ```
 
-Xet vertically aligns chords into columns. A single tone can set the
-reference frame for an entire column, because columns are always
-organized in descending order from highest to lowest. Column widths are
-measured in characters. A column of notes has a width of one character.
-Mixing notes and tones in the same column is not allowed.
+Xet vertically aligns chords into columns. A chord can contain either
+notes that represent tones or the tones themselves. Mixing notes and
+tones in the same chord is not allowed. The chord in the example above
+can be written with notes instead of tones because Tone
+<span class="color2">42</span> sets Octave <span class="color4">4</span>
+as the default. Each line can have its own default octave.
+
+In the example below, Tone <span class="color6">46</span> sets the
+default on the middle line to Octave <span class="color4">4</span> but
+then Tone <span class="color0">50</span> changes it Octave
+<span class="color5">5</span>. Based on the default, we know the middle
+note in the chord represents Tone <span class="color0">50</span>. We can
+then infer the tones represented by the top and bottom notes because
+chords are always ordered from highest to lowest tone.
+
+```
+        2 |
+46 50 2 0 |
+        6 |
+```
+
+<div id="fsharpchart">
+
+<div>
+
+<img src="index_files/figure-commonmark/mermaid-figure-3.png"
+style="width:6.63in;height:4.75in" />
+
+</div>
+
+</div>
+
+Column widths are measured in characters. A column of notes has a width
+of one character.
 
 The three notes vertically aligned in the column below are the Xet
 equivalent of a <span class="colorFs">F♯</span> major chord. Tone
@@ -2460,9 +2499,9 @@ octave. Notes that span more than two octaves can be part of the same
 column but not part of the same reference frame.
 
 ```
-46 50 2 2 |
-        0 |
-        6 |
+        2 |       2 |
+46 50 2 0 | 2 0 x 0 |
+        6 |     6 6 |
 ```
 
 ```
@@ -3327,121 +3366,121 @@ data-bs-title="milliparallels">$\text m\lambda$</span>).
   Giulio](https://www.roma1.infn.it/~dagos). <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="January 25, 2005">2004+330</span>. “Why does the meter
-  beat the second?” ${decYearP0}+${decDotyOff}.
+  beat the second?” ${decYearP0}+${decDateP0}.
   <https://arxiv.org/abs/physics/0412078>.
 - [Armstrong, Zan](https://observablehq.com/@zanarmstrong)
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="April 27, 2023">2023+057</span>. “Text color
-  annotations in markdown.” ${decYearP0}+${decDotyOff}.
+  annotations in markdown.” ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@observablehq/text-color-annotations-in-markdown>.
 - [Bostock, Mike](https://observablehq.com/@mbostock) <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="January 30, 2021">2020+335</span>. “Time Zones.”
-  ${decYearP0}+${decDotyOff}.
+  ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@mbostock/time-zones>.
 - [Bostock, Mike](https://observablehq.com/@mbostock) <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="April 7, 2022">2022+037</span>. “Solar Terminator.”
-  ${decYearP0}+${decDotyOff}.
+  ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@d3/solar-terminator>.
 - [Bostock, Mike](https://observablehq.com/@mbostock) <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="January 9, 2024">2023+314</span>. “Input: Table.”
-  ${decYearP0}+${decDotyOff}.
+  ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@observablehq/input-table>.
 - [Clements, John](https://www.brinckerhoff.org). <span class="tool"
   data-bs-toggle="tooltip" data-bs-title="May 31, 2014">2014+091</span>,
-  “Decimal Time Zones.” ${decYearP0}+${decDotyOff}.
+  “Decimal Time Zones.” ${decYearP0}+${decDateP0}.
   <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
 - [Clint Goss](https://www.clintgoss.com). <span class="tool"
   data-bs-toggle="tooltip" data-bs-title="June 7, 2022">2022+098</span>.
-  “Color of Sound.” ${decYearP0}+${decDotyOff}.
+  “Color of Sound.” ${decYearP0}+${decDateP0}.
   <https://www.flutopedia.com/sound_color.htm>.
 - [Collignon, Claude
   Boniface](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution). 1788.
   “Découverte d’étalons justes, naturels, invariables et universels.”
-  ${decYearP0}+${decDotyOff}.
+  ${decYearP0}+${decDateP0}.
   <https://archive.org/details/dcouvertedtalon00collgoog/page/n68/mode/2up>.
 - [Edwards, Paul](https://observablehq.com/@pjedwards).
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="August 19, 2022">2022+171</span>. “Compass Rose as
-  legend with colors.” ${decYearP0}+${decDotyOff}.
+  legend with colors.” ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors>.
 - [Freedman, Dylan](https://observablehq.com/@freedmand).
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="February 9, 2018">2017+345</span>. “Sounds.”
-  ${decYearP0}+${decDotyOff}.
+  ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@freedmand/sounds>.
 - [Gordon, Marcus A.](https://observablehq.com/@magfoto).
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="December 14, 2018">2018+288</span>. “Wavelengths and
-  Spectral Colours.” ${decYearP0}+${decDotyOff}.
+  Spectral Colours.” ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@magfoto/wavelengths-and-spectral-colours>.
 - [Harmath, Dénes](https://observablehq.com/user/@thsoft).
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="June 13, 2018">2018+104</span>. “ABC.”
-  ${decYearP0}+${decDotyOff}. <https://observablehq.com/@thsoft/abc>.
+  ${decYearP0}+${decDateP0}. <https://observablehq.com/@thsoft/abc>.
 - [Hinnant, Howard](https://howardhinnant.github.io). <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="September 1, 2021">2021+184</span>.
   “`chrono`-Compatible Low-Level Date Algorithms.”
-  ${decYearP0}+${decDotyOff}.
+  ${decYearP0}+${decDateP0}.
   <https://howardhinnant.github.io/date_algorithms.html>.
 - [Johnson, Ian](https://observablehq.com/@enjalot) <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="June 30, 2021">2021+121</span>. “Draggable World Map
-  Coordinates Input.” ${decYearP0}+${decDotyOff}.
+  Coordinates Input.” ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
 - [Lim, Maddie](https://observablehq.com/@maddievision)
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="January 25, 2019">2018+330</span>. “Enneagram.”
-  ${decYearP0}+${decDotyOff}.
+  ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@maddievision/enneagram>.
 - [Newton,
   Issac](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a). 1704.
-  “Opticks.” ${decYearP0}+${decDotyOff}.
+  “Opticks.” ${decYearP0}+${decDateP0}.
   <https://doi.org/10.5479/sil.302475.39088000644674>.
 - [Paavanb](https://observablehq.com/@paavanb). <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="March 7, 2024">2024+006</span>. “Progressive Color
-  Picker.” ${decYearP0}+${decDotyOff}.
+  Picker.” ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@paavanb/progressive-color-picker>.
 - [Patel, Amit](https://observablehq.com/@redblobgames).
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="December 16, 2021">2021+290</span>. “Compass Rose.”
-  ${decYearP0}+${decDotyOff}.
+  ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@paavanb/progressive-color-picker>.
 - [Pettiross, Jeff](https://observablehq.com/@pettiross)
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="July 19, 2024">2024+150</span>. “Categorical color
-  scheme test tool.” ${decYearP0}+${decDotyOff}.
+  scheme test tool.” ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@observablehq/categorical-palette-tool>
 - [Rieder, Lukas](https://observablehq.com/@lukasrieder)
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="April 2, 2023">2023+032</span>. “Editable table.”
-  ${decYearP0}+${decDotyOff}.
+  ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@parlant/editable-table>.
 - [Rivière, Philippe](https://observablehq.com/@fil) <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="November 15, 2022">2022+259</span>. “Add a class to an
-  observable input.” ${decYearP0}+${decDotyOff}.
+  observable input.” ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support>.
 - [Rivière, Philippe](https://observablehq.com/@fil) <span class="tool"
   data-bs-toggle="tooltip"
   data-bs-title="January 25, 2024">2023+330</span>. “D3 Projections.”
-  ${decYearP0}+${decDotyOff}.
+  ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@fil/d3-projections>.
 - [Yamahata, Christophe](https://observablehq.com/@christophe-yamahata)
   <span class="tool" data-bs-toggle="tooltip"
   data-bs-title="June 28, 2022">2021+119</span>. “Great circle: shortest
   distance between two locations on Earth 🌏.”
-  ${decYearP0}+${decDotyOff}.
+  ${decYearP0}+${decDateP0}.
   <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
 - [d’Alembert, Jean le
   Rond](https://en.wikipedia.org/wiki/Jean_le_Rond_d%27Alembert#:~:text=French%20mathematician%2C%20mechanician%2C%20physicist%2C%20philosopher%2C%20and%20music%20theorist). 1754.
   “Decimal.”
   [*Encyclopédie*](https://en.wikipedia.org/wiki/Encyclopédie#:~:text=a%20general%20encyclopedia%20published%20in%20France%20between%201751%20and%201772),
-  *4*, 670. ${decYearP0}+${decDotyOff}.
+  *4*, 670. ${decYearP0}+${decDateP0}.
   <https://artflsrv04.uchicago.edu/philologic4.7/encyclopedie0922/navigate/4/3458>.
 
 </div>
@@ -5118,9 +5157,6 @@ function shortenHex(hex) {
   }
   return "#" + hex;
 }
-dtHex = d3.color(piecewiseColor(deciturns / 10)).formatHex()
-dtHexHsl = textcolor(shortenHex(dtHex).slice(1), dtHex)
-dtValHsl = textcolor(deciturns.toFixed(1), dtHex)
 piecewiseIob = d3.piecewise(d3.interpolateRound, [
   301.734720,
   319.675162,
@@ -6274,5 +6310,19 @@ img#zModu {
 .denominator {
   position: relative;
   bottom: .6em;
+}
+g#arpeggio.cluster rect {
+  height: 156px;
+  y: 148;
+}
+g#arpeggio g.cluster-label {
+  transform: translate(148.73508071899414px, 150px);
+}
+div.cell-output-display:has(svg#csharpchart-mermaid.flowchart.mermaid-js) {
+  margin-top: -120px;
+  margin-bottom: -100px;
+}
+div.cell#csharpstaff * {
+  overflow: visible;
 }
 </style>
