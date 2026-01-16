@@ -2,13 +2,20 @@
 |  **+**       | **--**         | **[hex]{.tool data-bs-toggle="tooltip" data-bs-title="hexadecimal"}**🎨 | **[h°]{.tool data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees"}**🎨 | **[12ET]{.tool data-bs-toggle="tooltip" data-bs-title="twelve equal temperament"}**🎶 |
 | -----------  | -------------- | -----------------                                                       | -----------------                                                        | ----------------                                                             |
 | [0]{.color0} | [-10]{.color0} | [f00]{.color0}                                                          | [0]{.color0}                                                             | [A[♯]{.iosevka}]{.colorAs}                                                   |
-| [1]{.color1} | [-9]{.color1}  | [f90]{.color1}                                                          | [36]{.color1}                                                            | [B[𝄲]{.iosevka}]{.colorBc}                                                  |
+| [1]{.color1} | [-9]{.color1}  | [f90]{.color1}                                                          | [36]{.color1}                                                            | [B[𝄲]{.iosevka}]{.colorBc}                                                   |
 | [2]{.color2} | [-8]{.color2}  | [ff0]{.color2}                                                          | [60]{.color2}                                                            | [C[♯]{.iosevka}]{.colorCs}                                                   |
-| [3]{.color3} | [-7]{.color3}  | [af0]{.color3}                                                          | [80]{.color3}                                                            | [D[𝄲]{.iosevka}]{.colorDds}                                                 |
-| [4]{.color4} | [-6]{.color4}  | [0f0]{.color4}                                                          | [120]{.color4}                                                           | [E[𝄳]{.iosevka}]{.colorDsE}                                                 |
+| [3]{.color3} | [-7]{.color3}  | [af0]{.color3}                                                          | [80]{.color3}                                                            | [D[𝄲]{.iosevka}]{.colorDds}                                                  |
+| [4]{.color4} | [-6]{.color4}  | [0f0]{.color4}                                                          | [120]{.color4}                                                           | [E[𝄳]{.iosevka}]{.colorDsE}                                                  |
 | [5]{.color5} | [-5]{.color5}  | [0ff]{.color5}                                                          | [180]{.color5}                                                           | [F]{.colorF}                                                                 |
 | [6]{.color6} | [-4]{.color6}  | [08f]{.color6}                                                          | [208]{.color6}                                                           | [F[♯]{.iosevka}]{.colorFs}                                                   |
 | [7]{.color7} | [-3]{.color7}  | [00f]{.color7}                                                          | [240]{.color7}                                                           | [G]{.colorG}                                                                 |
 | [8]{.color8} | [-2]{.color8}  | [90f]{.color8}                                                          | [276]{.color8}                                                           | [G[♯]{.iosevka}]{.colorGs}                                                   |
 | [9]{.color9} | [-1]{.color9}  | [f0f]{.color9}                                                          | [300]{.color9}                                                           | [A]{.colorA}                                                                 |
 :::
+
+```{ojs}
+//| echo: false
+//| label: iobpiano
+//| class: freqcomponent
+piano(width)
+```
