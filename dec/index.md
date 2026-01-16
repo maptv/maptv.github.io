@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+314
+2025+321
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -15,12 +15,14 @@ Martin Laptev
   - [Millenium Year Day](#myd)
   - [Day of dek (dod)](#dod)
   - [Zone equatorial meter (zem)](#zem)
-    - [Length area volume](#lav)
-    - [Typical seat height](#tsh)
-    - [Speed of sound](#sos)
-- [Ten equal temperament (Xet)](#xet)
+  - [Length area volume](#lav)
+  - [Typical seat height](#tsh)
+  - [Perpetually setting sun](#pss)
+  - [Speed of sound](#sos)
+  - [Centimilliday (cmd)](#cmd)
   - [Beats per milliday (bpm)](#bpm)
   - [Frequency period wavelength](#fpw)
+- [Ten equal temperament (Xet)](#xet)
   - [Color sound table](#cst)
   - [Octave + note = tone](#ont)
 - [US customary units](#ucu)
@@ -84,21 +86,21 @@ Dec measures
 in
 [parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallels">*λ*</span>),
-[latitude](%5B$\underline\phi$%5D(https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi))
+data-bs-title="parallels">p</span>),
+[latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi)
 in
 [meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridians">*ϕ*</span>), and compass🧭directions in
-[windroses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)
+data-bs-title="meridians">m</span>), and compass🧭directions in
+[roses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="windroses">*α*</span>). To measure certain kinds of
-angles📐, Dec uses specific types of turns with distinct names like
+data-bs-title="roses">r</span>). To measure certain kinds of angles📐,
+Dec uses specific types of turns with distinct names like
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">*λ*</span>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="meridian">*ϕ*</span>, or
+data-bs-title="parallel">p</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="meridian">m</span>, or
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="windrose">*α*</span>. All turn types can be combined with
+data-bs-title="rose">r</span>. All turn types can be combined with
 [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit),
 like
@@ -109,38 +111,40 @@ or
 to create turn
 [submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20%28a),
 such as <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a turn">deciturns</span>, <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="hundredths of a turn">centiturns</span>, or
+data-bs-title="tenths of a turn">deciturns</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="deciturns">dt</span>),
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a turn">milliturns</span>.
+data-bs-title="hundredths of a turn">centiturns</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="centiturns">ct</span>), or <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a turn">milliturns</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliturns">mt</span>).
 
 The table below provides the current longitude in <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a parallel">milliparallels</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\text m\lambda$</span>) and latitude in
+data-bs-title="milliparallels">mp</span>) and latitude in
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a meridian">millimeridians</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>) of Points
+data-bs-title="millimeridians">mm</span>) of Points
 <span class="point0">0</span> and <span class="point1">1</span> on the
 map🗺️beneath the table. By default, Point <span class="point0">0</span>
 is at <span class="color8">800</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\text m\lambda$</span> and
+data-bs-toggle="tooltip" data-bs-title="milliparallels">mp</span> and
 <span class="color0">0</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>, near the
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>, near
+the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
 of Ecuador🇪🇨, and Point <span class="point1">1</span> is at
 <span class="color8">800</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\text m\lambda$</span> and
+data-bs-toggle="tooltip" data-bs-title="milliparallels">mp</span> and
 <span class="color1">100</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>, near the bottom of
-the [Missouri
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>, near
+the bottom of the [Missouri
 bootheel](https://en.wikipedia.org/wiki/Missouri_Bootheel#:~:text=a%20salient%20(protrusion)%20located%20in%20the%20southeasternmost%20part%20of%20the%20U.S.%20state%20of%20Missouri)
 in the United States🇺🇸.
 
@@ -161,25 +165,25 @@ shading with a yellow🟡dot denoting the
 where the Sun☀️is [directly
 overhead](https://en.wikipedia.org/wiki/Zenith#:~:text=the%20imaginary%20point%20on%20the%20celestial%20sphere%20directly%20%22above%22%20a%20particular%20location):
 ${sunLonHsl} <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\text m\lambda$</span> and ${sunLatHsl}
+data-bs-title="milliparallels">mp</span> and ${sunLatHsl}
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>.
+data-bs-title="millimeridians">mm</span>.
 
 Alongside the geographic coordinates of a point, each row of the table
 contains the
 [course](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)
 in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a compass rose">milliwindroses</span>
+data-bs-title="thousandths of a compass rose">milliroses</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliwindroses">$\text m\alpha$</span>) we would need to
-maintain to travel🧳the shortest distance to the other point. The
-shortest distance is shown as orange🟠dots on the map🗺️. The default
-courses in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliwindroses">$\text m\alpha$</span> are
-<span class="color0">0</span> (North) from Point
-<span class="point0">0</span> to <span class="point1">1</span> and
-<span class="color5">500</span> (South) from Point
-<span class="point1">1</span> to <span class="point0">0</span>.
+data-bs-title="milliroses">mr</span>) we would need to maintain to
+travel🧳the shortest distance to the other point. The shortest distance
+is shown as orange🟠dots on the map🗺️. The default courses in
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliroses">mr</span> are <span class="color0">0</span>
+(North) from Point <span class="point0">0</span> to
+<span class="point1">1</span> and <span class="color5">500</span>
+(South) from Point <span class="point1">1</span> to
+<span class="point0">0</span>.
 
 ## Distance speed duration
 
@@ -620,8 +624,7 @@ decBar = colorbar({
 <tr>
 <th></th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliwindroses"><span class="math inline">$\text
-m\alpha$</span></span></strong>🧭</th>
+data-bs-title="milliroses">mr</span></strong>🧭</th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
 data-bs-title="compass degrees">c°</span></strong>🧭</th>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
@@ -704,19 +707,15 @@ The
 compass🧭above indicates both a
 [hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram)
 in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a turn">milliturns</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliturns">mt</span>) and a course in <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="milliwindroses">$\text m\alpha$</span>. We can convert
-the hue to [HSL and
+data-bs-title="milliturns">mt</span> and a course in <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliroses">mr</span>. We can
+convert the hue to [HSL and
 HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
 degrees (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="HSL or HSV degrees">h°</span>) and the course to
 compass🧭degrees (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="compass degrees">c°</span>): 25 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="milliwindroses">$\text m\alpha$</span> = 9
+data-bs-toggle="tooltip" data-bs-title="milliroses">mr</span> = 9
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="compass degrees">c°</span>. To rotate🔄the color🎨wheel
 compass🧭, use the “Hue”
@@ -771,59 +770,50 @@ regardless of the metric prefixes or
 can reuse♻️colors🎨across many different contexts. Most often,
 <span class="color0">red</span> designates starting points, like North
 (<span class="color0">0</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="milliwindroses">$\text m\alpha$</span>) and [Longitude
+data-bs-toggle="tooltip" data-bs-title="milliroses">mr</span>) and
+[Longitude
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color0">0</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\text m\lambda$</span>), and
+data-bs-toggle="tooltip" data-bs-title="milliparallels">mp</span>), and
 <span class="color5">cyan</span> denotes midpoints, such as South
 (<span class="color5">500</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="milliwindroses">$\text m\alpha$</span>) and [Longitude
+data-bs-toggle="tooltip" data-bs-title="milliroses">mr</span>) and
+[Longitude
 5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color5">500</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\text m\lambda$</span>).
+data-bs-toggle="tooltip" data-bs-title="milliparallels">mp</span>).
 
 The Equator (<span class="color0">0</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>) is the [major
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>) is
+the [major
 latitude](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
 midway between the South (<span class="color750">-250</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>) and North
+data-bs-title="millimeridians">mm</span>) and North
 (<span class="color250">250</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>) Poles. Unlike the
-Equator, the Tropics of
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>)
+Poles. Unlike the Equator, the Tropics of
 [Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(<span class="color065">65</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>) and
+data-bs-title="millimeridians">mm</span>) and
 [Capricorn](https://en.wikipedia.org/wiki/Tropic_of_Capricorn#:~:text=the%20southernmost%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♑️(<span class="color935">-65</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>) and the
+data-bs-title="millimeridians">mm</span>) and the
 [Arctic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
 (<span class="color250">250</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span> –
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span> –
 <span class="color065">65</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span> =
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span> =
 <span class="color185">185</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>) and
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>) and
 [Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
 (<span class="color065">65</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span> –
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span> –
 <span class="color250">250</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span> =
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span> =
 <span class="color815">-185</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>) Circles are defined
-by the [axial
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>)
+Circles are defined by the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
 of the Earth🌏(<span class="color065">65</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliturns">mt</span>).
@@ -833,27 +823,23 @@ data-bs-toggle="tooltip" data-bs-title="milliturns">mt</span>).
 Enable the “Grid” toggle✅input to see Latitudes
 [-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
 (<span class="color8">-200</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>),
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>),
 [-1](https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane)
 (<span class="color9">-100</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>),
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>),
 [0](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres)
 (<span class="color0">0</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>),
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>),
 [1](https://en.wikipedia.org/wiki/36th_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane)
 (<span class="color1">100</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>), and
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>), and
 [2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
 (<span class="color2">200</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="millimeridians">$\text m\phi$</span>) on the map🗺️above
-along with the ten major longitudes that divide the Earth🌎into the ten
-Dec time zones. Notably, Longitude <span class="color0">0</span> is the
-major longitude that functions as both the [Prime
+data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>) on
+the map🗺️above along with the ten major longitudes that divide the
+Earth🌎into the ten Dec time zones. Notably, Longitude
+<span class="color0">0</span> is the major longitude that functions as
+both the [Prime
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)
 and [International Date
 Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
@@ -864,8 +850,8 @@ numbered <span class="color0">0</span> to <span class="color9">9</span>.
 Based on its current <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a parallel">deciparallel</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciparallel">d*λ*</span>) longitude, ${point0lHsl},
-Point <span class="point0">0</span> on the map🗺️above is in Zone
+data-bs-title="deciparallel">dp</span>) longitude, ${point0lHsl}, Point
+<span class="point0">0</span> on the map🗺️above is in Zone
 ${point0zHsl}. The number assigned to each time zone is its offset from
 Zone <span class="color0">0</span> in <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
@@ -875,7 +861,7 @@ data-bs-toggle="tooltip" data-bs-title="deciday">dd</span> offset at a
 location, we
 [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
 its <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciparallel">d*λ*</span> longitude: ⌊${decLonHsl}⌋ =
+data-bs-title="deciparallel">dp</span> longitude: ⌊${decLonHsl}⌋ =
 ${decZonHsl}.
 
 ``` {ojs}
@@ -885,17 +871,17 @@ viewof longitude = Inputs.range([0, 10], {label: "Longitude", value: .5, step: .
 ```
 
 Each Dec time zone is 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciparallel">d*λ*</span> wide and 0.5 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="meridians">*ϕ*</span> long.
-While 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridian">*ϕ*</span> is always <span class="tool"
+data-bs-title="deciparallel">dp</span> wide and 0.5 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="meridians">m</span> long. While
+1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meridian">m</span> is always <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</span> long, the length of a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="parallel">*λ*</span> [varies by
+data-bs-toggle="tooltip" data-bs-title="parallel">p</span> [varies by
 latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude).
 At the Equator, 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">*λ*</span> is <span class="tool"
+data-bs-title="parallel">p</span> is <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</span> long. At the
@@ -903,13 +889,13 @@ data-bs-title="taur">c</span> long. At the
 or
 [South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
 Pole, the length of a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">*λ*</span> is zero. The approximate
+data-bs-title="parallel">p</span> is zero. The approximate
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</span> length of a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="parallel">*λ*</span> is the
+data-bs-toggle="tooltip" data-bs-title="parallel">p</span> is the
 [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
 of its latitude in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridians">*ϕ*</span>, <span class="tool"
+data-bs-title="meridians">m</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="radians">rad</span>, or
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="degrees">°</span>, depending on the input requirement of
@@ -1034,7 +1020,7 @@ data-bs-title="approximately ten million">~10<sup>7</sup></span>
 In other words, a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a meridian">decimeridian</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decimeridian">$\text d\phi$</span>) is <span class="tool"
+data-bs-title="decimeridian">dm</span>) is <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="approximately ten million">~10<sup>7</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
@@ -1550,7 +1536,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 
 </div>
 
-### Length area volume
+## Length area volume
 
 You can approximate a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
@@ -1922,7 +1908,7 @@ id="cubiclabel">Dimensions.com</a>
 
 </div>
 
-### Typical seat height
+## Typical seat height
 
 According to [dimensions.com](https://www.dimensions.com), 115
 <span class="tool" data-bs-toggle="tooltip"
@@ -1943,6 +1929,8 @@ data-bs-title="a hundredth of a turn">centiturn</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="centiturn">ct</span>) angles📐.
 
+## Perpetually setting sun
+
 In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span> means Earth🌍. This is
@@ -1956,7 +1944,7 @@ airplane✈️towards the setting sun☀️, we would be able to perpetually fly
 [into the
 sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
-### Speed of sound
+## Speed of sound
 
 To travel fast enough for a perpetual sunset🌅, the airplane✈️would need
 to surpass the [speed of
@@ -1991,16 +1979,18 @@ we have to exit the highway🛣️. To ensure we do not miss our exit, we can
 periodically check a countdown of the remaining <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zems">z</span>: ${zLeft}.
 
-# Ten equal temperament (Xet)
+## Centimilliday (cmd)
 
-Dec refers to <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hundred thousandths of a day">centimillidays</span> as
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hundred thousandths of a day">beats</span>
+Dec refers to a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a hundred thousandth of a day">centimilliday</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</span>) because they are similar in duration to
-heart❤️beats or [musical
-beats](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=I-,n%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time,-%2C%20the).
+data-bs-title="centimilliday">cmd</span>) as a <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundred thousandths of a day">beat</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</span>) because it is similar in duration to a
+heart❤️beat or [musical
+beat](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=I-,n%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time,-%2C%20the).
 A <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</span> is 100 <span class="tool"
 data-bs-toggle="tooltip"
@@ -2035,8 +2025,8 @@ data-bs-title="millionths of a taur">nanotaurs</span>
 data-bs-title="nanotaurs">nc</span>). Therefore, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliomegar">mv</span> =
 $\text{mc}\over\text d$ = $\text {kz}\over\text {cd}$ =
-$\text z\over\text b$ = $\text {dz}\over\micro\text d$ =
-$\text {nc}\over\micro\text d$. A <span class="tool"
+$\text z\over\text b$ = $\text {dz}\over\text{µd}$ =
+$\text {nc}\over\text{µd}$. A <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="centiday">cd</span> is
 <span class="color960">96%</span> of a quarter hour and a
 <span class="tool" data-bs-toggle="tooltip"
@@ -2065,52 +2055,46 @@ A Dec clock⏰ticks at a rate of 100 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="beats per milliday">bpm</span>,
 $\text b^{-1}$, $1\over\text b$, or 1
 [inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number)
-of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beat">b</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="inverse of b">iob</span>), which
-is <span class="colorIob">1.15<span class="vinculum">740</span></span>
+beat (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse beat">ib</span>), which is
+<span class="colorIob">1.15<span class="vinculum">740</span></span>
 times more frequent than a
 [Hertz](https://en.wikipedia.org/wiki/Hertz#:~:text=one%20event%20(or%20cycle)).
 
 ## Frequency period wavelength
 
-We can divide one by the
-sound🔊[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
-selected by the “<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse of b">Iobs</span>” range🎚️input below to get its
+Sound waves can be characterized by their
+[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time),
 [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency),
-1 ÷ ${parseFloat((iobs / 1000).toFixed(3))} <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousands of iobs">kiloiobs</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="kiloiobs">ki</span>) =
-${parseFloat((1000 / iobs).toFixed(3))} <span class="tool"
-data-bs-toggle="tooltip"
+and
+[wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats).
+The equations below show how these three characteristics are related to
+the speed of sound. The period and wavelength that correspond to the
+sound frequency chosen by the range input below are 1000 ÷ ${iobs}
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse beats">ib</span> = ${parseFloat((1000 /
+iobs).toFixed(3))} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a beat">millibeats</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millibeats">mb</span>), or divide the speed of sound🔊by
-it to get its
-[wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats):
-735048 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millionths of an omegar">microomegars</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">$\micro\text v$</span>) ÷ ${iobs}
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverses of b">iobs</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="iobs">i</span>) =
-${parseFloat((735048 / iobs).toFixed(2))} <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a zem">millizem</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millizem">mz</span>). Press the
-Play▶️button below to hear the chosen frequency for a duration of
-${beats} <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</span>.
+data-bs-title="millibeats">mb</span>) and 735.048 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliomegars">mv</span> ÷
+${iobs} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse beats">ib</span> = ${parseFloat((735.048 /
+iobs).toFixed(3))} <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span>.
+
+frequency = speed ÷ wavelength = 1 ÷ period
+
+period = wavelength ÷ speed = 1 ÷ frequency
+
+wavelength = speed × period = speed ÷ frequency
 
 ``` {ojs}
 //| echo: false
 //| label: iobinput
 //| class: freqcomponent
 // https://observablehq.com/@freedmand/sounds
-viewof iobs = Inputs.range([1, 9999], { step: 1,  value: 380, label: "Iobs" })
+viewof iobs = Inputs.range([1, 9999], { step: 1,  value: 380, label: "Frequency" })
 ```
 
 ``` {ojs}
@@ -2118,7 +2102,7 @@ viewof iobs = Inputs.range([1, 9999], { step: 1,  value: 380, label: "Iobs" })
 //| label: beatinput
 //| class: freqcomponent
 // https://observablehq.com/@freedmand/sounds
-viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Beats" })
+viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Duration" })
 ```
 
 ``` {ojs}
@@ -2129,7 +2113,36 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Beats" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864)
 ```
 
-The positive (**+**) and negative (**–**)
+We can categorize a sound wave as audible or a light wave as visible, if
+its frequency is within the limits of human perception. Dec selects ten
+colors, nine from the visible spectrum and one non-spectral color, to be
+labels for groups of ten and similarly chooses ten frequencies from the
+audible range to serve as a set of sound labels called the Dechromatic
+scale.
+
+In an optimal setting, the
+[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
+range of human hearing is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>[10](https://en.wikipedia.org/wiki/Hearing_range#:~:text=humans%20can%20hear%20sound%20as%20low%20as%2012%C2%A0Hz)
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse beats">ib</span> to <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>[24](https://en.wikipedia.org/wiki/Hearing_range#:~:text=8%5D%20and-,as%20high%20as%2028%C2%A0kHz,-%2C%20though%20the%20threshold)
+“kilo inverse beats” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="kilo inverse beats">kib</span>). To make the
+[audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
+frequency range more intuitive, Humans can hear The typical range for
+humans extends from Tone <span class="color3">03</span> to Tone
+<span class="color4">104</span>.a sound wave include its
+[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time),
+[pitch](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=a%20perceptual%20property%20that%20allows%20sounds%20to%20be%20ordered%20on%20a%20frequency%2Drelated%20scale)
+in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse beat">ib</span>,
+[period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency),
+musical in steps (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</span>), . From the value selected by the
+“Frequency” range🎚️input below, we can calculate a pitch: , a : The
+table The positive (**+**) and negative (**–**)
 [indexes](https://en.wikipedia.org/wiki/Index#:~:text=an%20integer%20pointer%20into%20an%20array%20data%20structure),
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</span> triplets, and <span class="tool"
@@ -2150,6 +2163,8 @@ that constitute the Dec
 of the **Ten** **e**qual **t**emperament (<span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="ten equal temperament">Tenet</span>) musical system.
+
+# Ten equal temperament (Xet)
 
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="ten equal temperament">Tenet</span> (<span class="tool"
@@ -2316,13 +2331,6 @@ data-bs-title="twelve equal temperament">12ET</span></strong>🎶</th>
 
 </div>
 
-``` {ojs}
-//| echo: false
-//| label: iobpiano
-//| class: freqcomponent
-piano(width)
-```
-
 ## Octave + note = tone
 
 The image above applies Dec color🎨labels🏷️to one
@@ -2340,7 +2348,10 @@ data-bs-title="iob">i</span> sound🔊frequency, and integer
 data-bs-title="millizem">mz</span> wavelength of the corresponding white
 key. As octave indexes and frequencies increase, wavelengths decrease.
 
-Octave indexes in <span class="tool" data-bs-toggle="tooltip"
+From the perspective of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</span>, all of the labeled🏷️keys in the image
+above are in Octave <span class="color4">4</span>. Octave indexes in
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</span> and <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="12 equal temperament">12ET</span> match except for
@@ -2350,12 +2361,16 @@ data-bs-title="Tenet">Xet</span> notes with indexes below
 data-bs-toggle="tooltip"
 data-bs-title="12 equal temperament">12ET</span> notes from
 <span class="colorAs">A<span class="iosevka">♯</span></span> to
-<span class="colorB">B<span class="iosevka">𝄲</span></span>. From the
-perspective of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span>, all of the labeled🏷️keys in the image
-above are in Octave <span class="color4">4</span>. When we append a
-positive note index that is less than ten to an octave index which is a
-positive integer, we obtain a <span class="tool"
+<span class="colorB">B<span class="iosevka">𝄲</span></span>. An octave
+index is the Xet analog of a clef in staff notation, because both are
+responsible for setting the reference frame that allows us to interpret
+the relative pitches of notes as the absolute pitches of tones.
+
+Clefs in staff notation and octave indexes in Xet set the reference
+frame that allows us to
+
+When we append a positive note index that is less than ten to an octave
+index which is a positive integer, we obtain a <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> [musical
 tone](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound)
 index.
@@ -2372,11 +2387,7 @@ Tone <span class="colorC">41.302</span> is
 in between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
 [treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)
 of a [grand
-staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff). The
-typical
-[audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
-range for humans extends from Tone <span class="color3">03</span> to
-Tone <span class="color4">104</span>.
+staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff).
 
 The mermaid chart below visualizes the structure of the Xet music
 notation example above it, which is composed of the Xet equivalents of
@@ -3210,10 +3221,10 @@ uses metric prefixes and the properties of the planet Earth🌍to define
 units based on turns for geographic coordinates, compass🧭directions,
 dates, times, speeds, distances, areas, volumes, and weights. Each unit
 has a unique name, such as <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">*λ*</span>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="meridian">*ϕ*</span>,
+data-bs-title="parallel">p</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="meridian">m</span>,
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="windrose">*α*</span>, <span class="tool"
+data-bs-title="rose">r</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="year">y</span>,
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</span>, <span class="tool"
@@ -3357,8 +3368,7 @@ data-bs-toggle="tooltip" data-bs-title="centidays">cd</span> wide, based
 on [Longitude
 05](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England)
 (<span class="color050">50</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="milliparallels">$\text m\lambda$</span>).
+data-bs-toggle="tooltip" data-bs-title="milliparallels">mp</span>).
 
 <div id="citelist" class="column-page-right">
 
