@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+321
+2025+324
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -2063,15 +2063,45 @@ times more frequent than a
 
 ## Frequency period wavelength
 
-Sound waves can be characterized by their
+Dec uses submultiples of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse beats">ib</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="beats">b</span>, and
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span>
+to measure the
 [frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time),
 [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency),
 and
-[wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats).
-The equations below show how these three characteristics are related to
-the speed of sound. The period and wavelength that correspond to the
-sound frequency chosen by the range input below are 1000 ÷ ${iobs}
+[wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats),
+respectively, of a sound or light wave. The equations below show how
+frequency, period, and wavelength are related to each other and the
+speed of the wave. The speed of light is 647.551657 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="millions of omegars">megaomegars</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="megaomegars">Mv</span>), which is about 881 times faster
+than the speed of sound.
+
+frequency = speed ÷ wavelength = 1 ÷ period
+
+period = wavelength ÷ speed = 1 ÷ frequency
+
+wavelength = speed × period = speed ÷ frequency
+
+The
+[visible](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
+spectrum of light ranges from <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="approximately">~</span>345.6 to
+914.4 trillion <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse beats">ib</span>. In an optimal setting, the
+[audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
+range of human hearing is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>[10](https://en.wikipedia.org/wiki/Hearing_range#:~:text=humans%20can%20hear%20sound%20as%20low%20as%2012%C2%A0Hz)
+to <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>[24000](https://en.wikipedia.org/wiki/Hearing_range#:~:text=8%5D%20and-,as%20high%20as%2028%C2%A0kHz,-%2C%20though%20the%20threshold)
 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse beats">ib</span>. The period and wavelength that
+correspond to the sound frequency chosen by the range input below are
+1000 ÷ ${iobs} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="inverse beats">ib</span> = ${parseFloat((1000 /
 iobs).toFixed(3))} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a beat">millibeats</span>
@@ -2082,12 +2112,6 @@ ${iobs} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="inverse beats">ib</span> = ${parseFloat((735.048 /
 iobs).toFixed(3))} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</span>.
-
-frequency = speed ÷ wavelength = 1 ÷ period
-
-period = wavelength ÷ speed = 1 ÷ frequency
-
-wavelength = speed × period = speed ÷ frequency
 
 ``` {ojs}
 //| echo: false
@@ -2113,23 +2137,17 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Duration" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864)
 ```
 
-We can categorize a sound wave as audible or a light wave as visible, if
-its frequency is within the limits of human perception. Dec selects ten
-colors, nine from the visible spectrum and one non-spectral color, to be
-labels for groups of ten and similarly chooses ten frequencies from the
-audible range to serve as a set of sound labels called the Dechromatic
-scale.
+Like the ten Dec colors, there are ten frequencies that Dec chooses from
+the audible range to serve as a set of sound labels. These ten
+frequencies the Dechromatic scale.
 
-In an optimal setting, the
-[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time)
-range of human hearing is <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>[10](https://en.wikipedia.org/wiki/Hearing_range#:~:text=humans%20can%20hear%20sound%20as%20low%20as%2012%C2%A0Hz)
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse beats">ib</span> to <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>[24](https://en.wikipedia.org/wiki/Hearing_range#:~:text=8%5D%20and-,as%20high%20as%2028%C2%A0kHz,-%2C%20though%20the%20threshold)
-“kilo inverse beats” (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilo inverse beats">kib</span>). To make the
+Dec uses nine [spectral
+colors](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
+and a tenth color which cannot be defined by a single wavelength,
+period, or frequency because it is an equal mix of
+<span class="color0">Red</span> and <span class="color7">Blue</span>.
+
+To make the
 [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
 frequency range more intuitive, Humans can hear The typical range for
 humans extends from Tone <span class="color3">03</span> to Tone
