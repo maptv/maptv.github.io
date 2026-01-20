@@ -1522,12 +1522,13 @@ blackKeyColors = [
 ]
 // https://observablehq.com/@freedmand/sounds
 ctx = new (window.AudioContext || window.webkitAudioContext)()
-function Play(genFn, duration = 1) {
-  return new SoundBuffer(genFn, duration).gui();
+function Play(genFn, duration, frequency) {
+  return new SoundBuffer(genFn, duration, frequency).gui();
 }
 class SoundBuffer {
-  constructor(genFn, duration = .864) {
+  constructor(genFn, duration, frequency) {
     this.duration = duration;
+    this.frequency = frequency;
     // Create an audio buffer.
     this.audioBuffer = ctx.createBuffer(1, ctx.sampleRate * this.duration, ctx.sampleRate);
     this.buffer = this.audioBuffer.getChannelData(0);
@@ -1617,7 +1618,7 @@ class SoundBuffer {
       <div class="icons">
         <span class="button play-button" style="font-size:18px;">▶</span>
         <span class="button stop-button" style="font-size:18px;">◼</span>&nbsp;&nbsp;
-        <span class="duration">${Math.round(this.duration / .864)} b</span>
+        <span class="duration">Frequency: ${this.frequency} ib, Duration: ${Math.round(this.duration / .864)} b</span>
       </div>
     </div>`;
     const cursor = ui.querySelector('.cursor');
