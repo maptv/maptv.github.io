@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+324
+2025+325
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -2063,18 +2063,18 @@ times more frequent than a
 
 ## Frequency period wavelength
 
-Dec uses submultiples of <span class="tool" data-bs-toggle="tooltip"
+Dec uses <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="inverse beats">ib</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="beats">b</span>, and
-<span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span>
-to measure the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span>, often with metric prefixes, to measure the
 [frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time),
 [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency),
 and
 [wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats),
 respectively, of a sound or light wave. The equations below show how
-frequency, period, and wavelength are related to each other and the
-speed of the wave. The speed of light is 647.551657 <span class="tool"
+frequency, period, and wavelength are related to each other and to
+speed. The speed of light is 647.551657 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="millions of omegars">megaomegars</span>
 (<span class="tool" data-bs-toggle="tooltip"
@@ -2087,21 +2087,24 @@ period = wavelength ÷ speed = 1 ÷ frequency
 
 wavelength = speed × period = speed ÷ frequency
 
-The
+The frequency range of the
 [visible](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
-spectrum of light ranges from <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>345.6 to
-914.4 trillion <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse beats">ib</span>. In an optimal setting, the
+spectrum of light is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>345.6 to <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="approximately">~</span>914.4
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="trillions of inverse beats">teraib</span>
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraib">Tib</span>). The sound frequencies which can be
 [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
-range of human hearing is <span class="tool" data-bs-toggle="tooltip"
+for humans range from <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>[10](https://en.wikipedia.org/wiki/Hearing_range#:~:text=humans%20can%20hear%20sound%20as%20low%20as%2012%C2%A0Hz)
 to <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>[24000](https://en.wikipedia.org/wiki/Hearing_range#:~:text=8%5D%20and-,as%20high%20as%2028%C2%A0kHz,-%2C%20though%20the%20threshold)
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="inverse beats">ib</span>. The period and wavelength that
-correspond to the sound frequency chosen by the range input below are
-1000 ÷ ${iobs} <span class="tool" data-bs-toggle="tooltip"
+correspond to the frequency chosen by the range input below are 1000 ÷
+${iobs} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="inverse beats">ib</span> = ${parseFloat((1000 /
 iobs).toFixed(3))} <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a beat">millibeats</span>
@@ -2134,8 +2137,12 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Duration" })
 //| label: iobplayer
 //| class: freqcomponent
 // https://observablehq.com/@freedmand/sounds
-Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864)
+Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 ```
+
+Apart from <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse beats">ib</span>, we can also express limits of
+human hearing in musical steps.
 
 Like the ten Dec colors, there are ten frequencies that Dec chooses from
 the audible range to serve as a set of sound labels. These ten
@@ -5037,12 +5044,13 @@ blackKeyColors = [
 ]
 // https://observablehq.com/@freedmand/sounds
 ctx = new (window.AudioContext || window.webkitAudioContext)()
-function Play(genFn, duration = 1) {
-  return new SoundBuffer(genFn, duration).gui();
+function Play(genFn, duration, frequency) {
+  return new SoundBuffer(genFn, duration, frequency).gui();
 }
 class SoundBuffer {
-  constructor(genFn, duration = .864) {
+  constructor(genFn, duration, frequency) {
     this.duration = duration;
+    this.frequency = frequency;
     // Create an audio buffer.
     this.audioBuffer = ctx.createBuffer(1, ctx.sampleRate * this.duration, ctx.sampleRate);
     this.buffer = this.audioBuffer.getChannelData(0);
@@ -5132,7 +5140,7 @@ class SoundBuffer {
       <div class="icons">
         <span class="button play-button" style="font-size:18px;">▶</span>
         <span class="button stop-button" style="font-size:18px;">◼</span>&nbsp;&nbsp;
-        <span class="duration">${Math.round(this.duration / .864)} b</span>
+        <span class="duration">Frequency: ${this.frequency} ib, Duration: ${Math.round(this.duration / .864)} b</span>
       </div>
     </div>`;
     const cursor = ui.querySelector('.cursor');
