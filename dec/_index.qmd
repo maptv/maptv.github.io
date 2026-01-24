@@ -1386,11 +1386,14 @@ function swatches(palette) {
     ]
 })}
 colorsize = 210
-kg = parseFloat(kilograms.toFixed(2))
+kilograms = kilograins * 0.064
+kgrains = parseFloat(kilograins.toFixed(2))
+kgrams = parseFloat(kilograms.toFixed(2))
 zem2 = parseFloat((zems**2).toFixed(2))
-bmi = parseFloat((kilograms / zems**2).toFixed(2))
-bmim2 = parseFloat((bmi * 25 / 4).toFixed(2))
-bmiStr = bmi < 2.96 ? "underweight" : bmi < 4 ? "normal" : bmi < 4.8 ? "overweight" : "obese"
+meter2 = parseFloat(((zems*.4)**2).toFixed(2))
+bmi = parseFloat((kilograins / zems**2).toFixed(2))
+bmim2 = parseFloat((kilograms / meter2).toFixed(2))
+bmiStr = bmi < 46.25 ? "underweight" : bmi < 62.5 ? "normal" : bmi < 75 ? "overweight" : "obese"
 // https://observablehq.com/@magfoto/wavelengths-and-spectral-colours
 // takes wavelength in nm and returns an rgba value
     function wavelengthToColor(wavelength) {
@@ -1795,12 +1798,16 @@ h26div300 = d3.hsl(piecewiseColor(26 / 300)).h
 hD039 = d3.hsl(piecewiseColor(39 / 365)).h
 hD080 = d3.hsl(piecewiseColor(80 / 365)).h
 hD285 = d3.hsl(piecewiseColor(285 / 365)).h
-fMile = 5 / 3 / 1.609344
+fMile = 1.6 / 1.609344
 fInch = 25 / 25.4
+fMiPH = 5 / 3 / 1.609344
+fDrop = 64 / 51
 hIob = d3.hsl(piecewiseColor(1 / .864 % 1)).h
 hMile = d3.hsl(piecewiseColor(fMile % 1)).h
+hMiPH = d3.hsl(piecewiseColor(fMiPH % 1)).h
+hDrop = d3.hsl(piecewiseColor(fDrop % 1)).h
 hInch = d3.hsl(piecewiseColor(fInch % 1)).h
-hAvLb = d3.hsl(piecewiseColor(500 / 453.59237 % 1)).h
+hMass = d3.hsl(piecewiseColor(448 / 453.59237 % 1)).h
 hPint = d3.hsl(piecewiseColor(4 / 3.785411784 % 1)).h
 hFlOz = d3.hsl(piecewiseColor(32 / 29.5735296875 % 1)).h
 hAcre = d3.hsl(piecewiseColor(247.1053814672 / 250 % 1)).h
@@ -2528,9 +2535,25 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.colorAvLb {
-  background: hsl(${hAvLb} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hAvLb}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+.colorDrop {
+  background: hsl(${hDrop} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hDrop}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorMass {
+  background: hsl(${hMass} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hMass}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorMiPH {
+  background: hsl(${hMiPH} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hMiPH}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
