@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+325
+2025+329
 
 - [Dec measurement system](#dec)
   - [Longitude latitude course](#llc)
@@ -28,7 +28,7 @@ Martin Laptev
 - [US customary units](#ucu)
   - [Unit conversion table](#uct)
   - [Miles per hour (mph)](#mph)
-  - [Hexamilliare wineglass keg](#xwk)
+  - [Drop wineglass keg](#dwk)
   - [Body mass index (bmi)](#bmi)
   - [Centizem centimeter inch](#cci)
 - [Summary](#tldr)
@@ -2095,9 +2095,10 @@ data-bs-toggle="tooltip" data-bs-title="approximately">~</span>914.4
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="trillions of inverse beats">teraib</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraib">Tib</span>). The sound frequencies which can be
+data-bs-title="teraib">Tib</span>). The range of sound frequencies which
+can be
 [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
-for humans range from <span class="tool" data-bs-toggle="tooltip"
+for humans is <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>[10](https://en.wikipedia.org/wiki/Hearing_range#:~:text=humans%20can%20hear%20sound%20as%20low%20as%2012%C2%A0Hz)
 to <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>[24000](https://en.wikipedia.org/wiki/Hearing_range#:~:text=8%5D%20and-,as%20high%20as%2028%C2%A0kHz,-%2C%20though%20the%20threshold)
@@ -2140,9 +2141,24 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Duration" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 ```
 
-Apart from <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse beats">ib</span>, we can also express limits of
-human hearing in musical steps.
+In addition to <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse beats">ib</span>, the limits of human hearing can
+be expressed in musical
+[steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</span>). We can use the equations below to
+convert between <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse beat">ib</span> and <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="steps">s</span>. Frequencies
+less than 12.5 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="inverse beat">ib</span> have a negative
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</span> value and are unlikely to be audible
+outside of carefully controlled laboratory experiments. Similarly,
+frequencies above 109 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</span> or 24320 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="inverse beat">ib</span>
+represent the upper limit of the audible range.
 
 Like the ten Dec colors, there are ten frequencies that Dec chooses from
 the audible range to serve as a set of sound labels. These ten
@@ -2164,10 +2180,9 @@ humans extends from Tone <span class="color3">03</span> to Tone
 in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="inverse beat">ib</span>,
 [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency),
-musical in steps (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</span>), . From the value selected by the
-“Frequency” range🎚️input below, we can calculate a pitch: , a : The
-table The positive (**+**) and negative (**–**)
+musical in steps, . From the value selected by the “Frequency”
+range🎚️input below, we can calculate a pitch: , a : The table The
+positive (**+**) and negative (**–**)
 [indexes](https://en.wikipedia.org/wiki/Index#:~:text=an%20integer%20pointer%20into%20an%20array%20data%20structure),
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</span> triplets, and <span class="tool"
@@ -2892,66 +2907,13 @@ data-bs-title="International System of Units">SI</span></strong></th>
 </thead>
 <tbody>
 <tr>
-<td><span class="colorMile">1.0356</span> <a
-href="https://en.wikipedia.org/wiki/Mile#:~:text=units%20as%20exactly-,1%2C609.344%20metres">miles</a></td>
-<td><span class="math inline">$25\over6$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousands of zems">kz</span></td>
-<td><span class="math inline">$5\over3$</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="kilometers">km</span></td>
-</tr>
-<tr>
-<td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Yard#:~:text=as%20exactly-,0.9144%C2%A0meter">yards</a></td>
-<td><span class="math inline">$9\over4$</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zems">z</span></td>
-<td>9 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decimeters">dm</span></td>
-</tr>
-<tr>
-<td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Foot_(unit)#:~:text=equal%20to%20exactly-,0.3048%20meters">feet</a></td>
-<td><span class="math inline">$3\over4$</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zems">z</span></td>
-<td>3 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decimeters">dm</span></td>
-</tr>
-<tr>
-<td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Inch#:~:text=defined%20as%20exactly-,25.4%C2%A0mm">inches</a></td>
-<td><span class="math inline">$1\over16$</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zems">z</span></td>
-<td>25 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeters">mm</span></td>
-</tr>
-<tr>
-<td><span class="colorAcre">0.9884</span> <a
-href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
-<td><span class="math inline">$1\over40$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="square kilozems">kz<sup>2</sup></span></td>
-<td><span class="math inline">$1\over250$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="square kilometers">km<sup>2</sup></span></td>
-</tr>
-<tr>
-<td><span class="colorSqMi">1.0725</span> <a
-href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
-<td><span class="math inline">$625\over36$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="square kilozems">kz<sup>2</sup></span></td>
-<td><span class="math inline">$25\over9$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="square kilometers">km<sup>2</sup></span></td>
-</tr>
-<tr>
 <td><span class="colorSqIn">0.9688</span> <a
-href="https://en.wikipedia.org/wiki/Square_yard">square yards</a></td>
-<td><span class="math inline">$81\over16$</span> <span class="tool"
+href="https://en.wikipedia.org/wiki/Square_inch">square inches</a></td>
+<td><span class="math inline">$1\over256$</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="square zems">z<sup>2</sup></span></td>
-<td>81 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square decimeters">dm<sup>2</sup></span></td>
+<td>625 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square millimeters">mm<sup>2</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
@@ -2964,35 +2926,114 @@ data-bs-title="square decimeters">dm<sup>2</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
-href="https://en.wikipedia.org/wiki/Square_inch">square inches</a></td>
-<td><span class="math inline">$1\over256$</span> <span class="tool"
+href="https://en.wikipedia.org/wiki/Square_yard">square yards</a></td>
+<td><span class="math inline">$81\over16$</span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="square zems">z<sup>2</sup></span></td>
-<td>625 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square millimeters">mm<sup>2</sup></span></td>
+<td>81 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square decimeters">dm<sup>2</sup></span></td>
 </tr>
 <tr>
-<td><span class="colorAvLb">1.1023</span> <a
-href="https://en.wikipedia.org/wiki/Pound_(mass)#:~:text=0.45359237%C2%A0kilograms">pounds</a></td>
-<td>500 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="grams">g</span></td>
-<td>500 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="grams">g</span></td>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Inch#:~:text=defined%20as%20exactly-,25.4%C2%A0mm">inches</a></td>
+<td><span class="math inline">$1\over16$</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zems">z</span></td>
+<td>25 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millimeters">mm</span></td>
 </tr>
 <tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
-<td>2 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zems">z<sup>3</sup></span></td>
-<td>128 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="liters">L</span></td>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Foot_(unit)#:~:text=equal%20to%20exactly-,0.3048%20meters">feet</a></td>
+<td><span class="math inline">$3\over4$</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zems">z</span></td>
+<td>3 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decimeters">dm</span></td>
 </tr>
 <tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
-<td>1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z<sup>3</sup></span></td>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Yard#:~:text=as%20exactly-,0.9144%C2%A0meter">yards</a></td>
+<td><span class="math inline">$9\over4$</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zems">z</span></td>
+<td>9 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decimeters">dm</span></td>
+</tr>
+<tr>
+<td><span class="colorMass">0.9877</span> <a
+href="https://en.wikipedia.org/wiki/Grain_(unit)">grains</a></td>
+<td>1 grain</td>
 <td>64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milligrams">mg</span></td>
+</tr>
+<tr>
+<td><span class="colorMass">0.9877</span> <a
+href="https://en.wikipedia.org/wiki/Pound_(mass)#:~:text=0.45359237%C2%A0kilograms">pounds</a></td>
+<td>7 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of grains">kilograins</span></td>
+<td>448 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="grams">g</span></td>
+</tr>
+<tr>
+<td><span class="colorAcre">0.9884</span> <a
+href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
+<td><span class="math inline">$1\over40$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square kilozems">kz<sup>2</sup></span></td>
+<td><span class="math inline">$1\over250$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square kilometers">km<sup>2</sup></span></td>
+</tr>
+<tr>
+<td><span class="colorAcre">0.9884</span> <a
+href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
+<td>16 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square kilozems">kz<sup>2</sup></span></td>
+<td><span class="math inline">$64\over25$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="square kilometers">km<sup>2</sup></span></td>
+</tr>
+<tr>
+<td><span class="colorMile">0.9942</span> <a
+href="https://en.wikipedia.org/wiki/Mile#:~:text=units%20as%20exactly-,1%2C609.344%20metres">miles</a></td>
+<td>4 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of zems">kz</span></td>
+<td><span class="math inline">$8\over5$</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="kilometers">km</span></td>
+</tr>
+<tr>
+<td><span class="colorMiPH">1.0356</span> <a
+href="https://en.wikipedia.org/wiki/Miles_per_hour">miles per
+hour</a></td>
+<td>1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegars">mv</span></td>
+<td><span class="math inline">$5\over3$</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="kilometers per hour"><span
+class="math inline">$\text{km}\over\text{hour}$</span></span></td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
+<td><span class="math inline">$1\over256$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="cubic zems">z<sup>3</sup></span></td>
+<td>250 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
+<td><span class="math inline">$1\over128$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="cubic zems">z<sup>3</sup></span></td>
+<td>500 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
+</tr>
+<tr>
+<td><span class="colorPint">1.0567</span> <a
+href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
+<td><span class="math inline">$1\over64$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="cubic zems">z<sup>3</sup></span></td>
+<td>1 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="liters">L</span></td>
 </tr>
 <tr>
@@ -3006,37 +3047,27 @@ data-bs-title="liters">L</span></td>
 </tr>
 <tr>
 <td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
-<td><span class="math inline">$1\over64$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="cubic zems">z<sup>3</sup></span></td>
+href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
 <td>1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic zem">z<sup>3</sup></span></td>
+<td>64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="liters">L</span></td>
 </tr>
 <tr>
 <td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
-<td><span class="math inline">$1\over128$</span> <span class="tool"
-data-bs-toggle="tooltip"
+href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
+<td>2 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic zems">z<sup>3</sup></span></td>
-<td>500 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
-<td><span class="math inline">$1\over256$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="cubic zems">z<sup>3</sup></span></td>
-<td>250 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
+<td>128 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="liters">L</span></td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Wine_glass#Capacity_measure">wineglass</a></td>
-<td>1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz<sup>3</sup></span></td>
-<td>64 <span class="tool" data-bs-toggle="tooltip"
+href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
+<td><span class="math inline">$1\over4$</span> <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="cubic decizems">dz<sup>3</sup></span></td>
+<td>16 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliliters">mL</span></td>
 </tr>
 <tr>
@@ -3050,12 +3081,19 @@ data-bs-title="milliliters">mL</span></td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
-<td><span class="math inline">$1\over4$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="cubic decizems">dz<sup>3</sup></span></td>
-<td>16 <span class="tool" data-bs-toggle="tooltip"
+href="https://en.wikipedia.org/wiki/Wine_glass#Capacity_measure">wineglasses</a></td>
+<td>1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic decizem">dz<sup>3</sup></span></td>
+<td>64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliliters">mL</span></td>
+</tr>
+<tr>
+<td><span class="colorDrop">1.2549</span> <a
+href="https://en.wikipedia.org/wiki/Drop_(unit)">drops</a></td>
+<td>1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="microliters">µL</span></td>
 </tr>
 </tbody>
 </table>
@@ -3074,15 +3112,8 @@ convenient reference points. <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> customary volume units have
 intuitive names and scale by [powers of
 two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20form%202n%20where%20n%20is%20an%20integer).
-Miles are redefined such that 1 mile per hour is equal to 1
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegar">mv</span> or $5\over3$ <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousands of meters">kilometers</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilometers">km</span>) per hour.
 
-## Hexamilliare wineglass keg
+## Drop wineglass keg
 
 A square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a thousand zems">kilozem</span> (<span class="tool"
@@ -3096,10 +3127,8 @@ data-bs-title="hundreds of ares">hectares</span>, 1600
 square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of meters">kilometers</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square kilometers">km<sup>2</sup></span>),
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>0.062 Dec square miles, or
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square kilometers">km<sup>2</sup></span>), 0.0625 Dec
+square miles, or <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a million">10<sup>6</sup></span> <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="square zems">z<sup>2</sup></span>. A <span class="tool"
@@ -3132,26 +3161,23 @@ data-bs-title="cubic decizem">dz<sup>3</sup></span>) is 1 cubic
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a millionth of a taur">nanotaur</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic nanotaur">nc<sup>3</sup></span>), 2 Dec ounces, or
-64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic nanotaur">nc<sup>3</sup></span>), 2 Dec ounces, 64
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a liter">milliliters</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span>). A <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz<sup>3</sup></span> of water🌊weighs 64
-grams (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="grams">g</span>). Even though a Dec ounce of
-water🌊weighs close to a sixteenth of a Dec pound, Dec does not measure
-weights in ounces. A <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z<sup>3</sup></span> is 16 Dec gallons or 64
-[liters](https://en.wikipedia.org/wiki/Litre#:~:text=is%20equal%20to-,1%20cubic%20decimetre,-(dm3)%2C%201000%20cubic)
+data-bs-title="milliliters">mL</span>), 1000 Dec drops, or 1000 cubic
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a zone equatorial meter">centizems</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="liters">L</span>). A <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="cubic zem">z<sup>3</sup></span>
-of water🌊weighs 64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of grams">kilograms</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="kilograms">kg</span>) or 128 Dec
-pounds.
+data-bs-title="cubic centizems">cz<sup>3</sup></span>). A
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic decizem">dz<sup>3</sup></span> of water🌊weighs
+$1\over7$ Dec pounds, 64 grams (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="grams">g</span>), or 1000 Dec
+grains. A Dec ounce of water weighs $1\over14$ Dec pounds, 500 Dec
+grains, or 32 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="grams">g</span>. To avoid confusion between liquid and
+solid ounces, Dec does not measure weight in ounces.
 
 <div class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -3161,9 +3187,13 @@ style="text-align:center;">
 
 </div>
 
-## Body mass index (bmi)
-
-If [Leonardo da
+A <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic zem">z<sup>3</sup></span> of water🌊weighs 64
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of grams">kilograms</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="kilograms">kg</span>), 128 Dec
+pounds, or a 1000 Dec <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of grains">kilograins</span>. If [Leonardo da
 Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s
 [Vitruvian
 Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
@@ -3171,24 +3201,38 @@ were 4 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zems">z</span> tall, we could measure 1
 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span>
 from his knees to his feet🦶or from his elbows💪to his fingertips. If he
-also weighed 64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilograms">kg</span>, his [Body Mass
+also weighed 1000 Dec <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of grains">kilograins</span>, his [Body Mass
 Index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">BMI</span>) would be 4
-$\text {kg}\over\text z^2$ or 25 $\text {kg}\over\text m^2$. A normal
+data-bs-title="body mass index">BMI</span>) would be 62.5
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">BMI</span> ranges from 2.96 to 4
-$\text {kg}\over\text z^2$ or 18.5 to 25 $\text {kg}\over\text m^2$. A
+data-bs-title="thousands of grains">kilograins</span> per
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">BMI</span> of ${kg} kg ÷ ${zem2}
-z<sup>2</sup> = ${bmi} $\text {kg}\over\text z^2$ = ${bmim2}
+data-bs-title="hexamilliares">x</span> ($\text {kg}\over\text x$) or 25
+kilograms per square meter ($\text {kg}\over\text m^2$).
+
+## Body mass index (bmi)
+
+A normal <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="body mass index">BMI</span> ranges from 46.25 to 62.5
+$\text {kg}\over\text x$ or 18.5 to 25 $\text {kg}\over\text m^2$. A
+person with a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="body mass index">BMI</span> above 75
+$\text {kg}\over\text x$ or 30 $\text {kg}\over\text m^2$ can be
+classified as obese. A <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="body mass index">BMI</span> of ${kgrains}
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of grains">kilograins</span> ÷ ${zem2} x =
+${bmi} $\text {kg}\over\text x$ = ${kgrams} kilograms ÷ ${meter2}
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square meters">m²</span> = ${bmim2}
 $\text {kg}\over\text m^2$ is considered ${bmiStr}.
 
 ``` {ojs}
 //| echo: false
 //| label: kginput
-viewof kilograms = Inputs.range([0, 1000], {label: "Kilograms", value: 64, step: .1})
+viewof kilograins = Inputs.range([0, 10000], {label: "Kilograins", value: 1000, step: 1})
 ```
 
 ``` {ojs}
@@ -3273,14 +3317,14 @@ data-bs-title="United States">US</span> customary units makes inches
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="color0158">1.58%</span>
 shorter, miles <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="colorMile">3.56%</span>
-longer, pints <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span><span class="colorMile">0.58%</span>
+shorter, pints <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="colorPint">5.67%</span>
 larger, ounces <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="colorFlOz">8.21%</span>
 larger, and pounds <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="colorAvLb">10.23%</span>
-heavier.
+data-bs-title="approximately">~</span><span class="colorMass">1.23%</span>
+lighter.
 
 Dec color🎨labels🏷can convey an impression of a value at a glance.
 <span class="tool" data-bs-toggle="tooltip"
@@ -4908,11 +4952,14 @@ function swatches(palette) {
     ]
 })}
 colorsize = 210
-kg = parseFloat(kilograms.toFixed(2))
+kilograms = kilograins * 0.064
+kgrains = parseFloat(kilograins.toFixed(2))
+kgrams = parseFloat(kilograms.toFixed(2))
 zem2 = parseFloat((zems**2).toFixed(2))
-bmi = parseFloat((kilograms / zems**2).toFixed(2))
-bmim2 = parseFloat((bmi * 25 / 4).toFixed(2))
-bmiStr = bmi < 2.96 ? "underweight" : bmi < 4 ? "normal" : bmi < 4.8 ? "overweight" : "obese"
+meter2 = parseFloat(((zems*.4)**2).toFixed(2))
+bmi = parseFloat((kilograins / zems**2).toFixed(2))
+bmim2 = parseFloat((kilograms / meter2).toFixed(2))
+bmiStr = bmi < 46.25 ? "underweight" : bmi < 62.5 ? "normal" : bmi < 75 ? "overweight" : "obese"
 // https://observablehq.com/@magfoto/wavelengths-and-spectral-colours
 // takes wavelength in nm and returns an rgba value
     function wavelengthToColor(wavelength) {
@@ -5317,12 +5364,16 @@ h26div300 = d3.hsl(piecewiseColor(26 / 300)).h
 hD039 = d3.hsl(piecewiseColor(39 / 365)).h
 hD080 = d3.hsl(piecewiseColor(80 / 365)).h
 hD285 = d3.hsl(piecewiseColor(285 / 365)).h
-fMile = 5 / 3 / 1.609344
+fMile = 1.6 / 1.609344
 fInch = 25 / 25.4
+fMiPH = 5 / 3 / 1.609344
+fDrop = 64 / 51
 hIob = d3.hsl(piecewiseColor(1 / .864 % 1)).h
 hMile = d3.hsl(piecewiseColor(fMile % 1)).h
+hMiPH = d3.hsl(piecewiseColor(fMiPH % 1)).h
+hDrop = d3.hsl(piecewiseColor(fDrop % 1)).h
 hInch = d3.hsl(piecewiseColor(fInch % 1)).h
-hAvLb = d3.hsl(piecewiseColor(500 / 453.59237 % 1)).h
+hMass = d3.hsl(piecewiseColor(448 / 453.59237 % 1)).h
 hPint = d3.hsl(piecewiseColor(4 / 3.785411784 % 1)).h
 hFlOz = d3.hsl(piecewiseColor(32 / 29.5735296875 % 1)).h
 hAcre = d3.hsl(piecewiseColor(247.1053814672 / 250 % 1)).h
@@ -6050,9 +6101,25 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.colorAvLb {
-  background: hsl(${hAvLb} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hAvLb}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+.colorDrop {
+  background: hsl(${hDrop} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hDrop}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorMass {
+  background: hsl(${hMass} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hMass}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorMiPH {
+  background: hsl(${hMiPH} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hMiPH}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
