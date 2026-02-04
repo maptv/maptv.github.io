@@ -25,6 +25,8 @@ format:
       - ../asset/style.html
       - ../asset/stamp.html
       - ../asset/tooltip.html
+      - ../asset/footnote.html
+      - ../asset/crossref.html
   commonmark: default
 filters:
   - ../asset/date.lua
@@ -210,7 +212,7 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Duration" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 ```
 
-In addition to [ib]{.tool data-bs-toggle="tooltip" data-bs-title="inverse beats"}, the limits of human hearing can be expressed in musical [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale) ([s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"}). We can use the equations below to convert between [ib]{.tool data-bs-toggle="tooltip" data-bs-title="inverse beat"} and [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"}. Frequencies less than 12.5 [ib]{.tool data-bs-toggle="tooltip" data-bs-title="inverse beat"} have a negative [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} value and are unlikely to be audible outside of carefully controlled laboratory experiments. Similarly, frequencies above 109 [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} or 24320 [ib]{.tool data-bs-toggle="tooltip" data-bs-title="inverse beat"} represent the upper limit of the audible range.
+In addition to [ib]{.tool data-bs-toggle="tooltip" data-bs-title="inverse beats"}, the limits of human hearing can be expressed in musical [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale) ([s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"}). The equations below convert between [ib]{.tool data-bs-toggle="tooltip" data-bs-title="inverse beat"} and [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"}. Frequencies less than 12.5 [ib]{.tool data-bs-toggle="tooltip" data-bs-title="inverse beat"} have a negative [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} value and are unlikely to be audible outside of carefully controlled laboratory experiments. Similarly, frequencies above 109 [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} or 24320 [ib]{.tool data-bs-toggle="tooltip" data-bs-title="inverse beat"} represent the upper limit of the audible range.
 
 Like the ten Dec colors, there are ten frequencies that Dec chooses from the audible range to serve as a set of sound labels. These ten frequencies the Dechromatic scale. 
 
@@ -433,9 +435,17 @@ All rests except whole rests are followed by a fraction: ½ for a half rest, ¼ 
 
 The [unit conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed) table below shows the [United States🇺🇸(US) customary units](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems) that Dec redefines. The values in the first column are approximate [fold changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement) from original to redefined units. A fold change of [1]{.color0} means [0]{.color0} [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared). Identical fold changes indicate [US]{.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units derived from the same Dec and [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI]{.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}) units.
 
-## Unit conversion table {.hiddenheading #uct}
+## Unit conversion tables {.hiddenheading #uct}
 
-{{< include /dec/_kegtable.qmd >}}
+{{< include /dec/_lengthtable.qmd >}}
+
+{{< include /dec/_speedtable.qmd >}}
+
+{{< include /dec/_areatable.qmd >}}
+
+{{< include /dec/_volumetable.qmd >}}
+
+{{< include /dec/_masstable.qmd >}}
 
 ## Miles per hour (mph) {.hiddenheading #mph}
 
@@ -532,5 +542,61 @@ On [[2024]{.color024}[+]{.mono}[285]{.colorD285}]{.tool data-bs-toggle="tooltip"
 - [Yamahata, Christophe](https://observablehq.com/@christophe-yamahata) [2021+119]{.tool data-bs-toggle="tooltip" data-bs-title="June 28, 2022"}. “Great circle: shortest distance between two locations on Earth 🌏.” \${decYearP0}+\${decDateP0}. <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
 - [d'Alembert, Jean le Rond ](https://en.wikipedia.org/wiki/Jean_le_Rond_d%27Alembert#:~:text=French%20mathematician%2C%20mechanician%2C%20physicist%2C%20philosopher%2C%20and%20music%20theorist). 1754. “Decimal.” [_Encyclopédie_](https://en.wikipedia.org/wiki/Encyclopédie#:~:text=a%20general%20encyclopedia%20published%20in%20France%20between%201751%20and%201772), _4_, 670. \${decYearP0}+\${decDateP0}. <https://artflsrv04.uchicago.edu/philologic4.7/encyclopedie0922/navigate/4/3458>.
 :::
+
+For more, see @fig-distmap.
+
+# Glossary {.hiddenheading #glos}
+
+Text with the first footnote[^0].
+
+Text with the second footnote[^1].
+
+Text with the third footnote[^2].
+                      
+Text with the fourth footnote[^3].
+                      
+Text with the fifth footnote[^4].
+            
+Text with the sixth footnote[^5].
+            
+Text with the seventh footnote[^6].
+            
+Text with the eighth footnote[^7].
+
+Text with the ninth footnote[^8].
+
+Text with the tenth footnote[^9].
+
+Text with the eleventh footnote[^10].
+
+Text with the twelfth footnote[^11].
+
+Text with the twelfth footnote[^11].
+
+Text with the twelfth footnote[^11].
+
+Text with the thirteeth footnote[^12].
+
+For more, see @fig-colorwheelcompass.
+
+For more, see @fig-distmap.
+
+[^0]: This is the first footnote (labeled 0).
+[^1]: This is the second footnote.
+[^2]: This is the third footnote.
+[^3]: This is the fourth footnote.
+[^4]: This is the fifth footnote.
+[^5]: This is the sixth footnote.
+[^6]: This is the seventh footnote.
+[^7]: This is the eighth footnote.
+[^8]: This is the ninth footnote.
+[^9]: This is the tenth footnote.
+[^10]: This is the eleventh footnote.
+[^11]: This is the twelfth footnote.
+[^12]: This is the thirteeth footnote.
+
+For more, see @fig-distmap.
+
+For more, see @fig-colorwheelcompass.
 
 {{< include /dec/_index.qmd >}}

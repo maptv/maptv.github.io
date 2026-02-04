@@ -239,7 +239,7 @@ div > form > div > input[type="range"] {
   fill: #f00;
 }
 
-svg#lefthand, svg#cubiczem, #iobpiano svg, #colorwheelcompass svg, .colorcomparer svg, svg.topplot, svg.btmplot {
+svg#lefthand, svg#cubiczem, #iobpiano svg, #fig-colorwheelcompass svg, .colorcomparer svg, svg.topplot, svg.btmplot {
   background: #000 !important;
 }
 
@@ -287,15 +287,15 @@ g#decdate > rect, g#gregdate > rect {
   color: #06f;
 }
 
-div#colorwheelcompass text {
+div#fig-colorwheelcompass text {
   fill: white;
 }
 
-div#colorwheelcompass path, div#colorwheelcompass circle {
+div#fig-colorwheelcompass path, div#fig-colorwheelcompass circle {
   stroke: white;
 }
 
-div#colorwheelcompass path#piepath {
+div#fig-colorwheelcompass path#piepath {
   stroke: black;
 }
 

@@ -194,7 +194,7 @@ displayPalette(hsl10.slice(0, 10), {darkMode: true})
 
 ```{ojs}
 //| echo: false
-//| label: colorwheelcompass
+//| label: fig-colorwheelcompass
 //| class: colorcomponent
 // https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
 svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">

@@ -1800,19 +1800,19 @@ hD080 = d3.hsl(piecewiseColor(80 / 365)).h
 hD285 = d3.hsl(piecewiseColor(285 / 365)).h
 fMile = 1.6 / 1.609344
 fInch = 25 / 25.4
-fMiPH = 5 / 3 / 1.609344
-fDrop = 64 / 51
 hIob = d3.hsl(piecewiseColor(1 / .864 % 1)).h
-hMile = d3.hsl(piecewiseColor(fMile % 1)).h
-hMiPH = d3.hsl(piecewiseColor(fMiPH % 1)).h
-hDrop = d3.hsl(piecewiseColor(fDrop % 1)).h
-hInch = d3.hsl(piecewiseColor(fInch % 1)).h
+hDrop = d3.hsl(piecewiseColor(64 / 51 % 1)).h
 hMass = d3.hsl(piecewiseColor(448 / 453.59237 % 1)).h
-hPint = d3.hsl(piecewiseColor(4 / 3.785411784 % 1)).h
-hFlOz = d3.hsl(piecewiseColor(32 / 29.5735296875 % 1)).h
-hAcre = d3.hsl(piecewiseColor(247.1053814672 / 250 % 1)).h
-hSqMi = d3.hsl(piecewiseColor(fMile**2 % 1)).h
+hGall = d3.hsl(piecewiseColor(3.584 / 3.785411784 % 1)).h
+hBarr = d3.hsl(piecewiseColor(128 / 119.24 % 1)).h
+hCara = d3.hsl(piecewiseColor(192 / 200 % 1)).h
+hAvOz = d3.hsl(piecewiseColor(32 / 28.349523125  % 1)).h
+hFlOz = d3.hsl(piecewiseColor(32 / 29.5735295625 % 1)).h
+hInch = d3.hsl(piecewiseColor(fInch % 1)).h
 hSqIn = d3.hsl(piecewiseColor(fInch**2 % 1)).h
+hCuIn = d3.hsl(piecewiseColor(fInch**3 % 1)).h
+hMile = d3.hsl(piecewiseColor(fMile % 1)).h
+hSqMi = d3.hsl(piecewiseColor(fMile**2 % 1)).h
 bcHue = (xetHue[1] + xetHue[2]) / 2
 ddsHue = (xetHue[4] + xetHue[5]) / 2
 dseHue = (xetHue[5] + xetHue[6]) / 2
@@ -2535,6 +2535,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorCuIn {
+  background: hsl(${hCuIn} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hCuIn}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .colorDrop {
   background: hsl(${hDrop} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hDrop}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -2551,17 +2559,33 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.colorMiPH {
-  background: hsl(${hMiPH} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hMiPH}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+.colorCara {
+  background: hsl(${hCara} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hCara}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
-.colorPint {
-  background: hsl(${hPint} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hPint}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+.colorGall {
+  background: hsl(${hGall} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hGall}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorBarr {
+  background: hsl(${hBarr} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hBarr}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorAvOz {
+  background: hsl(${hAvOz} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hAvOz}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2570,14 +2594,6 @@ html`
 .colorFlOz {
   background: hsl(${hFlOz} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hFlOz}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.colorAcre {
-  background: hsl(${hAcre} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hAcre}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -2637,7 +2653,7 @@ button#rstbtn:hover {
   text-decoration: none;
   transform: translateY(-1px);
 }
-div#distmap {
+div#fig-distmap {
   margin-bottom: -28px;
 }
 #sizeinput #speedinput #yawinput #pitchinput #rollinput {
@@ -2689,7 +2705,7 @@ div#hueslider input[type="range"], div#satslider input[type="range"], div#litsli
   display: flex;
   justify-content: center;
 }
-div#distmap {
+div#fig-distmap {
   display: flex;
   justify-content: center;
   overflow-x: visible;
@@ -2862,6 +2878,19 @@ div.cell-output-display:has(svg#csharpchart-mermaid.flowchart.mermaid-js) {
 }
 div.cell#csharpstaff * {
   overflow: visible;
+}
+ol > li {
+    counter-increment: listNumbering;
+    list-style: none;
+}
+ol > li > p:before {
+    content: counter(listNumbering) '. ';
+}
+ol > li > p > a.footnote-back {
+    display: none;
+}
+ol > li#fn1 {
+    counter-set: listNumbering 0;
 }
 </style>
 ```
