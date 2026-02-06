@@ -40,7 +40,7 @@ website:
       target: _blank
     - icon: envelope-at
       href: mailto:maptv@ireni.co
-    collapse-level: 1
+    collapse-level: 2
     contents:
     - icon: house-door
       text: Home
@@ -51,35 +51,36 @@ website:
     - icon: file-earmark-person
       text: CV/Résumé
       href: cv/index.qmd
-    - icon: grid-3x3-gap
-      text: Article List
+    - section: Article List
+      icon: grid-3x3-gap
       href: list/index.qmd
-    # - section: Art
-    #   icon: brush
-    # - section: Cloud
-    #   icon: cloud
-    - section: Dec
-      icon: arrow-repeat
-      href: dec/index.qmd
       contents:
-      - text: Date
-        icon: calendar-date
-        href: dec/date/index.qmd
-      - text: Time
-        icon: clock
-        href: dec/time/index.qmd
-      - text: Snap
-        icon: postage
-        href: dec/snap/index.qmd
-      - text: Span
-        icon: calendar-range
-        href: dec/span/index.qmd
-    - section: History
-      icon: hourglass-split
-      contents:
-        text: World War 2
-        icon: 2-square
-        href: history/ww2/index.qmd
+      # - section: Art
+      #   icon: brush
+      # - section: Cloud
+      #   icon: cloud
+      - section: Dec
+        icon: arrow-repeat
+        href: dec/index.qmd
+        contents:
+        - text: Date
+          icon: calendar-date
+          href: dec/date/index.qmd
+        - text: Time
+          icon: clock
+          href: dec/time/index.qmd
+        - text: Snap
+          icon: postage
+          href: dec/snap/index.qmd
+        - text: Span
+          icon: calendar-range
+          href: dec/span/index.qmd
+      - section: History
+        icon: hourglass-split
+        contents:
+          text: World War 2
+          icon: 2-square
+          href: history/ww2/index.qmd
           # - section: Machine Learning
           #   icon: robot
           #   contents:
@@ -91,39 +92,39 @@ website:
           #     href: ml/llm/index.qmd
           # - section: Science
           #   icon: flask
-    - section: Software
-      icon: laptop
-      contents:
-      # - icon: gear
-      #   text: Setup
-      - icon: git
-        text: Git
-        href: git/index.qmd
-      - icon: journal-richtext
-        text: Jupyter
-        href: jupyter/index.qmd
-      - icon: 0-circle
-        text: Observable
-        href: observable/index.qmd
-      - icon: p-square
-        text: Positron
-        href: positron/index.qmd
-      - section: Quarto
-        icon: markdown
-        href: quarto/index.qmd
+      - section: Software
+        icon: laptop
         contents:
-        - text: Filter
-          icon: funnel
-          href: quarto/filter/index.qmd
-        - text: Include
-          icon: file-earmark-plus
-          href: quarto/include/index.qmd
-        - text: Script
-          icon: file-code
-          href: quarto/script/index.qmd
-      - icon: file-slides
-        text: Reveal
-        href: reveal/index.qmd
+        # - icon: gear
+        #   text: Setup
+        - icon: git
+          text: Git
+          href: git/index.qmd
+        - icon: journal-richtext
+          text: Jupyter
+          href: jupyter/index.qmd
+        - icon: 0-circle
+          text: Observable
+          href: observable/index.qmd
+        - icon: p-square
+          text: Positron
+          href: positron/index.qmd
+        - section: Quarto
+          icon: markdown
+          href: quarto/index.qmd
+          contents:
+          - text: Filter
+            icon: funnel
+            href: quarto/filter/index.qmd
+          - text: Include
+            icon: file-earmark-plus
+            href: quarto/include/index.qmd
+          - text: Script
+            icon: file-code
+            href: quarto/script/index.qmd
+        - icon: file-slides
+          text: Reveal
+          href: reveal/index.qmd
   twitter-card: true
   page-footer:
     background: light
@@ -170,9 +171,6 @@ format:
     mermaid:
       theme: default
   commonmark: default
-citation:
-  accessed: 2026
-  issued: 2026
 title-block-banner: false
 execute:
   freeze: true

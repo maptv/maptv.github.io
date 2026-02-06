@@ -1,7 +1,12 @@
 document.querySelectorAll('a.quarto-xref').forEach(ref => {
+  const href = ref.getAttribute('href') || '';
+
+  // Skip section cross references (e.g. #sec-*)
+  if (/#sec-/.test(href)) return;
+
   const text = ref.textContent;
 
-  // Match the last number in the text (e.g., "Figure 12")
+  // Find the last number in the text
   const match = text.match(/(\d+)(?!.*\d)/);
   if (!match) return;
 
@@ -10,6 +15,6 @@ document.querySelectorAll('a.quarto-xref').forEach(ref => {
 
   const newNum = currentNum - 1;
 
-  // Replace only that number
+  // Replace only the final number
   ref.textContent = text.replace(/(\d+)(?!.*\d)/, newNum);
 });

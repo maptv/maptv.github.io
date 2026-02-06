@@ -22,17 +22,30 @@ p:has(.relative) {
   margin-bottom: -5px;
   text-align: center;
 }
-div.zerobased > ol {
+
+ol[type="1"] {
   list-style-type: none;
-  counter-reset: listitem -1;
+  counter-reset: listnum -1;
+}
+ol[type="1"] li {
+  counter-increment: listnum;
+}
+ol[type="1"] li::before {
+  content: counter(listnum) ". ";
 }
 
-div.zerobased > ol li {
-  counter-increment: listitem;
+ol > li#fn0 {
+    counter-set: footnum 0;
 }
-
-div.zerobased > ol li::before {
-  content: counter(listitem) ". ";
+ol > li[id*="fn"] {
+    counter-increment: footnum;
+    list-style: none;
+}
+ol > li[id*="fn"] > p:before {
+    content: counter(footnum) '. ';
+}
+ol > li[id*="fn"] > p > a.footnote-back {
+    display: none;
 }
 
 /* h1.title { */
@@ -225,4 +238,9 @@ div > form > label {
 
 g.node g.label:has(span.nodeLabel) * {
   overflow: visible;
+}
+
+#quarto-appendix.default {
+    border-top: none;
+    margin-top: -10px;
 }

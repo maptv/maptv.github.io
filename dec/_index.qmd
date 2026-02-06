@@ -2841,7 +2841,7 @@ img#zModu {
 #chorus > div {
   overflow: clip;
 }
-#citelist ul li {
+#citelist ol li {
   overflow-x: scroll;
   white-space: nowrap;
   list-style-position: inside;
@@ -2878,19 +2878,6 @@ div.cell-output-display:has(svg#csharpchart-mermaid.flowchart.mermaid-js) {
 }
 div.cell#csharpstaff * {
   overflow: visible;
-}
-ol > li {
-    counter-increment: listNumbering;
-    list-style: none;
-}
-ol > li > p:before {
-    content: counter(listNumbering) '. ';
-}
-ol > li > p > a.footnote-back {
-    display: none;
-}
-ol > li#fn1 {
-    counter-set: listNumbering 0;
 }
 </style>
 ```

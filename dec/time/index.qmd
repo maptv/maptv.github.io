@@ -1,5 +1,5 @@
 ---
-title: Dec Time
+title: Dec time
 author:
   - name: Martin Laptev
     url: https://maptv.github.io

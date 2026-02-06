@@ -1,5 +1,5 @@
 ---
-title: Dec Date
+title: Dec date
 author:
   - name: Martin Laptev
     url: https://maptv.github.io
