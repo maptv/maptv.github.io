@@ -1,39 +1,58 @@
 # Dec
 Martin Laptev
-2025+329
+2025+342
 
-- [Dec measurement system](#dec)
-  - [Longitude latitude course](#llc)
-  - [Distance speed duration](#dsd)
-  - [Interactive world map](#map)
-  - [Color wheel compass](#cwc)
-  - [Hue saturation lightness (hsl)](#hsl)
-  - [Course color table](#cct)
-  - [Red green blue (rgb)](#rgb)
-  - [Dec time zones](#dtz)
-  - [Dates and times](#dat)
-  - [Millenium Year Day](#myd)
-  - [Day of dek (dod)](#dod)
-  - [Zone equatorial meter (zem)](#zem)
-  - [Length area volume](#lav)
-  - [Typical seat height](#tsh)
-  - [Perpetually setting sun](#pss)
-  - [Speed of sound](#sos)
-  - [Centimilliday (cmd)](#cmd)
-  - [Beats per milliday (bpm)](#bpm)
-  - [Frequency period wavelength](#fpw)
-- [Ten equal temperament (Xet)](#xet)
-  - [Color sound table](#cst)
-  - [Octave + note = tone](#ont)
-- [US customary units](#ucu)
-  - [Unit conversion table](#uct)
-  - [Miles per hour (mph)](#mph)
-  - [Drop wineglass keg](#dwk)
-  - [Body mass index (bmi)](#bmi)
-  - [Centizem centimeter inch](#cci)
+- [<span class="toc-section-number">0</span> Dec measurement
+  system](#sec-dec)
+- [<span class="toc-section-number">1</span> Longitude latitude
+  course](#sec-llc)
+- [<span class="toc-section-number">2</span> Distance speed
+  duration](#dsd)
+- [<span class="toc-section-number">3</span> Interactive world
+  map](#map)
+- [<span class="toc-section-number">4</span> Color wheel compass](#cwc)
+  - [<span class="toc-section-number">5.1</span> Hue saturation
+    lightness (hsl)](#hsl)
+  - [<span class="toc-section-number">5.2</span> Course color
+    table](#cct)
+- [<span class="toc-section-number">5</span> Red green blue (rgb)](#rgb)
+- [<span class="toc-section-number">6</span> Dec time zones](#dtz)
+- [<span class="toc-section-number">7</span> Dates and times](#dat)
+- [<span class="toc-section-number">8</span> Millenium Year Day](#myd)
+- [<span class="toc-section-number">9</span> Day of dek (dod)](#dod)
+- [<span class="toc-section-number">10</span> Zone equatorial meter
+  (zem)](#zem)
+- [<span class="toc-section-number">11</span> Length area volume](#lav)
+- [<span class="toc-section-number">12</span> Typical seat height](#tsh)
+- [<span class="toc-section-number">13</span> Perpetually setting
+  sun](#pss)
+- [<span class="toc-section-number">14</span> Speed of sound](#sos)
+- [<span class="toc-section-number">15</span> Centimilliday (cmd)](#cmd)
+- [<span class="toc-section-number">16</span> Beats per milliday
+  (bpm)](#bpm)
+- [<span class="toc-section-number">17</span> Frequency period
+  wavelength](#fpw)
+- [<span class="toc-section-number">18</span> Ten equal temperament
+  (Xet)](#xet)
+- [<span class="toc-section-number">19</span> Color sound table](#cst)
+- [<span class="toc-section-number">20</span> Octave note tone](#ont)
+- [<span class="toc-section-number">21</span> Color and sound](#cas)
+- [<span class="toc-section-number">22</span> US customary units](#ucu)
+- [<span class="toc-section-number">23</span> Unit conversion
+  tables](#uct)
+- [<span class="toc-section-number">24</span> Miles per hour
+  (mph)](#mph)
+- [<span class="toc-section-number">25</span> Drop wineglass keg](#dwk)
+- [<span class="toc-section-number">26</span> Body mass index
+  (bmi)](#bmi)
+- [<span class="toc-section-number">27</span> Centizem centimeter
+  inch](#cci)
+- [<span class="toc-section-number">28</span> Zem and taur](#zat)
 - [Summary](#tldr)
 - [Next](#next)
 - [Cite](#cite)
+- [Observable notebooks](#obs)
+- [Glossary](#glos)
 
 <div id="firstnav">
 
@@ -79,14 +98,14 @@ are angles📐and thus can, and should😄, be measured in turns instead of
 data-bs-title="radians">rad</span> or <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="degrees">°</span>.
 
-## Longitude latitude course
+# Longitude latitude course
 
 Dec measures
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda)
 in
 [parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallels">p</span>),
+data-bs-title="parallels">λ</span>),
 [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi)
 in
 [meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)
@@ -97,7 +116,7 @@ data-bs-title="meridians">m</span>), and compass🧭directions in
 data-bs-title="roses">r</span>). To measure certain kinds of angles📐,
 Dec uses specific types of turns with distinct names like
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">p</span>, <span class="tool"
+data-bs-title="parallel">λ</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="meridian">m</span>, or
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="rose">r</span>. All turn types can be combined with
@@ -126,7 +145,7 @@ The table below provides the current longitude in <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a parallel">milliparallels</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallels">mp</span>) and latitude in
+data-bs-title="milliparallels">mλ</span>) and latitude in
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a meridian">millimeridians</span>
 (<span class="tool" data-bs-toggle="tooltip"
@@ -185,7 +204,7 @@ data-bs-title="milliroses">mr</span> are <span class="color0">0</span>
 (South) from Point <span class="point1">1</span> to
 <span class="point0">0</span>.
 
-## Distance speed duration
+# Distance speed duration
 
 Dec measures distance in
 [taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
@@ -254,7 +273,7 @@ data-bs-title="milliomegars">mv</span> = ${traveltimeHsl1}
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</span>.
 
-## Interactive world map
+# Interactive world map
 
 <div class="marginInputs">
 
@@ -329,7 +348,7 @@ table = createTable([
 
 ``` {ojs}
 //| echo: false
-//| label: distmap
+//| label: fig-distmap
 // https://observablehq.com/@d3/solar-terminator
 // https://observablehq.com/@mbostock/time-zones
 viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].childNodes[0].innerText), turn2degr(table.rows[1].cells[2].childNodes[0].innerText % 250)], [turn2long(table.rows[2].cells[1].childNodes[0].innerText), turn2degr(table.rows[2].cells[2].childNodes[0].innerText % 250)], projection], [width, height * mapsize / 100])
@@ -341,7 +360,7 @@ viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].chil
 
 </div>
 
-## Color wheel compass
+# Color wheel compass
 
 ``` {ojs}
 //| echo: false
@@ -539,7 +558,7 @@ displayPalette(hsl10.slice(0, 10), {darkMode: true})
 
 ``` {ojs}
 //| echo: false
-//| label: colorwheelcompass
+//| label: fig-colorwheelcompass
 //| class: colorcomponent
 // https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors
 svg`<svg width="${size}" height="${size}" viewBox="${-size/2} ${-size/2} ${size} ${size}">
@@ -724,7 +743,7 @@ bar](https://observablehq.com/@paavanb/progressive-color-picker) inputs
 beneath it or change the course from Point <span class="point0">0</span>
 to <span class="point1">1</span> on the map🗺️.
 
-## Red green blue (rgb)
+# Red green blue (rgb)
 
 The table beneath the hue bar compares the current Point
 <span class="point0">0</span> to <span class="point1">1</span> course in
@@ -818,7 +837,7 @@ tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20betwee
 of the Earth🌏(<span class="color065">65</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="milliturns">mt</span>).
 
-## Dec time zones
+# Dec time zones
 
 Enable the “Grid” toggle✅input to see Latitudes
 [-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
@@ -850,7 +869,7 @@ numbered <span class="color0">0</span> to <span class="color9">9</span>.
 Based on its current <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a parallel">deciparallel</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciparallel">dp</span>) longitude, ${point0lHsl}, Point
+data-bs-title="deciparallel">dλ</span>) longitude, ${point0lHsl}, Point
 <span class="point0">0</span> on the map🗺️above is in Zone
 ${point0zHsl}. The number assigned to each time zone is its offset from
 Zone <span class="color0">0</span> in <span class="tool"
@@ -878,10 +897,10 @@ data-bs-title="meridian">m</span> is always <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</span> long, the length of a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="parallel">p</span> [varies by
+data-bs-toggle="tooltip" data-bs-title="parallel">λ</span> [varies by
 latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude).
 At the Equator, 1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">p</span> is <span class="tool"
+data-bs-title="parallel">λ</span> is <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</span> long. At the
@@ -889,10 +908,10 @@ data-bs-title="taur">c</span> long. At the
 or
 [South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
 Pole, the length of a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">p</span> is zero. The approximate
+data-bs-title="parallel">λ</span> is zero. The approximate
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</span> length of a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="parallel">p</span> is the
+data-bs-toggle="tooltip" data-bs-title="parallel">λ</span> is the
 [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
 of its latitude in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="meridians">m</span>, <span class="tool"
@@ -913,7 +932,7 @@ viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: 
 viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine input", value: "turns"})
 ```
 
-## Dates and times
+# Dates and times
 
 Dec dates consist of a “year of era” (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="year of era">yoe</span>) and a
@@ -932,7 +951,7 @@ Color🎨labels🏷️can help us to visually
 the date and time that make up a Dec snap🫰:
 ${decYearP0hsl1}<span class="mono">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span class="mono">-</span><span class="color0">0</span>.
 
-## Millenium Year Day
+# Millenium Year Day
 
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">Yoe</span> color🎨labels🏷️are based on
@@ -966,7 +985,7 @@ data-bs-toggle="tooltip" data-bs-title="millidays">md</span>) on
 data-bs-title="August 31">Day 183</span> in [leap
 years](https://en.wikipedia.org/wiki/Leap_year#:~:text=a%20calendar%20year%20that%20contains%20an%20additional%20day).
 
-## Day of dek (dod)
+# Day of dek (dod)
 
 Each <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> also has two components. The
@@ -993,7 +1012,7 @@ data-bs-toggle="tooltip" data-bs-title="group of ten days">Dek</span>
 ${decDekP0hsl} and <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Day of dek">Dod</span> ${decDodP0hsl}.
 
-## Zone equatorial meter (zem)
+# Zone equatorial meter (zem)
 
 <div id="zemmodulor" class="column-page-right lighthouse"
 fig-align="center" style="text-align:center;font-size:.825rem;">
@@ -1536,7 +1555,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 
 </div>
 
-## Length area volume
+# Length area volume
 
 You can approximate a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span> (<span class="tool"
@@ -1908,7 +1927,7 @@ id="cubiclabel">Dimensions.com</a>
 
 </div>
 
-## Typical seat height
+# Typical seat height
 
 According to [dimensions.com](https://www.dimensions.com), 115
 <span class="tool" data-bs-toggle="tooltip"
@@ -1929,7 +1948,7 @@ data-bs-title="a hundredth of a turn">centiturn</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="centiturn">ct</span>) angles📐.
 
-## Perpetually setting sun
+# Perpetually setting sun
 
 In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, <span class="tool"
 data-bs-toggle="tooltip"
@@ -1944,7 +1963,7 @@ airplane✈️towards the setting sun☀️, we would be able to perpetually fly
 [into the
 sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
-## Speed of sound
+# Speed of sound
 
 To travel fast enough for a perpetual sunset🌅, the airplane✈️would need
 to surpass the [speed of
@@ -1979,7 +1998,7 @@ we have to exit the highway🛣️. To ensure we do not miss our exit, we can
 periodically check a countdown of the remaining <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="zems">z</span>: ${zLeft}.
 
-## Centimilliday (cmd)
+# Centimilliday (cmd)
 
 Dec refers to a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a hundred thousandth of a day">centimilliday</span>
@@ -2033,7 +2052,7 @@ data-bs-toggle="tooltip" data-bs-title="centiday">cd</span> is
 data-bs-title="beat">b</span> is <span class="color864">86.4%</span> of
 a second.
 
-## Beats per milliday (bpm)
+# Beats per milliday (bpm)
 
 A [normal resting
 heart❤️rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=heart%20rate%20is-,60–100%20bpm,-.%20An%20ultra%2Dtrained)
@@ -2061,7 +2080,7 @@ data-bs-title="inverse beat">ib</span>), which is
 times more frequent than a
 [Hertz](https://en.wikipedia.org/wiki/Hertz#:~:text=one%20event%20(or%20cycle)).
 
-## Frequency period wavelength
+# Frequency period wavelength
 
 Dec uses <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="inverse beats">ib</span>, <span class="tool"
@@ -2146,8 +2165,8 @@ data-bs-title="inverse beats">ib</span>, the limits of human hearing can
 be expressed in musical
 [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</span>). We can use the equations below to
-convert between <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</span>). The equations below convert between
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="inverse beat">ib</span> and <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="steps">s</span>. Frequencies
 less than 12.5 <span class="tool" data-bs-toggle="tooltip"
@@ -2271,7 +2290,7 @@ data-bs-title="approximately">~</span><span class="color26div300">87</span>
 data-bs-title="millisteps">ms</span> between Notes
 <span class="color5">5</span> and <span class="colorF">F</span>.
 
-## Color sound table
+# Color sound table
 
 <div id="colortable">
 
@@ -2371,7 +2390,7 @@ data-bs-title="twelve equal temperament">12ET</span></strong>🎶</th>
 
 </div>
 
-## Octave + note = tone
+# Octave note tone
 
 The image above applies Dec color🎨labels🏷️to one
 [octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
@@ -2870,6 +2889,23 @@ w: Turn the~ ~beat _ ~a- ~round
 abc(chocode, true)
 ```
 
+# Color and sound
+
+In his <span class="color704">1704</span> book entitled
+[Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[1],
+[Isaac
+Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a)
+presented the first
+[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=Newton's%20asymmetric%20color%20wheel%20based%20on%20musical%20intervals)
+and linked its colors🎨to musical notes. On <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="May 20, 2025"><span class="color025">2025</span><span class="mono">+</span><span class="colorD080">080</span></span>,
+I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm)
+by [Clint Goss](https://www.clintgoss.com)[2], which presents a method
+of connecting musical notes to colors🎨via their frequencies. The note
+and color🎨pairs in that article are similar to those of the Dechromatic
+scale.
+
 # US customary units
 
 The [unit
@@ -2888,13 +2924,217 @@ Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%2
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span>) units.
 
-## Unit conversion table
+# Unit conversion tables
 
 <table>
 <colgroup>
-<col style="width: 40%" />
-<col style="width: 29%" />
-<col style="width: 30%" />
+<col style="width: 34%" />
+<col style="width: 27%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="US customary units">US</span></strong></th>
+<th><strong>Dec</strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Inch">inches</a></td>
+<td>0.0625 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>0.025 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Palm_(unit)">palms</a></td>
+<td>0.1875 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>0.075 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Hand_(unit)">hands</a></td>
+<td>0.25 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>0.1 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Shaftment">shaftment</a></td>
+<td>0.375 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>0.15 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorMile">0.9942</span> <a
+href="https://en.wikipedia.org/wiki/Link_(unit)">links</a></td>
+<td>0.5 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>0.2 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Span_(unit)">spans</a></td>
+<td>0.5625 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>0.225 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Foot_(unit)">feet</a></td>
+<td>0.75 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>0.3 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Cubit">cubits</a></td>
+<td>1.125 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>0.45 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Pace_(unit)">steps</a></td>
+<td>1.875 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>0.75 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Yard">yards</a></td>
+<td>2.25 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>0.9 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Fathom">fathoms</a></td>
+<td>4.5 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>1.8 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="color0">1</span> <a
+href="https://en.wikipedia.org/wiki/Horse_length">horse length</a></td>
+<td>6 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>2.4 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorMile">0.9942</span> <a
+href="https://en.wikipedia.org/wiki/Rod_(unit)">rods</a></td>
+<td>12.5 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>5 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorMile">0.9942</span> <a
+href="https://en.wikipedia.org/wiki/Chain_(unit)">chains</a></td>
+<td>50 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>20 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorMile">0.9942</span> <a
+href="https://en.wikipedia.org/wiki/Furlong">furlongs</a></td>
+<td>500 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>200 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorMile">0.9942</span> <a
+href="https://en.wikipedia.org/wiki/Mile">miles</a></td>
+<td>4000 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>1600 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+<tr>
+<td><span class="colorMile">0.9942</span> <a
+href="https://en.wikipedia.org/wiki/League_(unit)">leagues</a></td>
+<td>12000 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span></td>
+<td>4800 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters">m</span></td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 27%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="US customary units">US</span></strong></th>
+<th><strong>Dec</strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="colorMile">0.9942</span> <a
+href="https://en.wikipedia.org/wiki/Miles_per_hour">miles per
+hour</a></td>
+<td>0.96 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegars">mv</span></td>
+<td>1.6 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="kilometers per hour"><span
+class="math inline">$\text{km}\over\text{hour}$</span></span></td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Inch_per_second">inches per
+second</a></td>
+<td>0.054 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegars">mv</span></td>
+<td>0.025 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters per second"><span
+class="math inline">$\text{m}\over\text{second}$</span></span></td>
+</tr>
+<tr>
+<td><span class="colorInch">0.9843</span> <a
+href="https://en.wikipedia.org/wiki/Foot_per_second">feet per
+second</a></td>
+<td>0.648 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegars">mv</span></td>
+<td>0.3 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="meters per second"><span
+class="math inline">$\text{m}\over\text{second}$</span></span></td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 31%" />
+<col style="width: 35%" />
 </colgroup>
 <thead>
 <tr>
@@ -2909,184 +3149,61 @@ data-bs-title="International System of Units">SI</span></strong></th>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_inch">square inches</a></td>
-<td><span class="math inline">$1\over256$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="square zems">z<sup>2</sup></span></td>
+<td>0.00390625 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span></td>
 <td>625 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square millimeters">mm<sup>2</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_foot">square feets</a></td>
-<td><span class="math inline">$9\over16$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="square zems">z<sup>2</sup></span></td>
+<td>0.5625 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span></td>
 <td>9 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square decimeters">dm<sup>2</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_yard">square yards</a></td>
-<td><span class="math inline">$81\over16$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="square zems">z<sup>2</sup></span></td>
+<td>11.390625 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span></td>
 <td>81 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square decimeters">dm<sup>2</sup></span></td>
 </tr>
 <tr>
-<td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Inch#:~:text=defined%20as%20exactly-,25.4%C2%A0mm">inches</a></td>
-<td><span class="math inline">$1\over16$</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zems">z</span></td>
-<td>25 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeters">mm</span></td>
-</tr>
-<tr>
-<td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Foot_(unit)#:~:text=equal%20to%20exactly-,0.3048%20meters">feet</a></td>
-<td><span class="math inline">$3\over4$</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zems">z</span></td>
-<td>3 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decimeters">dm</span></td>
-</tr>
-<tr>
-<td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Yard#:~:text=as%20exactly-,0.9144%C2%A0meter">yards</a></td>
-<td><span class="math inline">$9\over4$</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zems">z</span></td>
-<td>9 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decimeters">dm</span></td>
-</tr>
-<tr>
-<td><span class="colorMass">0.9877</span> <a
-href="https://en.wikipedia.org/wiki/Grain_(unit)">grains</a></td>
-<td>1 grain</td>
-<td>64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milligrams">mg</span></td>
-</tr>
-<tr>
-<td><span class="colorMass">0.9877</span> <a
-href="https://en.wikipedia.org/wiki/Pound_(mass)#:~:text=0.45359237%C2%A0kilograms">pounds</a></td>
-<td>7 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of grains">kilograins</span></td>
-<td>448 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="grams">g</span></td>
-</tr>
-<tr>
-<td><span class="colorAcre">0.9884</span> <a
+<td><span class="colorSqMi">0.9884</span> <a
 href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
-<td><span class="math inline">$1\over40$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="square kilozems">kz<sup>2</sup></span></td>
-<td><span class="math inline">$1\over250$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="square kilometers">km<sup>2</sup></span></td>
+<td>25000 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span></td>
+<td>0.4 <a href="https://en.wikipedia.org/wiki/Hectare">hectare</a></td>
 </tr>
 <tr>
-<td><span class="colorAcre">0.9884</span> <a
+<td><span class="colorSqMi">0.9884</span> <a
 href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
-<td>16 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square kilozems">kz<sup>2</sup></span></td>
-<td><span class="math inline">$64\over25$</span> <span class="tool"
-data-bs-toggle="tooltip"
+<td>16000000 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z<sup>2</sup></span></td>
+<td>2.56 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="square kilometers">km<sup>2</sup></span></td>
 </tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 29%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
 <tr>
-<td><span class="colorMile">0.9942</span> <a
-href="https://en.wikipedia.org/wiki/Mile#:~:text=units%20as%20exactly-,1%2C609.344%20metres">miles</a></td>
-<td>4 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of zems">kz</span></td>
-<td><span class="math inline">$8\over5$</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="kilometers">km</span></td>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="US customary units">US</span></strong></th>
+<th><strong>Dec</strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span></strong></th>
 </tr>
-<tr>
-<td><span class="colorMiPH">1.0356</span> <a
-href="https://en.wikipedia.org/wiki/Miles_per_hour">miles per
-hour</a></td>
-<td>1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</span></td>
-<td><span class="math inline">$5\over3$</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="kilometers per hour"><span
-class="math inline">$\text{km}\over\text{hour}$</span></span></td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
-<td><span class="math inline">$1\over256$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="cubic zems">z<sup>3</sup></span></td>
-<td>250 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
-<td><span class="math inline">$1\over128$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="cubic zems">z<sup>3</sup></span></td>
-<td>500 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
-<td><span class="math inline">$1\over64$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="cubic zems">z<sup>3</sup></span></td>
-<td>1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="liters">L</span></td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
-<td><span class="math inline">$1\over16$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="cubic zems">z<sup>3</sup></span></td>
-<td>4 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="liters">L</span></td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
-<td>1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z<sup>3</sup></span></td>
-<td>64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="liters">L</span></td>
-</tr>
-<tr>
-<td><span class="colorPint">1.0567</span> <a
-href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
-<td>2 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zems">z<sup>3</sup></span></td>
-<td>128 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="liters">L</span></td>
-</tr>
-<tr>
-<td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
-<td><span class="math inline">$1\over4$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="cubic decizems">dz<sup>3</sup></span></td>
-<td>16 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
-</tr>
-<tr>
-<td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
-<td><span class="math inline">$1\over2$</span> <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="cubic decizems">dz<sup>3</sup></span></td>
-<td>32 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
-</tr>
-<tr>
-<td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Wine_glass#Capacity_measure">wineglasses</a></td>
-<td>1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz<sup>3</sup></span></td>
-<td>64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
-</tr>
+</thead>
+<tbody>
 <tr>
 <td><span class="colorDrop">1.2549</span> <a
 href="https://en.wikipedia.org/wiki/Drop_(unit)">drops</a></td>
@@ -3095,10 +3212,160 @@ data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
 <td>64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="microliters">µL</span></td>
 </tr>
+<tr>
+<td><span class="colorCuIn">0.9535</span> <a
+href="https://en.wikipedia.org/wiki/Cubic_inch">cubic inches</a></td>
+<td>244.140625 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>15.625 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
+<td>250 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>16 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
+<td>500 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>32 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
+</tr>
+<tr>
+<td><span class="colorFlOz">1.0821</span> <a
+href="https://en.wikipedia.org/wiki/Wine_glass#Capacity_measure">wineglasses</a></td>
+<td>1000 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
+</tr>
+<tr>
+<td><span class="colorGall">0.9468</span> <a
+href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
+<td>3500 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>224 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
+</tr>
+<tr>
+<td><span class="colorGall">0.9468</span> <a
+href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
+<td>7000 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>448 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
+</tr>
+<tr>
+<td><span class="colorGall">0.9468</span> <a
+href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
+<td>14000 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>896 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
+</tr>
+<tr>
+<td><span class="colorGall">0.9468</span> <a
+href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
+<td>56000 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>3584 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</span></td>
+</tr>
+<tr>
+<td><span class="colorCuIn">0.9535</span> <a
+href="https://en.wikipedia.org/wiki/Cubic_foot">cubic feet</a></td>
+<td>421875 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>27 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="liters">L</span></td>
+</tr>
+<tr>
+<td><span class="colorBarr">1.0735</span> <a
+href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
+<td>1000000 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="liters">L</span></td>
+</tr>
+<tr>
+<td><span class="colorBarr">1.0735</span> <a
+href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
+<td>2000000 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>128 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="liters">L</span></td>
+</tr>
+<tr>
+<td><span class="colorCuIn">0.9535</span> <a
+href="https://en.wikipedia.org/wiki/Cubic_yard">cubic yards</a></td>
+<td>11390625 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
+<td>729 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="liters">L</span></td>
+</tr>
 </tbody>
 </table>
 
-## Miles per hour (mph)
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 8%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="US customary units">US</span></strong></th>
+<th><strong>Dec</strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="colorMass">0.9877</span> <a
+href="https://en.wikipedia.org/wiki/Grain_(unit)">grains</a></td>
+<td>1 grain</td>
+<td>64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milligrams">mg</span></td>
+</tr>
+<tr>
+<td><span class="colorCara">0.96</span> <a
+href="https://en.wikipedia.org/wiki/Carat_(mass)">carats</a></td>
+<td>3 grains</td>
+<td>192 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="milligrams">mg</span></td>
+</tr>
+<tr>
+<td><span class="colorAvOz">1.1288</span> <a
+href="https://en.wikipedia.org/wiki/Ounce">ounces</a></td>
+<td>500 grains</td>
+<td>32 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="grams">g</span></td>
+</tr>
+<tr>
+<td><span class="colorMass">0.9877</span> <a
+href="https://en.wikipedia.org/wiki/Pound_(mass)">pounds</a></td>
+<td>7000 grains</td>
+<td>448 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="grams">g</span></td>
+</tr>
+<tr>
+<td><span class="colorMass">0.9877</span> <a
+href="https://en.wikipedia.org/wiki/Short_ton">tons</a></td>
+<td>14000000 grains</td>
+<td>896 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="grams">kg</span></td>
+</tr>
+</tbody>
+</table>
+
+# Miles per hour (mph)
 
 Unlike Dec and <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</span>, the
@@ -3113,7 +3380,7 @@ data-bs-title="United States">US</span> customary volume units have
 intuitive names and scale by [powers of
 two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20form%202n%20where%20n%20is%20an%20integer).
 
-## Drop wineglass keg
+# Drop wineglass keg
 
 A square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a thousand zems">kilozem</span> (<span class="tool"
@@ -3212,7 +3479,7 @@ data-bs-title="thousands of grains">kilograins</span> per
 data-bs-title="hexamilliares">x</span> ($\text {kg}\over\text x$) or 25
 kilograms per square meter ($\text {kg}\over\text m^2$).
 
-## Body mass index (bmi)
+# Body mass index (bmi)
 
 A normal <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">BMI</span> ranges from 46.25 to 62.5
@@ -3241,7 +3508,7 @@ viewof kilograins = Inputs.range([0, 10000], {label: "Kilograins", value: 1000, 
 viewof zems = Inputs.range([0, 10], {label: "Zems", value: 4, step: 0.01})
 ```
 
-## Centizem centimeter inch
+# Centizem centimeter inch
 
 <div class="column-page-right" fig-align="left"
 style="text-align:center;font-size:.825rem;">
@@ -3283,6 +3550,42 @@ data-bs-title="decimeters">dm</span>. A <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decimeter">dm</span> is 4 Dec
 inches.
 
+# Zem and taur
+
+In <span class="color788">1788</span>, [Claude Boniface
+Collignon](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution)
+proposed measuring length in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decizems">dz</span> or <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="nanotaurs">nc</span> and
+tracking time in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of ten days">deks</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="millidays">md</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="microdays">µd</span>, and
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="billionths of a day">nanodays</span> (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="nanodays">nd</span>)[3]. On
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="April 9, 2025"><span class="color025">2025</span><span class="mono">+</span><span class="colorD039">039</span></span>,
+while searching for units similar to <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="taur">c</span> and
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</span>, I noticed the definition of a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span>, 1 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="zem">z</span> =
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a hundred millionth">10<sup>-8</sup></span>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</span> = 40 centimeters, in a table of [ten
+possible length
+units](https://www.roma1.infn.it/~dagos/history/sm/node12.html) from a
+<span class="color004">2004</span>
+[arxiv](https://arxiv.org/abs/physics/0412078)
+[article](https://www.roma1.infn.it/~dagos/history/sm/sm.html) entitled
+“Why does the meter beat the second?”[4].
+
 # Summary
 
 This article introduces the Dec measurement system and describes how Dec
@@ -3290,7 +3593,7 @@ uses metric prefixes and the properties of the planet Earth🌍to define
 units based on turns for geographic coordinates, compass🧭directions,
 dates, times, speeds, distances, areas, volumes, and weights. Each unit
 has a unique name, such as <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">p</span>, <span class="tool"
+data-bs-title="parallel">λ</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="meridian">m</span>,
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="rose">r</span>, <span class="tool"
@@ -3345,8 +3648,9 @@ more! If so, dive🤿deeper into Dec [dates](../dec/date) and
 discuss the [Quarto](../quarto) publishing system and how I display Dec
 [dates](../dec/date) in the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information),
-[title block](https://quarto.org/docs/authoring/title-blocks.html), and
-[citation section](#citation) of each article on my website.
+the [article list](../list), and [title
+blocks](https://quarto.org/docs/authoring/title-blocks.html) of my
+website.
 
 <div id="firstnav">
 
@@ -3365,202 +3669,247 @@ style="width:9.64in;height:2.31in" />
 
 # Cite
 
-Please support Dec by citing it as shown at the bottom of this article.
-Listed below are citations for the [Observable](http://observablehq.com)
-notebooks that I adapted into the map🗺️, color🎨wheel compass🧭, and
-other visualizations above. The list also includes citations for three
-works that predate the [French
-Revolution](https://en.wikipedia.org/wiki/French_Revolution#:~:text=a%20period%20of%20political%20and%20societal%20change%20in%20France%20which%20began%20with%20the%20Estates%20General%20of%201789%20and%20ended%20with%20the%20Coup%20of%2018%20Brumaire%20on%209%20November%201799)
-and three more recent articles published on websites.
-
-In his <span class="color704">1704</span> book entitled
-[Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton),
-[Isaac
-Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a)
-presented the first
-[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=Newton's%20asymmetric%20color%20wheel%20based%20on%20musical%20intervals)
-and linked its colors🎨to musical notes. On <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="May 20, 2025"><span class="color025">2025</span><span class="mono">+</span><span class="colorD080">080</span></span>,
-I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm)
-by [Clint Goss](https://www.clintgoss.com), which presents a method of
-connecting musical notes to colors🎨via their frequencies. The note and
-color🎨pairs in that article are similar to those of the Dechromatic
-scale.
-
-In <span class="color754">1754</span>, [Jean le Rond
-d’Alembert](https://en.wikipedia.org/wiki/Jean_le_Rond_d%27Alembert#:~:text=French%20mathematician%2C%20mechanician%2C%20physicist%2C%20philosopher%2C%20and%20music%20theorist)
-lauded the benefits of
-[decimalisation](https://en.wikipedia.org/wiki/Decimalisation#:~:text=t-,he%20conversion%20of%20a%20system%20of%20currency%20or%20of%20weights%20and%20measures%20to%20units%20related%20by%20powers%20of%2010).
-In <span class="color788">1788</span>, [Claude Boniface
-Collignon](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution)
-proposed measuring length in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decizems">dz</span> or <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="nanotaurs">nc</span> and
-tracking time in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of ten days">deks</span>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>,
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</span>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="microdays">µd</span>, and
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="billionths of a day">nanodays</span> (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="nanodays">nd</span>). On
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="April 9, 2025"><span class="color025">2025</span><span class="mono">+</span><span class="colorD039">039</span></span>,
-I saw the definition of a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</span>, 1 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="zem">z</span> =
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a hundred millionth">10<sup>-8</sup></span>
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</span> = 40 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="centimeters">cm</span>, in a
-table of [ten possible length
-units](https://www.roma1.infn.it/~dagos/history/sm/node12.html) from a
-<span class="color004">2004</span>
-[arxiv](https://arxiv.org/abs/physics/0412078)
-[article](https://www.roma1.infn.it/~dagos/history/sm/sm.html).
-
-The fundamental properties of Dec dates are defined by algorithms
-developed by [Howard Hinnant](https://howardhinnant.github.io) and
-described in his <span class="color021">2021</span> article entitled
+Of the several different [bibliography file
+formats](https://pandoc.org/MANUAL.html#specifying-bibliographic-data)
+supported by [Quarto](https://quarto.org), I recommend storing
+[citations](https://en.wikipedia.org/wiki/Citation#:~:text=a%20reference%20to%20a%20source)
+in
+[yaml](https://en.wikipedia.org/wiki/YAML#:~:text=a%20human%2Dreadable%20data%20serialization%20language)
+files. With the `bibliography.yml` file shown below, you can cite this
+article and the <span class="color021">2021</span> article entitled
 [<span class="mono under">`chrono`</span>-Compatible Low-Level Date
-Algorithms](https://howardhinnant.github.io/date_algorithms.html). On
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="December 11, 2024"><span class="color024">2024</span><span class="mono">+</span><span class="colorD285">285</span></span>,
-I found a <span class="color014">2014</span> article which proposed a
-[decimal
-time](https://en.wikipedia.org/wiki/Decimal_time#:~:text=the%20representation%20of%20the%20time%20of%20day%20using%20units%20which%20are%20decimally%20related)
-system with twenty time zones, each five <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="centidays">cd</span> wide, based
-on [Longitude
-05](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England)
-(<span class="color050">50</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="milliparallels">mp</span>).
+Algorithms](https://howardhinnant.github.io/date_algorithms.html) in
+which [Howard Hinnant](https://howardhinnant.github.io) describes the
+algorithms that serve as the foundation of Dec dates (Hinnant 2023+185).
+
+<div class="code-with-filename">
+
+**bibliography.yml**
+
+``` yml
+---
+references:
+- id: laptev2025
+  author:
+    - family: Laptev
+      given: Martin
+  issued:
+    literal: 2025+342
+  title: Dec
+  type: article
+  URL: https://howardhinnant.github.io/date_algorithms.html
+- id: hinnant2021
+  author:
+    - family: Hinnant
+      given: Howard
+  issued:
+    literal: 2021+183
+  title: chrono-Compatible Low-Level Date Algorithms
+  type: article
+  URL: https://howardhinnant.github.io/date_algorithms.html
+...
+```
+
+</div>
+
+As demonstrated by the previous sentence above and the
+[References](#references) section below, Quarto citations can include
+Dec dates. By default, Quarto formats citations according to the
+[Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date
+format. Per this format, the citation for this article would appear as
+[Laptev, Martin](https://maptv.github.io/about). 2025+342. “Dec.”
+${decYearP0}+${decDateP0}. <https://maptv.github.io/dec>.
+
+Instead of using Quarto for citations, you can also prepare a list of
+references by copying and pasting citations like the one above. In
+alphabetical order below, you will find the
+[Observable](http://observablehq.com) notebooks that I adapted into many
+of the visualizations above. These notebooks did not have an impact on
+the design or implementation of Dec, but are nonetheless
+***note***worthy.
+
+# Observable notebooks
 
 <div id="citelist" class="column-page-right">
 
-- [Agnoli, Paolo](http://www.paoloagnoli.it) & [D’Agostini,
-  Giulio](https://www.roma1.infn.it/~dagos). <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="January 25, 2005">2004+330</span>. “Why does the meter
-  beat the second?” ${decYearP0}+${decDateP0}.
-  <https://arxiv.org/abs/physics/0412078>.
-- [Armstrong, Zan](https://observablehq.com/@zanarmstrong)
-  <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="April 27, 2023">2023+057</span>. “Text color
-  annotations in markdown.” ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@observablehq/text-color-annotations-in-markdown>.
-- [Bostock, Mike](https://observablehq.com/@mbostock) <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="January 30, 2021">2020+335</span>. “Time Zones.”
-  ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@mbostock/time-zones>.
-- [Bostock, Mike](https://observablehq.com/@mbostock) <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="April 7, 2022">2022+037</span>. “Solar Terminator.”
-  ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@d3/solar-terminator>.
-- [Bostock, Mike](https://observablehq.com/@mbostock) <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="January 9, 2024">2023+314</span>. “Input: Table.”
-  ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@observablehq/input-table>.
-- [Clements, John](https://www.brinckerhoff.org). <span class="tool"
-  data-bs-toggle="tooltip" data-bs-title="May 31, 2014">2014+091</span>,
-  “Decimal Time Zones.” ${decYearP0}+${decDateP0}.
-  <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
-- [Clint Goss](https://www.clintgoss.com). <span class="tool"
-  data-bs-toggle="tooltip" data-bs-title="June 7, 2022">2022+098</span>.
-  “Color of Sound.” ${decYearP0}+${decDateP0}.
-  <https://www.flutopedia.com/sound_color.htm>.
-- [Collignon, Claude
-  Boniface](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution). 1788.
-  “Découverte d’étalons justes, naturels, invariables et universels.”
-  ${decYearP0}+${decDateP0}.
-  <https://archive.org/details/dcouvertedtalon00collgoog/page/n68/mode/2up>.
-- [Edwards, Paul](https://observablehq.com/@pjedwards).
-  <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="August 19, 2022">2022+171</span>. “Compass Rose as
-  legend with colors.” ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors>.
-- [Freedman, Dylan](https://observablehq.com/@freedmand).
-  <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="February 9, 2018">2017+345</span>. “Sounds.”
-  ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@freedmand/sounds>.
-- [Gordon, Marcus A.](https://observablehq.com/@magfoto).
-  <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="December 14, 2018">2018+288</span>. “Wavelengths and
-  Spectral Colours.” ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@magfoto/wavelengths-and-spectral-colours>.
-- [Harmath, Dénes](https://observablehq.com/user/@thsoft).
-  <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="June 13, 2018">2018+104</span>. “ABC.”
-  ${decYearP0}+${decDateP0}. <https://observablehq.com/@thsoft/abc>.
-- [Hinnant, Howard](https://howardhinnant.github.io). <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="September 1, 2021">2021+184</span>.
-  “`chrono`-Compatible Low-Level Date Algorithms.”
-  ${decYearP0}+${decDateP0}.
-  <https://howardhinnant.github.io/date_algorithms.html>.
-- [Johnson, Ian](https://observablehq.com/@enjalot) <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="June 30, 2021">2021+121</span>. “Draggable World Map
-  Coordinates Input.” ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
-- [Lim, Maddie](https://observablehq.com/@maddievision)
-  <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="January 25, 2019">2018+330</span>. “Enneagram.”
-  ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@maddievision/enneagram>.
-- [Newton,
-  Issac](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a). 1704.
-  “Opticks.” ${decYearP0}+${decDateP0}.
-  <https://doi.org/10.5479/sil.302475.39088000644674>.
-- [Paavanb](https://observablehq.com/@paavanb). <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="March 7, 2024">2024+006</span>. “Progressive Color
-  Picker.” ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@paavanb/progressive-color-picker>.
-- [Patel, Amit](https://observablehq.com/@redblobgames).
-  <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="December 16, 2021">2021+290</span>. “Compass Rose.”
-  ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@paavanb/progressive-color-picker>.
-- [Pettiross, Jeff](https://observablehq.com/@pettiross)
-  <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="July 19, 2024">2024+150</span>. “Categorical color
-  scheme test tool.” ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@observablehq/categorical-palette-tool>
-- [Rieder, Lukas](https://observablehq.com/@lukasrieder)
-  <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="April 2, 2023">2023+032</span>. “Editable table.”
-  ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@parlant/editable-table>.
-- [Rivière, Philippe](https://observablehq.com/@fil) <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="November 15, 2022">2022+259</span>. “Add a class to an
-  observable input.” ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support>.
-- [Rivière, Philippe](https://observablehq.com/@fil) <span class="tool"
-  data-bs-toggle="tooltip"
-  data-bs-title="January 25, 2024">2023+330</span>. “D3 Projections.”
-  ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@fil/d3-projections>.
-- [Yamahata, Christophe](https://observablehq.com/@christophe-yamahata)
-  <span class="tool" data-bs-toggle="tooltip"
-  data-bs-title="June 28, 2022">2021+119</span>. “Great circle: shortest
-  distance between two locations on Earth 🌏.”
-  ${decYearP0}+${decDateP0}.
-  <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
-- [d’Alembert, Jean le
-  Rond](https://en.wikipedia.org/wiki/Jean_le_Rond_d%27Alembert#:~:text=French%20mathematician%2C%20mechanician%2C%20physicist%2C%20philosopher%2C%20and%20music%20theorist). 1754.
-  “Decimal.”
-  [*Encyclopédie*](https://en.wikipedia.org/wiki/Encyclopédie#:~:text=a%20general%20encyclopedia%20published%20in%20France%20between%201751%20and%201772),
-  *4*, 670. ${decYearP0}+${decDateP0}.
-  <https://artflsrv04.uchicago.edu/philologic4.7/encyclopedie0922/navigate/4/3458>.
+0.  [Armstrong, Zan](https://observablehq.com/@zanarmstrong)
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="April 27, 2023">2023+057</span>. “Text color
+    annotations in markdown.” ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@observablehq/text-color-annotations-in-markdown>.
+1.  [Bostock, Mike](https://observablehq.com/@mbostock)
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="January 30, 2021">2020+335</span>. “Time Zones.”
+    ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@mbostock/time-zones>.
+2.  [Bostock, Mike](https://observablehq.com/@mbostock)
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="April 7, 2022">2022+037</span>. “Solar Terminator.”
+    ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@d3/solar-terminator>.
+3.  [Bostock, Mike](https://observablehq.com/@mbostock)
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="January 9, 2024">2023+314</span>. “Input: Table.”
+    ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@observablehq/input-table>.
+4.  [Edwards, Paul](https://observablehq.com/@pjedwards).
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="August 19, 2022">2022+171</span>. “Compass Rose as
+    legend with colors.” ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors>.
+5.  [Freedman, Dylan](https://observablehq.com/@freedmand).
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="February 9, 2018">2017+345</span>. “Sounds.”
+    ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@freedmand/sounds>.
+6.  [Gordon, Marcus A.](https://observablehq.com/@magfoto).
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="December 14, 2018">2018+288</span>. “Wavelengths and
+    Spectral Colours.” ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@magfoto/wavelengths-and-spectral-colours>.
+7.  [Harmath, Dénes](https://observablehq.com/user/@thsoft).
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="June 13, 2018">2018+104</span>. “ABC.”
+    ${decYearP0}+${decDateP0}. <https://observablehq.com/@thsoft/abc>.
+8.  [Hinnant, Howard](https://howardhinnant.github.io).
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="September 1, 2021">2021+185</span>.
+    “`chrono`-Compatible Low-Level Date Algorithms.”
+    ${decYearP0}+${decDateP0}.
+    <https://howardhinnant.github.io/date_algorithms.html>.
+9.  [Johnson, Ian](https://observablehq.com/@enjalot) <span class="tool"
+    data-bs-toggle="tooltip"
+    data-bs-title="June 30, 2021">2021+121</span>. “Draggable World Map
+    Coordinates Input.” ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
+10. [Lim, Maddie](https://observablehq.com/@maddievision)
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="January 25, 2019">2018+330</span>. “Enneagram.”
+    ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@maddievision/enneagram>.
+11. [Paavanb](https://observablehq.com/@paavanb). <span class="tool"
+    data-bs-toggle="tooltip"
+    data-bs-title="March 7, 2024">2024+006</span>. “Progressive Color
+    Picker.” ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@paavanb/progressive-color-picker>.
+12. [Patel, Amit](https://observablehq.com/@redblobgames).
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="December 16, 2021">2021+290</span>. “Compass Rose.”
+    ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@paavanb/progressive-color-picker>.
+13. [Pettiross, Jeff](https://observablehq.com/@pettiross)
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="July 19, 2024">2024+150</span>. “Categorical color
+    scheme test tool.” ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@observablehq/categorical-palette-tool>
+14. [Rieder, Lukas](https://observablehq.com/@lukasrieder)
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="April 2, 2023">2023+032</span>. “Editable table.”
+    ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@parlant/editable-table>.
+15. [Rivière, Philippe](https://observablehq.com/@fil)
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="November 15, 2022">2022+259</span>. “Add a class to
+    an observable input.” ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support>.
+16. [Rivière, Philippe](https://observablehq.com/@fil)
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="January 25, 2024">2023+330</span>. “D3 Projections.”
+    ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@fil/d3-projections>.
+17. [Yamahata,
+    Christophe](https://observablehq.com/@christophe-yamahata)
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="June 28, 2022">2021+119</span>. “Great circle:
+    shortest distance between two locations on Earth 🌏.”
+    ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
+
+</div>
+
+# Glossary
+
+<div id="citelist" class="column-page-right">
+
+0.  𝜏: irrational number equal to 2𝜋 or approximately 6.2831853
+1.  rad: radian
+2.  °: degree
+3.  λ: parallel
+4.  m: meridian
+5.  r: compass rose
+6.  dt: deciturn
+7.  ct: centiturn
+8.  mt: milliturn
+9.  mλ: milliparallel
+10. mm: millimeridian
+11. mr: compass millirose
+12. c: taur (𝜏r)
+13. v: omegar (ωr)
+14. y: year
+15. d: day
+16. mv: milliomegar
+17. mc: millitaur
+18. md: milliday
+19. h°: hue degrees
+20. c°: compass degrees
+21. hsl: hue saturation lightness
+22. hsv: hue saturation value
+23. Decolor: a color scheme optimized for labeling groups of ten or
+    decimal values
+24. hex: hexadecimal
+25. doy: day of year
+26. dλ: deciparallel
+27. dd: deciday
+28. yoe: year of era
+29. doy: day of year
+30. tod: time of day
+31. tzo: time zone offset
+32. mk: millimillenium
+33. my: milliyear
+34. dek: decaday
+35. dod: day of dek
+36. dom: day of month
+37. dow: day of week
+38. zem: zone equatorial meter
+39. z: zem
+40. dm: decimeridian
+41. z²: square zem
+42. cz: centizem
+43. z³: cubic zem
+44. cmd: centimilliday
+45. beat: centimilliday
+46. b: beat
+47. cd: centiday
+48. µd: microday
+49. kz: kilozem
+50. dz: decizem
+51. nc: nanotaur
+52. a: arcbeat, a 100 thousandth of an arc
+53. q: quotidie, the inverse of a day, similar to hertz; the letter “q”
+    can be flipped vertically to produce the letter “d”;
+54. p: per beat, meaning once per beat or every beat, used for
+    percussion in music, similar to beats per minute, the letter “p” can
+    be flipped vertically to produce the letter “b”;
+55. sos: speed of sound
+56. sol: speed of light
+57. Mv: megaomegar
+58. Tq: teraquispiam over beat
+59. mb: millibeat
+60. s: step
+61. ms: millistep
+62. Ds: decastep; a two fold change in frequency from one octave to an
+    adjacent octave
+63. Dechromatic: a musical scale consisting of ten notes
+64. Tenet: ten equal temperance
+65. Xet: Tenet
+66. 12et: twelve equal temperance
+67. g: granum or gutta; in Dec, 1 g is a mass of 64 milligrams or a
+    volume of 64 microliters; in Latin, granum means grain and gutta
+    means drop
+68. u: ounce, which originates from the Latin word uncia, weighs 500
+    grana or 32 grams or fills 500 guttae or 32 milliliters
+69. x: hexamilliare or square zem
+70. nd: nanoday, a billionth of a day
 
 </div>
 
@@ -5366,19 +5715,19 @@ hD080 = d3.hsl(piecewiseColor(80 / 365)).h
 hD285 = d3.hsl(piecewiseColor(285 / 365)).h
 fMile = 1.6 / 1.609344
 fInch = 25 / 25.4
-fMiPH = 5 / 3 / 1.609344
-fDrop = 64 / 51
 hIob = d3.hsl(piecewiseColor(1 / .864 % 1)).h
-hMile = d3.hsl(piecewiseColor(fMile % 1)).h
-hMiPH = d3.hsl(piecewiseColor(fMiPH % 1)).h
-hDrop = d3.hsl(piecewiseColor(fDrop % 1)).h
-hInch = d3.hsl(piecewiseColor(fInch % 1)).h
+hDrop = d3.hsl(piecewiseColor(64 / 51 % 1)).h
 hMass = d3.hsl(piecewiseColor(448 / 453.59237 % 1)).h
-hPint = d3.hsl(piecewiseColor(4 / 3.785411784 % 1)).h
-hFlOz = d3.hsl(piecewiseColor(32 / 29.5735296875 % 1)).h
-hAcre = d3.hsl(piecewiseColor(247.1053814672 / 250 % 1)).h
-hSqMi = d3.hsl(piecewiseColor(fMile**2 % 1)).h
+hGall = d3.hsl(piecewiseColor(3.584 / 3.785411784 % 1)).h
+hBarr = d3.hsl(piecewiseColor(128 / 119.24 % 1)).h
+hCara = d3.hsl(piecewiseColor(192 / 200 % 1)).h
+hAvOz = d3.hsl(piecewiseColor(32 / 28.349523125  % 1)).h
+hFlOz = d3.hsl(piecewiseColor(32 / 29.5735295625 % 1)).h
+hInch = d3.hsl(piecewiseColor(fInch % 1)).h
 hSqIn = d3.hsl(piecewiseColor(fInch**2 % 1)).h
+hCuIn = d3.hsl(piecewiseColor(fInch**3 % 1)).h
+hMile = d3.hsl(piecewiseColor(fMile % 1)).h
+hSqMi = d3.hsl(piecewiseColor(fMile**2 % 1)).h
 bcHue = (xetHue[1] + xetHue[2]) / 2
 ddsHue = (xetHue[4] + xetHue[5]) / 2
 dseHue = (xetHue[5] + xetHue[6]) / 2
@@ -6101,6 +6450,14 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
+.colorCuIn {
+  background: hsl(${hCuIn} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hCuIn}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
 .colorDrop {
   background: hsl(${hDrop} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hDrop}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
@@ -6117,17 +6474,33 @@ html`
   font-weight: 400;
   font-family: monospace;
 }
-.colorMiPH {
-  background: hsl(${hMiPH} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hMiPH}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+.colorCara {
+  background: hsl(${hCara} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hCara}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
   font-family: monospace;
 }
-.colorPint {
-  background: hsl(${hPint} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hPint}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+.colorGall {
+  background: hsl(${hGall} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hGall}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorBarr {
+  background: hsl(${hBarr} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hBarr}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorAvOz {
+  background: hsl(${hAvOz} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hAvOz}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -6136,14 +6509,6 @@ html`
 .colorFlOz {
   background: hsl(${hFlOz} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hFlOz}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
-  border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
-}
-.colorAcre {
-  background: hsl(${hAcre} ${colorS / 10}% ${colorL / 10}%);
-  color: ${yiq(`hsl(${hAcre}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -6202,7 +6567,7 @@ button#rstbtn:hover {
   text-decoration: none;
   transform: translateY(-1px);
 }
-div#distmap {
+div#fig-distmap {
   margin-bottom: -28px;
 }
 #sizeinput #speedinput #yawinput #pitchinput #rollinput {
@@ -6254,7 +6619,7 @@ div#hueslider input[type="range"], div#satslider input[type="range"], div#litsli
   display: flex;
   justify-content: center;
 }
-div#distmap {
+div#fig-distmap {
   display: flex;
   justify-content: center;
   overflow-x: visible;
@@ -6390,7 +6755,7 @@ img#zModu {
 #chorus > div {
   overflow: clip;
 }
-#citelist ul li {
+#citelist ol li {
   overflow-x: scroll;
   white-space: nowrap;
   list-style-position: inside;
@@ -6429,3 +6794,38 @@ div.cell#csharpstaff * {
   overflow: visible;
 }
 </style>
+
+<div id="refs" class="references csl-bib-body hanging-indent"
+entry-spacing="0">
+
+<div id="ref-hinnant2021" class="csl-entry">
+
+Hinnant, Howard. 2023+185. “Chrono-Compatible Low-Level Date
+Algorithms.” <https://howardhinnant.github.io/date_algorithms.html>.
+
+</div>
+
+</div>
+
+[1] [Newton,
+Issac](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a).
+1704. “Opticks.” ${decYearP0}+${decDateP0}.
+<https://doi.org/10.5479/sil.302475.39088000644674>.
+
+[2] [Clint Goss](https://www.clintgoss.com). <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="June 7, 2022">2022+098</span>.
+“Color of Sound.” ${decYearP0}+${decDateP0}.
+<https://www.flutopedia.com/sound_color.htm>.
+
+[3] [Collignon, Claude
+Boniface](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution).
+1788. “Découverte d’étalons justes, naturels, invariables et
+universels.” ${decYearP0}+${decDateP0}.
+<https://archive.org/details/dcouvertedtalon00collgoog/page/n68/mode/2up>.
+
+[4] [Agnoli, Paolo](http://www.paoloagnoli.it) & [D’Agostini,
+Giulio](https://www.roma1.infn.it/~dagos). <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="January 25, 2005">2004+330</span>. “Why does the meter
+beat the second?” ${decYearP0}+${decDateP0}.
+<https://arxiv.org/abs/physics/0412078>.

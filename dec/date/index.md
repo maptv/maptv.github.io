@@ -1,6 +1,6 @@
-# Dec Date
+# Dec date
 Martin Laptev
-2025+286
+2025+341
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
