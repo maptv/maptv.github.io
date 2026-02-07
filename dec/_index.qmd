@@ -2844,7 +2844,19 @@ img#zModu {
 #citelist ol li {
   overflow-x: scroll;
   white-space: nowrap;
-  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+}
+#gloslist ul li {
+  overflow-x: scroll;
+  white-space: nowrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#gloslist div {
+  padding: 0;
+  margin: 0;
 }
 #chorus {
   margin-top: -12px;
