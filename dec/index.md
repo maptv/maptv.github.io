@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+343
+2025+344
 
 - [<span class="toc-section-number">0</span> Dec measurement
   system](#sec-dec)
@@ -15,7 +15,8 @@ Martin Laptev
     lightness (hsl)](#hsl)
   - [<span class="toc-section-number">5.2</span> Course color
     table](#cct)
-- [<span class="toc-section-number">5</span> Red green blue (rgb)](#rgb)
+- [<span class="toc-section-number">5</span> Red green blue
+  (rgb)](#red-green-blue-rgb)
 - [<span class="toc-section-number">6</span> Dec time zones](#dtz)
 - [<span class="toc-section-number">7</span> Dates and times](#dat)
 - [<span class="toc-section-number">8</span> Millenium Year Day](#myd)
@@ -28,7 +29,8 @@ Martin Laptev
   sun](#pss)
 - [<span class="toc-section-number">14</span> Airplane cruising
   speed](#acs)
-- [<span class="toc-section-number">15</span> Centimilliday (cmd)](#cmd)
+- [<span class="toc-section-number">15</span> Centimilliday
+  (cmd)](#centimilliday-cmd)
 - [<span class="toc-section-number">16</span> heart rate tempo](#hrt)
 - [<span class="toc-section-number">17</span> Frequency period
   wavelength](#fpw)
@@ -89,7 +91,7 @@ a
 [turn](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn)
 (<a href="#t" id="turn" class="tool" data-bs-toggle="tooltip"
 data-bs-title="turn">t</a>) represents a full⭕️circle and equals 2*π*
-(<a href="#t" id="tau" class="tool" data-bs-toggle="tooltip"
+(<a href="#2pi" id="tau" class="tool" data-bs-toggle="tooltip"
 data-bs-title="tau"><span
 class="math inline">$\underline\tau$</span></a>)
 [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units)
@@ -154,23 +156,23 @@ data-bs-title="milliturns">mt</a>).
 The table below provides the current longitude in <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a parallel">milliparallels</span>
-(<a href="#mp" id="milliparallel" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallels">mλ</a>) and latitude in
-<span class="tool" data-bs-toggle="tooltip"
+(<a href="#mlambda" id="milliparallel" class="tool"
+data-bs-toggle="tooltip" data-bs-title="milliparallels">mλ</a>) and
+latitude in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a meridian">millimeridians</span>
 (<a href="#mm" id="millimeridian" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">mm</a>) of Points
 <span class="point0">0</span> and <span class="point1">1</span> on the
 map🗺️beneath the table. By default, Point <span class="point0">0</span>
 is at <span class="color8">800</span>
-<a href="#mp" class="tool" data-bs-toggle="tooltip"
+<a href="#mlambda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliparallels">mλ</a> and <span class="color0">0</span>
 <a href="#mm" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">mm</a>, near the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
 of Ecuador🇪🇨, and Point <span class="point1">1</span> is at
 <span class="color8">800</span>
-<a href="#mp" class="tool" data-bs-toggle="tooltip"
+<a href="#mlambda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliparallels">mλ</a> and
 <span class="color1">100</span>
 <a href="#mm" class="tool" data-bs-toggle="tooltip"
@@ -186,15 +188,18 @@ rainbow🌈colored🎨grid of Dec
 [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines),
 a
 [choropleth](https://en.wikipedia.org/wiki/Choropleth_map#:~:text=a%20type%20of%20statistical%20thematic%20map%20that%20uses%20pseudocolor)
-of [<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">utc</span>](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
-time zones, and [solar
+of [Coordinated Universal
+Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
+(<a href="#utc" id="coordinateduniversaltime" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">utc</a>) time zones, and
+[solar
 terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body)
 shading with a yellow🟡dot denoting the
 [point](https://en.wikipedia.org/wiki/Subsolar_point#:~:text=the%20point%20at%20which%20its%20Sun%20is%20perceived%20to%20be%20directly%20overhead)
 where the Sun☀️is [directly
 overhead](https://en.wikipedia.org/wiki/Zenith#:~:text=the%20imaginary%20point%20on%20the%20celestial%20sphere%20directly%20%22above%22%20a%20particular%20location):
-${sunLonHsl} <a href="#mp" class="tool" data-bs-toggle="tooltip"
+${sunLonHsl} <a href="#mlambda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliparallels">mλ</a> and ${sunLatHsl}
 <a href="#mm" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">mm</a>.
@@ -744,19 +749,19 @@ The
 compass🧭above indicates both a
 [hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram)
 in <a href="#mt" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliturns">mt</a> and a course in [mr](#mr).tool
-data-bs-toggle=“tooltip” data-bs-title=“milliroses”}. We can convert the
-hue to [HSL and
+data-bs-title="milliturns">mt</a> and a course in
+<a href="#mr" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliroses">mr</a>. We can convert the hue to [HSL and
 HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
 degrees
-(<a href="#deg" id="huedegree" class="tool" data-bs-toggle="tooltip"
+(<a href="#hdeg" id="huedegree" class="tool" data-bs-toggle="tooltip"
 data-bs-title="HSL or HSV degrees">h°</a>) and the course to
 compass🧭degrees
-(<a href="#deg" id="compassdegree" class="tool" data-bs-toggle="tooltip"
+(<a href="#cdeg" id="compassdegree" class="tool" data-bs-toggle="tooltip"
 data-bs-title="compass degrees">c°</a>): 25
 <a href="#mr" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliroses">mr</a> = 9
-<a href="#deg" class="tool" data-bs-toggle="tooltip"
+<a href="#cdeg" class="tool" data-bs-toggle="tooltip"
 data-bs-title="compass degrees">c°</a>. To rotate🔄the color🎨wheel
 compass🧭, use the “Hue”
 [range](https://observablehq.com/framework/inputs/range)🎚️and [hue
@@ -777,14 +782,15 @@ directions. Together, the range🎚️inputs underneath the hue bar form a
 (<a href="#hsl" id="huesaturationlightness" class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hue saturation lightness">hsl</a>) triplet. Like
-“<span class="color0">red</span> <span class="color4">green</span>
-<span class="color7">blue</span>”
-([rgb](#rgb)(https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model){#redgreenblue})
-or
+“[<span class="color0">red</span> <span class="color4">green</span>
+<span class="color7">blue</span>](https://en.wikipedia.org/wiki/RGB_color_model#:~:text=an%20additive%20color%20model)”
+(<a href="#rgb" id="redgreenblue" class="tool" data-bs-toggle="tooltip"
+data-bs-title="red green blue">rgb</a>) or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
 (<a href="#hex" id="hexadecimal" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</a>) triplets,
-<a href="#hsl" class="tool" data-bs-toggle="tooltip"
+<a href="#hsl" id="huesaturationlightness" class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="hue saturation lightness">hsl</a> triplets specify a
 full-fledged color🎨instead of just a hue.
 
@@ -816,7 +822,7 @@ can reuse♻️colors🎨across many different contexts. Most often,
 data-bs-title="milliroses">mr</a>) and [Longitude
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color0">0</span>
-<a href="#mp" class="tool" data-bs-toggle="tooltip"
+<a href="#mlambda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliparallels">mλ</a>), and
 <span class="color5">cyan</span> denotes midpoints, such as South
 (<span class="color5">500</span>
@@ -824,7 +830,7 @@ data-bs-title="milliparallels">mλ</a>), and
 data-bs-title="milliroses">mr</a>) and [Longitude
 5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color5">500</span>
-<a href="#mp" class="tool" data-bs-toggle="tooltip"
+<a href="#mlambda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliparallels">mλ</a>).
 
 The Equator (<span class="color0">0</span>
@@ -902,7 +908,7 @@ Like the ten major longitudes that separate them, Dec time zones are
 numbered <span class="color0">0</span> to <span class="color9">9</span>.
 Based on its current <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a parallel">deciparallel</span>
-(<a href="#dp" class="tool" data-bs-toggle="tooltip"
+(<a href="#dlambda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciparallel">dλ</a>) longitude, ${point0lHsl}, Point
 <span class="point0">0</span> on the map🗺️above is in Zone
 ${point0zHsl}. The number assigned to each time zone is its offset from
@@ -913,7 +919,7 @@ data-bs-title="decidays">dd</a>). To obtain the
 <a href="#dd" class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</a> offset at a location, we
 [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-its <a href="#dp" class="tool" data-bs-toggle="tooltip"
+its <a href="#dlambda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciparallel">dλ</a> longitude: ⌊${decLonHsl}⌋ =
 ${decZonHsl}.
 
@@ -924,7 +930,7 @@ viewof longitude = Inputs.range([0, 10], {label: "Longitude", value: .5, step: .
 ```
 
 Each Dec time zone is 1
-<a href="#dp" class="tool" data-bs-toggle="tooltip"
+<a href="#dlambda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciparallel">dλ</a> wide and 0.5
 <a href="#m" class="tool" data-bs-toggle="tooltip"
 data-bs-title="meridians">m</a> long. While 1
@@ -2040,9 +2046,9 @@ speed of an airplane✈️. If we are driving on a highway🛣️at a speed of 5
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegars">mv</a> and our exit is 1000
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</a> away, we will have 20
-<a href="#cmd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hundred thousandths of a day">centimillidays</a>
+data-bs-title="zems">z</a> away, we will have 20 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundred thousandths of a day">centimillidays</span>
 (<a href="#cmd" id="centimilliday" class="tool" data-bs-toggle="tooltip"
 data-bs-title="centimilliday">cmd</a>) until we have to exit the
 highway🛣️. To ensure we do not miss our exit, we can periodically check
@@ -2052,47 +2058,47 @@ data-bs-title="zems">z</a>: ${zLeft}.
 
 # Centimilliday (cmd)
 
-Dec refers to a <a href="#cmd" class="tool" data-bs-toggle="tooltip"
-data-bs-title="a hundred thousandth of a day">centimilliday</a> as a
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hundred thousandths of a day">beat</span>
+Dec refers to <a href="#cmd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centimillidays">cmd</a> as <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundred thousandths of a day">beats</span>
 (<a href="#b" id="beat" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a>) because it is similar in duration to a
-heart❤️beat or [musical
-beat](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=I-,n%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time,-%2C%20the).
-A <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a> is 100 <span class="tool"
+data-bs-title="beats">b</a>) because they are similar in duration to
+heart❤️beats or [musical
+beats](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=I-,n%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time,-%2C%20the).
+In Dec, 1 <a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day">d</a> = 100 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundredths of a day">centiday</span>
 (<a href="#cd" id="centiday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="centidays">cd</a>), <span class="tool"
+data-bs-title="centidays">cd</a>) = <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="a hundred thousand">10<sup>5</sup></span>
 <a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats">b</a>, or <span class="tool"
+data-bs-title="beats">b</a> = <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="a million">10<sup>6</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millionths of a day">microdays</span>
 (<a href="#ud" id="microday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="microdays">µd</a>). One
+data-bs-title="microdays">µd</a>), 1
 <a href="#mc" id="millitaur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millitaur">mc</a> is 100 <span class="tool"
+data-bs-title="millitaur">mc</a> = 100 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="thousands of zem">kilozem</span>
 (<a href="#kz" id="kilozem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of zems">kz</a>), <span class="tool"
+data-bs-title="thousands of zems">kz</a>) = <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="a hundred thousand">10<sup>5</sup></span>
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</a>, <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zems">z</a> = <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a million">10<sup>6</sup></span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tenths of a zem">decizems</span>
 (<a href="#dz" id="decizem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decizems">dz</a>), or <span class="tool"
+data-bs-title="decizems">dz</a>) = <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="a million">10<sup>6</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millionths of a taur">nanotaurs</span>
 (<a href="#nc" id="nanotaur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="nanotaurs">nc</a>). Therefore,
+data-bs-title="nanotaurs">nc</a>), and therefore, 1
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegar">mv</a> = $\text{mc}\over\text d$ =
 $\text {kz}\over\text {cd}$ = $\text z\over\text b$ =
@@ -2152,9 +2158,9 @@ speed. The speed of light
 (<a href="#s" id="speedoflight" class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of light">sol</a>) is roughly 647.551657
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millions of omegars">megaomegars</span>
-(<a href="#v" class="megaomegars tool" data-bs-toggle="tooltip"
-data-bs-title="megaomegars">Mv</a>), which is about 881 million times
+data-bs-title="thousands of omegars">kiloomegars</span>
+(<a href="#kv" class="kiloomegar tool" data-bs-toggle="tooltip"
+data-bs-title="kiloomegars">kv</a>), which is about 881 thousand times
 faster than the
 <a href="#sos" id="speedofsound" class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of sound">sos</a>.
@@ -2172,7 +2178,7 @@ data-bs-title="approximately">~</span>345.6 to <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>914.4
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="trillions of perbeats">teraperbeats</span>
-(<a href="#b" id="teraperbeats" class="tool" data-bs-toggle="tooltip"
+(<a href="#Tp" id="teraperbeat" class="tool" data-bs-toggle="tooltip"
 data-bs-title="teraperbeats">Tp</a>). The range of sound frequencies
 which can be
 [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
@@ -2263,16 +2269,17 @@ musical in steps, . From the value selected by the “Frequency”
 range🎚️input below, we can calculate a pitch: , a : The table The
 positive (**+**) and negative (**–**)
 [indexes](https://en.wikipedia.org/wiki/Index#:~:text=an%20integer%20pointer%20into%20an%20array%20data%20structure),
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span> triplets, and <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees">h°</span> in
-the table below are used by Dec to label🏷️groups of ten, like
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of dek">dods</span>, “[top of the <span class="tool"
+<a href="#hex" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexadecimal">hex</a> triplets, and
+<a href="#hdeg" class="tool" data-bs-toggle="tooltip"
+data-bs-title="HSL or HSV degrees">h°</a> in the table below are used by
+Dec to label🏷️groups of ten, like
+<a href="#dod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of dek">dod</a>, “[top of the <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</span>](https://en.wiktionary.org/wiki/top_of_the_hour)”
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tods</span>, and time zones. In addition to
+data-bs-title="times of day">tod</span>, and time zones. In addition to
 colors🎨, Dec also labels🏷️groups of ten with the [musical
 notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=Chromatic%20scale,-note%20naming%20conventions)
 that constitute the Dec
@@ -3789,7 +3796,7 @@ references:
     - family: Laptev
       given: Martin
   issued:
-    literal: 2025+343
+    literal: 2025+344
   title: Dec
   type: article
   URL: https://howardhinnant.github.io/date_algorithms.html
@@ -3812,7 +3819,7 @@ As demonstrated by the previous sentence above and the
 Dec dates. By default, Quarto formats citations according to the
 [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date
 format. Per this format, the citation for this article would appear as
-[Laptev, Martin](https://maptv.github.io/about). 2025+343. “Dec.”
+[Laptev, Martin](https://maptv.github.io/about). 2025+344. “Dec.”
 ${decYearP0}+${decDateP0}. <https://maptv.github.io/dec>.
 
 Instead of using Quarto for citations, you can also prepare a list of
@@ -3988,10 +3995,13 @@ the design or implementation of Dec, but are nonetheless
 - <a href="#parallel" id="lambda">λ</a>: parallel, a full circle around
   the Earth moving West or East; the English alphabet equivalent of λ is
   the letter “l”, which occurs three times in the word “parallel”
-  - <a href="#milliparallel" id="mp">mλ</a>: milliparallel
+  - <a href="#milliparallel" id="mlambda">mλ</a>: milliparallel
 - <a href="#perbeat" id="per">p</a>: perbeat, the inverse of a beat,
   $1\over\text{beat}$, once per beat, every beat, 100000 q; the letter
   “p” can be flipped vertically to produce the letter “b”
+  - <a href="#teraperbeat" id="Tp">Tp</a>: teraperbeat, 10<sup>12</sup>
+    perbeat, the inverse of a picobeat, $1\over\text{pb}$, once per
+    picobeat, every picobeat
 - <a href="#quotidie" id="q">q</a>: quotidie, the inverse of a day, a
   hundred thousandth of a perbeat; the letter “q” can be flipped
   vertically to produce the letter “d”
@@ -4012,13 +4022,14 @@ the design or implementation of Dec, but are nonetheless
   kiloomegars, 299792458 meters per second
 - <a href="#speedofsound" id="sos">sos</a>: speed of sound, 735.048
   milliomegars, 340.3 meters per second
-- [𝜏](#tau): 2𝜋 or approximately 6.2831853
-- <a href="#tenequaltemperance" id="xet">Tenet</a>: ten equal temperance
-  - <a href="#Tenet" id="xet">Xet</a>: Tenet
+- <a href="#tau" id="2pi">𝜏</a>: 2𝜋 or approximately 6.2831853
+- <a href="#tenequaltemperance" id="10et">Tenet</a>: ten equal
+  temperance
+  - <a href="#tenet" id="xet">Xet</a>: Tenet
   - <a href="#twelveequaltemperance" id="12et">12et</a>: twelve equal
     temperance
 - <a href="#timeofday" id="tod">tod</a>: time of day
-- [t](#turn): turn, 360 degrees, 𝜏 or 2𝜋 radians
+- <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
   - <a href="#centiturn" id="ct">ct</a>: centiturn, a hundredth of a
     turn, 3.6 degrees, $\tau\over 100$ or $\pi\over 50$ radians
   - <a href="#deciturn" id="dt">dt</a>: deciturn, a tenth of a turn, 36
@@ -4028,6 +4039,8 @@ the design or implementation of Dec, but are nonetheless
 - <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
 - <a href="#ounce" id="u">u</a>: ounce, 500 grains, 32 grams, 500 drops,
   32 milliliters; originates from the Latin word uncia
+- <a href="#coordinateduniversaltime" id="utc">utc</a>: Coordinated
+  Universal Time
 - <a href="#omegar" id="v">v</a>: omegar, ωr,
   1041.<span class="vinculum">6</span> Dec miles per hour, approximately
   1035.62 US miles per hour, 1.<span class="vinculum">6</span>
@@ -6964,6 +6977,9 @@ div.cell-output-display:has(svg#csharpchart-mermaid.flowchart.mermaid-js) {
 }
 div.cell#csharpstaff * {
   overflow: visible;
+}
+figcaption {
+  display: none;
 }
 </style>
 
