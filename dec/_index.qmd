@@ -2891,5 +2891,8 @@ div.cell-output-display:has(svg#csharpchart-mermaid.flowchart.mermaid-js) {
 div.cell#csharpstaff * {
   overflow: visible;
 }
+figcaption {
+  display: none;
+}
 </style>
 ```
