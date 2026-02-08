@@ -20,9 +20,10 @@ Martin Laptev
 - [<span class="toc-section-number">6</span> Dec time zones](#dtz)
 - [<span class="toc-section-number">7</span> Dates and times](#dat)
 - [<span class="toc-section-number">8</span> Millenium Year Day](#myd)
-- [<span class="toc-section-number">9</span> Day of dek (dod)](#dod)
+- [<span class="toc-section-number">9</span> Day of dek
+  (dod)](#day-of-dek-dod)
 - [<span class="toc-section-number">10</span> Zone equatorial meter
-  (zem)](#zem)
+  (zem)](#zone-equatorial-meter-zem)
 - [<span class="toc-section-number">11</span> Length area volume](#lav)
 - [<span class="toc-section-number">12</span> Typical seat height](#tsh)
 - [<span class="toc-section-number">13</span> Perpetually setting
@@ -35,7 +36,7 @@ Martin Laptev
 - [<span class="toc-section-number">17</span> Frequency period
   wavelength](#fpw)
 - [<span class="toc-section-number">18</span> Ten equal temperament
-  (Xet)](#xet)
+  (Xet)](#ten-equal-temperament-xet)
 - [<span class="toc-section-number">19</span> Color sound table](#cst)
 - [<span class="toc-section-number">20</span> Octave note tone](#ont)
 - [<span class="toc-section-number">21</span> Color and sound](#cas)
@@ -2155,7 +2156,7 @@ and
 respectively, of a sound or light wave. The equations below show how
 frequency, period, and wavelength are related to each other and to
 speed. The speed of light
-(<a href="#s" id="speedoflight" class="tool" data-bs-toggle="tooltip"
+(<a href="#sol" id="speedoflight" class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of light">sol</a>) is roughly 647.551657
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of omegars">kiloomegars</span>
@@ -2193,9 +2194,9 @@ ${iobs} <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">p</a> = ${parseFloat((1000 / iobs).toFixed(3))}
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a beat">millibeats</span>
-(<a href="#b" id="millibeat" class="tool" data-bs-toggle="tooltip"
+(<a href="#mb" id="millibeat" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millibeats">mb</a>) and 735.048
-<a href="#v" class="tool" data-bs-toggle="tooltip"
+<a href="#mv" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegars">mv</a> ÷ ${iobs}
 <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">p</a> = ${parseFloat((735.048 /
@@ -2287,52 +2288,53 @@ that constitute the Dec
 (Dechromatic)
 [scale](https://en.wikipedia.org/wiki/Scale_(music)#:~:text=any%20consecutive%20series%20of%20notes%20that%20form%20a%20progression%20between%20one%20note%20and%20its%20octave)
 of the **Ten** **e**qual **t**emperament
-(<a href="#t" id="Tenet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="ten equal temperament">Tenet</a>) musical system.
+(<a href="#tenet" id="tenequaltemperance" class="tool"
+data-bs-toggle="tooltip" data-bs-title="ten equal temperament">Tenet</a>)
+musical system.
 
 # Ten equal temperament (Xet)
 
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="ten equal temperament">Tenet</span>
-(<a href="#t" id="Xet" class="tool" data-bs-toggle="tooltip"
+(<a href="#xet" id="10et" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</a>) identifies each Dechromatic scale note
 with a single-digit integer and expresses all other possible
 sound🔊frequencies as decimal numbers. In contrast, the notes of the [12
 equal
 temperament](https://en.wikipedia.org/wiki/12_equal_temperament#:~:text=the%20musical%20system%20that%20divides%20the%20octave%20into%2012%20parts)
-(<a href="#t" id="12et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</a>) musical system have names
-that consist of a letter from <span class="colorA">A</span> to
-<span class="colorG">G</span> and often a symbol such as sharp
-(<span class="iosevka">♯</span>), half sharp
+(<a href="#12et" id="twelveequaltemperance" class="tool"
+data-bs-toggle="tooltip" data-bs-title="12 equal temperament">12ET</a>)
+musical system have names that consist of a letter from
+<span class="colorA">A</span> to <span class="colorG">G</span> and often
+a symbol such as sharp (<span class="iosevka">♯</span>), half sharp
 (<span class="iosevka">𝄲</span>), flat (<span class="iosevka">♭</span>),
 and half flat (<span class="iosevka">𝄳</span>).
 
 The sound🔊frequencies of two consecutive
-<a href="#t" class="tool" data-bs-toggle="tooltip"
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</a> Dechromatic scale notes always differ by
 one <a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="step">s</a>, but the differences between consecutive
-<a href="#t" class="tool" data-bs-toggle="tooltip"
+<a href="#12et" class="tool" data-bs-toggle="tooltip"
 data-bs-title="12 equal temperament">12ET</a> chromatic scale notes vary
 from the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="color599">599</span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="ten thousandths of an octave">millisteps</span>
-(<a href="#s" id="millistep" class="tool" data-bs-toggle="tooltip"
+(<a href="#ms" id="millistep" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</a>) between
 <span class="colorAs">A<span class="iosevka">♯</span></span> and
 <span class="colorB">B</span> to the <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="color067">1067</span>
-<a href="#s" class="tool" data-bs-toggle="tooltip"
+<a href="#ms" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</a> between
 <span class="colorGs">G<span class="iosevka">♯</span></span> and
 <span class="colorA">A</span>. A typical person can reliably distinguish
 sounds🔊that
 [differ](https://en.wikipedia.org/wiki/Cent_(music)#:~:text=Normal%20adults%20are%20able%20to%20recognize%20pitch%20differences%20of%20as%20small%20as%2025%20cents%20very%20reliably)
 by at least <span class="color2">200</span>
-<a href="#s" class="tool" data-bs-toggle="tooltip"
+<a href="#ms" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</a>.
 
 The rightmost column of the table below shows the
@@ -2356,7 +2358,7 @@ data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> between
 Notes <span class="color9">9</span> and <span class="colorA">A</span> to
 the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="color26div300">87</span>
-<a href="#s" class="tool" data-bs-toggle="tooltip"
+<a href="#ms" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</a> between Notes
 <span class="color5">5</span> and <span class="colorF">F</span>.
 
@@ -2467,7 +2469,7 @@ The image above applies Dec color🎨labels🏷️to one
 of piano🎹keys. In <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</span>, an octave is 10 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="steps">s</span> or
-10<sup>4</sup> <a href="#s" class="tool" data-bs-toggle="tooltip"
+10<sup>4</sup> <a href="#ms" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</a>. From top to bottom, the text below
 the image provides the [scientific pitch
 name](https://en.wikipedia.org/wiki/Scientific_pitch_notation#:~:text=a%20method%20of%20specifying%20musical%20pitch%20by%20combining%20a%20musical%20note%20name%20(with%20accidental%20if%20needed)%20and%20a%20number%20identifying%20the%20pitch%27s%20octave),
@@ -2980,22 +2982,21 @@ scale.
 
 The [unit
 conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
-table below shows the <a
-href="https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems"
-id="us">United States🇺🇸([US](#u){#unitedstates .tool
-data-bs-toggle=“tooltip” data-bs-title=“United States”}) customary
-units</a> that Dec redefines. The values in the first column are
-approximate [fold
+table below shows the [United
+States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)🇺🇸(<a href="#us" id="unitedstates" class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a>) customary units that Dec
+redefines. The values in the first column are approximate [fold
 changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
 from original to redefined units. A fold change of
 <span class="color0">1</span> means <span class="color0">0</span>
 [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared).
 Identical fold changes indicate
-<a href="#u" class="tool" data-bs-toggle="tooltip"
+<a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary units derived from the
 same Dec and [International System of
 Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
-(<a href="#s" id="si" class="tool" data-bs-toggle="tooltip"
+(<a href="#si" id="internationalsystemofunits" class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a>) units.
 
 # Unit conversion tables
@@ -3441,15 +3442,15 @@ data-bs-title="grams">kg</span></td>
 
 # Miles per hour (mph)
 
-Unlike Dec and <a href="#s" class="tool" data-bs-toggle="tooltip"
+Unlike Dec and <a href="#si" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a>, the
-<a href="#u" class="tool" data-bs-toggle="tooltip"
+<a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary measurement system does
 not use metric prefixes to scale units by [powers of
 ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten).
-Redefined <a href="#u" class="tool" data-bs-toggle="tooltip"
+Redefined <a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary units serve as convenient
-reference points. <a href="#u" class="tool" data-bs-toggle="tooltip"
+reference points. <a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary volume units have
 intuitive names and scale by [powers of
 two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20form%202n%20where%20n%20is%20an%20integer).
@@ -3477,8 +3478,8 @@ data-bs-title="a million">10<sup>6</sup></span>
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square zems">z<sup>2</sup></a>, or 1 megahexamilliare
 {.tool data-bs-toggle=“tooltip” data-bs-title=“1.6 thousand are”}
-(<a href="#x" id="megahexamilliare" class="tool" data-bs-toggle="tooltip"
-data-bs-title="megahexamilliare">Mx</a>). A
+(<a href="#Mx" id="megahexamilliare" class="tool"
+data-bs-toggle="tooltip" data-bs-title="megahexamilliare">Mx</a>). A
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square zem">z<sup>2</sup></a> is 1 <span class="tool"
 data-bs-toggle="tooltip"
@@ -3491,14 +3492,14 @@ data-bs-title="tenths of a meter">decimeters</span>,
 feet](https://en.wikipedia.org/wiki/Square_foot#:~:text=the%20area%20of%20a%20square%20with%20sides%20of%201%20foot)🦶,
 or 256 Dec square inches. A square <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="ten zem">decazem</span>
-(<a href="#z" id="squaredecazem" class="tool" data-bs-toggle="tooltip"
+(<a href="#Dz2" id="squaredecazem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square decazem">Dz<sup>2</sup></a>) is 1
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
 [square
 meters](https://en.wikipedia.org/wiki/Square_metre#:~:text=the%20unit%20of%20area%20in%20the%20International%20System%20of%20Units)
-(<a href="#m" id="squaremeter" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meters">m²</a>), <span class="tool"
+(<a href="#m2" id="squaremeter" class="tool" data-bs-toggle="tooltip"
+data-bs-title="square meters">m<sup>2</sup></a>), <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>19.75 Dec
 [square
 yards](https://en.wikipedia.org/wiki/Square_yard#:~:text=U.S.%20customary%20unit%20of%20area),
@@ -3509,30 +3510,30 @@ data-bs-title="hexamilliares">x</a>.
 
 A cubic <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a zone equatorial meter">decizem</span>
-(<a href="#z" id="cubicdecizem" class="tool" data-bs-toggle="tooltip"
+(<a href="#dz3" id="cubicdecizem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic decizem">dz<sup>3</sup></a>) is 1 cubic
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a millionth of a taur">nanotaur</span>
-(<a href="#c" id="cubicnanotaur" class="tool" data-bs-toggle="tooltip"
+(<a href="#nc" id="cubicnanotaur" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic nanotaur">nc<sup>3</sup></a>), 1 Dec wineglass, 2
 Dec ounces, 64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a liter">milliliters</span>
-(<a href="#l" id="milliliter" class="tool" data-bs-toggle="tooltip"
+(<a href="#mL" id="milliliter" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliliters">mL</a>), 1000 Dec drops
 (<a href="#g" id="gutta" class="tool" data-bs-toggle="tooltip"
 data-bs-title="drops">g</a>), or 1000 cubic <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="a tenth of a zone equatorial meter">centizems</span>
-(<a href="#z" id="cubiccentizem" class="tool" data-bs-toggle="tooltip"
+(<a href="#cz3" id="cubiccentizem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic centizem">cz<sup>3</sup></a>). A
-<a href="#z" class="tool" data-bs-toggle="tooltip"
+<a href="#dz3" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic decizem">dz<sup>3</sup></a> of water🌊weighs
 $1\over7$ Dec pounds, 64 grams, or 1000 Dec grains
-(<a href="#g" id="granum" class="tool" data-bs-toggle="tooltip"
+(<a href="#g" id="gutta" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grain">g</a>). A Dec ounce
 (<a href="#u" id="uncia" class="tool" data-bs-toggle="tooltip"
 data-bs-title="uncia">u</a>) of water weighs $1\over14$ Dec pounds, 500
-Dec <a href="#g" id="granum" class="tool" data-bs-toggle="tooltip"
+Dec <a href="#g" id="gutta" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grains">g</a>, or 32 grams. In Dec, the symbols
 <a href="#g" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grain">g</a> and
@@ -3548,13 +3549,13 @@ style="text-align:center;">
 
 </div>
 
-A <a href="#z" class="tool" data-bs-toggle="tooltip"
+A <a href="#z3" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic zem">z<sup>3</sup></a> is 1 keg. A keg of
 water🌊weighs 64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of grams">kilograms</span>, 128 Dec pounds, or
 a 1000 Dec <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of grains">kilograins</span>
-(<a href="#g" id="kilograin" class="tool" data-bs-toggle="tooltip"
+(<a href="#kg" id="kilograin" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilograins">kg</a>). If [Leonardo da
 Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s
 [Vitruvian
@@ -3564,34 +3565,35 @@ data-bs-title="zems">z</a> tall, we could measure 1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> from his knees to his feet🦶or from his
 elbows💪to his fingertips. If he also weighed 1000 Dec
-<a href="#g" id="kilograin" class="tool" data-bs-toggle="tooltip"
+<a href="#kg" id="kilograin" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilograins">kg</a>, his [Body Mass
 Index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
-(<a href="#b" id="bodymassindex" class="tool" data-bs-toggle="tooltip"
+(<a href="#bmi" id="bodymassindex" class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">bmi</a>) would be 62.5
-<a href="#g" id="kilograin" class="tool" data-bs-toggle="tooltip"
+<a href="#kg" id="kilograin" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilograins">kg</a> per <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="hexamilliares">x</span>
 ($\text {kg}\over\text x$) or 25 kilograms per
-<a href="#m" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meters">m²</a> ($\text {kg}\over\text m^2$).
+<a href="#m2" class="tool" data-bs-toggle="tooltip"
+data-bs-title="square meters">m<sup>2</sup></a>
+($\text {kg}\over\text m^2$).
 
 # Body mass index (bmi)
 
-A normal <a href="#b" class="tool" data-bs-toggle="tooltip"
+A normal <a href="#bmi" class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">bmi</a> ranges from 46.25 to 62.5
 $\text {kg}\over\text x$ or 18.5 to 25 $\text {kg}\over\text m^2$. A
-person with a <a href="#b" class="tool" data-bs-toggle="tooltip"
+person with a <a href="#bmi" class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">bmi</a> above 75
 $\text {kg}\over\text x$ or 30 $\text {kg}\over\text m^2$ can be
 classified as obese. A
-<a href="#b" class="tool" data-bs-toggle="tooltip"
+<a href="#bmi" class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">bmi</a> of ${kgrains}
-<a href="#g" class="tool" data-bs-toggle="tooltip"
+<a href="#kg" class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of grains">kilograins</a> ÷ ${zem2} x = ${bmi}
 $\text {kg}\over\text x$ = ${kgrams} kilograms ÷ ${meter2}
-<a href="#m" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meters">m²</a> = ${bmim2}
+<a href="#m2" class="tool" data-bs-toggle="tooltip"
+data-bs-title="square meters">m<sup>2</sup></a> = ${bmim2}
 $\text {kilograms}\over\text m^2$ is considered ${bmiStr}.
 
 ``` {ojs}
@@ -3617,27 +3619,27 @@ style="text-align:center;font-size:.825rem;">
 </div>
 
 The longest length depicted in the image of a ruler📏above is 1
-<a href="#z" class="tool" data-bs-toggle="tooltip"
+<a href="#dz" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decizem">dz</a>, 1
-<a href="#c" class="tool" data-bs-toggle="tooltip"
+<a href="#nc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="nanotaur">nc</a>, 4 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundredths of a meter">centimeters</span>, or $8\over5$
 Dec inches, and the shortest length is $1\over2$
-<a href="#z" class="tool" data-bs-toggle="tooltip"
+<a href="#mz" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizems">mz</a>, $1\over5$ <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a meter">millimeters</span>, $1\over125$
 Dec inches, or $1\over127$
-<a href="#u" class="tool" data-bs-toggle="tooltip"
+<a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary inches. A
-<a href="#u" class="tool" data-bs-toggle="tooltip"
+<a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary inch is $127\over2$
-<a href="#z" class="tool" data-bs-toggle="tooltip"
+<a href="#mz" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizems">mz</a>, $127\over5$ millimeters, or
 $127\over125$ Dec inches. A Dec inch is $5\over2$ centimeters. A
 centimeter is $5\over2$
-<a href="#z" class="tool" data-bs-toggle="tooltip"
+<a href="#cz" class="tool" data-bs-toggle="tooltip"
 data-bs-title="centizems">cz</a>. A
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> is 4 decimeters. A decimeter is 4 Dec inches.
@@ -3647,20 +3649,20 @@ data-bs-title="zem">z</a> is 4 decimeters. A decimeter is 4 Dec inches.
 In <span class="color788">1788</span>, [Claude Boniface
 Collignon](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution)
 proposed measuring length in
-<a href="#z" class="tool" data-bs-toggle="tooltip"
+<a href="#dz" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decizems">dz</a> or
-<a href="#c" class="tool" data-bs-toggle="tooltip"
+<a href="#nc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="nanotaurs">nc</a> and tracking time in
-<a href="#d" class="tool" data-bs-toggle="tooltip"
+<a href="#dek" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of ten days">deks</a>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>,
-<a href="#d" class="tool" data-bs-toggle="tooltip"
+<a href="#md" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millidays">md</a>,
-<a href="#d" class="tool" data-bs-toggle="tooltip"
+<a href="#ud" class="tool" data-bs-toggle="tooltip"
 data-bs-title="microdays">µd</a>, and <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="billionths of a day">nanodays</span>
-(<a href="#d" class="tool" data-bs-toggle="tooltip"
+(<a href="#nd" id="nanoday" class="tool" data-bs-toggle="tooltip"
 data-bs-title="nanodays">nd</a>)[3]. On <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="April 9, 2025"><span class="color025">2025</span><span class="mono">+</span><span class="colorD039">039</span></span>,
@@ -3711,13 +3713,13 @@ data-bs-title="hexamilliare">x</a>.
 
 Dec attempts to bridge the gap, improve interoperability, and faciliate
 conversion between the
-<a href="#u" class="tool" data-bs-toggle="tooltip"
+<a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary and
-<a href="#s" class="tool" data-bs-toggle="tooltip"
+<a href="#si" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a> measurement systems
-by redefining <a href="#u" class="tool" data-bs-toggle="tooltip"
+by redefining <a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary units. Redefinition of
-<a href="#u" class="tool" data-bs-toggle="tooltip"
+<a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary units makes inches
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="color0158">1.58%</span>
@@ -3732,7 +3734,7 @@ data-bs-title="approximately">~</span><span class="colorMass">1.23%</span>
 lighter.
 
 Dec color🎨labels🏷can convey an impression of a value at a glance.
-<a href="#t" class="tool" data-bs-toggle="tooltip"
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</a> sound🔊labels🏷allow us to estimate a value
 without even having to look at it. Both types of labels can help avoid
 confusion when [decimal
@@ -3941,6 +3943,8 @@ the design or implementation of Dec, but are nonetheless
   thousandth of an day, 864 milliseconds
   - <a href="#millibeat" id="mb">mb</a>: millibeat, centimicroday, a
     thousandth of a beat, a hundred millionth of a day, 864 microseconds
+- <a href="#bodymassindex" id="bmi">bmi</a>: body mass index, kilograins
+  of body mass divided by height in zem squared (kg/z<sup>2</sup>)
 - <a href="#taur" id="c">c</a>: taur, 𝜏*r*, 100000 kilozem, 40000
   kilometers, nearly the circumference of the Earth, roughly the product
   of 𝜏 and the radius of the Earth, approximately the dividend of the
@@ -3995,13 +3999,22 @@ the design or implementation of Dec, but are nonetheless
 - <a href="#parallel" id="lambda">λ</a>: parallel, a full circle around
   the Earth moving West or East; the English alphabet equivalent of λ is
   the letter “l”, which occurs three times in the word “parallel”
+  - <a href="#deciparallel" id="dlambda">dλ</a>: deciparallel
   - <a href="#milliparallel" id="mlambda">mλ</a>: milliparallel
 - <a href="#perbeat" id="per">p</a>: perbeat, the inverse of a beat,
   $1\over\text{beat}$, once per beat, every beat, 100000 q; the letter
   “p” can be flipped vertically to produce the letter “b”
   - <a href="#teraperbeat" id="Tp">Tp</a>: teraperbeat, 10<sup>12</sup>
-    perbeat, the inverse of a picobeat, $1\over\text{pb}$, once per
-    picobeat, every picobeat
+    perbeat, the inverse of a picobeat, $1\over\text{picobeat}$, once
+    per picobeat, every picobeat
+  - <a href="#beatpermilliday" id="bpm">bpm</a>: one musical or heart
+    beat per milliday, ten beats per centiday,
+    0.69<span class="vinculum">4</span> beats per minute, 1000 beats per
+    day
+  - <a href="#beatpercentiday" id="bpc">bpc</a>: one musical or heart
+    beat per centiday, a tenth of a beat per milliday,
+    0.069<span class="vinculum">4</span> beats per minute, 100 beats per
+    day
 - <a href="#quotidie" id="q">q</a>: quotidie, the inverse of a day, a
   hundred thousandth of a perbeat; the letter “q” can be flipped
   vertically to produce the letter “d”
@@ -4023,9 +4036,9 @@ the design or implementation of Dec, but are nonetheless
 - <a href="#speedofsound" id="sos">sos</a>: speed of sound, 735.048
   milliomegars, 340.3 meters per second
 - <a href="#tau" id="2pi">𝜏</a>: 2𝜋 or approximately 6.2831853
-- <a href="#tenequaltemperance" id="10et">Tenet</a>: ten equal
+- <a href="#tenequaltemperance" id="tenet">Tenet</a>: ten equal
   temperance
-  - <a href="#tenet" id="xet">Xet</a>: Tenet
+  - <a href="#xet" id="10et">Xet</a>: Tenet
   - <a href="#twelveequaltemperance" id="12et">12et</a>: twelve equal
     temperance
 - <a href="#timeofday" id="tod">tod</a>: time of day
@@ -4046,7 +4059,7 @@ the design or implementation of Dec, but are nonetheless
   1035.62 US miles per hour, 1.<span class="vinculum">6</span>
   megameters per hour, 0.4<span class="vinculum">629</span> kilometers
   per second, roughly 1.36 times the speed of sound
-  - <a href="#kilomegar" id="kv">kv</a>: kilomegar, kωr,
+  - <a href="#kiloomegar" id="kv">kv</a>: kiloomegar, kωr,
     1.<span class="vinculum">6</span> gigameters per hour,
     0.4<span class="vinculum">629</span> megameters per second,
     approximately 0.1544% of the speed of light
@@ -4054,32 +4067,33 @@ the design or implementation of Dec, but are nonetheless
     1.041<span class="vinculum">6</span> Dec miles per hour, roughly
     1.03562 US miles per hour, 1.<span class="vinculum">6</span>
     kilometers per hour, 0.4<span class="vinculum">629</span> meters per
-    second
-- <a href="#hexamilliare" id="x">x</a>: hexamilliare, square zem, z², 16
-  square decimeters, 1.<span class="vinculum">7</span> Dec square feet,
-  256 Dec square inches
+    second, approximately 0.136% the speed of sound
+- <a href="#hexamilliare" id="x">x</a>: hexamilliare, square zem,
+  z<sup>2</sup>, 16 square decimeters, 1.<span class="vinculum">7</span>
+  Dec square feet, 256 Dec square inches
   - <a href="#megahexamilliare" id="Mx">Mx</a>: megahexamilliare, a
-    million square zem, square kilozem, kz², hexakilare, 16 hectares,
-    1600 ares, 40 Dec acres, 0.16 square kilometers, 0.0625 Dec square
-    miles
+    million square zem, square kilozem, kz<sup>2</sup>, hexakilare, 16
+    hectares, 1600 ares, 40 Dec acres, 0.16 square kilometers, 0.0625
+    Dec square miles
 - <a href="#year" id="y">y</a>: year
   - <a href="#milliyear" id="my">my</a>: milliyear, a thousandth of a
     year
   - <a href="#yearofera" id="yoe">yoe</a>: year of era, integer years
     since the Dec epoch
-- [z](#zoneequatorialmeter): zone equatorial meter, zem, 4 decimeters,
-  16 Dec inches
-  - <a href="#squarekilozem" id="kz2">kz²</a>: square kilozem,
-    megahexamilliare, a million square zem, hexakilare, 16 hectares,
-    1600 ares, 40 Dec acres, 0.16 square kilometers, 0.0625 Dec square
-    miles
+- <a href="#zoneequatorialmeter" id="z">z</a>: zone equatorial meter,
+  zem, 4 decimeters, 16 Dec inches
+  - <a href="#squarekilozem" id="kz2">kz<sup>2</sup></a>: square
+    kilozem, megahexamilliare, a million square zem, hexakilare, 16
+    hectares, 1600 ares, 40 Dec acres, 0.16 square kilometers, 0.0625
+    Dec square miles
   - <a href="#kilozem" id="kz">kz</a>: kilozem, a thousand zem, 400
     meters, a quarter Dec mile
-  - <a href="#squarezem" id="z2">z²</a>: square zem, hexamilliare, 16
-    square decimeters, 1.<span class="vinculum">7</span> Dec square
-    feet, 256 Dec square inches
-  - <a href="#cubiczem" id="z3">z³</a>: cubic zem, a keg, 64 liters, a
-    thousand wine glasses, a million drops, half a barrel
+  - <a href="#squarezem" id="z2">z<sup>2</sup></a>: square zem,
+    hexamilliare, 16 square decimeters,
+    1.<span class="vinculum">7</span> Dec square feet, 256 Dec square
+    inches
+  - <a href="#cubiczem" id="z3">z<sup>3</sup></a>: cubic zem, a keg, 64
+    liters, a thousand wine glasses, a million drops, half a barrel
   - <a href="#decizem" id="dz">dz</a>: decizem, 4 centimeters
   - <a href="#centizem" id="cz">cz</a>: centizem, 4 millimeters
   - <a href="#millizem" id="mz">mz</a>: millizem, 0.4 millimeters
