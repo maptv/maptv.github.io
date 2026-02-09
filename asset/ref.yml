@@ -8,7 +8,7 @@ references:
   citation-key: hinnantChronoCompatibleLowLevelDate2021
   issued:
     literal: 2021+185
-  title: chrono-Compatible Low-Level Date Algorithms
+  title: <span class="nocase"><code>chrono</code></span>-Compatible Low-Level Date Algorithms
   type: article
-  url: https://howardhinnant.github.io/date_algorithms.html
+  url: https://howardhinnant.github.io/date_algorithms
 ...
