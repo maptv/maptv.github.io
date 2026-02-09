@@ -7,52 +7,57 @@ Martin Laptev
 - [<span class="toc-section-number">1</span> Longitude latitude
   course](#sec-llc)
 - [<span class="toc-section-number">2</span> Distance speed
-  duration](#dsd)
-- [<span class="toc-section-number">3</span> Interactive world
-  map](#map)
-- [<span class="toc-section-number">4</span> Color wheel compass](#cwc)
-  - [<span class="toc-section-number">5.1</span> Hue saturation
+  duration](#sec-dsd)
+- [Interactive world map](#map)
+- [Color wheel compass](#cwc)
+  - [<span class="toc-section-number">3.1</span> Hue saturation
     lightness (hsl)](#hsl)
-  - [<span class="toc-section-number">5.2</span> Course color
+  - [<span class="toc-section-number">3.2</span> Course color
     table](#cct)
-- [<span class="toc-section-number">5</span> Red green blue
-  (rgb)](#red-green-blue-rgb)
-- [<span class="toc-section-number">6</span> Dec time zones](#dtz)
-- [<span class="toc-section-number">7</span> Dates and times](#dat)
-- [<span class="toc-section-number">8</span> Millenium Year Day](#myd)
-- [<span class="toc-section-number">9</span> Day of dek
-  (dod)](#day-of-dek-dod)
-- [<span class="toc-section-number">10</span> Zone equatorial meter
-  (zem)](#zone-equatorial-meter-zem)
-- [<span class="toc-section-number">11</span> Length area volume](#lav)
-- [<span class="toc-section-number">12</span> Typical seat height](#tsh)
-- [<span class="toc-section-number">13</span> Perpetually setting
-  sun](#pss)
-- [<span class="toc-section-number">14</span> Airplane cruising
-  speed](#acs)
-- [<span class="toc-section-number">15</span> Centimilliday
-  (cmd)](#centimilliday-cmd)
-- [<span class="toc-section-number">16</span> heart rate tempo](#hrt)
-- [<span class="toc-section-number">17</span> Frequency period
-  wavelength](#fpw)
-- [<span class="toc-section-number">18</span> Ten equal temperament
-  (Xet)](#ten-equal-temperament-xet)
-- [<span class="toc-section-number">19</span> Color sound table](#cst)
-- [<span class="toc-section-number">20</span> Octave note tone](#ont)
-- [<span class="toc-section-number">21</span> Color and sound](#cas)
-- [<span class="toc-section-number">22</span> US customary units](#ucu)
-- [<span class="toc-section-number">23</span> Unit conversion
-  tables](#uct)
-- [<span class="toc-section-number">24</span> Miles per hour
-  (mph)](#mph)
-- [<span class="toc-section-number">25</span> Are hectare acre](#aha)
-- [<span class="toc-section-number">26</span> Drop wineglass keg](#dwk)
-- [<span class="toc-section-number">27</span> Body mass index
-  (bmi)](#bmi)
-- [<span class="toc-section-number">28</span> Centizem centimeter
-  inch](#cci)
-- [<span class="toc-section-number">29</span> Claude Boniface
-  Collignon](#cbc)
+- [<span class="toc-section-number">3</span> Red green blue
+  (rgb)](#sec-rgb)
+- [<span class="toc-section-number">4</span> Dec time zones](#sec-dtz)
+- [<span class="toc-section-number">5</span> Dates and times](#sec-dat)
+- [<span class="toc-section-number">6</span> Millenium Year
+  Day](#sec-myd)
+- [<span class="toc-section-number">7</span> Day of dek (dod)](#sec-dod)
+- [<span class="toc-section-number">8</span> Zone equatorial meter
+  (zem)](#sec-zem)
+- [<span class="toc-section-number">9</span> Length area
+  volume](#sec-lav)
+- [<span class="toc-section-number">10</span> Typical seat
+  height](#sec-tsh)
+- [<span class="toc-section-number">11</span> Perpetually setting
+  sun](#sec-pss)
+- [<span class="toc-section-number">12</span> Airplane cruising
+  speed](#sec-acs)
+- [<span class="toc-section-number">13</span> Centimilliday
+  (cmd)](#sec-cmd)
+- [<span class="toc-section-number">14</span> heart rate
+  tempo](#sec-hrt)
+- [<span class="toc-section-number">15</span> Frequency period
+  wavelength](#sec-fpw)
+- [<span class="toc-section-number">16</span> Ten equal temperament
+  (Xet)](#sec-xet)
+- [Color sound table](#cst)
+- [<span class="toc-section-number">17</span> Octave note
+  tone](#sec-ont)
+- [<span class="toc-section-number">18</span> Light and sound](#sec-las)
+- [<span class="toc-section-number">19</span> US customary
+  units](#sec-ucu)
+- [Unit conversion tables](#unit-conversion-tables)
+- [<span class="toc-section-number">20</span> Miles per hour
+  (mph)](#sec-mph)
+- [<span class="toc-section-number">21</span> Are hectare
+  acre](#sec-aha)
+- [<span class="toc-section-number">22</span> Drop wineglass
+  keg](#sec-dwk)
+- [<span class="toc-section-number">23</span> Body mass index
+  (bmi)](#sec-bmi)
+- [<span class="toc-section-number">24</span> Centizem centimeter
+  inch](#sec-cci)
+- [<span class="toc-section-number">25</span> Claude Boniface
+  Collignon](#sec-cbc)
 - [Summary](#tldr)
 - [Next](#next)
 - [Cite](#cite)
@@ -1989,8 +1994,8 @@ data-bs-title="hundredths of a zem">centizem</a>
 data-bs-title="centizem">cz</a>) is the [typical seat
 height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
 for both men and women age 25 to 45. A box📦that is the size of a cubic
-<a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</a>
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</span>
 (<a href="#z3" id="cubiczem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic zem">z³</a>) would likely fit under a typical
 chair🪑 or in between the shins of two people sitting in front of each
@@ -1998,9 +2003,7 @@ other with their knees and feet🦶1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> apart and their legs🦵bent at 25
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a hundredth of a turn">centiturn</span>
-(<a href="#ct" class="tool" data-bs-toggle="tooltip"
-data-bs-title="centiturn">ct</a>) angles📐.
+data-bs-title="a hundredth of a turn">centiturn</span> angles📐.
 
 # Perpetually setting sun
 
@@ -2031,7 +2034,7 @@ atmosphere](https://en.wikipedia.org/wiki/Standard_atmosphere_(unit)#:~:text=a%2
 is 0.735048 <a href="#v" class="tool" data-bs-toggle="tooltip"
 data-bs-title="omegars">v</a> or Mach 1. [Mach
 numbers](https://en.wikipedia.org/wiki/Mach_number) are relative to the
-<a href="#sos" id="speedofsound" class="tool" data-bs-toggle="tooltip"
+<a href="#sos" class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of sound">sos</a>, which varies greatly by air
 temperature and pressure. The cruising speed of a [Boeing
 747](https://en.wikipedia.org/wiki/Boeing_747#:~:text=sweep%2C%20allowing%20a-,Mach%C2%A00.85,-%28490%C2%A0kn;%20900)
@@ -2161,8 +2164,7 @@ data-bs-title="speed of light">sol</a>) is roughly 647.551657
 data-bs-title="thousands of omegars">kiloomegars</span>
 (<a href="#kv" id="kiloomegar" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kiloomegars">kv</a>), which is about 881 thousand times
-faster than the
-<a href="#sos" id="speedofsound" class="tool" data-bs-toggle="tooltip"
+faster than the <a href="#sos" class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of sound">sos</a>.
 
 frequency = speed ÷ wavelength = 1 ÷ period
@@ -2302,7 +2304,7 @@ sound🔊frequencies as decimal numbers. In contrast, the notes of the [12
 equal
 temperament](https://en.wikipedia.org/wiki/12_equal_temperament#:~:text=the%20musical%20system%20that%20divides%20the%20octave%20into%2012%20parts)
 (<a href="#12et" id="twelveequaltemperance" class="tool"
-data-bs-toggle="tooltip" data-bs-title="12 equal temperament">12ET</a>)
+data-bs-toggle="tooltip" data-bs-title="12 equal temperament">12et</a>)
 musical system have names that consist of a letter from
 <span class="colorA">A</span> to <span class="colorG">G</span> and often
 a symbol such as sharp (<span class="iosevka">♯</span>), half sharp
@@ -2315,7 +2317,7 @@ data-bs-title="Tenet">Xet</a> Dechromatic scale notes always differ by
 one <a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="step">s</a>, but the differences between consecutive
 <a href="#12et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</a> chromatic scale notes vary
+data-bs-title="12 equal temperament">12et</a> chromatic scale notes vary
 from the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="color599">599</span>
 <span class="tool" data-bs-toggle="tooltip"
@@ -2337,21 +2339,21 @@ by at least <span class="color2">200</span>
 data-bs-title="millisteps">ms</a>.
 
 The rightmost column of the table below shows the
-<a href="#t" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</a> notes that are closest to
-the <a href="#t" class="tool" data-bs-toggle="tooltip"
+<a href="#12et" class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12et</a> notes that are closest to
+the <a href="#xet" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</a> Dechromatic scale notes.
-<a href="#t" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</a> considers
+<a href="#12et" class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12et</a> considers
 <span class="colorBc">B<span class="iosevka">𝄲</span></span>,
 <span class="colorDds">D<span class="iosevka">𝄲</span></span>, and
 <span class="colorDsE">E<span class="iosevka">𝄳</span></span> to be
 [microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=intervals%20not%20found%20in%20the%20customary%20Western%20tuning%20of%20twelve%20equal%20intervals%20per%20octave).
 The sound🔊frequency differences between the nearest
-<a href="#t" class="tool" data-bs-toggle="tooltip"
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</a> and
-<a href="#t" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</a> notes in the table range
+<a href="#12et" class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12et</a> notes in the table range
 from the <span class="color008">8</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> between
 Notes <span class="color9">9</span> and <span class="colorA">A</span> to
@@ -2465,43 +2467,55 @@ data-bs-title="twelve equal temperament">12ET</span></strong>🎶</th>
 
 The image above applies Dec color🎨labels🏷️to one
 [octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-of piano🎹keys. In <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span>, an octave is 10 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="steps">s</span> or
-10<sup>4</sup> <a href="#ms" class="tool" data-bs-toggle="tooltip"
+of piano🎹keys. In <a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a>, an octave is 10 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="steps">s</span>, 1
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="ten steps">decastep</span>
+(<a href="#Ds" id="decastep" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decastep">Ds</a>), or <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="ten steps">10<sup>4</sup></span>
+<a href="#ms" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</a>. From top to bottom, the text below
 the image provides the [scientific pitch
 name](https://en.wikipedia.org/wiki/Scientific_pitch_notation#:~:text=a%20method%20of%20specifying%20musical%20pitch%20by%20combining%20a%20musical%20note%20name%20(with%20accidental%20if%20needed)%20and%20a%20number%20identifying%20the%20pitch%27s%20octave),
 integer <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="iob">i</span> sound🔊frequency, and integer
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millizem">mz</span> wavelength of the corresponding white
+data-bs-title="thousandths of a zem">millizem</span>
+(<a href="#mz" id="millizem" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millizem">mz</a>) wavelength of the corresponding white
 key. As octave indexes and frequencies increase, wavelengths decrease.
 
-From the perspective of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span>, all of the labeled🏷️keys in the image
+From the perspective of
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a>, all of the labeled🏷️keys in the image
 above are in Octave <span class="color4">4</span>. Octave indexes in
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span> and <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</span> match except for
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span> notes with indexes below
-<span class="color2">2</span> and <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</span> notes from
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> and
+<a href="#12et" class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12et</a> match except for
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> notes with indexes below
+<span class="color2">2</span> and
+<a href="#12et" class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12et</a> notes from
 <span class="colorAs">A<span class="iosevka">♯</span></span> to
 <span class="colorB">B<span class="iosevka">𝄲</span></span>. An octave
-index is the Xet analog of a clef in staff notation, because both are
-responsible for setting the reference frame that allows us to interpret
-the relative pitches of notes as the absolute pitches of tones.
+index is the <a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> analog of a clef in staff notation,
+because both are responsible for setting the reference frame that allows
+us to interpret the relative pitches of notes as the absolute pitches of
+tones.
 
-Clefs in staff notation and octave indexes in Xet set the reference
-frame that allows us to
+Clefs in staff notation and octave indexes in
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> set the reference frame that allows us to
 
 When we append a positive note index that is less than ten to an octave
-index which is a positive integer, we obtain a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</span> [musical
+index which is a positive integer, we obtain a
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> [musical
 tone](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound)
 index.
 
@@ -2519,16 +2533,21 @@ in between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
 of a [grand
 staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff).
 
-The mermaid chart below visualizes the structure of the Xet music
-notation example above it, which is composed of the Xet equivalents of
-an ascending <span class="colorCs">C♯</span> major
+The mermaid chart below visualizes the structure of the
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> music notation example above it, which is
+composed of the <a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> equivalents of an ascending
+<span class="colorCs">C♯</span> major
 [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order)
 and a <span class="colorCs">C♯</span> major
 [chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together%20for%20their%20harmonic%20consonance%20or%20dissonance).
 This arpeggio and chord are also shown beneath the mermaid chart in
 [staff
 notation](https://en.wikipedia.org/wiki/Musical_notation#Modern_staff_notation:~:text=5%20parallel%20horizontal%20lines%20that%20act%20as%20a%20framework%20upon%20which%20pitches%20are%20indicated%20by%20placing%20oval%20note%2Dheads%20on%20(i.e.%20crossing)%20the%20staff%20lines%2C%20between%20the%20lines%20(i.e.%20in%20the%20spaces)%20or%20above%20and%20below%20the%20staff%20using%20small%20additional%20lines%20called%20ledger%20lines).
-Whereas staff notation is graphical, Xet notation is
+Whereas staff notation is graphical,
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> notation is
 [text-based](https://en.wikipedia.org/wiki/Plain_text#:~:text=only%20characters%20of%20readable%20material%20but%20not%20its%20graphical%20representation).
 
 ```
@@ -2597,12 +2616,14 @@ function abc(tune, midi = false, notation = true) {
 }
 ```
 
-Xet vertically aligns chords into columns. A chord can contain either
-notes that represent tones or the tones themselves. Mixing notes and
-tones in the same chord is not allowed. The chord in the example above
-can be written with notes instead of tones because Tone
-<span class="color2">42</span> sets Octave <span class="color4">4</span>
-as the default. Each line can have its own default octave.
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> vertically aligns chords into columns. A
+chord can contain either notes that represent tones or the tones
+themselves. Mixing notes and tones in the same chord is not allowed. The
+chord in the example above can be written with notes instead of tones
+because Tone <span class="color2">42</span> sets Octave
+<span class="color4">4</span> as the default. Each line can have its own
+default octave.
 
 In the example below, Tone <span class="color6">46</span> sets the
 default on the middle line to Octave <span class="color4">4</span> but
@@ -2632,8 +2653,10 @@ style="width:6.63in;height:4.75in" />
 Column widths are measured in characters. A column of notes has a width
 of one character.
 
-The three notes vertically aligned in the column below are the Xet
-equivalent of a <span class="colorFs">F♯</span> major chord. Tone
+The three notes vertically aligned in the column below are the
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> equivalent of a
+<span class="colorFs">F♯</span> major chord. Tone
 <span class="color0">50</span> is able to set the reference frame for
 all three of these notes, even though they do not all belong to the same
 octave. Notes that span more than two octaves can be part of the same
@@ -2669,13 +2692,14 @@ column but not part of the same reference frame.
 46 ∅∅    6 |     6 6 |
 ```
 
-Thanks to this convention, we can The first example below uses Xet tones
-to emulate the <span class="colorFs">F♯</span> major chord. because
-aligned three notes in column below consists of notes because the
-previous in the example below below the example below, notes should be
-played If a chord spans multiple octaves, it has to be specified with
-tones. In the example below, Tone <span class="color6">46</span> sets
-the octave and then Tone
+Thanks to this convention, we can The first example below uses
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> tones to emulate the
+<span class="colorFs">F♯</span> major chord. because aligned three notes
+in column below consists of notes because the previous in the example
+below below the example below, notes should be played If a chord spans
+multiple octaves, it has to be specified with tones. In the example
+below, Tone <span class="color6">46</span> sets the octave and then Tone
 <span class="color0">50</span><span class="color2">2</span>) changes it.
 indicate that these notes are in Octave 4 The whereas the chord
 (<span class="colorFs">F<span class="iosevka">♯</span></span><span class="colorAs">A<span class="iosevka">♯</span></span><span class="colorCs">C<span class="iosevka">♯</span></span>
@@ -2683,8 +2707,10 @@ indicate that these notes are in Octave 4 The whereas the chord
 <span class="color6">6</span><span class="color0">0</span><span class="color2">2</span>)
 spans two octaves. When played as an
 [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order)
-starting immediately after kkkkk shown below can be written in Xet as
-one line of text that consists of a [time
+starting immediately after kkkkk shown below can be written in
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> as one line of text that consists of a
+[time
 signature](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure),
 tones, notes, spaces, and bar (|) characters.
 
@@ -2700,7 +2726,9 @@ signatures](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:t
 4<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span>|
 The value of a space depends on the [time
 signatures](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure),
-which in Xet consist of a top number that defines the number of musical
+which in <a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> consist of a top number that defines the
+number of musical
 [beats](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=In%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time)
 per
 [measure](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music%20bounded%20by%20vertical%20lines)
@@ -2725,21 +2753,23 @@ shown below that consists of the three <span class="colorCs">C♯</span>
 major chord notes immediately above Middle
 <span class="colorC">C</span>. Each note in the arpeggio lasts a If we
 specify that one space (<span class="color0625"> </span>) is equivalent
-to a quarter of a musical beat, this arpeggio could be written in Xet as
-a series of tones:
+to a quarter of a musical beat, this arpeggio could be written in
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> as a series of tones:
 <span class="color420">42</span><span class="color0625"> </span><span class="color450">45</span><span class="color0625"> </span><span class="color480">48</span><span class="color0625"> </span>.
 To avoid repeating the octave index, we can specify it at the beginning
 of the line and place a bar character (|) between it and the three notes
 of the arpeggio:
 4|<span class="color2">2</span><span class="color0625"> </span><span class="color5">5</span><span class="color0625"> </span><span class="color8">8</span><span class="color0625"> </span>.
 
-Xet indicates note duration with whitespace indicated with one or more
-spaces following a note or a rest indicates its duration. The single
-space (<span class="color0625"> </span>) that follows each note in the
-arpeggio example above indicates that each note is held for the shortest
-duration. The table below shows the note and rest names, symbols, and
-number of spaces that are equivalent if a quarter note is one beat and
-there are eight spaces per beat.
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> indicates note duration with whitespace
+indicated with one or more spaces following a note or a rest indicates
+its duration. The single space (<span class="color0625"> </span>) that
+follows each note in the arpeggio example above indicates that each note
+is held for the shortest duration. The table below shows the note and
+rest names, symbols, and number of spaces that are equivalent if a
+quarter note is one beat and there are eight spaces per beat.
 
 a single space (<span class="color0625"> </span>) is equivalent to an
 eighth note in. If a piece of music contains sixteenth notes, we will
@@ -2753,7 +2783,9 @@ sequentially, they need to be split across three separate lines:
 4|<span class="color8">8</span><span class="color0625"> </span>
 
 If the three notes are all quarter C♯, F, and G♯,. Rather than annotate
-music as a series of tones, Xet first identifies an octave at the
+music as a series of tones,
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> first identifies an octave at the
 beginning of a line before the notes that should be played in that
 octave. the notes that are played simultaneously instead of sequentially
 are written on separate lines and aligned vertically using whitespace.
@@ -2765,11 +2797,15 @@ such as the <span class="colorFs">F<span class="iosevka">♯</span></span>
 major chord
 (<span class="colorAs">A<span class="iosevka">♯</span></span><span class="colorCs">C<span class="iosevka">♯</span></span><span class="colorFs">F<span class="iosevka">♯</span></span>):
 <span class="color0">0</span><span class="color2">2</span><span class="color6">6</span>.
-All notes, rests, and chords are followed by a Xet separator which
-indicates their respective durations. A separator that follows a chord
-applies to all notes in that chord:
+All notes, rests, and chords are followed by a
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> separator which indicates their respective
+durations. A separator that follows a chord applies to all notes in that
+chord:
 <span class="color0">0</span><span class="color2">2</span><span class="color6">6</span><span class="color5">    </span>.
-As shown in the table below, Xet separators can be color coded.
+As shown in the table below,
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> separators can be color coded.
 
 <div style="overflow-x:scroll;">
 
@@ -2868,8 +2904,8 @@ style="max-width:11px" /></td>
 
 </div>
 
-In <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span>, a rest is denoted by a null sign (∅).
+In <a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a>, a rest is denoted by a null sign (∅).
 Notes, rests, chords, and their separators are grouped into
 [measures](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music)
 that have a bar (|) on both sides. Measures are grouped into lines that
@@ -2879,17 +2915,23 @@ character. Lines separated by empty lines are played sequentially,
 whereas groups of lines are played simultaneously.
 
 Since each line that represent Octaves 4 and 5, span Notes 40 to 59, and
-overlap with the majority of the range of 12ET treble clef tones: 41.302
+overlap with the majority of the range of
+<a href="#12et" class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12et</a> treble clef tones: 41.302
 to 61.302. Similarly, two lines representing Octaves 2 and 3 are To
 cover most of the tone range of the bass clef: 21.302 to 41.302, we need
-two Xet lines labeled as Octaves 2 and 3, Notes 20 to 39. Of these four
-lines, the top two cover but the treble clef and the bottom two closely
-match the bass clef.
+two <a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> lines labeled as Octaves 2 and 3, Notes 20
+to 39. Of these four lines, the top two cover but the treble clef and
+the bottom two closely match the bass clef.
 
-The Xet analog of the 12ET treble clef is two lines that represent
-Octaves 4 and 5, to be played separately are separated by spaces and
-grouped into measures that end with a bar (|). Measures are grouped into
-lines that start with an octave and [time
+The <a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> analog of the
+<a href="#12et" class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12et</a> treble clef is two lines
+that represent Octaves 4 and 5, to be played separately are separated by
+spaces and grouped into measures that end with a bar (|). Measures are
+grouped into lines that start with an octave and [time
 signature](https://en.wikipedia.org/wiki/Time_signature#:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure)
 and end with a
 [newline](https://en.wikipedia.org/wiki/Newline#:~:text=used%20to%20signify%20the%20end%20of%20a%20line%20of%20text%20and%20the%20start%20of%20a%20new%20one)
@@ -2897,9 +2939,9 @@ character.
 
 Groups of lines are played together and are separated by empty lines.
 With four lines, we can cover Octaves 2, 3, 4, and 5 or equivalently
-Notes 20 to 59, which is close to the range of the <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</span> bass and treble
+Notes 20 to 59, which is close to the range of the
+<a href="#12et" class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12et</a> bass and treble
 [clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff):
 <span class="colorC2">21.302</span> to
 <span class="colorC6">61.302</span>. Of these four lines, the top two
@@ -2914,10 +2956,11 @@ of the
 [chorus](https://en.wikipedia.org/wiki/Chorus#:~:text=the%20part%20of%20a%20song%20that%20is%20repeated%20several%20times)
 from “[Turn the beat
 around](https://en.wikipedia.org/wiki/Turn_the_Beat_Around#:~:text=a%20disco%20song%20written%20by%20Gerald%20Jackson%20and%20Peter%20Jackson%2C%20and%20performed%20by%20American%20actress%20and%20singer%20Vicki%20Sue%20Robinson%20in%201976)”
-are shown below, first using <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</span> music notation and then a
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12ET</span> treble clef.
+are shown below, first using
+<a href="#xet" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Tenet">Xet</a> music notation and then a
+<a href="#12et" class="tool" data-bs-toggle="tooltip"
+data-bs-title="12 equal temperament">12et</a> treble clef.
 
 4<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span>
 |
@@ -2960,7 +3003,7 @@ w: Turn the~ ~beat _ ~a- ~round
 abc(chocode, true)
 ```
 
-# Color and sound
+# Light and sound
 
 In his <span class="color704">1704</span> book entitled
 [Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[1],
@@ -3458,7 +3501,7 @@ two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20
 
 A square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a thousand zems">kilozem</span>
-(<a href="#z" id="squarekilozem" class="tool" data-bs-toggle="tooltip"
+(<a href="#kz2" id="squarekilozem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square kilozem">kz²</a>) is 1 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="sixteen hundred ares">hexakilare</span>, 16 <a
@@ -3466,30 +3509,37 @@ href="https://en.wikipedia.org/wiki/Hectare#:~:text=a%20square%20with%20100%2Dme
 class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundreds of ares">hectares</a>, 1600
 [ares](https://en.wikipedia.org/wiki/Hectare#Are), 40 Dec
-[acres](https://en.wikipedia.org/wiki/Acre#:~:text=k%C9%99r)%20is-,a%20unit%20of%20land%20area,-used%20in%20the),
+[acres](https://en.wikipedia.org/wiki/Acre#:~:text=%20is-,a%20unit%20of%20land%20area,-used%20in%20the),
 0.16 square <a
 href="https://en.wikipedia.org/wiki/Kilometre#:~:text=a%20unit%20of%20length%20in%20the%20International%20System%20of%20Units"
 class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of meters">kilometers</a>, 0.0625 Dec [square
+data-bs-title="thousands of meters">kilometers</a>
+(<a href="#km2" id="squarekilometer" class="tool"
+data-bs-toggle="tooltip" data-bs-title="square kilometers">km²</a>),
+0.0625 Dec [square
 miles](https://en.wikipedia.org/wiki/Square_mile#:~:text=US%20unit%20of%20measure%20for%20area),
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a million">10<sup>6</sup></span>
-<a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zems">z²</a>, or 1 megahexamilliare {.tool
-data-bs-toggle=“tooltip” data-bs-title=“1.6 thousand are”}
+<a href="#z2" class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zems">z²</a>, or 1 megahexamilliare
 (<a href="#Mx" id="megahexamilliare" class="tool"
 data-bs-toggle="tooltip" data-bs-title="megahexamilliare">Mx</a>). A
-<a href="#z" class="tool" data-bs-toggle="tooltip"
+<a href="#z2" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square zem">z²</a> is 1 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="1.6 thousandths of an are">hexamilliare</span>
 (<a href="#x" id="hexamilliare" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexamilliare">x</a>), 16 square <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="tenths of a meter">decimeters</span>,
+data-bs-title="tenths of a meter">decimeters</span>
+(<a href="#dm2" id="squaredecimeter" class="tool"
+data-bs-toggle="tooltip" data-bs-title="square decimeters">dm²</a>),
 1.<span class="vinculum">7</span> Dec [square
-feet](https://en.wikipedia.org/wiki/Square_foot#:~:text=the%20area%20of%20a%20square%20with%20sides%20of%201%20foot)🦶,
-or 256 Dec square inches. A square <span class="tool"
+feet](https://en.wikipedia.org/wiki/Square_foot#:~:text=the%20area%20of%20a%20square%20with%20sides%20of%201%20foot)🦶
+(<a href="#f2" id="squarefoot" class="tool" data-bs-toggle="tooltip"
+data-bs-title="square feet">f²</a>), or 256 Dec square inches
+(<a href="#i2" id="squareinch" class="tool" data-bs-toggle="tooltip"
+data-bs-title="square inch">i²</a>). A square <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="ten zem">decazem</span>
 (<a href="#Dz2" id="squaredecazem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square decazem">Dz²</a>) is 1 <span class="tool"
@@ -3513,7 +3563,7 @@ data-bs-title="a tenth of a zone equatorial meter">decizem</span>
 data-bs-title="cubic decizem">dz³</a>) is 1 cubic <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="a millionth of a taur">nanotaur</span>
-(<a href="#nc" id="cubicnanotaur" class="tool" data-bs-toggle="tooltip"
+(<a href="#nc3" id="cubicnanotaur" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic nanotaur">nc³</a>), 1 Dec wineglass, 2 Dec ounces,
 64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a liter">milliliters</span>
@@ -3528,16 +3578,16 @@ data-bs-title="cubic centizem">cz³</a>). A
 <a href="#dz3" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic decizem">dz³</a> of water🌊weighs $1\over7$ Dec
 pounds, 64 grams, or 1000 Dec grains
-(<a href="#g" id="gutta" class="tool" data-bs-toggle="tooltip"
+(<a href="#g" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grain">g</a>). A Dec ounce
-(<a href="#u" id="uncia" class="tool" data-bs-toggle="tooltip"
-data-bs-title="uncia">u</a>) of water weighs $1\over14$ Dec pounds, 500
-Dec <a href="#g" id="gutta" class="tool" data-bs-toggle="tooltip"
+(<a href="#o" id="ounce" class="tool" data-bs-toggle="tooltip"
+data-bs-title="ounce">o</a>) of water weighs $1\over14$ Dec pounds, 500
+Dec <a href="#g" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grains">g</a>, or 32 grams. In Dec, the symbols
 <a href="#g" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grain">g</a> and
-<a href="#u" class="tool" data-bs-toggle="tooltip"
-data-bs-title="uncia">u</a> can refer to either volume or mass. Mass
+<a href="#o" class="tool" data-bs-toggle="tooltip"
+data-bs-title="ounce">o</a> can refer to either volume or mass. Mass
 divided by volume is density.
 
 <div class="column-margin" fig-align="center"
@@ -3565,16 +3615,16 @@ data-bs-title="zems">z</a> tall, we could measure 1
 data-bs-title="zem">z</a> from his knees to his feet🦶or from his
 elbows💪to his fingertips. If he also weighed 1000 Dec
 <a href="#kg" id="kilograin" class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilograins">kg</a>, his [Body Mass
-Index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
+data-bs-title="kilograins">kg</a>, his [body mass
+index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
 (<a href="#bmi" id="bodymassindex" class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">bmi</a>) would be 62.5
 <a href="#kg" id="kilograin" class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilograins">kg</a> per <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="hexamilliares">x</span>
-($\text {kg}\over\text x$) or 25 kilograms per
-<a href="#m2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meters">m²</a> ($\text {kg}\over\text m^2$).
+data-bs-title="kilograins">kg</a> per
+<a href="#x" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexamilliares">x</a> ($\text {kg}\over\text x$) or 25
+kilograms per <a href="#m2" class="tool" data-bs-toggle="tooltip"
+data-bs-title="square meters">m²</a> ($\text {kilogram}\over\text m^2$).
 
 # Body mass index (bmi)
 
@@ -3587,9 +3637,11 @@ $\text {kg}\over\text x$ or 30 $\text {kg}\over\text m^2$ can be
 classified as obese. A
 <a href="#bmi" class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">bmi</a> of ${kgrains}
-<a href="#kg" class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of grains">kilograins</a> ÷ ${zem2} x = ${bmi}
-$\text {kg}\over\text x$ = ${kgrams} kilograms ÷ ${meter2}
+<a href="#kg" id="kilograin" class="tool" data-bs-toggle="tooltip"
+data-bs-title="kilograins">kg</a> ÷ ${zem2}
+<a href="#x" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexamilliares">x</a> = ${bmi} $\text {kg}\over\text x$ =
+${kgrams} kilograms ÷ ${meter2}
 <a href="#m2" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square meters">m²</a> = ${bmim2}
 $\text {kilograms}\over\text m^2$ is considered ${bmiStr}.
@@ -3780,8 +3832,8 @@ in
 files. With the `bibliography.yml` file shown below, you can cite this
 article and the <span class="color021">2021</span> article entitled
 [<span class="mono under">`chrono`</span>-Compatible Low-Level Date
-Algorithms](https://howardhinnant.github.io/date_algorithms.html) in
-which [Howard Hinnant](https://howardhinnant.github.io) describes the
+Algorithms](https://howardhinnant.github.io/date_algorithms) in which
+[Howard Hinnant](https://howardhinnant.github.io) describes the
 algorithms that serve as the foundation of Dec dates (Hinnant 2021+185).
 
 <div class="code-with-filename">
@@ -3799,16 +3851,16 @@ references:
     literal: 2025+345
   title: Dec
   type: article
-  URL: https://howardhinnant.github.io/date_algorithms.html
+  URL: https://maptv.github.io/dec
 - id: hinnant2021
   author:
     - family: Hinnant
       given: Howard
   issued:
-    literal: 2021+183
+    literal: 2021+185
   title: chrono-Compatible Low-Level Date Algorithms
   type: article
-  URL: https://howardhinnant.github.io/date_algorithms.html
+  URL: https://howardhinnant.github.io/date_algorithms
 ...
 ```
 
@@ -3822,13 +3874,15 @@ format. Per this format, the citation for this article would appear as
 [Laptev, Martin](https://maptv.github.io/about). 2025+345. “Dec.”
 ${decYearP0}+${decDateP0}. <https://maptv.github.io/dec>.
 
-Instead of using Quarto for citations, you can also prepare a list of
-references by copying and pasting citations like the one above. In
-alphabetical order below, you will find the
-[Observable](http://observablehq.com) notebooks that I adapted into many
-of the visualizations above. These notebooks did not have an impact on
-the design or implementation of Dec, but are nonetheless
-***note***worthy.
+Instead of using Quarto [citation
+syntax](https://quarto.org/docs/authoring/citations.html#sec-citations),
+you can also prepare a list of references using
+[footnotes](https://quarto.org/docs/authoring/markdown-basics.html#footnotes).
+As an example, I included citations for the Hinnant date algorithm
+article[5] in both the [references](#references) and
+[footnotes](#footnotes) sections. In alphabetical order below, you will
+find a list of the [Observable](http://observablehq.com) notebooks that
+I adapted into many of the visualizations above.
 
 # Appendix
 
@@ -3875,53 +3929,47 @@ the design or implementation of Dec, but are nonetheless
     <span class="tool" data-bs-toggle="tooltip"
     data-bs-title="June 13, 2018">2018+104</span>. “ABC.”
     ${decYearP0}+${decDateP0}. <https://observablehq.com/@thsoft/abc>.
-8.  [Hinnant, Howard](https://howardhinnant.github.io).
-    <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="September 1, 2021">2021+185</span>.
-    “`chrono`-Compatible Low-Level Date Algorithms.”
-    ${decYearP0}+${decDateP0}.
-    <https://howardhinnant.github.io/date_algorithms.html>.
-9.  [Johnson, Ian](https://observablehq.com/@enjalot) <span class="tool"
+8.  [Johnson, Ian](https://observablehq.com/@enjalot) <span class="tool"
     data-bs-toggle="tooltip"
     data-bs-title="June 30, 2021">2021+121</span>. “Draggable World Map
     Coordinates Input.” ${decYearP0}+${decDateP0}.
     <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
-10. [Lim, Maddie](https://observablehq.com/@maddievision)
+9.  [Lim, Maddie](https://observablehq.com/@maddievision)
     <span class="tool" data-bs-toggle="tooltip"
     data-bs-title="January 25, 2019">2018+330</span>. “Enneagram.”
     ${decYearP0}+${decDateP0}.
     <https://observablehq.com/@maddievision/enneagram>.
-11. [Paavanb](https://observablehq.com/@paavanb). <span class="tool"
+10. [Paavanb](https://observablehq.com/@paavanb). <span class="tool"
     data-bs-toggle="tooltip"
     data-bs-title="March 7, 2024">2024+006</span>. “Progressive Color
     Picker.” ${decYearP0}+${decDateP0}.
     <https://observablehq.com/@paavanb/progressive-color-picker>.
-12. [Patel, Amit](https://observablehq.com/@redblobgames).
+11. [Patel, Amit](https://observablehq.com/@redblobgames).
     <span class="tool" data-bs-toggle="tooltip"
     data-bs-title="December 16, 2021">2021+290</span>. “Compass Rose.”
     ${decYearP0}+${decDateP0}.
     <https://observablehq.com/@paavanb/progressive-color-picker>.
-13. [Pettiross, Jeff](https://observablehq.com/@pettiross)
+12. [Pettiross, Jeff](https://observablehq.com/@pettiross)
     <span class="tool" data-bs-toggle="tooltip"
     data-bs-title="July 19, 2024">2024+150</span>. “Categorical color
     scheme test tool.” ${decYearP0}+${decDateP0}.
     <https://observablehq.com/@observablehq/categorical-palette-tool>
-14. [Rieder, Lukas](https://observablehq.com/@lukasrieder)
+13. [Rieder, Lukas](https://observablehq.com/@lukasrieder)
     <span class="tool" data-bs-toggle="tooltip"
     data-bs-title="April 2, 2023">2023+032</span>. “Editable table.”
     ${decYearP0}+${decDateP0}.
     <https://observablehq.com/@parlant/editable-table>.
-15. [Rivière, Philippe](https://observablehq.com/@fil)
+14. [Rivière, Philippe](https://observablehq.com/@fil)
     <span class="tool" data-bs-toggle="tooltip"
     data-bs-title="November 15, 2022">2022+259</span>. “Add a class to
     an observable input.” ${decYearP0}+${decDateP0}.
     <https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support>.
-16. [Rivière, Philippe](https://observablehq.com/@fil)
+15. [Rivière, Philippe](https://observablehq.com/@fil)
     <span class="tool" data-bs-toggle="tooltip"
     data-bs-title="January 25, 2024">2023+330</span>. “D3 Projections.”
     ${decYearP0}+${decDateP0}.
     <https://observablehq.com/@fil/d3-projections>.
-17. [Yamahata,
+16. [Yamahata,
     Christophe](https://observablehq.com/@christophe-yamahata)
     <span class="tool" data-bs-toggle="tooltip"
     data-bs-title="June 28, 2022">2021+119</span>. “Great circle:
@@ -3941,6 +3989,14 @@ the design or implementation of Dec, but are nonetheless
   thousandth of an day, 864 milliseconds
   - <a href="#millibeat" id="mb">mb</a>: millibeat, centimicroday, a
     thousandth of a beat, a hundred millionth of a day, 864 microseconds
+- <a href="#beatpercentiday" id="bpc">bpc</a>: a musical or heart beat
+  per centiday, a tenth of a beat per milliday,
+  0.069<span class="vinculum">4</span> beats per minute, 100 beats per
+  day
+- <a href="#beatpermilliday" id="bpm">bpm</a>: a musical or heart beat
+  per milliday, ten beats per centiday,
+  0.69<span class="vinculum">4</span> beats per minute, 1000 beats per
+  day
 - <a href="#bodymassindex" id="bmi">bmi</a>: body mass index, kilograins
   of body mass divided by height in zem squared (kg/z²)
 - <a href="#taur" id="c">c</a>: taur, 𝜏*r*, 100000 kilozem, 40000
@@ -3951,6 +4007,8 @@ the design or implementation of Dec, but are nonetheless
     thousandth of a taur, 100 kilozem, 40 kilometers
   - <a href="#nanotaur" id="nc">nc</a>: nanotaur, *n*𝜏*r*, a thousandth
     of a taur, 100 millizem, 1 decizem, 4 centimeters
+  - <a href="#cubicnanotaur" id="nc3">nc³</a>: cubic nanotaur, *n*𝜏*r*³,
+    1 cubic decizem
 - <a href="#day" id="d">d</a>: day, a tenth of a decaday, a seventh of
   week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays,
   1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse
@@ -3977,41 +4035,65 @@ the design or implementation of Dec, but are nonetheless
     86.4 milliseconds
   - <a href="#nanoday" id="nd">nd</a>: nanoday, a billionth of a day,
     86.4 microseconds
-- <a href="#degree" id="deg">°</a>: degree
+- <a href="#degree" id="deg">°</a>: degree, $1\over 360$ turns,
+  $180\over\pi$ or $360\over\tau$ radians
   - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
-- <a href="#gutta" id="g">g</a>: a drop or a grain, 64 microliters or 64
+- <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
+- <a href="#foot" id="f">f</a>: Dec foot, 0.75 zem, 75 millimeter
+  - <a href="#squarefoot" id="f2">f²</a>: Dec square foot, 5625 square
+    centizem, 9 square decimeter
+- <a href="#gutta" id="g">g</a>: drop or grain, 64 microliters or 64
   milligrams; in Latin, granum means grain and gutta means drop
-  - <a href="#kilograin" id="kg">kg</a>: a kilograin or a kilodrop, 64
-    grams or 64 milliliters
+  - <a href="#kilograin" id="kg">kg</a>: kilograin or kilodrop, 64 grams
+    or 64 milliliters
+  - <a href="#megagrain" id="Mg">Mg</a>: megagrain or megadrop, 64
+    kilograms or 64 liters
+- <a href="#hand" id="h">h</a>: hand, 0.25 zem, 1 decimeter
 - <a href="#hexadecimal" id="hex">hex</a>: hexadecimal, base 16
 - <a href="#huesaturationlightness" id="hsl">hsl</a>: hue saturation
   lightness
 - <a href="#huesaturationvalue" id="hsv">hsv</a>: hue saturation value
+- <a href="#inch" id="i">i</a>: inch, a sixteenth of a zem, 25
+  millimeter
+  - <a href="#squareinch" id="i2">i²</a>: Dec square inch, 3906.25
+    square millizem, 625 square millimeters
+- <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
+  glasses, a million drops, half a barrel
+- <a href="#liter" id="L">L</a>: liter, 15625 drops
+  - <a href="#milliliter" id="mL">mL</a>: milliliter, a thousandth of a
+    liter, 15.625 drops
+  - <a href="#microliter" id="uL">µL</a>: microliter, a millionth of a
+    liter, 0.015625 drops
 - <a href="#meridian" id="m">m</a>: meridian, a full circle around the
   Earth moving North or South; used in the abbreviations a.m.
   (antemeridian) and p.m. (postmeridian)
-  - <a href="#decimeridian" id="dm">dm</a>: decimeridian
-  - <a href="#millimeridian" id="mm">mm</a>: millimeridian
+  - <a href="#decimeridian" id="dm">dm</a>: decimeridian, a tenth of a
+    meridian
+  - <a href="#millimeridian" id="mm">mm</a>: millimeridian, a thousandth
+    of a meridian
+- <a href="#squaremeter" id="m2">m²</a>: square meter, 6.25 square zem
+  - <a href="#squarekilometer" id="km2">km²</a>: square kilometer, 6.25
+    square kilozem
+  - <a href="#squaredecimeter" id="dm2">dm²</a>: square decimeter, 6.25
+    square decizem
+- <a href="#ounce" id="o">o</a>: ounce, 500 grains, 32 grams, 500 drops,
+  32 milliliters
 - <a href="#parallel" id="lambda">λ</a>: parallel, a full circle around
   the Earth moving West or East; the English alphabet equivalent of λ is
-  the letter “l”, which occurs three times in the word “parallel”
-  - <a href="#deciparallel" id="dlambda">dλ</a>: deciparallel
-  - <a href="#milliparallel" id="mlambda">mλ</a>: milliparallel
+  the letter “l”, which occurs three times in the word “parallel” and
+  represents a ***l***ine that crosses every possible ***l***ongitude at
+  the same ***l***atitude
+  - <a href="#deciparallel" id="dlambda">dλ</a>: deciparallel, a tenth
+    of a parallel
+  - <a href="#milliparallel" id="mlambda">mλ</a>: milliparallel, a
+    thousandth of a parallel
 - <a href="#perbeat" id="per">p</a>: perbeat, the inverse of a beat,
   $1\over\text{beat}$, once per beat, every beat, 100000 q; the letter
   “p” can be flipped vertically to produce the letter “b”
   - <a href="#teraperbeat" id="Tp">Tp</a>: teraperbeat, 10<sup>12</sup>
-    perbeat, the inverse of a picobeat, $1\over\text{picobeat}$, once
-    per picobeat, every picobeat
-  - <a href="#beatpermilliday" id="bpm">bpm</a>: one musical or heart
-    beat per milliday, ten beats per centiday,
-    0.69<span class="vinculum">4</span> beats per minute, 1000 beats per
-    day
-  - <a href="#beatpercentiday" id="bpc">bpc</a>: one musical or heart
-    beat per centiday, a tenth of a beat per milliday,
-    0.069<span class="vinculum">4</span> beats per minute, 100 beats per
-    day
+    perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat,
+    every picobeat
 - <a href="#quotidie" id="q">q</a>: quotidie, the inverse of a day, a
   hundred thousandth of a perbeat; the letter “q” can be flipped
   vertically to produce the letter “d”
@@ -4020,7 +4102,7 @@ the design or implementation of Dec, but are nonetheless
   - <a href="#millirose" id="mr">mr</a>: compass millirose, a thousandth
     of a circle along the horizon, .36 compass degress
 - <a href="#radian" id="rad">rad</a>: radian, $1\over\tau$ turns,
-  $360\over\tau$ degrees, $2\over\pi$ turns, $180\over\pi$ degrees
+  $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
 - <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
 - <a href="#step" id="s">s</a>: step, a tenth of a two fold change in
   frequency from one octave to an adjacent octave
@@ -4028,6 +4110,9 @@ the design or implementation of Dec, but are nonetheless
     change in frequency from one octave to an adjacent octave
   - <a href="#millistep" id="ms">ms</a>: millistep, a ten thousandth of
     a two fold change in frequency from one octave to an adjacent octave
+- <a href="#internationalsystemofunits" id="si">SI</a>: [International
+  System of
+  Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 - <a href="#speedoflight" id="sol">sol</a>: speed of light, 647.55170928
   kiloomegars, 299792458 meters per second
 - <a href="#speedofsound" id="sos">sos</a>: speed of sound, 735.048
@@ -4035,22 +4120,23 @@ the design or implementation of Dec, but are nonetheless
 - <a href="#tau" id="2pi">𝜏</a>: 2𝜋 or approximately 6.2831853
 - <a href="#tenequaltemperance" id="tenet">Tenet</a>: ten equal
   temperance
-  - <a href="#xet" id="10et">Xet</a>: Tenet
+  - <a href="#10et" id="xet">Xet</a>: Tenet
   - <a href="#twelveequaltemperance" id="12et">12et</a>: twelve equal
     temperance
 - <a href="#timeofday" id="tod">tod</a>: time of day
 - <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
   - <a href="#centiturn" id="ct">ct</a>: centiturn, a hundredth of a
-    turn, 3.6 degrees, $\tau\over 100$ or $\pi\over 50$ radians
+    turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
   - <a href="#deciturn" id="dt">dt</a>: deciturn, a tenth of a turn, 36
-    degrees, $\tau\over 10$ or $\pi\over 5$ radians
+    degrees, 𝜏/10 or 𝜋/5 radians
   - <a href="#milliturn" id="mt">mt</a>: milliturn, a thousandth of a
-    turn, .36 degrees, $\tau\over 1000$ or $\pi\over 500$ radians
+    turn, .36 degrees, 𝜏/1000 or 𝜋/500 r $\pi\over 500$ radians
 - <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
-- <a href="#uncia" id="u">u</a>: ounce, 500 grains, 32 grams, 500 drops,
-  32 milliliters; originates from the Latin word uncia
-- <a href="#coordinateduniversaltime" id="utc">utc</a>: Coordinated
-  Universal Time
+- <a href="#coordinateduniversaltime" id="utc">utc</a>: [Coordinated
+  Universal
+  Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
+- <a href="#unitedstates" id="us">US</a>: [United
+  States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - <a href="#omegar" id="v">v</a>: omegar, ωr,
   1041.<span class="vinculum">6</span> Dec miles per hour, approximately
   1035.62 US miles per hour, 1.<span class="vinculum">6</span>
@@ -4065,6 +4151,8 @@ the design or implementation of Dec, but are nonetheless
     1.03562 US miles per hour, 1.<span class="vinculum">6</span>
     kilometers per hour, 0.4<span class="vinculum">629</span> meters per
     second, approximately 0.136% the speed of sound
+- <a href="#wineglass" id="w">w</a>: wineglass, 64 milliters, 2 ounces,
+  cubic decizem, 1000 drops
 - <a href="#hexamilliare" id="x">x</a>: hexamilliare, square zem, z², 16
   square decimeters, 1.<span class="vinculum">7</span> Dec square feet,
   256 Dec square inches
@@ -4077,22 +4165,31 @@ the design or implementation of Dec, but are nonetheless
     year
   - <a href="#yearofera" id="yoe">yoe</a>: year of era, integer years
     since the Dec epoch
-- <a href="#zoneequatorialmeter" id="z">z</a>: zone equatorial meter,
-  zem, 4 decimeters, 16 Dec inches
-  - <a href="#squarekilozem" id="kz2">kz²</a>: square kilozem,
-    megahexamilliare, a million square zem, hexakilare, 16 hectares,
-    1600 ares, 40 Dec acres, 0.16 square kilometers, 0.0625 Dec square
-    miles
-  - <a href="#kilozem" id="kz">kz</a>: kilozem, a thousand zem, 400
-    meters, a quarter Dec mile
+- <a href="#zoneequatorialmeter" id="z">z</a>: zem, zone equatorial
+  meter, 4 decimeters, 16 Dec inches
+  - <a href="#squarekilozem" id="kz2">kz²</a>: square kilozem, a million
+    square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600
+    ares, 40 Dec acres, 0.16 square kilometers, 0.0625 Dec square miles
+  - <a href="#kilozem" id="kz">kz</a>: kilozem, 1000 zem, 400 meters, a
+    quarter Dec mile
   - <a href="#squarezem" id="z2">z²</a>: square zem, hexamilliare, 16
     square decimeters, 1.<span class="vinculum">7</span> Dec square
     feet, 256 Dec square inches
-  - <a href="#cubiczem" id="z3">z³</a>: cubic zem, a keg, 64 liters, a
-    thousand wine glasses, a million drops, half a barrel
-  - <a href="#decizem" id="dz">dz</a>: decizem, 4 centimeters
-  - <a href="#centizem" id="cz">cz</a>: centizem, 4 millimeters
-  - <a href="#millizem" id="mz">mz</a>: millizem, 0.4 millimeters
+  - <a href="#squaredecazem" id="Dz2">Dz²</a>: square decazem, 1
+    hexadeciare, 16 square meters, 19.75 Dec square yards, 100 square
+    zem
+  - <a href="#cubiczem" id="z3">z³</a>: cubic zem, 1 keg, 64 liters,
+    1000 wine glasses, a million drops, half a barrel
+  - <a href="#cubicdecizem" id="dz3">dz³</a>: cubic decizem, 1000 drops,
+    64 milliliters, 2 ounces, 1 wine glass
+  - <a href="#cubiccentizem" id="cz3">cz³</a>: cubic centizem, 1 drop,
+    64 microliters
+  - <a href="#decizem" id="dz">dz</a>: decizem, a tenth of a zem, 4
+    centimeters
+  - <a href="#centizem" id="cz">cz</a>: centizem, a hundredth of a zem,
+    4 millimeters
+  - <a href="#millizem" id="mz">mz</a>: millizem, a thousandth of a zem,
+    0.4 millimeters
 
 </div>
 
@@ -6998,8 +7095,9 @@ entry-spacing="0">
 
 <div id="ref-hinnant2021" class="csl-entry">
 
-Hinnant, Howard. 2021+185. “Chrono-Compatible Low-Level Date
-Algorithms.” <https://howardhinnant.github.io/date_algorithms.html>.
+Hinnant, Howard. 2021+185.
+“<span class="nocase"><code>chrono</code></span>-Compatible Low-Level
+Date Algorithms.” <https://howardhinnant.github.io/date_algorithms>.
 
 </div>
 
@@ -7027,3 +7125,9 @@ data-bs-toggle="tooltip"
 data-bs-title="January 25, 2005">2004+330</span>. “Why does the meter
 beat the second?” ${decYearP0}+${decDateP0}.
 <https://arxiv.org/abs/physics/0412078>.
+
+[5] [Hinnant, Howard](https://howardhinnant.github.io).
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="September 1, 2021">2021+185</span>. “`chrono`-Compatible
+Low-Level Date Algorithms.” ${decYearP0}+${decDateP0}.
+<https://howardhinnant.github.io/date_algorithms.html>.
