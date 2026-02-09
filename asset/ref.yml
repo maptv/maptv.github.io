@@ -4,11 +4,11 @@ references:
   author:
     - family: Hinnant
       given: Howard
-      URL: https://howardhinnant.github.io
+      url: https://howardhinnant.github.io
   citation-key: hinnantChronoCompatibleLowLevelDate2021
   issued:
-    literal: 2023+185
+    literal: 2021+185
   title: chrono-Compatible Low-Level Date Algorithms
   type: article
-  URL: https://howardhinnant.github.io/date_algorithms.html
+  url: https://howardhinnant.github.io/date_algorithms.html
 ...
