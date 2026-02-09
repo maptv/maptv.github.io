@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+344
+2025+345
 
 - [<span class="toc-section-number">0</span> Dec measurement
   system](#sec-dec)
@@ -909,11 +909,11 @@ Like the ten major longitudes that separate them, Dec time zones are
 numbered <span class="color0">0</span> to <span class="color9">9</span>.
 Based on its current <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a parallel">deciparallel</span>
-(<a href="#dlambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciparallel">dλ</a>) longitude, ${point0lHsl}, Point
-<span class="point0">0</span> on the map🗺️above is in Zone
-${point0zHsl}. The number assigned to each time zone is its offset from
-Zone <span class="color0">0</span> in <span class="tool"
+(<a href="#dlambda" id="deciparallel" class="tool"
+data-bs-toggle="tooltip" data-bs-title="deciparallel">dλ</a>) longitude,
+${point0lHsl}, Point <span class="point0">0</span> on the map🗺️above is
+in Zone ${point0zHsl}. The number assigned to each time zone is its
+offset from Zone <span class="color0">0</span> in <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
 (<a href="#dd" id="deciday" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</a>). To obtain the
@@ -1641,12 +1641,11 @@ id="armlabel">Wikimedia</a>
 To visualize a square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>
 (<a href="#z2" id="squarezem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></a>), imagine four people
-standing in a circle, facing inward, each with their right hand✋placed
-on top of the elbow of the person to their right. Alternatively, two
-people can stand in front of each other and raise their arms💪, placing
-one hand✋on the elbow of the other person and the other hand✋on their
-own elbow.
+data-bs-title="square zem">z²</a>), imagine four people standing in a
+circle, facing inward, each with their right hand✋placed on top of the
+elbow of the person to their right. Alternatively, two people can stand
+in front of each other and raise their arms💪, placing one hand✋on the
+elbow of the other person and the other hand✋on their own elbow.
 
 <div id="zemlift" class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1659,16 +1658,16 @@ id="liftlabel">Wikimedia</a>
 
 You can approximate a
 <a href="#z2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></a> yourself by sitting in a
-chair🪑or standing🧍with your knees and feet🦶1
+data-bs-title="square zem">z²</a> yourself by sitting in a chair🪑or
+standing🧍with your knees and feet🦶1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a>, 4 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a meter">decimeters</span>, or 16 inches apart,
 which is probably about the width of your hips or shoulders. The
 <a href="#z2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></a> will be between your shins,
-its top will be below your knees, and its bottom will be either above
-your ankles or feet🦶, depending on your height.
+data-bs-title="square zem">z²</a> will be between your shins, its top
+will be below your knees, and its bottom will be either above your
+ankles or feet🦶, depending on your height.
 
 <div id="zemcubic" class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1993,9 +1992,9 @@ for both men and women age 25 to 45. A box📦that is the size of a cubic
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</a>
 (<a href="#z3" id="cubiczem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z<sup>3</sup></a>) would likely fit under a
-typical chair🪑 or in between the shins of two people sitting in front
-of each other with their knees and feet🦶1
+data-bs-title="cubic zem">z³</a>) would likely fit under a typical
+chair🪑 or in between the shins of two people sitting in front of each
+other with their knees and feet🦶1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> apart and their legs🦵bent at 25
 <span class="tool" data-bs-toggle="tooltip"
@@ -2120,7 +2119,7 @@ is between 100 and 166.<span class="vinculum">6</span>
 data-bs-title="beats">b</a> per
 <a href="#md" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millidays">md</a>
-(<a href="#bpm" id="beatspermilliday" class="tool"
+(<a href="#bpm" id="beatpermilliday" class="tool"
 data-bs-toggle="tooltip" data-bs-title="beats per milliday">bpm</a>).
 The unofficial anthem of the Dec measurement system, “[Turn the beat
 around](https://en.wikipedia.org/wiki/Turn_the_Beat_Around#:~:text=a%20disco%20song%20written%20by%20Gerald%20Jackson%20and%20Peter%20Jackson%2C%20and%20performed%20by%20American%20actress%20and%20singer%20Vicki%20Sue%20Robinson%20in%201976)”,
@@ -2160,7 +2159,7 @@ speed. The speed of light
 data-bs-title="speed of light">sol</a>) is roughly 647.551657
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of omegars">kiloomegars</span>
-(<a href="#kv" class="kiloomegar tool" data-bs-toggle="tooltip"
+(<a href="#kv" id="kiloomegar" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kiloomegars">kv</a>), which is about 881 thousand times
 faster than the
 <a href="#sos" id="speedofsound" class="tool" data-bs-toggle="tooltip"
@@ -2935,8 +2934,8 @@ data-bs-title="12 equal temperament">12ET</span> treble clef.
 
 4<sup>4</sup><sub>4</sub> | 9<sub>4</sub> 9<sub>8</sub>
 <span class="under">8<sub>8</sub> 8<sub>8</sub></span> 8<sub>4</sub>
-<span class="under">6<sub>8</sub> | 6<sup>3</sup><sub>4</sub></span>
-∅<sub>4</sub> |
+<span class="under">6<sub>8</sub> | 6³<sub>4</sub></span> ∅<sub>4</sub>
+|
 
 4<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span>
 | <span class="mono">9¼</span> <span class="mono">9⅛</span>
@@ -3460,8 +3459,8 @@ two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20
 A square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a thousand zems">kilozem</span>
 (<a href="#z" id="squarekilozem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square kilozem">kz<sup>2</sup></a>) is 1
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square kilozem">kz²</a>) is 1 <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="sixteen hundred ares">hexakilare</span>, 16 <a
 href="https://en.wikipedia.org/wiki/Hectare#:~:text=a%20square%20with%20100%2Dmetre%20sides"
 class="tool" data-bs-toggle="tooltip"
@@ -3476,12 +3475,12 @@ miles](https://en.wikipedia.org/wiki/Square_mile#:~:text=US%20unit%20of%20measur
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a million">10<sup>6</sup></span>
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zems">z<sup>2</sup></a>, or 1 megahexamilliare
-{.tool data-bs-toggle=“tooltip” data-bs-title=“1.6 thousand are”}
+data-bs-title="square zems">z²</a>, or 1 megahexamilliare {.tool
+data-bs-toggle=“tooltip” data-bs-title=“1.6 thousand are”}
 (<a href="#Mx" id="megahexamilliare" class="tool"
 data-bs-toggle="tooltip" data-bs-title="megahexamilliare">Mx</a>). A
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></a> is 1 <span class="tool"
+data-bs-title="square zem">z²</a> is 1 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="1.6 thousandths of an are">hexamilliare</span>
 (<a href="#x" id="hexamilliare" class="tool" data-bs-toggle="tooltip"
@@ -3493,13 +3492,13 @@ feet](https://en.wikipedia.org/wiki/Square_foot#:~:text=the%20area%20of%20a%20sq
 or 256 Dec square inches. A square <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="ten zem">decazem</span>
 (<a href="#Dz2" id="squaredecazem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square decazem">Dz<sup>2</sup></a>) is 1
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="square decazem">Dz²</a>) is 1 <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
 [square
 meters](https://en.wikipedia.org/wiki/Square_metre#:~:text=the%20unit%20of%20area%20in%20the%20International%20System%20of%20Units)
 (<a href="#m2" id="squaremeter" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meters">m<sup>2</sup></a>), <span class="tool"
+data-bs-title="square meters">m²</a>), <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>19.75 Dec
 [square
 yards](https://en.wikipedia.org/wiki/Square_yard#:~:text=U.S.%20customary%20unit%20of%20area),
@@ -3511,12 +3510,12 @@ data-bs-title="hexamilliares">x</a>.
 A cubic <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a zone equatorial meter">decizem</span>
 (<a href="#dz3" id="cubicdecizem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz<sup>3</sup></a>) is 1 cubic
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic decizem">dz³</a>) is 1 cubic <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="a millionth of a taur">nanotaur</span>
 (<a href="#nc" id="cubicnanotaur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic nanotaur">nc<sup>3</sup></a>), 1 Dec wineglass, 2
-Dec ounces, 64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic nanotaur">nc³</a>), 1 Dec wineglass, 2 Dec ounces,
+64 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a liter">milliliters</span>
 (<a href="#mL" id="milliliter" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliliters">mL</a>), 1000 Dec drops
@@ -3525,10 +3524,10 @@ data-bs-title="drops">g</a>), or 1000 cubic <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="a tenth of a zone equatorial meter">centizems</span>
 (<a href="#cz3" id="cubiccentizem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></a>). A
+data-bs-title="cubic centizem">cz³</a>). A
 <a href="#dz3" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz<sup>3</sup></a> of water🌊weighs
-$1\over7$ Dec pounds, 64 grams, or 1000 Dec grains
+data-bs-title="cubic decizem">dz³</a> of water🌊weighs $1\over7$ Dec
+pounds, 64 grams, or 1000 Dec grains
 (<a href="#g" id="gutta" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grain">g</a>). A Dec ounce
 (<a href="#u" id="uncia" class="tool" data-bs-toggle="tooltip"
@@ -3550,8 +3549,8 @@ style="text-align:center;">
 </div>
 
 A <a href="#z3" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z<sup>3</sup></a> is 1 keg. A keg of
-water🌊weighs 64 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic zem">z³</a> is 1 keg. A keg of water🌊weighs 64
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of grams">kilograms</span>, 128 Dec pounds, or
 a 1000 Dec <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of grains">kilograins</span>
@@ -3575,8 +3574,7 @@ data-bs-title="kilograins">kg</a> per <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="hexamilliares">x</span>
 ($\text {kg}\over\text x$) or 25 kilograms per
 <a href="#m2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meters">m<sup>2</sup></a>
-($\text {kg}\over\text m^2$).
+data-bs-title="square meters">m²</a> ($\text {kg}\over\text m^2$).
 
 # Body mass index (bmi)
 
@@ -3593,7 +3591,7 @@ data-bs-title="body mass index">bmi</a> of ${kgrains}
 data-bs-title="thousands of grains">kilograins</a> ÷ ${zem2} x = ${bmi}
 $\text {kg}\over\text x$ = ${kgrams} kilograms ÷ ${meter2}
 <a href="#m2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meters">m<sup>2</sup></a> = ${bmim2}
+data-bs-title="square meters">m²</a> = ${bmim2}
 $\text {kilograms}\over\text m^2$ is considered ${bmiStr}.
 
 ``` {ojs}
@@ -3784,7 +3782,7 @@ article and the <span class="color021">2021</span> article entitled
 [<span class="mono under">`chrono`</span>-Compatible Low-Level Date
 Algorithms](https://howardhinnant.github.io/date_algorithms.html) in
 which [Howard Hinnant](https://howardhinnant.github.io) describes the
-algorithms that serve as the foundation of Dec dates (Hinnant 2023+185).
+algorithms that serve as the foundation of Dec dates (Hinnant 2021+185).
 
 <div class="code-with-filename">
 
@@ -3798,7 +3796,7 @@ references:
     - family: Laptev
       given: Martin
   issued:
-    literal: 2025+344
+    literal: 2025+345
   title: Dec
   type: article
   URL: https://howardhinnant.github.io/date_algorithms.html
@@ -3821,7 +3819,7 @@ As demonstrated by the previous sentence above and the
 Dec dates. By default, Quarto formats citations according to the
 [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date
 format. Per this format, the citation for this article would appear as
-[Laptev, Martin](https://maptv.github.io/about). 2025+344. “Dec.”
+[Laptev, Martin](https://maptv.github.io/about). 2025+345. “Dec.”
 ${decYearP0}+${decDateP0}. <https://maptv.github.io/dec>.
 
 Instead of using Quarto for citations, you can also prepare a list of
@@ -3944,7 +3942,7 @@ the design or implementation of Dec, but are nonetheless
   - <a href="#millibeat" id="mb">mb</a>: millibeat, centimicroday, a
     thousandth of a beat, a hundred millionth of a day, 864 microseconds
 - <a href="#bodymassindex" id="bmi">bmi</a>: body mass index, kilograins
-  of body mass divided by height in zem squared (kg/z<sup>2</sup>)
+  of body mass divided by height in zem squared (kg/z²)
 - <a href="#taur" id="c">c</a>: taur, 𝜏*r*, 100000 kilozem, 40000
   kilometers, nearly the circumference of the Earth, roughly the product
   of 𝜏 and the radius of the Earth, approximately the dividend of the
@@ -3982,11 +3980,10 @@ the design or implementation of Dec, but are nonetheless
 - <a href="#degree" id="deg">°</a>: degree
   - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
-- <a href="#gutta" id="g">g</a>: granum or gutta, 1 g is a mass of 64
-  milligrams or a volume of 64 microliters; in Latin, granum means grain
-  and gutta means drop
-  - <a href="#kilogranum" id="kg">kg</a>: kilogranum or kilogutta, a
-    mass of 64 grams or a volume of 64 milliliters
+- <a href="#gutta" id="g">g</a>: a drop or a grain, 64 microliters or 64
+  milligrams; in Latin, granum means grain and gutta means drop
+  - <a href="#kilograin" id="kg">kg</a>: a kilograin or a kilodrop, 64
+    grams or 64 milliliters
 - <a href="#hexadecimal" id="hex">hex</a>: hexadecimal, base 16
 - <a href="#huesaturationlightness" id="hsl">hsl</a>: hue saturation
   lightness
@@ -4050,7 +4047,7 @@ the design or implementation of Dec, but are nonetheless
   - <a href="#milliturn" id="mt">mt</a>: milliturn, a thousandth of a
     turn, .36 degrees, $\tau\over 1000$ or $\pi\over 500$ radians
 - <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
-- <a href="#ounce" id="u">u</a>: ounce, 500 grains, 32 grams, 500 drops,
+- <a href="#uncia" id="u">u</a>: ounce, 500 grains, 32 grams, 500 drops,
   32 milliliters; originates from the Latin word uncia
 - <a href="#coordinateduniversaltime" id="utc">utc</a>: Coordinated
   Universal Time
@@ -4068,13 +4065,13 @@ the design or implementation of Dec, but are nonetheless
     1.03562 US miles per hour, 1.<span class="vinculum">6</span>
     kilometers per hour, 0.4<span class="vinculum">629</span> meters per
     second, approximately 0.136% the speed of sound
-- <a href="#hexamilliare" id="x">x</a>: hexamilliare, square zem,
-  z<sup>2</sup>, 16 square decimeters, 1.<span class="vinculum">7</span>
-  Dec square feet, 256 Dec square inches
+- <a href="#hexamilliare" id="x">x</a>: hexamilliare, square zem, z², 16
+  square decimeters, 1.<span class="vinculum">7</span> Dec square feet,
+  256 Dec square inches
   - <a href="#megahexamilliare" id="Mx">Mx</a>: megahexamilliare, a
-    million square zem, square kilozem, kz<sup>2</sup>, hexakilare, 16
-    hectares, 1600 ares, 40 Dec acres, 0.16 square kilometers, 0.0625
-    Dec square miles
+    million square zem, square kilozem, kz², hexakilare, 16 hectares,
+    1600 ares, 40 Dec acres, 0.16 square kilometers, 0.0625 Dec square
+    miles
 - <a href="#year" id="y">y</a>: year
   - <a href="#milliyear" id="my">my</a>: milliyear, a thousandth of a
     year
@@ -4082,18 +4079,17 @@ the design or implementation of Dec, but are nonetheless
     since the Dec epoch
 - <a href="#zoneequatorialmeter" id="z">z</a>: zone equatorial meter,
   zem, 4 decimeters, 16 Dec inches
-  - <a href="#squarekilozem" id="kz2">kz<sup>2</sup></a>: square
-    kilozem, megahexamilliare, a million square zem, hexakilare, 16
-    hectares, 1600 ares, 40 Dec acres, 0.16 square kilometers, 0.0625
-    Dec square miles
+  - <a href="#squarekilozem" id="kz2">kz²</a>: square kilozem,
+    megahexamilliare, a million square zem, hexakilare, 16 hectares,
+    1600 ares, 40 Dec acres, 0.16 square kilometers, 0.0625 Dec square
+    miles
   - <a href="#kilozem" id="kz">kz</a>: kilozem, a thousand zem, 400
     meters, a quarter Dec mile
-  - <a href="#squarezem" id="z2">z<sup>2</sup></a>: square zem,
-    hexamilliare, 16 square decimeters,
-    1.<span class="vinculum">7</span> Dec square feet, 256 Dec square
-    inches
-  - <a href="#cubiczem" id="z3">z<sup>3</sup></a>: cubic zem, a keg, 64
-    liters, a thousand wine glasses, a million drops, half a barrel
+  - <a href="#squarezem" id="z2">z²</a>: square zem, hexamilliare, 16
+    square decimeters, 1.<span class="vinculum">7</span> Dec square
+    feet, 256 Dec square inches
+  - <a href="#cubiczem" id="z3">z³</a>: cubic zem, a keg, 64 liters, a
+    thousand wine glasses, a million drops, half a barrel
   - <a href="#decizem" id="dz">dz</a>: decizem, 4 centimeters
   - <a href="#centizem" id="cz">cz</a>: centizem, 4 millimeters
   - <a href="#millizem" id="mz">mz</a>: millizem, 0.4 millimeters
@@ -7002,7 +6998,7 @@ entry-spacing="0">
 
 <div id="ref-hinnant2021" class="csl-entry">
 
-Hinnant, Howard. 2023+185. “Chrono-Compatible Low-Level Date
+Hinnant, Howard. 2021+185. “Chrono-Compatible Low-Level Date
 Algorithms.” <https://howardhinnant.github.io/date_algorithms.html>.
 
 </div>
