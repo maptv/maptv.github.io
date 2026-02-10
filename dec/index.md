@@ -2268,9 +2268,10 @@ humans extends from Tone <span class="color3">03</span> to Tone
 in <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">p</a>,
 [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency),
-musical in steps, . From the value selected by the “Frequency”
-range🎚️input below, we can calculate a pitch: , a : The table The
-positive (**+**) and negative (**–**)
+musical in <a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a>, . From the value selected by the
+“Frequency” range🎚️input below, we can calculate a pitch: , a : The
+table The positive (**+**) and negative (**–**)
 [indexes](https://en.wikipedia.org/wiki/Index#:~:text=an%20integer%20pointer%20into%20an%20array%20data%20structure),
 <a href="#hex" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</a> triplets, and
@@ -3186,81 +3187,81 @@ data-bs-title="kilometers">km</a>/hour</th>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Inch_per_second">inches per
 second</a></td>
-<td>0.054</td>
-<td>0.09</td>
+<td><span class="mono">0.054</span></td>
+<td><span class="mono">0.09</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Foot_per_second">feet per
 second</a></td>
-<td>0.648</td>
-<td>1.08</td>
+<td><span class="mono">0.648</span></td>
+<td><span class="mono">1.08</span></td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Miles_per_hour">miles per
 hour</a></td>
-<td>0.96</td>
-<td>1.6</td>
+<td><span class="mono">0.96</span></td>
+<td><span class="mono">1.6</span></td>
 </tr>
 </tbody>
 </table>
 
 <table>
 <colgroup>
-<col style="width: 35%" />
-<col style="width: 31%" />
+<col style="width: 33%" />
 <col style="width: 32%" />
+<col style="width: 33%" />
 </colgroup>
 <thead>
 <tr>
 <th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> area units</th>
-<th><a href="#z2" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z²</a></th>
-<th><a href="#m2" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="square meter">m²</a></th>
+<th><a href="#cz2" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="square centizem">cz²</a></th>
+<th><a href="#cm2" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="square centimeter">cm²</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_inch">square inches</a></td>
-<td><span class="mono">39.0625 × 10<sup>-4</sup></span></td>
-<td><span class="mono">6.25 × 10<sup>-4</sup></span></td>
+<td><span class="mono">39.0625</span></td>
+<td><span class="mono">6.25</span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_foot">square feets</a></td>
-<td><span class="mono">0.5625</span></td>
-<td><span class="mono">0.09</span></td>
+<td><span class="mono">5625</span></td>
+<td><span class="mono">900</span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_yard">square yards</a></td>
-<td><span class="mono">5.0625</span></td>
-<td><span class="mono">0.81</span></td>
+<td><span class="mono">50625</span></td>
+<td><span class="mono">8100</span></td>
 </tr>
 <tr>
 <td><span class="colorSqMi">0.9884</span> <a
 href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
-<td><span class="mono">2.5 × 10<sup>4</sup></span></td>
-<td><span class="mono">0.4 × 10<sup>4</sup></span></td>
+<td><span class="mono">25 × 10<sup>7</sup></span></td>
+<td><span class="mono">4 × 10<sup>7</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorSqMi">0.9884</span> <a
 href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
-<td><span class="mono">16 × 10<sup>6</sup></span></td>
-<td><span class="mono">2.56 × 10<sup>6</sup></span></td>
+<td><span class="mono">16 × 10<sup>10</sup></span></td>
+<td><span class="mono">256 × 10<sup>8</sup></span></td>
 </tr>
 </tbody>
 </table>
 
 <table>
 <colgroup>
-<col style="width: 41%" />
-<col style="width: 31%" />
-<col style="width: 27%" />
+<col style="width: 39%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
 </colgroup>
 <thead>
 <tr>
@@ -3268,8 +3269,8 @@ href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
 data-bs-title="United States">US</span> volume units</th>
 <th><a href="#cz3" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="cubic centizem">cz³</a></th>
-<th><a href="#mL" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="milliliter">mL</a></th>
+<th><a href="#cm3" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centimeter">cm³</a></th>
 </tr>
 </thead>
 <tbody>
@@ -3277,7 +3278,7 @@ data-bs-title="milliliter">mL</a></th>
 <td><span class="colorDrop">1.2549</span> <a
 href="https://en.wikipedia.org/wiki/Drop_(unit)">drops</a></td>
 <td><span class="mono">1</span></td>
-<td><span class="mono">64 × 10<sup>-3</sup></span></td>
+<td><span class="mono">0.064</span></td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
@@ -3300,65 +3301,65 @@ href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
 href="https://en.wikipedia.org/wiki/Wine_glass#Capacity_measure">wineglasses</a></td>
-<td><span class="mono">1 × 10<sup>3</sup></span></td>
+<td><span class="mono">1000</span></td>
 <td><span class="mono">64</span></td>
 </tr>
 <tr>
 <td><span class="colorGall">0.9468</span> <a
 href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
-<td><span class="mono">3.5 × 10<sup>3</sup></span></td>
+<td><span class="mono">3500</span></td>
 <td><span class="mono">224</span></td>
 </tr>
 <tr>
 <td><span class="colorGall">0.9468</span> <a
 href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
-<td><span class="mono">7 × 10<sup>3</sup></span></td>
+<td><span class="mono">7000</span></td>
 <td><span class="mono">448</span></td>
 </tr>
 <tr>
 <td><span class="colorGall">0.9468</span> <a
 href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
-<td><span class="mono">14 × 10<sup>3</sup></span></td>
+<td><span class="mono">14000</span></td>
 <td><span class="mono">896</span></td>
 </tr>
 <tr>
 <td><span class="colorGall">0.9468</span> <a
 href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
-<td><span class="mono">56 × 10<sup>3</sup></span></td>
-<td><span class="mono">3.584 × 10<sup>3</sup></span></td>
+<td><span class="mono">56000</span></td>
+<td><span class="mono">3584</span></td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
 href="https://en.wikipedia.org/wiki/Cubic_foot">cubic feet</a></td>
-<td><span class="mono">421.875 × 10<sup>3</sup></span></td>
-<td><span class="mono">27 × 10<sup>3</sup></span></td>
+<td><span class="mono">421875</span></td>
+<td><span class="mono">27000</span></td>
 </tr>
 <tr>
 <td><span class="colorBarr">1.0735</span> <a
 href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
 <td><span class="mono">1 × 10<sup>6</sup></span></td>
-<td><span class="mono">64 × 10<sup>3</sup></span></td>
+<td><span class="mono">64000</span></td>
 </tr>
 <tr>
 <td><span class="colorBarr">1.0735</span> <a
 href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
 <td><span class="mono">2 × 10<sup>6</sup></span></td>
-<td><span class="mono">128 × 10<sup>3</sup></span></td>
+<td><span class="mono">128000</span></td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
 href="https://en.wikipedia.org/wiki/Cubic_yard">cubic yards</a></td>
 <td><span class="mono">11.390625 × 10<sup>6</sup></span></td>
-<td><span class="mono">729 × 10<sup>3</sup></span></td>
+<td><span class="mono">729000</span></td>
 </tr>
 </tbody>
 </table>
 
 <table>
 <colgroup>
-<col style="width: 62%" />
-<col style="width: 18%" />
-<col style="width: 19%" />
+<col style="width: 75%" />
+<col style="width: 11%" />
+<col style="width: 12%" />
 </colgroup>
 <thead>
 <tr>
@@ -3373,31 +3374,31 @@ data-bs-title="United States">US</a> mass units</th>
 <td><span class="colorMass">0.9877</span> <a
 href="https://en.wikipedia.org/wiki/Grain_(unit)">grains</a></td>
 <td><span class="mono">1</span></td>
-<td><span class="mono">64 × 10<sup>-3</sup></span></td>
+<td><span class="mono">0.064</span></td>
 </tr>
 <tr>
 <td><span class="colorCara">0.96</span> <a
 href="https://en.wikipedia.org/wiki/Carat_(mass)">carats</a></td>
 <td><span class="mono">3</span></td>
-<td><span class="mono">192 × 10<sup>-3</sup></span></td>
+<td><span class="mono">0.192</span></td>
 </tr>
 <tr>
 <td><span class="colorAvOz">1.1288</span> <a
 href="https://en.wikipedia.org/wiki/Ounce">ounces</a></td>
-<td><span class="mono">0.5 × 10<sup>3</sup></span></td>
+<td><span class="mono">500</span></td>
 <td><span class="mono">32</span></td>
 </tr>
 <tr>
 <td><span class="colorMass">0.9877</span> <a
 href="https://en.wikipedia.org/wiki/Pound_(mass)">pounds</a></td>
-<td><span class="mono">7 × 10<sup>3</sup></span></td>
+<td><span class="mono">7000</span></td>
 <td><span class="mono">448</span></td>
 </tr>
 <tr>
 <td><span class="colorMass">0.9877</span> <a
 href="https://en.wikipedia.org/wiki/Short_ton">tons</a></td>
-<td><span class="mono">14 × 10<sup>6</sup></span></td>
-<td><span class="mono">896 × 10<sup>3</sup></span></td>
+<td><span class="mono">14000</span></td>
+<td><span class="mono">896000</span></td>
 </tr>
 </tbody>
 </table>
