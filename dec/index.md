@@ -3337,19 +3337,19 @@ href="https://en.wikipedia.org/wiki/Cubic_foot">cubic feet</a></td>
 <tr>
 <td><span class="colorBarr">1.0735</span> <a
 href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
-<td><span class="mono">1 × 10<sup>6</sup></span></td>
+<td><span class="mono">1000000</span></td>
 <td><span class="mono">64000</span></td>
 </tr>
 <tr>
 <td><span class="colorBarr">1.0735</span> <a
 href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
-<td><span class="mono">2 × 10<sup>6</sup></span></td>
+<td><span class="mono">2000000</span></td>
 <td><span class="mono">128000</span></td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
 href="https://en.wikipedia.org/wiki/Cubic_yard">cubic yards</a></td>
-<td><span class="mono">11.390625 × 10<sup>6</sup></span></td>
+<td><span class="mono">11390625</span></td>
 <td><span class="mono">729000</span></td>
 </tr>
 </tbody>
@@ -3357,8 +3357,8 @@ href="https://en.wikipedia.org/wiki/Cubic_yard">cubic yards</a></td>
 
 <table>
 <colgroup>
-<col style="width: 75%" />
-<col style="width: 11%" />
+<col style="width: 73%" />
+<col style="width: 14%" />
 <col style="width: 12%" />
 </colgroup>
 <thead>
@@ -3397,7 +3397,7 @@ href="https://en.wikipedia.org/wiki/Pound_(mass)">pounds</a></td>
 <tr>
 <td><span class="colorMass">0.9877</span> <a
 href="https://en.wikipedia.org/wiki/Short_ton">tons</a></td>
-<td><span class="mono">14000</span></td>
+<td><span class="mono">14000000</span></td>
 <td><span class="mono">896000</span></td>
 </tr>
 </tbody>
