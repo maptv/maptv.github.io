@@ -244,3 +244,6 @@ g.node g.label:has(span.nodeLabel) * {
     border-top: none;
     margin-top: -10px;
 }
+.bold {
+  font-weight: bold;
+}

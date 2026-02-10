@@ -2238,11 +2238,12 @@ data-bs-title="steps">s</a>). The equations below convert between
 data-bs-title="perbeats">p</a> and <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="steps">s</span>. Frequencies
 less than 12.5 <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a> have a negative <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="steps">s</span> value and are
-unlikely to be audible outside of carefully controlled laboratory
-experiments. Similarly, frequencies above 109 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="steps">s</span> or 24320
+data-bs-title="perbeats">p</a> have a negative
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a> value and are unlikely to be audible outside
+of carefully controlled laboratory experiments. Similarly, frequencies
+above 109 <a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a> or 24320
 <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">p</a> represent the upper limit of the audible
 range.
@@ -3043,19 +3044,19 @@ data-bs-title="International System of Units">SI</a>) units.
 
 ## Unit conversion tables
 
-<table>
+<table style="width:100%;">
 <colgroup>
-<col style="width: 46%" />
+<col style="width: 47%" />
 <col style="width: 44%" />
-<col style="width: 9%" />
+<col style="width: 7%" />
 </colgroup>
 <thead>
 <tr>
-<th><strong><a href="#us" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> length units</strong></th>
-<th><strong><a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</a></strong></th>
-<th><strong>meter</strong></th>
+<th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> length units</th>
+<th><a href="#z" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</a></th>
+<th>meter</th>
 </tr>
 </thead>
 <tbody>
@@ -3166,17 +3167,17 @@ href="https://en.wikipedia.org/wiki/League_(unit)">leagues</a></td>
 
 <table>
 <colgroup>
-<col style="width: 37%" />
-<col style="width: 30%" />
+<col style="width: 36%" />
 <col style="width: 31%" />
+<col style="width: 32%" />
 </colgroup>
 <thead>
 <tr>
-<th><strong><a href="#us" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> speed units</strong></th>
-<th><a href="#mv" class="tool" data-bs-toggle="tooltip"
+<th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> speed units</th>
+<th><a href="#mv" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegars">mv</a></th>
-<th><a href="#km" class="tool" data-bs-toggle="tooltip"
+<th><a href="#km" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="kilometers">km</a>/hour</th>
 </tr>
 </thead>
@@ -3213,12 +3214,12 @@ hour</a></td>
 </colgroup>
 <thead>
 <tr>
-<th><strong><a href="#us" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> area units</strong></th>
-<th><strong><a href="#z2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z²</a></strong></th>
-<th><strong><a href="#m2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meter">m²</a></strong></th>
+<th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> area units</th>
+<th><a href="#z2" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z²</a></th>
+<th><a href="#m2" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="square meter">m²</a></th>
 </tr>
 </thead>
 <tbody>
@@ -3257,17 +3258,17 @@ href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
 
 <table>
 <colgroup>
-<col style="width: 40%" />
-<col style="width: 27%" />
-<col style="width: 31%" />
+<col style="width: 43%" />
+<col style="width: 29%" />
+<col style="width: 26%" />
 </colgroup>
 <thead>
 <tr>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</span> volume units</strong></th>
-<th><a href="#cz3" class="tool" data-bs-toggle="tooltip"
+<th><span class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</span> volume units</th>
+<th><a href="#cz3" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="cubic centizem">cz<sup>3</sup></a></th>
-<th><a href="#mL" class="tool" data-bs-toggle="tooltip"
+<th><a href="#mL" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="milliliter">mL</a></th>
 </tr>
 </thead>
@@ -3276,7 +3277,7 @@ data-bs-title="milliliter">mL</a></th>
 <td><span class="colorDrop">1.2549</span> <a
 href="https://en.wikipedia.org/wiki/Drop_(unit)">drops</a></td>
 <td><span class="mono">1</span></td>
-<td><span class="mono">0.064</span></td>
+<td><span class="mono">64 × 10<sup>-3</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
@@ -3355,16 +3356,16 @@ href="https://en.wikipedia.org/wiki/Cubic_yard">cubic yards</a></td>
 
 <table>
 <colgroup>
-<col style="width: 61%" />
-<col style="width: 19%" />
+<col style="width: 62%" />
+<col style="width: 18%" />
 <col style="width: 19%" />
 </colgroup>
 <thead>
 <tr>
-<th><strong><a href="#us" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> mass units</strong></th>
-<th><strong>grain</strong></th>
-<th><strong>gram</strong></th>
+<th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> mass units</th>
+<th>grain</th>
+<th>gram</th>
 </tr>
 </thead>
 <tbody>
@@ -3945,7 +3946,7 @@ I adapted into many of the visualizations above.
   - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
     hours, 144 minutes
   - <a href="#centiday" id="cd">cd</a>: centiday, a hundredth of a day,
-    .24 hours, 14.4 minutes
+    0.24 hours, 14.4 minutes
   - <a href="#milliday" id="md">md</a>: milliday, a thousandth of a day,
     1.44 minutes
   - <a href="#centimilliday" id="cmd">cmd</a>: centimilliday, a hundred
@@ -3954,8 +3955,8 @@ I adapted into many of the visualizations above.
     86.4 milliseconds
   - <a href="#nanoday" id="nd">nd</a>: nanoday, a billionth of a day,
     86.4 microseconds
-- <a href="#degree" id="deg">°</a>: degree, $1\over 360$ turns,
-  $180\over\pi$ or $360\over\tau$ radians
+- <a href="#degree" id="deg">°</a>: degree, 1/360 turns, 180/𝜋 or 360/𝜏
+  radians
   - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
 - <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
@@ -3979,7 +3980,7 @@ I adapted into many of the visualizations above.
     square millizem, 625 square millimeters
 - <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
   glasses, a million drops, half a barrel
-- <a href="#liter" id="L">L</a>: liter, 15625 drops
+- <a href="#liter" id="L">L</a>: liter, 15625 drops, a cubic decimeter
   - <a href="#milliliter" id="mL">mL</a>: milliliter, a cubic
     centimeter, a thousandth of a liter, 15.625 drops
   - <a href="#microliter" id="uL">µL</a>: microliter, a cubic
@@ -4008,8 +4009,8 @@ I adapted into many of the visualizations above.
   - <a href="#milliparallel" id="mlambda">mλ</a>: milliparallel, a
     thousandth of a parallel
 - <a href="#perbeat" id="per">p</a>: perbeat, the inverse of a beat,
-  $1\over\text{beat}$, once per beat, every beat, 100000 q; the letter
-  “p” can be flipped vertically to produce the letter “b”
+  1/beat, once per beat, every beat, 100000 q; the letter “p” can be
+  flipped vertically to produce the letter “b”
   - <a href="#teraperbeat" id="Tp">Tp</a>: teraperbeat, 10<sup>12</sup>
     perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat,
     every picobeat
