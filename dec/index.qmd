@@ -213,7 +213,7 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Duration" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 ```
 
-In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can be expressed in musical [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale) ([s](#s){#step .tool data-bs-toggle="tooltip" data-bs-title="steps"}). The equations below convert between [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} and [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"}. Frequencies less than 12.5 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} have a negative [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} value and are unlikely to be audible outside of carefully controlled laboratory experiments. Similarly, frequencies above 109 [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} or 24320 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} represent the upper limit of the audible range.
+In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can be expressed in musical [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale) ([s](#s){#step .tool data-bs-toggle="tooltip" data-bs-title="steps"}). The equations below convert between [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} and [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"}. Frequencies less than 12.5 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} have a negative [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} value and are unlikely to be audible outside of carefully controlled laboratory experiments. Similarly, frequencies above 109 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} or 24320 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} represent the upper limit of the audible range.
 
 Like the ten Dec colors, there are ten frequencies that Dec chooses from the audible range to serve as a set of sound labels. These ten frequencies the Dechromatic scale. 
 
@@ -598,12 +598,12 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
     - [dow](#dayofweek){#dow}: day of week
     - [doy](#dayofyear){#doy}: day of year, decaday * 10 + dod
     - [dd](#deciday){#dd}: deciday, a tenth of a day, 2.4 hours, 144 minutes
-    - [cd](#centiday){#cd}: centiday, a hundredth of a day, .24 hours, 14.4 minutes
+    - [cd](#centiday){#cd}: centiday, a hundredth of a day, 0.24 hours, 14.4 minutes
     - [md](#milliday){#md}: milliday, a thousandth of a day, 1.44 minutes
     - [cmd](#centimilliday){#cmd}: centimilliday, a hundred thousandth of a day, 1 beat, 864 milliseconds
     - [µd](#microday){#ud}: microday, a millionth of a day, 86.4 milliseconds
     - [nd](#nanoday){#nd}: nanoday, a billionth of a day, 86.4 microseconds
-- [°](#degree){#deg}: degree, $1\over 360$ turns, $180\over\pi$ or $360\over\tau$ radians
+- [°](#degree){#deg}: degree, 1/360 turns, 180/𝜋 or 360/𝜏 radians
     - [c°](#compassdegree){#cdeg}: compass degree
     - [h°](#huedegree){#hdeg}: hue degree
 - [e](#egg){#e}: egg, 1000 grains, 2 ounces, 64 grams
@@ -619,7 +619,7 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
 - [i](#inch){#i}: inch, a sixteenth of a zem, 25 millimeter
     - [i&sup2;](#squareinch){#i2}: Dec square inch, 3906.25 square millizem, 625 square millimeters
 - [k](#keg){#k}: keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
-- [L](#liter){#L}: liter, 15625 drops
+- [L](#liter){#L}: liter, 15625 drops, a cubic decimeter
     - [mL](#milliliter){#mL}: milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops
     - [µL](#microliter){#uL}: microliter, a cubic millimeter, a millionth of a liter, 0.015625 drops
 - [m](#meridian){#m}: meridian, a full circle around the Earth moving North or South; used in the abbreviations a.m. (antemeridian) and p.m. (postmeridian)
@@ -632,7 +632,7 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
 - [λ](#parallel){#lambda}: parallel, a full circle around the Earth moving West or East; the English alphabet equivalent of λ is the letter "l", which occurs three times in the word "parallel" and represents a ***l***ine that crosses every possible ***l***ongitude at the same ***l***atitude
     - [dλ](#deciparallel){#dlambda}: deciparallel, a tenth of a parallel
     - [mλ](#milliparallel){#mlambda}: milliparallel, a thousandth of a parallel
-- [p](#perbeat){#per}: perbeat, the inverse of a beat, $1\over\text{beat}$, once per beat, every beat, 100000 q; the letter "p" can be flipped vertically to produce the letter "b"
+- [p](#perbeat){#per}: perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; the letter "p" can be flipped vertically to produce the letter "b"
     - [Tp](#teraperbeat){#Tp}: teraperbeat, 10^12^ perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
 - [q](#quotidie){#q}: quotidie, the inverse of a day, a hundred thousandth of a perbeat; the letter "q" can be flipped vertically to produce the letter "d"
 - [r](#rose){#r}: compass rose, a full circle along the horizon, 360 compass degress

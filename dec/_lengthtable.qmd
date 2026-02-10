@@ -1,19 +1,19 @@
-| **[US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} length units** | **[zem](#z){.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"}** | **meter**         |
-| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------- |
-| [0.9843]{.colorInch} [inches](https://en.wikipedia.org/wiki/Inch)                        | [    0.0625]{.mono}                                                                 | [   0.025]{.mono} |
-| [0.9843]{.colorInch} [palms](https://en.wikipedia.org/wiki/Palm_(unit))                  | [    0.1875]{.mono}                                                                 | [   0.075]{.mono} |
-| [0.9843]{.colorInch} [hands](https://en.wikipedia.org/wiki/Hand_(unit))                  | [    0.25]{.mono}                                                                   | [   0.1]{.mono}   |
-| [0.9843]{.colorInch} [shaftment](https://en.wikipedia.org/wiki/Shaftment)                | [    0.375]{.mono}                                                                  | [   0.15]{.mono}  |
-| [0.9942]{.colorMile} [links](https://en.wikipedia.org/wiki/Link_(unit))                  | [    0.5]{.mono}                                                                    | [   0.2]{.mono}   |
-| [0.9843]{.colorInch} [spans](https://en.wikipedia.org/wiki/Span_(unit))                  | [    0.5625]{.mono}                                                                 | [   0.225]{.mono} |
-| [0.9843]{.colorInch} [feet](https://en.wikipedia.org/wiki/Foot_(unit))                   | [    0.75]{.mono}                                                                   | [   0.3]{.mono}   |
-| [0.9843]{.colorInch} [cubits](https://en.wikipedia.org/wiki/Cubit)                       | [    1.125]{.mono}                                                                  | [   0.45]{.mono}  |
-| [0.9843]{.colorInch} [steps](https://en.wikipedia.org/wiki/Pace_(unit))                  | [    1.875]{.mono}                                                                  | [   0.75]{.mono}  |
-| [0.9843]{.colorInch} [yards](https://en.wikipedia.org/wiki/Yard)                         | [    2.25]{.mono}                                                                   | [   0.9]{.mono}   |
-| [0.9843]{.colorInch} [fathoms](https://en.wikipedia.org/wiki/Fathom)                     | [    4.5]{.mono}                                                                    | [   1.8]{.mono}   |
-| [1]{.color0}         [horse length](https://en.wikipedia.org/wiki/Horse_length)          | [    6]{.mono}                                                                      | [   2.4]{.mono}   |
-| [0.9942]{.colorMile} [rods](https://en.wikipedia.org/wiki/Rod_(unit))                    | [   12.5]{.mono}                                                                    | [   5]{.mono}     |
-| [0.9942]{.colorMile} [chains](https://en.wikipedia.org/wiki/Chain_(unit))                | [   50]{.mono}                                                                      | [  20]{.mono}     |
-| [0.9942]{.colorMile} [furlongs](https://en.wikipedia.org/wiki/Furlong)                   | [  500]{.mono}                                                                      | [ 200]{.mono}     |
-| [0.9942]{.colorMile} [miles](https://en.wikipedia.org/wiki/Mile)                         | [ 4000]{.mono}                                                                      | [1600]{.mono}     |
-| [0.9942]{.colorMile} [leagues](https://en.wikipedia.org/wiki/League_(unit))              | [12000]{.mono}                                                                      | [4800]{.mono}     |
+| [US](#us){.bold .tool data-bs-toggle="tooltip" data-bs-title="United States"} length units | [zem](#z){.bold .tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} | meter          |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------- | -------------- |
+| [0.9843]{.colorInch} [inches](https://en.wikipedia.org/wiki/Inch)                          | [0.0625]{.mono}                                                                       | [0.025]{.mono} |
+| [0.9843]{.colorInch} [palms](https://en.wikipedia.org/wiki/Palm_(unit))                    | [0.1875]{.mono}                                                                       | [0.075]{.mono} |
+| [0.9843]{.colorInch} [hands](https://en.wikipedia.org/wiki/Hand_(unit))                    | [0.25]{.mono}                                                                         | [0.1]{.mono}   |
+| [0.9843]{.colorInch} [shaftment](https://en.wikipedia.org/wiki/Shaftment)                  | [0.375]{.mono}                                                                        | [0.15]{.mono}  |
+| [0.9942]{.colorMile} [links](https://en.wikipedia.org/wiki/Link_(unit))                    | [0.5]{.mono}                                                                          | [0.2]{.mono}   |
+| [0.9843]{.colorInch} [spans](https://en.wikipedia.org/wiki/Span_(unit))                    | [0.5625]{.mono}                                                                       | [0.225]{.mono} |
+| [0.9843]{.colorInch} [feet](https://en.wikipedia.org/wiki/Foot_(unit))                     | [0.75]{.mono}                                                                         | [0.3]{.mono}   |
+| [0.9843]{.colorInch} [cubits](https://en.wikipedia.org/wiki/Cubit)                         | [1.125]{.mono}                                                                        | [0.45]{.mono}  |
+| [0.9843]{.colorInch} [steps](https://en.wikipedia.org/wiki/Pace_(unit))                    | [1.875]{.mono}                                                                        | [0.75]{.mono}  |
+| [0.9843]{.colorInch} [yards](https://en.wikipedia.org/wiki/Yard)                           | [2.25]{.mono}                                                                         | [0.9]{.mono}   |
+| [0.9843]{.colorInch} [fathoms](https://en.wikipedia.org/wiki/Fathom)                       | [4.5]{.mono}                                                                          | [1.8]{.mono}   |
+| [1]{.color0}         [horse length](https://en.wikipedia.org/wiki/Horse_length)            | [6]{.mono}                                                                            | [2.4]{.mono}   |
+| [0.9942]{.colorMile} [rods](https://en.wikipedia.org/wiki/Rod_(unit))                      | [12.5]{.mono}                                                                         | [5]{.mono}     |
+| [0.9942]{.colorMile} [chains](https://en.wikipedia.org/wiki/Chain_(unit))                  | [50]{.mono}                                                                           | [20]{.mono}    |
+| [0.9942]{.colorMile} [furlongs](https://en.wikipedia.org/wiki/Furlong)                     | [500]{.mono}                                                                          | [200]{.mono}   |
+| [0.9942]{.colorMile} [miles](https://en.wikipedia.org/wiki/Mile)                           | [4000]{.mono}                                                                         | [1600]{.mono}  |
+| [0.9942]{.colorMile} [leagues](https://en.wikipedia.org/wiki/League_(unit))                | [12000]{.mono}                                                                        | [4800]{.mono}  |
