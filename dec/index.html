@@ -582,10 +582,10 @@ window.Quarto = {
   <ul>
   <li><a href="#sec-dec" id="toc-sec-dec" class="nav-link active" data-scroll-target="#sec-dec"><span class="header-section-number">0</span> Dec measurement system</a></li>
   <li><a href="#sec-llc" id="toc-sec-llc" class="nav-link" data-scroll-target="#sec-llc"><span class="header-section-number">1</span> Longitude latitude course</a></li>
-  <li><a href="#sec-dsd" id="toc-sec-dsd" class="nav-link" data-scroll-target="#sec-dsd"><span class="header-section-number">2</span> Distance speed duration</a></li>
-  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map">Interactive world map</a></li>
-  <li><a href="#cwc" id="toc-cwc" class="nav-link" data-scroll-target="#cwc">Color wheel compass</a>
+  <li><a href="#sec-dsd" id="toc-sec-dsd" class="nav-link" data-scroll-target="#sec-dsd"><span class="header-section-number">2</span> Distance speed duration</a>
   <ul>
+  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map">Interactive world map</a></li>
+  <li><a href="#cwc" id="toc-cwc" class="nav-link" data-scroll-target="#cwc">Color wheel compass</a></li>
   <li><a href="#hsl" id="toc-hsl" class="nav-link" data-scroll-target="#hsl">Hue saturation lightness (hsl)</a></li>
   <li><a href="#cct" id="toc-cct" class="nav-link" data-scroll-target="#cct">Course color table</a></li>
   </ul></li>
@@ -602,12 +602,16 @@ window.Quarto = {
   <li><a href="#sec-cmd" id="toc-sec-cmd" class="nav-link" data-scroll-target="#sec-cmd"><span class="header-section-number">13</span> Centimilliday (cmd)</a></li>
   <li><a href="#sec-hrt" id="toc-sec-hrt" class="nav-link" data-scroll-target="#sec-hrt"><span class="header-section-number">14</span> heart rate tempo</a></li>
   <li><a href="#sec-fpw" id="toc-sec-fpw" class="nav-link" data-scroll-target="#sec-fpw"><span class="header-section-number">15</span> Frequency period wavelength</a></li>
-  <li><a href="#sec-xet" id="toc-sec-xet" class="nav-link" data-scroll-target="#sec-xet"><span class="header-section-number">16</span> Ten equal temperament (Xet)</a></li>
+  <li><a href="#sec-xet" id="toc-sec-xet" class="nav-link" data-scroll-target="#sec-xet"><span class="header-section-number">16</span> Ten equal temperament (Xet)</a>
+  <ul>
   <li><a href="#cst" id="toc-cst" class="nav-link" data-scroll-target="#cst">Color sound table</a></li>
+  </ul></li>
   <li><a href="#sec-ont" id="toc-sec-ont" class="nav-link" data-scroll-target="#sec-ont"><span class="header-section-number">17</span> Octave note tone</a></li>
   <li><a href="#sec-las" id="toc-sec-las" class="nav-link" data-scroll-target="#sec-las"><span class="header-section-number">18</span> Light and sound</a></li>
-  <li><a href="#sec-ucu" id="toc-sec-ucu" class="nav-link" data-scroll-target="#sec-ucu"><span class="header-section-number">19</span> US customary units</a></li>
+  <li><a href="#sec-ucu" id="toc-sec-ucu" class="nav-link" data-scroll-target="#sec-ucu"><span class="header-section-number">19</span> US customary units</a>
+  <ul>
   <li><a href="#unit-conversion-tables" id="toc-unit-conversion-tables" class="nav-link" data-scroll-target="#unit-conversion-tables">Unit conversion tables</a></li>
+  </ul></li>
   <li><a href="#sec-mph" id="toc-sec-mph" class="nav-link" data-scroll-target="#sec-mph"><span class="header-section-number">20</span> Miles per hour (mph)</a></li>
   <li><a href="#sec-aha" id="toc-sec-aha" class="nav-link" data-scroll-target="#sec-aha"><span class="header-section-number">21</span> Are hectare acre</a></li>
   <li><a href="#sec-dwk" id="toc-sec-dwk" class="nav-link" data-scroll-target="#sec-dwk"><span class="header-section-number">22</span> Drop wineglass keg</a></li>
@@ -651,7 +655,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025+345</p>
+      <p class="date">2025+346</p>
     </div>
   </div>
   
@@ -695,13 +699,12 @@ flowchart LR
 <p>To move the points, click the map🗺️or edit their coordinates in the table. The <a href="https://observablehq.com/framework/inputs/toggle">toggle</a>✅inputs above the table add layers to the map🗺️: country borders, a rainbow🌈colored🎨grid of Dec <a href="https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines">graticules</a>, a <a href="https://en.wikipedia.org/wiki/Choropleth_map#:~:text=a%20type%20of%20statistical%20thematic%20map%20that%20uses%20pseudocolor">choropleth</a> of <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time">Coordinated Universal Time</a> (<a href="#utc" id="coordinateduniversaltime" class="tool" data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time">utc</a>) time zones, and <a href="https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body">solar terminator</a> shading with a yellow🟡dot denoting the <a href="https://en.wikipedia.org/wiki/Subsolar_point#:~:text=the%20point%20at%20which%20its%20Sun%20is%20perceived%20to%20be%20directly%20overhead">point</a> where the Sun☀️is <a href="https://en.wikipedia.org/wiki/Zenith#:~:text=the%20imaginary%20point%20on%20the%20celestial%20sphere%20directly%20%22above%22%20a%20particular%20location">directly overhead</a>: <span><span id="ojs-element-id-1"></span></span> <a href="#mlambda" class="tool" data-bs-toggle="tooltip" data-bs-title="milliparallels">mλ</a> and <span><span id="ojs-element-id-2"></span></span> <a href="#mm" class="tool" data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</a>.</p>
 <p>Alongside the geographic coordinates of a point, each row of the table contains the <a href="https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha">course</a> in <span class="tool" data-bs-toggle="tooltip" data-bs-title="thousandths of a compass rose">milliroses</span> (<a href="#mr" id="millirose" class="tool" data-bs-toggle="tooltip" data-bs-title="milliroses">mr</a>) we would need to maintain to travel🧳the shortest distance to the other point. The shortest distance is shown as orange🟠dots on the map🗺️. The default courses in <a href="#mr" class="tool" data-bs-toggle="tooltip" data-bs-title="milliroses">mr</a> are <span class="color0">0</span> (North) from Point <span class="point0">0</span> to <span class="point1">1</span> and <span class="color5">500</span> (South) from Point <span class="point1">1</span> to <span class="point0">0</span>.</p>
 </section>
-<section id="sec-dsd" class="level4 hiddenheading" data-number="2">
+<section id="sec-dsd" class="level4 hiddenheading page-columns page-full" data-number="2">
 <h4 class="hiddenheading anchored" data-number="2" data-anchor-id="sec-dsd"><span class="header-section-number">2</span> Distance speed duration</h4>
 <p>Dec measures distance in <a href="https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6">taurs</a> (<a href="#c" id="taur" class="tool" data-bs-toggle="tooltip" data-bs-title="taurs">c</a>), speed in <a href="https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity">omegars</a> (<a href="#v" id="omegar" class="tool" data-bs-toggle="tooltip" data-bs-title="omegars">v</a>), and time in years (<a href="#y" id="year" class="tool" data-bs-toggle="tooltip" data-bs-title="years">y</a>) and days (<a href="#d" id="day" class="tool" data-bs-toggle="tooltip" data-bs-title="days">d</a>). Each of these four turn types approximates (<span class="math inline">\(\approx\)</span>) a physical property of the Earth🌍: <a href="#c" class="tool" data-bs-toggle="tooltip" data-bs-title="taur">c</a> = <a href="#c" class="tool" data-bs-toggle="tooltip" data-bs-title="taur"><span class="math inline">\(\underline{\tau r}\)</span></a> <span class="math inline">\(\approx\)</span> its <a href="https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth">circumference</a>, <a href="#y" class="tool" data-bs-toggle="tooltip" data-bs-title="year">y</a> <span class="math inline">\(\approx\)</span> the duration of its <a href="https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun">orbit</a> around the Sun☀️, <a href="#d" class="tool" data-bs-toggle="tooltip" data-bs-title="day">d</a> <span class="math inline">\(\approx\)</span> the duration of its <a href="https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis">rotation</a> on its <a href="https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole">axis</a>, and <span class="math inline">\(\text c\over\text d\)</span> = <a href="#v" class="tool" data-bs-toggle="tooltip" data-bs-title="omegar">v</a> = <a href="#v" class="tool" data-bs-toggle="tooltip" data-bs-title="omegar"><span class="math inline">\(\underline{\omega r}\)</span></a> <span class="math inline">\(\approx\)</span> the speed of its rotation at the <a href="https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres">Equator</a>.</p>
 <p>At a speed of <span class="color5">0.5</span> <a href="#v" class="tool" data-bs-toggle="tooltip" data-bs-title="omegars">v</a> or <span class="color5">500</span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="thousandths of an omegar">milliomegars</span> (<a href="#mv" id="milliomegar" class="tool" data-bs-toggle="tooltip" data-bs-title="milliomegars">mv</a>), we could travel🧳the <span class="color1">0.1</span> <a href="#c" class="tool" data-bs-toggle="tooltip" data-bs-title="taurs">c</a> or <span class="color1">100</span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="thousandths of a taur">millitaurs</span> (<a href="#mc" id="millitaur" class="tool" data-bs-toggle="tooltip" data-bs-title="millitaurs">mc</a>) between the default positions📍of Points <span class="point0">0</span> and <span class="point1">1</span> in <span class="color2">0.2</span> <a href="#d" class="tool" data-bs-toggle="tooltip" data-bs-title="days">d</a> or <span class="color2">200</span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="thousandths of a day">millidays</span> (<a href="#md" id="milliday" class="tool" data-bs-toggle="tooltip" data-bs-title="millidays">md</a>). The time required to travel🧳between two points is the distance divided by the speed: <span><span id="ojs-element-id-3"></span></span> <a href="#mc" class="tool" data-bs-toggle="tooltip" data-bs-title="millitaurs">mc</a> ÷ <span><span id="ojs-element-id-4"></span></span> <a href="#v" class="tool" data-bs-toggle="tooltip" data-bs-title="omegars">v</a> = <span><span id="ojs-element-id-5"></span></span> <a href="#md" class="tool" data-bs-toggle="tooltip" data-bs-title="millidays">md</a> = <span><span id="ojs-element-id-6"></span></span> <a href="#c" class="tool" data-bs-toggle="tooltip" data-bs-title="taurs">c</a> ÷ <span><span id="ojs-element-id-7"></span></span> <a href="#v" class="tool" data-bs-toggle="tooltip" data-bs-title="omegars">v</a> = <span><span id="ojs-element-id-8"></span></span> <a href="#mc" class="tool" data-bs-toggle="tooltip" data-bs-title="millitaurs">mc</a> ÷ <span><span id="ojs-element-id-9"></span></span> <a href="#mv" class="tool" data-bs-toggle="tooltip" data-bs-title="milliomegars">mv</a> = <span><span id="ojs-element-id-10"></span></span> <a href="#d" class="tool" data-bs-toggle="tooltip" data-bs-title="days">d</a>.</p>
-</section>
-<section id="map" class="level4 hiddenheading unnumbered page-columns page-full">
-<h4 class="hiddenheading unnumbered anchored" data-anchor-id="map">Interactive world map</h4>
+<section id="map" class="level5 hiddenheading unnumbered page-columns page-full">
+<h5 class="hiddenheading unnumbered anchored" data-anchor-id="map">Interactive world map</h5>
 <div class="marginInputs page-columns page-full">
 <div class="cell page-columns page-full">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="92" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 91;"><span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>viewof travelspeed <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1000</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Speed"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -833,8 +836,8 @@ Figure&nbsp;1
 </div>
 </div>
 </section>
-<section id="cwc" class="level4 hiddenheading unnumbered page-columns page-full">
-<h4 class="hiddenheading unnumbered anchored" data-anchor-id="cwc">Color wheel compass</h4>
+<section id="cwc" class="level5 hiddenheading unnumbered page-columns page-full">
+<h5 class="hiddenheading unnumbered anchored" data-anchor-id="cwc">Color wheel compass</h5>
 <div class="cell colorcomponent page-columns page-full">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb10" data-startfrom="3" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">preview</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
@@ -1073,6 +1076,7 @@ Figure&nbsp;2
 </div>
 </div>
 </div>
+</section>
 <section id="hsl" class="level5 hiddenheading">
 <h5 class="hiddenheading anchored" data-anchor-id="hsl">Hue saturation lightness (hsl)</h5>
 <div class="cell colorslider">
@@ -1826,9 +1830,8 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 <p><span class="tool" data-bs-toggle="tooltip" data-bs-title="ten equal temperament">Tenet</span> (<a href="#xet" id="10et" class="tool" data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</a>) identifies each Dechromatic scale note with a single-digit integer and expresses all other possible sound🔊frequencies as decimal numbers. In contrast, the notes of the <a href="https://en.wikipedia.org/wiki/12_equal_temperament#:~:text=the%20musical%20system%20that%20divides%20the%20octave%20into%2012%20parts">12 equal temperament</a> (<a href="#12et" id="twelveequaltemperance" class="tool" data-bs-toggle="tooltip" data-bs-title="12 equal temperament">12et</a>) musical system have names that consist of a letter from <span class="colorA">A</span> to <span class="colorG">G</span> and often a symbol such as sharp (<span class="iosevka">♯</span>), half sharp (<span class="iosevka">𝄲</span>), flat (<span class="iosevka">♭</span>), and half flat (<span class="iosevka">𝄳</span>).</p>
 <p>The sound🔊frequencies of two consecutive <a href="#xet" class="tool" data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</a> Dechromatic scale notes always differ by one <a href="#s" class="tool" data-bs-toggle="tooltip" data-bs-title="step">s</a>, but the differences between consecutive <a href="#12et" class="tool" data-bs-toggle="tooltip" data-bs-title="12 equal temperament">12et</a> chromatic scale notes vary from the <span class="tool" data-bs-toggle="tooltip" data-bs-title="approximately">~</span><span class="color599">599</span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="ten thousandths of an octave">millisteps</span> (<a href="#ms" id="millistep" class="tool" data-bs-toggle="tooltip" data-bs-title="millisteps">ms</a>) between <span class="colorAs">A<span class="iosevka">♯</span></span> and <span class="colorB">B</span> to the <span class="tool" data-bs-toggle="tooltip" data-bs-title="approximately">~</span><span class="color067">1067</span> <a href="#ms" class="tool" data-bs-toggle="tooltip" data-bs-title="millisteps">ms</a> between <span class="colorGs">G<span class="iosevka">♯</span></span> and <span class="colorA">A</span>. A typical person can reliably distinguish sounds🔊that <a href="https://en.wikipedia.org/wiki/Cent_(music)#:~:text=Normal%20adults%20are%20able%20to%20recognize%20pitch%20differences%20of%20as%20small%20as%2025%20cents%20very%20reliably">differ</a> by at least <span class="color2">200</span> <a href="#ms" class="tool" data-bs-toggle="tooltip" data-bs-title="millisteps">ms</a>.</p>
 <p>The rightmost column of the table below shows the <a href="#12et" class="tool" data-bs-toggle="tooltip" data-bs-title="12 equal temperament">12et</a> notes that are closest to the <a href="#xet" class="tool" data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</a> Dechromatic scale notes. <a href="#12et" class="tool" data-bs-toggle="tooltip" data-bs-title="12 equal temperament">12et</a> considers <span class="colorBc">B<span class="iosevka">𝄲</span></span>, <span class="colorDds">D<span class="iosevka">𝄲</span></span>, and <span class="colorDsE">E<span class="iosevka">𝄳</span></span> to be <a href="https://en.wikipedia.org/wiki/Microtonality#:~:text=intervals%20not%20found%20in%20the%20customary%20Western%20tuning%20of%20twelve%20equal%20intervals%20per%20octave">microtones</a>. The sound🔊frequency differences between the nearest <a href="#xet" class="tool" data-bs-toggle="tooltip" data-bs-title="Tenet">Xet</a> and <a href="#12et" class="tool" data-bs-toggle="tooltip" data-bs-title="12 equal temperament">12et</a> notes in the table range from the <span class="color008">8</span> <span class="tool" data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> between Notes <span class="color9">9</span> and <span class="colorA">A</span> to the <span class="tool" data-bs-toggle="tooltip" data-bs-title="approximately">~</span><span class="color26div300">87</span> <a href="#ms" class="tool" data-bs-toggle="tooltip" data-bs-title="millisteps">ms</a> between Notes <span class="color5">5</span> and <span class="colorF">F</span>.</p>
-</section>
-<section id="cst" class="level4 hiddenheading unnumbered">
-<h4 class="hiddenheading unnumbered anchored" data-anchor-id="cst">Color sound table</h4>
+<section id="cst" class="level5 hiddenheading unnumbered">
+<h5 class="hiddenheading unnumbered anchored" data-anchor-id="cst">Color sound table</h5>
 <div id="colortable">
 <table class="table">
 <colgroup>
@@ -1921,6 +1924,7 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 </tbody>
 </table>
 </div>
+</section>
 </section>
 <section id="sec-ont" class="level4 hiddenheading" data-number="17">
 <h4 class="hiddenheading anchored" data-number="17" data-anchor-id="sec-ont"><span class="header-section-number">17</span> Octave note tone</h4>
@@ -2235,279 +2239,279 @@ flowchart LR
 <section id="sec-ucu" class="level4 hiddenheading" data-number="19">
 <h4 class="hiddenheading anchored" data-number="19" data-anchor-id="sec-ucu"><span class="header-section-number">19</span> US customary units</h4>
 <p>The <a href="https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed">unit conversion</a> table below shows the <a href="https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems">United States</a>🇺🇸(<a href="#us" id="unitedstates" class="tool" data-bs-toggle="tooltip" data-bs-title="United States">US</a>) customary units that Dec redefines. The values in the first column are approximate <a href="https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement">fold changes</a> from original to redefined units. A fold change of <span class="color0">1</span> means <span class="color0">0</span> <a href="https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared">change</a>. Identical fold changes indicate <a href="#us" class="tool" data-bs-toggle="tooltip" data-bs-title="United States">US</a> customary units derived from the same Dec and <a href="https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement">International System of Units</a> (<a href="#si" id="internationalsystemofunits" class="tool" data-bs-toggle="tooltip" data-bs-title="International System of Units">SI</a>) units.</p>
-</section>
-<section id="unit-conversion-tables" class="level4 hiddenheading unnumbered">
-<h4 class="hiddenheading unnumbered anchored" data-anchor-id="unit-conversion-tables">Unit conversion tables</h4>
+<section id="unit-conversion-tables" class="level5 hiddenheading unnumbered">
+<h5 class="hiddenheading unnumbered anchored" data-anchor-id="unit-conversion-tables">Unit conversion tables</h5>
 <table class="table">
 <thead>
 <tr class="header">
-<th><strong><span class="tool" data-bs-toggle="tooltip" data-bs-title="US customary units">US</span></strong></th>
-<th><strong>Dec</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip" data-bs-title="International System of Units">SI</span></strong></th>
+<th><strong><a href="#us" class="tool" data-bs-toggle="tooltip" data-bs-title="United States">US</a> length units</strong></th>
+<th><strong><a href="#z" class="tool" data-bs-toggle="tooltip" data-bs-title="zone equatorial meter">zem</a></strong></th>
+<th><strong>meter</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Inch">inches</a></td>
-<td>0.0625 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>0.025 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">0.0625</span></td>
+<td><span class="mono">0.025</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Palm_(unit)">palms</a></td>
-<td>0.1875 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>0.075 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">0.1875</span></td>
+<td><span class="mono">0.075</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Hand_(unit)">hands</a></td>
-<td>0.25 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>0.1 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">0.25</span></td>
+<td><span class="mono">0.1</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Shaftment">shaftment</a></td>
-<td>0.375 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>0.15 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">0.375</span></td>
+<td><span class="mono">0.15</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorMile">0.9942</span> <a href="https://en.wikipedia.org/wiki/Link_(unit)">links</a></td>
-<td>0.5 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>0.2 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">0.5</span></td>
+<td><span class="mono">0.2</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Span_(unit)">spans</a></td>
-<td>0.5625 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>0.225 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">0.5625</span></td>
+<td><span class="mono">0.225</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Foot_(unit)">feet</a></td>
-<td>0.75 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>0.3 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">0.75</span></td>
+<td><span class="mono">0.3</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Cubit">cubits</a></td>
-<td>1.125 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>0.45 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">1.125</span></td>
+<td><span class="mono">0.45</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Pace_(unit)">steps</a></td>
-<td>1.875 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>0.75 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">1.875</span></td>
+<td><span class="mono">0.75</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Yard">yards</a></td>
-<td>2.25 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>0.9 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">2.25</span></td>
+<td><span class="mono">0.9</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Fathom">fathoms</a></td>
-<td>4.5 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>1.8 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">4.5</span></td>
+<td><span class="mono">1.8</span></td>
 </tr>
 <tr class="even">
 <td><span class="color0">1</span> <a href="https://en.wikipedia.org/wiki/Horse_length">horse length</a></td>
-<td>6 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>2.4 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">6</span></td>
+<td><span class="mono">2.4</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorMile">0.9942</span> <a href="https://en.wikipedia.org/wiki/Rod_(unit)">rods</a></td>
-<td>12.5 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>5 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">12.5</span></td>
+<td><span class="mono">5</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorMile">0.9942</span> <a href="https://en.wikipedia.org/wiki/Chain_(unit)">chains</a></td>
-<td>50 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>20 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">50</span></td>
+<td><span class="mono">20</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorMile">0.9942</span> <a href="https://en.wikipedia.org/wiki/Furlong">furlongs</a></td>
-<td>500 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>200 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">500</span></td>
+<td><span class="mono">200</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorMile">0.9942</span> <a href="https://en.wikipedia.org/wiki/Mile">miles</a></td>
-<td>4000 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>1600 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">4000</span></td>
+<td><span class="mono">1600</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorMile">0.9942</span> <a href="https://en.wikipedia.org/wiki/League_(unit)">leagues</a></td>
-<td>12000 <span class="tool" data-bs-toggle="tooltip" data-bs-title="zem">z</span></td>
-<td>4800 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters">m</span></td>
+<td><span class="mono">12000</span></td>
+<td><span class="mono">4800</span></td>
 </tr>
 </tbody>
 </table>
 <table class="table">
 <thead>
 <tr class="header">
-<th><strong><span class="tool" data-bs-toggle="tooltip" data-bs-title="US customary units">US</span></strong></th>
-<th><strong>Dec</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip" data-bs-title="International System of Units">SI</span></strong></th>
+<th><strong><a href="#us" class="tool" data-bs-toggle="tooltip" data-bs-title="United States">US</a> speed units</strong></th>
+<th><a href="#mv" class="tool" data-bs-toggle="tooltip" data-bs-title="milliomegars">mv</a></th>
+<th><a href="#km" class="tool" data-bs-toggle="tooltip" data-bs-title="kilometers">km</a>/hour</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="colorMile">0.9942</span> <a href="https://en.wikipedia.org/wiki/Miles_per_hour">miles per hour</a></td>
-<td>0.96 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milliomegars">mv</span></td>
-<td>1.6 <span class="tool" data-bs-toggle="tooltip" data-bs-title="kilometers per hour"><span class="math inline">\(\text{km}\over\text{hour}\)</span></span></td>
+<td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Inch_per_second">inches per second</a></td>
+<td>0.054</td>
+<td>0.09</td>
 </tr>
 <tr class="even">
-<td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Inch_per_second">inches per second</a></td>
-<td>0.054 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milliomegars">mv</span></td>
-<td>0.025 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters per second"><span class="math inline">\(\text{meters}\over\text{second}\)</span></span></td>
+<td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Foot_per_second">feet per second</a></td>
+<td>0.648</td>
+<td>1.08</td>
 </tr>
 <tr class="odd">
-<td><span class="colorInch">0.9843</span> <a href="https://en.wikipedia.org/wiki/Foot_per_second">feet per second</a></td>
-<td>0.648 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milliomegars">mv</span></td>
-<td>0.3 <span class="tool" data-bs-toggle="tooltip" data-bs-title="meters per second"><span class="math inline">\(\text{meters}\over\text{second}\)</span></span></td>
+<td><span class="colorMile">0.9942</span> <a href="https://en.wikipedia.org/wiki/Miles_per_hour">miles per hour</a></td>
+<td>0.96</td>
+<td>1.6</td>
 </tr>
 </tbody>
 </table>
 <table class="table">
 <thead>
 <tr class="header">
-<th><strong><span class="tool" data-bs-toggle="tooltip" data-bs-title="US customary units">US</span></strong></th>
-<th><strong>Dec</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip" data-bs-title="International System of Units">SI</span></strong></th>
+<th><strong><a href="#us" class="tool" data-bs-toggle="tooltip" data-bs-title="United States">US</a> area units</strong></th>
+<th><strong><a href="#z2" class="tool" data-bs-toggle="tooltip" data-bs-title="square zem">z²</a></strong></th>
+<th><strong><a href="#m2" class="tool" data-bs-toggle="tooltip" data-bs-title="square meter">m²</a></strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><span class="colorSqIn">0.9688</span> <a href="https://en.wikipedia.org/wiki/Square_inch">square inches</a></td>
-<td>0.00390625 <span class="tool" data-bs-toggle="tooltip" data-bs-title="square zem">z<sup>2</sup></span></td>
-<td>625 <span class="tool" data-bs-toggle="tooltip" data-bs-title="square millimeters">mm<sup>2</sup></span></td>
+<td><span class="mono">39.0625 × 10<sup>-4</sup></span></td>
+<td><span class="mono">6.25 × 10<sup>-4</sup></span></td>
 </tr>
 <tr class="even">
 <td><span class="colorSqIn">0.9688</span> <a href="https://en.wikipedia.org/wiki/Square_foot">square feets</a></td>
-<td>0.5625 <span class="tool" data-bs-toggle="tooltip" data-bs-title="square zem">z<sup>2</sup></span></td>
-<td>9 <span class="tool" data-bs-toggle="tooltip" data-bs-title="square decimeters">dm<sup>2</sup></span></td>
+<td><span class="mono">0.5625</span></td>
+<td><span class="mono">0.09</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorSqIn">0.9688</span> <a href="https://en.wikipedia.org/wiki/Square_yard">square yards</a></td>
-<td>11.390625 <span class="tool" data-bs-toggle="tooltip" data-bs-title="square zem">z<sup>2</sup></span></td>
-<td>81 <span class="tool" data-bs-toggle="tooltip" data-bs-title="square decimeters">dm<sup>2</sup></span></td>
+<td><span class="mono">5.0625</span></td>
+<td><span class="mono">0.81</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorSqMi">0.9884</span> <a href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
-<td>25000 <span class="tool" data-bs-toggle="tooltip" data-bs-title="square zem">z<sup>2</sup></span></td>
-<td>0.4 <a href="https://en.wikipedia.org/wiki/Hectare">hectare</a></td>
+<td><span class="mono">2.5 × 10<sup>4</sup></span></td>
+<td><span class="mono">0.4 × 10<sup>4</sup></span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorSqMi">0.9884</span> <a href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
-<td>16000000 <span class="tool" data-bs-toggle="tooltip" data-bs-title="square zem">z<sup>2</sup></span></td>
-<td>2.56 <span class="tool" data-bs-toggle="tooltip" data-bs-title="square kilometers">km<sup>2</sup></span></td>
+<td><span class="mono">16 × 10<sup>6</sup></span></td>
+<td><span class="mono">2.56 × 10<sup>6</sup></span></td>
 </tr>
 </tbody>
 </table>
 <table class="table">
 <thead>
 <tr class="header">
-<th><strong><span class="tool" data-bs-toggle="tooltip" data-bs-title="US customary units">US</span></strong></th>
-<th><strong>Dec</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip" data-bs-title="International System of Units">SI</span></strong></th>
+<th><strong><span class="tool" data-bs-toggle="tooltip" data-bs-title="United States">US</span> volume units</strong></th>
+<th><a href="#cz3" class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></a></th>
+<th><a href="#mL" class="tool" data-bs-toggle="tooltip" data-bs-title="milliliter">mL</a></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><span class="colorDrop">1.2549</span> <a href="https://en.wikipedia.org/wiki/Drop_(unit)">drops</a></td>
-<td>1 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>64 <span class="tool" data-bs-toggle="tooltip" data-bs-title="microliters">µL</span></td>
+<td><span class="mono">1</span></td>
+<td><span class="mono">0.064</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorCuIn">0.9535</span> <a href="https://en.wikipedia.org/wiki/Cubic_inch">cubic inches</a></td>
-<td>244.140625 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>15.625 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">244.140625</span></td>
+<td><span class="mono">15.625</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorFlOz">1.0821</span> <a href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
-<td>250 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>16 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">250</span></td>
+<td><span class="mono">16</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorFlOz">1.0821</span> <a href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
-<td>500 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>32 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">500</span></td>
+<td><span class="mono">32</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorFlOz">1.0821</span> <a href="https://en.wikipedia.org/wiki/Wine_glass#Capacity_measure">wineglasses</a></td>
-<td>1000 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>64 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">1 × 10<sup>3</sup></span></td>
+<td><span class="mono">64</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorGall">0.9468</span> <a href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
-<td>3500 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>224 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">3.5 × 10<sup>3</sup></span></td>
+<td><span class="mono">224</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorGall">0.9468</span> <a href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
-<td>7000 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>448 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">7 × 10<sup>3</sup></span></td>
+<td><span class="mono">448</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorGall">0.9468</span> <a href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
-<td>14000 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>896 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">14 × 10<sup>3</sup></span></td>
+<td><span class="mono">896</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorGall">0.9468</span> <a href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
-<td>56000 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>3584 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">56 × 10<sup>3</sup></span></td>
+<td><span class="mono">3.584 × 10<sup>3</sup></span></td>
 </tr>
 <tr class="even">
 <td><span class="colorCuIn">0.9535</span> <a href="https://en.wikipedia.org/wiki/Cubic_foot">cubic feet</a></td>
-<td>421875 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>27 <span class="tool" data-bs-toggle="tooltip" data-bs-title="liters">L</span></td>
+<td><span class="mono">421.875 × 10<sup>3</sup></span></td>
+<td><span class="mono">27 × 10<sup>3</sup></span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorBarr">1.0735</span> <a href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
-<td>1000000 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>64 <span class="tool" data-bs-toggle="tooltip" data-bs-title="liters">L</span></td>
+<td><span class="mono">1 × 10<sup>6</sup></span></td>
+<td><span class="mono">64 × 10<sup>3</sup></span></td>
 </tr>
 <tr class="even">
 <td><span class="colorBarr">1.0735</span> <a href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
-<td>2000000 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>128 <span class="tool" data-bs-toggle="tooltip" data-bs-title="liters">L</span></td>
+<td><span class="mono">2 × 10<sup>6</sup></span></td>
+<td><span class="mono">128 × 10<sup>3</sup></span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorCuIn">0.9535</span> <a href="https://en.wikipedia.org/wiki/Cubic_yard">cubic yards</a></td>
-<td>11390625 <span class="tool" data-bs-toggle="tooltip" data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>729 <span class="tool" data-bs-toggle="tooltip" data-bs-title="liters">L</span></td>
+<td><span class="mono">11.390625 × 10<sup>6</sup></span></td>
+<td><span class="mono">729 × 10<sup>3</sup></span></td>
 </tr>
 </tbody>
 </table>
 <table class="table">
 <thead>
 <tr class="header">
-<th><strong><span class="tool" data-bs-toggle="tooltip" data-bs-title="US customary units">US</span></strong></th>
-<th><strong>Dec</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip" data-bs-title="International System of Units">SI</span></strong></th>
+<th><strong><a href="#us" class="tool" data-bs-toggle="tooltip" data-bs-title="United States">US</a> mass units</strong></th>
+<th><strong>grain</strong></th>
+<th><strong>gram</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><span class="colorMass">0.9877</span> <a href="https://en.wikipedia.org/wiki/Grain_(unit)">grains</a></td>
-<td>1 grain</td>
-<td>64 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milligrams">mg</span></td>
+<td><span class="mono">1</span></td>
+<td><span class="mono">64 × 10<sup>-3</sup></span></td>
 </tr>
 <tr class="even">
 <td><span class="colorCara">0.96</span> <a href="https://en.wikipedia.org/wiki/Carat_(mass)">carats</a></td>
-<td>3 grains</td>
-<td>192 <span class="tool" data-bs-toggle="tooltip" data-bs-title="milligrams">mg</span></td>
+<td><span class="mono">3</span></td>
+<td><span class="mono">192 × 10<sup>-3</sup></span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorAvOz">1.1288</span> <a href="https://en.wikipedia.org/wiki/Ounce">ounces</a></td>
-<td>500 grains</td>
-<td>32 <span class="tool" data-bs-toggle="tooltip" data-bs-title="grams">g</span></td>
+<td><span class="mono">0.5 × 10<sup>3</sup></span></td>
+<td><span class="mono">32</span></td>
 </tr>
 <tr class="even">
 <td><span class="colorMass">0.9877</span> <a href="https://en.wikipedia.org/wiki/Pound_(mass)">pounds</a></td>
-<td>7000 grains</td>
-<td>448 <span class="tool" data-bs-toggle="tooltip" data-bs-title="grams">g</span></td>
+<td><span class="mono">7 × 10<sup>3</sup></span></td>
+<td><span class="mono">448</span></td>
 </tr>
 <tr class="odd">
 <td><span class="colorMass">0.9877</span> <a href="https://en.wikipedia.org/wiki/Short_ton">tons</a></td>
-<td>14000000 grains</td>
-<td>896 <span class="tool" data-bs-toggle="tooltip" data-bs-title="grams">kg</span></td>
+<td><span class="mono">14 × 10<sup>6</sup></span></td>
+<td><span class="mono">896 × 10<sup>3</sup></span></td>
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 <section id="sec-mph" class="level4 hiddenheading" data-number="20">
 <h4 class="hiddenheading anchored" data-number="20" data-anchor-id="sec-mph"><span class="header-section-number">20</span> Miles per hour (mph)</h4>
@@ -2605,7 +2609,7 @@ flowchart LR
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Laptev</span></span>
 <span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">given</span><span class="kw">:</span><span class="at"> Martin</span></span>
 <span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">issued</span><span class="kw">:</span></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">literal</span><span class="kw">:</span><span class="at"> 2025+345</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">literal</span><span class="kw">:</span><span class="at"> 2025+346</span></span>
 <span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Dec</span></span>
 <span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> article</span></span>
 <span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">URL</span><span class="kw">:</span><span class="at"> https://maptv.github.io/dec</span></span>
@@ -2620,7 +2624,7 @@ flowchart LR
 <span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">URL</span><span class="kw">:</span><span class="at"> https://howardhinnant.github.io/date_algorithms</span></span>
 <span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a><span class="co">...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>As demonstrated by the previous sentence above and the <a href="#references">References</a> section below, Quarto citations can include Dec dates. By default, Quarto formats citations according to the <a href="https://chicagomanualofstyle.org/">Chicago Manual of Style</a> author-date format. Per this format, the citation for this article would appear as <a href="https://maptv.github.io/about">Laptev, Martin</a>. 2025+345. “Dec.” <span><span id="ojs-element-id-45"></span>.</span> <a href="https://maptv.github.io/dec" class="uri">https://maptv.github.io/dec</a>.</p>
+<p>As demonstrated by the previous sentence above and the <a href="#references">References</a> section below, Quarto citations can include Dec dates. By default, Quarto formats citations according to the <a href="https://chicagomanualofstyle.org/">Chicago Manual of Style</a> author-date format. Per this format, the citation for this article would appear as <a href="https://maptv.github.io/about">Laptev, Martin</a>. 2025+346. “Dec.” <span><span id="ojs-element-id-45"></span>.</span> <a href="https://maptv.github.io/dec" class="uri">https://maptv.github.io/dec</a>.</p>
 <p>Instead of using Quarto <a href="https://quarto.org/docs/authoring/citations.html#sec-citations">citation syntax</a>, you can also prepare a list of references using <a href="https://quarto.org/docs/authoring/markdown-basics.html#footnotes">footnotes</a>. As an example, I included citations for the Hinnant date algorithm article<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> in both the <a href="#references">references</a> and <a href="#footnotes">footnotes</a> sections. In alphabetical order below, you will find a list of the <a href="http://observablehq.com">Observable</a> notebooks that I adapted into many of the visualizations above.</p>
 </section>
 <section id="last" class="level4 unnumbered">
@@ -2713,8 +2717,8 @@ flowchart LR
 <li><a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel</li>
 <li><a href="#liter" id="L">L</a>: liter, 15625 drops
 <ul>
-<li><a href="#milliliter" id="mL">mL</a>: milliliter, a thousandth of a liter, 15.625 drops</li>
-<li><a href="#microliter" id="uL">µL</a>: microliter, a millionth of a liter, 0.015625 drops</li>
+<li><a href="#milliliter" id="mL">mL</a>: milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops</li>
+<li><a href="#microliter" id="uL">µL</a>: microliter, a cubic millimeter, a millionth of a liter, 0.015625 drops</li>
 </ul></li>
 <li><a href="#meridian" id="m">m</a>: meridian, a full circle around the Earth moving North or South; used in the abbreviations a.m. (antemeridian) and p.m. (postmeridian)
 <ul>
@@ -7876,11 +7880,11 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb44-57"><a href="#cb44-57" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-58"><a href="#cb44-58" aria-hidden="true" tabindex="-1"></a>At a speed of <span class="co">[</span><span class="ot">0.5</span><span class="co">]</span>{.color5} <span class="co">[</span><span class="ot">v</span><span class="co">](#v)</span>{.tool data-bs-toggle="tooltip" data-bs-title="omegars"} or <span class="co">[</span><span class="ot">500</span><span class="co">]</span>{.color5} <span class="co">[</span><span class="ot">milliomegars</span><span class="co">]</span>{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of an omegar"} (<span class="co">[</span><span class="ot">mv</span><span class="co">](#mv)</span>{#milliomegar .tool data-bs-toggle="tooltip" data-bs-title="milliomegars"}), we could travel🧳the <span class="co">[</span><span class="ot">0.1</span><span class="co">]</span>{.color1} <span class="co">[</span><span class="ot">c</span><span class="co">](#c)</span>{.tool data-bs-toggle="tooltip" data-bs-title="taurs"} or <span class="co">[</span><span class="ot">100</span><span class="co">]</span>{.color1} <span class="co">[</span><span class="ot">millitaurs</span><span class="co">]</span>{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a taur"} (<span class="co">[</span><span class="ot">mc</span><span class="co">](#mc)</span>{#millitaur .tool data-bs-toggle="tooltip" data-bs-title="millitaurs"}) between the default positions📍of Points <span class="co">[</span><span class="ot">0</span><span class="co">]</span>{.point0} and <span class="co">[</span><span class="ot">1</span><span class="co">]</span>{.point1} in <span class="co">[</span><span class="ot">0.2</span><span class="co">]</span>{.color2} <span class="co">[</span><span class="ot">d</span><span class="co">](#d)</span>{.tool data-bs-toggle="tooltip" data-bs-title="days"} or <span class="co">[</span><span class="ot">200</span><span class="co">]</span>{.color2} <span class="co">[</span><span class="ot">millidays</span><span class="co">]</span>{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} (<span class="co">[</span><span class="ot">md</span><span class="co">](#md)</span>{#milliday .tool data-bs-toggle="tooltip" data-bs-title="millidays"}). The time required to travel🧳between two points is the distance divided by the speed: \${distance_mcHsl0} <span class="co">[</span><span class="ot">mc</span><span class="co">](#mc)</span>{.tool data-bs-toggle="tooltip" data-bs-title="millitaurs"} <span class="dv">&amp;divide;</span> \${velocity_vHsl0} <span class="co">[</span><span class="ot">v</span><span class="co">](#v)</span>{.tool data-bs-toggle="tooltip" data-bs-title="omegars"} = \${traveltimeHsl0} <span class="co">[</span><span class="ot">md</span><span class="co">](#md)</span>{.tool data-bs-toggle="tooltip" data-bs-title="millidays"} = \${distance_cHsl} <span class="co">[</span><span class="ot">c</span><span class="co">](#c)</span>{.tool data-bs-toggle="tooltip" data-bs-title="taurs"} <span class="dv">&amp;divide;</span> \${velocity_vHsl1} <span class="co">[</span><span class="ot">v</span><span class="co">](#v)</span>{.tool data-bs-toggle="tooltip" data-bs-title="omegars"} = \${distance_mcHsl1} <span class="co">[</span><span class="ot">mc</span><span class="co">](#mc)</span>{.tool data-bs-toggle="tooltip" data-bs-title="millitaurs"} <span class="dv">&amp;divide;</span> \${velocity_mvHsl} <span class="co">[</span><span class="ot">mv</span><span class="co">](#mv)</span>{.tool data-bs-toggle="tooltip" data-bs-title="milliomegars"} = \${traveltimeHsl1} <span class="co">[</span><span class="ot">d</span><span class="co">](#d)</span>{.tool data-bs-toggle="tooltip" data-bs-title="days"}.</span>
 <span id="cb44-59"><a href="#cb44-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-60"><a href="#cb44-60" aria-hidden="true" tabindex="-1"></a><span class="fu"># Interactive world map {.hiddenheading .unnumbered #map}</span></span>
+<span id="cb44-60"><a href="#cb44-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interactive world map {.hiddenheading .unnumbered #map}</span></span>
 <span id="cb44-61"><a href="#cb44-61" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-62"><a href="#cb44-62" aria-hidden="true" tabindex="-1"></a>{{&lt; include /dec/_maptable.qmd &gt;}}</span>
 <span id="cb44-63"><a href="#cb44-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-64"><a href="#cb44-64" aria-hidden="true" tabindex="-1"></a><span class="fu"># Color wheel compass {.hiddenheading .unnumbered #cwc}</span></span>
+<span id="cb44-64"><a href="#cb44-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Color wheel compass {.hiddenheading .unnumbered #cwc}</span></span>
 <span id="cb44-65"><a href="#cb44-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-66"><a href="#cb44-66" aria-hidden="true" tabindex="-1"></a>{{&lt; include /dec/_color.qmd &gt;}}</span>
 <span id="cb44-67"><a href="#cb44-67" aria-hidden="true" tabindex="-1"></a></span>
@@ -8050,7 +8054,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb44-243"><a href="#cb44-243" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-244"><a href="#cb44-244" aria-hidden="true" tabindex="-1"></a>The rightmost column of the table below shows the <span class="co">[</span><span class="ot">12et</span><span class="co">](#12et)</span>{.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} notes that are closest to the <span class="co">[</span><span class="ot">Xet</span><span class="co">](#xet)</span>{.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} Dechromatic scale notes. <span class="co">[</span><span class="ot">12et</span><span class="co">](#12et)</span>{.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} considers <span class="co">[</span><span class="ot">B[𝄲]{.iosevka}</span><span class="co">]</span>{.colorBc}, <span class="co">[</span><span class="ot">D[𝄲]{.iosevka}</span><span class="co">]</span>{.colorDds}, and <span class="co">[</span><span class="ot">E[𝄳]{.iosevka}</span><span class="co">]</span>{.colorDsE} to be <span class="co">[</span><span class="ot">microtones</span><span class="co">](https://en.wikipedia.org/wiki/Microtonality#:~:text=intervals%20not%20found%20in%20the%20customary%20Western%20tuning%20of%20twelve%20equal%20intervals%20per%20octave)</span>. The sound🔊frequency differences between the nearest <span class="co">[</span><span class="ot">Xet</span><span class="co">](#xet)</span>{.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} and <span class="co">[</span><span class="ot">12et</span><span class="co">](#12et)</span>{.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} notes in the table range from the <span class="co">[</span><span class="ot">8</span><span class="co">]</span>{.color008} <span class="co">[</span><span class="ot">ms</span><span class="co">]</span>{.tool data-bs-toggle="tooltip" data-bs-title="millisteps"} between Notes <span class="co">[</span><span class="ot">9</span><span class="co">]</span>{.color9} and <span class="co">[</span><span class="ot">A</span><span class="co">]</span>{.colorA} to the <span class="co">[</span><span class="ot">~</span><span class="co">]</span>{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}<span class="co">[</span><span class="ot">87</span><span class="co">]</span>{.color26div300} <span class="co">[</span><span class="ot">ms</span><span class="co">](#ms)</span>{.tool data-bs-toggle="tooltip" data-bs-title="millisteps"} between Notes <span class="co">[</span><span class="ot">5</span><span class="co">]</span>{.color5} and <span class="co">[</span><span class="ot">F</span><span class="co">]</span>{.colorF}.</span>
 <span id="cb44-245"><a href="#cb44-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-246"><a href="#cb44-246" aria-hidden="true" tabindex="-1"></a><span class="fu"># Color sound table {.hiddenheading .unnumbered #cst}</span></span>
+<span id="cb44-246"><a href="#cb44-246" aria-hidden="true" tabindex="-1"></a><span class="fu">## Color sound table {.hiddenheading .unnumbered #cst}</span></span>
 <span id="cb44-247"><a href="#cb44-247" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-248"><a href="#cb44-248" aria-hidden="true" tabindex="-1"></a>{{&lt; include /dec/_notetable.qmd &gt;}}</span>
 <span id="cb44-249"><a href="#cb44-249" aria-hidden="true" tabindex="-1"></a></span>
@@ -8256,7 +8260,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb44-453"><a href="#cb44-453" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-454"><a href="#cb44-454" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">unit conversion</span><span class="co">](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)</span> table below shows the <span class="co">[</span><span class="ot">United States</span><span class="co">](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)</span>🇺🇸(<span class="co">[</span><span class="ot">US</span><span class="co">](#us)</span>{#unitedstates .tool data-bs-toggle="tooltip" data-bs-title="United States"}) customary units that Dec redefines. The values in the first column are approximate <span class="co">[</span><span class="ot">fold changes</span><span class="co">](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)</span> from original to redefined units. A fold change of <span class="co">[</span><span class="ot">1</span><span class="co">]</span>{.color0} means <span class="co">[</span><span class="ot">0</span><span class="co">]</span>{.color0} <span class="co">[</span><span class="ot">change</span><span class="co">](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared)</span>. Identical fold changes indicate <span class="co">[</span><span class="ot">US</span><span class="co">](#us)</span>{.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units derived from the same Dec and <span class="co">[</span><span class="ot">International System of Units</span><span class="co">](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)</span> (<span class="co">[</span><span class="ot">SI</span><span class="co">](#si)</span>{#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}) units.</span>
 <span id="cb44-455"><a href="#cb44-455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-456"><a href="#cb44-456" aria-hidden="true" tabindex="-1"></a><span class="fu"># Unit conversion tables {.hiddenheading .unnumbered}</span></span>
+<span id="cb44-456"><a href="#cb44-456" aria-hidden="true" tabindex="-1"></a><span class="fu">## Unit conversion tables {.hiddenheading .unnumbered}</span></span>
 <span id="cb44-457"><a href="#cb44-457" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-458"><a href="#cb44-458" aria-hidden="true" tabindex="-1"></a>{{&lt; include /dec/_lengthtable.qmd &gt;}}</span>
 <span id="cb44-459"><a href="#cb44-459" aria-hidden="true" tabindex="-1"></a></span>
@@ -8439,8 +8443,8 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb44-640"><a href="#cb44-640" aria-hidden="true" tabindex="-1"></a><span class="co">    - [i&amp;sup2;](#squareinch){#i2}: Dec square inch, 3906.25 square millizem, 625 square millimeters</span></span>
 <span id="cb44-641"><a href="#cb44-641" aria-hidden="true" tabindex="-1"></a><span class="co">- [k](#keg){#k}: keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel</span></span>
 <span id="cb44-642"><a href="#cb44-642" aria-hidden="true" tabindex="-1"></a><span class="co">- [L](#liter){#L}: liter, 15625 drops</span></span>
-<span id="cb44-643"><a href="#cb44-643" aria-hidden="true" tabindex="-1"></a><span class="co">    - [mL](#milliliter){#mL}: milliliter, a thousandth of a liter, 15.625 drops</span></span>
-<span id="cb44-644"><a href="#cb44-644" aria-hidden="true" tabindex="-1"></a><span class="co">    - [µL](#microliter){#uL}: microliter, a millionth of a liter, 0.015625 drops</span></span>
+<span id="cb44-643"><a href="#cb44-643" aria-hidden="true" tabindex="-1"></a><span class="co">    - [mL](#milliliter){#mL}: milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops</span></span>
+<span id="cb44-644"><a href="#cb44-644" aria-hidden="true" tabindex="-1"></a><span class="co">    - [µL](#microliter){#uL}: microliter, a cubic millimeter, a millionth of a liter, 0.015625 drops</span></span>
 <span id="cb44-645"><a href="#cb44-645" aria-hidden="true" tabindex="-1"></a><span class="co">- [m](#meridian){#m}: meridian, a full circle around the Earth moving North or South; used in the abbreviations a.m. (antemeridian) and p.m. (postmeridian)</span></span>
 <span id="cb44-646"><a href="#cb44-646" aria-hidden="true" tabindex="-1"></a><span class="co">    - [dm](#decimeridian){#dm}: decimeridian, a tenth of a meridian</span></span>
 <span id="cb44-647"><a href="#cb44-647" aria-hidden="true" tabindex="-1"></a><span class="co">    - [mm](#millimeridian){#mm}: millimeridian, a thousandth of a meridian</span></span>

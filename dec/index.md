@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+345
+2025+346
 
 - [<span class="toc-section-number">0</span> Dec measurement
   system](#sec-dec)
@@ -8,8 +8,8 @@ Martin Laptev
   course](#sec-llc)
 - [<span class="toc-section-number">2</span> Distance speed
   duration](#sec-dsd)
-- [Interactive world map](#map)
-- [Color wheel compass](#cwc)
+  - [Interactive world map](#map)
+  - [Color wheel compass](#cwc)
   - [<span class="toc-section-number">3.1</span> Hue saturation
     lightness (hsl)](#hsl)
   - [<span class="toc-section-number">3.2</span> Course color
@@ -39,13 +39,13 @@ Martin Laptev
   wavelength](#sec-fpw)
 - [<span class="toc-section-number">16</span> Ten equal temperament
   (Xet)](#sec-xet)
-- [Color sound table](#cst)
+  - [Color sound table](#cst)
 - [<span class="toc-section-number">17</span> Octave note
   tone](#sec-ont)
 - [<span class="toc-section-number">18</span> Light and sound](#sec-las)
 - [<span class="toc-section-number">19</span> US customary
   units](#sec-ucu)
-- [Unit conversion tables](#unit-conversion-tables)
+  - [Unit conversion tables](#unit-conversion-tables)
 - [<span class="toc-section-number">20</span> Miles per hour
   (mph)](#sec-mph)
 - [<span class="toc-section-number">21</span> Are hectare
@@ -302,7 +302,7 @@ data-bs-title="milliomegars">mv</a> = ${traveltimeHsl1}
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a>.
 
-# Interactive world map
+## Interactive world map
 
 <div class="marginInputs">
 
@@ -389,7 +389,7 @@ viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].chil
 
 </div>
 
-# Color wheel compass
+## Color wheel compass
 
 ``` {ojs}
 //| echo: false
@@ -2363,7 +2363,7 @@ data-bs-title="approximately">~</span><span class="color26div300">87</span>
 data-bs-title="millisteps">ms</a> between Notes
 <span class="color5">5</span> and <span class="colorF">F</span>.
 
-# Color sound table
+## Color sound table
 
 <div id="colortable">
 
@@ -3041,443 +3041,362 @@ Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%2
 data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a>) units.
 
-# Unit conversion tables
+## Unit conversion tables
 
 <table>
 <colgroup>
-<col style="width: 34%" />
-<col style="width: 27%" />
-<col style="width: 37%" />
+<col style="width: 46%" />
+<col style="width: 44%" />
+<col style="width: 9%" />
 </colgroup>
 <thead>
 <tr>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="US customary units">US</span></strong></th>
-<th><strong>Dec</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</span></strong></th>
+<th><strong><a href="#us" class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> length units</strong></th>
+<th><strong><a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone equatorial meter">zem</a></strong></th>
+<th><strong>meter</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Inch">inches</a></td>
-<td>0.0625 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>0.025 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">0.0625</span></td>
+<td><span class="mono">0.025</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Palm_(unit)">palms</a></td>
-<td>0.1875 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>0.075 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">0.1875</span></td>
+<td><span class="mono">0.075</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Hand_(unit)">hands</a></td>
-<td>0.25 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>0.1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">0.25</span></td>
+<td><span class="mono">0.1</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Shaftment">shaftment</a></td>
-<td>0.375 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>0.15 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">0.375</span></td>
+<td><span class="mono">0.15</span></td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Link_(unit)">links</a></td>
-<td>0.5 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>0.2 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">0.5</span></td>
+<td><span class="mono">0.2</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Span_(unit)">spans</a></td>
-<td>0.5625 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>0.225 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">0.5625</span></td>
+<td><span class="mono">0.225</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Foot_(unit)">feet</a></td>
-<td>0.75 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>0.3 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">0.75</span></td>
+<td><span class="mono">0.3</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Cubit">cubits</a></td>
-<td>1.125 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>0.45 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">1.125</span></td>
+<td><span class="mono">0.45</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Pace_(unit)">steps</a></td>
-<td>1.875 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>0.75 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">1.875</span></td>
+<td><span class="mono">0.75</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Yard">yards</a></td>
-<td>2.25 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>0.9 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">2.25</span></td>
+<td><span class="mono">0.9</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Fathom">fathoms</a></td>
-<td>4.5 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>1.8 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">4.5</span></td>
+<td><span class="mono">1.8</span></td>
 </tr>
 <tr>
 <td><span class="color0">1</span> <a
 href="https://en.wikipedia.org/wiki/Horse_length">horse length</a></td>
-<td>6 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>2.4 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">6</span></td>
+<td><span class="mono">2.4</span></td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Rod_(unit)">rods</a></td>
-<td>12.5 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>5 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">12.5</span></td>
+<td><span class="mono">5</span></td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Chain_(unit)">chains</a></td>
-<td>50 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>20 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">50</span></td>
+<td><span class="mono">20</span></td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Furlong">furlongs</a></td>
-<td>500 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>200 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">500</span></td>
+<td><span class="mono">200</span></td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Mile">miles</a></td>
-<td>4000 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>1600 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">4000</span></td>
+<td><span class="mono">1600</span></td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/League_(unit)">leagues</a></td>
-<td>12000 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span></td>
-<td>4800 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters">m</span></td>
+<td><span class="mono">12000</span></td>
+<td><span class="mono">4800</span></td>
 </tr>
 </tbody>
 </table>
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 27%" />
-<col style="width: 39%" />
+<col style="width: 37%" />
+<col style="width: 30%" />
+<col style="width: 31%" />
 </colgroup>
 <thead>
 <tr>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="US customary units">US</span></strong></th>
-<th><strong>Dec</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</span></strong></th>
+<th><strong><a href="#us" class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> speed units</strong></th>
+<th><a href="#mv" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegars">mv</a></th>
+<th><a href="#km" class="tool" data-bs-toggle="tooltip"
+data-bs-title="kilometers">km</a>/hour</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="colorMile">0.9942</span> <a
-href="https://en.wikipedia.org/wiki/Miles_per_hour">miles per
-hour</a></td>
-<td>0.96 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</span></td>
-<td>1.6 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilometers per hour"><span
-class="math inline">$\text{km}\over\text{hour}$</span></span></td>
-</tr>
-<tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Inch_per_second">inches per
 second</a></td>
-<td>0.054 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</span></td>
-<td>0.025 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters per second"><span
-class="math inline">$\text{meters}\over\text{second}$</span></span></td>
+<td>0.054</td>
+<td>0.09</td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Foot_per_second">feet per
 second</a></td>
-<td>0.648 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</span></td>
-<td>0.3 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="meters per second"><span
-class="math inline">$\text{meters}\over\text{second}$</span></span></td>
+<td>0.648</td>
+<td>1.08</td>
+</tr>
+<tr>
+<td><span class="colorMile">0.9942</span> <a
+href="https://en.wikipedia.org/wiki/Miles_per_hour">miles per
+hour</a></td>
+<td>0.96</td>
+<td>1.6</td>
 </tr>
 </tbody>
 </table>
 
 <table>
 <colgroup>
-<col style="width: 32%" />
-<col style="width: 31%" />
 <col style="width: 35%" />
+<col style="width: 31%" />
+<col style="width: 32%" />
 </colgroup>
 <thead>
 <tr>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="US customary units">US</span></strong></th>
-<th><strong>Dec</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</span></strong></th>
+<th><strong><a href="#us" class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> area units</strong></th>
+<th><strong><a href="#z2" class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z²</a></strong></th>
+<th><strong><a href="#m2" class="tool" data-bs-toggle="tooltip"
+data-bs-title="square meter">m²</a></strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_inch">square inches</a></td>
-<td>0.00390625 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span></td>
-<td>625 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square millimeters">mm<sup>2</sup></span></td>
+<td><span class="mono">39.0625 × 10<sup>-4</sup></span></td>
+<td><span class="mono">6.25 × 10<sup>-4</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_foot">square feets</a></td>
-<td>0.5625 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span></td>
-<td>9 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square decimeters">dm<sup>2</sup></span></td>
+<td><span class="mono">0.5625</span></td>
+<td><span class="mono">0.09</span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_yard">square yards</a></td>
-<td>11.390625 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span></td>
-<td>81 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square decimeters">dm<sup>2</sup></span></td>
+<td><span class="mono">5.0625</span></td>
+<td><span class="mono">0.81</span></td>
 </tr>
 <tr>
 <td><span class="colorSqMi">0.9884</span> <a
 href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
-<td>25000 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span></td>
-<td>0.4 <a href="https://en.wikipedia.org/wiki/Hectare">hectare</a></td>
+<td><span class="mono">2.5 × 10<sup>4</sup></span></td>
+<td><span class="mono">0.4 × 10<sup>4</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorSqMi">0.9884</span> <a
 href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
-<td>16000000 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z<sup>2</sup></span></td>
-<td>2.56 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="square kilometers">km<sup>2</sup></span></td>
+<td><span class="mono">16 × 10<sup>6</sup></span></td>
+<td><span class="mono">2.56 × 10<sup>6</sup></span></td>
 </tr>
 </tbody>
 </table>
 
 <table>
 <colgroup>
-<col style="width: 39%" />
-<col style="width: 29%" />
+<col style="width: 40%" />
+<col style="width: 27%" />
 <col style="width: 31%" />
 </colgroup>
 <thead>
 <tr>
 <th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="US customary units">US</span></strong></th>
-<th><strong>Dec</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</span></strong></th>
+data-bs-title="United States">US</span> volume units</strong></th>
+<th><a href="#cz3" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz<sup>3</sup></a></th>
+<th><a href="#mL" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliter">mL</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="colorDrop">1.2549</span> <a
 href="https://en.wikipedia.org/wiki/Drop_(unit)">drops</a></td>
-<td>1 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="microliters">µL</span></td>
+<td><span class="mono">1</span></td>
+<td><span class="mono">0.064</span></td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
 href="https://en.wikipedia.org/wiki/Cubic_inch">cubic inches</a></td>
-<td>244.140625 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>15.625 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">244.140625</span></td>
+<td><span class="mono">15.625</span></td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
 href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
-<td>250 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>16 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">250</span></td>
+<td><span class="mono">16</span></td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
 href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
-<td>500 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>32 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">500</span></td>
+<td><span class="mono">32</span></td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
 href="https://en.wikipedia.org/wiki/Wine_glass#Capacity_measure">wineglasses</a></td>
-<td>1000 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">1 × 10<sup>3</sup></span></td>
+<td><span class="mono">64</span></td>
 </tr>
 <tr>
 <td><span class="colorGall">0.9468</span> <a
 href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
-<td>3500 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>224 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">3.5 × 10<sup>3</sup></span></td>
+<td><span class="mono">224</span></td>
 </tr>
 <tr>
 <td><span class="colorGall">0.9468</span> <a
 href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
-<td>7000 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>448 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">7 × 10<sup>3</sup></span></td>
+<td><span class="mono">448</span></td>
 </tr>
 <tr>
 <td><span class="colorGall">0.9468</span> <a
 href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
-<td>14000 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>896 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">14 × 10<sup>3</sup></span></td>
+<td><span class="mono">896</span></td>
 </tr>
 <tr>
 <td><span class="colorGall">0.9468</span> <a
 href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
-<td>56000 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>3584 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</span></td>
+<td><span class="mono">56 × 10<sup>3</sup></span></td>
+<td><span class="mono">3.584 × 10<sup>3</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
 href="https://en.wikipedia.org/wiki/Cubic_foot">cubic feet</a></td>
-<td>421875 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>27 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="liters">L</span></td>
+<td><span class="mono">421.875 × 10<sup>3</sup></span></td>
+<td><span class="mono">27 × 10<sup>3</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorBarr">1.0735</span> <a
 href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
-<td>1000000 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="liters">L</span></td>
+<td><span class="mono">1 × 10<sup>6</sup></span></td>
+<td><span class="mono">64 × 10<sup>3</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorBarr">1.0735</span> <a
 href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
-<td>2000000 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>128 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="liters">L</span></td>
+<td><span class="mono">2 × 10<sup>6</sup></span></td>
+<td><span class="mono">128 × 10<sup>3</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
 href="https://en.wikipedia.org/wiki/Cubic_yard">cubic yards</a></td>
-<td>11390625 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></span></td>
-<td>729 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="liters">L</span></td>
+<td><span class="mono">11.390625 × 10<sup>6</sup></span></td>
+<td><span class="mono">729 × 10<sup>3</sup></span></td>
 </tr>
 </tbody>
 </table>
 
 <table>
 <colgroup>
-<col style="width: 42%" />
-<col style="width: 8%" />
-<col style="width: 48%" />
+<col style="width: 61%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
 </colgroup>
 <thead>
 <tr>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="US customary units">US</span></strong></th>
-<th><strong>Dec</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</span></strong></th>
+<th><strong><a href="#us" class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> mass units</strong></th>
+<th><strong>grain</strong></th>
+<th><strong>gram</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><span class="colorMass">0.9877</span> <a
 href="https://en.wikipedia.org/wiki/Grain_(unit)">grains</a></td>
-<td>1 grain</td>
-<td>64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milligrams">mg</span></td>
+<td><span class="mono">1</span></td>
+<td><span class="mono">64 × 10<sup>-3</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorCara">0.96</span> <a
 href="https://en.wikipedia.org/wiki/Carat_(mass)">carats</a></td>
-<td>3 grains</td>
-<td>192 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milligrams">mg</span></td>
+<td><span class="mono">3</span></td>
+<td><span class="mono">192 × 10<sup>-3</sup></span></td>
 </tr>
 <tr>
 <td><span class="colorAvOz">1.1288</span> <a
 href="https://en.wikipedia.org/wiki/Ounce">ounces</a></td>
-<td>500 grains</td>
-<td>32 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="grams">g</span></td>
+<td><span class="mono">0.5 × 10<sup>3</sup></span></td>
+<td><span class="mono">32</span></td>
 </tr>
 <tr>
 <td><span class="colorMass">0.9877</span> <a
 href="https://en.wikipedia.org/wiki/Pound_(mass)">pounds</a></td>
-<td>7000 grains</td>
-<td>448 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="grams">g</span></td>
+<td><span class="mono">7 × 10<sup>3</sup></span></td>
+<td><span class="mono">448</span></td>
 </tr>
 <tr>
 <td><span class="colorMass">0.9877</span> <a
 href="https://en.wikipedia.org/wiki/Short_ton">tons</a></td>
-<td>14000000 grains</td>
-<td>896 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="grams">kg</span></td>
+<td><span class="mono">14 × 10<sup>6</sup></span></td>
+<td><span class="mono">896 × 10<sup>3</sup></span></td>
 </tr>
 </tbody>
 </table>
@@ -3848,7 +3767,7 @@ references:
     - family: Laptev
       given: Martin
   issued:
-    literal: 2025+345
+    literal: 2025+346
   title: Dec
   type: article
   URL: https://maptv.github.io/dec
@@ -3871,7 +3790,7 @@ As demonstrated by the previous sentence above and the
 Dec dates. By default, Quarto formats citations according to the
 [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date
 format. Per this format, the citation for this article would appear as
-[Laptev, Martin](https://maptv.github.io/about). 2025+345. “Dec.”
+[Laptev, Martin](https://maptv.github.io/about). 2025+346. “Dec.”
 ${decYearP0}+${decDateP0}. <https://maptv.github.io/dec>.
 
 Instead of using Quarto [citation
@@ -4061,10 +3980,10 @@ I adapted into many of the visualizations above.
 - <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
   glasses, a million drops, half a barrel
 - <a href="#liter" id="L">L</a>: liter, 15625 drops
-  - <a href="#milliliter" id="mL">mL</a>: milliliter, a thousandth of a
-    liter, 15.625 drops
-  - <a href="#microliter" id="uL">µL</a>: microliter, a millionth of a
-    liter, 0.015625 drops
+  - <a href="#milliliter" id="mL">mL</a>: milliliter, a cubic
+    centimeter, a thousandth of a liter, 15.625 drops
+  - <a href="#microliter" id="uL">µL</a>: microliter, a cubic
+    millimeter, a millionth of a liter, 0.015625 drops
 - <a href="#meridian" id="m">m</a>: meridian, a full circle around the
   Earth moving North or South; used in the abbreviations a.m.
   (antemeridian) and p.m. (postmeridian)
