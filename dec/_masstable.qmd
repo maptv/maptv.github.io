@@ -1,7 +1,8 @@
-| **[US]{.tool data-bs-toggle="tooltip" data-bs-title="US customary units"}** | **Dec**         | **[SI]{.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}** |
-| --------------------------------------------------------------------------- | --------------- | -------------------------------------------------------------------------------------- |
-| [0.9877]{.colorMass} [grains](https://en.wikipedia.org/wiki/Grain_(unit))   | 1 grain         | 64 [mg]{.tool data-bs-toggle="tooltip" data-bs-title="milligrams"}                     |
-| [0.96]{.colorCara}   [carats](https://en.wikipedia.org/wiki/Carat_(mass))   | 3 grains        | 192 [mg]{.tool data-bs-toggle="tooltip" data-bs-title="milligrams"}                    |
-| [1.1288]{.colorAvOz} [ounces](https://en.wikipedia.org/wiki/Ounce)          | 500 grains      | 32 [g]{.tool data-bs-toggle="tooltip" data-bs-title="grams"}                           |
-| [0.9877]{.colorMass} [pounds](https://en.wikipedia.org/wiki/Pound_(mass))   | 7000 grains     | 448 [g]{.tool data-bs-toggle="tooltip" data-bs-title="grams"}                          |
-| [0.9877]{.colorMass} [tons](https://en.wikipedia.org/wiki/Short_ton)        | 14000000 grains | 896 [kg]{.tool data-bs-toggle="tooltip" data-bs-title="grams"}                         |
+| **[US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} mass units** | **grain**                   | **gram**                    |
+| -------------------------------------------------------------------------------------- | --------------------------- | --------------------------- |
+| [0.9877]{.colorMass} [grains](https://en.wikipedia.org/wiki/Grain_(unit))              | [ 1]{.mono}                 | [ 64 &times; 10^-3^]{.mono} |
+| [0.96]{.colorCara}   [carats](https://en.wikipedia.org/wiki/Carat_(mass))              | [ 3]{.mono}                 | [192 &times; 10^-3^]{.mono} |
+| [1.1288]{.colorAvOz} [ounces](https://en.wikipedia.org/wiki/Ounce)                     | [ 0.5 &times; 10^3^]{.mono} | [ 32]{.mono}                |
+| [0.9877]{.colorMass} [pounds](https://en.wikipedia.org/wiki/Pound_(mass))              | [ 7   &times; 10^3^]{.mono} | [448]{.mono}                |
+| [0.9877]{.colorMass} [tons](https://en.wikipedia.org/wiki/Short_ton)                   | [14   &times; 10^6^]{.mono} | [896 &times; 10^3^]{.mono}  |
+                                                                                                                       

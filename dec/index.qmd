@@ -57,11 +57,11 @@ Dec measures distance in [taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_
 
 At a speed of [0.5]{.color5} [v](#v){.tool data-bs-toggle="tooltip" data-bs-title="omegars"} or [500]{.color5} [milliomegars]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of an omegar"} ([mv](#mv){#milliomegar .tool data-bs-toggle="tooltip" data-bs-title="milliomegars"}), we could travel🧳the [0.1]{.color1} [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taurs"} or [100]{.color1} [millitaurs]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a taur"} ([mc](#mc){#millitaur .tool data-bs-toggle="tooltip" data-bs-title="millitaurs"}) between the default positions📍of Points [0]{.point0} and [1]{.point1} in [0.2]{.color2} [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"} or [200]{.color2} [millidays]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"} ([md](#md){#milliday .tool data-bs-toggle="tooltip" data-bs-title="millidays"}). The time required to travel🧳between two points is the distance divided by the speed: \${distance_mcHsl0} [mc](#mc){.tool data-bs-toggle="tooltip" data-bs-title="millitaurs"} &divide; \${velocity_vHsl0} [v](#v){.tool data-bs-toggle="tooltip" data-bs-title="omegars"} = \${traveltimeHsl0} [md](#md){.tool data-bs-toggle="tooltip" data-bs-title="millidays"} = \${distance_cHsl} [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taurs"} &divide; \${velocity_vHsl1} [v](#v){.tool data-bs-toggle="tooltip" data-bs-title="omegars"} = \${distance_mcHsl1} [mc](#mc){.tool data-bs-toggle="tooltip" data-bs-title="millitaurs"} &divide; \${velocity_mvHsl} [mv](#mv){.tool data-bs-toggle="tooltip" data-bs-title="milliomegars"} = \${traveltimeHsl1} [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"}.
 
-# Interactive world map {.hiddenheading .unnumbered #map}
+## Interactive world map {.hiddenheading .unnumbered #map}
 
 {{< include /dec/_maptable.qmd >}}
 
-# Color wheel compass {.hiddenheading .unnumbered #cwc}
+## Color wheel compass {.hiddenheading .unnumbered #cwc}
 
 {{< include /dec/_color.qmd >}}
 
@@ -231,7 +231,7 @@ The sound🔊frequencies of two consecutive [Xet](#xet){.tool data-bs-toggle="to
 
 The rightmost column of the table below shows the [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} notes that are closest to the [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} Dechromatic scale notes. [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} considers [B[𝄲]{.iosevka}]{.colorBc}, [D[𝄲]{.iosevka}]{.colorDds}, and [E[𝄳]{.iosevka}]{.colorDsE} to be [microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=intervals%20not%20found%20in%20the%20customary%20Western%20tuning%20of%20twelve%20equal%20intervals%20per%20octave). The sound🔊frequency differences between the nearest [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} and [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} notes in the table range from the [8]{.color008} [ms]{.tool data-bs-toggle="tooltip" data-bs-title="millisteps"} between Notes [9]{.color9} and [A]{.colorA} to the [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[87]{.color26div300} [ms](#ms){.tool data-bs-toggle="tooltip" data-bs-title="millisteps"} between Notes [5]{.color5} and [F]{.colorF}.
 
-# Color sound table {.hiddenheading .unnumbered #cst}
+## Color sound table {.hiddenheading .unnumbered #cst}
 
 {{< include /dec/_notetable.qmd >}}
 
@@ -437,7 +437,7 @@ In his [1704]{.color704} book entitled [Optiks](https://en.wikipedia.org/wiki/Op
 
 The [unit conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed) table below shows the [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)🇺🇸([US](#us){#unitedstates .tool data-bs-toggle="tooltip" data-bs-title="United States"}) customary units that Dec redefines. The values in the first column are approximate [fold changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement) from original to redefined units. A fold change of [1]{.color0} means [0]{.color0} [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared). Identical fold changes indicate [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units derived from the same Dec and [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}) units.
 
-# Unit conversion tables {.hiddenheading .unnumbered}
+## Unit conversion tables {.hiddenheading .unnumbered}
 
 {{< include /dec/_lengthtable.qmd >}}
 
@@ -620,8 +620,8 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
     - [i&sup2;](#squareinch){#i2}: Dec square inch, 3906.25 square millizem, 625 square millimeters
 - [k](#keg){#k}: keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
 - [L](#liter){#L}: liter, 15625 drops
-    - [mL](#milliliter){#mL}: milliliter, a thousandth of a liter, 15.625 drops
-    - [µL](#microliter){#uL}: microliter, a millionth of a liter, 0.015625 drops
+    - [mL](#milliliter){#mL}: milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops
+    - [µL](#microliter){#uL}: microliter, a cubic millimeter, a millionth of a liter, 0.015625 drops
 - [m](#meridian){#m}: meridian, a full circle around the Earth moving North or South; used in the abbreviations a.m. (antemeridian) and p.m. (postmeridian)
     - [dm](#decimeridian){#dm}: decimeridian, a tenth of a meridian
     - [mm](#millimeridian){#mm}: millimeridian, a thousandth of a meridian
