@@ -3258,16 +3258,16 @@ href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
 
 <table>
 <colgroup>
-<col style="width: 43%" />
-<col style="width: 29%" />
-<col style="width: 26%" />
+<col style="width: 41%" />
+<col style="width: 31%" />
+<col style="width: 27%" />
 </colgroup>
 <thead>
 <tr>
 <th><span class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> volume units</th>
 <th><a href="#cz3" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz<sup>3</sup></a></th>
+data-bs-title="cubic centizem">cz³</a></th>
 <th><a href="#mL" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="milliliter">mL</a></th>
 </tr>
