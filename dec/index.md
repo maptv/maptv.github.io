@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2025+346
+2025+350
 
 - [<span class="toc-section-number">0</span> Dec measurement
   system](#sec-dec)
@@ -2233,11 +2233,8 @@ data-bs-title="perbeats">p</a>, the limits of human hearing can be
 expressed in musical
 [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale)
 (<a href="#s" id="step" class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</a>). The equations below convert between
+data-bs-title="steps">s</a>). Frequencies less than 12.5
 <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a> and <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="steps">s</span>. Frequencies
-less than 12.5 <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">p</a> have a negative
 <a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="steps">s</a> value and are unlikely to be audible outside
@@ -2246,7 +2243,45 @@ above 109 <a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="steps">s</a> or 24320
 <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">p</a> represent the upper limit of the audible
-range.
+range. Dec designates 380
+<a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">p</a> or 49
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a> as the midpoint of the audible range.
+
+The equations below uses an
+[octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other)
+(<a href="#o" class="tool" data-bs-toggle="tooltip"
+data-bs-title="an octave index">o</a>) index measured in
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tens of musical steps">decasteps</span>
+(<a href="#Ds" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decasteps">Ds</a>) and a note
+(<a href="#n" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a musical note">n</a>) measured in <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="steps">s</span> to convert
+between <a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">p</a> and
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a>. In the context of music, Dec refers to
+<a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">p</a> values as
+[pitches](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=the%20quality%20that%20makes%20it%20possible%20to%20judge%20sounds%20as%20%22higher%22%20and%20%22lower%22%20in%20the%20sense%20associated%20with%20musical%20melodies)
+and <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</span> and
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a> values as
+[tones](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound).
+
+o = ⌊s ÷ 10⌋ = ⌊log<sub>2</sub>(p ÷ 12.5)⌋
+
+$$\text{note} = \text{s}-10 \times \text{o} = \text{t mod } 10 = \frac{\text{p} \div 2^\text{o}-12.5}{1.25}$$
+
+s = 10 × o + note
+
+p = (12.5 + 1.25 × note) × 2<sup>o</sup>
+
+$$10 \times \text{o} + \frac{\text{p}/2^\text{o} - 12.5}{1.25}$$
 
 Like the ten Dec colors, there are ten frequencies that Dec chooses from
 the audible range to serve as a set of sound labels. These ten
@@ -3501,14 +3536,14 @@ data-bs-title="cubic decizem">dz³</a> of water🌊weighs $1\over7$ Dec
 pounds, 64 grams, or 1000 Dec grains
 (<a href="#g" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grain">g</a>). A Dec ounce
-(<a href="#o" id="ounce" class="tool" data-bs-toggle="tooltip"
-data-bs-title="ounce">o</a>) of water weighs $1\over14$ Dec pounds, 500
+(<a href="#u" id="ounce" class="tool" data-bs-toggle="tooltip"
+data-bs-title="ounce">u</a>) of water weighs $1\over14$ Dec pounds, 500
 Dec <a href="#g" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grains">g</a>, or 32 grams. In Dec, the symbols
 <a href="#g" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grain">g</a> and
-<a href="#o" class="tool" data-bs-toggle="tooltip"
-data-bs-title="ounce">o</a> can refer to either volume or mass. Mass
+<a href="#u" class="tool" data-bs-toggle="tooltip"
+data-bs-title="ounce">u</a> can refer to either volume or mass. Mass
 divided by volume is density.
 
 <div class="column-margin" fig-align="center"
@@ -3769,7 +3804,7 @@ references:
     - family: Laptev
       given: Martin
   issued:
-    literal: 2025+346
+    literal: 2025+350
   title: Dec
   type: article
   URL: https://maptv.github.io/dec
@@ -3792,7 +3827,7 @@ As demonstrated by the previous sentence above and the
 Dec dates. By default, Quarto formats citations according to the
 [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date
 format. Per this format, the citation for this article would appear as
-[Laptev, Martin](https://maptv.github.io/about). 2025+346. “Dec.”
+[Laptev, Martin](https://maptv.github.io/about). 2025+350. “Dec.”
 ${decYearP0}+${decDateP0}. <https://maptv.github.io/dec>.
 
 Instead of using Quarto [citation
@@ -3939,6 +3974,36 @@ I adapted into many of the visualizations above.
   - <a href="#pentaday" id="pent">pent</a>: pentaday, a group of five
     days, half a decaday
   - <a href="#dayofdek" id="dod">dod</a>: day of decaday
+    - <a href="#dod0" id="d0">ba</a>: the name of day of decaday 0,
+      consisting of the frontmost voiced consonant and the most open
+      vowel
+    - <a href="#dod1" id="d1">ve</a>: the name of day of decaday 1,
+      consisting of the second frontmost voiced consonant and the second
+      most open vowel
+    - <a href="#dod2" id="d2">di</a>: the name of day of decaday 2,
+      consisting of the third frontmost voiced consonant and the third
+      most open vowel
+    - <a href="#dod3" id="d3">zo</a>: the name of day of decaday 3,
+      consisting of the fourth frontmost voiced consonant and the fourth
+      most open vowel
+    - <a href="#dod4" id="d4">ku</a>: the name of day of decaday 4,
+      consisting of the least frontmost voiced consonant and the least
+      open vowel
+    - <a href="#dod5" id="d5">pa</a>: the name of day of decaday 5,
+      consisting of the frontmost voiceless consonant and the most open
+      vowel
+    - <a href="#dod6" id="d6">ve</a>: the name of day of decaday 6,
+      consisting of the second frontmost voiceless consonant and the
+      second most open vowel
+    - <a href="#dod7" id="d7">di</a>: the name of day of decaday 7,
+      consisting of the third frontmost voiceless consonant and the
+      third most open vowel
+    - <a href="#dod8" id="d8">zo</a>: the name of day of decaday 8,
+      consisting of the fourth frontmost voiceless consonant and the
+      fourth most open vowel
+    - <a href="#dod9" id="d9">ku</a>: the name of day of decaday 9,
+      consisting of the least frontmost voiceless consonant and the
+      least open vowel
   - <a href="#dayofpent" id="dop">dop</a>: day of pentaday
   - <a href="#dayofmonth" id="dom">dom</a>: day of month
   - <a href="#dayofweek" id="dow">dow</a>: day of week
@@ -3998,8 +4063,6 @@ I adapted into many of the visualizations above.
     square kilozem
   - <a href="#squaredecimeter" id="dm2">dm²</a>: square decimeter, 6.25
     square decizem
-- <a href="#ounce" id="o">o</a>: ounce, 500 grains, 32 grams, 500 drops,
-  32 milliliters
 - <a href="#parallel" id="lambda">λ</a>: parallel, a full circle around
   the Earth moving West or East; the English alphabet equivalent of λ is
   the letter “l”, which occurs three times in the word “parallel” and
@@ -4009,6 +4072,38 @@ I adapted into many of the visualizations above.
     of a parallel
   - <a href="#milliparallel" id="mlambda">mλ</a>: milliparallel, a
     thousandth of a parallel
+- <a href="#note" id="n">n</a>: a musical note
+  - <a href="#note0" id="n0">ba</a>: the name of musical note 0,
+    consisting of the frontmost voiced consonant and the most open vowel
+  - <a href="#note1" id="n1">ve</a>: the name of musical note 1,
+    consisting of the second frontmost voiced consonant and the second
+    most open vowel
+  - <a href="#note2" id="n2">di</a>: the name of musical note 2,
+    consisting of the third frontmost voiced consonant and the third
+    most open vowel
+  - <a href="#note3" id="n3">zo</a>: the name of musical note 3,
+    consisting of the fourth frontmost voiced consonant and the fourth
+    most open vowel
+  - <a href="#note4" id="n4">ku</a>: the name of musical note 4,
+    consisting of the least frontmost voiced consonant and the least
+    open vowel
+  - <a href="#note5" id="n5">pa</a>: the name of musical note 5,
+    consisting of the frontmost voiceless consonant and the most open
+    vowel
+  - <a href="#note6" id="n6">ve</a>: the name of musical note 6,
+    consisting of the second frontmost voiceless consonant and the
+    second most open vowel
+  - <a href="#note7" id="n7">di</a>: the name of musical note 7,
+    consisting of the third frontmost voiceless consonant and the third
+    most open vowel
+  - <a href="#note8" id="n8">zo</a>: the name of musical note 8,
+    consisting of the fourth frontmost voiceless consonant and the
+    fourth most open vowel
+  - <a href="#note9" id="n9">ku</a>: the name of musical note 9,
+    consisting of the least frontmost voiceless consonant and the least
+    open vowel
+- <a href="#octave" id="o">o</a>: a musical octave, ten musical steps, a
+  two-fold increase in frequency
 - <a href="#perbeat" id="per">p</a>: perbeat, the inverse of a beat,
   1/beat, once per beat, every beat, 100000 q; the letter “p” can be
   flipped vertically to produce the letter “b”
@@ -4053,6 +4148,8 @@ I adapted into many of the visualizations above.
   - <a href="#milliturn" id="mt">mt</a>: milliturn, a thousandth of a
     turn, .36 degrees, 𝜏/1000 or 𝜋/500 r $\pi\over 500$ radians
 - <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
+- <a href="#ounce" id="u">u</a>: ounce, uncia in Latin, 500 grains, 32
+  grams, 500 drops, 32 milliliters
 - <a href="#coordinateduniversaltime" id="utc">utc</a>: [Coordinated
   Universal
   Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
