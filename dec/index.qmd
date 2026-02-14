@@ -213,20 +213,26 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Duration" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 ```
 
-In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can be expressed in musical [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale) ([s](#s){#step .tool data-bs-toggle="tooltip" data-bs-title="steps"}). Frequencies less than 12.5 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} have a negative [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} value and are unlikely to be audible outside of carefully controlled laboratory experiments. Similarly, frequencies above 109 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} or 24320 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} represent the upper limit of the audible range. Dec designates 380 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} or 49 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} as the midpoint of the audible range.
+In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can be expressed in musical [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale) ([s](#s){#step .tool data-bs-toggle="tooltip" data-bs-title="steps"}). Frequencies less than 12.5 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} have a negative [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} value and are unlikely to be audible outside of carefully controlled laboratory experiments. Similarly, frequencies above 109 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} or 24320 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} represent the upper limit of the audible range. In [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}, the [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play) of an 88-key piano is [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}9 to [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}81.3.
 
-The equations below uses an [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) ([o](#o){.tool data-bs-toggle="tooltip" data-bs-title="an octave index"}) index measured in [decasteps]{.tool data-bs-toggle="tooltip" data-bs-title="tens of musical steps"} ([Ds](#Ds){.tool data-bs-toggle="tooltip" data-bs-title="decasteps"}) and a note ([n](#n){.tool data-bs-toggle="tooltip" data-bs-title="a musical note"}) measured in [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} to convert between [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}. In the context of music, Dec refers to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} values as [pitches](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=the%20quality%20that%20makes%20it%20possible%20to%20judge%20sounds%20as%20%22higher%22%20and%20%22lower%22%20in%20the%20sense%20associated%20with%20musical%20melodies) and [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} values as [tones](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound).
+The equations below uses an [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) index ([i](#i){#index .tool data-bs-toggle="tooltip" data-bs-title="an index"}) measured in integer [decasteps]{.tool data-bs-toggle="tooltip" data-bs-title="tens of musical steps"} ([Ds](#Ds){#decastep .tool data-bs-toggle="tooltip" data-bs-title="decasteps"}) and a note ([n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="a musical note"}) measured in [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} to convert between [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}.
 
-$$\text{o} = \lfloor \text{s} \div 10 \rfloor = \lfloor \text{log}_2(\text{p} \div 12.5) \rfloor$$
+$$\text{i} = \lfloor \text{s} \div 10 \rfloor = \lfloor \text{log}_2(\text{p} \div 12.5) \rfloor$$
 
-$$\text{note} = \text{s}-10 \times \text{o} = \text{t mod } 10 = \frac{\text{p} \div 2^\text{o}-12.5}{1.25}$$
+$$\text{n} = \text{s}-10 \times \text{i} = \text{s mod } 10 = \frac{\text{p} \div 2^\text{i}-12.5}{1.25}$$
 
-$$\text{s} = 10 \times \text{o} + \text{note}$$
+$$\text{s} = 10 \times \text{i} + \text{n}$$
 
-$$\text{p} = \left(12.5 + 1.25 \times \text{note}\right) \times 2^{\text{o}}$$
+$$\text{p} = \left(12.5 + 1.25 \times \text{n}\right) \times 2^{\text{i}}$$
 
-$$10 \times \text{o} + \frac{\text{p}/2^\text{o} - 12.5}{1.25}$$
+$$10 \times \text{i} + \frac{\text{p}/2^\text{i} - 12.5}{1.25}$$
 
+
+In the context of music, Dec refers to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} values as [pitches](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=the%20quality%20that%20makes%20it%20possible%20to%20judge%20sounds%20as%20%22higher%22%20and%20%22lower%22%20in%20the%20sense%20associated%20with%20musical%20melodies) and [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} values as [tones](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound).
+
+A typical person can reliably distinguish sounds🔊that [differ](https://en.wikipedia.org/wiki/Cent_(music)#:~:text=Normal%20adults%20are%20able%20to%20recognize%20pitch%20differences%20of%20as%20small%20as%2025%20cents%20very%20reliably) by at least [200]{.color2} [ms](#ms){.tool data-bs-toggle="tooltip" data-bs-title="millisteps"}.
+
+Notably, the [A4]{.colorA} [pitch](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=the%20quality%20that%20makes%20it%20possible%20to%20judge%20sounds%20as%20%22higher%22%20and%20%22lower%22%20in%20the%20sense%20associated%20with%20musical%20melodies) widely used to [tune musical instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance) is very close to 380 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} or 49 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}.
 
 Like the ten Dec colors, there are ten frequencies that Dec chooses from the audible range to serve as a set of sound labels. These ten frequencies the Dechromatic scale. 
 
@@ -240,7 +246,7 @@ The positive (**+**) and negative (**--**) [indexes](https://en.wikipedia.org/wi
 
 [Tenet]{.tool data-bs-toggle="tooltip" data-bs-title="ten equal temperament"} ([Xet](#xet){#10et .tool data-bs-toggle="tooltip" data-bs-title="Tenet"}) identifies each Dechromatic scale note with a single-digit integer and expresses all other possible sound🔊frequencies as decimal numbers. In contrast, the notes of the [12 equal temperament](https://en.wikipedia.org/wiki/12_equal_temperament#:~:text=the%20musical%20system%20that%20divides%20the%20octave%20into%2012%20parts) ([12et](#12et){#twelveequaltemperance .tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"}) musical system have names that consist of a letter from [A]{.colorA} to [G]{.colorG} and often a symbol such as sharp ([♯]{.iosevka}), half sharp ([𝄲]{.iosevka}), flat ([♭]{.iosevka}), and half flat ([𝄳]{.iosevka}).
 
-The sound🔊frequencies of two consecutive [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} Dechromatic scale notes always differ by one [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="step"}, but the differences between consecutive [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} chromatic scale notes vary from the [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[599]{.color599} [millisteps]{.tool data-bs-toggle="tooltip" data-bs-title="ten thousandths of an octave"} ([ms](#ms){#millistep .tool data-bs-toggle="tooltip" data-bs-title="millisteps"}) between [A[♯]{.iosevka}]{.colorAs} and [B]{.colorB} to the [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[1067]{.color067} [ms](#ms){.tool data-bs-toggle="tooltip" data-bs-title="millisteps"} between [G[♯]{.iosevka}]{.colorGs} and [A]{.colorA}. A typical person can reliably distinguish sounds🔊that [differ](https://en.wikipedia.org/wiki/Cent_(music)#:~:text=Normal%20adults%20are%20able%20to%20recognize%20pitch%20differences%20of%20as%20small%20as%2025%20cents%20very%20reliably) by at least [200]{.color2} [ms](#ms){.tool data-bs-toggle="tooltip" data-bs-title="millisteps"}.
+The sound🔊frequencies of two consecutive [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} Dechromatic scale notes always differ by one [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="step"}, but the differences between consecutive [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} chromatic scale notes vary from the [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[599]{.color599} [millisteps]{.tool data-bs-toggle="tooltip" data-bs-title="ten thousandths of an octave"} ([ms](#ms){#millistep .tool data-bs-toggle="tooltip" data-bs-title="millisteps"}) between [A[♯]{.iosevka}]{.colorAs} and [B]{.colorB} to the [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[1067]{.color067} [ms](#ms){.tool data-bs-toggle="tooltip" data-bs-title="millisteps"} between [G[♯]{.iosevka}]{.colorGs} and [A]{.colorA}.
 
 The rightmost column of the table below shows the [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} notes that are closest to the [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} Dechromatic scale notes. [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} considers [B[𝄲]{.iosevka}]{.colorBc}, [D[𝄲]{.iosevka}]{.colorDds}, and [E[𝄳]{.iosevka}]{.colorDsE} to be [microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=intervals%20not%20found%20in%20the%20customary%20Western%20tuning%20of%20twelve%20equal%20intervals%20per%20octave). The sound🔊frequency differences between the nearest [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} and [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} notes in the table range from the [8]{.color008} [ms]{.tool data-bs-toggle="tooltip" data-bs-title="millisteps"} between Notes [9]{.color9} and [A]{.colorA} to the [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[87]{.color26div300} [ms](#ms){.tool data-bs-toggle="tooltip" data-bs-title="millisteps"} between Notes [5]{.color5} and [F]{.colorF}.
 
@@ -606,16 +612,16 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
     - [dek](#decaday){#dek}: decaday, a group of ten days, 2 pentadays
     - [pent](#pentaday){#pent}: pentaday, a group of five days, half a decaday
     - [dod](#dayofdek){#dod}: day of decaday
-        - [ba](#dod0){#d0}: the name of day of decaday 0, consisting of the frontmost voiced consonant and the most open vowel 
-        - [ve](#dod1){#d1}: the name of day of decaday 1, consisting of the second frontmost voiced consonant and the second most open vowel 
-        - [di](#dod2){#d2}: the name of day of decaday 2, consisting of the third frontmost voiced consonant and the third most open vowel 
-        - [zo](#dod3){#d3}: the name of day of decaday 3, consisting of the fourth frontmost voiced consonant and the fourth most open vowel 
-        - [ku](#dod4){#d4}: the name of day of decaday 4, consisting of the least frontmost voiced consonant and the least open vowel
-        - [pa](#dod5){#d5}: the name of day of decaday 5, consisting of the frontmost voiceless consonant and the most open vowel
-        - [ve](#dod6){#d6}: the name of day of decaday 6, consisting of the second frontmost voiceless consonant and the second most open vowel
-        - [di](#dod7){#d7}: the name of day of decaday 7, consisting of the third frontmost voiceless consonant and the third most open vowel
-        - [zo](#dod8){#d8}: the name of day of decaday 8, consisting of the fourth frontmost voiceless consonant and the fourth most open vowel
-        - [ku](#dod9){#d9}: the name of day of decaday 9, consisting of the least frontmost voiceless consonant and the least open vowel
+        - [ba](#dod0){#d0}: the name of day of decaday 0, the frontmost voiced consonant and the most open vowel 
+        - [ve](#dod1){#d1}: the name of day of decaday 1, the second frontmost voiced consonant and the second most open vowel 
+        - [di](#dod2){#d2}: the name of day of decaday 2, the third frontmost voiced consonant and the third most open vowel 
+        - [zo](#dod3){#d3}: the name of day of decaday 3, the fourth frontmost voiced consonant and the fourth most open vowel 
+        - [gu](#dod4){#d4}: the name of day of decaday 4, the least frontmost voiced consonant and the least open vowel
+        - [pa](#dod5){#d5}: the name of day of decaday 5, the frontmost voiceless consonant and the most open vowel
+        - [fe](#dod6){#d6}: the name of day of decaday 6, the second frontmost voiceless consonant and the second most open vowel
+        - [ti](#dod7){#d7}: the name of day of decaday 7, the third frontmost voiceless consonant and the third most open vowel
+        - [so](#dod8){#d8}: the name of day of decaday 8, the fourth frontmost voiceless consonant and the fourth most open vowel
+        - [ku](#dod9){#d9}: the name of day of decaday 9, the least frontmost voiceless consonant and the least open vowel
     - [dop](#dayofpent){#dop}: day of pentaday
     - [dom](#dayofmonth){#dom}: day of month
     - [dow](#dayofweek){#dow}: day of week
@@ -632,7 +638,7 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
 - [e](#egg){#e}: egg, 1000 grains, 2 ounces, 64 grams
 - [f](#foot){#f}: Dec foot, 0.75 zem, 75 millimeter 
     - [f&sup2;](#squarefoot){#f2}: Dec square foot, 5625 square centizem, 9 square decimeter
-- [g](#gutta){#g}: drop or grain, 64 microliters or 64 milligrams; in Latin, granum means grain and gutta means drop
+- [g](#gutta){#g}: drop (gutta in Latin) or grain (granum in Latin), 64 microliters or 64 milligrams
     - [kg](#kilograin){#kg}: kilograin or kilodrop, 64 grams or 64 milliliters
     - [Mg](#megagrain){#Mg}: megagrain or megadrop, 64 kilograms or 64 liters
 - [h](#hand){#h}: hand, 0.25 zem, 1 decimeter
@@ -655,17 +661,17 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
     - [dλ](#deciparallel){#dlambda}: deciparallel, a tenth of a parallel
     - [mλ](#milliparallel){#mlambda}: milliparallel, a thousandth of a parallel
 - [n](#note){#n}: a musical note
-    - [ba](#note0){#n0}: the name of musical note 0, consisting of the frontmost voiced consonant and the most open vowel 
-    - [ve](#note1){#n1}: the name of musical note 1, consisting of the second frontmost voiced consonant and the second most open vowel 
-    - [di](#note2){#n2}: the name of musical note 2, consisting of the third frontmost voiced consonant and the third most open vowel 
-    - [zo](#note3){#n3}: the name of musical note 3, consisting of the fourth frontmost voiced consonant and the fourth most open vowel 
-    - [ku](#note4){#n4}: the name of musical note 4, consisting of the least frontmost voiced consonant and the least open vowel
-    - [pa](#note5){#n5}: the name of musical note 5, consisting of the frontmost voiceless consonant and the most open vowel
-    - [ve](#note6){#n6}: the name of musical note 6, consisting of the second frontmost voiceless consonant and the second most open vowel
-    - [di](#note7){#n7}: the name of musical note 7, consisting of the third frontmost voiceless consonant and the third most open vowel
-    - [zo](#note8){#n8}: the name of musical note 8, consisting of the fourth frontmost voiceless consonant and the fourth most open vowel
-    - [ku](#note9){#n9}: the name of musical note 9, consisting of the least frontmost voiceless consonant and the least open vowel
-- [o](#octave){#o}: a musical octave, ten musical steps, a two-fold increase in frequency
+    - [ba](#note0){#n0}: the name of musical note 0, the frontmost voiced consonant and the most open vowel 
+    - [ve](#note1){#n1}: the name of musical note 1, the second frontmost voiced consonant and the second most open vowel 
+    - [di](#note2){#n2}: the name of musical note 2, the third frontmost voiced consonant and the third most open vowel 
+    - [zo](#note3){#n3}: the name of musical note 3, the fourth frontmost voiced consonant and the fourth most open vowel 
+    - [gu](#note4){#n4}: the name of musical note 4, the least frontmost voiced consonant and the least open vowel
+    - [pa](#note5){#n5}: the name of musical note 5, the frontmost voiceless consonant and the most open vowel
+    - [fe](#note6){#n6}: the name of musical note 6, the second frontmost voiceless consonant and the second most open vowel
+    - [ti](#note7){#n7}: the name of musical note 7, the third frontmost voiceless consonant and the third most open vowel
+    - [so](#note8){#n8}: the name of musical note 8, the fourth frontmost voiceless consonant and the fourth most open vowel
+    - [ku](#note9){#n9}: the name of musical note 9, the least frontmost voiceless consonant and the least open vowel
+- [i](#index){#i}: an index that represents either the ten musical steps in a musical octave that result in a two-fold increase in frequency or the ten days in a decaday; the Greek letter iota represents ten in the Greek numeral system
 - [p](#perbeat){#per}: perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; the letter "p" can be flipped vertically to produce the letter "b"
     - [Tp](#teraperbeat){#Tp}: teraperbeat, 10^12^ perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
 - [q](#quotidie){#q}: quotidie, the inverse of a day, a hundred thousandth of a perbeat; the letter "q" can be flipped vertically to produce the letter "d"
@@ -689,7 +695,7 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
     - [dt](#deciturn){#dt}: deciturn, a tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
     - [mt](#milliturn){#mt}: milliturn, a thousandth of a turn, .36 degrees, 𝜏/1000 or 𝜋/500 r $\pi\over 500$ radians
 - [tzo](#timezoneoffset){#tzo}: time zone offset
-- [u](#ounce){#u}: ounce, uncia in Latin, 500 grains, 32 grams, 500 drops, 32 milliliters
+- [u](#ounce){#u}: ounce (uncia in Latin), 500 grains, 32 grams, 500 drops, 32 milliliters
 - [utc](#coordinateduniversaltime){#utc}: [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates){#us}: [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - [v](#omegar){#v}: omegar, ωr, 1041.[6]{.vinculum} Dec miles per hour, approximately 1035.62 US miles per hour, 1.[6]{.vinculum} megameters per hour, 0.4[629]{.vinculum} kilometers per second, roughly 1.36 times the speed of sound
