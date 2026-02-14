@@ -2243,27 +2243,41 @@ above 109 <a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="steps">s</a> or 24320
 <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">p</a> represent the upper limit of the audible
-range. Dec designates 380
-<a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a> or 49
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</a> as the midpoint of the audible range.
+range. In <a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a>, the
+[range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play)
+of an 88-key piano is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>9 to <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="approximately">~</span>81.3.
 
 The equations below uses an
 [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other)
-(<a href="#o" class="tool" data-bs-toggle="tooltip"
-data-bs-title="an octave index">o</a>) index measured in
-<span class="tool" data-bs-toggle="tooltip"
+index (<a href="#i" id="index" class="tool" data-bs-toggle="tooltip"
+data-bs-title="an index">i</a>) measured in integer <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="tens of musical steps">decasteps</span>
-(<a href="#Ds" class="tool" data-bs-toggle="tooltip"
+(<a href="#Ds" id="decastep" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decasteps">Ds</a>) and a note
-(<a href="#n" class="tool" data-bs-toggle="tooltip"
-data-bs-title="a musical note">n</a>) measured in <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="steps">s</span> to convert
-between <a href="#per" class="tool" data-bs-toggle="tooltip"
+(<a href="#n" id="note" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a musical note">n</a>) measured in
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a> to convert between
+<a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">p</a> and
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</a>. In the context of music, Dec refers to
+data-bs-title="steps">s</a>.
+
+i = ⌊s ÷ 10⌋ = ⌊log<sub>2</sub>(p ÷ 12.5)⌋
+
+$$\text{n} = \text{s}-10 \times \text{i} = \text{s mod } 10 = \frac{\text{p} \div 2^\text{i}-12.5}{1.25}$$
+
+s = 10 × i + n
+
+p = (12.5 + 1.25 × n) × 2<sup>i</sup>
+
+$$10 \times \text{i} + \frac{\text{p}/2^\text{i} - 12.5}{1.25}$$
+
+In the context of music, Dec refers to
 <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">p</a> values as
 [pitches](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=the%20quality%20that%20makes%20it%20possible%20to%20judge%20sounds%20as%20%22higher%22%20and%20%22lower%22%20in%20the%20sense%20associated%20with%20musical%20melodies)
@@ -2273,15 +2287,21 @@ data-bs-title="steps">s</span> and
 data-bs-title="steps">s</a> values as
 [tones](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound).
 
-o = ⌊s ÷ 10⌋ = ⌊log<sub>2</sub>(p ÷ 12.5)⌋
+A typical person can reliably distinguish sounds🔊that
+[differ](https://en.wikipedia.org/wiki/Cent_(music)#:~:text=Normal%20adults%20are%20able%20to%20recognize%20pitch%20differences%20of%20as%20small%20as%2025%20cents%20very%20reliably)
+by at least <span class="color2">200</span>
+<a href="#ms" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millisteps">ms</a>.
 
-$$\text{note} = \text{s}-10 \times \text{o} = \text{t mod } 10 = \frac{\text{p} \div 2^\text{o}-12.5}{1.25}$$
-
-s = 10 × o + note
-
-p = (12.5 + 1.25 × note) × 2<sup>o</sup>
-
-$$10 \times \text{o} + \frac{\text{p}/2^\text{o} - 12.5}{1.25}$$
+Notably, the <span class="colorA">A4</span>
+[pitch](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=the%20quality%20that%20makes%20it%20possible%20to%20judge%20sounds%20as%20%22higher%22%20and%20%22lower%22%20in%20the%20sense%20associated%20with%20musical%20melodies)
+widely used to [tune musical
+instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance)
+is very close to 380
+<a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">p</a> or 49
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a>.
 
 Like the ten Dec colors, there are ten frequencies that Dec chooses from
 the audible range to serve as a set of sound labels. These ten
@@ -2368,12 +2388,7 @@ data-bs-title="approximately">~</span><span class="color067">1067</span>
 <a href="#ms" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millisteps">ms</a> between
 <span class="colorGs">G<span class="iosevka">♯</span></span> and
-<span class="colorA">A</span>. A typical person can reliably distinguish
-sounds🔊that
-[differ](https://en.wikipedia.org/wiki/Cent_(music)#:~:text=Normal%20adults%20are%20able%20to%20recognize%20pitch%20differences%20of%20as%20small%20as%2025%20cents%20very%20reliably)
-by at least <span class="color2">200</span>
-<a href="#ms" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</a>.
+<span class="colorA">A</span>.
 
 The rightmost column of the table below shows the
 <a href="#12et" class="tool" data-bs-toggle="tooltip"
@@ -3974,36 +3989,28 @@ I adapted into many of the visualizations above.
   - <a href="#pentaday" id="pent">pent</a>: pentaday, a group of five
     days, half a decaday
   - <a href="#dayofdek" id="dod">dod</a>: day of decaday
-    - <a href="#dod0" id="d0">ba</a>: the name of day of decaday 0,
-      consisting of the frontmost voiced consonant and the most open
+    - <a href="#dod0" id="d0">ba</a>: the name of day of decaday 0, the
+      frontmost voiced consonant and the most open vowel
+    - <a href="#dod1" id="d1">ve</a>: the name of day of decaday 1, the
+      second frontmost voiced consonant and the second most open vowel
+    - <a href="#dod2" id="d2">di</a>: the name of day of decaday 2, the
+      third frontmost voiced consonant and the third most open vowel
+    - <a href="#dod3" id="d3">zo</a>: the name of day of decaday 3, the
+      fourth frontmost voiced consonant and the fourth most open vowel
+    - <a href="#dod4" id="d4">gu</a>: the name of day of decaday 4, the
+      least frontmost voiced consonant and the least open vowel
+    - <a href="#dod5" id="d5">pa</a>: the name of day of decaday 5, the
+      frontmost voiceless consonant and the most open vowel
+    - <a href="#dod6" id="d6">fe</a>: the name of day of decaday 6, the
+      second frontmost voiceless consonant and the second most open
       vowel
-    - <a href="#dod1" id="d1">ve</a>: the name of day of decaday 1,
-      consisting of the second frontmost voiced consonant and the second
-      most open vowel
-    - <a href="#dod2" id="d2">di</a>: the name of day of decaday 2,
-      consisting of the third frontmost voiced consonant and the third
-      most open vowel
-    - <a href="#dod3" id="d3">zo</a>: the name of day of decaday 3,
-      consisting of the fourth frontmost voiced consonant and the fourth
-      most open vowel
-    - <a href="#dod4" id="d4">ku</a>: the name of day of decaday 4,
-      consisting of the least frontmost voiced consonant and the least
-      open vowel
-    - <a href="#dod5" id="d5">pa</a>: the name of day of decaday 5,
-      consisting of the frontmost voiceless consonant and the most open
+    - <a href="#dod7" id="d7">ti</a>: the name of day of decaday 7, the
+      third frontmost voiceless consonant and the third most open vowel
+    - <a href="#dod8" id="d8">so</a>: the name of day of decaday 8, the
+      fourth frontmost voiceless consonant and the fourth most open
       vowel
-    - <a href="#dod6" id="d6">ve</a>: the name of day of decaday 6,
-      consisting of the second frontmost voiceless consonant and the
-      second most open vowel
-    - <a href="#dod7" id="d7">di</a>: the name of day of decaday 7,
-      consisting of the third frontmost voiceless consonant and the
-      third most open vowel
-    - <a href="#dod8" id="d8">zo</a>: the name of day of decaday 8,
-      consisting of the fourth frontmost voiceless consonant and the
-      fourth most open vowel
-    - <a href="#dod9" id="d9">ku</a>: the name of day of decaday 9,
-      consisting of the least frontmost voiceless consonant and the
-      least open vowel
+    - <a href="#dod9" id="d9">ku</a>: the name of day of decaday 9, the
+      least frontmost voiceless consonant and the least open vowel
   - <a href="#dayofpent" id="dop">dop</a>: day of pentaday
   - <a href="#dayofmonth" id="dom">dom</a>: day of month
   - <a href="#dayofweek" id="dow">dow</a>: day of week
@@ -4029,8 +4036,8 @@ I adapted into many of the visualizations above.
 - <a href="#foot" id="f">f</a>: Dec foot, 0.75 zem, 75 millimeter
   - <a href="#squarefoot" id="f2">f²</a>: Dec square foot, 5625 square
     centizem, 9 square decimeter
-- <a href="#gutta" id="g">g</a>: drop or grain, 64 microliters or 64
-  milligrams; in Latin, granum means grain and gutta means drop
+- <a href="#gutta" id="g">g</a>: drop (gutta in Latin) or grain (granum
+  in Latin), 64 microliters or 64 milligrams
   - <a href="#kilograin" id="kg">kg</a>: kilograin or kilodrop, 64 grams
     or 64 milliliters
   - <a href="#megagrain" id="Mg">Mg</a>: megagrain or megadrop, 64
@@ -4073,37 +4080,30 @@ I adapted into many of the visualizations above.
   - <a href="#milliparallel" id="mlambda">mλ</a>: milliparallel, a
     thousandth of a parallel
 - <a href="#note" id="n">n</a>: a musical note
-  - <a href="#note0" id="n0">ba</a>: the name of musical note 0,
-    consisting of the frontmost voiced consonant and the most open vowel
-  - <a href="#note1" id="n1">ve</a>: the name of musical note 1,
-    consisting of the second frontmost voiced consonant and the second
-    most open vowel
-  - <a href="#note2" id="n2">di</a>: the name of musical note 2,
-    consisting of the third frontmost voiced consonant and the third
-    most open vowel
-  - <a href="#note3" id="n3">zo</a>: the name of musical note 3,
-    consisting of the fourth frontmost voiced consonant and the fourth
-    most open vowel
-  - <a href="#note4" id="n4">ku</a>: the name of musical note 4,
-    consisting of the least frontmost voiced consonant and the least
-    open vowel
-  - <a href="#note5" id="n5">pa</a>: the name of musical note 5,
-    consisting of the frontmost voiceless consonant and the most open
-    vowel
-  - <a href="#note6" id="n6">ve</a>: the name of musical note 6,
-    consisting of the second frontmost voiceless consonant and the
-    second most open vowel
-  - <a href="#note7" id="n7">di</a>: the name of musical note 7,
-    consisting of the third frontmost voiceless consonant and the third
-    most open vowel
-  - <a href="#note8" id="n8">zo</a>: the name of musical note 8,
-    consisting of the fourth frontmost voiceless consonant and the
-    fourth most open vowel
-  - <a href="#note9" id="n9">ku</a>: the name of musical note 9,
-    consisting of the least frontmost voiceless consonant and the least
-    open vowel
-- <a href="#octave" id="o">o</a>: a musical octave, ten musical steps, a
-  two-fold increase in frequency
+  - <a href="#note0" id="n0">ba</a>: the name of musical note 0, the
+    frontmost voiced consonant and the most open vowel
+  - <a href="#note1" id="n1">ve</a>: the name of musical note 1, the
+    second frontmost voiced consonant and the second most open vowel
+  - <a href="#note2" id="n2">di</a>: the name of musical note 2, the
+    third frontmost voiced consonant and the third most open vowel
+  - <a href="#note3" id="n3">zo</a>: the name of musical note 3, the
+    fourth frontmost voiced consonant and the fourth most open vowel
+  - <a href="#note4" id="n4">gu</a>: the name of musical note 4, the
+    least frontmost voiced consonant and the least open vowel
+  - <a href="#note5" id="n5">pa</a>: the name of musical note 5, the
+    frontmost voiceless consonant and the most open vowel
+  - <a href="#note6" id="n6">fe</a>: the name of musical note 6, the
+    second frontmost voiceless consonant and the second most open vowel
+  - <a href="#note7" id="n7">ti</a>: the name of musical note 7, the
+    third frontmost voiceless consonant and the third most open vowel
+  - <a href="#note8" id="n8">so</a>: the name of musical note 8, the
+    fourth frontmost voiceless consonant and the fourth most open vowel
+  - <a href="#note9" id="n9">ku</a>: the name of musical note 9, the
+    least frontmost voiceless consonant and the least open vowel
+- <a href="#index" id="i">i</a>: an index that represents either the ten
+  musical steps in a musical octave that result in a two-fold increase
+  in frequency or the ten days in a decaday; the Greek letter iota
+  represents ten in the Greek numeral system
 - <a href="#perbeat" id="per">p</a>: perbeat, the inverse of a beat,
   1/beat, once per beat, every beat, 100000 q; the letter “p” can be
   flipped vertically to produce the letter “b”
@@ -4148,7 +4148,7 @@ I adapted into many of the visualizations above.
   - <a href="#milliturn" id="mt">mt</a>: milliturn, a thousandth of a
     turn, .36 degrees, 𝜏/1000 or 𝜋/500 r $\pi\over 500$ radians
 - <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
-- <a href="#ounce" id="u">u</a>: ounce, uncia in Latin, 500 grains, 32
+- <a href="#ounce" id="u">u</a>: ounce (uncia in Latin), 500 grains, 32
   grams, 500 drops, 32 milliliters
 - <a href="#coordinateduniversaltime" id="utc">utc</a>: [Coordinated
   Universal
