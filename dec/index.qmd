@@ -213,7 +213,20 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Duration" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 ```
 
-In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can be expressed in musical [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale) ([s](#s){#step .tool data-bs-toggle="tooltip" data-bs-title="steps"}). The equations below convert between [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} and [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"}. Frequencies less than 12.5 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} have a negative [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} value and are unlikely to be audible outside of carefully controlled laboratory experiments. Similarly, frequencies above 109 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} or 24320 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} represent the upper limit of the audible range.
+In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can be expressed in musical [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale) ([s](#s){#step .tool data-bs-toggle="tooltip" data-bs-title="steps"}). Frequencies less than 12.5 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} have a negative [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} value and are unlikely to be audible outside of carefully controlled laboratory experiments. Similarly, frequencies above 109 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} or 24320 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} represent the upper limit of the audible range. Dec designates 380 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} or 49 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} as the midpoint of the audible range.
+
+The equations below uses an [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) ([o](#o){.tool data-bs-toggle="tooltip" data-bs-title="an octave index"}) index measured in [decasteps]{.tool data-bs-toggle="tooltip" data-bs-title="tens of musical steps"} ([Ds](#Ds){.tool data-bs-toggle="tooltip" data-bs-title="decasteps"}) and a note ([n](#n){.tool data-bs-toggle="tooltip" data-bs-title="a musical note"}) measured in [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} to convert between [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}. In the context of music, Dec refers to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} values as [pitches](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=the%20quality%20that%20makes%20it%20possible%20to%20judge%20sounds%20as%20%22higher%22%20and%20%22lower%22%20in%20the%20sense%20associated%20with%20musical%20melodies) and [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} values as [tones](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound).
+
+$$\text{o} = \lfloor \text{s} \div 10 \rfloor = \lfloor \text{log}_2(\text{p} \div 12.5) \rfloor$$
+
+$$\text{note} = \text{s}-10 \times \text{o} = \text{t mod } 10 = \frac{\text{p} \div 2^\text{o}-12.5}{1.25}$$
+
+$$\text{s} = 10 \times \text{o} + \text{note}$$
+
+$$\text{p} = \left(12.5 + 1.25 \times \text{note}\right) \times 2^{\text{o}}$$
+
+$$10 \times \text{o} + \frac{\text{p}/2^\text{o} - 12.5}{1.25}$$
+
 
 Like the ten Dec colors, there are ten frequencies that Dec chooses from the audible range to serve as a set of sound labels. These ten frequencies the Dechromatic scale. 
 
@@ -240,6 +253,7 @@ The rightmost column of the table below shows the [12et](#12et){.tool data-bs-to
 The image above applies Dec color🎨labels🏷️to one [octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency) of piano🎹keys. In [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"}, an octave is 10 [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"}, 1 [decastep]{.tool data-bs-toggle="tooltip" data-bs-title="ten steps"} ([Ds](#Ds){#decastep .tool data-bs-toggle="tooltip" data-bs-title="decastep"}), or [10^4^]{.tool data-bs-toggle="tooltip" data-bs-title="ten steps"} [ms](#ms){.tool data-bs-toggle="tooltip" data-bs-title="millisteps"}. From top to bottom, the text below the image provides the [scientific pitch name](https://en.wikipedia.org/wiki/Scientific_pitch_notation#:~:text=a%20method%20of%20specifying%20musical%20pitch%20by%20combining%20a%20musical%20note%20name%20(with%20accidental%20if%20needed)%20and%20a%20number%20identifying%20the%20pitch%27s%20octave), integer [i]{.tool data-bs-toggle="tooltip" data-bs-title="iob"} sound🔊frequency, and integer [millizem]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a zem"} ([mz](#mz){#millizem .tool data-bs-toggle="tooltip" data-bs-title="millizem"}) wavelength of the corresponding white key. As octave indexes and frequencies increase, wavelengths decrease.
 
 From the perspective of [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"}, all of the labeled🏷️keys in the image above are in Octave [4]{.color4}. Octave indexes in [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} and [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} match except for [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} notes with indexes below [2]{.color2} and [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} notes from [A[♯]{.iosevka}]{.colorAs} to [B[𝄲]{.iosevka}]{.colorB}. An octave index is the [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} analog of a clef in staff notation, because both are responsible for setting the reference frame that allows us to interpret the relative pitches of notes as the absolute pitches of tones. 
+
 
 Clefs in staff notation and octave indexes in [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} set the reference frame that allows us to 
 
@@ -458,7 +472,7 @@ A square [kilozem]{.tool data-bs-toggle="tooltip" data-bs-title="a thousand zems
 
 # Drop wineglass keg {.hiddenheading #sec-dwk}
 
-A cubic [decizem]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a zone equatorial meter"} ([dz&sup3;](#dz3){#cubicdecizem .tool data-bs-toggle="tooltip" data-bs-title="cubic decizem"}) is 1 cubic [nanotaur]{.tool data-bs-toggle="tooltip" data-bs-title="a millionth of a taur"} ([nc&sup3;](#nc3){#cubicnanotaur .tool data-bs-toggle="tooltip" data-bs-title="cubic nanotaur"}), 1 Dec wineglass, 2 Dec ounces, 64 [milliliters]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a liter"} ([mL](#mL){#milliliter .tool data-bs-toggle="tooltip" data-bs-title="milliliters"}), 1000 Dec drops ([g](#g){#gutta .tool data-bs-toggle="tooltip" data-bs-title="drops"}), or 1000 cubic [centizems]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a zone equatorial meter"} ([cz&sup3;](#cz3){#cubiccentizem .tool data-bs-toggle="tooltip" data-bs-title="cubic centizem"}). A [dz&sup3;](#dz3){.tool data-bs-toggle="tooltip" data-bs-title="cubic decizem"} of water🌊weighs $1\over7$ Dec pounds, 64 grams, or 1000 Dec grains ([g](#g){.tool data-bs-toggle="tooltip" data-bs-title="grain"}). A Dec ounce ([o](#o){#ounce .tool data-bs-toggle="tooltip" data-bs-title="ounce"}) of water weighs $1\over14$ Dec pounds, 500 Dec [g](#g){.tool data-bs-toggle="tooltip" data-bs-title="grains"}, or 32 grams. In Dec, the symbols [g](#g){.tool data-bs-toggle="tooltip" data-bs-title="grain"} and [o](#o){.tool data-bs-toggle="tooltip" data-bs-title="ounce"} can refer to either volume or mass. Mass divided by volume is density.
+A cubic [decizem]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a zone equatorial meter"} ([dz&sup3;](#dz3){#cubicdecizem .tool data-bs-toggle="tooltip" data-bs-title="cubic decizem"}) is 1 cubic [nanotaur]{.tool data-bs-toggle="tooltip" data-bs-title="a millionth of a taur"} ([nc&sup3;](#nc3){#cubicnanotaur .tool data-bs-toggle="tooltip" data-bs-title="cubic nanotaur"}), 1 Dec wineglass, 2 Dec ounces, 64 [milliliters]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a liter"} ([mL](#mL){#milliliter .tool data-bs-toggle="tooltip" data-bs-title="milliliters"}), 1000 Dec drops ([g](#g){#gutta .tool data-bs-toggle="tooltip" data-bs-title="drops"}), or 1000 cubic [centizems]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a zone equatorial meter"} ([cz&sup3;](#cz3){#cubiccentizem .tool data-bs-toggle="tooltip" data-bs-title="cubic centizem"}). A [dz&sup3;](#dz3){.tool data-bs-toggle="tooltip" data-bs-title="cubic decizem"} of water🌊weighs $1\over7$ Dec pounds, 64 grams, or 1000 Dec grains ([g](#g){.tool data-bs-toggle="tooltip" data-bs-title="grain"}). A Dec ounce ([u](#u){#ounce .tool data-bs-toggle="tooltip" data-bs-title="ounce"}) of water weighs $1\over14$ Dec pounds, 500 Dec [g](#g){.tool data-bs-toggle="tooltip" data-bs-title="grains"}, or 32 grams. In Dec, the symbols [g](#g){.tool data-bs-toggle="tooltip" data-bs-title="grain"} and [u](#u){.tool data-bs-toggle="tooltip" data-bs-title="ounce"} can refer to either volume or mass. Mass divided by volume is density.
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
 ![](../asset/vitruvianMan.svg){#vitruvian}
@@ -592,6 +606,16 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
     - [dek](#decaday){#dek}: decaday, a group of ten days, 2 pentadays
     - [pent](#pentaday){#pent}: pentaday, a group of five days, half a decaday
     - [dod](#dayofdek){#dod}: day of decaday
+        - [ba](#dod0){#d0}: the name of day of decaday 0, consisting of the frontmost voiced consonant and the most open vowel 
+        - [ve](#dod1){#d1}: the name of day of decaday 1, consisting of the second frontmost voiced consonant and the second most open vowel 
+        - [di](#dod2){#d2}: the name of day of decaday 2, consisting of the third frontmost voiced consonant and the third most open vowel 
+        - [zo](#dod3){#d3}: the name of day of decaday 3, consisting of the fourth frontmost voiced consonant and the fourth most open vowel 
+        - [ku](#dod4){#d4}: the name of day of decaday 4, consisting of the least frontmost voiced consonant and the least open vowel
+        - [pa](#dod5){#d5}: the name of day of decaday 5, consisting of the frontmost voiceless consonant and the most open vowel
+        - [ve](#dod6){#d6}: the name of day of decaday 6, consisting of the second frontmost voiceless consonant and the second most open vowel
+        - [di](#dod7){#d7}: the name of day of decaday 7, consisting of the third frontmost voiceless consonant and the third most open vowel
+        - [zo](#dod8){#d8}: the name of day of decaday 8, consisting of the fourth frontmost voiceless consonant and the fourth most open vowel
+        - [ku](#dod9){#d9}: the name of day of decaday 9, consisting of the least frontmost voiceless consonant and the least open vowel
     - [dop](#dayofpent){#dop}: day of pentaday
     - [dom](#dayofmonth){#dom}: day of month
     - [dow](#dayofweek){#dow}: day of week
@@ -627,10 +651,21 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
 - [m&sup2;](#squaremeter){#m2}: square meter, 6.25 square zem
     - [km&sup2;](#squarekilometer){#km2}: square kilometer, 6.25 square kilozem
     - [dm&sup2;](#squaredecimeter){#dm2}: square decimeter, 6.25 square decizem
-- [o](#ounce){#o}: ounce, 500 grains, 32 grams, 500 drops, 32 milliliters
 - [λ](#parallel){#lambda}: parallel, a full circle around the Earth moving West or East; the English alphabet equivalent of λ is the letter "l", which occurs three times in the word "parallel" and represents a ***l***ine that crosses every possible ***l***ongitude at the same ***l***atitude
     - [dλ](#deciparallel){#dlambda}: deciparallel, a tenth of a parallel
     - [mλ](#milliparallel){#mlambda}: milliparallel, a thousandth of a parallel
+- [n](#note){#n}: a musical note
+    - [ba](#note0){#n0}: the name of musical note 0, consisting of the frontmost voiced consonant and the most open vowel 
+    - [ve](#note1){#n1}: the name of musical note 1, consisting of the second frontmost voiced consonant and the second most open vowel 
+    - [di](#note2){#n2}: the name of musical note 2, consisting of the third frontmost voiced consonant and the third most open vowel 
+    - [zo](#note3){#n3}: the name of musical note 3, consisting of the fourth frontmost voiced consonant and the fourth most open vowel 
+    - [ku](#note4){#n4}: the name of musical note 4, consisting of the least frontmost voiced consonant and the least open vowel
+    - [pa](#note5){#n5}: the name of musical note 5, consisting of the frontmost voiceless consonant and the most open vowel
+    - [ve](#note6){#n6}: the name of musical note 6, consisting of the second frontmost voiceless consonant and the second most open vowel
+    - [di](#note7){#n7}: the name of musical note 7, consisting of the third frontmost voiceless consonant and the third most open vowel
+    - [zo](#note8){#n8}: the name of musical note 8, consisting of the fourth frontmost voiceless consonant and the fourth most open vowel
+    - [ku](#note9){#n9}: the name of musical note 9, consisting of the least frontmost voiceless consonant and the least open vowel
+- [o](#octave){#o}: a musical octave, ten musical steps, a two-fold increase in frequency
 - [p](#perbeat){#per}: perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; the letter "p" can be flipped vertically to produce the letter "b"
     - [Tp](#teraperbeat){#Tp}: teraperbeat, 10^12^ perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
 - [q](#quotidie){#q}: quotidie, the inverse of a day, a hundred thousandth of a perbeat; the letter "q" can be flipped vertically to produce the letter "d"
@@ -654,6 +689,7 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
     - [dt](#deciturn){#dt}: deciturn, a tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
     - [mt](#milliturn){#mt}: milliturn, a thousandth of a turn, .36 degrees, 𝜏/1000 or 𝜋/500 r $\pi\over 500$ radians
 - [tzo](#timezoneoffset){#tzo}: time zone offset
+- [u](#ounce){#u}: ounce, uncia in Latin, 500 grains, 32 grams, 500 drops, 32 milliliters
 - [utc](#coordinateduniversaltime){#utc}: [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates){#us}: [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - [v](#omegar){#v}: omegar, ωr, 1041.[6]{.vinculum} Dec miles per hour, approximately 1035.62 US miles per hour, 1.[6]{.vinculum} megameters per hour, 0.4[629]{.vinculum} kilometers per second, roughly 1.36 times the speed of sound
