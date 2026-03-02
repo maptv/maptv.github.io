@@ -1,34 +1,108 @@
 ---
 title: Git
-draft: true
 author:
   - name: Martin Laptev
     url: https://maptv.github.io
-date: last-modified
-image: horst_git-hug.png
-categories:
-  - tool
-  - git
-citation:
-  url: https://maptv.github.io/blog/git
-  issued: 2024
-  accessed: 2024
-date-format: x
+image: /asset/horst_git-hug.png
+description: >
+  Get started with Git version control, the RStudio integrated development environment, and the Quarto publishing system.
+bibliography: ../asset/ref.yml
+aliases:
+  - /d
+license: CC BY-SA
+lightbox: false
+toc: true
+toc-depth: 5
+bread-crumbs: false
+number-sections: true
+number-offset: -1
+number-depth: 1
 format:
   html:
+    grid:
+      body-width: 900px
+    shift-heading-level-by: 3
     include-after-body:
-      - ../asset/cite.html
       - ../asset/style.html
       - ../asset/stamp.html
       - ../asset/tooltip.html
+      - ../asset/footnote.html
+      - ../asset/crossref.html
+  commonmark: default
 filters:
   - ../asset/date.lua
-  - include-code-files
+categories:
+  - software
+  - git
+  - rstudio
+  - quarto
 ---
 
-## [TL;DR]{.underline .blue data-bs-toggle="tooltip" data-bs-title="too long; didn't read"}
+## [TL;DR]{.tool data-bs-toggle="tooltip" data-bs-title="too long; didn't read"}
 
-In this blog post, I show how to use the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) [version control](https://en.wikipedia.org/wiki/Version_control#:~:text=version%20control%20(also%20known%20as%20revision%20control%2C%20source%20control%2C%20or%20source%20code%20management)%20is%20a%20class%20of%20systems%20responsible%20for%20managing%20changes%20to%20computer%20programs%2C%20documents%2C%20large%20web%20sites%2C%20or%20other%20collections%20of%20information.) system and the [command line interfaces](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.) (CLIs) for the [GitHub](https://github.com) and [GitLab](https://gitlab.com) Git [repository hosts](https://en.wikipedia.org/wiki/Git#:~:text=Git%20repository%20services%2C%20including%20GitHub%2C%20SourceForge%2C%20Bitbucket%20and%20GitLab.%5B) to create a Git [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) that contains setup files for the [Codespaces](https://github.com/features/codespaces) and [GitPod](https://www.gitpod.io) [computing platforms](https://en.wikipedia.org/wiki/Computing_platform#:~:text=A%20computing%20platform%2C%20digital%20platform%2C%5B1%5D%20or%20software%20platform%20is%20an%20environment%20in%20which%20software%20is%20executed.).
+1. Use a pre-existing or newly-created [Google](https://www.google.com/account/about) account to [create a new GitHub account](https://github.com/signup).
+2. [Log into GitHub](https://github.com/login)
+3. Click the Plus (`+`) sign on the navigation bar of the GitHub Dashboard and then click "New repository".
+4. Give your repository (repo) a name and then click "Create repository".
+5. Complete either Option 0 or 1 below:
+   1. Click "Create a codespace"
+   2. Create a new Posit Cloud project by
+      - Copying the [uniform resource locator](https://en.wikipedia.org/wiki/URL#:~:text=a%20reference%20to%20a%20resource%20on%20the%20World%20Wide%20Web) ([url](#url){#uniformresourcelocator .tool data-bs-toggle="tooltip" data-bs-title="uniform resource locator"}) of your repo,
+      - using your GitHub or Google account to create a new [Posit Cloud](https://login.posit.cloud/register) account,
+      - clicking "New Project",
+      - clicking "New Project from Git repository",
+      - pasting in the repo [url](#url){.tool data-bs-toggle="tooltip" data-bs-title="uniform resource locator"}, and
+      - clicking "OK".
+
+# Git version control system {.hiddenheading #sec-git}
+
+[Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development) is a [version control](https://en.wikipedia.org/wiki/Version_control#:~:text=version%20control%20(also%20known%20as%20revision%20control%2C%20source%20control%2C%20or%20source%20code%20management)%20is%20a%20class%20of%20systems%20responsible%20for%20managing%20changes%20to%20computer%20programs%2C%20documents%2C%20large%20web%20sites%2C%20or%20other%20collections%20of%20information) system developed by [Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems%20based%20on%20the%20Linux%20kernel%2C%5B12%5D%20an%20operating%20system%20kernel%20first%20released%20on%20September%2017%2C%201991%2C%20by%20Linus%20Torvalds) creator [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds#:~:text=creator%20and%20lead%20developer%20of%20the%20Linux%20kernel%20since%201991.%20He%20also%20created%20the%20distributed%20version%20control%20system%20Git). Since its first release on [2005+037]{.tool data-bs-toggle="tooltip" data-bs-title="April 7, 2005"}, Git has largely replaced other version control systems and is used by 93% of [software](https://en.wikipedia.org/wiki/Software#:~:text=Software%20is%20a%20set%20of%20computer%20programs%20and%20associated%20documentation%20and%20data) developers worldwide, according to [survey results](https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git) published by [StackOverflow](https://stackoverflow.com/tour) on [2022+314]{.tool data-bs-toggle="tooltip" data-bs-title="2023-01-09"}.
+
+Thanks to Git, I can sleep💤soundly at night, reassured by the knowledge that all of my progress on all of my ongoing projects is recorded. My progress is not only stored on my local computer, but also on the servers of [Git repository hosts](https://en.wikipedia.org/wiki/Git#:~:text=Git%20repository%20services%2C%20including%20GitHub%2C%20SourceForge%2C%20Bitbucket%20and%20GitLab.%5B) such as [GitHub](https://en.wikipedia.org/wiki/GitHub#:~:text=GitHub%2C%20Inc.%20(/%CB%88%C9%A1%C9%AAth%CA%8Cb/%5Ba%5D)%20is%20a%20platform%20and%20cloud%2Dbased%20service%20for%20software%20development%20and%20version%20control%2C%20allowing%20developers%20to%20store%20and%20manage%20their%20code.) and [GitLab](https://en.wikipedia.org/wiki/GitLab).
+
+A Git [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) (repo) is a [directory](https://en.wikipedia.org/wiki/Directory_(computing)#:~:text=a%20directory%20is%20a%20file%20system%20cataloging%20structure%20which%20contains%20references%20to%20other%20computer%20files%2C%20and%20possibly%20other%20directories.) that tracks the changes made to its contents. For more information on GitHub, the largest Git repo host, take a look at the [2022+088]{.tool data-bs-toggle="tooltip" data-bs-title="May 27, 2022"} ["GitHub for supporting, reusing, contributing, and failing safely"](https://openscapes.org/blog/2022-05-27-github-illustrated-series/) post by [Allison Horst](https://allisonhorst.com) and [Julie Lowndes](https://jules32.github.io) on the [Openscapes](https://openscapes.org) [blog](https://openscapes.org/blog).
+
+GitHub and GitLab do not only host repos, but also websites via [GitHub Pages](https://docs.github.com/en/pages) and [GitLab Pages](https://docs.gitlab.com/user/project/pages). In addition to providing basic web hosting for free, GitHub and GitLab offer free access to [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration#:~:text=In%20software%20engineering%2C%20continuous%20integration%20(CI)%20is%20the%20practice%20of%20merging%20all%20developers%27%20working%20copies%20to%20a%20shared%20mainline%20several%20times%20a%20day) systems called [GitHub Actions](https://docs.github.com/en/actions) and [GitLab CI/CD](https://docs.gitlab.com/ee/ci) that can automatically [build](https://en.wikipedia.org/wiki/Software_build) and [deploy](https://en.wikipedia.org/wiki/Software_deployment#:~:text=Software%20deployment%20is%20all%20of%20the%20activities%20that%20make%20a%20software%20system%20available%20for%20use) software.
+
+Another advantage of using Git is the availability of free web-based editors, such as [github.dev](https://github.dev/github/dev), [vscode.dev](https://vscode.dev), and [GitLab web](https://docs.gitlab.com/user/project/web_ide) [integrated development environment](https://en.wikipedia.org/wiki/Integrated_development_environment#:~:text=software%20that%20provides%20a%20relatively%20comprehensive%20set%20of%20features%20for%20software%20development) ([ide](#ide){.tool data-bs-toggle="tooltip" data-bs-title="integrated development environment"}), that make it possible to modify repo contents via a [web browser](https://en.wikipedia.org/wiki/Web_browser#:~:text=an%20application%20for%20accessing%20websites) without the need to keep local copies of repos or have anything installed locally. [Cloud computing](https://en.wikipedia.org/wiki/Cloud_computing#:~:text=shareable%20physical%20or%20virtual%20resources) platforms like [GitHub Codespaces](https://github.com/features/codespaces) and [Posit Cloud](https://posit.cloud) offer the same benefits of web-based editors, but also provide compute for running code and building software, thus enabling remote development on any computer with a web browser.
+
+Before you can benefit from everything Git has to offer, you will need to set up your computer so that you can work locally or configure a service like GitHub Codespaces for remote development in your web browser. My setup for local development requires a high level of technical skill and relies on the [Homebrew](https://brew.sh) [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=A%20package%20manager%20or%20package%2Dmanagement%20system%20is%20a%20collection%20of%20software%20tools%20that%20automates%20the%20process%20of%20installing%2C%20upgrading%2C%20configuring%2C%20and%20removing%20computer%20programs%20for%20a%20computer%20in%20a%20consistent%20manner.), which is currently only available for [macOS](https://en.wikipedia.org/wiki/MacOS#:~:text=the%20current%20operating%20system%20for%20Apple%27s%20Mac%20computers)  and [Linux](https://www.linux.org). For a universal approach to git, I recommend using the [usethis](https://usethis.r-lib.org) software package to set up git in Posit Cloud or GitHub Codespaces.
+
+The web interface provided by Posit Cloud is based on the [RStudio](https://posit.co/products/open-source/rstudio) [ide](#ide){.tool data-bs-toggle="tooltip" data-bs-title="integrated development environment"}. Similarly, the [Visual Studio Code](https://code.visualstudio.com) (VSCode) [ide](#ide){.tool data-bs-toggle="tooltip" data-bs-title="integrated development environment"} serves as the main GitHub Codespaces interface. While using an [ide](#ide){.tool data-bs-toggle="tooltip" data-bs-title="integrated development environment"} is undoubtedly more difficult than using a dedicated Git [graphical user interface](https://git-scm.com/tools/guis) ([gui](#gui){#graphicaluserinterface .tool data-bs-toggle="tooltip" data-bs-title="graphical user interface"}) like [GitHub Desktop](https://docs.github.com/en/desktop), it is the only way to get everyone on the same page📖regardless of what operating system they use.
+
+## Git set, git ready, go! {.hiddenheading #sec-set}
+
+   GitI you follow along to end of this article, you will have authenticate into Posit Cloud  Google or Apple account repo called `dotfiles` that can be used for Codespaces setup. I cover how to set up Codespaces and GitPod in my [next blog post](../vscode), which focuses on the [Visual Studio Code](https://code.visualstudio.com) (VSCode) and [VSCodium](https://vscodium.com) [source-code editors](https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.).
+
+The first step to getting started is creating an account for a git host like [GitHub](https://github.com) and a [password manager](https://en.wikipedia.org/wiki/Password_manager#:~:text=a%20software%20program%20that%20prevents%20password%20fatigue%20by%20automatically%20generating%2C%20autofilling%2C%20and%20storing%20passwords) such as [BitWarden](https://bitwarden.com). For [GitHub](https://github.com/signup) account creation, you can use an [Apple](https://support.apple.com/apple-account) or [Google](https://www.google.com/account/about) account.
+
+I introduce the [git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) [version control](https://en.wikipedia.org/wiki/Version_control#:~:text=version%20control%20(also%20known%20as%20revision%20control%2C%20source%20control%2C%20or%20source%20code%20management)%20is%20a%20class%20of%20systems%20responsible%20for%20managing%20changes%20to%20computer%20programs%2C%20documents%2C%20large%20web%20sites%2C%20or%20other%20collections%20of%20information) system. Personally, I use git via a [command line interfaces](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines) ([cli](#cli){#commandlineinterface .tool data-bs-toggle="tooltip" data-bs-title="command line interface"}), but this requires a high level of technical skill and training. As an alternative to [cli](#cli){.tool data-bs-toggle="tooltip" data-bs-title="command line interfaces"}, I typically recommend using a git [graphical user interface](https://git-scm.com/tools/guis) ([gui](#gui){#graphicaluserinterface .tool data-bs-toggle="tooltip" data-bs-title="graphical user interface"}) client like [GitHub Desktop](https://docs.github.com/en/desktop). Even I, a self-proclaimed [cli](#cli){.tool data-bs-toggle="tooltip" data-bs-title="command line interface"} guru, have switched to a [gui](#gui){.tool data-bs-toggle="tooltip" data-bs-title="graphical user interface"} in a pinch🤏.
+
+https://docs.github.com/en/codespaces/the-githubdev-web-based-editor
+Even though the installation, setup, and use of GitHub Desktop are relatively straightforward, it is currently only available to [macOS]() and [Windows]() users. To support users of other operating systems, such as [Android](https://www.android.com), [ChromeOS](https://chromeos.google), [iOS](https://www.apple.com/os/ios/), and [Linux](https://www.linux.org), I recommend using git via an [integrated development environment](https://en.wikipedia.org/wiki/Integrated_development_environment#:~:text=software%20that%20provides%20a%20relatively%20comprehensive%20set%20of%20features%20for%20software%20development) ([ide](#ide){.tool data-bs-toggle="tooltip" data-bs-title="integrated development environment"}) like [RStudio](https://posit.co/products/open-source/rstudio) or [Positron](https://posit.co/products/ide/positron).
+
+
+
+With a Google or GitHub account, you can also create a [Posit Cloud](https://posit.cloud) account, which is a web browser-based version of the RStudio [ide](#ide){.tool data-bs-toggle="tooltip" data-bs-title="integrated development environment"}. If you prefer the Visual Studio Code [ide](#ide){.tool data-bs-toggle="tooltip" data-bs-title="integrated development environment"}, you can use your GitHub account to  that can be used for free with a GitHub or GitLab account. Posit Cloud is a great option for users who want to use RStudio but do not have access to a computer that can run it locally. It also provides a seamless way to work with GitHub and GitLab repos without having to set up anything locally.
+To create a [BitWarden](https://bitwarden.com) account, you will need an email address, such as the one connected to your [Apple](https://support.apple.com/apple-account) or [Google](https://www.google.com/account/about) account. The [mermaid](https://mermaid.ai) diagram below shows the recommended order of account creation steps.
+
+```{mermaid}
+%%| label: accounts
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
+flowchart LR
+    A[Apple]-->H[GitHub account]
+    G[Google]-->H
+    A-->B[BitWarden]
+    G-->B
+    G-->P[Posit Cloud]
+    H-->P
+    click A "https://support.apple.com/apple-account"
+    click B "https://bitwarden.com"
+    click G "https://www.google.com/account/about"
+    click H "https://github.com/signup"
+```
+
+Along the way you will also learn about the  and the [command line interfaces](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.) (CLIs) for the [GitHub](https://github.com) and [GitLab](https://gitlab.com) Git [repository hosts](https://en.wikipedia.org/wiki/Git#:~:text=Git%20repository%20services%2C%20including%20GitHub%2C%20SourceForge%2C%20Bitbucket%20and%20GitLab.%5B) to create a Git [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) that contains setup files for the [Codespaces](https://github.com/features/codespaces) and [GitPod](https://www.gitpod.io) [computing platforms](https://en.wikipedia.org/wiki/Computing_platform#:~:text=A%20computing%20platform%2C%20digital%20platform%2C%5B1%5D%20or%20software%20platform%20is%20an%20environment%20in%20which%20software%20is%20executed.).
 
 ## Navigation Chart
 
@@ -54,19 +128,6 @@ flowchart TB
 
 ## Introduction {#sec-intro}
 
-[Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) is a [version control](https://en.wikipedia.org/wiki/Version_control#:~:text=version%20control%20(also%20known%20as%20revision%20control%2C%20source%20control%2C%20or%20source%20code%20management)%20is%20a%20class%20of%20systems%20responsible%20for%20managing%20changes%20to%20computer%20programs%2C%20documents%2C%20large%20web%20sites%2C%20or%20other%20collections%20of%20information.) system developed by [Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems%20based%20on%20the%20Linux%20kernel%2C%5B12%5D%20an%20operating%20system%20kernel%20first%20released%20on%20September%2017%2C%201991%2C%20by%20Linus%20Torvalds.) creator [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds#:~:text=Linus%20Benedict%20Torvalds%20(,control%20system%20Git.)). Since its first release in [`2005+037`]{.underline .blue data-bs-toggle="tooltip" data-bs-title="2005-04-07"}, Git has largely replaced other version control systems and is used by 93% of [software](https://en.wikipedia.org/wiki/Software#:~:text=Software%20is%20a%20set%20of%20computer%20programs%20and%20associated%20documentation%20and%20data.) developers worldwide, according to [survey results](https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.) published by [StackOverflow](https://stackoverflow.com/tour) on [`2022+314`]{.underline .blue data-bs-toggle="tooltip" data-bs-title="2023-01-09"}.
-
-Thanks to Git, I can sleep💤soundly at night, reassured by the knowledge that all of my progress on all of my ongoing projects is recorded. My progress is not only stored on my local computer, but also on [Git repository hosts](https://en.wikipedia.org/wiki/Git#:~:text=Git%20repository%20services%2C%20including%20GitHub%2C%20SourceForge%2C%20Bitbucket%20and%20GitLab.%5B) such as [GitHub](https://en.wikipedia.org/wiki/GitHub#:~:text=GitHub%2C%20Inc.%20(/%CB%88%C9%A1%C9%AAth%CA%8Cb/%5Ba%5D)%20is%20a%20platform%20and%20cloud%2Dbased%20service%20for%20software%20development%20and%20version%20control%2C%20allowing%20developers%20to%20store%20and%20manage%20their%20code.) and [GitLab](https://en.wikipedia.org/wiki/GitLab).
-
-A Git [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) (repo) is a [directory](https://en.wikipedia.org/wiki/Directory_(computing)#:~:text=a%20directory%20is%20a%20file%20system%20cataloging%20structure%20which%20contains%20references%20to%20other%20computer%20files%2C%20and%20possibly%20other%20directories.) that tracks the changes made to its contents. For more information on GitHub, the largest Git repo host, take a look at the ["GitHub for supporting, reusing, contributing, and failing safely"](https://openscapes.org/blog/2022-05-27-github-illustrated-series/) post by [Allison Horst](https://allisonhorst.com) and [Julie Lowndes](https://jules32.github.io) on the [Openscapes](https://openscapes.org/) [blog](https://openscapes.org/blog).
-
-GitHub and GitLab do not only host repos, but also websites via [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#render-to-docs) and [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/). In addition to providing basic web hosting for free, GitHub and GitLab offer free access to [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration#:~:text=In%20software%20engineering%2C%20continuous%20integration%20(CI)%20is%20the%20practice%20of%20merging%20all%20developers%27%20working%20copies%20to%20a%20shared%20mainline%20several%20times%20a%20day.) (CI) systems called [GitHub Actions](https://docs.github.com/en/actions) and [GitLab CI/CD](https://docs.gitlab.com/ee/ci) that can automatically [build](https://en.wikipedia.org/wiki/Software_build) and [deploy](https://en.wikipedia.org/wiki/Software_deployment#:~:text=Software%20deployment%20is%20all%20of%20the%20activities%20that%20make%20a%20software%20system%20available%20for%20use.) software.
-
-Another advantage of using Git is the availability of free web-based editors, such as [github.dev](https://github.dev/github/dev), [vscode.dev](https://vscode.dev), and [Web IDE](https://docs.gitlab.com/ee/user/project/web_ide/), that make it possible to modify repo contents via a [web browser](https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.%5B) without the need to keep local copies of repos or have anything installed locally. [Cloud](https://en.wikipedia.org/wiki/Cloud_computing#:~:text=Cloud%20computing%5B1%5D%20is%20the%20on%2Ddemand%20availability%20of%20computer%20system%20resources%2C%20especially%20data%20storage%20(cloud%20storage)%20and%20computing%20power%2C%20without%20direct%20active%20management%20by%20the%20user.)-based computing platforms like [GitHub Codespaces](https://github.com/features/codespaces) and [GitPod](https://www.gitpod.io) offer the same benefits of web-based editors, but also provide compute for running code and building software, thus enabling remote development on any computer with a web browser.
-
-Before you can benefit from everything GitHub and/or GitLab have to offer, you will need to set up your computer so that you can work locally and/or configure a service like GitHub Codespaces or [GitLab Web IDE](https://docs.gitlab.com/ee/user/project/web_ide) for remote development in your [web browser](https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.%5B). In this post, I discuss local development environment setup with the [Homebrew](https://brew.sh) [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=A%20package%20manager%20or%20package%2Dmanagement%20system%20is%20a%20collection%20of%20software%20tools%20that%20automates%20the%20process%20of%20installing%2C%20upgrading%2C%20configuring%2C%20and%20removing%20computer%20programs%20for%20a%20computer%20in%20a%20consistent%20manner.) and repo setup with the GitHub and GitLab CLI.
-
-If you follow along to end of this post, you will have a repo called `dotfiles` that can be used for Codespaces and GitPod setup. I cover how to set up Codespaces and GitPod in my [next blog post](../vscode), which focuses on the [Visual Studio Code](https://code.visualstudio.com) (VSCode) and [VSCodium](https://vscodium.com) [source-code editors](https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.).
 
 ## Setup {#sec-setup}
 

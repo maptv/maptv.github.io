@@ -1,13 +1,13 @@
 ---
-title: Dec
+title: Note
 author:
   - name: Martin Laptev
     url: https://maptv.github.io
 image: /asset/colorWheelCompass.svg
-draft: true
 description: >
-  Introducing the Dec measurement system, which uses turns instead of months, weeks, hours, minutes, seconds, and degrees.
-bibliography: ../asset/ref.yml
+  Introducing the Tenet music notation system, which uses numbers to represent notes and whitespace to indicate timing.
+bibliography: ../../asset/ref.yml
+draft: true
 aliases:
   - /d
 license: CC BY-SA
@@ -24,14 +24,14 @@ format:
       body-width: 900px
     shift-heading-level-by: 3
     include-after-body:
-      - ../asset/style.html
-      - ../asset/stamp.html
-      - ../asset/tooltip.html
-      - ../asset/footnote.html
-      - ../asset/crossref.html
+      - ../../asset/style.html
+      - ../../asset/stamp.html
+      - ../../asset/tooltip.html
+      - ../../asset/footnote.html
+      - ../../asset/crossref.html
   commonmark: default
 filters:
-  - ../asset/date.lua
+  - ../../asset/date.lua
 ---
 
 :::{#firstnav}
@@ -40,7 +40,7 @@ filters:
 
 # Dec measurement system {.hiddenheading #sec-dec}
 
-This part of my website focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created. All Dec measurements are based on [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees). When measuring [angles](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐, a [turn](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn) ([t](#t){#turn .tool data-bs-toggle="tooltip" data-bs-title="turn"}) represents a full⭕️circle and equals 360 [degrees](https://en.wikipedia.org/wiki/Degree_(angle)#:~:text=a%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20360%20degrees) ([°](#deg){#degree .tool data-bs-toggle="tooltip" data-bs-title="degrees"}) or [$\underline\tau$](#2pi){#tau .tool data-bs-toggle="tooltip" data-bs-title="tau"}, 2[𝜋](#pi){#taudividedby2 .tool data-bs-toggle="tooltip" data-bs-title="tau"}, or 900[ϡ](#sampi){#taudividedby900 .tool data-bs-toggle="tooltip" data-bs-title="sampi"} [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units) ([rad](#rad){#radian .tool data-bs-toggle="tooltip" data-bs-title="radians"}). [Geographic coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude) and [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭directions are angles📐and thus can, and should😄, be measured in turns instead of [rad](#rad){.tool data-bs-toggle="tooltip" data-bs-title="radians"} or [°](#deg){.tool data-bs-toggle="tooltip" data-bs-title="degrees"}.
+This part of my website focuses on Dec, a [measurement system](https://en.wikipedia.org/wiki/System_of_units_of_measurement#:~:text=a%20collection%20of%20units%20of%20measurement%20and%20rules%20relating%20them%20to%20each%20other) that [I](https://maptv.github.io) created. All Dec measurements are based on [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees). When measuring [angles](https://en.wikipedia.org/wiki/Angle#:~:text=the%20figure%20formed%20by%20two%20rays)📐, a [turn](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn) ([t](#t){#turn .tool data-bs-toggle="tooltip" data-bs-title="turn"}) represents a full⭕️circle and equals 2$\pi$ ([$\underline\tau$](#2pi){#tau .tool data-bs-toggle="tooltip" data-bs-title="tau"}) [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units) ([rad](#rad){#radian .tool data-bs-toggle="tooltip" data-bs-title="radians"}) or 360 [degrees](https://en.wikipedia.org/wiki/Degree_(angle)#:~:text=a%20measurement%20of%20a%20plane%20angle%20in%20which%20one%20full%20rotation%20is%20360%20degrees) ([°](#deg){#degree .tool data-bs-toggle="tooltip" data-bs-title="degrees"}). [Geographic coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude) and [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭directions are angles📐and thus can, and should😄, be measured in turns instead of [rad](#rad){.tool data-bs-toggle="tooltip" data-bs-title="radians"} or [°](#deg){.tool data-bs-toggle="tooltip" data-bs-title="degrees"}.
 
 # Longitude latitude course {.hiddenheading #sec-llc}
 
@@ -122,14 +122,13 @@ Each [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} als
 # Zone equatorial meter (zem) {.hiddenheading #sec-zem}
 
 :::{.column-page-right fig-align="center" style="text-align:center;font-size:.825rem;" id="zemmodulor" .lighthouse}
-![](../asset/Modulor_measurements.svg){#zModu}
+![](../../asset/Modulor_measurements.svg){#zModu}
 [Wikimedia](https://commons.m.wikimedia.org/wiki/File:Modulor_measurements.svg#mw-jump-to-license)
 :::
 
 Apart from [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taur"}, Dec also measures distance using a unit called the **z**one **e**quatorial **m**eter (zem). The width of a Dec time zone at the Equator is approximately ten million ([~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"}) zem ([z](#z){#zoneequatorialmeter .tool data-bs-toggle="tooltip" data-bs-title="zem"}). Similarly, the distance from the Equator to one of the Poles is [~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"} [meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units). In other words, a [decimeridian]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a meridian"} ([dm](#dm){#decimeridian .tool data-bs-toggle="tooltip" data-bs-title="decimeridian"}) is [~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"} [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} long and a [quarter meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole) is [~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"} meters long.
 
 :::{.column-margin fig-align="center" style="text-align:center;" id="zemhands" .hand}
-{{< include _hands.qmd >}}
 [[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)]{.handlabel}
 :::
 
@@ -138,21 +137,20 @@ Apart from [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taur"}, Dec als
 You can approximate a [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} using your hands🤲. With your palms flat on a table in front of you and the tips of your thumbs👍touching, the maximum distance between the tips of your pinkies is [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}1 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"}. When you spread out the fingers on one hand✋or do the "[call me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20commonly%20understood%20to%20mimic%20the%20handset%20of%20a%20traditional%20landline%20telephone)", "[drink](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=placing%20the%20thumb%20to%20the%20mouth%20and%20motioning%20the%20little%20finger%20upward%20as%20if%20tipping%20up%20a%20bottle%27s%20bottom%20end)", or "[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)"🤙gesture, your thumb👍and pinky tips are [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}0.5 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zems"} apart.
 
 :::{.column-margin fig-align="center" style="text-align:center;" #zemarms}
-![](../asset/squareZem.svg){#zArms}
+![](../../asset/squareZem.svg){#zArms}
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Extended_arm.jpg){#armlabel}
 :::
 
 To visualize a square [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} ([z&sup2;](#z2){#squarezem .tool data-bs-toggle="tooltip" data-bs-title="square zem"}), imagine four people standing in a circle, facing inward, each with their right hand✋placed on top of the elbow of the person to their right. Alternatively, two people can stand in front of each other and raise their arms💪, placing one hand✋on the elbow of the other person and the other hand✋on their own elbow.
 
 :::{.column-margin fig-align="center" style="text-align:center;" #zemlift}
-![](../asset/Man_Lifting_Barbell_Cartoon.svg){#zLift}
+![](../../asset/Man_Lifting_Barbell_Cartoon.svg){#zLift}
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Man_Lifting_Barbell_Cartoon.svg){#liftlabel}
 :::
 
 You can approximate a [z&sup2;](#z2){.tool data-bs-toggle="tooltip" data-bs-title="square zem"} yourself by sitting in a chair🪑or standing🧍with your knees and feet🦶1 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"}, 4 [decimeters]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a meter"}, or 16 inches apart, which is probably about the width of your hips or shoulders. The [z&sup2;](#z2){.tool data-bs-toggle="tooltip" data-bs-title="square zem"} will be between your shins, its top will be below your knees, and its bottom will be either above your ankles or feet🦶, depending on your height.
 
 :::{.column-margin fig-align="center" style="text-align:center;" id="zemcubic"}
-{{< include _cubic.qmd >}}
 [Dimensions.com](https://www.dimensions.com/element/sitting-male-side-1){#cubiclabel}
 :::
 
@@ -216,15 +214,18 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 
 In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can be expressed in musical [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale) ([s](#s){#step .tool data-bs-toggle="tooltip" data-bs-title="steps"}). Frequencies less than 12.5 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} have a negative [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} value and are unlikely to be audible outside of carefully controlled laboratory experiments. Similarly, frequencies above 109 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} or 24320 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} represent the upper limit of the audible range. In [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}, the [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play) of an 88-key piano is [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}9 to [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}81.3.
 
-The equations below use an [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) index ([i](#i){#index .tool data-bs-toggle="tooltip" data-bs-title="an index"}) measured in integer [decasteps]{.tool data-bs-toggle="tooltip" data-bs-title="tens of musical steps"} ([Ds](#Ds){#decastep .tool data-bs-toggle="tooltip" data-bs-title="decasteps"}) and a note ([n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="a musical note"}) measured in [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} to convert between [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}. 
+The equations below uses an [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) index ([i](#i){#index .tool data-bs-toggle="tooltip" data-bs-title="an index"}) measured in integer [decasteps]{.tool data-bs-toggle="tooltip" data-bs-title="tens of musical steps"} ([Ds](#Ds){#decastep .tool data-bs-toggle="tooltip" data-bs-title="decasteps"}) and a note ([n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="a musical note"}) measured in [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} to convert between [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}.
 
-$\text{p} = 12.8 \times 2^{s/10} = 12.8 \times 2^i \times 2^{n/10}$
+$$\text{i} = \lfloor \text{s} \div 10 \rfloor = \lfloor \text{log}_2(\text{p} \div 12.5) \rfloor$$
 
-$s = 10 \log_2\!\left(\frac{\text{p}}{12.8}\right) = 10 \times i + n$
+$$\text{n} = \text{s}-10 \times \text{i} = \text{s mod } 10 = \frac{\text{p} \div 2^\text{i}-12.5}{1.25}$$
 
-$i = \left\lfloor \frac{s}{10} \right\rfloor = \left\lfloor \log_2\!\left(\frac{p}{12.8}\right) \right\rfloor$
+$$\text{s} = 10 \times \text{i} + \text{n}$$
 
-$n = s - 10 \times i = 10\left(\log_2\!\left(\frac{p}{12.8}\right) - i\right)$
+$$\text{p} = \left(12.5 + 1.25 \times \text{n}\right) \times 2^{\text{i}}$$
+
+$$10 \times \text{i} + \frac{\text{p}/2^\text{i} - 12.5}{1.25}$$
+
 
 In the context of music, Dec refers to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} values as [pitches](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=the%20quality%20that%20makes%20it%20possible%20to%20judge%20sounds%20as%20%22higher%22%20and%20%22lower%22%20in%20the%20sense%20associated%20with%20musical%20melodies) and [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} values as [tones](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound).
 
@@ -250,7 +251,6 @@ The rightmost column of the table below shows the [12et](#12et){.tool data-bs-to
 
 ## Color sound table {.hiddenheading .unnumbered #cst}
 
-{{< include /dec/_notetable.qmd >}}
 
 # Octave note tone {.hiddenheading #sec-ont}
 
@@ -300,7 +300,6 @@ flowchart LR
    click Z "#cst"
 ```
 
-{{< include /dec/_csharp.qmd >}}
 
 [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} vertically aligns chords into columns. A chord can contain either notes that represent tones or the tones themselves. Mixing notes and tones in the same chord is not allowed. The chord in the example above can be written with notes instead of tones because Tone [42]{.color2} sets Octave [4]{.color4} as the default. Each line can have its own default octave.
 
@@ -422,7 +421,7 @@ Notes can be grouped into a [chord](https://en.wikipedia.org/wiki/Chord_(music)#
 | 𝅘𝅥𝅰   | 𝅀   | [𝄘]{.color03125}                                                                                           | thirty-second           | demisemiquaver             |
 | 𝅘𝅥𝅱   | 𝅁   | [𝄙]{.color015625}                                                                                          | sixty-fourth            | hemidemisemiquaver         |
 | 𝅘𝅥𝅲   | 𝅂   | [𝄚]{.color0078125}                                                                                         | hundred twenty-eighth   | semihemidemisemiquaver     |
-| ![](../asset/Semigarrapatea.svg){style="max-width:11px"}  | ![](../asset/Silencio_de_semigarrapatea.svg){style="max-width:11px"} | [𝄛]{.color00390625} | two hundred fifty-sixth | demisemihemidemisemiquaver |
+| ![](../../asset/Semigarrapatea.svg){style="max-width:11px"}  | ![](../../asset/Silencio_de_semigarrapatea.svg){style="max-width:11px"} | [𝄛]{.color00390625} | two hundred fifty-sixth | demisemihemidemisemiquaver |
 :::
 
 In [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"}, a rest is denoted by a null sign (∅). Notes, rests, chords, and their separators are grouped into [measures](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music) that have a bar (|) on both sides. Measures are grouped into lines that start with an octave index and end with a [newline](https://en.wikipedia.org/wiki/Newline#:~:text=used%20to%20signify%20the%20end%20of%20a%20line%20of%20text%20and%20the%20start%20of%20a%20new%20one) character. Lines separated by empty lines are played sequentially, whereas groups of lines are played simultaneously.
@@ -443,7 +442,6 @@ All rests except whole rests are followed by a fraction: ½ for a half rest, ¼ 
 4[[4]{class="numerator"}[4]{class="denominator"}]{class="fraction"} | [9¼]{.mono}
  [9⅛]{.mono} [8[⅛]{.mono} [8⅛]{.mono}]{.under} [8¼]{.mono} [[6⅛]{.mono} | [6¾]{.mono}]{style="text-decoration: underline;"} [&empty;¼]{.mono} |
 
-{{< include /dec/_chorus.qmd >}}
 
 
 # Light and sound {.hiddenheading #sec-las}
@@ -455,16 +453,6 @@ In his [1704]{.color704} book entitled [Optiks](https://en.wikipedia.org/wiki/Op
 The [unit conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed) table below shows the [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)🇺🇸([US](#us){#unitedstates .tool data-bs-toggle="tooltip" data-bs-title="United States"}) customary units that Dec redefines. The values in the first column are approximate [fold changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement) from original to redefined units. A fold change of [1]{.color0} means [0]{.color0} [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared). Identical fold changes indicate [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units derived from the same Dec and [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}) units.
 
 ## Unit conversion tables {.hiddenheading .unnumbered}
-
-{{< include /dec/_lengthtable.qmd >}}
-
-{{< include /dec/_speedtable.qmd >}}
-
-{{< include /dec/_areatable.qmd >}}
-
-{{< include /dec/_volumetable.qmd >}}
-
-{{< include /dec/_masstable.qmd >}}
 
 # Miles per hour (mph) {.hiddenheading #sec-mph}
 
@@ -479,7 +467,7 @@ A square [kilozem]{.tool data-bs-toggle="tooltip" data-bs-title="a thousand zems
 A cubic [decizem]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a zone equatorial meter"} ([dz&sup3;](#dz3){#cubicdecizem .tool data-bs-toggle="tooltip" data-bs-title="cubic decizem"}) is 1 cubic [nanotaur]{.tool data-bs-toggle="tooltip" data-bs-title="a millionth of a taur"} ([nc&sup3;](#nc3){#cubicnanotaur .tool data-bs-toggle="tooltip" data-bs-title="cubic nanotaur"}), 1 Dec wineglass, 2 Dec ounces, 64 [milliliters]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a liter"} ([mL](#mL){#milliliter .tool data-bs-toggle="tooltip" data-bs-title="milliliters"}), 1000 Dec drops ([g](#g){#gutta .tool data-bs-toggle="tooltip" data-bs-title="drops"}), or 1000 cubic [centizems]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a zone equatorial meter"} ([cz&sup3;](#cz3){#cubiccentizem .tool data-bs-toggle="tooltip" data-bs-title="cubic centizem"}). A [dz&sup3;](#dz3){.tool data-bs-toggle="tooltip" data-bs-title="cubic decizem"} of water🌊weighs $1\over7$ Dec pounds, 64 grams, or 1000 Dec grains ([g](#g){.tool data-bs-toggle="tooltip" data-bs-title="grain"}). A Dec ounce ([u](#u){#ounce .tool data-bs-toggle="tooltip" data-bs-title="ounce"}) of water weighs $1\over14$ Dec pounds, 500 Dec [g](#g){.tool data-bs-toggle="tooltip" data-bs-title="grains"}, or 32 grams. In Dec, the symbols [g](#g){.tool data-bs-toggle="tooltip" data-bs-title="grain"} and [u](#u){.tool data-bs-toggle="tooltip" data-bs-title="ounce"} can refer to either volume or mass. Mass divided by volume is density.
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
-![](../asset/vitruvianMan.svg){#vitruvian}
+![](../../asset/vitruvianMan.svg){#vitruvian}
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg)
 :::
 
@@ -504,7 +492,7 @@ viewof zems = Inputs.range([0, 10], {label: "Zems", value: 4, step: 0.01})
 # Centizem centimeter inch {.hiddenheading #sec-cci}
 
 ::: {.column-page-right fig-align="left" style="text-align:center;font-size:.825rem;"}
-![](../asset/ruler1dz.svg){#ruler}
+![](../../asset/ruler1dz.svg){#ruler}
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Ruler_illustration.svg)
 :::
 
@@ -527,7 +515,6 @@ Dec color🎨labels🏷can convey an impression of a value at a glance. [Xet](#x
 Now that you have had a taste of Dec, I hope that you are hungry for more! If so, dive🤿deeper into Dec [dates](/dec/date) and [times](/dec/time) before tackling Dec [snaps](/dec/snap)🫰and [spans](/dec/span)🌈. My [filter](/quarto/filter), [include](/quarto/include), and [script](/quarto/script) articles discuss the [Quarto](/quarto) publishing system and how I display Dec [dates](/dec/date) in the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information), the [article list](/list), and [title blocks](https://quarto.org/docs/authoring/title-blocks.html) of my website.
 
 :::{#firstnav}
-{{< include /asset/_decquanav.qmd >}}
 :::
 
 # Cite {.unnumbered #cite}
@@ -643,7 +630,6 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
 - [hex](#hexadecimal){#hex}: hexadecimal, base 16
 - [hsl](#huesaturationlightness){#hsl}: hue saturation lightness
 - [hsv](#huesaturationvalue){#hsv}: hue saturation value
-- [i](#index){#i}: an index that represents either the ten musical steps in a musical octave that result in a two-fold increase in frequency or the ten days in a decaday; the Greek letter iota represents ten in the Greek numeral system
 - [i](#inch){#i}: inch, a sixteenth of a zem, 25 millimeter
     - [i&sup2;](#squareinch){#i2}: Dec square inch, 3906.25 square millizem, 625 square millimeters
 - [k](#keg){#k}: keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
@@ -670,6 +656,7 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
     - [ti](#note7){#n7}: the name of musical note 7, the third frontmost voiceless consonant and the third most open vowel
     - [so](#note8){#n8}: the name of musical note 8, the fourth frontmost voiceless consonant and the fourth most open vowel
     - [ku](#note9){#n9}: the name of musical note 9, the least frontmost voiceless consonant and the least open vowel
+- [i](#index){#i}: an index that represents either the ten musical steps in a musical octave that result in a two-fold increase in frequency or the ten days in a decaday; the Greek letter iota represents ten in the Greek numeral system
 - [p](#perbeat){#per}: perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; the letter "p" can be flipped vertically to produce the letter "b"
     - [Tp](#teraperbeat){#Tp}: teraperbeat, 10^12^ perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
 - [q](#quotidie){#q}: quotidie, the inverse of a day, a hundred thousandth of a perbeat; the letter "q" can be flipped vertically to produce the letter "d"

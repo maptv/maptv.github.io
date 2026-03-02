@@ -75,6 +75,9 @@ website:
         - text: Span
           icon: calendar-range
           href: dec/span/index.qmd
+        - text: Note
+          icon: music-note-beamed
+          href: dec/note/index.qmd
       - section: History
         icon: hourglass-split
         contents:
