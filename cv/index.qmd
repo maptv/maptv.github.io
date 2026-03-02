@@ -29,11 +29,17 @@ css: ../asset/cv.css
 
 ### Experience
 
+#### **Adjunct Professor**, [Community College Baltimore County](https://www.ccbcmd.edu) [2025:]{.cvdate}
+
+::: {.horizontal}
+- Teaches [Human Anatomy and Physiology](https://www.ccbcmd.edu/Programs-and-Courses-Finder/course/BIOL/109) to nearly 50 undergraduate students
+:::
+
 #### **Chief Technology Officer**, Ireni Co [2024:]{.cvdate}
 
 ::: {.horizontal}
-- Builds applications based on the [Dec measurement system](/dec)
-- Offers freelance consulting services to clients
+- Automates tasks and processes
+- Offers freelance tech consulting services to clients
 :::
 
 #### **Lead Instructor**, [Data Society](https://datasociety.com) [2019:2025]{.cvdate}
