@@ -25,7 +25,7 @@
 
 ### Experience
 
-#### **Adjunct Professor**, [Community College Baltimore County](https://www.ccbcmd.edu) <span class="cvdate">2025:</span>
+#### **Adjunct Professor**, [Community College Baltimore County](https://www.ccbcmd.edu) <span class="cvdate">2026:</span>
 
 <div class="horizontal">
 
@@ -39,8 +39,9 @@
 
 <div class="horizontal">
 
-- Automates tasks and processes
-- Offers freelance tech consulting services to clients
+- Builds bespoke software solutions
+- Designs and teaches corporate training workshops
+- Offers science and tech consulting services
 
 </div>
 
@@ -132,7 +133,7 @@
 - Leads a non‑profit organization that supports [eleven Meetup
   groups](https://www.datacommunitydc.org/meetups-overview)
 
-#### **AI Engineering Manager**, [Booz Allen Hamilton](https://www.boozallen.com) <span class="cvdate">2019:2023</span>
+#### **Senior Data Scientist**, [Booz Allen Hamilton](https://www.boozallen.com) <span class="cvdate">2019:2023</span>
 
 - Led a team of data scientists and software developers working on a
   cyber intelligence application
