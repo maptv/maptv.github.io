@@ -29,7 +29,7 @@ css: ../asset/cv.css
 
 ### Experience
 
-#### **Adjunct Professor**, [Community College Baltimore County](https://www.ccbcmd.edu) [2025:]{.cvdate}
+#### **Adjunct Professor**, [Community College Baltimore County](https://www.ccbcmd.edu) [2026:]{.cvdate}
 
 ::: {.horizontal}
 - Teaches [Human Anatomy and Physiology](https://www.ccbcmd.edu/Programs-and-Courses-Finder/course/BIOL/109) to nearly 50 undergraduate students
@@ -38,8 +38,9 @@ css: ../asset/cv.css
 #### **Chief Technology Officer**, Ireni Co [2024:]{.cvdate}
 
 ::: {.horizontal}
-- Automates tasks and processes
-- Offers freelance tech consulting services to clients
+- Builds bespoke software solutions
+- Designs and teaches corporate training workshops
+- Offers science and tech consulting services
 :::
 
 #### **Lead Instructor**, [Data Society](https://datasociety.com) [2019:2025]{.cvdate}
@@ -103,7 +104,7 @@ css: ../asset/cv.css
 
 - Leads a non‑profit organization that supports [eleven Meetup groups](https://www.datacommunitydc.org/meetups-overview)
 
-#### **AI Engineering Manager**, [Booz Allen Hamilton](https://www.boozallen.com) [2019:2023]{.cvdate}
+#### **Senior Data Scientist**, [Booz Allen Hamilton](https://www.boozallen.com) [2019:2023]{.cvdate}
 
 - Led a team of data scientists and software developers working on a cyber intelligence application
 - Spearheaded interdisciplinary COVID‑19 [visualization](https://www.boozallen.com/c/insight/blog/epimaps-data-visualization-for-healthcare), [genomics](https://mskar.github.io/var), and statistical modeling efforts
