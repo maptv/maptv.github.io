@@ -1,15 +1,13 @@
 author:
   - name: Martin Laptev
     url: https://maptv.github.io
-date-format: x
+date-format: X
 date: last-modified
 project:
   type: website
   resources: .gitlab-ci.yml
   render:
     - "**/index.qmd"
-  post-render:
-  - asset/date.py
 website:
   search:
     location: sidebar

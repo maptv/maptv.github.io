@@ -1,6 +1,6 @@
 -- https://howardhinnant.github.io/date_algorithms.html#days_from_civil
 function unix2deco(ms)
-  local dote = ms / 86400000 + 719468
+  local dote = ms / 86400 + 719468
   local cykl = (
     dote >= 0 and dote
     or dote - 146096

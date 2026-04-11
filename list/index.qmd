@@ -30,6 +30,7 @@ format:
     include-after-body:
       - ../asset/stamp.html
       - ../asset/blog.html
+      - ../asset/date.html
 comments: false
 ---
 
