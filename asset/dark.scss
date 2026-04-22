@@ -218,6 +218,10 @@ div > form > div > input[type="range"] {
   filter: invert(1);
 }
 
+#listing-listing > div.list.grid > div > a > div > p > img[src="../asset/colorWheelCompass.svg"] {
+  filter: invert(1);
+}
+
 .analogclock * {
   fill: #fff;
   stroke: #fff;

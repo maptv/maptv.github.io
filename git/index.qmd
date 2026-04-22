@@ -3,7 +3,7 @@ title: Git
 author:
   - name: Martin Laptev
     url: https://maptv.github.io
-image: /asset/horst_git-hug.png
+image: ../asset/horst_git-hug.png
 description: >
   Get started with Git version control, the RStudio integrated development environment, and the Quarto publishing system.
 bibliography: ../asset/ref.yml
@@ -13,7 +13,6 @@ license: CC BY-SA
 lightbox: false
 toc: true
 toc-depth: 5
-bread-crumbs: false
 number-sections: true
 number-offset: -1
 number-depth: 1

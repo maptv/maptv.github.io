@@ -8,7 +8,6 @@ typography:
       source: file
       files:
         - path: asset/ewka.ttf
-        - path: ewka.ttf
   base: Tahoma
   headings: Tahoma
   monospace: "Source Code Pro"

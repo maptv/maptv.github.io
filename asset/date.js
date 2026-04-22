@@ -20,7 +20,7 @@ function unix2date(unix) {
 document.addEventListener("DOMContentLoaded", () => {
 
   // --- Reformat dates ---
-  document.querySelectorAll("div.listing-date").forEach(div => {
+  document.querySelectorAll("div.listing-file-modified").forEach(div => {
     if (!div.textContent.includes("+")) {
       const sec = parseInt(div.textContent.trim(), 10);
       if (!isNaN(sec)) {

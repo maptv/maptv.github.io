@@ -14,7 +14,6 @@ license: CC BY-SA
 lightbox: false
 toc: true
 toc-depth: 5
-bread-crumbs: false
 number-sections: true
 number-offset: -1
 number-depth: 1

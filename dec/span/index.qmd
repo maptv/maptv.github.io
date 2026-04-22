@@ -17,7 +17,6 @@ license: CC BY-SA
 lightbox: false
 toc: true
 toc-depth: 4
-bread-crumbs: false
 format:
   html:
     grid:
