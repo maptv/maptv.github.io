@@ -1,6 +1,6 @@
 # Dec date
 Martin Laptev
-2025+341
+2026+052
 
 - [Day of year (doy)](#doy)
 - [Day of era (doe)](#doe)
@@ -46,8 +46,8 @@ the [Quarto section](../../quarto) of my site.
 Among its many features, Quarto offers support for the
 [Observable](https://observablehq.com/) data visualization system.
 Observable is my top choice for interactive graphics. We can interact
-with the two Observable
-[calendar🗓️plots](https://observablehq.com/@observablehq/plot-calendar)
+with the two Observable [calendar
+plots](https://observablehq.com/@observablehq/plot-calendar)
 below⬇️using the adjacent Observable
 [inputs](https://observablehq.com/documentation/inputs/overview). The
 [scrubber](https://observablehq.com/@mbostock/scrubber)🧽input is a
@@ -55,7 +55,7 @@ great place to start because it cycles🔄through every value of the
 [range](https://observablehq.com/@observablehq/input-range)🎚️inputs
 beneath it.
 
-To activate the scrubber🧽input, press the Play▶️button above⬆️the
+To activate the scrubber input, press the Play▶️button above⬆️the
 range🎚️inputs. Upon activation, the red🟥box in each plot will move
 between the first and the last day of the Dec year. While it always
 begins with <span class="tool" data-bs-toggle="tooltip"

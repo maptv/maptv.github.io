@@ -1,6 +1,6 @@
 # Note
 Martin Laptev
-2026+001
+2026+052
 
 - [<span class="toc-section-number">0</span> Dec measurement
   system](#sec-dec)
@@ -2485,7 +2485,8 @@ references:
     - family: Laptev
       given: Martin
   issued:
-    literal: 2026+001
+    literal: 2026+052
+
   title: Dec
   type: article
   URL: https://maptv.github.io/dec
@@ -2508,7 +2509,7 @@ As demonstrated by the previous sentence above and the
 Dec dates. By default, Quarto formats citations according to the
 [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date
 format. Per this format, the citation for this article would appear as
-[Laptev, Martin](https://maptv.github.io/about). 2026+001. “Dec.”
+[Laptev, Martin](https://maptv.github.io/about). 2026+052. “Dec.”
 ${decYearP0}+${decDateP0}. <https://maptv.github.io/dec>.
 
 Instead of using Quarto [citation
@@ -5569,11 +5570,10 @@ div.coloropp canvas {
   overflow: visible;
 }
 div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label, div#wavinput label, div#iobinput label, div#beatinput label {
-  --label-width: 80px;
-  max-width: 80px;
+  width: 110px;
 }
 div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"], #wavinput input[type="number"], #iobinput input[type="number"], div#beatinput input[type="number"] {
-  max-width: 80px;
+  width: 100px;
 }
 div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] , #beatinput input[type="range"] {
   max-width: 225px;
@@ -5774,14 +5774,14 @@ figcaption {
 }
 </style>
 
-<div id="refs" class="references csl-bib-body hanging-indent"
-entry-spacing="0">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
 <div id="ref-hinnant2021" class="csl-entry">
 
 Hinnant, Howard. 2021+185.
 “<span class="nocase"><code>chrono</code></span>-Compatible Low-Level
-Date Algorithms.” <https://howardhinnant.github.io/date_algorithms>.
+Date Algorithms.” Preprint, 2021+185.
+<https://howardhinnant.github.io/date_algorithms>.
 
 </div>
 

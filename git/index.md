@@ -1,6 +1,6 @@
 # Git
 Martin Laptev
-2025+356
+2026+052
 
 - [<span class="toc-section-number">0.1</span> <span class="tool"
   data-bs-toggle="tooltip"
@@ -656,7 +656,7 @@ website.
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:9in;height:1.3in" />
+style="width:9in;height:1.29in" />
 
 </div>
 

@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2026+001
+2026+052
 
 - [<span class="toc-section-number">0</span> Dec measurement
   system](#sec-dec)
@@ -113,7 +113,7 @@ data-bs-title="radians">rad</a>). [Geographic
 coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude)
 and
 [compass](https://en.wikipedia.org/wiki/Compass#:~:text=a%20device%20that%20shows%20the%20cardinal%20directions%20used%20for%20navigation%20and%20geographic%20orientation)🧭directions
-are angles📐and thus can, and should😄, be measured in turns instead of
+are angles and thus can — and should — be measured in turns instead of
 <a href="#rad" class="tool" data-bs-toggle="tooltip"
 data-bs-title="radians">rad</a> or
 <a href="#deg" class="tool" data-bs-toggle="tooltip"
@@ -131,10 +131,9 @@ data-bs-title="parallels">λ</a>),
 in
 [meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)
 (<a href="#m" id="meridian" class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridians">m</a>), and compass🧭directions in
-[roses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)
-(<a href="#r" id="rose" class="tool" data-bs-toggle="tooltip"
-data-bs-title="roses">r</a>). To measure certain kinds of angles📐, Dec
+data-bs-title="meridians">m</a>), and compass directions in
+[roses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)🌹(<a href="#r" id="rose" class="tool" data-bs-toggle="tooltip"
+data-bs-title="roses">r</a>). To measure certain kinds of angles, Dec
 uses specific types of turns with distinct names like
 <a href="#lambda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="parallel">λ</a>,
@@ -190,11 +189,11 @@ data-bs-title="millimeridians">mm</a>, near the bottom of the [Missouri
 bootheel](https://en.wikipedia.org/wiki/Missouri_Bootheel#:~:text=a%20salient%20(protrusion)%20located%20in%20the%20southeasternmost%20part%20of%20the%20U.S.%20state%20of%20Missouri)
 in the United States🇺🇸.
 
-To move the points, click the map🗺️or edit their coordinates in the
+To move the points, click the map ️or edit their coordinates in the
 table. The
 [toggle](https://observablehq.com/framework/inputs/toggle)✅inputs above
-the table add layers to the map🗺️: country borders, a
-rainbow🌈colored🎨grid of Dec
+the table add layers to the map️: country borders, a rainbow🌈colored
+grid of Dec
 [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines),
 a
 [choropleth](https://en.wikipedia.org/wiki/Choropleth_map#:~:text=a%20type%20of%20statistical%20thematic%20map%20that%20uses%20pseudocolor)
@@ -222,7 +221,7 @@ data-bs-title="thousandths of a compass rose">milliroses</span>
 (<a href="#mr" id="millirose" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliroses">mr</a>) we would need to maintain to
 travel🧳the shortest distance to the other point. The shortest distance
-is shown as orange🟠dots on the map🗺️. The default courses in
+is shown as orange🟠dots on the map️. The default courses in
 <a href="#mr" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliroses">mr</a> are <span class="color0">0</span>
 (North) from Point <span class="point0">0</span> to
@@ -253,7 +252,7 @@ r}$</span></a> ≈ its
 <a href="#y" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year">y</a> ≈ the duration of its
 [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun)
-around the Sun☀️, <a href="#d" class="tool" data-bs-toggle="tooltip"
+around the Sun️, <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a> ≈ the duration of its
 [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis)
 on its
@@ -272,7 +271,7 @@ data-bs-title="omegars">v</a> or <span class="color5">500</span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of an omegar">milliomegars</span>
 (<a href="#mv" id="milliomegar" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</a>), we could travel🧳the
+data-bs-title="milliomegars">mv</a>), we could travel the
 <span class="color1">0.1</span>
 <a href="#c" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taurs">c</a> or <span class="color1">100</span>
@@ -287,7 +286,7 @@ data-bs-title="days">d</a> or <span class="color2">200</span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span>
 (<a href="#md" id="milliday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millidays">md</a>). The time required to travel🧳between
+data-bs-title="millidays">md</a>). The time required to travel between
 two points is the distance divided by the speed: ${distance_mcHsl0}
 <a href="#mc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millitaurs">mc</a> ÷ ${velocity_vHsl0}
@@ -756,7 +755,7 @@ data-bs-title="hexadecimal">hex</span></strong>🎨</th>
 
 The
 [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
-compass🧭above indicates both a
+compass above indicates both a
 [hue](https://en.wikipedia.org/wiki/Hue#:~:text=an%20angular%20position%20around%20a%20central%20or%20neutral%20point%20or%20axis%20on%20a%20color%20space%20coordinate%20diagram)
 in <a href="#mt" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliturns">mt</a> and a course in
@@ -765,19 +764,19 @@ data-bs-title="milliroses">mr</a>. We can convert the hue to [HSL and
 HSV](https://en.wikipedia.org/wiki/HSL_and_HSV#:~:text=the%20two%20most%20common%20cylindrical%2Dcoordinate%20representations%20of%20points%20in%20an%20RGB%20color%20model)
 degrees
 (<a href="#hdeg" id="huedegree" class="tool" data-bs-toggle="tooltip"
-data-bs-title="HSL or HSV degrees">h°</a>) and the course to
-compass🧭degrees
+data-bs-title="HSL or HSV degrees">h°</a>) and the course to compass
+degrees
 (<a href="#cdeg" id="compassdegree" class="tool" data-bs-toggle="tooltip"
 data-bs-title="compass degrees">c°</a>): 25
 <a href="#mr" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliroses">mr</a> = 9
 <a href="#cdeg" class="tool" data-bs-toggle="tooltip"
-data-bs-title="compass degrees">c°</a>. To rotate🔄the color🎨wheel
-compass🧭, use the “Hue”
+data-bs-title="compass degrees">c°</a>. To rotate🔄the color wheel
+compass, use the “Hue”
 [range](https://observablehq.com/framework/inputs/range)🎚️and [hue
 bar](https://observablehq.com/@paavanb/progressive-color-picker) inputs
 beneath it or change the course from Point <span class="point0">0</span>
-to <span class="point1">1</span> on the map🗺️.
+to <span class="point1">1</span> on the map️.
 
 # Red green blue (rgb)
 
@@ -787,7 +786,7 @@ its top row with the
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
 and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
-directions. Together, the range🎚️inputs underneath the hue bar form a
+directions. Together, the range ️inputs underneath the hue bar form a
 “hue saturation lightness”
 (<a href="#hsl" id="huesaturationlightness" class="tool"
 data-bs-toggle="tooltip"
@@ -802,7 +801,7 @@ data-bs-title="hexadecimal">hex</a>) triplets,
 <a href="#hsl" id="huesaturationlightness" class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hue saturation lightness">hsl</a> triplets specify a
-full-fledged color🎨instead of just a hue.
+full-fledged color instead of just a hue.
 
 <div>
 
@@ -810,22 +809,22 @@ full-fledged color🎨instead of just a hue.
 >
 > Feeling ***disoriented***😵‍💫? Of
 > [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
-> you are! Color🎨labels🏷️can help you find your
+> you are! Color labels🏷️can help you find your
 > [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object),
 > stay on
 > [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows),
 > and avoid
 > [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed)
 > aches🤕. <span class="orange">Orange</span> you glad I couldn’t think
-> of a color🎨pun?
+> of a color pun?
 
 </div>
 
-Color🎨can provide a general idea of
-angular📐[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle),
+Color can provide a general idea of angular
+[measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle),
 regardless of the metric prefixes or
 [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore, we
-can reuse♻️colors🎨across many different contexts. Most often,
+can reuse♻️colors across many different contexts. Most often,
 <span class="color0">red</span> designates starting points, like North
 (<span class="color0">0</span>
 <a href="#mr" class="tool" data-bs-toggle="tooltip"
@@ -886,7 +885,7 @@ data-bs-title="milliturns">mt</a>.
 
 # Dec time zones
 
-Enable the “Grid” toggle✅input to see Latitudes
+Enable the “Grid” toggle input to see Latitudes
 [-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
 (<span class="color8">-200</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>),
@@ -905,7 +904,7 @@ data-bs-title="millimeridians">mm</a>), and
 [2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
 (<span class="color2">200</span>
 <a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>) on the map🗺️above along with the
+data-bs-title="millimeridians">mm</a>) on the map ️above along with the
 ten major longitudes that divide the Earth🌎into the ten Dec time zones.
 Notably, Longitude <span class="color0">0</span> is the major longitude
 that functions as both the [Prime
@@ -920,7 +919,7 @@ Based on its current <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a parallel">deciparallel</span>
 (<a href="#dlambda" id="deciparallel" class="tool"
 data-bs-toggle="tooltip" data-bs-title="deciparallel">dλ</a>) longitude,
-${point0lHsl}, Point <span class="point0">0</span> on the map🗺️above is
+${point0lHsl}, Point <span class="point0">0</span> on the map ️above is
 in Zone ${point0zHsl}. The number assigned to each time zone is its
 offset from Zone <span class="color0">0</span> in <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
@@ -1005,7 +1004,7 @@ data-bs-title="time zone offset">tzo</a>). In Zone
 ${decYearP0hsl0}<span class="mono">+</span>${decDateP0hsl0} and the
 current time is
 ${decTimeP0hsl0}<span class="mono">-</span><span class="color0">0</span>.
-Color🎨labels🏷️can help us to visually
+Color labels ️can help us to visually
 [parse](https://en.wikipedia.org/wiki/Parsing#:~:text=a%20process%20of%20analyzing%20a%20string%20of%20symbols)
 the date and time that make up a Dec snap🫰:
 ${decYearP0hsl1}<span class="mono">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span class="mono">-</span><span class="color0">0</span>.
@@ -1013,7 +1012,7 @@ ${decYearP0hsl1}<span class="mono">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span
 # Millenium Year Day
 
 <a href="#yoe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year of era">Yoe</a> color🎨labels🏷️are based on
+data-bs-title="year of era">Yoe</a> color labels ️are based on
 <a href="#y" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year">y</a>. Every millennium starts with Year 0
 (<span class="color0">0</span>
@@ -1023,7 +1022,7 @@ data-bs-title="year">y</a>) and has Year 500
 <a href="#y" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year">y</a>) as its midpoint.
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">Doy</a> color🎨labels🏷️are derived from
+data-bs-title="day of year">Doy</a> color labels ️are derived from
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a year">milliyears</span>
 (<a href="#my" id="milliyear" class="tool" data-bs-toggle="tooltip"
@@ -2020,13 +2019,13 @@ Earth🌏. At the Equator, the Earth🌎rotates on its axis at a speed of
 data-bs-title="approximately">~</span>1.00224
 <a href="#v" class="tool" data-bs-toggle="tooltip"
 data-bs-title="omegars">v</a>. If we could indefinitely maintain this
-speed while flying West in an airplane✈️towards the setting sun☀️, we
+speed while flying West in an airplane✈️towards the setting sun️, we
 would be able to perpetually fly [into the
 sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
 # Airplane cruising speed
 
-To travel fast enough for a perpetual sunset🌅, the airplane✈️would need
+To travel fast enough for a perpetual sunset, the airplane✈️would need
 to surpass the [speed of
 sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊(<a href="#sos" id="speedofsound" class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of sound">sos</a>), which at 15
@@ -2334,14 +2333,14 @@ table The positive (**+**) and negative (**–**)
 data-bs-title="hexadecimal">hex</a> triplets, and
 <a href="#hdeg" class="tool" data-bs-toggle="tooltip"
 data-bs-title="HSL or HSV degrees">h°</a> in the table below are used by
-Dec to label🏷️groups of ten, like
+Dec to label ️groups of ten, like
 <a href="#dod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of dek">dod</a>, “[top of the <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</span>](https://en.wiktionary.org/wiki/top_of_the_hour)”
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="times of day">tod</span>, and time zones. In addition to
-colors🎨, Dec also labels🏷️groups of ten with the [musical
+colors, Dec also labels ️groups of ten with the [musical
 notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=Chromatic%20scale,-note%20naming%20conventions)
 that constitute the Dec
 [chromatic](https://en.wikipedia.org/wiki/Chromatic_scale#:~:text=a%20set%20of%20twelve%20pitches%20(more%20completely%2C%20pitch%20classes)%20used%20in%20tonal%20music)
@@ -2519,7 +2518,7 @@ data-bs-title="twelve equal temperament">12ET</span></strong>🎶</th>
 
 # Octave note tone
 
-The image above applies Dec color🎨labels🏷️to one
+The image above applies Dec color labels ️to one
 [octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
 of piano🎹keys. In <a href="#xet" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</a>, an octave is 10 <span class="tool"
@@ -2543,7 +2542,7 @@ key. As octave indexes and frequencies increase, wavelengths decrease.
 
 From the perspective of
 <a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a>, all of the labeled🏷️keys in the image
+data-bs-title="Tenet">Xet</a>, all of the labeled ️keys in the image
 above are in Octave <span class="color4">4</span>. Octave indexes in
 <a href="#xet" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Tenet">Xet</a> and
@@ -2573,7 +2572,7 @@ data-bs-title="Tenet">Xet</a> [musical
 tone](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound)
 index.
 
-The tone indexes of the labeled🏷️keys in the image above range from
+The tone indexes of the labeled ️keys in the image above range from
 <span class="colorAs">40.069</span> to
 <span class="colorA">49.008</span>. Tone
 <span class="colorA">49.008</span> is <span class="colorA">A4</span>,
@@ -3710,7 +3709,7 @@ from a <span class="color004">2004</span>
 
 This article introduces the Dec measurement system and describes how Dec
 uses metric prefixes and the properties of the planet Earth🌍to define
-units based on turns for geographic coordinates, compass🧭directions,
+units based on turns for geographic coordinates, compass directions,
 dates, times, speeds, distances, areas, volumes, and weights. Each unit
 has a unique name, such as
 <a href="#lambda" class="tool" data-bs-toggle="tooltip"
@@ -3756,9 +3755,9 @@ larger, and pounds <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="colorMass">1.23%</span>
 lighter.
 
-Dec color🎨labels🏷can convey an impression of a value at a glance.
+Dec color labels can convey an impression of a value at a glance.
 <a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> sound🔊labels🏷allow us to estimate a value
+data-bs-title="Tenet">Xet</a> sound🔊labels allow us to estimate a value
 without even having to look at it. Both types of labels can help avoid
 confusion when [decimal
 separators](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline)
@@ -3821,7 +3820,8 @@ references:
     - family: Laptev
       given: Martin
   issued:
-    literal: 2026+001
+    literal: 2026+052
+
   title: Dec
   type: article
   URL: https://maptv.github.io/dec
@@ -3844,7 +3844,7 @@ As demonstrated by the previous sentence above and the
 Dec dates. By default, Quarto formats citations according to the
 [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date
 format. Per this format, the citation for this article would appear as
-[Laptev, Martin](https://maptv.github.io/about). 2026+001. “Dec.”
+[Laptev, Martin](https://maptv.github.io/about). 2026+052. “Dec.”
 ${decYearP0}+${decDateP0}. <https://maptv.github.io/dec>.
 
 Instead of using Quarto [citation
@@ -6905,11 +6905,10 @@ div.coloropp canvas {
   overflow: visible;
 }
 div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label, div#wavinput label, div#iobinput label, div#beatinput label {
-  --label-width: 80px;
-  max-width: 80px;
+  width: 85px;
 }
 div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"], #wavinput input[type="number"], #iobinput input[type="number"], div#beatinput input[type="number"] {
-  max-width: 80px;
+  width: 95px;
 }
 div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] , #beatinput input[type="range"] {
   max-width: 225px;
@@ -7110,14 +7109,14 @@ figcaption {
 }
 </style>
 
-<div id="refs" class="references csl-bib-body hanging-indent"
-entry-spacing="0">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
 <div id="ref-hinnant2021" class="csl-entry">
 
 Hinnant, Howard. 2021+185.
 “<span class="nocase"><code>chrono</code></span>-Compatible Low-Level
-Date Algorithms.” <https://howardhinnant.github.io/date_algorithms>.
+Date Algorithms.” Preprint, 2021+185.
+<https://howardhinnant.github.io/date_algorithms>.
 
 </div>
 
