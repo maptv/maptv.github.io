@@ -2692,7 +2692,7 @@ div.coloropp canvas {
 }
 div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label, div#wavinput label, div#iobinput label, div#beatinput label {
   width: 85px;
-
+}
 div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"], #wavinput input[type="number"], #iobinput input[type="number"], div#beatinput input[type="number"] {
   width: 95px;
 }
