@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2026+052
+2026+055
 
 - [<span class="toc-section-number">0</span> Dec measurement
   system](#sec-dec)
@@ -37,12 +37,11 @@ Martin Laptev
   tempo](#sec-hrt)
 - [<span class="toc-section-number">15</span> Frequency period
   wavelength](#sec-fpw)
-- [<span class="toc-section-number">16</span> Ten equal temperament
-  (Xet)](#sec-xet)
-  - [Color sound table](#cst)
-- [<span class="toc-section-number">17</span> Octave note
-  tone](#sec-ont)
-- [<span class="toc-section-number">18</span> Light and sound](#sec-las)
+- [<span class="toc-section-number">16</span> Octave equals
+  decastep](#sec-oed)
+- [<span class="toc-section-number">17</span> Color and sound](#sec-cas)
+- [<span class="toc-section-number">18</span> Système international
+  d’unités](#sec-sid)
 - [<span class="toc-section-number">19</span> US customary
   units](#sec-ucu)
   - [Unit conversion tables](#unit-conversion-tables)
@@ -776,7 +775,8 @@ compass, use the “Hue”
 [range](https://observablehq.com/framework/inputs/range)🎚️and [hue
 bar](https://observablehq.com/@paavanb/progressive-color-picker) inputs
 beneath it or change the course from Point <span class="point0">0</span>
-to <span class="point1">1</span> on the map️.
+to <span class="point1">1</span> by interacting with the table or map️
+above.
 
 # Red green blue (rgb)
 
@@ -803,24 +803,7 @@ data-bs-toggle="tooltip"
 data-bs-title="hue saturation lightness">hsl</a> triplets specify a
 full-fledged color instead of just a hue.
 
-<div>
-
-> **Bad Pun Alert**
->
-> Feeling ***disoriented***😵‍💫? Of
-> [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
-> you are! Color labels🏷️can help you find your
-> [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object),
-> stay on
-> [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows),
-> and avoid
-> [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed)
-> aches🤕. <span class="orange">Orange</span> you glad I couldn’t think
-> of a color pun?
-
-</div>
-
-Color can provide a general idea of angular
+Color labels🏷️provide a general idea of angular
 [measure](https://en.wikipedia.org/wiki/Angle#:~:text=The%20magnitude%20of%20an%20angle),
 regardless of the metric prefixes or
 [units](https://en.wikipedia.org/wiki/Angle#Units) we use. Therefore, we
@@ -841,6 +824,23 @@ data-bs-title="milliroses">mr</a>) and [Longitude
 (<span class="color5">500</span>
 <a href="#mlambda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliparallels">mλ</a>).
+
+<div>
+
+> **Bad Pun Alert**
+>
+> Feeling ***disoriented***😵‍💫? Of
+> [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
+> you are! Color labels ️can help you find your
+> [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object),
+> stay on
+> [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows),
+> and avoid
+> [***heading***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20direction%20where%20the%20watercraft's%20bow%20or%20the%20aircraft's%20nose%20is%20pointed)
+> aches🤕. <span class="orange">Orange</span> you glad I couldn’t think
+> of a color pun?
+
+</div>
 
 The Equator (<span class="color0">0</span>
 <a href="#mm" class="tool" data-bs-toggle="tooltip"
@@ -1004,7 +1004,7 @@ data-bs-title="time zone offset">tzo</a>). In Zone
 ${decYearP0hsl0}<span class="mono">+</span>${decDateP0hsl0} and the
 current time is
 ${decTimeP0hsl0}<span class="mono">-</span><span class="color0">0</span>.
-Color labels ️can help us to visually
+Color labels ️make it easier to visually
 [parse](https://en.wikipedia.org/wiki/Parsing#:~:text=a%20process%20of%20analyzing%20a%20string%20of%20symbols)
 the date and time that make up a Dec snap🫰:
 ${decYearP0hsl1}<span class="mono">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span class="mono">-</span><span class="color0">0</span>.
@@ -1012,17 +1012,19 @@ ${decYearP0hsl1}<span class="mono">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span
 # Millenium Year Day
 
 <a href="#yoe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year of era">Yoe</a> color labels ️are based on
+data-bs-title="year of era">Yoe</a> color labels ️are based on “year of
+millenium”
+(<a href="#y" id="yearofmillenium" class="tool" data-bs-toggle="tooltip"
+data-bs-title="year">yom</a>) values. At the start of every millennium,
+the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="year">yom</span> is <span class="color0">0</span>.
+Halfway through a millenium, the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="year">yom</span> is
+<span class="color5">500</span>
 <a href="#y" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year">y</a>. Every millennium starts with Year 0
-(<span class="color0">0</span>
-<a href="#y" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year">y</a>) and has Year 500
-(<span class="color5">500</span>
-<a href="#y" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year">y</a>) as its midpoint.
+data-bs-title="year">y</a>.
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">Doy</a> color labels ️are derived from
+data-bs-title="day of year">Doy</a> color labels ️are measured in
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a year">milliyears</span>
 (<a href="#my" id="milliyear" class="tool" data-bs-toggle="tooltip"
@@ -1632,7 +1634,7 @@ me](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=the%20gesture%20is%20common
 “[drink](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=placing%20the%20thumb%20to%20the%20mouth%20and%20motioning%20the%20little%20finger%20upward%20as%20if%20tipping%20up%20a%20bottle%27s%20bottom%20end)”,
 or
 “[shaka](https://en.wikipedia.org/wiki/Shaka_sign#:~:text=a%20gesture%20with%20friendly%20intent%20often%20associated%20with%20Hawaii%20and%20surf%20culture)”🤙gesture,
-your thumb👍and pinky tips are <span class="tool"
+your thumb and pinky tips are <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>0.5
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zems">z</a> apart.
@@ -1650,10 +1652,10 @@ To visualize a square <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>
 (<a href="#z2" id="squarezem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square zem">z²</a>), imagine four people standing in a
-circle, facing inward, each with their right hand✋placed on top of the
+circle, facing inward, each with their right hand placed on top of the
 elbow of the person to their right. Alternatively, two people can stand
-in front of each other and raise their arms💪, placing one hand✋on the
-elbow of the other person and the other hand✋on their own elbow.
+in front of each other and raise their arms💪, placing one hand on the
+elbow of the other person and the other hand on their own elbow.
 
 <div id="zemlift" class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1675,7 +1677,7 @@ which is probably about the width of your hips or shoulders. The
 <a href="#z2" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square zem">z²</a> will be between your shins, its top
 will be below your knees, and its bottom will be either above your
-ankles or feet🦶, depending on your height.
+ankles or feet, depending on your height.
 
 <div id="zemcubic" class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -2000,13 +2002,13 @@ for both men and women age 25 to 45. A box📦that is the size of a cubic
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>
 (<a href="#z3" id="cubiczem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z³</a>) would likely fit under a typical
-chair🪑 or in between the shins of two people sitting in front of each
-other with their knees and feet🦶1
+data-bs-title="cubic zem">z³</a>) would likely fit under a typical chair
+or in between the shins of two people sitting in front of each other
+with their knees and feet1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> apart and their legs🦵bent at 25
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a hundredth of a turn">centiturn</span> angles📐.
+data-bs-title="a hundredth of a turn">centiturn</span> angles.
 
 # Perpetually setting sun
 
@@ -2025,8 +2027,8 @@ sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
 # Airplane cruising speed
 
-To travel fast enough for a perpetual sunset, the airplane✈️would need
-to surpass the [speed of
+To travel fast enough for a perpetual sunset, the airplane ️would need to
+surpass the [speed of
 sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊(<a href="#sos" id="speedofsound" class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of sound">sos</a>), which at 15
 <a href="#deg" class="tool" data-bs-toggle="tooltip"
@@ -2048,7 +2050,7 @@ data-bs-title="omegars">v</a> or Mach <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>0.85.
 
 The highway🛣️speed of a car🚗is roughly tenfold slower than the cruising
-speed of an airplane✈️. If we are driving on a highway🛣️at a speed of 50
+speed of an airplane️. If we are driving on a highway ️at a speed of 50
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegars">mv</a> and our exit is 1000
 <a href="#z" class="tool" data-bs-toggle="tooltip"
@@ -2057,8 +2059,8 @@ data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span>
 (<a href="#cmd" id="centimilliday" class="tool" data-bs-toggle="tooltip"
 data-bs-title="centimilliday">cmd</a>) until we have to exit the
-highway🛣️. To ensure we do not miss our exit, we can periodically check
-a countdown of the remaining
+highway️. To ensure we do not miss our exit, we can periodically check a
+countdown of the remaining
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zems">z</a>: ${zLeft}.
 
@@ -2186,11 +2188,11 @@ data-bs-title="trillions of perbeats">teraperbeats</span>
 (<a href="#Tp" id="teraperbeat" class="tool" data-bs-toggle="tooltip"
 data-bs-title="teraperbeats">Tp</a>). The range of sound frequencies
 which can be
-[audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
-for humans is <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>[10](https://en.wikipedia.org/wiki/Hearing_range#:~:text=humans%20can%20hear%20sound%20as%20low%20as%2012%C2%A0Hz)
+[audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)👂for
+humans is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>[10.368](https://en.wikipedia.org/wiki/Hearing_range#:~:text=humans%20can%20hear%20sound%20as%20low%20as%2012%C2%A0Hz)
 to <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>[24000](https://en.wikipedia.org/wiki/Hearing_range#:~:text=8%5D%20and-,as%20high%20as%2028%C2%A0kHz,-%2C%20though%20the%20threshold)
+data-bs-title="approximately">~</span>[24192](https://en.wikipedia.org/wiki/Hearing_range#:~:text=8%5D%20and-,as%20high%20as%2028%C2%A0kHz,-%2C%20though%20the%20threshold)
 <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">p</a>. The period and wavelength that
 correspond to the frequency chosen by the range input below are 1000 ÷
@@ -2231,868 +2233,144 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Duration" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 ```
 
+# Octave equals decastep
+
 In addition to <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">p</a>, the limits of human hearing can be
 expressed in musical
 [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale)
 (<a href="#s" id="step" class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</a>). Frequencies less than 12.5
-<a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a> have a negative
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</a> value and are unlikely to be audible outside
-of carefully controlled laboratory experiments. Similarly, frequencies
-above 109 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</a> or 24320
-<a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a> represent the upper limit of the audible
-range. In <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</a>, the
+data-bs-title="steps">s</a>). The
 [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play)
-of an 88-key piano is <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>9 to <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>81.3.
-
-The equations below use an
-[octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other)
-index (<a href="#i" id="index" class="tool" data-bs-toggle="tooltip"
-data-bs-title="an index">i</a>) measured in integer <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="tens of musical steps">decasteps</span>
-(<a href="#Ds" id="decastep" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decasteps">Ds</a>) and a note
+of an 88-key piano is 23.76 to 3616.64
+<a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">p</a>, which is approximately
+<span class="color8">8</span> to <span class="color0">80</span>
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a>. The typical audible range for humans is
+<span class="color3">3</span>
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a> to <span class="color3">103</span>
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a>. In the equations below, δ is a decimal
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tens of musical steps">decastep</span> value that can be
+used to calculate <a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">p</a>, and
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a>, and note
 (<a href="#n" id="note" class="tool" data-bs-toggle="tooltip"
-data-bs-title="a musical note">n</a>) measured in
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</a> to convert between
-<a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a> and
+data-bs-title="musical notes">n</a>) values measured in
 <a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="steps">s</a>.
 
-p = 12.8 × 2<sup>*s*/10</sup> = 12.8 × 2<sup>*i*</sup> × 2<sup>*n*/10</sup>
+$$\delta = \log_2\\\left(\frac{\text{p}}{14.1275}\right) = \frac{\text{s}}{10}$$
 
-$s = 10 \log_2\\\left(\frac{\text{p}}{12.8}\right) = 10 \times i + n$
+s = 10 × *δ* = 10 × ⌊*δ*⌋ + n
 
-$i = \left\lfloor \frac{s}{10} \right\rfloor = \left\lfloor \log_2\\\left(\frac{p}{12.8}\right) \right\rfloor$
+p = 14.1275 × 2<sup>*δ*</sup>
 
-$n = s - 10 \times i = 10\left(\log_2\\\left(\frac{p}{12.8}\right) - i\right)$
+n = s − 10 × ⌊*δ*⌋ = 10 × (*δ* − ⌊*δ*⌋)
 
-In the context of music, Dec refers to
-<a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a> values as
-[pitches](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=the%20quality%20that%20makes%20it%20possible%20to%20judge%20sounds%20as%20%22higher%22%20and%20%22lower%22%20in%20the%20sense%20associated%20with%20musical%20melodies)
-and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</span> and
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</a> values as
-[tones](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound).
+# Color and sound
 
-A typical person can reliably distinguish sounds🔊that
-[differ](https://en.wikipedia.org/wiki/Cent_(music)#:~:text=Normal%20adults%20are%20able%20to%20recognize%20pitch%20differences%20of%20as%20small%20as%2025%20cents%20very%20reliably)
-by at least <span class="color2">200</span>
-<a href="#ms" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</a>.
-
-Notably, the <span class="colorA">A4</span>
-[pitch](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=the%20quality%20that%20makes%20it%20possible%20to%20judge%20sounds%20as%20%22higher%22%20and%20%22lower%22%20in%20the%20sense%20associated%20with%20musical%20melodies)
-widely used to [tune musical
-instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance)
-is very close to 380
-<a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a> or 49
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</a>.
-
-Like the ten Dec colors, there are ten frequencies that Dec chooses from
-the audible range to serve as a set of sound labels. These ten
-frequencies the Dechromatic scale.
-
-Dec uses nine [spectral
-colors](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
-and a tenth color which cannot be defined by a single wavelength,
-period, or frequency because it is an equal mix of
-<span class="color0">Red</span> and <span class="color7">Blue</span>.
-
-To make the
-[audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)
-frequency range more intuitive, Humans can hear The typical range for
-humans extends from Tone <span class="color3">03</span> to Tone
-<span class="color4">104</span>.a sound wave include its
-[frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time),
-[pitch](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=a%20perceptual%20property%20that%20allows%20sounds%20to%20be%20ordered%20on%20a%20frequency%2Drelated%20scale)
-in <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a>,
-[period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency),
-musical in <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="steps">s</a>, . From the value selected by the
-“Frequency” range🎚️input below, we can calculate a pitch: , a : The
-table The positive (**+**) and negative (**–**)
-[indexes](https://en.wikipedia.org/wiki/Index#:~:text=an%20integer%20pointer%20into%20an%20array%20data%20structure),
-<a href="#hex" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</a> triplets, and
-<a href="#hdeg" class="tool" data-bs-toggle="tooltip"
-data-bs-title="HSL or HSV degrees">h°</a> in the table below are used by
-Dec to label ️groups of ten, like
-<a href="#dod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of dek">dod</a>, “[top of the <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="deciday">dd</span>](https://en.wiktionary.org/wiki/top_of_the_hour)”
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tod</span>, and time zones. In addition to
-colors, Dec also labels ️groups of ten with the [musical
-notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=Chromatic%20scale,-note%20naming%20conventions)
-that constitute the Dec
-[chromatic](https://en.wikipedia.org/wiki/Chromatic_scale#:~:text=a%20set%20of%20twelve%20pitches%20(more%20completely%2C%20pitch%20classes)%20used%20in%20tonal%20music)
-(Dechromatic)
-[scale](https://en.wikipedia.org/wiki/Scale_(music)#:~:text=any%20consecutive%20series%20of%20notes%20that%20form%20a%20progression%20between%20one%20note%20and%20its%20octave)
-of the **Ten** **e**qual **t**emperament
-(<a href="#tenet" id="tenequaltemperance" class="tool"
-data-bs-toggle="tooltip" data-bs-title="ten equal temperament">Tenet</a>)
-musical system.
-
-# Ten equal temperament (Xet)
-
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="ten equal temperament">Tenet</span>
-(<a href="#xet" id="10et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a>) identifies each Dechromatic scale note
-with a single-digit integer and expresses all other possible
-sound🔊frequencies as decimal numbers. In contrast, the notes of the [12
-equal
-temperament](https://en.wikipedia.org/wiki/12_equal_temperament#:~:text=the%20musical%20system%20that%20divides%20the%20octave%20into%2012%20parts)
-(<a href="#12et" id="twelveequaltemperance" class="tool"
-data-bs-toggle="tooltip" data-bs-title="12 equal temperament">12et</a>)
-musical system have names that consist of a letter from
-<span class="colorA">A</span> to <span class="colorG">G</span> and often
-a symbol such as sharp (<span class="iosevka">♯</span>), half sharp
-(<span class="iosevka">𝄲</span>), flat (<span class="iosevka">♭</span>),
-and half flat (<span class="iosevka">𝄳</span>).
-
-The sound🔊frequencies of two consecutive
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> Dechromatic scale notes always differ by
-one <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="step">s</a>, but the differences between consecutive
-<a href="#12et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12et</a> chromatic scale notes vary
-from the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="color599">599</span>
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="ten thousandths of an octave">millisteps</span>
-(<a href="#ms" id="millistep" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</a>) between
-<span class="colorAs">A<span class="iosevka">♯</span></span> and
-<span class="colorB">B</span> to the <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="color067">1067</span>
-<a href="#ms" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</a> between
-<span class="colorGs">G<span class="iosevka">♯</span></span> and
-<span class="colorA">A</span>.
-
-The rightmost column of the table below shows the
-<a href="#12et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12et</a> notes that are closest to
-the <a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> Dechromatic scale notes.
-<a href="#12et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12et</a> considers
-<span class="colorBc">B<span class="iosevka">𝄲</span></span>,
-<span class="colorDds">D<span class="iosevka">𝄲</span></span>, and
-<span class="colorDsE">E<span class="iosevka">𝄳</span></span> to be
-[microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=intervals%20not%20found%20in%20the%20customary%20Western%20tuning%20of%20twelve%20equal%20intervals%20per%20octave).
-The sound🔊frequency differences between the nearest
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> and
-<a href="#12et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12et</a> notes in the table range
-from the <span class="color008">8</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millisteps">ms</span> between
-Notes <span class="color9">9</span> and <span class="colorA">A</span> to
-the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="color26div300">87</span>
-<a href="#ms" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</a> between Notes
-<span class="color5">5</span> and <span class="colorF">F</span>.
-
-## Color sound table
-
-<div id="colortable">
-
-<table>
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 18%" />
-<col style="width: 22%" />
-<col style="width: 22%" />
-<col style="width: 21%" />
-</colgroup>
-<thead>
-<tr>
-<th><strong>+</strong></th>
-<th><strong>–</strong></th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexadecimal">hex</span></strong>🎨</th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="HSL or HSV degrees">h°</span></strong>🎨</th>
-<th><strong><span class="tool" data-bs-toggle="tooltip"
-data-bs-title="twelve equal temperament">12ET</span></strong>🎶</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="color0">0</span></td>
-<td><span class="color0">-10</span></td>
-<td><span class="color0">f00</span></td>
-<td><span class="color0">0</span></td>
-<td><span class="colorAs">A<span class="iosevka">♯</span></span></td>
-</tr>
-<tr>
-<td><span class="color1">1</span></td>
-<td><span class="color1">-9</span></td>
-<td><span class="color1">f90</span></td>
-<td><span class="color1">36</span></td>
-<td><span class="colorBc">B<span class="iosevka">𝄲</span></span></td>
-</tr>
-<tr>
-<td><span class="color2">2</span></td>
-<td><span class="color2">-8</span></td>
-<td><span class="color2">ff0</span></td>
-<td><span class="color2">60</span></td>
-<td><span class="colorCs">C<span class="iosevka">♯</span></span></td>
-</tr>
-<tr>
-<td><span class="color3">3</span></td>
-<td><span class="color3">-7</span></td>
-<td><span class="color3">af0</span></td>
-<td><span class="color3">80</span></td>
-<td><span class="colorDds">D<span class="iosevka">𝄲</span></span></td>
-</tr>
-<tr>
-<td><span class="color4">4</span></td>
-<td><span class="color4">-6</span></td>
-<td><span class="color4">0f0</span></td>
-<td><span class="color4">120</span></td>
-<td><span class="colorDsE">E<span class="iosevka">𝄳</span></span></td>
-</tr>
-<tr>
-<td><span class="color5">5</span></td>
-<td><span class="color5">-5</span></td>
-<td><span class="color5">0ff</span></td>
-<td><span class="color5">180</span></td>
-<td><span class="colorF">F</span></td>
-</tr>
-<tr>
-<td><span class="color6">6</span></td>
-<td><span class="color6">-4</span></td>
-<td><span class="color6">08f</span></td>
-<td><span class="color6">208</span></td>
-<td><span class="colorFs">F<span class="iosevka">♯</span></span></td>
-</tr>
-<tr>
-<td><span class="color7">7</span></td>
-<td><span class="color7">-3</span></td>
-<td><span class="color7">00f</span></td>
-<td><span class="color7">240</span></td>
-<td><span class="colorG">G</span></td>
-</tr>
-<tr>
-<td><span class="color8">8</span></td>
-<td><span class="color8">-2</span></td>
-<td><span class="color8">90f</span></td>
-<td><span class="color8">276</span></td>
-<td><span class="colorGs">G<span class="iosevka">♯</span></span></td>
-</tr>
-<tr>
-<td><span class="color9">9</span></td>
-<td><span class="color9">-1</span></td>
-<td><span class="color9">f0f</span></td>
-<td><span class="color9">300</span></td>
-<td><span class="colorA">A</span></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-# Octave note tone
-
-The image above applies Dec color labels ️to one
-[octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency)
-of piano🎹keys. In <a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a>, an octave is 10 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="steps">s</span>, 1
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="ten steps">decastep</span>
-(<a href="#Ds" id="decastep" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decastep">Ds</a>), or <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="ten steps">10<sup>4</sup></span>
-<a href="#ms" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millisteps">ms</a>. From top to bottom, the text below
-the image provides the [scientific pitch
-name](https://en.wikipedia.org/wiki/Scientific_pitch_notation#:~:text=a%20method%20of%20specifying%20musical%20pitch%20by%20combining%20a%20musical%20note%20name%20(with%20accidental%20if%20needed)%20and%20a%20number%20identifying%20the%20pitch%27s%20octave),
-integer <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="iob">i</span> sound🔊frequency, and integer
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a zem">millizem</span>
-(<a href="#mz" id="millizem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millizem">mz</a>) wavelength of the corresponding white
-key. As octave indexes and frequencies increase, wavelengths decrease.
-
-From the perspective of
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a>, all of the labeled ️keys in the image
-above are in Octave <span class="color4">4</span>. Octave indexes in
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> and
-<a href="#12et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12et</a> match except for
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> notes with indexes below
-<span class="color2">2</span> and
-<a href="#12et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12et</a> notes from
-<span class="colorAs">A<span class="iosevka">♯</span></span> to
-<span class="colorB">B<span class="iosevka">𝄲</span></span>. An octave
-index is the <a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> analog of a clef in staff notation,
-because both are responsible for setting the reference frame that allows
-us to interpret the relative pitches of notes as the absolute pitches of
-tones.
-
-Clefs in staff notation and octave indexes in
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> set the reference frame that allows us to
-
-When we append a positive note index that is less than ten to an octave
-index which is a positive integer, we obtain a
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> [musical
-tone](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound)
-index.
-
-The tone indexes of the labeled ️keys in the image above range from
-<span class="colorAs">40.069</span> to
-<span class="colorA">49.008</span>. Tone
-<span class="colorA">49.008</span> is <span class="colorA">A4</span>,
-the <span class="colorA">A</span> note widely used to [tune musical
-instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance).
-Tone <span class="colorC">41.302</span> is
-<span class="colorC">C4</span>, the “[Middle
-<span class="colorC">C</span>](https://en.wikipedia.org/wiki/C_(musical_note)#Middle_C:~:text=above%20the%20top%20line%20of%20the%20bass%20staff%20or%20below%20the%20bottom%20line%20of%20the%20treble%20staff)”
-in between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and
-[treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff)
-of a [grand
-staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff).
-
-The mermaid chart below visualizes the structure of the
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> music notation example above it, which is
-composed of the <a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> equivalents of an ascending
-<span class="colorCs">C♯</span> major
-[arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order)
-and a <span class="colorCs">C♯</span> major
-[chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together%20for%20their%20harmonic%20consonance%20or%20dissonance).
-This arpeggio and chord are also shown beneath the mermaid chart in
-[staff
-notation](https://en.wikipedia.org/wiki/Musical_notation#Modern_staff_notation:~:text=5%20parallel%20horizontal%20lines%20that%20act%20as%20a%20framework%20upon%20which%20pitches%20are%20indicated%20by%20placing%20oval%20note%2Dheads%20on%20(i.e.%20crossing)%20the%20staff%20lines%2C%20between%20the%20lines%20(i.e.%20in%20the%20spaces)%20or%20above%20and%20below%20the%20staff%20using%20small%20additional%20lines%20called%20ledger%20lines).
-Whereas staff notation is graphical,
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> notation is
-[text-based](https://en.wikipedia.org/wiki/Plain_text#:~:text=only%20characters%20of%20readable%20material%20but%20not%20its%20graphical%20representation).
-
-```
-       8 |
-42 5 8 5 |
-       2 |
-```
-
-<div id="csharpchart">
-
-<div>
-
-<img src="index_files/figure-commonmark/mermaid-figure-4.png"
-style="width:6.55in;height:4.75in" />
-
-</div>
-
-</div>
-
-``` {ojs}
-//| echo: false
-//| label: csharpstaff
-// https://observablehq.com/@kreijstal/abc
-// https://github.com/quarto-dev/quarto-cli/discussions/7098
-// https://github.com/quarto-dev/quarto-cli/issues/2700
-abcjs = require('https://bundle.run/abcjs@5.1.2/midi.js')
-arpcode = `
-M:4/4
-L:1/4
-K:C#
-C E G [CEG] |
-`
-abc(arpcode, true)
-function abc(tune, midi = false, notation = true) {
-    function colorRange(range, color) {
-        if (range && range.elements) {
-            range.elements.forEach(function(set) {
-                set.forEach(function(item) {
-                    item.setAttribute("fill", color);
-                });
-            });
-        }
-    }
-    const result = html `<div/>`;
-    if (notation) {
-        const notation = result.appendChild(html `<div/>`);
-        var abcElem = (abcjs.renderAbc(notation, tune));
-    }
-    if (midi) {
-        result.appendChild(html `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/><link rel="stylesheet" type="text/css" href="https://unpkg.com/abcjs@5.1.2/abcjs-midi.css"/>`);
-        const midi = result.appendChild(html `<div/>`);
-        abcjs.renderMidi(midi, tune, {
-            midiListener: function(a, b, c) {},
-            animate: {
-                listener: function(a, b, c) {
-                    colorRange(a, "#000000");
-                    colorRange(b, "#3D9AFC");
-                },
-                target: abcElem[0],
-                qpm: abcElem[0].getBpm()
-            }
-        });
-        //  abcjs.midi.startPlaying(document.querySelector(".abcjs-inline-midi"),true)
-    }
-    return result;
-}
-```
-
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> vertically aligns chords into columns. A
-chord can contain either notes that represent tones or the tones
-themselves. Mixing notes and tones in the same chord is not allowed. The
-chord in the example above can be written with notes instead of tones
-because Tone <span class="color2">42</span> sets Octave
-<span class="color4">4</span> as the default. Each line can have its own
-default octave.
-
-In the example below, Tone <span class="color6">46</span> sets the
-default on the middle line to Octave <span class="color4">4</span> but
-then Tone <span class="color0">50</span> changes it Octave
-<span class="color5">5</span>. Based on the default, we know the middle
-note in the chord represents Tone <span class="color0">50</span>. We can
-then infer the tones represented by the top and bottom notes because
-chords are always ordered from highest to lowest tone.
-
-```
-        2 |
-46 50 2 0 |
-        6 |
-```
-
-<div id="fsharpchart">
-
-<div>
-
-<img src="index_files/figure-commonmark/mermaid-figure-3.png"
-style="width:6.63in;height:4.75in" />
-
-</div>
-
-</div>
-
-Column widths are measured in characters. A column of notes has a width
-of one character.
-
-The three notes vertically aligned in the column below are the
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> equivalent of a
-<span class="colorFs">F♯</span> major chord. Tone
-<span class="color0">50</span> is able to set the reference frame for
-all three of these notes, even though they do not all belong to the same
-octave. Notes that span more than two octaves can be part of the same
-column but not part of the same reference frame.
-
-```
-        2 |       2 |
-46 50 2 0 | 2 0 x 0 |
-        6 |     6 6 |
-```
-
-```
-     8 8 |
-   5 x 5 |
-42 x   2 |
-```
-
-```
-     2 2 |2 x   2 |
-   0 x 0 |  0 x 0 |
-46 x   6 |    6 6 |
-```
-
-```
-52 2 x   |    2 2 |
-50 x 0 x |  0 x 0 |
-46 x   6 |6 x   6 |
-```
-
-```
-      52 2 | 2 ∅   2 |
-   50 ∅∅ 0 |   0 ∅ 0 |
-46 ∅∅    6 |     6 6 |
-```
-
-Thanks to this convention, we can The first example below uses
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> tones to emulate the
-<span class="colorFs">F♯</span> major chord. because aligned three notes
-in column below consists of notes because the previous in the example
-below below the example below, notes should be played If a chord spans
-multiple octaves, it has to be specified with tones. In the example
-below, Tone <span class="color6">46</span> sets the octave and then Tone
-<span class="color0">50</span><span class="color2">2</span>) changes it.
-indicate that these notes are in Octave 4 The whereas the chord
-(<span class="colorFs">F<span class="iosevka">♯</span></span><span class="colorAs">A<span class="iosevka">♯</span></span><span class="colorCs">C<span class="iosevka">♯</span></span>
-=
-<span class="color6">6</span><span class="color0">0</span><span class="color2">2</span>)
-spans two octaves. When played as an
-[arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order)
-starting immediately after kkkkk shown below can be written in
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> as one line of text that consists of a
-[time
-signature](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure),
-tones, notes, spaces, and bar (|) characters.
-
-<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span><span class="color2">42</span><span class="iosevka"> </span><span class="color5">5</span><span class="iosevka"> </span><span class="color8">8</span><span class="iosevka"> </span><span class="color6">6</span><span class="iosevka"> </span>|<span class="color0">50</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><span class="color0">0</span><span class="iosevka"> </span>|<span class="color6">46</span><span class="iosevka"> </span><span class="color8">8</span><span class="iosevka"> </span><span class="color5">5</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><br><span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span><span class="color2">42</span><span class="iosevka"> </span><span class="color5">5</span><span class="iosevka"> </span><span class="color8">8</span><span class="iosevka"> </span><span class="color6">6</span><span class="iosevka"> </span>|<span class="color0">50</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span><span class="color0">0</span><span class="iosevka"> </span>|<span class="color6">46</span><span class="iosevka"> </span><span class="color8">8</span><span class="iosevka"> </span><span class="color5">5</span><span class="iosevka"> </span><span class="color2">2</span><span class="iosevka"> </span>
-
-at the end of every
-[measure](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music%20bounded%20by%20vertical%20lines):
-
-<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span><span class="color420">42</span><span class="color0625"> </span><span class="color5">5</span><span class="color0625"> </span><span class="color8">8</span><span class="color0625"> </span>.
-[time
-signatures](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure),
-
-4<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span>|
-The value of a space depends on the [time
-signatures](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure),
-which in <a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> consist of a top number that defines the
-number of musical
-[beats](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=In%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time)
-per
-[measure](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music%20bounded%20by%20vertical%20lines)
-and a bottom number that determines the number of spaces per musical
-beat. The number of spaces per measure is the product of the top and
-bottom numbers.
-
-If a time signature is never specified, we assume there are four beats
-per measure, four spaces per beat, and thus sixteen spaces per measure.
-Whenever
-
-The color labels of the examples below, one musical beat is indicated by
-four spaces (<span class="color0625">    </span>). Therefore, a single
-space (<span class="color0625"> </span>) is worth a quarter of a musical
-beat, which is the equivalent of an eighth note in [common
-time](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=time%2C%20also%20called-,common%20time,-or%20imperfect%20time).
-Similarly
-
-Each tone in the
-[arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order)
-shown below that consists of the three <span class="colorCs">C♯</span>
-major chord notes immediately above Middle
-<span class="colorC">C</span>. Each note in the arpeggio lasts a If we
-specify that one space (<span class="color0625"> </span>) is equivalent
-to a quarter of a musical beat, this arpeggio could be written in
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> as a series of tones:
-<span class="color420">42</span><span class="color0625"> </span><span class="color450">45</span><span class="color0625"> </span><span class="color480">48</span><span class="color0625"> </span>.
-To avoid repeating the octave index, we can specify it at the beginning
-of the line and place a bar character (|) between it and the three notes
-of the arpeggio:
-4|<span class="color2">2</span><span class="color0625"> </span><span class="color5">5</span><span class="color0625"> </span><span class="color8">8</span><span class="color0625"> </span>.
-
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> indicates note duration with whitespace
-indicated with one or more spaces following a note or a rest indicates
-its duration. The single space (<span class="color0625"> </span>) that
-follows each note in the arpeggio example above indicates that each note
-is held for the shortest duration. The table below shows the note and
-rest names, symbols, and number of spaces that are equivalent if a
-quarter note is one beat and there are eight spaces per beat.
-
-a single space (<span class="color0625"> </span>) is equivalent to an
-eighth note in. If a piece of music contains sixteenth notes, we will
-need at least eight spaces per musical is often an eighth note.
-
-If these three notes are to be played simultaneously instead of
-sequentially, they need to be split across three separate lines:
-
-4|<span class="color2">2</span><span class="color0625"> </span>  
-4|<span class="color5">5</span><span class="color0625"> </span>  
-4|<span class="color8">8</span><span class="color0625"> </span>
-
-If the three notes are all quarter C♯, F, and G♯,. Rather than annotate
-music as a series of tones,
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> first identifies an octave at the
-beginning of a line before the notes that should be played in that
-octave. the notes that are played simultaneously instead of sequentially
-are written on separate lines and aligned vertically using whitespace.
-The example below shows an below Middle C. Notes written on the same
-line are in the same octave and are played sequentially. Notes can be
-grouped into a
-[chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together)
-such as the <span class="colorFs">F<span class="iosevka">♯</span></span>
-major chord
-(<span class="colorAs">A<span class="iosevka">♯</span></span><span class="colorCs">C<span class="iosevka">♯</span></span><span class="colorFs">F<span class="iosevka">♯</span></span>):
-<span class="color0">0</span><span class="color2">2</span><span class="color6">6</span>.
-All notes, rests, and chords are followed by a
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> separator which indicates their respective
-durations. A separator that follows a chord applies to all notes in that
-chord:
-<span class="color0">0</span><span class="color2">2</span><span class="color6">6</span><span class="color5">    </span>.
-As shown in the table below,
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> separators can be color coded.
-
-<div style="overflow-x:scroll;">
-
-<table>
-<colgroup>
-<col style="width: 3%" />
-<col style="width: 3%" />
-<col style="width: 62%" />
-<col style="width: 14%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr>
-<th>Note</th>
-<th>Rest</th>
-<th>Separator</th>
-<th>US name</th>
-<th>UK name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>𝅜</td>
-<td>𝄺</td>
-<td><span class="color0">                </span></td>
-<td>double</td>
-<td>breve</td>
-</tr>
-<tr>
-<td>𝅝</td>
-<td>𝄻</td>
-<td><span class="color0">        </span></td>
-<td>whole</td>
-<td>semibreve</td>
-</tr>
-<tr>
-<td>𝅗𝅥</td>
-<td>𝄼</td>
-<td><span class="color5">    </span></td>
-<td>half</td>
-<td>minim</td>
-</tr>
-<tr>
-<td>𝅘𝅥</td>
-<td>𝄽</td>
-<td><span class="color250">  </span></td>
-<td>quarter</td>
-<td>crotchet</td>
-</tr>
-<tr>
-<td>𝅘𝅥𝅮</td>
-<td>𝄾</td>
-<td><span class="color125">𝄖</span></td>
-<td>eighth</td>
-<td>quaver</td>
-</tr>
-<tr>
-<td>𝅘𝅥𝅯</td>
-<td>𝄿</td>
-<td><span class="color0625">𝄗</span></td>
-<td>sixteenth</td>
-<td>semiquaver</td>
-</tr>
-<tr>
-<td>𝅘𝅥𝅰</td>
-<td>𝅀</td>
-<td><span class="color03125">𝄘</span></td>
-<td>thirty-second</td>
-<td>demisemiquaver</td>
-</tr>
-<tr>
-<td>𝅘𝅥𝅱</td>
-<td>𝅁</td>
-<td><span class="color015625">𝄙</span></td>
-<td>sixty-fourth</td>
-<td>hemidemisemiquaver</td>
-</tr>
-<tr>
-<td>𝅘𝅥𝅲</td>
-<td>𝅂</td>
-<td><span class="color0078125">𝄚</span></td>
-<td>hundred twenty-eighth</td>
-<td>semihemidemisemiquaver</td>
-</tr>
-<tr>
-<td><img src="../asset/Semigarrapatea.svg"
-style="max-width:11px" /></td>
-<td><img src="../asset/Silencio_de_semigarrapatea.svg"
-style="max-width:11px" /></td>
-<td><span class="color00390625">𝄛</span></td>
-<td>two hundred fifty-sixth</td>
-<td>demisemihemidemisemiquaver</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-In <a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a>, a rest is denoted by a null sign (∅).
-Notes, rests, chords, and their separators are grouped into
-[measures](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music)
-that have a bar (|) on both sides. Measures are grouped into lines that
-start with an octave index and end with a
-[newline](https://en.wikipedia.org/wiki/Newline#:~:text=used%20to%20signify%20the%20end%20of%20a%20line%20of%20text%20and%20the%20start%20of%20a%20new%20one)
-character. Lines separated by empty lines are played sequentially,
-whereas groups of lines are played simultaneously.
-
-Since each line that represent Octaves 4 and 5, span Notes 40 to 59, and
-overlap with the majority of the range of
-<a href="#12et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12et</a> treble clef tones: 41.302
-to 61.302. Similarly, two lines representing Octaves 2 and 3 are To
-cover most of the tone range of the bass clef: 21.302 to 41.302, we need
-two <a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> lines labeled as Octaves 2 and 3, Notes 20
-to 39. Of these four lines, the top two cover but the treble clef and
-the bottom two closely match the bass clef.
-
-The <a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> analog of the
-<a href="#12et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12et</a> treble clef is two lines
-that represent Octaves 4 and 5, to be played separately are separated by
-spaces and grouped into measures that end with a bar (|). Measures are
-grouped into lines that start with an octave and [time
-signature](https://en.wikipedia.org/wiki/Time_signature#:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure)
-and end with a
-[newline](https://en.wikipedia.org/wiki/Newline#:~:text=used%20to%20signify%20the%20end%20of%20a%20line%20of%20text%20and%20the%20start%20of%20a%20new%20one)
-character.
-
-Groups of lines are played together and are separated by empty lines.
-With four lines, we can cover Octaves 2, 3, 4, and 5 or equivalently
-Notes 20 to 59, which is close to the range of the
-<a href="#12et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12et</a> bass and treble
-[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff):
-<span class="colorC2">21.302</span> to
-<span class="colorC6">61.302</span>. Of these four lines, the top two
-are analogous to the treble clef and the bottom two closely match the
-bass clef.
-
-All rests except whole rests are followed by a fraction: ½ for a half
-rest, ¼ for a quarter rest, ⅛ for an eighth rest, and so on. The same
-goes for notes. The first two
-[measures](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music)
-of the
-[chorus](https://en.wikipedia.org/wiki/Chorus#:~:text=the%20part%20of%20a%20song%20that%20is%20repeated%20several%20times)
-from “[Turn the beat
-around](https://en.wikipedia.org/wiki/Turn_the_Beat_Around#:~:text=a%20disco%20song%20written%20by%20Gerald%20Jackson%20and%20Peter%20Jackson%2C%20and%20performed%20by%20American%20actress%20and%20singer%20Vicki%20Sue%20Robinson%20in%201976)”
-are shown below, first using
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> music notation and then a
-<a href="#12et" class="tool" data-bs-toggle="tooltip"
-data-bs-title="12 equal temperament">12et</a> treble clef.
-
-4<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span>
-|
-9<span class="fraction"><span class="numerator"></span><span class="denominator">4</span></span>
-9<span class="fraction"><span class="numerator"></span><span class="denominator">8</span></span>
-<span class="under">8<span class="fraction"><span class="numerator"></span><span class="denominator">8</span></span>
-8<span class="fraction"><span class="numerator"></span><span class="denominator">8</span></span></span>
-8<span class="fraction"><span class="numerator"></span><span class="denominator">4</span></span>
-6<span class="fraction"><span class="numerator"></span><span class="denominator">8</span></span>
-|
-6<span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span>
-∅<span class="fraction"><span class="numerator"></span><span class="denominator">4</span></span>
-|
-
-4<sup>4</sup><sub>4</sub> | 9<sub>4</sub> 9<sub>8</sub>
-<span class="under">8<sub>8</sub> 8<sub>8</sub></span> 8<sub>4</sub>
-<span class="under">6<sub>8</sub> | 6³<sub>4</sub></span> ∅<sub>4</sub>
-|
-
-4<span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span>
-| <span class="mono">9¼</span> <span class="mono">9⅛</span>
-<span class="under">8<span class="mono">⅛</span>
-<span class="mono">8⅛</span></span> <span class="mono">8¼</span>
-<span style="text-decoration: underline;"><span class="mono">6⅛</span> |
-<span class="mono">6¾</span></span> <span class="mono">∅¼</span> |
-
-``` {ojs}
-//| echo: false
-//| label: chorus
-// https://observablehq.com/@kreijstal/abc
-// https://github.com/quarto-dev/quarto-cli/discussions/7098
-// https://github.com/quarto-dev/quarto-cli/issues/2700
-chocode = `
-M:4/4
-L:1/4
-K:A
-y A A/2G/2- G/2 G F/2- | F3 z |
-w: Turn the~ ~beat _ ~a- ~round
-`
-abc(chocode, true)
-```
-
-# Light and sound
-
+Dec pairs each
+<a href="#n" id="note" class="tool" data-bs-toggle="tooltip"
+data-bs-title="a musical note">n</a> in an
+[octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other)
+with a color so that values can be labeled with both sounds and colors.
 In his <span class="color704">1704</span> book entitled
 [Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[1],
 [Isaac
 Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a)
-presented the first
-[color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=Newton's%20asymmetric%20color%20wheel%20based%20on%20musical%20intervals)
-and linked its colors🎨to musical notes. On <span class="tool"
+presented the first [color
+wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=Newton's%20asymmetric%20color%20wheel%20based%20on%20musical%20intervals)
+and linked its colors to musical notes. On <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="May 20, 2025"><span class="color025">2025</span><span class="mono">+</span><span class="colorD080">080</span></span>,
 I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm)
 by [Clint Goss](https://www.clintgoss.com)[2], which presents a method
-of connecting musical notes to colors🎨via their frequencies. The note
-and color🎨pairs in that article are similar to those of the Dechromatic
-scale.
+of connecting musical notes to colors via their frequencies.
 
-# US customary units
+The x-axis of the lollipop🍭plot below shows the rounded
+<a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeats">p</a> values of the ten Dec notes in Octave 4.
+The lollipops and their corresponding
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a> values are labeled with the ten Dec colors.
+The first digit of any
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="steps">s</a> value is its octave and the second digit is
+its <a href="#n" id="note" class="tool" data-bs-toggle="tooltip"
+data-bs-title="musical notes">n</a>. Each octave provides a unique set
+of sound labels. Click and hold each lollipop to hear its sound label.
 
-The [unit
-conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
-table below shows the [United
-States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)🇺🇸(<a href="#us" id="unitedstates" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a>) customary units that Dec
-redefines. The values in the first column are approximate [fold
-changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
-from original to redefined units. A fold change of
-<span class="color0">1</span> means <span class="color0">0</span>
-[change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared).
-Identical fold changes indicate
-<a href="#us" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> customary units derived from the
-same Dec and [International System of
+``` {ojs}
+//| echo: false
+//| label: lollipop
+//| class: musicchart
+// https://observablehq.com/@mcmire/tone-map
+{
+  const points = origs.map((orig, i) => ({
+    origin: orig,
+    x: orig,
+    ratio: Fraction(1, 1),
+    label: labels[i],
+    color: colors[i],
+    freq: hertz[i],
+    alwaysShowLabel: true
+  }));
+  return renderGraph(points, {
+    xAxis: {
+      ticks: origs.map(Math.round)
+    },
+  });
+}
+```
+
+# Système international d’unités
+
+As a scientist of European origin, I have a strong preference for the
+[International System of
 Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 (<a href="#si" id="internationalsystemofunits" class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a>) units.
+data-bs-title="International System of Units">SI</a>) over the United
+States🇺🇸(<a href="#us" id="unitedstates" class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a>) [customary measurement
+system](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems).
+Nevertheless, having grown up in the
+<a href="#us" id="unitedstates" class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a>, I understand the animosity towards
+unfamiliar measurement units expressed by Grandpa Simpson in “A Star Is
+Burns”, Season 6 Episode 18 of [the
+Simpsons](https://en.wikipedia.org/wiki/The_Simpsons#:~:text=an%20American%20animated%20sitcom).
+
+![](../asset/metric.jpg)
+
+# US customary units
+
+Dec redefines
+<a href="#us" id="unitedstates" class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> customary units to facilitate
+conversion with
+<a href="#si" id="internationalsystemofunits" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> and Dec units. The
+values in the first column of [unit
+conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
+table below are approximate [fold
+changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
+from original to redefined
+<a href="#us" id="unitedstates" class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> customary units. A fold change of
+<span class="color0">1</span> means <span class="color0">0</span>
+[change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared)
+is requires for alignment with the
+<a href="#si" id="internationalsystemofunits" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> and Dec units shown
+in the second and third column, respectively.
 
 ## Unit conversion tables
 
@@ -3757,7 +3035,7 @@ lighter.
 
 Dec color labels can convey an impression of a value at a glance.
 <a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> sound🔊labels allow us to estimate a value
+data-bs-title="Tenet">Xet</a> sound labels allow us to estimate a value
 without even having to look at it. Both types of labels can help avoid
 confusion when [decimal
 separators](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline)
@@ -3768,8 +3046,8 @@ addition, removal, or replacement of a metric prefix.
 
 Now that you have had a taste of Dec, I hope that you are hungry for
 more! If so, dive🤿deeper into Dec [dates](../dec/date) and
-[times](../dec/time) before tackling Dec [snaps](../dec/snap)🫰and
-[spans](../dec/span)🌈. My [filter](../quarto/filter),
+[times](../dec/time) before tackling Dec [snaps](../dec/snap) and
+[spans](../dec/span). My [filter](../quarto/filter),
 [include](../quarto/include), and [script](../quarto/script) articles
 discuss the [Quarto](../quarto) publishing system and how I display Dec
 [dates](../dec/date) in the [navigation
@@ -3820,7 +3098,7 @@ references:
     - family: Laptev
       given: Martin
   issued:
-    literal: 2026+052
+    literal: 2026+055
 
   title: Dec
   type: article
@@ -3844,7 +3122,7 @@ As demonstrated by the previous sentence above and the
 Dec dates. By default, Quarto formats citations according to the
 [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date
 format. Per this format, the citation for this article would appear as
-[Laptev, Martin](https://maptv.github.io/about). 2026+052. “Dec.”
+[Laptev, Martin](https://maptv.github.io/about). 2026+055. “Dec.”
 ${decYearP0}+${decDateP0}. <https://maptv.github.io/dec>.
 
 Instead of using Quarto [citation
@@ -3991,28 +3269,6 @@ I adapted into many of the visualizations above.
   - <a href="#pentaday" id="pent">pent</a>: pentaday, a group of five
     days, half a decaday
   - <a href="#dayofdek" id="dod">dod</a>: day of decaday
-    - <a href="#dod0" id="d0">ba</a>: the name of day of decaday 0, the
-      frontmost voiced consonant and the most open vowel
-    - <a href="#dod1" id="d1">ve</a>: the name of day of decaday 1, the
-      second frontmost voiced consonant and the second most open vowel
-    - <a href="#dod2" id="d2">di</a>: the name of day of decaday 2, the
-      third frontmost voiced consonant and the third most open vowel
-    - <a href="#dod3" id="d3">zo</a>: the name of day of decaday 3, the
-      fourth frontmost voiced consonant and the fourth most open vowel
-    - <a href="#dod4" id="d4">gu</a>: the name of day of decaday 4, the
-      least frontmost voiced consonant and the least open vowel
-    - <a href="#dod5" id="d5">pa</a>: the name of day of decaday 5, the
-      frontmost voiceless consonant and the most open vowel
-    - <a href="#dod6" id="d6">fe</a>: the name of day of decaday 6, the
-      second frontmost voiceless consonant and the second most open
-      vowel
-    - <a href="#dod7" id="d7">ti</a>: the name of day of decaday 7, the
-      third frontmost voiceless consonant and the third most open vowel
-    - <a href="#dod8" id="d8">so</a>: the name of day of decaday 8, the
-      fourth frontmost voiceless consonant and the fourth most open
-      vowel
-    - <a href="#dod9" id="d9">ku</a>: the name of day of decaday 9, the
-      least frontmost voiceless consonant and the least open vowel
   - <a href="#dayofpent" id="dop">dop</a>: day of pentaday
   - <a href="#dayofmonth" id="dom">dom</a>: day of month
   - <a href="#dayofweek" id="dow">dow</a>: day of week
@@ -4085,27 +3341,6 @@ I adapted into many of the visualizations above.
     of a parallel
   - <a href="#milliparallel" id="mlambda">mλ</a>: milliparallel, a
     thousandth of a parallel
-- <a href="#note" id="n">n</a>: a musical note
-  - <a href="#note0" id="n0">ba</a>: the name of musical note 0, the
-    frontmost voiced consonant and the most open vowel
-  - <a href="#note1" id="n1">ve</a>: the name of musical note 1, the
-    second frontmost voiced consonant and the second most open vowel
-  - <a href="#note2" id="n2">di</a>: the name of musical note 2, the
-    third frontmost voiced consonant and the third most open vowel
-  - <a href="#note3" id="n3">zo</a>: the name of musical note 3, the
-    fourth frontmost voiced consonant and the fourth most open vowel
-  - <a href="#note4" id="n4">gu</a>: the name of musical note 4, the
-    least frontmost voiced consonant and the least open vowel
-  - <a href="#note5" id="n5">pa</a>: the name of musical note 5, the
-    frontmost voiceless consonant and the most open vowel
-  - <a href="#note6" id="n6">fe</a>: the name of musical note 6, the
-    second frontmost voiceless consonant and the second most open vowel
-  - <a href="#note7" id="n7">ti</a>: the name of musical note 7, the
-    third frontmost voiceless consonant and the third most open vowel
-  - <a href="#note8" id="n8">so</a>: the name of musical note 8, the
-    fourth frontmost voiceless consonant and the fourth most open vowel
-  - <a href="#note9" id="n9">ku</a>: the name of musical note 9, the
-    least frontmost voiceless consonant and the least open vowel
 - <a href="#perbeat" id="per">p</a>: perbeat, the inverse of a beat,
   1/beat, once per beat, every beat, 100000 q; the letter “p” can be
   flipped vertically to produce the letter “b”
@@ -6031,6 +5266,522 @@ hSqMi = d3.hsl(piecewiseColor(fMile**2 % 1)).h
 bcHue = (xetHue[1] + xetHue[2]) / 2
 ddsHue = (xetHue[4] + xetHue[5]) / 2
 dseHue = (xetHue[5] + xetHue[6]) / 2
+// https://observablehq.com/@mcmire/tone-map
+GraphableTone = {
+  const _assertRequiredKeys = Symbol("assertRequiredKeys");
+  class GraphableTone {
+    constructor(args) {
+      this[_assertRequiredKeys](args);
+      const { recognizedProps, unrecognizedProps } = lod.reduce(
+        args,
+        (results, value, key) => {
+          if (this.constructor.knownKeys.indexOf(key) !== -1) {
+            results.recognizedProps[key] = value;
+          } else {
+            results.unrecognizedProps[key] = value;
+          }
+          return results;
+        },
+        { recognizedProps: {}, unrecognizedProps: {} }
+      );
+      this._setProps(recognizedProps, unrecognizedProps);
+    }
+    get origin() {
+      return this._origin;
+    }
+    set origin(origin) {
+      this._origin = Fraction(origin);
+    }
+    get frequency() {
+      return this.origin.mul(this.ratio);
+    }
+    cloneWith(overrideProps) {
+      const recognizedProps = lod.pick(this, this.constructor.knownKeys);
+      return new this.constructor({
+        ...recognizedProps,
+        ...this.unrecognizedProps,
+        ...overrideProps
+      });
+    }
+    toPlainObject() {
+      const recognizedProps = lod.pick(this, this.constructor.knownKeys);
+      return {
+        ...recognizedProps,
+        ...this.unrecognizedProps
+      }; 
+    }
+    toDebug() {
+      return {
+        ...this,
+        ratio: `${this.ratio.n}/${this.ratio.d}`,
+        frequency: this.frequency.valueOf(),
+        origin: this.origin.valueOf(),
+        seriesIndex: this.seriesIndex,
+        colorIndex: this.colorIndex,
+        index: this.index,
+        alwaysShowLabel: this.alwaysShowLabel
+      };
+    }
+    _setProps(recognizedProps, unrecognizedProps) {
+      this.ratio = recognizedProps.ratio;
+      this.origin = recognizedProps.origin != null ? recognizedProps.origin : originFrequency;
+      this.index = recognizedProps.index;
+      this.seriesIndex = recognizedProps.seriesIndex != null ? recognizedProps.seriesIndex : 0;
+      this.colorIndex = recognizedProps.colorIndex != null ? recognizedProps.colorIndex : this.seriesIndex;
+      this.alwaysShowLabel = recognizedProps.alwaysShowLabel != null ? recognizedProps.alwaysShowLabel : true;
+      Object.assign(this, unrecognizedProps);
+      this.unrecognizedProps = unrecognizedProps;
+    }    
+    [_assertRequiredKeys](args) {
+      const missingKey = this.constructor.requiredKeys.find(requiredKey => {
+        return !args.hasOwnProperty(requiredKey);
+      });
+      if (missingKey != null) {
+        throw new Error(`Missing key: ${missingKey}`);
+      }
+    }
+  }
+  GraphableTone.knownKeys = [
+    "ratio",
+    "origin",
+    "index",
+    "seriesIndex",
+    "colorIndex",
+    "alwaysShowLabel"
+  ];
+  GraphableTone.requiredKeys = ["ratio"];
+  GraphableTone.wrap = (value, options = {}) => {
+    const defaults = options.defaults || {};
+    if (value instanceof GraphableTone) {
+      return value;
+    } else {
+      return new GraphableTone({ ...defaults, ...value });
+    }
+  }
+  return GraphableTone;
+}
+renderGraph = (possibleTones, config = {}) => {
+  const tones = possibleTones.map((possibleTone, index) => {
+    return GraphableTone.wrap(possibleTone, { defaults: { index }});
+  });
+  const mapToY = mapToYFor(tones, config);
+  synth.releaseAll();
+  const height = graphHeight;
+  const svg = d3.select(DOM.svg(width, height))
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("preserveAspectRatio", "xMidYMid meet")
+    .style("width", "100%")
+    .style("height", "auto");
+  if (config.drawConnections) {
+    addConnectionsTo(svg, tones, config);
+  }
+  addStiltsTo(svg, tones, config); 
+  const circles = addPointsTo(svg, tones, config);
+  addPointLabelsTo(svg, tones, config);
+  addXAxisTo(svg, tones, config);
+  // addYAxisTo(svg, tones, config);
+  augmentGraphToPlayTones(svg, circles, {
+    getTonesFrom: (tone) => [tone],
+    onMouseDown: (circle, tone) => {
+      circle.transition("mousedown")
+        .duration(transitionDuration)
+        .ease(d3.easeLinear)
+        .attr("r", pointRadius * 2);
+      svg.select(`.point-label--${tone.seriesIndex}--${tone.index}`)
+        .transition()
+        .attr("opacity", 1)
+        .attr("y", t => mapToY(t.label) - (pointRadius * 2) - 10);
+    },
+    onMouseUp: (circle, tone) => {
+      circle.transition("mouseup")
+        .duration(transitionDuration)
+        .ease(d3.easeLinear)
+        .attr("r", pointRadius);
+      svg.selectAll(".point-label")
+        .transition()
+        .attr("opacity", t => (t.alwaysShowLabel && !config.drawConnections) ? 1 : 0)
+        .attr("y", t => mapToY(t.label) - (pointRadius * 2));
+    }
+  });
+  return svg.node();
+}
+graphHeight = 350
+augmentGraphToPlayTones = (
+  svg,
+  elements,
+  {
+    getTonesFrom,
+    getTargetFrom = (element) => element,
+    eventSource = "augmentGraphToPlayTones",
+    onMouseDown = () => {},
+    onMouseUp = () => {}, 
+  }
+) => {
+  const BUFFER_TIME = 250; // ms
+  const notesBeingPlayed = [];
+  const interruptAllEventsFor = (selection) => {
+    selection
+      .interrupt("mouseover")
+      .interrupt("mouseout")
+      .interrupt("mousedown");
+  };
+  elements.each((datum, i, nodes) => {
+    const element = d3.select(nodes[i]);
+    const target = getTargetFrom(element);
+    target
+      .style("cursor", "pointer")
+      .on(`mousedown.${eventSource}`, () => {
+        interruptAllEventsFor(target);
+        getTonesFrom(datum).forEach(tone => {
+          synth.triggerAttack((tone.freq ?? tone.frequency.valueOf()));
+          notesBeingPlayed.push({
+            datum: datum,
+            target: target,
+            element: element,
+            tone: tone,
+            time: new Date()
+          });
+        });
+        onMouseDown(target, datum, element);
+      });
+  });
+  svg.on(`mouseup.${eventSource}`, () => {
+    const fn = (note) => {
+      interruptAllEventsFor(note.target);
+      synth.triggerRelease((note.tone.freq ?? note.tone.frequency.valueOf()));
+      onMouseUp(note.target, note.datum, note.element);
+    };
+    notesBeingPlayed.forEach(note => {
+      const now = new Date();
+      const timeBuffer = BUFFER_TIME - (now - note.time);
+      if (timeBuffer > 0) {
+        setTimeout(() => fn(note), timeBuffer);
+      } else {
+        fn(note);
+      }
+    });
+    // clear the whole thing
+    notesBeingPlayed.splice(0, notesBeingPlayed.length);
+  });
+}
+reduceFraction = (fraction, { min, max }) => {
+  let n = 0;
+  while (fraction.valueOf() < min || fraction.valueOf() > max) {
+    if (n > 100) {
+      throw "Too many iterations";
+    }
+    if (fraction > max) {
+      fraction = fraction.div(2);
+    } else if (fraction < min) {
+      fraction = fraction.mul(2);
+    }
+    n++;
+  }
+  return fraction;
+}
+primeNumbersUpTo = (limit) => {
+  const maxMultiple = Math.sqrt(limit);
+  const workingPrimes = lod.range(2, limit + 1).reduce((o, n) => ({ ...o, [n]: true }), {});
+  for (let multiple = 2; multiple <= maxMultiple; multiple++) {
+    if (workingPrimes[multiple]) {
+      for (let nonPrime = multiple * multiple; nonPrime <= limit; nonPrime += multiple) {
+        workingPrimes[nonPrime] = false;
+      }
+    }
+  }
+  const primes = lod.reduce(workingPrimes, (array, isPrime, n) => {
+    if (isPrime) {
+      return array.concat([
+        parseInt(n, 10)
+      ]);
+    } else {
+      return array;
+    }
+  }, []);
+  return [1].concat(primes);
+}
+synth = new Tone.PolySynth(16, Tone.Synth, {
+  oscillator: {
+    type: "sine",
+    volume: -20
+  },
+  envelope: {
+    attack: 0.05,
+    decay: 0,
+    sustain: 1,
+    release: 1.2
+  }
+}).toMaster()
+origin = Fraction(originFrequency)
+axisColor = d3.hsl(0, 0, 0.5)
+lollimargin = ({top: 35, right: 10, bottom: 25, left: 8})
+numberOfColors = 10
+rowHeight = 60
+originFrequency = 440
+pointRadius = 10
+transitionDuration = 200
+addStiltsTo = (svg, tones, config) => {
+  const mapToX = mapToXFor(tones, config);
+  const mapToY = mapToYFor(tones, config);
+  const height = calculateGraphHeight(tones);
+  svg
+    .append("g")
+    .attr("stroke", axisColor)
+    .attr("stroke-dasharray", "2, 3")
+    .attr("stroke-width", 1)
+    .selectAll("line")
+    .data(tones)
+    .enter().append("line")
+      .attr("x1", tone => mapToX(tone.x ?? tone.frequency))
+      .attr("x2", tone => mapToX(tone.x ?? tone.frequency))
+      .attr("y1", tone => mapToY(tone.label))
+      .attr("y2", height - lollimargin.bottom);
+}
+addPointsTo = (svg, tones, config) => {
+  const mapToX = mapToXFor(tones, config);
+  const mapToY = mapToYFor(tones, config);
+  const colors = colorsFor(tones);
+  const circles = svg
+    .append("g")
+    .selectAll("circle")
+    .data(tones)
+    .enter().append("circle")
+      .attr("cx", t => mapToX(t.x ?? t.frequency))
+      .attr("cy", t => mapToY(t.label))
+      .attr("r", pointRadius)
+      .attr("fill", t => t.color ?? (t.isColored === false ? "#ccc" : colors[t.colorIndex]))
+      .attr("stroke", axisColor)
+      .attr("stroke-width", 1);
+  return circles;
+}
+addPointLabelsTo = (svg, tones, config) => {
+  const mapToX = mapToXFor(tones, config);
+  const mapToY = mapToYFor(tones, config);
+  const colors = colorsFor(tones);
+  svg
+    .append("g")
+    .selectAll("text")
+      .data(tones)
+      .enter().append("text")
+        .attr("class", (tone, i) => {
+          return `point-label point-label--${tone.seriesIndex}--${tone.index}`;
+        })
+        .text(tone => {
+          if (tone.label != null) return tone.label;
+          const ratioAsString = `${tone.ratio.n}/${tone.ratio.d}`;
+          if (tone.frequency.equals(tone.origin)) {
+            return tone.origin;
+          } else {
+            return ratioAsString;
+          }
+        })
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "24px")
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "middle")
+        .attr("fill", t => t.color ?? (t.isColored === false ? "#ccc" : colors[t.colorIndex]))
+        .attr("stroke", axisColor)
+        .attr("stroke-width", 1)
+        .attr("paint-order", "stroke")
+        .attr("stroke-linejoin", "round")
+        .attr("x", t => mapToX(t.x ?? t.frequency) - 15)
+        .attr("y", t => mapToY(t.label) - (pointRadius * 2))
+        .attr("opacity", (t, _) => {
+          return (t.alwaysShowLabel && !config.drawConnections) ? 1 : 0;
+        });
+}
+addYAxisTo = (svg, tones, config) => {
+  const mapToY = mapToYFor(tones, config);
+  const axis = d3.axisLeft(mapToY);
+  svg.append("g")
+    .attr("transform", `translate(${lollimargin.left * 3},0)`)
+    .call(axis)
+    .selectAll("text")
+      .attr("font-size", config.axisFontSize ?? "16px");
+}
+addXAxisTo = (svg, tones, config) => {    
+  svg.append("g").call(g => {
+    const height = calculateGraphHeight(tones);
+    const axis = d3.axisBottom(mapToXFor(tones, config)).tickSizeOuter(0);
+    if (config.xAxis != null && config.xAxis.ticks) {
+      axis.tickValues(config.xAxis.ticks);
+    }
+    const axisGroup = g
+      .attr("transform", `translate(0,${height - lollimargin.bottom})`)
+      .call(axis);
+    axisGroup.selectAll("text")
+      .attr("font-size", width < 400 ? "8px" :  width < 450 ? "9px" : width < 500 ? "10px" : width < 550 ? "11px" : width < 600 ? "12px" : width < 600 ? "14px" : width < 650 ? "14px" : width < 700 ? "16px" : width < 800 ? "18px" : width < 900 ? "20px" : "22px")
+      .attr("fill", axisColor.darker(1));
+    axisGroup.selectAll("path")
+      .attr("stroke", axisColor);
+    axisGroup.selectAll("line")
+      .attr("stroke", axisColor);
+  });
+  svg.append("text")
+  .attr("x", (width - lollimargin.left - lollimargin.right) / 4 + lollimargin.left)
+  .attr("y", calculateGraphHeight(tones) + (width < 450 ? 6 : width < 500 ? 8 : width < 550 ? 10 : width < 600 ? 12 : width < 600 ? 14 : width < 650 ? 14 : width < 700 ? 16 : width < 800 ? 18 : width < 900 ? 20 : 22))
+  .attr("text-anchor", "middle")
+  .attr("font-size", config.axisTitleFontSize ?? (width < 600 ? "12px" : width < 600 ? "14px" : width < 650 ? "14px" : width < 700 ? "16px" : width < 800 ? "18px" : width < 900 ? "20px" : "22px"))
+  .attr("fill", config.axisTextColor ?? axisColor.darker(1))
+  .text(config.xAxisTitle ?? "Perbeat (inverse centimilliday)");
+}
+addConnectionsTo = (svg, tones, config) => {
+  const connections = ToneConnections.generate(tones, config);
+  const gradients = Object.values(
+    lod.keyBy(
+      connections.map(connection => connection.gradient),
+      gradient => gradient.id
+    )
+  );
+  const linearGradientGroup = svg.append("defs")
+    .selectAll("linearGradient")
+    .data(gradients)
+    .enter().append("linearGradient")
+      .attr("id", gradient => gradient.id);
+  linearGradientGroup.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", gradient => gradient.from);
+  linearGradientGroup.append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", gradient => gradient.to);
+  svg.append("g")
+    .selectAll("path")
+    .data(connections)
+    .enter().append("path")
+      .attr("d", connection => {
+        const curve = connection.curve;
+        return [
+          `M ${curve.start.x} ${curve.start.y}`,
+          /*
+          `C ${curve.control1.x} ${curve.control1.y}`,
+          `${curve.control2.x} ${curve.control2.y}`,
+          */
+          `L ${curve.end.x} ${curve.end.y + 0.1}`
+        ].join(" ");
+      })
+      .attr("stroke-width", "1px")
+      .attr("stroke", connection => `url(#${connection.gradient.id})`)
+      .attr("fill", "none");
+  svg.append("g")
+    .selectAll("text")
+    .data(connections)
+    .enter().append("text")
+      .text(connection => connection.text.content)
+      .attr("font-family", "sans-serif")
+      .attr("font-size", "13px")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "middle")
+      .attr("x", connection => connection.text.x)
+      .attr("y", connection => connection.text.y)
+      .attr("transform", connection => {
+        return `rotate(${connection.text.angle} ${connection.text.x} ${connection.text.y})`
+      })
+      .attr("fill", connection => connection.gradient.to)
+}
+ToneConnections = {
+  const gradients = {};
+  let lastGradientIndex = 0;
+  class ToneConnections {
+    constructor(tones, config) {
+      this.tones = tones;
+      this.combinationsOfTones = [...G.clone.combination(tones, 2)];
+      this.results = [];
+      this.mapToX = mapToXFor(tones, config);
+      this.colors = colorsFor(tones);
+    }
+    generate() {
+      this.combinationsOfTones.forEach(([tone1, tone2], index) => {
+        const point1 = { x: this.mapToX(tone1.x ?? tone1.frequency), y: mapToY(tone1.label) };
+        const point2 = { x: this.mapToX(tone2.x ?? tone2.frequency), y: mapToY(tone2.label) };
+        const curveHeight = Math.sqrt(5 * (point2.x - point1.x));
+        const controlPosition = (point2.x - point1.x) / 10;
+        const curve = {
+          start: point1,
+          control1: { x: point1.x + controlPosition, y: point1.y - curveHeight },
+          control2: { x: point2.x - controlPosition, y: point1.y - curveHeight },
+          end: point2
+        };
+        const xDist = curve.end.x - curve.start.x;
+        const yDist = curve.end.y - curve.start.y;
+        const ratioDiff = (tone2.ratio > tone1.ratio)
+          ? tone2.ratio.div(tone1.ratio)
+          : tone1.ratio.div(tone2.ratio);
+        const text = {
+          x: curve.start.x + (xDist / 2) + 5,
+          y: curve.start.y + (yDist / 2) - 5,
+          angle: Math.atan(yDist / xDist) * (360 / (2 * Math.PI)),
+          content: ratioDiff.toFraction()
+        };
+        const gradient = this._findOrAddGradientFor(tone1, tone2);
+        this.results.push({ curve, gradient, text });
+      });
+    }
+    _findOrAddGradientFor(tone1, tone2) {
+      const color1 = this.colors[tone1.colorIndex];
+      const color2 = this.colors[tone2.colorIndex];
+      const key = [color1.toString(), color2.toString()].join("/");
+      if (key in gradients) {
+        return gradients[key];
+      } else {
+        lastGradientIndex++;
+        const gradient = {
+          from: color1,
+          to: color2,
+          id: `gradient-${lastGradientIndex}`
+        };
+        gradients[key] = gradient;
+        return gradient;
+      }
+    }
+  }
+  ToneConnections.generate = (tones, config) => {
+    const connections = new ToneConnections(tones, config);
+    connections.generate();
+    return connections.results;
+  }
+  return ToneConnections;
+}
+mapToXFor = (tones, options = {}) => {
+  const xAxis = options.xAxis || {};
+  const frequencies = tones.map(t => t.x ?? t.frequency);
+  const min = xAxis.min != null ? xAxis.min : d3.min(frequencies);
+  const max = xAxis.max != null ? xAxis.max : d3.max(frequencies);
+  let scale = d3.scaleLog()
+    .base(2)
+    .domain([min, max]);
+  if (xAxis.nice) {
+    scale = scale.nice();
+  }
+  scale = scale.range([lollimargin.left * 4, width / 2 - (lollimargin.right * 2)]);
+  return scale;
+}
+mapToYFor = (tones, options = {}) => {
+  const labels = tones.map(t => t.label);
+  const height = calculateGraphHeight(tones);
+  return d3.scalePoint()
+    .domain(labels)
+    .range([height - lollimargin.bottom, lollimargin.top])
+    .padding(0.5);
+}
+mapToY = index => {
+  return lollimargin.top + (rowHeight * index) + (rowHeight / 2);
+}
+colorsFor = tones => {
+  return lod.range(0, 360, 360 / numberOfColorsAmong(tones)).map(hue => d3.hcl(hue, 70, 80))
+}
+numberOfColorsAmong = (tones) => lod.uniqBy(tones, t => t.colorIndex).length
+calculateGraphHeight = tones => {
+  const numberOfSeries = Object.keys(lod.countBy(tones, "seriesIndex")).length;
+  return lollimargin.top + (rowHeight * numberOfSeries) + lollimargin.bottom + 200;
+}
+lod = require("lodash@4.17.0")
+G = require("generatorics@1.1.0")
+Tone = require("tone@0.12.80")
+Fraction = require("fraction.js@4.0.8")
+colors = [...Array(10).keys()].map(x => x / 10).map(piecewiseColor).map(d3.color).map(x => x.hex())
+hertz = origs.map(x => x / .864)
+labels = [...Array(10).keys()].map(x => x + 40)
+origs = labels.map(x => 14.1275 * 2 **(x / 10))
 ```
 
 ``` {ojs}
@@ -6905,10 +6656,10 @@ div.coloropp canvas {
   overflow: visible;
 }
 div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label, div#wavinput label, div#iobinput label, div#beatinput label {
-  width: 85px;
+  width: 110px;
 }
 div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"], #wavinput input[type="number"], #iobinput input[type="number"], div#beatinput input[type="number"] {
-  width: 95px;
+  width: 100px;
 }
 div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] , #beatinput input[type="range"] {
   max-width: 225px;
@@ -7106,6 +6857,10 @@ div.cell#csharpstaff * {
 }
 figcaption {
   display: none;
+}
+#lollipop {
+  overflow: visible;
+  width: 200%;
 }
 </style>
 
