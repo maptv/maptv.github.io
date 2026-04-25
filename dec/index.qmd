@@ -214,245 +214,57 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Duration" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 ```
 
-In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can be expressed in musical [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale) ([s](#s){#step .tool data-bs-toggle="tooltip" data-bs-title="steps"}). The [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play) of an 88-key piano is 23.76 to 3616.64 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, which is approximately [8]{.color8} to [80]{.color0} [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}. The typical audible range for humans is [3]{.color3} [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} to [103]{.color3} [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}. The equations below can be used to calculate [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}, a [decastep]{.tool data-bs-toggle="tooltip" data-bs-title="tens of musical steps"} ([Ds](#Ds){#decastep .tool data-bs-toggle="tooltip" data-bs-title="decasteps"}) [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) index ([i](#i){#index .tool data-bs-toggle="tooltip" data-bs-title="an index"}), and a note ([n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="a musical note"}) measured in [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}.
+# Octave equals decastep {.hiddenheading #sec-oed}
 
+In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can be expressed in musical [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale) ([s](#s){#step .tool data-bs-toggle="tooltip" data-bs-title="steps"}). The [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play) of an 88-key piano is 23.76 to 3616.64 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, which is approximately [8]{.color8} to [80]{.color0} [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}. The typical audible range for humans is [3]{.color3} [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} to [103]{.color3} [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}. In the equations below, δ is a decimal [decastep]{.tool data-bs-toggle="tooltip" data-bs-title="tens of musical steps"} value that can be used to calculate [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}, and note ([n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="musical notes"}) values measured in [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}.
 
-$$\text{p} = 14.1275 \times 2^{\text{s}/10} = 14.1275 \times 2^\text{i} \times 2^{\text{n}/10}$$
+$$\delta = \log_2\!\left(\frac{\text{p}}{14.1275}\right) = \frac{\text{s}}{10}$$
 
-$$\text{s} = 10 \times \log_2\!\left(\frac{\text{p}}{14.1275}\right) = 10 \times \text{i} + \text{n}$$
+$$\text{s} = 10 \times \delta = 10 \times \left\lfloor \delta \right\rfloor + \text{n}$$
 
-$$\text{i} = \left\lfloor \frac{\text{s}}{10} \right\rfloor = \left\lfloor \log_2\!\left(\frac{\text{p}}{14.1275}\right) \right\rfloor$$
+$$\text{p} = 14.1275 \times 2^{\delta}$$
 
-$$\text{n} = \text{s} - 10 \times \text{i} = 10 \times \left(\log_2\!\left(\frac{\text{p}}{14.1275}\right) - \text{i}\right)
+$$\text{n} = \text{s} - 10 \times \left\lfloor \delta \right\rfloor = 10 \times \left(\delta - \left\lfloor \delta \right\rfloor\right)
 $$
 
-In the context of music, Dec refers to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} values as [pitches](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=the%20quality%20that%20makes%20it%20possible%20to%20judge%20sounds%20as%20%22higher%22%20and%20%22lower%22%20in%20the%20sense%20associated%20with%20musical%20melodies) and [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"} and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} values as [tones](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound).
+# Color and sound {.hiddenheading #sec-cas}
 
-A typical person can reliably distinguish sounds🔊that [differ](https://en.wikipedia.org/wiki/Cent_(music)#:~:text=Normal%20adults%20are%20able%20to%20recognize%20pitch%20differences%20of%20as%20small%20as%2025%20cents%20very%20reliably) by at least [200]{.color2} [ms](#ms){.tool data-bs-toggle="tooltip" data-bs-title="millisteps"}.
+Dec pairs each [n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="a musical note"} in an [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) with a color so that values can be labeled with both sounds and colors. In his [1704]{.color704} book entitled [Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[^0], [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a) presented the first [color wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=Newton's%20asymmetric%20color%20wheel%20based%20on%20musical%20intervals) and linked its colors to musical notes. On [[2025]{.color025}[+]{.mono}[080]{.colorD080}]{.tool data-bs-toggle="tooltip" data-bs-title="May 20, 2025"}, I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm) by [Clint Goss](https://www.clintgoss.com)[^1], which presents a method of connecting musical notes to colors via their frequencies.
 
-Notably, the [A4]{.colorA} [pitch](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=the%20quality%20that%20makes%20it%20possible%20to%20judge%20sounds%20as%20%22higher%22%20and%20%22lower%22%20in%20the%20sense%20associated%20with%20musical%20melodies) widely used to [tune musical instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance) is very close to 380 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} or 49 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}.
+The x-axis of the lollipop🍭plot below shows the rounded [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} values of the ten Dec notes in Octave 4. The lollipops and their corresponding [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} values are labeled with the ten Dec colors. The first digit of any [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} value is its octave and the second digit is its [n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="musical notes"}. Each octave provides a unique set of sound labels. Click and hold each lollipop to hear its sound label.
 
-Like the ten Dec colors, there are ten frequencies that Dec chooses from the audible range to serve as a set of sound labels. These ten frequencies the Dechromatic scale. 
-
-Dec uses nine [spectral colors](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye) and a tenth color which cannot be defined by a single wavelength, period, or frequency because it is an equal mix of [Red]{.color0} and [Blue]{.color7}. 
-
-To make the [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans) frequency range more intuitive, Humans can hear The typical range for humans extends from Tone [03]{.color3} to Tone [104]{.color4}.a sound wave include its [frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time), [pitch](https://en.wikipedia.org/wiki/Pitch_(music)#:~:text=a%20perceptual%20property%20that%20allows%20sounds%20to%20be%20ordered%20on%20a%20frequency%2Drelated%20scale) in [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency), musical in [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}, . From the value selected by the "Frequency" range🎚️input below, we can calculate a pitch: , a : 
-The table 
-The positive (**+**) and negative (**--**) [indexes](https://en.wikipedia.org/wiki/Index#:~:text=an%20integer%20pointer%20into%20an%20array%20data%20structure), [hex](#hex){.tool data-bs-toggle="tooltip" data-bs-title="hexadecimal"} triplets, and [h°](#hdeg){.tool data-bs-toggle="tooltip" data-bs-title="HSL or HSV degrees"} in the table below are used by Dec to label ️groups of ten, like [dod](#dod){.tool data-bs-toggle="tooltip" data-bs-title="days of dek"}, "[top of the [dd]{.tool data-bs-toggle="tooltip" data-bs-title="deciday"}](https://en.wiktionary.org/wiki/top_of_the_hour)" [tod]{.tool data-bs-toggle="tooltip" data-bs-title="times of day"}, and time zones. In addition to colors, Dec also labels ️groups of ten with the [musical notes](https://en.wikipedia.org/wiki/Musical_note#:~:text=Chromatic%20scale,-note%20naming%20conventions) that constitute the Dec [chromatic](https://en.wikipedia.org/wiki/Chromatic_scale#:~:text=a%20set%20of%20twelve%20pitches%20(more%20completely%2C%20pitch%20classes)%20used%20in%20tonal%20music) (Dechromatic) [scale](https://en.wikipedia.org/wiki/Scale_(music)#:~:text=any%20consecutive%20series%20of%20notes%20that%20form%20a%20progression%20between%20one%20note%20and%20its%20octave) of the **Ten** **e**qual **t**emperament ([Tenet](#tenet){#tenequaltemperance .tool data-bs-toggle="tooltip" data-bs-title="ten equal temperament"}) musical system.
-
-# Ten equal temperament (Xet) {.hiddenheading #sec-xet}
-
-[Tenet]{.tool data-bs-toggle="tooltip" data-bs-title="ten equal temperament"} ([Xet](#xet){#10et .tool data-bs-toggle="tooltip" data-bs-title="Tenet"}) identifies each Dechromatic scale note with a single-digit integer and expresses all other possible sound🔊frequencies as decimal numbers. In contrast, the notes of the [12 equal temperament](https://en.wikipedia.org/wiki/12_equal_temperament#:~:text=the%20musical%20system%20that%20divides%20the%20octave%20into%2012%20parts) ([12et](#12et){#twelveequaltemperance .tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"}) musical system have names that consist of a letter from [A]{.colorA} to [G]{.colorG} and often a symbol such as sharp ([♯]{.iosevka}), half sharp ([𝄲]{.iosevka}), flat ([♭]{.iosevka}), and half flat ([𝄳]{.iosevka}).
-
-The sound🔊frequencies of two consecutive [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} Dechromatic scale notes always differ by one [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="step"}, but the differences between consecutive [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} chromatic scale notes vary from the [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[599]{.color599} [millisteps]{.tool data-bs-toggle="tooltip" data-bs-title="ten thousandths of an octave"} ([ms](#ms){#millistep .tool data-bs-toggle="tooltip" data-bs-title="millisteps"}) between [A[♯]{.iosevka}]{.colorAs} and [B]{.colorB} to the [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[1067]{.color067} [ms](#ms){.tool data-bs-toggle="tooltip" data-bs-title="millisteps"} between [G[♯]{.iosevka}]{.colorGs} and [A]{.colorA}.
-
-The rightmost column of the table below shows the [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} notes that are closest to the [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} Dechromatic scale notes. [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} considers [B[𝄲]{.iosevka}]{.colorBc}, [D[𝄲]{.iosevka}]{.colorDds}, and [E[𝄳]{.iosevka}]{.colorDsE} to be [microtones](https://en.wikipedia.org/wiki/Microtonality#:~:text=intervals%20not%20found%20in%20the%20customary%20Western%20tuning%20of%20twelve%20equal%20intervals%20per%20octave). The sound🔊frequency differences between the nearest [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} and [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} notes in the table range from the [8]{.color008} [ms]{.tool data-bs-toggle="tooltip" data-bs-title="millisteps"} between Notes [9]{.color9} and [A]{.colorA} to the [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[87]{.color26div300} [ms](#ms){.tool data-bs-toggle="tooltip" data-bs-title="millisteps"} between Notes [5]{.color5} and [F]{.colorF}.
-
-## Color sound table {.hiddenheading .unnumbered #cst}
-
-{{< include /dec/_notetable.qmd >}}
-
-# Octave note tone {.hiddenheading #sec-ont}
-
-The image above applies Dec color labels ️to one [octave](https://en.wikipedia.org/wiki/Octave#:~:text=the%20interval%20between%20one%20musical%20pitch%20and%20another%20with%20double%20or%20half%20its%20frequency) of piano🎹keys. In [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"}, an octave is 10 [s]{.tool data-bs-toggle="tooltip" data-bs-title="steps"}, 1 [decastep]{.tool data-bs-toggle="tooltip" data-bs-title="ten steps"} ([Ds](#Ds){#decastep .tool data-bs-toggle="tooltip" data-bs-title="decastep"}), or [10^4^]{.tool data-bs-toggle="tooltip" data-bs-title="ten steps"} [ms](#ms){.tool data-bs-toggle="tooltip" data-bs-title="millisteps"}. From top to bottom, the text below the image provides the [scientific pitch name](https://en.wikipedia.org/wiki/Scientific_pitch_notation#:~:text=a%20method%20of%20specifying%20musical%20pitch%20by%20combining%20a%20musical%20note%20name%20(with%20accidental%20if%20needed)%20and%20a%20number%20identifying%20the%20pitch%27s%20octave), integer [i]{.tool data-bs-toggle="tooltip" data-bs-title="iob"} sound🔊frequency, and integer [millizem]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a zem"} ([mz](#mz){#millizem .tool data-bs-toggle="tooltip" data-bs-title="millizem"}) wavelength of the corresponding white key. As octave indexes and frequencies increase, wavelengths decrease.
-
-From the perspective of [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"}, all of the labeled ️keys in the image above are in Octave [4]{.color4}. Octave indexes in [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} and [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} match except for [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} notes with indexes below [2]{.color2} and [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} notes from [A[♯]{.iosevka}]{.colorAs} to [B[𝄲]{.iosevka}]{.colorB}. An octave index is the [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} analog of a clef in staff notation, because both are responsible for setting the reference frame that allows us to interpret the relative pitches of notes as the absolute pitches of tones. 
-
-
-Clefs in staff notation and octave indexes in [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} set the reference frame that allows us to 
-
-
-When we append a positive note index that is less than ten to an octave index which is a positive integer, we obtain a [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} [musical tone](https://en.wikipedia.org/wiki/Musical_tone#:~:text=a%20steady%20periodic%20sound) index.
-
-The tone indexes of the labeled ️keys in the image above range from [40.069]{.colorAs} to [49.008]{.colorA}. Tone [49.008]{.colorA} is [A4]{.colorA}, the [A]{.colorA} note widely used to [tune musical instruments](https://en.wikipedia.org/wiki/Concert_pitch#:~:text=the%20pitch%20reference%20to%20which%20a%20group%20of%20musical%20instruments%20are%20tuned%20for%20a%20performance). Tone [41.302]{.colorC} is [C4]{.colorC}, the "[Middle [C]{.colorC}](https://en.wikipedia.org/wiki/C_(musical_note)#Middle_C:~:text=above%20the%20top%20line%20of%20the%20bass%20staff%20or%20below%20the%20bottom%20line%20of%20the%20treble%20staff)" in between the [bass](https://en.wikipedia.org/wiki/Clef#Bass_clef) and [treble](https://en.wikipedia.org/wiki/Clef#:~:text=the%20most%20common%20clef%20in%20use%20and%20is%20generally%20the%20first%20clef%20learned%20by%20music%20students)🎼[clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff) of a [grand staff](https://en.wikipedia.org/wiki/Staff_(music)#Grand_staff).
-
-The mermaid chart below visualizes the structure of the [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} music notation example above it, which is composed of the [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} equivalents of an ascending [C♯]{.colorCs} major [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order) and a [C♯]{.colorCs} major [chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together%20for%20their%20harmonic%20consonance%20or%20dissonance). This arpeggio and chord are also shown beneath the mermaid chart in [staff notation](https://en.wikipedia.org/wiki/Musical_notation#Modern_staff_notation:~:text=5%20parallel%20horizontal%20lines%20that%20act%20as%20a%20framework%20upon%20which%20pitches%20are%20indicated%20by%20placing%20oval%20note%2Dheads%20on%20(i.e.%20crossing)%20the%20staff%20lines%2C%20between%20the%20lines%20(i.e.%20in%20the%20spaces)%20or%20above%20and%20below%20the%20staff%20using%20small%20additional%20lines%20called%20ledger%20lines). Whereas staff notation is graphical, [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} notation is [text-based](https://en.wikipedia.org/wiki/Plain_text#:~:text=only%20characters%20of%20readable%20material%20but%20not%20its%20graphical%20representation).
-
-```{style="line-height:.9;overflow:visible;font-size:36px;"}
-       8 |
-42 5 8 5 |
-       2 |
+```{ojs}
+//| echo: false
+//| label: lollipop
+//| class: musicchart
+// https://observablehq.com/@mcmire/tone-map
+{
+  const points = origs.map((orig, i) => ({
+    origin: orig,
+    x: orig,
+    ratio: Fraction(1, 1),
+    label: labels[i],
+    color: colors[i],
+    freq: hertz[i],
+    alwaysShowLabel: true
+  }));
+  return renderGraph(points, {
+    xAxis: {
+      ticks: origs.map(Math.round)
+    },
+  });
+}
 ```
 
-```{mermaid}
-%%| label: csharpchart
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
-flowchart LR
-   subgraph arpeggio[C# Arpeggio]
-      A[42<br>C#4]
-      B[5<br>F4]
-      C[8<br>G#4]
-   end
-   subgraph chord[C# Chord]
-      X[8<br>G#4]
-      Y[5<br>F4]
-      Z[2<br>C#4]
-   end
-   A-->B-->C
-   C-->X
-   C-->Y
-   C-->Z
-   click A "#cst"
-   click B "#cst"
-   click C "#cst"
-   click X "#cst"
-   click Y "#cst"
-   click Z "#cst"
-```
+# Système international d'unités {.hiddenheading #sec-sid}
 
-{{< include /dec/_csharp.qmd >}}
+As a scientist of European origin, I have a strong preference for the [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}) over the United States🇺🇸([US](#us){#unitedstates .tool data-bs-toggle="tooltip" data-bs-title="United States"}) [customary measurement system](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems). Nevertheless, having grown up in the [US](#us){#unitedstates .tool data-bs-toggle="tooltip" data-bs-title="United States"}, I understand the animosity towards unfamiliar measurement units expressed by Grandpa Simpson in "A Star Is Burns", Season 6 Episode 18 of [the Simpsons](https://en.wikipedia.org/wiki/The_Simpsons#:~:text=an%20American%20animated%20sitcom).
 
-[Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} vertically aligns chords into columns. A chord can contain either notes that represent tones or the tones themselves. Mixing notes and tones in the same chord is not allowed. The chord in the example above can be written with notes instead of tones because Tone [42]{.color2} sets Octave [4]{.color4} as the default. Each line can have its own default octave.
-
-In the example below, Tone [46]{.color6} sets the default on the middle line to Octave [4]{.color4} but then Tone [50]{.color0} changes it Octave [5]{.color5}. Based on the default, we know the middle note in the chord represents Tone [50]{.color0}. We can then infer the tones represented by the top and bottom notes because chords are always ordered from highest to lowest tone.
-
-```{style="line-height:.9;overflow:visible;font-size:36px;"}
-        2 |
-46 50 2 0 |
-        6 |
-```
-
-```{mermaid}
-%%| label: fsharpchart
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
-flowchart LR
-   subgraph arpeggio[F# Arpeggio]
-      A[46<br>F#4]
-      B[50<br>A#4]
-      C[2<br>C#5]
-   end
-   subgraph chord[F# Chord]
-      X[2<br>C#5]
-      Y[0<br>A#4]
-      Z[6<br>F#4]
-   end
-   A-->B-->C
-   C-->X
-   C-->Y
-   C-->Z
-   click A "#cst"
-   click B "#cst"
-   click C "#cst"
-   click X "#cst"
-   click Y "#cst"
-   click Z "#cst"
-```
-
-Column widths are measured in characters. A column of notes has a width of one character. 
-
-The three notes vertically aligned in the column below are the [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} equivalent of a [F♯]{.colorFs} major chord. Tone [50]{.color0} is able to set the reference frame for all three of these notes, even though they do not all belong to the same octave. Notes that span more than two octaves can be part of the same column but not part of the same reference frame.
-
-```{style="line-height:.9;overflow:visible;font-size:36px;"}
-        2 |       2 |
-46 50 2 0 | 2 0 x 0 |
-        6 |     6 6 |
-```
-
-```{style="line-height:.8"}
-     8 8 |
-   5 x 5 |
-42 x   2 |
-```
-
-```{style="line-height:.8"}
-     2 2 |2 x   2 |
-   0 x 0 |  0 x 0 |
-46 x   6 |    6 6 |
-```
-
-```{style="line-height:.8"}
-52 2 x   |    2 2 |
-50 x 0 x |  0 x 0 |
-46 x   6 |6 x   6 |
-```
-
-```{style="line-height:.8"}
-      52 2 | 2 ∅   2 |
-   50 ∅∅ 0 |   0 ∅ 0 |
-46 ∅∅    6 |     6 6 |
-```
-
-Thanks to this convention, we can  The first example below uses [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} tones to emulate the [F♯]{.colorFs} major chord. because  aligned three notes in column below consists of notes because the previous in the example below below the example below, notes should be played If a chord spans multiple octaves, it has to be specified with tones. In the example below, Tone [46]{.color6} sets the octave and then Tone [50]{.color0}[2]{.color2}) changes it.  indicate that these notes are in Octave 4 The  whereas the chord ([F[♯]{.iosevka}]{.colorFs}[A[♯]{.iosevka}]{.colorAs}[C[♯]{.iosevka}]{.colorCs} = [6]{.color6}[0]{.color0}[2]{.color2}) spans two octaves. When played as an [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order) starting immediately after kkkkk shown below can be written in [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} as one line of text that consists of a [time signature](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure), tones, notes, spaces, and bar (|) characters.
-
-[[4]{.numerator}[4]{.denominator}]{.fraction}[42]{.color2}[&nbsp;]{.iosevka}[5]{.color5}[&nbsp;]{.iosevka}[8]{.color8}[&nbsp;]{.iosevka}[6]{.color6}[&nbsp;]{.iosevka}|[50]{.color0}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}[0]{.color0}[&nbsp;]{.iosevka}|[46]{.color6}[&nbsp;]{.iosevka}[8]{.color8}[&nbsp;]{.iosevka}[5]{.color5}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}<br>[[4]{.numerator}[4]{.denominator}]{.fraction}[42]{.color2}[&nbsp;]{.iosevka}[5]{.color5}[&nbsp;]{.iosevka}[8]{.color8}[&nbsp;]{.iosevka}[6]{.color6}[&nbsp;]{.iosevka}|[50]{.color0}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}[0]{.color0}[&nbsp;]{.iosevka}|[46]{.color6}[&nbsp;]{.iosevka}[8]{.color8}[&nbsp;]{.iosevka}[5]{.color5}[&nbsp;]{.iosevka}[2]{.color2}[&nbsp;]{.iosevka}
-
- at the end of every [measure](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music%20bounded%20by%20vertical%20lines):
-
-[[4]{.numerator}[4]{.denominator}]{.fraction}[42]{.color420}[&nbsp;]{.color0625}[5]{.color5}[&nbsp;]{.color0625}[8]{.color8}[&nbsp;]{.color0625}.
-[time signatures](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure), 
-
-
-4[[4]{.numerator}[4]{.denominator}]{.fraction}| The value of a space depends on the [time signatures](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure), which in [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} consist of a top number that defines the number of musical [beats](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=In%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time) per [measure](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music%20bounded%20by%20vertical%20lines) and a bottom number that determines the number of spaces per musical beat. The number of spaces per measure is the product of the top and bottom numbers.
-
-
-If a time signature is never specified, we assume there are four beats per measure, four spaces per beat, and thus sixteen spaces per measure. Whenever 
-
-The color labels of  the examples below, one musical beat is indicated by four spaces ([&nbsp;&nbsp;&nbsp;&nbsp;]{.color0625}). Therefore, a single space ([&nbsp;]{.color0625}) is worth a quarter of a musical beat, which is the equivalent of an eighth note in [common time](https://en.wikipedia.org/wiki/Time_signature#Symbolic_signatures:~:text=time%2C%20also%20called-,common%20time,-or%20imperfect%20time). Similarly
-
-Each tone in the [arpeggio](https://en.wikipedia.org/wiki/Arpeggio#:~:text=a%20type%20of%20chord%20in%20which%20the%20notes%20that%20compose%20a%20chord%20are%20individually%20sounded%20in%20a%20progressive%20rising%20or%20descending%20order) shown below that consists of the three [C♯]{.colorCs} major chord notes immediately above Middle [C]{.colorC}. Each note in the arpeggio lasts a If we specify that one space ([&nbsp;]{.color0625}) is equivalent to a quarter of a musical beat, this arpeggio could be written in [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} as a series of tones: [42]{.color420}[&nbsp;]{.color0625}[45]{.color450}[&nbsp;]{.color0625}[48]{.color480}[&nbsp;]{.color0625}. To avoid repeating the octave index, we can specify it at the beginning of the line and place a bar character (|) between it and the three notes of the arpeggio: 4|[2]{.color2}[&nbsp;]{.color0625}[5]{.color5}[&nbsp;]{.color0625}[8]{.color8}[&nbsp;]{.color0625}.
-
-
-[Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} indicates note duration with whitespace indicated with one or more spaces following a note or a rest indicates its duration. 
-The single space ([&nbsp;]{.color0625}) that follows each note in the arpeggio example above indicates that each note is held for the shortest duration. The table below shows the note and rest names, symbols, and number of spaces that are equivalent if a quarter note is one beat and there are eight spaces per beat.
-
-
-a single space ([&nbsp;]{.color0625}) is equivalent to an eighth note in. If a piece of music contains sixteenth notes, we will need at least eight spaces per musical is often an eighth note.
-
-If these three notes are to be played simultaneously instead of sequentially, they need to be split across three separate lines:
-
-4|[2]{.color2}[&nbsp;]{.color0625}  
-4|[5]{.color5}[&nbsp;]{.color0625}  
-4|[8]{.color8}[&nbsp;]{.color0625}
-
-
-If the three notes are all quarter C♯, F, and G♯,. 
-Rather than annotate music as a series of tones, [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} first identifies an octave at the beginning of a line before the notes that should be played in that octave. the notes that are played simultaneously instead of sequentially are written on separate lines and aligned vertically using whitespace. The example below shows an below Middle C.
-Notes written on the same line are in the same octave and are played sequentially. 
-Notes can be grouped into a [chord](https://en.wikipedia.org/wiki/Chord_(music)#:~:text=a%20group%5Ba%5D%20of%20notes%20played%20together) such as the [F[♯]{.iosevka}]{.colorFs} major chord ([A[♯]{.iosevka}]{.colorAs}[C[♯]{.iosevka}]{.colorCs}[F[♯]{.iosevka}]{.colorFs}): [0]{.color0}[2]{.color2}[6]{.color6}. All notes, rests, and chords are followed by a [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} separator which indicates their respective durations. A separator that follows a chord applies to all notes in that chord: [0]{.color0}[2]{.color2}[6]{.color6}[&nbsp;&nbsp;&nbsp;&nbsp;]{.color5}. As shown in the table below, [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} separators can be color coded.
-
-:::{style="overflow-x:scroll;"}
-| Note | Rest | Separator                                                                                                   | US name                 | UK name                    |
-|------|------|-------------------------------------------------------------------------------------------------------------|-------------------------|----------------------------|
-| 𝅜   | 𝄺   | [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]{.color0} | double                  | breve                      |
-| 𝅝   | 𝄻   | [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]{.color0}                                                 | whole                   | semibreve                  |
-| 𝅗𝅥   | 𝄼   | [&nbsp;&nbsp;&nbsp;&nbsp;]{.color5}                                                                         | half                    | minim                      |
-| 𝅘𝅥   | 𝄽   | [&nbsp;&nbsp;]{.color250}                                                                                   | quarter                 | crotchet                   |
-| 𝅘𝅥𝅮   | 𝄾   | [𝄖]{.color125}                                                                                             | eighth                  | quaver                     |
-| 𝅘𝅥𝅯   | 𝄿   | [𝄗]{.color0625}                                                                                            | sixteenth               | semiquaver                 |
-| 𝅘𝅥𝅰   | 𝅀   | [𝄘]{.color03125}                                                                                           | thirty-second           | demisemiquaver             |
-| 𝅘𝅥𝅱   | 𝅁   | [𝄙]{.color015625}                                                                                          | sixty-fourth            | hemidemisemiquaver         |
-| 𝅘𝅥𝅲   | 𝅂   | [𝄚]{.color0078125}                                                                                         | hundred twenty-eighth   | semihemidemisemiquaver     |
-| ![](../asset/Semigarrapatea.svg){style="max-width:11px"}  | ![](../asset/Silencio_de_semigarrapatea.svg){style="max-width:11px"} | [𝄛]{.color00390625} | two hundred fifty-sixth | demisemihemidemisemiquaver |
-:::
-
-In [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"}, a rest is denoted by a null sign (∅). Notes, rests, chords, and their separators are grouped into [measures](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music) that have a bar (|) on both sides. Measures are grouped into lines that start with an octave index and end with a [newline](https://en.wikipedia.org/wiki/Newline#:~:text=used%20to%20signify%20the%20end%20of%20a%20line%20of%20text%20and%20the%20start%20of%20a%20new%20one) character. Lines separated by empty lines are played sequentially, whereas groups of lines are played simultaneously.
-
-Since each line that represent Octaves 4 and 5, span Notes 40 to 59, and overlap with the majority of the range of [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} treble clef tones: 41.302 to 61.302. Similarly, two lines representing Octaves 2 and 3 are To cover most of the tone range of the bass clef: 21.302 to 41.302, we need two [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} lines labeled as Octaves 2 and 3, Notes 20 to 39. Of these four lines, the top two cover but the treble clef and the bottom two closely match the bass clef.
-
-The [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} analog of the [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} treble clef is two lines that represent Octaves 4 and 5, 
-to be played separately are separated by spaces and grouped into measures that end with a bar (|). Measures are grouped into lines that start with an octave and [time signature](https://en.wikipedia.org/wiki/Time_signature#:~:text=an%20indication%20in%20music%20notation%20that%20specifies%20how%20many%20note%20values%20of%20a%20particular%20type%20fit%20into%20each%20measure) and end with a [newline](https://en.wikipedia.org/wiki/Newline#:~:text=used%20to%20signify%20the%20end%20of%20a%20line%20of%20text%20and%20the%20start%20of%20a%20new%20one) character.
-
-Groups of lines are played together and are separated by empty lines. With four lines, we can cover Octaves 2, 3, 4, and 5 or equivalently Notes 20 to 59, which is close to the range of the [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} bass and treble [clefs](https://en.wikipedia.org/wiki/Clef#:~:text=a%20musical%20symbol%20used%20to%20indicate%20which%20notes%20are%20represented%20by%20the%20lines%20and%20spaces%20on%20a%20musical%20staff): [21.302]{.colorC2} to [61.302]{.colorC6}. Of these four lines, the top two are analogous to the treble clef and the bottom two closely match the bass clef. 
-
-All rests except whole rests are followed by a fraction: ½ for a half rest, ¼ for a quarter rest, ⅛ for an eighth rest, and so on. The same goes for notes. The first two [measures](https://en.wikipedia.org/wiki/Bar_(music)#:~:text=a%20segment%20of%20music) of the [chorus](https://en.wikipedia.org/wiki/Chorus#:~:text=the%20part%20of%20a%20song%20that%20is%20repeated%20several%20times) from "[Turn the beat around](https://en.wikipedia.org/wiki/Turn_the_Beat_Around#:~:text=a%20disco%20song%20written%20by%20Gerald%20Jackson%20and%20Peter%20Jackson%2C%20and%20performed%20by%20American%20actress%20and%20singer%20Vicki%20Sue%20Robinson%20in%201976)" are shown below, first using [Xet](#xet){.tool data-bs-toggle="tooltip" data-bs-title="Tenet"} music notation and then a [12et](#12et){.tool data-bs-toggle="tooltip" data-bs-title="12 equal temperament"} treble clef.
-
-4[[4]{class="numerator"}[4]{class="denominator"}]{class="fraction"} | 9[[ ]{class="numerator"}[4]{class="denominator"}]{class="fraction"} 9[[ ]{class="numerator"}[8]{class="denominator"}]{class="fraction"} [8[[ ]{class="numerator"}[8]{class="denominator"}]{class="fraction"} 8[[ ]{class="numerator"}[8]{class="denominator"}]{class="fraction"}]{.under} 8[[ ]{class="numerator"}[4]{class="denominator"}]{class="fraction"} 6[[ ]{class="numerator"}[8]{class="denominator"}]{class="fraction"} | 6[[3]{class="numerator"}[4]{class="denominator"}]{class="fraction"} &empty;[[ ]{class="numerator"}[4]{class="denominator"}]{class="fraction"} |
-
-4^4^~4~ | 9~4~ 9~8~ [8~8~ 8~8~]{.under} 8~4~ [6~8~ | 6&sup3;~4~]{.under} &empty;~4~ |
-
-4[[4]{class="numerator"}[4]{class="denominator"}]{class="fraction"} | [9¼]{.mono}
- [9⅛]{.mono} [8[⅛]{.mono} [8⅛]{.mono}]{.under} [8¼]{.mono} [[6⅛]{.mono} | [6¾]{.mono}]{style="text-decoration: underline;"} [&empty;¼]{.mono} |
-
-{{< include /dec/_chorus.qmd >}}
-
-
-# Light and sound {.hiddenheading #sec-las}
-
-In his [1704]{.color704} book entitled [Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[^0], [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a) presented the first [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=Newton's%20asymmetric%20color%20wheel%20based%20on%20musical%20intervals) and linked its colors🎨to musical notes. On [[2025]{.color025}[+]{.mono}[080]{.colorD080}]{.tool data-bs-toggle="tooltip" data-bs-title="May 20, 2025"}, I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm) by [Clint Goss](https://www.clintgoss.com)[^1], which presents a method of connecting musical notes to colors🎨via their frequencies. The note and color🎨pairs in that article are similar to those of the Dechromatic scale.
+![](/asset/metric.jpg)
 
 # US customary units {.hiddenheading #sec-ucu}
 
-The [unit conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed) table below shows the [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)🇺🇸([US](#us){#unitedstates .tool data-bs-toggle="tooltip" data-bs-title="United States"}) customary units that Dec redefines. The values in the first column are approximate [fold changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement) from original to redefined units. A fold change of [1]{.color0} means [0]{.color0} [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared). Identical fold changes indicate [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units derived from the same Dec and [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}) units.
+Dec redefines [US](#us){#unitedstates .tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units to facilitate conversion with [SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} and Dec units. The values in the first column of [unit conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed) table below are approximate [fold changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement) from original to redefined [US](#us){#unitedstates .tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units. A fold change of [1]{.color0} means [0]{.color0} [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared) is requires for alignment with the [SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} and Dec units shown in the second and third column, respectively.
 
 ## Unit conversion tables {.hiddenheading .unnumbered}
 

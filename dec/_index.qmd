@@ -1816,6 +1816,522 @@ hSqMi = d3.hsl(piecewiseColor(fMile**2 % 1)).h
 bcHue = (xetHue[1] + xetHue[2]) / 2
 ddsHue = (xetHue[4] + xetHue[5]) / 2
 dseHue = (xetHue[5] + xetHue[6]) / 2
+// https://observablehq.com/@mcmire/tone-map
+GraphableTone = {
+  const _assertRequiredKeys = Symbol("assertRequiredKeys");
+  class GraphableTone {
+    constructor(args) {
+      this[_assertRequiredKeys](args);
+      const { recognizedProps, unrecognizedProps } = lod.reduce(
+        args,
+        (results, value, key) => {
+          if (this.constructor.knownKeys.indexOf(key) !== -1) {
+            results.recognizedProps[key] = value;
+          } else {
+            results.unrecognizedProps[key] = value;
+          }
+          return results;
+        },
+        { recognizedProps: {}, unrecognizedProps: {} }
+      );
+      this._setProps(recognizedProps, unrecognizedProps);
+    }
+    get origin() {
+      return this._origin;
+    }
+    set origin(origin) {
+      this._origin = Fraction(origin);
+    }
+    get frequency() {
+      return this.origin.mul(this.ratio);
+    }
+    cloneWith(overrideProps) {
+      const recognizedProps = lod.pick(this, this.constructor.knownKeys);
+      return new this.constructor({
+        ...recognizedProps,
+        ...this.unrecognizedProps,
+        ...overrideProps
+      });
+    }
+    toPlainObject() {
+      const recognizedProps = lod.pick(this, this.constructor.knownKeys);
+      return {
+        ...recognizedProps,
+        ...this.unrecognizedProps
+      }; 
+    }
+    toDebug() {
+      return {
+        ...this,
+        ratio: `${this.ratio.n}/${this.ratio.d}`,
+        frequency: this.frequency.valueOf(),
+        origin: this.origin.valueOf(),
+        seriesIndex: this.seriesIndex,
+        colorIndex: this.colorIndex,
+        index: this.index,
+        alwaysShowLabel: this.alwaysShowLabel
+      };
+    }
+    _setProps(recognizedProps, unrecognizedProps) {
+      this.ratio = recognizedProps.ratio;
+      this.origin = recognizedProps.origin != null ? recognizedProps.origin : originFrequency;
+      this.index = recognizedProps.index;
+      this.seriesIndex = recognizedProps.seriesIndex != null ? recognizedProps.seriesIndex : 0;
+      this.colorIndex = recognizedProps.colorIndex != null ? recognizedProps.colorIndex : this.seriesIndex;
+      this.alwaysShowLabel = recognizedProps.alwaysShowLabel != null ? recognizedProps.alwaysShowLabel : true;
+      Object.assign(this, unrecognizedProps);
+      this.unrecognizedProps = unrecognizedProps;
+    }    
+    [_assertRequiredKeys](args) {
+      const missingKey = this.constructor.requiredKeys.find(requiredKey => {
+        return !args.hasOwnProperty(requiredKey);
+      });
+      if (missingKey != null) {
+        throw new Error(`Missing key: ${missingKey}`);
+      }
+    }
+  }
+  GraphableTone.knownKeys = [
+    "ratio",
+    "origin",
+    "index",
+    "seriesIndex",
+    "colorIndex",
+    "alwaysShowLabel"
+  ];
+  GraphableTone.requiredKeys = ["ratio"];
+  GraphableTone.wrap = (value, options = {}) => {
+    const defaults = options.defaults || {};
+    if (value instanceof GraphableTone) {
+      return value;
+    } else {
+      return new GraphableTone({ ...defaults, ...value });
+    }
+  }
+  return GraphableTone;
+}
+renderGraph = (possibleTones, config = {}) => {
+  const tones = possibleTones.map((possibleTone, index) => {
+    return GraphableTone.wrap(possibleTone, { defaults: { index }});
+  });
+  const mapToY = mapToYFor(tones, config);
+  synth.releaseAll();
+  const height = graphHeight;
+  const svg = d3.select(DOM.svg(width, height))
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("preserveAspectRatio", "xMidYMid meet")
+    .style("width", "100%")
+    .style("height", "auto");
+  if (config.drawConnections) {
+    addConnectionsTo(svg, tones, config);
+  }
+  addStiltsTo(svg, tones, config); 
+  const circles = addPointsTo(svg, tones, config);
+  addPointLabelsTo(svg, tones, config);
+  addXAxisTo(svg, tones, config);
+  // addYAxisTo(svg, tones, config);
+  augmentGraphToPlayTones(svg, circles, {
+    getTonesFrom: (tone) => [tone],
+    onMouseDown: (circle, tone) => {
+      circle.transition("mousedown")
+        .duration(transitionDuration)
+        .ease(d3.easeLinear)
+        .attr("r", pointRadius * 2);
+      svg.select(`.point-label--${tone.seriesIndex}--${tone.index}`)
+        .transition()
+        .attr("opacity", 1)
+        .attr("y", t => mapToY(t.label) - (pointRadius * 2) - 10);
+    },
+    onMouseUp: (circle, tone) => {
+      circle.transition("mouseup")
+        .duration(transitionDuration)
+        .ease(d3.easeLinear)
+        .attr("r", pointRadius);
+      svg.selectAll(".point-label")
+        .transition()
+        .attr("opacity", t => (t.alwaysShowLabel && !config.drawConnections) ? 1 : 0)
+        .attr("y", t => mapToY(t.label) - (pointRadius * 2));
+    }
+  });
+  return svg.node();
+}
+graphHeight = 350
+augmentGraphToPlayTones = (
+  svg,
+  elements,
+  {
+    getTonesFrom,
+    getTargetFrom = (element) => element,
+    eventSource = "augmentGraphToPlayTones",
+    onMouseDown = () => {},
+    onMouseUp = () => {}, 
+  }
+) => {
+  const BUFFER_TIME = 250; // ms
+  const notesBeingPlayed = [];
+  const interruptAllEventsFor = (selection) => {
+    selection
+      .interrupt("mouseover")
+      .interrupt("mouseout")
+      .interrupt("mousedown");
+  };
+  elements.each((datum, i, nodes) => {
+    const element = d3.select(nodes[i]);
+    const target = getTargetFrom(element);
+    target
+      .style("cursor", "pointer")
+      .on(`mousedown.${eventSource}`, () => {
+        interruptAllEventsFor(target);
+        getTonesFrom(datum).forEach(tone => {
+          synth.triggerAttack((tone.freq ?? tone.frequency.valueOf()));
+          notesBeingPlayed.push({
+            datum: datum,
+            target: target,
+            element: element,
+            tone: tone,
+            time: new Date()
+          });
+        });
+        onMouseDown(target, datum, element);
+      });
+  });
+  svg.on(`mouseup.${eventSource}`, () => {
+    const fn = (note) => {
+      interruptAllEventsFor(note.target);
+      synth.triggerRelease((note.tone.freq ?? note.tone.frequency.valueOf()));
+      onMouseUp(note.target, note.datum, note.element);
+    };
+    notesBeingPlayed.forEach(note => {
+      const now = new Date();
+      const timeBuffer = BUFFER_TIME - (now - note.time);
+      if (timeBuffer > 0) {
+        setTimeout(() => fn(note), timeBuffer);
+      } else {
+        fn(note);
+      }
+    });
+    // clear the whole thing
+    notesBeingPlayed.splice(0, notesBeingPlayed.length);
+  });
+}
+reduceFraction = (fraction, { min, max }) => {
+  let n = 0;
+  while (fraction.valueOf() < min || fraction.valueOf() > max) {
+    if (n > 100) {
+      throw "Too many iterations";
+    }
+    if (fraction > max) {
+      fraction = fraction.div(2);
+    } else if (fraction < min) {
+      fraction = fraction.mul(2);
+    }
+    n++;
+  }
+  return fraction;
+}
+primeNumbersUpTo = (limit) => {
+  const maxMultiple = Math.sqrt(limit);
+  const workingPrimes = lod.range(2, limit + 1).reduce((o, n) => ({ ...o, [n]: true }), {});
+  for (let multiple = 2; multiple <= maxMultiple; multiple++) {
+    if (workingPrimes[multiple]) {
+      for (let nonPrime = multiple * multiple; nonPrime <= limit; nonPrime += multiple) {
+        workingPrimes[nonPrime] = false;
+      }
+    }
+  }
+  const primes = lod.reduce(workingPrimes, (array, isPrime, n) => {
+    if (isPrime) {
+      return array.concat([
+        parseInt(n, 10)
+      ]);
+    } else {
+      return array;
+    }
+  }, []);
+  return [1].concat(primes);
+}
+synth = new Tone.PolySynth(16, Tone.Synth, {
+  oscillator: {
+    type: "sine",
+    volume: -20
+  },
+  envelope: {
+    attack: 0.05,
+    decay: 0,
+    sustain: 1,
+    release: 1.2
+  }
+}).toMaster()
+origin = Fraction(originFrequency)
+axisColor = d3.hsl(0, 0, 0.5)
+lollimargin = ({top: 35, right: 10, bottom: 25, left: 8})
+numberOfColors = 10
+rowHeight = 60
+originFrequency = 440
+pointRadius = 10
+transitionDuration = 200
+addStiltsTo = (svg, tones, config) => {
+  const mapToX = mapToXFor(tones, config);
+  const mapToY = mapToYFor(tones, config);
+  const height = calculateGraphHeight(tones);
+  svg
+    .append("g")
+    .attr("stroke", axisColor)
+    .attr("stroke-dasharray", "2, 3")
+    .attr("stroke-width", 1)
+    .selectAll("line")
+    .data(tones)
+    .enter().append("line")
+      .attr("x1", tone => mapToX(tone.x ?? tone.frequency))
+      .attr("x2", tone => mapToX(tone.x ?? tone.frequency))
+      .attr("y1", tone => mapToY(tone.label))
+      .attr("y2", height - lollimargin.bottom);
+}
+addPointsTo = (svg, tones, config) => {
+  const mapToX = mapToXFor(tones, config);
+  const mapToY = mapToYFor(tones, config);
+  const colors = colorsFor(tones);
+  const circles = svg
+    .append("g")
+    .selectAll("circle")
+    .data(tones)
+    .enter().append("circle")
+      .attr("cx", t => mapToX(t.x ?? t.frequency))
+      .attr("cy", t => mapToY(t.label))
+      .attr("r", pointRadius)
+      .attr("fill", t => t.color ?? (t.isColored === false ? "#ccc" : colors[t.colorIndex]))
+      .attr("stroke", axisColor)
+      .attr("stroke-width", 1);
+  return circles;
+}
+addPointLabelsTo = (svg, tones, config) => {
+  const mapToX = mapToXFor(tones, config);
+  const mapToY = mapToYFor(tones, config);
+  const colors = colorsFor(tones);
+  svg
+    .append("g")
+    .selectAll("text")
+      .data(tones)
+      .enter().append("text")
+        .attr("class", (tone, i) => {
+          return `point-label point-label--${tone.seriesIndex}--${tone.index}`;
+        })
+        .text(tone => {
+          if (tone.label != null) return tone.label;
+          const ratioAsString = `${tone.ratio.n}/${tone.ratio.d}`;
+          if (tone.frequency.equals(tone.origin)) {
+            return tone.origin;
+          } else {
+            return ratioAsString;
+          }
+        })
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "24px")
+        .attr("font-weight", "bold")
+        .attr("text-anchor", "middle")
+        .attr("fill", t => t.color ?? (t.isColored === false ? "#ccc" : colors[t.colorIndex]))
+        .attr("stroke", axisColor)
+        .attr("stroke-width", 1)
+        .attr("paint-order", "stroke")
+        .attr("stroke-linejoin", "round")
+        .attr("x", t => mapToX(t.x ?? t.frequency) - 15)
+        .attr("y", t => mapToY(t.label) - (pointRadius * 2))
+        .attr("opacity", (t, _) => {
+          return (t.alwaysShowLabel && !config.drawConnections) ? 1 : 0;
+        });
+}
+addYAxisTo = (svg, tones, config) => {
+  const mapToY = mapToYFor(tones, config);
+  const axis = d3.axisLeft(mapToY);
+  svg.append("g")
+    .attr("transform", `translate(${lollimargin.left * 3},0)`)
+    .call(axis)
+    .selectAll("text")
+      .attr("font-size", config.axisFontSize ?? "16px");
+}
+addXAxisTo = (svg, tones, config) => {    
+  svg.append("g").call(g => {
+    const height = calculateGraphHeight(tones);
+    const axis = d3.axisBottom(mapToXFor(tones, config)).tickSizeOuter(0);
+    if (config.xAxis != null && config.xAxis.ticks) {
+      axis.tickValues(config.xAxis.ticks);
+    }
+    const axisGroup = g
+      .attr("transform", `translate(0,${height - lollimargin.bottom})`)
+      .call(axis);
+    axisGroup.selectAll("text")
+      .attr("font-size", width < 400 ? "8px" :  width < 450 ? "9px" : width < 500 ? "10px" : width < 550 ? "11px" : width < 600 ? "12px" : width < 600 ? "14px" : width < 650 ? "14px" : width < 700 ? "16px" : width < 800 ? "18px" : width < 900 ? "20px" : "22px")
+      .attr("fill", axisColor.darker(1));
+    axisGroup.selectAll("path")
+      .attr("stroke", axisColor);
+    axisGroup.selectAll("line")
+      .attr("stroke", axisColor);
+  });
+  svg.append("text")
+  .attr("x", (width - lollimargin.left - lollimargin.right) / 4 + lollimargin.left)
+  .attr("y", calculateGraphHeight(tones) + (width < 450 ? 6 : width < 500 ? 8 : width < 550 ? 10 : width < 600 ? 12 : width < 600 ? 14 : width < 650 ? 14 : width < 700 ? 16 : width < 800 ? 18 : width < 900 ? 20 : 22))
+  .attr("text-anchor", "middle")
+  .attr("font-size", config.axisTitleFontSize ?? (width < 600 ? "12px" : width < 600 ? "14px" : width < 650 ? "14px" : width < 700 ? "16px" : width < 800 ? "18px" : width < 900 ? "20px" : "22px"))
+  .attr("fill", config.axisTextColor ?? axisColor.darker(1))
+  .text(config.xAxisTitle ?? "Perbeat (inverse centimilliday)");
+}
+addConnectionsTo = (svg, tones, config) => {
+  const connections = ToneConnections.generate(tones, config);
+  const gradients = Object.values(
+    lod.keyBy(
+      connections.map(connection => connection.gradient),
+      gradient => gradient.id
+    )
+  );
+  const linearGradientGroup = svg.append("defs")
+    .selectAll("linearGradient")
+    .data(gradients)
+    .enter().append("linearGradient")
+      .attr("id", gradient => gradient.id);
+  linearGradientGroup.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", gradient => gradient.from);
+  linearGradientGroup.append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", gradient => gradient.to);
+  svg.append("g")
+    .selectAll("path")
+    .data(connections)
+    .enter().append("path")
+      .attr("d", connection => {
+        const curve = connection.curve;
+        return [
+          `M ${curve.start.x} ${curve.start.y}`,
+          /*
+          `C ${curve.control1.x} ${curve.control1.y}`,
+          `${curve.control2.x} ${curve.control2.y}`,
+          */
+          `L ${curve.end.x} ${curve.end.y + 0.1}`
+        ].join(" ");
+      })
+      .attr("stroke-width", "1px")
+      .attr("stroke", connection => `url(#${connection.gradient.id})`)
+      .attr("fill", "none");
+  svg.append("g")
+    .selectAll("text")
+    .data(connections)
+    .enter().append("text")
+      .text(connection => connection.text.content)
+      .attr("font-family", "sans-serif")
+      .attr("font-size", "13px")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "middle")
+      .attr("x", connection => connection.text.x)
+      .attr("y", connection => connection.text.y)
+      .attr("transform", connection => {
+        return `rotate(${connection.text.angle} ${connection.text.x} ${connection.text.y})`
+      })
+      .attr("fill", connection => connection.gradient.to)
+}
+ToneConnections = {
+  const gradients = {};
+  let lastGradientIndex = 0;
+  class ToneConnections {
+    constructor(tones, config) {
+      this.tones = tones;
+      this.combinationsOfTones = [...G.clone.combination(tones, 2)];
+      this.results = [];
+      this.mapToX = mapToXFor(tones, config);
+      this.colors = colorsFor(tones);
+    }
+    generate() {
+      this.combinationsOfTones.forEach(([tone1, tone2], index) => {
+        const point1 = { x: this.mapToX(tone1.x ?? tone1.frequency), y: mapToY(tone1.label) };
+        const point2 = { x: this.mapToX(tone2.x ?? tone2.frequency), y: mapToY(tone2.label) };
+        const curveHeight = Math.sqrt(5 * (point2.x - point1.x));
+        const controlPosition = (point2.x - point1.x) / 10;
+        const curve = {
+          start: point1,
+          control1: { x: point1.x + controlPosition, y: point1.y - curveHeight },
+          control2: { x: point2.x - controlPosition, y: point1.y - curveHeight },
+          end: point2
+        };
+        const xDist = curve.end.x - curve.start.x;
+        const yDist = curve.end.y - curve.start.y;
+        const ratioDiff = (tone2.ratio > tone1.ratio)
+          ? tone2.ratio.div(tone1.ratio)
+          : tone1.ratio.div(tone2.ratio);
+        const text = {
+          x: curve.start.x + (xDist / 2) + 5,
+          y: curve.start.y + (yDist / 2) - 5,
+          angle: Math.atan(yDist / xDist) * (360 / (2 * Math.PI)),
+          content: ratioDiff.toFraction()
+        };
+        const gradient = this._findOrAddGradientFor(tone1, tone2);
+        this.results.push({ curve, gradient, text });
+      });
+    }
+    _findOrAddGradientFor(tone1, tone2) {
+      const color1 = this.colors[tone1.colorIndex];
+      const color2 = this.colors[tone2.colorIndex];
+      const key = [color1.toString(), color2.toString()].join("/");
+      if (key in gradients) {
+        return gradients[key];
+      } else {
+        lastGradientIndex++;
+        const gradient = {
+          from: color1,
+          to: color2,
+          id: `gradient-${lastGradientIndex}`
+        };
+        gradients[key] = gradient;
+        return gradient;
+      }
+    }
+  }
+  ToneConnections.generate = (tones, config) => {
+    const connections = new ToneConnections(tones, config);
+    connections.generate();
+    return connections.results;
+  }
+  return ToneConnections;
+}
+mapToXFor = (tones, options = {}) => {
+  const xAxis = options.xAxis || {};
+  const frequencies = tones.map(t => t.x ?? t.frequency);
+  const min = xAxis.min != null ? xAxis.min : d3.min(frequencies);
+  const max = xAxis.max != null ? xAxis.max : d3.max(frequencies);
+  let scale = d3.scaleLog()
+    .base(2)
+    .domain([min, max]);
+  if (xAxis.nice) {
+    scale = scale.nice();
+  }
+  scale = scale.range([lollimargin.left * 4, width / 2 - (lollimargin.right * 2)]);
+  return scale;
+}
+mapToYFor = (tones, options = {}) => {
+  const labels = tones.map(t => t.label);
+  const height = calculateGraphHeight(tones);
+  return d3.scalePoint()
+    .domain(labels)
+    .range([height - lollimargin.bottom, lollimargin.top])
+    .padding(0.5);
+}
+mapToY = index => {
+  return lollimargin.top + (rowHeight * index) + (rowHeight / 2);
+}
+colorsFor = tones => {
+  return lod.range(0, 360, 360 / numberOfColorsAmong(tones)).map(hue => d3.hcl(hue, 70, 80))
+}
+numberOfColorsAmong = (tones) => lod.uniqBy(tones, t => t.colorIndex).length
+calculateGraphHeight = tones => {
+  const numberOfSeries = Object.keys(lod.countBy(tones, "seriesIndex")).length;
+  return lollimargin.top + (rowHeight * numberOfSeries) + lollimargin.bottom + 200;
+}
+lod = require("lodash@4.17.0")
+G = require("generatorics@1.1.0")
+Tone = require("tone@0.12.80")
+Fraction = require("fraction.js@4.0.8")
+colors = [...Array(10).keys()].map(x => x / 10).map(piecewiseColor).map(d3.color).map(x => x.hex())
+hertz = origs.map(x => x / .864)
+labels = [...Array(10).keys()].map(x => x + 40)
+origs = labels.map(x => 14.1275 * 2 **(x / 10))
 ```
 
 ```{ojs}
@@ -2892,6 +3408,10 @@ div.cell#csharpstaff * {
 }
 figcaption {
   display: none;
+}
+#lollipop {
+  overflow: visible;
+  width: 200%;
 }
 </style>
 ```
