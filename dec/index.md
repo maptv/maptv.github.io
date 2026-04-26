@@ -2002,7 +2002,7 @@ data-bs-title="zone equatorial meter">zem</span>
 (<a href="#z3" id="cubiczem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic zem">z³</a>) would likely fit under a typical chair
 or in between the shins of two people sitting in front of each other
-with their knees and feet1
+with their knees and feet 1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> apart and their legs🦵bent at 25
 <span class="tool" data-bs-toggle="tooltip"
@@ -2234,14 +2234,14 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 # Octave equals decastep
 
 In addition to <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a>, the limits of human hearing can be
+data-bs-title="perbeats">p</a>, the limits of human hearing can also be
 expressed in decioctaves
 (<a href="#do" id="decioctave" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decioctaves">do</a>). The approximate audible range for
 humans is <span class="color3">3</span> to
 <span class="color3">103</span>
 <a href="#do" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decioctaves">do</a>. For comparision, the
+data-bs-title="decioctaves">do</a>. The
 [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play)
 of an 88-key piano is <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>23.76 to <span class="tool"
@@ -2254,13 +2254,13 @@ data-bs-title="decioctaves">do</a>. The equations below show how a
 decimal
 [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other)
 (<a href="#o" id="octave" class="tool" data-bs-toggle="tooltip"
-data-bs-title="octave">o</a>) can be used to calculate
+data-bs-title="octave">o</a>) can be used to calculate a
 <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeat">p</a>,
 <a href="#do" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decioctave">do</a>, and musical note
 (<a href="#n" id="note" class="tool" data-bs-toggle="tooltip"
-data-bs-title="musical note">n</a>) values.
+data-bs-title="musical note">n</a>).
 
 $$\text{o} = \log_2\\\left(\frac{\text{p}}{14.1275}\right) = \frac{\text{do}}{10}$$
 
@@ -2288,13 +2288,16 @@ by [Clint Goss](https://www.clintgoss.com)[2], which presents a
 mathematical method of associating musical notes with colors by
 transforming sound frequencies into light frequencies.
 
-The x-axis of the lollipop🍭plot below shows the rounded
-<a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeat">p</a> values of the ten Dec notes in Octave 4.
-The lollipops and the
+The lollipops🍭in the chart below represent the ten Dec notes in Octave
+4. The lollipops and the
 <a href="#do" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decioctaves">do</a> values above them are labeled with
-the ten Dec colors. Click and hold each lollipop to hear its note.
+the ten Dec colors. Beneath each lollipop is its corresponding frequency
+rounded to the nearest
+<a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeat">p</a>. Click and hold each lollipop to hear its
+note. The chart demonstrates how data points can be labeled with both
+color and sound.
 
 ``` {ojs}
 //| echo: false
@@ -2381,12 +2384,15 @@ data-bs-title="zem">z</a>.
 
 ## Unit conversion tables
 
-With the exception of a horse🐴length, the units in the table below can
+The
+[unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%20comparable%29-,one%2Ddimensional,-quotations%C2%A0%E2%96%BC)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="unidimensional">1d</span>) units in the table below can
 be divided into two groups:
-[human-based](https://en.wikipedia.org/wiki/List_of_human-based_units_of_measurement#:~:text=units%20of%20measurement%20based%20on%20human%20body%20parts)
-length units and
+[human-](https://en.wikipedia.org/wiki/List_of_human-based_units_of_measurement#:~:text=units%20of%20measurement%20based%20on%20human%20body%20parts)
+or horse-based length units and
 [surveying](https://en.wikipedia.org/wiki/Surveying#:~:text=determining%20the%20terrestrial%20positions%20of%20points%20based%20on%20the%20distances%20and%20angles%20between%20them)
-distance units. A horse length is about as long as a
+distance units. A horse🐴length is about as long as a
 [cruiser](https://en.wikipedia.org/wiki/Cruiser_(motorcycle)#:~:text=a%20motorcycle%20in%20the%20style%20of%20those%20made%20by%20American%20manufacturers)
 or [touring
 motorcycle](https://en.wikipedia.org/wiki/Touring_motorcycle#:~:text=a%20type%20of%20motorcycle%20designed%20for%20touring)🏍️,
@@ -2397,16 +2403,18 @@ to
 [mid-size](https://en.wikipedia.org/wiki/Mid-size_car#:~:text=larger%20than%20compact%20cars%20and%20smaller%20than%20full%2Dsize%20cars)
 car.
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 47%" />
-<col style="width: 44%" />
-<col style="width: 7%" />
+<col style="width: 61%" />
+<col style="width: 33%" />
+<col style="width: 5%" />
 </colgroup>
 <thead>
 <tr>
 <th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> length units</th>
+data-bs-title="United States">US</a> <span class="bold tool"
+data-bs-toggle="tooltip" data-bs-title="unidimensional">1d</span>
+units</th>
 <th><a href="#z" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</a></th>
 <th>meter</th>
@@ -2512,14 +2520,16 @@ href="https://en.wikipedia.org/wiki/League_(unit)">leagues</a></td>
 </tbody>
 </table>
 
-When we divide distance by time, we get speed. Coincidentally, a mile
-per hour is very close to a
+When we divide a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="unidimensional">1d</span> unit by a time unit, we get a
+speed unit. A mile per hour is very close to a
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> per
 <a href="#b" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</a> and a
-[knot](https://en.wikipedia.org/wiki/Knot_(unit)#:~:text=a%20unit%20of%20speed%20equal%20to%20one%20nautical%20mile%20per%20hour)
-is almost exactly the same as 10/9
+[knot](https://en.wikipedia.org/wiki/Knot_(unit)#:~:text=a%20unit%20of%20speed%20equal%20to%20one%20nautical%20mile%20per%20hour),
+which is used to measure the speed of aircraft and watercraft, is almost
+exactly the same as 10/9
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> per
 <a href="#b" class="tool" data-bs-toggle="tooltip"
@@ -2558,21 +2568,21 @@ data-bs-title="kilometers">km</a>/hour</th>
 <tbody>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Inch_per_second">inches per
+href="https://en.wikipedia.org/wiki/Inch_per_second">inches /
 second</a></td>
 <td><span class="mono">0.054</span></td>
 <td><span class="mono">0.09</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Foot_per_second">feet per
+href="https://en.wikipedia.org/wiki/Foot_per_second">feet /
 second</a></td>
 <td><span class="mono">0.648</span></td>
 <td><span class="mono">1.08</span></td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
-href="https://en.wikipedia.org/wiki/Miles_per_hour">miles per
+href="https://en.wikipedia.org/wiki/Miles_per_hour">miles /
 hour</a></td>
 <td><span class="mono">0.96</span></td>
 <td><span class="mono">1.6</span></td>
@@ -2582,7 +2592,28 @@ hour</a></td>
 
 # Are hectare acre
 
-A square <span class="tool" data-bs-toggle="tooltip"
+If we raise a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="unidimensional">1d</span> unit to the second power, we
+get a
+[bidimensional](https://en.wiktionary.org/wiki/bidimensional#:~:text=not%20comparable%29-,Two%2Ddimensional,-.)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="bidimensional">2d</span>) area unit. A
+<a href="#z2" class="tool" data-bs-toggle="tooltip"
+data-bs-title="square zem">z²</a> is 1 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="1.6 thousandths of an are">hexamilliare</span>
+(<a href="#x" id="hexamilliare" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hexamilliare">x</a>), 16 square (sq.) <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="tenths of a meter">decimeters</span>
+(<a href="#dm2" id="squaredecimeter" class="tool"
+data-bs-toggle="tooltip" data-bs-title="square decimeters">dm²</a>),
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>0.1975 Dec [sq.
+yards](https://en.wikipedia.org/wiki/Square_yard#:~:text=U.S.%20customary%20unit%20of%20area),
+1.<span class="vinculum">7</span> Dec [sq.
+feet](https://en.wikipedia.org/wiki/Square_foot#:~:text=the%20area%20of%20a%20square%20with%20sides%20of%201%20foot),
+or 256 Dec sq. inches. A sq. <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a thousand zems">kilozem</span>
 (<a href="#kz2" id="squarekilozem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square kilozem">kz²</a>) is 1 <span class="tool"
@@ -2593,61 +2624,33 @@ class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundreds of ares">hectares</a>, 1600
 [ares](https://en.wikipedia.org/wiki/Hectare#Are), 40 Dec
 [acres](https://en.wikipedia.org/wiki/Acre#:~:text=%20is-,a%20unit%20of%20land%20area,-used%20in%20the),
-0.16 square <a
+0.16 sq. <a
 href="https://en.wikipedia.org/wiki/Kilometre#:~:text=a%20unit%20of%20length%20in%20the%20International%20System%20of%20Units"
 class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of meters">kilometers</a>
 (<a href="#km2" id="squarekilometer" class="tool"
 data-bs-toggle="tooltip" data-bs-title="square kilometers">km²</a>),
-0.0625 Dec [square
+0.0625 Dec [sq.
 miles](https://en.wikipedia.org/wiki/Square_mile#:~:text=US%20unit%20of%20measure%20for%20area),
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a million">10<sup>6</sup></span>
 <a href="#z2" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square zems">z²</a>, or 1 megahexamilliare
 (<a href="#Mx" id="megahexamilliare" class="tool"
-data-bs-toggle="tooltip" data-bs-title="megahexamilliare">Mx</a>). A
-<a href="#z2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zem">z²</a> is 1 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="1.6 thousandths of an are">hexamilliare</span>
-(<a href="#x" id="hexamilliare" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexamilliare">x</a>), 16 square <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="tenths of a meter">decimeters</span>
-(<a href="#dm2" id="squaredecimeter" class="tool"
-data-bs-toggle="tooltip" data-bs-title="square decimeters">dm²</a>),
-1.<span class="vinculum">7</span> Dec [square
-feet](https://en.wikipedia.org/wiki/Square_foot#:~:text=the%20area%20of%20a%20square%20with%20sides%20of%201%20foot)🦶
-(<a href="#f2" id="squarefoot" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square feet">f²</a>), or 256 Dec square inches
-(<a href="#i2" id="squareinch" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square inch">i²</a>). A square <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="ten zem">decazem</span>
-(<a href="#Dz2" id="squaredecazem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square decazem">Dz²</a>) is 1 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="sixteen hundredths of an are">hexadeciare</span>, 16
-[square
-meters](https://en.wikipedia.org/wiki/Square_metre#:~:text=the%20unit%20of%20area%20in%20the%20International%20System%20of%20Units)
-(<a href="#m2" id="squaremeter" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square meters">m²</a>), <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>19.75 Dec
-[square
-yards](https://en.wikipedia.org/wiki/Square_yard#:~:text=U.S.%20customary%20unit%20of%20area),
-or 100 <a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hexamilliares">x</a>.
+data-bs-toggle="tooltip" data-bs-title="megahexamilliare">Mx</a>).
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 32%" />
-<col style="width: 33%" />
+<col style="width: 46%" />
+<col style="width: 26%" />
+<col style="width: 27%" />
 </colgroup>
 <thead>
 <tr>
 <th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> area units</th>
+data-bs-title="United States">US</a> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="bidimensional">2d</span>
+units</th>
 <th><a href="#cz2" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="square centizem">cz²</a></th>
 <th><a href="#cm2" class="bold tool" data-bs-toggle="tooltip"
@@ -2657,37 +2660,35 @@ data-bs-title="square centimeter">cm²</a></th>
 <tbody>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
-href="https://en.wikipedia.org/wiki/Square_inch">square inches</a></td>
+href="https://en.wikipedia.org/wiki/Square_inch">sq. inches</a></td>
 <td><span class="mono">39.0625</span></td>
 <td><span class="mono">6.25</span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
-href="https://en.wikipedia.org/wiki/Square_foot">square feet</a></td>
+href="https://en.wikipedia.org/wiki/Square_foot">sq. feet</a></td>
 <td><span class="mono">5625</span></td>
 <td><span class="mono">900</span></td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
-href="https://en.wikipedia.org/wiki/Square_yard">square yards</a></td>
+href="https://en.wikipedia.org/wiki/Square_yard">sq. yards</a></td>
 <td><span class="mono">50625</span></td>
 <td><span class="mono">8100</span></td>
 </tr>
 <tr>
 <td><span class="colorSqMi">0.9884</span> <a
-href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
-<td><span class="mono">25 × 10<sup>7</sup></span></td>
-<td><span class="mono">4 × 10<sup>7</sup></span></td>
-</tr>
-<tr>
-<td><span class="colorSqMi">0.9884</span> <a
-href="https://en.wikipedia.org/wiki/Square_mile">square miles</a></td>
+href="https://en.wikipedia.org/wiki/Square_mile">sq. miles</a></td>
 <td><span class="mono">16 × 10<sup>10</sup></span></td>
 <td><span class="mono">256 × 10<sup>8</sup></span></td>
 </tr>
 </tbody>
 </table>
 
+Similarly, raising a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="unidimensional">1d</span> unit to the third power yields
+a tridimensional (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tridimensional">3d</span>) volume unit. us
 <a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary volume units have
 intuitive names and scale by [powers of
@@ -2695,14 +2696,16 @@ two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20
 
 <table>
 <colgroup>
-<col style="width: 39%" />
-<col style="width: 30%" />
-<col style="width: 30%" />
+<col style="width: 45%" />
+<col style="width: 26%" />
+<col style="width: 27%" />
 </colgroup>
 <thead>
 <tr>
 <th><span class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</span> volume units</th>
+data-bs-title="United States">US</span> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="tridimensional">3d</span>
+units</th>
 <th><a href="#cz3" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="cubic centizem">cz³</a></th>
 <th><a href="#cm3" class="bold tool" data-bs-toggle="tooltip"
@@ -5403,7 +5406,7 @@ renderGraph = (possibleTones, config = {}) => {
   synth.releaseAll();
   const height = graphHeight;
   const svg = d3.select(DOM.svg(width, height))
-    .attr("viewBox", `0 -10 ${width} ${height}`)
+    .attr("viewBox", `0 -25 ${width} ${height}`)
     .attr("preserveAspectRatio", "xMidYMid meet")
     .style("width", "100%")
     .style("height", "auto");
@@ -5440,7 +5443,7 @@ renderGraph = (possibleTones, config = {}) => {
   });
   return svg.node();
 }
-graphHeight = 350
+graphHeight = 400
 augmentGraphToPlayTones = (
   svg,
   elements,
@@ -5549,11 +5552,11 @@ synth = new Tone.PolySynth(16, Tone.Synth, {
 }).toMaster()
 origin = Fraction(originFrequency)
 axisColor = d3.hsl(0, 0, 0.5)
-lollimargin = ({top: 30, right: 10, bottom: 20, left: 8})
+lollimargin = ({top: 30, right: 10, bottom: 30, left: 10})
 numberOfColors = 10
 rowHeight = 60
 originFrequency = 440
-pointRadius = width < 400 ? 8 :  width < 450 ? 10 : width < 500 ? 12 : width < 550 ? 14 : width < 600 ? 16 : width < 650 ? 18 : width < 700 ? 20 : width < 750 ? 22 : width < 800 ? 24 : width < 850 ? 26 : width < 900 ? 28 : width < 950 ? 30 : 32
+pointRadius = width < 400 ? 4 :  width < 450 ? 5 : width < 500 ? 6 : width < 550 ? 7 : width < 600 ? 8 : width < 650 ? 9 : width < 700 ? 10 : width < 750 ? 11 : width < 800 ? 12 : width < 850 ? 13 : width < 900 ? 14 : width < 950 ? 15 : 16
 transitionDuration = 200
 addStiltsTo = (svg, tones, config) => {
   const mapToX = mapToXFor(tones, config);
@@ -5611,12 +5614,12 @@ addPointLabelsTo = (svg, tones, config) => {
           }
         })
         .attr("font-family", "sans-serif")
-        .attr("font-size", "24px")
+        .attr("font-size", width < 400 ? "12px" :  width < 450 ? "14px" : width < 500 ? "16px" : width < 550 ? "18px" : width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px")
         .attr("font-weight", "bold")
         .attr("text-anchor", "middle")
         .attr("fill", t => t.color ?? (t.isColored === false ? "#ccc" : colors[t.colorIndex]))
         .attr("stroke", axisColor)
-        .attr("stroke-width", width < 500 ? 1 : width < 750 ? 1.25 : 1.5)
+        .attr("stroke-width", width < 500 ? 1 : width < 600 ? 1.25 : width < 700 ? 1.5 : width < 800 ? 1.75 : 2)
         .attr("paint-order", "stroke")
         .attr("stroke-linejoin", "round")
         .attr("x", t => mapToX(t.x ?? t.frequency))
@@ -5654,7 +5657,7 @@ addXAxisTo = (svg, tones, config) => {
   });
   svg.append("text")
   .attr("x", (width - lollimargin.left - lollimargin.right) / 2 + lollimargin.left)
-  .attr("y", calculateGraphHeight(tones) + (width < 400 ? 8 :  width < 450 ? 10 : width < 500 ? 12 : width < 550 ? 14 : width < 600 ? 16 : width < 650 ? 18 : width < 700 ? 20 : width < 750 ? 22 : width < 800 ? 24 : width < 850 ? 26 : width < 900 ? 28 : width < 950 ? 30 : 32))
+  .attr("y", calculateGraphHeight(tones) + (width < 400 ? 12 :  width < 450 ? 14 : width < 500 ? 16 : width < 550 ? 18 : width < 600 ? 20 : width < 650 ? 22 : width < 700 ? 24 : width < 750 ? 26 : width < 800 ? 28 : width < 850 ? 30 : width < 900 ? 32 : width < 950 ? 34 : 36))
   .attr("text-anchor", "middle")
   .attr("font-size", config.axisTitleFontSize ?? ("font-size", width < 400 ? "12px" :  width < 450 ? "14px" : width < 500 ? "16px" : width < 550 ? "18px" : width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px"))
   .attr("fill", config.axisTextColor ?? axisColor.darker(1))
