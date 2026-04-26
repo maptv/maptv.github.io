@@ -1918,7 +1918,7 @@ renderGraph = (possibleTones, config = {}) => {
   synth.releaseAll();
   const height = graphHeight;
   const svg = d3.select(DOM.svg(width, height))
-    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("viewBox", `0 -10 ${width} ${height}`)
     .attr("preserveAspectRatio", "xMidYMid meet")
     .style("width", "100%")
     .style("height", "auto");
@@ -2064,11 +2064,11 @@ synth = new Tone.PolySynth(16, Tone.Synth, {
 }).toMaster()
 origin = Fraction(originFrequency)
 axisColor = d3.hsl(0, 0, 0.5)
-lollimargin = ({top: 35, right: 10, bottom: 25, left: 8})
+lollimargin = ({top: 30, right: 10, bottom: 20, left: 8})
 numberOfColors = 10
 rowHeight = 60
 originFrequency = 440
-pointRadius = 10
+pointRadius = width < 400 ? 8 :  width < 450 ? 10 : width < 500 ? 12 : width < 550 ? 14 : width < 600 ? 16 : width < 650 ? 18 : width < 700 ? 20 : width < 750 ? 22 : width < 800 ? 24 : width < 850 ? 26 : width < 900 ? 28 : width < 950 ? 30 : 32
 transitionDuration = 200
 addStiltsTo = (svg, tones, config) => {
   const mapToX = mapToXFor(tones, config);
@@ -2131,10 +2131,10 @@ addPointLabelsTo = (svg, tones, config) => {
         .attr("text-anchor", "middle")
         .attr("fill", t => t.color ?? (t.isColored === false ? "#ccc" : colors[t.colorIndex]))
         .attr("stroke", axisColor)
-        .attr("stroke-width", 1)
+        .attr("stroke-width", width < 500 ? 1 : width < 750 ? 1.25 : 1.5)
         .attr("paint-order", "stroke")
         .attr("stroke-linejoin", "round")
-        .attr("x", t => mapToX(t.x ?? t.frequency) - 15)
+        .attr("x", t => mapToX(t.x ?? t.frequency))
         .attr("y", t => mapToY(t.label) - (pointRadius * 2))
         .attr("opacity", (t, _) => {
           return (t.alwaysShowLabel && !config.drawConnections) ? 1 : 0;
@@ -2160,7 +2160,7 @@ addXAxisTo = (svg, tones, config) => {
       .attr("transform", `translate(0,${height - lollimargin.bottom})`)
       .call(axis);
     axisGroup.selectAll("text")
-      .attr("font-size", width < 400 ? "8px" :  width < 450 ? "9px" : width < 500 ? "10px" : width < 550 ? "11px" : width < 600 ? "12px" : width < 600 ? "14px" : width < 650 ? "14px" : width < 700 ? "16px" : width < 800 ? "18px" : width < 900 ? "20px" : "22px")
+      .attr("font-size", width < 400 ? "8px" :  width < 450 ? "10px" : width < 500 ? "12px" : width < 550 ? "14px" : width < 600 ? "16px" : width < 650 ? "18px" : width < 700 ? "20px" : width < 750 ? "22px" : width < 800 ? "24px" : width < 850 ? "26px" : width < 900 ? "28px" : width < 950 ? "30px" : "32px")
       .attr("fill", axisColor.darker(1));
     axisGroup.selectAll("path")
       .attr("stroke", axisColor);
@@ -2168,10 +2168,10 @@ addXAxisTo = (svg, tones, config) => {
       .attr("stroke", axisColor);
   });
   svg.append("text")
-  .attr("x", (width - lollimargin.left - lollimargin.right) / 4 + lollimargin.left)
-  .attr("y", calculateGraphHeight(tones) + (width < 450 ? 6 : width < 500 ? 8 : width < 550 ? 10 : width < 600 ? 12 : width < 600 ? 14 : width < 650 ? 14 : width < 700 ? 16 : width < 800 ? 18 : width < 900 ? 20 : 22))
+  .attr("x", (width - lollimargin.left - lollimargin.right) / 2 + lollimargin.left)
+  .attr("y", calculateGraphHeight(tones) + (width < 400 ? 8 :  width < 450 ? 10 : width < 500 ? 12 : width < 550 ? 14 : width < 600 ? 16 : width < 650 ? 18 : width < 700 ? 20 : width < 750 ? 22 : width < 800 ? 24 : width < 850 ? 26 : width < 900 ? 28 : width < 950 ? 30 : 32))
   .attr("text-anchor", "middle")
-  .attr("font-size", config.axisTitleFontSize ?? (width < 600 ? "12px" : width < 600 ? "14px" : width < 650 ? "14px" : width < 700 ? "16px" : width < 800 ? "18px" : width < 900 ? "20px" : "22px"))
+  .attr("font-size", config.axisTitleFontSize ?? ("font-size", width < 400 ? "12px" :  width < 450 ? "14px" : width < 500 ? "16px" : width < 550 ? "18px" : width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px"))
   .attr("fill", config.axisTextColor ?? axisColor.darker(1))
   .text(config.xAxisTitle ?? "Perbeat (inverse centimilliday)");
 }
@@ -2302,7 +2302,7 @@ mapToXFor = (tones, options = {}) => {
   if (xAxis.nice) {
     scale = scale.nice();
   }
-  scale = scale.range([lollimargin.left * 4, width / 2 - (lollimargin.right * 2)]);
+  scale = scale.range([lollimargin.left * 4, width - (lollimargin.right * 2)]);
   return scale;
 }
 mapToYFor = (tones, options = {}) => {
@@ -3409,9 +3409,13 @@ div.cell#csharpstaff * {
 figcaption {
   display: none;
 }
-#lollipop {
-  overflow: visible;
-  width: 200%;
+.musicchart {
+  margin-top: -25px;
+}
+.musicchart * {
+  max-width: 1000px;
+  overflow-y: visible;
+  overflow-x: hidden;
 }
 </style>
 ```

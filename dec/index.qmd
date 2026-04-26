@@ -216,22 +216,22 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 
 # Octave equals decastep {.hiddenheading #sec-oed}
 
-In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can be expressed in musical [steps](https://en.wikipedia.org/wiki/Steps_and_skips#:~:text=the%20difference%20in%20pitch%20between%20two%20consecutive%20notes%20of%20a%20musical%20scale) ([s](#s){#step .tool data-bs-toggle="tooltip" data-bs-title="steps"}). The [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play) of an 88-key piano is 23.76 to 3616.64 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, which is approximately [8]{.color8} to [80]{.color0} [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}. The typical audible range for humans is [3]{.color3} [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} to [103]{.color3} [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}. In the equations below, δ is a decimal [decastep]{.tool data-bs-toggle="tooltip" data-bs-title="tens of musical steps"} value that can be used to calculate [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, and [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}, and note ([n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="musical notes"}) values measured in [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"}.
+In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can be expressed in decioctaves ([do](#do){#decioctave .tool data-bs-toggle="tooltip" data-bs-title="decioctaves"}). The approximate audible range for humans is [3]{.color3} to [103]{.color3} [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctaves"}. For comparision, the [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play) of an 88-key piano is [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}23.76 to [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}3616.64 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, which is roughly [8]{.color8} to [80]{.color0} [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctaves"}. The equations below show how a decimal [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) ([o](#o){#octave .tool data-bs-toggle="tooltip" data-bs-title="octave"}) can be used to calculate [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeat"}, [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctave"}, and musical note ([n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="musical note"}) values.
 
-$$\delta = \log_2\!\left(\frac{\text{p}}{14.1275}\right) = \frac{\text{s}}{10}$$
+$$\text{o} = \log_2\!\left(\frac{\text{p}}{14.1275}\right) = \frac{\text{do}}{10}$$
 
-$$\text{s} = 10 \times \delta = 10 \times \left\lfloor \delta \right\rfloor + \text{n}$$
+$$\text{do} = 10 \times \text{o} = 10 \times \left\lfloor \text{o} \right\rfloor + \text{n}$$
 
-$$\text{p} = 14.1275 \times 2^{\delta}$$
+$$\text{p} = 14.1275 \times 2^{\text{o}}$$
 
-$$\text{n} = \text{s} - 10 \times \left\lfloor \delta \right\rfloor = 10 \times \left(\delta - \left\lfloor \delta \right\rfloor\right)
+$$\text{n} = \text{do} - 10 \times \left\lfloor \text{o} \right\rfloor = 10 \times \left(\text{o} - \left\lfloor \text{o} \right\rfloor\right)
 $$
 
 # Color and sound {.hiddenheading #sec-cas}
 
-Dec pairs each [n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="a musical note"} in an [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) with a color so that values can be labeled with both sounds and colors. In his [1704]{.color704} book entitled [Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[^0], [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a) presented the first [color wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=Newton's%20asymmetric%20color%20wheel%20based%20on%20musical%20intervals) and linked its colors to musical notes. On [[2025]{.color025}[+]{.mono}[080]{.colorD080}]{.tool data-bs-toggle="tooltip" data-bs-title="May 20, 2025"}, I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm) by [Clint Goss](https://www.clintgoss.com)[^1], which presents a method of connecting musical notes to colors via their frequencies.
+Each [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctave"} has a corresponding [n](#n){.tool data-bs-toggle="tooltip" data-bs-title="musical note"} that determines its color label. The idea of linking colors and musical notes dates back the [1704]{.color704} book by [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a) entitled [Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[^0]. On [[2025]{.color025}[+]{.mono}[080]{.colorD080}]{.tool data-bs-toggle="tooltip" data-bs-title="May 20, 2025"}, I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm) by [Clint Goss](https://www.clintgoss.com)[^1], which presents a mathematical method of associating musical notes with colors by transforming sound frequencies into light frequencies.
 
-The x-axis of the lollipop🍭plot below shows the rounded [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} values of the ten Dec notes in Octave 4. The lollipops and their corresponding [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} values are labeled with the ten Dec colors. The first digit of any [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="steps"} value is its octave and the second digit is its [n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="musical notes"}. Each octave provides a unique set of sound labels. Click and hold each lollipop to hear its sound label.
+The x-axis of the lollipop🍭plot below shows the rounded [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeat"} values of the ten Dec notes in Octave 4. The lollipops and the [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctaves"} values above them are labeled with the ten Dec colors. Click and hold each lollipop to hear its note.
 
 ```{ojs}
 //| echo: false
@@ -264,27 +264,32 @@ As a scientist of European origin, I have a strong preference for the [Internati
 
 # US customary units {.hiddenheading #sec-ucu}
 
-Dec redefines [US](#us){#unitedstates .tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units to facilitate conversion with [SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} and Dec units. The values in the first column of [unit conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed) table below are approximate [fold changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement) from original to redefined [US](#us){#unitedstates .tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units. A fold change of [1]{.color0} means [0]{.color0} [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared) is requires for alignment with the [SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} and Dec units shown in the second and third column, respectively.
+Dec redefines [US](#us){#unitedstates .tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units to facilitate conversion with [SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} and Dec units. The values in the first column of [unit conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed) table below are approximate [fold changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement) from original to redefined [US](#us){#unitedstates .tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units. A fold change of [1]{.color0} means [0]{.color0} [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared) is required for alignment with the [SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} and Dec units shown in the second and third column, respectively.
+
+Unlike Dec and [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}, the [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary measurement system does not use metric prefixes to scale units by [powers of ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten). Redefined [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units can serve as convenient reference points and provide intuitive names for certain fractions and multiples of Dec and [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} units. For example, after being redefined, one hand is equal to a decimeter or a quarter [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"}.
 
 ## Unit conversion tables {.hiddenheading .unnumbered}
 
+With the exception of a horse🐴length, the units in the table below can be divided into two groups: [human-based](https://en.wikipedia.org/wiki/List_of_human-based_units_of_measurement#:~:text=units%20of%20measurement%20based%20on%20human%20body%20parts) length units and [surveying](https://en.wikipedia.org/wiki/Surveying#:~:text=determining%20the%20terrestrial%20positions%20of%20points%20based%20on%20the%20distances%20and%20angles%20between%20them) distance units. A horse length is about as long as a [cruiser](https://en.wikipedia.org/wiki/Cruiser_(motorcycle)#:~:text=a%20motorcycle%20in%20the%20style%20of%20those%20made%20by%20American%20manufacturers) or [touring motorcycle](https://en.wikipedia.org/wiki/Touring_motorcycle#:~:text=a%20type%20of%20motorcycle%20designed%20for%20touring)🏍️, approximately equivalent to the height of the tallest basketball🏀players, and roughly half of the length of a [compact](https://en.wikipedia.org/wiki/Compact_car#:~:text=sits%20between%20subcompact%20cars%20and%20mid%2Dsize%20cars) to [mid-size](https://en.wikipedia.org/wiki/Mid-size_car#:~:text=larger%20than%20compact%20cars%20and%20smaller%20than%20full%2Dsize%20cars) car.
+
 {{< include /dec/_lengthtable.qmd >}}
 
+When we divide distance by time, we get speed. Coincidentally, a mile per hour is very close to a [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} per [b](#b){.tool data-bs-toggle="tooltip" data-bs-title="beats"} and a [knot](https://en.wikipedia.org/wiki/Knot_(unit)#:~:text=a%20unit%20of%20speed%20equal%20to%20one%20nautical%20mile%20per%20hour) is almost exactly the same as 10/9 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} per [b](#b){.tool data-bs-toggle="tooltip" data-bs-title="beats"}. Dec refers to 10/9 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} as a [cubit](https://en.wikipedia.org/wiki/Cubit#:~:text=an%20ancient%20unit%20of%20length%20based%20on%20the%20distance%20from%20the%20elbow%20to%20the%20tip%20of%20the%20middle%20finger) or [ell](https://en.wikipedia.org/wiki/Ell#:~:text=a%20northwestern%20European%20unit%20of%20measurement) (ℓ). An
+ [mv](#mv){.tool data-bs-toggle="tooltip" data-bs-title="milliomegar"} can also be expressed as one ℓ per Dec second ([s](#s){#second .tool data-bs-toggle="tooltip" data-bs-title="Dec second"}). There are 86400 [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} seconds or 90000 [s](#s){#second .tool data-bs-toggle="tooltip" data-bs-title="Dec second"} in one day.
+
 {{< include /dec/_speedtable.qmd >}}
-
-{{< include /dec/_areatable.qmd >}}
-
-{{< include /dec/_volumetable.qmd >}}
-
-{{< include /dec/_masstable.qmd >}}
-
-# Miles per hour (mph) {.hiddenheading #sec-mph}
-
-Unlike Dec and [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}, the [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary measurement system does not use metric prefixes to scale units by [powers of ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten). Redefined [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units serve as convenient reference points. [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary volume units have intuitive names and scale by [powers of two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20form%202n%20where%20n%20is%20an%20integer).
 
 # Are hectare acre {.hiddenheading #sec-aha}
 
 A square [kilozem]{.tool data-bs-toggle="tooltip" data-bs-title="a thousand zems"} ([kz&sup2;](#kz2){#squarekilozem .tool data-bs-toggle="tooltip" data-bs-title="square kilozem"}) is 1 [hexakilare]{.tool data-bs-toggle="tooltip" data-bs-title="sixteen hundred ares"}, 16 [hectares](https://en.wikipedia.org/wiki/Hectare#:~:text=a%20square%20with%20100%2Dmetre%20sides){.tool data-bs-toggle="tooltip" data-bs-title="hundreds of ares"}, 1600 [ares](https://en.wikipedia.org/wiki/Hectare#Are), 40 Dec [acres](https://en.wikipedia.org/wiki/Acre#:~:text=%20is-,a%20unit%20of%20land%20area,-used%20in%20the), 0.16 square [kilometers](https://en.wikipedia.org/wiki/Kilometre#:~:text=a%20unit%20of%20length%20in%20the%20International%20System%20of%20Units){.tool data-bs-toggle="tooltip" data-bs-title="thousands of meters"} ([km&sup2;](#km2){#squarekilometer .tool data-bs-toggle="tooltip" data-bs-title="square kilometers"}), 0.0625 Dec [square miles](https://en.wikipedia.org/wiki/Square_mile#:~:text=US%20unit%20of%20measure%20for%20area), [10^6^]{.tool data-bs-toggle="tooltip" data-bs-title="a million"} [z&sup2;](#z2){.tool data-bs-toggle="tooltip" data-bs-title="square zems"}, or 1 megahexamilliare ([Mx](#Mx){#megahexamilliare .tool data-bs-toggle="tooltip" data-bs-title="megahexamilliare"}). A [z&sup2;](#z2){.tool data-bs-toggle="tooltip" data-bs-title="square zem"} is 1 [hexamilliare]{.tool data-bs-toggle="tooltip" data-bs-title="1.6 thousandths of an are"} ([x](#x){#hexamilliare .tool data-bs-toggle="tooltip" data-bs-title="hexamilliare"}), 16 square [decimeters]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a meter"} ([dm&sup2;](#dm2){#squaredecimeter .tool data-bs-toggle="tooltip" data-bs-title="square decimeters"}), 1.[7]{.vinculum} Dec [square feet](https://en.wikipedia.org/wiki/Square_foot#:~:text=the%20area%20of%20a%20square%20with%20sides%20of%201%20foot)🦶 ([f&sup2;](#f2){#squarefoot .tool data-bs-toggle="tooltip" data-bs-title="square feet"}), or 256 Dec square inches ([i&sup2;](#i2){#squareinch .tool data-bs-toggle="tooltip" data-bs-title="square inch"}). A square [decazem]{.tool data-bs-toggle="tooltip" data-bs-title="ten zem"} ([Dz&sup2;](#Dz2){#squaredecazem .tool data-bs-toggle="tooltip" data-bs-title="square decazem"}) is 1 [hexadeciare]{.tool data-bs-toggle="tooltip" data-bs-title="sixteen hundredths of an are"}, 16 [square meters](https://en.wikipedia.org/wiki/Square_metre#:~:text=the%20unit%20of%20area%20in%20the%20International%20System%20of%20Units) ([m&sup2;](#m2){#squaremeter .tool data-bs-toggle="tooltip" data-bs-title="square meters"}), [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}19.75 Dec [square yards](https://en.wikipedia.org/wiki/Square_yard#:~:text=U.S.%20customary%20unit%20of%20area), or 100 [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="hexamilliares"}.
+
+{{< include /dec/_areatable.qmd >}}
+
+[US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary volume units have intuitive names and scale by [powers of two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20form%202n%20where%20n%20is%20an%20integer).
+
+{{< include /dec/_volumetable.qmd >}}
+
+{{< include /dec/_masstable.qmd >}}
 
 # Drop wineglass keg {.hiddenheading #sec-dwk}
 
@@ -408,7 +413,7 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
 # Glossary {.unnumbered .appendix #glos}
 
 ::: {.column-page-right #gloslist}
-- [a](#arcbeat){#ab}: arcbeat, a hundred thousandth of a circle, 0.0036 degrees, .216 arcminutes, 12.96 arcseconds
+- [a](#arcbeat){#ab}: arcbeat, a hundred thousandth of a circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
 - [b](#beat){#b}: beat, centimilliday, a hundred thousandth of an day, 864 milliseconds
     - [mb](#millibeat){#mb}: millibeat, centimicroday, a thousandth of a beat, a hundred millionth of a day, 864 microseconds
 - [bpc](#beatpercentiday){#bpc}: a musical or heart beat per centiday, a tenth of a beat per milliday, 0.069[4]{.vinculum} beats per minute, 100 beats per day
@@ -461,6 +466,9 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
 - [λ](#parallel){#lambda}: parallel, a full circle around the Earth moving West or East; the English alphabet equivalent of λ is the letter "l", which occurs three times in the word "parallel" and represents a ***l***ine that crosses every possible ***l***ongitude at the same ***l***atitude
     - [dλ](#deciparallel){#dlambda}: deciparallel, a tenth of a parallel
     - [mλ](#milliparallel){#mlambda}: milliparallel, a thousandth of a parallel
+- [n](#note){#n}: note, a specific frequency within an octave
+- [o](#octave){#o}: octave, a two fold change in frequency
+  - [do](#decioctave){#do}: decioctave, a tenth of a two fold change in frequency
 - [p](#perbeat){#per}: perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; the letter "p" can be flipped vertically to produce the letter "b"
     - [Tp](#teraperbeat){#Tp}: teraperbeat, 10^12^ perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
 - [q](#quotidie){#q}: quotidie, the inverse of a day, a hundred thousandth of a perbeat; the letter "q" can be flipped vertically to produce the letter "d"
@@ -468,9 +476,7 @@ Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/cita
     - [mr](#millirose){#mr}: compass millirose, a thousandth of a circle along the horizon, .36 compass degress
 - [rad](#radian){#rad}: radian, $1\over\tau$ turns, $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
 - [rgb](#redgreenblue){#rgb}: red green blue
-- [s](#step){#s}: step, a tenth of a two fold change in frequency from one octave to an adjacent octave
-    - [Ds](#decastep){#Ds}: decastep, octave, a two fold change in frequency from one octave to an adjacent octave
-    - [ms](#millistep){#ms}: millistep, a ten thousandth of a two fold change in frequency from one octave to an adjacent octave
+- [s](#second){#s}: Dec second, 1/90 millidays, 0.9 beats, 0.96 SI seconds
 - [SI](#internationalsystemofunits){#si}: [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 - [sol](#speedoflight){#sol}: speed of light, 647.55170928 kiloomegars, 299792458 meters per second
 - [sos](#speedofsound){#sos}: speed of sound, 735.048 milliomegars, 340.3 meters per second
