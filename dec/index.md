@@ -2678,6 +2678,12 @@ href="https://en.wikipedia.org/wiki/Square_yard">sq. yards</a></td>
 </tr>
 <tr>
 <td><span class="colorSqMi">0.9884</span> <a
+href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
+<td><span class="mono">25 × 10<sup>7</sup></span></td>
+<td><span class="mono">4 × 10<sup>7</sup></span></td>
+</tr>
+<tr>
+<td><span class="colorSqMi">0.9884</span> <a
 href="https://en.wikipedia.org/wiki/Square_mile">sq. miles</a></td>
 <td><span class="mono">16 × 10<sup>10</sup></span></td>
 <td><span class="mono">256 × 10<sup>8</sup></span></td>
@@ -2827,7 +2833,7 @@ mass are based on volumes of water🌊. A
 <a href="#dz3" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic decizem">dz³</a> of water weighs $1\over7$ Dec
 pounds, 64 grams, or 1000 Dec grains
-(<a href="#g" class="tool" data-bs-toggle="tooltip"
+(<a href="#g" id="grain" class="tool" data-bs-toggle="tooltip"
 data-bs-title="grain">g</a>). One
 <a href="#u" class="tool" data-bs-toggle="tooltip"
 data-bs-title="ounce">u</a> of water weighs $1\over14$ Dec pounds, 500
@@ -3074,21 +3080,18 @@ conversion between the
 data-bs-title="United States">US</a> customary and
 <a href="#si" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a> measurement systems
-by redefining <a href="#us" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> customary units. Redefinition of
+by redefining certain units. Redefinition of
 <a href="#us" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> customary units makes inches
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> customary units makes human-based
+length units <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="color0158">1.58%</span>
-shorter, miles <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="colorMile">0.58%</span>
-shorter, pints <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="colorPint">5.67%</span>
-larger, ounces <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="colorFlOz">8.21%</span>
-larger, and pounds <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="colorMass">1.23%</span>
-lighter.
+shorter and surveying distance units <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span><span class="color0058">0.58%</span>
+shorter. Dec also redefines
+<a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> seconds to be
+<span class="color040">4</span>% shorter.
 
 Dec color labels can convey an impression of a value at a glance. Dec
 sound labels allow us to estimate a value without even having to look at
@@ -5257,6 +5260,7 @@ hues = Object.fromEntries([
     0.002,
     0.00390625,
     0.004,
+    0.0058,
     0.0078125,
     0.008,
     0.014,
@@ -6025,6 +6029,14 @@ html`
 .color00390625 {
   background: hsl(${hues[.00390625]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.00390625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.color0058 {
+  background: hsl(${hues[.0058]} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hues[.0058]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
