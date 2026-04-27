@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2026+056
+2026+057
 
 - [<span class="toc-section-number">0</span> Dec measurement
   system](#sec-dec)
@@ -10,9 +10,7 @@ Martin Laptev
   duration](#sec-dsd)
   - [Interactive world map](#map)
   - [Color wheel compass](#cwc)
-  - [<span class="toc-section-number">3.1</span> Hue saturation
-    lightness (hsl)](#hsl)
-  - [<span class="toc-section-number">3.2</span> Course color
+  - [<span class="toc-section-number">3.1</span> Course color
     table](#cct)
 - [<span class="toc-section-number">3</span> Red green blue
   (rgb)](#sec-rgb)
@@ -45,21 +43,25 @@ Martin Laptev
 - [<span class="toc-section-number">19</span> US customary
   units](#sec-ucu)
   - [Unit conversion tables](#unit-conversion-tables)
-- [<span class="toc-section-number">20</span> Are hectare
+- [<span class="toc-section-number">20</span> Length and
+  distance](#sec-lad)
+- [<span class="toc-section-number">21</span> Miles per hour](#sec-mph)
+- [<span class="toc-section-number">22</span> Are hectare
   acre](#sec-aha)
-- [<span class="toc-section-number">21</span> Drop wineglass
+- [<span class="toc-section-number">23</span> Drop wineglass
   keg](#sec-dwk)
-- [<span class="toc-section-number">22</span> Body mass index
+- [<span class="toc-section-number">24</span> Grain pound ton](#sec-gpt)
+- [<span class="toc-section-number">25</span> Body mass index
   (bmi)](#sec-bmi)
-- [<span class="toc-section-number">23</span> Centizem centimeter
+- [<span class="toc-section-number">26</span> Centizem centimeter
   inch](#sec-cci)
-- [<span class="toc-section-number">24</span> Claude Boniface
+- [<span class="toc-section-number">27</span> Claude Boniface
   Collignon](#sec-cbc)
 - [Summary](#tldr)
 - [Next](#next)
 - [Cite](#cite)
 - [Appendix](#last)
-- [Observable notebooks](#note)
+- [Observable computational notebooks](#ocn)
 - [Glossary](#glos)
 
 <div id="firstnav">
@@ -186,7 +188,7 @@ data-bs-title="millimeridians">mm</a>, near the bottom of the [Missouri
 bootheel](https://en.wikipedia.org/wiki/Missouri_Bootheel#:~:text=a%20salient%20(protrusion)%20located%20in%20the%20southeasternmost%20part%20of%20the%20U.S.%20state%20of%20Missouri)
 in the United States🇺🇸.
 
-To move the points, click the map ️or edit their coordinates in the
+To move the points, click the map or edit their coordinates in the
 table. The
 [toggle](https://observablehq.com/framework/inputs/toggle)✅inputs above
 the table add layers to the map️: country borders, a rainbow🌈colored
@@ -373,11 +375,11 @@ table = createTable([
 // ], {headerEditable: false, appendRows: false})
 ```
 
-<div class="column-page">
-
 ``` {ojs}
 //| echo: false
 //| label: fig-distmap
+//| fig-align: center
+//| column: screen
 // https://observablehq.com/@d3/solar-terminator
 // https://observablehq.com/@mbostock/time-zones
 viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].childNodes[0].innerText), turn2degr(table.rows[1].cells[2].childNodes[0].innerText % 250)], [turn2long(table.rows[2].cells[1].childNodes[0].innerText), turn2degr(table.rows[2].cells[2].childNodes[0].innerText % 250)], projection], [width, height * mapsize / 100])
@@ -386,8 +388,6 @@ viewof coordinates = worldMapCoordinates([[turn2long(table.rows[1].cells[1].chil
 //  [turn2long(table.rows[2].cells[1].childNodes[0].innerText), turn2degr(table.rows[2].cells[2].childNodes[0].innerText % 250)],
 //  projection], [width, height])
 ```
-
-</div>
 
 ## Color wheel compass
 
@@ -620,8 +620,6 @@ decBar = colorbar({
 })
 ```
 
-## Hue saturation lightness (hsl)
-
 ``` {ojs}
 //| echo: false
 //| label: hueslider
@@ -784,7 +782,7 @@ its top row with the
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
 and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
-directions. Together, the range ️inputs underneath the hue bar form a
+directions. Together, the range inputs underneath the hue bar form a
 “hue saturation lightness”
 (<a href="#hsl" id="huesaturationlightness" class="tool"
 data-bs-toggle="tooltip"
@@ -796,8 +794,7 @@ data-bs-title="red green blue">rgb</a>) or
 [hexadecimal](https://en.wikipedia.org/wiki/Web_colors#Hex_triplet:~:text=hexadecimal%20number%20used%20in%20HTML%2C%20CSS%2C%20SVG%2C%20and%20other%20computing%20applications%20to%20represent%20colors)
 (<a href="#hex" id="hexadecimal" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexadecimal">hex</a>) triplets,
-<a href="#hsl" id="huesaturationlightness" class="tool"
-data-bs-toggle="tooltip"
+<a href="#hsl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hue saturation lightness">hsl</a> triplets specify a
 full-fledged color instead of just a hue.
 
@@ -829,7 +826,7 @@ data-bs-title="milliparallels">mλ</a>).
 >
 > Feeling ***disoriented***😵‍💫? Of
 > [***course***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=the%20cardinal%20direction%20in%20which%20the%20craft%20is%20to%20be%20steered)
-> you are! Color labels ️can help you find your
+> you are! Color labels️ can help you find your
 > [***bearings***](https://en.wikipedia.org/wiki/Bearing_(navigation)#:~:text=the%20horizontal%20angle%20between%20the%20direction%20of%20an%20object%20and%20north%20or%20another%20object),
 > stay on
 > [***track***](https://en.wikipedia.org/wiki/Course_(navigation)#:~:text=The%20path%20that%20a%20vessel%20follows),
@@ -902,7 +899,7 @@ data-bs-title="millimeridians">mm</a>), and
 [2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
 (<span class="color2">200</span>
 <a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>) on the map ️above along with the
+data-bs-title="millimeridians">mm</a>) on the map above along with the
 ten major longitudes that divide the Earth🌎into the ten Dec time zones.
 Notably, Longitude <span class="color0">0</span> is the major longitude
 that functions as both the [Prime
@@ -917,7 +914,7 @@ Based on its current <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a parallel">deciparallel</span>
 (<a href="#dlambda" id="deciparallel" class="tool"
 data-bs-toggle="tooltip" data-bs-title="deciparallel">dλ</a>) longitude,
-${point0lHsl}, Point <span class="point0">0</span> on the map ️above is
+${point0lHsl}, Point <span class="point0">0</span> on the map above is
 in Zone ${point0zHsl}. The number assigned to each time zone is its
 offset from Zone <span class="color0">0</span> in <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
@@ -1002,7 +999,7 @@ data-bs-title="time zone offset">tzo</a>). In Zone
 ${decYearP0hsl0}<span class="mono">+</span>${decDateP0hsl0} and the
 current time is
 ${decTimeP0hsl0}<span class="mono">-</span><span class="color0">0</span>.
-Color labels ️make it easier to visually
+Color labels make it easier to visually
 [parse](https://en.wikipedia.org/wiki/Parsing#:~:text=a%20process%20of%20analyzing%20a%20string%20of%20symbols)
 the date and time that make up a Dec snap🫰:
 ${decYearP0hsl1}<span class="mono">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span class="mono">-</span><span class="color0">0</span>.
@@ -1010,7 +1007,7 @@ ${decYearP0hsl1}<span class="mono">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span
 # Millenium Year Day
 
 <a href="#yoe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year of era">Yoe</a> color labels ️are based on “year of
+data-bs-title="year of era">Yoe</a> color labels are based on “year of
 millenium”
 (<a href="#y" id="yearofmillenium" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year">yom</a>) values. At the start of every millennium,
@@ -1022,7 +1019,7 @@ data-bs-toggle="tooltip" data-bs-title="year">yom</span> is
 <a href="#y" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year">y</a>.
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">Doy</a> color labels ️are measured in
+data-bs-title="day of year">Doy</a> color labels are based on
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a year">milliyears</span>
 (<a href="#my" id="milliyear" class="tool" data-bs-toggle="tooltip"
@@ -1635,7 +1632,7 @@ or
 your thumb and pinky tips are <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>0.5
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</a> apart.
+data-bs-title="zem">z</a> apart.
 
 <div id="zemarms" class="column-margin" fig-align="center"
 style="text-align:center;">
@@ -1996,7 +1993,9 @@ data-bs-title="hundredths of a zem">centizem</a>
 (<a href="#cz" id="centizem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="centizem">cz</a>) is the [typical seat
 height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
-for both men and women age 25 to 45. A box📦that is the size of a cubic
+for both men and women in age range of 25 to 45
+<a href="#y" class="tool" data-bs-toggle="tooltip"
+data-bs-title="year">y</a>. A box📦that is the size of a cubic
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>
 (<a href="#z3" id="cubiczem" class="tool" data-bs-toggle="tooltip"
@@ -2004,9 +2003,9 @@ data-bs-title="cubic zem">z³</a>) would likely fit under a typical chair
 or in between the shins of two people sitting in front of each other
 with their knees and feet 1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</a> apart and their legs🦵bent at 25
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a hundredth of a turn">centiturn</span> angles.
+data-bs-title="zem">z</a> apart and their legs🦵bent at right angles (25
+<a href="#ct" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centiturn">ct</a>).
 
 # Perpetually setting sun
 
@@ -2025,7 +2024,7 @@ sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
 # Airplane cruising speed
 
-To travel fast enough for a perpetual sunset, the airplane ️would need to
+To travel fast enough for a perpetual sunset, the airplane would need to
 surpass the [speed of
 sound](https://en.wikipedia.org/wiki/Speed_of_sound#:~:text=the%20distance%20travelled%20per%20unit%20of%20time%20by%20a%20sound%20wave)🔊(<a href="#sos" id="speedofsound" class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of sound">sos</a>), which at 15
@@ -2048,11 +2047,11 @@ data-bs-title="omegars">v</a> or Mach <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>0.85.
 
 The highway🛣️speed of a car🚗is roughly tenfold slower than the cruising
-speed of an airplane️. If we are driving on a highway ️at a speed of 50
+speed of an airplane️. If we are driving on a highway at a speed of 50
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegars">mv</a> and our exit is 1000
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</a> away, we will have 20 <span class="tool"
+data-bs-title="zem">z</a> away, we will have 20 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundred thousandths of a day">centimillidays</span>
 (<a href="#cmd" id="centimilliday" class="tool" data-bs-toggle="tooltip"
@@ -2060,7 +2059,7 @@ data-bs-title="centimilliday">cmd</a>) until we have to exit the
 highway️. To ensure we do not miss our exit, we can periodically check a
 countdown of the remaining
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</a>: ${zLeft}.
+data-bs-title="zem">z</a>: ${zLeft}.
 
 # Centimilliday (cmd)
 
@@ -2087,19 +2086,19 @@ data-bs-toggle="tooltip" data-bs-title="a million">10<sup>6</sup></span>
 data-bs-title="millionths of a day">microdays</span>
 (<a href="#ud" id="microday" class="tool" data-bs-toggle="tooltip"
 data-bs-title="microdays">µd</a>), 1
-<a href="#mc" id="millitaur" class="tool" data-bs-toggle="tooltip"
+<a href="#mc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millitaur">mc</a> = 100 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="thousands of zem">kilozem</span>
 (<a href="#kz" id="kilozem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of zems">kz</a>) = <span class="tool"
+data-bs-title="thousands of zem">kz</a>) = <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="a hundred thousand">10<sup>5</sup></span>
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</a> = <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a> = <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a million">10<sup>6</sup></span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="tenths of a zem">decizems</span>
+data-bs-toggle="tooltip" data-bs-title="tenths of a zem">decizem</span>
 (<a href="#dz" id="decizem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decizems">dz</a>) = <span class="tool"
+data-bs-title="decizem">dz</a>) = <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="a million">10<sup>6</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="millionths of a taur">nanotaurs</span>
@@ -2150,10 +2149,11 @@ times more frequent than a
 # Frequency period wavelength
 
 Dec uses <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeat">p</a>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="beats">b</span>, and
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span>, often with metric prefixes, to measure the
+data-bs-title="perbeat">p</a>,
+<a href="#b" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beats">b</a>, and
+<a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a>, often with metric prefixes, to measure the
 [frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time),
 [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency),
 and
@@ -2258,8 +2258,8 @@ data-bs-title="octave">o</a>) can be used to calculate a
 <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeat">p</a>,
 <a href="#do" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decioctave">do</a>, and musical note
-(<a href="#n" id="note" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decioctave">do</a>, and musical
+note(<a href="#n" id="note" class="tool" data-bs-toggle="tooltip"
 data-bs-title="musical note">n</a>).
 
 $$\text{o} = \log_2\\\left(\frac{\text{p}}{14.1275}\right) = \frac{\text{do}}{10}$$
@@ -2334,7 +2334,7 @@ States🇺🇸(<a href="#us" id="unitedstates" class="tool" data-bs-toggle="tool
 data-bs-title="United States">US</a>) [customary measurement
 system](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems).
 Nevertheless, having grown up in the
-<a href="#us" id="unitedstates" class="tool" data-bs-toggle="tooltip"
+<a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a>, I understand the animosity towards
 unfamiliar measurement units expressed by Grandpa Simpson in “A Star Is
 Burns”, Season 6 Episode 18 of [the
@@ -2344,25 +2344,21 @@ Simpsons](https://en.wikipedia.org/wiki/The_Simpsons#:~:text=an%20American%20ani
 
 # US customary units
 
-Dec redefines
-<a href="#us" id="unitedstates" class="tool" data-bs-toggle="tooltip"
+Dec redefines <a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary units to facilitate
-conversion with
-<a href="#si" id="internationalsystemofunits" class="tool"
-data-bs-toggle="tooltip"
+conversion with <a href="#si" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a> and Dec units. The
 values in the first column of [unit
 conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
 table below are approximate [fold
 changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
 from original to redefined
-<a href="#us" id="unitedstates" class="tool" data-bs-toggle="tooltip"
+<a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary units. A fold change of
 <span class="color0">1</span> means <span class="color0">0</span>
 [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared)
 is required for alignment with the
-<a href="#si" id="internationalsystemofunits" class="tool"
-data-bs-toggle="tooltip"
+<a href="#si" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a> and Dec units shown
 in the second and third column, respectively.
 
@@ -2384,10 +2380,12 @@ data-bs-title="zem">z</a>.
 
 ## Unit conversion tables
 
+# Length and distance
+
 The
 [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%20comparable%29-,one%2Ddimensional,-quotations%C2%A0%E2%96%BC)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="unidimensional">1d</span>) units in the table below can
+data-bs-title="unidimensional">1D</span>) units in the table below can
 be divided into two groups:
 [human-](https://en.wikipedia.org/wiki/List_of_human-based_units_of_measurement#:~:text=units%20of%20measurement%20based%20on%20human%20body%20parts)
 or horse-based length units and
@@ -2413,7 +2411,7 @@ car.
 <tr>
 <th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> <span class="bold tool"
-data-bs-toggle="tooltip" data-bs-title="unidimensional">1d</span>
+data-bs-toggle="tooltip" data-bs-title="unidimensional">1D</span>
 units</th>
 <th><a href="#z" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</a></th>
@@ -2520,8 +2518,10 @@ href="https://en.wikipedia.org/wiki/League_(unit)">leagues</a></td>
 </tbody>
 </table>
 
+# Miles per hour
+
 When we divide a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="unidimensional">1d</span> unit by a time unit, we get a
+data-bs-title="unidimensional">1D</span> unit by a time unit, we get a
 speed unit. A mile per hour is very close to a
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> per
@@ -2539,14 +2539,17 @@ data-bs-title="zem">z</a> as a
 [cubit](https://en.wikipedia.org/wiki/Cubit#:~:text=an%20ancient%20unit%20of%20length%20based%20on%20the%20distance%20from%20the%20elbow%20to%20the%20tip%20of%20the%20middle%20finger)
 or
 [ell](https://en.wikipedia.org/wiki/Ell#:~:text=a%20northwestern%20European%20unit%20of%20measurement)
-(ℓ). An <a href="#mv" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegar">mv</a> can also be expressed as one ℓ per
-Dec second
+(<a href="#ell" id="cubit" class="tool" data-bs-toggle="tooltip"
+data-bs-title="ell">ℓ</a>). An
+<a href="#mv" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliomegar">mv</a> can also be expressed as one
+<a href="#ell" class="tool" data-bs-toggle="tooltip"
+data-bs-title="ell">ℓ</a> per Dec second
 (<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec second">s</a>). There are 86400
 <a href="#si" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a> seconds or 90000
-<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
+<a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec second">s</a> in one day.
 
 <table>
@@ -2568,22 +2571,19 @@ data-bs-title="kilometers">km</a>/hour</th>
 <tbody>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Inch_per_second">inches /
-second</a></td>
+href="https://en.wikipedia.org/wiki/Inch_per_second">inches/second</a></td>
 <td><span class="mono">0.054</span></td>
 <td><span class="mono">0.09</span></td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
-href="https://en.wikipedia.org/wiki/Foot_per_second">feet /
-second</a></td>
+href="https://en.wikipedia.org/wiki/Foot_per_second">feet/second</a></td>
 <td><span class="mono">0.648</span></td>
 <td><span class="mono">1.08</span></td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
-href="https://en.wikipedia.org/wiki/Miles_per_hour">miles /
-hour</a></td>
+href="https://en.wikipedia.org/wiki/Miles_per_hour">miles/hour</a></td>
 <td><span class="mono">0.96</span></td>
 <td><span class="mono">1.6</span></td>
 </tr>
@@ -2593,11 +2593,11 @@ hour</a></td>
 # Are hectare acre
 
 If we raise a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="unidimensional">1d</span> unit to the second power, we
+data-bs-title="unidimensional">1D</span> unit to the second power, we
 get a
 [bidimensional](https://en.wiktionary.org/wiki/bidimensional#:~:text=not%20comparable%29-,Two%2Ddimensional,-.)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="bidimensional">2d</span>) area unit. A
+data-bs-title="bidimensional">2D</span>) area unit. A
 <a href="#z2" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square zem">z²</a> is 1 <span class="tool"
 data-bs-toggle="tooltip"
@@ -2614,7 +2614,7 @@ yards](https://en.wikipedia.org/wiki/Square_yard#:~:text=U.S.%20customary%20unit
 1.<span class="vinculum">7</span> Dec [sq.
 feet](https://en.wikipedia.org/wiki/Square_foot#:~:text=the%20area%20of%20a%20square%20with%20sides%20of%201%20foot),
 or 256 Dec sq. inches. A sq. <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a thousand zems">kilozem</span>
+data-bs-title="a thousand zem">kilozem</span>
 (<a href="#kz2" id="squarekilozem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square kilozem">kz²</a>) is 1 <span class="tool"
 data-bs-toggle="tooltip"
@@ -2635,7 +2635,7 @@ miles](https://en.wikipedia.org/wiki/Square_mile#:~:text=US%20unit%20of%20measur
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a million">10<sup>6</sup></span>
 <a href="#z2" class="tool" data-bs-toggle="tooltip"
-data-bs-title="square zems">z²</a>, or 1 megahexamilliare
+data-bs-title="square zem">z²</a>, or 1 megahexamilliare
 (<a href="#Mx" id="megahexamilliare" class="tool"
 data-bs-toggle="tooltip" data-bs-title="megahexamilliare">Mx</a>).
 
@@ -2649,7 +2649,7 @@ data-bs-toggle="tooltip" data-bs-title="megahexamilliare">Mx</a>).
 <tr>
 <th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="bidimensional">2d</span>
+data-bs-toggle="tooltip" data-bs-title="bidimensional">2D</span>
 units</th>
 <th><a href="#cz2" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="square centizem">cz²</a></th>
@@ -2685,14 +2685,39 @@ href="https://en.wikipedia.org/wiki/Square_mile">sq. miles</a></td>
 </tbody>
 </table>
 
-Similarly, raising a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="unidimensional">1d</span> unit to the third power yields
-a tridimensional (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tridimensional">3d</span>) volume unit. us
+# Drop wineglass keg
+
 <a href="#us" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> customary volume units have
-intuitive names and scale by [powers of
+data-bs-title="United States">US</a> tridimensional (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="tridimensional">3D</span>)
+volume units tend to scale by [powers of
 two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20form%202n%20where%20n%20is%20an%20integer).
+A cubic (cu.) <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a zone equatorial meter">decizem</span>
+(<a href="#dz3" id="cubicdecizem" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic decizem">dz³</a>) is like a double shot, either of
+espresso☕️or of liquor🥃, and is equal to 1 cu. <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="a millionth of a taur">nanotaur</span>
+(<a href="#nc3" id="cubicnanotaur" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic nanotaur">nc³</a>), 1 Dec wineglass (🍷glass), 2
+Dec ounces
+(<a href="#u" id="ounce" class="tool" data-bs-toggle="tooltip"
+data-bs-title="ounce">u</a>), 4 Dec tablespoons (table🥄), 64 cu.
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a hundredth of a meter">centimeters</span>
+(<span id="cubiccentimeter" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centimeters">cm³</span>), 64 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a liter">milliliters</span>
+(<a href="#mL" id="milliliter" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliliters">mL</a>), 1000 Dec drops
+(<a href="#g" id="gutta" class="tool" data-bs-toggle="tooltip"
+data-bs-title="drops">g</a>), or 1000 cu. <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="a tenth of a zone equatorial meter">centizem</span>
+(<a href="#cz3" id="cubiccentizem" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic centizem">cz³</a>).
 
 <table>
 <colgroup>
@@ -2704,7 +2729,7 @@ two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20
 <tr>
 <th><span class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="tridimensional">3d</span>
+data-bs-toggle="tooltip" data-bs-title="tridimensional">3D</span>
 units</th>
 <th><a href="#cz3" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="cubic centizem">cz³</a></th>
@@ -2721,13 +2746,13 @@ href="https://en.wikipedia.org/wiki/Drop_(unit)">drops</a></td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
-href="https://en.wikipedia.org/wiki/Cubic_inch">cubic inches</a></td>
+href="https://en.wikipedia.org/wiki/Cubic_inch">cu. inches</a></td>
 <td><span class="mono">244.140625</span></td>
 <td><span class="mono">15.625</span></td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Tablespoon">tablespoons</a></td>
+href="https://en.wikipedia.org/wiki/Tablespoon">table🥄</a></td>
 <td><span class="mono">250</span></td>
 <td><span class="mono">16</span></td>
 </tr>
@@ -2739,7 +2764,7 @@ href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
-href="https://en.wikipedia.org/wiki/Wine_glass#Capacity_measure">wineglasses</a></td>
+href="https://en.wikipedia.org/wiki/Wine_glass#Capacity_measure">🍷glasses</a></td>
 <td><span class="mono">1000</span></td>
 <td><span class="mono">64</span></td>
 </tr>
@@ -2769,7 +2794,7 @@ href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
-href="https://en.wikipedia.org/wiki/Cubic_foot">cubic feet</a></td>
+href="https://en.wikipedia.org/wiki/Cubic_foot">cu. feet</a></td>
 <td><span class="mono">421875</span></td>
 <td><span class="mono">27000</span></td>
 </tr>
@@ -2787,12 +2812,36 @@ href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
-href="https://en.wikipedia.org/wiki/Cubic_yard">cubic yards</a></td>
+href="https://en.wikipedia.org/wiki/Cubic_yard">cu. yards</a></td>
 <td><span class="mono">11390625</span></td>
 <td><span class="mono">729000</span></td>
 </tr>
 </tbody>
 </table>
+
+# Grain pound ton
+
+Dec and <a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> measurements of
+mass are based on volumes of water🌊. A
+<a href="#dz3" class="tool" data-bs-toggle="tooltip"
+data-bs-title="cubic decizem">dz³</a> of water weighs $1\over7$ Dec
+pounds, 64 grams, or 1000 Dec grains
+(<a href="#g" class="tool" data-bs-toggle="tooltip"
+data-bs-title="grain">g</a>). One
+<a href="#u" class="tool" data-bs-toggle="tooltip"
+data-bs-title="ounce">u</a> of water weighs $1\over14$ Dec pounds, 500
+Dec <a href="#g" class="tool" data-bs-toggle="tooltip"
+data-bs-title="grains">g</a>, or 32 grams. In Dec,
+<a href="#g" class="tool" data-bs-toggle="tooltip"
+data-bs-title="grains">g</a> is short for
+[*granum*](https://en.wiktionary.org/wiki/granum) and
+[*gutta*](https://en.wiktionary.org/wiki/gutta), the Latin words for
+grain and drop, respectively. Similarly,
+<a href="#u" class="tool" data-bs-toggle="tooltip"
+data-bs-title="ounce">u</a> originates from
+[*uncia*](https://en.wiktionary.org/wiki/uncia), the Latin word for “a
+twelfth”.
 
 <table>
 <colgroup>
@@ -2842,51 +2891,10 @@ href="https://en.wikipedia.org/wiki/Short_ton">tons</a></td>
 </tbody>
 </table>
 
-# Drop wineglass keg
-
-A cubic <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a zone equatorial meter">decizem</span>
-(<a href="#dz3" id="cubicdecizem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz³</a>) is 1 cubic <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="a millionth of a taur">nanotaur</span>
-(<a href="#nc3" id="cubicnanotaur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic nanotaur">nc³</a>), 1 Dec wineglass, 2 Dec ounces,
-64 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a liter">milliliters</span>
-(<a href="#mL" id="milliliter" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliliters">mL</a>), 1000 Dec drops
-(<a href="#g" id="gutta" class="tool" data-bs-toggle="tooltip"
-data-bs-title="drops">g</a>), or 1000 cubic <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="a tenth of a zone equatorial meter">centizems</span>
-(<a href="#cz3" id="cubiccentizem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic centizem">cz³</a>). A
-<a href="#dz3" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic decizem">dz³</a> of water🌊weighs $1\over7$ Dec
-pounds, 64 grams, or 1000 Dec grains
-(<a href="#g" class="tool" data-bs-toggle="tooltip"
-data-bs-title="grain">g</a>). A Dec ounce
-(<a href="#u" id="ounce" class="tool" data-bs-toggle="tooltip"
-data-bs-title="ounce">u</a>) of water weighs $1\over14$ Dec pounds, 500
-Dec <a href="#g" class="tool" data-bs-toggle="tooltip"
-data-bs-title="grains">g</a>, or 32 grams. In Dec, the symbols
-<a href="#g" class="tool" data-bs-toggle="tooltip"
-data-bs-title="grain">g</a> and
-<a href="#u" class="tool" data-bs-toggle="tooltip"
-data-bs-title="ounce">u</a> can refer to either volume or mass. Mass
-divided by volume is density.
-
-<div class="column-margin" fig-align="center"
-style="text-align:center;">
-
-<img src="../asset/vitruvianMan.svg" id="vitruvian" />
-[Wikimedia](https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg)
-
-</div>
+# Body mass index (bmi)
 
 A <a href="#z3" class="tool" data-bs-toggle="tooltip"
-data-bs-title="cubic zem">z³</a> is 1 keg. A keg of water🌊weighs 64
+data-bs-title="cubic zem">z³</a> is 1 keg. A keg of water weighs 64
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of grams">kilograms</span>, 128 Dec pounds, or
 a 1000 Dec <span class="tool" data-bs-toggle="tooltip"
@@ -2897,55 +2905,91 @@ Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20po
 [Vitruvian
 Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci)
 were 4 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zems">z</a> tall, we could measure 1
+data-bs-title="zem">z</a> tall, we could measure 1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</a> from his knees to his feet🦶or from his
-elbows💪to his fingertips. If he also weighed 1000 Dec
-<a href="#kg" id="kilograin" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a> from his knees to his feet or from his elbows
+to his fingertips. If he also weighed 1000 Dec
+<a href="#kg" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilograins">kg</a>, his [body mass
 index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height)
 (<a href="#bmi" id="bodymassindex" class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">bmi</a>) would be 62.5
-<a href="#kg" id="kilograin" class="tool" data-bs-toggle="tooltip"
+<a href="#kg" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilograins">kg</a> per
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexamilliares">x</a> ($\text {kg}\over\text x$) or 25
-kilograms per <a href="#m2" class="tool" data-bs-toggle="tooltip"
+kilograms per
+<a href="#m2" id="squaremeter" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square meters">m²</a> ($\text {kilogram}\over\text m^2$).
 
-# Body mass index (bmi)
+<div class="column-margin" fig-align="center"
+style="text-align:center;">
+
+<img src="../asset/vitruvianMan.svg" id="vitruvian" />
+[Wikimedia](https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg)
+
+</div>
 
 A normal <a href="#bmi" class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">bmi</a> ranges from 46.25 to 62.5
-$\text {kg}\over\text x$ or 18.5 to 25 $\text {kg}\over\text m^2$. A
-person with a <a href="#bmi" class="tool" data-bs-toggle="tooltip"
+$\text {kg}\over\text x$ or 18.5 to 25 $\text {kg}\over\text m^2$. An
+obese person has a <a href="#bmi" class="tool" data-bs-toggle="tooltip"
 data-bs-title="body mass index">bmi</a> above 75
-$\text {kg}\over\text x$ or 30 $\text {kg}\over\text m^2$ can be
-classified as obese. A
+$\text {kg}\over\text x$ or 30 $\text {kg}\over\text m^2$. Severe or
+morbid obesity is defined as a
 <a href="#bmi" class="tool" data-bs-toggle="tooltip"
-data-bs-title="body mass index">bmi</a> of ${kgrains}
-<a href="#kg" id="kilograin" class="tool" data-bs-toggle="tooltip"
+data-bs-title="body mass index">bmi</a> above 100
+$\text {kg}\over\text x$ or 40 $\text {kg}\over\text m^2$. A person with
+the weight and height selected by the range inputs below would be
+considered ${bmiStr}: ${kgrains}
+<a href="#kg" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilograins">kg</a> ÷ ${zem2}
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hexamilliares">x</a> = ${bmi} $\text {kg}\over\text x$ =
 ${kgrams} kilograms ÷ ${meter2}
 <a href="#m2" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square meters">m²</a> = ${bmim2}
-$\text {kilograms}\over\text m^2$ is considered ${bmiStr}.
+$\text {kilograms}\over\text m^2$.
 
 ``` {ojs}
 //| echo: false
 //| label: kginput
-viewof kilograins = Inputs.range([0, 10000], {label: "Kilograins", value: 1000, step: 1})
+viewof kilograins = Inputs.range([0, 10000], {label: "Weight", value: 1000, step: 1})
 ```
 
 ``` {ojs}
 //| echo: false
 //| label: zinput
-viewof zems = Inputs.range([0, 10], {label: "Zems", value: 4, step: 0.01})
+viewof zems = Inputs.range([0, 10], {label: "Height", value: 4, step: 0.01})
 ```
 
 # Centizem centimeter inch
+
+The longest length depicted in the image of a ruler📏below is 1
+<a href="#dz" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decizem">dz</a>, 1
+<a href="#nc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="nanotaur">nc</a>, 4 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundredths of a meter">centimeters</span>, or $8\over5$
+Dec inches, and the shortest length is $1\over2$
+<a href="#mz" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millizem">mz</a>, $1\over5$ <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="thousandths of a meter">millimeters</span>, $1\over125$
+Dec inches, or $1\over127$
+<a href="#us" class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> customary inches. A
+<a href="#us" class="tool" data-bs-toggle="tooltip"
+data-bs-title="United States">US</a> customary inch is $127\over2$
+<a href="#mz" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millizem">mz</a>, $127\over5$ millimeters, or
+$127\over125$ Dec inches. A Dec inch is $5\over2$ centimeters. A
+centimeter is $5\over2$
+<a href="#cz" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centizem">cz</a>. A
+<a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a> is 4 decimeters. A decimeter is 4 Dec inches.
 
 <div class="column-page-right" fig-align="left"
 style="text-align:center;font-size:.825rem;">
@@ -2955,44 +2999,19 @@ style="text-align:center;font-size:.825rem;">
 
 </div>
 
-The longest length depicted in the image of a ruler📏above is 1
-<a href="#dz" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decizem">dz</a>, 1
-<a href="#nc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="nanotaur">nc</a>, 4 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="hundredths of a meter">centimeters</span>, or $8\over5$
-Dec inches, and the shortest length is $1\over2$
-<a href="#mz" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millizems">mz</a>, $1\over5$ <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a meter">millimeters</span>, $1\over125$
-Dec inches, or $1\over127$
-<a href="#us" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> customary inches. A
-<a href="#us" class="tool" data-bs-toggle="tooltip"
-data-bs-title="United States">US</a> customary inch is $127\over2$
-<a href="#mz" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millizems">mz</a>, $127\over5$ millimeters, or
-$127\over125$ Dec inches. A Dec inch is $5\over2$ centimeters. A
-centimeter is $5\over2$
-<a href="#cz" class="tool" data-bs-toggle="tooltip"
-data-bs-title="centizems">cz</a>. A
-<a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</a> is 4 decimeters. A decimeter is 4 Dec inches.
-
 # Claude Boniface Collignon
 
 In <span class="color788">1788</span>, [Claude Boniface
 Collignon](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution)
 proposed measuring length in
 <a href="#dz" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decizems">dz</a> or
+data-bs-title="decizem">dz</a> or
 <a href="#nc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="nanotaurs">nc</a> and tracking time in
 <a href="#dek" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of ten days">deks</a>, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decidays">dd</span>,
+data-bs-title="groups of ten days">deks</a>,
+<a href="#dd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decidays">dd</a>,
 <a href="#md" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millidays">md</a>,
 <a href="#ud" class="tool" data-bs-toggle="tooltip"
@@ -3003,10 +3022,11 @@ data-bs-title="billionths of a day">nanodays</span>
 data-bs-title="nanodays">nd</a>)[3]. On <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="April 9, 2025"><span class="color025">2025</span><span class="mono">+</span><span class="colorD039">039</span></span>,
-while searching for units similar to <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="taur">c</span> and
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</span>, I noticed the definition of a
+while searching for units similar to
+<a href="#c" class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</a> and
+<a href="#z" class="tool" data-bs-toggle="tooltip"
+data-bs-title="zem">z</a>, I noticed the definition of a
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>, 1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
@@ -3070,11 +3090,9 @@ larger, and pounds <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span><span class="colorMass">1.23%</span>
 lighter.
 
-Dec color labels can convey an impression of a value at a glance.
-<a href="#xet" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Tenet">Xet</a> sound labels allow us to estimate a value
-without even having to look at it. Both types of labels can help avoid
-confusion when [decimal
+Dec color labels can convey an impression of a value at a glance. Dec
+sound labels allow us to estimate a value without even having to look at
+it. Both types of labels can help avoid confusion when [decimal
 separators](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline)
 appear, disappear, or move due to a measurement unit change such as the
 addition, removal, or replacement of a metric prefix.
@@ -3083,15 +3101,14 @@ addition, removal, or replacement of a metric prefix.
 
 Now that you have had a taste of Dec, I hope that you are hungry for
 more! If so, dive🤿deeper into Dec [dates](../dec/date) and
-[times](../dec/time) before tackling Dec [snaps](../dec/snap) and
-[spans](../dec/span). My [filter](../quarto/filter),
-[include](../quarto/include), and [script](../quarto/script) articles
-discuss the [Quarto](../quarto) publishing system and how I display Dec
-[dates](../dec/date) in the [navigation
+[times](../dec/time) before tackling Dec [snaps](../dec/snap),
+[spans](../dec/span), and [notes](../dec/note). My
+[filter](../quarto/filter) and [include](../quarto/include) articles
+discuss the [Quarto](../quarto) publishing system and how I customize my
+Quarto website to display Dec [dates](../dec/date) in the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information),
 the [article list](../list), and [title
-blocks](https://quarto.org/docs/authoring/title-blocks.html) of my
-website.
+blocks](https://quarto.org/docs/authoring/title-blocks.html).
 
 <div id="firstnav">
 
@@ -3128,28 +3145,26 @@ algorithms that serve as the foundation of Dec dates (Hinnant 2021+185).
 **bibliography.yml**
 
 ``` yml
----
 references:
 - id: laptev2025
   author:
     - family: Laptev
       given: Martin
-  issued:
-    literal: 2026+056
-
   title: Dec
   type: article
   URL: https://maptv.github.io/dec
+  issued:
+    literal: 2026+057
+
 - id: hinnant2021
   author:
     - family: Hinnant
       given: Howard
-  issued:
-    literal: 2021+185
   title: chrono-Compatible Low-Level Date Algorithms
   type: article
   URL: https://howardhinnant.github.io/date_algorithms
-...
+  issued:
+    literal: 2021+185
 ```
 
 </div>
@@ -3159,7 +3174,7 @@ As demonstrated by the previous sentence above and the
 Dec dates. By default, Quarto formats citations according to the
 [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date
 format. Per this format, the citation for this article would appear as
-[Laptev, Martin](https://maptv.github.io/about). 2026+056. “Dec.”
+[Laptev, Martin](https://maptv.github.io/about). 2026+057. “Dec.”
 ${decYearP0}+${decDateP0}. <https://maptv.github.io/dec>.
 
 Instead of using Quarto [citation
@@ -3169,12 +3184,13 @@ you can also prepare a list of references using
 As an example, I included citations for the Hinnant date algorithm
 article[5] in both the [references](#references) and
 [footnotes](#footnotes) sections. In alphabetical order below, you will
-find a list of the [Observable](http://observablehq.com) notebooks that
-I adapted into many of the visualizations above.
+find a list of the [Observable](http://observablehq.com) [computational
+notebooks](https://en.wikipedia.org/wiki/Notebook_interface#:~:text=a%20virtual%20notebook%20environment%20used%20for%20literate%20programming)
+that I used as the basis for many of the visualizations above.
 
 # Appendix
 
-# Observable notebooks
+# Observable computational notebooks
 
 <div id="citelist" class="column-page-right">
 
@@ -3257,7 +3273,12 @@ I adapted into many of the visualizations above.
     data-bs-title="January 25, 2024">2023+330</span>. “D3 Projections.”
     ${decYearP0}+${decDateP0}.
     <https://observablehq.com/@fil/d3-projections>.
-16. [Yamahata,
+16. [Winkler, Elliot](https://observablehq.com/@mcmire)
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="May 10, 2019">2019+070</span>. “Illustrating harmony
+    with the harmonic series.” ${decYearP0}+${decDateP0}.
+    <https://observablehq.com/@mcmire/illustrating-harmony-with-the-harmonic-series>.
+17. [Yamahata,
     Christophe](https://observablehq.com/@christophe-yamahata)
     <span class="tool" data-bs-toggle="tooltip"
     data-bs-title="June 28, 2022">2021+119</span>. “Great circle:
@@ -3328,9 +3349,8 @@ I adapted into many of the visualizations above.
   - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
 - <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
-- <a href="#foot" id="f">f</a>: Dec foot, 0.75 zem, 75 millimeter
-  - <a href="#squarefoot" id="f2">f²</a>: Dec square foot, 5625 square
-    centizem, 9 square decimeter
+- <a href="#cubit" id="ell">ℓ</a>: ell, cubit, 10/9 zem
+- <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeter
 - <a href="#gutta" id="g">g</a>: drop (gutta in Latin) or grain (granum
   in Latin), 64 microliters or 64 milligrams
   - <a href="#kilograin" id="kg">kg</a>: kilograin or kilodrop, 64 grams
@@ -3342,14 +3362,8 @@ I adapted into many of the visualizations above.
 - <a href="#huesaturationlightness" id="hsl">hsl</a>: hue saturation
   lightness
 - <a href="#huesaturationvalue" id="hsv">hsv</a>: hue saturation value
-- <a href="#index" id="i">i</a>: an index that represents either the ten
-  musical steps in a musical octave that result in a two-fold increase
-  in frequency or the ten days in a decaday; the Greek letter iota
-  represents ten in the Greek numeral system
 - <a href="#inch" id="i">i</a>: inch, a sixteenth of a zem, 25
   millimeter
-  - <a href="#squareinch" id="i2">i²</a>: Dec square inch, 3906.25
-    square millizem, 625 square millimeters
 - <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
   glasses, a million drops, half a barrel
 - <a href="#liter" id="L">L</a>: liter, 15625 drops, a cubic decimeter
@@ -3369,6 +3383,8 @@ I adapted into many of the visualizations above.
     square kilozem
   - <a href="#squaredecimeter" id="dm2">dm²</a>: square decimeter, 6.25
     square decizem
+  - <a href="#cubiccentimeter" id="cm3">cm³</a>: cubic centimeter, 1
+    millilter, a thousandth of a liter, 15.625 drops
 - <a href="#parallel" id="lambda">λ</a>: parallel, a full circle around
   the Earth moving West or East; the English alphabet equivalent of λ is
   the letter “l”, which occurs three times in the word “parallel” and
@@ -3399,8 +3415,8 @@ I adapted into many of the visualizations above.
 - <a href="#radian" id="rad">rad</a>: radian, $1\over\tau$ turns,
   $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
 - <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
-- <a href="#second" id="s">s</a>: Dec second, 1/90 millidays, 0.9 beats,
-  0.96 SI seconds
+- <a href="#second" id="s">s</a>: second, 1/90 millidays, 0.9 beats, 1
+  Dec second = 0.96 SI seconds
 - <a href="#internationalsystemofunits" id="si">SI</a>: [International
   System of
   Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
@@ -3409,8 +3425,8 @@ I adapted into many of the visualizations above.
 - <a href="#speedofsound" id="sos">sos</a>: speed of sound, 735.048
   milliomegars, 340.3 meters per second
 - <a href="#tau" id="2pi">𝜏</a>: 2𝜋 or approximately 6.2831853
-- <a href="#tenequaltemperance" id="tenet">Tenet</a>: ten equal
-  temperance
+- <a href="#tenequaltemperament" id="tenet">Tenet</a>: ten equal
+  temperament
   - <a href="#10et" id="xet">Xet</a>: Tenet
   - <a href="#twelveequaltemperance" id="12et">12et</a>: twelve equal
     temperance
@@ -3431,46 +3447,44 @@ I adapted into many of the visualizations above.
 - <a href="#unitedstates" id="us">US</a>: [United
   States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - <a href="#omegar" id="v">v</a>: omegar, ωr,
-  1041.<span class="vinculum">6</span> Dec miles per hour, approximately
-  1035.62 US miles per hour, 1.<span class="vinculum">6</span>
-  megameters per hour, 0.4<span class="vinculum">629</span> kilometers
-  per second, roughly 1.36 times the speed of sound
+  1041.<span class="vinculum">6</span> miles per hour,
+  1.<span class="vinculum">6</span> megameters per hour,
+  0.4<span class="vinculum">629</span> kilometers per second, roughly
+  1.36 times the speed of sound
   - <a href="#kiloomegar" id="kv">kv</a>: kiloomegar, kωr,
     1.<span class="vinculum">6</span> gigameters per hour,
     0.4<span class="vinculum">629</span> megameters per second,
     approximately 0.1544% of the speed of light
   - <a href="#milliomegar" id="mv">mv</a>: milliomegar, mωr,
-    1.041<span class="vinculum">6</span> Dec miles per hour, roughly
-    1.03562 US miles per hour, 1.<span class="vinculum">6</span>
-    kilometers per hour, 0.4<span class="vinculum">629</span> meters per
-    second, approximately 0.136% the speed of sound
+    1.041<span class="vinculum">6</span> miles per hour,
+    1.<span class="vinculum">6</span> kilometers per hour,
+    0.4<span class="vinculum">629</span> meters per second,
+    approximately 0.136% the speed of sound
 - <a href="#wineglass" id="w">w</a>: wineglass, 64 milliters, 2 ounces,
   cubic decizem, 1000 drops
 - <a href="#hexamilliare" id="x">x</a>: hexamilliare, square zem, z², 16
-  square decimeters, 1.<span class="vinculum">7</span> Dec square feet,
-  256 Dec square inches
+  square decimeters, 1.<span class="vinculum">7</span> square feet, 256
+  square inches
   - <a href="#megahexamilliare" id="Mx">Mx</a>: megahexamilliare, a
     million square zem, square kilozem, kz², hexakilare, 16 hectares,
-    1600 ares, 40 Dec acres, 0.16 square kilometers, 0.0625 Dec square
-    miles
+    1600 ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
 - <a href="#year" id="y">y</a>: year
   - <a href="#milliyear" id="my">my</a>: milliyear, a thousandth of a
     year
   - <a href="#yearofera" id="yoe">yoe</a>: year of era, integer years
     since the Dec epoch
 - <a href="#zoneequatorialmeter" id="z">z</a>: zem, zone equatorial
-  meter, 4 decimeters, 16 Dec inches
+  meter, 4 decimeters, 16 inches
   - <a href="#squarekilozem" id="kz2">kz²</a>: square kilozem, a million
     square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600
-    ares, 40 Dec acres, 0.16 square kilometers, 0.0625 Dec square miles
+    ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
   - <a href="#kilozem" id="kz">kz</a>: kilozem, 1000 zem, 400 meters, a
-    quarter Dec mile
+    quarter mile
   - <a href="#squarezem" id="z2">z²</a>: square zem, hexamilliare, 16
-    square decimeters, 1.<span class="vinculum">7</span> Dec square
-    feet, 256 Dec square inches
+    square decimeters, 1.<span class="vinculum">7</span> square feet,
+    256 square inches
   - <a href="#squaredecazem" id="Dz2">Dz²</a>: square decazem, 1
-    hexadeciare, 16 square meters, 19.75 Dec square yards, 100 square
-    zem
+    hexadeciare, 16 square meters, 19.75 square yards, 100 square zem
   - <a href="#cubiczem" id="z3">z³</a>: cubic zem, 1 keg, 64 liters,
     1000 wine glasses, a million drops, half a barrel
   - <a href="#cubicdecizem" id="dz3">dz³</a>: cubic decizem, 1000 drops,
@@ -5552,11 +5566,11 @@ synth = new Tone.PolySynth(16, Tone.Synth, {
 }).toMaster()
 origin = Fraction(originFrequency)
 axisColor = d3.hsl(0, 0, 0.5)
-lollimargin = ({top: 30, right: 10, bottom: 30, left: 10})
+lollimargin = ({top: 30, right: 8, bottom: 30, left: width < 500 ? 5 : width < 550 ? 6 : width < 600 ? 7 : width < 650 ? 8 : width < 700 ? 9 : 10})
 numberOfColors = 10
 rowHeight = 60
 originFrequency = 440
-pointRadius = width < 400 ? 4 :  width < 450 ? 5 : width < 500 ? 6 : width < 550 ? 7 : width < 600 ? 8 : width < 650 ? 9 : width < 700 ? 10 : width < 750 ? 11 : width < 800 ? 12 : width < 850 ? 13 : width < 900 ? 14 : width < 950 ? 15 : 16
+pointRadius = width < 600 ? 8 : width < 650 ? 9 : width < 700 ? 10 : width < 750 ? 11 : width < 800 ? 12 : width < 850 ? 13 : width < 900 ? 14 : width < 950 ? 15 : 16
 transitionDuration = 200
 addStiltsTo = (svg, tones, config) => {
   const mapToX = mapToXFor(tones, config);
@@ -5613,13 +5627,14 @@ addPointLabelsTo = (svg, tones, config) => {
             return ratioAsString;
           }
         })
+        .attr("class", "unselectable")
         .attr("font-family", "sans-serif")
-        .attr("font-size", width < 400 ? "12px" :  width < 450 ? "14px" : width < 500 ? "16px" : width < 550 ? "18px" : width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px")
+        .attr("font-size", width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px")
         .attr("font-weight", "bold")
         .attr("text-anchor", "middle")
         .attr("fill", t => t.color ?? (t.isColored === false ? "#ccc" : colors[t.colorIndex]))
         .attr("stroke", axisColor)
-        .attr("stroke-width", width < 500 ? 1 : width < 600 ? 1.25 : width < 700 ? 1.5 : width < 800 ? 1.75 : 2)
+        .attr("stroke-width", width < 600 ? 1.25 : width < 700 ? 1.5 : width < 800 ? 1.75 : 2)
         .attr("paint-order", "stroke")
         .attr("stroke-linejoin", "round")
         .attr("x", t => mapToX(t.x ?? t.frequency))
@@ -5635,6 +5650,7 @@ addYAxisTo = (svg, tones, config) => {
     .attr("transform", `translate(${lollimargin.left * 3},0)`)
     .call(axis)
     .selectAll("text")
+      .attr("class", "unselectable")
       .attr("font-size", config.axisFontSize ?? "16px");
 }
 addXAxisTo = (svg, tones, config) => {    
@@ -5648,7 +5664,8 @@ addXAxisTo = (svg, tones, config) => {
       .attr("transform", `translate(0,${height - lollimargin.bottom})`)
       .call(axis);
     axisGroup.selectAll("text")
-      .attr("font-size", width < 400 ? "8px" :  width < 450 ? "10px" : width < 500 ? "12px" : width < 550 ? "14px" : width < 600 ? "16px" : width < 650 ? "18px" : width < 700 ? "20px" : width < 750 ? "22px" : width < 800 ? "24px" : width < 850 ? "26px" : width < 900 ? "28px" : width < 950 ? "30px" : "32px")
+      .attr("class", "unselectable")
+      .attr("font-size", width < 600 ? "16px" : width < 650 ? "18px" : width < 700 ? "20px" : width < 750 ? "22px" : width < 800 ? "24px" : width < 850 ? "26px" : width < 900 ? "28px" : width < 950 ? "30px" : "32px")
       .attr("fill", axisColor.darker(1));
     axisGroup.selectAll("path")
       .attr("stroke", axisColor);
@@ -5656,12 +5673,13 @@ addXAxisTo = (svg, tones, config) => {
       .attr("stroke", axisColor);
   });
   svg.append("text")
-  .attr("x", (width - lollimargin.left - lollimargin.right) / 2 + lollimargin.left)
-  .attr("y", calculateGraphHeight(tones) + (width < 400 ? 12 :  width < 450 ? 14 : width < 500 ? 16 : width < 550 ? 18 : width < 600 ? 20 : width < 650 ? 22 : width < 700 ? 24 : width < 750 ? 26 : width < 800 ? 28 : width < 850 ? 30 : width < 900 ? 32 : width < 950 ? 34 : 36))
-  .attr("text-anchor", "middle")
-  .attr("font-size", config.axisTitleFontSize ?? ("font-size", width < 400 ? "12px" :  width < 450 ? "14px" : width < 500 ? "16px" : width < 550 ? "18px" : width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px"))
-  .attr("fill", config.axisTextColor ?? axisColor.darker(1))
-  .text(config.xAxisTitle ?? "Perbeat (inverse centimilliday)");
+    .attr("class", "unselectable")
+    .attr("x", (width - lollimargin.left - lollimargin.right) / 2 + lollimargin.left)
+    .attr("y", calculateGraphHeight(tones) + (width < 600 ? 20 : width < 650 ? 22 : width < 700 ? 24 : width < 750 ? 26 : width < 800 ? 28 : width < 850 ? 30 : width < 900 ? 32 : width < 950 ? 34 : 36))
+    .attr("text-anchor", "middle")
+    .attr("font-size", config.axisTitleFontSize ?? ("font-size", width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px"))
+    .attr("fill", config.axisTextColor ?? axisColor.darker(1))
+    .text(config.xAxisTitle ?? "Perbeat (inverse centimilliday)");
 }
 addConnectionsTo = (svg, tones, config) => {
   const connections = ToneConnections.generate(tones, config);
@@ -5705,6 +5723,7 @@ addConnectionsTo = (svg, tones, config) => {
     .data(connections)
     .enter().append("text")
       .text(connection => connection.text.content)
+      .attr("class", "unselectable")
       .attr("font-family", "sans-serif")
       .attr("font-size", "13px")
       .attr("font-weight", "bold")
@@ -6903,6 +6922,11 @@ figcaption {
   max-width: 1000px;
   overflow-y: visible;
   overflow-x: hidden;
+}
+.unselectable {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 </style>
 
