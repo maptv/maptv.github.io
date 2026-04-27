@@ -5420,7 +5420,7 @@ renderGraph = (possibleTones, config = {}) => {
   synth.releaseAll();
   const height = graphHeight;
   const svg = d3.select(DOM.svg(width, height))
-    .attr("viewBox", `0 -25 ${width} ${height}`)
+    .attr("viewBox", `6 -25 ${width} ${height}`)
     .attr("preserveAspectRatio", "xMidYMid meet")
     .style("width", "100%")
     .style("height", "auto");
@@ -5566,7 +5566,7 @@ synth = new Tone.PolySynth(16, Tone.Synth, {
 }).toMaster()
 origin = Fraction(originFrequency)
 axisColor = d3.hsl(0, 0, 0.5)
-lollimargin = ({top: 30, right: 8, bottom: 30, left: width < 500 ? 5 : width < 550 ? 6 : width < 600 ? 7 : width < 650 ? 8 : width < 700 ? 9 : 10})
+lollimargin = ({top: 30, right: 10, bottom: 30, left: width < 500 ? 5 : width < 550 ? 6 : width < 600 ? 7 : width < 650 ? 8 : width < 700 ? 9 : 10})
 numberOfColors = 10
 rowHeight = 60
 originFrequency = 440
@@ -6917,6 +6917,7 @@ figcaption {
 }
 .musicchart {
   margin-top: -25px;
+  margin-left: -5px;
 }
 .musicchart * {
   max-width: 1000px;
