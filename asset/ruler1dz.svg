@@ -20,9 +20,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="2.262831"
-     inkscape:cx="-28.062193"
-     inkscape:cy="212.34462"
+     inkscape:zoom="1.479553"
+     inkscape:cx="54.408323"
+     inkscape:cy="224.05415"
      inkscape:window-width="1256"
      inkscape:window-height="896"
      inkscape:window-x="221"
@@ -48,17 +48,11 @@
      style="stroke:#000000;stroke-width:1.0005;stroke-dasharray:none"
      inkscape:label="topHorizontal" />
   <text
-     x="6.8437691"
-     y="82.96875"
-     id="text1067"
-     style="font-size:32px;font-family:'Arial Black';fill:#000000;stroke-width:1.11047"
-     inkscape:label="cz">cz</text>
-  <text
-     x="6.2656441"
-     y="186.45312"
+     x="4.2291679"
+     y="193.13393"
      id="text1070"
-     style="font-size:48px;font-family:'Arial Black';fill:#000000;stroke-width:1.11047"
-     inkscape:label="cm">cm</text>
+     style="font-size:21.3333px;font-family:'Arial Black';fill:#000000;stroke-width:1.11047"
+     inkscape:label="cm">centimeter</text>
   <line
      x1="1.9013882e-05"
      x2="1001"
@@ -68,10 +62,10 @@
      style="stroke:#000000;stroke-width:1.0005;stroke-dasharray:none"
      inkscape:label="btmHorizontal" />
   <text
-     x="4.406208"
-     y="266.17706"
+     x="3.5625024"
+     y="221.26363"
      id="text1124"
-     style="font-size:53.3333px;font-family:'Arial Black';fill:#000000;stroke-width:1.11047"
+     style="font-size:21.3333px;font-family:'Arial Black';fill:#000000;stroke-width:1.11047"
      inkscape:label="in">inch</text>
   <text
      text-anchor="end"
@@ -80,13 +74,6 @@
      id="use1126"
      style="font-size:74.6667px;font-family:'Arial Black';fill:#000000;stroke-width:1.11047"
      inkscape:label="1">1</text>
-  <use
-     x="0"
-     y="0"
-     xlink:href="#text1067"
-     id="use1183"
-     inkscape:label="cz"
-     transform="translate(1.9639248e-5,250)" />
   <use
      x="0"
      y="0"
@@ -877,4 +864,24 @@
      id="use821"
      inkscape:label="inend"
      transform="translate(625)" />
+  <text
+     x="4.4700508"
+     y="92.973244"
+     id="text1070-9"
+     style="font-size:14.6667px;font-family:'Arial Black';fill:#000000;stroke-width:1.11047"
+     inkscape:label="cm">centizem</text>
+  <text
+     x="4.4700508"
+     y="316.97324"
+     id="text11"
+     style="font-size:14.6667px;font-family:'Arial Black';fill:#000000;stroke-width:1.11047"
+     inkscape:label="cm">centizem</text>
+  <text
+     xml:space="preserve"
+     style="font-size:21.3333px;line-height:0.9;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;stroke-width:0.562;stroke-linecap:round;stroke-linejoin:bevel"
+     x="-36.295506"
+     y="191.84766"
+     id="text12"><tspan
+       sodipodi:role="line"
+       id="tspan11"></tspan></text>
 </svg>

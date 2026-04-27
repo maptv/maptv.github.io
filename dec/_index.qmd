@@ -2064,11 +2064,11 @@ synth = new Tone.PolySynth(16, Tone.Synth, {
 }).toMaster()
 origin = Fraction(originFrequency)
 axisColor = d3.hsl(0, 0, 0.5)
-lollimargin = ({top: 30, right: 10, bottom: 30, left: 10})
+lollimargin = ({top: 30, right: 8, bottom: 30, left: width < 500 ? 5 : width < 550 ? 6 : width < 600 ? 7 : width < 650 ? 8 : width < 700 ? 9 : 10})
 numberOfColors = 10
 rowHeight = 60
 originFrequency = 440
-pointRadius = width < 400 ? 4 :  width < 450 ? 5 : width < 500 ? 6 : width < 550 ? 7 : width < 600 ? 8 : width < 650 ? 9 : width < 700 ? 10 : width < 750 ? 11 : width < 800 ? 12 : width < 850 ? 13 : width < 900 ? 14 : width < 950 ? 15 : 16
+pointRadius = width < 600 ? 8 : width < 650 ? 9 : width < 700 ? 10 : width < 750 ? 11 : width < 800 ? 12 : width < 850 ? 13 : width < 900 ? 14 : width < 950 ? 15 : 16
 transitionDuration = 200
 addStiltsTo = (svg, tones, config) => {
   const mapToX = mapToXFor(tones, config);
@@ -2125,13 +2125,14 @@ addPointLabelsTo = (svg, tones, config) => {
             return ratioAsString;
           }
         })
+        .attr("class", "unselectable")
         .attr("font-family", "sans-serif")
-        .attr("font-size", width < 400 ? "12px" :  width < 450 ? "14px" : width < 500 ? "16px" : width < 550 ? "18px" : width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px")
+        .attr("font-size", width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px")
         .attr("font-weight", "bold")
         .attr("text-anchor", "middle")
         .attr("fill", t => t.color ?? (t.isColored === false ? "#ccc" : colors[t.colorIndex]))
         .attr("stroke", axisColor)
-        .attr("stroke-width", width < 500 ? 1 : width < 600 ? 1.25 : width < 700 ? 1.5 : width < 800 ? 1.75 : 2)
+        .attr("stroke-width", width < 600 ? 1.25 : width < 700 ? 1.5 : width < 800 ? 1.75 : 2)
         .attr("paint-order", "stroke")
         .attr("stroke-linejoin", "round")
         .attr("x", t => mapToX(t.x ?? t.frequency))
@@ -2147,6 +2148,7 @@ addYAxisTo = (svg, tones, config) => {
     .attr("transform", `translate(${lollimargin.left * 3},0)`)
     .call(axis)
     .selectAll("text")
+      .attr("class", "unselectable")
       .attr("font-size", config.axisFontSize ?? "16px");
 }
 addXAxisTo = (svg, tones, config) => {    
@@ -2160,7 +2162,8 @@ addXAxisTo = (svg, tones, config) => {
       .attr("transform", `translate(0,${height - lollimargin.bottom})`)
       .call(axis);
     axisGroup.selectAll("text")
-      .attr("font-size", width < 400 ? "8px" :  width < 450 ? "10px" : width < 500 ? "12px" : width < 550 ? "14px" : width < 600 ? "16px" : width < 650 ? "18px" : width < 700 ? "20px" : width < 750 ? "22px" : width < 800 ? "24px" : width < 850 ? "26px" : width < 900 ? "28px" : width < 950 ? "30px" : "32px")
+      .attr("class", "unselectable")
+      .attr("font-size", width < 600 ? "16px" : width < 650 ? "18px" : width < 700 ? "20px" : width < 750 ? "22px" : width < 800 ? "24px" : width < 850 ? "26px" : width < 900 ? "28px" : width < 950 ? "30px" : "32px")
       .attr("fill", axisColor.darker(1));
     axisGroup.selectAll("path")
       .attr("stroke", axisColor);
@@ -2168,12 +2171,13 @@ addXAxisTo = (svg, tones, config) => {
       .attr("stroke", axisColor);
   });
   svg.append("text")
-  .attr("x", (width - lollimargin.left - lollimargin.right) / 2 + lollimargin.left)
-  .attr("y", calculateGraphHeight(tones) + (width < 400 ? 12 :  width < 450 ? 14 : width < 500 ? 16 : width < 550 ? 18 : width < 600 ? 20 : width < 650 ? 22 : width < 700 ? 24 : width < 750 ? 26 : width < 800 ? 28 : width < 850 ? 30 : width < 900 ? 32 : width < 950 ? 34 : 36))
-  .attr("text-anchor", "middle")
-  .attr("font-size", config.axisTitleFontSize ?? ("font-size", width < 400 ? "12px" :  width < 450 ? "14px" : width < 500 ? "16px" : width < 550 ? "18px" : width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px"))
-  .attr("fill", config.axisTextColor ?? axisColor.darker(1))
-  .text(config.xAxisTitle ?? "Perbeat (inverse centimilliday)");
+    .attr("class", "unselectable")
+    .attr("x", (width - lollimargin.left - lollimargin.right) / 2 + lollimargin.left)
+    .attr("y", calculateGraphHeight(tones) + (width < 600 ? 20 : width < 650 ? 22 : width < 700 ? 24 : width < 750 ? 26 : width < 800 ? 28 : width < 850 ? 30 : width < 900 ? 32 : width < 950 ? 34 : 36))
+    .attr("text-anchor", "middle")
+    .attr("font-size", config.axisTitleFontSize ?? ("font-size", width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px"))
+    .attr("fill", config.axisTextColor ?? axisColor.darker(1))
+    .text(config.xAxisTitle ?? "Perbeat (inverse centimilliday)");
 }
 addConnectionsTo = (svg, tones, config) => {
   const connections = ToneConnections.generate(tones, config);
@@ -2217,6 +2221,7 @@ addConnectionsTo = (svg, tones, config) => {
     .data(connections)
     .enter().append("text")
       .text(connection => connection.text.content)
+      .attr("class", "unselectable")
       .attr("font-family", "sans-serif")
       .attr("font-size", "13px")
       .attr("font-weight", "bold")
@@ -3416,6 +3421,11 @@ figcaption {
   max-width: 1000px;
   overflow-y: visible;
   overflow-x: hidden;
+}
+.unselectable {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 </style>
 ```

@@ -1,4 +1,3 @@
----
 references:
 - id: hinnant2021
   author:
@@ -11,4 +10,3 @@ references:
   title: <span class="nocase"><code>chrono</code></span>-Compatible Low-Level Date Algorithms
   type: article
   url: https://howardhinnant.github.io/date_algorithms
-...
