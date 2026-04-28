@@ -2570,16 +2570,21 @@ data-bs-title="kilometers">km</a>/hour</th>
 </thead>
 <tbody>
 <tr>
-<td><span class="colorInch">0.9843</span> <a
+<td><span class="colorPerS">0.9448</span> <a
 href="https://en.wikipedia.org/wiki/Inch_per_second">inches/second</a></td>
-<td><span class="mono">0.054</span></td>
-<td><span class="mono">0.09</span></td>
+<td><span class="mono">0.05625</span></td>
+<td><span class="mono">0.09375</span></td>
 </tr>
 <tr>
-<td><span class="colorInch">0.9843</span> <a
+<td><span class="colorPerS">0.9448</span> <a
 href="https://en.wikipedia.org/wiki/Foot_per_second">feet/second</a></td>
-<td><span class="mono">0.648</span></td>
-<td><span class="mono">1.08</span></td>
+<td><span class="mono">0.675</span></td>
+<td><span class="mono">0.675</span></td>
+</tr>
+<tr>
+<td><span class="colorPerS">0.9448</span> yards/second</td>
+<td><span class="mono">2.025</span></td>
+<td><span class="mono">3.375</span></td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
@@ -2815,6 +2820,12 @@ href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_ba
 href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
 <td><span class="mono">2000000</span></td>
 <td><span class="mono">128000</span></td>
+</tr>
+<tr>
+<td><span class="colorBarr">1.0735</span> <a
+href="https://en.wikipedia.org/wiki/Hogshead">hogsheads</a></td>
+<td><span class="mono">4000000</span></td>
+<td><span class="mono">256000</span></td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
@@ -5308,17 +5319,18 @@ fMile = 1.6 / 1.609344
 fInch = 25 / 25.4
 hIob = d3.hsl(piecewiseColor(1 / .864 % 1)).h
 hDrop = d3.hsl(piecewiseColor(64 / 51 % 1)).h
-hMass = d3.hsl(piecewiseColor(448 / 453.59237 % 1)).h
-hGall = d3.hsl(piecewiseColor(3.584 / 3.785411784 % 1)).h
+hMass = d3.hsl(piecewiseColor(448 / 453.59237)).h
+hGall = d3.hsl(piecewiseColor(3.584 / 3.785411784)).h
 hBarr = d3.hsl(piecewiseColor(128 / 119.24 % 1)).h
-hCara = d3.hsl(piecewiseColor(192 / 200 % 1)).h
+hCara = d3.hsl(piecewiseColor(192 / 200)).h
 hAvOz = d3.hsl(piecewiseColor(32 / 28.349523125  % 1)).h
 hFlOz = d3.hsl(piecewiseColor(32 / 29.5735295625 % 1)).h
-hInch = d3.hsl(piecewiseColor(fInch % 1)).h
-hSqIn = d3.hsl(piecewiseColor(fInch**2 % 1)).h
-hCuIn = d3.hsl(piecewiseColor(fInch**3 % 1)).h
-hMile = d3.hsl(piecewiseColor(fMile % 1)).h
-hSqMi = d3.hsl(piecewiseColor(fMile**2 % 1)).h
+hInch = d3.hsl(piecewiseColor(fInch)).h
+hPerS = d3.hsl(piecewiseColor(fInch * .96)).h
+hSqIn = d3.hsl(piecewiseColor(fInch**2)).h
+hCuIn = d3.hsl(piecewiseColor(fInch**3)).h
+hMile = d3.hsl(piecewiseColor(fMile)).h
+hSqMi = d3.hsl(piecewiseColor(fMile**2)).h
 bcHue = (xetHue[1] + xetHue[2]) / 2
 ddsHue = (xetHue[4] + xetHue[5]) / 2
 dseHue = (xetHue[5] + xetHue[6]) / 2
@@ -6557,6 +6569,14 @@ html`
 .colorMile {
   background: hsl(${hMile} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hMile}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-family: monospace;
+}
+.colorPerS {
+  background: hsl(${hPerS} ${colorS / 10}% ${colorL / 10}%);
+  color: ${yiq(`hsl(${hPerS}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
   padding: 0px 5px;
   border-radius: 4px;
   font-weight: 400;
