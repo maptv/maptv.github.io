@@ -1,6 +1,6 @@
 # Dec
 Martin Laptev
-2026+057
+2026+059
 
 - [<span class="toc-section-number">0</span> Dec measurement
   system](#sec-dec)
@@ -15,9 +15,9 @@ Martin Laptev
 - [<span class="toc-section-number">3</span> Red green blue
   (rgb)](#sec-rgb)
 - [<span class="toc-section-number">4</span> Dec time zones](#sec-dtz)
-- [<span class="toc-section-number">5</span> Dates and times](#sec-dat)
-- [<span class="toc-section-number">6</span> Millenium Year
-  Day](#sec-myd)
+- [<span class="toc-section-number">5</span> Date and time](#sec-dat)
+- [<span class="toc-section-number">6</span> Millenium year
+  day](#sec-myd)
 - [<span class="toc-section-number">7</span> Day of dek (dod)](#sec-dod)
 - [<span class="toc-section-number">8</span> Zone equatorial meter
   (zem)](#sec-zem)
@@ -31,31 +31,33 @@ Martin Laptev
   speed](#sec-acs)
 - [<span class="toc-section-number">13</span> Centimilliday
   (cmd)](#sec-cmd)
-- [<span class="toc-section-number">14</span> heart rate
+- [<span class="toc-section-number">14</span> Heart rate
   tempo](#sec-hrt)
 - [<span class="toc-section-number">15</span> Frequency period
   wavelength](#sec-fpw)
-- [<span class="toc-section-number">16</span> Octave equals
-  decastep](#sec-oed)
+- [<span class="toc-section-number">16</span> Decioctave octave
+  note](#sec-don)
 - [<span class="toc-section-number">17</span> Color and sound](#sec-cas)
 - [<span class="toc-section-number">18</span> Système international
   d’unités](#sec-sid)
 - [<span class="toc-section-number">19</span> US customary
   units](#sec-ucu)
   - [Unit conversion tables](#unit-conversion-tables)
-- [<span class="toc-section-number">20</span> Length and
-  distance](#sec-lad)
-- [<span class="toc-section-number">21</span> Miles per hour](#sec-mph)
-- [<span class="toc-section-number">22</span> Are hectare
-  acre](#sec-aha)
-- [<span class="toc-section-number">23</span> Drop wineglass
-  keg](#sec-dwk)
-- [<span class="toc-section-number">24</span> Grain pound ton](#sec-gpt)
-- [<span class="toc-section-number">25</span> Body mass index
-  (bmi)](#sec-bmi)
-- [<span class="toc-section-number">26</span> Centizem centimeter
-  inch](#sec-cci)
-- [<span class="toc-section-number">27</span> Claude Boniface
+    - [<span class="toc-section-number">20.0.1</span> Length and
+      distance](#sec-lad)
+    - [<span class="toc-section-number">20.0.2</span> Miles per
+      hour](#sec-mph)
+    - [<span class="toc-section-number">20.0.3</span> Are hectare
+      acre](#sec-aha)
+    - [<span class="toc-section-number">20.0.4</span> Drop wineglass
+      keg](#sec-dwk)
+    - [<span class="toc-section-number">20.0.5</span> Grain pound
+      ton](#sec-gpt)
+    - [<span class="toc-section-number">20.0.6</span> Body mass index
+      (bmi)](#sec-bmi)
+    - [<span class="toc-section-number">20.0.7</span> Centizem
+      centimeter inch](#sec-cci)
+- [<span class="toc-section-number">20</span> Claude Boniface
   Collignon](#sec-cbc)
 - [Summary](#tldr)
 - [Next](#next)
@@ -983,7 +985,7 @@ viewof latitude = Inputs.range([-.25, .25], {label: "Latitude", value: 0, step: 
 viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine input", value: "turns"})
 ```
 
-# Dates and times
+# Date and time
 
 Dec dates consist of a “year of era”
 (<a href="#yoe" id="yearofera" class="tool" data-bs-toggle="tooltip"
@@ -1004,7 +1006,7 @@ Color labels make it easier to visually
 the date and time that make up a Dec snap🫰:
 ${decYearP0hsl1}<span class="mono">+</span>${decDateP0hsl1}${decTimeP0hsl1}<span class="mono">-</span><span class="color0">0</span>.
 
-# Millenium Year Day
+# Millenium year day
 
 <a href="#yoe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">Yoe</a> color labels are based on “year of
@@ -2115,7 +2117,7 @@ of a quarter hour and a
 data-bs-title="beat">b</a> is <span class="color864">86.4%</span> of a
 second.
 
-# heart rate tempo
+# Heart rate tempo
 
 A [normal resting
 heart❤️rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=heart%20rate%20is-,60–100%20bpm,-.%20An%20ultra%2Dtrained)
@@ -2231,7 +2233,7 @@ viewof beats = Inputs.range([1, 999], { step: 1,  value: 1, label: "Duration" })
 Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 ```
 
-# Octave equals decastep
+# Decioctave octave note
 
 In addition to <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">p</a>, the limits of human hearing can also be
@@ -2292,12 +2294,11 @@ The lollipops🍭in the chart below represent the ten Dec notes in Octave
 4. The lollipops and the
 <a href="#do" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decioctaves">do</a> values above them are labeled with
-the ten Dec colors. Beneath each lollipop is its corresponding frequency
-rounded to the nearest
-<a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeat">p</a>. Click and hold each lollipop to hear its
-note. The chart demonstrates how data points can be labeled with both
-color and sound.
+the ten Dec colors. Beneath each lollipop is its frequency rounded to
+the nearest <a href="#per" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeat">p</a>. Click or tap each lollipop to hear its
+associated sound. The chart demonstrates that data points can be labeled
+with both color and sound.
 
 ``` {ojs}
 //| echo: false
@@ -2380,7 +2381,7 @@ data-bs-title="zem">z</a>.
 
 ## Unit conversion tables
 
-# Length and distance
+### Length and distance
 
 The
 [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%20comparable%29-,one%2Ddimensional,-quotations%C2%A0%E2%96%BC)
@@ -2518,7 +2519,7 @@ href="https://en.wikipedia.org/wiki/League_(unit)">leagues</a></td>
 </tbody>
 </table>
 
-# Miles per hour
+### Miles per hour
 
 When we divide a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="unidimensional">1D</span> unit by a time unit, we get a
@@ -2582,20 +2583,20 @@ href="https://en.wikipedia.org/wiki/Foot_per_second">feet/second</a></td>
 <td><span class="mono">0.675</span></td>
 </tr>
 <tr>
-<td><span class="colorPerS">0.9448</span> yards/second</td>
-<td><span class="mono">2.025</span></td>
-<td><span class="mono">3.375</span></td>
-</tr>
-<tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Miles_per_hour">miles/hour</a></td>
 <td><span class="mono">0.96</span></td>
 <td><span class="mono">1.6</span></td>
 </tr>
+<tr>
+<td><span class="colorPerS">0.9448</span> yards/second</td>
+<td><span class="mono">2.025</span></td>
+<td><span class="mono">3.375</span></td>
+</tr>
 </tbody>
 </table>
 
-# Are hectare acre
+### Are hectare acre
 
 If we raise a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="unidimensional">1D</span> unit to the second power, we
@@ -2696,7 +2697,7 @@ href="https://en.wikipedia.org/wiki/Square_mile">sq. miles</a></td>
 </tbody>
 </table>
 
-# Drop wineglass keg
+### Drop wineglass keg
 
 <a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> tridimensional (<span class="tool"
@@ -2836,7 +2837,7 @@ href="https://en.wikipedia.org/wiki/Cubic_yard">cu. yards</a></td>
 </tbody>
 </table>
 
-# Grain pound ton
+### Grain pound ton
 
 Dec and <a href="#si" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a> measurements of
@@ -2908,7 +2909,7 @@ href="https://en.wikipedia.org/wiki/Short_ton">tons</a></td>
 </tbody>
 </table>
 
-# Body mass index (bmi)
+### Body mass index (bmi)
 
 A <a href="#z3" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic zem">z³</a> is 1 keg. A keg of water weighs 64
@@ -2980,7 +2981,7 @@ viewof kilograins = Inputs.range([0, 10000], {label: "Weight", value: 1000, step
 viewof zems = Inputs.range([0, 10], {label: "Height", value: 4, step: 0.01})
 ```
 
-# Centizem centimeter inch
+### Centizem centimeter inch
 
 The longest length depicted in the image of a ruler📏below is 1
 <a href="#dz" class="tool" data-bs-toggle="tooltip"
@@ -3122,7 +3123,7 @@ discuss the [Quarto](../quarto) publishing system and how I customize my
 Quarto website to display Dec [dates](../dec/date) in the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information),
 the [article list](../list), and [title
-blocks](https://quarto.org/docs/authoring/title-blocks.html).
+blocks](https://quarto.org/docs/authoring/title-blocks).
 
 <div id="firstnav">
 
@@ -3160,41 +3161,44 @@ algorithms that serve as the foundation of Dec dates (Hinnant 2021+185).
 
 ``` yml
 references:
-- id: laptev2025
-  author:
-    - family: Laptev
-      given: Martin
-  title: Dec
-  type: article
-  URL: https://maptv.github.io/dec
-  issued:
-    literal: 2026+057
-
 - id: hinnant2021
   author:
     - family: Hinnant
       given: Howard
-  title: chrono-Compatible Low-Level Date Algorithms
-  type: article
-  URL: https://howardhinnant.github.io/date_algorithms
+      url: https://howardhinnant.github.io
+  title: >
+    <span class="nocase"><code>chrono</code></span>-Compatible
+    Low-Level Date Algorithms
+  url: https://howardhinnant.github.io/date_algorithms
   issued:
     literal: 2021+185
+- id: laptev2026
+  author:
+    - family: Laptev
+      given: Martin
+      url: https://maptv.github.io
+  title: Dec
+  url: https://maptv.github.io/dec
+  issued:
+    literal: 2026+059
 ```
 
 </div>
 
-As demonstrated by the previous sentence above and the
-[References](#references) section below, Quarto citations can include
-Dec dates. By default, Quarto formats citations according to the
-[Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date
-format. Per this format, the citation for this article would appear as
-[Laptev, Martin](https://maptv.github.io/about). 2026+057. “Dec.”
-${decYearP0}+${decDateP0}. <https://maptv.github.io/dec>.
+I chose not to specify a [Citation Style
+Language](https://quarto.org/docs/authoring/citations#sec-citations-style)
+(csl) file for this article, therefore Quarto formatted the Hinnant
+(2021+185) reference in the [References](#references) section below
+according to the [Chicago Manual of
+Style](https://chicagomanualofstyle.org) author-date format. Per this
+format, the citation for this article would appear as [Laptev,
+Martin](https://maptv.github.io/about). 2026+059. *Dec*.
+https://maptv.github.io/dec.
 
 Instead of using Quarto [citation
 syntax](https://quarto.org/docs/authoring/citations.html#sec-citations),
 you can also prepare a list of references using
-[footnotes](https://quarto.org/docs/authoring/markdown-basics.html#footnotes).
+[footnotes](https://quarto.org/docs/authoring/markdown-basics#footnotes).
 As an example, I included citations for the Hinnant date algorithm
 article[5] in both the [references](#references) and
 [footnotes](#footnotes) sections. In alphabetical order below, you will
@@ -3208,96 +3212,87 @@ that I used as the basis for many of the visualizations above.
 
 <div id="citelist" class="column-page-right">
 
-0.  [Armstrong, Zan](https://observablehq.com/@zanarmstrong)
+0.  [Armstrong, Zan](https://observablehq.com/@zanarmstrong).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="April 27, 2023">2023+057</span>. “Text color
-    annotations in markdown.” ${decYearP0}+${decDateP0}.
+    data-bs-title="April 27, 2023">2023+057</span>. *Text color
+    annotations in markdown*.
     <https://observablehq.com/@observablehq/text-color-annotations-in-markdown>.
-1.  [Bostock, Mike](https://observablehq.com/@mbostock)
+1.  [Bostock, Mike](https://observablehq.com/@mbostock).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="January 30, 2021">2020+335</span>. “Time Zones.”
-    ${decYearP0}+${decDateP0}.
+    data-bs-title="January 30, 2021">2020+335</span>. *Time Zones*.
     <https://observablehq.com/@mbostock/time-zones>.
-2.  [Bostock, Mike](https://observablehq.com/@mbostock)
+2.  [Bostock, Mike](https://observablehq.com/@mbostock).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="April 7, 2022">2022+037</span>. “Solar Terminator.”
-    ${decYearP0}+${decDateP0}.
+    data-bs-title="April 7, 2022">2022+037</span>. *Solar Terminator*.
     <https://observablehq.com/@d3/solar-terminator>.
-3.  [Bostock, Mike](https://observablehq.com/@mbostock)
+3.  [Bostock, Mike](https://observablehq.com/@mbostock).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="January 9, 2024">2023+314</span>. “Input: Table.”
-    ${decYearP0}+${decDateP0}.
+    data-bs-title="January 9, 2024">2023+314</span>. *Input: Table*.
     <https://observablehq.com/@observablehq/input-table>.
 4.  [Edwards, Paul](https://observablehq.com/@pjedwards).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="August 19, 2022">2022+171</span>. “Compass Rose as
-    legend with colors.” ${decYearP0}+${decDateP0}.
+    data-bs-title="August 19, 2022">2022+171</span>. *Compass Rose as
+    legend with colors*.
     <https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors>.
 5.  [Freedman, Dylan](https://observablehq.com/@freedmand).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="February 9, 2018">2017+345</span>. “Sounds.”
-    ${decYearP0}+${decDateP0}.
+    data-bs-title="February 9, 2018">2017+345</span>. *Sounds*.
     <https://observablehq.com/@freedmand/sounds>.
 6.  [Gordon, Marcus A.](https://observablehq.com/@magfoto).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="December 14, 2018">2018+288</span>. “Wavelengths and
-    Spectral Colours.” ${decYearP0}+${decDateP0}.
+    data-bs-title="December 14, 2018">2018+288</span>. *Wavelengths and
+    Spectral Colours*.
     <https://observablehq.com/@magfoto/wavelengths-and-spectral-colours>.
 7.  [Harmath, Dénes](https://observablehq.com/user/@thsoft).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="June 13, 2018">2018+104</span>. “ABC.”
-    ${decYearP0}+${decDateP0}. <https://observablehq.com/@thsoft/abc>.
-8.  [Johnson, Ian](https://observablehq.com/@enjalot) <span class="tool"
-    data-bs-toggle="tooltip"
-    data-bs-title="June 30, 2021">2021+121</span>. “Draggable World Map
-    Coordinates Input.” ${decYearP0}+${decDateP0}.
-    <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
-9.  [Lim, Maddie](https://observablehq.com/@maddievision)
+    data-bs-title="June 13, 2018">2018+104</span>. *ABC*.
+    <https://observablehq.com/@thsoft/abc>.
+8.  [Johnson, Ian](https://observablehq.com/@enjalot).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="January 25, 2019">2018+330</span>. “Enneagram.”
-    ${decYearP0}+${decDateP0}.
+    data-bs-title="June 30, 2021">2021+121</span>. *Draggable World Map
+    Coordinates Input*.
+    <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
+9.  [Lim, Maddie](https://observablehq.com/@maddievision).
+    <span class="tool" data-bs-toggle="tooltip"
+    data-bs-title="January 25, 2019">2018+330</span>. *Enneagram*.
     <https://observablehq.com/@maddievision/enneagram>.
 10. [Paavanb](https://observablehq.com/@paavanb). <span class="tool"
     data-bs-toggle="tooltip"
-    data-bs-title="March 7, 2024">2024+006</span>. “Progressive Color
-    Picker.” ${decYearP0}+${decDateP0}.
+    data-bs-title="March 7, 2024">2024+006</span>. *Progressive Color
+    Picker*.
     <https://observablehq.com/@paavanb/progressive-color-picker>.
 11. [Patel, Amit](https://observablehq.com/@redblobgames).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="December 16, 2021">2021+290</span>. “Compass Rose.”
-    ${decYearP0}+${decDateP0}.
+    data-bs-title="December 16, 2021">2021+290</span>. *Compass Rose*.
     <https://observablehq.com/@paavanb/progressive-color-picker>.
-12. [Pettiross, Jeff](https://observablehq.com/@pettiross)
+12. [Pettiross, Jeff](https://observablehq.com/@pettiross).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="July 19, 2024">2024+150</span>. “Categorical color
-    scheme test tool.” ${decYearP0}+${decDateP0}.
+    data-bs-title="July 19, 2024">2024+150</span>. *Categorical color
+    scheme test tool*.
     <https://observablehq.com/@observablehq/categorical-palette-tool>
-13. [Rieder, Lukas](https://observablehq.com/@lukasrieder)
+13. [Rieder, Lukas](https://observablehq.com/@lukasrieder).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="April 2, 2023">2023+032</span>. “Editable table.”
-    ${decYearP0}+${decDateP0}.
+    data-bs-title="April 2, 2023">2023+032</span>. *Editable table*.
     <https://observablehq.com/@parlant/editable-table>.
-14. [Rivière, Philippe](https://observablehq.com/@fil)
+14. [Rivière, Philippe](https://observablehq.com/@fil).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="November 15, 2022">2022+259</span>. “Add a class to
-    an observable input.” ${decYearP0}+${decDateP0}.
+    data-bs-title="November 15, 2022">2022+259</span>. *Add a class to
+    an observable input*.
     <https://observablehq.com/@recifs/add-a-class-to-an-observable-input--support>.
-15. [Rivière, Philippe](https://observablehq.com/@fil)
+15. [Rivière, Philippe](https://observablehq.com/@fil).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="January 25, 2024">2023+330</span>. “D3 Projections.”
-    ${decYearP0}+${decDateP0}.
+    data-bs-title="January 25, 2024">2023+330</span>. *D3 Projections*.
     <https://observablehq.com/@fil/d3-projections>.
-16. [Winkler, Elliot](https://observablehq.com/@mcmire)
+16. [Winkler, Elliot](https://observablehq.com/@mcmire).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="May 10, 2019">2019+070</span>. “Illustrating harmony
-    with the harmonic series.” ${decYearP0}+${decDateP0}.
+    data-bs-title="May 10, 2019">2019+070</span>. *Illustrating harmony
+    with the harmonic series*.
     <https://observablehq.com/@mcmire/illustrating-harmony-with-the-harmonic-series>.
 17. [Yamahata,
-    Christophe](https://observablehq.com/@christophe-yamahata)
+    Christophe](https://observablehq.com/@christophe-yamahata).
     <span class="tool" data-bs-toggle="tooltip"
-    data-bs-title="June 28, 2022">2021+119</span>. “Great circle:
-    shortest distance between two locations on Earth 🌏.”
-    ${decYearP0}+${decDateP0}.
+    data-bs-title="June 28, 2022">2021+119</span>. *Great circle:
+    shortest distance between two locations on Earth 🌏*.
     <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
 
 </div>
@@ -4127,13 +4122,14 @@ ydzP0 = dote2date(...unix2dote(now, 0))
 decYearP0 = ydzP0[0]
 decYdaP0 = ydzP0[1]
 decDateP0 = Math.floor(decYdaP0)
+decDateP0pad = String(decDateP0).padStart(3, "0")
 decTimeP0 = ydzP0[1] % 1
 decDekP0 = Math.floor(decDateP0 / 10)
 decDodP0 = decDateP0 % 10
 decYearP0hsl0 = textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0 % 1000 / 1000)).h}` + slStr)
 decYearP0hsl1 = textcolor(decYearP0, `hsl(${d3.hsl(piecewiseColor(decYearP0 % 1000 / 1000)).h}` + slStr)
-decDateP0hsl0 = textcolor(decDateP0.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
-decDateP0hsl1 = textcolor(decDateP0.toString().padStart(3, "0"), `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
+decDateP0hsl0 = textcolor(decDateP0pad, `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
+decDateP0hsl1 = textcolor(decDateP0pad, `hsl(${d3.hsl(piecewiseColor(decDateP0 / (365 + isLeapP0))).h}` + slStr)
 decYdaP0hsl = textcolor(decYdaP0.toFixed(5).padStart(9, "0"), `hsl(${d3.hsl(piecewiseColor(decYdaP0 / (365 + isLeapP0))).h}` + slStr)
 decTimeP0hsl0 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
 decTimeP0hsl1 = textcolor((decTimeP0 * 10).toFixed(4), `hsl(${d3.hsl(piecewiseColor(decTimeP0)).h}` + slStr)
@@ -5650,7 +5646,7 @@ addPointLabelsTo = (svg, tones, config) => {
         .attr("text-anchor", "middle")
         .attr("fill", t => t.color ?? (t.isColored === false ? "#ccc" : colors[t.colorIndex]))
         .attr("stroke", axisColor)
-        .attr("stroke-width", width < 600 ? 1.25 : width < 700 ? 1.5 : width < 800 ? 1.75 : 2)
+        .attr("stroke-width", width < 600 ? 1.5 : width < 700 ? 2 : width < 800 ? 2.5 : width < 900 ? 3 : width < 1000 ? 3.5 : 4)
         .attr("paint-order", "stroke")
         .attr("stroke-linejoin", "round")
         .attr("x", t => mapToX(t.x ?? t.frequency))
@@ -6968,9 +6964,8 @@ figcaption {
 <div id="ref-hinnant2021" class="csl-entry">
 
 Hinnant, Howard. 2021+185.
-“<span class="nocase"><code>chrono</code></span>-Compatible Low-Level
-Date Algorithms.” Preprint, 2021+185.
-<https://howardhinnant.github.io/date_algorithms>.
+*<span class="nocase"><code>chrono</code></span>-Compatible Low-Level
+Date Algorithms*. <https://howardhinnant.github.io/date_algorithms>.
 
 </div>
 
@@ -6978,29 +6973,26 @@ Date Algorithms.” Preprint, 2021+185.
 
 [1] [Newton,
 Issac](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a).
-1704. “Opticks.” ${decYearP0}+${decDateP0}.
-<https://doi.org/10.5479/sil.302475.39088000644674>.
+1704. *Opticks*. <https://doi.org/10.5479/sil.302475.39088000644674>.
 
 [2] [Clint Goss](https://www.clintgoss.com). <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="June 7, 2022">2022+098</span>.
-“Color of Sound.” ${decYearP0}+${decDateP0}.
-<https://www.flutopedia.com/sound_color.htm>.
+*Color of Sound*. <https://www.flutopedia.com/sound_color.htm>.
 
 [3] [Collignon, Claude
 Boniface](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution).
-1788. “Découverte d’étalons justes, naturels, invariables et
-universels.” ${decYearP0}+${decDateP0}.
+1788. *Découverte d’étalons justes, naturels, invariables et
+universels*.
 <https://archive.org/details/dcouvertedtalon00collgoog/page/n68/mode/2up>.
 
 [4] [Agnoli, Paolo](http://www.paoloagnoli.it) & [D’Agostini,
 Giulio](https://www.roma1.infn.it/~dagos). <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="January 25, 2005">2004+330</span>. “Why does the meter
-beat the second?” ${decYearP0}+${decDateP0}.
-<https://arxiv.org/abs/physics/0412078>.
+data-bs-title="January 25, 2005">2004+330</span>. *Why does the meter
+beat the second?*. <https://arxiv.org/abs/physics/0412078>.
 
 [5] [Hinnant, Howard](https://howardhinnant.github.io).
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="September 1, 2021">2021+185</span>. “`chrono`-Compatible
-Low-Level Date Algorithms.” ${decYearP0}+${decDateP0}.
+data-bs-title="September 1, 2021">2021+185</span>. *`chrono`-Compatible
+Low-Level Date Algorithms*.
 <https://howardhinnant.github.io/date_algorithms.html>.

@@ -1,18 +1,19 @@
 # Dec date
 Martin Laptev
-2026+057
+2026+059
 
-- [Day of year (doy)](#doy)
-- [Day of era (doe)](#doe)
-  - [Year of era (yoe)](#yoe)
-- [Day of week (dow)](#dow)
-- [Week of year (woy)](#woy)
-- [Day of dek (dod)](#dod)
-- [Day of month (dom)](#dom)
-- [Month of year (moy)](#moy)
-- [Summary](#tldr)
-- [Next](#next)
-- [Cite](#cite)
+- [<span class="toc-section-number">0</span> Day of year (doy)](#doy)
+- [<span class="toc-section-number">1</span> Day of era (doe)](#doe)
+  - [<span class="toc-section-number">2.0.1</span> Year of era
+    (yoe)](#yoe)
+- [<span class="toc-section-number">2</span> Day of week (dow)](#dow)
+- [<span class="toc-section-number">3</span> Week of year (woy)](#woy)
+- [<span class="toc-section-number">4</span> Day of dek (dod)](#dod)
+- [<span class="toc-section-number">5</span> Day of month (dom)](#dom)
+- [<span class="toc-section-number">6</span> Month of year (moy)](#moy)
+- [<span class="toc-section-number">7</span> Summary](#tldr)
+- [<span class="toc-section-number">8</span> Next](#next)
+- [<span class="toc-section-number">9</span> Cite](#cite)
 
 <div id="datenav">
 
@@ -102,7 +103,7 @@ varies.
 viewof leapscrub = Inputs.form([
   Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
   Inputs.toggle({label: "Leap year", value: false}),
-  Inputs.toggle({label: "Vertical layout", value: false}),
+  Inputs.toggle({label: "Vertical layout", value: true}),
 ])
 ```
 

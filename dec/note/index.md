@@ -5779,9 +5779,8 @@ figcaption {
 <div id="ref-hinnant2021" class="csl-entry">
 
 Hinnant, Howard. 2021+185.
-“<span class="nocase"><code>chrono</code></span>-Compatible Low-Level
-Date Algorithms.” Preprint, 2021+185.
-<https://howardhinnant.github.io/date_algorithms>.
+*<span class="nocase"><code>chrono</code></span>-Compatible Low-Level
+Date Algorithms*. <https://howardhinnant.github.io/date_algorithms>.
 
 </div>
 
