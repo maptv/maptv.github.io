@@ -1,0 +1,34 @@
+# Cite {.unnumbered #cite}
+
+Of the several different [bibliography file formats](https://pandoc.org/MANUAL.html#specifying-bibliographic-data) supported by [Quarto](https://quarto.org), I recommend storing [citations](https://en.wikipedia.org/wiki/Citation#:~:text=a%20reference%20to%20a%20source) in [yaml](https://en.wikipedia.org/wiki/YAML#:~:text=a%20human%2Dreadable%20data%20serialization%20language) files. With the `bibliography.yml` file shown below, you can cite this article and the [2021]{.color021} article entitled [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms) in which [Howard Hinnant](https://howardhinnant.github.io) describes the algorithms that serve as the foundation of Dec dates [@hinnant2021].
+
+```{.yml filename="bibliography.yml"}
+references:
+- id: hinnant2021
+  author:
+    - family: Hinnant
+      given: Howard
+      url: https://howardhinnant.github.io
+  title: >
+    <span class="nocase"><code>chrono</code></span>-Compatible
+    Low-Level Date Algorithms
+  url: https://howardhinnant.github.io/date_algorithms
+  issued:
+    literal: 2021+185
+- id: laptev2026
+  author:
+    - family: Laptev
+      given: Martin
+      url: https://maptv.github.io
+  title: Dec
+  url: https://maptv.github.io/dec
+  issued:
+    literal: {{< meta date >}}
+```
+
+As demonstrated by the previous sentence above and the [References](#references) section below, Quarto citations can include Dec dates. By default, Quarto formats citations according to the [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date format. Per this format, the citation for this article would appear as [Laptev, Martin](https://maptv.github.io/about). {{< meta date >}}. *{{< meta title >}}*. {{< meta url >}}.
+
+Instead of using Quarto [citation syntax](https://quarto.org/docs/authoring/citations.html#sec-citations), you can also prepare a list of references using [footnotes](https://quarto.org/docs/authoring/markdown-basics.html#footnotes). As an example, I included citations for the Hinnant date algorithm article[^hinnant] in both the [references](#references) and [footnotes](#footnotes) sections. In alphabetical order below, you will find a list of the [Observable](http://observablehq.com) [computational notebooks](https://en.wikipedia.org/wiki/Notebook_interface#:~:text=a%20virtual%20notebook%20environment%20used%20for%20literate%20programming) that I used as the basis for many of the visualizations above.
+
+[^hinnant]: [Hinnant, Howard](https://howardhinnant.github.io). [2021+185]{.tool data-bs-toggle="tooltip" data-bs-title="September 1, 2021"}. *`chrono`-Compatible Low-Level Date Algorithms*. <https://howardhinnant.github.io/date_algorithms.html>.
+

@@ -6,8 +6,8 @@ author:
 image: /asset/cal16.svg
 description: >
   Introducing the Dec calendar (Decalendar), which displays dates in years and days using math notation without the need for months or weeks.
-citation:
-  url: https://maptv.github.io/dec/date
+bibliography: ../../asset/ref.yml
+url: https://maptv.github.io/dec/date
 aliases:
   - /date
   - /dd
