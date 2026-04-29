@@ -247,6 +247,3 @@ g.node g.label:has(span.nodeLabel) * {
 .bold {
   font-weight: bold;
 }
-nav.quarto-page-breadcrumbs.quarto-title-breadcrumbs.d-none.d-lg-block {
-  display: none;
-}

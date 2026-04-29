@@ -4,7 +4,7 @@
 viewof leapscrub = Inputs.form([
   Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
   Inputs.toggle({label: "Leap year", value: false}),
-  Inputs.toggle({label: "Vertical layout", value: false}),
+  Inputs.toggle({label: "Vertical layout", value: true}),
 ])
 ```
 
