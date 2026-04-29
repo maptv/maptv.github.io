@@ -2135,7 +2135,7 @@ addPointLabelsTo = (svg, tones, config) => {
         .attr("text-anchor", "middle")
         .attr("fill", t => t.color ?? (t.isColored === false ? "#ccc" : colors[t.colorIndex]))
         .attr("stroke", axisColor)
-        .attr("stroke-width", width < 600 ? 1.25 : width < 700 ? 1.5 : width < 800 ? 1.75 : 2)
+        .attr("stroke-width", width < 600 ? 1.5 : width < 700 ? 2 : width < 800 ? 2.5 : width < 900 ? 3 : width < 1000 ? 3.5 : 4)
         .attr("paint-order", "stroke")
         .attr("stroke-linejoin", "round")
         .attr("x", t => mapToX(t.x ?? t.frequency))

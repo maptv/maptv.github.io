@@ -12,19 +12,22 @@ aliases:
   - /date
   - /dd
 license: CC BY-SA
-lightbox: false
 toc: true
-toc-depth: 4
+toc-depth: 5
+number-sections: true
+number-offset: -1
+number-depth: 1
 format:
   html:
     grid:
       body-width: 900px
     shift-heading-level-by: 3
     include-after-body:
-      - ../../asset/cite.html
       - ../../asset/style.html
       - ../../asset/stamp.html
       - ../../asset/tooltip.html
+      - ../../asset/footnote.html
+      - ../../asset/crossref.html
   commonmark: default
 filters:
   - ../../asset/date.lua
