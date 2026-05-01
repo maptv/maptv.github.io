@@ -345,7 +345,7 @@ references:
       given: Howard
       url: https://howardhinnant.github.io
   title: >
-    <span class="nocase"><code>chrono</code></span>-Compatible
+    [chrono]{.nocase}-Compatible
     Low-Level Date Algorithms
   url: https://howardhinnant.github.io/date_algorithms
   issued:
@@ -364,13 +364,8 @@ references:
 Instead of specifying the [path](https://en.wikipedia.org/wiki/Path_(computing)#:~:text=a%20string%20that%20uniquely%20identifies%20an%20item%20in%20a%20hierarchical%20file%20system) to a bibliography file or providing a list of bibliography file paths, 
 we can paste the yaml metadata above into any Quarto configuration file or the [yaml header](https://quarto.org/docs/authoring/front-matter.html) of any Quarto input file. Notably, the `_quarto.yml` configuration file can share the metadata that it contains with all of the input files throughout a [Quarto project](https://quarto.org/docs/projects/quarto-projects.html#project-metadata).
 
-If we ever need to convert to a different bibliography file, we can Quarto 
+For the sake of comparison, we can convert our yaml bibliography file to json format.
 
-quarto pandoc ref.yml -sf markdown -t csljson
-quarto pandoc chem.json -s -f csljson -t markdown
-Indeed, pandoc can convert between any of these citation formats:
-pandoc chem.bib -s -f biblatex -t csljson
-pandoc chem.yaml -s -f markdown -t biblatex
 
 
 If you use Quarto, you can include yaml metadata in a bibliography file like the one above, a Quarto configuration file, or the 
