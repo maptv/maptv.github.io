@@ -5,31 +5,13 @@ author:
     url: https://maptv.github.io
 image: /asset/colorWheelCompass.svg
 description: >
-  Introducing the Dec measurement system, which uses turns instead of months, weeks, hours, minutes, seconds, and degrees.
-bibliography: ../asset/ref.yml
+  Introducing the Dec measurement system,
+  which uses turns instead of months, weeks,
+  hours, minutes, seconds, and degrees.
 url: https://maptv.github.io/dec
 aliases:
   - /d
 license: CC BY-SA
-toc: true
-toc-depth: 5
-number-sections: true
-number-offset: -1
-number-depth: 1
-format:
-  html:
-    grid:
-      body-width: 900px
-    shift-heading-level-by: 3
-    include-after-body:
-      - ../asset/style.html
-      - ../asset/stamp.html
-      - ../asset/tooltip.html
-      - ../asset/footnote.html
-      - ../asset/crossref.html
-  commonmark: default
-filters:
-  - ../asset/date.lua
 ---
 
 :::{#firstnav}
@@ -160,7 +142,7 @@ According to [dimensions.com](https://www.dimensions.com), 115 [centizem](#cz){.
 
 # Perpetually setting sun {.hiddenheading #sec-pss}
 
-In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, [zem](#z){.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} means Earth🌍. This is fitting because all Dec units are based on physical attributes of the Earth🌏. At the Equator, the Earth🌎rotates on its axis at a speed of [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}1.00224 [v](#v){.tool data-bs-toggle="tooltip" data-bs-title="omegars"}. If we could indefinitely maintain this speed while flying West in an airplane✈️towards the setting sun️, we would be able to perpetually fly [into the sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
+In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰, [zem](#z){.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"} means Earth. This is fitting because all Dec units are based on physical attributes of the Earth. At the Equator, the Earth rotates on its axis at a speed of [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}1.00224 [v](#v){.tool data-bs-toggle="tooltip" data-bs-title="omegars"}. If we could indefinitely maintain this speed while flying West in an airplane✈️towards the setting sun️, we would be able to perpetually fly [into the sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
 
 # Airplane cruising speed {.hiddenheading #sec-acs}
 
@@ -337,21 +319,90 @@ In [1788]{.color788}, [Claude Boniface Collignon](https://en.wikipedia.org/wiki/
 
 # Summary {.unnumbered #tldr}
 
-This article introduces the Dec measurement system and describes how Dec uses metric prefixes and the properties of the planet Earth🌍to define units based on turns for geographic coordinates, compass directions, dates, times, speeds, distances, areas, volumes, and weights. Each unit has a unique name, such as [λ](#lambda){.tool data-bs-toggle="tooltip" data-bs-title="parallel"}, [m](#m){.tool data-bs-toggle="tooltip" data-bs-title="meridian"}, [r](#r){.tool data-bs-toggle="tooltip" data-bs-title="rose"}, [y](#y){.tool data-bs-toggle="tooltip" data-bs-title="year"}, [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}, [b](#b){.tool data-bs-toggle="tooltip" data-bs-title="beat"}, [v](#v){.tool data-bs-toggle="tooltip" data-bs-title="omegar"}, [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taur"}, [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"}, or [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="hexamilliare"}.
+This article introduces the Dec measurement system and describes how Dec uses metric prefixes and the properties of the planet Earth to define units based on turns for geographic coordinates, compass directions, dates, times, speeds, distances, areas, volumes, and weights. Each unit has a unique name, such as [λ](#lambda){.tool data-bs-toggle="tooltip" data-bs-title="parallel"}, [m](#m){.tool data-bs-toggle="tooltip" data-bs-title="meridian"}, [r](#r){.tool data-bs-toggle="tooltip" data-bs-title="rose"}, [y](#y){.tool data-bs-toggle="tooltip" data-bs-title="year"}, [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}, [b](#b){.tool data-bs-toggle="tooltip" data-bs-title="beat"}, [v](#v){.tool data-bs-toggle="tooltip" data-bs-title="omegar"}, [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taur"}, [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"}, or [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="hexamilliare"}.
 
 Dec attempts to bridge the gap, improve interoperability, and faciliate conversion between the [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary and [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} measurement systems by redefining certain units. Redefinition of [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units makes human-based length units [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[1.58%]{.color0158} shorter and surveying distance units [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}[0.58%]{.color0058} shorter. Dec also redefines [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} seconds to be [4]{.color040}% shorter.
 
-Dec color labels can convey an impression of a value at a glance. Dec sound labels allow us to estimate a value without even having to look at it. Both types of labels can help avoid confusion when [decimal separators](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline) appear, disappear, or move due to a measurement unit change such as the addition, removal, or replacement of a metric prefix.
+Dec color labels can convey an impression of a value at a glance👀. Dec sound labels allow us to estimate a value without even having to look at it🙈. Both types of labels can help avoid confusion when [decimal separators](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline) appear, disappear, or move due to a measurement unit change such as the addition, removal, or replacement of a metric prefix.
 
 # Next {.unnumbered #next}
 
-Now that you have had a taste of Dec, I hope that you are hungry for more! If so, dive🤿deeper into Dec [dates](/dec/date) and [times](/dec/time) before tackling Dec [snaps](/dec/snap), [spans](/dec/span), and [notes](/dec/note). My [filter](/quarto/filter) and [include](/quarto/include) articles discuss the [Quarto](/quarto) publishing system and how I customize my Quarto website to display Dec [dates](/dec/date) in the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information), the [article list](/list), and [title blocks](https://quarto.org/docs/authoring/title-blocks).
+Now that you have had a taste👅of Dec, I hope that you are hungry🤤for more! If so, first dive🤿deeper by reading my article on Dec [dates](/dec/date), [times](/dec/time), and [snaps](/dec/snap). My [filter](/quarto/filter) and [include](/quarto/include) articles discuss the [Quarto](/quarto) publishing system and how I customize my Quarto website to display a Dec [snaps](/dec/snap) in the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) and Dec [dates](/dec/date) in the [article list](/list) and [title blocks](https://quarto.org/docs/authoring/title-blocks).
 
 :::{#firstnav}
 {{< include /asset/_decquanav.qmd >}}
 :::
 
 {{< include /asset/_cite.qmd >}}
+
+Of the [bibliography file](https://quarto.org/docs/authoring/citations#bibliography-files) [formats](https://pandoc.org/MANUAL.html#specifying-bibliographic-data) supported by [Quarto](https://quarto.org), I recommend storing [bibliographic records](https://en.wikipedia.org/wiki/Bibliographic_record#:~:text=contains%20the%20data%20elements%20necessary%20to%20help%20users%20identify%20and%20retrieve%20that%20resource) as [yaml](https://en.wikipedia.org/wiki/YAML#:~:text=a%20human%2Dreadable%20data%20serialization%20language). The bibliography file shown below contains [metadata](https://en.wikipedia.org/wiki/Metadata#:~:text=the%20title%2C%20author%2C%20and%20publication%20date%20of%20a%20book%20are%20metadata%20about%20the%20book) about the article you are currently reading and the article entitled [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms) in which [Howard Hinnant](https://howardhinnant.github.io) [-@hinnant2021] describes the algorithms underlying Dec dates.
+
+```{.yml filename="ref.yml"}
+references:
+- id: hinnant2021
+  author:
+    - family: Hinnant
+      given: Howard
+      url: https://howardhinnant.github.io
+  title: >
+    <span class="nocase"><code>chrono</code></span>-Compatible
+    Low-Level Date Algorithms
+  url: https://howardhinnant.github.io/date_algorithms
+  issued:
+    literal: 2021+185
+- id: laptev2026
+  author:
+    - family: Laptev
+      given: Martin
+      url: https://maptv.github.io
+  title: {{< meta title >}}
+  url: {{< meta url >}}
+  issued:
+    literal: {{< meta date >}}
+```
+
+Instead of specifying the [path](https://en.wikipedia.org/wiki/Path_(computing)#:~:text=a%20string%20that%20uniquely%20identifies%20an%20item%20in%20a%20hierarchical%20file%20system) to a bibliography file or providing a list of bibliography file paths, 
+we can paste the yaml metadata above into any Quarto configuration file or the [yaml header](https://quarto.org/docs/authoring/front-matter.html) of any Quarto input file. Notably, the `_quarto.yml` configuration file can share the metadata that it contains with all of the input files throughout a [Quarto project](https://quarto.org/docs/projects/quarto-projects.html#project-metadata).
+
+If we ever need to convert to a different bibliography file, we can Quarto 
+
+quarto pandoc ref.yml -sf markdown -t csljson
+quarto pandoc chem.json -s -f csljson -t markdown
+Indeed, pandoc can convert between any of these citation formats:
+pandoc chem.bib -s -f biblatex -t csljson
+pandoc chem.yaml -s -f markdown -t biblatex
+
+
+If you use Quarto, you can include yaml metadata in a bibliography file like the one above, a Quarto configuration file, or the 
+
+As If the metadata above directly you do not use Quarto, you may need to use a different bibliography format. reference managers do not support  you do not use Quarto, you may including configuration files that We could add  to the bibliography file above, we w add the metadata above to can put Quarto  can share yaml metadata with one or more Quarto input files. We can also 
+Quarto We could need the  to a bibliography file that contains the metadata.
+Any Quarto input file can have store yaml metadata in its . , to the of a  or file or a Quarto configuration file. Notably, a configuration file can share metadata with all of the qmd files in an entire 
+named 
+In that sets  we would a single bibliography have one yaml per  of my website specifying a bibliography file in the  for my website, that contains the settings for my website, so that all of the qmdI provide the path to a yaml file called `ref.yml`. If do not provide the path to a [Citation Style Language](https://quarto.org/docs/authoring/citations#sec-citations-style) (csl) file. , because I want Quarto to default to the [Chicago Manual of Style](https://chicagomanualofstyle.org) format for parenthetical citations like [@hinnant2021] and narrative citations such as [-@hinnant2021].
+
+or 
+If we want to cite these two articles in only one , Pasting be pasted directly into two articles in , we can paste the text of the yaml file displayed above into the  at the top level (root) of that contains the qmd file, a 
+
+
+
+An alternative to [citations](https://quarto.org/docs/authoring/citations#sec-citations), 
+If you do want to deal with yaml at all, you can cite sources  [footnotes](https://quarto.org/docs/authoring/markdown-basics#footnotes) instead of [citations](https://quarto.org/docs/authoring/citations#sec-citations). we can also a Quarto file such as `document.qmd`
+ of whether we point Quarto to a csl file, we can  to use numbered citation rather than parenthetical or narrative citations, you can point Quarto to a csl file or use footnotes. long as there is at least one citation, Quarto will add a [References section](#refs) when processing the qmd file.
+If you want to have complete control over how your citations appear, you can still followed the default format for both references in the References section,
+
+
+Instead of may prefer to use csl file and prefer numeric rather than author and date citations, using a bibliography file and [citation syntax](https://quarto.org/docs/authoring/citations.html#sec-citations), you can also cite the Hinnant date algorithm article[^hinnant2021] by copying and pasting the [markdown](https://en.wikipedia.org/wiki/Markdown#:~:text=a%20lightweight%20markup%20language%20for%20creating%20formatted%20text%20using%20a%20plain%2Dtext%20editor) [footnotes](https://quarto.org/docs/authoring/markdown-basics#footnotes) above. To illustrate between citations and footnotes, I included citations for the in both the [references](#references) and [footnotes](#footnotes) sections of this article.
+
+
+- [Hinnant, Howard](https://howardhinnant.github.io). [2021+185]{.tool data-bs-toggle="tooltip" data-bs-title="September 1, 2021"}. *`chrono`-Compatible Low-Level Date Algorithms*. <https://howardhinnant.github.io/date_algorithms.html>.
+- [Laptev, Martin](https://maptv.github.io/about). {{< meta date >}}. *{{< meta title >}}*.<{{< meta url >}}>.
+
+
+In alphabetical order below, you will find a list of the [Observable](http://observablehq.com) [computational notebooks](https://en.wikipedia.org/wiki/Notebook_interface#:~:text=a%20virtual%20notebook%20environment%20used%20for%20literate%20programming) that I used as the basis for many of the visualizations above.
+
+
+
 
 # Appendix {.unnumbered #last}
 

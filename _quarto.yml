@@ -3,6 +3,9 @@ author:
     url: https://maptv.github.io
 date-format: X
 date: last-modified
+bibliography: asset/ref.yml
+filters:
+  - asset/date.lua
 project:
   type: website
   resources: .gitlab-ci.yml
@@ -143,6 +146,10 @@ format:
     mainfont: Tahoma, Palatino, Verdana, Times New Roman
     monofont: Monaco, Consolas, Courier New
     toc: true
+    toc-depth: 5
+    number-sections: true
+    number-offset: -1
+    number-depth: 1
     respect-user-color-scheme: true
     theme:
       light: [flatly, asset/light.scss]
@@ -168,6 +175,13 @@ format:
       lst-prefix: List
     mermaid:
       theme: default
+    shift-heading-level-by: 3
+    include-after-body:
+      - asset/style.html
+      - asset/stamp.html
+      - asset/tooltip.html
+      - asset/footnote.html
+      - asset/crossref.html
   commonmark: default
 title-block-banner: false
 execute:

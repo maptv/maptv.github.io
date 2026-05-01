@@ -8,7 +8,7 @@ $body-color: #FFFFFF !default;
 $code-bg: #000000 !default;
 $link-color: deepskyblue !default;
 $code-color: #BFFF00 !default;
-$code-font-size: .92em !default;
+$code-font-size: .98em !default;
 $code-padding: 0px !default;
 
 // color classes
@@ -243,7 +243,7 @@ div > form > div > input[type="range"] {
   fill: #f00;
 }
 
-svg#lefthand, svg#cubiczem, #iobpiano svg, #fig-colorwheelcompass svg, .colorcomparer svg, svg.topplot, svg.btmplot {
+svg#lefthand, svg#cubiczem, #iobpiano svg, #fig-colorwheelcompass svg, .colorcomparer svg, svg.leftplot, svg.rightplot, svg.topplot, svg.btmplot {
   background: #000 !important;
 }
 
