@@ -2981,7 +2981,7 @@ centimeter is $5\over2$
 <a href="#cz" class="tool" data-bs-toggle="tooltip"
 data-bs-title="centizem">cz</a>. A
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</a> is 4 decimeters. A decimeter is 4 Dec inches.
+data-bs-title="zem">z</a> is 4 decimeters or 16 Dec inches.
 
 <div class="column-page-right" fig-align="left"
 style="text-align:center;font-size:.825rem;">
