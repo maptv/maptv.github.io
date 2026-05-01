@@ -81,9 +81,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-09dd4a8c8147935218e5fc1df39f9384.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-265fb7fe5321106657adec47bc22104e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-0880c4082d1578286beb15534314ad9d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-265fb7fe5321106657adec47bc22104e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-4dd084017aadfa4ba7c63c352d40a4b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-41ab986f6cf46909cb1d1fb01fb134ab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-4dd084017aadfa4ba7c63c352d40a4b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -558,9 +558,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#logistic-function-visualization" id="toc-logistic-function-visualization" class="nav-link active" data-scroll-target="#logistic-function-visualization">Logistic function visualization</a></li>
-  <li><a href="#obtain-the-logistic-function-mathematically" id="toc-obtain-the-logistic-function-mathematically" class="nav-link" data-scroll-target="#obtain-the-logistic-function-mathematically">Obtain the logistic function mathematically</a>
-  <ul class="collapse">
+  <li><a href="#logistic-function-visualization" id="toc-logistic-function-visualization" class="nav-link active" data-scroll-target="#logistic-function-visualization"><span class="header-section-number">0</span> Logistic function visualization</a></li>
+  <li><a href="#obtain-the-logistic-function-mathematically" id="toc-obtain-the-logistic-function-mathematically" class="nav-link" data-scroll-target="#obtain-the-logistic-function-mathematically"><span class="header-section-number">1</span> Obtain the logistic function mathematically</a>
+  <ul>
   <li><a href="#step-1.-write-out-the-linear-regression-equation" id="toc-step-1.-write-out-the-linear-regression-equation" class="nav-link" data-scroll-target="#step-1.-write-out-the-linear-regression-equation">Step 1. Write out the linear regression equation</a></li>
   </ul></li>
   </ul>
@@ -1482,8 +1482,8 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 </div>
 </div>
-<section id="logistic-function-visualization" class="level1">
-<h1>Logistic function visualization</h1>
+<section id="logistic-function-visualization" class="level4" data-number="0">
+<h4 data-number="0" class="anchored" data-anchor-id="logistic-function-visualization"><span class="header-section-number">0</span> Logistic function visualization</h4>
 <div id="713b31d3" class="cell" data-tags="[]" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://github.com/ageron/handson-ml3/blob/main/04_training_linear_models.ipynb</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>lim <span class="op">=</span> <span class="dv">6</span></span>
@@ -1514,10 +1514,10 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 </div>
 </section>
-<section id="obtain-the-logistic-function-mathematically" class="level1">
-<h1>Obtain the logistic function mathematically</h1>
-<section id="step-1.-write-out-the-linear-regression-equation" class="level2">
-<h2 class="anchored" data-anchor-id="step-1.-write-out-the-linear-regression-equation">Step 1. Write out the linear regression equation</h2>
+<section id="obtain-the-logistic-function-mathematically" class="level4" data-number="1">
+<h4 data-number="1" class="anchored" data-anchor-id="obtain-the-logistic-function-mathematically"><span class="header-section-number">1</span> Obtain the logistic function mathematically</h4>
+<section id="step-1.-write-out-the-linear-regression-equation" class="level5">
+<h5 class="anchored" data-anchor-id="step-1.-write-out-the-linear-regression-equation">Step 1. Write out the linear regression equation</h5>
 <p><span class="math inline">\(\Huge y=\beta_0+\beta_1 x_1+...+\beta_n x_n\)</span> ## Step 2. The logistic regression equation is the same as above except output is log odds <span class="math inline">\(\Huge log(odds)=\beta_0+\beta_1 x_1+...+\beta_n x_n\)</span> ## Step 3. Exponentiate both sides of the logistic regression equation to get odds <span class="math inline">\(\Huge odds=e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}\)</span> ## Step 4. Write out the probability equation <span class="math inline">\(\Huge p=\frac{odds}{1+odds}\)</span> ## Step 5. Plug odds (from step 3) into the probability equation <span class="math inline">\(\Huge p=\frac{e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}{1+e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}\)</span> ## Step 6. Divide the numerator and denominator by the odds (from step 3) <span class="math inline">\(\Huge p=\frac{1}{1+e^{-(\beta_0+\beta_1 x_1+...+\beta_n x_n)}}\)</span></p>
 <div id="8eb31630" class="cell" data-tags="[]" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>gnb <span class="op">=</span> GaussianNB()</span>
@@ -2191,7 +2191,6 @@ Name: body_mass_g, Length: 344, dtype: bool</code></pre>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
-<script src="../../asset/stamp.js"></script>
 <style>
 #title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
 #title-block-header { margin: 0px; }
@@ -2215,10 +2214,13 @@ a.navbar-brand { overflow: visible !important; }
 .vinculum { position: relative; }
 .vinculum::before { content: ""; position: absolute; top: .5px; left: 0; width: 100%; border-top: 1.5px solid; }
 </style>
+<script src="../../asset/stamp.js"></script>
 <script>
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 </script>
+<script src="../../asset/footnote.js"></script>
+<script src="../../asset/crossref.js"></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

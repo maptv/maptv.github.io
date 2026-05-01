@@ -83,9 +83,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-09dd4a8c8147935218e5fc1df39f9384.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-265fb7fe5321106657adec47bc22104e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-0880c4082d1578286beb15534314ad9d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-265fb7fe5321106657adec47bc22104e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4dd084017aadfa4ba7c63c352d40a4b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-41ab986f6cf46909cb1d1fb01fb134ab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4dd084017aadfa4ba7c63c352d40a4b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": true,
@@ -529,17 +529,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr"><span class="blue" data-bs-toggle="tooltip" data-bs-title="too long; didn't read"><u>TL;DR</u></span></a></li>
   <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link" data-scroll-target="#sec-intro">Introduction</a></li>
-  <li><a href="#sec-setup" id="toc-sec-setup" class="nav-link" data-scroll-target="#sec-setup">Setup</a>
-  <ul class="collapse">
-  <li><a href="#sec-setup-brew" id="toc-sec-setup-brew" class="nav-link" data-scroll-target="#sec-setup-brew">Homebrew</a></li>
-  <li><a href="#sec-setup-code" id="toc-sec-setup-code" class="nav-link" data-scroll-target="#sec-setup-code">Codespaces</a></li>
-  <li><a href="#sec-setup-repo" id="toc-sec-setup-repo" class="nav-link" data-scroll-target="#sec-setup-repo">Repository</a></li>
-  </ul></li>
-  <li><a href="#sec-workflow" id="toc-sec-workflow" class="nav-link" data-scroll-target="#sec-workflow">Git workflow</a>
-  <ul class="collapse">
-  <li><a href="#sec-workflow-alias" id="toc-sec-workflow-alias" class="nav-link" data-scroll-target="#sec-workflow-alias">Shell aliases</a></li>
-  <li><a href="#sec-workflow-key" id="toc-sec-workflow-key" class="nav-link" data-scroll-target="#sec-workflow-key">Keybindings</a></li>
-  </ul></li>
+  <li><a href="#sec-setup" id="toc-sec-setup" class="nav-link" data-scroll-target="#sec-setup">Setup</a></li>
+  <li><a href="#sec-workflow" id="toc-sec-workflow" class="nav-link" data-scroll-target="#sec-workflow">Git workflow</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/maptv/maptv.github.io/blob/main/positron/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -583,8 +574,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="tldr" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="tldr"><span class="blue" data-bs-toggle="tooltip" data-bs-title="too long; didn't read"><u>TL;DR</u></span></h2>
+<section id="tldr" class="level5 page-columns page-full">
+<h5 class="anchored" data-anchor-id="tldr"><span class="blue" data-bs-toggle="tooltip" data-bs-title="too long; didn't read"><u>TL;DR</u></span></h5>
 <p>The goal of this blog post, the second in the <a href="..#category=tool">Tools</a> blog post series summarized by <a href="#fig-navchart" class="quarto-xref">Figure&nbsp;1</a>, is to set up the <a href="https://code.visualstudio.com">Visual Studio Code</a> (VSCode) <a href="https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.">source-code editor</a> to run in the remote development environments provided by the <a href="https://github.com/features/codespaces">Codespaces</a> and <a href="https://www.gitpod.io">GitPod</a> <a href="https://en.wikipedia.org/wiki/Computing_platform#:~:text=A%20computing%20platform%2C%20digital%20platform%2C%5B1%5D%20or%20software%20platform%20is%20an%20environment%20in%20which%20software%20is%20executed.">computing platforms</a>. To accomplish this goal, we will use VSCode to edit a setup <a href="https://en.wikipedia.org/wiki/Shell_script#:~:text=A%20shell%20script%20is%20a%20computer%20program%20designed%20to%20be%20run%20by%20a%20Unix%20shell%2C%20a%20command%2Dline%20interpreter.%5B">script</a> and configuration files in a Git <a href="https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.">repository</a> (repo) named <code>dotfiles</code>.</p>
 <div class="cell page-columns page-full" data-layout-align="default">
 
@@ -615,16 +606,16 @@ Figure&nbsp;1: Tools series navigation chart
 </div>
 </div></div></div>
 </section>
-<section id="sec-intro" class="level2">
-<h2 class="anchored" data-anchor-id="sec-intro">Introduction</h2>
+<section id="sec-intro" class="level5">
+<h5 class="anchored" data-anchor-id="sec-intro">Introduction</h5>
 <p>Even more Web-based editors can even run code and build software if equipped with computational resources via a service such as <a href="https://github.com/features/codespaces">GitHub Codespaces</a> and <a href="https://www.gitpod.io">GitPod</a>. have free tiers that should be sufficient for most . in <a href="https://en.wikipedia.org/wiki/Cloud_computing#:~:text=Cloud%20computing%5B1%5D%20is%20the%20on%2Ddemand%20availability%20of%20computer%20system%20resources%2C%20especially%20data%20storage%20(cloud%20storage)%20and%20computing%20power%2C%20without%20direct%20active%20management%20by%20the%20user.">cloud</a>-based environments, which facilitates <a href="https://en.wikipedia.org/wiki/Reproducibility#:~:text=reproducibility%20has%20been%20introduced%20in%20computational%20sciences%3A%20Any%20results%20should%20be%20documented%20by%20making%20all%20data%20and%20code%20available%20in%20such%20a%20way%20that%20the%20computations%20can%20be%20executed%20again%20with%20identical%20results.">reproducibility</a>. Notably,</p>
 <p>Like <a href="https://vscode.dev">vscode.dev</a>, these web-based editors provide access to the <a href="https://code.visualstudio.com">Visual Studio Code</a> (VSCode) <a href="https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.">source-code editor</a> via a <a href="https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.%5B">web browser</a>, but distinguish themselves from editors that instead of the local file system. from other services that such as by</p>
 <p>If you do not have such a repo, you can create one by following along with the <a href="../git">previous post</a> in my <a href="..#category=tool">tools</a> blog post series, which is shown in <a href="#fig-navchart" class="quarto-xref">Figure&nbsp;1</a>.</p>
 </section>
-<section id="sec-setup" class="level2">
-<h2 class="anchored" data-anchor-id="sec-setup">Setup</h2>
-<section id="sec-setup-brew" class="level3">
-<h3 class="anchored" data-anchor-id="sec-setup-brew">Homebrew</h3>
+<section id="sec-setup" class="level5">
+<h5 class="anchored" data-anchor-id="sec-setup">Setup</h5>
+<section id="sec-setup-brew" class="level6">
+<h6 class="anchored" data-anchor-id="sec-setup-brew">Homebrew</h6>
 <p><a href="https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems">Linux</a>, <a href="https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.">macOS</a>, or <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.">Windows Subsystem for Linux</a> (WSL) users can use Homebrew to install everything needed to follow along with this blog post. First, <a href="https://brew.sh/#install">install Homebrew</a> with the latest <a href="https://github.com/Homebrew/brew/releases"><code>.pkg</code> installer</a> for macOS or by running the <a href="#exm-brew" class="quarto-xref">Example&nbsp;1</a> <a href="https://en.wikipedia.org/wiki/Unix#:~:text=Unix%20(/%CB%88ju%CB%90n%C9%AAks/%2C%20YOO%2Dniks%3B%20trademarked%20as%20UNIX)%20is%20a%20family%20of%20multitasking%2C%20multi%2Duser%20computer%20operating%20systems">Unix</a> <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.">shell</a> code in your <a href="https://en.wikipedia.org/wiki/Terminal_emulator#:~:text=A%20terminal%20emulator%2C%20or%20terminal%20application%2C%20is%20a%20computer%20program%20that%20emulates%20a%20video%20terminal%20within%20some%20other%20display%20architecture.">terminal</a>.</p>
 <div id="exm-brew" class="theorem example">
 <p><span class="theorem-title"><strong>Example 1</strong></span> &nbsp;</p>
@@ -659,8 +650,8 @@ Figure&nbsp;1: Tools series navigation chart
 </ul>
 <p>If you are curious about how I set up my computer, you can take a look at my <a href="https://github.com/maptv/setup/blob/main/Brewfile"><code>Brewfile</code></a> and other configuration files in my <code>setup</code> repo on <a href="https://github.com/maptv/setup">GitHub</a> and <a href="https://gitlab.com/maptv/setup">GitLab</a>. I will highlight a few configuration files in <a href="#sec-workflow" class="quarto-xref">Section&nbsp;4</a>.</p>
 </section>
-<section id="sec-setup-code" class="level3">
-<h3 class="anchored" data-anchor-id="sec-setup-code">Codespaces</h3>
+<section id="sec-setup-code" class="level6">
+<h6 class="anchored" data-anchor-id="sec-setup-code">Codespaces</h6>
 <p>As an alternative to installing tools on your computer, you can use <a href="https://github.com/features/codespaces">GitHub Codespaces</a> to perform all development tasks remotely. To get a feel for Codespaces, I recommend you first try the <a href="https://docs.github.com/en/codespaces/the-githubdev-web-based-editor"><code>github.dev</code> editor</a>.</p>
 <p>Both Codespaces and <code>github.dev</code> allow you to edit files in any GitHub repository via VSCode in your browser and load your VSCode settings automatically via <a href="https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#settings-sync">Settings Sync</a>, but <code>github.dev</code> can be started by going to any repo on GitHub and pressing <code>.</code> or changing the <code>.com</code> in the <a href="https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web">URL</a> to <code>.dev</code>, <a href="https://en.wikipedia.org/wiki/List_of_Latin_phrases_(E)#exempli_gratia">e.g.</a> <a href="https://github.com/maptv/maptv.github.io" class="uri">https://github.com/maptv/maptv.github.io</a> to <a href="https://github.dev/maptv/maptv.github.io" class="uri">https://github.dev/maptv/maptv.github.io</a>. The <code>github.dev</code> editor starts up fast and is completely free, but comes with restrictions that prevent us from running code, building software, accessing the <a href="https://code.visualstudio.com/docs/terminal/basics">integrated terminal</a>, or using <a href="https://docs.github.com/en/codespaces/the-githubdev-web-based-editor#using-extensions:~:text=The%20github.dev%20editor%20supports%20VS%20Code%20extensions%20that%20have%20been%20specifically%20created%20or%20updated%20to%20run%20in%20the%20web.">non-web extensions</a>.</p>
 <p>In addition to being free of these restrictions, Codespaces allows us to use JupyterLab as the web interface instead of VSCode by appending <code>/?editor=jupyter</code> to the Codespaces URL. If you use a <a href="https://www.jetbrains.com">JetBrains</a> <a href="https://en.wikipedia.org/wiki/Integrated_development_environment#:~:text=An%20integrated%20development%20environment%20(IDE)%20is%20a%20software%20application%20that%20provides%20comprehensive%20facilities%20for%20software%20development.">integrated development environment</a>products, such as <a href="https://www.jetbrains.com/pycharm">PyCharm</a> (IDE), you can also try appending <code>/?editor=jetbrains</code> to the Codespaces URL and accessing Codespaces via <a href="https://www.jetbrains.com/remote-development/gateway">JetBrains Gateway</a>.</p>
@@ -709,8 +700,8 @@ Figure&nbsp;1: Tools series navigation chart
 <p>To prevent conflicts with <a href="https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.">web browser</a> keybindings, you can install Codespaces as a <a href="https://code.visualstudio.com/docs/remote/codespaces#_known-limitations-and-adaptations">Progressive Web App</a> (PWA) by clicking on the “Install Codespaces” icon at the end of the <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#:~:text=a%20browser%20might%20include%20an%20%22Install%22%20icon%20in%20the%20URL%20bar%20when%20the%20user%20navigates%20to%20the%20page%3A">URL bar in Chrome</a> or any <a href="https://en.wikipedia.org/wiki/Chromium_(web_browser)#:~:text=Chromium%20is%20a%20free%20and%20open%2Dsource%20web%20browser%20project%2C%20primarily%20developed%20and%20maintained%20by%20Google.">Chromium</a>-based web browser. When running as a PWA, Codespaces behaves like a desktop application and can thus provide a familiar user experience on any computer!</p>
 <p>On macOS, the PWA installation location is <code>~/Applications/Chrome Apps.localized</code>.</p>
 </section>
-<section id="sec-setup-repo" class="level3">
-<h3 class="anchored" data-anchor-id="sec-setup-repo">Repository</h3>
+<section id="sec-setup-repo" class="level6">
+<h6 class="anchored" data-anchor-id="sec-setup-repo">Repository</h6>
 <p>Before you can benefit from everything GitHub and GitLab have to offer, you will need a <a href="https://github.com/signup">GitHub</a> and/or <a href="https://gitlab.com/users/sign_up">GitLab</a> account and an <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account">SSH key</a>. Even though there are other <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github#about-authentication-to-github">authentication methods</a>, SSH keys are still the easiest way to authenticate to GitHub and GitLab.</p>
 <p>You can create a repo using the web interface of <a href="https://github.com" class="uri">https://github.com</a> or <a href="https://gitlab.com" class="uri">https://gitlab.com</a> in your browser, but the best way to start a new project is using the CLI for <a href="https://cli.github.com">GitHub</a> or <a href="https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/">GitLab</a> in your <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>. First, run <code>gh</code> <code>auth</code> <code>login</code> or <code>glab</code> <code>auth</code> <code>login</code> and follow the prompts to authenticate via your web browser or with an <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">authentication token</a>.</p>
 <p>The GitHub CLI allows you to add an SSH key to your account during or <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli#adding-a-new-ssh-key-to-your-account">after authentication</a>. The GitLab CLI does not handle SSH keys during authentication, but has a similar command for <a href="https://gitlab.com/gitlab-org/cli/-/blob/main/docs/source/ssh-key/add.md">adding an SSH key to your GitLab account</a>.</p>
@@ -748,8 +739,8 @@ Figure&nbsp;1: Tools series navigation chart
 </div>
 </section>
 </section>
-<section id="sec-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="sec-workflow">Git workflow</h2>
+<section id="sec-workflow" class="level5">
+<h5 class="anchored" data-anchor-id="sec-workflow">Git workflow</h5>
 <p>When I want to add or update the content on my site, I go through the steps in the standard Git workflow shown in <a href="#fig-git" class="quarto-xref">Figure&nbsp;2</a>. Every time I “push” a collection of changes called a <a href="https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.">commit</a> to my <a href="https://github.com/maptv.github.io">maptv.github.io</a> repo on GitHub, a <a href="https://en.wikipedia.org/wiki/Continuous_integration#:~:text=In%20software%20engineering%2C%20continuous%20integration%20(CI)%20is%20the%20practice%20of%20merging%20all%20developers%27%20working%20copies%20to%20a%20shared%20mainline%20several%20times%20a%20day.">continuous integration</a> (CI) system called <a href="https://docs.github.com/en/actions">GitHub Actions</a> automatically completes the steps required to build and publish my website.</p>
 <div class="cell" data-fig-width="9" data-layout-align="center">
 <div class="cell-output-display">
@@ -769,8 +760,8 @@ Figure&nbsp;2: Git workflow
 </div>
 </div>
 </div>
-<section id="sec-workflow-alias" class="level3">
-<h3 class="anchored" data-anchor-id="sec-workflow-alias">Shell aliases</h3>
+<section id="sec-workflow-alias" class="level6">
+<h6 class="anchored" data-anchor-id="sec-workflow-alias">Shell aliases</h6>
 <p>To make it easier to make incremental changes to my website and frequently release new content, I combined all of the <code>git</code> shell commands in <a href="#fig-git" class="quarto-xref">Figure&nbsp;2</a> into shell <a href="https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.">aliases</a>. You can add shell aliases to a <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.">shell configuration file</a> like <code>.bashrc</code> or <code>.zshrc</code> on your computer to shorten one or more commands and any associated command <a href="https://en.wikipedia.org/wiki/Command-line_interface#Arguments:~:text=A%20command%2Dline%20argument%20or%20parameter%20is%20an%20item%20of%20information%20provided%20to%20a%20program%20when%20it%20is%20started.">arguments</a>.</p>
 <p>The <code>git</code> <code>commit</code> aliases in the <code>.zshrc</code> file in my <code>setup</code> repo on <a href="https://github.com/maptv/setup">GitHub</a> and <a href="https://gitlab.com/maptv/setup">GitLab</a> target different groups of files for inclusion in the next commit. For example, <code>cmp</code> targets <a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F#:~:text=Staged%20means%20that%20you%20have%20marked%20a%20modified%20file%20in%20its%20current%20version%20to%20go%20into%20your%20next%20commit%20snapshot.">staged</a> files, <code>camp</code> targets <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#:~:text=Tracked%20files%20are%20files%20that%20were%20in%20the%20last%20snapshot%2C%20as%20well%20as%20any%20newly%20staged%20files">tracked</a> files, <code>a.cmp</code> targets files in the current directory, and <code>aacmp</code> targets files in the repo.</p>
 <p><a href="#exm-alias" class="quarto-xref">Example&nbsp;8</a> shows the <code>aacmp</code> alias as an example of the shell alias syntax. The mnemonic device for this alias is <strong>a</strong>dd <strong>a</strong>ll, <strong>c</strong>ommit with a <strong>m</strong>essage, and <strong>p</strong>ush.</p>
@@ -788,8 +779,8 @@ Figure&nbsp;2: Git workflow
 <p>Aliases like <code>aacmp</code> allow me to enter free-form <a href="https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27">commit messages</a> directly on the command line without quotes, e.g.&nbsp;<code>aacmp</code> <code>edit</code> <code>first</code> <code>post</code>. If you decide to try one of these aliases, please exercise extreme caution as any un-<a href="https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.">escaped</a> or un-quoted <a href="https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter">metacharacters</a> may yield surprising effects instead of being included verbatim in the commit message, e.g.&nbsp;<code>*</code> is replaced by all of the file and directory names in the current directory!</p>
 <p>If no commit message is provided after the aliases, a generic commit message is created that includes the <a href="https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---diff-filterACDMRTUXB82308203">change type</a> and name of each changed file. In <a href="#sec-workflow-key" class="quarto-xref">Section&nbsp;4.2</a>, I describe how I used this generic commit message approach to further simplify the Git workflow.</p>
 </section>
-<section id="sec-workflow-key" class="level3">
-<h3 class="anchored" data-anchor-id="sec-workflow-key">Keybindings</h3>
+<section id="sec-workflow-key" class="level6">
+<h6 class="anchored" data-anchor-id="sec-workflow-key">Keybindings</h6>
 <p>An alternative to a shell alias that combines <code>git</code> commands is to use a keyboard shortcut in a <a href="https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac">Git Graphical User Interface (GUI)</a> such as <a href="https://desktop.github.com"><code>GitHub Desktop</code></a> or the Git interface in a <a href="https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.">code editor</a> like VSCode, VSCodium, or RStudio. I use keyboard shortcuts in VSCode and VSCodium to send shell commands to the integrated terminal without moving my focus away from the files I am editing.</p>
 <p>I created different shortcuts to control which files are included in each commit: ⌥⇧F for the current file only, ⌥⇧S for already <a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F#:~:text=Staged%20means%20that%20you%20have%20marked%20a%20modified%20file%20in%20its%20current%20version%20to%20go%20into%20your%20next%20commit%20snapshot.">staged</a> files, ⌥⇧T for all <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#:~:text=Tracked%20files%20are%20files%20that%20were%20in%20the%20last%20snapshot%2C%20as%20well%20as%20any%20newly%20staged%20files">tracked files</a>, and ⌥⇧U for all files including <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#:~:text=Untracked%20files%20are%20everything%20else%E2%80%89%E2%80%94%E2%80%89any%20files%20in%20your%20working%20directory%20that%20were%20not%20in%20your%20last%20snapshot%20and%20are%20not%20in%20your%20staging%20area.">untracked files</a>. I also have keyboard shortcuts that affect a specific directory (and all of its subdirectories): ⌥⇧D for the current file’s directory, ⌥⇧. for shell’s current directory, ⌥⇧C for the current working directory according to VSCode/VSCodium, ⌥⇧W for the <a href="https://code.visualstudio.com/docs/editor/workspaces#:~:text=A%20Visual%20Studio%20Code%20%22workspace%22%20is%20the%20collection%20of%20one%20or%20more%20folders%20that%20are%20opened%20in%20a%20VS%20Code%20window">Workspace</a> directory.</p>
 <p><a href="#exm-key" class="quarto-xref">Example&nbsp;9</a> displays the ⌥⇧F shortcut as an example of the VSCode/VSCodium shortcut syntax. This shortcut uses the <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#C0_control_codes">escape code</a> for the <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#C0_control_codes:~:text=0x0D,Carriage%20Return">return key</a> (<code>\u000D</code>) to run several <code>git</code> commands and <a href="https://code.visualstudio.com/docs/editor/variables-reference#_predefined-variables">predefined variables</a> to insert the absolute (<code>${file}</code>) and relative (<code>${relativeFile}</code>) path to the currently open file.</p>
@@ -830,7 +821,6 @@ Figure&nbsp;2: Git workflow
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
-<script src="../asset/stamp.js"></script>
 <style>
 #title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
 #title-block-header { margin: 0px; }
@@ -854,10 +844,13 @@ a.navbar-brand { overflow: visible !important; }
 .vinculum { position: relative; }
 .vinculum::before { content: ""; position: absolute; top: .5px; left: 0; width: 100%; border-top: 1.5px solid; }
 </style>
+<script src="../asset/stamp.js"></script>
 <script>
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 </script>
+<script src="../asset/footnote.js"></script>
+<script src="../asset/crossref.js"></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

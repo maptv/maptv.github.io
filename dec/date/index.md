@@ -39,10 +39,9 @@ My website serves as a demonstration of both the
 measurement📐system. I use several clever hacks to get Quarto to display
 all of the dates on my website in the Dec year+day format. Knowing the
 basics of the Dec calendar🗓️(Decalendar) will help you to understand the
-[filter](https://quarto.org/docs/extensions/filters.html),
-[include](https://quarto.org/docs/output-formats/html-basics.html#includes),
-and [script](https://quarto.org/docs/projects/scripts.html) articles in
-the [Quarto section](../../quarto) of my site.
+[filter](https://quarto.org/docs/extensions/filters.html) and
+[include](https://quarto.org/docs/output-formats/html-basics.html#includes)
+articles in the [Quarto section](../../quarto) of my site.
 
 Among its many features, Quarto offers support for the
 [Observable](https://observablehq.com/) data visualization system.

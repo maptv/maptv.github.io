@@ -1,69 +1,43 @@
-# Dec
+# Dec Measurement System
 Martin Laptev
-2026+059
+2026+061
 
-- [<span class="toc-section-number">0</span> Dec measurement
-  system](#sec-dec)
-- [<span class="toc-section-number">1</span> Longitude latitude
-  course](#sec-llc)
-- [<span class="toc-section-number">2</span> Distance speed
-  duration](#sec-dsd)
+- [Dec measurement system](#sec-dec)
+- [Longitude latitude course](#sec-llc)
+- [Distance speed duration](#sec-dsd)
   - [Interactive world map](#map)
   - [Color wheel compass](#cwc)
-  - [<span class="toc-section-number">3.1</span> Course color
-    table](#cct)
-- [<span class="toc-section-number">3</span> Red green blue
-  (rgb)](#sec-rgb)
-- [<span class="toc-section-number">4</span> Dec time zones](#sec-dtz)
-- [<span class="toc-section-number">5</span> Date and time](#sec-dat)
-- [<span class="toc-section-number">6</span> Millenium year
-  day](#sec-myd)
-- [<span class="toc-section-number">7</span> Day of dek (dod)](#sec-dod)
-- [<span class="toc-section-number">8</span> Zone equatorial meter
-  (zem)](#sec-zem)
-- [<span class="toc-section-number">9</span> Length area
-  volume](#sec-lav)
-- [<span class="toc-section-number">10</span> Typical seat
-  height](#sec-tsh)
-- [<span class="toc-section-number">11</span> Perpetually setting
-  sun](#sec-pss)
-- [<span class="toc-section-number">12</span> Airplane cruising
-  speed](#sec-acs)
-- [<span class="toc-section-number">13</span> Centimilliday
-  (cmd)](#sec-cmd)
-- [<span class="toc-section-number">14</span> Heart rate
-  tempo](#sec-hrt)
-- [<span class="toc-section-number">15</span> Frequency period
-  wavelength](#sec-fpw)
-- [<span class="toc-section-number">16</span> Decioctave octave
-  note](#sec-don)
-- [<span class="toc-section-number">17</span> Color and sound](#sec-cas)
-- [<span class="toc-section-number">18</span> Système international
-  d’unités](#sec-sid)
-- [<span class="toc-section-number">19</span> US customary
-  units](#sec-ucu)
+  - [Course color table](#cct)
+- [Red green blue (rgb)](#sec-rgb)
+- [Dec time zones](#sec-dtz)
+- [Date and time](#sec-dat)
+- [Millenium year day](#sec-myd)
+- [Day of dek (dod)](#sec-dod)
+- [Zone equatorial meter (zem)](#sec-zem)
+- [Length area volume](#sec-lav)
+- [Typical seat height](#sec-tsh)
+- [Perpetually setting sun](#sec-pss)
+- [Airplane cruising speed](#sec-acs)
+- [Centimilliday (cmd)](#sec-cmd)
+- [Heart rate tempo](#sec-hrt)
+- [Frequency period wavelength](#sec-fpw)
+- [Decioctave octave note](#sec-don)
+- [Color and sound](#sec-cas)
+- [Système international d’unités](#sec-sid)
+- [US customary units](#sec-ucu)
   - [Unit conversion tables](#unit-conversion-tables)
-    - [<span class="toc-section-number">20.0.1</span> Length and
-      distance](#sec-lad)
-    - [<span class="toc-section-number">20.0.2</span> Miles per
-      hour](#sec-mph)
-    - [<span class="toc-section-number">20.0.3</span> Are hectare
-      acre](#sec-aha)
-    - [<span class="toc-section-number">20.0.4</span> Drop wineglass
-      keg](#sec-dwk)
-    - [<span class="toc-section-number">20.0.5</span> Grain pound
-      ton](#sec-gpt)
-    - [<span class="toc-section-number">20.0.6</span> Body mass index
-      (bmi)](#sec-bmi)
-    - [<span class="toc-section-number">20.0.7</span> Centizem
-      centimeter inch](#sec-cci)
-- [<span class="toc-section-number">20</span> Claude Boniface
-  Collignon](#sec-cbc)
+  - [Length and distance](#sec-lad)
+  - [Miles per hour](#sec-mph)
+  - [Are hectare acre](#sec-aha)
+  - [Drop wineglass keg](#sec-dwk)
+  - [Grain pound ton](#sec-gpt)
+  - [Body mass index (bmi)](#sec-bmi)
+  - [Centizem centimeter inch](#sec-cci)
+- [Claude Boniface Collignon](#sec-cbc)
 - [Summary](#tldr)
 - [Next](#next)
 - [Cite](#cite)
-- [Appendix](#last)
-- [Observable computational notebooks](#ocn)
+- [Observable notebooks](#obs)
 - [Glossary](#glos)
 
 <div id="firstnav">
@@ -2013,9 +1987,9 @@ data-bs-title="centiturn">ct</a>).
 
 In [Slovak](https://sk.wikipedia.org/wiki/Zem)🇸🇰,
 <a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meter">zem</a> means Earth🌍. This is
+data-bs-title="zone equatorial meter">zem</a> means Earth. This is
 fitting because all Dec units are based on physical attributes of the
-Earth🌏. At the Equator, the Earth🌎rotates on its axis at a speed of
+Earth. At the Equator, the Earth rotates on its axis at a speed of
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>1.00224
 <a href="#v" class="tool" data-bs-toggle="tooltip"
@@ -2381,7 +2355,7 @@ data-bs-title="zem">z</a>.
 
 ## Unit conversion tables
 
-### Length and distance
+## Length and distance
 
 The
 [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%20comparable%29-,one%2Ddimensional,-quotations%C2%A0%E2%96%BC)
@@ -2519,7 +2493,7 @@ href="https://en.wikipedia.org/wiki/League_(unit)">leagues</a></td>
 </tbody>
 </table>
 
-### Miles per hour
+## Miles per hour
 
 When we divide a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="unidimensional">1D</span> unit by a time unit, we get a
@@ -2596,7 +2570,7 @@ href="https://en.wikipedia.org/wiki/Miles_per_hour">miles/hour</a></td>
 </tbody>
 </table>
 
-### Are hectare acre
+## Are hectare acre
 
 If we raise a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="unidimensional">1D</span> unit to the second power, we
@@ -2697,7 +2671,7 @@ href="https://en.wikipedia.org/wiki/Square_mile">sq. miles</a></td>
 </tbody>
 </table>
 
-### Drop wineglass keg
+## Drop wineglass keg
 
 <a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> tridimensional (<span class="tool"
@@ -2837,7 +2811,7 @@ href="https://en.wikipedia.org/wiki/Cubic_yard">cu. yards</a></td>
 </tbody>
 </table>
 
-### Grain pound ton
+## Grain pound ton
 
 Dec and <a href="#si" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a> measurements of
@@ -2909,7 +2883,7 @@ href="https://en.wikipedia.org/wiki/Short_ton">tons</a></td>
 </tbody>
 </table>
 
-### Body mass index (bmi)
+## Body mass index (bmi)
 
 A <a href="#z3" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic zem">z³</a> is 1 keg. A keg of water weighs 64
@@ -2981,7 +2955,7 @@ viewof kilograins = Inputs.range([0, 10000], {label: "Weight", value: 1000, step
 viewof zems = Inputs.range([0, 10], {label: "Height", value: 4, step: 0.01})
 ```
 
-### Centizem centimeter inch
+## Centizem centimeter inch
 
 The longest length depicted in the image of a ruler📏below is 1
 <a href="#dz" class="tool" data-bs-toggle="tooltip"
@@ -3040,7 +3014,7 @@ data-bs-title="billionths of a day">nanodays</span>
 data-bs-title="nanodays">nd</a>)[3]. On <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="April 9, 2025"><span class="color025">2025</span><span class="mono">+</span><span class="colorD039">039</span></span>,
-while searching for units similar to
+while searching for units akin to
 <a href="#c" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</a> and
 <a href="#z" class="tool" data-bs-toggle="tooltip"
@@ -3053,15 +3027,14 @@ data-bs-title="a hundred millionth">10<sup>-8</sup></span>
 <a href="#c" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</a> = 40 centimeters, in a table of [ten possible
 length units](https://www.roma1.infn.it/~dagos/history/sm/node12.html)
-from a <span class="color004">2004</span>
-[arxiv](https://arxiv.org/abs/physics/0412078)
+from an [arxiv](https://arxiv.org/abs/physics/0412078)
 [article](https://www.roma1.infn.it/~dagos/history/sm/sm.html) entitled
 “Why does the meter beat the second?”[4].
 
 # Summary
 
 This article introduces the Dec measurement system and describes how Dec
-uses metric prefixes and the properties of the planet Earth🌍to define
+uses metric prefixes and the properties of the planet Earth to define
 units based on turns for geographic coordinates, compass directions,
 dates, times, speeds, distances, areas, volumes, and weights. Each unit
 has a unique name, such as
@@ -3105,24 +3078,23 @@ shorter. Dec also redefines
 data-bs-title="International System of Units">SI</a> seconds to be
 <span class="color040">4</span>% shorter.
 
-Dec color labels can convey an impression of a value at a glance. Dec
+Dec color labels can convey an impression of a value at a glance👀. Dec
 sound labels allow us to estimate a value without even having to look at
-it. Both types of labels can help avoid confusion when [decimal
+it🙈. Both types of labels can help avoid confusion when [decimal
 separators](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline)
 appear, disappear, or move due to a measurement unit change such as the
 addition, removal, or replacement of a metric prefix.
 
 # Next
 
-Now that you have had a taste of Dec, I hope that you are hungry for
-more! If so, dive🤿deeper into Dec [dates](../dec/date) and
-[times](../dec/time) before tackling Dec [snaps](../dec/snap),
-[spans](../dec/span), and [notes](../dec/note). My
+Now that you have had a taste👅of Dec, I hope that you are hungry🤤for
+more! If so, first dive🤿deeper by reading my article on Dec
+[dates](../dec/date), [times](../dec/time), and [snaps](../dec/snap). My
 [filter](../quarto/filter) and [include](../quarto/include) articles
 discuss the [Quarto](../quarto) publishing system and how I customize my
-Quarto website to display Dec [dates](../dec/date) in the [navigation
-bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information),
-the [article list](../list), and [title
+Quarto website to display a Dec [snaps](../dec/snap) in the [navigation
+bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
+and Dec [dates](../dec/date) in the [article list](../list) and [title
 blocks](https://quarto.org/docs/authoring/title-blocks).
 
 <div id="firstnav">
@@ -3142,73 +3114,126 @@ style="width:9.64in;height:2.31in" />
 
 # Cite
 
-Of the several different [bibliography file
-formats](https://pandoc.org/MANUAL.html#specifying-bibliographic-data)
-supported by [Quarto](https://quarto.org), I recommend storing
-[citations](https://en.wikipedia.org/wiki/Citation#:~:text=a%20reference%20to%20a%20source)
-in
-[yaml](https://en.wikipedia.org/wiki/YAML#:~:text=a%20human%2Dreadable%20data%20serialization%20language)
-files. With the `bibliography.yml` file shown below, you can cite this
-article and the <span class="color021">2021</span> article entitled
+Of the [bibliography
+file](https://quarto.org/docs/authoring/citations#bibliography-files)
+[formats](https://pandoc.org/MANUAL.html#specifying-bibliographic-data)
+supported by [Quarto](https://quarto.org), I recommend
+[yaml](https://en.wikipedia.org/wiki/YAML#:~:text=a%20human%2Dreadable%20data%20serialization%20language).
+The yaml bibliography file shown below contains [bibliographic
+records](https://en.wikipedia.org/wiki/Bibliographic_record#:~:text=contains%20the%20data%20elements%20necessary%20to%20help%20users%20identify%20and%20retrieve%20that%20resource)
+([metadata](https://en.wikipedia.org/wiki/Metadata#:~:text=the%20title%2C%20author%2C%20and%20publication%20date%20of%20a%20book%20are%20metadata%20about%20the%20book))
+about the article you are currently reading and the article entitled
 [<span class="mono under">`chrono`</span>-Compatible Low-Level Date
 Algorithms](https://howardhinnant.github.io/date_algorithms) in which
-[Howard Hinnant](https://howardhinnant.github.io) describes the
-algorithms that serve as the foundation of Dec dates (Hinnant 2021+185).
+[Howard Hinnant](https://howardhinnant.github.io) (2021+185) describes
+the algorithms underlying Dec dates.
 
 <div class="code-with-filename">
 
-**bibliography.yml**
+**ref.yml**
 
 ``` yml
 references:
-- id: hinnant2021
+- id: hinnant2021date
   author:
     - family: Hinnant
       given: Howard
-      url: https://howardhinnant.github.io
-  title: >
-    <span class="nocase"><code>chrono</code></span>-Compatible
-    Low-Level Date Algorithms
+  title: [chrono]{.nocase}-Compatible Low-Level Date Algorithms
   url: https://howardhinnant.github.io/date_algorithms
   issued:
     literal: 2021+185
-- id: laptev2026
+- id: laptev2026dec
   author:
     - family: Laptev
       given: Martin
-      url: https://maptv.github.io
-  title: Dec
+  title: Dec Measurement System
   url: https://maptv.github.io/dec
   issued:
-    literal: 2026+059
+    literal: 2026+061
 ```
 
 </div>
 
-I chose not to specify a [Citation Style
+Quarto configuration files, such as `_quarto.yml` and `_metadata.yml`,
+are written in yaml. Quarto input files, including Quarto markdown,
+[Jupyter](https://jupyter.org) notebook,
+[markdown](https://quarto.org/docs/authoring/markdown-basics), and
+specially formatted [script
+files](https://quarto.org/docs/computations/render-scripts), can start
+with a [yaml
+header](https://quarto.org/docs/authoring/front-matter.html). Therefore,
+we could put the metadata above directly into a Quarto configuration or
+input file rather than into a bibliography file.
+
+As an alternative to yaml, I suggest the
+[BibTeX](https://en.wikipedia.org/wiki/BibTeX#:~:text=a%20bibliographic%20flat%2Dfile%20database%20file%20format)
+format. The BibTeX bibliography file below can be used by Quarto equally
+as well as the yaml bibliography file above. Regardless of the
+bibliography file format we choose, Quarto configuration and input files
+require that we store the
+[path](https://en.wikipedia.org/wiki/Path_(computing)#:~:text=a%20string%20that%20uniquely%20identifies%20an%20item%20in%20a%20hierarchical%20file%20system)
+to our bibliography file, or our list of bibliography file paths, in
+yaml format.
+
+<div class="code-with-filename">
+
+**ref.bib**
+
+``` bib
+@misc{hinnant2021date,
+  author = "Howard Hinnant",
+  title = "\texttt{chrono}-Compatible Low-Level Date Algorithms",
+  url = "https://howardhinnant.github.io/date_algorithms",
+  year = 2021+185
+}
+@misc{laptev2026dec,
+  author = "Martin Laptev",
+  title = "Dec Measurement System",
+  url = "https://maptv.github.io/dec",
+  year = 2026+061
+}
+```
+
+</div>
+
+In addition to storing metadata in a bibliography file, we can keep
+instructions regarding how to style citations and references in a
+[Citation Style
 Language](https://quarto.org/docs/authoring/citations#sec-citations-style)
-(csl) file for this article, therefore Quarto formatted the Hinnant
-(2021+185) reference in the [References](#references) section below
-according to the [Chicago Manual of
-Style](https://chicagomanualofstyle.org) author-date format. Per this
-format, the citation for this article would appear as [Laptev,
-Martin](https://maptv.github.io/about). 2026+059. *Dec*.
-https://maptv.github.io/dec.
+(csl) file. If we do not provide a csl file, Quarto will follow the
+[Chicago Manual of Style](https://chicagomanualofstyle.org) when
+processing parenthetical citations: (Hinnant 2021+185), narrative
+citations: (2021+185), and references:
 
-Instead of using Quarto [citation
-syntax](https://quarto.org/docs/authoring/citations.html#sec-citations),
-you can also prepare a list of references using
-[footnotes](https://quarto.org/docs/authoring/markdown-basics#footnotes).
-As an example, I included citations for the Hinnant date algorithm
-article[5] in both the [references](#references) and
-[footnotes](#footnotes) sections. In alphabetical order below, you will
-find a list of the [Observable](http://observablehq.com) [computational
+[Hinnant, Howard](https://howardhinnant.github.io). <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="September 1, 2021">2021+185</span>. *`chrono`-Compatible
+Low-Level Date Algorithms*.
+<https://howardhinnant.github.io/date_algorithms.html>.
+
+When provided with
+[`nature.csl`](https://github.com/citation-style-language/styles/blob/master/nature.csl),
+[`american-medical-association.csl`](https://github.com/citation-style-language/styles/blob/master/american-medical-association.csl),
+or a similar csl file, Quarto will produce superscript numeric
+citations, which look just like Quarto
+[footnotes](https://quarto.org/docs/authoring/markdown-basics#footnotes):
+[5]. Unlike Quarto citations, Quarto footnotes do not require any
+additional files or configuration. A Quarto output file can have both a
+[Footnotes](#footnotes) and [References](#references) section.
+
+# Observable notebooks
+
+In alphabetical order below, you will find a list of the
+[Observable](http://observablehq.com) [computational
 notebooks](https://en.wikipedia.org/wiki/Notebook_interface#:~:text=a%20virtual%20notebook%20environment%20used%20for%20literate%20programming)
-that I used as the basis for many of the visualizations above.
-
-# Appendix
-
-# Observable computational notebooks
+that inspired many of the visualizations above and thus deserve their
+own section before the [references](#references) and
+[footnotes](#footnotes) further below. On the [Observable
+website](https://observablehq.com), you can
+[search](https://observablehq.com/search) for other awesome Observable
+notebooks, read the [blog](https://observablehq.com/blog), or watch
+[webinars](https://observablehq.com/resource-center#webinars) and [other
+videos](https://observablehq.com/resource-center#videos).
 
 <div id="citelist" class="column-page-right">
 
@@ -3294,218 +3319,6 @@ that I used as the basis for many of the visualizations above.
     data-bs-title="June 28, 2022">2021+119</span>. *Great circle:
     shortest distance between two locations on Earth 🌏*.
     <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
-
-</div>
-
-# Glossary
-
-<div id="gloslist" class="column-page-right">
-
-- <a href="#arcbeat" id="ab">a</a>: arcbeat, a hundred thousandth of a
-  circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
-- <a href="#beat" id="b">b</a>: beat, centimilliday, a hundred
-  thousandth of an day, 864 milliseconds
-  - <a href="#millibeat" id="mb">mb</a>: millibeat, centimicroday, a
-    thousandth of a beat, a hundred millionth of a day, 864 microseconds
-- <a href="#beatpercentiday" id="bpc">bpc</a>: a musical or heart beat
-  per centiday, a tenth of a beat per milliday,
-  0.069<span class="vinculum">4</span> beats per minute, 100 beats per
-  day
-- <a href="#beatpermilliday" id="bpm">bpm</a>: a musical or heart beat
-  per milliday, ten beats per centiday,
-  0.69<span class="vinculum">4</span> beats per minute, 1000 beats per
-  day
-- <a href="#bodymassindex" id="bmi">bmi</a>: body mass index, kilograins
-  of body mass divided by height in zem squared (kg/z²)
-- <a href="#taur" id="c">c</a>: taur, 𝜏*r*, 100000 kilozem, 40000
-  kilometers, nearly the circumference of the Earth, roughly the product
-  of 𝜏 and the radius of the Earth, approximately the dividend of the
-  surface area and the diameter of the Earth
-  - <a href="#millitaur" id="mc">mc</a>: millitaur, *m*𝜏*r*, a
-    thousandth of a taur, 100 kilozem, 40 kilometers
-  - <a href="#nanotaur" id="nc">nc</a>: nanotaur, *n*𝜏*r*, a thousandth
-    of a taur, 100 millizem, 1 decizem, 4 centimeters
-  - <a href="#cubicnanotaur" id="nc3">nc³</a>: cubic nanotaur, *n*𝜏*r*³,
-    1 cubic decizem
-- <a href="#day" id="d">d</a>: day, a tenth of a decaday, a seventh of
-  week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays,
-  1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse
-  of a quotidie
-  - <a href="#decaday" id="dek">dek</a>: decaday, a group of ten days, 2
-    pentadays
-  - <a href="#pentaday" id="pent">pent</a>: pentaday, a group of five
-    days, half a decaday
-  - <a href="#dayofdek" id="dod">dod</a>: day of decaday
-  - <a href="#dayofpent" id="dop">dop</a>: day of pentaday
-  - <a href="#dayofmonth" id="dom">dom</a>: day of month
-  - <a href="#dayofweek" id="dow">dow</a>: day of week
-  - <a href="#dayofyear" id="doy">doy</a>: day of year, decaday \* 10 +
-    dod
-  - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
-    hours, 144 minutes
-  - <a href="#centiday" id="cd">cd</a>: centiday, a hundredth of a day,
-    0.24 hours, 14.4 minutes
-  - <a href="#milliday" id="md">md</a>: milliday, a thousandth of a day,
-    1.44 minutes
-  - <a href="#centimilliday" id="cmd">cmd</a>: centimilliday, a hundred
-    thousandth of a day, 1 beat, 864 milliseconds
-  - <a href="#microday" id="ud">µd</a>: microday, a millionth of a day,
-    86.4 milliseconds
-  - <a href="#nanoday" id="nd">nd</a>: nanoday, a billionth of a day,
-    86.4 microseconds
-- <a href="#degree" id="deg">°</a>: degree, 1/360 turns, 180/𝜋 or 360/𝜏
-  radians
-  - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
-  - <a href="#huedegree" id="hdeg">h°</a>: hue degree
-- <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
-- <a href="#cubit" id="ell">ℓ</a>: ell, cubit, 10/9 zem
-- <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeter
-- <a href="#gutta" id="g">g</a>: drop (gutta in Latin) or grain (granum
-  in Latin), 64 microliters or 64 milligrams
-  - <a href="#kilograin" id="kg">kg</a>: kilograin or kilodrop, 64 grams
-    or 64 milliliters
-  - <a href="#megagrain" id="Mg">Mg</a>: megagrain or megadrop, 64
-    kilograms or 64 liters
-- <a href="#hand" id="h">h</a>: hand, 0.25 zem, 1 decimeter
-- <a href="#hexadecimal" id="hex">hex</a>: hexadecimal, base 16
-- <a href="#huesaturationlightness" id="hsl">hsl</a>: hue saturation
-  lightness
-- <a href="#huesaturationvalue" id="hsv">hsv</a>: hue saturation value
-- <a href="#inch" id="i">i</a>: inch, a sixteenth of a zem, 25
-  millimeter
-- <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
-  glasses, a million drops, half a barrel
-- <a href="#liter" id="L">L</a>: liter, 15625 drops, a cubic decimeter
-  - <a href="#milliliter" id="mL">mL</a>: milliliter, a cubic
-    centimeter, a thousandth of a liter, 15.625 drops
-  - <a href="#microliter" id="uL">µL</a>: microliter, a cubic
-    millimeter, a millionth of a liter, 0.015625 drops
-- <a href="#meridian" id="m">m</a>: meridian, a full circle around the
-  Earth moving North or South; used in the abbreviations a.m.
-  (antemeridian) and p.m. (postmeridian)
-  - <a href="#decimeridian" id="dm">dm</a>: decimeridian, a tenth of a
-    meridian
-  - <a href="#millimeridian" id="mm">mm</a>: millimeridian, a thousandth
-    of a meridian
-- <a href="#squaremeter" id="m2">m²</a>: square meter, 6.25 square zem
-  - <a href="#squarekilometer" id="km2">km²</a>: square kilometer, 6.25
-    square kilozem
-  - <a href="#squaredecimeter" id="dm2">dm²</a>: square decimeter, 6.25
-    square decizem
-  - <a href="#cubiccentimeter" id="cm3">cm³</a>: cubic centimeter, 1
-    millilter, a thousandth of a liter, 15.625 drops
-- <a href="#parallel" id="lambda">λ</a>: parallel, a full circle around
-  the Earth moving West or East; the English alphabet equivalent of λ is
-  the letter “l”, which occurs three times in the word “parallel” and
-  represents a ***l***ine that crosses every possible ***l***ongitude at
-  the same ***l***atitude
-  - <a href="#deciparallel" id="dlambda">dλ</a>: deciparallel, a tenth
-    of a parallel
-  - <a href="#milliparallel" id="mlambda">mλ</a>: milliparallel, a
-    thousandth of a parallel
-- <a href="#note" id="n">n</a>: note, a specific frequency within an
-  octave
-- <a href="#octave" id="o">o</a>: octave, a two fold change in frequency
-  - <a href="#decioctave" id="do">do</a>: decioctave, a tenth of a two
-    fold change in frequency
-- <a href="#perbeat" id="per">p</a>: perbeat, the inverse of a beat,
-  1/beat, once per beat, every beat, 100000 q; the letter “p” can be
-  flipped vertically to produce the letter “b”
-  - <a href="#teraperbeat" id="Tp">Tp</a>: teraperbeat, 10<sup>12</sup>
-    perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat,
-    every picobeat
-- <a href="#quotidie" id="q">q</a>: quotidie, the inverse of a day, a
-  hundred thousandth of a perbeat; the letter “q” can be flipped
-  vertically to produce the letter “d”
-- <a href="#rose" id="r">r</a>: compass rose, a full circle along the
-  horizon, 360 compass degress
-  - <a href="#millirose" id="mr">mr</a>: compass millirose, a thousandth
-    of a circle along the horizon, .36 compass degress
-- <a href="#radian" id="rad">rad</a>: radian, $1\over\tau$ turns,
-  $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
-- <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
-- <a href="#second" id="s">s</a>: second, 1/90 millidays, 0.9 beats, 1
-  Dec second = 0.96 SI seconds
-- <a href="#internationalsystemofunits" id="si">SI</a>: [International
-  System of
-  Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
-- <a href="#speedoflight" id="sol">sol</a>: speed of light, 647.55170928
-  kiloomegars, 299792458 meters per second
-- <a href="#speedofsound" id="sos">sos</a>: speed of sound, 735.048
-  milliomegars, 340.3 meters per second
-- <a href="#tau" id="2pi">𝜏</a>: 2𝜋 or approximately 6.2831853
-- <a href="#tenequaltemperament" id="tenet">Tenet</a>: ten equal
-  temperament
-  - <a href="#10et" id="xet">Xet</a>: Tenet
-  - <a href="#twelveequaltemperance" id="12et">12et</a>: twelve equal
-    temperance
-- <a href="#timeofday" id="tod">tod</a>: time of day
-- <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
-  - <a href="#centiturn" id="ct">ct</a>: centiturn, a hundredth of a
-    turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
-  - <a href="#deciturn" id="dt">dt</a>: deciturn, a tenth of a turn, 36
-    degrees, 𝜏/10 or 𝜋/5 radians
-  - <a href="#milliturn" id="mt">mt</a>: milliturn, a thousandth of a
-    turn, .36 degrees, 𝜏/1000 or 𝜋/500 r $\pi\over 500$ radians
-- <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
-- <a href="#ounce" id="u">u</a>: ounce (uncia in Latin), 500 grains, 32
-  grams, 500 drops, 32 milliliters
-- <a href="#coordinateduniversaltime" id="utc">utc</a>: [Coordinated
-  Universal
-  Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
-- <a href="#unitedstates" id="us">US</a>: [United
-  States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
-- <a href="#omegar" id="v">v</a>: omegar, ωr,
-  1041.<span class="vinculum">6</span> miles per hour,
-  1.<span class="vinculum">6</span> megameters per hour,
-  0.4<span class="vinculum">629</span> kilometers per second, roughly
-  1.36 times the speed of sound
-  - <a href="#kiloomegar" id="kv">kv</a>: kiloomegar, kωr,
-    1.<span class="vinculum">6</span> gigameters per hour,
-    0.4<span class="vinculum">629</span> megameters per second,
-    approximately 0.1544% of the speed of light
-  - <a href="#milliomegar" id="mv">mv</a>: milliomegar, mωr,
-    1.041<span class="vinculum">6</span> miles per hour,
-    1.<span class="vinculum">6</span> kilometers per hour,
-    0.4<span class="vinculum">629</span> meters per second,
-    approximately 0.136% the speed of sound
-- <a href="#wineglass" id="w">w</a>: wineglass, 64 milliters, 2 ounces,
-  cubic decizem, 1000 drops
-- <a href="#hexamilliare" id="x">x</a>: hexamilliare, square zem, z², 16
-  square decimeters, 1.<span class="vinculum">7</span> square feet, 256
-  square inches
-  - <a href="#megahexamilliare" id="Mx">Mx</a>: megahexamilliare, a
-    million square zem, square kilozem, kz², hexakilare, 16 hectares,
-    1600 ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
-- <a href="#year" id="y">y</a>: year
-  - <a href="#milliyear" id="my">my</a>: milliyear, a thousandth of a
-    year
-  - <a href="#yearofera" id="yoe">yoe</a>: year of era, integer years
-    since the Dec epoch
-- <a href="#zoneequatorialmeter" id="z">z</a>: zem, zone equatorial
-  meter, 4 decimeters, 16 inches
-  - <a href="#squarekilozem" id="kz2">kz²</a>: square kilozem, a million
-    square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600
-    ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
-  - <a href="#kilozem" id="kz">kz</a>: kilozem, 1000 zem, 400 meters, a
-    quarter mile
-  - <a href="#squarezem" id="z2">z²</a>: square zem, hexamilliare, 16
-    square decimeters, 1.<span class="vinculum">7</span> square feet,
-    256 square inches
-  - <a href="#squaredecazem" id="Dz2">Dz²</a>: square decazem, 1
-    hexadeciare, 16 square meters, 19.75 square yards, 100 square zem
-  - <a href="#cubiczem" id="z3">z³</a>: cubic zem, 1 keg, 64 liters,
-    1000 wine glasses, a million drops, half a barrel
-  - <a href="#cubicdecizem" id="dz3">dz³</a>: cubic decizem, 1000 drops,
-    64 milliliters, 2 ounces, 1 wine glass
-  - <a href="#cubiccentizem" id="cz3">cz³</a>: cubic centizem, 1 drop,
-    64 microliters
-  - <a href="#decizem" id="dz">dz</a>: decizem, a tenth of a zem, 4
-    centimeters
-  - <a href="#centizem" id="cz">cz</a>: centizem, a hundredth of a zem,
-    4 millimeters
-  - <a href="#millizem" id="mz">mz</a>: millizem, a thousandth of a zem,
-    0.4 millimeters
 
 </div>
 
@@ -6892,12 +6705,14 @@ img#zModu {
 }
 #citelist ol li {
   overflow-x: scroll;
+  overflow-y: hidden;
   white-space: nowrap;
   padding: 0;
   margin: 0;
 }
 #gloslist ul li {
   overflow-x: scroll;
+  overflow-y: hidden;
   white-space: nowrap;
   list-style: none;
   padding: 0;
@@ -6959,13 +6774,224 @@ figcaption {
 }
 </style>
 
+# Glossary
+
+<div id="gloslist" class="column-page-right">
+
+- <a href="#arcbeat" id="ab">a</a>: arcbeat, a hundred thousandth of a
+  circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
+- <a href="#beat" id="b">b</a>: beat, centimilliday, a hundred
+  thousandth of an day, 864 milliseconds
+  - <a href="#millibeat" id="mb">mb</a>: millibeat, centimicroday, a
+    thousandth of a beat, a hundred millionth of a day, 864 microseconds
+- <a href="#beatpercentiday" id="bpc">bpc</a>: a musical or heart beat
+  per centiday, a tenth of a beat per milliday,
+  0.069<span class="vinculum">4</span> beats per minute, 100 beats per
+  day
+- <a href="#beatpermilliday" id="bpm">bpm</a>: a musical or heart beat
+  per milliday, ten beats per centiday,
+  0.69<span class="vinculum">4</span> beats per minute, 1000 beats per
+  day
+- <a href="#bodymassindex" id="bmi">bmi</a>: body mass index, kilograins
+  of body mass divided by height in zem squared (kg/z²)
+- <a href="#taur" id="c">c</a>: taur, 𝜏*r*, 100000 kilozem, 40000
+  kilometers, nearly the circumference of the Earth, roughly the product
+  of 𝜏 and the radius of the Earth, approximately the dividend of the
+  surface area and the diameter of the Earth
+  - <a href="#millitaur" id="mc">mc</a>: millitaur, *m*𝜏*r*, a
+    thousandth of a taur, 100 kilozem, 40 kilometers
+  - <a href="#nanotaur" id="nc">nc</a>: nanotaur, *n*𝜏*r*, a thousandth
+    of a taur, 100 millizem, 1 decizem, 4 centimeters
+  - <a href="#cubicnanotaur" id="nc3">nc³</a>: cubic nanotaur, *n*𝜏*r*³,
+    1 cubic decizem
+- <a href="#day" id="d">d</a>: day, a tenth of a decaday, a seventh of
+  week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays,
+  1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse
+  of a quotidie
+  - <a href="#decaday" id="dek">dek</a>: decaday, a group of ten days, 2
+    pentadays
+  - <a href="#pentaday" id="pent">pent</a>: pentaday, a group of five
+    days, half a decaday
+  - <a href="#dayofdek" id="dod">dod</a>: day of decaday
+  - <a href="#dayofpent" id="dop">dop</a>: day of pentaday
+  - <a href="#dayofmonth" id="dom">dom</a>: day of month
+  - <a href="#dayofweek" id="dow">dow</a>: day of week
+  - <a href="#dayofyear" id="doy">doy</a>: day of year, decaday \* 10 +
+    dod
+  - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
+    hours, 144 minutes
+  - <a href="#centiday" id="cd">cd</a>: centiday, a hundredth of a day,
+    0.24 hours, 14.4 minutes
+  - <a href="#milliday" id="md">md</a>: milliday, a thousandth of a day,
+    1.44 minutes
+  - <a href="#centimilliday" id="cmd">cmd</a>: centimilliday, a hundred
+    thousandth of a day, 1 beat, 864 milliseconds
+  - <a href="#microday" id="ud">µd</a>: microday, a millionth of a day,
+    86.4 milliseconds
+  - <a href="#nanoday" id="nd">nd</a>: nanoday, a billionth of a day,
+    86.4 microseconds
+- <a href="#degree" id="deg">°</a>: degree, 1/360 turns, 180/𝜋 or 360/𝜏
+  radians
+  - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
+  - <a href="#huedegree" id="hdeg">h°</a>: hue degree
+- <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
+- <a href="#cubit" id="ell">ℓ</a>: ell, cubit, 10/9 zem
+- <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeter
+- <a href="#gutta" id="g">g</a>: drop (gutta in Latin) or grain (granum
+  in Latin), 64 microliters or 64 milligrams
+  - <a href="#kilograin" id="kg">kg</a>: kilograin or kilodrop, 64 grams
+    or 64 milliliters
+  - <a href="#megagrain" id="Mg">Mg</a>: megagrain or megadrop, 64
+    kilograms or 64 liters
+- <a href="#hand" id="h">h</a>: hand, 0.25 zem, 1 decimeter
+- <a href="#hexadecimal" id="hex">hex</a>: hexadecimal, base 16
+- <a href="#huesaturationlightness" id="hsl">hsl</a>: hue saturation
+  lightness
+- <a href="#huesaturationvalue" id="hsv">hsv</a>: hue saturation value
+- <a href="#inch" id="i">i</a>: inch, a sixteenth of a zem, 25
+  millimeter
+- <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
+  glasses, a million drops, half a barrel
+- <a href="#liter" id="L">L</a>: liter, 15625 drops, a cubic decimeter
+  - <a href="#milliliter" id="mL">mL</a>: milliliter, a cubic
+    centimeter, a thousandth of a liter, 15.625 drops
+  - <a href="#microliter" id="uL">µL</a>: microliter, a cubic
+    millimeter, a millionth of a liter, 0.015625 drops
+- <a href="#meridian" id="m">m</a>: meridian, a full circle around the
+  Earth moving North or South; used in the abbreviations a.m.
+  (antemeridian) and p.m. (postmeridian)
+  - <a href="#decimeridian" id="dm">dm</a>: decimeridian, a tenth of a
+    meridian
+  - <a href="#millimeridian" id="mm">mm</a>: millimeridian, a thousandth
+    of a meridian
+- <a href="#squaremeter" id="m2">m²</a>: square meter, 6.25 square zem
+  - <a href="#squarekilometer" id="km2">km²</a>: square kilometer, 6.25
+    square kilozem
+  - <a href="#squaredecimeter" id="dm2">dm²</a>: square decimeter, 6.25
+    square decizem
+  - <a href="#cubiccentimeter" id="cm3">cm³</a>: cubic centimeter, 1
+    millilter, a thousandth of a liter, 15.625 drops
+- <a href="#parallel" id="lambda">λ</a>: parallel, a full circle around
+  the Earth moving West or East; the English alphabet equivalent of λ is
+  the letter “l”, which occurs three times in the word “parallel” and
+  represents a ***l***ine that crosses every possible ***l***ongitude at
+  the same ***l***atitude
+  - <a href="#deciparallel" id="dlambda">dλ</a>: deciparallel, a tenth
+    of a parallel
+  - <a href="#milliparallel" id="mlambda">mλ</a>: milliparallel, a
+    thousandth of a parallel
+- <a href="#note" id="n">n</a>: note, a specific frequency within an
+  octave
+- <a href="#octave" id="o">o</a>: octave, a two fold change in frequency
+  - <a href="#decioctave" id="do">do</a>: decioctave, a tenth of a two
+    fold change in frequency
+- <a href="#perbeat" id="per">p</a>: perbeat, the inverse of a beat,
+  1/beat, once per beat, every beat, 100000 q; the letter “p” can be
+  flipped vertically to produce the letter “b”
+  - <a href="#teraperbeat" id="Tp">Tp</a>: teraperbeat, 10<sup>12</sup>
+    perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat,
+    every picobeat
+- <a href="#quotidie" id="q">q</a>: quotidie, the inverse of a day, a
+  hundred thousandth of a perbeat; the letter “q” can be flipped
+  vertically to produce the letter “d”
+- <a href="#rose" id="r">r</a>: compass rose, a full circle along the
+  horizon, 360 compass degress
+  - <a href="#millirose" id="mr">mr</a>: compass millirose, a thousandth
+    of a circle along the horizon, .36 compass degress
+- <a href="#radian" id="rad">rad</a>: radian, $1\over\tau$ turns,
+  $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
+- <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
+- <a href="#second" id="s">s</a>: second, 1/90 millidays, 0.9 beats, 1
+  Dec second = 0.96 SI seconds
+- <a href="#internationalsystemofunits" id="si">SI</a>: [International
+  System of
+  Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
+- <a href="#speedoflight" id="sol">sol</a>: speed of light, 647.55170928
+  kiloomegars, 299792458 meters per second
+- <a href="#speedofsound" id="sos">sos</a>: speed of sound, 735.048
+  milliomegars, 340.3 meters per second
+- <a href="#tau" id="2pi">𝜏</a>: 2𝜋 or approximately 6.2831853
+- <a href="#tenequaltemperament" id="tenet">Tenet</a>: ten equal
+  temperament
+  - <a href="#10et" id="xet">Xet</a>: Tenet
+  - <a href="#twelveequaltemperance" id="12et">12et</a>: twelve equal
+    temperance
+- <a href="#timeofday" id="tod">tod</a>: time of day
+- <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
+  - <a href="#centiturn" id="ct">ct</a>: centiturn, a hundredth of a
+    turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
+  - <a href="#deciturn" id="dt">dt</a>: deciturn, a tenth of a turn, 36
+    degrees, 𝜏/10 or 𝜋/5 radians
+  - <a href="#milliturn" id="mt">mt</a>: milliturn, a thousandth of a
+    turn, .36 degrees, 𝜏/1000 or 𝜋/500 r $\pi\over 500$ radians
+- <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
+- <a href="#ounce" id="u">u</a>: ounce (uncia in Latin), 500 grains, 32
+  grams, 500 drops, 32 milliliters
+- <a href="#coordinateduniversaltime" id="utc">utc</a>: [Coordinated
+  Universal
+  Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
+- <a href="#unitedstates" id="us">US</a>: [United
+  States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
+- <a href="#omegar" id="v">v</a>: omegar, ωr,
+  1041.<span class="vinculum">6</span> miles per hour,
+  1.<span class="vinculum">6</span> megameters per hour,
+  0.4<span class="vinculum">629</span> kilometers per second, roughly
+  1.36 times the speed of sound
+  - <a href="#kiloomegar" id="kv">kv</a>: kiloomegar, kωr,
+    1.<span class="vinculum">6</span> gigameters per hour,
+    0.4<span class="vinculum">629</span> megameters per second,
+    approximately 0.1544% of the speed of light
+  - <a href="#milliomegar" id="mv">mv</a>: milliomegar, mωr,
+    1.041<span class="vinculum">6</span> miles per hour,
+    1.<span class="vinculum">6</span> kilometers per hour,
+    0.4<span class="vinculum">629</span> meters per second,
+    approximately 0.136% the speed of sound
+- <a href="#wineglass" id="w">w</a>: wineglass, 64 milliters, 2 ounces,
+  cubic decizem, 1000 drops
+- <a href="#hexamilliare" id="x">x</a>: hexamilliare, square zem, z², 16
+  square decimeters, 1.<span class="vinculum">7</span> square feet, 256
+  square inches
+  - <a href="#megahexamilliare" id="Mx">Mx</a>: megahexamilliare, a
+    million square zem, square kilozem, kz², hexakilare, 16 hectares,
+    1600 ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
+- <a href="#year" id="y">y</a>: year
+  - <a href="#milliyear" id="my">my</a>: milliyear, a thousandth of a
+    year
+  - <a href="#yearofera" id="yoe">yoe</a>: year of era, integer years
+    since the Dec epoch
+- <a href="#zoneequatorialmeter" id="z">z</a>: zem, zone equatorial
+  meter, 4 decimeters, 16 inches
+  - <a href="#squarekilozem" id="kz2">kz²</a>: square kilozem, a million
+    square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600
+    ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
+  - <a href="#kilozem" id="kz">kz</a>: kilozem, 1000 zem, 400 meters, a
+    quarter mile
+  - <a href="#squarezem" id="z2">z²</a>: square zem, hexamilliare, 16
+    square decimeters, 1.<span class="vinculum">7</span> square feet,
+    256 square inches
+  - <a href="#squaredecazem" id="Dz2">Dz²</a>: square decazem, 1
+    hexadeciare, 16 square meters, 19.75 square yards, 100 square zem
+  - <a href="#cubiczem" id="z3">z³</a>: cubic zem, 1 keg, 64 liters,
+    1000 wine glasses, a million drops, half a barrel
+  - <a href="#cubicdecizem" id="dz3">dz³</a>: cubic decizem, 1000 drops,
+    64 milliliters, 2 ounces, 1 wine glass
+  - <a href="#cubiccentizem" id="cz3">cz³</a>: cubic centizem, 1 drop,
+    64 microliters
+  - <a href="#decizem" id="dz">dz</a>: decizem, a tenth of a zem, 4
+    centimeters
+  - <a href="#centizem" id="cz">cz</a>: centizem, a hundredth of a zem,
+    4 millimeters
+  - <a href="#millizem" id="mz">mz</a>: millizem, a thousandth of a zem,
+    0.4 millimeters
+
+</div>
+
 <div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-hinnant2021" class="csl-entry">
+<div id="ref-hinnant2021date" class="csl-entry">
 
-Hinnant, Howard. 2021+185.
-*<span class="nocase"><code>chrono</code></span>-Compatible Low-Level
-Date Algorithms*. <https://howardhinnant.github.io/date_algorithms>.
+Hinnant, Howard. 2021+185. *`chrono`-Compatible Low-Level Date
+Algorithms*. <https://howardhinnant.github.io/date_algorithms>.
 
 </div>
 
