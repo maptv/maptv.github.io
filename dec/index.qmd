@@ -1,9 +1,11 @@
 ---
-title: Dec
+title: Dec Measurement System
 author:
   - name: Martin Laptev
     url: https://maptv.github.io
 image: /asset/colorWheelCompass.svg
+slug: dec
+path: /dec
 description: >
   Introducing the Dec measurement system,
   which uses turns instead of months, weeks,
@@ -250,38 +252,38 @@ Unlike Dec and [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="Internati
 
 ## Unit conversion tables {.hiddenheading .unnumbered}
 
-### Length and distance {.hiddenheading #sec-lad}
+## Length and distance {.hiddenheading #sec-lad}
 
 The [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%20comparable%29-,one%2Ddimensional,-quotations%C2%A0%E2%96%BC) ([1D]{.tool data-bs-toggle="tooltip" data-bs-title="unidimensional"}) units in the table below can be divided into two groups: [human-](https://en.wikipedia.org/wiki/List_of_human-based_units_of_measurement#:~:text=units%20of%20measurement%20based%20on%20human%20body%20parts) or horse-based length units and [surveying](https://en.wikipedia.org/wiki/Surveying#:~:text=determining%20the%20terrestrial%20positions%20of%20points%20based%20on%20the%20distances%20and%20angles%20between%20them) distance units. A horse🐴length is about as long as a [cruiser](https://en.wikipedia.org/wiki/Cruiser_(motorcycle)#:~:text=a%20motorcycle%20in%20the%20style%20of%20those%20made%20by%20American%20manufacturers) or [touring motorcycle](https://en.wikipedia.org/wiki/Touring_motorcycle#:~:text=a%20type%20of%20motorcycle%20designed%20for%20touring)🏍️, approximately equivalent to the height of the tallest basketball🏀players, and roughly half of the length of a [compact](https://en.wikipedia.org/wiki/Compact_car#:~:text=sits%20between%20subcompact%20cars%20and%20mid%2Dsize%20cars) to [mid-size](https://en.wikipedia.org/wiki/Mid-size_car#:~:text=larger%20than%20compact%20cars%20and%20smaller%20than%20full%2Dsize%20cars) car.
 
 {{< include /dec/_lengthtable.qmd >}}
 
-### Miles per hour {.hiddenheading #sec-mph}
+## Miles per hour {.hiddenheading #sec-mph}
 
 When we divide a [1D]{.tool data-bs-toggle="tooltip" data-bs-title="unidimensional"} unit by a time unit, we get a speed unit. A mile per hour is very close to a [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} per [b](#b){.tool data-bs-toggle="tooltip" data-bs-title="beats"} and a [knot](https://en.wikipedia.org/wiki/Knot_(unit)#:~:text=a%20unit%20of%20speed%20equal%20to%20one%20nautical%20mile%20per%20hour), which is used to measure the speed of aircraft and watercraft, is almost exactly the same as 10/9 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} per [b](#b){.tool data-bs-toggle="tooltip" data-bs-title="beats"}. Dec refers to 10/9 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} as a [cubit](https://en.wikipedia.org/wiki/Cubit#:~:text=an%20ancient%20unit%20of%20length%20based%20on%20the%20distance%20from%20the%20elbow%20to%20the%20tip%20of%20the%20middle%20finger) or [ell](https://en.wikipedia.org/wiki/Ell#:~:text=a%20northwestern%20European%20unit%20of%20measurement) ([ℓ](#ell){#cubit .tool data-bs-toggle="tooltip" data-bs-title="ell"}). An
  [mv](#mv){.tool data-bs-toggle="tooltip" data-bs-title="milliomegar"} can also be expressed as one [ℓ](#ell){.tool data-bs-toggle="tooltip" data-bs-title="ell"} per Dec second ([s](#s){#second .tool data-bs-toggle="tooltip" data-bs-title="Dec second"}). There are 86400 [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} seconds or 90000 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec second"} in one day.
 
 {{< include /dec/_speedtable.qmd >}}
 
-### Are hectare acre {.hiddenheading #sec-aha}
+## Are hectare acre {.hiddenheading #sec-aha}
 
 If we raise a [1D]{.tool data-bs-toggle="tooltip" data-bs-title="unidimensional"} unit to the second power, we get a [bidimensional](https://en.wiktionary.org/wiki/bidimensional#:~:text=not%20comparable%29-,Two%2Ddimensional,-.) ([2D]{.tool data-bs-toggle="tooltip" data-bs-title="bidimensional"}) area unit. A [z&sup2;](#z2){.tool data-bs-toggle="tooltip" data-bs-title="square zem"} is 1 [hexamilliare]{.tool data-bs-toggle="tooltip" data-bs-title="1.6 thousandths of an are"} ([x](#x){#hexamilliare .tool data-bs-toggle="tooltip" data-bs-title="hexamilliare"}), 16 square (sq.) [decimeters]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a meter"} ([dm&sup2;](#dm2){#squaredecimeter .tool data-bs-toggle="tooltip" data-bs-title="square decimeters"}), [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}0.1975 Dec [sq. yards](https://en.wikipedia.org/wiki/Square_yard#:~:text=U.S.%20customary%20unit%20of%20area), 1.[7]{.vinculum} Dec [sq. feet](https://en.wikipedia.org/wiki/Square_foot#:~:text=the%20area%20of%20a%20square%20with%20sides%20of%201%20foot), or 256 Dec sq. inches. A sq. [kilozem]{.tool data-bs-toggle="tooltip" data-bs-title="a thousand zem"} ([kz&sup2;](#kz2){#squarekilozem .tool data-bs-toggle="tooltip" data-bs-title="square kilozem"}) is 1 [hexakilare]{.tool data-bs-toggle="tooltip" data-bs-title="sixteen hundred ares"}, 16 [hectares](https://en.wikipedia.org/wiki/Hectare#:~:text=a%20square%20with%20100%2Dmetre%20sides){.tool data-bs-toggle="tooltip" data-bs-title="hundreds of ares"}, 1600 [ares](https://en.wikipedia.org/wiki/Hectare#Are), 40 Dec [acres](https://en.wikipedia.org/wiki/Acre#:~:text=%20is-,a%20unit%20of%20land%20area,-used%20in%20the), 0.16 sq. [kilometers](https://en.wikipedia.org/wiki/Kilometre#:~:text=a%20unit%20of%20length%20in%20the%20International%20System%20of%20Units){.tool data-bs-toggle="tooltip" data-bs-title="thousands of meters"} ([km&sup2;](#km2){#squarekilometer .tool data-bs-toggle="tooltip" data-bs-title="square kilometers"}), 0.0625 Dec [sq. miles](https://en.wikipedia.org/wiki/Square_mile#:~:text=US%20unit%20of%20measure%20for%20area), [10^6^]{.tool data-bs-toggle="tooltip" data-bs-title="a million"} [z&sup2;](#z2){.tool data-bs-toggle="tooltip" data-bs-title="square zem"}, or 1 megahexamilliare ([Mx](#Mx){#megahexamilliare .tool data-bs-toggle="tooltip" data-bs-title="megahexamilliare"}). 
 
 {{< include /dec/_areatable.qmd >}}
 
-### Drop wineglass keg {.hiddenheading #sec-dwk}
+## Drop wineglass keg {.hiddenheading #sec-dwk}
 
 [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} tridimensional ([3D]{.tool data-bs-toggle="tooltip" data-bs-title="tridimensional"}) volume units tend to scale by [powers of two](https://en.wikipedia.org/wiki/Power_of_two#:~:text=a%20number%20of%20the%20form%202n%20where%20n%20is%20an%20integer). A cubic (cu.) [decizem]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a zone equatorial meter"} ([dz&sup3;](#dz3){#cubicdecizem .tool data-bs-toggle="tooltip" data-bs-title="cubic decizem"}) is like a double shot, either of espresso☕️or of liquor🥃, and is equal to 1 cu. [nanotaur]{.tool data-bs-toggle="tooltip" data-bs-title="a millionth of a taur"} ([nc&sup3;](#nc3){#cubicnanotaur .tool data-bs-toggle="tooltip" data-bs-title="cubic nanotaur"}), 1 Dec wineglass (🍷glass), 2 Dec ounces ([u](#u){#ounce .tool data-bs-toggle="tooltip" data-bs-title="ounce"}), 4 Dec tablespoons (table🥄), 64 cu. [centimeters]{.tool data-bs-toggle="tooltip" data-bs-title="a hundredth of a meter"} ([cm&sup3;]{#cubiccentimeter .tool data-bs-toggle="tooltip" data-bs-title="cubic centimeters"}), 64 [milliliters]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a liter"} ([mL](#mL){#milliliter .tool data-bs-toggle="tooltip" data-bs-title="milliliters"}), 1000 Dec drops ([g](#g){#gutta .tool data-bs-toggle="tooltip" data-bs-title="drops"}), or 1000 cu. [centizem]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a zone equatorial meter"} ([cz&sup3;](#cz3){#cubiccentizem .tool data-bs-toggle="tooltip" data-bs-title="cubic centizem"}).
 
 {{< include /dec/_volumetable.qmd >}}
 
-### Grain pound ton {.hiddenheading #sec-gpt}
+## Grain pound ton {.hiddenheading #sec-gpt}
 
 Dec and [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} measurements of mass are based on volumes of water🌊. A [dz&sup3;](#dz3){.tool data-bs-toggle="tooltip" data-bs-title="cubic decizem"} of water weighs $1\over7$ Dec pounds, 64 grams, or 1000 Dec grains ([g](#g){#grain .tool data-bs-toggle="tooltip" data-bs-title="grain"}). One [u](#u){.tool data-bs-toggle="tooltip" data-bs-title="ounce"} of water weighs $1\over14$ Dec pounds, 500 Dec [g](#g){.tool data-bs-toggle="tooltip" data-bs-title="grains"}, or 32 grams. In Dec, [g](#g){.tool data-bs-toggle="tooltip" data-bs-title="grains"} is short for [*granum*](https://en.wiktionary.org/wiki/granum) and [*gutta*](https://en.wiktionary.org/wiki/gutta), the Latin words for grain and drop, respectively. Similarly, [u](#u){.tool data-bs-toggle="tooltip" data-bs-title="ounce"} originates from [*uncia*](https://en.wiktionary.org/wiki/uncia), the Latin word for "a twelfth".
 
 {{< include /dec/_masstable.qmd >}}
 
-### Body mass index (bmi) {.hiddenheading #sec-bmi}
+## Body mass index (bmi) {.hiddenheading #sec-bmi}
 
 A [z&sup3;](#z3){.tool data-bs-toggle="tooltip" data-bs-title="cubic zem"} is 1 keg. A keg of water weighs 64 [kilograms]{.tool data-bs-toggle="tooltip" data-bs-title="thousands of grams"}, 128 Dec pounds, or a 1000 Dec [kilograins]{.tool data-bs-toggle="tooltip" data-bs-title="thousands of grains"} ([kg](#kg){#kilograin .tool data-bs-toggle="tooltip" data-bs-title="kilograins"}). If [Leonardo da Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)'s [Vitruvian Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci) were 4 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} tall, we could measure 1 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} from his knees to his feet or from his elbows to his fingertips. If he also weighed 1000 Dec [kg](#kg){.tool data-bs-toggle="tooltip" data-bs-title="kilograins"}, his [body mass index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height) ([bmi](#bmi){#bodymassindex .tool data-bs-toggle="tooltip" data-bs-title="body mass index"}) would be 62.5 [kg](#kg){.tool data-bs-toggle="tooltip" data-bs-title="kilograins"} per [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="hexamilliares"} ($\text {kg}\over\text x$) or 25 kilograms per [m&sup2;](#m2){#squaremeter .tool data-bs-toggle="tooltip" data-bs-title="square meters"} ($\text {kilogram}\over\text m^2$).
 
@@ -304,7 +306,7 @@ viewof kilograins = Inputs.range([0, 10000], {label: "Weight", value: 1000, step
 viewof zems = Inputs.range([0, 10], {label: "Height", value: 4, step: 0.01})
 ```
 
-### Centizem centimeter inch {.hiddenheading #sec-cci}
+## Centizem centimeter inch {.hiddenheading #sec-cci}
 
 The longest length depicted in the image of a ruler📏below is 1 [dz](#dz){.tool data-bs-toggle="tooltip" data-bs-title="decizem"}, 1 [nc](#nc){.tool data-bs-toggle="tooltip" data-bs-title="nanotaur"}, 4 [centimeters]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a meter"}, or $8\over5$ Dec inches, and the shortest length is $1\over2$ [mz](#mz){.tool data-bs-toggle="tooltip" data-bs-title="millizem"}, $1\over5$ [millimeters]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a meter"}, $1\over125$ Dec inches, or $1\over127$ [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary inches. A [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary inch is $127\over2$ [mz](#mz){.tool data-bs-toggle="tooltip" data-bs-title="millizem"}, $127\over5$ millimeters, or $127\over125$ Dec inches. A Dec inch is $5\over2$ centimeters. A centimeter is $5\over2$ [cz](#cz){.tool data-bs-toggle="tooltip" data-bs-title="centizem"}. A [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} is 4 decimeters. A decimeter is 4 Dec inches.
 
@@ -315,7 +317,7 @@ The longest length depicted in the image of a ruler📏below is 1 [dz](#dz){.too
 
 # Claude Boniface Collignon {.hiddenheading #sec-cbc}
 
-In [1788]{.color788}, [Claude Boniface Collignon](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution) proposed measuring length in [dz](#dz){.tool data-bs-toggle="tooltip" data-bs-title="decizem"} or [nc](#nc){.tool data-bs-toggle="tooltip" data-bs-title="nanotaurs"} and tracking time in [deks](#dek){.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"}, [dd](#dd){.tool data-bs-toggle="tooltip" data-bs-title="decidays"}, [md](#md){.tool data-bs-toggle="tooltip" data-bs-title="millidays"}, [µd](#ud){.tool data-bs-toggle="tooltip" data-bs-title="microdays"}, and [nanodays]{.tool data-bs-toggle="tooltip" data-bs-title="billionths of a day"} ([nd](#nd){#nanoday .tool data-bs-toggle="tooltip" data-bs-title="nanodays"})[^2]. On [[2025]{.color025}[+]{.mono}[039]{.colorD039}]{.tool data-bs-toggle="tooltip" data-bs-title="April 9, 2025"}, while searching for units similar to [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taur"} and [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"}, I noticed the definition of a [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"}, 1 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} = [10^-8^]{.tool data-bs-toggle="tooltip" data-bs-title="a hundred millionth"} [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taur"} = 40 centimeters, in a table of [ten possible length units](https://www.roma1.infn.it/~dagos/history/sm/node12.html) from a [2004]{.color004} [arxiv](https://arxiv.org/abs/physics/0412078) [article](https://www.roma1.infn.it/~dagos/history/sm/sm.html) entitled "Why does the meter beat the second?"[^3].
+In [1788]{.color788}, [Claude Boniface Collignon](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution) proposed measuring length in [dz](#dz){.tool data-bs-toggle="tooltip" data-bs-title="decizem"} or [nc](#nc){.tool data-bs-toggle="tooltip" data-bs-title="nanotaurs"} and tracking time in [deks](#dek){.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"}, [dd](#dd){.tool data-bs-toggle="tooltip" data-bs-title="decidays"}, [md](#md){.tool data-bs-toggle="tooltip" data-bs-title="millidays"}, [µd](#ud){.tool data-bs-toggle="tooltip" data-bs-title="microdays"}, and [nanodays]{.tool data-bs-toggle="tooltip" data-bs-title="billionths of a day"} ([nd](#nd){#nanoday .tool data-bs-toggle="tooltip" data-bs-title="nanodays"})[^2]. On [[2025]{.color025}[+]{.mono}[039]{.colorD039}]{.tool data-bs-toggle="tooltip" data-bs-title="April 9, 2025"}, while searching for units akin to [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taur"} and [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"}, I noticed the definition of a [zem]{.tool data-bs-toggle="tooltip" data-bs-title="zone equatorial meter"}, 1 [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} = [10^-8^]{.tool data-bs-toggle="tooltip" data-bs-title="a hundred millionth"} [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taur"} = 40 centimeters, in a table of [ten possible length units](https://www.roma1.infn.it/~dagos/history/sm/node12.html) from an [arxiv](https://arxiv.org/abs/physics/0412078) [article](https://www.roma1.infn.it/~dagos/history/sm/sm.html) entitled "Why does the meter beat the second?"[^3].
 
 # Summary {.unnumbered #tldr}
 
@@ -335,73 +337,14 @@ Now that you have had a taste👅of Dec, I hope that you are hungry🤤for more!
 
 {{< include /asset/_cite.qmd >}}
 
-Of the [bibliography file](https://quarto.org/docs/authoring/citations#bibliography-files) [formats](https://pandoc.org/MANUAL.html#specifying-bibliographic-data) supported by [Quarto](https://quarto.org), I recommend storing [bibliographic records](https://en.wikipedia.org/wiki/Bibliographic_record#:~:text=contains%20the%20data%20elements%20necessary%20to%20help%20users%20identify%20and%20retrieve%20that%20resource) as [yaml](https://en.wikipedia.org/wiki/YAML#:~:text=a%20human%2Dreadable%20data%20serialization%20language). The bibliography file shown below contains [metadata](https://en.wikipedia.org/wiki/Metadata#:~:text=the%20title%2C%20author%2C%20and%20publication%20date%20of%20a%20book%20are%20metadata%20about%20the%20book) about the article you are currently reading and the article entitled [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms) in which [Howard Hinnant](https://howardhinnant.github.io) [-@hinnant2021] describes the algorithms underlying Dec dates.
+[^0]: [Newton, Issac](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a). 1704. *Opticks*. <https://doi.org/10.5479/sil.302475.39088000644674>.
+[^1]: [Clint Goss](https://www.clintgoss.com). [2022+098]{.tool data-bs-toggle="tooltip" data-bs-title="June 7, 2022"}. *Color of Sound*. <https://www.flutopedia.com/sound_color.htm>.
+[^2]: [Collignon, Claude Boniface](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution). 1788. *Découverte d'étalons justes, naturels, invariables et universels*. <https://archive.org/details/dcouvertedtalon00collgoog/page/n68/mode/2up>.
+[^3]: [Agnoli, Paolo](http://www.paoloagnoli.it) & [D'Agostini, Giulio](https://www.roma1.infn.it/~dagos). [2004+330]{.tool data-bs-toggle="tooltip" data-bs-title="January 25, 2005"}. *Why does the meter beat the second?*. <https://arxiv.org/abs/physics/0412078>.
 
-```{.yml filename="ref.yml"}
-references:
-- id: hinnant2021
-  author:
-    - family: Hinnant
-      given: Howard
-      url: https://howardhinnant.github.io
-  title: >
-    [chrono]{.nocase}-Compatible
-    Low-Level Date Algorithms
-  url: https://howardhinnant.github.io/date_algorithms
-  issued:
-    literal: 2021+185
-- id: laptev2026
-  author:
-    - family: Laptev
-      given: Martin
-      url: https://maptv.github.io
-  title: {{< meta title >}}
-  url: {{< meta url >}}
-  issued:
-    literal: {{< meta date >}}
-```
+# Observable notebooks {.unnumbered #obs}
 
-Instead of specifying the [path](https://en.wikipedia.org/wiki/Path_(computing)#:~:text=a%20string%20that%20uniquely%20identifies%20an%20item%20in%20a%20hierarchical%20file%20system) to a bibliography file or providing a list of bibliography file paths, 
-we can paste the yaml metadata above into any Quarto configuration file or the [yaml header](https://quarto.org/docs/authoring/front-matter.html) of any Quarto input file. Notably, the `_quarto.yml` configuration file can share the metadata that it contains with all of the input files throughout a [Quarto project](https://quarto.org/docs/projects/quarto-projects.html#project-metadata).
-
-For the sake of comparison, we can convert our yaml bibliography file to json format.
-
-
-
-If you use Quarto, you can include yaml metadata in a bibliography file like the one above, a Quarto configuration file, or the 
-
-As If the metadata above directly you do not use Quarto, you may need to use a different bibliography format. reference managers do not support  you do not use Quarto, you may including configuration files that We could add  to the bibliography file above, we w add the metadata above to can put Quarto  can share yaml metadata with one or more Quarto input files. We can also 
-Quarto We could need the  to a bibliography file that contains the metadata.
-Any Quarto input file can have store yaml metadata in its . , to the of a  or file or a Quarto configuration file. Notably, a configuration file can share metadata with all of the qmd files in an entire 
-named 
-In that sets  we would a single bibliography have one yaml per  of my website specifying a bibliography file in the  for my website, that contains the settings for my website, so that all of the qmdI provide the path to a yaml file called `ref.yml`. If do not provide the path to a [Citation Style Language](https://quarto.org/docs/authoring/citations#sec-citations-style) (csl) file. , because I want Quarto to default to the [Chicago Manual of Style](https://chicagomanualofstyle.org) format for parenthetical citations like [@hinnant2021] and narrative citations such as [-@hinnant2021].
-
-or 
-If we want to cite these two articles in only one , Pasting be pasted directly into two articles in , we can paste the text of the yaml file displayed above into the  at the top level (root) of that contains the qmd file, a 
-
-
-
-An alternative to [citations](https://quarto.org/docs/authoring/citations#sec-citations), 
-If you do want to deal with yaml at all, you can cite sources  [footnotes](https://quarto.org/docs/authoring/markdown-basics#footnotes) instead of [citations](https://quarto.org/docs/authoring/citations#sec-citations). we can also a Quarto file such as `document.qmd`
- of whether we point Quarto to a csl file, we can  to use numbered citation rather than parenthetical or narrative citations, you can point Quarto to a csl file or use footnotes. long as there is at least one citation, Quarto will add a [References section](#refs) when processing the qmd file.
-If you want to have complete control over how your citations appear, you can still followed the default format for both references in the References section,
-
-
-Instead of may prefer to use csl file and prefer numeric rather than author and date citations, using a bibliography file and [citation syntax](https://quarto.org/docs/authoring/citations.html#sec-citations), you can also cite the Hinnant date algorithm article[^hinnant2021] by copying and pasting the [markdown](https://en.wikipedia.org/wiki/Markdown#:~:text=a%20lightweight%20markup%20language%20for%20creating%20formatted%20text%20using%20a%20plain%2Dtext%20editor) [footnotes](https://quarto.org/docs/authoring/markdown-basics#footnotes) above. To illustrate between citations and footnotes, I included citations for the in both the [references](#references) and [footnotes](#footnotes) sections of this article.
-
-
-- [Hinnant, Howard](https://howardhinnant.github.io). [2021+185]{.tool data-bs-toggle="tooltip" data-bs-title="September 1, 2021"}. *`chrono`-Compatible Low-Level Date Algorithms*. <https://howardhinnant.github.io/date_algorithms.html>.
-- [Laptev, Martin](https://maptv.github.io/about). {{< meta date >}}. *{{< meta title >}}*.<{{< meta url >}}>.
-
-
-In alphabetical order below, you will find a list of the [Observable](http://observablehq.com) [computational notebooks](https://en.wikipedia.org/wiki/Notebook_interface#:~:text=a%20virtual%20notebook%20environment%20used%20for%20literate%20programming) that I used as the basis for many of the visualizations above.
-
-
-
-
-# Appendix {.unnumbered #last}
-
-# Observable computational notebooks {.unnumbered .appendix #ocn}
+In alphabetical order below, you will find a list of the [Observable](http://observablehq.com) [computational notebooks](https://en.wikipedia.org/wiki/Notebook_interface#:~:text=a%20virtual%20notebook%20environment%20used%20for%20literate%20programming) that inspired many of the visualizations above and thus deserve their own section before the [references](#references) and [footnotes](#footnotes) further below. On the [Observable website](https://observablehq.com), you can [search](https://observablehq.com/search) for other awesome Observable notebooks, read the [blog](https://observablehq.com/blog), or watch [webinars](https://observablehq.com/resource-center#webinars) and [other videos](https://observablehq.com/resource-center#videos).
 
 ::: {.column-page-right #citelist}
 00. [Armstrong, Zan](https://observablehq.com/@zanarmstrong). [2023+057]{.tool data-bs-toggle="tooltip" data-bs-title="April 27, 2023"}. *Text color annotations in markdown*. <https://observablehq.com/@observablehq/text-color-annotations-in-markdown>.
@@ -424,11 +367,6 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
 17. [Yamahata, Christophe](https://observablehq.com/@christophe-yamahata). [2021+119]{.tool data-bs-toggle="tooltip" data-bs-title="June 28, 2022"}. *Great circle: shortest distance between two locations on Earth 🌏*. <https://observablehq.com/@christophe-yamahata/great-circle-shortest-distance-between-two-locations-on-ea>.
 :::
 
-[^0]: [Newton, Issac](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a). 1704. *Opticks*. <https://doi.org/10.5479/sil.302475.39088000644674>.
-[^1]: [Clint Goss](https://www.clintgoss.com). [2022+098]{.tool data-bs-toggle="tooltip" data-bs-title="June 7, 2022"}. *Color of Sound*. <https://www.flutopedia.com/sound_color.htm>.
-[^2]: [Collignon, Claude Boniface](https://en.wikipedia.org/wiki/Claude_Boniface_Collignon#:~:text=a%20French%20attorney%20who%20contributed%20to%20scientific%20and%20social%20reforms%20in%20the%20time%20of%20the%20French%20Revolution). 1788. *Découverte d'étalons justes, naturels, invariables et universels*. <https://archive.org/details/dcouvertedtalon00collgoog/page/n68/mode/2up>.
-[^3]: [Agnoli, Paolo](http://www.paoloagnoli.it) & [D'Agostini, Giulio](https://www.roma1.infn.it/~dagos). [2004+330]{.tool data-bs-toggle="tooltip" data-bs-title="January 25, 2005"}. *Why does the meter beat the second?*. <https://arxiv.org/abs/physics/0412078>.
+{{< include /dec/_index.qmd >}}
 
 {{< include /asset/_glossary.qmd >}}
-
-{{< include /dec/_index.qmd >}}

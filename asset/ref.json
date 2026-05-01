@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://howardhinnant.github.io/date_algorithms",
+    "author": [
+      {
+        "family": "Hinnant",
+        "given": "Howard"
+      }
+    ],
+    "id": "hinnant2021",
+    "issued": {
+      "literal": "2021+185"
+    },
+    "title": "<span class=\"nocase\">chrono</span>-Compatible Low-Level Date Algorithms"
+  }
+]

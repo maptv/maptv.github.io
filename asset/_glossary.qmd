@@ -1,4 +1,4 @@
-# Glossary {.unnumbered .appendix #glos}
+# Glossary {.unnumbered #glos}
 
 ::: {.column-page-right #gloslist}
 - [a](#arcbeat){#ab}: arcbeat, a hundred thousandth of a circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds

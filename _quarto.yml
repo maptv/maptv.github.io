@@ -3,7 +3,7 @@ author:
     url: https://maptv.github.io
 date-format: X
 date: last-modified
-bibliography: asset/ref.yml
+bibliography: asset/ref.bib
 filters:
   - asset/date.lua
 project:

@@ -52,7 +52,7 @@ end
 
 function Meta(m)
   if m.date then
-    m.date = to_decalendar(m.date)
+    m.date = to_decalendar(m.date):match("^%s*(.-)%s*$")
   end
   return m
 end

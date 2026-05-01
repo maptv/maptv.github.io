@@ -1,7 +1,52 @@
 # Cite {.unnumbered #cite}
 
+Of the [bibliography file](https://quarto.org/docs/authoring/citations#bibliography-files) [formats](https://pandoc.org/MANUAL.html#specifying-bibliographic-data) supported by [Quarto](https://quarto.org), I recommend [yaml](https://en.wikipedia.org/wiki/YAML#:~:text=a%20human%2Dreadable%20data%20serialization%20language). The yaml bibliography file shown below contains [bibliographic records](https://en.wikipedia.org/wiki/Bibliographic_record#:~:text=contains%20the%20data%20elements%20necessary%20to%20help%20users%20identify%20and%20retrieve%20that%20resource) ([metadata](https://en.wikipedia.org/wiki/Metadata#:~:text=the%20title%2C%20author%2C%20and%20publication%20date%20of%20a%20book%20are%20metadata%20about%20the%20book)) about the article you are currently reading and the article entitled [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms) in which [Howard Hinnant](https://howardhinnant.github.io) [-@hinnant2021date] describes the algorithms underlying Dec dates.
 
-[^hinnant2021]:
+```{.yml filename="ref.yml"}
+references:
+- id: hinnant2021date
+  author:
+    - family: Hinnant
+      given: Howard
+  title: [chrono]{.nocase}-Compatible Low-Level Date Algorithms
+  url: https://howardhinnant.github.io/date_algorithms
+  issued:
+    literal: 2021+185
+- id: laptev2026{{< meta slug >}}
+  author:
+    - family: Laptev
+      given: Martin
+  title: {{< meta title >}}
+  url: {{< meta url >}}
+  issued:
+    literal: {{< meta date >}}
+```
+
+Quarto configuration files, such as `_quarto.yml` and `_metadata.yml`, are written in yaml. Quarto input files, including Quarto markdown, [Jupyter](https://jupyter.org) notebook, [markdown](https://quarto.org/docs/authoring/markdown-basics), and specially formatted [script files](https://quarto.org/docs/computations/render-scripts), can start with a [yaml header](https://quarto.org/docs/authoring/front-matter.html). Therefore, we could put the metadata above directly into a Quarto configuration or input file rather than into a bibliography file.
+
+As an alternative to yaml, I suggest the [BibTeX](https://en.wikipedia.org/wiki/BibTeX#:~:text=a%20bibliographic%20flat%2Dfile%20database%20file%20format) format. The BibTeX bibliography file below can be used by Quarto equally as well as the yaml bibliography file above. Regardless of the bibliography file format we choose, Quarto configuration and input files require that we store the [path](https://en.wikipedia.org/wiki/Path_(computing)#:~:text=a%20string%20that%20uniquely%20identifies%20an%20item%20in%20a%20hierarchical%20file%20system) to our bibliography file, or our list of bibliography file paths, in yaml format.
+
+```bib{filename="ref.bib"}
+@misc{hinnant2021date,
+  author = "Howard Hinnant",
+  title = "\texttt{chrono}-Compatible Low-Level Date Algorithms",
+  url = "https://howardhinnant.github.io/date_algorithms",
+  year = 2021+185
+}
+@misc{laptev2026{{< meta slug >}},
+  author = "Martin Laptev",
+  title = "{{< meta title >}}",
+  url = "https://maptv.github.io{{< meta path >}}",
+  year = {{< meta date >}}}
+```
+
+In addition to storing metadata in a bibliography file, we can keep instructions regarding how to style citations and references in a [Citation Style Language](https://quarto.org/docs/authoring/citations#sec-citations-style) (csl) file. If we do not provide a csl file, Quarto will follow the [Chicago Manual of Style](https://chicagomanualofstyle.org) when processing parenthetical citations: [@hinnant2021date], narrative citations: [-@hinnant2021date], and references:
+
+[Hinnant, Howard](https://howardhinnant.github.io). [2021+185]{.tool data-bs-toggle="tooltip" data-bs-title="September 1, 2021"}. *`chrono`-Compatible Low-Level Date Algorithms*. <https://howardhinnant.github.io/date_algorithms.html>.
+
+When provided with [`nature.csl`](https://github.com/citation-style-language/styles/blob/master/nature.csl), [`american-medical-association.csl`](https://github.com/citation-style-language/styles/blob/master/american-medical-association.csl), or a similar csl file, Quarto will produce superscript numeric citations, which look just like Quarto [footnotes](https://quarto.org/docs/authoring/markdown-basics#footnotes): [^hinnant2021foot]. Unlike Quarto citations, Quarto footnotes do not require any additional files or configuration. A Quarto output file can have both a [Footnotes](#footnotes) and [References](#references) section.
+
+[^hinnant2021foot]:
   [Hinnant, Howard](https://howardhinnant.github.io).
-  [2021+185]. *`chrono`-Compatible Low-Level Date Algorithms*.
+  [2021+185]{.tool data-bs-toggle="tooltip" data-bs-title="September 1, 2021"}. *`chrono`-Compatible Low-Level Date Algorithms*.
   <https://howardhinnant.github.io/date_algorithms.html>.
