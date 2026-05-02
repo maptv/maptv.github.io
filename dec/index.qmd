@@ -11,9 +11,9 @@ description: >
   which uses turns instead of months, weeks,
   hours, minutes, seconds, and degrees.
 url: https://maptv.github.io/dec
+engine: knitr
 aliases:
   - /d
-license: CC BY-SA
 ---
 
 :::{#firstnav}
@@ -28,9 +28,9 @@ This part of my website focuses on Dec, a [measurement system](https://en.wikipe
 
 Dec measures [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda) in [parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line) ([λ](#lambda){#parallel .tool data-bs-toggle="tooltip" data-bs-title="parallels"}), [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi) in [meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian) ([m](#m){#meridian .tool data-bs-toggle="tooltip" data-bs-title="meridians"}), and compass directions in [roses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)🌹([r](#r){#rose .tool data-bs-toggle="tooltip" data-bs-title="roses"}). To measure certain kinds of angles, Dec uses specific types of turns with distinct names like [λ](#lambda){.tool data-bs-toggle="tooltip" data-bs-title="parallel"}, [m](#m){.tool data-bs-toggle="tooltip" data-bs-title="meridian"}, or [r](#r){.tool data-bs-toggle="tooltip" data-bs-title="rose"}. All turn types can be combined with [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit), like [deci](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20decimal%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20tenth), [centi](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20hundredth), or [milli](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20thousandth), to create turn [submultiples](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20%28a), such as [deciturns]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a turn"} ([dt](#dt){#deciturn .tool data-bs-toggle="tooltip" data-bs-title="deciturns"}), [centiturns]{.tool data-bs-toggle="tooltip" data-bs-title="hundredths of a turn"} ([ct](#ct){#centiturn .tool data-bs-toggle="tooltip" data-bs-title="centiturns"}), or [milliturns]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a turn"} ([mt](#mt){#milliturn .tool data-bs-toggle="tooltip" data-bs-title="milliturns"}).
 
-The table below provides the current longitude in [milliparallels]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a parallel"} ([mλ](#mlambda){#milliparallel .tool data-bs-toggle="tooltip" data-bs-title="milliparallels"}) and latitude in [millimeridians]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a meridian"} ([mm](#mm){#millimeridian .tool data-bs-toggle="tooltip" data-bs-title="millimeridians"}) of Points [0]{.point0} and [1]{.point1} on the map🗺️beneath the table. By default, Point [0]{.point0} is at [800]{.color8} [mλ](#mlambda){.tool data-bs-toggle="tooltip" data-bs-title="milliparallels"} and [0]{.color0} [mm](#mm){.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"}, near the [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific) of Ecuador🇪🇨, and Point [1]{.point1} is at [800]{.color8} [mλ](#mlambda){.tool data-bs-toggle="tooltip" data-bs-title="milliparallels"} and [100]{.color1} [mm](#mm){.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"}, near the bottom of the [Missouri bootheel](https://en.wikipedia.org/wiki/Missouri_Bootheel#:~:text=a%20salient%20(protrusion)%20located%20in%20the%20southeasternmost%20part%20of%20the%20U.S.%20state%20of%20Missouri) in the United States🇺🇸.
+The table below⬇️provides the current longitude in [milliparallels]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a parallel"} ([mλ](#mlambda){#milliparallel .tool data-bs-toggle="tooltip" data-bs-title="milliparallels"}) and latitude in [millimeridians]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a meridian"} ([mm](#mm){#millimeridian .tool data-bs-toggle="tooltip" data-bs-title="millimeridians"}) of Points [0]{.point0} and [1]{.point1} on the map🗺️beneath the table. By default, Point [0]{.point0} is at [800]{.color8} [mλ](#mlambda){.tool data-bs-toggle="tooltip" data-bs-title="milliparallels"} and [0]{.color0} [mm](#mm){.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"}, near the [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific) of Ecuador🇪🇨, and Point [1]{.point1} is at [800]{.color8} [mλ](#mlambda){.tool data-bs-toggle="tooltip" data-bs-title="milliparallels"} and [100]{.color1} [mm](#mm){.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"}, near the bottom of the [Missouri bootheel](https://en.wikipedia.org/wiki/Missouri_Bootheel#:~:text=a%20salient%20(protrusion)%20located%20in%20the%20southeasternmost%20part%20of%20the%20U.S.%20state%20of%20Missouri) in the United States🇺🇸.
 
-To move the points, click the map or edit their coordinates in the table. The [toggle](https://observablehq.com/framework/inputs/toggle)✅inputs above the table add layers to the map️: country borders, a rainbow🌈colored grid of Dec [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines), a [choropleth](https://en.wikipedia.org/wiki/Choropleth_map#:~:text=a%20type%20of%20statistical%20thematic%20map%20that%20uses%20pseudocolor) of [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) ([utc](#utc){#coordinateduniversaltime .tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}) time zones, and [solar terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) shading with a yellow🟡dot denoting the [point](https://en.wikipedia.org/wiki/Subsolar_point#:~:text=the%20point%20at%20which%20its%20Sun%20is%20perceived%20to%20be%20directly%20overhead) where the Sun☀️is [directly overhead](https://en.wikipedia.org/wiki/Zenith#:~:text=the%20imaginary%20point%20on%20the%20celestial%20sphere%20directly%20%22above%22%20a%20particular%20location): \${sunLonHsl} [mλ](#mlambda){.tool data-bs-toggle="tooltip" data-bs-title="milliparallels"} and \${sunLatHsl} [mm](#mm){.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"}.
+To move the points, click the map or edit their coordinates in the table. The [toggle](https://observablehq.com/framework/inputs/toggle)✅inputs above⬆️the table add layers to the map️: country borders, a rainbow🌈colored grid of Dec [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines), a [choropleth](https://en.wikipedia.org/wiki/Choropleth_map#:~:text=a%20type%20of%20statistical%20thematic%20map%20that%20uses%20pseudocolor) of [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) ([utc](#utc){#coordinateduniversaltime .tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}) time zones, and [solar terminator](https://en.wikipedia.org/wiki/Terminator_(solar)#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) shading with a yellow🟡dot denoting the [point](https://en.wikipedia.org/wiki/Subsolar_point#:~:text=the%20point%20at%20which%20its%20Sun%20is%20perceived%20to%20be%20directly%20overhead) where the Sun☀️is [directly overhead](https://en.wikipedia.org/wiki/Zenith#:~:text=the%20imaginary%20point%20on%20the%20celestial%20sphere%20directly%20%22above%22%20a%20particular%20location): \${sunLonHsl} [mλ](#mlambda){.tool data-bs-toggle="tooltip" data-bs-title="milliparallels"} and \${sunLatHsl} [mm](#mm){.tool data-bs-toggle="tooltip" data-bs-title="millimeridians"}.
 
 Alongside the geographic coordinates of a point, each row of the table contains the [course](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha) in [milliroses]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a compass rose"} ([mr](#mr){#millirose .tool data-bs-toggle="tooltip" data-bs-title="milliroses"}) we would need to maintain to travel🧳the shortest distance to the other point. The shortest distance is shown as orange🟠dots on the map️. The default courses in [mr](#mr){.tool data-bs-toggle="tooltip" data-bs-title="milliroses"} are [0]{.color0} (North) from Point [0]{.point0} to [1]{.point1} and [500]{.color5} (South) from Point [1]{.point1} to [0]{.point0}.
 
@@ -111,7 +111,7 @@ Each [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} als
 Apart from [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taur"}, Dec also measures distance using a unit called the **z**one **e**quatorial **m**eter (zem). The width of a Dec time zone at the Equator is approximately ten million ([~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"}) zem ([z](#z){#zoneequatorialmeter .tool data-bs-toggle="tooltip" data-bs-title="zem"}). Similarly, the distance from the Equator to one of the Poles is [~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"} [meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units). In other words, a [decimeridian]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a meridian"} ([dm](#dm){#decimeridian .tool data-bs-toggle="tooltip" data-bs-title="decimeridian"}) is [~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"} [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"} long and a [quarter meridian](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20distance%20from%20the%20equator%20to%20the%20pole) is [~10^7^]{.tool data-bs-toggle="tooltip" data-bs-title="approximately ten million"} meters long.
 
 :::{.column-margin fig-align="center" style="text-align:center;" id="zemhands" .hand}
-{{< include _hands.qmd >}}
+![](../asset/hands.svg)
 [[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)]{.handlabel}
 :::
 
@@ -206,8 +206,48 @@ $$\text{do} = 10 \times \text{o} = 10 \times \left\lfloor \text{o} \right\rfloor
 
 $$\text{p} = 14.1275 \times 2^{\text{o}}$$
 
-$$\text{n} = \text{do} - 10 \times \left\lfloor \text{o} \right\rfloor = 10 \times \left(\text{o} - \left\lfloor \text{o} \right\rfloor\right)
-$$
+$$\text{n} = \text{do} - 10 \times \left\lfloor \text{o} \right\rfloor = 10 \times \left(\text{o} - \left\lfloor \text{o} \right\rfloor\right)$$
+
+:::{.panel-tabset group="language"}
+### Julia
+
+```{julia}
+perbeat(o) = 14.1275 * 2.0^o
+octave(p) = log2(p / 14.1275)
+octave(113.02)
+perbeat(3)
+```
+
+### Observable JavaScript
+
+```{ojs}
+perbeat = o => 14.1275 * 2 ** o;
+octave = p => Math.log2(p / 14.1275);
+octave(113.02)
+perbeat(3)
+```
+
+### Python
+
+```{python}
+import math
+perbeat = lambda o: 14.1275 * 2 ** o
+octave = lambda p: math.log2(p / 14.1275)
+octave(113.02)
+perbeat(3)
+```
+
+### R
+
+```{r}
+perbeat <- \(o) 14.1275 * 2^o
+octave <- \(p) log2(p / 14.1275)
+octave(113.02)
+perbeat(3)
+```
+
+:::
+
 
 # Color and sound {.hiddenheading #sec-cas}
 

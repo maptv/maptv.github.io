@@ -209,6 +209,7 @@ decYearLeap = year2leap(decYear)
 decYearLength = 365 + decYearLeap
 decYearLastDay = decYearLength - 1
 decDoty = Math.floor(ydz[1])
+decDotyPad = String(decDoty).padStart(3, "0")
 decDek = Math.floor(decDoty / 10)
 decDotd = decDoty % 10
 decPent = decDek * 2 + (decDotd > 4)
@@ -228,6 +229,7 @@ monthNumber0 = String(monthNumber + 1).padStart(3, "0")
 dotw0doty = Math.floor(ydz[1]) - dotw
 doty0dote = date2dote(ydz[0], 0)[0]
 doty0dotw = dote2dotw(doty0dote)
+hybridMonthWeek = monthNumber - dotw
 week = Math.floor((ydz[1] + doty0dotw) / 7)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
@@ -316,9 +318,6 @@ input[type="radio"] {
 p:has(.radiotitle) {
   margin-top: -6px;
   margin-bottom: -3px;
-}
-#radiobuttons {
-  margin-bottom: -12px;
 }
 h4.anchored {
   margin: 8px 0px 8px 0px;

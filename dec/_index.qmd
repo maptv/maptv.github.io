@@ -2066,7 +2066,7 @@ synth = new Tone.PolySynth(16, Tone.Synth, {
   }
 }).toMaster()
 origin = Fraction(originFrequency)
-axisColor = d3.hsl(0, 0, 0.5)
+axisColor = d3.color(window.darkmode ? "#FFF" : "#000");
 lollimargin = ({top: 30, right: 10, bottom: 30, left: width < 500 ? 5 : width < 550 ? 6 : width < 600 ? 7 : width < 650 ? 8 : width < 700 ? 9 : 10})
 numberOfColors = 10
 rowHeight = 60

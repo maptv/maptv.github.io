@@ -4,6 +4,7 @@ author:
 date-format: X
 date: last-modified
 bibliography: asset/ref.bib
+license: CC BY-SA
 filters:
   - asset/date.lua
 project:
