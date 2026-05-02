@@ -1,6 +1,6 @@
 # Dec date
 Martin Laptev
-2026+059
+2026+062
 
 - [<span class="toc-section-number">0</span> Day of year (doy)](#doy)
 - [<span class="toc-section-number">1</span> Day of era (doe)](#doe)
@@ -55,33 +55,33 @@ great place to start because it cycles🔄through every value of the
 [range](https://observablehq.com/@observablehq/input-range)🎚️inputs
 beneath it.
 
-To activate the scrubber input, press the Play▶️button above⬆️the
-range🎚️inputs. Upon activation, the red🟥box in each plot will move
-between the first and the last day of the Dec year. While it always
-begins with <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="March 1">Day 0</span>, the Dec year ends with either
+To activate the scrubber input, press the Play▶️button above⬆️the range
+inputs. Upon activation, the red🟥box in each plot will move between the
+first and the last day of the Dec year. While it always begins with
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="March 1">Day
+0</span>, the Dec year ends with either <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="February 28">Day 364</span> or
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="February 28">Day 364</span> or <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="February 29">Day 365</span>. To
-add or remove <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 29">Day 365</span>. To add or remove
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29">Day 365</span>, use the
 [toggle](https://observablehq.com/@observablehq/input-toggle)✅input
-labelled🏷️“Leap year” to the right of the Play▶️button.
+labelled🏷️“Leap year” to the right of the Play ️button.
 
-The “Leap year” toggle✅input shifts 306 dates, <span class="tool"
+The “Leap year” toggle input shifts 306 dates, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1">Day 0</span> to
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="December 31">Day 305</span>, in the [Gregorian
-calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)🗓️by
-one day, but does not change the order of any Dec dates, because
+calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
+by one day, but does not change the order of any Dec dates, because
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 29">Day 365</span> is the last day of Dec leap
 years and is always followed by <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1">Day 0</span> of the
-subsequent Dec year. The “Vertical layout” toggle✅input rotates the
+subsequent Dec year. The “Vertical layout” toggle input rotates the
 plots by a quarter turn, interchanging the x- and y-axes.
 
-The axis labels🏷️of the plots imply that a dek and a “day of dek”
+The axis labels of the plots imply that a dek and a “day of dek”
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of dek">dod</span>) are analogous to a week and a
 “day of week” (<span class="tool" data-bs-toggle="tooltip"
@@ -359,22 +359,22 @@ beneath the plots selects the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> for
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="January 1">Day 306</span>, the first day of the Gregorian
-calendar🗓️year. Changing the <span class="tool" data-bs-toggle="tooltip"
+calendar year. Changing the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="January 1">Day 306</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> shifts
-every date in the Gregorian calendar🗓️by one to six days depending on
-the number of days that Week 0, the first week of the year, contributes
-to the year. In contrast, weeks have no effect on Decalendar.
+every date in the Gregorian calendar by one to six days depending on the
+number of days that Week 0, the first week of the year, contributes to
+the year. In contrast, weeks have no effect on Decalendar.
 
-Although weeks determine the shape of the Gregorian calendar🗓️plot, each
+Although weeks determine the shape of the Gregorian calendar plot, each
 of its [cell](https://observablehq.com/plot/marks/cell) values is a “day
 of month” (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</span>). To uniquely identify🪪a
 specific day in a year, a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</span> must be paired with the month to
-which it belongs. Both plots use three-letter abbreviations and the same
-[color🎨scheme](https://observablehq.com/@d3/color-schemes) to
-label🏷️months, but are shifted in relation to each other by two months.
+which it belongs. Both plots use the same three-letter abbreviations and
+[color🎨scheme](https://observablehq.com/@d3/color-schemes) to label
+months, but are shifted in relation to each other by two months.
 
 # Day of year (doy)
 
@@ -385,15 +385,15 @@ data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>). Every
 cell value in the Decalendar plot is a <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>. The
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> chosen by the range🎚️inputs to be
-highlighted with a red🟥background in the plots is ${dotyInput}. You can
-use the range🎚️inputs to convert a month and a <span class="tool"
+data-bs-title="day of year">doy</span> chosen by the range inputs to be
+highlighted with a red background in the plots is ${dotyInput}. You can
+use the range inputs to convert a month and a <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of month">dom</span> into a
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span>. Try converting a special date
-such as your birthday🎂 or anniversary💍!
+such as your birthday🎂or anniversary🥂!
 
-There are two range🎚️inputs labeled🏷️as “day of year” because every
+There are two range inputs labeled as “day of year” because every
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> can be expressed as both a
 positive and a negative number. The typical range for <span class="tool"
@@ -437,7 +437,7 @@ dek = ⌊doy ÷ 10⌋
 
 dod = doy mod 10
 
-Unlike weeks in the Gregorian calendar🗓️, <span class="tool"
+Unlike weeks in the Gregorian calendar️, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="days of year">doys</span> and
 deks do not need to continue in an infinite unbroken sequence. The last
 day of the year, Day -1, is always followed by <span class="tool"
@@ -518,7 +518,7 @@ data-bs-title="day of year">doy</span> without any calculation.
 
 </div>
 
-Christmas🎄is a anchored⚓️holiday because it occurs on the same
+Christmas is an anchored⚓️holiday because it occurs on the same
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> every year. In contrast,
 floating🛟holidays happen on a different <span class="tool"
@@ -531,7 +531,7 @@ data-bs-title="day of week">dow</span>
 equation, w<sub>Δ</sub> = (w<sub>M</sub> <span class="mono">-</span>
 w<sub>S</sub> + 7)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-7, to determine which of the seven possible floating🛟holiday dates
+7, to determine which of the seven possible floating holiday dates
 corresponds to the given year.
 
 In the <span class="tool" data-bs-toggle="tooltip"
@@ -570,7 +570,7 @@ Apart from the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</span> and <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>
 [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator)
-equations, the Thanksgiving🦃calculation above⬆️relies on the Dec
+equations, the Thanksgiving🦃calculation above relies on the Dec
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of era">doe</span> equation, which is based on the <a
 href="https://howardhinnant.github.io/date_algorithms.html#days_from_civil"
@@ -604,7 +604,7 @@ $$\text{doe} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text
 The Dec date equations are the
 [inverse](https://en.wikipedia.org/wiki/Inverse#:~:text=Inverse%20function%2C-,a%20function%20that%20%22reverses%22%20another%20function,-Generalized%20inverse%2C%20a)🔁of
 the Dec <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of era">doe</span> equations above⬆️, based on Howard
+data-bs-title="day of era">doe</span> equations above, based on Howard
 Hinnant’s <a
 href="https://howardhinnant.github.io/date_algorithms.html#civil_from_days"
 class="mono"><code>civil_from_days</code></a> algorithm, and useful for
@@ -656,8 +656,8 @@ data-bs-title="number of days in the year">n</span>.
 
 While <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="number of days in the year">n</span> can be useful for
-converting between positive and negative <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="days of year">doys</span> or
+converting between positive and negative <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="days of year">doy</span> or
 between days and fractional years, Dec dates do not include
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="number of days in the year">n</span>, because it is not
@@ -708,7 +708,7 @@ indexing or in groups via [array
 slicing](https://en.wikipedia.org/wiki/Array_slicing#:~:text=an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array).
 
 In Dec, a date without a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="year of era">yoe</span> is a floating🛟date and a date
+data-bs-title="year of era">yoe</span> is a floating date and a date
 that includes a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</span> is an anchored⚓️date. To
 reuse♻️an anchored date in a different year, we have to update its
@@ -730,7 +730,7 @@ is the difference.
 
 For example, we can create a expanded date which tells us that
 ${Math.abs(xmasDiff)} days ${xmasDiffSince} <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="December 25">Day 299</span>🎄of
+data-bs-toggle="tooltip" data-bs-title="December 25">Day 299</span> of
 this year:
 ${decYear}+299<span class="mono">${xmasDiffSign}</span>${Math.abs(xmasDiff)}.
 Instead of an expanded date, we can express this same information as a
@@ -802,86 +802,70 @@ years.
 
 # Day of week (dow)
 
-Even though Decalendar functions best with
-<span class="cyan">deks</span>, Dec dates can display POSIX
+Even though Decalendar functions best with deks, Dec dates can display
+POSIX
 [zero-based](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=Weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D)
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of week">dows</span>. Instead of the current Dec
-date,
-<span class="yellow">${decYear}</span>+<span class="cyan">${decDoty}</span>,
-the [navigation
+date, ${decYear}+${decDoty}, the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
-(navbar) of my site displays the current Dec
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> date,
-<span class="yellow">${decYear}</span><span class="mono">${dotw0sign}</span><span class="cyan">${dotw0doty}</span>+<span class="lightgreen">${dotw}</span>,
-by splitting the current <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>,
-<span class="cyan">${decDoty}</span>, into the
-<span class="cyan under tool" data-bs-toggle="tooltip"
+(navbar) of my site displays the current Dec <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> date,
+${decYear}<span class="mono">${dotw0sign}</span>${dotw0doty}+${dotw}, by
+splitting the current <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span>, ${decDoty}, into the
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> of the first day of the current
-week (<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="Sunday">Dow 0</span> <span class="cyan under tool"
+week (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Sunday">Dow 0</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>),
-<span class="cyan">${dotw0doty}</span>, and the current POSIX
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span>:
-<span class="lightgreen">${dotw}</span>.
+${dotw0doty}, and the current POSIX <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>:
+${dotw}.
 
-Instead of the <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> <span class="cyan">d</span>, Dec
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> dates display
-<span class="cyan">d</span><span class="mono">-</span><span class="lightgreen">w</span>+<span class="lightgreen">w</span>,
-where
-<span class="cyan">d</span><span class="mono">-</span><span class="lightgreen">w</span>
-is the <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="Sunday">Dow 0</span> <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> and
-<span class="lightgreen">w</span> is the
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> associated with
-<span class="cyan">d</span>. We evaluate the subtraction,
-<span class="cyan">d</span><span class="mono">-</span><span class="lightgreen">w</span>,
-to obtain the <span class="lightgreen under tool"
+Instead of the <span data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span> d, Dec <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> dates
+display d<span class="mono">-</span>w+w, where
+d<span class="mono">-</span>w is the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="Sunday">Dow 0</span>
-<span class="cyan under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span> and w is the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>
+associated with d. We evaluate the subtraction,
+d<span class="mono">-</span>w, to obtain the <span class="under tool"
+data-bs-toggle="tooltip" data-bs-title="Sunday">Dow 0</span>
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span>, but leave the addition
-unsimplified so we can see <span class="lightgreen">w</span>. Dec
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> dates supply all of the
-information needed to identify specific dates and coordinate schedules
-based on <span class="cyan">deks</span> or
-<span class="darkgreen">weeks</span>.
+unsimplified so we can see w. Dec <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> dates
+supply all of the information needed to identify specific dates and
+coordinate schedules based on deks or weeks.
 
-The <span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> equation,
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> = (<span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day of era">doe</span> + 3)
+The <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span> equation, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> =
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of era">doe</span> + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7, is derived from Howard Hinnant’s
 [`weekday_from_days`](https://howardhinnant.github.io/date_algorithms.html#weekday_from_days)
-algorithm. The Dec epoch <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> is
-<span class="lightgreen">3</span> = (<span class="cyan">0</span> + 3)
+algorithm. The Dec epoch <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span> is 3 = (0 + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-7. The UNIX epoch <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> is
-<span class="lightgreen">4</span> = (<span class="cyan">719468</span> +
-3)
+7. The UNIX epoch <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span> is 4 = (719468 + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
 7. Depending on how
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-is defined, a negative <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day of era">doe</span> could
-yield a negative <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>:
-<span class="lightgreen">-1</span> = (<span class="cyan">-60</span> + 3)
+is defined, a negative <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of era">doe</span> could yield a negative
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span>: -1 = (-60 + 3)
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-7. To convert a negative <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> into a
-positive <span class="lightgreen under tool" data-bs-toggle="tooltip"
+7. To convert a negative <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span> into a positive
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</span>, we add 7.
 
 <div class="overflowtable" style="overflow-x:auto;overflow-y:hidden;">
@@ -924,96 +908,71 @@ data-bs-title="day of week">dow</span>, we add 7.
 
 # Week of year (woy)
 
-Dec <span class="lightgreen under tool" data-bs-toggle="tooltip"
+Dec <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</span> dates can be further expanded to
 include Dec <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="week of year">woy</span> numbers:
-<span class="yellow">${decYear}</span>+7×<span class="darkgreen">${week}</span>+<span class="lightgreen">${dotw}</span>.
-The current <span class="darkgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="week of year">woy</span>,
-<span class="darkgreen">${week}</span>, is the sum of the
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="Sunday">Dow 0</span> <span class="cyan under tool"
+${decYear}+7×${week}+${dotw}. The current <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="week of year">woy</span>,
+${week}, is the sum of the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Sunday">Dow 0</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>,
-<span class="cyan">${dotw0doty}</span>, and the first
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> of the
-<span class="yellow">year</span> (<span class="cyan under tool"
+${dotw0doty}, and the first <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span> of the year (<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1">Day 0</span>
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span>),
-<span class="lightgreen">${doty0dotw}</span>, divided by 7:
-<span class="darkgreen">${week}</span> =
-(<span class="cyan">${dotw0doty}</span> +
-<span class="lightgreen">${doty0dotw}</span>) ÷ 7. The current Dec
-floating🛟<span class="darkgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="week of year">woy</span> date,
-7×<span class="darkgreen">${week}</span>+<span class="lightgreen">${dotw}</span>,
-is equal to the sum of the current <span class="cyan under tool"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span>), ${doty0dotw}, divided by 7:
+${week} = (${dotw0doty} + ${doty0dotw}) ÷ 7. The current Dec floating
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="week of year">woy</span> date, 7×${week}+${dotw}, is
+equal to the sum of the current <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> and the
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="March 1">Day 0</span> <span class="lightgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>: 7 ×
-<span class="darkgreen">${week}</span> +
-<span class="lightgreen">${dotw}</span> =
-<span class="cyan">${decDoty}</span> +
-<span class="lightgreen">${doty0dotw}</span>.
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="March 1">Day
+0</span> <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span>: 7 × ${week} + ${dotw} =
+${decDoty} + ${doty0dotw}.
 
-To create a Dec <span class="darkgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="week of year">woy</span> date,
-we need two types of Dec expansion: minuend and dividend expansion.
-First, we turn the minuend <span class="cyan">d</span> into the
-subtrahend
-<span class="cyan">d</span><span class="mono">-</span><span class="lightgreen">w</span>
-and the difference <span class="lightgreen">w</span>. Then, we use the
-dividend equation, dividend = divisor × quotient, to convert the
-dividend
-<span class="cyan">d</span><span class="mono">-</span><span class="lightgreen">w</span>+<span class="lightgreen">w<sub>0</sub></span>
-into the divisor 7 and the quotient <span class="darkgreen">W</span>,
-where <span class="darkgreen">W</span> is the
-<span class="darkgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="week of year">woy</span> and
-<span class="lightgreen">w<sub>0</sub></span> is the
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="March 1">Day 0</span> <span class="lightgreen under tool"
+To create a Dec <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="week of year">woy</span> date, we need two types of Dec
+expansion: minuend and dividend expansion. First, we turn the minuend d
+into the subtrahend d<span class="mono">-</span>w and the difference w.
+Then, we use the dividend equation, dividend = divisor × quotient, to
+convert the dividend d<span class="mono">-</span>w+w<sub>0</sub> into
+the divisor 7 and the quotient W, where W is the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="week of year">woy</span> and
+w<sub>0</sub> is the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1">Day 0</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>.
 
-Essentially, Dec <span class="darkgreen under tool"
-data-bs-toggle="tooltip" data-bs-title="week of year">woy</span> dates
-turn
-<span class="cyan">d</span><span class="mono">-</span><span class="lightgreen">w</span>
-into
-7×<span class="darkgreen">W</span>+<span class="lightgreen">w</span><span class="mono">-</span><span class="lightgreen">w<sub>0</sub></span>.
-Typically, only
-7×<span class="darkgreen">W</span>+<span class="lightgreen">w</span> is
-displayed, because <span class="lightgreen">w<sub>0</sub></span> is not
-necessary to identify a date and can be calculated from a given
-<span class="yellow">y</span> by flooring it, turning it into a
-<span class="cyan under tool" data-bs-toggle="tooltip"
+Essentially, Dec <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="week of year">woy</span> dates turn
+d<span class="mono">-</span>w into
+7×W+w<span class="mono">-</span>w<sub>0</sub>. Typically, only 7×W+w is
+displayed, because w<sub>0</sub> is not necessary to identify a date and
+can be calculated from a given <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="year">y</span> by flooring it,
+turning it into a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of era">doe</span>, and passing it into the
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> equation. Dec
-<span class="darkgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="week of year">woy</span> dates
-obfuscate🫣<span class="cyan">d</span> much more than
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span> equation. Dec <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="week of year">woy</span> dates
+obfuscate🫣d much more than <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</span> dates, but may be useful for
-[<span class="darkgreen">week</span>-based
+[week-based
 accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
 
 # Day of dek (dod)
 
-While <span class="darkgreen">weeks</span> are not evenly divisible by
-two, a <span class="cyan">dek</span> can be cut✂️into two equal halves
-called pentadays (pents). The [Mermaid](https://mermaid.js.org)
-flowcharts below⬇️show Schedule <span class="green">3</span>, the
-recommended <span class="cyan">dek</span>ly schedule of
-<span class="green">work</span> and <span class="blue">rest</span> day.
-Schedule <span class="green">3</span> can be short for Schedule
-<span class="blue">1</span>+<span class="green">3</span>+<span class="blue">1</span>,
+While weeks are not evenly divisible by two, a dek can be cut✂️into two
+equal halves called pentadays (pents). The
+[Mermaid](https://mermaid.js.org) flowcharts below show Schedule
+<span class="color3">3</span>, the recommended dekly schedule of work
+and rest day. Schedule <span class="color3">3</span> can be short for
+Schedule
+<span class="color1">1</span>+<span class="color3">3</span>+<span class="color1">1</span>,
 if you prefer the zero-based top flowchart, or Schedule
-<span class="green">3</span>+<span class="blue">2</span>, if you favor
-the one-based bottom flowchart.
+<span class="color3">3</span>+<span class="color2">2</span>, if you
+favor the one-based bottom flowchart.
 
 <div id="zerobasedpent">
 
@@ -1037,230 +996,196 @@ style="width:8.93in;height:3.36in" />
 
 </div>
 
-Both flowcharts use <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day of dek">dod</span> numbers,
-but the bottom one starts from <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="second day of dek">Dod 1</span>
-instead of <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day of dek">Dod 0</span> and refers to
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="first day of dek">Dod 0</span> as
-<span class="cyan under tool" data-bs-toggle="tooltip"
+Both flowcharts use <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of dek">dod</span> numbers, but the bottom one starts
+from <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="second day of dek">Dod 1</span> instead of
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of dek">Dod 0</span> and refers to <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="first day of dek">Dod 0</span>
+as <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="first day of dek">Dod 10</span>. Like the
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days of dek">dods</span> in the flowcharts above⬆️, the
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days of year">doys</span> in the tables below⬇️are
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of dek">dods</span> in the flowcharts above, the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doys</span> in the tables below are
 arranged in both a zero-based (top) and a one-based (bottom) manner. The
-tables visualize the seamless transition between a common
-<span class="yellow">year</span> and the subsequent
-<span class="yellow">year</span>.
+tables visualize the seamless transition between a common year and the
+subsequent year.
 
 <table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 19%" />
-</colgroup>
 <thead>
 <tr>
-<th><span class="blue">Rest</span></th>
-<th><span class="green">Work</span></th>
-<th><span class="green">Work</span></th>
-<th><span class="green">Work</span></th>
-<th><span class="blue">Rest</span></th>
+<th>Rest</th>
+<th>Work</th>
+<th>Work</th>
+<th>Work</th>
+<th>Rest</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="blue">360</span></td>
-<td><span class="green">361</span></td>
-<td><span class="green">362</span></td>
-<td><span class="green">363</span></td>
-<td><span class="blue">364</span></td>
+<td>360</td>
+<td>361</td>
+<td>362</td>
+<td>363</td>
+<td>364</td>
 </tr>
 <tr>
-<td><span class="blue">0</span></td>
-<td><span class="green">1</span></td>
-<td><span class="green">2</span></td>
-<td><span class="green">3</span></td>
-<td><span class="blue">4</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
 </tr>
 </tbody>
 </table>
 
 <table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 19%" />
-<col style="width: 19%" />
-</colgroup>
 <thead>
 <tr>
-<th><span class="green">Work</span></th>
-<th><span class="green">Work</span></th>
-<th><span class="green">Work</span></th>
-<th><span class="blue">Rest</span></th>
-<th><span class="blue">Rest</span></th>
+<th>Work</th>
+<th>Work</th>
+<th>Work</th>
+<th>Rest</th>
+<th>Rest</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="green">361</span></td>
-<td><span class="green">362</span></td>
-<td><span class="green">363</span></td>
-<td><span class="blue">364</span></td>
-<td><span class="blue">0</span></td>
+<td>361</td>
+<td>362</td>
+<td>363</td>
+<td>364</td>
+<td>0</td>
 </tr>
 <tr>
-<td><span class="green">1</span></td>
-<td><span class="green">2</span></td>
-<td><span class="green">3</span></td>
-<td><span class="blue">4</span></td>
-<td><span class="blue">5</span></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
 </tr>
 </tbody>
 </table>
 
-After 4 or 8 <span class="yellow">years</span> of consecutive pents, the
-Schedule <span class="green">3</span> pattern shown in the flowcharts
-and tables above⬆️is interrupted by <span class="blue">3</span>
-consecutive <span class="blue">rest</span> days during the transition
-from a leap <span class="yellow">year</span>. This interruption is
-represented by 4 empty cells in the middle row of the two tables
-below⬇️. The middle row contains only one day: <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="February 29">Day 365</span> in
-the top table and <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="March 1">Day 0</span> in bottom one.
+After 4 or 8 years of consecutive pents, the Schedule
+<span class="color3">3</span> pattern shown in the flowcharts and tables
+above is interrupted by 3 consecutive rest days during the transition
+from a leap year. This interruption is represented by 4 empty cells in
+the middle row of the two tables below. The middle row contains only one
+day: <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 29">Day 365</span> in the top table and
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="March 1">Day
+0</span> in bottom one.
 
 <table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 19%" />
-</colgroup>
 <thead>
 <tr>
-<th><span class="blue">Rest</span></th>
-<th><span class="green">Work</span></th>
-<th><span class="green">Work</span></th>
-<th><span class="green">Work</span></th>
-<th><span class="blue">Rest</span></th>
+<th>Rest</th>
+<th>Work</th>
+<th>Work</th>
+<th>Work</th>
+<th>Rest</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="blue">360</span></td>
-<td><span class="green">361</span></td>
-<td><span class="green">362</span></td>
-<td><span class="green">363</span></td>
-<td><span class="blue">364</span></td>
+<td>360</td>
+<td>361</td>
+<td>362</td>
+<td>363</td>
+<td>364</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="blue">365</span></td>
+<td>365</td>
 </tr>
 <tr>
-<td><span class="blue">0</span></td>
-<td><span class="green">1</span></td>
-<td><span class="green">2</span></td>
-<td><span class="green">3</span></td>
-<td><span class="blue">4</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
 </tr>
 </tbody>
 </table>
 
 <table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 19%" />
-<col style="width: 19%" />
-</colgroup>
 <thead>
 <tr>
-<th><span class="green">Work</span></th>
-<th><span class="green">Work</span></th>
-<th><span class="green">Work</span></th>
-<th><span class="blue">Rest</span></th>
-<th><span class="blue">Rest</span></th>
+<th>Work</th>
+<th>Work</th>
+<th>Work</th>
+<th>Rest</th>
+<th>Rest</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="green">361</span></td>
-<td><span class="green">362</span></td>
-<td><span class="green">363</span></td>
-<td><span class="blue">364</span></td>
-<td><span class="blue">365</span></td>
+<td>361</td>
+<td>362</td>
+<td>363</td>
+<td>364</td>
+<td>365</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="blue">0</span></td>
+<td>0</td>
 </tr>
 <tr>
-<td><span class="green">1</span></td>
-<td><span class="green">2</span></td>
-<td><span class="green">3</span></td>
-<td><span class="blue">4</span></td>
-<td><span class="blue">5</span></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
 </tr>
 </tbody>
 </table>
 
-The last pentaday (pent) in common <span class="yellow">years</span> is
-Pent 72. <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="February 29">Day 365</span> is the only day in Pent 73.
-<span class="cyan under tool" data-bs-toggle="tooltip"
+The last pentaday (pent) in common years is Pent 72. <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="February 29">Day 365</span> is
+the only day in Pent 73. <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="March 1">Day 0</span> is the first day of Pent 0, the
-first pent of the <span class="yellow">year</span>. To get the current
-pent number, ${decPent}, we double the current
-<span class="cyan">dek</span> number,
-<span class="cyan">${decDek}</span>, and then add 1 if the current
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day of dek">dod</span> number,
-<span class="cyan">${decDotd}</span>, is greater than 4. To avoid
-[off-by-one
+first pent of the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="year">year</span>. To get the current pent number,
+${decPent}, we double the current dek number, ${decDek}, and then add 1
+if the current <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of dek">dod</span> number, ${decDotd}, is greater
+than 4. To avoid [off-by-one
 errors](https://en.wikipedia.org/wiki/Off-by-one_error#:~:text=a%20logic%20error%20that%20involves%20a%20number%20that%20differs%20from%20its%20intended%20value%20by%201),
-pent, <span class="cyan">dek</span>, <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="day of dek">dod</span>, and
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> numbers are always zero-based in
-Dec.
+pent, dek, <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of dek">dod</span>, and <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> numbers
+are always zero-based in Dec.
 
 Other than pent numbers, a pent can also be expressed as a span🌈. Pent
 72 can be represented as
-<span class="cyan">360</span>=<span class="cyan">365</span><span class="mono">-</span><span class="violet">5</span>,
-<span class="cyan">360</span>=<span class="violet">-5</span>, or
-<span class="cyan">360</span>=<span class="cyan">365</span>. In addition
-to omitting the subtrahend or the difference, we can make the subtrahend
-precede the minuend to indicate that we want to start from the latest
-day and work backwards:
-<span class="cyan">365</span>=<span class="cyan">360</span>+<span class="violet">5</span>,
-<span class="cyan">365</span>=<span class="cyan">360</span>, or
-<span class="cyan">365</span>=+<span class="violet">5</span>.
+<span class="color0">360</span>=<span class="color5">365</span><span class="mono">-</span><span class="color5">5</span>,
+<span class="color0">360</span>=<span class="color5">-5</span>, or
+<span class="color0">360</span>=<span class="color5">365</span>. In
+addition to omitting the subtrahend or the difference, we can make the
+subtrahend precede the minuend to indicate that we want to start from
+the latest day and work backwards:
+<span class="color5">365</span>=<span class="color0">360</span>+<span class="color5">5</span>,
+<span class="color5">365</span>=<span class="color0">360</span>, or
+<span class="color5">365</span>=+<span class="color5">5</span>.
 
-Spans🌈can also represent groups of non-consecutive days. All of the
-Schedule <span class="green">3</span> <span class="green">work</span>
-days in a <span class="yellow">year</span> can be expressed as
-<span class="cyan">1</span>=<span class="cyan">4</span>=:<span class="sienna">5</span>.
-In this span🌈, we start with Days <span class="cyan under tool"
+Spans can also represent groups of non-consecutive days. All of the
+Schedule <span class="color3">3</span> work days in a <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="year">year</span> can be
+expressed as
+<span class="color1">1</span>=<span class="color4">4</span>=:<span class="color5">5</span>.
+In this span, we start with Days <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 2">1</span>,
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="March 3">2</span>, and <span class="cyan under tool"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 3">2</span>, and <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 4">3</span> and then
 include every day that is a multiple of 5 days away from one of the
 starting days. The number preceded by a colon is called a step and
@@ -1277,196 +1202,159 @@ href="https://commons.wikimedia.org/wiki/File:Manual_Layout.svg">Wikimedia</a></
 
 </div>
 
-Schedule <span class="green">3</span> is one of six
-<span class="cyan">dek</span>ly schedules that allow us to organize
-<span class="green">work</span> and <span class="blue">rest</span> days
-into five homogeneous columns like in the tables and flowcharts above⬆️.
-These schedules are like the gears⚙️of a
+Schedule <span class="color3">3</span> is one of six dekly schedules
+that allow us to organize work and rest days into five homogeneous
+columns like in the tables and flowcharts above. These schedules are
+like the gears⚙️of a
 [5-speed](https://en.m.wikipedia.org/wiki/Manual_transmission#:~:text=Common%20shift%20pattern%20for%20a%205%2Dspeed%20transmission)
 [manual
 transmission](https://en.m.wikipedia.org/wiki/Manual_transmission#:~:text=a%20multi%2Dspeed%20motor%20vehicle%20transmission%20system%20where%20gear%20changes%20require%20the%20driver%20to%20manually%20select%20the%20gears%20by%20operating%20a%20gear%20stick%20and%20clutch)
-in a car. The approximate speed ranges for the five gears⚙️are \<5, 5 to
+in a car. The approximate speed ranges for the five gears are \<5, 5 to
 10, 10 to 15, 15 to 20, and ≥20 <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="thousands of meters"><u>kilometers</u></span> per
+data-bs-title="thousands of meters">kilometers</span> per
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a hundredth of a day"><u>centiday</u></span>.
 
 In this analogy,
 [Neutral](https://en.m.wikipedia.org/wiki/Neutral#:~:text=the%20state%20where%20no%20gears%20are%20selected%20for%20a%20motor%20vehicle's%20transmission)
-(N), 1st, 2nd, 3rd, 4th, and 5th gear⚙️are Schedules
-<span class="green">0</span>, <span class="green">1</span>,
-<span class="green">2</span>, <span class="green">3</span>,
-<span class="green">4</span>, and <span class="green">5</span>,
+(N), 1st, 2nd, 3rd, 4th, and 5th gear are Schedules
+<span class="color0">0</span>, <span class="color1">1</span>,
+<span class="color2">2</span>, <span class="color3">3</span>,
+<span class="color4">4</span>, and <span class="color5">5</span>,
 respectively. To complete the
 [gearshift](https://en.m.wikipedia.org/wiki/Gear_stick#:~:text=a%20metal%20lever%20attached%20to%20the%20transmission%20of%20an%20automobile)
 analogy, Reverse (R) would be a time machine that takes us to the past.
-As our driving speed changes, we would shift up to a higher gear⚙️or
-shift down to a lower gear⚙️. Similarly, we can switch between the six
-<span class="cyan">dek</span>ly schedules as needed.
+As our driving speed changes, we would shift up to a higher gear or
+shift down to a lower gear. Similarly, we can switch between the six
+dekly schedules as needed.
 
-The names of the <span class="cyan">dek</span>ly schedules are derived
-from their respective numbers of <span class="green">work</span> days
-per pent. The total🧮number of <span class="green">work</span> days per
-<span class="yellow">year</span> provided by Schedules
-<span class="green">0</span>, <span class="green">1</span>,
-<span class="green">2</span>, <span class="green">3</span>,
-<span class="green">4</span>, and <span class="green">5</span> are 0,
-73, 146, 219, 292, and 365, respectively. In general, Schedule
-<span class="green">3</span> should be the default and Schedule
-<span class="green">5</span> should only be used temporarily during
-crises‼️and emergencies🚨.
+The names of the dekly schedules are derived from their respective
+numbers of work days per pent. The total🧮number of work days per year
+provided by Schedules <span class="color0">0</span>,
+<span class="color1">1</span>, <span class="color2">2</span>,
+<span class="color3">3</span>, <span class="color4">4</span>, and
+<span class="color5">5</span> are 0, 73, 146, 219, 292, and 365,
+respectively. In general, Schedule <span class="color3">3</span> should
+be the default and Schedule <span class="color5">5</span> should only be
+used temporarily during crises‼️and emergencies🚨.
 
 In addition to switching between schedules, we can also mix them to
-create hybrid schedules. Schedule <span class="green">34</span> mixes
-Schedules <span class="green">3</span> and <span class="green">4</span>
-to obtain an annual total🧮of 255 <span class="green">work</span> days
-without modifying the transition between
-<span class="yellow">years</span> shown in the tables above⬆️. This
-annual total🧮is about 1 pent less than the 260 to 262
-<span class="green">work</span> days that we get annually from a
-five-day
-<span class="green">work</span><span class="darkgreen">week</span>.
+create hybrid schedules. Schedule 34 mixes Schedules
+<span class="color3">3</span> and <span class="color4">4</span> to
+obtain an annual total of 255 work days without modifying the transition
+between years shown in the tables above. This annual total is about 1
+pent less than the 260 to 262 work days that we get annually from a
+five-day workweek.
 
-Unlike <span class="darkgreen">week</span>ly schedules, Schedules
-<span class="green">3</span> and <span class="green">34</span> provide a
-consistent🎯number of <span class="green">work</span> days every
-<span class="yellow">year</span>. While Days
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="February 28">364</span>, <span class="cyan under tool"
+Unlike weekly schedules, Schedules <span class="color3">3</span> and
+<span class="color34">34</span> provide a consistent🎯number of work
+days every year. While Days <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="February 28">364</span>, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="February 29">365</span>, and
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="March 1">0</span> can be <span class="green">work</span>
-or <span class="blue">rest</span> days in the Gregorian calendar🗓️,
-these days are always <span class="blue">rest</span> days if we follow
-Schedules <span class="green">3</span> or <span class="green">34</span>.
-Therefore, Schedules <span class="green">3</span> and
-<span class="green">34</span> do not require any holidays to smooth the
-transition between <span class="yellow">years</span>.
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1">0</span> can be work or rest days in the
+Gregorian calendar️, these days are always rest days if we follow
+Schedules <span class="color3">3</span> or
+<span class="color3">34</span>. Therefore, Schedules
+<span class="color3">3</span> and <span class="color3">34</span> do not
+require any holidays to smooth the transition between years.
 
 There are 11 United States [Federal
 holidays](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/).
-Federal holidays that fall on a Gregorian
-calendar🗓️<span class="blue">rest</span> day,
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="Sunday">Dow 0</span> or
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
+Federal holidays that fall on a Gregorian calendar️rest day,
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="Sunday">Dow
+0</span> or <span class="under tool" data-bs-toggle="tooltip"
 data-bs-title="Saturday">Dow 6</span>, are observed on the nearest
-Gregorian calendar🗓️<span class="green">work</span> day:
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="Monday">Dow 1</span> or
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="Friday">Dow 5</span>. To apply this rule to Schedule
-<span class="green">3</span>, we would observe the Day
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="June 19">110</span>⛓️‍💥, <span class="cyan under tool"
+Gregorian calendar️ work day: <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Monday">Dow 1</span> or <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="Friday">Dow 5</span>. To apply
+this rule to Schedule <span class="color3">3</span>, we would observe
+the Day <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="June 19">110</span>⛓️‍💥, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="July 4">125</span>🎆,
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="November 11">255</span>🫡, and
-<span class="cyan under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="November 11">255</span>🫡, and <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="December 25">299</span>🎄holidays on Days
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="June 20">111</span>⛓️‍💥, <span class="cyan under tool"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="June 20">111</span>⛓️‍💥, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="July 5">126</span>🎆,
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="November 12">256</span>🫡, and
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="December 26">298</span>🎄, respectively.
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="November 12">256</span>🫡, and <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="December 26">298</span>🎄,
+respectively.
 
-With <span class="cyan">dek</span>ly schedules, we can determine whether
-any date falls on a <span class="green">work</span> or a
-<span class="blue">rest</span> day with just a glance.
-Counterintuitively, <span class="cyan">dek</span>ly schedules can be
-based on <span class="azul">months</span> instead of
-<span class="cyan">deks</span>. <span class="azul">Month</span>-based
-<span class="cyan">dek</span>ly schedules distinguish between
-<span class="green">work</span> and <span class="blue">rest</span> days
-based on the last digit of <span class="lightblue under tool"
-data-bs-toggle="tooltip" data-bs-title="days of month">doms</span>. The
-drawback of <span class="azul">month</span>-based schedules is that
-<span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">doms</span> reset twelve times every
-<span class="yellow">year</span>.
+With dekly schedules, we can determine whether any date falls on a work
+or a rest day with just a glance. Counterintuitively, dekly schedules
+can be based on months instead of deks. Month-based dekly schedules
+distinguish between work and rest days based on the last digit of
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">doms</span>. The drawback of month-based
+schedules is that <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span> reset twelve times every year.
 
-The <span class="azul">month</span>-based Schedules
-<span class="green">3</span> and <span class="green">34</span> have 223
-and 258 <span class="green">work</span> days per
-<span class="yellow">year</span>, respectively, but will require at
-least one holiday to avoid six consecutive
-<span class="green">work</span> days during the transition from a Dec
-common <span class="yellow">year</span>. The best time to switch from a
-<span class="darkgreen">week</span>ly to a
-<span class="cyan">dek</span>ly schedule may be from
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="April 1">Day 31</span> to <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="June 2">93</span> when the
-original and <span class="azul">month</span>-based versions of Schedules
-<span class="green">3</span> and <span class="green">34</span> are
-identical.
+The month-based Schedules <span class="color3">3</span> and
+<span class="color34">34</span> have 223 and 258 work days per year,
+respectively, but will require at least one holiday to avoid six
+consecutive work days during the transition from a Dec common year. The
+best time to switch from a weekly to a dekly schedule may be from
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="April 1">Day
+31</span> to <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="June 2">93</span> when the original and month-based
+versions of Schedules <span class="color3">3</span> and
+<span class="color34">34</span> are identical.
 
 # Day of month (dom)
 
-Dec dates can be expanded to display Dec <span class="azul">month</span>
-and [POSIX <span class="lightblue under tool" data-bs-toggle="tooltip"
+Dec dates can be expanded to display Dec month and [POSIX
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</span>](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D)
-numbers. The current Dec <span class="lightblue under tool"
-data-bs-toggle="tooltip" data-bs-title="day of month">dom</span> date is
-<span class="yellow">${decYear}</span>+<span class="cyan">${monthNumber}</span>+<span class="lightblue">${dotm}</span>.
-Dec <span class="azul">month</span> numbers are the last
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> of the previous
-<span class="azul">month</span> because POSIX
-<span class="lightblue under tool" data-bs-toggle="tooltip"
+numbers. The current Dec <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span> date is
+${decYear}+${monthNumber}+${dotm}. Dec month numbers are the last
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span> of the previous month because
+POSIX <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of month">doms</span> are one-based. For zero-based
-<span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">doms</span>, Dec represents each
-<span class="azul">month</span> with its first
-<span class="cyan under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">doms</span>, Dec represents each month
+with its first <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span>:
-<span class="yellow">${decYear}</span>+<span class="cyan">${monthNumber0}</span>+<span class="lightblue">${dotm0}</span>.
-This way, Dec can support both zero- and one-based
-<span class="lightblue under tool" data-bs-toggle="tooltip"
+${decYear}+${monthNumber0}+${dotm0}. This way, Dec can support both
+zero- and one-based <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of month">doms</span>.
 
-Dec <span class="lightblue under tool" data-bs-toggle="tooltip"
+Dec <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</span> dates replace the
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> <span class="cyan">d</span> from
-Dec dates with
-<span class="cyan">d</span><span class="mono">-</span><span class="lightblue">m</span>+<span class="lightblue">m</span>.
-We evaluate the subtraction to get
-<span class="cyan">d</span><span class="mono">-</span><span class="lightblue">m</span>,
-the Dec <span class="azul">month</span> number, but not the addition, so
-we can see <span class="lightblue">m</span>, the
-<span class="lightblue under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span> d from Dec dates with d-m+m. We
+evaluate the subtraction to get d<span class="mono">-</span>m, the Dec
+month number, but not the addition, so we can see m, the
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</span>. If we combine the
-<span class="lightblue under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</span> and <span class="under tool"
 data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> patterns
-above⬆️, we can create hybrid <span class="lightblue under tool"
-data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</span>+<span class="lightgreen under tool"
+above, we can create hybrid <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span>+<span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> Dec
-dates:
-<span class="yellow">${decYear}</span>+<span class="cyan">${monthNumber -
-dotw}</span>+<span class="lightblue">${dotm}</span>+<span class="lightgreen">${dotw}</span>,
-where <span class="cyan">${monthNumber - dotw}</span> is
-<span class="cyan">d</span><span class="mono">-</span><span class="lightblue">m</span><span class="mono">-</span><span class="lightgreen">w</span>,
-the <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> of the last
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="Sunday">Dow 0</span> before the beginning of the
-<span class="azul">month</span>.
+dates: ${decYear}+${hybridMonthWeek}+${dotm}+${dotw}, where
+${hybridMonthWeek} is
+d<span class="mono">-</span>m<span class="mono">-</span>w, the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span> of the last <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="Sunday">Dow 0</span> before the
+beginning of the month.
 
-We can obtain Dec <span class="azul">month</span> numbers using only a
-pair of hands🤲by counting index☝️and ring💍fingers as 30 days and other
-fingers as 31 days. For zero-based <span class="lightblue under tool"
-data-bs-toggle="tooltip" data-bs-title="days of month">doms</span>, we
-start counting from 0. For one-based <span class="lightblue under tool"
-data-bs-toggle="tooltip" data-bs-title="days of month">doms</span>, we
-start counting from -1, as shown in the image below⬇️. To spread 12
-<span class="azul">months</span> across 10 fingers, the first and last
-fingers each represent 2 <span class="azul">months</span>.
+We can obtain Dec month numbers using only a pair of hands🤲by counting
+index☝️and ring💍fingers as 30 days and other fingers as 31 days. For
+zero-based <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">dom</span>, we start counting from 0. For
+one-based <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">dom</span>, we start counting from -1, as
+shown in the image below. To spread 12 months across 10 fingers, the
+first and last fingers each represent 2 months.
 
 <div class="hand">
 
@@ -2568,47 +2456,41 @@ n/lgn/4KD/qrirvrtz/ywT/8FB/1VxVQv57yexuYUsJ+csTotWgAqykD/duKv//Z</xapgimg:image>
 
 The
 finger🖐[mnemonic](https://en.wikipedia.org/wiki/Mnemonic#:~:text=any%20learning%20technique%20that%20aids%20information%20retention%20or%20retrieval%20in%20the%20human%20memory)
-described above⬆️is similar to the
+described above is similar to the
 [knuckle👊](https://en.wikipedia.org/wiki/Knuckle_mnemonic#:~:text=a%20mnemonic%20device%20for%20remembering%20the%20number%20of%20days%20in%20the%20months%20of%20the%20Julian%20and%20Gregorian%20calendars)and
 [musical
 keyboard🎹](https://en.wikipedia.org/wiki/Month#:~:text=this%20cyclical%20pattern%20of%20month%20lengths%20matches%20the%20musical%20keyboard%20alternation%20of%20wide%20white%20keys%20(31%20days)%20and%20narrow%20black%20keys%20(30%20days))mnemonics.
-These mnemonics attempt to make sense of the irregular pattern of
-[<span class="azul">month</span>
+These mnemonics attempt to make sense of the irregular pattern of [month
 lengths](https://en.wikipedia.org/wiki/Month#:~:text=Name-,Number,of%20days)
-in the Gregorian calendar🗓️. As opposed to
-<span class="azul">months</span>, we do not need mnemonics, tables, or
-mental calculations to use <span class="cyan">deks</span>, because all
-of the required information is plainly visible in the
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span>.
+in the Gregorian calendar️. As opposed to months, we do not need
+mnemonics, tables, or mental calculations to use deks, because all of
+the required information is plainly visible in the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>.
 
 # Month of year (moy)
 
-To convert <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days of year">doys</span> to or from [POSIX
+To convert <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doy</span> to or from [POSIX
 month](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=Month%20as%20a%20decimal%20number%20%5B01%2C12%5D)
-and <span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</span> numbers, we can use the
-<span class="azul">month of year</span> (<span class="azul under tool"
-data-bs-toggle="tooltip" data-bs-title="month of year">moy</span>)
-equations from the <a
+and <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span> numbers, we can use the month of
+year (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">moy</span>) equations from the <a
 href="https://howardhinnant.github.io/date_algorithms.html#civil_from_days"
 class="mono under"><code>civil_from_days</code></a> and <a
 href="https://howardhinnant.github.io/date_algorithms.html#days_from_civil"
 class="mono under"><code>days_from_civil</code></a> algorithms. Unlike
-POSIX month numbers, <span class="azul under tool"
-data-bs-toggle="tooltip" data-bs-title="months of year">moys</span> are
-zero-based and start from <span class="azul under tool"
-data-bs-toggle="tooltip" data-bs-title="March">Moy 0</span> instead of
-<span class="azul under tool" data-bs-toggle="tooltip"
+POSIX month numbers, <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="months of year">moy</span> are zero-based and start from
+<span class="tool" data-bs-toggle="tooltip" data-bs-title="March">Moy
+0</span> instead of <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="January">Moy 10</span>. As shown in the first
-<span class="azul under tool" data-bs-toggle="tooltip"
-data-bs-title="month of year">moy</span> equation below⬇️, we can obtain
-a <span class="azul under tool" data-bs-toggle="tooltip"
-data-bs-title="month of year">moy</span> from a
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> or a POSIX
-<span class="azul">month</span> number.
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">moy</span> equation below, we can obtain a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">moy</span> from a <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> or a
+POSIX month number.
 
 <div class="overflowequation"
 style="overflow-x:auto;overflow-y:hidden;">
@@ -2623,27 +2505,21 @@ dom = doy − (153 × moy + 2) ÷ 5 + 1
 
 doy = (153 × moy + 2) ÷ 5 + dom − 1
 
-A <span class="azul under tool" data-bs-toggle="tooltip"
-data-bs-title="month of year">moy</span> and its equivalent POSIX
-<span class="azul">month</span> number differ by 9 in
-<span class="azul">Moy</span> <span class="azul under tool"
-data-bs-toggle="tooltip" data-bs-title="January">10</span> or
-<span class="azul under tool" data-bs-toggle="tooltip"
-data-bs-title="February">11</span> and -3 in any other
-<span class="azul under tool" data-bs-toggle="tooltip"
+A <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">moy</span> and its equivalent POSIX month
+number differ by 9 in Moy <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="January">10</span> or <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="February">11</span> and -3 in
+any other <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="month of year">moy</span> because the Dec epoch,
-<span class="yellow">0000</span>+<span class="cyan">000</span>, is 2
-<span class="azul">months</span> later than the Gregorian
-calendar🗓️epoch:
-<span class="yellow">-0001</span>+<span class="cyan">306</span>. To
-convert <span class="yellow">years</span>, we add 1 to Dec
-<span class="yellow">years</span> and subtract 1 from Gregorian
-calendar🗓️<span class="yellow">years</span> if the
-<span class="cyan under tool" data-bs-toggle="tooltip"
+<span class="color0">0000</span>+<span class="color0">000</span>, is 2
+months later than the Gregorian calendar epoch: -0001+306. To convert
+years, we add 1 to Dec years and subtract 1 from Gregorian calendar️
+years if the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> is greater than 305, the
-<span class="azul under tool" data-bs-toggle="tooltip"
-data-bs-title="month of year">moy</span> is greater than 9, or the
-<span class="azul">month</span> is less than 3:
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">moy</span> is greater than 9, or the month
+is less than 3:
 
 <div class="overflowequation"
 style="overflow-x:auto;overflow-y:hidden;">
@@ -2662,37 +2538,32 @@ $$\text{Gregorian calendar year} = \begin{cases}\text{Dec year}+1&{\text{if }\te
 # Summary
 
 This article describes Dec and how it can interoperate with the
-Gregorian calendar🗓️by minuend expanding Dec dates into
-<span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</span> and
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> dates or dividend expanding
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> dates into
-<span class="darkgreen under tool" data-bs-toggle="tooltip"
-data-bs-title="week of year">woy</span> dates. On its own, Dec minuend
-expands dates into span🌈equivalents, but has no use for dividend
-expansion, because <span class="cyan under tool"
+Gregorian calendar by minuend expanding Dec dates into
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span> and <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> dates or
+dividend expanding <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span> dates into <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="week of year">woy</span> dates.
+On its own, Dec minuend expands dates into span🌈equivalents, but has no
+use for dividend expansion, because <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of year">doys</span> display
-<span class="cyan">deks</span> and <span class="cyan under tool"
-data-bs-toggle="tooltip" data-bs-title="days of dek">dods</span> without
-any expansion.
+deks and <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of dek">dod</span> without any expansion.
 
-The flowchart below⬇️visualizes the conversion of the UNIX epoch Dec
-date <span class="yellow">1969</span>+<span class="cyan">306</span> into
-a Gregorian calendar🗓️<span class="yellow">year</span>,
-<span class="azul">month</span>, <span class="lightblue under tool"
+The flowchart below visualizes the conversion of the UNIX epoch Dec date
+<span class="color069">1969</span>+<span class="colord306">306</span>
+into a Gregorian calendar️year, month, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of month">dom</span> and
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</span>. To obtain its associated
-<span class="lightgreen under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</span>, we first need to convert a Dec
-date into a <span class="cyan under tool" data-bs-toggle="tooltip"
+date into a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of era">doe</span>. Outside of its interoperability
-with the Gregorian calendar🗓️, Dec converts dates into
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days of era">does</span> to find the number of days in
-between two dates.
+with the Gregorian calendar️, Dec converts dates into <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="days of era">doe</span> to find
+the number of days in between two dates.
 
 <div id="conversionchart">
 
@@ -2705,37 +2576,33 @@ style="width:5.79in;height:6.83in" />
 
 </div>
 
-For simplicity, the flowchart above⬆️does not show conversion
-byproducts, such as the <span class="under tool"
-data-bs-toggle="tooltip" data-bs-title="cycle of era">coe</span>,
-<span class="yellow under tool" data-bs-toggle="tooltip"
-data-bs-title="year of cycle">yoc</span>, and
-<span class="cyan under tool" data-bs-toggle="tooltip"
+For simplicity, the flowchart above does not show conversion byproducts,
+such as the <span class="under tool" data-bs-toggle="tooltip"
+data-bs-title="cycle of era">coe</span>, <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="year of cycle">yoc</span>, and
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of cycle">doc</span> generated during Dec
-<span class="cyan under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of era">doe</span> to date conversion or the
-<span class="azul under tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="months of year">moy</span> that we need in order to split
-a <span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> into a
-<span class="azul">month</span> and a <span class="lightblue under tool"
-data-bs-toggle="tooltip" data-bs-title="day of month">dom</span> or
-combine a <span class="azul">month</span> and a
-<span class="lightblue under tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</span> into a
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span>. The arrows in the flowchart
-represent equations adapted from
+a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span> into a month and a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span> or combine a month and a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span> into a <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>. The
+arrows in the flowchart represent equations adapted from
 [<span class="mono under">`chrono`</span>-Compatible Low-Level Date
 Algorithms](https://howardhinnant.github.io/date_algorithms.html).
 
 Instead of converting Dec dates, we can expand them to view the
 information we need as part of the math-inspired notation of Dec. At its
-heart❤️, Dec is a simple system that uses only
-<span class="yellow">years</span> and <span class="cyan">days</span> for
-time measurement. Thanks to Dec expansion, Dec can work with other
-units. In this way, Dec expansion bridges the gap between the Dec and
-Gregorian calendars🗓️.
+heart❤️, Dec is a simple system that uses only years and days for time
+measurement. Thanks to Dec expansion, Dec can work with other units. In
+this way, Dec expansion bridges the gap between the Dec and Gregorian
+calendars🗓️.
 
 # Next
 
@@ -2775,17 +2642,15 @@ visualizations.
 # Cite
 
 Thank you for your interest in Dec. You will find citation information
-for this article below⬇️. Please note that the original source of the
-algorithms underlying the conversion of Dec
-<span class="yellow">year</span>+<span class="cyan">day</span> dates and
-<span class="cyan under tool" data-bs-toggle="tooltip"
-data-bs-title="days of era">does</span> is [Hinnant,
+for this article below. Please note that the original source of the
+algorithms underlying the conversion of Dec year+day dates and
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of era">doe</span> is [Hinnant,
 Howard](https://howardhinnant.github.io). <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="2021-09-01"><u><span class="yellow">2021</span>+<span class="cyan">184</span></u></span>.
+data-bs-toggle="tooltip" data-bs-title="2021-09-01">2021+184</span>.
 “`chrono`-Compatible Low-Level Date Algorithms.”
-<span class="yellow">${decYear}</span>+<span class="cyan">${String(decDoty).padStart(3,
-“0”)}</span>. <https://howardhinnant.github.io/date_algorithms.html>.
+${decYear}+${decDotyPad}.
+<https://howardhinnant.github.io/date_algorithms.html>.
 
 ``` {ojs}
 //| echo: false
@@ -2998,6 +2863,7 @@ decYearLeap = year2leap(decYear)
 decYearLength = 365 + decYearLeap
 decYearLastDay = decYearLength - 1
 decDoty = Math.floor(ydz[1])
+decDotyPad = String(decDoty).padStart(3, "0")
 decDek = Math.floor(decDoty / 10)
 decDotd = decDoty % 10
 decPent = decDek * 2 + (decDotd > 4)
@@ -3017,6 +2883,7 @@ monthNumber0 = String(monthNumber + 1).padStart(3, "0")
 dotw0doty = Math.floor(ydz[1]) - dotw
 doty0dote = date2dote(ydz[0], 0)[0]
 doty0dotw = dote2dotw(doty0dote)
+hybridMonthWeek = monthNumber - dotw
 week = Math.floor((ydz[1] + doty0dotw) / 7)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
 nDaysInYear = 365 + year2leap(ydz[0] + 1)
@@ -3104,9 +2971,6 @@ input[type="radio"] {
 p:has(.radiotitle) {
   margin-top: -6px;
   margin-bottom: -3px;
-}
-#radiobuttons {
-  margin-bottom: -12px;
 }
 h4.anchored {
   margin: 8px 0px 8px 0px;
