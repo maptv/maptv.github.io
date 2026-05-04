@@ -88,16 +88,24 @@ transformInput = function(target, {bind: source, transform = identity, involutor
   return target;
 }
 function doty2month(doty = 0) {
+    if (nOffInput) {
+        const n = 365 + leapInput
+        doty = (doty + n) % n
+    }
     const m = Math.floor((5 * doty + 2) / 153);
     return Math.floor(m < 10 ? m + 3 : m - 9);
 }
 function month2doty(month = 1) {
     return Math.floor(
-        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5
+        (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5 + nOffInput
 )}
 function doty2dotm(doty = 0) {
+    if (nOffInput) {
+        const n = 365 + leapInput
+        doty = (doty + n) % n
+    }
     const m = Math.floor((5 * doty + 2) / 153);
-    return doty - Math.floor((153 * m + 2) / 5) + 1 - leapscrub[3];
+    return doty - Math.floor((153 * m + 2) / 5);
 }
 function set(input, value) {
   input.value = value;
