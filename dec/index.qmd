@@ -1,16 +1,13 @@
 ---
 title: Dec Measurement System
-author:
-  - name: Martin Laptev
-    url: https://maptv.github.io
 image: /asset/colorWheelCompass.svg
-slug: dec
-path: /dec
 description: >
   Introducing the Dec measurement system,
   which uses turns instead of months, weeks,
   hours, minutes, seconds, and degrees.
 url: https://maptv.github.io/dec
+path: /dec
+slug: dec
 engine: knitr
 aliases:
   - /d
@@ -158,7 +155,7 @@ Dec refers to [cmd](#cmd){.tool data-bs-toggle="tooltip" data-bs-title="centimil
 
 # Heart rate tempo {.hiddenheading #sec-hrt}
 
-A [normal resting heart❤️rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=heart%20rate%20is-,60–100%20bpm,-.%20An%20ultra%2Dtrained) is between 100 and 166.[6]{.vinculum} [b](#b){.tool data-bs-toggle="tooltip" data-bs-title="beats"} per [md](#md){.tool data-bs-toggle="tooltip" data-bs-title="millidays"} ([bpm](#bpm){#beatpermilliday .tool data-bs-toggle="tooltip" data-bs-title="beats per milliday"}). The unofficial anthem of the Dec measurement system, "[Turn the beat around](https://en.wikipedia.org/wiki/Turn_the_Beat_Around#:~:text=a%20disco%20song%20written%20by%20Gerald%20Jackson%20and%20Peter%20Jackson%2C%20and%20performed%20by%20American%20actress%20and%20singer%20Vicki%20Sue%20Robinson%20in%201976)", has a [tempo](https://en.wikipedia.org/wiki/Tempo#:~:text=the%20speed%20or%20pace%20of%20a%20given%20composition) of 188.64 [bpm](#bpm){.tool data-bs-toggle="tooltip" data-bs-title="beats per milliday"}, which corresponds to the _allegro_ [tempo marking](https://en.wikipedia.org/wiki/Tempo#Approximately_from_the_slowest_to_the_fastest). A Dec clock⏰ticks at a rate of 100 [bpm](#bpm){.tool data-bs-toggle="tooltip" data-bs-title="beats per milliday"}, $\text b^{-1}$, $1\over\text b$, 1 [inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number) beat, or 1 perbeat ([p](#per){#perbeat .tool data-bs-toggle="tooltip" data-bs-title="perbeat"}), which is [1.15[740]{.vinculum}]{.colorIob} times more frequent than a [Hertz](https://en.wikipedia.org/wiki/Hertz#:~:text=one%20event%20(or%20cycle)).
+A [normal resting heart rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=heart%20rate%20is-,60–100%20bpm,-.%20An%20ultra%2Dtrained) is between 100 and 166.[6]{.vinculum} [b](#b){.tool data-bs-toggle="tooltip" data-bs-title="beats"} per [md](#md){.tool data-bs-toggle="tooltip" data-bs-title="millidays"} ([bpm](#bpm){#beatpermilliday .tool data-bs-toggle="tooltip" data-bs-title="beats per milliday"}). The unofficial anthem of the Dec measurement system, "[Turn the beat around](https://en.wikipedia.org/wiki/Turn_the_Beat_Around#:~:text=a%20disco%20song%20written%20by%20Gerald%20Jackson%20and%20Peter%20Jackson%2C%20and%20performed%20by%20American%20actress%20and%20singer%20Vicki%20Sue%20Robinson%20in%201976)", has a [tempo](https://en.wikipedia.org/wiki/Tempo#:~:text=the%20speed%20or%20pace%20of%20a%20given%20composition) of 188.64 [bpm](#bpm){.tool data-bs-toggle="tooltip" data-bs-title="beats per milliday"}, which corresponds to the _allegro_ [tempo marking](https://en.wikipedia.org/wiki/Tempo#Approximately_from_the_slowest_to_the_fastest). A Dec clock⏰ticks at a rate of 100 [bpm](#bpm){.tool data-bs-toggle="tooltip" data-bs-title="beats per milliday"}, $\text b^{-1}$, $1\over\text b$, 1 [inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number) beat, or 1 perbeat ([p](#per){#perbeat .tool data-bs-toggle="tooltip" data-bs-title="perbeat"}), which is [1.15[740]{.vinculum}]{.colorIob} times more frequent than a [Hertz](https://en.wikipedia.org/wiki/Hertz#:~:text=one%20event%20(or%20cycle)).
 
 # Frequency period wavelength {.hiddenheading #sec-fpw}
 
@@ -198,15 +195,11 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 
 # Decioctave octave note {.hiddenheading #sec-don}
 
-In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can also be expressed in decioctaves ([do](#do){#decioctave .tool data-bs-toggle="tooltip" data-bs-title="decioctaves"}). The approximate audible range for humans is [3]{.color3} to [103]{.color3} [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctaves"}. The [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play) of an 88-key piano is [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}23.76 to [~]{.tool data-bs-toggle="tooltip" data-bs-title="approximately"}3616.64 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, which is roughly [8]{.color8} to [80]{.color0} [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctaves"}. The equations below show how a decimal [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) ([o](#o){#octave .tool data-bs-toggle="tooltip" data-bs-title="octave"}) can be used to calculate a [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeat"}, [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctave"}, and musical note([n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="musical note"}).
+In addition to [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}, the limits of human hearing can also be expressed in [decioctaves]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of an octave"} ([do](#do){#decioctave .tool data-bs-toggle="tooltip" data-bs-title="decioctaves"}). A [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctave"} is a tenth of an [octave](https://en.wikipedia.org/wiki/Octave#:~:text=an%20interval%20between%20two%20notes%2C%20one%20having%20twice%20the%20frequency%20of%20vibration%20of%20the%20other) ([o](#o){#octave .tool data-bs-toggle="tooltip" data-bs-title="octave"}). An [o](#o){.tool data-bs-toggle="tooltip" data-bs-title="octave"} is a two-fold change in frequency. The approximate audible range for humans is [3]{.color3} to [103]{.color3} [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctaves"}. The approximate [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play) of an 88-key piano🎹is 23.76 to 3616.64 [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"} or [8]{.color8} to [80]{.color0} [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctaves"}. The equations and code below convert between [o](#o){.tool data-bs-toggle="tooltip" data-bs-title="octaves"} and [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeats"}.
 
-$$\text{o} = \log_2\!\left(\frac{\text{p}}{14.1275}\right) = \frac{\text{do}}{10}$$
-
-$$\text{do} = 10 \times \text{o} = 10 \times \left\lfloor \text{o} \right\rfloor + \text{n}$$
+$$\text{o} = \log_2\!\left(\frac{\text{p}}{14.1275}\right)$$
 
 $$\text{p} = 14.1275 \times 2^{\text{o}}$$
-
-$$\text{n} = \text{do} - 10 \times \left\lfloor \text{o} \right\rfloor = 10 \times \left(\text{o} - \left\lfloor \text{o} \right\rfloor\right)$$
 
 :::{.panel-tabset group="language"}
 ### Julia
@@ -248,35 +241,15 @@ perbeat(3)
 
 :::
 
-
 # Color and sound {.hiddenheading #sec-cas}
 
-Each [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctave"} has a corresponding [n](#n){.tool data-bs-toggle="tooltip" data-bs-title="musical note"} that determines its color label. The idea of linking colors and musical notes dates back the [1704]{.color704} book by [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a) entitled [Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[^0]. On [[2025]{.color025}[+]{.mono}[080]{.colorD080}]{.tool data-bs-toggle="tooltip" data-bs-title="May 20, 2025"}, I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm) by [Clint Goss](https://www.clintgoss.com)[^1], which presents a mathematical method of associating musical notes with colors by transforming sound frequencies into light frequencies.
+Each [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctave"} has a corresponding musical note ([n](#n){#note .tool data-bs-toggle="tooltip" data-bs-title="musical note"}) that determines its color label. The idea of linking colors and musical notes dates back the [1704]{.color704} book by [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a) entitled [Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[^0]. On [[2025]{.color025}[+]{.mono}[080]{.colorD080}]{.tool data-bs-toggle="tooltip" data-bs-title="May 20, 2025"}, I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm) by [Clint Goss](https://www.clintgoss.com)[^1], which presents a method of associating musical notes with colors by matching sound and light frequencies.
+
+$$\text{n} = 10 \times \left(\text{o} - \left\lfloor \text{o} \right\rfloor\right)$$
 
 The lollipops🍭in the chart below represent the ten Dec notes in Octave 4. The lollipops and the [do](#do){.tool data-bs-toggle="tooltip" data-bs-title="decioctaves"} values above them are labeled with the ten Dec colors. Beneath each lollipop is its frequency rounded to the nearest [p](#per){.tool data-bs-toggle="tooltip" data-bs-title="perbeat"}. Click or tap each lollipop to hear its associated sound. The chart demonstrates that data points can be labeled with both color and sound.
 
-```{ojs}
-//| echo: false
-//| label: lollipop
-//| class: musicchart
-// https://observablehq.com/@mcmire/tone-map
-{
-  const points = origs.map((orig, i) => ({
-    origin: orig,
-    x: orig,
-    ratio: Fraction(1, 1),
-    label: labels[i],
-    color: colors[i],
-    freq: hertz[i],
-    alwaysShowLabel: true
-  }));
-  return renderGraph(points, {
-    xAxis: {
-      ticks: origs.map(Math.round)
-    },
-  });
-}
-```
+{{< include /dec/_lolli.qmd >}}
 
 # Système international d'unités {.hiddenheading #sec-sid}
 
@@ -289,8 +262,6 @@ As a scientist of European origin, I have a strong preference for the [Internati
 Dec redefines [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units to facilitate conversion with [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} and Dec units. The values in the first column of [unit conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed) table below are approximate [fold changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement) from original to redefined [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units. A fold change of [1]{.color0} means [0]{.color0} [change](https://en.wikipedia.org/wiki/Relative_change#:~:text=compare%20two%20quantities%20while%20taking%20into%20account%20the%20%22sizes%22%20of%20the%20things%20being%20compared) is required for alignment with the [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} and Dec units shown in the second and third column, respectively.
 
 Unlike Dec and [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}, the [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary measurement system does not use metric prefixes to scale units by [powers of ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten). Redefined [US](#us){.tool data-bs-toggle="tooltip" data-bs-title="United States"} customary units can serve as convenient reference points and provide intuitive names for certain fractions and multiples of Dec and [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} units. For example, after being redefined, one hand is equal to a decimeter or a quarter [z](#z){.tool data-bs-toggle="tooltip" data-bs-title="zem"}.
-
-## Unit conversion tables {.hiddenheading .unnumbered}
 
 ## Length and distance {.hiddenheading #sec-lad}
 
@@ -369,7 +340,7 @@ Dec color labels can convey an impression of a value at a glance👀. Dec sound 
 
 # Next {.unnumbered #next}
 
-Now that you have had a taste👅of Dec, I hope that you are hungry🤤for more! If so, first dive🤿deeper by reading my article on Dec [dates](/dec/date), [times](/dec/time), and [snaps](/dec/snap). My [filter](/quarto/filter) and [include](/quarto/include) articles discuss the [Quarto](/quarto) publishing system and how I customize my Quarto website to display a Dec [snaps](/dec/snap) in the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) and Dec [dates](/dec/date) in the [article list](/list) and [title blocks](https://quarto.org/docs/authoring/title-blocks).
+Now that you have had a taste👅of Dec, I hope that you are hungry🤤for more! If so, dive🤿deeper by reading my article on Dec [dates](/dec/date), [times](/dec/time), and [snaps](/dec/snap). My [filter](/quarto/filter) and [include](/quarto/include) articles discuss the [Quarto](/quarto) publishing system and how I customize my Quarto website to display a Dec [snaps](/dec/snap) in the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) and Dec [dates](/dec/date) in the [article list](/list) and [title blocks](https://quarto.org/docs/authoring/title-blocks).
 
 :::{#firstnav}
 {{< include /asset/_decquanav.qmd >}}

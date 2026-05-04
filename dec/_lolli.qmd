@@ -1,0 +1,23 @@
+```{ojs}
+//| echo: false
+//| label: lollipop
+//| class: musicchart
+// https://observablehq.com/@mcmire/tone-map
+{
+  const points = origs.map((orig, i) => ({
+    origin: orig,
+    x: orig,
+    ratio: Fraction(1, 1),
+    label: labels[i],
+    color: colors[i],
+    freq: hertz[i],
+    alwaysShowLabel: true
+  }));
+  return renderGraph(points, {
+    // axisTextColor: window.darkmode ? "#FFF" : "#000",
+    xAxis: {
+      ticks: origs.map(Math.round)
+    },
+  });
+}
+```

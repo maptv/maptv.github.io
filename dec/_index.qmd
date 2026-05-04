@@ -1820,6 +1820,7 @@ bcHue = (xetHue[1] + xetHue[2]) / 2
 ddsHue = (xetHue[4] + xetHue[5]) / 2
 dseHue = (xetHue[5] + xetHue[6]) / 2
 // https://observablehq.com/@mcmire/tone-map
+axisColor = d3.hsl(0, 0, 0.5)
 GraphableTone = {
   const _assertRequiredKeys = Symbol("assertRequiredKeys");
   class GraphableTone {
@@ -2066,12 +2067,11 @@ synth = new Tone.PolySynth(16, Tone.Synth, {
   }
 }).toMaster()
 origin = Fraction(originFrequency)
-axisColor = d3.color(window.darkmode ? "#FFF" : "#000");
-lollimargin = ({top: 30, right: 10, bottom: 30, left: width < 500 ? 5 : width < 550 ? 6 : width < 600 ? 7 : width < 650 ? 8 : width < 700 ? 9 : 10})
+lollimargin = ({top: 36, right: width < 450 ? 10 : width < 500 ? 11 : width < 550 ? 12 : width < 600 ? 13 : width < 650 ? 14 : width < 700 ? 15 : 16, bottom: 28, left: width < 450 ? 10 : width < 500 ? 11 : width < 550 ? 12 : width < 600 ? 13 : width < 650 ? 14 : width < 700 ? 15 : 16})
 numberOfColors = 10
 rowHeight = 60
 originFrequency = 440
-pointRadius = width < 600 ? 8 : width < 650 ? 9 : width < 700 ? 10 : width < 750 ? 11 : width < 800 ? 12 : width < 850 ? 13 : width < 900 ? 14 : width < 950 ? 15 : 16
+pointRadius = width < 600 ? 10 : width < 650 ? 11 : width < 700 ? 12 : width < 750 ? 13 : width < 800 ? 14 : width < 850 ? 15 : width < 900 ? 16 : width < 950 ? 17 : 18
 transitionDuration = 200
 addStiltsTo = (svg, tones, config) => {
   const mapToX = mapToXFor(tones, config);
@@ -2079,7 +2079,7 @@ addStiltsTo = (svg, tones, config) => {
   const height = calculateGraphHeight(tones);
   svg
     .append("g")
-    .attr("stroke", axisColor)
+    .attr("stroke", config.axisTextColor ?? axisColor)
     .attr("stroke-dasharray", "2, 3")
     .attr("stroke-width", 1)
     .selectAll("line")
@@ -2103,7 +2103,7 @@ addPointsTo = (svg, tones, config) => {
       .attr("cy", t => mapToY(t.label))
       .attr("r", pointRadius)
       .attr("fill", t => t.color ?? (t.isColored === false ? "#ccc" : colors[t.colorIndex]))
-      .attr("stroke", axisColor)
+      .attr("stroke", config.axisTextColor ?? axisColor)
       .attr("stroke-width", 1);
   return circles;
 }
@@ -2130,12 +2130,11 @@ addPointLabelsTo = (svg, tones, config) => {
         })
         .attr("class", "unselectable")
         .attr("font-family", "sans-serif")
-        .attr("font-size", width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px")
-        .attr("font-weight", "bold")
+        .attr("font-size", width < 600 ? "32px" : width < 650 ? "34px" : width < 700 ? "36px" : width < 750 ? "38px" : width < 800 ? "40px" : width < 850 ? "42px" : width < 900 ? "44px" : width < 950 ? "46px" : "48px")
         .attr("text-anchor", "middle")
         .attr("fill", t => t.color ?? (t.isColored === false ? "#ccc" : colors[t.colorIndex]))
-        .attr("stroke", axisColor)
-        .attr("stroke-width", width < 600 ? 1.5 : width < 700 ? 2 : width < 800 ? 2.5 : width < 900 ? 3 : width < 1000 ? 3.5 : 4)
+        .attr("stroke", config.axisTextColor ?? axisColor)
+        .attr("stroke-width", width < 400 ? 1.5 : width < 500 ? 1.75 : width < 600 ? 2 : width < 700 ? 2.25 : width < 800 ? 2.5 : width < 900 ? 2.75 : width < 1000 ? 3 : 3.25)
         .attr("paint-order", "stroke")
         .attr("stroke-linejoin", "round")
         .attr("x", t => mapToX(t.x ?? t.frequency))
@@ -2167,11 +2166,11 @@ addXAxisTo = (svg, tones, config) => {
     axisGroup.selectAll("text")
       .attr("class", "unselectable")
       .attr("font-size", width < 600 ? "16px" : width < 650 ? "18px" : width < 700 ? "20px" : width < 750 ? "22px" : width < 800 ? "24px" : width < 850 ? "26px" : width < 900 ? "28px" : width < 950 ? "30px" : "32px")
-      .attr("fill", axisColor.darker(1));
+      .attr("fill", config.axisTextColor ?? axisColor);
     axisGroup.selectAll("path")
-      .attr("stroke", axisColor);
+      .attr("stroke", config.axisTextColor ?? axisColor);
     axisGroup.selectAll("line")
-      .attr("stroke", axisColor);
+      .attr("stroke", config.axisTextColor ?? axisColor);
   });
   svg.append("text")
     .attr("class", "unselectable")
@@ -2179,7 +2178,7 @@ addXAxisTo = (svg, tones, config) => {
     .attr("y", calculateGraphHeight(tones) + (width < 600 ? 20 : width < 650 ? 22 : width < 700 ? 24 : width < 750 ? 26 : width < 800 ? 28 : width < 850 ? 30 : width < 900 ? 32 : width < 950 ? 34 : 36))
     .attr("text-anchor", "middle")
     .attr("font-size", config.axisTitleFontSize ?? ("font-size", width < 600 ? "20px" : width < 650 ? "22px" : width < 700 ? "24px" : width < 750 ? "26px" : width < 800 ? "28px" : width < 850 ? "30px" : width < 900 ? "32px" : width < 950 ? "34px" : "36px"))
-    .attr("fill", config.axisTextColor ?? axisColor.darker(1))
+    .attr("fill", config.axisTextColor ?? axisColor)
     .text(config.xAxisTitle ?? "Perbeat (inverse centimilliday)");
 }
 addConnectionsTo = (svg, tones, config) => {
@@ -3437,7 +3436,7 @@ figcaption {
 }
 .musicchart {
   margin-top: -25px;
-  margin-left: -5px;
+  margin-left: -18px;
 }
 .musicchart * {
   max-width: 1000px;
