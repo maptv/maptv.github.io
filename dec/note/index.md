@@ -2471,7 +2471,7 @@ article and the <span class="color021">2021</span> article entitled
 [<span class="mono under">`chrono`</span>-Compatible Low-Level Date
 Algorithms](https://howardhinnant.github.io/date_algorithms) in which
 [Howard Hinnant](https://howardhinnant.github.io) describes the
-algorithms that serve as the foundation of Dec dates (Hinnant 2021+185).
+algorithms that serve as the foundation of Dec dates (**hinnant2021?**).
 
 <div class="code-with-filename">
 
@@ -5773,18 +5773,6 @@ figcaption {
   display: none;
 }
 </style>
-
-<div id="refs" class="references csl-bib-body hanging-indent">
-
-<div id="ref-hinnant2021" class="csl-entry">
-
-Hinnant, Howard. 2021+185.
-*<span class="nocase"><code>chrono</code></span>-Compatible Low-Level
-Date Algorithms*. <https://howardhinnant.github.io/date_algorithms>.
-
-</div>
-
-</div>
 
 [1] [Newton,
 Issac](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a).
