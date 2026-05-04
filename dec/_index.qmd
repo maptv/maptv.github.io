@@ -3449,7 +3449,7 @@ figcaption {
   user-select: none;
 }
 code span.er {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 </style>
 ```

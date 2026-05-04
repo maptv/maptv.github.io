@@ -1,16 +1,16 @@
 ---
 title: Dec Measurement System
-image: /asset/colorWheelCompass.svg
 description: >
   Introducing the Dec measurement system,
   which uses turns instead of months, weeks,
   hours, minutes, seconds, and degrees.
+image: /asset/colorWheelCompass.svg
 url: https://maptv.github.io/dec
 path: /dec
 slug: dec
-engine: knitr
 aliases:
   - /d
+engine: knitr
 ---
 
 :::{#firstnav}

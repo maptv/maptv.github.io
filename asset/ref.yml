@@ -3,7 +3,9 @@ references:
   author:
     - family: Hinnant
       given: Howard
-  title: [chrono]{.nocase}-Compatible Low-Level Date Algorithms
+  title: >
+    [<code>chrono</code>]{.nocase}-Compatible
+    Low-Level Date Algorithms
   url: https://howardhinnant.github.io/date_algorithms
   issued:
     literal: 2021+185
