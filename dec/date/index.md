@@ -1,6 +1,6 @@
 # Dec date
 Martin Laptev
-2026+062
+2026+064
 
 - [<span class="toc-section-number">0</span> Day of year (doy)](#doy)
 - [<span class="toc-section-number">1</span> Day of era (doe)](#doe)
@@ -2545,7 +2545,7 @@ data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> dates or
 dividend expanding <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</span> dates into <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="week of year">woy</span> dates.
-On its own, Dec minuend expands dates into span🌈equivalents, but has no
+On its own, Dec minuend expands dates into span equivalents, but has no
 use for dividend expansion, because <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of year">doys</span> display
 deks and <span class="tool" data-bs-toggle="tooltip"
@@ -2602,7 +2602,7 @@ information we need as part of the math-inspired notation of Dec. At its
 heart❤️, Dec is a simple system that uses only years and days for time
 measurement. Thanks to Dec expansion, Dec can work with other units. In
 this way, Dec expansion bridges the gap between the Dec and Gregorian
-calendars🗓️.
+calendars.
 
 # Next
 
@@ -2612,9 +2612,9 @@ examples in my [filter](../../quarto/filter),
 articles, but you may want to start with my [Quarto
 article](../../quarto). To see the full extent of the benefits that Dec
 provides, I recommend that you continue through the [Dec
-section](../../dec) of my site to the [time](../../dec/time)⏳,
-[snap](../../dec/snap)🫰, and [span](../../dec/span)🌈articles. Dec has
-a lot more to offer than just dates!
+section](../../dec) of my site to the \[time\](/dec/time,
+\[snap\](/dec/snap, and [span](../../dec/span)🌈articles. Dec has a lot
+more to offer than just dates!
 
 <div id="datenav">
 
