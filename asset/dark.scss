@@ -71,13 +71,30 @@ svg.mermaid-js  span.nodeLabel {
 svg#lefthand tspan, svg#righthand tspan {
   fill: white;
 }
-
 svg#lefthand path, svg#righthand path {
   stroke: white !important;
 }
 
-img#colorwheel tspan {
+div.musicchart div#lollipop svg > g:has(line) {
+  stroke: white;
+}
+div.musicchart div#lollipop svg path {
+  stroke: white;
+}
+div.musicchart div#lollipop svg > text {
   fill: white;
+}
+div.musicchart div#lollipop svg circle {
+  stroke: white;
+}
+div.musicchart div#lollipop svg > g > text {
+  stroke: white;
+}
+div.musicchart div#lollipop svg g.tick text {
+  fill: white;
+}
+div.musicchart div#lollipop svg line {
+  stroke: white;
 }
 
 // #title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-categories {
