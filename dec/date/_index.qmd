@@ -97,7 +97,7 @@ function month2doty(month = 1) {
 )}
 function doty2dotm(doty = 0) {
     const m = Math.floor((5 * doty + 2) / 153);
-    return doty - Math.floor((153 * m + 2) / 5) + 1;
+    return doty - Math.floor((153 * m + 2) / 5) + 1 - leapscrub[3];
 }
 function set(input, value) {
   input.value = value;
@@ -245,6 +245,7 @@ calYear = !leapInput && dotwInput == "Monday" ? 6 : !leapInput && dotwInput == "
 datesCal = d3.utcDays(new Date(calYear, 0, 0), new Date(calYear, 12, 0));
 leapInput = leapscrub[1]
 turnInput = leapscrub[2]
+nOffInput = leapscrub[3]
 dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
 numbers = Array.from({length: 366}, (_, i) => i)
 set(viewof dotyInput, leapscrub[0])

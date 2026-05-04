@@ -5,7 +5,12 @@ viewof leapscrub = Inputs.form([
   Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
   Inputs.toggle({label: "Leap year", value: false}),
   Inputs.toggle({label: "Vertical layout", value: true}),
+  Inputs.toggle({label: "Offset < 0", value: negtzo}),
 ])
+negtzo = new Date().getTimezoneOffset() > 0
+march1doy = 0 + nOffInput
+december31doy = 305 + nOffInput
+january1doy = 306 + nOffInput
 ```
 
 ```{ojs}
@@ -61,7 +66,7 @@ decPlot = turnInput ? Plot.plot({
       y: (d, i) => Math.floor(i / 10),
       x: (d, i) => i % 10,
       //fx: d => d.getUTCFullYear(),
-      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[d.getUTCMonth()],
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[(new Date(d.getTime() - nOffInput * 86400000)).getUTCMonth()],
       stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "darkorange" : "none",
       strokeWidth: 3,
       inset: 0.5,
@@ -111,7 +116,7 @@ decPlot = turnInput ? Plot.plot({
       x: (d, i) => Math.floor(i / 10),
       y: (d, i) => i % 10,
       //fx: d => d.getUTCFullYear(),
-      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[d.getUTCMonth()],
+      fill: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "selected" : months[(new Date(d.getTime() - nOffInput * 86400000)).getUTCMonth()],
       stroke: d => Math.floor(unix2doty(d.getTime())) === dotyInput ? "darkorange" : "none",
       strokeWidth: 3,
       inset: 0.5,
