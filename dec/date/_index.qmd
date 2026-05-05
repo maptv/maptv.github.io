@@ -87,26 +87,22 @@ transformInput = function(target, {bind: source, transform = identity, involutor
   sourceInputHandler();
   return target;
 }
-function doty2month(doty = 0) {
-    if (nOffInput) {
-        const n = 365 + leapInput
-        doty = (doty + n) % n
-    }
+nDaysInput = 365 + leapInput
+nDaysnOffInput = nDaysInput - nOffInput
+function doty2greg(doty = 0) {
     const m = Math.floor((5 * doty + 2) / 153);
-    return Math.floor(m < 10 ? m + 3 : m - 9);
+    return new Date(calYear, Math.floor(m < 10 ? m + 3 : m - 9) - 1, doty - Math.floor((153 * m + 2) / 5) + 1);
+}
+function doty2month(doty = 1) {
+    return doty2greg((doty + nDaysnOffInput) % nDaysInput).getUTCMonth() + 1
+}
+function doty2dotm(doty = 1) {
+    return doty2greg((doty + nDaysnOffInput) % nDaysInput).getUTCDate()
 }
 function month2doty(month = 1) {
     return Math.floor(
         (153 * (month > 2 ? month - 3 : month + 9) + 2) / 5 + nOffInput
-)}
-function doty2dotm(doty = 0) {
-    if (nOffInput) {
-        const n = 365 + leapInput
-        doty = (doty + n) % n
-    }
-    const m = Math.floor((5 * doty + 2) / 153);
-    return doty - Math.floor((153 * m + 2) / 5);
-}
+) % nDaysInput}
 function set(input, value) {
   input.value = value;
   input.dispatchEvent(new Event("input", {bubbles: true}));
@@ -289,7 +285,7 @@ form.oi-3a86ea {
   padding-right: 9px;
 }
 form.oi-3a86ea-toggle > label {
-  width: 75px;
+  width: 78px;
 }
 form.oi-3a86ea-toggle > label[for="oi-3a86ea-2"] {
   width: 110px;
