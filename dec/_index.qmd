@@ -3229,13 +3229,19 @@ div.coloropp canvas {
   height: 240px !important;
   overflow: visible;
 }
-div#hueslider label, div#satslider label, div#litslider label, div#loninput label, div#latinput label, div#offinput label, div#kginput label, div#zinput label, div#wavinput label, div#iobinput label, div#beatinput label {
-  width: 110px;
+div.slider {
+  max-width: 100%;
 }
-div#hueslider input[type="number"], div#satslider input[type="number"], div#litslider input[type="number"], div#loninput input[type="number"], div#latinput input[type="number"], div#offinput input[type="number"], div#kginput input[type="number"], div#zinput input[type="number"], #wavinput input[type="number"], #iobinput input[type="number"], div#beatinput input[type="number"] {
-  width: 100px;
+div.slider label {
+  text-align: right;
 }
-div#hueslider input[type="range"], div#satslider input[type="range"], div#litslider input[type="range"], div#loninput input[type="range"], div#latinput input[type="range"], div#offinput input[type="range"], div#kginput input[type="range"], div#zinput input[type="range"], #wavinput input[type="range"], #iobinput input[type="range"] , #beatinput input[type="range"] {
+div.slider label, div.colorslider label {
+  max-width: 110px;
+}
+div.slider input[type="number"], div.colorslider input[type="number"] {
+  max-width: 100px;
+}
+div.slider input[type="range"], div.colorslider input[type="range"] {
   max-width: 225px;
   min-width: 125px;
 }
@@ -3348,9 +3354,6 @@ div#iobpiano > div > div > svg {
   max-width: 100%;
   max-height: 100%;
   overflow: visible;
-}
-.freqcomponent {
-  max-width: 100%;
 }
 #iobpiano {
   overflow: clip;

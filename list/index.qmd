@@ -35,7 +35,7 @@ comments: false
 ---
 
 #### Attributions {.appendix}
-All artwork by [@allison_horst](https://twitter.com/allison_horst) except for the images related to the following articles:
+All artwork by [allison_horst](https://twitter.com/allison_horst) except for the images related to the following articles:
 
 - [Dec](../dec/index.qmd): [Observable](https://observablehq.com) [color🎨wheel compass🧭](https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors)
 - [Dec date](../dec/date/index.qmd): [Observable](https://observablehq.com) [calendar🗓️plot](https://observablehq.com/@observablehq/plot-calendar)
