@@ -1,6 +1,6 @@
 # Dec date
 Martin Laptev
-2026+065
+2026+067
 
 - [<span class="toc-section-number">0</span> Day of year (doy)](#doy)
 - [<span class="toc-section-number">1</span> Day of era (doe)](#doe)
@@ -67,7 +67,7 @@ data-bs-title="The last day of a Dec leap year">Day 365</span>. To add
 or remove <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="The last day of a Dec leap year">Day 365</span>, use the
 [toggle](https://observablehq.com/@observablehq/input-toggle)✅input
-labelled🏷️“Leap year” to the right of the Play ️button.
+labelled🏷️“Leap year” to the right of the Play button.
 
 The “Leap year” toggle input shifts 306 dates, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="March 1">Day ${march1doy}</span>
@@ -75,14 +75,21 @@ to <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="December 31">Day ${december31doy}</span>, in the
 [Gregorian
 calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
-by one day, but does not change the order of any Dec dates, because
+by one day, but does not change the order of any Dec dates. When
+enabled, the “Leap year” and “Offset \< 0” toggle inputs subtract one
+day from the negative “Day of year” range input and the Gregorian
+calendar date, respectively, derived from the positive “Day of year”
+range input.
+
+, because <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="The last day of a Dec leap year">Day 365</span> is always
+the last day of Dec leap years and is always followed by
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="The last day of a Dec leap year">Day 365</span> is the
-last day of Dec leap years and is always followed by <span class="tool"
-data-bs-toggle="tooltip"
 data-bs-title="The first day of any Dec year">Day 0</span> of the
-subsequent Dec year. The “Vertical layout” toggle input rotates the
-plots by a quarter turn, interchanging the x- and y-axes.
+subsequent Dec year
+
+The “Vertical layout” toggle input rotates the plots by a quarter turn,
+interchanging the x- and y-axes.
 
 The axis labels of the plots imply that a dek and a “day of dek”
 (<span class="tool" data-bs-toggle="tooltip"
@@ -105,9 +112,13 @@ varies.
 viewof leapscrub = Inputs.form([
   Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
   Inputs.toggle({label: "Leap year", value: false}),
-  Inputs.toggle({label: "Vertical layout", value: true}),
   Inputs.toggle({label: "Offset < 0", value: negtzo}),
-])
+  Inputs.toggle({label: "Vertical layout", value: true}),
+],
+  {
+    template: (inputs) => htl.html`<div style="display: flex; gap: 3em">${inputs}</div>`
+  }
+)
 negtzo = new Date().getTimezoneOffset() > 0
 march1doy = 0 + nOffInput
 december31doy = 305 + nOffInput
@@ -373,38 +384,52 @@ data-bs-title="January 1">Day ${january1doy}</span>, the first day of
 the Gregorian calendar year. Changing the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="January 1">Day
 ${january1doy}</span> <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> shifts every date in the
-Gregorian calendar by one to six days depending on the number of days
-that the first week of the Gregorian calendar year contributes to the
-Gregorian calendar year. In contrast, weeks have no effect on
-Decalendar.
+data-bs-title="day of week">dow</span> has no effect on Decalendar but
+shifts every date in the Gregorian calendar by one to six days depending
+on the number of days that the first week of the Gregorian calendar year
+contributes to the Gregorian calendar year.
 
-Although weeks determine the shape of the Gregorian calendar plot, each
-of its [cell](https://observablehq.com/plot/marks/cell) values is a “day
-of month” (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</span>). To uniquely identify🪪a
-specific day in a year, a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</span> must be paired with the month to
-which it belongs. Both plots use the same three-letter abbreviations and
-[color🎨scheme](https://observablehq.com/@d3/color-schemes) to label
-months, but are shifted in relation to each other by two months.
+Although weeks determine the shape of the Gregorian calendar plot, its
+[cell](https://observablehq.com/plot/marks/cell) values are “days of
+month” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">dom</span>). In contrast, each cell value
+in the Decalendar plot is the result of combining its corresponding dek
+and <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of dek">dod</span> into a single integer called a
+“day of year” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span>). We can use a <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>, instead
+of a month and a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span>, to uniquely identify🪪a
+specific day in any given year.
 
 # Day of year (doy)
 
-A dek and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of dek">dod</span> can be combined into a single
-integer called a “day of year” (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>). Every
-cell value in the Decalendar plot is a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>. The
+If you select a month and a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span> using the “Month” and “Day of
+month” range inputs above, the “Day of year” range inputs will show the
+equivalent <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span> as a positive and a negative
+integer. The You can use this approach to find the <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> of
+meaningful dates such as birthdays🎂and anniversaries🥂! Conversion
+between Dec and Gregorian calendar dates depends on the “0ffset \< 0”
+toggle input.
+
+You can use the range inputs above to explore the relationship between
 <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span> and different combinations of
+months of The <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> chosen by the range inputs to be
-highlighted with a red background in the plots is ${dotyInput}. You can
-use the range inputs to convert a month and a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of month">dom</span> into a
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span>. Try converting a special date
-such as a birthday🎂or anniversary🥂!
+highlighted with a red background in the plots is ${dotyInput}.
+
+Both plots use the same three-letter abbreviations and
+[color🎨scheme](https://observablehq.com/@d3/color-schemes) to label
+months. Instead of months and <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="days of month">dom</span>,
+Decalendar uses deks and <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of dek">dod</span>. which can be combined into a
+single integer called a
 
 There are two range inputs labeled as “day of year” because every
 <span class="tool" data-bs-toggle="tooltip"
@@ -424,6 +449,46 @@ data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> outside
 these
 [bounds](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20upper%20bound%20or%20majorant%5B1%5D%20of%20a%20subset%20S%20of%20some%20preordered%20set%20(K%2C%20%E2%89%A4)%20is%20an%20element%20of%20K%20that%20is%20greater%20than%20or%20equal%20to%20every%20element%20of%20S.%5B2%5D%5B3%5D%20Dually%2C%20a%20lower%20bound%20or%20minorant%20of%20S%20is%20defined%20to%20be%20an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S)
 represents a day in a previous or subsequent year.
+
+k
+
+The month-based color labels are shifted in relation to each other by
+58, 59, or 60 days
+
+The shift is 59 days in a common year and 60 days in a leap year, but
+Enabling the removes a day from this two-month shift, which is reflected
+in the month-based color labels in the Decalendar plot and the cell that
+is highlighted in red in the Gregorian calendar plot. This toggle input
+is enabled by default if the [Coordinated Universal
+Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
+(<a href="#utc" id="coordinateduniversaltime" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">utc</a>) “time zone
+[offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)”
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</span>) provided by your web
+browser is less than zero (\< 0). Dec only uses positive
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offset">tzo</span>, but can does not allow
+enabled, it . This one-day shift is visible in .
+
+Each of the ten Dec time zones has a positive <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time zone offset">tzo</span>.
+Dec handles negative
+<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">utc</a> <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="time zone offsets">tzo</span> by
+adding or subtracting a day when
+
+Dec does not allow , Even it does not permit “time zone offsets”
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offsets">tzo</span>), to be negative (\< 0),
+Dec can nevertheless show the correct <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>,
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span>, and month for any
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="time zone offsets">tzo</span>, positive or negative.
 
 The current [Coordinated Universal
 Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
@@ -1298,10 +1363,15 @@ data-bs-title="The last day of a Dec leap year">365</span>, and
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="March 1">0</span> can be work or rest days in the
 Gregorian calendar️, these days are always rest days if we follow
-Schedules <span class="color3">3</span> or
-<span class="color3">34</span>. Therefore, Schedules
-<span class="color3">3</span> and <span class="tool"
+Schedules <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="L in base32 is 14 in base10 and 01110 in base2">L</span>
+or <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="L in base32 is 14 in base10 and 01110 in base2">L</span><span class="tool"
 data-bs-toggle="tooltip"
+data-bs-title="Ł in base32 is 15 in base10 and 01111 in base2">Ł</span>.
+Therefore, Schedules <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="L in base32 is 14 in base10 and 01110 in base2">L</span>
+and <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="L in base32 is 14 in base10 and 01110 in base2">L</span><span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="Ł in base32 is 15 in base10 and 01111 in base2">Ł</span>
