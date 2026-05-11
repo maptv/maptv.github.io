@@ -1,6 +1,6 @@
 # Dec date
 Martin Laptev
-2026+067
+2026+071
 
 - [<span class="toc-section-number">0</span> Day of year (doy)](#doy)
 - [<span class="toc-section-number">1</span> Day of era (doe)](#doe)
@@ -63,46 +63,64 @@ data-bs-title="The first day of any Dec year">Day 0</span>, the Dec year
 ends with either <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="The last day of a Dec common year">Day 364</span> or
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="The last day of a Dec leap year">Day 365</span>. To add
-or remove <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="The last day of a Dec leap year">Day 365</span>. To
+insert or remove <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="The last day of a Dec leap year">Day 365</span>, use the
-[toggle](https://observablehq.com/@observablehq/input-toggle)✅input
-labelled🏷️“Leap year” to the right of the Play button.
+[radio](https://observablehq.com/@observablehq/input-radio)📻input
+labelled🏷️“Year length” to the right of the Play button.
 
-The “Leap year” toggle input shifts 306 dates, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="March 1">Day ${march1doy}</span>
-to <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="December 31">Day ${december31doy}</span>, in the
-[Gregorian
+The insertion of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="The last day of a Dec leap year">Day 365</span> shifts
+306 dates, <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="March 1">Day ${march1doy}</span> to <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="December 31">Day
+${december31doy}</span>, in the [Gregorian
 calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
-by one day, but does not change the order of any Dec dates. When
-enabled, the “Leap year” and “Offset \< 0” toggle inputs subtract one
-day from the negative “Day of year” range input and the Gregorian
-calendar date, respectively, derived from the positive “Day of year”
-range input.
-
-, because <span class="tool" data-bs-toggle="tooltip"
+by one day, but does not change the order of any Dec dates, because
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="The last day of a Dec leap year">Day 365</span> is always
 the last day of Dec leap years and is always followed by
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="The first day of any Dec year">Day 0</span> of the
-subsequent Dec year
+subsequent Dec year. The “Year type” radio input also changes the value
+of the negative “Day of year” range input by one day.
 
-The “Vertical layout” toggle input rotates the plots by a quarter turn,
-interchanging the x- and y-axes.
+Similarly, the “Time zone offset” radio input shifts the Gregorian
+calendar date by one day, which is reflected in the
+[cell](https://observablehq.com/plot/marks/cell) values of Gregorian
+calendar plot, the range inputs labelled “Month” and “Day of month”, and
+cell colors🎨that are based on months. To switch between month- and
+day-based cell [color
+schemes](https://observablehq.com/@d3/color-schemes) in both plots, use
+the “Color scheme” radio input.
 
-The axis labels of the plots imply that a dek and a “day of dek”
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of dek">dod</span>) are analogous to a week and a
-“day of week” (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span>). Indeed, deks are groups of ten
-days that serve as the Dec analog of both weeks and months. With the
-exception of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="The last day of a Dec leap year">Day 365</span> in leap
-years, every year has the same deks and months, but not the same weeks,
-because the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span> of the first day of the year
-varies.
+From the perspective of Dec, month-based color labels are only useful if
+we want to compare the Dec and Gregorian calendars. In contrast,
+day-based color labels can help us sort days into groups of 100 days
+called hectodays (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hectodays">hekts</span>) and groups of 10 days named
+decadays (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decadays">deks</span>). Dec refers to <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="hectodays">hekts</span> as
+seasons
+(<a href="#hekt" id="hectoday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of 100 days">h</a>) and uses <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="decadays">deks</span>
+(<a href="#dek" id="decaday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of 10 days">x</a>) instead of both months and
+weeks.
+
+The axis labels of the calendar plots show that
+<a href="#dek" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of 10 days">x</a> are analogous to weeks and that
+a “day of dek” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of dek">dod</span>) is the Dec analog of a “day of
+week” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span>). You can use the “Plot layout”
+radio input to rotate the plots by a quarter turn (25 <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="hundredth of a turn">centiturns</span>), interchanging
+the x- and y-axes.
 
 <div id="calplots">
 
@@ -113,12 +131,8 @@ viewof leapscrub = Inputs.form([
   Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
   Inputs.toggle({label: "Leap year", value: false}),
   Inputs.toggle({label: "Offset < 0", value: negtzo}),
-  Inputs.toggle({label: "Vertical layout", value: true}),
-],
-  {
-    template: (inputs) => htl.html`<div style="display: flex; gap: 3em">${inputs}</div>`
-  }
-)
+  Inputs.toggle({label: "Vertical layout", value: width > 500 ? true : false}),
+])
 negtzo = new Date().getTimezoneOffset() > 0
 march1doy = 0 + nOffInput
 december31doy = 305 + nOffInput
@@ -376,8 +390,13 @@ viewof dotwInput = Inputs.radio([
 
 </div>
 
-The [radio](https://observablehq.com/@observablehq/input-radio)🔘input
-beneath the plots selects the <span class="tool"
+With the exception of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="The last day of a Dec leap year">Day 365</span> in leap
+years, every year has the same deks and months, but not the same weeks,
+because the <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span> of the first day of the year
+varies. The [radio](https://observablehq.com/@observablehq/input-radio)
+input beneath the plots selects the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> for
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="January 1">Day ${january1doy}</span>, the first day of
