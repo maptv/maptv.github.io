@@ -3178,6 +3178,16 @@ html`
   font-size: 18px;
   padding: 0px 5px 0px 5px;
 }
+@media (max-width: 425px) {
+  #maptable table th {
+    font-size: 17px;
+  }
+}
+@media (max-width: 405px) {
+  #maptable table th {
+    font-size: 16px;
+  }
+}
 div#projselect {
   max-width: 250px;
 }
@@ -3229,25 +3239,32 @@ div.coloropp canvas {
   height: 240px !important;
   overflow: visible;
 }
-div.slider {
+div.slider, div.colorslider, div#colorbar {
+  max-width: 100%;
+  overflow-x: visible;
+}
+div#colorbar canvas {
   max-width: 100%;
 }
-div.slider label {
-  text-align: right;
+div.slider form {
+  width: 100%;
+  max-width: 500px;
+  overflow-x: visible;
+}
+div#fig-colorwheelcompass {
+  overflow-x: visible;
 }
 div.slider label, div.colorslider label {
-  max-width: 110px;
+  width: 100px;
 }
 div.slider input[type="number"], div.colorslider input[type="number"] {
-  max-width: 100px;
+  width: 110px;
+  margin-left: 2px;
 }
-div.slider input[type="range"], div.colorslider input[type="range"] {
-  max-width: 225px;
-  min-width: 125px;
-}
-.colorslider {
-  display: flex;
-  justify-content: center;
+@media (min-width: 480px) {
+  .colorslider {
+    place-items: center;
+  }
 }
 div#fig-distmap {
   display: flex;

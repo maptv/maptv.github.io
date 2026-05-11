@@ -12,7 +12,6 @@
     - [nc](#nanotaur){#nc}: nanotaur, *n*𝜏*r*, a thousandth of a taur, 100 millizem, 1 decizem, 4 centimeters
     - [nc&sup3;](#cubicnanotaur){#nc3}: cubic nanotaur, *n*𝜏*r*&sup3;, 1 cubic decizem
 - [d](#day){#d}: day, a tenth of a decaday, a seventh of week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays, 1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse of a quotidie
-    - [dek](#decaday){#dek}: decaday, a group of ten days, 2 pentadays
     - [pent](#pentaday){#pent}: pentaday, a group of five days, half a decaday
     - [dod](#dayofdek){#dod}: day of decaday
     - [dop](#dayofpent){#dop}: day of pentaday
@@ -34,12 +33,13 @@
 - [g](#gutta){#g}: drop (gutta in Latin) or grain (granum in Latin), 64 microliters or 64 milligrams
     - [kg](#kilograin){#kg}: kilograin or kilodrop, 64 grams or 64 milliliters
     - [Mg](#megagrain){#Mg}: megagrain or megadrop, 64 kilograms or 64 liters
-- [h](#hand){#h}: hand, 0.25 zem, 1 decimeter
+- [h](#hectoday){#h}: a Dec season, represented by ***h***, because Dec seasons, except for Season 3, are 1 ***h***ectoday, 10 decadays, or one ***h***undred days long
 - [hex](#hexadecimal){#hex}: hexadecimal, base 16
 - [hsl](#huesaturationlightness){#hsl}: hue saturation lightness
 - [hsv](#huesaturationvalue){#hsv}: hue saturation value
 - [i](#inch){#i}: inch, a sixteenth of a zem, 25 millimeter
 - [k](#keg){#k}: keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
+- [kmph](#kilometersperhour){#kmph}: kilometers per hour, thousands of meters per hour, 1 kmph = 0.6 mv
 - [L](#liter){#L}: liter, 15625 drops, a cubic decimeter
     - [mL](#milliliter){#mL}: milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops
     - [µL](#microliter){#uL}: microliter, a cubic millimeter, a millionth of a liter, 0.015625 drops
@@ -47,8 +47,9 @@
     - [dm](#decimeridian){#dm}: decimeridian, a tenth of a meridian
     - [mm](#millimeridian){#mm}: millimeridian, a thousandth of a meridian
 - [m&sup2;](#squaremeter){#m2}: square meter, 6.25 square zem
-    - [km&sup2;](#squarekilometer){#km2}: square kilometer, 6.25 square kilozem
+    - [cm&sup2;](#squarecentimeter){#cm2}: square centimeter, 6.25 square centizem
     - [dm&sup2;](#squaredecimeter){#dm2}: square decimeter, 6.25 square decizem
+    - [km&sup2;](#squarekilometer){#km2}: square kilometer, 6.25 square kilozem
     - [cm&sup3;](#cubiccentimeter){#cm3}: cubic centimeter, 1 millilter, a thousandth of a liter, 15.625 drops
 - [λ](#parallel){#lambda}: parallel, a full circle around the Earth moving West or East; the English alphabet equivalent of λ is the letter "l", which occurs three times in the word "parallel" and represents a ***l***ine that crosses every possible ***l***ongitude at the same ***l***atitude
     - [dλ](#deciparallel){#dlambda}: deciparallel, a tenth of a parallel
@@ -84,7 +85,8 @@
     - [kv](#kiloomegar){#kv}: kiloomegar, kωr, 1.[6]{.vinculum} gigameters per hour, 0.4[629]{.vinculum} megameters per second, approximately 0.1544% of the speed of light
     - [mv](#milliomegar){#mv}: milliomegar, mωr, 1.041[6]{.vinculum} miles per hour, 1.[6]{.vinculum} kilometers per hour, 0.4[629]{.vinculum} meters per second, approximately 0.136% the speed of sound
 - [w](#wineglass){#w}: wineglass, 64 milliters, 2 ounces, cubic decizem, 1000 drops
-- [x](#hexamilliare){#x}: hexamilliare, square zem, z&sup2;, 16 square decimeters, 1.[7]{.vinculum} square feet, 256 square inches
+- [x](#decaday){#x}: decaday, dek, a group of ten days represented by x like the Roman numeral X, xún (旬) in Mandarin Chinese, 2 pentadays
+    - [dek](#decaday){#dek}: 
     - [Mx](#megahexamilliare){#Mx}: megahexamilliare, a million square zem, square kilozem, kz&sup2;, hexakilare, 16 hectares, 1600 ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
 - [y](#year){#y}: year
     - [my](#milliyear){#my}: milliyear, a thousandth of a year
