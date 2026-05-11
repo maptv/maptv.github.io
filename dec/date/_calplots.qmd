@@ -5,12 +5,8 @@ viewof leapscrub = Inputs.form([
   Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
   Inputs.toggle({label: "Leap year", value: false}),
   Inputs.toggle({label: "Offset < 0", value: negtzo}),
-  Inputs.toggle({label: "Vertical layout", value: true}),
-],
-  {
-    template: (inputs) => htl.html`<div style="display: flex; gap: 3em">${inputs}</div>`
-  }
-)
+  Inputs.toggle({label: "Vertical layout", value: width > 500 ? true : false}),
+])
 negtzo = new Date().getTimezoneOffset() > 0
 march1doy = 0 + nOffInput
 december31doy = 305 + nOffInput
