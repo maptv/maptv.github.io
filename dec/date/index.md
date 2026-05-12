@@ -1,6 +1,6 @@
 # Dec date
 Martin Laptev
-2026+071
+2026+072
 
 - [<span class="toc-section-number">0</span> Day of year (doy)](#doy)
 - [<span class="toc-section-number">1</span> Day of era (doe)](#doe)
@@ -105,22 +105,26 @@ data-bs-toggle="tooltip" data-bs-title="hectodays">hekts</span> as
 seasons
 (<a href="#hekt" id="hectoday" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of 100 days">h</a>) and uses <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="decadays">deks</span>
-(<a href="#dek" id="decaday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of 10 days">x</a>) instead of both months and
-weeks.
+data-bs-toggle="tooltip" data-bs-title="decadays">deks</span> instead of
+both months and weeks.
 
-The axis labels of the calendar plots show that
+The “Plot layout” radio input rotates the calendar plots by a quarter
+turn, interchanging the x- and y-axes. The ${turnInput ? “y” : “x”}-axis
+labels demonstrate that
 <a href="#dek" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of 10 days">x</a> are analogous to weeks and that
-a “day of dek” (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of dek">dod</span>) is the Dec analog of a “day of
-week” (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</span>). You can use the “Plot layout”
-radio input to rotate the plots by a quarter turn (25 <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="hundredth of a turn">centiturns</span>), interchanging
-the x- and y-axes.
+data-bs-title="groups of 10 days">deks</a> are analogous to weeks and
+the ${turnInput ? “x” : “y”}-axis labels show that “days of dek”
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of dek">dod</span>) are “days of week”
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of week">dow</span>) analogs. If we
+[concatenate](https://en.wikipedia.org/wiki/Concatenation#cite_note-4:~:text=the%20operation%20of%20joining%20character%20strings%20end%2Dto%2Dend)
+a <a href="#dek" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of 10 days">dek</a> ${turnInput ? “y” : “x”}-axis
+label and a <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of dek">dod</span> ${turnInput ? “x” : “y”}-axis
+label, we get a “day of year” (doy) cell value: ${dotyInputDek} × 10 +
+${dotyInputDod} = ${dotyInput}.
 
 <div id="calplots">
 
@@ -3043,6 +3047,8 @@ nOffInput = leapscrub[3]
 dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
 numbers = Array.from({length: 366}, (_, i) => i)
 set(viewof dotyInput, leapscrub[0])
+dotyInputDek = Math.floor(dotyInput / 10)
+dotyInputDod = dotyInput % 10
 ```
 
 <style>
