@@ -3,7 +3,7 @@
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
 flowchart LR
    A[Dec]-->B[date]-->C[time]-->D[snap]-->E[span]
-   Z[  ]:::empty~~~F[Quarto]-->G[filter]-->H[include]-->I[script]
+   Z[  ]:::empty~~~F[Quarto]-->G[filter]-->H[include]
    classDef empty width:0px;
    click A "/dec"
    click B "/dec/date"
@@ -13,6 +13,5 @@ flowchart LR
    click F "/quarto"
    click G "/quarto/filter"
    click H "/quarto/include"
-   click I "/quarto/script"
 ```
 
