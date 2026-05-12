@@ -253,6 +253,8 @@ nOffInput = leapscrub[3]
 dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
 numbers = Array.from({length: 366}, (_, i) => i)
 set(viewof dotyInput, leapscrub[0])
+dotyInputDek = Math.floor(dotyInput / 10)
+dotyInputDod = dotyInput % 10
 ```
 
 ```{=html}
