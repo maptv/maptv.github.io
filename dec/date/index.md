@@ -394,13 +394,24 @@ viewof dotwInput = Inputs.radio([
 
 </div>
 
-With the exception of <span class="tool" data-bs-toggle="tooltip"
+Although weeks determine the shape of the Gregorian calendar plot, its
+[cell](https://observablehq.com/plot/marks/cell) values are “days of
+month” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">dom</span>). We can use a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span>, instead of a month and a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span>, to uniquely identify🪪a
+specific day in any given year. With the exception of <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="The last day of a Dec leap year">Day 365</span> in leap
 years, every year has the same deks and months, but not the same weeks,
 because the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</span> of the first day of the year
-varies. The [radio](https://observablehq.com/@observablehq/input-radio)
-input beneath the plots selects the <span class="tool"
+varies.
+
+The [radio](https://observablehq.com/@observablehq/input-radio) input
+beneath the plots selects the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> for
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="January 1">Day ${january1doy}</span>, the first day of
@@ -412,20 +423,6 @@ shifts every date in the Gregorian calendar by one to six days depending
 on the number of days that the first week of the Gregorian calendar year
 contributes to the Gregorian calendar year.
 
-Although weeks determine the shape of the Gregorian calendar plot, its
-[cell](https://observablehq.com/plot/marks/cell) values are “days of
-month” (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</span>). In contrast, each cell value
-in the Decalendar plot is the result of combining its corresponding dek
-and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of dek">dod</span> into a single integer called a
-“day of year” (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span>). We can use a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>, instead
-of a month and a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</span>, to uniquely identify🪪a
-specific day in any given year.
-
 # Day of year (doy)
 
 If you select a month and a <span class="tool" data-bs-toggle="tooltip"
@@ -435,7 +432,7 @@ equivalent <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> as a positive and a negative
 integer. The You can use this approach to find the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> of
-meaningful dates such as birthdays🎂and anniversaries🥂! Conversion
+birthdays🎂, anniversaries🥂, and other meaningful dates! Conversion
 between Dec and Gregorian calendar dates depends on the “0ffset \< 0”
 toggle input.
 
@@ -2763,7 +2760,7 @@ more to offer than just dates!
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:9.64in;height:2.31in" />
+style="width:9.48in;height:2.31in" />
 
 </div>
 
