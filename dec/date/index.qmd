@@ -1,37 +1,18 @@
 ---
-title: Dec date
-author:
-  - name: Martin Laptev
-    url: https://maptv.github.io
-image: /asset/cal16.svg
-draft: true
+title: Decalendar
 description: >
-  Introducing the Dec calendar (Decalendar), which displays dates in years and days using math notation without the need for months or weeks.
-bibliography: ../../asset/ref.yml
+  Introducing Decalendar, a solar calendar
+  which measures time in years and days
+  without the need for months or weeks.
+image: /asset/cal16.svg
 url: https://maptv.github.io/dec/date
+path: /dec/date
+slug: date
 aliases:
   - /date
   - /dd
-license: CC BY-SA
-toc: true
-toc-depth: 5
-number-sections: true
-number-offset: -1
-number-depth: 1
-format:
-  html:
-    grid:
-      body-width: 900px
-    shift-heading-level-by: 3
-    include-after-body:
-      - ../../asset/style.html
-      - ../../asset/stamp.html
-      - ../../asset/tooltip.html
-      - ../../asset/footnote.html
-      - ../../asset/crossref.html
-  commonmark: default
-filters:
-  - ../../asset/date.lua
+engine: knitr
+draft: true
 ---
 
 :::{#datenav}
@@ -50,53 +31,23 @@ The insertion of [Day 365]{.tool data-bs-toggle="tooltip" data-bs-title="The las
 
 Similarly, the “Time zone offset” radio input shifts the Gregorian calendar date by one day, which is reflected in the [cell](https://observablehq.com/plot/marks/cell) values of Gregorian calendar plot, the range inputs labelled “Month” and “Day of month”, and cell colors🎨that are based on months. To switch between month- and day-based cell [color schemes](https://observablehq.com/@d3/color-schemes) in both plots, use the "Color scheme" radio input.
 
-From the perspective of Dec, month-based color labels are only useful if we want to compare the Dec and Gregorian calendars. In contrast, day-based color labels can help us sort days into groups of 100 days called hectodays ([hekts]{.tool data-bs-toggle="tooltip" data-bs-title="hectodays"}) and groups of 10 days named decadays ([deks]{.tool data-bs-toggle="tooltip" data-bs-title="decadays"}). Dec refers to [hekts]{.tool data-bs-toggle="tooltip" data-bs-title="hectodays"} as seasons ([h](#hekt){#hectoday .tool data-bs-toggle="tooltip" data-bs-title="groups of 100 days"}) and uses [deks]{.tool data-bs-toggle="tooltip" data-bs-title="decadays"} instead of both months and weeks.
+From the perspective of Dec, month-based color labels are only useful if we want to compare the Dec and Gregorian calendars. In contrast, day-based color labels can help us sort days into groups of 100 called hectodays ([hekts]{.tool data-bs-toggle="tooltip" data-bs-title="hectodays"}) and groups of 10 named decadays ([deks]{.tool data-bs-toggle="tooltip" data-bs-title="decadays"}). Dec measures [meterological seasons](https://en.wikipedia.org/wiki/Season#Meteorological:~:text=reckoned%20by%20temperature) in [hekts]{.tool data-bs-toggle="tooltip" data-bs-title="hectodays"} and uses [deks]{.tool data-bs-toggle="tooltip" data-bs-title="decadays"} instead of both months and weeks.
 
-The "Plot layout" radio input rotates the calendar plots by a quarter turn, interchanging the x- and y-axes. The \${turnInput ? "y" : "x"}-axis labels demonstrate that [deks](#dek){.tool data-bs-toggle="tooltip" data-bs-title="groups of 10 days"} are analogous to weeks and the \${turnInput ? "x" : "y"}-axis labels show that "days of dek" ([dod]{.tool data-bs-toggle="tooltip" data-bs-title="days of dek"}) are "days of week" ([dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"}) analogs. If we [concatenate](https://en.wikipedia.org/wiki/Concatenation#cite_note-4:~:text=the%20operation%20of%20joining%20character%20strings%20end%2Dto%2Dend) a [dek](#dek){.tool data-bs-toggle="tooltip" data-bs-title="groups of 10 days"} \${turnInput ? "y" : "x"}-axis label and a [dod]{.tool data-bs-toggle="tooltip" data-bs-title="days of dek"} \${turnInput ? "x" : "y"}-axis label, we get a "day of year" (doy) cell value: \${dotyInputDek} &times; 10 + \${dotyInputDod} = ${dotyInput}.
+The "Plot layout" radio input rotates the calendar plots by a quarter turn, interchanging the x- and y-axes. The \${turnInput ? "y" : "x"}-axis labels demonstrate that [deks](#dek){.tool data-bs-toggle="tooltip" data-bs-title="groups of 10 days"} are analogous to weeks and the \${turnInput ? "x" : "y"}-axis labels show that "days of dek" ([dod]{.tool data-bs-toggle="tooltip" data-bs-title="days of dek"}) are "days of week" ([dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"}) analogs. If we [concatenate](https://en.wikipedia.org/wiki/Concatenation#cite_note-4:~:text=the%20operation%20of%20joining%20character%20strings%20end%2Dto%2Dend) a [dek](#dek){.tool data-bs-toggle="tooltip" data-bs-title="groups of 10 days"} \${turnInput ? "y" : "x"}-axis label and a [dod]{.tool data-bs-toggle="tooltip" data-bs-title="days of dek"} \${turnInput ? "x" : "y"}-axis label, we get a "day of year" ([doy]{#dayofyear .tool data-bs-toggle="tooltip" data-bs-title="day of year"}) cell value: \${dotyInputDek} &times; 10 + \${dotyInputDod} = ${dotyInput}.
+
+There are two range inputs labelled "Day of year" because every [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} can be expressed as either a positive or a negative integer. The former is the number of days that have passed in the year, the [absolute value](https://en.wikipedia.org/wiki/Absolute_value#:~:text=non%2Dnegative%29-,magnitude%20of,measured%20without%20regard%20to%20its%20sign,-.%20Namely%2C) of the latter is the number of days left in the year, and the [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference) between them is the total number of days in the full year: 74 -- -291 = 365. 
+
+To predict when a pregnant🤰woman will give birth to a baby👩‍🍼, we could add 285 to the positive or negative [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} of the first day of her most recent [menstruation](https://en.wikipedia.org/wiki/Menstruation#:~:text=the%20regular%20discharge%20of%20blood%20and%20mucosal%20tissue%20from%20the%20inner%20lining%20of%20the%20uterus%20through%20the%20vagina). We should use the positive [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} if it is less than 80 and the negative [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} otherwise. In the latter case, we can interpret -1 as Day 365 and any other result as a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} in the subsequent year: 79  + 285 = 364.
 
 :::{#calplots}
 {{< include /dec/date/_calplots.qmd >}}
 :::
 
-Although weeks determine the shape of the Gregorian calendar plot, its [cell](https://observablehq.com/plot/marks/cell) values are "days of month" ([dom]{.tool data-bs-toggle="tooltip" data-bs-title="days of month"}). We can use a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}, instead of a month and a [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, to uniquely identify🪪a specific day in any given year. With the exception of [Day 365]{.tool data-bs-toggle="tooltip" data-bs-title="The last day of a Dec leap year"} in leap years, every year has the same deks and months, but not the same weeks, because the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of the first day of the year varies.
+Although weeks determine the shape of the Gregorian calendar plot, its cell values are "days of month" ([dom]{.tool data-bs-toggle="tooltip" data-bs-title="days of month"}). We can use a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}, instead of a month and a [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, to uniquely identify🪪a specific day in any given year. With the exception of [Day 365]{.tool data-bs-toggle="tooltip" data-bs-title="The last day of a Dec leap year"} in leap years, every year has the same deks and months, but not the same weeks, because the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of the first day of the year varies.
 
 The [radio](https://observablehq.com/@observablehq/input-radio) input beneath the plots selects the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} for [Day \${january1doy}]{.tool data-bs-toggle="tooltip" data-bs-title="January 1"}, the first day of the Gregorian calendar year. Changing the [Day \${january1doy}]{.tool data-bs-toggle="tooltip" data-bs-title="January 1"} [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} has no effect on Decalendar but shifts every date in the Gregorian calendar by one to six days depending on the number of days that the first week of the Gregorian calendar year contributes to the Gregorian calendar year.
 
-# Day of year (doy){#doy}
-
-If you select a month and a [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} using the "Month" and "Day of month" range inputs above, the "Day of year" range inputs will show the equivalent [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} as a positive and a negative integer. The You can use this approach to find the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} of birthdays🎂, anniversaries🥂, and other meaningful dates! Conversion between Dec and Gregorian calendar dates depends on the "0ffset < 0" toggle input.
-
-
-You can use the range inputs above to explore the relationship between [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and different combinations of months of  The [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} chosen by the range inputs to be highlighted with a red background in the plots is \${dotyInput}. 
-
-Both plots use the same three-letter abbreviations and [color🎨scheme](https://observablehq.com/@d3/color-schemes) to label months. Instead of months and [dom]{.tool data-bs-toggle="tooltip" data-bs-title="days of month"}, Decalendar uses deks and [dod]{.tool data-bs-toggle="tooltip" data-bs-title="days of dek"}.  which can be combined into a single integer called a 
-
-
-
-There are two range inputs labeled as "day of year" because every [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} can be expressed as both a positive and a negative number. The typical range for [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} is 0 to [n]{.tool data-bs-toggle="tooltip" data-bs-title="number of days in the year"}[-]{.mono}1, but negative [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} typically range from -[n]{.tool data-bs-toggle="tooltip" data-bs-title="number of days in the year"} to -1, where [n]{.tool data-bs-toggle="tooltip" data-bs-title="number of days in the year"} is the number of days in the year, either 365 or 366. A [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} outside these [bounds](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20upper%20bound%20or%20majorant%5B1%5D%20of%20a%20subset%20S%20of%20some%20preordered%20set%20(K%2C%20%E2%89%A4)%20is%20an%20element%20of%20K%20that%20is%20greater%20than%20or%20equal%20to%20every%20element%20of%20S.%5B2%5D%5B3%5D%20Dually%2C%20a%20lower%20bound%20or%20minorant%20of%20S%20is%20defined%20to%20be%20an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S) represents a day in a previous or subsequent year.
-
-k
-
-The month-based color labels are shifted in relation to each other by 58, 59, or 60 days
-
-The shift is 59 days in a common year and 60 days in a leap year, but Enabling the removes a day from this two-month shift, which is reflected in the month-based color labels in the Decalendar plot and the cell that is highlighted in red in the Gregorian calendar plot. This toggle input is enabled by default if the [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) ([utc](#utc){#coordinateduniversaltime .tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}) "time zone [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)" ([tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}) provided by your web browser is less than zero (< 0). Dec only uses positive [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}, but can  does not allow enabled, it . This one-day shift is visible in .
-
-Each of the ten Dec time zones has a positive [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}. Dec handles negative [utc](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"} by adding or subtracting a day when 
-
-
-
-Dec does not allow , 
-Even it does not permit "time zone offsets" ([tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"}), to be negative (< 0), Dec can nevertheless show the correct [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}, [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and month for any [tzo]{.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"}, positive or negative. 
-
-The current [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) ([utc](#utc){#coordinateduniversaltime .tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}) [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} can be expressed as \${decDoty} or \${TminusPaddedNeg}. The [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference) between any positive [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and its negative equivalent is n: \${decDoty} [-]{.mono} \${TminusPaddedNeg} = \${nDaysInYear}. The current [utc](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} dek is \${decDek} = &LeftFloor;\${decDoty} &div; 10&RightFloor; and the current [utc](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} [dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of dek"} is \${decDotd} = \${decDoty} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 10. To combine a dek and [dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of dek"} into a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}, we multiply the dek by ten and then add the [dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of dek"}: \${decDoty} = \${decDek} &times; 10 + \${decDotd}.
-
-$$\text{doy} = \text{dek} \times 10 + \text{doy}$$
-
-$$\text{dek} = \lfloor \text{doy} \div 10 \rfloor$$
-
-$$\text{dod} = \text{doy mod } 10$$
-
-Unlike weeks in the Gregorian calendar️, [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} and deks do not need to continue in an infinite unbroken sequence. The last day of the year, [Day -1]{.tool data-bs-toggle="tooltip" data-bs-title="The last day of any Dec year"}, is always followed by [Day 0]{.tool data-bs-toggle="tooltip" data-bs-title="The first day of any Dec year"}, regardless of the last 4 or 5 days of Dek 36 that extend past the end of the year. If we want to track days seamlessly across years, we can use a continuous count of days called the "day of [era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)" ([doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}).
+Whereas it could be any [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}, [Day 0]{.tool data-bs-toggle="tooltip" data-bs-title="The first day of any Dec year"} is always the first day of [Dek 0]{.tool data-bs-toggle="tooltip" data-bs-title="Days 0 to 9"} and [Hekt 0]{.tool data-bs-toggle="tooltip" data-bs-title="Spring and Fall in the Northern and Southern Hemispheres, respectively"}, regardless of the last 4 or 5 days of [Dek 36]{.tool data-bs-toggle="tooltip" data-bs-title="Days 360 to 369"} and the last 34 or 35 days of [Hekt 3]{.tool data-bs-toggle="tooltip" data-bs-title="Winter and Summer in the Northern and Southern Hemispheres, respectively"} that extend past the end of the previous Dec year. If we want to track days seamlessly across Dec and Gregorian calendar years, we can use a continuous count of days called the "day of [era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)" ([doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}).
 
 # Day of era (doe){#doe}
 
