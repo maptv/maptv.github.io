@@ -907,8 +907,9 @@ data-bs-title="Universal Time">UT</span>).
 
 Instead of leap seconds, Dec matches <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="Universal Time">UT</span> using
-a “[universal time
-offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)”
+a “[universal
+time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation)
+[offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)”
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="universal time offset">uto</span>). With the [leap second
 insertion

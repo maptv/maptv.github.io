@@ -615,7 +615,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2026+071</p>
+      <p class="date">2026+074</p>
     </div>
   </div>
   
@@ -1821,7 +1821,7 @@ Figure&nbsp;2
 <pre class="mermaid mermaid-js" data-label="decnav">%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
 flowchart LR
    A[Dec]--&gt;B[date]--&gt;C[time]--&gt;D[snap]--&gt;E[span]
-   Z[  ]:::empty~~~F[Quarto]--&gt;G[filter]--&gt;H[include]--&gt;I[script]
+   Z[  ]:::empty~~~F[Quarto]--&gt;G[filter]--&gt;H[include]
    classDef empty width:0px;
    click A "/dec"
    click B "/dec/date"
@@ -1831,7 +1831,6 @@ flowchart LR
    click F "/quarto"
    click G "/quarto/filter"
    click H "/quarto/include"
-   click I "/quarto/script"
 </pre>
 </div>
 </div>
@@ -1860,7 +1859,7 @@ flowchart LR
 <span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Dec Measurement System</span></span>
 <span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">url</span><span class="kw">:</span><span class="at"> https://maptv.github.io/dec</span></span>
 <span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">issued</span><span class="kw">:</span></span>
-<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">literal</span><span class="kw">:</span><span class="at"> 2026+071</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">literal</span><span class="kw">:</span><span class="at"> 2026+074</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Quarto configuration files, such as <code>_quarto.yml</code> and <code>_metadata.yml</code>, are written in yaml. Quarto input files, including Quarto markdown, <a href="https://jupyter.org">Jupyter</a> notebook, <a href="https://quarto.org/docs/authoring/markdown-basics">markdown</a>, and specially formatted <a href="https://quarto.org/docs/computations/render-scripts">script files</a>, can start with a <a href="https://quarto.org/docs/authoring/front-matter.html">yaml header</a>. Therefore, we could put the metadata above directly into a Quarto configuration or input file rather than into a bibliography file.</p>
 <p>As an alternative to yaml, I suggest the <a href="https://en.wikipedia.org/wiki/BibTeX#:~:text=a%20bibliographic%20flat%2Dfile%20database%20file%20format">BibTeX</a> format. The BibTeX bibliography file below can be used by Quarto equally as well as the yaml bibliography file above. Regardless of the bibliography file format we choose, Quarto configuration and input files require that we store the <a href="https://en.wikipedia.org/wiki/Path_(computing)#:~:text=a%20string%20that%20uniquely%20identifies%20an%20item%20in%20a%20hierarchical%20file%20system">path</a> to our bibliography file, or our list of bibliography file paths, in yaml format.</p>
@@ -1878,7 +1877,7 @@ flowchart LR
 <span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span> = "<span class="st">Martin Laptev</span>",</span>
 <span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span> = "<span class="st">Dec Measurement System</span>",</span>
 <span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">url</span> = "<span class="st">https://maptv.github.io/dec</span>",</span>
-<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span> = 2026<span class="er">+</span>071</span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span> = 2026<span class="er">+</span>074</span>
 <span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In addition to storing metadata in a bibliography file, we can keep instructions regarding how to style citations and references in a <a href="https://quarto.org/docs/authoring/citations#sec-citations-style">Citation Style Language</a> (csl) file. If we do not provide a csl file, Quarto will follow the <a href="https://chicagomanualofstyle.org">Chicago Manual of Style</a> when processing parenthetical citations: <span class="citation" data-cites="hinnant2021date">(<a href="#ref-hinnant2021date" role="doc-biblioref">Hinnant 2021+185</a>)</span>, narrative citations: <span class="citation" data-cites="hinnant2021date">(<a href="#ref-hinnant2021date" role="doc-biblioref">2021+185</a>)</span>, and references:</p>

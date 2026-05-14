@@ -1,19 +1,17 @@
-# Dec date
+# Decalendar
 Martin Laptev
-2026+072
+2026+074
 
-- [<span class="toc-section-number">0</span> Day of year (doy)](#doy)
-- [<span class="toc-section-number">1</span> Day of era (doe)](#doe)
-  - [<span class="toc-section-number">2.0.1</span> Year of era
-    (yoe)](#yoe)
-- [<span class="toc-section-number">2</span> Day of week (dow)](#dow)
-- [<span class="toc-section-number">3</span> Week of year (woy)](#woy)
-- [<span class="toc-section-number">4</span> Day of dek (dod)](#dod)
-- [<span class="toc-section-number">5</span> Day of month (dom)](#dom)
-- [<span class="toc-section-number">6</span> Month of year (moy)](#moy)
-- [<span class="toc-section-number">7</span> Summary](#tldr)
-- [<span class="toc-section-number">8</span> Next](#next)
-- [<span class="toc-section-number">9</span> Cite](#cite)
+- [Day of era (doe)](#doe)
+  - [Year of era (yoe)](#yoe)
+- [Day of week (dow)](#dow)
+- [Week of year (woy)](#woy)
+- [Day of dek (dod)](#dod)
+- [Day of month (dom)](#dom)
+- [Month of year (moy)](#moy)
+- [Summary](#tldr)
+- [Next](#next)
+- [Cite](#cite)
 
 <div id="datenav">
 
@@ -96,15 +94,14 @@ the “Color scheme” radio input.
 
 From the perspective of Dec, month-based color labels are only useful if
 we want to compare the Dec and Gregorian calendars. In contrast,
-day-based color labels can help us sort days into groups of 100 days
-called hectodays (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hectodays">hekts</span>) and groups of 10 days named
-decadays (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="decadays">deks</span>). Dec refers to <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="hectodays">hekts</span> as
-seasons
-(<a href="#hekt" id="hectoday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of 100 days">h</a>) and uses <span class="tool"
+day-based color labels can help us sort days into groups of 100 called
+hectodays (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hectodays">hekts</span>) and groups of 10 named decadays
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="decadays">deks</span>). Dec measures [meterological
+seasons](https://en.wikipedia.org/wiki/Season#Meteorological:~:text=reckoned%20by%20temperature)
+in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hectodays">hekts</span> and uses <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="decadays">deks</span> instead of
 both months and weeks.
 
@@ -123,8 +120,33 @@ a <a href="#dek" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of 10 days">dek</a> ${turnInput ? “y” : “x”}-axis
 label and a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of dek">dod</span> ${turnInput ? “x” : “y”}-axis
-label, we get a “day of year” (doy) cell value: ${dotyInputDek} × 10 +
-${dotyInputDod} = ${dotyInput}.
+label, we get a “day of year” (<span id="dayofyear" class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>) cell
+value: ${dotyInputDek} × 10 + ${dotyInputDod} = ${dotyInput}.
+
+There are two range inputs labelled “Day of year” because every
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span> can be expressed as either a
+positive or a negative integer. The former is the number of days that
+have passed in the year, the [absolute
+value](https://en.wikipedia.org/wiki/Absolute_value#:~:text=non%2Dnegative%29-,magnitude%20of,measured%20without%20regard%20to%20its%20sign,-.%20Namely%2C)
+of the latter is the number of days left in the year, and the
+[difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference)
+between them is the total number of days in the full year: 74 – -291 =
+365.
+
+To predict when a pregnant🤰woman will give birth to a baby👩‍🍼, we could
+add 285 to the positive or negative <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> of the
+first day of her most recent
+[menstruation](https://en.wikipedia.org/wiki/Menstruation#:~:text=the%20regular%20discharge%20of%20blood%20and%20mucosal%20tissue%20from%20the%20inner%20lining%20of%20the%20uterus%20through%20the%20vagina).
+We should use the positive <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span> if it is less than 80 and the
+negative <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</span> otherwise. In the latter case, we
+can interpret -1 as Day 365 and any other result as a <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> in the
+subsequent year: 79 + 285 = 364.
 
 <div id="calplots">
 
@@ -395,10 +417,9 @@ viewof dotwInput = Inputs.radio([
 </div>
 
 Although weeks determine the shape of the Gregorian calendar plot, its
-[cell](https://observablehq.com/plot/marks/cell) values are “days of
-month” (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</span>). We can use a
-<span class="tool" data-bs-toggle="tooltip"
+cell values are “days of month” (<span class="tool"
+data-bs-toggle="tooltip" data-bs-title="days of month">dom</span>). We
+can use a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span>, instead of a month and a
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</span>, to uniquely identify🪪a
@@ -423,136 +444,22 @@ shifts every date in the Gregorian calendar by one to six days depending
 on the number of days that the first week of the Gregorian calendar year
 contributes to the Gregorian calendar year.
 
-# Day of year (doy)
-
-If you select a month and a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</span> using the “Month” and “Day of
-month” range inputs above, the “Day of year” range inputs will show the
-equivalent <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> as a positive and a negative
-integer. The You can use this approach to find the <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> of
-birthdays🎂, anniversaries🥂, and other meaningful dates! Conversion
-between Dec and Gregorian calendar dates depends on the “0ffset \< 0”
-toggle input.
-
-You can use the range inputs above to explore the relationship between
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> and different combinations of
-months of The <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> chosen by the range inputs to be
-highlighted with a red background in the plots is ${dotyInput}.
-
-Both plots use the same three-letter abbreviations and
-[color🎨scheme](https://observablehq.com/@d3/color-schemes) to label
-months. Instead of months and <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="days of month">dom</span>,
-Decalendar uses deks and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of dek">dod</span>. which can be combined into a
-single integer called a
-
-There are two range inputs labeled as “day of year” because every
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> can be expressed as both a
-positive and a negative number. The typical range for <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="days of year">doy</span> is 0 to
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="number of days in the year">n</span><span class="mono">-</span>1,
-but negative <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of year">doy</span> typically range from
--<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="number of days in the year">n</span> to -1, where
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="number of days in the year">n</span> is the number of
-days in the year, either 365 or 366. A <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> outside
-these
-[bounds](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20upper%20bound%20or%20majorant%5B1%5D%20of%20a%20subset%20S%20of%20some%20preordered%20set%20(K%2C%20%E2%89%A4)%20is%20an%20element%20of%20K%20that%20is%20greater%20than%20or%20equal%20to%20every%20element%20of%20S.%5B2%5D%5B3%5D%20Dually%2C%20a%20lower%20bound%20or%20minorant%20of%20S%20is%20defined%20to%20be%20an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S)
-represents a day in a previous or subsequent year.
-
-k
-
-The month-based color labels are shifted in relation to each other by
-58, 59, or 60 days
-
-The shift is 59 days in a common year and 60 days in a leap year, but
-Enabling the removes a day from this two-month shift, which is reflected
-in the month-based color labels in the Decalendar plot and the cell that
-is highlighted in red in the Gregorian calendar plot. This toggle input
-is enabled by default if the [Coordinated Universal
-Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
-(<a href="#utc" id="coordinateduniversaltime" class="tool"
+Whereas it could be any <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</span>, <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">utc</a>) “time zone
-[offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)”
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offset">tzo</span>) provided by your web
-browser is less than zero (\< 0). Dec only uses positive
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offset">tzo</span>, but can does not allow
-enabled, it . This one-day shift is visible in .
-
-Each of the ten Dec time zones has a positive <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time zone offset">tzo</span>.
-Dec handles negative
-<a href="#utc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">utc</a> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time zone offsets">tzo</span> by
-adding or subtracting a day when
-
-Dec does not allow , Even it does not permit “time zone offsets”
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offsets">tzo</span>), to be negative (\< 0),
-Dec can nevertheless show the correct <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of week">dow</span>,
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</span>, and month for any
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offsets">tzo</span>, positive or negative.
-
-The current [Coordinated Universal
-Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
-(<a href="#utc" id="coordinateduniversaltime" class="tool"
+data-bs-title="The first day of any Dec year">Day 0</span> is always the
+first day of <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="Days 0 to 9">Dek 0</span> and <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">utc</a>) <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> can be
-expressed as ${decDoty} or ${TminusPaddedNeg}. The
-[difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference)
-between any positive <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</span> and its negative equivalent is n:
-${decDoty} <span class="mono">-</span> ${TminusPaddedNeg} =
-${nDaysInYear}. The current
-<a href="#utc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">utc</a> dek is ${decDek} =
-⌊${decDoty} ÷ 10⌋ and the current
-<a href="#utc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">utc</a> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of dek">dod</span> is
-${decDotd} = ${decDoty}
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-10. To combine a dek and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of dek">dod</span> into a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of year">doy</span>, we
-multiply the dek by ten and then add the <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of dek">dod</span>:
-${decDoty} = ${decDek} × 10 + ${decDotd}.
-
-doy = dek × 10 + doy
-
-dek = ⌊doy ÷ 10⌋
-
-dod = doy mod 10
-
-Unlike weeks in the Gregorian calendar️, <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="days of year">doy</span> and
-deks do not need to continue in an infinite unbroken sequence. The last
-day of the year, <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="The last day of any Dec year">Day -1</span>, is always
-followed by <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="The first day of any Dec year">Day 0</span>, regardless
-of the last 4 or 5 days of Dek 36 that extend past the end of the year.
-If we want to track days seamlessly across years, we can use a
-continuous count of days called the “day of
+data-bs-title="Spring and Fall in the Northern and Southern Hemispheres, respectively">Hekt
+0</span>, regardless of the last 4 or 5 days of <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="Days 360 to 369">Dek 36</span>
+and the last 34 or 35 days of <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Winter and Summer in the Northern and Southern Hemispheres, respectively">Hekt
+3</span> that extend past the end of the previous Dec year. If we want
+to track days seamlessly across Dec and Gregorian calendar years, we can
+use a continuous count of days called the “day of
 [era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)”
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of era">doe</span>).
