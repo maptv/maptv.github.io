@@ -207,6 +207,18 @@ function Scrubber(values, {
   Inputs.disposal(form).then(stop);
   return form;
 }
+loadUnix = Date.now();
+loadDote = unix2dote(loadUnix)
+loadDate = dote2date(...loadDote)
+loadLeap = year2leap(loadDate[0])
+vertic = width < 500
+negtzo = new Date().getTimezoneOffset() > 0
+march1doy = 0 + nOffInput
+december31doy = 305 + nOffInput
+january1doy = 306 + nOffInput
+november21doy = 265 + nOffInput
+november22doy = 266 + nOffInput
+december25doy = 299 + nOffInput
 decYear = ydz[0]
 nextYear = decYear + 1
 decYearLeap = year2leap(decYear)
@@ -245,39 +257,24 @@ fullfracYear = (fracYear).toFixed(4)
 mod1FracYear = (fracYear % 1).toFixed(4)
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 monthNums = ["305", "336", "", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
-calYear = !leapInput && dotwInput == "Monday" ? 6 : !leapInput && dotwInput == "Tuesday" ? 7 : !leapInput && dotwInput == "Wednesday" ? 2 : !leapInput && dotwInput == "Thursday" ? 3 : !leapInput && dotwInput == "Friday" ? 9 : !leapInput && dotwInput == "Saturday" ? 10 : !leapInput && dotwInput == "Sunday" ? 11 : leapInput && dotwInput == "Monday" ? 12 : leapInput && dotwInput == "Tuesday" ? 24 : leapInput && dotwInput == "Wednesday" ? 8 : leapInput && dotwInput == "Thursday" ? 20 : leapInput && dotwInput == "Friday" ? 4 : leapInput && dotwInput == "Saturday" ? 16 : leapInput && dotwInput == "Sunday" ? 28 : 0;
+calYear = !leapInput && dotwInput == "Mon" ? 6 : !leapInput && dotwInput == "Tue" ? 7 : !leapInput && dotwInput == "Wed" ? 2 : !leapInput && dotwInput == "Thu" ? 3 : !leapInput && dotwInput == "Fri" ? 9 : !leapInput && dotwInput == "Sat" ? 10 : !leapInput && dotwInput == "Sun" ? 11 : leapInput && dotwInput == "Mon" ? 12 : leapInput && dotwInput == "Tue" ? 24 : leapInput && dotwInput == "Wed" ? 8 : leapInput && dotwInput == "Thu" ? 20 : leapInput && dotwInput == "Fri" ? 4 : leapInput && dotwInput == "Sat" ? 16 : leapInput && dotwInput == "Sun" ? 28 : 0;
 datesCal = d3.utcDays(new Date(calYear, 0, 0), new Date(calYear, 12, 0));
-leapInput = leapscrub[1]
-turnInput = leapscrub[2]
-nOffInput = leapscrub[3]
+leapInput = leapscrub[0]
+nOffInput = leapscrub[1]
+coloInput = leapscrub[2]
+turnInput = leapscrub[3]
 dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
 numbers = Array.from({length: 366}, (_, i) => i)
-set(viewof dotyInput, leapscrub[0])
+set(viewof dotyInput, leapscrub[4])
+daysInYear = parseInt(365 + leapInput)
+dotyInputNeg = dotyInput - daysInYear 
 dotyInputDek = Math.floor(dotyInput / 10)
 dotyInputDod = dotyInput % 10
 ```
 
 ```{=html}
 <style>
-div.cell:has(form.oi-3a86ea-toggle) {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-div.observablehq > div:has(form.oi-3a86ea-toggle) {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
 div.cell:has(form.oi-3a86ea) {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-form.oi-3a86ea-toggle {
-  max-width: 100% !important;
-  --input-width: 30px;
-  --label-width: 100px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -285,30 +282,6 @@ form.oi-3a86ea-toggle {
 form.oi-3a86ea {
   --input-width: 200px;
   padding-right: 9px;
-}
-form.oi-3a86ea-toggle > label {
-  width: 78px;
-}
-form.oi-3a86ea-toggle > label[for="oi-3a86ea-2"] {
-  width: 110px;
-}
-form.oi-3a86ea-toggle > input#oi-3a86ea-2 {
-  width: 15px;
-}
-form.oi-3a86ea-toggle {
-  width: 110px;
-}
-form.oi-3a86ea-toggle:has(input#oi-3a86ea-2) {
-  width: 150px;
-}
-input.oi-3a86ea-input[type="checkbox"] {
-  margin: 4px 0px 0px 0px;
-}
-div > form.oi-3a86ea > label {
-  --label-width: 105px;
-}
-form.oi-3a86ea > div.oi-3a86ea-input > input[type="number"] {
-  max-width: 60px;
 }
 div.column-page:has(svg.leftplot), div.column-page:has(svg.rightplot) {
   display: flex;
@@ -365,11 +338,8 @@ p:has(span.handlabel)  {
   text-align: center;
 }
 div.overflowequation {
-  margin-top: -20px;
-  margin-bottom: -20px;
-}
-div#leapscrubvert {
-  margin-top: -10px;
+  margin-top: -18px;
+  margin-bottom: -8px;
 }
 svg.topplot {
   margin-top: -9px;
@@ -403,6 +373,27 @@ div#conversionchart > div {
 }
 h4.hiddenheading, h5.hiddenheading {
   display: none;
+}
+div#leapscrubvert {
+  margin-top: -10px;
+}
+div#leapscrubvert form, div#sliders form {
+  width: 320px;
+}
+div#leapscrubvert form:last-child {
+  width: 45px;
+}
+div#leapscrubvert form > label, div#sliders form > label {
+  width: 105px;
+}
+div#leapscrubvert form div:has(label), div#sliders form div:has(label) {
+  width: 205px;
+}
+input[type="number"] {
+  width: 120px;
+}
+#radiobuttons {
+  margin-bottom: 3px;
 }
 </style>
 ```

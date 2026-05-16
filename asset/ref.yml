@@ -9,3 +9,29 @@ references:
   url: https://howardhinnant.github.io/date_algorithms
   issued:
     literal: 2021+185
+- id: jukicLengthHumanPregnancy2013
+  author:
+    - family: Jukic
+      given: A.M.
+    - family: Baird
+      given: D.D.
+    - family: Weinberg
+      given: C.R.
+    - family: McConnaughey
+      given: D.R.
+    - family: Wilcox
+      given: A.J.
+  citation-key: jukicLengthHumanPregnancy2013
+  container-title: Human Reproduction
+  container-title-short: Hum Reprod
+  DOI: 10.1093/humrep/det297
+  ISSN: 0268-1161
+  issue: 10
+  issued:
+    literal: 2013+215
+  page: 2848–2855
+  source: Silverchair
+  title: Length of human pregnancy and contributors to its natural variation
+  type: article-journal
+  URL: https://doi.org/10.1093/humrep/det297
+  volume: 28

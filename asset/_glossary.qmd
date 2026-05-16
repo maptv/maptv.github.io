@@ -51,14 +51,14 @@
     - [dm&sup2;](#squaredecimeter){#dm2}: square decimeter, 6.25 square decizem
     - [km&sup2;](#squarekilometer){#km2}: square kilometer, 6.25 square kilozem
     - [cm&sup3;](#cubiccentimeter){#cm3}: cubic centimeter, 1 millilter, a thousandth of a liter, 15.625 drops
-- [λ](#parallel){#lambda}: parallel, a full circle around the Earth moving West or East; the English alphabet equivalent of λ is the letter "l", which occurs three times in the word "parallel" and represents a ***l***ine that crosses every possible ***l***ongitude at the same ***l***atitude
-    - [dλ](#deciparallel){#dlambda}: deciparallel, a tenth of a parallel
-    - [mλ](#milliparallel){#mlambda}: milliparallel, a thousandth of a parallel
+- [p](#parallel){#lambda}: parallel, a full circle around the Earth moving West or East
+    - [dp](#deciparallel){#dlambda}: deciparallel, a tenth of a parallel
+    - [mp](#milliparallel){#mlambda}: milliparallel, a thousandth of a parallel
 - [n](#note){#n}: note, a specific frequency within an octave
 - [o](#octave){#o}: octave, a two fold change in frequency
   - [do](#decioctave){#do}: decioctave, a tenth of a two fold change in frequency
-- [p](#perbeat){#per}: perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; the letter "p" can be flipped vertically to produce the letter "b"
-    - [Tp](#teraperbeat){#Tp}: teraperbeat, 10^12^ perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
+- [þ](#perbeat){#per}: perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ), which looks like a combination of the letters "p" and "b"; not to be confused with a picobeat (pb)
+    - [Tþ](#teraperbeat){#Tpb}: teraperbeat, 10^12^ perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
 - [q](#quotidie){#q}: quotidie, the inverse of a day, a hundred thousandth of a perbeat; the letter "q" can be flipped vertically to produce the letter "d"
 - [r](#rose){#r}: compass rose, a full circle along the horizon, 360 compass degress
     - [mr](#millirose){#mr}: compass millirose, a thousandth of a circle along the horizon, .36 compass degress

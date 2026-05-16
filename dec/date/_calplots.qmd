@@ -1,23 +1,24 @@
 ```{ojs}
 //| echo: false
 //| label: leapscrubvert
+// https://observablehq.com/@tophtucker/horizontal-inputs
 viewof leapscrub = Inputs.form([
+  Inputs.radio(new Map([["365", false], ["366", true]]), {label: "Days in year", value: loadLeap}),
+  Inputs.radio(new Map([["Positive", false], ["Negative", true]]), {label: "UTC offset", value: negtzo}),
+  Inputs.radio(new Map([["Day", false], ["Month", true]]), {label: "Color scheme", value: false}),
+  Inputs.radio(new Map([["Vertical", false], ["Horizontal", true]]), {label: "Plot layout", value: vertic}),
   Scrubber(numbers, {autoplay: false, alternate: true, delay: 86.4, loopDelay: 864, format: y => "", inputStyle: "display:none;"}),
-  Inputs.toggle({label: "Leap year", value: false}),
-  Inputs.toggle({label: "Offset < 0", value: negtzo}),
-  Inputs.toggle({label: "Vertical layout", value: width > 500 ? true : false}),
-])
-negtzo = new Date().getTimezoneOffset() > 0
-march1doy = 0 + nOffInput
-december31doy = 305 + nOffInput
-january1doy = 306 + nOffInput
-november21doy = 265 + nOffInput
-november22doy = 266 + nOffInput
-december25doy = 299 + nOffInput
+  ],
+  {
+    template: (inputs) => htl.html`
+      <div style="display: flex; flex-wrap: wrap">${inputs}</div>
+    `
+})
 ```
 
 ```{ojs}
 //| echo: false
+//| label: sliders
 viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: "Day of year"});
 viewof monthInput = transformInput(
   Inputs.range([1, 12], {step: 1, label: "Month"}),
@@ -250,12 +251,12 @@ calPlot = turnInput ? Plot.plot({
 ```
 :::
 
-[First day of the Gregorian calendar year]{.radiotitle}
+[First day of the week of the Gregorian calendar year]{.radiotitle}
 
 ```{ojs}
 //| echo: false
 //| id: radiobuttons
 viewof dotwInput = Inputs.radio([
-  "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
-  ], {value: "Sunday"})
+  "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat",
+  ], {value: "Sun"})
 ```
