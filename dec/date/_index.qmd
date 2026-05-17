@@ -270,6 +270,78 @@ daysInYear = parseInt(365 + leapInput)
 dotyInputNeg = dotyInput - daysInYear 
 dotyInputDek = Math.floor(dotyInput / 10)
 dotyInputDod = dotyInput % 10
+piecewiseColor = d3.piecewise(d3.interpolateRgb, [
+  "#f00",    //  0   0 red
+  "#f50",    //  0.25  20 yr
+  "#f60",    //  0.5   24 yr orangered
+  "#f70",    //  0.75  28 yr
+  "#f90",    //  1     36 yr orange
+  "#fb0",    //  1.25  44 yr
+  "#fc0",    //  1.5   48 yr yelloworange
+  "#fd0",    //  1.75  52 yr
+  "#ff0",    //  2     60 yellow
+  "#ef0",    //  2.25  64 gy
+  "#df0",    //  2.5   68 gy limeyellow
+  "#cf0",    //  2.75  72 gy
+  "#af0",    //  3     80 gy lime
+  "#8f0",    //  3.25  88 gy
+  "#7f0",    //  3.5   92 gy greenlime
+  "#6f0",    //  3.75  96 gy
+  "#0f0",    //  4    120 green
+  "#0f7",    //  4.25 148 cg
+  "#0f9",    //  4.5  156 cg cyangreen
+  "#0fb",    //  4.75 164 cg
+  "#0ff",    //  5    180 cyan
+  "#0cf",    //  5.25 192 bc
+  "#0bf",    //  5.5  196 bc azurecyan
+  "#0af",    //  5.75 200 bc
+  "#08f",    //  6    208 bc azure
+  "#06f",    //  6.25 216 bc
+  "#05f",    //  6.5  220 bc blueazure
+  "#04f",    //  6.75 224 bc
+  "#00f",    //  7    240 blue
+  "#50f",    //  7.25 260 mb
+  "#60f",    //  7.5  264 mb purpleblue
+  "#70f",    //  7.75 268 mb
+  "#90f",    //  8    276 mb purple
+  "#b0f",    //  8.25 284 mb
+  "#c0f",    //  8.5  288 mb violetpurple
+  "#d0f",    //  8.75 292 mb
+  "#f0f",    //  9    300 magenta
+  "#f0a",    //  9.25 320 rm
+  "#f08",    //  9.5  328 rm
+  "#f06",    //  9.75 336 rm
+  "#f00",    //  0        0 red
+])
+function yiq(color) {
+  const {r, g, b} = d3.rgb(color);
+  return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
+}
+day364rgb = piecewiseColor(364 / daysInYear)
+leaps = d3.range(366).map(x => d3.hsl(piecewiseColor(x / 366)))
+comms = d3.range(365).map(x => d3.hsl(piecewiseColor(x / 365)))
+leaphues = leaps.map(x => x.h)
+commhues = comms.map(x => x.h)
+leap10 = leaps.map(x => x.formatHex())
+comm10 = comms.map(x => x.formatHex())
+leap08 = leaphues.map(x => d3.hsl(x, .8, .6).formatHex())
+comm08 = commhues.map(x => d3.hsl(x, .8, .6).formatHex())
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+html`
+<style>
+.color364 {
+  background: ${day364rgb};
+  color: ${yiq(day364rgb) > 0.51 ? "black" : "white"};
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-weight: 400;
+}
+</style>
+`
 ```
 
 ```{=html}
