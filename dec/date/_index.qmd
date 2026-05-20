@@ -211,7 +211,7 @@ loadUnix = Date.now();
 loadDote = unix2dote(loadUnix)
 loadDate = dote2date(...loadDote)
 loadLeap = year2leap(loadDate[0])
-vertic = width < 500
+vertic = width > 500
 negtzo = new Date().getTimezoneOffset() > 0
 march1doy = 0 + nOffInput
 december31doy = 305 + nOffInput
@@ -262,7 +262,7 @@ datesCal = d3.utcDays(new Date(calYear, 0, 0), new Date(calYear, 12, 0));
 leapInput = leapscrub[0]
 nOffInput = leapscrub[1]
 coloInput = leapscrub[2]
-turnInput = leapscrub[3]
+layoInput = leapscrub[3]
 dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
 numbers = Array.from({length: 366}, (_, i) => i)
 set(viewof dotyInput, leapscrub[4])
@@ -318,14 +318,13 @@ function yiq(color) {
   return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
 }
 day364rgb = piecewiseColor(364 / daysInYear)
-leaps = d3.range(366).map(x => d3.hsl(piecewiseColor(x / 366)))
-comms = d3.range(365).map(x => d3.hsl(piecewiseColor(x / 365)))
-leaphues = leaps.map(x => x.h)
-commhues = comms.map(x => x.h)
-leap10 = leaps.map(x => x.formatHex())
-comm10 = comms.map(x => x.formatHex())
-leap08 = leaphues.map(x => d3.hsl(x, .8, .6).formatHex())
-comm08 = commhues.map(x => d3.hsl(x, .8, .6).formatHex())
+seldow = seldat.map(x => x.getUTCDay())
+selwee = seldat.map(d => d3.utcWeek.count(d3.utcYear(d), d))
+seldat = datesCal.filter((d, i) => ((i + 365 - 59 + nOffInput) % (365 + leapInput)) === dotyInput)
+dekLeapColors = d3.range(37).map(x => piecewiseColor(x * 10 / 366))
+dekCommColors = d3.range(37).map(x => piecewiseColor(x * 10 / 365))
+leaps = d3.range(366).map(x => piecewiseColor(x / 366))
+comms = d3.range(365).map(x => piecewiseColor(x / 365))
 ```
 
 ```{ojs}
