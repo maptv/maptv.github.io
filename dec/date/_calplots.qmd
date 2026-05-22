@@ -104,7 +104,7 @@ decPlot = Plot.plot({
       x: (d, i) => layoInput ? Math.floor(i / 10 + (i < 190 ? 1 : 0)) : 6,
       y: (d, i) => layoInput ? -1 : Math.floor(i / 10 + (i < 190 ? 1 : 0)),
       text: d => d.getUTCDate() === 7 ? months[d.getUTCMonth()].slice(0, 3) : "",
-      dx: layoInput ? -4 : 128,
+      dx: layoInput ? -4 : 129,
       dy:  layoInput ? -4 : 0,
       frameAnchor: layoInput ? "left" : "right",
       monospace: true,

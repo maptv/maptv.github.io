@@ -346,13 +346,17 @@ html`
   font-weight: 400;
 }
 #calplots {
-  gap: ${!layoInput * 12}px;
+  gap: ${!layoInput * 9}px;
 }
 #decplot figure h2 {
   transform: translateX(${!layoInput * 15}px);
 }
 #greplot figure h2 {
-  transform: translateY(${!layoInput * 5}px);
+  transform: translateY(${(!layoInput && leapInput) * 5}px);
+}
+p:has(.radiotitle) {
+  margin-top: -${layoInput ? 16 : 28}px;
+  margin-bottom: -${width > 500 ? 3 : 6}px;
 }
 </style>
 `
@@ -391,10 +395,6 @@ div.observablehq > figure > h2 {
 }
 input[type="radio"] {
   margin: 1px 0px 0px 0px;
-}
-p:has(.radiotitle) {
-  margin-top: -6px;
-  margin-bottom: -3px;
 }
 h4.anchored {
   margin: 8px 0px 8px 0px;
