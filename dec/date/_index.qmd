@@ -348,17 +348,27 @@ html`
 #calplots {
   gap: ${!layoInput * 12}px;
 }
+#decplot figure h2 {
+  transform: translateX(${!layoInput * 15}px);
+}
+#greplot figure h2 {
+  transform: translateY(${!layoInput * 5}px);
+}
 </style>
 `
 ```
 
 ```{=html}
 <style>
+#decplot, #greplot {
+  overflow: visible;
+}
 #calplots {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 div.cell:has(form.oi-3a86ea) {
   display: flex;

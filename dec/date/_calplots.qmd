@@ -58,8 +58,8 @@ decPlot = Plot.plot({
     label: "Day of dek    ",
     domain: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-    tickPadding: -12,
-    labelOffset: 22,
+    tickPadding: -8,
+    labelOffset: 24,
   } : {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: -2, labelOffset: 32},
   x: layoInput ? {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, labelOffset: 32} : {
     tickSize: 0,
@@ -97,7 +97,7 @@ decPlot = Plot.plot({
       textStroke: "black",
       textStrokeWidth: 1,
       tickSize: 0,
-      tickPadding: -24,
+      tickPadding: coloInput ? -24 : -28,
       labelOffset: 16,
     }),
     coloInput ? Plot.text(dates, {
@@ -111,8 +111,8 @@ decPlot = Plot.plot({
       fontSize: "20px"}) : null,
     Plot.ruleY([layoInput ? dotyInput % 10 : Math.floor(dotyInput / 10)], {stroke: "black", strokeWidth: 2, dy: layoInput ? 9 : 8, x1: 0, x2: layoInput ? 36 : 9}),
     Plot.ruleY([layoInput ? dotyInput % 10 : Math.floor(dotyInput / 10)], {stroke: "black", strokeWidth: 2, dy: layoInput ? -9 : -8, x1: 0, x2: layoInput ? 36 : 9}),
-    Plot.ruleX([layoInput ? Math.floor(dotyInput / 10) : dotyInput % 10], {stroke: "black", strokeWidth: 2, dx: layoInput ? 13.5 : 14, y1: 0, y2: layoInput ? 9 : 36}),
-    Plot.ruleX([layoInput ? Math.floor(dotyInput / 10) : dotyInput % 10], {stroke: "black", strokeWidth: 2, dx: layoInput ? -13.5 : -14, y1: 0, y2: layoInput ? 9 : 36}),
+    Plot.ruleX([layoInput ? Math.floor(dotyInput / 10) : dotyInput % 10], {stroke: "black", strokeWidth: 2, dx: coloInput && !layoInput ? 13 : layoInput ? 13.5 : 14, y1: 0, y2: layoInput ? 9 : 36}),
+    Plot.ruleX([layoInput ? Math.floor(dotyInput / 10) : dotyInput % 10], {stroke: "black", strokeWidth: 2, dx:  coloInput && !layoInput ? -13 :layoInput ? -13.5 : -14, y1: 0, y2: layoInput ? 9 : 36}),
     Plot.text(dates, {
       x: (d, i) => layoInput ? Math.floor(i / 10) : i % 10,
       y: (d, i) => layoInput ? i % 10 : Math.floor(i / 10),
