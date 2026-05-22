@@ -38,17 +38,21 @@ viewof dotmInput = transformInput(
 ) % nDaysInput)});
 ```
 
-::: {.column-page}
+::: {.column-page #calplots}
 ```{ojs}
 //| echo: false
+//| className: calplot
+//| label: decplot
 decPlot = Plot.plot({
   padding: 0,
   width: layoInput ? 1080 : 360,
   height: layoInput ? 240 : 630,
   className: "calplot",
-  marginTop: -3,
-  marginLeft: 31,
-  marginBottom: 35,
+  title: "Decalendar",
+  marginTop: coloInput && layoInput ? -2 : !coloInput && layoInput ? -25 : -3,
+  marginLeft: coloInput && !layoInput ? 36 : !coloInput && !layoInput ? 24 : 31,
+  marginRight: coloInput && !layoInput ? 36 : !coloInput && !layoInput ? 24 : 31,
+  marginBottom: coloInput && layoInput ? 34 : !coloInput && layoInput ? 37 : 32,
   y: layoInput ? {
     tickSize: 0,
     label: "Day of dek    ",
@@ -57,21 +61,18 @@ decPlot = Plot.plot({
     tickPadding: -12,
     labelOffset: 22,
   } : {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: -2, labelOffset: 32},
-  x: layoInput ? {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: -2, labelOffset: 32} : {
+  x: layoInput ? {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, labelOffset: 32} : {
     tickSize: 0,
     label: "       Day of dek",
     domain: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-    tickPadding: -1,
+    tickPadding: -2,
     labelOffset: 30,
   },
   style: { fontSize: "21px", overflow: "visible"},
-  color: coloInput ? {
-    range: d3.schemePastel1.concat(d3.schemePastel2.slice(4, 7)).concat(d3.schemeSet1[0]),
-    domain: months.concat("selected"),
-    className: "cal",
-  } : {
-    className: "cal",
+  color: {
+    range: motyColors,
+    domain: moty,
   },
   marks: [
     Plot.cell(dates, {
@@ -89,24 +90,25 @@ decPlot = Plot.plot({
       textStroke: "black",
       textStrokeWidth: 1,
       tickSize: 0,
-      tickPadding: -3 
+      tickPadding: coloInput ? -3 : -1, 
     }) : Plot.axisY({
       ticks: d3.range(0, 37, 2),
       fill: (d, i) => leapInput ? dekLeapColors[d] : dekCommColors[d],
       textStroke: "black",
       textStrokeWidth: 1,
       tickSize: 0,
-      tickPadding: -26,
+      tickPadding: -24,
       labelOffset: 16,
     }),
     coloInput ? Plot.text(dates, {
       x: (d, i) => layoInput ? Math.floor(i / 10 + (i < 190 ? 1 : 0)) : 6,
       y: (d, i) => layoInput ? -1 : Math.floor(i / 10 + (i < 190 ? 1 : 0)),
       text: d => d.getUTCDate() === 7 ? months[d.getUTCMonth()].slice(0, 3) : "",
-      dx: layoInput ? -4 : 132,
+      dx: layoInput ? -4 : 128,
+      dy:  layoInput ? -4 : 0,
       frameAnchor: layoInput ? "left" : "right",
       monospace: true,
-      fontSize: "18px"}) : null,
+      fontSize: "20px"}) : null,
     Plot.ruleY([layoInput ? dotyInput % 10 : Math.floor(dotyInput / 10)], {stroke: "black", strokeWidth: 2, dy: layoInput ? 9 : 8, x1: 0, x2: layoInput ? 36 : 9}),
     Plot.ruleY([layoInput ? dotyInput % 10 : Math.floor(dotyInput / 10)], {stroke: "black", strokeWidth: 2, dy: layoInput ? -9 : -8, x1: 0, x2: layoInput ? 36 : 9}),
     Plot.ruleX([layoInput ? Math.floor(dotyInput / 10) : dotyInput % 10], {stroke: "black", strokeWidth: 2, dx: layoInput ? 13.5 : 14, y1: 0, y2: layoInput ? 9 : 36}),
@@ -114,7 +116,7 @@ decPlot = Plot.plot({
     Plot.text(dates, {
       x: (d, i) => layoInput ? Math.floor(i / 10) : i % 10,
       y: (d, i) => layoInput ? i % 10 : Math.floor(i / 10),
-      fill: (d, i) => !coloInput && (i < 20 || i > 199) ? "white" : "black",
+      fill: (d, i) => coloInput && (i < 31 + nOffInput || i > 213 + nOffInput) ? "white" : !coloInput && (i < 20 || i > 199) ? "white" : "black",
       channels: {
         dayOfYear: {
           value: (d, i) => i,
@@ -159,37 +161,37 @@ decPlot = Plot.plot({
 
 ```{ojs}
 //| echo: false
-calPlot = Plot.plot({
+//| className: calplot
+//| label: greplot
+grePlot = Plot.plot({
   padding: 0,
   width: layoInput ? 1080 : 220,
   height: layoInput ? 180 : 810,
+  title: "Gregorian calendar",
   className: "calplot",
-  marginTop: 0,
+  marginTop: layoInput ? 0 : -2,
   marginBottom: 40,
   marginLeft: 42,
   y: layoInput ? {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
       domain: [-1, 0, 1, 2, 3, 4, 5, 6],
       ticks: [0, 1, 2, 3, 4, 5, 6],
-      tickPadding: 2,
+      tickPadding: -4,
       label: null,
   } : {interval: 1, 
-       // domain: d3.range(0, 54, 2),
-       ticks: 26, label: "Week", type: "band", tickSize: 0, tickPadding: -20, labelOffset: 28},
+       ticks: 26, label: "Week", type: "band", tickSize: 0, tickPadding: -20, labelOffset: 21},
   x: layoInput ? {interval: 1, ticks: 26, label: "Week", type: "band", tickSize: 0, tickPadding: 2, labelOffset: 36} : {
     tickFormat: Plot.formatWeekday("en", "narrow"), 
     tickSize: 0,
     domain: [-1, 0, 1, 2, 3, 4, 5, 6],
     ticks: [0, 1, 2, 3, 4, 5, 6],
-    tickPadding: -12,    
+    tickPadding: -8,
     label: "     Day of week",
     labelOffset: 20,
   },
   style: { fontSize: "20px", overflow: "visible"},
-  color: coloInput ? {
-    range: d3.schemePastel1.concat(d3.schemePastel2.slice(4, 7)),
-    domain: months,
-    className: "cal",
-  } : {
+  color: {
+    range: motyColors,
+    domain: moty,
     className: "cal",
   },
   marks: [
@@ -205,15 +207,16 @@ calPlot = Plot.plot({
     Plot.text(datesCal, {
       x: d => layoInput ? d3.utcWeek.count(d3.utcYear(d), d) : 6,
       y: d => layoInput ? -1 : d3.utcWeek.count(d3.utcYear(d), d),
-      text: d => d.getUTCDate() === 11 ? months[d.getUTCMonth()].slice(0, 3) : "",
+      text: d => d.getUTCDate() === 7 ? months[d.getUTCMonth()].slice(0, 3) : "",
       dx: layoInput ? 9 : 48,
+      dy: layoInput ? -2 : 0,
       frameAnchor: layoInput ? "left" : "right",
       monospace: true,
       fontSize: "20px"}),
     Plot.ruleY(layoInput ? seldow : selwee, {stroke: "black", strokeWidth: 2, dy: layoInput ? -8.5 : -7, x1: 0, x2: layoInput ? 52 + (leapInput && dotwInput === "Sat") : 6}),
     Plot.ruleY(layoInput ? seldow : selwee, {stroke: "black", strokeWidth: 2, dy: layoInput ? 8.5 : 7, x1: 0, x2: layoInput ? 52 + (leapInput && dotwInput === "Sat") : 6}),
-    Plot.ruleX(layoInput ? selwee : seldow, {stroke: "black", strokeWidth: 2, dx: 9.5, y1: 0, y2: layoInput ? 6 : 52 + (leapInput && dotwInput === "Saturday")}),
-    Plot.ruleX(layoInput ? selwee : seldow, {stroke: "black", strokeWidth: 2, dx: -9.5, y1: 0, y2: layoInput ? 6 : 52 + (leapInput && dotwInput === "Saturday")}),
+    Plot.ruleX(layoInput ? selwee : seldow, {stroke: "black", strokeWidth: 2, dx: 9.5, y1: 0, y2: layoInput ? 6 : 52 + (leapInput && dotwInput === "Sat")}),
+    Plot.ruleX(layoInput ? selwee : seldow, {stroke: "black", strokeWidth: 2, dx: -9.5, y1: 0, y2: layoInput ? 6 : 52 + (leapInput && dotwInput === "Sat")}),
     Plot.text(datesCal, {
       x: layoInput ? d => d3.utcWeek.count(d3.utcYear(d), d) : {
         label: "Day of week",
@@ -223,7 +226,7 @@ calPlot = Plot.plot({
         label: "Day of week",
         value: d => d.getUTCDay(),
       } : d => d3.utcWeek.count(d3.utcYear(d), d),
-      fill: (d, i) => !coloInput && (i < 79 - nOffInput || i > 258 - nOffInput) ? "white" : "black",
+      fill: (d, i) => coloInput && (i < 90 + leapInput || i > 272 + leapInput) ? "white" : !coloInput && (i < 79 - nOffInput + leapInput || i > 258 - nOffInput + leapInput) ? "white" : "black",
       text: d => d.getUTCDate(),
       channels: {
         dayOfYear: {

@@ -325,6 +325,12 @@ dekLeapColors = d3.range(37).map(x => piecewiseColor(x * 10 / 366))
 dekCommColors = d3.range(37).map(x => piecewiseColor(x * 10 / 365))
 leaps = d3.range(366).map(x => piecewiseColor(x / 366))
 comms = d3.range(365).map(x => piecewiseColor(x / 365))
+moty = ["March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "January", "February"];
+motyColors = d3.range(12).map(moty2doty).map(x => piecewiseColor(x / daysInYear))
+function moty2doty(moy = 1) {
+  return (Math.floor(
+    (153 * moy + 2) / 5
+) + nOffInput) % daysInYear}
 ```
 
 ```{ojs}
@@ -339,12 +345,21 @@ html`
   border-radius: 4px;
   font-weight: 400;
 }
+#calplots {
+  gap: ${!layoInput * 12}px;
+}
 </style>
 `
 ```
 
 ```{=html}
 <style>
+#calplots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 div.cell:has(form.oi-3a86ea) {
   display: flex;
   flex-wrap: wrap;
@@ -362,6 +377,7 @@ div.observablehq > figure > h2 {
   text-align: center;
   font-size: 1.3rem;
   margin-bottom: -8px;
+  border-bottom: none;
 }
 input[type="radio"] {
   margin: 1px 0px 0px 0px;
