@@ -58,8 +58,8 @@ decPlot = Plot.plot({
     label: "Day of dek    ",
     domain: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-    tickPadding: -8,
-    labelOffset: 24,
+    tickPadding: -7,
+    labelOffset: 25,
   } : {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, tickPadding: -2, labelOffset: 32},
   x: layoInput ? {interval: 1, ticks: 18, label: "Dek", type: "band", tickSize: 0, labelOffset: 32} : {
     tickSize: 0,
@@ -67,7 +67,7 @@ decPlot = Plot.plot({
     domain: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     tickPadding: -2,
-    labelOffset: 30,
+    labelOffset: 31,
   },
   style: { fontSize: "21px", overflow: "visible"},
   color: {
@@ -90,7 +90,7 @@ decPlot = Plot.plot({
       textStroke: "black",
       textStrokeWidth: 1,
       tickSize: 0,
-      tickPadding: coloInput ? -3 : -1, 
+      tickPadding: coloInput ? -3 : 1, 
     }) : Plot.axisY({
       ticks: d3.range(0, 37, 2),
       fill: (d, i) => leapInput ? dekLeapColors[d] : dekCommColors[d],
@@ -98,7 +98,7 @@ decPlot = Plot.plot({
       textStrokeWidth: 1,
       tickSize: 0,
       tickPadding: coloInput ? -24 : -28,
-      labelOffset: 16,
+      labelOffset: coloInput ? 17 : 16,
     }),
     coloInput ? Plot.text(dates, {
       x: (d, i) => layoInput ? Math.floor(i / 10 + (i < 190 ? 1 : 0)) : 6,
@@ -109,10 +109,10 @@ decPlot = Plot.plot({
       frameAnchor: layoInput ? "left" : "right",
       monospace: true,
       fontSize: "20px"}) : null,
-    Plot.ruleY([layoInput ? dotyInput % 10 : Math.floor(dotyInput / 10)], {stroke: "black", strokeWidth: 2, dy: layoInput ? 9 : 8, x1: 0, x2: layoInput ? 36 : 9}),
-    Plot.ruleY([layoInput ? dotyInput % 10 : Math.floor(dotyInput / 10)], {stroke: "black", strokeWidth: 2, dy: layoInput ? -9 : -8, x1: 0, x2: layoInput ? 36 : 9}),
+    Plot.ruleY([layoInput ? dotyInput % 10 : Math.floor(dotyInput / 10)], {stroke: "black", strokeWidth: 2, dy: !coloInput && layoInput ? 10 : layoInput ? 9 : 8, x1: 0, x2: layoInput ? 36 : 9}),
+    Plot.ruleY([layoInput ? dotyInput % 10 : Math.floor(dotyInput / 10)], {stroke: "black", strokeWidth: 2, dy:  !coloInput && layoInput ? -10 :layoInput ? -9 : -8, x1: 0, x2: layoInput ? 36 : 9}),
     Plot.ruleX([layoInput ? Math.floor(dotyInput / 10) : dotyInput % 10], {stroke: "black", strokeWidth: 2, dx: coloInput && !layoInput ? 13 : layoInput ? 13.5 : 14, y1: 0, y2: layoInput ? 9 : 36}),
-    Plot.ruleX([layoInput ? Math.floor(dotyInput / 10) : dotyInput % 10], {stroke: "black", strokeWidth: 2, dx:  coloInput && !layoInput ? -13 :layoInput ? -13.5 : -14, y1: 0, y2: layoInput ? 9 : 36}),
+    Plot.ruleX([layoInput ? Math.floor(dotyInput / 10) : dotyInput % 10], {stroke: "black", strokeWidth: 2, dx:  coloInput && !layoInput ? -13 : layoInput ? -13.5 : -14, y1: 0, y2: layoInput ? 9 : 36}),
     Plot.text(dates, {
       x: (d, i) => layoInput ? Math.floor(i / 10) : i % 10,
       y: (d, i) => layoInput ? i % 10 : Math.floor(i / 10),
@@ -148,6 +148,7 @@ decPlot = Plot.plot({
           dayOfWeek: true,
           x: false,
           y: false,
+          fill: false,
           text: false
         }
       },
@@ -169,13 +170,13 @@ grePlot = Plot.plot({
   height: layoInput ? 180 : 810,
   title: "Gregorian calendar",
   className: "calplot",
-  marginTop: layoInput ? 0 : -2,
+  marginTop: layoInput ? 2 : -2,
   marginBottom: 40,
   marginLeft: 42,
   y: layoInput ? {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
       domain: [-1, 0, 1, 2, 3, 4, 5, 6],
       ticks: [0, 1, 2, 3, 4, 5, 6],
-      tickPadding: -4,
+      tickPadding: -3,
       label: null,
   } : {interval: 1, 
        ticks: 26, label: "Week", type: "band", tickSize: 0, tickPadding: -20, labelOffset: 21},
@@ -184,9 +185,9 @@ grePlot = Plot.plot({
     tickSize: 0,
     domain: [-1, 0, 1, 2, 3, 4, 5, 6],
     ticks: [0, 1, 2, 3, 4, 5, 6],
-    tickPadding: -8,
+    tickPadding: -11 + (leapInput && dotwInput === "Sat") * 5,
     label: "     Day of week",
-    labelOffset: 20,
+    labelOffset: 22 + (leapInput && dotwInput === "Sat") * 5,
   },
   style: { fontSize: "20px", overflow: "visible"},
   color: {
@@ -249,7 +250,8 @@ grePlot = Plot.plot({
           dayOfMonth: true,
           x: true,
           y: true,
-          text: false
+          fill: false,
+          text: false,
         }
       },
       monospace: true,

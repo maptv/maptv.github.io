@@ -384,3 +384,19 @@ img#zModu {
 svg#daylightapp text {
   fill: white;
 }
+
+div#calplots figure.calplot-figure svg.calplot {
+  background: black;
+}
+
+div#calplots figure.calplot-figure svg.calplot g[aria-label="tip"] {
+  fill: black;
+}
+div#calplots figure.calplot-figure svg.calplot g[aria-label="rule"]:has(line) {
+  stroke: white;
+}
+div#decplot figure.calplot-figure svg.calplot g[font-variant="tabular-nums"] text{
+  stroke: white;
+  stroke-width: 1.5px;
+}
+

@@ -331,6 +331,8 @@ function moty2doty(moy = 1) {
   return (Math.floor(
     (153 * moy + 2) / 5
 ) + nOffInput) % daysInYear}
+easyDoy = dotyInput < (80 + leapInput) ? dotyInput : dotyInputNeg
+easySum = easyDoy + 285
 ```
 
 ```{ojs}
@@ -352,7 +354,7 @@ html`
   transform: translateX(${!layoInput * 15}px);
 }
 #greplot figure h2 {
-  transform: translateY(${(!layoInput && leapInput) * 5}px);
+  transform: translate(${!layoInput * 18}px, ${(!layoInput && (!leapInput || dotwInput !== "Sat")) * 6}px);
 }
 p:has(.radiotitle) {
   margin-top: -${layoInput ? 16 : 28}px;
@@ -364,6 +366,12 @@ p:has(.radiotitle) {
 
 ```{=html}
 <style>
+.radiotitle {
+  overflow: visible;
+}
+p:has(.radiotitle) {
+  overflow: visible;
+}
 #decplot, #greplot {
   overflow: visible;
 }
