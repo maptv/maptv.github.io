@@ -357,8 +357,8 @@ html`
   transform: translate(${!layoInput * 18}px, ${(!layoInput && (!leapInput || dotwInput !== "Sat")) * 6}px);
 }
 p:has(.radiotitle) {
-  margin-top: -${layoInput ? 16 : 28}px;
-  margin-bottom: -${width > 500 ? 3 : 6}px;
+  margin-top: -${layoInput ? 16 : 24}px;
+  margin-bottom: -${width > 500 ? 6 : 9}px;
 }
 </style>
 `
@@ -482,17 +482,20 @@ h4.hiddenheading, h5.hiddenheading {
 div#leapscrubvert {
   margin-top: -10px;
 }
-div#leapscrubvert form, div#sliders form {
-  width: 320px;
+div#leapscrubvert form div:has(label):nth-child(even) {
+  width: 210px;
 }
-div#leapscrubvert form:last-child {
-  width: 45px;
+div#leapscrubvert form div:has(label):nth-child(odd) {
+  width: 150px;
 }
 div#leapscrubvert form > label, div#sliders form > label {
-  width: 105px;
+  width: 110px;
 }
 div#leapscrubvert form div:has(label), div#sliders form div:has(label) {
   width: 205px;
+}
+div#leapscrubvert form:last-child {
+  width: 45px;
 }
 input[type="number"] {
   width: 120px;
