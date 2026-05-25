@@ -243,6 +243,7 @@ dotm0 = String(dotm - 1).padStart(2, "0")
 monthNumber = Math.floor(ydz[1] - dotm)
 monthNumber0 = String(monthNumber + 1).padStart(3, "0")
 dotw0doty = Math.floor(ydz[1]) - dotw
+dotw0dotyPad = dotw0doty.toString().padStart(3, "0")
 doty0dote = date2dote(ydz[0], 0)[0]
 doty0dotw = dote2dotw(doty0dote)
 hybridMonthWeek = monthNumber - dotw
@@ -443,8 +444,11 @@ p:has(span.handlabel)  {
   text-align: center;
 }
 div.overflowequation {
-  margin-top: -18px;
+  margin-top: -12px;
   margin-bottom: -8px;
+}
+.nowrap {
+  white-space: nowrap;
 }
 svg.topplot {
   margin-top: -9px;
