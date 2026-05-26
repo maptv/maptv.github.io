@@ -209,10 +209,11 @@ function Scrubber(values, {
 }
 loadUnix = Date.now();
 loadDote = unix2dote(loadUnix)
-loadDate = dote2date(...loadDote)
-loadLeap = year2leap(loadDate[0])
+loadDate = new Date()
+loadYdz = dote2date(...loadDote)
+loadLeap = year2leap(loadYdz[0])
 vertic = width > 500
-negtzo = new Date().getTimezoneOffset() > 0
+negtzo = loadDate.getTimezoneOffset() > 0
 march1doy = 0 + nOffInput
 december31doy = 305 + nOffInput
 january1doy = 306 + nOffInput
@@ -235,6 +236,11 @@ xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
 xmasDiffResult = xmasDiff < 0 ? "-" : ""
 xmasDote = date2dote(ydz[0], 299)[0]
 xmasDotw = dote2dotw(xmasDote)
+gregBoyDote = date2dote(loadYdz[0] - (loadYdz[1] < 306), 306)[0]
+gregBoyDotw = (gregBoyDote + 3) % 7
+loadDateStr = loadDate.toUTCString().split(" ", 4).join(" ")
+dotwArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] 
+gregBoyDotwStr = dotwArr[gregBoyDotw]
 dotw = Math.floor(dote2dotw(dz[0]))
 day266dotw = dote2dotw(date2dote(ydz[0], 266)[0])
 day266dotwDiff = dotw2diff(4, day266dotw)
@@ -349,7 +355,7 @@ html`
   font-weight: 400;
 }
 #calplots {
-  gap: ${!layoInput * 9}px;
+  gap: 3px ${!layoInput * 9}px;
 }
 #decplot figure h2 {
   transform: translateX(${!layoInput * 15}px);
@@ -444,7 +450,7 @@ p:has(span.handlabel)  {
   text-align: center;
 }
 div.overflowequation {
-  margin-top: -12px;
+  margin-top: -9px;
   margin-bottom: -8px;
 }
 .nowrap {

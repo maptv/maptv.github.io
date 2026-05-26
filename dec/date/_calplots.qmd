@@ -268,5 +268,5 @@ grePlot = Plot.plot({
 //| id: radiobuttons
 viewof dotwInput = Inputs.radio([
   "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat",
-  ], {value: "Sun"})
+  ], {value: gregBoyDotwStr})
 ```
