@@ -236,6 +236,7 @@ decDoty = Math.floor(ydz[1])
 decDotyPad = String(decDoty).padStart(3, "0")
 decDek = Math.floor(decDoty / 10)
 decDotd = decDoty % 10
+decDotp = decDotd % 5
 decPent = decDek * 2 + (decDotd > 4)
 xmasDiff = decDoty - 299
 xmasDiffSign = xmasDiff < 0 ? "-" : "+"

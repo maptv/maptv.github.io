@@ -121,7 +121,7 @@ $$\text{dyl}=\begin{cases}
   \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}( \text{yoe}+1)\text{ mod }400=0\end{align}}\\\\
   365&{\text{otherwise.}}\end{cases}$$
 
-Dec categorizes each date as a [countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event%20is%20scheduled%20to%20occur) or countup date, depending on whether the date counts **up** the days **since** Year [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} or counts **down** the days **until** Year [[yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+1]{.nowrap}. The current [[yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}]{.nowrap} Zone 0 date, [\${decYear}[+]{.mono}\${decDotyPad}]{.nowrap}, tells us that Year \${decYear} began \${decDoty} days ago, whereas its countdown equivalent, [\${nextYear}[-]{.mono}\${TminusPadded}]{.nowrap}, indicates that Year \${nextYear} will begin in \${Tminus} days.
+Dec categorizes each date as a [countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event%20is%20scheduled%20to%20occur) or countup date, depending on whether the date counts **up** the days **since** Year [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} or counts **down** the days **until** Year [[yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+1]{.nowrap}. The current [[yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}]{.nowrap} Zone 0 date, [\${decYear}[+]{.mono}\${decDotyPad}]{.nowrap}, informs us that Year \${decYear} began \${decDoty} days ago, whereas its countdown equivalent, [\${nextYear}[-]{.mono}\${TminusPadded}]{.nowrap}, lets us know that Year \${nextYear} will begin in \${Tminus} days.
 
 :::{.overflowequation}
 $$\text{yoe}+\text{pid} \div \text{dyl} = \text{yoe} + 1 + \text{nid} \div \text{dyl}$$
@@ -146,7 +146,7 @@ Based on the calculation above, the Dec [bow]{.tool data-bs-toggle="tooltip" dat
 We can convert between the [[bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}+[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}]{.nowrap} in Dec [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} dates and the [7&times;[woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"}+[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}[-]{.mono}[boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}]{.nowrap} in Dec [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} dates. The [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} is the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of the first day of the Dec year. To obtain the current [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"}, we sum the [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} with the current [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} and then divide by 7: \${week} = (\${doty0dotw} + \${dotw0doty}) &div; 7. Dec truncates [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} dates so that they only display the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}, [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"}, and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}: \${decYear}[+]{.mono}\${week}[+]{.mono}\${dotw}.
 
 :::{.overflowequation}
-$$\text{yoe} + \frac{\text{bow + dow}}{\text{dyl}} = \text{yoe} + \frac{7\times\text{woy + dow}-\text{bowdow}}{\text{dyl}}$$
+$$\text{yoe} + \frac{\text{bow + dow}}{\text{dyl}} = \text{yoe} + \frac{7\times\text{woy + dow}-\text{boydow}}{\text{dyl}}$$
 :::
 
 If [dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"} were like [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} and reset at the [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}, the [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} would always be zero and conversion between [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} and [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} dates would be straightforward but the reality is that we need the [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} to convert a [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} date to a [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} date. Dec pads the left side of the [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} and [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} in dates with zeros so that we can distinguish between two-digit [woy]{.tool data-bs-toggle="tooltip" data-bs-title="weeks of year"} and three-digit [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginnings of week"}. 
@@ -159,14 +159,32 @@ $$\text{boydow = (7} - \text{bow mod 7) mod 7}$$
 
 # Day of dek (dod) {#sec-dod}
 
-While a week is not evenly divisible by any number, a dek can be cut✂️into two equal halves called "pentadays of decaday" ([pod]{.tool data-bs-toggle="tooltip" data-bs-title="pentadays of decaday"}). In the [Mermaid](https://mermaid.js.org) flowcharts below, each row is a [pod]{.tool data-bs-toggle="tooltip" data-bs-title="pentadays of decaday"} and each node can be referred to as a day, [dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of decaday"}, or "day of pentaday" ([dop]{.tool data-bs-toggle="tooltip" data-bs-title="day of pentaday"}).
+In contrast to a week, a dek can be split evenly into 5 pairs of days or 2 equal halves called "pentadays of decaday" ([pod]{.tool data-bs-toggle="tooltip" data-bs-title="pentadays of decaday"}). Likewise, a common year can be divided evenly into 73 "pentadays of year" ([poy]{.tool data-bs-toggle="tooltip" data-bs-title="pentadays of year"}). The last pentaday (pent) of a leap year, Pent 73, consists of the final day of the leap year, Day 365, and the first four days of the subsequent year: Days 0 to 4.
+
+In the context of a common year, Pent 73 is synonymous with Pent 0 of the subsequent year. To obtain the current [poy]{.tool data-bs-toggle="tooltip" data-bs-title="pentadays of year"}, we double the current dek and add the current [pod]{.tool data-bs-toggle="tooltip" data-bs-title="pentadays of decaday"}, which is 1 if the current [dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of dek"} is greater than 4 and 0 otherwise: ${decPent} = \${decDek} &times; 2 + [\${decDotd} > 4]. If we divide a [dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of dek"} by 5, the remainder will be its corresponding "day of pentaday" ([dop]{.tool data-bs-toggle="tooltip" data-bs-title="days of pentaday"}): \${decDek} mod 5 = \${decDotp}. 
+
+:::{.overflowequation}
+$$\text{pod} = [\text{dod} > 4]$$
+
+$$\text{poy = dek} \times 2 + \text{pod}$$
+
+$$\text{dop = dod mod 5}$$
+:::
+
+In the [Mermaid](https://mermaid.js.org) flowchart below, each row is a [pod]{.tool data-bs-toggle="tooltip" data-bs-title="pentadays of decaday"} and each node is a [dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of decaday"}. The flowchart visualizes Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="Duotrigesimal L is decimal 14 or binary 01110"}, a pently schedule that plans for exactly 219 work days per year, which is close to the 208 to 210 work days per year provisioned by a [four-day workweek](https://en.wikipedia.org/wiki/Four-day_workweek#:~:text=an%20arrangement%20where%20a%20workplace%20or%20place%20of%20education%20has%20its%20employees%20or%20students%20work%20or%20attend%20school%2C%20college%20or%20university%20over%20the%20course%20of%20four%20days%20per%20week). Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="Duotrigesimal L is decimal 14 or binary 01110"} designates [Dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of decaday"} 1, 2, 3, 6, 7, and 8 as work days and [Dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of decaday"} 0, 4, 5, and 9 as rest days. 
 
 ```{mermaid}
 %%| label: zerobasedpent
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
-  W[ ]-->A[0]-->B[1]-->C[2]-->D[3]-->E[4]---X[ ]
-  Y[ ]-->F[5]-->G[6]-->H[7]-->I[8]-->J[9]---Z[ ]
+  B~~~M[ ]:::empty----N[ ]:::empty
+  W---M
+  N---O[ ]:::empty
+  Q[ ]:::empty---L
+  W[ ]:::empty-->A[0]-->B[1]-->C[2]-->D[3]-->E[4]---L[ ]:::empty
+  Y[ ]:::empty-->F[5]-->G[6]-->H[7]-->I[8]-->J[9]---O[ ]:::empty
+  B~~~P[ ]:::empty---Q
+  Y---P
   subgraph workdays[work days]
   B
   C
@@ -175,26 +193,30 @@ flowchart LR
   D
   I
   end
-  subgraph restdays[rest days]
+  subgraph restdays[ ]
   A
   F
   E
   J
   workdays
   end
-  style restdays color:transparent;
-  style W color:transparent,fill:transparent,stroke:transparent;
-  style X color:transparent,fill:transparent,stroke:transparent;
-  style Y color:transparent,fill:transparent,stroke:transparent;
-  style Z color:transparent,fill:transparent,stroke:transparent;
+  classDef empty width:0px;
 ```
+
+Dec refers to groups of days between [Dop]{.tool data-bs-toggle="tooltip" data-bs-title="day of pentaday"} 0 and 4 and betwixt [Dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of decaday"} 0 and 9 as "pentaday interquintile ranges" ([pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile range"}) and "decaday interdecile ranges" ([dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile ranges"}), respectively. The acronyms [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile range"} and [dir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile range"} are derived from the terms [quintile](https://en.wiktionary.org/wiki/quintile#:~:text=quantiles%20which%20divide%20an%20ordered%20sample%20population%20into%20five%20equally%20numerous%20subsets), [decile](https://en.wikipedia.org/wiki/Decile#:~:text=nine%20values%20that%20divide%20the%20sorted%20data%20into%20ten%20equal%20parts), and [interquartile range](https://en.wikipedia.org/wiki/Interquartile_range#:~:text=a%20measure%20of%20statistical%20dispersion). If we follow Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="Duotrigesimal L is decimal 14 or binary 01110"}, a [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} is to a [workweek](https://en.wikipedia.org/wiki/Workweek_and_weekend#:~:text=the%20part%20of%20the%20seven%2Dday%20week%20devoted%20to%20working) as a pent is to a week and as a dek is to a [fortnight](https://en.wikipedia.org/wiki/Fortnight#:~:text=a%20unit%20of%20time%20equal%20to%2014%20days).
 
 ```{mermaid}
 %%| label: onebasedpent
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
-  W[ ]-->A[1]-->B[2]-->C[3]-->D[4]-->E[5]---X[ ]
-  Y[ ]-->F[6]-->G[7]-->H[8]-->I[9]-->J[10]---Z[ ]
+  B~~~M[ ]:::empty----N[ ]:::empty
+  W---M
+  N---O[ ]:::empty
+  Q[ ]:::empty---L
+  W[ ]:::empty-->A[1]-->B[2]-->C[3]-->D[4]-->E[5]---L[ ]:::empty
+  Y[ ]:::empty-->F[6]-->G[7]-->H[8]-->I[9]-->J[10]---O[ ]:::empty
+  B~~~P[ ]:::empty---Q
+  Y---P
   subgraph workdays[work days]
   A
   B
@@ -203,21 +225,18 @@ flowchart LR
   G
   H
   end
-  subgraph restdays[rest days]
+  subgraph restdays[ ]
   D
   E
   I
   J
   workdays
   end
-  style restdays color:transparent;
-  style W color:transparent,fill:transparent,stroke:transparent;
-  style X color:transparent,fill:transparent,stroke:transparent;
-  style Y color:transparent,fill:transparent,stroke:transparent;
-  style Z color:transparent,fill:transparent,stroke:transparent;
+  classDef empty width:0px;
 ```
 
-Each pod consists of Dec refers to a group of consecutive workdays as a [travail](https://en.wiktionary.org/wiki/travail#:~:text=%C2%B1-,hard%20work,-show%20%E2%96%BC) (trav). The workdays in the flowcharts are Dop 1, 2, and 3 or equivalently Dod 1, 2, 3, 6, 7, and 8. According to Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="Duotrigesimal L is decimal 14 or binary 01110"}, each pod has two rest days that smooth the transition between pents, deks, hekts, and years. that are analogous to a weekend. called a pentend. The bottom flowchart is one-based instead of zero-based and thus starts from [Dod 1]{.tool data-bs-toggle="tooltip" data-bs-title="second day of dek"} instead of [Dod 0]{.tool data-bs-toggle="tooltip" data-bs-title="day of dek"} and refers to [Dod 0]{.tool data-bs-toggle="tooltip" data-bs-title="first day of dek"} as [Dod 10]{.tool data-bs-toggle="tooltip" data-bs-title="first day of dek"}.
+A [dir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile range"} comprises [Pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} 0 and 1 and [Dod]{.tool data-bs-toggle="tooltip" data-bs-title="days of decaday"} 4 and 5. 
+Each pod consists of Dec refers to a group of consecutive workdays as a [travail](https://en.wiktionary.org/wiki/travail#:~:text=%C2%B1-,hard%20work,-show%20%E2%96%BC) (trav). The workdays in the flowchartsthat are analogous to a weekend. called a pentend. The bottom flowchart is one-based instead of zero-based and thus starts from [Dod 1]{.tool data-bs-toggle="tooltip" data-bs-title="second day of dek"} instead of [Dod 0]{.tool data-bs-toggle="tooltip" data-bs-title="day of dek"} and refers to [Dod 0]{.tool data-bs-toggle="tooltip" data-bs-title="first day of dek"} as [Dod 10]{.tool data-bs-toggle="tooltip" data-bs-title="first day of dek"}.
 
 While the one-based diagram can be useful, To avoid [off-by-one errors](https://en.wikipedia.org/wiki/Off-by-one_error#:~:text=a%20logic%20error%20that%20involves%20a%20number%20that%20differs%20from%20its%20intended%20value%20by%201), pent, dek, [dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of dek"}, and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} numbers are always zero-based in Dec calculations, but the concept of pents may be easier to explain using a one-based diagram. 
 There are 4 prime dod: 2, 3, 5, and 7. and 4 composite dod
@@ -248,7 +267,7 @@ After 4 or 8 years of consecutive pents, the Schedule [3]{.color3} pattern shown
 |      |      |      |      | 0    |
 | 1    | 2    | 3    | 4    | 5    |
 
-The last pent in common years is Pent 72. Day [365]{.tool data-bs-toggle="tooltip" data-bs-title="The last day of a Dec leap year"} is the only day in Pent 73. Day [0]{.color0} is the first day of Pent 0, the first pent of the [year]{.tool data-bs-toggle="tooltip" data-bs-title="year"}. To get the current pent number, ${decPent}, we double the current dek number, \${decDek}, and then add 1 if the current [dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of dek"} number, \${decDotd}, is greater than 4.
+The last pent in common years is Pent 72. Day [365]{.tool data-bs-toggle="tooltip" data-bs-title="The last day of a Dec leap year"} is the only day in Pent 73. Day [0]{.color0} is the first day of Pent 0, the first pent of the [year]{.tool data-bs-toggle="tooltip" data-bs-title="year"}.
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
 ![[Wikimedia](https://commons.wikimedia.org/wiki/File:Manual_Layout.svg)](../../asset/Manual_Layout.svg)
@@ -323,12 +342,12 @@ flowchart LR
    L-->Y
    L-->D
    L-->E
-   R-->Y
-   M-->R[  ]:::empty
-   D-->A
+   R---Y
+   M---R[  ]:::empty
+   D---A
    D~~~B[  ]:::empty
    A-->G
-   G-->R
+   G---R
    Y~~~L[  ]:::empty
    Y---A[  ]:::empty
    Y~~~A
