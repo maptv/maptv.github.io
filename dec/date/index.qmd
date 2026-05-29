@@ -299,7 +299,7 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-The dod in the flowchart above are rotated by 1 day. To rotate dod, we add at least 1 day and keep the remainder after dividing by ten. If we rotate the flowchart above by 3 days, we would move the lims from the right to the left and get the flowchart below. A rotation of more 5 days would switch the rows in the flowchart below but keep the lims on the left side.
+The dod in the flowchart above are rotated by 1 day. To rotate dod, we add at least 1 day and keep the remainder after dividing by ten. If we rotate the one-based flowchart by 3 days, we would move the lims from the right to the left and get the flowchart below. A rotation of 5 more days would switch the rows in the flowchart below but keep the lims on the left side.
 
 ```{mermaid}
 %%| label: fourbasedpent
@@ -331,6 +331,15 @@ flowchart LR
   classDef empty width:0px;
 ```
 
+The Schedule L pattern of rest and work days can be expressed in binary (base2) as 01110, decimal (base10) as 14, or Dec duotrigesimal (base32) as L. Dec base32 condenses each of the 32 pently schedule binary sequences into a single letter of the Polish alphabet. A plan for multiple pents in base32 has one letter per pent.
+
+Use the text input below to enter a binary sequence that Dec will translate into Polish letters. Any non-binary character entered into the text input is ignored. Therefore, we can use non-binary characters to organize the input as desired. For example, we can put a space after every pent and a linebreak after every dek.
+
+Instead of doing mental calculations in base32, we can write out our plan in ones and zeros so that Dec can . To keep track of 
+If I wanted to follow Schedule L for one pent but then work Dod 9 instead of 6 
+The plan 
+
+A dekly schedule is essentially a sequence of two pently schedules. The recommended dekly schedule is Schedule LŁ. If we want plan to follow Schedule L for the one pent and then switch to Schedule F for the next pent is called LF 
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
 ![[Wikimedia](https://commons.wikimedia.org/wiki/File:Manual_Layout.svg)](../../asset/Manual_Layout.svg)
