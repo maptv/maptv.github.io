@@ -207,15 +207,15 @@ Dec identifies groups of days between [Dop]{.tool data-bs-toggle="tooltip" data-
 
 Dec refers to a pair of consecutive days that separate two [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} as a liminal ([lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"}). The last [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} of a common year, [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} 73, comprises Days 364 and 0 and is synonymous with [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} 0 of the subsequent year. In a leap year, [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} 73 consists of Days 364 and 365 and overlaps with [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} 74, which is composed of Days 365 and 0 and is equivalent to [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} 0 of the succeeding year.
 
-With the exception of Lim 74, every even-numbered [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} is the border between two [dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile ranges"}. With the exception of Lim 73, every odd-numbered [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} is flanked by the two [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} within each [dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile range"}. According to Schedule L, workdays are only in [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} and rest days are only in [lims]{.tool data-bs-toggle="tooltip" data-bs-title="liminals"}. The flowchart below shows the seamless transition from a common year to the subsequent year.
+With the exception of Lim 74, every even-numbered [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} is the border between two [dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile ranges"}. With the exception of Lim 73, every odd-numbered [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} is flanked by the two [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} within each [dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile range"}. The flowchart below shows the last 5 [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} of a common year and the first 5 [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} of the following year, which include the last day of Lim 72, Pir 72, Lim 0, Pir 0, and the first day of Lim 1.
 
 ```{mermaid}
 %%| label: zerobasedcommon
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
   W~~~~O[ ]:::empty
-  W[ ]:::empty-->A[360]-->B[361]-->C[362]-->D[363]-->E[364]---L[ ]:::empty
-  Y[ ]:::empty-->F[0]-->G[1]-->H[2]-->I[3]-->J[4]--->K[ ]:::empty
+  W[ ]:::empty-->A[360]-->B[361]-->C[362]-->D[363]-->E[364]----L[ ]:::empty
+  Y[ ]:::empty-->F[0]-->G[1]-->H[2]-->I[3]-->J[4]-->K[ ]:::empty
   Q[ ]:::empty---L
   Y---Q
   subgraph workdays[work]
@@ -236,13 +236,9 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-| Rest | Work | Work | Work | Rest |
-| ---- | ---- | ---- | ---- | ---- |
-| 360  | 361  | 362  | 363  | 364  |
-| 0    | 1    | 2    | 3    | 4    |
+As shown by flowcharts above, the transition from a common year to the next year preserves the Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="Duotrigesimal L is decimal 14 or binary 01110"} pattern of 2 rest days followed by 3 work days. After 4 or 8 years, this pattern is interrupted by the 3 consecutive rest days of Lims 73 and 74 during the transition from a leap year.
 
-
-After 4 or 8 years of consecutive pents, the Schedule [3]{.color3} pattern shown in the flowchart above is interrupted by the 3 consecutive rest days of Lims 73 and 74 during the transition from a leap year. This interruption is represented by 4 empty cells in the middle row of the two table below.
+According to Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="Duotrigesimal L is decimal 14 or binary 01110"}, workdays are only in [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} and rest days are only in [lims]{.tool data-bs-toggle="tooltip" data-bs-title="liminals"}. 
 
 The middle row contains only one day: Day [365]{.color365by366} in the top table and Day [0]{.color0} in bottom one.
 
@@ -251,7 +247,7 @@ The middle row contains only one day: Day [365]{.color365by366} in the top table
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
   W~~~~O[ ]:::empty
-  W[ ]:::empty-->A[360]-->B[361]-->C[362]-->D[363]-->E[364]---L[365]~~~S[ ]:::empty
+  W[ ]:::empty-->A[360]-->B[361]-->C[362]-->D[363]-->E[364]-->L[365]~~~S[ ]:::empty
   Y[ ]:::empty-->F[0]-->G[1]-->H[2]-->I[3]-->J[4]--->K[ ]:::empty
   Q[ ]:::empty---L
   Y---Q
