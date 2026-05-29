@@ -185,7 +185,7 @@ flowchart LR
   Y[ ]:::empty-->F[5]-->G[6]-->H[7]-->I[8]-->J[9]---O[ ]:::empty
   B~~~P[ ]:::empty---Q
   Y---P
-  subgraph workdays[work days]
+  subgraph workdays[work]
   B
   C
   G
@@ -203,11 +203,59 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-Dec refers to groups of days between [Dop]{.tool data-bs-toggle="tooltip" data-bs-title="day of pentaday"} 0 and 4 and betwixt [Dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of decaday"} 0 and 9 as "pentaday interquintile ranges" ([pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"}) and "decaday interdecile ranges" ([dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile ranges"}), respectively. The acronyms [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile range"} and [dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile range"} are derived from the terms [quintile](https://en.wiktionary.org/wiki/quintile#:~:text=quantiles%20which%20divide%20an%20ordered%20sample%20population%20into%20five%20equally%20numerous%20subsets), [decile](https://en.wikipedia.org/wiki/Decile#:~:text=nine%20values%20that%20divide%20the%20sorted%20data%20into%20ten%20equal%20parts), and [interquartile range](https://en.wikipedia.org/wiki/Interquartile_range#:~:text=a%20measure%20of%20statistical%20dispersion). If we follow Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="Duotrigesimal L is decimal 14 or binary 01110"}, a [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} is to a [workweek](https://en.wikipedia.org/wiki/Workweek_and_weekend#:~:text=the%20part%20of%20the%20seven%2Dday%20week%20devoted%20to%20working) as a pent is to a week and as a dek is to a [fortnight](https://en.wikipedia.org/wiki/Fortnight#:~:text=a%20unit%20of%20time%20equal%20to%2014%20days).
+Dec identifies groups of days between [Dop]{.tool data-bs-toggle="tooltip" data-bs-title="day of pentaday"} 0 and 4 and betwixt [Dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of decaday"} 0 and 9 as "pentaday interquintile ranges" ([pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"}) and "decaday interdecile ranges" ([dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile ranges"}), respectively. The acronyms [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile range"} and [dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile range"} are derived from the terms [quintile](https://en.wiktionary.org/wiki/quintile#:~:text=quantiles%20which%20divide%20an%20ordered%20sample%20population%20into%20five%20equally%20numerous%20subsets), [decile](https://en.wikipedia.org/wiki/Decile#:~:text=nine%20values%20that%20divide%20the%20sorted%20data%20into%20ten%20equal%20parts), and [interquartile range](https://en.wikipedia.org/wiki/Interquartile_range#:~:text=a%20measure%20of%20statistical%20dispersion). If we follow Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="Duotrigesimal L is decimal 14 or binary 01110"}, a [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} is to a [workweek](https://en.wikipedia.org/wiki/Workweek_and_weekend#:~:text=the%20part%20of%20the%20seven%2Dday%20week%20devoted%20to%20working) as a pent is to a week and as a dek is to a [fortnight](https://en.wikipedia.org/wiki/Fortnight#:~:text=a%20unit%20of%20time%20equal%20to%2014%20days).
 
-Dec refers to a pair of consecutive days that separate two [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} as a limbo ([lim]{.tool data-bs-toggle="tooltip" data-bs-title="limbo"}). The last [lim]{.tool data-bs-toggle="tooltip" data-bs-title="limbo"} of a common year, [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="limbo"} 73, comprises Days 364 and 0 and is synonymous with [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="limbo"} 0 of the subsequent year. In a leap year, [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="limbo"} 73 consists of Days 364 and 365 and overlaps with [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="limbo"} 74, which is composed of Days 365 and 0 and is equivalent to [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="limbo"} 0 of the succeeding year.
+Dec refers to a pair of consecutive days that separate two [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} as a liminal ([lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"}). The last [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} of a common year, [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} 73, comprises Days 364 and 0 and is synonymous with [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} 0 of the subsequent year. In a leap year, [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} 73 consists of Days 364 and 365 and overlaps with [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} 74, which is composed of Days 365 and 0 and is equivalent to [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} 0 of the succeeding year.
 
-Even-numbered [lims]{.tool data-bs-toggle="tooltip" data-bs-title="limbos"} are the boundaries between [dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile ranges"} and odd-numbered [lims]{.tool data-bs-toggle="tooltip" data-bs-title="limbos"} are the borders between the [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} within [dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile ranges"}. When we follow Schedule L, a [lim]{.tool data-bs-toggle="tooltip" data-bs-title="limbos"} is the Dec analog of a weekend. The flowchart below starts from Dod 1 and refers to Dod 0 as Dod 10 so that we can see the two days of each lim side-by-side as opposed to in opposite corners of each pod. 
+With the exception of Lim 74, every even-numbered [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} is the border between two [dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile ranges"}. With the exception of Lim 73, every odd-numbered [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} is flanked by the two [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} within each [dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile range"}. According to Schedule L, workdays are only in [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} and rest days are only in [lims]{.tool data-bs-toggle="tooltip" data-bs-title="liminals"}. The flowchart below shows the seamless transition from a common year to the subsequent year.
+
+```{mermaid}
+%%| label: zerobasedeoy
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
+flowchart LR
+  N[ ]:::empty
+  W~~~M[ ]:::empty
+  N~~~O[ ]:::empty
+  W[ ]:::empty-->A[360]-->B[361]-->C[362]-->D[363]-->E[364]---L[ ]:::empty
+  Y[ ]:::empty-->F[0]-->G[1]-->H[2]-->I[3]-->J[4]-->K[ ]:::empty
+  Q[ ]:::empty---L
+  P[ ]:::empty---Q
+  Y---P
+  subgraph workdays[work]
+  B
+  C
+  G
+  H
+  D
+  I
+  end
+  subgraph restdays[ ]
+  A
+  F
+  E
+  J
+  workdays
+  end
+  classDef empty width:0px;
+```
+
+| Rest | Work | Work | Work | Rest |
+| ---- | ---- | ---- | ---- | ---- |
+| 360  | 361  | 362  | 363  | 364  |
+| 0    | 1    | 2    | 3    | 4    |
+
+
+After 4 or 8 years of consecutive pents, the Schedule [3]{.color3} pattern shown in the flowchart above is interrupted by the 3 consecutive rest days of Lims 73 and 74 during the transition from a leap year. This interruption is represented by 4 empty cells in the middle row of the two table below.
+
+The middle row contains only one day: Day [365]{.color365by366} in the top table and Day [0]{.color0} in bottom one.
+
+| Rest | Work | Work | Work | Rest |
+| ---- | ---- | ---- | ---- | ---- |
+| 360  | 361  | 362  | 363  | 364  |
+|      |      |      |      | 365  |
+| 0    | 1    | 2    | 3    | 4    |
+
+When we follow Schedule L, a [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminals"} is the Dec analog of a weekend. The flowchart below starts from Dod 1 and refers to Dod 0 as Dod 10 so that we can see the two days of each lim side-by-side as opposed to in opposite corners of each pod. 
 
 ```{mermaid}
 %%| label: onebasedpent
@@ -221,7 +269,7 @@ flowchart LR
   Y[ ]:::empty-->F[6]-->G[7]-->H[8]-->I[9]-->J[10]---O[ ]:::empty
   B~~~P[ ]:::empty---Q
   Y---P
-  subgraph workdays[work days]
+  subgraph workdays[work]
   A
   B
   C
@@ -243,25 +291,12 @@ flowchart LR
 While the one-based diagram can be useful, To avoid [off-by-one errors](https://en.wikipedia.org/wiki/Off-by-one_error#:~:text=a%20logic%20error%20that%20involves%20a%20number%20that%20differs%20from%20its%20intended%20value%20by%201), pent, dek, [dod]{.tool data-bs-toggle="tooltip" data-bs-title="day of dek"}, and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} numbers are always zero-based in Dec calculations, but the concept of pents may be easier to explain using a one-based diagram. 
 There are 4 prime dod: 2, 3, 5, and 7. and 4 composite dod
 
-Like the [dod]{.tool data-bs-toggle="tooltip" data-bs-title="days of dek"} in the flowcharts above, the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} in the tables below are arranged in both a zero-based (top) and a one-based (bottom) manner. The tables visualize the seamless transition between a common year and the subsequent year.
-
-| Rest | Work | Work | Work | Rest |
-| ---- | ---- | ---- | ---- | ---- |
-| 360  | 361  | 362  | 363  | 364  |
-| 0    | 1    | 2    | 3    | 4    |
+Like the [dod]{.tool data-bs-toggle="tooltip" data-bs-title="days of dek"} in the flowcharts above, the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} in the tables below are arranged in both a zero-based (top) and a one-based (bottom) manner.
 
 | Work | Work | Work | Rest | Rest |
 | ---- | ---- | ---- | ---- | ---- |
 | 361  | 362  | 363  | 364  | 0    |
 | 1    | 2    | 3    | 4    | 5    |
-
-After 4 or 8 years of consecutive pents, the Schedule [3]{.color3} pattern shown in the flowcharts and tables above is interrupted by 3 consecutive rest days during the transition from a leap year. This interruption is represented by 4 empty cells in the middle row of the two tables below. The middle row contains only one day: Day [365]{.color365by366} in the top table and Day [0]{.color0} in bottom one.
-
-| Rest | Work | Work | Work | Rest |
-| ---- | ---- | ---- | ---- | ---- |
-| 360  | 361  | 362  | 363  | 364  |
-|      |      |      |      | 365  |
-| 0    | 1    | 2    | 3    | 4    |
 
 | Work | Work | Work | Rest | Rest |
 | ---- | ---- | ---- | ---- | ---- |
