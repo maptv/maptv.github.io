@@ -236,9 +236,11 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-As shown by flowcharts above, the transition from a common year to the next year preserves the Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="Duotrigesimal L is decimal 14 or binary 01110"} pattern of 2 rest days followed by 3 work days. After 4 or 8 years, this pattern is interrupted by the 3 consecutive rest days of Lims 73 and 74 during the transition from a leap year.
+As shown by flowcharts above, the transition from a common year to the next year preserves the alternating pattern of two-day lims and three-day [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"}. After 4 or 8 years, this pattern is interrupted by the 3 consecutive rest days of Lims 73 and 74 during the transition from a leap year.
 
-According to Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="Duotrigesimal L is decimal 14 or binary 01110"}, workdays are only in [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} and rest days are only in [lims]{.tool data-bs-toggle="tooltip" data-bs-title="liminals"}. 
+Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="Duotrigesimal L is decimal 14 or binary 01110"} pattern of 2 rest days followed by 3 work days. 
+According to Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="Duotrigesimal L is decimal 14 or binary 01110"}, lims contain workdays are only in [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} and rest days are only in [lims]{.tool data-bs-toggle="tooltip" data-bs-title="liminals"}. 
+
 
 The middle row contains only one day: Day [365]{.color365by366} in the top table and Day [0]{.color0} in bottom one.
 
