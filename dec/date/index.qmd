@@ -210,17 +210,14 @@ Dec refers to a pair of consecutive days that separate two [pir]{.tool data-bs-t
 With the exception of Lim 74, every even-numbered [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} is the border between two [dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile ranges"}. With the exception of Lim 73, every odd-numbered [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal"} is flanked by the two [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} within each [dir]{.tool data-bs-toggle="tooltip" data-bs-title="decaday interdecile range"}. According to Schedule L, workdays are only in [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} and rest days are only in [lims]{.tool data-bs-toggle="tooltip" data-bs-title="liminals"}. The flowchart below shows the seamless transition from a common year to the subsequent year.
 
 ```{mermaid}
-%%| label: zerobasedeoy
+%%| label: zerobasedcommon
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
-  N[ ]:::empty
-  W~~~M[ ]:::empty
-  N~~~O[ ]:::empty
+  W~~~~O[ ]:::empty
   W[ ]:::empty-->A[360]-->B[361]-->C[362]-->D[363]-->E[364]---L[ ]:::empty
-  Y[ ]:::empty-->F[0]-->G[1]-->H[2]-->I[3]-->J[4]-->K[ ]:::empty
+  Y[ ]:::empty-->F[0]-->G[1]-->H[2]-->I[3]-->J[4]--->K[ ]:::empty
   Q[ ]:::empty---L
-  P[ ]:::empty---Q
-  Y---P
+  Y---Q
   subgraph workdays[work]
   B
   C
@@ -248,6 +245,34 @@ flowchart LR
 After 4 or 8 years of consecutive pents, the Schedule [3]{.color3} pattern shown in the flowchart above is interrupted by the 3 consecutive rest days of Lims 73 and 74 during the transition from a leap year. This interruption is represented by 4 empty cells in the middle row of the two table below.
 
 The middle row contains only one day: Day [365]{.color365by366} in the top table and Day [0]{.color0} in bottom one.
+
+```{mermaid}
+%%| label: zerobasedleap
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
+flowchart LR
+  W~~~~O[ ]:::empty
+  W[ ]:::empty-->A[360]-->B[361]-->C[362]-->D[363]-->E[364]---L[365]~~~S[ ]:::empty
+  Y[ ]:::empty-->F[0]-->G[1]-->H[2]-->I[3]-->J[4]--->K[ ]:::empty
+  Q[ ]:::empty---L
+  Y---Q
+  subgraph workdays[work]
+  B
+  C
+  G
+  H
+  D
+  I
+  end
+  subgraph restdays[ ]
+  A
+  F
+  E
+  J
+  L
+  workdays
+  end
+  classDef empty width:0px;
+```
 
 | Rest | Work | Work | Work | Rest |
 | ---- | ---- | ---- | ---- | ---- |
