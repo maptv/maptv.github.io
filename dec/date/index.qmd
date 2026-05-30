@@ -343,9 +343,11 @@ Inputs.bind(binaryInput(binopt), viewof ranin)
 viewof ranin = Inputs.range([0, 31], {step: 1, value: 14})
 ```
 
-When we have more than one pently schedule, we can concatenate their base2, base10, or base32 representations to create a sequence of schedules. A sequence of two pently schedules is called a dekly schedule. The Schedule LŁ dekly schedule alternates between Schedules L and Ł. In binary, LŁ is 0111001111. In decimal, LŁ is 463. 
+When we have more than one pently schedule, we can concatenate their base2, base10, or base32 representations to create a pently schedule sequence. A sequence of two pently schedules is called a dekly schedule. The Schedule LŁ dekly schedule alternates between Schedules L and Ł. In binary, LŁ is 01110 01111. In decimal, LŁ is 463 or 14 and 14.
 
-A dekly schedule is essentially a sequence of two pently schedules. The recommended dekly schedule is Schedule LŁ. If we want plan to follow Schedule L for the one pent and then switch to Schedule F for the next pent is called LF 
+Schedule LŁ has an additional work day compared to Schedule L and thus provisions 291 work days per year. 
+
+If we want plan to follow Schedule L for the one pent and then switch to Schedule F for the next pent is called LF 
 
 :::{.column-margin fig-align="center" style="text-align:center;"}
 ![[Wikimedia](https://commons.wikimedia.org/wiki/File:Manual_Layout.svg)](../../asset/Manual_Layout.svg)

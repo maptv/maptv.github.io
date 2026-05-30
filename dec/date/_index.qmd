@@ -1095,7 +1095,7 @@ div.pairedinputs div.cell-output.cell-output-display {
 div.pairedinputs span:has(button) {
   padding-right: 9px;
 }
-div.pairedinputs div:has(> form:has(select)) {
+div.pairedinputs div:has(> form > select) {
   width: 42px;
 }
 div.pairedinputs input[type="number"] {
