@@ -351,6 +351,565 @@ function moty2doty(moy = 1) {
 ) + nOffInput) % daysInYear}
 easyDoy = dotyInput < (80 + leapInput) ? dotyInput : dotyInputNeg
 easySum = easyDoy + 285
+binopt = ({
+  type: 'uint16',
+  value: ranin,
+  displayParts: false,
+  format: false,
+  byteSeparation: false
+})
+templateFunction = inputs => htl.html`<div style="display: flex;">${inputs}</div>`
+b32js = "0123456789abcdefghijklmnopqrstuv";
+b32pl = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ";
+toPolishMap = Object.fromEntries(
+  [...b32js].map((c, i) => [c, b32pl[i]])
+);
+toBase32map = Object.fromEntries(
+  [...b32pl].map((c, i) => [c, b32js[i]])
+);
+function toPolish(str) {
+  return [...str.toLowerCase()]
+    .map(c => toPolishMap[c] ?? c)
+    .join("");
+}
+function toBase32(str) {
+  return [...str]
+    .map(c => toBase32map[c] ?? c)
+    .join("");
+}
+// https://observablehq.com/@rreusser/binary-input
+function binaryInput(opts) {
+  var type = opts.type;
+  var byteSeparation =
+    opts.byteSeparation === undefined ? '5px' : opts.byteSeparation;
+  var format = opts.format === undefined ? x => x : opts.format;
+  var displayParts =
+    opts.displayParts === undefined ? false : opts.displayParts;
+  var fractionalSignificand =
+    opts.fractionalSignificand === undefined
+      ? false
+      : !!opts.fractionalSignificand;
+  var outputAsBytes =
+    opts.outputAsBytes === undefined ? false : !!opts.outputAsBytes;
+  var BigInt64Array = window.BigInt64Array;
+  var BigUint64Array = window.BigUint64Array;
+  var BigInt = window.BigInt;
+
+  var Ctor;
+  var length;
+  var signLength = 0;
+  var exponentLength = 0;
+  var offset = 0;
+  switch (type) {
+    case 'float16':
+      Ctor = Float32Array;
+      length = 16;
+      signLength = 1;
+      exponentLength = 5;
+      offset = 15;
+      break;
+    case 'float':
+    case 'float32':
+      Ctor = Float32Array;
+      length = 32;
+      signLength = 1;
+      exponentLength = 8;
+      offset = 127;
+      break;
+    case 'double':
+    case 'float64':
+      Ctor = Float64Array;
+      length = 64;
+      signLength = 1;
+      exponentLength = 11;
+      offset = 1023;
+      break;
+    case 'uint8':
+      Ctor = Uint8Array;
+      length = 8;
+      break;
+    case 'int8':
+      Ctor = Int8Array;
+      length = 8;
+      signLength = 1;
+      break;
+    case 'uint16':
+      Ctor = Uint16Array;
+      length = 16;
+      break;
+    case 'int16':
+      Ctor = Int16Array;
+      length = 16;
+      signLength = 1;
+      break;
+    case 'uint32':
+      Ctor = Uint32Array;
+      length = 32;
+      break;
+    case 'int32':
+      Ctor = Int32Array;
+      length = 32;
+      signLength = 1;
+      break;
+    case 'uint64':
+      Ctor = BigUint64Array;
+      length = 64;
+      signLength = 0;
+      break;
+    case 'int64':
+      Ctor = BigInt64Array;
+      length = 64;
+      signLength = 1;
+      break;
+    default:
+      throw new Error(
+        `Unexpected type "${type}". Options are 'float' ('float32'), 'double' ('float64'), 'uint8', 'int8', 'uint16', 'int16', 'uint32', and 'int32'`
+      );
+  }
+
+  if (
+    !window.BigInt &&
+    exponentLength &&
+    fractionalSignificand &&
+    length > 32
+  ) {
+    throw new Error(
+      'BigInt support must be present to display fractions for single or double precision floats'
+    );
+  }
+
+  // If we don't need anything special, fake it with a pass-through
+  var BigInt =
+    window.BigInt ||
+    function(x) {
+      return x;
+    };
+
+  var valueAsArray;
+
+  var bytes;
+  if (type === 'float16') {
+    // Typed array interpretation-style casting doesn't work for float16 since
+    // JavaScript doesn't support it. Instead we'll have to do this manually.
+    bytes = new Uint8Array(2);
+    if (opts.literalValue !== undefined) {
+      bytes[0] = opts.literalValue & 0x00ff;
+      bytes[1] = (opts.literalValue & 0xff00) >> 8;
+    } else if (opts.value !== undefined) {
+      var floatValue = new Float32Array([opts.value]);
+      var floatBytes = new Uint8Array(floatValue.buffer);
+      var signBit = (floatBytes[3] & 0b10000000) >> 7;
+      var exponent32 =
+        ((floatBytes[3] & 0b01111111) << 1) |
+        ((floatBytes[2] & 0b10000000) >> 7);
+      var exponent16 = exponent32 - 127 + 15;
+      var significand =
+        ((floatBytes[2] & 0b01111111) << 3) |
+        ((floatBytes[1] & 0b11100000) >> 5);
+      bytes[1] =
+        (signBit << 7) |
+        (exponent16 << 2) |
+        ((significand & 0b1100000000) >> 8);
+      bytes[0] = significand & 0b11111111;
+    }
+  } else {
+    if (opts.literalValue === undefined) {
+      var value = opts.value === undefined ? 0 : opts.value;
+      valueAsArray = new Ctor([
+        Ctor === BigInt64Array || Ctor === BigUint64Array
+          ? BigInt(value)
+          : value
+      ]);
+      bytes = new Uint8Array(valueAsArray.buffer);
+    } else {
+      valueAsArray = new Ctor([
+        Ctor === BigInt64Array || Ctor === BigUint64Array ? BigInt(0) : 0
+      ]);
+      bytes = new Uint8Array(valueAsArray.buffer);
+      for (var i = 0; i < length >> 3; i++) {
+        bytes[i] = (opts.literalValue & (0xff << (i * 8))) >> (i * 8);
+      }
+    }
+  }
+
+  const container = document.createElement('div');
+
+  if (opts.title) {
+    const title = document.createElement('div');
+    title.style.font = '700 0.9rem sans-serif';
+    title.textContent = opts.title;
+    title.style.marginBottom = '0.2rem';
+    container.appendChild(title);
+  }
+
+  const editor = document.createElement('div');
+  container.appendChild(editor);
+  editor.style.fontFamily = 'monospace';
+  editor.style.fontSize = '0.9rem';
+
+  // Debatable. It's easy to accidentally select when trying to toggle bits.
+  editor.style.userSelect = 'none';
+
+  let debugEl;
+  if (true) {
+    debugEl = document.createElement('div');
+    editor.appendChild(debugEl);
+  }
+
+  let output, partsDisplay;
+  const outputContainer = document.createElement('div');
+  container.append(outputContainer);
+
+  if (format) {
+    output = document.createElement('output');
+    output.style.font = '14px Menlo, Consolas, monospace';
+    outputContainer.appendChild(output);
+  }
+  if (displayParts) {
+    partsDisplay = document.createElement('span');
+    outputContainer.appendChild(partsDisplay);
+  }
+
+  if (opts.description) {
+    const description = document.createElement('div');
+    description.style.fontSize = '0.85rem';
+    description.style.fontStyle = 'italic';
+    description.textContent = opts.description;
+    container.appendChild(description);
+  }
+
+  function getBit(bit) {
+    // bit >> 3 divides by eight and tells which byte this belongs to
+    // bit & 0x7 gives the rest of the location. So basically we shift
+    // the value right to isolate the correct byte, then and it with the
+    // particular bit we want.
+    return bytes[bit >> 3] & (0x1 << (bit & 0x7)) ? 1 : 0;
+  }
+
+  function getSignBit() {
+    if (!signLength) return 0;
+    return bytes[bytes.length - 1] & 0x80;
+  }
+
+  function getMantissaBits() {
+    if (!exponentLength) return valueAsArray[0] & ~(1 << (length - 1));
+    switch (length) {
+      case 16:
+        return bytes[0] | ((bytes[1] & 0x3) << 8);
+      case 32:
+        return ((bytes[2] & 0x7f) << 16) | (bytes[1] << 8) | bytes[0];
+      case 64:
+        return (
+          ((BigInt(bytes[6]) & BigInt(0xf)) << BigInt(48)) +
+          (BigInt(bytes[5]) << BigInt(40)) +
+          (BigInt(bytes[4]) << BigInt(32)) +
+          BigInt(
+            (bytes[3] << 24) + (bytes[2] << 16) + (bytes[1] << 8) + bytes[0]
+          )
+        );
+    }
+  }
+
+  function getExponentBits() {
+    if (!exponentLength) return 0;
+    switch (length) {
+      case 64:
+        return ((bytes[7] & 0x7f) << 4) | (bytes[6] >> 4);
+      case 32:
+        return ((bytes[3] & 0x7f) << 1) | (bytes[2] >> 7);
+      case 16:
+        return (bytes[1] & 0x7c) >> 2;
+    }
+  }
+
+  function getSign() {
+    return getSignBit() ? -1 : 1;
+  }
+
+  function isDenormal() {
+    if (!exponentLength) return false;
+    switch (length) {
+      case 64:
+        return (
+          !(bytes[bytes.length - 1] & 0x7f) && !(bytes[bytes.length - 2] & 0xf0)
+        );
+      case 32:
+        return (
+          !(bytes[bytes.length - 1] & 0x7f) && !(bytes[bytes.length - 2] & 0x80)
+        );
+      case 16:
+        return !(bytes[1] & 0x7c);
+    }
+  }
+
+  function getMantissa() {
+    if (type === 'float16') {
+      return (
+        (bytes[0] | ((bytes[1] & 0x3) << 8)) / 1024 + (isDenormal() ? 1 : 0)
+      );
+    }
+    var bytesCopy = new Uint8Array(bytes.slice());
+    var normalOffset = 0;
+    var typedMantissa = new Ctor(bytesCopy.buffer);
+    if (exponentLength) {
+      bytesCopy[bytesCopy.length - 1] = 0x3f;
+      bytesCopy[bytesCopy.length - 2] =
+        bytesCopy[bytesCopy.length - 2] | (length === 32 ? 0x80 : 0xf0);
+    } else if (signLength) {
+      if (!exponentLength && getSign() === -1) {
+        for (var i = 0; i < bytesCopy.length; i++) {
+          bytesCopy[i] = ~bytesCopy[i];
+        }
+        normalOffset = 1;
+      }
+      // Unset the sign bit
+      bytesCopy[bytesCopy.length - 1] = bytesCopy[bytesCopy.length - 1] & 0x7f;
+    }
+    if (normalOffset) {
+      typedMantissa[0] += normalOffset;
+    }
+    return typedMantissa[0];
+  }
+
+  function getExponentBits() {
+    if (!exponentLength) return 0;
+    switch (length) {
+      case 64:
+        return ((bytes[7] & 0x7f) << 4) | (bytes[6] >> 4);
+      case 32:
+        return ((bytes[3] & 0x7f) << 1) | (bytes[2] >> 7);
+      case 16:
+        return (bytes[1] & 0x7c) >> 2;
+    }
+  }
+
+  function getExponent() {
+    if (!exponentLength) return 0;
+    switch (length) {
+      case 64:
+        return Math.max(-1022, getExponentBits() - 0x3ff);
+      case 32:
+        return Math.max(-126, getExponentBits() - 0x7f);
+      case 16:
+        return Math.max(-14, getExponentBits() - 0xf);
+    }
+  }
+
+  function getValue() {
+    if (type === 'float16') {
+      // Javascript doesn't support half-float, so we'll tease it apart and insert
+      // the corresponding parts into a float32 instead.
+
+      var floatBytes = new Uint8Array(4);
+      // Isolate the sign bit:
+      var signBit = (bytes[1] & 0b10000000) >> 7;
+
+      // Isolate the mantissa
+      var mantissa = ((bytes[1] & 0b00000011) << 8) | bytes[0];
+
+      // Isolate the exponent:
+      var exponent16 = (bytes[1] & 0b01111100) >> 2;
+      var exponent32 = exponent16 - 15 + 127;
+
+      if (exponent16 === 0) {
+        // Subnormal. This one is tricky so we'll just do it mathematically instead of bitwise
+        return (signBit > 0 ? -1 : 1) * Math.pow(2, -14) * (mantissa / 1024);
+      } else if (exponent16 === 31) {
+        // Transfer this special case into the 32-bit exponent
+        exponent32 = 255;
+      }
+
+      // Combine the sign and exponent into the first byte
+      floatBytes[3] = (signBit << 7) | ((exponent32 & 0b11111110) >> 1);
+
+      floatBytes[2] =
+        ((exponent32 & 0b1) << 7) | ((mantissa & 0b1111111000) >> 3);
+      floatBytes[1] = (mantissa & 0b00000111) << 5;
+      floatBytes[0] = 0;
+
+      return new Float32Array(floatBytes.buffer)[0];
+    }
+    return valueAsArray[0];
+  }
+
+  const bitSpans = [];
+  function writeBits() {
+    for (var i = 0; i < length; i++) {
+      bitSpans[i].textContent = getBit(i);
+    }
+    if (output) output.textContent = format(getValue());
+    if (partsDisplay) {
+      let el = document.createElement('span');
+      el.appendChild(tex`\; = \;`);
+
+      if (signLength) {
+        let signContainer = document.createElement('span');
+        signContainer.appendChild(tex`${getSign()}`);
+        signContainer.style.backgroundColor = 'rgba(0, 0, 210, 0.25)';
+        signContainer.style.padding = '0 0.15em';
+        el.append(signContainer);
+        el.appendChild(tex`\; \times \;`);
+      }
+
+      if (exponentLength) {
+        let exponentContainer = document.createElement('span');
+        exponentContainer.appendChild(tex`2^{${getExponent()}}`);
+        exponentContainer.style.backgroundColor = 'rgba(0, 210, 0, 0.25)';
+        exponentContainer.style.padding = '0 0.15em';
+        el.append(exponentContainer);
+        el.appendChild(tex`\; \times \;`);
+      }
+      var mantissaContainer = document.createElement('span');
+      if (exponentLength && fractionalSignificand) {
+        mantissaContainer.appendChild(
+          tex`\left(${
+            isDenormal() ? 0 : 1
+          } + \frac{${getMantissaBits()}}{${BigInt(1) <<
+            BigInt(length - signLength - exponentLength)}}\right)`
+        );
+      } else {
+        var mantissaStr = getMantissa().toString();
+        if (isDenormal()) mantissaStr = mantissaStr.replace(/^1/, '0');
+        mantissaContainer.appendChild(tex`${mantissaStr}`);
+      }
+      mantissaContainer.style.backgroundColor = 'rgba(210, 0, 0, 0.25)';
+      mantissaContainer.style.padding = '0 0.15em';
+      el.appendChild(mantissaContainer);
+
+      if (partsDisplay.firstChild) partsDisplay.firstChild.remove();
+      partsDisplay.appendChild(el);
+    }
+    container.value = outputAsBytes ? bytes : getValue();
+  }
+
+  var curBit = 0;
+  function toggleBit(bit, event) {
+    curBit = bit;
+    bitSpans[curBit].focus();
+    // Similar to above, we isolate the bit we're interested in, then
+    // construct the bit we want to toggle. Typed array casting via buffer
+    // views magically handles interpretation for us.
+    bytes[bit >> 3] = bytes[bit >> 3] ^ (0x1 << (bit & 0x7));
+    writeBits();
+    container.dispatchEvent(new CustomEvent('input'));
+  }
+
+  function setBit(bit, value) {
+    curBit = bit;
+    if (value) {
+      bytes[bit >> 3] = bytes[bit >> 3] | (0x1 << (bit & 0x7));
+    } else {
+      bytes[bit >> 3] = bytes[bit >> 3] & ~(0x1 << (bit & 0x7));
+    }
+    writeBits();
+    container.dispatchEvent(new CustomEvent('input'));
+  }
+
+  function nextBit() {
+    curBit++;
+    bitSpans[curBit].focus();
+  }
+
+  function prevBit() {
+    if (curBit === length - 1) return false;
+    curBit++;
+    bitSpans[curBit].focus();
+    return true;
+  }
+
+  function nextBit() {
+    if (curBit === 0) return false;
+    curBit--;
+    bitSpans[curBit].focus();
+    return true;
+  }
+
+  function focusBit(i) {
+    curBit = i;
+  }
+
+  function handleKeypress(event) {
+    switch (event.keyCode) {
+      case 8:
+        setBit(curBit, 0);
+        prevBit();
+        event.preventDefault();
+        break;
+      case 9:
+        if (event.shiftKey) {
+          if (prevBit()) event.preventDefault();
+        } else {
+          if (nextBit()) event.preventDefault();
+        }
+        break;
+      case 37:
+        if (prevBit()) event.preventDefault();
+        break;
+      case 39:
+        if (nextBit()) event.preventDefault();
+        break;
+      case 48:
+        setBit(curBit, 0);
+        nextBit();
+        event.preventDefault();
+        break;
+      case 49:
+        setBit(curBit, 1);
+        nextBit();
+        event.preventDefault();
+        break;
+    }
+  }
+
+  let bit = length - 1;
+  for (let byte = bytes.length - 1; byte >= 0; byte--) {
+    const byteSpan = document.createElement('span');
+    byteSpan.style.display = 'inline-block';
+    byteSpan.style.marginRight = byteSeparation;
+    byteSpan.style.marginBottom = '2px';
+    for (let i = 0; i < 8; i++) {
+      const bitSpan = document.createElement('button');
+      byteSpan.append(bitSpan);
+      bitSpans.unshift(bitSpan);
+
+      bitSpan.style.width = '15px';
+      bitSpan.style.height = '20px';
+      bitSpan.style.display = 'inline';
+      bitSpan.style.border = '1px solid black';
+      bitSpan.style.verticalAlign = 'middle';
+      bitSpan.style.padding = '0';
+      bitSpan.style.textAlign = 'center';
+      bitSpan.style.marginRight = '-1px';
+      bitSpan.style.lineHeight = '20px';
+      bitSpan.style.cursor = 'pointer';
+      bitSpan.style.fontFamily = 'monospace';
+      bitSpan.style.borderRadius = 0;
+      bitSpan.style.fontSize = '0.9rem';
+
+      bitSpan.style.backgroundColor = 'transparent';
+      if (signLength > 0 || exponentLength > 0) {
+        if (bit < length - signLength - exponentLength) {
+          bitSpan.style.backgroundColor = 'rgba(210, 0, 0, 0.25)';
+        } else if (bit < length - signLength) {
+          bitSpan.style.backgroundColor = 'rgba(0, 210, 0, 0.25)';
+        } else {
+          bitSpan.style.backgroundColor = 'rgba(0, 0, 210, 0.25)';
+        }
+      }
+      bitSpan.addEventListener('focus', focusBit.bind(null, bit));
+      bitSpan.addEventListener('click', toggleBit.bind(null, bit));
+      bit--;
+    }
+    editor.append(byteSpan);
+  }
+  editor.addEventListener('keydown', handleKeypress);
+
+  writeBits();
+
+  container.value = outputAsBytes ? bytes : getValue();
+
+  return container;
+}
 ```
 
 ```{ojs}
@@ -523,6 +1082,31 @@ input[type="number"] {
 }
 #radiobuttons {
   margin-bottom: 3px;
+}
+div.pairedinputs span:has(button):nth-child(2) {
+  display: none !important;
+}
+div.pairedinputs span:has(button):nth-child(3) > button:nth-child(-n + 3) {
+  display: none !important;
+}
+div.pairedinputs div.cell-output.cell-output-display {
+  overflow: visible;
+}
+div.pairedinputs span:has(button) {
+  padding-right: 9px;
+}
+div.pairedinputs div:has(> form:has(select)) {
+  width: 42px;
+}
+div.pairedinputs input[type="number"] {
+  width: 45px;
+}
+div.pairedinputs input[type="range"] {
+  width: 250px;
+}
+div.pairedinputs {
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>
 ```

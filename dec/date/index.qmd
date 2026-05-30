@@ -331,13 +331,19 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-The Schedule L pattern of rest and work days can be expressed in binary (base2) as 01110, decimal (base10) as 14, or Dec duotrigesimal (base32) as L. Dec base32 condenses each of the 32 pently schedule binary sequences into a single letter of the Polish alphabet. A plan for multiple pents in base32 has one letter per pent.
+The Schedule L pattern of rest and work days can be expressed in binary (base2) as 01110, decimal (base10) as 14, or Dec duotrigesimal (base32) as L. With base32, Dec is able to express each of the 32 pently schedules as a single letter of the Polish alphabet. The schedule selected by the inputs below is [\${selin}]{.mono} in base32, [\${ranin.toString(2).padStart(5, "0")}]{.mono} in binary, and [\${ranin.toString().padStart(2, "0")}]{.mono} in decimal.
 
-Use the text input below to enter a binary sequence that Dec will translate into Polish letters. Any non-binary character entered into the text input is ignored. Therefore, we can use non-binary characters to organize the input as desired. For example, we can put a space after every pent and a linebreak after every dek.
+```{ojs}
+//| echo: false
+//| class: pairedinputs
+viewof selin = transformInput(Inputs.select(b32pl, {value: "L"}), {
+   bind: viewof ranin, transform: (x => toPolish(x.toString(32))), invert: (x => parseInt(toBase32(x), 32))
+})
+Inputs.bind(binaryInput(binopt), viewof ranin)
+viewof ranin = Inputs.range([0, 31], {step: 1, value: 14})
+```
 
-Instead of doing mental calculations in base32, we can write out our plan in ones and zeros so that Dec can . To keep track of 
-If I wanted to follow Schedule L for one pent but then work Dod 9 instead of 6 
-The plan 
+When we have more than one pently schedule, we can concatenate their base2, base10, or base32 representations to create a sequence of schedules. A sequence of two pently schedules is called a dekly schedule. The Schedule LŁ dekly schedule alternates between Schedules L and Ł. In binary, LŁ is 0111001111. In decimal, LŁ is 463. 
 
 A dekly schedule is essentially a sequence of two pently schedules. The recommended dekly schedule is Schedule LŁ. If we want plan to follow Schedule L for the one pent and then switch to Schedule F for the next pent is called LF 
 
