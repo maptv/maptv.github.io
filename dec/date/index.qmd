@@ -331,13 +331,17 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-The Schedule L pattern of rest and work days can be expressed in binary (base2) as 01110, decimal (base10) as 14, or Dec duotrigesimal (base32) as L. With Dec base32, each of the 32 pently schedules can be represented by a single letter of the Polish alphabet and a sequence of different pently schedules can be condensed into a string of multiple Polish letters.
+The Schedule L pattern of rest and work days can be expressed in binary (base2) as 01110, decimal (base10) as 14, or Dec duotrigesimal (base32) as L. With Dec base32, each of the 32 pently schedules can be represented by a single letter of the Polish alphabet and a sequence of different pently schedules can be condensed into a string of Polish letters.
+
+Dec defines 10 operators that can modify schedules: left shift («), right shift (»), rotate left (↺), rotate right (↻), reverse (⤺), step (∷), not (~), and (&), or (|), and xor (^). Any work days that we move beyond the first or last position in a schedule with « and » are discarded. To avoid discarding any work days, we should move work days with ↺ and ↻ instead. 
+
+Work days that are moved past the last schedule position with ↻ go back to the first schedule position. Similarly, ↺ takes days that are moved beyond the first schedule position to the last schedule position. The number of work days is also preserved by ⤺, which reverses not a
 
 The schedule selected by the inputs below is [\${schedBinary}]{.mono} in binary, [\${schedBase10}]{.mono} in decimal, and [\${schedBase32}]{.mono} in base32.
 
 {{< include /dec/date/_schedule.qmd >}}
 
-Programming languages provide many tools for working with binary strings. or bitwise functions or operators. 
+or bitwise functions or operators. 
 
 When we have more than one pently schedule, we can concatenate their base2, base10, or base32 representations to create a pently schedule sequence. A sequence of two pently schedules is called a dekly schedule. The Schedule LŁ dekly schedule alternates between Schedules L and Ł. In binary, LŁ is 01110 01111. In decimal, LŁ is 463 or 14 and 14.
 

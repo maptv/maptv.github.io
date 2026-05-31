@@ -384,22 +384,61 @@ function toBase32(str) {
     .map(c => toBase32map[c] ?? c)
     .join("");
 }
-function leftRanin() {
-  const [top, btm] = rotatePair(ranintop, raninbtm, multiplier, true, shiftOrRotateRadio)
+function leftShift() {
+  const [top, btm] = rotatePair(ranintop, raninbtm, multiplier, true, true)
   set(viewof ranintop, top)
   set(viewof raninbtm, btm)
 }
-function rightRanin() {
-  const [top, btm] = rotatePair(ranintop, raninbtm, multiplier, false, shiftOrRotateRadio)
+function leftRotate() {
+  const [top, btm] = rotatePair(ranintop, raninbtm, multiplier, true, false)
   set(viewof ranintop, top)
   set(viewof raninbtm, btm)
+}
+function rightShift() {
+  const [top, btm] = rotatePair(ranintop, raninbtm, multiplier, false, true)
+  set(viewof ranintop, top)
+  set(viewof raninbtm, btm)
+}
+function rightRotate() {
+  const [top, btm] = rotatePair(ranintop, raninbtm, multiplier, false, false)
+  set(viewof ranintop, top)
+  set(viewof raninbtm, btm)
+}
+function reverseBits() {
+  const [top, btm] = reverseWindows(ranintop, raninbtm, multiplier, 5)
+  set(viewof ranintop, top)
+  set(viewof raninbtm, btm)
+}
+function stepPattern() {
+  const [top, btm] = stepBitwise(10, multiplier)
+  set(viewof ranintop, top)
+  set(viewof raninbtm, btm)
+}
+function reverseWindows(top, btm, win = 1, halflen = 5) {
+  const combined = (top << halflen | btm).toString(2).slice(-10).padStart(10, "0");
+  win = win === 1 ? combined.length : win
+  let out = "";
+  for (let i = 0; i < combined.length; i += win) {
+    const window = combined.slice(i, i + win);
+    out += window.split("").reverse().join("");
+  }
+  out = parseInt(out, 2)
+  return [out >>> halflen, out & (2**halflen - 1)];
+}
+function stepBitwise(length, step) {
+  let out = "";
+  for (let i = 0; i < length; i++) {
+    out += (i % step === 0) ? "1" : "0";
+  }
+  out = parseInt(out, 2)
+  return [out >>> 5, out & 31];
 }
 schedBase10 = ranintop === raninbtm ? ranintop : ranintop << 5 | raninbtm
 schedBinary = ranintop === raninbtm ? ranintop.toString(2).padStart(5, "0") : schedBase10.toString(2).padStart(10, "0")
 schedBase32 = selintop === selinbtm ? selintop : selintop + selinbtm
 function rotatePair(top, btm, distance = 1, left = true, shift = true) {
-  const combined = (top << 5) | btm;
-  distance = ((distance % 10) + 10) % 10;
+  const combined = top << 5 | btm;
+  distance = (distance % 10 + 10) % 10;
   const rotated = left
     ? (shift ? combined << distance : ((combined << distance) | (combined >>> (10 - distance)))) & 1023
     : (shift ? combined >> distance : ((combined >>> distance) | (combined << (10 - distance)))) & 1023;
@@ -1090,7 +1129,7 @@ div.pairedinputs {
   flex-wrap: wrap;
 }
 div#bitwise div:has(> form > button):first-child {
-  width: 60px;
+  width: 168px;
   font-family: monospace;
 }
 div#bitwise div:has(> form > button):last-child {
@@ -1098,7 +1137,8 @@ div#bitwise div:has(> form > button):last-child {
   font-family: monospace;
 }
 div#bitwise div:has(> form > div > input[name="number"]) {
-  width: 45px;
+  margin-right: 2px;
+  width: 50px;
 }
 div#bitwise div form label:has(input[type="radio"]):last-child {
   margin: 0px;
