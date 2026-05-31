@@ -1,0 +1,37 @@
+```{ojs}
+//| echo: false
+//| class: pairedinputs
+viewof selintop = transformInput(Inputs.select(b32pl, {value: "L"}), {
+   bind: viewof ranintop, transform: (x => toPolish(x.toString(32))), invert: (x => parseInt(toBase32(x), 32))
+})
+Inputs.bind(binaryInput(binopttop), viewof ranintop)
+viewof ranintop = Inputs.range([0, 31], {step: 1, value: 14})
+```
+
+```{ojs}
+//| echo: false
+//| class: pairedinputs
+viewof selinbtm = transformInput(Inputs.select(b32pl, {value: "L"}), {
+   bind: viewof raninbtm, transform: (x => toPolish(x.toString(32))), invert: (x => parseInt(toBase32(x), 32))
+})
+Inputs.bind(binaryInput(binoptbtm), viewof raninbtm)
+viewof raninbtm = Inputs.range([0, 31], {step: 1, value: 14})
+```
+
+```{ojs}
+//| echo: false
+//| class: pairedinputs
+//| label: bitwise
+viewof shiftOrRotateButton = Inputs.button([
+  ["«", leftRanin],
+  ["»", rightRanin],
+])
+viewof multiplier = Inputs.number([1, 5], { value: 1, step: 1 })
+viewof shiftOrRotateRadio = Inputs.radio(new Map([["Shift", true], ["Rotate", false]]), {value: true})
+viewof logicalBitwise = Inputs.button([
+  ["~", () => set(viewof ranintop, ranintop ^ 31) ?? set(viewof raninbtm, raninbtm ^ 31)],
+  ["&", () => set(viewof ranintop, ranintop & raninbtm) ?? set(viewof raninbtm, ranintop & raninbtm)],
+  ["|", () => set(viewof ranintop, ranintop | raninbtm) ?? set(viewof raninbtm, ranintop | raninbtm)],
+  ["^", () => set(viewof ranintop, ranintop ^ raninbtm) ?? set(viewof raninbtm, ranintop ^ raninbtm)],
+])
+```

@@ -331,18 +331,13 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-The Schedule L pattern of rest and work days can be expressed in binary (base2) as 01110, decimal (base10) as 14, or Dec duotrigesimal (base32) as L. With base32, Dec is able to express each of the 32 pently schedules as a single letter of the Polish alphabet. The schedule selected by the inputs below is [\${selin}]{.mono} in base32, [\${ranin.toString(2).padStart(5, "0")}]{.mono} in binary, and [\${ranin.toString().padStart(2, "0")}]{.mono} in decimal.
+The Schedule L pattern of rest and work days can be expressed in binary (base2) as 01110, decimal (base10) as 14, or Dec duotrigesimal (base32) as L. With Dec base32, we can express each of the 32 pently schedules as a single letter of the Polish alphabet. In Dec, a string of multiple Polish letters represents a plan to switch between pently schedules.
 
-```{ojs}
-//| echo: false
-//| class: pairedinputs
-viewof selin = transformInput(Inputs.select(b32pl, {value: "L"}), {
-   bind: viewof ranin, transform: (x => toPolish(x.toString(32))), invert: (x => parseInt(toBase32(x), 32))
-})
-Inputs.bind(binaryInput(binopt), viewof ranin)
-viewof ranin = Inputs.range([0, 31], {step: 1, value: 14})
-```
+{{< include /dec/date/_schedule.qmd >}}
 
+Programming languages provide many tools for working with binary strings. or bitwise functions or operators. 
+
+The schedule selected by the inputs below is [\${selintop}]{.mono} in base32, [\${ranintop.toString(2).padStart(5, "0")}]{.mono} in binary, and [\${ranintop.toString().padStart(2, "0")}]{.mono} in decimal.
 When we have more than one pently schedule, we can concatenate their base2, base10, or base32 representations to create a pently schedule sequence. A sequence of two pently schedules is called a dekly schedule. The Schedule LŁ dekly schedule alternates between Schedules L and Ł. In binary, LŁ is 01110 01111. In decimal, LŁ is 463 or 14 and 14.
 
 Schedule LŁ has an additional work day compared to Schedule L and thus provisions 291 work days per year. 
@@ -352,6 +347,7 @@ If we want plan to follow Schedule L for the one pent and then switch to Schedul
 :::{.column-margin fig-align="center" style="text-align:center;"}
 ![[Wikimedia](https://commons.wikimedia.org/wiki/File:Manual_Layout.svg)](../../asset/Manual_Layout.svg)
 :::
+
 Schedule 14 is one of six dekly schedules that allow us to organize work and rest days into five homogeneous columns like in the tables and flowcharts above. These schedules are like the gears⚙️of a [5-speed](https://en.m.wikipedia.org/wiki/Manual_transmission#:~:text=Common%20shift%20pattern%20for%20a%205%2Dspeed%20transmission) [manual transmission](https://en.m.wikipedia.org/wiki/Manual_transmission#:~:text=a%20multi%2Dspeed%20motor%20vehicle%20transmission%20system%20where%20gear%20changes%20require%20the%20driver%20to%20manually%20select%20the%20gears%20by%20operating%20a%20gear%20stick%20and%20clutch) in a car. The approximate speed ranges for the five gears are <5, 5 to 10, 10 to 15, 15 to 20, and &ge;20 [kilometers]{.tool data-bs-toggle="tooltip" data-bs-title="thousands of meters"} per [centiday]{.underline .tool data-bs-toggle="tooltip" data-bs-title="a hundredth of a day"}.
 
 In this analogy, [Neutral](https://en.m.wikipedia.org/wiki/Neutral#:~:text=the%20state%20where%20no%20gears%20are%20selected%20for%20a%20motor%20vehicle's%20transmission) (N), 1st, 2nd, 3rd, 4th, and 5th gear are Schedules [0]{.color0}, [1]{.color1}, [2]{.color2}, [3]{.color3}, [4]{.color4}, and [5]{.color5}, respectively. To complete the [gearshift](https://en.m.wikipedia.org/wiki/Gear_stick#:~:text=a%20metal%20lever%20attached%20to%20the%20transmission%20of%20an%20automobile) analogy, Reverse (R) would be a time machine that takes us to the past. As our driving speed changes, we would shift up to a higher gear or shift down to a lower gear. Similarly, we can switch between the six dekly schedules as needed.
@@ -420,7 +416,7 @@ flowchart LR
    L-->Y
    L-->D
    L-->E
-   R---Y
+   R-->Y
    M---R[  ]:::empty
    D---A
    D~~~B[  ]:::empty

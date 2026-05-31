@@ -1,4 +1,11 @@
 /* css styles */
+div[data-code-copy="false"] button.code-copy-button {
+  display: none;
+}
+
+.quarto-figure > .anchorjs-link {
+  display: none;
+}
 
 @font-face {
     font-family: Ewka;

@@ -351,9 +351,16 @@ function moty2doty(moy = 1) {
 ) + nOffInput) % daysInYear}
 easyDoy = dotyInput < (80 + leapInput) ? dotyInput : dotyInputNeg
 easySum = easyDoy + 285
-binopt = ({
+binopttop = ({
   type: 'uint16',
-  value: ranin,
+  value: ranintop,
+  displayParts: false,
+  format: false,
+  byteSeparation: false
+})
+binoptbtm = ({
+  type: 'uint16',
+  value: raninbtm,
   displayParts: false,
   format: false,
   byteSeparation: false
@@ -377,6 +384,24 @@ function toBase32(str) {
     .map(c => toBase32map[c] ?? c)
     .join("");
 }
+function leftRanin() {
+  const [top, btm] = rotatePair(ranintop, raninbtm, multiplier, true, shiftOrRotateRadio)
+  set(viewof ranintop, top)
+  set(viewof raninbtm, btm)
+}
+function rightRanin() {
+  const [top, btm] = rotatePair(ranintop, raninbtm, multiplier, false, shiftOrRotateRadio)
+  set(viewof ranintop, top)
+  set(viewof raninbtm, btm)
+}
+function rotatePair(top, btm, distance = 1, left = true, shift = true) {
+  const combined = (top << 5) | btm;
+  distance = ((distance % 10) + 10) % 10;
+  const rotated = left
+    ? (shift ? combined << distance : ((combined << distance) | (combined >>> (10 - distance)))) & 1023
+    : (shift ? combined >> distance : ((combined >>> distance) | (combined << (10 - distance)))) & 1023;
+  return [rotated >>> 5, rotated & 31];
+}
 // https://observablehq.com/@rreusser/binary-input
 function binaryInput(opts) {
   var type = opts.type;
@@ -394,7 +419,6 @@ function binaryInput(opts) {
   var BigInt64Array = window.BigInt64Array;
   var BigUint64Array = window.BigUint64Array;
   var BigInt = window.BigInt;
-
   var Ctor;
   var length;
   var signLength = 0;
@@ -466,7 +490,6 @@ function binaryInput(opts) {
         `Unexpected type "${type}". Options are 'float' ('float32'), 'double' ('float64'), 'uint8', 'int8', 'uint16', 'int16', 'uint32', and 'int32'`
       );
   }
-
   if (
     !window.BigInt &&
     exponentLength &&
@@ -477,16 +500,13 @@ function binaryInput(opts) {
       'BigInt support must be present to display fractions for single or double precision floats'
     );
   }
-
   // If we don't need anything special, fake it with a pass-through
   var BigInt =
     window.BigInt ||
     function(x) {
       return x;
     };
-
   var valueAsArray;
-
   var bytes;
   if (type === 'float16') {
     // Typed array interpretation-style casting doesn't work for float16 since
@@ -531,9 +551,7 @@ function binaryInput(opts) {
       }
     }
   }
-
   const container = document.createElement('div');
-
   if (opts.title) {
     const title = document.createElement('div');
     title.style.font = '700 0.9rem sans-serif';
@@ -541,25 +559,20 @@ function binaryInput(opts) {
     title.style.marginBottom = '0.2rem';
     container.appendChild(title);
   }
-
   const editor = document.createElement('div');
   container.appendChild(editor);
   editor.style.fontFamily = 'monospace';
   editor.style.fontSize = '0.9rem';
-
   // Debatable. It's easy to accidentally select when trying to toggle bits.
   editor.style.userSelect = 'none';
-
   let debugEl;
   if (true) {
     debugEl = document.createElement('div');
     editor.appendChild(debugEl);
   }
-
   let output, partsDisplay;
   const outputContainer = document.createElement('div');
   container.append(outputContainer);
-
   if (format) {
     output = document.createElement('output');
     output.style.font = '14px Menlo, Consolas, monospace';
@@ -569,7 +582,6 @@ function binaryInput(opts) {
     partsDisplay = document.createElement('span');
     outputContainer.appendChild(partsDisplay);
   }
-
   if (opts.description) {
     const description = document.createElement('div');
     description.style.fontSize = '0.85rem';
@@ -577,7 +589,6 @@ function binaryInput(opts) {
     description.textContent = opts.description;
     container.appendChild(description);
   }
-
   function getBit(bit) {
     // bit >> 3 divides by eight and tells which byte this belongs to
     // bit & 0x7 gives the rest of the location. So basically we shift
@@ -585,12 +596,10 @@ function binaryInput(opts) {
     // particular bit we want.
     return bytes[bit >> 3] & (0x1 << (bit & 0x7)) ? 1 : 0;
   }
-
   function getSignBit() {
     if (!signLength) return 0;
     return bytes[bytes.length - 1] & 0x80;
   }
-
   function getMantissaBits() {
     if (!exponentLength) return valueAsArray[0] & ~(1 << (length - 1));
     switch (length) {
@@ -609,7 +618,6 @@ function binaryInput(opts) {
         );
     }
   }
-
   function getExponentBits() {
     if (!exponentLength) return 0;
     switch (length) {
@@ -621,11 +629,9 @@ function binaryInput(opts) {
         return (bytes[1] & 0x7c) >> 2;
     }
   }
-
   function getSign() {
     return getSignBit() ? -1 : 1;
   }
-
   function isDenormal() {
     if (!exponentLength) return false;
     switch (length) {
@@ -641,7 +647,6 @@ function binaryInput(opts) {
         return !(bytes[1] & 0x7c);
     }
   }
-
   function getMantissa() {
     if (type === 'float16') {
       return (
@@ -670,7 +675,6 @@ function binaryInput(opts) {
     }
     return typedMantissa[0];
   }
-
   function getExponentBits() {
     if (!exponentLength) return 0;
     switch (length) {
@@ -682,7 +686,6 @@ function binaryInput(opts) {
         return (bytes[1] & 0x7c) >> 2;
     }
   }
-
   function getExponent() {
     if (!exponentLength) return 0;
     switch (length) {
@@ -694,23 +697,18 @@ function binaryInput(opts) {
         return Math.max(-14, getExponentBits() - 0xf);
     }
   }
-
   function getValue() {
     if (type === 'float16') {
       // Javascript doesn't support half-float, so we'll tease it apart and insert
       // the corresponding parts into a float32 instead.
-
       var floatBytes = new Uint8Array(4);
       // Isolate the sign bit:
       var signBit = (bytes[1] & 0b10000000) >> 7;
-
       // Isolate the mantissa
       var mantissa = ((bytes[1] & 0b00000011) << 8) | bytes[0];
-
       // Isolate the exponent:
       var exponent16 = (bytes[1] & 0b01111100) >> 2;
       var exponent32 = exponent16 - 15 + 127;
-
       if (exponent16 === 0) {
         // Subnormal. This one is tricky so we'll just do it mathematically instead of bitwise
         return (signBit > 0 ? -1 : 1) * Math.pow(2, -14) * (mantissa / 1024);
@@ -718,20 +716,16 @@ function binaryInput(opts) {
         // Transfer this special case into the 32-bit exponent
         exponent32 = 255;
       }
-
       // Combine the sign and exponent into the first byte
       floatBytes[3] = (signBit << 7) | ((exponent32 & 0b11111110) >> 1);
-
       floatBytes[2] =
         ((exponent32 & 0b1) << 7) | ((mantissa & 0b1111111000) >> 3);
       floatBytes[1] = (mantissa & 0b00000111) << 5;
       floatBytes[0] = 0;
-
       return new Float32Array(floatBytes.buffer)[0];
     }
     return valueAsArray[0];
   }
-
   const bitSpans = [];
   function writeBits() {
     for (var i = 0; i < length; i++) {
@@ -741,7 +735,6 @@ function binaryInput(opts) {
     if (partsDisplay) {
       let el = document.createElement('span');
       el.appendChild(tex`\; = \;`);
-
       if (signLength) {
         let signContainer = document.createElement('span');
         signContainer.appendChild(tex`${getSign()}`);
@@ -750,7 +743,6 @@ function binaryInput(opts) {
         el.append(signContainer);
         el.appendChild(tex`\; \times \;`);
       }
-
       if (exponentLength) {
         let exponentContainer = document.createElement('span');
         exponentContainer.appendChild(tex`2^{${getExponent()}}`);
@@ -775,13 +767,11 @@ function binaryInput(opts) {
       mantissaContainer.style.backgroundColor = 'rgba(210, 0, 0, 0.25)';
       mantissaContainer.style.padding = '0 0.15em';
       el.appendChild(mantissaContainer);
-
       if (partsDisplay.firstChild) partsDisplay.firstChild.remove();
       partsDisplay.appendChild(el);
     }
     container.value = outputAsBytes ? bytes : getValue();
   }
-
   var curBit = 0;
   function toggleBit(bit, event) {
     curBit = bit;
@@ -793,7 +783,6 @@ function binaryInput(opts) {
     writeBits();
     container.dispatchEvent(new CustomEvent('input'));
   }
-
   function setBit(bit, value) {
     curBit = bit;
     if (value) {
@@ -804,30 +793,25 @@ function binaryInput(opts) {
     writeBits();
     container.dispatchEvent(new CustomEvent('input'));
   }
-
   function nextBit() {
     curBit++;
     bitSpans[curBit].focus();
   }
-
   function prevBit() {
     if (curBit === length - 1) return false;
     curBit++;
     bitSpans[curBit].focus();
     return true;
   }
-
   function nextBit() {
     if (curBit === 0) return false;
     curBit--;
     bitSpans[curBit].focus();
     return true;
   }
-
   function focusBit(i) {
     curBit = i;
   }
-
   function handleKeypress(event) {
     switch (event.keyCode) {
       case 8:
@@ -860,7 +844,6 @@ function binaryInput(opts) {
         break;
     }
   }
-
   let bit = length - 1;
   for (let byte = bytes.length - 1; byte >= 0; byte--) {
     const byteSpan = document.createElement('span');
@@ -871,7 +854,6 @@ function binaryInput(opts) {
       const bitSpan = document.createElement('button');
       byteSpan.append(bitSpan);
       bitSpans.unshift(bitSpan);
-
       bitSpan.style.width = '15px';
       bitSpan.style.height = '20px';
       bitSpan.style.display = 'inline';
@@ -885,7 +867,6 @@ function binaryInput(opts) {
       bitSpan.style.fontFamily = 'monospace';
       bitSpan.style.borderRadius = 0;
       bitSpan.style.fontSize = '0.9rem';
-
       bitSpan.style.backgroundColor = 'transparent';
       if (signLength > 0 || exponentLength > 0) {
         if (bit < length - signLength - exponentLength) {
@@ -903,11 +884,8 @@ function binaryInput(opts) {
     editor.append(byteSpan);
   }
   editor.addEventListener('keydown', handleKeypress);
-
   writeBits();
-
   container.value = outputAsBytes ? bytes : getValue();
-
   return container;
 }
 ```
@@ -1107,6 +1085,20 @@ div.pairedinputs input[type="range"] {
 div.pairedinputs {
   display: flex;
   flex-wrap: wrap;
+}
+div#bitwise div:has(> form > button):first-child {
+  width: 60px;
+  font-family: monospace;
+}
+div#bitwise div:has(> form > button):last-child {
+  width: 120px;
+  font-family: monospace;
+}
+div#bitwise div:has(> form > div > input[name="number"]) {
+  width: 45px;
+}
+div#bitwise div form label:has(input[type="radio"]):last-child {
+  margin: 0px;
 }
 </style>
 ```
