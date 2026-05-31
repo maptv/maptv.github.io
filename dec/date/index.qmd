@@ -331,7 +331,7 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-The Schedule L pattern of rest and work days can be expressed in binary (base2) as 01110, decimal (base10) as 14, or Dec duotrigesimal (base32) as L. With Dec base32, we can express each of the 32 pently schedules as a single letter of the Polish alphabet. In Dec, a schedule that has more than pattern per pent is represented by a string of multiple Polish letters.
+The Schedule L pattern of rest and work days can be expressed in binary (base2) as 01110, decimal (base10) as 14, or Dec duotrigesimal (base32) as L. With Dec base32, each of the 32 pently schedules can be represented by a single letter of the Polish alphabet and a sequence of different pently schedules can be condensed into a string of multiple Polish letters.
 
 The schedule selected by the inputs below is [\${schedBinary}]{.mono} in binary, [\${schedBase10}]{.mono} in decimal, and [\${schedBase32}]{.mono} in base32.
 
