@@ -331,13 +331,14 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-The Schedule L pattern of rest and work days can be expressed in binary (base2) as 01110, decimal (base10) as 14, or Dec duotrigesimal (base32) as L. With Dec base32, we can express each of the 32 pently schedules as a single letter of the Polish alphabet. In Dec, a string of multiple Polish letters represents a plan to switch between pently schedules.
+The Schedule L pattern of rest and work days can be expressed in binary (base2) as 01110, decimal (base10) as 14, or Dec duotrigesimal (base32) as L. With Dec base32, we can express each of the 32 pently schedules as a single letter of the Polish alphabet. In Dec, a schedule that has more than pattern per pent is represented by a string of multiple Polish letters.
+
+The schedule selected by the inputs below is [\${schedBinary}]{.mono} in binary, [\${schedBase10}]{.mono} in decimal, and [\${schedBase32}]{.mono} in base32.
 
 {{< include /dec/date/_schedule.qmd >}}
 
 Programming languages provide many tools for working with binary strings. or bitwise functions or operators. 
 
-The schedule selected by the inputs below is [\${selintop}]{.mono} in base32, [\${ranintop.toString(2).padStart(5, "0")}]{.mono} in binary, and [\${ranintop.toString().padStart(2, "0")}]{.mono} in decimal.
 When we have more than one pently schedule, we can concatenate their base2, base10, or base32 representations to create a pently schedule sequence. A sequence of two pently schedules is called a dekly schedule. The Schedule LŁ dekly schedule alternates between Schedules L and Ł. In binary, LŁ is 01110 01111. In decimal, LŁ is 463 or 14 and 14.
 
 Schedule LŁ has an additional work day compared to Schedule L and thus provisions 291 work days per year. 

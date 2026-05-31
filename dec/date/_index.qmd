@@ -394,6 +394,9 @@ function rightRanin() {
   set(viewof ranintop, top)
   set(viewof raninbtm, btm)
 }
+schedBase10 = ranintop === raninbtm ? ranintop : ranintop << 5 | raninbtm
+schedBinary = ranintop === raninbtm ? ranintop.toString(2).padStart(5, "0") : schedBase10.toString(2).padStart(10, "0")
+schedBase32 = selintop === selinbtm ? selintop : selintop + selinbtm
 function rotatePair(top, btm, distance = 1, left = true, shift = true) {
   const combined = (top << 5) | btm;
   distance = ((distance % 10) + 10) % 10;
