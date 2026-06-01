@@ -1,4 +1,13 @@
 /* css styles */
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  max-width: 100%;
+}
+
 div[data-code-copy="false"] button.code-copy-button {
   display: none;
 }
@@ -184,7 +193,7 @@ nav#quarto-sidebar {
 }
 
 div#quarto-margin-sidebar {
-  padding-top: 10px !important;
+  padding-top: 5px !important;
 }
 
 div.quarto-listing > div.list.grid {
