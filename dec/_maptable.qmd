@@ -57,11 +57,11 @@ rstbtn.node();
 //| echo: false
 //| label: maptable
 table = createTable([
-  { Point: 0, Milliparallel: 800, Millimeridian: 0, Milliwindrose: 0 },
-  { Point: 1, Milliparallel: 800, Millimeridian: 100, Milliwindrose: 500 },
+  { Point: 0, Milliwěi: 800, Millimeridian: 0, Millirose: 0 },
+  { Point: 1, Milliwěi: 800, Millimeridian: 100, Millirose: 500 },
 ], { headerEditable: false, appendRows: false })
-//   {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
-//   {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
+//   {Point: 0, Milliwěi: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
+//   {Point: 1, Milliwěi: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
 // ], {headerEditable: false, appendRows: false})
 ```
 

@@ -405,7 +405,7 @@ function rightRotate() {
   set(viewof raninbtm, btm)
 }
 function reverseBits() {
-  const [top, btm] = reverseWindows(ranintop, raninbtm, multiplier, 5)
+  const [top, btm] = reverseSplit(ranintop, raninbtm, multiplier, 5)
   set(viewof ranintop, top)
   set(viewof raninbtm, btm)
 }
@@ -414,16 +414,32 @@ function stepPattern() {
   set(viewof ranintop, top)
   set(viewof raninbtm, btm)
 }
-function reverseWindows(top, btm, win = 1, halflen = 5) {
-  const combined = (top << halflen | btm).toString(2).slice(-10).padStart(10, "0");
-  win = win === 1 ? combined.length : win
+function reverseSplit(top, btm, split = 1, halflen = 5) {
+  const len = halflen * 2;
+  const combined =
+    ((top << halflen) | btm)
+      .toString(2)
+      .slice(-len)
+      .padStart(len, "0");
+  const baseSize = Math.floor(len / split);
+  const remainder = len % split;
   let out = "";
-  for (let i = 0; i < combined.length; i += win) {
-    const window = combined.slice(i, i + win);
-    out += window.split("").reverse().join("");
+  let start = 0;
+  for (let i = 0; i < split; i++) {
+    const size = baseSize + (i >= split - remainder ? 1 : 0);
+    out += combined
+      .slice(start, start + size)
+      .split("")
+      .reverse()
+      .join("");
+
+    start += size;
   }
-  out = parseInt(out, 2)
-  return [out >>> halflen, out & (2**halflen - 1)];
+  out = parseInt(out, 2);
+  return [
+    out >>> halflen,
+    out & ((1 << halflen) - 1)
+  ];
 }
 function stepBitwise(length, step) {
   let out = "";
@@ -1137,11 +1153,14 @@ div#bitwise div:has(> form > button):last-child {
   font-family: monospace;
 }
 div#bitwise div:has(> form > div > input[name="number"]) {
-  margin-right: 2px;
-  width: 50px;
+  margin-right: -3px;
+  width: 55px;
 }
 div#bitwise div form label:has(input[type="radio"]):last-child {
   margin: 0px;
+}
+div#bitwise div > form > button {
+  margin-right: -.6px;
 }
 </style>
 ```
