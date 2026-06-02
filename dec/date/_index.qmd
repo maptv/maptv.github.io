@@ -410,44 +410,46 @@ function reverseBits() {
   set(viewof raninbtm, btm)
 }
 function stepPattern() {
-  const [top, btm] = stepBitwise(10, multiplier)
+  const [top, btm] = stepGenerate(ranintop, raninbtm, multiplier, 5)
   set(viewof ranintop, top)
   set(viewof raninbtm, btm)
 }
 function reverseSplit(top, btm, split = 1, halflen = 5) {
   const len = halflen * 2;
-  const combined =
-    ((top << halflen) | btm)
-      .toString(2)
-      .slice(-len)
-      .padStart(len, "0");
+  const mask = (1 << halflen) - 1;
+  let combined = ((top & mask) << halflen) | (btm & mask);
+  let out = 0;
   const baseSize = Math.floor(len / split);
   const remainder = len % split;
-  let out = "";
-  let start = 0;
+  let pos = 0;
   for (let i = 0; i < split; i++) {
     const size = baseSize + (i >= split - remainder ? 1 : 0);
-    out += combined
-      .slice(start, start + size)
-      .split("")
-      .reverse()
-      .join("");
-
-    start += size;
+    for (let j = 0; j < size; j++) {
+      const from = pos + j;
+      const to = pos + (size - 1 - j);
+      const bit = (combined >>> (len - 1 - from)) & 1;
+      out |= bit << (len - 1 - to);
+    }
+    pos += size;
   }
-  out = parseInt(out, 2);
   return [
-    out >>> halflen,
-    out & ((1 << halflen) - 1)
+    (out >>> halflen) & mask,
+    out & mask
   ];
 }
-function stepBitwise(length, step) {
-  let out = "";
+function stepGenerate(top, btm, step = 1, halflen = 5) {
+  const length = halflen * 2;
+  const mask = (1 << halflen) - 1;
+  const combined = ((top & mask) << halflen) | (btm & mask);
+  let out = 0;
   for (let i = 0; i < length; i++) {
-    out += (i % step === 0) ? "1" : "0";
+    const bit = (i % step === 0) ? 1 : 0;
+    out |= bit << (length - 1 - i);
   }
-  out = parseInt(out, 2)
-  return [out >>> 5, out & 31];
+  return [
+    (out >>> halflen) & mask,
+    out & mask
+  ];
 }
 schedBase10 = ranintop === raninbtm ? ranintop : ranintop << 5 | raninbtm
 schedBinary = ranintop === raninbtm ? ranintop.toString(2).padStart(5, "0") : schedBase10.toString(2).padStart(10, "0")

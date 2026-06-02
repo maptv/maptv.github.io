@@ -28,7 +28,7 @@ viewof shiftOrRotateButton = Inputs.button([
   ["↺", leftRotate],
   ["↻", rightRotate],
   ["⤺", reverseBits],
-  [":", stepPattern],
+  ["∷", stepPattern],
 ])
 viewof multiplier = Inputs.number([1, 5], { value: 1, step: 1 })
 viewof logicalBitwise = Inputs.button([
