@@ -1,6 +1,6 @@
 # Dec Measurement System
 Martin Laptev
-2026+092
+2026+093
 
 - [Dec measurement system](#sec-dec)
 - [Longitude latitude course](#sec-llc)
@@ -2629,7 +2629,7 @@ references:
   title: Dec Measurement System
   url: https://maptv.github.io/dec
   issued:
-    literal: 2026+092
+    literal: 2026+093
 ```
 
 </div>
@@ -2670,7 +2670,7 @@ yaml format.
   author = "Martin Laptev",
   title = "Dec Measurement System",
   url = "https://maptv.github.io/dec",
-  year = 2026+092
+  year = 2026+093
 }
 ```
 
