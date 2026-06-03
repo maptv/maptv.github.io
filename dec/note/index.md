@@ -1,6 +1,6 @@
 # Note
 Martin Laptev
-2026+052
+1776874460
 
 - [<span class="toc-section-number">0</span> Dec measurement
   system](#sec-dec)
@@ -2479,8 +2479,7 @@ references:
     - family: Laptev
       given: Martin
   issued:
-    literal: 2026+052
-
+    literal: 1776874460
   title: Dec
   type: article
   URL: https://maptv.github.io/dec
@@ -2503,7 +2502,7 @@ As demonstrated by the previous sentence above and the
 Dec dates. By default, Quarto formats citations according to the
 [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date
 format. Per this format, the citation for this article would appear as
-[Laptev, Martin](https://maptv.github.io/about). 2026+052. “Dec.”
+[Laptev, Martin](https://maptv.github.io/about). 1776874460. “Dec.”
 ${decYearP0}+${decDateP0}. <https://maptv.github.io/dec>.
 
 Instead of using Quarto [citation
