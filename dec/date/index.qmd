@@ -6,6 +6,7 @@ description: >
   without the need for months or weeks.
 image: /asset/cal16.svg
 url: https://maptv.github.io/dec/date
+decdate: 2026+100
 path: /dec/date
 slug: date
 aliases:
@@ -331,6 +332,8 @@ flowchart LR
   classDef empty width:0px;
 ```
 
+## Base32 {#b32}
+
 The Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} pattern of rest and work days can be expressed in [binary](https://en.wikipedia.org/wiki/Binary_number#:~:text=only%20two%20symbols%20for%20the%20natural%20numbers%3A%20typically%200%20%28zero%29%20and%201%20%28one%29) ([base2]{.tool data-bs-toggle="tooltip" data-bs-title="binary"}) as 01110, [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([base10]{.tool data-bs-toggle="tooltip" data-bs-title="decimal"}) as 14, or Dec [duotrigesimal](https://en.wiktionary.org/wiki/duotrigesimal#:~:text=Based%20upon%20the%20number%20thirty%2Dtwo) ([base32]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal"}) as [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}. Each of the 32 possible pently schedules can be represented by a single letter of the Dec base32 alphabet ([b32a]{.tool data-bs-toggle="tooltip" data-bs-title="the Dec base32 alphabet"}). The letters of [b32a]{.tool data-bs-toggle="tooltip" data-bs-title="the Dec base32 alphabet"} are listed in the table below alongside their decimal and binary values.
 
 :::: {.columns}
@@ -354,6 +357,12 @@ The Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L i
 | K | 13 | 01101 |
 | L | 14 | 01110 |
 | M | 15 | 01111 |
+
+:::
+::: {.column width="40%"}
+
+| [base32]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal"} | [base10]{.tool data-bs-toggle="tooltip" data-bs-title="decimal"} | [base2]{.tool data-bs-toggle="tooltip" data-bs-title="binary"} |
+|---|----|-------|
 | N | 16 | 10000 |
 | O | 17 | 10001 |
 | Ó | 18 | 10010 |
@@ -376,8 +385,6 @@ The Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L i
 
 The table above shows that [b32a]{.tool data-bs-toggle="tooltip" data-bs-title="the Dec base32 alphabet"} includes the 26 letters of the [English alphabet](https://en.wikipedia.org/wiki/English_alphabet#:~:text=a%20Latin%2Dscript%20alphabet%20consisting%20of%2026%C2%A0letters) and combines the 6 [vowels](https://en.wikipedia.org/wiki/Vowel#:~:text=a%20speech%20sound%20pronounced%20without%20any%20stricture%20in%20the%20vocal%20tract), a, e, i, o, u, and y, with [acute accents](https://en.wikipedia.org/wiki/Acute_accent#:~:text=a%20diacritic%20used%20in%20many%20modern%20written%20languages%20with%20alphabets%20based%20on%20the%20Latin%2C%20Cyrillic%2C%20and%20Greek%20scripts) ( ́) to create 6 additional letters, á, é, í, ó, ú, and ý, for a total of 32 letters. The 6 additional accented letters are included immediately after their unaccented antecedents as per the order of the English alphabet.
 
-a sequence of different pently schedules can be condensed into a string of base32 letters.
-
 Dec defines 10 operators that can modify schedules: [left shift](https://en.wikipedia.org/wiki/Bitwise_operation#Arithmetic_shift:~:text=equivalent%20to%20multiplying%20by%202n) ([«]{.tool data-bs-toggle="tooltip" data-bs-title="left shift"}), [right shift](https://en.wikipedia.org/wiki/Bitwise_operation#Arithmetic_shift:~:text=equivalent%20to%20taking%20the%20floor%20of%20division%20by%202n) ([»]{.tool data-bs-toggle="tooltip" data-bs-title="right shift"}), [left rotate](https://en.wikipedia.org/wiki/Bitwise_operation#Rotate:~:text=The%20value%20that%20is%20shifted%20into%20the%20right%20during%20a%20left%2Dshift%20is%20whatever%20value%20was%20shifted%20out%20on%20the%20left%2C) ([↺]{.tool data-bs-toggle="tooltip" data-bs-title="left rotate"}), [right rotate](https://en.wikipedia.org/wiki/Circular_shift#Example:~:text=1000%201011.-,Right%20circular%20shift,-.) ([↻]{.tool data-bs-toggle="tooltip" data-bs-title="right rotate"}), [reverse](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(string_functions)#reverse:~:text=Reverses%20the%20order%20of%20the%20characters%20in%20the%20string) ([⤺]{.tool data-bs-toggle="tooltip" data-bs-title="reverse"}), [step](https://en.wikipedia.org/wiki/Array_slicing#1991:_Python:~:text=Python%20also%20allows%20a%20step%20property%20by%20appending%20an%20extra%20colon%20and%20a%20value) ([:]{.tool data-bs-toggle="tooltip" data-bs-title="step"}), [not](https://en.wikipedia.org/wiki/Bitwise_operation#NOT:~:text=a%20unary%20operation%20that%20performs%20logical%20negation%20on%20each%20bit) ([~]{.tool data-bs-toggle="tooltip" data-bs-title="not"}), [and](https://en.wikipedia.org/wiki/Bitwise_operation#AND:~:text=a%20binary%20operation%20that%20takes%20two%20equal%2Dlength%20binary%20representations%20and%20performs%20the%20logical%20AND%20operation%20on%20each%20pair%20of%20the%20corresponding%20bits) ([&]{.tool data-bs-toggle="tooltip" data-bs-title="and"}), [or](https://en.wikipedia.org/wiki/Bitwise_operation#OR:~:text=a%20binary%20operation%20that%20takes%20two%20bit%20patterns%20of%20equal%20length%20and%20performs%20the%20logical%20inclusive%20OR%20operation%20on%20each%20pair%20of%20corresponding%20bits) ([|]{.tool data-bs-toggle="tooltip" data-bs-title="or"}), and [xor](https://en.wikipedia.org/wiki/Bitwise_operation#XOR:~:text=a%20binary%20operation%20that%20takes%20two%20bit%20patterns%20of%20equal%20length%20and%20performs%20the%20logical%20exclusive%20OR%20operation%20on%20each%20pair%20of%20corresponding%20bits) ([^]{.tool data-bs-toggle="tooltip" data-bs-title="xor"}). The shift operators, [«]{.tool data-bs-toggle="tooltip" data-bs-title="left shift"} and [»]{.tool data-bs-toggle="tooltip" data-bs-title="right shift"}, insert rest days at the "beginning of schedule" ([bos]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of schedule"}) or "end of schedule" ([eos]{.tool data-bs-toggle="tooltip" data-bs-title="end of schedule"}). Work days that are moved beyond the [bos]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of schedule"} by [«]{.tool data-bs-toggle="tooltip" data-bs-title="left shift"} or past the [eos]{.tool data-bs-toggle="tooltip" data-bs-title="end of schedule"} by [»]{.tool data-bs-toggle="tooltip" data-bs-title="right shift"} are discarded. 
 
 To move work days without discarding any of them, we should use the rotate operators, [↺]{.tool data-bs-toggle="tooltip" data-bs-title="left rotate"} and [↻]{.tool data-bs-toggle="tooltip" data-bs-title="right rotate"}, which cycle days from the [bos]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of schedule"} to [eos]{.tool data-bs-toggle="tooltip" data-bs-title="end of schedule"} and vice versa, respectively. The number of work days is also maintained by [⤺]{.tool data-bs-toggle="tooltip" data-bs-title="reverse"}, which arranges days in the opposite order. In contrast, [:]{.tool data-bs-toggle="tooltip" data-bs-title="step"} only keeps work days that it steps **on** and converts any work day that it steps **over** into a rest day. 
@@ -386,46 +393,48 @@ The operators described above, namely [«]{.tool data-bs-toggle="tooltip" data-b
 
 The remaining schedule modifiers, [~]{.tool data-bs-toggle="tooltip" data-bs-title="not"}, [&]{.tool data-bs-toggle="tooltip" data-bs-title="and"}, [|]{.tool data-bs-toggle="tooltip" data-bs-title="or"}, and [^]{.tool data-bs-toggle="tooltip" data-bs-title="xor"}, compare two schedules except for [~]{.tool data-bs-toggle="tooltip" data-bs-title="not"} which turns work days into rest days and vice versa. We can put a work day wherever there is a work day in both schedules with [&]{.tool data-bs-toggle="tooltip" data-bs-title="and"}, wherever there is a work day in at least one of the schedules with [|]{.tool data-bs-toggle="tooltip" data-bs-title="or"}, and wherever there is a work day in only one of the schedules with [^]{.tool data-bs-toggle="tooltip" data-bs-title="xor"}.
 
-In the math equations below, *x*, *y*, *s*, *i*, *a*, *z*, and *ℓ* are all positive base10 integers, *i* is the zero-based index of a [binary digit](https://en.wikipedia.org/wiki/Bit#:~:text=the%20most%20basic%20unit%20of%20information%20in%20computing%20and%20digital%20communication) (bit) in a [binary number](https://en.wikipedia.org/wiki/Binary_number), *s* is a step size, and *ℓ* is the [length](https://en.wikipedia.org/wiki/Bit-length#:~:text=the%20number%20of%20binary%20digits%2C%20called%20bits%2C%20necessary%20to%20represent%20an%20unsigned%20integer%5B1%5D%20as%20a%20binary%20number) of the binary form of *x*. Dec forces *ℓ* to be a multiple of five that is five or greater. 
+In the math equations below, *x*, *ℓ*, *y*, *s*, *i*, *a*, *j*, *k*, *z*, and are all positive base10 integers, *x* and *y* are [operands](https://en.wikipedia.org/wiki/Operand#:~:text=the%20object%20of%20a%20mathematical%20operation), *ℓ* is the [bit length](https://en.wikipedia.org/wiki/Bit-length#:~:text=the%20number%20of%20binary%20digits%2C%20called%20bits%2C%20necessary%20to%20represent%20an%20unsigned%20integer%5B1%5D%20as%20a%20binary%20number) of *x*, *s* is a shift size, step size, or split count, *i* is the index of a [bit](https://en.wikipedia.org/wiki/Bit#:~:text=the%20most%20basic%20unit%20of%20information%20in%20computing%20and%20digital%20communication) in the [binary form](https://en.wikipedia.org/wiki/Binary_number) of *x* or *y*, *j* is the index of a split, *a* is a split start index, *m* is a split size, *k* is the number of split sizes that we need to sum to get a split start index.
 
 :::{.overflowequation}
 $$\ell=5\ast\left\lceil\dfrac{\lceil\log_2(x+1)\rceil+[x=0]}{5}\right\rceil$$
 
-$$x \mathbin{\ll} y = (x \ast 2^y)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 2^\ell$$
+$$x \mathbin{\ll} s = (x \ast 2^s)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 2^\ell$$
 
-$$x \mathbin{\gg} y = \left\lfloor \dfrac{x}{2^y} \right\rfloor$$
+$$x \mathbin{\gg} s = \left\lfloor \dfrac{x}{2^s} \right\rfloor$$
 
-$$x \mathbin{\circlearrowleft} y = (x \ast 2^y)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}(2^\ell-1)$$
+$$x \mathbin{\circlearrowleft} s = (x \ast 2^s)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}(2^\ell-1)$$
 
-$$x \mathbin{\circlearrowright} y = (x \ast 2^{\ell-y})\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}(2^\ell-1)$$
-
-$$(x \mathbin{\text{⤺}} s)_i = x_{2a_j+m_j-1-i}$$
-
-$$m_j = \left\lfloor\frac{\ell}{s}\right\rfloor + [j \ge s-(\ell\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} s)]$$
-
-$$a_j=\sum_{k<j} m_k$$
-
-$$(x\text{:}s)_i=x_i\ast[i \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} s = 0]$$
+$$x \mathbin{\circlearrowright} s = (x \ast 2^{\ell-s})\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}(2^\ell-1)$$
 
 $$(\mathbin{\sim}x)_i = 1-x_i$$
 
-$$(x \mathbin{\&} y)_i = x_i y_i$$
+$$(x \mathbin{\&} y)_i = x_i \ast y_i$$
 
-$$(x \mathbin{|} y)_i = x_i + y_i - x_i y_i$$
+$$(x \mathbin{|} y)_i = x_i + y_i - x_i \ast y_i$$
 
 $$(x \mathbin{\hat{}} y)_i = (x_i + y_i)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 2$$
+
+$$(x\text{:}s)_i=x_i\ast[i \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} s = 0]$$
+
+$$(x \mathbin{\text{⤺}} s)_i = x_{2a_j+m_j-1-i}$$
+
+$$m_j = \left\lfloor\frac{\ell}{s}\right\rfloor + [j \ge s-\ell\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} s]$$
+
+$$a_j=\sum_{k<j} m_k$$
 :::
 
+Dec forces *ℓ* to be a multiple of five that is five or greater so that we can combine schedules without ever worrying about shifting the frame of reference. Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} alternates between Schedules [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and [M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"}. In binary, [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} is 01110 01111. In decimal, [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} is 463 = 14 &times; 2^5^ + 15.
+Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} has 1 more work day than Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and thus provisions 291 work days per year. 
 
-The schedule selected by the inputs below is [\${schedBinary}]{.mono} in binary, [\${schedBase10}]{.mono} in decimal, and [\${schedBase32}]{.mono} in base32.
+The schedule selected by the inputs below is represented by [\${schedBinary}]{.mono} in binary, [\${schedBase10}]{.mono} in decimal, and [\${schedBase32}]{.mono} in base32.
 
 {{< include /dec/date/_schedule.qmd >}}
 
 or bitwise functions or operators. 
 
-When we have more than one pently schedule, we can concatenate their base2, base10, or base32 representations to create a "sequence of schedules" ([sos]{.tool data-bs-toggle="tooltip" data-bs-title="sequence of schedules"}). The [Sos]{.tool data-bs-toggle="tooltip" data-bs-title="sequence of schedules"} LŁ alternates between Schedules [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and [M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"}. In binary, [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} is 01110 01111. In decimal, [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} is 463 = 14 &times; 2^5^ + 15.
+When we have more than one pently schedule, we can concatenate their base2, base10, or base32 representations to create a "sequence of schedules" ([sos]{.tool data-bs-toggle="tooltip" data-bs-title="sequence of schedules"}). The [Sos]{.tool data-bs-toggle="tooltip" data-bs-title="sequence of schedules"} LM alternates between Schedules [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and [M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"}.
 
-Schedule LŁ has an additional work day compared to Schedule L and thus provisions 291 work days per year. 
+Schedule LM
 
 If we want plan to follow Schedule L for the one [p](#p){.tool data-bs-toggle="tooltip" data-bs-title="pentaday"} and then switch to Schedule F for the next [p](#p){.tool data-bs-toggle="tooltip" data-bs-title="pentaday"} is called LF 
 

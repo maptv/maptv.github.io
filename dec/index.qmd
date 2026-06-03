@@ -6,6 +6,7 @@ description: >
   hours, minutes, seconds, and degrees.
 image: /asset/colorWheelCompass.svg
 url: https://maptv.github.io/dec
+decdate: 2026+000
 path: /dec
 slug: dec
 aliases:

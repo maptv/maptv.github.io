@@ -51,8 +51,11 @@ local function to_decalendar(date_meta)
 end
 
 function Meta(m)
-  if m.date then
-    m.date = to_decalendar(m.date)
+  if m.date and m.decdate then
+    m.date = m.decdate
+  end
+  if m['date-modified'] then
+    m['date-modified'] = to_decalendar(m['date-modified'])
   end
   return m
 end

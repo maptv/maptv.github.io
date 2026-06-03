@@ -177,11 +177,15 @@ div.quarto-about-trestles .about-entity:has(img[title="desk"]):after {
   font-size: .75em;
 }
 
+#title-block-header.quarto-title-block.default .quarto-title-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1em;
+}
 
 #quarto-content > div.quarto-about-trestles.column-page-right:has(img[title="desk"]) {
   padding-top: 12px !important;
 }
-
 
 main#quarto-document-content {
   padding-top: 0px !important;

@@ -367,7 +367,7 @@ binoptbtm = ({
 })
 templateFunction = inputs => htl.html`<div style="display: flex;">${inputs}</div>`
 b32js = "0123456789abcdefghijklmnopqrstuv";
-b32pl = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ";
+b32pl = "AÁBCDEÉFGHIÍJKLMNOÓPQRSTUÚVWXYÝZ";
 toPolishMap = Object.fromEntries(
   [...b32js].map((c, i) => [c, b32pl[i]])
 );

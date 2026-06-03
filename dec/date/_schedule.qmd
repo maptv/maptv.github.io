@@ -15,7 +15,7 @@ viewof selinbtm = transformInput(Inputs.select(b32pl, {value: "L"}), {
    bind: viewof raninbtm, transform: (x => toPolish(x.toString(32))), invert: (x => parseInt(toBase32(x), 32))
 })
 Inputs.bind(binaryInput(binoptbtm), viewof raninbtm)
-viewof raninbtm = Inputs.range([0, 31], {step: 1, value: 14})
+viewof raninbtm = Inputs.range([0, 31], {step: 1, value: 15})
 ```
 
 ```{ojs}
