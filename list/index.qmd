@@ -1,6 +1,7 @@
 ---
 author: ""
 date: ""
+date-modified: ""
 listing:
   contents:
     - ../../dec/index.qmd
