@@ -334,12 +334,12 @@ flowchart LR
 
 ## Base32 {#b32}
 
-The Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} pattern of rest and work days can be expressed in [binary](https://en.wikipedia.org/wiki/Binary_number#:~:text=only%20two%20symbols%20for%20the%20natural%20numbers%3A%20typically%200%20%28zero%29%20and%201%20%28one%29) ([base2]{.tool data-bs-toggle="tooltip" data-bs-title="binary"}) as 01110, [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([base10]{.tool data-bs-toggle="tooltip" data-bs-title="decimal"}) as 14, or Dec [duotrigesimal](https://en.wiktionary.org/wiki/duotrigesimal#:~:text=Based%20upon%20the%20number%20thirty%2Dtwo) ([base32]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal"}) as [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}. Each of the 32 possible pently schedules can be represented by a single letter of the Dec base32 alphabet ([b32a]{.tool data-bs-toggle="tooltip" data-bs-title="the Dec base32 alphabet"}). The letters of [b32a]{.tool data-bs-toggle="tooltip" data-bs-title="the Dec base32 alphabet"} are listed in the table below alongside their decimal and binary values.
+The Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} pattern of rest and work days can be expressed in [binary](https://en.wikipedia.org/wiki/Binary_number#:~:text=only%20two%20symbols%20for%20the%20natural%20numbers%3A%20typically%200%20%28zero%29%20and%201%20%28one%29) ([base2]{.tool data-bs-toggle="tooltip" data-bs-title="binary"}) as 01110, [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([base10]{.tool data-bs-toggle="tooltip" data-bs-title="decimal"}) as 14, or Dec [duotrigesimal](https://en.wiktionary.org/wiki/duotrigesimal#:~:text=Based%20upon%20the%20number%20thirty%2Dtwo) ([base32]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal"}) as [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}. Each of the 32 pently schedules can be represented by a single letter of the Dec base32 ([b32]{.tool data-bs-toggle="tooltip" data-bs-title="Dec base32"}) alphabet. The [b32]{.tool data-bs-toggle="tooltip" data-bs-title="Dec base32"} letters of are listed in the table below alongside their base10 ([b10]{.tool data-bs-toggle="tooltip" data-bs-title="Dec base10"}) and base2 ([b2]{.tool data-bs-toggle="tooltip" data-bs-title="Dec base2"}) values.
 
 :::: {.columns}
 ::: {.column width="40%"}
 
-| [base32]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal"} | [base10]{.tool data-bs-toggle="tooltip" data-bs-title="decimal"} | [base2]{.tool data-bs-toggle="tooltip" data-bs-title="binary"} |
+| [b32]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal"} | [b10]{.tool data-bs-toggle="tooltip" data-bs-title="decimal"} | [b2]{.tool data-bs-toggle="tooltip" data-bs-title="binary"} |
 |---|----|-------|
 | A | 0  | 00000 |
 | Á | 1  | 00001 |
@@ -361,7 +361,7 @@ The Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L i
 :::
 ::: {.column width="40%"}
 
-| [base32]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal"} | [base10]{.tool data-bs-toggle="tooltip" data-bs-title="decimal"} | [base2]{.tool data-bs-toggle="tooltip" data-bs-title="binary"} |
+| [b32]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal"} | [b10]{.tool data-bs-toggle="tooltip" data-bs-title="decimal"} | [b2]{.tool data-bs-toggle="tooltip" data-bs-title="binary"} |
 |---|----|-------|
 | N | 16 | 10000 |
 | O | 17 | 10001 |
@@ -423,12 +423,12 @@ $$m_j = \left\lfloor\frac{\ell}{s}\right\rfloor + [j \ge s-\ell\href{https://en.
 $$a_j=\sum_{k<j} m_k$$
 :::
 
-Dec forces *ℓ* to be a multiple of five that is five or greater so that we can combine schedules without ever worrying about shifting the frame of reference. Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} alternates between Schedules [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and [M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"}. In binary, [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} is 01110 01111. In decimal, [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} is 463 = 14 &times; 2^5^ + 15.
-Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} has 1 more work day than Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and thus provisions 291 work days per year. 
-
 The schedule selected by the inputs below is represented by [\${schedBinary}]{.mono} in binary, [\${schedBase10}]{.mono} in decimal, and [\${schedBase32}]{.mono} in base32.
 
 {{< include /dec/date/_schedule.qmd >}}
+
+Dec forces *ℓ* to be a multiple of five that is five or greater so that we can combine schedules without ever worrying about shifting the frame of reference. Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} alternates between Schedules [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and [M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"}. In binary, [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} is 01110 01111. In decimal, [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} is 463 = 14 &times; 2^5^ + 15.
+Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}[M]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal M is decimal 15 or binary 01111"} has 1 more work day than Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and thus provisions 255 work days per year. 
 
 or bitwise functions or operators. 
 
