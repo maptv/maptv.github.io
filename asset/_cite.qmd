@@ -19,7 +19,7 @@ references:
   title: {{< meta title >}}
   url: {{< meta url >}}
   issued:
-    literal: {{< meta decdate >}}
+    literal: {{< meta date >}}
 ```
 
 Quarto configuration files, such as `_quarto.yml` and `_metadata.yml`, are written in yaml. Quarto input files, including Quarto markdown, [Jupyter](https://jupyter.org) notebook, [markdown](https://quarto.org/docs/authoring/markdown-basics), and specially formatted [script files](https://quarto.org/docs/computations/render-scripts), can start with a [yaml header](https://quarto.org/docs/authoring/front-matter.html). Therefore, we could put the metadata above directly into a Quarto configuration or input file rather than into a bibliography file.
@@ -37,7 +37,8 @@ As an alternative to yaml, I suggest the [BibTeX](https://en.wikipedia.org/wiki/
   author = "Martin Laptev",
   title = "{{< meta title >}}",
   url = "https://maptv.github.io{{< meta path >}}",
-  year = {{< meta decdate >}}}
+  year = {{< meta date >}}
+}
 ```
 
 In addition to storing metadata in a bibliography file, we can keep instructions regarding how to style citations and references in a [Citation Style Language](https://quarto.org/docs/authoring/citations#sec-citations-style) (csl) file. If we do not provide a csl file, Quarto will follow the [Chicago Manual of Style](https://chicagomanualofstyle.org) when processing parenthetical citations: [@hinnant2021date], narrative citations: [-@hinnant2021date], and references:

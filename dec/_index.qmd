@@ -3245,7 +3245,7 @@ svg#lefthand {
 }
 .marginInputs {
   position: relative;
-  top: -120px;
+  top: -109px;
 }
 #cct table, #zct table {
   line-height: 1.5;
@@ -3266,16 +3266,6 @@ form.oi-3a86ea {
 img#ruler, svg#zhands {
   width: 100%;
 }
-div#iobpiano > div > div > svg {
-  max-width: 100%;
-  max-height: 100%;
-  overflow: visible;
-}
-#iobpiano {
-  overflow: clip;
-  max-width: 100%;
-  margin-bottom: 8px;
-}
 img#zModu {
   width: 100%;
 }
@@ -3291,12 +3281,6 @@ img#zModu {
 }
 .iosevka {
   font-family: "Iosevka", sans-serif !important;
-}
-#chorus svg {
-  width: 100%;
-}
-#chorus > div {
-  overflow: clip;
 }
 #citelist ol li {
   overflow-x: scroll;
@@ -3317,10 +3301,6 @@ img#zModu {
   padding: 0;
   margin: 0;
 }
-#chorus {
-  margin-top: -12px;
-  margin-bottom: 19px;
-}
 .fraction {
   display: inline-flex; /* Allows the container to sit inline with text */
   flex-direction: column; /* Stacks the children vertically */
@@ -3336,32 +3316,6 @@ img#zModu {
   position: relative;
   bottom: .6em;
 }
-g#arpeggio.cluster rect {
-  height: 156px;
-  y: 148;
-}
-g#arpeggio g.cluster-label {
-  transform: translate(148.73508071899414px, 150px);
-}
-div.cell-output-display:has(svg#csharpchart-mermaid.flowchart.mermaid-js) {
-  margin-top: -120px;
-  margin-bottom: -100px;
-}
-div.cell#csharpstaff * {
-  overflow: visible;
-}
-figcaption {
-  display: none;
-}
-.musicchart {
-  margin-top: -25px;
-  margin-left: -18px;
-}
-.musicchart * {
-  max-width: 1000px;
-  overflow-y: visible;
-  overflow-x: hidden;
-}
 .unselectable {
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -3369,6 +3323,22 @@ figcaption {
 }
 code span.er {
   text-decoration: none !important;
+}
+mjx-labels mjx-itable mjx-mtr mjx-mtd[id^="mjx-eqn:"] {
+  vertical-align: middle;
+}
+mjx-labels mjx-itable mjx-mtr mjx-mtd[id^="mjx-eqn:"] mjx-mtext {
+    position: relative;
+    top: 5px;
+}
+.unittable table {
+  text-align: left;
+}
+figcaption {
+  display: none;
+}
+#tbl-map {
+  margin-bottom: 0px;
 }
 </style>
 ```

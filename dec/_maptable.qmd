@@ -53,6 +53,8 @@ viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
 rstbtn.node();
 ```
 
+::: {#tbl-map}
+
 ```{ojs}
 //| echo: false
 //| label: maptable
@@ -64,6 +66,8 @@ table = createTable([
 //   {Point: 1, Milliwěi: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
 // ], {headerEditable: false, appendRows: false})
 ```
+
+:::
 
 ```{ojs}
 //| echo: false

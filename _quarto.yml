@@ -179,6 +179,7 @@ format:
       theme: default
     shift-heading-level-by: 3
     include-after-body:
+      - asset/math.html
       - asset/style.html
       - asset/stamp.html
       - asset/tooltip.html

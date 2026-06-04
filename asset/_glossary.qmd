@@ -82,8 +82,8 @@
     - [kv](#kiloomegar){#kv}: kiloomegar, kωr, 1.[6]{.vinculum} gigameters per hour, 0.4[629]{.vinculum} megameters per second, approximately 0.1544% of the speed of light
     - [mv](#milliomegar){#mv}: milliomegar, mωr, 1.041[6]{.vinculum} miles per hour, 1.[6]{.vinculum} kilometers per hour, 0.4[629]{.vinculum} meters per second, approximately 0.136% the speed of sound
 - [w](#wei){#w}: wěi (纬), parallel, a measure of longitude; can be thought of as a measure of the **w**idth of a meridian on **E**arth; the letter "w" in wěi can be vertically flipped to get the letter "m" in meridian
-    - [dw](#deciwei){#dw}: deciwěi (纬), a tenth of a wěi, a tenth of a parallel
-    - [mw](#milliwei){#mw}: milliwěi (纬), a thousanth of a wěi, a thousanth of a parallel
+    - [dw](#deciwei){#dw}: deciwěi, a tenth of a wěi (纬), a tenth of a parallel
+    - [mw](#milliwei){#mw}: milliwěi, a thousanth of a wěi (纬), a thousanth of a parallel
 - [x](#xun){#x}: xún (旬), decaday, a group of ten days, 2 pentadays, represented by x like the Roman numeral X
 - [y](#year){#y}: year
     - [my](#milliyear){#my}: milliyear, a thousandth of a year
