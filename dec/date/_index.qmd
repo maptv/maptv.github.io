@@ -256,6 +256,7 @@ dotm = doty2dotm(Math.floor(ydz[1]))
 dotm0 = String(dotm - 1).padStart(2, "0")
 monthNumber = Math.floor(ydz[1] - dotm)
 monthNumber0 = String(monthNumber + 1).padStart(3, "0")
+monthNumber1 = monthNumber.toString().padStart(3, "0")
 dotw0doty = Math.floor(ydz[1]) - dotw
 dotw0dotyNeg = Math.abs(dotw0doty - daysInYear)
 dotw0dotyPad = dotw0doty.toString().padStart(3, "0")
@@ -263,7 +264,9 @@ dotw0dotyNegPad = dotw0dotyNeg.toString().padStart(3, "0")
 doty0dote = date2dote(decYear, 0)[0]
 doty0dotw = dote2dotw(doty0dote)
 hybridMonthWeek = monthNumber - dotw
+hybridMonthWeekPad = hybridMonthWeek.toString().padStart(3, "0")
 week = Math.floor((ydz[1] + doty0dotw) / 7)
+weekPad = week.toString().padStart(2, "0")
 dotw0sign = dotw0doty < 0 ? "-" : "+"
 dotw0signIfNeg = dotw0doty < 0 ? "-" : ""
 nDaysInYear = 365 + year2leap(decYear + 1)
@@ -1022,18 +1025,22 @@ input[type="radio"] {
 h4.anchored {
   margin: 8px 0px 8px 0px;
 }
+div.cell-output-display:has(.doxdiagram) {
+  margin-top: -45px;
+  margin-top: -45px;
+}
 div.cell-output-display:has(svg#datenav-mermaid.flowchart.mermaid-js) {
   margin-top: -5px;
   margin-bottom: -5px;
 }
-div.cell-output-display:has(svg#zerobasedpent-mermaid.flowchart.mermaid-js) {
+div.cell-output-display:has(svg#fig-zero-mermaid.flowchart.mermaid-js) {
   margin-top: -15px;
 }
-div.cell-output-display:has(svg#onebasedpent-mermaid.flowchart.mermaid-js) {
+div.cell-output-display:has(svg#fig-one-mermaid.flowchart.mermaid-js) {
   margin-top: -5px;
   margin-bottom: -5px;
 }
-div.cell-output-display:has(svg#conversionchart-mermaid.flowchart.mermaid-js) {
+div.cell-output-display:has(svg#fig-conv-mermaid.flowchart.mermaid-js) {
   margin-top: -15px;
   margin-bottom: -15px;
 }
@@ -1060,6 +1067,8 @@ p:has(span.handlabel)  {
 div.overflowequation {
   margin-top: -9px;
   margin-bottom: -8px;
+  overflow-x:auto;
+  overflow-y:hidden;
 }
 .nowrap {
   white-space: nowrap;
@@ -1163,6 +1172,22 @@ div#bitwise div form label:has(input[type="radio"]):last-child {
 }
 div#bitwise div > form > button {
   margin-right: -.6px;
+}
+#fig-topdatenav figcaption {
+  display: none;
+}
+#fig-zero figure {
+  margin-top: -18px;
+}
+#fig-zero div:has(> svg) {
+  margin-top: -21px;
+}
+#fig-zerocomm {
+  margin-top: -6px;
+}
+#fig-zerocomm figure {
+  margin-top: -24px;
+  margin-bottom: -21px;
 }
 </style>
 ```

@@ -12,6 +12,63 @@ div[data-code-copy="false"] button.code-copy-button {
   display: none;
 }
 
+@font-face {
+  font-family: "Iosevka";
+  src: url(../asset/IosevkaNerdFont-Regular.ttf);
+}
+.iosevka {
+  font-family: "Iosevka", sans-serif !important;
+}
+#citelist ol li {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+}
+#gloslist ul li {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#gloslist div {
+  padding: 0;
+  margin: 0;
+}
+.fraction {
+  display: inline-flex; /* Allows the container to sit inline with text */
+  flex-direction: column; /* Stacks the children vertically */
+  align-items: center; /* Centers the numbers */
+  vertical-align: middle; /* Aligns the fraction with the surrounding text */
+  font-size: 60%; /* Makes the numbers smaller for a better look */
+}
+.numerator {
+  position: relative;
+  top: .4em;
+}
+.denominator {
+  position: relative;
+  bottom: .6em;
+}
+mjx-labels mjx-itable mjx-mtr mjx-mtd[id^="mjx-eqn:"] {
+  vertical-align: middle;
+}
+mjx-labels mjx-itable mjx-mtr mjx-mtd[id^="mjx-eqn:"] mjx-mtext {
+    position: relative;
+    top: 5px;
+}
+.unselectable {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+code span.er {
+  text-decoration: none !important;
+}
+
 .quarto-figure > .anchorjs-link {
   display: none;
 }
@@ -64,40 +121,43 @@ ol > li[id*="fn"] > p > a.footnote-back {
     display: none;
 }
 
-/* h1.title { */
-/*   counter-reset: refitem -1; */
-/* } */
-
-/* mjx-mtable > mjx-labels > mjx-itable > mjx-mtr > mjx-mtd > mjx-mtext > mjx-c:nth-child(1) { */
-/*   counter-increment: refitem; */
-/* } */
-
-/* mjx-mtable > mjx-labels > mjx-itable > mjx-mtr > mjx-mtd > mjx-mtext > mjx-c { */
-/*   counter-increment: refitem; */
-/* } */
-
-/* mjx-mtable > mjx-labels > mjx-itable > mjx-mtr > mjx-mtd > mjx-mtext > mjx-c:not(.mjx-c28):not(.mjx-c29)::before { */
-/*   content: counter(refitem) !important; */
-/* } */
-
-/* mjx-mtd#mjx-eqn\:1 > mjx-mtext.mjx-n > mjx-c:not(.mjx-c28):not(.mjx-c29)::before { */
-/*   content: "0"; */
-/* } */
-
-/* mjx-mtd#mjx-eqn\:2 > mjx-mtext.mjx-n > mjx-c:not(.mjx-c28):not(.mjx-c29)::before { */
-/*   content: "1"; */
-/* } */
+main.content {
+  counter-reset: tblnum -1;
+}
+main.content:has(section#sec-lad.hiddenheading div#tbl-1d.unittable) {
+  counter-reset: tblnum 1;
+}
+figcaption.quarto-float-tbl {
+  counter-increment: tblnum;
+  font-size: 0;
+}
+figcaption.quarto-float-tbl::before {
+  content: "Table " counter(tblnum);
+  font-size: initial;
+}
 
 
+main.content {
+    counter-reset: diagnum -1;
+}
+main.content:has(section#sec-dox div#fig-zero.doxdiagram) {
+  counter-reset: diagnum 0;
+}
+figure:has(svg.flowchart.mermaid-js) figcaption.quarto-float-fig {
+    counter-increment: diagnum;
+    font-size: 0;
+}
+figure:has(svg.flowchart.mermaid-js) figcaption.quarto-float-fig::before {
+    content: "Diagram " counter(diagnum);
+    font-size: initial;
+}
 
 /* improve responsiveness of navbar elements */
-
 @media only screen and (max-width: 558px) {
     a.navbar-brand, span.navbar-title {
         display: none;
     }
 }
-
 @media only screen and (max-width: 410px) {
     i.bi-calendar, i.bi-clock {
         display: none;
@@ -107,24 +167,16 @@ ol > li[id*="fn"] > p > a.footnote-back {
     -webkit-flex-direction: row !important;
 }
 }
-
 @media only screen and (max-width: 375px) {
     div.quarto-navbar-tools {
         display: none;
     }
 }
-
 @media only screen and (max-width: 290px) {
 div#quarto-search {
         display: none;
     }
 }
-
-code {
-  padding: 0px;
-  font-family: Monaco Consolas "Courier New" Courier monospace;
-}
-
 #quarto-header > nav.navbar.navbar-expand-lg > div > div.navbar-brand-container.mx-auto > i.bi.bi-calendar {
   margin: 0px 1px 0px 1px;
 }
@@ -215,6 +267,11 @@ div.quarto-listing > div.list.grid {
 
 .nowrap {
   white-space: nowrap;
+}
+
+code {
+  padding: 0px;
+  font-family: Monaco Consolas "Courier New" Courier monospace;
 }
 
 div > form > label {

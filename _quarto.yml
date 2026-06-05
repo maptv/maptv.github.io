@@ -162,6 +162,7 @@ format:
     css: asset/style.css
     anchor-sections: true
     tbl-cap-location: margin
+    fig-cap-location: margin
     code-block-background: false
     code-block-border-left: false
     citations-hover: true

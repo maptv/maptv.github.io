@@ -6,7 +6,7 @@ description: >
   without the need for months or weeks.
 image: /asset/cal16.svg
 url: https://maptv.github.io/dec/date
-decdate: 2026+100
+decdate: 2026+096
 path: /dec/date
 slug: date
 aliases:
@@ -14,9 +14,12 @@ aliases:
   - /dd
 engine: knitr
 draft: true
+crossref:
+  fig-prefix: Diagram
+  fig-title: Diagram
 ---
 
-:::{#datenav}
+:::{.datenav #fig-topdatenav}
 {{< include /asset/_decnav.qmd >}}
 :::
 
@@ -40,7 +43,7 @@ From the perspective of Dec, month color labels🏷️are only useful if we want
 There are two range inputs labelled "Day of year" because every [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} can be expressed as either a positive or a negative integer. The "positive integer [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}" ([pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}) is the number of days that have passed in the year, the [absolute value](https://en.wikipedia.org/wiki/Absolute_value#:~:text=non%2Dnegative%29-,magnitude%20of,measured%20without%20regard%20to%20its%20sign,-.%20Namely%2C) of the "negative integer [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}" ([nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}) is the number of days left in the year, and their [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference) is the "Decalendar year length" ([dyl]{.tool data-bs-toggle="tooltip" data-bs-title="Decalendar year length"}).
 
 :::{.overflowequation}
-$$\text{dyl} = \text{pid} - \text{nid}$$
+$$\text{dyl} = \text{pid} - \text{nid}$$ {#eq-dyl}
 :::
 
 Having both a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} and a [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} can be useful for more than obtaining the [dyl]{.tool data-bs-toggle="tooltip" data-bs-title="Decalendar year length"}. If we wanted to add 285 days to the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} selected below, for example to predict when a pregnant🤰woman will give birth to a baby👩‍🍼[@jukicLengthHumanPregnancy2013], we should use the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} if it is less than 80 in a common year or less than 81 in a leap year and otherwise use the [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}: \${easyDoy} + 285 = \${easySum}.
@@ -52,7 +55,7 @@ Having both a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integ
 The "Plot layout" radio input rotates the calendar plots by a quarter turn, interchanging the horizontal (↔) and vertical (↕) axes. The axis labels demonstrate that [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"} are analogous to weeks and that "days of xún" ([dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"}) are "day of week" ([dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}) analogs. If we multiply an [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"} \${layoInput ? "↕" : "↔"} axis label by ten and add it to a [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} \${layoInput ? "↔" : "↕"} axis label, we get a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} cell value: \${dotyInputDek} &times; 10 + \${dotyInputDod} = ${dotyInput}.
 
 :::{.overflowequation}
-$$\text{pid} = \text{x} \ast 10 + \text{dox}$$
+$$\text{pid} = \text{x} \ast 10 + \text{dox}$$ {#eq-pid}
 :::
 
 Although weeks determine the shape of the Gregorian calendar plot, its cell values are "days of month" ([dom]{.tool data-bs-toggle="tooltip" data-bs-title="days of month"}). We can uniquely identify🪪a specific day in any year with a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}, instead of a month and a [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}. Except for [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[365]{.color365by366} in leap years, every year has the same [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"} and months, but not the same weeks, because the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of the first day of the year varies.
@@ -67,51 +70,54 @@ Dec refers to midnight on [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="
 
 Each of the ten Dec time zones has its own [boe]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of era"}, [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}, [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}, and [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}. The [boe]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of era"} of the Zone 0 Dec time zone is called the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era). We can convert [Julian day numbers](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20continuous%20count%20of%20days%20from%20the%20beginning%20of%20the%20Julian%20period) ([JDN]{.tool data-bs-toggle="tooltip" data-bs-title="Julian day numbers"}) to Zone 0 [doe]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"} by subtracting the number of full days in between the start of the [Julian period](https://en.wikipedia.org/wiki/Julian_day#Terminology:~:text=a%20chronological%20interval%20of%207980%C2%A0years) and the Dec epoch, which is 1721119 if the Zone 0 time is later than noon and 1721120 otherwise.
 
-Dec uses [doe]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"} for [calendrical calculations](https://en.wikipedia.org/wiki/Calendrical_calculation#:~:text=a%20calculation%20concerning%20calendar%20dates), such as finding the [POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems) [zero-based [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)) of a given date. This year, the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of [Christmas](https://en.wikipedia.org/wiki/Christmas#:~:text=annual%20festival%20commemorating%20the%20birth%20of%20Jesus%20Christ)🎄is \${xmasDotw} according to the Dec [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} equation: (\${xmasDote} + \${3 - nOffInput}) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7 = \${xmasDotw}. In contrast to the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}, the [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} can be found without any calculation, because it is the last digit of the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} or equivalently the remainder after dividing the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} by 10.
+Dec uses [doe]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"} for [calendrical calculations](https://en.wikipedia.org/wiki/Calendrical_calculation#:~:text=a%20calculation%20concerning%20calendar%20dates), such as finding the [POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems) [zero-based [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)) of a given date. This year, the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of [Christmas](https://en.wikipedia.org/wiki/Christmas#:~:text=annual%20festival%20commemorating%20the%20birth%20of%20Jesus%20Christ)🎄is \${xmasDotw} according to @eq-dow: (\${xmasDote} + \${3 - nOffInput}) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7 = \${xmasDotw}. In contrast to the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}, the [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} can be found without much effort, because it is the last digit of the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} or equivalently the remainder after dividing the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} by 10 as per @eq-dox.
 
-$$\text{dox} = \text{pid} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 10$$
+$$\text{dow} = (\text{doe} + 3) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 7$$ {#eq-dow}
+$$\text{dox} = \text{pid} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 10$$ {#eq-dox}
 
-The [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} equation, [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} = ([doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7, is derived from Howard Hinnant's [`weekday_from_days`](https://howardhinnant.github.io/date_algorithms.html#weekday_from_days) algorithm. The Dec epoch [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} is 3 = (0 + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7. The [UNIX epoch](https://en.wikipedia.org/wiki/Unix_time#:~:text=00%3A00%3A00%20UTC%20on%201%C2%A0January%201970) [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} is 4 = (719468 + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7. Depending on how [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) is defined, a negative [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} could yield a negative [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}: -1 = (-60 + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7. To convert a negative [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} into a positive [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}, we add 7.
+@eq-dow is derived from [Howard Hinnant](https://howardhinnant.github.io)'s [`weekday_from_days`](https://howardhinnant.github.io/date_algorithms.html#weekday_from_days) algorithm. The Dec epoch [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} is 3 = (0 + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7. The [UNIX epoch](https://en.wikipedia.org/wiki/Unix_time#:~:text=00%3A00%3A00%20UTC%20on%201%C2%A0January%201970) [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} is 4 = (719468 + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7. Depending on how [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) is [defined](https://en.wikipedia.org/wiki/Modulo#Variants_of_the_definition), a negative [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} could yield a negative [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}: -1 = (-60 + 3) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7. We can add 7 to a negative [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} in the bottom row of @tbl-dow to turn it into the positive [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} above it.
 
-:::{.overflowtable style="overflow-x:auto;overflow-y:hidden;"}
-| Sun | Mon | Tue | Wed | Thu | Fri | Sat |
-| --- | --- | --- | --- | --- | --- | --- |
-|  0  |  1  |  2  |  3  |  4  |  5  |  6  |
-| -7  | -6  | -5  | -4  | -3  | -2  | -1  |
+::: {#tbl-dow .overflowtable style="overflow-x:auto;overflow-y:hidden;text-align:center;"}
+|             | Sun | Mon | Tue | Wed | Thu | Fri | Sat |
+| ----------- | --- | --- | --- | --- | --- | --- | --- |
+|  [+]{.mono} |  0  |  1  |  2  |  3  |  4  |  5  |  6  |
+|  [-]{.mono} |  7  |  6  |  5  |  4  |  3  |  2  |  1  |
 :::
 
-Christmas is an anchored⚓️holiday because it occurs on the same [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} every year. In contrast, floating🛟holidays like [Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃are always planned for the same [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} and thus can fall on various [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"}. Dec uses the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} [delta](https://en.wikipedia.org/wiki/Delta_(letter)#:~:text=the%20difference%20operator) ([dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~Δ~) equation, [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~Δ~ = ([dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~M~ -- [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~S~ + 7) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7, to determine which of the 7 possible floating holiday dates corresponds to the given year.
+Christmas is an anchored⚓️holiday because it occurs on the same [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} every year. In contrast, floating🛟holidays like [Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃are always planned for the same [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} and thus can fall on various [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"}. We can use @eq-dowdif, which is inspired by [Howard Hinnant](https://howardhinnant.github.io)'s [`weekday_difference`](https://howardhinnant.github.io/date_algorithms.html#weekday_difference) algorithm, to find the the floating holiday date that corresponds to a given year.
+
+$$\text{dow}_\Delta = (\text{dow}_\text{M} - \text{dow}_\text{S} + 7) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 7$$ {#eq-dowdif}
+
+In @eq-dowdif, [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~M~ is the [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted), [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~S~ is the [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted), and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~Δ~ is the [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference) between them that ranges from 0 to 6. To get the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} of the first [Dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} [4]{.tool data-bs-toggle="tooltip" data-bs-title="Thursday"} after [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[266]{}, which is Thanksgiving in the United States🇺🇸and Brazil🇧🇷, we plug 4 as [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~M~ and the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[267]{} as [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~S~ into the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~Δ~ equation, \${day266dotwDiff} = (4 [-]{.mono} \${day266dotw} + 7) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7, and then add 267 to [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~Δ~: \${day266dotwDiff + 267} = \${day266dotwDiff} + 267.
 
 ::: {.callout-warning}
 # Bad Pun Alert
-[**Deck**aday the halls](https://en.wikipedia.org/wiki/Deck_the_Halls#:~:text=a%20traditional%20Christmas%20carol.) with [**dows**]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"} of holly! Fa + la &times; 8!
+[**Deck**aday the halls](https://en.wikipedia.org/wiki/Deck_the_Halls#:~:text=a%20traditional%20Christmas%20carol.) with [**dows**]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"} of holly! Fa + la &times; 8! 'Tis the **[hectoday]{.tool data-bs-toggle="tooltip" data-bs-title="hundred days"}** to be jolly! Aren't you thankful that I couldn't think of any Thanksgiving puns?
 :::
-
-In the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~Δ~ equation, [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~M~ is the [minuend](https://en.wiktionary.org/wiki/minuend#:~:text=A%20number%20or%20quantity%20from%20which%20another%20is%20to%20be%20subtracted), [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~S~ is the [subtrahend](https://en.wikipedia.org/wiki/Subtraction#:~:text=number%20being%20subtracted), and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~Δ~ is the [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference) that ranges from 0 to 6. To get the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} of the first [Dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} [4]{.tool data-bs-toggle="tooltip" data-bs-title="Thursday"} after [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[266]{}, which is Thanksgiving in the United States🇺🇸and Brazil🇧🇷, we plug 4 as [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~M~ and the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[267]{} as [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~S~ into the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~Δ~ equation, \${day266dotwDiff} = (4 [-]{.mono} \${day266dotw} + 7) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7, and then add 267 to [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~Δ~: \${day266dotwDiff + 267} = \${day266dotwDiff} + 267.
 
 # Year of era (yoe) {#sec-yoe}
 
-Apart from the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~Δ~ equations, the calculation above relies on the Dec [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} equation, which is based on the [`days_from_civil`](https://howardhinnant.github.io/date_algorithms.html#days_from_civil){.mono .under} algorithm created by [Howard Hinnant](https://howardhinnant.github.io) and described in his manuscript entitled [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html) -@hinnant2021date, to convert the two components of a Dec date, namely a "year of era" ([yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}) and a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}, into a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}.
+Apart from the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}~Δ~ equations, the calculation above relies on Equations -@eq-yoe2coe, -@eq-yoe2yoc, and -@eq-doe, which are based on the [`days_from_civil`](https://howardhinnant.github.io/date_algorithms.html#days_from_civil){.mono .under} algorithm created by [Howard Hinnant](https://howardhinnant.github.io) and described in his manuscript entitled [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html) -@hinnant2021date, to convert the two components of a Dec date, namely a "year of era" ([yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}) and a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}, into a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}.
 
-$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{yoe}&{\text{if } \text{yoe} \geq 0;}\\\text{yoe}-399&{\text{otherwise.}}\end{cases}}{400} \Biggr \rfloor$$
+$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{yoe}&{\text{if } \text{yoe} \geq 0;}\\\text{yoe}-399&{\text{otherwise.}}\end{cases}}{400} \Biggr \rfloor$$ {#eq-yoe2coe}
 
-$$\text{yoc} = \text{yoe} - \text{coe} \ast 400$$
+$$\text{yoc} = \text{yoe} - \text{coe} \ast 400$$ {#eq-yoe2yoc}
 
-:::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
-$$\text{doe} = \text{coe} \ast 146097 + \text{yoc} \ast 365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{pid}$$
+:::{.overflowequation}
+$$\text{doe} = \text{coe} \ast 146097 + \text{yoc} \ast 365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{pid}$$ {#eq-doe}
 :::
 
 The Dec date equations are the [inverse](https://en.wikipedia.org/wiki/Inverse#:~:text=Inverse%20function%2C-,a%20function%20that%20%22reverses%22%20another%20function,-Generalized%20inverse%2C%20a)🔁of the Dec [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} equations above, based on Howard Hinnant's [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days){.mono} algorithm, and useful for obtaining Dec dates from [doe]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"}, [UNIX timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970), and [JDN]{.tool data-bs-toggle="tooltip" data-bs-title="Julian day numbers"}. Along the way to obtaining a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} from a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}, the Dec date equations calculate the "[cycle](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years) of era" ([coe]{.tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}), "year of cycle" ([yoc]{.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}), and "day of cycle" ([doc]{.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"}).
 
-$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{doe}&{\text{if } \text{doe} \geq 0;}\\\text{doe}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$
+$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{doe}&{\text{if } \text{doe} \geq 0;}\\\text{doe}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$ {#eq-doe2coe}
 
-$$\text{doc} = \text{doe} - \text{coe} \ast 146097$$
+$$\text{doc} = \text{doe} - \text{coe} \ast 146097$$ {#eq-doc}
 
-$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$
+$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$ {#eq-doe2yoc}
 
-$$\text{yoe} = \text{yoc} + \text{coe} \ast 400$$
+$$\text{yoe} = \text{yoc} + \text{coe} \ast 400$$ {#eq-yoe}
 
-$$\text{pid} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \biggr \rfloor$$
+$$\text{pid} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \biggr \rfloor$$ {#eq-doe2pid}
 
 Dates generated by the Dec date equations are guaranteed to be in the standard [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} format. Therefore, we can standardize Dec dates by using the Dec [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} and date equations consecutively to perform a [round-trip](https://en.wikipedia.org/wiki/Round-trip_format_conversion#:~:text=converting%20from%20any%20data%20representation%20and%20back%20again) "date to [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} to date" conversion and thus ensure that the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} is an integer and the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} is a positive integer less than the [dyl]{.tool data-bs-toggle="tooltip" data-bs-title="Decalendar year length"}: 0 &le; [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} &lt; [dyl]{.tool data-bs-toggle="tooltip" data-bs-title="Decalendar year length"}. 
 
@@ -120,12 +126,12 @@ The [[yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[pid]{.to
 $$\text{dyl}=\begin{cases}
   366&{\begin{align}\text{if } (\text{yoe} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} \ \ \ \ 4=0\\   \href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\text{yoe}+1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 100\neq0\\
   \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}( \text{yoe} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 400=0\end{align}}\\\\
-  365&{\text{otherwise.}}\end{cases}$$
+  365&{\text{otherwise.}}\end{cases}$$ {#eq-yoe2dyl}
 
 Dec categorizes each date as a [countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event%20is%20scheduled%20to%20occur) or countup date, depending on whether the date counts **up** the days **since** Year [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} or counts **down** the days **until** Year [[yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+1]{.nowrap}. The current [[yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}]{.nowrap} Zone 0 date, [\${decYear}[+]{.mono}\${decDotyPad}]{.nowrap}, informs us that Year \${decYear} began \${decDoty} days ago, whereas its countdown equivalent, [\${nextYear}[-]{.mono}\${TminusPadded}]{.nowrap}, lets us know that Year \${nextYear} will begin in \${Tminus} days.
 
 :::{.overflowequation}
-$$\text{yoe}+\dfrac{\text{pid}}{\text{dyl}} = \text{yoe} + 1 + \dfrac{\text{nid}}{\text{dyl}}$$
+$$\text{yoe}+\dfrac{\text{pid}}{\text{dyl}} = \text{yoe} + 1 + \dfrac{\text{nid}}{\text{dyl}}$$ {#eq-updown}
 :::
 
 The distinction between [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} can be explained in terms of [computer programming](https://en.wikipedia.org/wiki/Computer_programming#:~:text=the%20composition%20of%20sequences%20of%20instructions%2C%20called%20programs%2C%20that%20computers%20can%20follow%20to%20perform%20tasks). If we think of a year as an [array](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=a%20data%20structure%20consisting%20of%20a%20collection%20of%20elements%20(values%20or%20variables)%2C%20of%20same%20memory%20size%2C%20each%20identified%20by%20at%20least%20one%20array%20index) and each day as an array element, [dyl]{.tool data-bs-toggle="tooltip" data-bs-title="Decalendar year length"} is the number of elements in the array, [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} is a [positive](https://en.wikipedia.org/wiki/Zero-based_numbering#:~:text=a%20way%20of%20numbering%20in%20which%20the%20initial%20element%20of%20a%20sequence%20is%20assigned%20the%20index%C2%A00) index, and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} is a [negative index](https://en.wikipedia.org/wiki/Array_slicing#:~:text=specify%20an%20offset%20from%20the%20end%20of%20the%20array). Array [indexes](https://en.wikipedia.org/wiki/Array_(data_structure)#Element_identifier_and_addressing_formulas:~:text=individual%20objects%20are%20selected%20by%20an%20index) can be used to obtain specific array elements individually via indexing or in groups via [array slicing](https://en.wikipedia.org/wiki/Array_slicing#:~:text=an%20operation%20that%20extracts%20a%20subset%20of%20elements%20from%20an%20array). 
@@ -135,7 +141,7 @@ The distinction between [pid]{.tool data-bs-toggle="tooltip" data-bs-title="posi
 Even though Decalendar functions best with [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"}, Dec dates can display [dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"} by splitting a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} into a "beginning of week" ([bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}) and the POSIX zero-based [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}. To obtain the [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}, we subtract the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} from the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}: [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} = [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} [-]{.mono} [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}. According to the current Zone [0]{.color0} [[yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}+[dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"}]{.nowrap} date, [\${decYear}[\${dotw0sign}]{.mono}\${dotw0dotyPad}+\${dotw}]{.nowrap}, the most recent [Dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"} [0]{.color0} was on [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}\${dotw0doty} and today is [Dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"} \${dotw}.
 
 :::{.overflowequation}
-$$\text{yoe} + \frac{\text{pid}}{\text{dyl}} = \text{yoe} + \frac{\text{bow + dow}}{\text{dyl}}$$
+$$\text{yoe} + \frac{\text{pid}}{\text{dyl}} = \text{yoe} + \frac{\text{bow + dow}}{\text{dyl}}$$ {#eq-bow}
 :::
 
 A Dec [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} date can have a countup or a countdown [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}. The countdown equivalent of [\${decYear}[\${dotw0sign}]{.mono}\${dotw0dotyPad}+\${dotw}]{.nowrap} is [\${nextYear}[-]{.mono}\${dotw0dotyNegPad}+\${dotw}]{.nowrap}. Like [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}, countdown [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} can be useful for calculations. We can add up to 52 weeks to any countdown [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} without having to take into account the length of the year. The sum of 52 weeks and the last [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}+[dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"} of this year is 52 &times; 7 + ${-decYearLastBowNeg} + \${decYearLastDow} = \${decYearLastBowSum} + \${decYearLastDow}.
@@ -144,10 +150,10 @@ Based on the calculation above, the Dec [bow]{.tool data-bs-toggle="tooltip" dat
 
 # Week of year (woy) {#sec-woy}
 
-We can convert between the [[bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}+[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}]{.nowrap} in Dec [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} dates and the [7&times;[woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"}+[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}[-]{.mono}[boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}]{.nowrap} in Dec [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} dates. The [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} is the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of the first day of the Dec year. To obtain the current [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"}, we sum the [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} with the current [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} and then divide by 7: \${week} = (\${doty0dotw} + \${dotw0doty}) &div; 7. Dec truncates [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} dates so that they only display the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}, [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"}, and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}: \${decYear}[+]{.mono}\${week}[+]{.mono}\${dotw}.
+We can convert between the [[bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}+[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}]{.nowrap} in Dec [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} dates and the [7&times;[woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"}+[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}[-]{.mono}[boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}]{.nowrap} in Dec [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} dates. The [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} is the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of the first day of the Dec year. To obtain the current [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"}, we sum the [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} with the current [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} and then divide by 7: \${week} = (\${doty0dotw} + \${dotw0doty}) &div; 7. Dec truncates [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} dates so that they only display the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}, [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"}, and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}: \${decYear}[+]{.mono}\${weekPad}[+]{.mono}\${dotw}.
 
 :::{.overflowequation}
-$$\text{yoe} + \frac{\text{bow + dow}}{\text{dyl}} = \text{yoe} + \frac{7\ast\text{woy + dow}-\text{boydow}}{\text{dyl}}$$
+$$\text{yoe} + \frac{\text{bow + dow}}{\text{dyl}} = \text{yoe} + \frac{7\ast\text{woy + dow}-\text{boydow}}{\text{dyl}}$$ {#eq-woy}
 :::
 
 If [dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"} were like [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} and reset at the [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}, the [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} would always be zero and conversion between [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} and [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} dates would be straightforward but the reality is that we need the [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} to convert a [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} date to a [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} date. Dec pads the left side of the [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} and [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} in dates with zeros so that we can distinguish between two-digit [woy]{.tool data-bs-toggle="tooltip" data-bs-title="weeks of year"} and three-digit [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginnings of week"}. 
@@ -155,7 +161,7 @@ If [dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"} were like 
 To find the [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}, we first divide the [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginnings of week"} by 7 and subtract the remainder from 7. Then, we divide the resulting difference by 7 and keep the remainder. We could also get the [boy]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} without a [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginnings of week"} by turning the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} into a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} and then the [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} into a [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}. Dec [woy]{.tool data-bs-toggle="tooltip" data-bs-title="week of year"} dates obfuscate🫣[doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} much more than [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} dates, but may be useful for [week-based accounting](https://en.wikipedia.org/wiki/Accounting_period#52%E2%80%9353-week_fiscal_year:~:text=used%20by%20companies%20that%20desire%20that%20their%20fiscal%20year%20always%20end%20on%20the%20same%20day%20of%20the%20week)🧾.
 
 :::{.overflowequation}
-$$\text{boydow = (7} - \text{bow}\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}7)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}7$$
+$$\text{boydow = (7} - \text{bow}\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}7)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}7$$ {#eq-boydow}
 :::
 
 # Day of xún (dox) {#sec-dox}
@@ -165,18 +171,18 @@ In contrast to a week, an [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="
 In the context of a common year, [p](#p){.tool data-bs-toggle="tooltip" data-bs-title="pentaday"}73 is synonymous with [p](#p){.tool data-bs-toggle="tooltip" data-bs-title="pentaday"}0 of the subsequent year. To obtain the current [poy]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday of year"}, we double the current [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"} and add the current [pox]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday of xún"}, which is 1 if the current [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} is greater than 4 and 0 otherwise: ${decPent} = \${decDek} &times; 2 + [\${decDotd} > 4]. If we divide a [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} by 5, the remainder will be its corresponding "day of pentaday" ([dop]{.tool data-bs-toggle="tooltip" data-bs-title="days of pentaday"}): \${decDek} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 5 = \${decDotp}. 
 
 :::{.overflowequation}
-$$\text{pox} = \left[\text{dox} > 4\right]$$
+$$\text{pox} = \left[\text{dox} > 4\right]$$ {#eq-pox}
 
-$$\text{poy = x} \ast 2 + \text{pox}$$
+$$\text{poy = x} \ast 2 + \text{pox}$$ {#eq-poy}
 
-$$\text{dop = dox} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 5$$
+$$\text{dop = dox} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 5$$ {#eq-dop}
 :::
 
-In the [Mermaid](https://mermaid.js.org) flowchart below, each row is a [pox]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday of xún"} and each node is a [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"}. The flowchart visualizes Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}, a pently schedule that plans for exactly 219 work days per year, which is close to the 208 to 210 work days per year provisioned by a [four-day workweek](https://en.wikipedia.org/wiki/Four-day_workweek#:~:text=an%20arrangement%20where%20a%20workplace%20or%20place%20of%20education%20has%20its%20employees%20or%20students%20work%20or%20attend%20school%2C%20college%20or%20university%20over%20the%20course%20of%20four%20days%20per%20week). Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} designates [Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 1, 2, 3, 6, 7, and 8 as work days and [Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 0, 4, 5, and 9 as rest days. 
+In @fig-zero below, each row is a [pox]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday of xún"} and each node is a [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"}. @fig-zero visualizes Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}, a pently schedule that plans for exactly 219 work days per year, which is close to the 208 to 210 work days per year provisioned by a [four-day workweek](https://en.wikipedia.org/wiki/Four-day_workweek#:~:text=an%20arrangement%20where%20a%20workplace%20or%20place%20of%20education%20has%20its%20employees%20or%20students%20work%20or%20attend%20school%2C%20college%20or%20university%20over%20the%20course%20of%20four%20days%20per%20week). Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} designates [Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 1, 2, 3, 6, 7, and 8 as work days and [Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 0, 4, 5, and 9 as rest days. 
 
+::: {#fig-zero .doxdiagram}
 ```{mermaid}
-%%| label: zerobasedpent
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}, "flowchart": {"margin-top": "-30px"}}}%%
 flowchart LR
   B~~~M[ ]:::empty----N[ ]:::empty
   W---M
@@ -204,14 +210,16 @@ flowchart LR
   classDef empty width:0px;
 ```
 
+:::
+
 Dec identifies groups of days between [Dop]{.tool data-bs-toggle="tooltip" data-bs-title="day of pentaday"} 0 and 4 and betwixt [Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 0 and 9 as "pentaday interquintile ranges" ([pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"}) and "xún interdecile ranges" ([xir]{.tool data-bs-toggle="tooltip" data-bs-title="xún interdecile ranges"}), respectively. The acronyms [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile range"} and [xir]{.tool data-bs-toggle="tooltip" data-bs-title="xún interdecile range"} are derived from the terms [quintile](https://en.wiktionary.org/wiki/quintile#:~:text=quantiles%20which%20divide%20an%20ordered%20sample%20population%20into%20five%20equally%20numerous%20subsets), [decile](https://en.wikipedia.org/wiki/Decile#:~:text=nine%20values%20that%20divide%20the%20sorted%20data%20into%20ten%20equal%20parts), and [interquartile range](https://en.wikipedia.org/wiki/Interquartile_range#:~:text=a%20measure%20of%20statistical%20dispersion). If we follow Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}, a [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} is to a [workweek](https://en.wikipedia.org/wiki/Workweek_and_weekend#:~:text=the%20part%20of%20the%20seven%2Dday%20week%20devoted%20to%20working) as a [p](#p){.tool data-bs-toggle="tooltip" data-bs-title="pentaday"} is to a week and as a [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"} is to a [fortnight](https://en.wikipedia.org/wiki/Fortnight#:~:text=a%20unit%20of%20time%20equal%20to%2014%20days).
 
 The pair of days between two [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} is called a "[liminal](https://en.wikipedia.org/wiki/Liminality#:~:text=the%20quality%20of%20ambiguity%20or%20disorientation%20that%20occurs%20in%20the%20middle%20stage%20of%20a%20rite%20of%20passage) interconnecting margin" ([lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"}). The last [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} of a common year, [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 73, comprises Days 364 and 0 and is synonymous with [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 0 of the subsequent year. In a leap year, [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 73 consists of Days 364 and 365 and overlaps with [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 74, which is composed of Days 365 and 0 and is equivalent to [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 0 of the succeeding year.
 
-Except for [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 74, every even-numbered [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} is the border that separates two [xir]{.tool data-bs-toggle="tooltip" data-bs-title="xún interdecile ranges"}. With the exception of [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 73, every odd-numbered [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} is flanked by the two [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} within each [xir]{.tool data-bs-toggle="tooltip" data-bs-title="xún interdecile range"}. The flowchart below shows the last 5 [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} of a common year and the first 5 [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} of the following year, which include the last day of [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 72, Pir 72, [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 0, Pir 0, and the first day of [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 1.
+Except for [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 74, every even-numbered [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} is the border that separates two [xir]{.tool data-bs-toggle="tooltip" data-bs-title="xún interdecile ranges"}. With the exception of [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 73, every odd-numbered [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} is flanked by the two [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} within each [xir]{.tool data-bs-toggle="tooltip" data-bs-title="xún interdecile range"}. @fig-zerocomm below shows the last 5 [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} of a common year and the first 5 [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} of the following year, which include the last day of [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 72, Pir 72, [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 0, Pir 0, and the first day of [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 1.
 
+::: {#fig-zerocomm .doxdiagram}
 ```{mermaid}
-%%| label: zerobasedcommon
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
   W~~~~O[ ]:::empty
@@ -236,11 +244,12 @@ flowchart LR
   end
   classDef empty width:0px;
 ```
+:::
 
-The flowcharts above illustrate that the transition from a common year preserves the alternating pattern of two-day [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} and three-day [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"}. After 4 or 8 years, this pattern is interrupted by [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 73 and 74 at the end of a leap year. In the flowchart below, this interruption manifests as an extra [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} per row which puts Day 364 alongside Day 365 and Day 4 beside Day 5. 
+The diagrams above illustrate that the transition from a common year preserves the alternating pattern of two-day [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} and three-day [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"}. After 4 or 8 years, this pattern is interrupted by [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 73 and 74 at the end of a leap year. In @fig-zeroleap below, this interruption manifests as an extra [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} per row which puts Day 364 alongside Day 365 and Day 4 beside Day 5. 
 
+::: {#fig-zeroleap .doxdiagram}
 ```{mermaid}
-%%| label: zerobasedleap
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
   W~~~~O[ ]:::empty
@@ -267,11 +276,12 @@ flowchart LR
   end
   classDef empty width:0px;
 ```
+:::
 
-According to Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}, [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} only contain workdays and [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} are solely made up of rest days. When we follow Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}, a [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminals"} is the Dec analog of a weekend. To make [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} appear like weekends we can start from [Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 1 instead of [Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 0 as in the flowchart below, which displays its [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} as a square grid like [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 73 and 1 in the leap year transition flowchart above.
+According to Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}, [pir]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday interquintile ranges"} only contain workdays and [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} are solely made up of rest days. When we follow Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}, a [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminals"} is the Dec analog of a weekend. To make [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} appear like weekends we can start from [Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 1 instead of [Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 0 as in the @fig-one below, which displays its [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} as a square grid like [Lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} 73 and 1 in the leap year transition flowchart above.
 
+::: {#fig-one .doxdiagram}
 ```{mermaid}
-%%| label: onebasedpent
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
   B~~~M[ ]:::empty----N[ ]:::empty
@@ -299,11 +309,12 @@ flowchart LR
   end
   classDef empty width:0px;
 ```
+:::
 
 The [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} in the flowchart above are rotated by 1 day. To rotate [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"}, we add at least 1 day and keep the remainder after dividing by ten. If we rotate the one-based flowchart by 3 days, we would move the [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} from the right to the left and get the flowchart below. A rotation of 5 more days would switch the rows in the flowchart below but keep the [lim]{.tool data-bs-toggle="tooltip" data-bs-title="liminal interconnecting margin"} on the left side.
 
+::: {#fig-four .doxdiagram}
 ```{mermaid}
-%%| label: fourbasedpent
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
   M[ ]:::empty----N[ ]:::empty
@@ -331,59 +342,51 @@ flowchart LR
   end
   classDef empty width:0px;
 ```
+:::
 
 ## Base32 {#b32}
 
-The Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} pattern of rest and work days can be expressed in [binary](https://en.wikipedia.org/wiki/Binary_number#:~:text=only%20two%20symbols%20for%20the%20natural%20numbers%3A%20typically%200%20%28zero%29%20and%201%20%28one%29) ([base2]{.tool data-bs-toggle="tooltip" data-bs-title="binary"}) as 01110, [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([base10]{.tool data-bs-toggle="tooltip" data-bs-title="decimal"}) as 14, or Dec [duotrigesimal](https://en.wiktionary.org/wiki/duotrigesimal#:~:text=Based%20upon%20the%20number%20thirty%2Dtwo) ([base32]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal"}) as [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}. Each of the 32 pently schedules can be represented by a single letter of the Dec base32 ([b32]{.tool data-bs-toggle="tooltip" data-bs-title="Dec base32"}) alphabet. The [b32]{.tool data-bs-toggle="tooltip" data-bs-title="Dec base32"} letters of are listed in the table below alongside their base10 ([b10]{.tool data-bs-toggle="tooltip" data-bs-title="Dec base10"}) and base2 ([b2]{.tool data-bs-toggle="tooltip" data-bs-title="Dec base2"}) values.
+The Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} pattern of rest and work days can be expressed in [binary](https://en.wikipedia.org/wiki/Binary_number#:~:text=only%20two%20symbols%20for%20the%20natural%20numbers%3A%20typically%200%20%28zero%29%20and%201%20%28one%29) ([base2]{.tool data-bs-toggle="tooltip" data-bs-title="binary"}) as 01110, [decimal](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([base10]{.tool data-bs-toggle="tooltip" data-bs-title="decimal"}) as 14, or Dec [duotrigesimal](https://en.wiktionary.org/wiki/duotrigesimal#:~:text=Based%20upon%20the%20number%20thirty%2Dtwo) ([base32]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal"}) as [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}. Each of the 32 pently schedules can be represented by a single letter of the Dec base32 ([b32]{.tool data-bs-toggle="tooltip" data-bs-title="Dec base32"}) alphabet. The [b32]{.tool data-bs-toggle="tooltip" data-bs-title="Dec base32"} letters are listed in @tbl-b32 below alongside their base10 ([b10]{.tool data-bs-toggle="tooltip" data-bs-title="Dec base10"}) and base2 ([b2]{.tool data-bs-toggle="tooltip" data-bs-title="Dec base2"}) values.
 
-:::: {.columns}
-::: {.column width="40%"}
+::::: {#tbl-b32}
 
-| [b32]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal"} | [b10]{.tool data-bs-toggle="tooltip" data-bs-title="decimal"} | [b2]{.tool data-bs-toggle="tooltip" data-bs-title="binary"} |
-|---|----|-------|
-| A | 0  | 00000 |
-| Á | 1  | 00001 |
-| B | 2  | 00010 |
-| C | 3  | 00011 |
-| D | 4  | 00100 |
-| E | 5  | 00101 |
-| É | 6  | 00110 |
-| F | 7  | 00111 |
-| G | 8  | 01000 |
-| H | 9  | 01001 |
-| I | 10 | 01010 |
-| Í | 11 | 01011 |
-| J | 12 | 01100 |
-| K | 13 | 01101 |
-| L | 14 | 01110 |
-| M | 15 | 01111 |
-
+::: {.d-block .d-xl-none}
+|   |    |       | | | |   |    |       |
+|---|----|-------|-|-|-|---|----|-------|
+| A | 0  | 00000 | | | | N | 16 | 10000 |
+| Á | 1  | 00001 | | | | O | 17 | 10001 |
+| B | 2  | 00010 | | | | Ó | 18 | 10010 |
+| C | 3  | 00011 | | | | P | 19 | 10011 |
+| D | 4  | 00100 | | | | Q | 20 | 10100 |
+| E | 5  | 00101 | | | | R | 21 | 10101 |
+| É | 6  | 00110 | | | | S | 22 | 10110 |
+| F | 7  | 00111 | | | | T | 23 | 10111 |
+| G | 8  | 01000 | | | | U | 24 | 11000 |
+| H | 9  | 01001 | | | | Ú | 25 | 11001 |
+| I | 10 | 01010 | | | | V | 26 | 11010 |
+| Í | 11 | 01011 | | | | W | 27 | 11011 |
+| J | 12 | 01100 | | | | X | 28 | 11100 |
+| K | 13 | 01101 | | | | Y | 29 | 11101 |
+| L | 14 | 01110 | | | | Ý | 30 | 11110 |
+| M | 15 | 01111 | | | | Z | 31 | 11111 |
 :::
-::: {.column width="40%"}
 
-| [b32]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal"} | [b10]{.tool data-bs-toggle="tooltip" data-bs-title="decimal"} | [b2]{.tool data-bs-toggle="tooltip" data-bs-title="binary"} |
-|---|----|-------|
-| N | 16 | 10000 |
-| O | 17 | 10001 |
-| Ó | 18 | 10010 |
-| P | 19 | 10011 |
-| Q | 20 | 10100 |
-| R | 21 | 10101 |
-| S | 22 | 10110 |
-| T | 23 | 10111 |
-| U | 24 | 11000 |
-| Ú | 25 | 11001 |
-| V | 26 | 11010 |
-| W | 27 | 11011 |
-| X | 28 | 11100 |
-| Y | 29 | 11101 |
-| Ý | 30 | 11110 |
-| Z | 31 | 11111 |
-
+::: {.d-none .d-xl-block}
+|   |    |       | | | |   |    |       | | | |   |    |       | | | |   |    |       |
+|---|----|-------|-|-|-|---|----|-------|-|-|-|---|----|-------|-|-|-|---|----|-------|
+| A | 0  | 00000 | | | | G | 8  | 01000 | | | | N | 16 | 10000 | | | | U | 24 | 11000 |
+| Á | 1  | 00001 | | | | H | 9  | 01001 | | | | O | 17 | 10001 | | | | Ú | 25 | 11001 |
+| B | 2  | 00010 | | | | I | 10 | 01010 | | | | Ó | 18 | 10010 | | | | V | 26 | 11010 |
+| C | 3  | 00011 | | | | Í | 11 | 01011 | | | | P | 19 | 10011 | | | | W | 27 | 11011 |
+| D | 4  | 00100 | | | | J | 12 | 01100 | | | | Q | 20 | 10100 | | | | X | 28 | 11100 |
+| E | 5  | 00101 | | | | K | 13 | 01101 | | | | R | 21 | 10101 | | | | Y | 29 | 11101 |
+| É | 6  | 00110 | | | | L | 14 | 01110 | | | | S | 22 | 10110 | | | | Ý | 30 | 11110 |
+| F | 7  | 00111 | | | | M | 15 | 01111 | | | | T | 23 | 10111 | | | | Z | 31 | 11111 |
 :::
-::::
 
-The table above shows that [b32a]{.tool data-bs-toggle="tooltip" data-bs-title="the Dec base32 alphabet"} includes the 26 letters of the [English alphabet](https://en.wikipedia.org/wiki/English_alphabet#:~:text=a%20Latin%2Dscript%20alphabet%20consisting%20of%2026%C2%A0letters) and combines the 6 [vowels](https://en.wikipedia.org/wiki/Vowel#:~:text=a%20speech%20sound%20pronounced%20without%20any%20stricture%20in%20the%20vocal%20tract), a, e, i, o, u, and y, with [acute accents](https://en.wikipedia.org/wiki/Acute_accent#:~:text=a%20diacritic%20used%20in%20many%20modern%20written%20languages%20with%20alphabets%20based%20on%20the%20Latin%2C%20Cyrillic%2C%20and%20Greek%20scripts) ( ́) to create 6 additional letters, á, é, í, ó, ú, and ý, for a total of 32 letters. The 6 additional accented letters are included immediately after their unaccented antecedents as per the order of the English alphabet.
+:::::
+
+The table above shows that the [b32]{.tool data-bs-toggle="tooltip" data-bs-title="the Dec base32"} alphabet includes the 26 letters of the [English alphabet](https://en.wikipedia.org/wiki/English_alphabet#:~:text=a%20Latin%2Dscript%20alphabet%20consisting%20of%2026%C2%A0letters) and combines the 6 [vowels](https://en.wikipedia.org/wiki/Vowel#:~:text=a%20speech%20sound%20pronounced%20without%20any%20stricture%20in%20the%20vocal%20tract), a, e, i, o, u, and y, with [acute accents](https://en.wikipedia.org/wiki/Acute_accent#:~:text=a%20diacritic%20used%20in%20many%20modern%20written%20languages%20with%20alphabets%20based%20on%20the%20Latin%2C%20Cyrillic%2C%20and%20Greek%20scripts) ( ́) to create 6 additional letters, á, é, í, ó, ú, and ý, for a total of 32 letters. The 6 additional accented letters are included immediately after their unaccented antecedents as per the order of the English alphabet.
 
 Dec defines 10 operators that can modify schedules: [left shift](https://en.wikipedia.org/wiki/Bitwise_operation#Arithmetic_shift:~:text=equivalent%20to%20multiplying%20by%202n) ([«]{.tool data-bs-toggle="tooltip" data-bs-title="left shift"}), [right shift](https://en.wikipedia.org/wiki/Bitwise_operation#Arithmetic_shift:~:text=equivalent%20to%20taking%20the%20floor%20of%20division%20by%202n) ([»]{.tool data-bs-toggle="tooltip" data-bs-title="right shift"}), [left rotate](https://en.wikipedia.org/wiki/Bitwise_operation#Rotate:~:text=The%20value%20that%20is%20shifted%20into%20the%20right%20during%20a%20left%2Dshift%20is%20whatever%20value%20was%20shifted%20out%20on%20the%20left%2C) ([↺]{.tool data-bs-toggle="tooltip" data-bs-title="left rotate"}), [right rotate](https://en.wikipedia.org/wiki/Circular_shift#Example:~:text=1000%201011.-,Right%20circular%20shift,-.) ([↻]{.tool data-bs-toggle="tooltip" data-bs-title="right rotate"}), [reverse](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(string_functions)#reverse:~:text=Reverses%20the%20order%20of%20the%20characters%20in%20the%20string) ([⤺]{.tool data-bs-toggle="tooltip" data-bs-title="reverse"}), [step](https://en.wikipedia.org/wiki/Array_slicing#1991:_Python:~:text=Python%20also%20allows%20a%20step%20property%20by%20appending%20an%20extra%20colon%20and%20a%20value) ([:]{.tool data-bs-toggle="tooltip" data-bs-title="step"}), [not](https://en.wikipedia.org/wiki/Bitwise_operation#NOT:~:text=a%20unary%20operation%20that%20performs%20logical%20negation%20on%20each%20bit) ([~]{.tool data-bs-toggle="tooltip" data-bs-title="not"}), [and](https://en.wikipedia.org/wiki/Bitwise_operation#AND:~:text=a%20binary%20operation%20that%20takes%20two%20equal%2Dlength%20binary%20representations%20and%20performs%20the%20logical%20AND%20operation%20on%20each%20pair%20of%20the%20corresponding%20bits) ([&]{.tool data-bs-toggle="tooltip" data-bs-title="and"}), [or](https://en.wikipedia.org/wiki/Bitwise_operation#OR:~:text=a%20binary%20operation%20that%20takes%20two%20bit%20patterns%20of%20equal%20length%20and%20performs%20the%20logical%20inclusive%20OR%20operation%20on%20each%20pair%20of%20corresponding%20bits) ([|]{.tool data-bs-toggle="tooltip" data-bs-title="or"}), and [xor](https://en.wikipedia.org/wiki/Bitwise_operation#XOR:~:text=a%20binary%20operation%20that%20takes%20two%20bit%20patterns%20of%20equal%20length%20and%20performs%20the%20logical%20exclusive%20OR%20operation%20on%20each%20pair%20of%20corresponding%20bits) ([^]{.tool data-bs-toggle="tooltip" data-bs-title="xor"}). The shift operators, [«]{.tool data-bs-toggle="tooltip" data-bs-title="left shift"} and [»]{.tool data-bs-toggle="tooltip" data-bs-title="right shift"}, insert rest days at the "beginning of schedule" ([bos]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of schedule"}) or "end of schedule" ([eos]{.tool data-bs-toggle="tooltip" data-bs-title="end of schedule"}). Work days that are moved beyond the [bos]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of schedule"} by [«]{.tool data-bs-toggle="tooltip" data-bs-title="left shift"} or past the [eos]{.tool data-bs-toggle="tooltip" data-bs-title="end of schedule"} by [»]{.tool data-bs-toggle="tooltip" data-bs-title="right shift"} are discarded. 
 
@@ -391,37 +394,39 @@ To move work days without discarding any of them, we should use the rotate opera
 
 The operators described above, namely [«]{.tool data-bs-toggle="tooltip" data-bs-title="left shift"}, [»]{.tool data-bs-toggle="tooltip" data-bs-title="right shift"}, [↺]{.tool data-bs-toggle="tooltip" data-bs-title="left rotate"}, [↻]{.tool data-bs-toggle="tooltip" data-bs-title="right rotate"}, [⤺]{.tool data-bs-toggle="tooltip" data-bs-title="reverse"}, [:]{.tool data-bs-toggle="tooltip" data-bs-title="step"}, all take an [argument](https://en.wikipedia.org/wiki/Argument_of_a_function#:~:text=an%20argument%20of%20a%20function%20is%20a%20value%20provided%20to%20obtain%20the%20function%27s%20result), which is the number of days to insert for [«]{.tool data-bs-toggle="tooltip" data-bs-title="left shift"} or [»]{.tool data-bs-toggle="tooltip" data-bs-title="right shift"}, the number of days to cycle for [↺]{.tool data-bs-toggle="tooltip" data-bs-title="left rotate"} or [↻]{.tool data-bs-toggle="tooltip" data-bs-title="right rotate"}, the split count for [⤺]{.tool data-bs-toggle="tooltip" data-bs-title="reverse"}, and the step size for [:]{.tool data-bs-toggle="tooltip" data-bs-title="step"}. If the split count is 2, [⤺]{.tool data-bs-toggle="tooltip" data-bs-title="reverse"} operates on each half of the schedule individually. If the step size is 2, [:]{.tool data-bs-toggle="tooltip" data-bs-title="step"} will alternate between keeping and discarding one work day.
 
+:::{.overflowequation}
+$$\ell=5\ast\left\lceil\dfrac{\lceil\log_2(x+1)\rceil+[x=0]}{5}\right\rceil$$ {#eq-ell}
+
+$$x \mathbin{\ll} s = (x \ast 2^s)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 2^\ell$$ {#eq-lshift}
+
+$$x \mathbin{\gg} s = \left\lfloor \dfrac{x}{2^s} \right\rfloor$$ {#eq-rshift}
+
+$$x \mathbin{\circlearrowleft} s = (x \ast 2^s)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}(2^\ell-1)$$ {#eq-rol}
+
+$$x \mathbin{\circlearrowright} s = (x \ast 2^{\ell-s})\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}(2^\ell-1)$$ {#eq-ror}
+
+$$(x\text{:}s)_i=x_i\ast[i \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} s = 0]$$ {#eq-step}
+
+$$(x \mathbin{\text{⤺}} s)_i = x_{2a_j+m_j-1-i}$$ {#eq-rev}
+
+$$m_j = \left\lfloor\frac{\ell}{s}\right\rfloor + [j \ge s-\ell\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} s]$$ {#eq-mj}
+
+$$a_j=\sum_{k<j} m_k$$ {#eq-aj}
+:::
+
 The remaining schedule modifiers, [~]{.tool data-bs-toggle="tooltip" data-bs-title="not"}, [&]{.tool data-bs-toggle="tooltip" data-bs-title="and"}, [|]{.tool data-bs-toggle="tooltip" data-bs-title="or"}, and [^]{.tool data-bs-toggle="tooltip" data-bs-title="xor"}, compare two schedules except for [~]{.tool data-bs-toggle="tooltip" data-bs-title="not"} which turns work days into rest days and vice versa. We can put a work day wherever there is a work day in both schedules with [&]{.tool data-bs-toggle="tooltip" data-bs-title="and"}, wherever there is a work day in at least one of the schedules with [|]{.tool data-bs-toggle="tooltip" data-bs-title="or"}, and wherever there is a work day in only one of the schedules with [^]{.tool data-bs-toggle="tooltip" data-bs-title="xor"}.
 
-In the math equations below, *x*, *ℓ*, *y*, *s*, *i*, *a*, *j*, *k*, *z*, and are all positive base10 integers, *x* and *y* are [operands](https://en.wikipedia.org/wiki/Operand#:~:text=the%20object%20of%20a%20mathematical%20operation), *ℓ* is the [bit length](https://en.wikipedia.org/wiki/Bit-length#:~:text=the%20number%20of%20binary%20digits%2C%20called%20bits%2C%20necessary%20to%20represent%20an%20unsigned%20integer%5B1%5D%20as%20a%20binary%20number) of *x*, *s* is a shift size, step size, or split count, *i* is the index of a [bit](https://en.wikipedia.org/wiki/Bit#:~:text=the%20most%20basic%20unit%20of%20information%20in%20computing%20and%20digital%20communication) in the [binary form](https://en.wikipedia.org/wiki/Binary_number) of *x* or *y*, *j* is the index of a split, *a* is a split start index, *m* is a split size, *k* is the number of split sizes that we need to sum to get a split start index.
-
 :::{.overflowequation}
-$$\ell=5\ast\left\lceil\dfrac{\lceil\log_2(x+1)\rceil+[x=0]}{5}\right\rceil$$
+$$(\mathbin{\sim}x)_i = 1-x_i$$ {#eq-not}
 
-$$x \mathbin{\ll} s = (x \ast 2^s)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 2^\ell$$
+$$(x \mathbin{\&} y)_i = x_i \ast y_i$$ {#eq-and}
 
-$$x \mathbin{\gg} s = \left\lfloor \dfrac{x}{2^s} \right\rfloor$$
+$$(x \mathbin{|} y)_i = x_i + y_i - x_i \ast y_i$$ {#eq-or}
 
-$$x \mathbin{\circlearrowleft} s = (x \ast 2^s)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}(2^\ell-1)$$
-
-$$x \mathbin{\circlearrowright} s = (x \ast 2^{\ell-s})\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod}(2^\ell-1)$$
-
-$$(\mathbin{\sim}x)_i = 1-x_i$$
-
-$$(x \mathbin{\&} y)_i = x_i \ast y_i$$
-
-$$(x \mathbin{|} y)_i = x_i + y_i - x_i \ast y_i$$
-
-$$(x \mathbin{\hat{}} y)_i = (x_i + y_i)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 2$$
-
-$$(x\text{:}s)_i=x_i\ast[i \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} s = 0]$$
-
-$$(x \mathbin{\text{⤺}} s)_i = x_{2a_j+m_j-1-i}$$
-
-$$m_j = \left\lfloor\frac{\ell}{s}\right\rfloor + [j \ge s-\ell\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} s]$$
-
-$$a_j=\sum_{k<j} m_k$$
+$$(x \mathbin{\hat{}} y)_i = (x_i + y_i)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 2$$ {#eq-xor}
 :::
+
+In the math equations above, *x*, *ℓ*, *y*, *s*, *i*, *a*, *j*, *k*, *z*, and are all positive base10 integers, *x* and *y* are [operands](https://en.wikipedia.org/wiki/Operand#:~:text=the%20object%20of%20a%20mathematical%20operation), *ℓ* is the [bit length](https://en.wikipedia.org/wiki/Bit-length#:~:text=the%20number%20of%20binary%20digits%2C%20called%20bits%2C%20necessary%20to%20represent%20an%20unsigned%20integer%5B1%5D%20as%20a%20binary%20number) of *x*, *s* is a shift size, step size, or split count, *i* is the index of a [bit](https://en.wikipedia.org/wiki/Bit#:~:text=the%20most%20basic%20unit%20of%20information%20in%20computing%20and%20digital%20communication) in the [binary form](https://en.wikipedia.org/wiki/Binary_number) of *x* or *y*, *j* is the index of a split, *a* is a split start index, *m* is a split size, *k* is the number of split sizes that we need to sum to get a split start index.
 
 The schedule selected by the inputs below is represented by [\${schedBinary}]{.mono} in binary, [\${schedBase10}]{.mono} in decimal, and [\${schedBase32}]{.mono} in base32.
 
@@ -460,9 +465,9 @@ The month-based Schedules [3]{.color3} and [34]{.color34} have 223 and 258 work 
 
 # Day of month (dom) {#sec-dom}
 
-Dec dates can be expanded to display Dec month and [POSIX [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D) numbers. The current Dec [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} date is \${decYear}+\${monthNumber}+\${dotm}. Dec month numbers are the last [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} of the previous month because POSIX [dom]{.tool data-bs-toggle="tooltip" data-bs-title="days of month"} are one-based. For zero-based [dom]{.tool data-bs-toggle="tooltip" data-bs-title="days of month"}, Dec represents each month with its first [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}: \${decYear}+\${monthNumber0}+\${dotm0}. This way, Dec can support both zero- and one-based [dom]{.tool data-bs-toggle="tooltip" data-bs-title="days of month"}.
+Dec dates can be expanded to display Dec month and [POSIX [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D) numbers. The current Dec [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} date is \${decYear}+\${monthNumber1}+\${dotm}. Dec month numbers are the last [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} of the previous month because POSIX [dom]{.tool data-bs-toggle="tooltip" data-bs-title="days of month"} are one-based. For zero-based [dom]{.tool data-bs-toggle="tooltip" data-bs-title="days of month"}, Dec represents each month with its first [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}: \${decYear}+\${monthNumber0}+\${dotm0}. This way, Dec can support both zero- and one-based [dom]{.tool data-bs-toggle="tooltip" data-bs-title="days of month"}.
 
-Dec [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} dates replace the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} d from Dec dates with d-m+m. We evaluate the subtraction to get d[-]{.mono}m, the Dec month number, but not the addition, so we can see m, the [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}. If we combine the [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} and [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day of week"} patterns above, we can create hybrid [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}+[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} Dec dates: \${decYear}+\${hybridMonthWeek}+\${dotm}+\${dotw}, where \${hybridMonthWeek} is d[-]{.mono}m[-]{.mono}w, the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} of the last [Dow 0]{.tool data-bs-toggle="tooltip" data-bs-title="Sunday"} before the beginning of the month.
+Dec [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} dates replace the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} d from Dec dates with d-m+m. We evaluate the subtraction to get d[-]{.mono}m, the Dec month number, but not the addition, so we can see m, the [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}. If we combine the [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} and [dow]{.under .tool data-bs-toggle="tooltip" data-bs-title="day of week"} patterns above, we can create hybrid [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}+[dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} Dec dates: \${decYear}+\${hybridMonthWeekPad}+\${dotm}+\${dotw}, where \${hybridMonthWeek} is d[-]{.mono}m[-]{.mono}w, the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} of the last [Dow 0]{.tool data-bs-toggle="tooltip" data-bs-title="Sunday"} before the beginning of the month.
 
 We can obtain Dec month numbers using only a pair of hands🤲by counting index☝️and ring💍fingers as 30 days and other fingers as 31 days. For zero-based [dom]{.tool data-bs-toggle="tooltip" data-bs-title="days of month"}, we start counting from 0. For one-based [dom]{.tool data-bs-toggle="tooltip" data-bs-title="days of month"}, we start counting from -1, as shown in the image below. To spread 12 months across 10 fingers, the first and last fingers each represent 2 months.
 
@@ -476,24 +481,22 @@ The finger🖐[mnemonic](https://en.wikipedia.org/wiki/Mnemonic#:~:text=any%20le
 
 To convert [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} to or from [POSIX month](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=Month%20as%20a%20decimal%20number%20%5B01%2C12%5D) and [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} numbers, we can use the month of year ([moy]{.tool data-bs-toggle="tooltip" data-bs-title="month of year"}) equations from the [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days){.mono .under} and [`days_from_civil`](https://howardhinnant.github.io/date_algorithms.html#days_from_civil){.mono .under} algorithms. Unlike POSIX month numbers, [moy]{.tool data-bs-toggle="tooltip" data-bs-title="months of year"} are zero-based and start from [Moy 0]{.tool data-bs-toggle="tooltip" data-bs-title="March"} instead of [Moy 10]{.tool data-bs-toggle="tooltip" data-bs-title="January"}. As shown in the first [moy]{.tool data-bs-toggle="tooltip" data-bs-title="month of year"} equation below, we can obtain a [moy]{.tool data-bs-toggle="tooltip" data-bs-title="month of year"} from a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} or a POSIX month number.
 
-:::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
-$$\text{moy} = (5 \ast \text{doy} + 2) \div 153 = \begin{cases}\text{month}-3&{\text{if }\text{month}\gt 2;}\\\text{month}+9&{\text{otherwise.}}\end{cases}$$
+:::{.overflowequation}
+$$\text{moy} = (5 \ast \text{doy} + 2) \div 153 = \begin{cases}\text{month}-3&{\text{if }\text{month}\gt 2;}\\\text{month}+9&{\text{otherwise.}}\end{cases}$$ {#eq-moy}
 :::
 
-$$\text{month} = \begin{cases}\text{moy}+3&{\text{if }\text{moy}\lt 10;}\\\text{moy}-9&{\text{otherwise.}}\end{cases}$$
+$$\text{month} = \begin{cases}\text{moy}+3&{\text{if }\text{moy}\lt 10;}\\\text{moy}-9&{\text{otherwise.}}\end{cases}$$ {#eq-mon}
 
-$$\text{dom} = \text{doy} - (153 \ast \text{moy} + 2) \div 5 + 1$$
+$$\text{dom} = \text{doy} - (153 \ast \text{moy} + 2) \div 5 + 1$$ {#eq-dom}
 
-$$\text{doy} = (153 \ast \text{moy}+ 2) \div 5 + \text{dom} - 1$$
+$$\text{doy} = (153 \ast \text{moy}+ 2) \div 5 + \text{dom} - 1$$ {#eq-doy}
 
 A [moy]{.tool data-bs-toggle="tooltip" data-bs-title="month of year"} and its equivalent POSIX month number differ by 9 in Moy [10]{.tool data-bs-toggle="tooltip" data-bs-title="January"} or [11]{.tool data-bs-toggle="tooltip" data-bs-title="February"} and -3 in any other [moy]{.tool data-bs-toggle="tooltip" data-bs-title="month of year"} because the Dec epoch, [0000]{.color0}+[000]{.color0}, is 2 months later than the Gregorian calendar epoch: -0001+306. To convert years, we add 1 to Dec years and subtract 1 from Gregorian calendar️ years if the [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} is greater than 305, the [moy]{.tool data-bs-toggle="tooltip" data-bs-title="month of year"} is greater than 9, or the month is less than 3:
 
-:::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
-$$\text{Dec year} = \begin{cases}\text{Gregorian calendar year}-1&{\text{if }\text{doy}\gt 305\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\gt 9\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3;}\\\text{Gregorian calendar year}&{\text{otherwise.}}\end{cases}$$
-:::
+:::{.overflowequation}
+$$\text{Dec year} = \begin{cases}\text{Gregorian calendar year}-1&{\text{if }\text{doy}\gt 305\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\gt 9\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3;}\\\text{Gregorian calendar year}&{\text{otherwise.}}\end{cases}$$ {#eq-decyear}
 
-:::{.overflowequation style="overflow-x:auto;overflow-y:hidden;"}
-$$\text{Gregorian calendar year} = \begin{cases}\text{Dec year}+1&{\text{if }\text{doy}\gt 305\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\gt 9\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3;}\\\text{Dec year}&{\text{otherwise.}}\end{cases}$$
+$$\text{Gregorian calendar year} = \begin{cases}\text{Dec year}+1&{\text{if }\text{doy}\gt 305\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\gt 9\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3;}\\\text{Dec year}&{\text{otherwise.}}\end{cases}$$ {#eq-gregyear}
 :::
 
 # Summary {.unnumbered #tldr}
@@ -502,8 +505,8 @@ This article describes Dec and how it can interoperate with the Gregorian calend
 
 The flowchart below visualizes the conversion of the UNIX epoch Dec date [1969]{.color069}+[306]{.colord306} into a Gregorian calendar️year, month, [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}. To obtain its associated [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}, we first need to convert a Dec date into a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}. Outside of its interoperability with the Gregorian calendar️, Dec converts dates into [doe]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"} to find the number of days in between two dates.
 
+::: {#fig-conv}
 ```{mermaid}
-%%| label: conversionchart
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
 flowchart LR
    L~~~Y
@@ -546,6 +549,7 @@ flowchart LR
    click M "#moy"
    click N "#dom"
 ```
+:::
 
 For simplicity, the flowchart above does not show conversion byproducts, such as the [coe]{.under .tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}, [yoc]{.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}, and [doc]{.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"} generated during Dec [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} to date conversion or the [moy]{.tool data-bs-toggle="tooltip" data-bs-title="months of year"} that we need in order to split a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} into a month and a [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} or combine a month and a [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} into a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}. The arrows in the flowchart represent equations adapted from [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html).
 
@@ -555,7 +559,7 @@ Instead of converting Dec dates, we can expand them to view the information we n
 
 After reading this article, you should be able to understand the examples in my [filter](/quarto/filter), [include](/quarto/include), and [script](/quarto/script) articles, but you may want to start with my [Quarto article](/quarto). To see the full extent of the benefits that Dec provides, I recommend that you continue through the [Dec section](/dec) of my site to the [time](/dec/time, [snap](/dec/snap, and [span](/dec/span)🌈articles. Dec has a lot more to offer than just dates!
 
-:::{#datenav}
+:::{.datenav #fig-btmdatenav}
 {{< include /asset/_decquanav.qmd >}}
 :::
 

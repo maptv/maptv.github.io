@@ -3275,70 +3275,23 @@ img#zModu {
 #iobplayer canvas {
   height: 100%;
 }
-@font-face {
-  font-family: "Iosevka";
-  src: url(../asset/IosevkaNerdFont-Regular.ttf);
-}
-.iosevka {
-  font-family: "Iosevka", sans-serif !important;
-}
-#citelist ol li {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  padding: 0;
-  margin: 0;
-}
-#gloslist ul li {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-#gloslist div {
-  padding: 0;
-  margin: 0;
-}
-.fraction {
-  display: inline-flex; /* Allows the container to sit inline with text */
-  flex-direction: column; /* Stacks the children vertically */
-  align-items: center; /* Centers the numbers */
-  vertical-align: middle; /* Aligns the fraction with the surrounding text */
-  font-size: 60%; /* Makes the numbers smaller for a better look */
-}
-.numerator {
-  position: relative;
-  top: .4em;
-}
-.denominator {
-  position: relative;
-  bottom: .6em;
-}
-.unselectable {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-code span.er {
-  text-decoration: none !important;
-}
-mjx-labels mjx-itable mjx-mtr mjx-mtd[id^="mjx-eqn:"] {
-  vertical-align: middle;
-}
-mjx-labels mjx-itable mjx-mtr mjx-mtd[id^="mjx-eqn:"] mjx-mtext {
-    position: relative;
-    top: 5px;
-}
 .unittable table {
   text-align: left;
 }
-figcaption {
-  display: none;
-}
 #tbl-map {
   margin-bottom: 0px;
+}
+#fig-colorwheelcompass {
+  margin-bottom: 4px;
+}
+figcaption[id^=tbl-map-caption], figcaption[id^=fig-distmap-caption], figcaption[id^=fig-colorwheelcompass-caption], figcaption[id^=tbl-color-caption] {
+  display: none;
+}
+#colorbar {
+  height: 35px;
+}
+section#cct {
+  margin-top: -6px;
 }
 </style>
 ```
