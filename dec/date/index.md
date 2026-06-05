@@ -1,6 +1,6 @@
 # Decalendar
 Martin Laptev
-2026+100
+2026+09 7
 
 - [Day of era (doe)](#doe)
   - [Year of era (yoe)](#yoe)

@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-09dd4a8c8147935218e5fc1df39f9384.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-432c8b971d223bad972f35a55bdd1997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-cc23ec31f79f64a2a32d2eb0a2d8541d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-afe5b0e88516cb5f84305935c5e21069.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-432c8b971d223bad972f35a55bdd1997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-cc23ec31f79f64a2a32d2eb0a2d8541d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": true,
@@ -811,7 +811,7 @@ flowchart LR
 
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-distmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-distmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1
 </figcaption>
 </figure>
@@ -1014,7 +1014,7 @@ Figure&nbsp;1
 
 </div>
 </div></div></div>
-<div class="cell colorcomponent">
+<div class="cell colorcomponent page-columns page-full">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb15" data-startfrom="2" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/@pjedwards/compass-rose-as-legend-with-colors</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">svg</span><span class="vs">`&lt;svg width="</span><span class="sc">${</span>size<span class="sc">}</span><span class="vs">" height="</span><span class="sc">${</span>size<span class="sc">}</span><span class="vs">" viewBox="</span><span class="sc">${</span><span class="op">-</span>size<span class="op">/</span><span class="dv">2</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span><span class="op">-</span>size<span class="op">/</span><span class="dv">2</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span>size<span class="sc">}</span><span class="vs"> </span><span class="sc">${</span>size<span class="sc">}</span><span class="vs">"&gt;</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;g transform='rotate(</span><span class="sc">${</span><span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(<span class="op">-</span>colorD <span class="op">*</span> <span class="op">.</span><span class="dv">36</span>)<span class="sc">}</span><span class="vs">)'&gt;</span></span>
@@ -1030,14 +1030,14 @@ Figure&nbsp;1
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="vs">  </span><span class="sc">${</span><span class="fu">repeat</span>(<span class="fu">pie</span>(radius<span class="op">-</span>margin<span class="op">/</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> (radius<span class="op">-</span>margin<span class="op">/</span><span class="dv">2</span>) <span class="op">/</span> deccolors<span class="op">.</span><span class="at">length</span> <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> deccolors)<span class="op">,</span> deccolors<span class="op">.</span><span class="at">length</span><span class="op">,</span> <span class="dv">360</span><span class="op">/</span>deccolors<span class="op">.</span><span class="at">length</span>)<span class="sc">}</span></span>
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/svg&gt;</span></span>
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="fig-colorwheelcompass" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-colorwheelcompass" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-colorwheelcompass-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div id="ojs-cell-15" data-nodetype="expression">
 
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-colorwheelcompass-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig quarto-uncaptioned margin-caption" id="fig-colorwheelcompass-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2
 </figcaption>
 </figure>

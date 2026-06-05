@@ -83,9 +83,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-09dd4a8c8147935218e5fc1df39f9384.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-432c8b971d223bad972f35a55bdd1997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-cc23ec31f79f64a2a32d2eb0a2d8541d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-afe5b0e88516cb5f84305935c5e21069.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-432c8b971d223bad972f35a55bdd1997.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-cc23ec31f79f64a2a32d2eb0a2d8541d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": true,
@@ -607,7 +607,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </pre>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-navchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig" id="fig-navchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Tools series navigation chart
 </figcaption>
 </figure>
@@ -736,13 +736,13 @@ Table&nbsp;1: Quarto website publishing methods
 </figure>
 </div>
 </section>
-<section id="sec-over-git" class="level6">
+<section id="sec-over-git" class="level6 page-columns page-full">
 <h6 class="anchored" data-anchor-id="sec-over-git">Git workflow</h6>
 <p>The first publishing method I tried for my personal site was <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a>, which requires the use of Git to <a href="https://github.com/git-guides/git-push#what-does-git-push-do">push</a> all website content to a Git provider like GitHub or GitLab. After I set up <a href="https://quarto.org/docs/publishing/github-pages.html#render-to-docs">GitHub Pages</a> and <a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab Pages</a>, I could update my website on both of these web hosts just by going through the standard Git workflow shown in <a href="#fig-git" class="quarto-xref">Figure&nbsp;2</a>.</p>
-<div class="cell" data-fig-width="9" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-git" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div class="cell page-columns page-full" data-fig-width="9" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-git" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-git-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-git">flowchart LR
@@ -750,7 +750,7 @@ Table&nbsp;1: Quarto website publishing methods
 </pre>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-git-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-git-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Git workflow
 </figcaption>
 </figure>
@@ -794,7 +794,7 @@ Figure&nbsp;2: Git workflow
 <p>In <a href="#sec-set" class="quarto-xref">Section&nbsp;4</a>, I will walk through the setup of both <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> and <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> to provide the option of rendering locally by running <code>quarto</code> <code>publish</code> or rendering remotely with GitHub Actions by pushing to the <code>main</code> branch. Along the way, I will share many practical tips and general advice that you can apply to any project.</p>
 </section>
 </section>
-<section id="sec-set" class="level5">
+<section id="sec-set" class="level5 page-columns page-full">
 <h5 class="anchored" data-anchor-id="sec-set">Publishing setup</h5>
 <section id="sec-set-repo" class="level6">
 <h6 class="anchored" data-anchor-id="sec-set-repo">Repo setup</h6>
@@ -853,7 +853,7 @@ Figure&nbsp;2: Git workflow
 <p>By default, GitLab Pages includes a random hash in site <a href="https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web">URLs</a>. To shorten the URL of my GitLab Pages site to &lt;maptv.gitlab.io&gt;, I had to uncheck <strong>Use unique domain</strong> under <code>Deploy &gt; Pages</code> in the GitLab sidebar.</p>
 <p>At this point, we have completed <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> setup and you should be able to run <code>quarto</code> <code>publish</code> <code>gh-pages</code> from your <code>main</code> branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with <code>quarto</code> <code>publish</code> at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions, because <code>quarto</code> <code>publish</code> creates a <code>_publish.yml</code> file in the root of your project that is required for publishing via GitHub Actions.</p>
 </section>
-<section id="sec-set-act" class="level6">
+<section id="sec-set-act" class="level6 page-columns page-full">
 <h6 class="anchored" data-anchor-id="sec-set-act">GitHub Actions</h6>
 <p>In addition to the steps described above, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> setup requires that we create a <code>.github/workflows</code> directory and add a <a href="https://en.wikipedia.org/wiki/YAML#:~:text=YAML%20(/%CB%88j%C3%A6m%C9%99l/)%20(see%20%C2%A7%C2%A0History%20and%20name)%20is%20a%20human%2Dreadable%20data%20serialization%20language.">YAML</a> file to that directory. <a href="#exm-curl" class="quarto-xref">Example&nbsp;7</a> contains the <code>gh-pages.yml</code> file I use for my own site and the shell code that can used to obtain this file.</p>
 <div id="exm-curl" class="theorem example">
@@ -900,10 +900,10 @@ Figure&nbsp;2: Git workflow
 </div>
 <p>My <code>quarto-pub.yml</code> file is based on <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>, but it runs upon completion of the <code>pages-build-deployment</code> workflow instead of a push to <code>main</code>. I changed the workflow trigger so that it runs after my GitHub Pages site is built, regardless of whether I triggered the build by running <code>quarto</code> <code>publish</code> <code>gh-pages</code> or pushing to <code>main</code>.</p>
 <p><a href="#fig-meth" class="quarto-xref">Figure&nbsp;3</a> summarizes all of the steps that occur during my Quarto publishing workflow. This workflow allows me to publish my site on four web hosts every time I run <code>quarto</code> <code>publish</code> <code>gh-pages</code> (<a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a>) or <code>git</code> <code>push</code> (<a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a>)!</p>
-<div class="cell" data-fig-width="9" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-meth" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div class="cell page-columns page-full" data-fig-width="9" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-meth" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-meth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-meth">flowchart LR
@@ -916,7 +916,7 @@ Figure&nbsp;2: Git workflow
 </pre>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-meth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-meth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Quarto publishing workflow
 </figcaption>
 </figure>
@@ -927,7 +927,7 @@ Figure&nbsp;3: Quarto publishing workflow
 <p>I tried unsuccessfully to solve this issue by setting the <a href="https://quarto.org/docs/output-formats/html-basics.html#external-links"><code>link-external-filter</code></a> property to a <a href="https://en.wikipedia.org/wiki/Regular_expression#:~:text=A%20regular%20expression%20(shortened%20as%20regex%20or%20regexp)%2C%5B1%5D%20sometimes%20referred%20to%20as%20rational%20expression%2C%5B2%5D%5B3%5D%20is%20a%20sequence%20of%20characters%20that%20specifies%20a%20match%20pattern%20in%20text.">regular expression</a>. If you notice a problem with the <code>link-external-icon</code> feature on other web hosts, I suggest switching to GitHub Pages.</p>
 </section>
 </section>
-<section id="sec-cust" class="level5">
+<section id="sec-cust" class="level5 page-columns page-full">
 <h5 class="anchored" data-anchor-id="sec-cust">Customizing Quarto sites</h5>
 <section id="sec-nav" class="level6">
 <h6 class="anchored" data-anchor-id="sec-nav">Site navigation</h6>
@@ -978,15 +978,15 @@ Figure&nbsp;3: Quarto publishing workflow
 <p>Normally, <a href="https://quarto.org/docs/reference/dates#using-a-date-format">formatting dates in Quarto</a> is as easy as setting the <code>date-format</code> YAML property. In my case it was more difficult, because I wanted dates based on <code>Dec</code>, the calendar and time system I created, instead of the ubiquitous <a href="https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=The%20Gregorian%20calendar%20is%20the%20calendar%20used%20in%20most%20parts%20of%20the%20world.">Gregorian calendar</a>.</p>
 <p>To facilitate the calculations in <code>date.py</code>, I set <code>date-format</code> to <code>x</code> in my <code>_metadata.yml</code> file so all of the dates would be in millisecond <a href="https://en.wikipedia.org/wiki/Unix_time#:~:text=Unix%20time%5Ba%5D%20is%20a%20date%20and%20time%20representation%20widely%20used%20in%20computing.">UNIX time</a> and I would not have to deal with Gregorian calendar date formats or time zones. After all of the dates are generated, my <code>date.py</code> script traverses the HTML in the output directory using <a href="https://www.crummy.com/software/BeautifulSoup/#:~:text=Beautiful%20Soup%20is%20a%20Python%20library%20designed%20for%20quick%20turnaround%20projects%20like%20screen%2Dscraping.">Beautiful Soup</a> and converts millisecond UNIX time dates into <code>Dec</code> dates (<code>year+day</code>).</p>
 </section>
-<section id="sec-filt" class="level6">
+<section id="sec-filt" class="level6 page-columns page-full">
 <h6 class="anchored" data-anchor-id="sec-filt">Pandoc filter</h6>
 <p>In addition to customizing dates on the <a href="https://maptv.github.io/blog">listing page</a> of my blog, I wanted to customize the date format in every blog post. To complete this task, I used a <a href="https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=Lua%20(/%CB%88lu%CB%90%C9%99/%20LOO%2D%C9%99%3B%20from%20Portuguese%3A%20lua%20%5B%CB%88lu(w)%C9%90%5D%20meaning%20moon)%20is%20a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20primarily%20for%20embedded%20use%20in%20applications.">Lua</a> script as a <a href="https://quarto.org/docs/extensions/filters.html">Pandoc filter</a>.</p>
 <p><a href="https://pandoc.org/">Pandoc</a> is a program that converts documents into practically any format. The “pan” in Pandoc comes from the Ancient Greek word for <a href="https://en.wiktionary.org/wiki/pan-#:~:text=pan%2D-,all,-Usage%20notes%5B"><em>all</em></a>. Pandoc strives to convert <em>all</em> document formats, just like <a href="https://en.wikipedia.org/wiki/Pangaea#:~:text=Pangaea%20or%20Pangea%20(/p%C3%A6n%CB%88d%CA%92i%CB%90.%C9%99/)%5B1%5D%20was%20a%20supercontinent%20that%20existed%20during%20the%20late%20Paleozoic%20and%20early%20Mesozoic%20eras.">Pangea</a> contained <em>all</em> the land and a <a href="https://en.wiktionary.org/wiki/panacea#English:~:text=A%20solution%20to%20all%20problems.">panacea</a> solves <em>all</em> problems.</p>
 <p>Quarto uses Pandoc to convert markdown files into target format(s) like <code>html</code> or <code>pdf</code>. If the source files contain executable code, Quarto executes the code via one of two computational engines: <a href="https://jupyter.org/#:~:text=Free%20software%2C%20open%20standards%2C%20and%20web%20services%20for%20interactive%20computing%20across%20all%20programming%20languages">Jupyter</a> or <a href="https://yihui.org/knitr/#:~:text=the%20knitr%20package%20was%20designed%20to%20be%20a%20transparent%20engine%20for%20dynamic%20report%20generation%20with%20R">Knitr</a>. <a href="#fig-render" class="quarto-xref">Figure&nbsp;4</a> shows the Quarto workflow.</p>
-<div class="cell" data-fig-width="9" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-render" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div class="cell page-columns page-full" data-fig-width="9" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-render" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-render">flowchart LR
@@ -994,7 +994,7 @@ Figure&nbsp;3: Quarto publishing workflow
 </pre>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-render-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Quarto rendering workflow
 </figcaption>
 </figure>
