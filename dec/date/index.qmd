@@ -6,7 +6,7 @@ description: >
   without the need for months or weeks.
 image: /asset/cal16.svg
 url: https://maptv.github.io/dec/date
-decdate: 2026+096
+decdate: 2026+09    7
 path: /dec/date
 slug: date
 aliases:

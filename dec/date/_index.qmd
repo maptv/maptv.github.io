@@ -1025,29 +1025,6 @@ input[type="radio"] {
 h4.anchored {
   margin: 8px 0px 8px 0px;
 }
-div.cell-output-display:has(.doxdiagram) {
-  margin-top: -45px;
-  margin-top: -45px;
-}
-div.cell-output-display:has(svg#datenav-mermaid.flowchart.mermaid-js) {
-  margin-top: -5px;
-  margin-bottom: -5px;
-}
-div.cell-output-display:has(svg#fig-zero-mermaid.flowchart.mermaid-js) {
-  margin-top: -15px;
-}
-div.cell-output-display:has(svg#fig-one-mermaid.flowchart.mermaid-js) {
-  margin-top: -5px;
-  margin-bottom: -5px;
-}
-div.cell-output-display:has(svg#fig-conv-mermaid.flowchart.mermaid-js) {
-  margin-top: -15px;
-  margin-bottom: -15px;
-}
-div.cell-output-display:has(svg#decnav-mermaid.flowchart.mermaid-js) {
-  margin-top: -15px;
-  margin-bottom: 5px;
-}
 span.nodeLabel > p {
   text-align: center;
 }
@@ -1176,18 +1153,22 @@ div#bitwise div > form > button {
 #fig-topdatenav figcaption {
   display: none;
 }
-#fig-zero figure {
-  margin-top: -18px;
+#fig-zero {
+  margin-top: -6px;
 }
-#fig-zero div:has(> svg) {
+#fig-zero div.cell-output-display {
   margin-top: -21px;
+  margin-bottom: -18px;
 }
 #fig-zerocomm {
   margin-top: -6px;
 }
-#fig-zerocomm figure {
+#fig-zerocomm div.cell-output-display {
   margin-top: -24px;
   margin-bottom: -21px;
+}
+div.tippy-box div.tippy-content figure figcaption {
+  display: none;
 }
 </style>
 ```
