@@ -1153,22 +1153,34 @@ div#bitwise div > form > button {
 #fig-topdatenav figcaption {
   display: none;
 }
-#fig-zero {
-  margin-top: -6px;
-}
-#fig-zero div.cell-output-display {
+div.cell-output-display:has(svg#mermaid-2) {
   margin-top: -21px;
   margin-bottom: -18px;
 }
-#fig-zerocomm {
-  margin-top: -6px;
-}
-#fig-zerocomm div.cell-output-display {
-  margin-top: -24px;
+div.cell-output-display:has(svg#mermaid-3) {
+  margin-top: -36px;
   margin-bottom: -21px;
+}
+div.cell-output-display:has(svg#mermaid-4) {
+  margin-top: -34px;
+  margin-bottom: -21px;
+}
+div.cell-output-display:has(svg#mermaid-5) {
+  margin-top: -21px;
+  margin-bottom: -18px;
+}
+div.cell-output-display:has(svg#mermaid-6) {
+  margin-top: -21px;
+  margin-bottom: -18px;
 }
 div.tippy-box div.tippy-content figure figcaption {
   display: none;
+}
+#fig-zerocomm.doxdiagram > figure {
+  margin-top: -12px;
+}
+#fig-zeroleap.doxdiagram > figure {
+  margin-top: -12px;
 }
 </style>
 ```
