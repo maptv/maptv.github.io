@@ -123,6 +123,7 @@ ol > li[id*="fn"] > p > a.footnote-back {
 
 main.content {
   counter-reset: tblnum -1;
+  counter-reset: diagnum -1;
 }
 main.content:has(section#sec-lad.hiddenheading div#tbl-1d.unittable) {
   counter-reset: tblnum 1;
@@ -134,14 +135,6 @@ figcaption.quarto-float-tbl {
 figcaption.quarto-float-tbl::before {
   content: "Table " counter(tblnum);
   font-size: initial;
-}
-
-
-main.content {
-    counter-reset: diagnum -1;
-}
-main.content:has(section#sec-dox div#fig-zero.doxdiagram) {
-  counter-reset: diagnum 0;
 }
 figure:has(svg.flowchart.mermaid-js) figcaption.quarto-float-fig {
     counter-increment: diagnum;

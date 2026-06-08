@@ -235,6 +235,8 @@ decYearLastBowSumPad = decYearLastBowSum.toString().padStart(3, "0")
 decDoty = Math.floor(ydz[1])
 decDotyPad = String(decDoty).padStart(3, "0")
 decDek = Math.floor(decDoty / 10)
+decHek = Math.floor(decDoty / 100)
+decDoth = decDoty % 100
 decDotd = decDoty % 10
 decDotp = decDotd % 5
 decPent = decDek * 2 + (decDotd > 4)
@@ -1181,6 +1183,21 @@ div.tippy-box div.tippy-content figure figcaption {
 }
 #fig-zeroleap.doxdiagram > figure {
   margin-top: -24px;
+}
+.overflowtable {
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: center;
+}
+main.content:has(section#sec-dox div#fig-zero.doxdiagram) {
+  counter-reset: diagnum 0;
+  counter-reset: tblnum -1;
+}
+figcaption {
+  text-align: left;
+}
+div.tippy-box div.tippy-content {
+  overflow: hidden;
 }
 </style>
 ```
