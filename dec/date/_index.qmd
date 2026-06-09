@@ -234,9 +234,13 @@ decYearLastBowSum = 364 - decYearLastBowNeg
 decYearLastBowSumPad = decYearLastBowSum.toString().padStart(3, "0")
 decDoty = Math.floor(ydz[1])
 decDotyPad = String(decDoty).padStart(3, "0")
+decNid = decDoty - decYearLength
+decNidPad = decNid.toString().padStart(3, "0")
 decDek = Math.floor(decDoty / 10)
-decHek = Math.floor(decDoty / 100)
-decDoth = decDoty % 100
+decPih = Math.floor(decDoty / 100)
+decNih = String(Math.abs(Math.floor(decNid / 100))) + "\u0305"
+decDohPid = decDoty % 100
+decDohNid = Math.abs(decNid % 100)
 decDotd = decDoty % 10
 decDotp = decDotd % 5
 decPent = decDek * 2 + (decDotd > 4)
@@ -953,6 +957,49 @@ function binaryInput(opts) {
   container.value = outputAsBytes ? bytes : getValue();
   return container;
 }
+temps = await FileAttachment("temps.json").json()
+// Adapted from https://observablehq.com/@observablehq/filtering-several-charts-1871
+function renderFilter(initialTest = true) {
+  const updates = new Array(); // 🌶🌶 support sharing across charts; needs invalidation
+  // see https://observablehq.com/@observablehq/plot-brush-crossfilter-1653#analyzer for a technique
+  return Object.assign(
+    function apply(options) {
+      return {
+        ...options,
+        render(index, scales, values, dimensions, context, next) {
+          const data = temps;
+          //const { data } = values;
+          const filter = (test) =>
+            typeof test === "function"
+              ? index.filter((i) => test(data[i], i, data))
+              : test
+              ? index
+              : [];
+          let g = next(
+            filter(initialTest),
+            scales,
+            values,
+            dimensions,
+            context
+          );
+          updates.push((test) => {
+            const transform = g.getAttribute("transform");
+            g.replaceWith(
+              (g = next(filter(test), scales, values, dimensions, context))
+            );
+            g.setAttribute("transform", transform); // facet translate
+          });
+          return g;
+        }
+      };
+    },
+    {
+      update(test) {
+        return updates.map((update) => update?.(test));
+      }
+    }
+  );
+}
 ```
 
 ```{ojs}
@@ -1198,6 +1245,36 @@ figcaption {
 }
 div.tippy-box div.tippy-content {
   overflow: hidden;
+}
+.viz-header, .viz-footer {
+  max-width: 640px;
+  font-family: FranklinITCProLight, Arial, Helvetica, sans-serif;
+  background-color: #fff;
+}
+.viz-header {
+  font-size: 18px;
+  font-weight: 700;
+}
+.instructions  {
+  font-size: 16px;
+}
+.caption  {
+/*     max-width: ${svgWidth * 0.9}px; */
+  font-size: 14px;
+  color: #666;
+}
+.data-source {
+  text-decoration: underline!important;
+  color: inherit!important;
+}
+.viz-static {
+  height: auto; 
+  border: 1px solid #c0c0c0;"
+}
+@media (max-width: 768px) {
+  .viz-static {
+    max-width: 100%;
+  }
 }
 </style>
 ```

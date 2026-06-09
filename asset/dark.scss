@@ -399,3 +399,18 @@ div#decplot figure.calplot-figure svg.calplot g[font-variant="tabular-nums"] tex
   stroke-width: 1.5px;
 }
 
+#decseasonplot .hideXaxisRule {
+  stroke: black;
+}
+#decseasonplot g[aria-label="rule"][stroke-width="30"] {
+  stroke: black;
+}
+#decseasonplot g:not([aria-label="text"]) text {
+  fill: white;
+}
+#decseasonplot g[aria-label="rule"][pointer-events="none"]:not([stroke-width="30"]) {
+  stroke: white;
+}
+#decseasonplot g[aria-label="x-axis tick"] {
+  stroke: white;
+}

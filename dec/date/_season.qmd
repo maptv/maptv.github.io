@@ -1,0 +1,284 @@
+```{ojs}
+//| echo: false
+//| class: decseason
+//| label: decseasonplot
+{
+  // Common properties on the axes and annotations
+  const axisCommon = {
+    tickSize: 10,
+    fontSize: 14,
+    fill: "#333"
+  };
+  const gridY = {
+    // We'll also use these properties for the ticks' vector lines on the y-axis
+    stroke: "#c0c0c0",
+    strokeOpacity: 0.7,
+    strokeDasharray: "2,2"
+  };
+  const annotCommon = { fontSize: 16, fontWeight: 700, pointerEvents: "none" };
+  const hideAnnotCommon = {
+    ...annotCommon,
+    px: "dayOfYear",
+    py: "temp",
+    strokeWidth: 5,
+    maxRadius: 5
+  };
+  // Highlight line marks on hover
+  const pointerInactive = renderFilter(true);
+  const pointerContext = renderFilter(false);
+  const pointerFocus = renderFilter(false);
+  // I prefer to create a standalone color scale to access the range's values
+  // (e.g., color.range[0]) and avoid the hassle of repeatedly copying hex codes
+  const color = Plot.scale({
+    color: {
+      type: "categorical",
+      domain: [2023, 2024, 2025],
+      range: ["#ffc500", "#00f9f6", "#ff09ff"],
+      unknown: "#808080"
+    }
+  });
+  const plot = Plot.plot({
+    // Dimensions
+    width: Math.min(width, 640),
+    marginTop: 0,
+    marginRight: 10,
+    marginBottom: 45,
+    marginLeft: 45,
+    style: { fontSize: "16px" },
+    // Scales
+    y: {
+      domain: [11, 17.5]
+    },
+    color: color,
+    // Other top-level options
+    axis: null,
+    label: null,
+    style: {
+      overflow: "visible"
+    },
+    // Marks
+    marks: [
+      Plot.ruleX([100, 200, 264], {stroke: ["#cdff00", "#00bdff", "#4800ff"], strokeWidth: 4, strokeDasharray: "2 2",}),
+      Plot.ruleX([100, 200, 264], {stroke: (d, i) => i === 2 ? "#ddd" : "#555", strokeWidth: 4, strokeDasharray: "2 2", strokeDashoffset: 2}),
+      Plot.areaY(d3.range(366), {x: d => d, y1: 11, y2: 17.5, fill: d => d < 264 ? piecewiseColor(Math.floor(d / 100) / 4) : "#4800ff", fillOpacity: 0.1}),
+      // X-axis
+      // The textAnchor option is not a channel so we'll use two axisX marks
+            Plot.axisX({
+        ...axisCommon,
+        // Days of year that correspond to
+        // ['Jan 1', 'Apr 1', 'Jul 1', 'Oct 1']
+        // and ['Jan 1', 'Mar 1', 'May 1', 'Jul 1', 'Sep 1', 'Nov 1']
+        ticks: [0, 50, 100, 150, 200, 250, 300, 350],
+        stroke: "#333",
+        label: "Day of year",
+        labelAnchor: "center",
+        labelOffset: 38,
+      }),
+      // Use different textAnchor for the last tick
+      // Y-axis
+      // Y-axis gridlines
+      Plot.gridY({
+        ...gridY,
+        ticks: d3.range(12, 18)
+      }),
+      // Again, two axisY marks because neither textAnchor nor dx are channels
+      Plot.axisY({
+        ...axisCommon,
+        ...gridY,
+        ticks: d3.range(12, 18),
+        tickFormat: "d",
+        strokeDashoffset: 2,
+        textAnchor: "end",
+        label: "Daily global mean temperatures",
+        labelAnchor: "center",
+        labelOffset: 45,
+      }),
+      // Line marks
+      Plot.line(
+        temps,
+        pointerInactive({
+          x: "dayOfYear",
+          y: "temp",
+          stroke: "year",
+          strokeWidth: (d) => (d.year === 2025 ? 3 : d.year === 2024 ? 3 : d.year === 2023 ? 3 : 1),
+          strokeOpacity: (d) => ([2023, 2024, 2025].includes(d.year) ? 0.7 : 0.08)
+        })
+      ),
+      Plot.line(
+        temps,
+        pointerContext({
+          x: "dayOfYear",
+          y: "temp",
+          z: "year",
+          stroke: color.unknown,
+          strokeWidth: 1,
+          strokeOpacity: 0.1
+        })
+      ),
+      Plot.line(
+        temps,
+        pointerFocus({
+          x: "dayOfYear",
+          y: "temp",
+          stroke: "year",
+          strokeWidth: 2
+        })
+      ),
+      // Annotations
+      Plot.text(["2025"], {
+        ...annotCommon,
+        x: () => (width < 400 ? 302 : 320),
+        y: 14.5,
+        fill: color.range[2],
+        stroke: "black",
+        strokeWidth: .5,
+      }),
+      // Trick to hide the "2024" annotation on hover
+      // Plot.text(
+      //   temps,
+      //   Plot.pointer({
+      //     ...hideAnnotCommon,
+      //     text: (d) => "2025",
+      //     x: () => (width < 400 ? 302 : 320),
+      //     y: 14.5
+      //   })
+      // ),
+      Plot.text(["2024"], {
+        ...annotCommon,
+        x: () => (width < 380 ? 45 : 70),
+        y: 16.5,
+        fill: color.range[1],
+        stroke: "black",
+        strokeWidth: .5,
+      }),
+      // Trick to hide the "2024" annotation on hover
+      // Plot.text(
+      //   temps,
+      //   Plot.pointer({
+      //     ...hideAnnotCommon,
+      //     text: (d) => "2024",
+      //     x: () => (width < 380 ? 45 : 85),
+      //     y: 16.5
+      //   })
+      // ),
+      Plot.text(["2023"], {
+        ...annotCommon,
+        x: () => (width < 380 ? 230 : width < 480 ? 210 : 230),
+        y: 16.5,
+        fill: color.range[0],
+        stroke: "black",
+        strokeWidth: .5,
+      }),
+      // Hide the "2023" annotation on hover
+      // Plot.text(
+      //   temps,
+      //   Plot.pointer({
+      //     ...hideAnnotCommon,
+      //     text: (d) => "2023",
+      //     x: () => (width < 380 ? 230 : width < 480 ? 210 : 205),
+      //     y: 16.5
+      //   })
+      // ),
+      // Plot.text(["Years 1940 to 2025"], {
+      //   ...annotCommon,
+      //   x: () => (width < 380 ? 110 : 170),
+      //   y: 12.4,
+      //   // Different font weight than other annotations
+      //   fontWeight: 400
+      // }),
+      // Hide the "Years 1940 to 2022" annotation on hover
+      // Plot.text(
+      //   temps,
+      //   Plot.pointer({
+      //     ...hideAnnotCommon,
+      //     text: (d) => "Years 1940 to 2022",
+      //     x: () => (width < 380 ? 110 : 170),
+      //     y: 12.4
+      //   })
+      // ),
+      // On hover marks
+      // Trick to hide x-axis when hovering
+      Plot.ruleY(
+        temps,
+        Plot.pointer({
+          px: "dayOfYear",
+          py: "temp",
+          x1: 0,
+          x2: 366,
+          y: 10.8,
+          stroke: "white",
+          className: "hideXaxisRule",
+          strokeWidth: 30,
+          inset: -25,
+          maxRadius: 5
+        })
+      ),
+      // Rule mark
+      Plot.ruleX(
+        temps,
+        Plot.pointer({
+          x: "dayOfYear",
+          py: "temp",
+          stroke: "#333",
+          insetTop: 15,
+          insetBottom: -10,
+          maxRadius: 5
+        })
+      ),
+      // Dot mark
+      Plot.dot(
+        temps,
+        Plot.pointer({
+          x: "dayOfYear",
+          y: "temp",
+          fill: "year",
+          r: 4,
+          maxRadius: 5
+        })
+      ),
+      // Text on datapoint (tooltip)
+      Plot.text(
+        temps,
+        Plot.pointer({
+          x: "dayOfYear",
+          y: "temp",
+          fill: "currentColor",
+          text: (d) => `${d.year}\n${d3.format(".1f")(d.temp)}`,
+          fontSize: 16,
+          lineHeight: 1.1,
+          strokeWidth: 5,
+          dy: -30,
+          maxRadius: 5
+        })
+      ),
+      // Hovered day on x-axis
+      Plot.text(
+        temps,
+        Plot.pointer({
+          ...axisCommon,
+          x: "dayOfYear",
+          py: "temp",
+          text: (d) => "Day " + d.dayOfYear,
+          frameAnchor: "bottom",
+          dy: 22,
+          className: "focusedDayAndTemp",
+          maxRadius: 5
+        })
+      )
+    ]
+  });
+  plot.addEventListener("input", () => {
+    if (plot.value === null) {
+      pointerInactive.update(true);
+      pointerContext.update(false);
+      pointerFocus.update(false);
+    } else {
+      const year = plot.value.year;
+      pointerInactive.update(false);
+      pointerContext.update((d) => d.year !== year);
+      pointerFocus.update((d) => d.year === year);
+    }
+  });
+  return plot;
+}
+```
