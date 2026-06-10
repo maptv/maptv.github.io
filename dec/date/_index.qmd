@@ -1276,5 +1276,8 @@ div.tippy-box div.tippy-content {
     max-width: 100%;
   }
 }
+#boundinputs label {
+  width: 90px;
+}
 </style>
 ```

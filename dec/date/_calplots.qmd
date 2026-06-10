@@ -3,7 +3,7 @@
 //| label: leapscrubvert
 // https://observablehq.com/@tophtucker/horizontal-inputs
 viewof leapscrub = Inputs.form([
-  Inputs.radio(new Map([["365", false], ["366", true]]), {label: "Days in year", value: loadLeap}),
+  Inputs.radio(new Map([["365", false], ["366", true]]), {label: "Year length", value: loadLeap}),
   Inputs.radio(new Map([["Positive", false], ["Negative", true]]), {label: "UTC offset", value: negtzo}),
   Inputs.radio(new Map([["Day", false], ["Month", true]]), {label: "Color scheme", value: false}),
   Inputs.radio(new Map([["Vertical", false], ["Horizontal", true]]), {label: "Plot layout", value: vertic}),
