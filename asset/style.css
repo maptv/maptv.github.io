@@ -298,6 +298,11 @@ div > form > label {
   text-decoration-thickness: .7px;
 }
 
+.overline {
+  position: relative;
+  display: inline-block;
+}
+
 .hide {
   display: none;
 }
