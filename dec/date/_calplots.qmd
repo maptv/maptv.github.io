@@ -18,7 +18,8 @@ viewof leapscrub = Inputs.form([
 
 ```{ojs}
 //| echo: false
-//| label: sliders
+//| label: calsliders
+//| className: sliders
 viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: "Day of year"});
 viewof monthInput = transformInput(
   Inputs.range([1, 12], {step: 1, label: "Month"}),
@@ -38,7 +39,9 @@ viewof dotmInput = transformInput(
 ) % nDaysInput)});
 ```
 
-::: {.column-page #calplots}
+::::: {.column-page}
+
+::: {#calplots}
 ```{ojs}
 //| echo: false
 //| className: calplot
@@ -49,7 +52,7 @@ decPlot = Plot.plot({
   height: layoInput ? 240 : 630,
   className: "calplot",
   title: "Decalendar",
-  marginTop: coloInput && layoInput ? -2 : !coloInput && layoInput ? -25 : -3,
+  marginTop: coloInput && layoInput ? -2 : !coloInput && layoInput ? -22 : -3,
   marginLeft: coloInput && !layoInput ? 36 : !coloInput && !layoInput ? 24 : 31,
   marginRight: coloInput && !layoInput ? 36 : !coloInput && !layoInput ? 24 : 31,
   marginBottom: coloInput && layoInput ? 34 : !coloInput && layoInput ? 37 : 32,
@@ -172,7 +175,7 @@ grePlot = Plot.plot({
   className: "calplot",
   marginTop: layoInput ? 2 : -2,
   marginBottom: 40,
-  marginLeft: 42,
+  marginLeft: 33,
   y: layoInput ? {tickFormat: Plot.formatWeekday("en", "short"), tickSize: 0,
       domain: [-1, 0, 1, 2, 3, 4, 5, 6],
       ticks: [0, 1, 2, 3, 4, 5, 6],
@@ -261,11 +264,14 @@ grePlot = Plot.plot({
 ```
 :::
 
+:::::
+
 [First [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of the Gregorian calendar year]{.radiotitle}
 
 ```{ojs}
 //| echo: false
-//| id: radiobuttons
+//| label: centerradio
+//| className: radiobuttons
 viewof dotwInput = Inputs.radio([
   "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat",
   ], {value: gregBoyDotwStr})

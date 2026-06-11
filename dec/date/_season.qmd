@@ -6,7 +6,7 @@
   // Common properties on the axes and annotations
   const axisCommon = {
     tickSize: 10,
-    fontSize: 14,
+    fontSize: 18,
     fill: "#333"
   };
   const gridY = {
@@ -44,7 +44,6 @@
     marginRight: 10,
     marginBottom: 45,
     marginLeft: 45,
-    style: { fontSize: "16px" },
     // Scales
     y: {
       domain: [11, 17.5]
@@ -72,7 +71,7 @@
         stroke: "#333",
         label: "Day of year",
         labelAnchor: "center",
-        labelOffset: 38,
+        labelOffset: 42,
       }),
       // Use different textAnchor for the last tick
       // Y-axis
@@ -91,7 +90,9 @@
         textAnchor: "end",
         label: "Daily global mean temperatures",
         labelAnchor: "center",
-        labelOffset: 45,
+        labelOffset: 40,
+        tickPadding: 1,
+        dx: 8,
       }),
       // Line marks
       Plot.line(

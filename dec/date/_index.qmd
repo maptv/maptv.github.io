@@ -28,7 +28,7 @@ function dote2date(dote, zone = 0) {
 function dotw2diff(x, y) {
   return (x - y + 7) % 7;
 }
-dz = unix2dote(now)
+dz = unix2dote(Date.now())
 ydz = dote2date(...dz)
 function year2leap(year = 1970) {
   return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
@@ -238,12 +238,15 @@ decNid = decDoty - decYearLength
 decNidPad = decNid.toString().padStart(3, "0")
 decDek = Math.floor(decDoty / 10)
 decPih = Math.floor(decDoty / 100)
-decNih = String(Math.abs(Math.floor(decNid / 100))) + "\u0305"
+decNih = String(Math.abs(Math.floor(decNid / 100)))
 decDohPid = decDoty % 100
 decDohNid = Math.abs(decNid % 100)
 decDotd = decDoty % 10
 decDotp = decDotd % 5
 decPent = decDek * 2 + (decDotd > 4)
+xmasDoy = 299 + nOffInput
+xmasPir = 298 + nOffInput * 3
+negOrPos = nOffInput ? "negative" : "positive"
 xmasDiff = decDoty - 299
 xmasDiffSign = xmasDiff < 0 ? "-" : "+"
 xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
@@ -1027,6 +1030,12 @@ p:has(.radiotitle) {
   margin-top: -${layoInput ? 16 : 24}px;
   margin-bottom: -${width > 500 ? 6 : 9}px;
 }
+#calplots > div.cell {
+  width: ${layoInput ? "100%" : "unset"};
+}
+#calplots > div.cell svg {
+  width: ${layoInput ? "100%" : "unset"};
+}
 </style>
 `
 ```
@@ -1035,6 +1044,7 @@ p:has(.radiotitle) {
 <style>
 .radiotitle {
   overflow: visible;
+  text-align: center;
 }
 p:has(.radiotitle) {
   overflow: visible;
@@ -1045,8 +1055,6 @@ p:has(.radiotitle) {
 #calplots {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
   overflow: visible;
 }
 div.cell:has(form.oi-3a86ea) {
@@ -1060,7 +1068,7 @@ form.oi-3a86ea {
 }
 div.column-page:has(svg.leftplot), div.column-page:has(svg.rightplot) {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 div.observablehq > figure > h2 {
   text-align: center;
@@ -1153,8 +1161,14 @@ div#leapscrubvert form:last-child {
 input[type="number"] {
   width: 120px;
 }
-#radiobuttons {
+#centerradio {
   margin-bottom: 3px;
+  display: flex;
+  justify-content: center;
+}
+#centerradio form {
+  padding-right: 0px;
+  padding-left: 5px;
 }
 div.pairedinputs span:has(button):nth-child(2) {
   display: none !important;
@@ -1226,10 +1240,10 @@ div.tippy-box div.tippy-content figure figcaption {
   display: none;
 }
 #fig-zerocomm.doxdiagram > figure {
-  margin-top: -32px;
+  margin-top: -12px;
 }
 #fig-zeroleap.doxdiagram > figure {
-  margin-top: -24px;
+  margin-top: -9px;
 }
 .overflowtable {
   overflow-x: auto;
@@ -1278,6 +1292,25 @@ div.tippy-box div.tippy-content {
 }
 #boundinputs label {
   width: 90px;
+}
+form.oi-3a86ea {
+  flex-wrap: nowrap;
+}
+div > form > label {
+  --label-width: 110px;
+}
+div.hand a {
+  filter: invert(100%);
+}
+#fingerbinarysvg {
+  margin-bottom: 9px;
+}
+#fingerbinarysvg {
+  margin-bottom: 14px;
+}
+#fingerbinarygif {
+  margin-top: 6px;
+  margin-bottom: 9px;
 }
 </style>
 ```
