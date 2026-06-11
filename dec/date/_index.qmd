@@ -1036,6 +1036,12 @@ p:has(.radiotitle) {
 #calplots > div.cell svg {
   width: ${layoInput ? "100%" : "unset"};
 }
+#fig-zerocomm.doxdiagram > figure {
+  margin-top: -${width > 500 ? 26 : 9}px;
+}
+#fig-zeroleap.doxdiagram > figure {
+  margin-top: -${width > 500 ? 22 : 5}px;
+}
 </style>
 `
 ```
@@ -1239,12 +1245,6 @@ div.cell-output-display:has(svg#mermaid-6) {
 div.tippy-box div.tippy-content figure figcaption {
   display: none;
 }
-#fig-zerocomm.doxdiagram > figure {
-  margin-top: -12px;
-}
-#fig-zeroleap.doxdiagram > figure {
-  margin-top: -9px;
-}
 .overflowtable {
   overflow-x: auto;
   overflow-y: hidden;
@@ -1299,9 +1299,6 @@ form.oi-3a86ea {
 div > form > label {
   --label-width: 110px;
 }
-div.hand a {
-  filter: invert(100%);
-}
 #fingerbinarysvg {
   margin-bottom: 9px;
 }
@@ -1310,7 +1307,7 @@ div.hand a {
 }
 #fingerbinarygif {
   margin-top: 6px;
-  margin-bottom: 9px;
+  margin-bottom: 12px;
 }
 </style>
 ```

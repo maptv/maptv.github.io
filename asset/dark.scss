@@ -420,8 +420,11 @@ div#decplot figure.calplot-figure svg.calplot g[font-variant="tabular-nums"] tex
   position: absolute;
   left: 0;
   width: 100%;
-  height: 2px;                 /* Line thickness */
+  height: 1.5px;                 /* Line thickness */
   background-color: white;     /* Line color */
-  top: 7px;                   /* Adjust this value to move the line up or down */
+  top: 6px;                   /* Adjust this value to move the line up or down */
 }
 
+div#fingerbinarysvg.hand a {
+  filter: invert(100%);
+}

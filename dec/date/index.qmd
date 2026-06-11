@@ -42,7 +42,7 @@ From the perspective of Dec, month color labels🏷️are only useful if we want
 
 The "Plot layout" radio input rotates the calendar plots by a quarter turn, interchanging the horizontal (↔) and vertical (↕) axes. The axis labels demonstrate that [x]{.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"} and "days of xún" ([dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"}) are analogous to weeks and "days of week" ([dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}). If we multiply an [x]{.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"} \${layoInput ? "↔" : "↕"} axis label by ten and add it to a [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} \${layoInput ? "↕" : "↔"} axis label, we get a "positive integer [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}" ([pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}) cell value: \${dotyInputDek} &times; 10 + \${dotyInputDod} = ${dotyInput}.
 
-:::{.overflowequation}
+::: {.column-margin .overflowequation}
 $$\text{pid} = \text{x} \ast 10 + \text{dox}$$ {#eq-pid}
 $$\text{dyl} = \text{pid} - \text{nid}$$ {#eq-dyl}
 :::
@@ -57,14 +57,16 @@ The distinction between [pid]{.tool data-bs-toggle="tooltip" data-bs-title="posi
 
 The year+day Dec date format is short for [year+day/[dyl]{.tool data-bs-toggle="tooltip" data-bs-title="Decalendar year length"}]{.nowrap}. Dec truncates dates because the [dyl]{.tool data-bs-toggle="tooltip" data-bs-title="Decalendar year length"} is not needed to specify a date, remains constant for 366, 1095, or 2920 days, has only 2 possible values: 365 or 366, and can be determined by passing Year [y]{.tool data-bs-toggle="tooltip" data-bs-title="year"} to @eq-yoe2dyl below. Nevertheless, we can use the [dyl]{.tool data-bs-toggle="tooltip" data-bs-title="Decalendar year lengths"} to convert between different kinds of Dec dates.
 
+::: {.overflowequation}
 $$\text{dyl}=\begin{cases}
   366&{\begin{align}\text{if } (\text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} \ \ \ \ 4=0\\   \href{https://en.wikipedia.org/wiki/Logical_conjunction}{\land}(\text{y}+1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 100\neq0\\
   \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}( \text{y} + 1)\href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 400=0\end{align}}\\\\
   365&{\text{otherwise.}}\end{cases}$$ {#eq-yoe2dyl}
+:::
 
 Dec categorizes each date as a [countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event%20is%20scheduled%20to%20occur) or countup date, depending on whether the date counts **up** the days **since** Year [y]{.tool data-bs-toggle="tooltip" data-bs-title="year"} or counts **down** the days **until** Year [y]{.tool data-bs-toggle="tooltip" data-bs-title="year"}+1. The current year+day [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} date, [\${decYear}[+]{.mono}\${decDotyPad}]{.nowrap}, informs us that Year \${decYear} began \${decDoty} days ago, whereas its countdown equivalent, [\${nextYear}[-]{.mono}\${TminusPadded}]{.nowrap}, lets us know that Year \${nextYear} will begin in \${Tminus} days.
 
-:::{.overflowequation}
+::: {.column-margin .overflowequation}
 $$\text{y}+\dfrac{\text{pid}}{\text{dyl}} = \text{y} + 1 + \dfrac{\text{nid}}{\text{dyl}}$$ {#eq-updown}
 :::
 
@@ -78,7 +80,7 @@ Inputs.bind(Inputs.range([0, 364 + leapInput], {step: 1, label: "Day of year"}),
 Inputs.bind(Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of year"}), viewof dotyInput1)
 ```
 
-First [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of the Gregorian calendar year
+[First [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of the Gregorian calendar year]{.radiotitle}
 
 ```{ojs}
 //| echo: false
@@ -97,11 +99,9 @@ In contrast to a week, an [x]{.tool data-bs-toggle="tooltip" data-bs-title="grou
 
 In the context of a common year, [p]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday"}73 is synonymous with [p]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday"}0 of the subsequent year. To obtain the current [poy]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday of year"}, we double the current [x]{.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"} and add the current [pox]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday of xún"}, which is 1 if the current [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} is greater than 4 and 0 otherwise: ${decPent} = \${decDek} &times; 2 + [\${decDotd} > 4]. If we divide a [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} by 5, the remainder will be its corresponding "day of pentaday" ([dop]{.tool data-bs-toggle="tooltip" data-bs-title="days of pentaday"}): \${decDek} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 5 = \${decDotp}. 
 
-:::{.overflowequation}
+::: {.column-margin .overflowequation}
 $$\text{pox} = \left[\text{dox} > 4\right]$$ {#eq-pox}
-
 $$\text{poy = x} \ast 2 + \text{pox}$$ {#eq-poy}
-
 $$\text{dop = dox} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 5$$ {#eq-dop}
 :::
 
@@ -340,9 +340,9 @@ The last US Federal holiday of the Gregorian calendar year is [Christmas](https:
 
 # Day of hectoday (doh) {#sec-doh}
 
-In addition to the four [astronomical seasons](https://en.wikipedia.org/wiki/Season#Astronomical), there are four Dec seasons which were chosen from two overlapping sets of four consecutive [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"} to match [daily global mean temperature](https://pulse.climate.copernicus.eu) patterns. The two sets called are "positive integer hectodays" ([pih]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer hectodays"}) and "negative integer hectodays" ([nih]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer hectodays"}). @eq-pih below organizes [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} into one of the four [pih]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer hectodays"}: [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}0, [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}1, [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}2, or [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}3.
+In addition to the four [astronomical seasons](https://en.wikipedia.org/wiki/Season#Astronomical), there are four Dec seasons which were chosen from two overlapping sets of four consecutive [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"} to match [daily global mean temperature](https://pulse.climate.copernicus.eu) patterns. The two sets called are "positive integer hectodays" ([pih]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer hectodays"}) and "negative integer hectodays" ([nih]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer hectodays"}). @eq-pih organizes [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} into one of the four [pih]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer hectodays"}: [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}0, [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}1, [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}2, or [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}3.
 
-:::{.overflowequation}
+::: {.column-margin .overflowequation}
 $$\text{pih} = \left\lfloor\dfrac{\text{pid}}{100}\right\rfloor$$ {#eq-pih}
 $$\text{nih} = \left\lfloor\dfrac{\text{nid}}{100}\right\rfloor$$ {#eq-nih}
 :::
@@ -353,7 +353,7 @@ Similarly, @eq-nih groups [doy]{.tool data-bs-toggle="tooltip" data-bs-title="da
 
 The line plot shows how well the four Dec season match [ERA5](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview#:~:text=the%20fifth%20generation%20ECMWF%20reanalysis%20for%20the%20global%20climate%20and%20weather%20for%20the%20past%208%20decades) daily global mean temperatures. If we think of the method for assigning [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} to Dec seasons in @eq-season as a [statistical model](https://en.wikipedia.org/wiki/Statistical_model#:~:text=a%20mathematical%20model%20that%20embodies%20a%20set%20of%20statistical%20assumptions%20concerning%20the%20generation%20of%20sample%20data), its "[goodness of fit](https://en.wikipedia.org/wiki/Goodness_of_fit#:~:text=a%20statistical%20model%20describes%20how%20well%20it%20fits%20a%20set%20of%20observations)" is evidenced by the fact that the hottest [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} on average, [d]{.tool data-bs-toggle="tooltip" data-bs-title="day"}149, is near the middle of [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}1 and the coldest [doy]{.tool data-bs-toggle="tooltip" data-bs-title="days of year"} on average, [d]{.tool data-bs-toggle="tooltip" data-bs-title="day"}[316]{.color316by365}, is close to the center of [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}[1]{.overline}.
 
-:::{.overflowequation}
+::: {.overflowequation}
 $$\text{season} = \left\lfloor\dfrac{\text{pid} - \text{dyl} * [\text{nid} \ge -100]}{100}\right\rfloor$$ {#eq-season}
 :::
 
@@ -368,11 +368,11 @@ In general, the hottest days are in [h]{.tool data-bs-toggle="tooltip" data-bs-t
 
 The remainder after dividing a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} or a [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} by 100 is a "day of hectoday" ([doh](#doh){#dayofhectoday .tool data-bs-toggle="tooltip" data-bs-title="day of hectoday"}). If we use a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}, the resulting [doh](#doh){#dayofhectoday .tool data-bs-toggle="tooltip" data-bs-title="day of hectoday"} is the percent of a [pih]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer hectoday"} that has passed. A [doh](#doh){#dayofhectoday .tool data-bs-toggle="tooltip" data-bs-title="day of hectoday"} derived from an [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} is the percent of an [nih]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer hectoday"} that is still has not passed. The current [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}, \${decDoty}, tells us that [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}\${decPih} is \${decDohPid}% done and based on the current [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}, \${decNid}, we know that [h]{.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}[\${decNih}]{.overline} is \${decDohNid}% unfinished.
 
-:::{.overflowequation}
+::: {.column-margin .overflowequation}
 $$\text{doh} = \text{doy} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 100$$ {#eq-doh}
 :::
 
-The approximate duration of a season in the Gregorian calendar is 3 months, 13 weeks, or 91 days. The connection between [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and seasonal temperature changes requires [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} to reset after Day -1 (d[1]{.overline}), the last day of the year. If we do not need to track years or seasons, we can use a single integer called a "day of [era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)" ([doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}) instead of a Dec year+day date.
+The approximate duration of a season in the Gregorian calendar is 3 months, 13 weeks, or 91 days. The connection between [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and seasonal temperature changes requires [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} to reset after Day -1 (d[1]{.overline}), the last day of the Decalendar year. If we do not need to track years or seasons, we can use a single integer called a "day of [era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)" ([doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}) instead of a Dec year+day date.
 
 # Day of era (doe) {#sec-doe}
 
@@ -382,7 +382,7 @@ Each of the ten Dec time zones has its own [boe]{.tool data-bs-toggle="tooltip" 
 
 Dec uses [doe]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"} for [calendrical calculations](https://en.wikipedia.org/wiki/Calendrical_calculation#:~:text=a%20calculation%20concerning%20calendar%20dates), such as finding the [POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems) [zero-based [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)) of a given date. This year, the [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of [Christmas](https://en.wikipedia.org/wiki/Christmas#:~:text=annual%20festival%20commemorating%20the%20birth%20of%20Jesus%20Christ)🎄is \${xmasDotw} according to @eq-dow: (\${xmasDote} + \${3 - nOffInput}) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 7 = \${xmasDotw}. Unlike [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}, the [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} can be found without much effort, because it is the last digit of the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} or equivalently the remainder after dividing the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} by 10 as per @eq-dox.
 
-:::{.overflowequation}
+::: {.column-margin .overflowequation}
 $$\text{dow} = (\text{doe} + 3) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 7$$ {#eq-dow}
 $$\text{dox} = \text{pid} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 10$$ {#eq-dox}
 :::
@@ -416,14 +416,16 @@ $$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{yoe}&{\text{if } \text{yo
 $$\text{yoc} = \text{yoe} - \text{coe} \ast 400$$ {#eq-yoe2yoc}
 
 :::{.overflowequation}
-$$\text{doe} = \text{coe} \ast 146097 + \text{yoc} \ast 365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{pid}$$ {#eq-doe}
+$$\text{doc} = \text{yoc} \ast 365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{pid}$$ {#eq-date2doc}
 :::
+
+$$\text{doe} = \text{coe} \ast 146097 + \text{doc}$$ {#eq-doe}
 
 The Dec date equations are the [inverse](https://en.wikipedia.org/wiki/Inverse#:~:text=Inverse%20function%2C-,a%20function%20that%20%22reverses%22%20another%20function,-Generalized%20inverse%2C%20a)🔁of the Dec [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} equations above, based on Howard Hinnant's [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days){.mono} algorithm, and useful for obtaining Dec dates from [doe]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"}, [UNIX timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970), and [JDN]{.tool data-bs-toggle="tooltip" data-bs-title="Julian day numbers"}. Along the way to obtaining a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} from a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}, the Dec date equations calculate the "[cycle](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years) of era" ([coe]{.tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}), "year of cycle" ([yoc]{.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}), and "day of cycle" ([doc]{.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"}).
 
 $$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{doe}&{\text{if } \text{doe} \geq 0;}\\\text{doe}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$ {#eq-doe2coe}
 
-$$\text{doc} = \text{doe} - \text{coe} \ast 146097$$ {#eq-doc}
+$$\text{doc} = \text{doe} - \text{coe} \ast 146097$$ {#eq-doe2doc}
 
 $$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$ {#eq-doe2yoc}
 

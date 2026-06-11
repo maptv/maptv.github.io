@@ -322,3 +322,7 @@ g.node g.label:has(span.nodeLabel) * {
 .bold {
   font-weight: bold;
 }
+.noscrollequation {
+  overflow-x: visible;
+  overflow-y: hidden;
+}
