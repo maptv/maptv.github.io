@@ -271,7 +271,9 @@ flowchart LR
 ```
 :::
 
-We can use the nid to identify Schedule L work and rest days. In a common year, an nid is a rest day if the sum of its last digit of an nid and 10 is 0, 4, 5, or 9 and a work day otherwise.
+We can use the nid to identify Schedule L work and rest days. In a common year, an nid is   if the sum of its last digit and 10 is a Schedule L rest day. , 4, 5, or 9 and a work day otherwise.
+
+-264 = -270 + 6 = -26[6]{.overline}
 
 In a common year, with negative dox. changing the pattern of work and rest days. we can subtract 10 from a dox to get the last digit of a pid to get  from positive to negative dox. @fig-nidcomm below shows Schedule L with negative dox in a common year. an overline () denotes a negative numbers. symbolizes and thus turn Dox 0 to -10, 1 to -9, 2 to -8, 3 to -7, -4, -3, and -2.  and Dop -3, -2, -1 in a leap year. If we want to use [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} to identify work and rest days. depends on the
 
