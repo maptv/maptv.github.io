@@ -229,3 +229,12 @@ g.node rect:hover, g.node:has(g:hover) rect {
   background-color: black;     /* Line color */
   top: 7px;                   /* Adjust this value to move the line up or down */
 }
+#fig-xneg g.nodes span.nodeLabel p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: black;
+  top: 6px;
+}

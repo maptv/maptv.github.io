@@ -39,9 +39,7 @@ viewof dotmInput = transformInput(
 ) % nDaysInput)});
 ```
 
-::::: {.column-page}
-
-::: {#calplots}
+::: {.column-page #calplots}
 ```{ojs}
 //| echo: false
 //| className: calplot
@@ -263,8 +261,6 @@ grePlot = Plot.plot({
 })
 ```
 :::
-
-:::::
 
 [First [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of the Gregorian calendar year]{.radiotitle}
 
