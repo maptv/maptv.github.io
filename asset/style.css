@@ -136,13 +136,17 @@ figcaption.quarto-float-tbl::before {
   content: "Table " counter(tblnum);
   font-size: initial;
 }
-figure:has(svg.flowchart.mermaid-js) figcaption.quarto-float-fig {
-    counter-increment: diagnum;
-    font-size: 0;
+
+section#sec-dox {
+  counter-reset: diagnum 0;
 }
-figure:has(svg.flowchart.mermaid-js) figcaption.quarto-float-fig::before {
-    content: "Diagram " counter(diagnum);
-    font-size: initial;
+.doxdiagram figcaption.quarto-float-fig {
+  counter-increment: diagnum;
+  font-size: 0;
+}
+.doxdiagram figcaption.quarto-float-fig::before {
+  content: "Diagram " counter(diagnum);
+  font-size: initial;
 }
 
 /* improve responsiveness of navbar elements */
@@ -303,6 +307,11 @@ div > form > label {
   display: inline-block;
 }
 
+#fig-xneg g.nodes span.nodeLabel p {
+  position: relative;
+  display: inline-block;
+}
+
 .hide {
   display: none;
 }
@@ -324,5 +333,5 @@ g.node g.label:has(span.nodeLabel) * {
 }
 .noscrollequation {
   overflow-x: visible;
-  overflow-y: hidden;
+  overflow-y: clip;
 }
