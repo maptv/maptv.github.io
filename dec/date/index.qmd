@@ -327,7 +327,7 @@ flowchart LR
 ```
 :::
 
-In common years, we can classify work and rest days by the last digit of [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} written in Dec mix[ed]{.overline} complement notation. @tbl-vincommon below shows the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} of the last 11 days of a common year alongside the [pure]{.overline} and mix[ed]{.overline} complement forms of each [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}. The line above the complementary portion of a mix[ed]{.overline} complement number is called a vinculum (&oline;).
+In common years, we can classify work and rest days by the last digit of [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} written in Dec mix[ed]{.overline} complement notation. @tbl-vincommon below shows the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} of the last 11 days of a common year alongside the [pure]{.overline} and mix[ed]{.overline} complement forms of each [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}. The line above the [pure]{.overline} and mix[ed]{.overline} complement forms is called a vinculum.
 
 ::: {#tbl-vincommon}
 | pid | nid | [pure]{.overline} | mix[ed]{.overline} |
