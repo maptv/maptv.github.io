@@ -290,7 +290,7 @@ flowchart LR
 ```
 :::
 
-If we follow Schedule [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"}, there will be 4 consecutive work days during any transition from a leap year. To limit the number of consecutive work days to 3, we could right rotate (↻) Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and obtain Schedule [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"}: [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} ↻ 1 = [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"}. Unlike Schedule [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"}, Schedule [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"} handles yearly transitions just as gracefully as Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}. Of the three schedules, only Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} is symmetric.
+If we follow Schedule [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"}, there will be 4 consecutive work days during any transition from a leap year. To limit the number of consecutive work days to 3, we could right rotate (↻) Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and obtain Schedule [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"}: [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} ↻ 1 = [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"}. Unlike Schedule [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"}, Schedule [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"} handles yearly transitions just as gracefully as Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}. Except for d365, which is a Schedule [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"} work day, each of these three schedules provisions the same number of work days.
 
 ::: {.centered}
 ### Schedule [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"} ([Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 0 to 9) {.diagtitle}
@@ -327,42 +327,65 @@ flowchart LR
 ```
 :::
 
-In common years, the symmetry of Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} pairs well with Dec complement notation, which displays positive digits at the end of [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer days of year"}.
+In common years, we can classify work and rest days by the last digit of [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} written in Dec mixe[d]{.overline} complement notation. @tbl-vincommon below shows the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} of the last 11 days of a common year alongside the [pure]{.overline} and mixe[d]{.overline} complement forms of each [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}. In the first and last columns of @tbl-vincommon, numbers that end in 0, [0]{.overline}, 4, [4]{.overline}, 5, [5]{.overline}, 9, or [9]{.overline} represent Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} rest days and numbers that end in 1, [1]{.overline}, 2, [2]{.overline}, 3, [3]{.overline}, 6, [6]{.overline}, 7, [7]{.overline}, 8, or [8]{.overline} represent Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} work days.
 
-::: {.centered}
-### Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} ([Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} [0]{.overline} to [9]{.overline}) common year {.diagtitle}
+::: {#tbl-vincommon}
+| pid | nid | [pure]{.overline} | mixe[d]{.overline} |
+|-----|-----|-------------------|--------------------|
+| 354 | -11 | [11]{.overline}   | -2[9]{.overline}   |
+| 355 | -10 | [10]{.overline}   | -1[0]{.overline}   |
+| 356 | -9  | [9]{.overline}    | -1[1]{.overline}   |
+| 357 | -8  | [8]{.overline}    | -1[2]{.overline}   |
+| 358 | -7  | [7]{.overline}    | -1[3]{.overline}   |
+| 359 | -6  | [6]{.overline}    | -1[4]{.overline}   |
+| 360 | -5  | [5]{.overline}    | -1[5]{.overline}   |
+| 361 | -4  | [4]{.overline}    | -1[6]{.overline}   |
+| 362 | -3  | [3]{.overline}    | -1[7]{.overline}   |
+| 363 | -2  | [2]{.overline}    | -1[8]{.overline}   |
+| 364 | -1  | [1]{.overline}    | -1[9]{.overline}   |
 :::
 
-::: {#fig-xneg .doxdiagram}
-```{mermaid}
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
-flowchart LR
-  B~~~M[ ]:::empty----N[ ]:::empty
-  W---M
-  N---O[ ]:::empty
-  Q[ ]:::empty---L
-  W[ ]:::empty-->A[0]-->B[9]-->C[8]-->D[7]-->E[6]---L[ ]:::empty
-  Y[ ]:::empty-->F[5]-->G[4]-->H[3]-->I[2]-->J[1]---O[ ]:::empty
-  B~~~P[ ]:::empty---Q
-  Y---P
-  subgraph workdays[work]
-  B
-  C
-  G
-  H
-  D
-  I
-  end
-  subgraph restdays[ ]
-  A
-  F
-  E
-  J
-  workdays
-  end
-  classDef empty width:0px;
-```
+In contrast to @tbl-vincommon above, @tbl-vinculeap below displays the last 11 days of a leap year. In the last column of @tbl-vinculeap, Schedule [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"} looks like Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} resembles Schedule [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"}.
+
+If we follow Schedule [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"}, Even though complement notation is [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} that end in 0, 1, 5, or 6 represent Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} rest days and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} that end in 2, 3, 4, 7, 8, or 9 represent Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} work days, which is a pattern that resembles . In leap years, Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} work days are no longer aligned in both [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}. If we classify work and rest days by the last digit of [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} written in Dec complement notation. @tbl-vinculeap below shows the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} of the last 10 days of a common year alongside the one-, two-, and three-digit complements of each [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}. In @tbl-vinculeap, numbers that are in the same row are equivalent, numbers that end in 0, 4, 5, or 9 represent Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} rest days and numbers that end in 1, 2, 3, 6, 7, or 8 represent Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} work days.
+
+::: {#tbl-vinculeap}
+|     |     |                 |                  |
+|-----|-----|-----------------|------------------|
+| 355 | -11 | [11]{.overline} | -2[9]{.overline} |
+| 356 | -10 | [10]{.overline} | -1[0]{.overline} |
+| 357 | -9  | [9]{.overline}  | -1[1]{.overline} |
+| 358 | -8  | [8]{.overline}  | -1[2]{.overline} |
+| 359 | -7  | [7]{.overline}  | -1[3]{.overline} |
+| 360 | -6  | [6]{.overline}  | -1[4]{.overline} |
+| 361 | -5  | [5]{.overline}  | -1[5]{.overline} |
+| 362 | -4  | [4]{.overline}  | -1[6]{.overline} |
+| 363 | -3  | [3]{.overline}  | -1[7]{.overline} |
+| 364 | -2  | [2]{.overline}  | -1[8]{.overline} |
+| 365 | -1  | [1]{.overline}  | -1[9]{.overline} |
 :::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 We can refer to the last day of a common year as [d]{.tool data-bs-toggle="tooltip" data-bs-title="day"}364 or Day -1 (d[1]{.overline}): 364 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 365 = -1 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 365. Similarly, the last day of a leap year can be referred to as d365 or d[1]{.overline}: 365 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 366 = -1 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 366.  Another way to write d[1]{.overline} is Day -1[9]{.overline}: -1 = -(10 -- 9). This alternative form, which is called the decacomplement, can be read as Xún -1 (x[1]{.overline}) [Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 9.
