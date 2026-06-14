@@ -253,7 +253,7 @@ flowchart LR
 ```
 :::
 
-The order of [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} in @fig-one is different than all of the previous diagrams but all of the diagrams above show Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} because the categorization of [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} as work or rest days remains unchanged. If we left [rotate](https://en.wikipedia.org/wiki/Circular_shift#:~:text=moving%20the%20final%20entry%20to%20the%20first%20position%2C%20while%20shifting%20all%20other%20entries%20to%20the%20next%20position%2C%20or%20by%20performing%20the%20inverse%20operation) (↺) the dox categories of Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} by 1 day, we get the Schedule [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"} Dec schedule: [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} ↺ 1 = [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"}. Schedule [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"} groups rest days at the end of each [p]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday"}.
+The order of [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} in @fig-one is different than all of the previous diagrams but all of the diagrams above show Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} because the categorization of [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} as work or rest days remains unchanged. If we left [rotate](https://en.wikipedia.org/wiki/Circular_shift#:~:text=moving%20the%20final%20entry%20to%20the%20first%20position%2C%20while%20shifting%20all%20other%20entries%20to%20the%20next%20position%2C%20or%20by%20performing%20the%20inverse%20operation) (↺) the [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} categories of Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} by 1 day, we get the Schedule [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"} Dec schedule: [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} ↺ 1 = [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"}. Schedule [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"} groups rest days at the end of each [p]{.tool data-bs-toggle="tooltip" data-bs-title="pentaday"}.
 
 ::: {.centered}
 ### Schedule [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"} ([Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 0 to 9) {.diagtitle}
@@ -327,10 +327,10 @@ flowchart LR
 ```
 :::
 
-In common years, we can classify work and rest days by the last digit of [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} written in Dec mix[ed]{.overline} complement notation. @tbl-vincommon below shows the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} of the last 11 days of a common year alongside the [pure]{.overline} and mix[ed]{.overline} complement forms of each [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}. The line above the [pure]{.overline} and mix[ed]{.overline} complement forms is called a vinculum.
+In common years, we can classify work and rest days by the last digit of [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} written in Dec mixe[d]{.overline} complement notation. @tbl-vincommon below shows the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} of the last 11 days of a common year alongside the [pure]{.overline} and mixe[d]{.overline} complement forms of each [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}. The line above the [pure]{.overline} and mixe[d]{.overline} complement forms is called a vinculum.
 
 ::: {#tbl-vincommon}
-| pid | nid | [pure]{.overline} | mix[ed]{.overline} |
+| pid | nid | [pure]{.overline} | mi[d]{.overline} |
 |-----|-----|-------------------|--------------------|
 | 354 | -11 | [11]{.overline}   | -2[9]{.overline}   |
 | 355 | -10 | [10]{.overline}   | -1[0]{.overline}   |
@@ -345,7 +345,24 @@ In common years, we can classify work and rest days by the last digit of [nid]{.
 | 364 | -1  | [1]{.overline}    | -1[9]{.overline}   |
 :::
 
- Regardless of whether we follow Schedule [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"}, [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}, or [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"}, 
+"mixed integer doy" ([mi[d]{.overline}]{})
+
+[dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"}
+
+[do[x]{.overline}]{.tool data-bs-toggle="tooltip" data-bs-title="days of negative xún"}
+
+Just like the last digit of a pid is a dox, the last digit of a mixe[d]{.overline} 
+We can obtain the last digit of a number by keeping the remainder after dividing by ten as in @eq-dox: [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} = [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 10. To can convert between the last digits of the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and mixe[d]{.overline} columns of @tbl-vincommon above, we add 5 and then keep the remainder after dividing by ten: [dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} = (mixe[d]{.overline} [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 10 + 5) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 10, because the last digits are  This approach only works 
+
+in the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and mixe[d]{.overline} columns 
+
+$$\operatorname{sign}(n) = \begin{cases} -1 & n<0,\\ 0 & n=0,\\ 1 & n>0. \end{cases}$$
+
+$$\text{mixe}\overline{\text{d}} = \text{nid} + 2(\text{nid} \bmod 10)\operatorname{sign}(\text{nid})$$
+
+$$\text{nid} = \operatorname{sign}(\text{mixe}\overline{\text{d}}) \left(10\left\lfloor\frac{|\text{mixe}\overline{\text{d}}|}{10}\right\rfloor - (|\text{mixe}\overline{\text{d}}| \bmod 10) \right)$$
+
+Regardless of whether we follow Schedule [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"}, [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"}, or [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"}, 
 
 In contrast to @tbl-vincommon above, @tbl-vinculeap below displays the last 11 days of a leap year. In the last column of @tbl-vinculeap, Schedule [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"} looks like Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} and Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} resembles Schedule [X]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal X is decimal 28 or binary 11100"}.
 
@@ -361,21 +378,39 @@ In the first and last columns of @tbl-vincommon, numbers that end in 0, [0]{.ove
 If we follow Schedule [F]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal F is decimal 7 or binary 00111"}, Even though complement notation is [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} that end in 0, 1, 5, or 6 represent Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} rest days and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} that end in 2, 3, 4, 7, 8, or 9 represent Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} work days, which is a pattern that resembles . In leap years, Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} work days are no longer aligned in both [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}. If we classify work and rest days by the last digit of [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} written in Dec complement notation. @tbl-vinculeap below shows the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} of the last 10 days of a common year alongside the one-, two-, and three-digit complements of each [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}. In @tbl-vinculeap, numbers that are in the same row are equivalent, numbers that end in 0, 4, 5, or 9 represent Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} rest days and numbers that end in 1, 2, 3, 6, 7, or 8 represent Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} work days.
 
 ::: {#tbl-vinculeap}
-|     |     |                 |                  |
-|-----|-----|-----------------|------------------|
-| 355 | -11 | [11]{.overline} | -2[9]{.overline} |
-| 356 | -10 | [10]{.overline} | -1[0]{.overline} |
-| 357 | -9  | [9]{.overline}  | -1[1]{.overline} |
-| 358 | -8  | [8]{.overline}  | -1[2]{.overline} |
-| 359 | -7  | [7]{.overline}  | -1[3]{.overline} |
-| 360 | -6  | [6]{.overline}  | -1[4]{.overline} |
-| 361 | -5  | [5]{.overline}  | -1[5]{.overline} |
-| 362 | -4  | [4]{.overline}  | -1[6]{.overline} |
-| 363 | -3  | [3]{.overline}  | -1[7]{.overline} |
-| 364 | -2  | [2]{.overline}  | -1[8]{.overline} |
-| 365 | -1  | [1]{.overline}  | -1[9]{.overline} |
+| pid | nid | [pure]{.overline} | mi[d]{.overline} |
+|-----|-----|-------------------|------------------|
+| 355 | -11 | [11]{.overline}   | -2[9]{.overline} |
+| 356 | -10 | [10]{.overline}   | -1[0]{.overline} |
+| 357 | -9  | [9]{.overline}    | -1[1]{.overline} |
+| 358 | -8  | [8]{.overline}    | -1[2]{.overline} |
+| 359 | -7  | [7]{.overline}    | -1[3]{.overline} |
+| 360 | -6  | [6]{.overline}    | -1[4]{.overline} |
+| 361 | -5  | [5]{.overline}    | -1[5]{.overline} |
+| 362 | -4  | [4]{.overline}    | -1[6]{.overline} |
+| 363 | -3  | [3]{.overline}    | -1[7]{.overline} |
+| 364 | -2  | [2]{.overline}    | -1[8]{.overline} |
+| 365 | -1  | [1]{.overline}    | -1[9]{.overline} |
 :::
 
+
+In a leap year, write the final days in a way that matches a common year. The -1 identifies that the doy belongs to a leap year and makes the Dec schedule classification of work and rest days match for dox and do[x]{.overline}.
+
+::: {#tbl-vinculeapminusone}
+| pid | nid-1 | [pure]{.overline}-1 | mi[d]{.overline}-1 |
+|-----|-------|---------------------|--------------------|
+| 355 | -10-1 | [10]{.overline}-1   | -1[0]{.overline}-1 |
+| 356 | -9-1  | [9]{.overline}-1    | -1[1]{.overline}-1 |
+| 357 | -8-1  | [8]{.overline}-1    | -1[2]{.overline}-1 |
+| 358 | -7-1  | [7]{.overline}-1    | -1[3]{.overline}-1 |
+| 359 | -6-1  | [6]{.overline}-1    | -1[4]{.overline}-1 |
+| 360 | -5-1  | [5]{.overline}-1    | -1[5]{.overline}-1 |
+| 361 | -4-1  | [4]{.overline}-1    | -1[6]{.overline}-1 |
+| 362 | -3-1  | [3]{.overline}-1    | -1[7]{.overline}-1 |
+| 363 | -2-1  | [2]{.overline}-1    | -1[8]{.overline}-1 |
+| 364 | -1-1  | [1]{.overline}-1    | -1[9]{.overline}-1 |
+| 365 |  0-1  | [0]{.overline}-1    |   [0]{.overline}-1 |
+:::
 
 We can refer to the last day of a common year as [d]{.tool data-bs-toggle="tooltip" data-bs-title="day"}364 or Day -1 (d[1]{.overline}): 364 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 365 = -1 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 365. Similarly, the last day of a leap year can be referred to as d365 or d[1]{.overline}: 365 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 366 = -1 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 366.  Another way to write d[1]{.overline} is Day -1[9]{.overline}: -1 = -(10 -- 9). This alternative form, which is called the decacomplement, can be read as Xún -1 (x[1]{.overline}) [Dox]{.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} 9.
 
