@@ -327,7 +327,7 @@ flowchart LR
 ```
 :::
 
-In common years, we can classify work and rest days by the last digit of a "[mixed integer]{.overline} [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}" ([[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"}), which is a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} with a mix of positive and negative digits. @tbl-vincommon below shows the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"}, [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}, [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}, and [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"}, of the first and last 11 days of a common year. The horizontal line above the digits in the [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} column and all but the last digit in the [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} column is called a [vinculum](https://en.wikipedia.org/wiki/Vinculum_(symbol)#:~:text=a%20horizontal%20line%20used%20in%20mathematical%20notation%20for%20various%20purposes).
+In common years, we can classify work and rest days by the last digit of a "[mixed integer]{.overline} [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}" ([[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"}), which is a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} with a mix of positive and negative digits. @tbl-vincommon below shows the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"}, [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}, [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}, and [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} of the first and last 11 days of a common year. The horizontal line above the digits in the [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} column and all but the last digit in the [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} column is called a [vinculum](https://en.wikipedia.org/wiki/Vinculum_(symbol)#:~:text=a%20horizontal%20line%20used%20in%20mathematical%20notation%20for%20various%20purposes).
 
 In Dec, a vinculum negates whatever is beneath it. Negating all of the digits of an integer flips its [sign](https://en.wikipedia.org/wiki/Sign_(mathematics)#:~:text=property%20of%20being%20either%20positive%2C%20negative%2C%20or%200). As demostrated by the [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} and [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} columns of @tbl-vincommon, removing the [minus sign](https://en.wikipedia.org/wiki/Plus_and_minus_signs#Minus_sign:~:text=When%20it%20is%20placed%20immediately%20before%20an%20unsigned%20number%2C%20the%20combination%20names%20a%20negative%20number%2C%20the%20additive%20inverse%20of%20the%20positive%20number%20that%20the%20numeral%20would%20otherwise%20name) of a negative integer and putting a vinculum over all of its digits does not change its value. Using a vinculum, we can write Day -1, the last day of the Decalendar year, as [d]{.tool data-bs-toggle="tooltip" data-bs-title="day"}[1]{.overline}, [d]{.tool data-bs-toggle="tooltip" data-bs-title="day"}[1]{.overline}9, or [d]{.tool data-bs-toggle="tooltip" data-bs-title="day"}[1]{.overline}99.
 
@@ -381,59 +381,165 @@ In Dec, a vinculum negates whatever is beneath it. Negating all of the digits of
 :::::
 
 
-The  [correlation](https://en.wikipedia.org/wiki/Correlation#:~:text=the%20extent%20to%20which%20a%20pair%20of%20quantities%20are%20linearly%20related) between a digit and the [absolute value](https://en.wikipedia.org/wiki/Absolute_value#:~:text=measured%20without%20regard%20to%20its%20sign) ([magnitude](https://en.wikipedia.org/wiki/Magnitude_(mathematics)#:~:text=The%20magnitude%20of,its%20absolute%20value)) of its mixed integer is positive for positive digits and negative for negative digits. Each negative digit in the [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} column of @tbl-vincommon pulls the magnitude of its [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} towards one, meanwhile each positive digit in that column moves the magnitude of its [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} in the opposite direction along the [number line](https://en.wikipedia.org/wiki/Number_line#:~:text=spatial%20representation%20of%20numbers).
+The [correlation](https://en.wikipedia.org/wiki/Correlation#:~:text=the%20extent%20to%20which%20a%20pair%20of%20quantities%20are%20linearly%20related) between a digit and the [absolute value](https://en.wikipedia.org/wiki/Absolute_value#:~:text=measured%20without%20regard%20to%20its%20sign) ([magnitude](https://en.wikipedia.org/wiki/Magnitude_(mathematics)#:~:text=The%20magnitude%20of,its%20absolute%20value)) of its mixed integer is positive for positive digits and negative for negative digits. Each negative digit in the [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} column of @tbl-vincommon pulls the magnitude of its [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} towards one, meanwhile each positive digit in that column moves the magnitude of its [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} in the opposite direction along the [number line](https://en.wikipedia.org/wiki/Number_line#:~:text=spatial%20representation%20of%20numbers).
+
+The last digits of [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer days of year"} are misaligned by 4 days in leap years and by 5 days in common years. To maintain a consistent 5-day misalignment, Dec uses [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} in common years and [[mi]{.overline}[d]{.grave}]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} in leap years. To get the [[mi]{.overline}[d]{.grave}]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"}, we add one to the [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} and then add a grave accent above the last digit: [[mi]{.overline}[d]{.grave}]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} = [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} + 1. @tbl-vinculeap below shows the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"}, [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}, [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"}, and [[mi]{.overline}[d]{.grave}]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} of the first and last 11 days of a common year.
 
 ::::: {#tbl-vinculeap}
 
 ::: {.d-block .d-xl-none}
 | [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} | | | [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | | | [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} |
-|-----|-|-|------|-|-|------------------|------------------|
-| 0   | | | -366 | | | [366]{.overline} | [37]{.overline}4 |
-| 1   | | | -365 | | | [365]{.overline} | [37]{.overline}5 |
-| 2   | | | -364 | | | [364]{.overline} | [37]{.overline}6 |
-| 3   | | | -363 | | | [363]{.overline} | [37]{.overline}7 |
-| 4   | | | -362 | | | [362]{.overline} | [37]{.overline}8 |
-| 5   | | | -361 | | | [361]{.overline} | [36]{.overline}9 |
-| 6   | | | -360 | | | [360]{.overline} | [36]{.overline}0 |
-| 7   | | | -359 | | | [359]{.overline} | [36]{.overline}1 |
-| 8   | | | -358 | | | [358]{.overline} | [36]{.overline}2 |
-| 9   | | | -357 | | | [357]{.overline} | [36]{.overline}3 |
-| 10  | | | -356 | | | [356]{.overline} | [36]{.overline}4 |
-| ... | | | ...  | | | ...              | ...              |
-| 354 | | | -11  | | | [11]{.overline}  | [2]{.overline}9  |
-| 355 | | | -10  | | | [10]{.overline}  | [1]{.overline}0  |
-| 356 | | | -9   | | | [9]{.overline}   | [1]{.overline}1  |
-| 357 | | | -8   | | | [8]{.overline}   | [1]{.overline}2  |
-| 358 | | | -7   | | | [7]{.overline}   | [1]{.overline}3  |
-| 359 | | | -6   | | | [6]{.overline}   | [1]{.overline}4  |
-| 360 | | | -5   | | | [5]{.overline}   | [1]{.overline}5  |
-| 361 | | | -4   | | | [4]{.overline}   | [1]{.overline}6  |
-| 362 | | | -3   | | | [3]{.overline}   | [1]{.overline}7  |
-| 363 | | | -2   | | | [2]{.overline}   | [1]{.overline}8  |
-| 364 | | | -1   | | | [1]{.overline}   | [1]{.overline}9  |
+|-----|-|-|------|-|-|------------------|----------------------------|
+| 0   | | | -366 | | | [366]{.overline} | [37]{.overline}[5]{.grave} |
+| 1   | | | -365 | | | [365]{.overline} | [37]{.overline}[6]{.grave} |
+| 2   | | | -364 | | | [364]{.overline} | [37]{.overline}[7]{.grave} |
+| 3   | | | -363 | | | [363]{.overline} | [37]{.overline}[8]{.grave} |
+| 4   | | | -362 | | | [362]{.overline} | [37]{.overline}[9]{.grave} |
+| 5   | | | -361 | | | [361]{.overline} | [36]{.overline}[0]{.grave} |
+| 6   | | | -360 | | | [360]{.overline} | [36]{.overline}[1]{.grave} |
+| 7   | | | -359 | | | [359]{.overline} | [36]{.overline}[2]{.grave} |
+| 8   | | | -358 | | | [358]{.overline} | [36]{.overline}[3]{.grave} |
+| 9   | | | -357 | | | [357]{.overline} | [36]{.overline}[4]{.grave} |
+| 10  | | | -356 | | | [356]{.overline} | [36]{.overline}[5]{.grave} |
+| ... | | | ...  | | | ...              | ...                        |
+| 355 | | | -11  | | | [11]{.overline}  | [1]{.overline}[0]{.grave}  |
+| 356 | | | -10  | | | [10]{.overline}  | [1]{.overline}[1]{.grave}  |
+| 357 | | | -9   | | | [9]{.overline}   | [1]{.overline}[2]{.grave}  |
+| 358 | | | -8   | | | [8]{.overline}   | [1]{.overline}[3]{.grave}  |
+| 359 | | | -7   | | | [7]{.overline}   | [1]{.overline}[4]{.grave}  |
+| 360 | | | -6   | | | [6]{.overline}   | [1]{.overline}[5]{.grave}  |
+| 361 | | | -5   | | | [5]{.overline}   | [1]{.overline}[6]{.grave}  |
+| 362 | | | -4   | | | [4]{.overline}   | [1]{.overline}[7]{.grave}  |
+| 363 | | | -3   | | | [3]{.overline}   | [1]{.overline}[8]{.grave}  |
+| 364 | | | -2   | | | [2]{.overline}   | [1]{.overline}[9]{.grave}  |
+| 365 | | | -1   | | | [1]{.overline}   | [0]{.overline}[0]{.grave}  |
 :::
 
 ::: {.d-none .d-xl-block}
 | [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} | | [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | | [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} | | | | | | | | | | [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} | | [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | | [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} |
-|----|-|------|-|------------------|------------------|-|-|-|-|-|-|-|-|-|-----|-|-----|-|-----------------|------------------|
-| 0  | | -366 | | [366]{.overline} | [37]{.overline}4 | | | | | | | | | | 354 | | -11 | | [11]{.overline} | [2]{.overline}9  |
-| 1  | | -364 | | [365]{.overline} | [37]{.overline}5 | | | | | | | | | | 355 | | -10 | | [10]{.overline} | [1]{.overline}0  |
-| 2  | | -363 | | [364]{.overline} | [37]{.overline}6 | | | | | | | | | | 356 | | -9  | | [9]{.overline}  | [1]{.overline}1  |
-| 3  | | -362 | | [363]{.overline} | [37]{.overline}7 | | | | | | | | | | 357 | | -8  | | [8]{.overline}  | [1]{.overline}2  |
-| 4  | | -361 | | [362]{.overline} | [37]{.overline}8 | | | | | | | | | | 358 | | -7  | | [7]{.overline}  | [1]{.overline}3  |
-| 5  | | -360 | | [361]{.overline} | [36]{.overline}9 | | | | | | | | | | 359 | | -6  | | [6]{.overline}  | [1]{.overline}4  |
-| 6  | | -359 | | [360]{.overline} | [36]{.overline}0 | | | | | | | | | | 360 | | -5  | | [5]{.overline}  | [1]{.overline}5  |
-| 7  | | -358 | | [359]{.overline} | [36]{.overline}1 | | | | | | | | | | 361 | | -4  | | [4]{.overline}  | [1]{.overline}6  |
-| 8  | | -357 | | [358]{.overline} | [36]{.overline}2 | | | | | | | | | | 362 | | -3  | | [3]{.overline}  | [1]{.overline}7  |
-| 9  | | -356 | | [357]{.overline} | [36]{.overline}3 | | | | | | | | | | 363 | | -2  | | [2]{.overline}  | [1]{.overline}8  |
-| 10 | | -355 | | [356]{.overline} | [36]{.overline}4 | | | | | | | | | | 364 | | -1  | | [1]{.overline}  | [1]{.overline}9  |
+|----|-|------|-|------------------|----------------------------|-|-|-|-|-|-|-|-|-|-----|-|-----|-|-----------------|----------------------------|
+| 0  | | -366 | | [366]{.overline} | [37]{.overline}[5]{.grave} | | | | | | | | | | 354 | | -11 | | [11]{.overline} | [1]{.overline}[0]{.grave}  |
+| 1  | | -365 | | [365]{.overline} | [37]{.overline}[6]{.grave} | | | | | | | | | | 355 | | -10 | | [10]{.overline} | [1]{.overline}[1]{.grave}  |
+| 2  | | -364 | | [364]{.overline} | [37]{.overline}[7]{.grave} | | | | | | | | | | 356 | | -9  | | [9]{.overline}  | [1]{.overline}[2]{.grave}  |
+| 3  | | -363 | | [363]{.overline} | [37]{.overline}[8]{.grave} | | | | | | | | | | 357 | | -8  | | [8]{.overline}  | [1]{.overline}[3]{.grave}  |
+| 4  | | -362 | | [362]{.overline} | [37]{.overline}[9]{.grave} | | | | | | | | | | 358 | | -7  | | [7]{.overline}  | [1]{.overline}[4]{.grave}  |
+| 5  | | -361 | | [361]{.overline} | [36]{.overline}[0]{.grave} | | | | | | | | | | 359 | | -6  | | [6]{.overline}  | [1]{.overline}[5]{.grave}  |
+| 6  | | -360 | | [360]{.overline} | [36]{.overline}[1]{.grave} | | | | | | | | | | 360 | | -5  | | [5]{.overline}  | [1]{.overline}[6]{.grave}  |
+| 7  | | -359 | | [359]{.overline} | [36]{.overline}[2]{.grave} | | | | | | | | | | 361 | | -4  | | [4]{.overline}  | [1]{.overline}[7]{.grave}  |
+| 8  | | -358 | | [358]{.overline} | [36]{.overline}[3]{.grave} | | | | | | | | | | 362 | | -3  | | [3]{.overline}  | [1]{.overline}[8]{.grave}  |
+| 9  | | -357 | | [357]{.overline} | [36]{.overline}[4]{.grave} | | | | | | | | | | 363 | | -2  | | [2]{.overline}  | [1]{.overline}[9]{.grave}  |
+| 10 | | -356 | | [356]{.overline} | [36]{.overline}[5]{.grave} | | | | | | | | | | 364 | | -1  | | [1]{.overline}  | [0]{.overline}[0]{.grave}  |
 
 :::
 
 :::::
 
-The range for [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} in a common year is [37]{.overline}5 to [1]{.overline}9. In a leap year, Negative and positive digits in a mixed integer cannot fully cancel
+The Schedule [L]{.tool data-bs-toggle="tooltip" data-bs-title="duotrigesimal L is decimal 14 or binary 01110"} rule for categorization of work and rest days can be summarized as [[[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} mod 5 ∈ {1,2,3}] in common years, [[[mi]{.overline}[d]{.grave}]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} mod 5 ∈ {1,2,3}] in leap years, or [[pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} mod 5 ∈ {1,2,3}] in all years. 
 
+
+::::: {#tbl-novinculeap}
+
+::: {.d-block .d-xl-none}
+| [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} | | | [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | | | [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} |
+|-----|-|-|----------------------|-|-|------------------|----------------------------|
+| 0   | | | -36[4]{.doubleacute} | | | [366]{.overline} | [37]{.overline}[5]{.grave} |
+| 1   | | | -36[3]{.doubleacute} | | | [365]{.overline} | [37]{.overline}[6]{.grave} |
+| 2   | | | -36[2]{.doubleacute} | | | [364]{.overline} | [37]{.overline}[7]{.grave} |
+| 3   | | | -36[1]{.doubleacute} | | | [363]{.overline} | [37]{.overline}[8]{.grave} |
+| 4   | | | -36[0]{.doubleacute} | | | [362]{.overline} | [37]{.overline}[9]{.grave} |
+| 5   | | | -36[9]{.doubleacute} | | | [361]{.overline} | [36]{.overline}[0]{.grave} |
+| 6   | | | -35[8]{.doubleacute} | | | [360]{.overline} | [36]{.overline}[1]{.grave} |
+| 7   | | | -35[7]{.doubleacute} | | | [359]{.overline} | [36]{.overline}[2]{.grave} |
+| 8   | | | -35[6]{.doubleacute} | | | [358]{.overline} | [36]{.overline}[3]{.grave} |
+| 9   | | | -35[5]{.doubleacute} | | | [357]{.overline} | [36]{.overline}[4]{.grave} |
+| 10  | | | -35[4]{.doubleacute} | | | [356]{.overline} | [36]{.overline}[5]{.grave} |
+| ... | | | ...                  | | | ...              | ...                        |
+| 355 | | | -[9]{.doubleacute}   | | | [11]{.overline}  | [1]{.overline}[0]{.grave}  |
+| 356 | | | -[8]{.doubleacute}   | | | [10]{.overline}  | [1]{.overline}[1]{.grave}  |
+| 357 | | | -[7]{.doubleacute}   | | | [9]{.overline}   | [1]{.overline}[2]{.grave}  |
+| 358 | | | -[6]{.doubleacute}   | | | [8]{.overline}   | [1]{.overline}[3]{.grave}  |
+| 359 | | | -[5]{.doubleacute}   | | | [7]{.overline}   | [1]{.overline}[4]{.grave}  |
+| 360 | | | -[4]{.doubleacute}   | | | [6]{.overline}   | [1]{.overline}[5]{.grave}  |
+| 361 | | | -[3]{.doubleacute}   | | | [5]{.overline}   | [1]{.overline}[6]{.grave}  |
+| 362 | | | -[2]{.doubleacute}   | | | [4]{.overline}   | [1]{.overline}[7]{.grave}  |
+| 363 | | | -[1]{.doubleacute}   | | | [3]{.overline}   | [1]{.overline}[8]{.grave}  |
+| 364 | | | -[0]{.doubleacute}   | | | [2]{.overline}   | [1]{.overline}[9]{.grave}  |
+| 365 | | | -[0]{.acute}         | | | [1]{.overline}   | [0]{.overline}[0]{.grave}  |
+:::
+
+::: {.d-none .d-xl-block}
+| [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} | | [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | | [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} | | | | | | | | | | [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} | | [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | | [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} |
+|----|-|------|-|----------------------|----------------------------|-|-|-|-|-|-|-|-|-|-----|-|-----|-|--------------------|----------------------------|
+| 0  | | -366 | | -36[4]{.doubleacute} | [37]{.overline}[5]{.grave} | | | | | | | | | | 354 | | -11 | | -[9]{.doubleacute} | [1]{.overline}[0]{.grave}  |
+| 1  | | -365 | | -36[3]{.doubleacute} | [37]{.overline}[6]{.grave} | | | | | | | | | | 355 | | -10 | | -[8]{.doubleacute} | [1]{.overline}[1]{.grave}  |
+| 2  | | -364 | | -36[2]{.doubleacute} | [37]{.overline}[7]{.grave} | | | | | | | | | | 356 | | -9  | | -[7]{.doubleacute} | [1]{.overline}[2]{.grave}  |
+| 3  | | -363 | | -36[1]{.doubleacute} | [37]{.overline}[8]{.grave} | | | | | | | | | | 357 | | -8  | | -[6]{.doubleacute} | [1]{.overline}[3]{.grave}  |
+| 4  | | -362 | | -36[0]{.doubleacute} | [37]{.overline}[9]{.grave} | | | | | | | | | | 358 | | -7  | | -[5]{.doubleacute} | [1]{.overline}[4]{.grave}  |
+| 5  | | -361 | | -36[9]{.doubleacute} | [36]{.overline}[0]{.grave} | | | | | | | | | | 359 | | -6  | | -[4]{.doubleacute} | [1]{.overline}[5]{.grave}  |
+| 6  | | -360 | | -35[8]{.doubleacute} | [36]{.overline}[1]{.grave} | | | | | | | | | | 360 | | -5  | | -[3]{.doubleacute} | [1]{.overline}[6]{.grave}  |
+| 7  | | -359 | | -35[7]{.doubleacute} | [36]{.overline}[2]{.grave} | | | | | | | | | | 361 | | -4  | | -[2]{.doubleacute} | [1]{.overline}[7]{.grave}  |
+| 8  | | -358 | | -35[6]{.doubleacute} | [36]{.overline}[3]{.grave} | | | | | | | | | | 362 | | -3  | | -[1]{.doubleacute} | [1]{.overline}[8]{.grave}  |
+| 9  | | -357 | | -35[5]{.doubleacute} | [36]{.overline}[4]{.grave} | | | | | | | | | | 363 | | -2  | | -[0]{.doubleacute} | [1]{.overline}[9]{.grave}  |
+| 10 | | -356 | | -35[4]{.doubleacute} | [36]{.overline}[5]{.grave} | | | | | | | | | | 364 | | -1  | | -[0]{.acute}       | [0]{.overline}[0]{.grave}  |
+
+:::
+
+:::::
+
+
+::::: {#tbl-novincommon}
+
+::: {.d-block .d-xl-none}
+| [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} | | | [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | | | [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} |
+|-----|-|-|------|-|-|------------------|------------------|
+| 0   | | | -36[4]{.acute} | | | [365]{.overline} | [37]{.overline}5 |
+| 1   | | | -36[3]{.acute} | | | [364]{.overline} | [37]{.overline}6 |
+| 2   | | | -36[2]{.acute} | | | [363]{.overline} | [37]{.overline}7 |
+| 3   | | | -36[1]{.acute} | | | [362]{.overline} | [37]{.overline}8 |
+| 4   | | | -36[0]{.acute} | | | [361]{.overline} | [37]{.overline}9 |
+| 5   | | | -35[9]{.acute} | | | [360]{.overline} | [36]{.overline}0 |
+| 6   | | | -35[8]{.acute} | | | [359]{.overline} | [36]{.overline}1 |
+| 7   | | | -35[7]{.acute} | | | [358]{.overline} | [36]{.overline}2 |
+| 8   | | | -35[6]{.acute} | | | [357]{.overline} | [36]{.overline}3 |
+| 9   | | | -35[5]{.acute} | | | [356]{.overline} | [36]{.overline}4 |
+| 10  | | | -35[4]{.acute} | | | [355]{.overline} | [36]{.overline}5 |
+| ... | | | ...  | | | ...              | ...              |
+| 354 | | | -1[0]{.acute}  | | | [11]{.overline}  | [2]{.overline}9  |
+| 355 | | | -[9]{.acute}   | | | [10]{.overline}  | [1]{.overline}0  |
+| 356 | | | -[8]{.acute}   | | | [9]{.overline}   | [1]{.overline}1  |
+| 357 | | | -[7]{.acute}   | | | [8]{.overline}   | [1]{.overline}2  |
+| 358 | | | -[6]{.acute}   | | | [7]{.overline}   | [1]{.overline}3  |
+| 359 | | | -[5]{.acute}   | | | [6]{.overline}   | [1]{.overline}4  |
+| 360 | | | -[4]{.acute}   | | | [5]{.overline}   | [1]{.overline}5  |
+| 361 | | | -[3]{.acute}   | | | [4]{.overline}   | [1]{.overline}6  |
+| 362 | | | -[2]{.acute}   | | | [3]{.overline}   | [1]{.overline}7  |
+| 363 | | | -[1]{.acute}   | | | [2]{.overline}   | [1]{.overline}8  |
+| 364 | | | -[0]{.acute}   | | | [1]{.overline}   | [1]{.overline}9  |
+:::
+
+::: {.d-none .d-xl-block}
+| [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} | | [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | | [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} | | | | | | | | | | [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} | | [nid]{.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | | [nid]{.overline .tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} |
+|----|-|------|-|------------------|------------------|-|-|-|-|-|-|-|-|-|-----|-|-----|-|-----------------|------------------|
+| 0  | | -365 | | -36[4]{.acute}   | [37]{.overline}5 | | | | | | | | | | 354 | | -1[0]{.acute} | | [11]{.overline} | [2]{.overline}9  |
+| 1  | | -364 | | -36[3]{.acute}   | [37]{.overline}6 | | | | | | | | | | 355 | | -[9]{.acute}  | | [10]{.overline} | [1]{.overline}0  |
+| 2  | | -363 | | -36[2]{.acute}   | [37]{.overline}7 | | | | | | | | | | 356 | | -[8]{.acute}  | | [9]{.overline}  | [1]{.overline}1  |
+| 3  | | -362 | | -36[1]{.acute}   | [37]{.overline}8 | | | | | | | | | | 357 | | -[7]{.acute}  | | [8]{.overline}  | [1]{.overline}2  |
+| 4  | | -361 | | -36[0]{.acute}   | [37]{.overline}9 | | | | | | | | | | 358 | | -[6]{.acute}  | | [7]{.overline}  | [1]{.overline}3  |
+| 5  | | -360 | | -35[9]{.acute}   | [36]{.overline}0 | | | | | | | | | | 359 | | -[5]{.acute}  | | [6]{.overline}  | [1]{.overline}4  |
+| 6  | | -359 | | -35[8]{.acute}   | [36]{.overline}1 | | | | | | | | | | 360 | | -[4]{.acute}  | | [5]{.overline}  | [1]{.overline}5  |
+| 7  | | -358 | | -35[7]{.acute}   | [36]{.overline}2 | | | | | | | | | | 361 | | -[3]{.acute}  | | [4]{.overline}  | [1]{.overline}6  |
+| 8  | | -357 | | -35[6]{.acute}   | [36]{.overline}3 | | | | | | | | | | 362 | | -[2]{.acute}  | | [3]{.overline}  | [1]{.overline}7  |
+| 9  | | -356 | | -35[5]{.acute}   | [36]{.overline}4 | | | | | | | | | | 363 | | -[1]{.acute}  | | [2]{.overline}  | [1]{.overline}8  |
+| 10 | | -355 | | -35[4]{.acute}   | [36]{.overline}5 | | | | | | | | | | 364 | | -[0]{.acute}  | | [1]{.overline}  | [1]{.overline}9  |
+
+:::
+
+:::::
+
+We can apply the same work and rest day categorization rule to the last digit of a [[mi]{.overline}d]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} in a common year, a [[mi]{.overline}[d]{.grave}]{.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} in a leap year, or a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} in any year and always. and we can look at  in a common year is [37]{.overline}5 to [1]{.overline}9. In a leap year, Negative and positive digits in a mixed integer cannot fully cancel
+
+For any Dec schedule that designated by a single letter,
+work 
 [9]{.grave}
 
 9&#768;
