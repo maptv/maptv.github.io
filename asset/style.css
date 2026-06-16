@@ -302,7 +302,7 @@ div > form > label {
   text-decoration-thickness: .7px;
 }
 
-.overline {
+.overline, .grave {
   position: relative;
   display: inline-block;
 }
