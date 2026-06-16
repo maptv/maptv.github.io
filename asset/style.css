@@ -301,16 +301,57 @@ div > form > label {
   text-decoration-line: overline;
   text-decoration-thickness: .7px;
 }
-
-.overline, .grave {
+.overline, .grave, .acute, .doublegrave, .doubleacute {
   position: relative;
   display: inline-block;
 }
-
-#fig-xneg g.nodes span.nodeLabel p {
-  position: relative;
-  display: inline-block;
+.overline::before,
+.grave::before,
+.acute::before,
+.doublegrave::before,
+.doublegrave::after,
+.doubleacute::before,
+.doubleacute::after {
+  content: "";
+  position: absolute;
+  height: 1.5px;
+  width: 66%;
+  top: 6px;
 }
+.overline::before {
+  width: 100%;
+  left: 0;
+  transform: none;
+}
+.grave::before {
+  transform: rotate(0.16turn);
+  left: 1px;
+}
+
+.acute::before {
+  transform: rotate(-0.16turn);
+  left: 2px;
+}
+.doublegrave::before {
+  transform: rotate(0.16turn);
+  left: 0px;
+}
+
+.doublegrave::after {
+  transform: rotate(0.16turn);
+  left: 5px;
+}
+
+.doubleacute::before {
+  transform: rotate(-0.16turn);
+  left: 0px;
+}
+
+.doubleacute::after {
+  transform: rotate(-0.16turn);
+  left: 5px;
+}
+
 
 .hide {
   display: none;
