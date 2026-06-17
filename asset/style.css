@@ -325,26 +325,26 @@ div > form > label {
 }
 .grave::before {
   transform: rotate(0.16turn);
-  left: 1px;
+  left: 0px;
 }
 
 .acute::before {
   transform: rotate(-0.16turn);
-  left: 2px;
+  left: 3px;
 }
 .doublegrave::before {
   transform: rotate(0.16turn);
-  left: 0px;
+  left: -2px;
 }
 
 .doublegrave::after {
   transform: rotate(0.16turn);
-  left: 5px;
+  left: 2px;
 }
 
 .doubleacute::before {
   transform: rotate(-0.16turn);
-  left: 0px;
+  left: 1px;
 }
 
 .doubleacute::after {
