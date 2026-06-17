@@ -316,7 +316,7 @@ div > form > label {
   position: absolute;
   height: 1.5px;
   width: 66%;
-  top: 6px;
+  top: 5px;
 }
 .overline::before {
   width: 100%;
