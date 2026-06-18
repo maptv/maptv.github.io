@@ -1320,5 +1320,8 @@ div > form > label {
 .diagtitle {
   font-weight: 500;
 }
+.tool {
+  white-space: nowrap;
+}
 </style>
 ```
