@@ -1099,13 +1099,17 @@ h4.anchored {
 span.nodeLabel > p {
   text-align: center;
 }
-div.hand {
+div.hand > p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 15px 9px;
 }
-div.hand > svg {
-  margin: 5px 5px 20px 5px;
+#lefthand {
+  width: 254px;
+}
+#righthand {
+  width: 300px;
 }
 p:has(span.handlabel)  {
   margin: -20px 5px 5px 5px;
