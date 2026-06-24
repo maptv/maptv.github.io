@@ -210,6 +210,8 @@ function Scrubber(values, {
 loadUnix = Date.now();
 loadDote = unix2dote(loadUnix)
 loadDate = new Date()
+loadStr = loadDate.toUTCString().slice(0, 11)
+loadIso = loadDate.toISOString().slice(0, 10)
 loadYdz = dote2date(...loadDote)
 loadLeap = year2leap(loadYdz[0])
 vertic = width > 500

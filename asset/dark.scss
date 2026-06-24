@@ -428,3 +428,7 @@ div#fingerbinarysvg.hand a {
 .acute::before {
   background: white;
 }
+
+#fingerbinarygif {
+  filter: invert(100%);
+}
