@@ -415,10 +415,6 @@ div#decplot figure.calplot-figure svg.calplot g[font-variant="tabular-nums"] tex
   stroke: white;
 }
 
-div#fingerbinarysvg.hand a {
-  filter: invert(100%);
-}
-
 .overline::before,
 .grave::before,
 .doublegrave::before,
@@ -430,5 +426,9 @@ div#fingerbinarysvg.hand a {
 }
 
 #fingerbinarygif {
-  filter: invert(100%);
+  filter: invert(1);
+}
+
+.hand {
+  filter: invert(1);
 }
