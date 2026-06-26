@@ -701,42 +701,39 @@ A similar adjustment in needed when dealing with a UTC time zone that has a nega
 :::
 [[Wikimedia](https://commons.wikimedia.org/wiki/File:Typing-colour_for-finger-positions.svg)]{.handlabel}
 
-The adjusted [bom]{.tool data-bs-toggle="tooltip" data-bs-title="beginnings of month"} in the images above are exactly the same as the values in the rightmost column of the first table under the heading "[Computing day-of-year from month and day-of-month](https://howardhinnant.github.io/date_algorithms.html#Computing%20day-of-year%20from%20month%20and%20day-of-month)" in [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html) [@hinnant2021date]. Dec stores dates as a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} with or without a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and generates other values only if required.
+The adjusted [bom]{.tool data-bs-toggle="tooltip" data-bs-title="beginnings of month"} in the images above are exactly the same as the values in the rightmost column of the first table under the heading "[Computing day-of-year from month and day-of-month](https://howardhinnant.github.io/date_algorithms.html#Computing%20day-of-year%20from%20month%20and%20day-of-month)" in [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html) [@hinnant2021date]. The adjusted and unadjusted [bom]{.tool data-bs-toggle="tooltip" data-bs-title="beginnings of month"} can be generated using @eq-moy2bom whenever necessary.
 
-When provided with a month and [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, Dec converts the input to a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} and then discards the input along with the [bom]{.tool data-bs-toggle="tooltip" data-bs-title="beginnings of month"} that was created during the conversion. Whereas a month and [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} can be converted to or obtained from a [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"}, generating a [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} also requires a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}. The [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} are first converted into a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} and then a [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} as shown in @fig-conv below.
+Dec dates can also be explained in terms of [object oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming#:~:text=a%20programming%20paradigm%20based%20on%20objects). In this analogy, an [object](https://en.wikipedia.org/wiki/Object_(computer_science)#:~:text=a%20semantic%20entity%20that%20has%20state%2C%20behavior%2C%20and%20identity) is a blueprint for Dec dates and an [instance](https://en.wikipedia.org/wiki/Instance_(computer_science)#:~:text=a%20specific%20occurrence%20of%20a%20software%20element%20that%20is%20based%20on%20a%20type%20definition) represents a specific Dec date. When we create an instance, we can specify the date that it will represent by providing either a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} for it to store or a [cey]{.tool data-bs-toggle="tooltip" data-bs-title="common era year"}, month, and [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} for it to convert into a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"}.
+
+Regardless of the input, only a standardized [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} are stored as [instance attributes](https://en.wikipedia.org/wiki/Instance_variable#:~:text=each%20instantiated%20object%20of%20the%20class%20has%20a%20separate%20copy). Anything else has to be calculated from the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} by an instance [method](https://en.wikipedia.org/wiki/Method_(computer_programming)#:~:text=a%20procedure%20associated%20with%20an%20object). Therefore, our instance contains one method for every potential output that is not a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} or [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"}. For example, a method based on Equations -@eq-pid2moy, -@eq-moy2month, -@eq-moy2bom, and -@eq-dom could produce a month and [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}.
+
+@fig-conv below visualizes how an instance that represents the UNIX epoch would convert its [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} into a [cey]{.tool data-bs-toggle="tooltip" data-bs-title="common era year"}, month, [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}. For simplicity, @fig-conv omits the [coe]{.under .tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}, [yoc]{.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}, and [doc]{.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"} needed to convert a Dec date into a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}, the [moy]{.tool data-bs-toggle="tooltip" data-bs-title="months of year"} and [bom]{.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"} required to split a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} into a month and a [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and the negative UTC offset adjustment for [bom]{.tool data-bs-toggle="tooltip" data-bs-title="beginnings of month"} and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"}.
 
 ::: {#fig-conv}
 ```{mermaid}
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
 flowchart LR
-   L~~~Y
-   L-->Y
-   L-->D
+   L[  ]:::empty
+   B[  ]:::empty
+   A[  ]:::empty
+   L---Y
+   L---D
    L-->E
-   R-->Y
-   M---R[  ]:::empty
    D---A
-   D~~~B[  ]:::empty
+   D---B
    A-->G
-   G---R
-   Y~~~L[  ]:::empty
-   Y---A[  ]:::empty
-   Y~~~A
+   Y---A
    B-->M
-   B~~~N
    B-->N
-   B-->D
-   B~~~D
-   N~~~B
    E-->W
    subgraph decdate[Decalendar]
    Y[yoe<br>1969]
-   D[doy<br>306]
+   D[pid<br>306]
    E[doe<br>719468]
    end
    subgraph gregdate[Gregorian calendar]
    W[dow<br>4]
-   G[year<br>1970]
+   G[cey<br>1970]
    M[month<br>1]
    N[dom<br>1]
    end
@@ -751,10 +748,6 @@ flowchart LR
 ```
 :::
 
-@fig-conv above visualizes the conversion of the UNIX epoch Dec date [1969]{.color069}+[306]{.colord306} into the equivalent Gregorian calendar️ [cey]{.tool data-bs-toggle="tooltip" data-bs-title="common era year"}, month, [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}. To obtain its associated [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}, we first need to convert a Dec date into a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"}. Apart from calculating [dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"}, Dec uses [doe]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"} for date arithmetic like finding the number of days in between a minuend date and a subtrahend date.
-
-For simplicity, @fig-conv does not show conversion byproducts, such as the [coe]{.under .tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}, [yoc]{.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}, and [doc]{.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"} needed to convert between [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} and Dec dates or the [moy]{.tool data-bs-toggle="tooltip" data-bs-title="months of year"} required to either split a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} into a month and a [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} or combine a month and a [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"} into a [doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"}. The arrows in @fig-conv represent equations adapted from [[`chrono`]{.mono .under}-Compatible Low-Level Date Algorithms](https://howardhinnant.github.io/date_algorithms.html) -@hinnant2021date.
-
 # Request for comments (rfc) {#rfc}
 
 Dec renders the Gregorian calendar [obsolete](https://en.wikipedia.org/wiki/Obsolescence#:~:text=antiquated%2C%20out%20of%20date%2C%20old%2Dfashioned%2C%20no%20longer%20in%20general%20use%2C%20no%20longer%20useful%2C%20or%20superseded) with time units that supersede both months and weeks, but is also better than the Gregorian calendar at displaying a [dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"} as a part of a date. Whereas Dec can expand [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} into [bow]{.tool data-bs-toggle="tooltip" data-bs-title="beginnings of week"}+[dow]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"}, [\${dotw0doty}+\${dotw}]{.nowrap}, the only standardized way to combine a [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"}, [dom]{.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and month is to truncate an [RFC 7231](https://datatracker.ietf.org/doc/html/rfc7231#section-7.1.1.1:~:text=preferred%20format%20is-,Sun%2C%2006%20Nov,-1994%2008%3A49) date to 11 characters: \${loadStr}.
@@ -765,7 +758,7 @@ Instead of converting Dec dates, we can expand them to view the information we n
 
 # Next {.unnumbered #next}
 
-After reading this article, you should be able to understand the examples in my [filter](/quarto/filter), [include](/quarto/include), and [script](/quarto/script) articles, but you may want to start with my [Quarto article](/quarto). To see the full extent of the benefits that Dec provides, I recommend that you continue through the [Dec section](/dec) of my site to the [time](/dec/time, [snap](/dec/snap, and [span](/dec/span)🌈articles. Dec has a lot more to offer than just dates!
+After reading this article, you should be able to understand the examples in my [filter](/quarto/filter), [include](/quarto/include), and [script](/quarto/script) articles, but you may want to start with my [Quarto article](/quarto). To see the full extent of the benefits that Dec provides, I recommend that you continue through the [Dec section](/dec) of my site to the [time](/dec/time)⏳, [snap](/dec/snap)🫰, and [span](/dec/span)🌈articles. Dec has a lot more to offer than just dates!
 
 :::{.datenav #fig-btmdatenav}
 {{< include /asset/_decquanav.qmd >}}
