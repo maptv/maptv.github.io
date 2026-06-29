@@ -258,6 +258,7 @@ xmasDoy = 299 + nOffInput
 xmasPir = 298 + nOffInput * 3
 negOrPos = nOffInput ? "negative" : "positive"
 xmasDiff = decDoty - 299
+xmasNext = xmasDiff - daysInYear
 xmasDiffSign = xmasDiff < 0 ? "-" : "+"
 xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
 xmasDiffResult = xmasDiff < 0 ? "-" : ""
