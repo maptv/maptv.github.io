@@ -68,6 +68,47 @@ $$
 $$ {#eq-yoe2dyl}
 :::
 
+:::{.panel-tabset group="language"}
+### Julia
+
+```{julia}
+function leap(year = 2000)
+    year % 4 == 0 && year % 100 != 0 || year % 400 == 0
+end
+leap(1999)
+leap(1999+1)
+```
+
+### Observable JavaScript
+
+```{ojs}
+function leap(year = 2000) {
+  return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+}
+leap(1999)
+leap(1999+1)
+```
+
+### Python
+
+```{python}
+def leap(year=2000):
+    return year % 4 == 0 and year % 100 != 0 or year % 400 == 0
+leap(1999)
+leap(1999+1)
+```
+
+### R
+
+```{r}
+leap <- function(year = 2000) {
+  year %% 4 == 0 & year %% 100 != 0 | year %% 400 == 0
+}
+leap(1999)
+leap(1999+1)
+```
+
+:::
 
 Dec categorizes each date as a [countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event%20is%20scheduled%20to%20occur) or countup date, depending on whether the date counts **up** the days **since** Year [y]{.tool data-bs-toggle="tooltip" data-bs-title="year"} or counts **down** the days **until** Year [y]{.tool data-bs-toggle="tooltip" data-bs-title="year"}+1. The current year+day [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} date, [\${decYear}[+]{.mono}\${decDotyPad}]{.nowrap}, informs us that Year \${decYear} began \${decDoty} days ago, whereas its countdown equivalent, [\${nextYear}[-]{.mono}\${TminusPadded}]{.nowrap}, lets us know that Year \${nextYear} will begin in \${Tminus} days.
 
@@ -604,6 +645,70 @@ $$\text{doc} = \text{yoc} \ast 365 + \left\lfloor\frac{\text{yoc}}{4}\right\rflo
 
 $$\text{doe} = \text{coe} \ast 146097 + \text{doc}$$ {#eq-doe}
 
+:::{.panel-tabset group="language"}
+### Julia
+
+```{julia}
+function doe(year = 1969, doy = 306)
+    coe = fld(year, 400)
+    yoe = year - coe * 400
+    return coe * 146097 +
+           yoe * 365 +
+           fld(yoe, 4) -
+           fld(yoe, 100) +
+           doy
+end
+doe()
+```
+
+### Observable JavaScript
+
+```{ojs}
+function doe(year = 1969, doy = 306) {
+  const coe = Math.floor(year / 400),
+        yoe = year - coe * 400;
+  return coe * 146097 +
+    yoe * 365 +
+    Math.floor(yoe / 4) -
+    Math.floor(yoe / 100) +
+    doy
+}
+doe()
+```
+
+### Python
+
+```{python}
+def doe(year=1969, doy=306):
+    coe = year // 400
+    yoe = year - coe * 400
+    return (
+        coe * 146097
+        + yoe * 365
+        + yoe // 4
+        - yoe // 100
+        + doy
+    )
+doe()
+```
+
+### R
+
+```{r}
+doe <- function(year = 1969, doy = 306) {
+  coe <- year %/% 400
+  yoe <- year - coe * 400
+  coe * 146097 +
+    yoe * 365 +
+    yoe %/% 4 -
+    yoe %/% 100 +
+    doy
+}
+doe()
+```
+
+:::
+
 Equations -@eq-doe2coe, -@eq-doe2doc, -@eq-doe2yoc, -@eq-yoe, and -@eq-doe2pid below are based on [Howard Hinnant](https://howardhinnant.github.io)'s [`civil_from_days`](https://howardhinnant.github.io/date_algorithms.html#civil_from_days){.mono} algorithm and useful for obtaining Dec dates from [doe]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"}, [UNIX timestamps](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970), and [JDN]{.tool data-bs-toggle="tooltip" data-bs-title="Julian day numbers"} -@hinnant2021date. Regardless of whether we convert a [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} to a [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} or *vice versa*, along the way we calculate the "[cycle](https://en.wikipedia.org/wiki/Solar_cycle_(calendar)#:~:text=the%20Gregorian%20cycle%20of%20400%20years%20has%20exactly%20146%2C097%20days%2C%20i.e.%20exactly%2020%2C871%20weeks%2C%20one%20can%20say%20that%20the%20Gregorian%20so%2Dcalled%20solar%20cycle%20lasts%20400%20years) of era" ([coe]{.tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}), "year of cycle" ([yoc]{.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}), and "day of cycle" ([doc]{.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"}).
 
 $$\text{coe} = \left \lfloor \frac{\text{doe}-146096\ast[\text{doe} \geq 0]}{146097} \right \rfloor$$ {#eq-doe2coe}
@@ -615,6 +720,107 @@ $$\text{yoc} = \Biggl \lfloor \frac{\text{doc} - \left\lfloor \dfrac{\text{doc}}
 $$\text{yoe} = \text{yoc} + \text{coe} \ast 400$$ {#eq-yoe}
 
 $$\text{pid} = \text{doc} - \text{yoc} \ast 365 - \left \lfloor \frac{\text{yoc}}{4} \right \rfloor + \left \lfloor \frac{\text{yoc}}{100} \right \rfloor$$ {#eq-doe2pid}
+
+:::{.panel-tabset group="language"}
+### Julia
+
+```{julia}
+function date(doe = 719468)
+    coe = fld(doe, 146097)
+    doc = doe - coe * 146097
+    yoc = fld(
+        doc -
+        fld(doc, 1460) +
+        fld(doc, 36524) -
+        fld(doc, 146096),
+        365
+    )
+    return (
+        yoc + coe * 400,
+        doc - (
+            yoc * 365 +
+            fld(yoc, 4) -
+            fld(yoc, 100)
+        )
+    )
+end
+date()
+```
+
+### Observable JavaScript
+
+```{ojs}
+function date(doe = 719468) {
+  const coe = Math.floor(doe / 146097),
+    doc = doe - coe * 146097,
+    yoc = Math.floor(
+      (
+        doc
+        - Math.floor(doc / 1460)
+        + Math.floor(doc / 36524)
+        - Math.floor(doc / 146096)
+      ) / 365
+    );
+  return [
+    yoc + coe * 400,
+    doc - (
+      yoc * 365 +
+      Math.floor(yoc / 4) -
+      Math.floor(yoc / 100)
+    )
+  ];
+}
+date()
+```
+
+### Python
+
+```{python}
+def date(doe=719468):
+    coe = doe // 146097
+    doc = doe - coe * 146097
+    yoc = (
+        doc
+        - doc // 1460
+        + doc // 36524
+        - doc // 146096
+    ) // 365
+    return (
+        yoc + coe * 400,
+        doc - (
+            yoc * 365 +
+            yoc // 4 -
+            yoc // 100
+        )
+    )
+date()
+```
+
+### R
+
+```{r}
+date <- function(doe = 719468) {
+  coe <- doe %/% 146097
+  doc <- doe - coe * 146097
+  yoc <- (
+    doc -
+    doc %/% 1460 +
+    doc %/% 36524 -
+    doc %/% 146096
+  ) %/% 365
+  c(
+    yoc + coe * 400,
+    doc - (
+      yoc * 365 +
+      yoc %/% 4 -
+      yoc %/% 100
+    )
+  )
+}
+date()
+```
+
+:::
 
 Dates generated by Equations -@eq-doe2coe, -@eq-doe2doc, -@eq-doe2yoc, -@eq-yoe, and -@eq-doe2pid are guaranteed to be in the standard [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} format. Therefore, we can standardize Dec dates by converting them to [doe]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"} and then back to dates again. A [round-trip](https://en.wikipedia.org/wiki/Round-trip_format_conversion#:~:text=converting%20from%20any%20data%20representation%20and%20back%20again) "date to [doe]{.tool data-bs-toggle="tooltip" data-bs-title="day of era"} to date" conversion ensures that the [yoe]{.tool data-bs-toggle="tooltip" data-bs-title="year of era"} is an integer and the [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} is a positive integer less than the [dyl]{.tool data-bs-toggle="tooltip" data-bs-title="Decalendar year length"}: 0 &le; [pid]{.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} &lt; [dyl]{.tool data-bs-toggle="tooltip" data-bs-title="Decalendar year length"}. 
 
@@ -770,7 +976,7 @@ After reading this article, you should be able to understand my motivation for c
 {{< include /asset/_decquanav.qmd >}}
 :::
 
-In addition my Dec and Quarto articles, many other articles on my site discuss Dec. Notably, my [Jupyter](/jupyter) article compares the code underlying Dec in several programming languages, my [Reveal](/reveal) article features a presentation on Dec time measurement, and my [Observable](/observable) article describes how I demonstrate Dec in action with interactive and animated visualizations.
+In addition to the aforementioned articles, many other articles on my site discuss Dec. Notably, my [Jupyter](/jupyter) article compares the code underlying Dec in several programming languages, my [Reveal](/reveal) article features a presentation that introduces Dec, and my [Observable](/observable) article describes how I demonstrate Dec in action with interactive and animated visualizations.
 
 Thank you for your interest in Dec. You will find citation information for this article below. Please note that the original source of the algorithms underlying the conversion of Dec year+day dates and [doe]{.tool data-bs-toggle="tooltip" data-bs-title="days of era"} is [Hinnant, Howard](https://howardhinnant.github.io). [2021+185]{.tool data-bs-toggle="tooltip" data-bs-title="2021-09-01"}. "`chrono`-Compatible Low-Level Date Algorithms." \${decYear}+\${decDotyPad}. <https://howardhinnant.github.io/date_algorithms.html>.
 
