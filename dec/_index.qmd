@@ -2349,707 +2349,707 @@ html`
 .colorAs {
   background: hsl(${xetHue[0]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[0]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorAs3 {
   background: hsl(${hues[0.40069]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.40069]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color0158 {
   background: hsl(${hues[0.0158]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.0158]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorC4 {
   background: hsl(${hues[0.41302]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.41302]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorA4 {
   background: hsl(${hues[0.49008]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.49008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorB {
   background: hsl(${xetHue[1]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[1]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorBc {
   background: hsl(${bcHue} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${bcHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorC {
   background: hsl(${xetHue[2]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[2]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorCs {
   background: hsl(${xetHue[3]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[3]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorD {
   background: hsl(${xetHue[4]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[4]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorDs {
   background: hsl(${xetHue[5]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[5]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorDds {
   background: hsl(${ddsHue} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${ddsHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorDsE {
   background: hsl(${dseHue} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${dseHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorE {
   background: hsl(${xetHue[6]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[6]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorF {
   background: hsl(${xetHue[7]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[7]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorFs {
   background: hsl(${xetHue[8]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[8]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorG {
   background: hsl(${xetHue[9]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[9]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorGs {
   background: hsl(${xetHue[10]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[10]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorA {
   background: hsl(${xetHue[11]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[11]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color0 {
   background: hsl(0 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(0, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color002 {
   background: hsl(${hues[.002]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.002]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color004 {
   background: hsl(${hues[.004]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.004]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color00390625 {
   background: hsl(${hues[.00390625]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.00390625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color0058 {
   background: hsl(${hues[.0058]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.0058]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color0078125 {
   background: hsl(${hues[.0078125]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.0078125]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color008 {
   background: hsl(${hues[.008]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color014 {
   background: hsl(${hues[.014]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.014]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color015625 {
   background: hsl(${hues[0.015625]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.015625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color016 {
   background: hsl(${hues[0.016]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.016]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color021 {
   background: hsl(${hues[0.021]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.021]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color022 {
   background: hsl(${hues[0.022]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.022]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color024 {
   background: hsl(${hues[0.024]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.024]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color025 {
   background: hsl(20 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(20, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color030 {
   background: hsl(${hues[0.030]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.030]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color03125 {
   background: hsl(${hues[0.03125]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.03125]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color039 {
   background: hsl(${hues[0.039]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.039]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color040 {
   background: hsl(${hues[0.040]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.040]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color050 {
   background: hsl(24 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(24, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color0625 {
   background: hsl(${hues[0.0625]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.0625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color065 {
   background: hsl(${hues[0.065]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.065]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color067 {
   background: hsl(${hues[0.067]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.067]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color26div300 {
   background: hsl(${h26div300} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${h26div300}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color1 {
   background: hsl(36 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(36, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color125 {
   background: hsl(44 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(44, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color130 {
   background: hsl(${hues[0.130]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.130]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color185 {
   background: hsl(${hues[0.185]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.185]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color2 {
   background: hsl(60 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(60, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color250 {
   background: hsl(68 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(68, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color3 {
   background: hsl(80 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(80, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorThird {
   background: hsl(${hues[1/3]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[1/3]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color375 {
   background: hsl(96 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(96, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color4 {
   background: hsl(120 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(120, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color413 {
   background: hsl(${hues[0.413]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.413]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color4132 {
   background: hsl(${hues[0.4132]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.4132]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color420 {
   background: hsl(${hues[0.420]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.420]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color450 {
   background: hsl(${hues[0.450]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.450]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color460 {
   background: hsl(${hues[0.460]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.460]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color480 {
   background: hsl(${hues[0.480]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.480]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color490 {
   background: hsl(${hues[0.490]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.490]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color5 {
   background: hsl(180 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(180, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color599 {
   background: hsl(${hues[0.599]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.599]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color6 {
   background: hsl(208 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(208, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color625 {
   background: hsl(216 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(216, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color7 {
   background: hsl(240 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(240, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color704 {
   background: hsl(${hues[0.704]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.704]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color750 {
   background: hsl(264 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(264, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color754 {
   background: hsl(${hues[0.754]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.754]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color788 {
   background: hsl(${hues[0.788]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.788]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color8 {
   background: hsl(276 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(276, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color815 {
   background: hsl(${hues[0.815]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.815]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color864 {
   background: hsl(${hues[0.864]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.864]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color875 {
   background: hsl(292 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(292, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color9 {
   background: hsl(300 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(300, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color935 {
   background: hsl(${hues[0.935]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.935]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color950 {
   background: hsl(328 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(328, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color960 {
   background: hsl(${hues[0.960]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.960]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorD039 {
   background: hsl(${hD039} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hD039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorD080 {
   background: hsl(${hD080} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hD080}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorD285 {
   background: hsl(${hD285} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hD285}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorff6300 {
   background: #ff6300;
   color: black;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorffec00 {
   background: #ffec00;
   color: black;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color99ff00 {
   background: #99ff00;
   color: black;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color28ff00 {
   background: #28ff00;
   color: black;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color00ffe8 {
   background: #00ffe8;
   color: black;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color007cff {
   background: #007cff;
   color: white;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color0800ff {
   background: #0800ff;
   color: white;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .color5e00d6 {
   background: #5e00d6;
   color: white;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorIob {
   background: hsl(${hIob} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hIob}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorMile {
   background: hsl(${hMile} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hMile}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorPerS {
   background: hsl(${hPerS} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hPerS}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorInch {
   background: hsl(${hInch} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hInch}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorCuIn {
   background: hsl(${hCuIn} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hCuIn}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorDrop {
   background: hsl(${hDrop} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hDrop}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorMass {
   background: hsl(${hMass} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hMass}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorCara {
   background: hsl(${hCara} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hCara}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorGall {
   background: hsl(${hGall} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hGall}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorBarr {
   background: hsl(${hBarr} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hBarr}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorAvOz {
   background: hsl(${hAvOz} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hAvOz}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorFlOz {
   background: hsl(${hFlOz} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hFlOz}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorSqMi {
   background: hsl(${hSqMi} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hSqMi}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
 .colorSqIn {
   background: hsl(${hSqIn} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hSqIn}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
 }
