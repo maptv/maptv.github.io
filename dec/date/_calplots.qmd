@@ -21,13 +21,13 @@ viewof leapscrub = Inputs.form([
 //| label: calsliders
 //| className: sliders
 viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: "Day of year"});
-viewof monthInput = transformInput(
-  Inputs.range([1, 12], {step: 1, label: "Month"}),
-  {bind: viewof dotyInput, transform: doty2month, invert: month2doty}
-);
 viewof dotyInput1 = transformInput(
   Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of year"}),
   {bind: viewof dotyInput, transform: subN, invert: addN}
+);
+viewof monthInput = transformInput(
+  Inputs.range([1, 12], {step: 1, label: "Month"}),
+  {bind: viewof dotyInput, transform: doty2month, invert: month2doty}
 );
 viewof dotmInput = transformInput(
   Inputs.range([1, 31], {step: 1, label: "Day of month"}),
