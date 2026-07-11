@@ -1,6 +1,7 @@
 ---
 author: ""
 date: ""
+date-modified: ""
 comments: false
 citation: false
 code-tools: false
@@ -32,7 +33,11 @@ css: ../asset/cv.css
 #### **Adjunct Professor**, [Community College Baltimore County](https://www.ccbcmd.edu) [2026:]{.cvdate}
 
 ::: {.horizontal}
-- Teaches [Human Anatomy and Physiology](https://www.ccbcmd.edu/Programs-and-Courses-Finder/course/BIOL/109) to nearly 50 undergraduate students
+- Teaches
+  - [Molecules and Cells](https://www.ccbcmd.edu/Programs-and-Courses-Finder/course/BIOL/110)
+  - [Basic Russian 1A](https://www.ccbcmd.edu/Programs-and-Courses-Finder/course/FLA/398)
+  - [Intermediate Russian](https://www.ccbcmd.edu/Programs-and-Courses-Finder/course/FLA/189)
+  - [Anatomy and Physiology](https://www.ccbcmd.edu/Programs-and-Courses-Finder/course/BIOL/109)
 :::
 
 #### **Chief Technology Officer**, Ireni Co [2024:]{.cvdate}
@@ -100,15 +105,15 @@ css: ../asset/cv.css
   - [Data Analytics](https://cs.vt.edu/Graduate/Courses/GradCourseDescriptions.html#:~:text=CS%205525%2D6%20(STAT%205525%2D6)%20%2D%20Data%20Analytics)
 :::
 
-#### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) [2022:]{.cvdate}
-
-- Leads a non‑profit organization that supports [eleven Meetup groups](https://www.datacommunitydc.org/meetups-overview)
-
 #### **Senior Data Scientist**, [Booz Allen Hamilton](https://www.boozallen.com) [2019:2023]{.cvdate}
 
 - Led a team of data scientists and software developers working on a cyber intelligence application
 - Spearheaded interdisciplinary COVID‑19 [visualization](https://www.boozallen.com/c/insight/blog/epimaps-data-visualization-for-healthcare), [genomics](https://mskar.github.io/var), and statistical modeling efforts
 - Obtained the [Microsoft Azure Data Scientist Associate](https://www.credly.com/badges/99aa294a-2b69-40f2-a607-0e7b91ffb5f6/public_url){.italic} certification
+
+#### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) [2022:2026]{.cvdate}
+
+- Leads a non‑profit organization that supports [eleven Meetup groups](https://www.datacommunitydc.org/meetups-overview)
 
 #### **Biomedical Scientist**, [National Institutes of Health](https://www.nih.gov) [2009:2022]{.cvdate}
 
