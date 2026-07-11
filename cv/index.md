@@ -29,9 +29,15 @@
 
 <div class="horizontal">
 
-- Teaches [Human Anatomy and
-  Physiology](https://www.ccbcmd.edu/Programs-and-Courses-Finder/course/BIOL/109)
-  to nearly 50 undergraduate students
+- Teaches
+  - [Molecules and
+    Cells](https://www.ccbcmd.edu/Programs-and-Courses-Finder/course/BIOL/110)
+  - [Basic Russian
+    1A](https://www.ccbcmd.edu/Programs-and-Courses-Finder/course/FLA/398)
+  - [Intermediate
+    Russian](https://www.ccbcmd.edu/Programs-and-Courses-Finder/course/FLA/189)
+  - [Anatomy and
+    Physiology](https://www.ccbcmd.edu/Programs-and-Courses-Finder/course/BIOL/109)
 
 </div>
 
@@ -128,11 +134,6 @@
 
 </div>
 
-#### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) <span class="cvdate">2022:</span>
-
-- Leads a non‑profit organization that supports [eleven Meetup
-  groups](https://www.datacommunitydc.org/meetups-overview)
-
 #### **Senior Data Scientist**, [Booz Allen Hamilton](https://www.boozallen.com) <span class="cvdate">2019:2023</span>
 
 - Led a team of data scientists and software developers working on a
@@ -145,6 +146,11 @@
   href="https://www.credly.com/badges/99aa294a-2b69-40f2-a607-0e7b91ffb5f6/public_url"
   class="italic">Microsoft Azure Data Scientist Associate</a>
   certification
+
+#### **Vice President**, [Data Community DC](https://www.datacommunitydc.org) <span class="cvdate">2022:2026</span>
+
+- Leads a non‑profit organization that supports [eleven Meetup
+  groups](https://www.datacommunitydc.org/meetups-overview)
 
 #### **Biomedical Scientist**, [National Institutes of Health](https://www.nih.gov) <span class="cvdate">2009:2022</span>
 
