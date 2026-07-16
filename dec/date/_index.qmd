@@ -261,6 +261,7 @@ decDoxPidMid = decDohPidMid % 10
 decDoxNidMid = decDohNidMid % 10
 decDohPidMidPad = decDohPidMid.toString().padStart(2, "0")
 decDohNidMidPad = decDohNidMid.toString().padStart(2, "0")
+decDohNidMidPad0 = decDohNidMidPad[0]
 decDotd = decDoty % 10
 decDotdComp = 10 - decDotd
 decDotdModComp = decDotdComp % 10
