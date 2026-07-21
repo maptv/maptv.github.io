@@ -274,6 +274,12 @@ decDotdComp = 10 - decDotd
 decDotdModComp = decDotdComp % 10
 decDotp = decDotd % 5
 decPent = decDek * 2 + (decDotd > 4)
+decDop = dote2dob(Math.floor(dz[0]))
+decBop = decDop === "0\u0300" ? decDoty : decDoty - decDop
+decDopPad = decDop.toString().padStart(2, "0")
+decBopPad = Math.abs(decBop).toString().padStart(3, "0")
+decBopSign = decBop < 0 ? "-" : "+"
+decBopSign1 = decBop < 0 ? "-" : ""
 xmasDoy = 299 + nOffInput
 xmasPir = 298 + nOffInput * 3
 negOrPos = nOffInput ? "negative" : "positive"
@@ -397,11 +403,25 @@ function moty2doty(moy = 1) {
 easyDoy = dotyInput < (80 + leapInput) ? dotyInput : dotyInputNeg
 easySum = easyDoy + 285
 function unix2dob(unix) {
-  const doe = unix / 86400000 + 3124 + moonoffs
-  const doc = doe % 10631;
-  const yoc = Math.floor((30 * doc + 10646) / 10631) - 1;
-  return Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30))) % 59;
-}
+  const doe = unix / 86400000 + 3124 + moonoffs,
+  doc = doe % 10631,
+  yoc = Math.floor((30 * doc + 10646) / 10631) - 1,
+  doy = Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30))) 
+  return doy === 354 ? "0\u0300" : doy % 59;
+  }
+function unix2dobSort(unix) {
+  const doe = unix / 86400000 + 3124 + moonoffs,
+  doc = doe % 10631,
+  yoc = Math.floor((30 * doc + 10646) / 10631) - 1;
+  return Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30)));
+  }
+function dote2dob(doe) {
+  const doc = doe % 10631,
+  yoc = Math.floor((30 * doc + 10646) / 10631) - 1,
+  doy = Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30))) 
+  return doy === 354 ? "0\u0300" : doy % 59;
+  }
+decRows = ["0", "30", "59", "89", "118", "148", "177", "207", "236", "266", "295", "325"];
 suncalc = (await import("https://cdn.jsdelivr.net/npm/suncalc@1/+esm")).default
 binopttop = ({
   type: 'uint16',

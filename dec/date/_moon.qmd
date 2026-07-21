@@ -1,0 +1,107 @@
+```{ojs}
+//| echo: false
+//| label: mooninputs
+//| className: astroinputs
+viewof moonyear = Inputs.number({
+  label: "Year",
+  value: +new URLSearchParams(new URL(document.baseURI).search).get("year") || new Date().getUTCFullYear(),
+  min: 1900,
+  max: 2100,
+  step: 1
+})
+viewof moonlayo = Inputs.radio(new Map([["Dec", true], ["Gregorian", false]]), {label: "Layout", value: true})
+viewof moonoffs = Inputs.range([-59, 59], {value: 0, step: 1, label: "Offset"})
+```
+
+```{ojs}
+//| echo: false
+//| label: moonplot
+//| className: astroplot
+Plot.plot({
+  aspectRatio: moonlayo ? 0.75 : 0.6,
+  marginLeft: 90,
+  marginRight: moonlayo * 30,
+  width: 1152,
+  style: `
+    margin: 0 -14px;
+    background: #111;
+    color: #fff;
+    max-width: none;
+    font-family: monospace;
+    width: calc(100% + 28px);
+  `,
+  x: moonlayo
+    ? {domain: d3.range(30), axis: null}
+    : {domain: d3.range(1, 40), axis: null},
+  y: moonlayo
+    ? {domain: d3.range(12)}
+    : {domain: d3.range(12).map(m => (m + 2) % 12)},
+  length: {type: "identity"},
+  marks: (({data, x, y, r, hemisphere, projection}) => [
+    Plot.axisY({
+      textAnchor: "start",
+      tickSize: 0,
+      dx: -50,
+      fontSize: 26,
+      tickFormat: d => moonlayo ? decRows[d] : moonNums[d]
+    }),
+    Plot.dot(data, {x, y, r, fill: "#333"}),
+    Plot.text(data, {
+      x,
+      y,
+      r,
+      text: d => unix2dob(d.getTime()),
+      dy: -r - 9,
+      fontSize: 19
+    }),
+    Plot.vector(data, {
+      x,
+      y,
+      length(d) {
+        const noon = d3.utcHour.offset(d, 12);
+        const illum = suncalc.getMoonIllumination(noon);
+        return 180 - illum.phase * 360;
+      },
+      shape: {
+        draw(context, length) {
+          projection.rotate([length, 0]).scale(r);
+          const path = d3.geoPath(projection, context);
+          path(hemisphere);
+        }
+      },
+      anchor: "start",
+      fill: "currentColor"
+    })
+  ])({
+    data: (() => {
+      const start = Date.UTC(moonyear, 2, 1);
+      return d3.utcDays(start, Date.UTC(moonyear + 1, 2, 1));
+    })(),
+    x(d) {
+      if (!moonlayo) {
+        const start = d3.utcMonth(d);
+        const offset = start.getUTCDay() || 7;
+        return d.getUTCDate() + offset;
+      }
+      const dob = unix2dobSort(d.getTime());
+      // Leap day (354) goes after 353.
+      if (dob === 354) return 29;
+      const day = dob % 59;
+      return day < 30 ? day : day - 30;
+    },
+    y(d) {
+      if (!moonlayo) return d.getUTCMonth();
+      const dob = unix2dobSort(d.getTime());
+      // Leap day stays on the final row.
+      if (dob === 354) return 11;
+      const bimester = Math.floor(dob / 59);
+      const day = dob % 59;
+      return bimester * 2 + (day >= 30);
+    },
+    r: moonlayo ? 13 : 12,
+    hemisphere: d3.geoCircle()(),
+    projection: d3.geoOrthographic().translate([0, 0])
+
+  })
+})
+```
