@@ -10,7 +10,6 @@ viewof moonyear = Inputs.number({
   step: 1
 })
 viewof moonlayo = Inputs.radio(new Map([["Dec", true], ["Gregorian", false]]), {label: "Layout", value: true})
-viewof moonoffs = Inputs.range([-59, 59], {value: 0, step: 1, label: "Offset"})
 ```
 
 ```{ojs}

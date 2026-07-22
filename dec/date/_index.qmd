@@ -403,14 +403,14 @@ function moty2doty(moy = 1) {
 easyDoy = dotyInput < (80 + leapInput) ? dotyInput : dotyInputNeg
 easySum = easyDoy + 285
 function unix2dob(unix) {
-  const doe = unix / 86400000 + 3124 + moonoffs,
+  const doe = unix / 86400000 + 3124,
   doc = doe % 10631,
   yoc = Math.floor((30 * doc + 10646) / 10631) - 1,
   doy = Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30))) 
   return doy === 354 ? "0\u0300" : doy % 59;
   }
 function unix2dobSort(unix) {
-  const doe = unix / 86400000 + 3124 + moonoffs,
+  const doe = unix / 86400000 + 3124,
   doc = doe % 10631,
   yoc = Math.floor((30 * doc + 10646) / 10631) - 1;
   return Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30)));
