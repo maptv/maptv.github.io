@@ -1173,7 +1173,19 @@ As our technology improves, the cost of sending robots into space will decrease 
 
 We need to avoid contamination so as not to complicate the search for extraterrestrial life or traces thereof on Mars. Natural resources should only be collected from Martian sites that can be confirmed to be sterile and never have harbored life. We should first focus exclusively on exploration, then can begin exploitation, but should forever forgo colonization of Mars.
 
-If we explore the entirety of Mars without finding any hints of extraterrestrial life, we should still is another experiment that we should use Mars 
+If we explore the entirety of Mars without finding any hints of extraterrestrial life, we should nevertheless reserve Mars for scientific purposes. Assuming that Mars is and has always been devoid of extraterrestrial life, I propose combining Mars with other celestial bodies to create a new planet to better understand how Earth formed and evolved into the world we know today.
+
+
+(⚶) 
+
+Named after the Ancient Roman goddess of family, hearth, and home,
+
+
+The combined mass of the Earth and Moon is very close to that of **V**enus, M**e**rcury, Mar**s**, Callis**t**o, and Tit**a**n:
+5.972&times;10^24^ + 7.348&times;10^22^ = 6.045588&times;10^24^ &asymp; 6.081434&times;10^24^ = 4.867&times;10^24^ + 3.301&times;10^23^ + 6.417&times;10^23^ + 1.076&times;10^23^ + 1.345&times;10^23^
+]
+
+
 
 # Next {.unnumbered #next}
 
