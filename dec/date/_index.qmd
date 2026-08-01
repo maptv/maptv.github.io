@@ -1248,8 +1248,7 @@ p:has(span.handlabel)  {
 div.overflowequation {
   margin-top: -9px;
   margin-bottom: -8px;
-  overflow-x:auto;
-  overflow-y:hidden;
+  overflow: visible;
 }
 .nowrap {
   white-space: nowrap;
@@ -1304,6 +1303,9 @@ div#leapscrubvert form div:has(label), div#sliders form div:has(label) {
 }
 div#leapscrubvert form:last-child {
   width: 45px;
+}
+div#leapscrubvert span form label {
+  width: 75px;
 }
 input[type="number"] {
   width: 120px;
@@ -1466,6 +1468,9 @@ div > form > label {
 }
 code {
   font-size: 1em;
+}
+#moonplot {
+  overflow: visible;
 }
 </style>
 ```
