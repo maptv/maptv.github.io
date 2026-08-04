@@ -376,3 +376,7 @@ g.node g.label:has(span.nodeLabel) * {
   overflow-x: visible;
   overflow-y: clip;
 }
+.column-margin {
+	font-size: 1em;
+	overflow: visible;
+}
