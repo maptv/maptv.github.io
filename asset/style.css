@@ -296,6 +296,9 @@ div > form > label {
   text-decoration-line: underline;
   text-decoration-thickness: .7px;
 }
+.nounder {
+  text-decoration-line: none;
+}
 
 .over {
   text-decoration-line: overline;
@@ -380,3 +383,5 @@ g.node g.label:has(span.nodeLabel) * {
 	font-size: 1em;
 	overflow: visible;
 }
+
+
