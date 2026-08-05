@@ -296,7 +296,7 @@ div > form > label {
   text-decoration-line: underline;
   text-decoration-thickness: .7px;
 }
-.nounder {
+.nounder, .tool {
   text-decoration-line: none;
 }
 
