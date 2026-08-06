@@ -217,13 +217,20 @@ loadLeap = year2leap(loadYdz[0])
 vertic = width > 500
 negtzo = loadDate.getTimezoneOffset() > 0
 march1doy = 0 + nOffInput
+march1doyColor = textcolor(march1doy, piecewiseColor(march1doy / (365 + leapInput)))
 december31doy = 305 + nOffInput
+december31doyColor = textcolor(december31doy, piecewiseColor(december31doy / (365 + leapInput)))
 january1doy = 306 + nOffInput
-november21doy = 265 + nOffInput
-november22doy = 266 + nOffInput
-december25doy = 299 + nOffInput
+january1doyColor = textcolor(january1doy, piecewiseColor(january1doy / (365 + leapInput)))
+january1doyColor1 = textcolor(january1doy, piecewiseColor(january1doy / (365 + leapInput)))
+january1doyColor2 = textcolor(january1doy, piecewiseColor(january1doy / (365 + leapInput)))
+january1doyColor3 = textcolor(january1doy, piecewiseColor(january1doy / (365 + leapInput)))
 decYear = ydz[0]
+decYearColor = textcolor(decYear, piecewiseColor(decYear % 1000 / 1000))
+decYearColor1 = textcolor(decYear, piecewiseColor(decYear % 1000 / 1000))
 nextYear = decYear + 1
+nextYearColor = textcolor(nextYear, piecewiseColor(nextYear % 1000 / 1000))
+nextYearColor1 = textcolor(nextYear, piecewiseColor(nextYear % 1000 / 1000))
 decYearLeap = year2leap(decYear)
 decYearLength = 365 + decYearLeap
 decYearLastDoy = decYearLength - 1
@@ -235,7 +242,14 @@ decYearLastBowNegPad = decYearLastBowNeg.toString().padStart(3, "0")
 decYearLastBowSum = 364 - decYearLastBowNeg
 decYearLastBowSumPad = decYearLastBowSum.toString().padStart(3, "0")
 decDoty = Math.floor(ydz[1])
+decDotyColor = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
+decDotyColor1 = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
+decDotyColor2 = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
+decDotyColor3 = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
+decDotyColor4 = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
+decDotyColor5 = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
 decDotyPad = String(decDoty).padStart(3, "0")
+decDotyPadColor = textcolor(decDotyPad, piecewiseColor(decDoty / (365 + leapInput)))
 decNid = decDoty - decYearLength
 decNidPlus1 = decNid + 1
 decNixGrave = Math.abs(Math.floor(decNidPlus1 / 10))
@@ -270,10 +284,12 @@ decDohPidMidPad = decDohPidMid.toString().padStart(2, "0")
 decDohNidMidPad = decDohNidMid.toString().padStart(2, "0")
 decDohNidMidPad0 = decDohNidMidPad[0]
 decDotd = decDoty % 10
+decDotdColor = textcolor(decDotd, piecewiseColor(decDotd / 10))
 decDotdComp = 10 - decDotd
 decDotdModComp = decDotdComp % 10
 decDotp = decDotd % 5
 decPent = decDek * 2 + (decDotd > 4)
+decPentColor = textcolor(decPent, piecewiseColor(decPent * 5 / 365))
 decDop = dote2dob(Math.floor(dz[0]))
 decBop = decDop === "0\u0300" ? decDoty : decDoty - decDop
 decDopPad = decDop.toString().padStart(2, "0")
@@ -317,7 +333,9 @@ dotw0sign = dotw0doty < 0 ? "-" : "+"
 dotw0signIfNeg = dotw0doty < 0 ? "-" : ""
 nDaysInYear = 365 + year2leap(decYear + 1)
 Tminus = nDaysInYear - decDoty
+TminusColor = textcolor(Tminus, piecewiseColor(Tminus / (365 + leapInput)))
 TminusPadded = Tminus.toString().padStart(3, "0")
+TminusPaddedColor = textcolor(TminusPadded, piecewiseColor(Tminus / (365 + leapInput)))
 TminusPaddedNeg = "-" + TminusPadded
 fracYear = decYear + ydz[1] / nDaysInYear
 fullfracYear = (fracYear).toFixed(4)
@@ -337,7 +355,10 @@ set(viewof dotyInput, leapscrub[4])
 daysInYear = parseInt(365 + leapInput)
 dotyInputNeg = dotyInput - daysInYear 
 dotyInputDek = Math.floor(dotyInput / 10)
+dotyInputDekColor = textcolor(dotyInputDek, piecewiseColor(dotyInputDek / 37))
 dotyInputDod = dotyInput % 10
+dotyInputDodColor = textcolor(dotyInputDod, piecewiseColor(dotyInputDod / 10))
+dotyInputColor = textcolor(dotyInput, piecewiseColor(dotyInput / (365 + leapInput)))
 piecewiseColor = d3.piecewise(d3.interpolateRgb, [
   "#f00",    //  0   0 red
   "#f50",    //  0.25  20 yr
@@ -385,6 +406,22 @@ function yiq(color) {
   const {r, g, b} = d3.rgb(color);
   return (r * 299 + g * 587 + b * 114) / 1000 / 255; // returns values between 0 and 1
 }
+function textcolor(content, style = {}) {
+  const {
+    background,
+    color = yiq(background) > 0.5 ? "black" : "white",
+    padding = "0 0.5px",
+    borderRadius = "4px",
+    ...rest
+  } = typeof style === "string" ? {background: style} : style;
+  return htl.html`<span style=${{
+    background,
+    color,
+    padding,
+    borderRadius,
+    ...rest
+  }}>${content}</span>`;
+}
 day364rgb = piecewiseColor(364 / 365)
 day365rgb = piecewiseColor(365 / 366)
 seldow = seldat.map(x => x.getUTCDay())
@@ -401,7 +438,9 @@ function moty2doty(moy = 1) {
     (153 * moy + 2) / 5
 ) + nOffInput) % daysInYear}
 easyDoy = dotyInput < (80 + leapInput) ? dotyInput : dotyInputNeg
+easyDoyColor = textcolor(easyDoy, piecewiseColor(dotyInput / (365 + leapInput)))
 easySum = easyDoy + 285
+easySumColor = textcolor(easySum, piecewiseColor(easySum / (365 + leapInput)))
 function unix2dob(unix) {
   const doe = unix / 86400000 + 3124,
   doc = doe % 10631,
@@ -1101,89 +1140,131 @@ p:has(.radiotitle) {
 
 ```{=html}
 <style>
-.color364by365 {
-  background: #FF000B;
-  color: white;
-  padding: 0px .5px;
-  border-radius: 4px;
-  font-weight: 400;
-}
-.color365by366 {
-  background: #FF000B;
-  color: white;
-  padding: 0px .5px;
-  border-radius: 4px;
-  font-weight: 400;
-}
 .color0 {
-  background: #FF0000;
-  color: black;
+  background: #ff0000;
+  color: white;
   padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
+}
+.color001 {
+  background: #ff0900;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color003 {
+  background: #ff1c00;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color305by366 {
+  background: #c100ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color305by365 {
+  background: #c200ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color306by366 {
+  background: #c300ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color306by365 {
+  background: #c400ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color360by365 {
+  background: #ff0038;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color359by365 {
+  background: #ff0043;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color361by365 {
+  background: #ff002d;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color364by366 {
+  background: #ff0016;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color364by365, .color365by366 {
+  background: #ff000b;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
 }
 .color1 {
   background: hsl(36 100% 50%);
   color: black;
   padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
 }
 .color2 {
   background: hsl(60 100% 50%);
   color: black;
   padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
 }
 .color3 {
   background: hsl(80 100% 50%);
   color: black;
   padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
 }
 .color4 {
   background: hsl(120 100% 50%);
   color: black;
   padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
 }
 .color5 {
   background: hsl(180 100% 50%);
   color: black;
   padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
 }
 .color6 {
   background: hsl(216 100% 50%);
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
 }
 .color7 {
   background: hsl(240 100% 50%);
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
 }
 .color8 {
   background: hsl(276 100% 50%);
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
 }
 .color9 {
   background: hsl(300 100% 50%);
-  color: black;
+  color: white;
   padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
 }
 .radiotitle {
   overflow: visible;
