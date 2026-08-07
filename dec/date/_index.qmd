@@ -250,6 +250,9 @@ decDotyColor4 = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
 decDotyColor5 = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
 decDotyPad = String(decDoty).padStart(3, "0")
 decDotyPadColor = textcolor(decDotyPad, piecewiseColor(decDoty / (365 + leapInput)))
+decDotyPadColor1 = textcolor(decDotyPad, piecewiseColor(decDoty / (365 + leapInput)))
+decDotyPadColor2 = textcolor(decDotyPad, piecewiseColor(decDoty / (365 + leapInput)))
+decDotyPadColor3 = textcolor(decDotyPad, piecewiseColor(decDoty / (365 + leapInput)))
 decNid = decDoty - decYearLength
 decNidPlus1 = decNid + 1
 decNixGrave = Math.abs(Math.floor(decNidPlus1 / 10))
@@ -262,26 +265,43 @@ decNidPad = decNid.toString().padStart(3, "0")
 decNidAbs = Math.abs(decNid)
 decNidAbsPad = decNidAbs.toString().padStart(3, "0")
 decDek = Math.floor(decDoty / 10)
+decDekColor = textcolor(decDek, piecewiseColor(decDek * 10 / (365 + leapInput)))
 decDekPlus1 = decDek + 1
 decPih = Math.floor(decDoty / 100)
 decPihPlus1 = decPih + 1
 decNix = Math.abs(Math.floor(decNid / 10))
 decNih = Math.abs(Math.floor(decNid / 100))
 decNihPlus1 = decNih - 1
+decNihPlus1AbsColor = textcolor(decNihPlus1, piecewiseColor((decNihPlus1 * 100) / (365 + leapInput)))
 decNixPlus1 = decNix - 1
 decNixPlus1Abs = Math.abs(decNixPlus1)
-decNihPlus1Abs = Math.abs(decNihPlus1)
 decDohPid = decDoty % 100
+decDohPidColor = textcolor(decDohPid, piecewiseColor(decDohPid / 100))
+decDohPidColor1 = textcolor(decDohPid, piecewiseColor(decDohPid / 100))
+decDohPidColor2 = textcolor(decDohPid, piecewiseColor(decDohPid / 100))
+decDohPidColor3 = textcolor(decDohPid, piecewiseColor(decDohPid / 100))
 decDohNid = Math.abs(decNid % 100)
+decDohNidColor = textcolor(decDohNid, piecewiseColor(decDohNid / 100))
+decDohNidColor1 = textcolor(decDohNid, piecewiseColor(decDohNid / 100))
+decDohNidColor2 = textcolor(decDohNid, piecewiseColor(decDohNid / 100))
 decDoxNid = decDohNid % 10
 decDohPidPad = decDohPid.toString().padStart(2, "0")
 decDohNidPad = decDohNid.toString().padStart(2, "0")
 decDohPidMid = (100 - decDohPid) % 100
+decDohPidMidColor = textcolor(decDohPidMid, piecewiseColor(decDohPidMid / 100))
+decDohPidMidColor1 = textcolor(decDohPidMid, piecewiseColor(decDohPidMid / 100))
 decDohNidMid = (100 - decDohNid) % 100
+decDohNidMidColor = textcolor(decDohNidMid, piecewiseColor(decDohNidMid / 100))
+decDohNidMidColor1 = textcolor(decDohNidMid, piecewiseColor(decDohNidMid / 100))
 decDoxPidMid = decDohPidMid % 10
 decDoxNidMid = decDohNidMid % 10
 decDohPidMidPad = decDohPidMid.toString().padStart(2, "0")
 decDohNidMidPad = decDohNidMid.toString().padStart(2, "0")
+decDohNidMidPadColor = textcolor(decDohNidMidPad, piecewiseColor(decDohNidMid / 100))
+decDohNidMidPadColor1 = textcolor(decDohNidMidPad, piecewiseColor(decDohNidMid / 100))
+decDohNidMidPadColor2 = textcolor(decDohNidMidPad, piecewiseColor(decDohNidMid / 100))
+decDohNidMidPadColor3 = textcolor(decDohNidMidPad, piecewiseColor(decDohNidMid / 100))
+decDohNidMidPadColor4 = textcolor(decDohNidMidPad, piecewiseColor(decDohNidMid / 100))
 decDohNidMidPad0 = decDohNidMidPad[0]
 decDotd = decDoty % 10
 decDotdColor = textcolor(decDotd, piecewiseColor(decDotd / 10))
@@ -334,7 +354,10 @@ dotw0sign = dotw0doty < 0 ? "-" : "+"
 dotw0signIfNeg = dotw0doty < 0 ? "-" : ""
 nDaysInYear = 365 + year2leap(decYear + 1)
 Tminus = nDaysInYear - decDoty
-TminusColor = textcolor(Tminus, piecewiseColor(Tminus / (365 + leapInput)))
+TminusColor = textcolor(Tminus, piecewiseColor(decDoty / (365 + leapInput)))
+TminusColor1 = textcolor(Tminus, piecewiseColor(decDoty / (365 + leapInput)))
+TminusColor2 = textcolor(Tminus, piecewiseColor(decDoty / (365 + leapInput)))
+TminusColor3 = textcolor(Tminus, piecewiseColor(decDoty / (365 + leapInput)))
 TminusPadded = Tminus.toString().padStart(3, "0")
 TminusPaddedColor = textcolor(TminusPadded, piecewiseColor(Tminus / (365 + leapInput)))
 TminusPaddedNeg = "-" + TminusPadded
@@ -1641,6 +1664,24 @@ p:has(.radiotitle) {
 }
 .color1by7 {
   background: #ffc700;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color2by7 {
+  background: #bdff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color3by7 {
+  background: #00ff7c;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color4by7 {
+  background: #00acff;
   color: black;
   padding: 0px .5px;
   border-radius: 4px;
