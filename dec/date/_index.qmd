@@ -290,6 +290,7 @@ decDotdModComp = decDotdComp % 10
 decDotp = decDotd % 5
 decPent = decDek * 2 + (decDotd > 4)
 decPentColor = textcolor(decPent, piecewiseColor(decPent * 5 / 365))
+decDotpColor = textcolor(decDotp, piecewiseColor(decDotp / 5))
 decDop = dote2dob(Math.floor(dz[0]))
 decBop = decDop === "0\u0300" ? decDoty : decDoty - decDop
 decDopPad = decDop.toString().padStart(2, "0")
@@ -1152,8 +1153,68 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color002 {
+  background: #ff1300;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color003 {
   background: #ff1c00;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color004 {
+  background: #ff2500;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color005by365 {
+  background: #ff2f00;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color005by366 {
+  background: #ff2e00;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color006 {
+  background: #ff3800;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color007 {
+  background: #ff4100;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color008by365 {
+  background: #ff4b00;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color008by366 {
+  background: #ff4a00;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color009 {
+  background: #ff5400;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color010 {
+  background: #ff5700;
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
@@ -1182,14 +1243,44 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color360by365 {
-  background: #ff0038;
+.color354by365 {
+  background: #ff006d;
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color359by365 {
+.color355by365 {
+  background: #ff0069;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color356by365 {
+  background: #ff0065;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color357by365 {
+  background: #ff0059;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color358by365 {
+  background: #ff004e;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color359by365, .color360by366 {
   background: #ff0043;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color360by365 {
+  background: #ff0038;
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
@@ -1200,7 +1291,13 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color364by366 {
+.color362by365 {
+  background: #ff0022;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color363by365, .color364by366 {
   background: #ff0016;
   color: white;
   padding: 0px .5px;
@@ -1262,6 +1359,24 @@ p:has(.radiotitle) {
 }
 .color9 {
   background: hsl(300 100% 50%);
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color07by32 {
+  background: #f2ff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color14by32 {
+  background: #00ff88;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color28by32 {
+  background: #dd00ff;
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
