@@ -318,7 +318,7 @@ div > form > label {
   content: "";
   position: absolute;
   height: 1.5px;
-  width: 66%;
+  width: 6px;
   top: 5px;
 }
 .overline::before {
@@ -333,7 +333,7 @@ div > form > label {
 
 .acute::before {
   transform: rotate(-0.16turn);
-  left: 3px;
+  left: 30%;
 }
 .doublegrave::before {
   transform: rotate(0.16turn);
