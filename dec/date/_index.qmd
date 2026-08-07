@@ -1219,6 +1219,66 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color019 {
+  background: #ff6700;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color100 {
+  background: #cdff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color111by365 {
+  background: #a4ff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color149by365 {
+  background: #00ff27;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color200by365 {
+  background: #00bcff;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color206by365 {
+  background: #00b1ff;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color265by365 {
+  background: #5600ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color296by365 {
+  background: #a800ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color299by365 {
+  background: #b300ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color300by365 {
+  background: #b700ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color305by366 {
   background: #c100ff;
   color: white;
@@ -1243,13 +1303,31 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color354by365 {
+.color316by365 {
+  background: #d700ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color330by365 {
+  background: #ff00f1;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color354by366 {
+  background: #ff0071;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color354by365, .color355by366 {
   background: #ff006d;
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color355by365 {
+.color355by365, .color356by366 {
   background: #ff0069;
   color: white;
   padding: 0px .5px;
@@ -1261,13 +1339,19 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color357by365 {
+.color357by366 {
+  background: #ff0064;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color357by365, .color358by366 {
   background: #ff0059;
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color358by365 {
+.color358by365, .color359by366 {
   background: #ff004e;
   color: white;
   padding: 0px .5px;
@@ -1279,13 +1363,13 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color360by365 {
+.color360by365, .color361by366 {
   background: #ff0038;
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color361by365 {
+.color361by365, .color362by366 {
   background: #ff002d;
   color: white;
   padding: 0px .5px;
@@ -1293,6 +1377,12 @@ p:has(.radiotitle) {
 }
 .color362by365 {
   background: #ff0022;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color363by366 {
+  background: #ff0021;
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
@@ -1363,8 +1453,80 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color01by32 {
+  background: #ff5900;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color02by32 {
+  background: #ff6f00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color03by32 {
+  background: #ff9100;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color04by32 {
+  background: #ffbb00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color05by32 {
+  background: #ffd000;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color06by32 {
+  background: #ffee00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color07by32 {
   background: #f2ff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color08by32 {
+  background: #ddff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color09by32 {
+  background: #c4ff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color10by32 {
+  background: #99ff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color11by32 {
+  background: #7bff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color12by32 {
+  background: #66ff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color13by32 {
+  background: #00ff1e;
   color: black;
   padding: 0px .5px;
   border-radius: 4px;
@@ -1375,8 +1537,122 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color15by32 {
+  background: #00ffb3;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color16by32 {
+  background: #00ffff;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color17by32 {
+  background: #00c8ff;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color18by32 {
+  background: #00b3ff;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color19by32 {
+  background: #0091ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color20by32 {
+  background: #0066ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color21by32 {
+  background: #0051ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color22by32 {
+  background: #0022ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color23by32 {
+  background: #4000ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color24by32 {
+  background: #6600ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color25by32 {
+  background: #8000ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color26by32 {
+  background: #aa00ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color27by32 {
+  background: #c800ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color28by32 {
   background: #dd00ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color29by32 {
+  background: #ff00ea;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color30by32 {
+  background: #ff0099;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color31by32 {
+  background: #ff006f;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color1by7 {
+  background: #ffc700;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color5by7 {
+  background: #3100ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color6by7 {
+  background: #d100ff;
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
