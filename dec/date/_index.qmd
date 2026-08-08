@@ -59,8 +59,8 @@ function date2dote(year = 1969, doty = 306, zone = 0) {
       yote = year - cote * 400;
     return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
 }
-function addN(d) { return d + 365 + leapInput }
-function subN(d) { return d - 365 - leapInput }
+function addN(d) { return d + nDaysInput }
+function subN(d) { return d - nDaysInput }
 // https://observablehq.com/@observablehq/synchronized-inputs
 // https://observablehq.com/@juang1744/transform-input/1
 transformInput = function(target, {bind: source, transform = identity, involutory = false, invert = involutory ? transform : inverse(transform)} = {}){
@@ -217,20 +217,26 @@ loadLeap = year2leap(loadYdz[0])
 vertic = width > 500
 negtzo = loadDate.getTimezoneOffset() > 0
 march1doy = 0 + nOffInput
-march1doyColor = textcolor(march1doy, piecewiseColor(march1doy / (365 + leapInput)))
+march1doyColor = textcolor(march1doy, piecewiseColor(march1doy / nDaysInput))
 december31doy = 305 + nOffInput
-december31doyColor = textcolor(december31doy, piecewiseColor(december31doy / (365 + leapInput)))
+december31doyColor = textcolor(december31doy, piecewiseColor(december31doy / nDaysInput))
 january1doy = 306 + nOffInput
-january1doyColor = textcolor(january1doy, piecewiseColor(january1doy / (365 + leapInput)))
-january1doyColor1 = textcolor(january1doy, piecewiseColor(january1doy / (365 + leapInput)))
-january1doyColor2 = textcolor(january1doy, piecewiseColor(january1doy / (365 + leapInput)))
-january1doyColor3 = textcolor(january1doy, piecewiseColor(january1doy / (365 + leapInput)))
+january1doyByNdaysInput = january1doy / nDaysInput
+january1doyPiece = piecewiseColor(january1doyByNdaysInput)
+january1doyColor = textcolor(january1doy, )
+january1doyColor1 = textcolor(january1doy, january1doyPiece)
+january1doyColor2 = textcolor(january1doy, january1doyPiece)
+january1doyColor3 = textcolor(january1doy, january1doyPiece)
 decYear = ydz[0]
-decYearColor = textcolor(decYear, piecewiseColor(decYear % 1000 / 1000))
-decYearColor1 = textcolor(decYear, piecewiseColor(decYear % 1000 / 1000))
+decYearOfMilleniumBy1000 = decYear % 1000 / 1000
+decYearPiece = piecewiseColor(decYearOfMilleniumBy1000)
+decYearColor = textcolor(decYear, decYearPiece)
+decYearColor1 = textcolor(decYear, decYearPiece)
 nextYear = decYear + 1
-nextYearColor = textcolor(nextYear, piecewiseColor(nextYear % 1000 / 1000))
-nextYearColor1 = textcolor(nextYear, piecewiseColor(nextYear % 1000 / 1000))
+nextYearOfMilleniumBy1000 = nextYear % 1000 / 1000
+nextYearPiece = piecewiseColor(nextYearOfMilleniumBy1000)
+nextYearColor = textcolor(nextYear, nextYearPiece)
+nextYearColor1 = textcolor(nextYear, nextYearPiece)
 decYearLeap = year2leap(decYear)
 decYearLength = 365 + decYearLeap
 decYearLastDoy = decYearLength - 1
@@ -242,17 +248,19 @@ decYearLastBowNegPad = decYearLastBowNeg.toString().padStart(3, "0")
 decYearLastBowSum = 364 - decYearLastBowNeg
 decYearLastBowSumPad = decYearLastBowSum.toString().padStart(3, "0")
 decDoty = Math.floor(ydz[1])
-decDotyColor = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
-decDotyColor1 = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
-decDotyColor2 = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
-decDotyColor3 = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
-decDotyColor4 = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
-decDotyColor5 = textcolor(decDoty, piecewiseColor(decDoty / (365 + leapInput)))
+decDotyByNdaysInput = Math.floor(ydz[1])
+decDotyPiece = piecewiseColor(decDotyByNdaysInput)
+decDotyColor = textcolor(decDoty, decDotyPiece)
+decDotyColor1 = textcolor(decDoty, decDotyPiece)
+decDotyColor2 = textcolor(decDoty, decDotyPiece)
+decDotyColor3 = textcolor(decDoty, decDotyPiece)
+decDotyColor4 = textcolor(decDoty, decDotyPiece)
+decDotyColor5 = textcolor(decDoty, decDotyPiece)
 decDotyPad = String(decDoty).padStart(3, "0")
-decDotyPadColor = textcolor(decDotyPad, piecewiseColor(decDoty / (365 + leapInput)))
-decDotyPadColor1 = textcolor(decDotyPad, piecewiseColor(decDoty / (365 + leapInput)))
-decDotyPadColor2 = textcolor(decDotyPad, piecewiseColor(decDoty / (365 + leapInput)))
-decDotyPadColor3 = textcolor(decDotyPad, piecewiseColor(decDoty / (365 + leapInput)))
+decDotyPadColor = textcolor(decDotyPad, decDotyPiece)
+decDotyPadColor1 = textcolor(decDotyPad, decDotyPiece)
+decDotyPadColor2 = textcolor(decDotyPad, decDotyPiece)
+decDotyPadColor3 = textcolor(decDotyPad, decDotyPiece)
 decNid = decDoty - decYearLength
 decNidPlus1 = decNid + 1
 decNixGrave = Math.abs(Math.floor(decNidPlus1 / 10))
@@ -265,43 +273,64 @@ decNidPad = decNid.toString().padStart(3, "0")
 decNidAbs = Math.abs(decNid)
 decNidAbsPad = decNidAbs.toString().padStart(3, "0")
 decDek = Math.floor(decDoty / 10)
-decDekColor = textcolor(decDek, piecewiseColor(decDek * 10 / (365 + leapInput)))
+decDekColor = textcolor(decDek, piecewiseColor(decDek * 10 / nDaysInput))
 decDekPlus1 = decDek + 1
 decPih = Math.floor(decDoty / 100)
 decPihPlus1 = decPih + 1
-decNix = Math.abs(Math.floor(decNid / 10))
-decNih = Math.abs(Math.floor(decNid / 100))
-decNihPlus1 = decNih - 1
-decNihPlus1AbsColor = textcolor(decNihPlus1, piecewiseColor((decNihPlus1 * 100) / (365 + leapInput)))
-decNixPlus1 = decNix - 1
-decNixPlus1Abs = Math.abs(decNixPlus1)
+decNix = Math.floor(decNid / 10)
+decNixAbs = Math.abs(decNix)
+decNih = Math.floor(decNid / 100)
+decNihAbs = Math.abs(decNih)
+decNixAbsPlus1 = decNixAbs + 1
+decNihAbsPlus1 = decNihAbs + 1
+decNihBoh = decNih * 100 % nDaysInput + nDaysInput
+decNihAbsPiece = piecewiseColor(decNihBoh / nDaysInput)
+decNihAbsColor = textcolor(decNihAbs, decNihAbsPiece)
+decNihAbsColor1 = textcolor(decNihAbs, decNihAbsPiece)
+decNihAbsColor2 = textcolor(decNihAbs, decNihAbsPiece)
+decNihAbsColor3 = textcolor(decNihAbs, decNihAbsPiece)
+decNihAbsColor4 = textcolor(decNihAbs, decNihAbsPiece)
+decNihAbsColor5 = textcolor(decNihAbs, decNihAbsPiece)
+decNixBox = decNix * 10 % nDaysInput + nDaysInput
+decNixAbsPiece = piecewiseColor(decNixBox / nDaysInput)
+decNixAbsColor = textcolor(decNixAbs, decNixAbsPiece)
 decDohPid = decDoty % 100
-decDohPidColor = textcolor(decDohPid, piecewiseColor(decDohPid / 100))
-decDohPidColor1 = textcolor(decDohPid, piecewiseColor(decDohPid / 100))
-decDohPidColor2 = textcolor(decDohPid, piecewiseColor(decDohPid / 100))
-decDohPidColor3 = textcolor(decDohPid, piecewiseColor(decDohPid / 100))
+decDohPidBy100 = decDohPid / 100
+decDohPidPiece = piecewiseColor(decDohPidBy100)
+decDohPidColor = textcolor(decDohPid, decDohPidPiece)
+decDohPidColor1 = textcolor(decDohPid, decDohPidPiece)
+decDohPidColor2 = textcolor(decDohPid, decDohPidPiece)
+decDohPidColor3 = textcolor(decDohPid, decDohPidPiece)
 decDohNid = Math.abs(decNid % 100)
-decDohNidColor = textcolor(decDohNid, piecewiseColor(decDohNid / 100))
-decDohNidColor1 = textcolor(decDohNid, piecewiseColor(decDohNid / 100))
-decDohNidColor2 = textcolor(decDohNid, piecewiseColor(decDohNid / 100))
-decDoxNid = decDohNid % 10
+decDohNidBy100 = decDohNid / 100
+decDohNidPiece = piecewiseColor(decDohNidBy100)
+decDohNidColor = textcolor(decDohNid, decDohNidPiece)
+decDohNidColor1 = textcolor(decDohNid, decDohNidPiece)
+decDohNidColor2 = textcolor(decDohNid, decDohNidPiece)
+decDoxNid = decNid % 10
+decDoxNidPiece = piecewiseColor(decDoxNid / 10)
+decDoxNidColor = textcolor(decDoxNid, decDoxNidPiece)
 decDohPidPad = decDohPid.toString().padStart(2, "0")
 decDohNidPad = decDohNid.toString().padStart(2, "0")
 decDohPidMid = (100 - decDohPid) % 100
-decDohPidMidColor = textcolor(decDohPidMid, piecewiseColor(decDohPidMid / 100))
-decDohPidMidColor1 = textcolor(decDohPidMid, piecewiseColor(decDohPidMid / 100))
+decDohPidMidBy100 = decDohPidMid / 100
+decDohPidMidPiece = piecewiseColor(decDohPidMidBy100)
+decDohPidMidColor = textcolor(decDohPidMid, decDohPidMidPiece)
+decDohPidMidColor1 = textcolor(decDohPidMid, decDohPidMidPiece)
 decDohNidMid = (100 - decDohNid) % 100
-decDohNidMidColor = textcolor(decDohNidMid, piecewiseColor(decDohNidMid / 100))
-decDohNidMidColor1 = textcolor(decDohNidMid, piecewiseColor(decDohNidMid / 100))
+decDohNidMidBy100 = decDohNidMid / 100
+decDohNidMidPiece = piecewiseColor(decDohNidMidBy100)
+decDohNidMidColor = textcolor(decDohNidMid, decDohNidMidPiece)
+decDohNidMidColor1 = textcolor(decDohNidMid, decDohNidMidPiece)
 decDoxPidMid = decDohPidMid % 10
 decDoxNidMid = decDohNidMid % 10
 decDohPidMidPad = decDohPidMid.toString().padStart(2, "0")
 decDohNidMidPad = decDohNidMid.toString().padStart(2, "0")
-decDohNidMidPadColor = textcolor(decDohNidMidPad, piecewiseColor(decDohNidMid / 100))
-decDohNidMidPadColor1 = textcolor(decDohNidMidPad, piecewiseColor(decDohNidMid / 100))
-decDohNidMidPadColor2 = textcolor(decDohNidMidPad, piecewiseColor(decDohNidMid / 100))
-decDohNidMidPadColor3 = textcolor(decDohNidMidPad, piecewiseColor(decDohNidMid / 100))
-decDohNidMidPadColor4 = textcolor(decDohNidMidPad, piecewiseColor(decDohNidMid / 100))
+decDohNidMidPadColor = textcolor(decDohNidMidPad, decDohNidMidPiece)
+decDohNidMidPadColor1 = textcolor(decDohNidMidPad, decDohNidMidPiece)
+decDohNidMidPadColor2 = textcolor(decDohNidMidPad, decDohNidMidPiece)
+decDohNidMidPadColor3 = textcolor(decDohNidMidPad, decDohNidMidPiece)
+decDohNidMidPadColor4 = textcolor(decDohNidMidPad, decDohNidMidPiece)
 decDohNidMidPad0 = decDohNidMidPad[0]
 decDotd = decDoty % 10
 decDotdColor = textcolor(decDotd, piecewiseColor(decDotd / 10))
@@ -321,7 +350,7 @@ xmasDoy = 299 + nOffInput
 xmasPir = 298 + nOffInput * 3
 negOrPos = nOffInput ? "negative" : "positive"
 xmasDiff = decDoty - 299
-xmasNext = xmasDiff - daysInYear
+xmasNext = xmasDiff - nDaysInput
 xmasDiffSign = xmasDiff < 0 ? "-" : "+"
 xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
 xmasDiffResult = xmasDiff < 0 ? "-" : ""
@@ -341,7 +370,7 @@ monthNumber = Math.floor(ydz[1] - dotm)
 monthNumber0 = String(monthNumber + 1).padStart(3, "0")
 monthNumber1 = monthNumber.toString().padStart(3, "0")
 dotw0doty = Math.floor(ydz[1]) - dotw
-dotw0dotyNeg = Math.abs(dotw0doty - daysInYear)
+dotw0dotyNeg = Math.abs(dotw0doty - nDaysInput)
 dotw0dotyPad = dotw0doty.toString().padStart(3, "0")
 dotw0dotyNegPad = dotw0dotyNeg.toString().padStart(3, "0")
 doty0dote = date2dote(decYear, 0)[0]
@@ -354,12 +383,12 @@ dotw0sign = dotw0doty < 0 ? "-" : "+"
 dotw0signIfNeg = dotw0doty < 0 ? "-" : ""
 nDaysInYear = 365 + year2leap(decYear + 1)
 Tminus = nDaysInYear - decDoty
-TminusColor = textcolor(Tminus, piecewiseColor(decDoty / (365 + leapInput)))
-TminusColor1 = textcolor(Tminus, piecewiseColor(decDoty / (365 + leapInput)))
-TminusColor2 = textcolor(Tminus, piecewiseColor(decDoty / (365 + leapInput)))
-TminusColor3 = textcolor(Tminus, piecewiseColor(decDoty / (365 + leapInput)))
+TminusColor = textcolor(Tminus, decDotyPiece)
+TminusColor1 = textcolor(Tminus, decDotyPiece)
+TminusColor2 = textcolor(Tminus, decDotyPiece)
+TminusColor3 = textcolor(Tminus, decDotyPiece)
 TminusPadded = Tminus.toString().padStart(3, "0")
-TminusPaddedColor = textcolor(TminusPadded, piecewiseColor(Tminus / (365 + leapInput)))
+TminusPaddedColor = textcolor(TminusPadded, decDotyPiece)
 TminusPaddedNeg = "-" + TminusPadded
 fracYear = decYear + ydz[1] / nDaysInYear
 fullfracYear = (fracYear).toFixed(4)
@@ -376,13 +405,12 @@ layoInput = leapscrub[3]
 dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
 numbers = Array.from({length: 366}, (_, i) => i)
 set(viewof dotyInput, leapscrub[4])
-daysInYear = parseInt(365 + leapInput)
-dotyInputNeg = dotyInput - daysInYear 
+dotyInputNeg = dotyInput - nDaysInput 
 dotyInputDek = Math.floor(dotyInput / 10)
 dotyInputDekColor = textcolor(dotyInputDek, piecewiseColor(dotyInputDek / 37))
 dotyInputDod = dotyInput % 10
 dotyInputDodColor = textcolor(dotyInputDod, piecewiseColor(dotyInputDod / 10))
-dotyInputColor = textcolor(dotyInput, piecewiseColor(dotyInput / (365 + leapInput)))
+dotyInputColor = textcolor(dotyInput, piecewiseColor(dotyInput / nDaysInput))
 piecewiseColor = d3.piecewise(d3.interpolateRgb, [
   "#f00",    //  0   0 red
   "#f50",    //  0.25  20 yr
@@ -450,21 +478,21 @@ day364rgb = piecewiseColor(364 / 365)
 day365rgb = piecewiseColor(365 / 366)
 seldow = seldat.map(x => x.getUTCDay())
 selwee = seldat.map(d => d3.utcWeek.count(d3.utcYear(d), d))
-seldat = datesCal.filter((d, i) => ((i + 365 - 59 + nOffInput) % (365 + leapInput)) === dotyInput)
+seldat = datesCal.filter((d, i) => ((i + 365 - 59 + nOffInput) % nDaysInput) === dotyInput)
 dekLeapColors = d3.range(37).map(x => piecewiseColor(x * 10 / 366))
 dekCommColors = d3.range(37).map(x => piecewiseColor(x * 10 / 365))
 leaps = d3.range(366).map(x => piecewiseColor(x / 366))
 comms = d3.range(365).map(x => piecewiseColor(x / 365))
 moty = ["March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "January", "February"];
-motyColors = d3.range(12).map(moty2doty).map(x => piecewiseColor(x / daysInYear))
+motyColors = d3.range(12).map(moty2doty).map(x => piecewiseColor(x / nDaysInput))
 function moty2doty(moy = 1) {
   return (Math.floor(
     (153 * moy + 2) / 5
-) + nOffInput) % daysInYear}
+) + nOffInput) % nDaysInput}
 easyDoy = dotyInput < (80 + leapInput) ? dotyInput : dotyInputNeg
-easyDoyColor = textcolor(easyDoy, piecewiseColor(dotyInput / (365 + leapInput)))
+easyDoyColor = textcolor(easyDoy, piecewiseColor(dotyInput / nDaysInput))
 easySum = easyDoy + 285
-easySumColor = textcolor(easySum, piecewiseColor(easySum / (365 + leapInput)))
+easySumColor = textcolor(easySum, piecewiseColor(easySum / nDaysInput))
 function unix2dob(unix) {
   const doe = unix / 86400000 + 3124,
   doc = doe % 10631,
@@ -486,603 +514,6 @@ function dote2dob(doe) {
   }
 decRows = ["0", "30", "59", "89", "118", "148", "177", "207", "236", "266", "295", "325"];
 suncalc = (await import("https://cdn.jsdelivr.net/npm/suncalc@1/+esm")).default
-binopttop = ({
-  type: 'uint16',
-  value: ranintop,
-  displayParts: false,
-  format: false,
-  byteSeparation: false
-})
-binoptbtm = ({
-  type: 'uint16',
-  value: raninbtm,
-  displayParts: false,
-  format: false,
-  byteSeparation: false
-})
-templateFunction = inputs => htl.html`<div style="display: flex;">${inputs}</div>`
-b32js = "0123456789abcdefghijklmnopqrstuv";
-b32pl = "AÁBCDEÉFGHIÍJKLMNOÓPQRSTUÚVWXYÝZ";
-toPolishMap = Object.fromEntries(
-  [...b32js].map((c, i) => [c, b32pl[i]])
-);
-toBase32map = Object.fromEntries(
-  [...b32pl].map((c, i) => [c, b32js[i]])
-);
-function toPolish(str) {
-  return [...str.toLowerCase()]
-    .map(c => toPolishMap[c] ?? c)
-    .join("");
-}
-function toBase32(str) {
-  return [...str]
-    .map(c => toBase32map[c] ?? c)
-    .join("");
-}
-function leftShift() {
-  const [top, btm] = rotatePair(ranintop, raninbtm, multiplier, true, true)
-  set(viewof ranintop, top)
-  set(viewof raninbtm, btm)
-}
-function leftRotate() {
-  const [top, btm] = rotatePair(ranintop, raninbtm, multiplier, true, false)
-  set(viewof ranintop, top)
-  set(viewof raninbtm, btm)
-}
-function rightShift() {
-  const [top, btm] = rotatePair(ranintop, raninbtm, multiplier, false, true)
-  set(viewof ranintop, top)
-  set(viewof raninbtm, btm)
-}
-function rightRotate() {
-  const [top, btm] = rotatePair(ranintop, raninbtm, multiplier, false, false)
-  set(viewof ranintop, top)
-  set(viewof raninbtm, btm)
-}
-function reverseBits() {
-  const [top, btm] = reverseSplit(ranintop, raninbtm, multiplier, 5)
-  set(viewof ranintop, top)
-  set(viewof raninbtm, btm)
-}
-function stepPattern() {
-  const [top, btm] = stepGenerate(ranintop, raninbtm, multiplier, 5)
-  set(viewof ranintop, top)
-  set(viewof raninbtm, btm)
-}
-function reverseSplit(top, btm, split = 1, halflen = 5) {
-  const len = halflen * 2;
-  const mask = (1 << halflen) - 1;
-  let combined = ((top & mask) << halflen) | (btm & mask);
-  let out = 0;
-  const baseSize = Math.floor(len / split);
-  const remainder = len % split;
-  let pos = 0;
-  for (let i = 0; i < split; i++) {
-    const size = baseSize + (i >= split - remainder ? 1 : 0);
-    for (let j = 0; j < size; j++) {
-      const from = pos + j;
-      const to = pos + (size - 1 - j);
-      const bit = (combined >>> (len - 1 - from)) & 1;
-      out |= bit << (len - 1 - to);
-    }
-    pos += size;
-  }
-  return [
-    (out >>> halflen) & mask,
-    out & mask
-  ];
-}
-function stepGenerate(top, btm, step = 1, halflen = 5) {
-  const length = halflen * 2;
-  const mask = (1 << halflen) - 1;
-  const combined = ((top & mask) << halflen) | (btm & mask);
-  let out = 0;
-  for (let i = 0; i < length; i++) {
-    const bit = (i % step === 0) ? 1 : 0;
-    out |= bit << (length - 1 - i);
-  }
-  return [
-    (out >>> halflen) & mask,
-    out & mask
-  ];
-}
-schedBase10 = ranintop === raninbtm ? ranintop : ranintop << 5 | raninbtm
-schedBinary = ranintop === raninbtm ? ranintop.toString(2).padStart(5, "0") : schedBase10.toString(2).padStart(10, "0")
-schedBase32 = selintop === selinbtm ? selintop : selintop + selinbtm
-function rotatePair(top, btm, distance = 1, left = true, shift = true) {
-  const combined = top << 5 | btm;
-  distance = (distance % 10 + 10) % 10;
-  const rotated = left
-    ? (shift ? combined << distance : ((combined << distance) | (combined >>> (10 - distance)))) & 1023
-    : (shift ? combined >> distance : ((combined >>> distance) | (combined << (10 - distance)))) & 1023;
-  return [rotated >>> 5, rotated & 31];
-}
-// https://observablehq.com/@rreusser/binary-input
-function binaryInput(opts) {
-  var type = opts.type;
-  var byteSeparation =
-    opts.byteSeparation === undefined ? '5px' : opts.byteSeparation;
-  var format = opts.format === undefined ? x => x : opts.format;
-  var displayParts =
-    opts.displayParts === undefined ? false : opts.displayParts;
-  var fractionalSignificand =
-    opts.fractionalSignificand === undefined
-      ? false
-      : !!opts.fractionalSignificand;
-  var outputAsBytes =
-    opts.outputAsBytes === undefined ? false : !!opts.outputAsBytes;
-  var BigInt64Array = window.BigInt64Array;
-  var BigUint64Array = window.BigUint64Array;
-  var BigInt = window.BigInt;
-  var Ctor;
-  var length;
-  var signLength = 0;
-  var exponentLength = 0;
-  var offset = 0;
-  switch (type) {
-    case 'float16':
-      Ctor = Float32Array;
-      length = 16;
-      signLength = 1;
-      exponentLength = 5;
-      offset = 15;
-      break;
-    case 'float':
-    case 'float32':
-      Ctor = Float32Array;
-      length = 32;
-      signLength = 1;
-      exponentLength = 8;
-      offset = 127;
-      break;
-    case 'double':
-    case 'float64':
-      Ctor = Float64Array;
-      length = 64;
-      signLength = 1;
-      exponentLength = 11;
-      offset = 1023;
-      break;
-    case 'uint8':
-      Ctor = Uint8Array;
-      length = 8;
-      break;
-    case 'int8':
-      Ctor = Int8Array;
-      length = 8;
-      signLength = 1;
-      break;
-    case 'uint16':
-      Ctor = Uint16Array;
-      length = 16;
-      break;
-    case 'int16':
-      Ctor = Int16Array;
-      length = 16;
-      signLength = 1;
-      break;
-    case 'uint32':
-      Ctor = Uint32Array;
-      length = 32;
-      break;
-    case 'int32':
-      Ctor = Int32Array;
-      length = 32;
-      signLength = 1;
-      break;
-    case 'uint64':
-      Ctor = BigUint64Array;
-      length = 64;
-      signLength = 0;
-      break;
-    case 'int64':
-      Ctor = BigInt64Array;
-      length = 64;
-      signLength = 1;
-      break;
-    default:
-      throw new Error(
-        `Unexpected type "${type}". Options are 'float' ('float32'), 'double' ('float64'), 'uint8', 'int8', 'uint16', 'int16', 'uint32', and 'int32'`
-      );
-  }
-  if (
-    !window.BigInt &&
-    exponentLength &&
-    fractionalSignificand &&
-    length > 32
-  ) {
-    throw new Error(
-      'BigInt support must be present to display fractions for single or double precision floats'
-    );
-  }
-  // If we don't need anything special, fake it with a pass-through
-  var BigInt =
-    window.BigInt ||
-    function(x) {
-      return x;
-    };
-  var valueAsArray;
-  var bytes;
-  if (type === 'float16') {
-    // Typed array interpretation-style casting doesn't work for float16 since
-    // JavaScript doesn't support it. Instead we'll have to do this manually.
-    bytes = new Uint8Array(2);
-    if (opts.literalValue !== undefined) {
-      bytes[0] = opts.literalValue & 0x00ff;
-      bytes[1] = (opts.literalValue & 0xff00) >> 8;
-    } else if (opts.value !== undefined) {
-      var floatValue = new Float32Array([opts.value]);
-      var floatBytes = new Uint8Array(floatValue.buffer);
-      var signBit = (floatBytes[3] & 0b10000000) >> 7;
-      var exponent32 =
-        ((floatBytes[3] & 0b01111111) << 1) |
-        ((floatBytes[2] & 0b10000000) >> 7);
-      var exponent16 = exponent32 - 127 + 15;
-      var significand =
-        ((floatBytes[2] & 0b01111111) << 3) |
-        ((floatBytes[1] & 0b11100000) >> 5);
-      bytes[1] =
-        (signBit << 7) |
-        (exponent16 << 2) |
-        ((significand & 0b1100000000) >> 8);
-      bytes[0] = significand & 0b11111111;
-    }
-  } else {
-    if (opts.literalValue === undefined) {
-      var value = opts.value === undefined ? 0 : opts.value;
-      valueAsArray = new Ctor([
-        Ctor === BigInt64Array || Ctor === BigUint64Array
-          ? BigInt(value)
-          : value
-      ]);
-      bytes = new Uint8Array(valueAsArray.buffer);
-    } else {
-      valueAsArray = new Ctor([
-        Ctor === BigInt64Array || Ctor === BigUint64Array ? BigInt(0) : 0
-      ]);
-      bytes = new Uint8Array(valueAsArray.buffer);
-      for (var i = 0; i < length >> 3; i++) {
-        bytes[i] = (opts.literalValue & (0xff << (i * 8))) >> (i * 8);
-      }
-    }
-  }
-  const container = document.createElement('div');
-  if (opts.title) {
-    const title = document.createElement('div');
-    title.style.font = '700 0.9rem sans-serif';
-    title.textContent = opts.title;
-    title.style.marginBottom = '0.2rem';
-    container.appendChild(title);
-  }
-  const editor = document.createElement('div');
-  container.appendChild(editor);
-  editor.style.fontFamily = 'monospace';
-  editor.style.fontSize = '0.9rem';
-  // Debatable. It's easy to accidentally select when trying to toggle bits.
-  editor.style.userSelect = 'none';
-  let debugEl;
-  if (true) {
-    debugEl = document.createElement('div');
-    editor.appendChild(debugEl);
-  }
-  let output, partsDisplay;
-  const outputContainer = document.createElement('div');
-  container.append(outputContainer);
-  if (format) {
-    output = document.createElement('output');
-    output.style.font = '14px Menlo, Consolas, monospace';
-    outputContainer.appendChild(output);
-  }
-  if (displayParts) {
-    partsDisplay = document.createElement('span');
-    outputContainer.appendChild(partsDisplay);
-  }
-  if (opts.description) {
-    const description = document.createElement('div');
-    description.style.fontSize = '0.85rem';
-    description.style.fontStyle = 'italic';
-    description.textContent = opts.description;
-    container.appendChild(description);
-  }
-  function getBit(bit) {
-    // bit >> 3 divides by eight and tells which byte this belongs to
-    // bit & 0x7 gives the rest of the location. So basically we shift
-    // the value right to isolate the correct byte, then and it with the
-    // particular bit we want.
-    return bytes[bit >> 3] & (0x1 << (bit & 0x7)) ? 1 : 0;
-  }
-  function getSignBit() {
-    if (!signLength) return 0;
-    return bytes[bytes.length - 1] & 0x80;
-  }
-  function getMantissaBits() {
-    if (!exponentLength) return valueAsArray[0] & ~(1 << (length - 1));
-    switch (length) {
-      case 16:
-        return bytes[0] | ((bytes[1] & 0x3) << 8);
-      case 32:
-        return ((bytes[2] & 0x7f) << 16) | (bytes[1] << 8) | bytes[0];
-      case 64:
-        return (
-          ((BigInt(bytes[6]) & BigInt(0xf)) << BigInt(48)) +
-          (BigInt(bytes[5]) << BigInt(40)) +
-          (BigInt(bytes[4]) << BigInt(32)) +
-          BigInt(
-            (bytes[3] << 24) + (bytes[2] << 16) + (bytes[1] << 8) + bytes[0]
-          )
-        );
-    }
-  }
-  function getExponentBits() {
-    if (!exponentLength) return 0;
-    switch (length) {
-      case 64:
-        return ((bytes[7] & 0x7f) << 4) | (bytes[6] >> 4);
-      case 32:
-        return ((bytes[3] & 0x7f) << 1) | (bytes[2] >> 7);
-      case 16:
-        return (bytes[1] & 0x7c) >> 2;
-    }
-  }
-  function getSign() {
-    return getSignBit() ? -1 : 1;
-  }
-  function isDenormal() {
-    if (!exponentLength) return false;
-    switch (length) {
-      case 64:
-        return (
-          !(bytes[bytes.length - 1] & 0x7f) && !(bytes[bytes.length - 2] & 0xf0)
-        );
-      case 32:
-        return (
-          !(bytes[bytes.length - 1] & 0x7f) && !(bytes[bytes.length - 2] & 0x80)
-        );
-      case 16:
-        return !(bytes[1] & 0x7c);
-    }
-  }
-  function getMantissa() {
-    if (type === 'float16') {
-      return (
-        (bytes[0] | ((bytes[1] & 0x3) << 8)) / 1024 + (isDenormal() ? 1 : 0)
-      );
-    }
-    var bytesCopy = new Uint8Array(bytes.slice());
-    var normalOffset = 0;
-    var typedMantissa = new Ctor(bytesCopy.buffer);
-    if (exponentLength) {
-      bytesCopy[bytesCopy.length - 1] = 0x3f;
-      bytesCopy[bytesCopy.length - 2] =
-        bytesCopy[bytesCopy.length - 2] | (length === 32 ? 0x80 : 0xf0);
-    } else if (signLength) {
-      if (!exponentLength && getSign() === -1) {
-        for (var i = 0; i < bytesCopy.length; i++) {
-          bytesCopy[i] = ~bytesCopy[i];
-        }
-        normalOffset = 1;
-      }
-      // Unset the sign bit
-      bytesCopy[bytesCopy.length - 1] = bytesCopy[bytesCopy.length - 1] & 0x7f;
-    }
-    if (normalOffset) {
-      typedMantissa[0] += normalOffset;
-    }
-    return typedMantissa[0];
-  }
-  function getExponentBits() {
-    if (!exponentLength) return 0;
-    switch (length) {
-      case 64:
-        return ((bytes[7] & 0x7f) << 4) | (bytes[6] >> 4);
-      case 32:
-        return ((bytes[3] & 0x7f) << 1) | (bytes[2] >> 7);
-      case 16:
-        return (bytes[1] & 0x7c) >> 2;
-    }
-  }
-  function getExponent() {
-    if (!exponentLength) return 0;
-    switch (length) {
-      case 64:
-        return Math.max(-1022, getExponentBits() - 0x3ff);
-      case 32:
-        return Math.max(-126, getExponentBits() - 0x7f);
-      case 16:
-        return Math.max(-14, getExponentBits() - 0xf);
-    }
-  }
-  function getValue() {
-    if (type === 'float16') {
-      // Javascript doesn't support half-float, so we'll tease it apart and insert
-      // the corresponding parts into a float32 instead.
-      var floatBytes = new Uint8Array(4);
-      // Isolate the sign bit:
-      var signBit = (bytes[1] & 0b10000000) >> 7;
-      // Isolate the mantissa
-      var mantissa = ((bytes[1] & 0b00000011) << 8) | bytes[0];
-      // Isolate the exponent:
-      var exponent16 = (bytes[1] & 0b01111100) >> 2;
-      var exponent32 = exponent16 - 15 + 127;
-      if (exponent16 === 0) {
-        // Subnormal. This one is tricky so we'll just do it mathematically instead of bitwise
-        return (signBit > 0 ? -1 : 1) * Math.pow(2, -14) * (mantissa / 1024);
-      } else if (exponent16 === 31) {
-        // Transfer this special case into the 32-bit exponent
-        exponent32 = 255;
-      }
-      // Combine the sign and exponent into the first byte
-      floatBytes[3] = (signBit << 7) | ((exponent32 & 0b11111110) >> 1);
-      floatBytes[2] =
-        ((exponent32 & 0b1) << 7) | ((mantissa & 0b1111111000) >> 3);
-      floatBytes[1] = (mantissa & 0b00000111) << 5;
-      floatBytes[0] = 0;
-      return new Float32Array(floatBytes.buffer)[0];
-    }
-    return valueAsArray[0];
-  }
-  const bitSpans = [];
-  function writeBits() {
-    for (var i = 0; i < length; i++) {
-      bitSpans[i].textContent = getBit(i);
-    }
-    if (output) output.textContent = format(getValue());
-    if (partsDisplay) {
-      let el = document.createElement('span');
-      el.appendChild(tex`\; = \;`);
-      if (signLength) {
-        let signContainer = document.createElement('span');
-        signContainer.appendChild(tex`${getSign()}`);
-        signContainer.style.backgroundColor = 'rgba(0, 0, 210, 0.25)';
-        signContainer.style.padding = '0 0.15em';
-        el.append(signContainer);
-        el.appendChild(tex`\; \times \;`);
-      }
-      if (exponentLength) {
-        let exponentContainer = document.createElement('span');
-        exponentContainer.appendChild(tex`2^{${getExponent()}}`);
-        exponentContainer.style.backgroundColor = 'rgba(0, 210, 0, 0.25)';
-        exponentContainer.style.padding = '0 0.15em';
-        el.append(exponentContainer);
-        el.appendChild(tex`\; \times \;`);
-      }
-      var mantissaContainer = document.createElement('span');
-      if (exponentLength && fractionalSignificand) {
-        mantissaContainer.appendChild(
-          tex`\left(${
-            isDenormal() ? 0 : 1
-          } + \frac{${getMantissaBits()}}{${BigInt(1) <<
-            BigInt(length - signLength - exponentLength)}}\right)`
-        );
-      } else {
-        var mantissaStr = getMantissa().toString();
-        if (isDenormal()) mantissaStr = mantissaStr.replace(/^1/, '0');
-        mantissaContainer.appendChild(tex`${mantissaStr}`);
-      }
-      mantissaContainer.style.backgroundColor = 'rgba(210, 0, 0, 0.25)';
-      mantissaContainer.style.padding = '0 0.15em';
-      el.appendChild(mantissaContainer);
-      if (partsDisplay.firstChild) partsDisplay.firstChild.remove();
-      partsDisplay.appendChild(el);
-    }
-    container.value = outputAsBytes ? bytes : getValue();
-  }
-  var curBit = 0;
-  function toggleBit(bit, event) {
-    curBit = bit;
-    bitSpans[curBit].focus();
-    // Similar to above, we isolate the bit we're interested in, then
-    // construct the bit we want to toggle. Typed array casting via buffer
-    // views magically handles interpretation for us.
-    bytes[bit >> 3] = bytes[bit >> 3] ^ (0x1 << (bit & 0x7));
-    writeBits();
-    container.dispatchEvent(new CustomEvent('input'));
-  }
-  function setBit(bit, value) {
-    curBit = bit;
-    if (value) {
-      bytes[bit >> 3] = bytes[bit >> 3] | (0x1 << (bit & 0x7));
-    } else {
-      bytes[bit >> 3] = bytes[bit >> 3] & ~(0x1 << (bit & 0x7));
-    }
-    writeBits();
-    container.dispatchEvent(new CustomEvent('input'));
-  }
-  function nextBit() {
-    curBit++;
-    bitSpans[curBit].focus();
-  }
-  function prevBit() {
-    if (curBit === length - 1) return false;
-    curBit++;
-    bitSpans[curBit].focus();
-    return true;
-  }
-  function nextBit() {
-    if (curBit === 0) return false;
-    curBit--;
-    bitSpans[curBit].focus();
-    return true;
-  }
-  function focusBit(i) {
-    curBit = i;
-  }
-  function handleKeypress(event) {
-    switch (event.keyCode) {
-      case 8:
-        setBit(curBit, 0);
-        prevBit();
-        event.preventDefault();
-        break;
-      case 9:
-        if (event.shiftKey) {
-          if (prevBit()) event.preventDefault();
-        } else {
-          if (nextBit()) event.preventDefault();
-        }
-        break;
-      case 37:
-        if (prevBit()) event.preventDefault();
-        break;
-      case 39:
-        if (nextBit()) event.preventDefault();
-        break;
-      case 48:
-        setBit(curBit, 0);
-        nextBit();
-        event.preventDefault();
-        break;
-      case 49:
-        setBit(curBit, 1);
-        nextBit();
-        event.preventDefault();
-        break;
-    }
-  }
-  let bit = length - 1;
-  for (let byte = bytes.length - 1; byte >= 0; byte--) {
-    const byteSpan = document.createElement('span');
-    byteSpan.style.display = 'inline-block';
-    byteSpan.style.marginRight = byteSeparation;
-    byteSpan.style.marginBottom = '2px';
-    for (let i = 0; i < 8; i++) {
-      const bitSpan = document.createElement('button');
-      byteSpan.append(bitSpan);
-      bitSpans.unshift(bitSpan);
-      bitSpan.style.width = '15px';
-      bitSpan.style.height = '20px';
-      bitSpan.style.display = 'inline';
-      bitSpan.style.border = '1px solid black';
-      bitSpan.style.verticalAlign = 'middle';
-      bitSpan.style.padding = '0';
-      bitSpan.style.textAlign = 'center';
-      bitSpan.style.marginRight = '-1px';
-      bitSpan.style.lineHeight = '20px';
-      bitSpan.style.cursor = 'pointer';
-      bitSpan.style.fontFamily = 'monospace';
-      bitSpan.style.borderRadius = 0;
-      bitSpan.style.fontSize = '0.9rem';
-      bitSpan.style.backgroundColor = 'transparent';
-      if (signLength > 0 || exponentLength > 0) {
-        if (bit < length - signLength - exponentLength) {
-          bitSpan.style.backgroundColor = 'rgba(210, 0, 0, 0.25)';
-        } else if (bit < length - signLength) {
-          bitSpan.style.backgroundColor = 'rgba(0, 210, 0, 0.25)';
-        } else {
-          bitSpan.style.backgroundColor = 'rgba(0, 0, 210, 0.25)';
-        }
-      }
-      bitSpan.addEventListener('focus', focusBit.bind(null, bit));
-      bitSpan.addEventListener('click', toggleBit.bind(null, bit));
-      bit--;
-    }
-    editor.append(byteSpan);
-  }
-  editor.addEventListener('keydown', handleKeypress);
-  writeBits();
-  container.value = outputAsBytes ? bytes : getValue();
-  return container;
-}
 temps = await FileAttachment("temps.json").json()
 // Adapted from https://observablehq.com/@observablehq/filtering-several-charts-1871
 function renderFilter(initialTest = true) {
