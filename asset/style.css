@@ -328,7 +328,7 @@ div > form > label {
 }
 .grave::before {
   transform: rotate(0.16turn);
-  left: 0px;
+  left: 1px;
 }
 
 .acute::before {
