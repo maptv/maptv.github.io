@@ -223,7 +223,7 @@ december31doyColor = textcolor(december31doy, piecewiseColor(december31doy / nDa
 january1doy = 306 + nOffInput
 january1doyByNdaysInput = january1doy / nDaysInput
 january1doyPiece = piecewiseColor(january1doyByNdaysInput)
-january1doyColor = textcolor(january1doy, )
+january1doyColor = textcolor(january1doy, january1doyPiece)
 january1doyColor1 = textcolor(january1doy, january1doyPiece)
 january1doyColor2 = textcolor(january1doy, january1doyPiece)
 january1doyColor3 = textcolor(january1doy, january1doyPiece)
@@ -1035,6 +1035,120 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color05by59 {
+  background: #ff8400;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color07by59 {
+  background: #ffb200;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color10by59 {
+  background: #ffd900;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color14by59 {
+  background: #e6ff00;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color15by59 {
+  background: #daff00;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color20by59 {
+  background: #7eff00;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color22by59 {
+  background: #67ff00;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color25by59 {
+  background: #00ff71;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color29by59 {
+  background: #00ffe8;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color30by59 {
+  background: #00eeff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color35by59 {
+  background: #0091ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color37by59 {
+  background: #0065ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color40by59 {
+  background: #00c3ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color44by59 {
+  background: #6300ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color45by59 {
+  background: #6f00ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color50by59 {
+  background: #ca00ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color52by59 {
+  background: #e600ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color55by59 {
+  background: #ff00a0;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color58by59 {
+  background: #ff0045;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color01by32 {
   background: #ff5900;
   color: black;
@@ -1317,7 +1431,7 @@ p:has(span.handlabel)  {
   width: 100%;
   text-align: center;
 }
-div.overflowequation {
+div.equationgroup {
   margin-top: -9px;
   margin-bottom: -8px;
   overflow: visible;
