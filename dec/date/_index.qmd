@@ -1658,5 +1658,17 @@ code {
 #moonplot {
   overflow: visible;
 }
+.dieface, .firstdieface {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 21px;
+  padding-bottom: 3px;
+}
+.firstdieface {
+  font-size: 15px;
+  width: 11px;
+  padding-left: 0.9px;
+}
 </style>
 ```
