@@ -93,10 +93,10 @@ function doty2greg(doty = 0) {
     const m = Math.floor((5 * doty + 2) / 153);
     return new Date(calYear, Math.floor(m < 10 ? m + 3 : m - 9) - 1, doty - Math.floor((153 * m + 2) / 5) + 1);
 }
-function doty2month(doty = 1) {
+function doty2month(doty = 0) {
     return doty2greg((doty + nDaysnOffInput) % nDaysInput).getUTCMonth() + 1
 }
-function doty2dotm(doty = 1) {
+function doty2dotm(doty = 0) {
     return doty2greg((doty + nDaysnOffInput) % nDaysInput).getUTCDate()
 }
 function month2doty(month = 1) {
@@ -239,6 +239,7 @@ decYearColor5 = textcolor(decYear, decYearPiece)
 decYearColor6 = textcolor(decYear, decYearPiece)
 decYearColor7 = textcolor(decYear, decYearPiece)
 decYearColor8 = textcolor(decYear, decYearPiece)
+decYearColor9 = textcolor(decYear, decYearPiece)
 nextYear = decYear + 1
 nextYearOfCenturyBy100 = nextYear % 100 / 100
 nextYearPiece = piecewiseColor(nextYearOfCenturyBy100)
@@ -276,7 +277,6 @@ decDotyColor1 = textcolor(decDoty, decDotyPiece)
 decDotyColor2 = textcolor(decDoty, decDotyPiece)
 decDotyColor3 = textcolor(decDoty, decDotyPiece)
 decDotyColor4 = textcolor(decDoty, decDotyPiece)
-decDotyColor5 = textcolor(decDoty, decDotyPiece)
 decDotyPad = String(decDoty).padStart(3, "0")
 decDotyPadColor = textcolor(decDotyPad, decDotyPiece)
 decDotyPadColor1 = textcolor(decDotyPad, decDotyPiece)
@@ -447,6 +447,8 @@ dotwColor1 = textcolor(dotw, dotwPiece)
 dotwColor2 = textcolor(dotw, dotwPiece)
 dotwColor3 = textcolor(dotw, dotwPiece)
 dotwColor4 = textcolor(dotw, dotwPiece)
+dotwColor5 = textcolor(dowDice[dotw], dotwPiece)
+dotwColor6 = textcolor(dotw, dotwPiece)
 day266dotw = dote2dotw(date2dote(decYear, 266)[0])
 day266dotwColor = textcolor(day266dotw, piecewiseColor(day266dotw / 7))
 day266dotwDiff = dotw2diff(4, day266dotw)
@@ -455,12 +457,13 @@ day266dotwDiffColor = textcolor(day266dotwDiff, day266dotwDiffPiece)
 day266dotwDiffColor1 = textcolor(day266dotwDiff, day266dotwDiffPiece)
 day266dotwDiffPlus267 = day266dotwDiff + 267
 day266dotwDiffPlus267Color = textcolor(day266dotwDiffPlus267, piecewiseColor(day266dotwDiffPlus267 / nDaysInput))
-dotm = doty2dotm(Math.floor(ydz[1]))
-dotm0 = String(dotm - 1).padStart(2, "0")
-monthNumber = Math.floor(ydz[1] - dotm)
-monthNumberColor = textcolor(monthNumber, monthNumber / nDaysInput)
-monthNumber0 = String(monthNumber + 1).padStart(3, "0")
-monthNumber1 = monthNumber.toString().padStart(3, "0")
+motyInput = Math.floor((5 * dotyInput + 2) / 153)
+botmInput = Math.floor((153 * motyInput + 2) / 5) - 1
+dayofmonthInput = dotyInput - botmInput 
+dayofmonthPiece = piecewiseColor(dayofmonthInput / motyLens[motyInput])
+dayofmonthColor = textcolor(dayofmonthInput, dayofmonthPiece)
+monthNumber = dotyInput - dayofmonthInput
+monthNumberColor = textcolor(monthNumber, piecewiseColor(monthNumber / nDaysInput))
 dotw0doty = Math.floor(ydz[1]) - dotw
 dotw0dotyPiece = piecewiseColor(dotw0doty / nDaysInYear)
 dotw0dotyColor = textcolor(dotw0doty, dotw0dotyPiece)
@@ -483,6 +486,7 @@ week = Math.floor((ydz[1] + doty0dotw) / 7)
 weekPad = week.toString().padStart(2, "0")
 weekColor = textcolor(week, dotw0dotyPiece)
 weekColor1 = textcolor(weekPad, dotw0dotyPiece)
+weekColor2 = textcolor(woyCards[week], dotw0dotyPiece)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
 dotw0signIfNeg = dotw0doty < 0 ? "-" : ""
 nDaysInYear = 365 + year2leap(decYear + 1)
@@ -497,8 +501,10 @@ TminusPaddedNeg = "-" + TminusPadded
 fracYear = decYear + ydz[1] / nDaysInYear
 fullfracYear = (fracYear).toFixed(4)
 mod1FracYear = (fracYear % 1).toFixed(4)
+woyCards = ["🂡", "🂢", "🂣", "🂤", "🂥", "🂦", "🂧", "🂨", "🂩", "🂪", "🂫", "🂭", "🂮", "🂱", "🂲", "🂳", "🂴", "🂵", "🂶", "🂷", "🂸", "🂹", "🂺", "🂻", "🂽", "🂾", "🃁", "🃂", "🃃", "🃄", "🃅", "🃆", "🃇", "🃈", "🃉", "🃊", "🃋", "🃍", "🃎", "🃑", "🃒", "🃓", "🃔", "🃕", "🃖", "🃗", "🃘", "🃙", "🃚", "🃛", "🃝", "🃞", "🃟"]
+dowDice = ["☐", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"]
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-monthNums = ["306", "337", "", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
+motyLens = [31, 30, 31, 30, 31, 31, 30, 31, 30, 31, 31, 28 + leapInput];
 moonNums = ["0", "31", "61", "92", "122", "153", "184", "214", "245", "275", "306", "337"];
 calYear = !leapInput && dotwInput == "Mon" ? 6 : !leapInput && dotwInput == "Tue" ? 7 : !leapInput && dotwInput == "Wed" ? 2 : !leapInput && dotwInput == "Thu" ? 3 : !leapInput && dotwInput == "Fri" ? 9 : !leapInput && dotwInput == "Sat" ? 10 : !leapInput && dotwInput == "Sun" ? 11 : leapInput && dotwInput == "Mon" ? 12 : leapInput && dotwInput == "Tue" ? 24 : leapInput && dotwInput == "Wed" ? 8 : leapInput && dotwInput == "Thu" ? 20 : leapInput && dotwInput == "Fri" ? 4 : leapInput && dotwInput == "Sat" ? 16 : leapInput && dotwInput == "Sun" ? 28 : 0;
 datesCal = d3.utcDays(new Date(calYear, 0, 0), new Date(calYear, 12, 0));
@@ -511,10 +517,35 @@ numbers = Array.from({length: 366}, (_, i) => i)
 set(viewof dotyInput, leapscrub[4])
 dotyInputNeg = dotyInput - nDaysInput 
 dotyInputDek = Math.floor(dotyInput / 10)
-dotyInputDekColor = textcolor(dotyInputDek, piecewiseColor(dotyInputDek / 37))
+dotyInputDekPiece = piecewiseColor(dotyInputDek / 37)
+dotyInputDekD3rgb = d3.rgb(dotyInputDekPiece)
+dotyInputDekColor = textcolor(dotyInputDek, dotyInputDekPiece)
+dotyInputDekColor1 = textcolor(dotyInputDek.toString().padStart(2, "0"), dotyInputDekPiece)
+dotyInputDekColor2 = textcolor(Math.round(d3.hsl(dotyInputDekPiece).h).toString().padStart(3, "0"), dotyInputDekPiece)
+dotyInputDekColor3 = textcolor(dotyInputDekD3rgb.formatHex(), dotyInputDekPiece)
+dotyInputDekColor4 = textcolor(dotyInputDekD3rgb.r.toString().padStart(3, "0"), dotyInputDekPiece)
+dotyInputDekColor5 = textcolor(dotyInputDekD3rgb.b.toString().padStart(3, "0"), dotyInputDekPiece)
+dotyInputDekColor6 = textcolor(dotyInputDekD3rgb.g.toString().padStart(3, "0"), dotyInputDekPiece)
 dotyInputDod = dotyInput % 10
-dotyInputDodColor = textcolor(dotyInputDod, piecewiseColor(dotyInputDod / 10))
-dotyInputColor = textcolor(dotyInput, piecewiseColor(dotyInput / nDaysInput))
+dotyInputDodPiece = piecewiseColor(dotyInputDod / 10)
+dotyInputDodD3rgb = d3.rgb(dotyInputDodPiece)
+dotyInputDodColor = textcolor(dotyInputDod, dotyInputDodPiece)
+dotyInputDodColor1 = textcolor(dotyInputDod, dotyInputDodPiece)
+dotyInputDodColor2 = textcolor(Math.round(d3.hsl(dotyInputDodPiece).h).toString().padStart(3, "0"), dotyInputDodPiece)
+dotyInputDodColor3 = textcolor(dotyInputDodD3rgb.formatHex(), dotyInputDodPiece)
+dotyInputDodColor4 = textcolor(dotyInputDodD3rgb.r.toString().padStart(3, "0"), dotyInputDodPiece)
+dotyInputDodColor5 = textcolor(dotyInputDodD3rgb.b.toString().padStart(3, "0"), dotyInputDodPiece)
+dotyInputDodColor6 = textcolor(dotyInputDodD3rgb.g.toString().padStart(3, "0"), dotyInputDodPiece)
+dotyInputPiece = piecewiseColor(dotyInput / nDaysInput)
+dotyInputD3rgb = d3.rgb(dotyInputPiece)
+dotyInputColor = textcolor(dotyInput, dotyInputPiece)
+dotyInputColor1 = textcolor(dotyInput.toString().padStart(3, "0"), dotyInputPiece)
+dotyInputColor2 = textcolor(Math.round(d3.hsl(dotyInputPiece).h).toString().padStart(3, "0"), dotyInputPiece)
+dotyInputColor3 = textcolor(dotyInputD3rgb.formatHex(), dotyInputPiece)
+dotyInputColor4 = textcolor(dotyInputD3rgb.r.toString().padStart(3, "0"), dotyInputPiece)
+dotyInputColor5 = textcolor(dotyInputD3rgb.b.toString().padStart(3, "0"), dotyInputPiece)
+dotyInputColor6 = textcolor(dotyInputD3rgb.g.toString().padStart(3, "0"), dotyInputPiece)
+dotyInputColor7 = textcolor(dotyInput, dotyInputPiece)
 piecewiseColor = d3.piecewise(d3.interpolateRgb, [
   "#f00",    //  0   0 red
   "#f50",    //  0.25  20 yr
@@ -1037,61 +1068,61 @@ p:has(.radiotitle) {
 }
 .color05by59 {
   background: #ff8400;
-  color: white;
+  color: black;
   padding: 0px .5px;
   border-radius: 4px;
 }
 .color07by59 {
   background: #ffb200;
-  color: white;
+  color: black;
   padding: 0px .5px;
   border-radius: 4px;
 }
 .color10by59 {
   background: #ffd900;
-  color: white;
+  color: black;
   padding: 0px .5px;
   border-radius: 4px;
 }
 .color14by59 {
   background: #e6ff00;
-  color: white;
+  color: black;
   padding: 0px .5px;
   border-radius: 4px;
 }
 .color15by59 {
   background: #daff00;
-  color: white;
+  color: black;
   padding: 0px .5px;
   border-radius: 4px;
 }
 .color20by59 {
   background: #7eff00;
-  color: white;
+  color: black;
   padding: 0px .5px;
   border-radius: 4px;
 }
 .color22by59 {
   background: #67ff00;
-  color: white;
+  color: black;
   padding: 0px .5px;
   border-radius: 4px;
 }
 .color25by59 {
   background: #00ff71;
-  color: white;
+  color: black;
   padding: 0px .5px;
   border-radius: 4px;
 }
 .color29by59 {
   background: #00ffe8;
-  color: white;
+  color: black;
   padding: 0px .5px;
   border-radius: 4px;
 }
 .color30by59 {
   background: #00eeff;
-  color: white;
+  color: black;
   padding: 0px .5px;
   border-radius: 4px;
 }
@@ -1669,6 +1700,14 @@ code {
   font-size: 15px;
   width: 11px;
   padding-left: 0.9px;
+}
+.playingcard span:not(:has(*)) {
+  padding-bottom: 3.5px !important;
+  position: relative;
+  top: -1.5px;
+  display: inline-flex;
+  place-items: center;
+  height: 20px;
 }
 </style>
 ```
