@@ -241,6 +241,7 @@ decYearColor7 = textcolor(decYear, decYearPiece)
 decYearColor8 = textcolor(decYear, decYearPiece)
 decYearColor9 = textcolor(decYear, decYearPiece)
 decYearColor10 = textcolor(decYear, decYearPiece)
+decYearColor11 = textcolor(decYear, decYearPiece)
 nextYear = decYear + 1
 nextYearOfCenturyBy100 = nextYear % 100 / 100
 nextYearPiece = piecewiseColor(nextYearOfCenturyBy100)
@@ -448,9 +449,10 @@ dotwColor1 = textcolor(dotw, dotwPiece)
 dotwColor2 = textcolor(dotw, dotwPiece)
 dotwColor3 = textcolor(dotw, dotwPiece)
 dotwColor4 = textcolor(dotw, dotwPiece)
-dotwColor5 = textcolor(dowDice[dotw], dotwPiece)
+dotwColor5 = textcolor(dotw, dotwPiece)
 dotwColor6 = textcolor(dowDice[dotw], dotwPiece)
-dotwColor7 = textcolor(dotw, dotwPiece)
+dotwColor7 = textcolor(dowDice[dotw], dotwPiece)
+dotwColor8 = textcolor(dotw, dotwPiece)
 day266dotw = dote2dotw(date2dote(decYear, 266)[0])
 day266dotwColor = textcolor(day266dotw, piecewiseColor(day266dotw / 7))
 day266dotwDiff = dotw2diff(4, day266dotw)
@@ -494,7 +496,8 @@ woySignColor = textcolor(woySigns[woySign], woySignPiece)
 woyPad = weekofyear.toString().padStart(2, "0")
 woyColor = textcolor(weekofyear, dotw0dotyPiece)
 woyColor1 = textcolor(woyPad, dotw0dotyPiece)
-woyColor2 = textcolor(woyCards[weekofyear], dotw0dotyPiece)
+woyColor2 = textcolor(woyPad, dotw0dotyPiece)
+woyColor3 = textcolor(woyCards[weekofyear], dotw0dotyPiece)
 dotw0sign = dotw0doty < 0 ? "-" : "+"
 dotw0signIfNeg = dotw0doty < 0 ? "-" : ""
 nDaysInYear = 365 + year2leap(decYear + 1)
@@ -511,7 +514,7 @@ fullfracYear = (fracYear).toFixed(4)
 mod1FracYear = (fracYear % 1).toFixed(4)
 woyCards = ["🂡", "🂢", "🂣", "🂤", "🂥", "🂦", "🂧", "🂨", "🂩", "🂪", "🂫", "🂭", "🂮", "🂱", "🂲", "🂳", "🂴", "🂵", "🂶", "🂷", "🂸", "🂹", "🂺", "🂻", "🂽", "🂾", "🃁", "🃂", "🃃", "🃄", "🃅", "🃆", "🃇", "🃈", "🃉", "🃊", "🃋", "🃍", "🃎", "🃑", "🃒", "🃓", "🃔", "🃕", "🃖", "🃗", "🃘", "🃙", "🃚", "🃛", "🃝", "🃞", "🃟", "🂠"]
 woySuits = ["♤", "♡", "♢", "♧", "☆"]
-woySigns = ["♈︎", "♉︎", "♊︎", "♋︎", "♌︎", "♍︎", "♎︎", "♏︎", "♐︎", "♑︎", "♒︎", "♓︎", "⛎︎"]
+woySigns = ["𝍠", "𝍡", "𝍢", "𝍣", "𝍤", "𝍮", "𝍯", "𝍰", "𝍱", "𝍥", "𝍦", "𝍧", "𝍨"]
 dowDice = ["☐", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"]
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 motyLens = [31, 30, 31, 30, 31, 31, 30, 31, 30, 31, 31, 28 + leapInput];
@@ -1726,6 +1729,8 @@ code {
   place-items: center;
   height: 20.5px;
   font-size: 25px;
+  justify-content: center;
+  align-items: center;
 }
 .halfdomino span:not(:has(*)) {
   padding-bottom: 7.8px !important;
@@ -1735,6 +1740,8 @@ code {
   place-items: center;
   height: 20.5px;
   font-size: 32px;
+  justify-content: center;
+  align-items: center;
 }
 .playingcardsuit span:not(:has(*)) {
   padding-bottom: 0.5px !important;
@@ -1746,17 +1753,20 @@ code {
   font-size: 20px;
   width: 18px;
   justify-content: center;
+  align-items: center;
 }
-.zodiacsign span:not(:has(*)) {
-  padding-bottom: 6.5px !important;
+.countingrod span:not(:has(*)) {
+  padding-bottom: 6px !important;
+  padding-left: 0.25px !important;
   position: relative;
-  top: -2px;
+  top: 0.5px;
   display: inline-flex;
   place-items: center;
   height: 20.5px;
-  font-size: 20px;
+  font-size: 26px;
   width: 16px;
   justify-content: center;
+  align-items: center;
 }
 .bigcard {
   font-size: 56px;
