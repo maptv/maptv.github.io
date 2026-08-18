@@ -1719,7 +1719,7 @@ code {
   width: 20px;
 }
 .firstdieface {
-  padding: 0px 0.5px 7.8px 1.5px;
+  padding: 0px 0px 7.8px 0.75px;
 }
 .playingcard span:not(:has(*)) {
   padding-bottom: 6.5px !important;
@@ -1742,6 +1742,8 @@ code {
   font-size: 32px;
   justify-content: center;
   align-items: center;
+  width: 22px;
+  padding-left: 1px !important;
 }
 .playingcardsuit span:not(:has(*)) {
   padding-bottom: 0.5px !important;
@@ -1757,7 +1759,7 @@ code {
 }
 .countingrod span:not(:has(*)) {
   padding-bottom: 6px !important;
-  padding-left: 0.25px !important;
+  padding-left: 0.5px !important;
   position: relative;
   top: 0.5px;
   display: inline-flex;
