@@ -51,7 +51,7 @@
     axis: null,
     label: null,
     style: {
-      background: "#aaa",
+      background: "#fff",
       overflow: "visible",
     },
     // Marks
@@ -122,6 +122,11 @@
           strokeWidth: 6,
         })
       ),
+      Plot.line(fitted, {
+        x: "day",
+        y: "temperature",
+        z: "segment"
+      }),
       // On hover marks
       // Trick to hide x-axis when hovering
       Plot.ruleY(
@@ -131,11 +136,11 @@
           py: "temp",
           x1: 0,
           x2: 366,
-          y: 10.8,
+          y: 10.73,
           className: "hideXaxisRule",
           stroke: "#fff",
-          strokeWidth: 32,
-          inset: -28,
+          strokeWidth: 30,
+          inset: -20,
           maxRadius: 5
         })
       ),
@@ -145,9 +150,10 @@
         Plot.pointer({
           x: "dayOfYear",
           py: "temp",
+          className: "point2datapointRule",
           stroke: "#333",
-          insetTop: 15,
-          insetBottom: -10,
+          insetTop: 5,
+          insetBottom: -5,
           maxRadius: 5
         })
       ),
@@ -174,6 +180,7 @@
           fontSize: 16,
           lineHeight: 1.1,
           stroke: "#aaa",
+          className: "hoverYaxisValue",
           strokeWidth: 5,
           dy: -30,
           maxRadius: 5
@@ -186,8 +193,9 @@
           ...axisCommon,
           x: "dayOfYear",
           py: "temp",
-          text: (d) => "Day " + d.dayOfYear + " = " + d3.utcFormat("%b %-d")(d.date),
+          text: (d) => "Day " + d.dayOfYear + " = " + d3.utcFormat("%b %-d")(new Date(d.date)),
           frameAnchor: "bottom",
+          className: "hoverXaxisValue",
           dy: 22,
           maxRadius: 5
         })

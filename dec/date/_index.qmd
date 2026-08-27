@@ -242,6 +242,7 @@ decYearColor8 = textcolor(decYear, decYearPiece)
 decYearColor9 = textcolor(decYear, decYearPiece)
 decYearColor10 = textcolor(decYear, decYearPiece)
 decYearColor11 = textcolor(decYear, decYearPiece)
+decYearColor12 = textcolor(decYear, decYearPiece)
 nextYear = decYear + 1
 nextYearOfCenturyBy100 = nextYear % 100 / 100
 nextYearPiece = piecewiseColor(nextYearOfCenturyBy100)
@@ -695,11 +696,11 @@ function renderFilter(initialTest = true) {
             context
           );
           updates.push((test) => {
-            const transform = g.getAttribute("transform");
+            // const transform = g.getAttribute("transform");
             g.replaceWith(
               (g = next(filter(test), scales, values, dimensions, context))
             );
-            g.setAttribute("transform", transform); // facet translate
+            // g.setAttribute("transform", transform); // facet translate
           });
           return g;
         }
@@ -712,6 +713,25 @@ function renderFilter(initialTest = true) {
     }
   );
 }
+temperatureFit = day => {
+  if (day < 100) return 12.6343652043669 + 0.0307141335141338 * day;
+  if (day < 150) return 14.9231044981674 + 0.0078267405761289 * day;
+  if (day < 200) return 18.8045346870537 - 0.0180494606897801 * day;
+  if (day < 266) return 22.6564238250098 - 0.0373094376597727 * day;
+  if (day < 316) return 16.6253313118584 - 0.0146427785167390 * day;
+  return 8.37744550023555 + 0.0114311155086508 * day;
+}
+fitted = d3.range(366).map(day => ({
+  day,
+  temperature: temperatureFit(day),
+  segment:
+    day < 100 ? "0=99" :
+    day < 150 ? "100=149" :
+    day < 200 ? "150=199" :
+    day < 266 ? "200=265" :
+    day < 316 ? "266=315" :
+                "316=365"
+}))
 ```
 
 ```{ojs}
@@ -1784,6 +1804,24 @@ code {
   font-size: 20px;
   display: block;
   margin-bottom: -8px;
+}
+#decseasonplot {
+  overflow: visible;
+}
+#segme figure.figure {
+  margin: -45px 0px -25px 0px;
+}
+#segme div.cell-output {
+  overflow: hidden;
+}
+#decseasonplot figure svg {
+  width: 100%
+}
+#decseasonplot figure svg:nth-child(1) {
+  max-width: 360px
+}
+#decseasonplot figure svg:nth-child(2) {
+  max-width: 900px
 }
 </style>
 ```
