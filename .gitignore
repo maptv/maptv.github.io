@@ -4,6 +4,7 @@
 .Ruserdata
 .jupyter
 _site
+renv/
 _extensions
 _freeze
 site_libs

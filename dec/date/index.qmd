@@ -608,7 +608,9 @@ $$\text{season} = \left\lfloor\dfrac{\text{pid} - \text{syl} * \href{https://en.
 
 In the line chart, background Decolors indicate season, line Decolors denote the year in which the data was collected, and the thin line that is Decolorless shows the predictions of a [segmented linear regression](https://en.wikipedia.org/wiki/Segmented_regression#:~:text=a%20method%20in%20regression%20analysis%20in%20which%20the%20independent%20variable%20is%20partitioned%20into%20intervals%20and%20a%20separate%20line%20segment%20is%20fit%20to%20each%20interval) model with 5 [breakpoints](https://en.wikipedia.org/wiki/Segmented_regression#:~:text=The%20boundaries%20between%20the%20segments) fit to the data. The model [explained](https://en.wikipedia.org/wiki/Coefficient_of_determination#Adjusted_R2:~:text=an%20attempt%20to%20account%20for%20the%20phenomenon%20of%20the%20R2%20automatically%20increasing%20when%20extra%20explanatory%20variables%20are%20added%20to%20the%20model) almost 92% of the variation in the data and was only off by less than 0.35 degrees [on average](https://en.wikipedia.org/wiki/Mean_absolute_error#:~:text=a%20measure%20of%20errors%20between%20paired%20observations%20expressing%20the%20same%20phenomenon).
 
-Instead of plotting actual and predicted temperatures against [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} as in the line chart above, we can create a commonly used linear [regression diagnostic](https://en.wikipedia.org/wiki/Regression_diagnostic#:~:text=a%20set%20of%20procedures%20available%20for%20regression%20analysis%20that%20seek%20to%20assess%20the%20validity%20of%20a%20model%20in%20any%20of%20a%20number%20of%20different%20ways) [scatter plot](https://en.wikipedia.org/wiki/Scatter_plot#:~:text=a%20type%20of%20plot%20or%20mathematical%20diagram%20using%20Cartesian%20coordinates%20to%20display%20values%20for%20typically%20two%20variables%20for%20a%20set%20of%20data) by graphing predictions against the [differences between actual and predicted](https://en.wikipedia.org/wiki/Errors_and_residuals#:~:text=the%20difference%20between%20the%20observed%20value%20and%20the%20estimated%20value%20of%20the%20quantity%20of%20interest) values as below. The random scatter of points above and below the [red line](https://en.wikipedia.org/wiki/Local_regression#:~:text=locally%20weighted%20scatterplot%20smoothing) in the center of the plot indicates a good fit.
+If the model predicted temperature using the year and [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"}, instead of just the [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"}, the variation explained by model would increase to almost 98% and the mean absolute error would drop to less than 0.18 degrees, but the goal of the model is to demonstrate that Dec seasons can capture daily global mean temperature patterns regardless of the year.
+
+As a consequence of regressing only on [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and not years, the leftmost plot below shows that the model [overpredicts](https://en.wiktionary.org/wiki/overpredict#:~:text=predict%20to%20be%20higher%20than%20the%20actual%20value) in less recent years and [underpredicts](https://en.wiktionary.org/wiki/underpredict#English:~:text=predict%20to%20be%20smaller%20than%20is%20the%20case) in more recent years. Nevertheless, the model fits the data well overall as evidenced by rightmost plot below, which is a common [regression diagnostic](https://en.wikipedia.org/wiki/Regression_diagnostic#:~:text=a%20set%20of%20procedures%20available%20for%20regression%20analysis%20that%20seek%20to%20assess%20the%20validity%20of%20a%20model%20in%20any%20of%20a%20number%20of%20different%20ways) that compares predicted and [actual [-]{.mono} predicted values](https://en.wikipedia.org/wiki/Errors_and_residuals#:~:text=the%20difference%20between%20the%20observed%20value%20and%20the%20estimated%20value%20of%20the%20quantity%20of%20interest).
 
 ::: {.baserplot #residualsversusfitted }
 {{< embed segment-r.ipynb#segme >}}
@@ -1109,34 +1111,109 @@ In Decalendar, a count is the number of days that have passed since an onset. @t
 
 We can interpret a [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit difference"} as the last Dow [0]{.color0} before a [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"}. which is  reset at the [boy](#boy){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of year"}. there [bow](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of week"} range from -6 to 365. that there are more possible [bow](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of week"} in one year than . definition, the onsets of misaligned units do not coincide at regular intervals. 
 
-::: {#tbl-mud .overflowtable}
-| Sunday         | Monday            | Tuesday           | Wednesday         | Thursday          | Friday            | Saturday         |
-| -------------- | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- | ---------------- |
-|  -001+01+0     |  -002+01+1        |  -003+01+2        |  -004+01+3        |  -005+01+4        |  -006+01+5        |  -007+01+6       |
-|  -002+02+1     |  -003+02+2        |  -004+02+3        |  -005+02+4        |  -006+02+5        |  -007+02+6        |  -001+02+0       |
-|  -003+03+2     |  -004+03+3        |  -005+03+4        |  -006+03+5        |  -007+03+6        |  -001+03+0        |  -002+03+1       |
-|  -004+04+3     |  -005+04+4        |  -006+04+5        |  -007+04+6        |  -001+04+0        |  -002+04+1        |  -003+04+2       |
-|  -005+05+4     |  -006+05+5        |  -007+05+6        |  -001+05+0        |  -002+05+1        |  -003+05+2        |  -004+05+3       |
-|  -006+06+5     |  -007+06+6        |  -001+06+0        |  -002+06+1        |  -003+06+2        |  -004+06+3        |  -005+06+4       |
-|  -007+07+6     |  -001+07+0        |  -002+07+1        |  -003+07+2        |  -004+07+3        |  -005+07+4        |  -006+07+5       |
-|  -001+08+0     |  -002+08+1        |  -003+08+2        |  -004+08+3        |  -005+08+4        |  -006+08+5        |  -007+08+6       |
-|  -002+09+1     |  -003+09+2        |  -004+09+3        |  -005+09+4        |  -006+09+5        |  -007+09+6        |  -001+09+0       |
-|  -003+10+2     |  -004+10+3        |  -005+10+4        |  -006+10+5        |  -007+10+6        |  -001+10+0        |  -002+10+1       |
-|  -004+11+3     |  -005+11+4        |  -006+11+5        |  -007+11+6        |  -001+11+0        |  -002+11+1        |  -003+11+2       |
-| ...            | ...               | ...               | ...               | ...               | ...               | ...              |
-|  +332+18+4     |  +331+18+5        |  +330+18+6        |  +336+18+0        |  +335+18+1        |  +334+18+2        |  +333+18+3       |
-|  +331+19+5     |  +330+19+6        |  +336+19+0        |  +335+19+1        |  +334+19+2        |  +333+19+3        |  +332+19+4       |
-|  +330+20+6     |  +336+20+0        |  +335+20+1        |  +334+20+2        |  +333+20+3        |  +332+20+4        |  +331+20+5       |
-|  +336+21+0     |  +335+21+1        |  +334+21+2        |  +333+21+3        |  +332+21+4        |  +331+21+5        |  +330+21+6       |
-|  +335+22+1     |  +334+22+2        |  +333+22+3        |  +332+22+4        |  +331+22+5        |  +330+22+6        |  +336+22+0       |
-|  +334+23+2     |  +333+23+3        |  +332+23+4        |  +331+23+5        |  +330+23+6        |  +336+23+0        |  +335+23+1       |
-|  +333+24+3     |  +332+24+4        |  +331+24+5        |  +330+24+6        |  +336+24+0        |  +335+24+1        |  +334+24+2       |
-|  +332+25+4     |  +331+25+5        |  +330+25+6        |  +336+25+0        |  +335+25+1        |  +334+25+2        |  +333+25+3       |
-|  +331+26+5     |  +330+26+6        |  +336+26+0        |  +335+26+1        |  +334+26+2        |  +333+26+3        |  +332+26+4       |
-|  +330+27+6     |  +336+27+0        |  +335+27+1        |  +334+27+2        |  +333+27+3        |  +332+27+4        |  +331+27+5       |
-|  +336+28+0     |  +335+28+1        |  +334+28+2        |  +333+28+3        |  +332+28+4        |  +331+28+5        |  +330+28+6       |
 
-:::
+```{ojs}
+//| echo: false
+//| label: mudradio
+//| className: radiobuttons
+viewof mudInput = Inputs.radio(
+  new Map([["Sun", 0], ["Mon", 1], ["Tue", 2], ["Wed", 3], ["Thu", 4], ["Fri", 5], ["Sat", 6]]),
+  {value: 0}
+  )
+```
+
+```{ojs}
+//| echo: false
+//| label: mudplot
+//| className: linechart
+doy = [...Array(366).keys()]
+dow = doy.map(x => (x + mudInput) % 7)
+bow = doy.map((x, i) => x - dow[i])
+moy = doy.map(x => Math.floor((x * 5 + 2) / 153))
+bom = moy.map(x => Math.floor((x * 153 + 2) / 5) - 1)
+dom = doy.map((x, i) => x - bom[i])
+mud = doy.map((x, i) => x - dom[i] - dow[i])
+Plot.plot({
+  width: 900,
+  height: 500,
+  marginBottom: 41,
+  marginTop: 1,
+  style: {
+    fontSize: "18px"
+  },
+  x: {
+    label: "Day of year",
+    domain: [0, 365]
+  },
+  y: {
+    label: null
+  },
+  color: {
+    domain: ["doy", "bow", "bom", "dom", "dow", "mud"],
+    range: ["#2ca02c", "#d62728", "#1f77b4", "#9467bd", "#ff7f0e", "#8c564b"],
+    legend: true,
+    className: "lineplotlegend"
+  },
+  marks: [
+    Plot.line(doy, {
+      x: x => x,
+      y: x => doy[x],
+      stroke: () => "doy",
+      strokeWidth: 3
+    }),
+    Plot.line(doy, {
+      x: x => x,
+      y: x => bow[x],
+      stroke: () => "bow",
+      strokeWidth: 3
+    }),
+    Plot.line(doy, {
+      x: x => x,
+      y: x => bom[x],
+      stroke: () => "bom",
+      strokeWidth: 3
+    }),
+    Plot.line(doy, {
+      x: x => x,
+      y: x => mud[x],
+      stroke: () => "mud",
+      strokeWidth: 3
+    }),
+    Plot.line(doy, {
+      x: x => x,
+      y: x => dom[x],
+      stroke: () => "dom",
+      strokeWidth: 3
+    }),
+    Plot.line(doy, {
+      x: x => x,
+      y: x => dow[x],
+      stroke: () => "dow",
+      strokeWidth: 3
+    }),
+    Plot.ruleX(
+    doy,
+    Plot.pointerX({
+      x: x => x,
+      strokeOpacity: 0.5,
+      strokeWidth: 1
+    })
+    ),
+    Plot.tip(doy, Plot.pointerX({
+      x: x => x,
+      y: x => x,
+      title: x => [
+        `doy: ${doy[x]}`,
+        `bow: ${bow[x]}`,
+        `bom: ${bom[x]}`,
+        `mud: ${mud[x]}`,
+        `dom: ${dom[x]}`,
+        `dow: ${dow[x]}`
+      ].join("\n")
+    }))
+  ]
+})
+```
 
 For example, the onset which are . @tbl-unit displays the name of onset and count In Decalendar, count is the number of days since an onset like a [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"} or [bow](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}.@tbl-unit lists the onsets of include [boy](#boy){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of year"}, [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of month"}, and [bow](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of week"}. We can co
 

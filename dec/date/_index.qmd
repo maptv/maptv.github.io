@@ -1823,5 +1823,8 @@ code {
 #decseasonplot figure svg:nth-child(2) {
   max-width: 900px
 }
+#mudplot .lineplotlegend-swatches {
+  font-size: 18px;
+}
 </style>
 ```

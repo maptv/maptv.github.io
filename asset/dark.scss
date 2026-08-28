@@ -442,3 +442,10 @@ figcaption.margin-caption {
 div.equationgroup {
 	color: white;
 }
+
+#mudplot svg {
+  background: black;
+}
+#mudplot svg g[aria-label="tip"] {
+  fill: black;
+}
