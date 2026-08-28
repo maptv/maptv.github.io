@@ -95,9 +95,9 @@ data-bs-title="degrees">°</a>.
 Dec measures
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda)
 in
-[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)
-(<a href="#lambda" id="parallel" class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallels">λ</a>),
+[wěi](https://en.wiktionary.org/wiki/%E7%B7%AF#:~:text=(geography)-,latitude,-coordinate%20terms%C2%A0%E2%96%B2)
+(<a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="horizontal lines on a map">w</a>),
 [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi)
 in
 [meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)
@@ -106,8 +106,8 @@ data-bs-title="meridians">m</a>), and compass directions in
 [roses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)🌹(<a href="#r" id="rose" class="tool" data-bs-toggle="tooltip"
 data-bs-title="roses">r</a>). To measure certain kinds of angles, Dec
 uses specific types of turns with distinct names like
-<a href="#lambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">λ</a>,
+<a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="horizontal line on a map">w</a>,
 <a href="#m" class="tool" data-bs-toggle="tooltip"
 data-bs-title="meridian">m</a>, or
 <a href="#r" class="tool" data-bs-toggle="tooltip"
@@ -133,38 +133,40 @@ data-bs-title="thousandths of a turn">milliturns</span>
 (<a href="#mt" id="milliturn" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliturns">mt</a>).
 
-The table below⬇️provides the current longitude in <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="thousandths of a parallel">milliparallels</span>
-(<a href="#mlambda" id="milliparallel" class="tool"
-data-bs-toggle="tooltip" data-bs-title="milliparallels">mλ</a>) and
+<a href="#tbl-map" class="quarto-xref">Table 1</a> below⬇️provides the
+current longitude in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a wěi">milliwěi</span>
+(<a href="#mw" id="milliwei" class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a horizontal line on a map">mw</a>) and
 latitude in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a meridian">millimeridians</span>
 (<a href="#mm" id="millimeridian" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">mm</a>) of Points
 <span class="point0">0</span> and <span class="point1">1</span> on the
-map🗺️beneath the table. By default, Point <span class="point0">0</span>
-is at <span class="color8">800</span>
-<a href="#mlambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallels">mλ</a> and <span class="color0">0</span>
+[map](#fig-distmap)🗺️beneath
+<a href="#tbl-map" class="quarto-xref">Table 1</a>. By default, Point
+<span class="point0">0</span> is at <span class="color8">800</span>
+<a href="#mw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a horizontal line on a map">mw</a> and
+<span class="color0">0</span>
 <a href="#mm" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">mm</a>, near the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
 of Ecuador🇪🇨, and Point <span class="point1">1</span> is at
 <span class="color8">800</span>
-<a href="#mlambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallels">mλ</a> and
+<a href="#mw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a horizontal line on a map">mw</a> and
 <span class="color1">100</span>
 <a href="#mm" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">mm</a>, near the bottom of the [Missouri
 bootheel](https://en.wikipedia.org/wiki/Missouri_Bootheel#:~:text=a%20salient%20(protrusion)%20located%20in%20the%20southeasternmost%20part%20of%20the%20U.S.%20state%20of%20Missouri)
 in the United States🇺🇸.
 
-To move the points, click the map or edit their coordinates in the
-table. The
+To move the points, click the [map](#fig-distmap) or edit their
+coordinates in <a href="#tbl-map" class="quarto-xref">Table 1</a>. The
 [toggle](https://observablehq.com/framework/inputs/toggle)✅inputs
-above⬆️the table add layers to the map️: country borders, a
-rainbow🌈colored grid of Dec
+above⬆️<a href="#tbl-map" class="quarto-xref">Table 1</a> add layers to
+the [map](#fig-distmap): country borders, a rainbow🌈colored grid of Dec
 [graticules](https://en.wikipedia.org/wiki/Graticule_(cartography)#:~:text=a%20graphical%20depiction%20of%20a%20coordinate%20system%20as%20a%20grid%20of%20lines),
 a
 [choropleth](https://en.wikipedia.org/wiki/Choropleth_map#:~:text=a%20type%20of%20statistical%20thematic%20map%20that%20uses%20pseudocolor)
@@ -179,21 +181,21 @@ shading with a yellow🟡dot denoting the
 [point](https://en.wikipedia.org/wiki/Subsolar_point#:~:text=the%20point%20at%20which%20its%20Sun%20is%20perceived%20to%20be%20directly%20overhead)
 where the Sun☀️is [directly
 overhead](https://en.wikipedia.org/wiki/Zenith#:~:text=the%20imaginary%20point%20on%20the%20celestial%20sphere%20directly%20%22above%22%20a%20particular%20location):
-${sunLonHsl} <a href="#mlambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallels">mλ</a> and ${sunLatHsl}
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
+${sunLonHsl} <a href="#mw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a horizontal line on a map">mw</a> and
+${sunLatHsl} <a href="#mm" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">mm</a>.
 
-Alongside the geographic coordinates of a point, each row of the table
-contains the
+Alongside the geographic coordinates of a point, each row of
+<a href="#tbl-map" class="quarto-xref">Table 1</a> contains the
 [course](https://en.wikipedia.org/wiki/Azimuth#:~:text=%20azimuth%20is%20usually%20denoted%20alpha)
 in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a compass rose">milliroses</span>
 (<a href="#mr" id="millirose" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliroses">mr</a>) we would need to maintain to
 travel🧳the shortest distance to the other point. The shortest distance
-is shown as orange🟠dots on the map️. The default courses in
-<a href="#mr" class="tool" data-bs-toggle="tooltip"
+is shown as orange🟠dots on the [map](#fig-distmap). The default courses
+in <a href="#mr" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliroses">mr</a> are <span class="color0">0</span>
 (North) from Point <span class="point0">0</span> to
 <span class="point1">1</span> and <span class="color5">500</span>
@@ -339,11 +341,11 @@ rstbtn.node();
 //| echo: false
 //| label: maptable
 table = createTable([
-  { Point: 0, Milliparallel: 800, Millimeridian: 0, Milliwindrose: 0 },
-  { Point: 1, Milliparallel: 800, Millimeridian: 100, Milliwindrose: 500 },
+  { Point: 0, Milliwěi: 800, Millimeridian: 0, Millirose: 0 },
+  { Point: 1, Milliwěi: 800, Millimeridian: 100, Millirose: 500 },
 ], { headerEditable: false, appendRows: false })
-//   {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
-//   {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
+//   {Point: 0, Milliwěi: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
+//   {Point: 1, Milliwěi: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
 // ], {headerEditable: false, appendRows: false})
 ```
 
@@ -628,8 +630,6 @@ decBar = colorbar({
 
 ## Course color table
 
-<div id="colortable">
-
 <table>
 <colgroup>
 <col style="width: 17%" />
@@ -718,8 +718,6 @@ data-bs-title="hexadecimal">hex</span></strong>🎨</th>
 </tbody>
 </table>
 
-</div>
-
 The
 [color🎨wheel](https://en.wikipedia.org/wiki/Color_wheel#:~:text=an%20abstract%20illustrative%20organization%20of%20color%20hues%20around%20a%20circle)
 compass above indicates both a
@@ -743,14 +741,16 @@ compass, use the “Hue”
 [range](https://observablehq.com/framework/inputs/range)🎚️and [hue
 bar](https://observablehq.com/@paavanb/progressive-color-picker) inputs
 beneath it or change the course from Point <span class="point0">0</span>
-to <span class="point1">1</span> by interacting with the table or map️
-above.
+to <span class="point1">1</span> by interacting with
+<a href="#tbl-map" class="quarto-xref">Table 1</a> or the
+[map](#fig-distmap) above.
 
 # Red green blue (rgb)
 
-The table beneath the hue bar compares the current Point
-<span class="point0">0</span> to <span class="point1">1</span> course in
-its top row with the
+Beneath the hue bar,
+<a href="#tbl-color" class="quarto-xref">Table 2</a> compares the
+current Point <span class="point0">0</span> to
+<span class="point1">1</span> course in its top row with the
 [cardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=north%2C%20south%2C%20east%2C%20and%20west)
 and
 [intercardinal](https://en.wikipedia.org/wiki/Cardinal_direction#:~:text=northeast%20(NE)%2C%20southeast%20(SE)%2C%20southwest%20(SW)%2C%20and%20northwest%20(NW))
@@ -781,16 +781,16 @@ can reuse♻️colors across many different contexts. Most often,
 data-bs-title="milliroses">mr</a>) and [Longitude
 0](https://en.wikipedia.org/wiki/18th_meridian_west#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Greenland%2C%20Iceland%2C%20the%20Atlantic%20Ocean%2C%20the%20Canary%20Islands%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color0">0</span>
-<a href="#mlambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallels">mλ</a>), and
+<a href="#mw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a horizontal line on a map">mw</a>), and
 <span class="color5">cyan</span> denotes midpoints, such as South
 (<span class="color5">500</span>
 <a href="#mr" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliroses">mr</a>) and [Longitude
 5](https://en.wikipedia.org/wiki/162nd_meridian_east#:~:text=a%20line%20of%20longitude%20that%20extends%20from%20the%20North%20Pole%20across%20the%20Arctic%20Ocean%2C%20Asia%2C%20the%20Pacific%20Ocean%2C%20the%20Southern%20Ocean%2C%20and%20Antarctica%20to%20the%20South%20Pole)
 (<span class="color5">500</span>
-<a href="#mlambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallels">mλ</a>).
+<a href="#mw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousandths of a horizontal line on a map">mw</a>).
 
 <div>
 
@@ -852,7 +852,7 @@ data-bs-title="milliturns">mt</a>.
 
 # Dec time zones
 
-Enable the “Grid” toggle input to see Latitudes
+Enable the [“Grid” toggle input](#toggles) to see Latitudes
 [-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
 (<span class="color8">-200</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>),
@@ -871,10 +871,10 @@ data-bs-title="millimeridians">mm</a>), and
 [2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
 (<span class="color2">200</span>
 <a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>) on the map above along with the
-ten major longitudes that divide the Earth🌎into the ten Dec time zones.
-Notably, Longitude <span class="color0">0</span> is the major longitude
-that functions as both the [Prime
+data-bs-title="millimeridians">mm</a>) on the [map](#fig-distmap) above
+along with the ten major longitudes that divide the Earth🌎into the ten
+Dec time zones. Notably, Longitude <span class="color0">0</span> is the
+major longitude that functions as both the [Prime
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)
 and [International Date
 Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
@@ -883,21 +883,22 @@ in Dec.
 Like the ten major longitudes that separate them, Dec time zones are
 numbered <span class="color0">0</span> to <span class="color9">9</span>.
 Based on its current <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a parallel">deciparallel</span>
-(<a href="#dlambda" id="deciparallel" class="tool"
-data-bs-toggle="tooltip" data-bs-title="deciparallel">dλ</a>) longitude,
-${point0lHsl}, Point <span class="point0">0</span> on the map above is
-in Zone ${point0zHsl}. The number assigned to each time zone is its
-offset from Zone <span class="color0">0</span> in <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
+data-bs-title="tenth of a wěi">deciwěi</span>
+(<a href="#dw" id="deciwei" class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a horizontal line on a map">dw</a>) longitude,
+${point0lHsl}, Point <span class="point0">0</span> on the
+[map](#fig-distmap) above is in Zone ${point0zHsl}. The number assigned
+to each time zone is its offset from Zone <span class="color0">0</span>
+in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</span>
 (<a href="#dd" id="deciday" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</a>). To obtain the
 <a href="#dd" class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</a> offset at a location, we
 [floor](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=the%20greatest%20integer%20less%20than%20or%20equal%20to%20x)
-its <a href="#dlambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciparallel">dλ</a> longitude: ⌊${decLonHsl}⌋ =
-${decZonHsl}.
+its <a href="#dw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a horizontal line on a map">dw</a> longitude:
+⌊${decLonHsl}⌋ = ${decZonHsl}.
 
 ``` {ojs}
 //| echo: false
@@ -907,8 +908,8 @@ viewof longitude = Inputs.range([0, 10], {label: "Longitude", value: .5, step: .
 ```
 
 Each Dec time zone is 0.1
-<a href="#lambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">λ</a> wide and 0.5
+<a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="of a horizontal line on a map">w</a> wide and 0.5
 <a href="#m" class="tool" data-bs-toggle="tooltip"
 data-bs-title="meridians">m</a> long. While 1
 <a href="#m" class="tool" data-bs-toggle="tooltip"
@@ -916,25 +917,23 @@ data-bs-title="meridian">m</a> is always <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
 <a href="#c" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</a> long, the length of a
-<a href="#lambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">λ</a> [varies by
+<a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="horizontal line on a map">w</a> [varies by
 latitude](https://en.wikipedia.org/wiki/Longitude#Length_of_a_degree_of_longitude:~:text=depends%20only%20on%20the%20radius%20of%20a%20circle%20of%20latitude).
-At the Equator, 1
-<a href="#lambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">λ</a> is <span class="tool"
+At the Equator, 1 <a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="horizontal line on a map">w</a> is <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
 <a href="#c" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</a> long. At the
 [North](https://en.wikipedia.org/wiki/North_Pole#:~:text=the%20point%20in%20the%20Northern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
 or
 [South](https://en.wikipedia.org/wiki/South_Pole#:~:text=the%20point%20in%20the%20Southern%20Hemisphere%20where%20the%20Earth%27s%20axis%20of%20rotation%20meets%20its%20surface)
-Pole, the length of a
-<a href="#lambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">λ</a> is zero. The approximate
+Pole, the length of a <a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="horizontal line on a map">w</a> is zero. The approximate
 <a href="#c" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</a> length of a
-<a href="#lambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">λ</a> is the
+<a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="horizontal line on a map">w</a> is the
 [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
 of its latitude in <a href="#m" class="tool" data-bs-toggle="tooltip"
 data-bs-title="meridians">m</a>,
@@ -1495,10 +1494,10 @@ data-bs-title="milliomegar">mv</a> = $\text{mc}\over\text d$ =
 $\text {kz}\over\text {cd}$ = $\text z\over\text b$ =
 $\text {dz}\over\text{µd}$ = $\text {nc}\over\text{µd}$. A
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centiday">cd</span> is <span class="color960">96%</span>
+data-bs-title="centiday">cd</span> is <span class="color960">96</span>%
 of a quarter hour and a
 <a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beat">b</a> is <span class="color864">86.4%</span> of a
+data-bs-title="beat">b</a> is <span class="color864">86.4</span>% of a
 second.
 
 # Heart rate tempo
@@ -1527,7 +1526,7 @@ $1\over\text b$, 1
 [inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number)
 beat, or 1 perbeat
 (<a href="#per" id="perbeat" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeat">p</a>), which is
+data-bs-title="perbeat">þ</a>), which is
 <span class="colorIob">1.15<span class="vinculum">740</span></span>
 times more frequent than a
 [Hertz](https://en.wikipedia.org/wiki/Hertz#:~:text=one%20event%20(or%20cycle)).
@@ -1535,7 +1534,7 @@ times more frequent than a
 # Frequency period wavelength
 
 Dec uses <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeat">p</a>,
+data-bs-title="perbeat">þ</a>,
 <a href="#b" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beats">b</a>, and
 <a href="#z" class="tool" data-bs-toggle="tooltip"
@@ -1544,25 +1543,38 @@ data-bs-title="zem">z</a>, often with metric prefixes, to measure the
 [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency),
 and
 [wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats),
-respectively, of a sound or light wave. The equations below show how
-frequency, period, and wavelength are related to each other and to
-speed. The speed of light
+respectively, of a sound or light wave. Equations
+<a href="#eq-freq" class="quarto-xref">1</a>,
+<a href="#eq-peri" class="quarto-xref">2</a>, and
+<a href="#eq-wave" class="quarto-xref">3</a> below show how frequency,
+period, and wavelength are related to each other and to speed. The speed
+of light
 (<a href="#sol" id="speedoflight" class="tool" data-bs-toggle="tooltip"
-data-bs-title="speed of light">sol</a>) is roughly 647.551657
-<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="speed of light">sol</a>) is <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>647.551657 <span class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="thousands of omegars">kiloomegars</span>
 (<a href="#kv" id="kiloomegar" class="tool" data-bs-toggle="tooltip"
-data-bs-title="kiloomegars">kv</a>), which is about 881 thousand times
-faster than the <a href="#sos" class="tool" data-bs-toggle="tooltip"
+data-bs-title="kiloomegars">kv</a>), which is <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="approximately">~</span>881
+thousand times faster than the
+<a href="#sos" class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of sound">sos</a>.
 
 <div style="overflow-x:auto;overflow-y:hidden;">
 
-frequency = speed ÷ wavelength = 1 ÷ period
+<span id="eq-freq">
+$$\text{frequency} = \dfrac{\text{speed}}{\text{wavelength}} = \dfrac{1}{\text{period}} \qquad(1)$$
+</span>
 
-period = wavelength ÷ speed = 1 ÷ frequency
+<span id="eq-peri">
+$$\text{period} = \dfrac{\text{wavelength}}{\text{speed}} = \dfrac{1}{\text{frequency}} \qquad(2)$$
+</span>
 
-wavelength = speed × period = speed ÷ frequency
+<span id="eq-wave">
+$$\text{wavelength} = \text{speed} \ast \text{period} = \dfrac{\text{speed}}{\text{frequency}} \qquad(3)$$
+</span>
 
 </div>
 
@@ -1573,8 +1585,8 @@ data-bs-title="approximately">~</span>345.6 to <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>914.4
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="trillions of perbeats">teraperbeats</span>
-(<a href="#Tp" id="teraperbeat" class="tool" data-bs-toggle="tooltip"
-data-bs-title="teraperbeats">Tp</a>). The range of sound frequencies
+(<a href="#Tpb" id="teraperbeat" class="tool" data-bs-toggle="tooltip"
+data-bs-title="teraperbeats">Tþ</a>). The range of sound frequencies
 which can be
 [audible](https://en.wikipedia.org/wiki/Hearing_range#:~:text=the%20frequency%20range%20that%20can%20be%20heard%20by%20humans)👂for
 humans is <span class="tool" data-bs-toggle="tooltip"
@@ -1582,10 +1594,10 @@ data-bs-title="approximately">~</span>[10.368](https://en.wikipedia.org/wiki/Hea
 to <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>[24192](https://en.wikipedia.org/wiki/Hearing_range#:~:text=8%5D%20and-,as%20high%20as%2028%C2%A0kHz,-%2C%20though%20the%20threshold)
 <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a>. The period and wavelength that
+data-bs-title="perbeats">þ</a>. The period and wavelength that
 correspond to the frequency chosen by the range input below are 1000 ÷
 ${iobs} <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a> = ${parseFloat((1000 / iobs).toFixed(3))}
+data-bs-title="perbeats">þ</a> = ${parseFloat((1000 / iobs).toFixed(3))}
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a beat">millibeats</span>
 (<a href="#mb" id="millibeat" class="tool" data-bs-toggle="tooltip"
@@ -1593,7 +1605,7 @@ data-bs-title="millibeats">mb</a>) and 735.048
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegars">mv</a> ÷ ${iobs}
 <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a> = ${parseFloat((735.048 /
+data-bs-title="perbeats">þ</a> = ${parseFloat((735.048 /
 iobs).toFixed(3))} <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a>.
 
@@ -1624,7 +1636,7 @@ Play((t) => Math.sin(iobs / .864 * t * 2 * Math.PI), beats * .864, iobs)
 # Decioctave octave note
 
 In addition to <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a>, the limits of human hearing can also be
+data-bs-title="perbeats">þ</a>, the limits of human hearing can also be
 expressed in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of an octave">decioctaves</span>
 (<a href="#do" id="decioctave" class="tool" data-bs-toggle="tooltip"
@@ -1636,25 +1648,36 @@ data-bs-title="decioctave">do</a> is a tenth of an
 data-bs-title="octave">o</a>). An
 <a href="#o" class="tool" data-bs-toggle="tooltip"
 data-bs-title="octave">o</a> is a two-fold change in frequency. The
-approximate audible range for humans is <span class="color3">3</span> to
-<span class="color3">103</span>
+audible range for humans is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span><span class="color3">3</span> to
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span><span class="color3">103</span>
 <a href="#do" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decioctaves">do</a>. The approximate
+data-bs-title="decioctaves">do</a>. The
 [range](https://en.wikipedia.org/wiki/Range_(music)#:~:text=the%20distance%20from%20the%20lowest%20to%20the%20highest%20pitch%20it%20can%20play)
-of an 88-key piano🎹is 23.76 to 3616.64
+of an 88-key piano🎹is <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span>23.76 to <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="approximately">~</span>3616.64
 <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a> or <span class="color8">8</span> to
-<span class="color0">80</span>
+data-bs-title="perbeats">þ</a> or <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span><span class="color8">8</span> to
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="approximately">~</span><span class="color0">80</span>
 <a href="#do" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decioctaves">do</a>. The equations and code below convert
 between <a href="#o" class="tool" data-bs-toggle="tooltip"
 data-bs-title="octaves">o</a> and
 <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeats">p</a>.
+data-bs-title="perbeats">þ</a>.
 
-$$\text{o} = \log_2\\\left(\frac{\text{p}}{14.1275}\right)$$
+<span id="eq-octa">
+$$\text{o} = \log_2\\\left(\frac{\text{p}}{14.1275}\right) \qquad(4)$$
+</span>
 
-p = 14.1275 × 2<sup>o</sup>
+<span id="eq-perb">
+p = 14.1275 \* 2<sup>o</sup>   (5)
+</span>
 
 <div class="panel-tabset" group="language">
 
@@ -1746,7 +1769,9 @@ by [Clint Goss](https://www.clintgoss.com)[2], which presents a method
 of associating musical notes with colors by matching sound and light
 frequencies.
 
-$$\text{n} = \text{o \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{mod} 1} \times 10$$
+<span id="eq-note">
+$$\text{n} = \text{o} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 1 \ast 10 \qquad(6)$$
+</span>
 
 The lollipops🍭in the chart below represent the ten Dec notes in Octave
 4. The lollipops and the
@@ -1754,7 +1779,7 @@ The lollipops🍭in the chart below represent the ten Dec notes in Octave
 data-bs-title="decioctaves">do</a> values above them are labeled with
 the ten Dec colors. Beneath each lollipop is its frequency rounded to
 the nearest <a href="#per" class="tool" data-bs-toggle="tooltip"
-data-bs-title="perbeat">p</a>. Click or tap each lollipop to hear its
+data-bs-title="perbeat">þ</a>. Click or tap each lollipop to hear its
 associated sound. The chart demonstrates that data points can be labeled
 with both color and sound.
 
@@ -1806,11 +1831,10 @@ Simpsons](https://en.wikipedia.org/wiki/The_Simpsons#:~:text=an%20American%20ani
 
 Dec redefines <a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary units to facilitate
-conversion with <a href="#si" class="tool" data-bs-toggle="tooltip"
+[conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
+with <a href="#si" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a> and Dec units. The
-values in the first column of [unit
-conversion](https://en.wikipedia.org/wiki/Conversion_of_units#:~:text=the%20conversion%20of%20the%20unit%20of%20measurement%20in%20which%20a%20quantity%20is%20expressed)
-table below are approximate [fold
+values in the first column of the tables below are approximate [fold
 changes](https://en.wikipedia.org/wiki/Fold_change#:~:text=measure%20describing%20how%20much%20a%20quantity%20changes%20between%20an%20original%20and%20a%20subsequent%20measurement)
 from original to redefined
 <a href="#us" class="tool" data-bs-toggle="tooltip"
@@ -1843,8 +1867,9 @@ data-bs-title="zem">z</a>.
 The
 [unidimensional](https://en.wiktionary.org/wiki/unidimensional#:~:text=not%20comparable%29-,one%2Ddimensional,-quotations%C2%A0%E2%96%BC)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="unidimensional">1D</span>) units in the table below can
-be divided into two groups:
+data-bs-title="unidimensional">1D</span>) units in
+<a href="#tbl-1d" class="quarto-xref">Table 3</a> below can be divided
+into two groups:
 [human-](https://en.wikipedia.org/wiki/List_of_human-based_units_of_measurement#:~:text=units%20of%20measurement%20based%20on%20human%20body%20parts)
 or horse-based length units and
 [surveying](https://en.wikipedia.org/wiki/Surveying#:~:text=determining%20the%20terrestrial%20positions%20of%20points%20based%20on%20the%20distances%20and%20angles%20between%20them)
@@ -1880,98 +1905,98 @@ data-bs-title="zone equatorial meter">zem</a></th>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Inch">inches</a></td>
-<td><span class="mono">0.0625</span></td>
-<td><span class="mono">0.025</span></td>
+<td>0.0625</td>
+<td>0.025</td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Palm_(unit)">palms</a></td>
-<td><span class="mono">0.1875</span></td>
-<td><span class="mono">0.075</span></td>
+<td>0.1875</td>
+<td>0.075</td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Hand_(unit)">hands</a></td>
-<td><span class="mono">0.25</span></td>
-<td><span class="mono">0.1</span></td>
+<td>0.25</td>
+<td>0.1</td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Shaftment">shaftments</a></td>
-<td><span class="mono">0.375</span></td>
-<td><span class="mono">0.15</span></td>
+<td>0.375</td>
+<td>0.15</td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Link_(unit)">links</a></td>
-<td><span class="mono">0.5</span></td>
-<td><span class="mono">0.2</span></td>
+<td>0.5</td>
+<td>0.2</td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Span_(unit)">spans</a></td>
-<td><span class="mono">0.5625</span></td>
-<td><span class="mono">0.225</span></td>
+<td>0.5625</td>
+<td>0.225</td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Foot_(unit)">feet</a></td>
-<td><span class="mono">0.75</span></td>
-<td><span class="mono">0.3</span></td>
+<td>0.75</td>
+<td>0.3</td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Pace_(unit)">steps</a></td>
-<td><span class="mono">1.875</span></td>
-<td><span class="mono">0.75</span></td>
+<td>1.875</td>
+<td>0.75</td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Yard">yards</a></td>
-<td><span class="mono">2.25</span></td>
-<td><span class="mono">0.9</span></td>
+<td>2.25</td>
+<td>0.9</td>
 </tr>
 <tr>
 <td><span class="colorInch">0.9843</span> <a
 href="https://en.wikipedia.org/wiki/Fathom">fathoms</a></td>
-<td><span class="mono">4.5</span></td>
-<td><span class="mono">1.8</span></td>
+<td>4.5</td>
+<td>1.8</td>
 </tr>
 <tr>
 <td><span class="color0">1</span> <a
 href="https://en.wikipedia.org/wiki/Horse_length">horse length</a></td>
-<td><span class="mono">6</span></td>
-<td><span class="mono">2.4</span></td>
+<td>6</td>
+<td>2.4</td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Rod_(unit)">rods</a></td>
-<td><span class="mono">12.5</span></td>
-<td><span class="mono">5</span></td>
+<td>12.5</td>
+<td>5</td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Chain_(unit)">chains</a></td>
-<td><span class="mono">50</span></td>
-<td><span class="mono">20</span></td>
+<td>50</td>
+<td>20</td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Furlong">furlongs</a></td>
-<td><span class="mono">500</span></td>
-<td><span class="mono">200</span></td>
+<td>500</td>
+<td>200</td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Mile">miles</a></td>
-<td><span class="mono">4000</span></td>
-<td><span class="mono">1600</span></td>
+<td>4000</td>
+<td>1600</td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/League_(unit)">leagues</a></td>
-<td><span class="mono">12000</span></td>
-<td><span class="mono">4800</span></td>
+<td>12000</td>
+<td>4800</td>
 </tr>
 </tbody>
 </table>
@@ -2008,7 +2033,7 @@ data-bs-title="Dec second">s</a>). There are 86400
 <a href="#si" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a> seconds or 90000
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec second">s</a> in one day.
+data-bs-title="Dec seconds">s</a> in one day.
 
 <table>
 <colgroup>
@@ -2031,25 +2056,25 @@ data-bs-title="kilometers per hour">kmph</a></th>
 <tr>
 <td><span class="colorPerS">0.9448</span> <a
 href="https://en.wikipedia.org/wiki/Inch_per_second">inches/second</a></td>
-<td><span class="mono">0.05625</span></td>
-<td><span class="mono">0.09375</span></td>
+<td>0.05625</td>
+<td>0.09375</td>
 </tr>
 <tr>
 <td><span class="colorPerS">0.9448</span> <a
 href="https://en.wikipedia.org/wiki/Foot_per_second">feet/second</a></td>
-<td><span class="mono">0.675</span></td>
-<td><span class="mono">0.675</span></td>
+<td>0.675</td>
+<td>0.675</td>
 </tr>
 <tr>
 <td><span class="colorMile">0.9942</span> <a
 href="https://en.wikipedia.org/wiki/Miles_per_hour">miles/hour</a></td>
-<td><span class="mono">0.96</span></td>
-<td><span class="mono">1.6</span></td>
+<td>0.96</td>
+<td>1.6</td>
 </tr>
 <tr>
 <td><span class="colorPerS">0.9448</span> yards/second</td>
-<td><span class="mono">2.025</span></td>
-<td><span class="mono">3.375</span></td>
+<td>2.025</td>
+<td>3.375</td>
 </tr>
 </tbody>
 </table>
@@ -2121,32 +2146,32 @@ data-bs-toggle="tooltip" data-bs-title="square centimeter">cm²</a></th>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_inch">sq. inches</a></td>
-<td><span class="mono">39.0625</span></td>
-<td><span class="mono">6.25</span></td>
+<td>39.0625</td>
+<td>6.25</td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_foot">sq. feet</a></td>
-<td><span class="mono">5625</span></td>
-<td><span class="mono">900</span></td>
+<td>5625</td>
+<td>900</td>
 </tr>
 <tr>
 <td><span class="colorSqIn">0.9688</span> <a
 href="https://en.wikipedia.org/wiki/Square_yard">sq. yards</a></td>
-<td><span class="mono">50625</span></td>
-<td><span class="mono">8100</span></td>
+<td>50625</td>
+<td>8100</td>
 </tr>
 <tr>
 <td><span class="colorSqMi">0.9884</span> <a
 href="https://en.wikipedia.org/wiki/Acre">acres</a></td>
-<td><span class="mono">25 × 10<sup>7</sup></span></td>
-<td><span class="mono">4 × 10<sup>7</sup></span></td>
+<td>25 × 10<sup>7</sup></td>
+<td>4 × 10<sup>7</sup></td>
 </tr>
 <tr>
 <td><span class="colorSqMi">0.9884</span> <a
 href="https://en.wikipedia.org/wiki/Square_mile">sq. miles</a></td>
-<td><span class="mono">16 × 10<sup>10</sup></span></td>
-<td><span class="mono">256 × 10<sup>8</sup></span></td>
+<td>16 × 10<sup>10</sup></td>
+<td>256 × 10<sup>8</sup></td>
 </tr>
 </tbody>
 </table>
@@ -2207,86 +2232,86 @@ data-bs-title="cubic centimeter">cm³</a></th>
 <tr>
 <td><span class="colorDrop">1.2549</span> <a
 href="https://en.wikipedia.org/wiki/Drop_(unit)">drops</a></td>
-<td><span class="mono">1</span></td>
-<td><span class="mono">0.064</span></td>
+<td>1</td>
+<td>0.064</td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
 href="https://en.wikipedia.org/wiki/Cubic_inch">cu. inches</a></td>
-<td><span class="mono">244.140625</span></td>
-<td><span class="mono">15.625</span></td>
+<td>244.140625</td>
+<td>15.625</td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
 href="https://en.wikipedia.org/wiki/Tablespoon">table🥄</a></td>
-<td><span class="mono">250</span></td>
-<td><span class="mono">16</span></td>
+<td>250</td>
+<td>16</td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
 href="https://en.wikipedia.org/wiki/Ounce#Fluid_ounce">ounces</a></td>
-<td><span class="mono">500</span></td>
-<td><span class="mono">32</span></td>
+<td>500</td>
+<td>32</td>
 </tr>
 <tr>
 <td><span class="colorFlOz">1.0821</span> <a
 href="https://en.wikipedia.org/wiki/Wine_glass#Capacity_measure">🍷glasses</a></td>
-<td><span class="mono">1000</span></td>
-<td><span class="mono">64</span></td>
+<td>1000</td>
+<td>64</td>
 </tr>
 <tr>
 <td><span class="colorGall">0.9468</span> <a
 href="https://en.wikipedia.org/wiki/Cup_(unit)">cups</a></td>
-<td><span class="mono">3500</span></td>
-<td><span class="mono">224</span></td>
+<td>3500</td>
+<td>224</td>
 </tr>
 <tr>
 <td><span class="colorGall">0.9468</span> <a
 href="https://en.wikipedia.org/wiki/Pint">pints</a></td>
-<td><span class="mono">7000</span></td>
-<td><span class="mono">448</span></td>
+<td>7000</td>
+<td>448</td>
 </tr>
 <tr>
 <td><span class="colorGall">0.9468</span> <a
 href="https://en.wikipedia.org/wiki/Quart">quarts</a></td>
-<td><span class="mono">14000</span></td>
-<td><span class="mono">896</span></td>
+<td>14000</td>
+<td>896</td>
 </tr>
 <tr>
 <td><span class="colorGall">0.9468</span> <a
 href="https://en.wikipedia.org/wiki/Gallon">gallons</a></td>
-<td><span class="mono">56000</span></td>
-<td><span class="mono">3584</span></td>
+<td>56000</td>
+<td>3584</td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
 href="https://en.wikipedia.org/wiki/Cubic_foot">cu. feet</a></td>
-<td><span class="mono">421875</span></td>
-<td><span class="mono">27000</span></td>
+<td>421875</td>
+<td>27000</td>
 </tr>
 <tr>
 <td><span class="colorBarr">1.0735</span> <a
 href="https://en.wikipedia.org/wiki/Keg#Specifications_for_a_U.S._1%E2%81%842_barrel_keg">kegs</a></td>
-<td><span class="mono">1000000</span></td>
-<td><span class="mono">64000</span></td>
+<td>1000000</td>
+<td>64000</td>
 </tr>
 <tr>
 <td><span class="colorBarr">1.0735</span> <a
 href="https://en.wikipedia.org/wiki/Barrel_(unit)">barrels</a></td>
-<td><span class="mono">2000000</span></td>
-<td><span class="mono">128000</span></td>
+<td>2000000</td>
+<td>128000</td>
 </tr>
 <tr>
 <td><span class="colorBarr">1.0735</span> <a
 href="https://en.wikipedia.org/wiki/Hogshead">hogsheads</a></td>
-<td><span class="mono">4000000</span></td>
-<td><span class="mono">256000</span></td>
+<td>4000000</td>
+<td>256000</td>
 </tr>
 <tr>
 <td><span class="colorCuIn">0.9535</span> <a
 href="https://en.wikipedia.org/wiki/Cubic_yard">cu. yards</a></td>
-<td><span class="mono">11390625</span></td>
-<td><span class="mono">729000</span></td>
+<td>11390625</td>
+<td>729000</td>
 </tr>
 </tbody>
 </table>
@@ -2333,32 +2358,32 @@ data-bs-title="United States">US</a> mass units</th>
 <tr>
 <td><span class="colorMass">0.9877</span> <a
 href="https://en.wikipedia.org/wiki/Grain_(unit)">grains</a></td>
-<td><span class="mono">1</span></td>
-<td><span class="mono">0.064</span></td>
+<td>1</td>
+<td>0.064</td>
 </tr>
 <tr>
 <td><span class="colorCara">0.96</span> <a
 href="https://en.wikipedia.org/wiki/Carat_(mass)">carats</a></td>
-<td><span class="mono">3</span></td>
-<td><span class="mono">0.192</span></td>
+<td>3</td>
+<td>0.192</td>
 </tr>
 <tr>
 <td><span class="colorAvOz">1.1288</span> <a
 href="https://en.wikipedia.org/wiki/Ounce">ounces</a></td>
-<td><span class="mono">500</span></td>
-<td><span class="mono">32</span></td>
+<td>500</td>
+<td>32</td>
 </tr>
 <tr>
 <td><span class="colorMass">0.9877</span> <a
 href="https://en.wikipedia.org/wiki/Pound_(mass)">pounds</a></td>
-<td><span class="mono">7000</span></td>
-<td><span class="mono">448</span></td>
+<td>7000</td>
+<td>448</td>
 </tr>
 <tr>
 <td><span class="colorMass">0.9877</span> <a
 href="https://en.wikipedia.org/wiki/Short_ton">tons</a></td>
-<td><span class="mono">14000000</span></td>
-<td><span class="mono">896000</span></td>
+<td>14000000</td>
+<td>896000</td>
 </tr>
 </tbody>
 </table>
@@ -2482,8 +2507,9 @@ proposed measuring length in
 data-bs-title="decizem">dz</a> or
 <a href="#nc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="nanotaurs">nc</a> and tracking time in
-<a href="#dek" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of ten days">deks</a>,
+[xún](https://en.wikipedia.org/wiki/Chinese_calendar#:~:text=into%20nine%2D%20or-,ten%2Dday%20weeks,-known%20as%20x%C3%BAn)
+(<a href="#x" id="xun" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of ten days">x</a>),
 <a href="#dd" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decidays">dd</a>,
 <a href="#md" class="tool" data-bs-toggle="tooltip"
@@ -2516,28 +2542,11 @@ from an [arxiv](https://arxiv.org/abs/physics/0412078)
 # Summary
 
 This article introduces the Dec measurement system and describes how Dec
-uses metric prefixes and the properties of the planet Earth to define
-units based on turns for geographic coordinates, compass directions,
-dates, times, speeds, distances, areas, volumes, and weights. Each unit
-has a unique name, such as
-<a href="#lambda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">λ</a>,
-<a href="#m" class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridian">m</a>,
-<a href="#r" class="tool" data-bs-toggle="tooltip"
-data-bs-title="rose">r</a>,
-<a href="#y" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year">y</a>,
-<a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a>,
-<a href="#b" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beat">b</a>,
-<a href="#v" class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegar">v</a>,
-<a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taur">c</a>, or
-<a href="#z" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zem">z</a>.
+uses the properties of the planet Earth to define units based on turns
+for geographic coordinates, compass directions, distances, speeds,
+areas, volumes, weights, frequencies, wavelengths, and periods. Dec
+units can be combined with metric prefixes to form multiples or
+submultiples.
 
 Dec attempts to bridge the gap, improve interoperability, and faciliate
 conversion between the
@@ -2549,18 +2558,19 @@ by redefining certain units. Redefinition of
 <a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary units makes human-based
 length units <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="color0158">1.58%</span>
+data-bs-title="approximately">~</span><span class="color0158">1.58</span>%
 shorter and surveying distance units <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span><span class="color0058">0.58%</span>
+data-bs-title="approximately">~</span><span class="color0058">0.58</span>%
 shorter. Dec also redefines
 <a href="#si" class="tool" data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a> seconds to be
 <span class="color040">4</span>% shorter.
 
 Dec color labels can convey an impression of a value at a glance👀. Dec
-sound labels allow us to estimate a value without even having to look at
-it🙈. Both types of labels can help avoid confusion when [decimal
+sound labels allow us to quickly estimate a value without even having to
+look at it🙈. Both types of labels can help avoid confusion when
+[decimal
 separators](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline)
 appear, disappear, or move due to a measurement unit change such as the
 addition, removal, or replacement of a metric prefix.
@@ -2670,7 +2680,8 @@ yaml format.
   author = "Martin Laptev",
   title = "Dec Measurement System",
   url = "https://maptv.github.io/dec",
-  year = 2026+096}
+  year = 2026+096
+}
 ```
 
 </div>
@@ -2835,14 +2846,11 @@ videos](https://observablehq.com/resource-center#videos).
   week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays,
   1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse
   of a quotidie
-  - <a href="#pentaday" id="pent">pent</a>: pentaday, a group of five
-    days, half a decaday
-  - <a href="#dayofdek" id="dod">dod</a>: day of decaday
+  - <a href="#dayofxun" id="dox">dox</a>: day of xún
   - <a href="#dayofpent" id="dop">dop</a>: day of pentaday
   - <a href="#dayofmonth" id="dom">dom</a>: day of month
   - <a href="#dayofweek" id="dow">dow</a>: day of week
-  - <a href="#dayofyear" id="doy">doy</a>: day of year, decaday \* 10 +
-    dod
+  - <a href="#dayofyear" id="doy">doy</a>: day of year, xún \* 10 + dox
   - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
     hours, 144 minutes
   - <a href="#centiday" id="cd">cd</a>: centiday, a hundredth of a day,
@@ -2888,7 +2896,8 @@ videos](https://observablehq.com/resource-center#videos).
     millimeter, a millionth of a liter, 0.015625 drops
 - <a href="#meridian" id="m">m</a>: meridian, a full circle around the
   Earth moving North or South; used in the abbreviations a.m.
-  (antemeridian) and p.m. (postmeridian)
+  (antemeridian) and p.m. (postmeridian); the letter “m” in meridian can
+  be vertically flipped to get the letter “w” in wěi
   - <a href="#decimeridian" id="dm">dm</a>: decimeridian, a tenth of a
     meridian
   - <a href="#millimeridian" id="mm">mm</a>: millimeridian, a thousandth
@@ -2902,29 +2911,23 @@ videos](https://observablehq.com/resource-center#videos).
     square kilozem
   - <a href="#cubiccentimeter" id="cm3">cm³</a>: cubic centimeter, 1
     millilter, a thousandth of a liter, 15.625 drops
-- <a href="#parallel" id="lambda">λ</a>: parallel, a full circle around
-  the Earth moving West or East; the English alphabet equivalent of λ is
-  the letter “l”, which occurs three times in the word “parallel” and
-  represents a ***l***ine that crosses every possible ***l***ongitude at
-  the same ***l***atitude
-  - <a href="#deciparallel" id="dlambda">dλ</a>: deciparallel, a tenth
-    of a parallel
-  - <a href="#milliparallel" id="mlambda">mλ</a>: milliparallel, a
-    thousandth of a parallel
+- <a href="#pentaday" id="p">p</a>: pentaday, a group of five days, half
+  a decaday
 - <a href="#note" id="n">n</a>: note, a specific frequency within an
   octave
 - <a href="#octave" id="o">o</a>: octave, a two fold change in frequency
   - <a href="#decioctave" id="do">do</a>: decioctave, a tenth of a two
     fold change in frequency
-- <a href="#perbeat" id="per">p</a>: perbeat, the inverse of a beat,
-  1/beat, once per beat, every beat, 100000 q; the letter “p” can be
-  flipped vertically to produce the letter “b”
-  - <a href="#teraperbeat" id="Tp">Tp</a>: teraperbeat, 10<sup>12</sup>
+- <a href="#perbeat" id="per">þ</a>: perbeat, the inverse of a beat,
+  1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ),
+  which looks like a combination of the letters “p” and “b”; not to be
+  confused with a picobeat (pb)
+  - <a href="#teraperbeat" id="Tpb">Tþ</a>: teraperbeat, 10<sup>12</sup>
     perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat,
     every picobeat
 - <a href="#quotidie" id="q">q</a>: quotidie, the inverse of a day, a
-  hundred thousandth of a perbeat; the letter “q” can be flipped
-  vertically to produce the letter “d”
+  hundred thousandth of a perbeat; the letter “q” in quotidie can be
+  flipped vertically to produce the letter “d” in day
 - <a href="#rose" id="r">r</a>: compass rose, a full circle along the
   horizon, 360 compass degress
   - <a href="#millirose" id="mr">mr</a>: compass millirose, a thousandth
@@ -2977,15 +2980,16 @@ videos](https://observablehq.com/resource-center#videos).
     1.<span class="vinculum">6</span> kilometers per hour,
     0.4<span class="vinculum">629</span> meters per second,
     approximately 0.136% the speed of sound
-- <a href="#wineglass" id="w">w</a>: wineglass, 64 milliters, 2 ounces,
-  cubic decizem, 1000 drops
-- <a href="#decaday" id="x">x</a>: decaday, dek, a group of ten days
-  represented by x like the Roman numeral X, xún (旬) in Mandarin
-  Chinese, 2 pentadays
-  - <a href="#decaday" id="dek">dek</a>:
-  - <a href="#megahexamilliare" id="Mx">Mx</a>: megahexamilliare, a
-    million square zem, square kilozem, kz², hexakilare, 16 hectares,
-    1600 ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
+- <a href="#wei" id="w">w</a>: wěi (纬), parallel, a measure of
+  longitude; can be thought of as a measure of the **w**idth of a
+  meridian on **E**arth; the letter “w” in wěi can be vertically flipped
+  to get the letter “m” in meridian
+  - <a href="#deciwei" id="dw">dw</a>: deciwěi, a tenth of a wěi (纬), a
+    tenth of a parallel
+  - <a href="#milliwei" id="mw">mw</a>: milliwěi, a thousanth of a wěi
+    (纬), a thousanth of a parallel
+- <a href="#xun" id="x">x</a>: xún (旬), decaday, a group of ten days, 2
+  pentadays, represented by x like the Roman numeral X
 - <a href="#year" id="y">y</a>: year
   - <a href="#milliyear" id="my">my</a>: milliyear, a thousandth of a
     year
@@ -3264,11 +3268,11 @@ function yiq(color) {
 function textcolor(content, style = {}) {
   const {
     background,
-    color = yiq(background) > 0.51 ? "#000" : "white",
+    color = yiq(background) > 0.5 ? "#000" : "white",
     padding = "0 2px",
     borderRadius = "4px",
     fontWeight = 400,
-    fontFamily = "monospace",
+    fontFamily = "sans-serif",
     ...rest
   } = typeof style === "string" ? {background: style} : style;
   return htl.html`<span style=${{
@@ -5369,810 +5373,709 @@ html`
 .colorAs {
   background: hsl(${xetHue[0]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[0]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorAs3 {
   background: hsl(${hues[0.40069]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.40069]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color0158 {
   background: hsl(${hues[0.0158]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.0158]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorC4 {
   background: hsl(${hues[0.41302]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.41302]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorA4 {
   background: hsl(${hues[0.49008]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.49008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorB {
   background: hsl(${xetHue[1]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[1]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorBc {
   background: hsl(${bcHue} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${bcHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorC {
   background: hsl(${xetHue[2]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[2]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorCs {
   background: hsl(${xetHue[3]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[3]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorD {
   background: hsl(${xetHue[4]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[4]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorDs {
   background: hsl(${xetHue[5]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[5]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorDds {
   background: hsl(${ddsHue} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${ddsHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorDsE {
   background: hsl(${dseHue} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${dseHue}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorE {
   background: hsl(${xetHue[6]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[6]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorF {
   background: hsl(${xetHue[7]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[7]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorFs {
   background: hsl(${xetHue[8]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[8]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorG {
   background: hsl(${xetHue[9]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[9]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorGs {
   background: hsl(${xetHue[10]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[10]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorA {
   background: hsl(${xetHue[11]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${xetHue[11]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color0 {
   background: hsl(0 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(0, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color002 {
   background: hsl(${hues[.002]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.002]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color004 {
   background: hsl(${hues[.004]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.004]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color00390625 {
   background: hsl(${hues[.00390625]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.00390625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color0058 {
   background: hsl(${hues[.0058]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.0058]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color0078125 {
   background: hsl(${hues[.0078125]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.0078125]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color008 {
   background: hsl(${hues[.008]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.008]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color014 {
   background: hsl(${hues[.014]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[.014]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color015625 {
   background: hsl(${hues[0.015625]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.015625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color016 {
   background: hsl(${hues[0.016]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.016]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color021 {
   background: hsl(${hues[0.021]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.021]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color022 {
   background: hsl(${hues[0.022]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.022]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color024 {
   background: hsl(${hues[0.024]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.024]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color025 {
   background: hsl(20 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(20, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color030 {
   background: hsl(${hues[0.030]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.030]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color03125 {
   background: hsl(${hues[0.03125]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.03125]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color039 {
   background: hsl(${hues[0.039]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.039]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color040 {
   background: hsl(${hues[0.040]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.040]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color050 {
   background: hsl(24 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(24, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color0625 {
   background: hsl(${hues[0.0625]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.0625]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color065 {
   background: hsl(${hues[0.065]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.065]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color067 {
   background: hsl(${hues[0.067]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.067]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color26div300 {
   background: hsl(${h26div300} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${h26div300}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color1 {
   background: hsl(36 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(36, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color125 {
   background: hsl(44 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(44, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color130 {
   background: hsl(${hues[0.130]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.130]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color185 {
   background: hsl(${hues[0.185]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.185]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color2 {
   background: hsl(60 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(60, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color250 {
   background: hsl(68 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(68, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color3 {
   background: hsl(80 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(80, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorThird {
   background: hsl(${hues[1/3]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[1/3]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color375 {
   background: hsl(96 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(96, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color4 {
   background: hsl(120 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(120, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color413 {
   background: hsl(${hues[0.413]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.413]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color4132 {
   background: hsl(${hues[0.4132]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.4132]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color420 {
   background: hsl(${hues[0.420]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.420]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color450 {
   background: hsl(${hues[0.450]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.450]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color460 {
   background: hsl(${hues[0.460]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.460]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color480 {
   background: hsl(${hues[0.480]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.480]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color490 {
   background: hsl(${hues[0.490]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.490]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color5 {
   background: hsl(180 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(180, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color599 {
   background: hsl(${hues[0.599]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.599]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color6 {
   background: hsl(208 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(208, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color625 {
   background: hsl(216 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(216, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color7 {
   background: hsl(240 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(240, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color704 {
   background: hsl(${hues[0.704]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.704]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color750 {
   background: hsl(264 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(264, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color754 {
   background: hsl(${hues[0.754]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.754]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color788 {
   background: hsl(${hues[0.788]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.788]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color8 {
   background: hsl(276 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(276, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color815 {
   background: hsl(${hues[0.815]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.815]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color864 {
   background: hsl(${hues[0.864]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.864]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color875 {
   background: hsl(292 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(292, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color9 {
   background: hsl(300 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(300, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color935 {
   background: hsl(${hues[0.935]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.935]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color950 {
   background: hsl(328 ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(328, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color960 {
   background: hsl(${hues[0.960]} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hues[0.960]}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorD039 {
   background: hsl(${hD039} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hD039}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorD080 {
   background: hsl(${hD080} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hD080}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorD285 {
   background: hsl(${hD285} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hD285}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorff6300 {
   background: #ff6300;
   color: black;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorffec00 {
   background: #ffec00;
   color: black;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color99ff00 {
   background: #99ff00;
   color: black;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color28ff00 {
   background: #28ff00;
   color: black;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color00ffe8 {
   background: #00ffe8;
   color: black;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color007cff {
   background: #007cff;
   color: white;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color0800ff {
   background: #0800ff;
   color: white;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .color5e00d6 {
   background: #5e00d6;
   color: white;
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorIob {
   background: hsl(${hIob} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hIob}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorMile {
   background: hsl(${hMile} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hMile}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorPerS {
   background: hsl(${hPerS} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hPerS}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorInch {
   background: hsl(${hInch} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hInch}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorCuIn {
   background: hsl(${hCuIn} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hCuIn}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorDrop {
   background: hsl(${hDrop} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hDrop}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorMass {
   background: hsl(${hMass} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hMass}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorCara {
   background: hsl(${hCara} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hCara}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorGall {
   background: hsl(${hGall} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hGall}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorBarr {
   background: hsl(${hBarr} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hBarr}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorAvOz {
   background: hsl(${hAvOz} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hAvOz}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorFlOz {
   background: hsl(${hFlOz} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hFlOz}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorSqMi {
   background: hsl(${hSqMi} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hSqMi}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 .colorSqIn {
   background: hsl(${hSqIn} ${colorS / 10}% ${colorL / 10}%);
   color: ${yiq(`hsl(${hSqIn}, ${colorS / 10}%, ${colorL / 10}%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
   font-weight: 400;
-  font-family: monospace;
 }
 </style>
 `
@@ -6365,7 +6268,7 @@ svg#lefthand {
 }
 .marginInputs {
   position: relative;
-  top: -120px;
+  top: -109px;
 }
 #cct table, #zct table {
   line-height: 1.5;
@@ -6386,16 +6289,6 @@ form.oi-3a86ea {
 img#ruler, svg#zhands {
   width: 100%;
 }
-div#iobpiano > div > div > svg {
-  max-width: 100%;
-  max-height: 100%;
-  overflow: visible;
-}
-#iobpiano {
-  overflow: clip;
-  max-width: 100%;
-  margin-bottom: 8px;
-}
 img#zModu {
   width: 100%;
 }
@@ -6405,90 +6298,23 @@ img#zModu {
 #iobplayer canvas {
   height: 100%;
 }
-@font-face {
-  font-family: "Iosevka";
-  src: url(../asset/IosevkaNerdFont-Regular.ttf);
+.unittable table {
+  text-align: left;
 }
-.iosevka {
-  font-family: "Iosevka", sans-serif !important;
+#tbl-map {
+  margin-bottom: 0px;
 }
-#chorus svg {
-  width: 100%;
+#fig-colorwheelcompass {
+  margin-bottom: 4px;
 }
-#chorus > div {
-  overflow: clip;
-}
-#citelist ol li {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  padding: 0;
-  margin: 0;
-}
-#gloslist ul li {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-#gloslist div {
-  padding: 0;
-  margin: 0;
-}
-#chorus {
-  margin-top: -12px;
-  margin-bottom: 19px;
-}
-.fraction {
-  display: inline-flex; /* Allows the container to sit inline with text */
-  flex-direction: column; /* Stacks the children vertically */
-  align-items: center; /* Centers the numbers */
-  vertical-align: middle; /* Aligns the fraction with the surrounding text */
-  font-size: 60%; /* Makes the numbers smaller for a better look */
-}
-.numerator {
-  position: relative;
-  top: .4em;
-}
-.denominator {
-  position: relative;
-  bottom: .6em;
-}
-g#arpeggio.cluster rect {
-  height: 156px;
-  y: 148;
-}
-g#arpeggio g.cluster-label {
-  transform: translate(148.73508071899414px, 150px);
-}
-div.cell-output-display:has(svg#csharpchart-mermaid.flowchart.mermaid-js) {
-  margin-top: -120px;
-  margin-bottom: -100px;
-}
-div.cell#csharpstaff * {
-  overflow: visible;
-}
-figcaption {
+figcaption[id^=tbl-map-caption], figcaption[id^=fig-distmap-caption], figcaption[id^=fig-colorwheelcompass-caption], figcaption[id^=tbl-color-caption] {
   display: none;
 }
-.musicchart {
-  margin-top: -25px;
-  margin-left: -18px;
+#colorbar {
+  height: 35px;
 }
-.musicchart * {
-  max-width: 1000px;
-  overflow-y: visible;
-  overflow-x: hidden;
-}
-.unselectable {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-code span.er {
-  text-decoration: none !important;
+section#cct {
+  margin-top: -6px;
 }
 </style>
 
