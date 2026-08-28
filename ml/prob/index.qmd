@@ -99,8 +99,8 @@ def loading_plot(
                 color="#000" if colors is None else colors[i],
             )
             ax.text(
-                text_x[i] if text_x.all() else coeff[i, 0] * 1.2 * scale,
-                text_y[i] if text_y.all() else coeff[i, 1] * 1.2 * scale,
+                text_x.iloc[i] if text_x.all() else coeff[i, 0] * 1.2 * scale,
+                text_y.iloc[i] if text_y.all() else coeff[i, 1] * 1.2 * scale,
                 label,
                 color="#000" if colors is None else colors[i],
                 ha="center",
