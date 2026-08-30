@@ -1,6 +1,6 @@
 # Decalendar
 Martin Laptev
-2026+178
+2026+180
 
 - [Decalendar](#decalendar)
 - [Day of year (doy)](#sec-doy)
@@ -41,6 +41,7 @@ Martin Laptev
 - [Year of era (yoe)](#sec-yoe)
 - [Day of week (dow)](#sec-dow)
 - [Day of month (dom)](#sec-dom)
+- [Misaligned unit difference (mud)](#sec-mud)
 - [Day of bimester (dob)](#sec-dob)
 - [Moon](#moon)
 - [Mars](#mars)
@@ -930,12 +931,12 @@ $$\text{dop = dox} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20
 
 </div>
 
-In <a href="#fig-zero" class="quarto-xref">Diagram 2</a> below, each row
+In <a href="#fig-zero" class="quarto-xref">Diagram 9</a> below, each row
 is a <a href="#pox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentaday of xún">pox</a> and each square node is a
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a>.
-<a href="#fig-zero" class="quarto-xref">Diagram 2</a> visualizes
+<a href="#fig-zero" class="quarto-xref">Diagram 9</a> visualizes
 Schedule <span class="color14by32 tool" data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>,
 a Dec schedule that plans for exactly 219 work days per year, which is
@@ -968,7 +969,7 @@ data-bs-title="days of xún">Dox</a> <span class="color0">0</span> to <span clas
 
 <div>
 
-<img src="index_files/figure-commonmark/mermaid-figure-9.png"
+<img src="index_files/figure-commonmark/mermaid-figure-10.png"
 style="width:8.25in;height:4.41in" />
 
 </div>
@@ -1103,7 +1104,7 @@ data-bs-title="pentaday">p</a><span class="color0">0</span>)
 
 <div>
 
-<img src="index_files/figure-commonmark/mermaid-figure-8.png"
+<img src="index_files/figure-commonmark/mermaid-figure-9.png"
 style="width:10.36in;height:4.09in" />
 
 </div>
@@ -1149,7 +1150,7 @@ two-by-two grid.
 
 <div>
 
-<img src="index_files/figure-commonmark/mermaid-figure-7.png"
+<img src="index_files/figure-commonmark/mermaid-figure-8.png"
 style="width:11.98in;height:4.09in" />
 
 </div>
@@ -1200,7 +1201,7 @@ data-bs-title="days of xún">Dox</a> <span class="color1">1</span> to <span clas
 
 <div>
 
-<img src="index_files/figure-commonmark/mermaid-figure-6.png"
+<img src="index_files/figure-commonmark/mermaid-figure-7.png"
 style="width:8.25in;height:4.41in" />
 
 </div>
@@ -1250,7 +1251,7 @@ data-bs-title="days of xún">Dox</a> <span class="color0">0</span> to <span clas
 
 <div>
 
-<img src="index_files/figure-commonmark/mermaid-figure-5.png"
+<img src="index_files/figure-commonmark/mermaid-figure-6.png"
 style="width:8.25in;height:4.41in" />
 
 </div>
@@ -1296,7 +1297,7 @@ data-bs-title="days of xún">Dox</a> <span class="color0">0</span> to <span clas
 
 <div>
 
-<img src="index_files/figure-commonmark/mermaid-figure-4.png"
+<img src="index_files/figure-commonmark/mermaid-figure-5.png"
 style="width:8.25in;height:4.41in" />
 
 </div>
@@ -4006,7 +4007,7 @@ below shows that the model
 in less recent years and
 [underpredicts](https://en.wiktionary.org/wiki/underpredict#English:~:text=predict%20to%20be%20smaller%20than%20is%20the%20case)
 in more recent years. Nevertheless, the model fits the data well overall
-as evidenced by rightmost plot below, which is a common [regression
+as evidenced by the rightmost plot below, which is a common [regression
 diagnostic](https://en.wikipedia.org/wiki/Regression_diagnostic#:~:text=a%20set%20of%20procedures%20available%20for%20regression%20analysis%20that%20seek%20to%20assess%20the%20validity%20of%20a%20model%20in%20any%20of%20a%20number%20of%20different%20ways)
 that compares predicted and [actual <span class="mono">-</span>
 predicted
@@ -5954,7 +5955,7 @@ data-bs-title="days of week">dow</a>.
 
 <div>
 
-<img src="index_files/figure-commonmark/mermaid-figure-3.png"
+<img src="index_files/figure-commonmark/mermaid-figure-4.png"
 style="width:5.34in;height:6.42in" />
 
 </div>
@@ -5962,6 +5963,8 @@ style="width:5.34in;height:6.42in" />
 </figure>
 
 </div>
+
+# Misaligned unit difference (mud)
 
 Unlike weeks, Gregorian calendar months differ by length and therefore
 are not amenable to Dec date expansion. With a constant number of “days
@@ -6032,6 +6035,21 @@ mud = pid − dom − dow = bom − dow = bow − do
 
 </div>
 
+<div>
+
+<figure class=''>
+
+<div>
+
+<img src="index_files/figure-commonmark/mermaid-figure-3.png"
+style="width:5.69in;height:1.94in" />
+
+</div>
+
+</figure>
+
+</div>
+
 In Decalendar, a count is the number of days that have passed since an
 onset. <a href="#tbl-unit" class="quarto-xref">Table 10</a> gives
 examples of count and onset pairs. We do not see the
@@ -6084,42 +6102,49 @@ data-bs-title="day of week">dow</a></td>
 </tbody>
 </table>
 
-We can interpret a <a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit difference">mud</a> as the last Dow
-<span class="color0">0</span> before a
+The line plot below shows how
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doy</a>,
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a>. which is reset at the
-<a href="#boy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of year">boy</a>. there
+data-bs-title="beginnings of week">bow</a>,
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of week">bow</a> range from -6 to 365. that
-there are more possible
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of week">bow</a> in one year than .
-definition, the onsets of misaligned units do not coincide at regular
-intervals.
-
-``` {ojs}
-//| echo: false
-//| label: mudradio
-//| className: radiobuttons
-viewof mudInput = Inputs.radio(
-  new Map([["Sun", 0], ["Mon", 1], ["Tue", 2], ["Wed", 3], ["Thu", 4], ["Fri", 5], ["Sat", 6]]),
-  {value: 0}
-  )
-```
+data-bs-title="beginnings of month">bom</a>,
+<a href="#mud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="misaligned unit differences">mud</a>,
+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">dom</a>, and
+<a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of week">dow</a> change over the course of a Dec
+year. Whereas <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doy</a> increase linearly, the others look
+like
+[step](https://en.wikipedia.org/wiki/Step_function#:~:text=a%20finite%20linear%20combination%20of%20indicator%20functions%20of%20intervals)
+or
+[sawtooth](https://en.wikipedia.org/wiki/Sawtooth_wave#:~:text=named%20based%20on%20its%20resemblance%20to%20the%20teeth%20of%20a%20plain%2Dtoothed%20saw%20with%20a%20zero%20rake%20angle)
+[piecewise linear
+functions](https://en.wikipedia.org/wiki/Piecewise_linear_function#Examples:~:text=other%20examples%20of-,piecewise%20linear%20functions,-%3A).
+Changing the <a href="#boy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginnings of year">boy</a><a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of week">dow</a> with the input beneath the plot
+shifts <a href="#bom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginnings of week">bow</a>,
+<a href="#mud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="misaligned unit differences">mud</a>, and
+<a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of week">dow</a>, but does not affect
+<a href="#mud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="misaligned unit differences">mud</a> to
+<a href="#moy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">moy</a> conversion:
+<a href="#moy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">moy</a> =
+⌊(<a href="#mud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="misaligned unit differences">mud</a> + 7) ÷ 30⌋.
 
 ``` {ojs}
 //| echo: false
 //| label: mudplot
 //| className: linechart
-doy = [...Array(366).keys()]
-dow = doy.map(x => (x + mudInput) % 7)
-bow = doy.map((x, i) => x - dow[i])
-moy = doy.map(x => Math.floor((x * 5 + 2) / 153))
-bom = moy.map(x => Math.floor((x * 153 + 2) / 5) - 1)
-dom = doy.map((x, i) => x - bom[i])
-mud = doy.map((x, i) => x - dom[i] - dow[i])
 Plot.plot({
   width: 900,
   height: 500,
@@ -6142,6 +6167,26 @@ Plot.plot({
     className: "lineplotlegend"
   },
   marks: [
+    Plot.ruleX(
+    doy,
+    Plot.pointerX({
+      x: x => x,
+      strokeOpacity: 0.5,
+      strokeWidth: 1
+    })
+    ),
+    Plot.tip(doy, Plot.pointerX({
+      x: x => x,
+      y: x => x < 205 ? 360 : x < 300 ? 32 : 100,
+      title: x => [
+        `doy: ${doy[x]}`,
+        `bow: ${bow[x]}`,
+        `bom: ${bom[x]}`,
+        `mud: ${mud[x]}`,
+        `dom: ${dom[x]}`,
+        `dow: ${dow[x]}`
+      ].join("\n")
+    })),
     Plot.line(doy, {
       x: x => x,
       y: x => doy[x],
@@ -6178,163 +6223,102 @@ Plot.plot({
       stroke: () => "dow",
       strokeWidth: 3
     }),
-    Plot.ruleX(
-    doy,
-    Plot.pointerX({
+    Plot.dot(doy, Plot.pointerX({
       x: x => x,
-      strokeOpacity: 0.5,
-      strokeWidth: 1
-    })
-    ),
-    Plot.tip(doy, Plot.pointerX({
+      y: x => doy[x],
+      fill: () => "doy",
+      r: 6
+    })),
+    Plot.dot(doy, Plot.pointerX({
       x: x => x,
-      y: x => x,
-      title: x => [
-        `doy: ${doy[x]}`,
-        `bow: ${bow[x]}`,
-        `bom: ${bom[x]}`,
-        `mud: ${mud[x]}`,
-        `dom: ${dom[x]}`,
-        `dow: ${dow[x]}`
-      ].join("\n")
-    }))
+      y: x => bow[x],
+      fill: () => "bow",
+      r: 6
+    })),
+    Plot.dot(doy, Plot.pointerX({
+      x: x => x,
+      y: x => bom[x],
+      fill: () => "bom",
+      r: 6
+    })),
+    Plot.dot(doy, Plot.pointerX({
+      x: x => x,
+      y: x => mud[x],
+      fill: () => "mud",
+      r: 6
+    })),
+    Plot.dot(doy, Plot.pointerX({
+      x: x => x,
+      y: x => dom[x],
+      fill: () => "dom",
+      r: 6
+    })),
+    Plot.dot(doy, Plot.pointerX({
+      x: x => x,
+      y: x => dow[x],
+      fill: () => "dow",
+      r: 6
+    })),
   ]
 })
 ```
 
-For example, the onset which are .
-<a href="#tbl-unit" class="quarto-xref">Table 10</a> displays the name
-of onset and count In Decalendar, count is the number of days since an
-onset like a <a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a> or
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of week">bow</a>.@tbl-unit lists the onsets of
-include <a href="#boy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of year">boy</a>,
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of month">bom</a>, and
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of week">bow</a>. We can co
+<span class="radiotitle">First <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> of the
+Decalendar year</span>
 
-The beginning of year. We can calculate a
-<a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit difference">mud</a> by subtracting the
-**[counts](https://en.wikipedia.org/wiki/Count_data#:~:text=data%20which%20can%20take%20only%20the%20counting%20numbers%2C%20non%2Dnegative%20integer%20values%20%7B0%2C%201%2C%202%2C%203%2C%20...%7D%2C%20and%20where%20these%20integers%20arise%20from%20counting%20rather%20than%20ranking)**
-of the misaligned units from the
-<a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a>.
+``` {ojs}
+//| echo: false
+//| label: mudradio
+//| className: radiobuttons
+viewof mudInput = Inputs.radio(
+  new Map([["Sun", 0], ["Mon", 1], ["Tue", 2], ["Wed", 3], ["Thu", 4], ["Fri", 5], ["Sat", 6]]),
+  {value: 0}
+  )
+```
 
-If there are only two misaligned units, we can also obtain a mud by
-subtracting the count of one unit from the onset of the other.
-
-When the misaligned units are months and weeks, each
-<a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit difference">mud</a> represents a specific
-combination of <a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a>,
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of week">bow</a>,
-<a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a>, and
-<a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a>. As needed, we can switch between
-<a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit difference">mud</a>,
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a>,
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of week">bow</a> dates.
-
-+day d only months, only weeks, or neither months nor weeks:
-<a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit difference">mud</a><span class="mono">+</span><a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a><span class="mono">+</span><a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a> =
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a><span class="mono">+</span><a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a> =
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of week">bow</a><span class="mono">+</span><a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</a>, or neither months nor weeks:
-<a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a>. The opposite of
-date expansion is date simplification.
-
-because all of these are equivalent:
-<a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a> =
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a><span class="mono">+</span><a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a> =
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of week">bow</a><span class="mono">+</span><a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</a> =
-<a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit difference">mud</a><span class="mono">+</span><a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a><span class="mono">+</span><a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a>.
-
-To , we can expand <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a> into
-<a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit difference">mud</a><span class="mono">+</span><a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a><span class="mono">+</span><a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a>. We can always simplify this math
-expression into a pid or partially simplify it to obtain the bom or bow:
-pid = . If we need way, we can directly access the
-<a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a> and
-<a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a> or sum Furthermore we can sum the
-<a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit difference">mud</a> with the
-<a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a> to get the
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a> or with the
-<a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a> to obtain the
-<a href="#bow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of week">bow</a>.
-
-Even though a month is about as long as a
+After we turn a <a href="#mud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="misaligned unit differences">mud</a> into a
+<a href="#moy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">moy</a>, we can find the zero-based index
+of its corresponding Gregorian calendar season:
+⌊<a href="#moy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">moy</a> ÷ 3⌋. Even though a month is about
+as long as a
 [lunation](https://en.wikipedia.org/wiki/Lunar_month#Synodic_month:~:text=the%20average%20period%20of%20the%20Moon%27s%20orbit%20with%20respect%20to%20the%20line%20joining%20the%20Sun%20and%20Earth)
 and a week is almost as long as one of the four major [lunar
 phases](https://en.wikipedia.org/wiki/Lunar_phase#:~:text=the%20new%20moon%2C%20the%20first%20quarter%2C%20the%20full%20moon%2C%20and%20the%20last%20quarter),
-Gregorian calendar months,
-<a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a>, weeks, and
-<a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a> do not provide any information
-about the level of illumination of the Moon🌙by the Sun☀️. To be fair,
-Gregorian calendar months can provide the season, albeit not as directly
-as <a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of year">doy</a>,
-<a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of ten days">x</a>, or
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a>.
+Gregorian calendar months and weeks are misaligned with the lunar cycle
+and thus cannot estimate
+[moonlight](https://en.wikipedia.org/wiki/Moonlight#:~:text=light%20from%20the%20surface%20of%20the%20Moon%2C%20consisting%20mostly%20of%20reflected%20sunlight%2C%20and%20some%20earthlight)
+levels.
 
 # Day of bimester (dob)
 
-We can get a sense of how much of the surface of the Moon is illuminated
-by expanding a <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a> in a Dec date into
-a “beginning of bimester”
-(<a href="#bob" id="beginningofbimester" class="tool"
+We can get a sense of how much of the surface of the Moon🌙is
+illuminated by expanding a
+<a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> into a “beginning
+of bimester” (<a href="#bob" id="beginningofbimester" class="tool"
 data-bs-toggle="tooltip" data-bs-title="beginning of bimester">bob</a>)
 and “day of bimester”
 (<a href="#dob" id="dayofbimester" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a>) in place of a
+data-bs-title="day of bimester">dob</a>) instead of a
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of month">bom</a> and
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</a> or a
+data-bs-title="day of month">dom</a>, a
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of week">bow</a> and
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of week">dow</a>, or a
+<a href="#mud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="misaligned unit differences">mud</a>,
+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</a>, and
+<a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of week">dow</a>. A Dec bimester is exactly 59 days
-and is roughly a tenth of a percent shorter than two lunations: 59 /
+and is roughly a tenth of a percent shorter than 2 lunations: 59 ÷
 (29.53 \* 2) \* 100% ≈ 99.9%.
 
 To obtain a <a href="#dob" class="tool" data-bs-toggle="tooltip"
@@ -7178,35 +7162,55 @@ this fraction is the number of days left in the year.
 Dec can expand a date to display different kinds of information without
 changing the decimal year value that the date represents. Date expansion
 allows Decalendar to use measurement units other than years and days,
-such as bimesters, months, and weeks. In essence, expanded dates show
-the number of days since or until a reference point, such as a
-<a href="#bob" class="tool" data-bs-toggle="tooltip"
+such as bimesters, months, and weeks. The simplest expanded dates show
+an onset, such as a <a href="#bob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of bimester">bob</a>,
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of month">bom</a>, or
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of week">bow</a>.
+data-bs-title="beginning of week">bow</a>, and the number of days since
+that onset.
 
-Date expansion gives the reference point a numeric representation part
-of an expanded dates can be labeled with a Decolor based on Regardless
-of the number of days per month, a
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a> is an integer that represents
-a month and a <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a> is the sum of a
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a> and
+Date dates can expand to match any format including [RFC
+9557](https://www.rfc-editor.org/info/rfc9557/#name-optional-generation-and-ele:~:text=such%20as%3A%C2%B6-,2022%2D07%2D08T00,-%3A14%3A07%2B01)
+and: ${decYearColor10}+${decDotyPadColor2} = ${loadIso}, [RFC
+9557](https://www.rfc-editor.org/info/rfc9557/#name-optional-generation-and-ele:~:text=such%20as%3A%C2%B6-,2022%2D07%2D08T00,-%3A14%3A07%2B01)
+date are unrelated to math operators: , and ISO: . Whereas Dec dates are
+truncated math expressions, RFC 7231 dates are character strings that
+include month and <a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of week">dow</a> names which are abbreviated to 3
+letters. Unlike names, the math notation underlying Dec dates is
+universal. In contrast to the [plus
+sign](https://en.wikipedia.org/wiki/Plus_and_minus_signs#:~:text=represents%20the%20operation%20of%20addition)
+in a Dec date, , the delimiters in a
+
+Expanded <a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer days of year">pid</a> such as
+
+Date date expansion allows Dec to match other The closest thing to a mud
+date outside Dec is a [RFC
+7231](https://datatracker.ietf.org/doc/html/rfc7231#section-7.1.1.1:~:text=preferred%20format%20is-,Sun%2C%2006%20Nov,-1994%2008%3A49)
+date: ${loadStr}.format that provides a
+<a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</a>,
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</a>. By expanding
-<a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</a>, month, and
+<a href="#cey" class="tool" data-bs-toggle="tooltip"
+data-bs-title="common era year">cey</a> is :
+
+By expanding <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a> into
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of week">bow</a> and
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of week">dow</a>, Decalendar provides unmatched
-support for weekly schedules. Thanks to date expansion, Decalendar is
-truly unrivaled and can be referred to as ***the*** calendar or the one
-calendar [to rule them
+support for weekly schedules. With
+<a href="#mud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="misaligned unit differences">mud</a> dates, Decalendar
+can provide all of the information required for use of the Gregorian
+calendar. Thanks to date expansion, Decalendar is truly unrivaled and
+can be referred to as ***the*** calendar or the one calendar [to rule
+them
 all](https://en.wikipedia.org/wiki/One_Ring#:~:text=One%20ring%20to%20rule%20them%20all)!
 
 # Next
@@ -7286,7 +7290,7 @@ references:
   title: Decalendar
   url: https://maptv.github.io/dec/date
   issued:
-    literal: 2026+178
+    literal: 2026+180
 ```
 
 </div>
@@ -7327,7 +7331,7 @@ yaml format.
   author = "Martin Laptev",
   title = "Decalendar",
   url = "https://maptv.github.io/dec/date",
-  year = 2026+178
+  year = 2026+180
 }
 ```
 
@@ -8302,6 +8306,13 @@ fitted = d3.range(366).map(day => ({
     day < 316 ? "266=315" :
                 "316=365"
 }))
+doy = [...Array(366).keys()]
+dow = doy.map(x => (x + mudInput) % 7)
+bow = doy.map((x, i) => x - dow[i])
+moy = doy.map(x => Math.floor((x * 5 + 2) / 153))
+bom = moy.map(x => Math.floor((x * 153 + 2) / 5) - 1)
+dom = doy.map((x, i) => x - bom[i])
+mud = doy.map((x, i) => x - dom[i] - dow[i])
 ```
 
 ``` {ojs}
@@ -9391,6 +9402,10 @@ code {
 }
 #decseasonplot figure svg:nth-child(2) {
   max-width: 900px
+}
+#mudplot {
+  margin-bottom: -30px;
+  overflow: hidden;
 }
 #mudplot .lineplotlegend-swatches {
   font-size: 18px;
