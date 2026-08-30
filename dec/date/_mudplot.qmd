@@ -1,0 +1,134 @@
+```{ojs}
+//| echo: false
+//| label: mudplot
+//| className: linechart
+Plot.plot({
+  width: 900,
+  height: 500,
+  marginBottom: 41,
+  marginTop: 1,
+  style: {
+    fontSize: "18px"
+  },
+  x: {
+    label: "Day of year",
+    domain: [0, 365]
+  },
+  y: {
+    label: null
+  },
+  color: {
+    domain: ["doy", "bow", "bom", "dom", "dow", "mud"],
+    range: ["#2ca02c", "#d62728", "#1f77b4", "#9467bd", "#ff7f0e", "#8c564b"],
+    legend: true,
+    className: "lineplotlegend"
+  },
+  marks: [
+    Plot.ruleX(
+    doy,
+    Plot.pointerX({
+      x: x => x,
+      strokeOpacity: 0.5,
+      strokeWidth: 1
+    })
+    ),
+    Plot.tip(doy, Plot.pointerX({
+      x: x => x,
+      y: x => x < 200 ? 360 : x < 300 ? 30 : 100,
+      title: x => [
+        `doy: ${doy[x]}`,
+        `bow: ${bow[x]}`,
+        `bom: ${bom[x]}`,
+        `mud: ${mud[x]}`,
+        `dom: ${dom[x]}`,
+        `dow: ${dow[x]}`
+      ].join("\n")
+    })),
+    Plot.line(doy, {
+      x: x => x,
+      y: x => doy[x],
+      stroke: () => "doy",
+      strokeWidth: 3
+    }),
+    Plot.line(doy, {
+      x: x => x,
+      y: x => bow[x],
+      stroke: () => "bow",
+      strokeWidth: 3
+    }),
+    Plot.line(doy, {
+      x: x => x,
+      y: x => bom[x],
+      stroke: () => "bom",
+      strokeWidth: 3
+    }),
+    Plot.line(doy, {
+      x: x => x,
+      y: x => mud[x],
+      stroke: () => "mud",
+      strokeWidth: 3
+    }),
+    Plot.line(doy, {
+      x: x => x,
+      y: x => dom[x],
+      stroke: () => "dom",
+      strokeWidth: 3
+    }),
+    Plot.line(doy, {
+      x: x => x,
+      y: x => dow[x],
+      stroke: () => "dow",
+      strokeWidth: 3
+    }),
+    Plot.dot(doy, Plot.pointerX({
+      x: x => x,
+      y: x => doy[x],
+      fill: () => "doy",
+      r: 6
+    })),
+    Plot.dot(doy, Plot.pointerX({
+      x: x => x,
+      y: x => bow[x],
+      fill: () => "bow",
+      r: 6
+    })),
+    Plot.dot(doy, Plot.pointerX({
+      x: x => x,
+      y: x => bom[x],
+      fill: () => "bom",
+      r: 6
+    })),
+    Plot.dot(doy, Plot.pointerX({
+      x: x => x,
+      y: x => mud[x],
+      fill: () => "mud",
+      r: 6
+    })),
+    Plot.dot(doy, Plot.pointerX({
+      x: x => x,
+      y: x => dom[x],
+      fill: () => "dom",
+      r: 6
+    })),
+    Plot.dot(doy, Plot.pointerX({
+      x: x => x,
+      y: x => dow[x],
+      fill: () => "dow",
+      r: 6
+    })),
+  ]
+})
+```
+
+
+[First [dow]{.tool data-bs-toggle="tooltip" data-bs-title="day of week"} of the Decalendar year]{.radiotitle}
+
+```{ojs}
+//| echo: false
+//| label: mudradio
+//| className: radiobuttons
+viewof mudInput = Inputs.radio(
+  new Map([["Sun", 0], ["Mon", 1], ["Tue", 2], ["Wed", 3], ["Thu", 4], ["Fri", 5], ["Sat", 6]]),
+  {value: 0}
+  )
+```

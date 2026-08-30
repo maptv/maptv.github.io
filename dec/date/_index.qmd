@@ -732,6 +732,13 @@ fitted = d3.range(366).map(day => ({
     day < 316 ? "266=315" :
                 "316=365"
 }))
+doy = [...Array(366).keys()]
+dow = doy.map(x => (x + mudInput) % 7)
+bow = doy.map((x, i) => x - dow[i])
+moy = doy.map(x => Math.floor((x * 5 + 2) / 153))
+bom = moy.map(x => Math.floor((x * 153 + 2) / 5) - 1)
+dom = doy.map((x, i) => x - bom[i])
+mud = doy.map((x, i) => x - dom[i] - dow[i])
 ```
 
 ```{ojs}
@@ -1822,6 +1829,10 @@ code {
 }
 #decseasonplot figure svg:nth-child(2) {
   max-width: 900px
+}
+#mudplot {
+  margin-bottom: -30px;
+  overflow: hidden;
 }
 #mudplot .lineplotlegend-swatches {
   font-size: 18px;
