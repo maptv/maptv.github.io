@@ -1111,27 +1111,7 @@ In Decalendar, a count is the number of days that have passed since an onset. @t
 | Week  | [bow](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} | [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"} |
 :::       
 
-The only rule for Dec date expansion is that expanded dates should always [simplify](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%20that%20is%20simpler) to the equivalent year+day date. Dec [bow](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}, [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"}, and [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit difference"} dates all follow this rule as shown in @fig-mud below. In contrast, [woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"} dates break this rule by hiding the [boy](#boy){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of year"}[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} to appear more like [ISO week dates](https://en.wikipedia.org/wiki/ISO_week_date#:~:text=a%20leap%20week%20calendar%20system%20that%20is%20part%20of%20the%20ISO%208601%20date%20and%20time%20standard%20issued%20by%20the%20International%20Organization%20for%20Standardization). Dec year+day dates are similar to ISO ordinal dates and Dec bom and ISO month dates, or Dec mud and RFC 7231 dates. The table below compares several Dec date formats to their non-Dec(~~Dec~~) analogs. (woy)  Dec Date dates can expand to match any format including [RFC 9557](https://www.rfc-editor.org/info/rfc9557/#name-optional-generation-and-ele:~:text=such%20as%3A%C2%B6-,2022%2D07%2D08T00,-%3A14%3A07%2B01) and: \${decYearColor10}+\${decDotyPadColor2} = \${loadIso}, [RFC 9557](https://www.rfc-editor.org/info/rfc9557/#name-optional-generation-and-ele:~:text=such%20as%3A%C2%B6-,2022%2D07%2D08T00,-%3A14%3A07%2B01) date are unrelated to math operators:  , and ISO: . 
-Whereas Dec dates are truncated math expressions, RFC 7231 dates are character strings that include month and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} names which are abbreviated to 3 letters. Unlike names, the math notation underlying Dec dates is universal. In contrast to the [plus sign](https://en.wikipedia.org/wiki/Plus_and_minus_signs#:~:text=represents%20the%20operation%20of%20addition) in a Dec date, , the delimiters in a 
-
-::: {#tbl-format .overflowtable}
-| Unit             | Format   | Current |
-|------------------|----------|---------|
-| Year             | Dec doy  |         |
-| Year             | ISO 8601 |         |
-| Week             | Dec bow  |         |
-| Week             | Dec woy  |         |
-| Week             | ISO 8601 |         |
-| Month            | Dec dom  |         |
-| Month            | RFC 7231 |         |
-| Month            | ISO 8601 |         |
-| Month and week   | Dec mud  |         |
-| All of the above | RFC 7231 |         |
-:::
-
-Expanded [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} such as  
-
-Date date expansion allows Dec to match other The closest thing to a mud date outside Dec is a [RFC 7231](https://datatracker.ietf.org/doc/html/rfc7231#section-7.1.1.1:~:text=preferred%20format%20is-,Sun%2C%2006%20Nov,-1994%2008%3A49) date:  \${loadStr}.format that provides a [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"}, [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, month, and [cey](#cey){.tool data-bs-toggle="tooltip" data-bs-title="common era year"} is :
+Dec date expansion only has one rule, namely that each expanded date should always [simplify](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%20that%20is%20simpler) to its equivalent year+day date. As shown in @fig-mud below, [bow](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}+[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}, [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"}+[dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"}, and [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit difference"}+[dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"}+[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} all simplify to [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} in compliance with the date expansion rule. In contrast, [woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"} and [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} dates are expected to exclude information needed for simplification.
 
 ::: {#fig-mud .muddiagram}
 ```{mermaid}
@@ -1147,6 +1127,55 @@ flowchart LR
     click D "#sec-mud"
 ```
 :::
+
+Converting a [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"} date into [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} date is just like turning a [bow](#bow){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} date into a [woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"} date, we simply replace the [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"} with a [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} instead of replacing the [bow](#bow){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} with a [woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"}. Simplifying a [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} or [woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"} into a [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} is not as easy: [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} = 7&times;[woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"}[-]{.mono}[boy](#boy){.tool data-bs-toggle="tooltip" data-bs-title="beginning of year"}[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"}+[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"} = &LeftFloor;([moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"}&times;153+2)&div;5&RightFloor;+[dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"}.
+
+mud+dd+d
+bom+dd
+bow+d
+mm+dd
+ww+d
+doy
+
++[boy](#boy){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of year"}[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}~~+[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} with of requiring that  [woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"}. of requiring that  [woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"} or [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"}: [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} =  = 
+
+and a . but not [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} because the conversion of  complexity the result would be  moy dates do not exist because they can easily be confused  a Dec [woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"} dates would need to take the form of [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+7&times;[woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"}+[boy](#boy){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of year"}[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}+[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} and a Dec moy date would be 
+
+so that they appear more like [International Organization for Standardization](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates:~:text=an%20international%20standard%20covering%20the%20worldwide%20exchange%20and%20communication%20of%20date%20and%20time%2Drelated%20data) ([ISO]{.tool data-bs-toggle="tooltip" data-bs-title="International Organization for Standardization"}) [week dates](https://en.wikipedia.org/wiki/ISO_week_date#:~:text=a%20leap%20week%20calendar%20system%20that%20is%20part%20of%20the%20ISO%208601%20date%20and%20time%20standard%20issued%20by%20the%20International%20Organization%20for%20Standardization).
+
+Likewise, Dec year+day dates resemble [ISO ordinal dates](https://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates:~:text=the%20multiples%20of%20a%20day%20elapsed%20since%20the%20start%20of%20year).
+
+Dec [bow](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}, [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"}, and [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit difference"} dates do not have, because they all start like an [ISO]{.tool data-bs-toggle="tooltip" data-bs-title="International Organization for Standardization"} ordinal date and then end with a [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} like an [ISO]{.tool data-bs-toggle="tooltip" data-bs-title="International Organization for Standardization"} week date, a [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"} like an [ISO]{.tool data-bs-toggle="tooltip" data-bs-title="International Organization for Standardization"} [month date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates:~:text=Calendar%20dates-,YYYY%2DMM%2DDD,YYYY%2DMM,-%28but%20not), or a [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"} followed by a [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}.
+
+an ISO month date f have a  To recreate a Dec [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit difference"} date  To create such counterparts, we would need to merge  ISO analog of a [bow](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} date would combine the ISO ordinal and week formats. Similarly, If we momentarily ignore several key difference between Dec and ISO dates, we can think  a [bow](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} date combines the [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="days of year"} of an ISO ordinal date and the [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} of week date, a [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"} date integrates a the [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="days of year"} of an ordinal and [month date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates:~:text=Calendar%20dates-,YYYY%2DMM%2DDD,YYYY%2DMM,-%28but%20not) hybrid, and [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit difference"} dates combine [all three ISO date types]().
+
+, and 
+
+do not have a We can describe Other than Dec year+day Outside of Dec, the closest format to [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit difference"}+[dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"}+[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} is [RFC 7231](https://datatracker.ietf.org/doc/html/rfc7231#section-7.1.1.1:~:text=preferred%20format%20is-,Sun%2C%2006%20Nov,-1994%2008%3A49) date.
+
+\${loadStr}.
+
+Dec year+day dates are similar to ISO ordinal dates and Dec bom and ISO month dates, or Dec mud and RFC 7231 dates. The table below compares several Dec date formats to their non-Dec(~~Dec~~) analogs. (woy)  Dec Date dates can expand to match any format including [RFC 9557](https://www.rfc-editor.org/info/rfc9557/#name-optional-generation-and-ele:~:text=such%20as%3A%C2%B6-,2022%2D07%2D08T00,-%3A14%3A07%2B01) and: \${decYearColor10}+\${decDotyPadColor2} = \${loadIso}, [RFC 9557](https://www.rfc-editor.org/info/rfc9557/#name-optional-generation-and-ele:~:text=such%20as%3A%C2%B6-,2022%2D07%2D08T00,-%3A14%3A07%2B01) date are unrelated to math operators:  , and ISO: . 
+Whereas Dec dates are truncated math expressions, RFC 7231 dates are character strings that include month and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} names which are abbreviated to 3 letters. Unlike names, the math notation underlying Dec dates is universal. In contrast to the [plus sign](https://en.wikipedia.org/wiki/Plus_and_minus_signs#:~:text=represents%20the%20operation%20of%20addition) in a Dec date, , the delimiters in a 
+
+::: {#tbl-format .overflowtable}
+| Unit             | Dec      | ISO | ISO |
+|------------------|----------|-----|-----|
+| Year             | Dec doy  |     |     |
+| Year             | ISO 8601 |     |     |
+| Week             | Dec bow  |     |     |
+| Week             | Dec woy  |     |     |
+| Week             | ISO 8601 |     |     |
+| Month            | Dec dom  |     |     |
+| Month            | RFC 7231 |     |     |
+| Month            | ISO 8601 |     |     |
+| Month and week   | Dec mud  |     |     |
+| All of the above | RFC 7231 |     |     |
+:::
+
+Expanded [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} such as  
+
+Date date expansion allows Dec to match other The closest thing to a mud date outside Dec is a [RFC 7231](https://datatracker.ietf.org/doc/html/rfc7231#section-7.1.1.1:~:text=preferred%20format%20is-,Sun%2C%2006%20Nov,-1994%2008%3A49) date:  \${loadStr}.format that provides a [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"}, [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, month, and [cey](#cey){.tool data-bs-toggle="tooltip" data-bs-title="common era year"} is :
 
 The line plot below shows how [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="days of year"}, [bow](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of week"}, [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of month"}, [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit differences"}, [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"}, and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} change over the course of a Dec year. Whereas [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="days of year"} increase linearly, the others look like [step](https://en.wikipedia.org/wiki/Step_function#:~:text=a%20finite%20linear%20combination%20of%20indicator%20functions%20of%20intervals) or [sawtooth](https://en.wikipedia.org/wiki/Sawtooth_wave#:~:text=named%20based%20on%20its%20resemblance%20to%20the%20teeth%20of%20a%20plain%2Dtoothed%20saw%20with%20a%20zero%20rake%20angle) [piecewise linear functions](https://en.wikipedia.org/wiki/Piecewise_linear_function#Examples:~:text=other%20examples%20of-,piecewise%20linear%20functions,-%3A). Changing the [boy](#boy){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of year"}[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} with the input beneath the plot shifts [bow](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of week"}, [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit differences"}, and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}, but does not affect [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit differences"} to [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="month of year"} conversion: [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="month of year"} = &LeftFloor;([mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit differences"} + 7) &div; 30&RightFloor;. 
 
