@@ -562,7 +562,7 @@ syl = 365 + leap   (4)
 
 </div>
 
-<div class="panel-tabset" group="language">
+<div class="panel-tabset" data-group="language">
 
 ### Julia
 
@@ -4016,9 +4016,9 @@ values](https://en.wikipedia.org/wiki/Errors_and_residuals#:~:text=the%20differe
 <div id="residualsversusfitted" class="baserplot">
 
 <div class="quarto-embed-nb-cell"
-notebook="/Users/martinlaptev/maptv/maptv.github.io/dec/date/segment-r.ipynb"
-notebook-title="Regress doy on temperature"
-notebook-cellId="cell-segme">
+data-notebook="/Users/martinlaptev/maptv/maptv.github.io/dec/date/segment-r.ipynb"
+data-notebook-title="Regress doy on temperature"
+data-notebook-cellId="cell-segme">
 
 <img src="index_files/figure-commonmark/segment-r-segme-output-1.png"
 id="segme-1" width="720" height="360" />
@@ -4679,7 +4679,7 @@ doe = coe \* 146097 + doc   (23)
 
 </div>
 
-<div class="panel-tabset" group="language">
+<div class="panel-tabset" data-group="language">
 
 ### Julia
 
@@ -4810,7 +4810,7 @@ $$\text{pid} = \text{doc} - \text{yoc} \ast 365 - \left \lfloor \frac{\text{yoc}
 
 </div>
 
-<div class="panel-tabset" group="language">
+<div class="panel-tabset" data-group="language">
 
 ### Julia
 
@@ -6369,7 +6369,7 @@ $$
 
 </div>
 
-<div class="panel-tabset" group="language">
+<div class="panel-tabset" data-group="language">
 
 ### Julia
 

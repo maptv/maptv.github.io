@@ -719,7 +719,7 @@ this webpage.
 
 $$\text{tod} = \frac{\text{hour}}{24} + \frac{\text{minute}}{1440} + \frac{\text{second}}{86400}$$
 
-<div class="panel-tabset" group="language">
+<div class="panel-tabset" data-group="language">
 
 ### Julia
 
@@ -823,7 +823,7 @@ $$\begin{split}
 \text{som} & = \lfloor \text{hsa mod } 60 \rfloor
 \end{split}$$
 
-<div class="panel-tabset" group="language">
+<div class="panel-tabset" data-group="language">
 
 ### Julia
 
@@ -1431,7 +1431,7 @@ $$\begin{split}
 & + \beta_4 \times \text{sintau(2} \times \text{toy)}
 \end{split}$$
 
-<div class="panel-tabset" group="language">
+<div class="panel-tabset" data-group="language">
 
 ### Julia
 
@@ -1594,8 +1594,9 @@ data-bs-title="annual day aggregates">ada</span>, and sort by
 data-bs-title="annual day aggregate">ada</span>.
 
 <div class="quarto-embed-nb-cell"
-notebook="/Users/martinlaptev/maptv/maptv.github.io/dec/time/eot.ipynb"
-notebook-title="Bonus examples" notebook-cellId="cell-eotcoef">
+data-notebook="/Users/martinlaptev/maptv/maptv.github.io/dec/time/eot.ipynb"
+data-notebook-title="Bonus examples"
+data-notebook-cellId="cell-eotcoef">
 
     {0: 0.0011114386869002235,
      1: -4.155124400404918,

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -45,14 +48,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-09dd4a8c8147935218e5fc1df39f9384.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bb61d7ca54b3758c8becae408f223446.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-09dd4a8c8147935218e5fc1df39f9384.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2bec29a9bacf2b598905820d71afb463.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5fc413f607176f2629b9db3f72267386.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2bec29a9bacf2b598905820d71afb463.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-98e51381c5a0a718233792b437e042cf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-82db06234691c18f5ba98fd6b9e6750a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-98e51381c5a0a718233792b437e042cf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-469a02bc400b2c8e70cd9c7a8b2eeacf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-fe783f91422a274d3b23fa189721b509.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-469a02bc400b2c8e70cd9c7a8b2eeacf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": true,
@@ -107,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -588,7 +591,7 @@ Word Count
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1788109132000" data-listing-file-modified-sort="1788109132592" data-listing-date-modified-sort="1788109132000" data-listing-reading-time-sort="214" data-listing-word-count-sort="42661">
+<div class="g-col-1" data-index="1" data-listing-date-sort="1788150118000" data-listing-file-modified-sort="1788150118026" data-listing-date-modified-sort="1788150118000" data-listing-reading-time-sort="217" data-listing-word-count-sort="43221">
 <a href="../dec/date/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -598,7 +601,7 @@ Word Count
 <h5 class="no-anchor card-title listing-title">
 Decalendar
 </h5>
-<div class="listing-reading-time card-text text-muted">214 min</div>
+<div class="listing-reading-time card-text text-muted">217 min</div>
 <div class="card-text listing-description delink">
 <p>Introducing Decalendar, a solar calendar which measures time in years and days without the need for months or weeks.</p>
 </div>
@@ -609,14 +612,14 @@ Decalendar
 Word Count
 </td>
 <td class="word-count">
-42,661 words
+43,221 words
 </td>
 </tr>
 
 </tbody></table>
 </div>
 <div class="card-footer">
-<div class="card-file-modified listing-file-modified">1788109132</div>
+<div class="card-file-modified listing-file-modified">1788150118</div>
 </div>
 </div></a>
 </div>
@@ -936,7 +939,7 @@ Word Count
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="10" data-categories="bWw=" data-listing-date-sort="1787929874000" data-listing-file-modified-sort="1787929874787" data-listing-date-modified-sort="1787929874000" data-listing-reading-time-sort="5" data-listing-word-count-sort="913">
+<div class="g-col-1" data-index="10" data-categories="bWw=" data-listing-date-sort="1787929874000" data-listing-file-modified-sort="1787929874787" data-listing-date-modified-sort="1787929874000" data-listing-reading-time-sort="5" data-listing-word-count-sort="911">
 <a href="../ml/prob/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -962,7 +965,7 @@ In this blog post I will discuss a few examples of probability in machine learni
 Word Count
 </td>
 <td class="word-count">
-913 words
+911 words
 </td>
 </tr>
 

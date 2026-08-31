@@ -960,7 +960,7 @@ viewof costype = Inputs.radio(["turns", "radians", "degrees"], {label: "Cosine i
 # Zone equatorial meter (zem)
 
 <div id="zemmodulor" class="column-page-right lighthouse"
-fig-align="center" style="text-align:center;font-size:.825rem;">
+data-fig-align="center" style="text-align:center;font-size:.825rem;">
 
 <img src="../asset/Modulor_measurements.svg" id="zModu" />
 [Wikimedia](https://commons.m.wikimedia.org/wiki/File:Modulor_measurements.svg#mw-jump-to-license)
@@ -992,7 +992,7 @@ is <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately ten million">~10<sup>7</sup></span> meters
 long.
 
-<div id="zemhands" class="column-margin hand" fig-align="center"
+<div id="zemhands" class="column-margin hand" data-fig-align="center"
 style="text-align:center;">
 
 ![](../asset/hands.svg)
@@ -1019,7 +1019,7 @@ data-bs-toggle="tooltip" data-bs-title="approximately">~</span>0.5
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> apart.
 
-<div id="zemarms" class="column-margin" fig-align="center"
+<div id="zemarms" class="column-margin" data-fig-align="center"
 style="text-align:center;">
 
 <img src="../asset/squareZem.svg" id="zArms" />
@@ -1037,7 +1037,7 @@ elbow of the person to their right. Alternatively, two people can stand
 in front of each other and raise their arms💪, placing one hand on the
 elbow of the other person and the other hand on their own elbow.
 
-<div id="zemlift" class="column-margin" fig-align="center"
+<div id="zemlift" class="column-margin" data-fig-align="center"
 style="text-align:center;">
 
 <img src="../asset/Man_Lifting_Barbell_Cartoon.svg" id="zLift" /> <a
@@ -1059,7 +1059,7 @@ data-bs-title="square zem">z²</a> will be between your shins, its top
 will be below your knees, and its bottom will be either above your
 ankles or feet, depending on your height.
 
-<div id="zemcubic" class="column-margin" fig-align="center"
+<div id="zemcubic" class="column-margin" data-fig-align="center"
 style="text-align:center;">
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -1521,7 +1521,7 @@ data-bs-title="beats per milliday">bpm</a>, which corresponds to the
 marking](https://en.wikipedia.org/wiki/Tempo#Approximately_from_the_slowest_to_the_fastest).
 A Dec clock⏰ticks at a rate of 100
 <a href="#bpm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beats per milliday">bpm</a>, $\text b^{-1}$,
+data-bs-title="beats per milliday">bpm</a>, b<sup>−1</sup>,
 $1\over\text b$, 1
 [inverse](https://en.wikipedia.org/wiki/Multiplicative_inverse#:~:text=x%2C%20denoted%20by-,1/x%20or%20x%E2%88%921,-%2C%20is%20a%20number)
 beat, or 1 perbeat
@@ -1679,7 +1679,7 @@ $$\text{o} = \log_2\\\left(\frac{\text{p}}{14.1275}\right) \qquad(4)$$
 p = 14.1275 \* 2<sup>o</sup>   (5)
 </span>
 
-<div class="panel-tabset" group="language">
+<div class="panel-tabset" data-group="language">
 
 ### Julia
 
@@ -2419,7 +2419,7 @@ kilograms per
 <a href="#m2" id="squaremeter" class="tool" data-bs-toggle="tooltip"
 data-bs-title="square meters">m²</a> ($\text {kilogram}\over\text m^2$).
 
-<div class="column-margin" fig-align="center"
+<div class="column-margin" data-fig-align="center"
 style="text-align:center;">
 
 <img src="../asset/vitruvianMan.svg" id="vitruvian" />
@@ -2490,7 +2490,7 @@ data-bs-title="centizem">cz</a>. A
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> is 4 decimeters or 16 Dec inches.
 
-<div class="column-page-right" fig-align="left"
+<div class="column-page-right" data-fig-align="left"
 style="text-align:center;font-size:.825rem;">
 
 <img src="../asset/ruler1dz.svg" id="ruler" />
