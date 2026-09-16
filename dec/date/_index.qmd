@@ -207,11 +207,21 @@ function Scrubber(values, {
   Inputs.disposal(form).then(stop);
   return form;
 }
+function isoWeekDate(date) {
+  const d = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+  const day = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - day);
+  const year = d.getUTCFullYear();
+  const week = Math.ceil((((d - Date.UTC(year, 0, 1)) / 86400000) + 1) / 7);
+  return `${year}-W${String(week).padStart(2, "0")}-${day}`;
+}
 loadUnix = Date.now();
 loadDote = unix2dote(loadUnix)
 loadDate = new Date()
+loadWeek = isoWeekDate(loadDate)
 loadStr = loadDate.toUTCString().slice(0, 16)
 loadIso = loadDate.toISOString().slice(0, 10)
+loadHtml = loadIso.slice(5)
 loadYdz = dote2date(...loadDote)
 loadLeap = year2leap(loadYdz[0])
 vertic = width > 500
