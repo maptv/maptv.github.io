@@ -1,0 +1,27 @@
+# Untitled
+
+## Pages
+
+- [Quarto](https://maptv.github.io/reveal/index.llms.md)
+- [Quarto](https://maptv.github.io/quarto/include/index.llms.md)
+- [Positron](https://maptv.github.io/positron/index.llms.md)
+- [Probability](https://maptv.github.io/ml/prob/index.llms.md)
+- [index](https://maptv.github.io/list/index.llms.md)
+- [Jupyter](https://maptv.github.io/jupyter/index.llms.md)
+- [World War 2](https://maptv.github.io/history/ww2/index.llms.md)
+- [Dec time](https://maptv.github.io/dec/time/index.llms.md)
+- [Dec snap](https://maptv.github.io/dec/snap/index.llms.md)
+- [Dec Measurement System](https://maptv.github.io/dec/index.llms.md)
+- [index](https://maptv.github.io/cv/pdf/index.llms.md)
+- [index](https://maptv.github.io/about/index.llms.md)
+- [Martin Skarzynski Laptev](https://maptv.github.io/cv/index.llms.md)
+- [Decalendar](https://maptv.github.io/dec/date/index.llms.md)
+- [Note](https://maptv.github.io/dec/note/index.llms.md)
+- [Dec span](https://maptv.github.io/dec/span/index.llms.md)
+- [Git](https://maptv.github.io/git/index.llms.md)
+- [index](https://maptv.github.io/index.llms.md)
+- [Knitr](https://maptv.github.io/knitr/index.llms.md)
+- [LLM](https://maptv.github.io/ml/llm/index.llms.md)
+- [Observable](https://maptv.github.io/observable/index.llms.md)
+- [Quarto](https://maptv.github.io/quarto/filter/index.llms.md)
+- [Quarto](https://maptv.github.io/quarto/index.llms.md)

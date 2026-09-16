@@ -1,0 +1,49 @@
+# World War 2
+
+Code
+
+Author
+
+[Martin Laptev](https://maptv.github.io)
+
+Published
+
+1725860445
+
+Modified
+
+2024+192
+
+*Day 184* in the [Gregorian Decalendar](../../dec/date) is the first day of *Season 2* by [meteorological](https://en.wikipedia.org/wiki/Season#Meteorological:~:text=reckoned%20by%20temperature%2C%20with%20summer%20being%20the%20hottest%20quarter%20of%20the%20year%20and%20winter%20the%20coldest%20quarter%20of%20the%20year) reckoning and also the anniversary of the start of the [World War 2](https://en.wikipedia.org/wiki/World_War_II#:~:text=a%20global%20conflict%20between%20two%20coalitions%3A%20the%20Allies%20and%20the%20Axis%20powers). On *1939+184*, World War 2 started with the German invasion of Poland. On *1939+200*, sixteen days after the start of the war, the Soviet Union invaded Poland from the East. Germany and the Soviet Union split Poland according to the [Molotov–Ribbentrop Pact](https://en.wikipedia.org/wiki/Molotov%E2%80%93Ribbentrop_Pact#Secret_protocol:~:text=a%20non%2Daggression%20pact%20between%20Nazi%20Germany%20and%20the%20Soviet%20Union) signed on *1939+175*. The map below shows the German and Soviet invasions of Poland on Days *184* and *200*, respectively, of Year 1939, as well as other military movements over the course of the subsequent 1.83 years before Germany ended the Molotov–Ribbentrop Pact on *1941+113* with its invasion of the Soviet Union as part of [Operation Barbarossa](https://en.wikipedia.org/wiki/Operation_Barbarossa#:~:text=the%20invasion%20of%20the%20Soviet%20Union%20by%20Nazi%20Germany%20and%20many%20of%20its%20Axis%20allies).
+
+On the map, exact dates on the map are in the `year+day` format and approximate dates are decimal years. For more information on these date formats, take a look at [date page](../../dec/date) in the [Measurement section](../../dec) of my site. Briefly, the `day` in `year+day` counts the days since *Day 0* and can be divided by the number of days in the year to obtain the [fractional part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the decimal year. In the legend, there is a date range in the `start:stop` format, which is inspired by the [slice syntax](https://en.wikipedia.org/wiki/Array_slicing#1991:_Python) in the [Python programming language](https://en.wikipedia.org/wiki/Python_%28programming_language%29#:~:text=a%20high%2Dlevel%2C%20general%2Dpurpose%20programming%20language).
+
+![](../../asset/1939ww2europe.svg)
+
+Map of military movements in Europe from 1939 to 1941
+
+World War 2 officially ended on *1945+185*, 6 years and 1 day after it began, when Japan surrendered. The German surrender on *1945+068* is commemorated with [Victory in Europe Day](https://en.wikipedia.org/wiki/Victory_in_Europe_Day#:~:text=day%20celebrating%20the%20formal%20acceptance%20by%20the%20Allies%20of%20World%20War%20II%20of%20Germany%27s%20unconditional%20surrender%20of%20its%20armed%20forces%20on%20Tuesday%2C%208%20May%201945), typically on *Day 68* in [the West](https://en.wikipedia.org/wiki/Western_world#:~:text=nations%20and%20states%20in%20the%20regions%20of%20Western%20Europe%2C%5Ba%5D%20Northern%20America%2C%20and%20Australasia). In contrast, many countries in Russia’s [sphere of influence](https://en.wikipedia.org/wiki/Sphere_of_influence#:~:text=a%20spatial%20region%20or%20concept%20division%20over%20which%20a%20state%20or%20organization%20has%20a%20level%20of%20cultural%2C%20economic%2C%20military%2C%20or%20political%20exclusivity) commemorate [Victory Day](https://en.wikipedia.org/wiki/Victory_in_Europe_Day#List_of_associated_holidays) on *Day 69*. The chosen commemoration date can therefore be viewed as having [political significance](https://www.lrt.lt/en/news-in-english/19/1406122/baltic-ambassadors-snub-moscow-victory-day-event). On *Day 69*, the European Union celebrates the anniversary of the [1950 Schuman Declaration](https://en.wikipedia.org/wiki/Schuman_Declaration#:~:text=a%20proposal%20to%20place%20French%20and%20West%20German%20production%20of%20coal%20and%20steel%20under%20a%20single%20authority) with a holiday called [Europe Day](https://en.wikipedia.org/wiki/Europe_Day#:~:text=a%20day%20celebrating%20%22peace%20and%20unity%20in%20Europe%22). The Schuman Declaration aimed at normalizing relations and promoting political integration in Europe. Today, many countries that were opponents in World War 2 are now close allies, notably Germany, France, and Poland and the US and Japan.
+
+Back to top
+
+## Reuse
+
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+## Citation
+
+BibTeX citation:
+
+``` quarto-appendix-bibtex
+@online{laptev2024,
+  author = {Laptev, Martin},
+  title = {World {War} 2},
+  date = {2024-09-09},
+  url = {https://maptv.github.io/history/ww2},
+  langid = {en}
+}
+```
+
+For attribution, please cite this work as:
+
+Laptev, Martin. 2024. “World War 2.” September 9. <https://maptv.github.io/history/ww2>.
