@@ -262,6 +262,10 @@ nextYearColor2 = textcolor(nextYear, nextYearPiece)
 nextYearColor3 = textcolor(nextYear, nextYearPiece)
 nextYearColor4 = textcolor(nextYear, nextYearPiece)
 nextYearColor5 = textcolor(nextYear, nextYearPiece)
+nextYearColor6 = textcolor(nextYear, nextYearPiece)
+nextYearColor7 = textcolor(nextYear, nextYearPiece)
+nextYearColor8 = textcolor(nextYear, nextYearPiece)
+nextYearColor9 = textcolor(nextYear, nextYearPiece)
 decYearLastDoy = nDaysInYear - 1
 decYearLastDoe = date2dote(decYear, decYearLastDoy)[0]
 decYearLastDow = (decYearLastDoe + 3) % 7
@@ -356,10 +360,13 @@ decNihAbsColor5 = textcolor(decNihAbs, decNihAbsPiece)
 decNihAbsColor6 = textcolor(decNihAbs, decNihAbsPiece)
 decNihAbsColor7 = textcolor(decNihAbs, decNihAbsPiece)
 decNihAbsColor8 = textcolor(decNihAbs, decNihAbsPiece)
+decNihAbsColor9 = textcolor(decNihAbs, decNihAbsPiece)
 decNixBox = decNix * 10 % nDaysInput + nDaysInput
 decNixAbsPiece = piecewiseColor(decNixBox / nDaysInput)
 decNixAbsColor = textcolor(decNixAbs, decNixAbsPiece)
 decNixAbsColor1 = textcolor(decNixAbs, decNixAbsPiece)
+decNixAbsColor2 = textcolor(decNixAbs, decNixAbsPiece)
+decNixAbsColor3 = textcolor(decNixAbs, decNixAbsPiece)
 decDohPid = decDoty % 100
 decDohPidBy100 = decDohPid / 100
 decDohPidPiece = piecewiseColor(decDohPidBy100)
@@ -395,6 +402,7 @@ decDoxNidMidPiece = piecewiseColor(decDoxNidMid / 10)
 decDoxNidMidColor = textcolor(decDoxNidMid, decDoxNidMidPiece)
 decDoxNidMidColor1 = textcolor(decDoxNidMid, decDoxNidMidPiece)
 decDoxNidMidColor2 = textcolor(decDoxNidMid, decDoxNidMidPiece)
+decDoxNidMidColor3 = textcolor(decDoxNidMid, decDoxNidMidPiece)
 decDohPidMidPad = decDohPidMid.toString().padStart(2, "0")
 decDohPidMidPadColor = textcolor(decDohPidMidPad, decDohPidMidPiece)
 decDohNidMidPad = decDohNidMid.toString().padStart(2, "0")
@@ -403,6 +411,7 @@ decDohNidMidPadColor1 = textcolor(decDohNidMidPad, decDohNidMidPiece)
 decDohNidMidPadColor2 = textcolor(decDohNidMidPad, decDohNidMidPiece)
 decDohNidMidPadColor3 = textcolor(decDohNidMidPad, decDohNidMidPiece)
 decDohNidMidPadColor4 = textcolor(decDohNidMidPad, decDohNidMidPiece)
+decDohNidMidPadColor5 = textcolor(decDohNidMidPad, decDohNidMidPiece)
 decDohNidMidFirstDigit = Math.floor(decDohNidMid / 10) 
 decDohNidMidFirstPiece = piecewiseColor(decDohNidMidFirstDigit / 10)
 decDohNidMidFirstColor = textcolor(decDohNidMidFirstDigit, decDohNidMidFirstPiece)
@@ -520,6 +529,8 @@ TminusColor2 = textcolor(Tminus, decDotyPiece)
 TminusColor3 = textcolor(Tminus, decDotyPiece)
 TminusPadded = Tminus.toString().padStart(3, "0")
 TminusPaddedColor = textcolor(TminusPadded, decDotyPiece)
+TminusPaddedColor1 = textcolor(TminusPadded, decDotyPiece)
+TminusPaddedColor2 = textcolor(TminusPadded, decDotyPiece)
 TminusPaddedNeg = "-" + TminusPadded
 fracYear = decYear + ydz[1] / nDaysInYear
 fullfracYear = (fracYear).toFixed(4)
@@ -943,6 +954,12 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color301by365 {
+  background: #bb00ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color305by366 {
   background: #c100ff;
   color: white;
@@ -1113,6 +1130,12 @@ p:has(.radiotitle) {
 }
 .color9 {
   background: hsl(300 100% 50%);
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color69by100 {
+  background: #001bff;
   color: white;
   padding: 0px .5px;
   border-radius: 4px;
