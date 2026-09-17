@@ -27,8 +27,6 @@ flowchart LR
    click E "/dec/span"
 ```
 
-Diagram 1
-
 #### Decalendar
 
 My website serves as a demonstration of both the [Quarto](https://quarto.org) publishing📤system and the [Dec](../../dec) measurement📐system. I use several clever hacks to get Quarto to display all of the dates on my website in the Dec year+day format. Knowing the basics of the Dec calendar🗓️(Decalendar) will help you to understand the [filter](https://quarto.org/docs/extensions/filters.html) and [include](https://quarto.org/docs/output-formats/html-basics.html#includes) articles in the [Quarto section](../../quarto) of my site.
@@ -432,7 +430,7 @@ In the context of a common year, [p](#p)73 is synonymous with [p](#p)0 of the su
 
 \\\text{x} = \left\lfloor\dfrac{\text{pid}}{10}\right\rfloor \tag{6}\\ \\\text{dox} = \text{pid} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 10 \tag{7}\\ \\\text{pox} = \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{dox} \> 4\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]} \tag{8}\\ \\\text{p} = \left\lfloor\dfrac{\text{pid}}{5}\right\rfloor \tag{9}\\ \\\text{dop = dox} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 5 \tag{10}\\
 
-In [Diagram 2](#fig-zero) below, each row is a [pox](#pox) and each square node is a [dox](#dox). [Diagram 2](#fig-zero) visualizes Schedule L, a Dec schedule that plans for exactly 219 work days per year, which is about an [x](#x) more than the 208 to 210 work days per year provisioned by a [four-day workweek](https://en.wikipedia.org/wiki/Four-day_workweek#:~:text=an%20arrangement%20where%20a%20workplace%20or%20place%20of%20education%20has%20its%20employees%20or%20students%20work%20or%20attend%20school%2C%20college%20or%20university%20over%20the%20course%20of%20four%20days%20per%20week). Schedule L designates [Dox](#dox) 1, 2, 3, 6, 7, and 8 as work days and [Dox](#dox) 0, 4, 5, and 9 as rest days.
+In [Diagram 1](#fig-zero) below, each row is a [pox](#pox) and each square node is a [dox](#dox). [Diagram 1](#fig-zero) visualizes Schedule L, a Dec schedule that plans for exactly 219 work days per year, which is about an [x](#x) more than the 208 to 210 work days per year provisioned by a [four-day workweek](https://en.wikipedia.org/wiki/Four-day_workweek#:~:text=an%20arrangement%20where%20a%20workplace%20or%20place%20of%20education%20has%20its%20employees%20or%20students%20work%20or%20attend%20school%2C%20college%20or%20university%20over%20the%20course%20of%20four%20days%20per%20week). Schedule L designates [Dox](#dox) 1, 2, 3, 6, 7, and 8 as work days and [Dox](#dox) 0, 4, 5, and 9 as rest days.
 
 ###### Schedule L ([Dox](#dox) 0 to 9)
 
@@ -465,13 +463,13 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-Diagram 2
+Diagram 1
 
 Dec identifies groups of days between [Dop](#dop) 0 and 4 as “pentaday interquintile ranges” ([pir](#pir)): [Dop](#dop) 1, 2, and 3. Similarly, the days betwixt [Dox](#dox) 0 and 9 are “xún interdecile ranges” ([xir](#xir)). The names for [pir](#pir) and [xir](#xir) are inspired by the terms [quintile](https://en.wiktionary.org/wiki/quintile#:~:text=quantiles%20which%20divide%20an%20ordered%20sample%20population%20into%20five%20equally%20numerous%20subsets), [decile](https://en.wikipedia.org/wiki/Decile#:~:text=nine%20values%20that%20divide%20the%20sorted%20data%20into%20ten%20equal%20parts), and [interquartile range](https://en.wikipedia.org/wiki/Interquartile_range#:~:text=a%20measure%20of%20statistical%20dispersion). If we follow Schedule L, a [pir](#pir) is to a [workweek](https://en.wikipedia.org/wiki/Workweek_and_weekend#:~:text=the%20part%20of%20the%20seven%2Dday%20week%20devoted%20to%20working) as a [p](#p) is to a week and as an [x](#x) is to a [fortnight](https://en.wikipedia.org/wiki/Fortnight#:~:text=a%20unit%20of%20time%20equal%20to%2014%20days).
 
 The pair of days between two [pir](#pir) is called a “[liminal](https://en.wikipedia.org/wiki/Liminality#:~:text=the%20quality%20of%20ambiguity%20or%20disorientation%20that%20occurs%20in%20the%20middle%20stage%20of%20a%20rite%20of%20passage) interconnecting margin” ([lim](#lim)). The last [lim](#lim) of a common year, [Lim](#lim) 73, comprises [d](#d)364 and [d](#d)0 and is synonymous with [Lim](#lim) 0 of the subsequent year. In a leap year, [Lim](#lim) 73 consists of [d](#d)364 and [d](#d)365 and overlaps with [Lim](#lim) 74, which is composed of [d](#d)365 and [d](#d)0 and is equivalent to [Lim](#lim) 0 of the ensuing year.
 
-Except for [Lim](#lim) 74, every even-numbered [lim](#lim) is the border that separates two [xir](#xir). With the exception of [Lim](#lim) 73, every odd-numbered [lim](#lim) is flanked by the two [pir](#pir) within each [xir](#xir). [Diagram 3](#fig-zerocomm) below shows the final five [doy](#doy) of a common year and the first five [doy](#doy) of the following year, which include the last day of [Lim](#lim) 72, [Pir](#pir) 72, [Lim](#lim) 0, [Pir](#Pir) 0, and the first day of [Lim](#lim) 1.
+Except for [Lim](#lim) 74, every even-numbered [lim](#lim) is the border that separates two [xir](#xir). With the exception of [Lim](#lim) 73, every odd-numbered [lim](#lim) is flanked by the two [pir](#pir) within each [xir](#xir). [Diagram 2](#fig-zerocomm) below shows the final five [doy](#doy) of a common year and the first five [doy](#doy) of the following year, which include the last day of [Lim](#lim) 72, [Pir](#pir) 72, [Lim](#lim) 0, [Pir](#Pir) 0, and the first day of [Lim](#lim) 1.
 
 ###### Schedule L ([p](#p)72 and [p](#p)0)
 
@@ -501,9 +499,9 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-Diagram 3
+Diagram 2
 
-The diagrams above illustrate that the transition from a common year preserves the alternating pattern of two-day [lim](#lim) and three-day [pir](#pir). After 4 or 8 years, this pattern is interrupted by [Lim](#lim) 73 and 74 at the end of a leap year. In [Diagram 4](#fig-zeroleap) below, this interruption manifests as an extra [doy](#doy) per row which puts [d](#d)364 alongside [d](#d)365 and [d](#d)4 beside [d](#d)5 in a two-by-two grid.
+The diagrams above illustrate that the transition from a common year preserves the alternating pattern of two-day [lim](#lim) and three-day [pir](#pir). After 4 or 8 years, this pattern is interrupted by [Lim](#lim) 73 and 74 at the end of a leap year. In [Diagram 3](#fig-zeroleap) below, this interruption manifests as an extra [doy](#doy) per row which puts [d](#d)364 alongside [d](#d)365 and [d](#d)4 beside [d](#d)5 in a two-by-two grid.
 
 ###### Schedule L (d360 to d365 and d0 to d5)
 
@@ -535,9 +533,9 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-Diagram 4
+Diagram 3
 
-According to Schedule L, [pir](#pir) only contain workdays and [lim](#lim) are solely made up of rest days. When we follow Schedule L, a [lim](#lim) is the Dec analog of a weekend. To make [lim](#lim) appear like weekends we can start from [Dox](#dox) 1 instead of [Dox](#dox) 0 as in the [Diagram 5](#fig-one) below, which displays its [lim](#lim) as a two-by-two square on the right like [Lim](#lim) 73 and 1 in [Diagram 4](#fig-zeroleap) above.
+According to Schedule L, [pir](#pir) only contain workdays and [lim](#lim) are solely made up of rest days. When we follow Schedule L, a [lim](#lim) is the Dec analog of a weekend. To make [lim](#lim) appear like weekends we can start from [Dox](#dox) 1 instead of [Dox](#dox) 0 as in the [Diagram 4](#fig-one) below, which displays its [lim](#lim) as a two-by-two square on the right like [Lim](#lim) 73 and 1 in [Diagram 3](#fig-zeroleap) above.
 
 ###### Schedule L ([Dox](#dox) 1 to 0)
 
@@ -570,9 +568,9 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-Diagram 5
+Diagram 4
 
-The order of [dox](#dox) in [Diagram 5](#fig-one) is different than all of the previous diagrams but all of the diagrams above show Schedule L because the categorization of [dox](#dox) as work or rest days remains unchanged. If we left [rotate](https://en.wikipedia.org/wiki/Circular_shift#:~:text=moving%20the%20final%20entry%20to%20the%20first%20position%2C%20while%20shifting%20all%20other%20entries%20to%20the%20next%20position%2C%20or%20by%20performing%20the%20inverse%20operation) (↺) the [dox](#dox) categories of Schedule L by 1 day, we get the Schedule X Dec schedule: L ↺ 1 = X. Schedule X groups rest days at the end of each [p](#p).
+The order of [dox](#dox) in [Diagram 4](#fig-one) is different than all of the previous diagrams but all of the diagrams above show Schedule L because the categorization of [dox](#dox) as work or rest days remains unchanged. If we left [rotate](https://en.wikipedia.org/wiki/Circular_shift#:~:text=moving%20the%20final%20entry%20to%20the%20first%20position%2C%20while%20shifting%20all%20other%20entries%20to%20the%20next%20position%2C%20or%20by%20performing%20the%20inverse%20operation) (↺) the [dox](#dox) categories of Schedule L by 1 day, we get the Schedule X Dec schedule: L ↺ 1 = X. Schedule X groups rest days at the end of each [p](#p).
 
 ###### Schedule X ([Dox](#dox) 0 to 9)
 
@@ -605,7 +603,7 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-Diagram 6
+Diagram 5
 
 If we adhere to Schedule X, there will be 4 consecutive work days during any transition from a leap year. To limit the number of consecutive work days to 3, we could right rotate (↻) Schedule L and obtain Schedule F: L ↻ 1 = F. Unlike Schedule X, Schedule F handles yearly transitions just as gracefully as Schedule L and provisions the same number of work days per year.
 
@@ -640,7 +638,7 @@ flowchart LR
   classDef empty width:0px;
 ```
 
-Diagram 7
+Diagram 6
 
 There are 32 Dec schedules which can be expressed as a five-bit (5b) [binary](https://en.wikipedia.org/wiki/Binary_number#:~:text=only%20two%20symbols%20for%20the%20natural%20numbers%3A%20typically%200%20%28zero%29%20and%201%20%28one%29) ([base](https://en.wikipedia.org/wiki/Radix#:~:text=the%20number%20of%20unique%20digits)2) sequence. Of these 32 binary sequences, 8 are palindromes. If a Dec schedule can be represented by a 5b palindrome, we can identify its work and rest days by the last digit of not only the [pid](#pid) but also either the subsequent [nid](#nid) ([nid](#nid)) in common years or the [nid](#nid) after next ([nid](#nid)) in leap years.
 
@@ -786,7 +784,7 @@ Table 4
 
 [Wikimedia](https://commons.wikimedia.org/wiki/File:Finger_binary.gif)
 
-If we need more work days than those provided by Schedule L, we can switch to the Schedule LM Dec ten-bit (10b) schedule by following Schedule L on even numbered [p](#p) and Schedule M on odd numbered [p](#p). Schedule LM has 1 more work day per [x](#x) than Schedule L and provisions 255 work days per year without modifying the yearly transition shown in Diagrams [3](#fig-zerocomm) and [4](#fig-zeroleap) above.
+If we need more work days than those provided by Schedule L, we can switch to the Schedule LM Dec ten-bit (10b) schedule by following Schedule L on even numbered [p](#p) and Schedule M on odd numbered [p](#p). Schedule LM has 1 more work day per [x](#x) than Schedule L and provisions 255 work days per year without modifying the yearly transition shown in Diagrams [2](#fig-zerocomm) and [3](#fig-zeroleap) above.
 
 In contrast to weekly schedules, Dec schedules like L and LM produce a consistent🎯number of work days every year. While Days 364, 365, and 0 can be work or rest days in the Gregorian calendar️, these days are always rest days if we comply with Schedule L or LM. Therefore, Schedules L and LM do not require any holidays to smooth the transition between years.
 
@@ -1447,7 +1445,7 @@ Dec dates can be described in the context of [object oriented programming](https
 
 Regardless of the input, only a [yoe](#yoe) and [pid](#pid) are stored as [instance attributes](https://en.wikipedia.org/wiki/Instance_variable#:~:text=each%20instantiated%20object%20of%20the%20class%20has%20a%20separate%20copy). Our instance must contain one instance method for every potential output that is not an instance attribute. Instance methods can use instance attributes to produce their output. For example, a method based on Equations [33](#eq-pid2moy), [35](#eq-moy2month), [36](#eq-moy2bom), and [37](#eq-dom) could turn a [pid](#pid) into a month and [dom](#dom).
 
-[Diagram 8](#fig-conv) below visualizes how an instance that represents the UNIX epoch would convert its [yoe](#yoe) and [pid](#pid) into a [cey](#cey), month, [dom](#dom), and [dow](#dow). For simplicity, [Diagram 8](#fig-conv) omits the [coe](#coe), [yoc](#yoc), and [doc](#doc) needed to convert a Dec date into a [doe](#doe), the [moy](#moy) and [bom](#bom) required to split a [doy](#doy) into a month and a [dom](#dom), and the negative [UTC](#utc) offset adjustment for [bom](#bom) and [dow](#dow).
+[Diagram 7](#fig-conv) below visualizes how an instance that represents the UNIX epoch would convert its [yoe](#yoe) and [pid](#pid) into a [cey](#cey), month, [dom](#dom), and [dow](#dow). For simplicity, [Diagram 7](#fig-conv) omits the [coe](#coe), [yoc](#yoc), and [doc](#doc) needed to convert a Dec date into a [doe](#doe), the [moy](#moy) and [bom](#bom) required to split a [doy](#doy) into a month and a [dom](#dom), and the negative [UTC](#utc) offset adjustment for [bom](#bom) and [dow](#dow).
 
 ``` mermaid
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
@@ -1486,7 +1484,7 @@ flowchart LR
    click N "#sec-dom"
 ```
 
-Diagram 8
+Diagram 7
 
 #### 7 Misaligned unit difference (mud)
 
@@ -1508,7 +1506,7 @@ In Decalendar, a count is the number of days that have passed since an onset. [T
 
 Table 10
 
-Dec date expansion only has one rule, namely that each expanded date should always [simplify](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%20that%20is%20simpler) to its equivalent year+day date. As shown in [Diagram 9](#fig-mud) below, [bow](#bow)+[dow](#dow), [bom](#bom)+[dom](#dom), and [mud](#mud)+[dom](#dom)+[dow](#dow) all simplify to [pid](#pid) in compliance with the date expansion rule. In contrast, [woy](#woy) and [moy](#moy) dates are expected to exclude information needed for simplification.
+Dec date expansion only has one rule, namely that each expanded date should always [simplify](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%20that%20is%20simpler) to its equivalent year+day date. As shown in [Diagram 8](#fig-mud) below, [bow](#bow)+[dow](#dow), [bom](#bom)+[dom](#dom), and [mud](#mud)+[dom](#dom)+[dow](#dow) all simplify to [pid](#pid) in compliance with the date expansion rule. In contrast, [woy](#woy) and [moy](#moy) dates are expected to exclude information needed for simplification.
 
 ``` mermaid
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
@@ -1523,7 +1521,7 @@ flowchart LR
     click D "#sec-mud"
 ```
 
-Diagram 9
+Diagram 8
 
 This exception to the date expansion rule facilitates the comparison of [woy](#woy) dates to [bow](#bow) or “[International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization#:~:text=an%20independent%2C%20non%2Dgovernmental%2C%20international%20standard%20development%20organization)” (ISO) [week dates](https://en.wikipedia.org/wiki/ISO_week_date#:~:text=a%20leap%20week%20calendar%20system%20that%20is%20part%20of%20the%20ISO%208601%20date%20and%20time%20standard%20issued%20by%20the%20International%20Organization%20for%20Standardization): 1970-W01-4, [moy](#moy) dates to [bom](#bom) or ISO [month dates](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates:~:text=Calendar%20dates-,YYYY%2DMM%2DDD,YYYY%2DMM,-%28but%20not): 1970-01-01, [moy](#moy)+[dom](#dom) to “[Hypertext Markup Language](https://en.wikipedia.org/wiki/HTML#:~:text=the%20standard%20markup%20language%5Ba%5D%20for%20documents%20designed%20to%20be%20displayed%20in%20a%20web%20browser)” (HTML) [yearless dates](https://html.spec.whatwg.org/dev/common-microsyntaxes.html#yearless-dates:~:text=A%20yearless%20date%20consists%20of%20a%20Gregorian%20month%20and%20a%20day%20within%20that%20month%2C%20but%20with%20no%20associated%20year): 01-01, and [moy](#moy) or [woy](#woy) dates to [yoe](#yoe)+[mud](#mud)+[dom](#dom)+[dow](#dow): 1969+301+01+4.
 
@@ -1952,8 +1950,6 @@ flowchart LR
    click G "/quarto/filter"
    click H "/quarto/include"
 ```
-
-Diagram 10
 
 In addition to the aforementioned articles, many other articles on my site discuss Dec. Notably, my [Jupyter](../../jupyter) article compares the code underlying Dec in several programming languages, my [Reveal](../../reveal) article features a presentation that introduces Dec, and my [Observable](../../observable) article describes how I demonstrate Dec in action with interactive and animated visualizations.
 

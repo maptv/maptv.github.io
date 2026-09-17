@@ -122,8 +122,7 @@ ol > li[id*="fn"] > p > a.footnote-back {
 }
 
 main.content {
-  counter-reset: tblnum -1;
-  counter-reset: diagnum -1;
+  counter-reset: tblnum -1 diagnum -1;
 }
 main.content:has(section#sec-lad.hiddenheading div#tbl-1d.unittable) {
   counter-reset: tblnum 1;
@@ -138,7 +137,7 @@ figcaption.quarto-float-tbl::before {
 }
 
 section#sec-dox {
-  counter-reset: diagnum 0;
+  counter-reset: diagnum -1;
 }
 .doxdiagram figcaption.quarto-float-fig {
   counter-increment: diagnum;
@@ -308,6 +307,13 @@ div > form > label {
   position: relative;
   display: inline-block;
 }
+/* Browsers treat inline-block (and other atomic inlines) as having a soft-wrap
+   opportunity on either side even with no whitespace, which can split an
+   overline/accent span from the digits next to it. white-space: nowrap on the
+   surrounding Decolor span keeps a decorated number on one line. */
+[class*="color"]:has(.overline, .grave, .acute, .doublegrave, .doubleacute) {
+  white-space: nowrap;
+}
 .overline::before,
 .grave::before,
 .acute::before,
@@ -382,6 +388,29 @@ g.node g.label:has(span.nodeLabel) * {
 .column-margin {
 	font-size: 1em;
 	overflow: visible;
+}
+
+/* Equations: MathJax sets its own inline min-width, which beats a plain
+   max-width — !important is required to actually cap it and let long
+   equations scroll internally instead of widening the page. */
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* R/Python/Julia-generated figures: give them responsive sizing */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Bare citation/reference URLs: wrap instead of forcing page width */
+a.uri {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 
