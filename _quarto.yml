@@ -181,6 +181,8 @@ format:
     mermaid:
       theme: default
     shift-heading-level-by: 3
+    include-in-header:
+      - asset/meta.html
     include-after-body:
       - asset/math.html
       - asset/style.html
