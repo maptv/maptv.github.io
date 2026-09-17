@@ -1593,7 +1593,8 @@ div#leapscrubvert form div:has(label):nth-child(odd) {
   width: 150px;
 }
 div#leapscrubvert form > label, div#sliders form > label {
-  width: 110px;
+  min-width: 110px;
+  white-space: nowrap;
 }
 div#leapscrubvert form div:has(label), div#sliders form div:has(label) {
   width: 205px;
@@ -1659,7 +1660,7 @@ div#bitwise div form label:has(input[type="radio"]):last-child {
 div#bitwise div > form > button {
   margin-right: -.6px;
 }
-#fig-topdatenav figcaption {
+#topdatenav figcaption {
   display: none;
 }
 div.cell-output-display:has(svg#mermaid-2) {
@@ -1686,13 +1687,12 @@ div.tippy-box div.tippy-content figure figcaption {
   display: none;
 }
 .overflowtable {
-  overflow-x: auto;
+  overflow-x: auto !important;
   overflow-y: hidden;
   text-align: center;
 }
 main.content:has(section#sec-dox div#fig-zero.doxdiagram) {
-  counter-reset: diagnum 0;
-  counter-reset: tblnum -1;
+  counter-reset: diagnum -1 tblnum -1;
 }
 figcaption {
   text-align: left;

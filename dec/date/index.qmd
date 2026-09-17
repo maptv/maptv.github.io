@@ -19,7 +19,7 @@ crossref:
 ---
 
 
-:::{.datenav #fig-topdatenav}
+:::{.datenav #topdatenav}
 {{< include /asset/_decnav.qmd >}}
 :::
 
@@ -428,7 +428,7 @@ The horizontal line above all but the last digit of each [mid](#mid){.tool data-
 | [364]{.color364by365}                                                               | | | [-1]{.color364by365}                                                                | | | [-[0]{.acute}]{.color364by365}                                                               | [[1]{.overline}9]{.color364by365}                                                            |
 
 :::
-                                                                                     
+
 ::: {.d-none .d-xl-block}
 
 | [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} | | |  [nid](#nid){.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | | | [ni[d]{.acute}](#nid){.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | [[mi]{.overline}d](#mid){.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} | | | | | | | | | | [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} | | | [nid](#nid){.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | | | [ni[d]{.acute}](#nid){.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} | | [[mi]{.overline}d](#mid){.tool data-bs-toggle="tooltip" data-bs-title="mixed integer day of year"} |
@@ -1370,7 +1370,7 @@ By expanding year+day dates into [bow](#bow){.tool data-bs-toggle="tooltip" data
 
 After reading this article, you should be able to understand my motivation for customizing [Quarto](/quarto) and the examples in my [filter](/quarto/filter) and [include](/quarto/include) articles. If you want to see the full extent of the benefits that Dec provides, I recommend that you continue through the Dec section of my site to the [time](/dec/time)⏳, [snap](/dec/snap)🫰, and [span](/dec/span)🌈articles. Dec has a lot more to offer than just dates!
 
-:::{.datenav #fig-btmdatenav}
+:::{.datenav #btmdatenav}
 {{< include /asset/_decquanav.qmd >}}
 :::
 
