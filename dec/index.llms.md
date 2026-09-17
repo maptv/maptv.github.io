@@ -10,11 +10,11 @@ Author
 
 Published
 
-2026+096
+2026+200
 
 Modified
 
-2026+096
+2026+200
 
 ``` mermaid
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
@@ -414,7 +414,7 @@ You can approximate a [z²](#z2) yourself by sitting in a chair🪑or standing�
 
 #### 7 Typical seat height
 
-According to [dimensions.com](https://www.dimensions.com), 115 [centizem](#cz) ([cz](#cz)) is the [typical seat height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual) for both men and women in age range of 25 to 45 [y](#y). A box📦that is the size of a cubic zem ([z³](#z3)) would likely fit under a typical chair or in between the shins of two people sitting in front of each other with their knees and feet 1 [z](#z) apart and their legs🦵bent at right angles (25 [ct](#ct)).
+According to [dimensions.com](https://www.dimensions.com), 115 [centizem](#cz) ([cz](#cz)) is the [typical seat height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual) for both men and women in the age range of 25 to 45 [y](#y). A box📦that is the size of a cubic zem ([z³](#z3)) would likely fit under a typical chair or in between the shins of two people sitting in front of each other with their knees and feet 1 [z](#z) apart and their legs🦵bent at right angles (25 [ct](#ct)).
 
 #### 8 Perpetually setting sun
 
@@ -542,7 +542,7 @@ perbeat(3)
 
 #### 14 Color and sound
 
-Each [do](#do) has a corresponding musical note ([n](#n)) that determines its color label. The idea of linking colors and musical notes dates back the 1704 book by [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a) entitled [Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[^1]. On 2025+080, I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm) by [Clint Goss](https://www.clintgoss.com)[^2], which presents a method of associating musical notes with colors by matching sound and light frequencies.
+Each [do](#do) has a corresponding musical note ([n](#n)) that determines its color label. The idea of linking colors and musical notes dates back to the 1704 book by [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a) entitled [Opticks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[^1]. On 2025+080, I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm) by [Clint Goss](https://www.clintgoss.com)[^2], which presents a method of associating musical notes with colors by matching sound and light frequencies.
 
 \\\text{n} = \text{o} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 1 \ast 10 \tag{6}\\
 
@@ -672,7 +672,7 @@ Table 7
 
 #### 22 Body mass index (bmi)
 
-A [z³](#z3) is 1 keg. A keg of water weighs 64 kilograms, 128 Dec pounds, or a 1000 Dec kilograins ([kg](#kg)). If [Leonardo da Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s [Vitruvian Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci) were 4 [z](#z) tall, we could measure 1 [z](#z) from his knees to his feet or from his elbows to his fingertips. If he also weighed 1000 Dec [kg](#kg), his [body mass index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height) ([bmi](#bmi)) would be 62.5 [kg](#kg) per [z²](#z2) (\\\text {kg}\over\text z^2\\) or 25 kilograms per [m²](#m2) (\\\text {kilogram}\over\text m^2\\).
+A [z³](#z3) is 1 keg. A keg of water weighs 64 kilograms, 128 Dec pounds, or 1000 Dec kilograins ([kg](#kg)). If [Leonardo da Vinci](https://en.wikipedia.org/wiki/Leonardo_da_Vinci#:~:text=an%20Italian%20polymath%20of%20the%20High%20Renaissance)’s [Vitruvian Man](https://en.wikipedia.org/wiki/Vitruvian_Man#:~:text=a%20drawing%20by%20the%20Italian%20Renaissance%20artist%20and%20scientist%20Leonardo%20da%20Vinci) were 4 [z](#z) tall, we could measure 1 [z](#z) from his knees to his feet or from his elbows to his fingertips. If he also weighed 1000 Dec [kg](#kg), his [body mass index](https://en.wikipedia.org/wiki/Body_mass_index#:~:text=the%20body%20mass%20divided%20by%20the%20square%20of%20the%20body%20height) ([bmi](#bmi)) would be 62.5 [kg](#kg) per [z²](#z2) (\\\text {kg}\over\text z^2\\) or 25 kilograms per [m²](#m2) (\\\text {kilogram}\over\text m^2\\).
 
 ![](../asset/vitruvianMan.svg)[Wikimedia](https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour_2.svg)
 
@@ -700,13 +700,13 @@ In 1788, [Claude Boniface Collignon](https://en.wikipedia.org/wiki/Claude_Bonifa
 
 This article introduces the Dec measurement system and describes how Dec uses the properties of the planet Earth to define units based on turns for geographic coordinates, compass directions, distances, speeds, areas, volumes, weights, frequencies, wavelengths, and periods. Dec units can be combined with metric prefixes to form multiples or submultiples.
 
-Dec attempts to bridge the gap, improve interoperability, and faciliate conversion between the [US](#us) customary and [SI](#si) measurement systems by redefining certain units. Redefinition of [US](#us) customary units makes human-based length units ~1.58% shorter and surveying distance units ~0.58% shorter. Dec also redefines [SI](#si) seconds to be 4% shorter.
+Dec attempts to bridge the gap, improve interoperability, and facilitate conversion between the [US](#us) customary and [SI](#si) measurement systems by redefining certain units. Redefinition of [US](#us) customary units makes human-based length units ~1.58% shorter and surveying distance units ~0.58% shorter. Dec also redefines [SI](#si) seconds to be 4% shorter.
 
 Dec color labels can convey an impression of a value at a glance👀. Dec sound labels allow us to quickly estimate a value without even having to look at it🙈. Both types of labels can help avoid confusion when [decimal separators](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=In%20English%2Dspeaking%20countries%2C%20the%20decimal%20point%20is%20usually%20a%20small%20dot%20%28.%29%20placed%20either%20on%20the%20baseline) appear, disappear, or move due to a measurement unit change such as the addition, removal, or replacement of a metric prefix.
 
 #### Next
 
-Now that you have had a taste👅of Dec, I hope that you are hungry🤤for more! If so, dive🤿deeper by reading my article on Dec [dates](../dec/date), [times](../dec/time), and [snaps](../dec/snap). My [filter](../quarto/filter) and [include](../quarto/include) articles discuss the [Quarto](../quarto) publishing system and how I customize my Quarto website to display a Dec [snaps](../dec/snap) in the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) and Dec [dates](../dec/date) in the [article list](../list) and [title blocks](https://quarto.org/docs/authoring/title-blocks).
+Now that you have had a taste👅of Dec, I hope that you are hungry🤤for more! If so, dive🤿deeper by reading my article on Dec [dates](../dec/date), [times](../dec/time), and [snaps](../dec/snap). My [filter](../quarto/filter) and [include](../quarto/include) articles discuss the [Quarto](../quarto) publishing system and how I customize my Quarto website to display a Dec [snap](../dec/snap) in the [navigation bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information) and Dec [dates](../dec/date) in the [article list](../list) and [title blocks](https://quarto.org/docs/authoring/title-blocks).
 
 ``` mermaid
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
@@ -745,7 +745,7 @@ references:
   title: Dec Measurement System
   url: https://maptv.github.io/dec
   issued:
-    literal: 2026+096
+    literal: 2026+200
 ```
 
 Quarto configuration files, such as `_quarto.yml` and `_metadata.yml`, are written in yaml. Quarto input files, including Quarto markdown, [Jupyter](https://jupyter.org) notebook, [markdown](https://quarto.org/docs/authoring/markdown-basics), and specially formatted [script files](https://quarto.org/docs/computations/render-scripts), can start with a [yaml header](https://quarto.org/docs/authoring/front-matter.html). Therefore, we could put the metadata above directly into a Quarto configuration or input file rather than into a bibliography file.
@@ -763,7 +763,7 @@ As an alternative to yaml, I suggest the [BibTeX](https://en.wikipedia.org/wiki/
   author = "Martin Laptev",
   title = "Dec Measurement System",
   url = "https://maptv.github.io/dec",
-  year = 2026+096
+  year = 2026+200
 }
 ```
 
@@ -799,16 +799,16 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
 #### Glossary
 
 - [a](#arcbeat): arcbeat, a hundred thousandth of a circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
-- [b](#beat): beat, centimilliday, a hundred thousandth of an day, 864 milliseconds
+- [b](#beat): beat, centimilliday, a hundred thousandth of a day, 864 milliseconds
   - [mb](#millibeat): millibeat, centimicroday, a thousandth of a beat, a hundred millionth of a day, 864 microseconds
 - [bpc](#beatpercentiday): a musical or heart beat per centiday, a tenth of a beat per milliday, 0.0694 beats per minute, 100 beats per day
 - [bpm](#beatpermilliday): a musical or heart beat per milliday, ten beats per centiday, 0.694 beats per minute, 1000 beats per day
 - [bmi](#bodymassindex): body mass index, kilograins of body mass divided by height in zem squared (kg/z²)
 - [c](#taur): taur, 𝜏*r*, 100000 kilozem, 40000 kilometers, nearly the circumference of the Earth, roughly the product of 𝜏 and the radius of the Earth, approximately the dividend of the surface area and the diameter of the Earth
   - [mc](#millitaur): millitaur, *m*𝜏*r*, a thousandth of a taur, 100 kilozem, 40 kilometers
-  - [nc](#nanotaur): nanotaur, *n*𝜏*r*, a thousandth of a taur, 100 millizem, 1 decizem, 4 centimeters
+  - [nc](#nanotaur): nanotaur, *n*𝜏*r*, a billionth of a taur, 100 millizem, 1 decizem, 4 centimeters
   - [nc³](#cubicnanotaur): cubic nanotaur, *n*𝜏*r*³, 1 cubic decizem
-- [d](#day): day, a tenth of a decaday, a seventh of week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays, 1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse of a quotidie
+- [d](#day): day, a tenth of a decaday, a seventh of a week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays, 1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse of a quotidie
   - [dox](#dayofxun): day of xún
   - [dop](#dayofpent): day of pentaday
   - [dom](#dayofmonth): day of month
@@ -825,7 +825,7 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
   - [h°](#huedegree): hue degree
 - [e](#egg): egg, 1000 grains, 2 ounces, 64 grams
 - [ℓ](#cubit): ell, cubit, 10/9 zem
-- [f](#foot): foot, 0.75 zem, 75 millimeter
+- [f](#foot): foot, 0.75 zem, 75 millimeters
 - [g](#gutta): drop (gutta in Latin) or grain (granum in Latin), 64 microliters or 64 milligrams
   - [kg](#kilograin): kilograin or kilodrop, 64 grams or 64 milliliters
   - [Mg](#megagrain): megagrain or megadrop, 64 kilograms or 64 liters
@@ -833,7 +833,7 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
 - [hex](#hexadecimal): hexadecimal, base 16
 - [hsl](#huesaturationlightness): hue saturation lightness
 - [hsv](#huesaturationvalue): hue saturation value
-- [i](#inch): inch, a sixteenth of a zem, 25 millimeter
+- [i](#inch): inch, a sixteenth of a zem, 25 millimeters
 - [k](#keg): keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
 - [kmph](#kilometersperhour): kilometers per hour, thousands of meters per hour, 1 kmph = 0.6 mv
 - [L](#liter): liter, 15625 drops, a cubic decimeter
@@ -846,7 +846,7 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
   - [cm²](#squarecentimeter): square centimeter, 6.25 square centizem
   - [dm²](#squaredecimeter): square decimeter, 6.25 square decizem
   - [km²](#squarekilometer): square kilometer, 6.25 square kilozem
-  - [cm³](#cubiccentimeter): cubic centimeter, 1 millilter, a thousandth of a liter, 15.625 drops
+  - [cm³](#cubiccentimeter): cubic centimeter, 1 milliliter, a thousandth of a liter, 15.625 drops
 - [p](#pentaday): pentaday, a group of five days, half a decaday
 - [n](#note): note, a specific frequency within an octave
 - [o](#octave): octave, a two fold change in frequency
@@ -854,8 +854,8 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
 - [þ](#perbeat): perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ), which looks like a combination of the letters “p” and “b”; not to be confused with a picobeat (pb)
   - [Tþ](#teraperbeat): teraperbeat, 10¹² perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
 - [q](#quotidie): quotidie, the inverse of a day, a hundred thousandth of a perbeat; the letter “q” in quotidie can be flipped vertically to produce the letter “d” in day
-- [r](#rose): compass rose, a full circle along the horizon, 360 compass degress
-  - [mr](#millirose): compass millirose, a thousandth of a circle along the horizon, .36 compass degress
+- [r](#rose): compass rose, a full circle along the horizon, 360 compass degrees
+  - [mr](#millirose): compass millirose, a thousandth of a circle along the horizon, .36 compass degrees
 - [rad](#radian): radian, \\1\over\tau\\ turns, \\360\over\tau\\ degrees, \\1\over 2\pi\\ turns, \\180\over\pi\\ degrees
 - [rgb](#redgreenblue): red green blue
 - [s](#second): second, 1/90 millidays, 0.9 beats, 1 Dec second = 0.96 SI seconds
@@ -865,22 +865,22 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
 - [𝜏](#tau): 2𝜋 or approximately 6.2831853
 - [Tenet](#tenequaltemperament): ten equal temperament
   - [Xet](#10et): Tenet
-  - [12et](#twelveequaltemperance): twelve equal temperance
+  - [12et](#twelveequaltemperament): twelve equal temperament
 - [tod](#timeofday): time of day
 - [t](#turn): turn, 360 degrees, 𝜏 or 2𝜋 radians
   - [ct](#centiturn): centiturn, a hundredth of a turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
   - [dt](#deciturn): deciturn, a tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
-  - [mt](#milliturn): milliturn, a thousandth of a turn, .36 degrees, 𝜏/1000 or 𝜋/500 r \\\pi\over 500\\ radians
+  - [mt](#milliturn): milliturn, a thousandth of a turn, .36 degrees, 𝜏/1000 or 𝜋/500 radians
 - [tzo](#timezoneoffset): time zone offset
 - [u](#ounce): ounce (uncia in Latin), 500 grains, 32 grams, 500 drops, 32 milliliters
 - [utc](#coordinateduniversaltime): [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates): [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - [v](#omegar): omegar, ωr, 1041.6 miles per hour, 1.6 megameters per hour, 0.4629 kilometers per second, roughly 1.36 times the speed of sound
   - [kv](#kiloomegar): kiloomegar, kωr, 1.6 gigameters per hour, 0.4629 megameters per second, approximately 0.1544% of the speed of light
-  - [mv](#milliomegar): milliomegar, mωr, 1.0416 miles per hour, 1.6 kilometers per hour, 0.4629 meters per second, approximately 0.136% the speed of sound
+  - [mv](#milliomegar): milliomegar, mωr, 1.0416 miles per hour, 1.6 kilometers per hour, 0.4629 meters per second, approximately 0.136% of the speed of sound
 - [w](#wei): wěi (纬), parallel, a measure of longitude; can be thought of as a measure of the **w**idth of a meridian on **E**arth; the letter “w” in wěi can be vertically flipped to get the letter “m” in meridian
   - [dw](#deciwei): deciwěi, a tenth of a wěi (纬), a tenth of a parallel
-  - [mw](#milliwei): milliwěi, a thousanth of a wěi (纬), a thousanth of a parallel
+  - [mw](#milliwei): milliwěi, a thousandth of a wěi (纬), a thousandth of a parallel
 - [x](#xun): xún (旬), decaday, a group of ten days, 2 pentadays, represented by x like the Roman numeral X
 - [y](#year): year
   - [my](#milliyear): milliyear, a thousandth of a year

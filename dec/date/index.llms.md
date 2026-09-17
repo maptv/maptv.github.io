@@ -10,11 +10,11 @@ Author
 
 Published
 
-2026+199
+2026+200
 
 Modified
 
-2026+199
+2026+200
 
 ``` mermaid
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
@@ -43,7 +43,7 @@ The insertion of [d](#d)365 shifts 306 dates, [d](#d) to [d](#d), in the [Gregor
 
 Similarly, the “[Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) ([UTC](#utc)) [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)” radio input shifts the Gregorian calendar date selected by the “Month” and “Day of month” range inputs by 1 day. If the “[Color scheme](https://en.wikipedia.org/wiki/Color_scheme#:~:text=a%20combination%20of%202%20or%20more%20colors%20used%20in%20aesthetic%20or%20practical%20design)” radio input is set to the “Month” instead of the “Day”, the “[UTC](#utc) offset” radio input will also rotate the Dec colors🎨(Decolors) inside the calendar plot [cells](https://observablehq.com/plot/marks/cell) by 1 day.
 
-From the perspective of Dec, month Decolors are only useful if we want to compare the Dec and Gregorian calendars. In contrast, day Decolors can help us organize days into groups of 100 called hectodays ([h](#h)) and groups of 10 named [xún](https://en.wikipedia.org/wiki/Chinese_calendar#:~:text=into%20nine%2D%20or-,ten%2Dday%20weeks,-known%20as%20x%C3%BAn) ([x](#x)). Dec defines [meterological seasons](https://en.wikipedia.org/wiki/Season#Meteorological:~:text=reckoned%20by%20temperature) in terms of [h](#h) and uses [x](#x) in place of Gregorian calendar months and weeks.
+From the perspective of Dec, month Decolors are only useful if we want to compare the Dec and Gregorian calendars. In contrast, day Decolors can help us organize days into groups of 100 called hectodays ([h](#h)) and groups of 10 named [xún](https://en.wikipedia.org/wiki/Chinese_calendar#:~:text=into%20nine%2D%20or-,ten%2Dday%20weeks,-known%20as%20x%C3%BAn) ([x](#x)). Dec defines [meteorological seasons](https://en.wikipedia.org/wiki/Season#Meteorological:~:text=reckoned%20by%20temperature) in terms of [h](#h) and uses [x](#x) in place of Gregorian calendar months and weeks.
 
 \\\text{pid} = \text{x} \ast 10 + \text{dox} \tag{1}\\
 
@@ -644,9 +644,9 @@ Diagram 7
 
 There are 32 Dec schedules which can be expressed as a five-bit (5b) [binary](https://en.wikipedia.org/wiki/Binary_number#:~:text=only%20two%20symbols%20for%20the%20natural%20numbers%3A%20typically%200%20%28zero%29%20and%201%20%28one%29) ([base](https://en.wikipedia.org/wiki/Radix#:~:text=the%20number%20of%20unique%20digits)2) sequence. Of these 32 binary sequences, 8 are palindromes. If a Dec schedule can be represented by a 5b palindrome, we can identify its work and rest days by the last digit of not only the [pid](#pid) but also either the subsequent [nid](#nid) ([nid](#nid)) in common years or the [nid](#nid) after next ([nid](#nid)) in leap years.
 
-We can sum a [nid](#nid) with 1 to get a [nid](#nid), [nid](#nid) = [nid](#nid) + 1, or with 2 to get a [nid](#nid): [nid](#nid) = [nid](#nid) + 2. [Table 2](#tbl-vincommon) below displays the [pid](#pid), [nid](#nid), [nid](#nid), and “mixed integer [doy](#doy)” ([mid](#mid)) of the first and last 11 days of a common year. We can use the last digit of any [mid](#mid) that is derived from an [nid](#nid) to discern between the work and rest days of any of the 32 Dec 5b schedules in common years.
+We can sum an [nid](#nid) with 1 to get an [nid](#nid), [nid](#nid) = [nid](#nid) + 1, or with 2 to get an [nid](#nid): [nid](#nid) = [nid](#nid) + 2. [Table 2](#tbl-vincommon) below displays the [pid](#pid), [nid](#nid), [nid](#nid), and “mixed integer [doy](#doy)” ([mid](#mid)) of the first and last 11 days of a common year. We can use the last digit of any [mid](#mid) that is derived from an [nid](#nid) to discern between the work and rest days of any of the 32 Dec 5b schedules in common years.
 
-The horizontal line above all but the last digit of the [mid](#mid) in [Table 2](#tbl-vincommon) is called a [vinculum](https://en.wikipedia.org/wiki/Vinculum_(symbol)#:~:text=a%20horizontal%20line%20used%20in%20mathematical%20notation%20for%20various%20purposes). In Dec, a vinculum negates whatever is beneath it, negating all of the digits of an integer flips its [sign](https://en.wikipedia.org/wiki/Sign_(mathematics)#:~:text=property%20of%20being%20either%20positive%2C%20negative%2C%20or%200), and a negative integer is denoted by either a vinculum or a [minus sign](https://en.wikipedia.org/wiki/Plus_and_minus_signs#Minus_sign:~:text=When%20it%20is%20placed%20immediately%20before%20an%20unsigned%20number%2C%20the%20combination%20names%20a%20negative%20number%2C%20the%20additive%20inverse%20of%20the%20positive%20number%20that%20the%20numeral%20would%20otherwise%20name). For example, [d](#d)1 and [d](#d)19 are two equivalent ways to write Day -1, the last day of the Dec year.
+The horizontal line above all but the last digit of each [mid](#mid) in [Table 2](#tbl-vincommon) is called a [vinculum](https://en.wikipedia.org/wiki/Vinculum_(symbol)#:~:text=a%20horizontal%20line%20used%20in%20mathematical%20notation%20for%20various%20purposes). In Dec, a vinculum negates any digit beneath it. A negated zero is equal to zero: -0 = 0 = 0. Day -1, [d](#d)1, and [d](#d)19 all denote the last day of the Dec year: -1 = 1 = 19 = -10 + 9. The current Dec countdown date can be written as -, +, +, or +.
 
 | [pid](#pid) |     |     | [nid](#nid) |     |     | [nid](#nid) | [mid](#mid) |
 |-------------|-----|-----|-------------|-----|-----|-------------|-------------|
@@ -701,7 +701,7 @@ The last digits of [pid](#pid) and [mid](#mid) are misaligned by 4 days in leap 
 | 2           |     |     | -364        |     |     | -362        | 377         |
 | 3           |     |     | -363        |     |     | -361        | 378         |
 | 4           |     |     | -362        |     |     | -360        | 379         |
-| 5           |     |     | -361        |     |     | -369        | 360         |
+| 5           |     |     | -361        |     |     | -359        | 360         |
 | 6           |     |     | -360        |     |     | -358        | 361         |
 | 7           |     |     | -359        |     |     | -357        | 362         |
 | 8           |     |     | -358        |     |     | -356        | 363         |
@@ -727,7 +727,7 @@ The last digits of [pid](#pid) and [mid](#mid) are misaligned by 4 days in leap 
 | 2 |  | -364 |  | -362 | 377 |  |  |  |  |  |  |  |  |  | 357 |  | -9 |  | -7 | 12 |
 | 3 |  | -363 |  | -361 | 378 |  |  |  |  |  |  |  |  |  | 358 |  | -8 |  | -6 | 13 |
 | 4 |  | -362 |  | -360 | 379 |  |  |  |  |  |  |  |  |  | 359 |  | -7 |  | -5 | 14 |
-| 5 |  | -361 |  | -369 | 360 |  |  |  |  |  |  |  |  |  | 360 |  | -6 |  | -4 | 15 |
+| 5 |  | -361 |  | -359 | 360 |  |  |  |  |  |  |  |  |  | 360 |  | -6 |  | -4 | 15 |
 | 6 |  | -360 |  | -358 | 361 |  |  |  |  |  |  |  |  |  | 361 |  | -5 |  | -3 | 16 |
 | 7 |  | -359 |  | -357 | 362 |  |  |  |  |  |  |  |  |  | 362 |  | -4 |  | -2 | 17 |
 | 8 |  | -358 |  | -356 | 363 |  |  |  |  |  |  |  |  |  | 363 |  | -3 |  | -1 | 18 |
@@ -800,7 +800,7 @@ The last US Federal holiday of the Gregorian calendar year is [Christmas](https:
 
 #### 2 Day of hectoday (doh)
 
-[Astronomical seasons](https://en.wikipedia.org/wiki/Season#Astronomical) vary in duration. The length of a meterological season is 2 months in the [Hindu calendar](https://en.wikipedia.org/wiki/Hindu_calendar#Solar_months_and_seasons:~:text=approximate%20correspondence%20to-,Hindu%20seasons,-%28%E1%B9%9Atu%29%20and), 3 months in the Gregorian calendar, 3 months, 9 [x](#x), or 90 [d](#d) in the [French Revolutionary](https://en.wikipedia.org/wiki/French_Republican_calendar#Design:~:text=There%20were%20twelve%20months%2C%20each%20divided%20into%20three%2010%2Dday%20weeks%20called%20d%C3%A9cades) calendar, 4 months, 12 [x](#x), or 120 [d](#d) in the [Egyptian](https://en.wikipedia.org/wiki/Egyptian_calendar#:~:text=Each%20season%20was%20divided%20into%20four%20months%20of%2030%20days.%20These%20twelve%20months%20were%20initially%20numbered%20within%20each%20season%20but%20came%20to%20also%20be%20known%20by%20the%20names%20of%20their%20principal%20festivals.%20Each%20month%20was%20divided%20into%20three%2010%2Dday%20periods%20known%20as%20decans%20or%20decades) calendar, 13 weeks or 91 [d](#d) in the [World Season Calendar](https://en.wikipedia.org/wiki/Isaac_Asimov#Calendar:~:text=divides%20the%20year%20into%20four%20seasons%20%28named%20A%E2%80%93D%29%20of%2013%20weeks%20%2891%20days%29%20each), and 1 [h](#h), 10 [x](#x), 20 [p](#p), or 100 [d](#d) in Decalendar.
+[Astronomical seasons](https://en.wikipedia.org/wiki/Season#Astronomical) vary in duration. The length of a meteorological season is 2 months in the [Hindu calendar](https://en.wikipedia.org/wiki/Hindu_calendar#Solar_months_and_seasons:~:text=approximate%20correspondence%20to-,Hindu%20seasons,-%28%E1%B9%9Atu%29%20and), 3 months in the Gregorian calendar, 3 months, 9 [x](#x), or 90 [d](#d) in the [French Revolutionary](https://en.wikipedia.org/wiki/French_Republican_calendar#Design:~:text=There%20were%20twelve%20months%2C%20each%20divided%20into%20three%2010%2Dday%20weeks%20called%20d%C3%A9cades) calendar, 4 months, 12 [x](#x), or 120 [d](#d) in the [Egyptian](https://en.wikipedia.org/wiki/Egyptian_calendar#:~:text=Each%20season%20was%20divided%20into%20four%20months%20of%2030%20days.%20These%20twelve%20months%20were%20initially%20numbered%20within%20each%20season%20but%20came%20to%20also%20be%20known%20by%20the%20names%20of%20their%20principal%20festivals.%20Each%20month%20was%20divided%20into%20three%2010%2Dday%20periods%20known%20as%20decans%20or%20decades) calendar, 13 weeks or 91 [d](#d) in the [World Season Calendar](https://en.wikipedia.org/wiki/Isaac_Asimov#Calendar:~:text=divides%20the%20year%20into%20four%20seasons%20%28named%20A%E2%80%93D%29%20of%2013%20weeks%20%2891%20days%29%20each), and 1 [h](#h), 10 [x](#x), 20 [p](#p), or 100 [d](#d) in Decalendar.
 
 As opposed to seasons in other calendars, the 4 Dec seasons are chosen from 2 overlapping sets of 4 consecutive [h](#h), called “positive integer hectodays” ([pih](#pih)) and “negative integer hectodays” ([nih](#nih)), to match [daily global mean temperature](https://pulse.climate.copernicus.eu) patterns. Every [doy](#doy) is simultaneously a member of a [pih](#pih), nih, “positive integer xún” ([pix](#pix)), and “negative integer xún” ([nix](#nix)).
 
@@ -1035,9 +1035,9 @@ The [line chart](https://en.wikipedia.org/wiki/Line_chart#:~:text=a%20type%20of%
 
 In the line chart, background Decolors indicate season, line Decolors denote the year in which the data was collected, and the thin line that is Decolorless shows the predictions of a [segmented linear regression](https://en.wikipedia.org/wiki/Segmented_regression#:~:text=a%20method%20in%20regression%20analysis%20in%20which%20the%20independent%20variable%20is%20partitioned%20into%20intervals%20and%20a%20separate%20line%20segment%20is%20fit%20to%20each%20interval) model with 5 [breakpoints](https://en.wikipedia.org/wiki/Segmented_regression#:~:text=The%20boundaries%20between%20the%20segments) fit to the data. The model [explained](https://en.wikipedia.org/wiki/Coefficient_of_determination#Adjusted_R2:~:text=an%20attempt%20to%20account%20for%20the%20phenomenon%20of%20the%20R2%20automatically%20increasing%20when%20extra%20explanatory%20variables%20are%20added%20to%20the%20model) almost 92% of the variation in the data and was only off by less than 0.35 degrees [on average](https://en.wikipedia.org/wiki/Mean_absolute_error#:~:text=a%20measure%20of%20errors%20between%20paired%20observations%20expressing%20the%20same%20phenomenon).
 
-If the model predicted temperature using the year and [doy](#doy), instead of just the [doy](#doy), the variation explained by model would increase to almost 98% and the mean absolute error would drop to less than 0.18 degrees, but the goal of the model is to demonstrate that Dec seasons can capture daily global mean temperature patterns regardless of the year.
+If the model predicted temperature using the year and [doy](#doy), instead of just the [doy](#doy), the variation explained by the model would increase to almost 98% and the mean absolute error would drop to less than 0.18 degrees, but the goal of the model is to demonstrate that Dec seasons can capture daily global mean temperature patterns regardless of the year.
 
-As a consequence of regressing only on [doy](#doy) and not years, the leftmost plot below shows that the model [overpredicts](https://en.wiktionary.org/wiki/overpredict#:~:text=predict%20to%20be%20higher%20than%20the%20actual%20value) in less recent years and [underpredicts](https://en.wiktionary.org/wiki/underpredict#English:~:text=predict%20to%20be%20smaller%20than%20is%20the%20case) in more recent years. Nevertheless, the model fits the data well overall as evidenced by the rightmost plot below, which is a common [regression diagnostic](https://en.wikipedia.org/wiki/Regression_diagnostic#:~:text=a%20set%20of%20procedures%20available%20for%20regression%20analysis%20that%20seek%20to%20assess%20the%20validity%20of%20a%20model%20in%20any%20of%20a%20number%20of%20different%20ways) that compares predicted and [actual - predicted values](https://en.wikipedia.org/wiki/Errors_and_residuals#:~:text=the%20difference%20between%20the%20observed%20value%20and%20the%20estimated%20value%20of%20the%20quantity%20of%20interest).
+As a consequence of regressing only on [doy](#doy) and not years, the leftmost plot below shows that the model [overpredicts](https://en.wiktionary.org/wiki/overpredict#:~:text=predict%20to%20be%20higher%20than%20the%20actual%20value) in less recent years and [underpredicts](https://en.wiktionary.org/wiki/underpredict#English:~:text=predict%20to%20be%20smaller%20than%20is%20the%20case) in more recent years. Nevertheless, the model fits the data well overall as evidenced by the rightmost plot below, which is a common [regression diagnostic](https://en.wikipedia.org/wiki/Regression_diagnostic#:~:text=a%20set%20of%20procedures%20available%20for%20regression%20analysis%20that%20seek%20to%20assess%20the%20validity%20of%20a%20model%20in%20any%20of%20a%20number%20of%20different%20ways) that plots predictions against [actual-predicted values](https://en.wikipedia.org/wiki/Errors_and_residuals#:~:text=the%20difference%20between%20the%20observed%20value%20and%20the%20estimated%20value%20of%20the%20quantity%20of%20interest).
 
 [![](index_files/figure-html/segment-r-segme-output-1.png)](index_files/figure-html/segment-r-segme-output-1.png)
 
@@ -1054,7 +1054,7 @@ In general, the hottest days are in [h](#h)1, the coldest days are in [h](#h)1, 
 
 Table 5
 
-When we keep the remainder after dividing a [doy](#doy) by 100, we obtain a “day of hectoday” ([doh](#doh)), which is the percent of an [h](#h) that has elapsed. If the [doy](#doy) is a [pid](#pid), the [h](#h) is a [pih](#pih): mod 100 = , but if it is an [nid](#nid), the [h](#h) is a [nih](#nih): mod 100 = . The [radix complement](https://en.wikipedia.org/wiki/Method_of_complements#:~:text=The%20radix%20complement%20of,is%20defined%20as) of the [doh](#doh) (100-[doh](#doh)) is the percent of the [pih](#pih), 100 - = , or the [nih](#nih), 100 - = , that is left.
+When we keep the remainder after dividing a [doy](#doy) by 100, we obtain a “day of hectoday” ([doh](#doh)), which is the percent of an [h](#h) that has elapsed. If the [doy](#doy) is a [pid](#pid), the [h](#h) is a [pih](#pih): mod 100 = , but if it is an [nid](#nid), the [h](#h) is an [nih](#nih): mod 100 = . The [radix complement](https://en.wikipedia.org/wiki/Method_of_complements#:~:text=The%20radix%20complement%20of,is%20defined%20as) of the [doh](#doh) (100-[doh](#doh)) is the percent of the [pih](#pih), 100 - = , or the [nih](#nih), 100 - = , that is left.
 
 \\\text{doh} = \text{doy} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 100 \tag{16}\\
 
@@ -1064,17 +1064,17 @@ Whereas a pid gives us information on the current [pix](#pix) and [pih](#pih), a
 
 An [nih](#nih) [mid](#mid), , shows the current [nih](#nih) with its first digit: , a [doh](#doh) with its final two digits: , an [nih](#nih) “mixed integer xún” ([mix](#mix)) with its first two digits: , and a [dox](#dox) with its last digit: . During [h](#h)1, Dec recommends using [nih](#nih) [mid](#mid) in lieu of [pid](#pid) for personal timekeeping because [nih](#nih) [mid](#mid) take into account the [syl](#syl) and thus avoid any uncertainty regarding the [eoy](#eoy).
 
-Conversion of a [nih](#nih) [mix](#mix) to a [nix](#nix) only requires simple arithmetic: = -0 + = . If we then append a [dox](#dox), we get a [nix](#nix) [mid](#mid) like those in [Table 2](#tbl-vincommon): . During a leap year, we should put a grave accent above the [dox](#dox) in [nih](#nih) and [nix](#nix) [mid](#mid) as in [Table 3](#tbl-vinculeap) to facilitate identification of work and rest days based on a Dec schedule such as Schedule L: = = = .
+Conversion of an [nih](#nih) [mix](#mix) to an [nix](#nix) only requires simple arithmetic: = -0 + = . If we then append a [dox](#dox), we get an [nix](#nix) [mid](#mid) like those in [Table 2](#tbl-vincommon): . During a leap year, we should put a grave accent above the [dox](#dox) in [nih](#nih) and [nix](#nix) [mid](#mid) as in [Table 3](#tbl-vinculeap) to facilitate identification of work and rest days based on a Dec schedule such as Schedule L: = = = .
 
 We can see that [h](#h) is % done from the current [pid](#pid): , [h](#h) will begin after the remaining % of [h](#h) expires from the current [pih](#pih) [mid](#mid): , [h](#h) will start once the residual % of [h](#h) elapses from the current [nid](#nid): , and [h](#h) is % finished from the current [nih](#nih) [mid](#mid): . The last digit of the [doh](#doh) is the [dox](#dox) and the final digit of the 100-[doh](#doh) is the (10 - [dox](#dox)) [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 10.
 
 \\\text{dox} = \text{doh} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 10 \tag{17}\\
 
-Any kind of [doy](#doy) can each be split into either an [x](#x) and [dox](#dox) or an [h](#h) and [doh](#doh), but the vinculum in a [mid](#mid) can can be used to emphasize one of these two options. If we want to categorize work and rest days based on [dow](#dow) as in the Gregorian calendar instead of [dox](#dox) as in Decalendar, we can translate the “day of [era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)” ([doe](#doe)) equivalent of a year+day Dec date into a [dow](#dow).
+Any kind of [doy](#doy) can each be split into either an [x](#x) and [dox](#dox) or an [h](#h) and [doh](#doh), but the vinculum in a [mid](#mid) can be used to emphasize one of these two options. If we want to categorize work and rest days based on [dow](#dow) as in the Gregorian calendar instead of [dox](#dox) as in Decalendar, we can translate the “day of [era](https://en.wikipedia.org/wiki/Calendar_era#:~:text=the%20period%20of%20time%20elapsed%20since%20one%20epoch%20of%20a%20calendar)” ([doe](#doe)) equivalent of a year+day Dec date into a [dow](#dow).
 
 #### 3 Day of era (doe)
 
-Dec refers to midnight on [d](#d)0 as the [boy](#boy). At the [boy](#boy), the [pid](#pid) [rolls over](https://en.wikipedia.org/wiki/Rollover#:~:text=the%20act%20of%20a%20counter%20restarting%20its%20count%20sequence) from 364 or 365 to 0. If the [nid](#nid) did not reset to -365 or -366 at the [boy](#boy), it would continue from 1 to 0 and thus become a [pid](#pid). Therefore, the [doe](#doe) is like a [nid](#nid) that became a [pid](#pid) at the “beginning of era” ([boe](#boe)), midnight on [d](#d)0 of Year 0 (y0), and never restarted before or after the [boe](#boe).
+Dec refers to midnight on [d](#d)0 as the [boy](#boy). At the [boy](#boy), the [pid](#pid) [rolls over](https://en.wikipedia.org/wiki/Rollover#:~:text=the%20act%20of%20a%20counter%20restarting%20its%20count%20sequence) from 364 or 365 to 0. If the [nid](#nid) did not reset to -365 or -366 at the [boy](#boy), it would continue from 1 to 0 and thus become a [pid](#pid). Therefore, the [doe](#doe) is like an [nid](#nid) that became a [pid](#pid) at the “beginning of era” ([boe](#boe)), midnight on [d](#d)0 of Year 0 (y0), and never restarted before or after the [boe](#boe).
 
 Each of the ten Dec time zones has its own [boe](#boe), [doe](#doe), [boy](#boy), and [doy](#doy). The [boe](#boe) of the Zone 0 ([z](#z)0) Dec time zone is called the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era). We can convert [Julian day numbers](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20continuous%20count%20of%20days%20from%20the%20beginning%20of%20the%20Julian%20period) ([JDN](#jdn)) to z0 [doe](#doe) by subtracting the number of full days in between the start of the [Julian period](https://en.wikipedia.org/wiki/Julian_day#Terminology:~:text=a%20chronological%20interval%20of%207980%C2%A0years) and the Dec epoch, which is 1721119 if the z0 time is later than noon and 1721120 otherwise.
 
@@ -1318,7 +1318,7 @@ Even though Decalendar functions best with [x](#x), Dec dates can display [dow](
 
 A Dec [bow](#bow) date can have a countup or a countdown [bow](#bow). The countdown equivalent of is -. Like [nid](#nid), countdown [bow](#bow) can be useful. We can add up to 52 weeks to any countdown [bow](#bow) without having to take into account the length of the year. The sum of 52 weeks and the last [bow](#bow)+[dow](#dow) of this year is 52 × 7 +  + =  + .
 
-Based on the calculation above, the Dec [bow](#bow) date which is 52 weeks after -+ is ++. When we see the same [dow](#dow) in two dates, we know that difference between them is a multiple of 7. The [bow](#bow) can be used to identify a [woy](#woy) in phrases like “the week of [d](#d)” or “the week that begins on [d](#d)”. Years with the same [boy](#boy)[dow](#dow) also have matching [bow](#bow).
+Based on the calculation above, the Dec [bow](#bow) date which is 52 weeks after -+ is ++. When we see the same [dow](#dow) in two dates, we know that the difference between them is a multiple of 7. The [bow](#bow) can be used to identify a [woy](#woy) in phrases like “the week of [d](#d)” or “the week that begins on [d](#d)”. Years with the same [boy](#boy)[dow](#dow) also have matching [bow](#bow).
 
 The [boy](#boy)[dow](#dow) is the [dow](#dow) of the first day of the Dec year. To obtain the current [woy](#woy), we sum the [boy](#boy)[dow](#dow) with the [bow](#bow) then divide by 7 as in [Equation 30](#eq-woy): = ( + ) ÷ 7. Like the [syl](#syl), the [boy](#boy)[dow](#dow) is omitted from Dec dates, because we can specify dates without it and derive it from the [yoe](#yoe). The result of turning a [yoe](#yoe) first into a [doe](#doe) and then into a [dow](#dow) is a [boy](#boy)[dow](#dow).
 
@@ -1980,7 +1980,7 @@ references:
   title: Decalendar
   url: https://maptv.github.io/dec/date
   issued:
-    literal: 2026+199
+    literal: 2026+200
 ```
 
 Quarto configuration files, such as `_quarto.yml` and `_metadata.yml`, are written in yaml. Quarto input files, including Quarto markdown, [Jupyter](https://jupyter.org) notebook, [markdown](https://quarto.org/docs/authoring/markdown-basics), and specially formatted [script files](https://quarto.org/docs/computations/render-scripts), can start with a [yaml header](https://quarto.org/docs/authoring/front-matter.html). Therefore, we could put the metadata above directly into a Quarto configuration or input file rather than into a bibliography file.
@@ -1998,7 +1998,7 @@ As an alternative to yaml, I suggest the [BibTeX](https://en.wikipedia.org/wiki/
   author = "Martin Laptev",
   title = "Decalendar",
   url = "https://maptv.github.io/dec/date",
-  year = 2026+199
+  year = 2026+200
 }
 ```
 
@@ -2011,16 +2011,16 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
 #### Glossary
 
 - [a](#arcbeat): arcbeat, a hundred thousandth of a circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
-- [b](#beat): beat, centimilliday, a hundred thousandth of an day, 864 milliseconds
+- [b](#beat): beat, centimilliday, a hundred thousandth of a day, 864 milliseconds
   - [mb](#millibeat): millibeat, centimicroday, a thousandth of a beat, a hundred millionth of a day, 864 microseconds
 - [bpc](#beatpercentiday): a musical or heart beat per centiday, a tenth of a beat per milliday, 0.0694 beats per minute, 100 beats per day
 - [bpm](#beatpermilliday): a musical or heart beat per milliday, ten beats per centiday, 0.694 beats per minute, 1000 beats per day
 - [bmi](#bodymassindex): body mass index, kilograins of body mass divided by height in zem squared (kg/z²)
 - [c](#taur): taur, 𝜏*r*, 100000 kilozem, 40000 kilometers, nearly the circumference of the Earth, roughly the product of 𝜏 and the radius of the Earth, approximately the dividend of the surface area and the diameter of the Earth
   - [mc](#millitaur): millitaur, *m*𝜏*r*, a thousandth of a taur, 100 kilozem, 40 kilometers
-  - [nc](#nanotaur): nanotaur, *n*𝜏*r*, a thousandth of a taur, 100 millizem, 1 decizem, 4 centimeters
+  - [nc](#nanotaur): nanotaur, *n*𝜏*r*, a billionth of a taur, 100 millizem, 1 decizem, 4 centimeters
   - [nc³](#cubicnanotaur): cubic nanotaur, *n*𝜏*r*³, 1 cubic decizem
-- [d](#day): day, a tenth of a decaday, a seventh of week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays, 1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse of a quotidie
+- [d](#day): day, a tenth of a decaday, a seventh of a week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays, 1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse of a quotidie
   - [dox](#dayofxun): day of xún
   - [dop](#dayofpent): day of pentaday
   - [dom](#dayofmonth): day of month
@@ -2037,7 +2037,7 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
   - [h°](#huedegree): hue degree
 - [e](#egg): egg, 1000 grains, 2 ounces, 64 grams
 - [ℓ](#cubit): ell, cubit, 10/9 zem
-- [f](#foot): foot, 0.75 zem, 75 millimeter
+- [f](#foot): foot, 0.75 zem, 75 millimeters
 - [g](#gutta): drop (gutta in Latin) or grain (granum in Latin), 64 microliters or 64 milligrams
   - [kg](#kilograin): kilograin or kilodrop, 64 grams or 64 milliliters
   - [Mg](#megagrain): megagrain or megadrop, 64 kilograms or 64 liters
@@ -2045,7 +2045,7 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
 - [hex](#hexadecimal): hexadecimal, base 16
 - [hsl](#huesaturationlightness): hue saturation lightness
 - [hsv](#huesaturationvalue): hue saturation value
-- [i](#inch): inch, a sixteenth of a zem, 25 millimeter
+- [i](#inch): inch, a sixteenth of a zem, 25 millimeters
 - [k](#keg): keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
 - [kmph](#kilometersperhour): kilometers per hour, thousands of meters per hour, 1 kmph = 0.6 mv
 - [L](#liter): liter, 15625 drops, a cubic decimeter
@@ -2058,7 +2058,7 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
   - [cm²](#squarecentimeter): square centimeter, 6.25 square centizem
   - [dm²](#squaredecimeter): square decimeter, 6.25 square decizem
   - [km²](#squarekilometer): square kilometer, 6.25 square kilozem
-  - [cm³](#cubiccentimeter): cubic centimeter, 1 millilter, a thousandth of a liter, 15.625 drops
+  - [cm³](#cubiccentimeter): cubic centimeter, 1 milliliter, a thousandth of a liter, 15.625 drops
 - [p](#pentaday): pentaday, a group of five days, half a decaday
 - [n](#note): note, a specific frequency within an octave
 - [o](#octave): octave, a two fold change in frequency
@@ -2066,8 +2066,8 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
 - [þ](#perbeat): perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ), which looks like a combination of the letters “p” and “b”; not to be confused with a picobeat (pb)
   - [Tþ](#teraperbeat): teraperbeat, 10¹² perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
 - [q](#quotidie): quotidie, the inverse of a day, a hundred thousandth of a perbeat; the letter “q” in quotidie can be flipped vertically to produce the letter “d” in day
-- [r](#rose): compass rose, a full circle along the horizon, 360 compass degress
-  - [mr](#millirose): compass millirose, a thousandth of a circle along the horizon, .36 compass degress
+- [r](#rose): compass rose, a full circle along the horizon, 360 compass degrees
+  - [mr](#millirose): compass millirose, a thousandth of a circle along the horizon, .36 compass degrees
 - [rad](#radian): radian, \\1\over\tau\\ turns, \\360\over\tau\\ degrees, \\1\over 2\pi\\ turns, \\180\over\pi\\ degrees
 - [rgb](#redgreenblue): red green blue
 - [s](#second): second, 1/90 millidays, 0.9 beats, 1 Dec second = 0.96 SI seconds
@@ -2077,22 +2077,22 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
 - [𝜏](#tau): 2𝜋 or approximately 6.2831853
 - [Tenet](#tenequaltemperament): ten equal temperament
   - [Xet](#10et): Tenet
-  - [12et](#twelveequaltemperance): twelve equal temperance
+  - [12et](#twelveequaltemperament): twelve equal temperament
 - [tod](#timeofday): time of day
 - [t](#turn): turn, 360 degrees, 𝜏 or 2𝜋 radians
   - [ct](#centiturn): centiturn, a hundredth of a turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
   - [dt](#deciturn): deciturn, a tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
-  - [mt](#milliturn): milliturn, a thousandth of a turn, .36 degrees, 𝜏/1000 or 𝜋/500 r \\\pi\over 500\\ radians
+  - [mt](#milliturn): milliturn, a thousandth of a turn, .36 degrees, 𝜏/1000 or 𝜋/500 radians
 - [tzo](#timezoneoffset): time zone offset
 - [u](#ounce): ounce (uncia in Latin), 500 grains, 32 grams, 500 drops, 32 milliliters
 - [utc](#coordinateduniversaltime): [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates): [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - [v](#omegar): omegar, ωr, 1041.6 miles per hour, 1.6 megameters per hour, 0.4629 kilometers per second, roughly 1.36 times the speed of sound
   - [kv](#kiloomegar): kiloomegar, kωr, 1.6 gigameters per hour, 0.4629 megameters per second, approximately 0.1544% of the speed of light
-  - [mv](#milliomegar): milliomegar, mωr, 1.0416 miles per hour, 1.6 kilometers per hour, 0.4629 meters per second, approximately 0.136% the speed of sound
+  - [mv](#milliomegar): milliomegar, mωr, 1.0416 miles per hour, 1.6 kilometers per hour, 0.4629 meters per second, approximately 0.136% of the speed of sound
 - [w](#wei): wěi (纬), parallel, a measure of longitude; can be thought of as a measure of the **w**idth of a meridian on **E**arth; the letter “w” in wěi can be vertically flipped to get the letter “m” in meridian
   - [dw](#deciwei): deciwěi, a tenth of a wěi (纬), a tenth of a parallel
-  - [mw](#milliwei): milliwěi, a thousanth of a wěi (纬), a thousanth of a parallel
+  - [mw](#milliwei): milliwěi, a thousandth of a wěi (纬), a thousandth of a parallel
 - [x](#xun): xún (旬), decaday, a group of ten days, 2 pentadays, represented by x like the Roman numeral X
 - [y](#year): year
   - [my](#milliyear): milliyear, a thousandth of a year
@@ -2370,6 +2370,10 @@ nextYearColor2 = textcolor(nextYear, nextYearPiece)
 nextYearColor3 = textcolor(nextYear, nextYearPiece)
 nextYearColor4 = textcolor(nextYear, nextYearPiece)
 nextYearColor5 = textcolor(nextYear, nextYearPiece)
+nextYearColor6 = textcolor(nextYear, nextYearPiece)
+nextYearColor7 = textcolor(nextYear, nextYearPiece)
+nextYearColor8 = textcolor(nextYear, nextYearPiece)
+nextYearColor9 = textcolor(nextYear, nextYearPiece)
 decYearLastDoy = nDaysInYear - 1
 decYearLastDoe = date2dote(decYear, decYearLastDoy)[0]
 decYearLastDow = (decYearLastDoe + 3) % 7
@@ -2464,10 +2468,13 @@ decNihAbsColor5 = textcolor(decNihAbs, decNihAbsPiece)
 decNihAbsColor6 = textcolor(decNihAbs, decNihAbsPiece)
 decNihAbsColor7 = textcolor(decNihAbs, decNihAbsPiece)
 decNihAbsColor8 = textcolor(decNihAbs, decNihAbsPiece)
+decNihAbsColor9 = textcolor(decNihAbs, decNihAbsPiece)
 decNixBox = decNix * 10 % nDaysInput + nDaysInput
 decNixAbsPiece = piecewiseColor(decNixBox / nDaysInput)
 decNixAbsColor = textcolor(decNixAbs, decNixAbsPiece)
 decNixAbsColor1 = textcolor(decNixAbs, decNixAbsPiece)
+decNixAbsColor2 = textcolor(decNixAbs, decNixAbsPiece)
+decNixAbsColor3 = textcolor(decNixAbs, decNixAbsPiece)
 decDohPid = decDoty % 100
 decDohPidBy100 = decDohPid / 100
 decDohPidPiece = piecewiseColor(decDohPidBy100)
@@ -2503,6 +2510,7 @@ decDoxNidMidPiece = piecewiseColor(decDoxNidMid / 10)
 decDoxNidMidColor = textcolor(decDoxNidMid, decDoxNidMidPiece)
 decDoxNidMidColor1 = textcolor(decDoxNidMid, decDoxNidMidPiece)
 decDoxNidMidColor2 = textcolor(decDoxNidMid, decDoxNidMidPiece)
+decDoxNidMidColor3 = textcolor(decDoxNidMid, decDoxNidMidPiece)
 decDohPidMidPad = decDohPidMid.toString().padStart(2, "0")
 decDohPidMidPadColor = textcolor(decDohPidMidPad, decDohPidMidPiece)
 decDohNidMidPad = decDohNidMid.toString().padStart(2, "0")
@@ -2511,6 +2519,7 @@ decDohNidMidPadColor1 = textcolor(decDohNidMidPad, decDohNidMidPiece)
 decDohNidMidPadColor2 = textcolor(decDohNidMidPad, decDohNidMidPiece)
 decDohNidMidPadColor3 = textcolor(decDohNidMidPad, decDohNidMidPiece)
 decDohNidMidPadColor4 = textcolor(decDohNidMidPad, decDohNidMidPiece)
+decDohNidMidPadColor5 = textcolor(decDohNidMidPad, decDohNidMidPiece)
 decDohNidMidFirstDigit = Math.floor(decDohNidMid / 10) 
 decDohNidMidFirstPiece = piecewiseColor(decDohNidMidFirstDigit / 10)
 decDohNidMidFirstColor = textcolor(decDohNidMidFirstDigit, decDohNidMidFirstPiece)
@@ -2628,6 +2637,8 @@ TminusColor2 = textcolor(Tminus, decDotyPiece)
 TminusColor3 = textcolor(Tminus, decDotyPiece)
 TminusPadded = Tminus.toString().padStart(3, "0")
 TminusPaddedColor = textcolor(TminusPadded, decDotyPiece)
+TminusPaddedColor1 = textcolor(TminusPadded, decDotyPiece)
+TminusPaddedColor2 = textcolor(TminusPadded, decDotyPiece)
 TminusPaddedNeg = "-" + TminusPadded
 fracYear = decYear + ydz[1] / nDaysInYear
 fullfracYear = (fracYear).toFixed(4)
