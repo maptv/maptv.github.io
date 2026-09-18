@@ -1506,10 +1506,6 @@ form.oi-3a86ea {
   --input-width: 200px;
   padding-right: 9px;
 }
-div.column-page:has(svg.leftplot), div.column-page:has(svg.rightplot) {
-  display: flex;
-  justify-content: space-between;
-}
 div.observablehq > figure > h2 {
   text-align: center;
   font-size: 1.3rem;
@@ -1550,26 +1546,6 @@ div.equationgroup {
 .nowrap {
   white-space: nowrap;
 }
-svg.topplot {
-  margin-top: -9px;
-  margin-bottom: -9px;
-  overflow: clip;
-}
-svg.btmplot {
-  margin-top: -9px;
-  margin-bottom: -15px;
-  overflow: clip;
-}
-svg.leftplot {
-  margin-top: -9px;
-  margin-bottom: -15px;
-  overflow: clip;
-}
-svg.rightplot {
-  margin-top: -9px;
-  margin-bottom: -15px;
-  overflow: clip;
-}
 form.oi-3a86ea-checkbox {
   max-width: 800px;
 }
@@ -1592,11 +1568,24 @@ div#leapscrubvert form div:has(label):nth-child(even) {
 div#leapscrubvert form div:has(label):nth-child(odd) {
   width: 150px;
 }
-div#leapscrubvert form > label, div#sliders form > label {
+div#leapscrubvert form > label, div.sliders form > label {
   min-width: 110px;
   white-space: nowrap;
 }
-div#leapscrubvert form div:has(label), div#sliders form div:has(label) {
+/* div.sliders wraps the Day of year/Month/Day of month range inputs
+   (className: sliders). Fixed label width lines up every text box in
+   the same column, and letting the range track grow to fill the rest
+   of the row makes every slider the same, maximal length. */
+div.sliders form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+div.sliders form input[type="range"] {
+  flex: 1 1 auto;
+  width: auto;
+}
+div#leapscrubvert form div:has(label), div.sliders form div:has(label) {
   width: 205px;
 }
 div#leapscrubvert form:last-child {
@@ -1663,23 +1652,11 @@ div#bitwise div > form > button {
 #topdatenav figcaption {
   display: none;
 }
-div.cell-output-display:has(svg#mermaid-2) {
-  margin-top: -20px;
-  margin-bottom: -19px;
-}
-div.cell-output-display:has(svg#mermaid-3) {
-  margin-top: -36px;
-  margin-bottom: -21px;
-}
-div.cell-output-display:has(svg#mermaid-4) {
-  margin-top: -34px;
-  margin-bottom: -21px;
-}
-div.cell-output-display:has(svg#mermaid-5) {
-  margin-top: -20px;
-  margin-bottom: -19px;
-}
-div.cell-output-display:has(svg#mermaid-6) {
+/* Uniform spacing for all six schedule diagrams, independent of the
+   mermaid-generated svg id (which shifts if diagrams are added/removed
+   elsewhere on the page and previously left title-to-diagram spacing
+   inconsistent, even overlapping for some diagrams). */
+.doxdiagram div.cell-output-display {
   margin-top: -20px;
   margin-bottom: -19px;
 }
@@ -1700,47 +1677,11 @@ figcaption {
 div.tippy-box div.tippy-content {
   overflow: hidden;
 }
-.viz-header, .viz-footer {
-  max-width: 640px;
-  font-family: FranklinITCProLight, Arial, Helvetica, sans-serif;
-  background-color: #fff;
-}
-.viz-header {
-  font-size: 18px;
-  font-weight: 700;
-}
-.instructions  {
-  font-size: 16px;
-}
-.caption  {
-/*     max-width: ${svgWidth * 0.9}px; */
-  font-size: 14px;
-  color: #666;
-}
-.data-source {
-  text-decoration: underline!important;
-  color: inherit!important;
-}
-.viz-static {
-  height: auto; 
-  border: 1px solid #c0c0c0;"
-}
-@media (max-width: 768px) {
-  .viz-static {
-    max-width: 100%;
-  }
-}
-#boundinputs label {
-  width: 90px;
-}
 form.oi-3a86ea {
   flex-wrap: nowrap;
 }
 div > form > label {
   --label-width: 110px;
-}
-#fingerbinarysvg {
-  margin-bottom: 9px;
 }
 #fingerbinarysvg {
   margin-bottom: 14px;
@@ -1749,7 +1690,7 @@ div > form > label {
   margin-top: 6px;
   margin-bottom: 12px;
 }
-@media (max-width: 690px), @media (min-width: 768px) and (max-width: 948px), @media (min-width: 992px) and (max-width: 1196px) {
+@media (max-width: 690px), (min-width: 768px) and (max-width: 948px), (min-width: 992px) and (max-width: 1196px) {
   #calsliders div.cell-output.cell-output-display:has(#calsliders-1) {
     order: -2;
   }
@@ -1769,6 +1710,20 @@ code {
 }
 #moonplot {
   overflow: visible;
+}
+/* Die faces, playing cards, half-dominoes, counting rods, and suit
+   symbols are all rare Unicode symbol-block characters. Some mobile
+   browsers (notably iOS Safari) render them with emoji presentation —
+   larger and with different metrics than the plain text glyph desktop
+   browsers use — which overflows the small fixed-height boxes these
+   are centered in below. Forcing text presentation keeps the glyph
+   metrics (and therefore the hand-tuned centering) consistent.  */
+.dieface, .firstdieface,
+.playingcard span:not(:has(*)),
+.halfdomino span:not(:has(*)),
+.playingcardsuit span:not(:has(*)),
+.countingrod span:not(:has(*)) {
+  font-variant-emoji: text;
 }
 .dieface, .firstdieface {
   display: inline-flex;
