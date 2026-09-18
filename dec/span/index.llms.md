@@ -10,11 +10,11 @@ Author
 
 Published
 
-1776874460
+1789759521
 
 Modified
 
-2026+052
+2026+201
 
 ``` mermaid
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
@@ -54,7 +54,7 @@ BibTeX citation:
 @online{laptev2026,
   author = {Laptev, Martin},
   title = {Dec Span},
-  date = {2026-04-22},
+  date = {2026-09-18},
   url = {https://maptv.github.io/dec/span},
   langid = {en}
 }
@@ -62,4 +62,4 @@ BibTeX citation:
 
 For attribution, please cite this work as:
 
-Laptev, Martin. 2026. “Dec Span.” April 22. <https://maptv.github.io/dec/span>.
+Laptev, Martin. 2026. “Dec Span.” September 18. <https://maptv.github.io/dec/span>.

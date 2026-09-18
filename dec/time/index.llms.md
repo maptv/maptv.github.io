@@ -10,11 +10,11 @@ Author
 
 Published
 
-1778015565
+1789759521
 
 Modified
 
-2026+065
+2026+201
 
 ``` mermaid
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px'}}}%%
@@ -477,7 +477,7 @@ using Dates
 hms = now(UTC)
 ```
 
-    2026-08-28T04:31:04.530
+    2026-09-18T20:49:47.063
 
 ``` julia
 hour(hms) / 24 +
@@ -486,13 +486,13 @@ second(hms) / 86400 +
 millisecond(hms) / 864e5
 ```
 
-    0.188246875
+    0.8679058217592593
 
 ``` julia
 datetime2unix(hms) / 86400 % 1
 ```
 
-    0.18824687500091386
+    0.8679058217603597
 
 ## Observable JavaScript
 
@@ -519,13 +519,13 @@ hms.second / 86400 + \
 hms.microsecond / 864e8
 ```
 
-    0.18825710269675924
+    0.8679155808796297
 
 ``` python
 hms.timestamp() / 86400 % 1
 ```
 
-    0.18825710269447882
+    0.8679155808786163
 
 ## R
 
@@ -536,13 +536,13 @@ hms$min / 1440 +
 hms$sec / 86400
 ```
 
-    [1] 0.1882572
+    [1] 0.8679157
 
 ``` downlit
 (as.numeric(as.POSIXct(hms)) / 86400) %% 1
 ```
 
-    [1] 0.1882572
+    [1] 0.8679157
 
 The equations below convert UNIX time or a Zone 0 tod into the three components of an hms triplet: the “hour of day” (hod), “minute of hour” (moh), and “second of minute” (som), using a “daily second aggregate” (dsa) and “hourly second aggregate” (hsa). While both count seconds, dsas start at midnight and hsas begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
@@ -555,19 +555,19 @@ using Dates
 dsa = datetime2unix(now(UTC)) / 86400 % 1 * 86400
 ```
 
-    16265.473000018392
+    74987.96900000889
 
 ``` julia
 hsa = dsa % 3600
 ```
 
-    1865.4730000183918
+    2987.9690000088885
 
 ``` julia
 map(x -> floor(Int, x), (dsa / 3600, hsa / 60, hsa % 60))
 ```
 
-    (4, 31, 5)
+    (20, 49, 47)
 
 ## Observable JavaScript
 
@@ -586,7 +586,7 @@ hsa = dsa % 3600
 tuple(map(int, [dsa // 3600, hsa // 60, hsa % 60 // 1]))
 ```
 
-    (4, 31, 5)
+    (20, 49, 48)
 
 ## R
 
@@ -596,7 +596,7 @@ hsa <- dsa %% 3600
 sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 ```
 
-    [1]  4 31  5
+    [1] 20 49 48
 
 ##### Universal time offset
 
@@ -3852,7 +3852,7 @@ BibTeX citation:
 @online{laptev2026,
   author = {Laptev, Martin},
   title = {Dec Time},
-  date = {2026-05-05},
+  date = {2026-09-18},
   url = {https://maptv.github.io/dec/time},
   langid = {en}
 }
@@ -3860,4 +3860,4 @@ BibTeX citation:
 
 For attribution, please cite this work as:
 
-Laptev, Martin. 2026. “Dec Time.” May 5. <https://maptv.github.io/dec/time>.
+Laptev, Martin. 2026. “Dec Time.” September 18. <https://maptv.github.io/dec/time>.

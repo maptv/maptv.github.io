@@ -10,11 +10,11 @@ Author
 
 Published
 
-1787929874000
+1789759521000
 
 Modified
 
-58627+029
+58685+021
 
 In this blog post I will discuss a few examples of [probability](https://en.wikipedia.org/wiki/Probability#:~:text=Probability%20is%20the%20branch%20of,event%20and%201%20indicates%20certainty.) in [machine learning](https://en.wikipedia.org/wiki/Machine_learning#:~:text=Machine%20learning%20(ML)%20is%20a%20field%20of%20study%20in%20artificial%20intelligence%20concerned%20with%20the%20development%20and%20study%20of%20statistical%20algorithms%20that%20can%20effectively%20generalize%20and%20thus%20perform%20tasks%20without%20explicit%20instructions.). If you are new to probability, I recommend one of great textbooks that cover the topic and are available for free online, such as [Think Bayes](https://allendowney.github.io/ThinkBayes2) by [Allen Downey](https://www.allendowney.com) and [Bayes Rules!](https://www.bayesrulesbook.com) by [Alicia A. Johnson](https://ajohns24.github.io), Miles Q. Ott, and [Mine Dogucu](https://www.minedogucu.com).
 
@@ -143,11 +143,7 @@ plt.savefig("PCA_with_loadings.png", dpi=300)
 plt.show()
 ```
 
-    Text(0.5, 56.47999999999999, 'PC1 (42.48 %)')
-
-    Text(61.333333333333336, 0.5, 'PC2 (26.50 %)')
-
-[![](index_files/figure-html/cell-6-output-3.png)](index_files/figure-html/cell-6-output-3.png)
+[![](index_files/figure-html/cell-6-output-1.png)](index_files/figure-html/cell-6-output-1.png)
 
 ``` python
 sns.displot(df, x="bill_length_mm", kde=True, hue="species", stat="count");
@@ -178,9 +174,7 @@ plt.ylim((0, 375));
 plt.show()
 ```
 
-    Text(0.5, 0.98, 'PDF and CDF comparision')
-
-[![](index_files/figure-html/cell-10-output-2.png)](index_files/figure-html/cell-10-output-2.png)
+[![](index_files/figure-html/cell-10-output-1.png)](index_files/figure-html/cell-10-output-1.png)
 
 ``` python
 import pathlib
@@ -235,9 +229,7 @@ plt.grid()
 plt.show()
 ```
 
-    Text(0.5, 0, 't')
-
-[![](index_files/figure-html/cell-13-output-2.png)](index_files/figure-html/cell-13-output-2.png)
+[![](index_files/figure-html/cell-13-output-1.png)](index_files/figure-html/cell-13-output-1.png)
 
 #### 1 Obtain the logistic function mathematically
 

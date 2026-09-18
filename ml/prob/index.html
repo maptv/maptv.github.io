@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2bec29a9bacf2b598905820d71afb463.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6851d91cb2af8de092a9138fbc1ca822.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-16c89846c3a61331e26404010a710936.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-6851d91cb2af8de092a9138fbc1ca822.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-243045bfc3b4fc19ae2870f88ffebf38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-3b48f0f6056231cb599baade7e1c0ce2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-243045bfc3b4fc19ae2870f88ffebf38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -534,7 +534,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quarto/include/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-earmark-plus" role="img">
+  <a href="../../quarto/include/index.qmd" class="sidebar-item-text sidebar-link"><i class="bi bi-file-earmark-plus" role="img">
 </i> 
  <span class="menu-text">Include</span></a>
   </div>
@@ -596,14 +596,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">1787929874000</p>
+      <p class="date">1789759521000</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">58627+029</p>
+      <p class="date-modified">58685+021</p>
     </div>
   </div>
     
@@ -618,7 +618,7 @@ window.Quarto = {
 <p><a href="https://en.wikipedia.org/wiki/Statistical_classification">Classification</a> <a href="https://en.wikipedia.org/wiki/Algorithm">algorithms</a> algorithms can estimate <span class="math inline">\(n \times k\)</span> class membership probabilities for each dataset, where n is the number of data points in the dataset and k is the number of classes in the <a href="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets#:~:text=training%20data%20set%2C%5B3%5D%20which%20is%20a%20set%20of%20examples%20used%20to%20fit%20the%20parameters%20(e.g.%20weights%20of%20connections%20between%20neurons%20in%20artificial%20neural%20networks)%20of%20the%20model.">training dataset</a>. Similarly, the <a href="https://scikit-learn.org/stable/modules/mixture.html">Gaussian Mixtures</a> <a href="https://scikit-learn.org/stable/modules/clustering.html">clustering</a> algorithm can generate <span class="math inline">\(n \times k\)</span> cluster label probabilities.</p>
 <p>Besides a data point and the Gaussian Mixtures models can estimate cluster membership probability. point , especially <a href="https://en.wikipedia.org/wiki/Logistic_regression">Logistic Regression</a> and <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes</a>. Every classification algorithm can estimate probabilities of belonging to each class.</p>
 <p><span class="math inline">\(\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}\)</span></p>
-<div id="e9cdd398" class="cell" data-execution_count="2">
+<div id="699886a9" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -632,7 +632,7 @@ window.Quarto = {
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> ConfusionMatrixDisplay</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="51458b7f" class="cell" data-execution_count="3">
+<div id="b900db98" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -709,18 +709,18 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="2e1457b9" class="cell" data-execution_count="4">
+<div id="8db13a0c" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">"species"</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.drop(<span class="st">"species"</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.get_dummies(X, columns<span class="op">=</span>[<span class="st">"island"</span>, <span class="st">"sex"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b0f58eb0" class="cell" data-execution_count="5">
+<div id="65bff089" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knni <span class="op">=</span> KNNImputer()</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>colnames <span class="op">=</span> X.columns</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> knni.fit_transform(X)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.DataFrame(X, columns<span class="op">=</span>colnames)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="1e83b231" class="cell" data-execution_count="6">
+<div id="fd0d7285" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://blog.4dcu.be/programming/2021/03/19/Code-Nugget-PCA-with-loadings.html</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pipeline <span class="op">=</span> Pipeline([</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"scaler"</span>, StandardScaler()),</span>
@@ -796,22 +796,16 @@ window.Quarto = {
 <span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"PCA_with_loadings.png"</span>, dpi<span class="op">=</span><span class="dv">300</span>)</span>
 <span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>Text(0.5, 56.47999999999999, 'PC1 (42.48 %)')</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>Text(61.333333333333336, 0.5, 'PC2 (26.50 %)')</code></pre>
-</div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="index_files/figure-html/cell-6-output-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/cell-6-output-3.png" width="759" height="758" class="figure-img"></a></p>
+<p><a href="index_files/figure-html/cell-6-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/cell-6-output-1.png" width="759" height="758" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="1fed324d" class="cell" data-tags="[]" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"count"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="6612fe73" class="cell" data-tags="[]" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"count"</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -820,9 +814,9 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="475e82f5" class="cell" data-tags="[]" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"density"</span>)<span class="op">;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="895ecdcb" class="cell" data-tags="[]" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"density"</span>)<span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -831,9 +825,9 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="d7db8704" class="cell" data-tags="[]" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, rug<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"proportion"</span>)<span class="op">;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="7942161e" class="cell" data-tags="[]" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, rug<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"proportion"</span>)<span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -842,33 +836,30 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="28e9ec80" class="cell" data-tags="[]" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'PDF and CDF comparision'</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(df[[<span class="st">"bill_length_mm"</span>, <span class="st">"flipper_length_mm"</span>]], kde<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>])<span class="op">;</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>sns.ecdfplot(df[[<span class="st">"bill_length_mm"</span>, <span class="st">"flipper_length_mm"</span>]], stat<span class="op">=</span><span class="st">"count"</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>], legend<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.ylim((<span class="dv">0</span>, <span class="dv">375</span>))<span class="op">;</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>Text(0.5, 0.98, 'PDF and CDF comparision')</code></pre>
-</div>
+<div id="9c0945b5" class="cell" data-tags="[]" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'PDF and CDF comparision'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(df[[<span class="st">"bill_length_mm"</span>, <span class="st">"flipper_length_mm"</span>]], kde<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>])<span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>sns.ecdfplot(df[[<span class="st">"bill_length_mm"</span>, <span class="st">"flipper_length_mm"</span>]], stat<span class="op">=</span><span class="st">"count"</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>], legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.ylim((<span class="dv">0</span>, <span class="dv">375</span>))<span class="op">;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="index_files/figure-html/cell-10-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="index_files/figure-html/cell-10-output-2.png" width="594" height="459" class="figure-img"></a></p>
+<p><a href="index_files/figure-html/cell-10-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="index_files/figure-html/cell-10-output-1.png" width="594" height="459" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="dc14e9b5" class="cell" data-tags="[]" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pathlib</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="57088589" class="cell" data-tags="[]" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pathlib</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="edb0bfd6" class="cell" data-tags="[]" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">10000</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.33</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>lr.fit(X_train, y_train)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> ConfusionMatrixDisplay.from_estimator(lr, X_test, y_test)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5b72b26e" class="cell" data-tags="[]" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">10000</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.33</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>lr.fit(X_train, y_train)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> ConfusionMatrixDisplay.from_estimator(lr, X_test, y_test)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <style>.sk-global {
   /* Definition of color scheme common for light and dark mode */
@@ -2079,31 +2070,28 @@ forceTheme('sk-container-id-1');</script>
 </div>
 <section id="logistic-function-visualization" class="level4" data-number="0">
 <h4 data-number="0" class="anchored" data-anchor-id="logistic-function-visualization"><span class="header-section-number">0</span> Logistic function visualization</h4>
-<div id="d796b632" class="cell" data-tags="[]" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://github.com/ageron/handson-ml3/blob/main/04_training_linear_models.ipynb</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>lim <span class="op">=</span> <span class="dv">6</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="op">-</span>lim, lim, <span class="dv">100</span>)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>sig <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> np.exp(<span class="op">-</span>t))</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span>lim, lim], [<span class="dv">0</span>, <span class="dv">0</span>], <span class="st">"k-"</span>)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span>lim, lim], [<span class="fl">0.5</span>, <span class="fl">0.5</span>], <span class="st">"k:"</span>)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span>lim, lim], [<span class="dv">1</span>, <span class="dv">1</span>], <span class="st">"k:"</span>)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>, <span class="dv">0</span>], [<span class="op">-</span><span class="fl">1.1</span>, <span class="fl">1.1</span>], <span class="st">"k-"</span>)</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>plt.plot(t, sig, <span class="st">"b-"</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$\s</span><span class="vs">igma</span><span class="kw">(</span><span class="vs">t</span><span class="kw">)</span><span class="vs"> = </span><span class="dv">\d</span><span class="vs">frac</span><span class="op">{1}</span><span class="vs">{1 </span><span class="op">+</span><span class="vs"> e</span><span class="dv">^</span><span class="vs">{-t}}</span><span class="dv">$</span><span class="vs">"</span>)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"t"</span>)</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">"upper left"</span>)</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>plt.axis([<span class="op">-</span>lim, lim, <span class="op">-</span><span class="fl">0.1</span>, <span class="fl">1.1</span>])</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>plt.gca().set_yticks([<span class="dv">0</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>])</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>Text(0.5, 0, 't')</code></pre>
-</div>
+<div id="9d604b3a" class="cell" data-tags="[]" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://github.com/ageron/handson-ml3/blob/main/04_training_linear_models.ipynb</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>lim <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="op">-</span>lim, lim, <span class="dv">100</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>sig <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> np.exp(<span class="op">-</span>t))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span>lim, lim], [<span class="dv">0</span>, <span class="dv">0</span>], <span class="st">"k-"</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span>lim, lim], [<span class="fl">0.5</span>, <span class="fl">0.5</span>], <span class="st">"k:"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span>lim, lim], [<span class="dv">1</span>, <span class="dv">1</span>], <span class="st">"k:"</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>, <span class="dv">0</span>], [<span class="op">-</span><span class="fl">1.1</span>, <span class="fl">1.1</span>], <span class="st">"k-"</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>plt.plot(t, sig, <span class="st">"b-"</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$\s</span><span class="vs">igma</span><span class="kw">(</span><span class="vs">t</span><span class="kw">)</span><span class="vs"> = </span><span class="dv">\d</span><span class="vs">frac</span><span class="op">{1}</span><span class="vs">{1 </span><span class="op">+</span><span class="vs"> e</span><span class="dv">^</span><span class="vs">{-t}}</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"t"</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">"upper left"</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>plt.axis([<span class="op">-</span>lim, lim, <span class="op">-</span><span class="fl">0.1</span>, <span class="fl">1.1</span>])</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>plt.gca().set_yticks([<span class="dv">0</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>])</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="index_files/figure-html/cell-13-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="index_files/figure-html/cell-13-output-2.png" width="658" height="282" class="figure-img"></a></p>
+<p><a href="index_files/figure-html/cell-13-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="index_files/figure-html/cell-13-output-1.png" width="658" height="282" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
@@ -2114,11 +2102,11 @@ forceTheme('sk-container-id-1');</script>
 <section id="step-1.-write-out-the-linear-regression-equation" class="level5">
 <h5 class="anchored" data-anchor-id="step-1.-write-out-the-linear-regression-equation">Step 1. Write out the linear regression equation</h5>
 <p><span class="math inline">\(\Huge y=\beta_0+\beta_1 x_1+...+\beta_n x_n\)</span> ## Step 2. The logistic regression equation is the same as above except output is log odds <span class="math inline">\(\Huge log(odds)=\beta_0+\beta_1 x_1+...+\beta_n x_n\)</span> ## Step 3. Exponentiate both sides of the logistic regression equation to get odds <span class="math inline">\(\Huge odds=e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}\)</span> ## Step 4. Write out the probability equation <span class="math inline">\(\Huge p=\frac{odds}{1+odds}\)</span> ## Step 5. Plug odds (from step 3) into the probability equation <span class="math inline">\(\Huge p=\frac{e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}{1+e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}\)</span> ## Step 6. Divide the numerator and denominator by the odds (from step 3) <span class="math inline">\(\Huge p=\frac{1}{1+e^{-(\beta_0+\beta_1 x_1+...+\beta_n x_n)}}\)</span></p>
-<div id="df5bdef0" class="cell" data-tags="[]" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>gnb <span class="op">=</span> GaussianNB()</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>gnb.fit(X_train, y_train)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> ConfusionMatrixDisplay.from_estimator(gnb, X_test, y_test)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="592acd93" class="cell" data-tags="[]" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>gnb <span class="op">=</span> GaussianNB()</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>gnb.fit(X_train, y_train)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> ConfusionMatrixDisplay.from_estimator(gnb, X_test, y_test)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <style>.sk-global {
   /* Definition of color scheme common for light and dark mode */
@@ -3118,11 +3106,11 @@ forceTheme('sk-container-id-2');</script>
 </div>
 </div>
 </div>
-<div id="9b547203" class="cell" data-tags="[]" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>ct <span class="op">=</span> pd.crosstab(df[<span class="st">"species"</span>], df[<span class="st">"body_mass_g"</span>] <span class="op">&gt;</span> df[<span class="st">"body_mass_g"</span>].mean(), margins<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5465745f" class="cell" data-tags="[]" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>ct <span class="op">=</span> pd.crosstab(df[<span class="st">"species"</span>], df[<span class="st">"body_mass_g"</span>] <span class="op">&gt;</span> df[<span class="st">"body_mass_g"</span>].mean(), margins<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="d33f3e9e" class="cell" data-tags="[]" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>ct</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="570f46ed" class="cell" data-tags="[]" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ct</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
@@ -3173,40 +3161,40 @@ forceTheme('sk-container-id-2');</script>
 </div>
 </div>
 </div>
-<div id="7d30fc3b" class="cell" data-tags="[]" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>likelihood <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">0</span>, <span class="dv">2</span>]</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>likelihood</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="421faf3e" class="cell" data-tags="[]" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>likelihood <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">0</span>, <span class="dv">2</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>likelihood</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>np.float64(0.8355263157894737)</code></pre>
 </div>
 </div>
-<div id="2cb0774c" class="cell" data-tags="[]" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>prior <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">2</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">2</span>]</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>prior</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="43e9b502" class="cell" data-tags="[]" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>prior <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">2</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">2</span>]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>prior</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>np.float64(0.4418604651162791)</code></pre>
 </div>
 </div>
-<div id="f4075201" class="cell" data-tags="[]" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span>  ct.iloc[<span class="dv">3</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">2</span>]</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>norm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="088d5747" class="cell" data-tags="[]" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span>  ct.iloc[<span class="dv">3</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">2</span>]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>norm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>np.float64(0.5668604651162791)</code></pre>
 </div>
 </div>
-<div id="67b318eb" class="cell" data-tags="[]" data-execution_count="20">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>posterior <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">0</span>]</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>posterior</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="dbb271fc" class="cell" data-tags="[]" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>posterior <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">0</span>]</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>posterior</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>np.float64(0.6512820512820513)</code></pre>
 </div>
 </div>
 <p><span class="math inline">\(\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}\)</span></p>
-<div id="23e17441" class="cell" data-tags="[]" data-execution_count="21">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> likelihood <span class="op">*</span> prior <span class="op">/</span> norm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="36d889c2" class="cell" data-tags="[]" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> likelihood <span class="op">*</span> prior <span class="op">/</span> norm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="43b78962" class="cell" data-tags="[]" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"body_mass_g"</span>] <span class="op">&gt;</span> df[<span class="st">"body_mass_g"</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5f41009e" class="cell" data-tags="[]" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"body_mass_g"</span>] <span class="op">&gt;</span> df[<span class="st">"body_mass_g"</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>0      False
 1      False
@@ -3222,8 +3210,8 @@ forceTheme('sk-container-id-2');</script>
 Name: body_mass_g, Length: 344, dtype: bool</code></pre>
 </div>
 </div>
-<div id="105f3601" class="cell" data-execution_count="23">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gnb.fit([df["body_mass_g"] &gt; df["body_mass_g"].mean()], y)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="19d468a9" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gnb.fit([df["body_mass_g"] &gt; df["body_mass_g"].mean()], y)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
@@ -3734,285 +3722,285 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Probability</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: Martin Laptev</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co">    url: https://maptv.github.io</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> last-modified</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> horst_hist-samples.png</span></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - ml</span></span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> x</span></span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body:</span></span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/stamp.html</span></span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/style.html</span></span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/tooltip.html</span></span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="co">  - ../../asset/date.lua</span></span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a><span class="co">  - include-code-files</span></span>
-<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>In this blog post I will discuss a few examples of <span class="co">[</span><span class="ot">probability</span><span class="co">](https://en.wikipedia.org/wiki/Probability#:~:text=Probability%20is%20the%20branch%20of,event%20and%201%20indicates%20certainty.)</span> in <span class="co">[</span><span class="ot">machine learning</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Machine_learning#:~:text=Machine%20learning%20(ML)%20is%20a%20field%20of%20study%20in%20artificial%20intelligence%20concerned%20with%20the%20development%20and%20study%20of%20statistical%20algorithms%20that%20can%20effectively%20generalize%20and%20thus%20perform%20tasks%20without%20explicit%20instructions.). If you are new to probability, I recommend one of great textbooks that cover the topic and are available for free online, such as <span class="co">[</span><span class="ot">Think Bayes</span><span class="co">](https://allendowney.github.io/ThinkBayes2)</span> by <span class="co">[</span><span class="ot">Allen Downey</span><span class="co">](https://www.allendowney.com)</span> and <span class="co">[</span><span class="ot">Bayes Rules!</span><span class="co">](https://www.bayesrulesbook.com)</span> by <span class="co">[</span><span class="ot">Alicia A. Johnson</span><span class="co">](https://ajohns24.github.io)</span>, Miles Q. Ott, and <span class="co">[</span><span class="ot">Mine Dogucu</span><span class="co">](https://www.minedogucu.com)</span>.</span>
-<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Classification</span><span class="co">](https://en.wikipedia.org/wiki/Statistical_classification)</span> <span class="co">[</span><span class="ot">algorithms</span><span class="co">](https://en.wikipedia.org/wiki/Algorithm)</span> algorithms can estimate $n \times k$ class membership probabilities for each dataset, where n is the number of data points in the dataset and k is the number of classes in the <span class="co">[</span><span class="ot">training dataset</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets#:~:text=training%20data%20set%2C%5B3%5D%20which%20is%20a%20set%20of%20examples%20used%20to%20fit%20the%20parameters%20(e.g.%20weights%20of%20connections%20between%20neurons%20in%20artificial%20neural%20networks)%20of%20the%20model.). Similarly, the <span class="co">[</span><span class="ot">Gaussian Mixtures</span><span class="co">](https://scikit-learn.org/stable/modules/mixture.html)</span> <span class="co">[</span><span class="ot">clustering</span><span class="co">](https://scikit-learn.org/stable/modules/clustering.html)</span> algorithm can generate $n \times k$ cluster label probabilities.</span>
-<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>Besides  a data point and the Gaussian Mixtures models can estimate cluster membership probability. point , especially <span class="co">[</span><span class="ot">Logistic Regression</span><span class="co">](https://en.wikipedia.org/wiki/Logistic_regression)</span> and <span class="co">[</span><span class="ot">Naive Bayes</span><span class="co">](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)</span>. Every classification algorithm can estimate probabilities of belonging to each class.</span>
-<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>$\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$</span>
-<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb32-37"><a href="#cb32-37" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb32-38"><a href="#cb32-38" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
-<span id="cb32-39"><a href="#cb32-39" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> KNNImputer</span>
-<span id="cb32-40"><a href="#cb32-40" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
-<span id="cb32-41"><a href="#cb32-41" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> Pipeline</span>
-<span id="cb32-42"><a href="#cb32-42" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
-<span id="cb32-43"><a href="#cb32-43" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> GaussianNB</span>
-<span id="cb32-44"><a href="#cb32-44" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> ConfusionMatrixDisplay</span>
-<span id="cb32-45"><a href="#cb32-45" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb32-46"><a href="#cb32-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-47"><a href="#cb32-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-50"><a href="#cb32-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-51"><a href="#cb32-51" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
-<span id="cb32-52"><a href="#cb32-52" aria-hidden="true" tabindex="-1"></a>df.head()</span>
-<span id="cb32-53"><a href="#cb32-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-54"><a href="#cb32-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-57"><a href="#cb32-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-58"><a href="#cb32-58" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">"species"</span>]</span>
-<span id="cb32-59"><a href="#cb32-59" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.drop(<span class="st">"species"</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb32-60"><a href="#cb32-60" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.get_dummies(X, columns<span class="op">=</span>[<span class="st">"island"</span>, <span class="st">"sex"</span>])</span>
-<span id="cb32-61"><a href="#cb32-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-62"><a href="#cb32-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-65"><a href="#cb32-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-66"><a href="#cb32-66" aria-hidden="true" tabindex="-1"></a>knni <span class="op">=</span> KNNImputer()</span>
-<span id="cb32-67"><a href="#cb32-67" aria-hidden="true" tabindex="-1"></a>colnames <span class="op">=</span> X.columns</span>
-<span id="cb32-68"><a href="#cb32-68" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> knni.fit_transform(X)</span>
-<span id="cb32-69"><a href="#cb32-69" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.DataFrame(X, columns<span class="op">=</span>colnames)</span>
-<span id="cb32-70"><a href="#cb32-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-71"><a href="#cb32-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-72"><a href="#cb32-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-73"><a href="#cb32-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-76"><a href="#cb32-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-77"><a href="#cb32-77" aria-hidden="true" tabindex="-1"></a><span class="co"># https://blog.4dcu.be/programming/2021/03/19/Code-Nugget-PCA-with-loadings.html</span></span>
-<span id="cb32-78"><a href="#cb32-78" aria-hidden="true" tabindex="-1"></a>pipeline <span class="op">=</span> Pipeline([</span>
-<span id="cb32-79"><a href="#cb32-79" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"scaler"</span>, StandardScaler()),</span>
-<span id="cb32-80"><a href="#cb32-80" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"pca"</span>, PCA(n_components<span class="op">=</span><span class="dv">2</span>)),</span>
-<span id="cb32-81"><a href="#cb32-81" aria-hidden="true" tabindex="-1"></a>])</span>
-<span id="cb32-82"><a href="#cb32-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-83"><a href="#cb32-83" aria-hidden="true" tabindex="-1"></a>pca_data <span class="op">=</span> pd.DataFrame(</span>
-<span id="cb32-84"><a href="#cb32-84" aria-hidden="true" tabindex="-1"></a>    pipeline.fit_transform(X),</span>
-<span id="cb32-85"><a href="#cb32-85" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span>[<span class="st">"PC1"</span>, <span class="st">"PC2"</span>],</span>
-<span id="cb32-86"><a href="#cb32-86" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span>df.index,</span>
-<span id="cb32-87"><a href="#cb32-87" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb32-88"><a href="#cb32-88" aria-hidden="true" tabindex="-1"></a>pca_data[<span class="st">"species"</span>] <span class="op">=</span> df[<span class="st">"species"</span>]</span>
-<span id="cb32-89"><a href="#cb32-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-90"><a href="#cb32-90" aria-hidden="true" tabindex="-1"></a>pca_step <span class="op">=</span> pipeline.steps[<span class="dv">1</span>][<span class="dv">1</span>]</span>
-<span id="cb32-91"><a href="#cb32-91" aria-hidden="true" tabindex="-1"></a>loadings <span class="op">=</span> pd.DataFrame(</span>
-<span id="cb32-92"><a href="#cb32-92" aria-hidden="true" tabindex="-1"></a>    pca_step.components_.T,</span>
-<span id="cb32-93"><a href="#cb32-93" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span>[<span class="st">"PC1"</span>, <span class="st">"PC2"</span>],</span>
-<span id="cb32-94"><a href="#cb32-94" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span>X.columns,</span>
-<span id="cb32-95"><a href="#cb32-95" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb32-96"><a href="#cb32-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-97"><a href="#cb32-97" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loading_plot(</span>
-<span id="cb32-98"><a href="#cb32-98" aria-hidden="true" tabindex="-1"></a>    coeff, labels, scale<span class="op">=</span><span class="dv">1</span>, text_x<span class="op">=</span><span class="va">None</span>, text_y<span class="op">=</span><span class="va">None</span>, colors<span class="op">=</span><span class="va">None</span>, visible<span class="op">=</span><span class="va">None</span>, ax<span class="op">=</span>plt, arrow_size<span class="op">=</span><span class="fl">0.5</span></span>
-<span id="cb32-99"><a href="#cb32-99" aria-hidden="true" tabindex="-1"></a>):</span>
-<span id="cb32-100"><a href="#cb32-100" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, label <span class="kw">in</span> <span class="bu">enumerate</span>(labels):</span>
-<span id="cb32-101"><a href="#cb32-101" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> visible <span class="kw">is</span> <span class="va">None</span> <span class="kw">or</span> visible[i]:</span>
-<span id="cb32-102"><a href="#cb32-102" aria-hidden="true" tabindex="-1"></a>            ax.arrow(</span>
-<span id="cb32-103"><a href="#cb32-103" aria-hidden="true" tabindex="-1"></a>                <span class="dv">0</span>,</span>
-<span id="cb32-104"><a href="#cb32-104" aria-hidden="true" tabindex="-1"></a>                <span class="dv">0</span>,</span>
-<span id="cb32-105"><a href="#cb32-105" aria-hidden="true" tabindex="-1"></a>                coeff[i, <span class="dv">0</span>] <span class="op">*</span> scale,</span>
-<span id="cb32-106"><a href="#cb32-106" aria-hidden="true" tabindex="-1"></a>                coeff[i, <span class="dv">1</span>] <span class="op">*</span> scale,</span>
-<span id="cb32-107"><a href="#cb32-107" aria-hidden="true" tabindex="-1"></a>                head_width<span class="op">=</span>arrow_size <span class="op">*</span> scale,</span>
-<span id="cb32-108"><a href="#cb32-108" aria-hidden="true" tabindex="-1"></a>                head_length<span class="op">=</span>arrow_size <span class="op">*</span> scale,</span>
-<span id="cb32-109"><a href="#cb32-109" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span><span class="st">"#000"</span> <span class="cf">if</span> colors <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> colors[i],</span>
-<span id="cb32-110"><a href="#cb32-110" aria-hidden="true" tabindex="-1"></a>            )</span>
-<span id="cb32-111"><a href="#cb32-111" aria-hidden="true" tabindex="-1"></a>            ax.text(</span>
-<span id="cb32-112"><a href="#cb32-112" aria-hidden="true" tabindex="-1"></a>                text_x.iloc[i] <span class="cf">if</span> text_x.<span class="bu">all</span>() <span class="cf">else</span> coeff[i, <span class="dv">0</span>] <span class="op">*</span> <span class="fl">1.2</span> <span class="op">*</span> scale,</span>
-<span id="cb32-113"><a href="#cb32-113" aria-hidden="true" tabindex="-1"></a>                text_y.iloc[i] <span class="cf">if</span> text_y.<span class="bu">all</span>() <span class="cf">else</span> coeff[i, <span class="dv">1</span>] <span class="op">*</span> <span class="fl">1.2</span> <span class="op">*</span> scale,</span>
-<span id="cb32-114"><a href="#cb32-114" aria-hidden="true" tabindex="-1"></a>                label,</span>
-<span id="cb32-115"><a href="#cb32-115" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span><span class="st">"#000"</span> <span class="cf">if</span> colors <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> colors[i],</span>
-<span id="cb32-116"><a href="#cb32-116" aria-hidden="true" tabindex="-1"></a>                ha<span class="op">=</span><span class="st">"center"</span>,</span>
-<span id="cb32-117"><a href="#cb32-117" aria-hidden="true" tabindex="-1"></a>                va<span class="op">=</span><span class="st">"center"</span>,</span>
-<span id="cb32-118"><a href="#cb32-118" aria-hidden="true" tabindex="-1"></a>            )</span>
-<span id="cb32-119"><a href="#cb32-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-120"><a href="#cb32-120" aria-hidden="true" tabindex="-1"></a>loadings <span class="op">=</span> loadings <span class="op">*</span> <span class="fl">3.2</span></span>
-<span id="cb32-121"><a href="#cb32-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-122"><a href="#cb32-122" aria-hidden="true" tabindex="-1"></a>text_x <span class="op">=</span> loadings[<span class="st">"PC1"</span>] <span class="op">*</span> <span class="fl">2.4</span></span>
-<span id="cb32-123"><a href="#cb32-123" aria-hidden="true" tabindex="-1"></a>text_y <span class="op">=</span> loadings[<span class="st">"PC2"</span>] <span class="op">*</span> <span class="fl">2.4</span></span>
-<span id="cb32-124"><a href="#cb32-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-125"><a href="#cb32-125" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"sex_Male"</span>] <span class="op">-=</span> <span class="fl">.5</span></span>
-<span id="cb32-126"><a href="#cb32-126" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"bill_depth_mm"</span>] <span class="op">-=</span> <span class="fl">.4</span></span>
-<span id="cb32-127"><a href="#cb32-127" aria-hidden="true" tabindex="-1"></a>text_x[<span class="st">"bill_depth_mm"</span>] <span class="op">-=</span> <span class="fl">.4</span></span>
-<span id="cb32-128"><a href="#cb32-128" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"sex_Female"</span>] <span class="op">+=</span> <span class="fl">.5</span></span>
-<span id="cb32-129"><a href="#cb32-129" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"island_Torgersen"</span>] <span class="op">+=</span> <span class="fl">.1</span></span>
-<span id="cb32-130"><a href="#cb32-130" aria-hidden="true" tabindex="-1"></a>text_x[<span class="st">"island_Dream"</span>] <span class="op">-=</span> <span class="fl">.5</span></span>
-<span id="cb32-131"><a href="#cb32-131" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"island_Dream"</span>] <span class="op">-=</span> <span class="fl">.3</span></span>
-<span id="cb32-132"><a href="#cb32-132" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"island_Biscoe"</span>] <span class="op">+=</span> <span class="fl">.3</span></span>
-<span id="cb32-133"><a href="#cb32-133" aria-hidden="true" tabindex="-1"></a>text_x[<span class="st">"island_Biscoe"</span>] <span class="op">+=</span> <span class="fl">.3</span></span>
-<span id="cb32-134"><a href="#cb32-134" aria-hidden="true" tabindex="-1"></a>text_x[<span class="st">"flipper_length_mm"</span>] <span class="op">+=</span> <span class="fl">.55</span></span>
-<span id="cb32-135"><a href="#cb32-135" aria-hidden="true" tabindex="-1"></a>text_x[<span class="st">"body_mass_g"</span>] <span class="op">+=</span> <span class="fl">.95</span></span>
-<span id="cb32-136"><a href="#cb32-136" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"body_mass_g"</span>] <span class="op">-=</span> <span class="fl">.05</span></span>
-<span id="cb32-137"><a href="#cb32-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-138"><a href="#cb32-138" aria-hidden="true" tabindex="-1"></a><span class="co"># https://seaborn.pydata.org/generated/seaborn.jointplot.html</span></span>
-<span id="cb32-139"><a href="#cb32-139" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> sns.jointplot(data<span class="op">=</span>pca_data, x<span class="op">=</span><span class="st">"PC1"</span>, y<span class="op">=</span><span class="st">"PC2"</span>, hue<span class="op">=</span><span class="st">"species"</span>, ratio<span class="op">=</span><span class="dv">4</span>, marginal_ticks<span class="op">=</span><span class="va">True</span>, height<span class="op">=</span><span class="dv">8</span>)</span>
-<span id="cb32-140"><a href="#cb32-140" aria-hidden="true" tabindex="-1"></a>g.plot_joint(sns.kdeplot, zorder<span class="op">=</span><span class="dv">0</span>, levels<span class="op">=</span><span class="dv">6</span>)</span>
-<span id="cb32-141"><a href="#cb32-141" aria-hidden="true" tabindex="-1"></a>g.plot_marginals(sns.rugplot, height<span class="op">=-</span><span class="fl">.025</span>, clip_on<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb32-142"><a href="#cb32-142" aria-hidden="true" tabindex="-1"></a><span class="co"># Add loadings</span></span>
-<span id="cb32-143"><a href="#cb32-143" aria-hidden="true" tabindex="-1"></a>loading_plot(loadings[[<span class="st">"PC1"</span>, <span class="st">"PC2"</span>]].values, loadings.index, text_x<span class="op">=</span>text_x, text_y<span class="op">=</span>text_y, scale<span class="op">=</span><span class="dv">2</span>, arrow_size<span class="op">=</span><span class="fl">0.02</span>)</span>
-<span id="cb32-144"><a href="#cb32-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-145"><a href="#cb32-145" aria-hidden="true" tabindex="-1"></a><span class="co"># Add variance explained by the</span></span>
-<span id="cb32-146"><a href="#cb32-146" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="ss">f"PC1 (</span><span class="sc">{</span>pca_step<span class="sc">.</span>explained_variance_ratio_[<span class="dv">0</span>]<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss"> %)"</span>)</span>
-<span id="cb32-147"><a href="#cb32-147" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="ss">f"PC2 (</span><span class="sc">{</span>pca_step<span class="sc">.</span>explained_variance_ratio_[<span class="dv">1</span>]<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss"> %)"</span>)</span>
-<span id="cb32-148"><a href="#cb32-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-149"><a href="#cb32-149" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb32-150"><a href="#cb32-150" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"PCA_with_loadings.png"</span>, dpi<span class="op">=</span><span class="dv">300</span>)</span>
-<span id="cb32-151"><a href="#cb32-151" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb32-152"><a href="#cb32-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-153"><a href="#cb32-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-156"><a href="#cb32-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-157"><a href="#cb32-157" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-158"><a href="#cb32-158" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"count"</span>)<span class="op">;</span></span>
-<span id="cb32-159"><a href="#cb32-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-160"><a href="#cb32-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-163"><a href="#cb32-163" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-164"><a href="#cb32-164" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-165"><a href="#cb32-165" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"density"</span>)<span class="op">;</span></span>
-<span id="cb32-166"><a href="#cb32-166" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb32-167"><a href="#cb32-167" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-168"><a href="#cb32-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-171"><a href="#cb32-171" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-172"><a href="#cb32-172" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-173"><a href="#cb32-173" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, rug<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"proportion"</span>)<span class="op">;</span></span>
-<span id="cb32-174"><a href="#cb32-174" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb32-175"><a href="#cb32-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-176"><a href="#cb32-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-179"><a href="#cb32-179" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-180"><a href="#cb32-180" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-181"><a href="#cb32-181" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb32-182"><a href="#cb32-182" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'PDF and CDF comparision'</span>)</span>
-<span id="cb32-183"><a href="#cb32-183" aria-hidden="true" tabindex="-1"></a>sns.histplot(df[[<span class="st">"bill_length_mm"</span>, <span class="st">"flipper_length_mm"</span>]], kde<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>])<span class="op">;</span></span>
-<span id="cb32-184"><a href="#cb32-184" aria-hidden="true" tabindex="-1"></a>sns.ecdfplot(df[[<span class="st">"bill_length_mm"</span>, <span class="st">"flipper_length_mm"</span>]], stat<span class="op">=</span><span class="st">"count"</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>], legend<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb32-185"><a href="#cb32-185" aria-hidden="true" tabindex="-1"></a>plt.ylim((<span class="dv">0</span>, <span class="dv">375</span>))<span class="op">;</span></span>
-<span id="cb32-186"><a href="#cb32-186" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb32-187"><a href="#cb32-187" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-188"><a href="#cb32-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-191"><a href="#cb32-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-192"><a href="#cb32-192" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-193"><a href="#cb32-193" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pathlib</span>
-<span id="cb32-194"><a href="#cb32-194" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-195"><a href="#cb32-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-198"><a href="#cb32-198" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-199"><a href="#cb32-199" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-200"><a href="#cb32-200" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">10000</span>)</span>
-<span id="cb32-201"><a href="#cb32-201" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.33</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb32-202"><a href="#cb32-202" aria-hidden="true" tabindex="-1"></a>lr.fit(X_train, y_train)</span>
-<span id="cb32-203"><a href="#cb32-203" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> ConfusionMatrixDisplay.from_estimator(lr, X_test, y_test)</span>
-<span id="cb32-204"><a href="#cb32-204" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb32-205"><a href="#cb32-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-206"><a href="#cb32-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-207"><a href="#cb32-207" aria-hidden="true" tabindex="-1"></a><span class="fu"># Logistic function visualization</span></span>
-<span id="cb32-208"><a href="#cb32-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-211"><a href="#cb32-211" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-212"><a href="#cb32-212" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-213"><a href="#cb32-213" aria-hidden="true" tabindex="-1"></a><span class="co"># https://github.com/ageron/handson-ml3/blob/main/04_training_linear_models.ipynb</span></span>
-<span id="cb32-214"><a href="#cb32-214" aria-hidden="true" tabindex="-1"></a>lim <span class="op">=</span> <span class="dv">6</span></span>
-<span id="cb32-215"><a href="#cb32-215" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="op">-</span>lim, lim, <span class="dv">100</span>)</span>
-<span id="cb32-216"><a href="#cb32-216" aria-hidden="true" tabindex="-1"></a>sig <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> np.exp(<span class="op">-</span>t))</span>
-<span id="cb32-217"><a href="#cb32-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-218"><a href="#cb32-218" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
-<span id="cb32-219"><a href="#cb32-219" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span>lim, lim], [<span class="dv">0</span>, <span class="dv">0</span>], <span class="st">"k-"</span>)</span>
-<span id="cb32-220"><a href="#cb32-220" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span>lim, lim], [<span class="fl">0.5</span>, <span class="fl">0.5</span>], <span class="st">"k:"</span>)</span>
-<span id="cb32-221"><a href="#cb32-221" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span>lim, lim], [<span class="dv">1</span>, <span class="dv">1</span>], <span class="st">"k:"</span>)</span>
-<span id="cb32-222"><a href="#cb32-222" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>, <span class="dv">0</span>], [<span class="op">-</span><span class="fl">1.1</span>, <span class="fl">1.1</span>], <span class="st">"k-"</span>)</span>
-<span id="cb32-223"><a href="#cb32-223" aria-hidden="true" tabindex="-1"></a>plt.plot(t, sig, <span class="st">"b-"</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$\s</span><span class="vs">igma</span><span class="kw">(</span><span class="vs">t</span><span class="kw">)</span><span class="vs"> = </span><span class="dv">\d</span><span class="vs">frac</span><span class="op">{1}</span><span class="vs">{1 </span><span class="op">+</span><span class="vs"> e</span><span class="dv">^</span><span class="vs">{-t}}</span><span class="dv">$</span><span class="vs">"</span>)</span>
-<span id="cb32-224"><a href="#cb32-224" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"t"</span>)</span>
-<span id="cb32-225"><a href="#cb32-225" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">"upper left"</span>)</span>
-<span id="cb32-226"><a href="#cb32-226" aria-hidden="true" tabindex="-1"></a>plt.axis([<span class="op">-</span>lim, lim, <span class="op">-</span><span class="fl">0.1</span>, <span class="fl">1.1</span>])</span>
-<span id="cb32-227"><a href="#cb32-227" aria-hidden="true" tabindex="-1"></a>plt.gca().set_yticks([<span class="dv">0</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>])</span>
-<span id="cb32-228"><a href="#cb32-228" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
-<span id="cb32-229"><a href="#cb32-229" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb32-230"><a href="#cb32-230" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-231"><a href="#cb32-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-232"><a href="#cb32-232" aria-hidden="true" tabindex="-1"></a><span class="fu"># Obtain the logistic function mathematically</span></span>
-<span id="cb32-233"><a href="#cb32-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-234"><a href="#cb32-234" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 1. Write out the linear regression equation</span></span>
-<span id="cb32-235"><a href="#cb32-235" aria-hidden="true" tabindex="-1"></a>$\Huge y=\beta_0+\beta_1 x_1+...+\beta_n x_n$</span>
-<span id="cb32-236"><a href="#cb32-236" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 2. The logistic regression equation is the same as above except output is log odds</span></span>
-<span id="cb32-237"><a href="#cb32-237" aria-hidden="true" tabindex="-1"></a>$\Huge log(odds)=\beta_0+\beta_1 x_1+...+\beta_n x_n$</span>
-<span id="cb32-238"><a href="#cb32-238" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 3. Exponentiate both sides of the logistic regression equation to get odds</span></span>
-<span id="cb32-239"><a href="#cb32-239" aria-hidden="true" tabindex="-1"></a>$\Huge odds=e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}$</span>
-<span id="cb32-240"><a href="#cb32-240" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 4. Write out the probability equation</span></span>
-<span id="cb32-241"><a href="#cb32-241" aria-hidden="true" tabindex="-1"></a>$\Huge p=\frac{odds}{1+odds}$</span>
-<span id="cb32-242"><a href="#cb32-242" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 5. Plug odds (from step 3) into the probability equation</span></span>
-<span id="cb32-243"><a href="#cb32-243" aria-hidden="true" tabindex="-1"></a>$\Huge p=\frac{e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}{1+e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}$</span>
-<span id="cb32-244"><a href="#cb32-244" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 6. Divide the numerator and denominator by the odds (from step 3)</span></span>
-<span id="cb32-245"><a href="#cb32-245" aria-hidden="true" tabindex="-1"></a>$\Huge p=\frac{1}{1+e^{-(\beta_0+\beta_1 x_1+...+\beta_n x_n)}}$</span>
-<span id="cb32-246"><a href="#cb32-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-249"><a href="#cb32-249" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-250"><a href="#cb32-250" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-251"><a href="#cb32-251" aria-hidden="true" tabindex="-1"></a>gnb <span class="op">=</span> GaussianNB()</span>
-<span id="cb32-252"><a href="#cb32-252" aria-hidden="true" tabindex="-1"></a>gnb.fit(X_train, y_train)</span>
-<span id="cb32-253"><a href="#cb32-253" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> ConfusionMatrixDisplay.from_estimator(gnb, X_test, y_test)</span>
-<span id="cb32-254"><a href="#cb32-254" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb32-255"><a href="#cb32-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-256"><a href="#cb32-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-259"><a href="#cb32-259" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-260"><a href="#cb32-260" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-261"><a href="#cb32-261" aria-hidden="true" tabindex="-1"></a>ct <span class="op">=</span> pd.crosstab(df[<span class="st">"species"</span>], df[<span class="st">"body_mass_g"</span>] <span class="op">&gt;</span> df[<span class="st">"body_mass_g"</span>].mean(), margins<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb32-262"><a href="#cb32-262" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-263"><a href="#cb32-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-266"><a href="#cb32-266" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-267"><a href="#cb32-267" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-268"><a href="#cb32-268" aria-hidden="true" tabindex="-1"></a>ct</span>
-<span id="cb32-269"><a href="#cb32-269" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-270"><a href="#cb32-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-273"><a href="#cb32-273" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-274"><a href="#cb32-274" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-275"><a href="#cb32-275" aria-hidden="true" tabindex="-1"></a>likelihood <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">0</span>, <span class="dv">2</span>]</span>
-<span id="cb32-276"><a href="#cb32-276" aria-hidden="true" tabindex="-1"></a>likelihood</span>
-<span id="cb32-277"><a href="#cb32-277" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-278"><a href="#cb32-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-281"><a href="#cb32-281" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-282"><a href="#cb32-282" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-283"><a href="#cb32-283" aria-hidden="true" tabindex="-1"></a>prior <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">2</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">2</span>]</span>
-<span id="cb32-284"><a href="#cb32-284" aria-hidden="true" tabindex="-1"></a>prior</span>
-<span id="cb32-285"><a href="#cb32-285" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-286"><a href="#cb32-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-289"><a href="#cb32-289" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-290"><a href="#cb32-290" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-291"><a href="#cb32-291" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span>  ct.iloc[<span class="dv">3</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">2</span>]</span>
-<span id="cb32-292"><a href="#cb32-292" aria-hidden="true" tabindex="-1"></a>norm</span>
-<span id="cb32-293"><a href="#cb32-293" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-294"><a href="#cb32-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-297"><a href="#cb32-297" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-298"><a href="#cb32-298" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-299"><a href="#cb32-299" aria-hidden="true" tabindex="-1"></a>posterior <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">0</span>]</span>
-<span id="cb32-300"><a href="#cb32-300" aria-hidden="true" tabindex="-1"></a>posterior</span>
-<span id="cb32-301"><a href="#cb32-301" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-302"><a href="#cb32-302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-303"><a href="#cb32-303" aria-hidden="true" tabindex="-1"></a>$\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$</span>
-<span id="cb32-304"><a href="#cb32-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-307"><a href="#cb32-307" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-308"><a href="#cb32-308" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-309"><a href="#cb32-309" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> likelihood <span class="op">*</span> prior <span class="op">/</span> norm</span>
-<span id="cb32-310"><a href="#cb32-310" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-311"><a href="#cb32-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-314"><a href="#cb32-314" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-315"><a href="#cb32-315" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb32-316"><a href="#cb32-316" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"body_mass_g"</span>] <span class="op">&gt;</span> df[<span class="st">"body_mass_g"</span>].mean()</span>
-<span id="cb32-317"><a href="#cb32-317" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb32-318"><a href="#cb32-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-321"><a href="#cb32-321" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-322"><a href="#cb32-322" aria-hidden="true" tabindex="-1"></a><span class="co"># gnb.fit([df["body_mass_g"] &gt; df["body_mass_g"].mean()], y)</span></span>
-<span id="cb32-323"><a href="#cb32-323" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Probability</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: Martin Laptev</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co">    url: https://maptv.github.io</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> last-modified</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> horst_hist-samples.png</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - ml</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> x</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body:</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/stamp.html</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/style.html</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="co">      - ../../asset/tooltip.html</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="co">  - ../../asset/date.lua</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="co">  - include-code-files</span></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>In this blog post I will discuss a few examples of <span class="co">[</span><span class="ot">probability</span><span class="co">](https://en.wikipedia.org/wiki/Probability#:~:text=Probability%20is%20the%20branch%20of,event%20and%201%20indicates%20certainty.)</span> in <span class="co">[</span><span class="ot">machine learning</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Machine_learning#:~:text=Machine%20learning%20(ML)%20is%20a%20field%20of%20study%20in%20artificial%20intelligence%20concerned%20with%20the%20development%20and%20study%20of%20statistical%20algorithms%20that%20can%20effectively%20generalize%20and%20thus%20perform%20tasks%20without%20explicit%20instructions.). If you are new to probability, I recommend one of great textbooks that cover the topic and are available for free online, such as <span class="co">[</span><span class="ot">Think Bayes</span><span class="co">](https://allendowney.github.io/ThinkBayes2)</span> by <span class="co">[</span><span class="ot">Allen Downey</span><span class="co">](https://www.allendowney.com)</span> and <span class="co">[</span><span class="ot">Bayes Rules!</span><span class="co">](https://www.bayesrulesbook.com)</span> by <span class="co">[</span><span class="ot">Alicia A. Johnson</span><span class="co">](https://ajohns24.github.io)</span>, Miles Q. Ott, and <span class="co">[</span><span class="ot">Mine Dogucu</span><span class="co">](https://www.minedogucu.com)</span>.</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Classification</span><span class="co">](https://en.wikipedia.org/wiki/Statistical_classification)</span> <span class="co">[</span><span class="ot">algorithms</span><span class="co">](https://en.wikipedia.org/wiki/Algorithm)</span> algorithms can estimate $n \times k$ class membership probabilities for each dataset, where n is the number of data points in the dataset and k is the number of classes in the <span class="co">[</span><span class="ot">training dataset</span><span class="co">]</span>(https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets#:~:text=training%20data%20set%2C%5B3%5D%20which%20is%20a%20set%20of%20examples%20used%20to%20fit%20the%20parameters%20(e.g.%20weights%20of%20connections%20between%20neurons%20in%20artificial%20neural%20networks)%20of%20the%20model.). Similarly, the <span class="co">[</span><span class="ot">Gaussian Mixtures</span><span class="co">](https://scikit-learn.org/stable/modules/mixture.html)</span> <span class="co">[</span><span class="ot">clustering</span><span class="co">](https://scikit-learn.org/stable/modules/clustering.html)</span> algorithm can generate $n \times k$ cluster label probabilities.</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>Besides  a data point and the Gaussian Mixtures models can estimate cluster membership probability. point , especially <span class="co">[</span><span class="ot">Logistic Regression</span><span class="co">](https://en.wikipedia.org/wiki/Logistic_regression)</span> and <span class="co">[</span><span class="ot">Naive Bayes</span><span class="co">](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)</span>. Every classification algorithm can estimate probabilities of belonging to each class.</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>$\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> KNNImputer</span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> Pipeline</span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> GaussianNB</span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> ConfusionMatrixDisplay</span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
+<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a>df.head()</span>
+<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-57"><a href="#cb28-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-58"><a href="#cb28-58" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">"species"</span>]</span>
+<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.drop(<span class="st">"species"</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.get_dummies(X, columns<span class="op">=</span>[<span class="st">"island"</span>, <span class="st">"sex"</span>])</span>
+<span id="cb28-61"><a href="#cb28-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-62"><a href="#cb28-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-65"><a href="#cb28-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-66"><a href="#cb28-66" aria-hidden="true" tabindex="-1"></a>knni <span class="op">=</span> KNNImputer()</span>
+<span id="cb28-67"><a href="#cb28-67" aria-hidden="true" tabindex="-1"></a>colnames <span class="op">=</span> X.columns</span>
+<span id="cb28-68"><a href="#cb28-68" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> knni.fit_transform(X)</span>
+<span id="cb28-69"><a href="#cb28-69" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.DataFrame(X, columns<span class="op">=</span>colnames)</span>
+<span id="cb28-70"><a href="#cb28-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-71"><a href="#cb28-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-72"><a href="#cb28-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-73"><a href="#cb28-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-76"><a href="#cb28-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-77"><a href="#cb28-77" aria-hidden="true" tabindex="-1"></a><span class="co"># https://blog.4dcu.be/programming/2021/03/19/Code-Nugget-PCA-with-loadings.html</span></span>
+<span id="cb28-78"><a href="#cb28-78" aria-hidden="true" tabindex="-1"></a>pipeline <span class="op">=</span> Pipeline([</span>
+<span id="cb28-79"><a href="#cb28-79" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"scaler"</span>, StandardScaler()),</span>
+<span id="cb28-80"><a href="#cb28-80" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"pca"</span>, PCA(n_components<span class="op">=</span><span class="dv">2</span>)),</span>
+<span id="cb28-81"><a href="#cb28-81" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb28-82"><a href="#cb28-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-83"><a href="#cb28-83" aria-hidden="true" tabindex="-1"></a>pca_data <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb28-84"><a href="#cb28-84" aria-hidden="true" tabindex="-1"></a>    pipeline.fit_transform(X),</span>
+<span id="cb28-85"><a href="#cb28-85" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span>[<span class="st">"PC1"</span>, <span class="st">"PC2"</span>],</span>
+<span id="cb28-86"><a href="#cb28-86" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span>df.index,</span>
+<span id="cb28-87"><a href="#cb28-87" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-88"><a href="#cb28-88" aria-hidden="true" tabindex="-1"></a>pca_data[<span class="st">"species"</span>] <span class="op">=</span> df[<span class="st">"species"</span>]</span>
+<span id="cb28-89"><a href="#cb28-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-90"><a href="#cb28-90" aria-hidden="true" tabindex="-1"></a>pca_step <span class="op">=</span> pipeline.steps[<span class="dv">1</span>][<span class="dv">1</span>]</span>
+<span id="cb28-91"><a href="#cb28-91" aria-hidden="true" tabindex="-1"></a>loadings <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb28-92"><a href="#cb28-92" aria-hidden="true" tabindex="-1"></a>    pca_step.components_.T,</span>
+<span id="cb28-93"><a href="#cb28-93" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span>[<span class="st">"PC1"</span>, <span class="st">"PC2"</span>],</span>
+<span id="cb28-94"><a href="#cb28-94" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span>X.columns,</span>
+<span id="cb28-95"><a href="#cb28-95" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-96"><a href="#cb28-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-97"><a href="#cb28-97" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loading_plot(</span>
+<span id="cb28-98"><a href="#cb28-98" aria-hidden="true" tabindex="-1"></a>    coeff, labels, scale<span class="op">=</span><span class="dv">1</span>, text_x<span class="op">=</span><span class="va">None</span>, text_y<span class="op">=</span><span class="va">None</span>, colors<span class="op">=</span><span class="va">None</span>, visible<span class="op">=</span><span class="va">None</span>, ax<span class="op">=</span>plt, arrow_size<span class="op">=</span><span class="fl">0.5</span></span>
+<span id="cb28-99"><a href="#cb28-99" aria-hidden="true" tabindex="-1"></a>):</span>
+<span id="cb28-100"><a href="#cb28-100" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, label <span class="kw">in</span> <span class="bu">enumerate</span>(labels):</span>
+<span id="cb28-101"><a href="#cb28-101" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> visible <span class="kw">is</span> <span class="va">None</span> <span class="kw">or</span> visible[i]:</span>
+<span id="cb28-102"><a href="#cb28-102" aria-hidden="true" tabindex="-1"></a>            ax.arrow(</span>
+<span id="cb28-103"><a href="#cb28-103" aria-hidden="true" tabindex="-1"></a>                <span class="dv">0</span>,</span>
+<span id="cb28-104"><a href="#cb28-104" aria-hidden="true" tabindex="-1"></a>                <span class="dv">0</span>,</span>
+<span id="cb28-105"><a href="#cb28-105" aria-hidden="true" tabindex="-1"></a>                coeff[i, <span class="dv">0</span>] <span class="op">*</span> scale,</span>
+<span id="cb28-106"><a href="#cb28-106" aria-hidden="true" tabindex="-1"></a>                coeff[i, <span class="dv">1</span>] <span class="op">*</span> scale,</span>
+<span id="cb28-107"><a href="#cb28-107" aria-hidden="true" tabindex="-1"></a>                head_width<span class="op">=</span>arrow_size <span class="op">*</span> scale,</span>
+<span id="cb28-108"><a href="#cb28-108" aria-hidden="true" tabindex="-1"></a>                head_length<span class="op">=</span>arrow_size <span class="op">*</span> scale,</span>
+<span id="cb28-109"><a href="#cb28-109" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span><span class="st">"#000"</span> <span class="cf">if</span> colors <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> colors[i],</span>
+<span id="cb28-110"><a href="#cb28-110" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb28-111"><a href="#cb28-111" aria-hidden="true" tabindex="-1"></a>            ax.text(</span>
+<span id="cb28-112"><a href="#cb28-112" aria-hidden="true" tabindex="-1"></a>                text_x.iloc[i] <span class="cf">if</span> text_x.<span class="bu">all</span>() <span class="cf">else</span> coeff[i, <span class="dv">0</span>] <span class="op">*</span> <span class="fl">1.2</span> <span class="op">*</span> scale,</span>
+<span id="cb28-113"><a href="#cb28-113" aria-hidden="true" tabindex="-1"></a>                text_y.iloc[i] <span class="cf">if</span> text_y.<span class="bu">all</span>() <span class="cf">else</span> coeff[i, <span class="dv">1</span>] <span class="op">*</span> <span class="fl">1.2</span> <span class="op">*</span> scale,</span>
+<span id="cb28-114"><a href="#cb28-114" aria-hidden="true" tabindex="-1"></a>                label,</span>
+<span id="cb28-115"><a href="#cb28-115" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span><span class="st">"#000"</span> <span class="cf">if</span> colors <span class="kw">is</span> <span class="va">None</span> <span class="cf">else</span> colors[i],</span>
+<span id="cb28-116"><a href="#cb28-116" aria-hidden="true" tabindex="-1"></a>                ha<span class="op">=</span><span class="st">"center"</span>,</span>
+<span id="cb28-117"><a href="#cb28-117" aria-hidden="true" tabindex="-1"></a>                va<span class="op">=</span><span class="st">"center"</span>,</span>
+<span id="cb28-118"><a href="#cb28-118" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb28-119"><a href="#cb28-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-120"><a href="#cb28-120" aria-hidden="true" tabindex="-1"></a>loadings <span class="op">=</span> loadings <span class="op">*</span> <span class="fl">3.2</span></span>
+<span id="cb28-121"><a href="#cb28-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-122"><a href="#cb28-122" aria-hidden="true" tabindex="-1"></a>text_x <span class="op">=</span> loadings[<span class="st">"PC1"</span>] <span class="op">*</span> <span class="fl">2.4</span></span>
+<span id="cb28-123"><a href="#cb28-123" aria-hidden="true" tabindex="-1"></a>text_y <span class="op">=</span> loadings[<span class="st">"PC2"</span>] <span class="op">*</span> <span class="fl">2.4</span></span>
+<span id="cb28-124"><a href="#cb28-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-125"><a href="#cb28-125" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"sex_Male"</span>] <span class="op">-=</span> <span class="fl">.5</span></span>
+<span id="cb28-126"><a href="#cb28-126" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"bill_depth_mm"</span>] <span class="op">-=</span> <span class="fl">.4</span></span>
+<span id="cb28-127"><a href="#cb28-127" aria-hidden="true" tabindex="-1"></a>text_x[<span class="st">"bill_depth_mm"</span>] <span class="op">-=</span> <span class="fl">.4</span></span>
+<span id="cb28-128"><a href="#cb28-128" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"sex_Female"</span>] <span class="op">+=</span> <span class="fl">.5</span></span>
+<span id="cb28-129"><a href="#cb28-129" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"island_Torgersen"</span>] <span class="op">+=</span> <span class="fl">.1</span></span>
+<span id="cb28-130"><a href="#cb28-130" aria-hidden="true" tabindex="-1"></a>text_x[<span class="st">"island_Dream"</span>] <span class="op">-=</span> <span class="fl">.5</span></span>
+<span id="cb28-131"><a href="#cb28-131" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"island_Dream"</span>] <span class="op">-=</span> <span class="fl">.3</span></span>
+<span id="cb28-132"><a href="#cb28-132" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"island_Biscoe"</span>] <span class="op">+=</span> <span class="fl">.3</span></span>
+<span id="cb28-133"><a href="#cb28-133" aria-hidden="true" tabindex="-1"></a>text_x[<span class="st">"island_Biscoe"</span>] <span class="op">+=</span> <span class="fl">.3</span></span>
+<span id="cb28-134"><a href="#cb28-134" aria-hidden="true" tabindex="-1"></a>text_x[<span class="st">"flipper_length_mm"</span>] <span class="op">+=</span> <span class="fl">.55</span></span>
+<span id="cb28-135"><a href="#cb28-135" aria-hidden="true" tabindex="-1"></a>text_x[<span class="st">"body_mass_g"</span>] <span class="op">+=</span> <span class="fl">.95</span></span>
+<span id="cb28-136"><a href="#cb28-136" aria-hidden="true" tabindex="-1"></a>text_y[<span class="st">"body_mass_g"</span>] <span class="op">-=</span> <span class="fl">.05</span></span>
+<span id="cb28-137"><a href="#cb28-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-138"><a href="#cb28-138" aria-hidden="true" tabindex="-1"></a><span class="co"># https://seaborn.pydata.org/generated/seaborn.jointplot.html</span></span>
+<span id="cb28-139"><a href="#cb28-139" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> sns.jointplot(data<span class="op">=</span>pca_data, x<span class="op">=</span><span class="st">"PC1"</span>, y<span class="op">=</span><span class="st">"PC2"</span>, hue<span class="op">=</span><span class="st">"species"</span>, ratio<span class="op">=</span><span class="dv">4</span>, marginal_ticks<span class="op">=</span><span class="va">True</span>, height<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb28-140"><a href="#cb28-140" aria-hidden="true" tabindex="-1"></a>g.plot_joint(sns.kdeplot, zorder<span class="op">=</span><span class="dv">0</span>, levels<span class="op">=</span><span class="dv">6</span>)</span>
+<span id="cb28-141"><a href="#cb28-141" aria-hidden="true" tabindex="-1"></a>g.plot_marginals(sns.rugplot, height<span class="op">=-</span><span class="fl">.025</span>, clip_on<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb28-142"><a href="#cb28-142" aria-hidden="true" tabindex="-1"></a><span class="co"># Add loadings</span></span>
+<span id="cb28-143"><a href="#cb28-143" aria-hidden="true" tabindex="-1"></a>loading_plot(loadings[[<span class="st">"PC1"</span>, <span class="st">"PC2"</span>]].values, loadings.index, text_x<span class="op">=</span>text_x, text_y<span class="op">=</span>text_y, scale<span class="op">=</span><span class="dv">2</span>, arrow_size<span class="op">=</span><span class="fl">0.02</span>)</span>
+<span id="cb28-144"><a href="#cb28-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-145"><a href="#cb28-145" aria-hidden="true" tabindex="-1"></a><span class="co"># Add variance explained by the</span></span>
+<span id="cb28-146"><a href="#cb28-146" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="ss">f"PC1 (</span><span class="sc">{</span>pca_step<span class="sc">.</span>explained_variance_ratio_[<span class="dv">0</span>]<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss"> %)"</span>)</span>
+<span id="cb28-147"><a href="#cb28-147" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="ss">f"PC2 (</span><span class="sc">{</span>pca_step<span class="sc">.</span>explained_variance_ratio_[<span class="dv">1</span>]<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss"> %)"</span>)</span>
+<span id="cb28-148"><a href="#cb28-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-149"><a href="#cb28-149" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb28-150"><a href="#cb28-150" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"PCA_with_loadings.png"</span>, dpi<span class="op">=</span><span class="dv">300</span>)</span>
+<span id="cb28-151"><a href="#cb28-151" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb28-152"><a href="#cb28-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-153"><a href="#cb28-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-156"><a href="#cb28-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-157"><a href="#cb28-157" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-158"><a href="#cb28-158" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"count"</span>)<span class="op">;</span></span>
+<span id="cb28-159"><a href="#cb28-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-160"><a href="#cb28-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-163"><a href="#cb28-163" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-164"><a href="#cb28-164" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-165"><a href="#cb28-165" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"density"</span>)<span class="op">;</span></span>
+<span id="cb28-166"><a href="#cb28-166" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb28-167"><a href="#cb28-167" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-168"><a href="#cb28-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-171"><a href="#cb28-171" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-172"><a href="#cb28-172" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-173"><a href="#cb28-173" aria-hidden="true" tabindex="-1"></a>sns.displot(df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, kde<span class="op">=</span><span class="va">True</span>, rug<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">"species"</span>, stat<span class="op">=</span><span class="st">"proportion"</span>)<span class="op">;</span></span>
+<span id="cb28-174"><a href="#cb28-174" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb28-175"><a href="#cb28-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-176"><a href="#cb28-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-179"><a href="#cb28-179" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-180"><a href="#cb28-180" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-181"><a href="#cb28-181" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb28-182"><a href="#cb28-182" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'PDF and CDF comparision'</span>)</span>
+<span id="cb28-183"><a href="#cb28-183" aria-hidden="true" tabindex="-1"></a>sns.histplot(df[[<span class="st">"bill_length_mm"</span>, <span class="st">"flipper_length_mm"</span>]], kde<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>axes[<span class="dv">0</span>])<span class="op">;</span></span>
+<span id="cb28-184"><a href="#cb28-184" aria-hidden="true" tabindex="-1"></a>sns.ecdfplot(df[[<span class="st">"bill_length_mm"</span>, <span class="st">"flipper_length_mm"</span>]], stat<span class="op">=</span><span class="st">"count"</span>, ax<span class="op">=</span>axes[<span class="dv">1</span>], legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb28-185"><a href="#cb28-185" aria-hidden="true" tabindex="-1"></a>plt.ylim((<span class="dv">0</span>, <span class="dv">375</span>))<span class="op">;</span></span>
+<span id="cb28-186"><a href="#cb28-186" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb28-187"><a href="#cb28-187" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-188"><a href="#cb28-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-191"><a href="#cb28-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-192"><a href="#cb28-192" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-193"><a href="#cb28-193" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pathlib</span>
+<span id="cb28-194"><a href="#cb28-194" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-195"><a href="#cb28-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-198"><a href="#cb28-198" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-199"><a href="#cb28-199" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-200"><a href="#cb28-200" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">10000</span>)</span>
+<span id="cb28-201"><a href="#cb28-201" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.33</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb28-202"><a href="#cb28-202" aria-hidden="true" tabindex="-1"></a>lr.fit(X_train, y_train)</span>
+<span id="cb28-203"><a href="#cb28-203" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> ConfusionMatrixDisplay.from_estimator(lr, X_test, y_test)</span>
+<span id="cb28-204"><a href="#cb28-204" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb28-205"><a href="#cb28-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-206"><a href="#cb28-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-207"><a href="#cb28-207" aria-hidden="true" tabindex="-1"></a><span class="fu"># Logistic function visualization</span></span>
+<span id="cb28-208"><a href="#cb28-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-211"><a href="#cb28-211" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-212"><a href="#cb28-212" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-213"><a href="#cb28-213" aria-hidden="true" tabindex="-1"></a><span class="co"># https://github.com/ageron/handson-ml3/blob/main/04_training_linear_models.ipynb</span></span>
+<span id="cb28-214"><a href="#cb28-214" aria-hidden="true" tabindex="-1"></a>lim <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb28-215"><a href="#cb28-215" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="op">-</span>lim, lim, <span class="dv">100</span>)</span>
+<span id="cb28-216"><a href="#cb28-216" aria-hidden="true" tabindex="-1"></a>sig <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> np.exp(<span class="op">-</span>t))</span>
+<span id="cb28-217"><a href="#cb28-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-218"><a href="#cb28-218" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb28-219"><a href="#cb28-219" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span>lim, lim], [<span class="dv">0</span>, <span class="dv">0</span>], <span class="st">"k-"</span>)</span>
+<span id="cb28-220"><a href="#cb28-220" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span>lim, lim], [<span class="fl">0.5</span>, <span class="fl">0.5</span>], <span class="st">"k:"</span>)</span>
+<span id="cb28-221"><a href="#cb28-221" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span>lim, lim], [<span class="dv">1</span>, <span class="dv">1</span>], <span class="st">"k:"</span>)</span>
+<span id="cb28-222"><a href="#cb28-222" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>, <span class="dv">0</span>], [<span class="op">-</span><span class="fl">1.1</span>, <span class="fl">1.1</span>], <span class="st">"k-"</span>)</span>
+<span id="cb28-223"><a href="#cb28-223" aria-hidden="true" tabindex="-1"></a>plt.plot(t, sig, <span class="st">"b-"</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="vs">r"</span><span class="dv">$\s</span><span class="vs">igma</span><span class="kw">(</span><span class="vs">t</span><span class="kw">)</span><span class="vs"> = </span><span class="dv">\d</span><span class="vs">frac</span><span class="op">{1}</span><span class="vs">{1 </span><span class="op">+</span><span class="vs"> e</span><span class="dv">^</span><span class="vs">{-t}}</span><span class="dv">$</span><span class="vs">"</span>)</span>
+<span id="cb28-224"><a href="#cb28-224" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"t"</span>)</span>
+<span id="cb28-225"><a href="#cb28-225" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">"upper left"</span>)</span>
+<span id="cb28-226"><a href="#cb28-226" aria-hidden="true" tabindex="-1"></a>plt.axis([<span class="op">-</span>lim, lim, <span class="op">-</span><span class="fl">0.1</span>, <span class="fl">1.1</span>])</span>
+<span id="cb28-227"><a href="#cb28-227" aria-hidden="true" tabindex="-1"></a>plt.gca().set_yticks([<span class="dv">0</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>])</span>
+<span id="cb28-228"><a href="#cb28-228" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb28-229"><a href="#cb28-229" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb28-230"><a href="#cb28-230" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-231"><a href="#cb28-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-232"><a href="#cb28-232" aria-hidden="true" tabindex="-1"></a><span class="fu"># Obtain the logistic function mathematically</span></span>
+<span id="cb28-233"><a href="#cb28-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-234"><a href="#cb28-234" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 1. Write out the linear regression equation</span></span>
+<span id="cb28-235"><a href="#cb28-235" aria-hidden="true" tabindex="-1"></a>$\Huge y=\beta_0+\beta_1 x_1+...+\beta_n x_n$</span>
+<span id="cb28-236"><a href="#cb28-236" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 2. The logistic regression equation is the same as above except output is log odds</span></span>
+<span id="cb28-237"><a href="#cb28-237" aria-hidden="true" tabindex="-1"></a>$\Huge log(odds)=\beta_0+\beta_1 x_1+...+\beta_n x_n$</span>
+<span id="cb28-238"><a href="#cb28-238" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 3. Exponentiate both sides of the logistic regression equation to get odds</span></span>
+<span id="cb28-239"><a href="#cb28-239" aria-hidden="true" tabindex="-1"></a>$\Huge odds=e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}$</span>
+<span id="cb28-240"><a href="#cb28-240" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 4. Write out the probability equation</span></span>
+<span id="cb28-241"><a href="#cb28-241" aria-hidden="true" tabindex="-1"></a>$\Huge p=\frac{odds}{1+odds}$</span>
+<span id="cb28-242"><a href="#cb28-242" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 5. Plug odds (from step 3) into the probability equation</span></span>
+<span id="cb28-243"><a href="#cb28-243" aria-hidden="true" tabindex="-1"></a>$\Huge p=\frac{e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}{1+e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}$</span>
+<span id="cb28-244"><a href="#cb28-244" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step 6. Divide the numerator and denominator by the odds (from step 3)</span></span>
+<span id="cb28-245"><a href="#cb28-245" aria-hidden="true" tabindex="-1"></a>$\Huge p=\frac{1}{1+e^{-(\beta_0+\beta_1 x_1+...+\beta_n x_n)}}$</span>
+<span id="cb28-246"><a href="#cb28-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-249"><a href="#cb28-249" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-250"><a href="#cb28-250" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-251"><a href="#cb28-251" aria-hidden="true" tabindex="-1"></a>gnb <span class="op">=</span> GaussianNB()</span>
+<span id="cb28-252"><a href="#cb28-252" aria-hidden="true" tabindex="-1"></a>gnb.fit(X_train, y_train)</span>
+<span id="cb28-253"><a href="#cb28-253" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> ConfusionMatrixDisplay.from_estimator(gnb, X_test, y_test)</span>
+<span id="cb28-254"><a href="#cb28-254" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb28-255"><a href="#cb28-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-256"><a href="#cb28-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-259"><a href="#cb28-259" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-260"><a href="#cb28-260" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-261"><a href="#cb28-261" aria-hidden="true" tabindex="-1"></a>ct <span class="op">=</span> pd.crosstab(df[<span class="st">"species"</span>], df[<span class="st">"body_mass_g"</span>] <span class="op">&gt;</span> df[<span class="st">"body_mass_g"</span>].mean(), margins<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb28-262"><a href="#cb28-262" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-263"><a href="#cb28-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-266"><a href="#cb28-266" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-267"><a href="#cb28-267" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-268"><a href="#cb28-268" aria-hidden="true" tabindex="-1"></a>ct</span>
+<span id="cb28-269"><a href="#cb28-269" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-270"><a href="#cb28-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-273"><a href="#cb28-273" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-274"><a href="#cb28-274" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-275"><a href="#cb28-275" aria-hidden="true" tabindex="-1"></a>likelihood <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">0</span>, <span class="dv">2</span>]</span>
+<span id="cb28-276"><a href="#cb28-276" aria-hidden="true" tabindex="-1"></a>likelihood</span>
+<span id="cb28-277"><a href="#cb28-277" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-278"><a href="#cb28-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-281"><a href="#cb28-281" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-282"><a href="#cb28-282" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-283"><a href="#cb28-283" aria-hidden="true" tabindex="-1"></a>prior <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">2</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">2</span>]</span>
+<span id="cb28-284"><a href="#cb28-284" aria-hidden="true" tabindex="-1"></a>prior</span>
+<span id="cb28-285"><a href="#cb28-285" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-286"><a href="#cb28-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-289"><a href="#cb28-289" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-290"><a href="#cb28-290" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-291"><a href="#cb28-291" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span>  ct.iloc[<span class="dv">3</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">2</span>]</span>
+<span id="cb28-292"><a href="#cb28-292" aria-hidden="true" tabindex="-1"></a>norm</span>
+<span id="cb28-293"><a href="#cb28-293" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-294"><a href="#cb28-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-297"><a href="#cb28-297" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-298"><a href="#cb28-298" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-299"><a href="#cb28-299" aria-hidden="true" tabindex="-1"></a>posterior <span class="op">=</span> ct.iloc[<span class="dv">0</span>, <span class="dv">0</span>] <span class="op">/</span> ct.iloc[<span class="dv">3</span>, <span class="dv">0</span>]</span>
+<span id="cb28-300"><a href="#cb28-300" aria-hidden="true" tabindex="-1"></a>posterior</span>
+<span id="cb28-301"><a href="#cb28-301" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-302"><a href="#cb28-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-303"><a href="#cb28-303" aria-hidden="true" tabindex="-1"></a>$\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$</span>
+<span id="cb28-304"><a href="#cb28-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-307"><a href="#cb28-307" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-308"><a href="#cb28-308" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-309"><a href="#cb28-309" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> likelihood <span class="op">*</span> prior <span class="op">/</span> norm</span>
+<span id="cb28-310"><a href="#cb28-310" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-311"><a href="#cb28-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-314"><a href="#cb28-314" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-315"><a href="#cb28-315" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb28-316"><a href="#cb28-316" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"body_mass_g"</span>] <span class="op">&gt;</span> df[<span class="st">"body_mass_g"</span>].mean()</span>
+<span id="cb28-317"><a href="#cb28-317" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-318"><a href="#cb28-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-321"><a href="#cb28-321" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb28-322"><a href="#cb28-322" aria-hidden="true" tabindex="-1"></a><span class="co"># gnb.fit([df["body_mass_g"] &gt; df["body_mass_g"].mean()], y)</span></span>
+<span id="cb28-323"><a href="#cb28-323" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
