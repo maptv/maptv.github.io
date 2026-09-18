@@ -381,10 +381,6 @@ g.node g.label:has(span.nodeLabel) * {
 .bold {
   font-weight: bold;
 }
-.noscrollequation {
-  overflow-x: visible;
-  overflow-y: clip;
-}
 .column-margin {
 	font-size: 1em;
 	overflow: visible;

@@ -183,7 +183,7 @@ week”
 (<a href="#dow" id="dayofweek" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a>). If we multiply an
 <a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of ten days">x</a> ${layoInput ? “↔” : “↕”} axis
+data-bs-title="group of ten days">x</a> ${layoInput ? “↔” : “↕”} axis
 label by ten and add it to a
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a> ${layoInput ? “↕” : “↔”} axis label,
@@ -910,7 +910,7 @@ class="nounder">⌊</a>${decDotyColor1} ÷ 5<a
 href="https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part"
 class="nounder">⌋</a>. If we divide a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a> or a
+data-bs-title="positive integer day of year">pid</a> or a
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a> by 5, the remainder will be its
 corresponding “day of pentaday”
@@ -946,7 +946,7 @@ Schedule <span class="color14by32 tool" data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>,
 a Dec schedule that plans for exactly 219 work days per year, which is
 about an <a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of ten days">x</a> more than the 208 to 210 work
+data-bs-title="group of ten days">x</a> more than the 208 to 210 work
 days per year provisioned by a [four-day
 workweek](https://en.wikipedia.org/wiki/Four-day_workweek#:~:text=an%20arrangement%20where%20a%20workplace%20or%20place%20of%20education%20has%20its%20employees%20or%20students%20work%20or%20attend%20school%2C%20college%20or%20university%20over%20the%20course%20of%20four%20days%20per%20week).
 Schedule <span class="color14by32 tool" data-bs-toggle="tooltip"
@@ -1011,12 +1011,12 @@ If we follow Schedule <span class="color14by32 tool"
 data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>,
 a <a href="#pir" class="tool" data-bs-toggle="tooltip"
-data-bs-title="pentaday interquintile ranges">pir</a> is to a
+data-bs-title="pentaday interquintile range">pir</a> is to a
 [workweek](https://en.wikipedia.org/wiki/Workweek_and_weekend#:~:text=the%20part%20of%20the%20seven%2Dday%20week%20devoted%20to%20working)
 as a <a href="#p" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentaday">p</a> is to a week and as an
 <a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of ten days">x</a> is to a
+data-bs-title="group of ten days">x</a> is to a
 [fortnight](https://en.wikipedia.org/wiki/Fortnight#:~:text=a%20unit%20of%20time%20equal%20to%2014%20days).
 
 The pair of days between two
@@ -1170,12 +1170,13 @@ data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>,
 <a href="#pir" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentaday interquintile ranges">pir</a> only contain
 workdays and <a href="#lim" class="tool" data-bs-toggle="tooltip"
-data-bs-title="liminal interconnecting margin">lim</a> are solely made
+data-bs-title="liminal interconnecting margins">lim</a> are solely made
 up of rest days. When we follow Schedule <span class="color14by32 tool"
 data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>,
 a <a href="#lim" class="tool" data-bs-toggle="tooltip"
-data-bs-title="liminals">lim</a> is the Dec analog of a weekend. To make
+data-bs-title="liminal interconnecting margin">lim</a> is the Dec analog
+of a weekend. To make
 <a href="#lim" class="tool" data-bs-toggle="tooltip"
 data-bs-title="liminal interconnecting margin">lim</a> appear like
 weekends we can start from
@@ -1369,7 +1370,7 @@ data-bs-title="mixed integer day of year">mid</a>) of the first and last
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year">mid</a> that is derived from
 an <a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer days of year">nid</a> to discern between
+data-bs-title="negative integer day of year">nid</a> to discern between
 the work and rest days of any of the 32 Dec <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="five-bit">5b</span> schedules in
 common years.
@@ -3581,9 +3582,9 @@ calendar, 13 weeks or 91
 data-bs-title="days">d</a> in the [World Season
 Calendar](https://en.wikipedia.org/wiki/Isaac_Asimov#Calendar:~:text=divides%20the%20year%20into%20four%20seasons%20%28named%20A%E2%80%93D%29%20of%2013%20weeks%20%2891%20days%29%20each),
 and 1 <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a>, 10
+data-bs-title="group of one hundred days">h</a>, 10
 <a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of ten days">x</a>, 20
+data-bs-title="groups of ten days">x</a>, 20
 <a href="#p" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentadays">p</a>, or 100
 <a href="#d" class="tool" data-bs-toggle="tooltip"
@@ -4191,7 +4192,7 @@ ${decDotyPadColor1}, its first digit is a
 <a href="#pih" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer hectoday">pih</a>: ${decPih}, its last
 two digits are a <a href="#doh" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of hectoday">doh</a>: ${decDohPidColor2}, its first
+data-bs-title="day of hectoday">doh</a>: ${decDohPidColor2}, its first
 two digits are a <a href="#pix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer xún">pix</a>: ${decDekColor}, and its
 final digit is a <a href="#dox" class="tool" data-bs-toggle="tooltip"
@@ -4234,7 +4235,7 @@ shows the current <a href="#nih" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer hectoday">nih</a> with its first digit:
 <span class="overline">${decNihAbsColor2}</span>, a
 <a href="#doh" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of hectoday">doh</a> with its final two digits:
+data-bs-title="day of hectoday">doh</a> with its final two digits:
 ${decDohNidMidPadColor2}, an
 <a href="#nih" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer hectoday">nih</a> “mixed integer xún”
@@ -4376,7 +4377,7 @@ the “day of
 (<a href="#doe" id="dayofera" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of era">doe</a>) equivalent of a year+day Dec date
 into a <a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a>.
+data-bs-title="day of week">dow</a>.
 
 # Day of era (doe)
 
@@ -5100,7 +5101,7 @@ $$\text{woy} = \dfrac{\text{bow}+\text{boydow}}{7} \qquad(30)$$
 
 We can also convert a
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of week">bow</a> into a
+data-bs-title="beginning of week">bow</a> into a
 <a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a><a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> using
@@ -5628,7 +5629,7 @@ data-bs-title="week of year">woy</a> and
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a>, we expand a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a> into a
+data-bs-title="positive integer day of year">pid</a> into a
 <span class="nowrap">7×<a href="#woy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="week of year">woy</a><span class="mono">-</span><a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a><a href="#dow" class="tool" data-bs-toggle="tooltip"
@@ -5648,7 +5649,7 @@ data-bs-toggle="tooltip" data-bs-title="quinary">b5</span> suit and a
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tridecimal">b13</span> rod. The result is similar to a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a> in that the first
+data-bs-title="positive integer day of year">pid</a> in that the first
 of its three digits represents a season, its second digit tallies weeks
 instead of <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of ten days">x</a>, and its final digit counts
@@ -5892,7 +5893,7 @@ one-based, we would add one to the right-hand side of
 
 According to <a href="#eq-moy2bom" class="quarto-xref">Equation 36</a>,
 a <a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of month">bom</a> should expand to
+data-bs-title="beginning of month">bom</a> should expand to
 ⌊(<a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="months of year">moy</a>×153+2)÷5⌋, but in Dec dates we
 can interchange <a href="#bom" class="tool" data-bs-toggle="tooltip"
@@ -5952,7 +5953,7 @@ Equations <a href="#eq-pid2moy" class="quarto-xref">33</a>,
 <a href="#eq-moy2bom" class="quarto-xref">36</a>, and
 <a href="#eq-dom" class="quarto-xref">37</a> could turn a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a> into a month and
+data-bs-title="positive integer day of year">pid</a> into a month and
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</a>.
 
@@ -6210,6 +6211,30 @@ data-bs-title="days of month">dom</a>+<a href="#dow" class="tool" data-bs-toggle
 data-bs-title="days of week">dow</a>:
 <span class="color69by100">1969</span>+<span class="color301by365">301</span>+<span class="color0">01</span>+<span class="color4by7">4</span>.
 
+We can identify each type of expanded
+<a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer days of year">pid</a> by its digit
+structure, which is the number of digits in each of its components,
+separated by plus signs. The digit structure is 3+2+1 for
+<a href="#mud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="misaligned unit differences">mud</a>+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">dom</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of week">dow</a>, 3+2 for
+<a href="#bom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginning of month">bom</a>+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">dom</a>, 2+2 for
+<a href="#moy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="months of year">moy</a>+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">dom</a>, 3+1 for
+<a href="#bow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginning of week">bow</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of week">dow</a>, and 2+1 for
+<a href="#woy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="week of year">woy</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of week">dow</a>. Apart from digit structure, we can
+recognize expanded <a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer days of year">pid</a> by their Decolors.
+
 From a [network
 science](https://en.wikipedia.org/wiki/Network_science#:~:text=an%20academic%20field%20which%20studies%20complex%20networks)
 perspective, <a href="#mud" class="tool" data-bs-toggle="tooltip"
@@ -6437,7 +6462,7 @@ viewof mudInput = Inputs.radio(
 ```
 
 After we turn a <a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit differences">mud</a> into a
+data-bs-title="misaligned unit difference">mud</a> into a
 <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="month of year">moy</a>, we can find the zero-based index
 of its corresponding Gregorian calendar season:
@@ -6468,11 +6493,11 @@ data-bs-title="beginning of month">bom</a> and
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</a>, a
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of week">bow</a> and
+data-bs-title="beginning of week">bow</a> and
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of week">dow</a>, or a
 <a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit differences">mud</a>,
+data-bs-title="misaligned unit difference">mud</a>,
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</a>, and
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
@@ -6647,7 +6672,7 @@ data-bs-title="day of bimester">Dob</span>
 Each moon diagram in the [small
 multiple](https://en.wikipedia.org/wiki/Small_multiple#:~:text=a%20series%20of%20similar%20graphs%20or%20charts%20using%20the%20same%20scale%20and%20axes)
 grid below has a <a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of bimester">dob</a> above it. When the “Layout”
+data-bs-title="day of bimester">dob</a> above it. When the “Layout”
 radio input beneath the grid is set to “Dec”, the grid itself portrays a
 lunar year, its rows depict lunar months, its row labels are zero-based
 lunar <a href="#bom" class="tool" data-bs-toggle="tooltip"
@@ -7056,7 +7081,7 @@ data-bs-title="beginning of bimester">bob</a> and
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of bimester">dob</a> or a
 <a href="#soi" class="tool" data-bs-toggle="tooltip"
-data-bs-title="spin orbit intervals">soi</a> or two between the
+data-bs-title="spin orbit interval">soi</a> or two between the
 <a href="#bob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of bimester">bob</a> and
 <a href="#sob" class="tool" data-bs-toggle="tooltip"
@@ -7159,9 +7184,9 @@ signals can travel from Earth to the Moon in 1.25 to 1.39 Dec seconds
 (<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec seconds">s</a>), Venus in 132 to 907
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec second">s</a>, or Mars in 190 to 1390
+data-bs-title="Dec seconds">s</a>, or Mars in 190 to 1390
 <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec second">s</a>.
+data-bs-title="Dec seconds">s</a>.
 
 To put these numbers in context, the speed of light is around 7.195
 [taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
@@ -7171,7 +7196,7 @@ data-bs-title="taurs">c</a>) per
 data-bs-title="Dec seconds">s</a>, the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20Hemispheres)
 is about 1 <a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a>, there are exactly 90000
+data-bs-title="taur">c</a>, there are exactly 90000
 <a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec seconds">s</a> or 86400 [International System of
 Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
@@ -7323,7 +7348,7 @@ changing the decimal year value that the date represents. Date expansion
 allows Decalendar to use measurement units other than years and days,
 such as bimesters, months, and weeks. The simplest expanded dates show
 an onset, such as a <a href="#bob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of bimester">bob</a>,
+data-bs-title="beginning of bimester">bob</a>,
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of month">bom</a>, or
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
@@ -9214,10 +9239,6 @@ form.oi-3a86ea {
   --input-width: 200px;
   padding-right: 9px;
 }
-div.column-page:has(svg.leftplot), div.column-page:has(svg.rightplot) {
-  display: flex;
-  justify-content: space-between;
-}
 div.observablehq > figure > h2 {
   text-align: center;
   font-size: 1.3rem;
@@ -9258,26 +9279,6 @@ div.equationgroup {
 .nowrap {
   white-space: nowrap;
 }
-svg.topplot {
-  margin-top: -9px;
-  margin-bottom: -9px;
-  overflow: clip;
-}
-svg.btmplot {
-  margin-top: -9px;
-  margin-bottom: -15px;
-  overflow: clip;
-}
-svg.leftplot {
-  margin-top: -9px;
-  margin-bottom: -15px;
-  overflow: clip;
-}
-svg.rightplot {
-  margin-top: -9px;
-  margin-bottom: -15px;
-  overflow: clip;
-}
 form.oi-3a86ea-checkbox {
   max-width: 800px;
 }
@@ -9300,11 +9301,24 @@ div#leapscrubvert form div:has(label):nth-child(even) {
 div#leapscrubvert form div:has(label):nth-child(odd) {
   width: 150px;
 }
-div#leapscrubvert form > label, div#sliders form > label {
+div#leapscrubvert form > label, div.sliders form > label {
   min-width: 110px;
   white-space: nowrap;
 }
-div#leapscrubvert form div:has(label), div#sliders form div:has(label) {
+/* div.sliders wraps the Day of year/Month/Day of month range inputs
+   (className: sliders). Fixed label width lines up every text box in
+   the same column, and letting the range track grow to fill the rest
+   of the row makes every slider the same, maximal length. */
+div.sliders form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+div.sliders form input[type="range"] {
+  flex: 1 1 auto;
+  width: auto;
+}
+div#leapscrubvert form div:has(label), div.sliders form div:has(label) {
   width: 205px;
 }
 div#leapscrubvert form:last-child {
@@ -9371,23 +9385,11 @@ div#bitwise div > form > button {
 #topdatenav figcaption {
   display: none;
 }
-div.cell-output-display:has(svg#mermaid-2) {
-  margin-top: -20px;
-  margin-bottom: -19px;
-}
-div.cell-output-display:has(svg#mermaid-3) {
-  margin-top: -36px;
-  margin-bottom: -21px;
-}
-div.cell-output-display:has(svg#mermaid-4) {
-  margin-top: -34px;
-  margin-bottom: -21px;
-}
-div.cell-output-display:has(svg#mermaid-5) {
-  margin-top: -20px;
-  margin-bottom: -19px;
-}
-div.cell-output-display:has(svg#mermaid-6) {
+/* Uniform spacing for all six schedule diagrams, independent of the
+   mermaid-generated svg id (which shifts if diagrams are added/removed
+   elsewhere on the page and previously left title-to-diagram spacing
+   inconsistent, even overlapping for some diagrams). */
+.doxdiagram div.cell-output-display {
   margin-top: -20px;
   margin-bottom: -19px;
 }
@@ -9408,47 +9410,11 @@ figcaption {
 div.tippy-box div.tippy-content {
   overflow: hidden;
 }
-.viz-header, .viz-footer {
-  max-width: 640px;
-  font-family: FranklinITCProLight, Arial, Helvetica, sans-serif;
-  background-color: #fff;
-}
-.viz-header {
-  font-size: 18px;
-  font-weight: 700;
-}
-.instructions  {
-  font-size: 16px;
-}
-.caption  {
-/*     max-width: ${svgWidth * 0.9}px; */
-  font-size: 14px;
-  color: #666;
-}
-.data-source {
-  text-decoration: underline!important;
-  color: inherit!important;
-}
-.viz-static {
-  height: auto; 
-  border: 1px solid #c0c0c0;"
-}
-@media (max-width: 768px) {
-  .viz-static {
-    max-width: 100%;
-  }
-}
-#boundinputs label {
-  width: 90px;
-}
 form.oi-3a86ea {
   flex-wrap: nowrap;
 }
 div > form > label {
   --label-width: 110px;
-}
-#fingerbinarysvg {
-  margin-bottom: 9px;
 }
 #fingerbinarysvg {
   margin-bottom: 14px;
@@ -9457,7 +9423,7 @@ div > form > label {
   margin-top: 6px;
   margin-bottom: 12px;
 }
-@media (max-width: 690px), @media (min-width: 768px) and (max-width: 948px), @media (min-width: 992px) and (max-width: 1196px) {
+@media (max-width: 690px), (min-width: 768px) and (max-width: 948px), (min-width: 992px) and (max-width: 1196px) {
   #calsliders div.cell-output.cell-output-display:has(#calsliders-1) {
     order: -2;
   }
@@ -9477,6 +9443,20 @@ code {
 }
 #moonplot {
   overflow: visible;
+}
+/* Die faces, playing cards, half-dominoes, counting rods, and suit
+   symbols are all rare Unicode symbol-block characters. Some mobile
+   browsers (notably iOS Safari) render them with emoji presentation —
+   larger and with different metrics than the plain text glyph desktop
+   browsers use — which overflows the small fixed-height boxes these
+   are centered in below. Forcing text presentation keeps the glyph
+   metrics (and therefore the hand-tuned centering) consistent.  */
+.dieface, .firstdieface,
+.playingcard span:not(:has(*)),
+.halfdomino span:not(:has(*)),
+.playingcardsuit span:not(:has(*)),
+.countingrod span:not(:has(*)) {
+  font-variant-emoji: text;
 }
 .dieface, .firstdieface {
   display: inline-flex;

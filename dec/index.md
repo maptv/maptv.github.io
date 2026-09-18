@@ -1,6 +1,6 @@
 # Dec Measurement System
 Martin Laptev
-2026+096
+2026+200
 
 - [Dec measurement system](#sec-dec)
 - [Longitude latitude course](#sec-llc)
@@ -873,12 +873,13 @@ data-bs-title="millimeridians">mm</a>), and
 <a href="#mm" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millimeridians">mm</a>) on the [map](#fig-distmap) above
 along with the ten major longitudes that divide the Earth🌎into the ten
-Dec time zones. Notably, Longitude <span class="color0">0</span> is the
-major longitude that functions as both the [Prime
-Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0)
-and [International Date
-Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next)
-in Dec.
+Dec time zones. In Dec, Longitude <span class="color0">0</span> serves
+as the [Prime
+Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0),
+[International Date
+Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next),
+the start of Zone <span class="color0">0</span>, and the end of Zone
+<span class="color9">9</span>.
 
 Like the ten major longitudes that separate them, Dec time zones are
 numbered <span class="color0">0</span> to <span class="color9">9</span>.
@@ -1378,9 +1379,9 @@ data-bs-title="hundredths of a zem">centizem</a>
 (<a href="#cz" id="centizem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="centizem">cz</a>) is the [typical seat
 height](https://www.dimensions.com/element/sitting-female-side-1#:~:text=Seat%20Height%20(Typical)%3A-,18%E2%80%9D%20%7C%2046%20cm,-Style%3A%20Casual)
-for both men and women in age range of 25 to 45
+for both men and women in the age range of 25 to 45
 <a href="#y" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year">y</a>. A box📦that is the size of a cubic
+data-bs-title="years">y</a>. A box📦that is the size of a cubic
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="zone equatorial meter">zem</span>
 (<a href="#z3" id="cubiczem" class="tool" data-bs-toggle="tooltip"
@@ -1390,7 +1391,7 @@ with their knees and feet 1
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> apart and their legs🦵bent at right angles (25
 <a href="#ct" class="tool" data-bs-toggle="tooltip"
-data-bs-title="centiturn">ct</a>).
+data-bs-title="centiturns">ct</a>).
 
 # Perpetually setting sun
 
@@ -1581,8 +1582,8 @@ $$\text{wavelength} = \text{speed} \ast \text{period} = \dfrac{\text{speed}}{\te
 The frequency range of the
 [visible](https://en.wikipedia.org/wiki/Visible_spectrum#:~:text=the%20band%20of%20the%20electromagnetic%20spectrum%20that%20is%20visible%20to%20the%20human%20eye)
 spectrum of light is <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="approximately">~</span>345.6 to <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="approximately">~</span>914.4
+data-bs-title="approximately">~</span>328.32 to <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="approximately">~</span>682.56
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="trillions of perbeats">teraperbeats</span>
 (<a href="#Tpb" id="teraperbeat" class="tool" data-bs-toggle="tooltip"
@@ -1757,11 +1758,11 @@ Each <a href="#do" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decioctave">do</a> has a corresponding musical note
 (<a href="#n" id="note" class="tool" data-bs-toggle="tooltip"
 data-bs-title="musical note">n</a>) that determines its color label. The
-idea of linking colors and musical notes dates back the
+idea of linking colors and musical notes dates back to the
 <span class="color704">1704</span> book by [Isaac
 Newton](https://en.wikipedia.org/wiki/Isaac_Newton#:~:text=,an%20English%20polymath,-active%20as%20a)
 entitled
-[Optiks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[1].
+[Opticks](https://en.wikipedia.org/wiki/Opticks#:~:text=a%20collection%20of%20three%20books%20by%20Isaac%20Newton)[1].
 On <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="May 20, 2025"><span class="color025">2025</span><span class="mono">+</span><span class="colorD080">080</span></span>,
 I read [The Color of Sound](https://www.flutopedia.com/sound_color.htm)
@@ -2394,7 +2395,7 @@ A <a href="#z3" class="tool" data-bs-toggle="tooltip"
 data-bs-title="cubic zem">z³</a> is 1 keg. A keg of water weighs 64
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of grams">kilograms</span>, 128 Dec pounds, or
-a 1000 Dec <span class="tool" data-bs-toggle="tooltip"
+1000 Dec <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of grains">kilograins</span>
 (<a href="#kg" id="kilograin" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilograins">kg</a>). If [Leonardo da
@@ -2548,7 +2549,7 @@ areas, volumes, weights, frequencies, wavelengths, and periods. Dec
 units can be combined with metric prefixes to form multiples or
 submultiples.
 
-Dec attempts to bridge the gap, improve interoperability, and faciliate
+Dec attempts to bridge the gap, improve interoperability, and facilitate
 conversion between the
 <a href="#us" class="tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> customary and
@@ -2582,7 +2583,7 @@ more! If so, dive🤿deeper by reading my article on Dec
 [dates](../dec/date), [times](../dec/time), and [snaps](../dec/snap). My
 [filter](../quarto/filter) and [include](../quarto/include) articles
 discuss the [Quarto](../quarto) publishing system and how I customize my
-Quarto website to display a Dec [snaps](../dec/snap) in the [navigation
+Quarto website to display a Dec [snap](../dec/snap) in the [navigation
 bar](https://en.wikipedia.org/wiki/Navigation_bar#:~:text=a%20section%20of%20a%20graphical%20user%20interface%20intended%20to%20aid%20visitors%20in%20accessing%20information)
 and Dec [dates](../dec/date) in the [article list](../list) and [title
 blocks](https://quarto.org/docs/authoring/title-blocks).
@@ -2639,7 +2640,7 @@ references:
   title: Dec Measurement System
   url: https://maptv.github.io/dec
   issued:
-    literal: 2026+096
+    literal: 2026+200
 ```
 
 </div>
@@ -2680,7 +2681,7 @@ yaml format.
   author = "Martin Laptev",
   title = "Dec Measurement System",
   url = "https://maptv.github.io/dec",
-  year = 2026+096
+  year = 2026+200
 }
 ```
 
@@ -2819,7 +2820,7 @@ videos](https://observablehq.com/resource-center#videos).
 - <a href="#arcbeat" id="ab">a</a>: arcbeat, a hundred thousandth of a
   circle, 0.0036 degrees, 0.216 arcminutes, 12.96 arcseconds
 - <a href="#beat" id="b">b</a>: beat, centimilliday, a hundred
-  thousandth of an day, 864 milliseconds
+  thousandth of a day, 864 milliseconds
   - <a href="#millibeat" id="mb">mb</a>: millibeat, centimicroday, a
     thousandth of a beat, a hundred millionth of a day, 864 microseconds
 - <a href="#beatpercentiday" id="bpc">bpc</a>: a musical or heart beat
@@ -2838,11 +2839,11 @@ videos](https://observablehq.com/resource-center#videos).
   surface area and the diameter of the Earth
   - <a href="#millitaur" id="mc">mc</a>: millitaur, *m*𝜏*r*, a
     thousandth of a taur, 100 kilozem, 40 kilometers
-  - <a href="#nanotaur" id="nc">nc</a>: nanotaur, *n*𝜏*r*, a thousandth
+  - <a href="#nanotaur" id="nc">nc</a>: nanotaur, *n*𝜏*r*, a billionth
     of a taur, 100 millizem, 1 decizem, 4 centimeters
   - <a href="#cubicnanotaur" id="nc3">nc³</a>: cubic nanotaur, *n*𝜏*r*³,
     1 cubic decizem
-- <a href="#day" id="d">d</a>: day, a tenth of a decaday, a seventh of
+- <a href="#day" id="d">d</a>: day, a tenth of a decaday, a seventh of a
   week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays,
   1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse
   of a quotidie
@@ -2869,7 +2870,7 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
 - <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
 - <a href="#cubit" id="ell">ℓ</a>: ell, cubit, 10/9 zem
-- <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeter
+- <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeters
 - <a href="#gutta" id="g">g</a>: drop (gutta in Latin) or grain (granum
   in Latin), 64 microliters or 64 milligrams
   - <a href="#kilograin" id="kg">kg</a>: kilograin or kilodrop, 64 grams
@@ -2884,7 +2885,7 @@ videos](https://observablehq.com/resource-center#videos).
   lightness
 - <a href="#huesaturationvalue" id="hsv">hsv</a>: hue saturation value
 - <a href="#inch" id="i">i</a>: inch, a sixteenth of a zem, 25
-  millimeter
+  millimeters
 - <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
   glasses, a million drops, half a barrel
 - <a href="#kilometersperhour" id="kmph">kmph</a>: kilometers per hour,
@@ -2910,7 +2911,7 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#squarekilometer" id="km2">km²</a>: square kilometer, 6.25
     square kilozem
   - <a href="#cubiccentimeter" id="cm3">cm³</a>: cubic centimeter, 1
-    millilter, a thousandth of a liter, 15.625 drops
+    milliliter, a thousandth of a liter, 15.625 drops
 - <a href="#pentaday" id="p">p</a>: pentaday, a group of five days, half
   a decaday
 - <a href="#note" id="n">n</a>: note, a specific frequency within an
@@ -2929,9 +2930,9 @@ videos](https://observablehq.com/resource-center#videos).
   hundred thousandth of a perbeat; the letter “q” in quotidie can be
   flipped vertically to produce the letter “d” in day
 - <a href="#rose" id="r">r</a>: compass rose, a full circle along the
-  horizon, 360 compass degress
+  horizon, 360 compass degrees
   - <a href="#millirose" id="mr">mr</a>: compass millirose, a thousandth
-    of a circle along the horizon, .36 compass degress
+    of a circle along the horizon, .36 compass degrees
 - <a href="#radian" id="rad">rad</a>: radian, $1\over\tau$ turns,
   $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
 - <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
@@ -2948,8 +2949,8 @@ videos](https://observablehq.com/resource-center#videos).
 - <a href="#tenequaltemperament" id="tenet">Tenet</a>: ten equal
   temperament
   - <a href="#10et" id="xet">Xet</a>: Tenet
-  - <a href="#twelveequaltemperance" id="12et">12et</a>: twelve equal
-    temperance
+  - <a href="#twelveequaltemperament" id="12et">12et</a>: twelve equal
+    temperament
 - <a href="#timeofday" id="tod">tod</a>: time of day
 - <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
   - <a href="#centiturn" id="ct">ct</a>: centiturn, a hundredth of a
@@ -2957,7 +2958,7 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#deciturn" id="dt">dt</a>: deciturn, a tenth of a turn, 36
     degrees, 𝜏/10 or 𝜋/5 radians
   - <a href="#milliturn" id="mt">mt</a>: milliturn, a thousandth of a
-    turn, .36 degrees, 𝜏/1000 or 𝜋/500 r $\pi\over 500$ radians
+    turn, .36 degrees, 𝜏/1000 or 𝜋/500 radians
 - <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
 - <a href="#ounce" id="u">u</a>: ounce (uncia in Latin), 500 grains, 32
   grams, 500 drops, 32 milliliters
@@ -2979,15 +2980,15 @@ videos](https://observablehq.com/resource-center#videos).
     1.041<span class="vinculum">6</span> miles per hour,
     1.<span class="vinculum">6</span> kilometers per hour,
     0.4<span class="vinculum">629</span> meters per second,
-    approximately 0.136% the speed of sound
+    approximately 0.136% of the speed of sound
 - <a href="#wei" id="w">w</a>: wěi (纬), parallel, a measure of
   longitude; can be thought of as a measure of the **w**idth of a
   meridian on **E**arth; the letter “w” in wěi can be vertically flipped
   to get the letter “m” in meridian
   - <a href="#deciwei" id="dw">dw</a>: deciwěi, a tenth of a wěi (纬), a
     tenth of a parallel
-  - <a href="#milliwei" id="mw">mw</a>: milliwěi, a thousanth of a wěi
-    (纬), a thousanth of a parallel
+  - <a href="#milliwei" id="mw">mw</a>: milliwěi, a thousandth of a wěi
+    (纬), a thousandth of a parallel
 - <a href="#xun" id="x">x</a>: xún (旬), decaday, a group of ten days, 2
   pentadays, represented by x like the Roman numeral X
 - <a href="#year" id="y">y</a>: year

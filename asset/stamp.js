@@ -40,7 +40,8 @@ function eda2snap(eda, tzo) {
     tzo + (tzo < 0 ? 10 : 0)}`
 }
 function setSnap() {
-  document.getElementById("snap").innerText = eda2snap(...unix2eda());
+  const snapEl = document.getElementById("snap");
+  if (snapEl) snapEl.innerText = eda2snap(...unix2eda());
 }
 const nbc = document.getElementsByClassName("navbar-brand-container"),
   cal = document.createElement("i"),
@@ -55,7 +56,7 @@ tik.setAttribute("role", "img");
 nbc[0].appendChild(cal);
 nbc[0].appendChild(snap);
 nbc[0].appendChild(tik);
-setInterval(setSnap);
+setInterval(setSnap, 1000);
 // function isNumeric(x){
 //   return !isNaN(x) && !isNaN(parseFloat(x)) && isFinite(x)
 // }
