@@ -592,14 +592,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">1789759521</p>
+      <p class="date">1778015565</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2026+201</p>
+      <p class="date-modified">2026+065</p>
     </div>
   </div>
     
@@ -1155,18 +1155,18 @@ flowchart LR
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Dates</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>hms <span class="op">=</span> <span class="fu">now</span>(UTC)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>2026-09-18T20:49:47.063</code></pre>
+<pre><code>2026-09-18T22:50:54.243</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hour</span>(hms) <span class="op">/</span> <span class="fl">24</span> <span class="op">+</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">minute</span>(hms) <span class="op">/</span> <span class="fl">1440</span> <span class="op">+</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">second</span>(hms) <span class="op">/</span> <span class="fl">86400</span> <span class="op">+</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">millisecond</span>(hms) <span class="op">/</span> <span class="fl">864e5</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.8679058217592593</code></pre>
+<pre><code>0.9520167013888888</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datetime2unix</span>(hms) <span class="op">/</span> <span class="fl">86400</span> <span class="op">%</span> <span class="fl">1</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.8679058217603597</code></pre>
+<pre><code>0.9520167013906757</code></pre>
 </div>
 </div>
 </div>
@@ -1210,11 +1210,11 @@ flowchart LR
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>hms.second <span class="op">/</span> <span class="dv">86400</span> <span class="op">+</span> <span class="op">\</span></span>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>hms.microsecond <span class="op">/</span> <span class="fl">864e8</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.8679155808796297</code></pre>
+<pre><code>0.9520269306712962</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>hms.timestamp() <span class="op">/</span> <span class="dv">86400</span> <span class="op">%</span> <span class="dv">1</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.8679155808786163</code></pre>
+<pre><code>0.9520269306703995</code></pre>
 </div>
 </div>
 </div>
@@ -1225,11 +1225,11 @@ flowchart LR
 <span><span class="va">hms</span><span class="op">$</span><span class="va">min</span> <span class="op">/</span> <span class="fl">1440</span> <span class="op">+</span></span>
 <span><span class="va">hms</span><span class="op">$</span><span class="va">sec</span> <span class="op">/</span> <span class="fl">86400</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.8679157</code></pre>
+<pre><code>[1] 0.9520271</code></pre>
 </div>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r"><code class="sourceCode R"><span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="va">hms</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">86400</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span> <span class="fl">1</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.8679157</code></pre>
+<pre><code>[1] 0.9520271</code></pre>
 </div>
 </div>
 </div>
@@ -1256,15 +1256,15 @@ flowchart LR
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Dates</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>dsa <span class="op">=</span> <span class="fu">datetime2unix</span>(<span class="fu">now</span>(UTC)) <span class="op">/</span> <span class="fl">86400</span> <span class="op">%</span> <span class="fl">1</span> <span class="op">*</span> <span class="fl">86400</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>74987.96900000889</code></pre>
+<pre><code>82255.18499992322</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>hsa <span class="op">=</span> dsa <span class="op">%</span> <span class="fl">3600</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>2987.9690000088885</code></pre>
+<pre><code>3055.1849999232218</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(x <span class="op">-&gt;</span> <span class="fu">floor</span>(<span class="dt">Int</span>, x), (dsa <span class="op">/</span> <span class="fl">3600</span>, hsa <span class="op">/</span> <span class="fl">60</span>, hsa <span class="op">%</span> <span class="fl">60</span>))</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>(20, 49, 47)</code></pre>
+<pre><code>(22, 50, 55)</code></pre>
 </div>
 </div>
 </div>
@@ -1303,7 +1303,7 @@ flowchart LR
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>hsa <span class="op">=</span> dsa <span class="op">%</span> <span class="dv">3600</span></span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="bu">tuple</span>(<span class="bu">map</span>(<span class="bu">int</span>, [dsa <span class="op">//</span> <span class="dv">3600</span>, hsa <span class="op">//</span> <span class="dv">60</span>, hsa <span class="op">%</span> <span class="dv">60</span> <span class="op">//</span> <span class="dv">1</span>]))</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>(20, 49, 48)</code></pre>
+<pre><code>(22, 50, 55)</code></pre>
 </div>
 </div>
 </div>
@@ -1313,7 +1313,7 @@ flowchart LR
 <span><span class="va">hsa</span> <span class="op">&lt;-</span> <span class="va">dsa</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span> <span class="fl">3600</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">dsa</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%/%</a></span> <span class="fl">3600</span>, <span class="va">hsa</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%/%</a></span> <span class="fl">60</span>, <span class="va">hsa</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span> <span class="fl">60</span><span class="op">)</span>, <span class="va">as.integer</span><span class="op">)</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 20 49 48</code></pre>
+<pre><code>[1] 22 50 55</code></pre>
 </div>
 </div>
 </div>
@@ -1626,7 +1626,7 @@ flowchart LR
 </div>
 <p>The code above compares two functions which return both the <a href="https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20side%20opposite%20that%20angle%20to%20the%20length%20of%20the%20longest%20side%20of%20the%20triangle">sine</a> and <a href="https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse">cosine</a> of their input. The sincos() function assumes it will receive radians and the sincostau() works with turns. In general, working with turns is more convenient and intuitive. The examples above demonstrate that using turns instead of radians can <a href="https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=Representing%20angles%20in%20turns%20or%20half%2Dturns%20has%20accuracy%20advantages">yield more accurate results</a>.</p>
 <p>The values below are the coefficients of a model adapted from the <a href="https://www.noaa.gov">National Oceanic and Atmospheric Administration</a> (<span class="tool" data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration">NOAA</span>) <a href="https://gml.noaa.gov/grad/solcalc/solareqns.PDF">General Solar Position Calculations</a>. Before <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html">fitting</a> the model to <span class="tool" data-bs-toggle="tooltip" data-bs-title="National Oceanic and Atmospheric Administration">NOAA</span> <a href="https://gml.noaa.gov/grad/solcalc/calcdetails.html">yearly solar data</a>, we need to convert eot(<span class="tool" data-bs-toggle="tooltip" data-bs-title="time of year">toy</span>) values from minutes to <a href="https://en.wikipedia.org/wiki/Unit_of_time#:~:text=14.4%20minutes%2C%20or%20864%20seconds" class="tool" data-bs-toggle="tooltip" data-bs-title="hundredths of a day">centidays</a>, combine <span class="tool" data-bs-toggle="tooltip" data-bs-title="year month day">ymd</span> triplet dates and <span class="tool" data-bs-toggle="tooltip" data-bs-title="hour minute second">hms</span> triplet times into <span class="tool" data-bs-toggle="tooltip" data-bs-title="annual day aggregates">ada</span>, and sort by <span class="tool" data-bs-toggle="tooltip" data-bs-title="annual day aggregate">ada</span>.</p>
-<div class="quarto-embed-nb-cell" data-notebook="/Users/martinlaptev/maptv/mgi/dec/time/eot.ipynb" data-notebook-title="Bonus examples" data-notebook-cellid="cell-eotcoef">
+<div class="quarto-embed-nb-cell" data-notebook="/Users/martinlaptev/maptv/maptv.github.io/dec/time/eot.ipynb" data-notebook-title="Bonus examples" data-notebook-cellid="cell-eotcoef">
 <div id="cell-eotcoef" class="cell" data-execution_count="20">
 <div id="eotcoef" class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>{0: 0.0011114386869002235,
@@ -7014,12 +7014,12 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 </section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{laptev2026,
   author = {Laptev, Martin},
   title = {Dec Time},
-  date = {2026-09-18},
+  date = {2026-05-05},
   url = {https://maptv.github.io/dec/time},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-laptev2026" class="csl-entry quarto-appendix-citeas" role="listitem">
-Laptev, Martin. 2026. <span>“Dec Time.”</span> September 18. <a href="https://maptv.github.io/dec/time">https://maptv.github.io/dec/time</a>.
+Laptev, Martin. 2026. <span>“Dec Time.”</span> May 5. <a href="https://maptv.github.io/dec/time">https://maptv.github.io/dec/time</a>.
 </div></div></section></div></main><!-- /main --><script src="../../asset/math.js"></script><style>
 #title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }
 #title-block-header { margin: 0px; }

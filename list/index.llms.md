@@ -10,7 +10,7 @@ Introducing Dec, a measurement system, which uses turns instead of months, weeks
 |------------|-------------|
 | Word Count | 4,781 words |
 
-1789759521
+1789682037
 
 ![](../asset/cal16.svg)
 
@@ -24,7 +24,7 @@ Introducing Decalendar, a solar calendar which measures time in years and days w
 |------------|--------------|
 | Word Count | 42,620 words |
 
-1789759521
+1789682188
 
 ![](../asset/daywide.svg)
 
@@ -38,7 +38,7 @@ Introducing Declock, a timekeeping system that displays time in decimal days usi
 |------------|--------------|
 | Word Count | 45,070 words |
 
-1789759521
+1778015565
 
 ![](../asset/1939ww2europe.svg)
 
@@ -50,7 +50,7 @@ Introducing Declock, a timekeeping system that displays time in decimal days usi
 |------------|-----------|
 | Word Count | 409 words |
 
-1789759521
+1725860445
 
 ![](../asset/horst_git-hug.png)
 
@@ -64,7 +64,7 @@ Get started with Git version control, the RStudio integrated development environ
 |------------|-------------|
 | Word Count | 3,317 words |
 
-1789759521
+1776874460
 
 ![](../quarto/horst_many-qmd-to-output.png)
 
@@ -76,7 +76,7 @@ Get started with Git version control, the RStudio integrated development environ
 |------------|-------------|
 | Word Count | 3,763 words |
 
-1789759521
+1738643333
 
 ![](../asset/positron.svg)
 
@@ -88,7 +88,7 @@ Get started with Git version control, the RStudio integrated development environ
 |------------|-------------|
 | Word Count | 2,627 words |
 
-1789759521
+1746560774
 
 ![](../observable/horst_many-lang-qmd-to-output.png)
 
@@ -100,7 +100,7 @@ Get started with Git version control, the RStudio integrated development environ
 |------------|-------------|
 | Word Count | 8,966 words |
 
-1789759521
+1738642623
 
 ![](../jupyter/horst_jupyter.png)
 
@@ -112,7 +112,7 @@ Get started with Git version control, the RStudio integrated development environ
 |------------|----------|
 | Word Count | 79 words |
 
-1789759521
+1738642636
 
 ![](../knitr/horst_knitr.png)
 
@@ -124,7 +124,7 @@ Get started with Git version control, the RStudio integrated development environ
 |------------|----------|
 | Word Count | 77 words |
 
-1789759521
+1738642605
 
 ![](../ml/prob/horst_hist-samples.png)
 
@@ -136,7 +136,7 @@ Get started with Git version control, the RStudio integrated development environ
 |------------|-----------|
 | Word Count | 911 words |
 
-1789759521
+1787929874
 
 ![](../ml/llm/dalle_llm-guru.jpg)
 
@@ -148,7 +148,7 @@ Get started with Git version control, the RStudio integrated development environ
 |------------|----------|
 | Word Count | 21 words |
 
-1789759521
+1725581207
 
 Back to top
 

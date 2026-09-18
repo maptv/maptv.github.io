@@ -1,6 +1,6 @@
 # Dec time
 Martin Laptev
-1789759521
+1778015565
 
 - [Bar chart clocks](#bcc)
 - [Longitude latitude map](#llm)
@@ -728,7 +728,7 @@ using Dates
 hms = now(UTC)
 ```
 
-    2026-09-18T22:09:35.868
+    2026-09-18T22:53:02.974
 
 ``` julia
 hour(hms) / 24 +
@@ -737,13 +737,13 @@ second(hms) / 86400 +
 millisecond(hms) / 864e5
 ```
 
-    0.9233318055555555
+    0.9535066435185185
 
 ``` julia
 datetime2unix(hms) / 86400 % 1
 ```
 
-    0.9233318055557902
+    0.9535066435164481
 
 ### Observable JavaScript
 
@@ -767,13 +767,13 @@ hms.second / 86400 + \
 hms.microsecond / 864e8
 ```
 
-    0.9233430587268517
+    0.9535158392013888
 
 ``` python
 hms.timestamp() / 86400 % 1
 ```
 
-    0.9233430587264593
+    0.953515839202737
 
 ### R
 
@@ -784,13 +784,13 @@ hms$min / 1440 +
 hms$sec / 86400
 ```
 
-    [1] 0.9233432
+    [1] 0.953516
 
 ``` r
 (as.numeric(as.POSIXct(hms)) / 86400) %% 1
 ```
 
-    [1] 0.9233432
+    [1] 0.953516
 
 </div>
 
@@ -832,19 +832,19 @@ using Dates
 dsa = datetime2unix(now(UTC)) / 86400 % 1 * 86400
 ```
 
-    79776.90400010906
+    82383.82699980866
 
 ``` julia
 hsa = dsa % 3600
 ```
 
-    576.9040001090616
+    3183.8269998086616
 
 ``` julia
 map(x -> floor(Int, x), (dsa / 3600, hsa / 60, hsa % 60))
 ```
 
-    (22, 9, 36)
+    (22, 53, 3)
 
 ### Observable JavaScript
 
@@ -863,7 +863,7 @@ hsa = dsa % 3600
 tuple(map(int, [dsa // 3600, hsa // 60, hsa % 60 // 1]))
 ```
 
-    (22, 9, 37)
+    (22, 53, 3)
 
 ### R
 
@@ -873,7 +873,7 @@ hsa <- dsa %% 3600
 sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 ```
 
-    [1] 22  9 37
+    [1] 22 53  3
 
 </div>
 
@@ -1594,7 +1594,7 @@ data-bs-title="annual day aggregates">ada</span>, and sort by
 data-bs-title="annual day aggregate">ada</span>.
 
 <div class="quarto-embed-nb-cell"
-data-notebook="/Users/martinlaptev/maptv/mgi/dec/time/eot.ipynb"
+data-notebook="/Users/martinlaptev/maptv/maptv.github.io/dec/time/eot.ipynb"
 data-notebook-title="Bonus examples"
 data-notebook-cellId="cell-eotcoef">
 

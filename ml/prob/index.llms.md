@@ -10,11 +10,11 @@ Author
 
 Published
 
-1789759521000
+1787929874000
 
 Modified
 
-58685+021
+58627+029
 
 In this blog post I will discuss a few examples of [probability](https://en.wikipedia.org/wiki/Probability#:~:text=Probability%20is%20the%20branch%20of,event%20and%201%20indicates%20certainty.) in [machine learning](https://en.wikipedia.org/wiki/Machine_learning#:~:text=Machine%20learning%20(ML)%20is%20a%20field%20of%20study%20in%20artificial%20intelligence%20concerned%20with%20the%20development%20and%20study%20of%20statistical%20algorithms%20that%20can%20effectively%20generalize%20and%20thus%20perform%20tasks%20without%20explicit%20instructions.). If you are new to probability, I recommend one of great textbooks that cover the topic and are available for free online, such as [Think Bayes](https://allendowney.github.io/ThinkBayes2) by [Allen Downey](https://www.allendowney.com) and [Bayes Rules!](https://www.bayesrulesbook.com) by [Alicia A. Johnson](https://ajohns24.github.io), Miles Q. Ott, and [Mine Dogucu](https://www.minedogucu.com).
 

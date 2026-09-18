@@ -8,11 +8,11 @@ Author
 
 Published
 
-1789759521
+1725860445
 
 Modified
 
-2026+201
+2024+192
 
 *Day 184* in the [Gregorian Decalendar](../../dec/date) is the first day of *Season 2* by [meteorological](https://en.wikipedia.org/wiki/Season#Meteorological:~:text=reckoned%20by%20temperature%2C%20with%20summer%20being%20the%20hottest%20quarter%20of%20the%20year%20and%20winter%20the%20coldest%20quarter%20of%20the%20year) reckoning and also the anniversary of the start of the [World War 2](https://en.wikipedia.org/wiki/World_War_II#:~:text=a%20global%20conflict%20between%20two%20coalitions%3A%20the%20Allies%20and%20the%20Axis%20powers). On *1939+184*, World War 2 started with the German invasion of Poland. On *1939+200*, sixteen days after the start of the war, the Soviet Union invaded Poland from the East. Germany and the Soviet Union split Poland according to the [Molotov–Ribbentrop Pact](https://en.wikipedia.org/wiki/Molotov%E2%80%93Ribbentrop_Pact#Secret_protocol:~:text=a%20non%2Daggression%20pact%20between%20Nazi%20Germany%20and%20the%20Soviet%20Union) signed on *1939+175*. The map below shows the German and Soviet invasions of Poland on Days *184* and *200*, respectively, of Year 1939, as well as other military movements over the course of the subsequent 1.83 years before Germany ended the Molotov–Ribbentrop Pact on *1941+113* with its invasion of the Soviet Union as part of [Operation Barbarossa](https://en.wikipedia.org/wiki/Operation_Barbarossa#:~:text=the%20invasion%20of%20the%20Soviet%20Union%20by%20Nazi%20Germany%20and%20many%20of%20its%20Axis%20allies).
 
@@ -35,10 +35,10 @@ Back to top
 BibTeX citation:
 
 ``` quarto-appendix-bibtex
-@online{laptev2026,
+@online{laptev2024,
   author = {Laptev, Martin},
   title = {World {War} 2},
-  date = {2026-09-18},
+  date = {2024-09-09},
   url = {https://maptv.github.io/history/ww2},
   langid = {en}
 }
@@ -46,4 +46,4 @@ BibTeX citation:
 
 For attribution, please cite this work as:
 
-Laptev, Martin. 2026. “World War 2.” September 18. <https://maptv.github.io/history/ww2>.
+Laptev, Martin. 2024. “World War 2.” September 9. <https://maptv.github.io/history/ww2>.

@@ -4033,7 +4033,7 @@ values](https://en.wikipedia.org/wiki/Errors_and_residuals#:~:text=the%20differe
 <div id="residualsversusfitted" class="baserplot">
 
 <div class="quarto-embed-nb-cell"
-data-notebook="/Users/martinlaptev/maptv/mgi/dec/date/segment-r.ipynb"
+data-notebook="/Users/martinlaptev/maptv/maptv.github.io/dec/date/segment-r.ipynb"
 data-notebook-title="Regress doy on temperature"
 data-notebook-cellId="cell-segme">
 
