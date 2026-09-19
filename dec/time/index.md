@@ -28,7 +28,7 @@ Martin Laptev
 
 <div id="timenav">
 
-<svg width="672" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="flowchart decnav-svg" viewbox="0 0 829.6875 94" role="graphics-document document" aria-roledescription="flowchart-v2" height="480">
+<svg width="829.6875" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="flowchart decnav-svg" viewbox="0 0 829.6875 94" role="graphics-document document" aria-roledescription="flowchart-v2" height="94">
 
 <style>.decnav-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:32px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}.decnav-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}.decnav-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}.decnav-svg .error-icon{fill:#552222;}.decnav-svg .error-text{fill:#552222;stroke:#552222;}.decnav-svg .edge-thickness-normal{stroke-width:1px;}.decnav-svg .edge-thickness-thick{stroke-width:3.5px;}.decnav-svg .edge-pattern-solid{stroke-dasharray:0;}.decnav-svg .edge-thickness-invisible{stroke-width:0;fill:none;}.decnav-svg .edge-pattern-dashed{stroke-dasharray:3;}.decnav-svg .edge-pattern-dotted{stroke-dasharray:2;}.decnav-svg .marker{fill:#333333;stroke:#333333;}.decnav-svg .marker.cross{stroke:#333333;}.decnav-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:32px;}.decnav-svg p{margin:0;}.decnav-svg .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}.decnav-svg .cluster-label text{fill:#333;}.decnav-svg .cluster-label span{color:#333;}.decnav-svg .cluster-label span p{background-color:transparent;}.decnav-svg .label text,.decnav-svg span{fill:#333;color:#333;}.decnav-svg .node rect,.decnav-svg .node circle,.decnav-svg .node ellipse,.decnav-svg .node polygon,.decnav-svg .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}.decnav-svg .rough-node .label text,.decnav-svg .node .label text,.decnav-svg .image-shape .label,.decnav-svg .icon-shape .label{text-anchor:middle;}.decnav-svg .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}.decnav-svg .rough-node .label,.decnav-svg .node .label,.decnav-svg .image-shape .label,.decnav-svg .icon-shape .label{text-align:center;}.decnav-svg .node.clickable{cursor:pointer;}.decnav-svg .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}.decnav-svg .arrowheadPath{fill:#333333;}.decnav-svg .edgePath .path{stroke:#333333;stroke-width:2.0px;}.decnav-svg .flowchart-link{stroke:#333333;fill:none;}.decnav-svg .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}.decnav-svg .edgeLabel p{background-color:rgba(232,232,232, 0.8);}.decnav-svg .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}.decnav-svg .labelBkg{background-color:rgba(232, 232, 232, 0.5);}.decnav-svg .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}.decnav-svg .cluster text{fill:#333;}.decnav-svg .cluster span{color:#333;}.decnav-svg div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}.decnav-svg .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}.decnav-svg rect.text{fill:none;stroke-width:0;}.decnav-svg .icon-shape,.decnav-svg .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}.decnav-svg .icon-shape p,.decnav-svg .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}.decnav-svg .icon-shape rect,.decnav-svg .image-shape rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}.decnav-svg .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}.decnav-svg .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}.decnav-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
 
@@ -831,7 +831,7 @@ using Dates
 hms = now(UTC)
 ```
 
-    2026-09-19T17:35:00.219
+    2026-09-19T18:19:25.897
 
 ``` julia
 hour(hms) / 24 +
@@ -840,13 +840,13 @@ second(hms) / 86400 +
 millisecond(hms) / 864e5
 ```
 
-    0.7326414236111112
+    0.7634941782407407
 
 ``` julia
 datetime2unix(hms) / 86400 % 1
 ```
 
-    0.7326414236122218
+    0.7634941782416718
 
 ### Observable JavaScript
 
@@ -870,13 +870,13 @@ hms.second / 86400 + \
 hms.microsecond / 864e8
 ```
 
-    0.7326493052546297
+    0.7635033821064814
 
 ``` python
 hms.timestamp() / 86400 % 1
 ```
 
-    0.7326493052569276
+    0.763503382106137
 
 ### R
 
@@ -887,13 +887,13 @@ hms$min / 1440 +
 hms$sec / 86400
 ```
 
-    [1] 0.7326495
+    [1] 0.7635035
 
 ``` r
 (as.numeric(as.POSIXct(hms)) / 86400) %% 1
 ```
 
-    [1] 0.7326495
+    [1] 0.7635035
 
 </div>
 
@@ -935,19 +935,19 @@ using Dates
 dsa = datetime2unix(now(UTC)) / 86400 % 1 * 86400
 ```
 
-    63300.95799980918
+    65966.74900021171
 
 ``` julia
 hsa = dsa % 3600
 ```
 
-    2100.9579998091795
+    1166.749000211712
 
 ``` julia
 map(x -> floor(Int, x), (dsa / 3600, hsa / 60, hsa % 60))
 ```
 
-    (17, 35, 0)
+    (18, 19, 26)
 
 ### Observable JavaScript
 
@@ -966,7 +966,7 @@ hsa = dsa % 3600
 tuple(map(int, [dsa // 3600, hsa // 60, hsa % 60 // 1]))
 ```
 
-    (17, 35, 1)
+    (18, 19, 26)
 
 ### R
 
@@ -976,7 +976,7 @@ hsa <- dsa %% 3600
 sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 ```
 
-    [1] 17 35  1
+    [1] 18 19 26
 
 </div>
 
@@ -2539,7 +2539,7 @@ called Dec [spans](../../dec/span)🌈.
 
 <div id="timenav">
 
-<svg width="672" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="flowchart decnav-svg" viewbox="0 0 829.6875 94" role="graphics-document document" aria-roledescription="flowchart-v2" height="480">
+<svg width="829.6875" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" class="flowchart decnav-svg" viewbox="0 0 829.6875 94" role="graphics-document document" aria-roledescription="flowchart-v2" height="94">
 
 <style>.decnav-svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:32px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}.decnav-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}.decnav-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}.decnav-svg .error-icon{fill:#552222;}.decnav-svg .error-text{fill:#552222;stroke:#552222;}.decnav-svg .edge-thickness-normal{stroke-width:1px;}.decnav-svg .edge-thickness-thick{stroke-width:3.5px;}.decnav-svg .edge-pattern-solid{stroke-dasharray:0;}.decnav-svg .edge-thickness-invisible{stroke-width:0;fill:none;}.decnav-svg .edge-pattern-dashed{stroke-dasharray:3;}.decnav-svg .edge-pattern-dotted{stroke-dasharray:2;}.decnav-svg .marker{fill:#333333;stroke:#333333;}.decnav-svg .marker.cross{stroke:#333333;}.decnav-svg svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:32px;}.decnav-svg p{margin:0;}.decnav-svg .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}.decnav-svg .cluster-label text{fill:#333;}.decnav-svg .cluster-label span{color:#333;}.decnav-svg .cluster-label span p{background-color:transparent;}.decnav-svg .label text,.decnav-svg span{fill:#333;color:#333;}.decnav-svg .node rect,.decnav-svg .node circle,.decnav-svg .node ellipse,.decnav-svg .node polygon,.decnav-svg .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}.decnav-svg .rough-node .label text,.decnav-svg .node .label text,.decnav-svg .image-shape .label,.decnav-svg .icon-shape .label{text-anchor:middle;}.decnav-svg .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}.decnav-svg .rough-node .label,.decnav-svg .node .label,.decnav-svg .image-shape .label,.decnav-svg .icon-shape .label{text-align:center;}.decnav-svg .node.clickable{cursor:pointer;}.decnav-svg .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}.decnav-svg .arrowheadPath{fill:#333333;}.decnav-svg .edgePath .path{stroke:#333333;stroke-width:2.0px;}.decnav-svg .flowchart-link{stroke:#333333;fill:none;}.decnav-svg .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}.decnav-svg .edgeLabel p{background-color:rgba(232,232,232, 0.8);}.decnav-svg .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}.decnav-svg .labelBkg{background-color:rgba(232, 232, 232, 0.5);}.decnav-svg .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}.decnav-svg .cluster text{fill:#333;}.decnav-svg .cluster span{color:#333;}.decnav-svg div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}.decnav-svg .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}.decnav-svg rect.text{fill:none;stroke-width:0;}.decnav-svg .icon-shape,.decnav-svg .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}.decnav-svg .icon-shape p,.decnav-svg .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}.decnav-svg .icon-shape rect,.decnav-svg .image-shape rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}.decnav-svg .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}.decnav-svg .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}.decnav-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
 
