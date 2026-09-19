@@ -136,9 +136,6 @@ figcaption.quarto-float-tbl::before {
   font-size: initial;
 }
 
-section#sec-dox {
-  counter-reset: diagnum -1;
-}
 .doxdiagram figcaption.quarto-float-fig {
   counter-increment: diagnum;
   font-size: 0;
@@ -306,6 +303,13 @@ div > form > label {
 .overline, .grave, .acute, .doublegrave, .doubleacute {
   position: relative;
   display: inline-block;
+  /* The accent/vinculum ::before marks below are offset by a fixed top:5px
+     from this inline-block's own top edge, which only lands above the glyph
+     when the line box is tall enough (this site's linestretch: 2 default).
+     Contexts that reset line-height, like the crossref/citation hover
+     preview popover, shrink that line box and sink the mark into the text.
+     Pinning line-height here keeps the offset correct everywhere. */
+  line-height: 2;
 }
 /* Browsers treat inline-block (and other atomic inlines) as having a soft-wrap
    opportunity on either side even with no whitespace, which can split an
@@ -399,6 +403,17 @@ mjx-container[jax="CHTML"][display="true"] {
 
 /* R/Python/Julia-generated figures: give them responsive sizing */
 img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mermaid diagrams (inline SVG, not <img>) are pre-rendered at build time
+   with a fixed width/height attribute pair that doesn't match the actual
+   viewBox aspect ratio. height: auto derives the real aspect ratio from
+   viewBox, which both removes the letterboxed empty space above/below the
+   diagram and (combined with max-width) keeps it from overflowing/clipping
+   or forcing horizontal scroll on narrow screens. */
+svg.flowchart {
   max-width: 100%;
   height: auto;
 }
