@@ -195,6 +195,7 @@ format:
     shift-heading-level-by: 3
     include-in-header:
       - asset/meta.html
+      - asset/svg-anchor-href.html
     include-after-body:
       - asset/math.html
       - asset/style.html
