@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.9.37">
+    <meta name="generator" content="quarto-1.10.18">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
       /* Default styles provided by pandoc.
       ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
       */
-      code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
-      div.columns{display: flex; gap: min(4vw, 1.5em);}
-      div.column{flex: auto; overflow-x: auto;}
+      div.columns{display: flex; gap: 1.5em;}
+      div.column{flex: auto;}
+      @media screen {
+      div.columns{gap: min(4vw, 1.5em);}
+      div.column{overflow-x: auto;}
+      }
       div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
       ul.task-list{list-style: none;}
       ul.task-list li input[type="checkbox"] {
@@ -164,14 +167,14 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-09dd4a8c8147935218e5fc1df39f9384.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-bb61d7ca54b3758c8becae408f223446.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-09dd4a8c8147935218e5fc1df39f9384.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2bec29a9bacf2b598905820d71afb463.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5fc413f607176f2629b9db3f72267386.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2bec29a9bacf2b598905820d71afb463.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e88f3c7eb9262e0164bddb813f4ec593.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-8997e7180cb29625c505aac87f7646ef.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-e88f3c7eb9262e0164bddb813f4ec593.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-243045bfc3b4fc19ae2870f88ffebf38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-ffad6c2013d0dfcc881dd2ddc5a094af.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-243045bfc3b4fc19ae2870f88ffebf38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -197,7 +200,7 @@
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+}</script>  <meta name="format-detection" content="telephone=no">  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>  
         <link rel="stylesheet" href="../../asset/style.css">
@@ -591,7 +594,7 @@
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quarto/include/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-earmark-plus" role="img">
+  <a href="../../quarto/include/index.qmd" class="sidebar-item-text sidebar-link"><i class="bi bi-file-earmark-plus" role="img">
 </i> 
  <span class="menu-text">Include</span></a>
   </div>
@@ -862,14 +865,14 @@ F-statistic: 5.778e+04 on 6 and 31642 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="cell-output cell-output-display light-content">
 <div>
 <figure class="figure">
-<p><a href="segment-r_files/figure-html/segme-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="segment-r_files/figure-html/segme-output-1.png" id="segme-1" width="720" height="360" class="figure-img"></a></p>
+<p><a href="segment-r_files/figure-html/segme-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="segment-r_files/figure-html/segme-output-1.png" id="segme-1" loading="lazy" width="720" height="360" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display dark-content">
 <div>
 <figure class="figure">
-<p><a href="segment-r_files/figure-html/segme-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="segment-r_files/figure-html/segme-output-2.png" id="segme-2" width="720" height="360" class="figure-img"></a></p>
+<p><a href="segment-r_files/figure-html/segme-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="segment-r_files/figure-html/segme-output-2.png" id="segme-2" loading="lazy" width="720" height="360" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
@@ -998,14 +1001,14 @@ F-statistic: 1.879e+05 on 7 and 31641 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="cell-output cell-output-display light-content">
 <div>
 <figure class="figure">
-<p><a href="segment-r_files/figure-html/cell-12-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="segment-r_files/figure-html/cell-12-output-1.png" width="720" height="360" class="figure-img"></a></p>
+<p><a href="segment-r_files/figure-html/cell-12-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="segment-r_files/figure-html/cell-12-output-1.png" loading="lazy" width="720" height="360" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display dark-content">
 <div>
 <figure class="figure">
-<p><a href="segment-r_files/figure-html/cell-12-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="segment-r_files/figure-html/cell-12-output-2.png" width="720" height="360" class="figure-img"></a></p>
+<p><a href="segment-r_files/figure-html/cell-12-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="segment-r_files/figure-html/cell-12-output-2.png" loading="lazy" width="720" height="360" class="figure-img"></a></p>
 </figure>
 </div>
 </div>
@@ -1045,7 +1048,7 @@ a.navbar-brand { overflow: visible !important; }
 </style>  <script src="../../asset/stamp.js"></script>  <script>
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-</script>  <script src="../../asset/footnote.js"></script>  <script src="../../asset/crossref.js"></script>  <script id="quarto-html-after-body" type="application/javascript">
+</script>  <script src="../../asset/footnote.js"></script>  <script src="../../asset/crossref.js"></script>  <script src="../../asset/mermaid-fix.js"></script>  <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1150,16 +1153,16 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {
