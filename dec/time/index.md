@@ -68,7 +68,7 @@ style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 20
 
 </div>
 
-</foreignobject></g></g></g><g class="nodes"><a href="/dec" class="decnav-link"><g class="node default" id="flowchart-A-0" transform="translate(64.4609375, 47)"><rect class="basic label-container" style="" x="-56.4609375" y="-39" width="112.921875" height="78"></rect><g class="label" style="" transform="translate(-26.4609375, -24)"><rect></rect><foreignobject width="52.921875" height="48">
+</foreignobject></g></g></g><g class="nodes"><a href="/dec" class="decnav-link no-external"><g class="node default" id="flowchart-A-0" transform="translate(64.4609375, 47)"><rect class="basic label-container" style="" x="-56.4609375" y="-39" width="112.921875" height="78"></rect><g class="label" style="" transform="translate(-26.4609375, -24)"><rect></rect><foreignobject width="52.921875" height="48">
 
 <div data-xmlns="http://www.w3.org/1999/xhtml"
 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;">
@@ -83,7 +83,7 @@ Dec
 
 </div>
 
-</foreignobject></g></g></a><a href="/dec/date" class="decnav-link"><g class="node default" id="flowchart-B-1" transform="translate(233.3125, 47)"><rect class="basic label-container" style="" x="-62.390625" y="-39" width="124.78125" height="78"></rect><g class="label" style="" transform="translate(-32.390625, -24)"><rect></rect><foreignobject width="64.78125" height="48">
+</foreignobject></g></g></a><a href="/dec/date" class="decnav-link no-external"><g class="node default" id="flowchart-B-1" transform="translate(233.3125, 47)"><rect class="basic label-container" style="" x="-62.390625" y="-39" width="124.78125" height="78"></rect><g class="label" style="" transform="translate(-32.390625, -24)"><rect></rect><foreignobject width="64.78125" height="48">
 
 <div data-xmlns="http://www.w3.org/1999/xhtml"
 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;">
@@ -98,7 +98,7 @@ date
 
 </div>
 
-</foreignobject></g></g></a><a href="/dec/time" class="decnav-link"><g class="node default" id="flowchart-C-2" transform="translate(408.6171875, 47)"><rect class="basic label-container" style="" x="-62.9140625" y="-39" width="125.828125" height="78"></rect><g class="label" style="" transform="translate(-32.9140625, -24)"><rect></rect><foreignobject width="65.828125" height="48">
+</foreignobject></g></g></a><a href="/dec/time" class="decnav-link no-external"><g class="node default" id="flowchart-C-2" transform="translate(408.6171875, 47)"><rect class="basic label-container" style="" x="-62.9140625" y="-39" width="125.828125" height="78"></rect><g class="label" style="" transform="translate(-32.9140625, -24)"><rect></rect><foreignobject width="65.828125" height="48">
 
 <div data-xmlns="http://www.w3.org/1999/xhtml"
 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;">
@@ -113,7 +113,7 @@ time
 
 </div>
 
-</foreignobject></g></g></a><a href="/dec/snap" class="decnav-link"><g class="node default" id="flowchart-D-3" transform="translate(584.0703125, 47)"><rect class="basic label-container" style="" x="-62.5390625" y="-39" width="125.078125" height="78"></rect><g class="label" style="" transform="translate(-32.5390625, -24)"><rect></rect><foreignobject width="65.078125" height="48">
+</foreignobject></g></g></a><a href="/dec/snap" class="decnav-link no-external"><g class="node default" id="flowchart-D-3" transform="translate(584.0703125, 47)"><rect class="basic label-container" style="" x="-62.5390625" y="-39" width="125.078125" height="78"></rect><g class="label" style="" transform="translate(-32.5390625, -24)"><rect></rect><foreignobject width="65.078125" height="48">
 
 <div data-xmlns="http://www.w3.org/1999/xhtml"
 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;">
@@ -128,7 +128,7 @@ snap
 
 </div>
 
-</foreignobject></g></g></a><a href="/dec/span" class="decnav-link"><g class="node default" id="flowchart-E-4" transform="translate(759.1484375, 47)"><rect class="basic label-container" style="" x="-62.5390625" y="-39" width="125.078125" height="78"></rect><g class="label" style="" transform="translate(-32.5390625, -24)"><rect></rect><foreignobject width="65.078125" height="48">
+</foreignobject></g></g></a><a href="/dec/span" class="decnav-link no-external"><g class="node default" id="flowchart-E-4" transform="translate(759.1484375, 47)"><rect class="basic label-container" style="" x="-62.5390625" y="-39" width="125.078125" height="78"></rect><g class="label" style="" transform="translate(-32.5390625, -24)"><rect></rect><foreignobject width="65.078125" height="48">
 
 <div data-xmlns="http://www.w3.org/1999/xhtml"
 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;">
@@ -831,7 +831,7 @@ using Dates
 hms = now(UTC)
 ```
 
-    2026-09-19T18:19:25.897
+    2026-09-19T22:23:26.889
 
 ``` julia
 hour(hms) / 24 +
@@ -840,13 +840,13 @@ second(hms) / 86400 +
 millisecond(hms) / 864e5
 ```
 
-    0.7634941782407407
+    0.9329501041666666
 
 ``` julia
 datetime2unix(hms) / 86400 % 1
 ```
 
-    0.7634941782416718
+    0.9329501041647745
 
 ### Observable JavaScript
 
@@ -870,13 +870,13 @@ hms.second / 86400 + \
 hms.microsecond / 864e8
 ```
 
-    0.7635033821064814
+    0.9329597754050926
 
 ``` python
 hms.timestamp() / 86400 % 1
 ```
 
-    0.763503382106137
+    0.9329597754076531
 
 ### R
 
@@ -887,13 +887,13 @@ hms$min / 1440 +
 hms$sec / 86400
 ```
 
-    [1] 0.7635035
+    [1] 0.9329599
 
 ``` r
 (as.numeric(as.POSIXct(hms)) / 86400) %% 1
 ```
 
-    [1] 0.7635035
+    [1] 0.9329599
 
 </div>
 
@@ -935,19 +935,19 @@ using Dates
 dsa = datetime2unix(now(UTC)) / 86400 % 1 * 86400
 ```
 
-    65966.74900021171
+    80607.7860001009
 
 ``` julia
 hsa = dsa % 3600
 ```
 
-    1166.749000211712
+    1407.7860001008958
 
 ``` julia
 map(x -> floor(Int, x), (dsa / 3600, hsa / 60, hsa % 60))
 ```
 
-    (18, 19, 26)
+    (22, 23, 27)
 
 ### Observable JavaScript
 
@@ -966,7 +966,7 @@ hsa = dsa % 3600
 tuple(map(int, [dsa // 3600, hsa // 60, hsa % 60 // 1]))
 ```
 
-    (18, 19, 26)
+    (22, 23, 27)
 
 ### R
 
@@ -976,7 +976,7 @@ hsa <- dsa %% 3600
 sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 ```
 
-    [1] 18 19 26
+    [1] 22 23 27
 
 </div>
 
@@ -2579,7 +2579,7 @@ style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 20
 
 </div>
 
-</foreignobject></g></g></g><g class="nodes"><a href="/dec" class="decnav-link"><g class="node default" id="flowchart-A-0" transform="translate(64.4609375, 47)"><rect class="basic label-container" style="" x="-56.4609375" y="-39" width="112.921875" height="78"></rect><g class="label" style="" transform="translate(-26.4609375, -24)"><rect></rect><foreignobject width="52.921875" height="48">
+</foreignobject></g></g></g><g class="nodes"><a href="/dec" class="decnav-link no-external"><g class="node default" id="flowchart-A-0" transform="translate(64.4609375, 47)"><rect class="basic label-container" style="" x="-56.4609375" y="-39" width="112.921875" height="78"></rect><g class="label" style="" transform="translate(-26.4609375, -24)"><rect></rect><foreignobject width="52.921875" height="48">
 
 <div data-xmlns="http://www.w3.org/1999/xhtml"
 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;">
@@ -2594,7 +2594,7 @@ Dec
 
 </div>
 
-</foreignobject></g></g></a><a href="/dec/date" class="decnav-link"><g class="node default" id="flowchart-B-1" transform="translate(233.3125, 47)"><rect class="basic label-container" style="" x="-62.390625" y="-39" width="124.78125" height="78"></rect><g class="label" style="" transform="translate(-32.390625, -24)"><rect></rect><foreignobject width="64.78125" height="48">
+</foreignobject></g></g></a><a href="/dec/date" class="decnav-link no-external"><g class="node default" id="flowchart-B-1" transform="translate(233.3125, 47)"><rect class="basic label-container" style="" x="-62.390625" y="-39" width="124.78125" height="78"></rect><g class="label" style="" transform="translate(-32.390625, -24)"><rect></rect><foreignobject width="64.78125" height="48">
 
 <div data-xmlns="http://www.w3.org/1999/xhtml"
 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;">
@@ -2609,7 +2609,7 @@ date
 
 </div>
 
-</foreignobject></g></g></a><a href="/dec/time" class="decnav-link"><g class="node default" id="flowchart-C-2" transform="translate(408.6171875, 47)"><rect class="basic label-container" style="" x="-62.9140625" y="-39" width="125.828125" height="78"></rect><g class="label" style="" transform="translate(-32.9140625, -24)"><rect></rect><foreignobject width="65.828125" height="48">
+</foreignobject></g></g></a><a href="/dec/time" class="decnav-link no-external"><g class="node default" id="flowchart-C-2" transform="translate(408.6171875, 47)"><rect class="basic label-container" style="" x="-62.9140625" y="-39" width="125.828125" height="78"></rect><g class="label" style="" transform="translate(-32.9140625, -24)"><rect></rect><foreignobject width="65.828125" height="48">
 
 <div data-xmlns="http://www.w3.org/1999/xhtml"
 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;">
@@ -2624,7 +2624,7 @@ time
 
 </div>
 
-</foreignobject></g></g></a><a href="/dec/snap" class="decnav-link"><g class="node default" id="flowchart-D-3" transform="translate(584.0703125, 47)"><rect class="basic label-container" style="" x="-62.5390625" y="-39" width="125.078125" height="78"></rect><g class="label" style="" transform="translate(-32.5390625, -24)"><rect></rect><foreignobject width="65.078125" height="48">
+</foreignobject></g></g></a><a href="/dec/snap" class="decnav-link no-external"><g class="node default" id="flowchart-D-3" transform="translate(584.0703125, 47)"><rect class="basic label-container" style="" x="-62.5390625" y="-39" width="125.078125" height="78"></rect><g class="label" style="" transform="translate(-32.5390625, -24)"><rect></rect><foreignobject width="65.078125" height="48">
 
 <div data-xmlns="http://www.w3.org/1999/xhtml"
 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;">
@@ -2639,7 +2639,7 @@ snap
 
 </div>
 
-</foreignobject></g></g></a><a href="/dec/span" class="decnav-link"><g class="node default" id="flowchart-E-4" transform="translate(759.1484375, 47)"><rect class="basic label-container" style="" x="-62.5390625" y="-39" width="125.078125" height="78"></rect><g class="label" style="" transform="translate(-32.5390625, -24)"><rect></rect><foreignobject width="65.078125" height="48">
+</foreignobject></g></g></a><a href="/dec/span" class="decnav-link no-external"><g class="node default" id="flowchart-E-4" transform="translate(759.1484375, 47)"><rect class="basic label-container" style="" x="-62.5390625" y="-39" width="125.078125" height="78"></rect><g class="label" style="" transform="translate(-32.5390625, -24)"><rect></rect><foreignobject width="65.078125" height="48">
 
 <div data-xmlns="http://www.w3.org/1999/xhtml"
 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;">
