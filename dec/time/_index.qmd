@@ -1210,6 +1210,9 @@ function cielabScatter(palette, { darkMode = false } = {}) {
     }
   });
 }
+fullFracYear = 2021
+decDoty = 305
+nDaysInYear = 365
 function lightnessSpectrum(palette, { darkMode = false } = {}) {
   let labPalette = palette.map((c,i)=>({...d3.lab(c), i, color: c, ...({})}));
   return Plot.plot({
