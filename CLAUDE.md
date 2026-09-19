@@ -49,6 +49,17 @@ updated as new preferences come up; don't let it grow into a changelog.
   diagram's font-size, check every cluster title's rendered height against
   `font-size × 1.5` (one line) — if it doesn't match, drop the font-size until it does,
   even if that's smaller than what plain nodes alone would tolerate.
+- Every `mermaid-format: svg` diagram gets a fixed `width="672" height="480"` on its root
+  `<svg>`, unrelated to its own content. `max-width:100%; height:auto` alone does NOT fix
+  this: browsers take the intrinsic aspect ratio from an SVG's width/height *attributes*
+  when both are present, not from viewBox, so every diagram scales to a 672:480 box
+  regardless of its real shape, leaving large empty margins above/below (mermaid's default
+  centering splits the leftover space evenly, which is also why a diagram can look
+  vertically adrift/"not centered" with no horizontal asymmetry to point to).
+  `asset/mermaid-viewbox.lua` (a pandoc filter, in `_quarto.yml`'s `filters:`) rewrites
+  every `svg.flowchart`'s width/height to match its own viewBox right after mermaid
+  generates it — for both `{{< include >}}`-embedded diagrams and ones rendered directly
+  from a chunk — which is what actually makes `height:auto` behave correctly.
 
 ## Content edits
 
@@ -69,16 +80,27 @@ updated as new preferences come up; don't let it grow into a changelog.
   rename/readfile error) partway through, it's stale `_freeze`/`.quarto` cache state, not
   a real content problem — delete `_freeze`, `.quarto`, and any `*/index_cache` or
   `*/.jupyter_cache` directories (all gitignored, safe to remove) and retry.
-- A full-project render right after clearing those caches has, at least once, silently
-  dropped ~180 files from the built site with no error: the site-wide mermaid.js/
-  glightbox bundles (breaking every *live*-rendered mermaid diagram and image lightbox,
-  not just this repo's pre-rendered ones), `asset/cite.html`, several tracked images, and
-  a stale-but-still-referenced bootstrap theme CSS hash variant. A second full render
-  right after can silently produce the *same* omissions again — this isn't fixed by
-  retrying `quarto render`/`quarto publish` alone. After any publish that follows a cache
-  clear, verify before trusting it: `diff <(git ls-tree -r --name-only <last-good-gh-pages-
-  commit>) <(git ls-tree -r --name-only <new-commit>)` and check every removed path either
-  (a) has no corresponding source file on `main` (genuinely stale, fine to lose) or (b)
-  is truly unreferenced by any current page. Anything else, restore directly by extracting
-  it from the last known-good gh-pages commit or from `main` — don't rely on a re-render
-  to bring it back.
+- A full-project `quarto render`/`publish` deterministically drops any file it can't prove
+  is referenced from a rendered page — this is not cache-clear-specific, it reproduced on
+  every single full render tried in one session, dropping the same ~70 files every time:
+  `asset/cite.html` (included by 4 pages' citations), several tracked images/fonts/data
+  files, and (transiently, since our own mermaid changes made these legitimately
+  unreferenced too) some old commonmark-format PNGs. **Fixed**: `project.resources` in
+  `_quarto.yml` now force-includes `asset/**` and the couple of stray top-level files this
+  actually bit, so quarto always copies them regardless of reference detection. If a
+  *new* file outside `asset/` goes missing from a future deploy the same way, add its path
+  (or its directory, as a glob) to that `resources:` list rather than special-casing it —
+  don't rely on quarto's own detection ever catching it.
+- Before trusting any full-project publish, it's still worth a spot check:
+  `diff <(git ls-tree -r --name-only <last-good-gh-pages-commit>) <(git ls-tree -r
+  --name-only <new-commit>)`, and for anything removed, confirm it either (a) has no
+  corresponding source file on `main` (genuinely stale, fine to lose) or (b) is truly
+  unreferenced by any current page — otherwise add it to `project.resources` and
+  republish, don't just manually patch the one deploy.
+- If `quarto publish` errors with `NotFound: readfile '<page>/index.html'` (or a similar
+  rename/readfile error) partway through, it's stale `_freeze`/`.quarto` cache state, not
+  a real content problem — delete `_freeze`, `.quarto`, and any `*/index_cache` or
+  `*/.jupyter_cache` directories (all gitignored, safe to remove) and retry. A `quarto`
+  publish/render invocation can also fail transiently with an unrelated headless-Chrome
+  error (`Could not find node with given id`) — just retry, no cache clear needed for that
+  one.
