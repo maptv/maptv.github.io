@@ -97,6 +97,27 @@ updated as new preferences come up; don't let it grow into a changelog.
   corresponding source file on `main` (genuinely stale, fine to lose) or (b) is truly
   unreferenced by any current page — otherwise add it to `project.resources` and
   republish, don't just manually patch the one deploy.
+- `project.resources` only helps for loose files under the project tree (like `asset/**`).
+  It does NOT cover `site_libs/**`: those are generated per-publish from each page's HTML
+  dependencies (mermaid.js/glightbox for whichever pages still need them, a
+  content-addressed `bootstrap[-dark]-<hash>.min.css` per distinct compiled theme — this
+  site has at least 3 distinct hashes across different pages, not one shared file), and
+  that generation step has independently, repeatedly dropped files a full publish's own
+  rendered pages still reference — observed on multiple separate publishes, worse right
+  after a `_freeze`/`.quarto` clear but not exclusive to it. A `quarto render <single
+  file>.qmd` for the specific page that needs a given bundle reliably regenerates it
+  (checked into `_site/site_libs/...`) even when the full-project pass won't. To fix a
+  broken publish: `grep -rho 'bootstrap-[a-z0-9]*\.min\.css\|bootstrap-dark-[a-z0-9]*\.min
+  \.css' _site --include="*.html" | sort -u` to find every hash the current build actually
+  needs, render whichever single pages are missing files locally to produce them, then
+  `git worktree add` the gh-pages branch and copy the missing site_libs files in directly
+  and push — don't just keep re-running the full publish hoping it lands clean.
+- Any `quarto render`/`publish` invocation, isolated or full-project, can also leak
+  alternate-format companion output (`<page>/index.html`, `<page>/index.md`, and orphaned
+  `mermaid-figure-N.svg` under `<page>_files/figure-commonmark/`) directly into the source
+  tree next to the `.qmd` instead of only into `_site/`. Check `git status` for stray
+  untracked `index.html`/`index.md` files (`git clean -n -- '*/index.html' '*/index.md'`
+  to preview, `-f` to remove) before staging anything.
 - If `quarto publish` errors with `NotFound: readfile '<page>/index.html'` (or a similar
   rename/readfile error) partway through, it's stale `_freeze`/`.quarto` cache state, not
   a real content problem — delete `_freeze`, `.quarto`, and any `*/index_cache` or
