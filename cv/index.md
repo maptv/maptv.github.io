@@ -11,15 +11,17 @@
 <div class="contact">
 
 - <img src="https://icons.getbootstrap.com/assets/icons/telephone.svg"
-  class="phone" /> [240-207-1654](tel:240-207-1654)
+  class="phone" loading="lazy" /> [240-207-1654](tel:240-207-1654)
 - <img src="https://icons.getbootstrap.com/assets/icons/envelope-at.svg"
-  class="shiftup" /> <maptv@ireni.co>
+  class="shiftup" loading="lazy" /> <maptv@ireni.co>
 - <img src="https://icons.getbootstrap.com/assets/icons/house.svg"
-  class="shiftup" /> [maptv.github.io](https://maptv.github.io)
+  class="shiftup" loading="lazy" />
+  [maptv.github.io](https://maptv.github.io)
 - <img src="https://icons.getbootstrap.com/assets/icons/github.svg"
-  class="shiftup" /> [maptv](https://github.com/maptv)
+  class="shiftup" loading="lazy" /> [maptv](https://github.com/maptv)
 - <img src="https://icons.getbootstrap.com/assets/icons/linkedin.svg"
-  class="linkedin" /> [maptv](https://linkedin.com/in/maptv)
+  class="linkedin" loading="lazy" />
+  [maptv](https://linkedin.com/in/maptv)
 
 </div>
 
@@ -302,122 +304,242 @@
 
 ### Skills
 
-![](https://img.shields.io/badge/-Airflow-blue?logo=apacheairflow&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Alacritty-blue?logo=Alacritty&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Amazon_Web_Services-blue?logo=amazonwebservices&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Anaconda-blue?logo=Anaconda&logoColor=white&color.png)
-![](https://img.shields.io/badge/-API_Gateway-blue?logo=amazonapigateway&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Asana-blue?logo=asana&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Bash-blue?logo=gnu-bash&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Blender-blue?logo=gnu-blender&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Bootstrap-blue?logo=bootstrap&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Chartjs-blue?logo=chartdotjs&logoColor=white&color.png)
-![](https://img.shields.io/badge/-CodePen-blue?logo=codepen&logoColor=white&color.png)
-![](https://img.shields.io/badge/-CloudWatch-blue?logo=amazoncloudwatch&logoColor=white&color.png)
-![](https://img.shields.io/badge/-conda--forge-blue?logo=conda-forge&logoColor=white&color.png)
-![](https://img.shields.io/badge/-CSS-blue?logo=css3&logoColor=white&color.png)
-![](https://img.shields.io/badge/-D3-blue?logo=d3dotjs&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Dask-blue?logo=dask&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Databricks-blue?logo=databricks&logoColor=white&color.png)
-![](https://img.shields.io/badge/-DataGrip-blue?logo=datagrip&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Django-blue?logo=django&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Docker-blue?logo=docker&logoColor=white&color.png)
-![](https://img.shields.io/badge/-DocumentDB-blue?logo=amazondocumentdb&logoColor=white&color.png)
-![](https://img.shields.io/badge/-DVC-blue?logo=dvc&logoColor=white&color.png)
-![](https://img.shields.io/badge/-DynamoDB-blue?logo=amazondynamodb&logoColor=white&color.png)
-![](https://img.shields.io/badge/-EC2-blue?logo=amazonec2&logoColor=white&color.png)
-![](https://img.shields.io/badge/-ECS-blue?logo=amazonecs&logoColor=white&color.png)
-![](https://img.shields.io/badge/-EKS-blue?logo=amazoneks&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Elasticache-blue?logo=amazonelasticache&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Elastic_Load_Balancing-blue?logo=awselasticloadbalancing&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Emacs-blue?logo=gnuemacs&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Express-blue?logo=express&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Fargate-blue?logo=awsfargate&logoColor=white&color.png)
-![](https://img.shields.io/badge/-FastAPI-blue?logo=fastapi&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Flask-blue?logo=flask&logoColor=white&color.png)
-![](https://img.shields.io/badge/-GIMP-blue?logo=gimp&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Git-blue?logo=git&logoColor=white&color.png)
-![](https://img.shields.io/badge/-GitHub-blue?logo=github&logoColor=white&color.png)
-![](https://img.shields.io/badge/-GitHub_Actions-blue?logo=githubactions&logoColor=white&color.png)
-![](https://img.shields.io/badge/-GitLab-blue?logo=gitlab&logoColor=white&color.png)
-![](https://img.shields.io/badge/-GitPod-blue?logo=gitpod&logoColor=white&color.png)
-![](https://img.shields.io/badge/-GNU-blue?logo=gnu&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Homebrew-blue?logo=homebrew&logoColor=white&color.png)
-![](https://img.shields.io/badge/-HTML-blue?logo=html5&logoColor=white&color.png)
-![](https://img.shields.io/badge/-HTTPie-blue?logo=httpie&logoColor=white&color.png)
-![](https://img.shields.io/badge/-HuggingFace-blue?logo=huggingface&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Hyper-blue?logo=hyper&logoColor=white&color.png)
-![](https://img.shields.io/badge/-IAM-blue?logo=amazoniam&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Inkscape-blue?logo=inkscape&logoColor=white&color.png)
-![](https://img.shields.io/badge/-iTerm-blue?logo=iterm2&logoColor=white&color.png)
-![](https://img.shields.io/badge/-JavaScript-blue?logo=javascript&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Jira-blue?logo=jirasoftware&logoColor=white&color.png)
-![](https://img.shields.io/badge/-JSON-blue?logo=json&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Julia-blue?logo=julia&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Jupyter-blue?logo=jupyter&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Keras-blue?logo=keras&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Kubernetes-blue?logo=kubernetes&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Lambda-blue?logo=awslambda&logoColor=white&color.png)
-![](https://img.shields.io/badge/-LaTeX-blue?logo=latex&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Linux-blue?logo=linux&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Lua-blue?logo=lua&logoColor=white&color.png)
-![](https://img.shields.io/badge/-macOS-blue?logo=apple&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Markdown-blue?logo=markdown&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Mermaid-blue?logo=mermaid&logoColor=white&color.png)
-![](https://img.shields.io/badge/-MongoDB-blue?logo=mongodb&logoColor=white&color.png)
-![](https://img.shields.io/badge/-MySQL-blue?logo=mysql&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Neovim-blue?logo=neovim&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Node-blue?logo=nodedotjs&logoColor=white&color.png)
-![](https://img.shields.io/badge/-NPM-blue?logo=npm&logoColor=white&color.png)
-![](https://img.shields.io/badge/-NumPy-blue?logo=numpy&logoColor=white&color.png)
-![](https://img.shields.io/badge/-OBS-blue?logo=obsstudio&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Observable-blue?logo=observable&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Obsidian-blue?logo=obsidian&logoColor=white&color.png)
-![](https://img.shields.io/badge/-OpenCV-blue?logo=opencv&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Pandas-blue?logo=pandas&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Plotly-blue?logo=plotly&logoColor=white&color.png)
-![](https://img.shields.io/badge/-PostgreSQL-blue?logo=postgresql&logoColor=white&color.png)
-![](https://img.shields.io/badge/-PyCharm-blue?logo=pycharm&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Pydantic-blue?logo=pydantic&logoColor=white&color.png)
-![](https://img.shields.io/badge/-PyPI-blue?logo=pypi&logoColor=white&color.png)
-![](https://img.shields.io/badge/-PyScaffold-blue?logo=pyscaffold&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Pytest-blue?logo=pytest&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Python-informational?logo=python&logoColor=white&color.png)
-![](https://img.shields.io/badge/-PyTorch-blue?logo=pytorch&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Quip-blue?logo=quip&logoColor=white&color.png)
-![](https://img.shields.io/badge/-R-blue?logo=r&logoColor=white&color.png)
-![](https://img.shields.io/badge/-RDS-blue?logo=amazonrds&logoColor=white&color.png)
-![](https://img.shields.io/badge/-React-blue?logo=react&logoColor=white&color.png)
-![](https://img.shields.io/badge/-README-blue?logo=readme&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Read_The_Docs-blue?logo=readthedocs&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Redshift-blue?logo=amazonredshift&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Reveal-blue?logo=revealdotjs&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Route_53-blue?logo=amazonroute53&logoColor=white&color.png)
-![](https://img.shields.io/badge/-RStudio-blue?logo=rstudioide&logoColor=white&color.png)
-![](https://img.shields.io/badge/-S3-blue?logo=amazons3&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Sass-blue?logo=sass&logoColor=white&color.png)
-![](https://img.shields.io/badge/-SciPy-blue?logo=scipy&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Secrets%20Manager-blue?logo=awssecretsmanager&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Selenium-blue?logo=selenium&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Sklearn-blue?logo=scikit-learn&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Slack-blue?logo=slack&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Spacemacs-blue?logo=spacemacs&logoColor=white&color.png)
-![](https://img.shields.io/badge/-spaCy-blue?logo=spacy&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Spark-blue?logo=apachespark&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Sphinx-blue?logo=sphinx&logoColor=white&color.png)
-![](https://img.shields.io/badge/-SQLAlchemy-blue?logo=sqlalchemy&logoColor=white&color.png)
-![](https://img.shields.io/badge/-SQLite-blue?logo=sqlite&logoColor=white&color.png)
-![](https://img.shields.io/badge/-SES-blue?logo=amazonsimpleemailservice&logoColor=white&color.png)
-![](https://img.shields.io/badge/-SQS-blue?logo=amazonsqs&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Streamlit-blue?logo=streamlit&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Swift-blue?logo=swift&logoColor=white&color.png)
-![](https://img.shields.io/badge/-TensorFlow-blue?logo=tensorflow&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Tidyverse-blue?logo=tidyverse&logoColor=white&color.png)
-![](https://img.shields.io/badge/-tmux-blue?logo=tmux&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Typescript-blue?logo=typescript&logoColor=white&color.png)
-![](https://img.shields.io/badge/-Vim-blue?logo=vim&logoColor=white&color.png)
-![](https://img.shields.io/badge/-VSCode-blue?logo=visualstudiocode&logoColor=white&color.png)
-![](https://img.shields.io/badge/-VSCodium-blue?logo=vscodium&logoColor=white&color.png)
-![](https://img.shields.io/badge/-WebStorm-blue?logo=webstorm&logoColor=white&color.png)
-![](https://img.shields.io/badge/-YAML-blue?logo=yaml&logoColor=white&color.png)
-![](https://img.shields.io/badge/-zsh-blue?logo=zsh&logoColor=white&color.png)
+<img
+src="https://img.shields.io/badge/-Airflow-blue?logo=apacheairflow&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Alacritty-blue?logo=Alacritty&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Amazon_Web_Services-blue?logo=amazonwebservices&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Anaconda-blue?logo=Anaconda&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-API_Gateway-blue?logo=amazonapigateway&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Asana-blue?logo=asana&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Bash-blue?logo=gnu-bash&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Blender-blue?logo=gnu-blender&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Bootstrap-blue?logo=bootstrap&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Chartjs-blue?logo=chartdotjs&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-CodePen-blue?logo=codepen&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-CloudWatch-blue?logo=amazoncloudwatch&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-conda--forge-blue?logo=conda-forge&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-CSS-blue?logo=css3&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-D3-blue?logo=d3dotjs&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Dask-blue?logo=dask&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Databricks-blue?logo=databricks&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-DataGrip-blue?logo=datagrip&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Django-blue?logo=django&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Docker-blue?logo=docker&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-DocumentDB-blue?logo=amazondocumentdb&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-DVC-blue?logo=dvc&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-DynamoDB-blue?logo=amazondynamodb&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-EC2-blue?logo=amazonec2&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-ECS-blue?logo=amazonecs&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-EKS-blue?logo=amazoneks&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Elasticache-blue?logo=amazonelasticache&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Elastic_Load_Balancing-blue?logo=awselasticloadbalancing&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Emacs-blue?logo=gnuemacs&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Express-blue?logo=express&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Fargate-blue?logo=awsfargate&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-FastAPI-blue?logo=fastapi&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Flask-blue?logo=flask&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-GIMP-blue?logo=gimp&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Git-blue?logo=git&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-GitHub-blue?logo=github&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-GitHub_Actions-blue?logo=githubactions&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-GitLab-blue?logo=gitlab&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-GitPod-blue?logo=gitpod&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-GNU-blue?logo=gnu&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Homebrew-blue?logo=homebrew&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-HTML-blue?logo=html5&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-HTTPie-blue?logo=httpie&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-HuggingFace-blue?logo=huggingface&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Hyper-blue?logo=hyper&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-IAM-blue?logo=amazoniam&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Inkscape-blue?logo=inkscape&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-iTerm-blue?logo=iterm2&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-JavaScript-blue?logo=javascript&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Jira-blue?logo=jirasoftware&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-JSON-blue?logo=json&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Julia-blue?logo=julia&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Jupyter-blue?logo=jupyter&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Keras-blue?logo=keras&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Kubernetes-blue?logo=kubernetes&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Lambda-blue?logo=awslambda&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-LaTeX-blue?logo=latex&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Linux-blue?logo=linux&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Lua-blue?logo=lua&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-macOS-blue?logo=apple&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Markdown-blue?logo=markdown&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Mermaid-blue?logo=mermaid&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-MongoDB-blue?logo=mongodb&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-MySQL-blue?logo=mysql&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Neovim-blue?logo=neovim&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Node-blue?logo=nodedotjs&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-NPM-blue?logo=npm&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-NumPy-blue?logo=numpy&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-OBS-blue?logo=obsstudio&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Observable-blue?logo=observable&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Obsidian-blue?logo=obsidian&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-OpenCV-blue?logo=opencv&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Pandas-blue?logo=pandas&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Plotly-blue?logo=plotly&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-PostgreSQL-blue?logo=postgresql&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-PyCharm-blue?logo=pycharm&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Pydantic-blue?logo=pydantic&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-PyPI-blue?logo=pypi&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-PyScaffold-blue?logo=pyscaffold&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Pytest-blue?logo=pytest&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Python-informational?logo=python&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-PyTorch-blue?logo=pytorch&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Quip-blue?logo=quip&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-R-blue?logo=r&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-RDS-blue?logo=amazonrds&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-React-blue?logo=react&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-README-blue?logo=readme&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Read_The_Docs-blue?logo=readthedocs&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Redshift-blue?logo=amazonredshift&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Reveal-blue?logo=revealdotjs&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Route_53-blue?logo=amazonroute53&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-RStudio-blue?logo=rstudioide&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-S3-blue?logo=amazons3&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Sass-blue?logo=sass&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-SciPy-blue?logo=scipy&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Secrets%20Manager-blue?logo=awssecretsmanager&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Selenium-blue?logo=selenium&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Sklearn-blue?logo=scikit-learn&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Slack-blue?logo=slack&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Spacemacs-blue?logo=spacemacs&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-spaCy-blue?logo=spacy&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Spark-blue?logo=apachespark&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Sphinx-blue?logo=sphinx&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-SQLAlchemy-blue?logo=sqlalchemy&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-SQLite-blue?logo=sqlite&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-SES-blue?logo=amazonsimpleemailservice&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-SQS-blue?logo=amazonsqs&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Streamlit-blue?logo=streamlit&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Swift-blue?logo=swift&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-TensorFlow-blue?logo=tensorflow&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Tidyverse-blue?logo=tidyverse&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-tmux-blue?logo=tmux&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Typescript-blue?logo=typescript&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-Vim-blue?logo=vim&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-VSCode-blue?logo=visualstudiocode&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-VSCodium-blue?logo=vscodium&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-WebStorm-blue?logo=webstorm&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-YAML-blue?logo=yaml&amp;logoColor=white&amp;color.png"
+loading="lazy" /> <img
+src="https://img.shields.io/badge/-zsh-blue?logo=zsh&amp;logoColor=white&amp;color.png"
+loading="lazy" />

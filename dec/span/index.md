@@ -7,7 +7,7 @@ Martin Laptev
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:8.64in;height:0.98in" />
+style="width:8.64in;height:0.98in" loading="lazy" />
 
 </div>
 
@@ -25,7 +25,7 @@ line chart below.
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:8.64in;height:0.98in" />
+style="width:8.64in;height:0.98in" loading="lazy" />
 
 </div>
 

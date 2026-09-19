@@ -238,7 +238,7 @@ of account creation steps.
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-1.png"
-style="width:6.21in;height:2.41in" />
+style="width:6.21in;height:2.41in" loading="lazy" />
 
 </div>
 
@@ -270,7 +270,7 @@ smartphone screen to a horizontal (landscape) position.
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-3.png"
-style="width:4.84in;height:3.98in" />
+style="width:4.84in;height:3.98in" loading="lazy" />
 
 </div>
 
@@ -656,7 +656,7 @@ website.
 <div>
 
 <img src="index_files/figure-commonmark/mermaid-figure-2.png"
-style="width:9in;height:1.29in" />
+style="width:9in;height:1.29in" loading="lazy" />
 
 </div>
 
