@@ -1,0 +1,27 @@
+// Quarto's own site_libs/quarto-diagram/mermaid-postprocess-shim.js recenters
+// each flowchart node's foreignObject using its actual rendered height (its
+// build-time height estimate is often off, especially at larger font sizes).
+// That shim only targets svg elements inside div.cell-output-display, so it
+// never reaches diagrams embedded via {{< include >}} (fig-conv, fig-mud,
+// the nav breadcrumbs), and it throws if any div.cell-output-display svg on
+// the page lacks a mermaid <desc> (aborting the loop for every diagram after
+// it, mermaid or not). This redoes the same recentering directly against
+// every svg.flowchart on the page, regardless of ancestor or <desc>.
+function fixMermaidForeignObjects() {
+  document.querySelectorAll("svg.flowchart foreignObject").forEach((fo) => {
+    const div = fo.querySelector("div");
+    if (!div) return;
+    const divHeight = window.getComputedStyle(div).height;
+    fo.setAttribute("height", divHeight);
+    const g = fo.parentElement;
+    const transform = g.getAttribute("transform");
+    if (!transform) return;
+    const m = transform.match(/translate\(([^,]+),(.+)\)/);
+    if (!m) return;
+    g.setAttribute(
+      "transform",
+      `translate(${m[1]},${-Number(divHeight.slice(0, -2)) / 2})`
+    );
+  });
+}
+window.addEventListener("load", fixMermaidForeignObjects);
