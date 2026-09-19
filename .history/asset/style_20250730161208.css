@@ -1,0 +1,224 @@
+/* css styles */
+
+@font-face {
+    font-family: Ewka;
+    src: url("ewka.ttf") format("truetype");
+}
+
+.centered {
+  text-align: center;
+}
+
+.monospaced {
+  font-family: monospace;
+}
+
+.floatright {
+  float: right;
+}
+
+p:has(.relative) {
+  margin-top: -25px !important;
+  margin-bottom: -5px;
+  text-align: center;
+}
+div.zerobased > ol {
+  list-style-type: none;
+  counter-reset: listitem -1;
+}
+
+div.zerobased > ol li {
+  counter-increment: listitem;
+}
+
+div.zerobased > ol li::before {
+  content: counter(listitem) ". ";
+}
+
+/* h1.title { */
+/*   counter-reset: refitem -1; */
+/* } */
+
+/* mjx-mtable > mjx-labels > mjx-itable > mjx-mtr > mjx-mtd > mjx-mtext > mjx-c:nth-child(1) { */
+/*   counter-increment: refitem; */
+/* } */
+
+/* mjx-mtable > mjx-labels > mjx-itable > mjx-mtr > mjx-mtd > mjx-mtext > mjx-c { */
+/*   counter-increment: refitem; */
+/* } */
+
+/* mjx-mtable > mjx-labels > mjx-itable > mjx-mtr > mjx-mtd > mjx-mtext > mjx-c:not(.mjx-c28):not(.mjx-c29)::before { */
+/*   content: counter(refitem) !important; */
+/* } */
+
+/* mjx-mtd#mjx-eqn\:1 > mjx-mtext.mjx-n > mjx-c:not(.mjx-c28):not(.mjx-c29)::before { */
+/*   content: "0"; */
+/* } */
+
+/* mjx-mtd#mjx-eqn\:2 > mjx-mtext.mjx-n > mjx-c:not(.mjx-c28):not(.mjx-c29)::before { */
+/*   content: "1"; */
+/* } */
+
+
+
+/* improve responsiveness of navbar elements */
+
+@media only screen and (max-width: 558px) {
+    a.navbar-brand, span.navbar-title {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 410px) {
+    i.bi-calendar, i.bi-clock {
+        display: none;
+    }
+    div.navbar-container.container-fluid {
+    -webkit-justify-content: flex-start;
+    -webkit-flex-direction: row !important;
+}
+}
+
+@media only screen and (max-width: 375px) {
+    div.quarto-navbar-tools {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 290px) {
+div#quarto-search {
+        display: none;
+    }
+}
+
+code {
+  padding: 0px;
+  font-family: Monaco Consolas "Courier New" Courier monospace;
+}
+
+#quarto-header > nav.navbar.navbar-expand-lg > div > div.navbar-brand-container.mx-auto > i.bi.bi-calendar {
+  margin: 0px 1px 0px 1px;
+}
+
+#quarto-header > nav.navbar.navbar-expand-lg > div > div.navbar-brand-container.mx-auto > i.bi.bi-clock {
+  margin-left: 1px;
+}
+
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+#quarto-sidebar { padding: 0px; overflow-x: hidden !important; }
+#quarto-sidebar > * { padding: 0px; }
+@media only screen and (max-width: 991px) { #quarto-search { display: none !important; } #quarto-sidebar { padding: 0px 9px 0px 9px !important; } }
+@media only screen and (max-width: 767px) { div.cell.page-columns.page-full { display: none !important; } }
+
+.sidebar-tools-main {
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-tools-collapse #quarto-search .aa-DetachedSearchButton, .sidebar-tools-main #quarto-search .aa-DetachedSearchButton {
+  padding-left: 0px;
+  margin-left: -3px;
+}
+
+div.quarto-about-trestles .about-entity:has(img[title="headshot"]):after {
+  content: "Martin Laptev";
+  text-align: center;
+  margin: -20px 0px 20px 0px;
+  font-size: .75em;
+}
+
+
+div.quarto-about-trestles .about-contents {
+  border-left: none;
+  padding-right: 10px;
+}
+
+@media only screen and (min-width: 992px) {
+  div.quarto-about-trestles .about-entity:has(img[title="headshot"]) {
+    order: 2;
+    margin: 0px -60px 0px -60px;
+  }
+}
+
+div.quarto-about-trestles .about-entity:has(img[title="desk"]):after {
+  content: "My workstation";
+  text-align: center;
+  margin: -20px 0px 20px 0px;
+  font-size: .75em;
+}
+
+
+#quarto-content > div.quarto-about-trestles.column-page-right:has(img[title="desk"]) {
+  padding-top: 12px !important;
+}
+
+
+main#quarto-document-content {
+  padding-top: 0px !important;
+  margin-top: 0px !important;
+}
+
+nav#quarto-sidebar {
+  padding-top: 3px !important;
+}
+
+div#quarto-margin-sidebar {
+  padding-top: 10px !important;
+}
+
+div.quarto-listing > div.list.grid {
+  padding-top: 18px !important;
+  margin-top: 8px !important;
+}
+
+#quarto-header > nav.navbar.navbar-expand-lg {
+  padding: 0px;
+}
+
+#quarto-header > nav.navbar.navbar-expand-lg > div > div.navbar-brand-container.mx-auto > div#time {
+  white-space: nowrap;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+div > form > label {
+  --label-width: 125px;
+}
+
+.azul { border-radius: 4px; background-color: blue; color: white; padding: 0px 2px 0px 2px; } /* month 0000ff */
+.cyan { border-radius: 4px; background-color: cyan; color: black; padding: 0px 2px 0px 2px; } /* day 00ffff */
+.darkgreen { border-radius: 4px; background-color: #006400; color: white; padding: 0px 2px 0px 2px; } /* week 006400 */
+.darkred { border-radius: 4px; background-color: darkred; color: white; padding: 0px 2px 0px 2px; } /* degree 8b0000 */
+.lightblue { border-radius: 4px; background-color: lightskyblue; color: black; padding: 0px 2px 0px 2px; } /* dom add8e6 */
+.lightgreen { border-radius: 4px; background-color: lightgreen; color: black; padding: 0px 2px 0px 2px; } /* dow 90ee90 */
+.lime { border-radius: 4px; background-color: lime; color: black; padding: 0px 2px 0px 2px; } /* zone 00ff00 */
+.olive { border-radius: 4px; background-color: olive; color: white; padding: 0px 2px 0px 2px; } /* minute 808000 */
+.orange { border-radius: 4px; background-color: orange; color: black; padding: 0px 2px 0px 2px; } /* orange ffa500 */
+.pink { border-radius: 4px; background-color: pink; color: black; padding: 0px 2px 0px 2px; } /* negative ffc0cb */
+.purple { border-radius: 4px; background-color: purple; color: white; padding: 0px 2px 0px 2px; } /* second 800080 */
+.red { border-radius: 4px; background-color: red; color: black; padding: 0px 2px 0px 2px; }
+.teal { border-radius: 4px; background-color: teal; color: white; padding: 0px 2px 0px 2px; } /* hour 008080 */
+.violet { border-radius: 4px; background-color: violet; color: black; padding: 0px 2px 0px 2px; } /* diff ee82ee */
+.magenta { border-radius: 4px; background-color: magenta; color: black; padding: 0px 2px 0px 2px; } /* diff ff00ff */
+.yellow { border-radius: 4px; background-color: yellow; color: black; padding: 0px 2px 0px 2px; } /* year ffff00 */
+
+.under {
+  text-decoration-line: underline;
+  text-decoration-thickness: .7px;
+}
+
+.over {
+  text-decoration-line: overline;
+  text-decoration-thickness: .7px;
+}
+
+.hide {
+  display: none;
+}
+
+#title-block-header.quarto-title-block.default .description>p:last-of-type {
+  display: none;
+}

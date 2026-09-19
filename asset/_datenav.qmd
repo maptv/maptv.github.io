@@ -1,0 +1,45 @@
+```{mermaid}
+%%| label: conversionchart
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
+flowchart LR
+   L~~~Y
+   L-->Y
+   L-->D
+   L-->E
+   R-->Y
+   M-->R[  ]:::empty
+   D-->A
+   D~~~B[  ]:::empty
+   A-->G
+   G-->R
+   Y~~~L[  ]:::empty
+   Y---A[  ]:::empty
+   Y~~~A
+   B-->M
+   B~~~N
+   B-->N
+   B-->D
+   B~~~D
+   N~~~B
+   E-->W
+   subgraph decdate[Decalendar]
+   Y[year<br>1969]
+   D[doy<br>306]
+   E[doe<br>719468]
+   end
+   subgraph gregdate[Gregorian calendar]
+   W[dow<br>4]
+   G[year<br>1970]
+   M[month<br>1]
+   N[dom<br>1]
+   end
+   classDef empty width:0px;
+   click E "#doe"
+   click W "#dow"
+   click Y "#yoe"
+   click D "#doy"
+   click G "#yoe"
+   click M "#moy"
+   click N "#dom"
+```
+

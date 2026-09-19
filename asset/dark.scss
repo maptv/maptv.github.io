@@ -1,0 +1,457 @@
+/*-- scss:defaults --*/
+
+// Base document colors
+$body-bg: #000000 !default;
+$body-color: #FFFFFF !default;
+
+// Inline code
+$code-bg: #000000 !default;
+$link-color: deepskyblue !default;
+$code-color: #BFFF00 !default;
+$code-font-size: .98em !default;
+$code-padding: 0px !default;
+
+// color classes
+.orange { color: orange; }
+.green { color: lawngreen; }
+.blue { color: powderblue; }
+.gray { color: gray; }
+.tool { color: #F399FF; }
+
+.quarto-title-banner   { color: #ffffff !important; }
+
+.linkedin, .shiftup, .phone {
+  filter: invert(100%);
+}
+
+div.navbar-brand-container {
+  color: #DEE2E6 !important;
+}
+
+nav.navbar {
+    background: #2C3E50 !important;
+}
+
+// svg.mermaid-js is the class Quarto's client-side mermaid-init.js adds
+// after rendering; svg.flowchart is mermaid's own class, present even on
+// diagrams pre-rendered to static SVG at build time (mermaid-format: svg),
+// which never runs that client-side post-processing. Target both so dark
+// mode still applies to statically-rendered diagrams.
+svg.mermaid-js path, svg.flowchart path {
+    stroke: #ffffff !important;
+}
+
+svg.mermaid-js .marker, svg.flowchart .marker {
+    fill: #ffffff !important;
+    stroke: none !important;
+}
+
+g#restdays.cluster rect {
+    fill: darkblue !important;
+}
+
+g#workdays.cluster rect {
+    fill: darkgreen !important;
+}
+
+.node rect {
+    fill: darkmagenta !important;
+}
+
+svg.mermaid-js g.edgeLabels span.edgeLabel, svg.flowchart g.edgeLabels span.edgeLabel {
+    color: #ffffff !important;
+    background: #000000 !important;
+}
+
+g.node.clickable.flowchart-label.default > rect {
+    fill: darkmagenta !important;
+}
+svg.mermaid-js span.nodeLabel, svg.flowchart span.nodeLabel {
+    color: #ffffff !important;
+}
+.knitr {
+  filter: invert(1);
+}
+
+svg#lefthand tspan, svg#righthand tspan {
+  fill: white;
+}
+svg#lefthand path, svg#righthand path {
+  stroke: white !important;
+}
+
+div.musicchart div#lollipop svg > g:has(line) {
+  stroke: white;
+}
+div.musicchart div#lollipop svg path {
+  stroke: white;
+}
+div.musicchart div#lollipop svg > text {
+  fill: white;
+}
+div.musicchart div#lollipop svg circle {
+  stroke: white;
+}
+div.musicchart div#lollipop svg > g > text {
+  stroke: white;
+}
+div.musicchart div#lollipop svg g.tick text {
+  fill: white;
+}
+div.musicchart div#lollipop svg line {
+  stroke: white;
+}
+
+// #title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-categories {
+//   color: #fff !important;
+// }
+
+
+.quarto-title-banner h1, div.quarto-categories { color: #ffffff !important; }
+
+button.btn.btn-quarto, div.observablehq > div.button-switch {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    border-radius: 2px !important;
+    background-color: #1c1c1c !important;
+    text-align: center !important;
+    border: 1px solid grey !important;
+    padding: 0px 7px !important;
+    line-height: 1.5;
+    width: auto !important;
+    color: #EFEFEF !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+}
+button.btn.btn-quarto:hover, div.observablehq > div.button-switch:hover {
+    background-color: #555555 !important;
+    border: 1px solid #C5C5C5 !important;
+}
+button.btn.btn-quarto:active, div.observablehq > div.button-switch:active {
+    background-color: #454545 !important;
+    border: 1px solid grey !important;
+}
+.btn-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin: 0px;
+}
+
+form.oi-ec050e.oi-ec050e-toggle {
+    --label-width: 60px;
+    --input-width: 30px;
+}
+
+// div.ojs-in-a-box-waiting-for-module-import.observablehq > form.oi-ec050e {
+form.oi-ec050e {
+    --label-width: 60px;
+    --input-width: 450px;
+}
+
+svg g g.tick text {
+    color: #ffffff !important;
+}
+
+svg.schedule-explorer g[aria-label="x-axis tick label"] text {
+    color: #ffffff !important;
+    font-size: 28px !important;
+}
+svg.schedule-explorer g[aria-label="y-axis tick label"] text {
+    color: #ffffff !important;
+    font-size: 22px !important;
+}
+svg.date-selector g[aria-label="x-axis tick label"] text {
+    color: #ffffff !important;
+    font-size: 22px !important;
+}
+svg.date-selector g[aria-label="y-axis tick label"] text {
+    color: #ffffff !important;
+    font-size: 18px !important;
+}
+
+#listing-listing > div.list.grid.quarto-listing-cols-3 > div > a > div > p > img.thumbnail-image.card-img {
+    border: 1px solid rgba(150,150,150,.125) !important;
+    border-bottom: 0 !important;
+}
+
+div.card-body {
+    border: 1px solid rgba(150,150,150,.125) !important;
+    border-top: 0 !important;
+}
+
+div.card-footer {
+    background: #0d0d0d !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(150,150,150,.125) !important;
+    border-top: 0;
+}
+
+p > span > mjx-container > mjx-math > mjx-mpadded > mjx-block > mjx-rbox > mjx-mtext > mjx-c::before {
+  color: black;
+}
+
+p > span > mjx-container > mjx-math > mjx-mrow > mjx-mtable > mjx-table > mjx-itable > mjx-mtr > mjx-mtd > mjx-texatom > mjx-mtable > mjx-table > mjx-itable > mjx-mtr > mjx-mtd > mjx-mpadded > mjx-block > mjx-rbox > mjx-mtext > mjx-c::before {
+  color: black;
+}
+
+p > span.nowrap > span > mjx-container > mjx-math > mjx-mpadded > mjx-block > mjx-rbox > mjx-mtext > mjx-c::before {
+  color: black;
+}
+
+p > span.math.display mjx-mpadded {
+  color: black;
+}
+
+div.observablehq > form > div > input {
+  background-color: darkslategray;
+}
+
+div.observablehq > div > form > div > input {
+  background-color: darkslategray !important;
+}
+
+#quarto-document-content > div.quarto-figure.quarto-figure-center > figure > p > a > img {
+  filter: invert(1);
+}
+
+div > form > div > input[type="range"] {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  height: 5px; /* Specified height */
+  background: #c4c4c4; /* Grey background */
+}
+
+#listing-listing > div.list.grid > div > a > div > p > img[src="../asset/cal16.svg"] {
+  filter: invert(1);
+}
+
+#listing-listing > div.list.grid > div > a > div > p > img[src="../asset/daywide.svg"] {
+  filter: invert(1);
+}
+
+#listing-listing > div.list.grid > div > a > div > p > img[src="../asset/colorWheelCompass.svg"] {
+  filter: invert(1);
+}
+
+.analogclock * {
+  fill: #fff;
+  stroke: #fff;
+}
+
+#daylightplot text {
+  fill: #fff;
+}
+
+#solar-system text {
+  fill: #fff;
+}
+
+#solar-system ellipse, #solar-system line {
+  stroke: #fff;
+}
+
+#daylightplot rect#daterect {
+  fill: #f00;
+}
+
+svg#lefthand, svg#cubiczem, #iobpiano svg, #fig-colorwheelcompass svg, .colorcomparer svg, svg.leftplot, svg.rightplot, svg.topplot, svg.btmplot {
+  background: #000 !important;
+}
+
+div#firstnav svg g.nodes a:nth-child(1) rect.basic.label-container {
+  stroke: magenta;
+  stroke-width: 6px;
+}
+
+#topdatenav svg g.nodes a:nth-child(2) rect.basic.label-container,
+#btmdatenav svg g.nodes a:nth-child(2) rect.basic.label-container {
+  stroke: magenta;
+  stroke-width: 6px;
+}
+
+div#timenav svg g.nodes a:nth-child(3) rect.basic.label-container {
+  stroke: magenta;
+  stroke-width: 6px;
+}
+
+div#snapnav svg g.nodes a:nth-child(4) rect.basic.label-container {
+  stroke: magenta;
+  stroke-width: 6px;
+}
+
+div#spannav svg g.nodes a:nth-child(5) rect.basic.label-container {
+  stroke: magenta;
+  stroke-width: 6px;
+}
+
+g.node rect:hover, g.node:has(g:hover) rect {
+  stroke: lightgreen !important;
+  stroke-width: 9px !important;
+}
+
+g#decdate > rect, g#gregdate > rect {
+  fill: darkblue !important;
+}
+
+.darklink {
+  color: #049;
+  text-underline-offset: 1.5px;
+  text-decoration-thickness: 1.5px;
+}
+
+.darklink:hover {
+  color: #06f;
+}
+
+div#fig-colorwheelcompass text {
+  fill: white;
+}
+
+div#fig-colorwheelcompass path, div#fig-colorwheelcompass circle {
+  stroke: white;
+}
+
+div#fig-colorwheelcompass path#piepath {
+  stroke: black;
+}
+
+#maptable tbody tr:nth-child(1) td div {
+    background: #A24 !important;
+}
+#maptable tbody tr:nth-child(2) td div {
+    background: #24A !important;
+}
+
+#maptable tbody tr td div.negative {
+    background: #A24 !important;
+}
+#maptable tbody tr td div.positive {
+    background: #24A !important;
+}
+
+.point0 { border-radius: 4px; background-color: #A24; color: white; padding: 0px 2px 0px 2px; }
+.point1 { border-radius: 4px; background-color: #24A; color: white; padding: 0px 2px 0px 2px; }
+.timeBarFull { fill: #24A; }
+.timeBarFullN { fill: #A24; }
+.tickLabel, .tickLabel1, .tickLabel2, .timeLabel { fill: white; }
+.timeBar { fill: #999; }
+.background { fill: black; }
+
+#projselect select {
+  border-color: white;
+  color: white;
+}
+
+.colorcomparer svg g[aria-label="tip"] g {
+  overflow: visible;
+}
+.colorcomparer svg g[aria-label="tip"] g {
+  fill: #202020;
+}
+.colorcomparer svg g[aria-label="tip"] g text {
+  color: white;
+}
+
+img#vitruvian {
+  filter: invert(100%);
+}
+
+img#ruler  {
+  filter: invert(100%);
+}
+
+div#iobpiano svg text#pianotext {
+  fill: white;
+}
+
+img#zModu {
+  filter: invert(100%);
+}
+
+#iobplayer {
+  filter: invert(100%);
+}
+
+#chorus svg {
+  filter: invert(100%) !important;
+}
+
+svg#daylightapp text {
+  fill: white;
+}
+
+div#calplots figure.calplot-figure svg.calplot {
+  background: black;
+}
+div#calplots figure.calplot-figure svg.calplot g[aria-label="tip"] {
+  fill: black;
+}
+div#calplots figure.calplot-figure svg.calplot g[aria-label="rule"]:has(line) {
+  stroke: white;
+}
+div#decplot figure.calplot-figure svg.calplot g[font-variant="tabular-nums"] text{
+  stroke: white;
+  stroke-width: 1.5px;
+}
+
+#decseasonplot g[aria-label="rule"]:not([stroke-dasharray]) line {
+  stroke: black;
+}
+#decseasonplot text {
+  fill: white;
+}
+#decseasonplot g[aria-label="x-axis tick"] {
+  stroke: white;
+}
+#decseasonplot svg {
+  background: black !important;
+}
+
+.overline::before,
+.grave::before,
+.doublegrave::before,
+.doublegrave::after,
+.doubleacute::before,
+.doubleacute::after,
+.acute::before {
+  background: white;
+}
+
+#fingerbinarygif {
+  filter: invert(1);
+}
+
+.hand {
+  filter: invert(1);
+}
+
+#moonplot text {
+  color: white;
+}
+.column-margin {
+	color: white;
+}
+figcaption.margin-caption {
+	color: white;
+}
+div.equationgroup {
+	color: white;
+}
+
+#mudplot svg {
+  background: black;
+}
+#mudplot svg g[aria-label="tip"] {
+  fill: black;
+}
