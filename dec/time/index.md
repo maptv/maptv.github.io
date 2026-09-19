@@ -831,7 +831,7 @@ using Dates
 hms = now(UTC)
 ```
 
-    2026-09-19T05:39:30.866
+    2026-09-19T17:35:00.219
 
 ``` julia
 hour(hms) / 24 +
@@ -840,13 +840,13 @@ second(hms) / 86400 +
 millisecond(hms) / 864e5
 ```
 
-    0.23577391203703704
+    0.7326414236111112
 
 ``` julia
 datetime2unix(hms) / 86400 % 1
 ```
 
-    0.2357739120379847
+    0.7326414236122218
 
 ### Observable JavaScript
 
@@ -870,13 +870,13 @@ hms.second / 86400 + \
 hms.microsecond / 864e8
 ```
 
-    0.23578170569444443
+    0.7326493052546297
 
 ``` python
 hms.timestamp() / 86400 % 1
 ```
 
-    0.23578170569453505
+    0.7326493052569276
 
 ### R
 
@@ -887,13 +887,13 @@ hms$min / 1440 +
 hms$sec / 86400
 ```
 
-    [1] 0.2357819
+    [1] 0.7326495
 
 ``` r
 (as.numeric(as.POSIXct(hms)) / 86400) %% 1
 ```
 
-    [1] 0.2357819
+    [1] 0.7326495
 
 </div>
 
@@ -935,19 +935,19 @@ using Dates
 dsa = datetime2unix(now(UTC)) / 86400 % 1 * 86400
 ```
 
-    20371.59700000193
+    63300.95799980918
 
 ``` julia
 hsa = dsa % 3600
 ```
 
-    2371.5970000019297
+    2100.9579998091795
 
 ``` julia
 map(x -> floor(Int, x), (dsa / 3600, hsa / 60, hsa % 60))
 ```
 
-    (5, 39, 31)
+    (17, 35, 0)
 
 ### Observable JavaScript
 
@@ -966,7 +966,7 @@ hsa = dsa % 3600
 tuple(map(int, [dsa // 3600, hsa // 60, hsa % 60 // 1]))
 ```
 
-    (5, 39, 31)
+    (17, 35, 1)
 
 ### R
 
@@ -976,7 +976,7 @@ hsa <- dsa %% 3600
 sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 ```
 
-    [1]  5 39 31
+    [1] 17 35  1
 
 </div>
 
@@ -2454,8 +2454,8 @@ travel the 12500 kz from Cambridge MA to Cambridge UK in a quarter day:
 Around the world in 80 days is a book published by Jules Verne in 1872.
 The average speed of a trip around the circumference of the earth in 80
 days would be about 1 / 80 v or 12.5 mv, which is a typical speed for a
-bicycle. If we flew in a “pedal powered airship”
-(https://en.wikipedia.org/wiki/Airship#:~:text=pedal%20powered%20airship)
+bicycle. If we flew in a “[pedal powered
+airship](https://en.wikipedia.org/wiki/Airship#:~:text=pedal%20powered%20airship)”
 from Cambridge MA to Cambridge UK at an average speed of 12.5 mv, we
 could complete the journey in ten days: 12500 kz / 12.5 mv = 1000 cd.
 

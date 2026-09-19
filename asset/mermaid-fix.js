@@ -7,8 +7,15 @@
 // the page lacks a mermaid <desc> (aborting the loop for every diagram after
 // it, mermaid or not). This redoes the same recentering directly against
 // every svg.flowchart on the page, regardless of ancestor or <desc>.
+//
+// Scoped to `g.node foreignObject` only: subgraph/cluster titles
+// (g.cluster-label) and edge labels (g.edgeLabels) are positioned by mermaid
+// with a fixed (positive) offset from the top of their box, not centered —
+// applying this same "recenter around the vertical midpoint" correction to
+// them shifts a cluster title like "work" or "Gregorian calendar" up and
+// out of its box instead of leaving mermaid's own placement alone.
 function fixMermaidForeignObjects() {
-  document.querySelectorAll("svg.flowchart foreignObject").forEach((fo) => {
+  document.querySelectorAll("svg.flowchart g.node foreignObject").forEach((fo) => {
     const div = fo.querySelector("div");
     if (!div) return;
     const divHeight = window.getComputedStyle(div).height;
