@@ -8,7 +8,7 @@ bibliography: asset/ref.yml
 license: CC BY-SA
 filters:
   - asset/date.lua
-  - asset/lazy-images.lua
+  - asset/lazy.lua
 project:
   type: website
   resources: .gitlab-ci.yml
