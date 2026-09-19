@@ -191,6 +191,7 @@ format:
       - asset/tooltip.html
       - asset/footnote.html
       - asset/crossref.html
+      - asset/mermaid-fix.html
   commonmark: default
 title-block-banner: false
 execute:

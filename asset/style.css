@@ -4,8 +4,18 @@ html {
   overflow-x: hidden;
 }
 
+/* overflow-x:hidden on html alone doesn't reliably stop page-level side
+   scrolling: when body's own overflow is left at its visible default and
+   some descendant's content escapes a nested container (a long code line,
+   a wide table not fully absorbed by its own overflow-x:auto wrapper,
+   etc.), the browser can still treat body's inflated scrollWidth as the
+   viewport's scrollable area and let the whole page pan sideways, even
+   though html itself is clipped. Setting it here too closes that gap
+   without touching the overflow-x:auto escape hatches those elements
+   already have for their own internal horizontal scrolling. */
 body {
   max-width: 100%;
+  overflow-x: hidden;
 }
 
 div[data-code-copy="false"] button.code-copy-button {
@@ -416,6 +426,12 @@ img {
 svg.flowchart {
   max-width: 100%;
   height: auto;
+}
+
+/* Node text wrapped in a jump-link (decnav-link, mermaid-link, or any
+   future diagram link class) should never render underlined. */
+svg.flowchart a {
+  text-decoration: none;
 }
 
 /* Bare citation/reference URLs: wrap instead of forcing page width */
