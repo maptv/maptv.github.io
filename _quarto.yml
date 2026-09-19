@@ -9,6 +9,7 @@ license: CC BY-SA
 filters:
   - asset/date.lua
   - asset/lazy.lua
+  - asset/mermaid-viewbox.lua
 project:
   type: website
   resources: .gitlab-ci.yml
