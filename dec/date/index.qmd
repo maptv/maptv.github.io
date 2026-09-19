@@ -1059,42 +1059,7 @@ Regardless of the input, only a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-
 @fig-conv below visualizes how an instance that represents the UNIX epoch would convert its [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} into a [cey](#cey){.tool data-bs-toggle="tooltip" data-bs-title="common era year"}, month, [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"}. For simplicity, @fig-conv omits the [coe](#coe){.under .tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}, [yoc](#yoc){.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}, and [doc](#doc){.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"} needed to convert a Dec date into a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"}, the [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} and [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"} required to split a [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} into a month and a [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and the negative [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} offset adjustment for [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of month"} and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}.
 
 ::: {#fig-conv}
-```{mermaid}
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
-flowchart LR
-   L[  ]:::empty
-   B[  ]:::empty
-   A[  ]:::empty
-   L---Y
-   L---D
-   L-->E
-   D---A
-   D---B
-   A-->G
-   Y---A
-   B-->M
-   B-->N
-   E-->W
-   subgraph decdate[Decalendar]
-   Y[yoe<br>1969]
-   D[pid<br>306]
-   E[doe<br>719468]
-   end
-   subgraph gregdate[Gregorian calendar]
-   W[dow<br>4]
-   G[cey<br>1970]
-   M[month<br>1]
-   N[dom<br>1]
-   end
-   classDef empty width:0px;
-   click E "#sec-doe"
-   click W "#sec-dow"
-   click Y "#sec-yoe"
-   click D "#sec-doy"
-   click G "#eya"
-   click M "#moy"
-   click N "#sec-dom"
-```
+{{< include /asset/fig-conv.html >}}
 :::
 
 # Misaligned unit difference (mud) {#sec-mud}
@@ -1128,18 +1093,7 @@ In Decalendar, a count is the number of days that have passed since an onset. @t
 Dec date expansion only has one rule, namely that each expanded date should always [simplify](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%20that%20is%20simpler) to its equivalent year+day date. As shown in @fig-mud below, [bow](#bow){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}+[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}, [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"}+[dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"}, and [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit difference"}+[dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"}+[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} all simplify to [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} in compliance with the date expansion rule. In contrast, [woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"} and [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} dates are expected to exclude information needed for simplification.
 
 ::: {#fig-mud .muddiagram}
-```{mermaid}
-%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '20px'}}}%%
-flowchart LR
-    A[pid<br>306] <--> B[bow+dow<br>302+4]
-    A <--> C[bom+dom<br>305+01]
-    B <--> D[mud+dom+dow<br>301+01+4]
-    C <--> D
-    click A "#sec-doy"
-    click B "#sec-dow"
-    click C "#sec-dom"
-    click D "#sec-mud"
-```
+{{< include /asset/fig-mud.html >}}
 :::
 
 This exception to the date expansion rule facilitates the comparison of [woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"} dates to [bow](#bow){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} or "[International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization#:~:text=an%20independent%2C%20non%2Dgovernmental%2C%20international%20standard%20development%20organization)" ([ISO]{.tool data-bs-toggle="tooltip" data-bs-title="International Organization for Standardization"}) [week dates](https://en.wikipedia.org/wiki/ISO_week_date#:~:text=a%20leap%20week%20calendar%20system%20that%20is%20part%20of%20the%20ISO%208601%20date%20and%20time%20standard%20issued%20by%20the%20International%20Organization%20for%20Standardization): 1970-W01-4, [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="month of year"} dates to [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"} or [ISO]{.tool data-bs-toggle="tooltip" data-bs-title="International Organization for Standardization"} [month dates](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates:~:text=Calendar%20dates-,YYYY%2DMM%2DDD,YYYY%2DMM,-%28but%20not): 1970-01-01, [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"}+[dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"} to "[Hypertext Markup Language](https://en.wikipedia.org/wiki/HTML#:~:text=the%20standard%20markup%20language%5Ba%5D%20for%20documents%20designed%20to%20be%20displayed%20in%20a%20web%20browser)" ([HTML]{.tool data-bs-toggle="tooltip" data-bs-title="Hypertext Markup Language"}) [yearless dates](https://html.spec.whatwg.org/dev/common-microsyntaxes.html#yearless-dates:~:text=A%20yearless%20date%20consists%20of%20a%20Gregorian%20month%20and%20a%20day%20within%20that%20month%2C%20but%20with%20no%20associated%20year): 01-01, and [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} or [woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="weeks of year"} dates to [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="years of era"}+[mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit differences"}+[dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"}+[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}: [1969]{.color69by100}+[301]{.color301by365}+[01]{.color0}+[4]{.color4by7}.
