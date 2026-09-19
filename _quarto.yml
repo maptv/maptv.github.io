@@ -12,7 +12,17 @@ filters:
   - asset/mermaid-viewbox.lua
 project:
   type: website
-  resources: .gitlab-ci.yml
+  # Without this, a full-project render/publish reliably drops any file it
+  # can't prove is referenced from a rendered page (plain images, fonts,
+  # data files sitting in a folder for a page that links to them some other
+  # way, alternate-format companion files, etc.) instead of just copying
+  # everything under the project root the way a static site normally would.
+  # asset/** covers the one directory this has actually bitten; add more
+  # globs here if the same silent-drop bug shows up somewhere else.
+  resources:
+    - .gitlab-ci.yml
+    - asset/**
+    - positron/vscodium.png
   render:
     - "**/index.qmd"
 website:
