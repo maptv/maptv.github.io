@@ -1574,16 +1574,11 @@ div#leapscrubvert form > label, div.sliders form > label {
 }
 /* div.sliders wraps the Day of year/Month/Day of month range inputs
    (className: sliders). Fixed label width lines up every text box in
-   the same column, and letting the range track grow to fill the rest
-   of the row makes every slider the same, maximal length. */
+   the same column; the range track itself keeps Observable Inputs'
+   default width so it matches the sliders on other dec pages. */
 div.sliders form {
   display: flex;
   align-items: center;
-  width: 100%;
-}
-div.sliders form input[type="range"] {
-  flex: 1 1 auto;
-  width: auto;
 }
 div#leapscrubvert form div:has(label), div.sliders form div:has(label) {
   width: 205px;
@@ -1596,6 +1591,23 @@ div#leapscrubvert span form label {
 }
 input[type="number"] {
   width: 120px;
+}
+/* Day of bimester (dob) "Year" number input and "Layout" radio
+   (className: astroinputs). Give the Year input breathing room from its
+   label, and keep "Dec"/"Gregorian" together on one line even on narrow
+   mobile widths instead of letting the second option wrap. */
+div.astroinputs input[type="number"] {
+  margin-left: 8px;
+}
+div.astroinputs form:has(input[type="radio"]),
+div.astroinputs form:has(input[type="radio"]) > div {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+}
+div.astroinputs form:has(input[type="radio"]) label {
+  white-space: nowrap;
 }
 #centerradio {
   margin-bottom: 3px;

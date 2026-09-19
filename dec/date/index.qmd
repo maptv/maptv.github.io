@@ -1058,7 +1058,7 @@ Regardless of the input, only a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-
 
 @fig-conv below visualizes how an instance that represents the UNIX epoch would convert its [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} into a [cey](#cey){.tool data-bs-toggle="tooltip" data-bs-title="common era year"}, month, [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"}. For simplicity, @fig-conv omits the [coe](#coe){.under .tool data-bs-toggle="tooltip" data-bs-title="cycle of era"}, [yoc](#yoc){.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"}, and [doc](#doc){.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"} needed to convert a Dec date into a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"}, the [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} and [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"} required to split a [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} into a month and a [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and the negative [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} offset adjustment for [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of month"} and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}.
 
-::: {#fig-conv}
+::: {#fig-conv .doxdiagram}
 {{< include /asset/fig-conv.html >}}
 :::
 
@@ -1092,7 +1092,7 @@ In Decalendar, a count is the number of days that have passed since an onset. @t
 
 Dec date expansion only has one rule, namely that each expanded date should always [simplify](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%20that%20is%20simpler) to its equivalent year+day date. As shown in @fig-mud below, [bow](#bow){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"}+[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}, [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"}+[dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"}, and [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit difference"}+[dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="days of month"}+[dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"} all simplify to [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} in compliance with the date expansion rule. In contrast, [woy](#woy){.tool data-bs-toggle="tooltip" data-bs-title="week of year"} and [moy](#moy){.tool data-bs-toggle="tooltip" data-bs-title="months of year"} dates are expected to exclude information needed for simplification.
 
-::: {#fig-mud .muddiagram}
+::: {#fig-mud .doxdiagram .muddiagram}
 {{< include /asset/fig-mud.html >}}
 :::
 
