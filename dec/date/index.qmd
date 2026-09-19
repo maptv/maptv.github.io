@@ -177,6 +177,7 @@ In @fig-zero below, each row is a [pox](#pox){.tool data-bs-toggle="tooltip" dat
 
 ::: {#fig-zero .doxdiagram}
 ```{mermaid}
+%%| mermaid-format: svg
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
   B~~~M[ ]:::empty----N[ ]:::empty
@@ -218,6 +219,7 @@ Except for [Lim](#lim){.tool data-bs-toggle="tooltip" data-bs-title="liminal int
 
 ::: {#fig-zerocomm .doxdiagram}
 ```{mermaid}
+%%| mermaid-format: svg
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
   W~~~~O[ ]:::empty
@@ -252,6 +254,7 @@ The diagrams above illustrate that the transition from a common year preserves t
 
 ::: {#fig-zeroleap .doxdiagram}
 ```{mermaid}
+%%| mermaid-format: svg
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
   W~~~~O[ ]:::empty
@@ -288,6 +291,7 @@ According to Schedule [L]{.color14by32 .tool data-bs-toggle="tooltip" data-bs-ti
 
 ::: {#fig-one .doxdiagram}
 ```{mermaid}
+%%| mermaid-format: svg
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
   B~~~M[ ]:::empty----N[ ]:::empty
@@ -325,6 +329,7 @@ The order of [dox](#dox){.tool data-bs-toggle="tooltip" data-bs-title="days of x
 
 ::: {#fig-xpos .doxdiagram}
 ```{mermaid}
+%%| mermaid-format: svg
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
   B~~~M[ ]:::empty----N[ ]:::empty
@@ -362,6 +367,7 @@ If we adhere to Schedule [X]{.color28by32 .tool data-bs-toggle="tooltip" data-bs
 
 ::: {#fig-fpos .doxdiagram}
 ```{mermaid}
+%%| mermaid-format: svg
 %%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '29px'}}}%%
 flowchart LR
   M[ ]:::empty----N[ ]:::empty

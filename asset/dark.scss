@@ -32,11 +32,16 @@ nav.navbar {
     background: #2C3E50 !important;
 }
 
-svg.mermaid-js path {
+// svg.mermaid-js is the class Quarto's client-side mermaid-init.js adds
+// after rendering; svg.flowchart is mermaid's own class, present even on
+// diagrams pre-rendered to static SVG at build time (mermaid-format: svg),
+// which never runs that client-side post-processing. Target both so dark
+// mode still applies to statically-rendered diagrams.
+svg.mermaid-js path, svg.flowchart path {
     stroke: #ffffff !important;
 }
 
-svg.mermaid-js .marker {
+svg.mermaid-js .marker, svg.flowchart .marker {
     fill: #ffffff !important;
     stroke: none !important;
 }
@@ -53,7 +58,7 @@ g#workdays.cluster rect {
     fill: darkmagenta !important;
 }
 
-svg.mermaid-js g.edgeLabels span.edgeLabel {
+svg.mermaid-js g.edgeLabels span.edgeLabel, svg.flowchart g.edgeLabels span.edgeLabel {
     color: #ffffff !important;
     background: #000000 !important;
 }
@@ -61,7 +66,7 @@ svg.mermaid-js g.edgeLabels span.edgeLabel {
 g.node.clickable.flowchart-label.default > rect {
     fill: darkmagenta !important;
 }
-svg.mermaid-js  span.nodeLabel {
+svg.mermaid-js span.nodeLabel, svg.flowchart span.nodeLabel {
     color: #ffffff !important;
 }
 .knitr {
