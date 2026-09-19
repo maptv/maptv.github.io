@@ -37,6 +37,18 @@ updated as new preferences come up; don't let it grow into a changelog.
   it throws if any matching svg lacks a `<desc>` (aborting the whole loop). Our own
   `asset/mermaid-fix.js` redoes this generically against every `svg.flowchart` on the
   page — keep it in `include-after-body` for any page that ships mermaid diagrams.
+- `mermaid-fix.js`'s recentering must stay scoped to `g.node foreignObject` only.
+  Subgraph/cluster titles (`g.cluster-label`) and edge labels (`g.edgeLabels`) are
+  positioned by mermaid with a fixed positive offset from the top of their box, not
+  centered like a node label — applying the same correction to them shifts a cluster
+  title up and out of its box instead of leaving mermaid's own placement alone.
+- A cluster/subgraph title's max-width is fixed at 200px by mermaid and is NOT affected
+  by `flowchart.wrappingWidth`. If a title wraps to two lines at a given font-size, the
+  diagram's layout (computed for one line) doesn't reserve room for the second line and
+  the wrapped text renders hidden behind the first node in the cluster. When increasing a
+  diagram's font-size, check every cluster title's rendered height against
+  `font-size × 1.5` (one line) — if it doesn't match, drop the font-size until it does,
+  even if that's smaller than what plain nodes alone would tolerate.
 
 ## Content edits
 
@@ -53,3 +65,20 @@ updated as new preferences come up; don't let it grow into a changelog.
   render environment. Restore only those specific known paths with a targeted
   `git checkout -- <path> ...` — never a blanket `git checkout -- .`, which would also
   discard real uncommitted work.
+- If `quarto publish` errors with `NotFound: readfile '<page>/index.html'` (or a similar
+  rename/readfile error) partway through, it's stale `_freeze`/`.quarto` cache state, not
+  a real content problem — delete `_freeze`, `.quarto`, and any `*/index_cache` or
+  `*/.jupyter_cache` directories (all gitignored, safe to remove) and retry.
+- A full-project render right after clearing those caches has, at least once, silently
+  dropped ~180 files from the built site with no error: the site-wide mermaid.js/
+  glightbox bundles (breaking every *live*-rendered mermaid diagram and image lightbox,
+  not just this repo's pre-rendered ones), `asset/cite.html`, several tracked images, and
+  a stale-but-still-referenced bootstrap theme CSS hash variant. A second full render
+  right after can silently produce the *same* omissions again — this isn't fixed by
+  retrying `quarto render`/`quarto publish` alone. After any publish that follows a cache
+  clear, verify before trusting it: `diff <(git ls-tree -r --name-only <last-good-gh-pages-
+  commit>) <(git ls-tree -r --name-only <new-commit>)` and check every removed path either
+  (a) has no corresponding source file on `main` (genuinely stale, fine to lose) or (b)
+  is truly unreferenced by any current page. Anything else, restore directly by extracting
+  it from the last known-good gh-pages commit or from `main` — don't rely on a re-render
+  to bring it back.
