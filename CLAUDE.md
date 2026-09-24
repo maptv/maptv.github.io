@@ -49,6 +49,14 @@ updated as new preferences come up; don't let it grow into a changelog.
   diagram's font-size, check every cluster title's rendered height against
   `font-size × 1.5` (one line) — if it doesn't match, drop the font-size until it does,
   even if that's smaller than what plain nodes alone would tolerate.
+- Mermaid diagrams rendered live from a code chunk (not our own pre-rendered
+  `mermaid-format: svg` assets) come out of quarto with no `<desc>` element at all, which is
+  exactly the case that makes the bundled `mermaid-postprocess-shim.js` throw
+  (`el.querySelector("desc").id` on a null `desc`). We don't control that generated file to
+  fix it there, so `asset/mermaid-fix.js` also adds an empty `<desc>` to any
+  `div.cell-output-display svg` missing one, on `DOMContentLoaded` — which always fires
+  before `load` regardless of which script registered its `load` listener first, so this is
+  guaranteed to patch the DOM before the shim's own `load` handler runs and throws.
 - Every `mermaid-format: svg` diagram gets a fixed `width="672" height="480"` on its root
   `<svg>`, unrelated to its own content. `max-width:100%; height:auto` alone does NOT fix
   this: browsers take the intrinsic aspect ratio from an SVG's width/height *attributes*
@@ -60,6 +68,22 @@ updated as new preferences come up; don't let it grow into a changelog.
   every `svg.flowchart`'s width/height to match its own viewBox right after mermaid
   generates it — for both `{{< include >}}`-embedded diagrams and ones rendered directly
   from a chunk — which is what actually makes `height:auto` behave correctly.
+
+## Math (MathJax equation numbers)
+
+- Our crossref numbering (`asset/crossref.js`, driven by `number-offset: -1`) is 0-based,
+  but MathJax's own equation-number glyphs (`mjx-mtd[id^="mjx-eqn:"]`) are always 1-based
+  with no config knob to change the starting point. `asset/math.js` decrements each glyph
+  to match.
+- That decrement can't run on `DOMContentLoaded`: MathJax's combined-component script is
+  loaded `defer`, and `math.js` itself is a plain synchronous `<script src>` sitting earlier
+  in the body, so it always executes before MathJax's own script has even run, let alone
+  finished asynchronously typesetting the page and creating the `mjx-eqn:` elements —
+  querying for them at that point finds nothing and silently no-ops (this shipped broken
+  for a while with nobody noticing because the in-text crossref numbers, which *are*
+  0-based, looked correct on their own). Fixed by polling for `window.MathJax.startup` to
+  exist and hooking the fix onto `MathJax.startup.promise.then(...)`, which resolves once
+  the initial page typeset is actually done.
 
 ## Content edits
 
