@@ -59,11 +59,6 @@ function date2dote(year = 1969, doty = 306, zone = 0) {
       yote = year - cote * 400;
     return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
 }
-function matchPid(year, dom, dow) {
-  return [-1, 30, 60, 91, 121, 152, 183, 213, 244, 274, 305, 336]
-    .map(offset => offset + dom)
-    .filter(pid => yd2dow(year, pid) === dow);
-}
 function yd2dow(year = 1969, doty = 306) {
   return dote2dotw(date2dote(year, doty)[0]);
 }
@@ -435,14 +430,15 @@ decPent = decDek * 2 + (decDotd > 4)
 decPentColor = textcolor(decPent, piecewiseColor(decPent * 5 / 365))
 decDotpColor = textcolor(decDotp, piecewiseColor(decDotp / 5))
 decDob = dote2dob(Math.floor(dz[0]))
-decBob = decDob === "0\u0300" ? decDoty : decDoty - decDob
-decBobPiece = piecewiseColor(decBob / nDaysInYear)
-decDobPiece = piecewiseColor(decDob === "0\u0300" ? 0 : decDob / 59)
+decDobSign = decDob < 0 ? "-" : "+"
+decBob = decDoty - decDob // -58 (0 - 58) to 425 (365 - -60) 
+decBobPiece = piecewiseColor((decBob + nDaysInYear) % nDaysInYear / nDaysInYear)
+decDobPiece = piecewiseColor((decDob + 60) % 60 / 59)
 decBobColor = textcolor(decBob, decBobPiece)
 decBobColor1 = textcolor(decBob, decBobPiece)
 decDobColor = textcolor(decDob, decDobPiece)
 decDobColor1 = textcolor(decDob, decDobPiece)
-decDobPad = decDob.toString().padStart(2, "0")
+decDobPad = Math.abs(decDob).toString().padStart(2, "0")
 decBobPad = Math.abs(decBob).toString().padStart(3, "0")
 decBobSign = decBob < 0 ? "-" : "+"
 decBobSign1 = decBob < 0 ? "-" : ""
@@ -692,11 +688,17 @@ function unix2dobSort(unix) {
   return Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30)));
   }
 function dote2dob(doe) {
-  const doc = doe % 10631,
-  yoc = Math.floor((30 * doc + 10646) / 10631) - 1,
-  doy = Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30))) 
-  return doy === 354 ? "0\u0300" : doy % 59;
+  const dot = (doe + 9) % 10631,
+  yot = Math.floor((30 * dot + 10646) / 10631) - 1,
+  doy = Math.floor(dot - (yot * 354 + Math.floor((11 * (yot + 1) + 3) / 30))) 
+  return doy === 354 ? -1 : doy % 59 - 60 * (isLunarLeapYear(yot) && doy > 294);
   }
+function isLunarLeapYear(yoc) {
+  return (11 * yoc + 14) % 30 >= 19;
+}
+function yd2dob(year = 1969, doty = 306) {
+  return dote2dob(date2dote(year, doty)[0]);
+}
 decRows = ["0", "30", "59", "89", "118", "148", "177", "207", "236", "266", "295", "325"];
 suncalc = (await import("https://cdn.jsdelivr.net/npm/suncalc@1/+esm")).default
 temps = await FileAttachment("temps.json").json()
