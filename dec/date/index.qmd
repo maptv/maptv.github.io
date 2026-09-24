@@ -1225,6 +1225,28 @@ $$ {#eq-lunarleap}
 $$\text{lyl} = 354 + \text{lunarleap}$$ {#eq-leap2lyl}
 :::
 
+We can use [doly](#doly){.tool data-bs-toggle="tooltip" data-bs-title="days of lunar year"} to find zero-based bimester and lunar month indexes via Equations -@eq-bimester and -@eq-lunarmonth below. Even-indexed lunar months always have 30 days. Similarly, almost all odd-indexed lunar months have 29 days. The exception is the final lunar month of the lunar year, Lunar Month 11, which has 30 days in lunar leap years and 29 days in lunar common years.
+
+::: {.equationgroup #equationgroup22}
+$$
+\text{bimester} = \left\lfloor\dfrac{5\ast\text{doly} + 5}{296}\right\rfloor
+$$ {#eq-bimester}
+
+$$
+\text{lunarmonth} = \left\lfloor\dfrac{11\ast\text{doly} + 5}{325}\right\rfloor
+$$ {#eq-lunarmonth}
+
+$$
+\text{bimester} = \left\lfloor\dfrac{\text{lunarmonth}}{2}\right\rfloor
+$$ {#eq-month2bimester}
+
+$$
+\text{lunarmonth} = 2\ast\text{bimester} + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{dob} \ge 30\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
+$$ {#eq-bimester2month}
+:::
+
+
+With the exception of the last bimester of the lunar year, Bimester 5, which comprises 2 long lunar month, each bimester consists of an even-numbered lunar month followed by an odd-numbered lunar month. We can convert between bimester and lunar month indexes using Equations -@eq-month2bimester and -@eq-bimester2month above.
 
 # Moon {#moon}
 
