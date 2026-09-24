@@ -196,6 +196,7 @@ format:
     include-in-header:
       - asset/meta.html
       - asset/svg-anchor-href.html
+      - asset/mermaid-desc-guard.html
     include-after-body:
       - asset/math.html
       - asset/style.html

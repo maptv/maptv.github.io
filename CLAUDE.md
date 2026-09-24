@@ -49,14 +49,22 @@ updated as new preferences come up; don't let it grow into a changelog.
   diagram's font-size, check every cluster title's rendered height against
   `font-size × 1.5` (one line) — if it doesn't match, drop the font-size until it does,
   even if that's smaller than what plain nodes alone would tolerate.
-- Mermaid diagrams rendered live from a code chunk (not our own pre-rendered
-  `mermaid-format: svg` assets) come out of quarto with no `<desc>` element at all, which is
-  exactly the case that makes the bundled `mermaid-postprocess-shim.js` throw
-  (`el.querySelector("desc").id` on a null `desc`). We don't control that generated file to
-  fix it there, so `asset/mermaid-fix.js` also adds an empty `<desc>` to any
-  `div.cell-output-display svg` missing one, on `DOMContentLoaded` — which always fires
-  before `load` regardless of which script registered its `load` listener first, so this is
-  guaranteed to patch the DOM before the shim's own `load` handler runs and throws.
+- Mermaid diagrams rendered live from a code chunk, and any Observable JS cell that draws
+  its own svg (`decplot`, `greplot`, `calsliders`, etc.), come out of quarto with no
+  `<desc>` element at all, which is exactly the case that makes the bundled
+  `mermaid-postprocess-shim.js` throw (`el.querySelector("desc").id` on a null `desc`). We
+  don't control that generated file to fix it there, so `asset/mermaid-desc-guard.js` adds
+  an empty `<desc>` to any `div.cell-output-display svg` missing one. This can't run on
+  `DOMContentLoaded`: OJS cells render well after that (some render only in response to a
+  slider drag, arbitrarily late), so a `DOMContentLoaded`-timed guard only ever catches
+  diagrams that were already static HTML at parse time and still lets the shim crash on
+  OJS output — tried that first, looked fixed against the static-only case, still crashed
+  live. Both this guard and the shim listen for `load` instead (the same event, so
+  whatever exists for one exists for the other), and this guard's script tag must be
+  earlier in the generated `<head>` than quarto's own dependency scripts — same-event
+  listeners fire in registration order, so being first in the document is what makes this
+  one run before the shim's. It's in `include-in-header`, not `include-after-body`, for
+  that reason; keep it there if `_quarto.yml`'s include order ever gets reshuffled.
 - Every `mermaid-format: svg` diagram gets a fixed `width="672" height="480"` on its root
   `<svg>`, unrelated to its own content. `max-width:100%; height:auto` alone does NOT fix
   this: browsers take the intrinsic aspect ratio from an SVG's width/height *attributes*
