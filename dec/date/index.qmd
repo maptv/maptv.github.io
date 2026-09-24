@@ -1219,7 +1219,7 @@ Dec lunar years and months are based on the [Lunar Hijri](https://en.wikipedia.o
 ::: {.equationgroup #equationgroup21}
 $$
 \text{lunarleap}=\begin{cases}
-  1&{\text{ if } (11 \ast yot + 14) \bmod 30 \ge 19}\\\\
+  1&{\text{ if } (11 \ast \text{yot} + 14) \bmod 30 \ge 19}\\\\
   0&{\text{ otherwise}}\end{cases}
 $$ {#eq-lunarleap}
 
