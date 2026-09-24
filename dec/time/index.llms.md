@@ -468,7 +468,7 @@ using Dates
 hms = now(UTC)
 ```
 
-    2026-09-19T22:23:13.925
+    2026-09-24T04:34:43.108
 
 ``` julia
 hour(hms) / 24 +
@@ -477,13 +477,13 @@ second(hms) / 86400 +
 millisecond(hms) / 864e5
 ```
 
-    0.9328000578703702
+    0.19077671296296297
 
 ``` julia
 datetime2unix(hms) / 86400 % 1
 ```
 
-    0.9328000578680076
+    0.19077671296327026
 
 ## Observable JavaScript
 
@@ -510,13 +510,13 @@ hms.second / 86400 + \
 hms.microsecond / 864e8
 ```
 
-    0.9328094308796295
+    0.19078601569444445
 
 ``` python
 hms.timestamp() / 86400 % 1
 ```
 
-    0.9328094308802974
+    0.19078601569344755
 
 ## R
 
@@ -527,13 +527,13 @@ hms$min / 1440 +
 hms$sec / 86400
 ```
 
-    [1] 0.9328096
+    [1] 0.1907862
 
 ``` downlit
 (as.numeric(as.POSIXct(hms)) / 86400) %% 1
 ```
 
-    [1] 0.9328096
+    [1] 0.1907862
 
 The equations below convert UNIX time or a Zone 0 tod into the three components of an hms triplet: the “hour of day” (hod), “minute of hour” (moh), and “second of minute” (som), using a “daily second aggregate” (dsa) and “hourly second aggregate” (hsa). While both count seconds, dsas start at midnight and hsas begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
@@ -546,19 +546,19 @@ using Dates
 dsa = datetime2unix(now(UTC)) / 86400 % 1 * 86400
 ```
 
-    80594.79399999836
+    16483.98099996848
 
 ``` julia
 hsa = dsa % 3600
 ```
 
-    1394.7939999983646
+    2083.9809999684803
 
 ``` julia
 map(x -> floor(Int, x), (dsa / 3600, hsa / 60, hsa % 60))
 ```
 
-    (22, 23, 14)
+    (4, 34, 43)
 
 ## Observable JavaScript
 
@@ -577,7 +577,7 @@ hsa = dsa % 3600
 tuple(map(int, [dsa // 3600, hsa // 60, hsa % 60 // 1]))
 ```
 
-    (22, 23, 14)
+    (4, 34, 44)
 
 ## R
 
@@ -587,7 +587,7 @@ hsa <- dsa %% 3600
 sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 ```
 
-    [1] 22 23 14
+    [1]  4 34 44
 
 ##### Universal time offset
 

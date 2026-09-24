@@ -4180,10 +4180,9 @@ data-bs-title="negative integer hectoday">nih</a>:
 <span class="overline">${TminusColor1}</span> mod 100 =
 ${decDohNidMidColor}. The [radix
 complement](https://en.wikipedia.org/wiki/Method_of_complements#:~:text=The%20radix%20complement%20of,is%20defined%20as)
-of the
-<a href="#doh" id="dayofhectoday" class="tool" data-bs-toggle="tooltip"
+of the <a href="#doh" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of hectoday">doh</a>
-(100<span class="mono">-</span><a href="#doh" id="dayofhectoday" class="tool" data-bs-toggle="tooltip"
+(100<span class="mono">-</span><a href="#doh" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of hectoday">doh</a>) is the percent of the
 <a href="#pih" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer hectoday">pih</a>, 100
@@ -6574,30 +6573,6 @@ data-bs-title="days of month">dom</a>+<a href="#dow" class="tool" data-bs-toggle
 data-bs-title="days of week">dow</a>:
 <span class="color69by100">1969</span>+<span class="color301by365">301</span>+<span class="color0">01</span>+<span class="color4by7">4</span>.
 
-We can identify each type of expanded
-<a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a> by its digit
-structure, which is the number of digits in each of its components,
-separated by plus signs. The digit structure is 3+2+1 for
-<a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit differences">mud</a>+<a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a>, 3+2 for
-<a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a>+<a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a>, 2+2 for
-<a href="#moy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="months of year">moy</a>+<a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a>, 3+1 for
-<a href="#bow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of week">bow</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a>, and 2+1 for
-<a href="#woy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="week of year">woy</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a>. Apart from digit structure, we can
-recognize expanded <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a> by their Decolors.
-
 From a [network
 science](https://en.wikipedia.org/wiki/Network_science#:~:text=an%20academic%20field%20which%20studies%20complex%20networks)
 perspective, <a href="#mud" class="tool" data-bs-toggle="tooltip"
@@ -6922,7 +6897,7 @@ $$
 
 ``` julia
 function dob(doe)
-    dot = mod(doe + 3124, 10631)
+    dot = mod(doe + 9, 10631)
     yot = floor(Int, (30 * dot + 10646) / 10631) - 1
     return mod(
         dot - (yot * 354 + floor(
@@ -6936,13 +6911,13 @@ end
 dob(227320)
 ```
 
-    47
+    3
 
 ### Observable JavaScript
 
 ``` {ojs}
 function dob(doe) {
-  const dot = (doe + 3124) % 10631;
+  const dot = (doe + 9) % 10631;
   const yot = Math.floor((30 * dot + 10646) / 10631) - 1;
   return (
     dot - (yot * 354 + Math.floor((
@@ -6955,7 +6930,7 @@ dob(227320)
 
 ``` python
 def dob(doe):
-    dot = (doe + 3124) % 10631
+    dot = (doe + 9) % 10631
     yot = (30 * dot + 10646) // 10631 - 1
     return (
         dot - (yot * 354 + (
@@ -6963,13 +6938,13 @@ def dob(doe):
 dob(227320)
 ```
 
-    47
+    3
 
 ### R
 
 ``` r
 dob <- function(doe) {
-  dot <- (doe + 3124) %% 10631
+  dot <- (doe + 9) %% 10631
   yot <- floor((30 * dot + 10646) / 10631) - 1
   (dot - (yot * 354 + floor((
     11 * (yot + 1) + 3) / 30))) %% 59
@@ -6977,7 +6952,7 @@ dob <- function(doe) {
 dob(227320)
 ```
 
-    [1] 47
+    [1] 3
 
 </div>
 
@@ -6989,10 +6964,11 @@ into 1 lunar long month and 1 lunar short month: 30 + 29 = 59.
 
 We can learn that the current bimester began ${decDobColor} days ago on
 Day <span class="mono">${decBobSign1}</span>${decBobColor} by looking at
-the current year+<a href="#bob" class="tool" data-bs-toggle="tooltip"
+the current <a href="#yoe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="years of era">yoe</a>+<a href="#bob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of bimester">bob</a>+<a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of bimester">dob</a> Dec date:
-${decYearColor11}<span class="mono">${decBobSign}</span>${decBobColor1}<span class="mono">+</span>${decDobColor1}.
+${decYearColor11}<span class="mono">${decBobSign}</span>${decBobColor1}<span class="mono">${decDobSign}</span>${decDobColor1}.
 All bimesters begin with
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of bimester">Dob</a> <span class="color0">0</span>
@@ -7184,10 +7160,16 @@ lunar phases and then sum the
 <a href="#bob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of bimester">bob</a> and
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a> to identify dates using pid,
-identify seasons using h, gauge progress through the seasons using doh,
-or classify days as work or rest days using dox. Just as we can split a
-solar year in 73 <a href="#p" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of bimester">dob</a> to identify dates using
+<a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a>, identify seasons
+using <a href="#h" class="tool" data-bs-toggle="tooltip"
+data-bs-title="groups of one hundred days">h</a>, gauge progress through
+the seasons using <a href="#doh" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of hectoday">doh</a>, or classify days as work or
+rest days using <a href="#dox" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of xún">dox</a>. Just as we can split a solar year
+in 73 <a href="#p" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentadays">p</a>, we can also divide a bimester into 12
 “pentadays of bimester”
 (<a href="#pob" id="pentadayofbimester" class="tool"
@@ -7268,18 +7250,7 @@ Equations <a href="#eq-lunarleap" class="quarto-xref">46</a> and
 <span id="eq-lunarleap">
 $$
 \text{lunarleap}=\begin{cases}
-  1&{\begin{aligned}
-    &\text{ if } \text{yot} = 1\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{yot} = 4\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{yot} = 6\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{yot} = 9\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{yot} = 12\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{yot} = 15\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{yot} = 17\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{yot} = 20\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{yot} = 23\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{yot} = 25\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{yot} = 28\end{aligned}}\\\\
+  1&{\text{ if } (11 \ast \text{yot} + 14) \bmod 30 \ge 19}\\\\
   0&{\text{ otherwise}}\end{cases}
  \qquad(46)$$
 </span>
@@ -7311,6 +7282,71 @@ $$
 </span>
 
 </div>
+
+Although lunar years and months serve as the foundation for
+<a href="#bob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginning of bimester">bob</a> and
+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of bimester">dob</a>, Dec dates use solar years
+instead of lunar years and tracks progress through the lunar cycle with
+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of bimester">dob</a> instead of lunar
+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">dom</a>. Other than always having the same
+length, bimesters , a
+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of bimester">dob</a> instead of a
+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">dom</a> can uniquely identify a
+<a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> in
+
+we replace the Unlike months, bimesters are all the same length as long
+as the lunar leap day is not considered part of any bimester. Dec
+prefers We can expand a
+<a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> into
+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of bimester">dob</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</a> instead of
+<a href="#bob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginning of bimester">bob</a>+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of bimester">dob</a>. the same
+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</a> and
+<a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</a> pair can show up more than once in a
+year, but a <a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of bimester">dob</a> and
+<a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</a> pair will match exactly one
+<a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> in any year.
+
+Therefore, we can expand
+
+given <a href="#yoe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="year of era">yoe</a> and therefore can exist on its own
+without its corresponding
+<a href="#mud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="misaligned unit differences">mud</a>. not r Another
+advantage of is that dates use solar years and bimesters is better Dec
+does not use any type of month We can expand a
+<a href="#bob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginning of bimester">bob</a>+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of bimester">dob</a> into a
+<a href="#mud" class="tool" data-bs-toggle="tooltip"
+data-bs-title="misaligned unit differences">mud</a>+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of bimester">dob</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</a>. Notably, a
+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of bimester">dob</a> and
+<a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</a> pair
+
+When parsing dates, Dec makes assumptions based on the A
+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of bimester">dob</a>
 
 # Moon
 
@@ -8344,6 +8380,9 @@ function date2dote(year = 1969, doty = 306, zone = 0) {
       yote = year - cote * 400;
     return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
 }
+function yd2dow(year = 1969, doty = 306) {
+  return dote2dotw(date2dote(year, doty)[0]);
+}
 function addN(d) { return d + nDaysInput }
 function subN(d) { return d - nDaysInput }
 // https://observablehq.com/@observablehq/synchronized-inputs
@@ -8712,14 +8751,15 @@ decPent = decDek * 2 + (decDotd > 4)
 decPentColor = textcolor(decPent, piecewiseColor(decPent * 5 / 365))
 decDotpColor = textcolor(decDotp, piecewiseColor(decDotp / 5))
 decDob = dote2dob(Math.floor(dz[0]))
-decBob = decDob === "0\u0300" ? decDoty : decDoty - decDob
-decBobPiece = piecewiseColor(decBob / nDaysInYear)
-decDobPiece = piecewiseColor(decDob === "0\u0300" ? 0 : decDob / 59)
+decDobSign = decDob < 0 ? "-" : "+"
+decBob = decDoty - decDob // -58 (0 - 58) to 425 (365 - -60) 
+decBobPiece = piecewiseColor((decBob + nDaysInYear) % nDaysInYear / nDaysInYear)
+decDobPiece = piecewiseColor((decDob + 60) % 60 / 59)
 decBobColor = textcolor(decBob, decBobPiece)
 decBobColor1 = textcolor(decBob, decBobPiece)
 decDobColor = textcolor(decDob, decDobPiece)
 decDobColor1 = textcolor(decDob, decDobPiece)
-decDobPad = decDob.toString().padStart(2, "0")
+decDobPad = Math.abs(decDob).toString().padStart(2, "0")
 decBobPad = Math.abs(decBob).toString().padStart(3, "0")
 decBobSign = decBob < 0 ? "-" : "+"
 decBobSign1 = decBob < 0 ? "-" : ""
@@ -8969,11 +9009,17 @@ function unix2dobSort(unix) {
   return Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30)));
   }
 function dote2dob(doe) {
-  const doc = doe % 10631,
-  yoc = Math.floor((30 * doc + 10646) / 10631) - 1,
-  doy = Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30))) 
-  return doy === 354 ? "0\u0300" : doy % 59;
+  const dot = (doe + 9) % 10631,
+  yot = Math.floor((30 * dot + 10646) / 10631) - 1,
+  doy = Math.floor(dot - (yot * 354 + Math.floor((11 * (yot + 1) + 3) / 30))) 
+  return doy === 354 ? -1 : doy % 59 - 60 * (isLunarLeapYear(yot) && doy > 294);
   }
+function isLunarLeapYear(yoc) {
+  return (11 * yoc + 14) % 30 >= 19;
+}
+function yd2dob(year = 1969, doty = 306) {
+  return dote2dob(date2dote(year, doty)[0]);
+}
 decRows = ["0", "30", "59", "89", "118", "148", "177", "207", "236", "266", "295", "325"];
 suncalc = (await import("https://cdn.jsdelivr.net/npm/suncalc@1/+esm")).default
 temps = await FileAttachment("temps.json").json()

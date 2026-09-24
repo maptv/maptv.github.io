@@ -1183,18 +1183,18 @@ span
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Dates</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>hms <span class="op">=</span> <span class="fu">now</span>(UTC)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>2026-09-19T22:23:13.925</code></pre>
+<pre><code>2026-09-24T04:34:43.108</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hour</span>(hms) <span class="op">/</span> <span class="fl">24</span> <span class="op">+</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">minute</span>(hms) <span class="op">/</span> <span class="fl">1440</span> <span class="op">+</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">second</span>(hms) <span class="op">/</span> <span class="fl">86400</span> <span class="op">+</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">millisecond</span>(hms) <span class="op">/</span> <span class="fl">864e5</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.9328000578703702</code></pre>
+<pre><code>0.19077671296296297</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datetime2unix</span>(hms) <span class="op">/</span> <span class="fl">86400</span> <span class="op">%</span> <span class="fl">1</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.9328000578680076</code></pre>
+<pre><code>0.19077671296327026</code></pre>
 </div>
 </div>
 </div>
@@ -1238,11 +1238,11 @@ span
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>hms.second <span class="op">/</span> <span class="dv">86400</span> <span class="op">+</span> <span class="op">\</span></span>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>hms.microsecond <span class="op">/</span> <span class="fl">864e8</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.9328094308796295</code></pre>
+<pre><code>0.19078601569444445</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>hms.timestamp() <span class="op">/</span> <span class="dv">86400</span> <span class="op">%</span> <span class="dv">1</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.9328094308802974</code></pre>
+<pre><code>0.19078601569344755</code></pre>
 </div>
 </div>
 </div>
@@ -1253,11 +1253,11 @@ span
 <span><span class="va">hms</span><span class="op">$</span><span class="va">min</span> <span class="op">/</span> <span class="fl">1440</span> <span class="op">+</span></span>
 <span><span class="va">hms</span><span class="op">$</span><span class="va">sec</span> <span class="op">/</span> <span class="fl">86400</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9328096</code></pre>
+<pre><code>[1] 0.1907862</code></pre>
 </div>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r"><code class="sourceCode R"><span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="va">hms</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">86400</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span> <span class="fl">1</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9328096</code></pre>
+<pre><code>[1] 0.1907862</code></pre>
 </div>
 </div>
 </div>
@@ -1284,15 +1284,15 @@ span
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Dates</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>dsa <span class="op">=</span> <span class="fu">datetime2unix</span>(<span class="fu">now</span>(UTC)) <span class="op">/</span> <span class="fl">86400</span> <span class="op">%</span> <span class="fl">1</span> <span class="op">*</span> <span class="fl">86400</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>80594.79399999836</code></pre>
+<pre><code>16483.98099996848</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>hsa <span class="op">=</span> dsa <span class="op">%</span> <span class="fl">3600</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>1394.7939999983646</code></pre>
+<pre><code>2083.9809999684803</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(x <span class="op">-&gt;</span> <span class="fu">floor</span>(<span class="dt">Int</span>, x), (dsa <span class="op">/</span> <span class="fl">3600</span>, hsa <span class="op">/</span> <span class="fl">60</span>, hsa <span class="op">%</span> <span class="fl">60</span>))</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>(22, 23, 14)</code></pre>
+<pre><code>(4, 34, 43)</code></pre>
 </div>
 </div>
 </div>
@@ -1331,7 +1331,7 @@ span
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>hsa <span class="op">=</span> dsa <span class="op">%</span> <span class="dv">3600</span></span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="bu">tuple</span>(<span class="bu">map</span>(<span class="bu">int</span>, [dsa <span class="op">//</span> <span class="dv">3600</span>, hsa <span class="op">//</span> <span class="dv">60</span>, hsa <span class="op">%</span> <span class="dv">60</span> <span class="op">//</span> <span class="dv">1</span>]))</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>(22, 23, 14)</code></pre>
+<pre><code>(4, 34, 44)</code></pre>
 </div>
 </div>
 </div>
@@ -1341,7 +1341,7 @@ span
 <span><span class="va">hsa</span> <span class="op">&lt;-</span> <span class="va">dsa</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span> <span class="fl">3600</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">dsa</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%/%</a></span> <span class="fl">3600</span>, <span class="va">hsa</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%/%</a></span> <span class="fl">60</span>, <span class="va">hsa</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span> <span class="fl">60</span><span class="op">)</span>, <span class="va">as.integer</span><span class="op">)</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 22 23 14</code></pre>
+<pre><code>[1]  4 34 44</code></pre>
 </div>
 </div>
 </div>
