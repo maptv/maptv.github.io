@@ -1223,22 +1223,27 @@ $$
 $$ {#eq-lunarleap}
 
 $$\text{lyl} = 354 + \text{lunarleap}$$ {#eq-leap2lyl}
+
+$$
+\text{lyl} = \text{lunarpid} - \text{lunarnid} 
+$$ {#eq-lunardif}
 :::
 
-We can use [doly](#doly){.tool data-bs-toggle="tooltip" data-bs-title="days of lunar year"} to find zero-based bimester and lunar month indexes via Equations -@eq-bimester and -@eq-lunarmonth below. Lunar Month 11, the second lunar month of Bimester 5 and the final lunar month of the lunar year, has 30 days in lunar leap years and 29 days in lunar common years. All other lunar months have 30 days if their index is even or 29 days if their index is odd.
+Instead of Equations -@eq-lunarleap and -@eq-leap2lyl, we can obtain the [lyl](#lyl){.tool data-bs-toggle="tooltip" data-bs-title="lunar year length"} by plugging the lunar [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} and [nid](#nid){.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} into @eq-lunardif, which is similar to @eq-syl. We can also use lunar [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} to find zero-based indexes for bimesters via @eq-bimester or for lunar months via @eq-lunarmonth below. Unlike lunar [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} and [nid](#nid){.tool data-bs-toggle="tooltip" data-bs-title="negative integer day of year"} pairs, bimester and lunar month indexes cannot be used to obtain [lyl](#lyl){.tool data-bs-toggle="tooltip" data-bs-title="lunar year lengths"}.
 
 ::: {.equationgroup #equationgroup22}
+
 $$
-\text{bimester} = \left\lfloor\dfrac{5\ast\text{doly} + 5}{296}\right\rfloor
+\text{bimester} = \left\lfloor\dfrac{5\ast\text{lunarpid} + 5}{296}\right\rfloor
 $$ {#eq-bimester}
 
 $$
-\text{lunarmonth} = \left\lfloor\dfrac{11\ast\text{doly} + 5}{325}\right\rfloor
+\text{lunarmonth} = \left\lfloor\dfrac{11\ast\text{lunarpid} + 5}{325}\right\rfloor
 $$ {#eq-lunarmonth}
 
 :::
 
-Equations -@eq-month2bimester and -@eq-bimester2month below convert between bimester and lunar month indexes. If we need to know when a have the bimester index and know whether the current lunar year is a lunar leap year, we can predict when
+Bimester 5, the final bimester of the lunar year, consists of 2 long lunar months in lunar leap years or 1 long and 1 short lunar month in lunar common years. All other bimesters always comprise 1 long and 1 short lunar month. Equations -@eq-month2bimester and -@eq-bimester2month below convert between bimester and lunar month indexes. 
 
 ::: {.equationgroup #equationgroup23}
 
@@ -1251,6 +1256,8 @@ $$
 $$ {#eq-bimester2month}
 
 :::
+
+Lunar Month 11, the second lunar month of Bimester 5 and the final lunar month of the lunar year, has 30 days in lunar leap years and 29 days in lunar common years. All other lunar months have 30 days if their index is even or 29 days if their index is odd. 
 
 # Moon {#moon}
 
