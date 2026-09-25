@@ -1225,7 +1225,7 @@ $$ {#eq-lunarleap}
 $$\text{lyl} = 354 + \text{lunarleap}$$ {#eq-leap2lyl}
 :::
 
-We can use [doly](#doly){.tool data-bs-toggle="tooltip" data-bs-title="days of lunar year"} to find zero-based bimester and lunar month indexes via Equations -@eq-bimester and -@eq-lunarmonth below. Even-indexed lunar months always have 30 days. Similarly, almost all odd-indexed lunar months have 29 days. The exception is the final lunar month of the lunar year, Lunar Month 11, which has 30 days in lunar leap years and 29 days in lunar common years.
+We can use [doly](#doly){.tool data-bs-toggle="tooltip" data-bs-title="days of lunar year"} to find zero-based bimester and lunar month indexes via Equations -@eq-bimester and -@eq-lunarmonth below. Lunar Month 11, the second long lunar month of Bimester 5 and the final lunar month of the lunar year, has 30 days in lunar leap years and 29 days in lunar common years. All other lunar months have 30 days if their index is even or 29 days if their index is odd.
 
 ::: {.equationgroup #equationgroup22}
 $$
@@ -1236,6 +1236,12 @@ $$
 \text{lunarmonth} = \left\lfloor\dfrac{11\ast\text{doly} + 5}{325}\right\rfloor
 $$ {#eq-lunarmonth}
 
+:::
+
+Equations -@eq-month2bimester and -@eq-bimester2month below convert between bimester and lunar month indexes. If we need to know when a have the bimester index and know whether the current lunar year is a lunar leap year, we can predict when
+
+::: {.equationgroup #equationgroup23}
+
 $$
 \text{bimester} = \left\lfloor\dfrac{\text{lunarmonth}}{2}\right\rfloor
 $$ {#eq-month2bimester}
@@ -1243,16 +1249,14 @@ $$ {#eq-month2bimester}
 $$
 \text{lunarmonth} = 2\ast\text{bimester} + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{dob} \ge 30\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
 $$ {#eq-bimester2month}
+
 :::
-
-
-With the exception of the last bimester of the lunar year, Bimester 5, which comprises 2 long lunar month, each bimester consists of an even-numbered lunar month followed by an odd-numbered lunar month. We can convert between bimester and lunar month indexes using Equations -@eq-month2bimester and -@eq-bimester2month above.
 
 # Moon {#moon}
 
 "The sky is the limit" is an understatement, because Decalendar can be adapted for people living on the Moon and other celestial bodies. Rather than days, lunar inhabitants would be best served by "spin orbit intervals" ([soi](#soi){#spinorbitinterval .tool data-bs-toggle="tooltip" data-bs-title="spin orbit intervals"}), which are the inverse of the difference in the [sidereal](https://en.wikipedia.org/wiki/Sidereal#:~:text=Sidereal%2C%20meaning%20%22-,of%20the%20stars,-%22%2C%20may%20refer%20to) frequencies of a [spin](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis) of the Earth on its axis and an [orbit](https://en.wikipedia.org/wiki/Orbit_of_the_Moon#:~:text=the%20Sun.%20It-,orbits%20Earth,-in%20the%20prograde) of the Moon around the Earth.
 
-::: {.equationgroup #equationgroup23}
+::: {.equationgroup #equationgroup24}
 $$
 \dfrac{1}{1\div\href{https://en.wikipedia.org/wiki/Day#:~:text=4.09%20seconds%28%2C%20or-,0.99726968,-of%20a%20solar}{0.99726968}-1\div\href{https://en.wikipedia.org/wiki/Lunar_month#:~:text=stars%20%28Latin:%20sidera%29:-,27.321661,-days%20%2827%20d%29}{27.321661}} = 1.03505
 $$ {#eq-soi}
@@ -1260,7 +1264,7 @@ $$ {#eq-soi}
 
 The number of [soi](#soi){.tool data-bs-toggle="tooltip" data-bs-title="spin orbit intervals"} per mean [tropical year](https://en.wikipedia.org/wiki/Tropical_year#:~:text=the%20time%20that%20the%20Sun%20takes%20to%20return%20to%20the%20same%20position%20in%20the%20sky) is [365.2421897](https://en.wikipedia.org/wiki/Tropical_year#:~:text=1%2C%202000%2C%20was-,365.2421897,-or%20365%C2%A0ephemeris) &div; 1.03505 = 352.87395749. We can match this quite closely by setting the lunar Decalendar (Decalunar) [syl](#syl){.tool data-bs-toggle="tooltip" data-bs-title="solar year length"} to 352 [soi](#soi){.tool data-bs-toggle="tooltip" data-bs-title="spin orbit intervals"} if the year is evenly divisible by 8 and to 353 [soi](#soi){.tool data-bs-toggle="tooltip" data-bs-title="spin orbit intervals"}, otherwise: 7 &div; 8 [-]{.mono} 0.87395749 = 0.00104251 &asymp; 1 &div; 959. For greater precision, the Decalunar [syl](#syl){.tool data-bs-toggle="tooltip" data-bs-title="solar year length"} could be calculated as in @eq-lunarsyl. 
 
-::: {.equationgroup #equationgroup24}
+::: {.equationgroup #equationgroup25}
 $$
 353 - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{y} \bmod 8 = 0 \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor} \text{y} \bmod 959 = 479
 \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]}
@@ -1275,7 +1279,7 @@ A Decalunar lunar common year can be split evenly into 6 bimesters or 3 quadrime
 
 Both Decalendar and Decalunar rely on the [syl](#syl){.tool data-bs-toggle="tooltip" data-bs-title="solar year length"} for precise timekeeping over long periods, and thus can adapt whenever the [lyl](#lyl){.tool data-bs-toggle="tooltip" data-bs-title="lunar year length"} diverges from observed lunations. If need be, we can move a day or two between the [bob](#bob){.tool data-bs-toggle="tooltip" data-bs-title="beginning of bimester"} and [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} or a [soi](#soi){.tool data-bs-toggle="tooltip" data-bs-title="spin orbit interval"} or two between the [bob](#bob){.tool data-bs-toggle="tooltip" data-bs-title="beginning of bimester"} and [sob](#sob){.tool data-bs-toggle="tooltip" data-bs-title="soi of bimester"} to better match lunar observations without affecting the [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} or [soy](#soy){.tool data-bs-toggle="tooltip" data-bs-title="soi of year"} as per Equations -@eq-sob and -@eq-bobplusdob.
 
-::: {.equationgroup #equationgroup25}
+::: {.equationgroup #equationgroup26}
 $$
 \text{soy} = \text{bob}_{\text{s}} + \text{sob}
 $$ {#eq-sob}
