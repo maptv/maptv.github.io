@@ -1225,7 +1225,7 @@ $$ {#eq-lunarleap}
 $$\text{lyl} = 354 + \text{lunarleap}$$ {#eq-leap2lyl}
 :::
 
-We can use [doly](#doly){.tool data-bs-toggle="tooltip" data-bs-title="days of lunar year"} to find zero-based bimester and lunar month indexes via Equations -@eq-bimester and -@eq-lunarmonth below. Lunar Month 11, the second long lunar month of Bimester 5 and the final lunar month of the lunar year, has 30 days in lunar leap years and 29 days in lunar common years. All other lunar months have 30 days if their index is even or 29 days if their index is odd.
+We can use [doly](#doly){.tool data-bs-toggle="tooltip" data-bs-title="days of lunar year"} to find zero-based bimester and lunar month indexes via Equations -@eq-bimester and -@eq-lunarmonth below. Lunar Month 11, the second lunar month of Bimester 5 and the final lunar month of the lunar year, has 30 days in lunar leap years and 29 days in lunar common years. All other lunar months have 30 days if their index is even or 29 days if their index is odd.
 
 ::: {.equationgroup #equationgroup22}
 $$
