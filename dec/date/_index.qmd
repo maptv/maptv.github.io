@@ -438,7 +438,7 @@ NegDob = decDob - nDaysInBim
 decBob = decDoty - decDob
 decBobPiece = piecewiseColor(decBob / nDaysInYear)
 decDobPiece = piecewiseColor(decDob / nDaysInBim)
-decBobColor = textcolor(decDob, decBobPiece)
+decBobColor = textcolor(decBob, decBobPiece)
 decBobColor1 = textcolor(decBob, decBobPiece)
 decDobColor = textcolor(decDob, decDobPiece)
 decDobColor1 = textcolor(decDob, decDobPiece)
@@ -678,6 +678,8 @@ easyDoy = dotyInput < (80 + leapInput) ? dotyInput : dotyInputNeg
 easyDoyColor = textcolor(easyDoy, piecewiseColor(dotyInput / nDaysInput))
 easySum = easyDoy + 285
 easySumColor = textcolor(easySum, piecewiseColor(easySum / nDaysInput))
+// https://astropixels.com/ephemeris/phasescat/phases-0099.html#:~:text=24%20%2000%3A27-,Mar%20%201%20%2023%3A01,-Mar%20%208%20%2023
+// Year 0 Day 0 Tod 959 = First Quarter Moon 
 function unix2dob(unix) {
   const doe = unix / 86400000 + 7200,
   doc = doe % 10631,

@@ -1052,7 +1052,7 @@ According to @eq-moy2bom, a [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-t
 
 ## Object Oriented Programming {#oop}
 
-Dec dates can be described in the context of [object oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming#:~:text=a%20programming%20paradigm%20based%20on%20objects). In this analogy, an object is a blueprint for Dec dates and an [instance](https://en.wikipedia.org/wiki/Instance_(computer_science)#:~:text=a%20specific%20occurrence%20of%20a%20software%20element%20that%20is%20based%20on%20a%20type%20definition) represents a specific Dec date. When we create an instance, we can specify the date that it will represent by providing either a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} for it to store or a [cey](#cey){.tool data-bs-toggle="tooltip" data-bs-title="common era year"}, month, and [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"} for it to transform into a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"}.
+Dec dates can be described in the context of [object oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming#:~:text=a%20programming%20paradigm%20based%20on%20objects). In this analogy, an [object](https://en.wikipedia.org/wiki/Object_%28computer_science%29#:~:text=a%20semantic%20entity%20that%20has%20state%2C%20behavior%2C%20and%20identity) is a blueprint for Dec dates and an [instance](https://en.wikipedia.org/wiki/Instance_(computer_science)#:~:text=a%20specific%20occurrence%20of%20a%20software%20element%20that%20is%20based%20on%20a%20type%20definition) represents a specific Dec date. When we create an instance, we can specify the date that it will represent by providing either a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} for it to store or a [cey](#cey){.tool data-bs-toggle="tooltip" data-bs-title="common era year"}, month, and [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"} for it to transform into a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"}.
 
 Regardless of the input, only a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"} are stored as [instance attributes](https://en.wikipedia.org/wiki/Instance_variable#:~:text=each%20instantiated%20object%20of%20the%20class%20has%20a%20separate%20copy). Our instance must contain one instance method for every potential output that is not an instance attribute. Instance methods can use instance attributes to produce their output. For example, a method based on Equations -@eq-pid2moy, -@eq-moy2month, -@eq-moy2bom, and -@eq-dom could turn a [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} into a month and [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}.
 
@@ -1117,9 +1117,9 @@ After we turn a [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misali
 
 # Day of bimester (dob) {#sec-dob}
 
-We can get a sense of how much of the surface of the Moon🌙is illuminated by expanding a [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} into a "beginning of bimester" ([bob](#bob){#beginningofbimester .tool data-bs-toggle="tooltip" data-bs-title="beginning of bimester"}) and "day of bimester" ([dob](#dob){#dayofbimester .tool data-bs-toggle="tooltip" data-bs-title="day of bimester"}) instead of a [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"} and [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, a [bow](#bow){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}, or a [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit difference"}, [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}. A Dec common bimester is 59 days which is roughly a tenth of a percent shorter than 2 lunations: 59 &div; (29.53 * 2) * 100% &asymp; 99.9%.
+We can get a sense of how much of the surface of the Moon🌙is illuminated by expanding a [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} into a "beginning of bimester" ([bob](#bob){#beginningofbimester .tool data-bs-toggle="tooltip" data-bs-title="beginning of bimester"}) and "day of bimester" ([dob](#dob){#dayofbimester .tool data-bs-toggle="tooltip" data-bs-title="day of bimester"}) instead of a [bom](#bom){.tool data-bs-toggle="tooltip" data-bs-title="beginning of month"} and [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, a [bow](#bow){.tool data-bs-toggle="tooltip" data-bs-title="beginning of week"} and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}, or a [mud](#mud){.tool data-bs-toggle="tooltip" data-bs-title="misaligned unit difference"}, [dom](#dom){.tool data-bs-toggle="tooltip" data-bs-title="day of month"}, and [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="days of week"}. A Dec common bimester is 59 days long, which is roughly a tenth of a percent shorter than two lunations: 59.0612 = 2 * [29.5306](https://en.wikipedia.org/wiki/Lunar_calendar#cite_note-ESAA-2:~:text=synodic%20month%20as-,29.53059%20days,-or%2029%20days).
 
-To obtain a [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"}, Dec employs an algorithm based on the [`from_days`](https://github.com/HowardHinnant/date/blob/7875f43aa9288d176191c83e8284d61acdd5ab7c/include/date/islamic.h#L2252) [method](https://en.wikipedia.org/wiki/Method_%28computer_programming%29#:~:text=a%20procedure%20associated%20with%20an%20object) of the `year_month_day` [object](https://en.wikipedia.org/wiki/Object_(computer_science)#:~:text=a%20semantic%20entity%20that%20has%20state%2C%20behavior%2C%20and%20identity) in the [`islamic.h`](https://github.com/HowardHinnant/date/blob/master/include/date/islamic.h) file of the [`date`](https://github.com/HowardHinnant/date) [repository](https://en.wikipedia.org/wiki/Repository_%28version_control%29#:~:text=a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure) by [Howard Hinnant](https://howardhinnant.github.io) -@hinnant2021date. Equations -@eq-dot, -@eq-yot, -@eq-doly, and -@eq-dob produce a "day of tricennium" ([dot](#dot){#dayoftricennium .tool data-bs-toggle="tooltip" data-bs-title="day of tricennium"}), "year of tricennium" ([yot](#yot){#yearoftricennium .tool data-bs-toggle="tooltip" data-bs-title="year of tricennium"}), and "day of lunar year" ([doly](#doly){#dayoflunaryear .tool data-bs-toggle="tooltip" data-bs-title="day of lunar year"}) along the way to transforming a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} into a [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"}.
+To obtain a [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"}, Dec employs an algorithm based on the [`from_days`](https://github.com/HowardHinnant/date/blob/7875f43aa9288d176191c83e8284d61acdd5ab7c/include/date/islamic.h#L2252) [method](https://en.wikipedia.org/wiki/Method_%28computer_programming%29#:~:text=a%20procedure%20associated%20with%20an%20object) of the `year_month_day` [class](https://en.wikipedia.org/wiki/Class_%28programming%29#:~:text=a%20syntactic%20entity%20structure%20used%20to%20create%20objects) in the [`islamic.h`](https://howardhinnant.github.io/date/islamic) [library](https://en.wikipedia.org/wiki/Library_%28computing%29#:~:text=a%20collection%20of%20resources%20that%20can%20be%20used%20during%20software%20development) created by [Howard Hinnant](https://howardhinnant.github.io) -@hinnant2021date. Equations -@eq-dot, -@eq-yot, -@eq-lunarpid, and -@eq-dob below produce a "day of tricennium" ([dot](#dot){#dayoftricennium .tool data-bs-toggle="tooltip" data-bs-title="day of tricennium"}), a "year of tricennium" ([yot](#yot){#yearoftricennium .tool data-bs-toggle="tooltip" data-bs-title="year of tricennium"}), and the lunar year version of a [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} along the way to transforming a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} into a [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"}.
 
 ::: {.equationgroup #equationgroup19}
 $$
@@ -1131,11 +1131,11 @@ $$
 $$ {#eq-yot}
 
 $$
-\text{doly} = \text{dot} - 354 \ast \text{yot} - \left\lfloor\dfrac{11\ast\text{yot} + 14}{30}\right\rfloor
-$$ {#eq-doly}
+\text{lunarpid} = \text{dot} - 354 \ast \text{yot} - \left\lfloor\dfrac{11\ast\text{yot} + 14}{30}\right\rfloor
+$$ {#eq-lunarpid}
 
 $$
-\text{dob} = \text{doly} - 59 \ast \left\lfloor\dfrac{5\ast\text{doly} + 5}{296}\right\rfloor
+\text{dob} = \text{lunarpid} - 59 \ast \left\lfloor\dfrac{5\ast\text{lunarpid} + 5}{296}\right\rfloor
 $$ {#eq-dob}
 :::
 
@@ -1146,8 +1146,8 @@ $$ {#eq-dob}
 function dob(doe)
     dot = mod(doe + 9, 10631)
     yot = (30 * dot + 15) ÷ 10631
-    doly = dot - 354 * yot - (11 * yot + 14) ÷ 30
-    return doly - 59 * ((5 * doly + 5) ÷ 296)
+    lunarpid = dot - 354 * yot - (11 * yot + 14) ÷ 30
+    return lunarpid - 59 * ((5 * lunarpid + 5) ÷ 296)
 end
 dob(719468)
 ```
@@ -1158,8 +1158,8 @@ dob(719468)
 function dob(doe) {
   const dot = (doe + 9) % 10631;
   const yot = Math.floor((30 * dot + 15) / 10631);
-  const doly = dot - 354 * yot - Math.floor((11 * yot + 14) / 30);
-  return doly - 59 * Math.floor((5 * doly + 5) / 296);
+  const lunarpid = dot - 354 * yot - Math.floor((11 * yot + 14) / 30);
+  return lunarpid - 59 * Math.floor((5 * lunarpid + 5) / 296);
 }
 dob(719468)
 ```
@@ -1170,8 +1170,8 @@ dob(719468)
 def dob(doe):
     dot = (doe + 9) % 10631
     yot = (30 * dot + 15) // 10631
-    doly = dot - 354 * yot - (11 * yot + 14) // 30
-    return doly - 59 * ((5 * doly + 5) // 296)
+    lunarpid = dot - 354 * yot - (11 * yot + 14) // 30
+    return lunarpid - 59 * ((5 * lunarpid + 5) // 296)
 dob(719468)
 ```
 
@@ -1181,17 +1181,17 @@ dob(719468)
 dob <- function(doe) {
   dot <- (doe + 9) %% 10631
   yot <- (30 * dot + 15) %/% 10631
-  doly <- dot - 354 * yot - (11 * yot + 14) %/% 30
-  doly - 59 * ((5 * doly + 5) %/% 296)
+  lunarpid <- dot - 354 * yot - (11 * yot + 14) %/% 30
+  lunarpid - 59 * ((5 * lunarpid + 5) %/% 296)
 }
 dob(719468)
 ```
 
 :::
 
-A tricennium can be evenly split into 19 lunar common years and 11 lunar leap years, 169 common bimesters and 11 leap bimesters, or 169 lunar short months and 191 lunar long months: 19 &times; 354 + 11 &times; 355 = 169 &times; 59 + 11 &times; 60 = 169 &times; 29 + 191 &times; 30 = 10631. Likewise, a common bimester is 1 lunar long month and 1 lunar short month: 30 + 29 = 59.
+A tricennium is 10631 days long and can be evenly split into 19 lunar common years and 11 lunar leap years, 169 common bimesters and 11 leap bimesters, or 169 lunar short months and 191 lunar long months: 10631 = 19 &times; 354 + 11 &times; 355 = 169 &times; 59 + 11 &times; 60 = 169 &times; 29 + 191 &times; 30. Dec dates do not use any lunar units other than bimesters.
 
-By looking at the current [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="years of era"}+[bob](#bob){.tool data-bs-toggle="tooltip" data-bs-title="beginning of bimester"}+[dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} Dec date: \${decYearColor11}[\${decBobSign}]{.mono}\${decBobColor1}[+]{.mono}\${decDobColor1}, we can learn that the current bimester began \${decDobColor} days ago on Day [\${decBobSign1}]{.mono}${decBobColor}. All bimesters begin with [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [0]{.color0}, common bimesters end with [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [58]{.color58by59}, and leap bimesters finish with the lunar leap day, which can be denoted as [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [59]{.color59by60} or [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"} [[0]{.grave}]{.color0} just like the solar leap day can be expressed as [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[365]{.color365by366}, [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[[0]{.overline}[0]{.grave}]{.color0}, or [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[[0]{.grave}]{.color0}.
+By looking at the current [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="years of era"}+[bob](#bob){.tool data-bs-toggle="tooltip" data-bs-title="beginning of bimester"}+[dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} Dec date: \${decYearColor11}[\${decBobSign}]{.mono}\${decBobColor}[+]{.mono}\${decDobColor}, we can learn that the current bimester began \${decDobColor1} days ago on Day [\${decBobSign1}]{.mono}${decBobColor1}. All bimesters begin with [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [0]{.color0}, common bimesters end with [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [58]{.color58by59}, and leap bimesters finish with the lunar leap day, which can be denoted as [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [59]{.color59by60} or [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"} [[0]{.grave}]{.color0} just like the solar leap day can be expressed as [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[365]{.color365by366}, [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[[0]{.overline}[0]{.grave}]{.color0}, or [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[[0]{.grave}]{.color0}.
 
 Given that a bimester is slightly shorter than two lunations, we expect lunar phases and [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} to slowly drift apart over 2 or 3 lunar years before being put back into alignment by [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [[0]{.grave}]{.color0}, but we should generally observe a new🌑moon on [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [0]{.color0} and [29]{.color29by59}, first quarter🌓moon on [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [7]{.color07by59} and [37]{.color37by59}, full🌕moon on [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [14]{.color14by59} and [44]{.color44by59}, and last quarter🌗moon on [Dob]{.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [22]{.color22by59} and [52]{.color52by59}.
 
@@ -1243,7 +1243,7 @@ $$ {#eq-lunarmonth}
 
 :::
 
-Bimester 5, the final bimester of the lunar year, consists of 2 long lunar months in lunar leap years or 1 long and 1 short lunar month in lunar common years. All other bimesters always comprise 1 long and 1 short lunar month. Equations -@eq-month2bimester and -@eq-bimester2month below convert between bimester and lunar month indexes. 
+In lunar leap years, Bimester 5, the final bimester of the lunar year, comprises 2 long lunar months. Apart from this one exception, all bimesters consist of 1 long lunar month followed by 1 short lunar month. Equations -@eq-month2bimester and -@eq-bimester2month below convert between bimester and lunar month indexes. 
 
 ::: {.equationgroup #equationgroup23}
 
