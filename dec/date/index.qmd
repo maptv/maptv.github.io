@@ -1204,7 +1204,7 @@ When we instead set the "Layout" radio input to "Solar", the values above the mo
 {{< include /dec/date/_moon.qmd >}}
 :::
 
-Unsurprisingly, the "Lunar" layout is almost indistinguishable every lunar year and the "Solar" layout varies wildly across Gregorian calendar years. To be fair, we would also see wild variation in the lunation pattern if the "Solar" layout used [dox](#dox){.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} instead of [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"} and [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"} instead of Gregorian calendar months. All solar calendar units are out of step with the lunar phases.
+Unsurprisingly, the "Lunar" layout is almost indistinguishable every lunar year and the "Solar" layout varies wildly across solar years. To be fair, we would also see wild variation in the lunation pattern if the "Solar" layout used [dox](#dox){.tool data-bs-toggle="tooltip" data-bs-title="days of xún"} instead of [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of week"} and [x](#x){.tool data-bs-toggle="tooltip" data-bs-title="groups of ten days"} instead of Gregorian calendar months. All solar calendar units are entirely out of step with the lunar phases.
 
 Dec dates in the year+[bob](#bob){.tool data-bs-toggle="tooltip" data-bs-title="beginning of bimester"}+[dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} format allow us to track the lunar phases and then sum the [bob](#bob){.tool data-bs-toggle="tooltip" data-bs-title="beginning of bimester"} and [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} to identify dates using [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"}, identify seasons using [h](#h){.tool data-bs-toggle="tooltip" data-bs-title="groups of one hundred days"}, gauge progress through the seasons using [doh](#doh){.tool data-bs-toggle="tooltip" data-bs-title="days of hectoday"}, or classify days as work or rest days using [dox](#dox){.tool data-bs-toggle="tooltip" data-bs-title="days of xún"}. Just as we can split a solar year in 73 [p](#p){.tool data-bs-toggle="tooltip" data-bs-title="pentadays"}, we can also divide a bimester into 12 "pentadays of bimester" ([pob](#pob){#pentadayofbimester .tool data-bs-toggle="tooltip" data-bs-title="pentadays of bimester"}).
 
@@ -1251,6 +1251,12 @@ $$
 $$ {#eq-bimester2month}
 
 :::
+
+Lunar Month 11, the second lunar month of Bimester 5 and the final lunar month of the lunar year, has 30 days in lunar leap years and 29 days in lunar common years, whereas any other lunar month has 30 days if its index is even or 29 days if its index is odd. The lunar [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} of the first day of Lunar Month 11 is 325. The length of Lunar Month 11 is [lyl](#lyl){.tool data-bs-toggle="tooltip" data-bs-title="lunar year length"} [-]{.mono} 325.
+
+Unlike lunar months, bimesters maintain a constant length for 2 &times; 354 [-]{.mono} 59 = 649 or 3 &times; 354 [-]{.mono} 59 = 1003 days. Instead of  determine the  of providing a is instead of [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"} with the exception of .  to determine the but we would need Instead of lunar units Dec conveys the qDespite the large number of lunar calendar units described above, Dec can only include [bob](#bob){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of bimester"}, [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"}, and "lunar intercalation differences" (lid) in does not include any lunar of providing the [lyl](#lyl){.tool data-bs-toggle="tooltip" data-bs-title="lunar year lengths"}, Dec does not display the index of any lunar unit and only shows the onset and count of bimesters, because the bob and dob are sufficient for tracking the lunar surface illumination. lunar doy, or the indexes of lunar years, bimesters, or lunar months, Dec
+
+
 
 # Moon {#moon}
 
