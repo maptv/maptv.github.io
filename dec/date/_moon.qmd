@@ -5,11 +5,9 @@
 viewof moonyear = Inputs.number({
   label: "Year",
   value: +new URLSearchParams(new URL(document.baseURI).search).get("year") || new Date().getUTCFullYear(),
-  min: 1900,
-  max: 2100,
   step: 1
 })
-viewof moonlayo = Inputs.radio(new Map([["Dec", true], ["Gregorian", false]]), {label: "Layout", value: true})
+viewof moonlayo = Inputs.radio(new Map([["Lunar", true], ["Solar", false]]), {label: "Layout", value: true})
 ```
 
 ```{ojs}

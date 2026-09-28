@@ -549,7 +549,7 @@ woySigns = ["𝍠", "𝍡", "𝍢", "𝍣", "𝍤", "𝍮", "𝍯", "𝍰", "�
 dowDice = ["☐", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"]
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 motyLens = [31, 30, 31, 30, 31, 31, 30, 31, 30, 31, 31, 28 + leapInput];
-moonNums = ["0", "31", "61", "92", "122", "153", "184", "214", "245", "275", "306", "337"];
+moonNums = ["306", "337", "0", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
 calYear = !leapInput && dotwInput == "Mon" ? 6 : !leapInput && dotwInput == "Tue" ? 7 : !leapInput && dotwInput == "Wed" ? 2 : !leapInput && dotwInput == "Thu" ? 3 : !leapInput && dotwInput == "Fri" ? 9 : !leapInput && dotwInput == "Sat" ? 10 : !leapInput && dotwInput == "Sun" ? 11 : leapInput && dotwInput == "Mon" ? 12 : leapInput && dotwInput == "Tue" ? 24 : leapInput && dotwInput == "Wed" ? 8 : leapInput && dotwInput == "Thu" ? 20 : leapInput && dotwInput == "Fri" ? 4 : leapInput && dotwInput == "Sat" ? 16 : leapInput && dotwInput == "Sun" ? 28 : 0;
 datesCal = d3.utcDays(new Date(calYear, 0, 0), new Date(calYear, 12, 0));
 leapInput = leapscrub[0]
@@ -679,7 +679,7 @@ easyDoyColor = textcolor(easyDoy, piecewiseColor(dotyInput / nDaysInput))
 easySum = easyDoy + 285
 easySumColor = textcolor(easySum, piecewiseColor(easySum / nDaysInput))
 // https://astropixels.com/ephemeris/phasescat/phases-0099.html#:~:text=24%20%2000%3A27-,Mar%20%201%20%2023%3A01,-Mar%20%208%20%2023
-// Year 0 Day 0 Tod 959 = First Quarter Moon 
+// (719468 + 9) % 10631 = 7200
 function unix2dob(unix) {
   const doe = unix / 86400000 + 7200,
   doc = doe % 10631,
