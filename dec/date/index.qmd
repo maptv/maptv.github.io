@@ -1131,7 +1131,11 @@ $$
 $$ {#eq-yot}
 
 $$
-\text{lunarpid} = \text{dot} - 354 \ast \text{yot} - \left\lfloor\dfrac{11\ast\text{yot} + 14}{30}\right\rfloor
+\text{leapcount} = \left\lfloor\dfrac{11\ast\text{yot} + 14}{30}\right\rfloor
+$$ {#eq-leapcount}
+
+$$
+\text{lunarpid} = \text{dot} - 354 \ast \text{yot} - \text{leapcount}
 $$ {#eq-lunarpid}
 
 $$
@@ -1254,11 +1258,19 @@ $$ {#eq-bimester2month}
 
 Lunar Month 11, the second lunar month of Bimester 5 and the final lunar month of the lunar year, has 30 days in lunar leap years and 29 days in lunar common years, whereas any other lunar month has 30 days if its index is even or 29 days if its index is odd. The lunar [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} of the first day of Lunar Month 11 is 325. The length of Lunar Month 11 is [lyl](#lyl){.tool data-bs-toggle="tooltip" data-bs-title="lunar year length"} [-]{.mono} 325.
 
-Unlike lunar months, bimesters maintain a constant length for 2 &times; 354 [-]{.mono} 59 = 649 or 3 &times; 354 [-]{.mono} 59 = 1003 days. As a supplement to [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"}, Dec offers "lunar intercalation differences" (lid) dates, which display the date of and days until the next lunar leap day. The lid is like a lunar nid that can span up to 3 lunar years.
+Unlike lunar months, bimesters maintain a constant length for 2 &times; 354 [-]{.mono} 59 = 649 or 3 &times; 354 [-]{.mono} 59 = 1003 days. To indicate when bimester length will change, Dec provides "lunar intercalation differences" ([lid](#lid){.tool data-bs-toggle="tooltip" data-bs-title="lunar intercalation differences"}), which are like lunar [nid](#nid){.tool data-bs-toggle="tooltip" data-bs-title="negative integer days of year"} that reset after the end of a lunar leap year rather than after any lunar year. In lunar leap years, [lid](#lid){.tool data-bs-toggle="tooltip" data-bs-title="lunar intercalation differences"} and lunar [nid](#nid){.tool data-bs-toggle="tooltip" data-bs-title="negative integer days of year"} are equal.
 
-consult glance at the lid date, we can The "lunar intercalation differences" (lid) date format is year+day+lid Rather than perform calculations to determine whether or not a leap day will occur in the given lunar year, a . inform us exactly when the Dec  More informative of  determine the  of providing a is instead of [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"} with the exception of .  to determine the but we would need Instead of lunar units Dec conveys the qDespite the large number of lunar calendar units described above, Dec can only include [bob](#bob){.tool data-bs-toggle="tooltip" data-bs-title="beginnings of bimester"}, [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"}, and in does not include any lunar of providing the [lyl](#lyl){.tool data-bs-toggle="tooltip" data-bs-title="lunar year lengths"}, Dec does not display the index of any lunar unit and only shows the onset and count of bimesters, because the bob and dob are sufficient for tracking the lunar surface illumination. lunar doy, or the indexes of lunar years, bimesters, or lunar months, Dec
+In between lunar leap years, [lid](#lid){.tool data-bs-toggle="tooltip" data-bs-title="lunar intercalation differences"} range from -1063 or -709 to -356. In lunar leap years, [lid](#lid){.tool data-bs-toggle="tooltip" data-bs-title="lunar intercalation differences"} and lunar [nid](#nid){.tool data-bs-toggle="tooltip" data-bs-title="negative integer days of year"} range from -355 to -1. Bimester length changes from 59 to 60 when the [lid](#lid){.tool data-bs-toggle="tooltip" data-bs-title="lunar intercalation difference"} reaches -60. We can use Equations -@eq-dot, -@eq-yot,-@eq-leapcount, and -@eq-lid to turn [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"} into [lid](#lid){.tool data-bs-toggle="tooltip" data-bs-title="lunar intercalation difference"}. A [lid](#lid){.tool data-bs-toggle="tooltip" data-bs-title="lunar intercalation difference"} date consists of the [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"}+[pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} of a lunar leap day followed by the associated [lid](#lid){.tool data-bs-toggle="tooltip" data-bs-title="lunar intercalation difference"}: \${decDob59yColor}+\${decDob59dColor}[-]{.mono}\${decLidColor}.
 
+::: {.equationgroup #equationgroup23}
+$$
+\text{lid} = \text{dot} - \text{leapcount} - 354\ast\left\lfloor\dfrac{30\ast\text{leapcount} + 15}{11}\right\rfloor - 355
+$$ {#eq-lid}
 
+$$
+\text{lyl} = 355 - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{[}\text{lid} < -355\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{]} $$ {#eq-lid2lyl}
+
+:::
 
 # Moon {#moon}
 

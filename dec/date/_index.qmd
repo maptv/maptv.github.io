@@ -9,10 +9,7 @@ function unix2dote(unix, zone, offset = 719468) {
     ) / 10 + offset, zone]
 }
 function dote2date(dote, zone = 0) {
-  const cote = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
+  const cote = Math.floor(dote / 146097),
   dotc = dote - cote * 146097,
   yotc = Math.floor((dotc
     - Math.floor(dotc / 1460)
@@ -34,7 +31,7 @@ function year2leap(year = 1970) {
   return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
 }
 function dote2dotw(d = 719468) {
-  return d >= -3 ? (d + 3) % 7 : (d + 4) % 7 + 6
+  return ((d + 3) % 7 + 7) % 7
 }
 function unix2doty(unix) {
   const dote = (
@@ -55,12 +52,16 @@ function unix2doty(unix) {
       - Math.floor(yotc / 100)
   )}
 function date2dote(year = 1969, doty = 306, zone = 0) {
-    const cote = Math.floor((year >= 0 ? year : year - 399) / 400),
-      yote = year - cote * 400;
-    return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
+  const cote = Math.floor(year / 400), yote = year - cote * 400;
+  return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
 }
 function yd2dow(year = 1969, doty = 306) {
   return dote2dotw(date2dote(year, doty)[0]);
+}
+function unix2lid(unix) {
+  const dot = (Math.floor(unix / 86400000) + 7200) % 10631,
+    leapsBefore = Math.floor((11 * Math.floor((30 * dot + 15) / 10631) + 14) / 30);
+  return dot - leapsBefore - 354 * Math.floor((30 * leapsBefore + 15) / 11) - 355;
 }
 function addN(d) { return d + nDaysInput }
 function subN(d) { return d - nDaysInput }
@@ -431,9 +432,22 @@ decPentColor = textcolor(decPent, piecewiseColor(decPent * 5 / 365))
 decDotpColor = textcolor(decDotp, piecewiseColor(decDotp / 5))
 decDot = (Math.floor(dz[0]) + 9) % 10631
 decYot = Math.floor((30 * decDot + 15) / 10631)
-decDoly = decDot - 354 * decYot - Math.floor((11 * decYot + 14) / 30)
+decLeapCount = Math.floor((11 * decYot + 14) / 30)
+decDoly = decDot - 354 * decYot - decLeapCount
 decDob = decDoly === 354 ? 59 : decDoly % 59
-nDaysInBim = isLunarLeapYear(decYot) && decDoly > 294 ? 60 : 59
+decLid = decDot - decLeapCount - 354 * Math.floor((30 * decLeapCount + 15) / 11) - 355
+decLidAbs = Math.abs(decLid)
+decDob59yd = dote2date(dz[0] + decLidAbs)
+decDob59year = decDob59yd[0]
+decDob59doty = Math.floor(decDob59yd[1])
+decDob59yPiece = piecewiseColor(decDob59year % 100 / 100)
+decDob59dPiece = piecewiseColor(decDob59doty / (365 + year2leap(decDob59year + 1)))
+decDob59yColor = textcolor(decDob59year, decDob59yPiece)
+decDob59dColor = textcolor(decDob59doty.toString().padStart(3, "0"), decDob59dPiece)
+decLyl = decLid < -355 ? 354 : 355
+decLidColor = textcolor(decLidAbs.toString().padStart(3, "0"), decDotyPiece)
+decLunarLeapYoe = decDob59yd[0]
+nDaysInBim = decLid < -60 ? 59 : 60
 NegDob = decDob - nDaysInBim
 decBob = decDoty - decDob
 decBobPiece = piecewiseColor(decBob / nDaysInYear)
