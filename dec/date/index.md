@@ -244,11 +244,12 @@ data-bs-title="Coordinated Universal Time">UTC</a>)
 radio input shifts the Gregorian calendar date selected by the “Month”
 and “Day of month” range inputs by 1 day. If the “[Color
 scheme](https://en.wikipedia.org/wiki/Color_scheme#:~:text=a%20combination%20of%202%20or%20more%20colors%20used%20in%20aesthetic%20or%20practical%20design)”
-radio input is set to the “Month” instead of the “Day”, the
+radio input is set to “Month” instead of “Day”, the
 “<a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> offset” radio input
-will also rotate the Dec colors🎨(Decolors) inside the calendar plot
-[cells](https://observablehq.com/plot/marks/cell) by 1 day.
+will also rotate the Dec colors🎨(Decolors) inside the
+[cells](https://observablehq.com/plot/marks/cell) of both calendar plots
+by 1 day.
 
 From the perspective of Dec, month Decolors are only useful if we want
 to compare the Dec and Gregorian calendars. In contrast, day Decolors
@@ -266,14 +267,6 @@ data-bs-title="groups of one hundred days">h</a> and uses
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of ten days">x</a> in place of Gregorian calendar
 months and weeks.
-
-<div id="equationgroup00" class="equationgroup">
-
-<span id="eq-pid">
-pid = x \* 10 + dox   (1)
-</span>
-
-</div>
 
 The “Plot layout” radio input pivots the calendar plots by a quarter
 [turn](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=the%20Greek%20letter,to%20one%20turn),
@@ -581,7 +574,7 @@ viewof dotwInput = Inputs.radio([
 
 </div>
 
-There are two range inputs labelled “Day of year” because every
+There are two range inputs labeled “Day of year” because every
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</a> can be expressed as either a
 positive or a negative integer. The
@@ -600,13 +593,17 @@ days left in the year, and their
 is the “solar year length”
 (<a href="#syl" id="solaryearlength" class="tool"
 data-bs-toggle="tooltip" data-bs-title="solar year length">syl</a>),
-which can be <span class="color364by365">365</span> or
+which can be either <span class="color364by365">365</span> or
 <span class="color365by366">366</span>.
 
-<div id="equationgroup01" class="equationgroup">
+<div id="equationgroup00" class="equationgroup">
 
-<span id="eq-syl">
-syl = pid − nid   (2)
+<span id="eq-pid">
+pid = x \* 10 + dox   (1)
+</span>
+
+<span id="eq-nid">
+nid = pid − syl   (2)
 </span>
 
 </div>
@@ -640,16 +637,20 @@ The year+day Dec date format is short for
 data-bs-title="solar year length">syl</a></span>. Dec truncates dates
 because the <a href="#syl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar year length">syl</a> is not needed to specify a
-date, remains constant for 366, 1095, or 2920 days, has only 2 possible
-values: <span class="color364by365">365</span> or
-<span class="color365by366">366</span>, and can be obtained by passing
+date, remains constant for 366, 1095, or 2555
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, has only 2 possible values:
+<span class="color364by365">365</span> or
+<span class="color365by366">366</span>, and can be obtained either from
+the <a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> and
+<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">nid</a> via
+<a href="#eq-nid" class="quarto-xref">Equation 2</a> above or by passing
 Year <a href="#y" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year">y</a> to Equations
-<a href="#eq-leap" class="quarto-xref">3</a> and
-<a href="#eq-leap2syl" class="quarto-xref">4</a> below. Nevertheless, we
-can use the <a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year lengths">syl</a> to convert between different
-kinds of Dec dates.
+data-bs-title="year">y</a> to
+<a href="#eq-leap" class="quarto-xref">Equation 3</a> and then its
+result to <a href="#eq-syl" class="quarto-xref">Equation 4</a> below.
 
 <div id="equationgroup01" class="equationgroup">
 
@@ -664,7 +665,7 @@ $$
  \qquad(3)$$
 </span>
 
-<span id="eq-leap2syl">
+<span id="eq-syl">
 syl = 365 + leap   (4)
 </span>
 
@@ -709,7 +710,7 @@ leap(2020)
 ### Python
 
 ``` python
-def leap(year=2000):
+def leap(year=0):
     year += 1
     return year % 4 == 0 and year % 100 != 0 or year % 400 == 0
 leap(2019)
@@ -756,7 +757,9 @@ data-bs-title="Coordinated Universal Time">UTC</a> date,
 informs us that Year ${decYearColor1} began ${decDotyColor} days ago,
 whereas its countdown equivalent,
 <span class="nowrap">${nextYearColor}<span class="mono">-</span>${TminusPaddedColor}</span>,
-tells us that Year ${nextYearColor1} will begin in ${TminusColor} days.
+tells us that Year ${nextYearColor1} will begin in ${TminusColor}
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>.
 
 <div id="equationgroup02" class="equationgroup">
 
@@ -770,7 +773,8 @@ Both <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a> and
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer days of year">nid</a> can be useful. If
-we wanted to add 285 days to the
+we wanted to add 285 <a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> to the
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</a> selected below, for example to
 predict when a pregnant🤰woman will give birth to a baby👩‍🍼(Jukic et al.
@@ -895,8 +899,10 @@ Gregorian calendar year. Changing the
 data-bs-title="day">d</a>${january1doyColor1}
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> shifts every Gregorian calendar date
-by 1 to 6 days without affecting Decalendar. A leap year that begins on
-the last <a href="#dow" class="tool" data-bs-toggle="tooltip"
+by 1 to 6 <a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> without affecting Decalendar. A leap year
+that begins on the last
+<a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a>,
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">Dow</a> <span class="color6by7">6</span>,
@@ -935,9 +941,9 @@ data-bs-title="days of week">dow</a> and 2 year lengths. If we set aside
 an extra copy of a printed🖨️Gregorian calendar on
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a>${january1doyColor3}, we would have to wait 6,
-11, 12, 17, 23, 28, or 40 years to use it. We can make the leap year
-form of Decalendar apply to any year by appending an asterisk (\*) to
-the label for <a href="#d" class="tool" data-bs-toggle="tooltip"
+11, 12, 28, or 40 years to use it. We can make the leap year form of
+Decalendar apply to any year by appending an asterisk (\*) to the label
+for <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color365by366">365</span>:
 <span class="color0">365</span>\*.
 
@@ -1179,7 +1185,7 @@ data-bs-title="pentaday interquintile range">Pir</a>
 <a href="#lim" class="tool" data-bs-toggle="tooltip"
 data-bs-title="liminal interconnecting margin">Lim</a>
 <span class="color364by365">0</span>,
-<a href="#Pir" class="tool" data-bs-toggle="tooltip"
+<a href="#pir" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentaday interquintile range">Pir</a>
 <span class="color001">0</span>, and the first day of
 <a href="#lim" class="tool" data-bs-toggle="tooltip"
@@ -1235,8 +1241,8 @@ According to Schedule <span class="color14by32 tool"
 data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>,
 <a href="#pir" class="tool" data-bs-toggle="tooltip"
-data-bs-title="pentaday interquintile ranges">pir</a> only contain
-workdays and <a href="#lim" class="tool" data-bs-toggle="tooltip"
+data-bs-title="pentaday interquintile ranges">pir</a> only contain work
+days and <a href="#lim" class="tool" data-bs-toggle="tooltip"
 data-bs-title="liminal interconnecting margins">lim</a> are solely made
 up of rest days. When we follow Schedule <span class="color14by32 tool"
 data-bs-toggle="tooltip"
@@ -1245,13 +1251,13 @@ a <a href="#lim" class="tool" data-bs-toggle="tooltip"
 data-bs-title="liminal interconnecting margin">lim</a> is the Dec analog
 of a weekend. To make
 <a href="#lim" class="tool" data-bs-toggle="tooltip"
-data-bs-title="liminal interconnecting margin">lim</a> appear like
+data-bs-title="liminal interconnecting margin">lim</a> appear more like
 weekends we can start from
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">Dox</a> <span class="color1">1</span>
 instead of <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">Dox</a> <span class="color0">0</span> as in
-the <a href="#fig-one" class="quarto-xref">Diagram 4</a> below, which
+<a href="#fig-one" class="quarto-xref">Diagram 4</a> below, which
 displays its <a href="#lim" class="tool" data-bs-toggle="tooltip"
 data-bs-title="liminal interconnecting margin">lim</a> as a two-by-two
 square on the right like
@@ -1273,9 +1279,9 @@ style="width:8.25in;height:4.41in" loading="lazy" />
 
 The order of <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a> in
-<a href="#fig-one" class="quarto-xref">Diagram 4</a> is different than
-all of the previous diagrams but all of the diagrams above show Schedule
-<span class="color14by32 tool" data-bs-toggle="tooltip"
+<a href="#fig-one" class="quarto-xref">Diagram 4</a> is different from
+all of the previous diagrams, but all of the diagrams above show
+Schedule <span class="color14by32 tool" data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>
 because the categorization of
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
@@ -1326,12 +1332,12 @@ data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span> ↻
 data-bs-title="duotrigesimal F is decimal 7 or binary 00111">F</span>.
 Unlike Schedule <span class="color28by32 tool" data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal X is decimal 28 or binary 11100">X</span>,
-Schedule <span class="color07by32 tool" data-bs-toggle="tooltip"
+Schedules <span class="color07by32 tool" data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal F is decimal 7 or binary 00111">F</span>
-handles yearly transitions just as gracefully as Schedule
-<span class="color14by32 tool" data-bs-toggle="tooltip"
+and <span class="color14by32 tool" data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>
-and provisions the same number of work days per year.
+handle yearly transitions gracefully and always provision exactly 219
+work days per year.
 
 <div class="centered">
 
@@ -2186,9 +2192,12 @@ The last digits of <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a> and
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
-class="overline">mi</span>d</a> are misaligned by 4 days in leap years
-and by 5 days in common years. Dec maintains a constant five-day
-misalignment by replacing the
+class="overline">mi</span>d</a> are misaligned by 4
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> in leap years and by 5
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> in common years. Dec maintains a constant
+five-day misalignment by replacing the
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
 class="overline">mi</span>d</a> with the next
@@ -2199,8 +2208,8 @@ class="overline">mi</span>d</a>
 data-bs-title="next mixed integer day of year"><span
 class="overline">mi</span><span class="grave">d</span></a>) in leap
 years. The accents above
-<a href="#mid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer day of year">ni<span
+<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="next negative integer day of year">ni<span
 class="acute">d</span></a> and
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="next mixed integer day of year"><span
@@ -3397,7 +3406,7 @@ and combines the 6
 <span class="color29by32">Y</span>, with acute accents ( ́) to create 6
 additional letters,
 <span class="color01by32"><span class="acute">A</span></span>,
-<span class="color05by32"><span class="acute">E</span></span>,
+<span class="color06by32"><span class="acute">E</span></span>,
 <span class="color11by32"><span class="acute">I</span></span>,
 <span class="color18by32"><span class="acute">O</span></span>,
 <span class="color25by32"><span class="acute">U</span></span>, and
@@ -3438,11 +3447,11 @@ Dec ten-bit (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="ten-bit">10b</span>) schedule by following Schedule
 <span class="color14by32 tool" data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>
-on even numbered <a href="#p" class="tool" data-bs-toggle="tooltip"
+on even-numbered <a href="#p" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentadays">p</a> and Schedule
 <span class="color15by32 tool" data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal M is decimal 17 or binary 01111">M</span>
-on odd numbered <a href="#p" class="tool" data-bs-toggle="tooltip"
+on odd-numbered <a href="#p" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentadays">p</a>. Schedule <span class="color14by32 tool"
 data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span><span class="color15by32 tool"
@@ -3469,7 +3478,7 @@ produce a consistent🎯number of work days every year. While Days
 <span class="color364by365">364</span>,
 <span class="color365by366">365</span>, and
 <span class="color0">0</span> can be work or rest days in the Gregorian
-calendar️, these days are always rest days if we comply with Schedule
+calendar, these days are always rest days if we comply with Schedule
 <span class="color14by32 tool" data-bs-toggle="tooltip"
 data-bs-title="L in base32 is 14 in base10 and 01110 in base2">L</span>
 or <span class="color14by32 tool" data-bs-toggle="tooltip"
@@ -3487,14 +3496,14 @@ do not require any holidays to smooth the transition between years.
 
 There are 11 United States (US) [Federal
 holidays](https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/).
-US Federal holidays that fall on a Gregorian calendar️ rest day,
+US Federal holidays that fall on a Gregorian calendar rest day,
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">Dow</a> <span class="color0 tool"
 data-bs-toggle="tooltip" data-bs-title="Sunday">0</span> or
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">Dow</a> <span class="color6by7 tool"
 data-bs-toggle="tooltip" data-bs-title="Saturday">6</span>, are observed
-on the nearest Gregorian calendar️ work day:
+on the nearest Gregorian calendar work day:
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">Dow</a> <span class="color1by7 tool"
 data-bs-toggle="tooltip" data-bs-title="Monday">1</span> or
@@ -3514,7 +3523,8 @@ data-bs-title="days of xún">Dox</a> <span class="color0">0</span> to
 needed.
 
 Over the course of a Dec cycle, which consists of 400 years, 20871
-weeks, or 146097 days, a five-day workweek provides an average of
+weeks, or 146097 <a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, a five-day workweek provides an average of
 260.8875 work days per year. If we round 260.8875 to 261 and then
 subtract the 11 US Federal holidays, we get an annual total of 250 work
 days, which is 1 <a href="#p" class="tool" data-bs-toggle="tooltip"
@@ -3546,8 +3556,8 @@ data-bs-title="day">d</a><span class="color111by365">111</span> is the
 solstice](https://en.wikipedia.org/wiki/June_solstice#:~:text=the%20solstice%20on%20Earth%20that%20occurs%20annually%20between%2020%20and%2022%20June%20according%20to%20the%20Gregorian%20calendar),
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color149by365">149</span> is the
-hottest <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of year">doy</a> globally on average,
+hottest <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> globally on average,
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color206by365">206</span> is the
 [southward
@@ -3711,13 +3721,14 @@ Decolor as its first
 data-bs-title="days of year">doy</a>, regardless of its length.
 
 For example, <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color300by365">3</span>,
+data-bs-title="group of one hundred days">h</a><span class="color200by365">2</span>,
 <a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of ten days">x</a><span class="color300by365">30</span>,
+data-bs-title="group of ten days">x</a><span class="color200by365">20</span>,
 and <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a><span class="color300by365">300</span> all have
-the same Decolor even though their lengths vary tenfold. Day
-<span class="color365by366">365</span> does not affect
+data-bs-title="day">d</a><span class="color200by365">200</span> all have
+the same Decolor even though their lengths vary by [powers of
+ten](https://en.wikipedia.org/wiki/Power_of_10#:~:text=any%20of%20the%20integer%20powers%20of%20the%20number%20ten).
+Day <span class="color365by366">365</span> does not affect
 <a href="#pih" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer hectoday">pih</a> and
 <a href="#pix" class="tool" data-bs-toggle="tooltip"
@@ -3766,7 +3777,7 @@ data-bs-title="groups of one hundred days">h</a><span class="color265by365"><spa
 overlap begins 1 or 2 days before the soonest possible date of
 [Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃and
 ends with
-[Christmas](https://en.wikipedia.org/wiki/Christmas#:~:text=annual%20festival%20commemorating%20the%20birth%20of%20Jesus%20Christ)🎄.
+[Christmas](https://en.wikipedia.org/wiki/Christmas#:~:text=annual%20festival%20commemorating%20the%20birth%20of%20Jesus%20Christ).
 
 ``` {ojs}
 //| echo: false
@@ -3992,7 +4003,8 @@ The [line
 chart](https://en.wikipedia.org/wiki/Line_chart#:~:text=a%20type%20of%20chart%20that%20displays%20information%20as%20a%20series%20of%20data%20points%20called%20%27markers%27%20connected%20by%20straight%20line%20segments)
 shows
 [ERA5](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview#:~:text=the%20fifth%20generation%20ECMWF%20reanalysis%20for%20the%20global%20climate%20and%20weather%20for%20the%20past%208%20decades)
-daily global mean temperatures for every doy. If we think of the method
+daily global mean temperatures for every doy (Copernicus Climate Change
+Service (C3S) 2018; Hersbach et al. 2020+106). If we think of the method
 for assigning <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doy</a> to Dec seasons in
 <a href="#eq-season" class="quarto-xref">Equation 15</a> as a
@@ -4034,7 +4046,7 @@ model with 5
 fit to the data. The model
 [explained](https://en.wikipedia.org/wiki/Coefficient_of_determination#Adjusted_R2:~:text=an%20attempt%20to%20account%20for%20the%20phenomenon%20of%20the%20R2%20automatically%20increasing%20when%20extra%20explanatory%20variables%20are%20added%20to%20the%20model)
 almost 92% of the variation in the data and was only off by less than
-0.35 degrees [on
+0.35 degrees Celsius [on
 average](https://en.wikipedia.org/wiki/Mean_absolute_error#:~:text=a%20measure%20of%20errors%20between%20paired%20observations%20expressing%20the%20same%20phenomenon).
 
 If the model predicted temperature using the year and
@@ -4043,23 +4055,23 @@ data-bs-title="day of year">doy</a>, instead of just the
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</a>, the variation explained by the
 model would increase to almost 98% and the mean absolute error would
-drop to less than 0.18 degrees, but the goal of the model is to
+drop to less than 0.18 degrees Celsius, but the goal of the model is to
 demonstrate that Dec seasons can capture daily global mean temperature
 patterns regardless of the year.
 
-As a consequence of regressing only on
+The leftmost plot below shows that the model trained only on
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a> and not years, the leftmost plot
-below shows that the model
+data-bs-title="day of year">doy</a> and temperatures
 [overpredicts](https://en.wiktionary.org/wiki/overpredict#:~:text=predict%20to%20be%20higher%20than%20the%20actual%20value)
-in less recent years and
+in earlier years and
 [underpredicts](https://en.wiktionary.org/wiki/underpredict#English:~:text=predict%20to%20be%20smaller%20than%20is%20the%20case)
-in more recent years. Nevertheless, the model fits the data well overall
-as evidenced by the rightmost plot below, which is a common [regression
+in later years. Nevertheless, the rightmost plot below, which is a
+common [regression
 diagnostic](https://en.wikipedia.org/wiki/Regression_diagnostic#:~:text=a%20set%20of%20procedures%20available%20for%20regression%20analysis%20that%20seek%20to%20assess%20the%20validity%20of%20a%20model%20in%20any%20of%20a%20number%20of%20different%20ways)
-that plots predictions against
-[actual<span class="mono">-</span>predicted
-values](https://en.wikipedia.org/wiki/Errors_and_residuals#:~:text=the%20difference%20between%20the%20observed%20value%20and%20the%20estimated%20value%20of%20the%20quantity%20of%20interest).
+that plots the [difference between actual values and
+predictions](https://en.wikipedia.org/wiki/Errors_and_residuals#:~:text=the%20difference%20between%20the%20observed%20value%20and%20the%20estimated%20value%20of%20the%20quantity%20of%20interest)
+against predictions, indicates that this model fits the data quite well
+overall.
 
 <div id="residualsversusfitted" class="baserplot">
 
@@ -4269,8 +4281,9 @@ data-bs-title="day of hectoday">doh</a> with its final two digits:
 ${decDohNidMidPadColor2}, an
 <a href="#nih" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer hectoday">nih</a> “mixed integer xún”
-(<a href="#mix" class="tool" data-bs-toggle="tooltip"
-data-bs-title="mixed integer xún">mix</a>) with its first two digits:
+(<a href="#mix" id="mixedintegerxun" class="tool"
+data-bs-toggle="tooltip" data-bs-title="mixed integer xún">mix</a>) with
+its first two digits:
 <span class="overline">${decNihAbsColor3}</span>${decDohNidMidFirstColor},
 and a <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a> with its last digit:
@@ -4322,9 +4335,7 @@ data-bs-title="negative integer xún">nix</a>
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year">mid</a> as in
 <a href="#tbl-vinculeap" class="quarto-xref">Table 3</a> to facilitate
-identification of work and rest days based on a Dec schedule such as
-Schedule <span class="color14by32 tool" data-bs-toggle="tooltip"
-data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>:
+classification of work and rest days according to Dec schedules:
 <span class="overline">${decNihGraveColor}</span>${decDohGraveFirstColor}<span class="grave">${decDoxGraveColor}</span>
 =
 <span class="overline">${decNixGraveColor}</span><span class="grave">${decDoxGraveColor1}</span>
@@ -4370,7 +4381,7 @@ data-bs-title="days of hectoday">doh</a> is the
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a> and the final digit of the
 100<span class="mono">-</span><a href="#doh" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of hectoday">doh</a> is the (10
+data-bs-title="days of hectoday">doh</a> is (10
 <span class="mono">-</span>
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a>)
@@ -4386,7 +4397,7 @@ $$\text{dox} = \text{doh} \href{https://en.wikipedia.org/wiki/Modulo#:~:text=ret
 </div>
 
 Any kind of <a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of year">doy</a> can each be split into either an
+data-bs-title="days of year">doy</a> can be split into either an
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a> and
 <a href="#dox" class="tool" data-bs-toggle="tooltip"
@@ -4428,9 +4439,8 @@ data-bs-title="negative integer day of year">nid</a> did not reset to
 <span class="color0">-365</span> or <span class="color0">-366</span> at
 the <a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a>, it would continue from
-<span class="color364by365"><span class="overline">1</span></span> to
-<span class="color0">0</span> and thus become a
-<a href="#pid" class="tool" data-bs-toggle="tooltip"
+<span class="color364by365">-1</span> to <span class="color0">0</span>
+and thus become a <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a>. Therefore, the
 <a href="#doe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of era">doe</a> is like an
@@ -4440,13 +4450,12 @@ data-bs-title="negative integer day of year">nid</a> that became a
 data-bs-title="positive integer day of year">pid</a> at the “beginning
 of era”
 (<a href="#boe" id="beginningofera" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of era">boe</a>), midnight on
+data-bs-title="beginning of era">boe</a>) and never restarted before or
+after the <a href="#boe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginning of era">boe</a>: midnight on
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color0">0</span> of Year
-<span class="color0">0</span> (y<span class="color0">0</span>), and
-never restarted before or after the
-<a href="#boe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of era">boe</a>.
+<span class="color0">0</span> (y<span class="color0">0</span>).
 
 Each of the ten Dec time zones has its own
 <a href="#boe" class="tool" data-bs-toggle="tooltip"
@@ -4474,10 +4483,10 @@ data-bs-title="zone">z</span><span class="color0">0</span>
 data-bs-title="days of era">doe</a> by subtracting the number of full
 days in between the start of the [Julian
 period](https://en.wikipedia.org/wiki/Julian_day#Terminology:~:text=a%20chronological%20interval%20of%207980%C2%A0years)
-and the Dec epoch, which is 1721119 if the <span class="tool"
+and the Dec epoch, which is 1721120 if the <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="zone">z</span><span class="color0">0</span> time is later
-than noon and 1721120 otherwise.
+than noon and 1721119 otherwise.
 
 Dec uses <a href="#doe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of era">doe</a> for [calendrical
@@ -4486,7 +4495,7 @@ such as finding the
 [POSIX](https://en.wikipedia.org/wiki/POSIX#:~:text=a%20family%20of%20standards%20specified%20by%20the%20IEEE%20Computer%20Society%20for%20maintaining%20compatibility%20between%20operating%20systems)
 [zero-based <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</span>](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday))
-of a given date. This year, the
+of a date. This year, the
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> of Christmas is ${xmasDotwColor}
 according to <a href="#eq-dow" class="quarto-xref">Equation 18</a>:
@@ -5073,8 +5082,8 @@ is
 <span class="nowrap">${nextYearColor9}<span class="mono">+</span>${decYearLastBowSumColor1}<span class="mono">+</span>${decYearLastDowColor3}</span>.
 When we see the same
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a> in two dates, we know that the
-difference between them is a multiple of 7. The
+data-bs-title="days of week">dow</a> in two dates, we know that their
+difference is a multiple of 7. The
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of week">bow</a> can be used to identify a
 <a href="#woy" class="tool" data-bs-toggle="tooltip"
@@ -5360,55 +5369,55 @@ data-bs-title="tridecimal">b13</span></th>
 <tr>
 <td>43</td>
 <td><span class="bigcard">🃕</span></td>
-<td>☆</td>
+<td>♧</td>
 <td><span class="bigsign">𝍤</span></td>
 </tr>
 <tr>
 <td>44</td>
 <td><span class="bigcard">🃖</span></td>
-<td>☆</td>
+<td>♧</td>
 <td><span class="bigsign">𝍮</span></td>
 </tr>
 <tr>
 <td>45</td>
 <td><span class="bigcard">🃗</span></td>
-<td>☆</td>
+<td>♧</td>
 <td><span class="bigsign">𝍯</span></td>
 </tr>
 <tr>
 <td>46</td>
 <td><span class="bigcard">🃘</span></td>
-<td>☆</td>
+<td>♧</td>
 <td><span class="bigsign">𝍰</span></td>
 </tr>
 <tr>
 <td>47</td>
 <td><span class="bigcard">🃙</span></td>
-<td>☆</td>
+<td>♧</td>
 <td><span class="bigsign">𝍱</span></td>
 </tr>
 <tr>
 <td>48</td>
 <td><span class="bigcard">🃚</span></td>
-<td>☆</td>
+<td>♧</td>
 <td><span class="bigsign">𝍥</span></td>
 </tr>
 <tr>
 <td>49</td>
 <td><span class="bigcard">🃛</span></td>
-<td>☆</td>
+<td>♧</td>
 <td><span class="bigsign">𝍦</span></td>
 </tr>
 <tr>
 <td>50</td>
 <td><span class="bigcard">🃝</span></td>
-<td>☆</td>
+<td>♧</td>
 <td><span class="bigsign">𝍧︎</span></td>
 </tr>
 <tr>
 <td>51</td>
 <td><span class="bigcard">🃞</span></td>
-<td>☆</td>
+<td>♧</td>
 <td><span class="bigsign">𝍨︎</span></td>
 </tr>
 <tr>
@@ -5701,7 +5710,7 @@ data-bs-title="day of week">dow</a>. When the
 data-bs-title="beginning of year">boy</a><a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> is unknown and cannot be obtained,
 it is best to forgo Decolor labeling entirely, as in
-<a href="#tbl-woy" class="quarto-xref">Table 8</a> below, instead of
+<a href="#tbl-woy" class="quarto-xref">Table 8</a> above, instead of
 randomly choosing 1 of the 7 possible Decolors.
 
 # Day of month (dom)
@@ -5709,25 +5718,32 @@ randomly choosing 1 of the 7 possible Decolors.
 Dec year+day dates can be expanded to display the “beginning of month”
 (<a href="#bom" id="beginningofmonth" class="tool"
 data-bs-toggle="tooltip" data-bs-title="beginning of month">bom</a>) and
-[POSIX <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</span>](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=day%20of%20the%20month%20as%20a%20decimal%20number%20%5B01%2C31%5D).
-The <a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a> is the last
-<a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a> of the previous
-month because POSIX <a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a> are one-based. We can think of the
+“[International Organization for
+Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization#:~:text=an%20independent%2C%20non%2Dgovernmental%2C%20international%20standard%20development%20organization)”
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</span>)
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</span>. We can think of the
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of month">bom</a> as
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">Dom</a> 0 despite the fact that no such
+data-bs-title="days of month">Dom</a> 0 even though no such
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</span>
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a> exists in POSIX or the Gregorian
-calendar. To obtain the
+data-bs-title="days of month">dom</a> exists. The
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a>, we can subtract the
+data-bs-title="beginning of month">bom</a> is the day before the first
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a> from the
+data-bs-title="days of month">dom</a> because <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</span>
+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">dom</a> are one-based. To obtain a
+<a href="#bom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginning of month">bom</a>, we can subtract a
+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of month">dom</a> from a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a>:
 ${monthNumberColor} = ${dotyInputColor7} <span class="mono">-</span>
@@ -5753,9 +5769,11 @@ bom = pid − dom   (32)
 We can find every possible
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of month">bom</a> by counting index☝️and
-ring💍fingers as 30 days and other fingers as 31 days, as shown by the
-hands🤲depicted below. For positive
-<a href="#utc" class="tool" data-bs-toggle="tooltip"
+ring💍fingers as 30 <a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> and other fingers as 31
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, as shown by the hands🤲depicted below. For
+positive <a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> offsets, we start
 counting from -1, which is the
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
@@ -5770,8 +5788,8 @@ represent 2 months.
 
 <div class="hand">
 
-<img src="../../asset/left.svg" id="lefthand" loading="lazy" />
-<img src="../../asset/right.svg" id="righthand" loading="lazy" />
+<img src="../../asset/left.svg" class="lefthand" loading="lazy" />
+<img src="../../asset/right.svg" class="righthand" loading="lazy" />
 
 </div>
 
@@ -5784,7 +5802,7 @@ keyboard](https://en.wikipedia.org/wiki/Month#:~:text=this%20cyclical%20pattern%
 the finger🖐counting technique described above is an attempt to make
 sense of the irregular pattern of [month
 lengths](https://en.wikipedia.org/wiki/Month#:~:text=Name-,Number,of%20days)
-in the Gregorian calendar️. We do not need mnemonics,
+in the Gregorian calendar. We do not need mnemonics,
 [rhymes](https://en.wikipedia.org/wiki/Thirty_Days_Hath_September),
 tables,
 [dactylonomy](https://en.wikipedia.org/wiki/Finger-counting#:~:text=counting%20using%20the%20fingers),
@@ -5799,27 +5817,37 @@ information is plainly visible in the
 data-bs-title="positive integer day of year">pid</a>.
 
 To convert a <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a> to or from a [POSIX
-month](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=Month%20as%20a%20decimal%20number%20%5B01%2C12%5D)
-and <a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> to or from a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</span>
+month and <a href="#dom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</a>, we can use parts of the <a
 href="https://howardhinnant.github.io/date_algorithms.html#civil_from_days"
 class="mono under"><code>civil_from_days</code></a> and <a
 href="https://howardhinnant.github.io/date_algorithms.html#days_from_civil"
 class="mono under"><code>days_from_civil</code></a> algorithms (Hinnant
-2021+185). POSIX months are one-based and start at
+2021+185). <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</span>
+months are one-based and
 <a href="#moy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="months of year">moy</a> are zero-based.
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</span>
+Month 1 is <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="month of year">Moy</a>
-<span class="color306by365">10</span>, whereas
+<span class="color306by365">10</span> and
 <a href="#moy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="months of year">moy</a> are zero-based and thus begin
-from <a href="#moy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="month of year">Moy</a> <span class="color0">0</span>. To
-obtain a <a href="#moy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="month of year">moy</a>, we can plug a
+data-bs-title="month of year">Moy</a> <span class="color0">0</span> is
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</span>
+Month 3. We can obtain a
+<a href="#moy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">moy</a> by plugging a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> into
-<a href="#eq-pid2moy" class="quarto-xref">Equation 33</a> or a POSIX
+<a href="#eq-pid2moy" class="quarto-xref">Equation 33</a> or an
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</span>
 month into <a href="#eq-month2moy" class="quarto-xref">Equation 34</a>.
 
 <div id="equationgroup16" class="equationgroup">
@@ -5829,11 +5857,11 @@ $$\text{moy} = \left\lfloor\dfrac{\text{pid} \ast 5 + 2}{153}\right\rfloor \qqua
 </span>
 
 <span id="eq-month2moy">
-$$\text{moy} = (\text{month} + 9) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 12 \qquad(34)$$
+$$\text{moy} = (\text{isomonth} + 9) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 12 \qquad(34)$$
 </span>
 
 <span id="eq-moy2month">
-$$\text{month} = (\text{moy} + 3) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 12 \qquad(35)$$
+$$\text{isomonth} = (\text{moy} + 3) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 12 \qquad(35)$$
 </span>
 
 <span id="eq-moy2bom">
@@ -5846,24 +5874,39 @@ dom = pid − bom   (37)
 
 </div>
 
-POSIX months and <a href="#moy" class="tool" data-bs-toggle="tooltip"
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</span>
+months and <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="months of year">moy</a> are shifted in relation to each
 other because the Dec epoch,
-<span class="color0">0000</span>+<span class="color0">000</span>, is 2
-months later than the Gregorian calendar epoch:
+<span class="color0">0000</span>+<span class="color0">000</span>,
+occurred 2 months or 60
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> after the start of <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</span>
+[Year
+0](https://en.wikipedia.org/wiki/ISO_8601#Years:~:text=1%20BC%20is%20labelled%20%2B0000):
 <span class="color99by100">-0001</span>+<span class="color306by365">306</span>.
-To convert years, we add 1 to the <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="year of era">yoe</span> or
-subtract 1 from the Gregorian calendar️ “common era year”
+To convert between <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="years of era">yoe</span> and “[common
+era](https://en.wikipedia.org/wiki/Common_Era#:~:text=conventions%20used%20in%20the%20Gregorian%20or%20Julian%20calendar%20to%20specify%20whether%20the%20year%20is%20before%20or%20after%20the%20epoch)
+years”
 (<a href="#cey" id="commonerayear" class="tool" data-bs-toggle="tooltip"
-data-bs-title="common era year">cey</a>) if the
+data-bs-title="common era year">cey</a>), we add 1 to the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="year of era">yoe</span> or subtract 1 from the
+<a href="#cey" class="tool" data-bs-toggle="tooltip"
+data-bs-title="common era year">cey</a> if the
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> is greater than
 <span class="color305by365">305</span>, the
 <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="month of year">moy</a> is greater than
-<span class="color275by365">9</span>, or the POSIX month is less than
-<span class="color0">3</span>.
+<span class="color275by365">9</span>, or the <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</span>
+month is less than <span class="color0">3</span>.
 
 <div id="equationgroup17" class="equationgroup">
 
@@ -5871,9 +5914,9 @@ data-bs-title="month of year">moy</a> is greater than
 $$
 \text{cey}=\text{yoe}+\begin{cases}
   1&{\begin{aligned}
-    &\text{ if } \text{pid} \\\\\\\\\\\\\gt 305\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\\\\\\\\\gt 9\\
-    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{month}\lt 3\end{aligned}}\\\\
+    &\text{ if } \text{pid} \\\\\\\\\gt 305\\
+    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{moy}\\\\\\\gt 9\\
+    &\href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor}\text{isomonth}\lt 3\end{aligned}}\\\\
   0&{\text{ otherwise}}\end{cases}
  \qquad(38)$$
 </span>
@@ -5901,8 +5944,9 @@ data-bs-title="beginning of month">bom</a> on our fingers.
 
 <div class="hand">
 
-<img src="../../asset/leftnegtzo.svg" id="lefthand" loading="lazy" />
-<img src="../../asset/rightnegtzo.svg" id="righthand" loading="lazy" />
+<img src="../../asset/leftnegtzo.svg" class="lefthand" loading="lazy" />
+<img src="../../asset/rightnegtzo.svg" class="righthand"
+loading="lazy" />
 
 </div>
 
@@ -5951,10 +5995,12 @@ various expanded date types.
 
 Dec dates can be described in the context of [object oriented
 programming](https://en.wikipedia.org/wiki/Object-oriented_programming#:~:text=a%20programming%20paradigm%20based%20on%20objects).
-In this analogy, an object is a blueprint for Dec dates and an
-[instance](https://en.wikipedia.org/wiki/Instance_(computer_science)#:~:text=a%20specific%20occurrence%20of%20a%20software%20element%20that%20is%20based%20on%20a%20type%20definition)
-represents a specific Dec date. When we create an instance, we can
-specify the date that it will represent by providing either a
+In this analogy, a
+[class](https://en.wikipedia.org/wiki/Class_(programming)#:~:text=a%20syntactic%20entity%20structure%20used%20to%20create%20objects)
+is a blueprint for Dec dates and an
+[object](https://en.wikipedia.org/wiki/Instance_(computer_science)#:~:text=a%20specific%20occurrence%20of%20a%20software%20element%20that%20is%20based%20on%20a%20type%20definition)
+represents a specific Dec date. When we create an object, we can specify
+the date that it will represent by providing either a
 <a href="#yoe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</a> and
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
@@ -5974,11 +6020,13 @@ data-bs-title="year of era">yoe</a> and
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a> are stored as
 [instance
-attributes](https://en.wikipedia.org/wiki/Instance_variable#:~:text=each%20instantiated%20object%20of%20the%20class%20has%20a%20separate%20copy).
-Our instance must contain one instance method for every potential output
-that is not an instance attribute. Instance methods can use instance
-attributes to produce their output. For example, a method based on
-Equations <a href="#eq-pid2moy" class="quarto-xref">33</a>,
+variable](https://en.wikipedia.org/wiki/Instance_variable#:~:text=each%20instantiated%20object%20of%20the%20class%20has%20a%20separate%20copy).
+Our class must define one [instance
+method](https://en.wikipedia.org/wiki/Method_%28computer_programming%29#:~:text=a%20procedure%20associated%20with%20an%20object)
+for every potential output that is not an instance variable. Instance
+methods can use instance variables to produce their output. For example,
+a method based on Equations
+<a href="#eq-pid2moy" class="quarto-xref">33</a>,
 <a href="#eq-moy2month" class="quarto-xref">35</a>,
 <a href="#eq-moy2bom" class="quarto-xref">36</a>, and
 <a href="#eq-dom" class="quarto-xref">37</a> could turn a
@@ -5988,7 +6036,7 @@ data-bs-title="positive integer day of year">pid</a> into a month and
 data-bs-title="day of month">dom</a>.
 
 <a href="#fig-conv" class="quarto-xref">Diagram 7</a> below visualizes
-how an instance that represents the UNIX epoch would convert its
+how an object that represents the UNIX epoch would convert its
 <a href="#yoe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</a> and
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
@@ -6284,7 +6332,7 @@ dow<br>4
 
 # Misaligned unit difference (mud)
 
-Unlike weeks, Gregorian calendar months differ by length and therefore
+Unlike weeks, Gregorian calendar months differ in length and therefore
 are not amenable to Dec date expansion. With a constant number of “days
 per month” (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days per month">dpm</span>), we could expand
@@ -6293,12 +6341,13 @@ data-bs-title="beginnings of month">bom</a> into <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="days per month">dpm</span>×<a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="months of year">moy</a>. If <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="days per month">dpm</span> was a
-multiple of 7 and <a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-toggle="tooltip" data-bs-title="days per month">dpm</span> were
+a multiple of 7 and <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> reset at the
 <a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a>, we could use a “week of
-month” (<a href="#wom" class="tool" data-bs-toggle="tooltip"
+month”
+(<a href="#wom" id="weekofmonth" class="tool" data-bs-toggle="tooltip"
 data-bs-title="week of month">wom</a>) to expand
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of week">bow</a> into
@@ -6324,7 +6373,8 @@ paradise pearly gates, and condemns its users to
 struggle against misalignment.
 
 Dec confronts measurement unit misalignment with “misaligned unit
-differences” (<a href="#mud" class="tool" data-bs-toggle="tooltip"
+differences” (<a href="#mud" id="misalignedunitdifference" class="tool"
+data-bs-toggle="tooltip"
 data-bs-title="misaligned unit differences">mud</a>). Instead of
 redefining misaligned units to bring them into alignment, we can express
 the
@@ -6409,7 +6459,7 @@ data-bs-title="day of week">dow</a></td>
 </tbody>
 </table>
 
-Dec date expansion only has one rule, namely that each expanded date
+Dec date expansion has only one rule, namely that each expanded date
 should always
 [simplify](https://en.wikipedia.org/wiki/Simplification#:~:text=the%20process%20of%20replacing%20a%20mathematical%20expression%20by%20an%20equivalent%20one%20that%20is%20simpler)
 to its equivalent year+day date. As shown in
@@ -6536,15 +6586,17 @@ mud+dom+dow<br>301+01+4
 </foreignobject></g></g></a></g></g></g>
 </svg>
 
-This exception to the date expansion rule facilitates the comparison of
+By allowing <a href="#woy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="week of year">woy</a> and
+<a href="#moy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of year">moy</a> dates to be exempt from the date
+expansion rule, Dec facilitates the comparison of
 <a href="#woy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="week of year">woy</a> dates to
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of week">bow</a> or “[International
-Organization for
-Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization#:~:text=an%20independent%2C%20non%2Dgovernmental%2C%20international%20standard%20development%20organization)”
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>)
+data-bs-title="beginning of week">bow</a> or <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</span>
 [week
 dates](https://en.wikipedia.org/wiki/ISO_week_date#:~:text=a%20leap%20week%20calendar%20system%20that%20is%20part%20of%20the%20ISO%208601%20date%20and%20time%20standard%20issued%20by%20the%20International%20Organization%20for%20Standardization):
 1970-W01-4, <a href="#moy" class="tool" data-bs-toggle="tooltip"
@@ -6610,7 +6662,7 @@ data-bs-title="months of year">moy</a> from
 data-bs-title="positive integer days of year">pid</a> using
 <a href="#eq-pid2moy" class="quarto-xref">Equation 33</a>.
 
-<div id="equationgroup18" class="equationgroup">
+<div id="equationgroup19" class="equationgroup">
 
 <span id="eq-mud2moy">
 $$
@@ -6839,9 +6891,11 @@ data-bs-title="misaligned unit difference">mud</a>,
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</a>, and
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of week">dow</a>. A Dec bimester is exactly 59 days
-and is roughly a tenth of a percent shorter than 2 lunations: 59 ÷
-(29.53 \* 2) \* 100% ≈ 99.9%.
+data-bs-title="days of week">dow</a>. A Dec common bimester is 59
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> long, which is roughly a tenth of a percent
+shorter than two lunations: 59.0612 = 2 ×
+[29.5306](https://en.wikipedia.org/wiki/Lunar_calendar#cite_note-ESAA-2:~:text=synodic%20month%20as-,29.53059%20days,-or%2029%20days).
 
 To obtain a <a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of bimester">dob</a>, Dec employs an algorithm based
@@ -6849,44 +6903,53 @@ on the
 [`from_days`](https://github.com/HowardHinnant/date/blob/7875f43aa9288d176191c83e8284d61acdd5ab7c/include/date/islamic.h#L2252)
 [method](https://en.wikipedia.org/wiki/Method_%28computer_programming%29#:~:text=a%20procedure%20associated%20with%20an%20object)
 of the `year_month_day`
-[object](https://en.wikipedia.org/wiki/Object_(computer_science)#:~:text=a%20semantic%20entity%20that%20has%20state%2C%20behavior%2C%20and%20identity)
-in the
-[`islamic.h`](https://github.com/HowardHinnant/date/blob/master/include/date/islamic.h)
-file of the [`date`](https://github.com/HowardHinnant/date)
-[repository](https://en.wikipedia.org/wiki/Repository_%28version_control%29#:~:text=a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure)
-by [Howard Hinnant](https://howardhinnant.github.io) (2021+185).
+[class](https://en.wikipedia.org/wiki/Class_%28programming%29#:~:text=a%20syntactic%20entity%20structure%20used%20to%20create%20objects)
+in the [`islamic.h`](https://howardhinnant.github.io/date/islamic)
+[library](https://en.wikipedia.org/wiki/Library_%28computing%29#:~:text=a%20collection%20of%20resources%20that%20can%20be%20used%20during%20software%20development)
+created by [Howard Hinnant](https://howardhinnant.github.io) (2021+185).
 Equations <a href="#eq-dot" class="quarto-xref">42</a>,
-<a href="#eq-yot" class="quarto-xref">43</a>, and
-<a href="#eq-dob" class="quarto-xref">44</a> produces a “day of
-tricennium” (<a href="#dot" id="dayoftricennium" class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of tricennium">dot</a>) and
-a “year of tricennium”
-(<a href="#yot" id="yearoftricennium" class="tool"
-data-bs-toggle="tooltip" data-bs-title="year of tricennium">yot</a>)
-along the way to turning a
-<a href="#doe" class="tool" data-bs-toggle="tooltip"
+<a href="#eq-yot" class="quarto-xref">43</a>,
+<a href="#eq-lunarpid" class="quarto-xref">45</a>, and
+<a href="#eq-dob" class="quarto-xref">46</a> below produce a “day of
+[tricennium](https://en.wiktionary.org/wiki/tricennium#:~:text=A%20period%20of%20thirty%20years)”
+(<a href="#dot" id="dayoftricennium" class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of tricennium">dot</a>), a
+“year of tricennium” (<a href="#yot" id="yearoftricennium" class="tool"
+data-bs-toggle="tooltip" data-bs-title="year of tricennium">yot</a>),
+and the lunar year version of a
+<a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> along the way to
+transforming a <a href="#doe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of era">doe</a> into a
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a>. A Dec
-[tricennium](https://en.wiktionary.org/wiki/tricennium#:~:text=A%20period%20of%20thirty%20years)
-is 10631 days.
+data-bs-title="day of bimester">dob</a>.
 
-<div id="equationgroup19" class="equationgroup">
+<div id="equationgroup20" class="equationgroup">
 
 <span id="eq-dot">
-dot = (doe + 3124) mod  10631   (42)
+dot = (doe + 9) mod  10631   (42)
 </span>
 
 <span id="eq-yot">
 $$
-\text{yot} = \left\lfloor\frac{30\ast\text{doc}+10646}{10631}\right\rfloor - 1
+\text{yot} = \left\lfloor\dfrac{30\ast\text{dot}+15}{10631}\right\rfloor
  \qquad(43)$$
+</span>
+
+<span id="eq-leapcount">
+$$
+\text{leapcount} = \left\lfloor\dfrac{11\ast\text{yot} + 14}{30}\right\rfloor
+ \qquad(44)$$
+</span>
+
+<span id="eq-lunarpid">
+lunarpid = dot − 354 \* yot − leapcount   (45)
 </span>
 
 <span id="eq-dob">
 $$
-\text{dob} = \left(\text{dot} - \left(354\ast\text{yot} + \left\lfloor \frac{11\ast(\text{yot}+1)+3}{30} \right\rfloor \right) \right) \bmod 59
- \qquad(44)$$
+\text{dob} = \text{lunarpid} - 59 \ast \left\lfloor\dfrac{5\ast\text{lunarpid} + 5}{296}\right\rfloor
+ \qquad(46)$$
 </span>
 
 </div>
@@ -6898,32 +6961,30 @@ $$
 ``` julia
 function dob(doe)
     dot = mod(doe + 9, 10631)
-    yot = floor(Int, (30 * dot + 10646) / 10631) - 1
-    return mod(
-        dot - (yot * 354 + floor(
-            Int, (11 * (yot + 1) + 3) / 30)), 59)
+    yot = (30 * dot + 15) ÷ 10631
+    lunarpid = dot - 354 * yot - (11 * yot + 14) ÷ 30
+    return lunarpid - 59 * ((5 * lunarpid + 5) ÷ 296)
 end
 ```
 
     dob (generic function with 1 method)
 
 ``` julia
-dob(227320)
+dob(719468)
 ```
 
-    3
+    54
 
 ### Observable JavaScript
 
 ``` {ojs}
 function dob(doe) {
   const dot = (doe + 9) % 10631;
-  const yot = Math.floor((30 * dot + 10646) / 10631) - 1;
-  return (
-    dot - (yot * 354 + Math.floor((
-      11 * (yot + 1) + 3) / 30))) % 59;
+  const yot = Math.floor((30 * dot + 15) / 10631);
+  const lunarpid = dot - 354 * yot - Math.floor((11 * yot + 14) / 30);
+  return lunarpid - 59 * Math.floor((5 * lunarpid + 5) / 296);
 }
-dob(227320)
+dob(719468)
 ```
 
 ### Python
@@ -6931,70 +6992,49 @@ dob(227320)
 ``` python
 def dob(doe):
     dot = (doe + 9) % 10631
-    yot = (30 * dot + 10646) // 10631 - 1
-    return (
-        dot - (yot * 354 + (
-            11 * (yot + 1) + 3) // 30)) % 59
-dob(227320)
+    yot = (30 * dot + 15) // 10631
+    lunarpid = dot - 354 * yot - (11 * yot + 14) // 30
+    return lunarpid - 59 * ((5 * lunarpid + 5) // 296)
+dob(719468)
 ```
 
-    3
+    54
 
 ### R
 
 ``` r
 dob <- function(doe) {
   dot <- (doe + 9) %% 10631
-  yot <- floor((30 * dot + 10646) / 10631) - 1
-  (dot - (yot * 354 + floor((
-    11 * (yot + 1) + 3) / 30))) %% 59
+  yot <- (30 * dot + 15) %/% 10631
+  lunarpid <- dot - 354 * yot - (11 * yot + 14) %/% 30
+  lunarpid - 59 * ((5 * lunarpid + 5) %/% 296)
 }
-dob(227320)
+dob(719468)
 ```
 
-    [1] 3
+    [1] 54
 
 </div>
 
-A tricennium can be evenly split into 19 lunar common years and 11 lunar
-leap years, 180 bimesters and 11 lunar leap days, or 169 lunar short
-months and 191 lunar long months: 19 × 354 + 11 × 355 = 180 × 59 + 11 =
-169 × 29 + 191 × 30 = 10631. Likewise, we can evenly divide a bimester
-into 1 lunar long month and 1 lunar short month: 30 + 29 = 59.
+The 10631 <a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> of a tricennium can be grouped into 30 lunar
+years (of which 19 are common years and 11 are leap years), 180
+bimesters (of which 169 are common bimesters and 11 are leap bimesters),
+or 360 lunar months (of which 169 are short months and 191 are long
+months): 10631 = 19 × 354 + 11 × 355 = 169 × 59 + 11 × 60 = 169 × 29 +
+191 × 30.
 
-We can learn that the current bimester began ${decDobColor} days ago on
-Day <span class="mono">${decBobSign1}</span>${decBobColor} by looking at
-the current <a href="#yoe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="years of era">yoe</a>+<a href="#bob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of bimester">bob</a>+<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a> Dec date:
-${decYearColor11}<span class="mono">${decBobSign}</span>${decBobColor1}<span class="mono">${decDobSign}</span>${decDobColor1}.
-All bimesters begin with
-<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">Dob</a> <span class="color0">0</span>
-and end with <a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">Dob</a>
-<span class="color58by59">58</span>. After 12 or 18 bimesters, a lunar
-leap day occurs. Dec designates lunar leap days as
-<a href="#dob" class="tool" data-bs-toggle="tooltip"
+Given that a common bimester is slightly shorter than 2 lunations, lunar
+phases and <a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of bimester">dob</a> slowly drift apart over the 2 or
+3 lunar years in between lunar leap days
+(<a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of bimester">Dob</a>
-<span class="color0"><span class="grave">0</span></span>, which is
-similar to how solar leap days appear when expressed as
-<a href="#mid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next mixed integer days of year"><span
-class="overline">mi</span><span class="grave">d</span></a>.
-
-Given that a bimester is slightly shorter than two lunations, we expect
-lunar phases and <a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a> to slowly drift apart over 2 or
-3 lunar years before being put back into alignment by
-<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">Dob</a>
-<span class="color0"><span class="grave">0</span></span>, but we should
-generally observe a new🌑moon on
+<span class="color59by60">59</span>). Nevertheless, we should typically
+observe a new🌑moon on
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of bimester">Dob</a> <span class="color0">0</span>
-and <span class="color29by59">29</span>, first quarter🌓moon on
+and <span class="color30by59">30</span>, first quarter🌓moon on
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of bimester">Dob</a>
 <span class="color07by59">7</span> and
@@ -7008,24 +7048,46 @@ data-bs-title="day of bimester">Dob</span>
 <span class="color22by59">22</span> and
 <span class="color52by59">52</span>.
 
+According to the current <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="zone">z</span><span class="color0">0</span>
+<a href="#yoe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="years of era">yoe</a>+<a href="#bob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginning of bimester">bob</a>+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of bimester">dob</a> Dec date:
+${decYearColor11}<span class="mono">${decBobSign}</span>${decBobColor}<span class="mono">+</span>${decDobColor},
+the current bimester began ${decDobColor1} days ago on Day
+<span class="mono">${decBobSign1}</span>${decBobColor1}. A common
+bimester is made up of
+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of bimester">Dob</a> <span class="color0">0</span>
+to <span class="color58by59">58</span> and can be divided into a lunar
+long month followed by a lunar short month: 30 + 29 = 59. A leap
+bimester is composed of
+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of bimester">Dob</a> <span class="color0">0</span>
+to <span class="color59by60">59</span> and can be split into 2 lunar
+long months: 2 × 30 = 60.
+
 Each moon diagram in the [small
 multiple](https://en.wikipedia.org/wiki/Small_multiple#:~:text=a%20series%20of%20similar%20graphs%20or%20charts%20using%20the%20same%20scale%20and%20axes)
 grid below has a <a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of bimester">dob</a> above it. When the “Layout”
-radio input beneath the grid is set to “Dec”, the grid itself portrays a
+radio input beneath the grid is set to “Lunar”, the grid portrays a
 lunar year, its rows depict lunar months, its row labels are zero-based
-lunar <a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a>, and each of its columns has
-moon diagrams that are in the same lunar phase and
+lunar <a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer days of year">pid</a>, and each of its
+columns has moon diagrams that are in the same lunar phase and
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of bimester">dob</a> which have the same last digit.
 
-When we instead set the “Layout” radio input to “Gregorian”, the grid
-itself represents a Gregorian calendar year, its rows stand for
-Gregorian calendar months, its row labels are zero-based Gregorian
-calendar <a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a>, and its columns group days
-by <a href="#dow" class="tool" data-bs-toggle="tooltip"
+When we instead set the “Layout” radio input to “Solar”, the values
+above the moon diagrams are still
+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of bimester">dob</a>, but the grid depicts a solar
+year, its rows are Gregorian calendar months, its row labels are
+zero-based solar <a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer days of year">pid</a>, and its columns
+group days by <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a>. Use the “Year” [number
 input](https://github.com/observablehq/inputs/blob/main/README.md#inputsnumberextent-options)
 to see how the lunation patterns of the two layouts change over time.
@@ -7039,11 +7101,9 @@ to see how the lunation patterns of the two layouts change over time.
 viewof moonyear = Inputs.number({
   label: "Year",
   value: +new URLSearchParams(new URL(document.baseURI).search).get("year") || new Date().getUTCFullYear(),
-  min: 1900,
-  max: 2100,
   step: 1
 })
-viewof moonlayo = Inputs.radio(new Map([["Dec", true], ["Gregorian", false]]), {label: "Layout", value: true})
+viewof moonlayo = Inputs.radio(new Map([["Lunar", true], ["Solar", false]]), {label: "Layout", value: true})
 ```
 
 ``` {ojs}
@@ -7141,16 +7201,18 @@ Plot.plot({
 
 </div>
 
-Unsurprisingly, the “Dec” layout is almost indistinguishable every lunar
-year and the “Gregorian” layout varies wildly across Gregorian calendar
+Unsurprisingly, the “Lunar” layout changes very little from one lunar
+year to the next and the “Solar” layout varies wildly across solar
 years. To be fair, we would also see wild variation in the lunation
-pattern of Dec solar years, because
-<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a> and
+pattern if the “Solar” layout used
+<a href="#dox" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of xún">dox</a> instead of
+<a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of week">dow</a> and
 <a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of ten days">x</a>, like Gregorian calendar
-months, closely follow the seasons and thus are entirely out of step
-with the lunar phases.
+data-bs-title="groups of ten days">x</a> instead of Gregorian calendar
+months. All solar calendar units are entirely out of step with the lunar
+phases.
 
 Dec dates in the
 year+<a href="#bob" class="tool" data-bs-toggle="tooltip"
@@ -7168,54 +7230,54 @@ data-bs-title="groups of one hundred days">h</a>, gauge progress through
 the seasons using <a href="#doh" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of hectoday">doh</a>, or classify days as work or
 rest days using <a href="#dox" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of xún">dox</a>. Just as we can split a solar year
-in 73 <a href="#p" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of xún">dox</a>. Just as we can split a solar common
+year into 73 <a href="#p" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentadays">p</a>, we can also divide a bimester into 12
 “pentadays of bimester”
 (<a href="#pob" id="pentadayofbimester" class="tool"
 data-bs-toggle="tooltip" data-bs-title="pentadays of bimester">pob</a>).
 
-<div id="equationgroup20" class="equationgroup">
+<div id="equationgroup21" class="equationgroup">
 
 <span id="eq-pob">
-$$\text{pob} = \left\lfloor\dfrac{\text{dob}}{5}\right\rfloor \qquad(45)$$
+$$\text{pob} = \left\lfloor\dfrac{\text{dob}}{5}\right\rfloor \qquad(47)$$
 </span>
 
 </div>
 
 In general, the moon goes from new moon to waxing crescent in
 <a href="#pob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Pentaday of bimester">Pob</a>
+data-bs-title="pentaday of bimester">Pob</a>
 <span class="color0">0</span> and <span class="color30by59">6</span>,
 from waxing crescent to waxing gibbous in
 <a href="#pob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Pentaday of bimester">Pob</a>
+data-bs-title="pentaday of bimester">Pob</a>
 <span class="color05by59">1</span> and
 <span class="color35by59">7</span>, from waxing gibbous to full moon in
 <a href="#pob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Pentaday of bimester">Pob</a>
+data-bs-title="pentaday of bimester">Pob</a>
 <span class="color10by59">2</span> and
 <span class="color40by59">8</span>, from full moon to waning gibbous in
 <a href="#pob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Pentaday of bimester">Pob</a>
+data-bs-title="pentaday of bimester">Pob</a>
 <span class="color15by59">3</span> and
 <span class="color45by59">9</span>, from waning gibbous to waning
 crescent in <a href="#pob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Pentaday of bimester">Pob</a>
+data-bs-title="pentaday of bimester">Pob</a>
 <span class="color20by59">4</span> and
 <span class="color50by59">10</span>, and finally from waning crescent to
 new moon in <a href="#pob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Pentaday of bimester">Pob</a>
+data-bs-title="pentaday of bimester">Pob</a>
 <span class="color25by59">5</span> and
 <span class="color55by59">11</span>.
 
 The first quarter moon occurs around the middle of
 <a href="#pob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Pentaday of bimester">Pob</a>
+data-bs-title="pentaday of bimester">Pob</a>
 <span class="color05by59">1</span> and
 <span class="color35by59">7</span>, while the last quarter moon appears
 near the center of <a href="#pob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Pentaday of bimester">Pob</a>
+data-bs-title="pentaday of bimester">Pob</a>
 <span class="color20by59">4</span> and
 <span class="color50by59">10</span>. Solar common years, lunar leap
 years, lunar long months, and <span class="tool"
@@ -7223,8 +7285,8 @@ data-bs-toggle="tooltip" data-bs-title="groups of ten days">x</span> can
 be divided evenly into
 <a href="#p" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentadays">p</a>. Solar leap years, lunar common years,
-lunar short months, and bimesters are all only 1 day off from being
-evenly divisible by 5.
+lunar short months, and common bimesters are all only 1 day off from
+being evenly divisible by 5.
 
 Dec lunar years and months are based on the [Lunar
 Hijri](https://en.wikipedia.org/wiki/Islamic_calendar#:~:text=a%20lunar%20calendar%20consisting%20of%2012%20lunar%20months%20in%20a%20year%20of%20354%20or%20355%20days)
@@ -7239,114 +7301,158 @@ that it is easier to calculate the
 <a href="#syl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar year length">syl</a> via Equations
 <a href="#eq-leap" class="quarto-xref">3</a> and
-<a href="#eq-leap2syl" class="quarto-xref">4</a> than the “lunar year
-length” (<a href="#lyl" id="lunaryearlength" class="tool"
+<a href="#eq-syl" class="quarto-xref">4</a> than the “lunar year length”
+(<a href="#lyl" id="lunaryearlength" class="tool"
 data-bs-toggle="tooltip" data-bs-title="lunar year length">lyl</a>) with
-Equations <a href="#eq-lunarleap" class="quarto-xref">46</a> and
-<a href="#eq-leap2lyl" class="quarto-xref">47</a> below.
-
-<div id="equationgroup21" class="equationgroup">
-
-<span id="eq-lunarleap">
-$$
-\text{lunarleap}=\begin{cases}
-  1&{\text{ if } (11 \ast \text{yot} + 14) \bmod 30 \ge 19}\\\\
-  0&{\text{ otherwise}}\end{cases}
- \qquad(46)$$
-</span>
-
-<span id="eq-leap2lyl">
-lyl = 354 + lunarleap   (47)
-</span>
-
-</div>
-
-To find the <a href="#lyl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="lunar year length">lyl</a>, we compare the
-<a href="#yot" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year of tricennium">yot</a> against 10 values. To find
-the length of a Gregorian calendar month, we use an index to [choose
-from 12
-values](https://howardhinnant.github.io/date_algorithms.html#last_day_of_month_common_year).
-In contrast, lunar months follow a simple pattern. According to
-<a href="#eq-lunarmonth" class="quarto-xref">Equation 48</a> below,
-lunar month indexes are one-based, even-numbered lunar months have 29
-days, and odd-numbered lunar months have 30 days.
+Equations <a href="#eq-lunarleap" class="quarto-xref">48</a> and
+<a href="#eq-leap2lyl" class="quarto-xref">49</a> below.
 
 <div id="equationgroup22" class="equationgroup">
 
-<span id="eq-lunarmonth">
+<span id="eq-lunarleap">
 $$
-\text{lunarmonth} = \left\lfloor\dfrac{11\ast\left(\text{dot} - 354\ast\text{yot} - \left\lfloor\dfrac{11\ast(\text{yot}+1)+3}{30}\right\rfloor\right) + 330}{325}\right\rfloor
+\text{lunarleap} = \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}(11 \ast \text{yot} + 14) \bmod 30 \ge 19\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
  \qquad(48)$$
+</span>
+
+<span id="eq-leap2lyl">
+lyl = 354 + lunarleap   (49)
+</span>
+
+<span id="eq-lunardif">
+lyl = lunarpid − lunarnid   (50)
 </span>
 
 </div>
 
-Although lunar years and months serve as the foundation for
-<a href="#bob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of bimester">bob</a> and
-<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a>, Dec dates use solar years
-instead of lunar years and tracks progress through the lunar cycle with
-<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of bimester">dob</a> instead of lunar
-<a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a>. Other than always having the same
-length, bimesters , a
-<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of bimester">dob</a> instead of a
-<a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a> can uniquely identify a
+Instead of Equations <a href="#eq-lunarleap" class="quarto-xref">48</a>
+and <a href="#eq-leap2lyl" class="quarto-xref">49</a>, we can obtain the
+<a href="#lyl" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lunar year length">lyl</a> by plugging the lunar
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a> in
+data-bs-title="positive integer day of year">pid</a> and
+<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">nid</a> into
+<a href="#eq-lunardif" class="quarto-xref">Equation 50</a>, which is
+similar to <a href="#eq-nid" class="quarto-xref">Equation 2</a>. We can
+also use lunar <a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer days of year">pid</a> to find zero-based
+indexes for bimesters via
+<a href="#eq-bimester" class="quarto-xref">Equation 51</a> or for lunar
+months via <a href="#eq-lunarmonth" class="quarto-xref">Equation 52</a>
+below. Unlike lunar <a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> and
+<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">nid</a> pairs, bimester and
+lunar month indexes cannot be used to obtain
+<a href="#lyl" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lunar year lengths">lyl</a>.
 
-we replace the Unlike months, bimesters are all the same length as long
-as the lunar leap day is not considered part of any bimester. Dec
-prefers We can expand a
+<div id="equationgroup23" class="equationgroup">
+
+<span id="eq-bimester">
+$$
+\text{bimester} = \left\lfloor\dfrac{5\ast\text{lunarpid} + 5}{296}\right\rfloor
+ \qquad(51)$$
+</span>
+
+<span id="eq-lunarmonth">
+$$
+\text{lunarmonth} = \left\lfloor\dfrac{11\ast\text{lunarpid} + 5}{325}\right\rfloor
+ \qquad(52)$$
+</span>
+
+<span id="eq-month2bimester">
+$$
+\text{bimester} = \left\lfloor\dfrac{\text{lunarmonth}}{2}\right\rfloor
+ \qquad(53)$$
+</span>
+
+<span id="eq-bimester2month">
+$$
+\text{lunarmonth} = 2\ast\text{bimester} + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{dob} \ge 30\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
+ \qquad(54)$$
+</span>
+
+</div>
+
+Lunar Month 11, the second lunar month of Bimester 5 and the final lunar
+month of the lunar year, has 30
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> in lunar leap years and 29
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> in lunar common years, whereas any other
+lunar month has 30 <a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> if its index is even or 29
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> if its index is odd. The lunar
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a> into
-<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</a> instead of
-<a href="#bob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of bimester">bob</a>+<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a>. the same
-<a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</a> and
-<a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</a> pair can show up more than once in a
-year, but a <a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a> and
-<a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</a> pair will match exactly one
-<a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a> in any year.
+data-bs-title="positive integer day of year">pid</a> of the first day of
+Lunar Month 11 is 325. The length of Lunar Month 11 is
+<a href="#lyl" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lunar year length">lyl</a> <span class="mono">-</span>
+325.
 
-Therefore, we can expand
+Unlike lunar months, bimesters maintain a constant length for 2 × 354
+<span class="mono">-</span> 59 = 649 or 3 × 354
+<span class="mono">-</span> 59 = 1003
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>. To indicate when bimester length will
+change, Dec provides “lunar intercalation differences”
+(<a href="#lid" id="lunarintercalationdifference" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="lunar intercalation differences">lid</a>), which are like
+lunar <a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer days of year">nid</a> that reset after
+the end of a lunar leap year rather than after any lunar year. In lunar
+leap years, <a href="#lid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lunar intercalation differences">lid</a> and lunar
+<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer days of year">nid</a> are equal.
 
-given <a href="#yoe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year of era">yoe</a> and therefore can exist on its own
-without its corresponding
-<a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit differences">mud</a>. not r Another
-advantage of is that dates use solar years and bimesters is better Dec
-does not use any type of month We can expand a
-<a href="#bob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of bimester">bob</a>+<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a> into a
-<a href="#mud" class="tool" data-bs-toggle="tooltip"
-data-bs-title="misaligned unit differences">mud</a>+<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</a>. Notably, a
-<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a> and
-<a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</a> pair
+In between lunar leap years,
+<a href="#lid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lunar intercalation differences">lid</a> range from -1063
+or -709 to -356. In lunar leap years,
+<a href="#lid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lunar intercalation differences">lid</a> and lunar
+<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer days of year">nid</a> range from -355 to
+-1. Bimester length changes from 59 to 60 when the
+<a href="#lid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lunar intercalation difference">lid</a> reaches -60. We
+can use Equations <a href="#eq-dot" class="quarto-xref">42</a>,
+<a href="#eq-yot" class="quarto-xref">43</a>,
+<a href="#eq-leapcount" class="quarto-xref">44</a>, and
+<a href="#eq-lid" class="quarto-xref">55</a> to turn
+<a href="#doe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of era">doe</a> into
+<a href="#lid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lunar intercalation difference">lid</a>. A
+<a href="#lid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lunar intercalation difference">lid</a> date consists of
+the <a href="#yoe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="year of era">yoe</a>+<a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> of a lunar leap day
+followed by the associated
+<a href="#lid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lunar intercalation difference">lid</a>:
+${decDob59yColor}+${decDob59dColor}<span class="mono">-</span>${decLidColor}.
 
-When parsing dates, Dec makes assumptions based on the A
-<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">dob</a>
+<div id="equationgroup24" class="equationgroup">
+
+<span id="eq-lid">
+$$
+\text{lid} = \text{dot} - \text{leapcount} - 354\ast\left\lfloor\dfrac{30\ast\text{leapcount} + 15}{11}\right\rfloor - 355
+ \qquad(55)$$
+</span>
+
+<span id="eq-lid2lyl">
+$$
+\text{lyl} = 355 - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{lid} \< -355\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}  \qquad(56)$$
+</span>
+
+</div>
 
 # Moon
 
@@ -7363,12 +7469,12 @@ of the Earth on its axis and an
 [orbit](https://en.wikipedia.org/wiki/Orbit_of_the_Moon#:~:text=the%20Sun.%20It-,orbits%20Earth,-in%20the%20prograde)
 of the Moon around the Earth.
 
-<div id="equationgroup23" class="equationgroup">
+<div id="equationgroup25" class="equationgroup">
 
 <span id="eq-soi">
 $$
 \dfrac{1}{1\div\href{https://en.wikipedia.org/wiki/Day#:~:text=4.09%20seconds%28%2C%20or-,0.99726968,-of%20a%20solar}{0.99726968}-1\div\href{https://en.wikipedia.org/wiki/Lunar_month#:~:text=stars%20%28Latin:%20sidera%29:-,27.321661,-days%20%2827%20d%29}{27.321661}} = 1.03505
- \qquad(49)$$
+ \qquad(57)$$
 </span>
 
 </div>
@@ -7386,20 +7492,20 @@ data-bs-title="solar year length">syl</a> to 352
 data-bs-title="spin orbit intervals">soi</a> if the year is evenly
 divisible by 8 and to 353
 <a href="#soi" class="tool" data-bs-toggle="tooltip"
-data-bs-title="spin orbit intervals">soi</a>, otherwise: 7 ÷ 8
+data-bs-title="spin orbit intervals">soi</a> otherwise: 7 ÷ 8
 <span class="mono">-</span> 0.87395749 = 0.00104251 ≈ 1 ÷ 959. For
 greater precision, the Decalunar
 <a href="#syl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar year length">syl</a> could be calculated as in
-<a href="#eq-lunarsyl" class="quarto-xref">Equation 50</a>.
+<a href="#eq-lunarsyl" class="quarto-xref">Equation 58</a>.
 
-<div id="equationgroup24" class="equationgroup">
+<div id="equationgroup26" class="equationgroup">
 
 <span id="eq-lunarsyl">
 $$
 353 - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{y} \bmod 8 = 0 \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor} \text{y} \bmod 959 = 479
 \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
- \qquad(50)$$
+ \qquad(58)$$
 </span>
 
 </div>
@@ -7425,17 +7531,25 @@ inhabited.
 
 In Decalunar, a lunar leap year is 343
 <a href="#soi" class="tool" data-bs-toggle="tooltip"
-data-bs-title="spin orbit intervals">soi</a> instead of 355 days, a
-lunar common year is 342
+data-bs-title="spin orbit intervals">soi</a> instead of 355
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, a lunar common year is 342
 <a href="#soi" class="tool" data-bs-toggle="tooltip"
-data-bs-title="spin orbit intervals">soi</a> rather than 354 days, a
-bimester is 57 <a href="#soi" class="tool" data-bs-toggle="tooltip"
-data-bs-title="spin orbit intervals">soi</a> in lieu of 59 days, a short
-month is 28 <a href="#soi" class="tool" data-bs-toggle="tooltip"
-data-bs-title="spin orbit intervals">soi</a> as opposed to 29 days, and
-a long month is 29 <a href="#soi" class="tool" data-bs-toggle="tooltip"
-data-bs-title="spin orbit intervals">soi</a> instead of 30 days, and
-lunations are monitored by expanding a
+data-bs-title="spin orbit intervals">soi</a> rather than 354
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, a bimester is 57
+<a href="#soi" class="tool" data-bs-toggle="tooltip"
+data-bs-title="spin orbit intervals">soi</a> in lieu of 59
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, a short month is 28
+<a href="#soi" class="tool" data-bs-toggle="tooltip"
+data-bs-title="spin orbit intervals">soi</a> as opposed to 29
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, and a long month is 29
+<a href="#soi" class="tool" data-bs-toggle="tooltip"
+data-bs-title="spin orbit intervals">soi</a> instead of 30
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>. Decalunar monitors lunations by expanding a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> into a
 <a href="#bob" class="tool" data-bs-toggle="tooltip"
@@ -7490,29 +7604,30 @@ observations without affecting the
 data-bs-title="day of year">doy</a> or
 <a href="#soy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="soi of year">soy</a> as per Equations
-<a href="#eq-sob" class="quarto-xref">51</a> and
-<a href="#eq-bobplusdob" class="quarto-xref">52</a>.
+<a href="#eq-sob" class="quarto-xref">59</a> and
+<a href="#eq-bobplusdob" class="quarto-xref">60</a>.
 
-<div id="equationgroup25" class="equationgroup">
+<div id="equationgroup27" class="equationgroup">
 
 <span id="eq-sob">
-soy = bob<sub>s</sub> + sob   (51)
+soy = bob<sub>s</sub> + sob   (59)
 </span>
 
 <span id="eq-bobplusdob">
-doy = bob<sub>d</sub> + dob   (52)
+doy = bob<sub>d</sub> + dob   (60)
 </span>
 
 </div>
 
 # Mars
 
-Serependitiously, Earth and Mars rotate on their respective axes almost
+Serendipitously, Earth and Mars rotate on their respective axes almost
 at the same rate. A Martian
 [sol](https://en.wikipedia.org/wiki/Mars_sol#:~:text=for%20sun%29%20is-,a%20solar%20day%20on%20Mars,-%3B%20that%20is%2C%20a)
 is
-[1.02749125](https://en.wikipedia.org/wiki/Mars_sol#:~:text=1.02749125%20Earth%20days),
-which is about 0.76% of a day less than a
+[1.02749125](https://en.wikipedia.org/wiki/Mars_sol#:~:text=1.02749125%20Earth%20days)
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, which is about 0.76% of a day less than a
 <a href="#soi" class="tool" data-bs-toggle="tooltip"
 data-bs-title="spin orbit interval">soi</a>. The Martian variant of
 Decalendar is called
@@ -7648,27 +7763,30 @@ promote the development of a protective
 [magnetosphere](https://en.wikipedia.org/wiki/Magnetosphere#:~:text=a%20region%20of%20space%20surrounding%20an%20astronomical%20object%2C%20such%20as%20a%20planet%20or%20other%20object%2C%20in%20which%20charged%20particles%20are%20affected%20by%20that%20object%27s%20magnetic%20field).
 Venus has an [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20angle%20between%20an%20object%27s%20rotational%20axis%20and%20its%20orbital%20axis)
-that is just 7.4 <span class="tool" data-bs-toggle="tooltip"
+that is just
+[7.3](https://en.wikipedia.org/wiki/Venus#:~:text=the%20axial%20tilt-,177.36%C2%B0,-.)
+<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a turn">milliturns</span> short of a half
-turn and thus has no seasons. Therefore, the
+turn and thus has no seasons. In addition to not having seasons, Venus
+is also moonless. Therefore, the
 [Venusian](https://en.wikipedia.org/wiki/List_of_adjectivals_and_demonyms_of_astronomical_bodies#Planets:~:text=%5B7%5D-,Venusian,-%2C%20Cytherean)
 Decalendar
 (De[cyther](https://en.wikipedia.org/wiki/List_of_adjectivals_and_demonyms_of_astronomical_bodies#Planets:~:text=Venusian%2C-,Cytherean,-cythero%2D))
-does not need to count its own solar years and can instead use the same
-<a href="#yoe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year of era">yoe</a> as Decalendar.
+can focus on Venusian solar days.
 
 On Venus, a solar year is 224.7
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a> and a solar day is 116.75
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>. Decyther could match Venusian solar days
-exceptionally well with cycles of 4 years or 1401 days that comprise 3
-short years of 350 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a> and 1 long year of 351
+data-bs-title="days">d</a>. A duration of 116.75
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>. Each Decyther year consists of 6 bimesters.
-Each Decyther bimester is 58 + <a
+data-bs-title="days">d</a> is perfectly matched by cycles comprising 3
+short Decyther years of 350
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> and 1 long Decyther year of 351
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>: 3 × 350 + 351 = 1401. Each Decyther year
+consists of 6 bimesters. Each Decyther bimester is 58 + <a
 href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
 class="nounder">[</a>*i*
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
@@ -7714,7 +7832,7 @@ data-bs-title="positive integer days of year">pid</a> into
 data-bs-title="beginnings of bimester">bob</a> and
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of bimester">dob</a> to monitor Venusian solar days
-instead of lunations. Decyther uses bimesters in spite of that fact that
+instead of lunations. Decyther uses bimesters in spite of the fact that
 Venus does not have a moon. Despite the fact that Mars has two moons,
 Decarean has no need for bimesters.
 
@@ -8144,10 +8262,48 @@ additional files or configuration. A Quarto output file can have both a
   1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse
   of a quotidie
   - <a href="#dayofxun" id="dox">dox</a>: day of xún
-  - <a href="#dayofpent" id="dop">dop</a>: day of pentaday
+  - <a href="#dayofpentaday" id="dop">dop</a>: day of pentaday
   - <a href="#dayofmonth" id="dom">dom</a>: day of month
   - <a href="#dayofweek" id="dow">dow</a>: day of week
   - <a href="#dayofyear" id="doy">doy</a>: day of year, xún \* 10 + dox
+  - <a href="#positiveintegerdoy" id="pid">pid</a>: positive integer day
+    of year, days elapsed since the beginning of the year, 0 to 364 or
+    365
+  - <a href="#negativeintegerdoy" id="nid">nid</a>: negative integer day
+    of year, pid - syl, -365 or -366 to -1, the negative of the days
+    left in the year
+  - <a href="#mixedintegerdoy" id="mid">mid</a>: mixed integer day of
+    year, an nid rewritten with negative leading digits (marked by a
+    vinculum) and a positive last digit or two
+  - <a href="#dayofera" id="doe">doe</a>: day of era, days since the Dec
+    epoch
+  - <a href="#dayofcycle" id="doc">doc</a>: day of cycle, days since the
+    start of the current 400-year cycle, 0 to 146096
+  - <a href="#dayofhectoday" id="doh">doh</a>: day of hectoday, doy mod
+    100, the percent of a hectoday that has elapsed
+  - <a href="#dayofbimester" id="dob">dob</a>: day of bimester, 0 to 58
+    in common bimesters or 0 to 59 in leap bimesters
+  - <a href="#dayoftricennium" id="dot">dot</a>: day of tricennium, days
+    since the start of the current 30-year lunar cycle, 0 to 10630
+  - <a href="#beginningofbimester" id="bob">bob</a>: beginning of
+    bimester, the pid of Dob 0, pid - dob
+  - <a href="#beginningofmonth" id="bom">bom</a>: beginning of month,
+    the pid of the day before the first day of the month, pid - dom
+  - <a href="#beginningofweek" id="bow">bow</a>: beginning of week, the
+    pid of Dow 0, pid - dow
+  - <a href="#beginningofyear" id="boy">boy</a>: beginning of year,
+    midnight at the start of Day 0
+  - <a href="#beginningofera" id="boe">boe</a>: beginning of era,
+    midnight at the start of Day 0 of Year 0
+  - <a href="#endofyear" id="eoy">eoy</a>: end of year, midnight at the
+    end of Day 364 or 365
+  - <a href="#Juliandaynumber" id="jdn">jdn</a>: Julian day number, days
+    since the start of the Julian period; increments at noon UTC
+  - <a href="#lunarintercalationdifference" id="lid">lid</a>: lunar
+    intercalation difference, a lunar nid that only resets after lunar
+    leap years, -1063 to -1
+  - <a href="#misalignedunitdifference" id="mud">mud</a>: misaligned
+    unit difference, pid - dom - dow
   - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
     hours, 144 minutes
   - <a href="#centiday" id="cd">cd</a>: centiday, a hundredth of a day,
@@ -8176,6 +8332,10 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#hectoday" id="h">h</a>: a Dec season, represented by
   ***h***, because Dec seasons, except for Season 3, are 1
   ***h***ectoday, 10 decadays, or one ***h***undred days long
+  - <a href="#positiveintegerhectoday" id="pih">pih</a>: positive
+    integer hectoday, ⌊pid ÷ 100⌋, 0 to 3
+  - <a href="#negativeintegerhectoday" id="nih">nih</a>: negative
+    integer hectoday, ⌊nid ÷ 100⌋, -4 to -1
 - <a href="#hexadecimal" id="hex">hex</a>: hexadecimal, base 16
 - <a href="#huesaturationlightness" id="hsl">hsl</a>: hue saturation
   lightness
@@ -8210,6 +8370,15 @@ additional files or configuration. A Quarto output file can have both a
     milliliter, a thousandth of a liter, 15.625 drops
 - <a href="#pentaday" id="p">p</a>: pentaday, a group of five days, half
   a decaday
+  - <a href="#pentadayofxun" id="pox">pox</a>: pentaday of xún, 0 for
+    Dox 0 to 4 and 1 for Dox 5 to 9
+  - <a href="#pentadayofbimester" id="pob">pob</a>: pentaday of
+    bimester, ⌊dob ÷ 5⌋, 0 to 11
+  - <a href="#pentadayinterquintilerange" id="pir">pir</a>: pentaday
+    interquintile range, Dop 1 to 3, the three days between two lim
+  - <a href="#liminalinterconnectingmargin" id="lim">lim</a>: liminal
+    interconnecting margin, the pair of days between two pir, Dop 4 and
+    the following Dop 0
 - <a href="#note" id="n">n</a>: note, a specific frequency within an
   octave
 - <a href="#octave" id="o">o</a>: octave, a two fold change in frequency
@@ -8234,6 +8403,10 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
 - <a href="#second" id="s">s</a>: second, 1/90 millidays, 0.9 beats, 1
   Dec second = 0.96 SI seconds
+- <a href="#spinorbitinterval" id="soi">soi</a>: spin orbit interval, a
+  lunar day, 1.03505 days
+  - <a href="#soiofyear" id="soy">soy</a>: soi of year
+  - <a href="#soiofbimester" id="sob">sob</a>: soi of bimester
 - <a href="#internationalsystemofunits" id="si">SI</a>: [International
   System of
   Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
@@ -8287,11 +8460,37 @@ additional files or configuration. A Quarto output file can have both a
     (纬), a thousandth of a parallel
 - <a href="#xun" id="x">x</a>: xún (旬), decaday, a group of ten days, 2
   pentadays, represented by x like the Roman numeral X
+  - <a href="#positiveintegerxun" id="pix">pix</a>: positive integer
+    xún, ⌊pid ÷ 10⌋, 0 to 36
+  - <a href="#negativeintegerxun" id="nix">nix</a>: negative integer
+    xún, ⌊nid ÷ 10⌋, -37 to -1
+  - <a href="#mixedintegerxun" id="mix">mix</a>: mixed integer xún, the
+    first two digits of an nih mid
+  - <a href="#xuninterdecilerange" id="xir">xir</a>: xún interdecile
+    range, Dox 1 to 8, the days between Dox 0 and 9
 - <a href="#year" id="y">y</a>: year
   - <a href="#milliyear" id="my">my</a>: milliyear, a thousandth of a
     year
   - <a href="#yearofera" id="yoe">yoe</a>: year of era, integer years
     since the Dec epoch
+  - <a href="#solaryearlength" id="syl">syl</a>: solar year length, 365
+    or 366 days, pid - nid
+  - <a href="#lunaryearlength" id="lyl">lyl</a>: lunar year length, 354
+    or 355 days
+  - <a href="#commonerayear" id="cey">cey</a>: common era year, an ISO
+    8601 (Gregorian calendar) year number
+  - <a href="#cycleofera" id="coe">coe</a>: cycle of era, 400-year
+    cycles since the Dec epoch
+  - <a href="#yearofcycle" id="yoc">yoc</a>: year of cycle, years since
+    the start of the current 400-year cycle, 0 to 399
+  - <a href="#yearoftricennium" id="yot">yot</a>: year of tricennium,
+    lunar years since the start of the current 30-year lunar cycle, 0 to
+    29
+  - <a href="#monthofyear" id="moy">moy</a>: month of year, zero-based,
+    Moy 0 is March
+  - <a href="#weekofyear" id="woy">woy</a>: week of year, (boydow + bow)
+    ÷ 7, 0 to 53
+  - <a href="#weekofmonth" id="wom">wom</a>: week of month
 - <a href="#zoneequatorialmeter" id="z">z</a>: zem, zone equatorial
   meter, 4 decimeters, 16 inches
   - <a href="#squarekilozem" id="kz2">kz²</a>: square kilozem, a million
@@ -8330,10 +8529,7 @@ function unix2dote(unix, zone, offset = 719468) {
     ) / 10 + offset, zone]
 }
 function dote2date(dote, zone = 0) {
-  const cote = Math.floor((
-      dote >= 0 ? dote
-      : dote - 146096
-    ) / 146097),
+  const cote = Math.floor(dote / 146097),
   dotc = dote - cote * 146097,
   yotc = Math.floor((dotc
     - Math.floor(dotc / 1460)
@@ -8355,7 +8551,7 @@ function year2leap(year = 1970) {
   return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
 }
 function dote2dotw(d = 719468) {
-  return d >= -3 ? (d + 3) % 7 : (d + 4) % 7 + 6
+  return ((d + 3) % 7 + 7) % 7
 }
 function unix2doty(unix) {
   const dote = (
@@ -8376,12 +8572,16 @@ function unix2doty(unix) {
       - Math.floor(yotc / 100)
   )}
 function date2dote(year = 1969, doty = 306, zone = 0) {
-    const cote = Math.floor((year >= 0 ? year : year - 399) / 400),
-      yote = year - cote * 400;
-    return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
+  const cote = Math.floor(year / 400), yote = year - cote * 400;
+  return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
 }
 function yd2dow(year = 1969, doty = 306) {
   return dote2dotw(date2dote(year, doty)[0]);
+}
+function unix2lid(unix) {
+  const dot = (Math.floor(unix / 86400000) + 7200) % 10631,
+    leapsBefore = Math.floor((11 * Math.floor((30 * dot + 15) / 10631) + 14) / 30);
+  return dot - leapsBefore - 354 * Math.floor((30 * leapsBefore + 15) / 11) - 355;
 }
 function addN(d) { return d + nDaysInput }
 function subN(d) { return d - nDaysInput }
@@ -8750,16 +8950,33 @@ decDotp = decDotd % 5
 decPent = decDek * 2 + (decDotd > 4)
 decPentColor = textcolor(decPent, piecewiseColor(decPent * 5 / 365))
 decDotpColor = textcolor(decDotp, piecewiseColor(decDotp / 5))
-decDob = dote2dob(Math.floor(dz[0]))
-decDobSign = decDob < 0 ? "-" : "+"
-decBob = decDoty - decDob // -58 (0 - 58) to 425 (365 - -60) 
-decBobPiece = piecewiseColor((decBob + nDaysInYear) % nDaysInYear / nDaysInYear)
-decDobPiece = piecewiseColor((decDob + 60) % 60 / 59)
+decDot = (Math.floor(dz[0]) + 9) % 10631
+decYot = Math.floor((30 * decDot + 15) / 10631)
+decLeapCount = Math.floor((11 * decYot + 14) / 30)
+decDoly = decDot - 354 * decYot - decLeapCount
+decDob = decDoly === 354 ? 59 : decDoly % 59
+decLid = decDot - decLeapCount - 354 * Math.floor((30 * decLeapCount + 15) / 11) - 355
+decLidAbs = Math.abs(decLid)
+decDob59yd = dote2date(dz[0] + decLidAbs)
+decDob59year = decDob59yd[0]
+decDob59doty = Math.floor(decDob59yd[1])
+decDob59yPiece = piecewiseColor(decDob59year % 100 / 100)
+decDob59dPiece = piecewiseColor(decDob59doty / (365 + year2leap(decDob59year + 1)))
+decDob59yColor = textcolor(decDob59year, decDob59yPiece)
+decDob59dColor = textcolor(decDob59doty.toString().padStart(3, "0"), decDob59dPiece)
+decLyl = decLid < -355 ? 354 : 355
+decLidColor = textcolor(decLidAbs.toString().padStart(3, "0"), decDotyPiece)
+decLunarLeapYoe = decDob59yd[0]
+nDaysInBim = decLid < -60 ? 59 : 60
+NegDob = decDob - nDaysInBim
+decBob = decDoty - decDob
+decBobPiece = piecewiseColor(decBob / nDaysInYear)
+decDobPiece = piecewiseColor(decDob / nDaysInBim)
 decBobColor = textcolor(decBob, decBobPiece)
 decBobColor1 = textcolor(decBob, decBobPiece)
 decDobColor = textcolor(decDob, decDobPiece)
 decDobColor1 = textcolor(decDob, decDobPiece)
-decDobPad = Math.abs(decDob).toString().padStart(2, "0")
+decDobPad = decDob.toString().padStart(2, "0")
 decBobPad = Math.abs(decBob).toString().padStart(3, "0")
 decBobSign = decBob < 0 ? "-" : "+"
 decBobSign1 = decBob < 0 ? "-" : ""
@@ -8866,7 +9083,7 @@ woySigns = ["𝍠", "𝍡", "𝍢", "𝍣", "𝍤", "𝍮", "𝍯", "𝍰", "�
 dowDice = ["☐", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"]
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 motyLens = [31, 30, 31, 30, 31, 31, 30, 31, 30, 31, 31, 28 + leapInput];
-moonNums = ["0", "31", "61", "92", "122", "153", "184", "214", "245", "275", "306", "337"];
+moonNums = ["306", "337", "0", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
 calYear = !leapInput && dotwInput == "Mon" ? 6 : !leapInput && dotwInput == "Tue" ? 7 : !leapInput && dotwInput == "Wed" ? 2 : !leapInput && dotwInput == "Thu" ? 3 : !leapInput && dotwInput == "Fri" ? 9 : !leapInput && dotwInput == "Sat" ? 10 : !leapInput && dotwInput == "Sun" ? 11 : leapInput && dotwInput == "Mon" ? 12 : leapInput && dotwInput == "Tue" ? 24 : leapInput && dotwInput == "Wed" ? 8 : leapInput && dotwInput == "Thu" ? 20 : leapInput && dotwInput == "Fri" ? 4 : leapInput && dotwInput == "Sat" ? 16 : leapInput && dotwInput == "Sun" ? 28 : 0;
 datesCal = d3.utcDays(new Date(calYear, 0, 0), new Date(calYear, 12, 0));
 leapInput = leapscrub[0]
@@ -8995,30 +9212,34 @@ easyDoy = dotyInput < (80 + leapInput) ? dotyInput : dotyInputNeg
 easyDoyColor = textcolor(easyDoy, piecewiseColor(dotyInput / nDaysInput))
 easySum = easyDoy + 285
 easySumColor = textcolor(easySum, piecewiseColor(easySum / nDaysInput))
+// https://astropixels.com/ephemeris/phasescat/phases-0099.html#:~:text=24%20%2000%3A27-,Mar%20%201%20%2023%3A01,-Mar%20%208%20%2023
+// (719468 + 9) % 10631 = 7200
 function unix2dob(unix) {
-  const doe = unix / 86400000 + 3124,
+  const doe = unix / 86400000 + 7200,
   doc = doe % 10631,
   yoc = Math.floor((30 * doc + 10646) / 10631) - 1,
-  doy = Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30))) 
+  doy = Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30)))
   return doy === 354 ? "0\u0300" : doy % 59;
   }
 function unix2dobSort(unix) {
-  const doe = unix / 86400000 + 3124,
+  const doe = unix / 86400000 + 7200,
   doc = doe % 10631,
   yoc = Math.floor((30 * doc + 10646) / 10631) - 1;
   return Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30)));
   }
-function dote2dob(doe) {
-  const dot = (doe + 9) % 10631,
-  yot = Math.floor((30 * dot + 10646) / 10631) - 1,
-  doy = Math.floor(dot - (yot * 354 + Math.floor((11 * (yot + 1) + 3) / 30))) 
-  return doy === 354 ? -1 : doy % 59 - 60 * (isLunarLeapYear(yot) && doy > 294);
+function doly2dob(doly) {
+  return doly === 354 ? "0\u0300" : doly % 59;
   }
-function isLunarLeapYear(yoc) {
-  return (11 * yoc + 14) % 30 >= 19;
+function unix2doly(unix) {
+  const dot = Math.floor(unix / 86400000 + 7200) % 10631,
+  yot = Math.floor((30 * dot + 15) / 10631);
+  return dot - Math.floor((11 * yot + 14) / 30);
+  }
+function unix2dob1(unix) {
+  return doly2dob(unix2doly(unix));
 }
-function yd2dob(year = 1969, doty = 306) {
-  return dote2dob(date2dote(year, doty)[0]);
+function isLunarLeapYear(yot) {
+  return (11 * yot + 14) % 30 >= 19;
 }
 decRows = ["0", "30", "59", "89", "118", "148", "177", "207", "236", "266", "295", "325"];
 suncalc = (await import("https://cdn.jsdelivr.net/npm/suncalc@1/+esm")).default
@@ -9590,6 +9811,12 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color59by60 {
+  background: #ff0044;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color01by32 {
   background: #ff5900;
   color: black;
@@ -9857,10 +10084,10 @@ div.hand > p {
   justify-content: center;
   gap: 15px 9px;
 }
-#lefthand {
+.lefthand {
   width: 254px;
 }
-#righthand {
+.righthand {
   width: 300px;
 }
 p:has(span.handlabel)  {
@@ -10171,6 +10398,23 @@ code {
 </style>
 
 <div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-c3s2018era5hourly" class="csl-entry">
+
+Copernicus Climate Change Service (C3S). 2018. “ERA5 Hourly Data on
+Single Levels from 1940 to Present.” Copernicus Climate Change Service
+(C3S) Climate Data Store (CDS), 2018.
+<https://doi.org/10.24381/cds.adbb2d47>.
+
+</div>
+
+<div id="ref-hersbach2020era5" class="csl-entry">
+
+Hersbach, Hans, Bill Bell, Paul Berrisford, et al. 2020+106. “The ERA5
+Global Reanalysis.” *Quarterly Journal of the Royal Meteorological
+Society* 146 (730): 1999–2049. <https://doi.org/10.1002/qj.3803>.
+
+</div>
 
 <div id="ref-hinnant2021date" class="csl-entry">
 

@@ -35,3 +35,113 @@ references:
   type: article-journal
   URL: https://doi.org/10.1093/humrep/det297
   volume: 28
+- id: hersbach2020era5
+  author:
+    - family: Hersbach
+      given: Hans
+    - family: Bell
+      given: Bill
+    - family: Berrisford
+      given: Paul
+    - family: Hirahara
+      given: Shoji
+    - family: Horányi
+      given: András
+    - family: Muñoz‐Sabater
+      given: Joaquín
+    - family: Nicolas
+      given: Julien
+    - family: Peubey
+      given: Carole
+    - family: Radu
+      given: Raluca
+    - family: Schepers
+      given: Dinand
+    - family: Simmons
+      given: Adrian
+    - family: Soci
+      given: Cornel
+    - family: Abdalla
+      given: Saleh
+    - family: Abellan
+      given: Xavier
+    - family: Balsamo
+      given: Gianpaolo
+    - family: Bechtold
+      given: Peter
+    - family: Biavati
+      given: Gionata
+    - family: Bidlot
+      given: Jean
+    - family: Bonavita
+      given: Massimo
+    - family: De Chiara
+      given: Giovanna
+    - family: Dahlgren
+      given: Per
+    - family: Dee
+      given: Dick
+    - family: Diamantakis
+      given: Michail
+    - family: Dragani
+      given: Rossana
+    - family: Flemming
+      given: Johannes
+    - family: Forbes
+      given: Richard
+    - family: Fuentes
+      given: Manuel
+    - family: Geer
+      given: Alan
+    - family: Haimberger
+      given: Leo
+    - family: Healy
+      given: Sean
+    - family: Hogan
+      given: Robin J.
+    - family: Hólm
+      given: Elías
+    - family: Janisková
+      given: Marta
+    - family: Keeley
+      given: Sarah
+    - family: Laloyaux
+      given: Patrick
+    - family: Lopez
+      given: Philippe
+    - family: Lupu
+      given: Cristina
+    - family: Radnoti
+      given: Gabor
+    - family: de Rosnay
+      given: Patricia
+    - family: Rozum
+      given: Iryna
+    - family: Vamborg
+      given: Freja
+    - family: Villaume
+      given: Sebastien
+    - family: Thépaut
+      given: Jean‐Noël
+  citation-key: hersbach2020era5
+  container-title: Quarterly Journal of the Royal Meteorological Society
+  DOI: 10.1002/qj.3803
+  issue: 730
+  issued:
+    literal: 2020+106
+  page: 1999–2049
+  title: The ERA5 global reanalysis
+  type: article-journal
+  URL: https://doi.org/10.1002/qj.3803
+  volume: 146
+- id: c3s2018era5hourly
+  author:
+    - literal: Copernicus Climate Change Service (C3S)
+  citation-key: c3s2018era5hourly
+  DOI: 10.24381/cds.adbb2d47
+  issued:
+    literal: "2018"
+  publisher: Copernicus Climate Change Service (C3S) Climate Data Store (CDS)
+  title: ERA5 hourly data on single levels from 1940 to present
+  type: dataset
+  URL: https://doi.org/10.24381/cds.adbb2d47
