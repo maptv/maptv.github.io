@@ -1748,7 +1748,7 @@ div > form > label {
     order: -1;
   }
 }
-.diagtitle {
+.diagtitle, .tabletitle {
   font-weight: 500;
 }
 .tool {
