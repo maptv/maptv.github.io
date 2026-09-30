@@ -1565,10 +1565,10 @@ div.hand > p {
   justify-content: center;
   gap: 15px 9px;
 }
-#lefthand {
+.lefthand {
   width: 254px;
 }
-#righthand {
+.righthand {
   width: 300px;
 }
 p:has(span.handlabel)  {

@@ -13,10 +13,27 @@
     - [nc&sup3;](#cubicnanotaur){#nc3}: cubic nanotaur, *n*𝜏*r*&sup3;, 1 cubic decizem
 - [d](#day){#d}: day, a tenth of a decaday, a seventh of a week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays, 1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse of a quotidie
     - [dox](#dayofxun){#dox}: day of xún
-    - [dop](#dayofpent){#dop}: day of pentaday
+    - [dop](#dayofpentaday){#dop}: day of pentaday
     - [dom](#dayofmonth){#dom}: day of month
     - [dow](#dayofweek){#dow}: day of week
     - [doy](#dayofyear){#doy}: day of year, xún * 10 + dox
+    - [pid](#positiveintegerdoy){#pid}: positive integer day of year, days elapsed since the beginning of the year, 0 to 364 or 365
+    - [nid](#negativeintegerdoy){#nid}: negative integer day of year, pid - syl, -365 or -366 to -1, the negative of the days left in the year
+    - [mid](#mixedintegerdoy){#mid}: mixed integer day of year, an nid rewritten with negative leading digits (marked by a vinculum) and a positive last digit or two
+    - [doe](#dayofera){#doe}: day of era, days since the Dec epoch
+    - [doc](#dayofcycle){#doc}: day of cycle, days since the start of the current 400-year cycle, 0 to 146096
+    - [doh](#dayofhectoday){#doh}: day of hectoday, doy mod 100, the percent of a hectoday that has elapsed
+    - [dob](#dayofbimester){#dob}: day of bimester, 0 to 58 in common bimesters or 0 to 59 in leap bimesters
+    - [dot](#dayoftricennium){#dot}: day of tricennium, days since the start of the current 30-year lunar cycle, 0 to 10630
+    - [bob](#beginningofbimester){#bob}: beginning of bimester, the pid of Dob 0, pid - dob
+    - [bom](#beginningofmonth){#bom}: beginning of month, the pid of the day before the first day of the month, pid - dom
+    - [bow](#beginningofweek){#bow}: beginning of week, the pid of Dow 0, pid - dow
+    - [boy](#beginningofyear){#boy}: beginning of year, midnight at the start of Day 0
+    - [boe](#beginningofera){#boe}: beginning of era, midnight at the start of Day 0 of Year 0
+    - [eoy](#endofyear){#eoy}: end of year, midnight at the end of Day 364 or 365
+    - [jdn](#Juliandaynumber){#jdn}: Julian day number, days since the start of the Julian period; increments at noon UTC
+    - [lid](#lunarintercalationdifference){#lid}: lunar intercalation difference, a lunar nid that only resets after lunar leap years, -1063 to -1
+    - [mud](#misalignedunitdifference){#mud}: misaligned unit difference, pid - dom - dow
     - [dd](#deciday){#dd}: deciday, a tenth of a day, 2.4 hours, 144 minutes
     - [cd](#centiday){#cd}: centiday, a hundredth of a day, 0.24 hours, 14.4 minutes
     - [md](#milliday){#md}: milliday, a thousandth of a day, 1.44 minutes
@@ -33,6 +50,8 @@
     - [kg](#kilograin){#kg}: kilograin or kilodrop, 64 grams or 64 milliliters
     - [Mg](#megagrain){#Mg}: megagrain or megadrop, 64 kilograms or 64 liters
 - [h](#hectoday){#h}: a Dec season, represented by ***h***, because Dec seasons, except for Season 3, are 1 ***h***ectoday, 10 decadays, or one ***h***undred days long
+    - [pih](#positiveintegerhectoday){#pih}: positive integer hectoday, &LeftFloor;pid &div; 100&RightFloor;, 0 to 3
+    - [nih](#negativeintegerhectoday){#nih}: negative integer hectoday, &LeftFloor;nid &div; 100&RightFloor;, -4 to -1
 - [hex](#hexadecimal){#hex}: hexadecimal, base 16
 - [hsl](#huesaturationlightness){#hsl}: hue saturation lightness
 - [hsv](#huesaturationvalue){#hsv}: hue saturation value
@@ -51,6 +70,10 @@
     - [km&sup2;](#squarekilometer){#km2}: square kilometer, 6.25 square kilozem
     - [cm&sup3;](#cubiccentimeter){#cm3}: cubic centimeter, 1 milliliter, a thousandth of a liter, 15.625 drops
 - [p](#pentaday){#p}: pentaday, a group of five days, half a decaday
+    - [pox](#pentadayofxun){#pox}: pentaday of xún, 0 for Dox 0 to 4 and 1 for Dox 5 to 9
+    - [pob](#pentadayofbimester){#pob}: pentaday of bimester, &LeftFloor;dob &div; 5&RightFloor;, 0 to 11
+    - [pir](#pentadayinterquintilerange){#pir}: pentaday interquintile range, Dop 1 to 3, the three days between two lim
+    - [lim](#liminalinterconnectingmargin){#lim}: liminal interconnecting margin, the pair of days between two pir, Dop 4 and the following Dop 0
 - [n](#note){#n}: note, a specific frequency within an octave
 - [o](#octave){#o}: octave, a two fold change in frequency
   - [do](#decioctave){#do}: decioctave, a tenth of a two fold change in frequency
@@ -62,6 +85,9 @@
 - [rad](#radian){#rad}: radian, $1\over\tau$ turns, $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
 - [rgb](#redgreenblue){#rgb}: red green blue
 - [s](#second){#s}: second, 1/90 millidays, 0.9 beats, 1 Dec second = 0.96 SI seconds
+- [soi](#spinorbitinterval){#soi}: spin orbit interval, a lunar day, 1.03505 days
+    - [soy](#soiofyear){#soy}: soi of year
+    - [sob](#soiofbimester){#sob}: soi of bimester
 - [SI](#internationalsystemofunits){#si}: [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 - [sol](#speedoflight){#sol}: speed of light, 647.55170928 kiloomegars, 299792458 meters per second
 - [sos](#speedofsound){#sos}: speed of sound, 735.048 milliomegars, 340.3 meters per second
@@ -85,9 +111,22 @@
     - [dw](#deciwei){#dw}: deciwěi, a tenth of a wěi (纬), a tenth of a parallel
     - [mw](#milliwei){#mw}: milliwěi, a thousandth of a wěi (纬), a thousandth of a parallel
 - [x](#xun){#x}: xún (旬), decaday, a group of ten days, 2 pentadays, represented by x like the Roman numeral X
+    - [pix](#positiveintegerxun){#pix}: positive integer xún, &LeftFloor;pid &div; 10&RightFloor;, 0 to 36
+    - [nix](#negativeintegerxun){#nix}: negative integer xún, &LeftFloor;nid &div; 10&RightFloor;, -37 to -1
+    - [mix](#mixedintegerxun){#mix}: mixed integer xún, the first two digits of an nih mid
+    - [xir](#xuninterdecilerange){#xir}: xún interdecile range, Dox 1 to 8, the days between Dox 0 and 9
 - [y](#year){#y}: year
     - [my](#milliyear){#my}: milliyear, a thousandth of a year
     - [yoe](#yearofera){#yoe}: year of era, integer years since the Dec epoch
+    - [syl](#solaryearlength){#syl}: solar year length, 365 or 366 days, pid - nid
+    - [lyl](#lunaryearlength){#lyl}: lunar year length, 354 or 355 days
+    - [cey](#commonerayear){#cey}: common era year, an ISO 8601 (Gregorian calendar) year number
+    - [coe](#cycleofera){#coe}: cycle of era, 400-year cycles since the Dec epoch
+    - [yoc](#yearofcycle){#yoc}: year of cycle, years since the start of the current 400-year cycle, 0 to 399
+    - [yot](#yearoftricennium){#yot}: year of tricennium, lunar years since the start of the current 30-year lunar cycle, 0 to 29
+    - [moy](#monthofyear){#moy}: month of year, zero-based, Moy 0 is March
+    - [woy](#weekofyear){#woy}: week of year, (boydow + bow) &div; 7, 0 to 53
+    - [wom](#weekofmonth){#wom}: week of month
 - [z](#zoneequatorialmeter){#z}: zem, zone equatorial meter, 4 decimeters, 16 inches
     - [kz&sup2;](#squarekilozem){#kz2}: square kilozem, a million square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600 ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
     - [kz](#kilozem){#kz}: kilozem, 1000 zem, 400 meters, a quarter mile
