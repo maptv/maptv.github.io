@@ -20,6 +20,22 @@ updated as new preferences come up; don't let it grow into a changelog.
 
 - Don't touch prose in `*.qmd` files unless the change actually requires it. CSS/JS/config
   fixes are strongly preferred over rewriting article text.
+- When suggesting that a citation is missing, supply the citation itself as a ready-to-paste
+  entry in the format of `asset/ref.yml` (the site bibliography; `issued` uses Dec
+  `literal: year+day` dates), not just "add a citation".
+- Citation style is intentional: narrative `-@key` when the author is named in the sentence,
+  parenthetical `[@key]` when not. Don't flag the mix as inconsistent; do flag a sentence that
+  breaks this rule.
+- Dec and ISO 8601 both use astronomical year numbering (1 BC = year 0000, earlier years
+  negative). Treat ISO 8601 as the reference for Gregorian dates.
+- Dec articles deliberately coin or repurpose terms (e.g. "ISO month date" as the counterpart
+  of "ISO week date", "half domino" for the 0–6 dow glyphs). Flag a term only if it is wrong
+  or ambiguous in context, not merely nonstandard.
+- Acronyms in Dec articles are explained by tooltips and links to the glossary at the end
+  (`asset/_glossary.qmd`), so don't suggest per-section "terms introduced" recaps. Do check
+  that every `[abbr](#id)` link actually has a glossary target.
+- When a review comment argues about science (cosmology, astronomy, climate), base it on
+  current evidence and on what the sentence actually claims, and say why.
 - When a request quotes broken markdown syntax verbatim (e.g. a link written as
   `"text" (url)` instead of `[text](url)`), fix the escaped/underlying issue in the source
   qmd rather than treating the quote as literal prose to preserve.
