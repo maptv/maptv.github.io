@@ -4085,7 +4085,7 @@ overall.
 
 <div class="quarto-embed-nb-cell"
 data-notebook="/Users/martinlaptev/maptv/maptv.github.io/dec/date/segment-r.ipynb"
-data-notebook-title="Regress doy on temperature"
+data-notebook-title="Segmented regression of temperature on day of year"
 data-notebook-cellId="cell-segme">
 
 <img src="index_files/figure-commonmark/segment-r-segme-output-1.png"

@@ -12,10 +12,17 @@ html {
    viewport's scrollable area and let the whole page pan sideways, even
    though html itself is clipped. Setting it here too closes that gap
    without touching the overflow-x:auto escape hatches those elements
-   already have for their own internal horizontal scrolling. */
+   already have for their own internal horizontal scrolling.
+   Use clip, not hidden: with html already overflow-x:hidden, hidden on body
+   isn't propagated to the viewport, so body becomes its own scroll container
+   and position:sticky elements (the margin TOC) stick to body, which never
+   scrolls, and scroll away with the page. clip clips the same overflow
+   without creating a scroll container. hidden stays as the fallback for
+   browsers without clip support (Safari < 16). */
 body {
   max-width: 100%;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 div[data-code-copy="false"] button.code-copy-button {

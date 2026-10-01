@@ -61,7 +61,26 @@
       @media screen {
       pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
       }
-    </style>
+      /* CSS for citations */
+      div.csl-bib-body { }
+      div.csl-entry {
+        clear: both;
+      }
+      .hanging-indent div.csl-entry {
+        margin-left:2em;
+        text-indent:-2em;
+      }
+      div.csl-left-margin {
+        min-width:2em;
+        float:left;
+      }
+      div.csl-right-inline {
+        margin-left:2em;
+        padding-left:1em;
+      }
+      div.csl-indent {
+        margin-left: 2em;
+      }    </style>
 
     <style>
       body.hypothesis-enabled #quarto-embed-header {
@@ -173,7 +192,7 @@
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-243045bfc3b4fc19ae2870f88ffebf38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-2e30a1ed8ea9bdf5ca4c7272da09c645.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-dark-096e6a96e40bdf40f2f55f6facf61dc8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/bootstrap/bootstrap-243045bfc3b4fc19ae2870f88ffebf38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
@@ -200,9 +219,9 @@
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>  <meta name="format-detection" content="telephone=no">  <script src="../../asset/svg-anchor-href.js"></script>  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+}</script>  <meta name="format-detection" content="telephone=no">  <script src="../../asset/svg-anchor-href.js"></script>  <script src="../../asset/mermaid-desc-guard.js"></script>  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>  
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script> 
         <link rel="stylesheet" href="../../asset/style.css">
       <meta name="twitter:title" content="Martin Laptev">
 <meta name="twitter:image" content="https://maptv.github.io/dec/date/segment-r_files/figure-html/segme-output-1.png">
@@ -386,7 +405,7 @@
     <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
       
       <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
-      <h6><i class="bi bi-journal-code"></i> Regress doy on temperature</h6>
+      <h6><i class="bi bi-journal-code"></i> Segmented regression of temperature on day of year</h6>
 
             <a href="../../dec/date/segment-r.ipynb" class="btn btn-primary quarto-download-embed" download="segment-r.ipynb">Download Notebook</a>
           </div>
@@ -419,7 +438,7 @@
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Regress doy on temperature</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Segmented regression of temperature on day of year</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -614,7 +633,16 @@
   </li>
     </ul>
     </div>
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#model" id="toc-model" class="nav-link active" data-scroll-target="#model">Model</a></li>
+  <li><a href="#residual-plots" id="toc-residual-plots" class="nav-link" data-scroll-target="#residual-plots">Residual plots</a></li>
+  <li><a href="#adding-the-year" id="toc-adding-the-year" class="nav-link" data-scroll-target="#adding-the-year">Adding the year</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/maptv/maptv.github.io/blob/main/dec/date/segment-r.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -623,7 +651,7 @@
 <!-- main -->
 <main class="content column-page-right" id="quarto-document-content">        <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Regress doy on temperature</h1>
+<h1 class="title">Segmented regression of temperature on day of year</h1>
 </div>
 
 
@@ -640,14 +668,14 @@
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">1787861515</p>
+      <p class="date">2026+200</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2026+179</p>
+      <p class="date-modified">2026+214</p>
     </div>
   </div>
     
@@ -655,8 +683,14 @@
   
 
 
-</header>   <div id="fd9d00a1-cbe3-42df-b48f-8bf67c28fec2" class="cell markdown">
-
+</header>     <div id="5fa5c44a-4036-4e3b-a8ae-02adf77f1808" class="cell markdown">
+<p>This notebook fits the <a href="https://en.wikipedia.org/wiki/Segmented_regression">segmented linear regression</a> model described in the Dec seasons section of the <a href="../../dec/date/index.html">Decalendar</a> article. The model predicts daily global mean temperature from the day of year alone, so that we can check how well the 4 Dec seasons capture the annual temperature cycle.</p>
+<section id="data" class="level5">
+<h5 class="anchored" data-anchor-id="data">Data</h5>
+<p>The data are daily global mean near-surface (2 m) air temperatures published by <a href="https://pulse.climate.copernicus.eu">Climate Pulse</a>, a service of the Copernicus Climate Change Service (C3S) implemented by the European Centre for Medium-Range Weather Forecasts (ECMWF). Each daily value is the mean of the hourly 2 m temperature fields from 00 to 23 UTC in ERA5, the fifth generation ECMWF reanalysis <span class="citation" data-cites="hersbach2020era5">(<a href="#ref-hersbach2020era5" role="doc-biblioref">Hersbach et al. 2020+106</a>)</span>, whose hourly single-level fields are distributed through the C3S Climate Data Store <span class="citation" data-cites="c3s2018era5hourly">(<a href="#ref-c3s2018era5hourly" role="doc-biblioref">Copernicus Climate Change Service (C3S) 2018</a>)</span>. A reanalysis combines past weather observations with a weather forecast model to produce a complete, physically consistent record of the atmosphere, in this case from 1940 to the present.</p>
+<p>The code below reads the CSV file directly from Climate Pulse, so every rerun of the notebook picks up the newest data. The outputs shown here were computed on 31,649 days from 1940-01-01 to 2026-08-25. ERA5 lags real time by about 5 days, and the values for the most recent days are marked as preliminary and may change slightly once the final ERA5 data are available. Of the 5 columns in the file, the model only uses <code>date</code> and <code>2t</code>, the daily mean temperature in degrees Celsius, which R renames to <code>X2t</code> because a syntactically valid R name cannot begin with a digit.</p>
+<p>The predictor <code>x</code> is the number of days since March 1, which is the Decalendar positive integer day of year (pid), ranging from 0 on March 1 to 364 or 365 on the last day of February. January and February dates are assigned to the year that began on the previous March 1 by adding the length of that year: 365, or 366 if that February has 29 days.</p>
+</section>
 </div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="391355d0-e611-420b-ba0f-8fa0078bf23b" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv"</span></span>
@@ -687,6 +721,15 @@
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit actual 2t observations</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(X2t <span class="sc">~</span> x <span class="sc">+</span> h100 <span class="sc">+</span> h150 <span class="sc">+</span> h200 <span class="sc">+</span> h266 <span class="sc">+</span> h316, <span class="at">data =</span> d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
+<div id="f476d004-c044-4214-a62d-1a32c087d51e" class="cell markdown">
+<section id="model" class="level5">
+<h5 class="anchored" data-anchor-id="model">Model</h5>
+<p>The model is a continuous piecewise linear function of <code>x</code> with fixed breakpoints, fit by <a href="https://en.wikipedia.org/wiki/Ordinary_least_squares">ordinary least squares</a> using the <code>lm</code> function in R <span class="citation" data-cites="rcoreteam2024r">(<a href="#ref-rcoreteam2024r" role="doc-biblioref">R Core Team 2024+105</a>)</span>. Each breakpoint <span class="math inline">\(k\)</span> enters the model as a “hinge” term, <span class="math inline">\(\max(0, x - k)\)</span>, which is zero before the breakpoint and grows by 1 per day after it:</p>
+<p><span class="math display">\[\hat{T} = \beta_0 + \beta_1 x + \sum_{k \in K} \gamma_k \max(0,\, x - k), \qquad K = \{100, 150, 200, 266, 316\}\]</span></p>
+<p><span class="math inline">\(\beta_0\)</span> is the predicted temperature on March 1 (<span class="math inline">\(x = 0\)</span>), <span class="math inline">\(\beta_1\)</span> is the slope of the first segment, and each <span class="math inline">\(\gamma_k\)</span> is the change in slope at breakpoint <span class="math inline">\(k\)</span>. Because the hinge terms are continuous, the predicted line has no jumps at the breakpoints.</p>
+<p>The breakpoints were chosen by hand rather than estimated from the data. Days 100 and 200 are the first days of the Dec seasons h1 and h2. Day 266 is the first day of h-1 in leap years (Day 265 in common years). Day 150 is the middle of h1 and is next to Day 149, the hottest day of year on average. Day 316 is the coldest day of year on average and is close to the middle of h-1.</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div id="5fac9388-f76c-44f5-8526-2cba8832073c" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -733,6 +776,52 @@ F-statistic: 5.778e+04 on 6 and 31642 DF,  p-value: &lt; 2.2e-16</code></pre>
 0.348672385245436
 </div>
 </div></div>
+<div id="93bc4cc9-d2f1-4bd6-8ad2-65b8ba30ef2d" class="cell markdown">
+<p>The model explains about 91.6% of the variation in daily global mean temperature (<span class="math inline">\(R^2 = 0.916\)</span>), with a residual standard error of 0.42 °C and a mean absolute error (MAE) of 0.35 °C. The p-values in the summary above should not be taken at face value, because consecutive days are strongly correlated with each other and ordinary least squares standard errors assume independent residuals. The purpose of the model is to show how closely a simple seasonal shape fits the data, not to test hypotheses.</p>
+<p>Adding up the slope changes gives the slope of each segment:</p>
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Days</th>
+<th style="text-align: right;">Slope (°C per day)</th>
+<th style="text-align: right;">Predicted temperature on first day (°C)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0–99</td>
+<td style="text-align: right;">+0.0307</td>
+<td style="text-align: right;">12.63</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">100–149</td>
+<td style="text-align: right;">+0.0078</td>
+<td style="text-align: right;">15.71</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">150–199</td>
+<td style="text-align: right;">−0.0180</td>
+<td style="text-align: right;">16.10</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">200–265</td>
+<td style="text-align: right;">−0.0373</td>
+<td style="text-align: right;">15.20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">266–315</td>
+<td style="text-align: right;">−0.0146</td>
+<td style="text-align: right;">12.73</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">316–365</td>
+<td style="text-align: right;">+0.0114</td>
+<td style="text-align: right;">12.00</td>
+</tr>
+</tbody>
+</table>
+<p>Temperatures rise quickly in h0, level off and peak near Day 150 in h1, fall fastest in h2, and bottom out near Day 316 in h-1. Nothing in the model forces the end of one year to connect to the start of the next, but it nearly does: the prediction for Day 365 (12.56 °C) is within 0.1 °C of the prediction for Day 0 (12.63 °C).</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="0b4ab5e6-eaf1-4aa6-9d93-594d44ac80f6" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>unique_years <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">unique</span>(d<span class="sc">$</span>year))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>num_years <span class="ot">&lt;-</span> <span class="fu">length</span>(unique_years)</span>
@@ -777,6 +866,14 @@ F-statistic: 5.778e+04 on 6 and 31642 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="dfb4d7ca-6732-430b-ab66-64b054a00b82" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.width =</span> <span class="dv">12</span>, <span class="at">repr.plot.height =</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
+<div id="9e1a7f47-fecf-484b-95c6-a8854c58af7a" class="cell markdown">
+<section id="residual-plots" class="level5">
+<h5 class="anchored" data-anchor-id="residual-plots">Residual plots</h5>
+<p>The two plots below show the residuals, the actual minus the predicted temperatures. Points are colored by year, from blue for the 1940s through green and yellow to red for the 2020s. The thick line is a LOWESS smooth <span class="citation" data-cites="cleveland1979lowess">(<a href="#ref-cleveland1979lowess" role="doc-biblioref">Cleveland 1979</a>)</span> of the residuals, and the dashed line marks a residual of zero. Each figure has a light and a dark version to match the site theme.</p>
+<p>The left plot shows residuals against year. The residuals average about −0.3 °C in every decade from the 1940s through the 1970s and rise to about +0.8 °C in the 2020s, so the model overpredicts temperatures in earlier years and underpredicts them in later years. This is expected, because the model ignores the long-term warming trend and predicts the same temperature for a given day of year in every year.</p>
+<p>The right plot shows residuals against predicted temperatures, a common <a href="https://en.wikipedia.org/wiki/Regression_diagnostic">regression diagnostic</a>. The LOWESS line stays within a few hundredths of a degree of zero across the full range of predictions, which indicates that the piecewise linear shape of the model captures the annual cycle without systematic errors at any particular temperature. The vertical spread of the points mostly reflects the differences between years shown in the left plot.</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="segme" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[&quot;segme&quot;]" data-fig-width="8" data-fig-height="4" data-renderings="[&quot;light&quot;,&quot;dark&quot;]" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">bg =</span> <span class="st">"#FFFFFF"</span>,</span>
@@ -877,6 +974,12 @@ F-statistic: 5.778e+04 on 6 and 31642 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </div></div>
+<div id="d49c4d9a-b65f-420c-8b33-6a3759417ec3" class="cell markdown">
+<section id="adding-the-year" class="level5">
+<h5 class="anchored" data-anchor-id="adding-the-year">Adding the year</h5>
+<p>To see how much of the remaining error is due to the long-term trend, the next model adds the year as a linear predictor.</p>
+</section>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="319ab0a3-9dc9-43ae-8458-6c989eaee155" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fit_year <span class="ot">&lt;-</span> <span class="fu">lm</span>(X2t <span class="sc">~</span> x <span class="sc">+</span> h100 <span class="sc">+</span> h150 <span class="sc">+</span> h200 <span class="sc">+</span> h266 <span class="sc">+</span> h316 <span class="sc">+</span> year, <span class="at">data =</span> d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
@@ -910,6 +1013,10 @@ Multiple R-squared:  0.9765,    Adjusted R-squared:  0.9765
 F-statistic: 1.879e+05 on 7 and 31641 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div></div>
+<div id="b057cb63-9104-42e9-a52e-e953bf1bcc5e" class="cell markdown">
+<p>The year coefficient is 0.0144 °C per year, or about 1.4 °C per century. Adding the year raises the variation explained to about 97.7% (<span class="math inline">\(R^2 = 0.977\)</span>), and the MAE shown below falls to 0.18 °C. The intercept changes because it now refers to Year 0 rather than to an average year, but the coefficients for <code>x</code> and the hinge terms barely change. In other words, the shape of the annual temperature cycle is essentially the same in every year, which is why Dec seasons can describe it regardless of the year.</p>
+<p>A straight line is only a rough approximation of the warming trend, which has accelerated in recent decades. The U-shaped LOWESS line in the residuals-versus-year plot below shows this: the year model underpredicts at both ends of the record and overpredicts in between.</p>
+</div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [10]:</pre></div><div id="e6641dff-1b89-4a95-ab95-771db1a5cc06" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.new</span>(<span class="at">width =</span> <span class="dv">96</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
@@ -1020,6 +1127,25 @@ F-statistic: 1.879e+05 on 7 and 31641 DF,  p-value: &lt; 2.2e-16</code></pre>
 0.17783703546148
 </div>
 </div></div>
+<div id="bae93464-9a52-4ab1-bc5e-fcc5299f30ee" class="cell markdown">
+<section id="references" class="level5">
+<h5 class="anchored" data-anchor-id="references">References</h5>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-cleveland1979lowess" class="csl-entry" role="listitem">
+Cleveland, William S. 1979. <span>“Robust Locally Weighted Regression and Smoothing Scatterplots.”</span> <em>Journal of the American Statistical Association</em> 74 (368): 829–36. <a href="https://doi.org/10.1080/01621459.1979.10481038">https://doi.org/10.1080/01621459.1979.10481038</a>.
+</div>
+<div id="ref-c3s2018era5hourly" class="csl-entry" role="listitem">
+Copernicus Climate Change Service (C3S). 2018. <span>“ERA5 Hourly Data on Single Levels from 1940 to Present.”</span> Copernicus Climate Change Service (C3S) Climate Data Store (CDS), 2018. <a href="https://doi.org/10.24381/cds.adbb2d47">https://doi.org/10.24381/cds.adbb2d47</a>.
+</div>
+<div id="ref-hersbach2020era5" class="csl-entry" role="listitem">
+Hersbach, Hans, Bill Bell, Paul Berrisford, et al. 2020+106. <span>“The ERA5 Global Reanalysis.”</span> <em>Quarterly Journal of the Royal Meteorological Society</em> 146 (730): 1999–2049. <a href="https://doi.org/10.1002/qj.3803">https://doi.org/10.1002/qj.3803</a>.
+</div>
+<div id="ref-rcoreteam2024r" class="csl-entry" role="listitem">
+R Core Team. 2024+105. <em>R: A Language and Environment for Statistical Computing</em>. V. 4.4.1. R Foundation for Statistical Computing, released 2024+105. <a href="https://www.R-project.org">https://www.R-project.org</a>.
+</div>
+</div>
+</section>
+</div>
 
 
      <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->  <script src="../../asset/math.js"></script>
@@ -1524,7 +1650,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/maptv/maptv.github.io/blob/main/dec/date/segment-r.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/maptv/maptv.github.io/blob/main/dec/date/segment-r.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

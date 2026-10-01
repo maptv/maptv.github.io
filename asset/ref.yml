@@ -145,3 +145,30 @@ references:
   title: ERA5 hourly data on single levels from 1940 to present
   type: dataset
   URL: https://doi.org/10.24381/cds.adbb2d47
+- id: rcoreteam2024r
+  author:
+    - literal: R Core Team
+  citation-key: rcoreteam2024r
+  issued:
+    literal: 2024+105
+  publisher: R Foundation for Statistical Computing
+  publisher-place: Vienna, Austria
+  title: "R: A language and environment for statistical computing"
+  type: software
+  URL: https://www.R-project.org
+  version: 4.4.1
+- id: cleveland1979lowess
+  author:
+    - family: Cleveland
+      given: William S.
+  citation-key: cleveland1979lowess
+  container-title: Journal of the American Statistical Association
+  DOI: 10.1080/01621459.1979.10481038
+  issue: 368
+  issued:
+    literal: "1979"
+  page: 829–836
+  title: Robust locally weighted regression and smoothing scatterplots
+  type: article-journal
+  URL: https://doi.org/10.1080/01621459.1979.10481038
+  volume: 74
