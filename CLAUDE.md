@@ -14,7 +14,10 @@ updated as new preferences come up; don't let it grow into a changelog.
   scrolling that must never happen.
 - `overflow-x: hidden` on `<html>` alone is not sufficient to guarantee this — `<body>`
   needs it too, since a descendant's escaped overflow can inflate `body`'s scrollable area
-  independently of `html`'s clipping. Both are set in `asset/style.css`.
+  independently of `html`'s clipping. Both are set in `asset/style.css`. On `body` use
+  `overflow-x: clip` (with `hidden` only as a fallback line before it), never `hidden`
+  alone: `hidden` on both `html` and `body` turns `body` into a scroll container, which
+  breaks the sticky margin TOC (it scrolls away with the page instead of staying in view).
 
 ## Content edits
 
