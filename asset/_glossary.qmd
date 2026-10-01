@@ -25,6 +25,8 @@
     - [doh](#dayofhectoday){#doh}: day of hectoday, doy mod 100, the percent of a hectoday that has elapsed
     - [dob](#dayofbimester){#dob}: day of bimester, 0 to 58 in common bimesters or 0 to 59 in leap bimesters
     - [dot](#dayoftricennium){#dot}: day of tricennium, days since the start of the current 30-year lunar cycle, 0 to 10630
+    - [doq](#dayofquadrimester){#doq}: day of quadrimester, days since the beginning of a Decyther quadrimester, 0 to 115 or 116
+    - [boq](#beginningofquadrimester){#boq}: beginning of quadrimester, the pid of Doq 0, pid - doq
     - [bob](#beginningofbimester){#bob}: beginning of bimester, the pid of Dob 0, pid - dob
     - [bom](#beginningofmonth){#bom}: beginning of month, the pid of the day before the first day of the month, pid - dom
     - [bow](#beginningofweek){#bow}: beginning of week, the pid of Dow 0, pid - dow
@@ -49,7 +51,7 @@
 - [g](#gutta){#g}: drop (gutta in Latin) or grain (granum in Latin), 64 microliters or 64 milligrams
     - [kg](#kilograin){#kg}: kilograin or kilodrop, 64 grams or 64 milliliters
     - [Mg](#megagrain){#Mg}: megagrain or megadrop, 64 kilograms or 64 liters
-- [h](#hectoday){#h}: a Dec season, represented by ***h***, because Dec seasons, except for Season 3, are 1 ***h***ectoday, 10 decadays, or one ***h***undred days long
+- [h](#hectoday){#h}: a Dec season, 1 ***h***ectoday, 10 decadays, or one ***h***undred days
     - [pih](#positiveintegerhectoday){#pih}: positive integer hectoday, &LeftFloor;pid &div; 100&RightFloor;, 0 to 3
     - [nih](#negativeintegerhectoday){#nih}: negative integer hectoday, &LeftFloor;nid &div; 100&RightFloor;, -4 to -1
 - [hex](#hexadecimal){#hex}: hexadecimal, base 16

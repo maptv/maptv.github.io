@@ -34,6 +34,12 @@ updated as new preferences come up; don't let it grow into a changelog.
 - Acronyms in Dec articles are explained by tooltips and links to the glossary at the end
   (`asset/_glossary.qmd`), so don't suggest per-section "terms introduced" recaps. Do check
   that every `[abbr](#id)` link actually has a glossary target.
+- Day/year units in Dec articles: write "d" (linked like `[d](#d){.tool …}`) for a measured
+  amount or duration after a numeral ("59 d long", "shifts by 1 to 6 d"); spell out "days"
+  in relative-time phrases ("N days ago", "in N days", "days since/until", "N days before")
+  and when counting specific days as items ("the first 4 days of the year"); always "1 day"
+  and spelled-out numbers ("a day or two"). Never use "y" as a unit symbol, since `y` is the
+  Year variable ("Year y", "y+1"); always spell out "years" (and "weeks", "sols").
 - When a review comment argues about science (cosmology, astronomy, climate), base it on
   current evidence and on what the sentence actually claims, and say why.
 - When a request quotes broken markdown syntax verbatim (e.g. a link written as
