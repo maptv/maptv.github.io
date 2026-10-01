@@ -35,6 +35,11 @@ Martin Laptev
     data-bs-title="duotrigesimal F is decimal 7 or binary 00111">F</span>
     (Dox <span class="color0">0</span> to
     <span class="color9">9</span>)](#schedule-f-dox-0-to-9)
+  - [Common year examples of doy with or without an acute accent or a
+    vinculum](#common-year-examples-of-doy-with-or-without-an-acute-accent-or-a-vinculum)
+  - [Leap year examples of doy with or without a double acute accent or
+    a vinculum and a grave
+    accent](#leap-year-examples-of-doy-with-or-without-a-double-acute-accent-or-a-vinculum-and-a-grave-accent)
   - [Base32](#b32)
 - [Day of hectoday (doh)](#sec-doh)
 - [Day of era (doe)](#sec-doe)
@@ -757,9 +762,7 @@ data-bs-title="Coordinated Universal Time">UTC</a> date,
 informs us that Year ${decYearColor1} began ${decDotyColor} days ago,
 whereas its countdown equivalent,
 <span class="nowrap">${nextYearColor}<span class="mono">-</span>${TminusPaddedColor}</span>,
-tells us that Year ${nextYearColor1} will begin in ${TminusColor}
-<a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>.
+tells us that Year ${nextYearColor1} will begin in ${TminusColor} days.
 
 <div id="equationgroup02" class="equationgroup">
 
@@ -1355,19 +1358,18 @@ data-bs-title="five-bit">5b</span>)
 [binary](https://en.wikipedia.org/wiki/Binary_number#:~:text=only%20two%20symbols%20for%20the%20natural%20numbers%3A%20typically%200%20%28zero%29%20and%201%20%28one%29)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="binary">[base](https://en.wikipedia.org/wiki/Radix#:~:text=the%20number%20of%20unique%20digits)2</span>)
-sequence. Of these 32 binary sequences, 8 are palindromes. If a Dec
-schedule can be represented by a <span class="tool"
+sequence. Of these 32 binary sequences, 8 are
+[palindromes](https://en.wikipedia.org/wiki/Palindrome#:~:text=reads%20the%20same%20backwards%20as%20forwards).
+If a Dec schedule can be represented by a <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="five-bit">5b</span> palindrome,
-we can identify its work and rest days by the last digit of not only the
-<a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a> but also either
-the subsequent <a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer day of year">nid</a>
-(<a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next negative integer day of year">ni<span
-class="acute">d</span></a>) in common years or the
+we can identify its work and rest days by the last digit of
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer day of year">nid</a> after next
+data-bs-title="negative integer days of year">nid</a> provided that it
+has an [acute
+accent](https://en.wikipedia.org/wiki/Acute_accent#:~:text=a%20diacritic%20used%20in%20many%20modern%20written%20languages%20with%20alphabets%20based%20on%20the%20Latin%2C%20Cyrillic%2C%20and%20Greek%20scripts)
+(<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">ni<span
+class="acute">d</span></a>) in common years or a double acute accent
 (<a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
 class="doubleacute">d</span></a>) in leap years.
@@ -1375,18 +1377,18 @@ class="doubleacute">d</span></a>) in leap years.
 We can sum an <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a> with 1 to get an
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next negative integer day of year">ni<span
+data-bs-title="negative integer day of year">ni<span
 class="acute">d</span></a>,
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next negative integer day of year">ni<span
+data-bs-title="negative integer day of year">ni<span
 class="acute">d</span></a> =
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a> + 1, or with 2 to
 get an <a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next negative integer day of year">ni<span
+data-bs-title="negative integer day of year">ni<span
 class="doubleacute">d</span></a>:
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next negative integer day of year">ni<span
+data-bs-title="negative integer day of year">ni<span
 class="doubleacute">d</span></a> =
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a> + 2.
@@ -1396,7 +1398,7 @@ data-bs-title="positive integer days of year">pid</a>,
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a>,
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next negative integer day of year">ni<span
+data-bs-title="negative integer day of year">ni<span
 class="acute">d</span></a>, and “mixed integer
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</a>”
@@ -1436,6 +1438,13 @@ ${nextYearColor3}+<span class="overline">${TminusPaddedColor2}</span>,
 ${nextYearColor4}+<span class="overline">${decNixAbsColor}</span>${decDoxNidMidColor},
 or
 ${nextYearColor5}+<span class="overline">${decNihAbsColor}</span>${decDohNidMidPadColor}.
+
+<div class="centered">
+
+### Common year examples of <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> with or without an acute accent or a vinculum
+
+</div>
 
 <div class="d-block d-xl-none">
 
@@ -2196,38 +2205,38 @@ class="overline">mi</span>d</a> are misaligned by 4
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a> in leap years and by 5
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a> in common years. Dec maintains a constant
-five-day misalignment by replacing the
-<a href="#mid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="mixed integer days of year"><span
-class="overline">mi</span>d</a> with the next
-<a href="#mid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="mixed integer days of year"><span
-class="overline">mi</span>d</a>
-(<a href="#mid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next mixed integer day of year"><span
-class="overline">mi</span><span class="grave">d</span></a>) in leap
-years. The accents above
-<a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next negative integer day of year">ni<span
-class="acute">d</span></a> and
-<a href="#mid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next mixed integer day of year"><span
-class="overline">mi</span><span class="grave">d</span></a> both advance
-the apparent <a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a> by one day.
-<a href="#tbl-vinculeap" class="quarto-xref">Table 3</a> below shows the
+data-bs-title="days">d</a> in common years. Dec maintains the appearance
+of a misalignment of 5
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> between
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a>,
-<a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer day of year">nid</a>,
-<a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer day of year">ni<span
-class="doubleacute">d</span></a>, and
+data-bs-title="positive integer days of year">pid</a> and
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next mixed integer day of year"><span
-class="overline">mi</span><span class="grave">d</span></a> of the first
-and last 11 days of a leap year.
+data-bs-title="mixed integer days of year"><span
+class="overline">mi</span>d</a> in leap years by adding 1 to each
+<a href="#mid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="mixed integer days of year"><span
+class="overline">mi</span>d</a> and placing a [grave
+accent](https://en.wikipedia.org/wiki/Grave_accent#:~:text=a%20diacritical%20mark%20used%20to%20varying%20degrees%20in%20French%2C%20Dutch%2C%20Portuguese%2C%20Italian%2C%20Catalan%20and%20many%20other%20Western%20European%20languages)
+over its last digit. The actual (unaccented) value of a
+<a href="#mid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="mixed integer days of year"><span
+class="overline">mi</span><span class="grave">d</span></a> is 1 less
+than its apparent (accented) value:
+<a href="#mid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="mixed integer days of year"><span
+class="overline">mi</span>d</a> =
+<a href="#mid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="mixed integer days of year"><span
+class="overline">mi</span><span class="grave">d</span></a>
+<span class="mono">-</span> 1.
+
+<div class="centered">
+
+### Leap year examples of <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a> with or without a double acute accent or a vinculum and a grave accent
+
+</div>
 
 <div class="d-block d-xl-none">
 
@@ -2256,7 +2265,7 @@ data-bs-title="negative integer day of year">nid</a></th>
 data-bs-title="negative integer day of year">ni<span
 class="doubleacute">d</span></a></th>
 <th><a href="#mid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next mixed integer day of year"><span
+data-bs-title="mixed integer day of year"><span
 class="overline">mi</span><span class="grave">d</span></a></th>
 </tr>
 </thead>
@@ -2578,7 +2587,7 @@ data-bs-title="negative integer day of year">nid</a></th>
 data-bs-title="negative integer day of year">ni<span
 class="doubleacute">d</span></a></th>
 <th><a href="#mid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next mixed integer day of year"><span
+data-bs-title="mixed integer day of year"><span
 class="overline">mi</span><span class="grave">d</span></a></th>
 <th></th>
 <th></th>
@@ -2599,7 +2608,7 @@ data-bs-title="negative integer day of year">nid</a></th>
 data-bs-title="negative integer day of year">ni<span
 class="doubleacute">d</span></a></th>
 <th><a href="#mid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="next mixed integer day of year"><span
+data-bs-title="mixed integer day of year"><span
 class="overline">mi</span><span class="grave">d</span></a></th>
 </tr>
 </thead>
@@ -2906,13 +2915,10 @@ class="grave">0</span></span></td>
 
 </div>
 
-A digit can be negated by a vinculum, augmented by an [acute
-accent](https://en.wikipedia.org/wiki/Acute_accent#:~:text=a%20diacritic%20used%20in%20many%20modern%20written%20languages%20with%20alphabets%20based%20on%20the%20Latin%2C%20Cyrillic%2C%20and%20Greek%20scripts),
-diminished by a [grave
-accent](https://en.wikipedia.org/wiki/Grave_accent#:~:text=a%20diacritical%20mark%20used%20to%20varying%20degrees%20in%20French%2C%20Dutch%2C%20Portuguese%2C%20Italian%2C%20Catalan%20and%20many%20other%20Western%20European%20languages),
-double augmented by a double acute accent, or double diminished by a
-double grave accent. The main purpose of these modifications is to
-change the appearance of the last digit of an
+A digit can be negated by a vinculum, augmented by an acute accent,
+diminished by a grave accent, double augmented by a double acute accent,
+or double diminished by a double grave accent. The main purpose of these
+modifications is to change the appearance of the last digit of an
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a> so that it matches
 the work or rest day classification of the last digit of a
@@ -2942,11 +2948,11 @@ data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>
 rule can be applied to the last digit of the <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="next mixed integer day of year"><span class="overline">mi</span>d</span>
+data-bs-title="mixed integer day of year"><span class="overline">mi</span>d</span>
 or <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year">ni<span class="acute">d</span></span>
 in common years, of the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="next mixed integer day of year"><span class="overline">mi</span><span class="grave">d</span></span>
+data-bs-title="mixed integer day of year"><span class="overline">mi</span><span class="grave">d</span></span>
 or <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year">ni<span class="doubleacute">d</span></span>
 in leap years, or of the <span class="tool" data-bs-toggle="tooltip"
@@ -3745,8 +3751,9 @@ data-bs-title="negative integer hectoday">nih</a> and
 data-bs-title="negative integer xún">nix</a> have common year Decolors.
 Depending on the year,
 <a href="#woy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="week of year">woy</a> Decolors can differ by 1 to 6 days.
-If the year is unknown,
+data-bs-title="week of year">woy</a> Decolors can differ by 1 to 6
+<a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>. If the year is unknown,
 <a href="#woy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="week of year">woy</a> are Decolorless.
 
@@ -4003,9 +4010,10 @@ The [line
 chart](https://en.wikipedia.org/wiki/Line_chart#:~:text=a%20type%20of%20chart%20that%20displays%20information%20as%20a%20series%20of%20data%20points%20called%20%27markers%27%20connected%20by%20straight%20line%20segments)
 shows
 [ERA5](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview#:~:text=the%20fifth%20generation%20ECMWF%20reanalysis%20for%20the%20global%20climate%20and%20weather%20for%20the%20past%208%20decades)
-daily global mean temperatures for every doy (Copernicus Climate Change
-Service (C3S) 2018; Hersbach et al. 2020+106). If we think of the method
-for assigning <a href="#doy" class="tool" data-bs-toggle="tooltip"
+daily global mean temperatures for every
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of year">doy</a>. If we think of the method for
+assigning <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doy</a> to Dec seasons in
 <a href="#eq-season" class="quarto-xref">Equation 15</a> as a
 [classification](https://en.wikipedia.org/wiki/Classification#:~:text=the%20activity%20of%20assigning%20objects%20to%20some%20pre%2Dexisting%20classes%20or%20categories)
@@ -4240,7 +4248,9 @@ data-bs-title="positive integer xún">pix</a>: ${decDekColor}, and its
 final digit is a <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a>: ${decDotdColor}.
 
-Whereas a pid gives us information on the current
+Whereas a <a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> gives us
+information on the current
 <a href="#pix" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer xún">pix</a> and
 <a href="#pih" class="tool" data-bs-toggle="tooltip"
@@ -4632,7 +4642,8 @@ data-bs-title="day of week">dow</a><sub>S</sub> is the
 and <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a><sub>Δ</sub> is the
 [difference](https://en.wikipedia.org/wiki/Subtraction#Notation_and_terminology:~:text=The%20result%20is%20the%20difference)
-between them that ranges from 0 to 6. To get the
+between them that ranges from <span class="color0">0</span> to
+<span class="color6by7">6</span>. To obtain the
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> of the first
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
@@ -4671,7 +4682,8 @@ ${day266dotwDiffColor1} + <span class="color267by365">267</span>.
 
 </div>
 
-When the current pid is the minuend and
+When the current <a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> is the minuend and
 <span class="color299by365">299</span> is the subtrahend, the difference
 is the number of days *until*
 <a href="#d" class="tool" data-bs-toggle="tooltip"
@@ -4686,7 +4698,7 @@ year:
 ${decYearColor2}+<span class="color299by365">299</span><span class="mono">${xmasDiffSign}</span>${xmasDiffColor1}.
 We can then subtract the
 <a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a> to get the number of days
+data-bs-title="solar year length">syl</a> to acquire the number of days
 until <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color299by365">299</span> of next
 year:
@@ -5817,7 +5829,7 @@ information is plainly visible in the
 data-bs-title="positive integer day of year">pid</a>.
 
 To convert a <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a> to or from a
+data-bs-title="positive integer day of year">pid</a> to or from an
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="International Organization for Standardization">ISO</span>
 month and <a href="#dom" class="tool" data-bs-toggle="tooltip"
@@ -6020,7 +6032,7 @@ data-bs-title="year of era">yoe</a> and
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a> are stored as
 [instance
-variable](https://en.wikipedia.org/wiki/Instance_variable#:~:text=each%20instantiated%20object%20of%20the%20class%20has%20a%20separate%20copy).
+variables](https://en.wikipedia.org/wiki/Instance_variable#:~:text=each%20instantiated%20object%20of%20the%20class%20has%20a%20separate%20copy).
 Our class must define one [instance
 method](https://en.wikipedia.org/wiki/Method_%28computer_programming%29#:~:text=a%20procedure%20associated%20with%20an%20object)
 for every potential output that is not an instance variable. Instance
@@ -6267,7 +6279,7 @@ doe<br>719468
 
 </div>
 
-</foreignobject></g></g></a><a href="#eya" class="mermaid-link no-external"><g class="node default" id="flowchart-G-14" transform="translate(428.21875, 102.5)"><rect class="basic label-container" style="" x="-54.125" y="-49.5" width="108.25" height="99"></rect><g class="label" style="" transform="translate(-24.125, -34.5)"><rect></rect><foreignobject width="48.25" height="69">
+</foreignobject></g></g></a><a href="#cey" class="mermaid-link no-external"><g class="node default" id="flowchart-G-14" transform="translate(428.21875, 102.5)"><rect class="basic label-container" style="" x="-54.125" y="-49.5" width="108.25" height="99"></rect><g class="label" style="" transform="translate(-24.125, -34.5)"><rect></rect><foreignobject width="48.25" height="69">
 
 <div data-xmlns="http://www.w3.org/1999/xhtml"
 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;">
@@ -6417,7 +6429,7 @@ always zero. Ignoring
 data-bs-title="Coordinated Universal Time">UTC</a> offsets, there are 12
 possible <a href="#bom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of month">bom</a>. There are 372 rather than
-53 possible <a href="#bow" class="tool" data-bs-toggle="tooltip"
+54 possible <a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of week">bow</a>, because weeks are misaligned
 with not only months but also years.
 
@@ -7076,9 +7088,10 @@ radio input beneath the grid is set to “Lunar”, the grid portrays a
 lunar year, its rows depict lunar months, its row labels are zero-based
 lunar <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a>, and each of its
-columns has moon diagrams that are in the same lunar phase and
+columns holds moon diagrams that are in the same lunar phase and
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of bimester">dob</a> which have the same last digit.
+data-bs-title="days of bimester">dob</a> which share the same last
+digit.
 
 When we instead set the “Layout” radio input to “Solar”, the values
 above the moon diagrams are still
@@ -7388,16 +7401,15 @@ data-bs-title="days">d</a> if its index is even or 29
 data-bs-title="days">d</a> if its index is odd. The lunar
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> of the first day of
-Lunar Month 11 is 325. The length of Lunar Month 11 is
+Lunar Month 11 is 325. The length of Lunar Month 11 is 325 less than the
 <a href="#lyl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="lunar year length">lyl</a> <span class="mono">-</span>
-325.
+data-bs-title="lunar year length">lyl</a>.
 
 Unlike lunar months, bimesters maintain a constant length for 2 × 354
 <span class="mono">-</span> 59 = 649 or 3 × 354
 <span class="mono">-</span> 59 = 1003
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>. To indicate when bimester length will
+data-bs-title="days">d</a>. To indicate when the bimester length will
 change, Dec provides “lunar intercalation differences”
 (<a href="#lid" id="lunarintercalationdifference" class="tool"
 data-bs-toggle="tooltip"
@@ -7727,9 +7739,9 @@ data-bs-title="taurs">c</a> for Mars, and 14700 to 24200
 <a href="#c" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taurs">c</a> for Jupiter.
 
-Mars represents the outer boundary of both the [habitable
+Mars lies near the outer edge of the [habitable
 zone](https://en.wikipedia.org/wiki/Habitable_zone#:~:text=the%20range%20of%20orbits%20around%20a%20star%20within%20which%20a%20planetary%20surface%20could%20potentially%20support%20liquid%20water)
-and the [terrestrial
+and is the outermost [terrestrial
 planets](https://en.wikipedia.org/wiki/Terrestrial_planet#:~:text=a%20class%20of%20planet%20that%20is%20composed%20primarily%20of%20silicate%2C%20rocks%2C%20or%20metals)
 in our [Solar
 System](https://en.wikipedia.org/wiki/Solar_System#:~:text=the%20gravitationally%20bound%20system%20of%20the%20Sun%20and%20the%20masses%20that%20orbit%20it).
@@ -7767,74 +7779,65 @@ that is just
 [7.3](https://en.wikipedia.org/wiki/Venus#:~:text=the%20axial%20tilt-,177.36%C2%B0,-.)
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a turn">milliturns</span> short of a half
-turn and thus has no seasons. In addition to not having seasons, Venus
-is also moonless. Therefore, the
+turn and thus has no seasons. Without the need to monitor seasonal
+changes on Venus, the
 [Venusian](https://en.wikipedia.org/wiki/List_of_adjectivals_and_demonyms_of_astronomical_bodies#Planets:~:text=%5B7%5D-,Venusian,-%2C%20Cytherean)
 Decalendar
 (De[cyther](https://en.wikipedia.org/wiki/List_of_adjectivals_and_demonyms_of_astronomical_bodies#Planets:~:text=Venusian%2C-,Cytherean,-cythero%2D))
-can focus on Venusian solar days.
+can focus on tracking Venusian solar days.
 
 On Venus, a solar year is 224.7
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a> and a solar day is 116.75
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>. A duration of 116.75
+data-bs-title="days">d</a>. A Decyther year lasts 467
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a> is perfectly matched by cycles comprising 3
-short Decyther years of 350
+data-bs-title="days">d</a> and can be split into 4
+[quadrimesters](https://en.wiktionary.org/wiki/quadrimester#:~:text=A%20period%20of%20four%20months%20or%20about%20four%20months)
+that are 116.75 <a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> on average: 467 ÷ 4 = 116.75. Each Decyther
+quadrimester can be divided into 2 bimesters called the [ante
+meridiem](https://en.wikipedia.org/wiki/12-hour_clock#:~:text=%2C%20translating%20to%20%22-,before%20midday,-%22%29%20and%20p.m)
+and the [post
+meridiem](https://en.wikipedia.org/wiki/12-hour_clock#:~:text=%2C%20translating%20to%20%22-,after%20midday,-%22%29.%5B1).
+The ante meridiem is always 58
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a> and 1 long Decyther year of 351
+data-bs-title="days">d</a>, but the post meridiem can be 58 or 59
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>: 3 × 350 + 351 = 1401. Each Decyther year
-consists of 6 bimesters. Each Decyther bimester is 58 + <a
+data-bs-title="days">d</a>.
+
+The length in days is 117 <span class="mono">-</span> <a
 href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
 class="nounder">[</a>*i*
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-8 ∈ {0, 3, 6}<a
+4 = 0<a
 href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
-class="nounder">]</a> <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a> long, where *i* is the zero-based bimester
-index.
-
-A Decyther bimester represents half of a Venusian solar day and is thus
-analogous to half of a day on Earth or half of a lunation on the Moon,
-even though 1 bimester lasts about as long as 2 lunations. At Venusian
-midnight, the [ante
-meridiem](https://en.wikipedia.org/wiki/12-hour_clock#:~:text=%2C%20translating%20to%20%22-,before%20midday,-%22%29%20and%20p.m)
-bimester of a new solar day begins immediately after the [post
-meridiem](https://en.wikipedia.org/wiki/12-hour_clock#:~:text=%2C%20translating%20to%20%22-,after%20midday,-%22%29.%5B1)
-bimester of the preceding solar day ends.
-
-Likewise, Venusian noon marks the start of the post meridiem bimester
-and the end of the ante meridiem bimester. In Decyther, Venusian
-midnight and Venusian noon are both denoted by
-<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of bimester">Dob</a> <span class="color0">0</span>.
-When we combine an ante meridiem bimester with the post meridiem
-bimester that follows it, we get a Decyther
-[quadrimester](https://en.wiktionary.org/wiki/quadrimester#:~:text=A%20period%20of%20four%20months%20or%20about%20four%20months)
-which can be either 116 or 117
-<a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a> long.
-
-Like Decalendar, Decyther identifies bimesters using
-<a href="#yoe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="years of era">yoe</a> and
-<a href="#bob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of bimester">bob</a>. Decyther uses the same
+class="nounder">]</a> for quadrimesters, 58 + <a
+href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
+class="nounder">[</a>*i*
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+8 ∈ {3, 5, 7}<a
+href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
+class="nounder">]</a> for bimesters, and 29 + <a
+href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
+class="nounder">[</a>*i*
+[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
+16 ∈ {7, 11, 15}<a
+href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
+class="nounder">]</a> for Venusian months, where *i* is the zero-based
+index of each Decyther unit. Decyther uses the same
 <a href="#yoe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</a> and
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> as Decalendar, but
 expands <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a> into
-<a href="#bob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginnings of bimester">bob</a> and
-<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of bimester">dob</a> to monitor Venusian solar days
-instead of lunations. Decyther uses bimesters in spite of the fact that
-Venus does not have a moon. Despite the fact that Mars has two moons,
-Decarean has no need for bimesters.
+data-bs-title="positive integer days of year">pid</a> into a “beginning
+of quadrimester”
+(<a href="#boq" id="beginningofquadrimester" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="beginning of quadrimester">boq</a>) and “day of
+quadrimester” (<a href="#doq" id="dayofquadrimester" class="tool"
+data-bs-toggle="tooltip" data-bs-title="day of quadrimester">doq</a>).
 
 Venus and Mars often appear to be dissimilar to Earth in completely
 opposite ways and it seems that when one is similar to Earth, the other
@@ -8225,7 +8228,7 @@ citations, which look just like Quarto
 [footnotes](https://quarto.org/docs/authoring/markdown-basics#footnotes):
 [1]. Unlike Quarto citations, Quarto footnotes do not require any
 additional files or configuration. A Quarto output file can have both a
-[Footnotes](#footnotes) and [References](#references) section.
+[Footnotes](#footnotes) and [References](#refs) section.
 
 # Glossary
 
@@ -8285,6 +8288,10 @@ additional files or configuration. A Quarto output file can have both a
     in common bimesters or 0 to 59 in leap bimesters
   - <a href="#dayoftricennium" id="dot">dot</a>: day of tricennium, days
     since the start of the current 30-year lunar cycle, 0 to 10630
+  - <a href="#dayofquadrimester" id="doq">doq</a>: day of quadrimester,
+    days since the beginning of a Decyther quadrimester, 0 to 115 or 116
+  - <a href="#beginningofquadrimester" id="boq">boq</a>: beginning of
+    quadrimester, the pid of Doq 0, pid - doq
   - <a href="#beginningofbimester" id="bob">bob</a>: beginning of
     bimester, the pid of Dob 0, pid - dob
   - <a href="#beginningofmonth" id="bom">bom</a>: beginning of month,
@@ -8329,9 +8336,8 @@ additional files or configuration. A Quarto output file can have both a
     or 64 milliliters
   - <a href="#megagrain" id="Mg">Mg</a>: megagrain or megadrop, 64
     kilograms or 64 liters
-- <a href="#hectoday" id="h">h</a>: a Dec season, represented by
-  ***h***, because Dec seasons, except for Season 3, are 1
-  ***h***ectoday, 10 decadays, or one ***h***undred days long
+- <a href="#hectoday" id="h">h</a>: a Dec season, 1 ***h***ectoday, 10
+  decadays, or one ***h***undred days
   - <a href="#positiveintegerhectoday" id="pih">pih</a>: positive
     integer hectoday, ⌊pid ÷ 100⌋, 0 to 3
   - <a href="#negativeintegerhectoday" id="nih">nih</a>: negative
@@ -10267,7 +10273,7 @@ div > form > label {
     order: -1;
   }
 }
-.diagtitle {
+.diagtitle, .tabletitle {
   font-weight: 500;
 }
 .tool {
