@@ -319,7 +319,7 @@ viewof leapscrub = Inputs.form([
 ``` {ojs}
 //| echo: false
 //| label: calsliders
-//| className: sliders
+//| class: sliders
 viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: "Day of year"});
 viewof dotyInput1 = transformInput(
   Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of year"}),
@@ -793,7 +793,7 @@ data-bs-title="negative integer day of year">nid</a>: ${easyDoyColor} +
 ``` {ojs}
 //| echo: false
 //| label: boundsliders
-//| className: sliders
+//| class: sliders
 //| code-copy: false
 Inputs.bind(Inputs.range([0, 364 + leapInput], {step: 1, label: "Day of year"}), viewof dotyInput)
 Inputs.bind(Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of year"}), viewof dotyInput1)
@@ -1361,11 +1361,11 @@ data-bs-title="binary">[base](https://en.wikipedia.org/wiki/Radix#:~:text=the%20
 sequence. Of these 32 binary sequences, 8 are
 [palindromes](https://en.wikipedia.org/wiki/Palindrome#:~:text=reads%20the%20same%20backwards%20as%20forwards).
 If a Dec schedule can be represented by a <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="five-bit">5b</span> palindrome,
-we can identify its work and rest days by the last digit of
+data-bs-toggle="tooltip" data-bs-title="five-bit">5b</span> palindrome
+such as <span class="color14by32">01110</span>, we can identify its work
+and rest days by the last digit of an
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer days of year">nid</a> provided that it
-has an [acute
+data-bs-title="negative integer days of year">nid</a> with an [acute
 accent](https://en.wikipedia.org/wiki/Acute_accent#:~:text=a%20diacritic%20used%20in%20many%20modern%20written%20languages%20with%20alphabets%20based%20on%20the%20Latin%2C%20Cyrillic%2C%20and%20Greek%20scripts)
 (<a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
@@ -1416,7 +1416,8 @@ common years.
 
 The horizontal line above all but the last digit of each
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="mixed integer day of year">mid</a> in
+data-bs-title="mixed integer day of year"><span
+class="overline">mi</span>d</a> in
 <a href="#tbl-vincommon" class="quarto-xref">Table 2</a> is called a
 [vinculum](https://en.wikipedia.org/wiki/Vinculum_(symbol)#:~:text=a%20horizontal%20line%20used%20in%20mathematical%20notation%20for%20various%20purposes).
 In Dec, a vinculum negates any digit beneath it. A negated zero is equal
@@ -1487,7 +1488,9 @@ class="overline">mi</span>d</a></th>
 <td></td>
 <td><span class="color0 nowrap">-36<span
 class="acute">4</span></span></td>
-<td><span class="color0"><span class="overline">37</span>5</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color360by365">37</span></span><span
+class="color5">5</span></span></td>
 </tr>
 <tr>
 <td><span class="color001">1</span></td>
@@ -1496,8 +1499,11 @@ class="acute">4</span></span></td>
 <td><span class="color001">-364</span></td>
 <td></td>
 <td></td>
-<td><span class="color001">-36<span class="acute">3</span></span></td>
-<td><span class="color001"><span class="overline">37</span>6</span></td>
+<td><span class="color001 nowrap">-36<span
+class="acute">3</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color360by365">37</span></span><span
+class="color6">6</span></span></td>
 </tr>
 <tr>
 <td><span class="color002">2</span></td>
@@ -1506,8 +1512,11 @@ class="acute">4</span></span></td>
 <td><span class="color002">-363</span></td>
 <td></td>
 <td></td>
-<td><span class="color002">-36<span class="acute">2</span></span></td>
-<td><span class="color002"><span class="overline">37</span>7</span></td>
+<td><span class="color002 nowrap">-36<span
+class="acute">2</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color360by365">37</span></span><span
+class="color7">7</span></span></td>
 </tr>
 <tr>
 <td><span class="color003">3</span></td>
@@ -1516,8 +1525,11 @@ class="acute">4</span></span></td>
 <td><span class="color003">-362</span></td>
 <td></td>
 <td></td>
-<td><span class="color003">-36<span class="acute">1</span></span></td>
-<td><span class="color003"><span class="overline">37</span>8</span></td>
+<td><span class="color003 nowrap">-36<span
+class="acute">1</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color360by365">37</span></span><span
+class="color8">8</span></span></td>
 </tr>
 <tr>
 <td><span class="color004">4</span></td>
@@ -1526,8 +1538,11 @@ class="acute">4</span></span></td>
 <td><span class="color004">-361</span></td>
 <td></td>
 <td></td>
-<td><span class="color004">-36<span class="acute">0</span></span></td>
-<td><span class="color004"><span class="overline">37</span>9</span></td>
+<td><span class="color004 nowrap">-36<span
+class="acute">0</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color360by365">37</span></span><span
+class="color9">9</span></span></td>
 </tr>
 <tr>
 <td><span class="color005by365">5</span></td>
@@ -1536,10 +1551,11 @@ class="acute">4</span></span></td>
 <td><span class="color005by365">-360</span></td>
 <td></td>
 <td></td>
-<td><span class="color005by365">-35<span
+<td><span class="color005by365 nowrap">-35<span
 class="acute">9</span></span></td>
-<td><span class="color005by365"><span
-class="overline">36</span>0</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color005by365">36</span></span><span
+class="color0">0</span></span></td>
 </tr>
 <tr>
 <td><span class="color006">6</span></td>
@@ -1548,8 +1564,11 @@ class="overline">36</span>0</span></td>
 <td><span class="color006">-359</span></td>
 <td></td>
 <td></td>
-<td><span class="color006">-35<span class="acute">8</span></span></td>
-<td><span class="color006"><span class="overline">36</span>1</span></td>
+<td><span class="color006 nowrap">-35<span
+class="acute">8</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color005by365">36</span></span><span
+class="color1">1</span></span></td>
 </tr>
 <tr>
 <td><span class="color007">7</span></td>
@@ -1558,8 +1577,11 @@ class="overline">36</span>0</span></td>
 <td><span class="color007">-358</span></td>
 <td></td>
 <td></td>
-<td><span class="color007">-35<span class="acute">7</span></span></td>
-<td><span class="color007"><span class="overline">36</span>2</span></td>
+<td><span class="color007 nowrap">-35<span
+class="acute">7</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color005by365">36</span></span><span
+class="color2">2</span></span></td>
 </tr>
 <tr>
 <td><span class="color008by365">8</span></td>
@@ -1568,10 +1590,11 @@ class="overline">36</span>0</span></td>
 <td><span class="color008by365">-357</span></td>
 <td></td>
 <td></td>
-<td><span class="color008by365">-35<span
+<td><span class="color008by365 nowrap">-35<span
 class="acute">6</span></span></td>
-<td><span class="color008by365"><span
-class="overline">36</span>3</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color005by365">36</span></span><span
+class="color3">3</span></span></td>
 </tr>
 <tr>
 <td><span class="color009">9</span></td>
@@ -1580,8 +1603,11 @@ class="overline">36</span>3</span></td>
 <td><span class="color009">-356</span></td>
 <td></td>
 <td></td>
-<td><span class="color009">-35<span class="acute">5</span></span></td>
-<td><span class="color009"><span class="overline">36</span>4</span></td>
+<td><span class="color009 nowrap">-35<span
+class="acute">5</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color005by365">36</span></span><span
+class="color4">4</span></span></td>
 </tr>
 <tr>
 <td><span class="color010">10</span></td>
@@ -1590,8 +1616,11 @@ class="overline">36</span>3</span></td>
 <td><span class="color010">-355</span></td>
 <td></td>
 <td></td>
-<td><span class="color010">-35<span class="acute">4</span></span></td>
-<td><span class="color010"><span class="overline">36</span>5</span></td>
+<td><span class="color010 nowrap">-35<span
+class="acute">4</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color005by365">36</span></span><span
+class="color5">5</span></span></td>
 </tr>
 <tr>
 <td>…</td>
@@ -1610,10 +1639,11 @@ class="overline">36</span>3</span></td>
 <td><span class="color354by365">-11</span></td>
 <td></td>
 <td></td>
-<td><span class="color354by365">-1<span
+<td><span class="color354by365 nowrap">-1<span
 class="acute">0</span></span></td>
-<td><span class="color354by365"><span
-class="overline">2</span>9</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color345by365">2</span></span><span
+class="color9">9</span></span></td>
 </tr>
 <tr>
 <td><span class="color355by365">355</span></td>
@@ -1624,8 +1654,9 @@ class="overline">2</span>9</span></td>
 <td></td>
 <td><span class="color355by365">-<span
 class="acute">9</span></span></td>
-<td><span class="color355by365"><span
-class="overline">1</span>0</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color0">0</span></span></td>
 </tr>
 <tr>
 <td><span class="color356by365">356</span></td>
@@ -1636,8 +1667,9 @@ class="overline">1</span>0</span></td>
 <td></td>
 <td><span class="color356by365">-<span
 class="acute">8</span></span></td>
-<td><span class="color356by365"><span
-class="overline">1</span>1</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color1">1</span></span></td>
 </tr>
 <tr>
 <td><span class="color357by365">357</span></td>
@@ -1648,8 +1680,9 @@ class="overline">1</span>1</span></td>
 <td></td>
 <td><span class="color357by365">-<span
 class="acute">7</span></span></td>
-<td><span class="color357by365"><span
-class="overline">1</span>2</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color2">2</span></span></td>
 </tr>
 <tr>
 <td><span class="color358by365">358</span></td>
@@ -1660,8 +1693,9 @@ class="overline">1</span>2</span></td>
 <td></td>
 <td><span class="color358by365">-<span
 class="acute">6</span></span></td>
-<td><span class="color358by365"><span
-class="overline">1</span>3</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color3">3</span></span></td>
 </tr>
 <tr>
 <td><span class="color359by365">359</span></td>
@@ -1672,8 +1706,9 @@ class="overline">1</span>3</span></td>
 <td></td>
 <td><span class="color359by365">-<span
 class="acute">5</span></span></td>
-<td><span class="color359by365"><span
-class="overline">1</span>4</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color4">4</span></span></td>
 </tr>
 <tr>
 <td><span class="color360by365">360</span></td>
@@ -1684,8 +1719,9 @@ class="overline">1</span>4</span></td>
 <td></td>
 <td><span class="color360by365">-<span
 class="acute">4</span></span></td>
-<td><span class="color360by365"><span
-class="overline">1</span>5</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color5">5</span></span></td>
 </tr>
 <tr>
 <td><span class="color361by365">361</span></td>
@@ -1696,8 +1732,9 @@ class="overline">1</span>5</span></td>
 <td></td>
 <td><span class="color361by365">-<span
 class="acute">3</span></span></td>
-<td><span class="color361by365"><span
-class="overline">1</span>6</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color6">6</span></span></td>
 </tr>
 <tr>
 <td><span class="color362by365">362</span></td>
@@ -1708,8 +1745,9 @@ class="overline">1</span>6</span></td>
 <td></td>
 <td><span class="color362by365">-<span
 class="acute">2</span></span></td>
-<td><span class="color362by365"><span
-class="overline">1</span>7</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color7">7</span></span></td>
 </tr>
 <tr>
 <td><span class="color363by365">363</span></td>
@@ -1720,8 +1758,9 @@ class="overline">1</span>7</span></td>
 <td></td>
 <td><span class="color363by365">-<span
 class="acute">1</span></span></td>
-<td><span class="color363by365"><span
-class="overline">1</span>8</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color8">8</span></span></td>
 </tr>
 <tr>
 <td><span class="color364by365">364</span></td>
@@ -1732,8 +1771,9 @@ class="overline">1</span>8</span></td>
 <td></td>
 <td><span class="color364by365">-<span
 class="acute">0</span></span></td>
-<td><span class="color364by365"><span
-class="overline">1</span>9</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color9">9</span></span></td>
 </tr>
 </tbody>
 </table>
@@ -1823,7 +1863,9 @@ class="overline">mi</span>d</a></th>
 <td></td>
 <td><span class="color0 nowrap">-36<span
 class="acute">4</span></span></td>
-<td><span class="color0"><span class="overline">37</span>5</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color360by365">37</span></span><span
+class="color5">5</span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1842,8 +1884,9 @@ class="acute">4</span></span></td>
 <td><span class="color354by365">-1<span
 class="acute">0</span></span></td>
 <td></td>
-<td><span class="color354by365"><span
-class="overline">2</span>9</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color345by365">2</span></span><span
+class="color9">9</span></span></td>
 </tr>
 <tr>
 <td><span class="color001">1</span></td>
@@ -1853,7 +1896,9 @@ class="overline">2</span>9</span></td>
 <td></td>
 <td></td>
 <td><span class="color001">-36<span class="acute">3</span></span></td>
-<td><span class="color001"><span class="overline">37</span>6</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color360by365">37</span></span><span
+class="color6">6</span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1872,8 +1917,9 @@ class="overline">2</span>9</span></td>
 <td><span class="color355by365">-<span
 class="acute">9</span></span></td>
 <td></td>
-<td><span class="color355by365"><span
-class="overline">1</span>0</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color0">0</span></span></td>
 </tr>
 <tr>
 <td><span class="color002">2</span></td>
@@ -1883,7 +1929,9 @@ class="overline">1</span>0</span></td>
 <td></td>
 <td></td>
 <td><span class="color002">-36<span class="acute">2</span></span></td>
-<td><span class="color002"><span class="overline">37</span>7</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color360by365">37</span></span><span
+class="color7">7</span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1902,8 +1950,9 @@ class="overline">1</span>0</span></td>
 <td><span class="color356by365">-<span
 class="acute">8</span></span></td>
 <td></td>
-<td><span class="color356by365"><span
-class="overline">1</span>1</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color1">1</span></span></td>
 </tr>
 <tr>
 <td><span class="color003">3</span></td>
@@ -1913,7 +1962,9 @@ class="overline">1</span>1</span></td>
 <td></td>
 <td></td>
 <td><span class="color003">-36<span class="acute">1</span></span></td>
-<td><span class="color003"><span class="overline">37</span>8</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color360by365">37</span></span><span
+class="color8">8</span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1932,8 +1983,9 @@ class="overline">1</span>1</span></td>
 <td><span class="color357by365">-<span
 class="acute">7</span></span></td>
 <td></td>
-<td><span class="color357by365"><span
-class="overline">1</span>2</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color2">2</span></span></td>
 </tr>
 <tr>
 <td><span class="color004">4</span></td>
@@ -1943,7 +1995,9 @@ class="overline">1</span>2</span></td>
 <td></td>
 <td></td>
 <td><span class="color004">-36<span class="acute">0</span></span></td>
-<td><span class="color004"><span class="overline">37</span>9</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color360by365">37</span></span><span
+class="color9">9</span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1962,8 +2016,9 @@ class="overline">1</span>2</span></td>
 <td><span class="color358by365">-<span
 class="acute">6</span></span></td>
 <td></td>
-<td><span class="color358by365"><span
-class="overline">1</span>3</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color3">3</span></span></td>
 </tr>
 <tr>
 <td><span class="color005by365">5</span></td>
@@ -1974,8 +2029,9 @@ class="overline">1</span>3</span></td>
 <td></td>
 <td><span class="color005by365">-35<span
 class="acute">9</span></span></td>
-<td><span class="color005by365"><span
-class="overline">36</span>0</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color005by365">36</span></span><span
+class="color0">0</span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -1994,8 +2050,9 @@ class="overline">36</span>0</span></td>
 <td><span class="color359by365">-<span
 class="acute">5</span></span></td>
 <td></td>
-<td><span class="color359by365"><span
-class="overline">1</span>4</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color4">4</span></span></td>
 </tr>
 <tr>
 <td><span class="color006">6</span></td>
@@ -2005,7 +2062,9 @@ class="overline">1</span>4</span></td>
 <td></td>
 <td></td>
 <td><span class="color006">-35<span class="acute">8</span></span></td>
-<td><span class="color006"><span class="overline">36</span>1</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color005by365">36</span></span><span
+class="color1">1</span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2024,8 +2083,9 @@ class="overline">1</span>4</span></td>
 <td><span class="color360by365">-<span
 class="acute">4</span></span></td>
 <td></td>
-<td><span class="color360by365"><span
-class="overline">1</span>5</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color5">5</span></span></td>
 </tr>
 <tr>
 <td><span class="color007">7</span></td>
@@ -2035,7 +2095,9 @@ class="overline">1</span>5</span></td>
 <td></td>
 <td></td>
 <td><span class="color007">-35<span class="acute">7</span></span></td>
-<td><span class="color007"><span class="overline">36</span>2</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color005by365">36</span></span><span
+class="color2">2</span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2054,8 +2116,9 @@ class="overline">1</span>5</span></td>
 <td><span class="color361by365">-<span
 class="acute">3</span></span></td>
 <td></td>
-<td><span class="color361by365"><span
-class="overline">1</span>6</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color6">6</span></span></td>
 </tr>
 <tr>
 <td><span class="color008by365">8</span></td>
@@ -2066,8 +2129,9 @@ class="overline">1</span>6</span></td>
 <td></td>
 <td><span class="color008by365">-35<span
 class="acute">6</span></span></td>
-<td><span class="color008by365"><span
-class="overline">36</span>3</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color005by365">36</span></span><span
+class="color3">3</span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2086,8 +2150,9 @@ class="overline">36</span>3</span></td>
 <td><span class="color362by365">-<span
 class="acute">2</span></span></td>
 <td></td>
-<td><span class="color362by365"><span
-class="overline">1</span>7</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color7">7</span></span></td>
 </tr>
 <tr>
 <td><span class="color009">9</span></td>
@@ -2097,7 +2162,9 @@ class="overline">1</span>7</span></td>
 <td></td>
 <td></td>
 <td><span class="color009">-35<span class="acute">5</span></span></td>
-<td><span class="color009"><span class="overline">36</span>4</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color005by365">36</span></span><span
+class="color4">4</span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2116,8 +2183,9 @@ class="overline">1</span>7</span></td>
 <td><span class="color363by365">-<span
 class="acute">1</span></span></td>
 <td></td>
-<td><span class="color363by365"><span
-class="overline">1</span>8</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color8">8</span></span></td>
 </tr>
 <tr>
 <td><span class="color010">10</span></td>
@@ -2127,7 +2195,9 @@ class="overline">1</span>8</span></td>
 <td></td>
 <td></td>
 <td><span class="color010">-35<span class="acute">4</span></span></td>
-<td><span class="color010"><span class="overline">36</span>5</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color005by365">36</span></span><span
+class="color5">5</span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2146,8 +2216,9 @@ class="overline">1</span>8</span></td>
 <td><span class="color364by365">-<span
 class="acute">0</span></span></td>
 <td></td>
-<td><span class="color364by365"><span
-class="overline">1</span>9</span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color355by365">1</span></span><span
+class="color9">9</span></span></td>
 </tr>
 </tbody>
 </table>
@@ -2208,28 +2279,36 @@ data-bs-title="days">d</a> in leap years and by 5
 data-bs-title="days">d</a> in common years. Dec maintains the appearance
 of a misalignment of 5
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a> between
-<a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a> and
-<a href="#mid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="mixed integer days of year"><span
-class="overline">mi</span>d</a> in leap years by adding 1 to each
+data-bs-title="days">d</a> in leap years by adding 1 to each
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
 class="overline">mi</span>d</a> and placing a [grave
 accent](https://en.wikipedia.org/wiki/Grave_accent#:~:text=a%20diacritical%20mark%20used%20to%20varying%20degrees%20in%20French%2C%20Dutch%2C%20Portuguese%2C%20Italian%2C%20Catalan%20and%20many%20other%20Western%20European%20languages)
-over its last digit. The actual (unaccented) value of a
+over its final digit:
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
-class="overline">mi</span><span class="grave">d</span></a> is 1 less
-than its apparent (accented) value:
+class="overline">mi</span>d</a> + 1 =
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
-class="overline">mi</span>d</a> =
+class="overline">mi</span><span class="grave">d</span></a>. In general,
+actual <a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doy</a> such as
+<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">nid</a> or
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
-class="overline">mi</span><span class="grave">d</span></a>
-<span class="mono">-</span> 1.
+class="overline">mi</span>d</a> are 1 or 2 less than their apparent
+<a href="#doy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of year">doy</a> counterparts:
+<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">ni<span
+class="acute">d</span></a>,
+<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">ni<span
+class="doubleacute">d</span></a>, or
+<a href="#mid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="mixed integer day of year"><span
+class="overline">mi</span><span class="grave">d</span></a>.
 
 <div class="centered">
 
@@ -2242,14 +2321,14 @@ data-bs-title="day of year">doy</a> with or without a double acute accent or a v
 
 <table>
 <colgroup>
-<col style="width: 16%" />
+<col style="width: 22%" />
 <col style="width: 0%" />
 <col style="width: 0%" />
-<col style="width: 17%" />
+<col style="width: 22%" />
 <col style="width: 0%" />
 <col style="width: 0%" />
-<col style="width: 29%" />
-<col style="width: 33%" />
+<col style="width: 26%" />
+<col style="width: 27%" />
 </colgroup>
 <thead>
 <tr>
@@ -2279,8 +2358,9 @@ class="overline">mi</span><span class="grave">d</span></a></th>
 <td></td>
 <td><span class="color0">-36<span
 class="doubleacute">4</span></span></td>
-<td><span class="color0"><span class="overline">37</span><span
-class="grave">5</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color361by365">37</span></span><span class="color5"><span
+class="grave">5</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color001">1</span></td>
@@ -2291,8 +2371,9 @@ class="grave">5</span></span></td>
 <td></td>
 <td><span class="color001">-36<span
 class="doubleacute">3</span></span></td>
-<td><span class="color001"><span class="overline">37</span><span
-class="grave">6</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color361by365">37</span></span><span class="color6"><span
+class="grave">6</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color002">2</span></td>
@@ -2303,8 +2384,9 @@ class="grave">6</span></span></td>
 <td></td>
 <td><span class="color002">-36<span
 class="doubleacute">2</span></span></td>
-<td><span class="color002"><span class="overline">37</span><span
-class="grave">7</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color361by365">37</span></span><span class="color7"><span
+class="grave">7</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color003">3</span></td>
@@ -2315,8 +2397,9 @@ class="grave">7</span></span></td>
 <td></td>
 <td><span class="color003">-36<span
 class="doubleacute">1</span></span></td>
-<td><span class="color003"><span class="overline">37</span><span
-class="grave">8</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color361by365">37</span></span><span class="color8"><span
+class="grave">8</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color004">4</span></td>
@@ -2327,8 +2410,9 @@ class="grave">8</span></span></td>
 <td></td>
 <td><span class="color004">-36<span
 class="doubleacute">0</span></span></td>
-<td><span class="color004"><span class="overline">37</span><span
-class="grave">9</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color361by365">37</span></span><span class="color9"><span
+class="grave">9</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color005by366">5</span></td>
@@ -2339,8 +2423,9 @@ class="grave">9</span></span></td>
 <td></td>
 <td><span class="color005by366">-35<span
 class="doubleacute">9</span></span></td>
-<td><span class="color005by366"><span class="overline">36</span><span
-class="grave">0</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color006">36</span></span><span class="color0"><span
+class="grave">0</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color006">6</span></td>
@@ -2351,8 +2436,9 @@ class="grave">0</span></span></td>
 <td></td>
 <td><span class="color006">-35<span
 class="doubleacute">8</span></span></td>
-<td><span class="color006"><span class="overline">36</span><span
-class="grave">1</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color006">36</span></span><span class="color1"><span
+class="grave">1</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color007">7</span></td>
@@ -2363,8 +2449,9 @@ class="grave">1</span></span></td>
 <td></td>
 <td><span class="color007">-35<span
 class="doubleacute">7</span></span></td>
-<td><span class="color007"><span class="overline">36</span><span
-class="grave">2</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color006">36</span></span><span class="color2"><span
+class="grave">2</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color008by366">8</span></td>
@@ -2375,8 +2462,9 @@ class="grave">2</span></span></td>
 <td></td>
 <td><span class="color008by366">-35<span
 class="doubleacute">6</span></span></td>
-<td><span class="color008by366"><span class="overline">36</span><span
-class="grave">3</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color006">36</span></span><span class="color3"><span
+class="grave">3</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color009">9</span></td>
@@ -2387,8 +2475,9 @@ class="grave">3</span></span></td>
 <td></td>
 <td><span class="color009">-35<span
 class="doubleacute">5</span></span></td>
-<td><span class="color009"><span class="overline">36</span><span
-class="grave">4</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color006">36</span></span><span class="color4"><span
+class="grave">4</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color010">10</span></td>
@@ -2399,8 +2488,9 @@ class="grave">4</span></span></td>
 <td></td>
 <td><span class="color010">-35<span
 class="doubleacute">4</span></span></td>
-<td><span class="color010"><span class="overline">36</span><span
-class="grave">5</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color006">36</span></span><span class="color5"><span
+class="grave">5</span></span></span></td>
 </tr>
 <tr>
 <td>…</td>
@@ -2421,8 +2511,9 @@ class="grave">5</span></span></td>
 <td></td>
 <td><span class="color355by366">-<span
 class="doubleacute">9</span></span></td>
-<td><span class="color355by366"><span class="overline">1</span><span
-class="grave">0</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color0"><span
+class="grave">0</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color356by366">356</span></td>
@@ -2433,8 +2524,9 @@ class="grave">0</span></span></td>
 <td></td>
 <td><span class="color356by366">-<span
 class="doubleacute">8</span></span></td>
-<td><span class="color356by366"><span class="overline">1</span><span
-class="grave">1</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color1"><span
+class="grave">1</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color357by366">357</span></td>
@@ -2445,8 +2537,9 @@ class="grave">1</span></span></td>
 <td></td>
 <td><span class="color357by366">-<span
 class="doubleacute">7</span></span></td>
-<td><span class="color357by366"><span class="overline">1</span><span
-class="grave">2</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color2"><span
+class="grave">2</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color358by366">358</span></td>
@@ -2457,8 +2550,9 @@ class="grave">2</span></span></td>
 <td></td>
 <td><span class="color358by366">-<span
 class="doubleacute">6</span></span></td>
-<td><span class="color358by366"><span class="overline">1</span><span
-class="grave">3</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color3"><span
+class="grave">3</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color359by366">359</span></td>
@@ -2469,8 +2563,9 @@ class="grave">3</span></span></td>
 <td></td>
 <td><span class="color359by366">-<span
 class="doubleacute">5</span></span></td>
-<td><span class="color359by366"><span class="overline">1</span><span
-class="grave">4</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color4"><span
+class="grave">4</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color360by366">360</span></td>
@@ -2481,8 +2576,9 @@ class="grave">4</span></span></td>
 <td></td>
 <td><span class="color360by366">-<span
 class="doubleacute">4</span></span></td>
-<td><span class="color360by366"><span class="overline">1</span><span
-class="grave">5</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color5"><span
+class="grave">5</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color361by366">361</span></td>
@@ -2493,8 +2589,9 @@ class="grave">5</span></span></td>
 <td></td>
 <td><span class="color361by366">-<span
 class="doubleacute">3</span></span></td>
-<td><span class="color361by366"><span class="overline">1</span><span
-class="grave">6</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color6"><span
+class="grave">6</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color362by366">362</span></td>
@@ -2505,8 +2602,9 @@ class="grave">6</span></span></td>
 <td></td>
 <td><span class="color362by366">-<span
 class="doubleacute">2</span></span></td>
-<td><span class="color362by366"><span class="overline">1</span><span
-class="grave">7</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color7"><span
+class="grave">7</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color363by366">363</span></td>
@@ -2517,8 +2615,9 @@ class="grave">7</span></span></td>
 <td></td>
 <td><span class="color363by366">-<span
 class="doubleacute">1</span></span></td>
-<td><span class="color363by366"><span class="overline">1</span><span
-class="grave">8</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color8"><span
+class="grave">8</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color364by366">364</span></td>
@@ -2529,8 +2628,9 @@ class="grave">8</span></span></td>
 <td></td>
 <td><span class="color364by366">-<span
 class="doubleacute">0</span></span></td>
-<td><span class="color364by366"><span class="overline">1</span><span
-class="grave">9</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color9"><span
+class="grave">9</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color365by366">365</span></td>
@@ -2541,8 +2641,9 @@ class="grave">9</span></span></td>
 <td></td>
 <td><span class="color365by366">-<span
 class="acute">0</span></span></td>
-<td><span class="color365by366"><span class="overline">0</span><span
-class="grave">0</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color0">0</span></span><span class="color0"><span
+class="grave">0</span></span></span></td>
 </tr>
 </tbody>
 </table>
@@ -2551,29 +2652,29 @@ class="grave">0</span></span></td>
 
 <div class="d-none d-xl-block">
 
-<table>
+<table style="width:100%;">
 <colgroup>
-<col style="width: 7%" />
+<col style="width: 11%" />
 <col style="width: 0%" />
-<col style="width: 8%" />
-<col style="width: 0%" />
-<col style="width: 14%" />
-<col style="width: 16%" />
-<col style="width: 0%" />
-<col style="width: 0%" />
-<col style="width: 0%" />
-<col style="width: 0%" />
-<col style="width: 0%" />
-<col style="width: 0%" />
-<col style="width: 0%" />
-<col style="width: 0%" />
-<col style="width: 0%" />
-<col style="width: 8%" />
-<col style="width: 0%" />
-<col style="width: 8%" />
+<col style="width: 11%" />
 <col style="width: 0%" />
 <col style="width: 13%" />
-<col style="width: 16%" />
+<col style="width: 13%" />
+<col style="width: 0%" />
+<col style="width: 0%" />
+<col style="width: 0%" />
+<col style="width: 0%" />
+<col style="width: 0%" />
+<col style="width: 0%" />
+<col style="width: 0%" />
+<col style="width: 0%" />
+<col style="width: 0%" />
+<col style="width: 11%" />
+<col style="width: 0%" />
+<col style="width: 11%" />
+<col style="width: 0%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
 </colgroup>
 <thead>
 <tr>
@@ -2620,8 +2721,9 @@ class="overline">mi</span><span class="grave">d</span></a></th>
 <td></td>
 <td><span class="color0">-36<span
 class="doubleacute">4</span></span></td>
-<td><span class="color0"><span class="overline">37</span><span
-class="grave">5</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color361by365">37</span></span><span class="color5"><span
+class="grave">5</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2637,8 +2739,9 @@ class="grave">5</span></span></td>
 <td></td>
 <td><span class="color355by366">-<span
 class="doubleacute">9</span></span></td>
-<td><span class="color355by366"><span class="overline">1</span><span
-class="grave">0</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color0"><span
+class="grave">0</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color001">1</span></td>
@@ -2647,8 +2750,9 @@ class="grave">0</span></span></td>
 <td></td>
 <td><span class="color001">-36<span
 class="doubleacute">3</span></span></td>
-<td><span class="color001"><span class="overline">37</span><span
-class="grave">6</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color361by365">37</span></span><span class="color6"><span
+class="grave">6</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2664,8 +2768,9 @@ class="grave">6</span></span></td>
 <td></td>
 <td><span class="color356by366">-<span
 class="doubleacute">8</span></span></td>
-<td><span class="color356by366"><span class="overline">1</span><span
-class="grave">1</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color1"><span
+class="grave">1</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color002">2</span></td>
@@ -2674,8 +2779,9 @@ class="grave">1</span></span></td>
 <td></td>
 <td><span class="color002">-36<span
 class="doubleacute">2</span></span></td>
-<td><span class="color002"><span class="overline">37</span><span
-class="grave">7</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color361by365">37</span></span><span class="color7"><span
+class="grave">7</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2691,8 +2797,9 @@ class="grave">7</span></span></td>
 <td></td>
 <td><span class="color357by366">-<span
 class="doubleacute">7</span></span></td>
-<td><span class="color357by366"><span class="overline">1</span><span
-class="grave">2</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color2"><span
+class="grave">2</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color003">3</span></td>
@@ -2701,8 +2808,9 @@ class="grave">2</span></span></td>
 <td></td>
 <td><span class="color003">-36<span
 class="doubleacute">1</span></span></td>
-<td><span class="color003"><span class="overline">37</span><span
-class="grave">8</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color361by365">37</span></span><span class="color8"><span
+class="grave">8</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2718,8 +2826,9 @@ class="grave">8</span></span></td>
 <td></td>
 <td><span class="color358by366">-<span
 class="doubleacute">6</span></span></td>
-<td><span class="color358by366"><span class="overline">1</span><span
-class="grave">3</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color3"><span
+class="grave">3</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color004">4</span></td>
@@ -2728,8 +2837,9 @@ class="grave">3</span></span></td>
 <td></td>
 <td><span class="color004">-36<span
 class="doubleacute">0</span></span></td>
-<td><span class="color004"><span class="overline">37</span><span
-class="grave">9</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color361by365">37</span></span><span class="color9"><span
+class="grave">9</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2745,8 +2855,9 @@ class="grave">9</span></span></td>
 <td></td>
 <td><span class="color359by366">-<span
 class="doubleacute">5</span></span></td>
-<td><span class="color359by366"><span class="overline">1</span><span
-class="grave">4</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color4"><span
+class="grave">4</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color005by366">5</span></td>
@@ -2755,8 +2866,9 @@ class="grave">4</span></span></td>
 <td></td>
 <td><span class="color005by366">-35<span
 class="doubleacute">9</span></span></td>
-<td><span class="color005by366"><span class="overline">36</span><span
-class="grave">0</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color006">36</span></span><span class="color0"><span
+class="grave">0</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2772,8 +2884,9 @@ class="grave">0</span></span></td>
 <td></td>
 <td><span class="color360by366">-<span
 class="doubleacute">4</span></span></td>
-<td><span class="color360by366"><span class="overline">1</span><span
-class="grave">5</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color5"><span
+class="grave">5</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color006">6</span></td>
@@ -2782,8 +2895,9 @@ class="grave">5</span></span></td>
 <td></td>
 <td><span class="color006">-35<span
 class="doubleacute">8</span></span></td>
-<td><span class="color006"><span class="overline">36</span><span
-class="grave">1</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color006">36</span></span><span class="color1"><span
+class="grave">1</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2799,8 +2913,9 @@ class="grave">1</span></span></td>
 <td></td>
 <td><span class="color361by366">-<span
 class="doubleacute">3</span></span></td>
-<td><span class="color361by366"><span class="overline">1</span><span
-class="grave">6</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color6"><span
+class="grave">6</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color007">7</span></td>
@@ -2809,8 +2924,9 @@ class="grave">6</span></span></td>
 <td></td>
 <td><span class="color007">-35<span
 class="doubleacute">7</span></span></td>
-<td><span class="color007"><span class="overline">36</span><span
-class="grave">2</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color006">36</span></span><span class="color2"><span
+class="grave">2</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2826,8 +2942,9 @@ class="grave">2</span></span></td>
 <td></td>
 <td><span class="color362by366">-<span
 class="doubleacute">2</span></span></td>
-<td><span class="color362by366"><span class="overline">1</span><span
-class="grave">7</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color7"><span
+class="grave">7</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color008by366">8</span></td>
@@ -2836,8 +2953,9 @@ class="grave">7</span></span></td>
 <td></td>
 <td><span class="color008by366">-35<span
 class="doubleacute">6</span></span></td>
-<td><span class="color008by366"><span class="overline">36</span><span
-class="grave">3</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color006">36</span></span><span class="color3"><span
+class="grave">3</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2853,8 +2971,9 @@ class="grave">3</span></span></td>
 <td></td>
 <td><span class="color363by366">-<span
 class="doubleacute">1</span></span></td>
-<td><span class="color363by366"><span class="overline">1</span><span
-class="grave">8</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color8"><span
+class="grave">8</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color009">9</span></td>
@@ -2863,8 +2982,9 @@ class="grave">8</span></span></td>
 <td></td>
 <td><span class="color009">-35<span
 class="doubleacute">5</span></span></td>
-<td><span class="color009"><span class="overline">36</span><span
-class="grave">4</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color006">36</span></span><span class="color4"><span
+class="grave">4</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2880,8 +3000,9 @@ class="grave">4</span></span></td>
 <td></td>
 <td><span class="color364by366">-<span
 class="doubleacute">0</span></span></td>
-<td><span class="color364by366"><span class="overline">1</span><span
-class="grave">9</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color356by366">1</span></span><span class="color9"><span
+class="grave">9</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color010">10</span></td>
@@ -2890,8 +3011,9 @@ class="grave">9</span></span></td>
 <td></td>
 <td><span class="color010">-35<span
 class="doubleacute">4</span></span></td>
-<td><span class="color010"><span class="overline">36</span><span
-class="grave">5</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color006">36</span></span><span class="color5"><span
+class="grave">5</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2907,23 +3029,38 @@ class="grave">5</span></span></td>
 <td></td>
 <td><span class="color365by366">-<span
 class="acute">0</span></span></td>
-<td><span class="color365by366"><span class="overline">0</span><span
-class="grave">0</span></span></td>
+<td><span class="nowrap"><span class="overline"><span
+class="color0">0</span></span><span class="color0"><span
+class="grave">0</span></span></span></td>
 </tr>
 </tbody>
 </table>
 
 </div>
 
-A digit can be negated by a vinculum, augmented by an acute accent,
-diminished by a grave accent, double augmented by a double acute accent,
-or double diminished by a double grave accent. The main purpose of these
-modifications is to change the appearance of the last digit of an
+Dec accents are first in the [order of
+operations](https://en.wikipedia.org/wiki/Order_of_operations#:~:text=a%20collection%20of%20conventions%20about%20which%20arithmetic%20operations%20to%20perform%20first%20in%20order%20to%20evaluate%20a%20given%20mathematical%20expression).
+The absolute value of an
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="negative integer day of year">nid</a> so that it matches
-the work or rest day classification of the last digit of a
-<a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a>.
+data-bs-title="negative integer day of year">nid</a> is increased by an
+acute accent (<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">ni<span
+class="acute">d</span></a>) and decreased by a grave accent
+(<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">ni<span
+class="grave">d</span></a>), but the opposite is true for
+<a href="#mid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="mixed integer days of year"><span
+class="overline">mi</span>d</a>. The main purpose of Dec accents is to
+change the appearance of the final digit of an
+<a href="#nid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="negative integer day of year">nid</a> or
+<a href="#mid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="mixed integer days of year"><span
+class="overline">mi</span>d</a> so that it can be used just like the
+last digit of a <a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> for
+work-or-rest-day classification.
 
 The Schedule <span class="color14by32 tool" data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>
@@ -2946,7 +3083,7 @@ data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>
 work days. The Schedule <span class="color14by32 tool"
 data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>
-rule can be applied to the last digit of the <span class="tool"
+rule applies to the last digit of the <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year"><span class="overline">mi</span>d</span>
 or <span class="tool" data-bs-toggle="tooltip"
@@ -3410,16 +3547,15 @@ and combines the 6
 <span class="color10by32">I</span>, <span class="color17by32">O</span>,
 <span class="color24by32">U</span>, and
 <span class="color29by32">Y</span>, with acute accents ( ́) to create 6
-additional letters,
+additional accented letters,
 <span class="color01by32"><span class="acute">A</span></span>,
 <span class="color06by32"><span class="acute">E</span></span>,
 <span class="color11by32"><span class="acute">I</span></span>,
 <span class="color18by32"><span class="acute">O</span></span>,
 <span class="color25by32"><span class="acute">U</span></span>, and
 <span class="color30by32"><span class="acute">Y</span></span>, for a
-total of 32 letters. The 6 additional accented letters are included
-immediately after their unaccented antecedents as per the order of the
-English alphabet.
+total of 32 letters. The 6 new letters are included immediately after
+their unaccented antecedents as per the order of the English alphabet.
 
 <div class="column-margin">
 
@@ -3456,20 +3592,17 @@ data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>
 on even-numbered <a href="#p" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentadays">p</a> and Schedule
 <span class="color15by32 tool" data-bs-toggle="tooltip"
-data-bs-title="duotrigesimal M is decimal 17 or binary 01111">M</span>
+data-bs-title="duotrigesimal M is decimal 15 or binary 01111">M</span>
 on odd-numbered <a href="#p" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentadays">p</a>. Schedule <span class="color14by32 tool"
 data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span><span class="color15by32 tool"
 data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal M is decimal 15 or binary 01111">M</span>
-has 1 more work day per
+provides 1 extra work day per
 <a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of ten days">x</a> than Schedule
-<span class="color14by32 tool" data-bs-toggle="tooltip"
-data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>
-and provisions 255 work days per year without modifying the yearly
-transition shown in Diagrams
+data-bs-title="group of ten days">x</a> and 36 additional work days per
+year without modifying the yearly transition shown in Diagrams
 <a href="#fig-zerocomm" class="quarto-xref">2</a> and
 <a href="#fig-zeroleap" class="quarto-xref">3</a> above.
 
@@ -4010,8 +4143,8 @@ The [line
 chart](https://en.wikipedia.org/wiki/Line_chart#:~:text=a%20type%20of%20chart%20that%20displays%20information%20as%20a%20series%20of%20data%20points%20called%20%27markers%27%20connected%20by%20straight%20line%20segments)
 shows
 [ERA5](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview#:~:text=the%20fifth%20generation%20ECMWF%20reanalysis%20for%20the%20global%20climate%20and%20weather%20for%20the%20past%208%20decades)
-daily global mean temperatures for every
-<a href="#doy" class="tool" data-bs-toggle="tooltip"
+[daily global mean temperatures](https://pulse.climate.copernicus.eu)
+for every <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</a>. If we think of the method for
 assigning <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doy</a> to Dec seasons in
@@ -4698,7 +4831,7 @@ year:
 ${decYearColor2}+<span class="color299by365">299</span><span class="mono">${xmasDiffSign}</span>${xmasDiffColor1}.
 We can then subtract the
 <a href="#syl" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar year length">syl</a> to acquire the number of days
+data-bs-title="solar year length">syl</a> to find the number of days
 until <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color299by365">299</span> of next
 year:
@@ -5732,24 +5865,25 @@ Dec year+day dates can be expanded to display the “beginning of month”
 data-bs-toggle="tooltip" data-bs-title="beginning of month">bom</a>) and
 “[International Organization for
 Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization#:~:text=an%20independent%2C%20non%2Dgovernmental%2C%20international%20standard%20development%20organization)”
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>)
+(<a href="#iso" id="internationalorganizationforstandardization"
+class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>)
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</span>. We can think of the
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of month">bom</a> as
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of month">Dom</a> 0 even though no such
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of month">dom</a> exists. The
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of month">bom</a> is the day before the first
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of month">dom</a> because <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>
+data-bs-title="days of month">dom</a> because
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
 <a href="#dom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of month">dom</a> are one-based. To obtain a
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
@@ -5764,7 +5898,7 @@ ${dayofmonthColor}.
 ``` {ojs}
 //| echo: false
 //| label: boundsliders1
-//| className: sliders
+//| class: sliders
 //| code-copy: false
 Inputs.bind(Inputs.range([0, 364 + leapInput], {step: 1, label: "Day of year"}), viewof dotyInput)
 Inputs.bind(Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of year"}), viewof dotyInput1)
@@ -5830,36 +5964,36 @@ data-bs-title="positive integer day of year">pid</a>.
 
 To convert a <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> to or from an
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
 month and <a href="#dom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of month">dom</a>, we can use parts of the <a
 href="https://howardhinnant.github.io/date_algorithms.html#civil_from_days"
 class="mono under"><code>civil_from_days</code></a> and <a
 href="https://howardhinnant.github.io/date_algorithms.html#days_from_civil"
 class="mono under"><code>days_from_civil</code></a> algorithms (Hinnant
-2021+185). <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>
+2021+185). <a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
 months are one-based and
 <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="months of year">moy</a> are zero-based.
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
 Month 1 is <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="month of year">Moy</a>
 <span class="color306by365">10</span> and
 <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="month of year">Moy</a> <span class="color0">0</span> is
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
 Month 3. We can obtain a
 <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="month of year">moy</a> by plugging a
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> into
 <a href="#eq-pid2moy" class="quarto-xref">Equation 33</a> or an
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
 month into <a href="#eq-month2moy" class="quarto-xref">Equation 34</a>.
 
 <div id="equationgroup16" class="equationgroup">
@@ -5886,17 +6020,17 @@ dom = pid − bom   (37)
 
 </div>
 
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
 months and <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="months of year">moy</a> are shifted in relation to each
 other because the Dec epoch,
 <span class="color0">0000</span>+<span class="color0">000</span>,
 occurred 2 months or 60
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a> after the start of <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>
+data-bs-title="days">d</a> after the start of
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
 [Year
 0](https://en.wikipedia.org/wiki/ISO_8601#Years:~:text=1%20BC%20is%20labelled%20%2B0000):
 <span class="color99by100">-0001</span>+<span class="color306by365">306</span>.
@@ -5915,9 +6049,9 @@ data-bs-title="positive integer day of year">pid</a> is greater than
 <span class="color305by365">305</span>, the
 <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="month of year">moy</a> is greater than
-<span class="color275by365">9</span>, or the <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>
+<span class="color275by365">9</span>, or the
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
 month is less than <span class="color0">3</span>.
 
 <div id="equationgroup17" class="equationgroup">
@@ -6346,15 +6480,15 @@ dow<br>4
 
 Unlike weeks, Gregorian calendar months differ in length and therefore
 are not amenable to Dec date expansion. With a constant number of “days
-per month” (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days per month">dpm</span>), we could expand
+in month” (<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="days in month">dim</span>), we could expand
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginnings of month">bom</a> into <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="days per month">dpm</span>×<a href="#moy" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days in month">dim</span>×<a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="months of year">moy</a>. If <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="days per month">dpm</span> were
-a multiple of 7 and <a href="#dow" class="tool" data-bs-toggle="tooltip"
+data-bs-toggle="tooltip" data-bs-title="days in month">dim</span> were a
+multiple of 7 and <a href="#dow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of week">dow</a> reset at the
 <a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a>, we could use a “week of
@@ -6373,10 +6507,10 @@ data-bs-title="week of month">wom</a>×7+<a href="#dow" class="tool" data-bs-tog
 data-bs-title="days of week">dow</a>.
 
 With a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days per month">dpm</span> of 28, months would align with
+data-bs-title="days in month">dim</span> of 28, months would align with
 weeks and would be very close to aligning with a year: 364 = 13 × 28. A
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="days per month">dpm</span> of 35 would align months with
+data-bs-title="days in month">dim</span> of 35 would align months with
 both weeks and <a href="#p" class="tool" data-bs-toggle="tooltip"
 data-bs-title="pentadays">p</a>: 35 = 7 × 5. Sadly, the Gregorian
 calendar avoids all aligned alternatives, slams shut the perennial
@@ -6606,17 +6740,17 @@ expansion rule, Dec facilitates the comparison of
 <a href="#woy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="week of year">woy</a> dates to
 <a href="#bow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of week">bow</a> or <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>
+data-bs-title="beginning of week">bow</a> or
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
 [week
 dates](https://en.wikipedia.org/wiki/ISO_week_date#:~:text=a%20leap%20week%20calendar%20system%20that%20is%20part%20of%20the%20ISO%208601%20date%20and%20time%20standard%20issued%20by%20the%20International%20Organization%20for%20Standardization):
 1970-W01-4, <a href="#moy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="month of year">moy</a> dates to
 <a href="#bom" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of month">bom</a> or <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="International Organization for Standardization">ISO</span>
+data-bs-title="beginning of month">bom</a> or
+<a href="#iso" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International Organization for Standardization">ISO</a>
 [month
 dates](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates:~:text=Calendar%20dates-,YYYY%2DMM%2DDD,YYYY%2DMM,-%28but%20not):
 1970-01-01, <a href="#moy" class="tool" data-bs-toggle="tooltip"
@@ -7088,10 +7222,9 @@ radio input beneath the grid is set to “Lunar”, the grid portrays a
 lunar year, its rows depict lunar months, its row labels are zero-based
 lunar <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a>, and each of its
-columns holds moon diagrams that are in the same lunar phase and
-<a href="#dob" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of bimester">dob</a> which share the same last
-digit.
+columns contains <a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of bimester">dob</a> that have identical final
+digits and moon diagrams that represent the same lunar phase.
 
 When we instead set the “Layout” radio input to “Solar”, the values
 above the moon diagrams are still
@@ -7110,7 +7243,7 @@ to see how the lunation patterns of the two layouts change over time.
 ``` {ojs}
 //| echo: false
 //| label: mooninputs
-//| className: astroinputs
+//| class: astroinputs
 viewof moonyear = Inputs.number({
   label: "Year",
   value: +new URLSearchParams(new URL(document.baseURI).search).get("year") || new Date().getUTCFullYear(),
@@ -7443,12 +7576,12 @@ data-bs-title="days of era">doe</a> into
 data-bs-title="lunar intercalation difference">lid</a>. A
 <a href="#lid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="lunar intercalation difference">lid</a> date consists of
-the <a href="#yoe" class="tool" data-bs-toggle="tooltip"
+a <a href="#lid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lunar intercalation difference">lid</a> preceded by the
+<a href="#yoe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</a>+<a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a> of a lunar leap day
-followed by the associated
-<a href="#lid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="lunar intercalation difference">lid</a>:
+data-bs-title="positive integer day of year">pid</a> of the day after a
+lunar leap day:
 ${decDob59yColor}+${decDob59dColor}<span class="mono">-</span>${decLidColor}.
 
 <div id="equationgroup24" class="equationgroup">
@@ -7465,6 +7598,13 @@ $$
 </span>
 
 </div>
+
+Tracking lunar phases is a great example of how Dec date expansion
+allows Decalendar to do things that the Gregorian calendar cannot. Even
+without Dec date expansion, Decalendar is objectively better than the
+Gregorian calendar in every way, but what really sets Decalendar apart
+from other calendars is the seemingly limitless flexibility of Dec date
+expansion.
 
 # Moon
 
@@ -7531,9 +7671,9 @@ data-bs-title="day of year">doy</a> and the
 data-bs-title="spin orbit interval">soi</a> of year”
 (<a href="#soy" id="soiofyear" class="tool" data-bs-toggle="tooltip"
 data-bs-title="soi of year">soy</a>) would have a common origin and thus
-be easier to compare. As the initial lunar epoch, I would choose the
+be easier to compare. The initial Decalunar epoch is the
 <a href="#boy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of year">boy</a>
+data-bs-title="beginning of year">boy</a> of
 <span class="color76by100">1976</span>, the year of the [last lunar
 probe](https://en.wikipedia.org/wiki/List_of_lunar_probes#:~:text=Lunar%20exploration%20%281959%E2%80%93-,1976,-%29)
 of the [Space
@@ -7576,9 +7716,9 @@ data-bs-title="beginning of bimester">bob</a> and
 data-bs-title="day of bimester">dob</a>.
 
 A Decalunar lunar common year can be split evenly into 6 bimesters or 3
-quadrimesters: 342 = 6 × 57 = 3 × 114. Decalendar and Decalunar can
-follow the same lunar leap year pattern because the fractional part of
-12 [synodic
+[quadrimesters](https://en.wiktionary.org/wiki/quadrimester#:~:text=A%20period%20of%20four%20months%20or%20about%20four%20months):
+342 = 6 × 57 = 3 × 114. Decalendar and Decalunar can follow the same
+lunar leap year pattern because the fractional part of 12 [synodic
 months](https://en.wikipedia.org/wiki/Lunar_month#Synodic_month:~:text=the%20average%20period%20of%20the%20Moon%27s%20orbit%20with%20respect%20to%20the%20line%20joining%20the%20Sun%20and%20Earth)
 is nearly identical for days and
 <a href="#soi" class="tool" data-bs-toggle="tooltip"
@@ -7600,7 +7740,7 @@ data-bs-title="solar year length">syl</a> for precise timekeeping over
 long periods, and thus can adapt whenever the
 <a href="#lyl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="lunar year length">lyl</a> diverges from observed
-lunations. If need be, we can move a day or two between the
+lunations. If needed, we can move a day or two between the
 <a href="#bob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of bimester">bob</a> and
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
@@ -7742,7 +7882,7 @@ data-bs-title="taurs">c</a> for Jupiter.
 Mars lies near the outer edge of the [habitable
 zone](https://en.wikipedia.org/wiki/Habitable_zone#:~:text=the%20range%20of%20orbits%20around%20a%20star%20within%20which%20a%20planetary%20surface%20could%20potentially%20support%20liquid%20water)
 and is the outermost [terrestrial
-planets](https://en.wikipedia.org/wiki/Terrestrial_planet#:~:text=a%20class%20of%20planet%20that%20is%20composed%20primarily%20of%20silicate%2C%20rocks%2C%20or%20metals)
+planet](https://en.wikipedia.org/wiki/Terrestrial_planet#:~:text=a%20class%20of%20planet%20that%20is%20composed%20primarily%20of%20silicate%2C%20rocks%2C%20or%20metals)
 in our [Solar
 System](https://en.wikipedia.org/wiki/Solar_System#:~:text=the%20gravitationally%20bound%20system%20of%20the%20Sun%20and%20the%20masses%20that%20orbit%20it).
 The nearest possibly habitable
@@ -7790,59 +7930,203 @@ On Venus, a solar year is 224.7
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a> and a solar day is 116.75
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>. A Decyther year lasts 467
+data-bs-title="days">d</a>. A Decyther cycle lasts 467
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a> and can be split into 4
-[quadrimesters](https://en.wiktionary.org/wiki/quadrimester#:~:text=A%20period%20of%20four%20months%20or%20about%20four%20months)
-that are 116.75 <a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a> and can be split into 4 quadrimesters that
+are 116.75 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a> on average: 467 ÷ 4 = 116.75. Each Decyther
-quadrimester can be divided into 2 bimesters called the [ante
-meridiem](https://en.wikipedia.org/wiki/12-hour_clock#:~:text=%2C%20translating%20to%20%22-,before%20midday,-%22%29%20and%20p.m)
-and the [post
-meridiem](https://en.wikipedia.org/wiki/12-hour_clock#:~:text=%2C%20translating%20to%20%22-,after%20midday,-%22%29.%5B1).
-The ante meridiem is always 58
+quadrimester can be divided into 2 bimesters named after the two halves
+of a day on Earth:
+[ante](https://en.wikipedia.org/wiki/12-hour_clock#:~:text=%2C%20translating%20to%20%22-,before%20midday,-%22%29%20and%20p.m)
+and
+[post](https://en.wikipedia.org/wiki/12-hour_clock#:~:text=%2C%20translating%20to%20%22-,after%20midday,-%22%29.%5B1).
+Antes always last 58 <a href="#d" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days">d</a>, but posts can be 58 or 59
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>, but the post meridiem can be 58 or 59
-<a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days">d</a>.
+data-bs-title="days">d</a> long.
 
-The length in days is 117 <span class="mono">-</span> <a
-href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
-class="nounder">[</a>*i*
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-4 = 0<a
-href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
-class="nounder">]</a> for quadrimesters, 58 + <a
-href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
-class="nounder">[</a>*i*
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-8 ∈ {3, 5, 7}<a
-href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
-class="nounder">]</a> for bimesters, and 29 + <a
-href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
-class="nounder">[</a>*i*
-[mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-16 ∈ {7, 11, 15}<a
-href="https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise"
-class="nounder">]</a> for Venusian months, where *i* is the zero-based
-index of each Decyther unit. Decyther uses the same
-<a href="#yoe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year of era">yoe</a> and
+Each Decyther cycle comprises four antes and four posts. Any ante or the
+third post in every Decyther cycle can be evenly split into two Venusian
+short months: 58 ÷ 2 = 29. The other three posts consist of a Venusian
+short month and a Venusian long month: 59 = 29 + 30. Decalendar and
+Decyther have the same epoch and both derive their units from
+<a href="#doe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of era">doe</a>.
+
+Equations <a href="#eq-venusdoc" class="quarto-xref">61</a> to
+<a href="#eq-venusdom" class="quarto-xref">64</a> below turn
+<a href="#doe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of era">doe</a> into Decyther
+<a href="#doc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of cycle">doc</a>, “days of quadrimester”
+(<a href="#doq" id="dayofquadrimester" class="tool"
+data-bs-toggle="tooltip" data-bs-title="days of quadrimester">doq</a>),
+<a href="#dob" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of bimester">dob</a>, and
+<a href="#dom" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of month">dom</a>. To track Venusian solar days,
+Decyther expands the Decalendar
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer day of year">pid</a> as Decalendar, but
-expands <a href="#pid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="positive integer days of year">pid</a> into a “beginning
+data-bs-title="positive integer day of year">pid</a> into a “beginning
 of quadrimester”
 (<a href="#boq" id="beginningofquadrimester" class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="beginning of quadrimester">boq</a>) and “day of
-quadrimester” (<a href="#doq" id="dayofquadrimester" class="tool"
-data-bs-toggle="tooltip" data-bs-title="day of quadrimester">doq</a>).
+data-bs-title="beginning of quadrimester">boq</a>) and
+<a href="#doq" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of quadrimester">doq</a> as shown in
+<a href="#eq-venusboq" class="quarto-xref">Equation 65</a>. The
+<a href="#boq" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginning of quadrimester">boq</a> is the Venusian
+equivalent of midnight on Earth, the start of
+<a href="#doq" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of quadrimester">Doq</a> 0, and the boundary between
+quadrimesters.
+
+<div id="equationgroup28" class="equationgroup">
+
+<span id="eq-venusdoc">
+doc<sub>♀</sub> = doe mod  467   (61)
+</span>
+
+<span id="eq-doq">
+$$
+\text{doq}\_♀ = (\text{doc}\_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{doc}\_♀ \ge 350\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}) \bmod 117
+ \qquad(62)$$
+</span>
+
+<span id="eq-venusdob">
+$$
+\text{dob}\_♀ = \text{doq}\_♀ - 58 \ast \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{doq}\_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
+ \qquad(63)$$
+</span>
+
+<span id="eq-venusdom">
+$$
+\text{dom}\_♀ = \text{dob}\_♀ - 29 \ast \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{dob}\_♀ \ge 29\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
+ \qquad(64)$$
+</span>
+
+<span id="eq-venusboq">
+pid = boq<sub>♀</sub> + doq<sub>♀</sub>   (65)
+</span>
+
+</div>
+
+Similarly, the beginning of
+<a href="#doq" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of quadrimester">Doq</a> 58 is the Venusian
+equivalent of noon on Earth and separates an ante from the post that
+follows it. Apart from its North and South poles, the surface of Venus
+receives sunlight during the second half of an ante and the first half
+of a post
+([daytime](https://en.wikipedia.org/wiki/Daytime#:~:text=the%20period%20of%20the%20day%20in%20which%20the%20Sun%20is%20above%20the%20local%20horizon%20in%20a%20given%20location)),
+but not during the second half of a post and the first half of an ante
+([nighttime](https://en.wikipedia.org/wiki/Night#:~:text=the%20period%20of%20darkness%20when%20the%20Sun%20is%20below%20the%20horizon)).
+
+Regardless of whether we start the zero-based indexing of bimesters from
+the <a href="#boe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginning of era">boe</a>, the “beginning of cycle”
+(<a href="#boc" id="beginningofcycle" class="tool"
+data-bs-toggle="tooltip" data-bs-title="beginning of cycle">boc</a>), or
+<a href="#boq" class="tool" data-bs-toggle="tooltip"
+data-bs-title="beginning of quadrimester">boq</a>, a Decyther bimester
+is an ante if its index is even or a post if its index is odd. Equations
+<a href="#eq-qoc" class="quarto-xref">66</a> to
+<a href="#eq-moc" class="quarto-xref">68</a> below transform Decyther
+<a href="#doc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of cycle">doc</a> into “quadrimesters of cycle”
+(<a href="#qoc" id="quadrimesterofcycle" class="tool"
+data-bs-toggle="tooltip" data-bs-title="quadrimesters of cycle">qoc</a>),
+cycle-based bimester indexes, and “months of cycle”
+(<a href="#moc" id="monthofcycle" class="tool" data-bs-toggle="tooltip"
+data-bs-title="months of cycle">moc</a>).
+
+<div id="equationgroup29" class="equationgroup">
+
+<span id="eq-qoc">
+$$
+\text{qoc}\_♀ = \left\lfloor\dfrac{4\ast\text{doc}\_♀ + 1}{467}\right\rfloor
+ \qquad(66)$$
+</span>
+
+<span id="eq-venusbimester">
+$$
+\text{bimester}\_♀ = 2\ast\text{qoc}\_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{doq}\_♀ \ge 58\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
+ \qquad(67)$$
+</span>
+
+<span id="eq-moc">
+$$
+\text{moc}\_♀ = 2\ast\text{bimester}\_♀ + \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{dob}\_♀ \ge 29\href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
+ \qquad(68)$$
+</span>
+
+</div>
+
+<a href="#qoc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="quadrimester of cycle">Qoc</a> 2 is one day shorter than
+the other three <a href="#qoc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="quadrimesters of cycle">qoc</a>, because its post,
+Bimester 5, is one day shorter than the other three posts in a cycle.
+The missing day is called an extracalation and can be attributed to
+<a href="#moc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of cycle">Moc</a> 11, the second month of Bimester
+5. Instead of indexes, Decyther tells us when a day will go missing
+using “Venusian extracalation differences”
+(<a href="#ved" id="venusianextracalationdifference" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="Venusian extracalation differences">ved</a>).
+
+In Decyther, <a href="#ved" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Venusian extracalation differences">ved</a> count down
+the days until the end of
+<a href="#doc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of cycle">Doc</a> 349, the final day of
+<a href="#qoc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="quadrimester of cycle">Qoc</a> 2, Bimester 5, and
+<a href="#moc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of cycle">Moc</a> 11. Therefore,
+<a href="#ved" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Venusian extracalation differences">ved</a> are the
+Decyther analog of Decalendar
+<a href="#lid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="lunar intercalation differences">lid</a>. Equations
+<a href="#eq-ved2doc" class="quarto-xref">69</a> and
+<a href="#eq-doc2ved" class="quarto-xref">70</a> below convert between
+<a href="#ved" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Venusian extracalation differences">ved</a> and Decyther
+<a href="#doc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of cycle">doc</a>. To produce a
+<a href="#ved" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Venusian extracalation difference">ved</a> date, we
+append a <a href="#ved" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Venusian extracalation difference">ved</a> to the
+<a href="#yoe" class="tool" data-bs-toggle="tooltip"
+data-bs-title="year of era">yoe</a>+<a href="#pid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="positive integer day of year">pid</a> of Decyther
+<a href="#doc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="day of cycle">Doc</a> 350, the first day of
+<a href="#qoc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="quadrimester of cycle">Qoc</a> 3, Bimester 6, and
+<a href="#moc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="month of cycle">Moc</a> 12.
+
+<div id="equationgroup30" class="equationgroup">
+
+<span id="eq-ved2doc">
+doc<sub>♀</sub> = (ved + 817) mod  467   (69)
+</span>
+
+<span id="eq-doc2ved">
+ved = (doc<sub>♀</sub> + 117) mod  467 − 467   (70)
+</span>
+
+</div>
 
 Venus and Mars often appear to be dissimilar to Earth in completely
 opposite ways and it seems that when one is similar to Earth, the other
-is not. For example, the axial tilts of Earth, Mars, and Venus are 6.5,
-7, and 49.25 <span class="tool" data-bs-toggle="tooltip"
+is not. For example, the axial tilts of Earth, Mars, and Venus are 6.51,
+7.00, and 49.27 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundredths of a turn">centiturns</span>, respectively.
 The unique characteristics of these three planets present an opportunity
 to showcase the versatility of Decalendar.
@@ -8267,6 +8551,8 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#dayofxun" id="dox">dox</a>: day of xún
   - <a href="#dayofpentaday" id="dop">dop</a>: day of pentaday
   - <a href="#dayofmonth" id="dom">dom</a>: day of month
+  - dom<sub>♀</sub>: Decyther day of month, 0 to 28 in Venusian short
+    months or 0 to 29 in Venusian long months
   - <a href="#dayofweek" id="dow">dow</a>: day of week
   - <a href="#dayofyear" id="doy">doy</a>: day of year, xún \* 10 + dox
   - <a href="#positiveintegerdoy" id="pid">pid</a>: positive integer day
@@ -8281,27 +8567,38 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#dayofera" id="doe">doe</a>: day of era, days since the Dec
     epoch
   - <a href="#dayofcycle" id="doc">doc</a>: day of cycle, days since the
-    start of the current 400-year cycle, 0 to 146096
+    start of the current 400-year Gregorian cycle, 0 to 146096
+  - doc<sub>♀</sub>: Decyther day of cycle, days since the start of the
+    current 467-day Venusian cycle, doe mod 467, 0 to 466
   - <a href="#dayofhectoday" id="doh">doh</a>: day of hectoday, doy mod
     100, the percent of a hectoday that has elapsed
   - <a href="#dayofbimester" id="dob">dob</a>: day of bimester, 0 to 58
     in common bimesters or 0 to 59 in leap bimesters
+  - dob<sub>♀</sub>: Decyther day of bimester, 0 to 57 in antes and the
+    post of Qoc 2 or 0 to 58 in the other posts
   - <a href="#dayoftricennium" id="dot">dot</a>: day of tricennium, days
     since the start of the current 30-year lunar cycle, 0 to 10630
   - <a href="#dayofquadrimester" id="doq">doq</a>: day of quadrimester,
     days since the beginning of a Decyther quadrimester, 0 to 115 or 116
   - <a href="#beginningofquadrimester" id="boq">boq</a>: beginning of
     quadrimester, the pid of Doq 0, pid - doq
+  - <a href="#quadrimesterofcycle" id="qoc">qoc</a>: quadrimester of
+    cycle, zero-based index of a Decyther quadrimester, 0 to 3
   - <a href="#beginningofbimester" id="bob">bob</a>: beginning of
     bimester, the pid of Dob 0, pid - dob
   - <a href="#beginningofmonth" id="bom">bom</a>: beginning of month,
     the pid of the day before the first day of the month, pid - dom
+  - <a href="#monthofcycle" id="moc">moc</a>: month of cycle, zero-based
+    index of a Venusian month, 0 to 15
   - <a href="#beginningofweek" id="bow">bow</a>: beginning of week, the
     pid of Dow 0, pid - dow
   - <a href="#beginningofyear" id="boy">boy</a>: beginning of year,
     midnight at the start of Day 0
   - <a href="#beginningofera" id="boe">boe</a>: beginning of era,
     midnight at the start of Day 0 of Year 0
+  - <a href="#beginningofcycle" id="boc">boc</a>: beginning of cycle,
+    the start of Doc<sub>♀</sub> 0 and of the first ante in a Decyther
+    cycle
   - <a href="#endofyear" id="eoy">eoy</a>: end of year, midnight at the
     end of Day 364 or 365
   - <a href="#Juliandaynumber" id="jdn">jdn</a>: Julian day number, days
@@ -8309,6 +8606,11 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#lunarintercalationdifference" id="lid">lid</a>: lunar
     intercalation difference, a lunar nid that only resets after lunar
     leap years, -1063 to -1
+  - <a href="#venusianextracalationdifference" id="ved">ved</a>:
+    Venusian extracalation difference, days until the end of
+    Doc<sub>♀</sub> 349, the last day of the one-day-shorter Qoc 2,
+    Bimester 5, and Moc 11, (doc<sub>♀</sub> + 117) mod 467 - 467, -467
+    to -1
   - <a href="#misalignedunitdifference" id="mud">mud</a>: misaligned
     unit difference, pid - dom - dow
   - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
@@ -9553,6 +9855,12 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color345by365 {
+  background: #ff008f;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color354by366 {
   background: #ff0071;
   color: white;
@@ -10136,7 +10444,7 @@ div#leapscrubvert form > label, div.sliders form > label {
   white-space: nowrap;
 }
 /* div.sliders wraps the Day of year/Month/Day of month range inputs
-   (className: sliders). Fixed label width lines up every text box in
+   (class: sliders). Fixed label width lines up every text box in
    the same column; the range track itself keeps Observable Inputs'
    default width so it matches the sliders on other dec pages. */
 div.sliders form {
@@ -10156,7 +10464,7 @@ input[type="number"] {
   width: 120px;
 }
 /* Day of bimester (dob) "Year" number input and "Layout" radio
-   (className: astroinputs). Give the Year input breathing room from its
+   (class: astroinputs). Give the Year input breathing room from its
    label, and keep "Dec"/"Gregorian" together on one line even on narrow
    mobile widths instead of letting the second option wrap. */
 div.astroinputs input[type="number"] {
@@ -10171,6 +10479,61 @@ div.astroinputs form:has(input[type="radio"]) > div {
 }
 div.astroinputs form:has(input[type="radio"]) label {
   white-space: nowrap;
+}
+/* Below 30em (480px) Observable Inputs switches to a stacked layout
+   (label width: 100%, no fixed form width). With flex-wrap: nowrap above,
+   that made the label and the number+range wrapper split each row,
+   squeezing the slider and misaligning rows. Rebuild the dec-style row
+   instead: fixed label and number columns, slider fills the rest. */
+@media (max-width: 479.98px) {
+  div.sliders > div.cell-output-display {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  div.sliders form.oi-3a86ea {
+    width: 100%;
+    padding-right: 0;
+  }
+  div.sliders form.oi-3a86ea > label {
+    flex: 0 0 108px;
+    width: auto;
+    min-width: 0;
+    white-space: nowrap;
+  }
+  div.sliders form.oi-3a86ea > div {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  div.sliders form.oi-3a86ea input[type="number"] {
+    flex: 0 0 73px;
+    width: auto;
+  }
+  div.sliders form.oi-3a86ea input[type="range"] {
+    flex: 1 1 auto;
+    width: auto;
+  }
+  /* Year input and Layout radio side by side on one line */
+  div.astroinputs {
+    flex-wrap: nowrap;
+  }
+  div.astroinputs > div.cell-output-display {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+  div.astroinputs > div.cell-output-display ~ div.cell-output-display {
+    margin-left: auto;
+  }
+  div.astroinputs form.oi-3a86ea {
+    padding-right: 0;
+  }
+  div.astroinputs form.oi-3a86ea > label {
+    flex: 0 0 auto;
+    width: auto;
+    padding-bottom: 0;
+  }
+  div.astroinputs input[type="number"] {
+    width: 72px;
+  }
 }
 #centerradio {
   margin-bottom: 3px;
@@ -10299,6 +10662,12 @@ code {
 .playingcardsuit span:not(:has(*)),
 .countingrod span:not(:has(*)) {
   font-variant-emoji: text;
+  /* The padding below is tuned for Tahoma metrics. iOS has no Tahoma, so
+     when the Google Fonts Tahoma import fails or is slow, the page falls
+     back to Palatino and the glyphs ride up out of their colored boxes.
+     Verdana ships on iOS and has nearly identical vertical metrics.
+     !important beats the inline font-family: inherit set by the OJS spans. */
+  font-family: Tahoma, Verdana, sans-serif !important;
 }
 .dieface, .firstdieface {
   display: inline-flex;
@@ -10378,8 +10747,11 @@ code {
 #decseasonplot {
   overflow: visible;
 }
+/* Trim the PNGs' blank top/bottom bands (95px and 59px of 1440px wide).
+   Vertical % margins resolve against width, so the trim scales with the
+   image instead of clipping the axes when it shrinks on mobile. */
 #segme figure.figure {
-  margin: -45px 0px -25px 0px;
+  margin: -6% 0px -3.5% 0px;
 }
 #segme div.cell-output {
   overflow: hidden;

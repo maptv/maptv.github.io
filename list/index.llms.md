@@ -22,9 +22,9 @@ Introducing Decalendar, a solar calendar which measures time in years and days w
 
 |            |              |
 |------------|--------------|
-| Word Count | 54,421 words |
+| Word Count | 54,422 words |
 
-1791483419
+1791491982
 
 ![](../asset/daywide.svg)
 
