@@ -1,7 +1,7 @@
 ```{ojs}
 //| echo: false
 //| label: mooninputs
-//| className: astroinputs
+//| class: astroinputs
 viewof moonyear = Inputs.number({
   label: "Year",
   value: +new URLSearchParams(new URL(document.baseURI).search).get("year") || new Date().getUTCFullYear(),

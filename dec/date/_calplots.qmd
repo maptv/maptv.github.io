@@ -19,7 +19,7 @@ viewof leapscrub = Inputs.form([
 ```{ojs}
 //| echo: false
 //| label: calsliders
-//| className: sliders
+//| class: sliders
 viewof dotyInput = Inputs.range([0, 364 + leapInput], {value: 306, step: 1, label: "Day of year"});
 viewof dotyInput1 = transformInput(
   Inputs.range([-365 - leapInput, -1], {step: 1, label: "Day of year"}),

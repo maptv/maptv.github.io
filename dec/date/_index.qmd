@@ -1617,7 +1617,7 @@ div#leapscrubvert form > label, div.sliders form > label {
   white-space: nowrap;
 }
 /* div.sliders wraps the Day of year/Month/Day of month range inputs
-   (className: sliders). Fixed label width lines up every text box in
+   (class: sliders). Fixed label width lines up every text box in
    the same column; the range track itself keeps Observable Inputs'
    default width so it matches the sliders on other dec pages. */
 div.sliders form {
@@ -1637,7 +1637,7 @@ input[type="number"] {
   width: 120px;
 }
 /* Day of bimester (dob) "Year" number input and "Layout" radio
-   (className: astroinputs). Give the Year input breathing room from its
+   (class: astroinputs). Give the Year input breathing room from its
    label, and keep "Dec"/"Gregorian" together on one line even on narrow
    mobile widths instead of letting the second option wrap. */
 div.astroinputs input[type="number"] {
@@ -1652,6 +1652,61 @@ div.astroinputs form:has(input[type="radio"]) > div {
 }
 div.astroinputs form:has(input[type="radio"]) label {
   white-space: nowrap;
+}
+/* Below 30em (480px) Observable Inputs switches to a stacked layout
+   (label width: 100%, no fixed form width). With flex-wrap: nowrap above,
+   that made the label and the number+range wrapper split each row,
+   squeezing the slider and misaligning rows. Rebuild the dec-style row
+   instead: fixed label and number columns, slider fills the rest. */
+@media (max-width: 479.98px) {
+  div.sliders > div.cell-output-display {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  div.sliders form.oi-3a86ea {
+    width: 100%;
+    padding-right: 0;
+  }
+  div.sliders form.oi-3a86ea > label {
+    flex: 0 0 108px;
+    width: auto;
+    min-width: 0;
+    white-space: nowrap;
+  }
+  div.sliders form.oi-3a86ea > div {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  div.sliders form.oi-3a86ea input[type="number"] {
+    flex: 0 0 73px;
+    width: auto;
+  }
+  div.sliders form.oi-3a86ea input[type="range"] {
+    flex: 1 1 auto;
+    width: auto;
+  }
+  /* Year input and Layout radio side by side on one line */
+  div.astroinputs {
+    flex-wrap: nowrap;
+  }
+  div.astroinputs > div.cell-output-display {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+  div.astroinputs > div.cell-output-display ~ div.cell-output-display {
+    margin-left: auto;
+  }
+  div.astroinputs form.oi-3a86ea {
+    padding-right: 0;
+  }
+  div.astroinputs form.oi-3a86ea > label {
+    flex: 0 0 auto;
+    width: auto;
+    padding-bottom: 0;
+  }
+  div.astroinputs input[type="number"] {
+    width: 72px;
+  }
 }
 #centerradio {
   margin-bottom: 3px;
@@ -1780,18 +1835,24 @@ code {
 .playingcardsuit span:not(:has(*)),
 .countingrod span:not(:has(*)) {
   font-variant-emoji: text;
+  /* The padding below is tuned for Tahoma metrics. iOS has no Tahoma, so
+     when the Google Fonts Tahoma import fails or is slow, the page falls
+     back to Palatino and the glyphs ride up out of their colored boxes.
+     Verdana ships on iOS and has nearly identical vertical metrics.
+     !important beats the inline font-family: inherit set by the OJS spans. */
+  font-family: Tahoma, Verdana, sans-serif !important;
 }
 .dieface, .firstdieface {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 20px;
-  padding: 0.9px 0px 8.8px 0px;
+  padding: 1.9px 0px 8.8px 0px;
   font-size: 29px;
   width: 20px;
 }
 .firstdieface {
-  padding: 0px 0px 7.8px 0.75px;
+  padding: 1px 0px 7.8px 0.75px;
 }
 .playingcard span:not(:has(*)) {
   padding-bottom: 6.5px !important;
@@ -1845,7 +1906,7 @@ code {
 .bigcard {
   font-size: 56px;
   position: relative;
-  bottom: 46px;
+  bottom: 45px;
   display: block;
   margin-bottom: -78px;
 }
@@ -1859,8 +1920,11 @@ code {
 #decseasonplot {
   overflow: visible;
 }
+/* Trim the PNGs' blank top/bottom bands (95px and 59px of 1440px wide).
+   Vertical % margins resolve against width, so the trim scales with the
+   image instead of clipping the axes when it shrinks on mobile. */
 #segme figure.figure {
-  margin: -45px 0px -25px 0px;
+  margin: -6% 0px -3.5% 0px;
 }
 #segme div.cell-output {
   overflow: hidden;
