@@ -95,7 +95,7 @@ nDaysInput = 365 + leapInput
 nDaysnOffInput = nDaysInput - nOffInput
 function doty2greg(doty = 0) {
     const m = Math.floor((5 * doty + 2) / 153);
-    return new Date(calYear, Math.floor(m < 10 ? m + 3 : m - 9) - 1, doty - Math.floor((153 * m + 2) / 5) + 1);
+    return new Date(Date.UTC(calYear, Math.floor(m < 10 ? m + 3 : m - 9) - 1, doty - Math.floor((153 * m + 2) / 5) + 1));
 }
 function doty2month(doty = 0) {
     return doty2greg((doty + nDaysnOffInput) % nDaysInput).getUTCMonth() + 1
@@ -565,12 +565,12 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
 motyLens = [31, 30, 31, 30, 31, 31, 30, 31, 30, 31, 31, 28 + leapInput];
 moonNums = ["306", "337", "0", "31", "61", "92", "122", "153", "184", "214", "245", "275"];
 calYear = !leapInput && dotwInput == "Mon" ? 6 : !leapInput && dotwInput == "Tue" ? 7 : !leapInput && dotwInput == "Wed" ? 2 : !leapInput && dotwInput == "Thu" ? 3 : !leapInput && dotwInput == "Fri" ? 9 : !leapInput && dotwInput == "Sat" ? 10 : !leapInput && dotwInput == "Sun" ? 11 : leapInput && dotwInput == "Mon" ? 12 : leapInput && dotwInput == "Tue" ? 24 : leapInput && dotwInput == "Wed" ? 8 : leapInput && dotwInput == "Thu" ? 20 : leapInput && dotwInput == "Fri" ? 4 : leapInput && dotwInput == "Sat" ? 16 : leapInput && dotwInput == "Sun" ? 28 : 0;
-datesCal = d3.utcDays(new Date(calYear, 0, 0), new Date(calYear, 12, 0));
+datesCal = d3.utcDays(new Date(Date.UTC(calYear, 0, 1)), new Date(Date.UTC(calYear + 1, 0, 1)));
 leapInput = leapscrub[0]
 nOffInput = leapscrub[1]
 coloInput = leapscrub[2]
 layoInput = leapscrub[3]
-dates = d3.utcDays(new Date(1999, 2, 0), new Date(2000, 1, 28 + leapInput));
+dates = d3.utcDays(new Date(Date.UTC(1999, 2, 1)), new Date(Date.UTC(2000, 1, 29 + leapInput)));
 numbers = Array.from({length: 366}, (_, i) => i)
 set(viewof dotyInput, leapscrub[4])
 dotyInputNeg = dotyInput - nDaysInput 
