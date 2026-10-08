@@ -1,6 +1,6 @@
 # Decalendar
 Martin Laptev
-2026+200
+2026+222
 
 - [Decalendar](#decalendar)
 - [Day of year (doy)](#sec-doy)
@@ -4186,8 +4186,8 @@ model with 5
 [breakpoints](https://en.wikipedia.org/wiki/Segmented_regression#:~:text=The%20boundaries%20between%20the%20segments)
 fit to the data. The model
 [explained](https://en.wikipedia.org/wiki/Coefficient_of_determination#Adjusted_R2:~:text=an%20attempt%20to%20account%20for%20the%20phenomenon%20of%20the%20R2%20automatically%20increasing%20when%20extra%20explanatory%20variables%20are%20added%20to%20the%20model)
-almost 92% of the variation in the data and was only off by less than
-0.35 degrees Celsius [on
+almost 92% of the variation in the data and was off by less than 0.35
+degrees Celsius [on
 average](https://en.wikipedia.org/wiki/Mean_absolute_error#:~:text=a%20measure%20of%20errors%20between%20paired%20observations%20expressing%20the%20same%20phenomenon).
 
 If the model predicted temperature using the year and
@@ -4595,7 +4595,7 @@ of era”
 (<a href="#boe" id="beginningofera" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of era">boe</a>) and never restarted before or
 after the <a href="#boe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="beginning of era">boe</a>: midnight on
+data-bs-title="beginning of era">boe</a>, which is midnight on
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color0">0</span> of Year
 <span class="color0">0</span> (y<span class="color0">0</span>).
@@ -8442,7 +8442,7 @@ references:
   title: Decalendar
   url: https://maptv.github.io/dec/date
   issued:
-    literal: 2026+200
+    literal: 2026+222
 ```
 
 </div>
@@ -8483,7 +8483,7 @@ yaml format.
   author = "Martin Laptev",
   title = "Decalendar",
   url = "https://maptv.github.io/dec/date",
-  year = 2026+200
+  year = 2026+222
 }
 ```
 
@@ -10674,12 +10674,12 @@ code {
   align-items: center;
   justify-content: center;
   height: 20px;
-  padding: 0.9px 0px 8.8px 0px;
+  padding: 1.9px 0px 8.8px 0px;
   font-size: 29px;
   width: 20px;
 }
 .firstdieface {
-  padding: 0px 0px 7.8px 0.75px;
+  padding: 1px 0px 7.8px 0.75px;
 }
 .playingcard span:not(:has(*)) {
   padding-bottom: 6.5px !important;
@@ -10733,7 +10733,7 @@ code {
 .bigcard {
   font-size: 56px;
   position: relative;
-  bottom: 46px;
+  bottom: 45px;
   display: block;
   margin-bottom: -78px;
 }
