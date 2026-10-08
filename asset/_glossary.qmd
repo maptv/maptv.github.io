@@ -27,8 +27,11 @@
     - [dot](#dayoftricennium){#dot}: day of tricennium, days since the start of the current 30-year lunar cycle, 0 to 10630
     - [doq](#dayofquadrimester){#doq}: day of quadrimester, days since the beginning of a Decyther quadrimester, 0 to 115 or 116
     - [boq](#beginningofquadrimester){#boq}: beginning of quadrimester, the pid of Doq 0, pid - doq
+    - [qoc](#quadrimesterofcycle){#qoc}: quadrimester of cycle, zero-based index of a Decyther quadrimester, 0 to 3
     - [bob](#beginningofbimester){#bob}: beginning of bimester, the pid of Dob 0, pid - dob
+    - [boc](#bimesterofcycle){#boc}: bimester of cycle, zero-based index of a Decyther bimester, 0 to 7, even for antes and odd for posts
     - [bom](#beginningofmonth){#bom}: beginning of month, the pid of the day before the first day of the month, pid - dom
+    - [moc](#monthofcycle){#moc}: month of cycle, zero-based index of a Venusian month, 0 to 15
     - [bow](#beginningofweek){#bow}: beginning of week, the pid of Dow 0, pid - dow
     - [boy](#beginningofyear){#boy}: beginning of year, midnight at the start of Day 0
     - [boe](#beginningofera){#boe}: beginning of era, midnight at the start of Day 0 of Year 0
