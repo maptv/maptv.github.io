@@ -16,15 +16,15 @@ Introducing Dec, a measurement system, which uses turns instead of months, weeks
 
 ##### Decalendar
 
-214 min
+217 min
 
 Introducing Decalendar, a solar calendar which measures time in years and days without the need for months or weeks.
 
 |            |              |
 |------------|--------------|
-| Word Count | 42,721 words |
+| Word Count | 43,247 words |
 
-1791032426
+1791441185
 
 ![](../asset/daywide.svg)
 
