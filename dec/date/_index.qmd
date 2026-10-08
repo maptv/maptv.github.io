@@ -1028,6 +1028,12 @@ p:has(.radiotitle) {
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color345by365 {
+  background: #ff008f;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color354by366 {
   background: #ff0071;
   color: white;
