@@ -22,9 +22,9 @@ Introducing Decalendar, a solar calendar which measures time in years and days w
 
 |            |              |
 |------------|--------------|
-| Word Count | 54,422 words |
+| Word Count | 54,423 words |
 
-1791491982
+1791579339
 
 ![](../asset/daywide.svg)
 
@@ -38,7 +38,7 @@ Introducing Declock, a timekeeping system that displays time in decimal days usi
 |------------|--------------|
 | Word Count | 45,069 words |
 
-1789835307
+1791568934
 
 ![](../asset/1939ww2europe.svg)
 
