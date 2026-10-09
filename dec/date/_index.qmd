@@ -59,7 +59,7 @@ function yd2dow(year = 1969, doty = 306) {
   return dote2dotw(date2dote(year, doty)[0]);
 }
 function unix2lid(unix) {
-  const dot = (Math.floor(unix / 86400000) + 7200) % 10631,
+  const dot = (Math.floor(unix / 86400000) + 7199) % 10631,
     leapsBefore = Math.floor((11 * Math.floor((30 * dot + 15) / 10631) + 14) / 30);
   return dot - leapsBefore - 354 * Math.floor((30 * leapsBefore + 15) / 11) - 355;
 }
@@ -291,6 +291,7 @@ decYearLastBowSumColor = textcolor(decYearLastBowSum, decYearLastBowSumPiece)
 decYearLastBowSumColor1 = textcolor(decYearLastBowSumPad, decYearLastBowSumPiece)
 decYearLastBowSumPad = decYearLastBowSum.toString().padStart(3, "0")
 decDoty = Math.floor(ydz[1])
+decDotyDays = decDoty === 1 ? "day" : "days"
 decDotyByNdaysInput = decDoty / nDaysInput
 decDotyPiece = piecewiseColor(decDotyByNdaysInput)
 decDotyColor = textcolor(decDoty, decDotyPiece)
@@ -430,11 +431,12 @@ decDotp = decDotd % 5
 decPent = decDek * 2 + (decDotd > 4)
 decPentColor = textcolor(decPent, piecewiseColor(decPent * 5 / 365))
 decDotpColor = textcolor(decDotp, piecewiseColor(decDotp / 5))
-decDot = (Math.floor(dz[0]) + 9) % 10631
+decDot = (Math.floor(dz[0]) + 8) % 10631
 decYot = Math.floor((30 * decDot + 15) / 10631)
 decLeapCount = Math.floor((11 * decYot + 14) / 30)
 decDoly = decDot - 354 * decYot - decLeapCount
 decDob = decDoly === 354 ? 59 : decDoly % 59
+decDobDays = decDob === 1 ? "day" : "days"
 decLid = decDot - decLeapCount - 354 * Math.floor((30 * decLeapCount + 15) / 11) - 355
 decLidAbs = Math.abs(decLid)
 decDob59yd = dote2date(dz[0] + decLidAbs)
@@ -472,7 +474,10 @@ xmasDiffColor1 = textcolor(xmasDiffAbs, xmasDiffPiece)
 xmasNext = xmasDiff - nDaysInput
 xmasNextColor = textcolor(Math.abs(xmasNext), xmasDiffPiece)
 xmasDiffSign = xmasDiff < 0 ? "-" : "+"
-xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
+xmasDiffSince = xmasDiffAbs === 1
+  ? (xmasDiff < 0 ? "is left until" : "has passed since")
+  : (xmasDiff < 0 ? "are left until" : "have passed since")
+xmasDiffDays = xmasDiffAbs === 1 ? "day" : "days"
 xmasDiffResult = xmasDiff < 0 ? "-" : ""
 xmasDote = date2dote(decYear, 299)[0]
 xmasDotw = dote2dotw(xmasDote)
@@ -545,6 +550,7 @@ dotw0sign = dotw0doty < 0 ? "-" : "+"
 dotw0signIfNeg = dotw0doty < 0 ? "-" : ""
 nDaysInYear = 365 + year2leap(decYear + 1)
 Tminus = nDaysInYear - decDoty
+TminusDays = Tminus === 1 ? "day" : "days"
 TminusColor = textcolor(Tminus, decDotyPiece)
 TminusColor1 = textcolor(Tminus, decDotyPiece)
 TminusColor2 = textcolor(Tminus, decDotyPiece)
@@ -692,17 +698,16 @@ easyDoy = dotyInput < (80 + leapInput) ? dotyInput : dotyInputNeg
 easyDoyColor = textcolor(easyDoy, piecewiseColor(dotyInput / nDaysInput))
 easySum = easyDoy + 285
 easySumColor = textcolor(easySum, piecewiseColor(easySum / nDaysInput))
-// https://astropixels.com/ephemeris/phasescat/phases-0099.html#:~:text=24%20%2000%3A27-,Mar%20%201%20%2023%3A01,-Mar%20%208%20%2023
-// (719468 + 9) % 10631 = 7200
+// (719468 + 8) % 10631 = 7199
 function unix2dob(unix) {
-  const doe = unix / 86400000 + 7200,
+  const doe = unix / 86400000 + 7199,
   doc = doe % 10631,
   yoc = Math.floor((30 * doc + 10646) / 10631) - 1,
   doy = Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30)))
   return doy === 354 ? "0\u0300" : doy % 59;
   }
 function unix2dobSort(unix) {
-  const doe = unix / 86400000 + 7200,
+  const doe = unix / 86400000 + 7199,
   doc = doe % 10631,
   yoc = Math.floor((30 * doc + 10646) / 10631) - 1;
   return Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30)));
@@ -711,7 +716,7 @@ function doly2dob(doly) {
   return doly === 354 ? "0\u0300" : doly % 59;
   }
 function unix2doly(unix) {
-  const dot = Math.floor(unix / 86400000 + 7200) % 10631,
+  const dot = Math.floor(unix / 86400000 + 7199) % 10631,
   yot = Math.floor((30 * dot + 15) / 10631);
   return dot - Math.floor((11 * yot + 14) / 30);
   }

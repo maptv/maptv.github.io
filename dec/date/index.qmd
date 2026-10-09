@@ -119,7 +119,7 @@ leap(2020)
 
 :::
 
-Dec categorizes each date as a [countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event%20is%20scheduled%20to%20occur) or countup date, depending on whether the date counts **up** the days **since** Year [y](#y){.tool data-bs-toggle="tooltip" data-bs-title="year"} or counts **down** the days **until** Year [y](#y){.tool data-bs-toggle="tooltip" data-bs-title="year"}+1. The current year+day [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} date, [\${decYearColor}[+]{.mono}\${decDotyPadColor}]{.nowrap}, informs us that Year \${decYearColor1} began \${decDotyColor} days ago, whereas its countdown equivalent, [\${nextYearColor}[-]{.mono}\${TminusPaddedColor}]{.nowrap}, tells us that Year \${nextYearColor1} will begin in \${TminusColor} days.
+Dec categorizes each date as a [countdown](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining%20before%20an%20event%20is%20scheduled%20to%20occur) or countup date, depending on whether the date counts **up** the days **since** Year [y](#y){.tool data-bs-toggle="tooltip" data-bs-title="year"} or counts **down** the days **until** Year [y](#y){.tool data-bs-toggle="tooltip" data-bs-title="year"}+1. The current year+day [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} date, [\${decYearColor}[+]{.mono}\${decDotyPadColor}]{.nowrap}, informs us that Year \${decYearColor1} began \${decDotyColor} \${decDotyDays} ago, whereas its countdown equivalent, [\${nextYearColor}[-]{.mono}\${TminusPaddedColor}]{.nowrap}, tells us that Year \${nextYearColor1} will begin in \${TminusColor} \${TminusDays}.
 
 ::: {.equationgroup #equationgroup02}
 $$\text{y}+\dfrac{\text{pid}}{\text{syl}} = \text{y} + 1 + \dfrac{\text{nid}}{\text{syl}}$$ {#eq-updown}
@@ -697,7 +697,7 @@ In @eq-dowdif, [dow](#dow){.tool data-bs-toggle="tooltip" data-bs-title="day of 
 [**Deck**aday the halls](https://en.wikipedia.org/wiki/Deck_the_Halls#:~:text=a%20traditional%20Christmas%20carol.) with [**dow~S~**]{.tool data-bs-toggle="tooltip" data-bs-title="days of week"} of holly! Fa + la &times; 8! 'Tis the **[hectoday]{.tool data-bs-toggle="tooltip" data-bs-title="hundred days"}** to be jolly! Aren't you thankful that I couldn't *thank* of a Thanksgiving pun?
 :::
 
-When the current [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} is the minuend and [299]{.color299by365} is the subtrahend, the difference is the number of days *until* [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[299]{.color299by365} if it is negative or the days *since* [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[299]{.color299by365} if it is positive. The current difference tells us that \${xmasDiffColor} days \${xmasDiffSince} [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[299]{.color299by365} of this year: \${decYearColor2}+[299]{.color299by365}[\${xmasDiffSign}]{.mono}\${xmasDiffColor1}. We can then subtract the [syl](#syl){.tool data-bs-toggle="tooltip" data-bs-title="solar year length"} to find the number of days until [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[299]{.color299by365} of next year: \${nextYearColor6}+[299]{.color299by365}[-]{.mono}\${xmasNextColor}.
+When the current [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer day of year"} is the minuend and [299]{.color299by365} is the subtrahend, the difference is the number of days *until* [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[299]{.color299by365} if it is negative or the days *since* [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[299]{.color299by365} if it is positive. The current difference tells us that \${xmasDiffColor} \${xmasDiffDays} \${xmasDiffSince} [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[299]{.color299by365} of this year: \${decYearColor2}+[299]{.color299by365}[\${xmasDiffSign}]{.mono}\${xmasDiffColor1}. We can then subtract the [syl](#syl){.tool data-bs-toggle="tooltip" data-bs-title="solar year length"} to find the number of days until [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="day"}[299]{.color299by365} of next year: \${nextYearColor6}+[299]{.color299by365}[-]{.mono}\${xmasNextColor}.
 
 # Year of era (yoe) {#sec-yoe}
 
@@ -1132,7 +1132,7 @@ To obtain a [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bim
 
 ::: {.equationgroup #equationgroup20}
 $$
-\text{dot} = (\text{doe} + 9) \bmod 10631
+\text{dot} = (\text{doe} + 8) \bmod 10631
 $$ {#eq-dot}
 
 $$
@@ -1157,7 +1157,7 @@ $$ {#eq-dob}
 
 ```{julia}
 function dob(doe)
-    dot = mod(doe + 9, 10631)
+    dot = mod(doe + 8, 10631)
     yot = (30 * dot + 15) ÷ 10631
     lunarpid = dot - 354 * yot - (11 * yot + 14) ÷ 30
     return lunarpid - 59 * ((5 * lunarpid + 5) ÷ 296)
@@ -1169,7 +1169,7 @@ dob(719468)
 
 ```{ojs}
 function dob(doe) {
-  const dot = (doe + 9) % 10631;
+  const dot = (doe + 8) % 10631;
   const yot = Math.floor((30 * dot + 15) / 10631);
   const lunarpid = dot - 354 * yot - Math.floor((11 * yot + 14) / 30);
   return lunarpid - 59 * Math.floor((5 * lunarpid + 5) / 296);
@@ -1181,7 +1181,7 @@ dob(719468)
 
 ```{python}
 def dob(doe):
-    dot = (doe + 9) % 10631
+    dot = (doe + 8) % 10631
     yot = (30 * dot + 15) // 10631
     lunarpid = dot - 354 * yot - (11 * yot + 14) // 30
     return lunarpid - 59 * ((5 * lunarpid + 5) // 296)
@@ -1192,7 +1192,7 @@ dob(719468)
 
 ```{r}
 dob <- function(doe) {
-  dot <- (doe + 9) %% 10631
+  dot <- (doe + 8) %% 10631
   yot <- (30 * dot + 15) %/% 10631
   lunarpid <- dot - 354 * yot - (11 * yot + 14) %/% 30
   lunarpid - 59 * ((5 * lunarpid + 5) %/% 296)
@@ -1206,7 +1206,7 @@ The 10631 [d](#d){.tool data-bs-toggle="tooltip" data-bs-title="days"} of a tric
 
 Given that a common bimester is slightly shorter than 2 lunations, lunar phases and [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} slowly drift apart over the 2 or 3 lunar years in between lunar leap days ([Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"} [59]{.color59by60}). Nevertheless, we should typically observe a new🌑moon on [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [0]{.color0} and [30]{.color30by59}, first quarter🌓moon on [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [7]{.color07by59} and [37]{.color37by59}, full🌕moon on [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [14]{.color14by59} and [44]{.color44by59}, and last quarter🌗moon on [Dob]{.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} [22]{.color22by59} and [52]{.color52by59}.
 
-According to the current [z]{.tool data-bs-toggle="tooltip" data-bs-title="zone"}[0]{.color0} [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="years of era"}+[bob](#bob){.tool data-bs-toggle="tooltip" data-bs-title="beginning of bimester"}+[dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} Dec date: \${decYearColor11}[\${decBobSign}]{.mono}\${decBobColor}[+]{.mono}\${decDobColor}, the current bimester began \${decDobColor1} days ago on Day [\${decBobSign1}]{.mono}\${decBobColor1}. A common bimester is made up of [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"} [0]{.color0} to [58]{.color58by59} and can be divided into a lunar long month followed by a lunar short month: 30 + 29 = 59. A leap bimester is composed of [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"} [0]{.color0} to [59]{.color59by60} and can be split into 2 lunar long months: 2 &times; 30 = 60.
+According to the current [z]{.tool data-bs-toggle="tooltip" data-bs-title="zone"}[0]{.color0} [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="years of era"}+[bob](#bob){.tool data-bs-toggle="tooltip" data-bs-title="beginning of bimester"}+[dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} Dec date: \${decYearColor11}[\${decBobSign}]{.mono}\${decBobColor}[+]{.mono}\${decDobColor}, the current bimester began \${decDobColor1} \${decDobDays} ago on Day [\${decBobSign1}]{.mono}\${decBobColor1}. A common bimester is made up of [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"} [0]{.color0} to [58]{.color58by59} and can be divided into a lunar long month followed by a lunar short month: 30 + 29 = 59. A leap bimester is composed of [Dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"} [0]{.color0} to [59]{.color59by60} and can be split into 2 lunar long months: 2 &times; 30 = 60.
 
 
 Each moon diagram in the [small multiple](https://en.wikipedia.org/wiki/Small_multiple#:~:text=a%20series%20of%20similar%20graphs%20or%20charts%20using%20the%20same%20scale%20and%20axes) grid below has a [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="day of bimester"} above it. When the "Layout" radio input beneath the grid is set to "Lunar", the grid portrays a lunar year, its rows depict lunar months, its row labels are zero-based lunar [pid](#pid){.tool data-bs-toggle="tooltip" data-bs-title="positive integer days of year"}, and each of its columns contains [dob](#dob){.tool data-bs-toggle="tooltip" data-bs-title="days of bimester"} that have identical final digits and moon diagrams that represent the same lunar phase.
@@ -1336,7 +1336,7 @@ We need to avoid contamination so as not to complicate the search for [extraterr
 
 Even if we can prove without a doubt that Mars is and always has been devoid of extraterrestrial life, we still should not invest resources into enabling Mars to support human inhabitants, because those resources are much better spent on [terraforming](https://en.wikipedia.org/wiki/Terraforming_of_Venus#:~:text=transform%20Venus%20from%20a%20planet%20hostile%20to%20life%20to%20one%20that%20could%20sustainably%20host%20humans) and then [colonizing](https://en.wikipedia.org/wiki/Colonization_of_Venus#:~:text=establishing%20human%20settlements%20on%20the%20planet%20Venus) Venus, the planet that is [most similar](https://en.wikipedia.org/wiki/Venus#:~:text=similar%20to%20Earth%20in%20size%20and%20mass%20and%20is%20often%20described%20as%20Earth%27s%20%22sister%22%20or%20%22twin%22) to Earth in size, mass, composition, and orbit.
 
-Whereas Venus should be the focal point for colonization, the Moon and its L1 and L2 [Lagrange points](https://en.wikipedia.org/wiki/Lagrange_point#:~:text=points%20of%20equilibrium%20for%20small%2Dmass%20objects%20under%20the%20gravitational%20influence%20of%20two%20massive%20orbiting%20bodies) will form the central hub for spaceflight. The proximity of the Moon allows for efficient communication with Earth. At light speed, radio signals can travel from Earth to the Moon in 1.25 to 1.39 Dec seconds ([s](#s){#second .tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}), Venus in 132 to 907 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, or Mars in 190 to 1390 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}.
+Whereas Venus should be the focal point for colonization, the Moon and its L1 and L2 [Lagrange points](https://en.wikipedia.org/wiki/Lagrange_point#:~:text=points%20of%20equilibrium%20for%20small%2Dmass%20objects%20under%20the%20gravitational%20influence%20of%20two%20massive%20orbiting%20bodies) will form the central hub for spaceflight. The proximity of the Moon allows for efficient communication with Earth. At light speed, radio signals can travel from Earth to the Moon in 1.24 to 1.41 Dec seconds ([s](#s){#second .tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}), Venus in 132 to 907 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, or Mars in 190 to 1390 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}.
 
 To put these numbers in context, the speed of light is around 7.195 [taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6) ([c](#c){#taur .tool data-bs-toggle="tooltip" data-bs-title="taurs"}) per [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20Hemispheres) is about 1 [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taur"}, there are exactly 90000 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} or 86400 [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}) seconds in 1 day, and the approximate distance from Earth ranges from 9 to 10 [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taurs"} for the Moon, 950 to 6525 [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taurs"} for Venus, 1365 to 10000 [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taurs"} for Mars, and 14700 to 24200 [c](#c){.tool data-bs-toggle="tooltip" data-bs-title="taurs"} for Jupiter.
 
