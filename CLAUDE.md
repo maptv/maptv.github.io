@@ -43,6 +43,14 @@ updated as new preferences come up; don't let it grow into a changelog.
   and when counting specific days as items ("the first 4 days of the year"); always "1 day"
   and spelled-out numbers ("a day or two"). Never use "y" as a unit symbol, since `y` is the
   Year variable ("Year y", "y+1"); always spell out "years" (and "weeks", "sols").
+- Dec has no negative time zone offsets: the international date line and the prime meridian
+  coincide, so a negative UTC offset becomes a positive Dec offset by adding 1 day. A
+  holiday tied to a Gregorian dom or dow therefore lands 1 day later in the Americas.
+  Christmas is d299 in most of the world but d300 in the Americas, and US Thanksgiving falls
+  on d267–d273, not d266–d272. When checking such dates, apply the offset before calling
+  them off by one. This mismatch comes from negative UTC offsets, not a weakness in Dec. Dec
+  meets people where they are by adjusting dom/dow to their offset, so don't present it as
+  a Dec drawback.
 - When a review comment argues about science (cosmology, astronomy, climate), base it on
   current evidence and on what the sentence actually claims, and say why.
 - When a request quotes broken markdown syntax verbatim (e.g. a link written as

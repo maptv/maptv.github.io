@@ -659,7 +659,7 @@ function textcolor(content, style = {}) {
   const {
     background,
     color = yiq(background) > 0.5 ? "black" : "white",
-    padding = "0 0.5px",
+    padding = "0.5px 0.75px 0.5px 0.75px",
     borderRadius = "4px",
     fontFamily = "inherit",
     ...rest
@@ -1906,7 +1906,7 @@ code {
 .bigcard {
   font-size: 56px;
   position: relative;
-  bottom: 45px;
+  bottom: 46px;
   display: block;
   margin-bottom: -78px;
 }

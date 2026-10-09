@@ -1,47 +1,15 @@
 ---
 title: Dec time
-author:
-  - name: Martin Laptev
-    url: https://maptv.github.io
-image: /asset/daywide.svg
 description: >
   Introducing Declock, a timekeeping system that displays time in decimal days using math notation without the need for hours, minutes, or seconds.
+image: /asset/daywide.svg
+url: https://maptv.github.io/dec/time
+decdate: 2026+222
 draft: true
-citation:
-  url: https://maptv.github.io/dec/time
+slug: time
 aliases:
   - /time
   - /dt
-license: CC BY-SA
-lightbox: false
-toc: true
-toc-depth: 5
-format:
-  html:
-    code-copy: false
-    grid:
-      body-width: 900px
-    shift-heading-level-by: 3
-    include-after-body:
-      - ../../asset/cite.html
-      - ../../asset/style.html
-      - ../../asset/stamp.html
-      - ../../asset/tooltip.html
-  commonmark: default
-notebook-view: false
-format-links:
-  - html
-  - text: Quarto markdown (qmd)
-    icon: file-code
-    href: index.qmd
-  - format: commonmark
-    text: CommonMark markdown (md)
-    icon: file-code
-  - text: Python notebook (ipynb)
-    icon: file-code
-    href: eot.ipynb
-filters:
-  - ../../asset/date.lua
 engine: knitr
 ---
 
