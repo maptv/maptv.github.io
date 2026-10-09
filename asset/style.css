@@ -448,3 +448,21 @@ a.uri {
 }
 
 
+
+/* Observable Inputs field labels ("Day of year", "Layout", ...) and radio
+   option labels ("365", "Positive", ...): slightly smaller on phones so long
+   labels fit their fixed-width column. */
+@media (max-width: 479.98px) {
+  form.oi-3a86ea > label,
+  form.oi-3a86ea label:has(> input[type="radio"]) {
+    font-size: 0.9em;
+  }
+}
+
+/* Page breadcrumbs ("Article List > Dec > Date") in the mobile top bar:
+   smaller than body text on phones. */
+@media (max-width: 479.98px) {
+  nav.quarto-page-breadcrumbs ol.breadcrumb {
+    font-size: 0.85em;
+  }
+}
