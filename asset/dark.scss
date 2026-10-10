@@ -214,11 +214,13 @@ p > span.math.display mjx-mpadded {
   color: black;
 }
 
-div.observablehq > form > div > input {
+// Number/text boxes only: range tracks keep the grey background below,
+// including ranges nested one level deeper inside an Inputs.form.
+div.observablehq > form > div > input:not([type="range"]) {
   background-color: darkslategray;
 }
 
-div.observablehq > div > form > div > input {
+div.observablehq > div > form > div > input:not([type="range"]) {
   background-color: darkslategray !important;
 }
 
