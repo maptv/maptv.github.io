@@ -3261,6 +3261,11 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#solardeclinationangle" id="sda">sda</a>: solar declination
   angle, the latitude at which the Sun is directly overhead
 - <a href="#tau" id="2pi">𝜏</a>: 2𝜋 or approximately 6.2831853
+  - <a href="#taudividedby2" id="pi">𝜋</a>: pi, 𝜏/2 or approximately
+    3.1415927
+  - <a href="#taudividedby900" id="sampi">ϡ</a>: sampi, the Greek
+    numeral for 900, 𝜏/900 or approximately 0.0069813 radians, 0.4
+    degrees
 - <a href="#tenequaltemperament" id="tenet">Tenet</a>: ten equal
   temperament
   - <a href="#10et" id="xet">Xet</a>: Tenet
@@ -3393,6 +3398,8 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#squarezem" id="z2">z²</a>: square zem, hexamilliare, 16
     square decimeters, 1.<span class="vinculum">7</span> square feet,
     256 square inches
+  - <a href="#squarecentizem" id="cz2">cz²</a>: square centizem, a
+    ten-thousandth of a square zem, 16 square millimeters
   - <a href="#squaredecazem" id="Dz2">Dz²</a>: square decazem, 1
     hexadeciare, 16 square meters, 19.75 square yards, 100 square zem
   - <a href="#cubiczem" id="z3">z³</a>: cubic zem, 1 keg, 64 liters,

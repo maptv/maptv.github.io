@@ -886,6 +886,8 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
 - [sos](#speedofsound): speed of sound, 735.048 milliomegar, 340.3 meters per second
 - [sda](#solardeclinationangle): solar declination angle, the latitude at which the Sun is directly overhead
 - [𝜏](#tau): 2𝜋 or approximately 6.2831853
+  - [𝜋](#taudividedby2): pi, 𝜏/2 or approximately 3.1415927
+  - [ϡ](#taudividedby900): sampi, the Greek numeral for 900, 𝜏/900 or approximately 0.0069813 radians, 0.4 degrees
 - [Tenet](#tenequaltemperament): ten equal temperament
   - [Xet](#10et): Tenet
   - [12et](#twelveequaltemperament): twelve equal temperament
@@ -946,6 +948,7 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
   - [kz²](#squarekilozem): square kilozem, a million square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600 ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
   - [kz](#kilozem): kilozem, 1000 zem, 400 meters, a quarter mile
   - [z²](#squarezem): square zem, hexamilliare, 16 square decimeters, 1.7 square feet, 256 square inches
+  - [cz²](#squarecentizem): square centizem, a ten-thousandth of a square zem, 16 square millimeters
   - [Dz²](#squaredecazem): square decazem, 1 hexadeciare, 16 square meters, 19.75 square yards, 100 square zem
   - [z³](#cubiczem): cubic zem, 1 keg, 64 liters, 1000 wine glasses, a million drops, half a barrel
   - [dz³](#cubicdecizem): cubic decizem, 1000 drops, 64 milliliters, 2 ounces, 1 wine glass
