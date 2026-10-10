@@ -2,26 +2,28 @@
 Martin Laptev
 2026+222
 
-- [Bar chart clocks](#bcc)
-- [Longitude latitude map](#llm)
-- [Daylight area chart](#dac)
+- [Declock](#declock)
+  - [Bar chart clocks](#bcc)
+  - [Longitude latitude map](#llm)
+  - [Daylight area chart](#dac)
+- [Annual day aggregate (ada)](#ada)
 - [Epochal day aggregate (eda)](#eda)
-- [UNIX time equation](#ute)
-- [Julian time equation](#jte)
+  - [UNIX time equation](#ute)
+  - [Julian date equation](#jte)
 - [Hour minute second](#hms)
 - [Universal time offset](#uto)
 - [Rounded offset decimal](#rod)
 - [Time zone offset](#tzo)
   - [Coordinated Universal Time (UTC)](#utc)
-  - [Day of week](#dow)
-  - [Longitude and offsets](#lao)
-  - [Equation of time](#eot)
-  - [Cambridge and Cambridge](#cac)
-  - [Full day arc](#fda)
+- [Day of week](#dow)
+- [Longitude and offsets](#lao)
+- [Equation of time](#eot)
+- [Cambridge and Cambridge](#cac)
+- [Full day arc](#fda)
   - [Full night arc](#fna)
   - [Solar declination angle](#sda)
 - [Epochal year aggregate (eya)](#eya)
-  - [Sunrise and sunset](#sas)
+- [Sunrise and sunset](#sas)
   - [Solar hour angle](#sha)
 - [Next](#next)
 - [Cite](#cite)
@@ -148,6 +150,8 @@ span
 
 </div>
 
+# Declock
+
 My website provides many examples of the [Quarto](https://quarto.org)
 publishing and the [Dec](../../dec) measurement systems in action. I
 leverage Quarto support for the [Observable](https://observablehq.com/)
@@ -211,7 +215,7 @@ viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
 rstbtn.node();
 ```
 
-## Bar chart clocks
+### Bar chart clocks
 
 ``` {ojs}
 //| echo: false
@@ -538,7 +542,7 @@ table = createTable([
 
 </div>
 
-## Longitude latitude map
+### Longitude latitude map
 
 <div class="column-screen">
 
@@ -556,7 +560,7 @@ ${sunclock}${dotclock}
 
 </div>
 
-## Daylight area chart
+### Daylight area chart
 
 <div class="column-page-left">
 
@@ -637,6 +641,8 @@ app = {
 
 </div>
 
+# Annual day aggregate (ada)
+
 The red<font color=red>—</font>line indicates a “day of year”
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span>), ${selDateHsl}, and the red🔴dot
@@ -658,10 +664,16 @@ data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> can form
 a “annual day aggregate” (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="annual day aggregate">ada</span>): ${selAdaDay}.
 
+<div id="equationgroup00" class="equationgroup">
+
+<span id="eq-ada">
 $$\begin{split}
 \text{ada\\\\} & = \text{doy} + \text{tod} \\
 \lfloor\text{ada}\rfloor & = \text{doy} \\
-\end{split}$$
+\end{split} \qquad(1)$$
+</span>
+
+</div>
 
 As their names suggest, <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doy</span> and <span class="tool"
@@ -677,12 +689,12 @@ data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> is
 measured, we can shift its [decimal
 separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number)
 or turn it into an integer. The <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="times of day">tods</span> along
+data-bs-toggle="tooltip" data-bs-title="times of day">tod</span> along
 the y-axis of the area chart are integers because they have three digits
 and are measured in <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span>.
 
-## Epochal day aggregate (eda)
+# Epochal day aggregate (eda)
 
 To obtain a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</span> from a <span class="tool"
@@ -707,25 +719,30 @@ data-bs-title="epochal day aggregate">eda</span> tells us how many days
 have passed since the Dec
 [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
 
-$$\begin{split}
-\text{tod} &= \text{ada mod } 1 &&= \text{eda mod } 1 \\
-\text{tod} &= \text{ada} - \text{doy} &&= \text{eda} - \lfloor\text{eda}\rfloor
-\end{split}$$
+<div id="equationgroup01" class="equationgroup">
 
-When provided with an “epochal day aggregate” (<span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="epochal day aggregate">eda</span>) instead of a
+<span id="eq-todmod">
+$$\begin{split}
+\text{tod} &= \text{ada} \bmod  1 &&= \text{eda} \bmod  1 \\
+\text{tod} &= \text{ada} - \text{doy} &&= \text{eda} - \lfloor\text{eda}\rfloor
+\end{split} \qquad(2)$$
+</span>
+
+</div>
+
+When provided with an <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="epochal day aggregate">eda</span> instead of a
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of era">doe</span>, the Dec date equations return a
-“annual day aggregate” (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="annual day aggregate">ada</span>) instead of a
+data-bs-title="day of era">doe</span>, the Dec date equations return an
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="annual day aggregate">ada</span> instead of a
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span>. While <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="days of era">doe</span> and
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doy</span> are integers, <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="epochal day aggregate">edas</span> and <span class="tool"
+data-bs-title="epochal day aggregates">eda</span> and <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="annual day aggregates">ada</span> each have a decimal
 part called a “time of day” (<span class="tool" data-bs-toggle="tooltip"
@@ -740,22 +757,33 @@ data-bs-toggle="tooltip" data-bs-title="day of era">doe</span> and a
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</span>.
 
-<div class="overflowequation"
-style="overflow-x:auto;overflow-y:hidden;">
+<div id="equationgroup02" class="equationgroup">
 
-$$\text{eda} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{ada}$$
+<span id="eq-eda">
+$$\text{eda} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{ada} \qquad(3)$$
+</span>
+
+<span id="eq-tod">
+tod = eda mod  1 = ada mod  1   (4)
+</span>
+
+<span id="eq-doe">
+doe = ⌊eda⌋ = eda − tod   (5)
+</span>
+
+<span id="eq-doy">
+doy = ⌊ada⌋ = ada − tod   (6)
+</span>
+
+<span id="eq-edasum">
+eda = doe + tod   (7)
+</span>
+
+<span id="eq-adasum">
+ada = doy + tod   (8)
+</span>
 
 </div>
-
-tod = eda mod 1 = ada mod 1
-
-doe = ⌊eda⌋ = eda − tod
-
-doy = ⌊ada⌋ = ada − tod
-
-eda = doe + tod
-
-ada = doy + tod
 
 ## UNIX time equation
 
@@ -772,17 +800,23 @@ two leftmost vertical lines on the map🗺️, we can divide UNIX time by the
 day](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day)
 and then keep the remainder after dividing the resulting days by one:
 
-tod = unix ÷ 86400 mod 1
+<div id="equationgroup03" class="equationgroup">
 
-## Julian time equation
+<span id="eq-unixtod">
+tod = unix ÷ 86400 mod  1   (9)
+</span>
+
+</div>
+
+## Julian date equation
 
 [Julian
 dates](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon)
 track the days since the beginning of the [Julian
 period](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20chronological%20interval%20of%207980%C2%A0years%2C%20derived%20from%20three%20multi%2Dyear%20cycles:%20the%20Indiction%2C%20Solar%2C%20and%20Lunar%20cycles)
 and thus are akin to <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="epochal day aggregates">edas</span>. We can produce a
-Zone <span class="color5">5</span> <span class="tool"
+data-bs-title="epochal day aggregates">eda</span>. We can produce a Zone
+<span class="color5">5</span> <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> from a
 [Julian
 date](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon)
@@ -795,9 +829,15 @@ to the Julian date before converting it to a <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> to
 ensure that the final result is less than one day:
 
-tod = (julian + 0.5) mod 1
+<div id="equationgroup04" class="equationgroup">
 
-## Hour minute second
+<span id="eq-juliantod">
+tod = (julian + 0.5) mod  1   (10)
+</span>
+
+</div>
+
+# Hour minute second
 
 We can also obtain a Zone <span class="color0">0</span>
 <span class="tool" data-bs-toggle="tooltip"
@@ -813,14 +853,20 @@ programming](https://en.wikipedia.org/wiki/Computer_programming#:~:text=the%20co
 code in the [tabset
 panel](https://quarto.org/docs/interactive/layout.html#tabset-panel)
 beneath the equation compares <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="times of day">tods</span>
-derived from <span class="tool" data-bs-toggle="tooltip"
+data-bs-toggle="tooltip" data-bs-title="times of day">tod</span> derived
+from <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> and UNIX time as
 Quarto was
 [rendering](https://quarto.org/docs/get-started/hello/rstudio.html#rendering:~:text=When%20rendering%2C%20Quarto%20generates%20a%20new%20file%20that%20contains%20selected%20text%2C%20code%2C%20and%20results)
 this webpage.
 
-$$\text{tod} = \frac{\text{hour}}{24} + \frac{\text{minute}}{1440} + \frac{\text{second}}{86400}$$
+<div id="equationgroup05" class="equationgroup">
+
+<span id="eq-hmstod">
+$$\text{tod} = \frac{\text{hour}}{24} + \frac{\text{minute}}{1440} + \frac{\text{second}}{86400} \qquad(11)$$
+</span>
+
+</div>
 
 <div class="panel-tabset" data-group="language">
 
@@ -913,18 +959,24 @@ data-bs-title="daily second aggregate">dsa</span>) and “hourly second
 aggregate” (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hourly second aggregate">hsa</span>). While both count
 seconds, <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="daily second aggregates">dsas</span> start at midnight
-and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="hourly second aggregates">hsas</span> begin at the [top
-of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
+data-bs-title="daily second aggregates">dsa</span> start at midnight and
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="hourly second aggregates">hsa</span> begin at the [top of
+the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
+<div id="equationgroup06" class="equationgroup">
+
+<span id="eq-hms">
 $$\begin{split}
-\text{dsa} & = \text{tod} \times 86400 = \text{unix mod } 86400 \\
-\text{hsa} & = \text{dsa mod } 3600 \\
+\text{dsa} & = \text{tod} \times 86400 = \text{unix} \bmod  86400 \\
+\text{hsa} & = \text{dsa} \bmod  3600 \\
 \text{hod} & = \lfloor \text{dsa} \div 3600 \rfloor \\
 \text{moh} & = \lfloor \text{hsa} \div 60 \rfloor \\
-\text{som} & = \lfloor \text{hsa mod } 60 \rfloor
-\end{split}$$
+\text{som} & = \lfloor \text{hsa} \bmod  60 \rfloor
+\end{split} \qquad(12)$$
+</span>
+
+</div>
 
 <div class="panel-tabset" data-group="language">
 
@@ -980,7 +1032,7 @@ sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 
 </div>
 
-## Universal time offset
+# Universal time offset
 
 The [Global Positioning
 System](https://en.wikipedia.org/wiki/Global_Positioning_System#:~:text=a%20satellite%2Dbased%20hyperbolic%20navigation%20system),
@@ -1003,7 +1055,7 @@ data-bs-title="Coordinated Universal Time">UTC</span> within
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundred thousands of a day">centimillidays</span>
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centimillidays">cmds</span>) of [Universal
+data-bs-title="centimillidays">cmd</span>) of [Universal
 Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation)
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Universal Time">UT</span>).
@@ -1032,14 +1084,15 @@ ${leapCountHsl} ÷ 8640 = ${leapTzoHsl0}.
 ``` {ojs}
 //| echo: false
 //| label: dateinput
+//| class: slider
 viewof leapSecondYear = Inputs.range([1970, 2020], {label: "Year", value: 1995, step: 1})
 viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 1})
 ```
 
-## Rounded offset decimal
+# Rounded offset decimal
 
 Of the twenty eight <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="universal time offsets">utos</span> that can be shown in
+data-bs-title="universal time offsets">uto</span> that can be shown in
 the equation above, one is an integer, one is a [terminating
 decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits),
 and the rest are [repeating
@@ -1077,7 +1130,13 @@ initial digits of the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="universal time offset">uto</span> as a decimal and the
 rest as a fraction.
 
-uto − rod = ref
+<div id="equationgroup07" class="equationgroup">
+
+<span id="eq-ref">
+uto − rod = ref   (13)
+</span>
+
+</div>
 
 Use the first three range🎚️inputs below to select an <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="hour minute second">hms</span>
@@ -1096,6 +1155,7 @@ ${hmsRodHsl} = ${hmsRefHsl}.
 ``` {ojs}
 //| echo: false
 //| label: hmsinput
+//| class: slider
 viewof hmsinput = Inputs.form([
   Inputs.range([0, 23], {label: "Hour", value: 11, step: 1}),
   Inputs.range([0, 59], {label: "Minute", value: 0, step: 1}),
@@ -1106,6 +1166,7 @@ viewof hmsinput = Inputs.form([
 ``` {ojs}
 //| echo: false
 //| label: diginput
+//| class: slider
 viewof digits = Inputs.range([1, 9], {label: "Digits", value: 3, step: 1})
 ```
 
@@ -1127,9 +1188,9 @@ data-bs-title="hour minute second">hms</span> triplets that can be
 selected by the range🎚️inputs above, we would have 10 <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time zone offsets">tzos</span>,
 3190 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offsets">stos</span>, and 83200
+data-bs-title="solar time offsets">sto</span>, and 83200
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="exact offset fractions">eofs</span> or <span class="tool"
+data-bs-title="exact offset fractions">eof</span> or <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="rounded offset decimal">rod</span> and <span class="tool"
 data-bs-toggle="tooltip"
@@ -1142,7 +1203,7 @@ When we do the same to the
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</span> offsets, we get
 only <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="exact offset fractions">eofs</span> or <span class="tool"
+data-bs-title="exact offset fractions">eof</span> or <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="rounded offset decimal">rod</span> and <span class="tool"
 data-bs-toggle="tooltip"
@@ -1150,17 +1211,17 @@ data-bs-title="roundoff error fraction">ref</span> pairs unless the
 number of leaps seconds included is zero or a multiple of 27. If the
 leap second count is zero or a multiple of 8640, we will get 3
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offsets">tzos</span>, 9 <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="solar time offsets">stos</span>,
+data-bs-title="time zone offsets">tzo</span>, 9 <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="solar time offsets">sto</span>,
 and 26 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="exact offset fractions">eofs</span> or <span class="tool"
+data-bs-title="exact offset fractions">eof</span> or <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="rounded offset decimal">rod</span> and <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="roundoff error fraction">ref</span> pairs. The 3
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offsets">tzos</span> will be <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="solar time offsets">stos</span>
+data-bs-title="time zone offsets">tzo</span> will be <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="solar time offsets">sto</span>
 if the number of leap seconds is a multiple of 27 but not 8640.
 
 There are 14 negative and 24 positive <span class="tool"
@@ -1243,7 +1304,7 @@ data-bs-title="time of day">tod</span> or a “year month day”
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="year month day">ymd</span>) triplet to a Dec date. As a
 result, all Dec dates and <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tods</span> have positive offsets.
+data-bs-title="times of day">tod</span> have positive offsets.
 
 Dec will not change a negative offset or its associated
 <span class="tool" data-bs-toggle="tooltip"
@@ -1261,7 +1322,7 @@ Day <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="February 28">364</span> precedes Day <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="February 29">365</span>.
 
-## Day of week
+# Day of week
 
 Even though it has no effect on the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time of day">tod</span>, adding
@@ -1279,7 +1340,7 @@ data-bs-title="day of month">dom</span> and <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of week">dow</span> in Dec
 will be one day ahead.
 
-<div class="overflowtable" style="overflow-x:auto;overflow-y:hidden;">
+<div class="overflowtable">
 
 <table>
 <thead>
@@ -1332,7 +1393,7 @@ ranking](https://en.wikipedia.org/w/index.php?title=List_of_countries_in_the_Ame
 over 89% of people in the Americas live in a country that starts the
 week on Sunday.
 
-## Longitude and offsets
+# Longitude and offsets
 
 In Dec, offsets are closely related to
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda).
@@ -1355,12 +1416,12 @@ part removed via
 or
 [ceiling](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=maps%20x%20to%20the%20least%20integer%20greater%20than%20or%20equal%20to%20x).
 Whereas <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offsets">tzos</span> have one digit,
+data-bs-title="time zone offsets">tzo</span> have one digit,
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="times of day">tods</span> and
+data-bs-toggle="tooltip" data-bs-title="times of day">tod</span> and
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offsets">stos</span> typically have up to four
+data-bs-title="solar time offsets">sto</span> typically have up to four
 digits after the [decimal
 separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number).
 
@@ -1381,7 +1442,7 @@ rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=normal%20resting%20adult%
 of an adult. For [everyday
 life](https://en.wikipedia.org/wiki/Everyday_life), we should limit the
 length of <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tods</span> to the three digits needed to
+data-bs-title="times of day">tod</span> to the three digits needed to
 show <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a day">millidays</span>
 (<span class="tool" data-bs-toggle="tooltip"
@@ -1397,7 +1458,7 @@ changes too quickly to be read out loud and the seventh changes so fast
 that it appears as a blur. Near the Equator, a longitude that has seven
 digits is accurate to within about ten <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="zone equatorial meters">zems</span> (z) or four
+data-bs-title="zone equatorial meters">zem</span> (z) or four
 [meters](https://en.wikipedia.org/wiki/Metre#:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units),
 which is roughly the length of a [subcompact
 car](https://www.dimensions.com/collection/subcompact-cars-b-segment) or
@@ -1424,7 +1485,7 @@ data-bs-title="approximately">~</span><span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="a hundred thousand">10<sup>5</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousands of zone equatorial meters">kilozems</span>
+data-bs-title="thousands of zone equatorial meters">kilozem</span>
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilozems">kz</span>) long. If we move 1
 <span class="tool" data-bs-toggle="tooltip"
@@ -1472,7 +1533,7 @@ or sets on a given day. By default, Dec uses three digits to show each
 solar time and <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar time offset">sto</span>.
 
-## Equation of time
+# Equation of time
 
 The two types of [solar
 time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky)
@@ -1500,11 +1561,21 @@ time”](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepanc
 (<span class="tool" data-bs-toggle="tooltip"
 data-bs-title="equation of time">eot</span>).
 
-toy = ada ÷ n
+<div id="equationgroup08" class="equationgroup">
 
-mst = (0.95 + tod + *λ*) mod 1
+<span id="eq-toy">
+toy = ada ÷ n   (14)
+</span>
 
-ast = (0.95 + tod + *λ* + eot(toy)) mod 1
+<span id="eq-mst">
+mst = (0.95 + tod + *λ*) mod  1   (15)
+</span>
+
+<span id="eq-ast">
+ast = (0.95 + tod + *λ* + eot(toy)) mod  1   (16)
+</span>
+
+</div>
 
 To obtain the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of year">toy</span>, we divide the
@@ -1526,13 +1597,19 @@ because its trigonometric functions expect
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
 instead of radians.
 
+<div id="equationgroup09" class="equationgroup">
+
+<span id="eq-eot">
 $$\begin{split}
 \text{eot(toy)} & = \beta_0 \\
 & + \beta_1 \times \text{costau(toy)} \\
 & + \beta_2 \times \text{costau(2} \times \text{toy)} \\
 & + \beta_3 \times \text{sintau(toy)} \\
 & + \beta_4 \times \text{sintau(2} \times \text{toy)}
-\end{split}$$
+\end{split} \qquad(17)$$
+</span>
+
+</div>
 
 <div class="panel-tabset" data-group="language">
 
@@ -1779,7 +1856,7 @@ data-bs-toggle="tooltip" data-bs-title="apparent solar time">ast</span>,
 we can also use <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="equation of time">eot</span> to more accurately estimate
 the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tods</span> of [solar
+data-bs-title="times of day">tod</span> of [solar
 noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow),
 sunrise, and sunset. The equation below creates a [solar
 noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow)
@@ -1794,9 +1871,15 @@ data-bs-toggle="tooltip" data-bs-title="time of year">toy</span>) value
 that are both measured in days, and keeping only the decimal part of the
 result.
 
-solarnoon = (9.55 + tzo − *λ* − eot(toy)) mod 1
+<div id="equationgroup10" class="equationgroup">
 
-## Cambridge and Cambridge
+<span id="eq-solarnoon">
+solarnoon = (9.55 + tzo − *λ* − eot(toy)) mod  1   (18)
+</span>
+
+</div>
+
+# Cambridge and Cambridge
 
 To compare the solar noon <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</span> in two cities, we can plug in the
@@ -1813,9 +1896,17 @@ Massachusetts](https://en.wikipedia.org/wiki/Cambridge,_Massachusetts#:~:text=a%
 in the [United
 States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America).
 
-4.99635 = (9.55 − 0.050365) mod 1 × 10
+<div id="equationgroup11" class="equationgroup">
 
-6.97516 = (9.55 − 0.852484) mod 1 × 10
+<span id="eq-cambridgeuk">
+4.99635 = (9.55 − 0.050365) mod  1 × 10   (19)
+</span>
+
+<span id="eq-cambridgema">
+6.97516 = (9.55 − 0.852484) mod  1 × 10   (20)
+</span>
+
+</div>
 
 The two homonymous cities are about two <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="deciparallels">dλ</span> apart
@@ -1833,11 +1924,19 @@ data-bs-title="time of day">tod</span> for each city will be two
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</span> earlier.
 
-2.99635 = (9.55 + 0.8 − 0.050365) mod 1 × 10
+<div id="equationgroup12" class="equationgroup">
 
-4.97516 = (9.55 + 0.8 − 0.852484) mod 1 × 10
+<span id="eq-cambridgeuk8">
+2.99635 = (9.55 + 0.8 − 0.050365) mod  1 × 10   (21)
+</span>
 
-## Full day arc
+<span id="eq-cambridgema8">
+4.97516 = (9.55 + 0.8 − 0.852484) mod  1 × 10   (22)
+</span>
+
+</div>
+
+# Full day arc
 
 The path in the sky that the Sun appears to follow from a sunrise to a
 sunset is a “[day
@@ -1860,10 +1959,16 @@ data-bs-toggle="tooltip" data-bs-title="half day arc">da/2</span> is a
 sunrise <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</span>.
 
+<div id="equationgroup13" class="equationgroup">
+
+<span id="eq-sunsetsunrise">
 $$\begin{split}
 \text{sunset} & = \text{solarnoon} + \frac{\text{da}}{2} && = \text{sunrise} + \text{da} \\
 \text{sunrise} & = \text{solarnoon} - \frac{\text{da}}{2} && = \text{sunset} - \text{da}
-\end{split}$$
+\end{split} \qquad(23)$$
+</span>
+
+</div>
 
 ## Full night arc
 
@@ -1885,10 +1990,11 @@ data-bs-toggle="tooltip" data-bs-title="night arc">na</span> midpoint:
 [solar
 midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
 
-<div class="overflowequation"
-style="overflow-x:auto;overflow-y:hidden;">
+<div id="equationgroup14" class="equationgroup">
 
-$$\text{solarmidnight} = \text{solarnoon} + \frac{\text{da}}{2} + \frac{\text{na}}{2} = \text{sunset} + \frac{\text{na}}{2}$$
+<span id="eq-solarmidnight">
+$$\text{solarmidnight} = \text{solarnoon} + \frac{\text{da}}{2} + \frac{\text{na}}{2} = \text{sunset} + \frac{\text{na}}{2} \qquad(24)$$
+</span>
 
 </div>
 
@@ -1910,6 +2016,7 @@ day](https://en.wikipedia.org/wiki/Midnight_sun#:~:text=the%20Sun%20remains%20vi
 ``` {ojs}
 //| echo: false
 //| label: dayarcinput
+//| class: slider
 viewof dayArcInput = Inputs.range([0, 1000], {label: "Day arc", value: 375, step: 1})
 ```
 
@@ -2040,7 +2147,13 @@ In the Southern Hemisphere, we can obtain solar time by measuring the
 data-bs-title="solar azimuth angle">saa</span> in turns and then
 subtracting our measurement from one and a half turns:
 
-$$\text{solartime} \approx \begin{cases}\text{saa}&{\text{if } \phi \geq 0;}\\(1.5 - \text{saa}) \text{ mod } 1&{\text{otherwise.}}\end{cases}$$
+<div id="equationgroup15" class="equationgroup">
+
+<span id="eq-solartime">
+$$\text{solartime} \approx \begin{cases}\text{saa}&{\text{if } \phi \geq 0;}\\(1.5 - \text{saa}) \bmod 1&{\text{otherwise.}}\end{cases} \qquad(25)$$
+</span>
+
+</div>
 
 The clockwise path that the Sun follows in the Northern Hemisphere is
 ingrained in the Belarussian, Polish, or Ukrainian languages. These
@@ -2048,7 +2161,7 @@ three Slavic languages each have one word for north or midnight and
 another word for south or noon. In Dec, zero represents both north and
 midnight, while both south and noon can be expressed as a half turn.
 
-<div class="overflowtable" style="overflow-x:auto;overflow-y:hidden;">
+<div class="overflowtable">
 
 <table>
 <thead>
@@ -2095,17 +2208,15 @@ data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> to get a
 sunrise or sunset <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</span>.
 
-<div class="overflowequation"
-style="overflow-x:auto;overflow-y:hidden;">
+<div id="equationgroup16" class="equationgroup">
 
-$$\text{da} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau($\phi$)} \times \text{sintau(sda)}}{\text{costau($\phi$)} \times \text{costau(sda)}}}\right)}{\pi}$$
+<span id="eq-da">
+$$\text{da} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau($\phi$)} \times \text{sintau(sda)}}{\text{costau($\phi$)} \times \text{costau(sda)}}}\right)}{\pi} \qquad(26)$$
+</span>
 
-</div>
-
-<div class="overflowequation"
-style="overflow-x:auto;overflow-y:hidden;">
-
-$$\frac{\text{da}}{2} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau($\phi$)} \times \text{sintau(sda)}}{\text{costau($\phi$)} \times \text{costau(sda)}}}\right)}{\tau}$$
+<span id="eq-halfda">
+$$\frac{\text{da}}{2} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau($\phi$)} \times \text{sintau(sda)}}{\text{costau($\phi$)} \times \text{costau(sda)}}}\right)}{\tau} \qquad(27)$$
+</span>
 
 </div>
 
@@ -2131,6 +2242,9 @@ data-bs-toggle="tooltip"
 data-bs-title="solar declination angle">sda</span> model provided by the
 NOAA General Solar Position Calculations:
 
+<div id="equationgroup17" class="equationgroup">
+
+<span id="eq-sda">
 $$\begin{split}
 \text{sda(toy)} & = \beta_0 \\
 & + \beta_1 \times \text{costau(toy)} \\
@@ -2139,7 +2253,10 @@ $$\begin{split}
 & + \beta_4 \times \text{sintau(2} \times \text{toy)} \\
 & + \beta_5 \times \text{costau(3} \times \text{toy)} \\
 & + \beta_6 \times \text{sintau(3} \times \text{toy)} \\
-\end{split}$$
+\end{split} \qquad(28)$$
+</span>
+
+</div>
 
 The top range input below picks the <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="day of year">doy</span> that
@@ -2149,9 +2266,9 @@ data-bs-toggle="tooltip"
 data-bs-title="solar declination angle">sda</span> model. The other two
 range inputs below chose the geographic coordinates that we need to find
 the sunrise and sunset <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tods</span>. While the sunrise and sunset
+data-bs-title="times of day">tod</span>. While the sunrise and sunset
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="times of day">tods</span> depend on both geographic
+data-bs-title="times of day">tod</span> depend on both geographic
 coordinates, the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day arc">da</span> varies only by latitude and not by
 longitude: ${selectedSunset.toFixed(3)} – ${selectedSunrise.toFixed(3)}
@@ -2160,18 +2277,21 @@ longitude: ${selectedSunset.toFixed(3)} – ${selectedSunrise.toFixed(3)}
 ``` {ojs}
 //| echo: false
 //| label: doyinput
+//| class: slider
 viewof doyInput = Inputs.range([0, 365], {label: "Day of year", value: 183, step: 1})
 ```
 
 ``` {ojs}
 //| echo: false
 //| label: latinput
+//| class: slider
 viewof latInput = Inputs.range([-250, 250], {label: "Latitude", value: 0, step: 1})
 ```
 
 ``` {ojs}
 //| echo: false
 //| label: loninput
+//| class: slider
 viewof lonInput = Inputs.range([0, 1000], {label: "Longitude", value: 500, step: 1})
 ```
 
@@ -2215,7 +2335,13 @@ that becomes a [“T plus
 countup”](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time) after
 an event like a rocket🚀launch.
 
-$$\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases}$$
+<div id="equationgroup18" class="equationgroup">
+
+<span id="eq-difference">
+$$\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \qquad(29)$$
+</span>
+
+</div>
 
 When the minuend is the current time and the subtrahend is the
 [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred)
@@ -2258,13 +2384,25 @@ data-bs-toggle="tooltip"
 data-bs-title="epochal year aggregates">eya</span> allow us to represent
 a date as a single number and obtain the difference between two dates.
 
-cda = de − coe × 146097
+<div id="equationgroup19" class="equationgroup">
 
-$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$
+<span id="eq-cda">
+cda = de − coe × 146097   (30)
+</span>
 
-yoe = yoc + coe × 400
+<span id="eq-yocdoc">
+$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(31)$$
+</span>
 
-$$\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \biggr \rfloor$$
+<span id="eq-yoe">
+yoe = yoc + coe × 400   (32)
+</span>
+
+<span id="eq-doydoc">
+$$\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \biggr \rfloor \qquad(33)$$
+</span>
+
+</div>
 
 Compared to a <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of era">doe</span>, it is much easier to convert
@@ -2296,15 +2434,29 @@ an <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="epochal year aggregate">eya</span> to get a yoe or divide
 its , we can obtain a
 
-eya = yoe + toy = yoe + doy ÷ n
+<div id="equationgroup20" class="equationgroup">
 
-toy = eya mod 1 = doy ÷ n
+<span id="eq-eya">
+eya = yoe + toy = yoe + doy ÷ n   (34)
+</span>
 
-doy = ⌊toy × n⌋
+<span id="eq-toyeya">
+toy = eya mod  1 = doy ÷ n   (35)
+</span>
 
-eya = yoe + doy × n
+<span id="eq-doytoy">
+doy = ⌊toy × n⌋   (36)
+</span>
 
-eya = yoe + coe × 400
+<span id="eq-eyadoy">
+eya = yoe + doy × n   (37)
+</span>
+
+<span id="eq-eyacoe">
+eya = yoe + coe × 400   (38)
+</span>
+
+</div>
 
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="epochal year aggregate">eya</span> = <span class="tool"
@@ -2336,17 +2488,33 @@ data-bs-title="year of cycle">yoc</span>), and then finally the year and
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="annual day aggregate">ada</span>.
 
-edd = eda − difference
+<div id="equationgroup21" class="equationgroup">
 
-$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$
+<span id="eq-edd">
+edd = eda − difference   (39)
+</span>
 
-doc = edd − coe × 146097
+<span id="eq-coe">
+$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \qquad(40)$$
+</span>
 
-$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$
+<span id="eq-doc">
+doc = edd − coe × 146097   (41)
+</span>
 
-year = yoc + coe × 400
+<span id="eq-yocedd">
+$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(42)$$
+</span>
 
-$$\text{ada} = \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor$$
+<span id="eq-year">
+year = yoc + coe × 400   (43)
+</span>
+
+<span id="eq-adadoc">
+$$\text{ada} = \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \qquad(44)$$
+</span>
+
+</div>
 
 In the equations above, <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="epochal day aggregate">eda</span> is “epochal day
@@ -2389,12 +2557,14 @@ data-bs-title="time zone offset">tzo</span>, we should include it in
 between the event time and the elapsed time.
 
 Let’s say that you live in Zone <span class="color0">0</span> and there
-are four tods that are vital to your typical daily rhythm: you start
-work at <span class="color375">375</span> md, take a lunch break from
-<span class="color525">525</span> to <span class="color575">575</span>
-md, and finish work at <span class="color725">725</span> md. After one
-event passes, you can begin tracking the time until the next one and
-thus cycle through all four over the course of each day: current =
+are four <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="times of day">tod</span> that are vital to your typical
+daily rhythm: you start work at <span class="color375">375</span> md,
+take a lunch break from <span class="color525">525</span> to
+<span class="color575">575</span> md, and finish work at
+<span class="color725">725</span> md. After one event passes, you can
+begin tracking the time until the next one and thus cycle through all
+four over the course of each day: current =
 <span class="color375">375</span> diff =
 <span class="color525">525</span> diff =
 <span class="color575">575</span> diff =
@@ -2467,7 +2637,8 @@ Throughout the day, the current <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time of day">tod</span> is equal
 to the sum of sunset <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</span> and the difference between the
-current and sunset tods: ${selectedSunset.toFixed(3)} –
+current and sunset <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="times of day">tod</span>: ${selectedSunset.toFixed(3)} –
 ${selectedSunrise.toFixed(3)} =
 ${parseFloat(daytimeDuration.toFixed(3))}.
 
@@ -2503,7 +2674,7 @@ the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="day arc">da</span> to solar noon <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="time of day">tod</span>.
 
-## Sunrise and sunset
+# Sunrise and sunset
 
 ## Solar hour angle
 
@@ -2515,11 +2686,11 @@ interface](https://en.wikipedia.org/wiki/API#:~:text=a%20type%20of%20software%20
 [database](https://observablehq.com/@jcolot/time-zone-service). If we
 only have longitude, we need to first round degrees to zero or the
 nearest multiple of fifteen for whole hour <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="time zone offsets">tzos</span>,
+data-bs-toggle="tooltip" data-bs-title="time zone offsets">tzo</span>,
 7.5 for half hour <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offsets">tzos</span>, or 3.75 for quarter hour
+data-bs-title="time zone offsets">tzo</span>, or 3.75 for quarter hour
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offsets">tzos</span> and then divide by fifteen
+data-bs-title="time zone offsets">tzo</span> and then divide by fifteen
 to convert degrees to hours.
 
 # Next
@@ -2671,30 +2842,20 @@ data-bs-title="hundredths of a day">centidays</span> wide, based on the
 [Greenwich
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian_(Greenwich)#:~:text=a%20geographical%20reference%20line%20that%20passes%20through%20the%20Royal%20Observatory%2C%20Greenwich%2C%20in%20London%2C%20England):
 
-- [Pearson, Tom](https://www.2x2.graphics).
-  <span class="yellow"><u>2013</u></span><u>+<span class="cyan">124</span></u>.
-  “Simple D3 clock.”
-  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+- [Pearson, Tom](https://www.2x2.graphics). <u>2013</u><u>+124</u>.
+  “Simple D3 clock.” ${decYear}+${decDate}.
   <https://observablehq.com/@d3/simple-clock>.
-- [Heyen, Frank](https://fheyen.github.io).
-  <span class="yellow"><u>2021</u></span><u>+<span class="cyan">246</span></u>.
-  “BarChart Clock.”
-  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+- [Heyen, Frank](https://fheyen.github.io). <u>2021</u><u>+246</u>.
+  “BarChart Clock.” ${decYear}+${decDate}.
   <https://observablehq.com/@fheyen/barchart-clock>.
-- [Johnson, Ian](https://enjalot.github.io).
-  <span class="yellow"><u>2021</u></span><u>+<span class="cyan">090</span></u>.
-  “Draggable World Map Coordinates Input.”
-  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+- [Johnson, Ian](https://enjalot.github.io). <u>2021</u><u>+090</u>.
+  “Draggable World Map Coordinates Input.” ${decYear}+${decDate}.
   <https://observablehq.com/@enjalot/draggable-world-map-coordinates-input>.
-- [Bridges, Dan](https://www.danbridges.org).
-  <span class="yellow"><u>2021</u></span><u>+<span class="cyan">311</span></u>.
-  “Visualizing Seasonal Daylight.”
-  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+- [Bridges, Dan](https://www.danbridges.org). <u>2021</u><u>+311</u>.
+  “Visualizing Seasonal Daylight.” ${decYear}+${decDate}.
   <https://observablehq.com/@dbridges/visualizing-seasonal-daylight>.
 - [Clements, John](https://www.brinckerhoff.org).
-  <span class="yellow"><u>2014</u></span><u>+<span class="cyan">091</span></u>,
-  “Decimal Time Zones.”
-  <span class="yellow">${decYear}</span>+<span class="cyan">${decDate}</span>.
+  <u>2014</u><u>+091</u>, “Decimal Time Zones.” ${decYear}+${decDate}.
   <https://www.brinckerhoff.org/blog/2014/05/31/decimal-time-zones>.
 
 ``` {ojs}
@@ -2786,6 +2947,9 @@ selectedDifference = selectedCurrent - selectedSunset
 selectedDuration = parseFloat((selectedSunset - selectedSunrise).toFixed(5))
 dz = unix2dote(now)
 decYear = ydz[0].toString().padStart(4, "0")
+nDaysInYear = 365 + year2leap(decYear + 1)
+fullfracYear = decYear + ydz[1] / nDaysInYear
+decDoty = Math.floor(ydz[1])
 zeroDote = unix2dote(now, 0)[0]
 zeroTime = zeroDote % 1
 zeroDate = dote2date(zeroDote)
@@ -2817,7 +2981,6 @@ selectedExact = selectedDote[0] % 1
 selectedExactN = (1 - selectedExact) % 1
 selectedZone = selectedDote[1]
 ydz = dote2date(...selectedDote)
-decDate = Math.floor(ydz[1])
 decTime = (selectedExact * 10).toFixed(4)
 decTimeN = (selectedExactN * 10).toFixed(4)
 barDD = decTime[0]
@@ -3716,11 +3879,10 @@ function yiq(color) {
 function textcolor(content, style = {}) {
   const {
     background,
-    color = yiq(background) > 0.51 ? "#000" : "white",
-    padding = "0 5px",
+    color = yiq(background) > 0.5 ? "black" : "white",
+    padding = "0.5px 0.75px 0.5px 0.75px",
     borderRadius = "4px",
-    fontWeight = 400,
-    fontFamily = "monospace",
+    fontFamily = "inherit",
     ...rest
   } = typeof style === "string" ? {background: style} : style;
   return htl.html`<span style=${{
@@ -3728,7 +3890,6 @@ function textcolor(content, style = {}) {
     color,
     padding,
     borderRadius,
-    fontWeight,
     fontFamily,
     ...rest
   }}>${content}</span>`;
@@ -5090,280 +5251,210 @@ html`
   color: white;
   padding: 0px 2px 0px 4px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .colorDay {
   background: #ffe438;
   color: black;
   padding: 0px 3px 0px 4px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .colorBkg {
   background: ${window.darkmode ? "black" : "white"};
   color: ${window.darkmode ? "white" : "black"};
   padding: 0px 5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color0 {
-  background: hsl(0 100% 50%);
-  color: ${yiq(`hsl(0, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  background: #ff0000;
+  color: white;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color1by8640 {
   background: hsl(${h1by8640} 100% 50%);
   color: ${yiq(`hsl(${h1by8640}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color1 {
   background: hsl(300 100% 50%);
   color: ${yiq(`hsl(300, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color2 {
   background: hsl(280 100% 50%);
   color: ${yiq(`hsl(280, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color3 {
   background: hsl(240 100% 50%);
   color: ${yiq(`hsl(240, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color4 {
   background: hsl(200 100% 50%);
   color: ${yiq(`hsl(200, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color5 {
   background: hsl(180 100% 50%);
   color: ${yiq(`hsl(180, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color583 {
   background: hsl(129.88235294117646 100% 50%);
   color: ${yiq(`hsl(129.88235294117646, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color6 {
   background: hsl(120 100% 50%);
   color: ${yiq(`hsl(120, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color7 {
   background: hsl(80 100% 50%);
   color: ${yiq(`hsl(80, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color8 {
   background: hsl(60 100% 50%);
   color: ${yiq(`hsl(60, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color9 {
   background: hsl(40 100% 50%);
   color: ${yiq(`hsl(40, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color375 {
   background: hsl(${hues[0.375]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.375]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color0083 {
   background: hsl(${hues[0.0083]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.0083]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color0166 {
   background: hsl(${hues[0.0166]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.0166]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color55by24 {
   background: hsl(${hues[.0229]} 100% 50%);
   color: ${yiq(`hsl(${hues[.0229]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color125 {
   background: hsl(${hues[.125]} 100% 50%);
   color: ${yiq(`hsl(${hues[.125]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color025 {
   background: hsl(${hues[0.025]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.025]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color287 {
   background: hsl(${hues[0.287]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.287]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color333 {
   background: hsl(${hues[0.333]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.333]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color0333 {
   background: hsl(${hues[0.0333]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.0333]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color0416 {
   background: hsl(${hues[0.0416]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.0416]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color429 {
   background: hsl(${hues[0.429]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.429]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color05 {
   background: hsl(${hues[0.05]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.05]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color533 {
   background: hsl(${hues[0.533]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.533]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color969 {
   background: hsl(${hues[0.969]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.969]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color999 {
   background: hsl(${hues[0.999]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.999]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .color1by320 {
   background: hsl(${h1by320} 100% 50%);
   color: ${yiq(`hsl(${h1by320}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .colorD121 {
   background: hsl(${hD121} 100% 50%);
   color: ${yiq(`hsl(${hD121}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .colorD268 {
   background: hsl(${hD268} 100% 50%);
   color: ${yiq(`hsl(${hD268}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .colorD305 {
   background: hsl(${hD305} 100% 50%);
   color: ${yiq(`hsl(${hD305}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .colorD306 {
   background: hsl(${hD306} 100% 50%);
   color: ${yiq(`hsl(${hD306}, 100%, 50%)`) > 0.51 ? "black" : "white"};
-  padding: 0px 5px;
+  padding: 0px .5px;
   border-radius: 4px;
-  font-weight: 400;
-  font-family: monospace;
 }
 .posneg {
   position: relative;
@@ -5554,7 +5645,7 @@ div#projselect > div, div#sizeinput > div, div#speedinput > div,  div#yawinput >
   overflow-x: clip;
 }
 div#sizeinput label, div#speedinput label, div#yawinput label, div#pitchinput label, div#rollinput label {
-  width: 30px;
+  width: 35px;
 }
 button#rstbtn:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
@@ -5566,10 +5657,10 @@ button#rstbtn:hover {
   align-items: center;
   justify-content: center;
 }
-input[type="number"], #sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
-  width: 63px;
+#sizeinput input[type="number"], #yawinput input[type="number"], #pitchinput input[type="number"], #rollinput input[type="number"] {
+  width: 58px;
 }
-input[type="range"], #sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
+#sizeinput input[type="range"], #yawinput input[type="range"], #pitchinput input[type="range"], #rollinput input[type="range"]  {
   width: 72%;
 }
 div#toggles {
@@ -5641,10 +5732,49 @@ mjx-container[jax="CHTML"][display="true"] {
 #dayarcdiagram, #hemipopstackedbar {
   overflow: visible;
 }
+/* The day arc svg is `width` wide but only draws within ~260px of its
+   left edge; capping it keeps it from widening the page on phones. */
+#dayarcdiagram svg {
+  max-width: 100%;
+}
 .stackedbar g[aria-label="tip"] text {
   color: black;
 }
 .overflowtable {
+  overflow-x: auto !important;
+  overflow-y: hidden;
   margin-bottom: 10px;
+}
+div.equationgroup {
+  margin-top: -9px;
+  margin-bottom: -8px;
+  overflow: visible;
+}
+/* Range inputs (class: slider): same layout as the sliders on /dec —
+   a fixed 100px label column, a number box, and a track that fills the
+   rest of a form capped at 500px, all on one row at every width. The
+   label never shrinks or wraps, so "Day of year" stays on one line and
+   lines up with the rows next to it on phones. */
+div.slider {
+  max-width: 100%;
+  overflow-x: visible;
+}
+div.slider form.oi-3a86ea {
+  width: 100%;
+  max-width: 500px;
+  flex-wrap: nowrap;
+  overflow-x: visible;
+}
+div.slider form.oi-3a86ea > label {
+  width: 100px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+div.slider input[type="number"] {
+  width: 110px;
+  margin-left: 2px;
+}
+div.slider input[type="range"] {
+  width: 100%;
 }
 </style>
