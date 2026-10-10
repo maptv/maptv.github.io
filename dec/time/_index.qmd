@@ -244,11 +244,10 @@ function yiq(color) {
 function textcolor(content, style = {}) {
   const {
     background,
-    color = yiq(background) > 0.51 ? "#000" : "white",
-    padding = "0 5px",
+    color = yiq(background) > 0.5 ? "black" : "white",
+    padding = "0.5px 0.75px 0.5px 0.75px",
     borderRadius = "4px",
-    fontWeight = 400,
-    fontFamily = "monospace",
+    fontFamily = "inherit",
     ...rest
   } = typeof style === "string" ? {background: style} : style;
   return htl.html`<span style=${{
@@ -256,7 +255,6 @@ function textcolor(content, style = {}) {
     color,
     padding,
     borderRadius,
-    fontWeight,
     fontFamily,
     ...rest
   }}>${content}</span>`;
@@ -1686,7 +1684,7 @@ selectedExact = selectedDote[0] % 1
 selectedExactN = (1 - selectedExact) % 1
 selectedZone = selectedDote[1]
 selydz = dote2date(...selectedDote)
-decDate = Math.floor(selydz[1])
+selDate = Math.floor(selydz[1])
 decTime = (selectedExact * 10).toFixed(4)
 decTimeN = (selectedExactN * 10).toFixed(4)
 barDD = decTime[0]
