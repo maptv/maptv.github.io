@@ -1862,6 +1862,7 @@ code {
 .playingcard span:not(:has(*)) {
   padding-bottom: 6.5px !important;
   position: relative;
+  left: 0.25px;
   top: 0.4px;
   display: inline-flex;
   place-items: center;
