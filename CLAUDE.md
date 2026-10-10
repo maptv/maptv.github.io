@@ -19,6 +19,18 @@ updated as new preferences come up; don't let it grow into a changelog.
   alone: `hidden` on both `html` and `body` turns `body` into a scroll container, which
   breaks the sticky margin TOC (it scrolls away with the page instead of staying in view).
 
+## Article structure (dec, dec/date, dec/time)
+
+- `index.qmd` holds only text, tables, tabsets, equations, and small OJS input cells that
+  have no plot of their own. Plot cells (plus the inputs that drive them) go in `_*.qmd`
+  partials pulled in with `{{< include >}}`; shared OJS definitions and CSS go in the
+  article's `_index.qmd`, included at the end of `index.qmd`.
+- An OJS name may be defined only once across `index.qmd` and everything it includes;
+  a second definition is a runtime error.
+- Every display equation gets an `{#eq-…}` label, and consecutive equations are wrapped
+  in `::: {.equationgroup #equationgroupNN}`, as in dec/date.
+- Single range inputs use `//| class: slider` so they share the /dec slider layout.
+
 ## Content edits
 
 - Don't touch prose in `*.qmd` files unless the change actually requires it. CSS/JS/config

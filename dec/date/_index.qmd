@@ -1605,9 +1605,6 @@ div#conversionchart > div {
   display: flex;
   justify-content: center;
 }
-h4.hiddenheading, h5.hiddenheading {
-  display: none;
-}
 div#leapscrubvert {
   margin-top: -10px;
 }

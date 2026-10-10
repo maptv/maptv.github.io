@@ -1,0 +1,29 @@
+```{ojs}
+//| echo: false
+//| label: hemipoptoggles
+//| class: togs
+// https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
+viewof sortParamsHemi = Inputs.form([
+  Inputs.toggle({ label: "Sort ascending" }),
+  Inputs.toggle({ label: "Sort by offset" }),
+  ])
+```
+
+```{ojs}
+//| echo: false
+//| label: hemipopstackedbar
+//| class: stackedbar
+Plot.plot({
+  width: Math.min(width, 1000),
+  height: 100 + Math.min(width / 25, 20),
+  marginBottom: 50,
+  style: `overflow: visible;font-size:${15 + Math.min(width / 90, 11)}px;`,
+  color: {scheme: "RdBu", className: "barPlotLegend"},
+  marginLeft: 90 + Math.min(width / 100, 20),
+  y: { label: null },
+  x: { grid: true, label: "Population (billions)", labelOffset: 40 + Math.min(width / 90, 22), transform: d => d},
+  marks: [
+    Plot.barX(sortedPopHemi, {x: "Population", y: "Hemisphere", fill: "Offset", stroke: "black", tip: true }),
+  ]
+})
+```

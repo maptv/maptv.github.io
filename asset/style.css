@@ -144,6 +144,9 @@ main.content {
 main.content:has(section#sec-lad.hiddenheading div#tbl-1d.unittable) {
   counter-reset: tblnum 1;
 }
+h1.hiddenheading, h2.hiddenheading, h3.hiddenheading, h4.hiddenheading, h5.hiddenheading {
+  display: none;
+}
 figcaption.quarto-float-tbl {
   counter-increment: tblnum;
   font-size: 0;

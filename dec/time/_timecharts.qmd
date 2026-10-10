@@ -1,0 +1,427 @@
+```{ojs}
+//| echo: false
+//| label: toggles
+viewof bordertoggle = labelToggle(Inputs.toggle, "Border", false, "bordertoggle")
+viewof gridtoggle = labelToggle(Inputs.toggle, "Grid", false, "gridtoggle")
+viewof utctoggle = labelToggle(Inputs.toggle, "UTC", false, "utctoggle")
+viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
+rstbtn.node();
+```
+
+#### Bar chart clocks {#bcc .unnumbered .hiddenheading}
+
+```{ojs}
+//| echo: false
+// https://observablehq.com/@fheyen/barchart-clock
+barChart = {
+  const W = 800;
+  const H = 88;
+  const barX = 1;
+  const firstBarY = 1;
+  const svg = d3
+    .create("svg")
+    .attr("width", W)
+    .attr("viewBox", [0, 0, W / 1.14, H]);
+  const xRange = [0, W - 100];
+  const scaleDD = d3.scaleLinear()
+    .domain([0, 10])
+    .range(xRange);
+  const scaleMandB = d3.scaleLinear()
+    .domain([0, 100])
+    .range(xRange);
+  // Background bars to show where 100% lies
+  svg.selectAll('.background')
+    .data([
+      'dd', "mils", 'beats'])
+    .enter()
+    .append('rect')
+    .attr('class', 'background timeBar')
+    .attr('width', W-100)
+    .attr('y', (d,i)=>i*30+firstBarY)
+  // Beats
+  svg
+    .append('rect')
+    .attr('class', 'timeBar')
+    .attr('y', firstBarY+60)
+    .attr('width', d => scaleMandB(Number(barBeats)))
+  svg
+    .append('rect')
+    .attr('class', 'timeBarFull')
+    .attr('y', firstBarY+60)
+    .attr('width', d => scaleMandB(barBeats))
+  // Cents/Mils
+  svg
+    .append('rect')
+    .attr('class', 'timeBar')
+    .attr('y', firstBarY)
+    .attr('width', d => scaleDD(Number(barDD)+Number(barMils)/100+Number(barBeats)/10000))
+  svg
+    .append('rect')
+    .attr('class', 'timeBarFull')
+    .attr('y', firstBarY)
+    .attr('width', d => scaleDD(barDD))
+  svg
+    .append('rect')
+    .attr('class', 'timeBar')
+    .attr('y', firstBarY+30)
+    .attr('width', d => scaleMandB(Number(barMils)+Number(barBeats)/100))
+  svg
+    .append('rect')
+    .attr('class', 'timeBarFull')
+    .attr('y', firstBarY+30)
+    .attr('width', d => scaleMandB(barMils))
+  // Cent ticks
+  svg.selectAll('.tickC')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickC')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', firstBarY+30)
+    .attr('height', d=>d%2===0? 8:5)
+  svg.selectAll('.tickB1')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickB1')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', d=>d%2===0? firstBarY+77:firstBarY+80)
+    .attr('height', d=>d%2===0? 8:5)
+  svg.selectAll('.tickC1')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickC1')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', d=>d%2===0? firstBarY+47:firstBarY+50)
+    .attr('height', d=>d%2===0? 8:5)
+  // Mil ticks
+  svg.selectAll('.tickM')
+    .data(d3.range(width > 500 ? 1 : 1, 10))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickM')
+    .attr('x', d=>scaleDD(d)+barX)
+    .attr('y', firstBarY+20)
+    .attr('height', 6)
+  svg.selectAll('.tickLabel1')
+    .data(d3.range(width > 500 ? 1 : 1, 10))
+    .enter()
+    .append('text')
+    .attr('class', 'tickLabel1')
+    .attr('x', d=>scaleDD(d)+barX+.5)
+    .attr('y', firstBarY+18)
+    //.style("font-size", `{W < 550 ? 12 : W < 650 ? 14 : W < 750 ? 16 : W < 850 ? 18 : 20}px`)
+    .text(d=>d)
+  // Cent ticks
+  svg.selectAll('.tickC2')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickC2')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', firstBarY+10)
+    .attr('height', d=>d%2===0? 9:6)
+  // Beat ticks
+  svg.selectAll('.tickB')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickB')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', firstBarY+60)
+    .attr('height', d=>d%2===0? 9:6)
+  // Labels
+  svg.selectAll('.timeLabel')
+    .data([`+${barDD}`, `${barMils}`, `${barBeats}`])
+    .enter()
+    .append('text')
+    .attr('class', 'timeLabel')
+    .attr('x', barX+2)
+    .attr('y', (d,i)=>i*30+firstBarY+20)
+    .style("font-size", `${W < 300 ? 14 : W < 400 ? 16 : W < 500 ? 18 : W < 600 ? 20 : 22}px`)
+    .text(d=>d);
+  svg.attr("id", "topbar");
+  svg.attr('class', 'barclock')
+  return svg.node();
+}
+barChart1 = {
+  const W = 800;
+  const H = 88;
+  const barX = 1;
+  const firstBarY = 1;
+  const svg = d3
+    .create("svg")
+    .attr("width", W)
+    .attr("viewBox", [0, 0, W / 1.14, H]);
+  const xRange = [0, W - 100];
+  const scaleDD = d3.scaleLinear()
+    .domain([0, 10])
+    .range(xRange);
+  const scaleMandB = d3.scaleLinear()
+    .domain([0, 100])
+    .range(xRange);
+  // const scaleDek = d3.scaleLinear()
+  //  .domain([0, 37])
+  //  .range(xRange);
+  // Background bars to show where 100% lies
+  svg.selectAll('.background')
+    .data([
+      // 'dek', 'dotd',
+      'dd', "mils", 'beats'])
+    .enter()
+    .append('rect')
+    .attr('class', 'background timeBar')
+    .attr('width', W-100)
+    .attr('y', (d,i)=>i*30+firstBarY)
+  // Beats
+  svg
+    .append('rect')
+    .attr('class', 'timeBar')
+    .attr('y', firstBarY+60)
+    .attr('width', d => scaleMandB(Number(barBeatsN)))
+  svg
+    .append('rect')
+    .attr('class', 'timeBarFullN')
+    .attr('y', firstBarY+60)
+    .attr('width', d => scaleMandB(barBeatsN))
+  // Cents/Mils
+  svg
+    .append('rect')
+    .attr('class', 'timeBar')
+    .attr('y', firstBarY)
+    .attr('width', d => scaleDD(Number(barDDN)+Number(barMilsN)/100+Number(barBeatsN)/10000))
+  svg
+    .append('rect')
+    .attr('class', 'timeBarFullN')
+    .attr('y', firstBarY)
+    .attr('width', d => scaleDD(barDDN))
+  svg
+    .append('rect')
+    .attr('class', 'timeBar')
+    .attr('y', firstBarY+30)
+    .attr('width', d => scaleMandB(Number(barMilsN)+Number(barBeatsN)/100))
+  svg
+    .append('rect')
+    .attr('class', 'timeBarFullN')
+    .attr('y', firstBarY+30)
+    .attr('width', d => scaleMandB(barMilsN))
+  // Cent ticks
+  svg.selectAll('.tickC')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickC')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', firstBarY+30)
+    .attr('height', d=>d%2===0? 8:5)
+  svg.selectAll('.tickB1')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickB1')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', d=>d%2===0? firstBarY+77:firstBarY+80)
+    .attr('height', d=>d%2===0? 8:5)
+  svg.selectAll('.tickC1')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickC1')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', d=>d%2===0? firstBarY+47:firstBarY+50)
+    .attr('height', d=>d%2===0? 8:5)
+  // Mil ticks
+  svg.selectAll('.tickM')
+    .data(d3.range(width > 500 ? 1 : 1, 10))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickM')
+    .attr('x', d=>scaleDD(d)+barX)
+    .attr('y', firstBarY+20)
+    .attr('height', 6)
+  svg.selectAll('.tickLabel1')
+    .data(d3.range(width > 500 ? 1 : 1, 10))
+    .enter()
+    .append('text')
+    .attr('class', 'tickLabel1')
+    .attr('x', d=>scaleDD(d)+barX+.5)
+    .attr('y', firstBarY+18)
+    //.style("font-size", `{W < 350 ? 12 : W < 450 ? 14 : W < 550 ? 16 : W < 650 ? 18 : 20}px`)
+    .text(d=>d)
+  // Cent ticks
+  svg.selectAll('.tickC2')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickC2')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', firstBarY+10)
+    .attr('height', d=>d%2===0? 9:6)
+  // Beat ticks
+  svg.selectAll('.tickB')
+    .data(d3.range(width > 500 ? 10 : 10, 100))
+    .enter()
+    .append('rect')
+    .attr('class', 'tickB')
+    .attr('x', d=>scaleDD(d/10)+barX)
+    .attr('y', firstBarY+60)
+    .attr('height', d=>d%2===0? 9:6)
+  // Labels
+  svg.selectAll('.timeLabel')
+    .data([`-${barDDN}`, `${barMilsN}`, `${barBeatsN}`])
+    .enter()
+    .append('text')
+    .attr('class', 'timeLabel')
+    .attr('x', barX+2)
+    .attr('y', (d,i)=>i*30+firstBarY+20)
+    .style("font-size", `${W < 300 ? 14 : W < 400 ? 16 : W < 500 ? 18 : W < 600 ? 20 : 22}px`)
+    .text(d=>d);
+  svg.attr("id", "btmbar");
+  svg.attr('class', 'barclock')
+  return svg.node();
+}
+```
+
+:::{.marginInputs}
+```{ojs}
+//| echo: false
+//| label: yawinput
+//| column: margin
+viewof yaw = Inputs.range([0, 1000], {label: "Yaw", value: 500, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: pitchinput
+//| column: margin
+viewof pitch = Inputs.range([-500, 500], {label: "Pitch", value: 0, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: rollinput
+//| column: margin
+viewof roll = Inputs.range([-500, 500], {label: "Roll", value: 0, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: sizeinput
+//| column: margin
+viewof mapsize = Inputs.range([0, 100], {label: "Size", value: 100, step: 1})
+```
+
+```{ojs}
+//| echo: false
+//| label: projselect
+//| column: margin
+viewof select = Inputs.select(
+  projections, {format: x => x.name, value: projections.find(t => t.name === "Equirectangular (plate carrée)")})
+```
+
+```{ojs}
+//| echo: false
+//| label: lonlatable
+//| column: margin
+table = createTable([
+  { Milliparallel: 500, Millimeridian: 0 },
+], { headerEditable: false, appendRows: false })
+//   {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
+//   {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
+// ], {headerEditable: false, appendRows: false})
+```
+:::
+
+#### Longitude latitude map {#llm .unnumbered .hiddenheading}
+
+::: {.column-screen}
+```{ojs}
+//| echo: false
+//| label: distmap
+viewof location = worldMapCoordinates([[turn2long(table.rows[1].cells[0].childNodes[0].innerText), turn2lati(table.rows[1].cells[1].childNodes[0].innerText)], projection], [width, height * mapsize / 100])
+```
+:::
+
+::: {.column-margin .clocks #onlymargin .sundot}
+\${sunclock}\${dotclock}
+:::
+
+#### Daylight area chart {#dac .unnumbered .hiddenheading}
+
+::: {.column-page-left}
+```{ojs}
+//| echo: false
+// https://observablehq.com/@dbridges/visualizing-seasonal-daylight
+app = {
+  const svg = d3.select(DOM.svg(majwid, majwid / 1000 * (width < 300 ? 286 : width < 310 ? 292 : width < 320 ? 298 : width < 330 ? 304 : width < 340 ? 310 : width < 350 ? 316 : width < 360 ? 322 : width < 370 ? 328 : width < 380 ? 334 : width < 390 ? 340 : width < 400 ? 346 : width < 410 ? 362 : width < 420 ? 374 : width < 430 ? 382 : width < 440 ? 386 : width < 450 ? 390 : width < 460 ? 394 : width < 470 ? 398 : width < 480 ? 402 : width < 490 ? 406 : width < 500 ? 418 : width < 510 ? 422 : width < 520 ? 426 : width < 530 ? 430 : width < 540 ? 434 : width < 550 ? 438 : width < 560 ? 442 : width < 570 ? 446 : width < 580 ? 456 : width < 590 ? 460 : width < 600 ? 470 : width < 610 ? 480 : width < 650 ? 490 : width < 700 ? 490 : width < 734 ? 490 : width < 768 ? 490 : width < 769 ? 320 : width < 800 ? 340 : width < 900 ? 350 : width < 1000 ? 360 : width < 1050 ? 420 : width < 1100 ? 415 : width < 1150 ? 413 : width < 1200 ? 410 : width < 1300 ? 380 : width < 1400 ? 360 : width < 1450 ? 340 : width < 1500 ? 320 : width < 1550 ? 300 : width < 1575 ? 290 : width < 1600 ? 280 : width < 1650 ? 270 : width < 1700 ? 260 : width < 1750 ? 258 : width < 1800 ? 254 : width < 1850 ? 250 : width < 1800 ? 248 : width < 1900 ? 246 : width < 1950 ? 244 : width < 2000 ? 242 : width < 2050 ? 240 : width < 2100 ? 230 : width < 2150 ? 225 : width < 2200 ? 220 : width < 2250 ? 215 : width < 2300 ? 210 : width < 2350 ? 205 : width < 2400 ? 200 : width < 2450 ? 195 : width < 2500 ? 189 : width < 2550 ? 190 : width < 2600 ? 186 : width < 2650 ? 184 : width < 2700 ? 182 : width < 2750 ? 180 : width < 2800 ? 178 : width < 2850 ? 174 : width < 2900 ? 170 : width < 3000 ? 166 : width < 3100 ? 162 : width < 3200 ? 156 : width < 3300 ? 152 : width < 3400 ? 146 : width < 3500 ? 140 : width < 3600 ? 134 : width < 3700 ? 130 : width < 3800 ? 126 : width < 3800 ? 122 : width < 3900 ? 118 : width < 4000 ? 114 : width < 4100 ? 110 : width < 4200 ? 106 : width < 4300 ? 104 : width < 4400 ? 102 : width < 4500 ? 100 : width < 4600 ? 98 : width < 4700 ? 96 : width < 4800 ? 94 : width < 4800 ? 92 : width < 4900 ? 90 : width < 5100 ? 88 : width < 5200 ? 86 : width < 5300 ? 84 : width < 5450 ? 82 : 84)));
+  svg.style("user-select", "none").style("-webkit-user-select", "none").attr("id", "daylightapp");
+  const margin = {top: 0, left: 16, right: 16, bottom: 0, inner: 32};
+  const contentWidth = majwid - margin.left - margin.right - margin.inner;
+  const columnWidth = contentWidth / 2;
+  let selection = {
+    date: this.value != null ? this.value.date : new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours()),
+    hour: this.value != null ? this.value.hour : new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours()).getHours()
+  }
+  const renderPlot = () => {
+    svg.selectAll("#plot *").remove();
+    svg.select("#plot").call(daylightPlot, {
+    vizwidth: columnWidth / (width < 300 ? 1.07 : width < 325 ? 1.08 : width < 350 ? 1.09 : width < 400 ? 1.1 : width < 450 ? 1.09 : width < 500 ? 1.08 : width < 540 ? 1.07 : width < 550 ? 1.06 : width < 560 ? 1.05 : width < 580 ? 1.04 : width < 590 ? 1.03 : width < 600 ? 1.02 : width < 610 ? 1.01 : width < 625 ? 1 : width < 650 ? 1 : width < 675 ? 1 : width < 700 ? 1 : width < 725 ? 1 : width < 750 ? 1 : width < 768 ? 1 : width < 769 ? 1 : width < 800 ? .96 : width < 825 ? .96 : width < 850 ? .94 : width < 875 ? .96 : width < 900 ? .98 : width < 925 ? 1 : width < 950 ? 1.02 : width < 975 ? 1.04 : width < 1000 ? 1.06 : width < 1025 ? .95 : width < 1050 ? .95 : width < 1100 ? .975 : width < 1150 ? 1 : width < 1200 ? 1.05 : width < 1225 ? 1.1 : width < 1250 ? 1.15 : width < 1275 ? 1.2 : width < 1300 ? 1.25 : width < 1350 ? 1.3 : width < 1400 ? 1.35 : width < 1450 ? 1.4 : width < 1500 ? 1.45 : width < 1600 ? 1.5 : width < 1650 ? 1.55 : width < 1700 ? 1.5 : width < 1800 ? 1.5 : width < 1900 ? 1.45 : width < 2000 ? 1.45 : width < 2200 ? 1.45 : width < 2400 ? 1.45 : width < 2600 ? 1.45 : width < 2800 ? 1.45 : width < 3000 ? 1.45 : width < 3200 ? 1.45 : width < 3400 ? 1.45 : width < 3600 ? 1.5 : width < 3800 ? 1.55 : width < 4000 ? 1.6 : width < 4700 ? 1.6 : width < 4800 ? 1.6 : width < 4900 ? 1.6 : width < 5000 ? 1.6 : width < 5600 ? 1.6 : 1.6),
+    height: majwid * (width < 300 ? 1.12 : width < 340 ? 1.11 : width < 350 ? 1.1 : width < 360 ? 1.09 : width < 370 ? 1.08 : width < 380 ? 1.07 : width < 390 ? 1.06 : width < 400 ? 1.05 : width < 425 ? 1.04 : width < 450 ? 1.03 : width < 475 ? 1.02 : width < 500 ? 1.01 : width < 550 ? 1 : width < 600 ? 1 : width < 650 ? 1 : width < 700 ? 1 : width < 750 ? 1 : width < 769 ? 1 : width < 800 ? .93 : width < 850 ? .91 : width < 900 ? .92 : width < 950 ? .9 : width < 1000 ? .9 : width < 1050 ? .9 : width < 1100 ? .9 : width < 1200 ? 0.91 : width < 1300 ? 0.92 : width < 1400 ? .93 : width < 1500 ? .95 : width < 1600 ? .97 : width < 1700 ? .98 : width < 1800 ? .99 : width < 4800 ? 1 : width < 5600 ? 1 : 1),
+      year: 2022,
+      latitude: location[1],
+      defaultDate: selection.date,
+      defaultHour: selection.hour
+    })
+  }
+  const renderSolarSystem = () => {
+    svg.selectAll("#solar-system *").remove();
+    svg.selectAll("#solar-system").call(solarSystem,
+                                        majwid * (width < 350 ? .922 : width < 350 ? .92 : width < 450 ? .89 : width < 532 ? .89 : width < 769 ? .94 : width < 1000 ? .9 : width < 1100 ? .91 : width < 1200 ? .92 : width < 1300 ? .92 : width < 1400 ? .92 : width < 1500 ? .93 : width < 1600 ? .94 : .96),
+                                        location,
+                                        selection.date,
+                                        selection.hour,
+                                        window.darkmode);
+  }
+  // const renderGlobe = () => {
+  //   svg.selectAll("#globe *").remove();
+  //   svg.selectAll("#globe").call(globe, { vizwidth: columnWidth / 1.28, location, ...selection });
+  // }
+  const setSelection = (newSelection, forceRender = false) => {
+    const prev = {...selection};
+    selection = newSelection;
+    svg.node().value = selection;
+    this.value = selection;
+    set(viewof selectedDate, selection.date);
+    set(viewof selectedHour, selection.hour);
+    if (forceRender) {
+      renderPlot();
+      renderSolarSystem();
+  //    renderGlobe();
+    } else if (prev.hour !== selection.hour || prev.date !== selection.date) {
+      renderSolarSystem();
+  //    renderGlobe();
+}
+  }
+  const plot = svg.append("g")
+    .attr("id", "plot")
+    .attr("transform", `translate(
+    ${margin.left + (width < 275 ? -16 : width < 300 ? -14 : width < 325 ? -12 : width < 350 ? -9 : width < 375 ? -8 : width < 400 ? -4 : width < 425 ? 2 : width < 450 ? 4 : width < 475 ? 6 : width < 500 ? 11 : width < 550 ? 16 : width < 600 ? 18 : width < 650 ? 20 : width < 700 ? 20 : width < 769 ? 21 : width < 800 ? 63 : width < 900 ? 83 : width < 1000 ? 100 : width < 1100 ? 140 : width < 1200 ? 135 : width < 1300 ? 130 : width < 1400 ? 124 : width < 1500 ? 112 : width < 1600 ? 90 : width < 1700 ? 80 : width < 1800 ? 30 : width < 1900 ? 20 : width < 2000 ? 10 : width < 2100 ? 5 : 0)},
+    ${width < 300 ? -90 : width < 325 ? -90 : width < 350 ? -90 : width < 375 ? -90 : width < 400 ? -90 : width < 425 ? -90 : width < 450 ? -90 : width < 500 ? -91 : width < 550 ? -92 : width < 600 ? -92 : width < 650 ? -91 : width < 675 ? -91 : width < 700 ? -91 : width < 750 ? -91 : width < 760 ? -91 : width < 768 ? -91 : width < 769 ? -170 : width < 780 ? -170 : width < 790 ? -170 : width < 800 ? -174 : width < 825 ? -178 : width < 850 ? -184 : width < 900 ? -186 : width < 950 ? -186 : width < 975 ? -186 : width < 992 ? -186 : width < 1000 ? -180 : width < 1025 ? -190 : width < 1050 ? -192 : width < 1075 ? -196 : width < 1100 ? -200 : width < 1150 ? -200 : width < 1200 ? -200 : width < 1250 ? -190 : width < 1300 ? -190 : width < 1320 ? -180 : width < 1340 ? -180 : width < 1360 ? -180 : width < 1380 ? -185 : width < 1400 ? -185 : width < 1420 ? -185 : width < 1450 ? -200 : width < 1480 ? -205 : width < 1500 ? -210 : width < 1520 ? -210 : width < 1540 ? -220 : width < 1560 ? -224 : width < 1580 ? -228 : width < 1600 ? -235 : width < 1620 ? -235 : width < 1640 ? -235 : width < 1660 ? -245 : width < 1680 ? -250 : width < 1700 ? -255 : width < 1720 ? -265 : width < 1740 ? -270 : width < 1760 ? -280 : width < 1780 ? -285 : width < 1800 ? -290 : width < 1820 ? -295 : width < 1840 ? -305 : width < 1860 ? -310 : width < 1880 ? -315 : width < 1900 ? -320 : width < 1925 ? -330 : width < 1950 ? -335 : width < 1975 ? -340 : width < 2000 ? -350 : width < 2025 ? -360 : width < 2050 ? -365 : width < 2075 ? -370 : width < 2100 ? -380 : width < 2125 ? -380 : width < 2150 ? -385 : width < 2175 ? -395 : width < 2200 ? -410 : width < 2225 ? -400 : width < 2250 ? -415 : width < 2275 ? -420 : width < 2300 ? -430 : width < 2325 ? -430 : width < 2350 ? -440 : width < 2375 ? -450 : width < 2400 ? -460 : width < 2425 ? -450 : width < 2450 ? -465 : width < 2475 ? -470 : width < 2500 ? -482 : width < 2525 ? -485 : width < 2550 ? -500 : width < 2575 ? -510 : width < 2600 ? -520 : width < 2625 ? -520 : width < 2650 ? -530 : width < 2675 ? -545 : width < 2700 ? -555 : width < 2725 ? -555 : width < 2750 ? -565 : width < 2775 ? -575 : width < 2800 ? -585 : width < 2825 ? -590 : width < 2850 ? -595 : width < 2875 ? -600 : width < 2900 ? -610 : width < 2925 ? -610 : width < 2950 ? -620 : width < 2975 ? -630 : width < 3000 ? -645 : width < 3025 ? -640 : width < 3050 ? -660 : width < 3075 ? -670 : width < 3100 ? -680 : width < 3125 ? -670 : width < 3150 ? -685 : width < 3175 ? -695 : width < 3200 ? -705 : width < 3225 ? -705 : width < 3250 ? -720 : width < 3275 ? -730 : width < 3300 ? -740 : width < 3325 ? -730 : width < 3350 ? -740 : width < 3375 ? -750 : width < 3400 ? -760 : width < 3425 ? -750 : width < 3450 ? -760 : width < 3475 ? -770 : width < 3500 ? -780 : width < 3525 ? -770 : width < 3550 ? -780 : width < 3575 ? -790 : width < 3600 ? -800 : width < 3625 ? -800 : width < 3650 ? -810 : width < 3675 ? -815 : width < 3700 ? -825 : width < 3725 ? -825 : width < 3750 ? -840 : width < 3775 ? -850 : width < 3800 ? -860 : width < 3825 ? -830 : width < 3850 ? -840 : width < 3875 ? -850 : width < 3900 ? -855 : width < 3925 ? -850 : width < 3950 ? -860 : width < 3975 ? -870 : width < 4000 ? -875 : width < 4025 ? -865 : width < 4050 ? -875 : width < 4075 ? -890 : width < 4100 ? -900 : width < 4125 ? -880 : width < 4150 ? -890 : width < 4175 ? -895 : width < 4200 ? -905 : width < 4225 ? -910 : width < 4250 ? -920 : width < 4275 ? -930 : width < 4300 ? -940 : width < 4325 ? -950 : width < 4350 ? -960 : width < 4400 ? -970 : width < 4425 ? -975 : width < 4450 ? -980 : width < 4475 ? -985 : width < 4500 ? -990 : width < 4525 ? -1000 : width < 4550 ? -1005 : width < 4575 ? -1020 : width < 4600 ? -1030 : width < 4650 ? -1030 : width < 4700 ? -1055 : width < 4750 ? -1060 : width < 4800 ? -1080 : width < 4850 ? -1070 : width < 4900 ? -1085 : width < 4950 ? -1095 : width < 5000 ? -1115 : width < 5025 ? -1130 : width < 5050 ? -1140 : width < 5075 ? -1150 : width < 5100 ? -1160 : width < 5125 ? -1155 : width < 5150 ? -1160 : width < 5200 ? -1180 : width < 5225 ? -1175 : width < 5250 ? -1185 : width < 5275 ? -1195 : width < 5300 ? -1210 : width < 5325 ? -1205 : width < 5350 ? -1210 : width < 5375 ? -1220 : width < 5400 ? -1235 : width < 5420 ? -1245 : width < 5440 ? -1255 : width < 5450 ? -1265 : width < 5460 ? -1280 : width < 5480 ? -1295 : width < 5500 ? -1310 : width < 5525 ? -1315 : width < 5550 ? -1325 : width < 5575 ? -1335 : width < 5600 ? -1345 : width < 5625 ? -1360 : width < 5650 ? -1370 : width < 5675 ? -1380 : width < 5700 ? -1390 : width < 5720 ? -1400 : width < 5740 ? -1410 : width < 5760 ? -1415 : width < 5780 ? -1430 : width < 5800 ? -1440 : width < 5825 ? -1460 : width < 5850 ? -1470 : width < 5875 ? -1480 : -1495})`);
+  svg.append("g")
+    .attr("id", "solar-system")
+    .attr("transform", `translate(
+    ${margin.left + (width < 300 ? -1 : width < 350 ? 0 : width < 400 ? 3 : width < 425 ? 4 : width < 450 ? 5 : width < 475 ? 6 : width < 500 ? 7 : width < 516 ? 8 : width < 532 ? 9 : width < 600 ? -3 : width < 650 ? -2 : width < 700 ? -1 : width < 750 ? 0 : width < 769 ? 0 : width < 800 ? 30 : width < 900 ? 32 : width < 1000 ? 36 : width < 1100 ? 80 : width < 1200 ? 74 : width < 1225 ? 74 : width < 1250 ? 72 : width < 1275 ? 68 : width < 1300 ? 66 : width < 1400 ? 58 : width < 1450 ? 40 : width < 1500 ? 45 : width < 1600 ? 25 : width < 1700 ? 0 : width < 1750 ? -54 : width < 1800 ? -52 : width < 1900 ? -60 : width < 2000 ? -70 : width < 2100 ? -75 : width < 2200 ? -80 : width < 2300 ? -84 : width < 2400 ? -88 : width < 2500 ? -98 : width < 2600 ? -108 : width < 2700 ? -118 : width < 2800 ? -120 : width < 2900 ? -122 : width < 3000 ? -124 : width < 3100 ? -126 : width < 3200 ? -128 : width < 3300 ? -130 : width < 3400 ? -132 : width < 3500 ? -134 : width < 3600 ? -136 : width < 3700 ? -138 : width < 3800 ? -140 : width < 3900 ? -142 : width < 4000 ? -144 : width < 4100 ? -146 : width < 4200 ? -148 : width < 4300 ? -150 : width < 4400 ? -155 : width < 4500 ? -160 : width < 4600 ? -165 : width < 4700 ? -170 : width < 4800 ? -175 : width < 4900 ? -180 : width < 5000 ? -185 : width < 5200 ? -190 : width < 5400 ? -190 : width < 5600 ? -190 : width < 5800 ? -190 : -200)},
+    ${width < 280 ? 66 : width < 290 ? 70 : width < 300 ? 74 : width < 310 ? 80 : width < 320 ? 86 : width < 330 ? 92 : width < 340 ? 98 : width < 350 ? 104 : width < 360 ? 110 : width < 370 ? 114 : width < 380 ? 118 : width < 390 ? 122 : width < 400 ? 126 : width < 410 ? 134 : width < 420 ? 142 : width < 425 ? 146 : width < 430 ? 150 : width < 440 ? 158 : width < 450 ? 162 : width < 460 ? 164 : width < 470 ? 170 : width < 480 ? 176 : width < 490 ? 180 : width < 500 ? 192 : width < 510 ? 200 : width < 520 ? 206 : width < 530 ? 212 : width < 540 ? 218 : width < 550 ? 224 : width < 560 ? 230 : width < 570 ? 236 : width < 580 ? 240 : width < 590 ? 250 : width < 600 ? 260 : width < 610 ? 265 : width < 620 ? 270 : width < 630 ? 275 : width < 640 ? 280 : width < 650 ? 290 : width < 660 ? 295 : width < 670 ? 300 : width < 680 ? 305 : width < 690 ? 310 : width < 700 ? 315 : width < 710 ? 320 : width < 720 ? 325 : width < 730 ? 330 : width < 740 ? 335 : width < 760 ? 340 : width < 768 ? 350 : width < 769 ? 270 : width < 770 ? 290 : width < 780 ? 290 : width < 800 ? 290 : width < 825 ? 310 : width < 850 ? 325 : width < 875 ? 335 : width < 900 ? 340 : width < 950 ? 360 : width < 975 ? 370 : width < 1000 ? 380 : width < 1050 ? 450 : width < 1100 ? 470 : width < 1150 ? 485 : width < 1200 ? 490 : width < 1250 ? 470 : width < 1300 ? 480 : width < 1350 ? 475 : width < 1400 ? 480 : width < 1440 ? 470 : width < 1450 ? 470 : width < 1480 ? 470 : width < 1500 ? 470 : width < 1520 ? 470 : width < 1540 ? 475 : width < 1550 ? 470 : width < 1560 ? 465 : width < 1600 ? 460 : width < 1620 ? 450 : width < 1640 ? 460 : width < 1660 ? 460 : width < 1680 ? 460 : width < 1700 ? 470 : width < 1720 ? 480 : width < 1780 ? 490 : width < 1800 ? 500 : width < 1820 ? 520 : width < 1880 ? 530 : width < 1920 ? 550 : width < 1970 ? 560 : width < 2000 ? 570 : width < 2100 ? 580 : width < 2200 ? 590 : width < 2300 ? 600 : width < 2400 ? 610 : width < 2500 ? 635 : width < 2600 ? 670 : width < 2700 ? 690 : width < 2800 ? 710 : width < 2900 ? 720 : width < 2950 ? 730 : width < 3000 ? 750 : width < 3100 ? 775 : width < 3200 ? 790 : width < 3250 ? 790 : width < 3300 ? 805 : width < 3400 ? 810 : width < 3450 ? 815 : width < 3500 ? 820 : width < 3550 ? 815 : width < 3600 ? 825 : width < 3700 ? 835 : width < 3750 ? 830 : width < 3800 ? 835 : width < 3850 ? 830 : width < 3900 ? 840 : width < 4000 ? 840 : width < 4100 ? 850 : width < 4200 ? 860 : width < 4250 ? 870 : width < 4300 ? 880 : width < 4325 ? 890 : width < 4350 ? 900 : width < 4400 ? 905 : width < 4500 ? 910 : width < 4550 ? 925 : width < 4600 ? 930 : width < 4650 ? 935 : width < 4700 ? 940 : width < 4800 ? 950 : width < 4850 ? 950 : width < 4900 ? 960 : width < 4950 ? 970 : width < 5000 ? 980 : width < 5050 ? 985 : width < 5100 ? 990 : width < 5150 ? 1005 : width < 5250 ? 1035 : width < 5300 ? 1010 : width < 5325 ? 1035 : width < 5350 ? 1060 : width < 5450 ? 1075 : width < 5500 ? 1080 : width < 5550 ? 1095 : width < 5600 ? 1110 : 1200})`);
+  // svg.append("g")
+  //   .attr("id", "globe")
+  //   .attr("transform", `translate(${margin.left + margin.inner + columnWidth / 2 + 20}, ${margin.top + height / 1.2 + 4})`);
+  setSelection(selection, true);
+  const handleDateHourChange = ({ target, detail: { date, hour }}) => {
+    if (date != null && hour != null) setSelection({...selection, date, hour});
+  }
+  svg.node().addEventListener(EventType.DateHourChange, handleDateHourChange, false);
+  return svg.node();
+}
+```
+:::

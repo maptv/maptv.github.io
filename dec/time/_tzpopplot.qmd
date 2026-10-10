@@ -1,0 +1,30 @@
+```{ojs}
+//| echo: false
+//| label: timezonepoptoggles
+//| class: togs
+// https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
+viewof sortParams = Inputs.form([
+  Inputs.toggle({ label: "Sort ascending" }),
+  Inputs.toggle({ label: "Sort by offset" }),
+  ])
+```
+
+```{ojs}
+//| echo: false
+//| label: timezonepopstackedbar
+//| class: stackedbar
+// https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
+Plot.plot({
+  width: Math.min(width, 1000),
+  height: 100 + Math.min(width / 25, 20),
+  marginBottom: 50,
+  style: `overflow: visible;font-size:${15 + Math.min(width / 90, 11)}px;`,
+  color: {scheme: "RdBu", className: "barPlotLegend"},
+  marginLeft: 80 + Math.min(width / 100, 20),
+  y: { label: null },
+  x: { grid: true, label: "Population (billions)", labelOffset: 45 + Math.min(width / 90, 22), transform: d => d / 1e9 },
+  marks: [
+    Plot.barX(sortedPop, {x: "pop", y: "Sign", fill: "Offset", stroke: "black", tip: true }),
+  ]
+})
+```
