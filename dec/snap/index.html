@@ -1276,10 +1276,15 @@ eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNv
 Laptev, Martin. 2026. <span>“Dec Snap.”</span> April 22. <a href="https://maptv.github.io/dec/snap">https://maptv.github.io/dec/snap</a>.
 </div></div></section></div></main> <!-- /main -->
 <script>
-// Left-align display equations; tags (equation numbers) stay on the right.
-// Must be set before MathJax's deferred script runs.
+// Left-align display equations on phones only (centered elsewhere); tags
+// (equation numbers) stay on the right. MathJax reads this once at startup,
+// so the choice is fixed at page load. Must be set before MathJax's deferred
+// script runs. Breakpoint matches the mobile rules in asset/style.css.
 window.MathJax = {
-  output: { displayAlign: "left", displayIndent: "0" }
+  output: {
+    displayAlign: matchMedia("(max-width: 479.98px)").matches ? "left" : "center",
+    displayIndent: "0"
+  }
 };
 </script>
 <script src="../../asset/math.js"></script>

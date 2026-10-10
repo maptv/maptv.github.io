@@ -7503,10 +7503,15 @@ Hinnant, Howard. 2021+185. <em><span class="nocase"><code>chrono</code></span>-C
 <li id="fn4"><p><a href="http://www.paoloagnoli.it">Agnoli, Paolo</a> &amp; <a href="https://www.roma1.infn.it/~dagos">D’Agostini, Giulio</a>. <span class="tool" data-bs-toggle="tooltip" data-bs-title="January 25, 2005">2004+330</span>. <em>Why does the meter beat the second?</em>. <a href="https://arxiv.org/abs/physics/0412078" class="uri">https://arxiv.org/abs/physics/0412078</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p><a href="https://howardhinnant.github.io">Hinnant, Howard</a>. <span class="tool" data-bs-toggle="tooltip" data-bs-title="September 1, 2021">2021+185</span>. <em><code>chrono</code>-Compatible Low-Level Date Algorithms</em>. <a href="https://howardhinnant.github.io/date_algorithms.html" class="uri">https://howardhinnant.github.io/date_algorithms.html</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section></div></main><!-- /main --><script>
-// Left-align display equations; tags (equation numbers) stay on the right.
-// Must be set before MathJax's deferred script runs.
+// Left-align display equations on phones only (centered elsewhere); tags
+// (equation numbers) stay on the right. MathJax reads this once at startup,
+// so the choice is fixed at page load. Must be set before MathJax's deferred
+// script runs. Breakpoint matches the mobile rules in asset/style.css.
 window.MathJax = {
-  output: { displayAlign: "left", displayIndent: "0" }
+  output: {
+    displayAlign: matchMedia("(max-width: 479.98px)").matches ? "left" : "center",
+    displayIndent: "0"
+  }
 };
 </script><script src="../asset/math.js"></script><style>
 #title-block-header > div.quarto-title-banner.page-columns.page-full { margin: 0px; padding: 0px; }

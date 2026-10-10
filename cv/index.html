@@ -750,10 +750,15 @@ ul.task-list li input[type="checkbox"] {
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section></div></main> <!-- /main -->
 <script>
-// Left-align display equations; tags (equation numbers) stay on the right.
-// Must be set before MathJax's deferred script runs.
+// Left-align display equations on phones only (centered elsewhere); tags
+// (equation numbers) stay on the right. MathJax reads this once at startup,
+// so the choice is fixed at page load. Must be set before MathJax's deferred
+// script runs. Breakpoint matches the mobile rules in asset/style.css.
 window.MathJax = {
-  output: { displayAlign: "left", displayIndent: "0" }
+  output: {
+    displayAlign: matchMedia("(max-width: 479.98px)").matches ? "left" : "center",
+    displayIndent: "0"
+  }
 };
 </script>
 <script src="../asset/math.js"></script>
