@@ -936,7 +936,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
       8, 9, 13, 27, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
     ].includes(ev.which)) {
-      const newLon = parseInt(liveTable[0].Milliparallel)
+      const newLon = parseInt(liveTable[0].Milliwěi)
       const newLat = parseInt(liveTable[0].Millimeridian)
       lon = newLon != null || !isNaN(newLon) ? turn2long(newLon) : lon;
       lat = newLat != null || !isNaN(newLat) ? turn2lati(newLat) : lat;

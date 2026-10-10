@@ -55,6 +55,17 @@ updated as new preferences come up; don't let it grow into a changelog.
   and when counting specific days as items ("the first 4 days of the year"); always "1 day"
   and spelled-out numbers ("a day or two"). Never use "y" as a unit symbol, since `y` is the
   Year variable ("Year y", "y+1"); always spell out "years" (and "weeks", "sols").
+- Plurals in Dec articles: acronyms are never pluralized in the text, but their tooltip
+  shows the plural expansion when the context is plural ("3 [tzo](#tzo)" with tooltip
+  "time zone offsets", never "tzos"). Zem is itself an acronym (zone equatorial meter), so
+  it never takes an "s", prefixed or not: "2 kilozem" means 2 thousand zone equatorial
+  meters. Taur (𝜏r) and omegar (ωr) are readings of formulas, so they are invariable too:
+  "2 kilotaur" is 2000𝜏r, never "kilotaurs" or "milliomegars". Transliterated foreign
+  words are also invariable: wěi and xún never take an "s". Naturalized English words
+  with Latin or Greek roots (meridian, turn, beat, perbeat, degree) pluralize normally.
+- Retired names: longitude is in wěi (`w`, `dw`, `mw`), not parallels/λ; latitude is in
+  meridians (`m`, `mm`), not φ; days in the year is `syl`, not `n` (the glossary's `n` is
+  a musical note); the inverse of a beat is perbeat (`þ`), not `iob`.
 - Dec has no negative time zone offsets: the international date line and the prime meridian
   coincide, so a negative UTC offset becomes a positive Dec offset by adding 1 day. A
   holiday tied to a Gregorian dom or dow therefore lands 1 day later in the Americas.
