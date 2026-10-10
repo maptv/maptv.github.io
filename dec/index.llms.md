@@ -14,7 +14,7 @@ Published
 
 Modified
 
-2026+200
+2026+223
 
 ![](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODI5LjY4NzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGNsYXNzPSJmbG93Y2hhcnQgZGVjbmF2LXN2ZyIgdmlld2JveD0iMCAwIDgyOS42ODc1IDk0IiByb2xlPSJncmFwaGljcy1kb2N1bWVudCBkb2N1bWVudCIgYXJpYS1yb2xlZGVzY3JpcHRpb249ImZsb3djaGFydC12MiIgaGVpZ2h0PSI5NCI+CjxnPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRFbmQiIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Ym94PSIwIDAgMTAgMTAiIHJlZng9IjUiIHJlZnk9IjUiIG1hcmtlcnVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgbWFya2Vyd2lkdGg9IjgiIG1hcmtlcmhlaWdodD0iOCIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNIDAgMCBMIDEwIDUgTCAwIDEwIHoiIGNsYXNzPSJhcnJvd01hcmtlclBhdGgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDE7IHN0cm9rZS1kYXNoYXJyYXk6IDEsIDA7IiAvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRTdGFydCIgY2xhc3M9Im1hcmtlciBmbG93Y2hhcnQtdjIiIHZpZXdib3g9IjAgMCAxMCAxMCIgcmVmeD0iNC41IiByZWZ5PSI1IiBtYXJrZXJ1bml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcndpZHRoPSI4IiBtYXJrZXJoZWlnaHQ9IjgiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTSAwIDUgTCAxMCAxMCBMIDEwIDAgeiIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiIC8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibWVybWFpZC0xNzg5Nzk1ODg3NTk3X2Zsb3djaGFydC12Mi1jaXJjbGVFbmQiIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Ym94PSIwIDAgMTAgMTAiIHJlZng9IjExIiByZWZ5PSI1IiBtYXJrZXJ1bml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcndpZHRoPSIxMSIgbWFya2VyaGVpZ2h0PSIxMSIgb3JpZW50PSJhdXRvIj48Y2lyY2xlIGN4PSI1IiBjeT0iNSIgcj0iNSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiPjwvY2lyY2xlPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItY2lyY2xlU3RhcnQiIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Ym94PSIwIDAgMTAgMTAiIHJlZng9Ii0xIiByZWZ5PSI1IiBtYXJrZXJ1bml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcndpZHRoPSIxMSIgbWFya2VyaGVpZ2h0PSIxMSIgb3JpZW50PSJhdXRvIj48Y2lyY2xlIGN4PSI1IiBjeT0iNSIgcj0iNSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiPjwvY2lyY2xlPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItY3Jvc3NFbmQiIGNsYXNzPSJtYXJrZXIgY3Jvc3MgZmxvd2NoYXJ0LXYyIiB2aWV3Ym94PSIwIDAgMTEgMTEiIHJlZng9IjEyIiByZWZ5PSI1LjIiIG1hcmtlcnVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgbWFya2Vyd2lkdGg9IjExIiBtYXJrZXJoZWlnaHQ9IjExIiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0gMSwxIGwgOSw5IE0gMTAsMSBsIC05LDkiIGNsYXNzPSJhcnJvd01hcmtlclBhdGgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1kYXNoYXJyYXk6IDEsIDA7IiAvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItY3Jvc3NTdGFydCIgY2xhc3M9Im1hcmtlciBjcm9zcyBmbG93Y2hhcnQtdjIiIHZpZXdib3g9IjAgMCAxMSAxMSIgcmVmeD0iLTEiIHJlZnk9IjUuMiIgbWFya2VydW5pdHM9InVzZXJTcGFjZU9uVXNlIiBtYXJrZXJ3aWR0aD0iMTEiIG1hcmtlcmhlaWdodD0iMTEiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTSAxLDEgbCA5LDkgTSAxMCwxIGwgLTksOSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiIC8+PC9tYXJrZXI+PGcgY2xhc3M9InJvb3QiPjxnIGNsYXNzPSJjbHVzdGVycyI+PC9nPjxnIGNsYXNzPSJlZGdlUGF0aHMiPjxwYXRoIGQ9Ik0xMjAuOTIyLDQ3TDEyNS4wODksNDdDMTI5LjI1NSw0NywxMzcuNTg5LDQ3LDE0NS4yNTUsNDdDMTUyLjkyMiw0NywxNTkuOTIyLDQ3LDE2My40MjIsNDdMMTY2LjkyMiw0NyIgaWQ9IkxfQV9CXzAiIGNsYXNzPSJlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGVkZ2UtdGhpY2tuZXNzLW5vcm1hbCBlZGdlLXBhdHRlcm4tc29saWQgZmxvd2NoYXJ0LWxpbmsiIHN0eWxlPSI7IiBkYXRhLWVkZ2U9InRydWUiIGRhdGEtZXQ9ImVkZ2UiIGRhdGEtaWQ9IkxfQV9CXzAiIGRhdGEtcG9pbnRzPSJXM3NpZUNJNk1USXdMamt5TVRnM05Td2llU0k2TkRkOUxIc2llQ0k2TVRRMUxqa3lNVGczTlN3aWVTSTZORGQ5TEhzaWVDSTZNVGN3TGpreU1UZzNOU3dpZVNJNk5EZDlYUT09IiBtYXJrZXItZW5kPSJ1cmwoI21lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRFbmQpIiAvPjxwYXRoIGQ9Ik0yOTUuNzAzLDQ3TDI5OS44Nyw0N0MzMDQuMDM2LDQ3LDMxMi4zNyw0NywzMjAuMDM2LDQ3QzMyNy43MDMsNDcsMzM0LjcwMyw0NywzMzguMjAzLDQ3TDM0MS43MDMsNDciIGlkPSJMX0JfQ18wIiBjbGFzcz0iZWRnZS10aGlja25lc3Mtbm9ybWFsIGVkZ2UtcGF0dGVybi1zb2xpZCBlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGZsb3djaGFydC1saW5rIiBzdHlsZT0iOyIgZGF0YS1lZGdlPSJ0cnVlIiBkYXRhLWV0PSJlZGdlIiBkYXRhLWlkPSJMX0JfQ18wIiBkYXRhLXBvaW50cz0iVzNzaWVDSTZNamsxTGpjd016RXlOU3dpZVNJNk5EZDlMSHNpZUNJNk16SXdMamN3TXpFeU5Td2llU0k2TkRkOUxIc2llQ0k2TXpRMUxqY3dNekV5TlN3aWVTSTZORGQ5WFE9PSIgbWFya2VyLWVuZD0idXJsKCNtZXJtYWlkLTE3ODk3OTU4ODc1OTdfZmxvd2NoYXJ0LXYyLXBvaW50RW5kKSIgLz48cGF0aCBkPSJNNDcxLjUzMSw0N0w0NzUuNjk4LDQ3QzQ3OS44NjUsNDcsNDg4LjE5OCw0Nyw0OTUuODY1LDQ3QzUwMy41MzEsNDcsNTEwLjUzMSw0Nyw1MTQuMDMxLDQ3TDUxNy41MzEsNDciIGlkPSJMX0NfRF8wIiBjbGFzcz0iZWRnZS10aGlja25lc3Mtbm9ybWFsIGVkZ2UtcGF0dGVybi1zb2xpZCBlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGZsb3djaGFydC1saW5rIiBzdHlsZT0iOyIgZGF0YS1lZGdlPSJ0cnVlIiBkYXRhLWV0PSJlZGdlIiBkYXRhLWlkPSJMX0NfRF8wIiBkYXRhLXBvaW50cz0iVzNzaWVDSTZORGN4TGpVek1USTFMQ0o1SWpvME4zMHNleUo0SWpvME9UWXVOVE14TWpVc0lua2lPalEzZlN4N0luZ2lPalV5TVM0MU16RXlOU3dpZVNJNk5EZDlYUT09IiBtYXJrZXItZW5kPSJ1cmwoI21lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRFbmQpIiAvPjxwYXRoIGQ9Ik02NDYuNjA5LDQ3TDY1MC43NzYsNDdDNjU0Ljk0Myw0Nyw2NjMuMjc2LDQ3LDY3MC45NDMsNDdDNjc4LjYwOSw0Nyw2ODUuNjA5LDQ3LDY4OS4xMDksNDdMNjkyLjYwOSw0NyIgaWQ9IkxfRF9FXzAiIGNsYXNzPSJlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGVkZ2UtdGhpY2tuZXNzLW5vcm1hbCBlZGdlLXBhdHRlcm4tc29saWQgZmxvd2NoYXJ0LWxpbmsiIHN0eWxlPSI7IiBkYXRhLWVkZ2U9InRydWUiIGRhdGEtZXQ9ImVkZ2UiIGRhdGEtaWQ9IkxfRF9FXzAiIGRhdGEtcG9pbnRzPSJXM3NpZUNJNk5qUTJMall3T1RNM05Td2llU0k2TkRkOUxIc2llQ0k2TmpjeExqWXdPVE0zTlN3aWVTSTZORGQ5TEhzaWVDSTZOamsyTGpZd09UTTNOU3dpZVNJNk5EZDlYUT09IiBtYXJrZXItZW5kPSJ1cmwoI21lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRFbmQpIiAvPjwvZz48ZyBjbGFzcz0iZWRnZUxhYmVscyI+PGcgY2xhc3M9ImVkZ2VMYWJlbCI+PGcgY2xhc3M9ImxhYmVsIiBkYXRhLWlkPSJMX0FfQl8wIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+PGZvcmVpZ25vYmplY3Qgd2lkdGg9IjAiIGhlaWdodD0iMCI+PGRpdiBjbGFzcz0ibGFiZWxCa2ciIGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHA+PHNwYW4gY2xhc3M9ImVkZ2VMYWJlbCI+PC9zcGFuPjwvcD4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjxnIGNsYXNzPSJlZGdlTGFiZWwiPjxnIGNsYXNzPSJsYWJlbCIgZGF0YS1pZD0iTF9CX0NfMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgMCkiPjxmb3JlaWdub2JqZWN0IHdpZHRoPSIwIiBoZWlnaHQ9IjAiPjxkaXYgY2xhc3M9ImxhYmVsQmtnIiBkYXRhLXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZGlzcGxheTogdGFibGUtY2VsbDsgd2hpdGUtc3BhY2U6IG5vd3JhcDsgbGluZS1oZWlnaHQ6IDEuNTsgbWF4LXdpZHRoOiAyMDBweDsgdGV4dC1hbGlnbjogY2VudGVyOyI+CjxwPjxzcGFuIGNsYXNzPSJlZGdlTGFiZWwiPjwvc3Bhbj48L3A+CjwvZGl2Pgo8L2ZvcmVpZ25vYmplY3Q+PC9nPjwvZz48ZyBjbGFzcz0iZWRnZUxhYmVsIj48ZyBjbGFzcz0ibGFiZWwiIGRhdGEtaWQ9IkxfQ19EXzAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj48Zm9yZWlnbm9iamVjdCB3aWR0aD0iMCIgaGVpZ2h0PSIwIj48ZGl2IGNsYXNzPSJsYWJlbEJrZyIgZGF0YS14bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IHRhYmxlLWNlbGw7IHdoaXRlLXNwYWNlOiBub3dyYXA7IGxpbmUtaGVpZ2h0OiAxLjU7IG1heC13aWR0aDogMjAwcHg7IHRleHQtYWxpZ246IGNlbnRlcjsiPgo8cD48c3BhbiBjbGFzcz0iZWRnZUxhYmVsIj48L3NwYW4+PC9wPgo8L2Rpdj4KPC9mb3JlaWdub2JqZWN0PjwvZz48L2c+PGcgY2xhc3M9ImVkZ2VMYWJlbCI+PGcgY2xhc3M9ImxhYmVsIiBkYXRhLWlkPSJMX0RfRV8wIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+PGZvcmVpZ25vYmplY3Qgd2lkdGg9IjAiIGhlaWdodD0iMCI+PGRpdiBjbGFzcz0ibGFiZWxCa2ciIGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHA+PHNwYW4gY2xhc3M9ImVkZ2VMYWJlbCI+PC9zcGFuPjwvcD4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvZz48ZyBjbGFzcz0ibm9kZXMiPjxhIGhyZWY9Ii4uL2RlYyIgY2xhc3M9ImRlY25hdi1saW5rIG5vLWV4dGVybmFsIj48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZmxvd2NoYXJ0LUEtMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjQuNDYwOTM3NSwgNDcpIj48cmVjdCBjbGFzcz0iYmFzaWMgbGFiZWwtY29udGFpbmVyIiBzdHlsZSB4PSItNTYuNDYwOTM3NSIgeT0iLTM5IiB3aWR0aD0iMTEyLjkyMTg3NSIgaGVpZ2h0PSI3OCIgLz48ZyBjbGFzcz0ibGFiZWwiIHN0eWxlIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNi40NjA5Mzc1LCAtMjQpIj48cmVjdCAvPjxmb3JlaWdub2JqZWN0IHdpZHRoPSI1Mi45MjE4NzUiIGhlaWdodD0iNDgiPjxkaXYgZGF0YS14bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IHRhYmxlLWNlbGw7IHdoaXRlLXNwYWNlOiBub3dyYXA7IGxpbmUtaGVpZ2h0OiAxLjU7IG1heC13aWR0aDogMjAwcHg7IHRleHQtYWxpZ246IGNlbnRlcjsiPgo8c3BhbiBjbGFzcz0ibm9kZUxhYmVsIj4KPHA+CkRlYwo8L3A+CjxwPjwvcD48L3NwYW4+CjwvZGl2Pgo8L2ZvcmVpZ25vYmplY3Q+PC9nPjwvZz48L2E+PGEgaHJlZj0iLi4vZGVjL2RhdGUiIGNsYXNzPSJkZWNuYXYtbGluayBuby1leHRlcm5hbCI+PGcgY2xhc3M9Im5vZGUgZGVmYXVsdCIgaWQ9ImZsb3djaGFydC1CLTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIzMy4zMTI1LCA0NykiPjxyZWN0IGNsYXNzPSJiYXNpYyBsYWJlbC1jb250YWluZXIiIHN0eWxlIHg9Ii02Mi4zOTA2MjUiIHk9Ii0zOSIgd2lkdGg9IjEyNC43ODEyNSIgaGVpZ2h0PSI3OCIgLz48ZyBjbGFzcz0ibGFiZWwiIHN0eWxlIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMi4zOTA2MjUsIC0yNCkiPjxyZWN0IC8+PGZvcmVpZ25vYmplY3Qgd2lkdGg9IjY0Ljc4MTI1IiBoZWlnaHQ9IjQ4Ij48ZGl2IGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHNwYW4gY2xhc3M9Im5vZGVMYWJlbCI+CjxwPgpkYXRlCjwvcD4KPHA+PC9wPjwvc3Bhbj4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvYT48YSBocmVmPSIuLi9kZWMvdGltZSIgY2xhc3M9ImRlY25hdi1saW5rIG5vLWV4dGVybmFsIj48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZmxvd2NoYXJ0LUMtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDA4LjYxNzE4NzUsIDQ3KSI+PHJlY3QgY2xhc3M9ImJhc2ljIGxhYmVsLWNvbnRhaW5lciIgc3R5bGUgeD0iLTYyLjkxNDA2MjUiIHk9Ii0zOSIgd2lkdGg9IjEyNS44MjgxMjUiIGhlaWdodD0iNzgiIC8+PGcgY2xhc3M9ImxhYmVsIiBzdHlsZSB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzIuOTE0MDYyNSwgLTI0KSI+PHJlY3QgLz48Zm9yZWlnbm9iamVjdCB3aWR0aD0iNjUuODI4MTI1IiBoZWlnaHQ9IjQ4Ij48ZGl2IGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHNwYW4gY2xhc3M9Im5vZGVMYWJlbCI+CjxwPgp0aW1lCjwvcD4KPHA+PC9wPjwvc3Bhbj4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvYT48YSBocmVmPSIuLi9kZWMvc25hcCIgY2xhc3M9ImRlY25hdi1saW5rIG5vLWV4dGVybmFsIj48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZmxvd2NoYXJ0LUQtMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTg0LjA3MDMxMjUsIDQ3KSI+PHJlY3QgY2xhc3M9ImJhc2ljIGxhYmVsLWNvbnRhaW5lciIgc3R5bGUgeD0iLTYyLjUzOTA2MjUiIHk9Ii0zOSIgd2lkdGg9IjEyNS4wNzgxMjUiIGhlaWdodD0iNzgiIC8+PGcgY2xhc3M9ImxhYmVsIiBzdHlsZSB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzIuNTM5MDYyNSwgLTI0KSI+PHJlY3QgLz48Zm9yZWlnbm9iamVjdCB3aWR0aD0iNjUuMDc4MTI1IiBoZWlnaHQ9IjQ4Ij48ZGl2IGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHNwYW4gY2xhc3M9Im5vZGVMYWJlbCI+CjxwPgpzbmFwCjwvcD4KPHA+PC9wPjwvc3Bhbj4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvYT48YSBocmVmPSIuLi9kZWMvc3BhbiIgY2xhc3M9ImRlY25hdi1saW5rIG5vLWV4dGVybmFsIj48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZmxvd2NoYXJ0LUUtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzU5LjE0ODQzNzUsIDQ3KSI+PHJlY3QgY2xhc3M9ImJhc2ljIGxhYmVsLWNvbnRhaW5lciIgc3R5bGUgeD0iLTYyLjUzOTA2MjUiIHk9Ii0zOSIgd2lkdGg9IjEyNS4wNzgxMjUiIGhlaWdodD0iNzgiIC8+PGcgY2xhc3M9ImxhYmVsIiBzdHlsZSB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzIuNTM5MDYyNSwgLTI0KSI+PHJlY3QgLz48Zm9yZWlnbm9iamVjdCB3aWR0aD0iNjUuMDc4MTI1IiBoZWlnaHQ9IjQ4Ij48ZGl2IGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHNwYW4gY2xhc3M9Im5vZGVMYWJlbCI+CjxwPgpzcGFuCjwvcD4KPHA+PC9wPjwvc3Bhbj4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvYT48L2c+PC9nPjwvZz48L3N2Zz4=)
 
@@ -34,9 +34,9 @@ Alongside the geographic coordinates of a point, each row of [Table 1](#tbl-map
 
 #### 2 Distance speed duration
 
-Dec measures distance in [taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6) ([c](#c)), speed in [omegars](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity) ([v](#v)), and time in years ([y](#y)) and days ([d](#d)). Each of these four turn types approximates (\\\approx\\) a physical property of the Earth🌍: [c](#c) = [\\\underline{\tau r}\\](#c) \\\approx\\ its [circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth), [y](#y) \\\approx\\ the duration of its [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun) around the Sun️, [d](#d) \\\approx\\ the duration of its [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis) on its [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole), and \\\text c\over\text d\\ = [v](#v) = [\\\underline{\omega r}\\](#v) \\\approx\\ the speed of its rotation at the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
+Dec measures distance in [taur](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6) ([c](#c)), speed in [omegar](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity) ([v](#v)), and time in years ([y](#y)) and days ([d](#d)). Each of these four turn types approximates (\\\approx\\) a physical property of the Earth🌍: [c](#c) = [\\\underline{\tau r}\\](#c) \\\approx\\ its [circumference](https://en.wikipedia.org/wiki/Earth%27s_circumference#:~:text=the%20distance%20around%20Earth), [y](#y) \\\approx\\ the duration of its [orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit#:~:text=From%20a%20vantage%20point%20above%20the%20north%20pole%20of%20either%20the%20Sun%20or%20Earth%2C%20Earth%20would%20appear%20to%20revolve%20in%20a%20counterclockwise%20direction%20around%20the%20Sun) around the Sun️, [d](#d) \\\approx\\ the duration of its [rotation](https://en.wikipedia.org/wiki/Earth%27s_rotation#:~:text=the%20rotation%20of%20planet%20Earth%20around%20its%20own%20axis) on its [axis](https://en.wikipedia.org/wiki/Axial_tilt#:~:text=the%20imaginary%20line%20that%20passes%20through%20both%20the%20north%20pole%20and%20south%20pole), and \\\text c\over\text d\\ = [v](#v) = [\\\underline{\omega r}\\](#v) \\\approx\\ the speed of its rotation at the [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres).
 
-At a speed of 0.5 [v](#v) or 500 milliomegars ([mv](#mv)), we could travel the 0.1 [c](#c) or 100 millitaurs ([mc](#mc)) between the default positions📍of Points 0 and 1 in 0.2 [d](#d) or 200 millidays ([md](#md)). The time required to travel between two points is the distance divided by the speed: [mc](#mc) ÷ [v](#v) = [md](#md) = [c](#c) ÷ [v](#v) = [mc](#mc) ÷ [mv](#mv) = [d](#d).
+At a speed of 0.5 [v](#v) or 500 milliomegar ([mv](#mv)), we could travel the 0.1 [c](#c) or 100 millitaur ([mc](#mc)) between the default positions📍of Points 0 and 1 in 0.2 [d](#d) or 200 millidays ([md](#md)). The time required to travel between two points is the distance divided by the speed: [mc](#mc) ÷ [v](#v) = [md](#md) = [c](#c) ÷ [v](#v) = [mc](#mc) ÷ [mv](#mv) = [d](#d).
 
 ##### Interactive world map
 
@@ -419,7 +419,7 @@ The highway🛣️speed of a car🚗is roughly tenfold slower than the cruising 
 
 #### 10 Centimilliday (cmd)
 
-Dec refers to [cmd](#cmd) as beats ([b](#b)) because they are similar in duration to heart❤️beats or [musical beats](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=I-,n%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time,-%2C%20the). In Dec, 1 [d](#d) = 100 centiday ([cd](#cd)) = 10⁵ [b](#b) = 10⁶ microdays ([µd](#ud)), 1 [mc](#mc) = 100 kilozem ([kz](#kz)) = 10⁵ [z](#z) = 10⁶ decizem ([dz](#dz)) = 10⁶ nanotaurs ([nc](#nc)), and therefore, 1 [mv](#mv) = \\\text{mc}\over\text d\\ = \\\text {kz}\over\text {cd}\\ = \\\text z\over\text b\\ = \\\text {dz}\over\text{µd}\\ = \\\text {nc}\over\text{µd}\\. A cd is 96% of a quarter hour and a [b](#b) is 86.4% of a second.
+Dec refers to [cmd](#cmd) as beats ([b](#b)) because they are similar in duration to heart❤️beats or [musical beats](https://en.wikipedia.org/wiki/Beat_(music)#:~:text=I-,n%20music%20and%20music%20theory%2C%20the%20beat%20is%20the%20basic%20unit%20of%20time,-%2C%20the). In Dec, 1 [d](#d) = 100 centiday ([cd](#cd)) = 10⁵ [b](#b) = 10⁶ microdays ([µd](#ud)), 1 [mc](#mc) = 100 kilozem ([kz](#kz)) = 10⁵ [z](#z) = 10⁶ decizem ([dz](#dz)) = 10⁶ nanotaur ([nc](#nc)), and therefore, 1 [mv](#mv) = \\\text{mc}\over\text d\\ = \\\text {kz}\over\text {cd}\\ = \\\text z\over\text b\\ = \\\text {dz}\over\text{µd}\\ = \\\text {nc}\over\text{µd}\\. A cd is 96% of a quarter hour and a [b](#b) is 86.4% of a second.
 
 #### 11 Heart rate tempo
 
@@ -427,7 +427,7 @@ A [normal resting heart rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=h
 
 #### 12 Frequency period wavelength
 
-Dec uses [þ](#per), [b](#b), and [z](#z), often with metric prefixes, to measure the [frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time), [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency), and [wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats), respectively, of a sound or light wave. Equations [1](#eq-freq), [2](#eq-peri), and [3](#eq-wave) below show how frequency, period, and wavelength are related to each other and to speed. The speed of light ([sol](#sol)) is ~647.551657 kiloomegars ([kv](#kv)), which is ~881 thousand times faster than the [sos](#sos).
+Dec uses [þ](#per), [b](#b), and [z](#z), often with metric prefixes, to measure the [frequency](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20number%20of%20occurrences%20of%20a%20repeating%20event%20per%20unit%20of%20time), [period](https://en.wikipedia.org/wiki/Frequency#:~:text=the%20reciprocal%20of%20the%20frequency), and [wavelength](https://en.wikipedia.org/wiki/Wavelength#:~:text=the%20distance%20over%20which%20the%20wave%27s%20shape%20repeats), respectively, of a sound or light wave. Equations [1](#eq-freq), [2](#eq-peri), and [3](#eq-wave) below show how frequency, period, and wavelength are related to each other and to speed. The speed of light ([sol](#sol)) is ~647.551657 kiloomegar ([kv](#kv)), which is ~881 thousand times faster than the [sos](#sos).
 
 \\\text{frequency} = \dfrac{\text{speed}}{\text{wavelength}} = \dfrac{1}{\text{period}} \tag{1}\\
 
@@ -748,7 +748,7 @@ In addition to storing metadata in a bibliography file, we can keep instructions
 
 [Hinnant, Howard](https://howardhinnant.github.io). 2021+185. *`chrono`-Compatible Low-Level Date Algorithms*. <https://howardhinnant.github.io/date_algorithms.html>.
 
-When provided with [`nature.csl`](https://github.com/citation-style-language/styles/blob/master/nature.csl), [`american-medical-association.csl`](https://github.com/citation-style-language/styles/blob/master/american-medical-association.csl), or a similar csl file, Quarto will produce superscript numeric citations, which look just like Quarto [footnotes](https://quarto.org/docs/authoring/markdown-basics#footnotes): [^5]. Unlike Quarto citations, Quarto footnotes do not require any additional files or configuration. A Quarto output file can have both a [Footnotes](#footnotes) and [References](#references) section.
+When provided with [`nature.csl`](https://github.com/citation-style-language/styles/blob/master/nature.csl), [`american-medical-association.csl`](https://github.com/citation-style-language/styles/blob/master/american-medical-association.csl), or a similar csl file, Quarto will produce superscript numeric citations, which look just like Quarto [footnotes](https://quarto.org/docs/authoring/markdown-basics#footnotes): [^5]. Unlike Quarto citations, Quarto footnotes do not require any additional files or configuration. A Quarto output file can have both a [Footnotes](#footnotes) and [References](#refs) section.
 
 #### Observable notebooks
 
@@ -782,15 +782,46 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
 - [bpm](#beatpermilliday): a musical or heart beat per milliday, ten beats per centiday, 0.694 beats per minute, 1000 beats per day
 - [bmi](#bodymassindex): body mass index, kilograins of body mass divided by height in zem squared (kg/z²)
 - [c](#taur): taur, 𝜏*r*, 100000 kilozem, 40000 kilometers, nearly the circumference of the Earth, roughly the product of 𝜏 and the radius of the Earth, approximately the dividend of the surface area and the diameter of the Earth
+  - [gc](#gigataur): gigataur, a billion taur
+  - [kc](#kilotaur): kilotaur, a thousand taur, 10⁸ kilozem
   - [mc](#millitaur): millitaur, *m*𝜏*r*, a thousandth of a taur, 100 kilozem, 40 kilometers
   - [nc](#nanotaur): nanotaur, *n*𝜏*r*, a billionth of a taur, 100 millizem, 1 decizem, 4 centimeters
   - [nc³](#cubicnanotaur): cubic nanotaur, *n*𝜏*r*³, 1 cubic decizem
 - [d](#day): day, a tenth of a decaday, a seventh of a week, a fifth of a pentaday, 10 decidays, 24 hours, 100 centidays, 1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse of a quotidie
   - [dox](#dayofxun): day of xún
-  - [dop](#dayofpent): day of pentaday
+  - [dop](#dayofpentaday): day of pentaday
   - [dom](#dayofmonth): day of month
+  - dom_(♀): Decyther day of month, 0 to 28 in Venusian short months or 0 to 29 in Venusian long months
   - [dow](#dayofweek): day of week
   - [doy](#dayofyear): day of year, xún \* 10 + dox
+  - [pid](#positiveintegerdoy): positive integer day of year, days elapsed since the beginning of the year, 0 to 364 or 365
+  - [nid](#negativeintegerdoy): negative integer day of year, pid - syl, -365 or -366 to -1, the negative of the days left in the year
+  - [mid](#mixedintegerdoy): mixed integer day of year, an nid rewritten with negative leading digits (marked by a vinculum) and a positive last digit or two
+  - [doe](#dayofera): day of era, days since the Dec epoch
+  - [eda](#epochaldayaggregate): epochal day aggregate, doe + tod, days since the Dec epoch including the time of day
+  - [edd](#edadifferencedifference): eda difference difference, an eda minus a difference, used to recover the year and ada of a past event
+  - [ada](#annualdayaggregate): annual day aggregate, doy + tod
+  - [doc](#dayofcycle): day of cycle, days since the start of the current 400-year Gregorian cycle, 0 to 146096
+  - doc_(♀): Decyther day of cycle, days since the start of the current 467-day Venusian cycle, doe mod 467, 0 to 466
+  - [doh](#dayofhectoday): day of hectoday, doy mod 100, the percent of a hectoday that has elapsed
+  - [dob](#dayofbimester): day of bimester, 0 to 58 in common bimesters or 0 to 59 in leap bimesters
+  - dob_(♀): Decyther day of bimester, 0 to 57 in antes and the post of Qoc 2 or 0 to 58 in the other posts
+  - [dot](#dayoftricennium): day of tricennium, days since the start of the current 30-year lunar cycle, 0 to 10630
+  - [doq](#dayofquadrimester): day of quadrimester, days since the beginning of a Decyther quadrimester, 0 to 115 or 116
+  - [boq](#beginningofquadrimester): beginning of quadrimester, the pid of Doq 0, pid - doq
+  - [qoc](#quadrimesterofcycle): quadrimester of cycle, zero-based index of a Decyther quadrimester, 0 to 3
+  - [bob](#beginningofbimester): beginning of bimester, the pid of Dob 0, pid - dob
+  - [bom](#beginningofmonth): beginning of month, the pid of the day before the first day of the month, pid - dom
+  - [moc](#monthofcycle): month of cycle, zero-based index of a Venusian month, 0 to 15
+  - [bow](#beginningofweek): beginning of week, the pid of Dow 0, pid - dow
+  - [boy](#beginningofyear): beginning of year, midnight at the start of Day 0
+  - [boe](#beginningofera): beginning of era, midnight at the start of Day 0 of Year 0
+  - [boc](#beginningofcycle): beginning of cycle, the start of Doc_(♀) 0 and of the first ante in a Decyther cycle
+  - [eoy](#endofyear): end of year, midnight at the end of Day 364 or 365
+  - [jdn](#Juliandaynumber): Julian day number, days since the start of the Julian period; increments at noon UTC
+  - [lid](#lunarintercalationdifference): lunar intercalation difference, a lunar nid that only resets after lunar leap years, -1063 to -1
+  - [ved](#venusianextracalationdifference): Venusian extracalation difference, days until the end of Doc_(♀) 349, the last day of the one-day-shorter Qoc 2, Bimester 5, and Moc 11, (doc_(♀) + 117) mod 467 - 467, -467 to -1
+  - [mud](#misalignedunitdifference): misaligned unit difference, pid - dom - dow
   - [dd](#deciday): deciday, a tenth of a day, 2.4 hours, 144 minutes
   - [cd](#centiday): centiday, a hundredth of a day, 0.24 hours, 14.4 minutes
   - [md](#milliday): milliday, a thousandth of a day, 1.44 minutes
@@ -801,17 +832,22 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
   - [c°](#compassdegree): compass degree
   - [h°](#huedegree): hue degree
 - [e](#egg): egg, 1000 grains, 2 ounces, 64 grams
+- [eot](#equationoftime): equation of time, ast - mst as a function of toy, about -9.8 to 11.4 millidays
 - [ℓ](#cubit): ell, cubit, 10/9 zem
 - [f](#foot): foot, 0.75 zem, 75 millimeters
 - [g](#gutta): drop (gutta in Latin) or grain (granum in Latin), 64 microliters or 64 milligrams
   - [kg](#kilograin): kilograin or kilodrop, 64 grams or 64 milliliters
   - [Mg](#megagrain): megagrain or megadrop, 64 kilograms or 64 liters
-- [h](#hectoday): a Dec season, represented by ***h***, because Dec seasons, except for Season 3, are 1 ***h***ectoday, 10 decadays, or one ***h***undred days long
+- [h](#hectoday): a Dec season, 1 ***h***ectoday, 10 decadays, or one ***h***undred days
+  - [pih](#positiveintegerhectoday): positive integer hectoday, ⌊pid ÷ 100⌋, 0 to 3
+  - [nih](#negativeintegerhectoday): negative integer hectoday, ⌊nid ÷ 100⌋, -4 to -1
 - [hex](#hexadecimal): hexadecimal, base 16
 - [hsl](#huesaturationlightness): hue saturation lightness
 - [hsv](#huesaturationvalue): hue saturation value
 - [i](#inch): inch, a sixteenth of a zem, 25 millimeters
+- [iso](#internationalorganizationforstandardization): [International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization), the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and 1970-W01-4 (ISO week date)
 - [k](#keg): keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
+- [km](#kilometer): kilometer, 1000 meters, 2500 zem, 2.5 kilozem
 - [kmph](#kilometersperhour): kilometers per hour, thousands of meters per hour, 1 kmph = 0.6 mv
 - [L](#liter): liter, 15625 drops, a cubic decimeter
   - [mL](#milliliter): milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops
@@ -825,33 +861,61 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
   - [km²](#squarekilometer): square kilometer, 6.25 square kilozem
   - [cm³](#cubiccentimeter): cubic centimeter, 1 milliliter, a thousandth of a liter, 15.625 drops
 - [p](#pentaday): pentaday, a group of five days, half a decaday
+  - [pox](#pentadayofxun): pentaday of xún, 0 for Dox 0 to 4 and 1 for Dox 5 to 9
+  - [pob](#pentadayofbimester): pentaday of bimester, ⌊dob ÷ 5⌋, 0 to 11
+  - [pir](#pentadayinterquintilerange): pentaday interquintile range, Dop 1 to 3, the three days between two lim
+  - [lim](#liminalinterconnectingmargin): liminal interconnecting margin, the pair of days between two pir, Dop 4 and the following Dop 0
 - [n](#note): note, a specific frequency within an octave
+- [NOAA](#nationaloceanicandatmosphericadministration): [National Oceanic and Atmospheric Administration](https://www.noaa.gov), source of the General Solar Position Calculations document
 - [o](#octave): octave, a two fold change in frequency
   - [do](#decioctave): decioctave, a tenth of a two fold change in frequency
 - [þ](#perbeat): perbeat, the inverse of a beat, 1/beat, once per beat, every beat, 100000 q; symbolized by thorn (þ), which looks like a combination of the letters “p” and “b”; not to be confused with a picobeat (pb)
   - [Tþ](#teraperbeat): teraperbeat, 10¹² perbeat, the inverse of a picobeat, 1/picobeat, once per picobeat, every picobeat
 - [q](#quotidie): quotidie, the inverse of a day, a hundred thousandth of a perbeat; the letter “q” in quotidie can be flipped vertically to produce the letter “d” in day
 - [r](#rose): compass rose, a full circle along the horizon, 360 compass degrees
+  - [saa](#solarazimuthangle): solar azimuth angle, the direction of the Sun along the horizon measured clockwise from North
   - [mr](#millirose): compass millirose, a thousandth of a circle along the horizon, .36 compass degrees
 - [rad](#radian): radian, \\1\over\tau\\ turns, \\360\over\tau\\ degrees, \\1\over 2\pi\\ turns, \\180\over\pi\\ degrees
 - [rgb](#redgreenblue): red green blue
 - [s](#second): second, 1/90 millidays, 0.9 beats, 1 Dec second = 0.96 SI seconds
+- [soi](#spinorbitinterval): spin orbit interval, a lunar day, 1.03505 days
+  - [soy](#soiofyear): soi of year
+  - [sob](#soiofbimester): soi of bimester
 - [SI](#internationalsystemofunits): [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
-- [sol](#speedoflight): speed of light, 647.55170928 kiloomegars, 299792458 meters per second
-- [sos](#speedofsound): speed of sound, 735.048 milliomegars, 340.3 meters per second
+- [sol](#speedoflight): speed of light, 647.55170928 kiloomegar, 299792458 meters per second
+- [sos](#speedofsound): speed of sound, 735.048 milliomegar, 340.3 meters per second
+- [sda](#solardeclinationangle): solar declination angle, the latitude at which the Sun is directly overhead
 - [𝜏](#tau): 2𝜋 or approximately 6.2831853
 - [Tenet](#tenequaltemperament): ten equal temperament
   - [Xet](#10et): Tenet
   - [12et](#twelveequaltemperament): twelve equal temperament
 - [tod](#timeofday): time of day
+  - [hms](#hourminutesecond): hour minute second, a tod written as an hod, moh, and som triplet
+  - [dsa](#dailysecondaggregate): daily second aggregate, seconds since midnight, tod × 86400
+  - [hsa](#hourlysecondaggregate): hourly second aggregate, seconds since the top of the hour, dsa mod 3600
+  - [hod](#hourofday): hour of day, ⌊dsa ÷ 3600⌋, 0 to 23
+  - [moh](#minuteofhour): minute of hour, ⌊hsa ÷ 60⌋, 0 to 59
+  - [som](#secondofminute): second of minute, ⌊hsa mod 60⌋, 0 to 59
+  - [mst](#meansolartime): mean solar time, solar time based only on longitude and the Zone 0 tod
+  - [ast](#apparentsolartime): apparent solar time, mst + eot(toy), solar time based on the actual position of the Sun
+  - [da](#dayarc): day arc, the time from sunrise to sunset, sunset - sunrise
+  - [da/2](#halfdayarc): half day arc, the time from sunrise to solar noon or from solar noon to sunset
+  - [na](#nightarc): night arc, the time from sunset to sunrise, 1 - da
+  - [na/2](#halfnightarc): half night arc, the time from sunset to solar midnight or from solar midnight to sunrise
 - [t](#turn): turn, 360 degrees, 𝜏 or 2𝜋 radians
   - [ct](#centiturn): centiturn, a hundredth of a turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
   - [dt](#deciturn): deciturn, a tenth of a turn, 36 degrees, 𝜏/10 or 𝜋/5 radians
   - [mt](#milliturn): milliturn, a thousandth of a turn, .36 degrees, 𝜏/1000 or 𝜋/500 radians
 - [tzo](#timezoneoffset): time zone offset
 - [u](#ounce): ounce (uncia in Latin), 500 grains, 32 grams, 500 drops, 32 milliliters
+- [uto](#universaltimeoffset): universal time offset, the offset in decidays that turns a Zone 0 tod into Universal Time; a tzo is an integer uto
+  - [sto](#solartimeoffset): solar time offset, a uto that is a terminating decimal
+  - [eof](#exactoffsetfraction): exact offset fraction, an irreducible fraction that expresses a repeating decimal uto exactly
+  - [rod](#roundedoffsetdecimal): rounded offset decimal, a repeating decimal uto rounded to a few digits
+  - [ref](#roundofferrorfraction): roundoff error fraction, uto - rod
 - [utc](#coordinateduniversaltime): [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates): [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
+- [UT](#universaltime): [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation), a time standard based on the rotation of the Earth
 - [v](#omegar): omegar, ωr, 1041.6 miles per hour, 1.6 megameters per hour, 0.4629 kilometers per second, roughly 1.36 times the speed of sound
   - [kv](#kiloomegar): kiloomegar, kωr, 1.6 gigameters per hour, 0.4629 megameters per second, approximately 0.1544% of the speed of light
   - [mv](#milliomegar): milliomegar, mωr, 1.0416 miles per hour, 1.6 kilometers per hour, 0.4629 meters per second, approximately 0.136% of the speed of sound
@@ -859,9 +923,25 @@ In alphabetical order below, you will find a list of the [Observable](http://obs
   - [dw](#deciwei): deciwěi, a tenth of a wěi (纬), a tenth of a parallel
   - [mw](#milliwei): milliwěi, a thousandth of a wěi (纬), a thousandth of a parallel
 - [x](#xun): xún (旬), decaday, a group of ten days, 2 pentadays, represented by x like the Roman numeral X
+  - [pix](#positiveintegerxun): positive integer xún, ⌊pid ÷ 10⌋, 0 to 36
+  - [nix](#negativeintegerxun): negative integer xún, ⌊nid ÷ 10⌋, -37 to -1
+  - [mix](#mixedintegerxun): mixed integer xún, the first two digits of an nih mid
+  - [xir](#xuninterdecilerange): xún interdecile range, Dox 1 to 8, the days between Dox 0 and 9
 - [y](#year): year
   - [my](#milliyear): milliyear, a thousandth of a year
   - [yoe](#yearofera): year of era, integer years since the Dec epoch
+  - [eya](#epochalyearaggregate): epochal year aggregate, yoe + toy, years since the Dec epoch including the fraction of the current year
+  - [toy](#timeofyear): time of year, the fraction of the year that has elapsed, eya mod 1, ada ÷ syl
+  - [ymd](#yearmonthday): year month day, a Gregorian calendar date triplet
+  - [syl](#solaryearlength): solar year length, 365 or 366 days, pid - nid
+  - [lyl](#lunaryearlength): lunar year length, 354 or 355 days
+  - [cey](#commonerayear): common era year, an ISO 8601 (Gregorian calendar) year number
+  - [coe](#cycleofera): cycle of era, 400-year cycles since the Dec epoch
+  - [yoc](#yearofcycle): year of cycle, years since the start of the current 400-year cycle, 0 to 399
+  - [yot](#yearoftricennium): year of tricennium, lunar years since the start of the current 30-year lunar cycle, 0 to 29
+  - [moy](#monthofyear): month of year, zero-based, Moy 0 is March
+  - [woy](#weekofyear): week of year, (boydow + bow) ÷ 7, 0 to 53
+  - [wom](#weekofmonth): week of month
 - [z](#zoneequatorialmeter): zem, zone equatorial meter, 4 decimeters, 16 inches
   - [kz²](#squarekilozem): square kilozem, a million square zem, megahexamilliare, Mx, hexakilare, 16 hectares, 1600 ares, 40 acres, 0.16 square kilometers, 0.0625 square miles
   - [kz](#kilozem): kilozem, 1000 zem, 400 meters, a quarter mile

@@ -759,10 +759,11 @@ data-bs-title="year">y</a>+1. The current year+day
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Coordinated Universal Time">UTC</a> date,
 <span class="nowrap">${decYearColor}<span class="mono">+</span>${decDotyPadColor}</span>,
-informs us that Year ${decYearColor1} began ${decDotyColor} days ago,
-whereas its countdown equivalent,
+informs us that Year ${decYearColor1} began ${decDotyColor}
+${decDotyDays} ago, whereas its countdown equivalent,
 <span class="nowrap">${nextYearColor}<span class="mono">-</span>${TminusPaddedColor}</span>,
-tells us that Year ${nextYearColor1} will begin in ${TminusColor} days.
+tells us that Year ${nextYearColor1} will begin in ${TminusColor}
+${TminusDays}.
 
 <div id="equationgroup02" class="equationgroup">
 
@@ -4753,9 +4754,9 @@ data-bs-title="day of week">dow</a> and thus can fall on various
 <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a>. We can use
 <a href="#eq-dowdif" class="quarto-xref">Equation 19</a>, which is
-inspired by [Howard Hinnant](https://howardhinnant.github.io)’s
+inspired by://howardhinnant.github.io)’s
 [`weekday_difference`](https://howardhinnant.github.io/date_algorithms.html#weekday_difference)
-algorithm, to find the floating holiday date in a given year (2021+185).
+algorithm (2021+185), to find the floating holiday date in a given year.
 
 <div id="equationgroup09" class="equationgroup">
 
@@ -4824,8 +4825,9 @@ data-bs-title="day">d</a><span class="color299by365">299</span> if it is
 negative or the days *since*
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color299by365">299</span> if it is
-positive. The current difference tells us that ${xmasDiffColor} days
-${xmasDiffSince} <a href="#d" class="tool" data-bs-toggle="tooltip"
+positive. The current difference tells us that ${xmasDiffColor}
+${xmasDiffDays} ${xmasDiffSince}
+<a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color299by365">299</span> of this
 year:
 ${decYearColor2}+<span class="color299by365">299</span><span class="mono">${xmasDiffSign}</span>${xmasDiffColor1}.
@@ -6007,7 +6009,7 @@ $$\text{moy} = (\text{isomonth} + 9) \href{https://en.wikipedia.org/wiki/Modulo#
 </span>
 
 <span id="eq-moy2month">
-$$\text{isomonth} = (\text{moy} + 3) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 12 \qquad(35)$$
+$$\text{isomonth} = (\text{moy} + 2) \href{https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder%20or%20signed%20remainder%20of%20a%20division}{\bmod} 12 + 1 \qquad(35)$$
 </span>
 
 <span id="eq-moy2bom">
@@ -7055,6 +7057,7 @@ in the [`islamic.h`](https://howardhinnant.github.io/date/islamic)
 created by [Howard Hinnant](https://howardhinnant.github.io) (2021+185).
 Equations <a href="#eq-dot" class="quarto-xref">42</a>,
 <a href="#eq-yot" class="quarto-xref">43</a>,
+<a href="#eq-leapcount" class="quarto-xref">44</a>,
 <a href="#eq-lunarpid" class="quarto-xref">45</a>, and
 <a href="#eq-dob" class="quarto-xref">46</a> below produce a “day of
 [tricennium](https://en.wiktionary.org/wiki/tricennium#:~:text=A%20period%20of%20thirty%20years)”
@@ -7073,7 +7076,7 @@ data-bs-title="day of bimester">dob</a>.
 <div id="equationgroup20" class="equationgroup">
 
 <span id="eq-dot">
-dot = (doe + 9) mod  10631   (42)
+dot = (doe + 8) mod  10631   (42)
 </span>
 
 <span id="eq-yot">
@@ -7106,7 +7109,7 @@ $$
 
 ``` julia
 function dob(doe)
-    dot = mod(doe + 9, 10631)
+    dot = mod(doe + 8, 10631)
     yot = (30 * dot + 15) ÷ 10631
     lunarpid = dot - 354 * yot - (11 * yot + 14) ÷ 30
     return lunarpid - 59 * ((5 * lunarpid + 5) ÷ 296)
@@ -7119,13 +7122,13 @@ end
 dob(719468)
 ```
 
-    54
+    53
 
 ### Observable JavaScript
 
 ``` {ojs}
 function dob(doe) {
-  const dot = (doe + 9) % 10631;
+  const dot = (doe + 8) % 10631;
   const yot = Math.floor((30 * dot + 15) / 10631);
   const lunarpid = dot - 354 * yot - Math.floor((11 * yot + 14) / 30);
   return lunarpid - 59 * Math.floor((5 * lunarpid + 5) / 296);
@@ -7137,20 +7140,20 @@ dob(719468)
 
 ``` python
 def dob(doe):
-    dot = (doe + 9) % 10631
+    dot = (doe + 8) % 10631
     yot = (30 * dot + 15) // 10631
     lunarpid = dot - 354 * yot - (11 * yot + 14) // 30
     return lunarpid - 59 * ((5 * lunarpid + 5) // 296)
 dob(719468)
 ```
 
-    54
+    53
 
 ### R
 
 ``` r
 dob <- function(doe) {
-  dot <- (doe + 9) %% 10631
+  dot <- (doe + 8) %% 10631
   yot <- (30 * dot + 15) %/% 10631
   lunarpid <- dot - 354 * yot - (11 * yot + 14) %/% 30
   lunarpid - 59 * ((5 * lunarpid + 5) %/% 296)
@@ -7158,7 +7161,7 @@ dob <- function(doe) {
 dob(719468)
 ```
 
-    [1] 54
+    [1] 53
 
 </div>
 
@@ -7201,7 +7204,7 @@ data-bs-title="years of era">yoe</a>+<a href="#bob" class="tool" data-bs-toggle=
 data-bs-title="beginning of bimester">bob</a>+<a href="#dob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of bimester">dob</a> Dec date:
 ${decYearColor11}<span class="mono">${decBobSign}</span>${decBobColor}<span class="mono">+</span>${decDobColor},
-the current bimester began ${decDobColor1} days ago on Day
+the current bimester began ${decDobColor1} ${decDobDays} ago on Day
 <span class="mono">${decBobSign1}</span>${decBobColor1}. A common
 bimester is made up of
 <a href="#dob" class="tool" data-bs-toggle="tooltip"
@@ -7625,7 +7628,7 @@ of the Moon around the Earth.
 
 <span id="eq-soi">
 $$
-\dfrac{1}{1\div\href{https://en.wikipedia.org/wiki/Day#:~:text=4.09%20seconds%28%2C%20or-,0.99726968,-of%20a%20solar}{0.99726968}-1\div\href{https://en.wikipedia.org/wiki/Lunar_month#:~:text=stars%20%28Latin:%20sidera%29:-,27.321661,-days%20%2827%20d%29}{27.321661}} = 1.03505
+\dfrac{1}{1\div\href{https://en.wikipedia.org/wiki/Day#:~:text=4.09%20seconds%28%2C%20or-,0.99726968,-of%20a%20solar}{0.99726968}-1\div\href{https://en.wikipedia.org/wiki/Lunar_month#:~:text=stars%20%28Latin:%20sidera%29:-,27.321661,-days%20%2827%20d%29}{27.321661}} = 1.03505011
  \qquad(57)$$
 </span>
 
@@ -7636,8 +7639,8 @@ data-bs-title="spin orbit intervals">soi</a> per mean [tropical
 year](https://en.wikipedia.org/wiki/Tropical_year#:~:text=the%20time%20that%20the%20Sun%20takes%20to%20return%20to%20the%20same%20position%20in%20the%20sky)
 is
 [365.2421897](https://en.wikipedia.org/wiki/Tropical_year#:~:text=1%2C%202000%2C%20was-,365.2421897,-or%20365%C2%A0ephemeris)
-÷ 1.03505 = 352.87395749. We can match this quite closely by setting the
-lunar Decalendar (Decalunar)
+÷ 1.03505011 = 352.87391999. We can match this quite closely by setting
+the lunar Decalendar (Decalunar)
 <a href="#syl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar year length">syl</a> to 352
 <a href="#soi" class="tool" data-bs-toggle="tooltip"
@@ -7645,7 +7648,7 @@ data-bs-title="spin orbit intervals">soi</a> if the year is evenly
 divisible by 8 and to 353
 <a href="#soi" class="tool" data-bs-toggle="tooltip"
 data-bs-title="spin orbit intervals">soi</a> otherwise: 7 ÷ 8
-<span class="mono">-</span> 0.87395749 = 0.00104251 ≈ 1 ÷ 959. For
+<span class="mono">-</span> 0.87391999 = 0.00108001 ≈ 1 ÷ 926. For
 greater precision, the Decalunar
 <a href="#syl" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar year length">syl</a> could be calculated as in
@@ -7655,7 +7658,7 @@ data-bs-title="solar year length">syl</a> could be calculated as in
 
 <span id="eq-lunarsyl">
 $$
-353 - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{y} \bmod 8 = 0 \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor} \text{y} \bmod 959 = 479
+353 - \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\[}\text{y} \bmod 8 = 0 \href{https://en.wikipedia.org/wiki/Logical_disjunction}{\lor} \text{y} \bmod 926 = 463
 \href{https://en.wikipedia.org/wiki/Iverson_bracket#:~:text=is%20defined%20to%20take%20the%20value%201%20for%20the%20values%20of%20the%20variables%20for%20which%20the%20statement%20is%20true%2C%20and%20takes%20the%20value%200%20otherwise}{\]}
  \qquad(58)$$
 </span>
@@ -7846,7 +7849,7 @@ its L1 and L2 [Lagrange
 points](https://en.wikipedia.org/wiki/Lagrange_point#:~:text=points%20of%20equilibrium%20for%20small%2Dmass%20objects%20under%20the%20gravitational%20influence%20of%20two%20massive%20orbiting%20bodies)
 will form the central hub for spaceflight. The proximity of the Moon
 allows for efficient communication with Earth. At light speed, radio
-signals can travel from Earth to the Moon in 1.25 to 1.39 Dec seconds
+signals can travel from Earth to the Moon in 1.24 to 1.41 Dec seconds
 (<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec seconds">s</a>), Venus in 132 to 907
 <a href="#s" class="tool" data-bs-toggle="tooltip"
@@ -7855,9 +7858,9 @@ data-bs-title="Dec seconds">s</a>, or Mars in 190 to 1390
 data-bs-title="Dec seconds">s</a>.
 
 To put these numbers in context, the speed of light is around 7.195
-[taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
+[taur](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
 (<a href="#c" id="taur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a>) per
+data-bs-title="taur">c</a>) per
 <a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec seconds">s</a>, the
 [Equator](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20Hemispheres)
@@ -7871,13 +7874,13 @@ data-bs-toggle="tooltip"
 data-bs-title="International System of Units">SI</a>) seconds in 1 day,
 and the approximate distance from Earth ranges from 9 to 10
 <a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a> for the Moon, 950 to 6525
+data-bs-title="taur">c</a> for the Moon, 950 to 6525
 <a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a> for Venus, 1365 to 10000
+data-bs-title="taur">c</a> for Venus, 1365 to 10000
 <a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a> for Mars, and 14700 to 24200
+data-bs-title="taur">c</a> for Mars, and 14700 to 24200
 <a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a> for Jupiter.
+data-bs-title="taur">c</a> for Jupiter.
 
 Mars lies near the outer edge of the [habitable
 zone](https://en.wikipedia.org/wiki/Habitable_zone#:~:text=the%20range%20of%20orbits%20around%20a%20star%20within%20which%20a%20planetary%20surface%20could%20potentially%20support%20liquid%20water)
@@ -7891,7 +7894,7 @@ The nearest possibly habitable
 b](https://en.wikipedia.org/wiki/Proxima_Centauri_b#:~:text=an%20exoplanet%20orbiting%20within%20the%20habitable%20zone%20of%20the%20red%20dwarf%20star%20Proxima%20Centauri%20in%20the%20constellation%20Centaurus),
 is roughly 1 billion (10<sup>9</sup>)
 <a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a> away. The pool of nearby [potentially
+data-bs-title="taur">c</a> away. The pool of nearby [potentially
 habitable
 exoplanets](https://en.wikipedia.org/wiki/List_of_potentially_habitable_exoplanets#Main_list:~:text=a%20list%20of%20confirmed%20exoplanets%20within%20the%20circumstellar%20habitable%20zone%20that%20are%20either%20under%2010%20Earth%20masses%20or%20smaller%20than%202.5%20Earth%20radii%20and%20thus%20have%20a%20chance%20of%20being%20rocky)
 may expand in the future, perhaps due to the [Big
@@ -8538,6 +8541,9 @@ additional files or configuration. A Quarto output file can have both a
   kilometers, nearly the circumference of the Earth, roughly the product
   of 𝜏 and the radius of the Earth, approximately the dividend of the
   surface area and the diameter of the Earth
+  - <a href="#gigataur" id="gc">gc</a>: gigataur, a billion taur
+  - <a href="#kilotaur" id="kc">kc</a>: kilotaur, a thousand taur,
+    10<sup>8</sup> kilozem
   - <a href="#millitaur" id="mc">mc</a>: millitaur, *m*𝜏*r*, a
     thousandth of a taur, 100 kilozem, 40 kilometers
   - <a href="#nanotaur" id="nc">nc</a>: nanotaur, *n*𝜏*r*, a billionth
@@ -8566,6 +8572,14 @@ additional files or configuration. A Quarto output file can have both a
     vinculum) and a positive last digit or two
   - <a href="#dayofera" id="doe">doe</a>: day of era, days since the Dec
     epoch
+  - <a href="#epochaldayaggregate" id="eda">eda</a>: epochal day
+    aggregate, doe + tod, days since the Dec epoch including the time of
+    day
+  - <a href="#edadifferencedifference" id="edd">edd</a>: eda difference
+    difference, an eda minus a difference, used to recover the year and
+    ada of a past event
+  - <a href="#annualdayaggregate" id="ada">ada</a>: annual day
+    aggregate, doy + tod
   - <a href="#dayofcycle" id="doc">doc</a>: day of cycle, days since the
     start of the current 400-year Gregorian cycle, 0 to 146096
   - doc<sub>♀</sub>: Decyther day of cycle, days since the start of the
@@ -8630,6 +8644,8 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
 - <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
+- <a href="#equationoftime" id="eot">eot</a>: equation of time, ast -
+  mst as a function of toy, about -9.8 to 11.4 millidays
 - <a href="#cubit" id="ell">ℓ</a>: ell, cubit, 10/9 zem
 - <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeters
 - <a href="#gutta" id="g">g</a>: drop (gutta in Latin) or grain (granum
@@ -8650,8 +8666,15 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#huesaturationvalue" id="hsv">hsv</a>: hue saturation value
 - <a href="#inch" id="i">i</a>: inch, a sixteenth of a zem, 25
   millimeters
+- <a href="#internationalorganizationforstandardization" id="iso">iso</a>:
+  [International Organization for
+  Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization),
+  the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and
+  1970-W01-4 (ISO week date)
 - <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
   glasses, a million drops, half a barrel
+- <a href="#kilometer" id="km">km</a>: kilometer, 1000 meters, 2500 zem,
+  2.5 kilozem
 - <a href="#kilometersperhour" id="kmph">kmph</a>: kilometers per hour,
   thousands of meters per hour, 1 kmph = 0.6 mv
 - <a href="#liter" id="L">L</a>: liter, 15625 drops, a cubic decimeter
@@ -8689,6 +8712,10 @@ additional files or configuration. A Quarto output file can have both a
     the following Dop 0
 - <a href="#note" id="n">n</a>: note, a specific frequency within an
   octave
+- <a href="#nationaloceanicandatmosphericadministration"
+  id="noaa">NOAA</a>: [National Oceanic and Atmospheric
+  Administration](https://www.noaa.gov), source of the General Solar
+  Position Calculations document
 - <a href="#octave" id="o">o</a>: octave, a two fold change in frequency
   - <a href="#decioctave" id="do">do</a>: decioctave, a tenth of a two
     fold change in frequency
@@ -8704,6 +8731,9 @@ additional files or configuration. A Quarto output file can have both a
   flipped vertically to produce the letter “d” in day
 - <a href="#rose" id="r">r</a>: compass rose, a full circle along the
   horizon, 360 compass degrees
+  - <a href="#solarazimuthangle" id="saa">saa</a>: solar azimuth angle,
+    the direction of the Sun along the horizon measured clockwise from
+    North
   - <a href="#millirose" id="mr">mr</a>: compass millirose, a thousandth
     of a circle along the horizon, .36 compass degrees
 - <a href="#radian" id="rad">rad</a>: radian, $1\over\tau$ turns,
@@ -8719,9 +8749,11 @@ additional files or configuration. A Quarto output file can have both a
   System of
   Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 - <a href="#speedoflight" id="sol">sol</a>: speed of light, 647.55170928
-  kiloomegars, 299792458 meters per second
+  kiloomegar, 299792458 meters per second
 - <a href="#speedofsound" id="sos">sos</a>: speed of sound, 735.048
-  milliomegars, 340.3 meters per second
+  milliomegar, 340.3 meters per second
+- <a href="#solardeclinationangle" id="sda">sda</a>: solar declination
+  angle, the latitude at which the Sun is directly overhead
 - <a href="#tau" id="2pi">𝜏</a>: 2𝜋 or approximately 6.2831853
 - <a href="#tenequaltemperament" id="tenet">Tenet</a>: ten equal
   temperament
@@ -8729,6 +8761,30 @@ additional files or configuration. A Quarto output file can have both a
   - <a href="#twelveequaltemperament" id="12et">12et</a>: twelve equal
     temperament
 - <a href="#timeofday" id="tod">tod</a>: time of day
+  - <a href="#hourminutesecond" id="hms">hms</a>: hour minute second, a
+    tod written as an hod, moh, and som triplet
+  - <a href="#dailysecondaggregate" id="dsa">dsa</a>: daily second
+    aggregate, seconds since midnight, tod × 86400
+  - <a href="#hourlysecondaggregate" id="hsa">hsa</a>: hourly second
+    aggregate, seconds since the top of the hour, dsa mod 3600
+  - <a href="#hourofday" id="hod">hod</a>: hour of day, ⌊dsa ÷ 3600⌋, 0
+    to 23
+  - <a href="#minuteofhour" id="moh">moh</a>: minute of hour, ⌊hsa ÷
+    60⌋, 0 to 59
+  - <a href="#secondofminute" id="som">som</a>: second of minute, ⌊hsa
+    mod 60⌋, 0 to 59
+  - <a href="#meansolartime" id="mst">mst</a>: mean solar time, solar
+    time based only on longitude and the Zone 0 tod
+  - <a href="#apparentsolartime" id="ast">ast</a>: apparent solar time,
+    mst + eot(toy), solar time based on the actual position of the Sun
+  - <a href="#dayarc" id="da">da</a>: day arc, the time from sunrise to
+    sunset, sunset - sunrise
+  - <a href="#halfdayarc" id="da2">da/2</a>: half day arc, the time from
+    sunrise to solar noon or from solar noon to sunset
+  - <a href="#nightarc" id="na">na</a>: night arc, the time from sunset
+    to sunrise, 1 - da
+  - <a href="#halfnightarc" id="na2">na/2</a>: half night arc, the time
+    from sunset to solar midnight or from solar midnight to sunrise
 - <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
   - <a href="#centiturn" id="ct">ct</a>: centiturn, a hundredth of a
     turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
@@ -8739,11 +8795,26 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
 - <a href="#ounce" id="u">u</a>: ounce (uncia in Latin), 500 grains, 32
   grams, 500 drops, 32 milliliters
+- <a href="#universaltimeoffset" id="uto">uto</a>: universal time
+  offset, the offset in decidays that turns a Zone 0 tod into Universal
+  Time; a tzo is an integer uto
+  - <a href="#solartimeoffset" id="sto">sto</a>: solar time offset, a
+    uto that is a terminating decimal
+  - <a href="#exactoffsetfraction" id="eof">eof</a>: exact offset
+    fraction, an irreducible fraction that expresses a repeating decimal
+    uto exactly
+  - <a href="#roundedoffsetdecimal" id="rod">rod</a>: rounded offset
+    decimal, a repeating decimal uto rounded to a few digits
+  - <a href="#roundofferrorfraction" id="ref">ref</a>: roundoff error
+    fraction, uto - rod
 - <a href="#coordinateduniversaltime" id="utc">utc</a>: [Coordinated
   Universal
   Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - <a href="#unitedstates" id="us">US</a>: [United
   States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
+- <a href="#universaltime" id="ut">UT</a>: [Universal
+  Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation),
+  a time standard based on the rotation of the Earth
 - <a href="#omegar" id="v">v</a>: omegar, ωr,
   1041.<span class="vinculum">6</span> miles per hour,
   1.<span class="vinculum">6</span> megameters per hour,
@@ -8781,6 +8852,13 @@ additional files or configuration. A Quarto output file can have both a
     year
   - <a href="#yearofera" id="yoe">yoe</a>: year of era, integer years
     since the Dec epoch
+  - <a href="#epochalyearaggregate" id="eya">eya</a>: epochal year
+    aggregate, yoe + toy, years since the Dec epoch including the
+    fraction of the current year
+  - <a href="#timeofyear" id="toy">toy</a>: time of year, the fraction
+    of the year that has elapsed, eya mod 1, ada ÷ syl
+  - <a href="#yearmonthday" id="ymd">ymd</a>: year month day, a
+    Gregorian calendar date triplet
   - <a href="#solaryearlength" id="syl">syl</a>: solar year length, 365
     or 366 days, pid - nid
   - <a href="#lunaryearlength" id="lyl">lyl</a>: lunar year length, 354
@@ -8887,7 +8965,7 @@ function yd2dow(year = 1969, doty = 306) {
   return dote2dotw(date2dote(year, doty)[0]);
 }
 function unix2lid(unix) {
-  const dot = (Math.floor(unix / 86400000) + 7200) % 10631,
+  const dot = (Math.floor(unix / 86400000) + 7199) % 10631,
     leapsBefore = Math.floor((11 * Math.floor((30 * dot + 15) / 10631) + 14) / 30);
   return dot - leapsBefore - 354 * Math.floor((30 * leapsBefore + 15) / 11) - 355;
 }
@@ -9119,6 +9197,7 @@ decYearLastBowSumColor = textcolor(decYearLastBowSum, decYearLastBowSumPiece)
 decYearLastBowSumColor1 = textcolor(decYearLastBowSumPad, decYearLastBowSumPiece)
 decYearLastBowSumPad = decYearLastBowSum.toString().padStart(3, "0")
 decDoty = Math.floor(ydz[1])
+decDotyDays = decDoty === 1 ? "day" : "days"
 decDotyByNdaysInput = decDoty / nDaysInput
 decDotyPiece = piecewiseColor(decDotyByNdaysInput)
 decDotyColor = textcolor(decDoty, decDotyPiece)
@@ -9258,11 +9337,12 @@ decDotp = decDotd % 5
 decPent = decDek * 2 + (decDotd > 4)
 decPentColor = textcolor(decPent, piecewiseColor(decPent * 5 / 365))
 decDotpColor = textcolor(decDotp, piecewiseColor(decDotp / 5))
-decDot = (Math.floor(dz[0]) + 9) % 10631
+decDot = (Math.floor(dz[0]) + 8) % 10631
 decYot = Math.floor((30 * decDot + 15) / 10631)
 decLeapCount = Math.floor((11 * decYot + 14) / 30)
 decDoly = decDot - 354 * decYot - decLeapCount
 decDob = decDoly === 354 ? 59 : decDoly % 59
+decDobDays = decDob === 1 ? "day" : "days"
 decLid = decDot - decLeapCount - 354 * Math.floor((30 * decLeapCount + 15) / 11) - 355
 decLidAbs = Math.abs(decLid)
 decDob59yd = dote2date(dz[0] + decLidAbs)
@@ -9300,7 +9380,10 @@ xmasDiffColor1 = textcolor(xmasDiffAbs, xmasDiffPiece)
 xmasNext = xmasDiff - nDaysInput
 xmasNextColor = textcolor(Math.abs(xmasNext), xmasDiffPiece)
 xmasDiffSign = xmasDiff < 0 ? "-" : "+"
-xmasDiffSince = xmasDiff < 0 ? "are left until" : "have passed since"
+xmasDiffSince = xmasDiffAbs === 1
+  ? (xmasDiff < 0 ? "is left until" : "has passed since")
+  : (xmasDiff < 0 ? "are left until" : "have passed since")
+xmasDiffDays = xmasDiffAbs === 1 ? "day" : "days"
 xmasDiffResult = xmasDiff < 0 ? "-" : ""
 xmasDote = date2dote(decYear, 299)[0]
 xmasDotw = dote2dotw(xmasDote)
@@ -9373,6 +9456,7 @@ dotw0sign = dotw0doty < 0 ? "-" : "+"
 dotw0signIfNeg = dotw0doty < 0 ? "-" : ""
 nDaysInYear = 365 + year2leap(decYear + 1)
 Tminus = nDaysInYear - decDoty
+TminusDays = Tminus === 1 ? "day" : "days"
 TminusColor = textcolor(Tminus, decDotyPiece)
 TminusColor1 = textcolor(Tminus, decDotyPiece)
 TminusColor2 = textcolor(Tminus, decDotyPiece)
@@ -9487,7 +9571,7 @@ function textcolor(content, style = {}) {
   const {
     background,
     color = yiq(background) > 0.5 ? "black" : "white",
-    padding = "0 0.5px",
+    padding = "0.5px 0.75px 0.5px 0.75px",
     borderRadius = "4px",
     fontFamily = "inherit",
     ...rest
@@ -9520,17 +9604,16 @@ easyDoy = dotyInput < (80 + leapInput) ? dotyInput : dotyInputNeg
 easyDoyColor = textcolor(easyDoy, piecewiseColor(dotyInput / nDaysInput))
 easySum = easyDoy + 285
 easySumColor = textcolor(easySum, piecewiseColor(easySum / nDaysInput))
-// https://astropixels.com/ephemeris/phasescat/phases-0099.html#:~:text=24%20%2000%3A27-,Mar%20%201%20%2023%3A01,-Mar%20%208%20%2023
-// (719468 + 9) % 10631 = 7200
+// (719468 + 8) % 10631 = 7199
 function unix2dob(unix) {
-  const doe = unix / 86400000 + 7200,
+  const doe = unix / 86400000 + 7199,
   doc = doe % 10631,
   yoc = Math.floor((30 * doc + 10646) / 10631) - 1,
   doy = Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30)))
   return doy === 354 ? "0\u0300" : doy % 59;
   }
 function unix2dobSort(unix) {
-  const doe = unix / 86400000 + 7200,
+  const doe = unix / 86400000 + 7199,
   doc = doe % 10631,
   yoc = Math.floor((30 * doc + 10646) / 10631) - 1;
   return Math.floor(doc - (yoc * 354 + Math.floor((11 * (yoc + 1) + 3) / 30)));
@@ -9539,7 +9622,7 @@ function doly2dob(doly) {
   return doly === 354 ? "0\u0300" : doly % 59;
   }
 function unix2doly(unix) {
-  const dot = Math.floor(unix / 86400000 + 7200) % 10631,
+  const dot = Math.floor(unix / 86400000 + 7199) % 10631,
   yot = Math.floor((30 * dot + 15) / 10631);
   return dot - Math.floor((11 * yot + 14) / 30);
   }
@@ -10427,9 +10510,6 @@ div#conversionchart > div {
   display: flex;
   justify-content: center;
 }
-h4.hiddenheading, h5.hiddenheading {
-  display: none;
-}
 div#leapscrubvert {
   margin-top: -10px;
 }
@@ -10684,6 +10764,7 @@ code {
 .playingcard span:not(:has(*)) {
   padding-bottom: 6.5px !important;
   position: relative;
+  left: 0.25px;
   top: 0.4px;
   display: inline-flex;
   place-items: center;
@@ -10733,7 +10814,7 @@ code {
 .bigcard {
   font-size: 56px;
   position: relative;
-  bottom: 45px;
+  bottom: 46px;
   display: block;
   margin-bottom: -78px;
 }

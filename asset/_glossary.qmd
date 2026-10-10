@@ -8,8 +8,8 @@
 - [bpm](#beatpermilliday){#bpm}: a musical or heart beat per milliday, ten beats per centiday, 0.69[4]{.vinculum} beats per minute, 1000 beats per day
 - [bmi](#bodymassindex){#bmi}: body mass index, kilograins of body mass divided by height in zem squared (kg/z&sup2;)
 - [c](#taur){#c}: taur, 𝜏*r*, 100000 kilozem, 40000 kilometers, nearly the circumference of the Earth, roughly the product of 𝜏 and the radius of the Earth, approximately the dividend of the surface area and the diameter of the Earth
-    - [gc](#gigataur){#gc}: gigataur, a billion taurs
-    - [kc](#kilotaur){#kc}: kilotaur, a thousand taurs, 10^8^ kilozem
+    - [gc](#gigataur){#gc}: gigataur, a billion taur
+    - [kc](#kilotaur){#kc}: kilotaur, a thousand taur, 10^8^ kilozem
     - [mc](#millitaur){#mc}: millitaur, *m*𝜏*r*, a thousandth of a taur, 100 kilozem, 40 kilometers
     - [nc](#nanotaur){#nc}: nanotaur, *n*𝜏*r*, a billionth of a taur, 100 millizem, 1 decizem, 4 centimeters
     - [nc&sup3;](#cubicnanotaur){#nc3}: cubic nanotaur, *n*𝜏*r*&sup3;, 1 cubic decizem
@@ -108,8 +108,8 @@
     - [soy](#soiofyear){#soy}: soi of year
     - [sob](#soiofbimester){#sob}: soi of bimester
 - [SI](#internationalsystemofunits){#si}: [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
-- [sol](#speedoflight){#sol}: speed of light, 647.55170928 kiloomegars, 299792458 meters per second
-- [sos](#speedofsound){#sos}: speed of sound, 735.048 milliomegars, 340.3 meters per second
+- [sol](#speedoflight){#sol}: speed of light, 647.55170928 kiloomegar, 299792458 meters per second
+- [sos](#speedofsound){#sos}: speed of sound, 735.048 milliomegar, 340.3 meters per second
 - [sda](#solardeclinationangle){#sda}: solar declination angle, the latitude at which the Sun is directly overhead
 - [𝜏](#tau){#2pi}: 2𝜋 or approximately 6.2831853
 - [Tenet](#tenequaltemperament){#tenet}: ten equal temperament

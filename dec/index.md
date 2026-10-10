@@ -308,12 +308,12 @@ data-bs-title="milliroses">mr</a> are <span class="color0">0</span>
 # Distance speed duration
 
 Dec measures distance in
-[taurs](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
+[taur](https://en.wikipedia.org/wiki/Turn_(angle)#Tau_proposals:~:text=%E2%81%A0%20turn-,Circumference%20of%20a%20circle,-%F0%9D%90%B6)
 (<a href="#c" id="taur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a>), speed in
-[omegars](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity)
+data-bs-title="taur">c</a>), speed in
+[omegar](https://en.wikipedia.org/wiki/Angular_velocity#:~:text=linear%20velocity%20is%20the%20radius%20times%20the%20angular%20velocity)
 (<a href="#v" id="omegar" class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegars">v</a>), and time in years
+data-bs-title="omegar">v</a>), and time in years
 (<a href="#y" id="year" class="tool" data-bs-toggle="tooltip"
 data-bs-title="years">y</a>) and days
 (<a href="#d" id="day" class="tool" data-bs-toggle="tooltip"
@@ -343,18 +343,18 @@ r}$</span></a> ≈ the speed of its rotation at the
 
 At a speed of <span class="color5">0.5</span>
 <a href="#v" class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegars">v</a> or <span class="color5">500</span>
+data-bs-title="omegar">v</a> or <span class="color5">500</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of an omegar">milliomegars</span>
+data-bs-title="thousandths of an omegar">milliomegar</span>
 (<a href="#mv" id="milliomegar" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</a>), we could travel the
+data-bs-title="milliomegar">mv</a>), we could travel the
 <span class="color1">0.1</span>
 <a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a> or <span class="color1">100</span>
+data-bs-title="taur">c</a> or <span class="color1">100</span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a taur">millitaurs</span>
+data-bs-title="thousandths of a taur">millitaur</span>
 (<a href="#mc" id="millitaur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millitaurs">mc</a>) between the default positions📍of
+data-bs-title="millitaur">mc</a>) between the default positions📍of
 Points <span class="point0">0</span> and <span class="point1">1</span>
 in <span class="color2">0.2</span>
 <a href="#d" class="tool" data-bs-toggle="tooltip"
@@ -365,19 +365,19 @@ data-bs-title="thousandths of a day">millidays</span>
 data-bs-title="millidays">md</a>). The time required to travel between
 two points is the distance divided by the speed: ${distance_mcHsl0}
 <a href="#mc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millitaurs">mc</a> ÷ ${velocity_vHsl0}
+data-bs-title="millitaur">mc</a> ÷ ${velocity_vHsl0}
 <a href="#v" class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegars">v</a> = ${traveltimeHsl0}
+data-bs-title="omegar">v</a> = ${traveltimeHsl0}
 <a href="#md" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millidays">md</a> = ${distance_cHsl}
 <a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a> ÷ ${velocity_vHsl1}
+data-bs-title="taur">c</a> ÷ ${velocity_vHsl1}
 <a href="#v" class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegars">v</a> = ${distance_mcHsl1}
+data-bs-title="omegar">v</a> = ${distance_mcHsl1}
 <a href="#mc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millitaurs">mc</a> ÷ ${velocity_mvHsl}
+data-bs-title="millitaur">mc</a> ÷ ${velocity_mvHsl}
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</a> = ${traveltimeHsl1}
+data-bs-title="milliomegar">mv</a> = ${traveltimeHsl1}
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a>.
 
@@ -1508,7 +1508,7 @@ Earth. At the Equator, the Earth rotates on its axis at a speed of
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>1.00224
 <a href="#v" class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegars">v</a>. If we could indefinitely maintain this
+data-bs-title="omegar">v</a>. If we could indefinitely maintain this
 speed while flying West in an airplane✈️towards the setting sun️, we
 would be able to perpetually fly [into the
 sunset](https://tvtropes.org/pmwiki/pmwiki.php/Main/RidingIntoTheSunset)🌅.
@@ -1525,7 +1525,7 @@ data-bs-title="degrees">°</a>
 and 1 [standard
 atmosphere](https://en.wikipedia.org/wiki/Standard_atmosphere_(unit)#:~:text=a%20unit%20of%20pressure%20defined%20as%20101325%20Pa)
 is 0.735048 <a href="#v" class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegars">v</a> or Mach 1. [Mach
+data-bs-title="omegar">v</a> or Mach 1. [Mach
 numbers](https://en.wikipedia.org/wiki/Mach_number) are relative to the
 <a href="#sos" class="tool" data-bs-toggle="tooltip"
 data-bs-title="speed of sound">sos</a>, which varies greatly by air
@@ -1534,13 +1534,13 @@ temperature and pressure. The cruising speed of a [Boeing
 is <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>0.54
 <a href="#v" class="tool" data-bs-toggle="tooltip"
-data-bs-title="omegars">v</a> or Mach <span class="tool"
+data-bs-title="omegar">v</a> or Mach <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>0.85.
 
 The highway🛣️speed of a car🚗is roughly tenfold slower than the cruising
 speed of an airplane️. If we are driving on a highway at a speed of 50
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</a> and our exit is 1000
+data-bs-title="milliomegar">mv</a> and our exit is 1000
 <a href="#z" class="tool" data-bs-toggle="tooltip"
 data-bs-title="zem">z</a> away, we will have 20 <span class="tool"
 data-bs-toggle="tooltip"
@@ -1592,9 +1592,9 @@ data-bs-toggle="tooltip" data-bs-title="tenths of a zem">decizem</span>
 data-bs-title="decizem">dz</a>) = <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="a million">10<sup>6</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="millionths of a taur">nanotaurs</span>
+data-bs-title="millionths of a taur">nanotaur</span>
 (<a href="#nc" id="nanotaur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="nanotaurs">nc</a>), and therefore, 1
+data-bs-title="nanotaur">nc</a>), and therefore, 1
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
 data-bs-title="milliomegar">mv</a> = $\text{mc}\over\text d$ =
 $\text {kz}\over\text {cd}$ = $\text z\over\text b$ =
@@ -1660,9 +1660,9 @@ data-bs-title="speed of light">sol</a>) is <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>647.551657 <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="thousands of omegars">kiloomegars</span>
+data-bs-title="thousand omegar">kiloomegar</span>
 (<a href="#kv" id="kiloomegar" class="tool" data-bs-toggle="tooltip"
-data-bs-title="kiloomegars">kv</a>), which is <span class="tool"
+data-bs-title="kiloomegar">kv</a>), which is <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>881
 thousand times faster than the
 <a href="#sos" class="tool" data-bs-toggle="tooltip"
@@ -1709,7 +1709,7 @@ data-bs-title="thousandths of a beat">millibeats</span>
 (<a href="#mb" id="millibeat" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millibeats">mb</a>) and 735.048
 <a href="#mv" class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</a> ÷ ${iobs}
+data-bs-title="milliomegar">mv</a> ÷ ${iobs}
 <a href="#per" class="tool" data-bs-toggle="tooltip"
 data-bs-title="perbeats">þ</a> = ${parseFloat((735.048 /
 iobs).toFixed(3))} <a href="#z" class="tool" data-bs-toggle="tooltip"
@@ -2152,7 +2152,7 @@ data-bs-title="Dec seconds">s</a> in one day.
 <th><a href="#us" class="bold tool" data-bs-toggle="tooltip"
 data-bs-title="United States">US</a> speed units</th>
 <th><a href="#mv" class="bold tool" data-bs-toggle="tooltip"
-data-bs-title="milliomegars">mv</a></th>
+data-bs-title="milliomegar">mv</a></th>
 <th><a href="#kmph" id="kilometersperhour" class="bold tool"
 data-bs-toggle="tooltip"
 data-bs-title="kilometers per hour">kmph</a></th>
@@ -2612,7 +2612,7 @@ proposed measuring length in
 <a href="#dz" class="tool" data-bs-toggle="tooltip"
 data-bs-title="decizem">dz</a> or
 <a href="#nc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="nanotaurs">nc</a> and tracking time in
+data-bs-title="nanotaur">nc</a> and tracking time in
 [xún](https://en.wikipedia.org/wiki/Chinese_calendar#:~:text=into%20nine%2D%20or-,ten%2Dday%20weeks,-known%20as%20x%C3%BAn)
 (<a href="#x" id="xun" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of ten days">x</a>),
@@ -3003,7 +3003,7 @@ citations, which look just like Quarto
 [footnotes](https://quarto.org/docs/authoring/markdown-basics#footnotes):
 [5]. Unlike Quarto citations, Quarto footnotes do not require any
 additional files or configuration. A Quarto output file can have both a
-[Footnotes](#footnotes) and [References](#references) section.
+[Footnotes](#footnotes) and [References](#refs) section.
 
 # Observable notebooks
 
@@ -3130,6 +3130,9 @@ videos](https://observablehq.com/resource-center#videos).
   kilometers, nearly the circumference of the Earth, roughly the product
   of 𝜏 and the radius of the Earth, approximately the dividend of the
   surface area and the diameter of the Earth
+  - <a href="#gigataur" id="gc">gc</a>: gigataur, a billion taur
+  - <a href="#kilotaur" id="kc">kc</a>: kilotaur, a thousand taur,
+    10<sup>8</sup> kilozem
   - <a href="#millitaur" id="mc">mc</a>: millitaur, *m*𝜏*r*, a
     thousandth of a taur, 100 kilozem, 40 kilometers
   - <a href="#nanotaur" id="nc">nc</a>: nanotaur, *n*𝜏*r*, a billionth
@@ -3141,10 +3144,78 @@ videos](https://observablehq.com/resource-center#videos).
   1000 millidays, 1440 minutes, 86400 seconds, 100000 beats, the inverse
   of a quotidie
   - <a href="#dayofxun" id="dox">dox</a>: day of xún
-  - <a href="#dayofpent" id="dop">dop</a>: day of pentaday
+  - <a href="#dayofpentaday" id="dop">dop</a>: day of pentaday
   - <a href="#dayofmonth" id="dom">dom</a>: day of month
+  - dom<sub>♀</sub>: Decyther day of month, 0 to 28 in Venusian short
+    months or 0 to 29 in Venusian long months
   - <a href="#dayofweek" id="dow">dow</a>: day of week
   - <a href="#dayofyear" id="doy">doy</a>: day of year, xún \* 10 + dox
+  - <a href="#positiveintegerdoy" id="pid">pid</a>: positive integer day
+    of year, days elapsed since the beginning of the year, 0 to 364 or
+    365
+  - <a href="#negativeintegerdoy" id="nid">nid</a>: negative integer day
+    of year, pid - syl, -365 or -366 to -1, the negative of the days
+    left in the year
+  - <a href="#mixedintegerdoy" id="mid">mid</a>: mixed integer day of
+    year, an nid rewritten with negative leading digits (marked by a
+    vinculum) and a positive last digit or two
+  - <a href="#dayofera" id="doe">doe</a>: day of era, days since the Dec
+    epoch
+  - <a href="#epochaldayaggregate" id="eda">eda</a>: epochal day
+    aggregate, doe + tod, days since the Dec epoch including the time of
+    day
+  - <a href="#edadifferencedifference" id="edd">edd</a>: eda difference
+    difference, an eda minus a difference, used to recover the year and
+    ada of a past event
+  - <a href="#annualdayaggregate" id="ada">ada</a>: annual day
+    aggregate, doy + tod
+  - <a href="#dayofcycle" id="doc">doc</a>: day of cycle, days since the
+    start of the current 400-year Gregorian cycle, 0 to 146096
+  - doc<sub>♀</sub>: Decyther day of cycle, days since the start of the
+    current 467-day Venusian cycle, doe mod 467, 0 to 466
+  - <a href="#dayofhectoday" id="doh">doh</a>: day of hectoday, doy mod
+    100, the percent of a hectoday that has elapsed
+  - <a href="#dayofbimester" id="dob">dob</a>: day of bimester, 0 to 58
+    in common bimesters or 0 to 59 in leap bimesters
+  - dob<sub>♀</sub>: Decyther day of bimester, 0 to 57 in antes and the
+    post of Qoc 2 or 0 to 58 in the other posts
+  - <a href="#dayoftricennium" id="dot">dot</a>: day of tricennium, days
+    since the start of the current 30-year lunar cycle, 0 to 10630
+  - <a href="#dayofquadrimester" id="doq">doq</a>: day of quadrimester,
+    days since the beginning of a Decyther quadrimester, 0 to 115 or 116
+  - <a href="#beginningofquadrimester" id="boq">boq</a>: beginning of
+    quadrimester, the pid of Doq 0, pid - doq
+  - <a href="#quadrimesterofcycle" id="qoc">qoc</a>: quadrimester of
+    cycle, zero-based index of a Decyther quadrimester, 0 to 3
+  - <a href="#beginningofbimester" id="bob">bob</a>: beginning of
+    bimester, the pid of Dob 0, pid - dob
+  - <a href="#beginningofmonth" id="bom">bom</a>: beginning of month,
+    the pid of the day before the first day of the month, pid - dom
+  - <a href="#monthofcycle" id="moc">moc</a>: month of cycle, zero-based
+    index of a Venusian month, 0 to 15
+  - <a href="#beginningofweek" id="bow">bow</a>: beginning of week, the
+    pid of Dow 0, pid - dow
+  - <a href="#beginningofyear" id="boy">boy</a>: beginning of year,
+    midnight at the start of Day 0
+  - <a href="#beginningofera" id="boe">boe</a>: beginning of era,
+    midnight at the start of Day 0 of Year 0
+  - <a href="#beginningofcycle" id="boc">boc</a>: beginning of cycle,
+    the start of Doc<sub>♀</sub> 0 and of the first ante in a Decyther
+    cycle
+  - <a href="#endofyear" id="eoy">eoy</a>: end of year, midnight at the
+    end of Day 364 or 365
+  - <a href="#Juliandaynumber" id="jdn">jdn</a>: Julian day number, days
+    since the start of the Julian period; increments at noon UTC
+  - <a href="#lunarintercalationdifference" id="lid">lid</a>: lunar
+    intercalation difference, a lunar nid that only resets after lunar
+    leap years, -1063 to -1
+  - <a href="#venusianextracalationdifference" id="ved">ved</a>:
+    Venusian extracalation difference, days until the end of
+    Doc<sub>♀</sub> 349, the last day of the one-day-shorter Qoc 2,
+    Bimester 5, and Moc 11, (doc<sub>♀</sub> + 117) mod 467 - 467, -467
+    to -1
+  - <a href="#misalignedunitdifference" id="mud">mud</a>: misaligned
+    unit difference, pid - dom - dow
   - <a href="#deciday" id="dd">dd</a>: deciday, a tenth of a day, 2.4
     hours, 144 minutes
   - <a href="#centiday" id="cd">cd</a>: centiday, a hundredth of a day,
@@ -3162,6 +3233,8 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#compassdegree" id="cdeg">c°</a>: compass degree
   - <a href="#huedegree" id="hdeg">h°</a>: hue degree
 - <a href="#egg" id="e">e</a>: egg, 1000 grains, 2 ounces, 64 grams
+- <a href="#equationoftime" id="eot">eot</a>: equation of time, ast -
+  mst as a function of toy, about -9.8 to 11.4 millidays
 - <a href="#cubit" id="ell">ℓ</a>: ell, cubit, 10/9 zem
 - <a href="#foot" id="f">f</a>: foot, 0.75 zem, 75 millimeters
 - <a href="#gutta" id="g">g</a>: drop (gutta in Latin) or grain (granum
@@ -3170,17 +3243,27 @@ videos](https://observablehq.com/resource-center#videos).
     or 64 milliliters
   - <a href="#megagrain" id="Mg">Mg</a>: megagrain or megadrop, 64
     kilograms or 64 liters
-- <a href="#hectoday" id="h">h</a>: a Dec season, represented by
-  ***h***, because Dec seasons, except for Season 3, are 1
-  ***h***ectoday, 10 decadays, or one ***h***undred days long
+- <a href="#hectoday" id="h">h</a>: a Dec season, 1 ***h***ectoday, 10
+  decadays, or one ***h***undred days
+  - <a href="#positiveintegerhectoday" id="pih">pih</a>: positive
+    integer hectoday, ⌊pid ÷ 100⌋, 0 to 3
+  - <a href="#negativeintegerhectoday" id="nih">nih</a>: negative
+    integer hectoday, ⌊nid ÷ 100⌋, -4 to -1
 - <a href="#hexadecimal" id="hex">hex</a>: hexadecimal, base 16
 - <a href="#huesaturationlightness" id="hsl">hsl</a>: hue saturation
   lightness
 - <a href="#huesaturationvalue" id="hsv">hsv</a>: hue saturation value
 - <a href="#inch" id="i">i</a>: inch, a sixteenth of a zem, 25
   millimeters
+- <a href="#internationalorganizationforstandardization" id="iso">iso</a>:
+  [International Organization for
+  Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization),
+  the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and
+  1970-W01-4 (ISO week date)
 - <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
   glasses, a million drops, half a barrel
+- <a href="#kilometer" id="km">km</a>: kilometer, 1000 meters, 2500 zem,
+  2.5 kilozem
 - <a href="#kilometersperhour" id="kmph">kmph</a>: kilometers per hour,
   thousands of meters per hour, 1 kmph = 0.6 mv
 - <a href="#liter" id="L">L</a>: liter, 15625 drops, a cubic decimeter
@@ -3207,8 +3290,21 @@ videos](https://observablehq.com/resource-center#videos).
     milliliter, a thousandth of a liter, 15.625 drops
 - <a href="#pentaday" id="p">p</a>: pentaday, a group of five days, half
   a decaday
+  - <a href="#pentadayofxun" id="pox">pox</a>: pentaday of xún, 0 for
+    Dox 0 to 4 and 1 for Dox 5 to 9
+  - <a href="#pentadayofbimester" id="pob">pob</a>: pentaday of
+    bimester, ⌊dob ÷ 5⌋, 0 to 11
+  - <a href="#pentadayinterquintilerange" id="pir">pir</a>: pentaday
+    interquintile range, Dop 1 to 3, the three days between two lim
+  - <a href="#liminalinterconnectingmargin" id="lim">lim</a>: liminal
+    interconnecting margin, the pair of days between two pir, Dop 4 and
+    the following Dop 0
 - <a href="#note" id="n">n</a>: note, a specific frequency within an
   octave
+- <a href="#nationaloceanicandatmosphericadministration"
+  id="noaa">NOAA</a>: [National Oceanic and Atmospheric
+  Administration](https://www.noaa.gov), source of the General Solar
+  Position Calculations document
 - <a href="#octave" id="o">o</a>: octave, a two fold change in frequency
   - <a href="#decioctave" id="do">do</a>: decioctave, a tenth of a two
     fold change in frequency
@@ -3224,6 +3320,9 @@ videos](https://observablehq.com/resource-center#videos).
   flipped vertically to produce the letter “d” in day
 - <a href="#rose" id="r">r</a>: compass rose, a full circle along the
   horizon, 360 compass degrees
+  - <a href="#solarazimuthangle" id="saa">saa</a>: solar azimuth angle,
+    the direction of the Sun along the horizon measured clockwise from
+    North
   - <a href="#millirose" id="mr">mr</a>: compass millirose, a thousandth
     of a circle along the horizon, .36 compass degrees
 - <a href="#radian" id="rad">rad</a>: radian, $1\over\tau$ turns,
@@ -3231,13 +3330,19 @@ videos](https://observablehq.com/resource-center#videos).
 - <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
 - <a href="#second" id="s">s</a>: second, 1/90 millidays, 0.9 beats, 1
   Dec second = 0.96 SI seconds
+- <a href="#spinorbitinterval" id="soi">soi</a>: spin orbit interval, a
+  lunar day, 1.03505 days
+  - <a href="#soiofyear" id="soy">soy</a>: soi of year
+  - <a href="#soiofbimester" id="sob">sob</a>: soi of bimester
 - <a href="#internationalsystemofunits" id="si">SI</a>: [International
   System of
   Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 - <a href="#speedoflight" id="sol">sol</a>: speed of light, 647.55170928
-  kiloomegars, 299792458 meters per second
+  kiloomegar, 299792458 meters per second
 - <a href="#speedofsound" id="sos">sos</a>: speed of sound, 735.048
-  milliomegars, 340.3 meters per second
+  milliomegar, 340.3 meters per second
+- <a href="#solardeclinationangle" id="sda">sda</a>: solar declination
+  angle, the latitude at which the Sun is directly overhead
 - <a href="#tau" id="2pi">𝜏</a>: 2𝜋 or approximately 6.2831853
 - <a href="#tenequaltemperament" id="tenet">Tenet</a>: ten equal
   temperament
@@ -3245,6 +3350,30 @@ videos](https://observablehq.com/resource-center#videos).
   - <a href="#twelveequaltemperament" id="12et">12et</a>: twelve equal
     temperament
 - <a href="#timeofday" id="tod">tod</a>: time of day
+  - <a href="#hourminutesecond" id="hms">hms</a>: hour minute second, a
+    tod written as an hod, moh, and som triplet
+  - <a href="#dailysecondaggregate" id="dsa">dsa</a>: daily second
+    aggregate, seconds since midnight, tod × 86400
+  - <a href="#hourlysecondaggregate" id="hsa">hsa</a>: hourly second
+    aggregate, seconds since the top of the hour, dsa mod 3600
+  - <a href="#hourofday" id="hod">hod</a>: hour of day, ⌊dsa ÷ 3600⌋, 0
+    to 23
+  - <a href="#minuteofhour" id="moh">moh</a>: minute of hour, ⌊hsa ÷
+    60⌋, 0 to 59
+  - <a href="#secondofminute" id="som">som</a>: second of minute, ⌊hsa
+    mod 60⌋, 0 to 59
+  - <a href="#meansolartime" id="mst">mst</a>: mean solar time, solar
+    time based only on longitude and the Zone 0 tod
+  - <a href="#apparentsolartime" id="ast">ast</a>: apparent solar time,
+    mst + eot(toy), solar time based on the actual position of the Sun
+  - <a href="#dayarc" id="da">da</a>: day arc, the time from sunrise to
+    sunset, sunset - sunrise
+  - <a href="#halfdayarc" id="da2">da/2</a>: half day arc, the time from
+    sunrise to solar noon or from solar noon to sunset
+  - <a href="#nightarc" id="na">na</a>: night arc, the time from sunset
+    to sunrise, 1 - da
+  - <a href="#halfnightarc" id="na2">na/2</a>: half night arc, the time
+    from sunset to solar midnight or from solar midnight to sunrise
 - <a href="#turn" id="t">t</a>: turn, 360 degrees, 𝜏 or 2𝜋 radians
   - <a href="#centiturn" id="ct">ct</a>: centiturn, a hundredth of a
     turn, 3.6 degrees, 𝜏/100 or 𝜋/50 radians
@@ -3255,11 +3384,26 @@ videos](https://observablehq.com/resource-center#videos).
 - <a href="#timezoneoffset" id="tzo">tzo</a>: time zone offset
 - <a href="#ounce" id="u">u</a>: ounce (uncia in Latin), 500 grains, 32
   grams, 500 drops, 32 milliliters
+- <a href="#universaltimeoffset" id="uto">uto</a>: universal time
+  offset, the offset in decidays that turns a Zone 0 tod into Universal
+  Time; a tzo is an integer uto
+  - <a href="#solartimeoffset" id="sto">sto</a>: solar time offset, a
+    uto that is a terminating decimal
+  - <a href="#exactoffsetfraction" id="eof">eof</a>: exact offset
+    fraction, an irreducible fraction that expresses a repeating decimal
+    uto exactly
+  - <a href="#roundedoffsetdecimal" id="rod">rod</a>: rounded offset
+    decimal, a repeating decimal uto rounded to a few digits
+  - <a href="#roundofferrorfraction" id="ref">ref</a>: roundoff error
+    fraction, uto - rod
 - <a href="#coordinateduniversaltime" id="utc">utc</a>: [Coordinated
   Universal
   Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - <a href="#unitedstates" id="us">US</a>: [United
   States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
+- <a href="#universaltime" id="ut">UT</a>: [Universal
+  Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation),
+  a time standard based on the rotation of the Earth
 - <a href="#omegar" id="v">v</a>: omegar, ωr,
   1041.<span class="vinculum">6</span> miles per hour,
   1.<span class="vinculum">6</span> megameters per hour,
@@ -3284,11 +3428,44 @@ videos](https://observablehq.com/resource-center#videos).
     (纬), a thousandth of a parallel
 - <a href="#xun" id="x">x</a>: xún (旬), decaday, a group of ten days, 2
   pentadays, represented by x like the Roman numeral X
+  - <a href="#positiveintegerxun" id="pix">pix</a>: positive integer
+    xún, ⌊pid ÷ 10⌋, 0 to 36
+  - <a href="#negativeintegerxun" id="nix">nix</a>: negative integer
+    xún, ⌊nid ÷ 10⌋, -37 to -1
+  - <a href="#mixedintegerxun" id="mix">mix</a>: mixed integer xún, the
+    first two digits of an nih mid
+  - <a href="#xuninterdecilerange" id="xir">xir</a>: xún interdecile
+    range, Dox 1 to 8, the days between Dox 0 and 9
 - <a href="#year" id="y">y</a>: year
   - <a href="#milliyear" id="my">my</a>: milliyear, a thousandth of a
     year
   - <a href="#yearofera" id="yoe">yoe</a>: year of era, integer years
     since the Dec epoch
+  - <a href="#epochalyearaggregate" id="eya">eya</a>: epochal year
+    aggregate, yoe + toy, years since the Dec epoch including the
+    fraction of the current year
+  - <a href="#timeofyear" id="toy">toy</a>: time of year, the fraction
+    of the year that has elapsed, eya mod 1, ada ÷ syl
+  - <a href="#yearmonthday" id="ymd">ymd</a>: year month day, a
+    Gregorian calendar date triplet
+  - <a href="#solaryearlength" id="syl">syl</a>: solar year length, 365
+    or 366 days, pid - nid
+  - <a href="#lunaryearlength" id="lyl">lyl</a>: lunar year length, 354
+    or 355 days
+  - <a href="#commonerayear" id="cey">cey</a>: common era year, an ISO
+    8601 (Gregorian calendar) year number
+  - <a href="#cycleofera" id="coe">coe</a>: cycle of era, 400-year
+    cycles since the Dec epoch
+  - <a href="#yearofcycle" id="yoc">yoc</a>: year of cycle, years since
+    the start of the current 400-year cycle, 0 to 399
+  - <a href="#yearoftricennium" id="yot">yot</a>: year of tricennium,
+    lunar years since the start of the current 30-year lunar cycle, 0 to
+    29
+  - <a href="#monthofyear" id="moy">moy</a>: month of year, zero-based,
+    Moy 0 is March
+  - <a href="#weekofyear" id="woy">woy</a>: week of year, (boydow + bow)
+    ÷ 7, 0 to 53
+  - <a href="#weekofmonth" id="wom">wom</a>: week of month
 - <a href="#zoneequatorialmeter" id="z">z</a>: zem, zone equatorial
   meter, 4 decimeters, 16 inches
   - <a href="#squarekilozem" id="kz2">kz²</a>: square kilozem, a million

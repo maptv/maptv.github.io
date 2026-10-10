@@ -519,10 +519,10 @@ viewof select = Inputs.select(
 //| label: lonlatable
 //| column: margin
 table = createTable([
-  { Milliparallel: 500, Millimeridian: 0 },
+  { Milliwěi: 500, Millimeridian: 0 },
 ], { headerEditable: false, appendRows: false })
-//   {Point: 0, Milliparallel: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
-//   {Point: 1, Milliparallel: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
+//   {Point: 0, Milliwěi: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
+//   {Point: 1, Milliwěi: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Milliwindrose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
 // ], {headerEditable: false, appendRows: false})
 ```
 
@@ -1415,19 +1415,18 @@ week on Sunday.
 In Dec, offsets are closely related to
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda).
 Dec measures longitude in
-[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">λ</span>) or submultiples of <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="parallels">λ</span> like
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a parallel">deci[parallels](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=an%20abstract%20east%E2%80%93west%20small%20circle%20connecting%20all%20locations%20around%20Earth%20(ignoring%20elevation)%20at%20a%20given%20latitude%20coordinate%20line)</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciparallels">dλ</span>). A
+[wěi](https://en.wiktionary.org/wiki/%E7%B7%AF#:~:text=(geography)-,latitude,-coordinate%20terms%C2%A0%E2%96%B2)
+(<a href="#w" id="wei" class="tool" data-bs-toggle="tooltip"
+data-bs-title="horizontal lines on a map">w</a>) or submultiples of
+<a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="horizontal lines on a map">w</a> like deciwěi
+(<a href="#dw" id="deciwei" class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciwěi">dw</a>). A
 <a href="#tzo" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time zone offset">tzo</a> is essentially a
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="deciparallel">dλ</span> longitude that had its decimal
-part removed via
+<a href="#dw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciwěi">dw</a> longitude that had its decimal part
+removed via
 [rounding](https://en.wikipedia.org/wiki/Rounding#:~:text=the%20process%20of%20adjusting%20a%20number%20to%20an%20approximate%2C%20more%20convenient%20value),
 [flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=takes%20as%20input%20a%20real%20number%20x%2C%20and%20gives%20as%20output%20the%20greatest%20integer%20less%20than%20or%20equal%20to%20x),
 [truncation](https://en.wikipedia.org/wiki/Truncation#Truncation_and_floor_function:~:text=truncation%20is%20limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point),
@@ -1453,8 +1452,8 @@ data-bs-title="a hundred thousand">10<sup>5</sup></span> times per day,
 data-bs-title="a thousandth of a day">milliday</span>, or once per
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a hundred thousandth of a day">beat</span>
-(<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="inverse of beat">iob</span>), which is the [lower
+(<a href="#per" id="perbeat" class="tool" data-bs-toggle="tooltip"
+data-bs-title="perbeat">þ</a>), which is the [lower
 bound](https://en.wikipedia.org/wiki/Upper_and_lower_bounds#:~:text=an%20element%20of%20K%20that%20is%20less%20than%20or%20equal%20to%20every%20element%20of%20S)
 of the [normal resting heart
 rate](https://en.wikipedia.org/wiki/Heart_rate#:~:text=normal%20resting%20adult%20human%20heart%20rate%20is%2060–100%20bpm)
@@ -1489,9 +1488,9 @@ data-bs-toggle="tooltip" data-bs-title="approximately">~</span>)
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="one thousand">10<sup>3</sup></span> <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="thousandths of a taur">millitaurs</span>
+data-bs-title="thousandths of a taur">millitaur</span>
 (<a href="#mc" id="millitaur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millitaurs">mc</a>), <span class="tool"
+data-bs-title="millitaur">mc</a>), <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>4 ×
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="ten thousand">10<sup>4</sup></span> <span class="tool"
@@ -1506,14 +1505,15 @@ data-bs-title="a hundred thousand">10<sup>5</sup></span>
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousands of zone equatorial meters">kilozem</span>
 (<a href="#kz" id="kilozem" class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilozems">kz</a>) long. If we move 1
-<a href="#mc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millitaurs">mc</a>, 40
+data-bs-title="thousands of zone equatorial meters">kz</a>) long. If we
+move 1 <a href="#mc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millitaur">mc</a>, 40
 <a href="#km" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilometers">km</a>, or 100
 <a href="#kz" class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilozems">kz</a> to the East or West on or near the
-Equator, our <a href="#sto" class="tool" data-bs-toggle="tooltip"
+data-bs-title="thousands of zone equatorial meters">kz</a> to the East
+or West on or near the Equator, our
+<a href="#sto" class="tool" data-bs-toggle="tooltip"
 data-bs-title="solar time offset">sto</a> will change by
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>1
@@ -1527,8 +1527,9 @@ data-bs-title="beat">b</a> and our longitude will shift by
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="approximately">~</span>0.36 degrees, <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
-milliparallel (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="milliparallel">mλ</span>), <span class="tool"
+milliwěi
+(<a href="#mw" id="milliwei" class="tool" data-bs-toggle="tooltip"
+data-bs-title="milliwěi">mw</a>), <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>21.6
 <a href="https://en.wikipedia.org/wiki/Minute_and_second_of_arc"
 class="tool" data-bs-toggle="tooltip"
@@ -1572,8 +1573,8 @@ data-bs-title="mean solar time">mst</a>, we keep only the decimal part
 of the sum of 0.95, the Zone <span class="color0">0</span>
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> measured in days, and our longitude
-measured in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">λ</span>. If we want
+measured in <a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="horizontal lines on a map">w</a>. If we want
 <a href="#ast" class="tool" data-bs-toggle="tooltip"
 data-bs-title="apparent solar time">ast</a> instead of
 <a href="#mst" class="tool" data-bs-toggle="tooltip"
@@ -1588,15 +1589,15 @@ data-bs-title="equation of time">eot</a>).
 <div id="equationgroup08" class="equationgroup">
 
 <span id="eq-toy">
-toy = ada ÷ n   (14)
+toy = ada ÷ syl   (14)
 </span>
 
 <span id="eq-mst">
-mst = (0.95 + tod + *λ*) mod  1   (15)
+mst = (0.95 + tod + w) mod  1   (15)
 </span>
 
 <span id="eq-ast">
-ast = (0.95 + tod + *λ* + eot(toy)) mod  1   (16)
+ast = (0.95 + tod + w + eot(toy)) mod  1   (16)
 </span>
 
 </div>
@@ -1605,9 +1606,9 @@ To obtain the <a href="#toy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of year">toy</a>, we divide the
 <a href="#ada" class="tool" data-bs-toggle="tooltip"
 data-bs-title="annual day aggregate">ada</a> by the number of days in
-the year (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="the number of days in the year">n</span>). If we use
-[trigonometric
+the year (<a href="#syl" id="solaryearlength" class="tool"
+data-bs-toggle="tooltip" data-bs-title="solar year length">syl</a>). If
+we use [trigonometric
 functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths)
 that are designed to work with
 [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units),
@@ -1892,8 +1893,8 @@ sunrise, and sunset. The equation below creates a [solar
 noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow)
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> measured in days by adding 9.55 to a
-longitude measured in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="parallel">λ</span>, subtracting a
+longitude measured in <a href="#w" class="tool" data-bs-toggle="tooltip"
+data-bs-title="horizontal lines on a map">w</a>, subtracting a
 <a href="#tzo" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time zone offset">tzo</a> and a
 <a href="#eot" class="tool" data-bs-toggle="tooltip"
@@ -1904,7 +1905,7 @@ days, and keeping only the decimal part of the result.
 <div id="equationgroup10" class="equationgroup">
 
 <span id="eq-solarnoon">
-solarnoon = (9.55 + tzo − *λ* − eot(toy)) mod  1   (18)
+solarnoon = (9.55 + tzo − w − eot(toy)) mod  1   (18)
 </span>
 
 </div>
@@ -1939,13 +1940,14 @@ States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primar
 
 </div>
 
-The two homonymous cities are about two <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="deciparallels">dλ</span> apart
-and thus will always differ by around two <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
-in solar time, regardless of what time zone we use as our frame of
-reference. England is in Zone <span class="color0">0</span> and
-Massachusetts is in Zone <span class="color8">8</span>. If we change the
+The two homonymous cities are about two
+<a href="#dw" class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciwěi">dw</a> apart and thus will always differ by
+around two <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</span> in solar time,
+regardless of what time zone we use as our frame of reference. England
+is in Zone <span class="color0">0</span> and Massachusetts is in Zone
+<span class="color8">8</span>. If we change the
 <a href="#tzo" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time zone offset">tzo</a> from zero to eight
 <span class="tool" data-bs-toggle="tooltip"
@@ -2188,7 +2190,7 @@ subtracting our measurement from one and a half turns:
 <div id="equationgroup15" class="equationgroup">
 
 <span id="eq-solartime">
-$$\text{solartime} \approx \begin{cases}\text{saa}&{\text{if } \phi \geq 0;}\\(1.5 - \text{saa}) \bmod 1&{\text{otherwise.}}\end{cases} \qquad(25)$$
+$$\text{solartime} \approx \begin{cases}\text{saa}&{\text{if m} \geq 0;}\\(1.5 - \text{saa}) \bmod 1&{\text{otherwise.}}\end{cases} \qquad(25)$$
 </span>
 
 </div>
@@ -2248,11 +2250,11 @@ data-bs-title="time of day">tod</a>.
 <div id="equationgroup16" class="equationgroup">
 
 <span id="eq-da">
-$$\text{da} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau($\phi$)} \times \text{sintau(sda)}}{\text{costau($\phi$)} \times \text{costau(sda)}}}\right)}{\pi} \qquad(26)$$
+$$\text{da} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\pi} \qquad(26)$$
 </span>
 
 <span id="eq-halfda">
-$$\frac{\text{da}}{2} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau($\phi$)} \times \text{sintau(sda)}}{\text{costau($\phi$)} \times \text{costau(sda)}}}\right)}{\tau} \qquad(27)$$
+$$\frac{\text{da}}{2} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\tau} \qquad(27)$$
 </span>
 
 </div>
@@ -2267,11 +2269,12 @@ and a “solar
 [declination](https://en.wikipedia.org/wiki/Declination#:~:text=one%20of%20the%20two%20angles%20that%20locate%20a%20point%20on%20the%20celestial%20sphere%20in%20the%20equatorial%20coordinate%20system)
 angle” (<a href="#sda" id="solardeclinationangle" class="tool"
 data-bs-toggle="tooltip" data-bs-title="solar declination angle">sda</a>).
-Dec measures latitude in turns called meridians (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="meridians">φ</span>) or turn
-submultiples such as millimeridians (<span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millimeridians">mφ</span>). For
-simplicity, we can fit our
+Dec measures latitude in turns called meridians
+(<a href="#m" id="meridian" class="tool" data-bs-toggle="tooltip"
+data-bs-title="meridians">m</a>) or turn submultiples such as
+millimeridians
+(<a href="#mm" id="millimeridian" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millimeridians">mm</a>). For simplicity, we can fit our
 <a href="#eot" class="tool" data-bs-toggle="tooltip"
 data-bs-title="equation of time">eot</a> model to
 <a href="#sda" class="tool" data-bs-toggle="tooltip"
@@ -2461,9 +2464,9 @@ data-bs-title="year of era">yoe</a> by flooring an
 data-bs-title="epochal year aggregate">eya</a>. Likewise, we can obtain
 a <span class="cyan under tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</span> by flooring the product of
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="number of days in the year">n</span> and the decimal part
-of an <a href="#eya" class="tool" data-bs-toggle="tooltip"
+<a href="#syl" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar year length">syl</a> and the decimal part of an
+<a href="#eya" class="tool" data-bs-toggle="tooltip"
 data-bs-title="epochal year aggregate">eya</a>, which is called a
 <a href="#toy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of year">toy</a>. The current
@@ -2477,19 +2480,19 @@ its , we can obtain a
 <div id="equationgroup20" class="equationgroup">
 
 <span id="eq-eya">
-eya = yoe + toy = yoe + doy ÷ n   (34)
+eya = yoe + toy = yoe + doy ÷ syl   (34)
 </span>
 
 <span id="eq-toyeya">
-toy = eya mod  1 = doy ÷ n   (35)
+toy = eya mod  1 = doy ÷ syl   (35)
 </span>
 
 <span id="eq-doytoy">
-doy = ⌊toy × n⌋   (36)
+doy = ⌊toy × syl⌋   (36)
 </span>
 
 <span id="eq-eyadoy">
-eya = yoe + doy × n   (37)
+eya = yoe + doy × syl   (37)
 </span>
 
 <span id="eq-eyacoe">
@@ -2503,9 +2506,9 @@ data-bs-title="epochal year aggregate">eya</a> =
 <a href="#yoe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</a> +
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a> ÷ <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="number of days in the year">n</span>.
+data-bs-title="day of year">doy</a> ÷
+<a href="#syl" class="tool" data-bs-toggle="tooltip"
+data-bs-title="solar year length">syl</a>.
 
 We can omit the year from a snap if we replace the
 <a href="#ada" class="tool" data-bs-toggle="tooltip"
@@ -2626,27 +2629,29 @@ subtrahend, and the distance remaining is the difference. Apart from
 travel, measuring distance in addition to time can be useful for
 tracking exercise such as running, bicycling, or swimming.
 
-To measure distances, Dec uses taurs
+To measure distances, Dec uses taur
 (<a href="#c" id="taur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a>) or zems
+data-bs-title="taur">c</a>) or zem
 (<a href="#z" id="zoneequatorialmeter" class="tool"
-data-bs-toggle="tooltip" data-bs-title="zems">z</a>), with or without
-metric prefixes, depending on the order of magnitude of the distance
-being measured. One <a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a> is close to the circumference of the earth
+data-bs-toggle="tooltip" data-bs-title="zone equatorial meters">z</a>),
+with or without metric prefixes, depending on the order of magnitude of
+the distance being measured. One
+<a href="#c" class="tool" data-bs-toggle="tooltip"
+data-bs-title="taur">c</a> is close to the circumference of the earth
 and is equal to 10<sup>5</sup> kilozem
 (<a href="#kz" class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilozems">kz</a>) or 4 &times 10<sup>5</sup> kilometers
+data-bs-title="thousands of zone equatorial meters">kz</a>) or 4 &times
+10<sup>5</sup> kilometers
 (<a href="#km" class="tool" data-bs-toggle="tooltip"
 data-bs-title="kilometers">km</a>). The distance between the Earth and
 the Moon ranges from 9.065 to 10.135 c. For larger distances, we can use
 astronomical units (au), light years (ly), or multiples of
 <a href="#c" class="tool" data-bs-toggle="tooltip"
-data-bs-title="taurs">c</a> such as kilotaurs
+data-bs-title="taur">c</a> such as kilotaur
 (<a href="#kc" id="kilotaur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="kilotaurs">kc</a>) and gigataurs
+data-bs-title="kilotaur">kc</a>) and gigataur
 (<a href="#gc" id="gigataur" class="tool" data-bs-toggle="tooltip"
-data-bs-title="gigataurs">gc</a>).
+data-bs-title="gigataur">gc</a>).
 
 au = 3740 c = 3.74 kc ly ‎ =  236525000 c = 236525 kc = 2.36525 gc
 
@@ -3042,8 +3047,8 @@ additional files or configuration. A Quarto output file can have both a
   kilometers, nearly the circumference of the Earth, roughly the product
   of 𝜏 and the radius of the Earth, approximately the dividend of the
   surface area and the diameter of the Earth
-  - <a href="#gigataur" id="gc">gc</a>: gigataur, a billion taurs
-  - <a href="#kilotaur" id="kc">kc</a>: kilotaur, a thousand taurs,
+  - <a href="#gigataur" id="gc">gc</a>: gigataur, a billion taur
+  - <a href="#kilotaur" id="kc">kc</a>: kilotaur, a thousand taur,
     10<sup>8</sup> kilozem
   - <a href="#millitaur" id="mc">mc</a>: millitaur, *m*𝜏*r*, a
     thousandth of a taur, 100 kilozem, 40 kilometers
@@ -3216,7 +3221,7 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#nationaloceanicandatmosphericadministration"
   id="noaa">NOAA</a>: [National Oceanic and Atmospheric
   Administration](https://www.noaa.gov), source of the General Solar
-  Position Calculations used to fit the eot and sda models
+  Position Calculations document
 - <a href="#octave" id="o">o</a>: octave, a two fold change in frequency
   - <a href="#decioctave" id="do">do</a>: decioctave, a tenth of a two
     fold change in frequency
@@ -3250,9 +3255,9 @@ additional files or configuration. A Quarto output file can have both a
   System of
   Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 - <a href="#speedoflight" id="sol">sol</a>: speed of light, 647.55170928
-  kiloomegars, 299792458 meters per second
+  kiloomegar, 299792458 meters per second
 - <a href="#speedofsound" id="sos">sos</a>: speed of sound, 735.048
-  milliomegars, 340.3 meters per second
+  milliomegar, 340.3 meters per second
 - <a href="#solardeclinationangle" id="sda">sda</a>: solar declination
   angle, the latitude at which the Sun is directly overhead
 - <a href="#tau" id="2pi">𝜏</a>: 2𝜋 or approximately 6.2831853
@@ -4343,7 +4348,7 @@ function worldMapCoordinates(config = {}, dimensions) {
     // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes#heading-a-full-list-of-key-event-values
       8, 9, 13, 27, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
     ].includes(ev.which)) {
-      const newLon = parseInt(liveTable[0].Milliparallel)
+      const newLon = parseInt(liveTable[0].Milliwěi)
       const newLat = parseInt(liveTable[0].Millimeridian)
       lon = newLon != null || !isNaN(newLon) ? turn2long(newLon) : lon;
       lat = newLat != null || !isNaN(newLat) ? turn2lati(newLat) : lat;
