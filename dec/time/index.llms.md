@@ -10,15 +10,15 @@ Author
 
 Published
 
-2026+222
+2026+225
 
 Modified
 
-2026+223
+2026+225
 
 ![](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODI5LjY4NzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGNsYXNzPSJmbG93Y2hhcnQgZGVjbmF2LXN2ZyIgdmlld2JveD0iMCAwIDgyOS42ODc1IDk0IiByb2xlPSJncmFwaGljcy1kb2N1bWVudCBkb2N1bWVudCIgYXJpYS1yb2xlZGVzY3JpcHRpb249ImZsb3djaGFydC12MiIgaGVpZ2h0PSI5NCI+CjxnPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRFbmQiIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Ym94PSIwIDAgMTAgMTAiIHJlZng9IjUiIHJlZnk9IjUiIG1hcmtlcnVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgbWFya2Vyd2lkdGg9IjgiIG1hcmtlcmhlaWdodD0iOCIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNIDAgMCBMIDEwIDUgTCAwIDEwIHoiIGNsYXNzPSJhcnJvd01hcmtlclBhdGgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDE7IHN0cm9rZS1kYXNoYXJyYXk6IDEsIDA7IiAvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRTdGFydCIgY2xhc3M9Im1hcmtlciBmbG93Y2hhcnQtdjIiIHZpZXdib3g9IjAgMCAxMCAxMCIgcmVmeD0iNC41IiByZWZ5PSI1IiBtYXJrZXJ1bml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcndpZHRoPSI4IiBtYXJrZXJoZWlnaHQ9IjgiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTSAwIDUgTCAxMCAxMCBMIDEwIDAgeiIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiIC8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibWVybWFpZC0xNzg5Nzk1ODg3NTk3X2Zsb3djaGFydC12Mi1jaXJjbGVFbmQiIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Ym94PSIwIDAgMTAgMTAiIHJlZng9IjExIiByZWZ5PSI1IiBtYXJrZXJ1bml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcndpZHRoPSIxMSIgbWFya2VyaGVpZ2h0PSIxMSIgb3JpZW50PSJhdXRvIj48Y2lyY2xlIGN4PSI1IiBjeT0iNSIgcj0iNSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiPjwvY2lyY2xlPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItY2lyY2xlU3RhcnQiIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Ym94PSIwIDAgMTAgMTAiIHJlZng9Ii0xIiByZWZ5PSI1IiBtYXJrZXJ1bml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcndpZHRoPSIxMSIgbWFya2VyaGVpZ2h0PSIxMSIgb3JpZW50PSJhdXRvIj48Y2lyY2xlIGN4PSI1IiBjeT0iNSIgcj0iNSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiPjwvY2lyY2xlPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItY3Jvc3NFbmQiIGNsYXNzPSJtYXJrZXIgY3Jvc3MgZmxvd2NoYXJ0LXYyIiB2aWV3Ym94PSIwIDAgMTEgMTEiIHJlZng9IjEyIiByZWZ5PSI1LjIiIG1hcmtlcnVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgbWFya2Vyd2lkdGg9IjExIiBtYXJrZXJoZWlnaHQ9IjExIiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0gMSwxIGwgOSw5IE0gMTAsMSBsIC05LDkiIGNsYXNzPSJhcnJvd01hcmtlclBhdGgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1kYXNoYXJyYXk6IDEsIDA7IiAvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im1lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItY3Jvc3NTdGFydCIgY2xhc3M9Im1hcmtlciBjcm9zcyBmbG93Y2hhcnQtdjIiIHZpZXdib3g9IjAgMCAxMSAxMSIgcmVmeD0iLTEiIHJlZnk9IjUuMiIgbWFya2VydW5pdHM9InVzZXJTcGFjZU9uVXNlIiBtYXJrZXJ3aWR0aD0iMTEiIG1hcmtlcmhlaWdodD0iMTEiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTSAxLDEgbCA5LDkgTSAxMCwxIGwgLTksOSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiIC8+PC9tYXJrZXI+PGcgY2xhc3M9InJvb3QiPjxnIGNsYXNzPSJjbHVzdGVycyI+PC9nPjxnIGNsYXNzPSJlZGdlUGF0aHMiPjxwYXRoIGQ9Ik0xMjAuOTIyLDQ3TDEyNS4wODksNDdDMTI5LjI1NSw0NywxMzcuNTg5LDQ3LDE0NS4yNTUsNDdDMTUyLjkyMiw0NywxNTkuOTIyLDQ3LDE2My40MjIsNDdMMTY2LjkyMiw0NyIgaWQ9IkxfQV9CXzAiIGNsYXNzPSJlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGVkZ2UtdGhpY2tuZXNzLW5vcm1hbCBlZGdlLXBhdHRlcm4tc29saWQgZmxvd2NoYXJ0LWxpbmsiIHN0eWxlPSI7IiBkYXRhLWVkZ2U9InRydWUiIGRhdGEtZXQ9ImVkZ2UiIGRhdGEtaWQ9IkxfQV9CXzAiIGRhdGEtcG9pbnRzPSJXM3NpZUNJNk1USXdMamt5TVRnM05Td2llU0k2TkRkOUxIc2llQ0k2TVRRMUxqa3lNVGczTlN3aWVTSTZORGQ5TEhzaWVDSTZNVGN3TGpreU1UZzNOU3dpZVNJNk5EZDlYUT09IiBtYXJrZXItZW5kPSJ1cmwoI21lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRFbmQpIiAvPjxwYXRoIGQ9Ik0yOTUuNzAzLDQ3TDI5OS44Nyw0N0MzMDQuMDM2LDQ3LDMxMi4zNyw0NywzMjAuMDM2LDQ3QzMyNy43MDMsNDcsMzM0LjcwMyw0NywzMzguMjAzLDQ3TDM0MS43MDMsNDciIGlkPSJMX0JfQ18wIiBjbGFzcz0iZWRnZS10aGlja25lc3Mtbm9ybWFsIGVkZ2UtcGF0dGVybi1zb2xpZCBlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGZsb3djaGFydC1saW5rIiBzdHlsZT0iOyIgZGF0YS1lZGdlPSJ0cnVlIiBkYXRhLWV0PSJlZGdlIiBkYXRhLWlkPSJMX0JfQ18wIiBkYXRhLXBvaW50cz0iVzNzaWVDSTZNamsxTGpjd016RXlOU3dpZVNJNk5EZDlMSHNpZUNJNk16SXdMamN3TXpFeU5Td2llU0k2TkRkOUxIc2llQ0k2TXpRMUxqY3dNekV5TlN3aWVTSTZORGQ5WFE9PSIgbWFya2VyLWVuZD0idXJsKCNtZXJtYWlkLTE3ODk3OTU4ODc1OTdfZmxvd2NoYXJ0LXYyLXBvaW50RW5kKSIgLz48cGF0aCBkPSJNNDcxLjUzMSw0N0w0NzUuNjk4LDQ3QzQ3OS44NjUsNDcsNDg4LjE5OCw0Nyw0OTUuODY1LDQ3QzUwMy41MzEsNDcsNTEwLjUzMSw0Nyw1MTQuMDMxLDQ3TDUxNy41MzEsNDciIGlkPSJMX0NfRF8wIiBjbGFzcz0iZWRnZS10aGlja25lc3Mtbm9ybWFsIGVkZ2UtcGF0dGVybi1zb2xpZCBlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGZsb3djaGFydC1saW5rIiBzdHlsZT0iOyIgZGF0YS1lZGdlPSJ0cnVlIiBkYXRhLWV0PSJlZGdlIiBkYXRhLWlkPSJMX0NfRF8wIiBkYXRhLXBvaW50cz0iVzNzaWVDSTZORGN4TGpVek1USTFMQ0o1SWpvME4zMHNleUo0SWpvME9UWXVOVE14TWpVc0lua2lPalEzZlN4N0luZ2lPalV5TVM0MU16RXlOU3dpZVNJNk5EZDlYUT09IiBtYXJrZXItZW5kPSJ1cmwoI21lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRFbmQpIiAvPjxwYXRoIGQ9Ik02NDYuNjA5LDQ3TDY1MC43NzYsNDdDNjU0Ljk0Myw0Nyw2NjMuMjc2LDQ3LDY3MC45NDMsNDdDNjc4LjYwOSw0Nyw2ODUuNjA5LDQ3LDY4OS4xMDksNDdMNjkyLjYwOSw0NyIgaWQ9IkxfRF9FXzAiIGNsYXNzPSJlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGVkZ2UtdGhpY2tuZXNzLW5vcm1hbCBlZGdlLXBhdHRlcm4tc29saWQgZmxvd2NoYXJ0LWxpbmsiIHN0eWxlPSI7IiBkYXRhLWVkZ2U9InRydWUiIGRhdGEtZXQ9ImVkZ2UiIGRhdGEtaWQ9IkxfRF9FXzAiIGRhdGEtcG9pbnRzPSJXM3NpZUNJNk5qUTJMall3T1RNM05Td2llU0k2TkRkOUxIc2llQ0k2TmpjeExqWXdPVE0zTlN3aWVTSTZORGQ5TEhzaWVDSTZOamsyTGpZd09UTTNOU3dpZVNJNk5EZDlYUT09IiBtYXJrZXItZW5kPSJ1cmwoI21lcm1haWQtMTc4OTc5NTg4NzU5N19mbG93Y2hhcnQtdjItcG9pbnRFbmQpIiAvPjwvZz48ZyBjbGFzcz0iZWRnZUxhYmVscyI+PGcgY2xhc3M9ImVkZ2VMYWJlbCI+PGcgY2xhc3M9ImxhYmVsIiBkYXRhLWlkPSJMX0FfQl8wIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+PGZvcmVpZ25vYmplY3Qgd2lkdGg9IjAiIGhlaWdodD0iMCI+PGRpdiBjbGFzcz0ibGFiZWxCa2ciIGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHA+PHNwYW4gY2xhc3M9ImVkZ2VMYWJlbCI+PC9zcGFuPjwvcD4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjxnIGNsYXNzPSJlZGdlTGFiZWwiPjxnIGNsYXNzPSJsYWJlbCIgZGF0YS1pZD0iTF9CX0NfMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgMCkiPjxmb3JlaWdub2JqZWN0IHdpZHRoPSIwIiBoZWlnaHQ9IjAiPjxkaXYgY2xhc3M9ImxhYmVsQmtnIiBkYXRhLXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZGlzcGxheTogdGFibGUtY2VsbDsgd2hpdGUtc3BhY2U6IG5vd3JhcDsgbGluZS1oZWlnaHQ6IDEuNTsgbWF4LXdpZHRoOiAyMDBweDsgdGV4dC1hbGlnbjogY2VudGVyOyI+CjxwPjxzcGFuIGNsYXNzPSJlZGdlTGFiZWwiPjwvc3Bhbj48L3A+CjwvZGl2Pgo8L2ZvcmVpZ25vYmplY3Q+PC9nPjwvZz48ZyBjbGFzcz0iZWRnZUxhYmVsIj48ZyBjbGFzcz0ibGFiZWwiIGRhdGEtaWQ9IkxfQ19EXzAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj48Zm9yZWlnbm9iamVjdCB3aWR0aD0iMCIgaGVpZ2h0PSIwIj48ZGl2IGNsYXNzPSJsYWJlbEJrZyIgZGF0YS14bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IHRhYmxlLWNlbGw7IHdoaXRlLXNwYWNlOiBub3dyYXA7IGxpbmUtaGVpZ2h0OiAxLjU7IG1heC13aWR0aDogMjAwcHg7IHRleHQtYWxpZ246IGNlbnRlcjsiPgo8cD48c3BhbiBjbGFzcz0iZWRnZUxhYmVsIj48L3NwYW4+PC9wPgo8L2Rpdj4KPC9mb3JlaWdub2JqZWN0PjwvZz48L2c+PGcgY2xhc3M9ImVkZ2VMYWJlbCI+PGcgY2xhc3M9ImxhYmVsIiBkYXRhLWlkPSJMX0RfRV8wIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+PGZvcmVpZ25vYmplY3Qgd2lkdGg9IjAiIGhlaWdodD0iMCI+PGRpdiBjbGFzcz0ibGFiZWxCa2ciIGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHA+PHNwYW4gY2xhc3M9ImVkZ2VMYWJlbCI+PC9zcGFuPjwvcD4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvZz48ZyBjbGFzcz0ibm9kZXMiPjxhIGhyZWY9Ii4uLy4uL2RlYyIgY2xhc3M9ImRlY25hdi1saW5rIG5vLWV4dGVybmFsIj48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZmxvd2NoYXJ0LUEtMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjQuNDYwOTM3NSwgNDcpIj48cmVjdCBjbGFzcz0iYmFzaWMgbGFiZWwtY29udGFpbmVyIiBzdHlsZSB4PSItNTYuNDYwOTM3NSIgeT0iLTM5IiB3aWR0aD0iMTEyLjkyMTg3NSIgaGVpZ2h0PSI3OCIgLz48ZyBjbGFzcz0ibGFiZWwiIHN0eWxlIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNi40NjA5Mzc1LCAtMjQpIj48cmVjdCAvPjxmb3JlaWdub2JqZWN0IHdpZHRoPSI1Mi45MjE4NzUiIGhlaWdodD0iNDgiPjxkaXYgZGF0YS14bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3R5bGU9ImRpc3BsYXk6IHRhYmxlLWNlbGw7IHdoaXRlLXNwYWNlOiBub3dyYXA7IGxpbmUtaGVpZ2h0OiAxLjU7IG1heC13aWR0aDogMjAwcHg7IHRleHQtYWxpZ246IGNlbnRlcjsiPgo8c3BhbiBjbGFzcz0ibm9kZUxhYmVsIj4KPHA+CkRlYwo8L3A+CjxwPjwvcD48L3NwYW4+CjwvZGl2Pgo8L2ZvcmVpZ25vYmplY3Q+PC9nPjwvZz48L2E+PGEgaHJlZj0iLi4vLi4vZGVjL2RhdGUiIGNsYXNzPSJkZWNuYXYtbGluayBuby1leHRlcm5hbCI+PGcgY2xhc3M9Im5vZGUgZGVmYXVsdCIgaWQ9ImZsb3djaGFydC1CLTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIzMy4zMTI1LCA0NykiPjxyZWN0IGNsYXNzPSJiYXNpYyBsYWJlbC1jb250YWluZXIiIHN0eWxlIHg9Ii02Mi4zOTA2MjUiIHk9Ii0zOSIgd2lkdGg9IjEyNC43ODEyNSIgaGVpZ2h0PSI3OCIgLz48ZyBjbGFzcz0ibGFiZWwiIHN0eWxlIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMi4zOTA2MjUsIC0yNCkiPjxyZWN0IC8+PGZvcmVpZ25vYmplY3Qgd2lkdGg9IjY0Ljc4MTI1IiBoZWlnaHQ9IjQ4Ij48ZGl2IGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHNwYW4gY2xhc3M9Im5vZGVMYWJlbCI+CjxwPgpkYXRlCjwvcD4KPHA+PC9wPjwvc3Bhbj4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvYT48YSBocmVmPSIuLi8uLi9kZWMvdGltZSIgY2xhc3M9ImRlY25hdi1saW5rIG5vLWV4dGVybmFsIj48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZmxvd2NoYXJ0LUMtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDA4LjYxNzE4NzUsIDQ3KSI+PHJlY3QgY2xhc3M9ImJhc2ljIGxhYmVsLWNvbnRhaW5lciIgc3R5bGUgeD0iLTYyLjkxNDA2MjUiIHk9Ii0zOSIgd2lkdGg9IjEyNS44MjgxMjUiIGhlaWdodD0iNzgiIC8+PGcgY2xhc3M9ImxhYmVsIiBzdHlsZSB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzIuOTE0MDYyNSwgLTI0KSI+PHJlY3QgLz48Zm9yZWlnbm9iamVjdCB3aWR0aD0iNjUuODI4MTI1IiBoZWlnaHQ9IjQ4Ij48ZGl2IGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHNwYW4gY2xhc3M9Im5vZGVMYWJlbCI+CjxwPgp0aW1lCjwvcD4KPHA+PC9wPjwvc3Bhbj4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvYT48YSBocmVmPSIuLi8uLi9kZWMvc25hcCIgY2xhc3M9ImRlY25hdi1saW5rIG5vLWV4dGVybmFsIj48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZmxvd2NoYXJ0LUQtMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTg0LjA3MDMxMjUsIDQ3KSI+PHJlY3QgY2xhc3M9ImJhc2ljIGxhYmVsLWNvbnRhaW5lciIgc3R5bGUgeD0iLTYyLjUzOTA2MjUiIHk9Ii0zOSIgd2lkdGg9IjEyNS4wNzgxMjUiIGhlaWdodD0iNzgiIC8+PGcgY2xhc3M9ImxhYmVsIiBzdHlsZSB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzIuNTM5MDYyNSwgLTI0KSI+PHJlY3QgLz48Zm9yZWlnbm9iamVjdCB3aWR0aD0iNjUuMDc4MTI1IiBoZWlnaHQ9IjQ4Ij48ZGl2IGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHNwYW4gY2xhc3M9Im5vZGVMYWJlbCI+CjxwPgpzbmFwCjwvcD4KPHA+PC9wPjwvc3Bhbj4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvYT48YSBocmVmPSIuLi8uLi9kZWMvc3BhbiIgY2xhc3M9ImRlY25hdi1saW5rIG5vLWV4dGVybmFsIj48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZmxvd2NoYXJ0LUUtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzU5LjE0ODQzNzUsIDQ3KSI+PHJlY3QgY2xhc3M9ImJhc2ljIGxhYmVsLWNvbnRhaW5lciIgc3R5bGUgeD0iLTYyLjUzOTA2MjUiIHk9Ii0zOSIgd2lkdGg9IjEyNS4wNzgxMjUiIGhlaWdodD0iNzgiIC8+PGcgY2xhc3M9ImxhYmVsIiBzdHlsZSB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzIuNTM5MDYyNSwgLTI0KSI+PHJlY3QgLz48Zm9yZWlnbm9iamVjdCB3aWR0aD0iNjUuMDc4MTI1IiBoZWlnaHQ9IjQ4Ij48ZGl2IGRhdGEteG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHN0eWxlPSJkaXNwbGF5OiB0YWJsZS1jZWxsOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBsaW5lLWhlaWdodDogMS41OyBtYXgtd2lkdGg6IDIwMHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7Ij4KPHNwYW4gY2xhc3M9Im5vZGVMYWJlbCI+CjxwPgpzcGFuCjwvcD4KPHA+PC9wPjwvc3Bhbj4KPC9kaXY+CjwvZm9yZWlnbm9iamVjdD48L2c+PC9nPjwvYT48L2c+PC9nPjwvZz48L3N2Zz4=)
 
-#### Declock
+#### 0 Declock
 
 My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](../../dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the [bar📊charts](https://en.wikipedia.org/wiki/Bar_chart) clocks🕓, [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺, [Earth🌍orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit) diagram, and [daylight](https://en.wikipedia.org/wiki/Daylight#:~:text=the%20combination%20of%20all%20direct%20and%20indirect%20sunlight%20during%20the%20daytime) [area chart](https://en.wikipedia.org/wiki/Area_chart#:~:text=The%20area%20between%20axis%20and%20line%20are%20commonly%20emphasized%20with%20colors) below.
 
@@ -34,7 +34,7 @@ viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
 rstbtn.node();
 ```
 
-Bar chart clocks
+##### Bar chart clocks
 
 ``` js
 barChart = {
@@ -337,13 +337,13 @@ table = createTable([
 // ], {headerEditable: false, appendRows: false})
 ```
 
-Longitude latitude map
+##### Longitude latitude map
 
 ``` js
 viewof location = worldMapCoordinates([[turn2long(table.rows[1].cells[0].childNodes[0].innerText), turn2lati(table.rows[1].cells[1].childNodes[0].innerText)], projection], [width, height * mapsize / 100])
 ```
 
-Daylight area chart
+##### Daylight area chart
 
 ``` js
 // https://observablehq.com/@dbridges/visualizing-seasonal-daylight
@@ -419,23 +419,21 @@ app = {
 }
 ```
 
-#### 0 Annual day aggregate (ada)
+#### 1 Annual day aggregate (ada)
 
 The red—line indicates a “day of year” ([doy](#doy)), , and the red🔴dot denotes a “time of day” ([tod](#tod)): . A [doy](#doy) identifies a day in a year like a [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world) month and “day of month” ([dom](#dom)). A [tod](#tod) specifies a point in a day like an “hour minute second” ([hms](#hms)) triplet. Together, a [doy](#doy) and [tod](#tod) can form a “annual day aggregate” ([ada](#ada)): .
 
-\\\begin{split} \text{ada\\\\} & = \text{doy} + \text{tod} \\ \lfloor\text{ada}\rfloor & = \text{doy} \\ \end{split} \tag{1}\\
+\\ \text{ada\\\\} = \text{doy} + \text{tod} \tag{1}\\ \\ \lfloor\text{ada}\rfloor & = \text{doy} \tag{2}\\
 
 As their names suggest, [doy](#doy) and [ada](#ada) are measured in days. The [measurement unit](https://en.wikipedia.org/wiki/Unit_of_measurement#:~:text=a%20definite%20magnitude%20of%20a%20quantity) of a [tod](#tod) can be a day or a [submultiple](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20) of a day. By changing how a decimal [tod](#tod) is measured, we can shift its [decimal separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number) or turn it into an integer. The [tod](#tod) along the y-axis of the area chart are integers because they have three digits and are measured in millidays.
 
-#### 1 Epochal day aggregate (eda)
+#### 2 Epochal day aggregate (eda)
 
 To obtain a [tod](#tod) from a [ada](#ada), we can [keep the remainder after dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) by one to isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers): [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = . We can use this same approach to separate a [tod](#tod) from an “epochal day aggregate” ([eda](#eda)): mod 1 = . The current [eda](#eda) tells us how many days have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
 
-\\\begin{split} \text{tod} &= \text{ada} \bmod 1 &&= \text{eda} \bmod 1 \\ \text{tod} &= \text{ada} - \text{doy} &&= \text{eda} - \lfloor\text{eda}\rfloor \end{split} \tag{2}\\
+\\\begin{split} \text{tod} &= \text{ada} \bmod 1 &= \text{eda} \bmod 1 \\ &= \text{ada} - \text{doy} &= \text{eda} - \lfloor\text{eda}\rfloor \end{split} \tag{3}\\
 
 When provided with an [eda](#eda) instead of a [doe](#doe), the Dec date equations return an [ada](#ada) instead of a [doy](#doy). While [doe](#doe) and [doy](#doy) are integers, [eda](#eda) and [ada](#ada) each have a decimal part called a “time of day” ([tod](#tod)). We can obtain an [eda](#eda) by passing a [yoe](#yoe) and [ada](#ada) to the Dec eda equations or by summing a [doe](#doe) and a [tod](#tod).
-
-\\\text{eda} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{ada} \tag{3}\\
 
 \\\text{tod} = \text{eda} \bmod 1 = \text{ada} \bmod 1 \tag{4}\\
 
@@ -459,7 +457,7 @@ Similarly, [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20num
 
 \\\text{tod} = (\text{julian} + 0.5) \bmod 1 \tag{10}\\
 
-#### 2 Hour minute second
+#### 3 Hour minute second
 
 We can also obtain a Zone 0 [tod](#tod) from a [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) ([UTC](#utc)) [hms](#hms) triplet by summing its components after converting them to fractional days, as shown in the equation below. The [computer programming](https://en.wikipedia.org/wiki/Computer_programming#:~:text=the%20composition%20of%20sequences%20of%20instructions%2C%20called%20programs%2C%20that%20computers%20can%20follow%20to%20perform%20tasks) code in the [tabset panel](https://quarto.org/docs/interactive/layout.html#tabset-panel) beneath the equation compares [tod](#tod) derived from [UTC](#utc) and UNIX time as Quarto was [rendering](https://quarto.org/docs/get-started/hello/rstudio.html#rendering:~:text=When%20rendering%2C%20Quarto%20generates%20a%20new%20file%20that%20contains%20selected%20text%2C%20code%2C%20and%20results) this webpage.
 
@@ -541,7 +539,7 @@ hms$sec / 86400
 
 The equations below convert UNIX time or a Zone 0 [tod](#tod) into the three components of an [hms](#hms) triplet: the “hour of day” ([hod](#hod)), “minute of hour” ([moh](#moh)), and “second of minute” ([som](#som)), using a “daily second aggregate” ([dsa](#dsa)) and “hourly second aggregate” ([hsa](#hsa)). While both count seconds, [dsa](#dsa) start at midnight and [hsa](#hsa) begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
-\\\begin{split} \text{dsa} & = \text{tod} \times 86400 = \text{unix} \bmod 86400 \\ \text{hsa} & = \text{dsa} \bmod 3600 \\ \text{hod} & = \lfloor \text{dsa} \div 3600 \rfloor \\ \text{moh} & = \lfloor \text{hsa} \div 60 \rfloor \\ \text{som} & = \lfloor \text{hsa} \bmod 60 \rfloor \end{split} \tag{12}\\
+\\\begin{split} \text{dsa} & = \text{tod} \times 86400 \\ & = \text{unix} \bmod 86400 \end{split} \tag{12}\\ \\ \text{hsa} = \text{dsa} \bmod 3600 \tag{13}\\ \\ \text{hod} = \lfloor \text{dsa} \div 3600 \rfloor \tag{14}\\ \\ \text{moh} = \lfloor \text{hsa} \div 60 \rfloor \tag{15}\\ \\ \text{som} = \lfloor \text{hsa} \bmod 60 \rfloor \tag{16}\\
 
 ## Julia
 
@@ -593,24 +591,24 @@ sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 
     [1]  4 34 44
 
-#### 3 Universal time offset
+#### 4 Universal time offset
 
 The [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System#:~:text=a%20satellite%2Dbased%20hyperbolic%20navigation%20system), [BeiDou](https://en.wikipedia.org/wiki/BeiDou#:~:text=a%20satellite%2Dbased%20radio%20navigation%20system), and [Galileo](https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)#:~:text=a%20global%20navigation%20satellite%20system%20(GNSS)%20created%20by%20the%20European%20Union) [global navigation satellite systems](https://en.wikipedia.org/wiki/Satellite_navigation#:~:text=a%20satellite%20navigation%20system%20with%20global%20coverage) along with most — if not all — [programming languages](https://en.wikipedia.org/wiki/Programming_language#:~:text=a%20system%20of%20notation%20for%20writing%20source%20code%20such%20as%20used%20to%20produce%20a%20computer%20program) do not account for [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment), which appears to be for the best given that leap seconds will be [abolished by 2035](https://en.wikipedia.org/wiki/Leap_second#:~:text=at%20the%2027th%20General%20Conference%20on%20Weights%20and%20Measures%2C%20it%20was%20decided%20to%20abandon%20the%20leap%20second%20by%20or%20before%202035). The goal of leap seconds is to keep [UTC](#utc) within [25/24](https://en.wikipedia.org/wiki/Leap_second#:~:text=to%20ensure%20that%20the%20difference%20between%20the%20UTC%20and%20UT1%20readings%20will%20never%20exceed%200.9%20seconds) centimillidays ([cmd](#cmd)) of [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT](#ut)).
 
-Instead of leap seconds, Dec matches [UT](#ut) using a “[universal time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)” ([uto](#uto)). With the [leap second insertion dates](https://en.wikipedia.org/wiki/Leap_second#:~:text=Announced%20leap%20seconds%20to%20date) provided by the [International Earth Rotation and Reference Systems Service](https://en.wikipedia.org/wiki/International_Earth_Rotation_and_Reference_Systems_Service#:~:text=the%20body%20responsible%20for%20maintaining%20global%20time%20and%20reference%20frame%20standards), we can approximate the [uto](#uto) that yields [UT](#ut) when added to the Zone 0 [tod](#tod) on the [Dec date](../../dec/date) chosen by the [range](https://observablehq.com/framework/inputs/range)🎚️inputs below: ÷ 8640 = .
+Instead of leap seconds, Dec matches [UT](#ut) using a “[universal time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)” ([uto](#uto)). With the [leap second insertion dates](https://en.wikipedia.org/wiki/Leap_second#:~:text=Announced%20leap%20seconds%20to%20date) provided by the [International Earth Rotation and Reference Systems Service](https://en.wikipedia.org/wiki/International_Earth_Rotation_and_Reference_Systems_Service#:~:text=the%20body%20responsible%20for%20maintaining%20global%20time%20and%20reference%20frame%20standards), we can approximate the [uto](#uto) that yields [UT](#ut) when added to the Zone 0 [tod](#tod) on the [Dec date](../../dec/date) chosen by the [range](https://observablehq.com/framework/inputs/range)🎚️inputs below: ÷ 8640 = = .
 
 ``` js
 viewof leapSecondYear = Inputs.range([1970, 2020], {label: "Year", value: 1995, step: 1})
 viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 1})
 ```
 
-#### 4 Rounded offset decimal
+#### 5 Rounded offset decimal
 
 Of the twenty eight [uto](#uto) that can be shown in the equation above, one is an integer, one is a [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits), and the rest are [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever). To express a repeating decimal [uto](#uto), Dec uses an [irreducible fraction](https://en.wikipedia.org/wiki/Irreducible_fraction#:~:text=a%20fraction%20in%20which%20the%20numerator%20and%20denominator%20are%20integers%20that%20have%20no%20other%20common%20divisors%20than%201) that is called an “exact offset fraction” ([eof](#eof)) when by itself or a “[rounding error](https://en.wikipedia.org/wiki/Round-off_error#:~:text=the%20difference%20between%20the%20result%20produced%20by%20a%20given%20algorithm%20using%20exact%20arithmetic%20and%20the%20result%20produced%20by%20the%20same%20algorithm%20using%20finite%2Dprecision%2C%20rounded%20arithmetic) fraction” ([ref](#ref)) if it follows a “rounded offset decimal” ([rod](#rod)).
 
 In the equation below, the [uto](#uto) is the minuend, the [rod](#rod) is the subtrahend, and the [ref](#ref) is the difference. Dec uses the term minuend expansion to describe the replacement of a minuend with a subtrahend and a difference. By replacing a repeating decimal [uto](#uto) with a [rod](#rod) and a [ref](#ref), we can show the initial digits of the [uto](#uto) as a decimal and the rest as a fraction.
 
-\\\text{uto} - \text{rod} = \text{ref} \tag{13}\\
+\\\text{uto} - \text{rod} = \text{ref} \tag{17}\\
 
 Use the first three range🎚️inputs below to select an [hms](#hms) triplet to be converted to decidays, plugged into the equation above as the [uto](#uto), rounded to the number of digits chosen by the fourth range🎚️input, and inserted into the equation as the [rod](#rod). Once the left-hand side of the equation is complete, we can solve it to get the [ref](#ref): – = .
 
@@ -626,7 +624,7 @@ viewof hmsinput = Inputs.form([
 viewof digits = Inputs.range([1, 9], {label: "Digits", value: 3, step: 1})
 ```
 
-#### 5 Time zone offset
+#### 6 Time zone offset
 
 In Dec, a [uto](#uto) can be any type of number, a “time zone offset” ([tzo](#tzo)) is an integer, a “solar time offset” ([sto](#sto)) is a terminating decimal, and an [eof](#eof) is a repeating decimal. If we derived deciday offsets from all 86400 of the [hms](#hms) triplets that can be selected by the range🎚️inputs above, we would have 10 [tzo](#tzo), 3190 [sto](#sto), and 83200 [eof](#eof) or [rod](#rod) and [ref](#ref) pairs.
 
@@ -667,7 +665,7 @@ Whenever a negative offset is associated with a Dec date, a [tod](#tod), or both
 
 Dec will not change a negative offset or its associated [doy](#doy) if the result of adding one day to the [doy](#doy) is uncertain. This uncertainly can only exist if we do not know whether a [doy](#doy) that is equal to 364 belongs to a common or leap year. The day after Day 364 of a common year is Day 0 of the subsequent year. In a leap year, Day 364 precedes Day 365.
 
-#### 6 Day of week
+#### 7 Day of week
 
 Even though it has no effect on the [tod](#tod), adding one day to the [doy](#doy) also increments the “day of month” ([dom](#dom)) and “day of week” ([dow](#dow)) shown by Dec. The table below shows how someone accustomed to a negative offset could intrepret Dec [dow](#dow) numbers. From the perspective of a negative offset user, the [dom](#dom) and [dow](#dow) in Dec will be one day ahead.
 
@@ -678,7 +676,7 @@ Even though it has no effect on the [tod](#tod), adding one day to the [doy](#do
 
 The one day difference between positive and negative offsets may make Dec [dow](#dow) numbers more intuitive than [POSIX](https://pubs.opengroup.org/onlinepubs/007904875/utilities/date.html#:~:text=weekday%20as%20a%20decimal%20number%20%5B0%2C6%5D%20(0%3Dsunday)) [dow](#dow) numbers for people who consider [Sunday to be the first \[dow\](#dow){.tool data-bs-toggle=“tooltip” data-bs-title=“day of week”}](https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week#:~:text=Sunday%20comes%20first,-in%20order%20in). According to the [Common Locale Data Repository](https://en.wikipedia.org/wiki/Week#:~:text=World%20map%20showing%20the%20first%20day%20of%20the%20week%20used%20in%20different%20countries) and a [2023 population ranking](https://en.wikipedia.org/w/index.php?title=List_of_countries_in_the_Americas_by_population&oldid=1310903194#Table), over 89% of people in the Americas live in a country that starts the week on Sunday.
 
-#### 7 Longitude and offsets
+#### 8 Longitude and offsets
 
 In Dec, offsets are closely related to [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda). Dec measures longitude in [wěi](https://en.wiktionary.org/wiki/%E7%B7%AF#:~:text=(geography)-,latitude,-coordinate%20terms%C2%A0%E2%96%B2) ([w](#w)) or submultiples of [w](#w) like deciwěi ([dw](#dw)). A [tzo](#tzo) is essentially a [dw](#dw) longitude that had its decimal part removed via [rounding](https://en.wikipedia.org/wiki/Rounding#:~:text=the%20process%20of%20adjusting%20a%20number%20to%20an%20approximate%2C%20more%20convenient%20value), [flooring](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=takes%20as%20input%20a%20real%20number%20x%2C%20and%20gives%20as%20output%20the%20greatest%20integer%20less%20than%20or%20equal%20to%20x), [truncation](https://en.wikipedia.org/wiki/Truncation#Truncation_and_floor_function:~:text=truncation%20is%20limiting%20the%20number%20of%20digits%20right%20of%20the%20decimal%20point), or [ceiling](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#:~:text=maps%20x%20to%20the%20least%20integer%20greater%20than%20or%20equal%20to%20x). Whereas [tzo](#tzo) have one digit, deciday [tod](#tod) and [sto](#sto) typically have up to four digits after the [decimal separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number).
 
@@ -690,19 +688,19 @@ The Equator is approximately (~) 10³ millitaur ([mc](#mc)), ~4 × 10⁴ kilomet
 
 For precise [geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:text=estimating%20the%20geographic%20position%20of%20an%20object%20or%20a%20person), it may be helpful to show [geographic coordinates](https://en.wikipedia.org/wiki/Geographic_coordinate_system#:~:text=for%20measuring%20and%20communicating%20positions%20directly%20on%20Earth%20as%20latitude%20and%20longitude) in submultiples of [ab](#ab), but we are unlikely to benefit from units smaller than [md](#md) when displaying the [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky) or estimates of what the [tod](#tod) will be when the Sun rises, reaches its [zenith](https://en.m.wikipedia.org/wiki/Noon#:~:text=highest%20position%20above%20the%20horizon), or sets on a given day. By default, Dec uses three digits to show each solar time and [sto](#sto).
 
-#### 8 Equation of time
+#### 9 Equation of time
 
 The two types of [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky) are [“mean solar time”](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([mst](#mst)) and [“apparent solar time”](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([ast](#ast)). To calculate [mst](#mst), we keep only the decimal part of the sum of 0.95, the Zone 0 [tod](#tod) measured in days, and our longitude measured in [w](#w). If we want [ast](#ast) instead of [mst](#mst), the sum needs to include the result of plugging the “time of year” ([toy](#toy)) into the [“equation of time”](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepancy%20between%20two%20kinds%20of%20solar%20time) ([eot](#eot)).
 
-\\\text{toy} = \text{ada} \div \text{syl} \tag{14}\\
+\\\text{toy} = \text{ada} \div \text{syl} \tag{18}\\
 
-\\\text{mst} = (0.95 + \text{tod} + \text{w}) \bmod 1 \tag{15}\\
+\\\text{mst} = (0.95 + \text{tod} + \text{w}) \bmod 1 \tag{19}\\
 
-\\\text{ast} = (0.95 + \text{tod} + \text{w} + \text{eot(toy)}) \bmod 1 \tag{16}\\
+\\\text{ast} = (0.95 + \text{tod} + \text{w} + \text{eot(toy)}) \bmod 1 \tag{20}\\
 
 To obtain the [toy](#toy), we divide the [ada](#ada) by the number of days in the year ([syl](#syl)). If we use [trigonometric functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths) that are designed to work with [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units), we will have to multiply the [toy](#toy) by \\2\pi\\ or \\\tau\\. We do not need to modify the [toy](#toy) before passing it to the [eot](#eot)() function defined below because its trigonometric functions expect [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) instead of radians.
 
-\\\begin{split} \text{eot(toy)} & = \beta_0 \\ & + \beta_1 \times \text{costau(toy)} \\ & + \beta_2 \times \text{costau(2} \times \text{toy)} \\ & + \beta_3 \times \text{sintau(toy)} \\ & + \beta_4 \times \text{sintau(2} \times \text{toy)} \end{split} \tag{17}\\
+\\\begin{split} \text{eot(toy)} & = \beta_0 \\ & + \beta_1 \times \text{costau(toy)} \\ & + \beta_2 \times \text{costau(2} \times \text{toy)} \\ & + \beta_3 \times \text{sintau(toy)} \\ & + \beta_4 \times \text{sintau(2} \times \text{toy)} \end{split} \tag{21}\\
 
 ## Julia
 
@@ -884,33 +882,33 @@ The [line📈chart](https://en.wikipedia.org/wiki/Line_chart#:~:text=a%20type%20
 
 Apart from turning a [mst](#mst) into an [ast](#ast), we can also use [eot](#eot) to more accurately estimate the [tod](#tod) of [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow), sunrise, and sunset. The equation below creates a [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow) [tod](#tod) measured in days by adding 9.55 to a longitude measured in [w](#w), subtracting a [tzo](#tzo) and a [eot](#eot)([toy](#toy)) value that are both measured in days, and keeping only the decimal part of the result.
 
-\\\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot(toy)}\right) \bmod 1 \tag{18}\\
+\\\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot(toy)}\right) \bmod 1 \tag{22}\\
 
-#### 9 Cambridge and Cambridge
+#### 10 Cambridge and Cambridge
 
 To compare the solar noon [tod](#tod) in two cities, we can plug in the longitude of each city into the equation above. If all the variables in the equation other than longitude are set to zero, the result is almost five decidays for [Cambridge, England](https://en.wikipedia.org/wiki/Cambridge#:~:text=a%20city%20and%20non%2Dmetropolitan%20district%20in%20the%20county%20of%20Cambridgeshire%2C%20England) in the [United Kingdom](https://en.wikipedia.org/wiki/United_Kingdom#:~:text=a%20country%20in%20Northwestern%20Europe) and nearly seven decidays for [Cambridge, Massachusetts](https://en.wikipedia.org/wiki/Cambridge,_Massachusetts#:~:text=a%20city%20in%20Middlesex%20County%2C%20Massachusetts%2C%20United%20States) in the [United States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America).
 
-\\4.99635 = (9.55 - 0.050365) \bmod 1 \times 10 \tag{19}\\
+\\4.99635 = (9.55 - 0.050365) \bmod 1 \times 10 \tag{23}\\
 
-\\6.97516 = (9.55 - 0.852484) \bmod 1 \times 10 \tag{20}\\
+\\6.97516 = (9.55 - 0.852484) \bmod 1 \times 10 \tag{24}\\
 
 The two homonymous cities are about two [dw](#dw) apart and thus will always differ by around two decidays in solar time, regardless of what time zone we use as our frame of reference. England is in Zone 0 and Massachusetts is in Zone 8. If we change the [tzo](#tzo) from zero to eight decidays, the solar noon [tod](#tod) for each city will be two decidays earlier.
 
-\\2.99635 = (9.55 + 0.8 - 0.050365) \bmod 1 \times 10 \tag{21}\\
+\\2.99635 = (9.55 + 0.8 - 0.050365) \bmod 1 \times 10 \tag{25}\\
 
-\\4.97516 = (9.55 + 0.8 - 0.852484) \bmod 1 \times 10 \tag{22}\\
+\\4.97516 = (9.55 + 0.8 - 0.852484) \bmod 1 \times 10 \tag{26}\\
 
-#### 10 Full day arc
+#### 11 Full day arc
 
 The path in the sky that the Sun appears to follow from a sunrise to a sunset is a “[day arc](https://en.wikipedia.org/wiki/Sun_path#:~:text=arc%2Dlike%20path%20that%20the%20Sun%20appears%20to%20follow%20across%20the%20sky)” ([da](#da)). Solar noon, the midpoint of a [da](#da), is halfway between sunrise and sunset. On each side of solar noon is a “half day arc” ([da/2](#da2)). The sum of a solar noon [tod](#tod) and a [da/2](#da2) is a sunset [tod](#tod) and the difference between a solar noon [tod](#tod) and a [da/2](#da2) is a sunrise [tod](#tod).
 
-\\\begin{split} \text{sunset} & = \text{solarnoon} + \frac{\text{da}}{2} && = \text{sunrise} + \text{da} \\ \text{sunrise} & = \text{solarnoon} - \frac{\text{da}}{2} && = \text{sunset} - \text{da} \end{split} \tag{23}\\
+\\\begin{split} \text{sunset} & = \text{solarnoon} + \frac{\text{da}}{2} && = \text{sunrise} + \text{da} \\ \text{sunrise} & = \text{solarnoon} - \frac{\text{da}}{2} && = \text{sunset} - \text{da} \end{split} \tag{27}\\
 
 ##### Full night arc
 
 The Sun continues its path after it disappears below the horizon, moving from sunset to sunrise along a “night arc” ([na](#na)). Like [conjugate angles](https://en.wikipedia.org/wiki/Angle#:~:text=conjugate%20angles%20sum%20to%20a%20full%20angle), a [da](#da) and a [na](#na) form a full circle that represents one day. Likewise, a [da/2](#da2) and a “half night arc” ([na/2](#na2)) are like two [supplementary angles](https://en.wikipedia.org/wiki/Angle#:~:text=sum%20to%20a%20straight%20angle) that form a semicircle from solar noon to the [na](#na) midpoint: [solar midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
 
-\\\text{solarmidnight} = \text{solarnoon} + \frac{\text{da}}{2} + \frac{\text{na}}{2} = \text{sunset} + \frac{\text{na}}{2} \tag{24}\\
+\\\text{solarmidnight} = \text{solarnoon} + \frac{\text{da}}{2} + \frac{\text{na}}{2} = \text{sunset} + \frac{\text{na}}{2} \tag{28}\\
 
 The range input below controls the yellow [da](#da) and the blue [na](#na) in the diagram beneath it. At the Equator, the sunrise always rises about a quarter turn from North and sets around three quarter turns from North, resulting in a [da](#da) of approximately half a day: 75% – 25% = 50%. If [da](#da) is zero, a [polar night](https://en.wikipedia.org/wiki/Polar_night#:~:text=the%20Sun%20remains%20below%20the%20horizon%20for%20more%20than%2024%C2%A0hours) occurs. A day without a [na](#na) is called a [polar day](https://en.wikipedia.org/wiki/Midnight_sun#:~:text=the%20Sun%20remains%20visible%20at%20the%20local%20midnight).
 
@@ -1019,7 +1017,7 @@ Plot.plot({
 
 Anyone can measure the [saa](#saa) during the daytime by pointing a compass at the point on the horizon below the Sun. In the Northern Hemisphere, we can use this method to approximate solar time. In the Southern Hemisphere, we can obtain solar time by measuring the [saa](#saa) in turns and then subtracting our measurement from one and a half turns:
 
-\\\text{solartime} \approx \begin{cases}\text{saa}&{\text{if m} \geq 0;}\\(1.5 - \text{saa}) \bmod 1&{\text{otherwise.}}\end{cases} \tag{25}\\
+\\\text{solartime} \approx \begin{cases}\text{saa}&{\text{if m} \geq 0;}\\(1.5 - \text{saa}) \bmod 1&{\text{otherwise.}}\end{cases} \tag{29}\\
 
 The clockwise path that the Sun follows in the Northern Hemisphere is ingrained in the Belarussian, Polish, or Ukrainian languages. These three Slavic languages each have one word for north or midnight and another word for south or noon. In Dec, zero represents both north and midnight, while both south and noon can be expressed as a half turn.
 
@@ -1030,15 +1028,15 @@ The clockwise path that the Sun follows in the Northern Hemisphere is ingrained 
 
 If we only want to know how long the Sun will shine on a given day, we can use the top equation below to obtain a [da](#da). Alternatively, if we are interested in finding out when the Sun will rise or set on a given day, we will need to calculate a [da/2](#da2) using the bottom equation below and then combine it with a solar noon [tod](#tod) to get a sunrise or sunset [tod](#tod).
 
-\\\text{da} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\pi} \tag{26}\\
+\\\text{da} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\pi} \tag{30}\\
 
-\\\frac{\text{da}}{2} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\tau} \tag{27}\\
+\\\frac{\text{da}}{2} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\tau} \tag{31}\\
 
 ##### Solar declination angle
 
 The [da](#da) and [da/2](#da2) equations above require a latitude and a “solar [declination](https://en.wikipedia.org/wiki/Declination#:~:text=one%20of%20the%20two%20angles%20that%20locate%20a%20point%20on%20the%20celestial%20sphere%20in%20the%20equatorial%20coordinate%20system) angle” ([sda](#sda)). Dec measures latitude in turns called meridians ([m](#m)) or turn submultiples such as millimeridians ([mm](#mm)). For simplicity, we can fit our [eot](#eot) model to [sda](#sda) data instead of fitting the needlessly complex [sda](#sda) model provided by the NOAA General Solar Position Calculations:
 
-\\\begin{split} \text{sda(toy)} & = \beta_0 \\ & + \beta_1 \times \text{costau(toy)} \\ & + \beta_2 \times \text{sintau(toy)} \\ & + \beta_3 \times \text{costau(2} \times \text{toy)} \\ & + \beta_4 \times \text{sintau(2} \times \text{toy)} \\ & + \beta_5 \times \text{costau(3} \times \text{toy)} \\ & + \beta_6 \times \text{sintau(3} \times \text{toy)} \\ \end{split} \tag{28}\\
+\\\begin{split} \text{sda(toy)} & = \beta_0 \\ & + \beta_1 \times \text{costau(toy)} \\ & + \beta_2 \times \text{sintau(toy)} \\ & + \beta_3 \times \text{costau(2} \times \text{toy)} \\ & + \beta_4 \times \text{sintau(2} \times \text{toy)} \\ & + \beta_5 \times \text{costau(3} \times \text{toy)} \\ & + \beta_6 \times \text{sintau(3} \times \text{toy)} \\ \end{split} \tag{32}\\
 
 The top range input below picks the [doy](#doy) that will become the [toy](#toy) in our fitted [sda](#sda) model. The other two range inputs below chose the geographic coordinates that we need to find the sunrise and sunset [tod](#tod). While the sunrise and sunset [tod](#tod) depend on both geographic coordinates, the [da](#da) varies only by latitude and not by longitude: – = .
 
@@ -1060,49 +1058,49 @@ The latest equation above is an example of a Dec span. From left to right, this 
 
 The difference shows the [remaining time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event) as a negative number if the minuend is less than the substrahend or displays the [elapsed time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) as a positive number if the minuend is greater than the subtrahend. In this way, the difference can act like a [“T minus countdown”](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining) that becomes a [“T plus countup”](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time) after an event like a rocket🚀launch.
 
-\\\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \tag{29}\\
+\\\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \tag{33}\\
 
 When the minuend is the current time and the subtrahend is the [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) of an event which occurred in the past, the difference is the time elapsed since that event. A Dec timestamp consists of a year, a day, . can be an [eda](#eda), a “epochal year aggregate” ([eya](#eya)), or a snap🫰. Eda and eya are the time The typical snap format is year+[ada](#ada)-[tzo](#tzo). The snap +-0 represents the [b](#b) when this webpage loaded [b](#b) ago.
 
-#### 11 Epochal year aggregate (eya)
+#### 12 Epochal year aggregate (eya)
 
 A [doe](#doe) is essentially a Dec date with a [yoe](#yoe) that is always equal to 0 and a [doy](#doy) that is [not restricted](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded) to 0 ≤ [doy](#doy) ≤ 365. Similarly, a Dec “epochal year aggregate” ([eya](#eya)) is basically a Dec date with a non-integer year and a day permanently set to 0. We can obtain a Dec date by passing a doe Both [doe](#doe) and [eya](#eya) allow us to represent a date as a single number and obtain the difference between two dates.
 
-\\\text{cda} = \text{de} - \text{coe} \times 146097 \tag{30}\\
+\\\text{cda} = \text{de} - \text{coe} \times 146097 \tag{34}\\
 
-\\\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{31}\\
+\\\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{35}\\
 
-\\\text{yoe} = \text{yoc} + \text{coe} \times 400 \tag{32}\\
+\\\text{yoe} = \text{yoc} + \text{coe} \times 400 \tag{36}\\
 
-\\\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \biggr \rfloor \tag{33}\\
+\\\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \biggr \rfloor \tag{37}\\
 
 Compared to a [doe](#doe), it is much easier to convert between an [eya](#eya) and a to turn into Dec dates. The decimal part of an [eya](#eya) is a called a [toy](#toy). We can convert between dates to [eya](#eya) with the equations below. We can obtain a [yoe](#yoe) by flooring an [eya](#eya). Likewise, we can obtain a doy by flooring the product of [syl](#syl) and the decimal part of an [eya](#eya), which is called a [toy](#toy). The current [eya](#eya) equation values are =  + ÷ . We can floor an [eya](#eya) to get a yoe or divide its , we can obtain a
 
-\\\text{eya} = \text{yoe} + \text{toy} = \text{yoe} + \text{doy} \div \text{syl} \tag{34}\\
+\\\text{eya} = \text{yoe} + \text{toy} = \text{yoe} + \text{doy} \div \text{syl} \tag{38}\\
 
-\\\text{toy} = \text{eya} \bmod 1 = \text{doy} \div \text{syl} \tag{35}\\
+\\\text{toy} = \text{eya} \bmod 1 = \text{doy} \div \text{syl} \tag{39}\\
 
-\\\text{doy} = \lfloor\text{toy}\times\text{syl}\rfloor \tag{36}\\
+\\\text{doy} = \lfloor\text{toy}\times\text{syl}\rfloor \tag{40}\\
 
-\\\text{eya} = \text{yoe} + \text{doy} \times \text{syl} \tag{37}\\
+\\\text{eya} = \text{yoe} + \text{doy} \times \text{syl} \tag{41}\\
 
-\\\text{eya} = \text{yoe} + \text{coe} \times 400 \tag{38}\\
+\\\text{eya} = \text{yoe} + \text{coe} \times 400 \tag{42}\\
 
 [eya](#eya) = [yoe](#yoe) + [doy](#doy) ÷ [syl](#syl).
 
 We can omit the year from a snap if we replace the [ada](#ada) with a subtrahend and a difference or just a difference. If needed, we can obtain a snap from a difference using the equations below. First, we subtract the difference from the current [eda](#eda) to obtain the “[eda](#eda) difference difference” ([edd](#edd)). Then, we use the [edd](#edd) to get the “cycle of era” ([coe](#coe)), “day of cycle” ([doc](#doc)), “year of cycle” ([yoc](#yoc)), and then finally the year and [ada](#ada).
 
-\\\text{edd} = \text{eda} - \text{difference} \tag{39}\\
+\\\text{edd} = \text{eda} - \text{difference} \tag{43}\\
 
-\\\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \tag{40}\\
+\\\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \tag{44}\\
 
-\\\text{doc} = \text{edd} - \text{coe} \times 146097 \tag{41}\\
+\\\text{doc} = \text{edd} - \text{coe} \times 146097 \tag{45}\\
 
-\\\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{42}\\
+\\\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{46}\\
 
-\\\text{year} = \text{yoc} + \text{coe} \times 400 \tag{43}\\
+\\\text{year} = \text{yoc} + \text{coe} \times 400 \tag{47}\\
 
-\\\text{ada} = \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \tag{44}\\
+\\\text{ada} = \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \tag{48}\\
 
 In the equations above, [eda](#eda) is “epochal day aggregate”, [coe](#coe) is “cycle of era”, [doc](#doc) is “day of cycle”, and [yoc](#yoc) is “year of cycle”.
 
@@ -1138,7 +1136,7 @@ Like a countdown sequence, we can keep track of the time relative to sunset thro
 
 can keep track of the remaining time until sunset by minuend The [tod](#tod) of sunrise is found by subtracting half the [da](#da) from solar noon [tod](#tod). The [tod](#tod) of sunset is found by adding half the [da](#da) to solar noon [tod](#tod).
 
-#### 12 Sunrise and sunset
+#### 13 Sunrise and sunset
 
 ##### Solar hour angle
 
@@ -1179,7 +1177,7 @@ references:
   title: Dec time
   url: https://maptv.github.io/dec/time
   issued:
-    literal: 2026+222
+    literal: 2026+225
 ```
 
 Quarto configuration files, such as `_quarto.yml` and `_metadata.yml`, are written in yaml. Quarto input files, including Quarto markdown, [Jupyter](https://jupyter.org) notebook, [markdown](https://quarto.org/docs/authoring/markdown-basics), and specially formatted [script files](https://quarto.org/docs/computations/render-scripts), can start with a [yaml header](https://quarto.org/docs/authoring/front-matter.html). Therefore, we could put the metadata above directly into a Quarto configuration or input file rather than into a bibliography file.
@@ -1197,7 +1195,7 @@ As an alternative to yaml, I suggest the [BibTeX](https://en.wikipedia.org/wiki/
   author = "Martin Laptev",
   title = "Dec time",
   url = "https://maptv.github.io?meta:path",
-  year = 2026+222
+  year = 2026+225
 }
 ```
 
