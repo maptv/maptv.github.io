@@ -7,6 +7,9 @@
 - [bpc](#beatpercentiday){#bpc}: a musical or heart beat per centiday, a tenth of a beat per milliday, 0.069[4]{.vinculum} beats per minute, 100 beats per day
 - [bpm](#beatpermilliday){#bpm}: a musical or heart beat per milliday, ten beats per centiday, 0.69[4]{.vinculum} beats per minute, 1000 beats per day
 - [bmi](#bodymassindex){#bmi}: body mass index, kilograins of body mass divided by height in zem squared (kg/z&sup2;)
+- [b9](#base9){#b9}: base9, nonary, 9 digits written as the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃ ♄ ♅ ♆; the first digit after a tod with Dec seconds appended counts tens of Dec seconds
+- [b10](#base10){#b10}: base10, decimal, the digits 0 to 9
+- [b24](#base24){#b24}: base24, 24 digits written as the lowercase Greek letters α to ω; counts sid after a number of Dec seconds or hours after a UTC offset
 - [c](#taur){#c}: taur, 𝜏*r*, 100000 kilozem, 40000 kilometers, nearly the circumference of the Earth, roughly the product of 𝜏 and the radius of the Earth, approximately the dividend of the surface area and the diameter of the Earth
     - [gc](#gigataur){#gc}: gigataur, a billion taur
     - [kc](#kilotaur){#kc}: kilotaur, a thousand taur, 10^8^ kilozem
@@ -104,6 +107,7 @@
 - [rad](#radian){#rad}: radian, $1\over\tau$ turns, $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
 - [rgb](#redgreenblue){#rgb}: red green blue
 - [s](#second){#s}: second, 1/90 millidays, 10/9 beats, 1 Dec second = 0.96 SI seconds
+    - [sid](#secondintervaldifference){#sid}: second interval difference, 1 SI second - 1 Dec second, 1/24 Dec second, 1/25 SI second, 40 milliseconds
 - [soi](#spinorbitinterval){#soi}: spin orbit interval, a lunar day, 1.03505 days
     - [soy](#soiofyear){#soy}: soi of year
     - [sob](#soiofbimester){#sob}: soi of bimester
@@ -138,9 +142,6 @@
 - [u](#ounce){#u}: ounce (uncia in Latin), 500 grains, 32 grams, 500 drops, 32 milliliters
 - [uto](#universaltimeoffset){#uto}: universal time offset, the offset in decidays that turns a Zone 0 tod into Universal Time; a tzo is an integer uto
     - [sto](#solartimeoffset){#sto}: solar time offset, a uto that is a terminating decimal
-    - [eof](#exactoffsetfraction){#eof}: exact offset fraction, an irreducible fraction that expresses a repeating decimal uto exactly
-    - [rod](#roundedoffsetdecimal){#rod}: rounded offset decimal, a repeating decimal uto rounded to a few digits
-    - [ref](#roundofferrorfraction){#ref}: roundoff error fraction, uto - rod
 - [utc](#coordinateduniversaltime){#utc}: [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
 - [US](#unitedstates){#us}: [United States](https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems)
 - [UT](#universaltime){#ut}: [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation), a time standard based on the rotation of the Earth

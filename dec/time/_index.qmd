@@ -49,6 +49,11 @@ function b9b24pad(b9b24) {
     /^(\d{1,3})([☉☿♀♁♂♃♄♅♆])?\s*(\d)?([α-ω])?$/u);
   return tod.padEnd(3, "0") + dec + sec + sid
 }
+function si2s(si) {
+  const sid = Math.round(Math.abs(si) * 25);
+  return (si < 0 ? "-" : "") + Math.floor(sid / 24)
+    + "αβγδεζηθικλμνξοπρστυφχψω"[sid % 24]
+}
 function getEot(day) {
   const gamma = 2 * Math.PI * day / 365
     return (
@@ -1245,17 +1250,11 @@ leapFrac = frac(leapCount).div(8640).toFraction()
 leapTzoHsl0 = textcolor(leapFrac, leapColor)
 leapTzoHsl1 = textcolor(leapFrac, leapColor)
 leapTzoHsl2 = textcolor(leapFrac, leapColor)
-hmsTzo = frac(hmsinput[0]).div(24).add(hmsinput[1], 1440).add(hmsinput[2], 86400).mod(1)
-hmsTzox10 = hmsTzo.mul(10)
-pluralx10 = hmsTzox10.equals(1) ? "" : "s"
-hmsRounded = hmsTzox10.round(digits - 1)
-hmsRef = hmsRounded.sub(hmsTzox10)
-hmsRefHsl = textcolor(hmsRef.abs().toFraction(), d3.color(piecewiseColor(Number(hmsRef.div(10)))).formatHex())
-hmsRefSign = hmsRef.lt(0) ? "-" : "+"
-hmsTzoHsl = textcolor(hmsTzox10.toFraction(), d3.color(piecewiseColor(Number(hmsTzo))).formatHex())
-hmsRodHsl = textcolor(hmsRounded, d3.color(piecewiseColor(Number(hmsRounded.div(10)))).formatHex())
-hmsTod = (zeroTime + hmsTzo) % 1
-hmsTodHsl = textcolor((hmsTod * 10).toFixed(4), d3.color(piecewiseColor(hmsTod)).formatHex())
+leapDecsHsl = textcolor(si2s(leapCount), leapColor)
+leapDecsHsl1 = textcolor(si2s(leapCount), leapColor)
+leapCountHsl1 = textcolor(leapCount, leapColor)
+hmsMs = ((hmsinput[0] * 60 + hmsinput[1]) * 60 + hmsinput[2]) * 1000
+hmsB9b24Hsl = textcolor(b9b24pad(unix2b9b24(hmsMs)), d3.color(piecewiseColor(hmsMs / 86400000)).formatHex())
 leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
 leapTodHsl0 = textcolor(leapDecidayTod, d3.color(piecewiseColor(leapTod)).formatHex())
@@ -2584,6 +2583,14 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
+${d3.range(1, 24).map(i => `.color${i}by24`).concat(d3.range(1, 9).map(i => `.color${i}by9`)).map(c => {
+  const [i, base] = c.slice(6).split("by").map(Number), hex = d3.color(piecewiseColor(i / base)).formatHex();
+  return `${c} {
+  background: ${hex};
+  color: ${yiq(hex) > 0.51 ? "black" : "white"};
+  padding: 0px .5px;
+  border-radius: 4px;
+}`}).join("\n")}
 .color1by320 {
   background: hsl(${h1by320} 100% 50%);
   color: ${yiq(`hsl(${h1by320}, 100%, 50%)`) > 0.51 ? "black" : "white"};
