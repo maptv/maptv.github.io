@@ -38,7 +38,7 @@ Together, a [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of yea
 
 ::: {.equationgroup #equationgroup00}
 $$
-\text{ada\;\,} = \text{doy} + \text{tod}
+\text{ada} = \text{doy} + \text{tod}
 $$ {#eq-ada}
 $$
 \lfloor\text{ada}\rfloor & = \text{doy}
