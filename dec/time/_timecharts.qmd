@@ -8,7 +8,7 @@ viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
 rstbtn.node();
 ```
 
-#### Bar chart clocks {#bcc .unnumbered .hiddenheading}
+## Bar chart clocks {#bcc .unnumbered .hiddenheading}
 
 ```{ojs}
 //| echo: false
@@ -333,7 +333,7 @@ table = createTable([
 ```
 :::
 
-#### Longitude latitude map {#llm .unnumbered .hiddenheading}
+## Longitude latitude map {#llm .unnumbered .hiddenheading}
 
 ::: {.column-screen}
 ```{ojs}
@@ -347,7 +347,7 @@ viewof location = worldMapCoordinates([[turn2long(table.rows[1].cells[0].childNo
 \${sunclock}\${dotclock}
 :::
 
-#### Daylight area chart {#dac .unnumbered .hiddenheading}
+## Daylight area chart {#dac .unnumbered .hiddenheading}
 
 ::: {.column-page-left}
 ```{ojs}

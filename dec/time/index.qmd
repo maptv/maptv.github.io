@@ -4,7 +4,7 @@ description: >
   Introducing Declock, a timekeeping system that displays time in decimal days using math notation without the need for hours, minutes, or seconds.
 image: /asset/daywide.svg
 url: https://maptv.github.io/dec/time
-decdate: 2026+222
+decdate: 2026+225
 draft: true
 slug: time
 aliases:
@@ -17,7 +17,7 @@ engine: knitr
 {{< include /asset/_decnav.qmd >}}
 :::
 
-# Declock {#declock .unnumbered .hiddenheading}
+# Declock {#declock .hiddenheading}
 
 My website provides many examples of the [Quarto](https://quarto.org) publishing and the [Dec](/dec) measurement systems in action. I leverage Quarto support for the [Observable](https://observablehq.com/) data analysis and visualization system to create animated and interactive graphics like the [bar📊charts](https://en.wikipedia.org/wiki/Bar_chart) clocks🕓, [solar☀️terminator](https://en.wikipedia.org/wiki/Terminator_%28solar%29#:~:text=a%20moving%20line%20that%20divides%20the%20daylit%20side%20and%20the%20dark%20night%20side%20of%20a%20planetary%20body) map🗺, [Earth🌍orbit](https://en.wikipedia.org/wiki/Earth%27s_orbit) diagram, and [daylight](https://en.wikipedia.org/wiki/Daylight#:~:text=the%20combination%20of%20all%20direct%20and%20indirect%20sunlight%20during%20the%20daytime) [area chart](https://en.wikipedia.org/wiki/Area_chart#:~:text=The%20area%20between%20axis%20and%20line%20are%20commonly%20emphasized%20with%20colors) below.
 
@@ -37,10 +37,12 @@ The red<font color=red>—</font>line indicates a "day of year" ([doy](#doy){#da
 Together, a [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can form a "annual day aggregate" ([ada](#ada){#annualdayaggregate .tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}): \${selAdaDay}.
 
 ::: {.equationgroup #equationgroup00}
-$$\begin{split}
-\text{ada\;\,} & = \text{doy} + \text{tod} \\
-\lfloor\text{ada}\rfloor & = \text{doy} \\
-\end{split}$$ {#eq-ada}
+$$
+\text{ada\;\,} = \text{doy} + \text{tod}
+$$ {#eq-ada}
+$$
+\lfloor\text{ada}\rfloor & = \text{doy}
+$$ {#eq-adafloor}
 :::
 
 As their names suggest, [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="days of year"} and [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"} are measured in days. The [measurement unit](https://en.wikipedia.org/wiki/Unit_of_measurement#:~:text=a%20definite%20magnitude%20of%20a%20quantity) of a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can be a day or a [submultiple](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20) of a day. By changing how a decimal [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} is measured, we can shift its [decimal separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number) or turn it into an integer. The [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="times of day"} along the y-axis of the area chart are integers because they have three digits and are measured in [millidays]{.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}.
@@ -51,16 +53,16 @@ To obtain a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of da
 
 ::: {.equationgroup #equationgroup01}
 $$\begin{split}
-\text{tod} &= \text{ada} \bmod  1 &&= \text{eda} \bmod  1 \\
-\text{tod} &= \text{ada} - \text{doy} &&= \text{eda} - \lfloor\text{eda}\rfloor
+\text{tod} &= \text{ada} \bmod  1
+&= \text{eda} \bmod  1 \\
+&= \text{ada} - \text{doy} 
+&= \text{eda} - \lfloor\text{eda}\rfloor
 \end{split}$$ {#eq-todmod}
 :::
 
 When provided with an [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} instead of a [doe](#doe){#dayofera .tool data-bs-toggle="tooltip" data-bs-title="day of era"}, the Dec date equations return an [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} instead of a [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"}. While [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"} and [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="days of year"} are integers, [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregates"} and [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"} each have a decimal part called a "time of day" ([tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}). We can obtain an [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} by passing a [yoe](#yoe){#yearofera .tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} to the Dec eda equations or by summing a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} and a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
 
 ::: {.equationgroup #equationgroup02}
-$$\text{eda} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{ada}$$ {#eq-eda}
-
 $$\text{tod} = \text{eda} \bmod  1 = \text{ada} \bmod  1$$ {#eq-tod}
 
 $$\text{doe} = \lfloor \text{eda} \rfloor = \text{eda} - \text{tod}$$ {#eq-doe}
@@ -148,12 +150,22 @@ The equations below convert UNIX time or a Zone [0]{.color0} [tod](#tod){.tool d
 
 ::: {.equationgroup #equationgroup06}
 $$\begin{split}
-\text{dsa} & = \text{tod} \times 86400 = \text{unix} \bmod  86400 \\
-\text{hsa} & = \text{dsa} \bmod  3600 \\
-\text{hod} & = \lfloor \text{dsa} \div 3600 \rfloor \\
-\text{moh} & = \lfloor \text{hsa} \div 60 \rfloor \\
-\text{som} & = \lfloor \text{hsa} \bmod  60 \rfloor
-\end{split}$$ {#eq-hms}
+\text{dsa} & = \text{tod} \times 86400 \\
+& = \text{unix} \bmod  86400
+\end{split}
+$$ {#eq-dsa}
+$$
+\text{hsa} = \text{dsa} \bmod  3600
+$$ {#eq-hsa}
+$$
+\text{hod} = \lfloor \text{dsa} \div 3600 \rfloor
+$$ {#eq-hod}
+$$
+\text{moh} = \lfloor \text{hsa} \div 60 \rfloor
+$$ {#eq-moh}
+$$
+\text{som} = \lfloor \text{hsa} \bmod  60 \rfloor
+$$ {#eq-som}
 :::
 
 
@@ -198,7 +210,7 @@ sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 
 The [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System#:~:text=a%20satellite%2Dbased%20hyperbolic%20navigation%20system), [BeiDou](https://en.wikipedia.org/wiki/BeiDou#:~:text=a%20satellite%2Dbased%20radio%20navigation%20system), and [Galileo](https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)#:~:text=a%20global%20navigation%20satellite%20system%20(GNSS)%20created%20by%20the%20European%20Union) [global navigation satellite systems](https://en.wikipedia.org/wiki/Satellite_navigation#:~:text=a%20satellite%20navigation%20system%20with%20global%20coverage) along with most --- if not all --- [programming languages](https://en.wikipedia.org/wiki/Programming_language#:~:text=a%20system%20of%20notation%20for%20writing%20source%20code%20such%20as%20used%20to%20produce%20a%20computer%20program) do not account for [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment), which appears to be for the best given that leap seconds will be [abolished by 2035](https://en.wikipedia.org/wiki/Leap_second#:~:text=at%20the%2027th%20General%20Conference%20on%20Weights%20and%20Measures%2C%20it%20was%20decided%20to%20abandon%20the%20leap%20second%20by%20or%20before%202035). The goal of leap seconds is to keep [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} within [25/24](https://en.wikipedia.org/wiki/Leap_second#:~:text=to%20ensure%20that%20the%20difference%20between%20the%20UTC%20and%20UT1%20readings%20will%20never%20exceed%200.9%20seconds) [centimillidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundred thousands of a day"} ([cmd](#cmd){#centimilliday .tool data-bs-toggle="tooltip" data-bs-title="centimillidays"}) of [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT](#ut){#universaltime .tool data-bs-toggle="tooltip" data-bs-title="Universal Time"}).
 
-Instead of leap seconds, Dec matches [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} using a "[universal time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)" ([uto](#uto){#universaltimeoffset .tool data-bs-toggle="tooltip" data-bs-title="universal time offset"}). With the [leap second insertion dates](https://en.wikipedia.org/wiki/Leap_second#:~:text=Announced%20leap%20seconds%20to%20date) provided by the [International Earth Rotation and Reference Systems Service](https://en.wikipedia.org/wiki/International_Earth_Rotation_and_Reference_Systems_Service#:~:text=the%20body%20responsible%20for%20maintaining%20global%20time%20and%20reference%20frame%20standards), we can approximate the [uto](#uto){.tool data-bs-toggle="tooltip" data-bs-title="universal time offset"} that yields [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} when added to the Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} on the [Dec date](/dec/date) chosen by the [range](https://observablehq.com/framework/inputs/range)🎚️inputs below: \${leapCountHsl} &div; 8640 = \${leapTzoHsl0}.
+Instead of leap seconds, Dec matches [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} using a "[universal time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)" ([uto](#uto){#universaltimeoffset .tool data-bs-toggle="tooltip" data-bs-title="universal time offset"}). With the [leap second insertion dates](https://en.wikipedia.org/wiki/Leap_second#:~:text=Announced%20leap%20seconds%20to%20date) provided by the [International Earth Rotation and Reference Systems Service](https://en.wikipedia.org/wiki/International_Earth_Rotation_and_Reference_Systems_Service#:~:text=the%20body%20responsible%20for%20maintaining%20global%20time%20and%20reference%20frame%20standards), we can approximate the [uto](#uto){.tool data-bs-toggle="tooltip" data-bs-title="universal time offset"} that yields [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} when added to the Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} on the [Dec date](/dec/date) chosen by the [range](https://observablehq.com/framework/inputs/range)🎚️inputs below: \${leapCountHsl} &div; 8640 = \${leapTzoHsl0} = .
 
 ```{ojs}
 //| echo: false
