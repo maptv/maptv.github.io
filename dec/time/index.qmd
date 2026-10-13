@@ -25,15 +25,15 @@ My website provides many examples of the [Quarto](https://quarto.org) publishing
 \${posclock}\${negclock}
 :::
 
-Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day), often using [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) like [deci](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20decimal%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20tenth), [centi](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20hundredth), or [milli](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20thousandth). The top, middle, and bottom bars📊indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=1.44%20minutes%2C%20or%2086.4%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=which%20would%20be-,1/100%2C000%20day,-%2C%20or%20864%20milliseconds){.tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, [+\${decTime}]{.point1}, or until the end, [-\${decTimeN}]{.point0}, of the day in the Dec [time zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time), \${decZoneHsl}, at the location of the red⭕️circle on the map🗺️beneath the bars📊.
+Dec times are measured in [fractional days](https://en.wikipedia.org/wiki/Decimal_time#Fractional_days:~:text=a%20decimal%20fraction%20of%20a%20day), often using [metric prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit) like [deci](https://en.wikipedia.org/wiki/Deci-#:~:text=a%20decimal%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20tenth), [centi](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20hundredth), or [milli](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20thousandth). The top, middle, and bottom bars indicate the [decidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays){.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, [millidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=1.44%20minutes%2C%20or%2086.4%20seconds){.tool data-bs-toggle="tooltip" data-bs-title="thousandths of a day"}, and [centimillidays](https://en.wikipedia.org/wiki/Decimal_time#:~:text=which%20would%20be-,1/100%2C000%20day,-%2C%20or%20864%20milliseconds){.tool data-bs-toggle="tooltip" data-bs-title="hundred thousandths of a day"}, respectively, of the time since the start, [+\${decTime}]{.point1}, or until the end, [-\${decTimeN}]{.point0}, of the day in the Dec [time zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time), \${decZoneHsl}, at the location of the red⭕️circle on the map beneath the bars.
 
-To rotate the globe🌐in the Earth🌏orbit diagram, drag the red⭕️circle horizontally↔️or slide the red🔴dot on the daylight area chart vertically↕. The red⭕️circle's vertical↕position determines the yearly daylight pattern visualized by the area chart. Shift the red<font color=red>—</font>line on the area chart horizontally↔️to move the globe🌐along the ellipse of the Earth🌎orbit.
+To rotate the globe🌐in the Earth🌏orbit diagram, drag the red circle horizontally↔️or slide the red🔴dot on the daylight area chart vertically↕. The red circle's vertical position determines the yearly daylight pattern visualized by the area chart. Shift the red<font color=red>—</font>line on the area chart horizontally to move the globe along the ellipse of the Earth🌎orbit.
 
 {{< include /dec/time/_timecharts.qmd >}}
 
 # Annual day aggregate (ada) {#sec-ada .hiddenheading}
 
-The red<font color=red>—</font>line indicates a "day of year" ([doy](#doy){#dayofyear .tool data-bs-toggle="tooltip" data-bs-title="day of year"}), \${selDateHsl}, and the red🔴dot denotes a "time of day" ([tod](#tod){#timeofday .tool data-bs-toggle="tooltip" data-bs-title="time of day"}): \${selTimeDay}. A [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} identifies a day in a year like a [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world) month and "day of month" ([dom](#dom){#dayofmonth .tool data-bs-toggle="tooltip" data-bs-title="day of month"}). A [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} specifies a point in a day like an "hour minute second" ([hms](#hms){#hourminutesecond .tool data-bs-toggle="tooltip" data-bs-title="hour minute second"}) triplet.
+The red<font color=red>—</font>line indicates a "day of year" ([doy](#doy){#dayofyear .tool data-bs-toggle="tooltip" data-bs-title="day of year"}), \${selDateHsl}, and the red dot denotes a "time of day" ([tod](#tod){#timeofday .tool data-bs-toggle="tooltip" data-bs-title="time of day"}): \${selTimeDay}. A [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} identifies a day in a year like a [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world) month and "day of month" ([dom](#dom){#dayofmonth .tool data-bs-toggle="tooltip" data-bs-title="day of month"}). A [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} specifies a point in a day like an "hour minute second" ([hms](#hms){#hourminutesecond .tool data-bs-toggle="tooltip" data-bs-title="hour minute second"}) triplet.
 Together, a [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} and [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can form a "annual day aggregate" ([ada](#ada){#annualdayaggregate .tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"}): \${selAdaDay}.
 
 ::: {.equationgroup #equationgroup00}
@@ -60,7 +60,7 @@ $$\begin{split}
 \end{split}$$ {#eq-todmod}
 :::
 
-When provided with an [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} instead of a [doe](#doe){#dayofera .tool data-bs-toggle="tooltip" data-bs-title="day of era"}, the Dec date equations return an [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} instead of a [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"}. While [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"} and [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="days of year"} are integers, [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregates"} and [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"} each have a decimal part called a "time of day" ([tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}). We can obtain an [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} by passing a [yoe](#yoe){#yearofera .tool data-bs-toggle="tooltip" data-bs-title="year of era"} and [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} to the Dec eda equations or by summing a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} and a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}.
+When we start with an [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} instead of a [doe](#doe){#dayofera .tool data-bs-toggle="tooltip" data-bs-title="day of era"}, the [[doy]{.tool data-bs-toggle="tooltip" data-bs-title="day of year"} equation](/dec/date#eq-doe2pid) in the [Dec date](/dec/date) article returns an [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregate"} instead of a [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"}. While [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"} and [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="days of year"} are integers, [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregates"} and [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"} each have a decimal part. As shown in @eq-tod, the decimal part of an [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregates"} or [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"} is a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. Once we have a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, we can use Equations -@eq-doe to -@eq-adasum to convert between [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} and [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} or [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="days of year"} and [ada](#ada){.tool data-bs-toggle="tooltip" data-bs-title="annual day aggregates"}.
 
 ::: {.equationgroup #equationgroup02}
 $$\text{tod} = \text{eda} \bmod  1 = \text{ada} \bmod  1$$ {#eq-tod}
@@ -95,7 +95,7 @@ $$\text{tod} = (\text{julian} + 0.5) \bmod 1$$ {#eq-juliantod}
 We can also obtain a Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} from a [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) ([UTC](#utc){#coordinateduniversaltime .tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"}) [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet by summing its components after converting them to fractional days, as shown in the equation below. The [computer programming](https://en.wikipedia.org/wiki/Computer_programming#:~:text=the%20composition%20of%20sequences%20of%20instructions%2C%20called%20programs%2C%20that%20computers%20can%20follow%20to%20perform%20tasks) code in the [tabset panel](https://quarto.org/docs/interactive/layout.html#tabset-panel) beneath the equation compares [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="times of day"} derived from [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} and UNIX time as Quarto was [rendering](https://quarto.org/docs/get-started/hello/rstudio.html#rendering:~:text=When%20rendering%2C%20Quarto%20generates%20a%20new%20file%20that%20contains%20selected%20text%2C%20code%2C%20and%20results) this webpage.
 
 ::: {.equationgroup #equationgroup05}
-$$\text{tod} = \frac{\text{hour}}{24} + \frac{\text{minute}}{1440} + \frac{\text{second}}{86400}$$ {#eq-hmstod}
+$$\text{tod} = \dfrac{\text{hour}}{24} + \dfrac{\text{minute}}{1440} + \dfrac{\text{second}}{86400}$$ {#eq-hmstod}
 :::
 
 :::{.panel-tabset group="language"}
@@ -150,7 +150,7 @@ The equations below convert UNIX time or a Zone [0]{.color0} [tod](#tod){.tool d
 
 ::: {.equationgroup #equationgroup06}
 $$\begin{split}
-\text{dsa} & = \text{tod} \times 86400 \\
+\text{dsa} & = \text{tod} \ast 86400 \\
 & = \text{unix} \bmod  86400
 \end{split}
 $$ {#eq-dsa}
@@ -210,7 +210,7 @@ sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 
 The [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System#:~:text=a%20satellite%2Dbased%20hyperbolic%20navigation%20system), [BeiDou](https://en.wikipedia.org/wiki/BeiDou#:~:text=a%20satellite%2Dbased%20radio%20navigation%20system), and [Galileo](https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)#:~:text=a%20global%20navigation%20satellite%20system%20(GNSS)%20created%20by%20the%20European%20Union) [global navigation satellite systems](https://en.wikipedia.org/wiki/Satellite_navigation#:~:text=a%20satellite%20navigation%20system%20with%20global%20coverage) along with most --- if not all --- [programming languages](https://en.wikipedia.org/wiki/Programming_language#:~:text=a%20system%20of%20notation%20for%20writing%20source%20code%20such%20as%20used%20to%20produce%20a%20computer%20program) do not account for [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment), which appears to be for the best given that leap seconds will be [abolished by 2035](https://en.wikipedia.org/wiki/Leap_second#:~:text=at%20the%2027th%20General%20Conference%20on%20Weights%20and%20Measures%2C%20it%20was%20decided%20to%20abandon%20the%20leap%20second%20by%20or%20before%202035). The goal of leap seconds is to keep [UTC](#utc){.tool data-bs-toggle="tooltip" data-bs-title="Coordinated Universal Time"} within [25/24](https://en.wikipedia.org/wiki/Leap_second#:~:text=to%20ensure%20that%20the%20difference%20between%20the%20UTC%20and%20UT1%20readings%20will%20never%20exceed%200.9%20seconds) [centimillidays]{.tool data-bs-toggle="tooltip" data-bs-title="hundred thousands of a day"} ([cmd](#cmd){#centimilliday .tool data-bs-toggle="tooltip" data-bs-title="centimillidays"}) of [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT](#ut){#universaltime .tool data-bs-toggle="tooltip" data-bs-title="Universal Time"}).
 
-Instead of leap seconds, Dec matches [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} using a "[universal time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)" ([uto](#uto){#universaltimeoffset .tool data-bs-toggle="tooltip" data-bs-title="universal time offset"}). With the [leap second insertion dates](https://en.wikipedia.org/wiki/Leap_second#:~:text=Announced%20leap%20seconds%20to%20date) provided by the [International Earth Rotation and Reference Systems Service](https://en.wikipedia.org/wiki/International_Earth_Rotation_and_Reference_Systems_Service#:~:text=the%20body%20responsible%20for%20maintaining%20global%20time%20and%20reference%20frame%20standards), we can approximate the [uto](#uto){.tool data-bs-toggle="tooltip" data-bs-title="universal time offset"} that yields [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} when added to the Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} on the [Dec date](/dec/date) chosen by the [range](https://observablehq.com/framework/inputs/range)🎚️inputs below: \${leapCountHsl} &div; 8640 = \${leapDecsHsl} &div; 9000 = \${leapTzoHsl0}.
+Instead of leap seconds, Dec matches [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} using a "[universal time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)" ([uto](#uto){#universaltimeoffset .tool data-bs-toggle="tooltip" data-bs-title="universal time offset"}). With the [leap second insertion dates](https://en.wikipedia.org/wiki/Leap_second#:~:text=Announced%20leap%20seconds%20to%20date) provided by the [International Earth Rotation and Reference Systems Service](https://en.wikipedia.org/wiki/International_Earth_Rotation_and_Reference_Systems_Service#:~:text=the%20body%20responsible%20for%20maintaining%20global%20time%20and%20reference%20frame%20standards), we can approximate the [uto](#uto){.tool data-bs-toggle="tooltip" data-bs-title="universal time offset"} that yields [UT](#ut){.tool data-bs-toggle="tooltip" data-bs-title="Universal Time"} when added to the Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} on the [Dec date](/dec/date) chosen by the [range](https://observablehq.com/framework/inputs/range)🎚️inputs below: \${leapCountHsl} &div; 8640 = \${leapSdecHsl}\${leapSb24hsl} &div; 90000 = \${leapTzoHsl0}.
 
 ```{ojs}
 //| echo: false
@@ -222,86 +222,85 @@ viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 
 
 # Second interval difference {#sec-sid .hiddenheading}
 
-On the left-hand side of the equation above, the number of leap seconds is divided by the 8640 [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}) seconds in a [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"}. On the right-hand side, the same leap seconds are expressed in Dec seconds ([s](#s){#second .tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}) and divided by the 9000 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} in a [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"}. Of the twenty eight [uto](#uto){.tool data-bs-toggle="tooltip" data-bs-title="universal time offsets"} that can be shown in the equation above, one is an integer, one is a [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits), and the rest are [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever) when written in [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, but all of them can be written exactly in [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}.
+Dec measures [uto](#uto){.tool data-bs-toggle="tooltip" data-bs-title="universal time offsets"} in [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} ([dd](#dd){#deciday .tool data-bs-toggle="tooltip" data-bs-title="decidays"}). The equation above divides leap seconds by the number of [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si){#internationalsystemofunits .tool data-bs-toggle="tooltip" data-bs-title="International System of Units"}) seconds ([sis](#sis){#sisecond .tool data-bs-toggle="tooltip" data-bs-title="SI seconds"}) or Dec [deciseconds]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a seconds"} ([ds](#ds){#decisecond .tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"}) in a [dd](#dd){#deciday .tool data-bs-toggle="tooltip" data-bs-title="deciday"}: 8640 [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"} = 90000 [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"} = 1 [dd](#dd){.tool data-bs-toggle="tooltip" data-bs-title="deciday"}. To avoid [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever), we can express the decimal part of a [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"}-derived [ds](#ds){.tool data-bs-toggle="tooltip" data-bs-title="Dec deciseconds"} using Dec [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D) ([base24]{.tool data-bs-toggle="tooltip" data-bs-title="quadravigesimal"}): \${leapSdecHsl1}\${leapSb24hsl1} = \${leapSdecHsl2} &times; 10 + \${leapSsidHsl} &div; 2.4.
 
-A [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec second"} is 0.96 [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} seconds, so an [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} second is 1 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec second"} plus 0.04 [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} seconds. Dec calls this 0.04 [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} second remainder the "second interval difference" ([sid](#sid){#secondintervaldifference .tool data-bs-toggle="tooltip" data-bs-title="second interval difference"}). As shown in the equations below, an [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} second is 25 [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval differences"} and a [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec second"} is 24 [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval differences"}.
+Known as a "second interval difference" ([sid](#sid){#secondintervaldifference .tool data-bs-toggle="tooltip" data-bs-title="second interval difference"}), the [base24]{.tool data-bs-toggle="tooltip" data-bs-title="quadravigesimal"} ([b24](#b24){#base24 .tool data-bs-toggle="tooltip" data-bs-title="base24"}) character at the end of \${leapSdecHsl3}\${leapSb24hsl2} is a letter of the [Greek alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language). To display [sis](#sis){.tool data-bs-toggle="tooltip" data-bs-title="SI seconds"}, we can concatenate the integer part of the Dec seconds ([s](#s){#second .tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}) we obtain from @eq-sis with the [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} representation of the [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval difference"} we get from @eq-sid. The table beneath these equations lists [base10](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([b10](#b10){#base10 .tool data-bs-toggle="tooltip" data-bs-title="base10"}) and [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} equivalents.
 
 ::: {.equationgroup #equationgroup07}
-$$\text{SI second} = \text{s} + \text{sid} = 25 \times \text{sid}$$ {#eq-sisecond}
-
-$$\text{s} = 24 \times \text{sid} = 0.96 \times \text{SI second}$$ {#eq-decsecond}
+$$
+\text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96}
+$$ {#eq-sis}
+$$
+\text{sid} = (\text{s} - \text{sis}) \ast 24 \bmod 24
+$$ {#eq-sid}
 :::
 
-# Base24 {#sec-b24 .hiddenheading}
-
-Dec counts [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval differences"} with a single [base24](https://en.wikipedia.org/wiki/Positional_notation#:~:text=the%20number%20of%20unique%20digits) ([b24](#b24){#base24 .tool data-bs-toggle="tooltip" data-bs-title="base24"}) digit. Instead of the [English alphabet](https://en.wikipedia.org/wiki/English_alphabet#:~:text=a%20Latin%2Dscript%20alphabet%20consisting%20of%2026%C2%A0letters) letters used by the [Dec base32](/dec/date#b32) alphabet, the 24 [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digits are the lowercase letters of the [Greek alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language), in order from alpha ([α]{.color0 .tool data-bs-toggle="tooltip" data-bs-title="base24 α is base10 0"}) to omega ([ω]{.color23by24 .tool data-bs-toggle="tooltip" data-bs-title="base24 ω is base10 23"}). The table below lists each [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit alongside its base10 ([b10](#b10){#base10 .tool data-bs-toggle="tooltip" data-bs-title="base10"}) equivalent.
+## Base24 {#sec-b24 .unnumbered .hiddenheading}
 
 ::::: {#tbl-b24 .overflowtable}
 
 ::: {.d-none .d-lg-block}
 | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} |  |  |  | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} |  |  |  | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} |  |  |  | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} |
 | --- | --- | - | - | - | --- | --- | - | - | - | --- | --- | - | - | - | --- | --- |
-| [0]{.color0} | [α]{.color0} |  |  |  | [6]{.color6by24} | [η]{.color6by24} |  |  |  | [12]{.color12by24} | [ν]{.color12by24} |  |  |  | [18]{.color18by24} | [τ]{.color18by24} |
-| [1]{.color1by24} | [β]{.color1by24} |  |  |  | [7]{.color7by24} | [θ]{.color7by24} |  |  |  | [13]{.color13by24} | [ξ]{.color13by24} |  |  |  | [19]{.color19by24} | [υ]{.color19by24} |
-| [2]{.color2by24} | [γ]{.color2by24} |  |  |  | [8]{.color8by24} | [ι]{.color8by24} |  |  |  | [14]{.color14by24} | [ο]{.color14by24} |  |  |  | [20]{.color20by24} | [φ]{.color20by24} |
-| [3]{.color3by24} | [δ]{.color3by24} |  |  |  | [9]{.color9by24} | [κ]{.color9by24} |  |  |  | [15]{.color15by24} | [π]{.color15by24} |  |  |  | [21]{.color21by24} | [χ]{.color21by24} |
-| [4]{.color4by24} | [ε]{.color4by24} |  |  |  | [10]{.color10by24} | [λ]{.color10by24} |  |  |  | [16]{.color16by24} | [ρ]{.color16by24} |  |  |  | [22]{.color22by24} | [ψ]{.color22by24} |
-| [5]{.color5by24} | [ζ]{.color5by24} |  |  |  | [11]{.color11by24} | [μ]{.color11by24} |  |  |  | [17]{.color17by24} | [σ]{.color17by24} |  |  |  | [23]{.color23by24} | [ω]{.color23by24} |
+| [0]{.color0 .mono} | [α]{.color0 .mono} |  |  |  | [6]{.color6by24 .mono} | [η]{.color6by24 .mono} |  |  |  | [12]{.color12by24 .mono} | [ν]{.color12by24 .mono} |  |  |  | [18]{.color18by24 .mono} | [τ]{.color18by24 .mono} |
+| [1]{.color1by24 .mono} | [β]{.color1by24 .mono} |  |  |  | [7]{.color7by24 .mono} | [θ]{.color7by24 .mono} |  |  |  | [13]{.color13by24 .mono} | [ξ]{.color13by24 .mono} |  |  |  | [19]{.color19by24 .mono} | [υ]{.color19by24 .mono} |
+| [2]{.color2by24 .mono} | [γ]{.color2by24 .mono} |  |  |  | [8]{.color8by24 .mono} | [ι]{.color8by24 .mono} |  |  |  | [14]{.color14by24 .mono} | [ο]{.color14by24 .mono} |  |  |  | [20]{.color20by24 .mono} | [φ]{.color20by24 .mono} |
+| [3]{.color3by24 .mono} | [δ]{.color3by24 .mono} |  |  |  | [9]{.color9by24 .mono} | [κ]{.color9by24 .mono} |  |  |  | [15]{.color15by24 .mono} | [π]{.color15by24 .mono} |  |  |  | [21]{.color21by24 .mono} | [χ]{.color21by24 .mono} |
+| [4]{.color4by24 .mono} | [ε]{.color4by24 .mono} |  |  |  | [10]{.color10by24 .mono} | [λ]{.color10by24 .mono} |  |  |  | [16]{.color16by24 .mono} | [ρ]{.color16by24 .mono} |  |  |  | [22]{.color22by24 .mono} | [ψ]{.color22by24 .mono} |
+| [5]{.color5by24 .mono} | [ζ]{.color5by24 .mono} |  |  |  | [11]{.color11by24 .mono} | [μ]{.color11by24 .mono} |  |  |  | [17]{.color17by24 .mono} | [σ]{.color17by24 .mono} |  |  |  | [23]{.color23by24 .mono} | [ω]{.color23by24 .mono} |
 :::
 
 ::: {.d-none .d-md-block .d-lg-none}
 | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} |  |  |  | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} |
 | --- | --- | - | - | - | --- | --- |
-| [0]{.color0} | [α]{.color0} |  |  |  | [12]{.color12by24} | [ν]{.color12by24} |
-| [1]{.color1by24} | [β]{.color1by24} |  |  |  | [13]{.color13by24} | [ξ]{.color13by24} |
-| [2]{.color2by24} | [γ]{.color2by24} |  |  |  | [14]{.color14by24} | [ο]{.color14by24} |
-| [3]{.color3by24} | [δ]{.color3by24} |  |  |  | [15]{.color15by24} | [π]{.color15by24} |
-| [4]{.color4by24} | [ε]{.color4by24} |  |  |  | [16]{.color16by24} | [ρ]{.color16by24} |
-| [5]{.color5by24} | [ζ]{.color5by24} |  |  |  | [17]{.color17by24} | [σ]{.color17by24} |
-| [6]{.color6by24} | [η]{.color6by24} |  |  |  | [18]{.color18by24} | [τ]{.color18by24} |
-| [7]{.color7by24} | [θ]{.color7by24} |  |  |  | [19]{.color19by24} | [υ]{.color19by24} |
-| [8]{.color8by24} | [ι]{.color8by24} |  |  |  | [20]{.color20by24} | [φ]{.color20by24} |
-| [9]{.color9by24} | [κ]{.color9by24} |  |  |  | [21]{.color21by24} | [χ]{.color21by24} |
-| [10]{.color10by24} | [λ]{.color10by24} |  |  |  | [22]{.color22by24} | [ψ]{.color22by24} |
-| [11]{.color11by24} | [μ]{.color11by24} |  |  |  | [23]{.color23by24} | [ω]{.color23by24} |
+| [0]{.color0.mono } | [α]{.color0.mono } |  |  |  | [12]{.color12by24.mono } | [ν]{.color12by24.mono } |
+| [1]{.color1by24.mono } | [β]{.color1by24.mono } |  |  |  | [13]{.color13by24.mono } | [ξ]{.color13by24.mono } |
+| [2]{.color2by24.mono } | [γ]{.color2by24.mono } |  |  |  | [14]{.color14by24.mono } | [ο]{.color14by24.mono } |
+| [3]{.color3by24.mono } | [δ]{.color3by24.mono } |  |  |  | [15]{.color15by24.mono } | [π]{.color15by24.mono } |
+| [4]{.color4by24.mono } | [ε]{.color4by24.mono } |  |  |  | [16]{.color16by24.mono } | [ρ]{.color16by24.mono } |
+| [5]{.color5by24.mono } | [ζ]{.color5by24.mono } |  |  |  | [17]{.color17by24.mono } | [σ]{.color17by24.mono } |
+| [6]{.color6by24.mono } | [η]{.color6by24.mono } |  |  |  | [18]{.color18by24.mono } | [τ]{.color18by24.mono } |
+| [7]{.color7by24.mono } | [θ]{.color7by24.mono } |  |  |  | [19]{.color19by24.mono } | [υ]{.color19by24.mono } |
+| [8]{.color8by24.mono } | [ι]{.color8by24.mono } |  |  |  | [20]{.color20by24.mono } | [φ]{.color20by24.mono } |
+| [9]{.color9by24.mono } | [κ]{.color9by24.mono } |  |  |  | [21]{.color21by24.mono } | [χ]{.color21by24.mono } |
+| [10]{.color10by24.mono } | [λ]{.color10by24.mono } |  |  |  | [22]{.color22by24.mono } | [ψ]{.color22by24.mono } |
+| [11]{.color11by24.mono } | [μ]{.color11by24.mono } |  |  |  | [23]{.color23by24.mono } | [ω]{.color23by24.mono } |
 :::
 
 ::: {.d-md-none}
 | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} |
 | --- | --- |
-| [0]{.color0} | [α]{.color0} |
-| [1]{.color1by24} | [β]{.color1by24} |
-| [2]{.color2by24} | [γ]{.color2by24} |
-| [3]{.color3by24} | [δ]{.color3by24} |
-| [4]{.color4by24} | [ε]{.color4by24} |
-| [5]{.color5by24} | [ζ]{.color5by24} |
-| [6]{.color6by24} | [η]{.color6by24} |
-| [7]{.color7by24} | [θ]{.color7by24} |
-| [8]{.color8by24} | [ι]{.color8by24} |
-| [9]{.color9by24} | [κ]{.color9by24} |
-| [10]{.color10by24} | [λ]{.color10by24} |
-| [11]{.color11by24} | [μ]{.color11by24} |
-| [12]{.color12by24} | [ν]{.color12by24} |
-| [13]{.color13by24} | [ξ]{.color13by24} |
-| [14]{.color14by24} | [ο]{.color14by24} |
-| [15]{.color15by24} | [π]{.color15by24} |
-| [16]{.color16by24} | [ρ]{.color16by24} |
-| [17]{.color17by24} | [σ]{.color17by24} |
-| [18]{.color18by24} | [τ]{.color18by24} |
-| [19]{.color19by24} | [υ]{.color19by24} |
-| [20]{.color20by24} | [φ]{.color20by24} |
-| [21]{.color21by24} | [χ]{.color21by24} |
-| [22]{.color22by24} | [ψ]{.color22by24} |
-| [23]{.color23by24} | [ω]{.color23by24} |
+| [0]{.color0 .mono} | [α]{.color0 .mono} |
+| [1]{.color1by24 .mono} | [β]{.color1by24 .mono} |
+| [2]{.color2by24 .mono} | [γ]{.color2by24 .mono} |
+| [3]{.color3by24 .mono} | [δ]{.color3by24 .mono} |
+| [4]{.color4by24 .mono} | [ε]{.color4by24 .mono} |
+| [5]{.color5by24 .mono} | [ζ]{.color5by24 .mono} |
+| [6]{.color6by24 .mono} | [η]{.color6by24 .mono} |
+| [7]{.color7by24 .mono} | [θ]{.color7by24 .mono} |
+| [8]{.color8by24 .mono} | [ι]{.color8by24 .mono} |
+| [9]{.color9by24 .mono} | [κ]{.color9by24 .mono} |
+| [10]{.color10by24 .mono} | [λ]{.color10by24 .mono} |
+| [11]{.color11by24 .mono} | [μ]{.color11by24 .mono} |
+| [12]{.color12by24 .mono} | [ν]{.color12by24 .mono} |
+| [13]{.color13by24 .mono} | [ξ]{.color13by24 .mono} |
+| [14]{.color14by24 .mono} | [ο]{.color14by24 .mono} |
+| [15]{.color15by24 .mono} | [π]{.color15by24 .mono} |
+| [16]{.color16by24 .mono} | [ρ]{.color16by24 .mono} |
+| [17]{.color17by24 .mono} | [σ]{.color17by24 .mono} |
+| [18]{.color18by24 .mono} | [τ]{.color18by24 .mono} |
+| [19]{.color19by24 .mono} | [υ]{.color19by24 .mono} |
+| [20]{.color20by24 .mono} | [φ]{.color20by24 .mono} |
+| [21]{.color21by24 .mono} | [χ]{.color21by24 .mono} |
+| [22]{.color22by24 .mono} | [ψ]{.color22by24 .mono} |
+| [23]{.color23by24 .mono} | [ω]{.color23by24 .mono} |
 :::
 
 :::::
 
-Any whole number of [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} seconds can be written as an integer number of [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} followed by one [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit that counts the remaining [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval differences"}. Each [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} second adds 1 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec second"} and 1 [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval difference"}, and every 24 [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval differences"} carry over into 1 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec second"}, so the [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit is always the remainder after dividing the number of [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} seconds by 24. For example, 23 [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} seconds are 23[ω]{.color23by24 .tool data-bs-toggle="tooltip" data-bs-title="base24 ω is base10 23"} [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, but 24 [SI](#si){.tool data-bs-toggle="tooltip" data-bs-title="International System of Units"} seconds are 25[α]{.color0 .tool data-bs-toggle="tooltip" data-bs-title="base24 α is base10 0"} [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}. The \${leapCountHsl1} leap seconds inserted before the Dec date selected above are \${leapDecsHsl1} [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}. In this way, [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} and [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval differences"} can represent any number of leap seconds without fractions or [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever).
+## Base9 {#sec-b9 .unnumbered .hiddenheading}
 
-# Base9 {#sec-b9 .hiddenheading}
-
-Dec seconds can also be appended to a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. A [milliday]{.tool data-bs-toggle="tooltip" data-bs-title="a thousandth of a day"} is 90 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} long, so the three digits of a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can be followed by a base9 ([b9](#b9){#base9 .tool data-bs-toggle="tooltip" data-bs-title="base9"}) digit that counts tens of [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, a [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digit that counts the remaining [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, and, if needed, a [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit that counts the remaining [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval differences"}. To set them apart from [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digits, Dec writes [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} digits with the [astronomical symbols](https://en.wikipedia.org/wiki/Astronomical_symbol#:~:text=symbols%20used%20to%20represent%20astronomical%20objects) of the Sun ([☉]{.color0 .tool data-bs-toggle="tooltip" data-bs-title="base9 ☉ is base10 0"}) and the eight planets, so that every [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} digit from 1 to 8 is the position of a planet in order of distance from the Sun: Mercury ([☿]{.color1by9 .tool data-bs-toggle="tooltip" data-bs-title="base9 ☿ is base10 1"}) is 1, Earth ([♁]{.color3by9 .tool data-bs-toggle="tooltip" data-bs-title="base9 ♁ is base10 3"}) is 3, and Neptune ([♆]{.color8by9 .tool data-bs-toggle="tooltip" data-bs-title="base9 ♆ is base10 8"}) is 8. The table below lists each [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} digit alongside its [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} equivalent.
+In addition to appending a [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval difference"} to [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} using [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"}, we can append [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} with or without a [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval difference"} to a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} using Dec [nonary](https://en.wikipedia.org/wiki/Ternary_numeral_system#Compact_ternary_representation:_base_9_and_27:~:text=base%209%2C%20each%20digit%20is%20two%20ternary%20digits) ([base9]{.tool data-bs-toggle="tooltip" data-bs-title="nonary"}). A [milliday]{.tool data-bs-toggle="tooltip" data-bs-title="a thousandth of a day"} is 90 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} long, so the three digits of a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can be followed by a [base9]{.tool data-bs-toggle="tooltip" data-bs-title="nonary"} ([b9](#b9){#base9 .tool data-bs-toggle="tooltip" data-bs-title="base9"}) digit that counts tens of [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, a [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digit that counts the remaining [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, and, if needed, a [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit that tracks the [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval difference"}. To set them apart from [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digits, Dec writes [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} digits with the [astronomical symbols](https://en.wikipedia.org/wiki/Astronomical_symbol#:~:text=symbols%20used%20to%20represent%20astronomical%20objects) listed in the table below.
 
 ::::: {#tbl-b9 .overflowtable}
 
@@ -344,7 +343,7 @@ viewof hmsinput = Inputs.form([
 
 # Time zone offset {#sec-tzo .hiddenheading}
 
-In Dec, a [uto](#uto){.tool data-bs-toggle="tooltip" data-bs-title="universal time offset"} can be any type of number, a "time zone offset" ([tzo](#tzo){#timezoneoffset .tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}) is an integer, and a "solar time offset" ([sto](#sto){#solartimeoffset .tool data-bs-toggle="tooltip" data-bs-title="solar time offset"}) is a [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits). If we derived [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"} offsets from all 86400 of the [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets that can be selected by the range🎚️inputs above, we would have 10 [tzo](#tzo){.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"}, 3190 [sto](#sto){.tool data-bs-toggle="tooltip" data-bs-title="solar time offsets"}, and 83200 [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever). With [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} appended, all 83200 have a finite number of digits: 3200 need only [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} and [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digits, and the other 80000 also need a [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit.
+In Dec, a [uto](#uto){.tool data-bs-toggle="tooltip" data-bs-title="universal time offset"} can be any positive number, a "time zone offset" ([tzo](#tzo){#timezoneoffset .tool data-bs-toggle="tooltip" data-bs-title="time zone offset"}) is a positive integer, and a "solar time offset" ([sto](#sto){#solartimeoffset .tool data-bs-toggle="tooltip" data-bs-title="solar time offset"}) is a positive [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits). If we derived [deciday]{.tool data-bs-toggle="tooltip" data-bs-title="a tenth of a day"} offsets from all 86400 of the [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplets that can be selected by the range🎚️inputs above, we would have 10 [tzo](#tzo){.tool data-bs-toggle="tooltip" data-bs-title="time zone offsets"}, 3190 [sto](#sto){.tool data-bs-toggle="tooltip" data-bs-title="solar time offsets"}, and 83200 [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever). With [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} appended, all 83200 have a finite number of digits: 3200 need only [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} and [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digits, and the other 80000 also need a [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit.
 
 ## Coordinated Universal Time (UTC) {#sec-utc .unnumbered .hiddenheading}
 
@@ -403,10 +402,10 @@ To obtain the [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of 
 ::: {.equationgroup #equationgroup09}
 $$\begin{split}
 \text{eot(toy)} & = \beta_0 \\
-& + \beta_1 \times \text{costau(toy)} \\
-& + \beta_2 \times \text{costau(2} \times \text{toy)} \\
-& + \beta_3 \times \text{sintau(toy)} \\
-& + \beta_4 \times \text{sintau(2} \times \text{toy)}
+& + \beta_1 \ast \text{costau(toy)} \\
+& + \beta_2 \ast \text{costau(2} \ast \text{toy)} \\
+& + \beta_3 \ast \text{sintau(toy)} \\
+& + \beta_4 \ast \text{sintau(2} \ast \text{toy)}
 \end{split}$$ {#eq-eot}
 :::
 
@@ -502,17 +501,17 @@ $$\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot(toy)}\right)
 To compare the solar noon [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} in two cities, we can plug in the longitude of each city into the equation above. If all the variables in the equation other than longitude are set to zero, the result is almost five [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} for [Cambridge, England](https://en.wikipedia.org/wiki/Cambridge#:~:text=a%20city%20and%20non%2Dmetropolitan%20district%20in%20the%20county%20of%20Cambridgeshire%2C%20England) in the [United Kingdom](https://en.wikipedia.org/wiki/United_Kingdom#:~:text=a%20country%20in%20Northwestern%20Europe) and nearly seven [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} for [Cambridge, Massachusetts](https://en.wikipedia.org/wiki/Cambridge,_Massachusetts#:~:text=a%20city%20in%20Middlesex%20County%2C%20Massachusetts%2C%20United%20States) in the [United States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America).
 
 ::: {.equationgroup #equationgroup11}
-$$4.99635 = (9.55 - 0.050365) \bmod 1 \times 10$$ {#eq-cambridgeuk}
+$$4.99635 = (9.55 - 0.050365) \bmod 1 \ast 10$$ {#eq-cambridgeuk}
 
-$$6.97516 = (9.55 - 0.852484) \bmod 1 \times 10$$ {#eq-cambridgema}
+$$6.97516 = (9.55 - 0.852484) \bmod 1 \ast 10$$ {#eq-cambridgema}
 :::
 
 The two homonymous cities are about two [dw](#dw){.tool data-bs-toggle="tooltip" data-bs-title="deciwěi"} apart and thus will always differ by around two [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} in solar time, regardless of what time zone we use as our frame of reference. England is in Zone [0]{.color0} and Massachusetts is in Zone [8]{.color8}. If we change the [tzo](#tzo){.tool data-bs-toggle="tooltip" data-bs-title="time zone offset"} from zero to eight [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"}, the solar noon [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} for each city will be two [decidays]{.tool data-bs-toggle="tooltip" data-bs-title="tenths of a day"} earlier.
 
 ::: {.equationgroup #equationgroup12}
-$$2.99635 = (9.55 + 0.8 - 0.050365) \bmod 1 \times 10$$ {#eq-cambridgeuk8}
+$$2.99635 = (9.55 + 0.8 - 0.050365) \bmod 1 \ast 10$$ {#eq-cambridgeuk8}
 
-$$4.97516 = (9.55 + 0.8 - 0.852484) \bmod 1 \times 10$$ {#eq-cambridgema8}
+$$4.97516 = (9.55 + 0.8 - 0.852484) \bmod 1 \ast 10$$ {#eq-cambridgema8}
 :::
 
 # Full day arc {#sec-fda .hiddenheading}
@@ -521,8 +520,8 @@ The path in the sky that the Sun appears to follow from a sunrise to a sunset is
 
 ::: {.equationgroup #equationgroup13}
 $$\begin{split}
-\text{sunset} & = \text{solarnoon} + \frac{\text{da}}{2} && = \text{sunrise} + \text{da} \\
-\text{sunrise} & = \text{solarnoon} - \frac{\text{da}}{2} && = \text{sunset} - \text{da}
+\text{sunset} & = \text{solarnoon} + \dfrac{\text{da}}{2} && = \text{sunrise} + \text{da} \\
+\text{sunrise} & = \text{solarnoon} - \dfrac{\text{da}}{2} && = \text{sunset} - \text{da}
 \end{split}$$ {#eq-sunsetsunrise}
 :::
 
@@ -531,7 +530,7 @@ $$\begin{split}
 The Sun continues its path after it disappears below the horizon, moving from sunset to sunrise along a "night arc" ([na](#na){#nightarc .tool data-bs-toggle="tooltip" data-bs-title="night arc"}). Like [conjugate angles](https://en.wikipedia.org/wiki/Angle#:~:text=conjugate%20angles%20sum%20to%20a%20full%20angle), a [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} and a [na](#na){.tool data-bs-toggle="tooltip" data-bs-title="night arc"} form a full circle that represents one day. Likewise, a [da/2](#da2){.tool data-bs-toggle="tooltip" data-bs-title="half day arc"} and a "half night arc" ([na/2](#na2){#halfnightarc .tool data-bs-toggle="tooltip" data-bs-title="half night arc"}) are like two [supplementary angles](https://en.wikipedia.org/wiki/Angle#:~:text=sum%20to%20a%20straight%20angle) that form a semicircle from solar noon to the [na](#na){.tool data-bs-toggle="tooltip" data-bs-title="night arc"} midpoint: [solar midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
 
 ::: {.equationgroup #equationgroup14}
-$$\text{solarmidnight} = \text{solarnoon} + \frac{\text{da}}{2} + \frac{\text{na}}{2} = \text{sunset} + \frac{\text{na}}{2}$$ {#eq-solarmidnight}
+$$\text{solarmidnight} = \text{solarnoon} + \dfrac{\text{da}}{2} + \dfrac{\text{na}}{2} = \text{sunset} + \dfrac{\text{na}}{2}$$ {#eq-solarmidnight}
 :::
 
 The range input below controls the yellow [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} and the blue [na](#na){.tool data-bs-toggle="tooltip" data-bs-title="night arc"} in the diagram beneath it. At the Equator, the sunrise always rises about a quarter turn from North and sets around three quarter turns from North, resulting in a [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} of approximately half a day: 75% -- 25% = 50%. If [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} is zero, a [polar night](https://en.wikipedia.org/wiki/Polar_night#:~:text=the%20Sun%20remains%20below%20the%20horizon%20for%20more%20than%2024%C2%A0hours) occurs. A day without a [na](#na){.tool data-bs-toggle="tooltip" data-bs-title="night arc"} is called a [polar day](https://en.wikipedia.org/wiki/Midnight_sun#:~:text=the%20Sun%20remains%20visible%20at%20the%20local%20midnight).
@@ -561,9 +560,9 @@ If we only want to know how long the Sun will shine on a given day, we can use t
 
 
 ::: {.equationgroup #equationgroup16}
-$$\text{da} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\pi}$$ {#eq-da}
+$$\text{da} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\pi}$$ {#eq-da}
 
-$$\frac{\text{da}}{2} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\tau}$$ {#eq-halfda}
+$$\dfrac{\text{da}}{2} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\tau}$$ {#eq-halfda}
 :::
 
 ## Solar declination angle {#sec-sda .unnumbered .hiddenheading}
@@ -573,12 +572,12 @@ The [da](#da){.tool data-bs-toggle="tooltip" data-bs-title="day arc"} and [da/2]
 ::: {.equationgroup #equationgroup17}
 $$\begin{split}
 \text{sda(toy)} & = \beta_0 \\
-& + \beta_1 \times \text{costau(toy)} \\
-& + \beta_2 \times \text{sintau(toy)} \\
-& + \beta_3 \times \text{costau(2} \times \text{toy)} \\
-& + \beta_4 \times \text{sintau(2} \times \text{toy)} \\
-& + \beta_5 \times \text{costau(3} \times \text{toy)} \\
-& + \beta_6 \times \text{sintau(3} \times \text{toy)} \\
+& + \beta_1 \ast \text{costau(toy)} \\
+& + \beta_2 \ast \text{sintau(toy)} \\
+& + \beta_3 \ast \text{costau(2} \ast \text{toy)} \\
+& + \beta_4 \ast \text{sintau(2} \ast \text{toy)} \\
+& + \beta_5 \ast \text{costau(3} \ast \text{toy)} \\
+& + \beta_6 \ast \text{sintau(3} \ast \text{toy)} \\
 \end{split}$$ {#eq-sda}
 :::
 
@@ -622,13 +621,13 @@ When the minuend is the current time and the subtrahend is the [timestamp](https
 A [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"} is essentially a Dec date with a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} that is always equal to 0 and a [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} that is [not restricted](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded) to 0 &le; [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} &le; 365. Similarly, a Dec "epochal year aggregate" ([eya](#eya){.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}) is basically a Dec date with a non-integer year and a day permanently set to [0]{.color0}. We can obtain a Dec date by passing a doe Both [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="days of era"} and [eya](#eya){.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregates"} allow us to represent a date as a single number and obtain the difference between two dates.
 
 ::: {.equationgroup #equationgroup19}
-$$\text{cda} = \text{de} - \text{coe} \times 146097$$ {#eq-cda}
+$$\text{cda} = \text{de} - \text{coe} \ast 146097$$ {#eq-cda}
 
-$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$ {#eq-yocdoc}
+$$\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$ {#eq-yocdoc}
 
-$$\text{yoe} = \text{yoc} + \text{coe} \times 400$$ {#eq-yoe}
+$$\text{yoe} = \text{yoc} + \text{coe} \ast 400$$ {#eq-yoe}
 
-$$\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \biggr \rfloor$$ {#eq-doydoc}
+$$\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \biggr \rfloor$$ {#eq-doydoc}
 :::
 
 Compared to a [doe](#doe){.tool data-bs-toggle="tooltip" data-bs-title="day of era"}, it is much easier to convert between an [eya](#eya){.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} and a to turn into Dec dates. The decimal part of an [eya](#eya){.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} is a called a [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"}. We can convert between dates to [eya](#eya){.tool data-bs-toggle="tooltip" data-bs-title="times of year"} with the equations below. We can obtain a [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} by flooring an [eya](#eya){.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}. Likewise, we can obtain a [doy]{.cyan .under .tool data-bs-toggle="tooltip" data-bs-title="day of year"} by flooring the product of [syl](#syl){.tool data-bs-toggle="tooltip" data-bs-title="solar year length"} and the decimal part of an [eya](#eya){.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"}, which is called a [toy](#toy){.tool data-bs-toggle="tooltip" data-bs-title="time of year"}. The current [eya](#eya){.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} equation values are \${fullfracYear} = \${decYear} + \${decDoty} &div; \${nDaysInYear}. We can floor an [eya](#eya){.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} to get a yoe or divide its , we can obtain a 
@@ -638,11 +637,11 @@ $$\text{eya} = \text{yoe} + \text{toy} = \text{yoe} + \text{doy} \div \text{syl}
 
 $$\text{toy} = \text{eya} \bmod 1 = \text{doy} \div \text{syl}$$ {#eq-toyeya}
 
-$$\text{doy} = \lfloor\text{toy}\times\text{syl}\rfloor$$ {#eq-doytoy}
+$$\text{doy} = \lfloor\text{toy}\ast\text{syl}\rfloor$$ {#eq-doytoy}
 
-$$\text{eya} = \text{yoe} + \text{doy} \times \text{syl}$$ {#eq-eyadoy}
+$$\text{eya} = \text{yoe} + \text{doy} \ast \text{syl}$$ {#eq-eyadoy}
 
-$$\text{eya} = \text{yoe} + \text{coe} \times 400$$ {#eq-eyacoe}
+$$\text{eya} = \text{yoe} + \text{coe} \ast 400$$ {#eq-eyacoe}
 :::
 
 [eya](#eya){.tool data-bs-toggle="tooltip" data-bs-title="epochal year aggregate"} = [yoe](#yoe){.tool data-bs-toggle="tooltip" data-bs-title="year of era"} + [doy](#doy){.tool data-bs-toggle="tooltip" data-bs-title="day of year"} &div; [syl](#syl){.tool data-bs-toggle="tooltip" data-bs-title="solar year length"}. 
@@ -652,15 +651,15 @@ We can omit the year from a snap if we replace the [ada](#ada){.tool data-bs-tog
 ::: {.equationgroup #equationgroup21}
 $$\text{edd} = \text{eda} - \text{difference}$$ {#eq-edd}
 
-$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$ {#eq-coe}
+$$\text{coe} = \Biggl \lfloor \dfrac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor$$ {#eq-coe}
 
-$$\text{doc} = \text{edd} - \text{coe} \times 146097$$ {#eq-doc}
+$$\text{doc} = \text{edd} - \text{coe} \ast 146097$$ {#eq-doc}
 
-$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$ {#eq-yocedd}
+$$\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor$$ {#eq-yocedd}
 
-$$\text{year} = \text{yoc} + \text{coe} \times 400$$ {#eq-year}
+$$\text{year} = \text{yoc} + \text{coe} \ast 400$$ {#eq-year}
 
-$$\text{ada} = \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor$$ {#eq-adadoc}
+$$\text{ada} = \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor$$ {#eq-adadoc}
 :::
 
 In the equations above, [eda](#eda){.tool data-bs-toggle="tooltip" data-bs-title="epochal day aggregate"} is "epochal day aggregate", [coe](#coe){.tool data-bs-toggle="tooltip" data-bs-title="cycle of era"} is "cycle of era", [doc](#doc){.tool data-bs-toggle="tooltip" data-bs-title="day of cycle"} is "day of cycle", and [yoc](#yoc){.tool data-bs-toggle="tooltip" data-bs-title="year of cycle"} is "year of cycle".
