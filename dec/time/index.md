@@ -1,15 +1,20 @@
 # Dec time
 Martin Laptev
-2026+222
+2026+225
 
 - [Declock](#declock)
+  - [Bar chart clocks](#bcc)
+  - [Longitude latitude map](#llm)
+  - [Daylight area chart](#dac)
 - [Annual day aggregate (ada)](#sec-ada)
 - [Epochal day aggregate (eda)](#sec-eda)
   - [UNIX time equation](#sec-ute)
   - [Julian date equation](#sec-jde)
 - [Hour minute second](#sec-hms)
 - [Universal time offset](#sec-uto)
-- [Rounded offset decimal](#sec-rod)
+- [Second interval difference](#sec-sid)
+- [Base24](#sec-b24)
+- [Base9](#sec-b9)
 - [Time zone offset](#sec-tzo)
   - [Coordinated Universal Time (UTC)](#sec-utc)
 - [Day of week](#sec-dow)
@@ -201,7 +206,7 @@ viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
 rstbtn.node();
 ```
 
-#### Bar chart clocks
+## Bar chart clocks
 
 ``` {ojs}
 //| echo: false
@@ -528,7 +533,7 @@ table = createTable([
 
 </div>
 
-#### Longitude latitude map
+## Longitude latitude map
 
 <div class="column-screen">
 
@@ -546,7 +551,7 @@ ${sunclock}${dotclock}
 
 </div>
 
-#### Daylight area chart
+## Daylight area chart
 
 <div class="column-page-left">
 
@@ -658,10 +663,9 @@ ${selAdaDay}.
 <div id="equationgroup00" class="equationgroup">
 
 <span id="eq-ada">
-$$\begin{split}
-\text{ada\\\\} & = \text{doy} + \text{tod} \\
-\lfloor\text{ada}\rfloor & = \text{doy} \\
-\end{split} \qquad(1)$$
+ada = doy + tod   (1)
+</span> <span id="eq-adafloor">
+⌊ada⌋ = doy   (2)
 </span>
 
 </div>
@@ -717,9 +721,11 @@ have passed since the Dec
 
 <span id="eq-todmod">
 $$\begin{split}
-\text{tod} &= \text{ada} \bmod  1 &&= \text{eda} \bmod  1 \\
-\text{tod} &= \text{ada} - \text{doy} &&= \text{eda} - \lfloor\text{eda}\rfloor
-\end{split} \qquad(2)$$
+\text{tod} &= \text{ada} \bmod  1
+&= \text{eda} \bmod  1 \\
+&= \text{ada} - \text{doy} 
+&= \text{eda} - \lfloor\text{eda}\rfloor
+\end{split} \qquad(3)$$
 </span>
 
 </div>
@@ -756,10 +762,6 @@ data-bs-title="day of era">doe</a> and a
 data-bs-title="time of day">tod</a>.
 
 <div id="equationgroup02" class="equationgroup">
-
-<span id="eq-eda">
-$$\text{eda} = \text{coe}\times146097 + \text{yoc}\times365 + \lfloor\frac{\text{yoc}}{4}\rfloor - \lfloor\frac{\text{yoc}}{100}\rfloor + \text{ada} \qquad(3)$$
-</span>
 
 <span id="eq-tod">
 tod = eda mod  1 = ada mod  1   (4)
@@ -972,14 +974,20 @@ the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
 <div id="equationgroup06" class="equationgroup">
 
-<span id="eq-hms">
+<span id="eq-dsa">
 $$\begin{split}
-\text{dsa} & = \text{tod} \times 86400 = \text{unix} \bmod  86400 \\
-\text{hsa} & = \text{dsa} \bmod  3600 \\
-\text{hod} & = \lfloor \text{dsa} \div 3600 \rfloor \\
-\text{moh} & = \lfloor \text{hsa} \div 60 \rfloor \\
-\text{som} & = \lfloor \text{hsa} \bmod  60 \rfloor
-\end{split} \qquad(12)$$
+\text{dsa} & = \text{tod} \times 86400 \\
+& = \text{unix} \bmod  86400
+\end{split}
+ \qquad(12)$$
+</span> <span id="eq-hsa">
+hsa = dsa mod  3600   (13)
+</span> <span id="eq-hod">
+hod = ⌊dsa ÷ 3600⌋   (14)
+</span> <span id="eq-moh">
+moh = ⌊hsa ÷ 60⌋   (15)
+</span> <span id="eq-som">
+som = ⌊hsa mod  60⌋   (16)
 </span>
 
 </div>
@@ -1087,7 +1095,7 @@ data-bs-title="Universal Time">UT</a> when added to the Zone
 data-bs-title="time of day">tod</a> on the [Dec date](../../dec/date)
 chosen by the
 [range](https://observablehq.com/framework/inputs/range)🎚️inputs below:
-${leapCountHsl} ÷ 8640 = ${leapTzoHsl0}.
+${leapCountHsl} ÷ 8640 = ${leapDecsHsl} ÷ 9000 = ${leapTzoHsl0}.
 
 ``` {ojs}
 //| echo: false
@@ -1097,71 +1105,773 @@ viewof leapSecondYear = Inputs.range([1970, 2020], {label: "Year", value: 1995, 
 viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 1})
 ```
 
-# Rounded offset decimal
+# Second interval difference
 
-Of the twenty eight <a href="#uto" class="tool" data-bs-toggle="tooltip"
+On the left-hand side of the equation above, the number of leap seconds
+is divided by the 8640 [International System of
+Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
+(<a href="#si" id="internationalsystemofunits" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a>) seconds in a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="a tenth of a day">deciday</span>. On the right-hand side,
+the same leap seconds are expressed in Dec seconds
+(<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a>) and divided by the 9000
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a> in a <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="a tenth of a day">deciday</span>. Of the twenty eight
+<a href="#uto" class="tool" data-bs-toggle="tooltip"
 data-bs-title="universal time offsets">uto</a> that can be shown in the
 equation above, one is an integer, one is a [terminating
 decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits),
 and the rest are [repeating
-decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever).
-To express a repeating decimal
-<a href="#uto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="universal time offset">uto</a>, Dec uses an [irreducible
-fraction](https://en.wikipedia.org/wiki/Irreducible_fraction#:~:text=a%20fraction%20in%20which%20the%20numerator%20and%20denominator%20are%20integers%20that%20have%20no%20other%20common%20divisors%20than%201)
-that is called an “exact offset fraction”
-(<a href="#eof" id="exactoffsetfraction" class="tool"
-data-bs-toggle="tooltip" data-bs-title="exact offset fraction">eof</a>)
-when by itself or a “[rounding
-error](https://en.wikipedia.org/wiki/Round-off_error#:~:text=the%20difference%20between%20the%20result%20produced%20by%20a%20given%20algorithm%20using%20exact%20arithmetic%20and%20the%20result%20produced%20by%20the%20same%20algorithm%20using%20finite%2Dprecision%2C%20rounded%20arithmetic)
-fraction” (<a href="#ref" id="roundofferrorfraction" class="tool"
-data-bs-toggle="tooltip" data-bs-title="roundoff error fraction">ref</a>)
-if it follows a “rounded offset decimal”
-(<a href="#rod" id="roundedoffsetdecimal" class="tool"
-data-bs-toggle="tooltip" data-bs-title="rounded offset decimal">rod</a>).
+decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever)
+when written in <span class="tool" data-bs-toggle="tooltip"
+data-bs-title="tenths of a day">decidays</span>, but all of them can be
+written exactly in <a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a>.
 
-In the equation below, the
-<a href="#uto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="universal time offset">uto</a> is the minuend, the
-<a href="#rod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="rounded offset decimal">rod</a> is the subtrahend, and
-the <a href="#ref" class="tool" data-bs-toggle="tooltip"
-data-bs-title="roundoff error fraction">ref</a> is the difference. Dec
-uses the term minuend expansion to describe the replacement of a minuend
-with a subtrahend and a difference. By replacing a repeating decimal
-<a href="#uto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="universal time offset">uto</a> with a
-<a href="#rod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="rounded offset decimal">rod</a> and a
-<a href="#ref" class="tool" data-bs-toggle="tooltip"
-data-bs-title="roundoff error fraction">ref</a>, we can show the initial
-digits of the <a href="#uto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="universal time offset">uto</a> as a decimal and the rest
-as a fraction.
+A <a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec second">s</a> is 0.96
+<a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> seconds, so an
+<a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> second is 1
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec second">s</a> plus 0.04
+<a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> seconds. Dec calls
+this 0.04 <a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> second remainder
+the “second interval difference”
+(<a href="#sid" id="secondintervaldifference" class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="second interval difference">sid</a>). As shown in the
+equations below, an <a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> second is 25
+<a href="#sid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second interval differences">sid</a> and a
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec second">s</a> is 24
+<a href="#sid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second interval differences">sid</a>.
 
 <div id="equationgroup07" class="equationgroup">
 
-<span id="eq-ref">
-uto − rod = ref   (13)
+<span id="eq-sisecond">
+SI second = s + sid = 25 × sid   (17)
+</span>
+
+<span id="eq-decsecond">
+s = 24 × sid = 0.96 × SI second   (18)
 </span>
 
 </div>
 
-Use the first three range🎚️inputs below to select an
-<a href="#hms" class="tool" data-bs-toggle="tooltip"
-data-bs-title="hour minute second">hms</a> triplet to be converted to
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span>, plugged into the
-equation above as the
-<a href="#uto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="universal time offset">uto</a>, rounded to the number of
-digits chosen by the fourth range🎚️input, and inserted into the equation
-as the <a href="#rod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="rounded offset decimal">rod</a>. Once the left-hand side
-of the equation is complete, we can solve it to get the
-<a href="#ref" class="tool" data-bs-toggle="tooltip"
-data-bs-title="roundoff error fraction">ref</a>: ${hmsTzoHsl} –
-${hmsRodHsl} = ${hmsRefHsl}.
+# Base24
+
+Dec counts <a href="#sid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second interval differences">sid</a> with a single
+[base24](https://en.wikipedia.org/wiki/Positional_notation#:~:text=the%20number%20of%20unique%20digits)
+(<a href="#b24" id="base24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a>) digit. Instead of the [English
+alphabet](https://en.wikipedia.org/wiki/English_alphabet#:~:text=a%20Latin%2Dscript%20alphabet%20consisting%20of%2026%C2%A0letters)
+letters used by the [Dec base32](../../dec/date#b32) alphabet, the 24
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> digits are the lowercase letters of the
+[Greek
+alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language),
+in order from alpha (<span class="color0 tool" data-bs-toggle="tooltip"
+data-bs-title="base24 α is base10 0">α</span>) to omega
+(<span class="color23by24 tool" data-bs-toggle="tooltip"
+data-bs-title="base24 ω is base10 23">ω</span>). The table below lists
+each <a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> digit alongside its base10
+(<a href="#b10" id="base10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a>) equivalent.
+
+<div class="d-none d-lg-block">
+
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a></th>
+<th></th>
+<th></th>
+<th></th>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a></th>
+<th></th>
+<th></th>
+<th></th>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a></th>
+<th></th>
+<th></th>
+<th></th>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="color0">0</span></td>
+<td><span class="color0">α</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color6by24">6</span></td>
+<td><span class="color6by24">η</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color12by24">12</span></td>
+<td><span class="color12by24">ν</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color18by24">18</span></td>
+<td><span class="color18by24">τ</span></td>
+</tr>
+<tr>
+<td><span class="color1by24">1</span></td>
+<td><span class="color1by24">β</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color7by24">7</span></td>
+<td><span class="color7by24">θ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color13by24">13</span></td>
+<td><span class="color13by24">ξ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color19by24">19</span></td>
+<td><span class="color19by24">υ</span></td>
+</tr>
+<tr>
+<td><span class="color2by24">2</span></td>
+<td><span class="color2by24">γ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color8by24">8</span></td>
+<td><span class="color8by24">ι</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color14by24">14</span></td>
+<td><span class="color14by24">ο</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color20by24">20</span></td>
+<td><span class="color20by24">φ</span></td>
+</tr>
+<tr>
+<td><span class="color3by24">3</span></td>
+<td><span class="color3by24">δ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color9by24">9</span></td>
+<td><span class="color9by24">κ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color15by24">15</span></td>
+<td><span class="color15by24">π</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color21by24">21</span></td>
+<td><span class="color21by24">χ</span></td>
+</tr>
+<tr>
+<td><span class="color4by24">4</span></td>
+<td><span class="color4by24">ε</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color10by24">10</span></td>
+<td><span class="color10by24">λ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color16by24">16</span></td>
+<td><span class="color16by24">ρ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color22by24">22</span></td>
+<td><span class="color22by24">ψ</span></td>
+</tr>
+<tr>
+<td><span class="color5by24">5</span></td>
+<td><span class="color5by24">ζ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color11by24">11</span></td>
+<td><span class="color11by24">μ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color17by24">17</span></td>
+<td><span class="color17by24">σ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color23by24">23</span></td>
+<td><span class="color23by24">ω</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<div class="d-none d-md-block d-lg-none">
+
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a></th>
+<th></th>
+<th></th>
+<th></th>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="color0">0</span></td>
+<td><span class="color0">α</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color12by24">12</span></td>
+<td><span class="color12by24">ν</span></td>
+</tr>
+<tr>
+<td><span class="color1by24">1</span></td>
+<td><span class="color1by24">β</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color13by24">13</span></td>
+<td><span class="color13by24">ξ</span></td>
+</tr>
+<tr>
+<td><span class="color2by24">2</span></td>
+<td><span class="color2by24">γ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color14by24">14</span></td>
+<td><span class="color14by24">ο</span></td>
+</tr>
+<tr>
+<td><span class="color3by24">3</span></td>
+<td><span class="color3by24">δ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color15by24">15</span></td>
+<td><span class="color15by24">π</span></td>
+</tr>
+<tr>
+<td><span class="color4by24">4</span></td>
+<td><span class="color4by24">ε</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color16by24">16</span></td>
+<td><span class="color16by24">ρ</span></td>
+</tr>
+<tr>
+<td><span class="color5by24">5</span></td>
+<td><span class="color5by24">ζ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color17by24">17</span></td>
+<td><span class="color17by24">σ</span></td>
+</tr>
+<tr>
+<td><span class="color6by24">6</span></td>
+<td><span class="color6by24">η</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color18by24">18</span></td>
+<td><span class="color18by24">τ</span></td>
+</tr>
+<tr>
+<td><span class="color7by24">7</span></td>
+<td><span class="color7by24">θ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color19by24">19</span></td>
+<td><span class="color19by24">υ</span></td>
+</tr>
+<tr>
+<td><span class="color8by24">8</span></td>
+<td><span class="color8by24">ι</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color20by24">20</span></td>
+<td><span class="color20by24">φ</span></td>
+</tr>
+<tr>
+<td><span class="color9by24">9</span></td>
+<td><span class="color9by24">κ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color21by24">21</span></td>
+<td><span class="color21by24">χ</span></td>
+</tr>
+<tr>
+<td><span class="color10by24">10</span></td>
+<td><span class="color10by24">λ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color22by24">22</span></td>
+<td><span class="color22by24">ψ</span></td>
+</tr>
+<tr>
+<td><span class="color11by24">11</span></td>
+<td><span class="color11by24">μ</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color23by24">23</span></td>
+<td><span class="color23by24">ω</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<div class="d-md-none">
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="color0">0</span></td>
+<td><span class="color0">α</span></td>
+</tr>
+<tr>
+<td><span class="color1by24">1</span></td>
+<td><span class="color1by24">β</span></td>
+</tr>
+<tr>
+<td><span class="color2by24">2</span></td>
+<td><span class="color2by24">γ</span></td>
+</tr>
+<tr>
+<td><span class="color3by24">3</span></td>
+<td><span class="color3by24">δ</span></td>
+</tr>
+<tr>
+<td><span class="color4by24">4</span></td>
+<td><span class="color4by24">ε</span></td>
+</tr>
+<tr>
+<td><span class="color5by24">5</span></td>
+<td><span class="color5by24">ζ</span></td>
+</tr>
+<tr>
+<td><span class="color6by24">6</span></td>
+<td><span class="color6by24">η</span></td>
+</tr>
+<tr>
+<td><span class="color7by24">7</span></td>
+<td><span class="color7by24">θ</span></td>
+</tr>
+<tr>
+<td><span class="color8by24">8</span></td>
+<td><span class="color8by24">ι</span></td>
+</tr>
+<tr>
+<td><span class="color9by24">9</span></td>
+<td><span class="color9by24">κ</span></td>
+</tr>
+<tr>
+<td><span class="color10by24">10</span></td>
+<td><span class="color10by24">λ</span></td>
+</tr>
+<tr>
+<td><span class="color11by24">11</span></td>
+<td><span class="color11by24">μ</span></td>
+</tr>
+<tr>
+<td><span class="color12by24">12</span></td>
+<td><span class="color12by24">ν</span></td>
+</tr>
+<tr>
+<td><span class="color13by24">13</span></td>
+<td><span class="color13by24">ξ</span></td>
+</tr>
+<tr>
+<td><span class="color14by24">14</span></td>
+<td><span class="color14by24">ο</span></td>
+</tr>
+<tr>
+<td><span class="color15by24">15</span></td>
+<td><span class="color15by24">π</span></td>
+</tr>
+<tr>
+<td><span class="color16by24">16</span></td>
+<td><span class="color16by24">ρ</span></td>
+</tr>
+<tr>
+<td><span class="color17by24">17</span></td>
+<td><span class="color17by24">σ</span></td>
+</tr>
+<tr>
+<td><span class="color18by24">18</span></td>
+<td><span class="color18by24">τ</span></td>
+</tr>
+<tr>
+<td><span class="color19by24">19</span></td>
+<td><span class="color19by24">υ</span></td>
+</tr>
+<tr>
+<td><span class="color20by24">20</span></td>
+<td><span class="color20by24">φ</span></td>
+</tr>
+<tr>
+<td><span class="color21by24">21</span></td>
+<td><span class="color21by24">χ</span></td>
+</tr>
+<tr>
+<td><span class="color22by24">22</span></td>
+<td><span class="color22by24">ψ</span></td>
+</tr>
+<tr>
+<td><span class="color23by24">23</span></td>
+<td><span class="color23by24">ω</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+Any whole number of <a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> seconds can be
+written as an integer number of
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a> followed by one
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> digit that counts the remaining
+<a href="#sid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second interval differences">sid</a>. Each
+<a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> second adds 1
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec second">s</a> and 1
+<a href="#sid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second interval difference">sid</a>, and every 24
+<a href="#sid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second interval differences">sid</a> carry over into 1
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec second">s</a>, so the
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> digit is always the remainder after
+dividing the number of
+<a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> seconds by 24. For
+example, 23 <a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> seconds are
+23<span class="color23by24 tool" data-bs-toggle="tooltip"
+data-bs-title="base24 ω is base10 23">ω</span>
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a>, but 24
+<a href="#si" class="tool" data-bs-toggle="tooltip"
+data-bs-title="International System of Units">SI</a> seconds are
+25<span class="color0 tool" data-bs-toggle="tooltip"
+data-bs-title="base24 α is base10 0">α</span>
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a>. The ${leapCountHsl1} leap seconds
+inserted before the Dec date selected above are ${leapDecsHsl1}
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a>. In this way,
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a> and
+<a href="#sid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second interval differences">sid</a> can represent any
+number of leap seconds without fractions or [repeating
+decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever).
+
+# Base9
+
+Dec seconds can also be appended to a
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a>. A <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="a thousandth of a day">milliday</span> is 90
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a> long, so the three digits of a
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> can be followed by a base9
+(<a href="#b9" id="base9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a>) digit that counts tens of
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a>, a
+<a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a> digit that counts the remaining
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a>, and, if needed, a
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> digit that counts the remaining
+<a href="#sid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second interval differences">sid</a>. To set them apart
+from <a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a> digits, Dec writes
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> digits with the [astronomical
+symbols](https://en.wikipedia.org/wiki/Astronomical_symbol#:~:text=symbols%20used%20to%20represent%20astronomical%20objects)
+of the Sun (<span class="color0 tool" data-bs-toggle="tooltip"
+data-bs-title="base9 ☉ is base10 0">☉</span>) and the eight planets, so
+that every <a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> digit from 1 to 8 is the position of a
+planet in order of distance from the Sun: Mercury
+(<span class="color1by9 tool" data-bs-toggle="tooltip"
+data-bs-title="base9 ☿ is base10 1">☿</span>) is 1, Earth
+(<span class="color3by9 tool" data-bs-toggle="tooltip"
+data-bs-title="base9 ♁ is base10 3">♁</span>) is 3, and Neptune
+(<span class="color8by9 tool" data-bs-toggle="tooltip"
+data-bs-title="base9 ♆ is base10 8">♆</span>) is 8. The table below
+lists each <a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> digit alongside its
+<a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a> equivalent.
+
+<div class="d-none d-md-block">
+
+<table style="width:100%;">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a></th>
+<th></th>
+<th></th>
+<th></th>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a></th>
+<th></th>
+<th></th>
+<th></th>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="color0">0</span></td>
+<td><span class="color0">☉</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color3by9">3</span></td>
+<td><span class="color3by9">♁</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color6by9">6</span></td>
+<td><span class="color6by9">♄</span></td>
+</tr>
+<tr>
+<td><span class="color1by9">1</span></td>
+<td><span class="color1by9">☿</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color4by9">4</span></td>
+<td><span class="color4by9">♂</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color7by9">7</span></td>
+<td><span class="color7by9">♅</span></td>
+</tr>
+<tr>
+<td><span class="color2by9">2</span></td>
+<td><span class="color2by9">♀</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color5by9">5</span></td>
+<td><span class="color5by9">♃</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="color8by9">8</span></td>
+<td><span class="color8by9">♆</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<div class="d-md-none">
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th><a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a></th>
+<th><a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="color0">0</span></td>
+<td><span class="color0">☉</span></td>
+</tr>
+<tr>
+<td><span class="color1by9">1</span></td>
+<td><span class="color1by9">☿</span></td>
+</tr>
+<tr>
+<td><span class="color2by9">2</span></td>
+<td><span class="color2by9">♀</span></td>
+</tr>
+<tr>
+<td><span class="color3by9">3</span></td>
+<td><span class="color3by9">♁</span></td>
+</tr>
+<tr>
+<td><span class="color4by9">4</span></td>
+<td><span class="color4by9">♂</span></td>
+</tr>
+<tr>
+<td><span class="color5by9">5</span></td>
+<td><span class="color5by9">♃</span></td>
+</tr>
+<tr>
+<td><span class="color6by9">6</span></td>
+<td><span class="color6by9">♄</span></td>
+</tr>
+<tr>
+<td><span class="color7by9">7</span></td>
+<td><span class="color7by9">♅</span></td>
+</tr>
+<tr>
+<td><span class="color8by9">8</span></td>
+<td><span class="color8by9">♆</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+With <a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a> appended, every hour ends at the
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> digit, every other minute ends at the
+<a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a> digit, and the remaining minutes end with
+<span class="color12by24 tool" data-bs-toggle="tooltip"
+data-bs-title="base24 ν is base10 12">ν</span> as their
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> digit. Use the range🎚️inputs below to
+select an <a href="#hms" class="tool" data-bs-toggle="tooltip"
+data-bs-title="hour minute second">hms</a> triplet and see the
+corresponding Zone <span class="color0">0</span>
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a> with
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a> appended: ${hmsB9b24Hsl}.
 
 ``` {ojs}
 //| echo: false
@@ -1174,26 +1884,18 @@ viewof hmsinput = Inputs.form([
 ])
 ```
 
-``` {ojs}
-//| echo: false
-//| label: diginput
-//| class: slider
-viewof digits = Inputs.range([1, 9], {label: "Digits", value: 3, step: 1})
-```
-
 # Time zone offset
 
 In Dec, a <a href="#uto" class="tool" data-bs-toggle="tooltip"
 data-bs-title="universal time offset">uto</a> can be any type of number,
 a “time zone offset”
 (<a href="#tzo" id="timezoneoffset" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offset">tzo</a>) is an integer, a “solar time
-offset” (<a href="#sto" id="solartimeoffset" class="tool"
+data-bs-title="time zone offset">tzo</a>) is an integer, and a “solar
+time offset” (<a href="#sto" id="solartimeoffset" class="tool"
 data-bs-toggle="tooltip" data-bs-title="solar time offset">sto</a>) is a
-terminating decimal, and an
-<a href="#eof" class="tool" data-bs-toggle="tooltip"
-data-bs-title="exact offset fraction">eof</a> is a repeating decimal. If
-we derived <span class="tool" data-bs-toggle="tooltip"
+[terminating
+decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits).
+If we derived <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</span> offsets from all 86400
 of the <a href="#hms" class="tool" data-bs-toggle="tooltip"
 data-bs-title="hour minute second">hms</a> triplets that can be selected
@@ -1201,43 +1903,73 @@ by the range🎚️inputs above, we would have 10
 <a href="#tzo" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time zone offsets">tzo</a>, 3190
 <a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offsets">sto</a>, and 83200
-<a href="#eof" class="tool" data-bs-toggle="tooltip"
-data-bs-title="exact offset fractions">eof</a> or
-<a href="#rod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="rounded offset decimal">rod</a> and
-<a href="#ref" class="tool" data-bs-toggle="tooltip"
-data-bs-title="roundoff error fraction">ref</a> pairs.
+data-bs-title="solar time offsets">sto</a>, and 83200 [repeating
+decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever).
+With <a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a> appended, all 83200 have a finite
+number of digits: 3200 need only
+<a href="#b9" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base9">b9</a> and
+<a href="#b10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a> digits, and the other 80000 also need a
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> digit.
 
 ## Coordinated Universal Time (UTC)
 
 When we do the same to the
 [38](https://en.wikipedia.org/wiki/List_of_UTC_offsets)
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Coordinated Universal Time">UTC</a> offsets, we get only
-<a href="#eof" class="tool" data-bs-toggle="tooltip"
-data-bs-title="exact offset fractions">eof</a> or
-<a href="#rod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="rounded offset decimal">rod</a> and
-<a href="#ref" class="tool" data-bs-toggle="tooltip"
-data-bs-title="roundoff error fraction">ref</a> pairs unless the number
-of leaps seconds included is zero or a multiple of 27. If the leap
-second count is zero or a multiple of 8640, we will get 3
-<a href="#tzo" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a> offsets without leap
+seconds, we get 3 <a href="#tzo" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time zone offsets">tzo</a>, 9
 <a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offsets">sto</a>, and 26
-<a href="#eof" class="tool" data-bs-toggle="tooltip"
-data-bs-title="exact offset fractions">eof</a> or
-<a href="#rod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="rounded offset decimal">rod</a> and
-<a href="#ref" class="tool" data-bs-toggle="tooltip"
-data-bs-title="roundoff error fraction">ref</a> pairs. The 3
-<a href="#tzo" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offsets">tzo</a> will be
-<a href="#sto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="solar time offsets">sto</a> if the number of leap seconds
-is a multiple of 27 but not 8640.
+data-bs-title="solar time offsets">sto</a>, and 26 [repeating
+decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever).
+In <a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a>, however, 27 of the 38
+<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a> offsets are a single
+digit, because they are a whole number of hours and an hour is a
+twenty-fourth of a day:
+<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a>+0 is
+<span class="color0 tool" data-bs-toggle="tooltip"
+data-bs-title="base24 α is base10 0">α</span>,
+<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a>+8 is
+<span class="color8by24 tool" data-bs-toggle="tooltip"
+data-bs-title="base24 ι is base10 8">ι</span>, and
+<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a>+12 is
+<span class="color12by24 tool" data-bs-toggle="tooltip"
+data-bs-title="base24 ν is base10 12">ν</span>. Dec has no negative
+offsets, so 1 day is added to a negative
+<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a> offset before it is
+converted: <a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a>−5 becomes 19 hours,
+which is <span class="color19by24 tool" data-bs-toggle="tooltip"
+data-bs-title="base24 υ is base10 19">υ</span>. The other 11
+<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a> offsets end with a
+half hour or three quarters of an hour and need a second
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> digit that counts twenty-fourths of an
+hour: <span class="color12by24 tool" data-bs-toggle="tooltip"
+data-bs-title="12 twenty-fourths of an hour, 30 minutes">ν</span> for
+the 8 offsets that end with a half hour, such as <span class="tool"
+data-bs-toggle="tooltip"
+data-bs-title="5 hours and 30 minutes">ζν</span> for
+<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a>+5:30, and
+<span class="color18by24 tool" data-bs-toggle="tooltip"
+data-bs-title="18 twenty-fourths of an hour, 45 minutes">τ</span> for
+the 3 offsets that end with three quarters of an hour, such as
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="5 hours and 45 minutes">ζτ</span> for
+<a href="#utc" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Coordinated Universal Time">UTC</a>+5:45.
 
 There are 14 negative and 24 positive
 <a href="#utc" class="tool" data-bs-toggle="tooltip"
@@ -1589,15 +2321,15 @@ data-bs-title="equation of time">eot</a>).
 <div id="equationgroup08" class="equationgroup">
 
 <span id="eq-toy">
-toy = ada ÷ syl   (14)
+toy = ada ÷ syl   (19)
 </span>
 
 <span id="eq-mst">
-mst = (0.95 + tod + w) mod  1   (15)
+mst = (0.95 + tod + w) mod  1   (20)
 </span>
 
 <span id="eq-ast">
-ast = (0.95 + tod + w + eot(toy)) mod  1   (16)
+ast = (0.95 + tod + w + eot(toy)) mod  1   (21)
 </span>
 
 </div>
@@ -1632,7 +2364,7 @@ $$\begin{split}
 & + \beta_2 \times \text{costau(2} \times \text{toy)} \\
 & + \beta_3 \times \text{sintau(toy)} \\
 & + \beta_4 \times \text{sintau(2} \times \text{toy)}
-\end{split} \qquad(17)$$
+\end{split} \qquad(22)$$
 </span>
 
 </div>
@@ -1905,7 +2637,7 @@ days, and keeping only the decimal part of the result.
 <div id="equationgroup10" class="equationgroup">
 
 <span id="eq-solarnoon">
-solarnoon = (9.55 + tzo − w − eot(toy)) mod  1   (18)
+solarnoon = (9.55 + tzo − w − eot(toy)) mod  1   (23)
 </span>
 
 </div>
@@ -1931,11 +2663,11 @@ States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primar
 <div id="equationgroup11" class="equationgroup">
 
 <span id="eq-cambridgeuk">
-4.99635 = (9.55 − 0.050365) mod  1 × 10   (19)
+4.99635 = (9.55 − 0.050365) mod  1 × 10   (24)
 </span>
 
 <span id="eq-cambridgema">
-6.97516 = (9.55 − 0.852484) mod  1 × 10   (20)
+6.97516 = (9.55 − 0.852484) mod  1 × 10   (25)
 </span>
 
 </div>
@@ -1960,11 +2692,11 @@ data-bs-title="tenths of a day">decidays</span> earlier.
 <div id="equationgroup12" class="equationgroup">
 
 <span id="eq-cambridgeuk8">
-2.99635 = (9.55 + 0.8 − 0.050365) mod  1 × 10   (21)
+2.99635 = (9.55 + 0.8 − 0.050365) mod  1 × 10   (26)
 </span>
 
 <span id="eq-cambridgema8">
-4.97516 = (9.55 + 0.8 − 0.852484) mod  1 × 10   (22)
+4.97516 = (9.55 + 0.8 − 0.852484) mod  1 × 10   (27)
 </span>
 
 </div>
@@ -2000,7 +2732,7 @@ data-bs-title="time of day">tod</a>.
 $$\begin{split}
 \text{sunset} & = \text{solarnoon} + \frac{\text{da}}{2} && = \text{sunrise} + \text{da} \\
 \text{sunrise} & = \text{solarnoon} - \frac{\text{da}}{2} && = \text{sunset} - \text{da}
-\end{split} \qquad(23)$$
+\end{split} \qquad(28)$$
 </span>
 
 </div>
@@ -2029,7 +2761,7 @@ midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%2
 <div id="equationgroup14" class="equationgroup">
 
 <span id="eq-solarmidnight">
-$$\text{solarmidnight} = \text{solarnoon} + \frac{\text{da}}{2} + \frac{\text{na}}{2} = \text{sunset} + \frac{\text{na}}{2} \qquad(24)$$
+$$\text{solarmidnight} = \text{solarnoon} + \frac{\text{da}}{2} + \frac{\text{na}}{2} = \text{sunset} + \frac{\text{na}}{2} \qquad(29)$$
 </span>
 
 </div>
@@ -2190,7 +2922,7 @@ subtracting our measurement from one and a half turns:
 <div id="equationgroup15" class="equationgroup">
 
 <span id="eq-solartime">
-$$\text{solartime} \approx \begin{cases}\text{saa}&{\text{if m} \geq 0;}\\(1.5 - \text{saa}) \bmod 1&{\text{otherwise.}}\end{cases} \qquad(25)$$
+$$\text{solartime} \approx \begin{cases}\text{saa}&{\text{if m} \geq 0;}\\(1.5 - \text{saa}) \bmod 1&{\text{otherwise.}}\end{cases} \qquad(30)$$
 </span>
 
 </div>
@@ -2250,11 +2982,11 @@ data-bs-title="time of day">tod</a>.
 <div id="equationgroup16" class="equationgroup">
 
 <span id="eq-da">
-$$\text{da} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\pi} \qquad(26)$$
+$$\text{da} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\pi} \qquad(31)$$
 </span>
 
 <span id="eq-halfda">
-$$\frac{\text{da}}{2} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\tau} \qquad(27)$$
+$$\frac{\text{da}}{2} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\tau} \qquad(32)$$
 </span>
 
 </div>
@@ -2295,7 +3027,7 @@ $$\begin{split}
 & + \beta_4 \times \text{sintau(2} \times \text{toy)} \\
 & + \beta_5 \times \text{costau(3} \times \text{toy)} \\
 & + \beta_6 \times \text{sintau(3} \times \text{toy)} \\
-\end{split} \qquad(28)$$
+\end{split} \qquad(33)$$
 </span>
 
 </div>
@@ -2383,7 +3115,7 @@ an event like a rocket🚀launch.
 <div id="equationgroup18" class="equationgroup">
 
 <span id="eq-difference">
-$$\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \qquad(29)$$
+$$\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \qquad(34)$$
 </span>
 
 </div>
@@ -2430,19 +3162,19 @@ date as a single number and obtain the difference between two dates.
 <div id="equationgroup19" class="equationgroup">
 
 <span id="eq-cda">
-cda = de − coe × 146097   (30)
+cda = de − coe × 146097   (35)
 </span>
 
 <span id="eq-yocdoc">
-$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(31)$$
+$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(36)$$
 </span>
 
 <span id="eq-yoe">
-yoe = yoc + coe × 400   (32)
+yoe = yoc + coe × 400   (37)
 </span>
 
 <span id="eq-doydoc">
-$$\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \biggr \rfloor \qquad(33)$$
+$$\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \biggr \rfloor \qquad(38)$$
 </span>
 
 </div>
@@ -2480,23 +3212,23 @@ its , we can obtain a
 <div id="equationgroup20" class="equationgroup">
 
 <span id="eq-eya">
-eya = yoe + toy = yoe + doy ÷ syl   (34)
+eya = yoe + toy = yoe + doy ÷ syl   (39)
 </span>
 
 <span id="eq-toyeya">
-toy = eya mod  1 = doy ÷ syl   (35)
+toy = eya mod  1 = doy ÷ syl   (40)
 </span>
 
 <span id="eq-doytoy">
-doy = ⌊toy × syl⌋   (36)
+doy = ⌊toy × syl⌋   (41)
 </span>
 
 <span id="eq-eyadoy">
-eya = yoe + doy × syl   (37)
+eya = yoe + doy × syl   (42)
 </span>
 
 <span id="eq-eyacoe">
-eya = yoe + coe × 400   (38)
+eya = yoe + coe × 400   (43)
 </span>
 
 </div>
@@ -2537,27 +3269,27 @@ data-bs-title="annual day aggregate">ada</a>.
 <div id="equationgroup21" class="equationgroup">
 
 <span id="eq-edd">
-edd = eda − difference   (39)
+edd = eda − difference   (44)
 </span>
 
 <span id="eq-coe">
-$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \qquad(40)$$
+$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \qquad(45)$$
 </span>
 
 <span id="eq-doc">
-doc = edd − coe × 146097   (41)
+doc = edd − coe × 146097   (46)
 </span>
 
 <span id="eq-yocedd">
-$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(42)$$
+$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(47)$$
 </span>
 
 <span id="eq-year">
-year = yoc + coe × 400   (43)
+year = yoc + coe × 400   (48)
 </span>
 
 <span id="eq-adadoc">
-$$\text{ada} = \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \qquad(44)$$
+$$\text{ada} = \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \qquad(49)$$
 </span>
 
 </div>
@@ -2951,7 +3683,7 @@ references:
   title: Dec time
   url: https://maptv.github.io/dec/time
   issued:
-    literal: 2026+222
+    literal: 2026+225
 ```
 
 </div>
@@ -2992,7 +3724,7 @@ yaml format.
   author = "Martin Laptev",
   title = "Dec time",
   url = "https://maptv.github.io?meta:path",
-  year = 2026+222
+  year = 2026+225
 }
 ```
 
@@ -3043,6 +3775,14 @@ additional files or configuration. A Quarto output file can have both a
   day
 - <a href="#bodymassindex" id="bmi">bmi</a>: body mass index, kilograins
   of body mass divided by height in zem squared (kg/z²)
+- <a href="#base9" id="b9">b9</a>: base9, nonary, 9 digits written as
+  the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃
+  ♄ ♅ ♆; the first digit after a tod with Dec seconds appended counts
+  tens of Dec seconds
+- <a href="#base10" id="b10">b10</a>: base10, decimal, the digits 0 to 9
+- <a href="#base24" id="b24">b24</a>: base24, 24 digits written as the
+  lowercase Greek letters α to ω; counts sid after a number of Dec
+  seconds or hours after a UTC offset
 - <a href="#taur" id="c">c</a>: taur, 𝜏*r*, 100000 kilozem, 40000
   kilometers, nearly the circumference of the Earth, roughly the product
   of 𝜏 and the radius of the Earth, approximately the dividend of the
@@ -3245,8 +3985,11 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#radian" id="rad">rad</a>: radian, $1\over\tau$ turns,
   $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
 - <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
-- <a href="#second" id="s">s</a>: second, 1/90 millidays, 0.9 beats, 1
+- <a href="#second" id="s">s</a>: second, 1/90 millidays, 10/9 beats, 1
   Dec second = 0.96 SI seconds
+  - <a href="#secondintervaldifference" id="sid">sid</a>: second
+    interval difference, 1 SI second - 1 Dec second, 1/24 Dec second,
+    1/25 SI second, 40 milliseconds
 - <a href="#spinorbitinterval" id="soi">soi</a>: spin orbit interval, a
   lunar day, 1.03505 days
   - <a href="#soiofyear" id="soy">soy</a>: soi of year
@@ -3311,13 +4054,6 @@ additional files or configuration. A Quarto output file can have both a
   Time; a tzo is an integer uto
   - <a href="#solartimeoffset" id="sto">sto</a>: solar time offset, a
     uto that is a terminating decimal
-  - <a href="#exactoffsetfraction" id="eof">eof</a>: exact offset
-    fraction, an irreducible fraction that expresses a repeating decimal
-    uto exactly
-  - <a href="#roundedoffsetdecimal" id="rod">rod</a>: rounded offset
-    decimal, a repeating decimal uto rounded to a few digits
-  - <a href="#roundofferrorfraction" id="ref">ref</a>: roundoff error
-    fraction, uto - rod
 - <a href="#coordinateduniversaltime" id="utc">utc</a>: [Coordinated
   Universal
   Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
@@ -3450,6 +4186,29 @@ function dote2date(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
+function unix2b9b24(unix) {
+  const tick = Math.floor(
+    ((unix ?? Date.now()) % 86400000 + 86400000) % 86400000 / 40),
+  sid = tick % 24,
+  sec = Math.floor(tick / 24) % 10,
+  dec = Math.floor(tick / 240) % 9,
+  tod = Math.floor(tick / 2160).toString().padStart(3, "0");
+  return dec || sec || sid
+    ? tod + "☉☿♀♁♂♃♄♅♆"[dec] + (sec || sid
+      ? sec + (sid ? "αβγδεζηθικλμνξοπρστυφχψω"[sid] : "")
+      : "")
+    : tod.replace(/(?<=.)0+$/, "")
+}
+function b9b24pad(b9b24) {
+  const [, tod, dec = "☉", sec = "0", sid = "α"] = b9b24.match(
+    /^(\d{1,3})([☉☿♀♁♂♃♄♅♆])?\s*(\d)?([α-ω])?$/u);
+  return tod.padEnd(3, "0") + dec + sec + sid
+}
+function si2s(si) {
+  const sid = Math.round(Math.abs(si) * 25);
+  return (si < 0 ? "-" : "") + Math.floor(sid / 24)
+    + "αβγδεζηθικλμνξοπρστυφχψω"[sid % 24]
+}
 function getEot(day) {
   const gamma = 2 * Math.PI * day / 365
     return (
@@ -4646,17 +5405,11 @@ leapFrac = frac(leapCount).div(8640).toFraction()
 leapTzoHsl0 = textcolor(leapFrac, leapColor)
 leapTzoHsl1 = textcolor(leapFrac, leapColor)
 leapTzoHsl2 = textcolor(leapFrac, leapColor)
-hmsTzo = frac(hmsinput[0]).div(24).add(hmsinput[1], 1440).add(hmsinput[2], 86400).mod(1)
-hmsTzox10 = hmsTzo.mul(10)
-pluralx10 = hmsTzox10.equals(1) ? "" : "s"
-hmsRounded = hmsTzox10.round(digits - 1)
-hmsRef = hmsRounded.sub(hmsTzox10)
-hmsRefHsl = textcolor(hmsRef.abs().toFraction(), d3.color(piecewiseColor(Number(hmsRef.div(10)))).formatHex())
-hmsRefSign = hmsRef.lt(0) ? "-" : "+"
-hmsTzoHsl = textcolor(hmsTzox10.toFraction(), d3.color(piecewiseColor(Number(hmsTzo))).formatHex())
-hmsRodHsl = textcolor(hmsRounded, d3.color(piecewiseColor(Number(hmsRounded.div(10)))).formatHex())
-hmsTod = (zeroTime + hmsTzo) % 1
-hmsTodHsl = textcolor((hmsTod * 10).toFixed(4), d3.color(piecewiseColor(hmsTod)).formatHex())
+leapDecsHsl = textcolor(si2s(leapCount), leapColor)
+leapDecsHsl1 = textcolor(si2s(leapCount), leapColor)
+leapCountHsl1 = textcolor(leapCount, leapColor)
+hmsMs = ((hmsinput[0] * 60 + hmsinput[1]) * 60 + hmsinput[2]) * 1000
+hmsB9b24Hsl = textcolor(b9b24pad(unix2b9b24(hmsMs)), d3.color(piecewiseColor(hmsMs / 86400000)).formatHex())
 leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
 leapTodHsl0 = textcolor(leapDecidayTod, d3.color(piecewiseColor(leapTod)).formatHex())
@@ -5985,6 +6738,14 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
+${d3.range(1, 24).map(i => `.color${i}by24`).concat(d3.range(1, 9).map(i => `.color${i}by9`)).map(c => {
+  const [i, base] = c.slice(6).split("by").map(Number), hex = d3.color(piecewiseColor(i / base)).formatHex();
+  return `${c} {
+  background: ${hex};
+  color: ${yiq(hex) > 0.51 ? "black" : "white"};
+  padding: 0px .5px;
+  border-radius: 4px;
+}`}).join("\n")}
 .color1by320 {
   background: hsl(${h1by320} 100% 50%);
   color: ${yiq(`hsl(${h1by320}, 100%, 50%)`) > 0.51 ? "black" : "white"};
