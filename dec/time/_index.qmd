@@ -46,18 +46,20 @@ astro = ({
   7: "♅", // Uranus
   8: "♆"  // Neptune
 });
-function unix2b9b24(unix) {
-  const tick = Math.floor(
-    ((unix ?? Date.now()) % 86400000 + 86400000) % 86400000 / 40),
-  sid = tick % 24,
+function tick2b9b24(tick) {
+  // tick counts sids (1/24 Dec s, 1/25 SI s) since midnight; returns
+  // [tod, b9 + sec, sid] trimmed like the fractional part of a decimal
+  const sid = tick % 24,
   sec = Math.floor(tick / 24) % 10,
   dec = Math.floor(tick / 240) % 9,
   tod = Math.floor(tick / 2160).toString().padStart(3, "0");
   return dec || sec || sid
-    ? tod + "☉☿♀♁♂♃♄♅♆"[dec] + (sec || sid
-      ? sec + (sid ? "αβγδεζηθικλμνξοπρστυφχψω"[sid] : "")
-      : "")
-    : tod.replace(/(?<=.)0+$/, "")
+    ? [tod, astro[dec] + (sec || sid ? sec : ""), sid ? sid2b24(sid) : ""]
+    : [tod.replace(/(?<=.)0+$/, ""), "", ""]
+}
+function unix2b9b24(unix) {
+  return tick2b9b24(Math.floor(
+    ((unix ?? Date.now()) % 86400000 + 86400000) % 86400000 / 40)).join("")
 }
 function b9b24pad(b9b24) {
   const [, tod, dec = "☉", sec = "0", sid = "α"] = b9b24.match(
@@ -1298,11 +1300,11 @@ leapSdecHsl3 = textcolor(leapSdec, leapSdecCol)
 leapSsidHsl = textcolor(leapSsid % 24, leapSb24col)
 b24hod = sid2b24(hmsinput[0])
 b24hodHsl = textcolor(sid2b24(hmsinput[0]), ({background: piecewiseColor(hmsinput[0] / 24), fontFamily: monofonts}))
-hmsDay = hmsinput[0] / 24 + hmsinput[1] / 1440 + hmsinput[2] / 86400
-hmsMil = hmsDay * 1000
-hmsTodHsl = textcolor(Math.floor(hmsMil), piecewiseColor(hmsMil / 1000))
-hmsSec = hmsMil % 1 * 90
-hmsSecHsl = textcolor(dec2b9(Math.floor(hmsSec)), ({background: piecewiseColor(hmsSec / 90), fontFamily: monofonts}))
+hmsTick = ((hmsinput[0] * 60 + hmsinput[1]) * 60 + hmsinput[2]) * 25
+hmsB9b24 = tick2b9b24(hmsTick)
+hmsTodHsl = textcolor(hmsB9b24[0], piecewiseColor(hmsTick / 2160000))
+hmsSecHsl = hmsB9b24[1] && textcolor(hmsB9b24[1], ({background: piecewiseColor(hmsTick % 2160 / 2160), fontFamily: monofonts}))
+hmsSidHsl = hmsB9b24[2] && textcolor(hmsB9b24[2], ({background: piecewiseColor(hmsTick % 24 / 24), fontFamily: monofonts}))
 leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
 leapTodHsl0 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
