@@ -50,7 +50,7 @@ function b9b24pad(b9b24) {
   return tod.padEnd(3, "0") + dec + sec + sid
 }
 function sis2arr(sis) {
-  const sid = Math.round(Math.abs(sis) * 25);
+  const sid = Math.floor(Math.abs(sis) * 25 + 1e-9);
   return [
     Math.floor(sid / 24) * (sis < 0 ? -1 : 1),
     sid
