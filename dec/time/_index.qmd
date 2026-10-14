@@ -785,7 +785,7 @@ function input(config) {
       }" />`
     );
   form.append(
-    html`<output name=output style="font: 14px Menlo, Consolas, monospace; margin-left: 0.1em; text-align:center;"></output>`
+    html`<output name=output style="font: 14px Menlo, Monaco, Consolas, monospace; margin-left: 0.1em; text-align:center;"></output>`
   );
   if (title)
     form.prepend(
@@ -1286,7 +1286,8 @@ leapSsid = leapSarr[1]
 leapSb24 = sid2b24(leapSsid)
 leapSb24col = piecewiseColor(leapSsid % 24 / 24)
 leapSdecCol = piecewiseColor(leapSdec % 90000 / 90000)
-leapSb24css = ({background: leapSb24col, fontFamily: "monospace"})
+monofonts = "Menlo, Monaco, Consolas, monospace"
+leapSb24css = ({background: leapSb24col, fontFamily: monofonts})
 leapSb24hsl = textcolor(leapSb24, leapSb24css)
 leapSb24hsl1 = textcolor(leapSb24, leapSb24css)
 leapSb24hsl2 = textcolor(leapSb24, leapSb24css)
@@ -1296,12 +1297,12 @@ leapSdecHsl2 = textcolor(leapSdec, leapSdecCol)
 leapSdecHsl3 = textcolor(leapSdec, leapSdecCol)
 leapSsidHsl = textcolor(leapSsid % 24, leapSb24col)
 b24hod = sid2b24(hmsinput[0])
-b24hodHsl = textcolor(hmsinput[0], ({background: piecewiseColor(hmsinput[0] / 24), fontFamily: "monospace"}))
+b24hodHsl = textcolor(sid2b24(hmsinput[0]), ({background: piecewiseColor(hmsinput[0] / 24), fontFamily: monofonts}))
 hmsDay = hmsinput[0] / 24 + hmsinput[1] / 1440 + hmsinput[2] / 86400
 hmsMil = hmsDay * 1000
 hmsTodHsl = textcolor(Math.floor(hmsMil), piecewiseColor(hmsMil / 1000))
 hmsSec = hmsMil % 1 * 90
-hmsSecHsl = textcolor(dec2b9(Math.floor(hmsSec)), piecewiseColor(hmsSec / 90))
+hmsSecHsl = textcolor(dec2b9(Math.floor(hmsSec)), ({background: piecewiseColor(hmsSec / 90), fontFamily: monofonts}))
 leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
 leapTodHsl0 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
