@@ -525,7 +525,7 @@ hms$sec / 86400
 
     [1] 0.1907862
 
-The equations below convert UNIX time or a Zone 0 [tod](#tod) into the three components of an [hms](#hms) triplet: the “hour of day” ([hod](#hod)), “minute of hour” ([moh](#moh)), and “second of minute” ([som](#som)), using a “daily second aggregate” ([dsa](#dsa)) and “hourly second aggregate” ([hsa](#hsa)). While both count seconds, [dsa](#dsa) start at midnight and [hsa](#hsa) begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
+Equations [7](#eq-dsa) to [11](#eq-som) below convert UNIX time or a Zone 0 [tod](#tod) into the three components of an [hms](#hms) triplet: the “hour of day” ([hod](#hod)), “minute of hour” ([moh](#moh)), and “second of minute” ([som](#som)), using a “daily second aggregate” ([dsa](#dsa)) and “hourly second aggregate” ([hsa](#hsa)). While both count seconds, [dsa](#dsa) start at midnight ([Tod](#tod) 0) and [hsa](#hsa) begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
 \\\begin{split} \text{dsa} & = \text{tod} \ast 86400 \\ & = \text{unix} \bmod 86400 \end{split} \tag{7}\\ \\ \text{hsa} = \text{dsa} \bmod 3600 \tag{8}\\ \\ \text{hod} = \lfloor \text{dsa} \div 3600 \rfloor \tag{9}\\ \\ \text{moh} = \lfloor \text{hsa} \div 60 \rfloor \tag{10}\\ \\ \text{som} = \lfloor \text{hsa} \bmod 60 \rfloor \tag{11}\\
 
@@ -581,7 +581,7 @@ sapply(c(dsa %/% 3600, hsa %/% 60, hsa %% 60), as.integer)
 
 #### 4 Universal time offset
 
-The [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System#:~:text=a%20satellite%2Dbased%20hyperbolic%20navigation%20system), [BeiDou](https://en.wikipedia.org/wiki/BeiDou#:~:text=a%20satellite%2Dbased%20radio%20navigation%20system), and [Galileo](https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)#:~:text=a%20global%20navigation%20satellite%20system%20(GNSS)%20created%20by%20the%20European%20Union) [global navigation satellite systems](https://en.wikipedia.org/wiki/Satellite_navigation#:~:text=a%20satellite%20navigation%20system%20with%20global%20coverage) along with most — if not all — [programming languages](https://en.wikipedia.org/wiki/Programming_language#:~:text=a%20system%20of%20notation%20for%20writing%20source%20code%20such%20as%20used%20to%20produce%20a%20computer%20program) do not account for [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment), which appears to be for the best given that leap seconds will be [abolished by 2035](https://en.wikipedia.org/wiki/Leap_second#:~:text=at%20the%2027th%20General%20Conference%20on%20Weights%20and%20Measures%2C%20it%20was%20decided%20to%20abandon%20the%20leap%20second%20by%20or%20before%202035). The goal of leap seconds is to keep [UTC](#utc) within [25/24](https://en.wikipedia.org/wiki/Leap_second#:~:text=to%20ensure%20that%20the%20difference%20between%20the%20UTC%20and%20UT1%20readings%20will%20never%20exceed%200.9%20seconds) centimillidays ([cmd](#cmd)) of [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT](#ut)).
+The [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System#:~:text=a%20satellite%2Dbased%20hyperbolic%20navigation%20system), [BeiDou](https://en.wikipedia.org/wiki/BeiDou#:~:text=a%20satellite%2Dbased%20radio%20navigation%20system), and [Galileo](https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)#:~:text=a%20global%20navigation%20satellite%20system%20(GNSS)%20created%20by%20the%20European%20Union) [global navigation satellite systems](https://en.wikipedia.org/wiki/Satellite_navigation#:~:text=a%20satellite%20navigation%20system%20with%20global%20coverage) along with most — if not all — [programming languages](https://en.wikipedia.org/wiki/Programming_language#:~:text=a%20system%20of%20notation%20for%20writing%20source%20code%20such%20as%20used%20to%20produce%20a%20computer%20program) do not account for [leap seconds](https://en.wikipedia.org/wiki/Leap_second#:~:text=one%2Dsecond%20adjustment), which appears to be for the best given that leap seconds [can cause problems](https://www.nist.gov/pml/time-and-frequency-division/leap-seconds-faqs#:~:text=detriments%20to%20adding%20leap%20seconds) and will be [abolished by 2035](https://en.wikipedia.org/wiki/Leap_second#:~:text=at%20the%2027th%20General%20Conference%20on%20Weights%20and%20Measures%2C%20it%20was%20decided%20to%20abandon%20the%20leap%20second%20by%20or%20before%202035). The goal of leap seconds is to keep [UTC](#utc) within [1 Dec second](https://en.wikipedia.org/wiki/Leap_second#:~:text=to%20ensure%20that%20the%20difference%20between%20the%20UTC%20and%20UT1%20readings%20will%20never%20exceed%200.9%20seconds) ([s](#s)) of [Universal Time](https://en.wikipedia.org/wiki/Universal_Time#Versions:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) ([UT](#ut)).
 
 Instead of leap seconds, Dec matches [UT](#ut) using a “[universal time](https://en.wikipedia.org/wiki/Universal_Time#:~:text=a%20time%20standard%20based%20on%20Earth%27s%20rotation) [offset](https://en.wikipedia.org/wiki/UTC_offset#:~:text=the%20difference%20in%20hours%20and%20minutes%20between%20Coordinated%20Universal%20Time%20(UTC)%20and%20the%20standard%20time%20at%20a%20particular%20place)” ([uto](#uto)). With the [leap second insertion dates](https://en.wikipedia.org/wiki/Leap_second#:~:text=Announced%20leap%20seconds%20to%20date) provided by the [International Earth Rotation and Reference Systems Service](https://en.wikipedia.org/wiki/International_Earth_Rotation_and_Reference_Systems_Service#:~:text=the%20body%20responsible%20for%20maintaining%20global%20time%20and%20reference%20frame%20standards), we can approximate the [uto](#uto) that yields [UT](#ut) when added to the Zone 0 [tod](#tod) on the [Dec date](../../dec/date) chosen by the [range](https://observablehq.com/framework/inputs/range)🎚️inputs below: ÷ 8640 = ÷ 90000 = .
 
@@ -594,9 +594,9 @@ viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 
 
 Dec measures [uto](#uto) in decidays ([dd](#dd)). The equation above divides leap seconds by the number of [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si)) seconds ([sis](#sis)) or Dec deciseconds ([ds](#ds)) in a [dd](#dd): 8640 [sis](#sis) = 90000 [ds](#ds) = 1 [dd](#dd). To avoid [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever), we can replace the ones digit and decimal part of a [sis](#sis)-derived [ds](#ds) with a Dec [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D) (base24) digit: = × 10 + ÷ 2.4.
 
-Known as a “second interval difference” ([sid](#sid)), the base24 ([b24](#b24)) character at the end of is a letter of the [Greek alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language). To display [sis](#sis) in [ds](#ds), we can concatenate the integer part of the Dec seconds ([s](#s)) we obtain from [Equation 12](#eq-sis) with the [b24](#b24) representation of the [sid](#sid) we get from [Equation 13](#eq-sid). The table beneath these equations lists [base10](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([b10](#b10)) and [b24](#b24) equivalents.
+Known as a “second interval difference” ([sid](#sid)), the base24 ([b24](#b24)) character at the end of is a letter of the [Greek alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language). To display [sis](#sis) in [ds](#ds), we can concatenate the integer part of the [s](#s) we obtain from [Equation 12](#eq-sis) with the [b24](#b24) representation of the [sid](#sid) we get from [Equation 13](#eq-sid). The table beneath these equations lists [base10](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([b10](#b10)) and [b24](#b24) equivalents.
 
-\\ \text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96} \tag{12}\\ \\ \text{sid} = (\text{s} - \text{sis}) \times 24 \bmod 24 = \text{sis} \bmod 24 \tag{13}\\
+\\ \text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96} \tag{12}\\ \\ \begin{split} \text{sid} &= \text{sis} \bmod 24\\ &= (\text{s} - \text{sis}) \ast 24 \bmod 24 \end{split} \tag{13}\\
 
 ##### Base24
 
@@ -655,7 +655,7 @@ Table 1
 
 ##### Base9
 
-In addition to appending a [sid](#sid) to [s](#s) using [b24](#b24), we can append [s](#s) with or without a [sid](#sid) to a [tod](#tod) using Dec [nonary](https://en.wikipedia.org/wiki/Ternary_numeral_system#Compact_ternary_representation:_base_9_and_27:~:text=base%209%2C%20each%20digit%20is%20two%20ternary%20digits) (base9). A milliday is 90 [s](#s) long, so the three digits of a [tod](#tod) can be followed by a base9 ([b9](#b9)) digit that counts tens of [s](#s), a [b10](#b10) digit that counts the remaining [s](#s), and, if needed, a [b24](#b24) digit that tracks the [sid](#sid). To set them apart from [b10](#b10) digits, Dec writes [b9](#b9) digits with the [astronomical symbols](https://en.wikipedia.org/wiki/Astronomical_symbol#:~:text=symbols%20used%20to%20represent%20astronomical%20objects) listed in the table below.
+Whereas [b24](#b24) is like glue that allows us to combine [s](#s) and [sid](#sid), Dec [nonary](https://en.wikipedia.org/wiki/Ternary_numeral_system#Compact_ternary_representation:_base_9_and_27:~:text=base%209%2C%20each%20digit%20is%20two%20ternary%20digits) (base9) enables us to append [s](#s) to a [tod](#tod). The table below shows the [astronomical symbols](https://en.wikipedia.org/wiki/Astronomical_symbol#:~:text=symbols%20used%20to%20represent%20astronomical%20objects) used by Dec for base9 ([b9](#b9)). When we replace the “decimilliday” ([dmd](#dmd)) digit in a [b10](#b10) [tod](#tod) with a [b9](#b9) digit, the [b9](#b9) digit counts tens of [s](#s) instead of [dmd](#dmd) and the next digit tracks [s](#s) instead of [cmd](#cmd): 0.9 [s](#s) = 1 [cmd](#cmd).
 
 | [b10](#b10) | [b9](#b9) |  |  |  | [b10](#b10) | [b9](#b9) |  |  |  | [b10](#b10) | [b9](#b9) |
 |----|----|----|----|----|----|----|----|----|----|----|----|
@@ -677,7 +677,7 @@ In addition to appending a [sid](#sid) to [s](#s) using [b24](#b24), we can appe
 
 Table 2
 
-With [s](#s) appended, every hour ends at the [b9](#b9) digit, every other minute ends at the [b10](#b10) digit, and the remaining minutes end with ν as their [b24](#b24) digit. Use the range🎚️inputs below to select an [hms](#hms) triplet and see the corresponding Zone 0 [tod](#tod) with [s](#s) appended: .
+A [tod](#tod) with four [b10](#b10) digits, one [b9](#b9), and one [b24](#b24) digit can match the time represented by any [hms](#hms) triplet, because the product of the bases of its digits is evenly divisible by the number of [sis](#sis) in a day: 1000 × 9 × 24 ÷ 86400 = 216000 ÷ 86400 = 25. For [hod](#hod), one [b24](#b24) digit is sufficient. The [hms](#hms) triplet selected by the range inputs below corresponds to [Hod](#hod) and [Tod](#tod) .
 
 ``` js
 viewof hmsinput = Inputs.form([
@@ -687,9 +687,13 @@ viewof hmsinput = Inputs.form([
 ])
 ```
 
+A [tod](#tod) with three [b10](#b10) digits and one [b9](#b9) digit can represent any [hod](#hod), because the product of the bases of its digits is evenly divisible by the number of hours in a day: 9000 ÷ 24 = 375. The number of unique values a [tod](#tod) can take is the product of the bases of its digits. [mixed radix](https://en.wikipedia.org/wiki/Mixed_radix#:~:text=the%20numerical%20base%20varies%20from%20position%20to%20position)
+
+[hod](#hod) as a single [b24](#b24) digit or
+
 #### 6 Time zone offset
 
-In Dec, a [uto](#uto) can be any nonnegative number, a “time zone offset” ([tzo](#tzo)) is a nonnegative integer, and a “solar time offset” ([sto](#sto)) is a nonnegative [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits). If we derived deciday offsets from all 86400 of the [hms](#hms) triplets that can be selected by the range🎚️inputs above, we would have 10 [tzo](#tzo), 3190 [sto](#sto), and 83200 [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever). With [s](#s) appended, all 83200 have a finite number of digits: 3200 need only [b9](#b9) and [b10](#b10) digits, and the other 80000 also need a [b24](#b24) digit.
+In Dec, a [uto](#uto) can be any nonnegative number, a “time zone offset” ([tzo](#tzo)) is a nonnegative integer, and a “solar time offset” ([sto](#sto)) is a nonnegative [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits). If we derived deciday offsets from all 86400 of the [hms](#hms) triplets that can be selected by the range inputs above, we would have 10 [tzo](#tzo), 3190 [sto](#sto), and 83200 [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever). With [s](#s) appended, all 83200 have a finite number of digits: 3200 need only [b9](#b9) and [b10](#b10) digits, and the other 80000 also need a [b24](#b24) digit.
 
 ##### Coordinated Universal Time (UTC)
 
@@ -1486,18 +1490,35 @@ function dote2date(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
-function unix2b9b24(unix) {
-  const tick = Math.floor(
-    ((unix ?? Date.now()) % 86400000 + 86400000) % 86400000 / 40),
-  sid = tick % 24,
+function dec2b9(x, len = 2) {
+  x = x.toString().padStart(len, "0")
+  return astro[x[0]] + x.slice(1)
+}
+astro = ({
+  0: "☉", // Sun
+  1: "☿", // Mercury
+  2: "♀", // Venus
+  3: "♁", // Earth
+  4: "♂", // Mars
+  5: "♃", // Jupiter
+  6: "♄", // Saturn
+  7: "♅", // Uranus
+  8: "♆"  // Neptune
+});
+function tick2b9b24(tick) {
+  // tick counts sids (1/24 Dec s, 1/25 SI s) since midnight; returns
+  // [tod, b9 + sec, sid] trimmed like the fractional part of a decimal
+  const sid = tick % 24,
   sec = Math.floor(tick / 24) % 10,
   dec = Math.floor(tick / 240) % 9,
   tod = Math.floor(tick / 2160).toString().padStart(3, "0");
   return dec || sec || sid
-    ? tod + "☉☿♀♁♂♃♄♅♆"[dec] + (sec || sid
-      ? sec + (sid ? "αβγδεζηθικλμνξοπρστυφχψω"[sid] : "")
-      : "")
-    : tod.replace(/(?<=.)0+$/, "")
+    ? [tod, astro[dec] + (sec || sid ? sec : ""), sid ? sid2b24(sid) : ""]
+    : [tod.replace(/(?<=.)0+$/, ""), "", ""]
+}
+function unix2b9b24(unix) {
+  return tick2b9b24(Math.floor(
+    ((unix ?? Date.now()) % 86400000 + 86400000) % 86400000 / 40)).join("")
 }
 function b9b24pad(b9b24) {
   const [, tod, dec = "☉", sec = "0", sid = "α"] = b9b24.match(
@@ -2228,7 +2249,7 @@ function input(config) {
       }" />`
     );
   form.append(
-    html`<output name=output style="font: 14px Menlo, Consolas, monospace; margin-left: 0.1em; text-align:center;"></output>`
+    html`<output name=output style="font: 14px Menlo, Monaco, Consolas, monospace; margin-left: 0.1em; text-align:center;"></output>`
   );
   if (title)
     form.prepend(
@@ -2735,7 +2756,8 @@ leapSsid = leapSarr[1]
 leapSb24 = sid2b24(leapSsid)
 leapSb24col = piecewiseColor(leapSsid % 24 / 24)
 leapSdecCol = piecewiseColor(leapSdec % 90000 / 90000)
-leapSb24css = ({background: leapSb24col, fontFamily: "monospace"})
+monofonts = "Menlo, Monaco, Consolas, monospace"
+leapSb24css = ({background: leapSb24col, fontFamily: monofonts})
 leapSb24hsl = textcolor(leapSb24, leapSb24css)
 leapSb24hsl1 = textcolor(leapSb24, leapSb24css)
 leapSb24hsl2 = textcolor(leapSb24, leapSb24css)
@@ -2744,8 +2766,13 @@ leapSdecHsl1 = textcolor(leapSdec, leapSdecCol)
 leapSdecHsl2 = textcolor(leapSdec, leapSdecCol)
 leapSdecHsl3 = textcolor(leapSdec, leapSdecCol)
 leapSsidHsl = textcolor(leapSsid % 24, leapSb24col)
-hmsMs = ((hmsinput[0] * 60 + hmsinput[1]) * 60 + hmsinput[2]) * 1000
-hmsB9b24Hsl = textcolor(b9b24pad(unix2b9b24(hmsMs)), piecewiseColor(hmsMs / 86400000))
+b24hod = sid2b24(hmsinput[0])
+b24hodHsl = textcolor(sid2b24(hmsinput[0]), ({background: piecewiseColor(hmsinput[0] / 24), fontFamily: monofonts}))
+hmsTick = ((hmsinput[0] * 60 + hmsinput[1]) * 60 + hmsinput[2]) * 25
+hmsB9b24 = tick2b9b24(hmsTick)
+hmsTodHsl = textcolor(hmsB9b24[0], piecewiseColor(hmsTick / 2160000))
+hmsSecHsl = hmsB9b24[1] && textcolor(hmsB9b24[1], ({background: piecewiseColor(hmsTick % 2160 / 2160), fontFamily: monofonts}))
+hmsSidHsl = hmsB9b24[2] && textcolor(hmsB9b24[2], ({background: piecewiseColor(hmsTick % 24 / 24), fontFamily: monofonts}))
 leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
 leapTodHsl0 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
