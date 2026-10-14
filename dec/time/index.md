@@ -698,14 +698,16 @@ by one to isolate the [decimal
 part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part)
 of the
 [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers):
-${zeroAdaHsl}
+${zeroDotyHsl}.${zeroTimeHsl0}
 [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder)
-1 = ${zeroTimeHsl0}. We can use this same approach to separate a
+1 = <span class="color0">0</span>.${zeroTimeHsl1}. We can use this same
+approach to separate a
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> from an “epochal day aggregate”
 (<a href="#eda" id="epochaldayaggregate" class="tool"
 data-bs-toggle="tooltip" data-bs-title="epochal day aggregate">eda</a>):
-${zeroDoteHsl}${zeroTimeHsl1} mod 1 = ${zeroTimeHsl2}. The current
+${zeroDoteHsl}.${zeroTimeHsl2} mod 1 =
+<span class="color0">0</span>.${zeroTimeHsl3}. The current
 <a href="#eda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="epochal day aggregate">eda</a> tells us how many days
 have passed since the Dec
@@ -1074,14 +1076,14 @@ data-bs-title="Dec deciseconds">ds</a> = 1
 <a href="#dd" class="tool" data-bs-toggle="tooltip"
 data-bs-title="deciday">dd</a>. To avoid [repeating
 decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever),
-we can express the decimal part of a
+we can replace the ones digit and decimal part of a
 <a href="#sis" class="tool" data-bs-toggle="tooltip"
 data-bs-title="SI seconds">sis</a>-derived
 <a href="#ds" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec deciseconds">ds</a> using Dec
+data-bs-title="Dec deciseconds">ds</a> with a Dec
 [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D)
 (<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="quadravigesimal">base24</span>):
+data-bs-title="quadravigesimal">base24</span>) digit:
 ${leapSdecHsl1}${leapSb24hsl1} = ${leapSdecHsl2} × 10 + ${leapSsidHsl} ÷
 2.4.
 
@@ -1096,8 +1098,10 @@ data-bs-title="base24">b24</a>) character at the end of
 ${leapSdecHsl3}${leapSb24hsl2} is a letter of the [Greek
 alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language).
 To display <a href="#sis" class="tool" data-bs-toggle="tooltip"
-data-bs-title="SI seconds">sis</a>, we can concatenate the integer part
-of the Dec seconds
+data-bs-title="SI seconds">sis</a> in
+<a href="#ds" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec deciseconds">ds</a>, we can concatenate the integer
+part of the Dec seconds
 (<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec seconds">s</a>) we obtain from
 <a href="#eq-sis" class="quarto-xref">Equation 12</a> with the
@@ -1120,7 +1124,7 @@ $$
 \text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96}
  \qquad(12)$$
 </span> <span id="eq-sid">
-sid = (s − sis) \* 24 mod  24   (13)
+sid = (s − sis) × 24 mod  24 = sis mod  24   (13)
 </span>
 
 </div>
@@ -3877,9 +3881,13 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
 - <a href="#second" id="s">s</a>: second, 1/90 millidays, 10/9 beats, 1
   Dec second = 0.96 SI seconds
+  - <a href="#decisecond" id="ds">ds</a>: decisecond, a tenth of a Dec
+    second, 1/900 millidays, 1/9 beats, 96 milliseconds
   - <a href="#secondintervaldifference" id="sid">sid</a>: second
     interval difference, 1 SI second - 1 Dec second, 1/24 Dec second,
     1/25 SI second, 40 milliseconds
+  - <a href="#sisecond" id="sis">sis</a>: SI second, 25/24 Dec seconds,
+    1/86.4 millidays, 1/86400 days
 - <a href="#spinorbitinterval" id="soi">soi</a>: spin orbit interval, a
   lunar day, 1.03505 days
   - <a href="#soiofyear" id="soy">soy</a>: soi of year
@@ -4095,7 +4103,7 @@ function b9b24pad(b9b24) {
   return tod.padEnd(3, "0") + dec + sec + sid
 }
 function sis2arr(sis) {
-  const sid = Math.round(Math.abs(sis) * 25);
+  const sid = Math.floor(Math.abs(sis) * 25 + 1e-9);
   return [
     Math.floor(sid / 24) * (sis < 0 ? -1 : 1),
     sid
@@ -4173,10 +4181,14 @@ zeroIsLeap = isLeapYear(zeroYear)
 zeroAdaHsl = textcolor(zeroAda.toFixed(5), piecewiseColor(zeroAda / (365 + zeroIsLeap)))
 zeroAdaHsl1 = textcolor(zeroAda.toFixed(5), piecewiseColor(zeroAda / (365 + zeroIsLeap)))
 zeroTimePiece = piecewiseColor(zeroTime)
-zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(1), zeroTimePiece)
-zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(1), zeroTimePiece)
-zeroTimeHsl2 = textcolor(zeroTime.toFixed(5).slice(1), zeroTimePiece)
-zeroDotyHsl = textcolor(zeroDoy.toString().padStart(3, "0"), piecewiseColor(zeroDoy / (365 + zeroIsLeap)))
+zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
+zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
+zeroTimeHsl2 = textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
+zeroTimeHsl3 = textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
+zeroDotyPiece = piecewiseColor(zeroDoy / (365 + zeroIsLeap))
+zeroDotyPad = zeroDoy.toString().padStart(3, "0")
+zeroDotyHsl = textcolor(zeroDotyPad, zeroDotyPiece)
+zeroDotyHsl1 = textcolor(zeroDotyPad, zeroDotyPiece)
 zeroDoteHsl = textcolor(Math.floor(zeroDote), piecewiseColor(zeroDote % 146097 / 146097))
 zeroYearHsl = textcolor(zeroYear, piecewiseColor(zeroYear % 1000 / 1000))
 browserDote = unix2dote(now)

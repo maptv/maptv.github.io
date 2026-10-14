@@ -592,11 +592,11 @@ viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 
 
 #### 5 Second interval difference
 
-Dec measures [uto](#uto) in decidays ([dd](#dd)). The equation above divides leap seconds by the number of [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si)) seconds ([sis](#sis)) or Dec deciseconds ([ds](#ds)) in a [dd](#dd): 8640 [sis](#sis) = 90000 [ds](#ds) = 1 [dd](#dd). To avoid [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever), we can express the decimal part of a [sis](#sis)-derived [ds](#ds) using Dec [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D) (base24): = × 10 + ÷ 2.4.
+Dec measures [uto](#uto) in decidays ([dd](#dd)). The equation above divides leap seconds by the number of [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si)) seconds ([sis](#sis)) or Dec deciseconds ([ds](#ds)) in a [dd](#dd): 8640 [sis](#sis) = 90000 [ds](#ds) = 1 [dd](#dd). To avoid [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever), we can replace the ones digit and decimal part of a [sis](#sis)-derived [ds](#ds) with a Dec [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D) (base24) digit: = × 10 + ÷ 2.4.
 
-Known as a “second interval difference” ([sid](#sid)), the base24 ([b24](#b24)) character at the end of is a letter of the [Greek alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language). To display [sis](#sis), we can concatenate the integer part of the Dec seconds ([s](#s)) we obtain from [Equation 12](#eq-sis) with the [b24](#b24) representation of the [sid](#sid) we get from [Equation 13](#eq-sid). The table beneath these equations lists [base10](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([b10](#b10)) and [b24](#b24) equivalents.
+Known as a “second interval difference” ([sid](#sid)), the base24 ([b24](#b24)) character at the end of is a letter of the [Greek alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language). To display [sis](#sis) in [ds](#ds), we can concatenate the integer part of the Dec seconds ([s](#s)) we obtain from [Equation 12](#eq-sis) with the [b24](#b24) representation of the [sid](#sid) we get from [Equation 13](#eq-sid). The table beneath these equations lists [base10](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([b10](#b10)) and [b24](#b24) equivalents.
 
-\\ \text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96} \tag{12}\\ \\ \text{sid} = (\text{s} - \text{sis}) \ast 24 \bmod 24 \tag{13}\\
+\\ \text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96} \tag{12}\\ \\ \text{sid} = (\text{s} - \text{sis}) \times 24 \bmod 24 = \text{sis} \bmod 24 \tag{13}\\
 
 ##### Base24
 
@@ -1376,7 +1376,9 @@ When provided with [`nature.csl`](https://github.com/citation-style-language/sty
 - [rad](#radian): radian, \\1\over\tau\\ turns, \\360\over\tau\\ degrees, \\1\over 2\pi\\ turns, \\180\over\pi\\ degrees
 - [rgb](#redgreenblue): red green blue
 - [s](#second): second, 1/90 millidays, 10/9 beats, 1 Dec second = 0.96 SI seconds
+  - [ds](#decisecond): decisecond, a tenth of a Dec second, 1/900 millidays, 1/9 beats, 96 milliseconds
   - [sid](#secondintervaldifference): second interval difference, 1 SI second - 1 Dec second, 1/24 Dec second, 1/25 SI second, 40 milliseconds
+  - [sis](#sisecond): SI second, 25/24 Dec seconds, 1/86.4 millidays, 1/86400 days
 - [soi](#spinorbitinterval): spin orbit interval, a lunar day, 1.03505 days
   - [soy](#soiofyear): soi of year
   - [sob](#soiofbimester): soi of bimester
@@ -1503,7 +1505,7 @@ function b9b24pad(b9b24) {
   return tod.padEnd(3, "0") + dec + sec + sid
 }
 function sis2arr(sis) {
-  const sid = Math.round(Math.abs(sis) * 25);
+  const sid = Math.floor(Math.abs(sis) * 25 + 1e-9);
   return [
     Math.floor(sid / 24) * (sis < 0 ? -1 : 1),
     sid
