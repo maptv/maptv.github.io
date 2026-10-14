@@ -79,3 +79,23 @@ updated as new preferences come up; don't let it grow into a changelog.
 - When a request quotes broken markdown syntax verbatim (e.g. a link written as
   `"text" (url)` instead of `[text](url)`), fix the escaped/underlying issue in the source
   qmd rather than treating the quote as literal prose to preserve.
+
+## Mixed-radix numerals (dec/time)
+
+- The tom digits after the doy are radix 10, 10, 10, 9, 10, 24: dd, cd, md, a b9 digit
+  (☉☿♀♁♂♃♄♅♆ = 0–8, tens of Dec seconds), a Dec-second digit, and a b24 sid digit
+  (α–ω = 0–23, 1/24 Dec s). Each glyph fills one decimal slot and is worth the digit to its
+  left divided by its own radix.
+- The user prefers numerals without a dot, in the unit of the last glyph's slot. Slot names
+  step by 10 (d, dd, cd, md, decimilliday, cmd = beat, µd; s, ds), so a dot can go anywhere
+  or nowhere: 375♀7 cmd = 3753 decimillidays = 375.3 md = 0.3753 d. The kind of glyph
+  shows the radix, so a doy plus a tom needs only one dot: 227.375♀7 = 227.37530. This
+  convention is intentional; don't push back on it as nonstandard.
+- In its slot's unit a letter is worth letter × 10 / radix: 19υ ds = 190 + 19 ÷ 2.4 =
+  197.92 ds = 19 SI s, and 41♄ decimillidays = 410 + 6 × 10/9 = 1 h. Check formulas with a
+  nonzero letter, since α and ☉ hide errors (a letter ÷ 24 in ds is off by a factor of 10).
+- After the first non-decimal glyph, digits don't convert one for one: 375♀7 = 37530 cmd
+  only because 27 Dec s = 30 beats (375♀8 = 37531.1 cmd). A numeral that contains a letter
+  isn't a whole number of its unit.
+- sid digit = (s − sis) × 24 mod 24 = sis mod 24 (round down for a fraction of an SI
+  second). s = sis / 0.96 = ds / 10, and sis = 0.96 s = 0.096 ds.
