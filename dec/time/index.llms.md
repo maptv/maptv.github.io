@@ -429,7 +429,7 @@ As their names suggest, [doy](#doy) and [ada](#ada) are measured in days. The [m
 
 #### 2 Epochal day aggregate (eda)
 
-To obtain a [tod](#tod) from a [ada](#ada), we can [keep the remainder after dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) by one to isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers): [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = . We can use this same approach to separate a [tod](#tod) from an “epochal day aggregate” ([eda](#eda)): mod 1 = . The current [eda](#eda) tells us how many days have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era): Year 0 Day 0 [Tod](#tod) 0.
+To obtain a [tod](#tod) from a [ada](#ada), we can [keep the remainder after dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) by one to isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers): [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = 0.. We can use this same approach to separate a [tod](#tod) from an “epochal day aggregate” ([eda](#eda)): mod 1 = 0.. The current [eda](#eda) tells us how many days have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era): Year 0 Day 0 [Tod](#tod) 0.
 
 \\\begin{split} \text{tod} &= \text{ada} \bmod 1 \\ &= \text{eda} \bmod 1 \end{split} \tag{3}\\
 
@@ -689,7 +689,7 @@ viewof hmsinput = Inputs.form([
 
 #### 6 Time zone offset
 
-In Dec, a [uto](#uto) can be any positive number, a “time zone offset” ([tzo](#tzo)) is a positive integer, and a “solar time offset” ([sto](#sto)) is a positive [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits). If we derived deciday offsets from all 86400 of the [hms](#hms) triplets that can be selected by the range🎚️inputs above, we would have 10 [tzo](#tzo), 3190 [sto](#sto), and 83200 [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever). With [s](#s) appended, all 83200 have a finite number of digits: 3200 need only [b9](#b9) and [b10](#b10) digits, and the other 80000 also need a [b24](#b24) digit.
+In Dec, a [uto](#uto) can be any nonnegative number, a “time zone offset” ([tzo](#tzo)) is a nonnegative integer, and a “solar time offset” ([sto](#sto)) is a nonnegative [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits). If we derived deciday offsets from all 86400 of the [hms](#hms) triplets that can be selected by the range🎚️inputs above, we would have 10 [tzo](#tzo), 3190 [sto](#sto), and 83200 [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever). With [s](#s) appended, all 83200 have a finite number of digits: 3200 need only [b9](#b9) and [b10](#b10) digits, and the other 80000 also need a [b24](#b24) digit.
 
 ##### Coordinated Universal Time (UTC)
 
@@ -1578,17 +1578,19 @@ zeroYear = zeroDate[0]
 zeroAda = zeroDate[1]
 zeroDoy = Math.floor(zeroAda)
 zeroIsLeap = isLeapYear(zeroYear)
-zeroAdaHsl = textcolor(zeroAda.toFixed(5), d3.color(piecewiseColor(zeroAda / (365 + zeroIsLeap))).formatHex())
-zeroAdaHsl1 = textcolor(zeroAda.toFixed(5), d3.color(piecewiseColor(zeroAda / (365 + zeroIsLeap))).formatHex())
-zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl2 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl3 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl4 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl5 = textcolor((zeroTime * 10).toFixed(5), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroDotyHsl = textcolor(zeroDoy.toString().padStart(3, "0"), d3.color(piecewiseColor(zeroDoy / (365 + zeroIsLeap))).formatHex())
-zeroDoteHsl = textcolor(zeroDote.toFixed(5), d3.color(piecewiseColor(zeroDote % 1)).formatHex())
-zeroYearHsl = textcolor(zeroYear, d3.color(piecewiseColor(zeroYear % 1000 / 1000)).formatHex())
+zeroAdaHsl = textcolor(zeroAda.toFixed(5), piecewiseColor(zeroAda / (365 + zeroIsLeap)))
+zeroAdaHsl1 = textcolor(zeroAda.toFixed(5), piecewiseColor(zeroAda / (365 + zeroIsLeap)))
+zeroTimePiece = piecewiseColor(zeroTime)
+zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
+zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
+zeroTimeHsl2 = textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
+zeroTimeHsl3 = textcolor(zeroTime.toFixed(5).slice(2), zeroTimePiece)
+zeroDotyPiece = piecewiseColor(zeroDoy / (365 + zeroIsLeap))
+zeroDotyPad = zeroDoy.toString().padStart(3, "0")
+zeroDotyHsl = textcolor(zeroDotyPad, zeroDotyPiece)
+zeroDotyHsl1 = textcolor(zeroDotyPad, zeroDotyPiece)
+zeroDoteHsl = textcolor(Math.floor(zeroDote), piecewiseColor(zeroDote % 146097 / 146097))
+zeroYearHsl = textcolor(zeroYear, piecewiseColor(zeroYear % 1000 / 1000))
 browserDote = unix2dote(now)
 browserTime = browserDote[0] % 1 * 10
 browserZone = browserDote[1]
@@ -2583,10 +2585,10 @@ elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 10
 loadDote = unix2dote(Date.now(), 0)
 loadydz = dote2date(...loadDote)
 loadYear = loadydz[0]
-loadYearHsl = textcolor(loadYear, d3.color(piecewiseColor(loadYear % 1000 / 1000)).formatHex())
+loadYearHsl = textcolor(loadYear, piecewiseColor(loadYear % 1000 / 1000))
 loadAda = loadydz[1]
 loadIsLeap = isLeapYear(loadYear)
-loadAdaHsl = textcolor(loadAda.toFixed(5).padStart(9, "0"), d3.color(piecewiseColor(loadAda / (365 + loadIsLeap))).formatHex())
+loadAdaHsl = textcolor(loadAda.toFixed(5).padStart(9, "0"), piecewiseColor(loadAda / (365 + loadIsLeap)))
 decDate = Math.floor(ydz[1])
 decMoty = Math.floor((5 * decDate + 2) / 153)
 isoYear = decYear + (decMoty > 9)
@@ -2609,24 +2611,26 @@ selTimeMil = selTimeOne.toFixed(3).slice(2)
 selTimeCmd = selTimeOne.toFixed(5).slice(2)
 selAda = selDate + selTime
 selLati = lati2turn(location[1])
-decDodHsl = textcolor(decDod, d3.color(piecewiseColor(decDod / 10)).formatHex())
-decDateHsl = textcolor(decDate.toString().padStart(3, "0"), d3.color(piecewiseColor(decDate / (365 + isLeapYear(decYear)))).formatHex())
-decTimeHsl = textcolor(decTime, d3.color(piecewiseColor(decTime / 10)).formatHex())
+decDodHsl = textcolor(decDod, piecewiseColor(decDod / 10))
+decDateHsl = textcolor(decDate.toString().padStart(3, "0"), piecewiseColor(decDate / (365 + isLeapYear(decYear))))
+decTimeHsl = textcolor(decTime, piecewiseColor(decTime / 10))
 selDatePiece = piecewiseColor(selDate / 365)
 selDatePad = selDate.toString().padStart(3, "0")
 selDateHsl = textcolor(selDate, selDatePiece)
 selDateHsl1 = textcolor(selDate, selDatePiece)
-selLatiHsl = textcolor(selLati.toFixed(0), d3.color(piecewiseColor((selLati + 250) % 250 / 250)).formatHex())
+selDateHsl2 = textcolor(selDatePad, selDatePiece)
+selLatiHsl = textcolor(selLati.toFixed(0), piecewiseColor((selLati + 1000) % 1000 / 1000))
 selTimeDayPiece = piecewiseColor(selTime)
 selTimeInt = parseInt(selTimeMil)
 selTimeDay = textcolor(selTimeInt, selTimeDayPiece)
 selTimeDay1 = textcolor(selTimeInt, selTimeDayPiece)
-selTimeHsl0 = textcolor(selTimeTen.toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
-selTimeHsl1 = textcolor(selTimeTen.toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
-selZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
-selAdaDay = textcolor(selAda.toFixed(3).padStart(6, "0"), d3.color(piecewiseColor(selAda / 365)).formatHex())
-selAdaDec = textcolor((selAda * 10).toFixed(4).padStart(9, "0"), d3.color(piecewiseColor(selAda / 365)).formatHex())
-decZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
+selTimeDay2 = textcolor(selTimeMil, selTimeDayPiece)
+selTimeHsl0 = textcolor(selTimeTen.toFixed(4), piecewiseColor(selTime))
+selTimeHsl1 = textcolor(selTimeTen.toFixed(4), piecewiseColor(selTime))
+selZoneHsl = textcolor(selectedZone, piecewiseColor(selectedZone / 10))
+selAdaDay = textcolor(selAda.toFixed(3).padStart(6, "0"), piecewiseColor(selAda / 365))
+selAdaDec = textcolor((selAda * 10).toFixed(4).padStart(9, "0"), piecewiseColor(selAda / 365))
+decZoneHsl = textcolor(selectedZone, piecewiseColor(selectedZone / 10))
 viewof selectedDate = Inputs.input(new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours()))
 viewof selectedHour = Inputs.input(new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours()).getHours())
 function set(input, value) {
@@ -2679,8 +2683,8 @@ utcOffDiff = parseFloat((Math.round(utcOffsetD) - utcOffsetD).toFixed(2))
 utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
 utcOffHslD = textcolor(parseFloat(utcOffsetD.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
 decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
-utcOffsetMdiffHsl = textcolor(parseFloat((utcOffDiff * 144).toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
-utcOffDiffHsl = textcolor(utcOffDiff, `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
+utcOffsetMdiffHsl = textcolor(parseFloat((utcOffDiff * 144).toFixed(2)), `hsl(${d3.hsl(piecewiseColor((utcOffDiff + 10) % 10 / 10)).h}` + slStr)
+utcOffDiffHsl = textcolor(utcOffDiff, `hsl(${d3.hsl(piecewiseColor((utcOffDiff + 10) % 10 / 10)).h}` + slStr)
 function date2dote(year = 1969, doty = 306, zone = 0) {
     const cote = Math.floor((year >= 0 ? year : year - 399) / 400), yote = year - cote * 400;
     return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
@@ -2716,7 +2720,7 @@ leapSecondDotes = [
 ].map(x => date2dote(...x)[0])
 leapSecondDote = date2dote(leapSecondYear, leapSecondDate)[0]
 leapCount = leapSecondDotes.filter(dote => leapSecondDote > dote).length;
-leapColor = d3.color(piecewiseColor(leapCount / 86400)).formatHex()
+leapColor = piecewiseColor(leapCount / 86400)
 leapCountHsl = textcolor(leapCount, leapColor)
 frac = require("fraction.js")
 leapFrac = frac(leapCount).div(8640).toFraction()
@@ -2727,9 +2731,9 @@ leapSarr = sis2arr(leapCount)
 leapSdec = leapSarr[0]
 leapSsid = leapSarr[1]
 leapSb24 = sid2b24(leapSsid)
-leapSb24col = d3.color(piecewiseColor(leapSsid % 24 / 24)).formatHex()
+leapSb24col = piecewiseColor(leapSsid % 24 / 24)
 leapSdecCol = piecewiseColor(leapSdec % 90000 / 90000)
-leapSb24css = ({background: leapSb24Col, fontFamily: "monospace"})
+leapSb24css = ({background: leapSb24col, fontFamily: "monospace"})
 leapSb24hsl = textcolor(leapSb24, leapSb24css)
 leapSb24hsl1 = textcolor(leapSb24, leapSb24css)
 leapSb24hsl2 = textcolor(leapSb24, leapSb24css)
@@ -2738,20 +2742,19 @@ leapSdecHsl1 = textcolor(leapSdec, leapSdecCol)
 leapSdecHsl2 = textcolor(leapSdec, leapSdecCol)
 leapSdecHsl3 = textcolor(leapSdec, leapSdecCol)
 leapSsidHsl = textcolor(leapSsid % 24, leapSb24col)
-leapCountHsl1 = textcolor(leapCount, leapColor)
 hmsMs = ((hmsinput[0] * 60 + hmsinput[1]) * 60 + hmsinput[2]) * 1000
-hmsB9b24Hsl = textcolor(b9b24pad(unix2b9b24(hmsMs)), d3.color(piecewiseColor(hmsMs / 86400000)).formatHex())
+hmsB9b24Hsl = textcolor(b9b24pad(unix2b9b24(hmsMs)), piecewiseColor(hmsMs / 86400000))
 leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
-leapTodHsl0 = textcolor(leapDecidayTod, d3.color(piecewiseColor(leapTod)).formatHex())
-leapTodHsl1 = textcolor(leapDecidayTod, d3.color(piecewiseColor(leapTod)).formatHex())
-longInputHsl = textcolor(lonInput, d3.color(piecewiseColor(lonInput / 10)).formatHex())
+leapTodHsl0 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
+leapTodHsl1 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
+longInputHsl = textcolor(lonInput, piecewiseColor(lonInput / 1000))
 eot = getEot(leapSecondDate)
 astTzo = eot + lonInput
-astTzoHsl = textcolor(astTzo.toFixed(4), d3.color(piecewiseColor(astTzo / 10)).formatHex())
-eotHsl = textcolor(eot.toFixed(4), d3.color(piecewiseColor(eot / 10)).formatHex())
-eotSum = (zeroTime + astTzo + 10) % 10
-eotSumHsl = textcolor(eotSum.toFixed(4), d3.color(piecewiseColor(eotSum / 10)).formatHex())
+astTzoHsl = textcolor(astTzo.toFixed(4), piecewiseColor((astTzo + 1000) % 1000 / 1000))
+eotHsl = textcolor(eot.toFixed(4), piecewiseColor((eot + 1000) % 1000 / 1000))
+eotSum = (zeroTime * 1000 + astTzo + 1000) % 1000
+eotSumHsl = textcolor(eotSum.toFixed(4), piecewiseColor(eotSum / 1000))
 // https://observablehq.com/@mcmcclur/adaptive-plotter
 function build_samples(f, a, b, opts = {}) {
   let { N = 9, max_depth = 6 } = opts;

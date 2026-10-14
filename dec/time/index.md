@@ -3,9 +3,6 @@ Martin Laptev
 2026+225
 
 - [Declock](#declock)
-  - [Bar chart clocks](#bcc)
-  - [Longitude latitude map](#llm)
-  - [Daylight area chart](#dac)
 - [Annual day aggregate (ada)](#sec-ada)
 - [Epochal day aggregate (eda)](#sec-eda)
   - [UNIX time equation](#sec-ute)
@@ -13,8 +10,8 @@ Martin Laptev
 - [Hour minute second](#sec-hms)
 - [Universal time offset](#sec-uto)
 - [Second interval difference](#sec-sid)
-- [Base24](#sec-b24)
-- [Base9](#sec-b9)
+  - [Base24](#sec-b24)
+  - [Base9](#sec-b9)
 - [Time zone offset](#sec-tzo)
   - [Coordinated Universal Time (UTC)](#sec-utc)
 - [Day of week](#sec-dow)
@@ -172,7 +169,7 @@ like
 [centi](https://en.wikipedia.org/wiki/Centi-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20hundredth),
 or
 [milli](https://en.wikipedia.org/wiki/Milli-#:~:text=a%20unit%20prefix%20in%20the%20metric%20system%20denoting%20a%20factor%20of%20one%20thousandth).
-The top, middle, and bottom bars📊indicate the <a
+The top, middle, and bottom bars indicate the <a
 href="https://en.wikipedia.org/wiki/Decimal_time#:~:text=dividing%20the%20day%20into%2010%20decidays"
 class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</a>, <a
@@ -186,15 +183,15 @@ respectively, of the time since the start,
 <span class="point1">+${decTime}</span>, or until the end,
 <span class="point0">-${decTimeN}</span>, of the day in the Dec [time
 zone](https://en.wikipedia.org/wiki/Time_zone#:~:text=an%20area%20which%20observes%20a%20uniform%20standard%20time),
-${decZoneHsl}, at the location of the red⭕️circle on the map🗺️beneath
-the bars📊.
+${decZoneHsl}, at the location of the red⭕️circle on the map beneath the
+bars.
 
-To rotate the globe🌐in the Earth🌏orbit diagram, drag the red⭕️circle
+To rotate the globe🌐in the Earth🌏orbit diagram, drag the red circle
 horizontally↔️or slide the red🔴dot on the daylight area chart
-vertically↕. The red⭕️circle’s vertical↕position determines the yearly
-daylight pattern visualized by the area chart. Shift the
-red<font color=red>—</font>line on the area chart horizontally↔️to move
-the globe🌐along the ellipse of the Earth🌎orbit.
+vertically↕. The red circle’s vertical position determines the yearly
+daylight pattern visualized by the area chart. Shift the vertical
+red<font color=red>—</font>line on the area chart horizontally to move
+the globe along the ellipse of the Earth🌎orbit.
 
 ``` {ojs}
 //| echo: false
@@ -206,7 +203,7 @@ viewof suntoggle = labelToggle(Inputs.toggle, "Sun", false, "suntoggle")
 rstbtn.node();
 ```
 
-## Bar chart clocks
+# Bar chart clocks
 
 ``` {ojs}
 //| echo: false
@@ -533,7 +530,7 @@ table = createTable([
 
 </div>
 
-## Longitude latitude map
+# Longitude latitude map
 
 <div class="column-screen">
 
@@ -551,7 +548,7 @@ ${sunclock}${dotclock}
 
 </div>
 
-## Daylight area chart
+# Daylight area chart
 
 <div class="column-page-left">
 
@@ -634,22 +631,19 @@ app = {
 
 # Annual day aggregate (ada)
 
-The red<font color=red>—</font>line indicates a “day of year”
+The red line indicates a “day of year”,
 (<a href="#doy" id="dayofyear" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a>), ${selDateHsl}, and the red🔴dot
-denotes a “time of day”
-(<a href="#tod" id="timeofday" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>): ${selTimeDay}. A
-<a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a> identifies a day in a year like a
-[Gregorian
+data-bs-title="day of year">doy</a>): ${selDateHsl}, which identifies a
+day in a year like a [Gregorian
 calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world)
 month and “day of month”
 (<a href="#dom" id="dayofmonth" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of month">dom</a>). A
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> specifies a point in a day like an
-“hour minute second” (<a href="#hms" id="hourminutesecond" class="tool"
+data-bs-title="day of month">dom</a>). The red dot denotes a “time of
+day”
+(<a href="#tod" id="timeofday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">tod</a>): ${selTimeDay}, which specifies a
+point in a day like an “hour minute second”
+(<a href="#hms" id="hourminutesecond" class="tool"
 data-bs-toggle="tooltip" data-bs-title="hour minute second">hms</a>)
 triplet. Together, a
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
@@ -658,14 +652,14 @@ data-bs-title="day of year">doy</a> and
 data-bs-title="time of day">tod</a> can form a “annual day aggregate”
 (<a href="#ada" id="annualdayaggregate" class="tool"
 data-bs-toggle="tooltip" data-bs-title="annual day aggregate">ada</a>):
-${selAdaDay}.
+${selDateHsl1} + ${selTimeDay1} ÷ 1000 = ${selDateHsl2}.${selTimeDay2}.
 
 <div id="equationgroup00" class="equationgroup">
 
 <span id="eq-ada">
 ada = doy + tod   (1)
-</span> <span id="eq-adafloor">
-⌊ada⌋ = doy   (2)
+</span> <span id="eq-ada">
+doy = ⌊ada⌋   (2)
 </span>
 
 </div>
@@ -680,7 +674,7 @@ unit](https://en.wikipedia.org/wiki/Unit_of_measurement#:~:text=a%20definite%20m
 of a <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> can be a day or a
 [submultiple](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20)
-of a day. By changing how a decimal
+of a day with a metric prefix. By changing how a decimal
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> is measured, we can shift its
 [decimal
@@ -711,76 +705,22 @@ ${zeroAdaHsl}
 data-bs-title="time of day">tod</a> from an “epochal day aggregate”
 (<a href="#eda" id="epochaldayaggregate" class="tool"
 data-bs-toggle="tooltip" data-bs-title="epochal day aggregate">eda</a>):
-${zeroDoteHsl} mod 1 = ${zeroTimeHsl1}. The current
+${zeroDoteHsl}${zeroTimeHsl1} mod 1 = ${zeroTimeHsl2}. The current
 <a href="#eda" class="tool" data-bs-toggle="tooltip"
 data-bs-title="epochal day aggregate">eda</a> tells us how many days
 have passed since the Dec
-[epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
+[epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era):
+Year <span class="color0">0</span> Day <span class="color0">0</span>
+<a href="#tod" class="tool" data-bs-toggle="tooltip"
+data-bs-title="time of day">Tod</a> <span class="color0">0</span>.
 
 <div id="equationgroup01" class="equationgroup">
 
-<span id="eq-todmod">
-$$\begin{split}
-\text{tod} &= \text{ada} \bmod  1
-&= \text{eda} \bmod  1 \\
-&= \text{ada} - \text{doy} 
-&= \text{eda} - \lfloor\text{eda}\rfloor
-\end{split} \qquad(3)$$
-</span>
-
-</div>
-
-When provided with an
-<a href="#eda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="epochal day aggregate">eda</a> instead of a
-<a href="#doe" id="dayofera" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of era">doe</a>, the Dec date equations return an
-<a href="#ada" class="tool" data-bs-toggle="tooltip"
-data-bs-title="annual day aggregate">ada</a> instead of a
-<a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of year">doy</a>. While
-<a href="#doe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of era">doe</a> and
-<a href="#doy" class="tool" data-bs-toggle="tooltip"
-data-bs-title="days of year">doy</a> are integers,
-<a href="#eda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="epochal day aggregates">eda</a> and
-<a href="#ada" class="tool" data-bs-toggle="tooltip"
-data-bs-title="annual day aggregates">ada</a> each have a decimal part
-called a “time of day”
-(<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>). We can obtain an
-<a href="#eda" class="tool" data-bs-toggle="tooltip"
-data-bs-title="epochal day aggregate">eda</a> by passing a
-<a href="#yoe" id="yearofera" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year of era">yoe</a> and
-<a href="#ada" class="tool" data-bs-toggle="tooltip"
-data-bs-title="annual day aggregate">ada</a> to the Dec eda equations or
-by summing a <a href="#doe" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of era">doe</a> and a
-<a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>.
-
-<div id="equationgroup02" class="equationgroup">
-
 <span id="eq-tod">
-tod = eda mod  1 = ada mod  1   (4)
-</span>
-
-<span id="eq-doe">
-doe = ⌊eda⌋ = eda − tod   (5)
-</span>
-
-<span id="eq-doy">
-doy = ⌊ada⌋ = ada − tod   (6)
-</span>
-
-<span id="eq-edasum">
-eda = doe + tod   (7)
-</span>
-
-<span id="eq-adasum">
-ada = doy + tod   (8)
+$$\begin{split}
+\text{tod} &= \text{ada} \bmod 1 \\
+&= \text{eda} \bmod 1
+\end{split} \qquad(3)$$
 </span>
 
 </div>
@@ -795,15 +735,16 @@ which is exactly 719468 days after the Dec epoch. To get the
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> in Zone
 <span class="color0">0</span>, the Dec time zone that is in between the
-two leftmost vertical lines on the map🗺️, we can divide UNIX time by the
+two leftmost vertical lines on the map, we can divide UNIX time by the
 [number of seconds in a
 day](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day)
-and then keep the remainder after dividing the resulting days by one:
+and then keep the remainder after dividing the resulting days by 1 as in
+<a href="#eq-unixtod" class="quarto-xref">Equation 4</a>.
 
-<div id="equationgroup03" class="equationgroup">
+<div id="equationgroup02" class="equationgroup">
 
 <span id="eq-unixtod">
-tod = unix ÷ 86400 mod  1   (9)
+tod = unix ÷ 86400 mod  1   (4)
 </span>
 
 </div>
@@ -830,12 +771,12 @@ data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
 to the Julian date before converting it to a
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a> to ensure that the final result is
-less than one day:
+less than 1 day.
 
-<div id="equationgroup04" class="equationgroup">
+<div id="equationgroup03" class="equationgroup">
 
 <span id="eq-juliantod">
-tod = (julian + 0.5) mod  1   (10)
+tod = (julian + 0.5) mod  1   (5)
 </span>
 
 </div>
@@ -865,10 +806,10 @@ Quarto was
 [rendering](https://quarto.org/docs/get-started/hello/rstudio.html#rendering:~:text=When%20rendering%2C%20Quarto%20generates%20a%20new%20file%20that%20contains%20selected%20text%2C%20code%2C%20and%20results)
 this webpage.
 
-<div id="equationgroup05" class="equationgroup">
+<div id="equationgroup04" class="equationgroup">
 
 <span id="eq-hmstod">
-$$\text{tod} = \frac{\text{hour}}{24} + \frac{\text{minute}}{1440} + \frac{\text{second}}{86400} \qquad(11)$$
+$$\text{tod} = \dfrac{\text{hour}}{24} + \dfrac{\text{minute}}{1440} + \dfrac{\text{second}}{86400} \qquad(6)$$
 </span>
 
 </div>
@@ -972,22 +913,22 @@ data-bs-title="daily second aggregates">dsa</a> start at midnight and
 data-bs-title="hourly second aggregates">hsa</a> begin at the [top of
 the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
-<div id="equationgroup06" class="equationgroup">
+<div id="equationgroup05" class="equationgroup">
 
 <span id="eq-dsa">
 $$\begin{split}
-\text{dsa} & = \text{tod} \times 86400 \\
+\text{dsa} & = \text{tod} \ast 86400 \\
 & = \text{unix} \bmod  86400
 \end{split}
- \qquad(12)$$
+ \qquad(7)$$
 </span> <span id="eq-hsa">
-hsa = dsa mod  3600   (13)
+hsa = dsa mod  3600   (8)
 </span> <span id="eq-hod">
-hod = ⌊dsa ÷ 3600⌋   (14)
+hod = ⌊dsa ÷ 3600⌋   (9)
 </span> <span id="eq-moh">
-moh = ⌊hsa ÷ 60⌋   (15)
+moh = ⌊hsa ÷ 60⌋   (10)
 </span> <span id="eq-som">
-som = ⌊hsa mod  60⌋   (16)
+som = ⌊hsa mod  60⌋   (11)
 </span>
 
 </div>
@@ -1095,7 +1036,8 @@ data-bs-title="Universal Time">UT</a> when added to the Zone
 data-bs-title="time of day">tod</a> on the [Dec date](../../dec/date)
 chosen by the
 [range](https://observablehq.com/framework/inputs/range)🎚️inputs below:
-${leapCountHsl} ÷ 8640 = ${leapDecsHsl} ÷ 9000 = ${leapTzoHsl0}.
+${leapCountHsl} ÷ 8640 = ${leapSdecHsl}${leapSb24hsl} ÷ 90000 =
+${leapTzoHsl0}.
 
 ``` {ojs}
 //| echo: false
@@ -1107,90 +1049,83 @@ viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 
 
 # Second interval difference
 
-On the left-hand side of the equation above, the number of leap seconds
-is divided by the 8640 [International System of
+Dec measures <a href="#uto" class="tool" data-bs-toggle="tooltip"
+data-bs-title="universal time offsets">uto</a> in <span class="tool"
+data-bs-toggle="tooltip" data-bs-title="tenths of a day">decidays</span>
+(<a href="#dd" id="deciday" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decidays">dd</a>). The equation above divides leap
+seconds by the number of [International System of
 Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement)
 (<a href="#si" id="internationalsystemofunits" class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a>) seconds in a
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a day">deciday</span>. On the right-hand side,
-the same leap seconds are expressed in Dec seconds
-(<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>) and divided by the 9000
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> in a <span class="tool"
+data-bs-title="International System of Units">SI</a>) seconds
+(<a href="#sis" id="sisecond" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a>) or Dec <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="a tenth of a day">deciday</span>. Of the twenty eight
-<a href="#uto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="universal time offsets">uto</a> that can be shown in the
-equation above, one is an integer, one is a [terminating
-decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits),
-and the rest are [repeating
-decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever)
-when written in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="tenths of a day">decidays</span>, but all of them can be
-written exactly in <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>.
+data-bs-title="tenths of a second">deciseconds</span>
+(<a href="#ds" id="decisecond" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec deciseconds">ds</a>) in a
+<a href="#dd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</a>: 8640
+<a href="#sis" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a> = 90000
+<a href="#ds" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec deciseconds">ds</a> = 1
+<a href="#dd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="deciday">dd</a>. To avoid [repeating
+decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever),
+we can express the decimal part of a
+<a href="#sis" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a>-derived
+<a href="#ds" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec deciseconds">ds</a> using Dec
+[quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="quadravigesimal">base24</span>):
+${leapSdecHsl1}${leapSb24hsl1} = ${leapSdecHsl2} × 10 + ${leapSsidHsl} ÷
+2.4.
 
-A <a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec second">s</a> is 0.96
-<a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> seconds, so an
-<a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> second is 1
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec second">s</a> plus 0.04
-<a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> seconds. Dec calls
-this 0.04 <a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> second remainder
-the “second interval difference”
+Known as a “second interval difference”
 (<a href="#sid" id="secondintervaldifference" class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="second interval difference">sid</a>). As shown in the
-equations below, an <a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> second is 25
+data-bs-title="second interval difference">sid</a>), the
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="quadravigesimal">base24</span>
+(<a href="#b24" id="base24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a>) character at the end of
+${leapSdecHsl3}${leapSb24hsl2} is a letter of the [Greek
+alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language).
+To display <a href="#sis" class="tool" data-bs-toggle="tooltip"
+data-bs-title="SI seconds">sis</a>, we can concatenate the integer part
+of the Dec seconds
+(<a href="#s" id="second" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a>) we obtain from
+<a href="#eq-sis" class="quarto-xref">Equation 12</a> with the
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> representation of the
 <a href="#sid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="second interval differences">sid</a> and a
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec second">s</a> is 24
-<a href="#sid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="second interval differences">sid</a>.
+data-bs-title="second interval difference">sid</a> we get from
+<a href="#eq-sid" class="quarto-xref">Equation 13</a>. The table beneath
+these equations lists
+[base10](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29)
+(<a href="#b10" id="base10" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base10">b10</a>) and
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a> equivalents.
 
-<div id="equationgroup07" class="equationgroup">
+<div id="equationgroup06" class="equationgroup">
 
-<span id="eq-sisecond">
-SI second = s + sid = 25 × sid   (17)
-</span>
-
-<span id="eq-decsecond">
-s = 24 × sid = 0.96 × SI second   (18)
+<span id="eq-sis">
+$$
+\text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96}
+ \qquad(12)$$
+</span> <span id="eq-sid">
+sid = (s − sis) \* 24 mod  24   (13)
 </span>
 
 </div>
 
-# Base24
-
-Dec counts <a href="#sid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="second interval differences">sid</a> with a single
-[base24](https://en.wikipedia.org/wiki/Positional_notation#:~:text=the%20number%20of%20unique%20digits)
-(<a href="#b24" id="base24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a>) digit. Instead of the [English
-alphabet](https://en.wikipedia.org/wiki/English_alphabet#:~:text=a%20Latin%2Dscript%20alphabet%20consisting%20of%2026%C2%A0letters)
-letters used by the [Dec base32](../../dec/date#b32) alphabet, the 24
-<a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a> digits are the lowercase letters of the
-[Greek
-alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language),
-in order from alpha (<span class="color0 tool" data-bs-toggle="tooltip"
-data-bs-title="base24 α is base10 0">α</span>) to omega
-(<span class="color23by24 tool" data-bs-toggle="tooltip"
-data-bs-title="base24 ω is base10 23">ω</span>). The table below lists
-each <a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a> digit alongside its base10
-(<a href="#b10" id="base10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a>) equivalent.
+## Base24
 
 <div class="d-none d-lg-block">
 
@@ -1245,118 +1180,118 @@ data-bs-title="base24">b24</a></th>
 </thead>
 <tbody>
 <tr>
-<td><span class="color0">0</span></td>
-<td><span class="color0">α</span></td>
+<td><span class="color0 mono">0</span></td>
+<td><span class="color0 mono">α</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color6by24">6</span></td>
-<td><span class="color6by24">η</span></td>
+<td><span class="color6by24 mono">6</span></td>
+<td><span class="color6by24 mono">η</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color12by24">12</span></td>
-<td><span class="color12by24">ν</span></td>
+<td><span class="color12by24 mono">12</span></td>
+<td><span class="color12by24 mono">ν</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color18by24">18</span></td>
-<td><span class="color18by24">τ</span></td>
+<td><span class="color18by24 mono">18</span></td>
+<td><span class="color18by24 mono">τ</span></td>
 </tr>
 <tr>
-<td><span class="color1by24">1</span></td>
-<td><span class="color1by24">β</span></td>
+<td><span class="color1by24 mono">1</span></td>
+<td><span class="color1by24 mono">β</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color7by24">7</span></td>
-<td><span class="color7by24">θ</span></td>
+<td><span class="color7by24 mono">7</span></td>
+<td><span class="color7by24 mono">θ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color13by24">13</span></td>
-<td><span class="color13by24">ξ</span></td>
+<td><span class="color13by24 mono">13</span></td>
+<td><span class="color13by24 mono">ξ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color19by24">19</span></td>
-<td><span class="color19by24">υ</span></td>
+<td><span class="color19by24 mono">19</span></td>
+<td><span class="color19by24 mono">υ</span></td>
 </tr>
 <tr>
-<td><span class="color2by24">2</span></td>
-<td><span class="color2by24">γ</span></td>
+<td><span class="color2by24 mono">2</span></td>
+<td><span class="color2by24 mono">γ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color8by24">8</span></td>
-<td><span class="color8by24">ι</span></td>
+<td><span class="color8by24 mono">8</span></td>
+<td><span class="color8by24 mono">ι</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color14by24">14</span></td>
-<td><span class="color14by24">ο</span></td>
+<td><span class="color14by24 mono">14</span></td>
+<td><span class="color14by24 mono">ο</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color20by24">20</span></td>
-<td><span class="color20by24">φ</span></td>
+<td><span class="color20by24 mono">20</span></td>
+<td><span class="color20by24 mono">φ</span></td>
 </tr>
 <tr>
-<td><span class="color3by24">3</span></td>
-<td><span class="color3by24">δ</span></td>
+<td><span class="color3by24 mono">3</span></td>
+<td><span class="color3by24 mono">δ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color9by24">9</span></td>
-<td><span class="color9by24">κ</span></td>
+<td><span class="color9by24 mono">9</span></td>
+<td><span class="color9by24 mono">κ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color15by24">15</span></td>
-<td><span class="color15by24">π</span></td>
+<td><span class="color15by24 mono">15</span></td>
+<td><span class="color15by24 mono">π</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color21by24">21</span></td>
-<td><span class="color21by24">χ</span></td>
+<td><span class="color21by24 mono">21</span></td>
+<td><span class="color21by24 mono">χ</span></td>
 </tr>
 <tr>
-<td><span class="color4by24">4</span></td>
-<td><span class="color4by24">ε</span></td>
+<td><span class="color4by24 mono">4</span></td>
+<td><span class="color4by24 mono">ε</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color10by24">10</span></td>
-<td><span class="color10by24">λ</span></td>
+<td><span class="color10by24 mono">10</span></td>
+<td><span class="color10by24 mono">λ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color16by24">16</span></td>
-<td><span class="color16by24">ρ</span></td>
+<td><span class="color16by24 mono">16</span></td>
+<td><span class="color16by24 mono">ρ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color22by24">22</span></td>
-<td><span class="color22by24">ψ</span></td>
+<td><span class="color22by24 mono">22</span></td>
+<td><span class="color22by24 mono">ψ</span></td>
 </tr>
 <tr>
-<td><span class="color5by24">5</span></td>
-<td><span class="color5by24">ζ</span></td>
+<td><span class="color5by24 mono">5</span></td>
+<td><span class="color5by24 mono">ζ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color11by24">11</span></td>
-<td><span class="color11by24">μ</span></td>
+<td><span class="color11by24 mono">11</span></td>
+<td><span class="color11by24 mono">μ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color17by24">17</span></td>
-<td><span class="color17by24">σ</span></td>
+<td><span class="color17by24 mono">17</span></td>
+<td><span class="color17by24 mono">σ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color23by24">23</span></td>
-<td><span class="color23by24">ω</span></td>
+<td><span class="color23by24 mono">23</span></td>
+<td><span class="color23by24 mono">ω</span></td>
 </tr>
 </tbody>
 </table>
@@ -1392,112 +1327,112 @@ data-bs-title="base24">b24</a></th>
 </thead>
 <tbody>
 <tr>
-<td><span class="color0">0</span></td>
-<td><span class="color0">α</span></td>
+<td><span class="color0.mono">0</span></td>
+<td><span class="color0.mono">α</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color12by24">12</span></td>
-<td><span class="color12by24">ν</span></td>
+<td><span class="color12by24.mono">12</span></td>
+<td><span class="color12by24.mono">ν</span></td>
 </tr>
 <tr>
-<td><span class="color1by24">1</span></td>
-<td><span class="color1by24">β</span></td>
+<td><span class="color1by24.mono">1</span></td>
+<td><span class="color1by24.mono">β</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color13by24">13</span></td>
-<td><span class="color13by24">ξ</span></td>
+<td><span class="color13by24.mono">13</span></td>
+<td><span class="color13by24.mono">ξ</span></td>
 </tr>
 <tr>
-<td><span class="color2by24">2</span></td>
-<td><span class="color2by24">γ</span></td>
+<td><span class="color2by24.mono">2</span></td>
+<td><span class="color2by24.mono">γ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color14by24">14</span></td>
-<td><span class="color14by24">ο</span></td>
+<td><span class="color14by24.mono">14</span></td>
+<td><span class="color14by24.mono">ο</span></td>
 </tr>
 <tr>
-<td><span class="color3by24">3</span></td>
-<td><span class="color3by24">δ</span></td>
+<td><span class="color3by24.mono">3</span></td>
+<td><span class="color3by24.mono">δ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color15by24">15</span></td>
-<td><span class="color15by24">π</span></td>
+<td><span class="color15by24.mono">15</span></td>
+<td><span class="color15by24.mono">π</span></td>
 </tr>
 <tr>
-<td><span class="color4by24">4</span></td>
-<td><span class="color4by24">ε</span></td>
+<td><span class="color4by24.mono">4</span></td>
+<td><span class="color4by24.mono">ε</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color16by24">16</span></td>
-<td><span class="color16by24">ρ</span></td>
+<td><span class="color16by24.mono">16</span></td>
+<td><span class="color16by24.mono">ρ</span></td>
 </tr>
 <tr>
-<td><span class="color5by24">5</span></td>
-<td><span class="color5by24">ζ</span></td>
+<td><span class="color5by24.mono">5</span></td>
+<td><span class="color5by24.mono">ζ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color17by24">17</span></td>
-<td><span class="color17by24">σ</span></td>
+<td><span class="color17by24.mono">17</span></td>
+<td><span class="color17by24.mono">σ</span></td>
 </tr>
 <tr>
-<td><span class="color6by24">6</span></td>
-<td><span class="color6by24">η</span></td>
+<td><span class="color6by24.mono">6</span></td>
+<td><span class="color6by24.mono">η</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color18by24">18</span></td>
-<td><span class="color18by24">τ</span></td>
+<td><span class="color18by24.mono">18</span></td>
+<td><span class="color18by24.mono">τ</span></td>
 </tr>
 <tr>
-<td><span class="color7by24">7</span></td>
-<td><span class="color7by24">θ</span></td>
+<td><span class="color7by24.mono">7</span></td>
+<td><span class="color7by24.mono">θ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color19by24">19</span></td>
-<td><span class="color19by24">υ</span></td>
+<td><span class="color19by24.mono">19</span></td>
+<td><span class="color19by24.mono">υ</span></td>
 </tr>
 <tr>
-<td><span class="color8by24">8</span></td>
-<td><span class="color8by24">ι</span></td>
+<td><span class="color8by24.mono">8</span></td>
+<td><span class="color8by24.mono">ι</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color20by24">20</span></td>
-<td><span class="color20by24">φ</span></td>
+<td><span class="color20by24.mono">20</span></td>
+<td><span class="color20by24.mono">φ</span></td>
 </tr>
 <tr>
-<td><span class="color9by24">9</span></td>
-<td><span class="color9by24">κ</span></td>
+<td><span class="color9by24.mono">9</span></td>
+<td><span class="color9by24.mono">κ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color21by24">21</span></td>
-<td><span class="color21by24">χ</span></td>
+<td><span class="color21by24.mono">21</span></td>
+<td><span class="color21by24.mono">χ</span></td>
 </tr>
 <tr>
-<td><span class="color10by24">10</span></td>
-<td><span class="color10by24">λ</span></td>
+<td><span class="color10by24.mono">10</span></td>
+<td><span class="color10by24.mono">λ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color22by24">22</span></td>
-<td><span class="color22by24">ψ</span></td>
+<td><span class="color22by24.mono">22</span></td>
+<td><span class="color22by24.mono">ψ</span></td>
 </tr>
 <tr>
-<td><span class="color11by24">11</span></td>
-<td><span class="color11by24">μ</span></td>
+<td><span class="color11by24.mono">11</span></td>
+<td><span class="color11by24.mono">μ</span></td>
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color23by24">23</span></td>
-<td><span class="color23by24">ω</span></td>
+<td><span class="color23by24.mono">23</span></td>
+<td><span class="color23by24.mono">ω</span></td>
 </tr>
 </tbody>
 </table>
@@ -1521,163 +1456,132 @@ data-bs-title="base24">b24</a></th>
 </thead>
 <tbody>
 <tr>
-<td><span class="color0">0</span></td>
-<td><span class="color0">α</span></td>
+<td><span class="color0 mono">0</span></td>
+<td><span class="color0 mono">α</span></td>
 </tr>
 <tr>
-<td><span class="color1by24">1</span></td>
-<td><span class="color1by24">β</span></td>
+<td><span class="color1by24 mono">1</span></td>
+<td><span class="color1by24 mono">β</span></td>
 </tr>
 <tr>
-<td><span class="color2by24">2</span></td>
-<td><span class="color2by24">γ</span></td>
+<td><span class="color2by24 mono">2</span></td>
+<td><span class="color2by24 mono">γ</span></td>
 </tr>
 <tr>
-<td><span class="color3by24">3</span></td>
-<td><span class="color3by24">δ</span></td>
+<td><span class="color3by24 mono">3</span></td>
+<td><span class="color3by24 mono">δ</span></td>
 </tr>
 <tr>
-<td><span class="color4by24">4</span></td>
-<td><span class="color4by24">ε</span></td>
+<td><span class="color4by24 mono">4</span></td>
+<td><span class="color4by24 mono">ε</span></td>
 </tr>
 <tr>
-<td><span class="color5by24">5</span></td>
-<td><span class="color5by24">ζ</span></td>
+<td><span class="color5by24 mono">5</span></td>
+<td><span class="color5by24 mono">ζ</span></td>
 </tr>
 <tr>
-<td><span class="color6by24">6</span></td>
-<td><span class="color6by24">η</span></td>
+<td><span class="color6by24 mono">6</span></td>
+<td><span class="color6by24 mono">η</span></td>
 </tr>
 <tr>
-<td><span class="color7by24">7</span></td>
-<td><span class="color7by24">θ</span></td>
+<td><span class="color7by24 mono">7</span></td>
+<td><span class="color7by24 mono">θ</span></td>
 </tr>
 <tr>
-<td><span class="color8by24">8</span></td>
-<td><span class="color8by24">ι</span></td>
+<td><span class="color8by24 mono">8</span></td>
+<td><span class="color8by24 mono">ι</span></td>
 </tr>
 <tr>
-<td><span class="color9by24">9</span></td>
-<td><span class="color9by24">κ</span></td>
+<td><span class="color9by24 mono">9</span></td>
+<td><span class="color9by24 mono">κ</span></td>
 </tr>
 <tr>
-<td><span class="color10by24">10</span></td>
-<td><span class="color10by24">λ</span></td>
+<td><span class="color10by24 mono">10</span></td>
+<td><span class="color10by24 mono">λ</span></td>
 </tr>
 <tr>
-<td><span class="color11by24">11</span></td>
-<td><span class="color11by24">μ</span></td>
+<td><span class="color11by24 mono">11</span></td>
+<td><span class="color11by24 mono">μ</span></td>
 </tr>
 <tr>
-<td><span class="color12by24">12</span></td>
-<td><span class="color12by24">ν</span></td>
+<td><span class="color12by24 mono">12</span></td>
+<td><span class="color12by24 mono">ν</span></td>
 </tr>
 <tr>
-<td><span class="color13by24">13</span></td>
-<td><span class="color13by24">ξ</span></td>
+<td><span class="color13by24 mono">13</span></td>
+<td><span class="color13by24 mono">ξ</span></td>
 </tr>
 <tr>
-<td><span class="color14by24">14</span></td>
-<td><span class="color14by24">ο</span></td>
+<td><span class="color14by24 mono">14</span></td>
+<td><span class="color14by24 mono">ο</span></td>
 </tr>
 <tr>
-<td><span class="color15by24">15</span></td>
-<td><span class="color15by24">π</span></td>
+<td><span class="color15by24 mono">15</span></td>
+<td><span class="color15by24 mono">π</span></td>
 </tr>
 <tr>
-<td><span class="color16by24">16</span></td>
-<td><span class="color16by24">ρ</span></td>
+<td><span class="color16by24 mono">16</span></td>
+<td><span class="color16by24 mono">ρ</span></td>
 </tr>
 <tr>
-<td><span class="color17by24">17</span></td>
-<td><span class="color17by24">σ</span></td>
+<td><span class="color17by24 mono">17</span></td>
+<td><span class="color17by24 mono">σ</span></td>
 </tr>
 <tr>
-<td><span class="color18by24">18</span></td>
-<td><span class="color18by24">τ</span></td>
+<td><span class="color18by24 mono">18</span></td>
+<td><span class="color18by24 mono">τ</span></td>
 </tr>
 <tr>
-<td><span class="color19by24">19</span></td>
-<td><span class="color19by24">υ</span></td>
+<td><span class="color19by24 mono">19</span></td>
+<td><span class="color19by24 mono">υ</span></td>
 </tr>
 <tr>
-<td><span class="color20by24">20</span></td>
-<td><span class="color20by24">φ</span></td>
+<td><span class="color20by24 mono">20</span></td>
+<td><span class="color20by24 mono">φ</span></td>
 </tr>
 <tr>
-<td><span class="color21by24">21</span></td>
-<td><span class="color21by24">χ</span></td>
+<td><span class="color21by24 mono">21</span></td>
+<td><span class="color21by24 mono">χ</span></td>
 </tr>
 <tr>
-<td><span class="color22by24">22</span></td>
-<td><span class="color22by24">ψ</span></td>
+<td><span class="color22by24 mono">22</span></td>
+<td><span class="color22by24 mono">ψ</span></td>
 </tr>
 <tr>
-<td><span class="color23by24">23</span></td>
-<td><span class="color23by24">ω</span></td>
+<td><span class="color23by24 mono">23</span></td>
+<td><span class="color23by24 mono">ω</span></td>
 </tr>
 </tbody>
 </table>
 
 </div>
 
-Any whole number of <a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> seconds can be
-written as an integer number of
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> followed by one
-<a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a> digit that counts the remaining
-<a href="#sid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="second interval differences">sid</a>. Each
-<a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> second adds 1
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec second">s</a> and 1
-<a href="#sid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="second interval difference">sid</a>, and every 24
-<a href="#sid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="second interval differences">sid</a> carry over into 1
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec second">s</a>, so the
-<a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a> digit is always the remainder after
-dividing the number of
-<a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> seconds by 24. For
-example, 23 <a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> seconds are
-23<span class="color23by24 tool" data-bs-toggle="tooltip"
-data-bs-title="base24 ω is base10 23">ω</span>
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>, but 24
-<a href="#si" class="tool" data-bs-toggle="tooltip"
-data-bs-title="International System of Units">SI</a> seconds are
-25<span class="color0 tool" data-bs-toggle="tooltip"
-data-bs-title="base24 α is base10 0">α</span>
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>. The ${leapCountHsl1} leap seconds
-inserted before the Dec date selected above are ${leapDecsHsl1}
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a>. In this way,
-<a href="#s" class="tool" data-bs-toggle="tooltip"
-data-bs-title="Dec seconds">s</a> and
-<a href="#sid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="second interval differences">sid</a> can represent any
-number of leap seconds without fractions or [repeating
-decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever).
+## Base9
 
-# Base9
-
-Dec seconds can also be appended to a
+In addition to appending a
+<a href="#sid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second interval difference">sid</a> to
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a> using
+<a href="#b24" class="tool" data-bs-toggle="tooltip"
+data-bs-title="base24">b24</a>, we can append
+<a href="#s" class="tool" data-bs-toggle="tooltip"
+data-bs-title="Dec seconds">s</a> with or without a
+<a href="#sid" class="tool" data-bs-toggle="tooltip"
+data-bs-title="second interval difference">sid</a> to a
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a>. A <span class="tool"
+data-bs-title="time of day">tod</a> using Dec
+[nonary](https://en.wikipedia.org/wiki/Ternary_numeral_system#Compact_ternary_representation:_base_9_and_27:~:text=base%209%2C%20each%20digit%20is%20two%20ternary%20digits)
+(<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="nonary">base9</span>). A <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="a thousandth of a day">milliday</span> is 90
 <a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec seconds">s</a> long, so the three digits of a
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time of day">tod</a> can be followed by a base9
+data-bs-title="time of day">tod</a> can be followed by a
+<span class="tool" data-bs-toggle="tooltip"
+data-bs-title="nonary">base9</span>
 (<a href="#b9" id="base9" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base9">b9</a>) digit that counts tens of
 <a href="#s" class="tool" data-bs-toggle="tooltip"
@@ -1687,29 +1591,15 @@ data-bs-title="base10">b10</a> digit that counts the remaining
 <a href="#s" class="tool" data-bs-toggle="tooltip"
 data-bs-title="Dec seconds">s</a>, and, if needed, a
 <a href="#b24" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base24">b24</a> digit that counts the remaining
+data-bs-title="base24">b24</a> digit that tracks the
 <a href="#sid" class="tool" data-bs-toggle="tooltip"
-data-bs-title="second interval differences">sid</a>. To set them apart
+data-bs-title="second interval difference">sid</a>. To set them apart
 from <a href="#b10" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base10">b10</a> digits, Dec writes
 <a href="#b9" class="tool" data-bs-toggle="tooltip"
 data-bs-title="base9">b9</a> digits with the [astronomical
 symbols](https://en.wikipedia.org/wiki/Astronomical_symbol#:~:text=symbols%20used%20to%20represent%20astronomical%20objects)
-of the Sun (<span class="color0 tool" data-bs-toggle="tooltip"
-data-bs-title="base9 ☉ is base10 0">☉</span>) and the eight planets, so
-that every <a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a> digit from 1 to 8 is the position of a
-planet in order of distance from the Sun: Mercury
-(<span class="color1by9 tool" data-bs-toggle="tooltip"
-data-bs-title="base9 ☿ is base10 1">☿</span>) is 1, Earth
-(<span class="color3by9 tool" data-bs-toggle="tooltip"
-data-bs-title="base9 ♁ is base10 3">♁</span>) is 3, and Neptune
-(<span class="color8by9 tool" data-bs-toggle="tooltip"
-data-bs-title="base9 ♆ is base10 8">♆</span>) is 8. The table below
-lists each <a href="#b9" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base9">b9</a> digit alongside its
-<a href="#b10" class="tool" data-bs-toggle="tooltip"
-data-bs-title="base10">b10</a> equivalent.
+listed in the table below.
 
 <div class="d-none d-md-block">
 
@@ -1887,13 +1777,13 @@ viewof hmsinput = Inputs.form([
 # Time zone offset
 
 In Dec, a <a href="#uto" class="tool" data-bs-toggle="tooltip"
-data-bs-title="universal time offset">uto</a> can be any type of number,
-a “time zone offset”
+data-bs-title="universal time offset">uto</a> can be any nonnegative
+number, a “time zone offset”
 (<a href="#tzo" id="timezoneoffset" class="tool" data-bs-toggle="tooltip"
-data-bs-title="time zone offset">tzo</a>) is an integer, and a “solar
-time offset” (<a href="#sto" id="solartimeoffset" class="tool"
+data-bs-title="time zone offset">tzo</a>) is a nonnegative integer, and
+a “solar time offset” (<a href="#sto" id="solartimeoffset" class="tool"
 data-bs-toggle="tooltip" data-bs-title="solar time offset">sto</a>) is a
-[terminating
+nonnegative [terminating
 decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits).
 If we derived <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="a tenth of a day">deciday</span> offsets from all 86400
@@ -2318,18 +2208,18 @@ time”](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepanc
 (<a href="#eot" id="equationoftime" class="tool" data-bs-toggle="tooltip"
 data-bs-title="equation of time">eot</a>).
 
-<div id="equationgroup08" class="equationgroup">
+<div id="equationgroup07" class="equationgroup">
 
 <span id="eq-toy">
-toy = ada ÷ syl   (19)
+toy = ada ÷ syl   (14)
 </span>
 
 <span id="eq-mst">
-mst = (0.95 + tod + w) mod  1   (20)
+mst = (0.95 + tod + w) mod  1   (15)
 </span>
 
 <span id="eq-ast">
-ast = (0.95 + tod + w + eot(toy)) mod  1   (21)
+ast = (0.95 + tod + w + eot(toy)) mod  1   (16)
 </span>
 
 </div>
@@ -2355,16 +2245,16 @@ because its trigonometric functions expect
 [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees)
 instead of radians.
 
-<div id="equationgroup09" class="equationgroup">
+<div id="equationgroup08" class="equationgroup">
 
 <span id="eq-eot">
 $$\begin{split}
 \text{eot(toy)} & = \beta_0 \\
-& + \beta_1 \times \text{costau(toy)} \\
-& + \beta_2 \times \text{costau(2} \times \text{toy)} \\
-& + \beta_3 \times \text{sintau(toy)} \\
-& + \beta_4 \times \text{sintau(2} \times \text{toy)}
-\end{split} \qquad(22)$$
+& + \beta_1 \ast \text{costau(toy)} \\
+& + \beta_2 \ast \text{costau(2} \ast \text{toy)} \\
+& + \beta_3 \ast \text{sintau(toy)} \\
+& + \beta_4 \ast \text{sintau(2} \ast \text{toy)}
+\end{split} \qquad(17)$$
 </span>
 
 </div>
@@ -2634,10 +2524,10 @@ data-bs-title="equation of time">eot</a>(<a href="#toy" class="tool" data-bs-tog
 data-bs-title="time of year">toy</a>) value that are both measured in
 days, and keeping only the decimal part of the result.
 
-<div id="equationgroup10" class="equationgroup">
+<div id="equationgroup09" class="equationgroup">
 
 <span id="eq-solarnoon">
-solarnoon = (9.55 + tzo − w − eot(toy)) mod  1   (23)
+solarnoon = (9.55 + tzo − w − eot(toy)) mod  1   (18)
 </span>
 
 </div>
@@ -2660,14 +2550,14 @@ Massachusetts](https://en.wikipedia.org/wiki/Cambridge,_Massachusetts#:~:text=a%
 in the [United
 States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America).
 
-<div id="equationgroup11" class="equationgroup">
+<div id="equationgroup10" class="equationgroup">
 
 <span id="eq-cambridgeuk">
-4.99635 = (9.55 − 0.050365) mod  1 × 10   (24)
+4.99635 = (9.55 − 0.050365) mod  1 \* 10   (19)
 </span>
 
 <span id="eq-cambridgema">
-6.97516 = (9.55 − 0.852484) mod  1 × 10   (25)
+6.97516 = (9.55 − 0.852484) mod  1 \* 10   (20)
 </span>
 
 </div>
@@ -2689,14 +2579,14 @@ data-bs-title="time of day">tod</a> for each city will be two
 <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="tenths of a day">decidays</span> earlier.
 
-<div id="equationgroup12" class="equationgroup">
+<div id="equationgroup11" class="equationgroup">
 
 <span id="eq-cambridgeuk8">
-2.99635 = (9.55 + 0.8 − 0.050365) mod  1 × 10   (26)
+2.99635 = (9.55 + 0.8 − 0.050365) mod  1 \* 10   (21)
 </span>
 
 <span id="eq-cambridgema8">
-4.97516 = (9.55 + 0.8 − 0.852484) mod  1 × 10   (27)
+4.97516 = (9.55 + 0.8 − 0.852484) mod  1 \* 10   (22)
 </span>
 
 </div>
@@ -2726,13 +2616,13 @@ data-bs-title="half day arc">da/2</a> is a sunrise
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a>.
 
-<div id="equationgroup13" class="equationgroup">
+<div id="equationgroup12" class="equationgroup">
 
 <span id="eq-sunsetsunrise">
 $$\begin{split}
-\text{sunset} & = \text{solarnoon} + \frac{\text{da}}{2} && = \text{sunrise} + \text{da} \\
-\text{sunrise} & = \text{solarnoon} - \frac{\text{da}}{2} && = \text{sunset} - \text{da}
-\end{split} \qquad(28)$$
+\text{sunset} & = \text{solarnoon} + \dfrac{\text{da}}{2} && = \text{sunrise} + \text{da} \\
+\text{sunrise} & = \text{solarnoon} - \dfrac{\text{da}}{2} && = \text{sunset} - \text{da}
+\end{split} \qquad(23)$$
 </span>
 
 </div>
@@ -2758,10 +2648,10 @@ that form a semicircle from solar noon to the
 data-bs-title="night arc">na</a> midpoint: [solar
 midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
 
-<div id="equationgroup14" class="equationgroup">
+<div id="equationgroup13" class="equationgroup">
 
 <span id="eq-solarmidnight">
-$$\text{solarmidnight} = \text{solarnoon} + \frac{\text{da}}{2} + \frac{\text{na}}{2} = \text{sunset} + \frac{\text{na}}{2} \qquad(29)$$
+$$\text{solarmidnight} = \text{solarnoon} + \dfrac{\text{da}}{2} + \dfrac{\text{na}}{2} = \text{sunset} + \dfrac{\text{na}}{2} \qquad(24)$$
 </span>
 
 </div>
@@ -2919,10 +2809,10 @@ In the Southern Hemisphere, we can obtain solar time by measuring the
 data-bs-title="solar azimuth angle">saa</a> in turns and then
 subtracting our measurement from one and a half turns:
 
-<div id="equationgroup15" class="equationgroup">
+<div id="equationgroup14" class="equationgroup">
 
 <span id="eq-solartime">
-$$\text{solartime} \approx \begin{cases}\text{saa}&{\text{if m} \geq 0;}\\(1.5 - \text{saa}) \bmod 1&{\text{otherwise.}}\end{cases} \qquad(30)$$
+$$\text{solartime} \approx \begin{cases}\text{saa}&{\text{if m} \geq 0;}\\(1.5 - \text{saa}) \bmod 1&{\text{otherwise.}}\end{cases} \qquad(25)$$
 </span>
 
 </div>
@@ -2979,14 +2869,14 @@ data-bs-title="time of day">tod</a> to get a sunrise or sunset
 <a href="#tod" class="tool" data-bs-toggle="tooltip"
 data-bs-title="time of day">tod</a>.
 
-<div id="equationgroup16" class="equationgroup">
+<div id="equationgroup15" class="equationgroup">
 
 <span id="eq-da">
-$$\text{da} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\pi} \qquad(31)$$
+$$\text{da} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\pi} \qquad(26)$$
 </span>
 
 <span id="eq-halfda">
-$$\frac{\text{da}}{2} = \frac{\arccos\left({\Large\frac{\text{costau(0.252314)} - \text{sintau(m)} \times \text{sintau(sda)}}{\text{costau(m)} \times \text{costau(sda)}}}\right)}{\tau} \qquad(32)$$
+$$\dfrac{\text{da}}{2} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\tau} \qquad(27)$$
 </span>
 
 </div>
@@ -3016,18 +2906,18 @@ the needlessly complex
 data-bs-title="solar declination angle">sda</a> model provided by the
 NOAA General Solar Position Calculations:
 
-<div id="equationgroup17" class="equationgroup">
+<div id="equationgroup16" class="equationgroup">
 
 <span id="eq-sda">
 $$\begin{split}
 \text{sda(toy)} & = \beta_0 \\
-& + \beta_1 \times \text{costau(toy)} \\
-& + \beta_2 \times \text{sintau(toy)} \\
-& + \beta_3 \times \text{costau(2} \times \text{toy)} \\
-& + \beta_4 \times \text{sintau(2} \times \text{toy)} \\
-& + \beta_5 \times \text{costau(3} \times \text{toy)} \\
-& + \beta_6 \times \text{sintau(3} \times \text{toy)} \\
-\end{split} \qquad(33)$$
+& + \beta_1 \ast \text{costau(toy)} \\
+& + \beta_2 \ast \text{sintau(toy)} \\
+& + \beta_3 \ast \text{costau(2} \ast \text{toy)} \\
+& + \beta_4 \ast \text{sintau(2} \ast \text{toy)} \\
+& + \beta_5 \ast \text{costau(3} \ast \text{toy)} \\
+& + \beta_6 \ast \text{sintau(3} \ast \text{toy)} \\
+\end{split} \qquad(28)$$
 </span>
 
 </div>
@@ -3112,10 +3002,10 @@ that becomes a [“T plus
 countup”](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time) after
 an event like a rocket🚀launch.
 
-<div id="equationgroup18" class="equationgroup">
+<div id="equationgroup17" class="equationgroup">
 
 <span id="eq-difference">
-$$\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \qquad(34)$$
+$$\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \qquad(29)$$
 </span>
 
 </div>
@@ -3159,22 +3049,22 @@ data-bs-title="days of era">doe</a> and
 data-bs-title="epochal year aggregates">eya</a> allow us to represent a
 date as a single number and obtain the difference between two dates.
 
-<div id="equationgroup19" class="equationgroup">
+<div id="equationgroup18" class="equationgroup">
 
 <span id="eq-cda">
-cda = de − coe × 146097   (35)
+cda = de − coe \* 146097   (30)
 </span>
 
 <span id="eq-yocdoc">
-$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(36)$$
+$$\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(31)$$
 </span>
 
 <span id="eq-yoe">
-yoe = yoc + coe × 400   (37)
+yoe = yoc + coe \* 400   (32)
 </span>
 
 <span id="eq-doydoc">
-$$\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \biggr \rfloor \qquad(38)$$
+$$\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \biggr \rfloor \qquad(33)$$
 </span>
 
 </div>
@@ -3209,26 +3099,26 @@ an <a href="#eya" class="tool" data-bs-toggle="tooltip"
 data-bs-title="epochal year aggregate">eya</a> to get a yoe or divide
 its , we can obtain a
 
-<div id="equationgroup20" class="equationgroup">
+<div id="equationgroup19" class="equationgroup">
 
 <span id="eq-eya">
-eya = yoe + toy = yoe + doy ÷ syl   (39)
+eya = yoe + toy = yoe + doy ÷ syl   (34)
 </span>
 
 <span id="eq-toyeya">
-toy = eya mod  1 = doy ÷ syl   (40)
+toy = eya mod  1 = doy ÷ syl   (35)
 </span>
 
 <span id="eq-doytoy">
-doy = ⌊toy × syl⌋   (41)
+doy = ⌊toy \* syl⌋   (36)
 </span>
 
 <span id="eq-eyadoy">
-eya = yoe + doy × syl   (42)
+eya = yoe + doy \* syl   (37)
 </span>
 
 <span id="eq-eyacoe">
-eya = yoe + coe × 400   (43)
+eya = yoe + coe \* 400   (38)
 </span>
 
 </div>
@@ -3266,30 +3156,30 @@ data-bs-title="year of cycle">yoc</a>), and then finally the year and
 <a href="#ada" class="tool" data-bs-toggle="tooltip"
 data-bs-title="annual day aggregate">ada</a>.
 
-<div id="equationgroup21" class="equationgroup">
+<div id="equationgroup20" class="equationgroup">
 
 <span id="eq-edd">
-edd = eda − difference   (44)
+edd = eda − difference   (39)
 </span>
 
 <span id="eq-coe">
-$$\text{coe} = \Biggl \lfloor \frac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \qquad(45)$$
+$$\text{coe} = \Biggl \lfloor \dfrac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \qquad(40)$$
 </span>
 
 <span id="eq-doc">
-doc = edd − coe × 146097   (46)
+doc = edd − coe \* 146097   (41)
 </span>
 
 <span id="eq-yocedd">
-$$\text{yoc} = \biggl \lfloor \frac{\text{doc} - \lfloor \frac{\text{doc}}{1460} \rfloor + \lfloor \frac{\text{doc}}{36524} \rfloor - \lfloor \frac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(47)$$
+$$\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \qquad(42)$$
 </span>
 
 <span id="eq-year">
-year = yoc + coe × 400   (48)
+year = yoc + coe \* 400   (43)
 </span>
 
 <span id="eq-adadoc">
-$$\text{ada} = \text{doc} - \text{yoc} \times 365 - \lfloor \frac{\text{yoc}}{4} \rfloor + \lfloor \frac{\text{yoc}}{100} \rfloor \qquad(49)$$
+$$\text{ada} = \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \qquad(44)$$
 </span>
 
 </div>
@@ -4204,10 +4094,15 @@ function b9b24pad(b9b24) {
     /^(\d{1,3})([☉☿♀♁♂♃♄♅♆])?\s*(\d)?([α-ω])?$/u);
   return tod.padEnd(3, "0") + dec + sec + sid
 }
-function si2s(si) {
-  const sid = Math.round(Math.abs(si) * 25);
-  return (si < 0 ? "-" : "") + Math.floor(sid / 24)
-    + "αβγδεζηθικλμνξοπρστυφχψω"[sid % 24]
+function sis2arr(sis) {
+  const sid = Math.round(Math.abs(sis) * 25);
+  return [
+    Math.floor(sid / 24) * (sis < 0 ? -1 : 1),
+    sid
+  ]
+}
+function sid2b24(sid) {
+  return "αβγδεζηθικλμνξοπρστυφχψω"[sid % 24]
 }
 function getEot(day) {
   const gamma = 2 * Math.PI * day / 365
@@ -4275,17 +4170,15 @@ zeroYear = zeroDate[0]
 zeroAda = zeroDate[1]
 zeroDoy = Math.floor(zeroAda)
 zeroIsLeap = isLeapYear(zeroYear)
-zeroAdaHsl = textcolor(zeroAda.toFixed(5), d3.color(piecewiseColor(zeroAda / (365 + zeroIsLeap))).formatHex())
-zeroAdaHsl1 = textcolor(zeroAda.toFixed(5), d3.color(piecewiseColor(zeroAda / (365 + zeroIsLeap))).formatHex())
-zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(1), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl2 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl3 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl4 = textcolor((zeroTime * 10).toFixed(4), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroTimeHsl5 = textcolor((zeroTime * 10).toFixed(5), d3.color(piecewiseColor(zeroTime)).formatHex())
-zeroDotyHsl = textcolor(zeroDoy.toString().padStart(3, "0"), d3.color(piecewiseColor(zeroDoy / (365 + zeroIsLeap))).formatHex())
-zeroDoteHsl = textcolor(zeroDote.toFixed(5), d3.color(piecewiseColor(zeroDote % 1)).formatHex())
-zeroYearHsl = textcolor(zeroYear, d3.color(piecewiseColor(zeroYear % 1000 / 1000)).formatHex())
+zeroAdaHsl = textcolor(zeroAda.toFixed(5), piecewiseColor(zeroAda / (365 + zeroIsLeap)))
+zeroAdaHsl1 = textcolor(zeroAda.toFixed(5), piecewiseColor(zeroAda / (365 + zeroIsLeap)))
+zeroTimePiece = piecewiseColor(zeroTime)
+zeroTimeHsl0 = textcolor(zeroTime.toFixed(5).slice(1), zeroTimePiece)
+zeroTimeHsl1 = textcolor(zeroTime.toFixed(5).slice(1), zeroTimePiece)
+zeroTimeHsl2 = textcolor(zeroTime.toFixed(5).slice(1), zeroTimePiece)
+zeroDotyHsl = textcolor(zeroDoy.toString().padStart(3, "0"), piecewiseColor(zeroDoy / (365 + zeroIsLeap)))
+zeroDoteHsl = textcolor(Math.floor(zeroDote), piecewiseColor(zeroDote % 146097 / 146097))
+zeroYearHsl = textcolor(zeroYear, piecewiseColor(zeroYear % 1000 / 1000))
 browserDote = unix2dote(now)
 browserTime = browserDote[0] % 1 * 10
 browserZone = browserDote[1]
@@ -5271,10 +5164,10 @@ elaTimeHsl = textcolor(elaTime, `hsl(${d3.hsl(piecewiseColor(elaTime % 1000 / 10
 loadDote = unix2dote(Date.now(), 0)
 loadydz = dote2date(...loadDote)
 loadYear = loadydz[0]
-loadYearHsl = textcolor(loadYear, d3.color(piecewiseColor(loadYear % 1000 / 1000)).formatHex())
+loadYearHsl = textcolor(loadYear, piecewiseColor(loadYear % 1000 / 1000))
 loadAda = loadydz[1]
 loadIsLeap = isLeapYear(loadYear)
-loadAdaHsl = textcolor(loadAda.toFixed(5).padStart(9, "0"), d3.color(piecewiseColor(loadAda / (365 + loadIsLeap))).formatHex())
+loadAdaHsl = textcolor(loadAda.toFixed(5).padStart(9, "0"), piecewiseColor(loadAda / (365 + loadIsLeap)))
 decDate = Math.floor(ydz[1])
 decMoty = Math.floor((5 * decDate + 2) / 153)
 isoYear = decYear + (decMoty > 9)
@@ -5297,18 +5190,26 @@ selTimeMil = selTimeOne.toFixed(3).slice(2)
 selTimeCmd = selTimeOne.toFixed(5).slice(2)
 selAda = selDate + selTime
 selLati = lati2turn(location[1])
-decDodHsl = textcolor(decDod, d3.color(piecewiseColor(decDod / 10)).formatHex())
-decDateHsl = textcolor(decDate.toString().padStart(3, "0"), d3.color(piecewiseColor(decDate / (365 + isLeapYear(decYear)))).formatHex())
-decTimeHsl = textcolor(decTime, d3.color(piecewiseColor(decTime / 10)).formatHex())
-selDateHsl = textcolor(selDate.toString().padStart(3, "0"), d3.color(piecewiseColor(selDate / 365)).formatHex())
-selLatiHsl = textcolor(selLati.toFixed(0), d3.color(piecewiseColor((selLati + 250) % 250 / 250)).formatHex())
-selTimeDay = textcolor(selTimeMil, d3.color(piecewiseColor(selTime)).formatHex())
-selTimeHsl0 = textcolor(selTimeTen.toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
-selTimeHsl1 = textcolor(selTimeTen.toFixed(4), d3.color(piecewiseColor(selTime)).formatHex())
-selZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
-selAdaDay = textcolor(selAda.toFixed(3).padStart(6, "0"), d3.color(piecewiseColor(selAda / 365)).formatHex())
-selAdaDec = textcolor((selAda * 10).toFixed(4).padStart(9, "0"), d3.color(piecewiseColor(selAda / 365)).formatHex())
-decZoneHsl = textcolor(selectedZone, d3.color(piecewiseColor(selectedZone / 10)).formatHex())
+decDodHsl = textcolor(decDod, piecewiseColor(decDod / 10))
+decDateHsl = textcolor(decDate.toString().padStart(3, "0"), piecewiseColor(decDate / (365 + isLeapYear(decYear))))
+decTimeHsl = textcolor(decTime, piecewiseColor(decTime / 10))
+selDatePiece = piecewiseColor(selDate / 365)
+selDatePad = selDate.toString().padStart(3, "0")
+selDateHsl = textcolor(selDate, selDatePiece)
+selDateHsl1 = textcolor(selDate, selDatePiece)
+selDateHsl2 = textcolor(selDatePad, selDatePiece)
+selLatiHsl = textcolor(selLati.toFixed(0), piecewiseColor((selLati + 1000) % 1000 / 1000))
+selTimeDayPiece = piecewiseColor(selTime)
+selTimeInt = parseInt(selTimeMil)
+selTimeDay = textcolor(selTimeInt, selTimeDayPiece)
+selTimeDay1 = textcolor(selTimeInt, selTimeDayPiece)
+selTimeDay2 = textcolor(selTimeMil, selTimeDayPiece)
+selTimeHsl0 = textcolor(selTimeTen.toFixed(4), piecewiseColor(selTime))
+selTimeHsl1 = textcolor(selTimeTen.toFixed(4), piecewiseColor(selTime))
+selZoneHsl = textcolor(selectedZone, piecewiseColor(selectedZone / 10))
+selAdaDay = textcolor(selAda.toFixed(3).padStart(6, "0"), piecewiseColor(selAda / 365))
+selAdaDec = textcolor((selAda * 10).toFixed(4).padStart(9, "0"), piecewiseColor(selAda / 365))
+decZoneHsl = textcolor(selectedZone, piecewiseColor(selectedZone / 10))
 viewof selectedDate = Inputs.input(new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours()))
 viewof selectedHour = Inputs.input(new Date(2022, new Date().getMonth(), new Date().getDate(), new Date().getHours()).getHours())
 function set(input, value) {
@@ -5361,8 +5262,8 @@ utcOffDiff = parseFloat((Math.round(utcOffsetD) - utcOffsetD).toFixed(2))
 utcOffHslM = textcolor(utcOffsetM, `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
 utcOffHslD = textcolor(parseFloat(utcOffsetD.toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffsetP / 10)).h}` + slStr)
 decZonHslP = textcolor(decZonePos, `hsl(${d3.hsl(piecewiseColor(decZonePos / 10)).h}` + slStr)
-utcOffsetMdiffHsl = textcolor(parseFloat((utcOffDiff * 144).toFixed(2)), `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
-utcOffDiffHsl = textcolor(utcOffDiff, `hsl(${d3.hsl(piecewiseColor(utcOffDiff / 10)).h}` + slStr)
+utcOffsetMdiffHsl = textcolor(parseFloat((utcOffDiff * 144).toFixed(2)), `hsl(${d3.hsl(piecewiseColor((utcOffDiff + 10) % 10 / 10)).h}` + slStr)
+utcOffDiffHsl = textcolor(utcOffDiff, `hsl(${d3.hsl(piecewiseColor((utcOffDiff + 10) % 10 / 10)).h}` + slStr)
 function date2dote(year = 1969, doty = 306, zone = 0) {
     const cote = Math.floor((year >= 0 ? year : year - 399) / 400), yote = year - cote * 400;
     return [cote * 146097 + yote * 365 + Math.floor(yote / 4) - Math.floor(yote / 100) + doty, zone]
@@ -5398,29 +5299,41 @@ leapSecondDotes = [
 ].map(x => date2dote(...x)[0])
 leapSecondDote = date2dote(leapSecondYear, leapSecondDate)[0]
 leapCount = leapSecondDotes.filter(dote => leapSecondDote > dote).length;
-leapColor = d3.color(piecewiseColor(leapCount / 86400)).formatHex()
+leapColor = piecewiseColor(leapCount / 86400)
 leapCountHsl = textcolor(leapCount, leapColor)
 frac = require("fraction.js")
 leapFrac = frac(leapCount).div(8640).toFraction()
 leapTzoHsl0 = textcolor(leapFrac, leapColor)
 leapTzoHsl1 = textcolor(leapFrac, leapColor)
 leapTzoHsl2 = textcolor(leapFrac, leapColor)
-leapDecsHsl = textcolor(si2s(leapCount), leapColor)
-leapDecsHsl1 = textcolor(si2s(leapCount), leapColor)
-leapCountHsl1 = textcolor(leapCount, leapColor)
+leapSarr = sis2arr(leapCount)
+leapSdec = leapSarr[0]
+leapSsid = leapSarr[1]
+leapSb24 = sid2b24(leapSsid)
+leapSb24col = piecewiseColor(leapSsid % 24 / 24)
+leapSdecCol = piecewiseColor(leapSdec % 90000 / 90000)
+leapSb24css = ({background: leapSb24col, fontFamily: "monospace"})
+leapSb24hsl = textcolor(leapSb24, leapSb24css)
+leapSb24hsl1 = textcolor(leapSb24, leapSb24css)
+leapSb24hsl2 = textcolor(leapSb24, leapSb24css)
+leapSdecHsl = textcolor(leapSdec, leapSdecCol)
+leapSdecHsl1 = textcolor(leapSdec, leapSdecCol)
+leapSdecHsl2 = textcolor(leapSdec, leapSdecCol)
+leapSdecHsl3 = textcolor(leapSdec, leapSdecCol)
+leapSsidHsl = textcolor(leapSsid % 24, leapSb24col)
 hmsMs = ((hmsinput[0] * 60 + hmsinput[1]) * 60 + hmsinput[2]) * 1000
-hmsB9b24Hsl = textcolor(b9b24pad(unix2b9b24(hmsMs)), d3.color(piecewiseColor(hmsMs / 86400000)).formatHex())
+hmsB9b24Hsl = textcolor(b9b24pad(unix2b9b24(hmsMs)), piecewiseColor(hmsMs / 86400000))
 leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
-leapTodHsl0 = textcolor(leapDecidayTod, d3.color(piecewiseColor(leapTod)).formatHex())
-leapTodHsl1 = textcolor(leapDecidayTod, d3.color(piecewiseColor(leapTod)).formatHex())
-longInputHsl = textcolor(lonInput, d3.color(piecewiseColor(lonInput / 10)).formatHex())
+leapTodHsl0 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
+leapTodHsl1 = textcolor(leapDecidayTod, piecewiseColor(leapTod))
+longInputHsl = textcolor(lonInput, piecewiseColor(lonInput / 1000))
 eot = getEot(leapSecondDate)
 astTzo = eot + lonInput
-astTzoHsl = textcolor(astTzo.toFixed(4), d3.color(piecewiseColor(astTzo / 10)).formatHex())
-eotHsl = textcolor(eot.toFixed(4), d3.color(piecewiseColor(eot / 10)).formatHex())
-eotSum = (zeroTime + astTzo + 10) % 10
-eotSumHsl = textcolor(eotSum.toFixed(4), d3.color(piecewiseColor(eotSum / 10)).formatHex())
+astTzoHsl = textcolor(astTzo.toFixed(4), piecewiseColor((astTzo + 1000) % 1000 / 1000))
+eotHsl = textcolor(eot.toFixed(4), piecewiseColor((eot + 1000) % 1000 / 1000))
+eotSum = (zeroTime * 1000 + astTzo + 1000) % 1000
+eotSumHsl = textcolor(eotSum.toFixed(4), piecewiseColor(eotSum / 1000))
 // https://observablehq.com/@mcmcclur/adaptive-plotter
 function build_samples(f, a, b, opts = {}) {
   let { N = 9, max_depth = 6 } = opts;
