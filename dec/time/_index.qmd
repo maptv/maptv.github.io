@@ -31,6 +31,21 @@ function dote2date(dote, zone = 0) {
       + Math.floor(yotc / 4)
       - Math.floor(yotc / 100)
   ), zone]}
+function dec2b9(x, len = 2) {
+  x = x.toString().padStart(len, "0")
+  return astro[x[0]] + x.slice(1)
+}
+astro = ({
+  0: "☉", // Sun
+  1: "☿", // Mercury
+  2: "♀", // Venus
+  3: "♁", // Earth
+  4: "♂", // Mars
+  5: "♃", // Jupiter
+  6: "♄", // Saturn
+  7: "♅", // Uranus
+  8: "♆"  // Neptune
+});
 function unix2b9b24(unix) {
   const tick = Math.floor(
     ((unix ?? Date.now()) % 86400000 + 86400000) % 86400000 / 40),
@@ -1280,8 +1295,13 @@ leapSdecHsl1 = textcolor(leapSdec, leapSdecCol)
 leapSdecHsl2 = textcolor(leapSdec, leapSdecCol)
 leapSdecHsl3 = textcolor(leapSdec, leapSdecCol)
 leapSsidHsl = textcolor(leapSsid % 24, leapSb24col)
-hmsMs = ((hmsinput[0] * 60 + hmsinput[1]) * 60 + hmsinput[2]) * 1000
-hmsB9b24Hsl = textcolor(b9b24pad(unix2b9b24(hmsMs)), piecewiseColor(hmsMs / 86400000))
+b24hod = sid2b24(hmsinput[0])
+b24hodHsl = textcolor(hmsinput[0], ({background: piecewiseColor(hmsinput[0] / 24), fontFamily: "monospace"}))
+hmsDay = hmsinput[0] / 24 + hmsinput[1] / 1440 + hmsinput[2] / 86400
+hmsMil = hmsDay * 1000
+hmsTodHsl = textcolor(Math.floor(hmsMil), piecewiseColor(hmsMil / 1000))
+hmsSec = hmsMil % 1 * 90
+hmsSecHsl = textcolor(dec2b9(Math.floor(hmsSec)), piecewiseColor(hmsSec / 90))
 leapTod = (zeroTime + leapCount / 86400) % 1
 leapDecidayTod = (leapTod * 10).toFixed(4)
 leapTodHsl0 = textcolor(leapDecidayTod, piecewiseColor(leapTod))

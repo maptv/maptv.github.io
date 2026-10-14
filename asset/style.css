@@ -100,7 +100,7 @@ code span.er {
 }
 
 .mono {
-  font-family: monospace;
+  font-family: Menlo, Monaco, Consolas, monospace;
 }
 
 .floatright {

@@ -129,7 +129,7 @@ hms$sec / 86400
 
 :::
 
-The equations below convert UNIX time or a Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} into the three components of an [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet: the "hour of day" ([hod](#hod){#hourofday .tool data-bs-toggle="tooltip" data-bs-title="hour of day"}), "minute of hour" ([moh](#moh){#minuteofhour .tool data-bs-toggle="tooltip" data-bs-title="minute of hour"}), and "second of minute" ([som](#som){#secondofminute .tool data-bs-toggle="tooltip" data-bs-title="second of minute"}), using a "daily second aggregate" ([dsa](#dsa){#dailysecondaggregate .tool data-bs-toggle="tooltip" data-bs-title="daily second aggregate"}) and "hourly second aggregate" ([hsa](#hsa){#hourlysecondaggregate .tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregate"}). While both count seconds, [dsa](#dsa){.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregates"} start at midnight and [hsa](#hsa){.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregates"} begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
+Equations -@eq-dsa to -@eq-som below convert UNIX time or a Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} into the three components of an [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet: the "hour of day" ([hod](#hod){#hourofday .tool data-bs-toggle="tooltip" data-bs-title="hour of day"}), "minute of hour" ([moh](#moh){#minuteofhour .tool data-bs-toggle="tooltip" data-bs-title="minute of hour"}), and "second of minute" ([som](#som){#secondofminute .tool data-bs-toggle="tooltip" data-bs-title="second of minute"}), using a "daily second aggregate" ([dsa](#dsa){#dailysecondaggregate .tool data-bs-toggle="tooltip" data-bs-title="daily second aggregate"}) and "hourly second aggregate" ([hsa](#hsa){#hourlysecondaggregate .tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregate"}). While both count seconds, [dsa](#dsa){.tool data-bs-toggle="tooltip" data-bs-title="daily second aggregates"} start at midnight and [hsa](#hsa){.tool data-bs-toggle="tooltip" data-bs-title="hourly second aggregates"} begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
 ::: {.equationgroup #equationgroup05}
 $$\begin{split}
@@ -214,7 +214,10 @@ $$
 \text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96}
 $$ {#eq-sis}
 $$
-\text{sid} = (\text{s} - \text{sis}) \times 24 \bmod 24 = \text{sis} \bmod 24
+\begin{split}
+\text{sid} &= \text{sis} \bmod 24\\
+&= (\text{s} - \text{sis}) \ast 24 \bmod 24
+\end{split}
 $$ {#eq-sid}
 :::
 
@@ -283,35 +286,35 @@ $$ {#eq-sid}
 
 ## Base9 {#sec-b9 .unnumbered .hiddenheading}
 
-In addition to appending a [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval difference"} to [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} using [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"}, we can append [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} with or without a [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval difference"} to a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} using Dec [nonary](https://en.wikipedia.org/wiki/Ternary_numeral_system#Compact_ternary_representation:_base_9_and_27:~:text=base%209%2C%20each%20digit%20is%20two%20ternary%20digits) ([base9]{.tool data-bs-toggle="tooltip" data-bs-title="nonary"}). A [milliday]{.tool data-bs-toggle="tooltip" data-bs-title="a thousandth of a day"} is 90 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} long, so the three digits of a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can be followed by a [base9]{.tool data-bs-toggle="tooltip" data-bs-title="nonary"} ([b9](#b9){#base9 .tool data-bs-toggle="tooltip" data-bs-title="base9"}) digit that counts tens of [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, a [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digit that counts the remaining [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, and, if needed, a [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit that tracks the [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval difference"}. To set them apart from [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digits, Dec writes [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} digits with the [astronomical symbols](https://en.wikipedia.org/wiki/Astronomical_symbol#:~:text=symbols%20used%20to%20represent%20astronomical%20objects) listed in the table below.
+We can think of [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} as glue that allows us to stick [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} and [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval differences"} together. Likewise, Dec [nonary](https://en.wikipedia.org/wiki/Ternary_numeral_system#Compact_ternary_representation:_base_9_and_27:~:text=base%209%2C%20each%20digit%20is%20two%20ternary%20digits) ([base9]{.tool data-bs-toggle="tooltip" data-bs-title="nonary"}) enables us to append [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} with or without a [sid](#sid){.tool data-bs-toggle="tooltip" data-bs-title="second interval difference"} to a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}. The table below shows the [astronomical symbols](https://en.wikipedia.org/wiki/Astronomical_symbol#:~:text=symbols%20used%20to%20represent%20astronomical%20objects) used by Dec for [base9]{.tool data-bs-toggle="tooltip" data-bs-title="nonary"} ([b9](#b9){#base9 .tool data-bs-toggle="tooltip" data-bs-title="base9"}). The [milliday]{.tool data-bs-toggle="tooltip" data-bs-title="a thousandth of a day"} digit in a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} can be followed by a [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} digit and a [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digit that together [roll over](https://en.wikipedia.org/wiki/Rollover#:~:text=the%20act%20of%20a%20counter%20restarting%20its%20count%20sequence) at 90 [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"}, which is 1 [milliday]{.tool data-bs-toggle="tooltip" data-bs-title="a thousandth of a day"}.
 
 ::::: {#tbl-b9 .overflowtable}
 
 ::: {.d-none .d-md-block}
 | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} |  |  |  | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} |  |  |  | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} |
 | --- | --- | - | - | - | --- | --- | - | - | - | --- | --- |
-| [0]{.color0} | [☉]{.color0} |  |  |  | [3]{.color3by9} | [♁]{.color3by9} |  |  |  | [6]{.color6by9} | [♄]{.color6by9} |
-| [1]{.color1by9} | [☿]{.color1by9} |  |  |  | [4]{.color4by9} | [♂]{.color4by9} |  |  |  | [7]{.color7by9} | [♅]{.color7by9} |
-| [2]{.color2by9} | [♀]{.color2by9} |  |  |  | [5]{.color5by9} | [♃]{.color5by9} |  |  |  | [8]{.color8by9} | [♆]{.color8by9} |
+| [0]{.color0} | [☉]{.color0 .mono} |  |  |  | [3]{.color3by9} | [♁]{.color3by9 .mono} |  |  |  | [6]{.color6by9} | [♄]{.color6by9 .mono} |
+| [1]{.color1by9} | [☿]{.color1by9 .mono} |  |  |  | [4]{.color4by9} | [♂]{.color4by9 .mono} |  |  |  | [7]{.color7by9} | [♅]{.color7by9 .mono} |
+| [2]{.color2by9} | [♀]{.color2by9 .mono} |  |  |  | [5]{.color5by9} | [♃]{.color5by9 .mono} |  |  |  | [8]{.color8by9} | [♆]{.color8by9 .mono} |
 :::
 
 ::: {.d-md-none}
 | [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} | [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} |
 | --- | --- |
-| [0]{.color0} | [☉]{.color0} |
-| [1]{.color1by9} | [☿]{.color1by9} |
-| [2]{.color2by9} | [♀]{.color2by9} |
-| [3]{.color3by9} | [♁]{.color3by9} |
-| [4]{.color4by9} | [♂]{.color4by9} |
-| [5]{.color5by9} | [♃]{.color5by9} |
-| [6]{.color6by9} | [♄]{.color6by9} |
-| [7]{.color7by9} | [♅]{.color7by9} |
-| [8]{.color8by9} | [♆]{.color8by9} |
+| [0]{.color0}    | [☉]{.color0 .mono} |
+| [1]{.color1by9} | [☿]{.color1by9 .mono} |
+| [2]{.color2by9} | [♀]{.color2by9 .mono} |
+| [3]{.color3by9} | [♁]{.color3by9 .mono} |
+| [4]{.color4by9} | [♂]{.color4by9 .mono} |
+| [5]{.color5by9} | [♃]{.color5by9 .mono} |
+| [6]{.color6by9} | [♄]{.color6by9 .mono} |
+| [7]{.color7by9} | [♅]{.color7by9 .mono} |
+| [8]{.color8by9} | [♆]{.color8by9 .mono} |
 :::
 
 :::::
 
-With [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} appended, every hour ends at the [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} digit, every other minute ends at the [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digit, and the remaining minutes end with [ν]{.color12by24 .tool data-bs-toggle="tooltip" data-bs-title="base24 ν is base10 12"} as their [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit. Use the range🎚️inputs below to select an [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet and see the corresponding Zone [0]{.color0} [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} with [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} appended: \${hmsB9b24Hsl}.
+With [s](#s){.tool data-bs-toggle="tooltip" data-bs-title="Dec seconds"} appended to a [tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"}, hours end at the [b9](#b9){.tool data-bs-toggle="tooltip" data-bs-title="base9"} digit, even minutes end at the [b10](#b10){.tool data-bs-toggle="tooltip" data-bs-title="base10"} digit, and odd minutes end with [ν]{.color12by24 .mono .tool data-bs-toggle="tooltip" data-bs-title="base24 ν is base10 12"} as their [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit. We can also express any [hod](#hod){.tool data-bs-toggle="tooltip" data-bs-title="hour of day"} as a single [b24](#b24){.tool data-bs-toggle="tooltip" data-bs-title="base24"} digit. The [hms](#hms){.tool data-bs-toggle="tooltip" data-bs-title="hour minute second"} triplet selected by the range🎚️inputs below corresponds to [Hod](#hod){.tool data-bs-toggle="tooltip" data-bs-title="hour of day"} \${b24hodHsl} and [Tod](#tod){.tool data-bs-toggle="tooltip" data-bs-title="time of day"} \${hmsTodHsl}\${hmsSecHsl}.
 
 ```{ojs}
 //| echo: false
