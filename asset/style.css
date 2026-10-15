@@ -320,7 +320,7 @@ div > form > label {
   text-decoration-line: overline;
   text-decoration-thickness: .7px;
 }
-.overline, .grave, .acute, .doublegrave, .doubleacute {
+.overline, .grave, .acute, .acutegrave, .doublegrave, .doubleacute {
   position: relative;
   display: inline-block;
   /* The accent/vinculum ::before marks below are offset by a fixed top:5px
@@ -335,12 +335,14 @@ div > form > label {
    opportunity on either side even with no whitespace, which can split an
    overline/accent span from the digits next to it. white-space: nowrap on the
    surrounding Decolor span keeps a decorated number on one line. */
-[class*="color"]:has(.overline, .grave, .acute, .doublegrave, .doubleacute) {
+[class*="color"]:has(.overline, .grave, .acute, .acutegrave, .doublegrave, .doubleacute) {
   white-space: nowrap;
 }
 .overline::before,
 .grave::before,
 .acute::before,
+.acutegrave::before,
+.acutegrave::after,
 .doublegrave::before,
 .doublegrave::after,
 .doubleacute::before,
@@ -385,6 +387,17 @@ div > form > label {
   left: 5px;
 }
 
+/* A grave and an acute stroke centered on the same point so they cross in an
+   x above the digit, like a combining x above (U+033D). */
+.acutegrave::before {
+  transform: rotate(0.13turn);
+  left: calc(50% - 3px);
+}
+
+.acutegrave::after {
+  transform: rotate(-0.13turn);
+  left: calc(50% - 3px);
+}
 
 .hide {
   display: none;
