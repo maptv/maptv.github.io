@@ -227,6 +227,8 @@ g.node rect:hover, g.node:has(g:hover) rect {
 .doublegrave::after,
 .doubleacute::before,
 .doubleacute::after,
+.acutegrave::before,
+.acutegrave::after,
 .acute::before {
   background: black;
 }
