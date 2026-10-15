@@ -10,6 +10,7 @@ filters:
   - asset/date.lua
   - asset/lazy.lua
   - asset/mermaid-viewbox.lua
+  - asset/combining.lua
 project:
   type: website
   # Without this, a full-project render/publish reliably drops any file it
@@ -205,6 +206,7 @@ format:
       - asset/footnote.html
       - asset/crossref.html
       - asset/mermaid-fix.html
+      - asset/combining.html
   commonmark: default
 title-block-banner: false
 execute:

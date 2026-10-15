@@ -2609,6 +2609,12 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color364by365, .color365by366 {
+  background: #ff000b;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color287 {
   background: hsl(${hues[0.287]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.287]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
