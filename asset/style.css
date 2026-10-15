@@ -399,6 +399,20 @@ div > form > label {
   left: calc(50% - 3px);
 }
 
+/* The real combining mark that asset/combining.lua adds after each accented
+   character, so copied and CSS-free text keeps the accent. It stays in the
+   text (unlike display: none) but is invisible, leaving only the strokes.
+   Browsers shape a combining mark together with the character before it, so
+   styling the mark's own span (color, visibility) has no effect, and a font
+   fallback for the mark drags the base glyph into another font. The
+   inline-block breaks that shaping, so the base glyph renders as plain text
+   and the zero-width mark can be hidden while staying copyable. */
+.cm {
+  display: inline-block;
+  width: 0;
+  color: transparent;
+}
+
 .hide {
   display: none;
 }

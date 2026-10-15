@@ -1370,27 +1370,27 @@ data-bs-title="negative integer days of year">nid</a> with an [acute
 accent](https://en.wikipedia.org/wiki/Acute_accent#:~:text=a%20diacritic%20used%20in%20many%20modern%20written%20languages%20with%20alphabets%20based%20on%20the%20Latin%2C%20Cyrillic%2C%20and%20Greek%20scripts)
 (<a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="acute">d</span></a>) in common years or a double acute accent
+class="acute">d́</span></a>) in common years or a double acute accent
 (<a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="doubleacute">d</span></a>) in leap years.
+class="doubleacute">d̋</span></a>) in leap years.
 
 We can sum an <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a> with 1 to get an
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="acute">d</span></a>,
+class="acute">d́</span></a>,
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="acute">d</span></a> =
+class="acute">d́</span></a> =
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a> + 1, or with 2 to
 get an <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="doubleacute">d</span></a>:
+class="doubleacute">d̋</span></a>:
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="doubleacute">d</span></a> =
+class="doubleacute">d̋</span></a> =
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a> + 2.
 <a href="#tbl-vincommon" class="quarto-xref">Table 2</a> below displays
@@ -1400,7 +1400,7 @@ data-bs-title="positive integer days of year">pid</a>,
 data-bs-title="negative integer day of year">nid</a>,
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="acute">d</span></a>, and “mixed integer
+class="acute">d́</span></a>, and “mixed integer
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day of year">doy</a>”
 (<a href="#mid" id="mixedintegerdoy" class="tool"
@@ -1418,22 +1418,22 @@ common years.
 The horizontal line above all but the last digit of each
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year"><span
-class="overline">mi</span>d</a> in
+class="overline">m̅i̅</span>d</a> in
 <a href="#tbl-vincommon" class="quarto-xref">Table 2</a> is called a
 [vinculum](https://en.wikipedia.org/wiki/Vinculum_(symbol)#:~:text=a%20horizontal%20line%20used%20in%20mathematical%20notation%20for%20various%20purposes).
 In Dec, a vinculum negates any digit beneath it. A negated zero is equal
 to zero: <span class="color0">-0</span> =
-<span class="color0"><span class="overline">0</span></span> =
+<span class="color0"><span class="overline">0̅</span></span> =
 <span class="color0">0</span>. Day
 <span class="color364by365">-1</span>,
 <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a><span class="color364by365"><span class="overline">1</span></span>,
+data-bs-title="day">d</a><span class="color364by365"><span class="overline">1̅</span></span>,
 and <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a><span class="color364by365"><span class="overline">1</span>9</span>
+data-bs-title="day">d</a><span class="color364by365"><span class="overline">1̅</span>9</span>
 all denote the last day of the Dec year:
 <span class="color364by365">-1</span> =
-<span class="color364by365"><span class="overline">1</span></span> =
-<span class="color364by365"><span class="overline">1</span>9</span> =
+<span class="color364by365"><span class="overline">1̅</span></span> =
+<span class="color364by365"><span class="overline">1̅</span>9</span> =
 -10 + 9. The current Dec countdown date can be written as
 ${nextYearColor2}<span class="mono">-</span>${TminusPaddedColor1},
 ${nextYearColor3}+<span class="overline">${TminusPaddedColor2}</span>,
@@ -1473,10 +1473,10 @@ data-bs-title="negative integer day of year">nid</a></th>
 <th></th>
 <th><a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="acute">d</span></a></th>
+class="acute">d́</span></a></th>
 <th><a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year"><span
-class="overline">mi</span>d</a></th>
+class="overline">m̅i̅</span>d</a></th>
 </tr>
 </thead>
 <tbody>
@@ -1488,9 +1488,9 @@ class="overline">mi</span>d</a></th>
 <td></td>
 <td></td>
 <td><span class="color0 nowrap">-36<span
-class="acute">4</span></span></td>
+class="acute">4́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color360by365">37</span></span><span
+class="color360by365">3̅7̅</span></span><span
 class="color5">5</span></span></td>
 </tr>
 <tr>
@@ -1501,9 +1501,9 @@ class="color5">5</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color001 nowrap">-36<span
-class="acute">3</span></span></td>
+class="acute">3́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color360by365">37</span></span><span
+class="color360by365">3̅7̅</span></span><span
 class="color6">6</span></span></td>
 </tr>
 <tr>
@@ -1514,9 +1514,9 @@ class="color6">6</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color002 nowrap">-36<span
-class="acute">2</span></span></td>
+class="acute">2́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color360by365">37</span></span><span
+class="color360by365">3̅7̅</span></span><span
 class="color7">7</span></span></td>
 </tr>
 <tr>
@@ -1527,9 +1527,9 @@ class="color7">7</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color003 nowrap">-36<span
-class="acute">1</span></span></td>
+class="acute">1́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color360by365">37</span></span><span
+class="color360by365">3̅7̅</span></span><span
 class="color8">8</span></span></td>
 </tr>
 <tr>
@@ -1540,9 +1540,9 @@ class="color8">8</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color004 nowrap">-36<span
-class="acute">0</span></span></td>
+class="acute">0́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color360by365">37</span></span><span
+class="color360by365">3̅7̅</span></span><span
 class="color9">9</span></span></td>
 </tr>
 <tr>
@@ -1553,9 +1553,9 @@ class="color9">9</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color005by365 nowrap">-35<span
-class="acute">9</span></span></td>
+class="acute">9́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color005by365">36</span></span><span
+class="color005by365">3̅6̅</span></span><span
 class="color0">0</span></span></td>
 </tr>
 <tr>
@@ -1566,9 +1566,9 @@ class="color0">0</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color006 nowrap">-35<span
-class="acute">8</span></span></td>
+class="acute">8́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color005by365">36</span></span><span
+class="color005by365">3̅6̅</span></span><span
 class="color1">1</span></span></td>
 </tr>
 <tr>
@@ -1579,9 +1579,9 @@ class="color1">1</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color007 nowrap">-35<span
-class="acute">7</span></span></td>
+class="acute">7́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color005by365">36</span></span><span
+class="color005by365">3̅6̅</span></span><span
 class="color2">2</span></span></td>
 </tr>
 <tr>
@@ -1592,9 +1592,9 @@ class="color2">2</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color008by365 nowrap">-35<span
-class="acute">6</span></span></td>
+class="acute">6́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color005by365">36</span></span><span
+class="color005by365">3̅6̅</span></span><span
 class="color3">3</span></span></td>
 </tr>
 <tr>
@@ -1605,9 +1605,9 @@ class="color3">3</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color009 nowrap">-35<span
-class="acute">5</span></span></td>
+class="acute">5́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color005by365">36</span></span><span
+class="color005by365">3̅6̅</span></span><span
 class="color4">4</span></span></td>
 </tr>
 <tr>
@@ -1618,9 +1618,9 @@ class="color4">4</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color010 nowrap">-35<span
-class="acute">4</span></span></td>
+class="acute">4́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color005by365">36</span></span><span
+class="color005by365">3̅6̅</span></span><span
 class="color5">5</span></span></td>
 </tr>
 <tr>
@@ -1641,9 +1641,9 @@ class="color5">5</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color354by365 nowrap">-1<span
-class="acute">0</span></span></td>
+class="acute">0́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color345by365">2</span></span><span
+class="color345by365">2̅</span></span><span
 class="color9">9</span></span></td>
 </tr>
 <tr>
@@ -1654,9 +1654,9 @@ class="color9">9</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color355by365">-<span
-class="acute">9</span></span></td>
+class="acute">9́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color0">0</span></span></td>
 </tr>
 <tr>
@@ -1667,9 +1667,9 @@ class="color0">0</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color356by365">-<span
-class="acute">8</span></span></td>
+class="acute">8́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color1">1</span></span></td>
 </tr>
 <tr>
@@ -1680,9 +1680,9 @@ class="color1">1</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color357by365">-<span
-class="acute">7</span></span></td>
+class="acute">7́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color2">2</span></span></td>
 </tr>
 <tr>
@@ -1693,9 +1693,9 @@ class="color2">2</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color358by365">-<span
-class="acute">6</span></span></td>
+class="acute">6́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color3">3</span></span></td>
 </tr>
 <tr>
@@ -1706,9 +1706,9 @@ class="color3">3</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color359by365">-<span
-class="acute">5</span></span></td>
+class="acute">5́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color4">4</span></span></td>
 </tr>
 <tr>
@@ -1719,9 +1719,9 @@ class="color4">4</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color360by365">-<span
-class="acute">4</span></span></td>
+class="acute">4́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color5">5</span></span></td>
 </tr>
 <tr>
@@ -1732,9 +1732,9 @@ class="color5">5</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color361by365">-<span
-class="acute">3</span></span></td>
+class="acute">3́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color6">6</span></span></td>
 </tr>
 <tr>
@@ -1745,9 +1745,9 @@ class="color6">6</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color362by365">-<span
-class="acute">2</span></span></td>
+class="acute">2́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color7">7</span></span></td>
 </tr>
 <tr>
@@ -1758,9 +1758,9 @@ class="color7">7</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color363by365">-<span
-class="acute">1</span></span></td>
+class="acute">1́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color8">8</span></span></td>
 </tr>
 <tr>
@@ -1771,9 +1771,9 @@ class="color8">8</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color364by365">-<span
-class="acute">0</span></span></td>
+class="acute">0́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color9">9</span></span></td>
 </tr>
 </tbody>
@@ -1824,10 +1824,10 @@ data-bs-title="negative integer day of year">nid</a></th>
 <th></th>
 <th><a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="acute">d</span></a></th>
+class="acute">d́</span></a></th>
 <th><a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year"><span
-class="overline">mi</span>d</a></th>
+class="overline">m̅i̅</span>d</a></th>
 <th></th>
 <th></th>
 <th></th>
@@ -1847,11 +1847,11 @@ data-bs-title="negative integer day of year">nid</a></th>
 <th></th>
 <th><a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="acute">d</span></a></th>
+class="acute">d́</span></a></th>
 <th></th>
 <th><a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year"><span
-class="overline">mi</span>d</a></th>
+class="overline">m̅i̅</span>d</a></th>
 </tr>
 </thead>
 <tbody>
@@ -1863,9 +1863,9 @@ class="overline">mi</span>d</a></th>
 <td></td>
 <td></td>
 <td><span class="color0 nowrap">-36<span
-class="acute">4</span></span></td>
+class="acute">4́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color360by365">37</span></span><span
+class="color360by365">3̅7̅</span></span><span
 class="color5">5</span></span></td>
 <td></td>
 <td></td>
@@ -1883,10 +1883,10 @@ class="color5">5</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color354by365">-1<span
-class="acute">0</span></span></td>
+class="acute">0́</span></span></td>
 <td></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color345by365">2</span></span><span
+class="color345by365">2̅</span></span><span
 class="color9">9</span></span></td>
 </tr>
 <tr>
@@ -1896,9 +1896,9 @@ class="color9">9</span></span></td>
 <td><span class="color001">-364</span></td>
 <td></td>
 <td></td>
-<td><span class="color001">-36<span class="acute">3</span></span></td>
+<td><span class="color001">-36<span class="acute">3́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color360by365">37</span></span><span
+class="color360by365">3̅7̅</span></span><span
 class="color6">6</span></span></td>
 <td></td>
 <td></td>
@@ -1916,10 +1916,10 @@ class="color6">6</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color355by365">-<span
-class="acute">9</span></span></td>
+class="acute">9́</span></span></td>
 <td></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color0">0</span></span></td>
 </tr>
 <tr>
@@ -1929,9 +1929,9 @@ class="color0">0</span></span></td>
 <td><span class="color002">-363</span></td>
 <td></td>
 <td></td>
-<td><span class="color002">-36<span class="acute">2</span></span></td>
+<td><span class="color002">-36<span class="acute">2́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color360by365">37</span></span><span
+class="color360by365">3̅7̅</span></span><span
 class="color7">7</span></span></td>
 <td></td>
 <td></td>
@@ -1949,10 +1949,10 @@ class="color7">7</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color356by365">-<span
-class="acute">8</span></span></td>
+class="acute">8́</span></span></td>
 <td></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color1">1</span></span></td>
 </tr>
 <tr>
@@ -1962,9 +1962,9 @@ class="color1">1</span></span></td>
 <td><span class="color003">-362</span></td>
 <td></td>
 <td></td>
-<td><span class="color003">-36<span class="acute">1</span></span></td>
+<td><span class="color003">-36<span class="acute">1́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color360by365">37</span></span><span
+class="color360by365">3̅7̅</span></span><span
 class="color8">8</span></span></td>
 <td></td>
 <td></td>
@@ -1982,10 +1982,10 @@ class="color8">8</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color357by365">-<span
-class="acute">7</span></span></td>
+class="acute">7́</span></span></td>
 <td></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color2">2</span></span></td>
 </tr>
 <tr>
@@ -1995,9 +1995,9 @@ class="color2">2</span></span></td>
 <td><span class="color004">-361</span></td>
 <td></td>
 <td></td>
-<td><span class="color004">-36<span class="acute">0</span></span></td>
+<td><span class="color004">-36<span class="acute">0́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color360by365">37</span></span><span
+class="color360by365">3̅7̅</span></span><span
 class="color9">9</span></span></td>
 <td></td>
 <td></td>
@@ -2015,10 +2015,10 @@ class="color9">9</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color358by365">-<span
-class="acute">6</span></span></td>
+class="acute">6́</span></span></td>
 <td></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color3">3</span></span></td>
 </tr>
 <tr>
@@ -2029,9 +2029,9 @@ class="color3">3</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color005by365">-35<span
-class="acute">9</span></span></td>
+class="acute">9́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color005by365">36</span></span><span
+class="color005by365">3̅6̅</span></span><span
 class="color0">0</span></span></td>
 <td></td>
 <td></td>
@@ -2049,10 +2049,10 @@ class="color0">0</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color359by365">-<span
-class="acute">5</span></span></td>
+class="acute">5́</span></span></td>
 <td></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color4">4</span></span></td>
 </tr>
 <tr>
@@ -2062,9 +2062,9 @@ class="color4">4</span></span></td>
 <td><span class="color006">-359</span></td>
 <td></td>
 <td></td>
-<td><span class="color006">-35<span class="acute">8</span></span></td>
+<td><span class="color006">-35<span class="acute">8́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color005by365">36</span></span><span
+class="color005by365">3̅6̅</span></span><span
 class="color1">1</span></span></td>
 <td></td>
 <td></td>
@@ -2082,10 +2082,10 @@ class="color1">1</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color360by365">-<span
-class="acute">4</span></span></td>
+class="acute">4́</span></span></td>
 <td></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color5">5</span></span></td>
 </tr>
 <tr>
@@ -2095,9 +2095,9 @@ class="color5">5</span></span></td>
 <td><span class="color007">-358</span></td>
 <td></td>
 <td></td>
-<td><span class="color007">-35<span class="acute">7</span></span></td>
+<td><span class="color007">-35<span class="acute">7́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color005by365">36</span></span><span
+class="color005by365">3̅6̅</span></span><span
 class="color2">2</span></span></td>
 <td></td>
 <td></td>
@@ -2115,10 +2115,10 @@ class="color2">2</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color361by365">-<span
-class="acute">3</span></span></td>
+class="acute">3́</span></span></td>
 <td></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color6">6</span></span></td>
 </tr>
 <tr>
@@ -2129,9 +2129,9 @@ class="color6">6</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color008by365">-35<span
-class="acute">6</span></span></td>
+class="acute">6́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color005by365">36</span></span><span
+class="color005by365">3̅6̅</span></span><span
 class="color3">3</span></span></td>
 <td></td>
 <td></td>
@@ -2149,10 +2149,10 @@ class="color3">3</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color362by365">-<span
-class="acute">2</span></span></td>
+class="acute">2́</span></span></td>
 <td></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color7">7</span></span></td>
 </tr>
 <tr>
@@ -2162,9 +2162,9 @@ class="color7">7</span></span></td>
 <td><span class="color009">-356</span></td>
 <td></td>
 <td></td>
-<td><span class="color009">-35<span class="acute">5</span></span></td>
+<td><span class="color009">-35<span class="acute">5́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color005by365">36</span></span><span
+class="color005by365">3̅6̅</span></span><span
 class="color4">4</span></span></td>
 <td></td>
 <td></td>
@@ -2182,10 +2182,10 @@ class="color4">4</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color363by365">-<span
-class="acute">1</span></span></td>
+class="acute">1́</span></span></td>
 <td></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color8">8</span></span></td>
 </tr>
 <tr>
@@ -2195,9 +2195,9 @@ class="color8">8</span></span></td>
 <td><span class="color010">-355</span></td>
 <td></td>
 <td></td>
-<td><span class="color010">-35<span class="acute">4</span></span></td>
+<td><span class="color010">-35<span class="acute">4́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color005by365">36</span></span><span
+class="color005by365">3̅6̅</span></span><span
 class="color5">5</span></span></td>
 <td></td>
 <td></td>
@@ -2215,10 +2215,10 @@ class="color5">5</span></span></td>
 <td></td>
 <td></td>
 <td><span class="color364by365">-<span
-class="acute">0</span></span></td>
+class="acute">0́</span></span></td>
 <td></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color355by365">1</span></span><span
+class="color355by365">1̅</span></span><span
 class="color9">9</span></span></td>
 </tr>
 </tbody>
@@ -2231,7 +2231,7 @@ In a common year, the last digits of
 data-bs-title="positive integer days of year">pid</a> and
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="acute">d</span></a> run antiparallel to each other like
+class="acute">d́</span></a> run antiparallel to each other like
 complementary strands of [deoxyribonucleic
 acid](https://en.wikipedia.org/wiki/DNA#:~:text=a%20polymer%20composed%20of%20two%20polynucleotide%20chains%20that%20coil%20around%20each%20other%20to%20form%20a%20double%20helix)🧬,
 but in place of
@@ -2243,37 +2243,37 @@ and
 to
 [guanine](https://en.wikipedia.org/wiki/Guanine#:~:text=one%20of%20the%20four%20main%20nucleotide%20bases),
 the pattern is <span class="color0">0</span> to
-<span class="color5"><span class="acute">4</span></span>,
+<span class="color5"><span class="acute">4́</span></span>,
 <span class="color1">1</span> to
-<span class="color4"><span class="acute">3</span></span>,
+<span class="color4"><span class="acute">3́</span></span>,
 <span class="color2">2</span> to
-<span class="color3"><span class="acute">2</span></span>,
+<span class="color3"><span class="acute">2́</span></span>,
 <span class="color3">3</span> to
-<span class="color2"><span class="acute">1</span></span>,
+<span class="color2"><span class="acute">1́</span></span>,
 <span class="color4">4</span> to
-<span class="color1"><span class="acute">0</span></span>, and so on. The
-final digits of <a href="#pid" class="tool" data-bs-toggle="tooltip"
+<span class="color1"><span class="acute">0́</span></span>, and so on.
+The final digits of <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a> and
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer days of year">ni<span
-class="doubleacute">d</span></a> follow the same pattern in leap years:
+class="doubleacute">d̋</span></a> follow the same pattern in leap years:
 <span class="color0">0</span> to
-<span class="color6"><span class="doubleacute">4</span></span>,
+<span class="color6"><span class="doubleacute">4̋</span></span>,
 <span class="color1">1</span> to
-<span class="color5"><span class="doubleacute">3</span></span>,
+<span class="color5"><span class="doubleacute">3̋</span></span>,
 <span class="color2">2</span> to
-<span class="color4"><span class="doubleacute">2</span></span>,
+<span class="color4"><span class="doubleacute">2̋</span></span>,
 <span class="color3">3</span> to
-<span class="color3"><span class="doubleacute">1</span></span>,
+<span class="color3"><span class="doubleacute">1̋</span></span>,
 <span class="color4">4</span> to
-<span class="color2"><span class="doubleacute">0</span></span>, and so
+<span class="color2"><span class="doubleacute">0̋</span></span>, and so
 on.
 
 The last digits of <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</a> and
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
-class="overline">mi</span>d</a> are misaligned by 4
+class="overline">m̅i̅</span>d</a> are misaligned by 4
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days">d</a> in leap years and by 5
 <a href="#d" class="tool" data-bs-toggle="tooltip"
@@ -2283,33 +2283,33 @@ of a misalignment of 5
 data-bs-title="days">d</a> in leap years by adding 1 to each
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
-class="overline">mi</span>d</a> and placing a [grave
+class="overline">m̅i̅</span>d</a> and placing a [grave
 accent](https://en.wikipedia.org/wiki/Grave_accent#:~:text=a%20diacritical%20mark%20used%20to%20varying%20degrees%20in%20French%2C%20Dutch%2C%20Portuguese%2C%20Italian%2C%20Catalan%20and%20many%20other%20Western%20European%20languages)
 over its final digit:
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
-class="overline">mi</span>d</a> + 1 =
+class="overline">m̅i̅</span>d</a> + 1 =
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
-class="overline">mi</span><span class="grave">d</span></a>. In general,
+class="overline">m̅i̅</span><span class="grave">d̀</span></a>. In general,
 actual <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doy</a> such as
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a> or
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
-class="overline">mi</span>d</a> are 1 or 2 less than their apparent
+class="overline">m̅i̅</span>d</a> are 1 or 2 less than their apparent
 <a href="#doy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of year">doy</a> counterparts:
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="acute">d</span></a>,
+class="acute">d́</span></a>,
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="doubleacute">d</span></a>, or
+class="doubleacute">d̋</span></a>, or
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year"><span
-class="overline">mi</span><span class="grave">d</span></a>.
+class="overline">m̅i̅</span><span class="grave">d̀</span></a>.
 
 <div class="centered">
 
@@ -2343,10 +2343,10 @@ data-bs-title="negative integer day of year">nid</a></th>
 <th></th>
 <th><a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="doubleacute">d</span></a></th>
+class="doubleacute">d̋</span></a></th>
 <th><a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year"><span
-class="overline">mi</span><span class="grave">d</span></a></th>
+class="overline">m̅i̅</span><span class="grave">d̀</span></a></th>
 </tr>
 </thead>
 <tbody>
@@ -2358,10 +2358,10 @@ class="overline">mi</span><span class="grave">d</span></a></th>
 <td></td>
 <td></td>
 <td><span class="color0">-36<span
-class="doubleacute">4</span></span></td>
+class="doubleacute">4̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color361by365">37</span></span><span class="color5"><span
-class="grave">5</span></span></span></td>
+class="color361by365">3̅7̅</span></span><span class="color5"><span
+class="grave">5̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color001">1</span></td>
@@ -2371,10 +2371,10 @@ class="grave">5</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color001">-36<span
-class="doubleacute">3</span></span></td>
+class="doubleacute">3̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color361by365">37</span></span><span class="color6"><span
-class="grave">6</span></span></span></td>
+class="color361by365">3̅7̅</span></span><span class="color6"><span
+class="grave">6̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color002">2</span></td>
@@ -2384,10 +2384,10 @@ class="grave">6</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color002">-36<span
-class="doubleacute">2</span></span></td>
+class="doubleacute">2̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color361by365">37</span></span><span class="color7"><span
-class="grave">7</span></span></span></td>
+class="color361by365">3̅7̅</span></span><span class="color7"><span
+class="grave">7̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color003">3</span></td>
@@ -2397,10 +2397,10 @@ class="grave">7</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color003">-36<span
-class="doubleacute">1</span></span></td>
+class="doubleacute">1̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color361by365">37</span></span><span class="color8"><span
-class="grave">8</span></span></span></td>
+class="color361by365">3̅7̅</span></span><span class="color8"><span
+class="grave">8̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color004">4</span></td>
@@ -2410,10 +2410,10 @@ class="grave">8</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color004">-36<span
-class="doubleacute">0</span></span></td>
+class="doubleacute">0̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color361by365">37</span></span><span class="color9"><span
-class="grave">9</span></span></span></td>
+class="color361by365">3̅7̅</span></span><span class="color9"><span
+class="grave">9̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color005by366">5</span></td>
@@ -2423,10 +2423,10 @@ class="grave">9</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color005by366">-35<span
-class="doubleacute">9</span></span></td>
+class="doubleacute">9̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color006">36</span></span><span class="color0"><span
-class="grave">0</span></span></span></td>
+class="color006">3̅6̅</span></span><span class="color0"><span
+class="grave">0̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color006">6</span></td>
@@ -2436,10 +2436,10 @@ class="grave">0</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color006">-35<span
-class="doubleacute">8</span></span></td>
+class="doubleacute">8̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color006">36</span></span><span class="color1"><span
-class="grave">1</span></span></span></td>
+class="color006">3̅6̅</span></span><span class="color1"><span
+class="grave">1̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color007">7</span></td>
@@ -2449,10 +2449,10 @@ class="grave">1</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color007">-35<span
-class="doubleacute">7</span></span></td>
+class="doubleacute">7̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color006">36</span></span><span class="color2"><span
-class="grave">2</span></span></span></td>
+class="color006">3̅6̅</span></span><span class="color2"><span
+class="grave">2̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color008by366">8</span></td>
@@ -2462,10 +2462,10 @@ class="grave">2</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color008by366">-35<span
-class="doubleacute">6</span></span></td>
+class="doubleacute">6̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color006">36</span></span><span class="color3"><span
-class="grave">3</span></span></span></td>
+class="color006">3̅6̅</span></span><span class="color3"><span
+class="grave">3̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color009">9</span></td>
@@ -2475,10 +2475,10 @@ class="grave">3</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color009">-35<span
-class="doubleacute">5</span></span></td>
+class="doubleacute">5̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color006">36</span></span><span class="color4"><span
-class="grave">4</span></span></span></td>
+class="color006">3̅6̅</span></span><span class="color4"><span
+class="grave">4̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color010">10</span></td>
@@ -2488,10 +2488,10 @@ class="grave">4</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color010">-35<span
-class="doubleacute">4</span></span></td>
+class="doubleacute">4̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color006">36</span></span><span class="color5"><span
-class="grave">5</span></span></span></td>
+class="color006">3̅6̅</span></span><span class="color5"><span
+class="grave">5̀</span></span></span></td>
 </tr>
 <tr>
 <td>…</td>
@@ -2511,10 +2511,10 @@ class="grave">5</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color355by366">-<span
-class="doubleacute">9</span></span></td>
+class="doubleacute">9̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color0"><span
-class="grave">0</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color0"><span
+class="grave">0̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color356by366">356</span></td>
@@ -2524,10 +2524,10 @@ class="grave">0</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color356by366">-<span
-class="doubleacute">8</span></span></td>
+class="doubleacute">8̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color1"><span
-class="grave">1</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color1"><span
+class="grave">1̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color357by366">357</span></td>
@@ -2537,10 +2537,10 @@ class="grave">1</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color357by366">-<span
-class="doubleacute">7</span></span></td>
+class="doubleacute">7̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color2"><span
-class="grave">2</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color2"><span
+class="grave">2̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color358by366">358</span></td>
@@ -2550,10 +2550,10 @@ class="grave">2</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color358by366">-<span
-class="doubleacute">6</span></span></td>
+class="doubleacute">6̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color3"><span
-class="grave">3</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color3"><span
+class="grave">3̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color359by366">359</span></td>
@@ -2563,10 +2563,10 @@ class="grave">3</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color359by366">-<span
-class="doubleacute">5</span></span></td>
+class="doubleacute">5̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color4"><span
-class="grave">4</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color4"><span
+class="grave">4̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color360by366">360</span></td>
@@ -2576,10 +2576,10 @@ class="grave">4</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color360by366">-<span
-class="doubleacute">4</span></span></td>
+class="doubleacute">4̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color5"><span
-class="grave">5</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color5"><span
+class="grave">5̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color361by366">361</span></td>
@@ -2589,10 +2589,10 @@ class="grave">5</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color361by366">-<span
-class="doubleacute">3</span></span></td>
+class="doubleacute">3̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color6"><span
-class="grave">6</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color6"><span
+class="grave">6̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color362by366">362</span></td>
@@ -2602,10 +2602,10 @@ class="grave">6</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color362by366">-<span
-class="doubleacute">2</span></span></td>
+class="doubleacute">2̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color7"><span
-class="grave">7</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color7"><span
+class="grave">7̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color363by366">363</span></td>
@@ -2615,10 +2615,10 @@ class="grave">7</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color363by366">-<span
-class="doubleacute">1</span></span></td>
+class="doubleacute">1̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color8"><span
-class="grave">8</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color8"><span
+class="grave">8̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color364by366">364</span></td>
@@ -2628,10 +2628,10 @@ class="grave">8</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color364by366">-<span
-class="doubleacute">0</span></span></td>
+class="doubleacute">0̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color9"><span
-class="grave">9</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color9"><span
+class="grave">9̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color365by366">365</span></td>
@@ -2641,10 +2641,10 @@ class="grave">9</span></span></span></td>
 <td></td>
 <td></td>
 <td><span class="color365by366">-<span
-class="acute">0</span></span></td>
+class="acute">0́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color0">0</span></span><span class="color0"><span
-class="grave">0</span></span></span></td>
+class="color0">0̅</span></span><span class="color0"><span
+class="grave">0̀</span></span></span></td>
 </tr>
 </tbody>
 </table>
@@ -2687,10 +2687,10 @@ data-bs-title="negative integer day of year">nid</a></th>
 <th></th>
 <th><a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="doubleacute">d</span></a></th>
+class="doubleacute">d̋</span></a></th>
 <th><a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year"><span
-class="overline">mi</span><span class="grave">d</span></a></th>
+class="overline">m̅i̅</span><span class="grave">d̀</span></a></th>
 <th></th>
 <th></th>
 <th></th>
@@ -2708,10 +2708,10 @@ data-bs-title="negative integer day of year">nid</a></th>
 <th></th>
 <th><a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="doubleacute">d</span></a></th>
+class="doubleacute">d̋</span></a></th>
 <th><a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer day of year"><span
-class="overline">mi</span><span class="grave">d</span></a></th>
+class="overline">m̅i̅</span><span class="grave">d̀</span></a></th>
 </tr>
 </thead>
 <tbody>
@@ -2721,10 +2721,10 @@ class="overline">mi</span><span class="grave">d</span></a></th>
 <td><span class="color0">-366</span></td>
 <td></td>
 <td><span class="color0">-36<span
-class="doubleacute">4</span></span></td>
+class="doubleacute">4̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color361by365">37</span></span><span class="color5"><span
-class="grave">5</span></span></span></td>
+class="color361by365">3̅7̅</span></span><span class="color5"><span
+class="grave">5̀</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2739,10 +2739,10 @@ class="grave">5</span></span></span></td>
 <td><span class="color355by366">-11</span></td>
 <td></td>
 <td><span class="color355by366">-<span
-class="doubleacute">9</span></span></td>
+class="doubleacute">9̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color0"><span
-class="grave">0</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color0"><span
+class="grave">0̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color001">1</span></td>
@@ -2750,10 +2750,10 @@ class="grave">0</span></span></span></td>
 <td><span class="color001">-365</span></td>
 <td></td>
 <td><span class="color001">-36<span
-class="doubleacute">3</span></span></td>
+class="doubleacute">3̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color361by365">37</span></span><span class="color6"><span
-class="grave">6</span></span></span></td>
+class="color361by365">3̅7̅</span></span><span class="color6"><span
+class="grave">6̀</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2768,10 +2768,10 @@ class="grave">6</span></span></span></td>
 <td><span class="color356by366">-10</span></td>
 <td></td>
 <td><span class="color356by366">-<span
-class="doubleacute">8</span></span></td>
+class="doubleacute">8̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color1"><span
-class="grave">1</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color1"><span
+class="grave">1̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color002">2</span></td>
@@ -2779,10 +2779,10 @@ class="grave">1</span></span></span></td>
 <td><span class="color002">-364</span></td>
 <td></td>
 <td><span class="color002">-36<span
-class="doubleacute">2</span></span></td>
+class="doubleacute">2̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color361by365">37</span></span><span class="color7"><span
-class="grave">7</span></span></span></td>
+class="color361by365">3̅7̅</span></span><span class="color7"><span
+class="grave">7̀</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2797,10 +2797,10 @@ class="grave">7</span></span></span></td>
 <td><span class="color357by366">-9</span></td>
 <td></td>
 <td><span class="color357by366">-<span
-class="doubleacute">7</span></span></td>
+class="doubleacute">7̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color2"><span
-class="grave">2</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color2"><span
+class="grave">2̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color003">3</span></td>
@@ -2808,10 +2808,10 @@ class="grave">2</span></span></span></td>
 <td><span class="color003">-363</span></td>
 <td></td>
 <td><span class="color003">-36<span
-class="doubleacute">1</span></span></td>
+class="doubleacute">1̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color361by365">37</span></span><span class="color8"><span
-class="grave">8</span></span></span></td>
+class="color361by365">3̅7̅</span></span><span class="color8"><span
+class="grave">8̀</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2826,10 +2826,10 @@ class="grave">8</span></span></span></td>
 <td><span class="color358by366">-8</span></td>
 <td></td>
 <td><span class="color358by366">-<span
-class="doubleacute">6</span></span></td>
+class="doubleacute">6̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color3"><span
-class="grave">3</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color3"><span
+class="grave">3̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color004">4</span></td>
@@ -2837,10 +2837,10 @@ class="grave">3</span></span></span></td>
 <td><span class="color004">-362</span></td>
 <td></td>
 <td><span class="color004">-36<span
-class="doubleacute">0</span></span></td>
+class="doubleacute">0̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color361by365">37</span></span><span class="color9"><span
-class="grave">9</span></span></span></td>
+class="color361by365">3̅7̅</span></span><span class="color9"><span
+class="grave">9̀</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2855,10 +2855,10 @@ class="grave">9</span></span></span></td>
 <td><span class="color359by366">-7</span></td>
 <td></td>
 <td><span class="color359by366">-<span
-class="doubleacute">5</span></span></td>
+class="doubleacute">5̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color4"><span
-class="grave">4</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color4"><span
+class="grave">4̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color005by366">5</span></td>
@@ -2866,10 +2866,10 @@ class="grave">4</span></span></span></td>
 <td><span class="color005by366">-361</span></td>
 <td></td>
 <td><span class="color005by366">-35<span
-class="doubleacute">9</span></span></td>
+class="doubleacute">9̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color006">36</span></span><span class="color0"><span
-class="grave">0</span></span></span></td>
+class="color006">3̅6̅</span></span><span class="color0"><span
+class="grave">0̀</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2884,10 +2884,10 @@ class="grave">0</span></span></span></td>
 <td><span class="color360by366">-6</span></td>
 <td></td>
 <td><span class="color360by366">-<span
-class="doubleacute">4</span></span></td>
+class="doubleacute">4̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color5"><span
-class="grave">5</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color5"><span
+class="grave">5̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color006">6</span></td>
@@ -2895,10 +2895,10 @@ class="grave">5</span></span></span></td>
 <td><span class="color006">-360</span></td>
 <td></td>
 <td><span class="color006">-35<span
-class="doubleacute">8</span></span></td>
+class="doubleacute">8̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color006">36</span></span><span class="color1"><span
-class="grave">1</span></span></span></td>
+class="color006">3̅6̅</span></span><span class="color1"><span
+class="grave">1̀</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2913,10 +2913,10 @@ class="grave">1</span></span></span></td>
 <td><span class="color361by366">-5</span></td>
 <td></td>
 <td><span class="color361by366">-<span
-class="doubleacute">3</span></span></td>
+class="doubleacute">3̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color6"><span
-class="grave">6</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color6"><span
+class="grave">6̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color007">7</span></td>
@@ -2924,10 +2924,10 @@ class="grave">6</span></span></span></td>
 <td><span class="color007">-359</span></td>
 <td></td>
 <td><span class="color007">-35<span
-class="doubleacute">7</span></span></td>
+class="doubleacute">7̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color006">36</span></span><span class="color2"><span
-class="grave">2</span></span></span></td>
+class="color006">3̅6̅</span></span><span class="color2"><span
+class="grave">2̀</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2942,10 +2942,10 @@ class="grave">2</span></span></span></td>
 <td><span class="color362by366">-4</span></td>
 <td></td>
 <td><span class="color362by366">-<span
-class="doubleacute">2</span></span></td>
+class="doubleacute">2̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color7"><span
-class="grave">7</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color7"><span
+class="grave">7̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color008by366">8</span></td>
@@ -2953,10 +2953,10 @@ class="grave">7</span></span></span></td>
 <td><span class="color008by366">-358</span></td>
 <td></td>
 <td><span class="color008by366">-35<span
-class="doubleacute">6</span></span></td>
+class="doubleacute">6̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color006">36</span></span><span class="color3"><span
-class="grave">3</span></span></span></td>
+class="color006">3̅6̅</span></span><span class="color3"><span
+class="grave">3̀</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -2971,10 +2971,10 @@ class="grave">3</span></span></span></td>
 <td><span class="color363by366">-3</span></td>
 <td></td>
 <td><span class="color363by366">-<span
-class="doubleacute">1</span></span></td>
+class="doubleacute">1̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color8"><span
-class="grave">8</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color8"><span
+class="grave">8̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color009">9</span></td>
@@ -2982,10 +2982,10 @@ class="grave">8</span></span></span></td>
 <td><span class="color009">-357</span></td>
 <td></td>
 <td><span class="color009">-35<span
-class="doubleacute">5</span></span></td>
+class="doubleacute">5̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color006">36</span></span><span class="color4"><span
-class="grave">4</span></span></span></td>
+class="color006">3̅6̅</span></span><span class="color4"><span
+class="grave">4̀</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -3000,10 +3000,10 @@ class="grave">4</span></span></span></td>
 <td><span class="color364by366">-2</span></td>
 <td></td>
 <td><span class="color364by366">-<span
-class="doubleacute">0</span></span></td>
+class="doubleacute">0̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color356by366">1</span></span><span class="color9"><span
-class="grave">9</span></span></span></td>
+class="color356by366">1̅</span></span><span class="color9"><span
+class="grave">9̀</span></span></span></td>
 </tr>
 <tr>
 <td><span class="color010">10</span></td>
@@ -3011,10 +3011,10 @@ class="grave">9</span></span></span></td>
 <td><span class="color010">-356</span></td>
 <td></td>
 <td><span class="color010">-35<span
-class="doubleacute">4</span></span></td>
+class="doubleacute">4̋</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color006">36</span></span><span class="color5"><span
-class="grave">5</span></span></span></td>
+class="color006">3̅6̅</span></span><span class="color5"><span
+class="grave">5̀</span></span></span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -3029,10 +3029,10 @@ class="grave">5</span></span></span></td>
 <td><span class="color365by366">-1</span></td>
 <td></td>
 <td><span class="color365by366">-<span
-class="acute">0</span></span></td>
+class="acute">0́</span></span></td>
 <td><span class="nowrap"><span class="overline"><span
-class="color0">0</span></span><span class="color0"><span
-class="grave">0</span></span></span></td>
+class="color0">0̅</span></span><span class="color0"><span
+class="grave">0̀</span></span></span></td>
 </tr>
 </tbody>
 </table>
@@ -3046,19 +3046,19 @@ The absolute value of an
 data-bs-title="negative integer day of year">nid</a> is increased by an
 acute accent (<a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="acute">d</span></a>) and decreased by a grave accent
+class="acute">d́</span></a>) and decreased by a grave accent
 (<a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">ni<span
-class="grave">d</span></a>), but the opposite is true for
+class="grave">d̀</span></a>), but the opposite is true for
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
-class="overline">mi</span>d</a>. The main purpose of Dec accents is to
+class="overline">m̅i̅</span>d</a>. The main purpose of Dec accents is to
 change the appearance of the final digit of an
 <a href="#nid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer day of year">nid</a> or
 <a href="#mid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="mixed integer days of year"><span
-class="overline">mi</span>d</a> so that it can be used just like the
+class="overline">m̅i̅</span>d</a> so that it can be used just like the
 last digit of a <a href="#pid" class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer day of year">pid</a> for
 work-or-rest-day classification.
@@ -3086,13 +3086,13 @@ data-bs-toggle="tooltip"
 data-bs-title="duotrigesimal L is decimal 14 or binary 01110">L</span>
 rule applies to the last digit of the <span class="tool"
 data-bs-toggle="tooltip"
-data-bs-title="mixed integer day of year"><span class="overline">mi</span>d</span>
+data-bs-title="mixed integer day of year"><span class="overline">m̅i̅</span>d</span>
 or <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="mixed integer day of year">ni<span class="acute">d</span></span>
+data-bs-title="mixed integer day of year">ni<span class="acute">d́</span></span>
 in common years, of the <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="mixed integer day of year"><span class="overline">mi</span><span class="grave">d</span></span>
+data-bs-title="mixed integer day of year"><span class="overline">m̅i̅</span><span class="grave">d̀</span></span>
 or <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="mixed integer day of year">ni<span class="doubleacute">d</span></span>
+data-bs-title="mixed integer day of year">ni<span class="doubleacute">d̋</span></span>
 in leap years, or of the <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="positive integer days of year">pid</span> in all years.
 
@@ -3152,7 +3152,7 @@ equivalents.
 <td><span class="color16by32">10000</span></td>
 </tr>
 <tr>
-<td><span class="color01by32"><span class="acute">A</span></span></td>
+<td><span class="color01by32"><span class="acute">Á</span></span></td>
 <td><span class="color01by32">1</span></td>
 <td><span class="color01by32">00001</span></td>
 <td></td>
@@ -3169,7 +3169,7 @@ equivalents.
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color18by32"><span class="acute">O</span></span></td>
+<td><span class="color18by32"><span class="acute">Ó</span></span></td>
 <td><span class="color18by32">18</span></td>
 <td><span class="color18by32">10010</span></td>
 </tr>
@@ -3207,7 +3207,7 @@ equivalents.
 <td><span class="color21by32">10101</span></td>
 </tr>
 <tr>
-<td><span class="color06by32"><span class="acute">E</span></span></td>
+<td><span class="color06by32"><span class="acute">É</span></span></td>
 <td><span class="color06by32">6</span></td>
 <td><span class="color06by32">00110</span></td>
 <td></td>
@@ -3246,7 +3246,7 @@ equivalents.
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color25by32"><span class="acute">U</span></span></td>
+<td><span class="color25by32"><span class="acute">Ú</span></span></td>
 <td><span class="color25by32">25</span></td>
 <td><span class="color25by32">11001</span></td>
 </tr>
@@ -3262,7 +3262,7 @@ equivalents.
 <td><span class="color26by32">11010</span></td>
 </tr>
 <tr>
-<td><span class="color11by32"><span class="acute">I</span></span></td>
+<td><span class="color11by32"><span class="acute">Í</span></span></td>
 <td><span class="color11by32">11</span></td>
 <td><span class="color11by32">01011</span></td>
 <td></td>
@@ -3301,7 +3301,7 @@ equivalents.
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color30by32"><span class="acute">Y</span></span></td>
+<td><span class="color30by32"><span class="acute">Ý</span></span></td>
 <td><span class="color30by32">30</span></td>
 <td><span class="color30by32">11110</span></td>
 </tr>
@@ -3372,7 +3372,7 @@ equivalents.
 <td><span class="color24by32">11000</span></td>
 </tr>
 <tr>
-<td><span class="color01by32"><span class="acute">A</span></span></td>
+<td><span class="color01by32"><span class="acute">Á</span></span></td>
 <td><span class="color01by32">1</span></td>
 <td><span class="color01by32">00001</span></td>
 <td></td>
@@ -3390,7 +3390,7 @@ equivalents.
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color25by32"><span class="acute">U</span></span></td>
+<td><span class="color25by32"><span class="acute">Ú</span></span></td>
 <td><span class="color25by32">25</span></td>
 <td><span class="color25by32">11001</span></td>
 </tr>
@@ -3407,7 +3407,7 @@ equivalents.
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color18by32"><span class="acute">O</span></span></td>
+<td><span class="color18by32"><span class="acute">Ó</span></span></td>
 <td><span class="color18by32">18</span></td>
 <td><span class="color18by32">10010</span></td>
 <td></td>
@@ -3424,7 +3424,7 @@ equivalents.
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color11by32"><span class="acute">I</span></span></td>
+<td><span class="color11by32"><span class="acute">Í</span></span></td>
 <td><span class="color11by32">11</span></td>
 <td><span class="color11by32">01011</span></td>
 <td></td>
@@ -3487,7 +3487,7 @@ equivalents.
 <td><span class="color29by32">11101</span></td>
 </tr>
 <tr>
-<td><span class="color06by32"><span class="acute">E</span></span></td>
+<td><span class="color06by32"><span class="acute">É</span></span></td>
 <td><span class="color06by32">6</span></td>
 <td><span class="color06by32">00110</span></td>
 <td></td>
@@ -3505,7 +3505,7 @@ equivalents.
 <td></td>
 <td></td>
 <td></td>
-<td><span class="color30by32"><span class="acute">Y</span></span></td>
+<td><span class="color30by32"><span class="acute">Ý</span></span></td>
 <td><span class="color30by32">30</span></td>
 <td><span class="color30by32">11110</span></td>
 </tr>
@@ -3549,12 +3549,12 @@ and combines the 6
 <span class="color24by32">U</span>, and
 <span class="color29by32">Y</span>, with acute accents ( ́) to create 6
 additional accented letters,
-<span class="color01by32"><span class="acute">A</span></span>,
-<span class="color06by32"><span class="acute">E</span></span>,
-<span class="color11by32"><span class="acute">I</span></span>,
-<span class="color18by32"><span class="acute">O</span></span>,
-<span class="color25by32"><span class="acute">U</span></span>, and
-<span class="color30by32"><span class="acute">Y</span></span>, for a
+<span class="color01by32"><span class="acute">Á</span></span>,
+<span class="color06by32"><span class="acute">É</span></span>,
+<span class="color11by32"><span class="acute">Í</span></span>,
+<span class="color18by32"><span class="acute">Ó</span></span>,
+<span class="color25by32"><span class="acute">Ú</span></span>, and
+<span class="color30by32"><span class="acute">Ý</span></span>, for a
 total of 32 letters. The 6 new letters are included immediately after
 their unaccented antecedents as per the order of the English alphabet.
 
@@ -3737,7 +3737,7 @@ is <span class="tool" data-bs-toggle="tooltip"
 data-bs-title="hundreds of days">Hectoday</span>
 <span class="color265by365">-1</span>
 (<a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1</span></span>).
+data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>).
 
 # Day of hectoday (doh)
 
@@ -3816,9 +3816,9 @@ data-bs-title="group of one hundred days">h</a><span class="color0">0</span>,
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a><span class="color0">0</span>,
 <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color330by365"><span class="overline">4</span></span>,
+data-bs-title="group of one hundred days">h</a><span class="color330by365"><span class="overline">4̅</span></span>,
 and <a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of ten days">x</a><span class="color360by365"><span class="overline">37</span></span>.
+data-bs-title="group of ten days">x</a><span class="color360by365"><span class="overline">3̅7̅</span></span>.
 Days <span class="color364by365">364</span> and
 <span class="color365by366">365</span> are in
 <a href="#h" class="tool" data-bs-toggle="tooltip"
@@ -3826,9 +3826,9 @@ data-bs-title="group of one hundred days">h</a><span class="color300by365">3</sp
 <a href="#x" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of ten days">x</a><span class="color360by365">36</span>,
 <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color265by365"><span class="overline">1</span></span>,
+data-bs-title="group of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>,
 and <a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of ten days">x</a><span class="color355by365"><span class="overline">1</span></span>.
+data-bs-title="group of ten days">x</a><span class="color355by365"><span class="overline">1̅</span></span>.
 While <a href="#h" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of one hundred days">h</a><span class="color0">0</span>
 and <a href="#x" class="tool" data-bs-toggle="tooltip"
@@ -3844,15 +3844,15 @@ extend beyond the “end of year”
 (<a href="#eoy" id="endofyear" class="tool" data-bs-toggle="tooltip"
 data-bs-title="end of year">eoy</a>). In contrast,
 <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color330by365"><span class="overline">4</span></span>
+data-bs-title="group of one hundred days">h</a><span class="color330by365"><span class="overline">4̅</span></span>
 and <a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of ten days">x</a><span class="color360by365"><span class="overline">37</span></span>
+data-bs-title="group of ten days">x</a><span class="color360by365"><span class="overline">3̅7̅</span></span>
 begin before the <a href="#boy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of year">boy</a> but
 <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color265by365"><span class="overline">1</span></span>
+data-bs-title="group of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>
 and <a href="#x" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of ten days">x</a><span class="color355by365"><span class="overline">1</span></span>
+data-bs-title="group of ten days">x</a><span class="color355by365"><span class="overline">1̅</span></span>
 do not continue past the
 <a href="#eoy" class="tool" data-bs-toggle="tooltip"
 data-bs-title="end of year">eoy</a>. Each group of days has the same
@@ -3899,7 +3899,7 @@ data-bs-title="groups of one hundred days">h</a><span class="color100">1</span>,
 <a href="#h" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of one hundred days">h</a><span class="color200by365">2</span>,
 and <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1</span></span>,
+data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>,
 with their respective colors: <span class="color0">red</span>,
 <span class="color100">chartreuse</span>,
 <span class="color200by365">blue</span>, and
@@ -3910,11 +3910,11 @@ data-bs-title="groups of one hundred days">h</a><span class="color200by365">2</s
 is truncated to hide its overlap with the
 <span class="color265by365">violet</span> area signifying
 <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1</span></span>.
+data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>.
 Coincidentally, the <a href="#h" class="tool" data-bs-toggle="tooltip"
 data-bs-title="groups of one hundred days">h</a><span class="color200by365">2</span>
 and <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1</span></span>
+data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>
 overlap begins 1 or 2 days before the soonest possible date of
 [Thanksgiving](https://en.wikipedia.org/wiki/Thanksgiving#:~:text=Thanksgiving%20is-,a%20national%20holiday,-celebrated%20on%20various)🦃and
 ends with
@@ -4167,7 +4167,7 @@ data-bs-title="days of year">doy</a> on average,
 data-bs-title="day">d</a><span class="color316by365">316</span>, is
 close to the center of
 <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1</span></span>:
+data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>:
 <span class="color316by365">316</span> <span class="mono">-</span> 365 =
 <span class="color316by365">-49</span>.
 
@@ -4237,7 +4237,7 @@ In general, the hottest days are in
 data-bs-title="group of one hundred days">h</a><span class="color100">1</span>,
 the coldest days are in
 <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color265by365"><span class="overline">1</span></span>,
+data-bs-title="group of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>,
 temperatures increase with time in
 <a href="#h" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of one hundred days">h</a><span class="color0">0</span>,
@@ -4252,7 +4252,7 @@ data-bs-title="group of one hundred days">h</a><span class="color100">1</span>,
 <a href="#h" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of one hundred days">h</a><span class="color200by365">2</span>,
 and <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1</span></span>
+data-bs-title="groups of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>
 as the rise📈,
 [crest](https://en.wikipedia.org/wiki/Crest_and_trough#:~:text=is%20the%20highest%20point%20of%20the%20wave)🔥,
 fall📉, and
@@ -4287,7 +4287,7 @@ data-bs-title="group of one hundred days">h</a><span
 class="color200by365">2</span></th>
 <th><a href="#h" class="tool" data-bs-toggle="tooltip"
 data-bs-title="group of one hundred days">h</a><span
-class="color265by365"><span class="overline">1</span></span></th>
+class="color265by365"><span class="overline">1̅</span></span></th>
 </tr>
 </thead>
 <tbody>
@@ -4433,7 +4433,7 @@ and a <a href="#dox" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of xún">dox</a> with its last digit:
 ${decDoxNidMidColor1}. During
 <a href="#h" class="tool" data-bs-toggle="tooltip"
-data-bs-title="group of one hundred days">h</a><span class="color265by365"><span class="overline">1</span></span>,
+data-bs-title="group of one hundred days">h</a><span class="color265by365"><span class="overline">1̅</span></span>,
 Dec recommends using
 <a href="#nih" class="tool" data-bs-toggle="tooltip"
 data-bs-title="negative integer hectoday">nih</a>
