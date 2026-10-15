@@ -37,10 +37,10 @@ The red line indicates a "day of year",  ([doy](#doy){#dayofyear .tool data-bs-t
 
 ::: {.equationgroup #equationgroup00}
 $$
-\text{ada} = \text{doy} + \text{tod}
-$$ {#eq-ada}
-$$
-\text{doy} = \lfloor\text{ada}\rfloor
+\begin{split}
+\text{doy} &= \lfloor\text{ada}\rfloor \\
+&= \text{ada} - \text{tod}
+\end{split}
 $$ {#eq-ada}
 :::
 

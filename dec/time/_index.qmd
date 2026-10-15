@@ -2585,6 +2585,12 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color27by100 {
+  background: #cfff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color72by100 {
   background: #4400ff;
   color: white;
