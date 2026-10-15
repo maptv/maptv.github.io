@@ -423,7 +423,7 @@ app = {
 
 The red line indicates a “day of year”, ([doy](#doy)): , which identifies a day in a year like a [Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar#:~:text=the%20calendar%20used%20in%20most%20parts%20of%20the%20world) month and “day of month” ([dom](#dom)). The red dot denotes a “time of day” ([tod](#tod)): , which specifies a point in a day like an “hour minute second” ([hms](#hms)) triplet. Together, a [doy](#doy) and [tod](#tod) can form a “annual day aggregate” ([ada](#ada)):  + ÷ 1000 = .
 
-\\ \text{ada} = \text{doy} + \text{tod} \tag{1}\\ \\ \text{doy} = \lfloor\text{ada}\rfloor \tag{2}\\
+\\ \begin{split} \text{doy} &= \lfloor\text{ada}\rfloor \\ &= \text{ada} - \text{tod} \end{split} \tag{1}\\
 
 As their names suggest, [doy](#doy) and [ada](#ada) are measured in days. The [measurement unit](https://en.wikipedia.org/wiki/Unit_of_measurement#:~:text=a%20definite%20magnitude%20of%20a%20quantity) of a [tod](#tod) can be a day or a [submultiple](https://en.wikipedia.org/wiki/Multiple_%28mathematics%29#Submultiple:~:text=of%20%22a%20being-,a%20unit%20fraction,-of%20b%22%20) of a day with a metric prefix. By changing how a decimal [tod](#tod) is measured, we can shift its [decimal separator](https://en.wikipedia.org/wiki/Decimal_separator#:~:text=a%20symbol%20that%20separates%20the%20integer%20part%20from%20the%20fractional%20part%20of%20a%20number) or turn it into an integer. The [tod](#tod) along the y-axis of the area chart are integers because they have three digits and are measured in millidays.
 
@@ -431,25 +431,25 @@ As their names suggest, [doy](#doy) and [ada](#ada) are measured in days. The [m
 
 To obtain a [tod](#tod) from a [ada](#ada), we can [keep the remainder after dividing](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) by one to isolate the [decimal part](https://en.wikipedia.org/wiki/Fractional_part#:~:text=the%20excess%20beyond%20that%20number%27s%20integer%20part) of the [quotient](https://en.wikipedia.org/wiki/Quotient#:~:text=a%20quantity%20produced%20by%20the%20division%20of%20two%20numbers): [mod](https://en.wikipedia.org/wiki/Modulo#:~:text=returns%20the%20remainder) 1 = 0.. We can use this same approach to separate a [tod](#tod) from an “epochal day aggregate” ([eda](#eda)): mod 1 = 0.. The current [eda](#eda) tells us how many days have passed since the Dec [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era): Year 0 Day 0 [Tod](#tod) 0.
 
-\\\begin{split} \text{tod} &= \text{ada} \bmod 1 \\ &= \text{eda} \bmod 1 \end{split} \tag{3}\\
+\\\begin{split} \text{tod} &= \text{ada} \bmod 1 \\ &= \text{eda} \bmod 1 \end{split} \tag{2}\\
 
 ##### UNIX time equation
 
-Similarly, [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970%2C%20the%20Unix%20epoch) tallies the seconds since the [UNIX epoch](https://en.wikipedia.org/wiki/Unix_time#:~:text=00%3A00%3A00%20UTC%20on%201%C2%A0January%201970), which is exactly 719468 days after the Dec epoch. To get the [tod](#tod) in Zone 0, the Dec time zone that is in between the two leftmost vertical lines on the map, we can divide UNIX time by the [number of seconds in a day](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day) and then keep the remainder after dividing the resulting days by 1 as in [Equation 4](#eq-unixtod).
+Similarly, [UNIX time](https://en.wikipedia.org/wiki/Unix_time#:~:text=the%20number%20of%20non%2Dleap%20seconds%20that%20have%20elapsed%20since%2000%3A00%3A00%20UTC%20on%201%C2%A0January%201970%2C%20the%20Unix%20epoch) tallies the seconds since the [UNIX epoch](https://en.wikipedia.org/wiki/Unix_time#:~:text=00%3A00%3A00%20UTC%20on%201%C2%A0January%201970), which is exactly 719468 days after the Dec epoch. To get the [tod](#tod) in Zone 0, the Dec time zone that is in between the two leftmost vertical lines on the map, we can divide UNIX time by the [number of seconds in a day](https://en.wikipedia.org/wiki/Day#:~:text=average%2C%20this%20is-,24%20hours%20(86%2C400%20seconds),-.%20As%20a%20day) and then keep the remainder after dividing the resulting days by 1 as in [Equation 3](#eq-unixtod).
 
-\\\text{tod} = \text{unix} \div 86400 \bmod 1 \tag{4}\\
+\\\text{tod} = \text{unix} \div 86400 \bmod 1 \tag{3}\\
 
 ##### Julian date equation
 
 [Julian dates](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon) track the days since the beginning of the [Julian period](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20chronological%20interval%20of%207980%C2%A0years%2C%20derived%20from%20three%20multi%2Dyear%20cycles:%20the%20Indiction%2C%20Solar%2C%20and%20Lunar%20cycles) and thus are akin to [eda](#eda). We can produce a Zone 5 [tod](#tod) from a [Julian date](https://en.wikipedia.org/wiki/Julian_day#:~:text=the%20Julian%20day%20number%20plus%20the%20fraction%20of%20a%20day%20since%20the%20preceding%20noon) simply by keeping the remainder after dividing by one. If we want a Zone 0 [tod](#tod) instead, we should add 5 decidays to the Julian date before converting it to a [tod](#tod) to ensure that the final result is less than 1 day.
 
-\\\text{tod} = (\text{julian} + 0.5) \bmod 1 \tag{5}\\
+\\\text{tod} = (\text{julian} + 0.5) \bmod 1 \tag{4}\\
 
 #### 3 Hour minute second
 
 We can also obtain a Zone 0 [tod](#tod) from a [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time) ([UTC](#utc)) [hms](#hms) triplet by summing its components after converting them to fractional days, as shown in the equation below. The [computer programming](https://en.wikipedia.org/wiki/Computer_programming#:~:text=the%20composition%20of%20sequences%20of%20instructions%2C%20called%20programs%2C%20that%20computers%20can%20follow%20to%20perform%20tasks) code in the [tabset panel](https://quarto.org/docs/interactive/layout.html#tabset-panel) beneath the equation compares [tod](#tod) derived from [UTC](#utc) and UNIX time as Quarto was [rendering](https://quarto.org/docs/get-started/hello/rstudio.html#rendering:~:text=When%20rendering%2C%20Quarto%20generates%20a%20new%20file%20that%20contains%20selected%20text%2C%20code%2C%20and%20results) this webpage.
 
-\\\text{tod} = \dfrac{\text{hour}}{24} + \dfrac{\text{minute}}{1440} + \dfrac{\text{second}}{86400} \tag{6}\\
+\\\text{tod} = \dfrac{\text{hour}}{24} + \dfrac{\text{minute}}{1440} + \dfrac{\text{second}}{86400} \tag{5}\\
 
 ## Julia
 
@@ -525,9 +525,9 @@ hms$sec / 86400
 
     [1] 0.1907862
 
-Equations [7](#eq-dsa) to [11](#eq-som) below convert UNIX time or a Zone 0 [tod](#tod) into the three components of an [hms](#hms) triplet: the “hour of day” ([hod](#hod)), “minute of hour” ([moh](#moh)), and “second of minute” ([som](#som)), using a “daily second aggregate” ([dsa](#dsa)) and “hourly second aggregate” ([hsa](#hsa)). While both count seconds, [dsa](#dsa) start at midnight ([Tod](#tod) 0) and [hsa](#hsa) begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
+Equations [6](#eq-dsa) to [10](#eq-som) below convert UNIX time or a Zone 0 [tod](#tod) into the three components of an [hms](#hms) triplet: the “hour of day” ([hod](#hod)), “minute of hour” ([moh](#moh)), and “second of minute” ([som](#som)), using a “daily second aggregate” ([dsa](#dsa)) and “hourly second aggregate” ([hsa](#hsa)). While both count seconds, [dsa](#dsa) start at midnight ([Tod](#tod) 0) and [hsa](#hsa) begin at the [top of the hour](https://en.wiktionary.org/wiki/top_of_the_hour).
 
-\\\begin{split} \text{dsa} & = \text{tod} \ast 86400 \\ & = \text{unix} \bmod 86400 \end{split} \tag{7}\\ \\ \text{hsa} = \text{dsa} \bmod 3600 \tag{8}\\ \\ \text{hod} = \lfloor \text{dsa} \div 3600 \rfloor \tag{9}\\ \\ \text{moh} = \lfloor \text{hsa} \div 60 \rfloor \tag{10}\\ \\ \text{som} = \lfloor \text{hsa} \bmod 60 \rfloor \tag{11}\\
+\\\begin{split} \text{dsa} & = \text{tod} \ast 86400 \\ & = \text{unix} \bmod 86400 \end{split} \tag{6}\\ \\ \text{hsa} = \text{dsa} \bmod 3600 \tag{7}\\ \\ \text{hod} = \lfloor \text{dsa} \div 3600 \rfloor \tag{8}\\ \\ \text{moh} = \lfloor \text{hsa} \div 60 \rfloor \tag{9}\\ \\ \text{som} = \lfloor \text{hsa} \bmod 60 \rfloor \tag{10}\\
 
 ## Julia
 
@@ -596,9 +596,9 @@ viewof leapSecondDate = Inputs.range([0, 365], {label: "Day", value: 182, step: 
 
 The equation above divides leap seconds by the number of [International System of Units](https://en.wikipedia.org/wiki/International_System_of_Units#:~:text=the%20world%27s%20most%20widely%20used%20system%20of%20measurement) ([SI](#si)) seconds ([sis](#sis)) or Dec deciseconds ([ds](#ds)) in a deciday ([dd](#dd)): 8640 [sis](#sis) = 90000 [ds](#ds) = 1 [dd](#dd). To avoid [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever) when converting [sis](#sis) into [ds](#ds), we can replace the ones digit and the decimal part of the [ds](#ds) with a Dec [quadravigesimal](https://en.wikipedia.org/wiki/List_of_numeral_systems#:~:text=24-,Quadravigesimal,-%5B48%5D) (base24) digit: = × 10 + ÷ 2.4.
 
-Known as a “second interval difference” ([sid](#sid)), the base24 ([b24](#b24)) character at the end of is a letter of the [Greek alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language). To display [sis](#sis) in [ds](#ds), we can concatenate the integer part of the [s](#s) we obtain from [Equation 12](#eq-sis) with the [b24](#b24) representation of the [sid](#sid) we get from [Equation 13](#eq-sid). The table beneath these equations lists [base10](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([b10](#b10)) and [b24](#b24) equivalents.
+Known as a “second interval difference” ([sid](#sid)), the base24 ([b24](#b24)) character at the end of is a letter of the [Greek alphabet](https://en.wikipedia.org/wiki/Greek_alphabet#:~:text=the%20writing%20system%20used%20for%20the%20Greek%20language). To display [sis](#sis) in [ds](#ds), we can concatenate the integer part of the [s](#s) we obtain from [Equation 11](#eq-sis) with the [b24](#b24) representation of the [sid](#sid) we get from [Equation 12](#eq-sid). The table beneath these equations lists [base10](https://en.wikipedia.org/wiki/Decimal#:~:text=a%20numeral%20system%20that%20uses%20ten%20as%20its%20radix%20%28base%29) ([b10](#b10)) and [b24](#b24) equivalents.
 
-\\ \text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96} \tag{12}\\ \\ \begin{split} \text{sid} &= \text{sis} \bmod 24\\ &= (\text{s} - \text{sis}) \ast 24 \bmod 24 \end{split} \tag{13}\\
+\\ \text{s} = \dfrac{\text{ds}}{10} = \dfrac{\text{sis}}{0.96} \tag{11}\\ \\ \begin{split} \text{sid} &= \text{sis} \bmod 24\\ &= (\text{s} - \text{sis}) \ast 24 \bmod 24 \end{split} \tag{12}\\
 
 ##### Base24
 
@@ -759,15 +759,15 @@ For precise [geopositioning](https://en.wikipedia.org/wiki/Geopositioning#:~:tex
 
 The two types of [solar time](https://en.wikipedia.org/wiki/Solar_time#:~:text=a%20calculation%20of%20the%20passage%20of%20time%20based%20on%20the%20position%20of%20the%20Sun%20in%20the%20sky) are [“mean solar time”](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([mst](#mst)) and [“apparent solar time”](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time:~:text=it%20follows%20an%20imaginary%20%22mean%20Sun%22%20that%20moves%20along%20the%20celestial%20equator%20at%20a%20constant%20rate%20that%20matches%20the%20real%20Sun%27s%20average%20rate%20over%20the%20year) ([ast](#ast)). To calculate [mst](#mst), we keep only the decimal part of the sum of 0.95, the Zone 0 [tod](#tod) measured in days, and our longitude measured in [w](#w). If we want [ast](#ast) instead of [mst](#mst), the sum needs to include the result of plugging the “time of year” ([toy](#toy)) into the [“equation of time”](https://en.wikipedia.org/wiki/Equation_of_time#:~:text=the%20discrepancy%20between%20two%20kinds%20of%20solar%20time) ([eot](#eot)).
 
-\\\text{toy} = \text{ada} \div \text{syl} \tag{14}\\
+\\\text{toy} = \text{ada} \div \text{syl} \tag{13}\\
 
-\\\text{mst} = (0.95 + \text{tod} + \text{w}) \bmod 1 \tag{15}\\
+\\\text{mst} = (0.95 + \text{tod} + \text{w}) \bmod 1 \tag{14}\\
 
-\\\text{ast} = (0.95 + \text{tod} + \text{w} + \text{eot(toy)}) \bmod 1 \tag{16}\\
+\\\text{ast} = (0.95 + \text{tod} + \text{w} + \text{eot(toy)}) \bmod 1 \tag{15}\\
 
 To obtain the [toy](#toy), we divide the [ada](#ada) by the number of days in the year ([syl](#syl)). If we use [trigonometric functions](https://en.wikipedia.org/wiki/Trigonometric_functions#:~:text=functions%20which%20relate%20an%20angle%20of%20a%20right%2Dangled%20triangle%20to%20ratios%20of%20two%20side%20lengths) that are designed to work with [radians](https://en.wikipedia.org/wiki/Radian#:~:text=the%20unit%20of%20angle%20in%20the%20International%20System%20of%20Units), we will have to multiply the [toy](#toy) by \\2\pi\\ or \\\tau\\. We do not need to modify the [toy](#toy) before passing it to the [eot](#eot)() function defined below because its trigonometric functions expect [turns](https://en.wikipedia.org/wiki/Turn_%28angle%29#:~:text=a%20unit%20of%20plane%20angle%20measurement%20equal%20to%202%CF%80%C2%A0radians%2C%20360%C2%A0degrees) instead of radians.
 
-\\\begin{split} \text{eot(toy)} & = \beta_0 \\ & + \beta_1 \ast \text{costau(toy)} \\ & + \beta_2 \ast \text{costau(2} \ast \text{toy)} \\ & + \beta_3 \ast \text{sintau(toy)} \\ & + \beta_4 \ast \text{sintau(2} \ast \text{toy)} \end{split} \tag{17}\\
+\\\begin{split} \text{eot(toy)} & = \beta_0 \\ & + \beta_1 \ast \text{costau(toy)} \\ & + \beta_2 \ast \text{costau(2} \ast \text{toy)} \\ & + \beta_3 \ast \text{sintau(toy)} \\ & + \beta_4 \ast \text{sintau(2} \ast \text{toy)} \end{split} \tag{16}\\
 
 ## Julia
 
@@ -949,33 +949,33 @@ The [line📈chart](https://en.wikipedia.org/wiki/Line_chart#:~:text=a%20type%20
 
 Apart from turning a [mst](#mst) into an [ast](#ast), we can also use [eot](#eot) to more accurately estimate the [tod](#tod) of [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow), sunrise, and sunset. The equation below creates a [solar noon](https://en.wikipedia.org/wiki/Noon#:~:text=reaching%20its%20highest%20position%20above%20the%20horizon%20on%20that%20day%20and%20casting%20the%20shortest%20shadow) [tod](#tod) measured in days by adding 9.55 to a longitude measured in [w](#w), subtracting a [tzo](#tzo) and a [eot](#eot)([toy](#toy)) value that are both measured in days, and keeping only the decimal part of the result.
 
-\\\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot(toy)}\right) \bmod 1 \tag{18}\\
+\\\text{solarnoon} = \left(9.55 + \text{tzo} - \text{w} - \text{eot(toy)}\right) \bmod 1 \tag{17}\\
 
 #### 10 Cambridge and Cambridge
 
 To compare the solar noon [tod](#tod) in two cities, we can plug in the longitude of each city into the equation above. If all the variables in the equation other than longitude are set to zero, the result is almost five decidays for [Cambridge, England](https://en.wikipedia.org/wiki/Cambridge#:~:text=a%20city%20and%20non%2Dmetropolitan%20district%20in%20the%20county%20of%20Cambridgeshire%2C%20England) in the [United Kingdom](https://en.wikipedia.org/wiki/United_Kingdom#:~:text=a%20country%20in%20Northwestern%20Europe) and nearly seven decidays for [Cambridge, Massachusetts](https://en.wikipedia.org/wiki/Cambridge,_Massachusetts#:~:text=a%20city%20in%20Middlesex%20County%2C%20Massachusetts%2C%20United%20States) in the [United States](https://en.wikipedia.org/wiki/United_States#:~:text=a%20country%20primarily%20located%20in%20North%20America).
 
-\\4.99635 = (9.55 - 0.050365) \bmod 1 \ast 10 \tag{19}\\
+\\4.99635 = (9.55 - 0.050365) \bmod 1 \ast 10 \tag{18}\\
 
-\\6.97516 = (9.55 - 0.852484) \bmod 1 \ast 10 \tag{20}\\
+\\6.97516 = (9.55 - 0.852484) \bmod 1 \ast 10 \tag{19}\\
 
 The two homonymous cities are about two [dw](#dw) apart and thus will always differ by around two decidays in solar time, regardless of what time zone we use as our frame of reference. England is in Zone 0 and Massachusetts is in Zone 8. If we change the [tzo](#tzo) from zero to eight decidays, the solar noon [tod](#tod) for each city will be two decidays earlier.
 
-\\2.99635 = (9.55 + 0.8 - 0.050365) \bmod 1 \ast 10 \tag{21}\\
+\\2.99635 = (9.55 + 0.8 - 0.050365) \bmod 1 \ast 10 \tag{20}\\
 
-\\4.97516 = (9.55 + 0.8 - 0.852484) \bmod 1 \ast 10 \tag{22}\\
+\\4.97516 = (9.55 + 0.8 - 0.852484) \bmod 1 \ast 10 \tag{21}\\
 
 #### 11 Full day arc
 
 The path in the sky that the Sun appears to follow from a sunrise to a sunset is a “[day arc](https://en.wikipedia.org/wiki/Sun_path#:~:text=arc%2Dlike%20path%20that%20the%20Sun%20appears%20to%20follow%20across%20the%20sky)” ([da](#da)). Solar noon, the midpoint of a [da](#da), is halfway between sunrise and sunset. On each side of solar noon is a “half day arc” ([da/2](#da2)). The sum of a solar noon [tod](#tod) and a [da/2](#da2) is a sunset [tod](#tod) and the difference between a solar noon [tod](#tod) and a [da/2](#da2) is a sunrise [tod](#tod).
 
-\\\begin{split} \text{sunset} & = \text{solarnoon} + \dfrac{\text{da}}{2} && = \text{sunrise} + \text{da} \\ \text{sunrise} & = \text{solarnoon} - \dfrac{\text{da}}{2} && = \text{sunset} - \text{da} \end{split} \tag{23}\\
+\\\begin{split} \text{sunset} & = \text{solarnoon} + \dfrac{\text{da}}{2} && = \text{sunrise} + \text{da} \\ \text{sunrise} & = \text{solarnoon} - \dfrac{\text{da}}{2} && = \text{sunset} - \text{da} \end{split} \tag{22}\\
 
 ##### Full night arc
 
 The Sun continues its path after it disappears below the horizon, moving from sunset to sunrise along a “night arc” ([na](#na)). Like [conjugate angles](https://en.wikipedia.org/wiki/Angle#:~:text=conjugate%20angles%20sum%20to%20a%20full%20angle), a [da](#da) and a [na](#na) form a full circle that represents one day. Likewise, a [da/2](#da2) and a “half night arc” ([na/2](#na2)) are like two [supplementary angles](https://en.wikipedia.org/wiki/Angle#:~:text=sum%20to%20a%20straight%20angle) that form a semicircle from solar noon to the [na](#na) midpoint: [solar midnight](https://en.wikipedia.org/wiki/Midnight#:~:text=the%20time%20opposite%20to%20solar%20noon%2C%20when%20the%20Sun%20is%20closest%20to%20the%20nadir%2C%20and%20the%20night%20is%20equidistant%20from%20dusk%20and%20dawn).
 
-\\\text{solarmidnight} = \text{solarnoon} + \dfrac{\text{da}}{2} + \dfrac{\text{na}}{2} = \text{sunset} + \dfrac{\text{na}}{2} \tag{24}\\
+\\\text{solarmidnight} = \text{solarnoon} + \dfrac{\text{da}}{2} + \dfrac{\text{na}}{2} = \text{sunset} + \dfrac{\text{na}}{2} \tag{23}\\
 
 The range input below controls the yellow [da](#da) and the blue [na](#na) in the diagram beneath it. At the Equator, the sunrise always rises about a quarter turn from North and sets around three quarter turns from North, resulting in a [da](#da) of approximately half a day: 75% – 25% = 50%. If [da](#da) is zero, a [polar night](https://en.wikipedia.org/wiki/Polar_night#:~:text=the%20Sun%20remains%20below%20the%20horizon%20for%20more%20than%2024%C2%A0hours) occurs. A day without a [na](#na) is called a [polar day](https://en.wikipedia.org/wiki/Midnight_sun#:~:text=the%20Sun%20remains%20visible%20at%20the%20local%20midnight).
 
@@ -1084,7 +1084,7 @@ Plot.plot({
 
 Anyone can measure the [saa](#saa) during the daytime by pointing a compass at the point on the horizon below the Sun. In the Northern Hemisphere, we can use this method to approximate solar time. In the Southern Hemisphere, we can obtain solar time by measuring the [saa](#saa) in turns and then subtracting our measurement from one and a half turns:
 
-\\\text{solartime} \approx \begin{cases}\text{saa}&{\text{if m} \geq 0;}\\(1.5 - \text{saa}) \bmod 1&{\text{otherwise.}}\end{cases} \tag{25}\\
+\\\text{solartime} \approx \begin{cases}\text{saa}&{\text{if m} \geq 0;}\\(1.5 - \text{saa}) \bmod 1&{\text{otherwise.}}\end{cases} \tag{24}\\
 
 The clockwise path that the Sun follows in the Northern Hemisphere is ingrained in the Belarussian, Polish, or Ukrainian languages. These three Slavic languages each have one word for north or midnight and another word for south or noon. In Dec, zero represents both north and midnight, while both south and noon can be expressed as a half turn.
 
@@ -1095,15 +1095,15 @@ The clockwise path that the Sun follows in the Northern Hemisphere is ingrained 
 
 If we only want to know how long the Sun will shine on a given day, we can use the top equation below to obtain a [da](#da). Alternatively, if we are interested in finding out when the Sun will rise or set on a given day, we will need to calculate a [da/2](#da2) using the bottom equation below and then combine it with a solar noon [tod](#tod) to get a sunrise or sunset [tod](#tod).
 
-\\\text{da} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\pi} \tag{26}\\
+\\\text{da} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\pi} \tag{25}\\
 
-\\\dfrac{\text{da}}{2} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\tau} \tag{27}\\
+\\\dfrac{\text{da}}{2} = \dfrac{\arccos\left({\Large\dfrac{\text{costau(0.252314)} - \text{sintau(m)} \ast \text{sintau(sda)}}{\text{costau(m)} \ast \text{costau(sda)}}}\right)}{\tau} \tag{26}\\
 
 ##### Solar declination angle
 
 The [da](#da) and [da/2](#da2) equations above require a latitude and a “solar [declination](https://en.wikipedia.org/wiki/Declination#:~:text=one%20of%20the%20two%20angles%20that%20locate%20a%20point%20on%20the%20celestial%20sphere%20in%20the%20equatorial%20coordinate%20system) angle” ([sda](#sda)). Dec measures latitude in turns called meridians ([m](#m)) or turn submultiples such as millimeridians ([mm](#mm)). For simplicity, we can fit our [eot](#eot) model to [sda](#sda) data instead of fitting the needlessly complex [sda](#sda) model provided by the NOAA General Solar Position Calculations:
 
-\\\begin{split} \text{sda(toy)} & = \beta_0 \\ & + \beta_1 \ast \text{costau(toy)} \\ & + \beta_2 \ast \text{sintau(toy)} \\ & + \beta_3 \ast \text{costau(2} \ast \text{toy)} \\ & + \beta_4 \ast \text{sintau(2} \ast \text{toy)} \\ & + \beta_5 \ast \text{costau(3} \ast \text{toy)} \\ & + \beta_6 \ast \text{sintau(3} \ast \text{toy)} \\ \end{split} \tag{28}\\
+\\\begin{split} \text{sda(toy)} & = \beta_0 \\ & + \beta_1 \ast \text{costau(toy)} \\ & + \beta_2 \ast \text{sintau(toy)} \\ & + \beta_3 \ast \text{costau(2} \ast \text{toy)} \\ & + \beta_4 \ast \text{sintau(2} \ast \text{toy)} \\ & + \beta_5 \ast \text{costau(3} \ast \text{toy)} \\ & + \beta_6 \ast \text{sintau(3} \ast \text{toy)} \\ \end{split} \tag{27}\\
 
 The top range input below picks the [doy](#doy) that will become the [toy](#toy) in our fitted [sda](#sda) model. The other two range inputs below chose the geographic coordinates that we need to find the sunrise and sunset [tod](#tod). While the sunrise and sunset [tod](#tod) depend on both geographic coordinates, the [da](#da) varies only by latitude and not by longitude: – = .
 
@@ -1125,7 +1125,7 @@ The latest equation above is an example of a Dec span. From left to right, this 
 
 The difference shows the [remaining time](https://en.wikipedia.org/wiki/Countdown#:~:text=the%20time%20remaining%20before%20an%20event) as a negative number if the minuend is less than the substrahend or displays the [elapsed time](https://en.wikipedia.org/wiki/Mission_Elapsed_Time) as a positive number if the minuend is greater than the subtrahend. In this way, the difference can act like a [“T minus countdown”](https://en.wikipedia.org/wiki/Countdown#:~:text=a%20sequence%20of%20backward%20counting%20to%20indicate%20the%20time%20remaining) that becomes a [“T plus countup”](https://en.wikipedia.org/wiki/Countdown#:~:text=After%20a%20launch%2C%20most%20countdown%20clocks%20begin%20to%20show%20Mission%20Elapsed%20Time) after an event like a rocket🚀launch.
 
-\\\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \tag{29}\\
+\\\begin{cases}\text{difference}\<0&{\text{if } \text{minuend} \< \text{subtrahend};}\\\text{difference}=0&{\text{if minuend} = \text{subtrahend};}\\\text{difference}\>0&{\text{if minuend}\>\text{subtrahend.}}\end{cases} \tag{28}\\
 
 When the minuend is the current time and the subtrahend is the [timestamp](https://en.wikipedia.org/wiki/Timestamp#:~:text=a%20sequence%20of%20characters%20or%20encoded%20information%20identifying%20when%20a%20certain%20event%20occurred) of an event which occurred in the past, the difference is the time elapsed since that event. A Dec timestamp consists of a year, a day, . can be an [eda](#eda), a “epochal year aggregate” ([eya](#eya)), or a snap🫰. Eda and eya are the time The typical snap format is year+[ada](#ada)-[tzo](#tzo). The snap +-0 represents the [b](#b) when this webpage loaded [b](#b) ago.
 
@@ -1133,41 +1133,41 @@ When the minuend is the current time and the subtrahend is the [timestamp](https
 
 A [doe](#doe) is essentially a Dec date with a [yoe](#yoe) that is always equal to 0 and a [doy](#doy) that is [not restricted](https://en.wikipedia.org/wiki/Bounded_set#:~:text=a%20set%20which%20is%20not%20bounded) to 0 ≤ [doy](#doy) ≤ 365. Similarly, a Dec “epochal year aggregate” ([eya](#eya)) is basically a Dec date with a non-integer year and a day permanently set to 0. We can obtain a Dec date by passing a doe Both [doe](#doe) and [eya](#eya) allow us to represent a date as a single number and obtain the difference between two dates.
 
-\\\text{cda} = \text{de} - \text{coe} \ast 146097 \tag{30}\\
+\\\text{cda} = \text{de} - \text{coe} \ast 146097 \tag{29}\\
 
-\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{31}\\
+\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{30}\\
 
-\\\text{yoe} = \text{yoc} + \text{coe} \ast 400 \tag{32}\\
+\\\text{yoe} = \text{yoc} + \text{coe} \ast 400 \tag{31}\\
 
-\\\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \biggr \rfloor \tag{33}\\
+\\\text{doy} = \biggl \lfloor \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \biggr \rfloor \tag{32}\\
 
 Compared to a [doe](#doe), it is much easier to convert between an [eya](#eya) and a to turn into Dec dates. The decimal part of an [eya](#eya) is a called a [toy](#toy). We can convert between dates to [eya](#eya) with the equations below. We can obtain a [yoe](#yoe) by flooring an [eya](#eya). Likewise, we can obtain a doy by flooring the product of [syl](#syl) and the decimal part of an [eya](#eya), which is called a [toy](#toy). The current [eya](#eya) equation values are =  + ÷ . We can floor an [eya](#eya) to get a yoe or divide its , we can obtain a
 
-\\\text{eya} = \text{yoe} + \text{toy} = \text{yoe} + \text{doy} \div \text{syl} \tag{34}\\
+\\\text{eya} = \text{yoe} + \text{toy} = \text{yoe} + \text{doy} \div \text{syl} \tag{33}\\
 
-\\\text{toy} = \text{eya} \bmod 1 = \text{doy} \div \text{syl} \tag{35}\\
+\\\text{toy} = \text{eya} \bmod 1 = \text{doy} \div \text{syl} \tag{34}\\
 
-\\\text{doy} = \lfloor\text{toy}\ast\text{syl}\rfloor \tag{36}\\
+\\\text{doy} = \lfloor\text{toy}\ast\text{syl}\rfloor \tag{35}\\
 
-\\\text{eya} = \text{yoe} + \text{doy} \ast \text{syl} \tag{37}\\
+\\\text{eya} = \text{yoe} + \text{doy} \ast \text{syl} \tag{36}\\
 
-\\\text{eya} = \text{yoe} + \text{coe} \ast 400 \tag{38}\\
+\\\text{eya} = \text{yoe} + \text{coe} \ast 400 \tag{37}\\
 
 [eya](#eya) = [yoe](#yoe) + [doy](#doy) ÷ [syl](#syl).
 
 We can omit the year from a snap if we replace the [ada](#ada) with a subtrahend and a difference or just a difference. If needed, we can obtain a snap from a difference using the equations below. First, we subtract the difference from the current [eda](#eda) to obtain the “[eda](#eda) difference difference” ([edd](#edd)). Then, we use the [edd](#edd) to get the “cycle of era” ([coe](#coe)), “day of cycle” ([doc](#doc)), “year of cycle” ([yoc](#yoc)), and then finally the year and [ada](#ada).
 
-\\\text{edd} = \text{eda} - \text{difference} \tag{39}\\
+\\\text{edd} = \text{eda} - \text{difference} \tag{38}\\
 
-\\\text{coe} = \Biggl \lfloor \dfrac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \tag{40}\\
+\\\text{coe} = \Biggl \lfloor \dfrac{\begin{cases}\text{edd}&{\text{if } \text{edd} \geq 0;}\\\text{edd}-146096&{\text{otherwise.}}\end{cases}}{146097} \Biggr \rfloor \tag{39}\\
 
-\\\text{doc} = \text{edd} - \text{coe} \ast 146097 \tag{41}\\
+\\\text{doc} = \text{edd} - \text{coe} \ast 146097 \tag{40}\\
 
-\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{42}\\
+\\\text{yoc} = \biggl \lfloor \dfrac{\text{doc} - \lfloor \dfrac{\text{doc}}{1460} \rfloor + \lfloor \dfrac{\text{doc}}{36524} \rfloor - \lfloor \dfrac{\text{doc}}{146096} \rfloor}{365} \biggr \rfloor \tag{41}\\
 
-\\\text{year} = \text{yoc} + \text{coe} \ast 400 \tag{43}\\
+\\\text{year} = \text{yoc} + \text{coe} \ast 400 \tag{42}\\
 
-\\\text{ada} = \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \tag{44}\\
+\\\text{ada} = \text{doc} - \text{yoc} \ast 365 - \lfloor \dfrac{\text{yoc}}{4} \rfloor + \lfloor \dfrac{\text{yoc}}{100} \rfloor \tag{43}\\
 
 In the equations above, [eda](#eda) is “epochal day aggregate”, [coe](#coe) is “cycle of era”, [doc](#doc) is “day of cycle”, and [yoc](#yoc) is “year of cycle”.
 
@@ -4042,15 +4042,15 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color122by365 {
-  background: #82ff00;
+.color081by366 {
+  background: #f1ff00;
   color: black;
   padding: 0px .5px;
   border-radius: 4px;
 }
-.color228by365 {
-  background: #0066ff;
-  color: white;
+.color122by365 {
+  background: #82ff00;
+  color: black;
   padding: 0px .5px;
   border-radius: 4px;
 }
