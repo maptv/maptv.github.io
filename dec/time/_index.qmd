@@ -2579,6 +2579,30 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color26by100 {
+  background: #d6ff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color72by100 {
+  background: #4400ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color081by366 {
+  background: #f1ff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color122by365 {
+  background: #82ff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color287 {
   background: hsl(${hues[0.287]} 100% 50%);
   color: ${yiq(`hsl(${hues[0.287]}, 100%, 50%)`) > 0.51 ? "black" : "white"};
