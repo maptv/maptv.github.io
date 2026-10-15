@@ -691,15 +691,11 @@ viewof hmsinput = Inputs.form([
 
 #### 6 Time zone offset
 
-In Dec, a “time zone offset” ([tzo](#tzo)) is a non-negative, single-digit [b10](#b10) [dd](#dd) value that can be added to the Zone 0 [tod](#tod) to get the [tod](#tod) of one of the other Dec time zones. Although it has only ten time zones, Dec can match the time in any [UTC](#utc) time zone with one or two non-negative [b24](#b24) digits. After Dec adds 1 day to make negative [UTC](#utc) offsets positive, there 24 [who](#who) and 11 [UTC](#utc) offsets that spill over into a second [b24](#b24) digit. Dec converts [uto](#uto) and all other kinds of offsets into nonnegative . Unlike [who](#who), [UTC](#utc) offsets can be negative.
-
-Out of the [38](https://en.wikipedia.org/wiki/List_of_UTC_offsets) [UTC](#utc) offsets, 15 are negative [who](#who) and 23 are nonnegative. 12 are negative [b24](#b24) integers, and but become [who](#who) after Dec adds 24 hours, to make be negative is ⍺ which being both a [tzo](#tzo) and a [who](#who), 3190 “solar time offset” ([sto](#sto)) is a [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits) [sto](#sto), and 83200 [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever) in would need a . With [s](#s) appended, all 83200 have a finite number of digits: 3200 need only [b9](#b9) and [b10](#b10) digits, and the other 80000 also need a [b24](#b24) digit. o, when expressed in [dd](#dd).
+Out of the [38](https://en.wikipedia.org/wiki/List_of_UTC_offsets) [UTC](#utc) offsets, 12 are [terminating decimal](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=a%20finite%20number%20of%20nonzero%20digits) in [b10](#b10) after being converted from hours to days and therefore could be displayed in either [b10](#b10) or [b24](#b24). Although it has only ten time zones, Dec can match the time in any [UTC](#utc) time zone with one or two non-negative [b24](#b24) digits. There are 27 UTC offsets that require only one [b24](#b24) digit and 11 that need two [b24](#b24) digits.
 
 ##### Coordinated Universal Time (UTC)
 
-When we do the same to the without leap seconds, we get 3 [tzo](#tzo), 9 [sto](#sto), and 26 [repeating decimals](https://en.wikipedia.org/wiki/Repeating_decimal#:~:text=the%20same%20sequence%20of%20digits%20is%20repeated%20forever). In [b24](#b24), however, 27 of the 38 [UTC](#utc) offsets are a single digit, because they are a whole number of hours and an hour is a twenty-fourth of a day: [UTC](#utc)+0 is α, [UTC](#utc)+8 is ι, and [UTC](#utc)+12 is ν. Dec has no negative offsets, so 1 day is added to a negative [UTC](#utc) offset before it is converted: [UTC](#utc)−5 becomes 19 hours, which is υ. The other 11 [UTC](#utc) offsets end with a half hour or three quarters of an hour and need a second [b24](#b24) digit that counts twenty-fourths of an hour: ν for the 8 offsets that end with a half hour, such as ζν for [UTC](#utc)+5:30, and τ for the 3 offsets that end with three quarters of an hour, such as ζτ for [UTC](#utc)+5:45.
-
-There are 14 negative and 24 positive [UTC](#utc) offsets. The [UTC](#utc) time zone with [the most negative offset](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00#:~:text=a%20nautical%20time%20zone%20comprising%20the%20high%20seas%20between%20180%C2%B0%20and%20172%C2%B030%E2%80%B2W%20longitude) is completely uninhabited. The bar📊chart below visualizes [Socioeconomic Data and Applications Center](https://www.earthdata.nasa.gov/centers/sedac-daac) data from 2020 regarding the population of each [UTC](#utc) time zone. The vast majority of all people live in [UTC](#utc) time zones with positive offsets.
+There are 14 negative (\<0) and 24 non-negative (≥0) [UTC](#utc) offsets. The [UTC](#utc) time zone with [the most negative offset](https://en.wikipedia.org/wiki/UTC%E2%88%9212:00#:~:text=a%20nautical%20time%20zone%20comprising%20the%20high%20seas%20between%20180%C2%B0%20and%20172%C2%B030%E2%80%B2W%20longitude) is completely uninhabited. The bar chart below visualizes [Socioeconomic Data and Applications Center](https://www.earthdata.nasa.gov/centers/sedac-daac) data from 2020 regarding the population of each [UTC](#utc) time zone. The vast majority of all people live in [UTC](#utc) time zones with non-negative offsets.
 
 ``` js
 // https://observablehq.com/@mattdzugan/population-by-time-zone-creating-a-dataset
@@ -726,9 +722,9 @@ Plot.plot({
 })
 ```
 
-Negative [UTC](#utc) offsets only exist in [the Americas](https://en.wikipedia.org/wiki/Americas#:~:text=a%20landmass%20comprising%20the%20totality%20of%20North%20America%20and%20South%20America) and islands in the [Atlantic](https://en.wikipedia.org/wiki/List_of_islands_in_the_Atlantic_Ocean) and [Pacific](https://en.wikipedia.org/wiki/List_of_islands_in_the_Pacific_Ocean) Oceans. Therefore, the bar📊chart above is essentially comparing the Americas to the rest of the world. According to 2021 [United Nations Department of Economic and Social Affairs](https://en.wikipedia.org/wiki/United_Nations_Department_of_Economic_and_Social_Affairs#:~:text=part%20of%20the%20United%20Nations%20Secretariat) data, about one billion out of a total of almost eight billion people live in the Americas.
+Negative [UTC](#utc) offsets only exist in [the Americas](https://en.wikipedia.org/wiki/Americas#:~:text=a%20landmass%20comprising%20the%20totality%20of%20North%20America%20and%20South%20America) and islands in the [Atlantic](https://en.wikipedia.org/wiki/List_of_islands_in_the_Atlantic_Ocean) and [Pacific](https://en.wikipedia.org/wiki/List_of_islands_in_the_Pacific_Ocean) Oceans. Therefore, the bar chart above is essentially comparing the populations of the Americas and the rest of the world. According to 2021 [United Nations Department of Economic and Social Affairs](https://en.wikipedia.org/wiki/United_Nations_Department_of_Economic_and_Social_Affairs#:~:text=part%20of%20the%20United%20Nations%20Secretariat) data, about one billion out of a total of almost eight billion people live in the Americas.
 
-Whenever a negative offset is associated with a Dec date, a [tod](#tod), or both a date and a [tod](#tod), Dec will add one day to the date and ten decidays to the offset without modifying the [tod](#tod). This typically occurs after the conversion of an [hms](#hms) triplet to a [tod](#tod) or a “year month day” ([ymd](#ymd)) triplet to a Dec date. As a result, all Dec dates and [tod](#tod) have positive offsets.
+Whenever a negative offset is associated with a Dec date, a [tod](#tod), or both a Dec date and a [tod](#tod), Dec will add one day to the date and ten decidays to the offset without modifying the [tod](#tod). This typically occurs after the conversion of an [hms](#hms) triplet to a [tod](#tod) or a “year month day” ([ymd](#ymd)) triplet to a Dec date. As a result, all Dec dates and [tod](#tod) have non-negative offsets.
 
 Dec will not change a negative offset or its associated [doy](#doy) if the result of adding one day to the [doy](#doy) is uncertain. This uncertainly can only exist if we do not know whether a [doy](#doy) that is equal to 364 belongs to a common or leap year. The day after Day 364 of a common year is Day 0 of the subsequent year. In a leap year, Day 364 precedes Day 365.
 
@@ -4032,6 +4028,12 @@ html`
 }
 .color26by100 {
   background: #d6ff00;
+  color: black;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
+.color27by100 {
+  background: #cfff00;
   color: black;
   padding: 0px .5px;
   border-radius: 4px;
