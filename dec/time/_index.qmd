@@ -2597,6 +2597,12 @@ html`
   padding: 0px .5px;
   border-radius: 4px;
 }
+.color88by100 {
+  background: #e400ff;
+  color: white;
+  padding: 0px .5px;
+  border-radius: 4px;
+}
 .color081by366 {
   background: #f1ff00;
   color: black;
