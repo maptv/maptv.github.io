@@ -1,6 +1,6 @@
 # Decalendar
 Martin Laptev
-2026+222
+2026+225
 
 - [Decalendar](#decalendar)
 - [Day of year (doy)](#sec-doy)
@@ -946,31 +946,32 @@ an extra copy of a printed🖨️Gregorian calendar on
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a>${january1doyColor3}, we would have to wait 6,
 11, 12, 28, or 40 years to use it. We can make the leap year form of
-Decalendar apply to any year by appending an asterisk (\*) to the label
-for <a href="#d" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day">d</a><span class="color365by366">365</span>:
-<span class="color0">365</span>\*.
+Decalendar apply to any year by putting an [multiplication
+sign](https://en.wikipedia.org/wiki/Multiplication_sign) above the
+<a href="#dox" class="tool" data-bs-toggle="tooltip"
+data-bs-title="days of xún">dox</a> in
+<span class="color0">36<span class="acutegrave">5̽</span></span>.
 
-The <span class="color0">365</span>\* label is short for
-<span class="color0">365</span>\*leap, where leap is the [left-hand
+In Dec, <span class="color0">36<span class="acutegrave">5̽</span></span>
+stands for <span class="color0">365</span>×`leap`, where `leap` is the
+[left-hand
 side](https://en.wikipedia.org/wiki/Sides_of_an_equation#:~:text=the%20expression%20on%20the%20left%20of%20the%20%22%3D%22%20is%20the%20left%20side%20of%20the%20equation)
-of <a href="#eq-leap" class="quarto-xref">Equation 3</a>. If leap is 1,
-Year <a href="#y" class="tool" data-bs-toggle="tooltip"
+of <a href="#eq-leap" class="quarto-xref">Equation 3</a>. If `leap` is
+1, Year <a href="#y" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year">y</a> is a leap year and
-<span class="color0">365</span>\* is
+<span class="color0">36<span class="acutegrave">5̽</span></span> is
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color365by366">365</span>, the
 last day of Year <a href="#y" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year">y</a>. If leap is 0, Year
+data-bs-title="year">y</a>. If `leap` is 0, Year
 <a href="#y" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year">y</a> is a common year and
-<span class="color0">365</span>\* is
+<span class="color0">36<span class="acutegrave">5̽</span></span> is
 <a href="#d" class="tool" data-bs-toggle="tooltip"
 data-bs-title="day">d</a><span class="color0">0</span>, the first day of
 Year <a href="#y" class="tool" data-bs-toggle="tooltip"
-data-bs-title="year">y</a>+1. The <span class="color0">365</span>\*
-label unites the common and leap year forms of Decalendar into a
-[perennial
+data-bs-title="year">y</a>+1. This approach unites the common and leap
+year forms of Decalendar into a [perennial
 calendar](https://en.wikipedia.org/wiki/Perennial_calendar#:~:text=a%20calendar%20that%20applies%20to%20any%20year%2C%20keeping%20the%20same%20dates)
 that can be reused♻️every year.
 
@@ -4612,25 +4613,20 @@ data-bs-title="beginning of year">boy</a>, and
 data-bs-title="day of year">doy</a>. The
 <a href="#boe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of era">boe</a> of the Zone
-<span class="color0">0</span>
-(<a href="#z" id="zone" class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone">z</a><span class="color0">0</span>) Dec time zone
-is called the Dec
+<span class="color0">0</span> Dec time zone is called the Dec
 [epoch](https://en.wikipedia.org/wiki/Epoch#:~:text=an%20instant%20in%20time%20chosen%20as%20the%20origin%20of%20a%20particular%20calendar%20era).
 We can convert [Julian day
 numbers](https://en.wikipedia.org/wiki/Julian_day#:~:text=a%20continuous%20count%20of%20days%20from%20the%20beginning%20of%20the%20Julian%20period)
 (<a href="#jdn" id="Juliandaynumber" class="tool"
 data-bs-toggle="tooltip" data-bs-title="Julian day numbers">JDN</a>) to
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone">z</span><span class="color0">0</span>
+Zone <span class="color0">0</span>
 <a href="#doe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of era">doe</a> by subtracting the number of full
 days in between the start of the [Julian
 period](https://en.wikipedia.org/wiki/Julian_day#Terminology:~:text=a%20chronological%20interval%20of%207980%C2%A0years)
-and the Dec epoch, which is 1721120 if the <span class="tool"
-data-bs-toggle="tooltip"
-data-bs-title="zone">z</span><span class="color0">0</span> time is later
-than noon and 1721119 otherwise.
+and the Dec epoch, which is 1721120 if the Zone
+<span class="color0">0</span> time is later than noon and 1721119
+otherwise.
 
 Dec uses <a href="#doe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="days of era">doe</a> for [calendrical
@@ -5177,9 +5173,8 @@ data-bs-title="beginning of week">bow</a> =
 data-bs-title="positive integer day of year">pid</a>
 <span class="mono">-</span>
 <a href="#dow" class="tool" data-bs-toggle="tooltip"
-data-bs-title="day of week">dow</a>. According to the current
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone">z</span><span class="color0">0</span>
+data-bs-title="day of week">dow</a>. According to the current Zone
+<span class="color0">0</span>
 <span class="nowrap"><a href="#yoe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="year of era">yoe</a>+<a href="#bow" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of week">bow</a>+<a href="#dow" class="tool" data-bs-toggle="tooltip"
@@ -7197,8 +7192,7 @@ data-bs-title="day of bimester">Dob</span>
 <span class="color22by59">22</span> and
 <span class="color52by59">52</span>.
 
-According to the current <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="zone">z</span><span class="color0">0</span>
+According to the current Zone <span class="color0">0</span>
 <a href="#yoe" class="tool" data-bs-toggle="tooltip"
 data-bs-title="years of era">yoe</a>+<a href="#bob" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beginning of bimester">bob</a>+<a href="#dob" class="tool" data-bs-toggle="tooltip"
@@ -8445,7 +8439,7 @@ references:
   title: Decalendar
   url: https://maptv.github.io/dec/date
   issued:
-    literal: 2026+222
+    literal: 2026+225
 ```
 
 </div>
@@ -8486,7 +8480,7 @@ yaml format.
   author = "Martin Laptev",
   title = "Decalendar",
   url = "https://maptv.github.io/dec/date",
-  year = 2026+222
+  year = 2026+225
 }
 ```
 
@@ -8537,6 +8531,14 @@ additional files or configuration. A Quarto output file can have both a
   day
 - <a href="#bodymassindex" id="bmi">bmi</a>: body mass index, kilograins
   of body mass divided by height in zem squared (kg/z²)
+- <a href="#base9" id="b9">b9</a>: base9, nonary, 9 digits written as
+  the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃
+  ♄ ♅ ♆; the first digit after a tod with Dec seconds appended counts
+  tens of Dec seconds
+- <a href="#base10" id="b10">b10</a>: base10, decimal, the digits 0 to 9
+- <a href="#base24" id="b24">b24</a>: base24, 24 digits written as the
+  lowercase Greek letters α to ω; counts sid after a number of Dec
+  seconds or hours after a UTC offset
 - <a href="#taur" id="c">c</a>: taur, 𝜏*r*, 100000 kilozem, 40000
   kilometers, nearly the circumference of the Earth, roughly the product
   of 𝜏 and the radius of the Earth, approximately the dividend of the
@@ -8671,6 +8673,18 @@ additional files or configuration. A Quarto output file can have both a
   Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization),
   the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and
   1970-W01-4 (ISO week date)
+- <a href="#jing" id="j">j</a>: jīng (经), a full circle around the
+  Earth moving North or South through both Poles, a measure of latitude;
+  short for 经圈 (jīngquān), “meridian circle,” to emphasize a full
+  circle rather than a meridian, which can be a half circle; an
+  uppercase “J” without a serif is a vertical line drawn from top to
+  bottom, like a jīng running from the North Pole to the South Pole,
+  with a curve at the bottom where the jīng turns to come back up the
+  other side of the Earth; on a loom, 经 is the warp, the threads that
+  run lengthwise
+  - <a href="#decijing" id="dj">dj</a>: decijīng, a tenth of a jīng (经)
+  - <a href="#millijing" id="mj">mj</a>: millijīng, a thousandth of a
+    jīng (经)
 - <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
   glasses, a million drops, half a barrel
 - <a href="#kilometer" id="km">km</a>: kilometer, 1000 meters, 2500 zem,
@@ -8682,14 +8696,6 @@ additional files or configuration. A Quarto output file can have both a
     centimeter, a thousandth of a liter, 15.625 drops
   - <a href="#microliter" id="uL">µL</a>: microliter, a cubic
     millimeter, a millionth of a liter, 0.015625 drops
-- <a href="#meridian" id="m">m</a>: meridian, a full circle around the
-  Earth moving North or South; used in the abbreviations a.m.
-  (antemeridian) and p.m. (postmeridian); the letter “m” in meridian can
-  be vertically flipped to get the letter “w” in wěi
-  - <a href="#decimeridian" id="dm">dm</a>: decimeridian, a tenth of a
-    meridian
-  - <a href="#millimeridian" id="mm">mm</a>: millimeridian, a thousandth
-    of a meridian
 - <a href="#squaremeter" id="m2">m²</a>: square meter, 6.25 square zem
   - <a href="#squarecentimeter" id="cm2">cm²</a>: square centimeter,
     6.25 square centizem
@@ -8739,8 +8745,15 @@ additional files or configuration. A Quarto output file can have both a
 - <a href="#radian" id="rad">rad</a>: radian, $1\over\tau$ turns,
   $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
 - <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
-- <a href="#second" id="s">s</a>: second, 1/90 millidays, 0.9 beats, 1
+- <a href="#second" id="s">s</a>: second, 1/90 millidays, 10/9 beats, 1
   Dec second = 0.96 SI seconds
+  - <a href="#decisecond" id="ds">ds</a>: decisecond, a tenth of a Dec
+    second, 1/900 millidays, 1/9 beats, 96 milliseconds
+  - <a href="#secondintervaldifference" id="sid">sid</a>: second
+    interval difference, 1 SI second - 1 Dec second, 1/24 Dec second,
+    1/25 SI second, 40 milliseconds
+  - <a href="#sisecond" id="sis">sis</a>: SI second, 25/24 Dec seconds,
+    1/86.4 millidays, 1/86400 days
 - <a href="#spinorbitinterval" id="soi">soi</a>: spin orbit interval, a
   lunar day, 1.03505 days
   - <a href="#soiofyear" id="soy">soy</a>: soi of year
@@ -8805,13 +8818,6 @@ additional files or configuration. A Quarto output file can have both a
   Time; a tzo is an integer uto
   - <a href="#solartimeoffset" id="sto">sto</a>: solar time offset, a
     uto that is a terminating decimal
-  - <a href="#exactoffsetfraction" id="eof">eof</a>: exact offset
-    fraction, an irreducible fraction that expresses a repeating decimal
-    uto exactly
-  - <a href="#roundedoffsetdecimal" id="rod">rod</a>: rounded offset
-    decimal, a repeating decimal uto rounded to a few digits
-  - <a href="#roundofferrorfraction" id="ref">ref</a>: roundoff error
-    fraction, uto - rod
 - <a href="#coordinateduniversaltime" id="utc">utc</a>: [Coordinated
   Universal
   Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
@@ -8834,10 +8840,14 @@ additional files or configuration. A Quarto output file can have both a
     1.<span class="vinculum">6</span> kilometers per hour,
     0.4<span class="vinculum">629</span> meters per second,
     approximately 0.136% of the speed of sound
-- <a href="#wei" id="w">w</a>: wěi (纬), parallel, a measure of
-  longitude; can be thought of as a measure of the **w**idth of a
-  meridian on **E**arth; the letter “w” in wěi can be vertically flipped
-  to get the letter “m” in meridian
+- <a href="#wei" id="w">w</a>: wěi (纬), parallel, a full circle around
+  the Earth moving East or West at the same latitude, a measure of
+  longitude; short for 纬圈 (wěiquān), “latitude circle”; can be thought
+  of as a measure of the **w**idth of a jīng on **E**arth; “w” is
+  written from left to right, like a wěi running from **W**est to
+  **E**ast across a map, starts the word “width,” as in the width of a
+  map, and is one of the widest letters in proportional fonts; on a
+  loom, 纬 is the weft, the threads that run crosswise
   - <a href="#deciwei" id="dw">dw</a>: deciwěi, a tenth of a wěi (纬), a
     tenth of a parallel
   - <a href="#milliwei" id="mw">mw</a>: milliwěi, a thousandth of a wěi
@@ -8910,6 +8920,8 @@ additional files or configuration. A Quarto output file can have both a
     0.4 millimeters
 
 </div>
+
+<script src="/asset/glossary.js"></script>
 
 ``` {ojs}
 //| echo: false

@@ -75,15 +75,15 @@
 - [hsv](#huesaturationvalue){#hsv}: hue saturation value
 - [i](#inch){#i}: inch, a sixteenth of a zem, 25 millimeters
 - [iso](#internationalorganizationforstandardization){#iso}: [International Organization for Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization), the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and 1970-W01-4 (ISO week date)
+- [j](#jing){#j}: jīng (经), a full circle around the Earth moving North or South through both Poles, a measure of latitude; short for 经圈 (jīngquān), "meridian circle," to emphasize a full circle rather than a meridian, which can be a half circle; an uppercase "J" without a serif is a vertical line drawn from top to bottom, like a jīng running from the North Pole to the South Pole, with a curve at the bottom where the jīng turns to come back up the other side of the Earth; on a loom, 经 is the warp, the threads that run lengthwise
+    - [dj](#decijing){#dj}: decijīng, a tenth of a jīng (经)
+    - [mj](#millijing){#mj}: millijīng, a thousandth of a jīng (经)
 - [k](#keg){#k}: keg, cubic zem, 64 liters, 1000 wine glasses, a million drops, half a barrel
 - [km](#kilometer){#km}: kilometer, 1000 meters, 2500 zem, 2.5 kilozem
 - [kmph](#kilometersperhour){#kmph}: kilometers per hour, thousands of meters per hour, 1 kmph = 0.6 mv
 - [L](#liter){#L}: liter, 15625 drops, a cubic decimeter
     - [mL](#milliliter){#mL}: milliliter, a cubic centimeter, a thousandth of a liter, 15.625 drops
     - [µL](#microliter){#uL}: microliter, a cubic millimeter, a millionth of a liter, 0.015625 drops
-- [m](#meridian){#m}: meridian, a full circle around the Earth moving North or South; used in the abbreviations a.m. (antemeridian) and p.m. (postmeridian); the letter "m" in meridian can be vertically flipped to get the letter "w" in wěi
-    - [dm](#decimeridian){#dm}: decimeridian, a tenth of a meridian
-    - [mm](#millimeridian){#mm}: millimeridian, a thousandth of a meridian
 - [m&sup2;](#squaremeter){#m2}: square meter, 6.25 square zem
     - [cm&sup2;](#squarecentimeter){#cm2}: square centimeter, 6.25 square centizem
     - [dm&sup2;](#squaredecimeter){#dm2}: square decimeter, 6.25 square decizem
@@ -150,7 +150,7 @@
 - [v](#omegar){#v}: omegar, ωr, 1041.[6]{.vinculum} miles per hour, 1.[6]{.vinculum} megameters per hour, 0.4[629]{.vinculum} kilometers per second, roughly 1.36 times the speed of sound
     - [kv](#kiloomegar){#kv}: kiloomegar, kωr, 1.[6]{.vinculum} gigameters per hour, 0.4[629]{.vinculum} megameters per second, approximately 0.1544% of the speed of light
     - [mv](#milliomegar){#mv}: milliomegar, mωr, 1.041[6]{.vinculum} miles per hour, 1.[6]{.vinculum} kilometers per hour, 0.4[629]{.vinculum} meters per second, approximately 0.136% of the speed of sound
-- [w](#wei){#w}: wěi (纬), parallel, a measure of longitude; can be thought of as a measure of the **w**idth of a meridian on **E**arth; the letter "w" in wěi can be vertically flipped to get the letter "m" in meridian
+- [w](#wei){#w}: wěi (纬), parallel, a full circle around the Earth moving East or West at the same latitude, a measure of longitude; short for 纬圈 (wěiquān), "latitude circle"; can be thought of as a measure of the **w**idth of a jīng on **E**arth; "w" is written from left to right, like a wěi running from **W**est to **E**ast across a map, starts the word "width," as in the width of a map, and is one of the widest letters in proportional fonts; on a loom, 纬 is the weft, the threads that run crosswise
     - [dw](#deciwei){#dw}: deciwěi, a tenth of a wěi (纬), a tenth of a parallel
     - [mw](#milliwei){#mw}: milliwěi, a thousandth of a wěi (纬), a thousandth of a parallel
 - [x](#xun){#x}: xún (旬), decaday, a group of ten days, 2 pentadays, represented by x like the Roman numeral X
@@ -186,3 +186,7 @@
     - [cz](#centizem){#cz}: centizem, a hundredth of a zem, 4 millimeters
     - [mz](#millizem){#mz}: millizem, a thousandth of a zem, 0.4 millimeters
 :::
+
+```{=html}
+<script src="/asset/glossary.js"></script>
+```

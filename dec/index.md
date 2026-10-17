@@ -1,6 +1,6 @@
 # Dec Measurement System
 Martin Laptev
-2026+200
+2026+225
 
 - [Dec measurement system](#sec-dec)
 - [Longitude latitude course](#sec-llc)
@@ -199,20 +199,20 @@ Dec measures
 [longitude](https://en.wikipedia.org/wiki/Longitude#:~:text=denoted%20by%20the%20Greek%20letter%20lambda)
 in
 [wěi](https://en.wiktionary.org/wiki/%E7%B7%AF#:~:text=(geography)-,latitude,-coordinate%20terms%C2%A0%E2%96%B2)
-(<a href="#w" class="tool" data-bs-toggle="tooltip"
+(<a href="#w" id="wei" class="tool" data-bs-toggle="tooltip"
 data-bs-title="horizontal lines on a map">w</a>),
 [latitude](https://en.wikipedia.org/wiki/Latitude#:~:text=denoted%20by%20the%20Greek%20lower%2Dcase%20letter%20phi)
 in
-[meridians](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)
-(<a href="#m" id="meridian" class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridians">m</a>), and compass directions in
+[jīng](https://en.wikipedia.org/wiki/Meridian_arc#Full_meridian_(polar_perimeter):~:text=The%20polar%20Earth%27s%20circumference%20is%20simply%20four%20times%20quarter%20meridian)
+(<a href="#j" id="jing" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a>), and compass directions in
 [roses](https://en.wikipedia.org/wiki/Compass_rose#:~:text=a%20polar%20diagram%20displaying%20the%20orientation%20of%20the%20cardinal%20directions)🌹(<a href="#r" id="rose" class="tool" data-bs-toggle="tooltip"
 data-bs-title="roses">r</a>). To measure certain kinds of angles, Dec
 uses specific types of turns with distinct names like
 <a href="#w" class="tool" data-bs-toggle="tooltip"
 data-bs-title="horizontal line on a map">w</a>,
-<a href="#m" class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridian">m</a>, or
+<a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a>, or
 <a href="#r" class="tool" data-bs-toggle="tooltip"
 data-bs-title="rose">r</a>. All turn types can be combined with [metric
 prefixes](https://en.wikipedia.org/wiki/Metric_prefix#:~:text=a%20unit%20prefix%20that%20precedes%20a%20basic%20unit%20of%20measure%20to%20indicate%20a%20multiple%20or%20submultiple%20of%20the%20unit),
@@ -242,9 +242,9 @@ data-bs-title="thousandths of a wěi">milliwěi</span>
 (<a href="#mw" id="milliwei" class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a horizontal line on a map">mw</a>) and
 latitude in <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="thousandths of a meridian">millimeridians</span>
-(<a href="#mm" id="millimeridian" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>) of Points
+data-bs-title="thousandths of a jīng">millijīng</span>
+(<a href="#mj" id="millijing" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>) of Points
 <span class="point0">0</span> and <span class="point1">1</span> on the
 [map](#fig-distmap)🗺️beneath
 <a href="#tbl-map" class="quarto-xref">Table 1</a>. By default, Point
@@ -252,16 +252,16 @@ data-bs-title="millimeridians">mm</a>) of Points
 <a href="#mw" class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a horizontal line on a map">mw</a> and
 <span class="color0">0</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>, near the
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>, near the
 [Galápagos🏝️archipelago](https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands#:~:text=an%20archipelago%20of%20volcanic%20islands%20in%20the%20Eastern%20Pacific)
 of Ecuador🇪🇨, and Point <span class="point1">1</span> is at
 <span class="color8">800</span>
 <a href="#mw" class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a horizontal line on a map">mw</a> and
 <span class="color1">100</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>, near the bottom of the [Missouri
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>, near the bottom of the [Missouri
 bootheel](https://en.wikipedia.org/wiki/Missouri_Bootheel#:~:text=a%20salient%20(protrusion)%20located%20in%20the%20southeasternmost%20part%20of%20the%20U.S.%20state%20of%20Missouri)
 in the United States🇺🇸.
 
@@ -286,8 +286,8 @@ where the Sun☀️is [directly
 overhead](https://en.wikipedia.org/wiki/Zenith#:~:text=the%20imaginary%20point%20on%20the%20celestial%20sphere%20directly%20%22above%22%20a%20particular%20location):
 ${sunLonHsl} <a href="#mw" class="tool" data-bs-toggle="tooltip"
 data-bs-title="thousandths of a horizontal line on a map">mw</a> and
-${sunLatHsl} <a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>.
+${sunLatHsl} <a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>.
 
 Alongside the geographic coordinates of a point, each row of
 <a href="#tbl-map" class="quarto-xref">Table 1</a> contains the
@@ -444,11 +444,11 @@ rstbtn.node();
 //| echo: false
 //| label: maptable
 table = createTable([
-  { Point: 0, Milliwěi: 800, Millimeridian: 0, Millirose: 0 },
-  { Point: 1, Milliwěi: 800, Millimeridian: 100, Millirose: 500 },
+  { Point: 0, Milliwěi: 800, Millijīng: 0, Millirose: 0 },
+  { Point: 1, Milliwěi: 800, Millijīng: 100, Millirose: 500 },
 ], { headerEditable: false, appendRows: false })
-//   {Point: 0, Milliwěi: `${Math.floor(long2turn(Place_A[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_A[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
-//   {Point: 1, Milliwěi: `${Math.floor(long2turn(Place_B[0], 3))}`, Millimeridian: `${Math.floor(lati2turn(Place_B[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
+//   {Point: 0, Milliwěi: `${Math.floor(long2turn(Place_A[0], 3))}`, Millijīng: `${Math.floor(lati2turn(Place_A[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_A, Place_B)))}`},
+//   {Point: 1, Milliwěi: `${Math.floor(long2turn(Place_B[0], 3))}`, Millijīng: `${Math.floor(lati2turn(Place_B[1], 3))}`, Millirose: `${Math.floor(lati2turn(coor2bear(Place_B, Place_A)))}`},
 // ], {headerEditable: false, appendRows: false})
 ```
 
@@ -913,41 +913,38 @@ data-bs-title="thousandths of a horizontal line on a map">mw</a>).
 </div>
 
 The Equator (<span class="color0">0</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>) is the [major
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>) is the [major
 latitude](https://en.wikipedia.org/wiki/Circle_of_latitude#:~:text=mark%20the%20divisions%20between%20the%20five%20principal%20geographical%20zones)
 midway between the South (<span class="color750">-250</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>) and North
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>) and North
 (<span class="color250">250</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>) Poles. Unlike the Equator, the
-Tropics of
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>) Poles. Unlike the Equator, the Tropics
+of
 [Cancer](https://en.wikipedia.org/wiki/Tropic_of_Cancer#:~:text=northernmost%20circle%20of%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♋(<span class="color065">65</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>) and
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>) and
 [Capricorn](https://en.wikipedia.org/wiki/Tropic_of_Capricorn#:~:text=the%20southernmost%20latitude%20where%20the%20Sun%20can%20be%20seen%20directly%20overhead)♑️(<span class="color935">-65</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>) and the
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>) and the
 [Arctic](https://en.wikipedia.org/wiki/Arctic_Circle#:~:text=the%20southernmost%20latitude%20at%20which%2C%20on%20the%20winter%20solstice%20in%20the%20Northern%20Hemisphere%2C%20the%20Sun%20does%20not%20rise%20all%20day%2C%20and%20on%20the%20Northern%20Hemisphere%27s%20summer%20solstice%2C%20the%20Sun%20does%20not%20set)
 (<span class="color250">250</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a> – <span class="color065">65</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a> =
-<span class="color185">185</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>) and
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a> – <span class="color065">65</span>
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a> = <span class="color185">185</span>
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>) and
 [Antarctic](https://en.wikipedia.org/wiki/Antarctic_Circle#:~:text=the%20Sun%20is%20above%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20visible%20at%20solar%20midnight)%20and%20the%20centre%20of%20the%20Sun%20(ignoring%20refraction)%20is%20below%20the%20horizon%20for%2024%20continuous%20hours%20at%20least%20once%20per%20year%20(and%20therefore%20not%20visible%20at%20solar%20noon))
 (<span class="color065">65</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a> –
-<span class="color250">250</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a> =
-<span class="color815">-185</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>) Circles are defined by the [axial
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a> – <span class="color250">250</span>
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a> = <span class="color815">-185</span>
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>) Circles are defined by the [axial
 tilt](https://en.wikipedia.org/wiki/Axial_tilt#Earth:~:text=the%20angle%20between%20the%20ecliptic%20and%20the%20celestial%20equator%20on%20the%20celestial%20sphere)
 of the Earth🌏: <span class="color065">65</span>
 <a href="#mt" class="tool" data-bs-toggle="tooltip"
@@ -957,27 +954,28 @@ data-bs-title="milliturns">mt</a>.
 
 Enable the [“Grid” toggle input](#toggles) to see Latitudes
 [-2](https://en.wikipedia.org/wiki/72nd_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane%20in%20the%20Antarctic)
-(<span class="color8">-200</span> <span class="tool"
-data-bs-toggle="tooltip" data-bs-title="millimeridians">mm</span>),
+(<span class="color8">-200</span>
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>),
 [-1](https://en.wikipedia.org/wiki/36th_parallel_south#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20south%20of%20the%20Earth's%20equatorial%20plane)
 (<span class="color9">-100</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>),
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>),
 [0](https://en.wikipedia.org/wiki/Equator#:~:text=the%20circle%20of%20latitude%20that%20divides%20Earth%20into%20the%20Northern%20and%20Southern%20hemispheres)
 (<span class="color0">0</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>),
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>),
 [1](https://en.wikipedia.org/wiki/36th_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2036%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane)
 (<span class="color1">100</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>), and
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>), and
 [2](https://en.wikipedia.org/wiki/72nd_parallel_north#:~:text=a%20circle%20of%20latitude%20that%20is%2072%20degrees%20north%20of%20the%20Earth's%20equatorial%20plane%2C%20in%20the%20Arctic)
 (<span class="color2">200</span>
-<a href="#mm" class="tool" data-bs-toggle="tooltip"
-data-bs-title="millimeridians">mm</a>) on the [map](#fig-distmap) above
-along with the ten major longitudes that divide the Earth🌎into the ten
-Dec time zones. In Dec, Longitude <span class="color0">0</span> serves
-as the [Prime
+<a href="#mj" class="tool" data-bs-toggle="tooltip"
+data-bs-title="millijīng">mj</a>) on the [map](#fig-distmap) above along
+with the ten major longitudes that divide the Earth🌎into the ten Dec
+time zones. In Dec, Longitude <span class="color0">0</span> serves as
+the [Prime
 Meridian](https://en.wikipedia.org/wiki/Prime_meridian#:~:text=an%20arbitrarily%2Dchosen%20meridian%20%28a%20line%20of%20longitude%29%20in%20a%20geographic%20coordinate%20system%20at%20which%20longitude%20is%20defined%20to%20be%200%C2%B0),
 [International Date
 Line](https://en.wikipedia.org/wiki/International_Date_Line#:~:text=the%20line%20between%20the%20South%20and%20North%20Poles%20that%20is%20the%20boundary%20between%20one%20calendar%20day%20and%20the%20next),
@@ -1014,10 +1012,10 @@ viewof longitude = Inputs.range([0, 10], {label: "Longitude", value: .5, step: .
 Each Dec time zone is 0.1
 <a href="#w" class="tool" data-bs-toggle="tooltip"
 data-bs-title="of a horizontal line on a map">w</a> wide and 0.5
-<a href="#m" class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridians">m</a> long. While 1
-<a href="#m" class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridian">m</a> is always <span class="tool"
+<a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a> long. While 1
+<a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a> is always <span class="tool"
 data-bs-toggle="tooltip" data-bs-title="approximately">~</span>1
 <a href="#c" class="tool" data-bs-toggle="tooltip"
 data-bs-title="taur">c</a> long, the length of a
@@ -1039,8 +1037,8 @@ data-bs-title="taur">c</a> length of a
 <a href="#w" class="tool" data-bs-toggle="tooltip"
 data-bs-title="horizontal line on a map">w</a> is the
 [cosine](https://en.wikipedia.org/wiki/Sine_and_cosine#:~:text=the%20ratio%20of%20the%20length%20of%20the%20adjacent%20leg%20to%20that%20of%20the%20hypotenuse)
-of its latitude in <a href="#m" class="tool" data-bs-toggle="tooltip"
-data-bs-title="meridians">m</a>,
+of its latitude in <a href="#j" class="tool" data-bs-toggle="tooltip"
+data-bs-title="jīng">j</a>,
 <a href="#rad" class="tool" data-bs-toggle="tooltip"
 data-bs-title="radians">rad</a>, or
 <a href="#deg" class="tool" data-bs-toggle="tooltip"
@@ -1085,9 +1083,9 @@ data-bs-toggle="tooltip"
 data-bs-title="approximately ten million">~10<sup>7</sup></span>
 [meters](https://en.wikipedia.org/wiki/Metre#Definition:~:text=the%20base%20unit%20of%20length%20in%20the%20International%20System%20of%20Units).
 In other words, a <span class="tool" data-bs-toggle="tooltip"
-data-bs-title="a tenth of a meridian">decimeridian</span>
-(<a href="#dm" id="decimeridian" class="tool" data-bs-toggle="tooltip"
-data-bs-title="decimeridian">dm</a>) is <span class="tool"
+data-bs-title="a tenth of a jīng">decijīng</span>
+(<a href="#dj" id="decijing" class="tool" data-bs-toggle="tooltip"
+data-bs-title="decijīng">dj</a>) is <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="approximately ten million">~10<sup>7</sup></span>
 <a href="#z" class="tool" data-bs-toggle="tooltip"
@@ -1599,10 +1597,9 @@ data-bs-title="nanotaur">nc</a>), and therefore, 1
 data-bs-title="milliomegar">mv</a> = $\text{mc}\over\text d$ =
 $\text {kz}\over\text {cd}$ = $\text z\over\text b$ =
 $\text {dz}\over\text{µd}$ = $\text {nc}\over\text{µd}$. A
-<span class="tool" data-bs-toggle="tooltip"
-data-bs-title="centiday">cd</span> is <span class="color960">96</span>%
-of a quarter hour and a
-<a href="#b" class="tool" data-bs-toggle="tooltip"
+<a href="#cd" class="tool" data-bs-toggle="tooltip"
+data-bs-title="centiday">cd</a> is <span class="color960">96</span>% of
+a quarter hour and a <a href="#b" class="tool" data-bs-toggle="tooltip"
 data-bs-title="beat">b</a> is <span class="color864">86.4</span>% of a
 second.
 
@@ -2578,7 +2575,7 @@ data-bs-title="nanotaur">nc</a>, 4 <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="hundredths of a meter">centimeters</span>, or $8\over5$
 Dec inches, and the shortest length is $1\over2$
-<a href="#mz" class="tool" data-bs-toggle="tooltip"
+<a href="#mz" id="millizem" class="tool" data-bs-toggle="tooltip"
 data-bs-title="millizem">mz</a>, $1\over5$ <span class="tool"
 data-bs-toggle="tooltip"
 data-bs-title="thousandths of a meter">millimeters</span>, $1\over125$
@@ -2933,7 +2930,7 @@ references:
   title: Dec Measurement System
   url: https://maptv.github.io/dec
   issued:
-    literal: 2026+200
+    literal: 2026+225
 ```
 
 </div>
@@ -2974,7 +2971,7 @@ yaml format.
   author = "Martin Laptev",
   title = "Dec Measurement System",
   url = "https://maptv.github.io/dec",
-  year = 2026+200
+  year = 2026+225
 }
 ```
 
@@ -3126,6 +3123,14 @@ videos](https://observablehq.com/resource-center#videos).
   day
 - <a href="#bodymassindex" id="bmi">bmi</a>: body mass index, kilograins
   of body mass divided by height in zem squared (kg/z²)
+- <a href="#base9" id="b9">b9</a>: base9, nonary, 9 digits written as
+  the astronomical symbols of the Sun and the eight planets, ☉ ☿ ♀ ♁ ♂ ♃
+  ♄ ♅ ♆; the first digit after a tod with Dec seconds appended counts
+  tens of Dec seconds
+- <a href="#base10" id="b10">b10</a>: base10, decimal, the digits 0 to 9
+- <a href="#base24" id="b24">b24</a>: base24, 24 digits written as the
+  lowercase Greek letters α to ω; counts sid after a number of Dec
+  seconds or hours after a UTC offset
 - <a href="#taur" id="c">c</a>: taur, 𝜏*r*, 100000 kilozem, 40000
   kilometers, nearly the circumference of the Earth, roughly the product
   of 𝜏 and the radius of the Earth, approximately the dividend of the
@@ -3260,6 +3265,18 @@ videos](https://observablehq.com/resource-center#videos).
   Standardization](https://en.wikipedia.org/wiki/International_Organization_for_Standardization),
   the body behind ISO 8601 dates such as 1970-01-01 (ISO month date) and
   1970-W01-4 (ISO week date)
+- <a href="#jing" id="j">j</a>: jīng (经), a full circle around the
+  Earth moving North or South through both Poles, a measure of latitude;
+  short for 经圈 (jīngquān), “meridian circle,” to emphasize a full
+  circle rather than a meridian, which can be a half circle; an
+  uppercase “J” without a serif is a vertical line drawn from top to
+  bottom, like a jīng running from the North Pole to the South Pole,
+  with a curve at the bottom where the jīng turns to come back up the
+  other side of the Earth; on a loom, 经 is the warp, the threads that
+  run lengthwise
+  - <a href="#decijing" id="dj">dj</a>: decijīng, a tenth of a jīng (经)
+  - <a href="#millijing" id="mj">mj</a>: millijīng, a thousandth of a
+    jīng (经)
 - <a href="#keg" id="k">k</a>: keg, cubic zem, 64 liters, 1000 wine
   glasses, a million drops, half a barrel
 - <a href="#kilometer" id="km">km</a>: kilometer, 1000 meters, 2500 zem,
@@ -3271,14 +3288,6 @@ videos](https://observablehq.com/resource-center#videos).
     centimeter, a thousandth of a liter, 15.625 drops
   - <a href="#microliter" id="uL">µL</a>: microliter, a cubic
     millimeter, a millionth of a liter, 0.015625 drops
-- <a href="#meridian" id="m">m</a>: meridian, a full circle around the
-  Earth moving North or South; used in the abbreviations a.m.
-  (antemeridian) and p.m. (postmeridian); the letter “m” in meridian can
-  be vertically flipped to get the letter “w” in wěi
-  - <a href="#decimeridian" id="dm">dm</a>: decimeridian, a tenth of a
-    meridian
-  - <a href="#millimeridian" id="mm">mm</a>: millimeridian, a thousandth
-    of a meridian
 - <a href="#squaremeter" id="m2">m²</a>: square meter, 6.25 square zem
   - <a href="#squarecentimeter" id="cm2">cm²</a>: square centimeter,
     6.25 square centizem
@@ -3328,8 +3337,15 @@ videos](https://observablehq.com/resource-center#videos).
 - <a href="#radian" id="rad">rad</a>: radian, $1\over\tau$ turns,
   $360\over\tau$ degrees, $1\over 2\pi$ turns, $180\over\pi$ degrees
 - <a href="#redgreenblue" id="rgb">rgb</a>: red green blue
-- <a href="#second" id="s">s</a>: second, 1/90 millidays, 0.9 beats, 1
+- <a href="#second" id="s">s</a>: second, 1/90 millidays, 10/9 beats, 1
   Dec second = 0.96 SI seconds
+  - <a href="#decisecond" id="ds">ds</a>: decisecond, a tenth of a Dec
+    second, 1/900 millidays, 1/9 beats, 96 milliseconds
+  - <a href="#secondintervaldifference" id="sid">sid</a>: second
+    interval difference, 1 SI second - 1 Dec second, 1/24 Dec second,
+    1/25 SI second, 40 milliseconds
+  - <a href="#sisecond" id="sis">sis</a>: SI second, 25/24 Dec seconds,
+    1/86.4 millidays, 1/86400 days
 - <a href="#spinorbitinterval" id="soi">soi</a>: spin orbit interval, a
   lunar day, 1.03505 days
   - <a href="#soiofyear" id="soy">soy</a>: soi of year
@@ -3394,13 +3410,6 @@ videos](https://observablehq.com/resource-center#videos).
   Time; a tzo is an integer uto
   - <a href="#solartimeoffset" id="sto">sto</a>: solar time offset, a
     uto that is a terminating decimal
-  - <a href="#exactoffsetfraction" id="eof">eof</a>: exact offset
-    fraction, an irreducible fraction that expresses a repeating decimal
-    uto exactly
-  - <a href="#roundedoffsetdecimal" id="rod">rod</a>: rounded offset
-    decimal, a repeating decimal uto rounded to a few digits
-  - <a href="#roundofferrorfraction" id="ref">ref</a>: roundoff error
-    fraction, uto - rod
 - <a href="#coordinateduniversaltime" id="utc">utc</a>: [Coordinated
   Universal
   Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time#:~:text=the%20primary%20time%20standard%20globally%20used%20to%20regulate%20clocks%20and%20time)
@@ -3423,10 +3432,14 @@ videos](https://observablehq.com/resource-center#videos).
     1.<span class="vinculum">6</span> kilometers per hour,
     0.4<span class="vinculum">629</span> meters per second,
     approximately 0.136% of the speed of sound
-- <a href="#wei" id="w">w</a>: wěi (纬), parallel, a measure of
-  longitude; can be thought of as a measure of the **w**idth of a
-  meridian on **E**arth; the letter “w” in wěi can be vertically flipped
-  to get the letter “m” in meridian
+- <a href="#wei" id="w">w</a>: wěi (纬), parallel, a full circle around
+  the Earth moving East or West at the same latitude, a measure of
+  longitude; short for 纬圈 (wěiquān), “latitude circle”; can be thought
+  of as a measure of the **w**idth of a jīng on **E**arth; “w” is
+  written from left to right, like a wěi running from **W**est to
+  **E**ast across a map, starts the word “width,” as in the width of a
+  map, and is one of the widest letters in proportional fonts; on a
+  loom, 纬 is the weft, the threads that run crosswise
   - <a href="#deciwei" id="dw">dw</a>: deciwěi, a tenth of a wěi (纬), a
     tenth of a parallel
   - <a href="#milliwei" id="mw">mw</a>: milliwěi, a thousandth of a wěi
@@ -3499,6 +3512,8 @@ videos](https://observablehq.com/resource-center#videos).
     0.4 millimeters
 
 </div>
+
+<script src="/asset/glossary.js"></script>
 
 ``` {ojs}
 //| echo: false
@@ -4345,9 +4360,9 @@ function worldMapCoordinates(config = {}, dimensions) {
       9, 13, 27
     ].includes(ev.which)) {
       lonA = turn2long(liveTable[0].Milliparallel);
-      latA = turn2degr(liveTable[0].Millimeridian);
+      latA = turn2degr(liveTable[0].Millijīng);
       lonB = turn2long(liveTable[1].Milliparallel);
-      latB = turn2degr(liveTable[1].Millimeridian);
+      latB = turn2degr(liveTable[1].Millijīng);
       const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
       set(viewof colorD, point0bear)
       table.rows[1].cells[1].innerHTML = createCellDiv(long2turn(lonA), 10)
@@ -4363,9 +4378,9 @@ function worldMapCoordinates(config = {}, dimensions) {
       8, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 109, 189
     ].includes(ev.which)) {
       lonA = turn2long(liveTable[0].Milliparallel);
-      latA = turn2degr(liveTable[0].Millimeridian);
+      latA = turn2degr(liveTable[0].Millijīng);
       lonB = turn2long(liveTable[1].Milliparallel);
-      latB = turn2degr(liveTable[1].Millimeridian);
+      latB = turn2degr(liveTable[1].Millijīng);
       const point0bear = Math.round(lati2turn(coor2bear([lonA, latA], [lonB, latB])))
       set(viewof colorD, point0bear)
       table.rows[1].cells[3].innerHTML = createCellDiv(point0bear, 10)
