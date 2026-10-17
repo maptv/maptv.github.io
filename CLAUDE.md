@@ -49,6 +49,12 @@ updated as new preferences come up; don't let it grow into a changelog.
 - Acronyms in Dec articles are explained by tooltips and links to the glossary at the end
   (`asset/_glossary.qmd`), so don't suggest per-section "terms introduced" recaps. Do check
   that every `[abbr](#id)` link actually has a glossary target.
+- Glossary links and backlinks are not prose changes: adding or fixing them (linking a bare
+  `[mj]{.tool …}` as `[mj](#mj)`, or putting a backlink id on a term's first use) is fine
+  even when told not to alter the text. Glossary work is delegated to Claude. Convention:
+  the text links an abbreviation to its glossary entry (`#mj`), the entry links back to
+  the term's first use on the page, which carries the long id (`{#millijing .tool …}`),
+  and `asset/glossary.js` sends a backlink to another article when the page lacks it.
 - Day/year units in Dec articles: write "d" (linked like `[d](#d){.tool …}`) for a measured
   amount or duration after a numeral ("59 d long", "shifts by 1 to 6 d"); spell out "days"
   in relative-time phrases ("N days ago", "in N days", "days since/until", "N days before")
@@ -61,10 +67,11 @@ updated as new preferences come up; don't let it grow into a changelog.
   it never takes an "s", prefixed or not: "2 kilozem" means 2 thousand zone equatorial
   meters. Taur (𝜏r) and omegar (ωr) are readings of formulas, so they are invariable too:
   "2 kilotaur" is 2000𝜏r, never "kilotaurs" or "milliomegars". Transliterated foreign
-  words are also invariable: wěi and xún never take an "s". Naturalized English words
-  with Latin or Greek roots (meridian, turn, beat, perbeat, degree) pluralize normally.
+  words are also invariable: jīng, wěi, and xún never take an "s". Naturalized English
+  words with Latin or Greek roots (turn, beat, perbeat, degree) pluralize normally.
 - Retired names: longitude is in wěi (`w`, `dw`, `mw`), not parallels/λ; latitude is in
-  meridians (`m`, `mm`), not φ; days in the year is `syl`, not `n` (the glossary's `n` is
+  jīng (`j`, `dj`, `mj`), not meridians (`m`, `mm`) or φ, but geographic terms like "prime
+  meridian" and "quarter meridian" stay; days in the year is `syl`, not `n` (the glossary's `n` is
   a musical note); the inverse of a beat is perbeat (`þ`), not `iob`.
 - Dec has no negative time zone offsets: the international date line and the prime meridian
   coincide, so a negative UTC offset becomes a positive Dec offset by adding 1 day. A
