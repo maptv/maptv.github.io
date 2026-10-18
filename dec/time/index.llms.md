@@ -2,7 +2,7 @@
 
 Code
 
-Introducing Declock, a timekeeping system that displays time in decimal days using math notation without the need for hours, minutes, or seconds.
+Introducing Declock, a timekeeping system that displays time in decimal days without the need for hours, minutes, or seconds.
 
 Author
 
@@ -975,7 +975,7 @@ sincos(1 * 2 * pi)
 
     [1] -2.449294e-16  1.000000e+00
 
-The values below are the coefficients of a model adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA](#noaa)) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA](#noaa) [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), we need to convert eot([toy](#toy)) values from minutes to [centidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=14.4%20minutes%2C%20or%20864%20seconds), combine [ymd](#ymd) triplet dates and [hms](#hms) triplet times into [ada](#ada), and sort by [ada](#ada).
+The values below are the coefficients of a [harmonic](https://en.wikipedia.org/wiki/Harmonic#:~:text=positive%20integer%20multiple%20of%20the%20fundamental%20frequency) [model](https://en.wikipedia.org/wiki/Statistical_model#:~:text=embodies%20a%20set%20of%20statistical%20assumptions%20concerning%20the%20generation%20of%20sample%20data), adapted from the [National Oceanic and Atmospheric Administration](https://www.noaa.gov) ([NOAA](#noaa)) [General Solar Position Calculations](https://gml.noaa.gov/grad/solcalc/solareqns.PDF). Before [fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) the model to [NOAA](#noaa) [yearly solar data](https://gml.noaa.gov/grad/solcalc/calcdetails.html), we need to convert eot([toy](#toy)) values from minutes to [centidays](https://en.wikipedia.org/wiki/Unit_of_time#:~:text=14.4%20minutes%2C%20or%20864%20seconds), combine [ymd](#ymd) triplet dates and [hms](#hms) triplet times into [ada](#ada), and sort by [ada](#ada).
 
     {0: 0.0011114386869002235,
      1: -4.155124400404918,
@@ -1332,7 +1332,7 @@ As an alternative to yaml, I suggest the [BibTeX](https://en.wikipedia.org/wiki/
 @misc{laptev2026time,
   author = "Martin Laptev",
   title = "Dec time",
-  url = "https://maptv.github.io?meta:path",
+  url = "https://maptv.github.io/dec/date",
   year = 2026+225
 }
 ```

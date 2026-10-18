@@ -3614,7 +3614,7 @@ yaml format.
 @misc{laptev2026time,
   author = "Martin Laptev",
   title = "Dec time",
-  url = "https://maptv.github.io?meta:path",
+  url = "https://maptv.github.io/dec/date",
   year = 2026+225
 }
 ```
